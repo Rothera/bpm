@@ -12,7 +12,7 @@
 
 $("a").each(function(index) {
     if(emote_map.hasOwnProperty(this.pathname)) {
-        console.log("Applying CSS to " + this.pathname + ": ");
+        console.log("Applying CSS to " + this.pathname + ": " + emote_map[this.pathname]);
         $(this).addClass(emote_map[this.pathname]);
     }
 });
