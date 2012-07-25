@@ -21,6 +21,8 @@
 ##
 ##
 
+MULTIDEF_WHITELIST = ("/gilda", "/manlytears")
+
 import argparse
 import time
 import sys
@@ -49,9 +51,10 @@ def add_emote(sheet_name, name, data):
     This does nothing fancy and you probably want add_simple_emote instead.
     """
     assert name[0] == "/"
+    assert name.lower() == name # Enforce lowercase here
     selector = make_selector(sheet_name, name)
     assert selector not in css_bits
-    if name in emote_map:
+    if name in emote_map and name not in MULTIDEF_WHITELIST:
         print("Warning: %s defined more than once" % (name))
     css_bits[selector] = data
     emote_map[name] = selector
@@ -67,6 +70,10 @@ def add_simple_emote(sheet_name, name, image_url, emote_size, position, extra_pr
     position: The (x, y) offset into the image (should be negative, like CSS).
     extra_properties: Any extra CSS you want to apply to be merged in.
     """
+    # Probably correct
+    assert position[0] <= 0
+    assert position[1] <= 0
+
     coords = "%spx %spx" % position
     data = {
         "display": "block",
@@ -111,28 +118,10 @@ def add_weird_sheet(sheet_name, image_url, emotes, extra_properties={}):
 
     (The emote_size paramter is omitted as it is obviously not applicable.)
     """
-    common = {
-        "display": "block",
-        "clear": "none",
-        "float": "left",
-        "background-image": "url(%s)" % (image_url)
-        }
-    common.update(extra_properties)
-
     for (emote_name, positioning) in emotes.items():
         width, height, x_offset, y_offset = positioning
-        # Probably correct
-        assert x_offset <= 0
-        assert y_offset <= 0
 
-        coords = "%spx %spx" % (x_offset, y_offset)
-        data = {
-            "background-position": coords,
-            "width": width,
-            "height": height
-            }
-        data.update(common)
-        add_emote(sheet_name, emote_name, data)
+        add_simple_emote(sheet_name, emote_name, image_url, (width, height), (x_offset, y_offset), extra_properties)
 
 def add_custom_css(selector, properties):
     """
@@ -599,7 +588,7 @@ add_weird_sheet("mylittleandysonic1_misc8", "http://b.thumbs.redditmedia.com/IZ3
     "/roguewithit":     (390, 417, 0, -1102),
     "/hate":            (284, 188, 0, -1519),
     "/liarmac":         (116, 156, -284, -1519),
-    "/QQfYQ":           (156, 142, 0, -1707),
+    "/qqfyq":           (156, 142, 0, -1707),
     "/ppfreakout":      (156, 142, 0, -1707),
     "/ppquite":         (106, 106, -156, -1707),
     "/ppscared":        (138, 156, -262, -1707),
@@ -1045,6 +1034,449 @@ add_weird_sheet("mylittleandysonic1_misc17", "http://a.thumbs.redditmedia.com/oK
 # FIXME: Omitted from here: the text coloring stuff.
 
 add_simple_emote("mylittleandysonic1_misc", "/hoppy", "http://f.thumbs.redditmedia.com/yncP92ucLKCxJ1t_.png", (105, 157), (0, 0))
+
+################################################################################
+##
+## R/MYLITTLEWTF
+##
+################################################################################
+
+# FIXME: Omitted
+# - The -blink! modifier
+# - /ioib (missing)
+# - /ryourface (missing)
+
+# Various animotes
+add_simple_emote("mylittlewtf_shuffle", "/shuffle", "http://c.thumbs.redditmedia.com/DO1kW--Q7aOtgd7J.png", (225, 300), (0, 0))
+add_simple_emote("mylittlewtf_nopespin", "/nopespin", "http://e.thumbs.redditmedia.com/n-BFOLNGx0d2K49v.png", (300, 301), (0, 0))
+add_simple_emote("mylittlewtf_animote", "/animote", "http://c.thumbs.redditmedia.com/YaBC0ntaYvWgrkIh.png", (255, 171), (0, 0))
+
+# There's a lot more in this sheet, but they don't have emotes anymore
+add_weird_sheet("mylittlewtf_spidey", "http://b.thumbs.redditmedia.com/Vxm1zWOFEkWjNz8C.jpg", {
+    "/spidey":          (293, 198, -472, 0),
+    "/spidey2":         (197, 299, -4, -2)
+    })
+
+add_simple_emote("mylittlewtf_thefack", "/thefack", "http://f.thumbs.redditmedia.com/0m9p9dtDTXXb_0aq.png", (770, 136), (0, 0))
+add_simple_emote("mylittlewtf_orschemote", "/orschemote", "http://b.thumbs.redditmedia.com/2Tde7I6xFl9W0aoI.png", (300, 400), (0, 0))
+
+# Misc emotes
+add_weird_sheet("mylittlewtf_misc1", "http://b.thumbs.redditmedia.com/TiiUeMVjYgIblgg1.png", {
+    "/1g":              (60, 85, -2, -2),
+    "/3a":              (178, 86, -64, -2),
+    "/2e":              (85, 89, -244, -2),
+    "/grumpytwi":       (84, 90, -331, -2),
+    "/1h":              (146, 96, -417, -2),
+    "/2i":              (91, 99, -565, -2),
+    "/3h":              (88, 100, -658, -2),
+    "/3g":              (95, 100, -748, -2),
+    "/2f":              (100, 100, -845, -2),
+    "/ajraep":          (80, 100, -2, -104),
+    "/dashraep":        (93, 100, -84, -104),
+    "/twiraep":         (98, 100, -179, -104),
+    "/rarraep":         (90, 100, -279, -104),
+    "/shyraep":         (104, 100, -371, -104),
+    "/pieraep":         (93, 100, -477, -104),
+    "/1f":              (73, 100, -572, -104),
+    "/2g":              (109, 101, -647, -104),
+    "/1b":              (134, 103, -758, -104),
+    "/3b":              (90, 105, -894, -104),
+    "/1a":              (76, 139, -2, -211),
+    "/yourface":        (167, 140, -80, -211),
+    "/flutterbucket":   (167, 140, -80, -211),
+    "/2j":              (167, 140, -80, -211),
+    "/1j":              (76, 140, -249, -211),
+    "/1e":              (138, 147, -327, -211),
+    "/335":             (138, 147, -327, -211),
+    "/2b":              (132, 149, -467, -211),
+    "/1c":              (102, 150, -601, -211),
+    "/2h":              (69, 150, -705, -211),
+    "/3k":              (135, 150, -776, -211),
+    "/3j":              (110, 150, -2, -363),
+    "/3i":              (140, 150, -114, -363),
+    "/2d":              (125, 150, -256, -363),
+    "/3d":              (108, 150, -383, -363),
+    "/3c":              (105, 150, -493, -363),
+    "/3e":              (78, 150, -600, -363),
+    "/3f":              (76, 150, -680, -363),
+    "/1i":              (134, 151, -758, -363),
+    "/ioi":             (134, 151, -758, -363),
+    "/2c":              (140, 151, -2, -516),
+    "/2a":              (158, 151, -144, -516),
+    "/1k":              (136, 154, -304, -516),
+    "/2k":              (88, 154, -442, -516),
+    "/1d":              (81, 154, -532, -516)
+    })
+
+# Misc emotes, and the Halloween ones.
+add_weird_sheet("mylittlewtf_misc2", "http://a.thumbs.redditmedia.com/5BAxBli-SHRFVODB.png", {
+    "/4a":              (159, 151, -2, -2),
+    "/4b":              (144, 150, -163, -2),
+    "/4c":              (253, 150, -309, -2),
+    "/4d":              (138, 150, -564, -2),
+    "/4e":              (150, 150, -704, -2),
+    "/4f":              (119, 150, -856, -2),
+    "/4g":              (189, 200, -2, -155),
+    "/4h":              (140, 151, -193, -155),
+    "/4i":              (69, 150, -335, -155),
+    "/4j":              (120, 148, -406, -155),
+    "/4k":              (211, 200, -528, -155),
+    "/4l":              (335, 150, -2, -357),
+    "/5a":              (92, 100, -339, -357),
+    "/5b":              (71, 100, -433, -357),
+    "/5c":              (148, 151, -506, -357),
+    "/5d":              (154, 150, -656, -357),
+    "/5e":              (110, 150, -812, -357),
+    "/5f":              (140, 152, -2, -510),
+    "/5g":              (151, 150, -144, -510),
+    "/5h":              (120, 150, -297, -510),
+    "/5i":              (137, 150, -419, -510),
+    "/5j":              (88, 105, -558, -510),
+    "/5k":              (109, 154, -648, -510),
+    "/applehat":        (109, 100, -759, -510),
+    "/rdoubledragon":   (70, 70, -870, -510),
+    "/doubledragon":    (70, 70, -870, -510),
+    "/rdoublespike":    (70, 70, -870, -510),
+    "/doublespike":     (70, 70, -870, -510),
+    "/rpeckypie":       (70, 70, -942, -510),
+    "/rpeckiepie":      (70, 70, -942, -510),
+    "/peckypie":        (70, 70, -942, -510),
+    "/peckiepie":       (70, 70, -942, -510),
+    "/rrdshadowbolt":   (70, 70, -2, -666),
+    "/rdshadowbolt":    (70, 70, -2, -666),
+    "/rscarecrowjack":  (70, 70, -74, -666),
+    "/scarecrowjack":   (70, 70, -74, -666),
+    "/rstarswirl":      (70, 70, -146, -666),
+    "/starswirl":       (70, 70, -146, -666)
+    })
+
+# Misc emotes
+add_weird_sheet("mylittlewtf_misc3", "http://f.thumbs.redditmedia.com/iUX64LF8j-6kbJZq.png", {
+    "/335b":            (74, 149, -2, -2),
+    "/335c":            (77, 100, -78, -2),
+    "/aboooh":          (65, 125, -157, -2),
+    "/adorajack":       (97, 100, -224, -2),
+    "/ajcider":         (134, 165, -323, -2),
+    "/yopiegimmeafreshbeat": (175, 117, -459, -2),
+    "/bootsncats":      (175, 117, -459, -2),
+    "/canit":           (150, 119, -636, -2),
+    "/cod":             (150, 150, -788, -2),
+    "/dashhfof":        (127, 100, -2, -169),
+    "/derpwat":         (75, 150, -131, -169),
+    "/deviouspie":      (150, 145, -399, -169),
+    "/dgusta":          (70, 72, -551, -169),
+    "/duck":            (86, 80, -623, -169),
+    "/grinaloo":        (107, 104, -711, -169),
+    "/grumpybloom":     (79, 90, -820, -169),
+    "/grumpypie":       (75, 90, -901, -169),
+    "/grumpyrar":       (78, 90, -2, -321),
+    "/grumpyscoot":     (81, 90, -82, -321),
+    "/grumpyshy":       (87, 90, -165, -321),
+    "/grumpytia":       (107, 90, -254, -321),
+    "/hipsterpie":      (84, 100, -363, -321),
+    "/oinkoink":        (100, 175, -449, -321),
+    "/onewat":          (105, 105, -551, -321),
+    "/ppdance":         (150, 125, -658, -321),
+    "/pppie":           (137, 100, -810, -321),
+    "/ppplot":          (150, 86, -2, -498),
+    "/ppsurprise":      (115, 150, -154, -498),
+    "/prettypony":      (70, 75, -271, -498),
+    "/roseeyes":        (97, 100, -343, -498),
+    "/rosetough":       (104, 160, -442, -498),
+    "/rppsalute":       (173, 150, -548, -498),
+    "/rworstpony":      (70, 100, -723, -498),
+    "/scootasad":       (106, 125, -795, -498),
+    "/slumberparty":    (97, 76, -903, -498),
+    "/sparkwat":        (90, 100, -2, -660),
+    "/speedy":          (101, 125, -94, -660),
+    "/spikestache":     (66, 100, -197, -660),
+    "/spikeyu":         (71, 100, -265, -660),
+    "/teehee":          (76, 70, -338, -660),
+    "/twipoker":        (118, 110, -416, -660),
+    "/umyeah":          (76, 100, -536, -660),
+    "/whyhello":        (121, 100, -614, -660),
+    "/rzoidberg":       (70, 69, -737, -660),
+    "/zoidberg":        (70, 69, -737, -660)
+    })
+
+# Misc emotes
+add_weird_sheet("mylittlewtf_misc4", "http://b.thumbs.redditmedia.com/LxzHhnJr-rZAeIbU.png", {
+    "/5ofclubs":        (174, 175, -2, -2),
+    "/bonsing":         (127, 151, -178, -2),
+    "/derpsess":        (167, 200, -307, -2),
+    "/lunasalute":      (186, 155, -476, -2),
+    "/lyplay":          (232, 203, -664, -2),
+    "/lyrawithit":      (239, 268, -2, -207),
+    "/ootdluna":        (127, 155, -243, -207),
+    "/parrrtycannon":   (133, 175, -372, -207),
+    "/piplean":         (196, 167, -507, -207),
+    "/ppjam":           (203, 200, -705, -207),
+    "/ppsalute":        (187, 150, -2, -477),
+    "/ppshocked":       (250, 168, -191, -477),
+    "/ppshock":         (250, 168, -191, -477),
+    "/pudding":         (112, 154, -443, -477),
+    "/pptoothover":     (163, 153, -557, -477),
+    "/rpptoothover":    (163, 153, -557, -477),
+    "/r2a":             (163, 153, -557, -477),
+    "/royalpain":       (203, 175, -722, -477),
+    "/shyrose":         (133, 150, -2, -654),
+    "/shystrut":        (187, 150, -137, -654),
+    "/sursprisesalute": (195, 150, -326, -654),
+    "/sursalute":       (195, 150, -326, -654),
+    "/this":            (128, 166, -523, -654),
+    "/trix1":           (205, 142, -653, -654)
+    })
+
+# Misc emotes
+add_weird_sheet("mylittlewtf_misc5", "http://e.thumbs.redditmedia.com/3NoiDkrAVyPz_2hv.png", {
+    "/abchill":         (112, 100, -2, -2),
+    "/angrypie":        (169, 154, -116, -2),
+    "/berrysmug":       (129, 150, -287, -2),
+    "/damusics":        (160, 150, -418, -2),
+    "/dashconfused":    (150, 147, -580, -2),
+    "/dashhug":         (162, 175, -732, -2),
+    "/disdrink":        (174, 160, -2, -179),
+    "/flapple":         (150, 142, -178, -179),
+    "/flutterdance":    (130, 150, -330, -179),
+    "/foreverpie":      (96, 150, -462, -179),
+    "/flutterrape":     (207, 203, -560, -179),
+    "/molestshy":       (207, 203, -560, -179),
+    "/ppoutofnowhere":  (150, 144, -769, -179),
+    "/pinkieoutofnowhere": (150, 144, -769, -179),
+    "/ppshiteater":     (134, 150, -2, -384),
+    "/rarsalute":       (176, 149, -138, -384),
+    "/rartears":        (106, 100, -316, -384),
+    "/rflutterbucket":  (154, 152, -424, -384),
+    "/rosesmug":        (149, 150, -580, -384),
+    "/rosewat":         (203, 150, -731, -384),
+    "/shydaw":          (96, 175, -2, -538),
+    "/shyexcited":      (211, 150, -100, -538),
+    "/stageleft":       (197, 200, -484, -538),
+    "/stretch":         (238, 154, -683, -538),
+    "/surreally":       (151, 147, -2, -740),
+    "/twidance":        (126, 150, -155, -740),
+    "/twidrunk":        (145, 160, -283, -740),
+    "/twigrimace":      (106, 100, -430, -740),
+    "/twisquee":        (108, 175, -538, -740),
+    "/twistsalute":     (140, 130, -648, -740)
+    })
+
+# Misc emotes
+add_weird_sheet("mylittlewtf_misc6", "http://d.thumbs.redditmedia.com/nUjvozHB3_MDN-3E.png", {
+    "/335a":            (195, 156, -2, -2),
+    "/bawkwithit":      (279, 268, -199, -2),
+    "/bonwithit":       (243, 268, -480, -2),
+    "/ididntputthoseinmybagwithit": (243, 268, -480, -2),
+    "/boxedluna":       (247, 152, -725, -2),
+    "/brony":           (202, 160, -2, -272),
+    "/pinkiehover":     (185, 160, -206, -272),
+    "/rpinkiehover":    (185, 160, -206, -272),
+    "/brony2":          (185, 160, -206, -272),
+    "/dat":             (209, 150, -393, -272),
+    "/dosh":            (160, 141, -604, -272),
+    "/ioia":            (160, 150, -766, -272),
+    "/rdfriendship":    (149, 201, -2, -434),
+    "/mahhorn":         (149, 201, -2, -434),
+    "/pants":           (171, 200, -153, -434),
+    "/rareew":          (127, 150, -326, -434),
+    "/rargrin":         (180, 150, -455, -434),
+    "/rbawkwithit":     (279, 268, -637, -434),
+    "/sweetcelestia":   (320, 200, -2, -704),
+    "/thatswhatisaid":  (175, 175, -324, -704)
+    })
+
+# Misc emotes
+add_weird_sheet("mylittlewtf_misc7", "http://b.thumbs.redditmedia.com/kdJoi5VIytPv5HhO.png", {
+    "/chess":           (306, 150, -2, -2),
+    "/dashdrunk":       (255, 175, -310, -2),
+    "/lawl":            (330, 128, -567, -2),
+    "/darqwolff":       (330, 128, -567, -2),
+    "/offthewagon":     (288, 175, -2, -179),
+    "/pon3withit":      (246, 268, -292, -179),
+    "/ppcandy":         (156, 200, -540, -179),
+    "/ppnewhere":       (191, 250, -698, -179),
+    "/ppnew":           (191, 250, -698, -179),
+    "/ppumad":          (250, 182, -2, -449),
+    "/rarhmph":         (269, 150, -254, -449),
+    "/tia1":            (204, 200, -525, -449),
+    "/twieyes":         (334, 203, -2, -651)
+    })
+
+# The "NO" sheet and a couple misc emotes.
+add_weird_sheet("mylittlewtf_no", "http://f.thumbs.redditmedia.com/tjuUEa-adJZDqct_.png", {
+    "/bird":            (167, 250, -2, -2),
+    "/lunano":          (198, 200, -171, -2),
+    "/tiano":           (198, 200, -371, -2),
+    "/ppno":            (220, 200, -571, -2),
+    "/rarno":           (220, 200, -793, -2),
+    "/sbno":            (220, 200, -2, -254),
+    "/scootno":         (220, 200, -224, -254),
+    "/lyrano":          (220, 200, -446, -254),
+    "/abno":            (220, 200, -668, -254),
+    "/bonno":           (220, 200, -2, -456),
+    "/wop":             (220, 200, -224, -456),
+    "/dashno":          (220, 200, -446, -456),
+    "/flutno":          (220, 200, -668, -456),
+    "/ajno":            (222, 200, -2, -658),
+    "/derpno":          (227, 200, -226, -658),
+    "/rlyrano":         (255, 200, -455, -658),
+    "/dontask":         (270, 150, -712, -658)
+    })
+
+# The tableflip sheet and a couple misc emotes.
+add_weird_sheet("mylittlewtf_flip", "http://b.thumbs.redditmedia.com/DyA4zhqo3sFazT67.png", {
+    "/allthetables":    (1011, 603, 0, 0),
+    "/scootflip":       (179, 130, -2, -2),
+    "/sbflip":          (179, 130, -183, -2),
+    "/abflip":          (179, 130, -364, -2),
+    "/flutflip":        (200, 134, -545, -2),
+    "/shyflip":         (200, 134, -545, -2),
+    "/octflip":         (200, 134, -747, -2),
+    "/rarflip":         (199, 145, -2, -138),
+    "/lyraflip":        (199, 145, -203, -138),
+    "/rderpflip":       (177, 145, -404, -138),
+    "/pieflip":         (200, 145, -583, -138),
+    "/lunaflip":        (171, 145, -785, -138),
+    "/ajflip":          (187, 145, -2, -285),
+    "/berryflip":       (199, 145, -191, -285),
+    "/dashflip":        (200, 145, -392, -285),
+    "/bonflip":         (199, 145, -594, -285),
+    "/karmaflip":       (199, 145, -795, -285),
+    "/derpflip":        (200, 145, -2, -432),
+    "/disflip":         (199, 145, -204, -432),
+    "/dpflip":          (199, 145, -204, -432),
+    "/roseflip":        (200, 146, -405, -432),
+    "/tiaflip":         (200, 169, -607, -432),
+    "/pon3flip":        (200, 145, -812, -451),
+    "/scratchflip":     (200, 145, -812, -451),
+    "/vsflip":          (200, 145, -812, -451),
+    "/hothorn":         (253, 248, -2, -634),
+    "/somethingnotretarded": (253, 248, -2, -634),
+    "/notone":          (205, 205, -269, -643)
+    })
+
+add_weird_sheet("mylittlewtf_misc8", "http://d.thumbs.redditmedia.com/P-kuHC-BgmPMCOlc.png", {
+    "/derpysalute":     (172, 139, -2, -2),
+    "/twisalute":       (204, 139, -176, -2),
+    "/shysalute":       (162, 139, -382, -2),
+    "/ajsalute":        (146, 143, -546, -2),
+    "/moar":            (150, 150, -694, -2),
+    "/berrygasp":       (119, 150, -846, -2),
+    "/rosesit":         (131, 150, -2, -154),
+    "/fluffy":          (154, 150, -135, -154),
+    "/ppthis":          (178, 150, -291, -154),
+    "/roseflirt":       (105, 150, -471, -154),
+    "/ppwooo":          (88, 150, -578, -154),
+    "/rosestrut":       (188, 150, -668, -154),
+    "/ajpose":          (101, 150, -858, -154),
+    "/fancyfluff":      (137, 165, -2, -306),
+    "/ppelementary":    (162, 175, -141, -306),
+    "/surwtf":          (173, 175, -305, -306),
+    "/shyrock":         (167, 200, -480, -306),
+    "/ninjapie":        (124, 200, -649, -306),
+    "/sofresh":         (207, 200, -775, -306)
+    })
+
+# FimFiction emotes and one misc
+add_weird_sheet("mylittlewtf_fimfic", "http://d.thumbs.redditmedia.com/nu5cNR2hHVjZXXwi.png", {
+    "/ff00":            (27, 27, -1, -1),
+    "/ajbemused":       (27, 27, -1, -1),
+    "/ff01":            (27, 27, -29, -1),
+    "/ajsleepy":        (27, 27, -29, -1),
+    "/ff02":            (27, 27, -57, -1),
+    "/fimajsmug":       (27, 27, -57, -1),
+    "/ff03":            (34, 27, -85, -1),
+    "/applecry":        (34, 27, -85, -1),
+    "/ff04":            (27, 27, -120, -1),
+    "/applejackconfused": (27, 27, -120, -1),
+    "/ff05":            (27, 27, -148, -1),
+    "/applejackunsure": (27, 27, -148, -1),
+    "/coolphoto":       (27, 27, -176, -1),
+    "/ff10":            (27, 27, -176, -1),
+    "/derpyderp1":      (27, 27, -204, -1),
+    "/ff11":            (27, 27, -204, -1),
+    "/derpyderp2":      (27, 27, -1, -29),
+    "/ff12":            (27, 27, -1, -29),
+    "/derpytongue2":    (27, 27, -29, -29),
+    "/ff13":            (27, 27, -29, -29),
+    "/fimduck":         (27, 27, -57, -29),
+    "/ff14":            (27, 27, -57, -29),
+    "/fimeeyup":        (27, 27, -85, -29),
+    "/ff15":            (27, 27, -85, -29),
+    "/fimfacehoof":     (27, 27, -113, -29),
+    "/ff20":            (27, 27, -113, -29),
+    "/fluttercry":      (27, 27, -141, -29),
+    "/ff21":            (27, 27, -141, -29),
+    "/flutterrage":     (27, 27, -169, -29),
+    "/ff22":            (27, 27, -169, -29),
+    "/fluttershbad":    (27, 27, -197, -29),
+    "/ff23":            (27, 27, -197, -29),
+    "/ff24":            (27, 27, -225, -29),
+    "/fluttershyouch":  (27, 27, -225, -29),
+    "/fluttershysad":   (27, 27, -1, -57),
+    "/ff25":            (27, 27, -1, -57),
+    "/ff30":            (27, 27, -29, -57),
+    "/heart":           (27, 27, -29, -57),
+    "/ff31":            (27, 27, -57, -57),
+    "/moustache":       (27, 27, -57, -57),
+    "/ff32":            (27, 27, -85, -57),
+    "/pinkiecrazy":     (27, 27, -85, -57),
+    "/ff33":            (27, 27, -113, -57),
+    "/pinkiegasp":      (27, 27, -113, -57),
+    "/ff34":            (27, 27, -141, -57),
+    "/pinkiehappy":     (27, 27, -141, -57),
+    "/ff35":            (27, 27, -169, -57),
+    "/pinkiesad2":      (27, 27, -169, -57),
+    "/pinkiesick":      (27, 27, -197, -57),
+    "/ff40":            (27, 27, -197, -57),
+    "/pinkiesmile":     (27, 27, -225, -57),
+    "/ff41":            (27, 27, -225, -57),
+    "/rainbowderp":     (27, 27, -1, -85),
+    "/ff42":            (27, 27, -1, -85),
+    "/rainbowdetermined2": (27, 27, -29, -85),
+    "/ff43":            (27, 27, -29, -85),
+    "/rainbowhuh":      (27, 27, -57, -85),
+    "/ff44":            (27, 27, -57, -85),
+    "/rainbowkiss":     (27, 27, -85, -85),
+    "/ff45":            (27, 27, -85, -85),
+    "/ff50":            (27, 27, -113, -85),
+    "/rainbowlaugh":    (27, 27, -113, -85),
+    "/ff51":            (27, 27, -141, -85),
+    "/rainbowwild":     (27, 27, -141, -85),
+    "/raritycry":       (27, 27, -169, -85),
+    "/ff52":            (27, 27, -169, -85),
+    "/raritydespair":   (27, 27, -197, -85),
+    "/ff53":            (27, 27, -197, -85),
+    "/raritystarry":    (27, 27, -225, -85),
+    "/ff54":            (27, 27, -225, -85),
+    "/raritywink":      (27, 27, -1, -113),
+    "/ff55":            (27, 27, -1, -113),
+    "/ff60":            (27, 27, -29, -113),
+    "/scootangel":      (27, 27, -29, -113),
+    "/ff61":            (27, 27, -57, -113),
+    "/trixieshiftleft": (27, 27, -57, -113),
+    "/ff62":            (27, 27, -85, -113),
+    "/trixieshiftright": (27, 27, -85, -113),
+    "/trollestia":      (27, 27, -113, -113),
+    "/ff63":            (27, 27, -113, -113),
+    "/twilightangry2":  (27, 27, -141, -113),
+    "/ff64":            (27, 27, -141, -113),
+    "/twilightblush":   (27, 27, -169, -113),
+    "/ff65":            (27, 27, -169, -113),
+    "/ff70":            (27, 27, -197, -113),
+    "/twilightoops":    (27, 27, -197, -113),
+    "/ff71":            (27, 27, -225, -113),
+    "/twilightsheepish": (27, 27, -225, -113),
+    "/ff72":            (27, 27, -1, -141),
+    "/twilightsmile":   (27, 27, -1, -141),
+    "/twistnerd":       (27, 27, -29, -141),
+    "/ff73":            (27, 27, -29, -141),
+    "/ff74":            (27, 27, -57, -141),
+    "/unsuresweetie":   (27, 27, -57, -141),
+    "/ff75":            (27, 27, -85, -141),
+    "/fimyay":          (27, 27, -85, -141),
+    "/crash":           (235, 300, -10, -180)
+    })
 
 ################################################################################
 ##
