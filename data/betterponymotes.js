@@ -11,9 +11,8 @@
 "use strict";
 
 $("a").each(function(index) {
-    if(emotes.hasOwnProperty(this.pathname)) {
+    if(emote_map.hasOwnProperty(this.pathname)) {
         console.log("Applying CSS to " + this.pathname + ": ");
-        for(var p in emotes[this.pathname]) { console.log(p + ": " + emotes[this.pathname][p]); }
-        $(this).css(emotes[this.pathname]);
+        $(this).addClass(emote_map[this.pathname]);
     }
 });
