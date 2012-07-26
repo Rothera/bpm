@@ -29,7 +29,7 @@ Things = [
     ##
     ########################################################################
 
-    # A sheet
+    # A table
     Spritesheet("mylittlepony_a", "http://b.thumbs.redditmedia.com/DW12xf1EuQi8VRcI.png", emote_grid((70, 70), [
         [["/a00", "/ajlie"], ["/a10", "/priceless"], ["/a20", "/flutterjerk"]],
         [["/a01", "/twipride"], ["/a11", "/celestiamad"], ["/a21", "/twicrazy"]],
@@ -44,7 +44,7 @@ Things = [
             ["/a29", "/cadence", "/cadance", "/princesscadence", "/princesscadance", "/princessmiamorecadenza"]]
         ])),
 
-    # Reversed A sheet
+    # Reversed A table
     # If I were smart, this wouldn't just be a copy&paste.
     Spritesheet("mylittlepony_a_r", "http://c.thumbs.redditmedia.com/QNdAer5mOCS_f1-J.png", emote_grid((70, 70), [
         [["/ra00", "/rajlie"], ["/ra10", "/rpriceless"], ["/ra20", "/rflutterjerk"]],
@@ -66,7 +66,7 @@ Things = [
         [["/ra24", "/rswagintosh"]]
         ])),
 
-    # B sheet
+    # B table
     Spritesheet("mylittlepony_b", "http://e.thumbs.redditmedia.com/SdD3wwCBFtlQDVx4.png", emote_grid((50, 50), [
         [["/b00", "/flutterfear"], ["/b10", "/ppboring"], ["/b20", "/rarityyell"], ["/b30", "/fluttershy"]],
         [["/b01", "/ajcower"], ["/b11", "/ajsly"], ["/b21", "/eeyup"], ["/b31", "/rdsmile"]],
@@ -80,7 +80,7 @@ Things = [
         [["/b09", "/rarityjudge"], ["/b19", "/rarityprimp"], ["/b29", "/twirage"], ["/b39", "/ppseesyou"]]
         ])),
 
-    # Reversed B sheet
+    # Reversed B table
     Spritesheet("mylittlepony_b_r", "http://f.thumbs.redditmedia.com/I7qbwaE3bctckwOk.png", emote_grid((50, 50), [
         [["/rb00", "/rflutterfear"], ["/rb10", "/rppboring"], ["/rb20", "/rrarityyell"], ["/rb30", "/rfluttershy"]],
         [["/rb01", "/rajcower"], ["/rb11", "/rajsly"], ["/rb21", "/reeyup"], ["/rb31", "/rrdsmile"]],
@@ -94,7 +94,7 @@ Things = [
         [["/rb09", "/rrarityjudge"], ["/rb19", "/rrarityprimp"], ["/rb29", "/rtwirage"], ["/rb39", "/rppseesyou"]]
         ])),
 
-    # C sheet
+    # C table
     Spritesheet("mylittlepony_c", "http://d.thumbs.redditmedia.com/YKSDpjdgMQmII9YE.png", emote_grid((70, 70), [
         [["/c00", "/rdsitting"], ["/c10", "/rdhappy"], ["/c20", "/rdannoyed"]],
         [["/c01", "/twismug"], ["/c11", "/twismile"], ["/c21", "/twistare"]],
@@ -108,7 +108,7 @@ Things = [
         [["/c09", "/allmybits"], ["/c19", "/zecora"], ["/c29", "/photofinish"]]
         ])),
 
-    # Reversed C sheet
+    # Reversed C tabe
     Spritesheet("mylittlepony_c_r", "http://b.thumbs.redditmedia.com/mRM0EMQwBonm0jT7.png", emote_grid((70, 70), [
         [["/rc00", "/rrdsitting"], ["/rc10", "/rrdhappy"], ["/rc20", "/rrdannoyed"]],
         [["/rc01", "/rtwismug"], ["/rc11", "/rtwismile"], ["/rc21", "/rtwistare"]],
@@ -122,7 +122,7 @@ Things = [
         [["/rc09", "/rallmybits"], ["/rc19", "/rzecora"], ["/rc29", "/rphotofinish"]]
         ])),
 
-    # E sheet
+    # E table
     Spritesheet("mylittlepony_e", "http://b.thumbs.redditmedia.com/xI80gM1JZrHyBlFm.png", emote_grid((70, 70), [
         [["/e00", "/fillytgap", "/t00"], ["/e10", "/rdhuh"], ["/e20", "/snails"]],
         [["/e01", "/lyra", "/100"], ["/e11", "/bonbon"], ["/e21", "/spitfire"]],
@@ -137,7 +137,7 @@ Things = [
         [["/e09", "/gilda"], ["/e19", "/discentia", "/discentiastare", "/disstare"], ["/e29", "/macintears", "/manlytears", "/bigmactears"]]
         ])),
 
-    # Reversed E sheet
+    # Reversed E table
     Spritesheet("mylittlepony_e_r", "http://e.thumbs.redditmedia.com/UCe9yrEaHepzkgep.png", emote_grid((70, 70), [
         [["/re00", "/rfillytgap", "/rt00"], ["/re10", "/rrdhuh"], ["/re20", "/rsnails"]],
         [["/re01", "/rlyra", "/r100"], ["/re11", "/rbonbon"], ["/re21", "/rspitfire"]],
@@ -157,7 +157,7 @@ Things = [
         [["/rsmooze"]]
         ])),
 
-    # Spacing
+    # Spacing (duplicated in a lot of subreddits, but we'll pretend it's from here)
     PsuedoEmote("mylittlepony_misc", "/sp", {"display": "inline-block", "padding-right": "100%"}),
 
     # TODO: from r/mlp's CSS, modifiers (not even supported yet):
@@ -1486,7 +1486,55 @@ Things = [
 
     Spritesheet("mlas1animotes_dashcheer", "http://b.thumbs.redditmedia.com/9DPsf8nYEv0KQBig.png", emote_list({
         "/dashcheer":           (350, 200, 0, 0),
-        }))
+        })),
+
+    ########################################################################
+    ##
+    ## R/IDLIKETOBEATREE
+    ##
+    ########################################################################
+
+    # D table
+    Spritesheet("idliketobeatree_d", "http://e.thumbs.redditmedia.com/rbi281-z8LatHB4R.png", emote_grid((70, 70), [
+        [["/d00"], ["/d10"], ["/d20"]],
+        [["/d01"], ["/d11"], ["/d21"]],
+        [["/d02"], ["/d12"], ["/d22"]],
+        [["/d03"], ["/d13"], ["/d23"]],
+        [["/d04"], ["/d14"], ["/d24"]],
+        [["/d05"], ["/d15"], ["/d25"]],
+        [["/d06"], ["/d16"], ["/d26"]],
+        [["/d07"], ["/d17"], ["/d27"]],
+        [["/d08"], ["/d18"], ["/d28"]],
+        [["/d09"], ["/d19"], ["/d29"]]
+        ])),
+
+    # Reversed D table
+    Spritesheet("idliketobeatree_r_d", "http://a.thumbs.redditmedia.com/zMysJBPKLKNz5OMN.png", emote_grid((70, 70), [
+        [["/rd00"], ["/rd10"], ["/rd20"]],
+        [["/rd01"], ["/rd11"], ["/rd21"]],
+        [["/rd02"], ["/rd12"], ["/rd22"]],
+        [["/rd03"], ["/rd13"], ["/rd23"]],
+        [["/rd04"], ["/rd14"], ["/rd24"]],
+        [["/rd05"], ["/rd15"], ["/rd25"]],
+        [["/rd06"], ["/rd16"], ["/rd26"]],
+        [["/rd07"], ["/rd17"], ["/rd27"]],
+        [["/rd08"], ["/rd18"], ["/rd28"]],
+        [["/rd09"], ["/rd19"], ["/rd29"]]
+        ])),
+
+    # ST table
+    Spritesheet("idliketobeatree_st", "http://f.thumbs.redditmedia.com/eYNmDAxOz5Ul7GLq.png", emote_grid((70, 70), [
+        [["/st00"], ["/st10"], ["/st20"]],
+        [["/st01"], ["/st11"], ["/st21"]],
+        [["/st02"], ["/st12"], ["/st22"]],
+        ])),
+
+    # Reversed ST table
+    Spritesheet("idliketobeatree_r_st", "http://c.thumbs.redditmedia.com/U6IxkP4SNnmRX1Jh.png", emote_grid((70, 70), [
+        [["/rst00"], ["/rst10"], ["/rst20"]],
+        [["/rst01"], ["/rst11"], ["/rst21"]],
+        [["/rst02"], ["/rst12"], ["/rst22"]],
+        ])),
 
     ########################################################################
     ##
