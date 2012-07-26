@@ -969,11 +969,16 @@ Things = [
         "/1i":                  (134, 151, -758, -363),
         "/ioi":                 (134, 151, -758, -363),
         "/2c":                  (140, 151, -2, -516),
+        "/pptoothover":         (158, 151, -144, -516),
         "/2a":                  (158, 151, -144, -516),
         "/1k":                  (136, 154, -304, -516),
         "/2k":                  (88, 154, -442, -516),
         "/1d":                  (81, 154, -532, -516)
         })),
+    CustomCss("mylittleandysonic1_misc1", "pptoothover:hover", {
+        "background-image": "url(http://b.thumbs.redditmedia.com/LxzHhnJr-rZAeIbU.png)",
+        "width": "163px", "height": "153px", "background-position": "-557px -477px"
+        }),
 
     # Misc emotes, and the Halloween ones.
     Spritesheet("mylittlewtf_misc2", "http://a.thumbs.redditmedia.com/5BAxBli-SHRFVODB.png", emote_list({
@@ -1082,7 +1087,6 @@ Things = [
         "/ppshocked":           (250, 168, -191, -477),
         "/ppshock":             (250, 168, -191, -477),
         "/pudding":             (112, 154, -443, -477),
-        "/pptoothover":         (163, 153, -557, -477),
         "/rpptoothover":        (163, 153, -557, -477),
         "/r2a":                 (163, 153, -557, -477),
         "/royalpain":           (203, 175, -722, -477),
@@ -1093,6 +1097,10 @@ Things = [
         "/this":                (128, 166, -523, -654),
         "/trix1":               (205, 142, -653, -654)
         })),
+    CustomCss("mylittleandysonic1_misc4", "rpptoothover:hover", {
+        "background-image": "url(http://b.thumbs.redditmedia.com/TiiUeMVjYgIblgg1.png)",
+        "width": "158px", "height": "151px", "background-position": "-144px -516px"
+        }),
 
     # Misc emotes
     Spritesheet("mylittlewtf_misc5", "http://e.thumbs.redditmedia.com/3NoiDkrAVyPz_2hv.png", emote_list({
@@ -1136,7 +1144,7 @@ Things = [
         "/ididntputthoseinmybagwithit": (243, 268, -480, -2),
         "/boxedluna":           (247, 152, -725, -2),
         "/brony":               (202, 160, -2, -272),
-        "/pinkiehover":         (185, 160, -206, -272),
+        "/pinkiehover":         (202, 160, -2, -272),
         "/rpinkiehover":        (185, 160, -206, -272),
         "/brony2":              (185, 160, -206, -272),
         "/dat":                 (209, 150, -393, -272),
@@ -1151,6 +1159,13 @@ Things = [
         "/sweetcelestia":       (320, 200, -2, -704),
         "/thatswhatisaid":      (175, 175, -324, -704)
         })),
+    # These two swap on hover
+    CustomCss("mylittleandysonic1_misc6", "pinkiehover:hover", {
+        "width": "185px", "height": "160px", "background-position": "-206px -272px"
+        }),
+    CustomCss("mylittleandysonic1_misc6", "rpinkiehover:hover", {
+        "width": "185px", "height": "160px", "background-position": "-206px -272px"
+        }),
 
     # Misc emotes
     Spritesheet("mylittlewtf_misc7", "http://b.thumbs.redditmedia.com/kdJoi5VIytPv5HhO.png", emote_list({
