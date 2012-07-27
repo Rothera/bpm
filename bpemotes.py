@@ -2272,6 +2272,71 @@ Things = [
     #
     # //#adviceajlie, //#adviceberry, //#advicepp, //#advicetia, //#philosopie
 
+
+    ########################################################################
+    ##
+    ## R/MLHFIS
+    ##
+    ########################################################################
+
+    # Male emotes
+    Spritesheet("mlhfis_male", "http://a.thumbs.redditmedia.com/j0TEPf9Gz1PMjC36.png", emote_list({
+        "/obama":               (120, 100, 0, 0),
+        "/impossibru":          (105, 100, -120, 0),
+        "/aliens":              (100, 100, 0, -100),
+        "/keanu":               (100, 100, -125, -100),
+        "/freddie":             (75, 140, 0, -200),
+        "/cera":                (75, 115, -75, -200),
+        "/newman":              (75, 120, -150, -200),
+        "/pennandteller":       (125, 105, -100, -335),
+        "/wonka":               (100, 100, 0, -340),
+        "/gaben":               (100, 100, 0, -440),
+        "/clintonlie":          (100, 100, -120, -440),
+        "/maverick":            (140, 75, 0, -540),
+        "/takei":               (70, 75, -155, -540),
+        "/silverman":           (120, 80, 0, -620),
+        "/tyson":               (105, 75, -120, -620),
+        "/picard":              (90, 75, -135, -695),
+        "/jackiechan":          (120, 75, 0, -700),
+        "/colbert":             (75, 100, 0, -775),
+        "/freeman":             (120, 100, -100, -775)
+        })),
+
+    # Female emotes
+    Spritesheet("mlhfis_female", "http://e.thumbs.redditmedia.com/o7DcIdwyaFUbdRFL.png", emote_list({
+        "/firstlady":           (100, 100, 0, 0),
+        "/lauren":              (75, 100, -122, -1),
+        "/tina":                (75, 95, 0, -100),
+        "/oprah":               (120, 95, -80, -100),
+        "/lucyliu":             (100, 95, 0, -200),
+        "/jennamarbles":        (100, 100, -100, -200),
+        "/gaga":                (100, 100, 0, -300),
+        "/zoe":                 (90, 100, -120, -300),
+        "/ellenmclain":         (75, 100, 0, -400),
+        "/xena":                (90, 100, -100, -400),
+        "/ripley":              (75, 100, 0, -500),
+        "/indra":               (80, 100, -100, -500),
+        "/thequeen":            (85, 100, 0, -600),
+        "/facebook":            (60, 80, -100, -600),
+        "/redditorswife":       (70, 100, 0, -700),
+        "/freshman":            (90, 100, -100, -700)
+        })),
+
+    # Requested emotes
+    Spritesheet("mlhfis_requested", "http://f.thumbs.redditmedia.com/PoHsQL4_xPco2-uS.png", emote_list({
+        "/adrian1":             (75, 100, 0, 0),
+        "/adrian2":             (125, 100, -75, 0),
+        "/jennafischer":        (75, 100, -200, 0),
+        "/campbell":            (150, 100, 0, -100),
+        "/tut":                 (75, 100, -150, -100),
+        "/alexander":           (75, 100, -225, -100),
+        "/tesla":               (75, 100, 0, -200),
+        "/bobross":             (75, 100, -75, -200),
+        "/nietzche":            (90, 100, -150, -200),
+        "/einstein":            (75, 100, 0, -300),
+        "/napoleon":            (75, 100, -75, -300)
+        })),
+
     ########################################################################
     ##
     ## END OF EMOTES
