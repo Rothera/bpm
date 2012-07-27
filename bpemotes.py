@@ -1935,6 +1935,73 @@ Things = [
         "/portal2":             (115, 77, -226, -199)
         })),
 
+    # FIXME: Omitted: the //#bneodestiny crap.
+
+    ########################################################################
+    ##
+    ## R/VINYLSCRATCH
+    ##
+    ########################################################################
+
+    # A lot of r/vinylscratch emotes are defined with positive background-position
+    # values, which sort of "wraps around" and does it backwards. Rather than
+    # duplicate this ridiculous nonsense we just do it our way.
+
+    Spritesheet("vinylscratch_misc1", "http://f.thumbs.redditmedia.com/48dqKntrMUv99RoA.png", emote_grid((70, 70), [
+        [["/vsyds", "/vsyoudontsay"], ["/vsf", "/vsfilly"], ["/vswtf", "/vswhatthefuck"]]
+        ])),
+
+    # There's a bunch of /rvs emotes partially defined; they don't work. There's
+    # no reversed spritesheet for them anyway, though.
+    #
+    # Some *are* fully defined, though, so included.
+    #
+    # This spritesheet is also 3x2 but the rightmost two are copied into the
+    # next sheet for some reason, and defined there. What?
+    Spritesheet("vinylscratch_misc2", "http://d.thumbs.redditmedia.com/6IUb7mOhEqfbFO1i.png", emote_grid((70, 70), [
+        [["/vs01", "/vsdeal"], ["/vs02", "/vsderp"]],
+        [["/vs03", "/rvs03", "/vslying"], ["/vs11", "/rvs11", "/vstear"]]
+        ])),
+
+    Spritesheet("vinylscratch_misc3", "http://f.thumbs.redditmedia.com/qvZfSAMs42KQIfgS.png", emote_grid((70, 70), [
+        [["/vs12", "/rvs12", "/vshey"], ["/vs13", "/rvs13", "/rvscurious"], ["/vs21", "/rvs21", "/vsmeh"]]
+        ])),
+
+    Spritesheet("vinylscratch_misc4", "http://b.thumbs.redditmedia.com/Vy09d72RyD7kbbiU.png", emote_grid((70, 70), [
+        [["/vs00", "/vsohyou"], ["/vs10", "/vssad"], ["/vs20", "/vshair"]],
+        [["/vs22", "/vswink"], ["/vs04", "/vshooves"], ["/vs23", "/vsjuice"]]
+        ])),
+
+    # /vshappy and /vs07 don't actually work due to a missing comma.
+    Spritesheet("vinylscratch_misc5", "http://e.thumbs.redditmedia.com/4j0qikWgIxeJspbF.png", emote_grid((70, 70), [
+        [["/vs14", "/vshappy"], ["/vs05", "/vslook"], ["/vs24", "/vssup"]],
+        [["/vs15", "/vsbass"], ["/vs25", "/vsmine"], ["/vs06", "/vsomg"]],
+        [["/vs16", "/vsoooo"], ["/vs26", "/vsnope"], ["/vs07", "/vsmog"]]
+        ])),
+
+    # Other emotes. Note: The CSS has a typo. /vshnngg seems to be what was
+    # intended, but it's also mentioned as /vshnnng (three n's). The second one
+    # is completely broken, though, so it doesn't matter.
+    Spritesheet("vinylscratch_hnnng", "http://d.thumbs.redditmedia.com/00T3gLdOawm80o--.png", emote_list({
+        "/vshnngg":             (70, 70, 0, 0),
+        "/hnnng":               (70, 70, 0, 0),
+        })),
+
+    Spritesheet("vinylscratch_tableflip", "http://a.thumbs.redditmedia.com/TMFvsdV9zMTRLQyH.png", emote_list({
+        "/vstableflip":         (400, 291, 0, 0),
+        "/tableflip":           (400, 291, 0, 0),
+        })),
+
+    Spritesheet("vinylscratch_shrug", "http://c.thumbs.redditmedia.com/XOs3xf6RINSK7sPt.png", emote_list({
+        "/shrug":               (300, 300, 0, 0),
+        "/vsshrug":             (300, 300, 0, 0),
+        })),
+
+    Spritesheet("vinylscratch_laying", "http://f.thumbs.redditmedia.com/a2SG_AiO-Mojc5E5.png", emote_list({
+        "/laying":              (200, 164, 0, 0),
+        "/vslaying":            (200, 164, 0, 0),
+        })),
+
     ########################################################################
     ##
     ## END OF EMOTES
