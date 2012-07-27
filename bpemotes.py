@@ -21,6 +21,7 @@
 ConflictOverrides = {
     "/gilda": "mylittleandysonic1_misc7",
     "/manlytears": "mylittleandysonic1_misc9",
+    "/gummy": "mylittleandysonic1_misc6"
     }
 
 from bplib import *
@@ -1537,6 +1538,56 @@ Things = [
         [["/rst00"], ["/rst10"], ["/rst20"]],
         [["/rst01"], ["/rst11"], ["/rst21"]],
         [["/rst02"], ["/rst12"], ["/rst22"]],
+        ])),
+
+    ########################################################################
+    ##
+    ## R/MYLITTLEDAWW
+    ##
+    ########################################################################
+
+    # Animotes
+    Spritesheet("mylittledaww_twilicious", "http://a.thumbs.redditmedia.com/MYVb1NFkbJ5hYQKT.png", emote_list({
+        "/twilicious":          (70, 70, 0, 0),
+        })),
+    Spritesheet("mylittledaww_flutterbop", "http://b.thumbs.redditmedia.com/DFH8213IoJDJDgXU.png", emote_list({
+        "/flutterbop":          (70, 70, 0, 0),
+        })),
+    Spritesheet("mylittledaww_flutterfly", "http://a.thumbs.redditmedia.com/6BOIVAJzPaum6olZ.png", emote_list({
+        "/flutterfly":          (70, 70, 0, 0),
+        })),
+    Spritesheet("mylittledaww_derpystomp", "http://c.thumbs.redditmedia.com/SVuA5lnpuVOrr97h.png", emote_list({
+        "/derpystomp":          (105, 128, 0, 0),
+        })),
+    Spritesheet("mylittledaww_scootajump", "http://b.thumbs.redditmedia.com/eOHEeBpi_la0KkfI.png", emote_list({
+        "/scootajump":          (111, 128, 0, 0),
+        })),
+    Spritesheet("mylittledaww_shark18", "http://c.thumbs.redditmedia.com/HGZ5sK66oq2pi2hn.png", emote_list({
+        "/shark18":             (70, 70, 0, 0),
+        })),
+
+    # DA table
+    Spritesheet("mylittledaww_da", "http://f.thumbs.redditmedia.com/eBqW6oGAmUofkFpM.png", emote_grid((70, 70), [
+        [["/da00", "/squee"], ["/da10", "/scoots"], ["/da20", "/tia"]],
+        [["/da01", "/twihug"], ["/da11", "/spike"], ["/da21", "/fillyshy"]],
+        [["/da02", "/rarityhi"], ["/da12", "/sadpinkie"], ["/da22", "/brushie"]],
+        [["/da03", "/hugs"], ["/da13", "/gummy"], ["/da23", "/daww"]],
+        [["/da04", "/XLR8TER", "/xl"], ["/da14", "/Shark7996"], ["/da24", "/Twilight_Sprinkle", "/sprinkles"]],
+        [["/da05", "/flutterjuice"], ["/da15", "/woonajuice"], ["/da25", "/flutters"]],
+        [["/da06", "/uhhh"], ["/da16", "/sharkwell"], ["/da26", "/twihappy"]],
+        [["/da07", "/frank"], ["/da17", "/fillyfly"], ["/da27", "/happycadance"]],
+        ])),
+
+    # Reversed DA table
+    Spritesheet("mylittledaww_da_r", "http://b.thumbs.redditmedia.com/pWZqPkP5s8By4mMC.png", emote_grid((70, 70), [
+        [["/rda00", "/rsquee"], ["/rda10", "/rscoots"], ["/rda20", "/rtia"]],
+        [["/rda01", "/rtwihug"], ["/rda11", "/rspike"], ["/rda21", "/rfillyshy"]],
+        [["/rda02", "/rrarityhi"], ["/rda12", "/rsadpinkie"], ["/rda22", "/rbrushie"]],
+        [["/rda03", "/rhugs"], ["/rda13", "/rgummy"], ["/rda23", "/rdaww"]],
+        [["/rda04", "/rXLR8TER", "/rxl"], ["/rda14", "/rShark7996"], ["/rda24", "/RTwilight_Sprinkle", "/rsprinkles"]],
+        [["/rda05", "/rflutterjuice"], ["/rda15", "/rwoonajuice"], ["/rda25", "/rflutters"]],
+        [["/rda06", "/ruhhh"], ["/rda16", "/rsharkwell"], ["/rda26", "/rtwihappy"]],
+        [["/rda07", "/rfrank"], ["/rda17", "/rfillyfly"], ["/rda27", "/rhappycadance"]],
         ])),
 
     ########################################################################
