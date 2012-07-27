@@ -1370,98 +1370,110 @@ Things = [
     ##
     ########################################################################
 
-    Spritesheet("mlas1animotes_twiflap", "http://e.thumbs.redditmedia.com/V6TdoeTKrFPSBjlL.png", emote_list({
+    Spritesheet("mlas1animotes", "http://e.thumbs.redditmedia.com/V6TdoeTKrFPSBjlL.png", emote_list({
         "/twiflap":             (132, 150, 0, 0)
         })),
-    Spritesheet("mlas1animotes_twitwitch", "http://e.thumbs.redditmedia.com/338-FevkfSq5Hn-d.png", emote_list({
+    Spritesheet("mlas1animotes", "http://e.thumbs.redditmedia.com/338-FevkfSq5Hn-d.png", emote_list({
         "/twitwitch":           (122, 150, 0, 0)
         })),
-    Spritesheet("mlas1animotes_ppexcited", "http://a.thumbs.redditmedia.com/HmujMG3EgOuxYDtN.png", emote_list({
+    Spritesheet("mlas1animotes", "http://a.thumbs.redditmedia.com/HmujMG3EgOuxYDtN.png", emote_list({
         "/ppexcited":           (119, 150, 0, 0),
         "/andyisanasshat":      (119, 150, 0, 0)
         })),
-    Spritesheet("mlas1animotes_ajchew", "http://c.thumbs.redditmedia.com/pTE4BmzRuqQPqADV.png", emote_list({
+    Spritesheet("mlas1animotes", "http://c.thumbs.redditmedia.com/pTE4BmzRuqQPqADV.png", emote_list({
         "/ajchew":              (144, 150, 0, 0)
         })),
-    Spritesheet("mlas1animotes_twiexcited", "http://e.thumbs.redditmedia.com/IsUkEo-UQS64IKHv.png", emote_list({
+    Spritesheet("mlas1animotes", "http://e.thumbs.redditmedia.com/IsUkEo-UQS64IKHv.png", emote_list({
         "/twiexcited":          (194, 150, 0, 0),
         "/twilightsparkle":     (194, 150, 0, 0)
         })),
-    Spritesheet("mlas1animotes_raritwitch", "http://e.thumbs.redditmedia.com/10s1wYJ0wz7vpAY4.png", emote_list({
+    Spritesheet("mlas1animotes", "http://e.thumbs.redditmedia.com/10s1wYJ0wz7vpAY4.png", emote_list({
         "/raritwitch":          (154, 150, 0, 0)
         })),
-    Spritesheet("mlas1animotes_pphugs", "http://b.thumbs.redditmedia.com/sLXwSaJcbEdv76p7.png", emote_list({
+    Spritesheet("mlas1animotes", "http://b.thumbs.redditmedia.com/sLXwSaJcbEdv76p7.png", emote_list({
         "/pphugs":              (173, 150, 0, 0)
         })),
-    Spritesheet("mlas1animotes_spikewoo", "http://e.thumbs.redditmedia.com/nlSFOkc1ljcWtlhj.png", emote_list({
+    Spritesheet("mlas1animotes", "http://e.thumbs.redditmedia.com/nlSFOkc1ljcWtlhj.png", emote_list({
         "/spikewoo":            (200, 150, 0, 0)
         })),
-    Spritesheet("mlas1animotes_derpydance", "http://d.thumbs.redditmedia.com/8TcXcx901sYChQSu.png", emote_list({
+    Spritesheet("mlas1animotes", "http://d.thumbs.redditmedia.com/8TcXcx901sYChQSu.png", emote_list({
         "/derpydance":          (164, 150, 0, 0)
         })),
-    Spritesheet("mlas1animotes_rimshot", "http://e.thumbs.redditmedia.com/5wqZ20GOjQg6yr5R.png", emote_list({
+    Spritesheet("mlas1animotes", "http://e.thumbs.redditmedia.com/5wqZ20GOjQg6yr5R.png", emote_list({
         "/rimshot":             (303, 193, 0, 0)
         })),
-    Spritesheet("mlas1animotes_twirun", "http://b.thumbs.redditmedia.com/fs0j48KX--XRpppm.png", emote_list({
+    Spritesheet("mlas1animotes", "http://b.thumbs.redditmedia.com/fs0j48KX--XRpppm.png", emote_list({
         "/twirun":              (400, 300, 0, 0)
         })),
-    Spritesheet("mlas1animotes_lickiepie", "http://a.thumbs.redditmedia.com/dXxUjfiQmb8yxPrr.png", emote_list({
+    Spritesheet("mlas1animotes", "http://a.thumbs.redditmedia.com/dXxUjfiQmb8yxPrr.png", emote_list({
         "/lickiepie":           (225, 200, 0, 0)
         })),
-    Spritesheet("mlas1animotes_derpslide", "http://a.thumbs.redditmedia.com/goAKSOXLP0ILuguf.png", emote_list({
+    Spritesheet("mlas1animotes", "http://a.thumbs.redditmedia.com/goAKSOXLP0ILuguf.png", emote_list({
         "/derpslide":           (241, 175, 0, 0)
         })),
-    Spritesheet("mlas1animotes_pomf", "http://d.thumbs.redditmedia.com/cTcPFv9lEqs9Nr0K.png", emote_list({
+    Spritesheet("mlas1animotes", "http://d.thumbs.redditmedia.com/cTcPFv9lEqs9Nr0K.png", emote_list({
         "/pomf":                (400, 300, 0, 0)
         })),
-    Spritesheet("mlas1animotes_twiderp", "http://b.thumbs.redditmedia.com/8FxN4kPpfiuE4pX7.png", emote_list({
+    Spritesheet("mlas1animotes", "http://b.thumbs.redditmedia.com/8FxN4kPpfiuE4pX7.png", emote_list({
         "/twiderp":             (213, 150, 0, 0)
         })),
-    Spritesheet("mlas1animotes_giggle", "http://b.thumbs.redditmedia.com/TzIFbSLYpQ65ucMC.png", emote_list({
+    Spritesheet("mlas1animotes", "http://b.thumbs.redditmedia.com/TzIFbSLYpQ65ucMC.png", emote_list({
         "/giggle":              (108, 144, 0, 0)
         })),
-    Spritesheet("mlas1animotes_heyyeah", "http://e.thumbs.redditmedia.com/Hv2HmSDtbj2N4_3X.png", emote_list({
+    Spritesheet("mlas1animotes", "http://e.thumbs.redditmedia.com/Hv2HmSDtbj2N4_3X.png", emote_list({
         "/heyyeah":             (200, 200, 0, 0)
         })),
-    Spritesheet("mlas1animotes_pptwitcha", "http://e.thumbs.redditmedia.com/dVE2Rbx5nq_lXD3v.png", emote_list({
+    Spritesheet("mlas1animotes", "http://e.thumbs.redditmedia.com/dVE2Rbx5nq_lXD3v.png", emote_list({
         "/pptwitcha":           (163, 179, 0, 0)
         })),
-    Spritesheet("mlas1animotes_fswb", "http://d.thumbs.redditmedia.com/jbMarIOi-_cCQIRW.png", emote_list({
+    Spritesheet("mlas1animotes", "http://d.thumbs.redditmedia.com/jbMarIOi-_cCQIRW.png", emote_list({
         "/fswb":                (300, 218, 0, 0)
         })),
-    Spritesheet("mlas1animotes_twipeck", "http://b.thumbs.redditmedia.com/RA9Zn-msZFd5ZeQs.png", emote_list({
+    Spritesheet("mlas1animotes", "http://b.thumbs.redditmedia.com/RA9Zn-msZFd5ZeQs.png", emote_list({
         "/twipeck":             (150, 150, 0, 0)
         })),
-    Spritesheet("mlas1animotes_lbspin", "http://b.thumbs.redditmedia.com/FQVAiaNq3kkczVEy.png", emote_list({
+    Spritesheet("mlas1animotes", "http://b.thumbs.redditmedia.com/FQVAiaNq3kkczVEy.png", emote_list({
         "/lbspin":              (150, 150, 0, 0)
         })),
-    Spritesheet("mlas1animotes_ajready", "http://e.thumbs.redditmedia.com/7AEmwnBz23hEWx9F.png", emote_list({
+    Spritesheet("mlas1animotes", "http://e.thumbs.redditmedia.com/7AEmwnBz23hEWx9F.png", emote_list({
         "/ajready":             (118, 120, 0, 0)
         })),
-    Spritesheet("mlas1animotes_twihorror", "http://f.thumbs.redditmedia.com/49mGMFqdpTe_-bLY.png", emote_list({
+    Spritesheet("mlas1animotes", "http://f.thumbs.redditmedia.com/49mGMFqdpTe_-bLY.png", emote_list({
         "/twihorror":           (171, 175, 0, 0)
         })),
-    Spritesheet("mlas1animotes_ajlol", "http://d.thumbs.redditmedia.com/xkP0rhw12lG1H6QQ.png", emote_list({
+    Spritesheet("mlas1animotes", "http://d.thumbs.redditmedia.com/xkP0rhw12lG1H6QQ.png", emote_list({
         "/ajlol":               (156, 175, 0, 0)
         })),
-    Spritesheet("mlas1animotes_octcake", "http://b.thumbs.redditmedia.com/Wo8GACMOwWutYTRU.png", emote_list({
+    Spritesheet("mlas1animotes", "http://b.thumbs.redditmedia.com/Wo8GACMOwWutYTRU.png", emote_list({
         "/octcake":             (150, 200, 0, 0)
         })),
-    Spritesheet("mlas1animotes_pprage", "http://a.thumbs.redditmedia.com/iWdDfA389r5vAHAl.png", emote_list({
+    Spritesheet("mlas1animotes", "http://a.thumbs.redditmedia.com/iWdDfA389r5vAHAl.png", emote_list({
         "/pprage":              (368, 200, 0, 0)
         })),
-    Spritesheet("mlas1animotes_ppshuffle", "http://a.thumbs.redditmedia.com/tEeEaQZOEDKb5sNZ.png", emote_list({
+    Spritesheet("mlas1animotes", "http://a.thumbs.redditmedia.com/tEeEaQZOEDKb5sNZ.png", emote_list({
         "/ppshuffle":           (225, 200, 0, 0)
         })),
-    Spritesheet("mlas1animotes_twifly", "http://e.thumbs.redditmedia.com/xj0jHJeWLpKvN4LF.png", emote_list({
+    Spritesheet("mlas1animotes", "http://e.thumbs.redditmedia.com/xj0jHJeWLpKvN4LF.png", emote_list({
         "/twifly":              (149, 127, 0, 0)
         })),
-    Spritesheet("mlas1animotes_floatyesplin", "http://b.thumbs.redditmedia.com/2npjiT9Fm6QHKshs.png", emote_list({
+    Spritesheet("mlas1animotes", "http://b.thumbs.redditmedia.com/2npjiT9Fm6QHKshs.png", emote_list({
         "/floatyesplin":        (159, 222, 0, 0)
         })),
-    Spritesheet("mlas1animotes_dashcheer", "http://b.thumbs.redditmedia.com/9DPsf8nYEv0KQBig.png", emote_list({
+    Spritesheet("mlas1animotes", "http://b.thumbs.redditmedia.com/9DPsf8nYEv0KQBig.png", emote_list({
         "/dashcheer":           (350, 200, 0, 0)
         })),
+    # FIXME: We need a better way to specify custom CSS like this... more
+    # cascades!
+    CustomCss("mlas1animotes", [
+        "twiflap", "twitwich", "ppexcited", "andyisanasshat", "ajchew", "twiexcited",
+        "twilightsparkle", "raritwitch", "pphugs", "spikewoo", "derpydance",
+        "rimshot", "twirun", "lickiepie", "derpslide", "pomf", "twiderp", "giggle",
+        "heyyeah", "pptwitcha", "fswb", "twipeck", "lbspin", "ajready", "twihorror",
+        "ajlol", "octcake", "pprage", "ppshuffle", "twifly", "floatyesplin",
+        "dashcheer"], {
+            "margin-left": "3px",
+            "margin-right": "3px"
+        }),
 
     ########################################################################
     ##
@@ -1692,6 +1704,10 @@ Things = [
     Spritesheet("daylightemotes_darklelicious", "http://e.thumbs.redditmedia.com/FkUaYPZv0ORPNau4.png", emote_list({
         "/darklelicious":       (600, 600, 0, 0),
         })),
+    CustomCss("daylightemotes_darklelicious", ["darklelicious"], {
+        "margin-left": "3px",
+        "margin-right": "3px"
+        }),
     Spritesheet("daylightemotes_darkletines", "http://d.thumbs.redditmedia.com/nWmDa2kY7hKLHNr-.png", emote_list({
         "/darkletines":         (100, 105, 0, -85),
         })),
