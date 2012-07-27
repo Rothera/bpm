@@ -68,6 +68,7 @@ class JsGenerator:
             self.pending_section = True
 
     def map_link(self, path, css_class):
+        path = path.lower()
         if self.pending_section:
             if self._write_newline:
                 self.file.write(",\n")
