@@ -2172,6 +2172,108 @@ Things = [
 
     ########################################################################
     ##
+    ## R/MYLITTLEBANNERTEST
+    ##
+    ########################################################################
+
+    # Misc emotes
+    Spritesheet("mylittlebannertest_blockjuice", "http://e.thumbs.redditmedia.com/hlrAgE8sTtVYdE8X.png", emote_list({
+        "/BlockJuice":          (526, 380, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_ppohu", "http://b.thumbs.redditmedia.com/Pm3nkna3kZVhpZhs.png", emote_list({
+        "/ppohu":               (150, 147, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_ppsong", "http://a.thumbs.redditmedia.com/hsj4owiuTkss42Kf.png", emote_list({
+        "/ppsong":              (600, 600, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_dashurbate", "http://e.thumbs.redditmedia.com/5uosEn09yJf_tKUv.png", emote_list({
+        "/dashurbate":          (133, 150, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_rougepie", "http://f.thumbs.redditmedia.com/39KDITX1Vm8WTcS5.png", emote_list({
+        "/roguepie":            (384, 411, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_pone", "http://d.thumbs.redditmedia.com/_X5pItgw8FQ2L1Pu.png", emote_list({
+        "/pone":                (558, 391, 0, 0)
+        })),
+
+    # Neck stuff
+    Spritesheet("mylittlebannertest_ppneck", "http://d.thumbs.redditmedia.com/1wwaohyTcWbmq793.png", emote_list({
+        "/ppneck":              (150, 150, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_ppneckturn", "http://e.thumbs.redditmedia.com/bH0INA0lQ3VyPSdL.png", emote_list({
+        "/ppneckturn":          (150, 150, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_ppcross", "http://f.thumbs.redditmedia.com/K18ksxgScxEnhhUA.png", emote_list({
+        "/ppcross":             (150, 150, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_ppend", "http://e.thumbs.redditmedia.com/9riW3I6Q773MDz-F.png", emote_list({
+        "/ppend":               (150, 150, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_ppend2", "http://c.thumbs.redditmedia.com/pj_IylWLwDh16_0b.png", emote_list({
+        "/ppend2":              (150, 150, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_ppt", "http://e.thumbs.redditmedia.com/XYwvJk8Q4-ZL5rK4.png", emote_list({
+        "/ppt":                 (150, 150, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_ppoverlap", "http://d.thumbs.redditmedia.com/ABmeTs-YHcg8qdQW.png", emote_list({
+        "/ppoverlap":           (150, 150, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_blank", "http://d.thumbs.redditmedia.com/pbotzChiVRXp4RXW.png", emote_list({
+        "/blank":               (150, 150, 0, 0)
+        })),
+
+    Spritesheet("mylittlebannertest_ppwalk", "http://b.thumbs.redditmedia.com/zQIQ_PvEanq4G7Qg.png", emote_list({
+        "/ppwalk":              (108, 126, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_pproll", "http://c.thumbs.redditmedia.com/M6VGiFy_D0aHhee8.png", emote_list({
+        "/doapinkieroll":       (106, 138, 0, 0),
+        "/pproll":              (106, 138, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_ppderp", "http://c.thumbs.redditmedia.com/gcGtDr1kcWEQKdP8.png", emote_list({
+        "/ppderp":              (150, 149, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_honk", "http://e.thumbs.redditmedia.com/nXsBtD9rKg9ZqzZL.png", emote_list({
+        "/honk":                (200, 168, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_trixiestache", "http://a.thumbs.redditmedia.com/RAFWgVx70Jag8Mv6.png", emote_list({
+        "/trixiestache":        (170, 200, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_jizz", "http://d.thumbs.redditmedia.com/K3_bLeg6rbxjuJYc.png", emote_list({
+        "/jizz":                (160, 97, 0, 0)
+        })),
+    Spritesheet("mylittlebannertest_llladies", "http://e.thumbs.redditmedia.com/JCMq43CUFl10BMrd.png", emote_list({
+        "/llladies":            (150, 150, 0, 0)
+        })),
+
+    # Omitted: /ban and /alt_text
+
+    Spritesheet("mylittlebannertest_votes", "http://b.thumbs.redditmedia.com/ckm8CrAbDaVtHTZI.png", emote_list({
+        "/downvote":            (14, 15, 0, -570),
+        "/upvote":              (14, 15, -32, -570)
+        })),
+
+    Spritesheet("mylittlebannertest_mirrorlee", "http://a.thumbs.redditmedia.com/oOB-gaiwZGVT3YlB.png", emote_list({
+        "/mirrorlee":           (300, 226, 0, 0)
+        })),
+
+    Spritesheet("mylittlebannertest_mirrorlee2", "http://a.thumbs.redditmedia.com/P4-LEcXHFPjHGZbx.png", emote_list({
+        "/mirrorlee2":          (300, 225, 0, 0)
+        })),
+
+    # Omitted: /tinytxt! and /pinkhover!
+
+    Spritesheet("mylittlebannertest_catleaves", "http://a.thumbs.redditmedia.com/uNKkT1pi0XDmD_nZ.png", emote_list({
+        "/catleaves":           (320, 199, 0, 0)
+        })),
+
+    # FIXME: Omitted: //#advicepbb, //#advicecmc, //#advicedash, //#advicederp,
+    # //#advicegummy, //#advicehoers, //#adviceluna, //#adviceoct, # //#advicepinkamina,
+    # //#advicescoot, //#advicescratch, //#advicescrew, //#adviceshy
+    #
+    # //#adviceajlie, //#adviceberry, //#advicepp, //#advicetia, //#philosopie
+
+    ########################################################################
+    ##
     ## END OF EMOTES
     ##
     ########################################################################
