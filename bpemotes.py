@@ -2355,6 +2355,51 @@ Things = [
 
     ########################################################################
     ##
+    ## R/MYLITTLEDAMON
+    ##
+    ########################################################################
+
+    Spritesheet("mylittledamon_wat", "http://a.thumbs.redditmedia.com/3DMawCWtihrXBe1N.png", emote_list({
+        "/eeewat":              (266, 389, 0, -24),
+        "/cheeriwat":           (266, 312, -266, -92),
+        })),
+
+    Spritesheet("mylittledamon_misc", "http://f.thumbs.redditmedia.com/T1WNIh53sRcVlJhY.png", emote_list({
+        "/damoneyes":           (168, 250, -2, -2),
+        "/damonflip":           (253, 200, -172, -2),
+        "/damonfun":            (250, 171, -427, -2),
+        "/damonnannersspiders": (295, 200, -679, -2),
+        "/damonplot":           (261, 200, -2, -254),
+        "/damonsalute":         (172, 200, -265, -254),
+        "/damonstop":           (200, 190, -439, -254),
+        "/damonwithit":         (149, 200, -641, -254),
+        })),
+
+    Spritesheet("mylittledamon_misc_r", "http://d.thumbs.redditmedia.com/vORpieYzfTya9Bqu.png", emote_list({
+        "/rdamoneyes":          (168, 250, -2, -2),
+        "/rdamonflip":          (253, 200, -172, -2),
+        "/rdamonfun":           (250, 171, -427, -2),
+        "/rdamonnannersspiders": (295, 200, -679, -2),
+        "/rdamonplot":          (261, 200, -2, -254),
+        "/rdamonsalute":        (283, 200, -265, -254),
+        "/rdamonstop":          (200, 190, -550, -254),
+        "/rdamonwithit":        (149, 200, -752, -254),
+        })),
+
+    Spritesheet("mylittledamon_damoncorn", "http://a.thumbs.redditmedia.com/rGA4LAPcCkYCIsVB.png", emote_list({
+        "/damoncorn":           (250, 315, 0, 0),
+        })),
+
+    Spritesheet("mylittledamon_damonwhat", "http://e.thumbs.redditmedia.com/t_2V13gM2jrZzu3R.png", emote_list({
+        "/damonwhat":           (450, 320, 0, 0),
+        })),
+
+    Spritesheet("mylittledamon_damonshrug", "http://f.thumbs.redditmedia.com/K05mIvLOPSyB0oJ_.png", emote_list({
+        "/damonshrug":          (200, 207, 0, 0),
+        })),
+
+    ########################################################################
+    ##
     ## END OF EMOTES
     ##
     ########################################################################
