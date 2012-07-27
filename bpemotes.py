@@ -2507,6 +2507,83 @@ Things = [
         "/ppstrut":             (149, 150, -2, -558),
         "/ppwhy":               (103, 125, -153, -558)
         })),
+
+    ########################################################################
+    ##
+    ## R/SURPRISE
+    ##
+    ########################################################################
+
+    # FIXME: Omitted: /surprise! font
+
+    Spritesheet("surprise_1", "http://e.thumbs.redditmedia.com/LQ3RkNWUdl2cxe44.png", emote_list({
+        "/sur00":               (70, 70, -2, -2),
+        "/sur01":               (70, 70, -74, -2),
+        "/sur02":               (70, 70, -146, -2),
+        "/sur03":               (50, 50, -218, -2),
+        "/sur04":               (70, 70, -270, -2),
+        "/sur05":               (70, 70, -342, -2),
+        "/sur06":               (70, 70, -414, -2),
+        "/sur07":               (70, 70, -2, -74),
+        "/sur10":               (70, 70, -74, -74),
+        "/sur11":               (70, 70, -146, -74),
+        "/sur12":               (70, 70, -218, -74),
+        "/sur13":               (70, 70, -290, -74),
+        "/sur14":               (70, 70, -362, -74),
+        "/sur15":               (50, 50, -434, -74),
+        "/sur16":               (70, 70, -2, -146),
+        "/sur17":               (70, 70, -74, -146),
+        "/sur20":               (70, 70, -146, -146),
+        "/sur21":               (70, 70, -218, -146),
+        "/sur22":               (70, 70, -290, -146),
+        "/sur23":               (70, 70, -362, -146),
+        "/sur24":               (70, 70, -434, -146),
+        "/sur25":               (50, 50, -2, -218),
+        "/thatsnothowyouspellsurprise": (70, 70, -54, -218)
+        })),
+
+    # Copies from r/mylittleandysonic1. I figure I may as well keep the ones
+    # in a larger spritesheet instead.
+    #Spritesheet("surprise_2", "http://d.thumbs.redditmedia.com/SeZkfOaoIQO77qUi.png", emote_list({
+    #    "/sur26":               (70, 75, 0, 0),
+    #    "/rsur26":              (70, 75, -82, 0)
+    #    })),
+
+    Spritesheet("surprise_3", "http://d.thumbs.redditmedia.com/5YQ_SQd6ciktbBFi.png", emote_list({
+        "/surbeam":             (150, 150, -2, -2),
+        "/surdance":            (183, 160, -2, -154),
+        "/surprisesad":         (125, 150, -2, -316),
+        "/sursad":              (125, 150, -2, -316)
+        })),
+
+    Spritesheet("surprise_4", "http://b.thumbs.redditmedia.com/gkl_sDq1Wa-Hyajg.png", emote_list({
+        "/wingit":              (267, 273, -2, -2),
+        "/draze":               (267, 273, -2, -2),
+        "/surumad":             (250, 182, -271, -2),
+        "/surwhatisaid":        (175, 175, -523, -2),
+        "/surshock":            (250, 168, -700, -2),
+        "/surpudding":          (111, 154, -236, -277),
+        "/surangry":            (162, 150, -349, -277),
+        "/sursmile":            (102, 150, -513, -277),
+        "/surtoot":             (164, 150, -617, -277),
+        "/surdevious":          (155, 150, -783, -277),
+        "/surhuh":              (77, 150, -940, -277),
+        "/surfun":              (225, 150, -1, -285),
+        "/surfrown":            (116, 150, -2, -435),
+        "/surwat":              (144, 150, -120, -435),
+        "/surmina":             (69, 150, -266, -435),
+        "/surkick":             (154, 150, -337, -435),
+        "/suroutofnowhere":     (150, 144, -493, -435),
+        "/surcrazed":           (150, 122, -645, -435),
+        "/surfly":              (180, 105, -797, -435),
+        "/surplot":             (150, 86, -2, -587)
+        })),
+
+    Spritesheet("surprise_5", "http://f.thumbs.redditmedia.com/winjdjbvQ81aAD1e.png", emote_list({
+        "/surwink":             (72, 70, 0, 0),
+        "/surwinkbig":          (131, 122, -72, 0)
+        })),
+
     ########################################################################
     ##
     ## END OF EMOTES
