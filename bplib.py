@@ -152,16 +152,17 @@ class PsuedoEmote:
         out.js.map_link(self.name, selector)
 
 class CustomCss:
-    def __init__(self, section, selector, props):
+    def __init__(self, section, selectors, props):
         self.section = section
-        self.selector = selector
+        self.selectors = selectors
         self.props = props
 
     def __call__(self, out):
         out.begin_section(self.section)
         # Calling selector() may not be desirable 100% of the time, but as yet
         # I don't care
-        out.css.write_class(out.css.selector(self.section, self.selector), self.props)
+        selector = ", ".join(out.css.selector(self.section, sel) for sel in self.selectors)
+        out.css.write_class(selector, self.props)
 
 def emote_grid(emote_size, grid):
     emotes = []

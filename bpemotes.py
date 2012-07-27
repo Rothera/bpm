@@ -188,22 +188,22 @@ Things = [
 
     # These emotes have various hover attributes... TODO: make a better way to
     # do this. Ideally a parameter to Emote()...
-    CustomCss("mylittleandysonic1_misc1", "flutterumm:hover", {
+    CustomCss("mylittleandysonic1_misc1", ["flutterumm:hover"], {
         "width": "146px", "height": "152px", "background-position": "-146px -0px"
         }),
-    CustomCss("mylittleandysonic1_misc1", "flutterwhat:hover", {
+    CustomCss("mylittleandysonic1_misc1", ["flutterwhat:hover"], {
         "width": "146px", "height": "152px", "background-position": "-0px -0px"
         }),
-    CustomCss("mylittleandysonic1_misc1", "sackflip:hover", {
+    CustomCss("mylittleandysonic1_misc1", ["sackflip:hover"], {
         "width": "199px", "height": "129px", "background-position": "-491px -0px"
         }),
-    CustomCss("mylittleandysonic1_misc1", "sackfun:hover", {
+    CustomCss("mylittleandysonic1_misc1",[ "sackfun:hover"], {
         "width": "187px", "height": "220px", "background-position": "-0px -220px"
         }),
-    CustomCss("mylittleandysonic1_misc1", "shitemote:hover", {
+    CustomCss("mylittleandysonic1_misc1", ["shitemote:hover"], {
         "width": "270px", "height": "263px", "background-position": "-433px -220px"
         }),
-    CustomCss("mylittleandysonic1_misc1", "shitemote:active", {
+    CustomCss("mylittleandysonic1_misc1", ["shitemote:active"], {
         "width": "275px", "height": "266px", "background-position": "-703px -220px"
         }),
 
@@ -341,10 +341,10 @@ Things = [
         "/fleurfun":            (215, 162, 0, -1123),
         "/slutfun":             (215, 162, 0, -1123)
         })),
-    CustomCss("mylittleandysonic1_misc4", "brodyhover:hover", {
+    CustomCss("mylittleandysonic1_misc4", ["brodyhover:hover"], {
         "width": "118px", "height": "117px", "background-position": "-393px -302px"
         }),
-    CustomCss("mylittleandysonic1_misc4", "rbrodyhover:hover", {
+    CustomCss("mylittleandysonic1_misc4", ["rbrodyhover:hover"], {
         "width": "106px", "height": "117px", "background-position": "-393px -536px"
         }),
 
@@ -979,7 +979,7 @@ Things = [
         "/2k":                  (88, 154, -442, -516),
         "/1d":                  (81, 154, -532, -516)
         })),
-    CustomCss("mylittleandysonic1_misc1", "pptoothover:hover", {
+    CustomCss("mylittleandysonic1_misc1", ["pptoothover:hover"], {
         "background-image": "url(http://b.thumbs.redditmedia.com/LxzHhnJr-rZAeIbU.png)",
         "width": "163px", "height": "153px", "background-position": "-557px -477px"
         }),
@@ -1101,7 +1101,7 @@ Things = [
         "/this":                (128, 166, -523, -654),
         "/trix1":               (205, 142, -653, -654)
         })),
-    CustomCss("mylittleandysonic1_misc4", "rpptoothover:hover", {
+    CustomCss("mylittleandysonic1_misc4", ["rpptoothover:hover"], {
         "background-image": "url(http://b.thumbs.redditmedia.com/TiiUeMVjYgIblgg1.png)",
         "width": "158px", "height": "151px", "background-position": "-144px -516px"
         }),
@@ -1164,10 +1164,10 @@ Things = [
         "/thatswhatisaid":      (175, 175, -324, -704)
         })),
     # These two swap on hover
-    CustomCss("mylittleandysonic1_misc6", "pinkiehover:hover", {
+    CustomCss("mylittleandysonic1_misc6", ["pinkiehover:hover"], {
         "width": "185px", "height": "160px", "background-position": "-206px -272px"
         }),
-    CustomCss("mylittleandysonic1_misc6", "rpinkiehover:hover", {
+    CustomCss("mylittleandysonic1_misc6", ["rpinkiehover:hover"], {
         "width": "185px", "height": "160px", "background-position": "-206px -272px"
         }),
 
