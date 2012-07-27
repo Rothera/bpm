@@ -1984,22 +1984,22 @@ Things = [
     # is completely broken, though, so it doesn't matter.
     Spritesheet("vinylscratch_hnnng", "http://d.thumbs.redditmedia.com/00T3gLdOawm80o--.png", emote_list({
         "/vshnngg":             (70, 70, 0, 0),
-        "/hnnng":               (70, 70, 0, 0),
+        "/hnnng":               (70, 70, 0, 0)
         })),
 
     Spritesheet("vinylscratch_tableflip", "http://a.thumbs.redditmedia.com/TMFvsdV9zMTRLQyH.png", emote_list({
         "/vstableflip":         (400, 291, 0, 0),
-        "/tableflip":           (400, 291, 0, 0),
+        "/tableflip":           (400, 291, 0, 0)
         })),
 
     Spritesheet("vinylscratch_shrug", "http://c.thumbs.redditmedia.com/XOs3xf6RINSK7sPt.png", emote_list({
         "/shrug":               (300, 300, 0, 0),
-        "/vsshrug":             (300, 300, 0, 0),
+        "/vsshrug":             (300, 300, 0, 0)
         })),
 
     Spritesheet("vinylscratch_laying", "http://f.thumbs.redditmedia.com/a2SG_AiO-Mojc5E5.png", emote_list({
         "/laying":              (200, 164, 0, 0),
-        "/vslaying":            (200, 164, 0, 0),
+        "/vslaying":            (200, 164, 0, 0)
         })),
 
     ########################################################################
@@ -2043,10 +2043,10 @@ Things = [
 
     # Couple of misc emotes
     Spritesheet("mylittleonions_bestpony", "http://thumbs.reddit.com/t5_2t0fc_7.png", emote_list({
-        "/bestpony":            (50, 50, 0, 0),
+        "/bestpony":            (50, 50, 0, 0)
         })),
     Spritesheet("mylittleonions_lunasmile", "http://thumbs.reddit.com/t5_2t0fc_6.png", emote_list({
-        "/lunasmile":           (80, 80, 0, 0),
+        "/lunasmile":           (80, 80, 0, 0)
         })),
 
     # O block or /sad*
@@ -2071,11 +2071,11 @@ Things = [
         "/rainbowspider":       (300, 356, 0, -491),
         "/spiderty":            (300, 219, 0, -848),
         "/applespider":         (300, 290, 0, -1068),
-        "/spiderpie":           (300, 433, 0, -1359),
+        "/spiderpie":           (300, 433, 0, -1359)
         })),
 
     Spritesheet("mylittlenopenopenope_spikegnat", "http://d.thumbs.redditmedia.com/NfJ293E5qIYW9gOQ.png", emote_list({
-        "/spikegnat":           (166, 224, 0, 0),
+        "/spikegnat":           (166, 224, 0, 0)
         })),
 
     ########################################################################
