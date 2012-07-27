@@ -10,10 +10,24 @@
 
 "use strict";
 
-$("a").each(function(index) {
-    var emote = this.pathname.toLowerCase();
+function process(node) {
+    var emote = node.pathname.toLowerCase();
     if(emote_map.hasOwnProperty(emote)) {
         console.log("Applying CSS to " + emote + ": " + emote_map[emote]);
-        $(this).addClass(emote_map[emote]);
+        $(node).addClass(emote_map[emote]);
     }
+}
+
+$("a").each(function(index) {
+    process(this);
 });
+
+var observer = new MutationSummary({
+    callback: function(summaries) {
+        summaries[0].added.forEach(function(a) {
+            process(a);
+        });
+    },
+    queries: [
+        {element: "a"}
+    ]});
