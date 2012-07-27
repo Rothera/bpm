@@ -2361,7 +2361,7 @@ Things = [
 
     Spritesheet("mylittledamon_wat", "http://a.thumbs.redditmedia.com/3DMawCWtihrXBe1N.png", emote_list({
         "/eeewat":              (266, 389, 0, -24),
-        "/cheeriwat":           (266, 312, -266, -92),
+        "/cheeriwat":           (266, 312, -266, -92)
         })),
 
     Spritesheet("mylittledamon_misc", "http://f.thumbs.redditmedia.com/T1WNIh53sRcVlJhY.png", emote_list({
@@ -2372,7 +2372,7 @@ Things = [
         "/damonplot":           (261, 200, -2, -254),
         "/damonsalute":         (172, 200, -265, -254),
         "/damonstop":           (200, 190, -439, -254),
-        "/damonwithit":         (149, 200, -641, -254),
+        "/damonwithit":         (149, 200, -641, -254)
         })),
 
     Spritesheet("mylittledamon_misc_r", "http://d.thumbs.redditmedia.com/vORpieYzfTya9Bqu.png", emote_list({
@@ -2383,19 +2383,19 @@ Things = [
         "/rdamonplot":          (261, 200, -2, -254),
         "/rdamonsalute":        (283, 200, -265, -254),
         "/rdamonstop":          (200, 190, -550, -254),
-        "/rdamonwithit":        (149, 200, -752, -254),
+        "/rdamonwithit":        (149, 200, -752, -254)
         })),
 
     Spritesheet("mylittledamon_damoncorn", "http://a.thumbs.redditmedia.com/rGA4LAPcCkYCIsVB.png", emote_list({
-        "/damoncorn":           (250, 315, 0, 0),
+        "/damoncorn":           (250, 315, 0, 0)
         })),
 
     Spritesheet("mylittledamon_damonwhat", "http://e.thumbs.redditmedia.com/t_2V13gM2jrZzu3R.png", emote_list({
-        "/damonwhat":           (450, 320, 0, 0),
+        "/damonwhat":           (450, 320, 0, 0)
         })),
 
     Spritesheet("mylittledamon_damonshrug", "http://f.thumbs.redditmedia.com/K05mIvLOPSyB0oJ_.png", emote_list({
-        "/damonshrug":          (200, 207, 0, 0),
+        "/damonshrug":          (200, 207, 0, 0)
         })),
 
 
@@ -2447,7 +2447,7 @@ Things = [
         "/rns23":               (77, 75, -167, -464),
         "/rns24":               (83, 75, -246, -464),
         "/rns25":               (86, 75, -331, -464),
-        "/rns26":               (74, 75, -419, -464),
+        "/rns26":               (74, 75, -419, -464)
         })),
 
     ########################################################################
@@ -2460,7 +2460,7 @@ Things = [
         [["/rose1"], ["/rose2"], ["/rose3"]],
         [["/rose4"], ["/rose5"], ["/rose6"]],
         [["/rose7"], ["/rose8"], ["/rose9"]],
-        [["/rose10"], ["/rose11"], ["/rose12"]],
+        [["/rose10"], ["/rose11"], ["/rose12"]]
         ])),
 
     ########################################################################
@@ -2491,7 +2491,7 @@ Things = [
         "/ppserious":           (140, 150, -289, -670),
         "/ppsmile":             (148, 150, -2, -822),
         "/ppsoar":              (150, 63, -152, -822),
-        "/ppthismuch":          (152, 150, -304, -822),
+        "/ppthismuch":          (152, 150, -304, -822)
         })),
 
     Spritesheet("pinkiepie_misc2", "http://e.thumbs.redditmedia.com/Yj8Ona1_B_1jpBHp.png", emote_list({
@@ -2505,9 +2505,8 @@ Things = [
         "/ppsing":              (102, 160, -2, -356),
         "/ppsteamingmad":       (351, 200, -106, -356),
         "/ppstrut":             (149, 150, -2, -558),
-        "/ppwhy":               (103, 125, -153, -558),
+        "/ppwhy":               (103, 125, -153, -558)
         })),
-
     ########################################################################
     ##
     ## END OF EMOTES
