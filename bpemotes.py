@@ -18,7 +18,10 @@
 ##   will win out everywhere else.
 ##
 
-ConflictWhitelist = ("/gilda", "/manlytears")
+ConflictOverrides = {
+    "/gilda": "mylittleandysonic1_misc7",
+    "/manlytears": "mylittleandysonic1_misc9",
+    }
 
 from bplib import *
 
@@ -443,7 +446,7 @@ Things = [
         "/roguewithit":         (390, 417, 0, -1102),
         "/hate":                (284, 188, 0, -1519),
         "/liarmac":             (116, 156, -284, -1519),
-        "/qqfyq":               (156, 142, 0, -1707),
+        "/QQfYQ":               (156, 142, 0, -1707),
         "/ppfreakout":          (156, 142, 0, -1707),
         "/ppquite":             (106, 106, -156, -1707),
         "/ppscared":            (138, 156, -262, -1707),
@@ -1172,7 +1175,7 @@ Things = [
         "/chess":               (306, 150, -2, -2),
         "/dashdrunk":           (255, 175, -310, -2),
         "/lawl":                (330, 128, -567, -2),
-        "/darqwolff":           (330, 128, -567, -2),
+        "/DarqWolff":           (330, 128, -567, -2),
         "/offthewagon":         (288, 175, -2, -179),
         "/pon3withit":          (246, 268, -292, -179),
         "/ppcandy":             (156, 200, -540, -179),
