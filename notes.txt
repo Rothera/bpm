@@ -1,0 +1,87 @@
+General:
+    We need an [](/sp):
+        a[href="/sp"] {
+            display: inline-block;
+            padding-right: 100%
+            }
+
+r/applejack:
+    They have /ja and /aj tables numbered up through the tenth row, but they
+    only have emotes to go with five and eight of them, respectively. The extra
+    "emotes" (which presently wrap around again) are omitted.
+
+r/darkleemotes:
+    There's a big, commented-out block at the bottom for a missing "%%dashie%%"
+    set of emotes. Where did these go?
+
+r/idliketobeatree:
+    The /st table has emotes numbered through the tenth row, but only three
+    exist. The remaining ones are omitted.
+
+r/mylittleandysonic1:
+    - We omit a large pile of colored text things.
+
+    - /fillyrd and /fillydash are supposed to be the same
+
+    - /lunafilly is mentioned (probably supposed to be an alias for /fillyluna?)
+      but not fully defined. It's omitted, since it breaks convention anyway.
+
+r/mylittlebannertest:
+    - Omitted /ban, /alt_text, /tinytxt!, /pinkhover!, and all the //#advice
+      crap.
+
+r/mylittledaww:
+    - /gummy conflicts with r/mlas1's, so omitted.
+
+    /*in-line emotes -in and -inp, e.g. texttext[](/b24-in)texttext*/
+    a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
+        float: none !important;
+        display: inline-block !important
+        }
+
+r/mylittlenanners:
+    - //#bneodestiny omitted.
+    - a[href|="/bra04"] broken
+    - a[href|="/brajbaffle"] broken
+    - a[href|="/brlootascoo"] broken
+    - a[href|="/brajtherapy"] broken
+    - a[href|="/brscootacheer"] broken
+    - a[href|="/brabhuh"] broken
+    - a[href|="/bra14"] broken
+    - a[href|="/brajconfused"] broken
+    - a[href|="/brraritydaww"] broken
+    - a[href|="/brlily"] broken
+    - a[href|="/brthehorror"] broken
+
+r/mylittlepony:
+    - /gilda and /manlytears conflict with r/mlas1's, so omitted.
+
+    /*in-line emotes -in and -inp, e.g. texttext[](/b24-in)texttext*/
+    a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
+        float: none !important;
+        display: inline-block !important
+        }
+
+- r/mylittlewtf:
+    - Omitted -blink! tag.
+    - /2f is broken in one place (missing "a" bit)
+    - a[href|="/ryourface"] is broken
+    - a[href|="/ioib"] is broken
+
+- r/surprise:
+    - /sur26 and /rsur26 are duplicates from r/mlas1, so omitted.
+
+- r/thebestpony:
+    - a[href|="/trixboject2"] typo
+    - a[href|="/rtrixboject2"] typo
+    - /rdcry and /rrdcry conflict with r/mlp, so removed.
+    - /smooze and /rsmooze
+    - /twifly with r/mlas1animotes
+    - /twipoker with r/mlwtf
+
+- r/vinylscratch:
+    - typo breaks both /vsdeal and /rvs01; corrected
+    - similar breaks /vs07 and /vshappy; also corrected
+    - /rvs01 and /rvs02 don't exist
+    - /vshnngg is typoed as /vshnnng, but it doesn't matter
+    - LOTS of positive offsets. strange, but ignored.
