@@ -2037,6 +2037,28 @@ Things = [
 
     ########################################################################
     ##
+    ## R/MYLITTLEONIONS
+    ##
+    ########################################################################
+
+    # Couple of misc emotes
+    Spritesheet("mylittleonions_bestpony", "http://thumbs.reddit.com/t5_2t0fc_7.png", emote_list({
+        "/bestpony":            (50, 50, 0, 0),
+        })),
+    Spritesheet("mylittleonions_lunasmile", "http://thumbs.reddit.com/t5_2t0fc_6.png", emote_list({
+        "/lunasmile":           (80, 80, 0, 0),
+        })),
+
+    # O block or /sad*
+    Spritesheet("mylittleonions_o", "http://e.thumbs.redditmedia.com/UgMxrXOPXOHMUTtR.png", emote_grid((80, 80), [
+        [["/o00", "/pinkasad"], ["/o01", "/sadderpy"], ["/o02", "/sadflutter"]],
+        [["/o10", "/sadrarity"], ["/o11", "/sadwhooves"], ["/o12", "/sadtwilight"]],
+        [["/o20", "/saddash"], ["/o21", "/sadlyra"], ["/o22", "/sadtwilight2"]],
+        [["/o30", "/wobblederp"]]
+        ])),
+
+    ########################################################################
+    ##
     ## END OF EMOTES
     ##
     ########################################################################
