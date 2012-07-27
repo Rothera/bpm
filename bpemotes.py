@@ -2057,6 +2057,27 @@ Things = [
         [["/o30", "/wobblederp"]]
         ])),
 
+
+    ########################################################################
+    ##
+    ## R/MYLITTLENOPENOPENOPE
+    ##
+    ########################################################################
+
+    # The maine ones
+    Spritesheet("mylittlenopenopenope_spiders", "http://e.thumbs.redditmedia.com/lxmNhqsnudJLBYDL.png", emote_list({
+        "/flutterspider":       (300, 281, 0, 0),
+        "/twilightspider":      (300, 208, 0, -282),
+        "/rainbowspider":       (300, 356, 0, -491),
+        "/spiderty":            (300, 219, 0, -848),
+        "/applespider":         (300, 290, 0, -1068),
+        "/spiderpie":           (300, 433, 0, -1359),
+        })),
+
+    Spritesheet("mylittlenopenopenope_spikegnat", "http://d.thumbs.redditmedia.com/NfJ293E5qIYW9gOQ.png", emote_list({
+        "/spikegnat":           (166, 224, 0, 0),
+        })),
+
     ########################################################################
     ##
     ## END OF EMOTES
