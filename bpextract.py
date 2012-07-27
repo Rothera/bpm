@@ -103,11 +103,15 @@ def pop_prop(d, k, n=1, *default):
         d.pop(k)
     return tmp
 
-def verify_prop(name, props, key, value):
+def verify_prop(name, props, key, value, default=False):
     try:
         v = pop_prop(props, key)
     except KeyError:
-        raise ValueError(name, key)
+        if default:
+            print("WARNING: %s is missing %s: %s; fixing" % (name, key, value))
+            return
+        else:
+            raise ValueError(name, key)
 
     if v != value:
         raise ValueError(name, key)
@@ -127,7 +131,7 @@ def parse_emote(name, props):
 
     verify_prop(name, props, "display", "block")
     verify_prop(name, props, "clear", "none")
-    verify_prop(name, props, "float", "left")
+    verify_prop(name, props, "float", "left", True)
 
     try:
         width = parse_size(pop_prop(props, "width"))
