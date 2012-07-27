@@ -1637,7 +1637,7 @@ Things = [
         })),
 
     # Some misc emotes. Too lazy to grid these.
-    Spritesheet("daylightemotes_misc", "http://f.thumbs.redditmedia.com/-V4Q6hK9nKYY-KxG.png", emote_list({
+    Spritesheet("daylightemotes_misc1", "http://f.thumbs.redditmedia.com/-V4Q6hK9nKYY-KxG.png", emote_list({
         "/darkleunimpressed":   (70, 70, 0, 0),
         "/darklehmm":           (70, 70, -70, 0),
         "/dwatching":           (70, 70, -140, 0),
@@ -1651,7 +1651,7 @@ Things = [
         })),
 
     # A few of the previous emotes, reversed. (Not all...)
-    Spritesheet("daylightemotes_misc_r", "http://a.thumbs.redditmedia.com/-dL2k6urlB4KN6hH.png", emote_list({
+    Spritesheet("daylightemotes_misc1_r", "http://a.thumbs.redditmedia.com/-dL2k6urlB4KN6hH.png", emote_list({
         "/rdarklepride":        (70, 70, 0, -70),
         "/rdarklecrazy":        (70, 70, -140, -70),
         "/rdarklebeam":         (70, 70, -140, -210),
@@ -1730,6 +1730,209 @@ Things = [
         "/hmmyesquite":         (60, 60, -70, -173),
         "/nobiggie":            (70, 70, 0, -197),
         "/iseewhatyoudidthere": (70, 70, 0, -267),
+        })),
+
+    ########################################################################
+    ##
+    ## R/MYLITTLENANNERS
+    ##
+    ########################################################################
+
+    # Some misc emotes
+    Spritesheet("mylittlenanners_misc1", "http://f.thumbs.redditmedia.com/rxi2oy-sx9BCxEW5.png", emote_grid((70, 70), [
+        # Two in the first row have no names...
+        [["/fruitapants"], ["/fruitaloo"], [], ["/greatfruitaful"], []],
+        [["/fruitacord"], ["/fruitarity"], ["/fruitaspike"], ["/twinom"], ["/fruitabolt"]],
+        [["/fruitaberry"], ["/whatalovelybanana"], ["/shytwi"], ["/lunawantk"], ["/fruitadowell"]],
+        [["/fruitacora"], ["/disbanana"], ["/karmabanana"], ["/fruityfruity"], ["/talkaboutfruitacandy"]],
+        [["/donotwantk"], ["/dowantk"]]
+        ])),
+
+    # Some more misc emotes
+    Spritesheet("mylittlenanners_misc2", "http://a.thumbs.redditmedia.com/ASKX1QiwLXNiDKCZ.png", emote_list({
+        "/bananawithit":        (133, 150, 0, 0),
+        "/peelwithit":          (133, 150, 0, 0),
+        "/bananasalute":        (119, 150, -133, 0),
+        "/foreverilonis":       (185, 150, -252, 0),
+        "/bjelly":              (185, 150, -252, 0),
+        })),
+
+    # Animated PBJT emotes
+    Spritesheet("mylittlenanners_pbjt", "http://e.thumbs.redditmedia.com/tXQiGaFBXsO50q0p.png", emote_grid((35, 35), [
+        [["/pbjtscoots"], ["/pbjtderpy"], ["/pbjtflutters"]],
+        [["/pbjtlyra"], ["/pbjtpinkie"], ["/pbjtdash"]],
+        [["/pbjttwi"]]
+        ])),
+
+    # r/mylittlepony B table, and reversed B table (they're not actually reversed)
+    Spritesheet("mylittlenanners_b", "http://f.thumbs.redditmedia.com/bXZJBkgrgdaNM0zG.png", emote_grid((50, 50), [
+        [["/bb00", "/bflutterfear", "/brb00", "/brflutterfear"], ["/bb10", "/bppboring", "/brb10", "/brppboring"],
+            ["/bb20", "/brarityyell", "/brb20", "/brrarityyell"], ["/bb30", "/bfluttershy", "/brb30", "/brfluttershy"]],
+        [["/bb01", "/bajcower", "/brb01", "/brajcower"], ["/bb11", "/bajsly", "/brb11", "/brajsly"],
+            ["/bb21", "/beeyup", "/brb21", "/breeyup"], ["/bb31", "/brdsmile", "/brb31", "/brrdsmile"]],
+        [["/bb02", "/bfluttersrs", "/brb02", "/brfluttersrs"], ["/bb12", "/braritydress", "/brb12", "/brraritydress"],
+            ["/bb22", "/btakealetter", "/brb22", "/brtakealetter"], ["/bb32", "/brdwut", "/brb32", "/brrdwut"]],
+        [["/bb03", "/bppshrug", "/brb03", "/brppshrug"], ["/bb13", "/bspikenervous", "/bnewrainbowdash", "/brb13", "/brspikenervous", "/brnewrainbowdash"],
+            ["/bb23", "/bnoooo", "/brb23", "/brnoooo"], ["/bb33", "/bdj", "/bthreedog", "/brb33", "/brdj", "/brthreedog"]],
+        [["/bb04", "/bfluttershh", "/brb04", "/brfluttershh"], ["/bb14", "/bflutteryay", "/brb14", "/brflutteryay"],
+            ["/bb24", "/bsquintyjack", "/brb24", "/brsquintyjack"], ["/bb34", "/bspikepushy", "/brb34", "/brspikepushy"]],
+        [["/bb05", "/bajugh", "/brb05", "/brajugh"], ["/bb15", "/braritywut", "/brb15", "/brraritywut"],
+            ["/bb25", "/bdumbfabric", "/brb25", "/brdumbfabric"], ["/bb35", "/braritywhy", "/brb35", "/brraritywhy"]],
+        [["/bb06", "/btrixiesmug", "/brb06", "/brtrixiesmug"], ["/bb16", "/bflutterwink", "/brb16", "/brflutterwink"],
+            ["/bb26", "/brarityannoyed", "/brb26", "/brrarityannoyed"], ["/bb36", "/bsoawesome", "/brb36", "/brsoawesome"]],
+        [["/bb07", "/bajwut", "/brb07", "/brajwut"], ["/bb17", "/btwisquint", "/brb17", "/brtwisquint"],
+            ["/bb27", "/braritywhine", "/brb27", "/brraritywhine"], ["/bb37", "/brdcool", "/brb37", "/brrdcool"]],
+        [["/bb08", "/babwut", "/brb08", "/brabwut"], ["/bb18", "/bmanspike", "/brb18", "/brmanspike"],
+            ["/bb28", "/bcockatrice", "/brb28", "/brcockatrice"], ["/bb38", "/bfacehoof", "/brb38", "/brfacehoof"]],
+        [["/bb09", "/brarityjudge", "/brb09", "/brrarityjudge"], ["/bb19", "/brarityprimp", "/brb19", "/brrarityprimp"],
+            ["/bb29", "/btwirage", "/brb29", "/brtwirage"], ["/bb39", "/bppseesyou", "/brb39", "/brppseesyou"]]
+        ])),
+
+    # r/mylittlepony C table, and reversed C table (not actually reversed)
+    Spritesheet("mylittlenanners_c", "http://d.thumbs.redditmedia.com/GuWf660kUmlGRYwi.png", emote_grid((70, 70), [
+        [["/bc00", "/brc00", "/brdsitting", "/brrdsitting"], ["/bc10", "/brc10", "/brdhappy", "/brrdhappy"],
+            ["/bc20", "/brc20", "/brdannoyed", "/brrdannoyed"]],
+        [["/bc01", "/brc01", "/btwismug", "/brtwismug"], ["/bc11", "/brc11", "/btwismile", "/brtwismile"],
+            ["/bc12", "/brc12", "/bparty", "/brparty"]],
+        [["/bc02", "/brc02", "/bohhi", "/brohhi"], ["/bc21", "/brc21", "/btwistare", "/brtwistare"],
+            ["/bc22", "/brc22", "/bhahaha", "/brhahaha"]],
+        [["/bc03", "/brc03", "/bflutterblush", "/brflutterblush"], ["/bc13", "/brc13", "/bgross", "/brgross"],
+            ["/bc23", "/brc23", "/bderpyhappy", "/brderpyhappy"]],
+        [["/bc04", "/brc04", "/bajfrown", "/brajfrown"], ["/bc14", "/brc14", "/bhmmm", "/brhmmm"],
+            ["/bc24", "/brc24", "/bjoy", "/brjoy"]],
+        [["/bc05", "/brc05", "/braritysad", "/brraritysad"], ["/bc15", "/brc15", "/bfabulous", "/brfabulous"],
+            ["/bc25", "/brc25", "/bderp", "/brderp"]],
+        [["/bc06", "/brc06", "/blouder", "/brlouder"], ["/bc16", "/brc16", "/blunasad", "/brlunasad"],
+            ["/bc26", "/brc26", "/bderpyshock", "/brderpyshock"]],
+        [["/bc07", "/brc07", "/bpinkamina", "/brpinkamina"], ["/bc17", "/brc17", "/bloveme", "/brloveme"],
+            ["/bc27", "/brc27", "/blunagasp", "/brlunagasp"]],
+        [["/bc08", "/brc08", "/bscootaloo", "/brscootaloo"], ["/bc18", "/brc18", "/bcelestia", "/brcelestia"],
+            ["/bc28", "/brc28", "/bangel", "/brangel"]],
+        [["/bc09", "/brc09", "/ballmybits", "/brallmybits"], ["/bc19", "/brc19", "/bzecora", "/brzecora"],
+            ["/bc29", "/brc29", "/bphotofinish", "/brphotofinish"]]
+        ])),
+
+    # Partial r/mylittlepony A table, and reversed A table (not actually reversed)
+    Spritesheet("mylittlenanners_a", "http://e.thumbs.redditmedia.com/7iXyOZvxFfdx6-mX.png", emote_grid((70, 70), [
+        [["/ba00", "/bra00", "/bajlie", "/brajlie"], ["/ba10", "/bra10", "/bpriceless", "/brpriceless"],
+            ["/ba20", "/bra20", "/bflutterjerk", "/brflutterjerk"]],
+        [["/ba01", "/bra01", "/btwipride", "/brtwipride"], ["/ba11", "/bra11", "/bcelestiamad", "/brcelestiamad"],
+            ["/ba21", "/bra21", "/btwicrazy", "/brtwicrazy"]],
+        [["/ba02", "/blunateehee", "/bra02", "/brlunateehee"], ["/ba12", "/blunawait", "/bra12", "/brlunawait"],
+            ["/ba22", "/bpaperbagderpy", "/bpaperbagwizard", "/bderpwizard", "/bra22",
+             "/brpaperbagderpy", "/brpaperbagwizard", "/brderpwizard"]],
+        [["/ba03", "/bajhappy", "/bhapplejack", "/bra03", "/brajhappy", "/brhapplejack"],
+            ["/ba13", "/bra13", "/bppfear", "/brppfear", "/bpinkiefear", "/brpinkiefear"],
+            ["/ba23", "/bra23", "/btwibeam", "/brtwibeam"]],
+        [["/ba04", "/bra04", "/braritydaww", "/brraritydaww"],
+            ["/ba14", "/bra14", "/bscootacheer", "/brscootacheer", "/blootascoo", "/brlootascoo"]] # Swagintosh is separate
+        ])),
+
+    # Swagintosh
+    Spritesheet("mylittlenanners_swagintosh", "http://f.thumbs.redditmedia.com/8xvRZa4mPPfhuBUA.png", emote_grid((70, 70), [
+        [["/ba24", "/bswagintosh"]]
+        ])),
+
+    # r/mylittlepony E table, or some of it. It's also rearranged.
+    Spritesheet("mylittlenanners_e", "http://c.thumbs.redditmedia.com/oHkXl2qQO4hI_OnV.png", emote_grid((70, 70), [
+        [["/bl00", "/brl00", "/blyra"], ["/bt00", "/brt00", "/bfillytgap", "/brfillytgap"], ["/bbonbon", "/brbonbon"]],
+        [["/bsnails", "/brsnails"], ["/brdhuh", "/brrdhuh"], ["/bspitfire", "/brspitfire"]],
+        [["/bcutealoo", "/brcutealoo"], ["/bhappyluna", "/brhappyluna", "/blunahappy", "/brlunahappy"], ["/bsotrue", "/brsotrue"]],
+        [["/bwahaha", "/brwahaha"], ["/bsbstare", "/brsbstare"], ["/bberry", "/brberry", "/bpunchdrunk", "/brpunchdrunk"]],
+        [["/babsmile", "/brabsmile"], ["/bhuhhuh", "/brhuhhuh"], ["/bdealwithit", "/brdealwithit"]],
+        [["/bnmm", "/bblacksnooty", "/brnmm", "/brblacksnooty", "/bqueenmeanie", "/brqueenmeanie", "/bhokeysmokes", "/brhokeysmokes"],
+            ["/bwhooves", "/brwhooves"], ["/brdsalute", "/brrdsalute"]],
+        [["/boctavia", "/broctavia"], ["/bcolgate", "/brcolgate"], ["/bcheerilee", "/brcheerilee"]],
+        [["/bajconfused", "/brajconfused", "/bajbaffle", "/brajbaffle", "/bajtherapy", "/brajtherapy"],
+            ["/babhuh", "/brabhuh"], ["/blily", "/brlily", "/bthehorror", "/brthehorror"]]
+        ])),
+
+    # Flip tables
+    Spritesheet("mylittlenanners_flip", "http://e.thumbs.redditmedia.com/wsgG2PPiT1uzQlk4.png", emote_list({
+        "/ballthetables":       (1009, 603, 0, 0),
+        "/babflip":             (179, 130, -2, -2),
+        "/bsbflip":             (179, 130, -183, -2),
+        "/bscootflip":          (179, 130, -364, -2),
+        "/boctflip":            (200, 134, -545, -2),
+        "/bshyflip":            (200, 134, -747, -2),
+        "/bflutflip":           (200, 134, -747, -2),
+        "/brderpflip":          (177, 145, -2, -138),
+        "/bpieflip":            (200, 145, -181, -138),
+        "/brarflip":            (199, 145, -383, -138),
+        "/blyraflip":           (199, 145, -584, -138),
+        "/bajflip":             (187, 145, -785, -138),
+        "/bberryflip":          (199, 145, -2, -285),
+        "/bdashflip":           (200, 145, -203, -285),
+        "/bbonflip":            (199, 145, -405, -285),
+        "/bderpflip":           (200, 145, -606, -285),
+        "/bkarmaflip":          (199, 145, -808, -285),
+        "/blunaflip":           (171, 145, -2, -432),
+        "/bdpflip":             (199, 145, -175, -432),
+        "/bdisflip":            (199, 145, -175, -432),
+        "/broseflip":           (200, 146, -376, -432),
+        "/btiaflip":            (200, 169, -578, -432),
+        "/bananaflip":          (225, 150, -775, -451)
+        })),
+
+    # Fun table
+    Spritesheet("mylittlenanners_fun", "http://a.thumbs.redditmedia.com/eQNLBKN407gNEwBx.png", emote_list({
+        "/bajfun":              (230, 156, -2, -2),
+        "/bbonfun":             (259, 156, -234, -2),
+        "/bcheerfun":           (242, 156, -495, -2),
+        "/bdashfun":            (255, 156, -739, -2),
+        "/bderpfun":            (270, 156, -2, -160),
+        "/blyrafun":            (228, 156, -274, -160),
+        "/bppfun":              (244, 156, -504, -160),
+        "/brarfun":             (285, 156, -2, -318),
+        "/brosefun":            (227, 156, -289, -318),
+        "/bshyfun":             (263, 156, -518, -318),
+        "/btrixfun":            (272, 156, -2, -476)
+        })),
+
+    Spritesheet("mylittlenanners_iloveyou", "http://c.thumbs.redditmedia.com/Ur26BaSdgJeEUNi8.png", emote_list({
+        "/iloveyou":            (278, 180, 0, 0)
+        })),
+
+    # Spiders
+    Spritesheet("mylittlenanners_spider", "http://b.thumbs.redditmedia.com/AmBHnjcEKlEEZS9O.png", emote_list({
+        "/bflutterspider":      (300, 281, 0, 0),
+        "/btwilightspider":     (300, 208, 0, -282),
+        "/brainbowspider":      (300, 356, 0, -491),
+        "/bspiderty":           (300, 219, 0, -848),
+        "/bapplespider":        (300, 290, 0, -1068),
+        "/bspiderpie":          (300, 433, 0, -1359)
+        })),
+
+    Spritesheet("mylittlenanners_spikegnat", "http://e.thumbs.redditmedia.com/p7WtzOaiGf5AkdDF.png", emote_list({
+        "/bspikegnat":          (166, 224, 0, 0)
+        })),
+
+    # Misc emotes
+    Spritesheet("mylittlenanners_misc3", "http://a.thumbs.redditmedia.com/T15GwnwvO5GiA1Ix.png", emote_list({
+        "/beershrug":           (204, 150, 0, 0),
+        "/bjcakeday":           (90, 100, -214, 0),
+        "/craft03":             (100, 70, -204, -100),
+        "/craftshrug":          (100, 70, -204, -100)
+        })),
+
+    # Animated /fruitawut
+    Spritesheet("mylittlenanners_fruitawut", "http://b.thumbs.redditmedia.com/5MQBk9lF1re-wLjg.png", emote_list({
+        "/fruitawut":           (263, 263, 0, 0)
+        })),
+
+    # Misc emotes
+    Spritesheet("mylittlenanners_misc4", "http://d.thumbs.redditmedia.com/UHPMBFgk7D4eAhAE.png", emote_list({
+        "/batman":              (123, 150, 0, 0),
+        "/dasnice":             (65, 70, -123, 0),
+        "/opti":                (65, 70, -123, 0),
+        "/oot":                 (127, 200, -226, 0),
+        "/portal1":             (200, 143, -351, 0),
+        "/derpysad":            (200, 137, -551, 0),
+        "/onebutt":             (105, 105, -578, -137),
+        "/ploot":               (128, 75, 0, -150),
+        "/p18":                 (87, 100, -491, -176),
+        "/root":                (150, 85, -341, -191),
+        "/portal2":             (115, 77, -226, -199)
         })),
 
     ########################################################################
