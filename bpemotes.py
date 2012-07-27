@@ -2004,6 +2004,39 @@ Things = [
 
     ########################################################################
     ##
+    ## R/APPLEJACK
+    ##
+    ########################################################################
+
+    # Jappleack emotes. Their CSS goes through /ja?9, but the image only has up
+    # to 4.
+    Spritesheet("applejack_ja", "http://c.thumbs.redditmedia.com/s4U1qWHQCinja2nJ.png", emote_grid((70, 70), [
+        [["/ja00"], ["/ja10"], ["/ja20"]],
+        [["/ja01"], ["/ja11"], ["/ja21"]],
+        [["/ja02"], ["/ja12"], ["/ja22"]],
+        [["/ja03"], ["/ja13"], ["/ja23"]],
+        [["/ja04"], ["/ja14"], ["/ja24"]]
+        ])),
+
+    # Applejack emotes. Their CSS defines up through /aj?9 but the image only
+    # goes to 7.
+    Spritesheet("applejack_aj", "http://b.thumbs.redditmedia.com/tAVdTAJ19CQIKOTy.png", emote_grid((70, 70), [
+        [["/aj00"], ["/aj10"], ["/aj20"]],
+        [["/aj01"], ["/aj11"], ["/aj21"]],
+        [["/aj02"], ["/aj12"], ["/aj22"]],
+        [["/aj03"], ["/aj13"], ["/aj23"]],
+        [["/aj04"], ["/aj14"], ["/aj24"]],
+        [["/aj05"], ["/aj15"], ["/aj25"]],
+        [["/aj06"], ["/aj16"], ["/aj26"]],
+        [["/aj07"], ["/aj17"], ["/aj27"]]
+        ])),
+
+    # There is a block of "old-style" emotes marked as START-PONYSCRIPT-IGNORE,
+    # which I assume are deprecated. They're numbered /00, /10, /01, etc. and
+    # mirror the /aj block. They are not included here.
+
+    ########################################################################
+    ##
     ## END OF EMOTES
     ##
     ########################################################################
