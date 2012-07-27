@@ -1606,6 +1606,134 @@ Things = [
 
     ########################################################################
     ##
+    ## R/DAYLIGHTEMOTES
+    ##
+    ########################################################################
+
+    # r/mylittlepony B table
+    Spritesheet("daylightemotes_b", "http://f.thumbs.redditmedia.com/7YZVem6weUXtdzfM.png", emote_list({
+        "/darklefacehoof":      (50, 50, -150, -400),
+        "/darklerage":          (50, 50, -100, -450),
+        })),
+
+    # r/mylittlepony reversed B table
+    Spritesheet("daylightemotes_b_r", "http://d.thumbs.redditmedia.com/RBG-mt6jhvawJ-WW.png", emote_list({
+        "/rdarklefacehoof":     (50, 50, -150, -400),
+        "/rdarklerage":         (50, 50, -100, -450),
+        })),
+
+    # r/mylittlepony C table
+    Spritesheet("daylightemotes_c", "http://e.thumbs.redditmedia.com/yFeg2zwZ5IdlGtEL.png", emote_list({
+        "/darklesmug":          (70, 70, 0, -70),
+        "/darklesmile":         (70, 70, -70, -70),
+        "/darklestare":         (70, 70, -140, -70),
+        })),
+
+    # r/mylittlepony reversed C table
+    Spritesheet("daylightemotes_c_r", "http://e.thumbs.redditmedia.com/Rb70kimzCBXBkSSL.png", emote_list({
+        "/rdarklesmug":         (70, 70, 0, -70),
+        "/rdarklesmile":        (70, 70, -70, -70),
+        "/rdarklestare":        (70, 70, -140, -70),
+        })),
+
+    # Some misc emotes. Too lazy to grid these.
+    Spritesheet("daylightemotes_misc", "http://f.thumbs.redditmedia.com/-V4Q6hK9nKYY-KxG.png", emote_list({
+        "/darkleunimpressed":   (70, 70, 0, 0),
+        "/darklehmm":           (70, 70, -70, 0),
+        "/dwatching":           (70, 70, -140, 0),
+        "/darklepride":         (70, 70, 0, -70),
+        "/darkleapathy":        (70, 70, -70, -70),
+        "/darklecrazy":         (70, 70, -140, -70),
+        # There are two other emotes on this row, and two on the next, with no
+        # names.
+        "/dbaconisareallylongemotenamesonoonewilluseitsuckitave": (70, 70, 0, -140),
+        "/darklebeam":          (70, 70, -140, -210),
+        })),
+
+    # A few of the previous emotes, reversed. (Not all...)
+    Spritesheet("daylightemotes_misc_r", "http://a.thumbs.redditmedia.com/-dL2k6urlB4KN6hH.png", emote_list({
+        "/rdarklepride":        (70, 70, 0, -70),
+        "/rdarklecrazy":        (70, 70, -140, -70),
+        "/rdarklebeam":         (70, 70, -140, -210),
+        })),
+
+    # Some misc emotes, mostly copies of various r/mylittleandysonic1 things.
+    Spritesheet("daylightemotes_misc2", "http://d.thumbs.redditmedia.com/v0xA6gFxlpBur8vi.png", emote_list({
+        "/darkleno":            (200, 175, -250, 0),
+        "/dzz00":               (60, 65, -450, 0),
+        "/darkletrix":          (100, 89, -510, 0),
+        "/darklemina":          (55, 69, -450, -66),
+        "/dv10":                (55, 69, -450, -66),
+        "/dw01":                (70, 70, -510, -95),
+        "/darklehate":          (290, 184, -320, -176),
+        "/darkleclop":          (70, 70, -250, -180),
+        "/darkleok":            (60, 73, 0, -266),
+        "/darkleye":            (70, 67, -60, -266),
+        "/darklehat":           (130, 150, -131, -267),
+        })),
+
+    # More misc emotes, mostly copies of the /yy shipping block from r/mlas1.
+    Spritesheet("daylightemotes_misc3", "http://a.thumbs.redditmedia.com/tGZ6u-G8O0fpj4u6.png", emote_list({
+        "/darkleflip":          (200, 135, 0, 0),
+        "/darklewhy":           (185, 150, -200, 0),
+        "/dyy01":               (150, 145, -465, 0),
+        "/dyy11":               (150, 150, -615, 0),
+        "/darklehorn":          (200, 120, 0, -136),
+        "/dyy02":               (149, 145, -466, -145),
+        "/dyy12":               (149, 150, -616, -145),
+        "/dyy03":               (150, 150, -468, -295),
+        "/dyy13":               (150, 150, -615, -297),
+        "/dyy04":               (150, 150, -465, -450),
+        "/dyy14":               (150, 150, -615, -450),
+        "/dyy05":               (150, 138, -465, -600),
+        "/dyy15":               (150, 138, -615, -600),
+        })),
+
+    Spritesheet("daylightemotes_darklelicious", "http://e.thumbs.redditmedia.com/FkUaYPZv0ORPNau4.png", emote_list({
+        "/darklelicious":       (600, 600, 0, 0),
+        })),
+    Spritesheet("daylightemotes_darkletines", "http://d.thumbs.redditmedia.com/nWmDa2kY7hKLHNr-.png", emote_list({
+        "/darkletines":         (100, 105, 0, -85),
+        })),
+    Spritesheet("daylightemotes_pix", "http://e.thumbs.redditmedia.com/nvPxI17wbGKU99Ev.png", emote_list({
+        "/pix":                 (100, 129, 0, 0),
+        })),
+    Spritesheet("daylightemotes_lulu", "http://f.thumbs.redditmedia.com/nxPak4vremqwjFUG.png", emote_list({
+        "/lulu":                (60, 77, 0, 0),
+        })),
+    Spritesheet("daylightemotes_cupcake", "http://b.thumbs.redditmedia.com/8sruN9l4eYazv587.png", emote_list({
+        "/cupcake":             (100, 103, 0, 0),
+        })),
+    Spritesheet("daylightemotes_discordyes", "http://e.thumbs.redditmedia.com/X5-jLiBIpV0R3Rwp.png", emote_list({
+        "/discordYES":          (200, 200, 0, 0),
+        })),
+    Spritesheet("daylightemotes_cottoncandy", "http://d.thumbs.redditmedia.com/ccYKKYs6rkQN7-RQ.png", emote_list({
+        "/cottoncandy":         (150, 83, 0, 0),
+        })),
+    Spritesheet("daylightemotes_refrefref", "http://f.thumbs.redditmedia.com/DcGkHJT3e8lm8DU_.png", emote_list({
+        "/refrefref":           (176, 174, 0, 0),
+        })),
+    Spritesheet("daylightemotes_bigbacon", "http://a.thumbs.redditmedia.com/J4JBs1YP2Pw-RLSN.png", emote_list({
+        "/bigbacon":            (321, 300, 0, 0),
+        })),
+    Spritesheet("daylightemotes_chivswag", "http://c.thumbs.redditmedia.com/dDcbgUrAIB-ERYuh.png", emote_list({
+        "/chivswag":            (200, 207, 0, 0),
+        })),
+
+    Spritesheet("daylightemotes_discord", "http://d.thumbs.redditmedia.com/qttc5Gq4nfPVqEnW.png", emote_list({
+        "/thiscord":            (149, 126, 0, 0),
+        "/flipscord":           (200, 129, -150, 0),
+        "/seriouslydiscord":    (178, 200, -350, 0),
+        "/ohfine":              (70, 70, 0, -127),
+        "/dismad":              (50, 46, -70, -127),
+        "/w999":                (70, 70, -130, -129),
+        "/hmmyesquite":         (60, 60, -70, -173),
+        "/nobiggie":            (70, 70, 0, -197),
+        "/iseewhatyoudidthere": (70, 70, 0, -267),
+        })),
+
+    ########################################################################
+    ##
     ## END OF EMOTES
     ##
     ########################################################################
