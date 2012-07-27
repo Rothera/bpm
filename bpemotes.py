@@ -2080,6 +2080,98 @@ Things = [
 
     ########################################################################
     ##
+    ## R/MYLITTLELIVESTREAM
+    ##
+    ########################################################################
+
+    Spritesheet("mylittlelivestream_misc", "http://d.thumbs.redditmedia.com/l4cDOu6qv4ycC3z-.png", emote_list({
+        "/plotdance":           (128, 128, 0, 0),
+        "/ajplot":              (128, 128, 0, 0),
+        "/clickyclicky":        (128, 128, 0, 0),
+        "/exquisite":           (128, 128, -128, 0),
+        "/fancydance":          (128, 128, -128, 0),
+        "/twiannoyed":          (128, 128, -256, 0),
+        "/plotpirouette":       (128, 128, -384, 0),
+        "/taviplot":            (128, 128, -384, 0),
+        "/berrynotwant":        (128, 128, -640, 0),
+        "/pillzhere":           (128, 128, -768, 0),
+        "/lunawant":            (128, 128, 0, -128),
+        "/whytwi":              (128, 128, -128, -128),
+        "/whytwiwhy":           (128, 128, -128, -128),
+        "/vyplot":              (128, 128, -256, -128),
+        "/plotspin":            (128, 128, -256, -128),
+        "/tavyblobs":           (128, 128, -384, -128),
+        "/tavihugs":            (128, 128, -640, -128),
+        "/datplot":             (128, 128, -768, -128),
+        "/vygrab":              (128, 128, 0, -256),
+        "/a123":                (128, 128, 0, -256),
+        "/bassdrop":            (128, 128, 0, -256),
+        "/plottwirl":           (128, 128, -128, -256),
+        "/twiplot":             (128, 128, -128, -256),
+        "/raritysnub":          (128, 128, -256, -256),
+        "/twinkle":             (128, 128, -384, -256),
+        "/twinkledance":        (128, 128, -384, -256),
+        "/hotrod":              (128, 128, -512, -256),
+        "/howaboutyou":         (128, 128, -640, -256),
+        "/disatwinkle":         (128, 128, -768, -256),
+        "/vyhug":               (128, 128, 0, -384),
+        "/iscc":                (128, 128, -128, -384),
+        "/ajsketch":            (128, 128, -256, -384),
+        "/plotwhirl":           (128, 128, -384, -384),
+        "/rarityplot":          (128, 128, -384, -384),
+        "/abwant":              (128, 128, -512, -384),
+        "/twiscare":            (128, 128, -640, -384)
+        })),
+    CustomCss("mylittlelivestream_misc", [
+        "plotdance:hover", "fancydance:hover", "whytwiwhy:hover", "a123:hover",
+        "plottwirl:hover", "plotspin:hover", "plotpirouette:hover", "twinkledance:hover",
+        "plotwhirl:hover"
+        ], {
+        "background-image": "url(http://f.thumbs.redditmedia.com/60YFXodfTo1pL99G.png)"
+        }),
+    CustomCss("mylittlelivestream_misc", ["clickyclicky:active"], {
+        "background-image": "url(http://f.thumbs.redditmedia.com/60YFXodfTo1pL99G.png)",
+        "background-position": "-128px -256px"
+        }),
+
+    Spritesheet("mylittlelivestream_misc_r", "http://f.thumbs.redditmedia.com/60YFXodfTo1pL99G.png", emote_list({
+        "/rajplot":             (128, 128, 0, 0),
+        "/rexquisite":          (128, 128, -128, 0),
+        "/rtwiannoyed":         (128, 128, -256, 0),
+        "/rtaviplot":           (128, 128, -384, 0),
+        "/rberrynotwant":       (128, 128, -640, 0),
+        "/rpillzhere":          (128, 128, -768, 0),
+        "/rlunawant":           (128, 128, 0, -128),
+        "/rwhytwi":             (128, 128, -128, -128),
+        "/rvyplot":             (128, 128, -256, -128),
+        "/rtavyblobs":          (128, 128, -384, -128),
+        "/rtavihugs":           (128, 128, -640, -128),
+        "/rdatplot":            (128, 128, -768, -128),
+        "/rvygrab":             (128, 128, 0, -256),
+        "/rtwiplot":            (128, 128, -128, -256),
+        "/rraritysnub":         (128, 128, -256, -256),
+        "/rtwinkle":            (128, 128, -384, -256),
+        "/rhotrod":             (128, 128, -512, -256),
+        "/rhowaboutyou":        (128, 128, -640, -256),
+        "/rdisatwinkle":        (128, 128, -768, -256),
+        "/rvyhug":              (128, 128, 0, -384),
+        "/riscc":               (128, 128, -128, -384),
+        "/rajsketch":           (128, 128, -256, -384),
+        "/rrarityplot":         (128, 128, -384, -384),
+        "/rabwant":             (128, 128, -512, -384),
+        "/rtwiscare":           (128, 128, -640, -384)
+        })),
+
+    Spritesheet("mylittlelivestream_thumb", "http://c.thumbs.redditmedia.com/yDC0y4pn_GUog5nb.png", emote_list({
+        "/thumb":               (128, 128, 0, 0),
+        })),
+    CustomCss("mylittlelivestream_thumb", ["thumb:hover"], {
+        "width": "640", "height": "480",
+        "background-image": "url(http://c.thumbs.redditmedia.com/IDazZyPZY9hvYgU2.png)"
+        }),
+
+    ########################################################################
+    ##
     ## END OF EMOTES
     ##
     ########################################################################
