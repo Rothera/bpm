@@ -141,7 +141,14 @@ def parse_emote(name, props):
 
     assert width > 0 and height > 0
 
-    x_pos, y_pos = map(parse_size, pop_prop(props, "background-position", 2, ["0px", "0px"]))
+    # FIXME: It's only safe to do this if it's the only one in the sheet,
+    # otherwise it might just be missing (e.g. defined in the big list, but
+    # never positioned).
+    #
+    # I hope this hasn't caused any problems, as it's too late to re-check
+    # everything against this bug.
+    #x_pos, y_pos = map(parse_size, pop_prop(props, "background-position", 2, ["0px", "0px"]))
+    x_pos, y_pos = map(parse_size, pop_prop(props, "background-position", 2))
     if x_pos > 0 or y_pos > 0:
         print("WARNING: positive spritesheet offsets in", name)
 

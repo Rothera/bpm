@@ -5,6 +5,12 @@ General:
             padding-right: 100%
             }
 
+r/ainbowdash:
+    - /fillydash conflicts with r/mlas1, so omitted. It has a lot of aliases,
+      though, and this one isn't even publicized.
+    - All of the /rd?? aliases are omitted because of conflict with
+      r/idliketobeatree. r/dashiemotes has these in /dash?? form.
+
 r/applejack:
     They have /ja and /aj tables numbered up through the tenth row, but they
     only have emotes to go with five and eight of them, respectively. The extra
@@ -13,6 +19,11 @@ r/applejack:
 r/darkleemotes:
     There's a big, commented-out block at the bottom for a missing "%%dashie%%"
     set of emotes. Where did these go?
+
+r/dashiemotes:
+    - Conflict resolution for r/ainbowdash. Replaces /rd?? with /dash?? and
+      redefines /dash* and /wat. Of those, only the /dash?? ones are useful to
+      us; the rest are omitted.
 
 r/idliketobeatree:
     The /st table has emotes numbered through the tenth row, but only three
