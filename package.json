@@ -5,5 +5,13 @@
     "version": "0.1", 
     "fullName": "Better Ponymotes",
     "id": "jid1-tHrhDJXsKvsiCw",
-    "description": "View Reddit ponymotes across the site"
+    "description": "View Reddit ponymotes across the site",
+
+    "preferences": [{
+        "name": "enableExtraCSS",
+        "title": "Enable extra CSS (spins, rotates, etc.)",
+        "type": "bool",
+        "value": true,
+        "description": "Disabling this may improve performance."
+    }]
 }
