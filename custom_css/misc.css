@@ -17,3 +17,7 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
     float: none !important;
     display: inline-block !important
     }
+
+a[href^="/"][href*="-ar-"], a[href^="/"][href$="-ar"] {
+    float: right !important
+}
