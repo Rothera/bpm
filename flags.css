@@ -342,12 +342,3 @@ a[href*=-rotate],a[href*=-lrotate]{-moz-animation:zspin 2s infinite linear;image
 a[href*=-rrotate],a[href*=-lrrotate]{-moz-animation:znips 2s infinite linear;image-rendering:-moz-crisp-edges}
 
 .md{overflow-y:hidden !important}
-
-/*
- * Added since it makes sense here- stolen from various subreddits
- * - Typhos
- */
-a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
-    float: none !important;
-    display: inline-block !important
-    }
