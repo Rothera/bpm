@@ -17,6 +17,16 @@ import time
 
 import yaml
 
+# TODO: Change the way this all works.
+#    - Load all YAML files. Discard the emotes specified in the master config.
+#    - Flatten the CSS. Go from top-down according to classes (eventually).
+#      We can do this simply- each "object" (make them objects) at each tier
+#      has a css_props variable. Merge them downward.
+#    - Separate NSFW emotes out.
+#    - Compress according to whatever rules we like. Since we've just split
+#      stuff out, we can't do it from the original YAML files via "classes".
+#      Instead, try to make it smart, or something.
+
 def process_file(filename, data, css_rules, js_map, seen):
     for (image_url, emotes) in data.pop("Spritesheets", {}).items():
         process_spritesheet(css_rules, js_map, image_url, emotes, seen)
@@ -73,8 +83,8 @@ def process_emote(name, props, selectors, css_rules, js_map, seen):
         css_rules[(selector,)].update(props.pop("Extra CSS", {}))
 
     for (key, val) in props.items():
-        print("WARNING: Unknown property %r on %s in %s (%r)" % (
-            key, name, filename, val))
+        print("WARNING: Unknown property %r on %s in (%r)" % (
+            key, name, val))
 
     if not is_special(name):
         js_map[name.lower()] = selector.lstrip(".")

@@ -9,9 +9,16 @@
 
     "preferences": [{
         "name": "enableExtraCSS",
-        "title": "Enable extra CSS (spins, rotates, etc.)",
+        "title": "Enable extra emote modifiers",
+        "description": "Enables emote -spin modifiers and things. Disabling this may improve performance.",
         "type": "bool",
-        "value": true,
-        "description": "Disabling this may improve performance."
+        "value": true
+    },
+    {
+        "name": "enableNSFW",
+        "title": "Enable NSFW emotes",
+        "description": "(Note: This is currently unimplemented.)",
+        "type": "bool",
+        "value": false
     }]
 }
