@@ -1,7 +1,7 @@
 default: data/betterponymotes.css
 
-data/betterponymotes.css: data/emote_classes.css data/flags.css
-	cat data/emote_classes.css data/flags.css > data/betterponymotes.css
+data/betterponymotes.css: emote_classes.css flags.css misc.css
+	cat emote_classes.css flags.css misc.css > data/betterponymotes.css
 
-data/emote_classes.css: emotes/*.yaml
+emote_classes.css: emotes/*.yaml
 	./bpgen.py emotes/*.yaml
