@@ -34,7 +34,7 @@ def parse_block(text):
     return (parse_selectors(selectors), parse_properties(props)), text
 
 def parse_selectors(string):
-    selectors = string.split(",")
+    selectors = [s.strip() for s in string.split(",") if s.strip()]
     return filter(None, [parse_selector(sel) for sel in selectors])
 
 def parse_selector(string):
