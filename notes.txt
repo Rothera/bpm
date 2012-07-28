@@ -84,11 +84,23 @@ r/mylittlepony:
         display: inline-block !important
         }
 
+- r/mylittlesupportgroup:
+    - Several colored text things are omitted.
+    - They have both /hidash and /hidashie; neither work because of this.
+      (Well, /hidashie is Twilight.) Both are omitted for now.
+    - /woona is supposed to be ignored, but is partially in the wrong block.
+    - There's a bunch of incompatible /filly* aliases marked as "old aliases"
+      with BEGIN-PONYSCRIPT-IGNORE.
+
 - r/mylittlewtf:
     - Omitted -blink! tag.
     - /2f is broken in one place (missing "a" bit)
     - a[href|="/ryourface"] is broken
     - a[href|="/ioib"] is broken
+
+- r/speedingturtle:
+    - /rdj conflicts with r/mlp and has no nice solution. Omitted because I
+      generally prefer giving main subs precedence.
 
 - r/surprise:
     - /sur26 and /rsur26 are duplicates from r/mlas1, so omitted.
