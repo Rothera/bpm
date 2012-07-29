@@ -1,0 +1,15 @@
+{
+    "name": "Better Ponymotes",
+    "version": "0.1",
+    "manifest version": 2,
+
+    "description": "View Reddit ponymotes across the site",
+
+    "content_scripts": [{
+        "matches": ["*://*.reddit.com/*"],
+        "css": ["betterponymotes.css", "extracss-chrome.css"],
+        "js": [
+            "jquery-1.7.2.js", "mutation_summary.js",
+            "emote_map.js", "betterponymotes.js"]
+        }]
+}
