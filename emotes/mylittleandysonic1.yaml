@@ -582,6 +582,10 @@ Spritesheets:
             Positioning: [206, 200, -269, -162]
         /rcrossfire:
             Positioning: [186, 131, -265, -501]
+            Extra CSS:
+                "-moz-transform": scaleX(-1)
+                "-webkit-transform": scaleX(-1)
+                "-o-transform": scaleX(-1)
         /rdsax:
             Positioning: [171, 131, 0, -634]
         /rdwhat:

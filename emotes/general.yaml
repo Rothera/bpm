@@ -2,3 +2,37 @@ Custom:
     /sp:
         display: inline-block
         padding-right: 100%
+
+Spritesheets:
+    # Originates from RDJ's script, I think
+    http://i.imgur.com/baE1o.png:
+        /sbf:
+            Positioning: [80, 66, 0, 0]
+        /rsbf:
+            Positioning: [80, 66, 0, 0]
+            Extra CSS:
+                "-moz-transform": scaleX(-1)
+                "-webkit-transform": scaleX(-1)
+                "-o-transform": scaleX(-1)
+
+    # These are all supposedly from r/mlas1 originally, though they're not
+    # there anymore for some reason
+    http://f.thumbs.redditmedia.com/qi35qdw2_kvnMUcq.png:
+        /horseporn:
+            Positioning: [621, 511, 0, 0]
+            NSFW: true
+        /buzzkillturtle:
+            Positioning: [621, 511, 0, 0]
+            NSFW: true
+
+    http://d.thumbs.redditmedia.com/dN7SE1I0H0ul7jP-.png:
+        /today:
+            Positioning: [500, 270, 0, 0]
+    http://e.thumbs.redditmedia.com/reUrhLuICVFtwobp.png:
+        /imamakethisanemoterealquick:
+            Positioning: [456, 304, 0, 0]
+
+    # From r/mylittlebannertest, but not actually in it anymore
+    http://b.thumbs.redditmedia.com/ckm8CrAbDaVtHTZI.png:
+        /orangered:
+            Positioning: [15, 10, -62, -570]
