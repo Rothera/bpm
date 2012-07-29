@@ -16,6 +16,9 @@ import sys
 
 import yaml
 
+# FIXME: This script needs to be updated for the new YAML file format. Things
+# have changed, but I primarily speak of :hover and such.
+
 def parse_css(text):
     while True:
         rule, text = parse_block(text)
@@ -161,7 +164,7 @@ def parse_emote(name, props):
 
     emote = {"Positioning": positioning, "Spritesheet": image_url}
     if props:
-        emote["Extra CSS"] = props
+        emote["CSS"] = props
 
     return emote
 

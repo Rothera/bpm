@@ -8,9 +8,9 @@
     "content_scripts": [{
         "matches": ["*://*.reddit.com/*"],
         "run_at": "document_end",
-        "css": ["betterponymotes.css", "extracss-chrome.css"],
+        "css": ["emote-classes.css", "combiners.css", "misc.css", "extracss-chrome.css", "nsfw-emote-classes.css"],
         "js": [
             "jquery-1.7.2.js", "mutation_summary.js",
-            "emote_map.js", "betterponymotes.js"]
+            "emote-map.js", "betterponymotes.js"]
         }]
 }

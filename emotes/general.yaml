@@ -1,7 +1,8 @@
 Custom:
     /sp:
-        display: inline-block
-        padding-right: 100%
+        CSS:
+            display: inline-block
+            padding-right: 100%
 
 Spritesheets:
     # Originates from RDJ's script, I think
@@ -10,7 +11,7 @@ Spritesheets:
             Positioning: [80, 66, 0, 0]
         /rsbf:
             Positioning: [80, 66, 0, 0]
-            Extra CSS:
+            CSS:
                 "-moz-transform": scaleX(-1)
                 "-webkit-transform": scaleX(-1)
                 "-o-transform": scaleX(-1)
