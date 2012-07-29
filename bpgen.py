@@ -112,7 +112,7 @@ def simplify(rules):
     def condense(prop_name, value, which=None):
         # Add new, combined rule
         selectors = which or properties[prop_name][value]
-        props = rules.setdefault(", ".join(selectors), {})
+        props = rules.setdefault(",".join(selectors), {})
         assert prop_name not in props
         props[prop_name] = value
 
@@ -144,10 +144,18 @@ def simplify(rules):
     for selector in properties["background-position"].get("0px 0px", []):
         rules[selector].pop("background-position")
 
-    # Pass 4: remove all empty rules (I don't think there are any yet)
+    # Pass 4: remove all empty rules (not that there are many)
     for (selector, props) in list(rules.items()): # can't change dict while iterating
         if not props:
             rules.pop(selector)
+
+def format_rule(selector, properties):
+    for (key, val) in properties.items():
+        if not isinstance(val, str):
+            raise ValueError("non-string key", key)
+
+    props_string = ";".join(("%s:%s" % (prop, value)) for (prop, value) in properties.items())
+    return "%s{%s}" % (selector, props_string)
 
 def dump_css(file, rules):
     file.write(AutogenHeader)
@@ -155,24 +163,16 @@ def dump_css(file, rules):
     for (selectors, properties) in rules.items():
         file.write("%s\n" % (format_rule(selectors, properties)))
 
-def format_rule(selector, properties):
-    for (key, val) in properties.items():
-        if not isinstance(val, str):
-            raise ValueError("non-string key", key)
-
-    props_string = "; ".join(("%s: %s" % (prop, value)) for (prop, value) in properties.items())
-    return "%s { %s }" % (selector, props_string)
-
 def dump_js(file, map):
     file.write(AutogenHeader)
     file.write("var emote_map = {\n")
 
-    strings = ["    %r: %r" % (emote.lower(), css_class.lstrip(".")) for (emote, css_class) in map.items()]
+    strings = ["%r:%r" % (emote.lower(), css_class.lstrip(".")) for (emote, css_class) in map.items()]
     file.write(",\n".join(strings))
 
     file.write("\n}\n")
 
-def main2():
+def main():
     parser = argparse.ArgumentParser(description="Generates BetterPonymotes's data files from a set of YAML inputs")
     parser.add_argument("--css", help="Output CSS file", type=argparse.FileType("w"), default="emote-classes.css")
     parser.add_argument("--nsfw", help="Output NSFW CSS file", type=argparse.FileType("w"), default="nsfw-emote-classes.css")
@@ -199,4 +199,4 @@ def main2():
     dump_js(args.js, js_map)
 
 if __name__ == "__main__":
-    main2()
+    main()
