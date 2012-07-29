@@ -102,6 +102,53 @@ def build_data(emotes):
 
     return css_rules, nsfw_css_rules, js_map
 
+def simplify(rules):
+    # Locate all known CSS properties, and sort selectors by their value
+    properties = {}
+    for (selector, props) in rules.items():
+        for (prop_name, prop_value) in props.items():
+            properties.setdefault(prop_name, {}).setdefault(prop_value, []).append(selector)
+
+    def condense(prop_name, value, which=None):
+        # Add new, combined rule
+        selectors = which or properties[prop_name][value]
+        props = rules.setdefault(", ".join(selectors), {})
+        assert prop_name not in props
+        props[prop_name] = value
+
+        # Delete from old ones
+        for selector in selectors:
+            rules[selector].pop(prop_name)
+
+    # TODO: Would be nice to automatically seek out stuff we can efficiently
+    # collapse, but for now, this achieves great gains for little complexity.
+
+    # Pass 1: condense the common stuff
+    condense("display", "block")
+    condense("clear", "none")
+    condense("float", "left")
+
+    # A lot of emotes are 70px square, though this only gets us about 35kb
+    w70 = set(properties["width"].get("70px", []))
+    h70 = set(properties["height"].get("70px", []))
+    subset = w70.intersection(h70)
+    condense("width", "70px", subset)
+    condense("height", "70px", subset)
+
+    # Pass 2: condense multi-emote spritesheets
+    for (image_url, selectors) in properties["background-image"].items():
+        if len(selectors) > 1:
+            condense("background-image", image_url)
+
+    # Pass 3: remove all useless background-position's
+    for selector in properties["background-position"].get("0px 0px", []):
+        rules[selector].pop("background-position")
+
+    # Pass 4: remove all empty rules (I don't think there are any yet)
+    for (selector, props) in list(rules.items()): # can't change dict while iterating
+        if not props:
+            rules.pop(selector)
+
 def dump_css(file, rules):
     file.write(AutogenHeader)
 
@@ -135,11 +182,18 @@ def main2():
 
     emotes = []
 
+    print("Processing emotes")
     for file in args.yaml:
         emotes.extend(process_file(file.name, yaml.load(file)))
 
+    print("Building files")
     css_rules, nsfw_css_rules, js_map = build_data(emotes)
 
+    print("Simplifying CSS")
+    simplify(css_rules)
+    simplify(nsfw_css_rules)
+
+    print("Dumping")
     dump_css(args.css, css_rules)
     dump_css(args.nsfw, nsfw_css_rules)
     dump_js(args.js, js_map)
