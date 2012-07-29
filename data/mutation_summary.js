@@ -24,8 +24,12 @@
   "use strict";
 
   // FIXME: Element.prototype isn't accessible from addons, apparently. This is
-  // a quick hack to make it work on Firefox.
-  var matchesSelector = "mozMatchesSelector";
+  // a quick hack to make it work on Firefox and Chrome for now.
+  if(typeof(chrome) != "undefined") {
+      var matchesSelector = "webkitMatchesSelector";
+  } else {
+    var matchesSelector = "mozMatchesSelector";
+  }
   /*
   var matchesSelector = 'matchesSelector';
   if ('webkitMatchesSelector' in Element.prototype)

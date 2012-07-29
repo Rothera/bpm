@@ -34,9 +34,24 @@ def process_file(filename, data, css_rules, js_map, seen):
     for (name, props) in data.pop("Custom", {}).items():
         selector = format_selector(name)
         assert (selector,) not in css_rules
-        assert name not in js_map
+
+        if name in js_map:
+            assert js_map[name] == selector.lstrip(".")
+
+        for (k, v) in props.items():
+            # Make sure they're all strings, as they should be. YAML sometimes
+            # converts things we don't want it to (integers), but for custom
+            # CSS we just assume everything's a string.
+            props[k] = str(v)
         css_rules[(selector,)] = props
-        js_map[name] = selector
+
+        # Another quick hack
+        if ":" in name:
+            name = name[:name.index(":")]
+        if ":" in selector:
+            selector = selector[:selector.index(":")]
+
+        js_map[name.lower()] = selector.lstrip(".")
 
     for section in data:
         print("WARNING: Unknown section %s in %s" % (section, filename))
@@ -103,6 +118,12 @@ def px(s):
 
 def format_selector(name):
     assert name.startswith("/")
+    # Quick hack (can't replace : with _ unconditionally because of :hover and
+    # such. FIXME)
+    if name == "/pp:3":
+        name = "/pp_3"
+    # Argh
+    name = name.replace("!", "_excl_")
     return ".bpmotes-%s" % (name.lstrip("/"))
 
 AutogenHeader = """
@@ -131,7 +152,7 @@ def dump_js(file, map):
     file.write(AutogenHeader)
     file.write("var emote_map = {\n")
 
-    strings = ["    %r: %r" % (emote, css_class) for (emote, css_class) in map.items()]
+    strings = ["    %r: %r" % (emote.lower(), css_class.lstrip(".")) for (emote, css_class) in map.items()]
     file.write(",\n".join(strings))
 
     file.write("\n}\n")
