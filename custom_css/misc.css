@@ -25,3 +25,15 @@ a[href^="/"][href*="-ar-"], a[href^="/"][href$="-ar"] {
 a[href^="/"][href*="-blink!"] {
     text-decoration: blink !important
     }
+
+a[href^="/"][href*="-comicsans!"] {
+    font-family: "Comic-Sans MS", cursive
+}
+
+a[href^="/"][href*="-impact!"] {
+    font-family: Impact, Charcoal, sans-serif
+}
+
+a[href^="/"][href*="-tahoma!"] {
+    font-family: Tahoma, Geneva, sans-serif
+}
