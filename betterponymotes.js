@@ -10,12 +10,12 @@
 
 "use strict";
 
-function process(node) {
-    var parts = node.pathname.toLowerCase().split("-")
+function process(element) {
+    var parts = element.pathname.toLowerCase().split("-")
     var emote = parts[0];
     if(emote_map.hasOwnProperty(emote)) {
         //console.log("Applying CSS to " + emote + ": " + emote_map[emote]);
-        $(node).addClass(emote_map[emote]);
+        element.className += " " + emote_map[emote];
     }
 }
 
