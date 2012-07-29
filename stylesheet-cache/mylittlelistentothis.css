@@ -1,0 +1,978 @@
+/*
+Change Log: 
+
+4-13-12 - System - Added /fdbacon
+4-19-12 - System - Added /chivswag
+4-23-12 - System - Link flair
+4-24-12 - System - Added /adagio
+4-24-12 - System - Other modifications
+4-28-12 - Hiero - Added Mafa Filly Sidebar Scratch
+5-7-12 - System - Concert Series link flair
+5-20-12 - Pie - Deleted /chivswag 
+5-22-12 - Hiero - Added taviscratch1, new background, sidebar tavi
+6-14-12 - Pie - Added /eip
+6-16-12 - System - /jfish
+6-26-12 - System - New album flair
+7-8-12  -  Top bar
+7-19-12 - Phei - RES fixes
+7-20-12 - Phei - Added /pheidance
+7-25-12 - Phei - Added /wubseverywhere
+7-25-12 - Hiero - Added LunaEarbuds2 to temporarily replace old RES night mode background.
+
+Last Backup: 7-18-2012 by hiero
+*/
+/* Top bar */
+.titlebox .usertext-body .md ol {
+    list-style: none;
+    position: absolute;
+    z-index: 9999;
+    padding: 4px 0 4px 0;
+    margin: 5px 5px 5px 5px;
+    left: 0px;
+    top: 75px;
+    right: 320px;
+    overflow: hidden;
+    background-color: #F0E6AA;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #EDD74A
+    }
+.content {
+    margin-top: 50px
+    }
+/* for IE - www.chrome.com */
+/* Misc Modifications */
+/* RES ToolTip fix */
+#authorInfoToolTip {
+    margin-top: 35px
+    }
+/*Remove RES tag and vote counts from moderator box because its ugly*/
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink {
+    display: none !important
+    }
+.arrow.down {
+    visibility: hidden !important;
+    display: none
+    }
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox span.number:after {
+    content: " Ponies + Scratch and Octavia"
+    }
+.thumbnail.nsfw {
+    background-image: url(http://f.thumbs.redditmedia.com/GMsMXrL4zylFsdw5.png) !important;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 70px
+    }
+.side {
+    width: 310px !important
+    }
+.titlebox table {
+    display: none;
+    clear: both
+    }
+.side div.usertext-body:hover table {
+    display: block;
+    clear: both;
+    position: relative;
+    left: -10px;
+    height: 465px;
+    width: 310px;
+    overflow: auto
+    }
+.md blockquote p:before, .help blockquote p:before {
+    content: "♫  " !important
+    }
+.md blockquote, .help blockquote {
+    border-left: dashed 0px !important
+    }
+.md blockquote p:after, .help blockquote p:after {
+    /* content: "  ?" !important; */
+    }
+/* Sidebar Scratch */
+.side a[href="http://www.reddit.com/r/mylittlelistentothis/new/"] {
+    background: url(http://c.thumbs.redditmedia.com/vXRWj0XsBbQ1GKFb.png) repeat scroll 0 0 transparent;
+    display: block;
+    height: 100px;
+    position: fixed;
+    right: -2px;
+    top: 150px;
+    width: 63px;
+    z-index: 999
+    }
+/* Image from: http://moongazeponies.deviantart.com/art/Vinyl-Scratch-210726958 */
+/* Background Image */
+body {
+    background: url(http://a.thumbs.redditmedia.com/mFvpn5ekDw-WyRzr.png) no-repeat fixed center bottom transparent !important
+    }
+/* Nightmode Background */
+.content #siteTable div[onclick="click_thing(this)"] {
+    background-color: transparent !important;
+    /* background: url(%%lunaearbuds2%%) no-repeat fixed center bottom transparent !important; */
+    }
+body.res-nightmode:first-of-type > .content {
+    background-color: transparent !important;
+    background: url(http://c.thumbs.redditmedia.com/bC_ZeQle3y6saxzt.png) no-repeat fixed center bottom transparent !important
+    }
+body.res-nightmode:first-of-type {
+    background-color: transparent !important;
+    background: url(http://c.thumbs.redditmedia.com/bC_ZeQle3y6saxzt.png) no-repeat fixed center bottom transparent !important
+    }
+/* Bottom Image */
+.footer-parent {
+    background-image: url(http://b.thumbs.redditmedia.com/e5QXaM3eCILRJ8IU.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    clear: both;
+    height: 800px;
+    margin-bottom: -1px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    text-align: center;
+    width: 100%
+    }
+/* Begin Emotes */
+/* Unique Emotes */
+/* Sheet 1 */
+a[href|="/flutterwonder"], a[href|="/system"], a[href|="/classyspitfire"], a[href|="/flimflamwoo"], a[href|="/discordcool"], a[href|="/rarityumm"], a[href|="/pokerlee"], a[href|="/dropdabass"], a[href|="/discordsing"], a[href|="/spit18"], a[href|="/pens"], a[href|="/fdbacon"], a[href|="/jfish"] {
+    background-image: url(http://e.thumbs.redditmedia.com/L7zH-FChTTGLTkML.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px
+    }
+a[href|="/flutterwonder"] {
+    background-position: 0 0
+    }
+a[href|="/system"] {
+    background-position: -91px 0
+    }
+a[href|="/classyspitfire"] {
+    background-position: -182px 0
+    }
+a[href|="/rarityumm"] {
+    background-position: 0 -91px
+    }
+a[href|="/dropdabass"] {
+    background-position: -91px -91px
+    }
+a[href|="/flimflamwoo"] {
+    background-position: -182px -91px
+    }
+a[href|="/discordsing"] {
+    background-position: 0 -182px
+    }
+a[href|="/discordcool"] {
+    background-position: -91px -182px
+    }
+a[href|="/pokerlee"] {
+    background-position: -182px -182px
+    }
+a[href|="/spit18"] {
+    background-position: 0 -273px
+    }
+a[href|="/pens"] {
+    background-position: -91px -273px
+    }
+a[href|="/fdbacon"] {
+    background-position: -182px -273px
+    }
+a[href|="/jfish"] {
+    background-position: -91px -364px
+    }
+/*Sheet 2*/
+a[href|="/awestruck"], a[href|="/cranky"], a[href|="/bloomdance"], a[href|="/rdheadbang"], a[href|="/flutterwat"], a[href|="/justfahn"], a[href|="/cooltavia"], a[href|="/rdheh"], a[href|="/sadjack"], a[href|="/itsbeautiful"], a[href|="/iwantit"], a[href|="/scratchpride"], a[href|="/spitfireum"], a[href|="/twielaine"], a[href|="/twigrin"] {
+    background-image: url(http://c.thumbs.redditmedia.com/raQzY7uD4LJKsq12.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px
+    }
+a[href|="/awestruck"] {
+    background-position: 0 0
+    }
+a[href|="/cranky"] {
+    background-position: -91px 0
+    }
+a[href|="/bloomdance"] {
+    background-position: -182px 0
+    }
+a[href|="/rdheadbang"] {
+    background-position: 0 -91px
+    }
+a[href|="/flutterwat"] {
+    background-position: -91px -91px
+    }
+a[href|="/justfahn"] {
+    background-position: -182px -91px
+    }
+a[href|="/cooltavia"] {
+    background-position: 0 -182px
+    }
+a[href|="/rdheh"] {
+    background-position: -91px -182px
+    }
+a[href|="/sadjack"] {
+    background-position: -182px -182px
+    }
+a[href|="/itsbeautiful"] {
+    background-position: 0 -273px
+    }
+a[href|="/iwantit"] {
+    background-position: -91px -273px
+    }
+a[href|="/scratchpride"] {
+    background-position: -182px -273px
+    }
+a[href|="/spitfireum"] {
+    background-position: 0 -364px
+    }
+a[href|="/twielaine"] {
+    background-position: -91px -364px
+    }
+a[href|="/twigrin"] {
+    background-position: -182px -364px
+    }
+/*Sheet 3*/
+a[href|="/iapprove"], a[href|="/soexcited"], a[href|="/pinkieshock"], a[href|="/pinkiesing"], a[href|="/fistpump"], a[href|="/motherof"], a[href|="/tavibored"], a[href|="/scratchyay"], a[href|="/ironwilllisten"], a[href|="/wubseverywhere"] {
+    background-image: url(http://b.thumbs.redditmedia.com/ZtzjFX17Ay3aWcKm.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px
+    }
+a[href|="/iapprove"] {
+    background-position: 0 0
+    }
+a[href|="/soexcited"] {
+    background-position: -91px 0
+    }
+a[href|="/pinkieshock"] {
+    background-position: -182px 0
+    }
+a[href|="/pinkiesing"] {
+    background-position: 0 -91px
+    }
+a[href|="/fistpump"] {
+    background-position: -91px -91px
+    }
+a[href|="/motherof"] {
+    background-position: -182px -91px
+    }
+a[href|="/tavibored"] {
+    background-position: 0 -182px
+    }
+a[href|="/scratchyay"] {
+    background-position: -91px -182px
+    }
+a[href|="/ironwilllisten"] {
+    background-position: -182px -182px
+    }
+a[href|="/wubseverywhere"] {
+    background-position: 0 -273px
+    }
+/* Ajent */
+a[href|="/bajentjfun"] {
+    background-image: url(http://c.thumbs.redditmedia.com/wMLh-6ITD6wAKm0D.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 265px
+    }
+a[href|="/bajentjfun"] {
+    background-position: 0 0
+    }
+/* Toaster */
+a[href|="/toaster"] {
+    background-image: url(http://c.thumbs.redditmedia.com/CqYNOMxZ9F7Jt0wh.jpg) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 392px;
+    width: 528px
+    }
+a[href|="/toaster"] {
+    background-position: 0 0
+    }
+/* Adagio */
+a[href|="/adagio"] {
+    background-image: url(http://c.thumbs.redditmedia.com/5cyD4ZGMPahaXfqD.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 156px;
+    width: 120px
+    }
+a[href|="/adagio"] {
+    background-position: 0 0
+    }
+/* Eip */
+a[href|="/eip"] {
+    background-image: url(http://c.thumbs.redditmedia.com/HXuhBWpUCZ8_nMI2.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 124px;
+    width: 126px
+    }
+a[href|="/eip"] {
+    background-position: 0 0
+    }
+/* Phei */
+.author.submitter.id-t2_5u7fg {
+    background-color: transparent !important
+    }
+a[href|="/pheidance"] {
+    background-image: url(http://e.thumbs.redditmedia.com/8epVY5b9BqQr1Hkp.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 102px;
+    width: 100px
+    }
+a[href|="/pheicry"] {
+    background-image: url(http://a.thumbs.redditmedia.com/QrHLV0Y6s29SzJmZ.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    width: 100px;
+    height: 131px
+    }
+/* Other */
+a[href|="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }
+a[href|="/scratchshrug"], a[href|="/tavishrug"] {
+    background-image: url(http://f.thumbs.redditmedia.com/lCi267EgdCSOFW_q.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 70px;
+    width: 70px
+    }
+a[href|="/scratchshrug"] {
+    background-position: 0 0
+    }
+a[href|="/tavishrug"] {
+    background-position: -70px 70px
+    }
+a[href|="/scootpiano"], a[href|="/pinkiebone"] {
+    background-image: url(http://d.thumbs.redditmedia.com/0doVTxQkVKb2fpfQ.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 70px;
+    width: 70px
+    }
+a[href|="/scootpiano"] {
+    background-position: 0 0
+    }
+a[href|="/pinkiebone"] {
+    background-position: -70px 70px
+    }
+a[href|="/showstoppers"] {
+    background-image: url(http://d.thumbs.redditmedia.com/TkBBAn3CUgc73Yv3.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 70px;
+    width: 155px
+    }
+a[href|="/showstoppers"] {
+    background-position: 0 0
+    }
+a[href|="/colgatebass"], a[href|="/mlyra"] {
+    background-image: url(http://a.thumbs.redditmedia.com/PiAF_lMPEloA2cxT.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 70px;
+    width: 70px
+    }
+a[href|="/colgatebass"] {
+    background-position: 0 0
+    }
+a[href|="/mlyra"] {
+    background-position: -70px 70px
+    }
+a[href|="/crossfire"], a[href|="/rdsax"] {
+    background-image: url(http://c.thumbs.redditmedia.com/Ius5hqsSbOByGmxn.png) !important;
+    clear: none;
+    display: block;
+    float: left
+    }
+a[href|="/crossfire"] {
+    background-position: -265px -501px;
+    height: 131px;
+    width: 186px
+    }
+a[href|="/rdsax"] {
+    background-position: 0 -634px;
+    height: 131px;
+    width: 171px
+    }
+/* End Emotes */
+/* Flair */
+/* Link Flair */
+.linkflair:before {
+    display: inline-block
+    }
+.linkflair-WD .linkflairlabel {
+    content: "Weekly Discussion";
+    background-color: #282;
+    width: 80px !important;
+    height: auto !important;
+    color: white !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    text-align: center;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    overflow: visible !important;
+    white-space: normal !important
+    }
+.linkflair-CS .linkflairlabel {
+    content: "Concert Series";
+    background-color: #D99E1E;
+    width: 80px !important;
+    height: auto !important;
+    color: white !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    text-align: center;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    overflow: visible !important;
+    white-space: normal !important
+    }
+.linkflair-NM .linkflairlabel {
+    content: "New Music";
+    background-color: #f13b28;
+    width: 80px !important;
+    height: auto !important;
+    color: white !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    text-align: center;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    overflow: visible !important;
+    white-space: normal !important
+    }
+.linkflair-CD .linkflairlabel {
+    content: "Classical Discussion";
+    background-color: #740991;
+    width: 80px !important;
+    height: auto !important;
+    color: white !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    text-align: center;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    overflow: visible !important;
+    white-space: normal !important
+    }
+/* User Flair */
+.flair-eipface:before {
+    content: "";
+    height: 50px;
+    width: 40px;
+    margin-bottom: -25px;
+    margin-right: 10px;
+    background: url(http://c.thumbs.redditmedia.com/HXuhBWpUCZ8_nMI2.png) 0 0 no-repeat
+    }
+.flair {
+    background: none !important;
+    border: none !important
+    }
+.flair:before {
+    display: inline-block
+    }
+/* End flair */
+/*ADAGIO'S DOMAIN*/
+/* User name changes */
+a.author[href$="/RetardVomitPussyCunt"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/RetardVomitPussyCunt"]:after {
+    content: "DerpyHiccupKittyTail";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/RogueDarkJedi"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/RogueDarkJedi"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/RogueDarkJedi"]:after {
+    content: "RainbowDashJedi";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+.commentarea a.author[href$="/Chinch335"], .sitetable a.author[href$="/Chinch335"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+.commentarea a.author[href$="/Chinch335"]:after, .sitetable a.author[href$="/Chinch335"]:after {
+    content: "Chinchy";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/AjentJ"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/AjentJ"]:after {
+    content: "Jajent";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/Speedingturtle"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/Speedingturtle"]:after {
+    content: "The One-Lunged Wonder";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/whisperingsage"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/whisperingsage"]:after {
+    content: "The Thyme Waster";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/XelNaga"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/XelNaga"]:after {
+    content: "Twi'Naga";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/TheDarkman67"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/TheDarkman67"]:after {
+    content: "Left Ventricle";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/rawrcharlierawr"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/rawrcharlierawr"]:after {
+    content: "Woop Woop Woop";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/Taiokoshinketsu"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/Taiokoshinketsu"]:after {
+    content: "I like butts";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/kontan"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/kontan"]:after {
+    content: "Lemon Stealing Whore";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/LordGawain"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/LordGawain"]:after {
+    content: "Arrhythmic";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/floutsy"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/floutsy"]:after {
+    content: "THE GLUTE STRETCHER";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/NahualSlim"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/NahualSlim"]:after {
+    content: "Dutch Schultz";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/tacomantotherescue"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/tacomantotherescue"]:after {
+    content: "Ravioli Ravioli Spaghetti Underneath";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/shawa666"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/shawa666"]:after {
+    content: "Mad Dog Dickerson";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/Flysymphony"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/Flysymphony"]:after {
+    content: "Luna is an astronaut";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/duruz"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/duruz"]:after {
+    content: "dururururururururururururururuz";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/WildPlastic"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/WildPlastic"]:after {
+    content: "The Artful WUBber";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/srsbsnsman"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/srsbsnsman"]:after {
+    content: "SystemOutPrintln";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/TheQuillmaster"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/TheQuillmaster"]:after {
+    content: "Quill";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/20_percent_cooler"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/20_percent_cooler"]:after {
+    content: "twinArmageddons";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/SystemOutPrintln"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/SystemOutPrintln"]:after {
+    content: "That one guy";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/Generic_Builder"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/Generic_Builder"]:after {
+    content: "Generico Costruttore";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/readthisresistor"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/readthisresistor"]:after {
+    content: "Sir Wallace Trundleton Sr. III, Esq. MD, PhD, MLLTT.";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/31eipekili"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/31eipekili"]:after {
+    content: "Adagio";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important;
+    color: #4D4D4D !important
+    }
+a.author[href$="/31eipekili"]:hover:after {
+    content: "Insert witty joke here";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important;
+    color: #009E25 !important
+    }
+a.author[href$="/hiero_"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/hiero_"]:after {
+    content: "Flandre Scarlet";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/hiero_"]:hover:after {
+    content: "Loli vampire thing";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/Ryskillz101"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/Ryskillz101"]:after {
+    content: "Gggggg";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/Ryskillz101"]:hover:after {
+    content: "G Ggg G ggggG g";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/Phei"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/Phei"]:hover:after {
+    content: "Pinkie Phei";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important;
+    color: #f197b5 !important
+    }
+a.author[href$="/Phei"]:after {
+    content: "Pheilight Sparkle";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important;
+    color: #CE9CEF !important
+    }
+.author[href$="/MLSG_Bot"] {
+    font-size: 0px !important;
+    display: inline-block;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+.author[href$="/MLSG_Bot"]:after {
+    content: "Sweetie Bot";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+.sidecontentbox .author[href$="/MLSG_Bot"] {
+    display: none
+    }
+/* End User Name Changes */

@@ -21,3 +21,7 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 a[href^="/"][href*="-ar-"], a[href^="/"][href$="-ar"] {
     float: right !important
 }
+
+a[href^="/"][href*="-blink!"] {
+    text-decoration: blink !important
+    }
