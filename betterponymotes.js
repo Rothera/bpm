@@ -11,7 +11,7 @@
 "use strict";
 
 function process(element) {
-    var parts = element.pathname.toLowerCase().split("-")
+    var parts = element.href.toLowerCase().split("-")
     var emote = parts[0];
     if(emote_map.hasOwnProperty(emote)) {
         //console.log("Applying CSS to " + emote + ": " + emote_map[emote]);
