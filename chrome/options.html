@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Better Ponymotes options</title>
+  <script type="text/javascript" src="prefs.js"></script>
+  <script type="text/javascript">
+    function load_options() {
+        var prefs = getPrefs();
+        console.log("loading prefs:", prefs);
+
+        document.getElementById("enableNSFW").checked = prefs["enableNSFW"];
+        document.getElementById("enableExtraCSS").checked = prefs["enableExtraCSS"];
+    }
+
+    function save_options() {
+        localStorage["prefs"] = JSON.stringify({
+            "enableNSFW": document.getElementById("enableNSFW").checked,
+            "enableExtraCSS": document.getElementById("enableExtraCSS").checked
+            });
+        console.log("saved prefs:", localStorage["prefs"]);
+    }
+  </script>
+</head>
+<body onload="load_options()">
+  <p>Better Ponymotes options:<br>
+  <label>Enable NSFW emotes: <input id="enableNSFW" type="checkbox"></label><br>
+  <label>Enable extra emote modifiers: <input id="enableExtraCSS" type="checkbox"></label><br>
+  <button onclick="save_options()">Save</button>
+</body>
+</html>
