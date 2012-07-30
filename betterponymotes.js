@@ -11,11 +11,16 @@
 "use strict";
 
 function process(element) {
-    var parts = element.href.toLowerCase().split("-")
-    var emote = parts[0];
-    if(emote_map.hasOwnProperty(emote)) {
-        //console.log("Applying CSS to " + emote + ": " + emote_map[emote]);
-        element.className += " " + emote_map[emote];
+    // Distinction between element.href and element.getAttribute("href")- the
+    // former is normalized somewhat to be a complete URL, which we don't want.
+    var href = element.getAttribute("href");
+    if(href) {
+        var parts = href.toLowerCase().split("-");
+        var emote = parts[0];
+        if(emote_map.hasOwnProperty(emote)) {
+            //console.log("Applying CSS to " + emote + ": " + emote_map[emote]);
+            element.className += " " + emote_map[emote];
+        }
     }
 }
 
