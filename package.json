@@ -1,24 +1,25 @@
 {
-    "name": "betterponymotes",
-    "license": "MPL 2.0",
-    "author": "Typhos",
-    "version": "1.1",
-    "fullName": "Better Ponymotes",
-    "id": "jid1-tHrhDJXsKvsiCw",
-    "description": "View Reddit ponymotes across the site",
-
-    "preferences": [{
-        "name": "enableExtraCSS",
-        "title": "Enable extra emote modifiers",
-        "description": "Enables emote -spin modifiers and things. Disabling this may improve performance.",
-        "type": "bool",
-        "value": true
-    },
-    {
-        "name": "enableNSFW",
-        "title": "Enable NSFW emotes",
-        "description": "Enable various NSFW emotes.",
-        "type": "bool",
-        "value": false
-    }]
+    "author": "Typhos", 
+    "description": "View Reddit ponymotes across the site", 
+    "fullName": "Better Ponymotes", 
+    "id": "jid1-tHrhDJXsKvsiCw", 
+    "license": "MPL 2.0", 
+    "name": "betterponymotes", 
+    "preferences": [
+        {
+            "description": "Enables emote -spin modifiers and things. Disabling this may improve performance.", 
+            "name": "enableExtraCSS", 
+            "title": "Enable extra emote modifiers", 
+            "type": "bool", 
+            "value": true
+        }, 
+        {
+            "description": "Enable various NSFW emotes.", 
+            "name": "enableNSFW", 
+            "title": "Enable NSFW emotes", 
+            "type": "bool", 
+            "value": false
+        }
+    ], 
+    "version": "1.1"
 }
