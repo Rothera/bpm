@@ -24,13 +24,14 @@ if not os.path.exists("stylesheet-cache"):
     print("ERROR: run from the wrong directory!")
     sys.exit(1)
 
-for filename in os.listdir("stylesheet-cache"):
+filenames = sorted(os.listdir("stylesheet-cache"))
+for (i, filename) in enumerate(filenames):
     subreddit = filename.split(".")[0]
     url = "http://reddit.com/r/%s/stylesheet?random=%s" % (subreddit, random.randrange(1000000))
 
     old_ss = open("stylesheet-cache/%s" % (filename), "rb").read()
 
-    print(url)
+    print("%s/%s: %s" % (i+1, len(filenames), url))
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Cookie": SESS})
     with urllib.request.urlopen(req) as stream:
         new_ss = stream.read()
