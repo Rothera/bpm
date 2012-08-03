@@ -1,0 +1,118 @@
+/* HEADER BAR BIT */
+#header-bottom-left {
+    font-size: larger;
+    background-color: #a50c4c
+    }
+.pagename a {
+    color: #fefdde
+    }
+.side .redditname a {
+    color: #4d0223
+    }
+.newpagelink {
+    padding: 3px 5px;
+    background-color: #ff9
+    }
+#header-bottom-right {
+    background-color: #fefdde
+    }
+/* BACKGROUND 
+body {
+background: url(%%background%%)  
+no-repeat fixed center bottom
+} */
+/* UPVOTES! YAY! */
+.arrow {
+    margin: 2px 0px 0px 0px;
+    width: 100%;
+    height: 20px;
+    display: block;
+    cursor: pointer;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 24px;
+    margin-left: auto;
+    margin-right: auto
+    }
+.arrow.up {
+    background-image: url(http://f.thumbs.redditmedia.com/tPF6DcwAkFiiYDOw.png);
+    background-position: 0px 0px;
+    height: 20px;
+    width: 24px
+    }
+.arrow.upmod {
+    background-image: url(http://c.thumbs.redditmedia.com/Tx7WdlcrIC-oyQq2.png);
+    background-position: 0px 0px;
+    height: 20px;
+    width: 24px
+    }
+.arrow.down {
+    background-image: url(http://d.thumbs.redditmedia.com/H4lr19UhniPFwLsE.png);
+    background-position: 0px 0px;
+    height: 20px;
+    width: 24px
+    }
+.arrow.downmod {
+    background-image: url(http://a.thumbs.redditmedia.com/tGpJPp6HIM8TmARN.png);
+    background-position: 0px 0px;
+    height: 20px;
+    width: 24px
+    }
+/* emote table 1 (70x70) */
+a[href|="/rose1"], a[href|="/rose2"], a[href|="/rose3"], a[href|="/rose4"], a[href|="/rose5"], a[href|="/rose6"], a[href|="/rose7"], a[href|="/rose8"], a[href|="/rose9"], a[href|="/rose10"], a[href|="/rose11"], a[href|="/rose12"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://b.thumbs.redditmedia.com/bc-peQTKSmQ6Ej3m.png) !important
+    }
+a[href|="/rose1"] {
+    background-position: -0px -0px
+    }
+a[href|="/rose2"] {
+    background-position: -70px -0px
+    }
+a[href|="/rose3"] {
+    background-position: -140px -0px
+    }
+a[href|="/rose4"] {
+    background-position: -0px -70px
+    }
+a[href|="/rose5"] {
+    background-position: -70px -70px
+    }
+a[href|="/rose6"] {
+    background-position: -140px -70px
+    }
+a[href|="/rose7"] {
+    background-position: -0px -140px
+    }
+a[href|="/rose8"] {
+    background-position: -70px -140px
+    }
+a[href|="/rose9"] {
+    background-position: -140px -140px
+    }
+a[href|="/rose10"] {
+    background-position: -0px -210px
+    }
+a[href|="/rose11"] {
+    background-position: -70px -210px
+    }
+a[href|="/rose12"] {
+    background-position: -140px -210px
+    }
+/* NOMNOMNOM */
+.footer-parent {
+    height: 700px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(http://f.thumbs.redditmedia.com/eEJMkVe_efRfCm2w.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: -1px
+    }

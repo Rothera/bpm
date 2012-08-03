@@ -1,0 +1,576 @@
+/* Hom3r did shit here */
+/* Change color of selected/linked comment */
+.usertext.border .usertext-body {
+    background-color: #590000
+    }
+/* Change color of "you've been here before" gold box */
+.gold-accent {
+    background-color: #140000;
+    border: 2px solid #AD0000
+    }
+/* Change color of comments highlighted by reddit gold */
+.new-comment .usertext-body {
+    background-color: #140000;
+    border: 1px solid #AD0000;
+    margin: 1px 0
+    }
+/* Community settings color */
+.linefield {
+    background-color: #140000
+    }
+/* Formatting help color */
+.usertext table.markhelp {
+    background-color: #140000
+    }
+.tagline .submitter {
+    color: #0055df !important
+    }
+.tagline .moderator, .green {
+    color: #228822 !important
+    }
+/* End Hom3r edits */
+.RESDialogSmall .RESDialogContents {
+    font-size: 12px;
+    background-color: black !important
+    }
+textarea {
+    color: black !important;
+    background-color: darkgrey
+    }
+#header-img-a {
+    position: relative;
+    bottom: -13px;
+    left: 0px;
+    margin-right: -10px;
+    padding: 0
+    }
+div#header-bottom-left {
+    margin-top: -14px
+    }
+/*Background color and image*/
+/*Background color and image ----Nightmode fixes for the background --- /r/mlas-----*/
+body, body.res-nightmode:first-of-type {
+    background: #000000 url(http://b.thumbs.redditmedia.com/PdwnrTeQpCNGhZtm.png) no-repeat fixed 59% 100% !important
+    }
+.content #siteTable div[onclick="click_thing(this)"] {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type > .content {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type {
+    background-color: transparent !important
+    }
+/*header links*/
+a {
+    color: #939dcd !important
+    }
+#sr-more-link {
+    background-color: #261515 !important
+    }
+/*header color*/
+#header {
+    background-color: #202129 !important;
+    border-bottom: 1px solid #202129 !important
+    }
+/*link area*/
+#sr-header-area {
+    background-color: #000000 !important
+    }
+/*member area*/
+#header-bottom-right {
+    background-color: #000000 !important
+    }
+/*side-bar shit*/
+.titlebox form.toggle, .side, .sidebox .spacer, .icon-menu a, .link .usertext .md, .linkinfo, .infobar {
+    background-color: #000000 !important
+    }
+.sidebox.create .spacer a {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -71px -257px;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat
+    }
+.sidebox.submit .spacer a {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -0px -430px;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat
+    }
+/*frontpage button*/
+.fancy-toggle-button .remove, .add {
+    background-color: #302217 !important;
+    background-image: none !important
+    }
+.sitetable:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) .comment:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+    background-color: transparent !important;
+    border-color: transparent !important
+    }
+#search input[type="text"] {
+    background-color: #32373C !important;
+    border: 1px solid black !important
+    }
+/*Drop down search bar*/
+.infobar {
+    padding: 5px 10px;
+    margin: 5px 305px 5px 0px;
+    border: 1px solid black;
+    font-size: small
+    }
+.footer-parent {
+    height: 860px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(http://a.thumbs.redditmedia.com/avR51bzekLa5Z-Q0.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: -1px
+    }
+/*fonts*/
+p, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form {
+    color: white
+    }
+/*submit link and create community nubs*/
+.morelink .nub {
+    background-color: #261515 !important
+    }
+/*frontpage button*/
+.thing .title.loggedin:link {
+    color: #9e9dcd !important
+    }
+.thing .title.loggedin:visited {
+    color: #9e9dcd !important
+    }
+.expando-button {
+    float: left;
+    height: 23px;
+    width: 23px;
+    margin: 2px 5px 2px 0;
+    background: black none no-repeat scroll center center
+    }
+.expando-button.selftext.collapsed {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -0px -471px;
+    background-repeat: no-repeat
+    }
+.expando-button.selftext.collapsed:hover, .eb-sch {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -97px -379px;
+    background-repeat: no-repeat
+    }
+.expando-button.selftext.expanded, .eb-se {
+    margin-bottom: 5px;
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -48px -471px;
+    background-repeat: no-repeat
+    }
+.expando-button.selftext.expanded:hover, .eb-seh {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -24px -471px;
+    background-repeat: no-repeat
+    }
+.expando-button.video.collapsed {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -96px -471px;
+    background-repeat: no-repeat
+    }
+.expando-button.video.collapsed:hover, .eb-vch {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -72px -471px;
+    background-repeat: no-repeat
+    }
+.expando-button.video.expanded, .eb-ve {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -24px -495px;
+    background-repeat: no-repeat
+    }
+.expando-button.video.expanded:hover, .eb-veh {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -0px -495px;
+    background-repeat: no-repeat
+    }
+.expando-button.image.collapsed {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png) !important;
+    background-position: -0px -588px !important;
+    background-repeat: no-repeat
+    }
+.expando-button.image.collapsed:hover {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png) !important;
+    background-position: -0px -612px !important;
+    background-repeat: no-repeat
+    }
+.expando-button.image.expanded {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -0px -636px !important;
+    background-repeat: no-repeat
+    }
+.expando-button.image.expanded:hover {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -0px -660px !important;
+    background-repeat: no-repeat
+    }
+/*Stealing the main sub's stuff. */
+/*Self-Post Image, No Image, Spoiler Image*/
+.thumbnail.self, .thumbnail.nsfw, .thumbnail.default {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png) !important
+    }
+.thumbnail.self {
+    background-position: -0px -379px !important
+    }
+.thumbnail.nsfw {
+    background-position: -0px -257px !important
+    }
+.thumbnail.default {
+    background-position: -0px -328px !important
+    }
+/*nsfw stamp*/
+.nsfw-stamp acronym {
+    color: #E41B17;
+    font-size: x-small;
+    text-decoration: none;
+    padding: 0 2px;
+    border: 1px solid #D27979 !important;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px
+    }
+#header-bottom-left .tabmenu .selected a {
+    background-color: #261515 !important;
+    border: 1px solid #261515;
+    border-bottom: 1px solid #261515
+    }
+#header-bottom-left .tabmenu li a {
+    background-color: #32373C !important;
+    color: white !important
+    }
+/*sprite stuff*/
+.arrow {
+    margin: 2px 0px 0px 0px;
+    width: 100%;
+    height: 14px;
+    display: block;
+    cursor: pointer;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 15px;
+    margin-left: auto;
+    margin-right: auto
+    }
+.arrow.upmod {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -32px -570px;
+    background-repeat: no-repeat
+    }
+.arrow.downmod {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -0px -570px;
+    background-repeat: no-repeat
+    }
+.arrow.up {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -16px -570px;
+    background-repeat: no-repeat
+    }
+.arrow.down {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -99px -553px;
+    background-repeat: no-repeat
+    }
+.sidebox.gold .spacer a {
+    background-image: url(http://c.thumbs.redditmedia.com/YeuTGLED0XKzxDOz.png);
+    background-position: -71px -328px;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat
+    }
+.sidebox.gold .morelink {
+    border: none;
+    background-color: transparent;
+    background-image: url(/static/goldmorelink.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 31px
+    }
+.sidebox.gold .morelink a, .sidebox.gold .morelink a:visited {
+    color: #9a7d2e
+    }
+.sidebox.gold .morelink:hover {
+    background-position: 0 -31px
+    }
+.sidebox.gold .morelink:hover a {
+    color: #ffffff;
+    margin-top: 1px
+    }
+/*.sidebox.gold .morelink .nub {display:none;
+}*/
+/* ---------- Hide emoticon tables in the sidebar until emote is hovered over  Thanks Hom3r!---------- */
+.titlebox em {
+    color: white
+    }
+.titlebox table {
+    display: none;
+    clear: both
+    }
+div.usertext-body:hover table {
+    display: block;
+    clear: both
+    }
+.sidecontentbox h1:not(:first-child)::before {
+    color: gray !important;
+    font-size: 13px !important;
+    content: "GRIM-MARK CRUSADERS "
+    }
+/*Grim Mark Crusaders*/
+.sidecontentbox h1:not(:first-child) {
+    color: #140000 !important;
+    font-size: .1px !important
+    }
+/*Here lies Andy*/
+/*peperoni*/
+/*and chease*/
+/*replace "readers" with something else*/
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox span.number:after {
+    content: " Zombronies"
+    }
+/*RES changes */
+p.tagline .voteWeight {
+    background: black !important
+    }
+/*i_know_html's stuff!*/
+.keyHighlight {
+    outline: 1px dashed #333 !important;
+    background-color: black !important
+    }
+/*Somethings there. */
+#noresults {
+    font-size: 0px
+    }
+#noresults:after {
+    font-size: small;
+    content: "And now... You take a nap!"
+    }
+a[href|="/ns00"], a[href|="/ns01"], a[href|="/ns02"], a[href|="/ns03"], a[href|="/ns04"], a[href|="/ns05"], a[href|="/ns06"], a[href|="/ns10"], a[href|="/ns11"], a[href|="/ns12"], a[href|="/ns13"], a[href|="/ns14"], a[href|="/ns15"], a[href|="/ns16"], a[href|="/ns20"], a[href|="/ns21"], a[href|="/ns22"], a[href|="/ns23"], a[href|="/ns24"], a[href|="/ns25"], a[href|="/ns26"], a[href|="/rns00"], a[href|="/rns01"], a[href|="/rns02"], a[href|="/rns03"], a[href|="/rns04"], a[href|="/rns05"], a[href|="/rns06"], a[href|="/rns10"], a[href|="/rns11"], a[href|="/rns12"], a[href|="/rns13"], a[href|="/rns14"], a[href|="/rns15"], a[href|="/rns16"], a[href|="/rns20"], a[href|="/rns21"], a[href|="/rns22"], a[href|="/rns23"], a[href|="/rns24"], a[href|="/rns25"], a[href|="/rns26"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png) !important
+    }
+a[href|="/ns00"] {
+    width: 74px;
+    height: 75px;
+    background-position: -2px -2px
+    }
+a[href|="/ns01"] {
+    width: 79px;
+    height: 75px;
+    background-position: -78px -2px
+    }
+a[href|="/ns02"] {
+    width: 82px;
+    height: 75px;
+    background-position: -159px -2px
+    }
+a[href|="/ns03"] {
+    width: 82px;
+    height: 75px;
+    background-position: -243px -2px
+    }
+a[href|="/ns04"] {
+    width: 62px;
+    height: 75px;
+    background-position: -327px -2px
+    }
+a[href|="/ns05"] {
+    width: 75px;
+    height: 75px;
+    background-position: -391px -2px
+    }
+a[href|="/ns06"] {
+    width: 74px;
+    height: 75px;
+    background-position: -2px -79px
+    }
+a[href|="/ns10"] {
+    width: 76px;
+    height: 75px;
+    background-position: -78px -79px
+    }
+a[href|="/ns11"] {
+    width: 84px;
+    height: 75px;
+    background-position: -156px -79px
+    }
+a[href|="/ns12"] {
+    width: 68px;
+    height: 75px;
+    background-position: -242px -79px
+    }
+a[href|="/ns13"] {
+    width: 89px;
+    height: 75px;
+    background-position: -312px -79px
+    }
+a[href|="/ns14"] {
+    width: 59px;
+    height: 75px;
+    background-position: -403px -79px
+    }
+a[href|="/ns15"] {
+    width: 70px;
+    height: 75px;
+    background-position: -2px -156px
+    }
+a[href|="/ns16"] {
+    width: 85px;
+    height: 75px;
+    background-position: -74px -156px
+    }
+a[href|="/ns20"] {
+    width: 86px;
+    height: 75px;
+    background-position: -161px -156px
+    }
+a[href|="/ns21"] {
+    width: 75px;
+    height: 75px;
+    background-position: -249px -156px
+    }
+a[href|="/ns22"] {
+    width: 86px;
+    height: 75px;
+    background-position: -326px -156px
+    }
+a[href|="/ns23"] {
+    width: 77px;
+    height: 75px;
+    background-position: -414px -156px
+    }
+a[href|="/ns24"] {
+    width: 83px;
+    height: 75px;
+    background-position: -2px -233px
+    }
+a[href|="/ns25"] {
+    width: 86px;
+    height: 75px;
+    background-position: -87px -233px
+    }
+a[href|="/ns26"] {
+    width: 74px;
+    height: 75px;
+    background-position: -175px -233px
+    }
+a[href|="/rns00"] {
+    width: 74px;
+    height: 75px;
+    background-position: -251px -233px
+    }
+a[href|="/rns01"] {
+    width: 79px;
+    height: 75px;
+    background-position: -327px -233px
+    }
+a[href|="/rns02"] {
+    width: 82px;
+    height: 75px;
+    background-position: -408px -233px
+    }
+a[href|="/rns03"] {
+    width: 82px;
+    height: 75px;
+    background-position: -2px -310px
+    }
+a[href|="/rns04"] {
+    width: 62px;
+    height: 75px;
+    background-position: -86px -310px
+    }
+a[href|="/rns05"] {
+    width: 75px;
+    height: 75px;
+    background-position: -150px -310px
+    }
+a[href|="/rns06"] {
+    width: 74px;
+    height: 75px;
+    background-position: -227px -310px
+    }
+a[href|="/rns10"] {
+    width: 76px;
+    height: 75px;
+    background-position: -303px -310px
+    }
+a[href|="/rns11"] {
+    width: 84px;
+    height: 75px;
+    background-position: -381px -310px
+    }
+a[href|="/rns12"] {
+    width: 68px;
+    height: 75px;
+    background-position: -2px -387px
+    }
+a[href|="/rns13"] {
+    width: 89px;
+    height: 75px;
+    background-position: -72px -387px
+    }
+a[href|="/rns14"] {
+    width: 59px;
+    height: 75px;
+    background-position: -163px -387px
+    }
+a[href|="/rns15"] {
+    width: 70px;
+    height: 75px;
+    background-position: -224px -387px
+    }
+a[href|="/rns16"] {
+    width: 85px;
+    height: 75px;
+    background-position: -296px -387px
+    }
+a[href|="/rns20"] {
+    width: 86px;
+    height: 75px;
+    background-position: -383px -387px
+    }
+a[href|="/rns21"] {
+    width: 75px;
+    height: 75px;
+    background-position: -2px -464px
+    }
+a[href|="/rns22"] {
+    width: 86px;
+    height: 75px;
+    background-position: -79px -464px
+    }
+a[href|="/rns23"] {
+    width: 77px;
+    height: 75px;
+    background-position: -167px -464px
+    }
+a[href|="/rns24"] {
+    width: 83px;
+    height: 75px;
+    background-position: -246px -464px
+    }
+a[href|="/rns25"] {
+    width: 86px;
+    height: 75px;
+    background-position: -331px -464px
+    }
+a[href|="/rns26"] {
+    width: 74px;
+    height: 75px;
+    background-position: -419px -464px
+    }
+a[href="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }

@@ -1,0 +1,378 @@
+.flairselector .customizer {
+    display: none !important
+    }
+.flair {
+    border: none !important;
+    top: 20px;
+    padding: 0px;
+    background: url(http://d.thumbs.redditmedia.com/cRWWGdowinQvifa9.png);
+    display: inline-block
+    }
+frames .flair-Squid1 {
+    background-position: -1px -216px;
+    width: 18px;
+    height: 20px
+    }
+.flair-Squid2 {
+    background-position: -1px -1px;
+    width: 24px;
+    height: 20px
+    }
+.flair-Squid3 {
+    background-position: -1px -426px;
+    width: 15px;
+    height: 20px
+    }
+.flair-Squid4 {
+    background-position: -1px -237px;
+    width: 18px;
+    height: 20px
+    }
+.flair-Squid5 {
+    background-position: -1px -342px;
+    width: 17px;
+    height: 20px
+    }
+.flair-Squid6 {
+    background-position: -1px -132px;
+    width: 19px;
+    height: 20px
+    }
+.flair-Squid7 {
+    background-position: -1px -69px;
+    width: 20px;
+    height: 20px
+    }
+.flair-Squid8 {
+    background-position: -1px -258px;
+    width: 18px;
+    height: 20px
+    }
+.flair-Squid9 {
+    background-position: -1px -90px;
+    width: 20px;
+    height: 20px
+    }
+.flair-Squid10 {
+    background-position: -1px -111px;
+    width: 20px;
+    height: 20px
+    }
+.flair-Squid11 {
+    background-position: -1px -405px;
+    width: 17px;
+    height: 20px
+    }
+.flair-Squid12 {
+    background-position: -1px -48px;
+    width: 22px;
+    height: 20px
+    }
+.flair-Squid13 {
+    background-position: -1px -153px;
+    width: 19px;
+    height: 20px
+    }
+.flair-Squid14 {
+    background-position: -1px -279px;
+    width: 17px;
+    height: 20px
+    }
+.flair-Squid15 {
+    background-position: -1px -300px;
+    width: 17px;
+    height: 20px
+    }
+.flair-Squid16 {
+    background-position: -1px -174px;
+    width: 19px;
+    height: 20px
+    }
+.flair-Squid17 {
+    background-position: -1px -384px;
+    width: 17px;
+    height: 20px
+    }
+.flair-Squid18 {
+    background-position: -1px -321px;
+    width: 17px;
+    height: 20px
+    }
+.flair-Squid19 {
+    background-position: -1px -363px;
+    width: 17px;
+    height: 20px
+    }
+.flair-Squid20 {
+    background-position: -1px -195px;
+    width: 18px;
+    height: 20px
+    }
+.flair-Squilliam {
+    background-position: -1px -22px;
+    width: 23px;
+    height: 25px
+    }
+/* gavin14's nightmode flair fix */
+.res-nightmode .content .flair {
+    background-color: transparent !important
+    }
+/*replace "readers" with something else*/
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox span.number:after {
+    content: " cephalopods"
+    }
+/*simple, most commonly used backgrounds*/
+body {
+    background: url(http://d.thumbs.redditmedia.com/JZiBJzWCQi3YMGPu.png) no-repeat fixed right bottom
+    }
+/* Makes the sidebar transparent */
+.side {
+    background-color: transparent !important
+    }
+.side.res-nightmode:first-of-type > .content {
+    background-color: transparent !important
+    }
+.side.res-nightmode:first-of-type {
+    background-color: transparent !important
+    }
+/*Stealing the main sub's stuff. */
+/*Self-Post Image, No Image, Spoiler Image*/
+.thumbnail.self, .thumbnail.nsfw, .thumbnail.default {
+    background-image: url(http://e.thumbs.redditmedia.com/lHqQAOvDe7kHb5yL.png) !important
+    }
+.thumbnail.self {
+    background-position: 0px -120px !important
+    }
+.thumbnail.nsfw {
+    background-position: 0px 0px !important
+    }
+.thumbnail.default {
+    background-position: 0px -70px !important
+    }
+/* Spoiler Setter*/
+.marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before {
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+.marknsfw-button a[href="#"]:before {
+    content: "spoiler"
+    }
+.unmarknsfw-button a[href="#"]:before {
+    content: "un-spoiler"
+    }
+.nsfw-stamp acronym {
+    border: #5F99CF 1px solid !important;
+    display: inline-block;
+    font-size: 0px !important;
+    letter-spacing: 0px;
+    overflow: hidden;
+    vertical-align: bottom;
+    margin-bottom: -1px
+    }
+.nsfw-stamp acronym:after {
+    color: #336699 !important;
+    content: "SPOILER" !important;
+    display: block;
+    font-size: x-small !important;
+    text-decoration: none;
+    visibility: visible !important
+    }
+/* ---------- Hide emoticon tables in the sidebar until emote is hovered over  Thanks Hom3r!---------- */
+.titlebox em {
+    color: white
+    }
+.titlebox table {
+    display: none;
+    clear: both
+    }
+div.usertext-body:hover table {
+    display: block;
+    clear: both
+    }
+/*----EMOTES!----*/
+a[href|="/sq00"], a[href|="/sq01"], a[href|="/sq02"], a[href|="/sq10"], a[href|="/sq11"], a[href|="/sq12"], a[href|="/sq20"], a[href|="/sq21"], a[href|="/sq22"], a[href|="/sq03"], a[href|="/squidamena"], a[href|="/sq13"], a[href|="/squidaloo"], a[href|="/squiddity"], a[href|="/sq23"], a[href|="/davenport"], a[href|="/ujelly"], a[href|="/squidohyou"], a[href|="/squidew"], a[href|="/sq01"], a[href|="/squidrage"], a[href|="/squidhoof"], a[href|="/squidshrug"], a[href|="/ceilingsquid"], a[href|="/squintysquid"], a[href|="/gummythesnail"], a[href|="/squidflip"], a[href|="/sq04"], a[href|="/squidticking"], a[href|="/sq14"], a[href|="/squixie"], a[href|="/yeah"], a[href|="/sq24"], a[href|="/squidscream"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://d.thumbs.redditmedia.com/B77ClHqQyj9xSya3.png)
+    }
+a[href|="/davenport"] {
+    width: 70px;
+    height: 70px;
+    background-position: -2px -218px
+    }
+a[href|="/squidaloo"], a[href|="/sq03"] {
+    width: 70px;
+    height: 70px;
+    background-position: -74px -2px
+    }
+a[href|="/squidamena"], a[href|="/sq13"] {
+    width: 70px;
+    height: 70px;
+    background-position: -2px -74px
+    }
+a[href|="/squiddity"], a[href|="/sq23"] {
+    width: 70px;
+    height: 70px;
+    background-position: -74px -74px
+    }
+a[href|="/sq21"], a[href|="/squidohyou"] {
+    width: 52px;
+    height: 70px;
+    background-position: -74px -218px
+    }
+a[href|="/sq00"], a[href|="/squidew"] {
+    width: 70px;
+    height: 70px;
+    background-position: -2px -290px
+    }
+a[href|="/sq01"], a[href|="/squidrage"] {
+    width: 70px;
+    height: 70px;
+    background-position: -74px -290px
+    }
+a[href|="/sq02"], a[href|="/squidhoof"] {
+    width: 70px;
+    height: 70px;
+    background-position: -2px -362px
+    }
+a[href|="/sq10"], a[href|="/squidshrug"] {
+    width: 70px;
+    height: 69px;
+    background-position: -2px -2px
+    }
+a[href|="/sq11"], a[href|="/ceilingsquid"] {
+    width: 68px;
+    height: 70px;
+    background-position: -74px -362px
+    }
+a[href|="/sq12"], a[href|="/squintysquid"] {
+    width: 65px;
+    height: 70px;
+    background-position: -146px -290px
+    }
+a[href|="/sq20"], a[href|="/gummythesnail"] {
+    width: 70px;
+    height: 70px;
+    background-position: -146px -146px
+    }
+a[href|="/sq22"], a[href|="/squidflip"] {
+    width: 70px;
+    height: 70px;
+    background-position: -146px -2px
+    }
+a[href|="/ujelly"] {
+    width: 70px;
+    height: 70px;
+    background-position: -146px -74px
+    }
+a[href|="/sq04"], a[href|="/squidticking"] {
+    width: 70px;
+    height: 70px;
+    background-position: -2px -146px
+    }
+a[href|="/sq14"], a[href|="/squixie"] {
+    width: 70px;
+    height: 70px;
+    background-position: -74px -146px
+    }
+a[href|="/sq24"], a[href|="/squidscream"] {
+    width: 70px;
+    height: 70px;
+    background-position: -140px -361px
+    }
+a[href|="/yeah"] {
+    width: 70px;
+    height: 70px;
+    background-position: -128px -218px
+    }
+/* Announcement header box thingy. Uncomment to activate giant hat. */
+.pagename {
+    font-size: 12pt
+    }
+.titlebox form {
+    position: static
+    }
+.titlebox .usertext-body .md ol {
+    width: auto;
+    background: url(http://f.thumbs.redditmedia.com/MAk5zGkBEHk-kyjS.png) no-repeat scroll 5px 5px #EFF7FF;
+    border: 1px solid #5f99cf;
+    position: absolute;
+    top: 5px;
+    left: 133px;
+    z-index: 50;
+    margin: 20px 310px 0 0;
+    padding: 8px 6px 8px 38px;
+    list-style: none;
+    display: block;
+    white-space: normal;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 10000000
+    }
+.titlebox .usertext-body .md ol li {
+    margin: 1px;
+    list-style: none
+    }
+/* FOOTER */
+.footer-parent {
+    height: 800px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(http://c.thumbs.redditmedia.com/NcbRPjZA-LD2I7Gn.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: -1px
+    }
+.side a[href="http://youtu.be/z1N3shadQFA"] {
+    display: block;
+    height: 75px;
+    width: 83px;
+    background: url(http://a.thumbs.redditmedia.com/T3MibkmkrnJJVtnH.png);
+    position: fixed;
+    top: 260px;
+    right: -5px;
+    z-index: 999
+    }
+/* searchbar spike */
+#search input[type="text"] {
+    background: url(http://b.thumbs.redditmedia.com/oGUJpWr_g0R4z7iU.png) top left no-repeat !important;
+    padding: 13px 2px 13px 50px !important;
+    height: 22px !important;
+    width: 245px !important
+    }
+/* header image location */
+#header-img-a {
+    height: 5px;
+    position: relative;
+    bottom: -13px;
+    left: 0px;
+    top: 0px;
+    margin-right: -10px;
+    padding: 0
+    }
+#header-img {
+    margin: 5px 3px -3px 0px;
+    padding: 0px 5px
+    }
+#header-bottom-left {
+    background: url(http://c.thumbs.redditmedia.com/DOKnQr5koA1WAjtP.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    padding-right: 50px
+    }

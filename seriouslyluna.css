@@ -1,0 +1,879 @@
+/***********************
+*
+*        SeriouslyLuna CSS
+*   
+************************/
+/*
+
+Change log:
+
+SeriouslyComfy
+        > Centered the downvote background proper.
+        > Added a srsname. (Not sure if this is logworthy, but bleh.)
+
+QueenSerious:
+	> More name changes
+	> Removed eye blinding colours
+	> Removed more repeated code you really need to check stuff first
+	> Seriously more name changes
+	> Over 9000 emotes (That's a lot of emotes there Sweetie, might want to slow down.)
+
+SeriouslyConky:
+	> added Woona Rave, animated emotes size is standard at X x 130, although width depends based on the images requirements, standard static emotes are being set to the necessary width X x 130; for posterity!
+	> EMOTES AND SHIT m'lady
+	> FLAIR RESIZED TO 25X25, IT'S STAYING, THEY'RE FUN AND AWESOME AND COOL, AND I LOVE THEM!
+	> Organized emotes more, will do until I make sprite, tommorrow most likely
+	> Added 6 emotes, mane 6 emotes and woonapie / seriouslyshrug
+	> Added some fancy junk courtesy of the gents at MLAS1, (Use #### for fancy shmancy blue text box)
+        > A few more name changes        
+        > Added submission Luna
+        > Added more Flairs
+        > Added default NSFW, and self thumbnails
+        > Added 5 more emotes
+        > Added Search bar Luna
+  
+Conky's seriousTo do List: 
+                *MAKE SPRITE SHEETS
+
+*/
+/*** Naming system (Thank you Dashie, for this, seriously) ***/
+a.author:after {
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+.sidecontentbox .author:after {
+    font-size: small !important
+    }
+.id-t2_7touf, .id-t2_6n7u8, a.author[href$="Thecursed"], a.author[href$="JustAnotherGDB"], a.author[href$="FluttershyGuy20"], a.author[href$="TheDizzy"], a.author[href$="maku450"], a.author[href$="Ghassul"], a.author[href$="novadies"], a.author[href$="ruffletuffle"], a.author[href$="KillerRabbit1253"], a.author[href$="I_Forget_Shit"], a.author[href$="theKarmaCrusader"], a.author[href$="hiero_"], a.author[href$="petraman"], a.author[href$="EvanMacIan"], a.author[href$="Broken_Wagonwheel"], a.author[href$="TheDarkman67"], a.author[href$="Galdion"], a.author[href$="theMagicalCouch"], a.author[href$="bryvood"], a.author[href$="YarnTheory"], a.author[href$="Imaginecat22"], a.author[href$="bobobo1618"], a.author[href$="floutsy"], a.author[href$="cheesemoo"], a.author[href$="Sylverstone14"], a.author[href$="Avebone"], a.author[href$="MrPOSSLQ"], a.author[href$="Nyax-A"], a.author[href$="Danny_Moon"], a.author[href$="MisanthropicCat"], a.author[href$="Cheesebunker"], a.author[href$="sfitzknott"], a.author[href$="FreeqAxel"], a.author[href$="CKTofu"], a.author[href$="pwned1711"], a.author[href$="Danphos"], .id-t2_61u7x, a.author[href$="cezzlo"], a.author[href$="Itsmejohn1"], a.author[href$="pickled_octopus"], a.author[href$="UDNTNOME"], a.author[href$="Apprentice1994"], a.author[href$="dragonblade629"], a.author[href$="Berbaw06"], a.author[href$="smfd"], a.author[href$="bitoku_no_ookami"] {
+    font-size: 0px !important;
+    display: inline-block;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+.id-t2_7touf:after {
+    content: "Queen Serious "
+    }
+.id-t2_6n7u8:after {
+    content: "A Serious Bear"
+    }
+.id-t2_61u7x:after {
+    content: "MostSeriousPossibleThing"
+    }
+a.author[href$="bitoku_no_ookami"]:after {
+    content: "SeriousWolf"
+    }
+a.author[href$="smfd"]:after {
+    content: "Serious Dinosaurs"
+    }
+a.author[href$="dragonblade629"]:after {
+    content: "DragonSerious629"
+    }
+a.author[href$="Berbaw06"]:after {
+    content: "SeriouslyJohn"
+    }
+a.author[href$="pickled_octopus"]:after {
+    content: "Pickled_Seriousness"
+    }
+a.author[href$="ASeriousApprentice"]:after {
+    content: "Apprentice1994?"
+    }
+a.author[href$="UDNTNOME"]:after {
+    content: "USRSLYDNTNOME?"
+    }
+a.author[href$="cezzlo"]:after {
+    content: "SeriousPrincess"
+    }
+a.author[href$="Itsmejohn1"]:after {
+    content: "SeriousAboutBeingSerious"
+    }
+a.author[href$="CKTofu"]:after {
+    content: "SeriouslyTofu"
+    }
+a.author[href$="pwned1711"]:after {
+    content: "SeriouslyFlorigsdu"
+    }
+a.author[href$="Danphos"]:after {
+    content: "SeriouslyDouble"
+    }
+a.author[href$="sfitzknott"]:after {
+    content: "SeriouslySfitzknott"
+    }
+a.author[href$="MisanthropicCat"]:after {
+    content: "SeriouslyKatie"
+    }
+a.author[href$="Danny_Moon"]:after {
+    content: "SeriouslyTrance_Luna"
+    }
+a.author[href$="MrPOSSLQ"]:after {
+    content: "MyLittlePossie aka The Ninja"
+    }
+a.author[href$="Nyax-A"]:after {
+    content: "SeriouslyWorstPony"
+    }
+a.author[href$="FreeqAxel"]:after {
+    content: "SeriouslyFreeqAxel"
+    }
+a.author[href$="Cheesebunker"]:after {
+    content: "SeriousBunker"
+    }
+a.author[href$="cheesemoo"]:after {
+    content: "SeriouslyCheesy"
+    }
+a.author[href$="Sylverstone14"]:after {
+    content: "SeriouslySylverstone"
+    }
+a.author[href$="floutsy"]:after {
+    content: "SeriouslyBeingStalkedByQueenSerious"
+    }
+a.author[href$="sfitzknot"]:after {
+    content: "SeriouslySfitzKnot"
+    }
+a.author[href$="Avebone"]:after {
+    content: "SeriouslySexy"
+    }
+a.author[href$="bobobo1618"]:after {
+    content: "SeriouslyAGirl"
+    }
+a.author[href$="Imaginecat22"]:after {
+    content: "SeriouslyImagineCat"
+    }
+a.author[href$="theMagicalCouch"]:after {
+    content: "SeriouslyComfy"
+    }
+a.author[href$="bryvood"]:after {
+    content: "SeriouslyAToasterStrudel "
+    }
+a.author[href$="YarnTheory"]:after {
+    content: "SeriouslySeriousTheory "
+    }
+a.author[href$="Thecursed"]:after {
+    content: "SeriouslyCursed "
+    }
+a.author[href$="FluttershyGuy20"]:after {
+    content: "SeriouslyTwilight "
+    }
+a.author[href$="TheDizzy"]:after {
+    content: "SeriouslyDizzy "
+    }
+a.author[href$="JustAnotherGDB"]:after {
+    content: "SeriouslyGDB "
+    }
+a.author[href$="maku450"]:after {
+    content: "SeriouslyMaku "
+    }
+a.author[href$="Ghassul"]:after {
+    content: "SeriouslyGhassul "
+    }
+a.author[href$="Broken_Wagonwheel"]:after {
+    content: "SeriouslyWagon "
+    }
+a.author[href$="novadies"]:after {
+    content: "SeriouslyNova "
+    }
+a.author[href$="ruffletuffle"]:after {
+    content: "SeriouslyRuffletuffle "
+    }
+a.author[href$="KillerRabbit1253"]:after {
+    content: "SeriouslyKillerRabbit "
+    }
+a.author[href$="I_Forget_Shit"]:after {
+    content: "SeriouslyForgetsShit "
+    }
+a.author[href$="theKarmaCrusader"]:after {
+    content: "ASeriousCutiePie "
+    }
+a.author[href$="hiero_"]:after {
+    content: "SeriouslyHiero "
+    }
+a.author[href$="petraman"]:after {
+    content: "SeriouslyPetra "
+    }
+a.author[href$="EvanMacIan"]:after {
+    content: "SeriouslyEvanMacIan "
+    }
+a.author[href$="TheDarkman67"]:after {
+    content: "DarkSerious67"
+    }
+a.author[href$="Galdion"]:after {
+    content: "SeriouslyGaldion"
+    }
+/***********************
+*
+*        Seriously Style, banner,side box ect.
+*   
+************************/
+/*Submit a link -> Create a submission*/
+.sidebox.submit .morelink:before {
+    display: block;
+    clear: none;
+    content: "Create a Submission";
+    text-align: center;
+    color: #369;
+    width: 101%
+    }
+.sidebox.submit .morelink a {
+    position: absolute;
+    top: 0;
+    font-size: 1px;
+    text-align: right;
+    color: #f2f8fd
+    }
+.sidebox.submit .morelink:hover:before {
+    color: blue
+    }
+.sidebox.submit:hover a {
+    color: #b4cee5
+    }
+.sidebox .subtitle:before {
+    display: block;
+    clear: none;
+    content: "All things Serious, and Luna";
+    color: dimgrey;
+    font-size: 8pt !important
+    }
+.sidebox .subtitle {
+    font-size: 0px
+    }
+.sidebox.create {
+    display: none
+    }
+.sidebox.submit .spacer a {
+    background-image: url(http://e.thumbs.redditmedia.com/qdKxprLHMXgnjhtL.png);
+    background-position: -0px -0px;
+    background-repeat: no-repeat
+    }
+/*** Search bar Luna ***/
+#search input[type="text"] {
+    background: url(http://b.thumbs.redditmedia.com/FnYJdr0AUVlAm5Iy.png) top left no-repeat !important;
+    padding: 13px 2px 15px 70px;
+    height: 22px !important;
+    width: 222px
+    }
+/*** Thumbnails ***/
+.thumbnail.default {
+    background-image: url(http://d.thumbs.redditmedia.com/lIuaBexu6W8Del63.png);
+    background-repeat: no-repeat;
+    background-position: 0 0
+    }
+.thumbnail.nsfw {
+    background-image: url(http://e.thumbs.redditmedia.com/FpK_ZAP6acQvcQBv.png);
+    background-repeat: no-repeat;
+    background-position: 0 0
+    }
+.thumbnail.self {
+    background-image: url(http://a.thumbs.redditmedia.com/Hk_BN02rN7V8EXcx.png);
+    background-repeat: no-repeat;
+    background-position: 0 0
+    }
+/*** Side Bar Shit ***/
+.titlebox .number:after {
+    content: " Serious Luna's"
+    }
+.titlebox .word:not(:first-child) {
+    content: "";
+    font-size: 0 !important;
+    color: white
+    }
+.sidebox.create {
+    display: none
+    }
+.sidebox.submit .morelink:before {
+    display: block;
+    clear: none;
+    content: "Create a Submission";
+    text-align: center;
+    color: #369;
+    width: 101%
+    }
+.sidebox.submit .morelink a {
+    position: absolute;
+    top: 0;
+    font-size: 0px;
+    text-align: right;
+    color: #f2f8fd
+    }
+.sidebox .subtitle:before {
+    display: block;
+    clear: none;
+    content: "Everything Serious.";
+    color: dimgray;
+    font-size: 8pt !important
+    }
+.sidebox .subtitle {
+    font-size: 0px
+    }
+/*** Mod Box Editing ***/
+.sidecontentbox .helplink + .title > h1 {
+    color: white !important;
+    font-size: 0px !important;
+    display: inline-block
+    }
+.sidecontentbox .helplink + .title > h1:before {
+    font-size: 13px !important;
+    content: "Serious Mods.";
+    display: inline-block
+    }
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink {
+    display: none !important
+    }
+.sidecontentbox .flair {
+    display: none
+    }
+body:first-of-type, body.res-nightmode:first-of-type {
+    background: url(http://f.thumbs.redditmedia.com/kEltuPDpk-o-pIOG.png) no-repeat fixed 30% 90% !important
+    }
+body:first-of-type, body.res-nightmode:first-of-type {
+    background: url(http://f.thumbs.redditmedia.com/kEltuPDpk-o-pIOG.png) no-repeat fixed 30% 60% !important
+    }
+/*** Corner Luna ***/
+#header {
+    background-image: url(http://f.thumbs.redditmedia.com/A3Bp8qGcRV9-f97k.png);
+    background-repeat: no-repeat;
+    background-position: bottom right
+    }
+/***  Sidebar Woona  ***/
+.side a[href="http://www.reddit.com/r/SeriouslyLuna/new"] {
+    display: block;
+    height: 120px;
+    width: 130px;
+    background: url(http://b.thumbs.redditmedia.com/y8UOjEvMVGmzDNKy.png);
+    position: fixed;
+    top: 240px;
+    right: -30px;
+    z-index: 999
+    }
+/***  Seriously? This is seriously the Banner?  ***/
+#header-bottom-left {
+    background-color: #8B6969;
+    background: url(http://e.thumbs.redditmedia.com/2jUXzkxKOc4WWsOd.png) no-repeat center bottom
+    }
+/*** Bottom page Luna ***/
+.footer-parent {
+    height: 550px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(http://f.thumbs.redditmedia.com/j-GtGFuU2bd1dMeM.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: 4px
+    }
+/***********************
+*
+*        Aprils Emote Sheet
+*
+************************/
+a[href|="/seriouslyrose"], a[href|="/seriouslyruffled"], a[href|="/seriouslyconky"], a[href|="/flutterclaus"], a[href|="/seriouslyboredlyra"], a[href|="/getruffled"], a[href|="/queenserious"], a[href|="/seriouslygross"], a[href|="/seriouslyflowers"], a[href|="/seriouslyopal"], a[href|="/musicalhug"], a[href|="/scootacuddle"], a[href|="/hugthoseglutes"], a[href|="/ladyhugsawake"], a[href|="/rainbowpiehug"], a[href|="/pinkieshyhug"], a[href|="/morningdash"], a[href|="/rarisad"] {
+    display: block;
+    clear: none;
+    float: left;
+    height: 130px;
+    background-image: url(http://f.thumbs.redditmedia.com/bAeMbMDsvRqj1VmA.png) !important
+    }
+a[href|="/seriouslyrose"] {
+    width: 188px;
+    background-position: -0px -0px
+    }
+a[href|="/seriouslyruffled"] {
+    width: 147px;
+    background-position: -188px -0px
+    }
+a[href|="/seriouslyconky"] {
+    width: 156px;
+    background-position: -335px -0px
+    }
+a[href|="/flutterclaus"] {
+    width: 127px;
+    background-position: -491px -0px
+    }
+a[href|="/seriouslyboredlyra"] {
+    width: 117px;
+    background-position: -618px -0px
+    }
+a[href|="/getruffled"] {
+    width: 132px;
+    background-position: -735px -0px
+    }
+a[href|="/queenserious"] {
+    width: 148px;
+    background-position: -867px -0px
+    }
+a[href|="/seriouslygross"] {
+    width: 123px;
+    background-position: -1015px -0px
+    }
+a[href|="/seriouslyflowers"] {
+    width: 124px;
+    background-position: -1138px -0px
+    }
+a[href|="/seriouslyopal"] {
+    width: 146px;
+    background-position: -1262px -0px
+    }
+a[href|="/musicalhug"] {
+    width: 159px;
+    background-position: -1408px -0px
+    }
+a[href|="/scootacuddle"] {
+    width: 220px;
+    background-position: -1567px -0px
+    }
+a[href|="/hugthoseglutes"] {
+    width: 127px;
+    background-position: -1787px -0px
+    }
+a[href|="/ladyhugsawake"] {
+    width: 193px;
+    background-position: -1914px -0px
+    }
+a[href|="/rainbowpiehug"] {
+    width: 147px;
+    background-position: -2107px -0px
+    }
+a[href|="/pinkieshyhug"] {
+    width: 131px;
+    background-position: -2254px -0px
+    }
+a[href|="/morningdash"] {
+    width: 117px;
+    background-position: -2385px -0px
+    }
+a[href|="/rarisad"] {
+    width: 155px;
+    background-position: -2502px -0px
+    }
+a[href|="/seriouslunadance"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 225px;
+    background-image: url(http://c.thumbs.redditmedia.com/xU1ULG3FvJKEDs3h.png)
+    }
+a[href|="/fuckfloutsy"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 172px;
+    height: 250px;
+    background-image: url(http://f.thumbs.redditmedia.com/ew5aE1LvW4eEVdzq.png)
+    }
+/***********************
+*
+*        Seriously Emotes
+*   
+************************/
+a[href|="/lunawink"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 117px;
+    height: 130px;
+    background-image: url(http://d.thumbs.redditmedia.com/gM1R6jnCQGI2YgP3.png)
+    }
+a[href|="/seriouslyhappy"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 137px;
+    height: 130px;
+    background-image: url(http://f.thumbs.redditmedia.com/Unkk4td3657F6XwA.png)
+    }
+a[href|="/seriouslyunamused"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 124px;
+    height: 130px;
+    background-image: url(http://e.thumbs.redditmedia.com/LIZU2adlxCdGQPAR.png)
+    }
+a[href|="/seriouslyupset"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 132px;
+    height: 130px;
+    background-image: url(http://b.thumbs.redditmedia.com/N5WpeFPJwycE02OI.png)
+    }
+a[href|="/seriouslystare"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 116px;
+    height: 130px;
+    background-image: url(http://c.thumbs.redditmedia.com/biCLQHZM0qtMJ9jz.png)
+    }
+a[href|="/seriouslypissed"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 133px;
+    height: 130px;
+    background-image: url(http://b.thumbs.redditmedia.com/_aYs6HsfoKm1z0VO.png)
+    }
+a[href|="/seriouslywtf"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 118px;
+    height: 130px;
+    background-image: url(http://a.thumbs.redditmedia.com/N9aLL3nSN9kIkl96.png)
+    }
+a[href|="/woonashy"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 156px;
+    height: 130px;
+    background-image: url(http://c.thumbs.redditmedia.com/QwYE4LdEl124-qG2.png)
+    }
+/*a[href|="/queenserious"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 275px;
+    height: 300px;
+    background-image:url(%%QueenSerious%%)
+    }*/
+a[href|="/lunasoserious"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 114px;
+    height: 130px;
+    background-image: url(http://d.thumbs.redditmedia.com/UGLz5e4OkFOrrAF9.png)
+    }
+a[href|="/serilee"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 136px;
+    height: 130px;
+    background-image: url(http://a.thumbs.redditmedia.com/4KxKWbnTj7-gLPml.png)
+    }
+a[href|="/lunaohyou"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 163px;
+    height: 130px;
+    background-image: url(http://f.thumbs.redditmedia.com/qXwmDTayhbo7GNcA.png)
+    }
+a[href|="/seriouslymusic"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 130px;
+    height: 130px;
+    background-image: url(http://f.thumbs.redditmedia.com/Uy6Wq2a_p5vl0cnA.png)
+    }
+a[href|="/seriouslyhug"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 183px;
+    height: 130px;
+    background-image: url(http://d.thumbs.redditmedia.com/dkjb9Hzs5hlx87ME.png)
+    }
+a[href|="/woonapie"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 112px;
+    height: 130px;
+    background-image: url(http://b.thumbs.redditmedia.com/ZPoXKstTPj4DI0_s.png)
+    }
+a[href|="/seriouslyshrug"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 130px;
+    height: 130px;
+    background-image: url(http://c.thumbs.redditmedia.com/fTDZIBEd-OxnPy9t.png)
+    }
+a[href|="/seriouslyjuice"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 113px;
+    height: 130px;
+    background-image: url(http://d.thumbs.redditmedia.com/hjvocahDBeak61zc.png)
+    }
+/*** Animated Emotes ***/
+a[href|="/seriouslycolorful"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 110px;
+    height: 130px;
+    background-image: url(http://e.thumbs.redditmedia.com/aUqEEb7oFlywtu8X.png)
+    }
+a[href|="/seriouslyrave"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 130px;
+    height: 130px;
+    background-image: url(http://f.thumbs.redditmedia.com/e8OYdx3Bwo3MMj3_.png)
+    }
+a[href|="/seriouswithit"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 110px;
+    height: 130px;
+    background-image: url(http://e.thumbs.redditmedia.com/3FKXT0SVHWow6etX.png)
+    }
+a[href|="/seriouslyluna"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 256px;
+    height: 300px;
+    background-image: url(http://e.thumbs.redditmedia.com/O2v5pRUd3I6g1R7R.png)
+    }
+a[href|="/seriouslywoona"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 130px;
+    height: 130px;
+    background-image: url(http://a.thumbs.redditmedia.com/eVKbGaDRQsZFeHG6.png)
+    }
+a[href|="/seriouslyGDB"], a[href|="/seriouslygdb"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 130px;
+    height: 130px;
+    background-image: url(http://a.thumbs.redditmedia.com/1NBWE9LmsiSPGFVH.png)
+    }
+a[href|="/seriouslydance"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 130px;
+    height: 130px;
+    background-image: url(http://a.thumbs.redditmedia.com/Wq3K_fFsaylPpMeN.png)
+    }
+/*** Mane Six emotes ***/
+a[href|="/seriouslyshy"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 137px;
+    height: 130px;
+    background-image: url(http://b.thumbs.redditmedia.com/GqG7QWAPmVQdLIZ1.png)
+    }
+a[href|="/seriouslyaj"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 116px;
+    height: 130px;
+    background-image: url(http://c.thumbs.redditmedia.com/2pTk5aj9WFAjDlx2.png)
+    }
+a[href|="/seriouslyrarity"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 162px;
+    height: 130px;
+    background-image: url(http://b.thumbs.redditmedia.com/KkaX88JRjMUZSXSC.png)
+    }
+a[href|="/seriouslytwilight"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 115px;
+    height: 130px;
+    background-image: url(http://c.thumbs.redditmedia.com/2TT5_9zjSdFyvYin.png)
+    }
+a[href|="/seriouslydash"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 119px;
+    height: 130px;
+    background-image: url(http://b.thumbs.redditmedia.com/L24YMcnUu5ZqQQ-m.png)
+    }
+a[href|="/seriouslypie"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 120px;
+    height: 130px;
+    background-image: url(http://d.thumbs.redditmedia.com/IRYbSDxw3sa1ef_i.png)
+    }
+/*** Submission Text ***/
+#title-field.roundfield:before {
+    content: "You're submitting content? Seriously?";
+    font-size: 0.89em;
+    padding: 5px;
+    border: 2px solid black;
+    background-color: #23238E;
+    color: white;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 12px
+    }
+/***********************
+*
+*        Seriously FLAIR
+*   
+************************/
+.flair {
+    display: inline-block;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    font-weight: 700
+    }
+.flair:after {
+    background-image: url(http://a.thumbs.redditmedia.com/7LajBW5Y_8QiZNTH.png);
+    background-position: 0px 0px;
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat
+    }
+.flair-woona:after {
+    background-position: 0px 0px
+    }
+.flair-lunaeyes:after {
+    background-position: -25px 0px
+    }
+.flair-luna:after {
+    background-position: 0px -25px
+    }
+.flair-cooluna:after {
+    background-position: -25px -25px
+    }
+.flair-fluttershy:after {
+    background-position: 0px -50px
+    }
+.flair-pinkiepie:after {
+    background-position: -25px -50px
+    }
+.flair-rarity:after {
+    background-position: 0px -75px
+    }
+.flair-twilight:after {
+    background-position: -25px -75px
+    }
+.flair-rainbowdash:after {
+    background-position: 0px -100px
+    }
+.flair-applejack:after {
+    background-position: -25px -100px
+    }
+.flair-flitter:after {
+    background-position: 0px -126px
+    }
+.flair-vinyl:after {
+    background-position: -25px -126px
+    }
+.flair-roseluck:after {
+    background-position: 0px -151px
+    }
+.flair-octavia:after {
+    background-position: -25px -151px
+    }
+.flair-cheerilee:after {
+    background-position: 0px -177px
+    }
+.flair-derpy:after {
+    background-position: -25px -177px
+    }
+.flair-berry:after {
+    background-position: 0px -202px
+    }
+.flair-celestia:after {
+    background-position: -25px -202px
+    }
+/* Created by flair fix */
+.side .flair {
+    background-color: transparent !important
+    }
+div.bottom .flair {
+    display: none
+    }
+/* RES Nightmode flair fix */
+.res-nightmode .tagline .flair {
+    background-color: transparent !important
+    }
+.res-nightmode .side .md h3 {
+    color: #DDD !important
+    }
+.res-nightmode .side .titlebox .usertext-body .md h3 {
+    color: white !important
+    }
+#mail.havemail {
+    background-image: url(http://b.thumbs.redditmedia.com/WG6aGcoy6cDT1di7.png);
+    background-repeat: no-repeat;
+    background-position: 0 0
+    }
+/* #mail.nohavemail { background-image:url(%%mail%%); background-repeat: no-repeat; background-position: 0 0 } */
+#siteTable .entry.dislikes .buttons:before {
+    content: "Seriously?";
+    color: #88AADD;
+    font-size: 20pt;
+    font-weight: bold
+    }
+#siteTable .entry.dislikes:after {
+    content: url(http://b.thumbs.redditmedia.com/vwkUOL-0dR_y54e7.png);
+    position: fixed;
+    /* Used for centering (bottom center) */
+    bottom: 4%;
+    left: 39% !important;
+    margin-left: -345px;
+    /* 0.5 the image width */
+    z-index: -100
+    }
+/*no-repeat fixed 30% 90% !important*/
+/***********************
+*
+*        Seriously Bonus CSS, miscellaneous tidbits.
+*   
+************************/
+/*** Nightmode fixes for the background ***/
+.content #siteTable div[onclick="click_thing(this)"] {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type > .content {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type {
+    background-color: transparent !important
+    }
+/*** Adds a neat style for ####text in posts. (Shamelessly jacked from /r/mylittleandysonic1, I don;t think they'll mind though ***/
+.usertext-body h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: navy;
+    background: lightblue;
+    text-align: center;
+    padding: 3px;
+    border-radius: 19px;
+    -moz-border-radius: 19px;
+    box-shadow: 2px 2px 5px #9999ff;
+    text-shadow: 1px 1px black
+    }
+/* Make the "community settings" text box bigger, because it's an unreadable clusterfuck when it's small. */
+/* .fancy-settings .linefield {
+    width: 914px
+    }
+.fancy-settings textarea {
+    width: 892px;
+    height: 500px
+    } */
+/* Also make the CSS text box bigger, because why not. */
+/* .stylesheet-customize-container textarea {
+    height: 500px
+    }*/
