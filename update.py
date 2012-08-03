@@ -24,11 +24,12 @@ if not os.path.exists("stylesheet-cache"):
     print("ERROR: run from the wrong directory!")
     sys.exit(1)
 
-filenames = sorted(os.listdir("stylesheet-cache"))
-for (i, filename) in enumerate(filenames):
-    if filename in (".bzr",):
-        continue
+if len(sys.argv) > 1:
+    filenames = [subreddit + ".css" for subreddit in sys.argv[1:]]
+else:
+    filenames = [filename for filename in sorted(os.listdir("stylesheet-cache")) if filename not in [".bzr"]]
 
+for (i, filename) in enumerate(filenames):
     subreddit = filename.split(".")[0]
     url = "http://reddit.com/r/%s/stylesheet?random=%s" % (subreddit, random.randrange(1000000))
 
