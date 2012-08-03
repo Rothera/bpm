@@ -34,6 +34,8 @@ body {
     /* Used for centering (bottom center) */
     bottom: 0px;
     left: 50%;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
     margin-left: -577px;
     /* 0.5 the image width */
     z-index: -100
@@ -428,7 +430,7 @@ a.author[href$="Conky_"] {
     letter-spacing: -20px
     }
 a.author[href$="Conky_"]:after {
-    content: "He who Betrays You All ";
+    content: "Russian Sympathizer ";
     font-family: "wingdings", cursive;
     font-size: 16px !important;
     color: red;
@@ -745,3 +747,32 @@ a[href|="/disugh"] {
     height: 150px;
     width: 161px
     }
+a[href|="/twiraptor"] {
+    background-image: url(http://d.thumbs.redditmedia.com/KxtpozfASGMrDUNK.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 300px;
+    width: 428px
+    }
+/*** Bottom page Foodmane  ***/
+.footer-parent {
+    height: 652px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(http://b.thumbs.redditmedia.com/eezQidBIs3bWXowO.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: 4px
+    }
+/*** Corner image
+#header {
+    background-image: url(%%stalin%%);
+    background-repeat: no-repeat;
+    background-position: bottom right
+    }
+
+*/
