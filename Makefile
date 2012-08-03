@@ -3,7 +3,7 @@ default: packages
 packages: betterponymotes.xpi betterponymotes.crx
 
 betterponymotes.xpi: emote-classes.css data/* package.json lib/main.js
-	cfx xpi --update-link=http://rainbow.mlas1.us/betterponymotes_`./version.py get`.xpi --update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf
+	cfx xpi --update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf
 
 betterponymotes.crx: emote-classes.css chrome/*
 	google-chrome --pack-extension=chrome --pack-extension-key=betterponymotes.pem
@@ -21,3 +21,4 @@ pack-xpi:
 	cd xpi && zip -r ../betterponymotes.xpi * && cd ..
 	rm -r xpi
 	cp betterponymotes.xpi betterponymotes_`./version.py get`.xpi
+	uhura -k betterponymotes.pem betterponymotes_`./version.py get`.xpi http://rainbow.mlas1.us/betterponymotes_`./version.py get`.xpi > betterponymotes.update.rdf
