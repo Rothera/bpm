@@ -26,6 +26,9 @@ if not os.path.exists("stylesheet-cache"):
 
 filenames = sorted(os.listdir("stylesheet-cache"))
 for (i, filename) in enumerate(filenames):
+    if filename in (".bzr",):
+        continue
+
     subreddit = filename.split(".")[0]
     url = "http://reddit.com/r/%s/stylesheet?random=%s" % (subreddit, random.randrange(1000000))
 
