@@ -34,7 +34,7 @@ SeriouslyConky:
         > Added Search bar Luna
 
 */
-/*** Naming system (Thank you Dashie, for this, seriously) ***/
+/*** Naming system ***/
 a.author:after {
     font-size: 10px !important;
     visibility: visible !important;
@@ -44,12 +44,16 @@ a.author:after {
 .sidecontentbox .author:after {
     font-size: small !important
     }
-.id-t2_7touf, .id-t2_6n7u8, a.author[href$="Thecursed"], a.author[href$="JustAnotherGDB"], a.author[href$="FluttershyGuy20"], a.author[href$="TheDizzy"], a.author[href$="maku450"], a.author[href$="Ghassul"], a.author[href$="novadies"], a.author[href$="ruffletuffle"], a.author[href$="KillerRabbit1253"], a.author[href$="I_Forget_Shit"], a.author[href$="theKarmaCrusader"], a.author[href$="hiero_"], a.author[href$="petraman"], a.author[href$="EvanMacIan"], a.author[href$="Broken_Wagonwheel"], a.author[href$="TheDarkman67"], a.author[href$="Galdion"], a.author[href$="theMagicalCouch"], a.author[href$="bryvood"], a.author[href$="YarnTheory"], a.author[href$="Imaginecat22"], a.author[href$="bobobo1618"], a.author[href$="floutsy"], a.author[href$="cheesemoo"], a.author[href$="Sylverstone14"], a.author[href$="Avebone"], a.author[href$="MrPOSSLQ"], a.author[href$="Nyax-A"], a.author[href$="Danny_Moon"], a.author[href$="MisanthropicCat"], a.author[href$="Cheesebunker"], a.author[href$="sfitzknott"], a.author[href$="FreeqAxel"], a.author[href$="CKTofu"], a.author[href$="pwned1711"], a.author[href$="Danphos"], .id-t2_61u7x, a.author[href$="cezzlo"], a.author[href$="Itsmejohn1"], a.author[href$="pickled_octopus"], a.author[href$="UDNTNOME"], a.author[href$="Apprentice1994"], a.author[href$="dragonblade629"], a.author[href$="Cburger48"], a.author[href$="Berbaw06"], a.author[href$="smfd"], a.author[href$="BettyMcBitterpants"], a.author[href$="bitoku_no_ookami"], a.author[href$="Tentacolt"] {
+a.author:before {
+    content: "Seriously"
+    }
+.id-t2_7touf, .id-t2_6n7u8, a.author[href$="Thecursed"], a.author[href$="JustAnotherGDB"], a.author[href$="FluttershyGuy20"], a.author[href$="TheDizzy"], a.author[href$="maku450"], a.author[href$="Ghassul"], a.author[href$="novadies"], a.author[href$="ruffletuffle"], a.author[href$="KillerRabbit1253"], a.author[href$="I_Forget_Shit"], a.author[href$="theKarmaCrusader"], a.author[href$="hiero_"], a.author[href$="petraman"], a.author[href$="EvanMacIan"], a.author[href$="Broken_Wagonwheel"], a.author[href$="TheDarkman67"], a.author[href$="Galdion"], a.author[href$="theMagicalCouch"], a.author[href$="bryvood"], a.author[href$="YarnTheory"], a.author[href$="Imaginecat22"], a.author[href$="bobobo1618"], a.author[href$="floutsy"], a.author[href$="cheesemoo"], a.author[href$="Sylverstone14"], a.author[href$="Avebone"], a.author[href$="MrPOSSLQ"], a.author[href$="Nyax-A"], a.author[href$="Danny_Moon"], a.author[href$="MisanthropicCat"], a.author[href$="Cheesebunker"], a.author[href$="sfitzknott"], a.author[href$="FreeqAxel"], a.author[href$="CKTofu"], a.author[href$="pwned1711"], a.author[href$="Danphos"], .id-t2_61u7x, a.author[href$="cezzlo"], a.author[href$="Itsmejohn1"], a.author[href$="pickled_octopus"], a.author[href$="UDNTNOME"], a.author[href$="Apprentice1994"], a.author[href$="dragonblade629"], a.author[href$="Cburger48"], a.author[href$="Berbaw06"], a.author[href$="smfd"], a.author[href$="BettyMcBitterpants"], a.author[href$="bitoku_no_ookami"], a.author[href$="Tentacolt"], a.author[href$="AllTheseApples"], a.author[href$="ThatOneRedditorBrony"] {
     font-size: 0px !important;
     display: inline-block;
     letter-spacing: -20px;
     overflow: hidden;
-    vertical-align: bottom
+    vertical-align: bottom;
+    content: ""
     }
 .id-t2_7touf:after {
     content: "Queen Serious "
@@ -60,11 +64,17 @@ a.author:after {
 .id-t2_61u7x:after {
     content: "MostSeriousPossibleThing"
     }
+.author[href$="AllTheseApples"]:after {
+    content: "Serious Servant of QueenSerious"
+    }
 a.author[href$="bitoku_no_ookami"]:after {
     content: "SeriousWolf"
     }
 a.author[href$="Tentacolt"]:after {
-    content: "SeriouslyATentacolt"
+    content: "Seriously A Tentacolt"
+    }
+a.author[href$="ThatOneRedditorBrony"]:after {
+    content: "Seriously TORB"
     }
 a.author[href$="Cburger48"]:after {
     content: "C-riousBurger48"
@@ -109,7 +119,7 @@ a.author[href$="sfitzknott"]:after {
     content: "SeriouslySfitzknott"
     }
 a.author[href$="MisanthropicCat"]:after {
-    content: "SeriouslyKatie"
+    content: "SeriouslyKat"
     }
 a.author[href$="Danny_Moon"]:after {
     content: "SeriouslyTrance_Luna"
@@ -548,6 +558,21 @@ a[href|="/seriouslyscaredhug"] {
     width: 92px;
     background-position: -530px -0px
     }
+a[href|="/luna!"]:nth-of-type(n) {
+    font-size: 20px;
+    font-variant: small-caps !important;
+    cursor: text !important;
+    color: #72b4ff !important;
+    /*background-color: #18113b !important*/
+    }
+/*body.res-nightmode a[href|="/luna!"]:nth-of-type(n)
+{
+    font-size: 18px;
+    font-variant: small-caps !important;
+    cursor: text !important;
+    color: #72b4ff !important;
+    background-color: transparent !important
+}*/
 a[href|="/seriouslunadance"] {
     display: block;
     clear: none;
