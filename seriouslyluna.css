@@ -18,6 +18,7 @@ QueenSerious:
 	> Seriously more name changes
 	> Over 9000 emotes (That's a lot of emotes there Sweetie, might want to slow down.)
 	> Two emote sheets
+	> Fixed various emotes and added them to sheets + new emotes
 
 SeriouslyConky:
 	> added Woona Rave, animated emotes size is standard at X x 130, although width depends based on the images requirements, standard static emotes are being set to the necessary width X x 130; for posterity!
@@ -47,7 +48,7 @@ a.author:after {
 a.author:before {
     content: "Seriously"
     }
-.id-t2_7touf, .id-t2_6n7u8, a.author[href$="Thecursed"], a.author[href$="JustAnotherGDB"], a.author[href$="FluttershyGuy20"], a.author[href$="TheDizzy"], a.author[href$="maku450"], a.author[href$="Ghassul"], a.author[href$="novadies"], a.author[href$="ruffletuffle"], a.author[href$="KillerRabbit1253"], a.author[href$="I_Forget_Shit"], a.author[href$="theKarmaCrusader"], a.author[href$="hiero_"], a.author[href$="petraman"], a.author[href$="EvanMacIan"], a.author[href$="Broken_Wagonwheel"], a.author[href$="TheDarkman67"], a.author[href$="Galdion"], a.author[href$="theMagicalCouch"], a.author[href$="bryvood"], a.author[href$="YarnTheory"], a.author[href$="Imaginecat22"], a.author[href$="bobobo1618"], a.author[href$="floutsy"], a.author[href$="cheesemoo"], a.author[href$="Sylverstone14"], a.author[href$="Avebone"], a.author[href$="MrPOSSLQ"], a.author[href$="Nyax-A"], a.author[href$="Danny_Moon"], a.author[href$="MisanthropicCat"], a.author[href$="Cheesebunker"], a.author[href$="sfitzknott"], a.author[href$="FreeqAxel"], a.author[href$="CKTofu"], a.author[href$="pwned1711"], a.author[href$="Danphos"], .id-t2_61u7x, a.author[href$="cezzlo"], a.author[href$="Itsmejohn1"], a.author[href$="pickled_octopus"], a.author[href$="UDNTNOME"], a.author[href$="Apprentice1994"], a.author[href$="dragonblade629"], a.author[href$="Cburger48"], a.author[href$="Berbaw06"], a.author[href$="smfd"], a.author[href$="BettyMcBitterpants"], a.author[href$="bitoku_no_ookami"], a.author[href$="Tentacolt"], a.author[href$="AllTheseApples"], a.author[href$="ThatOneRedditorBrony"] {
+.id-t2_7touf, .id-t2_6n7u8, a.author[href$="Thecursed"], a.author[href$="JustAnotherGDB"], a.author[href$="FluttershyGuy20"], a.author[href$="TheDizzy"], a.author[href$="maku450"], a.author[href$="Ghassul"], a.author[href$="novadies"], a.author[href$="ruffletuffle"], a.author[href$="KillerRabbit1253"], a.author[href$="I_Forget_Shit"], a.author[href$="theKarmaCrusader"], a.author[href$="hiero_"], a.author[href$="petraman"], a.author[href$="EvanMacIan"], a.author[href$="Broken_Wagonwheel"], a.author[href$="TheDarkman67"], a.author[href$="Galdion"], a.author[href$="theMagicalCouch"], a.author[href$="bryvood"], a.author[href$="YarnTheory"], a.author[href$="Imaginecat22"], a.author[href$="bobobo1618"], a.author[href$="floutsy"], a.author[href$="cheesemoo"], a.author[href$="Sylverstone14"], a.author[href$="Avebone"], a.author[href$="MrPOSSLQ"], a.author[href$="Nyax-A"], a.author[href$="Danny_Moon"], a.author[href$="MisanthropicCat"], a.author[href$="Cheesebunker"], a.author[href$="sfitzknott"], a.author[href$="FreeqAxel"], a.author[href$="CKTofu"], a.author[href$="pwned1711"], a.author[href$="Danphos"], .id-t2_61u7x, a.author[href$="cezzlo"], a.author[href$="Itsmejohn1"], a.author[href$="pickled_octopus"], a.author[href$="UDNTNOME"], a.author[href$="Apprentice1994"], a.author[href$="dragonblade629"], a.author[href$="Cburger48"], a.author[href$="Berbaw06"], a.author[href$="smfd"], a.author[href$="BettyMcBitterpants"], a.author[href$="bitoku_no_ookami"], a.author[href$="Tentacolt"], a.author[href$="AllTheseApples"], a.author[href$="ThatOneRedditorBrony"], a.author[href$="Scootaluna"] {
     font-size: 0px !important;
     display: inline-block;
     letter-spacing: -20px;
@@ -66,6 +67,9 @@ a.author:before {
     }
 .author[href$="AllTheseApples"]:after {
     content: "Serious Servant of QueenSerious"
+    }
+a.author[href$="Scootaluna"]:after {
+    content: "SeriouslyChickenCheese"
     }
 a.author[href$="bitoku_no_ookami"]:after {
     content: "SeriousWolf"
@@ -385,12 +389,12 @@ body:first-of-type, body.res-nightmode:first-of-type {
 *        Aprils Emote Sheet
 *
 ************************/
-a[href|="/seriouslyrose"], a[href|="/seriouslyruffled"], a[href|="/seriouslyconky"], a[href|="/flutterclaus"], a[href|="/seriouslyboredlyra"], a[href|="/getruffled"], a[href|="/queenserious"], a[href|="/seriouslygross"], a[href|="/seriouslyflowers"], a[href|="/seriouslyopal"], a[href|="/musicalhug"], a[href|="/scootacuddle"], a[href|="/hugthoseglutes"], a[href|="/ladyhugsawake"], a[href|="/rainbowpiehug"], a[href|="/pinkieshyhug"], a[href|="/morningdash"], a[href|="/rarisad"] {
+a[href|="/seriouslyrose"], a[href|="/seriouslyruffled"], a[href|="/seriouslyconky"], a[href|="/flutterclaus"], a[href|="/seriouslyboredlyra"], a[href|="/getruffled"], a[href|="/queenserious"], a[href|="/seriouslygross"], a[href|="/seriouslyflowers"], a[href|="/seriouslyopal"], a[href|="/musicalhug"], a[href|="/scootacuddle"], a[href|="/hugthoseglutes"], a[href|="/ladyhugsawake"], a[href|="/rainbowpiehug"], a[href|="/pinkieshyhug"], a[href|="/morningdash"], a[href|="/rarisad"], a[href|="/octaviapleased"] {
     display: block;
     clear: none;
     float: left;
     height: 130px;
-    background-image: url(http://f.thumbs.redditmedia.com/bAeMbMDsvRqj1VmA.png) !important
+    background-image: url(http://c.thumbs.redditmedia.com/j0yCPGThQcApKDzD.png) !important
     }
 a[href|="/seriouslyrose"] {
     width: 188px;
@@ -464,12 +468,16 @@ a[href|="/rarisad"] {
     width: 155px;
     background-position: -2502px -0px
     }
-a[href|="/rainbowdashed"], a[href|="/seriouslyderp"], a[href|="/seriouslysalute"], a[href|="/seriouslyfuming"], a[href|="/seriouslyball"], a[href|="/twijackhug"], a[href|="/hhh78"], a[href|="/seriouslyajshocked"], a[href|="/scrunchypossie"], a[href|="/seriouslyshrug"], a[href|="/seriouslycezzlo"], a[href|="/seriouslytwiswag"], a[href|="/woonashy"], a[href|="/woonapounce"], a[href|="/seriouslytoocute"] {
+a[href|="/octaviapleased"] {
+    width: 80px;
+    background-position: -2657px -0px
+    }
+a[href|="/rainbowdashed"], a[href|="/seriouslyderp"], a[href|="/seriouslysalute"], a[href|="/seriouslyfuming"], a[href|="/seriouslyball"], a[href|="/twijackhug"], a[href|="/hhh78"], a[href|="/seriouslyajshocked"], a[href|="/scrunchypossie"], a[href|="/seriouslyshrug"], a[href|="/seriouslycezzlo"], a[href|="/seriouslytwiswag"], a[href|="/woonashy"], a[href|="/woonapounce"], a[href|="/seriouslytoocute"], a[href|="/otaviagreet"], a[href|="/seriouslyclassical"], a[href|="/seriouslystare"], a[href|="/seriouslywtf"], a[href|="/seriouslymusic"], a[href|="/woonapie"] {
     display: block;
     clear: none;
     float: left;
     height: 130px;
-    background-image: url(http://a.thumbs.redditmedia.com/qpAf_Loqj2u6YumN.png) !important
+    background-image: url(http://d.thumbs.redditmedia.com/RYBSfmpHnQ-48z5i.png) !important
     }
 a[href|="/rainbowdashed"] {
     width: 177px;
@@ -531,6 +539,30 @@ a[href|="/seriouslytoocute"] {
     width: 140px;
     background-position: -2020px -0px
     }
+a[href|="/otaviagreet"] {
+    width: 133px;
+    background-position: -2160px -0px
+    }
+a[href|="/seriouslyclassical"] {
+    width: 117px;
+    background-position: -2293px -0px
+    }
+a[href|="/seriouslystare"] {
+    width: 113px;
+    background-position: -2410px -0px
+    }
+a[href|="/seriouslywtf"] {
+    width: 117px;
+    background-position: -2523px -0px
+    }
+a[href|="/seriouslymusic"] {
+    width: 199px;
+    background-position: -2640px -0px
+    }
+a[href|="/woonapie"] {
+    width: 111px;
+    background-position: -2839px -0px
+    }
 a[href|="/seriouslylikeasir"], a[href|="/seriouslybrushie"], a[href|="/seriouslysadaj"], a[href|="/seriouslyfourthwall"], a[href|="/seriouslyscaredhug"] {
     display: block;
     clear: none;
@@ -585,6 +617,14 @@ a[href|="/seriouslunadance"] {
     height: 225px;
     background-image: url(http://c.thumbs.redditmedia.com/xU1ULG3FvJKEDs3h.png)
     }
+a[href|="/evilcadance"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 163px;
+    height: 130px;
+    background-image: url(http://a.thumbs.redditmedia.com/70jMGNvW7i9l9wOl.png)
+    }
 /***********************
 *
 *        Seriously Emotes
@@ -622,14 +662,6 @@ a[href|="/seriouslyupset"] {
     height: 130px;
     background-image: url(http://b.thumbs.redditmedia.com/N5WpeFPJwycE02OI.png)
     }
-a[href|="/seriouslystare"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 116px;
-    height: 130px;
-    background-image: url(http://c.thumbs.redditmedia.com/biCLQHZM0qtMJ9jz.png)
-    }
 a[href|="/seriouslypissed"] {
     display: block;
     clear: none;
@@ -637,14 +669,6 @@ a[href|="/seriouslypissed"] {
     width: 133px;
     height: 130px;
     background-image: url(http://b.thumbs.redditmedia.com/_aYs6HsfoKm1z0VO.png)
-    }
-a[href|="/seriouslywtf"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 118px;
-    height: 130px;
-    background-image: url(http://a.thumbs.redditmedia.com/N9aLL3nSN9kIkl96.png)
     }
 a[href|="/lunasoserious"] {
     display: block;
@@ -670,14 +694,6 @@ a[href|="/lunaohyou"] {
     height: 130px;
     background-image: url(http://f.thumbs.redditmedia.com/qXwmDTayhbo7GNcA.png)
     }
-a[href|="/seriouslymusic"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 130px;
-    height: 130px;
-    background-image: url(http://f.thumbs.redditmedia.com/Uy6Wq2a_p5vl0cnA.png)
-    }
 a[href|="/seriouslyhug"] {
     display: block;
     clear: none;
@@ -685,14 +701,6 @@ a[href|="/seriouslyhug"] {
     width: 183px;
     height: 130px;
     background-image: url(http://d.thumbs.redditmedia.com/dkjb9Hzs5hlx87ME.png)
-    }
-a[href|="/woonapie"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 112px;
-    height: 130px;
-    background-image: url(http://b.thumbs.redditmedia.com/ZPoXKstTPj4DI0_s.png)
     }
 a[href|="/seriouslyjuice"] {
     display: block;
