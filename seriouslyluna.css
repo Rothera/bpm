@@ -94,8 +94,8 @@ a.author[href$="Berbaw06"]:after {
 a.author[href$="pickled_octopus"]:after {
     content: "Pickled_Seriousness"
     }
-a.author[href$="ASeriousApprentice"]:after {
-    content: "Apprentice1994?"
+a.author[href$="Apprentice1994"]:after {
+    content: "Apprentice In Seriousness?"
     }
 a.author[href$="UDNTNOME"]:after {
     content: "USRSLYDNTNOME?"
@@ -134,7 +134,7 @@ a.author[href$="FreeqAxel"]:after {
     content: "SeriouslyFreeqAxel"
     }
 a.author[href$="Cheesebunker"]:after {
-    content: "SeriousBunker"
+    content: "SeriouslyCheesus"
     }
 a.author[href$="cheesemoo"]:after {
     content: "SeriouslyCheesy"
@@ -558,21 +558,25 @@ a[href|="/seriouslyscaredhug"] {
     width: 92px;
     background-position: -530px -0px
     }
-a[href|="/luna!"]:nth-of-type(n) {
-    font-size: 20px;
-    font-variant: small-caps !important;
-    cursor: text !important;
-    color: #72b4ff !important;
-    /*background-color: #18113b !important*/
+a[href|="/fuckfloutsy"], a[href|="/seriouslyevilflitter"], a[href|="/notamusedfloutchaser"] {
+    display: block;
+    clear: none;
+    float: left;
+    height: 250px;
+    background-image: url(http://c.thumbs.redditmedia.com/Dd9aQWH1zeQpL9bt.png) !important
     }
-/*body.res-nightmode a[href|="/luna!"]:nth-of-type(n)
-{
-    font-size: 18px;
-    font-variant: small-caps !important;
-    cursor: text !important;
-    color: #72b4ff !important;
-    background-color: transparent !important
-}*/
+a[href|="/fuckfloutsy"] {
+    width: 172px;
+    background-position: -0px -0px
+    }
+a[href|="/seriouslyevilflitter"] {
+    width: 182px;
+    background-position: -172px -0px
+    }
+a[href|="/notamusedfloutchaser"] {
+    width: 162px;
+    background-position: -354px -0px
+    }
 a[href|="/seriouslunadance"] {
     display: block;
     clear: none;
@@ -580,14 +584,6 @@ a[href|="/seriouslunadance"] {
     width: 200px;
     height: 225px;
     background-image: url(http://c.thumbs.redditmedia.com/xU1ULG3FvJKEDs3h.png)
-    }
-a[href|="/fuckfloutsy"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 172px;
-    height: 250px;
-    background-image: url(http://f.thumbs.redditmedia.com/ew5aE1LvW4eEVdzq.png)
     }
 /***********************
 *
@@ -944,6 +940,21 @@ div.bottom .flair {
 *        Seriously Bonus CSS, miscellaneous tidbits.
 *   
 ************************/
+a[href|="/luna!"]:nth-of-type(n) {
+    font-size: 20px;
+    font-variant: small-caps !important;
+    cursor: text !important;
+    color: #72b4ff !important;
+    /*background-color: #18113b !important*/
+    }
+/*body.res-nightmode a[href|="/luna!"]:nth-of-type(n)
+{
+    font-size: 18px;
+    font-variant: small-caps !important;
+    cursor: text !important;
+    color: #72b4ff !important;
+    background-color: transparent !important
+}*/
 /*** Nightmode fixes for the background ***/
 .content #siteTable div[onclick="click_thing(this)"] {
     background-color: transparent !important

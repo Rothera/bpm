@@ -342,3 +342,14 @@ a[href|="/bp20"], a[href|="/bpdrunk"] {
 a[href|="/bp21"], a[href|="/bpgross"] {
     background-position: -140px -70px
     }
+/* USER TEXT FOR SPECIAL PONIES */
+/* Adding after-text to somebody's name? Add them here. */
+a.author[href$=Gyroburner]:after {
+    color: #000;
+    font-size: 10px !important;
+    letter-spacing: normal
+    }
+/* After-name text goes here. */
+a.author[href$=Gyroburner]:after {
+    content: " [winner of the synchtube endurance test]"
+    }
