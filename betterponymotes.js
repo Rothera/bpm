@@ -15,7 +15,8 @@ function process(element) {
     // former is normalized somewhat to be a complete URL, which we don't want.
     var href = element.getAttribute("href");
     if(href) {
-        var parts = href.toLowerCase().split("-");
+        // Don't normalize case...
+        var parts = href.split("-");
         var emote = parts[0];
         if(emote_map.hasOwnProperty(emote)) {
             //console.log("Applying CSS to " + emote + ": " + emote_map[emote]);

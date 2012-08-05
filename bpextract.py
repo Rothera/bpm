@@ -20,6 +20,9 @@ import yaml
 # have changed, but I primarily speak of :hover and such.
 
 def parse_css(text):
+    # Strip out comments. This isn't safe- it'll break if you embed them in
+    # strings and such- but that's unlikely to happen.
+    text = re.sub(r"/\*[^*]*\*+(?:[^/][^*]*\*+)*/", "", text)
     while True:
         rule, text = parse_block(text)
         if rule is None:
@@ -57,13 +60,19 @@ def parse_selector(string):
     # There's one emote that includes a ":" as part of the name...
     m = re.match(r'a\[href\|?="(/[\w:]+)"\]$', string)
     if m is None:
-        raise ValueError(string)
-    return m.group(1) + suffix
+        print("Ignoring", string)
+        return None
+    selector = m.group(1) + suffix
+    print("Accepting", selector)
+    return selector
 
 def parse_properties(text):
     prop_strings = text.split(";")
     props = {}
     for s in prop_strings:
+        s = s.strip()
+        if not s:
+            continue
         s = s.replace("!important", "") # FIXME: this may be bad
         key, val = s.split(":", 1)
         props[key.strip()] = val.strip()
