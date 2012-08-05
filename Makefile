@@ -2,13 +2,15 @@ default: packages
 
 packages: betterponymotes.xpi betterponymotes.crx
 
-betterponymotes.xpi: emote-classes.css data/* package.json lib/main.js
+betterponymotes.xpi: data-files data/* package.json lib/main.js
 	cfx xpi --update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf
 
-betterponymotes.crx: emote-classes.css chrome/*
+betterponymotes.crx: data-files chrome/*
 	google-chrome --pack-extension=chrome --pack-extension-key=betterponymotes.pem
 	mv chrome.crx betterponymotes.crx
 	cp betterponymotes.crx betterponymotes_`./version.py get`.crx
+
+data-files: emote-classes.css nsfw-emote-classes.css emote-map.js
 
 emote-classes.css nsfw-emote-classes.css emote-map.js: bpgen.py emotes/*.yaml
 	./bpgen.py emotes/*.yaml
