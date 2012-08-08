@@ -1,6 +1,6 @@
 /* Changes background */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background: url(http://f.thumbs.redditmedia.com/DIXtodOvgh70G3ww.png) no-repeat fixed 60% 100% !important
+    background: url(http://d.thumbs.redditmedia.com/FcmPjG9j3_wkdvqE.png) no-repeat fixed 60% 100% !important
     }
 /* Nightmode fixes for the background */
 .content #siteTable div[onclick="click_thing(this)"] {
@@ -14,7 +14,7 @@ body.res-nightmode:first-of-type {
     }
 /* Announcement header box thingy. Jacked this from the main MLP sub. 
 .content {
-    margin-top: 100px
+    margin-top: 50px
     }
 .pagename {
     font-size: 12pt
@@ -72,7 +72,7 @@ body.res-nightmode:first-of-type {
     }
 /* Banner Image */
 #header #header-bottom-left {
-    background: url(http://c.thumbs.redditmedia.com/gPeEop4PIhdcPMM2.png);
+    background: url(http://b.thumbs.redditmedia.com/mXfH3Puy-l7loBes.png);
     /*background-color:#5daa5c; */
     background-color: transparent !important;
     /*   margin-top: -50px;*/
@@ -82,13 +82,15 @@ body.res-nightmode:first-of-type {
     /* 237 for meat's nice banner */
     }
 /* pa.reddit.com Banner Image */
-html:lang(pa) #header-bottom-left {
-    background: url(http://f.thumbs.redditmedia.com/PfIqWHnZ-8nDaqp_.png);
-    background-color: #ffffff;
-    background-repeat: no-repeat;
-    background-position: 33% 33%;
-    height: 330px
-    }
+/*
+ html:lang(pa) #header-bottom-left {
+     background: url(%%thatpicturedownthere%%);
+     background-color: #ffffff;
+     background-repeat: no-repeat;
+     background-position: 33% 33%;
+     height: 330px;
+     }
+*/
 /* User stuff (name color, karma color, est.) */
 #header-bottom-right {
     background-color: #000000
@@ -106,7 +108,7 @@ html:lang(pa) #header-bottom-left {
     color: Teal
     }
 #header-img {
-    margin-top: 120px;
+    margin-top: 55px;
     /* 80 for meat's nice banner */
     margin-left: 10px;
     position: absolute
@@ -127,7 +129,7 @@ html:lang(pa) #header-bottom-left {
 .tabmenu {
     margin-top: 285px;
     /* 223 for meat's nice banner */
-    margin-left: 310px
+    margin-left: 810px
     }
 .tabmenu li a {
     color: #000000;
@@ -302,7 +304,7 @@ label[for="subRedditStyleCheckbox"] {
 .flair-Qdwach:after {
     background-position: 0px -690px
     }
-.flair-derram:after {
+.flair-Greenie_Lye:after {
     background-position: 0px -720px
     }
 .flair-supercrunchy:after {
@@ -734,11 +736,11 @@ a[href|="/twinuzzle"] {
     height: 152px;
     background-position: -113px -3107px
     }
-a[href|="/a_lot"], a[href|="/applepuff"], a[href|="/bendover"], a[href|="/cadancewat"], a[href|="/cadencewat"], a[href|="/chryswat"], a[href|="/cmcderp"], a[href|="/discordwtf"], a[href|="/doitfilly"], a[href|="/eeveedash"], a[href|="/flutalot"], a[href|="/gildafury"], a[href|="/hatefuck"], a[href|="/pbf"], a[href|="/ppchainsaw"], a[href|="/ppteeth"], a[href|="/raritywooo"], a[href|="/rarizee"], a[href|="/rubysquee"], a[href|="/shyduck"], a[href|="/twipoke"], a[href|="/twiread"], a[href|="/wuna"] {
+a[href|="/a_lot"], a[href|="/applepuff"], a[href|="/bendover"], a[href|="/cadancewat"], a[href|="/cadencewat"], a[href|="/chryswat"], a[href|="/cmcderp"], a[href|="/derpshrug"], a[href|="/derpsrs"], a[href|="/discordwtf"], a[href|="/doitfilly"], a[href|="/eeveedash"], a[href|="/flutalot"], a[href|="/gildafury"], a[href|="/hatefuck"], a[href|="/pbf"], a[href|="/ppchainsaw"], a[href|="/ppteeth"], a[href|="/raritywooo"], a[href|="/rarizee"], a[href|="/rubysquee"], a[href|="/shyduck"], a[href|="/twipoke"], a[href|="/twiread"], a[href|="/wuna"] {
     display: block;
     clear: none;
     float: left;
-    background-image: url(http://b.thumbs.redditmedia.com/h5WgVTaRo_UWI1e1.png)
+    background-image: url(http://b.thumbs.redditmedia.com/FV3HFQIwFSg4ZeYy.png)
     }
 a[href|="/a_lot"] {
     width: 256px;
@@ -775,20 +777,30 @@ a[href|="/cmcderp"] {
     height: 127px;
     background-position: -0px -421px
     }
+a[href|="/derpshrug"] {
+    width: 115px;
+    height: 127px;
+    background-position: -0px -548px
+    }
+a[href|="/derpsrs"] {
+    width: 105px;
+    height: 102px;
+    background-position: -115px -548px
+    }
 a[href|="/discordwtf"] {
     width: 154px;
     height: 152px;
-    background-position: -0px -548px
+    background-position: -0px -675px
     }
 a[href|="/doitfilly"] {
     width: 185px;
     height: 202px;
-    background-position: -0px -700px
+    background-position: -0px -827px
     }
 a[href|="/eeveedash"] {
     width: 79px;
     height: 102px;
-    background-position: -0px -902px
+    background-position: -0px -1029px
     }
 a[href|="/flutalot"] {
     width: 256px;
@@ -798,62 +810,62 @@ a[href|="/flutalot"] {
 a[href|="/gildafury"] {
     width: 256px;
     height: 167px;
-    background-position: -0px -1004px
+    background-position: -0px -1131px
     }
 a[href|="/hatefuck"] {
     width: 256px;
     height: 231px;
-    background-position: -0px -1171px
+    background-position: -0px -1298px
     }
 a[href|="/pbf"] {
     width: 66px;
     height: 82px;
-    background-position: -0px -1402px
+    background-position: -0px -1529px
     }
 a[href|="/ppchainsaw"] {
     width: 226px;
     height: 152px;
-    background-position: -0px -1484px
+    background-position: -0px -1611px
     }
 a[href|="/ppteeth"] {
     width: 166px;
     height: 152px;
-    background-position: -0px -1636px
+    background-position: -0px -1763px
     }
 a[href|="/raritywooo"] {
     width: 100px;
     height: 152px;
-    background-position: -0px -1788px
+    background-position: -0px -1915px
     }
 a[href|="/rarizee"] {
     width: 97px;
     height: 102px;
-    background-position: -100px -1788px
+    background-position: -100px -1915px
     }
 a[href|="/rubysquee"] {
     width: 124px;
     height: 127px;
-    background-position: -0px -1940px
+    background-position: -0px -2067px
     }
 a[href|="/shyduck"] {
     width: 91px;
     height: 102px;
-    background-position: -124px -1940px
+    background-position: -124px -2067px
     }
 a[href|="/twipoke"] {
     width: 101px;
     height: 102px;
-    background-position: -0px -2067px
+    background-position: -0px -2194px
     }
 a[href|="/twiread"] {
     width: 256px;
     height: 108px;
-    background-position: -0px -2169px
+    background-position: -0px -2296px
     }
 a[href|="/wuna"] {
     width: 146px;
     height: 202px;
-    background-position: -0px -2277px
+    background-position: -0px -2404px
     }
 a[href|="/ajwtf"], a[href|="/ch13"], a[href|="/ch23"], a[href|="/ch33"], a[href|="/cheerilean"], a[href|="/cheerwithit"], a[href|="/evilenchantress"], a[href|="/flutterhug"], a[href|="/forequestria"], a[href|="/lb00"], a[href|="/lb01"], a[href|="/lb02"], a[href|="/lb03"], a[href|="/lb04"], a[href|="/lb05"], a[href|="/lb06"], a[href|="/lb10"], a[href|="/lb11"], a[href|="/lb12"], a[href|="/lb13"], a[href|="/lb14"], a[href|="/lb15"], a[href|="/lb20"], a[href|="/lb21"], a[href|="/lb22"], a[href|="/lb23"], a[href|="/lb24"], a[href|="/lb25"], a[href|="/lb30"], a[href|="/lb31"], a[href|="/lb32"], a[href|="/lb33"], a[href|="/lb34"], a[href|="/lb35"], a[href|="/lb40"], a[href|="/lb41"], a[href|="/lb42"], a[href|="/lb43"], a[href|="/lb44"], a[href|="/lb45"], a[href|="/lywithit"], a[href|="/scratch"], a[href|="/sweetiestache"], a[href|="/twiwhy"], a[href|="/worstpony"] {
     display: block;
@@ -1474,7 +1486,7 @@ a[href|="/w40"] {
     height: 74px;
     background-position: -414px -829px
     }
-a[href|="/ch00"], a[href|="/ch01"], a[href|="/ch02"], a[href|="/ch03"], a[href|="/ch10"], a[href|="/ch11"], a[href|="/ch12"], a[href|="/ch20"], a[href|="/ch21"], a[href|="/ch22"], a[href|="/ch25"], a[href|="/ch30"], a[href|="/ch31"], a[href|="/ch32"], a[href|="/fscrazy"], a[href|="/gilda"], a[href|="/jackwithit"], a[href|="/ppahh"], a[href|="/rarwithit"], a[href|="/scootie"], a[href|="/shywithit"], a[href|="/sparklewithit"], a[href|="/spitfuck"], a[href|="/twino"] {
+a[href|="/ch00"], a[href|="/ch01"], a[href|="/ch02"], a[href|="/ch03"], a[href|="/ch10"], a[href|="/ch11"], a[href|="/ch12"], a[href|="/ch20"], a[href|="/ch21"], a[href|="/ch22"], a[href|="/ch25"], a[href|="/ch30"], a[href|="/ch31"], a[href|="/ch32"], a[href|="/fscrazy"], a[href|="/giffonafuck"], a[href|="/griffinafuck"], a[href|="/gryphonafuck"], a[href|="/jackwithit"], a[href|="/ppahh"], a[href|="/rarwithit"], a[href|="/scootie"], a[href|="/shywithit"], a[href|="/sparklewithit"], a[href|="/spitfuck"], a[href|="/timgaf"], a[href|="/twino"] {
     display: block;
     clear: none;
     float: left;
@@ -1555,7 +1567,17 @@ a[href|="/fscrazy"] {
     height: 131px;
     background-position: -277px -468px
     }
-a[href|="/gilda"] {
+a[href|="/giffonafuck"] {
+    width: 217px;
+    height: 206px;
+    background-position: -0px -624px
+    }
+a[href|="/griffinafuck"] {
+    width: 217px;
+    height: 206px;
+    background-position: -0px -624px
+    }
+a[href|="/gryphonafuck"] {
     width: 217px;
     height: 206px;
     background-position: -0px -624px
@@ -1594,6 +1616,11 @@ a[href|="/spitfuck"] {
     width: 108px;
     height: 106px;
     background-position: -249px -1431px
+    }
+a[href|="/timgaf"] {
+    width: 217px;
+    height: 206px;
+    background-position: -0px -624px
     }
 a[href|="/twino"] {
     width: 206px;
@@ -3729,18 +3756,21 @@ a[href="/sp"] {
     padding-right: 100%
     }
 /* Replacing somebody's name? Add it to the list here. */
-a.author[href$="Chiv_Cortland"], a.author[href$="442B8AEF9"], a.author[href$="Ryskillz101"], a.author[href$="anonpon3"], a.author[href$="Phei"], a.author[href$="socially_broken"], a.author[href$="MisanthropicCat"], a.author[href$="Princess_Molestia_"], a.author[href$="Articulate_Angel"], a.author[href$="08G8V8"], a.author[href$=WildPlastic], a.author[href$=Avngr75], a.author[href$=tyl3rdurden], a.author[href$=derram], a.author[href$=DaylightDarkle], a.author[href$=RetardVomitPussyCunt], a.author[href$=BlockJuice_3], a.author[href$=MakeLoveNotVore], a.author[href$=andysonic2], a.author[href$="10z20Luka"], a.author[href$=Chinch335], a.author[href$=IllusionOf_Integrity], a.author[href$=PinkiePie2012], a.author[href$=DarkSideOfTheSun], a.author[href$=SkiidrowDash], a.author[href$=Backupusername], a.author[href$=Speedingturtle], a.author[href$=supercrunchy], a.author[href$=Taiokoshinketsu], a.author[href$=SolarLuna96], a.author[href$=Generic_Builder], a.author[href$=volcano_bakemeats], a.author[href$=Chillusion], a.author[href$=Esplin], a.author[href$=DarqWolff], a.author[href$=cheesemoo], a.author[href$=scriptea], a.author[href$=Nemop], a.author[href$=QdwachMD], a.author[href$=SirCinnamon], a.author[href$=Boibi], a.author[href$=CatmanIX], a.author[href$=XelNaga], a.author[href$=Catharsis25], a.author[href$=tehz], a.author[href$=tailcalled], a.author[href$=iiRockpuppy], a.author[href$=Ruuch], a.author[href$=trypsonite], a.author[href$=raritie], a.author[href$=slippy0] {
+a.author[href$="derram_2"], a.author[href$="Chiv_Cortland"], a.author[href$="442B8AEF9"], a.author[href$="Ryskillz101"], a.author[href$="anonpon3"], a.author[href$="Phei"], a.author[href$="socially_broken"], a.author[href$="MisanthropicCat"], a.author[href$="Princess_Molestia_"], a.author[href$="Articulate_Angel"], a.author[href$="08G8V8"], a.author[href$=WildPlastic], a.author[href$=Avngr75], a.author[href$=tyl3rdurden], a.author[href$=Greenie_Lye], a.author[href$=DaylightDarkle], a.author[href$=RetardVomitPussyCunt], a.author[href$=BlockJuice_3], a.author[href$=MakeLoveNotVore], a.author[href$=andysonic2], a.author[href$="10z20Luka"], a.author[href$=Chinch335], a.author[href$=IllusionOf_Integrity], a.author[href$=PinkiePie2012], a.author[href$=DarkSideOfTheSun], a.author[href$=SkiidrowDash], a.author[href$=Backupusername], a.author[href$=Speedingturtle], a.author[href$=supercrunchy], a.author[href$=Taiokoshinketsu], a.author[href$=SolarLuna96], a.author[href$=Generic_Builder], a.author[href$=volcano_bakemeats], a.author[href$=Chillusion], a.author[href$=Esplin], a.author[href$=DarqWolff], a.author[href$=cheesemoo], a.author[href$=scriptea], a.author[href$=Nemop], a.author[href$=QdwachMD], a.author[href$=SirCinnamon], a.author[href$=Boibi], a.author[href$=CatmanIX], a.author[href$=XelNaga], a.author[href$=Catharsis25], a.author[href$=tehz], a.author[href$=tailcalled], a.author[href$=iiRockpuppy], a.author[href$=Ruuch], a.author[href$=trypsonite], a.author[href$=raritie], a.author[href$=slippy0] {
     font-size: 0 !important;
     overflow: hidden;
     display: inline-block;
     content: ""
     }
 /* Replacing somebody's name? Add it to the list here too. */
-a.author[href$="Chiv_Cortland"]:before, a.author[href$="442B8AEF9"]:before, a.author[href$="anonpon3"]:before, a.author[href$="Ryskillz101"]:before, a.author[href$="Phei"]:before, a.author[href$="socially_broken"]:before, a.author[href$="MisanthropicCat"]:before, a.author[href$="Princess_Molestia_"]:before, a.author[href$="Articulate_Angel"]:before, a.author[href$="08G8V8"]:before, a.author[href$=WildPlastic]:before, a.author[href$=Avngr75]:before, a.author[href$=tyl3rdurden]:before, a.author[href$=derram]:before, a.author[href$=DaylightDarkle]:before, a.author[href$=Chinch335]:before, a.author[href$=IllusionOf_Integrity]:before, a.author[href$=trypsonite]:before, a.author[href$=RetardVomitPussyCunt]:before, a.author[href$=MakeLoveNotVore]:before, a.author[href$=andysonic2]:before, a.author[href$="10z20Luka"]:before, a.author[href$=PinkiePie2012]:before, a.author[href$=DarkSideOfTheSun]:before, a.author[href$=SkiidrowDash]:before, a.author[href$=Backupusername]:before, a.author[href$=Speedingturtle]:before, a.author[href$=supercrunchy]:before, a.author[href$=Taiokoshinketsu]:before, a.author[href$=SolarLuna96]:before, a.author[href$=Generic_Builder]:before, a.author[href$=volcano_bakemeats]:before, a.author[href$=Chillusion]:before, a.author[href$=Esplin]:before, a.author[href$=DarqWolff]:before, a.author[href$=cheesemoo]:before, a.author[href$=scriptea]:before, a.author[href$=Nemop]:before, a.author[href$=QdwachMD]:before, a.author[href$=SirCinnamon]:before, a.author[href$=BlockJuice_3]:before, a.author[href$=Boibi]:before, a.author[href$=CatmanIX]:before, a.author[href$=XelNaga]:before, a.author[href$=Catharsis25]:before, a.author[href$=tehz]:before, a.author[href$=tailcalled]:before, a.author[href$=iiRockpuppy]:before, a.author[href$=Ruuch]:before, a.author[href$=raritie]:before, a.author[href$=slippy0]:before {
+a.author[href$="derram_2"]:before, a.author[href$="Chiv_Cortland"]:before, a.author[href$="442B8AEF9"]:before, a.author[href$="anonpon3"]:before, a.author[href$="Ryskillz101"]:before, a.author[href$="Phei"]:before, a.author[href$="socially_broken"]:before, a.author[href$="MisanthropicCat"]:before, a.author[href$="Princess_Molestia_"]:before, a.author[href$="Articulate_Angel"]:before, a.author[href$="08G8V8"]:before, a.author[href$=WildPlastic]:before, a.author[href$=Avngr75]:before, a.author[href$=tyl3rdurden]:before, a.author[href$=Greenie_Lye]:before, a.author[href$=DaylightDarkle]:before, a.author[href$=Chinch335]:before, a.author[href$=IllusionOf_Integrity]:before, a.author[href$=trypsonite]:before, a.author[href$=RetardVomitPussyCunt]:before, a.author[href$=MakeLoveNotVore]:before, a.author[href$=andysonic2]:before, a.author[href$="10z20Luka"]:before, a.author[href$=PinkiePie2012]:before, a.author[href$=DarkSideOfTheSun]:before, a.author[href$=SkiidrowDash]:before, a.author[href$=Backupusername]:before, a.author[href$=Speedingturtle]:before, a.author[href$=supercrunchy]:before, a.author[href$=Taiokoshinketsu]:before, a.author[href$=SolarLuna96]:before, a.author[href$=Generic_Builder]:before, a.author[href$=volcano_bakemeats]:before, a.author[href$=Chillusion]:before, a.author[href$=Esplin]:before, a.author[href$=DarqWolff]:before, a.author[href$=cheesemoo]:before, a.author[href$=scriptea]:before, a.author[href$=Nemop]:before, a.author[href$=QdwachMD]:before, a.author[href$=SirCinnamon]:before, a.author[href$=BlockJuice_3]:before, a.author[href$=Boibi]:before, a.author[href$=CatmanIX]:before, a.author[href$=XelNaga]:before, a.author[href$=Catharsis25]:before, a.author[href$=tehz]:before, a.author[href$=tailcalled]:before, a.author[href$=iiRockpuppy]:before, a.author[href$=Ruuch]:before, a.author[href$=raritie]:before, a.author[href$=slippy0]:before {
     font-size: 10px !important;
     visibility: visible !important
     }
 /* Replacing somebody's name? Put the replacement here. */
+a.author[href$="derram_2"]:before {
+    content: "derramina Diane Pie"
+    }
 a.author[href$="Chiv_Cortland"]:before {
     content: "Chivvypoop"
     }
@@ -3783,8 +3813,8 @@ a.author[href$=tyl3rdurden]:before /*{ content:"Tyler Derpden" }*/ {
 a.author[href$=raritie]:before {
     content: "Rarity"
     }
-a.author[href$=derram]:before {
-    content: "derramina Diane Pie"
+a.author[href$=Greenie_Lye]:before {
+    content: "Greenie_Lye (Green Derram)"
     }
 a.author[href$=Chinch335]:before, a.author[href$=IllusionOf_Integrity]:before {
     content: "Chillusion"
@@ -4040,7 +4070,7 @@ a.author[href$="10z20Luka"]:after {
     font-size: 6px !important
     }
 /* Any pre/post-name flair stuff goes here */
-.tagline a.author[href="http://www.reddit.com/user/RainbowCrash"]:before, .tagline a.author[href="http://www.reddit.com/user/qwert426"]:before, .tagline a.author[href="http://www.reddit.com/user/Orschmann"]:before, .tagline a.author[href="http://www.reddit.com/user/derram"]:after, .tagline a.author[href="http://www.reddit.com/user/EvilHom3r"]:after {
+.tagline a.author[href="http://www.reddit.com/user/RainbowCrash"]:before, .tagline a.author[href="http://www.reddit.com/user/qwert426"]:before, .tagline a.author[href="http://www.reddit.com/user/Orschmann"]:before, .tagline a.author[href="http://www.reddit.com/user/derram_2"]:after, .tagline a.author[href="http://www.reddit.com/user/EvilHom3r"]:after {
     content: " ";
     background: none;
     color: black;
@@ -4059,7 +4089,7 @@ a.author[href$="10z20Luka"]:after {
     background-position: 0px -540px
     }
 /* Derram pie */
-.tagline a.author[href="http://www.reddit.com/user/derram"]:after {
+.tagline a.author[href="http://www.reddit.com/user/derram_2"]:after {
     background-position: 0px -720px
     }
 /* Extra AJ flair for homer since he's a pretty cool guy */

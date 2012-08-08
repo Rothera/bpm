@@ -24,8 +24,14 @@ Change Log:
 7-30-12 - Phei - Changed a lot of things.
 8-01-12 - Phei - Deleted old images, color corrected emotes3, added /fluttershock, moved /wubseverywhere a bit down. 
 8-02-12 - Speedy- Flair
+---------------------
 
-Last Backup: 7-29-2012 by Adagio
+New log. Please use a Unix timestamp http://www.epochconverter.com/ (The number in the blue box).
+
+1344387700 - Phei - New Log
+1344389328 - Phei - Switched fillies, header rotation, User counter
+
+Last Backup: 1344387700 by Phei
 
 
 
@@ -50,12 +56,12 @@ I MEAN IT
     width: 1000px
     }
 .reddit-link.thing.second-half.odd {
-    background: transparent url(http://e.thumbs.redditmedia.com/sllAcAuKefvV7k7X.png) top left no-repeat;
+    background: transparent url(http://a.thumbs.redditmedia.com/kfn-kqiqz_y33jtl.png) top left no-repeat;
     left: 0;
     right: auto !important
     }
 .reddit-link.thing.second-half.even {
-    background: transparent url(http://d.thumbs.redditmedia.com/ykRVTx3JdqbwgPZu.png) top right no-repeat
+    background: transparent url(http://d.thumbs.redditmedia.com/riY0Rxq9KWIx9v6-.png) top right no-repeat
     }
 span.redditname {
     display: block;
@@ -246,7 +252,7 @@ span.redditname {
     padding-top: 2px
     }
 div.titlebox span.number:after {
-    content: " Audiophile Fillies"
+    content: " Music Fillies"
     }
 #link-desc:after, #text-desc:after {
     content: "We encourage you to format your post like this: Artist - Song [Genre] (Comment)";
@@ -771,19 +777,19 @@ NEW CSS END
     }
 /* Sidebar Scratch */
 .side a[href="http://www.reddit.com/r/mylittlelistentothis/new/"] {
-    background: url(http://c.thumbs.redditmedia.com/vXRWj0XsBbQ1GKFb.png) repeat scroll 0 0 transparent;
+    background: url(http://a.thumbs.redditmedia.com/4L_O273On8p4pl6f.png) repeat scroll 0 0 transparent;
     display: block;
     height: 100px;
     position: fixed;
-    right: -2px;
+    right: -30px;
     top: 200px;
-    width: 63px;
-    z-index: 999;
+    width: 84px;
+    z-index: 2;
     border: none !important
     }
 /* Bottom Image */
 .footer-parent {
-    background-image: url(http://b.thumbs.redditmedia.com/e5QXaM3eCILRJ8IU.png);
+    background-image: url(http://c.thumbs.redditmedia.com/XOnz82YTHGDE7rGP.png);
     background-position: center bottom;
     background-repeat: no-repeat;
     clear: both;
@@ -994,6 +1000,14 @@ a[href|="/eip"] {
     }
 .author.submitter.id-t2_5u7fg {
     background-color: transparent !important
+    }
+a[href|="/badjokemostlikely"], a[href|="/bjml"], a[href|="/bj"], a[href|="/orschswaifu"] {
+    background-image: url(http://c.thumbs.redditmedia.com/clKsQK-kGLtq2Lpn.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 150px;
+    width: 150px
     }
 a[href|="/pheidance"] {
     background-image: url(http://e.thumbs.redditmedia.com/8epVY5b9BqQr1Hkp.png) !important;
@@ -1601,7 +1615,7 @@ a.author[href$="/31eipekili"]:after {
     color: #888 !important
     }
 a.author[href$="/31eipekili"]:hover:after {
-    content: "Insert witty joke here";
+    content: "Really hates spiders";
     display: block;
     font-size: 12px !important;
     letter-spacing: normal;

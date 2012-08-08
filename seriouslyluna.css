@@ -8,7 +8,8 @@
 Change log:
 
 SeriouslyGDB
-        > 3 name changes (8/5, 8/6)
+        > 4 name changes (8/5, 8/6, 8/7)
+        > Messin' with UDNT (8/6, 8/7)
 
 SeriouslyComfy
         > Centered the downvote background proper.
@@ -51,7 +52,7 @@ a.author:after {
 a.author:before {
     content: "Seriously"
     }
-.id-t2_7touf, .id-t2_6n7u8, a.author[href$="Thecursed"], a.author[href$="JustAnotherGDB"], a.author[href$="FluttershyGuy20"], a.author[href$="TheDizzy"], a.author[href$="maku450"], a.author[href$="Ghassul"], a.author[href$="novadies"], a.author[href$="ruffletuffle"], a.author[href$="KillerRabbit1253"], a.author[href$="I_Forget_Shit"], a.author[href$="theKarmaCrusader"], a.author[href$="hiero_"], a.author[href$="petraman"], a.author[href$="EvanMacIan"], a.author[href$="Broken_Wagonwheel"], a.author[href$="TheDarkman67"], a.author[href$="Galdion"], a.author[href$="theMagicalCouch"], a.author[href$="bryvood"], a.author[href$="YarnTheory"], a.author[href$="Imaginecat22"], a.author[href$="bobobo1618"], a.author[href$="floutsy"], a.author[href$="cheesemoo"], a.author[href$="Sylverstone14"], a.author[href$="Avebone"], a.author[href$="MrPOSSLQ"], a.author[href$="Nyax-A"], a.author[href$="Danny_Moon"], a.author[href$="MisanthropicCat"], a.author[href$="Cheesebunker"], a.author[href$="sfitzknott"], a.author[href$="FreeqAxel"], a.author[href$="CKTofu"], a.author[href$="pwned1711"], a.author[href$="Danphos"], .id-t2_61u7x, a.author[href$="cezzlo"], a.author[href$="Itsmejohn1"], a.author[href$="pickled_octopus"], a.author[href$="UDNTNOME"], a.author[href$="Apprentice1994"], a.author[href$="dragonblade629"], a.author[href$="Cburger48"], a.author[href$="Berbaw06"], a.author[href$="smfd"], a.author[href$="BettyMcBitterpants"], a.author[href$="bitoku_no_ookami"], a.author[href$="Tentacolt"], a.author[href$="AllTheseApples"], a.author[href$="ThatOneRedditorBrony"], a.author[href$="Scootaluna"], a.author[href$="irreama"], a.author[href$="Happycamper101"], a.author[href$="Lord_Ninka"] {
+.id-t2_7touf, .id-t2_6n7u8, a.author[href$="Thecursed"], a.author[href$="JustAnotherGDB"], a.author[href$="FluttershyGuy20"], a.author[href$="TheDizzy"], a.author[href$="maku450"], a.author[href$="Ghassul"], a.author[href$="novadies"], a.author[href$="ruffletuffle"], a.author[href$="KillerRabbit1253"], a.author[href$="I_Forget_Shit"], a.author[href$="theKarmaCrusader"], a.author[href$="hiero_"], a.author[href$="petraman"], a.author[href$="EvanMacIan"], a.author[href$="Broken_Wagonwheel"], a.author[href$="TheDarkman67"], a.author[href$="Galdion"], a.author[href$="theMagicalCouch"], a.author[href$="bryvood"], a.author[href$="YarnTheory"], a.author[href$="Imaginecat22"], a.author[href$="bobobo1618"], a.author[href$="floutsy"], a.author[href$="cheesemoo"], a.author[href$="Sylverstone14"], a.author[href$="Avebone"], a.author[href$="MrPOSSLQ"], a.author[href$="Nyax-A"], a.author[href$="Danny_Moon"], a.author[href$="MisanthropicCat"], a.author[href$="Cheesebunker"], a.author[href$="sfitzknott"], a.author[href$="FreeqAxel"], a.author[href$="CKTofu"], a.author[href$="pwned1711"], a.author[href$="Danphos"], .id-t2_61u7x, a.author[href$="cezzlo"], a.author[href$="Itsmejohn1"], a.author[href$="pickled_octopus"], a.author[href$="UDNTNOME"], a.author[href$="Apprentice1994"], a.author[href$="dragonblade629"], a.author[href$="Cburger48"], a.author[href$="Berbaw06"], a.author[href$="smfd"], a.author[href$="BettyMcBitterpants"], a.author[href$="bitoku_no_ookami"], a.author[href$="Tentacolt"], a.author[href$="AllTheseApples"], a.author[href$="ThatOneRedditorBrony"], a.author[href$="Scootaluna"], a.author[href$="irreama"], a.author[href$="Happycamper101"], a.author[href$="Lord_Ninka"], a.author[href$="tacomantotherescue"] {
     font-size: 0px !important;
     display: inline-block;
     letter-spacing: -20px;
@@ -63,7 +64,7 @@ a.author:before {
     content: "Queen Serious "
     }
 .id-t2_6n7u8:after {
-    content: "A Serious Bear"
+    content: "SeriouslyConky "
     }
 .id-t2_61u7x:after {
     content: "MostSeriousPossibleThing"
@@ -105,7 +106,7 @@ a.author[href$="Apprentice1994"]:after {
     content: "Apprentice In Seriousness?"
     }
 a.author[href$="UDNTNOME"]:after {
-    content: "USRSLYDNTNOME?"
+    content: "USRSLYDNTNOME has been banned 16 times now"
     }
 a.author[href$="cezzlo"]:after {
     content: "SeriousPrincess"
@@ -232,6 +233,9 @@ a.author[href$="Happycamper101"]:after {
     }
 a.author[href$="Lord_Ninka"]:after {
     content: "MostSeriousBunny"
+    }
+a.author[href$="tacomantotherescue"]:after {
+    content: "SeriouslyTacoshy"
     }
 /***********************
 *
@@ -602,12 +606,47 @@ a[href|="/seriouslyscaredhug"] {
     width: 92px;
     background-position: -530px -0px
     }
-a[href|="/fuckfloutsy"], a[href|="/seriouslyevilflitter"], a[href|="/notamusedfloutchaser"] {
+a[href|="/seriouslyastronaut"], a[href|="/lunaloosemane"], a[href|="/lunajump"], a[href|="/lunafacehoof"], a[href|="/lunawetmane"], a[href|="/lunaball"], a[href|="/shipwithfloutsy"] {
+    display: block;
+    clear: none;
+    float: left;
+    height: 130px;
+    background-image: url(http://f.thumbs.redditmedia.com/AsgcDJLxrGpocei_.png) !important
+    }
+a[href|="/seriouslyastronaut"] {
+    width: 117px;
+    background-position: -0px -0px
+    }
+a[href|="/lunaloosemane"] {
+    width: 103px;
+    background-position: -117px -0px
+    }
+a[href|="/lunajump"] {
+    width: 167px;
+    background-position: -220px -0px
+    }
+a[href|="/lunafacehoof"] {
+    width: 135px;
+    background-position: -387px -0px
+    }
+a[href|="/lunawetmane"] {
+    width: 114px;
+    background-position: -522px -0px
+    }
+a[href|="/lunaball"] {
+    width: 116px;
+    background-position: -636px -0px
+    }
+a[href|="/shipwithfloutsy"] {
+    width: 119px;
+    background-position: -752px -0px
+    }
+a[href|="/fuckfloutsy"], a[href|="/seriouslyevilflitter"], a[href|="/notamusedfloutchaser"], a[href|="/lovefloutsy"] {
     display: block;
     clear: none;
     float: left;
     height: 250px;
-    background-image: url(http://e.thumbs.redditmedia.com/wImibYa_rY_1gWhv.png) !important
+    background-image: url(http://f.thumbs.redditmedia.com/V9CpgMU1hBZNmLMM.png) !important
     }
 a[href|="/fuckfloutsy"] {
     width: 172px;
@@ -620,6 +659,10 @@ a[href|="/seriouslyevilflitter"] {
 a[href|="/notamusedfloutchaser"] {
     width: 162px;
     background-position: -354px -0px
+    }
+a[href|="/lovefloutsy"] {
+    width: 172px;
+    background-position: -516px -0px
     }
 a[href|="/seriouslunadance"] {
     display: block;
@@ -649,6 +692,14 @@ a[href|="/lunawink"] {
     width: 117px;
     height: 130px;
     background-image: url(http://d.thumbs.redditmedia.com/gM1R6jnCQGI2YgP3.png)
+    }
+a[href|="/seriouslydressedup"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 189px;
+    height: 130px;
+    background-image: url(http://f.thumbs.redditmedia.com/0peJ9DmCcx-8Sv8w.png)
     }
 a[href|="/seriouslyhappy"] {
     display: block;
