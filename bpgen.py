@@ -101,6 +101,8 @@ def build_data(emotes):
 
         rules = nsfw_css_rules if emote.nsfw else css_rules
         if not emote.nocss:
+            if emote.selector in rules:
+                print("Conflicting selector:", emote.selector)
             assert emote.selector not in rules
             rules[emote.selector] = emote.css.copy()
 

@@ -47,11 +47,9 @@ def parse_selector(string):
     string = string.strip()
 
     if string.startswith("a:hover") or string.endswith(":hover"):
-        print("NOTICE: Emote selector requires manual handling:", string)
         string = string.replace(":hover", "")
         suffix = ":hover"
     elif string.startswith("a:active") or string.endswith(":active"):
-        print("NOTICE: Emote selector requires manual handling:", string)
         string = string.replace(":active", "")
         suffix = ":active"
     else:
@@ -60,10 +58,8 @@ def parse_selector(string):
     # There's one emote that includes a ":" as part of the name...
     m = re.match(r'a\[href\|?="(/[\w:]+)"\]$', string)
     if m is None:
-        print("Ignoring", string)
         return None
     selector = m.group(1) + suffix
-    print("Accepting", selector)
     return selector
 
 def parse_properties(text):
@@ -141,9 +137,13 @@ def parse_size(s):
 def parse_emote(name, props):
     props = props.copy()
 
-    verify_prop(name, props, "display", "block")
-    verify_prop(name, props, "clear", "none")
-    verify_prop(name, props, "float", "left", True)
+    try:
+        verify_prop(name, props, "display", "block")
+        verify_prop(name, props, "clear", "none")
+        verify_prop(name, props, "float", "left", True)
+    except ValueError:
+        print("Not en emote:", name)
+        return None
 
     try:
         width = parse_size(pop_prop(props, "width"))
@@ -178,7 +178,6 @@ def parse_emote(name, props):
     return emote
 
 def process_special(name, src, props, src_props):
-    print("NOTICE: Attempting to process %s (source %s)" % (name, src))
     tmp = src_props.copy()
     tmp.update(props)
     props.clear()
@@ -194,12 +193,16 @@ def read_spritesheets(css):
         if name.endswith(":hover") or name.endswith(":active"):
             specials.append(name)
         else:
-            emotes[name] = parse_emote(name, props)
+            emote = parse_emote(name, props)
+            if emote is not None:
+                emotes[name] = emote
 
     for special in specials:
         src = special.replace(":hover", "").replace(":active", "")
         process_special(special, src, raw_emotes[special], raw_emotes[src])
-        emotes[special] = parse_emote(special, raw_emotes[special])
+        emote = parse_emote(special, raw_emotes[special])
+        if emote is not None:
+            emotes[special] = emote
 
     spritesheets = {}
 
