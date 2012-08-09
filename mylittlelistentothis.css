@@ -30,6 +30,7 @@ New log. Please use a Unix timestamp http://www.epochconverter.com/ (The number 
 
 1344387700 - Phei - New Log
 1344389328 - Phei - Switched fillies, header rotation, User counter
+1344463977 - Phei - Put 70x70 emotes on one sheet
 
 Last Backup: 1344387700 by Phei
 
@@ -1025,63 +1026,47 @@ a[href|="/pheicry"] {
     width: 100px;
     height: 131px
     }
+a[href|="/phei"] {
+    background-image: url(http://f.thumbs.redditmedia.com/2Knv8WhbCyIF0Uvw.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    width: 90px;
+    height: 92px;
+    background-position: 0px 0px !important
+    }
 /* Other */
 a[href|="/sp"] {
     display: inline-block;
     padding-right: 100%
     }
-a[href|="/scratchshrug"], a[href|="/tavishrug"] {
-    background-image: url(http://f.thumbs.redditmedia.com/lCi267EgdCSOFW_q.png) !important;
+/* Extra Emotes*/
+/*70 70 goes here.*/
+a[href|="/scratchshrug"], a[href|="/tavishrug"], a[href|="/scootpiano"], a[href|="/pinkiebone"], a[href|="/colgatebass"], a[href|="/mlyra"] {
+    background-image: url(http://e.thumbs.redditmedia.com/cPVjjjJ-QcdrsTrR.png) !important;
     clear: none;
     display: block;
     float: left;
     height: 70px;
     width: 70px
     }
-a[href|="/scratchshrug"] {
-    background-position: 0 0
+a[href|="/scratchshrug"], a[href|="/vinylshrug"] {
+    background-position: -0% -0%
     }
-a[href|="/tavishrug"] {
-    background-position: -70px 70px
+a[href|="/tavishrug"], a[href|="/octaviashrug"] {
+    background-position: -100% -0%
     }
-a[href|="/scootpiano"], a[href|="/pinkiebone"] {
-    background-image: url(http://d.thumbs.redditmedia.com/0doVTxQkVKb2fpfQ.png) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 70px;
-    width: 70px
-    }
-a[href|="/scootpiano"] {
-    background-position: 0 0
-    }
-a[href|="/pinkiebone"] {
-    background-position: -70px 70px
-    }
-a[href|="/showstoppers"] {
-    background-image: url(http://d.thumbs.redditmedia.com/TkBBAn3CUgc73Yv3.png) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 70px;
-    width: 155px
-    }
-a[href|="/showstoppers"] {
-    background-position: 0 0
-    }
-a[href|="/colgatebass"], a[href|="/mlyra"] {
-    background-image: url(http://a.thumbs.redditmedia.com/PiAF_lMPEloA2cxT.png) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 70px;
-    width: 70px
+a[href|="/pinkiebone"], a[href|="/pinkietrombone"] {
+    background-position: -200% -0%
     }
 a[href|="/colgatebass"] {
-    background-position: 0 0
+    background-position: 0 -100%
     }
-a[href|="/mlyra"] {
-    background-position: -70px 70px
+a[href|="/mlyra"], a[href|="/lyragrin"] {
+    background-position: -100% -100%
+    }
+a[href|="/scootpiano"] {
+    background-position: -200% -100%
     }
 a[href|="/crossfire"], a[href|="/rdsax"] {
     background-image: url(http://c.thumbs.redditmedia.com/Ius5hqsSbOByGmxn.png) !important;
@@ -1098,6 +1083,17 @@ a[href|="/rdsax"] {
     background-position: 0 -634px;
     height: 131px;
     width: 171px
+    }
+a[href|="/showstoppers"] {
+    background-image: url(http://d.thumbs.redditmedia.com/TkBBAn3CUgc73Yv3.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 70px;
+    width: 155px
+    }
+a[href|="/showstoppers"] {
+    background-position: 0 0
     }
 /* End Emotes */
 /* Flair */

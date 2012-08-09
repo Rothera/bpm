@@ -34,7 +34,7 @@
 /*== SECTION-01: Making Shit Work ==*/
 /*== 01.01: Body ==*/
 body {
-    background: url(http://d.thumbs.redditmedia.com/shtWuJKQTpMyiXV3.png) no-repeat fixed 40% 60%
+    background: url(http://d.thumbs.redditmedia.com/shtWuJKQTpMyiXV3.png) no-repeat fixed 50% 110%
     }
 /*== 01.02: Header ==*/
 #header {
@@ -170,6 +170,16 @@ a[href|="/rapidfire"] {
     width: 529px;
     height: 293px;
     background-image: url(http://e.thumbs.redditmedia.com/7QEw1jFxlFYxgwbL.png);
+    display: block;
+    clear: none;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px
+    }
+a[href|="/fillyderp"] {
+    width: 281px;
+    height: 274px;
+    background-image: url(http://b.thumbs.redditmedia.com/k9i_G9OPiiCJkY5m.png);
     display: block;
     clear: none;
     float: left;

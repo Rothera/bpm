@@ -34,8 +34,8 @@ body {
     /* Used for centering (bottom center) */
     bottom: 0px;
     left: 50%;
-    opacity: 0.2;
-    filter: alpha(opacity=20);
+    opacity: 0.05;
+    filter: alpha(opacity=5);
     margin-left: -577px;
     /* 0.5 the image width */
     z-index: -100
@@ -165,6 +165,14 @@ a[href|="/greatyamsoffire"] {
     float: left;
     height: 217px;
     width: 325px
+    }
+a[href^="/t18"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 364px;
+    height: 500px;
+    background-image: url(http://a.thumbs.redditmedia.com/cEw2dsib7wGTDdcZ.png) !important
     }
 a[href|="/suckitave"] {
     background-image: url(http://d.thumbs.redditmedia.com/QX9LoWIiMQZXzK2E.png) !important;
@@ -438,7 +446,7 @@ a.author[href$="Conky_"] {
     letter-spacing: -20px
     }
 a.author[href$="Conky_"]:after {
-    content: "Russian Sympathizer ";
+    content: "Literally Hatler";
     font-family: "wingdings", cursive;
     font-size: 16px !important;
     color: red;
