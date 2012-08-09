@@ -161,7 +161,10 @@ def parse_emote(name, props):
     # everything against this bug.
     if "background-position" not in props:
         print("WARNING: defaulting background-position in", name)
-    x_pos, y_pos = map(parse_size, pop_prop(props, "background-position", 2, ["0px", "0px"]))
+    try:
+        x_pos, y_pos = map(parse_size, pop_prop(props, "background-position", 2, ["0px", "0px"]))
+    except ValueError:
+        return None
     if x_pos > 0 or y_pos > 0:
         print("WARNING: positive spritesheet offsets in", name)
 
