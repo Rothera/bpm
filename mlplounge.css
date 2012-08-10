@@ -696,7 +696,7 @@ a[href|="/re00"], a[href|="/re01"], a[href|="/re02"], a[href|="/re03"], a[href|=
     height: 70px;
     background-image: url(http://a.thumbs.redditmedia.com/oXl-2ZeThERfqDHZ.png) !important
     }
-a[href|="/l00"], a[href|="/rl00"], a[href|="/e01"], a[href|="/re01"], a[href|="/lyra"] {
+a[href|="/l00"], a[href|="/rl00"], a[href|="/e01"], a[href|="/re01"], a[href|="/lyra"], a[href|="/rlyra"] {
     background-position: -0px -70px
     }
 a[href|="/t00"], a[href|="/rt00"], a[href|="/e00"], a[href|="/re00"], a[href|="/fillytgap"], a[href|="/rfillytgap"] {
@@ -992,6 +992,21 @@ a.author[href$="RetardVomitPussyCunt"] {
     }
 a.author[href$="RetardVomitPussyCunt"]:after {
     content: "DerpyHiccupKittyTail";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+/*Fixing another person's name*/
+a.author[href$="/RAINBOW_PONY_SEMEN"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/RAINBOW_PONY_SEMEN"]:after {
+    content: "RAINBOW_PONY_JUICEBOX";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;

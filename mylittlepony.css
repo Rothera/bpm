@@ -296,7 +296,7 @@ a[href="/spoiler"]:hover {
     }
 /*
 .commentarea .author[href$="/Cutsprocket"]:after {
-content:" ಠ_ಠ";
+content:" ?_?";
 color: black;
 font-size: 10pt;
 }
@@ -972,6 +972,21 @@ a.author[href$="/RetardVomitPussyCunt"]:after {
     display: block;
     letter-spacing: normal
     }
+/*Fixing another person's name*/
+a.author[href$="/RAINBOW_PONY_SEMEN"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/RAINBOW_PONY_SEMEN"]:after {
+    content: "RAINBOW_PONY_JUICEBOX";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
 /* RDJ's name change for being awesome. */
 a.author[href$="/RogueDarkJedi"] {
     font-size: 0px !important;
@@ -1482,10 +1497,10 @@ body.moderator div.content .flairselectbtn:after {
  EPISODE GUIDE BUTTONS AWW YE 
 
 **************************/
-input[value="t3_obxr7"] + div.usertext-body .SuperRedditAltTextDisplay_Text {
+input[value="t3_xy2aw"] + div.usertext-body .SuperRedditAltTextDisplay_Text {
     display: none !important
     }
-input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a {
+input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a {
     background: transparent url(http://b.thumbs.redditmedia.com/XbOCodJJbc-wHjJa.png) no-repeat scroll top left;
     color: #444;
     display: inline-block;
@@ -1500,70 +1515,65 @@ input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a {
     outline: none;
     margin: 0px 2px
     }
-input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a:active {
+input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a:active {
     background-position: bottom left;
     color: #000;
     outline: none
     }
-input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a[title="j"]:before, input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a[rel="j"]:before {
-    content: "Jumbo Direct";
+input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[href$="?m"]:before {
+    content: "Direct";
     font-weight: bold
     }
-input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a[title="z"]:before, input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a[rel="z"]:before {
-    content: "Zomg Direct";
-    font-weight: bold
-    }
-input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a[title="t"]:before, input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a[rel="t"]:before {
+input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[href$="?t"]:before {
     content: "Torrent";
     font-weight: bold
     }
-input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a[title="g"]:before, input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a[rel="g"]:before {
-    content: "Glumbo Direct";
-    font-weight: bold
+input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[href$="?d"]:before {
+    content: "Derpy Censored"
     }
-input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a[title="d"]:before, input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a[rel="d"]:before {
-    content: "No Derpy Jumbo"
+body.comments-page #siteTable div.id-t3_xy2aw ul.flat-list.buttons {
+    margin-left: 148px
     }
-input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a:active:before {
+input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a:active:before {
     position: relative;
     top: 1px
     }
-input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a[title="g"]:before, input[value="t3_obxr7"] + div.usertext-body table tbody tr td + td a:before {
+input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[title="g"]:before, input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a:before {
     margin: 0;
     padding: 0
     }
-input[value="t3_obxr7"] + div.usertext-body .keyNavAnnotation {
+input[value="t3_xy2aw"] + div.usertext-body .keyNavAnnotation {
     display: none
     }
-input[value="t3_obxr7"] + div.usertext-body + div[style="color: gray"] {
+input[value="t3_xy2aw"] + div.usertext-body + div[style="color: gray"] {
     display: none !important
     }
-body.comments-page #siteTable div.id-t3_obxr7 p.title, body.comments-page #siteTable div.id-t3_obxr7 a.thumbnail {
+body.comments-page #siteTable div.id-t3_xy2aw p.title, body.comments-page #siteTable div.id-t3_xy2aw a.thumbnail {
     display: none
     }
-body.comments-page #siteTable div.id-t3_obxr7 p.tagline {
+body.comments-page #siteTable div.id-t3_xy2aw p.tagline {
     position: relative;
     left: 226px;
     top: 220px
     }
-body.comments-page #siteTable div.id-t3_obxr7 .expando {
+body.comments-page #siteTable div.id-t3_xy2aw .expando {
     margin-left: 148px;
     margin-top: 220px
     }
-body.comments-page #siteTable div.id-t3_obxr7 {
+body.comments-page #siteTable div.id-t3_xy2aw {
     background: transparent url(http://d.thumbs.redditmedia.com/-cLShBhA3PDTzzyK.png) top left no-repeat !important
     }
-body.comments-page #siteTable div.id-t3_obxr7 .entry {
+body.comments-page #siteTable div.id-t3_xy2aw .entry {
     background: transparent !important;
     outline: 0px !important
     }
-body.comments-page #siteTable div.id-t3_obxr7 .entry.likes {
+body.comments-page #siteTable div.id-t3_xy2aw .entry.likes {
     background: transparent url(http://c.thumbs.redditmedia.com/crCMioLSRoiuXyxb.png) 144px 197px no-repeat !important
     }
-body.comments-page #siteTable div.id-t3_obxr7 .entry.dislikes {
+body.comments-page #siteTable div.id-t3_xy2aw .entry.dislikes {
     background: transparent url(http://f.thumbs.redditmedia.com/7b6p3bhNquSjkPbG.png) 929px 198px no-repeat !important
     }
-body.comments-page #siteTable div.id-t3_obxr7 .score {
+body.comments-page #siteTable div.id-t3_xy2aw .score {
     display: none !important
     }
 /**Compressed mode fixes**/
@@ -1580,7 +1590,7 @@ body.comments-page #siteTable div.id-t3_rxdsn.compressed .entry.dislikes {
     background-position: 907px 198px !important
     }
 /*Up/down buttons*/
-body.comments-page #siteTable div.id-t3_obxr7 .arrow.up, body.comments-page #siteTable div.id-t3_obxr7 .arrow.upmod, body.comments-page #siteTable div.id-t3_obxr7 .arrow.down, body.comments-page #siteTable div.id-t3_obxr7 .arrow.downmod {
+body.comments-page #siteTable div.id-t3_xy2aw .arrow.up, body.comments-page #siteTable div.id-t3_xy2aw .arrow.upmod, body.comments-page #siteTable div.id-t3_xy2aw .arrow.down, body.comments-page #siteTable div.id-t3_xy2aw .arrow.downmod {
     position: absolute;
     top: 290px;
     z-index: 999;
@@ -1589,10 +1599,10 @@ body.comments-page #siteTable div.id-t3_obxr7 .arrow.up, body.comments-page #sit
     padding: 15px 5px !important;
     background: transparent none fixed no-repeat -1000px -1000px !important
     }
-body.comments-page #siteTable div.id-t3_obxr7 .arrow.up, body.comments-page #siteTable div.id-t3_obxr7 .arrow.upmod {
+body.comments-page #siteTable div.id-t3_xy2aw .arrow.up, body.comments-page #siteTable div.id-t3_xy2aw .arrow.upmod {
     left: 146px
     }
-body.comments-page #siteTable div.id-t3_obxr7 .arrow.down, body.comments-page #siteTable div.id-t3_obxr7 .arrow.downmod {
+body.comments-page #siteTable div.id-t3_xy2aw .arrow.down, body.comments-page #siteTable div.id-t3_xy2aw .arrow.downmod {
     left: 930px
     }
 /*Unverified Link Flair*/
