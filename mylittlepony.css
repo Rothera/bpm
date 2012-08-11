@@ -1351,11 +1351,11 @@ a.author[href$="/3holes2tits1fork"]:after {
 .titlebox .usertext-body .md ol li + li {
     display: inline-block;
     float: right;
-    background: url(http://b.thumbs.redditmedia.com/YIY5cdp4JvGFojyO.png);
-    width: 60px;
+    background: url(http://f.thumbs.redditmedia.com/tLmBV5XWEg9HtR1G.png);
+    width: 67px;
     height: 60px;
     margin-top: -37px;
-    margin-left: 1px;
+    margin-left: -8px;
     margin-bottom: -15px;
     margin-right: -40px
     }
@@ -2749,3 +2749,16 @@ a.thumbnail.self {
 {
  background:url(%%pinkiemessage%%) no-repeat;
 }*/
+/*Thumbnail Disabler*/
+.flairselector .linkflair-disable-thumb .linkflairlabel:before {
+    content: "Disable Thumbnail"
+    }
+.thing.linkflair-disable-thumb a.thumbnail img {
+    display: none
+    }
+.thing.linkflair-disable-thumb a.thumbnail {
+    width: 70px;
+    height: 50px;
+    background-image: url(http://f.thumbs.redditmedia.com/EDXekdb9_N195lO5.png);
+    background-position: 0px -70px
+    }

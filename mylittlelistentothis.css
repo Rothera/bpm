@@ -48,21 +48,23 @@ I MEAN IT
 
 ****************************/
 /* START HEADER */
-.reddit-link.thing.second-half {
+.titlebox .md blockquote + table > thead tr th {
     display: block;
     height: 185px;
     position: absolute;
     right: 0;
     top: 20px;
-    width: 1000px
+    width: 1000px;
+    border: 0 !important;
+    font-size: 0 !important
     }
-.reddit-link.thing.second-half.odd {
-    background: transparent url(http://a.thumbs.redditmedia.com/kfn-kqiqz_y33jtl.png) top left no-repeat;
+.titlebox .md blockquote + table > thead tr th[align="left"] {
+    background: transparent url(http://b.thumbs.redditmedia.com/D7MNdC7zWf-CdCuO.png) top left no-repeat;
     left: 0;
     right: auto !important
     }
-.reddit-link.thing.second-half.even {
-    background: transparent url(http://d.thumbs.redditmedia.com/riY0Rxq9KWIx9v6-.png) top right no-repeat
+.titlebox .md blockquote + table > thead tr th[align="right"] {
+    background: transparent url(http://d.thumbs.redditmedia.com/cC_YQhjOaPf1Hbfc.png) top right no-repeat
     }
 span.redditname {
     display: block;

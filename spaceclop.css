@@ -26,32 +26,16 @@ input, textarea {
     font-size: 11pt;
     font-variant: normal !important
     }
-/* old NSFL*/
-/* 
-.nsfw-stamp acronym {
-    border: #5F99CF 1px solid !important;
-    display: inline-block;
-    font-size: 0px !important;
-    letter-spacing: 0px;
-    overflow: hidden;
-    vertical-align: bottom;
-    margin-bottom: -1px
+body {
+    background: url(http://f.thumbs.redditmedia.com/6Ln88UcoUiscOgiY.png) no-repeat fixed center center
     }
-.nsfw-stamp acronym:after {
-    color: #336699 !important;
-    content: "nsfl" !important;
-    display: block;
-    font-size: x-small !important;
-    text-decoration: none;
-    visibility: visible !important
-    }
-*/
-/*New NSFL*/
+/* */
+/* NSFL Renovation */
+/* */
 .over18 li.nsfw-stamp {
     display: none
     }
 .over18 ul.flat-list.buttons::before {
-    content: "nsfl";
     border: 1px solid #d27979 !important;
     color: #AC3939;
     font-size: x-small;
@@ -59,29 +43,16 @@ input, textarea {
     padding: 0px 2px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-    border-radius: 3px
+    border-radius: 3px;
+    content: "nsfl"
     }
 .link .marknsfw-button .option.active a[href="#"], .link .unmarknsfw-button .option.active a[href="#"] {
     font-size: 0;
     color: white
     }
-body {
-    background: url(http://f.thumbs.redditmedia.com/6Ln88UcoUiscOgiY.png) no-repeat fixed center center
-    }
+/* */
 /* Experiments */
-/*For later
-.footer-parent:after {
-    content: "[.](/r/portal)";
-}
-*/
-a[href*="static.fjcdn.com"]:after, a[href*="images.4chan.org"]:after {
-    color: gray !important;
-    content: "] - |relocation advised; inclined to evanesce| " !important
-    }
-a[href*="static.fjcdn.com"]:before, a [href*="images.4chan.org"]:before {
-    color: gray !important;
-    content: "[" !important
-    }
+/* */
 /* In anticipation */
 a.author[href$="theMagicalCouch"] {
     font-size: 0px !important
@@ -90,80 +61,98 @@ a.author[href$="theMagicalCouch"]:after {
     content: "theoccultdivan";
     font-size: 10px !important
     }
+/* Supplementary imagery */
 /*
-.footer-parent {
-    height: 800px;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    clear: both;
-    text-align: center;
-    width: 100%;
-    background-image: url(%%equus%%);
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    margin-bottom: -1px;
-    z-index: 1001;
-    }
+.footer-parent 
+     {padding-top: 1px; padding-bottom: 1px; margin-bottom: -1px;
+    height: 800px; width: 100%; clear: both; text-align: center; z-index: 1001;
+    background-image: url(%%equus%%); background-position: bottom center; background-repeat: no-repeat}
 */
-/* Remove Report Button
-.toggle.report-button a[href="#"] {
-    display: none;
-    }
+/* */
+/* Report button alteration */
+/* */
+/* Deactivation */
+/*
+.toggle.report-button a[href="#"] 
+     {display: none}
 */
+/* Repurposing */
 .report-button > span.option.error:before {
-    content: "you are reporting this link for possible malware/viruses. ";
-    color: black
+    color: black;
+    content: "you are reporting this link for possible malware/viruses. "
     }
-span.domain a[href*="/horse-sex.in/"]:after {
-    color: orange !important;
-    content: " caution - potential zoonoses" !important
-    }
-span.domain a[href*="/imgur.com/"]:after, span.domain a[href*="/i.imgur.com/"]:after, span.domain a[href*="/youtube.com/"]:after, span.domain a[href*="/m.youtube.com/"]:after, span.domain a[href*="/reddit.com/"]:after, span.domain a[href*="wikipedia.org/"]:after, span.domain a[href*="ponibooru.org/"]:after {
+/* */
+/* Nonautomatic loci supplements by domain - submissions */
+/* */
+/* 0 */
+span.domain a[href*="/imgur.com/"]:after, span.domain a[href*="/i.imgur.com/"]:after, span.domain a[href*="/youtube.com/"]:after, span.domain a[href*="/m.youtube.com/"]:after, span.domain a[href*="/reddit.com/"]:after, span.domain a[href*="/wikipedia.org/"]:after, span.domain a[href*="/deviantart.com/"]:after {
     color: green !important;
     content: " - innocuous" !important
     }
-span.domain a[href*="/spankbang.com/"]:after, span.domain a[href*="/eye.swfchan.com/"]:after, span.domain a[href*="/swfchan.com/"]:after, span.domain a[href*="/bangedup.net/"]:after, span.domain a[href*="/motherless.com/"]:after {
+/* 1 */
+span.domain a[href*="/spankbang.com/"]:after, span.domain a[href*="/eye.swfchan.com/"]:after, span.domain a[href*="/swfchan.com/"]:after, span.domain a[href*="/bangedup.net/"]:after {
     color: darkgreen !important;
     content: " - like enough innocuous" !important
     }
+/* 2 */
+/*
+span.domain a[href*="/horse-sex.in/"]:after
+     {color:orange !important;content: " caution - potential zoonoses" !important}
+*/
+/* ? */
 span.domain a[href*="/domain/"]:after {
     color: darkslategray;
     content: " - innocuousness undetermined"
     }
-/* End Experiments */
+/* ~ */
+span.domain a[href*="/motherless.com/"]:after, span.domain a[href*="/ponibooru.org/"]:after, span.domain a[href*="/images.4chan.org/"]:after {
+    color: gray !important;
+    content: " - relocation advised; inclined to evanesce" !important
+    }
+/* */
+/* Nonautomatic loci supplements by domain - colloquy */
+/* */
+/* ~ */
+a[href*="static.fjcdn.com"]:after, a[href*="images.4chan.org"]:after, a[href*="motherless.com"]:after {
+    color: gray !important;
+    content: "] - |relocation advised; inclined to evanesce| " !important
+    }
+a[href*="static.fjcdn.com"]:before, a[href*="images.4chan.org"]:before, a[href*="motherless.com"]:before {
+    color: gray !important;
+    content: "[" !important
+    }
+/* */
+/* Greetings CSS olfactor! Reference is to the bottom-left corner (visible via RES night mode) */
+/* */
 .bottommenu:nth-of-type(3) {
     height: 34px;
     clear: both;
+    margin-bottom: -1px;
     text-align: center;
     background-image: url(http://d.thumbs.redditmedia.com/4mGenIZwb15Qd9gQ.png);
     background-position: bottom left;
-    background-repeat: no-repeat;
-    margin-bottom: -1px
+    background-repeat: no-repeat
     }
-/* Greetings CSS olfactor!
-/*
-/* The code beneath references the bottom-left
-/* corner, and is visible via RES night mode */
 .bottommenu:nth-of-type(3):after {
     text-align: center;
     left: -515px;
-    color: rgb(255,255,255);
     position: relative;
-    content: "<---- goo.gl/ylm60";
+    clear: both;
+    color: rgb(255,255,255);
     margin-bottom: -1px;
-    clear: both
+    content: "<---- goo.gl/ylm60"
     }
-/*[](/)*/
+/* */
+/* [](/) */
+/* */
 a[href="/sandwich"] {
     display: block;
     clear: none;
     float: none;
     width: 258px;
     height: 212px;
+    background-position: -0px -0px;
     background-image: url(http://a.thumbs.redditmedia.com/xqcT95cAGpl1Xmdf.png) !important
-    }
-a[href="/sandwich"] {
-    background-position: -0px -0px
     }
 a[href="/angel"] {
     display: block;
@@ -171,8 +160,8 @@ a[href="/angel"] {
     float: left;
     width: 70px;
     height: 70px;
-    background-image: url(http://d.thumbs.redditmedia.com/YKSDpjdgMQmII9YE.png) !important;
-    background-position: -140px -560px
+    background-position: -140px -560px;
+    background-image: url(http://d.thumbs.redditmedia.com/YKSDpjdgMQmII9YE.png) !important
     }
 a[href="/swh7s"] {
     display: block;
@@ -180,11 +169,10 @@ a[href="/swh7s"] {
     float: none;
     width: 300px;
     height: 263px;
+    background-position: -0px -0px;
     background-image: url(http://e.thumbs.redditmedia.com/XqDfRoy7kKraBSCL.png) !important
     }
-a[href="/swh7s"] {
-    background-position: -0px -0px
-    }
+/* [](/) - supplement */
 a[href|="/sp"] {
     display: inline-block;
     padding-right: 100%
