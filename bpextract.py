@@ -142,7 +142,7 @@ def parse_emote(name, props):
         verify_prop(name, props, "clear", "none")
         verify_prop(name, props, "float", "left", True)
     except ValueError:
-        print("Not en emote:", name)
+        print("Not an emote:", name)
         return None
 
     try:
