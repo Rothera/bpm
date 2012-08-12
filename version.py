@@ -31,7 +31,7 @@ def main():
 
     if args.operation == "check":
         print("Firefox:", fx_data["version"])
-        print("Chrome:", cr_ver["version"])
+        print("Chrome:", cr_data["version"])
 
         if fx_data["version"] != cr_data["version"]:
             print("Broken!")
