@@ -39,6 +39,11 @@ r/mlpdrawingschool:
     - /ppnervous conflicts with r/pinkiepie, so omitted.
     - /abworry conflicts with r/tbpimagedump, so omitted.
 
+r/mylittleanhero23:
+    - They have almost nothing but stupid image macros, which I'm omitting
+      everywhere for no particular reason (but maybe because I fucking hate
+      them). So omitted.
+
 r/mylittleanime:
     - Their emotes use display:inline-block/float:none instead of the usual
       display:block/float:left. Changed to fit in better.
@@ -72,11 +77,16 @@ r/mylittlefoodmanes:
     - /t18 is defined with a different selector (^= vs |=). Probably doesn't
       make a difference.
 
+r/mylittlefortress:
+    - /cheerilee is omitted as a conflict.
+
 r/mylittlelistentothis:
     - /rdsax and /crossfire are copies from r/mlas1; omitted.
     - /pinkiebone and /scootpiano are copies from r/mylittlemusician; omitted.
     - /scratchshrug and /tavishrug, copies from r/mylittlemusician.
     - Also /showstoppers, /mlyra and /colgatebass.
+        - /lyragrin is in, as an alias for /mlyra. For some reason its position
+          is specified as a percentage.
 
 r/mylittlemusician:
     - Some more positive image offsets.
@@ -101,6 +111,13 @@ r/mylittlepony:
 r/mylittleserver:
     - These are barely ponymotes.
     - /swagintosh and /ww20 are conflicts, but also just copies.
+
+r/mylittlesh:
+    - Their emotes have all kinds of weird extra properties.
+    - /noroi has no background-image.
+    - /10x0 and /0x10 are spacer thingies; omitted.
+    - Their third spritesheet (including /amnesia) has not a pony to be seen.
+      I'm including it for now, but I feel they don't really belong.
 
 r/mylittlesupportgroup:
     - Several colored text things are omitted.
