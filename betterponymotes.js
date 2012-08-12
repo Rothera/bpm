@@ -25,9 +25,10 @@ function process(element) {
     }
 }
 
-$("a").each(function(index) {
-    process(this);
-});
+var anchors = document.getElementsByTagName("a");
+for(var i = 0; i < anchors.length; i++) {
+    process(anchors[i]);
+}
 
 var observer = new MutationSummary({
     callback: function(summaries) {

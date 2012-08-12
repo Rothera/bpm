@@ -22,7 +22,6 @@
                 "misc.css"
             ], 
             "js": [
-                "jquery-1.7.2.js", 
                 "mutation_summary.js", 
                 "emote-map.js", 
                 "betterponymotes.js"
@@ -34,9 +33,13 @@
         }
     ], 
     "description": "View Reddit ponymotes across the site", 
-    "manifest version": 2, 
+    "manifest_version": 2, 
     "name": "Better Ponymotes", 
     "options_page": "options.html", 
     "update_url": "http://rainbow.mlas1.us/chrome-updates.xml", 
-    "version": "1.13"
+    "version": "1.13", 
+    "web_accessible_resources": [
+        "extracss-chrome.css", 
+        "nsfw-emote-classes.css"
+    ]
 }
