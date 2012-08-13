@@ -17,6 +17,11 @@ import time
 
 import yaml
 
+try:
+    from yaml import CLoader as Loader
+except ImportError:
+    from yaml import Loader
+
 # A note on case: emote names are case-sensitive, but CSS is not. Rather than
 # check case, we assume that emotes of different cases are the same (there's
 # only one right now anyway, and it is).
@@ -195,7 +200,7 @@ def main():
     print("Processing emotes")
     for filename in args.yaml:
         with open(filename) as file:
-            emotes.extend(process_file(filename, yaml.load(file)))
+            emotes.extend(process_file(filename, yaml.load(file, Loader)))
 
     print("Building files")
     css_rules, nsfw_css_rules, js_map = build_data(emotes)
