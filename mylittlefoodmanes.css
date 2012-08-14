@@ -100,6 +100,14 @@ a[href|="/rariberry"] {
     height: 274px;
     width: 270px
     }
+a[href|="/doubledildo"] {
+    background-image: url(http://c.thumbs.redditmedia.com/p2CF5Pb9fdTB_XNz.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 114px;
+    width: 157px
+    }
 a[href|="/buttershy"] {
     background-image: url(http://b.thumbs.redditmedia.com/CZd5q6ssYNT8SoFa.png) !important;
     clear: none;
@@ -434,9 +442,11 @@ a.author[href$="Generic_Builder"] {
     letter-spacing: -20px
     }
 a.author[href$=Generic_Builder]:before {
-    content: "FADDLESTACKS";
-    color: rgb(255,0,0) !important;
-    cursor: text !important
+    content: "bestjayceNA";
+    font-size: 24px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
     }
 a.author[href$="Conky_"] {
     font-size: 0px !important;

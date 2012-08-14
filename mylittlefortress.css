@@ -223,15 +223,6 @@ a.author[href$="Stranghill"]:after {
     color: #369;
     content: "lunaREvolution"
     }
-a.author[href$="ThiZ"]:before {
-    content: url(http://b.thumbs.redditmedia.com/Cqy06xkbTN4QxVU1.png) " Tworings ("
-    }
-a.author[href$="ThiZ"]:after {
-    content: "): Subreddit person"
-    }
-a.author[href$="ThiZ"]:hover:after {
-    content: "): Server Mod"
-    }
 /* STEAM NAMES */
 a.author[href$="askanswer"]:after {
     visibility: visible;
@@ -763,7 +754,7 @@ a[href="/freakout"]:hover:after {
     position: absolute;
     content: url(http://c.thumbs.redditmedia.com/BotV8svlLahjLKxP.png) url(http://c.thumbs.redditmedia.com/BotV8svlLahjLKxP.png) url(http://c.thumbs.redditmedia.com/BotV8svlLahjLKxP.png)
     }
-/*Announcement Banner aka Giant Hat*/
+/*Announcement Banner*/
 /*CSS why do you hate me so*/
 .pagename {
     font-size: 12pt
@@ -773,14 +764,14 @@ a[href="/freakout"]:hover:after {
     }
 .titlebox .usertext-body .md ol {
     width: auto;
-    background: url(http://thumbs.reddit.com/t5_2sjdc_0.png) no-repeat scroll 5px 5px #EFF7FF;
-    border: 1px solid #5f99cf;
+    background: url(http://b.thumbs.redditmedia.com/SwFbnzMWTy8mT1Jy.png) no-repeat scroll 5px 5px #fff;
+    border: 1px solid #efefef;
     position: absolute;
-    top: 5px;
-    left: 140px;
+    top: 7px;
+    left: 115px;
     z-index: 50;
-    margin: 20px 420px 0 0;
-    padding: 8px 6px 8px 38px;
+    margin: 20px 410px 0 0;
+    padding: 3px 5px 5px 60px;
     list-style: none;
     display: block;
     white-space: normal;
