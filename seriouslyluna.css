@@ -23,6 +23,7 @@ QueenSerious:
 	> Over 9000 emotes (That's a lot of emotes there Sweetie, might want to slow down.)
 	> Two emote sheets
 	> Fixed various emotes and added them to sheets + new emotes
+	> New Background
 
 SeriouslyConky:
 	> added Woona Rave, animated emotes size is standard at X x 130, although width depends based on the images requirements, standard static emotes are being set to the necessary width X x 130; for posterity!
@@ -362,12 +363,15 @@ a.author[href$="tacomantotherescue"]:after {
 .sidecontentbox .flair {
     display: none
     }
-body:first-of-type, body.res-nightmode:first-of-type {
-    background: url(http://f.thumbs.redditmedia.com/kEltuPDpk-o-pIOG.png) no-repeat fixed 30% 90% !important
+body.res-nightmode:first-of-type {
+    background: url(http://e.thumbs.redditmedia.com/AlxXVAJKCsxv5eeF.png) no-repeat fixed 30% 90% !important
     }
-body:first-of-type, body.res-nightmode:first-of-type {
-    background: url(http://f.thumbs.redditmedia.com/kEltuPDpk-o-pIOG.png) no-repeat fixed 30% 60% !important
+body:first-of-type {
+    background: url(http://a.thumbs.redditmedia.com/81oYjZ7sZxZC-uBZ.png) no-repeat fixed 30% 90% !important
     }
+/*body:first-of-type, body.res-nightmode:first-of-type {
+    background: url(%%serishy%%)no-repeat fixed 30% 90% !important
+    }*/
 /*** Corner Luna ***/
 #header {
     background-image: url(http://f.thumbs.redditmedia.com/A3Bp8qGcRV9-f97k.png);
