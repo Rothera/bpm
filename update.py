@@ -31,7 +31,7 @@ else:
 
 for (i, filename) in enumerate(filenames):
     subreddit = filename.split(".")[0]
-    url = "http://reddit.com/r/%s/stylesheet?random=%s" % (subreddit, random.randrange(1000000))
+    url = "http://reddit.com/r/%s/stylesheet?nocache=%s" % (subreddit, random.randrange(1000000))
 
     old_ss = open("stylesheet-cache/%s" % (filename), "rb").read()
 
