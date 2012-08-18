@@ -201,6 +201,124 @@
                                                                   `;''''''''''''''''''',
 
 *******************************/
+/* HIERO DID THIS LEL STOLE RIGHT FROM SRS ISNT THAT FUNNY GUYS NOW WE CAN CIRC-LE-JERK THE HARDEST WE EVER HAAAAAAVE */
+/* BASICALLY I MADE DOWNVOTES UPVOTES ISN'T THAT HILARIOUS I'M SO ORIGINAL FFFFFFFFFF */
+/* When you least expect it... */
+.likes div.score.likes {
+    display: none
+    }
+.dislikes div.score.likes {
+    display: block
+    }
+.likes div.score.dislikes {
+    display: block
+    }
+.dislikes div.score.dislikes {
+    display: none
+    }
+.arrow.up, .arrow.upmod {
+    position: relative;
+    top: 32px;
+    background-position: -31px -612px
+    }
+.arrow.down, .arrow.downmod {
+    position: relative;
+    top: -32px;
+    background-position: -63px -612px
+    }
+div.commentarea .arrow.up, div.commentarea .arrow.upmod {
+    top: 16px
+    }
+.arrow.upmod {
+    background-position: -47px -612px
+    }
+div.commentarea .arrow.down, div.commentarea .arrow.downmod {
+    top: -16px
+    }
+.arrow.downmod {
+    background-position: -79px -612px
+    }
+/* Up is down. Down is up: */
+.arrow.up {
+    background-position: -48px -658px
+    }
+.arrow.upmod {
+    background-position: -16px -658px
+    }
+.link .arrow.up, .link .arrow.upmod {
+    position: relative;
+    top: 32px
+    }
+.commentarea .arrow.up, .commentarea .arrow.upmod {
+    position: relative;
+    top: 16px
+    }
+.arrow.down {
+    background-position: -32px -658px
+    }
+.arrow.downmod {
+    background-position: 0px -658px
+    }
+.link .arrow.down, .link .arrow.downmod {
+    position: relative;
+    top: -32px
+    }
+.commentarea .arrow.down, .commentarea .arrow.downmod {
+    position: relative;
+    top: -16px
+    }
+/* Up is down. Down is up: */
+.arrow.up {
+    background-position: -48px -658px
+    }
+.arrow.upmod {
+    background-position: -16px -658px
+    }
+.link .arrow.up, .link .arrow.upmod {
+    position: relative;
+    top: 32px
+    }
+.commentarea .arrow.up, .commentarea .arrow.upmod {
+    position: relative;
+    top: 16px
+    }
+.arrow.down {
+    background-position: -32px -658px
+    }
+.arrow.downmod {
+    background-position: 0px -658px
+    }
+.link .arrow.down, .link .arrow.downmod {
+    position: relative;
+    top: -32px
+    }
+.commentarea .arrow.down, .commentarea .arrow.downmod {
+    position: relative;
+    top: -16px
+    }
+/* Tooltips: */
+.arrow.down:hover:after, .arrow.downmod:hover:after {
+    content: "20% cooler!"
+    }
+.arrow.up:hover:after, .arrow.upmod:hover:after {
+    content: "Totally not Rainbow..."
+    }
+.arrow.up:hover:after, .arrow.upmod:hover:after, .arrow.down:hover:after, .arrow.downmod:hover:after {
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+    z-index: 1;
+    padding: 4px;
+    border: 1px solid #999;
+    margin: 24px 0 0 0;
+    font-size: 10px;
+    font-weight: normal;
+    box-shadow: 0 2px 6px #999;
+    background-color: #ffffbf
+    }
+.midcol {
+    overflow: visible
+    }
 /* Esplin nearly saved Equestria. <3 */
 .author[href$="/PrincessCelestia"] {
     color: #336699 !important
@@ -349,8 +467,11 @@ span.hover.pagename.redditname a {
 div.titlebox span.word {
     display: none
     }
-div.titlebox span.number:after {
+div.titlebox span.subscribers:after {
     content: "% Cooler"
+    }
+.users-online:after {
+    content: "cloppers destroying the fandom"
     }
 /*Hugs, Brony place your code of doom below here!*/
 a[href="/shrug"] {

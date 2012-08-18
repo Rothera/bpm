@@ -11,6 +11,9 @@ div.titlebox span.word {
 div.titlebox span.number:after {
     content: " Hayseeds"
     }
+div.titlebox .users-online span.number:after {
+    content: " AJ Fans"
+    }
 /***Apple Barons aka mods***/
 .sidecontentbox h1:not(:first-child)::before {
     color: gray !important;
@@ -103,7 +106,7 @@ span.rank {
     }
 /***Banner, background, bottom image***/
 #header {
-    background: url(http://f.thumbs.redditmedia.com/hdZBDf2qHzCM0ZQe.png) repeat bottom left;
+    background: url(http://b.thumbs.redditmedia.com/M5SZ7tV00AfROswm.png) repeat bottom left;
     border-bottom: 0px solid white
     }
 .side {
