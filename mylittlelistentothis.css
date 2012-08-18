@@ -254,8 +254,14 @@ span.redditname {
     font-size: 80%;
     padding-top: 2px
     }
-div.titlebox span.number:after {
+div.titlebox .subscribers span.number:after {
     content: " Music Fillies"
+    }
+div.titlebox .users-online span.number:after {
+    content: " Ponies online"
+    }
+div.titlebox span.word {
+    display: none
     }
 #link-desc:after, #text-desc:after {
     content: "We encourage you to format your post like this: Artist - Song [Genre] (Comment)";
@@ -645,7 +651,7 @@ a:link, a:visited, .menuarea .dropdown.lightdrop .selected, .flat-list .selected
 .side .md {
     overflow: visible
     }
-.reddit-link.thing.second-half > *, #header-img, #header-img.default-header, div.titlebox span.word, div.leavemoderator, form.leavecontributor-button, .sidebox.create, .sidebox .spacer, .titlebox .md > h5, .titlebox h5 + blockquote:hover:before, .titlebox .md > h6, .titlebox h6 + blockquote:hover:before {
+.reddit-link.thing.second-half > *, #header-img, #header-img.default-header, div.leavemoderator, form.leavecontributor-button, .sidebox.create, .sidebox .spacer, .titlebox .md > h5, .titlebox h5 + blockquote:hover:before, .titlebox .md > h6, .titlebox h6 + blockquote:hover:before {
     display: none
     }
 #RESShortcutsEditContainer, #RESShortcutsEditContainer > div, .side .icon-menu a {
@@ -1566,6 +1572,20 @@ a.author[href$="/Generic_Builder"]:after {
     letter-spacing: normal;
     visibility: visible !important
     }
+a.author[href$="/I_Love_Fluttershy"] {
+    display: inline-block;
+    font-size: 0;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/I_Love_Fluttershy"]:after {
+    content: "I_Love_Twilight";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
 a.author[href$="/Deslosbin"] {
     display: inline-block;
     font-size: 0;
@@ -1710,13 +1730,13 @@ a.author:after {
     margin-right: 0.5em
     }
 /* End User Name Changes */
-body:not(.moderator) div.content a.author:after {
+body:not(.subscriber) div.content a.author:after {
     display: none !important
     }
-body:not(.moderator) div.content a.author:before {
+body:not(.subscriber) div.content a.author:before {
     display: none !important
     }
-body:not(.moderator) div.content a.author {
+body:not(.subscriber) div.content a.author {
     display: inline !important;
     font-size: 10px !important;
     letter-spacing: normal !important;
