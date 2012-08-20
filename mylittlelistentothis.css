@@ -697,6 +697,9 @@ shinebar {
     display: none
     }
 /* START NIGHTMODE FIXES */
+body:not(.moderator) a.id-t2_5qbeo:after {
+    content: "I_Love_Twilight" !important
+    }
 .res-nightmode div.thing {
     border: none !important
     }
@@ -1828,4 +1831,7 @@ body:not(.subscriber) div.content a.author {
     letter-spacing: normal !important;
     overflow: visible !important;
     vertical-align: baseline !important
+    }
+div[data-fullname="t1_c5v084j"] > div:nth-child(3) .md::after {
+    content: "EDIT2: DISREGARD THAT I SUCK COCKS"
     }
