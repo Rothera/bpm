@@ -12,6 +12,13 @@ div.titlebox span.word {
 div.titlebox span.number:after {
     content: " bouncing baby bunnies"
     }
+div.titlebox span.number .subscribers:after {
+    content: " bouncing baby bunnies"
+    }
+div.titlebox /*span.number*/ .users-online/*:after */ {
+    display: none
+    }
+/*    {content: " bouncing baby bunnies"} */
 a, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, p, blockquote, th, td, iframe {
     margin: 0;
     padding: 0;

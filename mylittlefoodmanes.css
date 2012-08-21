@@ -92,6 +92,14 @@ a[href|="/heresyourbeardemotesageireallyhopeyourehappywithyourself"] {
     height: 177px;
     width: 267px
     }
+a[href|="/sagepuke"] {
+    background-image: url(http://e.thumbs.redditmedia.com/bJRuSDQUmyMgMRr4.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 322px;
+    width: 301px
+    }
 a[href|="/rariberry"] {
     background-image: url(http://b.thumbs.redditmedia.com/o2AELMviTzDQLZrU.png) !important;
     clear: none;
@@ -332,6 +340,20 @@ a.author[href$="YarnTheory"]:after {
     display: block;
     letter-spacing: normal
     }
+a.author[href$="whisperingsage"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="whisperingsage"]:after {
+    content: "Godzilla of Puke";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
 a.author[href$="JustinRL_2point0"] {
     font-size: 0px !important;
     display: inline-block;
@@ -456,7 +478,7 @@ a.author[href$="Conky_"] {
     letter-spacing: -20px
     }
 a.author[href$="Conky_"]:after {
-    content: "Literally Hatler";
+    content: "Literally Loveler";
     font-family: "wingdings", cursive;
     font-size: 16px !important;
     color: red;
@@ -539,7 +561,7 @@ a.author[href$="floutsy"] {
     letter-spacing: -20px
     }
 a.author[href$="floutsy"]:after {
-    content: "Esplin";
+    content: "nou";
     font-size: 12px !important;
     visibility: visible !important;
     /*color: #008000;*/

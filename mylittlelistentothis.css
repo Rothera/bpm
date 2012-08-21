@@ -1377,7 +1377,7 @@ a.author[href$="/OneOfTheseDaysLuna"] {
     vertical-align: bottom
     }
 a.author[href$="/OneOfTheseDaysLuna"]:after {
-    content: "Noodles";
+    content: "Groundskeeper Willie";
     display: block;
     font-size: 10px !important;
     letter-spacing: normal;
@@ -1392,6 +1392,20 @@ a.author[href$="/Taiokoshinketsu"] {
     }
 a.author[href$="/Taiokoshinketsu"]:after {
     content: "I like butts";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/MisanthropicCat"] {
+    display: inline-block;
+    font-size: 0;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/MisanthropicCat"]:after {
+    content: "FriendlyDog";
     display: block;
     font-size: 10px !important;
     letter-spacing: normal;
@@ -1604,7 +1618,7 @@ a.author[href$="/Waka_Flaka"] {
     vertical-align: bottom
     }
 a.author[href$="/Waka_Flaka"]:after {
-    content: "StrappingLad";
+    content: "Has bad taste in music";
     display: block;
     font-size: 10px !important;
     letter-spacing: normal;
