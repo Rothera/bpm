@@ -239,6 +239,11 @@ span.redditname {
     top: 182px;
     z-index: 5
     }
+body:not(.moderator) div[data-fullname="t1_c5v084j"] > div:nth-child(3) .md::after {
+    content: "Phei is best pony";
+    font-size: 62px;
+    color: red
+    }
 .titlebox .usertext-body .md ol a {
     border: none !important;
     color: #222 !important
@@ -960,7 +965,7 @@ a[href|="/fluttershock"] {
     }
 /* Ajent */
 a[href|="/bajentjfun"] {
-    background-image: url(http://c.thumbs.redditmedia.com/oIg97jdJ2sRQp0un.png) !important;
+    background-image: url(http://e.thumbs.redditmedia.com/XO7jBzc0viJL_kRF.png) !important;
     clear: none;
     display: block;
     float: left;
@@ -1359,6 +1364,20 @@ a.author[href$="/rawrcharlierawr"] {
     }
 a.author[href$="/rawrcharlierawr"]:after {
     content: "Woop Woop Woop";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="/OneOfTheseDaysLuna"] {
+    display: inline-block;
+    font-size: 0;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/OneOfTheseDaysLuna"]:after {
+    content: "Noodles";
     display: block;
     font-size: 10px !important;
     letter-spacing: normal;
@@ -1831,7 +1850,4 @@ body:not(.subscriber) div.content a.author {
     letter-spacing: normal !important;
     overflow: visible !important;
     vertical-align: baseline !important
-    }
-div[data-fullname="t1_c5v084j"] > div:nth-child(3) .md::after {
-    content: "EDIT2: DISREGARD THAT I SUCK COCKS"
     }

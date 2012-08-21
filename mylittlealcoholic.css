@@ -1,8 +1,11 @@
 .titlebox span.word {
     display: none
     }
-.titlebox span.number:after {
+.titlebox .subscribers span.number:after {
     content: " Happy Little Boozers"
+    }
+.titlebox .users-online span.number:after {
+    content: " currently drinking"
     }
 .usertext-body td {
     font-size: 10px

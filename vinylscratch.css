@@ -944,3 +944,9 @@ version 1.5.1
         > added shrug, tableflip and laying emotes - not added to table because I tend to break it
 
 */
+div.titlebox .subscribers span.number:after {
+    content: " Wubscribers"
+    }
+div.titlebox .users-online span.number:after {
+    content: " Wubbing it up"
+    }
