@@ -14,7 +14,7 @@ function process(element) {
     // Distinction between element.href and element.getAttribute("href")- the
     // former is normalized somewhat to be a complete URL, which we don't want.
     var href = element.getAttribute("href");
-    if(href) {
+    if(href && href[0] == '/') {
         // Don't normalize case...
         var parts = href.split("-");
         var emote = parts[0];

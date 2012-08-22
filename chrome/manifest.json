@@ -16,11 +16,6 @@
             "run_at": "document_start"
         }, 
         {
-            "css": [
-                "emote-classes.css", 
-                "combiners.css", 
-                "misc.css"
-            ], 
             "js": [
                 "mutation_summary.js", 
                 "emote-map.js", 
@@ -37,8 +32,11 @@
     "name": "Better Ponymotes", 
     "options_page": "options.html", 
     "update_url": "http://rainbow.mlas1.us/chrome-updates.xml", 
-    "version": "1.22", 
+    "version": "2.23", 
     "web_accessible_resources": [
+        "emote-classes.css", 
+        "combiners.css", 
+        "misc.css", 
         "extracss-chrome.css", 
         "nsfw-emote-classes.css"
     ]

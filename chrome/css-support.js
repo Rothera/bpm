@@ -15,6 +15,10 @@ function enable_css(filename) {
     document.documentElement.insertBefore(tag);
 }
 
+enable_css("emote-classes.css");
+enable_css("combiners.css");
+enable_css("misc.css");
+
 chrome.extension.sendMessage({method: "getPrefs"}, function(prefs) {
     if(prefs.enableExtraCSS) {
         enable_css("extracss-chrome.css");
