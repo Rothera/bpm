@@ -3,11 +3,12 @@
  *
  *    http://userstyles.org/styles/67659/reddit-extracss-emoticon-flags-for-firefox
  *
- * Which probably stole it from somewhere else itself, but I dunno where.
+ * Which is itself sourced from:
+ *
+ *    http://userstyles.org/styles/58923/reddit-my-little-chaos-script-keyframes
  */
 
-/* Version 1.0.1 (July 16) */
-
+/*== keyframes ==*/
 @-moz-keyframes spin {from{-moz-transform:rotate(0deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{-moz-transform:rotate(0deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
 @-moz-keyframes spin-45{from{-moz-transform:rotate(45deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{-moz-transform:rotate(45deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
 @-moz-keyframes spin-90{from{-moz-transform:rotate(90deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{-moz-transform:rotate(90deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
