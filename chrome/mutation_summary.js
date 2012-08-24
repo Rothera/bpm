@@ -1,1 +1,1 @@
-../mutation_summary.js
+../scripts/mutation_summary.js

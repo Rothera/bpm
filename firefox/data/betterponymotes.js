@@ -1,1 +1,1 @@
-../../betterponymotes.js
+../../scripts/betterponymotes.js
