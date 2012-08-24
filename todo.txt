@@ -64,13 +64,14 @@ Opera:
         - The code is also a mess.
 
 Update process:
-    Bump version:
-        - ./version.py set -v [...]
-
-    Firefox:
-        - Build XPI.
-        - make unpack-xpi
-        - Add key block to xpi/install.rdf:
+    - $ ./version.py set -v [...]
+    - Edit opera/config.xml
+    - Edit chrome-updates.xml
+    - Edit opera-updates.xml
+    - $ make
+    - $ make unpack-xpi
+    - Edit xpi/install.rdf
+    - $ make pack-xpi
 
     <em:updateKey>
         MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCZnk8XNNC6+pmDqxY/5CzREJXj
@@ -78,13 +79,3 @@ Update process:
         PGm6yzGLSn8/cG7tG9XvpnyxGAX8TfQyV602NhAucqJXYGvCNePalZGU7FJbeJc1
         5JjoU+fv8mFBK/QTAwIDAQAB
     </em:updateKey>
-
-        - make pack-xpi
-        - ~/Checkouts/mxtools/uhura -k betterponymotes.pem betterponymotes_1.3.xpi http://rainbow.mlas1.us/betterponymotes_1.3.xpi > betterponymotes.update.rdf
-
-    Chrome:
-        - Edit chrome-updates.xml.
-
-    Opera:
-        - Edit opera/config.xml.
-        - Edit opera-updates.xml.
