@@ -5,11 +5,16 @@
   <title>BetterPonymotes</title>
   <style type="text/css">
   #content {
+    /* Simple column layout, plus some padding at the bottom */
     width: 600px;
     margin: 0 auto;
+    padding-bottom: 100px;
   }
   h4 {
     margin-left: 20px;
+  }
+  h5 {
+    margin-left: 30px;
   }
   p {
     text-align: justify;
@@ -31,51 +36,71 @@
     <h3>Installation</h3>
     <h4>Firefox Installation</h4>
     <p>Install the addon from <a href="betterponymotes.xpi"><code>betterponymotes.xpi</code></a>.
-    Firefox should handle the file automatically; if not, drag the file onto Firefox
+
+    <p>Firefox should handle the file automatically; if not, drag the file onto Firefox
     and it will install then.
 
     <h4>Chrome Installation</h4>
     <p>Install the addon from <a href="betterponymotes.crx"><code>betterponymotes.crx</code></a>.
 
-    <p>Be warned that beta versions of Chrome are changing the way extension
-    installation works- it will no longer be possible to automatically install
-    addons from sites without hosting them through the Chrome Web Store. As I
-    may not be doing this, you will have to install it manually, by dragging
-    the file onto the extensions page at <code>about:extensions</code>.
+    <p>Newer versions of Chrome refuse to install extensions except from the
+    Chrome Web Store. Since BetterPonymotes is not available in the web store,
+    installation requires you to download the file and drag it onto the extensions
+    page yourself. Despite this, updates will continue to function as normal.
+
+    <h4>Opera Installation</h4>
+    <p>Install the addon from <a href="betterponymotes.oex"><code>betterponymotes.oex</code></a>.
+
+    <p>Opera should handle the file automatically; if not, drag the file onto the
+    Extensions page (Opera -> Extensions -> Manage Extensions).
 
     <h3>Updates</h3>
-    <p>No matter how you install BetterPonymotes, it will be automatically
+    <p>No matter how you install Better Ponymotes, it will be automatically
     updated just like any other addon. Your browser will periodically check
     this site for new versions, and download them if available. The addon does
     not normally require a restart for updates, however, you may have to refresh
     pages before most new features will work (including new ponymotes).
 
-    <h3>Configuration</h3>
+    <h3>Preferences</h3>
+    <h4>Firefox Preferences</h4>
+    <p>Go to the Addons Manager (<code>about:addons</code>, Ctrl-Shift-A, or
+    Firefox menu -> Add-ons), locate Better Ponymotes in the list, and click the
+    "Preferences" button.
+
+    <h4>Chrome Preferences</h4>
+    <p>Go to the Extensions page (<code>chrome:extensions</code>, or Wrench menu
+    -> Settings, then click Extensions on the left), locate Better Ponymotes in
+    the list, and click the "Options" link.
+
+    <h4>Opera Preferences</h4>
+    <p>Go to the Extensions page (Opera -> Extensions -> Manage Extensions),
+    locate Better Ponymotes in the list, and click the Wrench icon -> Preferences.
+
+    <h3>Options</h3>
     <p>BetterPonymotes has two options you can change, controlling whether or not
     certain ponymotes/features are enabled.
 
-    <p>In Firefox, these options can be found by clicking Preference in the Addons
-    Manager (<code>about:addons</code>). In Chrome, click Options from the
-    Extensions (<code>about:extensions</code>) page.
+    <p>In Firefox, editing these options takes effect immediately. Chrome and
+    Opera require a page refresh.
 
+    <h5>Enable NSFW Emotes</h5>
     <p>The <code>Enable NSFW Emotes</code> option does as it says- enables or
     disables display of a handful of questionable ponymotes. These aren't used
     very frequently across Reddit (especially the pony subreddits, which tend
     toward being more SFW), but be warned that some of them are <em>very</em>
     explicit.
 
+    <h5>Enable Extra CSS</h5>
     <p>The <code>Enable Extra CSS</code> option enables the "chaos script", a
     collection of emote flags and modifiers such as <code>-zspin</code>, which
     apply various CSS transformations. You may want to disable this if your
     computer is less capable of handling them, as they're known to bog down
     browsers.
 
-    <p>These options normally take effect immediately in Firefox without
-    reloading any pages. Chrome requires a refresh.
-
     <h3>Feedback</h3>
-    <p>Bugs, requests, questions, or general feedback should be directed at
-    my <a href="http://reddit.com/message/compose/?to=Typhos">Reddit inbox</a>.
+    <p>Bug reports, feature requests, questions, general feedback or anything
+    else should be directed at my
+    <a href="http://reddit.com/message/compose/?to=Typhos">Reddit inbox</a>.
   </div>
 </body>
 </html>
