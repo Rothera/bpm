@@ -339,6 +339,44 @@ a[href|="/twist"] {
     margin-left: 3px;
     margin-right: 3px
     }
+a[href|="/ppbop"], a[href|="/dashbop"], a[href|="/twibob"] {
+    display: block;
+    clear: none;
+    float: left;
+    height: 150px;
+    background-image: url(http://d.thumbs.redditmedia.com/J1WLRVN4PPkjjJT-.png)
+    }
+a[href|="/ppbop"] {
+    width: 150px;
+    background-position: -0px -0px
+    }
+a[href|="/dashbop"] {
+    width: 151px;
+    background-position: -159px -4px
+    }
+a[href|="/twibob"] {
+    width: 145px;
+    background-position: -309px -0px
+    }
+a[href|="/ajbop"], a[href|="/shybop"], a[href|="/rarbop"] {
+    display: block;
+    clear: none;
+    float: left;
+    height: 150px;
+    background-image: url(http://d.thumbs.redditmedia.com/RR08C8Inf3oh47ac.png)
+    }
+a[href|="/ajbop"] {
+    width: 144px;
+    background-position: -0px -0px
+    }
+a[href|="/shybop"] {
+    width: 150px;
+    background-position: -145px -0px
+    }
+a[href|="/rarbop"] {
+    width: 145px;
+    background-position: -300px -0px
+    }
 /* Hiding shit in the sidebar that we don't need. */
 div > .submit, div > .create {
     display: none

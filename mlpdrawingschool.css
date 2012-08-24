@@ -117,11 +117,11 @@ body {
 div.titlebox span.word {
     display: none
     }
-div.titlebox span.number:after {
+div.titlebox .subscribers span.number:after {
     content: " Pony Artists"
     }
-div.titlebox span.word {
-    display: none
+div.titlebox .users-online span.number:after {
+    content: " Potential Critiquers"
     }
 .arrow.down {
     visibility: hidden;
@@ -921,6 +921,17 @@ a[href|="/yourock"] {
     background-image: url(http://b.thumbs.redditmedia.com/p2_L3PDSOjzswKoI.png)
     }
 a[href|="/yourock"] {
+    background-position: -0px -0px
+    }
+a[href|="/snipsmote"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url(http://a.thumbs.redditmedia.com/c4zhd2RXfON9yAgr.png)
+    }
+a[href|="/snipsmote"] {
     background-position: -0px -0px
     }
 /*Stream Labeler*/

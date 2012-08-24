@@ -24,6 +24,9 @@
 .sidecontentbox .author:after {
     font-size: small !important
     }
+.side .md {
+    overflow: hidden
+    }
 .morelink, .morelink:hover, .morelink a:hover {
     color: black;
     background-color: transparent;
@@ -133,7 +136,7 @@ body {
 /*** Rainbow tabs ***/
 .tabmenu li a {
     border-style: solid;
-    border-width: 1px
+    border-width: 2px
     }
 .tabmenu li a[href$="ainbowdash/"] {
     border-color: purple !important

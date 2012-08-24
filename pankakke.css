@@ -22,6 +22,7 @@ JustAnotherGDB
 - Changed sidebar "# of"
 - Added two more NMLP emotes
 - Added "pony gangnam" emotes
+- Added two more MLPmotes, name changes (8/22)
 
 MisanthropicCat
 - Is a kitty
@@ -54,7 +55,7 @@ MisanthropicCat
 /**********Name changes***********/
 /********************************/
 /******Insert name here to replace******/
-a.author[href$=JustAnotherGDB], a.author[href$=MisanthropicCat], a.author[href$=floutsy], a.author[href$=ruffletuffle], a.author[href$=Apple_Snacks], a.author[href$=petraman], a.author[href$=WorstPossibleThing], a.author[href$=Esplin], a.author[href$=theMagicalCouch], a.author[href$=pickled_octopus], a.author[href$=hiero_], a.author[href$=Thecursed], a.author[href$=Apprentice1994], a.author[href$=dasflash] {
+a.author[href$=JustAnotherGDB], a.author[href$=MisanthropicCat], a.author[href$=floutsy], a.author[href$=ruffletuffle], a.author[href$=Apple_Snacks], a.author[href$=petraman], a.author[href$=WorstPossibleThing], a.author[href$=Esplin], a.author[href$=theMagicalCouch], a.author[href$=pickled_octopus], a.author[href$=hiero_], a.author[href$=Thecursed], a.author[href$=Apprentice1994], a.author[href$=dasflash], a.author[href$=TheDarkman67] {
     font-size: 0 !important;
     overflow: hidden;
     display: inline-block;
@@ -117,6 +118,10 @@ a.author[href$=dasflash]:before {
     content: "Flashcakes";
     font-size: 10px
     }
+a.author[href$=TheDarkman67]:before {
+    content: "TheDarkPancake";
+    font-size: 10px
+    }
 /************Additions*************/
 a.author[href$=JustAnotherGDB]:after {
     content: " likes the syrup hot";
@@ -176,12 +181,12 @@ a[href|="/pancalcos"] {
     width: 93px
     }
 /**************MLP***************/
-a[href|="/pghoofpump"], a[href|="/pgshock"], a[href|="/pglegcross"], a[href|="/pgshuffle"] {
+a[href|="/pghoofpump"], a[href|="/pgshock"], a[href|="/pglegcross"], a[href|="/pgshuffle"], a[href|="/ponykakke"], a[href|="/gdbsmirk"] {
     display: block;
     clear: none;
     float: left;
     height: 150px;
-    background-image: url(http://d.thumbs.redditmedia.com/sxJ-nPGRVvVRjt-9.png) !important
+    background-image: url(http://b.thumbs.redditmedia.com/3vlTkAM0v37zC5hI.png) !important
     }
 a[href|="/pghoofpump"] {
     background-position: -0px -0px;
@@ -198,6 +203,14 @@ a[href|="/pglegcross"] {
 a[href|="/pgshuffle"] {
     background-position: -265px -0px;
     width: 78px
+    }
+a[href|="/ponykakke"] {
+    background-position: -343px -0px;
+    width: 139px
+    }
+a[href|="/gdbsmirk"] {
+    background-position: -482px -0px;
+    width: 119px
     }
 /************Mane-sub*************/
 a[href|="/pabbored"], a[href|="/pajhappy"], a[href|="/pajlie"], a[href|="/pajsup"], a[href|="/pcadance"], a[href|="/pcelestiamad"], a[href|="/pcelestiawut"], a[href|="/pchrysalis"], a[href|="/pderpwizard"], a[href|="/pflutterjerk"], a[href|="/pflutterwoah"], a[href|="/pgrannysmith"], a[href|="/plunateehee"], a[href|="/plunawait"], a[href|="/pohcomeon"], a[href|="/ppinkiefear"], a[href|="/pppcute"], a[href|="/ppriceless"], a[href|="/praritydaww"], a[href|="/praritynews"], a[href|="/prdcry"], a[href|="/psbbook"], a[href|="/pscootacheer"], a[href|="/pscootaplease"], a[href|="/pshiningarmor"], a[href|="/pswagintosh"], a[href|="/ptwibeam"], a[href|="/ptwicrazy"], a[href|="/ptwipride"], a[href|="/ptwiright"] {

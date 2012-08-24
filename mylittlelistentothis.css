@@ -1708,6 +1708,20 @@ a.author[href$="/I_Love_Fluttershy"]:after {
     letter-spacing: normal;
     visibility: visible !important
     }
+a.author[href$="/oatmealareyoucrazy"] {
+    display: inline-block;
+    font-size: 0;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/oatmealareyoucrazy"]:after {
+    content: "RadicalRefrigerator";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
 a.author[href$="/Deslosbin"] {
     display: inline-block;
     font-size: 0;
