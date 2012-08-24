@@ -6,7 +6,7 @@ emote-classes.css nsfw-emote-classes.css emote-map.js: bin/bpgen.py emotes/*.yam
 	bin/bpgen.py emotes/*.yaml
 
 betterponymotes.xpi: emote-classes.css nsfw-emote-classes.css emote-map.js firefox/data/* firefox/package.json firefox/lib/main.js
-	cfx xpi --update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf
+	cfx xpi --update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf --pkgdir=firefox
 
 unpack-xpi:
 	mkdir xpi
