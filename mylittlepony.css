@@ -92,6 +92,26 @@ div.titlebox .users-online span.number:after {
     color: #EE2C2C
     }
 */
+/*8.24.2012 NEVER FORGET*/
+.sidecontentbox a.author[href$="/Lebal"] + .flair, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair {
+    display: block;
+    background: none;
+    width: auto;
+    height: auto
+    }
+.sidecontentbox a.author[href$="/Lebal"] + .flair:before, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair:before {
+    display: inline-block;
+    content: "megadeus";
+    font-size: 10pt;
+    color: gray;
+    padding-right: 5px
+    }
+.sidecontentbox a.author[href$="/Lebal"] + .flair:after, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair:after {
+    display: inline-block;
+    content: "DOUBLE MODERATOR";
+    font-size: 7pt;
+    color: maroon
+    }
 .sidecontentbox a.author[href$="/IllusionOf_Integrity"]:before {
     content: "TrixieOf_Trixtegrity ";
     font-size: 10pt;
@@ -854,7 +874,7 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 .sidecontentbox .helplink + .title > h1:after {
     width: 16px;
     height: 16px;
-    background-image: url(http://e.thumbs.redditmedia.com/E5NGuXQrV74bBYj4.png);
+    background-image: url(http://f.thumbs.redditmedia.com/5FNfU6ybthSvhxTS.png);
     background-position: -16px -48px;
     display: inline-block;
     content: "";
@@ -1061,7 +1081,7 @@ a.author[href$="/3holes2tits1fork"]:after {
     color: black;
     border: 0;
     border-radius: 0;
-    background-image: url(http://e.thumbs.redditmedia.com/E5NGuXQrV74bBYj4.png);
+    background-image: url(http://f.thumbs.redditmedia.com/5FNfU6ybthSvhxTS.png);
     display: inline-block;
     width: 16px;
     height: 16px
@@ -1246,6 +1266,9 @@ a.author[href$="/3holes2tits1fork"]:after {
     }
 .flair-flitter {
     background-position: -16px -448px
+    }
+.flair-lily {
+    background-position: -0px -464px
     }
 .flair-blankflank {
     background-image: none;
@@ -2719,30 +2742,34 @@ a.thumbnail.self {
     display: inline
     }
 /*End spoilers in the title flair*/
-/*Pinkie Pie No-Pics Thursday Warnings*/
-.formtabs-content .infobar {
-    margin-left: 50px;
-    margin-top: 137px;
-    font-size: 0px;
-    color: #F6E69F;
-    padding: 0;
-    content: ""
-    }
-.formtabs-content .infobar:before {
-    display: inline-block;
-    margin: -137px -65px -8px -101px;
-    padding: 143px 5px 14px 126px;
-    /*Sprite size 200px by 187px*/
-    width: 438px;
-    height: 30px;
-    background: url(http://d.thumbs.redditmedia.com/hzXJE_TUMe9sVBIc.png) no-repeat;
-    content: "Hey you! It's No-Pics Thursday! So no submitting pictures, ok? No need to worry though, you can save your pictures for another day!";
-    font-size: 12px;
-    color: black
-    }
-.formtabs-content .infobar#text-desc:before {
-    background: url(http://d.thumbs.redditmedia.com/hzXJE_TUMe9sVBIc.png) no-repeat
-    }
+/*Pinkie Pie NPT Warnings*/
+/*.formtabs-content .infobar
+{
+ margin-left:50px;
+ margin-top:137px;
+ font-size:0px;
+ color:#F6E69F;
+ padding:0;
+ content:"";
+}
+
+.formtabs-content .infobar:before
+{
+ display:inline-block;
+ margin:-137px -65px -8px -101px;
+ padding:143px 5px 14px 126px;
+ width:438px;
+ height:30px;
+ background:url(%%pinkiemessage%%) no-repeat;
+ content:"Hey you! It's No-Pics Thursday! So no submitting pictures, ok? No need to worry though, you can save your pictures for another day!";
+ font-size:12px;
+ color:black;
+}
+
+.formtabs-content .infobar#text-desc:before
+{
+ background:url(%%pinkiemessage%%) no-repeat;
+}*/
 /*Thumbnail Disabler*/
 .flairselector .linkflair-disable-thumb .linkflairlabel:before {
     content: "Disable Thumbnail"
