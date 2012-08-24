@@ -89,13 +89,14 @@ def cmd_extract(args):
 
     for sr in subreddits:
         print(sr)
-        subprocess.call(["./bpextract.py", "stylesheet-updates/%s.css" % (sr), "emote-updates/%s.yaml" % (sr)])
+        # TODO: Don't hardcode relative paths...
+        subprocess.call(["bin/bpextract.py", "stylesheet-updates/%s.css" % (sr), "emote-updates/%s.yaml" % (sr)])
 
 def cmd_diff_emotes(args):
     if len(args) != 1:
         print("Usage: diffemotes <subreddit>")
     else:
-        subprocess.call(["./diff.py", "emotes/%s.yaml" % (args[0]), "emote-updates/%s.yaml" % (args[0])])
+        subprocess.call(["bin/diff.py", "emotes/%s.yaml" % (args[0]), "emote-updates/%s.yaml" % (args[0])])
 
 def cmd_resolve_emotes(args):
     if len(args) != 1:
