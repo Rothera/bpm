@@ -1,27 +1,71 @@
 General TODO:
-    - Go through all emotes again with the extractor (preferably first making
-      it smarter), but use our shiny new Ignore flag to handle conflicts so we
-      no longer omit anything from the emote database.
-
-    - Better CSS update workflow. The process needs to go faster. A little
-      interactive tool with "diff", "edit", "resolve" commands could go a long
-      way.
-
     - Better flags support. The CSS and JS maps will be hand-maintained (keep
       them in their own files if we can...)
 
-    - Try to remember what NoMap was supposed to be for (:hover ?)
+    - Make all logging consistent and useful.
+
+    - More bzr branches. Consider splitting out emotes. Add everything to a
+      repository, with a private branch for the .pem or something. Use branches
+      more, for big development projects (like Opera!) so we don't keep stuff
+      out of VCS so much.
+
+    - MAJOR CLEANUP after Opera release. The codebase is sprawling.
+        - Move Firefox files to firefox/. Make folders for our scripts as well-
+          bin/ would be nice.
+
+        /files
+        /files/betterponymotes.update.rdf
+        /files/chrome-updates.xml
+        /files/opera-updates.xml # I think?
+        # Would like to rename all the above:
+        #    /index.html
+        #    /bpm/betterponymotes_3.30.xpi
+        #    /bpm/firefox-updates.rdf
+        # etc.
+        /bin # Scripts
+        /chrome
+        /firefox
+        /opera
+        /emotes
+        /data # CSS files
+
+        - Sort out codebase. There are duplicates and things- perhaps a template
+          system would work? Maybe we should just separate functionality better.
+
+          # These files are fairly shared.
+          /scripts/process.js
+          /scripts/process-delayed.js # Will be nearly identical to above- FIXME
+          /scripts/monitor-mo.js
+          /scripts/monitor-dom.js
+
+          # The css-support files are different enough where we can't really
+          # share them, unfortunately.
+          /firefox/lib/main.js
+          /chrome/background.js
+          /chrome/css-support.js
+          /opera/background.js
+          /opera/css-support.js
+
+        - Find a better way to handle injecting emote-map.js into Opera. "make"
+          works for now, but this just won't do for long.
+
+    - Fully automate the update process. We really need to stop editing XML
+      files manually... a little Python will do fine; just go write it.
 
 Chrome:
     - Make options work more nicely- reloading properly on all pages.
         - localStorage events might work from background.js
     - Try to make options.html reasonably nice looking
 
-Performance benchmarking:
-    - With, and without, start/ready on each of the main script packs, and the extra CSS files
+Opera:
+    - Consider doing settings updating via postMessage- also with Chrome.
+        - Requires <style id="bpm-extracss"> so it can be removed...
+    - Spend some time fixing up options.html, and copying improvements to Chrome.
+        - The code is also a mess.
 
 Update process:
-    - Bump version.
+    Bump version:
+        - ./version.py set -v [...]
 
     Firefox:
         - Build XPI.
@@ -37,5 +81,10 @@ Update process:
 
         - make pack-xpi
         - ~/Checkouts/mxtools/uhura -k betterponymotes.pem betterponymotes_1.3.xpi http://rainbow.mlas1.us/betterponymotes_1.3.xpi > betterponymotes.update.rdf
+
     Chrome:
         - Edit chrome-updates.xml.
+
+    Opera:
+        - Edit opera/config.xml.
+        - Edit opera-updates.xml.

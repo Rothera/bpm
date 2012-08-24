@@ -1,0 +1,56 @@
+// ==UserScript==
+// @include http://*.reddit.com/*
+// @include https://*.reddit.com/*
+// ==/UserScript==
+
+/*
+ * THIS FILE IS NOT A USERSCRIPT. DO NOT ATTEMPT TO INSTALL IT AS SUCH.
+ *
+ * The above header is used by Opera.
+ */
+
+/*******************************************************************************
+**
+** Copyright (C) 2012 Typhos
+**
+** This Source Code Form is subject to the terms of the Mozilla Public
+** License, v. 2.0. If a copy of the MPL was not distributed with this
+** file, You can obtain one at http://mozilla.org/MPL/2.0/.
+**
+*******************************************************************************/
+
+"use strict";
+
+/*$(EMOTE_MAP)*/
+
+function process(element) {
+    // Distinction between element.href and element.getAttribute("href")- the
+    // former is normalized somewhat to be a complete URL, which we don't want.
+    var href = element.getAttribute("href");
+    if(href && href[0] == '/') {
+        // Don't normalize case...
+        var parts = href.split("-");
+        var emote = parts[0];
+        if(emote_map.hasOwnProperty(emote)) {
+            element.className += " " + emote_map[emote];
+        }
+    }
+}
+
+function process_tags(list) {
+    for(var i = 0; i < list.length; i++) {
+        process(list[i]);
+    }
+}
+
+window.addEventListener("DOMContentLoaded", function() {
+    process_tags(document.getElementsByTagName("a"));
+
+    document.body.addEventListener("DOMNodeInserted", function(event) {
+        var element = event.target;
+        if(element.getElementsByTagName) {
+            var anchors = element.getElementsByTagName("a");
+            process_tags(anchors);
+        }
+    }, false);
+}, false);

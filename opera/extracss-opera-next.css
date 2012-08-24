@@ -1,0 +1,397 @@
+/*
+ * ExtraCSS flags file for Opera. Stolen from:
+ *
+ *    http://userstyles.org/styles/58923/reddit-my-little-chaos-script-keyframes
+ *
+ * And edited to suit Opera, which supports the same syntax as Firefox with
+ * only vendor prefix changes.
+ */
+
+/*
+ * Opera does not support 3d transformations, which means that all but -zspin
+ * and similar are commented out here. Additionally, the -o prefix goes away
+ * in what is currently Opera Next (12.50), meaning this will break when that
+ * becomes stable and people start upgrading. There's no nice way around that
+ * other than duplicating a lot, since I don't think you can combine @keyframes
+ * and @-o-keyframes. Since including the wrong one generates a huge amount of
+ * console error spam (Opera treats them as invalid), they're omitted.
+ *
+ * rotateZ() is equivalent to rotate(), except for the fact that the former is
+ * unsupported, so this file is heavily edited to replace usages while retaining
+ * compatibility.
+ *
+ * Opera also seems to have problems with from{scaleX(n)}to{scaleX(n)}, where
+ * instead of holding the scale across the animation, the emote simply
+ * disappears. This makes -r not work except on its own.
+ */
+
+/*== keyframes ==*/
+/*
+@keyframes spin {from{transform:rotate(0deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(0deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-45{from{transform:rotate(45deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(45deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-90{from{transform:rotate(90deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(90deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-135{from{transform:rotate(135deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(135deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-180{from{transform:rotate(180deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(180deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-225{from{transform:rotate(225deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(225deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-270{from{transform:rotate(270deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(270deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-315{from{transform:rotate(315deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(315deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-r{from{transform:rotate(0deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(0deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-45-r{from{transform:rotate(45deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(45deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-90-r{from{transform:rotate(90deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(90deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-135-r{from{transform:rotate(135deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(135deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-180-r{from{transform:rotate(180deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(180deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-225-r{from{transform:rotate(225deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(225deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-270-r{from{transform:rotate(270deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(270deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes spin-315-r{from{transform:rotate(315deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(315deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+@keyframes xspin{from{transform:rotate(0deg)scaleX(1)rotateX(0deg)} to{transform:rotate(0deg)scaleX(1)rotateX(360deg)}}
+@keyframes xspin-45{from{transform:rotate(45deg)scaleX(1)rotateX(0deg)} to{transform:rotate(45deg)scaleX(1)rotateX(360deg)}}
+@keyframes xspin-90{from{transform:rotate(90deg)scaleX(1)rotateX(0deg)} to{transform:rotate(90deg)scaleX(1)rotateX(360deg)}}
+@keyframes xspin-135{from{transform:rotate(135deg)scaleX(1)rotateX(0deg)} to{transform:rotate(135deg)scaleX(1)rotateX(360deg)}}
+@keyframes xspin-180{from{transform:rotate(180deg)scaleX(1)rotateX(0deg)} to{transform:rotate(180deg)scaleX(1)rotateX(360deg)}}
+@keyframes xspin-225{from{transform:rotate(225deg)scaleX(1)rotateX(0deg)} to{transform:rotate(225deg)scaleX(1)rotateX(360deg)}}
+@keyframes xspin-270{from{transform:rotate(270deg)scaleX(1)rotateX(0deg)} to{transform:rotate(270deg)scaleX(1)rotateX(360deg)}}
+@keyframes xspin-315{from{transform:rotate(315deg)scaleX(1)rotateX(0deg)} to{transform:rotate(315deg)scaleX(1)rotateX(360deg)}}
+@keyframes xspin-r{from{transform:rotate(0deg)scaleX(-1)rotateX(0deg)} to{transform:rotate(0deg)scaleX(-1)rotateX(360deg)}}
+@keyframes xspin-45-r{from{transform:rotate(45deg)scaleX(-1)rotateX(0deg)} to{transform:rotate(45deg)scaleX(-1)rotateX(360deg)}}
+@keyframes xspin-90-r{from{transform:rotate(90deg)scaleX(-1)rotateX(0deg)} to{transform:rotate(90deg)scaleX(-1)rotateX(360deg)}}
+@keyframes xspin-135-r{from{transform:rotate(135deg)scaleX(-1)rotateX(0deg)} to{transform:rotate(135deg)scaleX(-1)rotateX(360deg)}}
+@keyframes xspin-180-r{from{transform:rotate(180deg)scaleX(-1)rotateX(0deg)} to{transform:rotate(180deg)scaleX(-1)rotateX(360deg)}}
+@keyframes xspin-225-r{from{transform:rotate(225deg)scaleX(-1)rotateX(0deg)} to{transform:rotate(225deg)scaleX(-1)rotateX(360deg)}}
+@keyframes xspin-270-r{from{transform:rotate(270deg)scaleX(-1)rotateX(0deg)} to{transform:rotate(270deg)scaleX(-1)rotateX(360deg)}}
+@keyframes xspin-315-r{from{transform:rotate(315deg)scaleX(-1)rotateX(0deg)} to{transform:rotate(315deg)scaleX(-1)rotateX(360deg)}}
+@keyframes yspin{from{transform:rotate(0deg)scaleX(1)rotatey(0deg)} to{transform:rotate(0deg)scaleX(1)rotatey(360deg)}}
+@keyframes yspin-45{from{transform:rotate(45deg)scaleX(1)rotatey(0deg)} to{transform:rotate(45deg)scaleX(1)rotatey(360deg)}}
+@keyframes yspin-90{from{transform:rotate(90deg)scaleX(1)rotatey(0deg)} to{transform:rotate(90deg)scaleX(1)rotatey(360deg)}}
+@keyframes yspin-135{from{transform:rotate(135deg)scaleX(1)rotatey(0deg)} to{transform:rotate(135deg)scaleX(1)rotatey(360deg)}}
+@keyframes yspin-180{from{transform:rotate(180deg)scaleX(1)rotatey(0deg)} to{transform:rotate(180deg)scaleX(1)rotatey(360deg)}}
+@keyframes yspin-225{from{transform:rotate(225deg)scaleX(1)rotatey(0deg)} to{transform:rotate(225deg)scaleX(1)rotatey(360deg)}}
+@keyframes yspin-270{from{transform:rotate(270deg)scaleX(1)rotatey(0deg)} to{transform:rotate(270deg)scaleX(1)rotatey(360deg)}}
+@keyframes yspin-315{from{transform:rotate(315deg)scaleX(1)rotatey(0deg)} to{transform:rotate(315deg)scaleX(1)rotatey(360deg)}}
+@keyframes yspin-r{from{transform:rotate(0deg)scaleX(-1)rotatey(0deg)} to{transform:rotate(0deg)scaleX(-1)rotatey(360deg)}}
+@keyframes yspin-45-r{from{transform:rotate(45deg)scaleX(-1)rotatey(0deg)} to{transform:rotate(45deg)scaleX(-1)rotatey(360deg)}}
+@keyframes yspin-90-r{from{transform:rotate(90deg)scaleX(-1)rotatey(0deg)} to{transform:rotate(90deg)scaleX(-1)rotatey(360deg)}}
+@keyframes yspin-135-r{from{transform:rotate(135deg)scaleX(-1)rotatey(0deg)} to{transform:rotate(135deg)scaleX(-1)rotatey(360deg)}}
+@keyframes yspin-180-r{from{transform:rotate(180deg)scaleX(-1)rotatey(0deg)} to{transform:rotate(180deg)scaleX(-1)rotatey(360deg)}}
+@keyframes yspin-225-r{from{transform:rotate(225deg)scaleX(-1)rotatey(0deg)} to{transform:rotate(225deg)scaleX(-1)rotatey(360deg)}}
+@keyframes yspin-270-r{from{transform:rotate(270deg)scaleX(-1)rotatey(0deg)} to{transform:rotate(270deg)scaleX(-1)rotatey(360deg)}}
+@keyframes yspin-315-r{from{transform:rotate(315deg)scaleX(-1)rotatey(0deg)} to{transform:rotate(315deg)scaleX(-1)rotatey(360deg)}}
+@keyframes zspin{from{transform:rotate(0deg)scaleX(1)rotatez(0deg)} to{transform:rotate(0deg)scaleX(1)rotatez(360deg)}}
+@keyframes zspin-45{from{transform:rotate(45deg)scaleX(1)rotatez(0deg)} to{transform:rotate(45deg)scaleX(1)rotatez(360deg)}}
+@keyframes zspin-90{from{transform:rotate(90deg)scaleX(1)rotatez(0deg)} to{transform:rotate(90deg)scaleX(1)rotatez(360deg)}}
+@keyframes zspin-135{from{transform:rotate(135deg)scaleX(1)rotatez(0deg)} to{transform:rotate(135deg)scaleX(1)rotatez(360deg)}}
+@keyframes zspin-180{from{transform:rotate(180deg)scaleX(1)rotatez(0deg)} to{transform:rotate(180deg)scaleX(1)rotatez(360deg)}}
+@keyframes zspin-225{from{transform:rotate(225deg)scaleX(1)rotatez(0deg)} to{transform:rotate(225deg)scaleX(1)rotatez(360deg)}}
+@keyframes zspin-270{from{transform:rotate(270deg)scaleX(1)rotatez(0deg)} to{transform:rotate(270deg)scaleX(1)rotatez(360deg)}}
+@keyframes zspin-315{from{transform:rotate(315deg)scaleX(1)rotatez(0deg)} to{transform:rotate(315deg)scaleX(1)rotatez(360deg)}}
+@keyframes zspin-r{from{transform:rotate(0deg)scaleX(-1)rotatez(0deg)} to{transform:rotate(0deg)scaleX(-1)rotatez(360deg)}}
+@keyframes zspin-45-r{from{transform:rotate(45deg)scaleX(-1)rotatez(0deg)} to{transform:rotate(45deg)scaleX(-1)rotatez(360deg)}}
+@keyframes zspin-90-r{from{transform:rotate(90deg)scaleX(-1)rotatez(0deg)} to{transform:rotate(90deg)scaleX(-1)rotatez(360deg)}}
+@keyframes zspin-135-r{from{transform:rotate(135deg)scaleX(-1)rotatez(0deg)} to{transform:rotate(135deg)scaleX(-1)rotatez(360deg)}}
+@keyframes zspin-180-r{from{transform:rotate(180deg)scaleX(-1)rotatez(0deg)} to{transform:rotate(180deg)scaleX(-1)rotatez(360deg)}}
+@keyframes zspin-225-r{from{transform:rotate(225deg)scaleX(-1)rotatez(0deg)} to{transform:rotate(225deg)scaleX(-1)rotatez(360deg)}}
+@keyframes zspin-270-r{from{transform:rotate(270deg)scaleX(-1)rotatez(0deg)} to{transform:rotate(270deg)scaleX(-1)rotatez(360deg)}}
+@keyframes zspin-315-r{from{transform:rotate(315deg)scaleX(-1)rotatez(0deg)} to{transform:rotate(315deg)scaleX(-1)rotatez(360deg)}}
+@keyframes nips{from{transform:rotate(360deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(360deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-45{from{transform:rotate(45deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(45deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-90{from{transform:rotate(9360deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(9360deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-135{from{transform:rotate(135deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(135deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-180{from{transform:rotate(18360deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(18360deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-225{from{transform:rotate(225deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(225deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-270{from{transform:rotate(27360deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(27360deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-315{from{transform:rotate(315deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(315deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-r{from{transform:rotate(360deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(360deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-45-r{from{transform:rotate(45deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(45deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-90-r{from{transform:rotate(9360deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(9360deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-135-r{from{transform:rotate(135deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(135deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-180-r{from{transform:rotate(18360deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(18360deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-225-r{from{transform:rotate(225deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(225deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-270-r{from{transform:rotate(27360deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(27360deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes nips-315-r{from{transform:rotate(315deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(315deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes znips{from{transform:rotate(360deg)scaleX(1)rotatez(360deg)} to{transform:rotate(360deg)scaleX(1)rotatez(0deg)}}
+@keyframes znips-45{from{transform:rotate(45deg)scaleX(1)rotatez(360deg)} to{transform:rotate(45deg)scaleX(1)rotatez(0deg)}}
+@keyframes znips-90{from{transform:rotate(9360deg)scaleX(1)rotatez(360deg)} to{transform:rotate(9360deg)scaleX(1)rotatez(0deg)}}
+@keyframes znips-135{from{transform:rotate(135deg)scaleX(1)rotatez(360deg)} to{transform:rotate(135deg)scaleX(1)rotatez(0deg)}}
+@keyframes znips-180{from{transform:rotate(18360deg)scaleX(1)rotatez(360deg)} to{transform:rotate(18360deg)scaleX(1)rotatez(0deg)}}
+@keyframes znips-225{from{transform:rotate(225deg)scaleX(1)rotatez(360deg)} to{transform:rotate(225deg)scaleX(1)rotatez(0deg)}}
+@keyframes znips-270{from{transform:rotate(27360deg)scaleX(1)rotatez(360deg)} to{transform:rotate(27360deg)scaleX(1)rotatez(0deg)}}
+@keyframes znips-315{from{transform:rotate(315deg)scaleX(1)rotatez(360deg)} to{transform:rotate(315deg)scaleX(1)rotatez(0deg)}}
+@keyframes znips-r{from{transform:rotate(360deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(360deg)scaleX(-1)rotatez(0deg)}}
+@keyframes znips-45-r{from{transform:rotate(45deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(45deg)scaleX(-1)rotatez(0deg)}}
+@keyframes znips-90-r{from{transform:rotate(9360deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(9360deg)scaleX(-1)rotatez(0deg)}}
+@keyframes znips-135-r{from{transform:rotate(135deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(135deg)scaleX(-1)rotatez(0deg)}}
+@keyframes znips-180-r{from{transform:rotate(18360deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(18360deg)scaleX(-1)rotatez(0deg)}}
+@keyframes znips-225-r{from{transform:rotate(225deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(225deg)scaleX(-1)rotatez(0deg)}}
+@keyframes znips-270-r{from{transform:rotate(27360deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(27360deg)scaleX(-1)rotatez(0deg)}}
+@keyframes znips-315-r{from{transform:rotate(315deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(315deg)scaleX(-1)rotatez(0deg)}}
+*/
+@keyframes zspin{from{transform:rotate(0deg)} to{transform:rotate(360deg)}}
+@keyframes zspin-45{from{transform:rotate(45deg)} to{transform:rotate(405deg)}}
+@keyframes zspin-90{from{transform:rotate(90deg)} to{transform:rotate(450deg)}}
+@keyframes zspin-135{from{transform:rotate(135deg)} to{transform:rotate(495deg)}}
+@keyframes zspin-180{from{transform:rotate(180deg)} to{transform:rotate(540deg)}}
+@keyframes zspin-225{from{transform:rotate(225deg)} to{transform:rotate(585deg)}}
+@keyframes zspin-270{from{transform:rotate(270deg)} to{transform:rotate(630deg)}}
+@keyframes zspin-315{from{transform:rotate(315deg)} to{transform:rotate(675deg)}}
+@keyframes znips{from{transform:rotate(360deg)} to{transform:rotate(0deg)}}
+@keyframes znips-45{from{transform:rotate(405deg)} to{transform:rotate(45deg)}}
+@keyframes znips-90{from{transform:rotate(450deg)} to{transform:rotate(90deg)}}
+@keyframes znips-135{from{transform:rotate(495deg)} to{transform:rotate(135deg)}}
+@keyframes znips-180{from{transform:rotate(540deg)} to{transform:rotate(180deg)}}
+@keyframes znips-225{from{transform:rotate(585deg)} to{transform:rotate(225deg)}}
+@keyframes znips-270{from{transform:rotate(630deg)} to{transform:rotate(270deg)}}
+@keyframes znips-315{from{transform:rotate(675deg)} to{transform:rotate(315deg)}}
+
+/*== mane ==*/
+a:hover[href^='/'][href*='-r'][href*='-d']{transform:rotate(0deg)scaleX(1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d']{transform:rotate(45deg)scaleX(1)}
+a[href^='/'][href*='-90'],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d']{transform:rotate(90deg)scaleX(1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d']{transform:rotate(135deg)scaleX(1)}
+a[href^='/'][href*='-180'],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d']{transform:rotate(180deg)scaleX(1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d']{transform:rotate(225deg)scaleX(1)}
+a[href^='/'][href*='-270'],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d']{transform:rotate(270deg)scaleX(1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d']{transform:rotate(315deg)scaleX(1)}
+a[href^='/'][href*='-r'],a:hover[href^='/'][href*='-d']{transform:rotate(0deg)scaleX(-1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-r'],a:hover[href^='/'][href*='-45'][href*='-d']{transform:rotate(45deg)scaleX(-1)}
+a[href^='/'][href*='-90'][href*='-r'],a:hover[href^='/'][href*='-90'][href*='-d']{transform:rotate(90deg)scaleX(-1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-r'],a:hover[href^='/'][href*='-135'][href*='-d']{transform:rotate(135deg)scaleX(-1)}
+a[href^='/'][href*='-180'][href*='-r'],a:hover[href^='/'][href*='-180'][href*='-d']{transform:rotate(180deg)scaleX(-1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*='-r'],a:hover[href^='/'][href*='-225'][href*='-d']{transform:rotate(225deg)scaleX(-1)}
+a[href^='/'][href*='-270'][href*='-r'],a:hover[href^='/'][href*='-270'][href*='-d']{transform:rotate(270deg)scaleX(-1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-r'],a:hover[href^='/'][href*='-315'][href*='-d']{transform:rotate(315deg)scaleX(-1)}
+a[href^='/'][href*='-225'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d']{transform:rotate(45deg)scaleX(1)}
+a[href^='/'][href*='-270'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d']{transform:rotate(90deg)scaleX(1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d']{transform:rotate(135deg)scaleX(1)}
+a[href^='/'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-f'][href*='-d']{transform:rotate(180deg)scaleX(1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d']{transform:rotate(225deg)scaleX(1)}
+a[href^='/'][href*='-90'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d']{transform:rotate(270deg)scaleX(1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d']{transform:rotate(315deg)scaleX(1)}
+a[href^='/'][href*='-225'][href*='-f'],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d']{transform:rotate(45deg)scaleX(-1)}
+a[href^='/'][href*='-270'][href*='-f'],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d']{transform:rotate(90deg)scaleX(-1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d']{transform:rotate(135deg)scaleX(-1)}
+a[href^='/'][href*='-f'],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d']{transform:rotate(180deg)scaleX(-1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d']{transform:rotate(225deg)scaleX(-1)}
+a[href^='/'][href*='-90'][href*='-f'],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d']{transform:rotate(270deg)scaleX(-1);image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d']{transform:rotate(315deg)scaleX(-1)}
+
+/*== -spin ==*/
+/*
+a[href*=-spin],a:hover[href^='/'][href*='-r'][href*='-d'][href*=-spin]{animation:spin 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*=-spin],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-45 2s infinite linear}
+a[href^='/'][href*='-90'][href*=-spin],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-90 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*=-spin],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-135 2s infinite linear}
+a[href^='/'][href*='-180'][href*=-spin],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-180 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*=-spin],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-225 2s infinite linear}
+a[href^='/'][href*='-270'][href*=-spin],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-270 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*=-spin],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-315 2s infinite linear}
+a[href^='/'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-d'][href*=-spin]{animation:spin-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-45'][href*='-d'][href*=-spin]{animation:spin-45-r 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-90'][href*='-d'][href*=-spin]{animation:spin-90-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-135'][href*='-d'][href*=-spin]{animation:spin-135-r 2s infinite linear}
+a[href^='/'][href*='-180'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-180'][href*='-d'][href*=-spin]{animation:spin-180-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-225'][href*='-d'][href*=-spin]{animation:spin-225-r 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-270'][href*='-d'][href*=-spin]{animation:spin-270-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-315'][href*='-d'][href*=-spin]{animation:spin-315-r 2s infinite linear}
+a[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d'][href*=-spin]{animation:spin-45 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d'][href*=-spin]{animation:spin-90 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d'][href*=-spin]{animation:spin-135 2s infinite linear}
+a[href^='/'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-f'][href*='-d'][href*=-spin]{animation:spin-180 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d'][href*=-spin]{animation:spin-225 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d'][href*=-spin]{animation:spin-270 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d'][href*=-spin]{animation:spin-315 2s infinite linear}
+a[href^='/'][href*='-225'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-45-r 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-90-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-135-r 2s infinite linear}
+a[href^='/'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-180-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-225-r 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-270-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{animation:spin-315-r 2s infinite linear}
+*/
+
+/*== -xspin ==*/
+/*
+a[href*=-xspin],a:hover[href^='/'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*=-xspin],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-45 2s infinite linear}
+a[href^='/'][href*='-90'][href*=-xspin],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-90 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*=-xspin],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-135 2s infinite linear}
+a[href^='/'][href*='-180'][href*=-xspin],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-180 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*=-xspin],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-225 2s infinite linear}
+a[href^='/'][href*='-270'][href*=-xspin],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-270 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*=-xspin],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-315 2s infinite linear}
+a[href^='/'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-d'][href*=-xspin]{animation:xspin-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-45'][href*='-d'][href*=-xspin]{animation:xspin-45-r 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-90'][href*='-d'][href*=-xspin]{animation:xspin-90-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-135'][href*='-d'][href*=-xspin]{animation:xspin-135-r 2s infinite linear}
+a[href^='/'][href*='-180'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-180'][href*='-d'][href*=-xspin]{animation:xspin-180-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-225'][href*='-d'][href*=-xspin]{animation:xspin-225-r 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-270'][href*='-d'][href*=-xspin]{animation:xspin-270-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-315'][href*='-d'][href*=-xspin]{animation:xspin-315-r 2s infinite linear}
+a[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d'][href*=-xspin]{animation:xspin-45 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d'][href*=-xspin]{animation:xspin-90 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d'][href*=-xspin]{animation:xspin-135 2s infinite linear}
+a[href^='/'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-f'][href*='-d'][href*=-xspin]{animation:xspin-180 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d'][href*=-xspin]{animation:xspin-225 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d'][href*=-xspin]{animation:xspin-270 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d'][href*=-xspin]{animation:xspin-315 2s infinite linear}
+a[href^='/'][href*='-225'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-45-r 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-90-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-135-r 2s infinite linear}
+a[href^='/'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-180-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-225-r 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-270-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{animation:xspin-315-r 2s infinite linear}
+*/
+
+/*== -yspin ==*/
+/*
+a[href*=-yspin],a:hover[href^='/'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*=-yspin],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-45 2s infinite linear}
+a[href^='/'][href*='-90'][href*=-yspin],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-90 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*=-yspin],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-135 2s infinite linear}
+a[href^='/'][href*='-180'][href*=-yspin],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-180 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*=-yspin],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-225 2s infinite linear}
+a[href^='/'][href*='-270'][href*=-yspin],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-270 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*=-yspin],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-315 2s infinite linear}
+a[href^='/'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-d'][href*=-yspin]{animation:yspin-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-45'][href*='-d'][href*=-yspin]{animation:yspin-45-r 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-90'][href*='-d'][href*=-yspin]{animation:yspin-90-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-135'][href*='-d'][href*=-yspin]{animation:yspin-135-r 2s infinite linear}
+a[href^='/'][href*='-180'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-180'][href*='-d'][href*=-yspin]{animation:yspin-180-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-225'][href*='-d'][href*=-yspin]{animation:yspin-225-r 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-270'][href*='-d'][href*=-yspin]{animation:yspin-270-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-315'][href*='-d'][href*=-yspin]{animation:yspin-315-r 2s infinite linear}
+a[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d'][href*=-yspin]{animation:yspin-45 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d'][href*=-yspin]{animation:yspin-90 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d'][href*=-yspin]{animation:yspin-135 2s infinite linear}
+a[href^='/'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-f'][href*='-d'][href*=-yspin]{animation:yspin-180 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d'][href*=-yspin]{animation:yspin-225 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d'][href*=-yspin]{animation:yspin-270 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d'][href*=-yspin]{animation:yspin-315 2s infinite linear}
+a[href^='/'][href*='-225'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-45-r 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-90-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-135-r 2s infinite linear}
+a[href^='/'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-180-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-225-r 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-270-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{animation:yspin-315-r 2s infinite linear}
+*/
+
+/*== -zspin ==*/
+a[href*=-zspin],a:hover[href^='/'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*=-zspin],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-45 2s infinite linear}
+a[href^='/'][href*='-90'][href*=-zspin],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-90 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*=-zspin],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-135 2s infinite linear}
+a[href^='/'][href*='-180'][href*=-zspin],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-180 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*=-zspin],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-225 2s infinite linear}
+a[href^='/'][href*='-270'][href*=-zspin],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-270 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*=-zspin],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-315 2s infinite linear}
+/*
+a[href^='/'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-d'][href*=-zspin]{animation:zspin-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-45'][href*='-d'][href*=-zspin]{animation:zspin-45-r 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-90'][href*='-d'][href*=-zspin]{animation:zspin-90-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-135'][href*='-d'][href*=-zspin]{animation:zspin-135-r 2s infinite linear}
+a[href^='/'][href*='-180'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-180'][href*='-d'][href*=-zspin]{animation:zspin-180-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-225'][href*='-d'][href*=-zspin]{animation:zspin-225-r 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-270'][href*='-d'][href*=-zspin]{animation:zspin-270-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-315'][href*='-d'][href*=-zspin]{animation:zspin-315-r 2s infinite linear}
+*/
+a[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d'][href*=-zspin]{animation:zspin-45 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d'][href*=-zspin]{animation:zspin-90 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d'][href*=-zspin]{animation:zspin-135 2s infinite linear}
+a[href^='/'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-f'][href*='-d'][href*=-zspin]{animation:zspin-180 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d'][href*=-zspin]{animation:zspin-225 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d'][href*=-zspin]{animation:zspin-270 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d'][href*=-zspin]{animation:zspin-315 2s infinite linear}
+/*
+a[href^='/'][href*='-225'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-45-r 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-90-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-135-r 2s infinite linear}
+a[href^='/'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-180-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-225-r 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-270-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{animation:zspin-315-r 2s infinite linear}
+*/
+
+/*== -nips ==*/
+/*
+a[href*=-nips],a:hover[href^='/'][href*='-r'][href*='-d'][href*=-nips]{animation:nips 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*=-nips],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-45 2s infinite linear}
+a[href^='/'][href*='-90'][href*=-nips],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-90 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*=-nips],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-135 2s infinite linear}
+a[href^='/'][href*='-180'][href*=-nips],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-180 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*=-nips],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-225 2s infinite linear}
+a[href^='/'][href*='-270'][href*=-nips],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-270 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*=-nips],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-315 2s infinite linear}
+a[href^='/'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-d'][href*=-nips]{animation:nips-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-45'][href*='-d'][href*=-nips]{animation:nips-45-r 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-90'][href*='-d'][href*=-nips]{animation:nips-90-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-135'][href*='-d'][href*=-nips]{animation:nips-135-r 2s infinite linear}
+a[href^='/'][href*='-180'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-180'][href*='-d'][href*=-nips]{animation:nips-180-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-225'][href*='-d'][href*=-nips]{animation:nips-225-r 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-270'][href*='-d'][href*=-nips]{animation:nips-270-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-315'][href*='-d'][href*=-nips]{animation:nips-315-r 2s infinite linear}
+a[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d'][href*=-nips]{animation:nips-45 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d'][href*=-nips]{animation:nips-90 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d'][href*=-nips]{animation:nips-135 2s infinite linear}
+a[href^='/'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-f'][href*='-d'][href*=-nips]{animation:nips-180 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d'][href*=-nips]{animation:nips-225 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d'][href*=-nips]{animation:nips-270 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d'][href*=-nips]{animation:nips-315 2s infinite linear}
+a[href^='/'][href*='-225'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-45-r 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-90-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-135-r 2s infinite linear}
+a[href^='/'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-180-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-225-r 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-270-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{animation:nips-315-r 2s infinite linear}
+*/
+
+/*== -znips ==*/
+a[href*=-znips],a:hover[href^='/'][href*='-r'][href*='-d'][href*=-znips]{animation:znips 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*=-znips],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-45 2s infinite linear}
+a[href^='/'][href*='-90'][href*=-znips],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-90 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*=-znips],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-135 2s infinite linear}
+a[href^='/'][href*='-180'][href*=-znips],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-180 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*=-znips],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-225 2s infinite linear}
+a[href^='/'][href*='-270'][href*=-znips],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-270 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*=-znips],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-315 2s infinite linear}
+/*
+a[href^='/'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-d'][href*=-znips]{animation:znips-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-45'][href*='-d'][href*=-znips]{animation:znips-45-r 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-90'][href*='-d'][href*=-znips]{animation:znips-90-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-135'][href*='-d'][href*=-znips]{animation:znips-135-r 2s infinite linear}
+a[href^='/'][href*='-180'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-180'][href*='-d'][href*=-znips]{animation:znips-180-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-225'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-225'][href*='-d'][href*=-znips]{animation:znips-225-r 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-270'][href*='-d'][href*=-znips]{animation:znips-270-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-315'][href*='-d'][href*=-znips]{animation:znips-315-r 2s infinite linear}
+*/
+a[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d'][href*=-znips]{animation:znips-45 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d'][href*=-znips]{animation:znips-90 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d'][href*=-znips]{animation:znips-135 2s infinite linear}
+a[href^='/'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-f'][href*='-d'][href*=-znips]{animation:znips-180 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d'][href*=-znips]{animation:znips-225 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d'][href*=-znips]{animation:znips-270 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d'][href*=-znips]{animation:znips-315 2s infinite linear}
+/*
+a[href^='/'][href*='-225'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-45-r 2s infinite linear}
+a[href^='/'][href*='-270'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-90-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-315'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-135-r 2s infinite linear}
+a[href^='/'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-180-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-45'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-225-r 2s infinite linear}
+a[href^='/'][href*='-90'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-270-r 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href^='/'][href*='-135'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{animation:znips-315-r 2s infinite linear}
+*/
+
+/*==legacy ==*/
+a:hover[href^='/'][href$='-rd']{transform:rotate(0deg)scaleX(1);image-rendering:-o-crisp-edges}
+a[href^='/'][href$='-90d'],a:hover[href^='/'][href$='-90rd']{transform:rotate(90deg)scaleX(1);image-rendering:-o-crisp-edges}
+a[href^='/'][href$='-180d'],a:hover[href^='/'][href$='-fd']{transform:rotate(180deg)scaleX(1);image-rendering:-o-crisp-edges}
+a[href^='/'][href$='-270d'],a:hover[href^='/'][href$='-270rd']{transform:rotate(270deg)scaleX(1);image-rendering:-o-crisp-edges}
+a[href^='/'][href$='-rd']{transform:rotate(0deg)scaleX(-1);image-rendering:-o-crisp-edges}
+a[href^='/'][href$='-90r'],a[href^='/'][href$='-90rd'],a:hover[href^='/'][href$='-90d']{transform:rotate(90deg)scaleX(-1);image-rendering:-o-crisp-edges}
+a[href^='/'][href$='-fd'],a:hover[href^='/'][href$='-180d']{transform:rotate(180deg)scaleX(-1);image-rendering:-o-crisp-edges}
+a[href^='/'][href$='-270r'],a[href^='/'][href$='-270rd'],a:hover[href^='/'][href$='-270d']{transform:rotate(270deg)scaleX(-1);image-rendering:-o-crisp-edges}
+a[href*=-ispin]{animation:spin 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href*=-rotate],a[href*=-lrotate]{animation:zspin 2s infinite linear;image-rendering:-o-crisp-edges}
+a[href*=-rrotate],a[href*=-lrrotate]{animation:znips 2s infinite linear;image-rendering:-o-crisp-edges}
+
+.md{overflow-y:hidden !important}

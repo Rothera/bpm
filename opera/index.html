@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    /* Not sure if I actually care whether or not the extension page is loaded... */
+
+    function get_file_data(filename) {
+        var request = new XMLHttpRequest();
+        request.open("GET", filename, false);
+        request.send();
+
+        if(!request.responseText) {
+            opera.postError("ERROR: Can't read " + filename);
+            return;
+        } else {
+            return request.responseText;
+        }
+    }
+
+    opera.extension.onmessage = function(event) {
+        var message = event.data;
+
+        switch(message.request) {
+            case "getFile":
+                var data = get_file_data(message.filename);
+
+                if(data) {
+                    event.source.postMessage({
+                        "request": "fileLoaded",
+                        "filename": message.filename,
+                        "data": data
+                    });
+                }
+                break;
+
+            default:
+                opera.postError("ERROR: Unknown request from content script: " + message.request);
+                break;
+        }
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>
