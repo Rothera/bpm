@@ -5,7 +5,7 @@ packages: betterponymotes.xpi betterponymotes.crx betterponymotes.oex
 emote-classes.css nsfw-emote-classes.css emote-map.js: bpgen.py emotes/*.yaml
 	./bpgen.py emotes/*.yaml
 
-betterponymotes.xpi: emote-classes.css nsfw-emote-classes.css emote-map.js data/* package.json lib/main.js
+betterponymotes.xpi: emote-classes.css nsfw-emote-classes.css emote-map.js firefox/data/* firefox/package.json firefox/lib/main.js
 	cfx xpi --update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf
 
 unpack-xpi:

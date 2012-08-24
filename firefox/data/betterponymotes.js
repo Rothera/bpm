@@ -1,0 +1,1 @@
+../../betterponymotes.js

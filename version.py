@@ -26,7 +26,7 @@ def main():
     parser.add_argument("-v")
     args = parser.parse_args()
 
-    fx_data = load("package.json")
+    fx_data = load("firefox/package.json")
     cr_data = load("chrome/manifest.json")
 
     if args.operation == "check":
@@ -45,7 +45,7 @@ def main():
         fx_data["version"] = args.v
         cr_data["version"] = args.v
 
-        save("package.json", fx_data)
+        save("firefox/package.json", fx_data)
         save("chrome/manifest.json", cr_data)
 
 if __name__ == "__main__":
