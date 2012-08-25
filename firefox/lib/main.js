@@ -32,7 +32,7 @@ var css_mod = page_mod.PageMod({
 });
 
 var main_mod = page_mod.PageMod({
-    include: ["*.reddit.com", "http://localhost:8000/redditTest.html"],
+    include: ["*.reddit.com"],
     contentScriptFile: [
         self.data.url("mutation_summary.js"),
         self.data.url("emote-map.js"),

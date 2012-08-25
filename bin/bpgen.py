@@ -111,7 +111,7 @@ def build_data(emotes):
             assert emote.selector not in rules
             rules[emote.selector] = emote.css.copy()
 
-        if not emote.nomap:
+        if not (emote.nomap or ":" in emote.selector): # HACK to remove :hover's
             assert emote.name not in js_map
             js_map[emote.name] = emote.selector.lstrip(".")
 

@@ -10,31 +10,28 @@
 
 "use strict";
 
-function process(element) {
-    // Distinction between element.href and element.getAttribute("href")- the
-    // former is normalized somewhat to be a complete URL, which we don't want.
-    var href = element.getAttribute("href");
-    if(href && href[0] == '/') {
-        // Don't normalize case...
-        var parts = href.split("-");
-        var emote = parts[0];
-        if(emote_map.hasOwnProperty(emote)) {
-            //console.log("Applying CSS to " + emote + ": " + emote_map[emote]);
-            element.className += " " + emote_map[emote];
+function process(elements) {
+    for(var i = 0; i < elements.length; i++) {
+        // Distinction between element.href and element.getAttribute("href")- the
+        // former is normalized somewhat to be a complete URL, which we don't want.
+        var href = elements[i].getAttribute("href");
+        if(href && href[0] == '/') {
+            // Don't normalize case...
+            var parts = href.split("-");
+            var emote = parts[0];
+            if(emote_map.hasOwnProperty(emote)) {
+                //console.log("Applying CSS to " + emote + ": " + emote_map[emote]);
+                elements[i].className += " " + emote_map[emote];
+            }
         }
     }
 }
 
-var anchors = document.getElementsByTagName("a");
-for(var i = 0; i < anchors.length; i++) {
-    process(anchors[i]);
-}
+process(document.getElementsByTagName("a"))
 
 var observer = new MutationSummary({
     callback: function(summaries) {
-        summaries[0].added.forEach(function(a) {
-            process(a);
-        });
+        process(summaries[0].added);
     },
     queries: [
         {element: "a"}
