@@ -106,7 +106,7 @@ body {
 /* A: HEADER ETC.*/
 /* i: HEADER */
 #header {
-    background-image: url(http://c.thumbs.redditmedia.com/J4ca9_C1K6MOHTBz.png);
+    background-image: url(http://d.thumbs.redditmedia.com/nzkDAQinpFebt_kK.png);
     border-bottom: 1px solid #000000;
     height: 144px;
     z-index: 0;
@@ -230,11 +230,11 @@ body > .content {
     width: 245px
     }
 /* D: SPOILER CODE */
-a[href="/spoiler"] {
+a[href|="/spoiler"] {
     background: black !important;
     color: black !important
     }
-a[href="/spoiler"]:hover {
+a[href|="/spoiler"]:hover {
     color: white !important
     }
 /* E: CHANGE "SUBSCRIBERS" */
@@ -708,7 +708,7 @@ a.author[href$="/RetardVomitPussyCunt"]:after {
 /* 3: EMOTES */
 /* Don't modify the start and stop tags please. -koobaxion */
 /*vs_start*/
-a[href="/vsyoudontsay"], a[href="/vsyds"], a[href="/vsf"], a[href="/vsfilly"], a[href="/vswtf"], a[href="/vswhatthefuck"] {
+a[href|="/vsyoudontsay"], a[href|="/vsyds"], a[href|="/vsf"], a[href|="/vsfilly"], a[href|="/vswtf"], a[href|="/vswhatthefuck"] {
     display: block;
     clear: none;
     float: left;
@@ -716,16 +716,16 @@ a[href="/vsyoudontsay"], a[href="/vsyds"], a[href="/vsf"], a[href="/vsfilly"], a
     height: 70px;
     background-image: url(http://f.thumbs.redditmedia.com/48dqKntrMUv99RoA.png) !important
     }
-a[href="/vsyds"], a[href="/vsyoudontsay"] {
+a[href|="/vsyds"], a[href|="/vsyoudontsay"] {
     background-position: -0px -0px
     }
-a[href="/vswtf"], a[href="/vswhatthefuck"] {
+a[href|="/vswtf"], a[href|="/vswhatthefuck"] {
     background-position: 70px -0px
     }
-a[href="/vsf"], a[href="/vsfilly"] {
+a[href|="/vsf"], a[href|="/vsfilly"] {
     background-position: 140px -0px
     }
-a[href="/vs01"], a[href="/vs02"], a[href="/vsderp"], a[href="/vsdeal"], a[href="/vs03"], a[href="/vshey"], a[href="/rvs03"], a[href="/vs11"], a[href="/vslying"], a[href="/rvs11"], a[href="/vs12"], a[href="/vstear"], a[href="/rvs12"], a[href="/vs13"], a[href="/vscurious"], a[href="/rvs13"] {
+a[href|="/vs01"], a[href|="/vs02"], a[href|="/vsderp"], a[href|="/vsdeal"], a[href|="/vs03"], a[href|="/vshey"], a[href|="/rvs03"], a[href|="/vs11"], a[href|="/vslying"], a[href|="/rvs11"], a[href|="/vs12"], a[href|="/vstear"], a[href|="/rvs12"], a[href|="/vs13"], a[href|="/vscurious"], a [href|="/rvs13"] {
     display: block;
     clear: none;
     float: left;
@@ -733,19 +733,19 @@ a[href="/vs01"], a[href="/vs02"], a[href="/vsderp"], a[href="/vsdeal"], a[href="
     height: 70px;
     background-image: url(http://d.thumbs.redditmedia.com/6IUb7mOhEqfbFO1i.png) !important
     }
-a[href="/vs01"], a[href="/vsdeal"] a[href="/rvs01"] {
+a[href|="/vs01"], a[href|="/vsdeal"] a[href|="/rvs01"] {
     background-position: -0px -0px
     }
-a[href="/vs02"], a[href="/vsderp"], a[href="/rvs02"] {
+a[href|="/vs02"], a[href|="/vsderp"], a[href|="/rvs02"] {
     background-position: -70px -0px
     }
-a[href="/vs03"], a[href="/vslying"], a[href="/rvs03"] {
+a[href|="/vs03"], a[href|="/vslying"], a[href|="/rvs03"] {
     background-position: -0px 70px
     }
-a[href="/vs11"], a[href="/vstear"], a[href="/rvs11"] {
+a[href|="/vs11"], a[href|="/vstear"], a[href|="/rvs11"] {
     background-position: -70px 70px
     }
-a[href="/vs12"], a[href="/vs13"], a[href="/vshey"], a[href="/vscurious"], a[href="/rvs12"], a[href="/rvs13"], a[href="/vs21"], a[href="/rvs21"], a[href="/vsmeh"] {
+a[href|="/vs12"], a[href|="/vs13"], a[href|="/vshey"], a[href|="/vscurious"], a[href|="/rvs12"], a[href|="/rvs13"], a[href|="/vs21"], a [href|="/rvs21"], a[href|="/vsmeh"] {
     display: block;
     clear: none;
     float: left;
@@ -753,16 +753,16 @@ a[href="/vs12"], a[href="/vs13"], a[href="/vshey"], a[href="/vscurious"], a[href
     height: 70px;
     background-image: url(http://f.thumbs.redditmedia.com/qvZfSAMs42KQIfgS.png) !important
     }
-a[href="/vs12"], a[href="/vshey"], a[href="/rvs12"] {
+a[href|="/vs12"], a[href|="/vshey"], a[href|="/rvs12"] {
     background-position: -0px -0px
     }
-a[href="/vs13"], a[href="/vscurious"], a[href="/rvs13"] {
+a[href|="/vs13"], a[href|="/vscurious"], a[href|="/rvs13"] {
     background-position: -70px -0px
     }
-a[href="/vs21"], a[href="/rvs21"], a[href="/vsmeh"] {
+a[href|="/vs21"], a[href|="/rvs21"], a[href|="/vsmeh"] {
     background-position: -140px -0px
     }
-a[href="/vs00"], a[href="/vs10"], a[href="/vs20"], a[href="/vs22"], a[href="/vs04"], a[href="/vs23"], a[href="/vsohyou"], a[href="/vssad"], a[href="/vshair"], a[href="/vswink"], a[href="/vshooves"], a[href="/vsjuice"] {
+a[href|="/vs00"], a[href|="/vs10"], a[href|="/vs20"], a[href|="/vs22"], a [href|="/vs04"], a[href|="/vs23"], a[href|="/vsohyou"], a[href|="/vssad"], a[href|="/vshair"], a[href|="/vswink"], a[href|="/vshooves"], a[href|="/vsjuice"] {
     display: block;
     clear: none;
     float: left;
@@ -770,25 +770,25 @@ a[href="/vs00"], a[href="/vs10"], a[href="/vs20"], a[href="/vs22"], a[href="/vs0
     height: 70px;
     background-image: url(http://b.thumbs.redditmedia.com/Vy09d72RyD7kbbiU.png) !important
     }
-a[href="/vs00"], a[href="/vsohyou"] {
+a[href|="/vs00"], a[href|="/vsohyou"] {
     background-position: -0px -0px
     }
-a[href="/vs20"], a[href="/vshair"] {
+a[href|="/vs20"], a[href|="/vshair"] {
     background-position: 70px -0px
     }
-a[href="/vs10"], a[href="/vssad"] {
+a[href|="/vs10"], a[href|="/vssad"] {
     background-position: 140px -0px
     }
-a[href="/vs22"], a[href="/vswink"] {
+a[href|="/vs22"], a[href|="/vswink"] {
     background-position: 210px -70px
     }
-a[href="/vs04"], a[href="/vshooves"] {
+a[href|="/vs04"], a[href|="/vshooves"] {
     background-position: 140px -70px
     }
-a[href="/vs23"], a[href="/vsjuice"] {
+a[href|="/vs23"], a[href|="/vsjuice"] {
     background-position: 70px -70px
     }
-a[href="/vs14"], a[href="/vs24"], a[href="/vs05"], a[href="/vs15"], a[href="/vs25"], a[href="/vs06"], a[href="/vs16"], a[href="/vs26"], a[href="/vs07"], a[href="/vshappy"], a[href="/vssup"], a[href="/vslook"], a[href="/vsbass"], a[href="/vsmine"], a[href="/vsomg"], a[href="/vsoooo"], a[href="/vsnope"], a[href="/vsmog"] {
+a[href|="/vs14"], a[href|="/vs24"], a[href|="/vs05"], a[href|="/vs15"], a [href|="/vs25"], a[href|="/vs06"], a[href|="/vs16"], a[href|="/vs26"], a [href|="/vs07"], a[href|="/vshappy"], a[href|="/vssup"], a[href|="/vslook"], a[href|="/vsbass"], a[href|="/vsmine"], a[href|="/vsomg"], a[href|="/vsoooo"], a [href|="/vsnope"], a[href|="/vsmog"] {
     display: block;
     clear: none;
     float: left;
@@ -796,36 +796,36 @@ a[href="/vs14"], a[href="/vs24"], a[href="/vs05"], a[href="/vs15"], a[href="/vs2
     height: 70px;
     background-image: url(http://e.thumbs.redditmedia.com/4j0qikWgIxeJspbF.png) !important
     }
-a[href="/vs14"], a[href="/vshappy"] {
+a[href|="/vs14"], a[href|="/vshappy"] {
     background-position: -0px -0px
     }
-a[href="/vs24"], a[href="/vssup"] {
+a[href|="/vs24"], a[href|="/vssup"] {
     background-position: 70px -0px
     }
-a[href="/vs05"], a[href="/vslook"] {
+a[href|="/vs05"], a[href|="/vslook"] {
     background-position: 140px -0px
     }
-a[href="/vs15"], a[href="/vsbass"] {
+a[href|="/vs15"], a[href|="/vsbass"] {
     background-position: 210px -70px
     }
-a[href="/vs25"], a[href="/vsmine"] {
+a[href|="/vs25"], a[href|="/vsmine"] {
     background-position: 140px -70px
     }
-a[href="/vs06"], a[href="/vsomg"] {
+a[href|="/vs06"], a[href|="/vsomg"] {
     background-position: 70px -70px
     }
-a[href="/vs16"], a[href="/vsoooo"] {
+a[href|="/vs16"], a[href|="/vsoooo"] {
     background-position: 210px -140px
     }
-a[href="/vs26"], a[href="/vsnope"] {
+a[href|="/vs26"], a[href|="/vsnope"] {
     background-position: 140px -140px
     }
-a[href="/vs07"], a[href="/vsmog"] {
+a[href|="/vs07"], a[href|="/vsmog"] {
     background-position: 70px -140px
     }
 /*vs_end*/
 /* Other Emotes*/
-a[href="/vshnngg"], a[href="/hnnng"] {
+a[href|="/vshnngg"], a[href|="/hnnng"] {
     display: block;
     clear: none;
     float: left;
@@ -833,10 +833,10 @@ a[href="/vshnngg"], a[href="/hnnng"] {
     height: 70px;
     background-image: url(http://d.thumbs.redditmedia.com/00T3gLdOawm80o--.png) !important
     }
-a[href="/vshnnng"], a[href="/hnnng"] {
+a[href|="/vshnnng"], a[href|="/hnnng"] {
     background-position: -0px -0px
     }
-a[href="/vsshrug"], a[href="/shrug"] {
+a[href|="/vsshrug"], a[href|="/shrug"] {
     display: block;
     clear: none;
     float: left;
@@ -844,10 +844,10 @@ a[href="/vsshrug"], a[href="/shrug"] {
     height: 300px;
     background-image: url(http://c.thumbs.redditmedia.com/XOs3xf6RINSK7sPt.png) !important
     }
-a[href="/vsshrug"], a[href="/shrug"] {
+a[href|="/vsshrug"], a[href|="/shrug"] {
     background-position: -0px -0px
     }
-a[href="/vstableflip"], a[href="/tableflip"] {
+a[href|="/vstableflip"], a[href|="/tableflip"] {
     display: block;
     clear: none;
     float: left;
@@ -855,10 +855,10 @@ a[href="/vstableflip"], a[href="/tableflip"] {
     height: 291px;
     background-image: url(http://a.thumbs.redditmedia.com/TMFvsdV9zMTRLQyH.png) !important
     }
-a[href="/vstableflip"], a[href="/tableflip"] {
+a[href|="/vstableflip"], a[href|="/tableflip"] {
     background-position: -0px -0px
     }
-a[href="/vslaying"], a[href="/laying"] {
+a[href|="/vslaying"], a[href|="/laying"] {
     display: block;
     clear: none;
     float: left;
@@ -866,7 +866,7 @@ a[href="/vslaying"], a[href="/laying"] {
     height: 164px;
     background-image: url(http://f.thumbs.redditmedia.com/a2SG_AiO-Mojc5E5.png) !important
     }
-a[href="/vslaying"], a[href="/laying"] {
+a[href|="/vslaying"], a[href|="/laying"] {
     background-position: -0px -0px
     }
 /* 4: OTHER THINGS*/
@@ -941,7 +941,9 @@ version 1.5
 
 version 1.5.1
 [Rahlyn]
-        > added shrug, tableflip and laying emotes - not added to table because I tend to break it
+        > added shrug, tableflip and laying emotes - not added to table 
+
+because I tend to break it
 
 */
 div.titlebox .subscribers span.number:after {

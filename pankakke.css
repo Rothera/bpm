@@ -23,6 +23,7 @@ JustAnotherGDB
 - Added two more NMLP emotes
 - Added "pony gangnam" emotes
 - Added two more MLPmotes, name changes (8/22)
+- Added Conks as a mod, made a UDNT emote (8/25)
 
 MisanthropicCat
 - Is a kitty
@@ -55,7 +56,7 @@ MisanthropicCat
 /**********Name changes***********/
 /********************************/
 /******Insert name here to replace******/
-a.author[href$=JustAnotherGDB], a.author[href$=MisanthropicCat], a.author[href$=floutsy], a.author[href$=ruffletuffle], a.author[href$=Apple_Snacks], a.author[href$=petraman], a.author[href$=WorstPossibleThing], a.author[href$=Esplin], a.author[href$=theMagicalCouch], a.author[href$=pickled_octopus], a.author[href$=hiero_], a.author[href$=Thecursed], a.author[href$=Apprentice1994], a.author[href$=dasflash], a.author[href$=TheDarkman67] {
+a.author[href$=JustAnotherGDB], a.author[href$=MisanthropicCat], a.author[href$=Conky_], a.author[href$=floutsy], a.author[href$=ruffletuffle], a.author[href$=Apple_Snacks], a.author[href$=petraman], a.author[href$=WorstPossibleThing], a.author[href$=Esplin], a.author[href$=theMagicalCouch], a.author[href$=pickled_octopus], a.author[href$=hiero_], a.author[href$=Thecursed], a.author[href$=Apprentice1994], a.author[href$=dasflash], a.author[href$=TheDarkman67] {
     font-size: 0 !important;
     overflow: hidden;
     display: inline-block;
@@ -68,6 +69,10 @@ a.author[href$=JustAnotherGDB]:before {
     }
 a.author[href$=MisanthropicCat]:before {
     content: "MisanthropicPancake";
+    font-size: 10px
+    }
+a.author[href$=Conky_]:before {
+    content: "StickyBear";
     font-size: 10px
     }
 a.author[href$=floutsy]:before {
@@ -133,6 +138,11 @@ a.author[href$=MisanthropicCat]:after {
     color: purple;
     font-size: 10px
     }
+a.author[href$=Conky_]:after {
+    content: " is intimately familiar with Aunt Jemima";
+    color: yellow;
+    font-size: 10px
+    }
 /********************************/
 /*************Emotes**************/
 /********************************/
@@ -180,13 +190,13 @@ a[href|="/pancalcos"] {
     background-position: -1383px -0px;
     width: 93px
     }
-/**************MLP***************/
+/************MLP-LRG*************/
 a[href|="/pghoofpump"], a[href|="/pgshock"], a[href|="/pglegcross"], a[href|="/pgshuffle"], a[href|="/ponykakke"], a[href|="/gdbsmirk"] {
     display: block;
     clear: none;
     float: left;
     height: 150px;
-    background-image: url(http://b.thumbs.redditmedia.com/3vlTkAM0v37zC5hI.png) !important
+    background-image: url(http://c.thumbs.redditmedia.com/VmmZyeG6NbDW24iV.png) !important
     }
 a[href|="/pghoofpump"] {
     background-position: -0px -0px;
@@ -310,4 +320,16 @@ a[href|="/pppcute"] {
     }
 a[href|="/plunawait"] {
     background-position: -2030px -0px
+    }
+/***********Huge Emotes***********/
+a[href|="/udntsrslydntnomedood"] {
+    display: block;
+    clear: none;
+    float: left;
+    height: 600px;
+    background-image: url(http://c.thumbs.redditmedia.com/0PeEOgH7WjmnMaNJ.jpg) !important
+    }
+a[href|="/udntsrslydntnomedood"] {
+    background-position: -0px -0px;
+    width: 800px
     }
