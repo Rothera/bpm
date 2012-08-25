@@ -189,9 +189,9 @@ def dump_js(file, map):
 
 def main():
     parser = argparse.ArgumentParser(description="Generates BetterPonymotes's data files from a set of YAML inputs")
-    parser.add_argument("--css", help="Output CSS file", default="emote-classes.css")
-    parser.add_argument("--nsfw", help="Output NSFW CSS file", default="nsfw-emote-classes.css")
-    parser.add_argument("--js", help="Output JS file", default="emote-map.js")
+    parser.add_argument("--css", help="Output CSS file", default="build/emote-classes.css")
+    parser.add_argument("--nsfw", help="Output NSFW CSS file", default="build/nsfw-emote-classes.css")
+    parser.add_argument("--js", help="Output JS file", default="build/emote-map.js")
     parser.add_argument("yaml", help="Input YAML files", nargs="+")
     args = parser.parse_args()
 

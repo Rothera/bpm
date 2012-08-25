@@ -11,7 +11,7 @@
 ################################################################################
 
 script_in = open("opera/includes/betterponymotes.js.in").read()
-emote_map = open("emote-map.js").read()
+emote_map = open("build/emote-map.js").read()
 
 script = script_in.replace("/*$(EMOTE_MAP)*/", emote_map)
 

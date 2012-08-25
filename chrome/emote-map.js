@@ -1,1 +1,1 @@
-../emote-map.js
+../build/emote-map.js

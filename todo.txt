@@ -10,25 +10,6 @@ General TODO:
       out of VCS so much.
 
     - MAJOR CLEANUP after Opera release. The codebase is sprawling.
-        - Move Firefox files to firefox/. Make folders for our scripts as well-
-          bin/ would be nice.
-
-        /files
-        /files/betterponymotes.update.rdf
-        /files/chrome-updates.xml
-        /files/opera-updates.xml # I think?
-        # Would like to rename all the above:
-        #    /index.html
-        #    /bpm/betterponymotes_3.30.xpi
-        #    /bpm/firefox-updates.rdf
-        # etc.
-        /bin # Scripts
-        /chrome
-        /firefox
-        /opera
-        /emotes
-        /data # CSS files
-
         - Sort out codebase. There are duplicates and things- perhaps a template
           system would work? Maybe we should just separate functionality better.
 
@@ -51,6 +32,10 @@ General TODO:
 
     - Fully automate the update process. We really need to stop editing XML
       files manually... a little Python will do fine; just go write it.
+
+    - Move the www files to /bpm/ or something. Rename betterponymotes.update.rdf
+      to firefox-updates.rdf for consistency. Basically just move everything a
+      level deeper over the course of the next update.
 
 Chrome:
     - Make options work more nicely- reloading properly on all pages.
