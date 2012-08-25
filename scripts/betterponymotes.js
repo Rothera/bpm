@@ -12,16 +12,23 @@
 
 function process(elements) {
     for(var i = 0; i < elements.length; i++) {
+        var element = elements[i];
         // Distinction between element.href and element.getAttribute("href")- the
         // former is normalized somewhat to be a complete URL, which we don't want.
-        var href = elements[i].getAttribute("href");
+        var href = element.getAttribute("href");
         if(href && href[0] == '/') {
             // Don't normalize case...
             var parts = href.split("-");
             var emote = parts[0];
-            if(emote_map.hasOwnProperty(emote)) {
+            if(emote_map[emote]) {
                 //console.log("Applying CSS to " + emote + ": " + emote_map[emote]);
-                elements[i].className += " " + emote_map[emote];
+                element.className += " " + emote_map[emote];
+            } else if(!element.textContent && !element.clientWidth &&
+                      window.getComputedStyle(element, ":after").backgroundImage == "none" &&
+                      window.getComputedStyle(element, ":before").backgroundImage == "none") {
+                // Unknown emote? Good enough
+                element.className += " " + "bpmotes-unknown";
+                element.textContent = "Unknown emote " + emote;
             }
         }
     }

@@ -15,6 +15,7 @@ function enable_css(filename) {
     document.documentElement.insertBefore(tag);
 }
 
+enable_css("bpmotes.css");
 enable_css("emote-classes.css");
 enable_css("combiners.css");
 enable_css("misc.css");

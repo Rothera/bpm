@@ -28,7 +28,12 @@ var prefs = simple_prefs.prefs;
 var css_mod = page_mod.PageMod({
     include: ["*.reddit.com"],
     contentScriptWhen: "start",
-    contentStyleFile: [self.data.url("emote-classes.css"), self.data.url("combiners.css"), self.data.url("misc.css")]
+    contentStyleFile: [
+        self.data.url("bpmotes.css"),
+        self.data.url("emote-classes.css"),
+        self.data.url("combiners.css"),
+        self.data.url("misc.css")
+        ]
 });
 
 var main_mod = page_mod.PageMod({
@@ -36,7 +41,8 @@ var main_mod = page_mod.PageMod({
     contentScriptFile: [
         self.data.url("mutation_summary.js"),
         self.data.url("emote-map.js"),
-        self.data.url("betterponymotes.js")],
+        self.data.url("betterponymotes.js")
+        ],
     contentScriptWhen: "ready",
 });
 

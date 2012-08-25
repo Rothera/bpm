@@ -56,6 +56,7 @@ function apply_css(filename) {
 }
 
 window.addEventListener("DOMContentLoaded", function() {
+    apply_css("/bpmotes.css");
     apply_css("/emote-classes.css");
     apply_css("/combiners.css");
     apply_css("/misc.css");
