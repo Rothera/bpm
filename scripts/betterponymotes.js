@@ -23,7 +23,7 @@ function process(elements) {
             if(emote_map[emote]) {
                 //console.log("Applying CSS to " + emote + ": " + emote_map[emote]);
                 element.className += " " + emote_map[emote];
-            } else if(!element.textContent && !element.clientWidth &&
+            } else if(!element.textContent && /^\/[\w\-:!]+$/.test(emote) && !element.clientWidth &&
                       window.getComputedStyle(element, ":after").backgroundImage == "none" &&
                       window.getComputedStyle(element, ":before").backgroundImage == "none") {
                 // Unknown emote? Good enough
