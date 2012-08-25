@@ -51,8 +51,9 @@ Opera:
 Update process:
     - $ bin/version.py set -v [...]
     - Edit opera/config.xml
-    - Edit chrome-updates.xml
-    - Edit opera-updates.xml
+    - Edit files/chrome-updates.xml
+    - Edit files/opera-updates.xml
+    - $ rm build/*.{xpi,crx,oex} # Delete old versions
     - $ make
     - $ make unpack-xpi
     - Edit xpi/install.rdf
