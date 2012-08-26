@@ -13,27 +13,27 @@
  * - Typhos
  */
 
-a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
+.bpflags-in, .bpflags-inp {
     float: none !important;
     display: inline-block !important
     }
 
-a[href^="/"][href*="-ar-"], a[href^="/"][href$="-ar"] {
+.bpflags-ar {
     float: right !important
 }
 
-a[href^="/"][href*="-blink!"] {
+.bpflags-blink_excl_ {
     text-decoration: blink !important
-    }
+}
 
-a[href^="/"][href*="-comicsans!"] {
+.bpflags-comicsans_excl_ {
     font-family: "Comic-Sans MS", cursive
 }
 
-a[href^="/"][href*="-impact!"] {
+.bpflags-impact_excl_ {
     font-family: Impact, Charcoal, sans-serif
 }
 
-a[href^="/"][href*="-tahoma!"] {
+.bpflags-tahoma_excl_ {
     font-family: Tahoma, Geneva, sans-serif
 }

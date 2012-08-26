@@ -10,6 +10,10 @@
 
 "use strict";
 
+function sanitize(s) {
+    return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_");
+}
+
 function process(elements) {
     for(var i = 0; i < elements.length; i++) {
         var element = elements[i];
@@ -17,12 +21,14 @@ function process(elements) {
         // former is normalized somewhat to be a complete URL, which we don't want.
         var href = element.getAttribute("href");
         if(href && href[0] == '/') {
-            // Don't normalize case...
+            // Don't normalize case for emote lookup
             var parts = href.split("-");
             var emote = parts[0];
             if(emote_map[emote]) {
-                var css_class = emote_map[emote][0];
-                var is_nsfw = emote_map[emote][1];
+                // But do normalize it when working out the CSS class. Also
+                // strip off leading "/".
+                var css_class = "bpmotes-" + sanitize(emote.slice(1));
+                var is_nsfw = emote_map[emote] == 2;
 
                 var nsfw_class = is_nsfw ? " bpmotes-nsfw " : " ";
                 element.className += nsfw_class + css_class;
@@ -36,6 +42,16 @@ function process(elements) {
                 //    <span class="bpmotes-sfw-only">NSFW</span>
                 // And make that class invisible by default. I don't think the
                 // complexity is worth it for now, though.
+
+                // Apply flags in turn. We pick on the naming a bit to prevent
+                // spaces and such from slipping in.
+                for(var p = 1; p < parts.length; p++) {
+                    // Normalize case
+                    var flag = parts[p].toLowerCase();
+                    if(/^[\w\!]+$/.test(flag)) {
+                        element.className += " " + "bpflags-" + sanitize(flag);
+                    }
+                }
             } else if(!element.textContent && /^\/[\w\-:!]+$/.test(emote) && !element.clientWidth &&
                       window.getComputedStyle(element, ":after").backgroundImage == "none" &&
                       window.getComputedStyle(element, ":before").backgroundImage == "none") {

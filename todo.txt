@@ -1,10 +1,4 @@
 General TODO:
-    - Improve unknown emote detection to mark NSFW emotes when they aren't
-      enabled. (Will require expanding js-map output.)
-
-    - Better flags support. The CSS and JS maps will be hand-maintained (keep
-      them in their own files if we can...)
-
     - Make all logging consistent and useful.
 
     - More bzr branches. Consider splitting out emotes. Add everything to a
@@ -33,12 +27,12 @@ General TODO:
         - Find a better way to handle injecting emote-map.js into Opera. "make"
           works for now, but this just won't do for long.
 
-    - Fully automate the update process. We really need to stop editing XML
-      files manually... a little Python will do fine; just go write it.
+    - Write a script to automatically add the updateKey block to the XPI, and
+      run it during make.
 
     - Move the www files to /bpm/ or something. Rename betterponymotes.update.rdf
       to firefox-updates.rdf for consistency. Basically just move everything a
-      level deeper over the course of the next update.
+      level deeper over the course of an update.
 
 Chrome:
     - Make options work more nicely- reloading properly on all pages.

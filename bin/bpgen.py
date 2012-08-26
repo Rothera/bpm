@@ -208,7 +208,7 @@ def build_js(emotes):
             continue
 
         assert emote.name not in emote_map
-        emote_map[emote.name] = [emote.make_selector().lstrip("."), int(emote.nsfw)]
+        emote_map[emote.name] = int(emote.nsfw) + 1
 
     return emote_map
 

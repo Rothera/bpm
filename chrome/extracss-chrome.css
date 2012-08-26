@@ -6,6 +6,8 @@
  * Which is itself sourced from:
  *
  *    http://userstyles.org/styles/58923/reddit-my-little-chaos-script-keyframes
+ *
+ * Rewritten extensively to use CSS classes.
  */
 
 /*== keyframes ==*/
@@ -107,240 +109,240 @@
 @-webkit-keyframes znips-315-r{from{-webkit-transform:rotate(315deg)scaleX(-1)rotatez(360deg)} to{-webkit-transform:rotate(315deg)scaleX(-1)rotatez(0deg)}}
 
 /*== mane ==*/
-a:hover[href^='/'][href*='-r'][href*='-d']{-webkit-transform:rotate(0deg)scaleX(1)}
-a[href^='/'][href*='-45'],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d']{-webkit-transform:rotate(45deg)scaleX(1)}
-a[href^='/'][href*='-90'],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d']{-webkit-transform:rotate(90deg)scaleX(1)}
-a[href^='/'][href*='-135'],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d']{-webkit-transform:rotate(135deg)scaleX(1)}
-a[href^='/'][href*='-180'],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d']{-webkit-transform:rotate(180deg)scaleX(1)}
-a[href^='/'][href*='-225'],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d']{-webkit-transform:rotate(225deg)scaleX(1)}
-a[href^='/'][href*='-270'],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d']{-webkit-transform:rotate(270deg)scaleX(1)}
-a[href^='/'][href*='-315'],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d']{-webkit-transform:rotate(315deg)scaleX(1)}
-a[href^='/'][href*='-r'],a:hover[href^='/'][href*='-d']{-webkit-transform:rotate(0deg)scaleX(-1)}
-a[href^='/'][href*='-45'][href*='-r'],a:hover[href^='/'][href*='-45'][href*='-d']{-webkit-transform:rotate(45deg)scaleX(-1)}
-a[href^='/'][href*='-90'][href*='-r'],a:hover[href^='/'][href*='-90'][href*='-d']{-webkit-transform:rotate(90deg)scaleX(-1)}
-a[href^='/'][href*='-135'][href*='-r'],a:hover[href^='/'][href*='-135'][href*='-d']{-webkit-transform:rotate(135deg)scaleX(-1)}
-a[href^='/'][href*='-180'][href*='-r'],a:hover[href^='/'][href*='-180'][href*='-d']{-webkit-transform:rotate(180deg)scaleX(-1)}
-a[href^='/'][href*='-225'][href*='-r'],a:hover[href^='/'][href*='-225'][href*='-d']{-webkit-transform:rotate(225deg)scaleX(-1)}
-a[href^='/'][href*='-270'][href*='-r'],a:hover[href^='/'][href*='-270'][href*='-d']{-webkit-transform:rotate(270deg)scaleX(-1)}
-a[href^='/'][href*='-315'][href*='-r'],a:hover[href^='/'][href*='-315'][href*='-d']{-webkit-transform:rotate(315deg)scaleX(-1)}
-a[href^='/'][href*='-225'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d']{-webkit-transform:rotate(45deg)scaleX(1)}
-a[href^='/'][href*='-270'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d']{-webkit-transform:rotate(90deg)scaleX(1)}
-a[href^='/'][href*='-315'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d']{-webkit-transform:rotate(135deg)scaleX(1)}
-a[href^='/'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-f'][href*='-d']{-webkit-transform:rotate(180deg)scaleX(1)}
-a[href^='/'][href*='-45'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d']{-webkit-transform:rotate(225deg)scaleX(1)}
-a[href^='/'][href*='-90'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d']{-webkit-transform:rotate(270deg)scaleX(1)}
-a[href^='/'][href*='-135'][href*='-f'][href*='-r'],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d']{-webkit-transform:rotate(315deg)scaleX(1)}
-a[href^='/'][href*='-225'][href*='-f'],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d']{-webkit-transform:rotate(45deg)scaleX(-1)}
-a[href^='/'][href*='-270'][href*='-f'],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d']{-webkit-transform:rotate(90deg)scaleX(-1)}
-a[href^='/'][href*='-315'][href*='-f'],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d']{-webkit-transform:rotate(135deg)scaleX(-1)}
-a[href^='/'][href*='-f'],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d']{-webkit-transform:rotate(180deg)scaleX(-1)}
-a[href^='/'][href*='-45'][href*='-f'],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d']{-webkit-transform:rotate(225deg)scaleX(-1)}
-a[href^='/'][href*='-90'][href*='-f'],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d']{-webkit-transform:rotate(270deg)scaleX(-1)}
-a[href^='/'][href*='-135'][href*='-f'],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d']{-webkit-transform:rotate(315deg)scaleX(-1)}
+.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(0deg)scaleX(1)}
+.bpflags-45, .bpflags-45.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(45deg)scaleX(1)}
+.bpflags-90, .bpflags-90.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(90deg)scaleX(1)}
+.bpflags-135, .bpflags-135.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(135deg)scaleX(1)}
+.bpflags-180, .bpflags-180.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(180deg)scaleX(1)}
+.bpflags-225, .bpflags-225.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(225deg)scaleX(1)}
+.bpflags-270, .bpflags-270.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(270deg)scaleX(1)}
+.bpflags-315, .bpflags-315.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(315deg)scaleX(1)}
+.bpflags-r, .bpflags-d:hover {-webkit-transform:rotate(0deg)scaleX(-1)}
+.bpflags-45.bpflags-r, .bpflags-45.bpflags-d:hover {-webkit-transform:rotate(45deg)scaleX(-1)}
+.bpflags-90.bpflags-r, .bpflags-90.bpflags-d:hover {-webkit-transform:rotate(90deg)scaleX(-1)}
+.bpflags-135.bpflags-r, .bpflags-135.bpflags-d:hover {-webkit-transform:rotate(135deg)scaleX(-1)}
+.bpflags-180.bpflags-r, .bpflags-180.bpflags-d:hover {-webkit-transform:rotate(180deg)scaleX(-1)}
+.bpflags-225.bpflags-r, .bpflags-225.bpflags-d:hover {-webkit-transform:rotate(225deg)scaleX(-1)}
+.bpflags-270.bpflags-r, .bpflags-270.bpflags-d:hover {-webkit-transform:rotate(270deg)scaleX(-1)}
+.bpflags-315.bpflags-r, .bpflags-315.bpflags-d:hover {-webkit-transform:rotate(315deg)scaleX(-1)}
+.bpflags-225.bpflags-f.bpflags-r, .bpflags-225.bpflags-f.bpflags-d:hover {-webkit-transform:rotate(45deg)scaleX(1)}
+.bpflags-270.bpflags-f.bpflags-r, .bpflags-270.bpflags-f.bpflags-d:hover {-webkit-transform:rotate(90deg)scaleX(1)}
+.bpflags-315.bpflags-f.bpflags-r, .bpflags-315.bpflags-f.bpflags-d:hover {-webkit-transform:rotate(135deg)scaleX(1)}
+.bpflags-f.bpflags-r, .bpflags-f.bpflags-d:hover {-webkit-transform:rotate(180deg)scaleX(1)}
+.bpflags-45.bpflags-f.bpflags-r, .bpflags-45.bpflags-f.bpflags-d:hover {-webkit-transform:rotate(225deg)scaleX(1)}
+.bpflags-90.bpflags-f.bpflags-r, .bpflags-90.bpflags-f.bpflags-d:hover {-webkit-transform:rotate(270deg)scaleX(1)}
+.bpflags-135.bpflags-f.bpflags-r, .bpflags-135.bpflags-f.bpflags-d:hover {-webkit-transform:rotate(315deg)scaleX(1)}
+.bpflags-225.bpflags-f, .bpflags-225.bpflags-f.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(45deg)scaleX(-1)}
+.bpflags-270.bpflags-f, .bpflags-270.bpflags-f.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(90deg)scaleX(-1)}
+.bpflags-315.bpflags-f, .bpflags-315.bpflags-f.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(135deg)scaleX(-1)}
+.bpflags-f, .bpflags-f.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(180deg)scaleX(-1)}
+.bpflags-45.bpflags-f, .bpflags-45.bpflags-f.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(225deg)scaleX(-1)}
+.bpflags-90.bpflags-f, .bpflags-90.bpflags-f.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(270deg)scaleX(-1)}
+.bpflags-135.bpflags-f, .bpflags-135.bpflags-f.bpflags-r.bpflags-d:hover {-webkit-transform:rotate(315deg)scaleX(-1)}
 
 /*== -spin ==*/
-a[href*=-spin],a:hover[href^='/'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin 2s infinite linear}
-a[href^='/'][href*='-45'][href*=-spin],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-45 2s infinite linear}
-a[href^='/'][href*='-90'][href*=-spin],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-90 2s infinite linear}
-a[href^='/'][href*='-135'][href*=-spin],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-135 2s infinite linear}
-a[href^='/'][href*='-180'][href*=-spin],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-180 2s infinite linear}
-a[href^='/'][href*='-225'][href*=-spin],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-225 2s infinite linear}
-a[href^='/'][href*='-270'][href*=-spin],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-270 2s infinite linear}
-a[href^='/'][href*='-315'][href*=-spin],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-315 2s infinite linear}
-a[href^='/'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-d'][href*=-spin]{-webkit-animation:spin-r 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-45'][href*='-d'][href*=-spin]{-webkit-animation:spin-45-r 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-90'][href*='-d'][href*=-spin]{-webkit-animation:spin-90-r 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-135'][href*='-d'][href*=-spin]{-webkit-animation:spin-135-r 2s infinite linear}
-a[href^='/'][href*='-180'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-180'][href*='-d'][href*=-spin]{-webkit-animation:spin-180-r 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-225'][href*='-d'][href*=-spin]{-webkit-animation:spin-225-r 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-270'][href*='-d'][href*=-spin]{-webkit-animation:spin-270-r 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-315'][href*='-d'][href*=-spin]{-webkit-animation:spin-315-r 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d'][href*=-spin]{-webkit-animation:spin-45 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d'][href*=-spin]{-webkit-animation:spin-90 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d'][href*=-spin]{-webkit-animation:spin-135 2s infinite linear}
-a[href^='/'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-f'][href*='-d'][href*=-spin]{-webkit-animation:spin-180 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d'][href*=-spin]{-webkit-animation:spin-225 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d'][href*=-spin]{-webkit-animation:spin-270 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*=-spin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d'][href*=-spin]{-webkit-animation:spin-315 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-45-r 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-90-r 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-135-r 2s infinite linear}
-a[href^='/'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-180-r 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-225-r 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-270-r 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-f'][href*=-spin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d'][href*=-spin]{-webkit-animation:spin-315-r 2s infinite linear}
+.bpflags-spin, .bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin 2s infinite linear}
+.bpflags-45.bpflags-spin, .bpflags-45.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-45 2s infinite linear}
+.bpflags-90.bpflags-spin, .bpflags-90.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-90 2s infinite linear}
+.bpflags-135.bpflags-spin, .bpflags-135.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-135 2s infinite linear}
+.bpflags-180.bpflags-spin, .bpflags-180.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-180 2s infinite linear}
+.bpflags-225.bpflags-spin, .bpflags-225.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-225 2s infinite linear}
+.bpflags-270.bpflags-spin, .bpflags-270.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-270 2s infinite linear}
+.bpflags-315.bpflags-spin, .bpflags-315.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-315 2s infinite linear}
+.bpflags-r.bpflags-spin, .bpflags-d.bpflags-spin:hover {-webkit-animation:spin-r 2s infinite linear}
+.bpflags-45.bpflags-r.bpflags-spin, .bpflags-45.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-45-r 2s infinite linear}
+.bpflags-90.bpflags-r.bpflags-spin, .bpflags-90.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-90-r 2s infinite linear}
+.bpflags-135.bpflags-r.bpflags-spin, .bpflags-135.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-135-r 2s infinite linear}
+.bpflags-180.bpflags-r.bpflags-spin, .bpflags-180.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-180-r 2s infinite linear}
+.bpflags-225.bpflags-r.bpflags-spin, .bpflags-225.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-225-r 2s infinite linear}
+.bpflags-270.bpflags-r.bpflags-spin, .bpflags-270.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-270-r 2s infinite linear}
+.bpflags-315.bpflags-r.bpflags-spin, .bpflags-315.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-315-r 2s infinite linear}
+.bpflags-225.bpflags-f.bpflags-r.bpflags-spin, .bpflags-225.bpflags-f.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-45 2s infinite linear}
+.bpflags-270.bpflags-f.bpflags-r.bpflags-spin, .bpflags-270.bpflags-f.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-90 2s infinite linear}
+.bpflags-315.bpflags-f.bpflags-r.bpflags-spin, .bpflags-315.bpflags-f.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-135 2s infinite linear}
+.bpflags-f.bpflags-r.bpflags-spin, .bpflags-f.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-180 2s infinite linear}
+.bpflags-45.bpflags-f.bpflags-r.bpflags-spin, .bpflags-45.bpflags-f.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-225 2s infinite linear}
+.bpflags-90.bpflags-f.bpflags-r.bpflags-spin, .bpflags-90.bpflags-f.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-270 2s infinite linear}
+.bpflags-135.bpflags-f.bpflags-r.bpflags-spin, .bpflags-135.bpflags-f.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-315 2s infinite linear}
+.bpflags-225.bpflags-f.bpflags-spin, .bpflags-225.bpflags-f.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-45-r 2s infinite linear}
+.bpflags-270.bpflags-f.bpflags-spin, .bpflags-270.bpflags-f.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-90-r 2s infinite linear}
+.bpflags-315.bpflags-f.bpflags-spin, .bpflags-315.bpflags-f.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-135-r 2s infinite linear}
+.bpflags-f.bpflags-spin, .bpflags-f.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-180-r 2s infinite linear}
+.bpflags-45.bpflags-f.bpflags-spin, .bpflags-45.bpflags-f.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-225-r 2s infinite linear}
+.bpflags-90.bpflags-f.bpflags-spin, .bpflags-90.bpflags-f.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-270-r 2s infinite linear}
+.bpflags-135.bpflags-f.bpflags-spin, .bpflags-135.bpflags-f.bpflags-r.bpflags-d.bpflags-spin:hover {-webkit-animation:spin-315-r 2s infinite linear}
 
 /*== -xspin ==*/
-a[href*=-xspin],a:hover[href^='/'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin 2s infinite linear}
-a[href^='/'][href*='-45'][href*=-xspin],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-45 2s infinite linear}
-a[href^='/'][href*='-90'][href*=-xspin],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-90 2s infinite linear}
-a[href^='/'][href*='-135'][href*=-xspin],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-135 2s infinite linear}
-a[href^='/'][href*='-180'][href*=-xspin],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-180 2s infinite linear}
-a[href^='/'][href*='-225'][href*=-xspin],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-225 2s infinite linear}
-a[href^='/'][href*='-270'][href*=-xspin],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-270 2s infinite linear}
-a[href^='/'][href*='-315'][href*=-xspin],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-315 2s infinite linear}
-a[href^='/'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-r 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-45'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-45-r 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-90'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-90-r 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-135'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-135-r 2s infinite linear}
-a[href^='/'][href*='-180'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-180'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-180-r 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-225'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-225-r 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-270'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-270-r 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-315'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-315-r 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-45 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-90 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-135 2s infinite linear}
-a[href^='/'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-f'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-180 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-225 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-270 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*=-xspin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-315 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-45-r 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-90-r 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-135-r 2s infinite linear}
-a[href^='/'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-180-r 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-225-r 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-270-r 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-f'][href*=-xspin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d'][href*=-xspin]{-webkit-animation:xspin-315-r 2s infinite linear}
+.bpflags-xspin, .bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin 2s infinite linear}
+.bpflags-45.bpflags-xspin, .bpflags-45.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-45 2s infinite linear}
+.bpflags-90.bpflags-xspin, .bpflags-90.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-90 2s infinite linear}
+.bpflags-135.bpflags-xspin, .bpflags-135.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-135 2s infinite linear}
+.bpflags-180.bpflags-xspin, .bpflags-180.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-180 2s infinite linear}
+.bpflags-225.bpflags-xspin, .bpflags-225.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-225 2s infinite linear}
+.bpflags-270.bpflags-xspin, .bpflags-270.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-270 2s infinite linear}
+.bpflags-315.bpflags-xspin, .bpflags-315.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-315 2s infinite linear}
+.bpflags-r.bpflags-xspin, .bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-r 2s infinite linear}
+.bpflags-45.bpflags-r.bpflags-xspin, .bpflags-45.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-45-r 2s infinite linear}
+.bpflags-90.bpflags-r.bpflags-xspin, .bpflags-90.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-90-r 2s infinite linear}
+.bpflags-135.bpflags-r.bpflags-xspin, .bpflags-135.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-135-r 2s infinite linear}
+.bpflags-180.bpflags-r.bpflags-xspin, .bpflags-180.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-180-r 2s infinite linear}
+.bpflags-225.bpflags-r.bpflags-xspin, .bpflags-225.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-225-r 2s infinite linear}
+.bpflags-270.bpflags-r.bpflags-xspin, .bpflags-270.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-270-r 2s infinite linear}
+.bpflags-315.bpflags-r.bpflags-xspin, .bpflags-315.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-315-r 2s infinite linear}
+.bpflags-225.bpflags-f.bpflags-r.bpflags-xspin, .bpflags-225.bpflags-f.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-45 2s infinite linear}
+.bpflags-270.bpflags-f.bpflags-r.bpflags-xspin, .bpflags-270.bpflags-f.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-90 2s infinite linear}
+.bpflags-315.bpflags-f.bpflags-r.bpflags-xspin, .bpflags-315.bpflags-f.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-135 2s infinite linear}
+.bpflags-f.bpflags-r.bpflags-xspin, .bpflags-f.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-180 2s infinite linear}
+.bpflags-45.bpflags-f.bpflags-r.bpflags-xspin, .bpflags-45.bpflags-f.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-225 2s infinite linear}
+.bpflags-90.bpflags-f.bpflags-r.bpflags-xspin, .bpflags-90.bpflags-f.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-270 2s infinite linear}
+.bpflags-135.bpflags-f.bpflags-r.bpflags-xspin, .bpflags-135.bpflags-f.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-315 2s infinite linear}
+.bpflags-225.bpflags-f.bpflags-xspin, .bpflags-225.bpflags-f.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-45-r 2s infinite linear}
+.bpflags-270.bpflags-f.bpflags-xspin, .bpflags-270.bpflags-f.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-90-r 2s infinite linear}
+.bpflags-315.bpflags-f.bpflags-xspin, .bpflags-315.bpflags-f.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-135-r 2s infinite linear}
+.bpflags-f.bpflags-xspin, .bpflags-f.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-180-r 2s infinite linear}
+.bpflags-45.bpflags-f.bpflags-xspin, .bpflags-45.bpflags-f.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-225-r 2s infinite linear}
+.bpflags-90.bpflags-f.bpflags-xspin, .bpflags-90.bpflags-f.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-270-r 2s infinite linear}
+.bpflags-135.bpflags-f.bpflags-xspin, .bpflags-135.bpflags-f.bpflags-r.bpflags-d.bpflags-xspin:hover {-webkit-animation:xspin-315-r 2s infinite linear}
 
 /*== -yspin ==*/
-a[href*=-yspin],a:hover[href^='/'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin 2s infinite linear}
-a[href^='/'][href*='-45'][href*=-yspin],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-45 2s infinite linear}
-a[href^='/'][href*='-90'][href*=-yspin],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-90 2s infinite linear}
-a[href^='/'][href*='-135'][href*=-yspin],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-135 2s infinite linear}
-a[href^='/'][href*='-180'][href*=-yspin],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-180 2s infinite linear}
-a[href^='/'][href*='-225'][href*=-yspin],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-225 2s infinite linear}
-a[href^='/'][href*='-270'][href*=-yspin],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-270 2s infinite linear}
-a[href^='/'][href*='-315'][href*=-yspin],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-315 2s infinite linear}
-a[href^='/'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-r 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-45'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-45-r 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-90'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-90-r 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-135'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-135-r 2s infinite linear}
-a[href^='/'][href*='-180'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-180'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-180-r 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-225'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-225-r 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-270'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-270-r 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-315'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-315-r 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-45 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-90 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-135 2s infinite linear}
-a[href^='/'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-f'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-180 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-225 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-270 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*=-yspin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-315 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-45-r 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-90-r 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-135-r 2s infinite linear}
-a[href^='/'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-180-r 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-225-r 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-270-r 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-f'][href*=-yspin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d'][href*=-yspin]{-webkit-animation:yspin-315-r 2s infinite linear}
+.bpflags-yspin, .bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin 2s infinite linear}
+.bpflags-45.bpflags-yspin, .bpflags-45.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-45 2s infinite linear}
+.bpflags-90.bpflags-yspin, .bpflags-90.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-90 2s infinite linear}
+.bpflags-135.bpflags-yspin, .bpflags-135.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-135 2s infinite linear}
+.bpflags-180.bpflags-yspin, .bpflags-180.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-180 2s infinite linear}
+.bpflags-225.bpflags-yspin, .bpflags-225.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-225 2s infinite linear}
+.bpflags-270.bpflags-yspin, .bpflags-270.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-270 2s infinite linear}
+.bpflags-315.bpflags-yspin, .bpflags-315.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-315 2s infinite linear}
+.bpflags-r.bpflags-yspin, .bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-r 2s infinite linear}
+.bpflags-45.bpflags-r.bpflags-yspin, .bpflags-45.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-45-r 2s infinite linear}
+.bpflags-90.bpflags-r.bpflags-yspin, .bpflags-90.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-90-r 2s infinite linear}
+.bpflags-135.bpflags-r.bpflags-yspin, .bpflags-135.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-135-r 2s infinite linear}
+.bpflags-180.bpflags-r.bpflags-yspin, .bpflags-180.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-180-r 2s infinite linear}
+.bpflags-225.bpflags-r.bpflags-yspin, .bpflags-225.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-225-r 2s infinite linear}
+.bpflags-270.bpflags-r.bpflags-yspin, .bpflags-270.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-270-r 2s infinite linear}
+.bpflags-315.bpflags-r.bpflags-yspin, .bpflags-315.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-315-r 2s infinite linear}
+.bpflags-225.bpflags-f.bpflags-r.bpflags-yspin, .bpflags-225.bpflags-f.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-45 2s infinite linear}
+.bpflags-270.bpflags-f.bpflags-r.bpflags-yspin, .bpflags-270.bpflags-f.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-90 2s infinite linear}
+.bpflags-315.bpflags-f.bpflags-r.bpflags-yspin, .bpflags-315.bpflags-f.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-135 2s infinite linear}
+.bpflags-f.bpflags-r.bpflags-yspin, .bpflags-f.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-180 2s infinite linear}
+.bpflags-45.bpflags-f.bpflags-r.bpflags-yspin, .bpflags-45.bpflags-f.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-225 2s infinite linear}
+.bpflags-90.bpflags-f.bpflags-r.bpflags-yspin, .bpflags-90.bpflags-f.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-270 2s infinite linear}
+.bpflags-135.bpflags-f.bpflags-r.bpflags-yspin, .bpflags-135.bpflags-f.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-315 2s infinite linear}
+.bpflags-225.bpflags-f.bpflags-yspin, .bpflags-225.bpflags-f.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-45-r 2s infinite linear}
+.bpflags-270.bpflags-f.bpflags-yspin, .bpflags-270.bpflags-f.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-90-r 2s infinite linear}
+.bpflags-315.bpflags-f.bpflags-yspin, .bpflags-315.bpflags-f.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-135-r 2s infinite linear}
+.bpflags-f.bpflags-yspin, .bpflags-f.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-180-r 2s infinite linear}
+.bpflags-45.bpflags-f.bpflags-yspin, .bpflags-45.bpflags-f.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-225-r 2s infinite linear}
+.bpflags-90.bpflags-f.bpflags-yspin, .bpflags-90.bpflags-f.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-270-r 2s infinite linear}
+.bpflags-135.bpflags-f.bpflags-yspin, .bpflags-135.bpflags-f.bpflags-r.bpflags-d.bpflags-yspin:hover {-webkit-animation:yspin-315-r 2s infinite linear}
 
 /*== -zspin ==*/
-a[href*=-zspin],a:hover[href^='/'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin 2s infinite linear}
-a[href^='/'][href*='-45'][href*=-zspin],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-45 2s infinite linear}
-a[href^='/'][href*='-90'][href*=-zspin],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-90 2s infinite linear}
-a[href^='/'][href*='-135'][href*=-zspin],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-135 2s infinite linear}
-a[href^='/'][href*='-180'][href*=-zspin],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-180 2s infinite linear}
-a[href^='/'][href*='-225'][href*=-zspin],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-225 2s infinite linear}
-a[href^='/'][href*='-270'][href*=-zspin],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-270 2s infinite linear}
-a[href^='/'][href*='-315'][href*=-zspin],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-315 2s infinite linear}
-a[href^='/'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-r 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-45'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-45-r 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-90'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-90-r 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-135'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-135-r 2s infinite linear}
-a[href^='/'][href*='-180'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-180'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-180-r 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-225'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-225-r 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-270'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-270-r 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-315'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-315-r 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-45 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-90 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-135 2s infinite linear}
-a[href^='/'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-f'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-180 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-225 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-270 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*=-zspin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-315 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-45-r 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-90-r 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-135-r 2s infinite linear}
-a[href^='/'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-180-r 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-225-r 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-270-r 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-f'][href*=-zspin],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d'][href*=-zspin]{-webkit-animation:zspin-315-r 2s infinite linear}
+.bpflags-zspin, .bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin 2s infinite linear}
+.bpflags-45.bpflags-zspin, .bpflags-45.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-45 2s infinite linear}
+.bpflags-90.bpflags-zspin, .bpflags-90.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-90 2s infinite linear}
+.bpflags-135.bpflags-zspin, .bpflags-135.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-135 2s infinite linear}
+.bpflags-180.bpflags-zspin, .bpflags-180.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-180 2s infinite linear}
+.bpflags-225.bpflags-zspin, .bpflags-225.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-225 2s infinite linear}
+.bpflags-270.bpflags-zspin, .bpflags-270.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-270 2s infinite linear}
+.bpflags-315.bpflags-zspin, .bpflags-315.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-315 2s infinite linear}
+.bpflags-r.bpflags-zspin, .bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-r 2s infinite linear}
+.bpflags-45.bpflags-r.bpflags-zspin, .bpflags-45.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-45-r 2s infinite linear}
+.bpflags-90.bpflags-r.bpflags-zspin, .bpflags-90.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-90-r 2s infinite linear}
+.bpflags-135.bpflags-r.bpflags-zspin, .bpflags-135.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-135-r 2s infinite linear}
+.bpflags-180.bpflags-r.bpflags-zspin, .bpflags-180.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-180-r 2s infinite linear}
+.bpflags-225.bpflags-r.bpflags-zspin, .bpflags-225.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-225-r 2s infinite linear}
+.bpflags-270.bpflags-r.bpflags-zspin, .bpflags-270.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-270-r 2s infinite linear}
+.bpflags-315.bpflags-r.bpflags-zspin, .bpflags-315.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-315-r 2s infinite linear}
+.bpflags-225.bpflags-f.bpflags-r.bpflags-zspin, .bpflags-225.bpflags-f.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-45 2s infinite linear}
+.bpflags-270.bpflags-f.bpflags-r.bpflags-zspin, .bpflags-270.bpflags-f.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-90 2s infinite linear}
+.bpflags-315.bpflags-f.bpflags-r.bpflags-zspin, .bpflags-315.bpflags-f.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-135 2s infinite linear}
+.bpflags-f.bpflags-r.bpflags-zspin, .bpflags-f.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-180 2s infinite linear}
+.bpflags-45.bpflags-f.bpflags-r.bpflags-zspin, .bpflags-45.bpflags-f.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-225 2s infinite linear}
+.bpflags-90.bpflags-f.bpflags-r.bpflags-zspin, .bpflags-90.bpflags-f.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-270 2s infinite linear}
+.bpflags-135.bpflags-f.bpflags-r.bpflags-zspin, .bpflags-135.bpflags-f.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-315 2s infinite linear}
+.bpflags-225.bpflags-f.bpflags-zspin, .bpflags-225.bpflags-f.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-45-r 2s infinite linear}
+.bpflags-270.bpflags-f.bpflags-zspin, .bpflags-270.bpflags-f.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-90-r 2s infinite linear}
+.bpflags-315.bpflags-f.bpflags-zspin, .bpflags-315.bpflags-f.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-135-r 2s infinite linear}
+.bpflags-f.bpflags-zspin, .bpflags-f.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-180-r 2s infinite linear}
+.bpflags-45.bpflags-f.bpflags-zspin, .bpflags-45.bpflags-f.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-225-r 2s infinite linear}
+.bpflags-90.bpflags-f.bpflags-zspin, .bpflags-90.bpflags-f.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-270-r 2s infinite linear}
+.bpflags-135.bpflags-f.bpflags-zspin, .bpflags-135.bpflags-f.bpflags-r.bpflags-d.bpflags-zspin:hover {-webkit-animation:zspin-315-r 2s infinite linear}
 
 /*== -nips ==*/
-a[href*=-nips],a:hover[href^='/'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips 2s infinite linear}
-a[href^='/'][href*='-45'][href*=-nips],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-45 2s infinite linear}
-a[href^='/'][href*='-90'][href*=-nips],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-90 2s infinite linear}
-a[href^='/'][href*='-135'][href*=-nips],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-135 2s infinite linear}
-a[href^='/'][href*='-180'][href*=-nips],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-180 2s infinite linear}
-a[href^='/'][href*='-225'][href*=-nips],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-225 2s infinite linear}
-a[href^='/'][href*='-270'][href*=-nips],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-270 2s infinite linear}
-a[href^='/'][href*='-315'][href*=-nips],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-315 2s infinite linear}
-a[href^='/'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-d'][href*=-nips]{-webkit-animation:nips-r 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-45'][href*='-d'][href*=-nips]{-webkit-animation:nips-45-r 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-90'][href*='-d'][href*=-nips]{-webkit-animation:nips-90-r 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-135'][href*='-d'][href*=-nips]{-webkit-animation:nips-135-r 2s infinite linear}
-a[href^='/'][href*='-180'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-180'][href*='-d'][href*=-nips]{-webkit-animation:nips-180-r 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-225'][href*='-d'][href*=-nips]{-webkit-animation:nips-225-r 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-270'][href*='-d'][href*=-nips]{-webkit-animation:nips-270-r 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-315'][href*='-d'][href*=-nips]{-webkit-animation:nips-315-r 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d'][href*=-nips]{-webkit-animation:nips-45 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d'][href*=-nips]{-webkit-animation:nips-90 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d'][href*=-nips]{-webkit-animation:nips-135 2s infinite linear}
-a[href^='/'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-f'][href*='-d'][href*=-nips]{-webkit-animation:nips-180 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d'][href*=-nips]{-webkit-animation:nips-225 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d'][href*=-nips]{-webkit-animation:nips-270 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*=-nips],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d'][href*=-nips]{-webkit-animation:nips-315 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-45-r 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-90-r 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-135-r 2s infinite linear}
-a[href^='/'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-180-r 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-225-r 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-270-r 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-f'][href*=-nips],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d'][href*=-nips]{-webkit-animation:nips-315-r 2s infinite linear}
+.bpflags-nips, .bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips 2s infinite linear}
+.bpflags-45.bpflags-nips, .bpflags-45.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-45 2s infinite linear}
+.bpflags-90.bpflags-nips, .bpflags-90.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-90 2s infinite linear}
+.bpflags-135.bpflags-nips, .bpflags-135.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-135 2s infinite linear}
+.bpflags-180.bpflags-nips, .bpflags-180.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-180 2s infinite linear}
+.bpflags-225.bpflags-nips, .bpflags-225.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-225 2s infinite linear}
+.bpflags-270.bpflags-nips, .bpflags-270.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-270 2s infinite linear}
+.bpflags-315.bpflags-nips, .bpflags-315.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-315 2s infinite linear}
+.bpflags-r.bpflags-nips, .bpflags-d.bpflags-nips:hover {-webkit-animation:nips-r 2s infinite linear}
+.bpflags-45.bpflags-r.bpflags-nips, .bpflags-45.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-45-r 2s infinite linear}
+.bpflags-90.bpflags-r.bpflags-nips, .bpflags-90.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-90-r 2s infinite linear}
+.bpflags-135.bpflags-r.bpflags-nips, .bpflags-135.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-135-r 2s infinite linear}
+.bpflags-180.bpflags-r.bpflags-nips, .bpflags-180.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-180-r 2s infinite linear}
+.bpflags-225.bpflags-r.bpflags-nips, .bpflags-225.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-225-r 2s infinite linear}
+.bpflags-270.bpflags-r.bpflags-nips, .bpflags-270.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-270-r 2s infinite linear}
+.bpflags-315.bpflags-r.bpflags-nips, .bpflags-315.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-315-r 2s infinite linear}
+.bpflags-225.bpflags-f.bpflags-r.bpflags-nips, .bpflags-225.bpflags-f.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-45 2s infinite linear}
+.bpflags-270.bpflags-f.bpflags-r.bpflags-nips, .bpflags-270.bpflags-f.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-90 2s infinite linear}
+.bpflags-315.bpflags-f.bpflags-r.bpflags-nips, .bpflags-315.bpflags-f.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-135 2s infinite linear}
+.bpflags-f.bpflags-r.bpflags-nips, .bpflags-f.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-180 2s infinite linear}
+.bpflags-45.bpflags-f.bpflags-r.bpflags-nips, .bpflags-45.bpflags-f.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-225 2s infinite linear}
+.bpflags-90.bpflags-f.bpflags-r.bpflags-nips, .bpflags-90.bpflags-f.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-270 2s infinite linear}
+.bpflags-135.bpflags-f.bpflags-r.bpflags-nips, .bpflags-135.bpflags-f.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-315 2s infinite linear}
+.bpflags-225.bpflags-f.bpflags-nips, .bpflags-225.bpflags-f.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-45-r 2s infinite linear}
+.bpflags-270.bpflags-f.bpflags-nips, .bpflags-270.bpflags-f.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-90-r 2s infinite linear}
+.bpflags-315.bpflags-f.bpflags-nips, .bpflags-315.bpflags-f.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-135-r 2s infinite linear}
+.bpflags-f.bpflags-nips, .bpflags-f.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-180-r 2s infinite linear}
+.bpflags-45.bpflags-f.bpflags-nips, .bpflags-45.bpflags-f.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-225-r 2s infinite linear}
+.bpflags-90.bpflags-f.bpflags-nips, .bpflags-90.bpflags-f.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-270-r 2s infinite linear}
+.bpflags-135.bpflags-f.bpflags-nips, .bpflags-135.bpflags-f.bpflags-r.bpflags-d.bpflags-nips:hover {-webkit-animation:nips-315-r 2s infinite linear}
 
 /*== -znips ==*/
-a[href*=-znips],a:hover[href^='/'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips 2s infinite linear}
-a[href^='/'][href*='-45'][href*=-znips],a:hover[href^='/'][href*='-45'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-45 2s infinite linear}
-a[href^='/'][href*='-90'][href*=-znips],a:hover[href^='/'][href*='-90'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-90 2s infinite linear}
-a[href^='/'][href*='-135'][href*=-znips],a:hover[href^='/'][href*='-135'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-135 2s infinite linear}
-a[href^='/'][href*='-180'][href*=-znips],a:hover[href^='/'][href*='-180'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-180 2s infinite linear}
-a[href^='/'][href*='-225'][href*=-znips],a:hover[href^='/'][href*='-225'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-225 2s infinite linear}
-a[href^='/'][href*='-270'][href*=-znips],a:hover[href^='/'][href*='-270'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-270 2s infinite linear}
-a[href^='/'][href*='-315'][href*=-znips],a:hover[href^='/'][href*='-315'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-315 2s infinite linear}
-a[href^='/'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-d'][href*=-znips]{-webkit-animation:znips-r 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-45'][href*='-d'][href*=-znips]{-webkit-animation:znips-45-r 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-90'][href*='-d'][href*=-znips]{-webkit-animation:znips-90-r 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-135'][href*='-d'][href*=-znips]{-webkit-animation:znips-135-r 2s infinite linear}
-a[href^='/'][href*='-180'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-180'][href*='-d'][href*=-znips]{-webkit-animation:znips-180-r 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-225'][href*='-d'][href*=-znips]{-webkit-animation:znips-225-r 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-270'][href*='-d'][href*=-znips]{-webkit-animation:znips-270-r 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-315'][href*='-d'][href*=-znips]{-webkit-animation:znips-315-r 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-d'][href*=-znips]{-webkit-animation:znips-45 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-d'][href*=-znips]{-webkit-animation:znips-90 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-d'][href*=-znips]{-webkit-animation:znips-135 2s infinite linear}
-a[href^='/'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-f'][href*='-d'][href*=-znips]{-webkit-animation:znips-180 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-d'][href*=-znips]{-webkit-animation:znips-225 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-d'][href*=-znips]{-webkit-animation:znips-270 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*=-znips],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-d'][href*=-znips]{-webkit-animation:znips-315 2s infinite linear}
-a[href^='/'][href*='-225'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-225'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-45-r 2s infinite linear}
-a[href^='/'][href*='-270'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-270'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-90-r 2s infinite linear}
-a[href^='/'][href*='-315'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-315'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-135-r 2s infinite linear}
-a[href^='/'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-180-r 2s infinite linear}
-a[href^='/'][href*='-45'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-45'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-225-r 2s infinite linear}
-a[href^='/'][href*='-90'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-90'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-270-r 2s infinite linear}
-a[href^='/'][href*='-135'][href*='-f'][href*=-znips],a:hover[href^='/'][href*='-135'][href*='-f'][href*='-r'][href*='-d'][href*=-znips]{-webkit-animation:znips-315-r 2s infinite linear}
+.bpflags-znips, .bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips 2s infinite linear}
+.bpflags-45.bpflags-znips, .bpflags-45.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-45 2s infinite linear}
+.bpflags-90.bpflags-znips, .bpflags-90.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-90 2s infinite linear}
+.bpflags-135.bpflags-znips, .bpflags-135.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-135 2s infinite linear}
+.bpflags-180.bpflags-znips, .bpflags-180.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-180 2s infinite linear}
+.bpflags-225.bpflags-znips, .bpflags-225.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-225 2s infinite linear}
+.bpflags-270.bpflags-znips, .bpflags-270.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-270 2s infinite linear}
+.bpflags-315.bpflags-znips, .bpflags-315.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-315 2s infinite linear}
+.bpflags-r.bpflags-znips, .bpflags-d.bpflags-znips:hover {-webkit-animation:znips-r 2s infinite linear}
+.bpflags-45.bpflags-r.bpflags-znips, .bpflags-45.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-45-r 2s infinite linear}
+.bpflags-90.bpflags-r.bpflags-znips, .bpflags-90.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-90-r 2s infinite linear}
+.bpflags-135.bpflags-r.bpflags-znips, .bpflags-135.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-135-r 2s infinite linear}
+.bpflags-180.bpflags-r.bpflags-znips, .bpflags-180.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-180-r 2s infinite linear}
+.bpflags-225.bpflags-r.bpflags-znips, .bpflags-225.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-225-r 2s infinite linear}
+.bpflags-270.bpflags-r.bpflags-znips, .bpflags-270.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-270-r 2s infinite linear}
+.bpflags-315.bpflags-r.bpflags-znips, .bpflags-315.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-315-r 2s infinite linear}
+.bpflags-225.bpflags-f.bpflags-r.bpflags-znips, .bpflags-225.bpflags-f.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-45 2s infinite linear}
+.bpflags-270.bpflags-f.bpflags-r.bpflags-znips, .bpflags-270.bpflags-f.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-90 2s infinite linear}
+.bpflags-315.bpflags-f.bpflags-r.bpflags-znips, .bpflags-315.bpflags-f.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-135 2s infinite linear}
+.bpflags-f.bpflags-r.bpflags-znips, .bpflags-f.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-180 2s infinite linear}
+.bpflags-45.bpflags-f.bpflags-r.bpflags-znips, .bpflags-45.bpflags-f.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-225 2s infinite linear}
+.bpflags-90.bpflags-f.bpflags-r.bpflags-znips, .bpflags-90.bpflags-f.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-270 2s infinite linear}
+.bpflags-135.bpflags-f.bpflags-r.bpflags-znips, .bpflags-135.bpflags-f.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-315 2s infinite linear}
+.bpflags-225.bpflags-f.bpflags-znips, .bpflags-225.bpflags-f.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-45-r 2s infinite linear}
+.bpflags-270.bpflags-f.bpflags-znips, .bpflags-270.bpflags-f.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-90-r 2s infinite linear}
+.bpflags-315.bpflags-f.bpflags-znips, .bpflags-315.bpflags-f.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-135-r 2s infinite linear}
+.bpflags-f.bpflags-znips, .bpflags-f.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-180-r 2s infinite linear}
+.bpflags-45.bpflags-f.bpflags-znips, .bpflags-45.bpflags-f.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-225-r 2s infinite linear}
+.bpflags-90.bpflags-f.bpflags-znips, .bpflags-90.bpflags-f.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-270-r 2s infinite linear}
+.bpflags-135.bpflags-f.bpflags-znips, .bpflags-135.bpflags-f.bpflags-r.bpflags-d.bpflags-znips:hover {-webkit-animation:znips-315-r 2s infinite linear}
 
 /*==legacy ==*/
-a:hover[href^='/'][href$='-rd']{-webkit-transform:rotate(0deg)scaleX(1)}
-a[href^='/'][href$='-90d'],a:hover[href^='/'][href$='-90rd']{-webkit-transform:rotate(90deg)scaleX(1)}
-a[href^='/'][href$='-180d'],a:hover[href^='/'][href$='-fd']{-webkit-transform:rotate(180deg)scaleX(1)}
-a[href^='/'][href$='-270d'],a:hover[href^='/'][href$='-270rd']{-webkit-transform:rotate(270deg)scaleX(1)}
-a[href^='/'][href$='-rd']{-webkit-transform:rotate(0deg)scaleX(-1)}
-a[href^='/'][href$='-90r'],a[href^='/'][href$='-90rd'],a:hover[href^='/'][href$='-90d']{-webkit-transform:rotate(90deg)scaleX(-1)}
-a[href^='/'][href$='-fd'],a:hover[href^='/'][href$='-180d']{-webkit-transform:rotate(180deg)scaleX(-1)}
-a[href^='/'][href$='-270r'],a[href^='/'][href$='-270rd'],a:hover[href^='/'][href$='-270d']{-webkit-transform:rotate(270deg)scaleX(-1)}
-a[href*=-ispin]{-webkit-animation:spin 2s infinite linear}
-a[href*=-rotate],a[href*=-lrotate]{-webkit-animation:zspin 2s infinite linear}
-a[href*=-rrotate],a[href*=-lrrotate]{-webkit-animation:znips 2s infinite linear}
+.bpflags-rd:hover {-webkit-transform:rotate(0deg)scaleX(1)}
+.bpflags-90d, .bpflags-90rd:hover {-webkit-transform:rotate(90deg)scaleX(1)}
+.bpflags-180d, .bpflags-fd:hover {-webkit-transform:rotate(180deg)scaleX(1)}
+.bpflags-270d, .bpflags-270rd:hover {-webkit-transform:rotate(270deg)scaleX(1)}
+.bpflags-rd {-webkit-transform:rotate(0deg)scaleX(-1)}
+.bpflags-90r, .bpflags-90rd, .bpflags-90d:hover {-webkit-transform:rotate(90deg)scaleX(-1)}
+.bpflags-fd, .bpflags-180d:hover {-webkit-transform:rotate(180deg)scaleX(-1)}
+.bpflags-270r, .bpflags-270rd, .bpflags-270d:hover {-webkit-transform:rotate(270deg)scaleX(-1)}
+.bpflags-ispin {-webkit-animation:spin 2s infinite linear}
+.bpflags-rotate, .bpflags-lrotate {-webkit-animation:zspin 2s infinite linear}
+.bpflags-rrotate, .bpflags-lrrotate {-webkit-animation:znips 2s infinite linear}
 
 .md{overflow-y:hidden !important}
