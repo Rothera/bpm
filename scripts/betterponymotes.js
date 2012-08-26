@@ -30,7 +30,7 @@ function process(elements) {
                 var css_class = "bpmotes-" + sanitize(emote.slice(1));
                 var is_nsfw = emote_map[emote] == 2;
 
-                var nsfw_class = is_nsfw ? " bpmotes-nsfw " : " ";
+                var nsfw_class = is_nsfw ? " bpm-nsfw " : " ";
                 element.className += nsfw_class + css_class;
 
                 // It'd be nice to set textContent="NSFW" in the correct cases,
@@ -56,7 +56,7 @@ function process(elements) {
                       window.getComputedStyle(element, ":after").backgroundImage == "none" &&
                       window.getComputedStyle(element, ":before").backgroundImage == "none") {
                 // Unknown emote? Good enough
-                element.className += " " + "bpmotes-unknown";
+                element.className += " " + "bpm-unknown";
                 element.textContent = "Unknown emote " + emote;
             }
         }

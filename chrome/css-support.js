@@ -18,7 +18,6 @@ function enable_css(filename) {
 enable_css("bpmotes.css");
 enable_css("emote-classes.css");
 enable_css("combiners.css");
-enable_css("misc.css");
 
 chrome.extension.sendMessage({method: "getPrefs"}, function(prefs) {
     if(prefs.enableExtraCSS) {

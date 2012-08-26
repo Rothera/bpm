@@ -59,7 +59,6 @@ window.addEventListener("DOMContentLoaded", function() {
     apply_css("/bpmotes.css");
     apply_css("/emote-classes.css");
     apply_css("/combiners.css");
-    apply_css("/misc.css");
 
     if(widget.preferences.enableNSFW == "true") {
         apply_css("/nsfw-emote-classes.css");

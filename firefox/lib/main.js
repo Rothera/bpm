@@ -32,7 +32,6 @@ var css_mod = page_mod.PageMod({
         self.data.url("bpmotes.css"),
         self.data.url("emote-classes.css"),
         self.data.url("combiners.css"),
-        self.data.url("misc.css")
         ]
 });
 
