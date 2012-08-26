@@ -27,9 +27,6 @@ General TODO:
         - Find a better way to handle injecting emote-map.js into Opera. "make"
           works for now, but this just won't do for long.
 
-    - Write a script to automatically add the updateKey block to the XPI, and
-      run it during make.
-
     - Move the www files to /bpm/ or something. Rename betterponymotes.update.rdf
       to firefox-updates.rdf for consistency. Basically just move everything a
       level deeper over the course of an update.
@@ -49,13 +46,3 @@ Update process:
     - $ bin/version.py set -v [...]
     - $ rm build/*.{xpi,crx,oex} # Delete old versions
     - $ make
-    - $ make unpack-xpi
-    - Edit xpi/install.rdf
-    - $ make pack-xpi
-
-    <em:updateKey>
-        MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCZnk8XNNC6+pmDqxY/5CzREJXj
-        BUY2JzvtcIMBH9gvyq7ZoOdCHIxm2rew7jZ76zdJfKlsUXI2tEdvR5C5PI4NBCw7
-        PGm6yzGLSn8/cG7tG9XvpnyxGAX8TfQyV602NhAucqJXYGvCNePalZGU7FJbeJc1
-        5JjoU+fv8mFBK/QTAwIDAQAB
-    </em:updateKey>
