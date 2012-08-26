@@ -21,8 +21,21 @@ function process(elements) {
             var parts = href.split("-");
             var emote = parts[0];
             if(emote_map[emote]) {
-                //console.log("Applying CSS to " + emote + ": " + emote_map[emote]);
-                element.className += " " + emote_map[emote];
+                var css_class = emote_map[emote][0];
+                var is_nsfw = emote_map[emote][1];
+
+                var nsfw_class = is_nsfw ? " bpmotes-nsfw " : " ";
+                element.className += nsfw_class + css_class;
+
+                // It'd be nice to set textContent="NSFW" in the correct cases,
+                // but this script doesn't know whether or not the emote is
+                // actually enabled. If it is, we don't want it, so for now it's
+                // easier just to do the text in CSS (see bpmotes-sfw.css).
+                //
+                // As an alternative, we could consider adding e.g.
+                //    <span class="bpmotes-sfw-only">NSFW</span>
+                // And make that class invisible by default. I don't think the
+                // complexity is worth it for now, though.
             } else if(!element.textContent && /^\/[\w\-:!]+$/.test(emote) && !element.clientWidth &&
                       window.getComputedStyle(element, ":after").backgroundImage == "none" &&
                       window.getComputedStyle(element, ":before").backgroundImage == "none") {

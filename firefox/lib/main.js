@@ -54,21 +54,31 @@ function enable_css(filename) {
     });
 }
 
-function manage_css_pref(pref, filename) {
+function manage_css_pref(pref, filename, disabled_filename) {
     var mod;
+    var anti_mod;
     simple_prefs.on(pref, function() {
         if(prefs[pref]) {
             mod = enable_css(filename);
+            if(anti_mod != null) {
+                anti_mod.destroy();
+                anti_mod = null;
+            }
         } else {
             mod.destroy();
             mod = null;
+            if(disabled_filename) {
+                anti_mod = enable_css(disabled_filename);
+            }
         }
     });
 
     if(prefs[pref]) {
         mod = enable_css(filename);
+    } else if(disabled_filename) {
+        anti_mod = enable_css(disabled_filename);
     }
 }
 
 manage_css_pref("enableExtraCSS", "extracss-firefox.css");
-manage_css_pref("enableNSFW", "nsfw-emote-classes.css");
+manage_css_pref("enableNSFW", "nsfw-emote-classes.css", "bpmotes-sfw.css");

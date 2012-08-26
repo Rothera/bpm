@@ -9,11 +9,10 @@
 *******************************************************************************/
 
 /*
- * Misc bits of CSS for the addon itself.
+ * Stylesheet applied when NSFW emotes are disabled.
  */
 
-/* Unknown emotes */
-.bpmotes-unknown {
+.bpmotes-nsfw {
     /* Emote common */
     display: block;
     clear: none;
@@ -23,15 +22,18 @@
     width: 60px;
     height: 60px;
 
-    background-color: slategray;
+    background-color: black;
     border-radius: 10px;
 
     /*
-     * "Unknown emote [...]" text. We can style it however we want, because
-     * "emotes" with text in them are never considered to be unknown.
+     * "NSFW" text styling. Unfortunately, as an edge case, any text found in
+     * the emote already (i.e. in the wrong place) will be changed like this.
      */
-    color: white;
     font-style: monospace;
     font-size: xx-small;
     padding: 5px;
+}
+
+.bpmotes-nsfw:after {
+    content: "NSFW";
 }

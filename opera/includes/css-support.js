@@ -63,6 +63,8 @@ window.addEventListener("DOMContentLoaded", function() {
 
     if(widget.preferences.enableNSFW == "true") {
         apply_css("/nsfw-emote-classes.css");
+    } else {
+        apply_css("/bpmotes-sfw.css");
     }
     if(widget.preferences.enableExtraCSS == "true") {
         // FIXME: Is there a way we can just directly detect support for

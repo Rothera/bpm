@@ -27,5 +27,7 @@ chrome.extension.sendMessage({method: "getPrefs"}, function(prefs) {
 
     if(prefs.enableNSFW) {
         enable_css("nsfw-emote-classes.css");
+    } else {
+        enable_css("bpmotes-sfw.css");
     }
 });
