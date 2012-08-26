@@ -14,7 +14,6 @@
 
 function load_options() {
     var prefs = getPrefs();
-    console.log("loading prefs:", prefs);
 
     document.getElementById("enableNSFW").checked = prefs["enableNSFW"];
     document.getElementById("enableExtraCSS").checked = prefs["enableExtraCSS"];
@@ -25,7 +24,6 @@ function save_options() {
         "enableNSFW": document.getElementById("enableNSFW").checked,
         "enableExtraCSS": document.getElementById("enableExtraCSS").checked
         });
-    console.log("saved prefs:", localStorage["prefs"]);
 }
 
 document.body.onload = load_options;

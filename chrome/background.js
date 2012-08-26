@@ -14,7 +14,13 @@
  */
 
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
-    if(request.method == "getPrefs") {
-        sendResponse(getPrefs());
+    switch(request.method) {
+        case "getPrefs":
+            sendResponse(getPrefs());
+            break;
+
+        default:
+            console.log("ERROR: Unknown request from content script: " + message.request);
+            break;
     }
 });

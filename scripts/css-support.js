@@ -51,7 +51,7 @@ if(chrome) {
                 };
                 reader.readAsText(file);
             } else {
-                opera.postError("ERROR: getFile() failed on " + filename);
+                console.log("ERROR: getFile() failed on " + filename);
             }
         }
     } else {
@@ -66,7 +66,7 @@ if(chrome) {
                     break;
 
                 default:
-                    opera.postError("ERROR: Unknown request from background script: " + message.request);
+                    console.log("ERROR: Unknown request from background script: " + message.request);
                     break;
             }
         }

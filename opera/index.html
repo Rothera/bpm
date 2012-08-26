@@ -10,7 +10,7 @@
         request.send();
 
         if(!request.responseText) {
-            opera.postError("ERROR: Can't read " + filename);
+            console.log("ERROR: Can't read from file: " + filename);
             return;
         } else {
             return request.responseText;
@@ -34,7 +34,7 @@
                 break;
 
             default:
-                opera.postError("ERROR: Unknown request from content script: " + message.request);
+                console.log("ERROR: Unknown request from content script: " + message.request);
                 break;
         }
     };
