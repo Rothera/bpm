@@ -1,3 +1,14 @@
+// ==UserScript==
+// @include http://*.reddit.com/*
+// @include https://*.reddit.com/*
+// ==/UserScript==
+
+/*
+ * THIS FILE IS NOT A USERSCRIPT. DO NOT ATTEMPT TO INSTALL IT AS SUCH.
+ *
+ * The above header is used by Opera.
+ */
+
 /*******************************************************************************
 **
 ** Copyright (C) 2012 Typhos
@@ -9,6 +20,9 @@
 *******************************************************************************/
 
 "use strict";
+
+// Embed emote-map.js, for Opera
+/*$(EMOTE_MAP)*/
 
 function sanitize(s) {
     return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_");
@@ -52,23 +66,55 @@ function process(elements) {
                         element.className += " " + "bpflags-" + sanitize(flag);
                     }
                 }
-            } else if(!element.textContent && /^\/[\w\-:!]+$/.test(emote) && !element.clientWidth &&
-                      window.getComputedStyle(element, ":after").backgroundImage == "none" &&
-                      window.getComputedStyle(element, ":before").backgroundImage == "none") {
-                // Unknown emote? Good enough
-                element.className += " " + "bpm-unknown";
-                element.textContent = "Unknown emote " + emote;
+            } else if(!element.textContent && /^\/[\w\-:!]+$/.test(emote) && !element.clientWidth) {
+                /*
+                 * If there's:
+                 *    1) No text
+                 *    2) href matches regexp (no slashes, mainly)
+                 *    3) No size (missing bg image means it won't display)
+                 *    4) No :after or :before tricks to display the image (some
+                 *       subreddits do emotes with those selectors)
+                 * Then it's probably an emote, but we don't know what it is.
+                 */
+                var after = window.getComputedStyle(element, ":after").backgroundImage;
+                // "" in Opera, "none" in Firefox and Chrome.
+                if(!after || after == "none") {
+                    var before = window.getComputedStyle(element, ":before").backgroundImage;
+                    if(!before || before == "none") {
+                        // Unknown emote? Good enough
+                        element.className += " " + "bpm-unknown";
+                        element.textContent = "Unknown emote " + emote;
+                    }
+                }
             }
         }
     }
 }
 
-process(document.getElementsByTagName("a"))
+/*
+ * Firefox and Chrome run this script when the DOM has been built. I'm not sure
+ * exactly when it's run in Opera, though.
+ */
 
-var observer = new MutationSummary({
-    callback: function(summaries) {
-        process(summaries[0].added);
-    },
-    queries: [
-        {element: "a"}
-    ]});
+if(self || chrome) {
+    process(document.getElementsByTagName("a"))
+
+    var observer = new MutationSummary({
+        callback: function(summaries) {
+            process(summaries[0].added);
+        },
+        queries: [
+            {element: "a"}
+        ]});
+} else if(opera) {
+    window.addEventListener("DOMContentLoaded", function() {
+        process(document.getElementsByTagName("a"))
+
+        document.body.addEventListener("DOMNodeInserted", function(event) {
+            var element = event.target;
+            if(element.getElementsByTagName) {
+                process(element.getElementsByTagName("a"));
+            }
+        }, false);
+    }, false);
+}
