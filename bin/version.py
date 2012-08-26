@@ -53,7 +53,7 @@ def main():
     # FIXME: No fx_updates... wouldn't want to set it, but checking would be nice
     # ALSO FIXME: get both version attribs of these two files
     cr_updates = XmlSource("files/chrome-updates.xml",
-                           lambda t: t.getroot().getchildren()[0].getchildren()[0].attrib["version"])
+                           lambda t: t.getroot()[0][0].attrib["version"])
     o_updates = XmlSource("files/opera-updates.xml",
                           lambda t: t.getroot().attrib["version"])
     files = (fx_package, cr_package, o_package, cr_updates)
@@ -76,8 +76,8 @@ def main():
         cr_package.data["version"] = args.v
         o_package.data.getroot().attrib["version"] = args.v
         # FIXME: hardcoding these paths here sucks
-        cr_updates.data.getroot().getchildren()[0].getchildren()[0].attrib["codebase"] = "http://rainbow.mlas1.us/betterponymotes_%s.crx" % (args.v)
-        cr_updates.data.getroot().getchildren()[0].getchildren()[0].attrib["version"] = args.v
+        cr_updates.data.getroot()[0][0].attrib["codebase"] = "http://rainbow.mlas1.us/betterponymotes_%s.crx" % (args.v)
+        cr_updates.data.getroot()[0][0].attrib["version"] = args.v
         o_updates.data.getroot().attrib["src"] = "http://rainbow.mlas1.us/betterponymotes_%s.oex" % (args.v)
         o_updates.data.getroot().attrib["version"] = args.v
 

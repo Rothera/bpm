@@ -7,17 +7,10 @@ build/emote-classes.css build/nsfw-emote-classes.css build/emote-map.js: bin/bpg
 
 build/betterponymotes.xpi: build/emote-classes.css build/nsfw-emote-classes.css build/emote-map.js firefox/data/* firefox/package.json firefox/lib/main.js
 	cfx xpi --update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf --pkgdir=firefox
-	mv betterponymotes.xpi build
-
-unpack-xpi:
-	mkdir xpi
-	unzip build/betterponymotes.xpi -d xpi
-
-pack-xpi:
-	cd xpi && zip -r ../build/betterponymotes.xpi * && cd ..
-	rm -r xpi
+	bin/inject_xpi_key.py betterponymotes.xpi build/betterponymotes.xpi
+	rm betterponymotes.xpi
 	cp build/betterponymotes.xpi build/betterponymotes_`bin/version.py get`.xpi
-	uhura -k betterponymotes.pem build/betterponymotes_`bin/version.py get`.xpi http://rainbow.mlas1.us/betterponymotes_`bin/version.py get`.xpi > files/betterponymotes.update.rdf
+	uhura -k betterponymotes.pem build/betterponymotes.xpi http://rainbow.mlas1.us/betterponymotes_`bin/version.py get`.xpi > files/betterponymotes.update.rdf
 
 build/betterponymotes.crx: build/emote-classes.css build/nsfw-emote-classes.css build/emote-map.js chrome/*
 	google-chrome --pack-extension=chrome --pack-extension-key=betterponymotes.pem
