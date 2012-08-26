@@ -79,5 +79,5 @@ function manage_css_pref(pref, filename, disabled_filename) {
     }
 }
 
-manage_css_pref("enableExtraCSS", "extracss-firefox.css");
+manage_css_pref("enableExtraCSS", "extracss.css");
 manage_css_pref("enableNSFW", "nsfw-emote-classes.css", "bpmotes-sfw.css");

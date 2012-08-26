@@ -15,18 +15,18 @@ function enable_css(filename) {
     document.documentElement.insertBefore(tag);
 }
 
-enable_css("bpmotes.css");
-enable_css("emote-classes.css");
-enable_css("combiners.css");
+enable_css("/bpmotes.css");
+enable_css("/emote-classes.css");
+enable_css("/combiners.css");
 
 chrome.extension.sendMessage({method: "getPrefs"}, function(prefs) {
     if(prefs.enableExtraCSS) {
-        enable_css("extracss-chrome.css");
+        enable_css("/extracss.css");
     }
 
     if(prefs.enableNSFW) {
-        enable_css("nsfw-emote-classes.css");
+        enable_css("/nsfw-emote-classes.css");
     } else {
-        enable_css("bpmotes-sfw.css");
+        enable_css("/bpmotes-sfw.css");
     }
 });

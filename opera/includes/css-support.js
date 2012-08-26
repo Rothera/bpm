@@ -69,9 +69,9 @@ window.addEventListener("DOMContentLoaded", function() {
         // FIXME: Is there a way we can just directly detect support for
         // prefixed vs. non-prefixed CSS properties?
         if(is_opera_next) {
-            apply_css("/extracss-opera-next.css");
+            apply_css("/extracss-next.css");
         } else {
-            apply_css("/extracss-opera.css");
+            apply_css("/extracss.css");
         }
     }
 }, false);
