@@ -85,6 +85,7 @@ def main():
         cr_package.save()
         o_package.save()
         cr_updates.save()
+        o_updates.save()
 
 if __name__ == "__main__":
     main()
