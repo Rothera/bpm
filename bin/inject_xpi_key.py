@@ -29,7 +29,6 @@ for item in xpi_in.infolist():
     data = xpi_in.read(item.filename)
 
     if item.filename == "install.rdf":
-        print("FIXING")
         item = "install.rdf"
 
         manifest = lxml.etree.fromstring(data)
