@@ -1,225 +1,338 @@
-Spritesheets:
+Emotes:
+  Custom:
+  - CSS: {display: inline-block, padding-right: 100%}
+    Name: /sp
+  Spritesheets:
     http://a.thumbs.redditmedia.com/6BOIVAJzPaum6olZ.png:
-        /flutterfly:
-            Positioning: [128, 114, 0, 0]
+    - Name: /flutterfly
+      Offset: [0, 0]
+      Size: [128, 114]
     http://a.thumbs.redditmedia.com/MYVb1NFkbJ5hYQKT.png:
-        /twilicious:
-            Positioning: [70, 70, 0, 0]
+    - Name: /twilicious
+      Offset: [0, 0]
+      Size: [70, 70]
     http://b.thumbs.redditmedia.com/DFH8213IoJDJDgXU.png:
-        /flutterbop:
-            Positioning: [70, 70, 0, 0]
+    - Name: /flutterbop
+      Offset: [0, 0]
+      Size: [70, 70]
     http://b.thumbs.redditmedia.com/eOHEeBpi_la0KkfI.png:
-        /scootajump:
-            Positioning: [111, 128, 0, 0]
+    - Name: /scootajump
+      Offset: [0, 0]
+      Size: [111, 128]
     http://b.thumbs.redditmedia.com/pWZqPkP5s8By4mMC.png:
-        /RShark7996:
-            Positioning: [70, 70, -70, -280]
-        /RTwilight_Sprinkle:
-            Positioning: [70, 70, -140, -280]
-        /RXLR8TER:
-            Positioning: [70, 70, 0, -280]
-        /rbrushie:
-            Positioning: [70, 70, -140, -140]
-        /rda00:
-            Positioning: [70, 70, 0, 0]
-        /rda01:
-            Positioning: [70, 70, 0, -70]
-        /rda02:
-            Positioning: [70, 70, 0, -140]
-        /rda03:
-            Positioning: [70, 70, 0, -210]
-        /rda04:
-            Positioning: [70, 70, 0, -280]
-        /rda05:
-            Positioning: [70, 70, 0, -350]
-        /rda06:
-            Positioning: [70, 70, 0, -420]
-        /rda07:
-            Positioning: [70, 70, 0, -490]
-        /rda10:
-            Positioning: [70, 70, -70, 0]
-        /rda11:
-            Positioning: [70, 70, -70, -70]
-        /rda12:
-            Positioning: [70, 70, -70, -140]
-        /rda13:
-            Positioning: [70, 70, -70, -210]
-        /rda14:
-            Positioning: [70, 70, -70, -280]
-        /rda15:
-            Positioning: [70, 70, -70, -350]
-        /rda16:
-            Positioning: [70, 70, -70, -420]
-        /rda17:
-            Positioning: [70, 70, -70, -490]
-        /rda20:
-            Positioning: [70, 70, -140, 0]
-        /rda21:
-            Positioning: [70, 70, -140, -70]
-        /rda22:
-            Positioning: [70, 70, -140, -140]
-        /rda23:
-            Positioning: [70, 70, -140, -210]
-        /rda24:
-            Positioning: [70, 70, -140, -280]
-        /rda25:
-            Positioning: [70, 70, -140, -350]
-        /rda26:
-            Positioning: [70, 70, -140, -420]
-        /rda27:
-            Positioning: [70, 70, -140, -490]
-        /rdaww:
-            Positioning: [70, 70, -140, -210]
-        /rfillyfly:
-            Positioning: [70, 70, -70, -490]
-        /rfillyshy:
-            Positioning: [70, 70, -140, -70]
-        /rflutterjuice:
-            Positioning: [70, 70, 0, -350]
-        /rflutters:
-            Positioning: [70, 70, -140, -350]
-        /rfrank:
-            Positioning: [70, 70, 0, -490]
-        /rgummy:
-            Positioning: [70, 70, -70, -210]
-        /rhappycadance:
-            Positioning: [70, 70, -140, -490]
-        /rhugs:
-            Positioning: [70, 70, 0, -210]
-        /rrarityhi:
-            Positioning: [70, 70, 0, -140]
-        /rsadpinkie:
-            Positioning: [70, 70, -70, -140]
-        /rscoots:
-            Positioning: [70, 70, -70, 0]
-        /rsharkie:
-            Positioning: [70, 70, -70, -280]
-        /rsharkwell:
-            Positioning: [70, 70, -70, -420]
-        /rspike:
-            Positioning: [70, 70, -70, -70]
-        /rsprinkles:
-            Positioning: [70, 70, -140, -280]
-        /rsquee:
-            Positioning: [70, 70, 0, 0]
-        /rtia:
-            Positioning: [70, 70, -140, 0]
-        /rtwihappy:
-            Positioning: [70, 70, -140, -420]
-        /rtwihug:
-            Positioning: [70, 70, 0, -70]
-        /ruhhh:
-            Positioning: [70, 70, 0, -420]
-        /rwoonajuice:
-            Positioning: [70, 70, -70, -350]
-        /rxl:
-            Positioning: [70, 70, 0, -280]
+    - Name: /RShark7996
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /RTwilight_Sprinkle
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /RXLR8TER
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /rbrushie
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /rda00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rda01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /rda02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /rda03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /rda04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /rda05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /rda06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /rda07
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /rda10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rda11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /rda12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /rda13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /rda14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /rda15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /rda16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /rda17
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /rda20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /rda21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /rda22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /rda23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /rda24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /rda25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /rda26
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /rda27
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /rdaww
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /rfillyfly
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /rfillyshy
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /rflutterjuice
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /rflutters
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /rfrank
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /rgummy
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /rhappycadance
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /rhugs
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /rrarityhi
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /rsadpinkie
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /rscoots
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rsharkie
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /rsharkwell
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /rspike
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /rsprinkles
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /rsquee
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rtia
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /rtwihappy
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /rtwihug
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /ruhhh
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /rwoonajuice
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /rxl
+      Offset: [0, -280]
+      Size: [70, 70]
     http://c.thumbs.redditmedia.com/HGZ5sK66oq2pi2hn.png:
-        /shark18:
-            Positioning: [70, 70, 0, 0]
+    - Name: /shark18
+      Offset: [0, 0]
+      Size: [70, 70]
     http://c.thumbs.redditmedia.com/SVuA5lnpuVOrr97h.png:
-        /derpystomp:
-            Positioning: [105, 128, 0, 0]
+    - Name: /derpystomp
+      Offset: [0, 0]
+      Size: [105, 128]
     http://f.thumbs.redditmedia.com/eBqW6oGAmUofkFpM.png:
-        /Shark7996:
-            Positioning: [70, 70, -70, -280]
-        /Twilight_Sprinkle:
-            Positioning: [70, 70, -140, -280]
-        /XLR8TER:
-            Positioning: [70, 70, 0, -280]
-        /brushie:
-            Positioning: [70, 70, -140, -140]
-        /da00:
-            Positioning: [70, 70, 0, 0]
-        /da01:
-            Positioning: [70, 70, 0, -70]
-        /da02:
-            Positioning: [70, 70, 0, -140]
-        /da03:
-            Positioning: [70, 70, 0, -210]
-        /da04:
-            Positioning: [70, 70, 0, -280]
-        /da05:
-            Positioning: [70, 70, 0, -350]
-        /da06:
-            Positioning: [70, 70, 0, -420]
-        /da07:
-            Positioning: [70, 70, 0, -490]
-        /da10:
-            Positioning: [70, 70, -70, 0]
-        /da11:
-            Positioning: [70, 70, -70, -70]
-        /da12:
-            Positioning: [70, 70, -70, -140]
-        /da13:
-            Positioning: [70, 70, -70, -210]
-        /da14:
-            Positioning: [70, 70, -70, -280]
-        /da15:
-            Positioning: [70, 70, -70, -350]
-        /da16:
-            Positioning: [70, 70, -70, -420]
-        /da17:
-            Positioning: [70, 70, -70, -490]
-        /da20:
-            Positioning: [70, 70, -140, 0]
-        /da21:
-            Positioning: [70, 70, -140, -70]
-        /da22:
-            Positioning: [70, 70, -140, -140]
-        /da23:
-            Positioning: [70, 70, -140, -210]
-        /da24:
-            Positioning: [70, 70, -140, -280]
-        /da25:
-            Positioning: [70, 70, -140, -350]
-        /da26:
-            Positioning: [70, 70, -140, -420]
-        /da27:
-            Positioning: [70, 70, -140, -490]
-        /daww:
-            Positioning: [70, 70, -140, -210]
-        /fillyfly:
-            Positioning: [70, 70, -70, -490]
-        /fillyshy:
-            Positioning: [70, 70, -140, -70]
-        /flutterjuice:
-            Positioning: [70, 70, 0, -350]
-        /flutters:
-            Positioning: [70, 70, -140, -350]
-        /frank:
-            Positioning: [70, 70, 0, -490]
-#        /gummy:
-#            Positioning: [70, 70, -70, -210]
-        /happycadance:
-            Positioning: [70, 70, -140, -490]
-        /hugs:
-            Positioning: [70, 70, 0, -210]
-        /rarityhi:
-            Positioning: [70, 70, 0, -140]
-        /sadpinkie:
-            Positioning: [70, 70, -70, -140]
-        /scoots:
-            Positioning: [70, 70, -70, 0]
-        /sharkie:
-            Positioning: [70, 70, -70, -280]
-        /sharkwell:
-            Positioning: [70, 70, -70, -420]
-        /spike:
-            Positioning: [70, 70, -70, -70]
-        /sprinkles:
-            Positioning: [70, 70, -140, -280]
-        /squee:
-            Positioning: [70, 70, 0, 0]
-        /tia:
-            Positioning: [70, 70, -140, 0]
-        /twihappy:
-            Positioning: [70, 70, -140, -420]
-        /twihug:
-            Positioning: [70, 70, 0, -70]
-        /uhhh:
-            Positioning: [70, 70, 0, -420]
-        /woonajuice:
-            Positioning: [70, 70, -70, -350]
-        /xl:
-            Positioning: [70, 70, 0, -280]
+    - Name: /Shark7996
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /Twilight_Sprinkle
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /XLR8TER
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /brushie
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /da00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /da01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /da02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /da03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /da04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /da05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /da06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /da07
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /da10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /da11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /da12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /da13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /da14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /da15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /da16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /da17
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /da20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /da21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /da22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /da23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /da24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /da25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /da26
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /da27
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /daww
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /fillyfly
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /fillyshy
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /flutterjuice
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /flutters
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /frank
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /gummy
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /happycadance
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /hugs
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /rarityhi
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /sadpinkie
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /scoots
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /sharkie
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /sharkwell
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /spike
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /sprinkles
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /squee
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /tia
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /twihappy
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /twihug
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /uhhh
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /woonajuice
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /xl
+      Offset: [0, -280]
+      Size: [70, 70]
+Meta: {Name: r/mylittledaww, Timestamp: 'Sat Aug 25 23:59:10 2012'}

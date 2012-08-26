@@ -1,228 +1,345 @@
-Spritesheets:
+Emotes:
+  Custom:
+  - CSS: {display: inline-block, padding-right: 100%}
+    Name: /sp
+  Spritesheets:
     http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png:
-        /nsc00:
-            Positioning: [70, 70, 0, 0]
-        /nsc01:
-            Positioning: [70, 70, 0, -70]
-        /nsc02:
-            Positioning: [70, 70, 0, -140]
-        /nsc03:
-            Positioning: [70, 70, 0, -210]
-        /nsc04:
-            Positioning: [70, 70, 0, -280]
-        /nsc05:
-            Positioning: [70, 70, 0, -350]
-        /nsc06:
-            Positioning: [70, 70, 0, -420]
-        /nsc07:
-            Positioning: [70, 70, 0, -490]
-        /nsc08:
-            Positioning: [70, 70, 0, -560]
-        /nsc09:
-            Positioning: [70, 70, 0, -630]
-        /nsc10:
-            Positioning: [70, 70, -70, 0]
-        /nsc11:
-            Positioning: [70, 70, -70, -70]
-        /nsc12:
-            Positioning: [70, 70, -70, -140]
-        /nsc13:
-            Positioning: [70, 70, -70, -210]
-        /nsc14:
-            Positioning: [70, 70, -70, -280]
-        /nsc15:
-            Positioning: [70, 70, -70, -350]
-        /nsc16:
-            Positioning: [70, 70, -70, -420]
-        /nsc17:
-            Positioning: [70, 70, -70, -490]
-        /nsc18:
-            Positioning: [70, 70, -70, -560]
-        /nsc19:
-            Positioning: [70, 70, -70, -630]
-        /nsc20:
-            Positioning: [70, 70, -140, 0]
-        /nsc21:
-            Positioning: [70, 70, -140, -70]
-        /nsc22:
-            Positioning: [70, 70, -140, -140]
-        /nsc23:
-            Positioning: [70, 70, -140, -210]
-        /nsc24:
-            Positioning: [70, 70, -140, -280]
-        /nsc25:
-            Positioning: [70, 70, -140, -350]
-        /nsc26:
-            Positioning: [70, 70, -140, -420]
-        /nsc27:
-            Positioning: [70, 70, -140, -490]
-        /nsc28:
-            Positioning: [70, 70, -140, -560]
-        /nsc29:
-            Positioning: [70, 70, -140, -630]
+    - Name: /nsc00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /nsc01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /nsc02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /nsc03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /nsc04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /nsc05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /nsc06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /nsc07
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /nsc08
+      Offset: [0, -560]
+      Size: [70, 70]
+    - Name: /nsc09
+      Offset: [0, -630]
+      Size: [70, 70]
+    - Name: /nsc10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /nsc11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /nsc12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /nsc13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /nsc14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /nsc15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /nsc16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /nsc17
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /nsc18
+      Offset: [-70, -560]
+      Size: [70, 70]
+    - Name: /nsc19
+      Offset: [-70, -630]
+      Size: [70, 70]
+    - Name: /nsc20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /nsc21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /nsc22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /nsc23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /nsc24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /nsc25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /nsc26
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /nsc27
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /nsc28
+      Offset: [-140, -560]
+      Size: [70, 70]
+    - Name: /nsc29
+      Offset: [-140, -630]
+      Size: [70, 70]
     http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png:
-        /nsb00:
-            Positioning: [50, 50, 0, 0]
-        /nsb01:
-            Positioning: [50, 50, 0, -50]
-        /nsb02:
-            Positioning: [50, 50, 0, -100]
-        /nsb03:
-            Positioning: [50, 50, 0, -150]
-        /nsb04:
-            Positioning: [50, 50, 0, -200]
-        /nsb05:
-            Positioning: [50, 50, 0, -250]
-        /nsb06:
-            Positioning: [50, 50, 0, -300]
-        /nsb07:
-            Positioning: [50, 50, 0, -350]
-        /nsb08:
-            Positioning: [50, 50, 0, -400]
-        /nsb09:
-            Positioning: [50, 50, 0, -4500]
-        /nsb10:
-            Positioning: [50, 50, -50, 0]
-        /nsb11:
-            Positioning: [50, 50, -50, -50]
-        /nsb12:
-            Positioning: [50, 50, -50, -100]
-        /nsb13:
-            Positioning: [50, 50, -50, -150]
-        /nsb14:
-            Positioning: [50, 50, -50, -200]
-        /nsb15:
-            Positioning: [50, 50, -50, -250]
-        /nsb16:
-            Positioning: [50, 50, -50, -300]
-        /nsb17:
-            Positioning: [50, 50, -50, -350]
-        /nsb18:
-            Positioning: [50, 50, -50, -400]
-        /nsb19:
-            Positioning: [50, 50, -50, -450]
-        /nsb20:
-            Positioning: [50, 50, -100, 0]
-        /nsb21:
-            Positioning: [50, 50, -100, -50]
-        /nsb22:
-            Positioning: [50, 50, -100, -100]
-        /nsb23:
-            Positioning: [50, 50, -100, -150]
-        /nsb24:
-            Positioning: [50, 50, -100, -200]
-        /nsb25:
-            Positioning: [50, 50, -100, -250]
-        /nsb26:
-            Positioning: [50, 50, -100, -300]
-        /nsb27:
-            Positioning: [50, 50, -100, -350]
-        /nsb28:
-            Positioning: [50, 50, -100, -400]
-        /nsb29:
-            Positioning: [50, 50, -100, -450]
-        /nsb30:
-            Positioning: [50, 50, -150, 0]
-        /nsb31:
-            Positioning: [50, 50, -150, -50]
-        /nsb32:
-            Positioning: [50, 50, -150, -100]
-        /nsb33:
-            Positioning: [50, 50, -150, -150]
-        /nsb34:
-            Positioning: [50, 50, -150, -200]
-        /nsb35:
-            Positioning: [50, 50, -150, -250]
-        /nsb36:
-            Positioning: [50, 50, -150, -300]
-        /nsb37:
-            Positioning: [50, 50, -150, -350]
-        /nsb38:
-            Positioning: [50, 50, -150, -400]
-        /nsb39:
-            Positioning: [50, 50, -150, -450]
+    - Name: /nsb00
+      Offset: [0, 0]
+      Size: [50, 50]
+    - Name: /nsb01
+      Offset: [0, -50]
+      Size: [50, 50]
+    - Name: /nsb02
+      Offset: [0, -100]
+      Size: [50, 50]
+    - Name: /nsb03
+      Offset: [0, -150]
+      Size: [50, 50]
+    - Name: /nsb04
+      Offset: [0, -200]
+      Size: [50, 50]
+    - Name: /nsb05
+      Offset: [0, -250]
+      Size: [50, 50]
+    - Name: /nsb06
+      Offset: [0, -300]
+      Size: [50, 50]
+    - Name: /nsb07
+      Offset: [0, -350]
+      Size: [50, 50]
+    - Name: /nsb08
+      Offset: [0, -400]
+      Size: [50, 50]
+    - Name: /nsb09
+      Offset: [0, -4500]
+      Size: [50, 50]
+    - Name: /nsb10
+      Offset: [-50, 0]
+      Size: [50, 50]
+    - Name: /nsb11
+      Offset: [-50, -50]
+      Size: [50, 50]
+    - Name: /nsb12
+      Offset: [-50, -100]
+      Size: [50, 50]
+    - Name: /nsb13
+      Offset: [-50, -150]
+      Size: [50, 50]
+    - Name: /nsb14
+      Offset: [-50, -200]
+      Size: [50, 50]
+    - Name: /nsb15
+      Offset: [-50, -250]
+      Size: [50, 50]
+    - Name: /nsb16
+      Offset: [-50, -300]
+      Size: [50, 50]
+    - Name: /nsb17
+      Offset: [-50, -350]
+      Size: [50, 50]
+    - Name: /nsb18
+      Offset: [-50, -400]
+      Size: [50, 50]
+    - Name: /nsb19
+      Offset: [-50, -450]
+      Size: [50, 50]
+    - Name: /nsb20
+      Offset: [-100, 0]
+      Size: [50, 50]
+    - Name: /nsb21
+      Offset: [-100, -50]
+      Size: [50, 50]
+    - Name: /nsb22
+      Offset: [-100, -100]
+      Size: [50, 50]
+    - Name: /nsb23
+      Offset: [-100, -150]
+      Size: [50, 50]
+    - Name: /nsb24
+      Offset: [-100, -200]
+      Size: [50, 50]
+    - Name: /nsb25
+      Offset: [-100, -250]
+      Size: [50, 50]
+    - Name: /nsb26
+      Offset: [-100, -300]
+      Size: [50, 50]
+    - Name: /nsb27
+      Offset: [-100, -350]
+      Size: [50, 50]
+    - Name: /nsb28
+      Offset: [-100, -400]
+      Size: [50, 50]
+    - Name: /nsb29
+      Offset: [-100, -450]
+      Size: [50, 50]
+    - Name: /nsb30
+      Offset: [-150, 0]
+      Size: [50, 50]
+    - Name: /nsb31
+      Offset: [-150, -50]
+      Size: [50, 50]
+    - Name: /nsb32
+      Offset: [-150, -100]
+      Size: [50, 50]
+    - Name: /nsb33
+      Offset: [-150, -150]
+      Size: [50, 50]
+    - Name: /nsb34
+      Offset: [-150, -200]
+      Size: [50, 50]
+    - Name: /nsb35
+      Offset: [-150, -250]
+      Size: [50, 50]
+    - Name: /nsb36
+      Offset: [-150, -300]
+      Size: [50, 50]
+    - Name: /nsb37
+      Offset: [-150, -350]
+      Size: [50, 50]
+    - Name: /nsb38
+      Offset: [-150, -400]
+      Size: [50, 50]
+    - Name: /nsb39
+      Offset: [-150, -450]
+      Size: [50, 50]
     http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png:
-        /ns00:
-            Positioning: [74, 75, -2, -2]
-        /ns01:
-            Positioning: [79, 75, -78, -2]
-        /ns02:
-            Positioning: [82, 75, -159, -2]
-        /ns03:
-            Positioning: [82, 75, -243, -2]
-        /ns04:
-            Positioning: [62, 75, -327, -2]
-        /ns05:
-            Positioning: [75, 75, -391, -2]
-        /ns06:
-            Positioning: [74, 75, -2, -79]
-        /ns10:
-            Positioning: [76, 75, -78, -79]
-        /ns11:
-            Positioning: [84, 75, -156, -79]
-        /ns12:
-            Positioning: [68, 75, -242, -79]
-        /ns13:
-            Positioning: [89, 75, -312, -79]
-        /ns14:
-            Positioning: [59, 75, -403, -79]
-        /ns15:
-            Positioning: [70, 75, -2, -156]
-        /ns16:
-            Positioning: [85, 75, -74, -156]
-        /ns20:
-            Positioning: [86, 75, -161, -156]
-        /ns21:
-            Positioning: [75, 75, -249, -156]
-        /ns22:
-            Positioning: [86, 75, -326, -156]
-        /ns23:
-            Positioning: [77, 75, -414, -156]
-        /ns24:
-            Positioning: [83, 75, -2, -233]
-        /ns25:
-            Positioning: [86, 75, -87, -233]
-        /ns26:
-            Positioning: [74, 75, -175, -233]
-        /rns00:
-            Positioning: [74, 75, -251, -233]
-        /rns01:
-            Positioning: [79, 75, -327, -233]
-        /rns02:
-            Positioning: [82, 75, -408, -233]
-        /rns03:
-            Positioning: [82, 75, -2, -310]
-        /rns04:
-            Positioning: [62, 75, -86, -310]
-        /rns05:
-            Positioning: [75, 75, -150, -310]
-        /rns06:
-            Positioning: [74, 75, -227, -310]
-        /rns10:
-            Positioning: [76, 75, -303, -310]
-        /rns11:
-            Positioning: [84, 75, -381, -310]
-        /rns12:
-            Positioning: [68, 75, -2, -387]
-        /rns13:
-            Positioning: [89, 75, -72, -387]
-        /rns14:
-            Positioning: [59, 75, -163, -387]
-        /rns15:
-            Positioning: [70, 75, -224, -387]
-        /rns16:
-            Positioning: [85, 75, -296, -387]
-        /rns20:
-            Positioning: [86, 75, -383, -387]
-        /rns21:
-            Positioning: [75, 75, -2, -464]
-        /rns22:
-            Positioning: [86, 75, -79, -464]
-        /rns23:
-            Positioning: [77, 75, -167, -464]
-        /rns24:
-            Positioning: [83, 75, -246, -464]
-        /rns25:
-            Positioning: [86, 75, -331, -464]
-        /rns26:
-            Positioning: [74, 75, -419, -464]
+    - Name: /ns00
+      Offset: [-2, -2]
+      Size: [74, 75]
+    - Name: /ns01
+      Offset: [-78, -2]
+      Size: [79, 75]
+    - Name: /ns02
+      Offset: [-159, -2]
+      Size: [82, 75]
+    - Name: /ns03
+      Offset: [-243, -2]
+      Size: [82, 75]
+    - Name: /ns04
+      Offset: [-327, -2]
+      Size: [62, 75]
+    - Name: /ns05
+      Offset: [-391, -2]
+      Size: [75, 75]
+    - Name: /ns06
+      Offset: [-2, -79]
+      Size: [74, 75]
+    - Name: /ns10
+      Offset: [-78, -79]
+      Size: [76, 75]
+    - Name: /ns11
+      Offset: [-156, -79]
+      Size: [84, 75]
+    - Name: /ns12
+      Offset: [-242, -79]
+      Size: [68, 75]
+    - Name: /ns13
+      Offset: [-312, -79]
+      Size: [89, 75]
+    - Name: /ns14
+      Offset: [-403, -79]
+      Size: [59, 75]
+    - Name: /ns15
+      Offset: [-2, -156]
+      Size: [70, 75]
+    - Name: /ns16
+      Offset: [-74, -156]
+      Size: [85, 75]
+    - Name: /ns20
+      Offset: [-161, -156]
+      Size: [86, 75]
+    - Name: /ns21
+      Offset: [-249, -156]
+      Size: [75, 75]
+    - Name: /ns22
+      Offset: [-326, -156]
+      Size: [86, 75]
+    - Name: /ns23
+      Offset: [-414, -156]
+      Size: [77, 75]
+    - Name: /ns24
+      Offset: [-2, -233]
+      Size: [83, 75]
+    - Name: /ns25
+      Offset: [-87, -233]
+      Size: [86, 75]
+    - Name: /ns26
+      Offset: [-175, -233]
+      Size: [74, 75]
+    - Name: /rns00
+      Offset: [-251, -233]
+      Size: [74, 75]
+    - Name: /rns01
+      Offset: [-327, -233]
+      Size: [79, 75]
+    - Name: /rns02
+      Offset: [-408, -233]
+      Size: [82, 75]
+    - Name: /rns03
+      Offset: [-2, -310]
+      Size: [82, 75]
+    - Name: /rns04
+      Offset: [-86, -310]
+      Size: [62, 75]
+    - Name: /rns05
+      Offset: [-150, -310]
+      Size: [75, 75]
+    - Name: /rns06
+      Offset: [-227, -310]
+      Size: [74, 75]
+    - Name: /rns10
+      Offset: [-303, -310]
+      Size: [76, 75]
+    - Name: /rns11
+      Offset: [-381, -310]
+      Size: [84, 75]
+    - Name: /rns12
+      Offset: [-2, -387]
+      Size: [68, 75]
+    - Name: /rns13
+      Offset: [-72, -387]
+      Size: [89, 75]
+    - Name: /rns14
+      Offset: [-163, -387]
+      Size: [59, 75]
+    - Name: /rns15
+      Offset: [-224, -387]
+      Size: [70, 75]
+    - Name: /rns16
+      Offset: [-296, -387]
+      Size: [85, 75]
+    - Name: /rns20
+      Offset: [-383, -387]
+      Size: [86, 75]
+    - Name: /rns21
+      Offset: [-2, -464]
+      Size: [75, 75]
+    - Name: /rns22
+      Offset: [-79, -464]
+      Size: [86, 75]
+    - Name: /rns23
+      Offset: [-167, -464]
+      Size: [77, 75]
+    - Name: /rns24
+      Offset: [-246, -464]
+      Size: [83, 75]
+    - Name: /rns25
+      Offset: [-331, -464]
+      Size: [86, 75]
+    - Name: /rns26
+      Offset: [-419, -464]
+      Size: [74, 75]
+Meta: {Name: r/mylittlenosleep, Timestamp: 'Sat Aug 25 23:59:11 2012'}

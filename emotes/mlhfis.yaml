@@ -1,96 +1,150 @@
-Spritesheets:
+Emotes:
+  Custom:
+  - CSS: {background: black !important, color: black !important}
+    Name: /spoiler
+  - CSS: {background: black !important, color: white !important}
+    Name: /spoiler
+    Suffix: :hover
+  Spritesheets:
     http://a.thumbs.redditmedia.com/j0TEPf9Gz1PMjC36.png:
-        /aliens:
-            Positioning: [100, 100, 0, -100]
-        /cera:
-            Positioning: [75, 115, -75, -200]
-        /clintonlie:
-            Positioning: [100, 100, -120, -440]
-        /colbert:
-            Positioning: [75, 100, 0, -775]
-        /freddie:
-            Positioning: [75, 140, 0, -200]
-        /freeman:
-            Positioning: [120, 100, -100, -775]
-        /gaben:
-            Positioning: [100, 100, 0, -440]
-        /impossibru:
-            Positioning: [105, 100, -120, 0]
-        /jackiechan:
-            Positioning: [120, 75, 0, -700]
-        /keanu:
-            Positioning: [100, 100, -125, -100]
-        /maverick:
-            Positioning: [140, 75, 0, -540]
-        /newman:
-            Positioning: [75, 120, -150, -200]
-        /obama:
-            Positioning: [120, 100, 0, 0]
-        /pennandteller:
-            Positioning: [125, 105, -100, -335]
-        /picard:
-            Positioning: [90, 75, -135, -695]
-        /silverman:
-            Positioning: [120, 80, 0, -620]
-        /takei:
-            Positioning: [70, 75, -155, -540]
-        /tyson:
-            Positioning: [105, 75, -120, -620]
-        /wonka:
-            Positioning: [100, 100, 0, -340]
+    - Name: /aliens
+      Offset: [0, -100]
+      Size: [100, 100]
+    - Name: /cera
+      Offset: [-75, -200]
+      Size: [75, 115]
+    - Name: /clintonlie
+      Offset: [-120, -440]
+      Size: [100, 100]
+    - Name: /colbert
+      Offset: [0, -775]
+      Size: [75, 100]
+    - Name: /freddie
+      Offset: [0, -200]
+      Size: [75, 140]
+    - Name: /freeman
+      Offset: [-100, -775]
+      Size: [120, 100]
+    - Name: /gaben
+      Offset: [0, -440]
+      Size: [100, 100]
+    - Name: /impossibru
+      Offset: [-120, 0]
+      Size: [105, 100]
+    - Name: /jackiechan
+      Offset: [0, -700]
+      Size: [120, 75]
+    - Name: /keanu
+      Offset: [-125, -100]
+      Size: [100, 100]
+    - Name: /maverick
+      Offset: [0, -540]
+      Size: [140, 75]
+    - Name: /newman
+      Offset: [-150, -200]
+      Size: [75, 120]
+    - Name: /obama
+      Offset: [0, 0]
+      Size: [120, 100]
+    - Name: /pennandteller
+      Offset: [-100, -335]
+      Size: [125, 105]
+    - Name: /picard
+      Offset: [-135, -695]
+      Size: [90, 75]
+    - Name: /silverman
+      Offset: [0, -620]
+      Size: [120, 80]
+    - Name: /takei
+      Offset: [-155, -540]
+      Size: [70, 75]
+    - Name: /tyson
+      Offset: [-120, -620]
+      Size: [105, 75]
+    - Name: /wonka
+      Offset: [0, -340]
+      Size: [100, 100]
     http://e.thumbs.redditmedia.com/o7DcIdwyaFUbdRFL.png:
-        /ellenmclain:
-            Positioning: [75, 100, 0, -400]
-        /facebook:
-            Positioning: [60, 80, -100, -600]
-        /firstlady:
-            Positioning: [100, 100, 0, 0]
-        /freshman:
-            Positioning: [90, 100, -100, -700]
-        /gaga:
-            Positioning: [100, 100, 0, -300]
-        /indra:
-            Positioning: [80, 100, -100, -500]
-        /jennamarbles:
-            Positioning: [100, 100, -100, -200]
-        /lauren:
-            Positioning: [75, 100, -122, -1]
-        /lucyliu:
-            Positioning: [100, 95, 0, -200]
-        /oprah:
-            Positioning: [120, 95, -80, -100]
-        /redditorswife:
-            Positioning: [70, 100, 0, -700]
-        /ripley:
-            Positioning: [75, 100, 0, -500]
-        /thequeen:
-            Positioning: [85, 100, 0, -600]
-        /tina:
-            Positioning: [75, 95, 0, -100]
-        /xena:
-            Positioning: [90, 100, -100, -400]
-        /zoe:
-            Positioning: [90, 100, -120, -300]
+    - Name: /ellenmclain
+      Offset: [0, -400]
+      Size: [75, 100]
+    - Name: /facebook
+      Offset: [-100, -600]
+      Size: [60, 80]
+    - Name: /firstlady
+      Offset: [0, 0]
+      Size: [100, 100]
+    - Name: /freshman
+      Offset: [-100, -700]
+      Size: [90, 100]
+    - Name: /gaga
+      Offset: [0, -300]
+      Size: [100, 100]
+    - Name: /indra
+      Offset: [-100, -500]
+      Size: [80, 100]
+    - Name: /jennamarbles
+      Offset: [-100, -200]
+      Size: [100, 100]
+    - Name: /lauren
+      Offset: [-122, -1]
+      Size: [75, 100]
+    - Name: /lucyliu
+      Offset: [0, -200]
+      Size: [100, 95]
+    - Name: /oprah
+      Offset: [-80, -100]
+      Size: [120, 95]
+    - Name: /redditorswife
+      Offset: [0, -700]
+      Size: [70, 100]
+    - Name: /ripley
+      Offset: [0, -500]
+      Size: [75, 100]
+    - Name: /thequeen
+      Offset: [0, -600]
+      Size: [85, 100]
+    - Name: /tina
+      Offset: [0, -100]
+      Size: [75, 95]
+    - Name: /xena
+      Offset: [-100, -400]
+      Size: [90, 100]
+    - Name: /zoe
+      Offset: [-120, -300]
+      Size: [90, 100]
     http://f.thumbs.redditmedia.com/PoHsQL4_xPco2-uS.png:
-        /adrian1:
-            Positioning: [75, 100, 0, 0]
-        /adrian2:
-            Positioning: [125, 100, -75, 0]
-        /alexander:
-            Positioning: [75, 100, -225, -100]
-        /bobross:
-            Positioning: [75, 100, -75, -200]
-        /campbell:
-            Positioning: [150, 100, 0, -100]
-        /einstein:
-            Positioning: [75, 100, 0, -300]
-        /jennafischer:
-            Positioning: [75, 100, -200, 0]
-        /napoleon:
-            Positioning: [75, 100, -75, -300]
-        /nietzche:
-            Positioning: [90, 100, -150, -200]
-        /tesla:
-            Positioning: [75, 100, 0, -200]
-        /tut:
-            Positioning: [75, 100, -150, -100]
+    - Name: /adrian1
+      Offset: [0, 0]
+      Size: [75, 100]
+    - Name: /adrian2
+      Offset: [-75, 0]
+      Size: [125, 100]
+    - Name: /alexander
+      Offset: [-225, -100]
+      Size: [75, 100]
+    - Name: /bobross
+      Offset: [-75, -200]
+      Size: [75, 100]
+    - Name: /campbell
+      Offset: [0, -100]
+      Size: [150, 100]
+    - Name: /einstein
+      Offset: [0, -300]
+      Size: [75, 100]
+    - Name: /jennafischer
+      Offset: [-200, 0]
+      Size: [75, 100]
+    - Name: /napoleon
+      Offset: [-75, -300]
+      Size: [75, 100]
+    - Name: /nietzche
+      Offset: [-150, -200]
+      Size: [90, 100]
+    - Name: /tesla
+      Offset: [0, -200]
+      Size: [75, 100]
+    - Name: /tut
+      Offset: [-150, -100]
+      Size: [75, 100]
+Meta: {Name: r/mlhfis, Timestamp: 'Sat Aug 25 23:59:07 2012'}

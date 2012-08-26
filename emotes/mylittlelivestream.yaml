@@ -1,159 +1,250 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
     http://c.thumbs.redditmedia.com/IDazZyPZY9hvYgU2.png:
-        /thumb:hover:
-            Positioning: [640, 480, 0, 0]
+    - Name: /thumb
+      Offset: [0, 0]
+      Size: [640, 480]
+      Suffix: :hover
     http://c.thumbs.redditmedia.com/yDC0y4pn_GUog5nb.png:
-        /thumb:
-            Positioning: [128, 128, 0, 0]
-    http://d.thumbs.redditmedia.com/l4cDOu6qv4ycC3z-.png:
-        /a123:
-            Positioning: [128, 128, 0, -256]
-        /abwant:
-            Positioning: [128, 128, -512, -384]
-        /ajplot:
-            Positioning: [128, 128, 0, 0]
-        /ajsketch:
-            Positioning: [128, 128, -256, -384]
-        /bassdrop:
-            Positioning: [128, 128, 0, -256]
-        /berrynotwant:
-            Positioning: [128, 128, -640, 0]
-        /berryparty:
-            Positioning: [128, 128, -512, -128]
-        /blegh:
-            Positioning: [128, 128, -512, 0]
-        /clickyclicky:
-            Positioning: [128, 128, 0, 0]
-        /datplot:
-            Positioning: [128, 128, -768, -128]
-        /disatwinkle:
-            Positioning: [128, 128, -768, -256]
-        /exquisite:
-            Positioning: [128, 128, -128, 0]
-        /fancydance:
-            Positioning: [128, 128, -128, 0]
-        /hotrod:
-            Positioning: [128, 128, -512, -256]
-        /howaboutyou:
-            Positioning: [128, 128, -640, -256]
-        /iscc:
-            Positioning: [128, 128, -128, -384]
-        /lunawant:
-            Positioning: [128, 128, 0, -128]
-        /pillzhere:
-            Positioning: [128, 128, -768, 0]
-        /plotdance:
-            Positioning: [128, 128, 0, 0]
-        /plotpirouette:
-            Positioning: [128, 128, -384, 0]
-        /plotspin:
-            Positioning: [128, 128, -256, -128]
-        /plottwirl:
-            Positioning: [128, 128, -128, -256]
-        /plotwhirl:
-            Positioning: [128, 128, -384, -384]
-        /rarityplot:
-            Positioning: [128, 128, -384, -384]
-        /raritysnub:
-            Positioning: [128, 128, -256, -256]
-        /tavihugs:
-            Positioning: [128, 128, -640, -128]
-        /taviplot:
-            Positioning: [128, 128, -384, 0]
-        /tavyblobs:
-            Positioning: [128, 128, -384, -128]
-        /twiannoyed:
-            Positioning: [128, 128, -256, 0]
-        /twinkle:
-            Positioning: [128, 128, -384, -256]
-        /twinkledance:
-            Positioning: [128, 128, -384, -256]
-        /twiplot:
-            Positioning: [128, 128, -128, -256]
-        /twiscare:
-            Positioning: [128, 128, -640, -384]
-        /vygrab:
-            Positioning: [128, 128, 0, -256]
-        /vyhug:
-            Positioning: [128, 128, 0, -384]
-        /vyplot:
-            Positioning: [128, 128, -256, -128]
-        /whytwi:
-            Positioning: [128, 128, -128, -128]
-        /whytwiwhy:
-            Positioning: [128, 128, -128, -128]
+    - Name: /thumb
+      Offset: [0, 0]
+      Size: [128, 128]
+    http://e.thumbs.redditmedia.com/StWSBs5ReHEq9ZY4.png:
+    - Name: /a123
+      Offset: [0, -256]
+      Size: [128, 128]
+    - Name: /abwant
+      Offset: [-512, -384]
+      Size: [128, 128]
+    - Name: /ajplot
+      Offset: [0, 0]
+      Size: [128, 128]
+    - Name: /ajsketch
+      Offset: [-256, -384]
+      Size: [128, 128]
+    - Name: /bassdrop
+      Offset: [0, -256]
+      Size: [128, 128]
+    - Name: /berrynotwant
+      Offset: [-640, 0]
+      Size: [128, 128]
+    - Name: /berryparty
+      Offset: [-512, -128]
+      Size: [128, 128]
+    - Name: /blegh
+      Offset: [-512, 0]
+      Size: [128, 128]
+    - Name: /clickyclicky
+      Offset: [0, 0]
+      Size: [128, 128]
+    - Name: /datplot
+      Offset: [-768, -128]
+      Size: [128, 128]
+    - Name: /disatwinkle
+      Offset: [-768, -256]
+      Size: [128, 128]
+    - Name: /exquisite
+      Offset: [-128, 0]
+      Size: [128, 128]
+    - Name: /fancydance
+      Offset: [-128, 0]
+      Size: [128, 128]
+    - Name: /hotrod
+      Offset: [-512, -256]
+      Size: [128, 128]
+    - Name: /howaboutyou
+      Offset: [-640, -256]
+      Size: [128, 128]
+    - Name: /iscc
+      Offset: [-128, -384]
+      Size: [128, 128]
+    - Name: /lunawant
+      Offset: [0, -128]
+      Size: [128, 128]
+    - Name: /pillzhere
+      Offset: [-768, 0]
+      Size: [128, 128]
+    - Name: /plotdance
+      Offset: [0, 0]
+      Size: [128, 128]
+    - Name: /plotpirouette
+      Offset: [-384, 0]
+      Size: [128, 128]
+    - Name: /plotspin
+      Offset: [-256, -128]
+      Size: [128, 128]
+    - Name: /plottwirl
+      Offset: [-128, -256]
+      Size: [128, 128]
+    - Name: /plotwhirl
+      Offset: [-384, -384]
+      Size: [128, 128]
+    - Name: /rarityplot
+      Offset: [-384, -384]
+      Size: [128, 128]
+    - Name: /raritysnub
+      Offset: [-256, -256]
+      Size: [128, 128]
+    - Name: /tavihugs
+      Offset: [-640, -128]
+      Size: [128, 128]
+    - Name: /taviplot
+      Offset: [-384, 0]
+      Size: [128, 128]
+    - Name: /tavyblobs
+      Offset: [-384, -128]
+      Size: [128, 128]
+    - Name: /twiannoyed
+      Offset: [-256, 0]
+      Size: [128, 128]
+    - Name: /twinkle
+      Offset: [-384, -256]
+      Size: [128, 128]
+    - Name: /twinkledance
+      Offset: [-384, -256]
+      Size: [128, 128]
+    - Name: /twiplot
+      Offset: [-128, -256]
+      Size: [128, 128]
+    - Name: /twiscare
+      Offset: [-640, -384]
+      Size: [128, 128]
+    - Name: /vygrab
+      Offset: [0, -256]
+      Size: [128, 128]
+    - Name: /vyhug
+      Offset: [0, -384]
+      Size: [128, 128]
+    - Name: /vyplot
+      Offset: [-256, -128]
+      Size: [128, 128]
+    - Name: /whytwi
+      Offset: [-128, -128]
+      Size: [128, 128]
+    - Name: /whytwiwhy
+      Offset: [-128, -128]
+      Size: [128, 128]
     http://f.thumbs.redditmedia.com/60YFXodfTo1pL99G.png:
-        /a123:hover:
-            Positioning: [128, 128, 0, -256]
-        /clickyclicky:active:
-            Positioning: [128, 128, -128, -256]
-        /fancydance:hover:
-            Positioning: [128, 128, -128, 0]
-        /plotdance:hover:
-            Positioning: [128, 128, 0, 0]
-        /plotpirouette:hover:
-            Positioning: [128, 128, -384, 0]
-        /plotspin:hover:
-            Positioning: [128, 128, -256, -128]
-        /plottwirl:hover:
-            Positioning: [128, 128, -128, -256]
-        /plotwhirl:hover:
-            Positioning: [128, 128, -384, -384]
-        /rabwant:
-            Positioning: [128, 128, -512, -384]
-        /rajplot:
-            Positioning: [128, 128, 0, 0]
-        /rajsketch:
-            Positioning: [128, 128, -256, -384]
-        /rberrynotwant:
-            Positioning: [128, 128, -640, 0]
-        /rberryparty:
-            Positioning: [128, 128, -512, -128]
-        /rblegh:
-            Positioning: [128, 128, -512, 0]
-        /rdatplot:
-            Positioning: [128, 128, -768, -128]
-        /rdisatwinkle:
-            Positioning: [128, 128, -768, -256]
-        /rexquisite:
-            Positioning: [128, 128, -128, 0]
-        /rhotrod:
-            Positioning: [128, 128, -512, -256]
-        /rhowaboutyou:
-            Positioning: [128, 128, -640, -256]
-        /riscc:
-            Positioning: [128, 128, -128, -384]
-        /rlunawant:
-            Positioning: [128, 128, 0, -128]
-        /rpillzhere:
-            Positioning: [128, 128, -768, 0]
-        /rrarityplot:
-            Positioning: [128, 128, -384, -384]
-        /rraritysnub:
-            Positioning: [128, 128, -256, -256]
-        /rtavihugs:
-            Positioning: [128, 128, -640, -128]
-        /rtaviplot:
-            Positioning: [128, 128, -384, 0]
-        /rtavyblobs:
-            Positioning: [128, 128, -384, -128]
-        /rtwiannoyed:
-            Positioning: [128, 128, -256, 0]
-        /rtwinkle:
-            Positioning: [128, 128, -384, -256]
-        /rtwiplot:
-            Positioning: [128, 128, -128, -256]
-        /rtwiscare:
-            Positioning: [128, 128, -640, -384]
-        /rvygrab:
-            Positioning: [128, 128, 0, -256]
-        /rvyhug:
-            Positioning: [128, 128, 0, -384]
-        /rvyplot:
-            Positioning: [128, 128, -256, -128]
-        /rwhytwi:
-            Positioning: [128, 128, -128, -128]
-        /twinkledance:hover:
-            Positioning: [128, 128, -384, -256]
-        /whytwiwhy:hover:
-            Positioning: [128, 128, -128, -128]
+    - Name: /a123
+      Offset: [0, -256]
+      Size: [128, 128]
+      Suffix: :hover
+    - Name: /clickyclicky
+      Offset: [-128, -256]
+      Size: [128, 128]
+      Suffix: :active
+    - Name: /fancydance
+      Offset: [-128, 0]
+      Size: [128, 128]
+      Suffix: :hover
+    - Name: /plotdance
+      Offset: [0, 0]
+      Size: [128, 128]
+      Suffix: :hover
+    - Name: /plotpirouette
+      Offset: [-384, 0]
+      Size: [128, 128]
+      Suffix: :hover
+    - Name: /plotspin
+      Offset: [-256, -128]
+      Size: [128, 128]
+      Suffix: :hover
+    - Name: /plottwirl
+      Offset: [-128, -256]
+      Size: [128, 128]
+      Suffix: :hover
+    - Name: /plotwhirl
+      Offset: [-384, -384]
+      Size: [128, 128]
+      Suffix: :hover
+    - Name: /rabwant
+      Offset: [-512, -384]
+      Size: [128, 128]
+    - Name: /rajplot
+      Offset: [0, 0]
+      Size: [128, 128]
+    - Name: /rajsketch
+      Offset: [-256, -384]
+      Size: [128, 128]
+    - Name: /rberrynotwant
+      Offset: [-640, 0]
+      Size: [128, 128]
+    - Name: /rberryparty
+      Offset: [-512, -128]
+      Size: [128, 128]
+    - Name: /rblegh
+      Offset: [-512, 0]
+      Size: [128, 128]
+    - Name: /rdatplot
+      Offset: [-768, -128]
+      Size: [128, 128]
+    - Name: /rdisatwinkle
+      Offset: [-768, -256]
+      Size: [128, 128]
+    - Name: /rexquisite
+      Offset: [-128, 0]
+      Size: [128, 128]
+    - Name: /rhotrod
+      Offset: [-512, -256]
+      Size: [128, 128]
+    - Name: /rhowaboutyou
+      Offset: [-640, -256]
+      Size: [128, 128]
+    - Name: /riscc
+      Offset: [-128, -384]
+      Size: [128, 128]
+    - Name: /rlunawant
+      Offset: [0, -128]
+      Size: [128, 128]
+    - Name: /rpillzhere
+      Offset: [-768, 0]
+      Size: [128, 128]
+    - Name: /rrarityplot
+      Offset: [-384, -384]
+      Size: [128, 128]
+    - Name: /rraritysnub
+      Offset: [-256, -256]
+      Size: [128, 128]
+    - Name: /rtavihugs
+      Offset: [-640, -128]
+      Size: [128, 128]
+    - Name: /rtaviplot
+      Offset: [-384, 0]
+      Size: [128, 128]
+    - Name: /rtavyblobs
+      Offset: [-384, -128]
+      Size: [128, 128]
+    - Name: /rtwiannoyed
+      Offset: [-256, 0]
+      Size: [128, 128]
+    - Name: /rtwinkle
+      Offset: [-384, -256]
+      Size: [128, 128]
+    - Name: /rtwiplot
+      Offset: [-128, -256]
+      Size: [128, 128]
+    - Name: /rtwiscare
+      Offset: [-640, -384]
+      Size: [128, 128]
+    - Name: /rvygrab
+      Offset: [0, -256]
+      Size: [128, 128]
+    - Name: /rvyhug
+      Offset: [0, -384]
+      Size: [128, 128]
+    - Name: /rvyplot
+      Offset: [-256, -128]
+      Size: [128, 128]
+    - Name: /rwhytwi
+      Offset: [-128, -128]
+      Size: [128, 128]
+    - Name: /twinkledance
+      Offset: [-384, -256]
+      Size: [128, 128]
+      Suffix: :hover
+    - Name: /whytwiwhy
+      Offset: [-128, -128]
+      Size: [128, 128]
+      Suffix: :hover
+Meta: {Name: r/mylittlelivestream, Timestamp: 'Sat Aug 25 23:59:11 2012'}

@@ -1,14 +1,26 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
     http://b.thumbs.redditmedia.com/UJ0HDMB5OU82qJhC.png:
-        /ajsolly:
-            Positioning: [121, 149, -115, -2]
-        /pppick:
-            Positioning: [153, 148, -2, -154]
-        /twisnipe:
-            Positioning: [227, 150, -2, -304]
-        /twistpick:
-            Positioning: [111, 150, -2, -2]
+    - CSS: {overflow: hidden}
+      Name: /ajsolly
+      Offset: [-115, -2]
+      Size: [121, 149]
+    - CSS: {overflow: hidden}
+      Name: /pppick
+      Offset: [-2, -154]
+      Size: [153, 148]
+    - CSS: {overflow: hidden}
+      Name: /twisnipe
+      Offset: [-2, -304]
+      Size: [227, 150]
+    - CSS: {overflow: hidden}
+      Name: /twistpick
+      Offset: [-2, -2]
+      Size: [111, 150]
     http://d.thumbs.redditmedia.com/wLVE7fnDB3o0no9o.png:
-        /ajnope:
-            CSS: {margin-left: 3px, margin-right: 3px}
-            Positioning: [200, 200, 0, 0]
+    - CSS: {margin-left: 3px, margin-right: 3px}
+      Name: /ajnope
+      Offset: [0, 0]
+      Size: [200, 200]
+Meta: {Name: r/mlas1party, Timestamp: 'Sat Aug 25 23:59:07 2012'}

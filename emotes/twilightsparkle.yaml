@@ -1,187 +1,288 @@
-Spritesheets:
+Emotes:
+  Custom:
+  - CSS: {background: black !important, color: black !important}
+    Name: /spoiler
+  - CSS: {background: black !important, color: white !important}
+    Name: /spoiler
+    Suffix: :hover
+  Spritesheets:
     http://a.thumbs.redditmedia.com/gwJGuLarElzXFegx.png:
-        /rts00:
-            Positioning: [70, 70, 0, 0]
-        /rts01:
-            Positioning: [70, 70, 0, -70]
-        /rts02:
-            Positioning: [70, 70, 0, -140]
-        /rts03:
-            Positioning: [70, 70, 0, -210]
-        /rts04:
-            Positioning: [70, 70, 0, -280]
-        /rts05:
-            Positioning: [70, 70, 0, -350]
-        /rts06:
-            Positioning: [70, 70, 0, -420]
-        /rts07:
-            Positioning: [70, 70, 0, -490]
-        /rts10:
-            Positioning: [70, 70, -70, 0]
-        /rts11:
-            Positioning: [70, 70, -70, -70]
-        /rts12:
-            Positioning: [70, 70, -70, -140]
-        /rts13:
-            Positioning: [70, 70, -70, -210]
-        /rts14:
-            Positioning: [70, 70, -70, -280]
-        /rts15:
-            Positioning: [70, 70, -70, -350]
-        /rts16:
-            Positioning: [70, 70, -70, -420]
-        /rts20:
-            Positioning: [70, 70, -140, 0]
-        /rts21:
-            Positioning: [70, 70, -140, -70]
-        /rts22:
-            Positioning: [70, 70, -140, -140]
-        /rts23:
-            Positioning: [70, 70, -140, -210]
-        /rts24:
-            Positioning: [70, 70, -140, -280]
-        /rts25:
-            Positioning: [70, 70, -140, -350]
-        /rts26:
-            Positioning: [70, 70, -140, -420]
-        /rtsannoyed:
-            Positioning: [70, 70, -140, -70]
-        /rtsawkward:
-            Positioning: [70, 70, -70, -280]
-        /rtsawww:
-            Positioning: [70, 70, 0, -420]
-        /rtsbashful:
-            Positioning: [70, 70, -140, -420]
-        /rtsbroken:
-            Positioning: [70, 70, -70, -210]
-        /rtscrazysmile:
-            Positioning: [70, 70, -140, -210]
-        /rtscurious:
-            Positioning: [70, 70, -140, -350]
-        /rtsderp:
-            Positioning: [70, 70, -140, -140]
-        /rtsglare:
-            Positioning: [70, 70, -70, -70]
-        /rtsgrr:
-            Positioning: [70, 70, 0, -350]
-        /rtsgrrr:
-            Positioning: [70, 70, 0, -350]
-        /rtshappy:
-            Positioning: [70, 70, 0, 0]
-        /rtsilikethis:
-            Positioning: [70, 70, -70, -420]
-        /rtsiwin:
-            Positioning: [70, 70, 0, -70]
-        /rtsmyhorn:
-            Positioning: [70, 70, -70, -350]
-        /rtspillow:
-            Positioning: [70, 70, 0, -140]
-        /rtspromise:
-            Positioning: [70, 70, -70, -140]
-        /rtssad:
-            Positioning: [70, 70, 0, -280]
-        /rtsstare:
-            Positioning: [70, 70, 0, -490]
-        /rtssure:
-            Positioning: [70, 70, -140, 0]
-        /rtstardy:
-            Positioning: [70, 70, 0, -210]
-        /rtsunsure:
-            Positioning: [70, 70, -140, -280]
-        /rtsyeah:
-            Positioning: [70, 70, -70, 0]
-        /tspillowdance:hover:
-            Positioning: [70, 70, 0, -140]
+    - Name: /rts00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rts01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /rts02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /rts03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /rts04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /rts05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /rts06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /rts07
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /rts10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rts11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /rts12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /rts13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /rts14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /rts15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /rts16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /rts20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /rts21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /rts22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /rts23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /rts24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /rts25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /rts26
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /rtsannoyed
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /rtsawkward
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /rtsawww
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /rtsbashful
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /rtsbroken
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /rtscrazysmile
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /rtscurious
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /rtsderp
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /rtsglare
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /rtsgrr
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /rtsgrrr
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /rtshappy
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rtsilikethis
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /rtsiwin
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /rtsmyhorn
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /rtspillow
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /rtspromise
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /rtssad
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /rtsstare
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /rtssure
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /rtstardy
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /rtsunsure
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /rtsyeah
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /tspillowdance
+      Offset: [0, -140]
+      Size: [70, 70]
+      Suffix: :hover
     http://f.thumbs.redditmedia.com/gYj9Lfh9EMaMfOyY.png:
-        /ts00:
-            Positioning: [70, 70, 0, 0]
-        /ts01:
-            Positioning: [70, 70, 0, -70]
-        /ts02:
-            Positioning: [70, 70, 0, -140]
-        /ts03:
-            Positioning: [70, 70, 0, -210]
-        /ts04:
-            Positioning: [70, 70, 0, -280]
-        /ts05:
-            Positioning: [70, 70, 0, -350]
-        /ts06:
-            Positioning: [70, 70, 0, -420]
-        /ts07:
-            Positioning: [70, 70, 0, -490]
-        /ts10:
-            Positioning: [70, 70, -70, 0]
-        /ts11:
-            Positioning: [70, 70, -70, -70]
-        /ts12:
-            Positioning: [70, 70, -70, -140]
-        /ts13:
-            Positioning: [70, 70, -70, -210]
-        /ts14:
-            Positioning: [70, 70, -70, -280]
-        /ts15:
-            Positioning: [70, 70, -70, -350]
-        /ts16:
-            Positioning: [70, 70, -70, -420]
-        /ts20:
-            Positioning: [70, 70, -140, 0]
-        /ts21:
-            Positioning: [70, 70, -140, -70]
-        /ts22:
-            Positioning: [70, 70, -140, -140]
-        /ts23:
-            Positioning: [70, 70, -140, -210]
-        /ts24:
-            Positioning: [70, 70, -140, -280]
-        /ts25:
-            Positioning: [70, 70, -140, -350]
-        /ts26:
-            Positioning: [70, 70, -140, -420]
-        /tsannoyed:
-            Positioning: [70, 70, -140, -70]
-        /tsawkward:
-            Positioning: [70, 70, -70, -280]
-        /tsawww:
-            Positioning: [70, 70, 0, -420]
-        /tsbashful:
-            Positioning: [70, 70, -140, -420]
-        /tsbroken:
-            Positioning: [70, 70, -70, -210]
-        /tscrazysmile:
-            Positioning: [70, 70, -140, -210]
-        /tscurious:
-            Positioning: [70, 70, -140, -350]
-        /tsderp:
-            Positioning: [70, 70, -140, -140]
-        /tsglare:
-            Positioning: [70, 70, -70, -70]
-        /tsgrr:
-            Positioning: [70, 70, 0, -350]
-        /tsgrrr:
-            Positioning: [70, 70, 0, -350]
-        /tshappy:
-            Positioning: [70, 70, 0, 0]
-        /tsilikethis:
-            Positioning: [70, 70, -70, -420]
-        /tsiwin:
-            Positioning: [70, 70, 0, -70]
-        /tsmyhorn:
-            Positioning: [70, 70, -70, -350]
-        /tspillow:
-            Positioning: [70, 70, 0, -140]
-        /tspillowdance:
-            Positioning: [70, 70, 0, -140]
-        /tspromise:
-            Positioning: [70, 70, -70, -140]
-        /tssad:
-            Positioning: [70, 70, 0, -280]
-        /tsstare:
-            Positioning: [70, 70, 0, -490]
-        /tssure:
-            Positioning: [70, 70, -140, 0]
-        /tstardy:
-            Positioning: [70, 70, 0, -210]
-        /tsunsure:
-            Positioning: [70, 70, -140, -280]
-        /tsyeah:
-            Positioning: [70, 70, -70, 0]
+    - Name: /ts00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /ts01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /ts02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /ts03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /ts04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /ts05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /ts06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /ts07
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /ts10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /ts11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /ts12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /ts13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /ts14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /ts15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /ts16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /ts20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /ts21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /ts22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /ts23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /ts24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /ts25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /ts26
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /tsannoyed
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /tsawkward
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /tsawww
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /tsbashful
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /tsbroken
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /tscrazysmile
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /tscurious
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /tsderp
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /tsglare
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /tsgrr
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /tsgrrr
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /tshappy
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /tsilikethis
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /tsiwin
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /tsmyhorn
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /tspillow
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /tspillowdance
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /tspromise
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /tssad
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /tsstare
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /tssure
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /tstardy
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /tsunsure
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /tsyeah
+      Offset: [-70, 0]
+      Size: [70, 70]
+Meta: {Name: r/twilightsparkle, Timestamp: 'Sat Aug 25 23:59:15 2012'}

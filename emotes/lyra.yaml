@@ -1,24 +1,38 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
     http://b.thumbs.redditmedia.com/Z6TGWKnri0-PEXKg.png:
-        /heartstrings:
-            Positioning: [134, 249, -442, 0]
-        /hellolyra:
-            Positioning: [196, 150, -249, -2]
-        /liera:
-            Positioning: [171, 150, -2, -154]
-        /lyraawesome:
-            Positioning: [70, 100, -2, -2]
-        /lyradat:
-            Positioning: [120, 150, -434, -278]
-        /lyrafacehoof:
-            Positioning: [96, 100, -74, -2]
-        /lyrahappy:
-            Positioning: [164, 180, -2, -306]
-        /lyrahat:
-            Positioning: [94, 150, -299, -154]
-        /lyrahey:
-            Positioning: [221, 200, -168, -306]
-        /lyrashock:
-            Positioning: [122, 150, -175, -154]
-        /lyrasit:
-            Positioning: [75, 125, -172, -2]
+    - Name: /heartstrings
+      Offset: [-442, 0]
+      Size: [134, 249]
+    - Name: /hellolyra
+      Offset: [-249, -2]
+      Size: [196, 150]
+    - Name: /liera
+      Offset: [-2, -154]
+      Size: [171, 150]
+    - Name: /lyraawesome
+      Offset: [-2, -2]
+      Size: [70, 100]
+    - Name: /lyradat
+      Offset: [-434, -278]
+      Size: [120, 150]
+    - Name: /lyrafacehoof
+      Offset: [-74, -2]
+      Size: [96, 100]
+    - Name: /lyrahappy
+      Offset: [-2, -306]
+      Size: [164, 180]
+    - Name: /lyrahat
+      Offset: [-299, -154]
+      Size: [94, 150]
+    - Name: /lyrahey
+      Offset: [-168, -306]
+      Size: [221, 200]
+    - Name: /lyrashock
+      Offset: [-175, -154]
+      Size: [122, 150]
+    - Name: /lyrasit
+      Offset: [-172, -2]
+      Size: [75, 125]
+Meta: {Name: r/lyra, Timestamp: 'Sat Aug 25 23:59:07 2012'}

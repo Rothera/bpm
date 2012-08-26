@@ -1,81 +1,186 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
     http://b.thumbs.redditmedia.com/tAVdTAJ19CQIKOTy.png:
-        /aj00:
-            Positioning: [70, 70, 0, 0]
-        /aj01:
-            Positioning: [70, 70, 0, -70]
-        /aj02:
-            Positioning: [70, 70, 0, -140]
-        /aj03:
-            Positioning: [70, 70, 0, -210]
-        /aj04:
-            Positioning: [70, 70, 0, -280]
-        /aj05:
-            Positioning: [70, 70, 0, -350]
-        /aj06:
-            Positioning: [70, 70, 0, -420]
-        /aj07:
-            Positioning: [70, 70, 0, -490]
-        /aj10:
-            Positioning: [70, 70, -70, 0]
-        /aj11:
-            Positioning: [70, 70, -70, -70]
-        /aj12:
-            Positioning: [70, 70, -70, -140]
-        /aj13:
-            Positioning: [70, 70, -70, -210]
-        /aj14:
-            Positioning: [70, 70, -70, -280]
-        /aj15:
-            Positioning: [70, 70, -70, -350]
-        /aj16:
-            Positioning: [70, 70, -70, -420]
-        /aj17:
-            Positioning: [70, 70, -70, -490]
-        /aj20:
-            Positioning: [70, 70, -140, 0]
-        /aj21:
-            Positioning: [70, 70, -140, -70]
-        /aj22:
-            Positioning: [70, 70, -140, -140]
-        /aj23:
-            Positioning: [70, 70, -140, -210]
-        /aj24:
-            Positioning: [70, 70, -140, -280]
-        /aj25:
-            Positioning: [70, 70, -140, -350]
-        /aj26:
-            Positioning: [70, 70, -140, -420]
-        /aj27:
-            Positioning: [70, 70, -140, -490]
+    - Name: /aj00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /aj01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /aj02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /aj03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /aj04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /aj05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /aj06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /aj07
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /aj08
+      Offset: [0, -560]
+      Size: [70, 70]
+    - Name: /aj09
+      Offset: [0, -630]
+      Size: [70, 70]
+    - Name: /aj10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /aj11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /aj12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /aj13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /aj14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /aj15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /aj16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /aj17
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /aj18
+      Offset: [-70, -560]
+      Size: [70, 70]
+    - Name: /aj19
+      Offset: [-70, -630]
+      Size: [70, 70]
+    - Name: /aj20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /aj21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /aj22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /aj23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /aj24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /aj25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /aj26
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /aj27
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /aj28
+      Offset: [-140, -560]
+      Size: [70, 70]
+    - Name: /aj29
+      Offset: [-140, -630]
+      Size: [70, 70]
     http://c.thumbs.redditmedia.com/s4U1qWHQCinja2nJ.png:
-        /ja00:
-            Positioning: [70, 70, 0, 0]
-        /ja01:
-            Positioning: [70, 70, 0, -70]
-        /ja02:
-            Positioning: [70, 70, 0, -140]
-        /ja03:
-            Positioning: [70, 70, 0, -210]
-        /ja04:
-            Positioning: [70, 70, 0, -280]
-        /ja10:
-            Positioning: [70, 70, -70, 0]
-        /ja11:
-            Positioning: [70, 70, -70, -70]
-        /ja12:
-            Positioning: [70, 70, -70, -140]
-        /ja13:
-            Positioning: [70, 70, -70, -210]
-        /ja14:
-            Positioning: [70, 70, -70, -280]
-        /ja20:
-            Positioning: [70, 70, -140, 0]
-        /ja21:
-            Positioning: [70, 70, -140, -70]
-        /ja22:
-            Positioning: [70, 70, -140, -140]
-        /ja23:
-            Positioning: [70, 70, -140, -210]
-        /ja24:
-            Positioning: [70, 70, -140, -280]
+    - Name: /ja00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /ja01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /ja02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /ja03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /ja04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /ja05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /ja06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /ja07
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /ja08
+      Offset: [0, -560]
+      Size: [70, 70]
+    - Name: /ja09
+      Offset: [0, -630]
+      Size: [70, 70]
+    - Name: /ja10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /ja11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /ja12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /ja13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /ja14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /ja15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /ja16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /ja17
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /ja18
+      Offset: [-70, -560]
+      Size: [70, 70]
+    - Name: /ja19
+      Offset: [-70, -630]
+      Size: [70, 70]
+    - Name: /ja20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /ja21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /ja22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /ja23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /ja24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /ja25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /ja26
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /ja27
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /ja28
+      Offset: [-140, -560]
+      Size: [70, 70]
+    - Name: /ja29
+      Offset: [-140, -630]
+      Size: [70, 70]
+Meta: {Name: r/applejack, Timestamp: 'Sat Aug 25 23:59:05 2012'}

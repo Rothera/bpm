@@ -1,99 +1,400 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
+    http://b.thumbs.redditmedia.com/0RYrFbSuc7Cy0k51.png:
+    - Name: /wat
+      Offset: [0, 0]
+      Size: [200, 200]
     http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png:
-        /dash00:
-            Positioning: [70, 70, 0, 0]
-        /dash01:
-            Positioning: [70, 70, -70, 0]
-        /dash02:
-            Positioning: [70, 70, -140, 0]
-        /dash03:
-            Positioning: [70, 70, 0, -210]
-        /dash04:
-            Positioning: [70, 70, 0, -280]
-        /dash05:
-            Positioning: [70, 70, 0, -350]
-        /dash06:
-            Positioning: [70, 70, 0, -420]
-        /dash07:
-            Positioning: [70, 70, 0, -490]
-        /dash10:
-            Positioning: [70, 70, 0, -70]
-        /dash11:
-            Positioning: [70, 70, -70, -70]
-        /dash12:
-            Positioning: [70, 70, -140, -70]
-        /dash13:
-            Positioning: [70, 70, -70, -210]
-        /dash14:
-            Positioning: [70, 70, -70, -280]
-        /dash15:
-            Positioning: [70, 70, -70, -350]
-        /dash16:
-            Positioning: [70, 70, -70, -420]
-        /dash17:
-            Positioning: [70, 70, -70, -490]
-        /dash20:
-            Positioning: [70, 70, 0, -140]
-        /dash21:
-            Positioning: [70, 70, -70, -140]
-        /dash22:
-            Positioning: [70, 70, -140, -140]
-        /dash23:
-            Positioning: [70, 70, -140, -210]
-        /dash24:
-            Positioning: [70, 70, -140, -280]
-        /dash25:
-            Positioning: [70, 70, -140, -350]
-        /dash26:
-            Positioning: [70, 70, -140, -420]
-        /dash27:
-            Positioning: [70, 70, -140, -490]
+    - Name: /badassdash
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /bounce
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /cooldash
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /coolstorybro
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /dash00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /dash01
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /dash02
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /dash03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /dash04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /dash05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /dash06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /dash07
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /dash10
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /dash11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /dash12
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /dash13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /dash14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /dash15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /dash16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /dash17
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /dash20
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /dash21
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /dash22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /dash23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /dash24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /dash25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /dash26
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /dash27
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /dashangry
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /dashbadass
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /dashbedmane
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /dashbook
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /dashchallenge
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /dashdrool
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /dashhappy
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /dashjoy
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /dashlovesyou
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /dashmeh
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /dashnews
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /dashomg
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /dashponder
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /dashshocked
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /dashsmile
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /dashsurprise
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /dashthinking
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /dashtied
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /dashtoy
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /dashvexed
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /dashwat
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /dashwhat
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /dashwut
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /dealwithitdash
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /fillydash
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /fillyjedi
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /jedifilly
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /meh
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /naptime
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /notfunny
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /omgomgomg
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /ovenmitt
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /reading
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /scootabrag
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /scootacute
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /shadowdash
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /smilingdash
+      Offset: [-140, -70]
+      Size: [70, 70]
     http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png:
-        /rrd00:
-            Positioning: [70, 70, 0, 0]
-        /rrd01:
-            Positioning: [70, 70, -70, 0]
-        /rrd02:
-            Positioning: [70, 70, -140, 0]
-        /rrd03:
-            Positioning: [70, 70, 0, -210]
-        /rrd04:
-            Positioning: [70, 70, 0, -280]
-        /rrd05:
-            Positioning: [70, 70, 0, -350]
-        /rrd06:
-            Positioning: [70, 70, 0, -420]
-        /rrd07:
-            Positioning: [70, 70, 0, -490]
-        /rrd10:
-            Positioning: [70, 70, 0, -70]
-        /rrd11:
-            Positioning: [70, 70, -70, -70]
-        /rrd12:
-            Positioning: [70, 70, -140, -70]
-        /rrd13:
-            Positioning: [70, 70, -70, -210]
-        /rrd14:
-            Positioning: [70, 70, -70, -280]
-        /rrd15:
-            Positioning: [70, 70, -70, -350]
-        /rrd16:
-            Positioning: [70, 70, -70, -420]
-        /rrd17:
-            Positioning: [70, 70, -70, -490]
-        /rrd20:
-            Positioning: [70, 70, 0, -140]
-        /rrd21:
-            Positioning: [70, 70, -70, -140]
-        /rrd22:
-            Positioning: [70, 70, -140, -140]
-        /rrd23:
-            Positioning: [70, 70, -140, -210]
-        /rrd24:
-            Positioning: [70, 70, -140, -280]
-        /rrd25:
-            Positioning: [70, 70, -140, -350]
-        /rrd26:
-            Positioning: [70, 70, -140, -420]
-        /rrd27:
-            Positioning: [70, 70, -140, -490]
+    - Name: /dashashbadass
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /dashashbook
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /dashashhappy
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /dashashjoy
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /dashashlovesyou
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /dashashmeh
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /dashashomg
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /dashashponder
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /dashashsmile
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /dashashsurprise
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /dashashthinking
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /dashashwat
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /dashashwhat
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /dashashwut
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /dashealwithitdash
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /rbadassdash
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /rbounce
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /rcooldash
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /rcoolstorybro
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /rfillydash
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /rfillyjedi
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rjedifilly
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rmeh
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /rnaptime
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /rnotfunny
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /romgomgomg
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /rovenmitt
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rrd00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rrd01
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rrd02
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /rrd03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /rrd04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /rrd05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /rrd06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /rrd07
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /rrd10
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /rrd11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /rrd12
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /rrd13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /rrd14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /rrd15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /rrd16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /rrd17
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /rrd20
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /rrd21
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /rrd22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /rrd23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /rrd24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /rrd25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /rrd26
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /rrd27
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /rrdangry
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /rrdbedmane
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /rrdchallenge
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /rrddrool
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /rrdnews
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /rrdshocked
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /rrdtied
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /rrdtoy
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /rrdvexed
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /rreading
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /rscootabrag
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rscootacute
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rshadowdash
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /rsmilingdash
+      Offset: [-140, -70]
+      Size: [70, 70]
+Meta: {Name: r/dashiemotes, Timestamp: 'Sat Aug 25 23:59:05 2012'}

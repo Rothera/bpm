@@ -1,75 +1,69 @@
-Spritesheets:
-    http://a.thumbs.redditmedia.com/OvO_yhztZ6CvsE50.png:
-        /ajdance:
-            Positioning: [70, 70, 0, -210]
-    http://a.thumbs.redditmedia.com/gA2BL43HuVKI18sf.png:
-        /ajdance:hover:
-            Positioning: [70, 70, 0, -210]
-    http://b.thumbs.redditmedia.com/zSW30mZ_O7OOnbvg.png:
-        /abdance:hover:
-            Positioning: [70, 70, -70, -280]
-        /lunadance:hover:
-            Positioning: [70, 70, -70, -140]
-        /raritydance:hover:
-            Positioning: [70, 70, 0, -210]
-    http://b.thumbs.redditmedia.com/Mwl_HkyArl58CUEI.png:
-        /dashdance:
-            Positioning: [50, 50, -150, -100]
-        /pinkiedance:
-            Positioning: [50, 50, 0, -150]
-        /sweetiedance:
-            Positioning: [50, 50, -100, -250]
-    http://c.thumbs.redditmedia.com/9XjPGXzErCPTv5Cb.png:
-        /scootadance:hover:
-            Positioning: [70, 70, 0, -560]
-    http://b.thumbs.redditmedia.com/jbwr35HVziRudQhg.png:
-        /abdance:
-            Positioning: [70, 70, -70, -280]
-        /lunadance:
-            Positioning: [70, 70, -70, -140]
-        /raritydance:
-            Positioning: [70, 70, 0, -210]
+Emotes:
+  Custom:
+  - CSS: {display: inline-block, padding-right: 100%}
+    Name: /sp
+  - CSS: {background: black !important, color: black !important}
+    Name: /spoiler
+  - CSS: {background: black !important, color: white !important}
+    Name: /spoiler
+    Suffix: :hover
+  Spritesheets:
+    http://c.thumbs.redditmedia.com/5wA7HWAl2WD-UzA8.png:
+    - Name: /rsmooze
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /smooze
+      Offset: [0, 0]
+      Size: [70, 70]
     http://d.thumbs.redditmedia.com/ybVSLGRBZeyJ5xO9.png:
-        /amazingmagic:
-            Positioning: [70, 70, 0, 0]
-        /dishappy:
-            Positioning: [70, 70, -140, 0]
-        /fillyrarity:
-            Positioning: [70, 70, 0, -70]
-        /karmasalute:
-            Positioning: [70, 70, -70, -70]
-        /karmastare:
-            Positioning: [70, 70, -70, 0]
-        /ohnoes:
-            Positioning: [70, 70, 0, -140]
-        /trixiedance:
-            Positioning: [70, 70, 0, 0]
-        /twidurr:
-            Positioning: [70, 70, -140, -70]
-    http://e.thumbs.redditmedia.com/i4EU0FKgjV5J5Uev.png:
-        /scootadance:
-            Positioning: [70, 70, 0, -560]
-    http://e.thumbs.redditmedia.com/l4BXPpSKOD_PvK6j.png:
-        /dashdance:hover:
-            Positioning: [50, 50, -150, -100]
-        /pinkiedance:hover:
-            Positioning: [50, 50, 0, -150]
-        /sweetiedance:hover:
-            Positioning: [50, 50, -100, -250]
+    - Name: /amazingmagic
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /dishappy
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /fillyrarity
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /karmasalute
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /karmastare
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /ohnoes
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /trixiedance
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /twidurr
+      Offset: [-140, -70]
+      Size: [70, 70]
     http://f.thumbs.redditmedia.com/i-tlfxbcwqZ2pnDY.png:
-        /ramazingmagic:
-            Positioning: [70, 70, 0, 0]
-        /rdishappy:
-            Positioning: [70, 70, -140, 0]
-        /rfillyrarity:
-            Positioning: [70, 70, 0, -70]
-        /rkarmasalute:
-            Positioning: [70, 70, -70, -70]
-        /rkarmastare:
-            Positioning: [70, 70, -70, 0]
-        /rohnoes:
-            Positioning: [70, 70, 0, -140]
-        /rtwidurr:
-            Positioning: [70, 70, -140, -70]
-        /trixiedance:hover:
-            Positioning: [70, 70, 0, 0]
+    - Name: /ramazingmagic
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rdishappy
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /rfillyrarity
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /rkarmasalute
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /rkarmastare
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rohnoes
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /rtwidurr
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /trixiedance
+      Offset: [0, 0]
+      Size: [70, 70]
+      Suffix: :hover
+Meta: {Name: r/mlplounge, Timestamp: 'Sat Aug 25 23:59:08 2012'}

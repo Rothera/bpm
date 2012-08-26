@@ -1,41 +1,63 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
     http://b.thumbs.redditmedia.com/hifKTOrX_WwMoKeO.png:
-        /bp00:
-            Positioning: [70, 70, 0, 0]
-        /bp01:
-            Positioning: [70, 70, 0, -70]
-        /bp02:
-            Positioning: [70, 70, 0, -140]
-        /bp10:
-            Positioning: [70, 70, -70, 0]
-        /bp11:
-            Positioning: [70, 70, -70, -70]
-        /bp12:
-            Positioning: [70, 70, -70, -140]
-        /bp20:
-            Positioning: [70, 70, -140, 0]
-        /bp21:
-            Positioning: [70, 70, -140, -70]
-        /bp22:
-            Positioning: [70, 70, -140, -140]
-        /bpdrunk:
-            Positioning: [70, 70, -140, 0]
-        /bpgross:
-            Positioning: [70, 70, -140, -70]
-        /bphappy:
-            Positioning: [70, 70, -70, -140]
-        /bphungover:
-            Positioning: [70, 70, -70, -70]
-        /bpmotherofgod:
-            Positioning: [70, 70, 0, -70]
-        /bpshrug:
-            Positioning: [70, 70, -140, -140]
-        /bptear:
-            Positioning: [70, 70, 0, -140]
-        /bpwet:
-            Positioning: [70, 70, -70, 0]
-        /bpwhy:
-            Positioning: [70, 70, 0, 0]
+    - Name: /bp00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /bp01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /bp02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /bp10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /bp11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /bp12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /bp20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /bp21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /bp22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /bpdrunk
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /bpgross
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /bphappy
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /bphungover
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /bpmotherofgod
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /bpshrug
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /bptear
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /bpwet
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /bpwhy
+      Offset: [0, 0]
+      Size: [70, 70]
     http://c.thumbs.redditmedia.com/PMdgnGKRiU0jZu2n.png:
-        /udiditchamp:
-            Positioning: [514, 514, 0, 0]
+    - Name: /udiditchamp
+      Offset: [0, 0]
+      Size: [514, 514]
+Meta: {Name: r/mylittlealcoholic, Timestamp: 'Sat Aug 25 23:59:08 2012'}

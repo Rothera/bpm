@@ -1,52 +1,76 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
     http://a.thumbs.redditmedia.com/3DMawCWtihrXBe1N.png:
-        /cheeriwat:
-            Positioning: [266, 312, -266, -92]
-        /eeewat:
-            Positioning: [266, 389, 0, -24]
+    - Name: /cheeriwat
+      Offset: [-266, -92]
+      Size: [266, 312]
+    - Name: /eeewat
+      Offset: [0, -24]
+      Size: [266, 389]
     http://a.thumbs.redditmedia.com/rGA4LAPcCkYCIsVB.png:
-        /damoncorn:
-            CSS: {margin-left: 3px, margin-right: 3px}
-            Positioning: [250, 315, 0, 0]
+    - CSS: {margin-left: 3px, margin-right: 3px}
+      Name: /damoncorn
+      Offset: [0, 0]
+      Size: [250, 315]
     http://d.thumbs.redditmedia.com/vORpieYzfTya9Bqu.png:
-        /rdamoneyes:
-            Positioning: [168, 250, -2, -2]
-        /rdamonflip:
-            Positioning: [253, 200, -172, -2]
-        /rdamonfun:
-            Positioning: [250, 171, -427, -2]
-        /rdamonnannersspiders:
-            Positioning: [295, 200, -679, -2]
-        /rdamonplot:
-            Positioning: [261, 200, -2, -254]
-        /rdamonsalute:
-            Positioning: [283, 200, -265, -254]
-        /rdamonstop:
-            Positioning: [200, 190, -550, -254]
-        /rdamonwithit:
-            Positioning: [149, 200, -752, -254]
+    - Name: /rdamoneyes
+      Offset: [-2, -2]
+      Size: [168, 250]
+    - Name: /rdamonflip
+      Offset: [-172, -2]
+      Size: [253, 200]
+    - Name: /rdamonfun
+      Offset: [-427, -2]
+      Size: [250, 171]
+    - Name: /rdamonnannersspiders
+      Offset: [-679, -2]
+      Size: [295, 200]
+    - Name: /rdamonplot
+      Offset: [-2, -254]
+      Size: [261, 200]
+    - Name: /rdamonsalute
+      Offset: [-265, -254]
+      Size: [283, 200]
+    - Name: /rdamonstop
+      Offset: [-550, -254]
+      Size: [200, 190]
+    - Name: /rdamonwithit
+      Offset: [-752, -254]
+      Size: [149, 200]
     http://e.thumbs.redditmedia.com/t_2V13gM2jrZzu3R.png:
-        /damonwhat:
-            CSS: {margin-left: 3px, margin-right: 3px}
-            Positioning: [450, 320, 0, 0]
+    - CSS: {margin-left: 3px, margin-right: 3px}
+      Name: /damonwhat
+      Offset: [0, 0]
+      Size: [450, 320]
     http://f.thumbs.redditmedia.com/K05mIvLOPSyB0oJ_.png:
-        /damonshrug:
-            CSS: {margin-left: 3px, margin-right: 3px}
-            Positioning: [200, 207, 0, 0]
+    - CSS: {margin-left: 3px, margin-right: 3px}
+      Name: /damonshrug
+      Offset: [0, 0]
+      Size: [200, 207]
     http://f.thumbs.redditmedia.com/T1WNIh53sRcVlJhY.png:
-        /damoneyes:
-            Positioning: [168, 250, -2, -2]
-        /damonflip:
-            Positioning: [253, 200, -172, -2]
-        /damonfun:
-            Positioning: [250, 171, -427, -2]
-        /damonnannersspiders:
-            Positioning: [295, 200, -679, -2]
-        /damonplot:
-            Positioning: [261, 200, -2, -254]
-        /damonsalute:
-            Positioning: [172, 200, -265, -254]
-        /damonstop:
-            Positioning: [200, 190, -439, -254]
-        /damonwithit:
-            Positioning: [149, 200, -641, -254]
+    - Name: /damoneyes
+      Offset: [-2, -2]
+      Size: [168, 250]
+    - Name: /damonflip
+      Offset: [-172, -2]
+      Size: [253, 200]
+    - Name: /damonfun
+      Offset: [-427, -2]
+      Size: [250, 171]
+    - Name: /damonnannersspiders
+      Offset: [-679, -2]
+      Size: [295, 200]
+    - Name: /damonplot
+      Offset: [-2, -254]
+      Size: [261, 200]
+    - Name: /damonsalute
+      Offset: [-265, -254]
+      Size: [172, 200]
+    - Name: /damonstop
+      Offset: [-439, -254]
+      Size: [200, 190]
+    - Name: /damonwithit
+      Offset: [-641, -254]
+      Size: [149, 200]
+Meta: {Name: r/mylittledamon, Timestamp: 'Sat Aug 25 23:59:10 2012'}

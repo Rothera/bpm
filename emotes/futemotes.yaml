@@ -1,185 +1,231 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
     http://b.thumbs.redditmedia.com/8TBQKf8dRuoPbc5I.png:
-        /andy:
-            Positioning: [396, 403, 0, 0]
-            NSFW: true
-        /books:
-            Positioning: [70, 71, -552, 0]
-            NSFW: true
-        /kitty:
-            Positioning: [306, 300, -430, -91]
-            NSFW: true
+    - Name: /andy
+      Offset: [0, 0]
+      Size: [396, 403]
+    - Name: /books
+      Offset: [-552, 0]
+      Size: [70, 71]
+    - Name: /kitty
+      Offset: [-430, -91]
+      Size: [306, 300]
     http://b.thumbs.redditmedia.com/QpSUTDbkEevI5gEs.png:
-        /selfsuck:
-            Positioning: [580, 492, 0, 0]
-            NSFW: true
+    - Name: /selfsuck
+      Offset: [0, 0]
+      Size: [580, 492]
     http://c.thumbs.redditmedia.com/11nIIDVYoDUtX22h.png:
-        /rdflanksup:
-            Positioning: [250, 411, -472, -250]
-        /rdflaunt:
-            Positioning: [221, 250, -241, -250]
-        /rdhug:
-            Positioning: [240, 251, -232, -500]
-        /rdpuff:
-            Positioning: [251, 374, -722, -250]
-        /rdsatisfied:
-            Positioning: [241, 250, 0, -250]
-        /rdsocks:
-            Positioning: [289, 250, 0, 0]
-        /rdstretch:
-            Positioning: [270, 250, -560, 0]
-        /rdstyle:
-            Positioning: [271, 250, -289, 0]
-        /rdunsure:
-            Positioning: [232, 250, 0, -500]
-        /rdworry:
-            Positioning: [150, 150, -830, 0]
+    - Name: /rdflanksup
+      Offset: [-472, -250]
+      Size: [250, 411]
+    - Name: /rdflaunt
+      Offset: [-241, -250]
+      Size: [221, 250]
+    - Name: /rdhug
+      Offset: [-232, -500]
+      Size: [240, 251]
+    - Name: /rdpuff
+      Offset: [-722, -250]
+      Size: [251, 374]
+    - Name: /rdsatisfied
+      Offset: [0, -250]
+      Size: [241, 250]
+    - Name: /rdsocks
+      Offset: [0, 0]
+      Size: [289, 250]
+    - Name: /rdstretch
+      Offset: [-560, 0]
+      Size: [270, 250]
+    - Name: /rdstyle
+      Offset: [-289, 0]
+      Size: [271, 250]
+    - Name: /rdunsure
+      Offset: [0, -500]
+      Size: [232, 250]
+    - Name: /rdworry
+      Offset: [-830, 0]
+      Size: [150, 150]
     http://c.thumbs.redditmedia.com/g94qfMSFxa5CMVR8.png:
-        /horsecock:
-            Positioning: [100, 65, 0, -40]
-            NSFW: true
-        /horsedick:
-            Positioning: [100, 40, 0, 0]
-            NSFW: true
+    - Name: /horsecock
+      Offset: [0, -40]
+      Size: [100, 65]
+    - Name: /horsedick
+      Offset: [0, 0]
+      Size: [100, 40]
     http://c.thumbs.redditmedia.com/lfTijbZZCPlbHbYh.png:
-        /bigenough:
-            Positioning: [1128, 1250, 0, 0]
-            NSFW: true
+    - Name: /bigenough
+      Offset: [0, 0]
+      Size: [1128, 1250]
     http://d.thumbs.redditmedia.com/KIGMTbnxFls9StT-.png:
-        /shy00:
-            Positioning: [152, 200, 0, 0]
-        /shy01:
-            Positioning: [200, 200, -152, 0]
-        /shy02:
-            Positioning: [200, 200, -352, 0]
-        /shy03:
-            Positioning: [171, 200, -552, 0]
-        /shy04:
-            Positioning: [223, 200, -723, 0]
-        /shy05:
-            Positioning: [204, 200, -946, 0]
-        /shy06:
-            Positioning: [163, 200, 0, -200]
-        /shy07:
-            Positioning: [203, 200, -166, -200]
-        /shy08:
-            Positioning: [163, 200, -373, -200]
-        /shy09:
-            Positioning: [221, 200, -536, -200]
-        /shy10:
-            Positioning: [179, 200, -757, -200]
-        /shy11:
-            Positioning: [170, 200, -936, -200]
+    - Name: /shy00
+      Offset: [0, 0]
+      Size: [152, 200]
+    - Name: /shy01
+      Offset: [-152, 0]
+      Size: [200, 200]
+    - Name: /shy02
+      Offset: [-352, 0]
+      Size: [200, 200]
+    - Name: /shy03
+      Offset: [-552, 0]
+      Size: [171, 200]
+    - Name: /shy04
+      Offset: [-723, 0]
+      Size: [223, 200]
+    - Name: /shy05
+      Offset: [-946, 0]
+      Size: [204, 200]
+    - Name: /shy06
+      Offset: [0, -200]
+      Size: [163, 200]
+    - Name: /shy07
+      Offset: [-166, -200]
+      Size: [203, 200]
+    - Name: /shy08
+      Offset: [-373, -200]
+      Size: [163, 200]
+    - Name: /shy09
+      Offset: [-536, -200]
+      Size: [221, 200]
+    - Name: /shy10
+      Offset: [-757, -200]
+      Size: [179, 200]
+    - Name: /shy11
+      Offset: [-936, -200]
+      Size: [170, 200]
     http://e.thumbs.redditmedia.com/2fFNBfJc4OHjP1EL.png:
-        /rdblush:
-            Positioning: [200, 250, 0, 0]
-        /rdexcite:
-            Positioning: [238, 250, -412, 0]
-        /rdready:
-            Positioning: [250, 250, -558, -250]
-        /rdroll:
-            Positioning: [212, 250, -200, 0]
-        /rdsit:
-            Positioning: [217, 340, -808, -250]
-        /rdsnuff:
-            Positioning: [283, 250, 0, -250]
-        /rdspy:
-            Positioning: [288, 151, 0, -500]
-        /rdtrumpet:
-            Positioning: [250, 250, -650, 0]
-        /rdwin:
-            Positioning: [275, 250, -283, -250]
+    - Name: /rdblush
+      Offset: [0, 0]
+      Size: [200, 250]
+    - Name: /rdexcite
+      Offset: [-412, 0]
+      Size: [238, 250]
+    - Name: /rdready
+      Offset: [-558, -250]
+      Size: [250, 250]
+    - Name: /rdroll
+      Offset: [-200, 0]
+      Size: [212, 250]
+    - Name: /rdsit
+      Offset: [-808, -250]
+      Size: [217, 340]
+    - Name: /rdsnuff
+      Offset: [0, -250]
+      Size: [283, 250]
+    - Name: /rdspy
+      Offset: [0, -500]
+      Size: [288, 151]
+    - Name: /rdtrumpet
+      Offset: [-650, 0]
+      Size: [250, 250]
+    - Name: /rdwin
+      Offset: [-283, -250]
+      Size: [275, 250]
     http://e.thumbs.redditmedia.com/QR5fhnWS_1jUKQfF.png:
-        /shy12:
-            Positioning: [219, 200, 0, 0]
-        /shy13:
-            Positioning: [242, 200, -219, 0]
-        /shy14:
-            Positioning: [200, 200, -461, 0]
-        /shy15:
-            Positioning: [119, 200, -661, 0]
-        /shy16:
-            Positioning: [184, 200, -780, 0]
-        /shy17:
-            Positioning: [180, 200, -964, 0]
-        /shy18:
-            Positioning: [196, 200, 0, -200]
-        /shy19:
-            Positioning: [212, 200, -196, -200]
-        /shy20:
-            Positioning: [209, 200, -408, -200]
-        /shy21:
-            Positioning: [312, 200, -617, -200]
-        /shy22:
-            Positioning: [182, 200, -929, -200]
+    - Name: /shy12
+      Offset: [0, 0]
+      Size: [219, 200]
+    - Name: /shy13
+      Offset: [-219, 0]
+      Size: [242, 200]
+    - Name: /shy14
+      Offset: [-461, 0]
+      Size: [200, 200]
+    - Name: /shy15
+      Offset: [-661, 0]
+      Size: [119, 200]
+    - Name: /shy16
+      Offset: [-780, 0]
+      Size: [184, 200]
+    - Name: /shy17
+      Offset: [-964, 0]
+      Size: [180, 200]
+    - Name: /shy18
+      Offset: [0, -200]
+      Size: [196, 200]
+    - Name: /shy19
+      Offset: [-196, -200]
+      Size: [212, 200]
+    - Name: /shy20
+      Offset: [-408, -200]
+      Size: [209, 200]
+    - Name: /shy21
+      Offset: [-617, -200]
+      Size: [312, 200]
+    - Name: /shy22
+      Offset: [-929, -200]
+      Size: [182, 200]
     http://e.thumbs.redditmedia.com/SNPxQ14WGB7Hi-Ed.png:
-        /fut1:
-            Positioning: [280, 400, 0, 0]
-            NSFW: true
-        /fut10:
-            Positioning: [170, 200, 0, -400]
-            NSFW: true
-        /fut11:
-            Positioning: [178, 200, 0, -600]
-            NSFW: true
-        /fut12:
-            Positioning: [242, 200, 0, -800]
-            NSFW: true
-        /fut2:
-            Positioning: [353, 225, -280, 0]
-            NSFW: true
-        /fut3:
-            Positioning: [244, 300, -280, -225]
-            NSFW: true
-        /fut4:
-            Positioning: [303, 400, -524, -225]
-            NSFW: true
-        /fut5:
-            Positioning: [282, 300, -827, -225]
-            NSFW: true
-        /fut6:
-            Positioning: [249, 200, -633, 0]
-            NSFW: true
-        /fut7:
-            Positioning: [304, 250, -524, -625]
-            NSFW: true
-        /fut8:
-            Positioning: [242, 250, -280, -525]
-            NSFW: true
-        /fut9:
-            Positioning: [280, 250, -828, -625]
-            NSFW: true
+    - Name: /fut1
+      Offset: [0, 0]
+      Size: [280, 400]
+    - Name: /fut10
+      Offset: [0, -400]
+      Size: [170, 200]
+    - Name: /fut11
+      Offset: [0, -600]
+      Size: [178, 200]
+    - Name: /fut12
+      Offset: [0, -800]
+      Size: [242, 200]
+    - Name: /fut2
+      Offset: [-280, 0]
+      Size: [353, 225]
+    - Name: /fut3
+      Offset: [-280, -225]
+      Size: [244, 300]
+    - Name: /fut4
+      Offset: [-524, -225]
+      Size: [303, 400]
+    - Name: /fut5
+      Offset: [-827, -225]
+      Size: [282, 300]
+    - Name: /fut6
+      Offset: [-633, 0]
+      Size: [249, 200]
+    - Name: /fut7
+      Offset: [-524, -625]
+      Size: [304, 250]
+    - Name: /fut8
+      Offset: [-280, -525]
+      Size: [242, 250]
+    - Name: /fut9
+      Offset: [-828, -625]
+      Size: [280, 250]
     http://f.thumbs.redditmedia.com/33PF7vnvWcc76Ofw.png:
-        /mongusta:
-            Positioning: [116, 150, 0, 0]
+    - Name: /mongusta
+      Offset: [0, 0]
+      Size: [116, 150]
     http://f.thumbs.redditmedia.com/KI35_MyKz9dMe57e.png:
-        /fut13:
-            Positioning: [253, 300, 0, 0]
-            NSFW: true
-        /fut14:
-            Positioning: [400, 345, -253, 0]
-            NSFW: true
-        /fut15:
-            Positioning: [350, 352, -253, -345]
-            NSFW: true
-        /futacute:
-            Positioning: [253, 300, 0, 0]
-            NSFW: true
-        /futaplot:
-            Positioning: [400, 345, -253, 0]
-            NSFW: true
-        /futapomf:
-            Positioning: [350, 352, -253, -345]
-            NSFW: true
+    - Name: /fut13
+      Offset: [0, 0]
+      Size: [253, 300]
+    - Name: /fut14
+      Offset: [-253, 0]
+      Size: [400, 345]
+    - Name: /fut15
+      Offset: [-253, -345]
+      Size: [350, 352]
+    - Name: /futacute
+      Offset: [0, 0]
+      Size: [253, 300]
+    - Name: /futaplot
+      Offset: [-253, 0]
+      Size: [400, 345]
+    - Name: /futapomf
+      Offset: [-253, -345]
+      Size: [350, 352]
     http://f.thumbs.redditmedia.com/Y0j2R_fTNEgWIVM5.png:
-        /suckit:
-            Positioning: [158, 239, 0, 0]
-            NSFW: true
+    - Name: /suckit
+      Offset: [0, 0]
+      Size: [158, 239]
     http://f.thumbs.redditmedia.com/c5K0xsvBeSKZ3Yow.png:
-        /hugehorsedick:
-            Positioning: [1588, 2338, 0, 0]
-            NSFW: true
+    - Name: /hugehorsedick
+      Offset: [0, 0]
+      Size: [1588, 2338]
     http://f.thumbs.redditmedia.com/sRy5VouH1A3OjeVS.png:
-        /twna:
-            Positioning: [479, 320, 0, 0]
-            NSFW: true
+    - Name: /twna
+      Offset: [0, 0]
+      Size: [479, 320]
+Meta: {Name: r/futemotes, Timestamp: 'Sat Aug 25 23:59:06 2012'}

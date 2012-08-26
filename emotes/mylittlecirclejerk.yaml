@@ -1,10 +1,29 @@
-Spritesheets:
+Emotes:
+  Custom:
+  - CSS: {content: 'url(http://c.thumbs.redditmedia.com/kBukvi8CP5h3R4a8.png)'}
+    Name: /dealwithit
+    Suffix: :after
+  - CSS: {display: inline-block, padding-right: 100%}
+    Name: /sp
+  Spritesheets:
     http://c.thumbs.redditmedia.com/fdLDz99XTozt36Xb.png:
-        /thisisanemote:
-            Positioning: [129, 130, 0, 0]
+    - Name: /thisisanemote
+      Offset: [0, 0]
+      Size: [129, 130]
     http://f.thumbs.redditmedia.com/ZbarrHcKP0p76T0q.png:
-        /TI994A:
-            Positioning: [230, 364, 0, 0]
+    - Name: /TI994A
+      Offset: [0, 0]
+      Size: [230, 364]
+    http://thumbs.reddit.com/t5_2sjw3_14.png:
+    - Name: /hugs
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://thumbs.reddit.com/t5_2sjw3_20.png:
+    - Name: /shrug
+      Offset: [0, 0]
+      Size: [100, 100]
     http://thumbs.reddit.com/t5_2sjw3_34.png:
-        /applewut:
-            Positioning: [60, 60, 0, 0]
+    - Name: /applewut
+      Offset: [0, 0]
+      Size: [60, 60]
+Meta: {Name: r/mylittlecirclejerk, Timestamp: 'Sat Aug 25 23:59:10 2012'}

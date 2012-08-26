@@ -1,16 +1,28 @@
-Spritesheets:
+Emotes:
+  Custom:
+  - CSS: {display: inline-block, padding-right: 100%}
+    Name: /sp
+  Spritesheets:
     http://c.thumbs.redditmedia.com/HdmdQyt9tq7ud0ub.png:
-        /anaangels:
-            Positioning: [90, 90, -182, -91]
-        /anaducks:
-            Positioning: [90, 90, -91, -91]
-        /detwings:
-            Positioning: [90, 90, 0, -182]
-        /njdevils:
-            Positioning: [90, 90, 0, -91]
-        /ottsens:
-            Positioning: [90, 90, -91, 0]
-        /pitpens:
-            Positioning: [90, 90, 0, 0]
-        /sjsharks:
-            Positioning: [90, 90, -182, 0]
+    - Name: /anaangels
+      Offset: [-182, -91]
+      Size: [90, 90]
+    - Name: /anaducks
+      Offset: [-91, -91]
+      Size: [90, 90]
+    - Name: /detwings
+      Offset: [0, -182]
+      Size: [90, 90]
+    - Name: /njdevils
+      Offset: [0, -91]
+      Size: [90, 90]
+    - Name: /ottsens
+      Offset: [-91, 0]
+      Size: [90, 90]
+    - Name: /pitpens
+      Offset: [0, 0]
+      Size: [90, 90]
+    - Name: /sjsharks
+      Offset: [-182, 0]
+      Size: [90, 90]
+Meta: {Name: r/mylittlesports, Timestamp: 'Sat Aug 25 23:59:12 2012'}

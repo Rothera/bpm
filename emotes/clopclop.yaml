@@ -1,14 +1,17 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
     http://d.thumbs.redditmedia.com/gJdjW6-2MiXCes53.png:
-        /cl00:
-            Positioning: [70, 70, 0, 0]
-            NSFW: true
-        /futashy:
-            Positioning: [70, 70, 0, 0]
-            NSFW: true
-        /rcl00:
-            Positioning: [70, 70, -70, 0]
-            NSFW: true
-        /rfutashy:
-            Positioning: [70, 70, -70, 0]
-            NSFW: true
+    - Name: /cl00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /futashy
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rcl00
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rfutashy
+      Offset: [-70, 0]
+      Size: [70, 70]
+Meta: {Name: r/clopclop, Timestamp: 'Sat Aug 25 23:59:05 2012'}

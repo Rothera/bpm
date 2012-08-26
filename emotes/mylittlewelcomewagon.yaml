@@ -1,15 +1,24 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
     http://b.thumbs.redditmedia.com/nSARQB1mN80SyJJU.png:
-        /wagon00:
-            Positioning: [70, 70, 0, 0]
-        /wagon10:
-            Positioning: [70, 70, -70, 0]
-        /wagon20:
-            Positioning: [70, 70, -140, 0]
+    - Name: /wagon00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /wagon10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /wagon20
+      Offset: [-140, 0]
+      Size: [70, 70]
     http://e.thumbs.redditmedia.com/RzcXo4aoRTikWscL.png:
-        /rwagon00:
-            Positioning: [70, 70, 0, 0]
-        /rwagon10:
-            Positioning: [70, 70, -70, 0]
-        /rwagon20:
-            Positioning: [70, 70, -140, 0]
+    - Name: /rwagon00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rwagon10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rwagon20
+      Offset: [-140, 0]
+      Size: [70, 70]
+Meta: {Name: r/mylittlewelcomewagon, Timestamp: 'Sat Aug 25 23:59:13 2012'}

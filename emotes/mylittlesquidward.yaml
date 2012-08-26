@@ -1,115 +1,174 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
     http://b.thumbs.redditmedia.com/RP2QCoD0LWQde42U.png:
-        /ceilingsquid:
-            Positioning: [70, 70, -74, -74]
-        /davenport:
-            Positioning: [70, 70, -2, -2]
-        /gummythesnail:
-            Positioning: [70, 70, -213, -74]
-        /sq00:
-            Positioning: [70, 70, -290, -2]
-        /sq01:
-            Positioning: [70, 70, -362, -2]
-        /sq02:
-            Positioning: [70, 70, -434, -2]
-        /sq03:
-            Positioning: [70, 70, -74, -2]
-        /sq04:
-            Positioning: [70, 70, -218, -146]
-        /sq05:
-            Positioning: [70, 70, -411, -74]
-        /sq06:
-            Positioning: [70, 70, -290, -146]
-        /sq10:
-            Positioning: [70, 69, -2, -74]
-        /sq11:
-            Positioning: [70, 70, -74, -74]
-        /sq12:
-            Positioning: [65, 70, -146, -74]
-        /sq13:
-            Positioning: [70, 70, -146, -2]
-        /sq14:
-            Positioning: [70, 70, -362, -146]
-        /sq15:
-            Positioning: [70, 70, -2, -146]
-        /sq20:
-            Positioning: [70, 70, -213, -74]
-        /sq21:
-            Positioning: [52, 70, -285, -74]
-        /sq22:
-            Positioning: [70, 70, -339, -74]
-        /sq23:
-            Positioning: [70, 70, -218, -2]
-        /sq24:
-            Positioning: [70, 70, -74, -146]
-        /sq25:
-            Positioning: [70, 70, -146, -146]
-        /sqstare:
-            Positioning: [70, 70, -411, -74]
-        /squidaloo:
-            Positioning: [70, 70, -74, -2]
-        /squidamena:
-            Positioning: [70, 70, -146, -2]
-        /squiddity:
-            Positioning: [70, 70, -218, -2]
-        /squidew:
-            Positioning: [70, 70, -290, -2]
-        /squidflip:
-            Positioning: [70, 70, -339, -74]
-        /squidhoof:
-            Positioning: [70, 70, -434, -2]
-        /squidohyou:
-            Positioning: [52, 70, -285, -74]
-        /squidrage:
-            Positioning: [70, 70, -362, -2]
-        /squidsalute:
-            Positioning: [70, 70, -2, -146]
-        /squidscream:
-            Positioning: [70, 70, -74, -146]
-        /squidshrug:
-            Positioning: [70, 69, -2, -74]
-        /squidsrs:
-            Positioning: [70, 70, -146, -146]
-        /squidticking:
-            Positioning: [70, 70, -218, -146]
-        /squidwhoa:
-            Positioning: [70, 70, -290, -146]
-        /squintysquid:
-            Positioning: [65, 70, -146, -74]
-        /squixie:
-            Positioning: [70, 70, -362, -146]
-        /ujelly:
-            Positioning: [70, 70, -434, -146]
-        /yeah:
-            Positioning: [70, 70, -2, -218]
+    - Name: /ceilingsquid
+      Offset: [-74, -74]
+      Size: [70, 70]
+    - Name: /davenport
+      Offset: [-2, -2]
+      Size: [70, 70]
+    - Name: /gummythesnail
+      Offset: [-213, -74]
+      Size: [70, 70]
+    - Name: /sq00
+      Offset: [-290, -2]
+      Size: [70, 70]
+    - Name: /sq01
+      Offset: [-362, -2]
+      Size: [70, 70]
+    - Name: /sq02
+      Offset: [-434, -2]
+      Size: [70, 70]
+    - Name: /sq03
+      Offset: [-74, -2]
+      Size: [70, 70]
+    - Name: /sq04
+      Offset: [-218, -146]
+      Size: [70, 70]
+    - Name: /sq05
+      Offset: [-411, -74]
+      Size: [70, 70]
+    - Name: /sq06
+      Offset: [-290, -146]
+      Size: [70, 70]
+    - Name: /sq10
+      Offset: [-2, -74]
+      Size: [70, 69]
+    - Name: /sq11
+      Offset: [-74, -74]
+      Size: [70, 70]
+    - Name: /sq12
+      Offset: [-146, -74]
+      Size: [65, 70]
+    - Name: /sq13
+      Offset: [-146, -2]
+      Size: [70, 70]
+    - Name: /sq14
+      Offset: [-362, -146]
+      Size: [70, 70]
+    - Name: /sq15
+      Offset: [-2, -146]
+      Size: [70, 70]
+    - Name: /sq20
+      Offset: [-213, -74]
+      Size: [70, 70]
+    - Name: /sq21
+      Offset: [-285, -74]
+      Size: [52, 70]
+    - Name: /sq22
+      Offset: [-339, -74]
+      Size: [70, 70]
+    - Name: /sq23
+      Offset: [-218, -2]
+      Size: [70, 70]
+    - Name: /sq24
+      Offset: [-74, -146]
+      Size: [70, 70]
+    - Name: /sq25
+      Offset: [-146, -146]
+      Size: [70, 70]
+    - Name: /sqstare
+      Offset: [-411, -74]
+      Size: [70, 70]
+    - Name: /squidaloo
+      Offset: [-74, -2]
+      Size: [70, 70]
+    - Name: /squidamena
+      Offset: [-146, -2]
+      Size: [70, 70]
+    - Name: /squiddity
+      Offset: [-218, -2]
+      Size: [70, 70]
+    - Name: /squidew
+      Offset: [-290, -2]
+      Size: [70, 70]
+    - Name: /squidflip
+      Offset: [-339, -74]
+      Size: [70, 70]
+    - Name: /squidhoof
+      Offset: [-434, -2]
+      Size: [70, 70]
+    - Name: /squidohyou
+      Offset: [-285, -74]
+      Size: [52, 70]
+    - Name: /squidrage
+      Offset: [-362, -2]
+      Size: [70, 70]
+    - Name: /squidsalute
+      Offset: [-2, -146]
+      Size: [70, 70]
+    - Name: /squidscream
+      Offset: [-74, -146]
+      Size: [70, 70]
+    - Name: /squidshrug
+      Offset: [-2, -74]
+      Size: [70, 69]
+    - Name: /squidsrs
+      Offset: [-146, -146]
+      Size: [70, 70]
+    - Name: /squidticking
+      Offset: [-218, -146]
+      Size: [70, 70]
+    - Name: /squidwhoa
+      Offset: [-290, -146]
+      Size: [70, 70]
+    - Name: /squintysquid
+      Offset: [-146, -74]
+      Size: [65, 70]
+    - Name: /squixie
+      Offset: [-362, -146]
+      Size: [70, 70]
+    - Name: /ujelly
+      Offset: [-434, -146]
+      Size: [70, 70]
+    - Name: /yeah
+      Offset: [-2, -218]
+      Size: [70, 70]
     http://d.thumbs.redditmedia.com/2-fZFpBwlsY910-E.png:
-        /sqajfun:
-            Positioning: [221, 150, -2, -2]
-        /sqbonfun:
-            Positioning: [249, 150, -225, -2]
-        /sqcelestiafun:
-            Positioning: [408, 254, -476, -2]
-        /sqcheerfun:
-            Positioning: [233, 150, -2, -258]
-        /sqdashfun:
-            Positioning: [245, 150, -237, -258]
-        /sqderpfun:
-            Positioning: [259, 150, -484, -258]
-        /sqlunafun:
-            Positioning: [332, 181, -2, -410]
-        /sqlyrafun:
-            Positioning: [220, 150, -336, -410]
-        /sqppfun:
-            Positioning: [235, 150, -558, -410]
-        /sqrarfun:
-            Positioning: [274, 150, -2, -593]
-        /sqrosefun:
-            Positioning: [221, 150, -278, -593]
-        /sqshyfun:
-            Positioning: [253, 150, -501, -593]
-        /sqtrixiefun:
-            Positioning: [261, 150, -756, -593]
-        /sqtwifun:
-            Positioning: [229, 150, -2, -745]
-        /squidfun:
-            Positioning: [150, 122, -233, -745]
+    - Name: /sqajfun
+      Offset: [-2, -2]
+      Size: [221, 150]
+    - Name: /sqbonfun
+      Offset: [-225, -2]
+      Size: [249, 150]
+    - Name: /sqcelestiafun
+      Offset: [-476, -2]
+      Size: [408, 254]
+    - Name: /sqcheerfun
+      Offset: [-2, -258]
+      Size: [233, 150]
+    - Name: /sqdashfun
+      Offset: [-237, -258]
+      Size: [245, 150]
+    - Name: /sqderpfun
+      Offset: [-484, -258]
+      Size: [259, 150]
+    - Name: /sqlunafun
+      Offset: [-2, -410]
+      Size: [332, 181]
+    - Name: /sqlyrafun
+      Offset: [-336, -410]
+      Size: [220, 150]
+    - Name: /sqppfun
+      Offset: [-558, -410]
+      Size: [235, 150]
+    - Name: /sqrarfun
+      Offset: [-2, -593]
+      Size: [274, 150]
+    - Name: /sqrosefun
+      Offset: [-278, -593]
+      Size: [221, 150]
+    - Name: /sqshyfun
+      Offset: [-501, -593]
+      Size: [253, 150]
+    - Name: /sqtrixiefun
+      Offset: [-756, -593]
+      Size: [261, 150]
+    - Name: /sqtwifun
+      Offset: [-2, -745]
+      Size: [229, 150]
+    - Name: /squidfun
+      Offset: [-233, -745]
+      Size: [150, 122]
+Meta: {Name: r/mylittlesquidward, Timestamp: 'Sat Aug 25 23:59:12 2012'}

@@ -1,136 +1,206 @@
-Spritesheets:
+Emotes:
+  Custom:
+  - CSS: {background-position: -70px -0px}
+    Name: /rvs02
+  - CSS: {background-position: -140px -0px}
+    Name: /rvs21
+  - CSS: {background: black !important, color: black !important}
+    Name: /spoiler
+  - CSS: {background: black !important, color: white !important}
+    Name: /spoiler
+    Suffix: :hover
+  - CSS: {background-position: 140px -70px}
+    Name: /vs04
+  - CSS: {background-position: 70px -140px}
+    Name: /vs07
+  - CSS: {background-position: 140px -70px}
+    Name: /vs25
+  - CSS: {background-position: -0px -0px}
+    Name: /vshnnng
+  - CSS: {background-position: 140px -140px}
+    Name: /vsnope
+  Spritesheets:
     http://a.thumbs.redditmedia.com/TMFvsdV9zMTRLQyH.png:
-        /tableflip:
-            Positioning: [400, 291, 0, 0]
-        /vstableflip:
-            Positioning: [400, 291, 0, 0]
+    - Name: /tableflip
+      Offset: [0, 0]
+      Size: [400, 291]
+    - Name: /vstableflip
+      Offset: [0, 0]
+      Size: [400, 291]
     http://b.thumbs.redditmedia.com/Vy09d72RyD7kbbiU.png:
-        /vs00:
-            Positioning: [70, 70, 0, 0]
-        /vs04:
-            Positioning: [70, 70, 140, -70]
-        /vs10:
-            Positioning: [70, 70, 140, 0]
-        /vs20:
-            Positioning: [70, 70, 70, 0]
-        /vs22:
-            Positioning: [70, 70, 210, -70]
-        /vs23:
-            Positioning: [70, 70, 70, -70]
-        /vshair:
-            Positioning: [70, 70, 70, 0]
-        /vshooves:
-            Positioning: [70, 70, 140, -70]
-        /vsjuice:
-            Positioning: [70, 70, 70, -70]
-        /vsohyou:
-            Positioning: [70, 70, 0, 0]
-        /vssad:
-            Positioning: [70, 70, 140, 0]
-        /vswink:
-            Positioning: [70, 70, 210, -70]
+    - Name: /vs00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /vs10
+      Offset: [140, 0]
+      Size: [70, 70]
+    - Name: /vs20
+      Offset: [70, 0]
+      Size: [70, 70]
+    - Name: /vs22
+      Offset: [210, -70]
+      Size: [70, 70]
+    - Name: /vs23
+      Offset: [70, -70]
+      Size: [70, 70]
+    - Name: /vshair
+      Offset: [70, 0]
+      Size: [70, 70]
+    - Name: /vshooves
+      Offset: [140, -70]
+      Size: [70, 70]
+    - Name: /vsjuice
+      Offset: [70, -70]
+      Size: [70, 70]
+    - Name: /vsohyou
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /vssad
+      Offset: [140, 0]
+      Size: [70, 70]
+    - Name: /vswink
+      Offset: [210, -70]
+      Size: [70, 70]
     http://c.thumbs.redditmedia.com/XOs3xf6RINSK7sPt.png:
-        /shrug:
-            Positioning: [300, 300, 0, 0]
-        /vsshrug:
-            Positioning: [300, 300, 0, 0]
+    - Name: /shrug
+      Offset: [0, 0]
+      Size: [300, 300]
+    - Name: /vsshrug
+      Offset: [0, 0]
+      Size: [300, 300]
     http://d.thumbs.redditmedia.com/00T3gLdOawm80o--.png:
-        /hnnng:
-            Positioning: [70, 70, 0, 0]
-        /vshnngg:
-            Positioning: [70, 70, 0, 0]
+    - Name: /hnnng
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /vshnngg
+      Offset: [0, 0]
+      Size: [70, 70]
     http://d.thumbs.redditmedia.com/6IUb7mOhEqfbFO1i.png:
-        /rvs03:
-            Positioning: [70, 70, 0, 70]
-        /rvs11:
-            Positioning: [70, 70, -70, 70]
-        /vs01:
-            Positioning: [70, 70, 0, 0]
-        /vs02:
-            Positioning: [70, 70, -70, 0]
-        /vs03:
-            Positioning: [70, 70, 0, 70]
-        /vs11:
-            Positioning: [70, 70, -70, 70]
-        /vsdeal:
-            Positioning: [70, 70, 0, 0]
-        /vsderp:
-            Positioning: [70, 70, -70, 0]
-        /vslying:
-            Positioning: [70, 70, 0, 70]
-        /vstear:
-            Positioning: [70, 70, -70, 70]
+    - Name: /rvs03
+      Offset: [0, 70]
+      Size: [70, 70]
+    - Name: /rvs11
+      Offset: [-70, 70]
+      Size: [70, 70]
+    - Name: /vs01
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /vs02
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /vs03
+      Offset: [0, 70]
+      Size: [70, 70]
+    - Name: /vs11
+      Offset: [-70, 70]
+      Size: [70, 70]
+    - Name: /vsdeal
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /vsderp
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /vslying
+      Offset: [0, 70]
+      Size: [70, 70]
+    - Name: /vstear
+      Offset: [-70, 70]
+      Size: [70, 70]
     http://e.thumbs.redditmedia.com/4j0qikWgIxeJspbF.png:
-        /vs05:
-            Positioning: [70, 70, 140, 0]
-        /vs06:
-            Positioning: [70, 70, 70, -70]
-        /vs07:
-            Positioning: [70, 70, 70, -140]
-        /vs14:
-            Positioning: [70, 70, 0, 0]
-        /vs15:
-            Positioning: [70, 70, 210, -70]
-        /vs16:
-            Positioning: [70, 70, 210, -140]
-        /vs24:
-            Positioning: [70, 70, 70, 0]
-        /vs25:
-            Positioning: [70, 70, 140, -70]
-        /vs26:
-            Positioning: [70, 70, 140, -140]
-        /vsbass:
-            Positioning: [70, 70, 210, -70]
-        /vshappy:
-            Positioning: [70, 70, 0, 0]
-        /vslook:
-            Positioning: [70, 70, 140, 0]
-        /vsmine:
-            Positioning: [70, 70, 140, -70]
-        /vsmog:
-            Positioning: [70, 70, 70, -140]
-        /vsnope:
-            Positioning: [70, 70, 140, -140]
-        /vsomg:
-            Positioning: [70, 70, 70, -70]
-        /vsoooo:
-            Positioning: [70, 70, 210, -140]
-        /vssup:
-            Positioning: [70, 70, 70, 0]
+    - Name: /vs05
+      Offset: [140, 0]
+      Size: [70, 70]
+    - Name: /vs06
+      Offset: [70, -70]
+      Size: [70, 70]
+    - Name: /vs14
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /vs15
+      Offset: [210, -70]
+      Size: [70, 70]
+    - Name: /vs16
+      Offset: [210, -140]
+      Size: [70, 70]
+    - Name: /vs24
+      Offset: [70, 0]
+      Size: [70, 70]
+    - Name: /vs26
+      Offset: [140, -140]
+      Size: [70, 70]
+    - Name: /vsbass
+      Offset: [210, -70]
+      Size: [70, 70]
+    - Name: /vshappy
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /vslook
+      Offset: [140, 0]
+      Size: [70, 70]
+    - Name: /vsmine
+      Offset: [140, -70]
+      Size: [70, 70]
+    - Name: /vsmog
+      Offset: [70, -140]
+      Size: [70, 70]
+    - Name: /vsomg
+      Offset: [70, -70]
+      Size: [70, 70]
+    - Name: /vsoooo
+      Offset: [210, -140]
+      Size: [70, 70]
+    - Name: /vssup
+      Offset: [70, 0]
+      Size: [70, 70]
     http://f.thumbs.redditmedia.com/48dqKntrMUv99RoA.png:
-        /vsf:
-            Positioning: [70, 70, 140, 0]
-        /vsfilly:
-            Positioning: [70, 70, 140, 0]
-        /vswhatthefuck:
-            Positioning: [70, 70, 70, 0]
-        /vswtf:
-            Positioning: [70, 70, 70, 0]
-        /vsyds:
-            Positioning: [70, 70, 0, 0]
-        /vsyoudontsay:
-            Positioning: [70, 70, 0, 0]
+    - Name: /vsf
+      Offset: [140, 0]
+      Size: [70, 70]
+    - Name: /vsfilly
+      Offset: [140, 0]
+      Size: [70, 70]
+    - Name: /vswhatthefuck
+      Offset: [70, 0]
+      Size: [70, 70]
+    - Name: /vswtf
+      Offset: [70, 0]
+      Size: [70, 70]
+    - Name: /vsyds
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /vsyoudontsay
+      Offset: [0, 0]
+      Size: [70, 70]
     http://f.thumbs.redditmedia.com/a2SG_AiO-Mojc5E5.png:
-        /laying:
-            Positioning: [200, 164, 0, 0]
-        /vslaying:
-            Positioning: [200, 164, 0, 0]
+    - Name: /laying
+      Offset: [0, 0]
+      Size: [200, 164]
+    - Name: /vslaying
+      Offset: [0, 0]
+      Size: [200, 164]
     http://f.thumbs.redditmedia.com/qvZfSAMs42KQIfgS.png:
-        /rvs12:
-            Positioning: [70, 70, 0, 0]
-        /rvs13:
-            Positioning: [70, 70, -70, 0]
-        /rvs21:
-            Positioning: [70, 70, -140, 0]
-        /vs12:
-            Positioning: [70, 70, 0, 0]
-        /vs13:
-            Positioning: [70, 70, -70, 0]
-        /vs21:
-            Positioning: [70, 70, -140, 0]
-        /vscurious:
-            Positioning: [70, 70, -70, 0]
-        /vshey:
-            Positioning: [70, 70, 0, 0]
-        /vsmeh:
-            Positioning: [70, 70, -140, 0]
+    - Name: /rvs12
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rvs13
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /vs12
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /vs13
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /vs21
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /vscurious
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /vshey
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /vsmeh
+      Offset: [-140, 0]
+      Size: [70, 70]
+Meta: {Name: r/vinylscratch, Timestamp: 'Sat Aug 25 23:59:15 2012'}

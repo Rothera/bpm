@@ -1,115 +1,209 @@
-Spritesheets:
+Emotes:
+  Custom:
+  - CSS: {display: inline-block, padding-right: 100%}
+    Name: /sp
+  Spritesheets:
     http://a.thumbs.redditmedia.com/QrHLV0Y6s29SzJmZ.png:
-        /pheicry:
-            Positioning: [100, 131, 0, 0]
+    - Name: /pheicry
+      Offset: [0, 0]
+      Size: [100, 131]
     http://a.thumbs.redditmedia.com/neArTCTLtPUxkALf.png:
-        /fistpump:
-            Positioning: [90, 90, -91, -91]
-        /fluttershock:
-            Positioning: [90, 90, -91, -273]
-        /iapprove:
-            Positioning: [90, 90, 0, 0]
-        /ironwilllisten:
-            Positioning: [90, 90, -182, -182]
-        /motherof:
-            Positioning: [90, 90, -182, -91]
-        /pinkieshock:
-            Positioning: [90, 90, -182, 0]
-        /pinkiesing:
-            Positioning: [90, 90, 0, -91]
-        /scratchyay:
-            Positioning: [90, 90, -91, -182]
-        /soexcited:
-            Positioning: [90, 90, -91, 0]
-        /tavibored:
-            Positioning: [90, 90, 0, -182]
-        /wubseverywhere:
-            Positioning: [90, 90, 0, -273]
+    - Name: /fistpump
+      Offset: [-91, -91]
+      Size: [90, 90]
+    - Name: /fluttershock
+      Offset: [-91, -273]
+      Size: [90, 90]
+    - Name: /iapprove
+      Offset: [0, 0]
+      Size: [90, 90]
+    - Name: /ironwilllisten
+      Offset: [-182, -182]
+      Size: [90, 90]
+    - Name: /motherof
+      Offset: [-182, -91]
+      Size: [90, 90]
+    - Name: /pinkieshock
+      Offset: [-182, 0]
+      Size: [90, 90]
+    - Name: /pinkiesing
+      Offset: [0, -91]
+      Size: [90, 90]
+    - Name: /scratchyay
+      Offset: [-91, -182]
+      Size: [90, 90]
+    - Name: /soexcited
+      Offset: [-91, 0]
+      Size: [90, 90]
+    - Name: /tavibored
+      Offset: [0, -182]
+      Size: [90, 90]
+    - Name: /wubseverywhere
+      Offset: [0, -273]
+      Size: [90, 90]
     http://c.thumbs.redditmedia.com/5cyD4ZGMPahaXfqD.png:
-        /adagio:
-            Positioning: [120, 156, 0, 0]
+    - Name: /adagio
+      Offset: [0, 0]
+      Size: [120, 156]
     http://c.thumbs.redditmedia.com/CqYNOMxZ9F7Jt0wh.jpg:
-        /toaster:
-            Positioning: [528, 392, 0, 0]
+    - Name: /toaster
+      Offset: [0, 0]
+      Size: [528, 392]
     http://c.thumbs.redditmedia.com/HXuhBWpUCZ8_nMI2.png:
-        /eip:
-            Positioning: [126, 124, 0, 0]
+    - Name: /eip
+      Offset: [0, 0]
+      Size: [126, 124]
+    http://c.thumbs.redditmedia.com/Ius5hqsSbOByGmxn.png:
+    - Name: /crossfire
+      Offset: [-265, -501]
+      Size: [186, 131]
+    - Name: /rdsax
+      Offset: [0, -634]
+      Size: [171, 131]
     http://c.thumbs.redditmedia.com/clKsQK-kGLtq2Lpn.png:
-        /badjokemostlikely:
-            Positioning: [150, 150, 0, 0]
-        /bj:
-            Positioning: [150, 150, 0, 0]
-        /bjml:
-            Positioning: [150, 150, 0, 0]
-        /orschswaifu:
-            Positioning: [150, 150, 0, 0]
+    - Name: /badjokemostlikely
+      Offset: [0, 0]
+      Size: [150, 150]
+    - Name: /bj
+      Offset: [0, 0]
+      Size: [150, 150]
+    - Name: /bjml
+      Offset: [0, 0]
+      Size: [150, 150]
+    - Name: /orschswaifu
+      Offset: [0, 0]
+      Size: [150, 150]
     http://c.thumbs.redditmedia.com/raQzY7uD4LJKsq12.png:
-        /awestruck:
-            Positioning: [90, 90, 0, 0]
-        /bloomdance:
-            Positioning: [90, 90, -182, 0]
-        /cooltavia:
-            Positioning: [90, 90, 0, -182]
-        /cranky:
-            Positioning: [90, 90, -91, 0]
-        /flutterwat:
-            Positioning: [90, 90, -91, -91]
-        /itsbeautiful:
-            Positioning: [90, 90, 0, -273]
-        /iwantit:
-            Positioning: [90, 90, -91, -273]
-        /justfahn:
-            Positioning: [90, 90, -182, -91]
-        /rdheadbang:
-            Positioning: [90, 90, 0, -91]
-        /rdheh:
-            Positioning: [90, 90, -91, -182]
-        /sadjack:
-            Positioning: [90, 90, -182, -182]
-        /scratchpride:
-            Positioning: [90, 90, -182, -273]
-        /spitfireum:
-            Positioning: [90, 90, 0, -364]
-        /twielaine:
-            Positioning: [90, 90, -91, -364]
-        /twigrin:
-            Positioning: [90, 90, -182, -364]
-    http://e.thumbs.redditmedia.com/XO7jBzc0viJL_kRF.png:
-        /bajentjfun:
-            Positioning: [264, 131, 0, 0]
+    - Name: /awestruck
+      Offset: [0, 0]
+      Size: [90, 90]
+    - Name: /bloomdance
+      Offset: [-182, 0]
+      Size: [90, 90]
+    - Name: /cooltavia
+      Offset: [0, -182]
+      Size: [90, 90]
+    - Name: /cranky
+      Offset: [-91, 0]
+      Size: [90, 90]
+    - Name: /flutterwat
+      Offset: [-91, -91]
+      Size: [90, 90]
+    - Name: /itsbeautiful
+      Offset: [0, -273]
+      Size: [90, 90]
+    - Name: /iwantit
+      Offset: [-91, -273]
+      Size: [90, 90]
+    - Name: /justfahn
+      Offset: [-182, -91]
+      Size: [90, 90]
+    - Name: /rdheadbang
+      Offset: [0, -91]
+      Size: [90, 90]
+    - Name: /rdheh
+      Offset: [-91, -182]
+      Size: [90, 90]
+    - Name: /sadjack
+      Offset: [-182, -182]
+      Size: [90, 90]
+    - Name: /scratchpride
+      Offset: [-182, -273]
+      Size: [90, 90]
+    - Name: /spitfireum
+      Offset: [0, -364]
+      Size: [90, 90]
+    - Name: /twielaine
+      Offset: [-91, -364]
+      Size: [90, 90]
+    - Name: /twigrin
+      Offset: [-182, -364]
+      Size: [90, 90]
+    http://d.thumbs.redditmedia.com/TkBBAn3CUgc73Yv3.png:
+    - Name: /showstoppers
+      Offset: [0, 0]
+      Size: [155, 70]
     http://e.thumbs.redditmedia.com/8epVY5b9BqQr1Hkp.png:
-        /pheidance:
-            Positioning: [100, 102, 0, 0]
+    - Name: /pheidance
+      Offset: [0, 0]
+      Size: [100, 102]
     http://e.thumbs.redditmedia.com/L7zH-FChTTGLTkML.png:
-        /classyspitfire:
-            Positioning: [90, 90, -182, 0]
-        /discordcool:
-            Positioning: [90, 90, -91, -182]
-        /discordsing:
-            Positioning: [90, 90, 0, -182]
-        /dropdabass:
-            Positioning: [90, 90, -91, -91]
-        /fdbacon:
-            Positioning: [90, 90, -182, -273]
-        /flimflamwoo:
-            Positioning: [90, 90, -182, -91]
-        /flutterwonder:
-            Positioning: [90, 90, 0, 0]
-        /jfish:
-            Positioning: [90, 90, -91, -364]
-        /pens:
-            Positioning: [90, 90, -91, -273]
-        /pokerlee:
-            Positioning: [90, 90, -182, -182]
-        /rarityumm:
-            Positioning: [90, 90, 0, -91]
-        /spit18:
-            Positioning: [90, 90, 0, -273]
-        /system:
-            Positioning: [90, 90, -91, 0]
-    http://f.thumbs.redditmedia.com/2Knv8WhbCyIF0Uvw.png:
-        /phei:
-            Positioning: [90, 92, 0, 0]
+    - Name: /classyspitfire
+      Offset: [-182, 0]
+      Size: [90, 90]
+    - Name: /discordcool
+      Offset: [-91, -182]
+      Size: [90, 90]
+    - Name: /discordsing
+      Offset: [0, -182]
+      Size: [90, 90]
+    - Name: /dropdabass
+      Offset: [-91, -91]
+      Size: [90, 90]
+    - Name: /fdbacon
+      Offset: [-182, -273]
+      Size: [90, 90]
+    - Name: /flimflamwoo
+      Offset: [-182, -91]
+      Size: [90, 90]
+    - Name: /flutterwonder
+      Offset: [0, 0]
+      Size: [90, 90]
+    - Name: /jfish
+      Offset: [-91, -364]
+      Size: [90, 90]
+    - Name: /pens
+      Offset: [-91, -273]
+      Size: [90, 90]
+    - Name: /pokerlee
+      Offset: [-182, -182]
+      Size: [90, 90]
+    - Name: /rarityumm
+      Offset: [0, -91]
+      Size: [90, 90]
+    - Name: /spit18
+      Offset: [0, -273]
+      Size: [90, 90]
+    - Name: /system
+      Offset: [-91, 0]
+      Size: [90, 90]
+    http://e.thumbs.redditmedia.com/XO7jBzc0viJL_kRF.png:
+    - Name: /bajentjfun
+      Offset: [0, 0]
+      Size: [264, 131]
     http://e.thumbs.redditmedia.com/cPVjjjJ-QcdrsTrR.png:
-        /lyragrin:
-            Positioning: [70, 70, -70, -70]
+    - Name: /colgatebass
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /lyragrin
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /mlyra
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /octaviashrug
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /pinkiebone
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /pinkietrombone
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /scootpiano
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /scratchshrug
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /tavishrug
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /vinylshrug
+      Offset: [0, 0]
+      Size: [70, 70]
+    http://f.thumbs.redditmedia.com/2Knv8WhbCyIF0Uvw.png:
+    - Name: /phei
+      Offset: [0, 0]
+      Size: [90, 92]
+Meta: {Name: r/mylittlelistentothis, Timestamp: 'Sun Aug 26 00:12:36 2012'}

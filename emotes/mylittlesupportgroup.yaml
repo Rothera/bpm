@@ -1,50 +1,115 @@
-Spritesheets:
+Emotes:
+  Custom:
+  - CSS: {background-color: '#ffc97b !important', color: '#e56522 !important', cursor: text
+        !important}
+    Name: /applejack!
+  - CSS: {background-color: '#fff797 !important', color: '#e57eb3 !important', cursor: text
+        !important}
+    Name: /fluttershy!
+  - CSS: {background-position: -100px -0px}
+    Name: /hidash
+  - CSS: {background-color: '#f8c0ce !important', color: '#c10064 !important', cursor: text
+        !important}
+    Name: /pinkie!
+  - CSS: {background-color: '#97d6f9 !important', color: '#971757 !important', cursor: text
+        !important}
+    Name: /rainbow!
+  - CSS: {background-color: '#49176d !important', color: '#eef1f3 !important', cursor: text
+        !important}
+    Name: /rarity!
+  - CSS: {display: inline-block, padding-right: 100%}
+    Name: /sp
+  - CSS: {background-color: '#caaad1 !important', color: '#363b74 !important', cursor: text
+        !important}
+    Name: /twilight!
+  Spritesheets:
+    http://c.thumbs.redditmedia.com/5wA7HWAl2WD-UzA8.png:
+    - Name: /rsmooze
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /smooze
+      Offset: [0, 0]
+      Size: [70, 70]
     http://f.thumbs.redditmedia.com/oNae3rIqEPA1Kq7M.png:
-        /hi00:
-            Positioning: [100, 120, 0, 0]
-        /hi01:
-            Positioning: [100, 120, -100, -120]
-        /hi02:
-            Positioning: [100, 120, -100, -240]
-        /hi03:
-            Positioning: [100, 120, 0, -360]
-        /hi10:
-            Positioning: [100, 120, 0, -120]
-        /hi11:
-            Positioning: [100, 120, -100, 0]
-        /hi12:
-            Positioning: [100, 120, 0, -240]
-        /hi13:
-            Positioning: [100, 120, -100, -360]
-        /hiaj:
-            Positioning: [100, 120, 0, -240]
-        /hiapplejack:
-            Positioning: [100, 120, 0, -240]
-        /hibestpony:
-            Positioning: [100, 120, 0, 0]
-        /hiderpy:
-            Positioning: [100, 120, -100, -360]
-        /hiflutters:
-            Positioning: [100, 120, 0, -120]
-        /hifluttershy:
-            Positioning: [100, 120, 0, -120]
-        /hiluna:
-            Positioning: [100, 120, 0, -360]
-        /hipinkie:
-            Positioning: [100, 120, -100, -120]
-        /hipinkiepie:
-            Positioning: [100, 120, -100, -120]
-        /hirainbow:
-            Positioning: [100, 120, -100, 0]
-        /hirainbowdash:
-            Positioning: [100, 120, -100, 0]
-        /hirarity:
-            Positioning: [100, 120, -100, -240]
-        /hitwi:
-            Positioning: [100, 120, 0, 0]
-        /hitwilight:
-            Positioning: [100, 120, 0, 0]
-        /hiwoona:
-            Positioning: [100, 120, 0, -360]
-        /muffins:
-            Positioning: [100, 120, -100, -360]
+    - Name: /hi00
+      Offset: [0, 0]
+      Size: [100, 120]
+    - Name: /hi01
+      Offset: [-100, -120]
+      Size: [100, 120]
+    - Name: /hi02
+      Offset: [-100, -240]
+      Size: [100, 120]
+    - Name: /hi03
+      Offset: [0, -360]
+      Size: [100, 120]
+    - Name: /hi10
+      Offset: [0, -120]
+      Size: [100, 120]
+    - Name: /hi11
+      Offset: [-100, 0]
+      Size: [100, 120]
+    - Name: /hi12
+      Offset: [0, -240]
+      Size: [100, 120]
+    - Name: /hi13
+      Offset: [-100, -360]
+      Size: [100, 120]
+    - Name: /hiaj
+      Offset: [0, -240]
+      Size: [100, 120]
+    - Name: /hiapplejack
+      Offset: [0, -240]
+      Size: [100, 120]
+    - Name: /hibestpony
+      Offset: [0, 0]
+      Size: [100, 120]
+    - Name: /hidashie
+      Offset: [0, 0]
+      Size: [100, 120]
+    - Name: /hiderpy
+      Offset: [-100, -360]
+      Size: [100, 120]
+    - Name: /hiflutters
+      Offset: [0, -120]
+      Size: [100, 120]
+    - Name: /hifluttershy
+      Offset: [0, -120]
+      Size: [100, 120]
+    - Name: /hiluna
+      Offset: [0, -360]
+      Size: [100, 120]
+    - Name: /hipinkie
+      Offset: [-100, -120]
+      Size: [100, 120]
+    - Name: /hipinkiepie
+      Offset: [-100, -120]
+      Size: [100, 120]
+    - Name: /hirainbow
+      Offset: [-100, 0]
+      Size: [100, 120]
+    - Name: /hirainbowdash
+      Offset: [-100, 0]
+      Size: [100, 120]
+    - Name: /hirarity
+      Offset: [-100, -240]
+      Size: [100, 120]
+    - Name: /hitwi
+      Offset: [0, 0]
+      Size: [100, 120]
+    - Name: /hitwilight
+      Offset: [0, 0]
+      Size: [100, 120]
+    - Name: /hiwoona
+      Offset: [0, -360]
+      Size: [100, 120]
+    - Name: /muffin
+      Offset: [-100, -360]
+      Size: [100, 120]
+    - Name: /muffins
+      Offset: [-100, -360]
+      Size: [100, 120]
+    - Name: /woona
+      Offset: [0, -360]
+      Size: [100, 120]
+Meta: {Name: r/mylittlesupportgroup, Timestamp: 'Sat Aug 25 23:59:12 2012'}

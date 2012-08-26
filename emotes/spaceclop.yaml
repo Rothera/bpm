@@ -1,8 +1,18 @@
-Spritesheets:
+Emotes:
+  Custom:
+  - CSS: {display: inline-block, padding-right: 100%}
+    Name: /sp
+  Spritesheets:
     http://a.thumbs.redditmedia.com/xqcT95cAGpl1Xmdf.png:
-        /sandwich:
-            Positioning: [258, 212, 0, 0]
-            NSFW: true
+    - Name: /sandwich
+      Offset: [0, 0]
+      Size: [258, 212]
+    http://d.thumbs.redditmedia.com/YKSDpjdgMQmII9YE.png:
+    - Name: /angel
+      Offset: [-140, -560]
+      Size: [70, 70]
     http://e.thumbs.redditmedia.com/XqDfRoy7kKraBSCL.png:
-        /swh7s:
-            Positioning: [300, 263, 0, 0]
+    - Name: /swh7s
+      Offset: [0, 0]
+      Size: [300, 263]
+Meta: {Name: r/spaceclop, Timestamp: 'Sat Aug 25 23:59:14 2012'}

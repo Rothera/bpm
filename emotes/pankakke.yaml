@@ -1,97 +1,146 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
     http://a.thumbs.redditmedia.com/2Ysp2-id0wVSYE2l.png:
-        /bugs:
-            Positioning: [205, 150, -1011, 0]
-        /coconutmonkey:
-            Positioning: [150, 150, -185, 0]
-        /hellocake:
-            Positioning: [101, 150, -676, 0]
-        /pan10:
-            Positioning: [107, 150, -335, 0]
-        /pancalcos:
-            Positioning: [93, 150, -1383, 0]
-        /panwaffbattle:
-            Positioning: [234, 150, -442, 0]
-        /pfreeman:
-            Positioning: [234, 150, -777, 0]
-        /smothered:
-            Positioning: [185, 150, 0, 0]
-        /torgo:
-            Positioning: [167, 150, -1216, 0]
+    - Name: /bugs
+      Offset: [-1011, 0]
+      Size: [205, 150]
+    - Name: /coconutmonkey
+      Offset: [-185, 0]
+      Size: [150, 150]
+    - Name: /hellocake
+      Offset: [-676, 0]
+      Size: [101, 150]
+    - Name: /pan10
+      Offset: [-335, 0]
+      Size: [107, 150]
+    - Name: /pancalcos
+      Offset: [-1383, 0]
+      Size: [93, 150]
+    - Name: /panwaffbattle
+      Offset: [-442, 0]
+      Size: [234, 150]
+    - Name: /pfreeman
+      Offset: [-777, 0]
+      Size: [234, 150]
+    - Name: /smothered
+      Offset: [0, 0]
+      Size: [185, 150]
+    - Name: /torgo
+      Offset: [-1216, 0]
+      Size: [167, 150]
     http://b.thumbs.redditmedia.com/z2rK-TwxTjDHrgcU.png:
-        /pabbored:
-            Positioning: [70, 70, -980, 0]
-        /pajhappy:
-            Positioning: [70, 70, -1050, 0]
-        /pajlie:
-            Positioning: [70, 70, -1120, 0]
-        /pajsup:
-            Positioning: [70, 70, -1190, 0]
-        /pcadance:
-            Positioning: [70, 70, -1260, 0]
-        /pcelestiamad:
-            Positioning: [70, 70, -1330, 0]
-        /pcelestiawut:
-            Positioning: [70, 70, -1470, 0]
-        /pchrysalis:
-            Positioning: [70, 70, -1540, 0]
-        /pderpwizard:
-            Positioning: [70, 70, -1400, 0]
-        /pflutterjerk:
-            Positioning: [70, 70, -1610, 0]
-        /pflutterwoah:
-            Positioning: [70, 70, -1680, 0]
-        /pgrannysmith:
-            Positioning: [70, 70, -1820, 0]
-        /plunateehee:
-            Positioning: [70, 70, -1890, 0]
-        /plunawait:
-            Positioning: [70, 70, -2030, 0]
-        /pohcomeon:
-            Positioning: [70, 70, -1750, 0]
-        /ppinkiefear:
-            Positioning: [70, 70, -910, 0]
-        /pppcute:
-            Positioning: [70, 70, -1960, 0]
-        /ppriceless:
-            Positioning: [70, 70, -840, 0]
-        /praritydaww:
-            Positioning: [70, 70, -700, 0]
-        /praritynews:
-            Positioning: [70, 70, -770, 0]
-        /prdcry:
-            Positioning: [70, 70, -630, 0]
-        /psbbook:
-            Positioning: [70, 70, -560, 0]
-        /pscootacheer:
-            Positioning: [70, 70, -490, 0]
-        /pscootaplease:
-            Positioning: [70, 70, -420, 0]
-        /pshiningarmor:
-            Positioning: [70, 70, -350, 0]
-        /pswagintosh:
-            Positioning: [70, 70, -280, 0]
-        /ptwibeam:
-            Positioning: [70, 70, -210, 0]
-        /ptwicrazy:
-            Positioning: [70, 70, -140, 0]
-        /ptwipride:
-            Positioning: [70, 70, -70, 0]
-        /ptwiright:
-            Positioning: [70, 70, 0, 0]
+    - Name: /pabbored
+      Offset: [-980, 0]
+      Size: [70, 70]
+    - Name: /pajhappy
+      Offset: [-1050, 0]
+      Size: [70, 70]
+    - Name: /pajlie
+      Offset: [-1120, 0]
+      Size: [70, 70]
+    - Name: /pajsup
+      Offset: [-1190, 0]
+      Size: [70, 70]
+    - Name: /pcadance
+      Offset: [-1260, 0]
+      Size: [70, 70]
+    - Name: /pcelestiamad
+      Offset: [-1330, 0]
+      Size: [70, 70]
+    - Name: /pcelestiawut
+      Offset: [-1470, 0]
+      Size: [70, 70]
+    - Name: /pchrysalis
+      Offset: [-1540, 0]
+      Size: [70, 70]
+    - Name: /pderpwizard
+      Offset: [-1400, 0]
+      Size: [70, 70]
+    - Name: /pflutterjerk
+      Offset: [-1610, 0]
+      Size: [70, 70]
+    - Name: /pflutterwoah
+      Offset: [-1680, 0]
+      Size: [70, 70]
+    - Name: /pgrannysmith
+      Offset: [-1820, 0]
+      Size: [70, 70]
+    - Name: /plunateehee
+      Offset: [-1890, 0]
+      Size: [70, 70]
+    - Name: /plunawait
+      Offset: [-2030, 0]
+      Size: [70, 70]
+    - Name: /pohcomeon
+      Offset: [-1750, 0]
+      Size: [70, 70]
+    - Name: /ppinkiefear
+      Offset: [-910, 0]
+      Size: [70, 70]
+    - Name: /pppcute
+      Offset: [-1960, 0]
+      Size: [70, 70]
+    - Name: /ppriceless
+      Offset: [-840, 0]
+      Size: [70, 70]
+    - Name: /praritydaww
+      Offset: [-700, 0]
+      Size: [70, 70]
+    - Name: /praritynews
+      Offset: [-770, 0]
+      Size: [70, 70]
+    - Name: /prdcry
+      Offset: [-630, 0]
+      Size: [70, 70]
+    - Name: /psbbook
+      Offset: [-560, 0]
+      Size: [70, 70]
+    - Name: /pscootacheer
+      Offset: [-490, 0]
+      Size: [70, 70]
+    - Name: /pscootaplease
+      Offset: [-420, 0]
+      Size: [70, 70]
+    - Name: /pshiningarmor
+      Offset: [-350, 0]
+      Size: [70, 70]
+    - Name: /pswagintosh
+      Offset: [-280, 0]
+      Size: [70, 70]
+    - Name: /ptwibeam
+      Offset: [-210, 0]
+      Size: [70, 70]
+    - Name: /ptwicrazy
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /ptwipride
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /ptwiright
+      Offset: [0, 0]
+      Size: [70, 70]
     http://c.thumbs.redditmedia.com/0PeEOgH7WjmnMaNJ.jpg:
-        /udntsrslydntnomedood:
-            Positioning: [800, 600, 0, 0]
+    - Name: /udntsrslydntnomedood
+      Offset: [0, 0]
+      Size: [800, 600]
     http://c.thumbs.redditmedia.com/VmmZyeG6NbDW24iV.png:
-        /gdbsmirk:
-            Positioning: [119, 150, -482, 0]
-        /pghoofpump:
-            Positioning: [71, 150, 0, 0]
-        /pglegcross:
-            Positioning: [67, 150, -198, 0]
-        /pgshock:
-            Positioning: [127, 150, -71, 0]
-        /pgshuffle:
-            Positioning: [78, 150, -265, 0]
-        /ponykakke:
-            Positioning: [139, 150, -343, 0]
+    - Name: /gdbsmirk
+      Offset: [-482, 0]
+      Size: [119, 150]
+    - Name: /pghoofpump
+      Offset: [0, 0]
+      Size: [71, 150]
+    - Name: /pglegcross
+      Offset: [-198, 0]
+      Size: [67, 150]
+    - Name: /pgshock
+      Offset: [-71, 0]
+      Size: [127, 150]
+    - Name: /pgshuffle
+      Offset: [-265, 0]
+      Size: [78, 150]
+    - Name: /ponykakke
+      Offset: [-343, 0]
+      Size: [139, 150]
+Meta: {Name: r/pankakke, Timestamp: 'Sat Aug 25 23:59:13 2012'}

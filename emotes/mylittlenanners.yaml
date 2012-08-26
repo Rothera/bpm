@@ -1,1015 +1,1539 @@
-Spritesheets:
+Emotes:
+  Custom:
+  - CSS: {background-position: -0px -280px}
+    Name: /bra04
+  - CSS: {background-position: -70px -280px}
+    Name: /bra14
+  - CSS: {background-position: -70px -490px}
+    Name: /brabhuh
+  - CSS: {background-position: -0px -490px}
+    Name: /brajbaffle
+  - CSS: {background-position: -0px -490px}
+    Name: /brajconfused
+  - CSS: {background-position: -0px -490px}
+    Name: /brajtherapy
+  - CSS: {background-position: -140px -490px}
+    Name: /brlily
+  - CSS: {background-position: -70px -280px}
+    Name: /brlootascoo
+  - CSS: {background-position: -0px -280px}
+    Name: /brraritydaww
+  - CSS: {background-position: -70px -280px}
+    Name: /brscootacheer
+  - CSS: {background-position: -140px -490px}
+    Name: /brthehorror
+  Spritesheets:
     http://a.thumbs.redditmedia.com/ASKX1QiwLXNiDKCZ.png:
-        /bananasalute:
-            Positioning: [119, 150, -133, 0]
-        /bananawithit:
-            Positioning: [133, 150, 0, 0]
-        /bjelly:
-            Positioning: [185, 150, -252, 0]
-        /foreverilonis:
-            Positioning: [185, 150, -252, 0]
-        /peelwithit:
-            Positioning: [133, 150, 0, 0]
+    - Name: /bananasalute
+      Offset: [-133, 0]
+      Size: [119, 150]
+    - Name: /bananawithit
+      Offset: [0, 0]
+      Size: [133, 150]
+    - Name: /bjelly
+      Offset: [-252, 0]
+      Size: [185, 150]
+    - Name: /foreverilonis
+      Offset: [-252, 0]
+      Size: [185, 150]
+    - Name: /peelwithit
+      Offset: [0, 0]
+      Size: [133, 150]
     http://a.thumbs.redditmedia.com/T15GwnwvO5GiA1Ix.png:
-        /beershrug:
-            Positioning: [204, 150, 0, 0]
-        /bjcakeday:
-            Positioning: [90, 100, -214, 0]
-        /craft03:
-            Positioning: [100, 70, -204, -100]
-        /craftshrug:
-            Positioning: [100, 70, -204, -100]
+    - Name: /beershrug
+      Offset: [0, 0]
+      Size: [204, 150]
+    - Name: /bjcakeday
+      Offset: [-214, 0]
+      Size: [90, 100]
+    - Name: /craft03
+      Offset: [-204, -100]
+      Size: [100, 70]
+    - Name: /craftshrug
+      Offset: [-204, -100]
+      Size: [100, 70]
     http://a.thumbs.redditmedia.com/eQNLBKN407gNEwBx.png:
-        /bajfun:
-            Positioning: [230, 156, -2, -2]
-        /bbonfun:
-            Positioning: [259, 156, -234, -2]
-        /bcheerfun:
-            Positioning: [242, 156, -495, -2]
-        /bdashfun:
-            Positioning: [255, 156, -739, -2]
-        /bderpfun:
-            Positioning: [270, 156, -2, -160]
-        /blyrafun:
-            Positioning: [228, 156, -274, -160]
-        /bppfun:
-            Positioning: [244, 156, -504, -160]
-        /brarfun:
-            Positioning: [285, 156, -2, -318]
-        /brosefun:
-            Positioning: [227, 156, -289, -318]
-        /bshyfun:
-            Positioning: [263, 156, -518, -318]
-        /btrixfun:
-            Positioning: [272, 156, -2, -476]
+    - Name: /bajfun
+      Offset: [-2, -2]
+      Size: [230, 156]
+    - Name: /bbonfun
+      Offset: [-234, -2]
+      Size: [259, 156]
+    - Name: /bcheerfun
+      Offset: [-495, -2]
+      Size: [242, 156]
+    - Name: /bdashfun
+      Offset: [-739, -2]
+      Size: [255, 156]
+    - Name: /bderpfun
+      Offset: [-2, -160]
+      Size: [270, 156]
+    - Name: /blyrafun
+      Offset: [-274, -160]
+      Size: [228, 156]
+    - Name: /bppfun
+      Offset: [-504, -160]
+      Size: [244, 156]
+    - Name: /brarfun
+      Offset: [-2, -318]
+      Size: [285, 156]
+    - Name: /brosefun
+      Offset: [-289, -318]
+      Size: [227, 156]
+    - Name: /bshyfun
+      Offset: [-518, -318]
+      Size: [263, 156]
+    - Name: /btrixfun
+      Offset: [-2, -476]
+      Size: [272, 156]
     http://b.thumbs.redditmedia.com/5MQBk9lF1re-wLjg.png:
-        /fruitawut:
-            Positioning: [263, 263, 0, 0]
+    - Name: /fruitawut
+      Offset: [0, 0]
+      Size: [263, 263]
     http://b.thumbs.redditmedia.com/AmBHnjcEKlEEZS9O.png:
-        /bapplespider:
-            Positioning: [300, 290, 0, -1068]
-        /bflutterspider:
-            Positioning: [300, 281, 0, 0]
-        /brainbowspider:
-            Positioning: [300, 356, 0, -491]
-        /bspiderpie:
-            Positioning: [300, 433, 0, -1359]
-        /bspiderty:
-            Positioning: [300, 219, 0, -848]
-        /btwilightspider:
-            Positioning: [300, 208, 0, -282]
+    - Name: /bapplespider
+      Offset: [0, -1068]
+      Size: [300, 290]
+    - Name: /bflutterspider
+      Offset: [0, 0]
+      Size: [300, 281]
+    - Name: /brainbowspider
+      Offset: [0, -491]
+      Size: [300, 356]
+    - Name: /bspiderpie
+      Offset: [0, -1359]
+      Size: [300, 433]
+    - Name: /bspiderty
+      Offset: [0, -848]
+      Size: [300, 219]
+    - Name: /btwilightspider
+      Offset: [0, -282]
+      Size: [300, 208]
     http://c.thumbs.redditmedia.com/Ur26BaSdgJeEUNi8.png:
-        /iloveyou:
-            Positioning: [278, 180, 0, 0]
+    - Name: /iloveyou
+      Offset: [0, 0]
+      Size: [278, 180]
     http://c.thumbs.redditmedia.com/oHkXl2qQO4hI_OnV.png:
-        /babhuh:
-            Positioning: [70, 70, -70, -490]
-        /babsmile:
-            Positioning: [70, 70, 0, -280]
-        /bajbaffle:
-            Positioning: [70, 70, 0, -490]
-        /bajconfused:
-            Positioning: [70, 70, 0, -490]
-        /bajtherapy:
-            Positioning: [70, 70, 0, -490]
-        /bberry:
-            Positioning: [70, 70, -140, -210]
-        /bblacksnooty:
-            Positioning: [70, 70, 0, -350]
-        /bbonbon:
-            Positioning: [70, 70, -140, 0]
-        /bcheerilee:
-            Positioning: [70, 70, -140, -420]
-        /bcolgate:
-            Positioning: [70, 70, -70, -420]
-        /bcutealoo:
-            Positioning: [70, 70, 0, -140]
-        /bdealwithit:
-            Positioning: [70, 70, -140, -280]
-        /bfillytgap:
-            Positioning: [70, 70, -70, 0]
-        /bhappyluna:
-            Positioning: [70, 70, -70, -140]
-        /bhokeysmokes:
-            Positioning: [70, 70, 0, -350]
-        /bhuhhuh:
-            Positioning: [70, 70, -70, -280]
-        /bl00:
-            Positioning: [70, 70, 0, 0]
-        /blily:
-            Positioning: [70, 70, -140, -490]
-        /blunahappy:
-            Positioning: [70, 70, -70, -140]
-        /blyra:
-            Positioning: [70, 70, 0, 0]
-        /bnmm:
-            Positioning: [70, 70, 0, -350]
-        /boctavia:
-            Positioning: [70, 70, 0, -420]
-        /bpunchdrunk:
-            Positioning: [70, 70, -140, -210]
-        /bqueenmeanie:
-            Positioning: [70, 70, 0, -350]
-        /brabsmile:
-            Positioning: [70, 70, 0, -280]
-        /brberry:
-            Positioning: [70, 70, -140, -210]
-        /brblacksnooty:
-            Positioning: [70, 70, 0, -350]
-        /brbonbon:
-            Positioning: [70, 70, -140, 0]
-        /brcheerilee:
-            Positioning: [70, 70, -140, -420]
-        /brcolgate:
-            Positioning: [70, 70, -70, -420]
-        /brcutealoo:
-            Positioning: [70, 70, 0, -140]
-        /brdealwithit:
-            Positioning: [70, 70, -140, -280]
-        /brdhuh:
-            Positioning: [70, 70, -70, -70]
-        /brdsalute:
-            Positioning: [70, 70, -140, -350]
-        /brfillytgap:
-            Positioning: [70, 70, -70, 0]
-        /brhappyluna:
-            Positioning: [70, 70, -70, -140]
-        /brhokeysmokes:
-            Positioning: [70, 70, 0, -350]
-        /brhuhhuh:
-            Positioning: [70, 70, -70, -280]
-        /brl00:
-            Positioning: [70, 70, 0, 0]
-        /brlunahappy:
-            Positioning: [70, 70, -70, -140]
-        /brlyra:
-            Positioning: [70, 70, 0, 0]
-        /brnmm:
-            Positioning: [70, 70, 0, -350]
-        /broctavia:
-            Positioning: [70, 70, 0, -420]
-        /brpunchdrunk:
-            Positioning: [70, 70, -140, -210]
-        /brqueenmeanie:
-            Positioning: [70, 70, 0, -350]
-        /brrdhuh:
-            Positioning: [70, 70, -70, -70]
-        /brrdsalute:
-            Positioning: [70, 70, -140, -350]
-        /brsbstare:
-            Positioning: [70, 70, -70, -210]
-        /brsnails:
-            Positioning: [70, 70, 0, -70]
-        /brsotrue:
-            Positioning: [70, 70, -140, -140]
-        /brspitfire:
-            Positioning: [70, 70, -140, -70]
-        /brt00:
-            Positioning: [70, 70, -70, 0]
-        /brwahaha:
-            Positioning: [70, 70, 0, -210]
-        /brwhooves:
-            Positioning: [70, 70, -70, -350]
-        /bsbstare:
-            Positioning: [70, 70, -70, -210]
-        /bsnails:
-            Positioning: [70, 70, 0, -70]
-        /bsotrue:
-            Positioning: [70, 70, -140, -140]
-        /bspitfire:
-            Positioning: [70, 70, -140, -70]
-        /bt00:
-            Positioning: [70, 70, -70, 0]
-        /bthehorror:
-            Positioning: [70, 70, -140, -490]
-        /bwahaha:
-            Positioning: [70, 70, 0, -210]
-        /bwhooves:
-            Positioning: [70, 70, -70, -350]
+    - Name: /babhuh
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /babsmile
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /bajbaffle
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /bajconfused
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /bajtherapy
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /bberry
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /bblacksnooty
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /bbonbon
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /bcheerilee
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /bcolgate
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /bcutealoo
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /bdealwithit
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /bfillytgap
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /bhappyluna
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /bhokeysmokes
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /bhuhhuh
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /bl00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /blily
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /blunahappy
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /blyra
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /bnmm
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /boctavia
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /bpunchdrunk
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /bqueenmeanie
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /brabsmile
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /brberry
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /brblacksnooty
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /brbonbon
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /brcheerilee
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /brcolgate
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /brcutealoo
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /brdealwithit
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /brdhuh
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /brdsalute
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /brfillytgap
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /brhappyluna
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /brhokeysmokes
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /brhuhhuh
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /brl00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /brlunahappy
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /brlyra
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /brnmm
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /broctavia
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /brpunchdrunk
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /brqueenmeanie
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /brrdhuh
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /brrdsalute
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /brsbstare
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /brsnails
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /brsotrue
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /brspitfire
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /brt00
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /brwahaha
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /brwhooves
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /bsbstare
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /bsnails
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /bsotrue
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /bspitfire
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /bt00
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /bthehorror
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /bwahaha
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /bwhooves
+      Offset: [-70, -350]
+      Size: [70, 70]
     http://d.thumbs.redditmedia.com/GuWf660kUmlGRYwi.png:
-        /bajfrown:
-            Positioning: [70, 70, 0, -280]
-        /ballmybits:
-            Positioning: [70, 70, 0, -630]
-        /bangel:
-            Positioning: [70, 70, -140, -560]
-        /bc00:
-            Positioning: [70, 70, 0, 0]
-        /bc01:
-            Positioning: [70, 70, 0, -70]
-        /bc02:
-            Positioning: [70, 70, 0, -140]
-        /bc03:
-            Positioning: [70, 70, 0, -210]
-        /bc04:
-            Positioning: [70, 70, 0, -280]
-        /bc05:
-            Positioning: [70, 70, 0, -350]
-        /bc06:
-            Positioning: [70, 70, 0, -420]
-        /bc07:
-            Positioning: [70, 70, 0, -490]
-        /bc08:
-            Positioning: [70, 70, 0, -560]
-        /bc09:
-            Positioning: [70, 70, 0, -630]
-        /bc10:
-            Positioning: [70, 70, -70, 0]
-        /bc11:
-            Positioning: [70, 70, -70, -70]
-        /bc12:
-            Positioning: [70, 70, -70, -140]
-        /bc13:
-            Positioning: [70, 70, -70, -210]
-        /bc14:
-            Positioning: [70, 70, -70, -280]
-        /bc15:
-            Positioning: [70, 70, -70, -350]
-        /bc16:
-            Positioning: [70, 70, -70, -420]
-        /bc17:
-            Positioning: [70, 70, -70, -490]
-        /bc18:
-            Positioning: [70, 70, -70, -560]
-        /bc19:
-            Positioning: [70, 70, -70, -630]
-        /bc20:
-            Positioning: [70, 70, -140, 0]
-        /bc21:
-            Positioning: [70, 70, -140, -70]
-        /bc22:
-            Positioning: [70, 70, -140, -140]
-        /bc23:
-            Positioning: [70, 70, -140, -210]
-        /bc24:
-            Positioning: [70, 70, -140, -280]
-        /bc25:
-            Positioning: [70, 70, -140, -350]
-        /bc26:
-            Positioning: [70, 70, -140, -420]
-        /bc27:
-            Positioning: [70, 70, -140, -490]
-        /bc28:
-            Positioning: [70, 70, -140, -560]
-        /bc29:
-            Positioning: [70, 70, -140, -630]
-        /bcelestia:
-            Positioning: [70, 70, -70, -560]
-        /bderp:
-            Positioning: [70, 70, -140, -350]
-        /bderpyhappy:
-            Positioning: [70, 70, -140, -210]
-        /bderpyshock:
-            Positioning: [70, 70, -140, -420]
-        /bfabulous:
-            Positioning: [70, 70, -70, -350]
-        /bflutterblush:
-            Positioning: [70, 70, 0, -210]
-        /bgross:
-            Positioning: [70, 70, -70, -210]
-        /bhahaha:
-            Positioning: [70, 70, -140, -140]
-        /bhmmm:
-            Positioning: [70, 70, -70, -280]
-        /bjoy:
-            Positioning: [70, 70, -140, -280]
-        /blouder:
-            Positioning: [70, 70, 0, -420]
-        /bloveme:
-            Positioning: [70, 70, -70, -490]
-        /blunagasp:
-            Positioning: [70, 70, -140, -490]
-        /blunasad:
-            Positioning: [70, 70, -70, -420]
-        /bohhi:
-            Positioning: [70, 70, 0, -140]
-        /bparty:
-            Positioning: [70, 70, -70, -140]
-        /bphotofinish:
-            Positioning: [70, 70, -140, -630]
-        /bpinkamina:
-            Positioning: [70, 70, 0, -490]
-        /brajfrown:
-            Positioning: [70, 70, 0, -280]
-        /brallmybits:
-            Positioning: [70, 70, 0, -630]
-        /brangel:
-            Positioning: [70, 70, -140, -560]
-        /braritysad:
-            Positioning: [70, 70, 0, -350]
-        /brc00:
-            Positioning: [70, 70, 0, 0]
-        /brc01:
-            Positioning: [70, 70, 0, -70]
-        /brc02:
-            Positioning: [70, 70, 0, -140]
-        /brc03:
-            Positioning: [70, 70, 0, -210]
-        /brc04:
-            Positioning: [70, 70, 0, -280]
-        /brc05:
-            Positioning: [70, 70, 0, -350]
-        /brc06:
-            Positioning: [70, 70, 0, -420]
-        /brc07:
-            Positioning: [70, 70, 0, -490]
-        /brc08:
-            Positioning: [70, 70, 0, -560]
-        /brc09:
-            Positioning: [70, 70, 0, -630]
-        /brc10:
-            Positioning: [70, 70, -70, 0]
-        /brc11:
-            Positioning: [70, 70, -70, -70]
-        /brc12:
-            Positioning: [70, 70, -70, -140]
-        /brc13:
-            Positioning: [70, 70, -70, -210]
-        /brc14:
-            Positioning: [70, 70, -70, -280]
-        /brc15:
-            Positioning: [70, 70, -70, -350]
-        /brc16:
-            Positioning: [70, 70, -70, -420]
-        /brc17:
-            Positioning: [70, 70, -70, -490]
-        /brc18:
-            Positioning: [70, 70, -70, -560]
-        /brc19:
-            Positioning: [70, 70, -70, -630]
-        /brc20:
-            Positioning: [70, 70, -140, 0]
-        /brc21:
-            Positioning: [70, 70, -140, -70]
-        /brc22:
-            Positioning: [70, 70, -140, -140]
-        /brc23:
-            Positioning: [70, 70, -140, -210]
-        /brc24:
-            Positioning: [70, 70, -140, -280]
-        /brc25:
-            Positioning: [70, 70, -140, -350]
-        /brc26:
-            Positioning: [70, 70, -140, -420]
-        /brc27:
-            Positioning: [70, 70, -140, -490]
-        /brc28:
-            Positioning: [70, 70, -140, -560]
-        /brc29:
-            Positioning: [70, 70, -140, -630]
-        /brcelestia:
-            Positioning: [70, 70, -70, -560]
-        /brdannoyed:
-            Positioning: [70, 70, -140, 0]
-        /brderp:
-            Positioning: [70, 70, -140, -350]
-        /brderpyhappy:
-            Positioning: [70, 70, -140, -210]
-        /brderpyshock:
-            Positioning: [70, 70, -140, -420]
-        /brdhappy:
-            Positioning: [70, 70, -70, 0]
-        /brdsitting:
-            Positioning: [70, 70, 0, 0]
-        /brfabulous:
-            Positioning: [70, 70, -70, -350]
-        /brflutterblush:
-            Positioning: [70, 70, 0, -210]
-        /brgross:
-            Positioning: [70, 70, -70, -210]
-        /brhahaha:
-            Positioning: [70, 70, -140, -140]
-        /brhmmm:
-            Positioning: [70, 70, -70, -280]
-        /brjoy:
-            Positioning: [70, 70, -140, -280]
-        /brlouder:
-            Positioning: [70, 70, 0, -420]
-        /brloveme:
-            Positioning: [70, 70, -70, -490]
-        /brlunagasp:
-            Positioning: [70, 70, -140, -490]
-        /brlunasad:
-            Positioning: [70, 70, -70, -420]
-        /brohhi:
-            Positioning: [70, 70, 0, -140]
-        /brparty:
-            Positioning: [70, 70, -70, -140]
-        /brphotofinish:
-            Positioning: [70, 70, -140, -630]
-        /brpinkamina:
-            Positioning: [70, 70, 0, -490]
-        /brraritysad:
-            Positioning: [70, 70, 0, -350]
-        /brrdannoyed:
-            Positioning: [70, 70, -140, 0]
-        /brrdhappy:
-            Positioning: [70, 70, -70, 0]
-        /brrdsitting:
-            Positioning: [70, 70, 0, 0]
-        /brscootaloo:
-            Positioning: [70, 70, 0, -560]
-        /brtwismile:
-            Positioning: [70, 70, -70, -70]
-        /brtwismug:
-            Positioning: [70, 70, 0, -70]
-        /brtwistare:
-            Positioning: [70, 70, -140, -70]
-        /brzecora:
-            Positioning: [70, 70, -70, -630]
-        /bscootaloo:
-            Positioning: [70, 70, 0, -560]
-        /btwismile:
-            Positioning: [70, 70, -70, -70]
-        /btwismug:
-            Positioning: [70, 70, 0, -70]
-        /btwistare:
-            Positioning: [70, 70, -140, -70]
-        /bzecora:
-            Positioning: [70, 70, -70, -630]
+    - Name: /bajfrown
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /ballmybits
+      Offset: [0, -630]
+      Size: [70, 70]
+    - Name: /bangel
+      Offset: [-140, -560]
+      Size: [70, 70]
+    - Name: /bc00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /bc01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /bc02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /bc03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /bc04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /bc05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /bc06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /bc07
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /bc08
+      Offset: [0, -560]
+      Size: [70, 70]
+    - Name: /bc09
+      Offset: [0, -630]
+      Size: [70, 70]
+    - Name: /bc10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /bc11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /bc12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /bc13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /bc14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /bc15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /bc16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /bc17
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /bc18
+      Offset: [-70, -560]
+      Size: [70, 70]
+    - Name: /bc19
+      Offset: [-70, -630]
+      Size: [70, 70]
+    - Name: /bc20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /bc21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /bc22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /bc23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /bc24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /bc25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /bc26
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /bc27
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /bc28
+      Offset: [-140, -560]
+      Size: [70, 70]
+    - Name: /bc29
+      Offset: [-140, -630]
+      Size: [70, 70]
+    - Name: /bcelestia
+      Offset: [-70, -560]
+      Size: [70, 70]
+    - Name: /bderp
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /bderpyhappy
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /bderpyshock
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /bfabulous
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /bflutterblush
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /bgross
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /bhahaha
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /bhmmm
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /bjoy
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /blouder
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /bloveme
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /blunagasp
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /blunasad
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /bohhi
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /bparty
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /bphotofinish
+      Offset: [-140, -630]
+      Size: [70, 70]
+    - Name: /bpinkamina
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /brajfrown
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /brallmybits
+      Offset: [0, -630]
+      Size: [70, 70]
+    - Name: /brangel
+      Offset: [-140, -560]
+      Size: [70, 70]
+    - Name: /braritysad
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /brc00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /brc01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /brc02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /brc03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /brc04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /brc05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /brc06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /brc07
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /brc08
+      Offset: [0, -560]
+      Size: [70, 70]
+    - Name: /brc09
+      Offset: [0, -630]
+      Size: [70, 70]
+    - Name: /brc10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /brc11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /brc12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /brc13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /brc14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /brc15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /brc16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /brc17
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /brc18
+      Offset: [-70, -560]
+      Size: [70, 70]
+    - Name: /brc19
+      Offset: [-70, -630]
+      Size: [70, 70]
+    - Name: /brc20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /brc21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /brc22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /brc23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /brc24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /brc25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /brc26
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /brc27
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /brc28
+      Offset: [-140, -560]
+      Size: [70, 70]
+    - Name: /brc29
+      Offset: [-140, -630]
+      Size: [70, 70]
+    - Name: /brcelestia
+      Offset: [-70, -560]
+      Size: [70, 70]
+    - Name: /brdannoyed
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /brderp
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /brderpyhappy
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /brderpyshock
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /brdhappy
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /brdsitting
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /brfabulous
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /brflutterblush
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /brgross
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /brhahaha
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /brhmmm
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /brjoy
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /brlouder
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /brloveme
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /brlunagasp
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /brlunasad
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /brohhi
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /brparty
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /brphotofinish
+      Offset: [-140, -630]
+      Size: [70, 70]
+    - Name: /brpinkamina
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /brraritysad
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /brrdannoyed
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /brrdhappy
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /brrdsitting
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /brscootaloo
+      Offset: [0, -560]
+      Size: [70, 70]
+    - Name: /brtwismile
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /brtwismug
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /brtwistare
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /brzecora
+      Offset: [-70, -630]
+      Size: [70, 70]
+    - Name: /bscootaloo
+      Offset: [0, -560]
+      Size: [70, 70]
+    - Name: /btwismile
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /btwismug
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /btwistare
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /bzecora
+      Offset: [-70, -630]
+      Size: [70, 70]
     http://d.thumbs.redditmedia.com/UHPMBFgk7D4eAhAE.png:
-        /batman:
-            Positioning: [123, 150, 0, 0]
-        /dasnice:
-            Positioning: [65, 70, -123, 0]
-        /derpysad:
-            Positioning: [200, 137, -551, 0]
-        /onebutt:
-            Positioning: [105, 105, -578, -137]
-        /oot:
-            Positioning: [127, 200, -226, 0]
-        /opti:
-            Positioning: [65, 70, -123, 0]
-        /p18:
-            Positioning: [87, 100, -491, -176]
-        /ploot:
-            Positioning: [128, 75, 0, -150]
-        /portal1:
-            Positioning: [200, 143, -351, 0]
-        /portal2:
-            Positioning: [115, 77, -226, -199]
-        /root:
-            Positioning: [150, 85, -341, -191]
+    - Name: /batman
+      Offset: [0, 0]
+      Size: [123, 150]
+    - Name: /dasnice
+      Offset: [-123, 0]
+      Size: [65, 70]
+    - Name: /derpysad
+      Offset: [-551, 0]
+      Size: [200, 137]
+    - Name: /onebutt
+      Offset: [-578, -137]
+      Size: [105, 105]
+    - Name: /oot
+      Offset: [-226, 0]
+      Size: [127, 200]
+    - Name: /opti
+      Offset: [-123, 0]
+      Size: [65, 70]
+    - Name: /p18
+      Offset: [-491, -176]
+      Size: [87, 100]
+    - Name: /ploot
+      Offset: [0, -150]
+      Size: [128, 75]
+    - Name: /portal1
+      Offset: [-351, 0]
+      Size: [200, 143]
+    - Name: /portal2
+      Offset: [-226, -199]
+      Size: [115, 77]
+    - Name: /root
+      Offset: [-341, -191]
+      Size: [150, 85]
     http://e.thumbs.redditmedia.com/7iXyOZvxFfdx6-mX.png:
-        /ba00:
-            Positioning: [70, 70, 0, 0]
-        /ba01:
-            Positioning: [70, 70, 0, -70]
-        /ba02:
-            Positioning: [70, 70, 0, -140]
-        /ba03:
-            Positioning: [70, 70, 0, -210]
-        /ba04:
-            Positioning: [70, 70, 0, -280]
-        /ba10:
-            Positioning: [70, 70, -70, 0]
-        /ba11:
-            Positioning: [70, 70, -70, -70]
-        /ba12:
-            Positioning: [70, 70, -70, -140]
-        /ba13:
-            Positioning: [70, 70, -70, -210]
-        /ba14:
-            Positioning: [70, 70, -70, -280]
-        /ba20:
-            Positioning: [70, 70, -140, 0]
-        /ba21:
-            Positioning: [70, 70, -140, -70]
-        /ba22:
-            Positioning: [70, 70, -140, -140]
-        /ba23:
-            Positioning: [70, 70, -140, -210]
-        /bajhappy:
-            Positioning: [70, 70, 0, -210]
-        /bajlie:
-            Positioning: [70, 70, 0, 0]
-        /bcelestiamad:
-            Positioning: [70, 70, -70, -70]
-        /bderpwizard:
-            Positioning: [70, 70, -140, -140]
-        /bflutterjerk:
-            Positioning: [70, 70, -140, 0]
-        /bhapplejack:
-            Positioning: [70, 70, 0, -210]
-        /blootascoo:
-            Positioning: [70, 70, -70, -280]
-        /blunateehee:
-            Positioning: [70, 70, 0, -140]
-        /blunawait:
-            Positioning: [70, 70, -70, -140]
-        /bpaperbagderpy:
-            Positioning: [70, 70, -140, -140]
-        /bpaperbagwizard:
-            Positioning: [70, 70, -140, -140]
-        /bpinkiefear:
-            Positioning: [70, 70, -70, -210]
-        /bppfear:
-            Positioning: [70, 70, -70, -210]
-        /bpriceless:
-            Positioning: [70, 70, -70, 0]
-        /bra00:
-            Positioning: [70, 70, 0, 0]
-        /bra01:
-            Positioning: [70, 70, 0, -70]
-        /bra02:
-            Positioning: [70, 70, 0, -140]
-        /bra03:
-            Positioning: [70, 70, 0, -210]
-        /bra10:
-            Positioning: [70, 70, -70, 0]
-        /bra11:
-            Positioning: [70, 70, -70, -70]
-        /bra12:
-            Positioning: [70, 70, -70, -140]
-        /bra13:
-            Positioning: [70, 70, -70, -210]
-        /bra20:
-            Positioning: [70, 70, -140, 0]
-        /bra21:
-            Positioning: [70, 70, -140, -70]
-        /bra22:
-            Positioning: [70, 70, -140, -140]
-        /bra23:
-            Positioning: [70, 70, -140, -210]
-        /brajhappy:
-            Positioning: [70, 70, 0, -210]
-        /brajlie:
-            Positioning: [70, 70, 0, 0]
-        /braritydaww:
-            Positioning: [70, 70, 0, -280]
-        /brcelestiamad:
-            Positioning: [70, 70, -70, -70]
-        /brderpwizard:
-            Positioning: [70, 70, -140, -140]
-        /brflutterjerk:
-            Positioning: [70, 70, -140, 0]
-        /brhapplejack:
-            Positioning: [70, 70, 0, -210]
-        /brlunateehee:
-            Positioning: [70, 70, 0, -140]
-        /brlunawait:
-            Positioning: [70, 70, -70, -140]
-        /brpaperbagderpy:
-            Positioning: [70, 70, -140, -140]
-        /brpaperbagwizard:
-            Positioning: [70, 70, -140, -140]
-        /brpinkiefear:
-            Positioning: [70, 70, -70, -210]
-        /brppfear:
-            Positioning: [70, 70, -70, -210]
-        /brpriceless:
-            Positioning: [70, 70, -70, 0]
-        /brtwibeam:
-            Positioning: [70, 70, -140, -210]
-        /brtwicrazy:
-            Positioning: [70, 70, -140, -70]
-        /brtwipride:
-            Positioning: [70, 70, 0, -70]
-        /bscootacheer:
-            Positioning: [70, 70, -70, -280]
-        /btwibeam:
-            Positioning: [70, 70, -140, -210]
-        /btwicrazy:
-            Positioning: [70, 70, -140, -70]
-        /btwipride:
-            Positioning: [70, 70, 0, -70]
+    - Name: /ba00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /ba01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /ba02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /ba03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /ba04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /ba10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /ba11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /ba12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /ba13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /ba14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /ba20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /ba21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /ba22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /ba23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /bajhappy
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /bajlie
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /bcelestiamad
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /bderpwizard
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /bflutterjerk
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /bhapplejack
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /blootascoo
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /blunateehee
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /blunawait
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /bpaperbagderpy
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /bpaperbagwizard
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /bpinkiefear
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /bppfear
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /bpriceless
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /bra00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /bra01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /bra02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /bra03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /bra10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /bra11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /bra12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /bra13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /bra20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /bra21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /bra22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /bra23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /brajhappy
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /brajlie
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /braritydaww
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /brcelestiamad
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /brderpwizard
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /brflutterjerk
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /brhapplejack
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /brlunateehee
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /brlunawait
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /brpaperbagderpy
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /brpaperbagwizard
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /brpinkiefear
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /brppfear
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /brpriceless
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /brtwibeam
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /brtwicrazy
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /brtwipride
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /bscootacheer
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /btwibeam
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /btwicrazy
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /btwipride
+      Offset: [0, -70]
+      Size: [70, 70]
     http://e.thumbs.redditmedia.com/p7WtzOaiGf5AkdDF.png:
-        /bspikegnat:
-            Positioning: [166, 224, 0, 0]
+    - Name: /bspikegnat
+      Offset: [0, 0]
+      Size: [166, 224]
     http://e.thumbs.redditmedia.com/tXQiGaFBXsO50q0p.png:
-        /pbjtdash:
-            Positioning: [35, 35, -70, -35]
-        /pbjtderpy:
-            Positioning: [35, 35, -35, 0]
-        /pbjtflutters:
-            Positioning: [35, 35, -70, 0]
-        /pbjtlyra:
-            Positioning: [35, 35, 0, -35]
-        /pbjtpinkie:
-            Positioning: [35, 35, -35, -35]
-        /pbjtscoots:
-            Positioning: [35, 35, 0, 0]
-        /pbjttwi:
-            Positioning: [35, 35, 0, -70]
+    - Name: /pbjtdash
+      Offset: [-70, -35]
+      Size: [35, 35]
+    - Name: /pbjtderpy
+      Offset: [-35, 0]
+      Size: [35, 35]
+    - Name: /pbjtflutters
+      Offset: [-70, 0]
+      Size: [35, 35]
+    - Name: /pbjtlyra
+      Offset: [0, -35]
+      Size: [35, 35]
+    - Name: /pbjtpinkie
+      Offset: [-35, -35]
+      Size: [35, 35]
+    - Name: /pbjtscoots
+      Offset: [0, 0]
+      Size: [35, 35]
+    - Name: /pbjttwi
+      Offset: [0, -70]
+      Size: [35, 35]
     http://e.thumbs.redditmedia.com/wsgG2PPiT1uzQlk4.png:
-        /babflip:
-            Positioning: [179, 130, -2, -2]
-        /bajflip:
-            Positioning: [187, 145, -785, -138]
-        /ballthetables:
-            Positioning: [1009, 603, 0, 0]
-        /bananaflip:
-            Positioning: [225, 150, -775, -451]
-        /bberryflip:
-            Positioning: [199, 145, -2, -285]
-        /bbonflip:
-            Positioning: [199, 145, -405, -285]
-        /bdashflip:
-            Positioning: [200, 145, -203, -285]
-        /bderpflip:
-            Positioning: [200, 145, -606, -285]
-        /bdisflip:
-            Positioning: [199, 145, -175, -432]
-        /bdpflip:
-            Positioning: [199, 145, -175, -432]
-        /bflutflip:
-            Positioning: [200, 134, -747, -2]
-        /bkarmaflip:
-            Positioning: [199, 145, -808, -285]
-        /blunaflip:
-            Positioning: [171, 145, -2, -432]
-        /blyraflip:
-            Positioning: [199, 145, -584, -138]
-        /boctflip:
-            Positioning: [200, 134, -545, -2]
-        /bpieflip:
-            Positioning: [200, 145, -181, -138]
-        /brarflip:
-            Positioning: [199, 145, -383, -138]
-        /brderpflip:
-            Positioning: [177, 145, -2, -138]
-        /broseflip:
-            Positioning: [200, 146, -376, -432]
-        /bsbflip:
-            Positioning: [179, 130, -183, -2]
-        /bscootflip:
-            Positioning: [179, 130, -364, -2]
-        /bshyflip:
-            Positioning: [200, 134, -747, -2]
-        /btiaflip:
-            Positioning: [200, 169, -578, -432]
+    - Name: /babflip
+      Offset: [-2, -2]
+      Size: [179, 130]
+    - Name: /bajflip
+      Offset: [-785, -138]
+      Size: [187, 145]
+    - Name: /ballthetables
+      Offset: [0, 0]
+      Size: [1009, 603]
+    - Name: /bananaflip
+      Offset: [-775, -451]
+      Size: [225, 150]
+    - Name: /bberryflip
+      Offset: [-2, -285]
+      Size: [199, 145]
+    - Name: /bbonflip
+      Offset: [-405, -285]
+      Size: [199, 145]
+    - Name: /bdashflip
+      Offset: [-203, -285]
+      Size: [200, 145]
+    - Name: /bderpflip
+      Offset: [-606, -285]
+      Size: [200, 145]
+    - Name: /bdisflip
+      Offset: [-175, -432]
+      Size: [199, 145]
+    - Name: /bdpflip
+      Offset: [-175, -432]
+      Size: [199, 145]
+    - Name: /bflutflip
+      Offset: [-747, -2]
+      Size: [200, 134]
+    - Name: /bkarmaflip
+      Offset: [-808, -285]
+      Size: [199, 145]
+    - Name: /blunaflip
+      Offset: [-2, -432]
+      Size: [171, 145]
+    - Name: /blyraflip
+      Offset: [-584, -138]
+      Size: [199, 145]
+    - Name: /boctflip
+      Offset: [-545, -2]
+      Size: [200, 134]
+    - Name: /bpieflip
+      Offset: [-181, -138]
+      Size: [200, 145]
+    - Name: /brarflip
+      Offset: [-383, -138]
+      Size: [199, 145]
+    - Name: /brderpflip
+      Offset: [-2, -138]
+      Size: [177, 145]
+    - Name: /broseflip
+      Offset: [-376, -432]
+      Size: [200, 146]
+    - Name: /bsbflip
+      Offset: [-183, -2]
+      Size: [179, 130]
+    - Name: /bscootflip
+      Offset: [-364, -2]
+      Size: [179, 130]
+    - Name: /bshyflip
+      Offset: [-747, -2]
+      Size: [200, 134]
+    - Name: /btiaflip
+      Offset: [-578, -432]
+      Size: [200, 169]
     http://f.thumbs.redditmedia.com/8xvRZa4mPPfhuBUA.png:
-        /ba24:
-            Positioning: [70, 70, 0, 0]
-        /bswagintosh:
-            Positioning: [70, 70, 0, 0]
+    - Name: /ba24
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /bswagintosh
+      Offset: [0, 0]
+      Size: [70, 70]
     http://f.thumbs.redditmedia.com/bXZJBkgrgdaNM0zG.png:
-        /babwut:
-            Positioning: [50, 50, 0, -400]
-        /bajcower:
-            Positioning: [50, 50, 0, -50]
-        /bajsly:
-            Positioning: [50, 50, -50, -50]
-        /bajugh:
-            Positioning: [50, 50, 0, -250]
-        /bajwut:
-            Positioning: [50, 50, 0, -350]
-        /bb00:
-            Positioning: [50, 50, 0, 0]
-        /bb01:
-            Positioning: [50, 50, 0, -50]
-        /bb02:
-            Positioning: [50, 50, 0, -100]
-        /bb03:
-            Positioning: [50, 50, 0, -150]
-        /bb04:
-            Positioning: [50, 50, 0, -200]
-        /bb05:
-            Positioning: [50, 50, 0, -250]
-        /bb06:
-            Positioning: [50, 50, 0, -300]
-        /bb07:
-            Positioning: [50, 50, 0, -350]
-        /bb08:
-            Positioning: [50, 50, 0, -400]
-        /bb09:
-            Positioning: [50, 50, 0, -450]
-        /bb10:
-            Positioning: [50, 50, -50, 0]
-        /bb11:
-            Positioning: [50, 50, -50, -50]
-        /bb12:
-            Positioning: [50, 50, -50, -100]
-        /bb13:
-            Positioning: [50, 50, -50, -150]
-        /bb14:
-            Positioning: [50, 50, -50, -200]
-        /bb15:
-            Positioning: [50, 50, -50, -250]
-        /bb16:
-            Positioning: [50, 50, -50, -300]
-        /bb17:
-            Positioning: [50, 50, -50, -350]
-        /bb18:
-            Positioning: [50, 50, -50, -400]
-        /bb19:
-            Positioning: [50, 50, -50, -450]
-        /bb20:
-            Positioning: [50, 50, -100, 0]
-        /bb21:
-            Positioning: [50, 50, -100, -50]
-        /bb22:
-            Positioning: [50, 50, -100, -100]
-        /bb23:
-            Positioning: [50, 50, -100, -150]
-        /bb24:
-            Positioning: [50, 50, -100, -200]
-        /bb25:
-            Positioning: [50, 50, -100, -250]
-        /bb26:
-            Positioning: [50, 50, -100, -300]
-        /bb27:
-            Positioning: [50, 50, -100, -350]
-        /bb28:
-            Positioning: [50, 50, -100, -400]
-        /bb29:
-            Positioning: [50, 50, -100, -450]
-        /bb30:
-            Positioning: [50, 50, -150, 0]
-        /bb31:
-            Positioning: [50, 50, -150, -50]
-        /bb32:
-            Positioning: [50, 50, -150, -100]
-        /bb33:
-            Positioning: [50, 50, -150, -150]
-        /bb34:
-            Positioning: [50, 50, -150, -200]
-        /bb35:
-            Positioning: [50, 50, -150, -250]
-        /bb36:
-            Positioning: [50, 50, -150, -300]
-        /bb37:
-            Positioning: [50, 50, -150, -350]
-        /bb38:
-            Positioning: [50, 50, -150, -400]
-        /bb39:
-            Positioning: [50, 50, -150, -450]
-        /bcockatrice:
-            Positioning: [50, 50, -100, -400]
-        /bdj:
-            Positioning: [50, 50, -150, -150]
-        /bdumbfabric:
-            Positioning: [50, 50, -100, -250]
-        /beeyup:
-            Positioning: [50, 50, -100, -50]
-        /bfacehoof:
-            Positioning: [50, 50, -150, -400]
-        /bflutterfear:
-            Positioning: [50, 50, 0, 0]
-        /bfluttershh:
-            Positioning: [50, 50, 0, -200]
-        /bfluttershy:
-            Positioning: [50, 50, -150, 0]
-        /bfluttersrs:
-            Positioning: [50, 50, 0, -100]
-        /bflutterwink:
-            Positioning: [50, 50, -50, -300]
-        /bflutteryay:
-            Positioning: [50, 50, -50, -200]
-        /bmanspike:
-            Positioning: [50, 50, -50, -400]
-        /bnewrainbowdash:
-            Positioning: [50, 50, -50, -150]
-        /bnoooo:
-            Positioning: [50, 50, -100, -150]
-        /bppboring:
-            Positioning: [50, 50, -50, 0]
-        /bppseesyou:
-            Positioning: [50, 50, -150, -450]
-        /bppshrug:
-            Positioning: [50, 50, 0, -150]
-        /brabwut:
-            Positioning: [50, 50, 0, -400]
-        /brajcower:
-            Positioning: [50, 50, 0, -50]
-        /brajsly:
-            Positioning: [50, 50, -50, -50]
-        /brajugh:
-            Positioning: [50, 50, 0, -250]
-        /brajwut:
-            Positioning: [50, 50, 0, -350]
-        /brarityannoyed:
-            Positioning: [50, 50, -100, -300]
-        /braritydress:
-            Positioning: [50, 50, -50, -100]
-        /brarityjudge:
-            Positioning: [50, 50, 0, -450]
-        /brarityprimp:
-            Positioning: [50, 50, -50, -450]
-        /braritywhine:
-            Positioning: [50, 50, -100, -350]
-        /braritywhy:
-            Positioning: [50, 50, -150, -250]
-        /braritywut:
-            Positioning: [50, 50, -50, -250]
-        /brarityyell:
-            Positioning: [50, 50, -100, 0]
-        /brb00:
-            Positioning: [50, 50, 0, 0]
-        /brb01:
-            Positioning: [50, 50, 0, -50]
-        /brb02:
-            Positioning: [50, 50, 0, -100]
-        /brb03:
-            Positioning: [50, 50, 0, -150]
-        /brb04:
-            Positioning: [50, 50, 0, -200]
-        /brb05:
-            Positioning: [50, 50, 0, -250]
-        /brb06:
-            Positioning: [50, 50, 0, -300]
-        /brb07:
-            Positioning: [50, 50, 0, -350]
-        /brb08:
-            Positioning: [50, 50, 0, -400]
-        /brb09:
-            Positioning: [50, 50, 0, -450]
-        /brb10:
-            Positioning: [50, 50, -50, 0]
-        /brb11:
-            Positioning: [50, 50, -50, -50]
-        /brb12:
-            Positioning: [50, 50, -50, -100]
-        /brb13:
-            Positioning: [50, 50, -50, -150]
-        /brb14:
-            Positioning: [50, 50, -50, -200]
-        /brb15:
-            Positioning: [50, 50, -50, -250]
-        /brb16:
-            Positioning: [50, 50, -50, -300]
-        /brb17:
-            Positioning: [50, 50, -50, -350]
-        /brb18:
-            Positioning: [50, 50, -50, -400]
-        /brb19:
-            Positioning: [50, 50, -50, -450]
-        /brb20:
-            Positioning: [50, 50, -100, 0]
-        /brb21:
-            Positioning: [50, 50, -100, -50]
-        /brb22:
-            Positioning: [50, 50, -100, -100]
-        /brb23:
-            Positioning: [50, 50, -100, -150]
-        /brb24:
-            Positioning: [50, 50, -100, -200]
-        /brb25:
-            Positioning: [50, 50, -100, -250]
-        /brb26:
-            Positioning: [50, 50, -100, -300]
-        /brb27:
-            Positioning: [50, 50, -100, -350]
-        /brb28:
-            Positioning: [50, 50, -100, -400]
-        /brb29:
-            Positioning: [50, 50, -100, -450]
-        /brb30:
-            Positioning: [50, 50, -150, 0]
-        /brb31:
-            Positioning: [50, 50, -150, -50]
-        /brb32:
-            Positioning: [50, 50, -150, -100]
-        /brb33:
-            Positioning: [50, 50, -150, -150]
-        /brb34:
-            Positioning: [50, 50, -150, -200]
-        /brb35:
-            Positioning: [50, 50, -150, -250]
-        /brb36:
-            Positioning: [50, 50, -150, -300]
-        /brb37:
-            Positioning: [50, 50, -150, -350]
-        /brb38:
-            Positioning: [50, 50, -150, -400]
-        /brb39:
-            Positioning: [50, 50, -150, -450]
-        /brcockatrice:
-            Positioning: [50, 50, -100, -400]
-        /brdcool:
-            Positioning: [50, 50, -150, -350]
-        /brdj:
-            Positioning: [50, 50, -150, -150]
-        /brdsmile:
-            Positioning: [50, 50, -150, -50]
-        /brdumbfabric:
-            Positioning: [50, 50, -100, -250]
-        /brdwut:
-            Positioning: [50, 50, -150, -100]
-        /breeyup:
-            Positioning: [50, 50, -100, -50]
-        /brfacehoof:
-            Positioning: [50, 50, -150, -400]
-        /brflutterfear:
-            Positioning: [50, 50, 0, 0]
-        /brfluttershh:
-            Positioning: [50, 50, 0, -200]
-        /brfluttershy:
-            Positioning: [50, 50, -150, 0]
-        /brfluttersrs:
-            Positioning: [50, 50, 0, -100]
-        /brflutterwink:
-            Positioning: [50, 50, -50, -300]
-        /brflutteryay:
-            Positioning: [50, 50, -50, -200]
-        /brmanspike:
-            Positioning: [50, 50, -50, -400]
-        /brnewrainbowdash:
-            Positioning: [50, 50, -50, -150]
-        /brnoooo:
-            Positioning: [50, 50, -100, -150]
-        /brppboring:
-            Positioning: [50, 50, -50, 0]
-        /brppseesyou:
-            Positioning: [50, 50, -150, -450]
-        /brppshrug:
-            Positioning: [50, 50, 0, -150]
-        /brrarityannoyed:
-            Positioning: [50, 50, -100, -300]
-        /brraritydress:
-            Positioning: [50, 50, -50, -100]
-        /brrarityjudge:
-            Positioning: [50, 50, 0, -450]
-        /brrarityprimp:
-            Positioning: [50, 50, -50, -450]
-        /brraritywhine:
-            Positioning: [50, 50, -100, -350]
-        /brraritywhy:
-            Positioning: [50, 50, -150, -250]
-        /brraritywut:
-            Positioning: [50, 50, -50, -250]
-        /brrarityyell:
-            Positioning: [50, 50, -100, 0]
-        /brrdcool:
-            Positioning: [50, 50, -150, -350]
-        /brrdsmile:
-            Positioning: [50, 50, -150, -50]
-        /brrdwut:
-            Positioning: [50, 50, -150, -100]
-        /brsoawesome:
-            Positioning: [50, 50, -150, -300]
-        /brspikenervous:
-            Positioning: [50, 50, -50, -150]
-        /brspikepushy:
-            Positioning: [50, 50, -150, -200]
-        /brsquintyjack:
-            Positioning: [50, 50, -100, -200]
-        /brtakealetter:
-            Positioning: [50, 50, -100, -100]
-        /brthreedog:
-            Positioning: [50, 50, -150, -150]
-        /brtrixiesmug:
-            Positioning: [50, 50, 0, -300]
-        /brtwirage:
-            Positioning: [50, 50, -100, -450]
-        /brtwisquint:
-            Positioning: [50, 50, -50, -350]
-        /bsoawesome:
-            Positioning: [50, 50, -150, -300]
-        /bspikenervous:
-            Positioning: [50, 50, -50, -150]
-        /bspikepushy:
-            Positioning: [50, 50, -150, -200]
-        /bsquintyjack:
-            Positioning: [50, 50, -100, -200]
-        /btakealetter:
-            Positioning: [50, 50, -100, -100]
-        /bthreedog:
-            Positioning: [50, 50, -150, -150]
-        /btrixiesmug:
-            Positioning: [50, 50, 0, -300]
-        /btwirage:
-            Positioning: [50, 50, -100, -450]
-        /btwisquint:
-            Positioning: [50, 50, -50, -350]
+    - Name: /babwut
+      Offset: [0, -400]
+      Size: [50, 50]
+    - Name: /bajcower
+      Offset: [0, -50]
+      Size: [50, 50]
+    - Name: /bajsly
+      Offset: [-50, -50]
+      Size: [50, 50]
+    - Name: /bajugh
+      Offset: [0, -250]
+      Size: [50, 50]
+    - Name: /bajwut
+      Offset: [0, -350]
+      Size: [50, 50]
+    - Name: /bb00
+      Offset: [0, 0]
+      Size: [50, 50]
+    - Name: /bb01
+      Offset: [0, -50]
+      Size: [50, 50]
+    - Name: /bb02
+      Offset: [0, -100]
+      Size: [50, 50]
+    - Name: /bb03
+      Offset: [0, -150]
+      Size: [50, 50]
+    - Name: /bb04
+      Offset: [0, -200]
+      Size: [50, 50]
+    - Name: /bb05
+      Offset: [0, -250]
+      Size: [50, 50]
+    - Name: /bb06
+      Offset: [0, -300]
+      Size: [50, 50]
+    - Name: /bb07
+      Offset: [0, -350]
+      Size: [50, 50]
+    - Name: /bb08
+      Offset: [0, -400]
+      Size: [50, 50]
+    - Name: /bb09
+      Offset: [0, -450]
+      Size: [50, 50]
+    - Name: /bb10
+      Offset: [-50, 0]
+      Size: [50, 50]
+    - Name: /bb11
+      Offset: [-50, -50]
+      Size: [50, 50]
+    - Name: /bb12
+      Offset: [-50, -100]
+      Size: [50, 50]
+    - Name: /bb13
+      Offset: [-50, -150]
+      Size: [50, 50]
+    - Name: /bb14
+      Offset: [-50, -200]
+      Size: [50, 50]
+    - Name: /bb15
+      Offset: [-50, -250]
+      Size: [50, 50]
+    - Name: /bb16
+      Offset: [-50, -300]
+      Size: [50, 50]
+    - Name: /bb17
+      Offset: [-50, -350]
+      Size: [50, 50]
+    - Name: /bb18
+      Offset: [-50, -400]
+      Size: [50, 50]
+    - Name: /bb19
+      Offset: [-50, -450]
+      Size: [50, 50]
+    - Name: /bb20
+      Offset: [-100, 0]
+      Size: [50, 50]
+    - Name: /bb21
+      Offset: [-100, -50]
+      Size: [50, 50]
+    - Name: /bb22
+      Offset: [-100, -100]
+      Size: [50, 50]
+    - Name: /bb23
+      Offset: [-100, -150]
+      Size: [50, 50]
+    - Name: /bb24
+      Offset: [-100, -200]
+      Size: [50, 50]
+    - Name: /bb25
+      Offset: [-100, -250]
+      Size: [50, 50]
+    - Name: /bb26
+      Offset: [-100, -300]
+      Size: [50, 50]
+    - Name: /bb27
+      Offset: [-100, -350]
+      Size: [50, 50]
+    - Name: /bb28
+      Offset: [-100, -400]
+      Size: [50, 50]
+    - Name: /bb29
+      Offset: [-100, -450]
+      Size: [50, 50]
+    - Name: /bb30
+      Offset: [-150, 0]
+      Size: [50, 50]
+    - Name: /bb31
+      Offset: [-150, -50]
+      Size: [50, 50]
+    - Name: /bb32
+      Offset: [-150, -100]
+      Size: [50, 50]
+    - Name: /bb33
+      Offset: [-150, -150]
+      Size: [50, 50]
+    - Name: /bb34
+      Offset: [-150, -200]
+      Size: [50, 50]
+    - Name: /bb35
+      Offset: [-150, -250]
+      Size: [50, 50]
+    - Name: /bb36
+      Offset: [-150, -300]
+      Size: [50, 50]
+    - Name: /bb37
+      Offset: [-150, -350]
+      Size: [50, 50]
+    - Name: /bb38
+      Offset: [-150, -400]
+      Size: [50, 50]
+    - Name: /bb39
+      Offset: [-150, -450]
+      Size: [50, 50]
+    - Name: /bcockatrice
+      Offset: [-100, -400]
+      Size: [50, 50]
+    - Name: /bdj
+      Offset: [-150, -150]
+      Size: [50, 50]
+    - Name: /bdumbfabric
+      Offset: [-100, -250]
+      Size: [50, 50]
+    - Name: /beeyup
+      Offset: [-100, -50]
+      Size: [50, 50]
+    - Name: /bfacehoof
+      Offset: [-150, -400]
+      Size: [50, 50]
+    - Name: /bflutterfear
+      Offset: [0, 0]
+      Size: [50, 50]
+    - Name: /bfluttershh
+      Offset: [0, -200]
+      Size: [50, 50]
+    - Name: /bfluttershy
+      Offset: [-150, 0]
+      Size: [50, 50]
+    - Name: /bfluttersrs
+      Offset: [0, -100]
+      Size: [50, 50]
+    - Name: /bflutterwink
+      Offset: [-50, -300]
+      Size: [50, 50]
+    - Name: /bflutteryay
+      Offset: [-50, -200]
+      Size: [50, 50]
+    - Name: /bmanspike
+      Offset: [-50, -400]
+      Size: [50, 50]
+    - Name: /bnewrainbowdash
+      Offset: [-50, -150]
+      Size: [50, 50]
+    - Name: /bnoooo
+      Offset: [-100, -150]
+      Size: [50, 50]
+    - Name: /bppboring
+      Offset: [-50, 0]
+      Size: [50, 50]
+    - Name: /bppseesyou
+      Offset: [-150, -450]
+      Size: [50, 50]
+    - Name: /bppshrug
+      Offset: [0, -150]
+      Size: [50, 50]
+    - Name: /brabwut
+      Offset: [0, -400]
+      Size: [50, 50]
+    - Name: /brajcower
+      Offset: [0, -50]
+      Size: [50, 50]
+    - Name: /brajsly
+      Offset: [-50, -50]
+      Size: [50, 50]
+    - Name: /brajugh
+      Offset: [0, -250]
+      Size: [50, 50]
+    - Name: /brajwut
+      Offset: [0, -350]
+      Size: [50, 50]
+    - Name: /brarityannoyed
+      Offset: [-100, -300]
+      Size: [50, 50]
+    - Name: /braritydress
+      Offset: [-50, -100]
+      Size: [50, 50]
+    - Name: /brarityjudge
+      Offset: [0, -450]
+      Size: [50, 50]
+    - Name: /brarityprimp
+      Offset: [-50, -450]
+      Size: [50, 50]
+    - Name: /braritywhine
+      Offset: [-100, -350]
+      Size: [50, 50]
+    - Name: /braritywhy
+      Offset: [-150, -250]
+      Size: [50, 50]
+    - Name: /braritywut
+      Offset: [-50, -250]
+      Size: [50, 50]
+    - Name: /brarityyell
+      Offset: [-100, 0]
+      Size: [50, 50]
+    - Name: /brb00
+      Offset: [0, 0]
+      Size: [50, 50]
+    - Name: /brb01
+      Offset: [0, -50]
+      Size: [50, 50]
+    - Name: /brb02
+      Offset: [0, -100]
+      Size: [50, 50]
+    - Name: /brb03
+      Offset: [0, -150]
+      Size: [50, 50]
+    - Name: /brb04
+      Offset: [0, -200]
+      Size: [50, 50]
+    - Name: /brb05
+      Offset: [0, -250]
+      Size: [50, 50]
+    - Name: /brb06
+      Offset: [0, -300]
+      Size: [50, 50]
+    - Name: /brb07
+      Offset: [0, -350]
+      Size: [50, 50]
+    - Name: /brb08
+      Offset: [0, -400]
+      Size: [50, 50]
+    - Name: /brb09
+      Offset: [0, -450]
+      Size: [50, 50]
+    - Name: /brb10
+      Offset: [-50, 0]
+      Size: [50, 50]
+    - Name: /brb11
+      Offset: [-50, -50]
+      Size: [50, 50]
+    - Name: /brb12
+      Offset: [-50, -100]
+      Size: [50, 50]
+    - Name: /brb13
+      Offset: [-50, -150]
+      Size: [50, 50]
+    - Name: /brb14
+      Offset: [-50, -200]
+      Size: [50, 50]
+    - Name: /brb15
+      Offset: [-50, -250]
+      Size: [50, 50]
+    - Name: /brb16
+      Offset: [-50, -300]
+      Size: [50, 50]
+    - Name: /brb17
+      Offset: [-50, -350]
+      Size: [50, 50]
+    - Name: /brb18
+      Offset: [-50, -400]
+      Size: [50, 50]
+    - Name: /brb19
+      Offset: [-50, -450]
+      Size: [50, 50]
+    - Name: /brb20
+      Offset: [-100, 0]
+      Size: [50, 50]
+    - Name: /brb21
+      Offset: [-100, -50]
+      Size: [50, 50]
+    - Name: /brb22
+      Offset: [-100, -100]
+      Size: [50, 50]
+    - Name: /brb23
+      Offset: [-100, -150]
+      Size: [50, 50]
+    - Name: /brb24
+      Offset: [-100, -200]
+      Size: [50, 50]
+    - Name: /brb25
+      Offset: [-100, -250]
+      Size: [50, 50]
+    - Name: /brb26
+      Offset: [-100, -300]
+      Size: [50, 50]
+    - Name: /brb27
+      Offset: [-100, -350]
+      Size: [50, 50]
+    - Name: /brb28
+      Offset: [-100, -400]
+      Size: [50, 50]
+    - Name: /brb29
+      Offset: [-100, -450]
+      Size: [50, 50]
+    - Name: /brb30
+      Offset: [-150, 0]
+      Size: [50, 50]
+    - Name: /brb31
+      Offset: [-150, -50]
+      Size: [50, 50]
+    - Name: /brb32
+      Offset: [-150, -100]
+      Size: [50, 50]
+    - Name: /brb33
+      Offset: [-150, -150]
+      Size: [50, 50]
+    - Name: /brb34
+      Offset: [-150, -200]
+      Size: [50, 50]
+    - Name: /brb35
+      Offset: [-150, -250]
+      Size: [50, 50]
+    - Name: /brb36
+      Offset: [-150, -300]
+      Size: [50, 50]
+    - Name: /brb37
+      Offset: [-150, -350]
+      Size: [50, 50]
+    - Name: /brb38
+      Offset: [-150, -400]
+      Size: [50, 50]
+    - Name: /brb39
+      Offset: [-150, -450]
+      Size: [50, 50]
+    - Name: /brcockatrice
+      Offset: [-100, -400]
+      Size: [50, 50]
+    - Name: /brdcool
+      Offset: [-150, -350]
+      Size: [50, 50]
+    - Name: /brdj
+      Offset: [-150, -150]
+      Size: [50, 50]
+    - Name: /brdsmile
+      Offset: [-150, -50]
+      Size: [50, 50]
+    - Name: /brdumbfabric
+      Offset: [-100, -250]
+      Size: [50, 50]
+    - Name: /brdwut
+      Offset: [-150, -100]
+      Size: [50, 50]
+    - Name: /breeyup
+      Offset: [-100, -50]
+      Size: [50, 50]
+    - Name: /brfacehoof
+      Offset: [-150, -400]
+      Size: [50, 50]
+    - Name: /brflutterfear
+      Offset: [0, 0]
+      Size: [50, 50]
+    - Name: /brfluttershh
+      Offset: [0, -200]
+      Size: [50, 50]
+    - Name: /brfluttershy
+      Offset: [-150, 0]
+      Size: [50, 50]
+    - Name: /brfluttersrs
+      Offset: [0, -100]
+      Size: [50, 50]
+    - Name: /brflutterwink
+      Offset: [-50, -300]
+      Size: [50, 50]
+    - Name: /brflutteryay
+      Offset: [-50, -200]
+      Size: [50, 50]
+    - Name: /brmanspike
+      Offset: [-50, -400]
+      Size: [50, 50]
+    - Name: /brnewrainbowdash
+      Offset: [-50, -150]
+      Size: [50, 50]
+    - Name: /brnoooo
+      Offset: [-100, -150]
+      Size: [50, 50]
+    - Name: /brppboring
+      Offset: [-50, 0]
+      Size: [50, 50]
+    - Name: /brppseesyou
+      Offset: [-150, -450]
+      Size: [50, 50]
+    - Name: /brppshrug
+      Offset: [0, -150]
+      Size: [50, 50]
+    - Name: /brrarityannoyed
+      Offset: [-100, -300]
+      Size: [50, 50]
+    - Name: /brraritydress
+      Offset: [-50, -100]
+      Size: [50, 50]
+    - Name: /brrarityjudge
+      Offset: [0, -450]
+      Size: [50, 50]
+    - Name: /brrarityprimp
+      Offset: [-50, -450]
+      Size: [50, 50]
+    - Name: /brraritywhine
+      Offset: [-100, -350]
+      Size: [50, 50]
+    - Name: /brraritywhy
+      Offset: [-150, -250]
+      Size: [50, 50]
+    - Name: /brraritywut
+      Offset: [-50, -250]
+      Size: [50, 50]
+    - Name: /brrarityyell
+      Offset: [-100, 0]
+      Size: [50, 50]
+    - Name: /brrdcool
+      Offset: [-150, -350]
+      Size: [50, 50]
+    - Name: /brrdsmile
+      Offset: [-150, -50]
+      Size: [50, 50]
+    - Name: /brrdwut
+      Offset: [-150, -100]
+      Size: [50, 50]
+    - Name: /brsoawesome
+      Offset: [-150, -300]
+      Size: [50, 50]
+    - Name: /brspikenervous
+      Offset: [-50, -150]
+      Size: [50, 50]
+    - Name: /brspikepushy
+      Offset: [-150, -200]
+      Size: [50, 50]
+    - Name: /brsquintyjack
+      Offset: [-100, -200]
+      Size: [50, 50]
+    - Name: /brtakealetter
+      Offset: [-100, -100]
+      Size: [50, 50]
+    - Name: /brthreedog
+      Offset: [-150, -150]
+      Size: [50, 50]
+    - Name: /brtrixiesmug
+      Offset: [0, -300]
+      Size: [50, 50]
+    - Name: /brtwirage
+      Offset: [-100, -450]
+      Size: [50, 50]
+    - Name: /brtwisquint
+      Offset: [-50, -350]
+      Size: [50, 50]
+    - Name: /bsoawesome
+      Offset: [-150, -300]
+      Size: [50, 50]
+    - Name: /bspikenervous
+      Offset: [-50, -150]
+      Size: [50, 50]
+    - Name: /bspikepushy
+      Offset: [-150, -200]
+      Size: [50, 50]
+    - Name: /bsquintyjack
+      Offset: [-100, -200]
+      Size: [50, 50]
+    - Name: /btakealetter
+      Offset: [-100, -100]
+      Size: [50, 50]
+    - Name: /bthreedog
+      Offset: [-150, -150]
+      Size: [50, 50]
+    - Name: /btrixiesmug
+      Offset: [0, -300]
+      Size: [50, 50]
+    - Name: /btwirage
+      Offset: [-100, -450]
+      Size: [50, 50]
+    - Name: /btwisquint
+      Offset: [-50, -350]
+      Size: [50, 50]
     http://f.thumbs.redditmedia.com/rxi2oy-sx9BCxEW5.png:
-        /disbanana:
-            Positioning: [70, 70, -70, -210]
-        /donotwantk:
-            Positioning: [70, 70, 0, -280]
-        /dowantk:
-            Positioning: [70, 70, -70, -280]
-        /fruitaberry:
-            Positioning: [70, 70, 0, -140]
-        /fruitabolt:
-            Positioning: [70, 70, -280, -70]
-        /fruitacora:
-            Positioning: [70, 70, 0, -210]
-        /fruitacord:
-            Positioning: [70, 70, 0, -70]
-        /fruitadowell:
-            Positioning: [70, 70, -280, -140]
-        /fruitaloo:
-            Positioning: [70, 70, -70, 0]
-        /fruitapants:
-            Positioning: [70, 70, 0, 0]
-        /fruitarity:
-            Positioning: [70, 70, -70, -70]
-        /fruitaspike:
-            Positioning: [70, 70, -140, -70]
-        /fruityfruity:
-            Positioning: [70, 70, -210, -210]
-        /greatfruitaful:
-            Positioning: [70, 70, -210, 0]
-        /karmabanana:
-            Positioning: [70, 70, -140, -210]
-        /lunawantk:
-            Positioning: [70, 70, -210, -140]
-        /shytwi:
-            Positioning: [70, 70, -140, -140]
-        /talkaboutfruitacandy:
-            Positioning: [70, 70, -280, -210]
-        /twinom:
-            Positioning: [70, 70, -210, -70]
-        /whatalovelybanana:
-            Positioning: [70, 70, -70, -140]
+    - Name: /disbanana
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /donotwantk
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /dowantk
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /fruitaberry
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /fruitabolt
+      Offset: [-280, -70]
+      Size: [70, 70]
+    - Name: /fruitacora
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /fruitacord
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /fruitadowell
+      Offset: [-280, -140]
+      Size: [70, 70]
+    - Name: /fruitaloo
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /fruitapants
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /fruitarity
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /fruitaspike
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /fruityfruity
+      Offset: [-210, -210]
+      Size: [70, 70]
+    - Name: /greatfruitaful
+      Offset: [-210, 0]
+      Size: [70, 70]
+    - Name: /karmabanana
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /lunawantk
+      Offset: [-210, -140]
+      Size: [70, 70]
+    - Name: /shytwi
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /talkaboutfruitacandy
+      Offset: [-280, -210]
+      Size: [70, 70]
+    - Name: /twinom
+      Offset: [-210, -70]
+      Size: [70, 70]
+    - Name: /whatalovelybanana
+      Offset: [-70, -140]
+      Size: [70, 70]
+Meta: {Name: r/mylittlenanners, Timestamp: 'Sat Aug 25 23:59:11 2012'}

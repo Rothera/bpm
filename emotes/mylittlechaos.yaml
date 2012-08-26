@@ -1,38 +1,60 @@
-Spritesheets:
+Emotes:
+  Custom: []
+  Spritesheets:
     http://b.thumbs.redditmedia.com/10eaVU_qR2dsskLO.png:
-        /twiday:
-            CSS: {margin-bottom: 5px, margin-right: 5px}
-            Positioning: [600, 568, 0, 0]
-    http://d.thumbs.redditmedia.com/gDFiVvnVsfiZR08-.png:
-        /nightmarenyx:
-            Positioning: [300, 450, 0, 0]
-    http://e.thumbs.redditmedia.com/7QEw1jFxlFYxgwbL.png:
-        /rapidfire:
-            CSS: {margin-bottom: 5px, margin-right: 5px}
-            Positioning: [529, 293, 0, 0]
-    http://f.thumbs.redditmedia.com/DzeuoOHG6Fujg_CA.png:
-        /chaos00:
-            Positioning: [133, 150, 0, 0]
-        /chaos01:
-            Positioning: [110, 150, -133, 0]
-        /chaos02:
-            Positioning: [95, 150, -243, 0]
-        /chaos10:
-            Positioning: [105, 150, 0, -150]
-        /chaos10e:
-            Positioning: [145, 150, 0, -150]
-        /chaos11:
-            Positioning: [95, 150, -145, -150]
-        /chaos12:
-            Positioning: [75, 150, -240, -150]
-        /sayno:
-            Positioning: [75, 75, -338, -50]
-        /saynoe:
-            Positioning: [75, 125, -338, 0]
-    http://f.thumbs.redditmedia.com/XbRIUePsEIGJ1xSM.png:
-        /sphlyrafun:
-            Positioning: [201, 136, 0, 0]
-            NSFW: true
+    - CSS: {margin-bottom: 5px, margin-right: 5px}
+      Name: /twiday
+      Offset: [0, 0]
+      Size: [600, 568]
     http://b.thumbs.redditmedia.com/k9i_G9OPiiCJkY5m.png:
-        /fillyderp:
-            Positioning: [281, 274, 0, 0]
+    - CSS: {margin-bottom: 5px, margin-right: 5px}
+      Name: /fillyderp
+      Offset: [0, 0]
+      Size: [281, 274]
+    http://c.thumbs.redditmedia.com/nf4qPM2AARBoDPH2.png:
+    - CSS: {margin-bottom: 5px, margin-right: 5px}
+      Name: /taco
+      Offset: [0, 0]
+      Size: [72, 41]
+    http://d.thumbs.redditmedia.com/gDFiVvnVsfiZR08-.png:
+    - Name: /nightmarenyx
+      Offset: [0, 0]
+      Size: [300, 450]
+    http://e.thumbs.redditmedia.com/7QEw1jFxlFYxgwbL.png:
+    - CSS: {margin-bottom: 5px, margin-right: 5px}
+      Name: /rapidfire
+      Offset: [0, 0]
+      Size: [529, 293]
+    http://f.thumbs.redditmedia.com/DzeuoOHG6Fujg_CA.png:
+    - Name: /chaos00
+      Offset: [0, 0]
+      Size: [133, 150]
+    - Name: /chaos01
+      Offset: [-133, 0]
+      Size: [110, 150]
+    - Name: /chaos02
+      Offset: [-243, 0]
+      Size: [95, 150]
+    - Name: /chaos10
+      Offset: [0, -150]
+      Size: [105, 150]
+    - Name: /chaos10e
+      Offset: [0, -150]
+      Size: [145, 150]
+    - Name: /chaos11
+      Offset: [-145, -150]
+      Size: [95, 150]
+    - Name: /chaos12
+      Offset: [-240, -150]
+      Size: [75, 150]
+    - Name: /sayno
+      Offset: [-338, -50]
+      Size: [75, 75]
+    - Name: /saynoe
+      Offset: [-338, 0]
+      Size: [75, 125]
+    http://f.thumbs.redditmedia.com/XbRIUePsEIGJ1xSM.png:
+    - Name: /sphlyrafun
+      Offset: [0, 0]
+      Size: [201, 136]
+Meta: {Name: r/mylittlechaos, Timestamp: 'Sat Aug 25 23:59:09 2012'}

@@ -1,84 +1,132 @@
-Spritesheets:
+Emotes:
+  Custom:
+  - CSS: {background-position: -0px -0px}
+    Name: /pinkiepie
+  - CSS: {background: '#000 !important', color: '#000 !important'}
+    Name: /spoiler
+  - CSS: {background: '#000 !important', color: '#FFF !important'}
+    Name: /spoiler
+    Suffix: :hover
+  - CSS: {background-position: -0px -0px}
+    Name: /twiqurey
+  Spritesheets:
     http://a.thumbs.redditmedia.com/5etF_Pb0AdtjapvB.png:
-        /lunablush:
-            Positioning: [100, 100, 0, 0]
+    - Name: /lunablush
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://a.thumbs.redditmedia.com/aQv1NdpeA_tn_qhZ.png:
+    - Name: /ppnervous
+      Offset: [0, 0]
+      Size: [100, 100]
     http://a.thumbs.redditmedia.com/c4zhd2RXfON9yAgr.png:
-        /snipsmote:
-            Positioning: [100, 100, 0, 0]
+    - Name: /snipsmote
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://b.thumbs.redditmedia.com/AyXTNFiC5qRcFtZC.png:
+    - Name: /abworry
+      Offset: [0, 0]
+      Size: [100, 100]
     http://b.thumbs.redditmedia.com/BrpsG3vUoKj4_Yo1.png:
-        /sbsmile:
-            Positioning: [100, 100, 0, 0]
+    - Name: /sbsmile
+      Offset: [0, 0]
+      Size: [100, 100]
     http://b.thumbs.redditmedia.com/E_o1r06VR-dTeh9m.png:
-        /applegrump:
-            Positioning: [100, 100, 0, 0]
+    - Name: /applegrump
+      Offset: [0, 0]
+      Size: [100, 100]
     http://b.thumbs.redditmedia.com/EelvUlFuo9OchBBm.png:
-        /twiquery:
-            Positioning: [100, 100, 0, 0]
+    - Name: /twiquery
+      Offset: [0, 0]
+      Size: [100, 100]
     http://b.thumbs.redditmedia.com/Jim8MEOXFjWN8YAO.png:
-        /twistudy:
-            Positioning: [100, 100, 0, 0]
+    - Name: /twistudy
+      Offset: [0, 0]
+      Size: [100, 100]
     http://b.thumbs.redditmedia.com/mPGg5N3lIDr-LJMC.png:
-        /scootbrag:
-            Positioning: [100, 100, 0, 0]
-    http://c.thumbs.redditmedia.com/1hg3Yw8V4n4aqaXJ.png:
-        /applebamm:
-            Positioning: [100, 100, 0, 0]
-    http://c.thumbs.redditmedia.com/NzXxfCWpG7NPNcCt.png:
-        /trixihappy:
-            Positioning: [100, 100, 0, 0]
-    http://c.thumbs.redditmedia.com/PC_-WhzGmj5jzCzP.png:
-        /bonhoof:
-            Positioning: [100, 100, 0, 0]
-    http://c.thumbs.redditmedia.com/ZPOxmtZoyku6EhMt.png:
-        /lyrahoof:
-            Positioning: [100, 100, 0, 0]
-    http://d.thumbs.redditmedia.com/DOrvob_ZmvoFaAso.png:
-        /roseluck:
-            Positioning: [100, 100, 0, 0]
-    http://d.thumbs.redditmedia.com/YYmG1OT96oJgSapE.png:
-        /pinkiehi:
-            Positioning: [100, 100, 0, 0]
-    http://d.thumbs.redditmedia.com/eW9ZwtUI-HVMSRzE.png:
-        /lunaread:
-            Positioning: [100, 100, 0, 0]
-    http://d.thumbs.redditmedia.com/esTpRxAezsPQhJuK.jpg:
-        /twisad:
-            Positioning: [100, 100, 0, 0]
-    http://d.thumbs.redditmedia.com/gvtYDu0Cp09uqqmu.png:
-        /cookie:
-            Positioning: [100, 100, 0, 0]
-        /muffin:
-            Positioning: [100, 100, 0, 0]
-    http://e.thumbs.redditmedia.com/AnZIXK62McOf9gsX.png:
-        /rargasp:
-            Positioning: [100, 100, 0, 0]
-    http://e.thumbs.redditmedia.com/Goo_jyiSvm3w-2bF.png:
-        /shyhug:
-            Positioning: [100, 100, 0, 0]
-    http://e.thumbs.redditmedia.com/fmCiPSZw267jUKlF.png:
-        /flutterhelp:
-            Positioning: [100, 100, 0, 0]
-    http://e.thumbs.redditmedia.com/kN_sJemKd7khmmaF.png:
-        /forgotshy:
-            Positioning: [100, 100, 0, 0]
-    http://f.thumbs.redditmedia.com/0Ma6iokh0Nm2QM25.png:
-        /cheerteach:
-            Positioning: [100, 100, 0, 0]
-    http://f.thumbs.redditmedia.com/GReoI9IFKz80_zaA.png:
-        /ppreference:
-            Positioning: [100, 100, 0, 0]
-    http://f.thumbs.redditmedia.com/VRvV3X6stCE25SXk.jpg:
-        /notagain:
-            Positioning: [100, 100, 0, 0]
-    http://f.thumbs.redditmedia.com/oBaxGysrPZEUlrDw.png:
-        /vinylwhat:
-            Positioning: [100, 100, 0, 0]
-    http://e.thumbs.redditmedia.com/j8wn-30wIXD5JInR.png:
-        /flutterpaint:
-            Positioning: [100, 100, 0, 0]
+    - Name: /scootbrag
+      Offset: [0, 0]
+      Size: [100, 100]
     http://b.thumbs.redditmedia.com/nSL4046aCJXn93RO.jpg:
-        /cadancehappy:
-            Positioning: [100, 100, 0, 0]
+    - Name: /cadancehappy
+      Offset: [0, 0]
+      Size: [100, 100]
     http://b.thumbs.redditmedia.com/p2_L3PDSOjzswKoI.png:
-        /yourock:
-            Positioning: [100, 100, 0, 0]
+    - Name: /yourock
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://c.thumbs.redditmedia.com/1hg3Yw8V4n4aqaXJ.png:
+    - Name: /applebamm
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://c.thumbs.redditmedia.com/NzXxfCWpG7NPNcCt.png:
+    - Name: /trixihappy
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://c.thumbs.redditmedia.com/PC_-WhzGmj5jzCzP.png:
+    - Name: /bonhoof
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://c.thumbs.redditmedia.com/ZPOxmtZoyku6EhMt.png:
+    - Name: /lyrahoof
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://d.thumbs.redditmedia.com/DOrvob_ZmvoFaAso.png:
+    - Name: /roseluck
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://d.thumbs.redditmedia.com/YYmG1OT96oJgSapE.png:
+    - Name: /pinkiehi
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://d.thumbs.redditmedia.com/eW9ZwtUI-HVMSRzE.png:
+    - Name: /lunaread
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://d.thumbs.redditmedia.com/esTpRxAezsPQhJuK.jpg:
+    - Name: /twisad
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://d.thumbs.redditmedia.com/gvtYDu0Cp09uqqmu.png:
+    - Name: /cookie
+      Offset: [0, 0]
+      Size: [100, 100]
+    - Name: /muffin
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://e.thumbs.redditmedia.com/AnZIXK62McOf9gsX.png:
+    - Name: /rargasp
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://e.thumbs.redditmedia.com/Goo_jyiSvm3w-2bF.png:
+    - Name: /shyhug
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://e.thumbs.redditmedia.com/fmCiPSZw267jUKlF.png:
+    - Name: /flutterhelp
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://e.thumbs.redditmedia.com/j8wn-30wIXD5JInR.png:
+    - Name: /flutterpaint
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://e.thumbs.redditmedia.com/kN_sJemKd7khmmaF.png:
+    - Name: /forgotshy
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://f.thumbs.redditmedia.com/0Ma6iokh0Nm2QM25.png:
+    - Name: /cheerteach
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://f.thumbs.redditmedia.com/GReoI9IFKz80_zaA.png:
+    - Name: /ppreference
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://f.thumbs.redditmedia.com/VRvV3X6stCE25SXk.jpg:
+    - Name: /notagain
+      Offset: [0, 0]
+      Size: [100, 100]
+    http://f.thumbs.redditmedia.com/oBaxGysrPZEUlrDw.png:
+    - Name: /vinylwhat
+      Offset: [0, 0]
+      Size: [100, 100]
+Meta: {Name: r/mlpdrawingschool, Timestamp: 'Sat Aug 25 23:59:08 2012'}
