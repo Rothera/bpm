@@ -251,10 +251,7 @@ def condense_css(rules):
         # may have to condense multiple times.
         chars_removed = (len(selectors) - 1) * props_chars
         if chars_added > chars_removed:
-            print("Condensing check FAILED for %r: %s selectors, +%s chars for -%s chars" % (common_props, len(selectors), chars_added, chars_removed))
             return
-        else:
-            print("Condensing check SUCCEEDED for %r: %s selectors, +%s chars for -%s chars" % (common_props, len(selectors), chars_added, chars_removed))
 
         # Make sure we're not screwing anything up
         existing_props = rules.setdefault(sel_string, {})
