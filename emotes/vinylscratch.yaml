@@ -2,23 +2,13 @@ Emotes:
   Custom:
   - CSS: {background-position: -70px -0px}
     Name: /rvs02
-  - CSS: {background-position: -140px -0px}
-    Name: /rvs21
   - CSS: {background: black !important, color: black !important}
     Name: /spoiler
   - CSS: {background: black !important, color: white !important}
     Name: /spoiler
     Suffix: :hover
-  - CSS: {background-position: 140px -70px}
-    Name: /vs04
-  - CSS: {background-position: 70px -140px}
-    Name: /vs07
-  - CSS: {background-position: 140px -70px}
-    Name: /vs25
   - CSS: {background-position: -0px -0px}
     Name: /vshnnng
-  - CSS: {background-position: 140px -140px}
-    Name: /vsnope
   Spritesheets:
     http://a.thumbs.redditmedia.com/TMFvsdV9zMTRLQyH.png:
     - Name: /tableflip
@@ -30,6 +20,9 @@ Emotes:
     http://b.thumbs.redditmedia.com/Vy09d72RyD7kbbiU.png:
     - Name: /vs00
       Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /vs04
+      Offset: [140, -70]
       Size: [70, 70]
     - Name: /vs10
       Offset: [140, 0]
@@ -113,6 +106,9 @@ Emotes:
     - Name: /vs06
       Offset: [70, -70]
       Size: [70, 70]
+    - Name: /vs07
+      Offset: [70, -140]
+      Size: [70, 70]
     - Name: /vs14
       Offset: [0, 0]
       Size: [70, 70]
@@ -124,6 +120,9 @@ Emotes:
       Size: [70, 70]
     - Name: /vs24
       Offset: [70, 0]
+      Size: [70, 70]
+    - Name: /vs25
+      Offset: [140, -70]
       Size: [70, 70]
     - Name: /vs26
       Offset: [140, -140]
@@ -142,6 +141,9 @@ Emotes:
       Size: [70, 70]
     - Name: /vsmog
       Offset: [70, -140]
+      Size: [70, 70]
+    - Name: /vsnope
+      Offset: [140, -140]
       Size: [70, 70]
     - Name: /vsomg
       Offset: [70, -70]
@@ -185,6 +187,9 @@ Emotes:
     - Name: /rvs13
       Offset: [-70, 0]
       Size: [70, 70]
+    - Name: /rvs21
+      Offset: [-140, 0]
+      Size: [70, 70]
     - Name: /vs12
       Offset: [0, 0]
       Size: [70, 70]
@@ -203,4 +208,4 @@ Emotes:
     - Name: /vsmeh
       Offset: [-140, 0]
       Size: [70, 70]
-Meta: {Name: r/vinylscratch, Timestamp: 'Sat Aug 25 23:59:15 2012'}
+Meta: {Name: r/vinylscratch, Timestamp: 'Sun Aug 26 23:37:27 2012'}
