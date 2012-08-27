@@ -110,7 +110,7 @@ def cmd_extract(args):
         subreddits = args
 
     for sr in subreddits:
-        print(sr)
+        print("Extracting", sr)
         # TODO: Don't hardcode relative paths...
         subprocess.call(["bin/bpextract.py", "stylesheet-updates/%s.css" % (sr), "emote-updates/%s.yaml" % (sr)])
 
@@ -123,7 +123,7 @@ def cmd_extract_all(args):
     subreddits = [fn.split(".")[0] for fn in filenames]
 
     for sr in subreddits:
-        print(sr)
+        print("Extracting", sr)
         # TODO: Don't hardcode relative paths...
         subprocess.call(["bin/bpextract.py", "stylesheet-cache/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
 
