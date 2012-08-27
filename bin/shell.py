@@ -19,6 +19,21 @@ import sys
 import time
 import urllib.request
 
+context = None
+
+def get_opt_arg(args, usage):
+    global context
+    if not len(args):
+        if context:
+            return context
+        else:
+            print(usage)
+    elif len(args) == 1:
+        context = args[0]
+        return context
+    else:
+        print(usage)
+
 def cmd_help(args):
     if args:
         print("Usage: help")
@@ -32,10 +47,9 @@ def cmd_list(args):
     print(", ".join(os.listdir("stylesheet-updates")))
 
 def cmd_diff_css(args):
-    if len(args) != 1:
-        print("Usage: diffcss <subreddit>")
-    else:
-        subprocess.Popen(["kompare", "stylesheet-cache/%s.css" % (args[0]), "stylesheet-updates/%s.css" % (args[0])])
+    subreddit = get_opt_arg(args, "Usage: diffcss <subreddit>")
+    if subreddit:
+        subprocess.Popen(["kompare", "stylesheet-cache/%s.css" % (subreddit), "stylesheet-updates/%s.css" % (subreddit)])
 
 def cmd_edit(args):
     if not len(args):
@@ -44,10 +58,9 @@ def cmd_edit(args):
         subprocess.Popen(["kate", "-n"] + args)
 
 def cmd_resolve_css(args):
-    if len(args) != 1:
-        print("Usage: resolvecss <subreddit>")
-    else:
-        shutil.move("stylesheet-updates/%s.css" % (args[0]), "stylesheet-cache/%s.css" % (args[0]))
+    subreddit = get_opt_arg(args, "Usage: resolvecss <subreddit>")
+    if subreddit:
+        shutil.move("stylesheet-updates/%s.css" % (subreddit), "stylesheet-cache/%s.css" % (subreddit))
 
 UA = "BetterPonymotes stylesheet update checker (1req/2.5secs; pm Typhos)"
 SESS = "reddit_session=9958622%2C2012-06-14T22%3A56%3A05%2C432b711c2f42ca0748d224c12c54ec2ed514cd7d"
@@ -96,29 +109,41 @@ def cmd_extract(args):
         # TODO: Don't hardcode relative paths...
         subprocess.call(["bin/bpextract.py", "stylesheet-updates/%s.css" % (sr), "emote-updates/%s.yaml" % (sr)])
 
+def cmd_extract_all(args):
+    if args:
+        print("Usage: extractall")
+        return
+
+    filenames = [fn for fn in os.listdir("stylesheet-cache") if fn.endswith(".css")]
+    subreddits = [fn.split(".")[0] for fn in filenames]
+
+    for sr in subreddits:
+        print(sr)
+        # TODO: Don't hardcode relative paths...
+        subprocess.call(["bin/bpextract.py", "stylesheet-cache/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
+
 def cmd_diff_emotes(args):
-    if len(args) != 1:
-        print("Usage: diffemotes <subreddit>")
-    else:
-        subprocess.Popen(["kompare", "emotes/%s.yaml" % (args[0]), "emote-updates/%s.yaml" % (args[0])])
+    subreddit = get_opt_arg(args, "Usage: diffemotes <subreddit>")
+    if subreddit:
+        subprocess.Popen(["kompare", "emotes/%s.yaml" % (subreddit), "emote-updates/%s.yaml" % (subreddit)])
 
 def cmd_resolve_emotes(args):
-    if len(args) != 1:
-        print("Usage: resolveemotes <subreddit>")
-    else:
-        shutil.move("emote-updates/%s.yaml" % (args[0]), "emotes/%s.yaml" % (args[0]))
+    subreddit = get_opt_arg(args, "Usage: resolveemotes <subreddit>")
+    if subreddit:
+        shutil.move("emote-updates/%s.yaml" % (subreddit), "emotes/%s.yaml" % (subreddit))
 
 Commands = {
     "help": cmd_help,
     "quit": cmd_quit,
     "list": cmd_list,
-    "diffcss": cmd_diff_css,
+    "diffcss": cmd_diff_css, "dc": cmd_diff_css,
     "edit": cmd_edit,
-    "resolvecss": cmd_resolve_css,
+    "resolvecss": cmd_resolve_css, "rc": cmd_resolve_css,
     "update": cmd_update,
     "extract": cmd_extract,
-    "diffemotes": cmd_diff_emotes,
-    "resolveemotes": cmd_resolve_emotes
+    "extractall": cmd_extract_all,
+    "diffemotes": cmd_diff_emotes, "de": cmd_diff_emotes,
+    "resolveemotes": cmd_resolve_emotes, "re": cmd_resolve_emotes,
     }
 
 def run_command(args):
