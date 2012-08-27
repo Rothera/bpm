@@ -220,50 +220,93 @@ def condense_css(rules):
             properties.setdefault(prop_name, {}).setdefault(prop_value, [])
             properties[prop_name][prop_value].append(selector)
 
-    def common(props):
-        sets = []
-        for (p, value) in props:
-            sets.append(set(properties.get(p, {}).get(value, [])))
-        common = sets[0]
-        for s in sets[1:]:
-            common = common.intersection(s)
+    def common_selectors(props):
+        i = iter(props.items())
+
+        try:
+            (k, v) = next(i)
+        except StopIteration:
+            return set()
+        common = set(properties.get(k, {}).get(v, []))
+
+        for (k, v) in i:
+            these = set(properties.get(k, {}).get(v, []))
+            common = common.intersection(these)
+
         return common
 
-    def condense(prop_name, value, which=None):
-        # Add new, combined rule
-        selectors = which or properties.get(prop_name, {}).get(value, [])
-        props = rules.setdefault(",".join(sorted(selectors)), {})
-        assert prop_name not in props
-        props[prop_name] = value
+    def condense(common_props):
+        # Assume they're common
+        selectors = common_selectors(common_props)
+        if len(selectors) == 1:
+            return
 
-        # Delete from old ones
-        for selector in selectors:
-            rules[selector].pop(prop_name)
+        # TODO: frozenset
+        sel_string = ",".join(sorted(selectors))
+
+        props_chars = sum(len(key) + len(val) for (key, val) in common_props.items())
+        chars_added = len(sel_string) + props_chars
+        # TODO: Account for chars removed when rules disappear entirely. Will
+        # that make a difference if the rule won't be removed until later? We
+        # may have to condense multiple times.
+        chars_removed = (len(selectors) - 1) * props_chars
+        if chars_added > chars_removed:
+            print("Condensing check FAILED for %r: %s selectors, +%s chars for -%s chars" % (common_props, len(selectors), chars_added, chars_removed))
+            return
+        else:
+            print("Condensing check SUCCEEDED for %r: %s selectors, +%s chars for -%s chars" % (common_props, len(selectors), chars_added, chars_removed))
+
+        # Make sure we're not screwing anything up
+        existing_props = rules.setdefault(sel_string, {})
+        for (prop_name, value) in common_props.items():
+            if prop_name in existing_props:
+                print("WARNING: condensing same property twice", prop_name, "=", value)
+                assert existing_props[prop_name] == value
+
+            # Write property to rule
+            existing_props[prop_name] = value
+            for selector in selectors:
+                properties[prop_name][value].remove(selector)
+            properties[prop_name][value].append(sel_string)
+
+            # Delete property from old rules
+            for selector in selectors:
+                rules[selector].pop(prop_name)
 
     # TODO: Would be nice to automatically seek out stuff we can efficiently
     # collapse, but for now, this achieves great gains for little complexity.
 
-    # Pass 1: condense the common stuff
-    subset = common([("display", "block"), ("clear", "none"), ("float", "left")])
-    condense("display", "block", subset)
-    condense("clear", "none", subset)
-    condense("float", "left", subset)
+    # Pass 1: condense the really common stuff
+    condense({"display": "block", "clear": "none", "float": "left"})
 
-    # A lot of emotes are 70px square, though this only gets us about 35kb
-    subset = common([("width", "70px"), ("height", "70px")])
-    condense("width", "70px", subset)
-    condense("height", "70px", subset)
+    # Pass 2: condense by width/height, since many emotes have the same dimensions
+    for width in properties["width"]:
+        for height in properties["height"]:
+            if any(s in properties["height"][height] for s in properties["width"][width]):
+                condense({"height": height, "width": width})
 
-    # Pass 2: condense multi-emote spritesheets
-    for (image_url, selectors) in properties.get("background-image", {}).items():
+    for width in properties["width"]:
+        condense({"width": width})
+
+    for height in properties["height"]:
+        condense({"height": height})
+
+    # Pass 3: condense similar background-position's. Not likely to make a big
+    # difference except for a few very similar spritesheet grids.
+    for position in list(properties["background-position"]):
+        condense({"background-position": position})
+
+    # Pass 4: condense multi-emote spritesheets (probably most of our savings)
+    for (image_url, selectors) in list(properties.get("background-image", {}).items()):
         if len(selectors) > 1:
-            condense("background-image", image_url)
+            condense({"background-image": image_url})
 
-    # Pass 3: remove all useless background-position's
+    # Pass 5: remove all useless background-position's
     for selector in properties.get("background-position", {}).get("0px 0px", []):
         rules[selector].pop("background-position")
+    properties["background-position"]["0px 0px"] = []
 
-    # Pass 4: remove all empty rules (not that there are many)
+    # Pass 6: remove all empty rules (not that there are many)
     for (selector, props) in list(rules.items()): # can't change dict while iterating
         if not props:
             rules.pop(selector)
