@@ -9,104 +9,104 @@
 ################################################################################
 
 File Ignores:
-    - r/mylittledramaticstory # Nothing worth keeping- shouldn't exist
-    - r/mylittlecombiners     # Maintained separately- also shouldn't exist
+- r/mylittledramaticstory # Nothing worth keeping- shouldn't exist
+- r/mylittlecombiners     # Maintained separately- also shouldn't exist
 
 Sorting:
-    - [r/mylittlepony, "*"]
-    - [r/mylittleandysonic1, "*"]
-    - [r/futemotes, r/ponyanarchism]
-    - [r/ainbowdash, r/dashiemotes]
-    - [r/idliketobeatree, r/ainbowdash]
-    - [r/mylittlemusician, r/mylittlelistentothis]
+- [r/mylittlepony, "*"]
+- [r/mylittleandysonic1, "*"]
+- [r/futemotes, r/ponyanarchism]
+- [r/ainbowdash, r/dashiemotes]
+- [r/idliketobeatree, r/ainbowdash]
+- [r/mylittlemusician, r/mylittlelistentothis]
 
 Conflicts:
-    - Name: [/muffin, null]
-      Favor: r/mlpdrawingschool # Conflict with r/mylittlesupportgroup
-    - Name: [/twifly, null]
-      Favor: r/mlas1animotes # Conflict with r/thebestpony
-    - Name: [/woonajuice, null]
-      Favor: r/mylittledaww # Duplicated to r/mylittleanime
-    - Name: [/rwoonajuice, null]
-      Favor: r/mylittledaww # Duplicated to r/mylittleanime
-    - Name: [/dw01, null]
-      Favor: r/daylightemotes # Conflict with r/gallopfrey
-    - Name: [/hugs, null]
-      Favor: r/mylittledaww # Conflict with r/mylittlecirclejerk
-    - Name: [/twipoker, null]
-      Favor: r/mylittlewtf # Conflict with r/thebestpony
-    - Name: [/ajlol, null]
-      Favor: r/mlas1animotes # Conflict with r/tbpimagedump
-    - Name: [/woona, null]
-      Favor: r/thebestpony # Broken emote in r/mylittlesupportgroup
-    - Name: [/abwant, null]
-      Favor: r/mylittlelivestream # Conflict with r/applebloom
-    - Name: [/rabwant, null]
-      Favor: r/mylittlelivestream # Conflict with r/applebloom
-    - Name: [/shrug, null]
-      Favor: r/vinylscratch # Conflict with r/mylittlecirclejerk
-    - Name: [/sadlyra, null]
-      Favor: r/mylittleonions # Conflict with r/mylittleanime
-    - Name: [/abworry, null]
-      Favor: r/tbpimagedump # Conflict with r/mlpdrawingschool
-    - Name: [/ppnervous, null]
-      Favor: r/pinkiepie # Conflict with r/mlpdrawingschool
-    - Name: [/s, null]
-      Favor: r/falloutequestria # Conflict with r/mylittleanime
+- Name: [/muffin, null]
+  Favor: r/mlpdrawingschool # Conflict with r/mylittlesupportgroup
+- Name: [/twifly, null]
+  Favor: r/mlas1animotes # Conflict with r/thebestpony
+- Name: [/woonajuice, null]
+  Favor: r/mylittledaww # Duplicated to r/mylittleanime
+- Name: [/rwoonajuice, null]
+  Favor: r/mylittledaww # Duplicated to r/mylittleanime
+- Name: [/dw01, null]
+  Favor: r/daylightemotes # Conflict with r/gallopfrey
+- Name: [/hugs, null]
+  Favor: r/mylittledaww # Conflict with r/mylittlecirclejerk
+- Name: [/twipoker, null]
+  Favor: r/mylittlewtf # Conflict with r/thebestpony
+- Name: [/ajlol, null]
+  Favor: r/mlas1animotes # Conflict with r/tbpimagedump
+- Name: [/woona, null]
+  Favor: r/thebestpony # Broken emote in r/mylittlesupportgroup
+- Name: [/abwant, null]
+  Favor: r/mylittlelivestream # Conflict with r/applebloom
+- Name: [/rabwant, null]
+  Favor: r/mylittlelivestream # Conflict with r/applebloom
+- Name: [/shrug, null]
+  Favor: r/vinylscratch # Conflict with r/mylittlecirclejerk
+- Name: [/sadlyra, null]
+  Favor: r/mylittleonions # Conflict with r/mylittleanime
+- Name: [/abworry, null]
+  Favor: r/tbpimagedump # Conflict with r/mlpdrawingschool
+- Name: [/ppnervous, null]
+  Favor: r/pinkiepie # Conflict with r/mlpdrawingschool
+- Name: [/s, null]
+  Favor: r/falloutequestria # Conflict with r/mylittleanime
 
 Directives:
-    r/clopclop:
-        - [MarkNSFW, /cl00, /futashy, /rcl00, /rfutashy]
-    r/futemotes:
-        - [MarkNSFW, /andy, /books, /kitty]
-        - [MarkNSFW, /selfsuck]
-        - [MarkNSFW, /horsecock, /horsedick]
-        - [MarkNSFW, /bigenough]
-        - [MarkNSFW, /fut1, /fut10, /fut11, /fut12, /fut2, /fut3, /fut4, /fut5, /fut6, /fut7, /fut8, /fut9]
-        - [MarkNSFW, /fut13, /fut14, /fut15, /futacute, /futaplot, /futapomf]
-        - [MarkNSFW, /suckit]
-        - [MarkNSFW, /hugehorsedick]
-        - [MarkNSFW, /twna]
-    # Fix some selectors
-    r/mylittleandysonic1:
-        - [SetSelector, /ajFoF, bpmotes-ajfof]
-        - [DisableCSS, /ajFoF]
-        # /rcrossfire exists in r/mlas1 (unlike /sbf), so just correct it
-        # instead of redefining it elsewhere
-        - [AddCSS, /rcrossfire, {"-moz-transform": scaleX(-1), "-webkit-transform": scaleX(-1), "-o-transform": scaleX(-1), transform: scaleX(-1)}]
-    r/mylittleanhero23:
-        # Remove a bunch of stupid image macro generators (or whatever they are).
-        # They're broken anyway.
-        - [Remove, /akumad]
-        - [Remove, /imabird]
-        - [Remove, /hairninja]
-        - [Remove, /idontknow]
-        - [Remove, /jackshocked]
-        - [Remove, /mfw]
-        - [Remove, /ponytails]
-        - [Remove, /shitgotreal]
-        - [Remove, /stayawhile]
-        - [Remove, /swag]
-        - [Remove, /tasty]
-        - [Remove, /thescotsman]
-        - [Remove, /theseponies]
-        - [Remove, /trees]
-        - [Remove, /whatisthis]
-    r/mylittlebannertest:
-        # Don't remember why I removed these
-        - [Remove, /alt_text]
-        - [Remove, /ban]
-        - [MarkNSFW, /jizz, /pone]
-    r/mylittlechaos:
-        # Non-pony
-        - [Remove, /taco]
-        - [MarkNSFW, /sphlyrafun]
-    r/mylittlesh:
-        # Weird space things, which are broken in BPM anyway
-        - [Remove, /0x10]
-        - [Remove, /10x0]
-    r/seriouslyluna:
-        - [SetSelector, /seriouslyGDB, bpmotes-seriouslygdb]
-        - [DisableCSS, /seriouslyGDB]
-    r/spaceclop:
-        - [MarkNSFW, /sandwich]
+  r/clopclop:
+    - [MarkNSFW, /cl00, /futashy, /rcl00, /rfutashy]
+  r/futemotes:
+    - [MarkNSFW, /andy, /books, /kitty]
+    - [MarkNSFW, /selfsuck]
+    - [MarkNSFW, /horsecock, /horsedick]
+    - [MarkNSFW, /bigenough]
+    - [MarkNSFW, /fut1, /fut10, /fut11, /fut12, /fut2, /fut3, /fut4, /fut5, /fut6, /fut7, /fut8, /fut9]
+    - [MarkNSFW, /fut13, /fut14, /fut15, /futacute, /futaplot, /futapomf]
+    - [MarkNSFW, /suckit]
+    - [MarkNSFW, /hugehorsedick]
+    - [MarkNSFW, /twna]
+  # Fix some selectors
+  r/mylittleandysonic1:
+    - [SetSelector, /ajFoF, bpmotes-ajfof]
+    - [DisableCSS, /ajFoF]
+    # /rcrossfire exists in r/mlas1 (unlike /sbf), so just correct it
+    # instead of redefining it elsewhere
+    - [AddCSS, /rcrossfire, {"-moz-transform": scaleX(-1), "-webkit-transform": scaleX(-1), "-o-transform": scaleX(-1), transform: scaleX(-1)}]
+  r/mylittleanhero23:
+    # Remove a bunch of stupid image macro generators (or whatever they are).
+    # They're broken anyway.
+    - [Remove, /akumad]
+    - [Remove, /imabird]
+    - [Remove, /hairninja]
+    - [Remove, /idontknow]
+    - [Remove, /jackshocked]
+    - [Remove, /mfw]
+    - [Remove, /ponytails]
+    - [Remove, /shitgotreal]
+    - [Remove, /stayawhile]
+    - [Remove, /swag]
+    - [Remove, /tasty]
+    - [Remove, /thescotsman]
+    - [Remove, /theseponies]
+    - [Remove, /trees]
+    - [Remove, /whatisthis]
+  r/mylittlebannertest:
+    # Don't remember why I removed these
+    - [Remove, /alt_text]
+    - [Remove, /ban]
+    - [MarkNSFW, /jizz, /pone]
+  r/mylittlechaos:
+    # Non-pony
+    - [Remove, /taco]
+    - [MarkNSFW, /sphlyrafun]
+  r/mylittlesh:
+    # Weird space things, which are broken in BPM anyway
+    - [Remove, /0x10]
+    - [Remove, /10x0]
+  r/seriouslyluna:
+    - [SetSelector, /seriouslyGDB, bpmotes-seriouslygdb]
+    - [DisableCSS, /seriouslyGDB]
+  r/spaceclop:
+    - [MarkNSFW, /sandwich]
