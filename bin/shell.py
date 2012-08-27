@@ -86,10 +86,15 @@ def update_css(num, total, subreddit):
             file.write(new_ss)
 
 def cmd_update(args):
+    global context
+
     if not args:
         filenames = [fn for fn in sorted(os.listdir("stylesheet-cache")) if fn.endswith(".css")]
         subreddits = [fn.split(".")[0] for fn in filenames]
     else:
+        if len(args) == 1:
+            context = args[0]
+
         subreddits = args
 
     for (i, sr) in enumerate(subreddits[:-1]):
