@@ -20,6 +20,12 @@ except ImportError:
 def load_yaml_file(file):
     return yaml.load(file, _yaml_Loader)
 
+def combine_name_pair(name, suffix):
+    if suffix:
+        return name + suffix
+    else:
+        return name
+
 class BaseEmote:
     def __init__(self, name, suffix, css, nsfw=False):
         self.name = name
@@ -35,9 +41,7 @@ class BaseEmote:
             return self.selector
 
         name = self.name.replace("!", "_excl_").replace(":", "_colon_")
-        if self.suffix is not None:
-            name += self.suffix
-        return ".bpmotes-" + name.lstrip("/").lower()
+        return ".bpmote-" + combine_name_pair(name, self.suffix).lstrip("/").lower()
 
 class RawEmote(BaseEmote):
     # Usually partial...

@@ -236,20 +236,25 @@ def condense_css(rules):
         return common
 
     def condense(common_props):
+        # FIXME: Work out will_empty ourselves
+
         # Assume they're common
         selectors = common_selectors(common_props)
-        if len(selectors) == 1:
+        if len(selectors) <= 1:
             return
 
         # TODO: frozenset
         sel_string = ",".join(sorted(selectors))
 
-        props_chars = sum(len(key) + len(val) for (key, val) in common_props.items())
+        props_chars = sum((len(key) + len(val) + 1) for (key, val) in common_props.items())
         chars_added = len(sel_string) + props_chars
-        # TODO: Account for chars removed when rules disappear entirely. Will
-        # that make a difference if the rule won't be removed until later? We
-        # may have to condense multiple times.
-        chars_removed = (len(selectors) - 1) * props_chars
+
+        chars_removed = 0
+        for sel in selectors:
+            chars_removed += props_chars
+            if len(rules[sel]) <= len(common_props):
+                chars_removed += len(sel) + 2
+
         if chars_added > chars_removed:
             return
 
@@ -262,24 +267,45 @@ def condense_css(rules):
 
             # Write property to rule
             existing_props[prop_name] = value
+            properties[prop_name][value].append(sel_string)
             for selector in selectors:
                 properties[prop_name][value].remove(selector)
-            properties[prop_name][value].append(sel_string)
 
             # Delete property from old rules
             for selector in selectors:
                 rules[selector].pop(prop_name)
+                # If it's empty, remove it entirely
+                if not rules[selector]:
+                    del rules[selector]
 
     # TODO: Would be nice to automatically seek out stuff we can efficiently
     # collapse, but for now, this achieves great gains for little complexity.
 
-    # Pass 1: condense the really common stuff
-    condense({"display": "block", "clear": "none", "float": "left"})
+    # Remove all useless background-position's
+    for selector in properties.get("background-position", {}).get("0px 0px", []):
+        rules[selector].pop("background-position")
+        if not rules[selector]:
+            del rules[selector]
+    if "0px 0px" in properties["background-position"]:
+        del properties["background-position"]["0px 0px"]
 
-    # Pass 2: condense by width/height, since many emotes have the same dimensions
-    for width in properties["width"]:
-        for height in properties["height"]:
-            if any(s in properties["height"][height] for s in properties["width"][width]):
+    # Condense multi-emote spritesheets (probably most of our savings)
+    for (image_url, selectors) in list(properties.get("background-image", {}).items()):
+        if len(selectors) > 1:
+            # For some reason, condensing these properties here gains more savings
+            # than doing them separately. Oh well.
+            condense({"background-image": image_url, "display": "block", "clear": "none", "float": "left"})
+            #condense({"background-image": image_url})
+
+    # Condense similar background-position's. Not likely to make a big difference
+    # except for a few very similar spritesheet grids.
+    for position in list(properties["background-position"]):
+        condense({"background-position": position})
+
+    # Condense by width/height, since many emotes have the same dimensions
+    for (width, w_selectors) in [(w, s) for (w, s) in properties["width"].items() if len(s) > 1]:
+        for (height, h_selectors) in [(h, s) for (h, s) in properties["height"].items() if len(s) > 1]:
+            if any(s in h_selectors for s in w_selectors):
                 condense({"height": height, "width": width})
 
     for width in properties["width"]:
@@ -288,25 +314,9 @@ def condense_css(rules):
     for height in properties["height"]:
         condense({"height": height})
 
-    # Pass 3: condense similar background-position's. Not likely to make a big
-    # difference except for a few very similar spritesheet grids.
-    for position in list(properties["background-position"]):
-        condense({"background-position": position})
-
-    # Pass 4: condense multi-emote spritesheets (probably most of our savings)
-    for (image_url, selectors) in list(properties.get("background-image", {}).items()):
-        if len(selectors) > 1:
-            condense({"background-image": image_url})
-
-    # Pass 5: remove all useless background-position's
-    for selector in properties.get("background-position", {}).get("0px 0px", []):
-        rules[selector].pop("background-position")
-    properties["background-position"]["0px 0px"] = []
-
-    # Pass 6: remove all empty rules (not that there are many)
-    for (selector, props) in list(rules.items()): # can't change dict while iterating
-        if not props:
-            rules.pop(selector)
+    # Locate and combine identical rules
+    for (selector, props) in rules.copy().items():
+        condense(props.copy())
 
 AutogenHeader = """
 /*

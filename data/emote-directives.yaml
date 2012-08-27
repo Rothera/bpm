@@ -68,7 +68,7 @@ Directives:
     - [MarkNSFW, /twna]
   # Fix some selectors
   r/mylittleandysonic1:
-    - [SetSelector, /ajFoF, bpmotes-ajfof]
+    - [SetSelector, /ajFoF, bpmote-ajfof]
     - [DisableCSS, /ajFoF]
     # /rcrossfire exists in r/mlas1 (unlike /sbf), so just correct it
     # instead of redefining it elsewhere
@@ -105,7 +105,7 @@ Directives:
     - [Remove, /0x10]
     - [Remove, /10x0]
   r/seriouslyluna:
-    - [SetSelector, /seriouslyGDB, bpmotes-seriouslygdb]
+    - [SetSelector, /seriouslyGDB, bpmote-seriouslygdb]
     - [DisableCSS, /seriouslyGDB]
   r/spaceclop:
     - [MarkNSFW, /sandwich]

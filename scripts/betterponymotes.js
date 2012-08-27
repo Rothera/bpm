@@ -41,7 +41,7 @@ function process(elements) {
             if(emote_map[emote]) {
                 // But do normalize it when working out the CSS class. Also
                 // strip off leading "/".
-                var css_class = "bpmotes-" + sanitize(emote.slice(1));
+                var css_class = "bpmote-" + sanitize(emote.slice(1));
                 var is_nsfw = emote_map[emote] == 2;
 
                 var nsfw_class = is_nsfw ? " bpm-nsfw " : " ";
@@ -63,7 +63,7 @@ function process(elements) {
                     // Normalize case
                     var flag = parts[p].toLowerCase();
                     if(/^[\w\!]+$/.test(flag)) {
-                        element.className += " " + "bpflags-" + sanitize(flag);
+                        element.className += " " + "bpflag-" + sanitize(flag);
                     }
                 }
             } else if(!element.textContent && /^\/[\w\-:!]+$/.test(emote) && !element.clientWidth) {
