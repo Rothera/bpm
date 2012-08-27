@@ -26,14 +26,6 @@ Projects:
     - Integrate.
 
 General TODO:
-  - Condense CSS according to matching width/height properties. Algorithm:
-    - For every width:
-      - For every height:
-        - Map (width, height) -> the subset of matching selectors
-    - For every subset:
-      - If len(subset) > 1 # FIXME: does this guarantee savings?
-        - condense()
-
   - Make all logging consistent and useful.
 
   - More bzr branches. Consider splitting out emotes. Add everything to a
