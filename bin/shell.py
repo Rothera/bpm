@@ -87,7 +87,7 @@ def update_css(num, total, subreddit):
 
 def cmd_update(args):
     if not args:
-        filenames = [fn for fn in os.listdir("stylesheet-updates") if fn.endswith(".css")]
+        filenames = [fn for fn in sorted(os.listdir("stylesheet-cache")) if fn.endswith(".css")]
         subreddits = [fn.split(".")[0] for fn in filenames]
     else:
         subreddits = args
