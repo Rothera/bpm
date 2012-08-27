@@ -22,9 +22,10 @@ import bplib
 ### CSS parsing
 
 class CssRule:
-    def __init__(self, selectors, properties):
+    def __init__(self, selectors, properties, ignore=False):
         self.selectors = selectors
         self.properties = properties
+        self.ignore = ignore
 
     def __repr__(self):
         return "CssRule(%r, %r)" % (self.selectors, self.properties)
@@ -58,7 +59,7 @@ def parse_all_rules(filename, text):
             selector_text, text = text.split("{", 1)
             properties_text, text = text.split("}", 1)
         except ValueError:
-            print("ERROR: css parse error in %r" % (filename))
+            print("ERROR: CSS parse error in %r" % (filename))
         else:
             selectors = parse_selectors(selector_text)
             properties = parse_properties(properties_text)
@@ -82,7 +83,7 @@ def parse_properties(text):
         except ValueError:
             # This actually only happens in one file right now (and it's due to
             # a string).
-            print("ERROR: error parsing CSS property: %r" % (s))
+            print("ERROR: CSS parse error while reading properties: %r" % (s))
             continue
 
         props[key.strip().lower()] = val.strip()
@@ -111,19 +112,22 @@ def filter_ponyscript_ignores(css_rules):
             if selector in refuse_in:
                 print("WARNING: Selector %r split across PONYSCRIPT-IGNORE block!" % (selector))
 
-        if not ignoring:
-            yield rule
+        rule.ignore = ignoring
 
         # This goes down here, so that the END-PONYSCRIPT-IGNORE rule is itself
         # filtered out.
         if "END-PONYSCRIPT-IGNORE" in rule.selectors:
             ignoring = False
 
-def extract_raw_emotes(css_rules):
+def extract_raw_emotes(args, css_rules):
     for rule in css_rules:
         alias_pairs = filter(None, [parse_emote_selector(s) for s in rule.selectors])
         for (name, suffix) in alias_pairs:
-            yield bplib.RawEmote(name, suffix, rule.properties.copy()) # So it's not read-only
+            extract_explicit = bplib.combine_name_pair(name, suffix) in args.extract
+            if extract_explicit:
+                print("NOTICE: Extracting ignored emote", (name, suffix))
+            if extract_explicit or (not rule.ignore):
+                yield bplib.RawEmote(name, suffix, rule.properties.copy()) # So it's not read-only
 
 def parse_emote_selector(selector):
     # Match against 'a[href|="/emote"]'. This is complicated by a few things:
@@ -238,7 +242,7 @@ def convert_emote(name_pair, image_url, raw_emote):
     css = raw_emote.css.copy()
     def try_pop(prop):
         if prop in css:
-            css.pop(prop)
+            del css[prop]
 
     try_pop("display")
     try_pop("clear")
@@ -250,14 +254,14 @@ def convert_emote(name_pair, image_url, raw_emote):
 
     if "background-position" in css:
         offset = parse_position(get_prop(css["background-position"]), width, height)
-        css.pop("background-position")
+        del css["background-position"]
     else:
         offset = None
 
     # Remove some annoying, commonly seen properties
     for p in ("background-repeat",):
         if p in css:
-            css.pop(p)
+            del css[p]
     for p in css:
         # These properties are also included a lot, so omitted from logs for brevity.
         if p not in ("margin-left", "margin-right"):
@@ -322,11 +326,12 @@ def main():
     parser.add_argument("-n", "--name", help="Emote section")
     parser.add_argument("css", help="Input CSS file", type=argparse.FileType(mode="r"))
     parser.add_argument("emotes", help="Output emotes file", type=argparse.FileType(mode="w"))
+    parser.add_argument("-e", "--extract", help="Extract specific emote", action="append", default=[])
     args = parser.parse_args()
 
-    css_rules = parse_css_file(args.css)
-    filtered_rules = filter_ponyscript_ignores(css_rules)
-    partial_emotes = extract_raw_emotes(filtered_rules)
+    css_rules = list(parse_css_file(args.css))
+    filter_ponyscript_ignores(css_rules)
+    partial_emotes = extract_raw_emotes(args, css_rules)
     emote_map = build_emote_map(partial_emotes)
     collapse_specials_properties(emote_map)
     normal_emotes, custom_emotes = classify_emotes(emote_map)
