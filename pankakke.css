@@ -24,6 +24,7 @@ JustAnotherGDB
 - Added "pony gangnam" emotes
 - Added two more MLPmotes, name changes (8/22)
 - Added Conks as a mod, made a UDNT emote (8/25)
+- Fixed an issue that cropped up with the banner and nightmode (8/26)
 
 MisanthropicCat
 - Is a kitty
@@ -33,14 +34,12 @@ MisanthropicCat
 /********************************/
 /***********Banner shit*************/
 /********************************/
-#header {
-    background: url(http://d.thumbs.redditmedia.com/GrYIBPMcfCITeLru.png);
-    background-repeat: no-repeat;
-    background-position: center;
+body #header-bottom-left {
+    background: url(http://d.thumbs.redditmedia.com/GrYIBPMcfCITeLru.png) no-repeat center bottom !important;
     height: 350px
     }
 #header-img {
-    margin-top: 138px
+    margin-top: 157px
     }
 /********************************/
 /***********Sidebar Shit************/

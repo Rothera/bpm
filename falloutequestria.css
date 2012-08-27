@@ -421,6 +421,22 @@ a[href|="/bjbubbles"] {
 a[href|="/bjbubbles"] {
     background-position: 0px 0px
     }
+a[href|="/lpnotsure"], a[href|="/p21fh"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(http://a.thumbs.redditmedia.com/9L61Ml5TzMmH7a0B.png) !important
+    }
+a[href|="/lpnotsure"] {
+    background-position: 0px 0px
+    }
+a[href|="/p21fh"] {
+    background-position: 0px -150px;
+    width: 70px;
+    height: 70px
+    }
 /* Flair */
 .flairselector .customizer {
     display: none !important

@@ -1,0 +1,120 @@
+/* 1: PAGE STYLE CHANGES*/
+/* A: HEADER ETC.*/
+/* i: HEADER */
+#header {
+    background-image: url(http://c.thumbs.redditmedia.com/9BCrLTlgeST4CFQV.png);
+    border-bottom: 1px solid #000000;
+    height: 144px;
+    z-index: 0;
+    -moz-box-shadow: 0px 0px 10px #888;
+    -webkit-box-shadow: 0px 0px 10px #888;
+    box-shadow: 0px 0px 10px #888;
+    margin: 0px;
+    padding: 0;
+    border-bottom: none;
+    width: 100%
+    }
+/* ii: BOTTOM RIGHT */
+#header-bottom-right {
+    background-color: black;
+    -moz-border-radius-topleft: 7px;
+    -webkit-border-top-left-radius: 7px
+    }
+#header-bottom-right a {
+    color: white
+    }
+#header-bottom-right .separator {
+    color: gray
+    }
+/* iii: BOTTOM LEFT */
+#header-bottom-left {
+    height: 77px;
+    z-index: -1;
+    font-size: larger;
+    position: absolute;
+    bottom: 0px
+    }
+/* iv: IMG */
+img#header-img {
+    left: 10px;
+    margin-bottom: -4px !important;
+    z-index: -1
+    }
+/* v: PAGE NAME */
+.pagename a {
+    font-size: 20px;
+    position: inherit;
+    text-indent: 0px
+    }
+/* vi: TAB MENU */
+.tabmenu li.selected a {
+    color: #ffa6f2;
+    border: 1px solid #000000;
+    border-bottom: 1px solid white;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-top-right-radius: 0px;
+    -webkit-border-top-left-radius: 0px
+    }
+.tabmenu li a {
+    color: #d579c3;
+    background-color: #ededed;
+    border: 1px solid black;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-top-right-radius: 0px;
+    -webkit-border-top-left-radius: 0px
+    }
+/* vii: REDDIT NAME */
+.redditname {
+    text-shadow: 0 0 0.7em #fff, 0 0 0.7em #fff, 0 0 0.7em #fff
+    }
+.redditname a:hover {
+    text-shadow: 0 0 0.9em #fff, 0 0 0.9em #fff, 0 0 0.9em #fff, 0 0 0.9em #fff
+    }
+/* D: SPOILER CODE */
+a[href="/spoiler"] {
+    background: black !important;
+    color: black !important
+    }
+a[href="/spoiler"]:hover {
+    color: white !important
+    }
+/* E: CHANGE "SUBSCRIBERS" */
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox span.number:after {
+    content: " Cellists"
+    }
+/* F: CHANGE "MODERATORS" */
+.sidecontentbox h1 {
+    text-align: left
+    }
+.sidecontentbox h1:not(:first-child) {
+    color: white !important;
+    font-size: 1px !important;
+    display: inline-block
+    }
+.sidecontentbox h1:not(:first-child):before {
+    color: gray !important;
+    font-size: 13px !important;
+    content: "CONDUCTORS";
+    display: inline-block
+    }
+/* I: GREY ODD LINK BACKGROUNDS */
+.link.odd {
+    background: #f8f8f8;
+    border-radius: 10px;
+    border: 1px solid #E6E6E6
+    }
+/* 4: CHANGELOG 
+
+version 1.0
+
+[koobaxion]
+	> Changed almost everything to make it super awesome
+        > But I ain't done yet!
+        
+
+*/
