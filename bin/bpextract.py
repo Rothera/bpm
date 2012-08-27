@@ -136,7 +136,7 @@ def parse_emote_selector(selector):
     #
     # ":" and "!" are permitted in emote names- the former for "/pp:3", and the
     # latter for colored text emotes.
-    m = re.match(r'a(:[a-zA-Z\-()]+)?\[href.?="(/[\w:!]+)"\](:[a-zA-Z\-()]+)?$', selector)
+    m = re.match(r'a\s*(:[a-zA-Z\-()]+)?\[href.?="(/[\w:!]+)"\](:[a-zA-Z\-()]+)?$', selector)
     if m is None:
         return None
     pc1, emote_name, pc2 = m.groups()
@@ -302,7 +302,6 @@ def verify_spritesheet(image_url, emotes):
 
 def generate_meta(name, filename):
     return {
-        "Timestamp": time.strftime("%c"),
         "Name": name or "r/%s" % (os.path.splitext(os.path.basename(filename))[0])
         }
 
