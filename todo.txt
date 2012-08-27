@@ -1,48 +1,91 @@
+Projects:
+  - Emote search/picker.
+    - Figure out where we left off. I don't remember whether or not we had
+      something left over to do.
+
+    - Fix it for the new emote-map changes.
+      - Consider how nsfw emotes will work with this- will the standard CSS
+        catch them? We may need to ensure bpm-nsfw gets applied.
+      - Speaking of applying CSS, think about ensuring the core emote code
+        doesn't touch it. Either that or make sure it does- might be simpler.
+
+    - Make search an "and" for everything in spaces. Either that or an "or".
+      Maybe even an option; I dunno. Search syntax would probably be overkill.
+
+    - Add a way to close it. Since we'll be putting in an "open it up" button,
+      it can just go away entirely.
+
+    - Implement a hover/click control to bring it up again.
+
+    - Add drag&drop support to move it around with.
+
+    - Add resizing capability?
+
+    - Prefs for its position/size. Anything else?
+
+    - Integrate.
+
 General TODO:
-    - Make all logging consistent and useful.
+  - Condense CSS according to matching width/height properties. Algorithm:
+    - For every width:
+      - For every height:
+        - Map (width, height) -> the subset of matching selectors
+    - For every subset:
+      - If len(subset) > 1 # FIXME: does this guarantee savings?
+        - condense()
 
-    - More bzr branches. Consider splitting out emotes. Add everything to a
-      repository, with a private branch for the .pem or something. Use branches
-      more, for big development projects (like Opera!) so we don't keep stuff
-      out of VCS so much.
+  - Make all logging consistent and useful.
 
-    - MAJOR CLEANUP after Opera release. The codebase is sprawling.
-        - Sort out codebase. There are duplicates and things- perhaps a template
-          system would work? Maybe we should just separate functionality better.
+  - More bzr branches. Consider splitting out emotes. Add everything to a
+    repository, with a private branch for the .pem or something. Use branches
+    more, for big development projects (like Opera!) so we don't keep stuff
+    out of VCS so much.
 
-          # These files are fairly shared.
-          /scripts/process.js
-          /scripts/process-delayed.js # Will be nearly identical to above- FIXME
-          /scripts/monitor-mo.js
-          /scripts/monitor-dom.js
+  - Find a better way to handle data files (including emote-map.js) in Opera.
+    "make" and file.read() is awful.
 
-          # The css-support files are different enough where we can't really
-          # share them, unfortunately.
-          /firefox/lib/main.js
-          /chrome/background.js
-          /chrome/css-support.js
-          /opera/background.js
-          /opera/includes/css-support.js
+    This will probably come down to external hosting. There will most likely
+    be *no* other solution when we get to a userscript variant, anyway.
 
-        - Find a better way to handle injecting emote-map.js into Opera. "make"
-          works for now, but this just won't do for long.
+  - Combine css-support.js and betterponymotes.js. I think this mostly means
+    checking that DOMContentLoaded always works the way we need it to.
 
-    - Move the www files to /bpm/ or something. Rename betterponymotes.update.rdf
-      to firefox-updates.rdf for consistency. Basically just move everything a
-      level deeper over the course of an update.
+    Firefox: CSS never, emotes on DOM.
+    Chrome: CSS early, emotes on DOM.
+    Opera: CSS on DOM, emotes on DOM. # FIXME: is CSS on dom necessary? log(document.documentElement)
+
+  - Move the www files to /bpm/ or something. Rename betterponymotes.update.rdf
+    to firefox-updates.rdf for consistency. Basically just move everything a
+    level deeper over the course of an update.
+
+  - Rework tooling a bit, mainly update.py and updatehelper.py. Keep a YAML
+    file containing a list of subreddits and such, along with any special
+    instructions, e.g. "-e".
+    - Expand bpextract.py to include more extraction options. Add an ExtractionContext
+      (or similar) object to manage global options and things. At a minimum
+      I'd like --no-ignore (to search through PONYSCRIPT-IGNORE blocks) and -e
+      to extract specific emotes from r/mlplounge.
+
+      Maybe just -e? --no-ignore doesn't do anything useful on its own except
+      generate too much noise.
+    - Add options to control logging, and omit/include specific warnings. Most
+      of them would generally be enabled by default, but we might want to ignore
+      certain properties for certain subreddits (we don't need to use them
+      globally, then). E.g. require "display: none" by default, but add a option
+      like --ignore-prop=display.
 
 Chrome:
-    - Make options work more nicely- reloading properly on all pages.
-        - localStorage events might work from background.js
-    - Try to make options.html reasonably nice looking
+  - Make options work more nicely- reloading properly on all pages.
+    - localStorage events might work from background.js
+  - Try to make options.html reasonably nice looking
 
 Opera:
-    - Consider doing settings updating via postMessage- also with Chrome.
-        - Requires <style id="bpm-extracss"> so it can be removed...
-    - Spend some time fixing up options.html, and copying improvements to Chrome.
-        - The code is also a mess.
+  - Consider doing settings updating via postMessage- also with Chrome.
+    - Requires <style id="bpm-extracss"> so it can be removed...
+  - Spend some time fixing up options.html, and copying improvements to Chrome.
+    - The code is also a mess.
 
 Update process:
-    - $ bin/version.py set -v [...]
-    - $ rm build/*.{xpi,crx,oex} # Delete old versions
-    - $ make
+  - $ bin/version.py set -v [...]
+  - $ rm build/*.{xpi,crx,oex} # Delete old versions
+  - $ make
