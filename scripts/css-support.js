@@ -32,7 +32,7 @@
  */
 
 if(chrome) {
-    enable_css = function(filename) {
+    var enable_css = function(filename) {
         var tag = document.createElement("link");
         tag.href =  chrome.extension.getURL(filename);
         tag.rel = "stylesheet";
@@ -57,7 +57,7 @@ if(chrome) {
     } else {
         var file_callbacks = {};
 
-        function on_message(event) {
+        var on_message = function(event) {
             var message = event.data;
             switch(message.request) {
                 case "fileLoaded":
@@ -81,7 +81,7 @@ if(chrome) {
         }
     }
 
-    enable_css = function(filename) {
+    var enable_css = function(filename) {
         get_file(filename, function(data) {
             var tag = document.createElement("style");
             tag.setAttribute("type", "text/css");
@@ -100,11 +100,11 @@ if(chrome) {
  */
 
 if(chrome) {
-    pref_boolean = function(prefs, name) {
+    var pref_boolean = function(prefs, name) {
         return prefs[name];
     }
 } else if(opera) {
-    pref_boolean = function(prefs, name) {
+    var pref_boolean = function(prefs, name) {
         return prefs[name] == "true";
     }
 }
