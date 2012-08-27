@@ -236,14 +236,12 @@ def condense_css(rules):
         return common
 
     def condense(common_props):
-        # FIXME: Work out will_empty ourselves
-
         # Assume they're common
         selectors = common_selectors(common_props)
         if len(selectors) <= 1:
             return
 
-        # TODO: frozenset
+        # TODO: frozenset? probably doesn't matter if we sort
         sel_string = ",".join(sorted(selectors))
 
         props_chars = sum((len(key) + len(val) + 1) for (key, val) in common_props.items())
@@ -258,9 +256,9 @@ def condense_css(rules):
         if chars_added > chars_removed:
             return
 
-        # Make sure we're not screwing anything up
         existing_props = rules.setdefault(sel_string, {})
         for (prop_name, value) in common_props.items():
+            # Make sure we're not screwing anything up
             if prop_name in existing_props:
                 print("WARNING: condensing same property twice", prop_name, "=", value)
                 assert existing_props[prop_name] == value
