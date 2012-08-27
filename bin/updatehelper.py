@@ -10,7 +10,6 @@
 ##
 ################################################################################
 
-import fnmatch
 import os
 import random
 import readline
@@ -56,7 +55,12 @@ SESS = "reddit_session=9958622%2C2012-06-14T22%3A56%3A05%2C432b711c2f42ca0748d22
 def update_css(num, total, subreddit):
     url = "http://reddit.com/r/%s/stylesheet?nocache=%s" % (subreddit, random.randrange(1000000))
 
-    old_ss = open("stylesheet-cache/%s.css" % (subreddit), "rb").read()
+    try:
+        old_ss = open("stylesheet-cache/%s.css" % (subreddit), "rb").read()
+    except IOError:
+        # Assume file doesn't exist; new subreddit
+        print("NOTICE: stylesheet-cache/%s.css does not exist; new subreddit?" % (subreddit))
+        old_ss = ""
 
     print("%s/%s: %s" % (num+1, total, url))
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Cookie": SESS})
@@ -96,7 +100,7 @@ def cmd_diff_emotes(args):
     if len(args) != 1:
         print("Usage: diffemotes <subreddit>")
     else:
-        subprocess.call(["bin/diff.py", "emotes/%s.yaml" % (args[0]), "emote-updates/%s.yaml" % (args[0])])
+        subprocess.Popen(["kompare", "emotes/%s.yaml" % (args[0]), "emote-updates/%s.yaml" % (args[0])])
 
 def cmd_resolve_emotes(args):
     if len(args) != 1:
