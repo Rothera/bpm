@@ -96,6 +96,7 @@ def cmd_update(args):
 
     if not args:
         filenames = [fn for fn in sorted(os.listdir(STYLESHEET_CACHE_DIR)) if fn.endswith(".css")]
+        filenames.sort()
         subreddits = [fn.split(".")[0] for fn in filenames]
     else:
         if len(args) == 1:
@@ -111,6 +112,7 @@ def cmd_update(args):
 def cmd_extract(args):
     if not args:
         filenames = [fn for fn in os.listdir("stylesheet-updates") if fn.endswith(".css")]
+        filenames.sort()
         subreddits = [fn.split(".")[0] for fn in filenames]
     else:
         subreddits = args
@@ -126,12 +128,13 @@ def cmd_extract_all(args):
         return
 
     filenames = [fn for fn in os.listdir(STYLESHEET_CACHE_DIR) if fn.endswith(".css")]
+    filenames.sort()
     subreddits = [fn.split(".")[0] for fn in filenames]
 
     for sr in subreddits:
         print("Extracting", sr)
         # TODO: Don't hardcode relative paths...
-        subprocess.call(["bin/bpextract.py", ss_cache(subreddit + ".css"), "emotes/%s.yaml" % (sr)])
+        subprocess.call(["bin/bpextract.py", ss_cache(sr + ".css"), "emotes/%s.yaml" % (sr)])
 
 def cmd_diff_emotes(args):
     subreddit = get_opt_arg(args, "Usage: diffemotes <subreddit>")
