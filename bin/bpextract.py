@@ -304,10 +304,12 @@ def verify_spritesheet(image_url, emotes):
 
 ### Serialization
 
-def generate_meta(name, filename):
-    return {
-        "Name": name or "r/%s" % (os.path.splitext(os.path.basename(filename))[0])
-        }
+def generate_meta(src_filename, name, display_name):
+    base_name = os.path.splitext(os.path.basename(src_filename))[0]
+    name = name or "r_%s" % (base_name)
+    display_name = display_name or "r/%s" % (base_name)
+    assert "/" not in name # TODO: be more restrictive
+    return {"Name": name, "DisplayName": display_name}
 
 def convert_spritesheets(spritesheets):
     return {image_url: _convert_emote_map(ss) for (image_url, ss) in spritesheets.items()}
@@ -324,6 +326,7 @@ convert_customs = _convert_emote_map
 def main():
     parser = argparse.ArgumentParser(description="Extract emotes from subreddit CSS")
     parser.add_argument("-n", "--name", help="Emote section")
+    parser.add_argument("-d", "--displayname", help="display name")
     parser.add_argument("css", help="Input CSS file", type=argparse.FileType(mode="r"))
     parser.add_argument("emotes", help="Output emotes file", type=argparse.FileType(mode="w"))
     parser.add_argument("-e", "--extract", help="Extract specific emote", action="append", default=[])
@@ -338,7 +341,7 @@ def main():
     spritesheets = build_spritesheet_map(normal_emotes)
 
     data = {
-        "Meta": generate_meta(args.name, args.css.name),
+        "Meta": generate_meta(args.css.name, args.name, args.displayname),
         "Emotes": {
             "Spritesheets": convert_spritesheets(spritesheets),
             "Custom": convert_customs(custom_emotes)

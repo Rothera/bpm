@@ -9,54 +9,54 @@
 ################################################################################
 
 File Ignores:
-- r/mylittledramaticstory # Nothing worth keeping- shouldn't exist
+- r_mylittledramaticstory # Nothing worth keeping- shouldn't exist
 
 Sorting:
-- [r/mylittlepony, "*"]
-- [r/mylittleandysonic1, "*"] # This, unfortunately, resolves a lot of things implicitly...
-- [r/futemotes, r/ponyanarchism]
-- [r/ainbowdash, r/dashiemotes]
-- [r/idliketobeatree, r/ainbowdash]
-- [r/mylittlemusician, r/mylittlelistentothis]
+- [r_mylittlepony, "*"]
+- [r_mylittleandysonic1, "*"] # This, unfortunately, resolves a lot of things implicitly...
+- [r_futemotes, r_ponyanarchism]
+- [r_ainbowdash, r_dashiemotes]
+- [r_idliketobeatree, r_ainbowdash]
+- [r_mylittlemusician, r_mylittlelistentothis]
 
 Conflicts:
 - Name: [/muffin, null]
-  Favor: r/mlpdrawingschool # Conflict with r/mylittlesupportgroup
+  Favor: r_mlpdrawingschool # Conflict with r/mylittlesupportgroup
 - Name: [/twifly, null]
-  Favor: r/mlas1animotes # Conflict with r/thebestpony
+  Favor: r_mlas1animotes # Conflict with r/thebestpony
 - Name: [/woonajuice, null]
-  Favor: r/mylittledaww # Duplicated to r/mylittleanime
+  Favor: r_mylittledaww # Duplicated to r/mylittleanime
 - Name: [/rwoonajuice, null]
-  Favor: r/mylittledaww # Duplicated to r/mylittleanime
+  Favor: r_mylittledaww # Duplicated to r/mylittleanime
 - Name: [/dw01, null]
-  Favor: r/daylightemotes # Conflict with r/gallopfrey
+  Favor: r_daylightemotes # Conflict with r/gallopfrey
 - Name: [/hugs, null]
-  Favor: r/mylittledaww # Conflict with r/mylittlecirclejerk
+  Favor: r_mylittledaww # Conflict with r/mylittlecirclejerk
 - Name: [/twipoker, null]
-  Favor: r/mylittlewtf # Conflict with r/thebestpony
+  Favor: r_mylittlewtf # Conflict with r/thebestpony
 - Name: [/ajlol, null]
-  Favor: r/mlas1animotes # Conflict with r/tbpimagedump
+  Favor: r_mlas1animotes # Conflict with r/tbpimagedump
 - Name: [/woona, null]
-  Favor: r/thebestpony # Broken emote in r/mylittlesupportgroup
+  Favor: r_thebestpony # Broken emote in r/mylittlesupportgroup
 - Name: [/abwant, null]
-  Favor: r/mylittlelivestream # Conflict with r/applebloom
+  Favor: r_mylittlelivestream # Conflict with r/applebloom
 - Name: [/rabwant, null]
-  Favor: r/mylittlelivestream # Conflict with r/applebloom
+  Favor: r_mylittlelivestream # Conflict with r/applebloom
 - Name: [/shrug, null]
-  Favor: r/vinylscratch # Conflict with r/mylittlecirclejerk
+  Favor: r_vinylscratch # Conflict with r/mylittlecirclejerk
 - Name: [/sadlyra, null]
-  Favor: r/mylittleonions # Conflict with r/mylittleanime
+  Favor: r_mylittleonions # Conflict with r/mylittleanime
 - Name: [/abworry, null]
-  Favor: r/tbpimagedump # Conflict with r/mlpdrawingschool
+  Favor: r_tbpimagedump # Conflict with r/mlpdrawingschool
 - Name: [/ppnervous, null]
-  Favor: r/pinkiepie # Conflict with r/mlpdrawingschool
+  Favor: r_pinkiepie # Conflict with r/mlpdrawingschool
 - Name: [/s, null]
-  Favor: r/falloutequestria # Conflict with r/mylittleanime
+  Favor: r_falloutequestria # Conflict with r/mylittleanime
 
 Directives:
-  r/clopclop:
+  r_clopclop:
     - [MarkNSFW, /cl00, /futashy, /rcl00, /rfutashy]
-  r/futemotes:
+  r_futemotes:
     - [MarkNSFW, /andy, /books, /kitty]
     - [MarkNSFW, /selfsuck]
     - [MarkNSFW, /horsecock, /horsedick]
@@ -67,13 +67,13 @@ Directives:
     - [MarkNSFW, /hugehorsedick]
     - [MarkNSFW, /twna]
   # Fix some selectors
-  r/mylittleandysonic1:
+  r_mylittleandysonic1:
     - [SetSelector, /ajFoF, bpmote-ajfof]
     - [DisableCSS, /ajFoF]
-    # /rcrossfire exists in r/mlas1 (unlike /sbf), so just correct it
+    # /rcrossfire exists in r_mlas1 (unlike /sbf), so just correct it
     # instead of redefining it elsewhere
     - [AddCSS, /rcrossfire, {"-moz-transform": scaleX(-1), "-webkit-transform": scaleX(-1), "-o-transform": scaleX(-1), transform: scaleX(-1)}]
-  r/mylittleanhero23:
+  r_mylittleanhero23:
     # Remove a bunch of stupid image macro generators (or whatever they are).
     # They're broken anyway.
     - [Remove, /akumad]
@@ -91,21 +91,21 @@ Directives:
     - [Remove, /theseponies]
     - [Remove, /trees]
     - [Remove, /whatisthis]
-  r/mylittlebannertest:
+  r_mylittlebannertest:
     # Don't remember why I removed these
     - [Remove, /alt_text]
     - [Remove, /ban]
     - [MarkNSFW, /jizz, /pone]
-  r/mylittlechaos:
+  r_mylittlechaos:
     # Non-pony
     - [Remove, /taco]
     - [MarkNSFW, /sphlyrafun]
-  r/mylittlesh:
+  r_mylittlesh:
     # Weird space things, which are broken in BPM anyway
     - [Remove, /0x10]
     - [Remove, /10x0]
-  r/seriouslyluna:
+  r_seriouslyluna:
     - [SetSelector, /seriouslyGDB, bpmote-seriouslygdb]
     - [DisableCSS, /seriouslyGDB]
-  r/spaceclop:
+  r_spaceclop:
     - [MarkNSFW, /sandwich]

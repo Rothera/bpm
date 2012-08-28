@@ -18,14 +18,17 @@ import bplib
 ### Emote loading
 
 class EmoteFile:
-    def __init__(self, meta, emotes):
+    def __init__(self, file_id, meta, emotes):
+        self.file_id = file_id
+
         self.meta = meta
         self.emotes = emotes
 
         self.name = meta["Name"]
+        self.display_name = meta["DisplayName"]
 
     @classmethod
-    def from_data(cls, data):
+    def from_data(cls, data, file_id):
         meta = data.pop("Meta")
         emote_data = data.pop("Emotes")
         emotes = {}
@@ -34,38 +37,40 @@ class EmoteFile:
             for name_pair in d:
                 if name_pair in emotes:
                     print("ERROR: Duplicate emote", name_pair)
-            emotes.update(d)
+            file.emotes.update(d)
 
-        update(convert_spritesheets(emote_data.pop("Spritesheets", {})))
-        update(convert_customs(emote_data.pop("Custom", {})))
+        # FIXME: this is a hack so we can have circular references
+        file = cls(file_id, meta, {})
+        update(convert_spritesheets(file, emote_data.pop("Spritesheets", {})))
+        update(convert_customs(file, emote_data.pop("Custom", {})))
 
         for key in emote_data:
             print("ERROR: Unknown emote section in file")
         for key in data:
             print("ERROR: Unknown key in file")
 
-        return cls(meta, emotes)
+        return file
 
     def __repr__(self):
         return "EmoteFile(%r, %r)" % (self.meta, self.emotes)
 
-def convert_spritesheets(raw_spritesheets):
+def convert_spritesheets(file, raw_spritesheets):
     # Loads all spritesheets
     emotes = {}
     for (image_url, emote_list) in raw_spritesheets.items():
         for data in emote_list:
-            emote = bplib.Emote.from_data(image_url, data)
+            emote = bplib.Emote.from_data(image_url, data, file=file)
             name_pair = (emote.name, emote.suffix)
             if name_pair in emotes:
                 print("ERROR: Duplicate emotes", name_pair)
             emotes[name_pair] = emote
     return emotes
 
-def convert_customs(customs):
+def convert_customs(file, customs):
     # Loads all custom emotes
     emotes = {}
     for data in customs:
-        emote = bplib.RawEmote.from_data(data)
+        emote = bplib.RawEmote.from_data(data, file=file)
         name_pair = (emote.name, emote.suffix)
         if name_pair in emotes:
             print("ERROR: Duplicate emotes", name_pair)
@@ -202,7 +207,7 @@ def build_css(emotes):
 
     return css_rules, nsfw_css_rules
 
-def build_js(emotes):
+def build_js_map(emotes):
     emote_map = {}
 
     for emote in emotes.values():
@@ -211,9 +216,19 @@ def build_js(emotes):
             continue
 
         assert emote.name not in emote_map
-        emote_map[emote.name] = int(emote.nsfw) + 1
+        emote_map[emote.name] = [int(emote.nsfw), emote.file.file_id]
 
     return emote_map
+
+def build_sr_data(files):
+    sr_id_map = {}
+    sr_data = {}
+
+    for (name, file) in files.items():
+        sr_id_map[file.file_id] = name
+        sr_data[name] = [file.display_name, file.file_id]
+
+    return sr_id_map, sr_data
 
 def condense_css(rules):
     # Make a copy for validation purposes
@@ -350,20 +365,27 @@ def dump_css(file, rules):
         s = "%s{%s}\n" % (selector, ";".join(property_strings))
         file.write(s)
 
-def dump_js(file, js_map):
+def dump_js_map(file, js_map):
     file.write(AutogenHeader)
-    file.write("var emote_map = {\n")
+    _dump_js_obj(file, "emote_map", js_map)
 
-    strings = ["%r:%r" % i for i in js_map.items()]
-    file.write(",\n".join(strings))
+def dump_sr_data(file, sr_id_map, sr_data):
+    file.write(AutogenHeader)
+    _dump_js_obj(file, "sr_id_map", sr_id_map)
+    _dump_js_obj(file, "sr_data", sr_data)
 
-    file.write("\n}\n")
+def _dump_js_obj(file, var_name, obj):
+    file.write("var %s = " % (var_name))
+    strings = ["%r:%r" % i for i in sorted(obj.items())]
+    data = "{\n" + ",\n".join(strings) + "\n};\n"
+    file.write(data)
 
 ### Main
 
 def main():
     parser = argparse.ArgumentParser(description="Generate addon data files from emotes")
-    parser.add_argument("-j", "--js", help="Output JS file", default="build/emote-map.js")
+    parser.add_argument("-j", "--js", help="Output emote map JS file", default="build/emote-map.js")
+    parser.add_argument("-s", "--srdata", help="Output subreddit data JS file", default="build/sr-data.js")
     parser.add_argument("-c", "--css", help="Output CSS file", default="build/emote-classes.css")
     parser.add_argument("-n", "--nsfw-css", help="Output NSFW CSS file", default="build/nsfw-emote-classes.css")
     parser.add_argument("-d", "--directives", help="Processing directives",
@@ -374,16 +396,19 @@ def main():
     files = {}
 
     print("Loading emotes")
+    file_id = 0
     for (i, filename) in enumerate(args.emotes):
         with open(filename) as file:
             data = bplib.load_yaml_file(file)
-            efile = EmoteFile.from_data(data)
+            efile = EmoteFile.from_data(data, file_id)
             files[efile.meta["Name"]] = efile
+            file_id += 1
 
     print("Processing")
     emotes = resolve_emotes(files, bplib.load_yaml_file(args.directives))
     css_rules, nsfw_css_rules = build_css(emotes)
-    js_map = build_js(emotes)
+    js_map = build_js_map(emotes)
+    sr_id_map, sr_data = build_sr_data(files)
     condense_css(css_rules)
     condense_css(nsfw_css_rules)
 
@@ -393,7 +418,9 @@ def main():
     with open(args.nsfw_css, "w") as file:
         dump_css(file, nsfw_css_rules)
     with open(args.js, "w") as file:
-        dump_js(file, js_map)
+        dump_js_map(file, js_map)
+    with open(args.srdata, "w") as file:
+        dump_sr_data(file, sr_id_map, sr_data)
 
 if __name__ == "__main__":
     main()

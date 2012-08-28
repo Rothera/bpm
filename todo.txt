@@ -1,29 +1,45 @@
-Projects:
-  - Emote search/picker.
-    - Figure out where we left off. I don't remember whether or not we had
-      something left over to do.
+Subreddit disabler:
+  - Some people want to be able to disable emotes on a per-subreddit basis. MAP
+    doesn't support this, and AFAIK neither does GrEmB. We should.
 
-    - Fix it for the new emote-map changes.
-      - Consider how nsfw emotes will work with this- will the standard CSS
-        catch them? We may need to ensure bpm-nsfw gets applied.
-      - Speaking of applying CSS, think about ensuring the core emote code
-        doesn't touch it. Either that or make sure it does- might be simpler.
+    http://www.reddit.com/r/MLPLounge/comments/yx39v/im_worried_about_you_guys/c5zloar
 
-    - Make search an "and" for everything in spaces. Either that or an "or".
-      Maybe even an option; I dunno. Search syntax would probably be overkill.
+  - Make bpm.js fetch prefs before emote parsing. Mostly a change for Fx.
 
-    - Add a way to close it. Since we'll be putting in an "open it up" button,
-      it can just go away entirely.
+  - Figure everything out. Make bpgen.py better (merge emotes in and get rid of
+    bpmotes-extras). Map emotes to [source, nsfw], {source: Name}, and
+    {Name: Filename}. Name is used in prefs, source for a compact emote-map.js
+    file, and Filename for resource loading.
 
-    - Implement a hover/click control to bring it up again.
+  - Chrome will be fine if we lookup prefs. Opera already does. Make 'em do
+    that all the time, and in one file FFS. Firefox is smarter about CSS, but
+    that's it.
 
-    - Add drag&drop support to move it around with.
+Emote search/picker:
+  - Figure out where we left off. I don't remember whether or not we had
+    something left over to do.
 
-    - Add resizing capability?
+  - Fix it for the new emote-map changes.
+    - Consider how nsfw emotes will work with this- will the standard CSS
+      catch them? We may need to ensure bpm-nsfw gets applied.
+    - Speaking of applying CSS, think about ensuring the core emote code
+      doesn't touch it. Either that or make sure it does- might be simpler.
 
-    - Prefs for its position/size. Anything else?
+  - Make search an "and" for everything in spaces. Either that or an "or".
+    Maybe even an option; I dunno. Search syntax would probably be overkill.
 
-    - Integrate.
+  - Add a way to close it. Since we'll be putting in an "open it up" button,
+    it can just go away entirely.
+
+  - Implement a hover/click control to bring it up again.
+
+  - Add drag&drop support to move it around with.
+
+  - Add resizing capability?
+
+  - Prefs for its position/size. Anything else?
+
+  - Integrate.
 
 General TODO:
   - More bzr branches. Consider splitting out emotes. Add everything to a
@@ -63,6 +79,18 @@ General TODO:
       certain properties for certain subreddits (we don't need to use them
       globally, then). E.g. require "display: none" by default, but add a option
       like --ignore-prop=display.
+
+  - Clean up betterponymotes.js a bit- make a big "browser" object depending on
+    current browser, a "bpm" object maybe...
+
+Misc:
+  - Make bpextract/bpgen share as much code as possible. Make formal objects for
+    EVERYTHING, with strictly-validating create/save/load methods.
+
+  - Make shell.py print [x/n] indicators for all of its operations. Also, make
+    it suck less- more commands, proper argument parsing, etc.
+
+    Consider moving to objects and argparse.
 
 Chrome:
   - Make options work more nicely- reloading properly on all pages.

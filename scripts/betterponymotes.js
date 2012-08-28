@@ -170,10 +170,12 @@ function process(elements) {
             var emote = parts[0];
 
             if(emote_map[emote]) {
+                var emote_info = emote_map[emote];
+                var is_nsfw = emote_info[0];
+                var source_id = emote_info[1];
                 // But do normalize it when working out the CSS class. Also
                 // strip off leading "/".
                 var css_class = "bpmote-" + sanitize(emote.slice(1));
-                var is_nsfw = emote_map[emote] == 2;
 
                 var nsfw_class = is_nsfw ? " bpm-nsfw " : " ";
                 element.className += nsfw_class + css_class;

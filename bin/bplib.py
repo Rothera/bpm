@@ -27,7 +27,7 @@ def combine_name_pair(name, suffix):
         return name
 
 class BaseEmote:
-    def __init__(self, name, suffix, css, nsfw=False):
+    def __init__(self, name, suffix, css, nsfw=False, file=None):
         self.name = name
         self.suffix = suffix
         self.css = css
@@ -35,6 +35,8 @@ class BaseEmote:
         self.selector = None
         self.nsfw = nsfw
         self.nocss = False
+
+        self.file = file
 
     def make_selector(self):
         if self.selector:
@@ -45,8 +47,8 @@ class BaseEmote:
 
 class RawEmote(BaseEmote):
     # Usually partial...
-    def __init__(self, name, suffix, css, nsfw=False):
-        BaseEmote.__init__(self, name, suffix, css, nsfw=nsfw)
+    def __init__(self, name, suffix, css, nsfw=False, file=None):
+        BaseEmote.__init__(self, name, suffix, css, nsfw=nsfw, file=file)
 
     def to_data(self):
         data = {
@@ -61,7 +63,7 @@ class RawEmote(BaseEmote):
         return (self.make_selector(), self.css.copy())
 
     @classmethod
-    def from_data(cls, data):
+    def from_data(cls, data, file=None):
         name = data.pop("Name")
         suffix = data.pop("Suffix", None)
         css = data.pop("CSS")
@@ -70,14 +72,14 @@ class RawEmote(BaseEmote):
         for key in data:
             print("ERROR: Extra key on %r: %r (%r)" % ((name, suffix), key, data[key]))
 
-        return cls(name, suffix, css, nsfw=nsfw)
+        return cls(name, suffix, css, nsfw=nsfw, file=file)
 
     def __repr__(self):
         return "RawEmote(%r, %r, %r)" % (self.name, self.suffix, self.css)
 
 class Emote(BaseEmote):
-    def __init__(self, name, suffix, css, size, offset, image_url, nsfw=False):
-        BaseEmote.__init__(self, name, suffix, css, nsfw=nsfw)
+    def __init__(self, name, suffix, css, size, offset, image_url, nsfw=False, file=None):
+        BaseEmote.__init__(self, name, suffix, css, nsfw=nsfw, file=file)
         self.size = size
         self.offset = offset
         self.image_url = image_url
@@ -109,7 +111,7 @@ class Emote(BaseEmote):
         return (self.make_selector(), css)
 
     @classmethod
-    def from_data(cls, image_url, data):
+    def from_data(cls, image_url, data, file=None):
         name = data.pop("Name")
         suffix = data.pop("Suffix", None)
         size = data.pop("Size")
@@ -120,7 +122,7 @@ class Emote(BaseEmote):
         for key in data:
             print("ERROR: Extra key on %r: %r (%r)" % ((name, suffix), key, data[key]))
 
-        return cls(name, suffix, css, size, offset, image_url, nsfw=nsfw)
+        return cls(name, suffix, css, size, offset, image_url, nsfw=nsfw, file=file)
 
     def __repr__(self):
         return "Emote(%r, %r, %r, %r, %r)" % (
