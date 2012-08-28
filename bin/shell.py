@@ -11,6 +11,7 @@
 ################################################################################
 
 import os
+import os.path
 import random
 import readline
 import shutil
@@ -20,6 +21,11 @@ import time
 import urllib.request
 
 context = None
+
+STYLESHEET_CACHE_DIR = "../stylesheet-cache"
+
+def ss_cache(path):
+    return os.path.join(STYLESHEET_CACHE_DIR, path)
 
 def get_opt_arg(args, usage):
     global context
@@ -49,7 +55,7 @@ def cmd_list(args):
 def cmd_diff_css(args):
     subreddit = get_opt_arg(args, "Usage: diffcss <subreddit>")
     if subreddit:
-        subprocess.Popen(["kompare", "stylesheet-cache/%s.css" % (subreddit), "stylesheet-updates/%s.css" % (subreddit)])
+        subprocess.Popen(["kompare", ss_cache(subreddit + ".css"), "stylesheet-updates/%s.css" % (subreddit)])
 
 def cmd_edit(args):
     if not len(args):
@@ -60,7 +66,7 @@ def cmd_edit(args):
 def cmd_resolve_css(args):
     subreddit = get_opt_arg(args, "Usage: resolvecss <subreddit>")
     if subreddit:
-        shutil.move("stylesheet-updates/%s.css" % (subreddit), "stylesheet-cache/%s.css" % (subreddit))
+        shutil.move("stylesheet-updates/%s.css" % (subreddit), ss_cache(subreddit + ".css"))
 
 UA = "BetterPonymotes stylesheet update checker (1req/2.5secs; pm Typhos)"
 SESS = "reddit_session=9958622%2C2012-06-14T22%3A56%3A05%2C432b711c2f42ca0748d224c12c54ec2ed514cd7d"
@@ -69,10 +75,10 @@ def update_css(num, total, subreddit):
     url = "http://reddit.com/r/%s/stylesheet?nocache=%s" % (subreddit, random.randrange(1000000))
 
     try:
-        old_ss = open("stylesheet-cache/%s.css" % (subreddit), "rb").read()
+        old_ss = open(ss_cache(subreddit +".css"), "rb").read()
     except IOError:
         # Assume file doesn't exist; new subreddit
-        print("NOTICE: stylesheet-cache/%s.css does not exist; new subreddit?" % (subreddit))
+        print("NOTICE: %s does not exist; new subreddit?" % (ss_cache(subreddit + ".css")))
         old_ss = ""
 
     print("%s/%s: %s" % (num+1, total, url))
@@ -89,7 +95,7 @@ def cmd_update(args):
     global context
 
     if not args:
-        filenames = [fn for fn in sorted(os.listdir("stylesheet-cache")) if fn.endswith(".css")]
+        filenames = [fn for fn in sorted(os.listdir(STYLESHEET_CACHE_DIR)) if fn.endswith(".css")]
         subreddits = [fn.split(".")[0] for fn in filenames]
     else:
         if len(args) == 1:
@@ -119,13 +125,13 @@ def cmd_extract_all(args):
         print("Usage: extractall")
         return
 
-    filenames = [fn for fn in os.listdir("stylesheet-cache") if fn.endswith(".css")]
+    filenames = [fn for fn in os.listdir(STYLESHEET_CACHE_DIR) if fn.endswith(".css")]
     subreddits = [fn.split(".")[0] for fn in filenames]
 
     for sr in subreddits:
         print("Extracting", sr)
         # TODO: Don't hardcode relative paths...
-        subprocess.call(["bin/bpextract.py", "stylesheet-cache/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
+        subprocess.call(["bin/bpextract.py", ss_cache(subreddit + ".css"), "emotes/%s.yaml" % (sr)])
 
 def cmd_diff_emotes(args):
     subreddit = get_opt_arg(args, "Usage: diffemotes <subreddit>")
