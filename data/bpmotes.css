@@ -36,6 +36,32 @@
     padding: 5px;
 }
 
+.bpm-nsfw {
+    /* Emote common */
+    display: block;
+    clear: none;
+    float: left;
+
+    /* An average, small emote (70px with padding) */
+    width: 60px;
+    height: 60px;
+
+    background-color: black;
+    border-radius: 10px;
+
+    /*
+     * "NSFW" text styling. Unfortunately, as an edge case, any text found in
+     * the emote already (i.e. in the wrong place) will be changed like this.
+     */
+    font-style: monospace;
+    font-size: xx-small;
+    padding: 5px;
+}
+
+.bpm-nsfw:after {
+    content: "NSFW";
+}
+
 /*
  * Misc bits of CSS, stolen from various subreddits.
  */

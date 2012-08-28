@@ -193,19 +193,18 @@ Directives = {
 ### Generation
 
 def build_css(emotes):
-    css_rules, nsfw_css_rules = {}, {}
+    css_rules = {}
 
     for emote in emotes.values():
         if emote.nocss:
             continue
 
-        target = (nsfw_css_rules if emote.nsfw else css_rules)
         selector, properties = emote.to_css()
-        if selector in target:
+        if selector in css_rules:
             print("ERROR: Selector %r used twice!" % (selector))
-        target[selector] = properties
+        css_rules[selector] = properties
 
-    return css_rules, nsfw_css_rules
+    return css_rules
 
 def build_js_map(emotes):
     emote_map = {}
@@ -373,6 +372,7 @@ def dump_sr_data(file, sr_id_map, sr_data):
     file.write(AutogenHeader)
     _dump_js_obj(file, "sr_id_map", sr_id_map)
     _dump_js_obj(file, "sr_data", sr_data)
+    file.write("exports = {'sr_id_map': sr_id_map, 'sr_data': sr_data};\n")
 
 def _dump_js_obj(file, var_name, obj):
     file.write("var %s = " % (var_name))
@@ -387,7 +387,6 @@ def main():
     parser.add_argument("-j", "--js", help="Output emote map JS file", default="build/emote-map.js")
     parser.add_argument("-s", "--srdata", help="Output subreddit data JS file", default="build/sr-data.js")
     parser.add_argument("-c", "--css", help="Output CSS file", default="build/emote-classes.css")
-    parser.add_argument("-n", "--nsfw-css", help="Output NSFW CSS file", default="build/nsfw-emote-classes.css")
     parser.add_argument("-d", "--directives", help="Processing directives",
                         default="data/emote-directives.yaml", type=argparse.FileType("r"))
     parser.add_argument("emotes", help="Input emote files", nargs="+")
@@ -406,17 +405,14 @@ def main():
 
     print("Processing")
     emotes = resolve_emotes(files, bplib.load_yaml_file(args.directives))
-    css_rules, nsfw_css_rules = build_css(emotes)
+    css_rules = build_css(emotes)
     js_map = build_js_map(emotes)
     sr_id_map, sr_data = build_sr_data(files)
     condense_css(css_rules)
-    condense_css(nsfw_css_rules)
 
     print("Dumping")
     with open(args.css, "w") as file:
         dump_css(file, css_rules)
-    with open(args.nsfw_css, "w") as file:
-        dump_css(file, nsfw_css_rules)
     with open(args.js, "w") as file:
         dump_js_map(file, js_map)
     with open(args.srdata, "w") as file:
