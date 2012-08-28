@@ -139,6 +139,9 @@ def resolve_emotes(files, data):
 
     # Apply custom directives
     for (filename, directives) in directive_map.items():
+        if filename not in files:
+            continue
+
         for d in directives:
             if isinstance(d, str):
                 op = d
@@ -297,11 +300,11 @@ def condense_css(rules):
     # collapse, but for now, this achieves great gains for little complexity.
 
     # Remove all useless background-position's
-    for selector in properties.get("background-position", {}).get("0px 0px", []):
-        del rules[selector]["background-position"]
-        if not rules[selector]:
-            del rules[selector]
-    if "0px 0px" in properties["background-position"]:
+    if "0px 0px" in properties.get("background-position", {}):
+        for selector in properties["background-position"]["0px 0px"]:
+            del rules[selector]["background-position"]
+            if not rules[selector]:
+                del rules[selector]
         del properties["background-position"]["0px 0px"]
 
     # Condense multi-emote spritesheets (probably most of our savings)
@@ -313,19 +316,19 @@ def condense_css(rules):
 
     # Condense similar background-position's. Not likely to make a big difference
     # except for a few very similar spritesheet grids.
-    for position in list(properties["background-position"]):
+    for position in list(properties.get("background-position", {})):
         condense({"background-position": position})
 
     # Condense by width/height, since many emotes have the same dimensions
-    for (width, w_selectors) in [(w, s) for (w, s) in properties["width"].items() if len(s) > 1]:
-        for (height, h_selectors) in [(h, s) for (h, s) in properties["height"].items() if len(s) > 1]:
+    for (width, w_selectors) in [(w, s) for (w, s) in properties.get("width", {}).items() if len(s) > 1]:
+        for (height, h_selectors) in [(h, s) for (h, s) in properties.get("height", {}).items() if len(s) > 1]:
             if set(h_selectors).intersection(w_selectors): # Any in common? Try condensing the pair
                 condense({"height": height, "width": width})
 
-    for width in properties["width"]:
+    for width in properties.get("width", {}):
         condense({"width": width})
 
-    for height in properties["height"]:
+    for height in properties.get("height", {}):
         condense({"height": height})
 
     # Locate and combine identical rules
