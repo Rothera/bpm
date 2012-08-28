@@ -8,15 +8,6 @@
     "content_scripts": [
         {
             "js": [
-                "css-support.js"
-            ], 
-            "matches": [
-                "*://*.reddit.com/*"
-            ], 
-            "run_at": "document_start"
-        }, 
-        {
-            "js": [
                 "mutation_summary.js", 
                 "emote-map.js", 
                 "betterponymotes.js"
@@ -24,7 +15,7 @@
             "matches": [
                 "*://*.reddit.com/*"
             ], 
-            "run_at": "document_end"
+            "run_at": "document_start"
         }
     ], 
     "description": "View Reddit ponymotes across the site", 
@@ -32,7 +23,7 @@
     "name": "Better Ponymotes", 
     "options_page": "options.html", 
     "update_url": "http://rainbow.mlas1.us/chrome-updates.xml", 
-    "version": "6.30", 
+    "version": "7.30", 
     "web_accessible_resources": [
         "bpmotes.css", 
         "bpmotes-sfw.css", 
