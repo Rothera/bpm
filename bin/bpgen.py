@@ -213,6 +213,9 @@ def build_js(emotes):
     return emote_map
 
 def condense_css(rules):
+    # Make a copy for validation purposes
+    base_rules = {sel: props.copy() for (sel, props) in rules.items()}
+
     # Locate all known CSS properties, and sort selectors by their value
     properties = {}
     for (selector, props) in rules.items():
@@ -241,10 +244,12 @@ def condense_css(rules):
         if len(selectors) <= 1:
             return
 
+        # len("property:value") for each property + semicolons
+        props_chars = sum((len(key) + len(val) + 1) for (key, val) in common_props.items())
+
         # TODO: frozenset? probably doesn't matter if we sort
         sel_string = ",".join(sorted(selectors))
 
-        props_chars = sum((len(key) + len(val) + 1) for (key, val) in common_props.items())
         chars_added = len(sel_string) + props_chars
 
         chars_removed = 0
@@ -257,6 +262,18 @@ def condense_css(rules):
             return
 
         existing_props = rules.setdefault(sel_string, {})
+        if existing_props:
+            # Ensure compatibility
+            for (prop_name, value) in existing_props.items():
+                # Don't overwrite anything not permitted
+                if prop_name in common_props:
+                    assert common_props[prop_name] == value
+
+                # Don't bring anything in not expected
+                for sel in selectors:
+                    # Also fails if the property didn't exist before
+                    assert base_rules[sel][prop_name] == value
+
         for (prop_name, value) in common_props.items():
             # Make sure we're not screwing anything up
             if prop_name in existing_props:
@@ -281,7 +298,7 @@ def condense_css(rules):
 
     # Remove all useless background-position's
     for selector in properties.get("background-position", {}).get("0px 0px", []):
-        rules[selector].pop("background-position")
+        del rules[selector]["background-position"]
         if not rules[selector]:
             del rules[selector]
     if "0px 0px" in properties["background-position"]:
@@ -293,7 +310,6 @@ def condense_css(rules):
             # For some reason, condensing these properties here gains more savings
             # than doing them separately. Oh well.
             condense({"background-image": image_url, "display": "block", "clear": "none", "float": "left"})
-            #condense({"background-image": image_url})
 
     # Condense similar background-position's. Not likely to make a big difference
     # except for a few very similar spritesheet grids.
@@ -303,7 +319,7 @@ def condense_css(rules):
     # Condense by width/height, since many emotes have the same dimensions
     for (width, w_selectors) in [(w, s) for (w, s) in properties["width"].items() if len(s) > 1]:
         for (height, h_selectors) in [(h, s) for (h, s) in properties["height"].items() if len(s) > 1]:
-            if any(s in h_selectors for s in w_selectors):
+            if set(h_selectors).intersection(w_selectors): # Any in common? Try condensing the pair
                 condense({"height": height, "width": width})
 
     for width in properties["width"]:
