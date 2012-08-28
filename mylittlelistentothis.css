@@ -977,15 +977,15 @@ a[href|="/bajentjfun"] {
     }
 /* Toaster */
 a[href|="/toaster"] {
-    background-image: url(http://c.thumbs.redditmedia.com/CqYNOMxZ9F7Jt0wh.jpg) !important;
+    background-image: url(http://d.thumbs.redditmedia.com/JrLO9B3o2_MsAkCu.jpg) !important;
     clear: none;
     display: block;
     float: left;
-    height: 392px;
+    height: 392px !important;
     width: 528px
     }
 a[href|="/toaster"] {
-    background-position: 0 0
+    background-position: 0px 392px !important
     }
 /* Adagio */
 a[href|="/adagio"] {
@@ -1391,7 +1391,7 @@ a.author[href$="/Taiokoshinketsu"] {
     vertical-align: bottom
     }
 a.author[href$="/Taiokoshinketsu"]:after {
-    content: "I like butts";
+    content: "Groundskeeper Willie's Sidekick";
     display: block;
     font-size: 10px !important;
     letter-spacing: normal;
@@ -1758,23 +1758,23 @@ a.author[href$="/31eipekili"] {
     vertical-align: bottom
     }
 a.author[href$="/31eipekili"]:after {
-    content: "Adagio";
+    content: "BEST MOD";
     display: block;
     font-size: 12px !important;
     letter-spacing: normal;
     visibility: visible !important;
-    color: #4D4D4D !important
+    /*color: #4D4D4D !important;*/
     }
 .side a.author[href$="/31eipekili"]:after {
     color: #888 !important
     }
 a.author[href$="/31eipekili"]:hover:after {
-    content: "Really hates spiders";
+    content: "Is Adagio";
     display: block;
     font-size: 12px !important;
     letter-spacing: normal;
     visibility: visible !important;
-    color: #009E25 !important
+    /*color: #009E25 !important*/
     }
 a.author[href$="/hiero_"] {
     display: inline-block;
@@ -1784,14 +1784,14 @@ a.author[href$="/hiero_"] {
     vertical-align: bottom
     }
 a.author[href$="/hiero_"]:after {
-    content: "hiero";
+    content: "MISSING MOD";
     display: block;
     font-size: 12px !important;
     letter-spacing: normal;
     visibility: visible !important
     }
 a.author[href$="/hiero_"]:hover:after {
-    content: "Tavi is best pony";
+    content: "Is not Adagio";
     display: block;
     font-size: 12px !important;
     letter-spacing: normal;
@@ -1805,14 +1805,14 @@ a.author[href$="/Ryskillz101"] {
     vertical-align: bottom
     }
 a.author[href$="/Ryskillz101"]:after {
-    content: "Ryan McMuffington";
+    content: "OTHER MOD";
     display: block;
     font-size: 12px !important;
     letter-spacing: normal;
     visibility: visible !important
     }
 a.author[href$="/Ryskillz101"]:hover:after {
-    content: "He once wore a bikini";
+    content: "Wishes he was Adagio";
     display: block;
     font-size: 12px !important;
     letter-spacing: normal;
@@ -1826,20 +1826,20 @@ a.author[href$="/Phei"] {
     vertical-align: bottom
     }
 a.author[href$="/Phei"]:after {
-    content: "Pheilight";
+    content: "INTERNATIONAL MOD";
     display: block;
     font-size: 12px !important;
     letter-spacing: normal;
     visibility: visible !important;
-    color: #CE9CEF !important
+    /*color: #CE9CEF !important*/
     }
 a.author[href$="/Phei"]:hover:after {
-    content: "Pinkie Phei";
+    content: "Hates Adagio";
     display: block;
     font-size: 12px !important;
     letter-spacing: normal;
     visibility: visible !important;
-    color: #f197b5 !important
+    /*color: #f197b5 !important*/
     }
 .author[href$="/MLSG_Bot"] {
     font-size: 0px !important;

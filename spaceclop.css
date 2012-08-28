@@ -1,15 +1,18 @@
-.arrow.down {
-    visibility: hidden;
-    display: none
-    }
 .comment.arrow.down {
     visibility: visible;
     display: block
     }
+.arrow.down {
+    background-image: url(http://e.thumbs.redditmedia.com/AxUNoOlj_mRE_7w4.png);
+    background-position: 0 0;
+    position: relative;
+    height: 1px;
+    width: 1px
+    }
 div.titlebox span.word {
     display: none
     }
-div.titlebox span.number .subscribers:after {
+div.titlebox .subscribers:after {
     content: " bouncing baby bunnies"
     }
 div.titlebox span.number .users-online:after {
@@ -71,6 +74,13 @@ a.author[href$="theMagicalCouch"]:after {
     height: 800px; width: 100%; clear: both; text-align: center; z-index: 1001;
     background-image: url(%%equus%%); background-position: bottom center; background-repeat: no-repeat}
 */
+.arrow.down {
+    background-image: url(http://e.thumbs.redditmedia.com/AxUNoOlj_mRE_7w4.png);
+    background-position: 0 0;
+    position: relative;
+    height: 1px;
+    width: 1px
+    }
 /* */
 /* Report button alteration */
 /* */
