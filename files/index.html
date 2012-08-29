@@ -3,196 +3,194 @@
 <head>
   <meta charset="UTF-8"/>
   <title>BetterPonymotes</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
   <style type="text/css">
-  #content {
-    /* Simple column layout, plus some padding at the bottom */
-    width: 600px;
-    margin: 0 auto;
-    padding-bottom: 100px;
-  }
-  h4 {
-    margin-left: 20px;
-  }
-  h5 {
-    margin-left: 30px;
-  }
-  p {
-    text-align: justify;
-    margin-left: 40px;
-  }
-  #supported-subreddits {
-    width: 600px;
-    margin-left: 20px;
-  }
-  li {
-    font-family: monospace;
-    float: left;
-    width: 250px;
-  }
-  .footer {
-    clear: left;
-  }
+    body {
+      padding-bottom: 80px;
+    }
+    h4 {
+      margin-left: 20px;
+    }
+    h5 {
+      margin-left: 30px;
+    }
+    p {
+      text-align: justify;
+      margin-left: 40px;
+    }
+    #supported-subreddits {
+      margin-left: 60px;
+    }
+    li {
+      font-family: monospace;
+      float: left;
+      width: 230px;
+    }
   </style>
 </head>
 <body>
-  <div id="content">
-    <h2>Better Ponymotes</h2>
+  <div class="container">
+    <div class="row">
+      <div class="span8 offset2">
+          <h2>Better Ponymotes</h2>
 
-    <h3>About</h3>
-    <p>Better Ponymotes is a browser addon to display ponymotes across Reddit.
-    This means things like <code>[](/c01)</code> will work outside of
-    <a href="http://reddit.com/r/mylittlepony">r/mylittlepony</a>, but also that
-    ponymotes from other subreddits (such as <code>[](/rose6)</code>) will work
-    across the site.
+          <h3>About</h3>
+          <p>Better Ponymotes is a browser addon to display ponymotes across Reddit.
+          This means things like <code>[](/c01)</code> will work outside of
+          <a href="http://reddit.com/r/mylittlepony">r/mylittlepony</a>, but also that
+          ponymotes from other subreddits (such as <code>[](/rose6)</code>) will work
+          across the site.
 
-    <h3>Installation</h3>
-    <h4>Firefox Installation</h4>
-    <p>Install the addon from <a href="betterponymotes.xpi"><code>betterponymotes.xpi</code></a>.
+          <h3>Installation</h3>
+          <h4>Firefox Installation</h4>
+          <p>Install the addon from <a href="betterponymotes.xpi"><code>betterponymotes.xpi</code></a>.
 
-    <p>Firefox should handle the file automatically; if not, drag the file onto Firefox
-    and it will install then.
+          <p>Firefox should handle the file automatically; if not, drag the file onto Firefox
+          and it will install then.
 
-    <h4>Chrome Installation</h4>
-    <p>Install the addon from <a href="betterponymotes.crx"><code>betterponymotes.crx</code></a>.
+          <h4>Chrome Installation</h4>
+          <p>Install the addon from <a href="betterponymotes.crx"><code>betterponymotes.crx</code></a>.
 
-    <p>Newer versions of Chrome refuse to install extensions except from the
-    Chrome Web Store. Since BetterPonymotes is not available in the web store,
-    installation requires you to download the file and drag it onto the extensions
-    page yourself. Despite this, updates will continue to function as normal.
+          <p>Newer versions of Chrome refuse to install extensions except from the
+          Chrome Web Store. Since BetterPonymotes is not available in the web store,
+          installation requires you to download the file and drag it onto the extensions
+          page yourself. Despite this, updates will continue to function as normal.
 
-    <h4>Opera Installation</h4>
-    <p>Install the addon from <a href="betterponymotes.oex"><code>betterponymotes.oex</code></a>.
+          <h4>Opera Installation</h4>
+          <p>Install the addon from <a href="betterponymotes.oex"><code>betterponymotes.oex</code></a>.
 
-    <p>Opera should handle the file automatically; if not, drag the file onto the
-    Extensions page (Opera -> Extensions -> Manage Extensions).
+          <p>Opera should handle the file automatically; if not, drag the file onto the
+          Extensions page (Opera -> Extensions -> Manage Extensions).
 
-    <h4>Safari Installation</h4>
-    <p>Sorry! No support for Safari yet. Maybe <a href="http://nallar.me/scripts/">GrEmB</a> can help you?
+          <h4>Safari Installation</h4>
+          <p>Sorry! No support for Safari yet. Maybe <a href="http://nallar.me/scripts/">GrEmB</a> can help you?
 
-    <h3>Updates</h3>
-    <p>No matter how you install Better Ponymotes, it will be automatically
-    updated just like any other addon. Your browser will periodically check
-    this site for new versions, and download them if available. The addon does
-    not normally require a restart for updates, however, you may have to refresh
-    pages before most new features will work (including new ponymotes).
+          <h3>Updates</h3>
+          <p>No matter how you install Better Ponymotes, it will be automatically
+          updated just like any other addon. Your browser will periodically check
+          this site for new versions, and download them if available. The addon does
+          not normally require a restart for updates, however, you may have to refresh
+          pages before most new features will work (including new ponymotes).
 
-    <h3>Preferences</h3>
-    <h4>Firefox Preferences</h4>
-    <p>Go to the Addons Manager (<code>about:addons</code>, Ctrl-Shift-A, or
-    Firefox menu -> Add-ons), locate Better Ponymotes in the list, and click the
-    "Preferences" button.
+          <h3>Preferences</h3>
+          <h4>Firefox Preferences</h4>
+          <p>Go to the Addons Manager (<code>about:addons</code>, Ctrl-Shift-A, or
+          Firefox menu -> Add-ons), locate Better Ponymotes in the list, and click the
+          "Preferences" button.
 
-    <h4>Chrome Preferences</h4>
-    <p>Go to the Extensions page (<code>chrome:extensions</code>, or Wrench menu
-    -> Settings, then click Extensions on the left), locate Better Ponymotes in
-    the list, and click the "Options" link.
+          <h4>Chrome Preferences</h4>
+          <p>Go to the Extensions page (<code>chrome:extensions</code>, or Wrench menu
+          -> Settings, then click Extensions on the left), locate Better Ponymotes in
+          the list, and click the "Options" link.
 
-    <h4>Opera Preferences</h4>
-    <p>Go to the Extensions page (Opera -> Extensions -> Manage Extensions),
-    locate Better Ponymotes in the list, and click the Wrench icon -> Preferences.
+          <h4>Opera Preferences</h4>
+          <p>Go to the Extensions page (Opera -> Extensions -> Manage Extensions),
+          locate Better Ponymotes in the list, and click the Wrench icon -> Preferences.
 
-    <h3>Options</h3>
-    <p>BetterPonymotes has two options you can change, controlling whether or not
-    certain ponymotes/features are enabled.
+          <h3>Options</h3>
+          <p>BetterPonymotes has two options you can change, controlling whether or not
+          certain ponymotes/features are enabled.
 
-    <p>Preference changes require page reloads to take effect.
+          <p>Preference changes require page reloads to take effect.
 
-    <h5>Enable NSFW Emotes</h5>
-    <p>The <code>Enable NSFW Emotes</code> option does as it says- enables or
-    disables display of a handful of questionable ponymotes. These aren't used
-    very frequently across Reddit (especially the pony subreddits, which tend
-    toward being more SFW), but be warned that some of them are <em>very</em>
-    explicit.
+          <h5>Enable NSFW Emotes</h5>
+          <p>The <code>Enable NSFW Emotes</code> option does as it says- enables or
+          disables display of a handful of questionable ponymotes. These aren't used
+          very frequently across Reddit (especially the pony subreddits, which tend
+          toward being more SFW), but be warned that some of them are <em>very</em>
+          explicit.
 
-    <h5>Enable Extra CSS</h5>
-    <p>The <code>Enable Extra CSS</code> option enables the "chaos script", a
-    collection of emote flags and modifiers such as <code>-zspin</code>, which
-    apply various CSS transformations. You may want to disable this if your
-    computer is less capable of handling them, as they're known to bog down
-    browsers.
+          <h5>Enable Extra CSS</h5>
+          <p>The <code>Enable Extra CSS</code> option enables the "chaos script", a
+          collection of emote flags and modifiers such as <code>-zspin</code>, which
+          apply various CSS transformations. You may want to disable this if your
+          computer is less capable of handling them, as they're known to bog down
+          browsers.
 
-    <p>(Note: Most of these do not work in Opera, which lacks support for 3d
-    transformations and is limited in what 2d transformations it will accept.)
+          <p>(Note: Most of these do not work in Opera, which lacks support for 3d
+          transformations and is limited in what 2d transformations it will accept.)
 
-    <h3>Feedback</h3>
-    <p>Bug reports, feature requests, questions, general feedback or anything
-    else should be directed at my
-    <a href="http://reddit.com/message/compose/?to=Typhos">Reddit inbox</a>.
+          <h3>Feedback</h3>
+          <p>Bug reports, feature requests, questions, general feedback or anything
+          else should be directed at my
+          <a href="http://reddit.com/message/compose/?to=Typhos">Reddit inbox</a>.
 
-    <h3>Supported Subreddits</h3>
-    <ul id="supported-subreddits">
-      <li>r/ainbowdash
-      <li>r/applebloom
-      <li>r/applejack
-      <li>r/clopclop
-      <li>r/cuttershy
-      <li>r/dashiemotes
-      <li>r/daylightemotes
-      <li>r/falloutequestria
-      <li>r/flitter
-      <li>r/futemotes
-      <li>r/gallopfrey
-      <li>r/gremotes
-      <li>r/idliketobeatree
-      <li>r/ilovedashie
-      <li>r/lyra
-      <li>r/minuette
-      <li>r/mlas1animotes
-      <li>r/mlas1emotes2
-      <li>r/mlas1emotes
-      <li>r/mlas1imagedump
-      <li>r/mlas1party
-      <li>r/mlhfis
-      <li>r/mlpdrawingschool
-      <li>r/mlplounge
-      <li>r/molestia
-      <li>r/mylittlealcoholic
-      <li>r/mylittleandysonic1
-      <li>r/mylittleanhero23
-      <li>r/mylittleanime
-      <li>r/mylittleaprilfools
-      <li>r/mylittlebannertest
-      <li>r/mylittlecelestias
-      <li>r/mylittlechaos
-      <li>r/mylittlecirclejerk
-      <li>r/mylittlecombiners
-      <li>r/mylittledamon
-      <li>r/mylittledaww
-      <li>r/mylittledramaticstory
-      <li>r/mylittlefoodmanes
-      <li>r/mylittlefortress
-      <li>r/mylittlekindle
-      <li>r/mylittlelistentothis
-      <li>r/mylittlelivestream
-      <li>r/mylittlemusician
-      <li>r/mylittlenanners
-      <li>r/mylittlenopenopenope
-      <li>r/mylittlenosleep
-      <li>r/mylittleonions
-      <li>r/mylittlepony
-      <li>r/mylittleserver
-      <li>r/mylittlesh
-      <li>r/mylittlesports
-      <li>r/mylittlesquidward
-      <li>r/mylittlesupportgroup
-      <li>r/mylittlewarhammer
-      <li>r/mylittlewelcomewagon
-      <li>r/mylittlewtf
-      <li>r/octavia
-      <li>r/pankakke
-      <li>r/pinkiepie
-      <li>r/ponyanarchism
-      <li>r/roseluck
-      <li>r/seriouslyluna
-      <li>r/spaceclop
-      <li>r/speedingturtle
-      <li>r/surprise
-      <li>r/tbpimagedump
-      <li>r/thebestpony
-      <li>r/twilightsparkle
-      <li>r/vinylscratch
-    </ul>
-    <div class="footer"/>
+          <h3>Supported Subreddits</h3>
+          <ul id="supported-subreddits">
+            <li>r/ainbowdash
+            <li>r/applebloom
+            <li>r/applejack
+            <li>r/clopclop
+            <li>r/cuttershy
+            <li>r/dashiemotes
+            <li>r/daylightemotes
+            <li>r/falloutequestria
+            <li>r/flitter
+            <li>r/futemotes
+            <li>r/gallopfrey
+            <li>r/gremotes
+            <li>r/idliketobeatree
+            <li>r/ilovedashie
+            <li>r/lyra
+            <li>r/minuette
+            <li>r/mlas1animotes
+            <li>r/mlas1emotes2
+            <li>r/mlas1emotes
+            <li>r/mlas1imagedump
+            <li>r/mlas1party
+            <li>r/mlhfis
+            <li>r/mlpdrawingschool
+            <li>r/mlplounge
+            <li>r/molestia
+            <li>r/mylittlealcoholic
+            <li>r/mylittleandysonic1
+            <li>r/mylittleanhero23
+            <li>r/mylittleanime
+            <li>r/mylittleaprilfools
+            <li>r/mylittlebannertest
+            <li>r/mylittlecelestias
+            <li>r/mylittlechaos
+            <li>r/mylittlecirclejerk
+            <li>r/mylittlecombiners
+            <li>r/mylittledamon
+            <li>r/mylittledaww
+            <li>r/mylittledramaticstory
+            <li>r/mylittlefoodmanes
+            <li>r/mylittlefortress
+            <li>r/mylittlekindle
+            <li>r/mylittlelistentothis
+            <li>r/mylittlelivestream
+            <li>r/mylittlemusician
+            <li>r/mylittlenanners
+            <li>r/mylittlenopenopenope
+            <li>r/mylittlenosleep
+            <li>r/mylittleonions
+            <li>r/mylittlepony
+            <li>r/mylittleserver
+            <li>r/mylittlesh
+            <li>r/mylittlesports
+            <li>r/mylittlesquidward
+            <li>r/mylittlesupportgroup
+            <li>r/mylittlewarhammer
+            <li>r/mylittlewelcomewagon
+            <li>r/mylittlewtf
+            <li>r/octavia
+            <li>r/pankakke
+            <li>r/pinkiepie
+            <li>r/ponyanarchism
+            <li>r/roseluck
+            <li>r/seriouslyluna
+            <li>r/spaceclop
+            <li>r/speedingturtle
+            <li>r/surprise
+            <li>r/tbpimagedump
+            <li>r/thebestpony
+            <li>r/twilightsparkle
+            <li>r/vinylscratch
+          </ul>
+          <div id="footer"/>
+      </div>
+    </div>
   </div>
 </body>
 </html>
