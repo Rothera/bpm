@@ -1730,6 +1730,18 @@ a.thumbnail.self {
     white-space: nowrap;
     font-variant: small-caps
     }
+/*RES fix*/
+.thing.self h4.imgCaptions:before {
+    display: none
+    }
+.thing.self h4.imgCaptions {
+    font-size: 1em;
+    background: transparent;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    font-variant: normal
+    }
 /****END SEXY HEADERS****/
 /*Sidebar Emote Tables*/
 /*Headers / Row Info*/
@@ -2782,4 +2794,20 @@ a.thumbnail.self {
     height: 50px;
     background-image: url(http://f.thumbs.redditmedia.com/EDXekdb9_N195lO5.png);
     background-position: 0px -70px
+    }
+/*Avatars Sidebanner*/
+.side .usertext a[href="http://goo.gl/63Sh3"] {
+    background-image: url(http://e.thumbs.redditmedia.com/hINLnwwq5OTqH7Pp.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: block;
+    height: 407px;
+    position: absolute;
+    right: 5px;
+    top: 110px;
+    width: 300px;
+    z-index: 900
+    }
+.side {
+    padding-top: 410px
     }

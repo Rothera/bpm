@@ -1030,6 +1030,21 @@ a.author[href$="RogueDarkJedi"]:after {
     display: block;
     letter-spacing: normal
     }
+/*Path dicking around*/
+#siteTable_t3_z10w0 a.author {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+#siteTable_t3_z10w0 a.author:after {
+    content: "RainbowCrash";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
 /* Chinchy */
 .commentarea a.author[href$="Chinch335"], .sitetable a.author[href$="Chinch335"] {
     font-size: 0px !important;

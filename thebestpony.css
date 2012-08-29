@@ -130,6 +130,41 @@ html:lang(nv) .side p a[href="http://nv.reddit.com/r/TheBestPony/"] {
     font-size: 0pt !important;
     display: block !important
     }
+/******
+**Flair**
+******/
+.flair {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(http://d.thumbs.redditmedia.com/JD-0xuTka9dn-A_9.png);
+    display: inline-block;
+    width: 16px;
+    height: 16px
+    }
+.flair-at {
+    background-position: 0px 0px
+    }
+.flair-pyro {
+    background-position: 0px -16px
+    }
+.flair-ilf {
+    background-position: 0px -32px
+    }
+.flair-emu {
+    background-position: 0px -48px
+    }
+.flair-epi {
+    background-position: 0px -64px
+    }
+.flair-smash {
+    background-position: 0px -80px
+    }
+.flair-knock {
+    background-position: 0px -96px
+    }
 /*********
 *usernames*
 *********/
