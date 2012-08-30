@@ -102,12 +102,9 @@ function enable_css(filename) {
 }
 
 function prefs_updated() {
-    console.log("main.js: prefs updated");
     if(storage.prefs.enableExtraCSS && extracss_mod === null) {
-        console.log("main.js: enabling extracss");
         extracss_mod = enable_css("extracss.css");
     } else if(!storage.prefs.enableExtraCSS && extracss_mod !== null) {
-        console.log("main.js: disabling extracss");
         extracss_mod.destroy();
         extracss_mod = null;
     }

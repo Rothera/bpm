@@ -4,6 +4,13 @@
   <script>
     /* Not sure if I actually care whether or not the extension page is loaded... */
 
+    if(localStorage.prefs === undefined) {
+        localStorage.prefs = JSON.stringify({
+            "enableNSFW": false,
+            "enableExtraCSS": true
+        });
+    }
+
     function get_file_data(filename) {
         var request = new XMLHttpRequest();
         request.open("GET", filename, false);
@@ -21,6 +28,12 @@
         var message = event.data;
 
         switch(message.request) {
+            case "getPrefs":
+                event.source.postMessage({
+                    "request": "prefs",
+                    "prefs": JSON.parse(localStorage.prefs)
+                });
+
             case "getFile":
                 var data = get_file_data(message.filename);
 

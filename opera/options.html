@@ -1,26 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Better Ponymotes options</title>
+  <meta charset="UTF-8"/>
+  <title>BetterPonymotes Preferences</title>
+  <script src="options.js" type="text/javascript"></script>
 </head>
 <body>
-  <p>Better Ponymotes options:<br>
+  <p>Basic options<br>
   <label>Enable NSFW emotes: <input id="enableNSFW" type="checkbox"></label><br>
   <label>Enable extra emote modifiers: <input id="enableExtraCSS" type="checkbox"></label><br>
-
-  <script>
-    var enableNSFW = document.getElementById("enableNSFW");
-    var enableExtraCSS = document.getElementById("enableExtraCSS");
-
-    enableNSFW.addEventListener("change", function() {
-        widget.preferences.enableNSFW = this.checked;
-    }, false);
-    enableExtraCSS.addEventListener("change", function() {
-        widget.preferences.enableExtraCSS = this.checked;
-    }, false);
-
-    enableNSFW.checked = (widget.preferences.enableNSFW == "true");
-    enableExtraCSS.checked = (widget.preferences.enableExtraCSS == "true");
-  </script>
 </body>
 </html>

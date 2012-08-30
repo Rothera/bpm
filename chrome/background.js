@@ -8,15 +8,17 @@
 **
 *******************************************************************************/
 
-/*
- * TODO: Listen for writes to localStorage, and send a message to the content
- * scripts or something.
- */
+if(localStorage.prefs === undefined) {
+    localStorage.prefs = JSON.stringify({
+        "enableNSFW": false,
+        "enableExtraCSS": true
+    });
+}
 
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
     switch(request.method) {
         case "getPrefs":
-            sendResponse(getPrefs());
+            sendResponse(localStorage.prefs);
             break;
 
         default:

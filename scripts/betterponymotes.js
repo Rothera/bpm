@@ -56,10 +56,6 @@
 
                 applyCSS: function(filename) {
                     // Do nothing (handled in main.js)
-                },
-
-                prefBoolean: function(value) {
-                    return value;
                 }
             };
 
@@ -92,10 +88,6 @@
                     tag.href =  chrome.extension.getURL(filename);
                     tag.rel = "stylesheet";
                     document.documentElement.insertBefore(tag);
-                },
-
-                prefBoolean: function(value) {
-                    return value;
                 }
             };
 
@@ -127,22 +119,7 @@
             } else {
                 var file_callbacks = {};
 
-                var onMessage = function(event) {
-                    var message = event.data;
-                    switch(message.request) {
-                        case "fileLoaded":
-                            file_callbacks[message.filename](message.data);
-                            delete file_callbacks[message.filename];
-                            break;
-
-                        default:
-                            console.log("ERROR: Unknown request from background script: " + message.request);
-                            break;
-                    }
-                };
-                opera.extension.addEventListener("message", onMessage, false);
-
-                var get_file = function(filename, callback) {
+                var getFile = function(filename, callback) {
                     file_callbacks[filename] = callback;
                     opera.extension.postMessage({
                         "request": "getFile",
@@ -152,8 +129,15 @@
             }
 
             browser = {
+                _pref_cache: null,
+                _pref_callbacks: [],
+
                 getPrefs: function(callback) {
-                    callback(widget.preferences);
+                    if(this._pref_cache) {
+                        callback(this._pref_cache);
+                    } else {
+                        this._pref_callbacks.push(callback);
+                    }
                 },
 
                 applyCSS: function(filename) {
@@ -163,12 +147,36 @@
                         tag.appendChild(document.createTextNode(data));
                         document.head.insertBefore(tag, document.head.firstChild);
                     });
-                },
-
-                prefBoolean: function(value) {
-                    return value === "true";
                 }
             };
+
+            opera.extension.addEventListener("message", function(event) {
+                var message = event.data;
+                switch(message.request) {
+                    case "fileLoaded":
+                        // Better hope the code's correct and this doesn't fire
+                        // when we aren't expecting it.
+                        file_callbacks[message.filename](message.data);
+                        delete file_callbacks[message.filename];
+                        break;
+
+                    case "prefs":
+                        browser._pref_cache = message.prefs;
+                        browser._pref_callbacks.forEach(function(callback) {
+                            callback(browser._pref_cache);
+                        });
+                        browser._pref_callbacks = [];
+                        break;
+
+                    default:
+                        console.log("ERROR: Unknown request from background script: " + message.request);
+                        break;
+                }
+            }, false);
+
+            opera.extension.postMessage({
+                "request": "getPrefs"
+            });
             break;
     }
 
@@ -195,7 +203,7 @@
 
                     // But do normalize it when working out the CSS class. Also
                     // strip off leading "/".
-                    if(!is_nsfw || browser.prefBoolean(prefs.enableNSFW)) {
+                    if(!is_nsfw || prefs.enableNSFW) {
                         element.className += " bpmote-" + sanitize(emote.slice(1));
                     } else {
                         element.className += " bpm-nsfw";
@@ -242,7 +250,7 @@
     browser.applyCSS("/combiners.css");
 
     browser.getPrefs(function(prefs) {
-        if(browser.prefBoolean(prefs.enableExtraCSS)) {
+        if(prefs.enableExtraCSS) {
             // TODO: The only reason we still keep extracss separate is because
             // we don't have a flag_map yet. Maybe this works better, though-
             // this file tends to take a surprisingly long time to add...

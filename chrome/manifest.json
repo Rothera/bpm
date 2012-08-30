@@ -1,7 +1,6 @@
 {
     "background": {
         "scripts": [
-            "prefs.js", 
             "background.js"
         ]
     }, 
@@ -13,7 +12,8 @@
                 "betterponymotes.js"
             ], 
             "matches": [
-                "*://*.reddit.com/*"
+                "*://*.reddit.com/*", 
+                "http://nallar.me/redditTest.html"
             ], 
             "run_at": "document_start"
         }

@@ -4,16 +4,10 @@ Subreddit disabler:
 
     http://www.reddit.com/r/MLPLounge/comments/yx39v/im_worried_about_you_guys/c5zloar
 
-  - Make bpm.js fetch prefs before emote parsing. Mostly a change for Fx.
+  - We need to preprocess prefs a bit. Grab enabledSubreddits, split(","), and
+    make an array that looks like sr_id_map except with booleans.
 
-  - Figure everything out. Make bpgen.py better (merge emotes in and get rid of
-    bpmotes-extras). Map emotes to [source, nsfw], {source: Name}, and
-    {Name: Filename}. Name is used in prefs, source for a compact emote-map.js
-    file, and Filename for resource loading.
-
-  - Chrome will be fine if we lookup prefs. Opera already does. Make 'em do
-    that all the time, and in one file FFS. Firefox is smarter about CSS, but
-    that's it.
+  - For each emote: check its id in the processed map.
 
 Emote search/picker:
   - Figure out where we left off. I don't remember whether or not we had
@@ -80,8 +74,12 @@ General TODO:
       globally, then). E.g. require "display: none" by default, but add a option
       like --ignore-prop=display.
 
-  - Clean up betterponymotes.js a bit- make a big "browser" object depending on
-    current browser, a "bpm" object maybe...
+  - See if there's any way to listen for localStorage writes on Chrome and Opera.
+    Essentially this boils down to finding a way to signal from options.html
+    to index.html/background.js, which in theory should be possible.
+
+    After that we can consider sending updated prefs to the content scripts (we
+    already can from Fx), and think about implementing hot-reloading again.
 
 Misc:
   - Make bpextract/bpgen share as much code as possible. Make formal objects for
@@ -91,6 +89,26 @@ Misc:
     it suck less- more commands, proper argument parsing, etc.
 
     Consider moving to objects and argparse.
+
+  - Make bpgen.py better (merge emotes in and get rid of bpmotes-extras).
+
+  - Make names consistent in JS files. camelCase, under_scores, etc. are all
+    used in different places. Pick one.
+    - Similar vein: consistent naming convention for our RPC calls.
+
+  - Improve the weird separation between files/ and scripts/. Add www/ to the
+    repo, www/*.{xpi,crx,oex} to .bzrignore. files/ should be for things that
+    REALLY don't belong in www (update files are ok, I guess).
+
+    scripts/ can be renamed to shared/, since that's more like what it is.
+
+  - More consistent object attribute syntax. Bare words in some places, dict
+    lookups in others... I prefer the former. Lets use that more.
+
+  - Add loads of comments to all our new code, which is currently lacking. Go
+    over old code, too.
+
+  - Combine our three options.html pages. That sucks.
 
 Chrome:
   - Make options work more nicely- reloading properly on all pages.
