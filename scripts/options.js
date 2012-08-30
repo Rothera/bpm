@@ -75,8 +75,8 @@
             var input_element = document.createElement("input");
             input_element.type = "checkbox";
             input_element.checked = value;
-            label_element.appendChild(document.createTextNode(label));
             label_element.appendChild(input_element);
+            label_element.appendChild(document.createTextNode(label));
             sr_list_element.appendChild(label_element);
             sr_list_element.appendChild(document.createElement("br"));
             return input_element;
@@ -84,7 +84,7 @@
 
         for(var sr_name in sr_data) {
             var full_name = sr_data[sr_name][0];
-            var element = gen_checkbox("Enable " + full_name + ": ", prefs.enabledSubreddits[sr_name]);
+            var element = gen_checkbox("Enable " + full_name, prefs.enabledSubreddits[sr_name]);
 
             // Closure to capture variables
             var callback = (function(sr_name) {
