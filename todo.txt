@@ -1,14 +1,3 @@
-Subreddit disabler:
-  - Some people want to be able to disable emotes on a per-subreddit basis. MAP
-    doesn't support this, and AFAIK neither does GrEmB. We should.
-
-    http://www.reddit.com/r/MLPLounge/comments/yx39v/im_worried_about_you_guys/c5zloar
-
-  - We need to preprocess prefs a bit. Grab enabledSubreddits, split(","), and
-    make an array that looks like sr_id_map except with booleans.
-
-  - For each emote: check its id in the processed map.
-
 Emote search/picker:
   - Figure out where we left off. I don't remember whether or not we had
     something left over to do.
@@ -36,23 +25,11 @@ Emote search/picker:
   - Integrate.
 
 General TODO:
-  - More bzr branches. Consider splitting out emotes. Add everything to a
-    repository, with a private branch for the .pem or something. Use branches
-    more, for big development projects (like Opera!) so we don't keep stuff
-    out of VCS so much.
-
   - Find a better way to handle data files (including emote-map.js) in Opera.
     "make" and file.read() is awful.
 
     This will probably come down to external hosting. There will most likely
     be *no* other solution when we get to a userscript variant, anyway.
-
-  - Combine css-support.js and betterponymotes.js. I think this mostly means
-    checking that DOMContentLoaded always works the way we need it to.
-
-    Firefox: CSS never, emotes on DOM.
-    Chrome: CSS early, emotes on DOM.
-    Opera: CSS on DOM, emotes on DOM. # FIXME: is CSS on dom necessary? log(document.documentElement)
 
   - Move the www files to /bpm/ or something. Rename betterponymotes.update.rdf
     to firefox-updates.rdf for consistency. Basically just move everything a
