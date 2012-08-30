@@ -25,8 +25,7 @@ var simple_prefs = require("simple-prefs");
 var simple_storage = require("simple-storage");
 var tabs = require("tabs");
 
-// Not yet
-//var sr_data = require("sr-data");
+var sr_data = require("sr-data");
 
 var storage = simple_storage.storage;
 
@@ -43,6 +42,17 @@ if(!storage.prefs) {
         storage.prefs.enableExtraCSS = simple_prefs.prefs.enableExtraCSS;
     }
 }
+
+if(!storage.prefs.enabledSubreddits) {
+    storage.prefs.enabledSubreddits = {};
+}
+
+for(var sr in sr_data.sr_data) {
+    if(storage.prefs.enabledSubreddits[sr] === undefined) {
+        storage.prefs.enabledSubreddits[sr] = true;
+    }
+}
+// TODO: Remove subreddits from prefs that are no longer in the addon.
 
 // Setup communication with prefs page
 var prefs_mod = page_mod.PageMod({
@@ -80,6 +90,7 @@ var main_mod = page_mod.PageMod({
     contentScriptFile: [
         self.data.url("mutation_summary.js"),
         self.data.url("emote-map.js"),
+        self.data.url("sr-data.js"),
         self.data.url("betterponymotes.js")
         ],
     onAttach: function(worker) {

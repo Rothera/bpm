@@ -8,12 +8,26 @@
 **
 *******************************************************************************/
 
+var prefs;
 if(localStorage.prefs === undefined) {
-    localStorage.prefs = JSON.stringify({
+    prefs = {
         "enableNSFW": false,
         "enableExtraCSS": true
-    });
+    };
+} else {
+    prefs = JSON.parse(localStorage.prefs);
 }
+
+if(!prefs.enabledSubreddits) {
+    prefs.enabledSubreddits = {};
+}
+
+for(var sr in sr_data) {
+    if(prefs.enabledSubreddits[sr] === undefined) {
+        prefs.enabledSubreddits[sr] = true;
+    }
+}
+localStorage.prefs = JSON.stringify(prefs);
 
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
     switch(request.method) {

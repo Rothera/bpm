@@ -372,7 +372,10 @@ def dump_sr_data(file, sr_id_map, sr_data):
     file.write(AutogenHeader)
     _dump_js_obj(file, "sr_id_map", sr_id_map)
     _dump_js_obj(file, "sr_data", sr_data)
-    file.write("var exports = {'sr_id_map': sr_id_map, 'sr_data': sr_data};\n")
+    file.write("if(typeof(exports) !== 'undefined') {\n")
+    file.write("    exports.sr_id_map = sr_id_map;\n")
+    file.write("    exports.sr_data = sr_data;\n")
+    file.write("}\n")
 
 def _dump_js_obj(file, var_name, obj):
     file.write("var %s = " % (var_name))

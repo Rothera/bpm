@@ -184,7 +184,7 @@
         return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_");
     }
 
-    function process(prefs, elements) {
+    function process(prefs, sr_array, elements) {
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
             // Distinction between element.href and element.getAttribute("href")-
@@ -194,23 +194,32 @@
             if(href && href[0] == '/') {
                 // Don't normalize case for emote lookup
                 var parts = href.split("-");
-                var emote = parts[0];
+                var emote_name = parts[0];
 
-                if(emote_map[emote]) {
-                    var emote_info = emote_map[emote];
+                if(emote_map[emote_name]) {
+                    var emote_info = emote_map[emote_name];
                     var is_nsfw = emote_info[0];
                     var source_id = emote_info[1];
+
+                    if(!sr_array[source_id]) {
+                        element.className += " bpm-disabled";
+                        if(!element.textContent) {
+                            // Our CSS will make any existing text pretty ugly,
+                            // but what can you do.
+                            element.textContent = "Disabled " + emote_name;
+                        }
+                        continue;
+                    }
 
                     // But do normalize it when working out the CSS class. Also
                     // strip off leading "/".
                     if(!is_nsfw || prefs.enableNSFW) {
-                        element.className += " bpmote-" + sanitize(emote.slice(1));
+                        element.className += " bpmote-" + sanitize(emote_name.slice(1));
                     } else {
                         element.className += " bpm-nsfw";
-                        // TODO: I had a big comment here about setting
-                        // element.textContent="NSFW", but we do that in CSS
-                        // right now. I can't figure out why it would matter.
-                        // CSS is fine.
+                        if(!element.textContent) {
+                            element.textContent = "NSFW " + emote_name;
+                        }
                     }
 
                     // Apply flags in turn. We pick on the naming a bit to prevent
@@ -222,7 +231,7 @@
                             element.className += " bpflag-" + sanitize(flag);
                         }
                     }
-                } else if(!element.textContent && /^\/[\w\-:!]+$/.test(emote) && !element.clientWidth) {
+                } else if(!element.textContent && /^\/[\w\-:!]+$/.test(emote_name) && !element.clientWidth) {
                     /*
                      * If there's:
                      *    1) No text
@@ -238,11 +247,22 @@
                     if((!after || after == "none") && (!before || before == "none")) {
                         // Unknown emote? Good enough
                         element.className += " bpm-unknown";
-                        element.textContent = "Unknown emote " + emote;
+                        element.textContent = "Unknown emote " + emote_name;
                     }
                 }
             }
         }
+    }
+
+    function make_sr_array(prefs) {
+        var sr_array = [];
+        for(var id in sr_id_map) {
+            sr_array[id] = prefs.enabledSubreddits[sr_id_map[id]];
+        }
+        if(sr_array.indexOf(undefined) > -1) {
+            console.log("BPM: ERROR: sr_enabled not filled");
+        }
+        return sr_array;
     }
 
     browser.applyCSS("/bpmotes.css");
@@ -265,7 +285,8 @@
     window.addEventListener("DOMContentLoaded", function() {
         browser.getPrefs(function(prefs) {
             // TODO: process prefs
-            process(prefs, document.getElementsByTagName("a"));
+            var sr_array = make_sr_array(prefs);
+            process(prefs, sr_array, document.getElementsByTagName("a"));
 
             switch(platform) {
                 case "chrome":
@@ -287,7 +308,7 @@
                 case "firefox":
                     var observer = new MutationSummary({
                         callback: function(summaries) {
-                            process(prefs, summaries[0].added);
+                            process(prefs, sr_array, summaries[0].added);
                         },
                         queries: [
                             {element: "a"}
@@ -299,7 +320,7 @@
                     document.body.addEventListener("DOMNodeInserted", function(event) {
                         var element = event.target;
                         if(element.getElementsByTagName) {
-                            process(prefs, element.getElementsByTagName("a"));
+                            process(prefs, sr_array, element.getElementsByTagName("a"));
                         }
                     }, false);
                     break;
