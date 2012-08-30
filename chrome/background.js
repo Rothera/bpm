@@ -18,7 +18,7 @@ if(localStorage.prefs === undefined) {
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
     switch(request.method) {
         case "getPrefs":
-            sendResponse(localStorage.prefs);
+            sendResponse(JSON.parse(localStorage.prefs));
             break;
 
         default:
