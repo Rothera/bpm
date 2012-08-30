@@ -66,6 +66,37 @@
 
         checkbox_pref(enableNSFW, "enableNSFW");
         checkbox_pref(enableExtraCSS, "enableExtraCSS");
+
+        // Subreddit enabler
+        var sr_list_element = document.getElementById("sr-list");
+        function gen_checkbox(label, value) {
+            // <label>Some text here <input type="checkbox" value="?"></label><br>
+            var label_element = document.createElement("label");
+            var input_element = document.createElement("input");
+            input_element.type = "checkbox";
+            input_element.checked = value;
+            label_element.appendChild(document.createTextNode(label));
+            label_element.appendChild(input_element);
+            sr_list_element.appendChild(label_element);
+            sr_list_element.appendChild(document.createElement("br"));
+            return input_element;
+        }
+
+        for(var sr_name in sr_data) {
+            var full_name = sr_data[sr_name][0];
+            var element = gen_checkbox("Enable " + full_name + ": ", prefs.enabledSubreddits[sr_name]);
+
+            // Closure to capture variables
+            var callback = (function(sr_name) {
+                return function() {
+                    console.log("Setting sr " + sr_name + " to " + this.checked);
+                    prefs.enabledSubreddits[sr_name] = this.checked;
+                    browser.prefs_updated();
+                };
+            })(sr_name);
+
+            element.addEventListener("change", callback, false);
+        }
     }
 
     window.addEventListener("DOMContentLoaded", function() {

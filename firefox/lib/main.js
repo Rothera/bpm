@@ -59,6 +59,7 @@ var prefs_mod = page_mod.PageMod({
     include: [self.data.url("options.html")],
     contentScriptWhen: "start",
     contentScriptFile: [
+        self.data.url("sr-data.js"),
         self.data.url("options.js")
         ],
     onAttach: function(worker) {
