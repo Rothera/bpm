@@ -1,1 +1,1 @@
-../scripts/options.js
+../data/options.js

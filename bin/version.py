@@ -52,9 +52,9 @@ def main():
     o_package = XmlSource("opera/config.xml", lambda t: t.getroot().attrib["version"])
     # FIXME: No fx_updates... wouldn't want to set it, but checking would be nice
     # ALSO FIXME: get both version attribs of these two files
-    cr_updates = XmlSource("files/chrome-updates.xml",
+    cr_updates = XmlSource("data/chrome-updates.xml",
                            lambda t: t.getroot()[0][0].attrib["version"])
-    o_updates = XmlSource("files/opera-updates.xml",
+    o_updates = XmlSource("data/opera-updates.xml",
                           lambda t: t.getroot().attrib["version"])
     files = (fx_package, cr_package, o_package, cr_updates)
 

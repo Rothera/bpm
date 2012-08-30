@@ -73,12 +73,6 @@ Misc:
     used in different places. Pick one.
     - Similar vein: consistent naming convention for our RPC calls.
 
-  - Improve the weird separation between files/ and scripts/. Add www/ to the
-    repo, www/*.{xpi,crx,oex} to .bzrignore. files/ should be for things that
-    REALLY don't belong in www (update files are ok, I guess).
-
-    scripts/ can be renamed to shared/, since that's more like what it is.
-
   - More consistent object attribute syntax. Bare words in some places, dict
     lookups in others... I prefer the former. Lets use that more.
 
