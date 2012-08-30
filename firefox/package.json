@@ -7,18 +7,10 @@
     "name": "betterponymotes", 
     "preferences": [
         {
-            "description": "Enables emote -spin modifiers and things. Disabling this may improve performance.", 
-            "name": "enableExtraCSS", 
-            "title": "Enable extra emote modifiers", 
-            "type": "bool", 
-            "value": true
-        }, 
-        {
-            "description": "Enable various NSFW emotes.", 
-            "name": "enableNSFW", 
-            "title": "Enable NSFW emotes", 
-            "type": "bool", 
-            "value": false
+            "label": "Preferences", 
+            "name": "openPrefs", 
+            "title": "Open prefs", 
+            "type": "control"
         }
     ], 
     "version": "8.31"

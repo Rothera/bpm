@@ -27,15 +27,35 @@
     border-radius: 10px;
 
     /*
-     * "Unknown emote [...]" text. We can style it however we want, because
-     * "emotes" with text in them are never considered to be unknown.
+     * Need !important tags to override Reddit's CSS.
      */
-    color: white;
+    color: white !important;
     font-style: monospace;
     font-size: xx-small;
     padding: 5px;
 }
 
+/* Disabled emote placeholder */
+.bpm-disabled {
+    /* Emote common */
+    display: block;
+    clear: none;
+    float: left;
+
+    /* An average, small emote (70px with padding) */
+    width: 60px;
+    height: 60px;
+
+    background-color: #DA4F49;
+    border-radius: 10px;
+
+    color: white !important;
+    font-style: monospace;
+    font-size: xx-small;
+    padding: 5px;
+}
+
+/* NSFW emote placeholder */
 .bpm-nsfw {
     /* Emote common */
     display: block;
@@ -49,17 +69,10 @@
     background-color: black;
     border-radius: 10px;
 
-    /*
-     * "NSFW" text styling. Unfortunately, as an edge case, any text found in
-     * the emote already (i.e. in the wrong place) will be changed like this.
-     */
+    color: white !important;
     font-style: monospace;
     font-size: xx-small;
     padding: 5px;
-}
-
-.bpm-nsfw:after {
-    content: "NSFW";
 }
 
 /*

@@ -1,8 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8"/>
+  <title>BetterPonymotes Opera Background Page</title>
+  <script src="sr-data.js" type="text/javascript"></script>
   <script>
     /* Not sure if I actually care whether or not the extension page is loaded... */
+
+    var prefs;
+    if(localStorage.prefs === undefined) {
+        prefs = {
+            "enableNSFW": false,
+            "enableExtraCSS": true,
+        };
+    } else {
+        prefs = JSON.parse(localStorage.prefs);
+    }
+
+    if(!prefs.enabledSubreddits) {
+        prefs.enabledSubreddits = {};
+    }
+
+    for(var sr in sr_data) {
+        if(prefs.enabledSubreddits[sr] === undefined) {
+            prefs.enabledSubreddits[sr] = true;
+        }
+    }
+    localStorage.prefs = JSON.stringify(prefs);
 
     function get_file_data(filename) {
         var request = new XMLHttpRequest();
@@ -21,6 +45,13 @@
         var message = event.data;
 
         switch(message.request) {
+            case "getPrefs":
+                event.source.postMessage({
+                    "request": "prefs",
+                    "prefs": JSON.parse(localStorage.prefs)
+                });
+                break;
+
             case "getFile":
                 var data = get_file_data(message.filename);
 
@@ -41,5 +72,6 @@
   </script>
 </head>
 <body>
+BetterPonymotes
 </body>
 </html>
