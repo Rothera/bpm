@@ -8,6 +8,7 @@
 **
 *******************************************************************************/
 
+// Load/initialize prefs
 var prefs;
 if(localStorage.prefs === undefined) {
     prefs = {
@@ -29,9 +30,10 @@ for(var sr in sr_data) {
 }
 localStorage.prefs = JSON.stringify(prefs);
 
-chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
-    switch(request.method) {
-        case "getPrefs":
+// Content script requests
+chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
+    switch(message.method) {
+        case "get_prefs":
             sendResponse(JSON.parse(localStorage.prefs));
             break;
 

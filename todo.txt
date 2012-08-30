@@ -69,16 +69,6 @@ Misc:
 
   - Make bpgen.py better (merge emotes in and get rid of bpmotes-extras).
 
-  - Make names consistent in JS files. camelCase, under_scores, etc. are all
-    used in different places. Pick one.
-    - Similar vein: consistent naming convention for our RPC calls.
-
-  - More consistent object attribute syntax. Bare words in some places, dict
-    lookups in others... I prefer the former. Lets use that more.
-
-  - Add loads of comments to all our new code, which is currently lacking. Go
-    over old code, too.
-
   - Combine our three options.html pages. That sucks.
 
 Chrome:

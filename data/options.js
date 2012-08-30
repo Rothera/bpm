@@ -11,6 +11,7 @@
 (function(global) {
     "use strict";
 
+    // Platform check
     function current_platform() {
         if(typeof(self.on) !== "undefined") {
             return "firefox";
@@ -27,18 +28,23 @@
     var _doc_loaded = false;
     var prefs = null;
 
+    // Some basic platform API's. Not much here yet.
     var browser;
     switch(platform) {
         case "firefox":
+            // On Firefox, this script is run as a content script, so we need
+            // to communicate with main.js.
             browser = {
                 prefs_updated: function() {
-                    self.port.emit("setPrefs", prefs);
+                    self.port.emit("set_prefs", prefs);
                 }
             };
             break;
 
         case "chrome":
         case "opera":
+            // On Chrome and Opera, localStorage is the same as what the
+            // background process accesses, so we can just modify it directly.
             browser = {
                 prefs_updated: function() {
                     localStorage.prefs = JSON.stringify(prefs);
@@ -49,12 +55,12 @@
 
     function run() {
         // Cache elements
-        var enableNSFW = document.getElementById("enableNSFW");
-        var enableExtraCSS = document.getElementById("enableExtraCSS");
+        var enable_nsfw = document.getElementById("enableNSFW");
+        var enable_extracss = document.getElementById("enableExtraCSS");
 
-        // Initialize values
-        enableNSFW.checked = prefs.enableNSFW;
-        enableExtraCSS.checked = prefs.enableExtraCSS;
+        // Initialize values from stored prefs
+        enable_nsfw.checked = prefs.enableNSFW;
+        enable_extracss.checked = prefs.enableExtraCSS;
 
         // Listen for edits to the checkboxes
         function checkbox_pref(element, pref_name) {
@@ -64,13 +70,14 @@
             }, false);
         }
 
-        checkbox_pref(enableNSFW, "enableNSFW");
-        checkbox_pref(enableExtraCSS, "enableExtraCSS");
+        checkbox_pref(enable_nsfw, "enableNSFW");
+        checkbox_pref(enable_extracss, "enableExtraCSS");
 
         // Subreddit enabler
         var sr_list_element = document.getElementById("sr-list");
         function gen_checkbox(label, value) {
-            // <label>Some text here <input type="checkbox" value="?"></label><br>
+            // Generate the following HTML:
+            // <label><input type="checkbox" value="?"> Some text here</label><br>
             var label_element = document.createElement("label");
             var input_element = document.createElement("input");
             input_element.type = "checkbox";
@@ -82,6 +89,7 @@
             return input_element;
         }
 
+        // Generate a page from the builtin list of subreddits
         for(var sr_name in sr_data) {
             var full_name = sr_data[sr_name][0];
             var element = gen_checkbox("Enable " + full_name, prefs.enabledSubreddits[sr_name]);
@@ -89,7 +97,6 @@
             // Closure to capture variables
             var callback = (function(sr_name) {
                 return function() {
-                    console.log("Setting sr " + sr_name + " to " + this.checked);
                     prefs.enabledSubreddits[sr_name] = this.checked;
                     browser.prefs_updated();
                 };
@@ -108,6 +115,7 @@
 
     switch(platform) {
         case "firefox":
+            // Make backend request for prefs
             self.port.on("prefs", function(_prefs) {
                 prefs = _prefs;
                 if(_doc_loaded && prefs !== null) {
@@ -115,7 +123,7 @@
                 }
             });
 
-            self.port.emit("getPrefs");
+            self.port.emit("get_prefs");
             break;
 
         case "chrome":

@@ -10,15 +10,6 @@
 
 "use strict";
 
-/*
- * After some *very* informal testing, I've found that injecting the main JS at
- * "ready" time generally gives the best performance. I assume this is because
- * using MutationObserver's while the DOM is being built for the first time is
- * a bad idea due to all the updates, but I can't say for sure.
- *
- * CSS, however, is probably better off at start time.
- */
-
 var page_mod = require("page-mod");
 var self = require("self");
 var simple_prefs = require("simple-prefs");
@@ -32,8 +23,8 @@ var storage = simple_storage.storage;
 // Initialize prefs to defaults
 if(!storage.prefs) {
     storage.prefs = {
-        enableNSFW: false,
-        enableExtraCSS: false
+        "enableNSFW": false,
+        "enableExtraCSS": false
     };
 
     if(simple_prefs.prefs.enableNSFW !== undefined) {
@@ -63,10 +54,10 @@ var prefs_mod = page_mod.PageMod({
         self.data.url("options.js")
         ],
     onAttach: function(worker) {
-        worker.port.on("getPrefs", function() {
+        worker.port.on("get_prefs", function() {
             worker.port.emit("prefs", storage.prefs);
         });
-        worker.port.on("setPrefs", function(prefs) {
+        worker.port.on("set_prefs", function(prefs) {
             storage.prefs = prefs;
             prefs_updated();
         });
@@ -95,7 +86,7 @@ var main_mod = page_mod.PageMod({
         self.data.url("betterponymotes.js")
         ],
     onAttach: function(worker) {
-        worker.port.on("getPrefs", function() {
+        worker.port.on("get_prefs", function() {
             worker.port.emit("prefs", storage.prefs);
         });
     }
@@ -113,6 +104,7 @@ function enable_css(filename) {
     });
 }
 
+// Monitor enableExtraCSS for changes
 function prefs_updated() {
     if(storage.prefs.enableExtraCSS && extracss_mod === null) {
         extracss_mod = enable_css("extracss.css");
