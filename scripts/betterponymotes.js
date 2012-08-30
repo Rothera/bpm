@@ -192,6 +192,7 @@
                     var emote_info = emote_map[emote];
                     var is_nsfw = emote_info[0];
                     var source_id = emote_info[1];
+
                     // But do normalize it when working out the CSS class. Also
                     // strip off leading "/".
                     if(!is_nsfw || browser.prefBoolean(prefs.enableNSFW)) {
