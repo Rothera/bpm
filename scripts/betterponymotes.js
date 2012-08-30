@@ -142,7 +142,7 @@
                 };
                 opera.extension.addEventListener("message", onMessage, false);
 
-                var get_file = function(filename, callback) {
+                var getFile = function(filename, callback) {
                     file_callbacks[filename] = callback;
                     opera.extension.postMessage({
                         "request": "getFile",
