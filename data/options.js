@@ -8,130 +8,128 @@
 **
 *******************************************************************************/
 
-(function(global) {
-    "use strict";
+"use strict";
 
-    // Platform check
-    function current_platform() {
-        if(typeof(self.on) !== "undefined") {
-            return "firefox";
-        } else if(typeof(chrome) !== "undefined") {
-            return "chrome";
-        } else if(typeof(opera) !== "undefined") {
-            return "opera";
-        } else {
-            return "unknown";
-        }
+// Platform check
+function current_platform() {
+    if(typeof(self.on) !== "undefined") {
+        return "firefox";
+    } else if(typeof(chrome) !== "undefined") {
+        return "chrome";
+    } else if(typeof(opera) !== "undefined") {
+        return "opera";
+    } else {
+        return "unknown";
     }
-    var platform = current_platform();
+}
+var platform = current_platform();
 
-    var _doc_loaded = false;
-    var prefs = null;
+var _doc_loaded = false;
+var prefs = null;
 
-    // Some basic platform API's. Not much here yet.
-    var browser;
-    switch(platform) {
-        case "firefox":
-            // On Firefox, this script is run as a content script, so we need
-            // to communicate with main.js.
-            browser = {
-                prefs_updated: function() {
-                    self.port.emit("set_prefs", prefs);
-                }
-            };
-            break;
+// Some basic platform API's. Not much here yet.
+var browser;
+switch(platform) {
+    case "firefox":
+        // On Firefox, this script is run as a content script, so we need
+        // to communicate with main.js.
+        browser = {
+            prefs_updated: function() {
+                self.port.emit("set_prefs", prefs);
+            }
+        };
+        break;
 
-        case "chrome":
-        case "opera":
-            // On Chrome and Opera, localStorage is the same as what the
-            // background process accesses, so we can just modify it directly.
-            browser = {
-                prefs_updated: function() {
-                    localStorage.prefs = JSON.stringify(prefs);
-                }
-            };
-            break;
+    case "chrome":
+    case "opera":
+        // On Chrome and Opera, localStorage is the same as what the
+        // background process accesses, so we can just modify it directly.
+        browser = {
+            prefs_updated: function() {
+                localStorage.prefs = JSON.stringify(prefs);
+            }
+        };
+        break;
+}
+
+function run() {
+    // Cache elements
+    var enable_nsfw = document.getElementById("enableNSFW");
+    var enable_extracss = document.getElementById("enableExtraCSS");
+
+    // Initialize values from stored prefs
+    enable_nsfw.checked = prefs.enableNSFW;
+    enable_extracss.checked = prefs.enableExtraCSS;
+
+    // Listen for edits to the checkboxes
+    function checkbox_pref(element, pref_name) {
+        element.addEventListener("change", function() {
+            prefs[pref_name] = this.checked;
+            browser.prefs_updated();
+        }, false);
     }
 
-    function run() {
-        // Cache elements
-        var enable_nsfw = document.getElementById("enableNSFW");
-        var enable_extracss = document.getElementById("enableExtraCSS");
+    checkbox_pref(enable_nsfw, "enableNSFW");
+    checkbox_pref(enable_extracss, "enableExtraCSS");
 
-        // Initialize values from stored prefs
-        enable_nsfw.checked = prefs.enableNSFW;
-        enable_extracss.checked = prefs.enableExtraCSS;
+    // Subreddit enabler
+    var sr_list_element = document.getElementById("sr-list");
+    function gen_checkbox(label, value) {
+        // Generate the following HTML:
+        // <label><input type="checkbox" value="?"> Some text here</label><br>
+        var label_element = document.createElement("label");
+        var input_element = document.createElement("input");
+        input_element.type = "checkbox";
+        input_element.checked = value;
+        label_element.appendChild(input_element);
+        label_element.appendChild(document.createTextNode(label));
+        sr_list_element.appendChild(label_element);
+        sr_list_element.appendChild(document.createElement("br"));
+        return input_element;
+    }
 
-        // Listen for edits to the checkboxes
-        function checkbox_pref(element, pref_name) {
-            element.addEventListener("change", function() {
-                prefs[pref_name] = this.checked;
+    // Generate a page from the builtin list of subreddits
+    for(var sr_name in sr_data) {
+        var full_name = sr_data[sr_name][0];
+        var element = gen_checkbox("Enable " + full_name, prefs.enabledSubreddits[sr_name]);
+
+        // Closure to capture variables
+        var callback = (function(sr_name) {
+            return function() {
+                prefs.enabledSubreddits[sr_name] = this.checked;
                 browser.prefs_updated();
-            }, false);
-        }
+            };
+        })(sr_name);
 
-        checkbox_pref(enable_nsfw, "enableNSFW");
-        checkbox_pref(enable_extracss, "enableExtraCSS");
-
-        // Subreddit enabler
-        var sr_list_element = document.getElementById("sr-list");
-        function gen_checkbox(label, value) {
-            // Generate the following HTML:
-            // <label><input type="checkbox" value="?"> Some text here</label><br>
-            var label_element = document.createElement("label");
-            var input_element = document.createElement("input");
-            input_element.type = "checkbox";
-            input_element.checked = value;
-            label_element.appendChild(input_element);
-            label_element.appendChild(document.createTextNode(label));
-            sr_list_element.appendChild(label_element);
-            sr_list_element.appendChild(document.createElement("br"));
-            return input_element;
-        }
-
-        // Generate a page from the builtin list of subreddits
-        for(var sr_name in sr_data) {
-            var full_name = sr_data[sr_name][0];
-            var element = gen_checkbox("Enable " + full_name, prefs.enabledSubreddits[sr_name]);
-
-            // Closure to capture variables
-            var callback = (function(sr_name) {
-                return function() {
-                    prefs.enabledSubreddits[sr_name] = this.checked;
-                    browser.prefs_updated();
-                };
-            })(sr_name);
-
-            element.addEventListener("change", callback, false);
-        }
+        element.addEventListener("change", callback, false);
     }
+}
 
-    window.addEventListener("DOMContentLoaded", function() {
-        _doc_loaded = true;
-        if(_doc_loaded && prefs !== null) {
-            run();
-        }
-    }, false);
+window.addEventListener("DOMContentLoaded", function() {
+    _doc_loaded = true;
+    if(_doc_loaded && prefs !== null) {
+        run();
+    }
+}, false);
 
-    switch(platform) {
-        case "firefox":
-            // Make backend request for prefs
-            self.port.on("prefs", function(_prefs) {
-                prefs = _prefs;
-                if(_doc_loaded && prefs !== null) {
-                    run();
-                }
-            });
-
-            self.port.emit("get_prefs");
-            break;
-
-        case "chrome":
-        case "opera":
-            prefs = JSON.parse(localStorage.prefs);
+switch(platform) {
+    case "firefox":
+        // Make backend request for prefs
+        self.port.on("prefs", function(_prefs) {
+            prefs = _prefs;
             if(_doc_loaded && prefs !== null) {
                 run();
             }
-            break;
-    }
-})(this);
+        });
+
+        self.port.emit("get_prefs");
+        break;
+
+    case "chrome":
+    case "opera":
+        prefs = JSON.parse(localStorage.prefs);
+        if(_doc_loaded && prefs !== null) {
+            run();
+        }
+        break;
+}
