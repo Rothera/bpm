@@ -10,9 +10,11 @@
 ##
 ################################################################################
 
-script_in = open("opera/includes/betterponymotes.js.in").read()
+script = open("opera/includes/betterponymotes.js.in").read()
 emote_map = open("build/emote-map.js").read()
+sr_data = open("build/sr-data.js").read()
 
-script = script_in.replace("/*$(EMOTE_MAP)*/", emote_map)
+script = script.replace("/*$(EMOTE_MAP)*/", emote_map)
+script = script.replace("/*$(SR_DATA)*/", sr_data)
 
 open("opera/includes/betterponymotes.js", "w").write(script)
