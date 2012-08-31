@@ -124,7 +124,7 @@ switch(platform) {
                     };
                     reader.readAsText(file);
                 } else {
-                    console.log("BPM: ERROR: getFile() failed on '" + filename + "'");
+                    console.log("BPM: ERROR: Opera getFile() failed on '" + filename + "'");
                 }
             };
         } else {
@@ -179,7 +179,7 @@ switch(platform) {
                     break;
 
                 default:
-                    console.log("ERROR: Unknown request from background script: " + message.method);
+                    console.log("BPM: ERROR: Unknown request from Opera background script: '" + message.method + "'");
                     break;
             }
         }, false);
@@ -282,7 +282,7 @@ function make_sr_array(prefs) {
         //
         // Also bad would be items in prefs not in sr_id_map, but that's
         // more or less impossible to handle.
-        console.log("BPM: ERROR: sr_enabled not filled");
+        console.log("BPM: ERROR: sr_array has holes; installation or prefs are broken!");
     }
     return sr_array;
 }

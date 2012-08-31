@@ -24,7 +24,7 @@
   "use strict";
 
   // FIXME: Element.prototype isn't accessible from addons, apparently. This is
-  // a quick hack to make it work on Firefox and Chrome for now.
+  // a quick hack to make it work on Firefox and Chrome for now. -Typhos
   if(typeof(chrome) != "undefined") {
       var matchesSelector = "webkitMatchesSelector";
   } else {
@@ -143,7 +143,8 @@
 
       if (node.nodeType == Node.ELEMENT_NODE)
         // FIXME: something's null here, despite evidence to the contrary, and
-        // this line throws a TypeError. I'm not sure 
+        // this line throws a TypeError. I'm not sure why, but this works as
+        // a temporary fix. -Typhos
         //change.matchCaseInsensitive = node instanceof HTMLElement && node.ownerDocument instanceof HTMLDocument;
         change.matchCaseInsensitive = true;
 
@@ -1606,7 +1607,9 @@
           observer.observe(root, observerOptions);
         }
       } catch(e) {
-          console.log("Exception in observer on line", e.lineNumber + ":", e.name, e.message);
+          // Added to help debugging when failures occur, since exceptions seem
+          // to be swallowed otherwise. -Typhos
+          console.log("MutationSummary: ERROR: Exception in observer on line " + e.lineNumber + ": ", e.name + ": " + e.message);
       }
     });
 

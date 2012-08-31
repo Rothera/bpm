@@ -36,7 +36,7 @@
         request.send();
 
         if(!request.responseText) {
-            console.log("ERROR: Can't read from file: " + filename);
+            console.log("BPM: ERROR: Can't read from file: '" + filename + "'");
             return;
         } else {
             return request.responseText;
@@ -68,7 +68,7 @@
                 break;
 
             default:
-                console.log("ERROR: Unknown request from content script: " + message.method);
+                console.log("BPM: ERROR: Unknown request from content script: '" + message.request + "'");
                 break;
         }
     };

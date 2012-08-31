@@ -38,7 +38,7 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
             break;
 
         default:
-            console.log("ERROR: Unknown request from content script: " + message.request);
+            console.log("BPM: ERROR: Unknown request from content script: '" + message.request + "'");
             break;
     }
 });
