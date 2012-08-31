@@ -2,8 +2,8 @@ default: packages
 
 packages: build/betterponymotes.xpi build/betterponymotes.crx build/betterponymotes.oex
 
-build/emote-classes.css build/emote-map.js build/sr-data.js: bin/bpgen.py emotes/*.yaml
-	bin/bpgen.py emotes/*.yaml
+build/emote-classes.css build/emote-map.js build/sr-data.js: bpgen.py emotes/*.yaml
+	./bpgen.py emotes/*.yaml
 
 build/betterponymotes.xpi: build/emote-classes.css build/emote-map.js build/sr-data.js firefox/data/* firefox/package.json firefox/lib/main.js
 	cfx xpi --update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf --pkgdir=firefox
