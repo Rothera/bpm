@@ -84,6 +84,7 @@ def resolve_emotes(files, data):
     sorting_rules = data.pop("Sorting")
     _conflict_rules = data.pop("Conflicts")
     directive_map = data.pop("Directives")
+    emote_merges = data.pop("Merge")
 
     conflict_rules = {tuple(d["Name"]): d["Favor"] for d in _conflict_rules}
 
@@ -111,7 +112,13 @@ def resolve_emotes(files, data):
 
     for filename in file_ignores:
         if filename in files:
-            del files[filename]
+            # Safer than deletion
+            files[filename].emotes = {}
+
+    for (filename, spritesheets) in emote_merges.items():
+        file = files[filename]
+        # No duplicate checking...
+        file.emotes.update(convert_spritesheets(file, spritesheets))
 
     # Converts a list of files into one big emote map
     emotes = {}
