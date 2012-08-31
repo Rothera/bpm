@@ -59,7 +59,10 @@ a[href*="oI3zA.png"][class~="thumbnail"] {
 div.titlebox span.word {
     display: none
     }
-div.titlebox span.number:after {
+div.titlebox .subscribers span.number:after {
+    content: " Stonies"
+    }
+div.titlebox .users-online span.number:after {
     content: " Equines Grazing"
     }
 /* ---------- Notice about spam filter on submission page (that everyone will ignore) ---------- */

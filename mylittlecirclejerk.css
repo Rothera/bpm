@@ -776,6 +776,9 @@ a[href="/dealwithit"]:after {
     height: 16px;
     background-image: url(http://thumbs.reddit.com/t5_2sjw3_21.png)
     }
+START-PONYSCRIPT-IGNORE {
+    color: red
+    }
 a[href="//#advicepbb"], a[href="//#advicecmc"], a[href="//#advicedash"], a[href="//#advicederp"], a[href="//#advicegummy"], a[href="//#advicehoers"], a[href="//#adviceluna"], a[href="//#adviceoct"], a[href="//#advicepinkamina"], a[href="//#advicescoot"], a[href="//#advicescratch"], a[href="//#advicescrew"], a[href="//#adviceshy"] {
     width: 300px !important;
     height: 300px !important;
@@ -1200,9 +1203,6 @@ a[href="/sp"] {
 /**************
 A Emoticons
 **************/
-START-PONYSCRIPT-IGNORE {
-    color: red
-    }
 a[href|="/a00"], a[href|="/ajlie"], a[href|="/a01"], a[href|="/a10"], a[href|="/a11"], a[href|="/a21"], a[href|="/priceless"], a[href|="/a20"], a[href|="/flutterjerk"], a[href|="/celestiamad"], a[href|="/twicrazy"], a[href|="/twipride"], a[href|="/lunateehee"], a[href|="/lunawait"], a[href|="/a02"], a[href|="/a12"], a[href|="/a22"], a[href|="/a04"], a[href|="/a14"], a[href|="/a05"], a[href|="/a15"], a[href|="/paperbagderpy"], a[href|="/paperbagwizard"], a[href|="/derpwizard"], a[href|="/a03"], a[href|="/ajhappy"], a[href|="/happlejack"], a[href|="/a13"], a[href|="/ppfear"], a[href|="/pinkiefear"], a[href|="/a23"], a[href|="/twibeam"], a[href|="/raritydaww"], a[href|="/scootacheer"], a[href|="/lootascoo"], a[href|="/ajsup"], a[href|="/ajwhatsgood"], a[href|="/flutterwhoa"], a[href|="/flutterwoah"], a[href|="/a25"], a[href|="/rdsad"], a[href|="/a06"], a[href|="/ohcomeon"], a[href|="/sbcomeon"], a[href|="/ppcute"], a[href|="/cutiepie"], a[href|="/a16"], a[href|="/a26"], a[href|="/abbored"], a[href|="/abmerp"], a[href|="/a07"], a[href|="/raritypaper"], a[href|="/raritynews"] {
     display: block;
     clear: none;
@@ -1628,9 +1628,6 @@ a[href|="/e18"], a[href|="/re18"], a[href|="/spikewtf"], a[href|="/rspikewtf"] {
 a[href|="/e28"], a[href|="/re28"], a[href|="/awwyeah"], a[href|="/rawwyeah"] {
     background-position: -140px -420px
     }
-END-PONYSCRIPT-IGNORE {
-    color: red
-    }
 /**********************
 *
 *    OTHER EMOTE STUFF
@@ -1645,6 +1642,9 @@ a[href|="/sp"] {
 a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
     float: none !important;
     display: inline-block !important
+    }
+END-PONYSCRIPT-IGNORE {
+    color: red
     }
 /************************/
 a.author[href$="Coggler"] {
