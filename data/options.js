@@ -10,6 +10,13 @@
 
 "use strict";
 
+// WARNING: This script is "executed" twice on Firefox- once as a normal <script>
+// tag, but also a a content script attached to the page. This is for code
+// sharing purposes (so we can reuse the same options.html between all browsers),
+// but be careful not to run any code if we're not in the proper context.
+//
+// platform is "unknown" when run via <script> tag on Firefox.
+
 // Platform check
 function current_platform() {
     if(typeof(self.on) !== "undefined") {
@@ -82,16 +89,15 @@ function run() {
         input_element.type = "checkbox";
         input_element.checked = value;
         label_element.appendChild(input_element);
-        label_element.appendChild(document.createTextNode(label));
+        label_element.appendChild(document.createTextNode(" " + label));
         sr_list_element.appendChild(label_element);
-        sr_list_element.appendChild(document.createElement("br"));
         return input_element;
     }
 
     // Generate a page from the builtin list of subreddits
     for(var sr_name in sr_data) {
         var full_name = sr_data[sr_name][0];
-        var element = gen_checkbox("Enable " + full_name, prefs.enabledSubreddits[sr_name]);
+        var element = gen_checkbox(full_name, prefs.enabledSubreddits[sr_name]);
 
         // Closure to capture variables
         var callback = (function(sr_name) {
@@ -107,6 +113,7 @@ function run() {
 
 window.addEventListener("DOMContentLoaded", function() {
     _doc_loaded = true;
+    // Never true in Firefox <script>
     if(_doc_loaded && prefs !== null) {
         run();
     }

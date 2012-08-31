@@ -1,0 +1,164 @@
+Meta:
+  Name: bpmextras
+  DisplayName: BetterPonymotes Extras
+
+Emotes:
+  Spritesheets:
+    # r/mlplounge has these emotes hidden in a PONYSCRIPT-IGNORE block.
+    http://b.thumbs.redditmedia.com/jbwr35HVziRudQhg.png:
+      - Name: /abdance
+        Offset: [-70, 280]
+        Size: [70, 70]
+      - Name: /lunadance
+        Offset: [-70, -140]
+        Size: [70, 70]
+      - Name: /raritydance
+        Offset: [0, -210]
+        Size: [70, 70]
+    http://b.thumbs.redditmedia.com/zSW30mZ_O7OOnbvg.png:
+      - Name: /abdance
+        Offset: [-70, 280]
+        Size: [70, 70]
+        Suffix: :hover
+      - Name: /lunadance
+        Offset: [-70, -140]
+        Size: [70, 70]
+        Suffix: :hover
+      - Name: /raritydance
+        Offset: [0, -210]
+        Size: [70, 70]
+        Suffix: :hover
+    http://a.thumbs.redditmedia.com/OvO_yhztZ6CvsE50.png:
+      - Name: /ajdance
+        Offset: [0, -210]
+        Size: [70, 70]
+    http://a.thumbs.redditmedia.com/gA2BL43HuVKI18sf.png:
+      - Name: /ajdance
+        Offset: [0, -210]
+        Size: [70, 70]
+        Suffix: :hover
+    http://b.thumbs.redditmedia.com/Mwl_HkyArl58CUEI.png:
+      - Name: /dashdance
+        Offset: [-150, -100]
+        Size: [50, 50]
+      - Name: /pinkiedance
+        Offset: [0, -150]
+        Size: [50, 50]
+      - Name: /sweetiedance
+        Offset: [-100, -250]
+        Size: [50, 50]
+    http://e.thumbs.redditmedia.com/l4BXPpSKOD_PvK6j.png:
+      - Name: /dashdance
+        Offset: [-150, -100]
+        Size: [50, 50]
+        Suffix: :hover
+      - Name: /pinkiedance
+        Offset: [0, -150]
+        Size: [50, 50]
+        Suffix: :hover
+      - Name: /sweetiedance
+        Offset: [-100, -250]
+        Size: [50, 50]
+        Suffix: :hover
+    http://e.thumbs.redditmedia.com/i4EU0FKgjV5J5Uev.png:
+      - Name: /scootadance
+        Offset: [0, -560]
+        Size: [70, 70]
+    http://c.thumbs.redditmedia.com/9XjPGXzErCPTv5Cb.png:
+      - Name: /scootadance
+        Offset: [0, -560]
+        Size: [70, 70]
+        Suffix: :hover
+
+    # From r/mylittledramaticstory. There's nothing else of interest there.
+    http://d.thumbs.redditmedia.com/k_X9TK02zRTT1xxW.png:
+      - Name: /bueno
+        Offset: [0, 0]
+        Size: [292, 321]
+
+    # Removed from r/mlas1 at some point.
+    http://d.thumbs.redditmedia.com/dN7SE1I0H0ul7jP-.png:
+      - Name: /today
+        Offset: [0, 0]
+        Size: [500, 270]
+    http://e.thumbs.redditmedia.com/reUrhLuICVFtwobp.png:
+      - Name: /imamakethisanemoterealquick
+        Offset: [0, 0]
+        Size: [456, 304]
+    http://f.thumbs.redditmedia.com/qi35qdw2_kvnMUcq.png:
+      - Name: /buzzkillturtle
+        NSFW: true
+        Offset: [0, 0]
+        Size: [621, 511]
+      - Name: /horseporn
+        NSFW: true
+        Offset: [0, 0]
+        Size: [621, 511]
+
+    # Removed from r/mylittlewtf at some point.
+    http://thumbs.reddit.com/t5_2sy9j_3.png:
+      - Name: /raeptime
+        Offset: [0, 0]
+        Size: [422, 473]
+    http://thumbs.reddit.com/t5_2sy9j_5.png:
+      - Name: /drama
+        Offset: [0, 0]
+        Size: [443, 298]
+
+    # Picks from r/mylittleserver.
+    http://c.thumbs.redditmedia.com/5aIGeAJjlJSDrAZn.png:
+      - Name: /flutterannoyance
+        Offset: [0, 0]
+        Size: [146, 150]
+      - Name: /mlsc4
+        Offset: [0, 0]
+        Size: [146, 150]
+    http://e.thumbs.redditmedia.com/Sp3pNLa0b0hGY2zR.png:
+      - Name: /mlsc2
+        Offset: [0, 0]
+        Size: [85, 74]
+      - Name: /orangerage
+        Offset: [0, 0]
+        Size: [85, 74]
+    http://a.thumbs.redditmedia.com/u94Abuu9WOn7Xvdr.png:
+      - Name: /mlsc1
+        Offset: [0, 0]
+        Size: [85, 66]
+      - Name: /orangejoy
+        Offset: [0, 0]
+        Size: [85, 66]
+    http://f.thumbs.redditmedia.com/3SIFpvEsv9XghkiA.png:
+      - Name: /mlsc3
+        Offset: [0, 0]
+        Size: [124, 150]
+      - Name: /pwincess
+        Offset: [0, 0]
+        Size: [124, 150]
+    # Obnoxiously non-pony, but comes up often anyway
+    http://b.thumbs.redditmedia.com/X82OcVXfosB8phVC.png:
+      - Name: /mlsd1
+        Offset: [0, 0]
+        Size: [200, 145]
+      - Name: /whosad
+        Offset: [0, 0]
+        Size: [200, 145]
+
+    # From r/mylittlebannertest, but not actually in it anymore
+    http://b.thumbs.redditmedia.com/ckm8CrAbDaVtHTZI.png:
+      - Name: /orangered
+        Offset: [-62, -570]
+        Size: [15, 10]
+
+    # Originates from RDJ's script, I think
+    http://i.imgur.com/baE1o.png:
+      - Name: /sbf
+        Offset: [0, 0]
+        Size: [80, 66]
+      - CSS:
+          "-moz-transform": scaleX(-1)
+          "-webkit-transform": scaleX(-1)
+          "-o-transform": scaleX(-1)
+          transform: scaleX(-1)
+        Name: /rsbf
+        Offset: [0, 0]
+        Size: [80, 66]

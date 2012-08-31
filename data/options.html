@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>BetterPonymotes Preferences</title>
+  <link href="bootstrap.css" rel="stylesheet">
+  <script src="sr-data.js" type="text/javascript"></script>
+  <script src="options.js" type="text/javascript"></script>
+  <style type="text/css">
+    body {
+      padding-bottom: 80px;
+    }
+    label {
+      font-family: monospace;
+    }
+    #sr-list > label {
+      width: 230px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="span8 offset2">
+        <form>
+          <legend>Basic Options</legend>
+          <label><input id="enableNSFW" type="checkbox"> Enable NSFW emotes</label>
+          <label><input id="enableExtraCSS" type="checkbox"> Enable extra emote modifiers</label>
+        </form>
+
+        <form class="form-inline">
+          <legend>Enabled Subreddits</legend>
+          <div id="sr-list"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
