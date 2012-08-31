@@ -67,21 +67,6 @@ Misc:
 
     Consider moving to objects and argparse.
 
-  - Make bpgen.py better (merge emotes in and get rid of bpmotes-extras).
-
-  - Combine our three options.html pages. That sucks.
-
-Chrome:
-  - Make options work more nicely- reloading properly on all pages.
-    - localStorage events might work from background.js
-  - Try to make options.html reasonably nice looking
-
-Opera:
-  - Consider doing settings updating via postMessage- also with Chrome.
-    - Requires <style id="bpm-extracss"> so it can be removed...
-  - Spend some time fixing up options.html, and copying improvements to Chrome.
-    - The code is also a mess.
-
 Update process:
   - $ bin/version.py set -v [...]
   - $ rm build/*.{xpi,crx,oex} # Delete old versions
