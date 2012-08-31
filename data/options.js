@@ -63,10 +63,12 @@ function run() {
     // Cache elements
     var enable_nsfw = document.getElementById("enableNSFW");
     var enable_extracss = document.getElementById("enableExtraCSS");
+    var show_unknown_emotes = document.getElementById("showUnknownEmotes");
 
     // Initialize values from stored prefs
     enable_nsfw.checked = prefs.enableNSFW;
     enable_extracss.checked = prefs.enableExtraCSS;
+    show_unknown_emotes.checked = prefs.showUnknownEmotes;
 
     // Listen for edits to the checkboxes
     function checkbox_pref(element, pref_name) {
@@ -78,6 +80,7 @@ function run() {
 
     checkbox_pref(enable_nsfw, "enableNSFW");
     checkbox_pref(enable_extracss, "enableExtraCSS");
+    checkbox_pref(show_unknown_emotes, "showUnknownEmotes");
 
     // Subreddit enabler
     var sr_list_element = document.getElementById("sr-list");

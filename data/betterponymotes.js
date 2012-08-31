@@ -246,7 +246,7 @@ function process(prefs, sr_array, elements) {
                         element.className += " bpflag-" + sanitize(flag);
                     }
                 }
-            } else if(!element.textContent && /^\/[\w\-:!]+$/.test(emote_name) && !element.clientWidth) {
+            } else if(prefs.showUnknownEmotes) {
                 /*
                  * If there's:
                  *    1) No text
@@ -257,13 +257,15 @@ function process(prefs, sr_array, elements) {
                  * Then it's probably an emote, but we don't know what it is.
                  * Thanks to nallar for his advice/code here.
                  */
-                var after = window.getComputedStyle(element, ":after").backgroundImage;
-                var before = window.getComputedStyle(element, ":before").backgroundImage;
-                // "" in Opera, "none" in Firefox and Chrome.
-                if((!after || after == "none") && (!before || before == "none")) {
-                    // Unknown emote? Good enough
-                    element.className += " bpm-unknown";
-                    element.textContent = "Unknown emote " + emote_name;
+                if(!element.textContent && /^\/[\w\-:!]+$/.test(emote_name) && !element.clientWidth) {
+                    var after = window.getComputedStyle(element, ":after").backgroundImage;
+                    var before = window.getComputedStyle(element, ":before").backgroundImage;
+                    // "" in Opera, "none" in Firefox and Chrome.
+                    if((!after || after == "none") && (!before || before == "none")) {
+                        // Unknown emote? Good enough
+                        element.className += " bpm-unknown";
+                        element.textContent = "Unknown emote " + emote_name;
+                    }
                 }
             }
         }

@@ -24,7 +24,9 @@ var storage = simple_storage.storage;
 if(!storage.prefs) {
     storage.prefs = {
         "enableNSFW": false,
-        "enableExtraCSS": false
+        "enableExtraCSS": true,
+        "enabledSubreddits": {},
+        "showUnknownEmotes": true
     };
 
     if(simple_prefs.prefs.enableNSFW !== undefined) {
@@ -44,6 +46,10 @@ for(var sr in sr_data.sr_data) {
     }
 }
 // TODO: Remove subreddits from prefs that are no longer in the addon.
+
+if(storage.prefs.showUnknownEmotes === undefined) {
+    storage.prefs.showUnknownEmotes = true;
+}
 
 // Setup communication with prefs page
 var prefs_mod = page_mod.PageMod({
