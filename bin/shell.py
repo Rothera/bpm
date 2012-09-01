@@ -82,7 +82,7 @@ def cmd_update(args):
         time.sleep(2.5)
     updates.append(update_css(len(subreddits) - 1, len(subreddits), subreddits[-1]))
 
-    updates = filter(None, updates)
+    updates = list(filter(None, updates))
     if updates:
         print(len(updates), "updates:", *updates)
     else:
@@ -102,18 +102,33 @@ def cmd_extract(args):
         # TODO: Don't hardcode relative paths...
         subprocess.call(["./bpextract.py", ss_cache(sr + ".css"), "emotes/%s.yaml" % (sr)])
 
+def cmd_extractall(args):
+    parser = argparse.ArgumentParser(description="Re-extract all emotes", prog="extractall")
+    args = parser.parse_args(args)
+
+    filenames = [fn for fn in sorted(os.listdir(STYLESHEET_CACHE_DIR)) if fn.endswith(".css")]
+    filenames.sort()
+    subreddits = [fn.split(".")[0] for fn in filenames]
+
+    for (i, sr) in enumerate(subreddits):
+        print("[%s/%s]: %s" % (i+1, len(subreddits), sr))
+        # TODO: Don't hardcode relative paths...
+        subprocess.call(["./bpextract.py", ss_cache(sr + ".css"), "emotes/%s.yaml" % (sr)])
+
 def cmd_diffcss(args):
     parser = argparse.ArgumentParser(description="Run diff program on CSS cache", prog="diffcss")
     args = parser.parse_args(args)
 
-    p1 = subprocess.Popen(["bzr", "diff", STYLESHEET_CACHE_DIR], stdout=subprocess.PIPE)
+    # Lots of context is important when reading css diffs, but unfortunately
+    # bzr doesn't have an option to specify how many lines to output.
+    p1 = subprocess.Popen(["bzr", "diff", STYLESHEET_CACHE_DIR, "--diff-options=-U 10"], stdout=subprocess.PIPE)
     p2 = subprocess.Popen(["kompare", "-"], stdin=p1.stdout)
 
 def cmd_diffemotes(args):
     parser = argparse.ArgumentParser(description="Run diff program on emotes", prog="diffemotes")
     args = parser.parse_args(args)
 
-    p1 = subprocess.Popen(["bzr", "diff", "emotes"], stdout=subprocess.PIPE)
+    p1 = subprocess.Popen(["bzr", "diff", "emotes", "--diff-options=-U 10"], stdout=subprocess.PIPE)
     p2 = subprocess.Popen(["kompare", "-"], stdin=p1.stdout)
 
 def cmd_commitcss(args):
@@ -127,6 +142,7 @@ Commands = {
     "list": cmd_list,
     "update": cmd_update,
     "extract": cmd_extract,
+    "extractall": cmd_extractall,
     "diffcss": cmd_diffcss,
     "diffemotes": cmd_diffemotes,
     "commitcss": cmd_commitcss,

@@ -56,6 +56,9 @@ def resolve_emotes(files, data):
             files[filename].emotes = {}
 
     for (filename, spritesheets) in emote_merges.items():
+        if filename not in files:
+            continue
+
         file = files[filename]
         for ss in bplib.file.convert_spritesheet_map(spritesheets):
             for emote in ss.emotes.values():
@@ -223,6 +226,7 @@ def main():
     parser.add_argument("-c", "--css", help="Output CSS file", default="build/emote-classes.css")
     parser.add_argument("-d", "--directives", help="Processing directives",
                         default="data/emote-directives.yaml", type=argparse.FileType("r"))
+    parser.add_argument("--no-compress", help="Disable CSS compression", action="store_true")
     parser.add_argument("emotes", help="Input emote files", nargs="+")
     args = parser.parse_args()
 
@@ -244,7 +248,8 @@ def main():
     css_rules = build_css(emotes)
     js_map = build_js_map(emotes)
     sr_id_map, sr_data = build_sr_data(files)
-    bplib.condense.condense_css(css_rules)
+    if not args.no_compress:
+        bplib.condense.condense_css(css_rules)
 
     print("Dumping")
     with open(args.css, "w") as file:

@@ -214,6 +214,11 @@ def _convert_emote(name_pair, image_url, raw_emote):
     for p in css:
         print("WARNING: emote %r has extra property %r (%r)" % (bplib.combine_name_pair(name_pair), p, css[p]))
 
+    for p in ["background-repeat"]:
+        # Commonly added properties that we want to ignore
+        if p in css:
+            del css[p]
+
     return bplib.emote.NormalEmote(name_pair[0], name_pair[1], css, image_url, size, offset)
 
 def _verify_spritesheet(image_url, ss):
