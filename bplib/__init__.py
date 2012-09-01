@@ -25,8 +25,9 @@ def load_yaml_file(file):
 def safe_update(base, new, changes_only=True):
     for key in new:
         if key in base:
-            if changes_only and base[key] != new[key]:
-                yield key
+            if changes_only:
+                if base[key] != new[key]:
+                    yield key
             else:
                 yield key
     base.update(new)
