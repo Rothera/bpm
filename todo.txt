@@ -70,6 +70,8 @@ Misc:
   - Fix _parse_emote_selector() to not accept weird things like [href*=], which
     are invalid.
 
+  - Common code to update a dict without overwriting keys.
+
 Update process:
   - $ bin/version.py set -v [...]
   - $ rm build/*.{xpi,crx,oex} # Delete old versions
