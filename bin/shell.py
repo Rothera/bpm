@@ -21,12 +21,8 @@ import sys
 import time
 import urllib.request
 
-STYLESHEET_CACHE_DIR = "../stylesheet-cache"
 UA = "BetterPonymotes stylesheet update checker (1req/2.5secs; pm Typhos)"
 SESS = "reddit_session=9958622%2C2012-06-14T22%3A56%3A05%2C432b711c2f42ca0748d224c12c54ec2ed514cd7d"
-
-def ss_cache(path):
-    return os.path.join(STYLESHEET_CACHE_DIR, path)
 
 def cmd_help(args):
     parser = argparse.ArgumentParser(description="Print help text", prog="help")
@@ -39,7 +35,7 @@ def cmd_list(args):
     args = parser.parse_args(args)
 
     print("Stylesheet updates:")
-    subprocess.call(["bzr", "status", STYLESHEET_CACHE_DIR])
+    subprocess.call(["bzr", "status", "stylesheets"])
     print("Emote updates:")
     subprocess.call(["bzr", "status", "emotes"])
 
@@ -47,10 +43,10 @@ def update_css(num, total, subreddit):
     url = "http://reddit.com/r/%s/stylesheet?nocache=%s" % (subreddit, random.randrange(1000000))
 
     try:
-        old_ss = open(ss_cache(subreddit + ".css"), "rb").read()
+        old_ss = open("stylesheets/%s.css" % (subreddit), "rb").read()
     except IOError:
         # Assume file doesn't exist; new subreddit
-        print("NOTICE: %s does not exist; new subreddit?" % (ss_cache(subreddit + ".css")))
+        print("NOTICE: stylesheets/%s.css does not exist; new subreddit?" % (subreddit))
         old_ss = ""
 
     print("[%s/%s]: %s" % (num+1, total, url))
@@ -60,7 +56,7 @@ def update_css(num, total, subreddit):
 
     if old_ss != new_ss:
         print("NOTICE: Stylesheet changed in r/%s" % (subreddit))
-        with open(ss_cache(subreddit + ".css"), "wb") as file:
+        with open("stylesheets/%s.css" % (subreddit), "wb") as file:
             file.write(new_ss)
         return subreddit
 
@@ -100,20 +96,20 @@ def cmd_extract(args):
     for (i, sr) in enumerate(args.subreddits):
         print("[%s/%s]: %s" % (i+1, len(args.subreddits), sr))
         # TODO: Don't hardcode relative paths...
-        subprocess.call(["./bpextract.py", ss_cache(sr + ".css"), "emotes/%s.yaml" % (sr)])
+        subprocess.call(["./bpextract.py", "stylesheets/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
 
 def cmd_extractall(args):
     parser = argparse.ArgumentParser(description="Re-extract all emotes", prog="extractall")
     args = parser.parse_args(args)
 
-    filenames = [fn for fn in sorted(os.listdir(STYLESHEET_CACHE_DIR)) if fn.endswith(".css")]
+    filenames = [fn for fn in sorted(os.listdir("stylesheets")) if fn.endswith(".css")]
     filenames.sort()
     subreddits = [fn.split(".")[0] for fn in filenames]
 
     for (i, sr) in enumerate(subreddits):
         print("[%s/%s]: %s" % (i+1, len(subreddits), sr))
         # TODO: Don't hardcode relative paths...
-        subprocess.call(["./bpextract.py", ss_cache(sr + ".css"), "emotes/%s.yaml" % (sr)])
+        subprocess.call(["./bpextract.py", "stylesheets/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
 
 def cmd_diffcss(args):
     parser = argparse.ArgumentParser(description="Run diff program on CSS cache", prog="diffcss")
@@ -121,7 +117,7 @@ def cmd_diffcss(args):
 
     # Lots of context is important when reading css diffs, but unfortunately
     # bzr doesn't have an option to specify how many lines to output.
-    p1 = subprocess.Popen(["bzr", "diff", STYLESHEET_CACHE_DIR, "--diff-options=-U 10"], stdout=subprocess.PIPE)
+    p1 = subprocess.Popen(["bzr", "diff", "stylesheets", "--diff-options=-U 10"], stdout=subprocess.PIPE)
     p2 = subprocess.Popen(["kompare", "-"], stdin=p1.stdout)
 
 def cmd_diffemotes(args):
@@ -131,11 +127,12 @@ def cmd_diffemotes(args):
     p1 = subprocess.Popen(["bzr", "diff", "emotes", "--diff-options=-U 10"], stdout=subprocess.PIPE)
     p2 = subprocess.Popen(["kompare", "-"], stdin=p1.stdout)
 
-def cmd_commitcss(args):
-    parser = argparse.ArgumentParser(description="Commit CSS cache", prog="commitcss")
+def cmd_commit(args):
+    parser = argparse.ArgumentParser(description="Commit CSS and emote cache", prog="commit")
     args = parser.parse_args(args)
 
-    subprocess.call(["bzr", "commit", STYLESHEET_CACHE_DIR, "-m", time.strftime("Stylesheet updates %Y-%m-%d")])
+    subprocess.call(["bzr", "commit", "stylesheets", "-m", time.strftime("Stylesheet updates %Y-%m-%d")])
+    subprocess.call(["bzr", "commit", "emotes", "-m", time.strftime("Emote updates %Y-%m-%d")])
 
 Commands = {
     "help": cmd_help,
@@ -145,7 +142,7 @@ Commands = {
     "extractall": cmd_extractall,
     "diffcss": cmd_diffcss,
     "diffemotes": cmd_diffemotes,
-    "commitcss": cmd_commitcss,
+    "commit": cmd_commit,
     }
 
 def run_command(args):
