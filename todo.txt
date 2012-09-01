@@ -62,16 +62,6 @@ Misc:
   - Make bpextract/bpgen share as much code as possible. Make formal objects for
     EVERYTHING, with strictly-validating create/save/load methods.
 
-  - Make shell.py print [x/n] indicators for all of its operations. Also, make
-    it suck less- more commands, proper argument parsing, etc.
-
-    Consider moving to objects and argparse.
-
-  - Fix _parse_emote_selector() to not accept weird things like [href*=], which
-    are invalid.
-
-  - Common code to update a dict without overwriting keys.
-
 Update process:
   - $ bin/version.py set -v [...]
   - $ rm build/*.{xpi,crx,oex} # Delete old versions
