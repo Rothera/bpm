@@ -10,13 +10,9 @@
 ##
 ################################################################################
 
-__all__ = ["combine_name_pair", "PartialEmote", "CustomEmote", "NormalEmote"]
+__all__ = ["PartialEmote", "CustomEmote", "NormalEmote"]
 
-def combine_name_pair(name, suffix):
-    if suffix:
-        return name + suffix
-    else:
-        return name
+import bplib
 
 class BaseEmote:
     def __init__(self, name, suffix, css):
@@ -48,7 +44,7 @@ class Emote(BaseEmote):
             return self.custom_selector
 
         name = self.name.replace("!", "_excl_").replace(":", "_colon_")
-        return ".bpmote-" + combine_name_pair(name, self.suffix).lstrip("/").lower()
+        return ".bpmote-" + bplib.combine_name_pair((name, self.suffix)).lstrip("/").lower()
 
 class CustomEmote(Emote):
     @classmethod

@@ -18,10 +18,11 @@ class CssRule:
     def __init__(self, selectors, properties, ignore=False):
         self.selectors = selectors
         self.properties = properties
-        # This is an odd place to have an "ignore" property, but for logspam
-        # purposes we like to filter PONYSCRIPT-IGNORE blocks before we seek
-        # out emotes. For extraction purposes, though, we need to keep the rules
-        # that get filtered out, and this is the simplest way.
+        # This is an odd place to have an "ignore" property, but in order to
+        # detect split rules properly, we filter PONYSCRIPT-IGNORE blocks before
+        # extracting emotes. For extraction purposes, though, we need to keep
+        # the rules that get filtered out (since some may be added back in),
+        # and this is the simplest way.
         self.ignore = ignore
 
     def __repr__(self):
@@ -88,7 +89,10 @@ def _parse_properties(text):
             print("ERROR: CSS parse error while reading properties: %r" % (s))
             continue
 
-        props[key.strip().lower()] = val.strip()
+        key = key.strip().lower()
+        if key in props:
+            print("WARNING: CSS defines property %r twice in one block" % (key))
+        props[key] = val.strip()
     return props
 
 def prop(text):

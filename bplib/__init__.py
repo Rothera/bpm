@@ -10,7 +10,7 @@
 ##
 ################################################################################
 
-__all__ = ["load_yaml_file"]
+__all__ = ["load_yaml_file", "safe_update", "combine_name_pair"]
 
 import yaml
 
@@ -21,3 +21,19 @@ except ImportError:
 
 def load_yaml_file(file):
     return yaml.load(file, Loader)
+
+def safe_update(base, new, changes_only=True):
+    for key in new:
+        if key in base:
+            if changes_only and base[key] != new[key]:
+                yield key
+            else:
+                yield key
+    base.update(new)
+
+def combine_name_pair(name_pair):
+    name, suffix = name_pair
+    if suffix:
+        return name + suffix
+    else:
+        return name

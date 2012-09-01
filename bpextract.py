@@ -34,7 +34,7 @@ def main():
     bplib.extract.filter_ponyscript_ignores(css_rules)
 
     # Extract raw emote data
-    partial_emotes = bplib.extract.extract_raw_emotes(args, css_rules)
+    partial_emotes = bplib.extract.extract_raw_emotes(args.extract, css_rules)
     emote_map = bplib.extract.build_emote_map(partial_emotes)
     bplib.extract.collapse_specials_properties(emote_map)
 
