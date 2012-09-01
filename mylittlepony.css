@@ -1,59 +1,11 @@
 /***********************************
-* EDITED BY: WTF IT'S MEGADEUS - 12/21/11 - Added RES Nightmode fix for flair *
 * Whoa CMC, you keep editing that CSS ya gonna get a wicked bad tummy ache.  *
 ***********************************/
-/*Rule #1: Do NOT get Fluttershy started on the fauna! */
-/*Rule #2: Do NOT make the CSS herp the derp */
-/*Rule #3: You've GOT to check this CSS out! This CSS is craAAAAaazy! */
-/*Rule #4: I'd like to be a tree. */
 /*
-                                         @07v;:,.                                                                                           
-                                         F@k:vSkZMBOM@@BENNNNNNGMOOOEXL:.                                                                   
-                                           MS                     ..:vE@@@@O1i                    .,                                        
-                                            S@S                           .:UB@MPi             :qOJ8@                                       
-                                              X@Gi                             .vO@M2.       rMOi   @2                                      
-                                                :ZM5.    .:iLu1Lv7i:               :F@@u    BM.      @                                      
-                                                   r@@@qEG57:.                        .5@Or@r        u@                                     
-                                                :Z@@O7,                                  7@,          @O                                    
-                                             .O@@P.                                      Z.   r.       @L                                   
-                                           :@@k                                         qP    @        .@.                                  
-                                         :G@i                                          .@    u@         F@                                  
-                                        8G.                     .                      @X    @O          @1                                 
-                                      rB:                            .                .@    :@E          :@                                 
-                                     G0                             Yr                Mi    k@@           @1                                
-                                    @J                             .@                87     @@@.          O@                                
-                                  .@:                              @i               8X      J@@@          :@                                
-                                 ,@,                             .@G               @j        i@@.          @                                
-                                 @r                             7@G              j@i           @Y          @:                               
-                                MB                            r@@U             :@@             ji         .@i                               
-                               .@                          .7O@@             iM8,                         r@                                
-                               BJ                       ,8@@@@02uY        :5MO7                           8@X                               
-                               @                   .u1X@@@uk0          :105: .,:iv1Xv.                    @ @,                              
-                              2@               .iE@@uvXYir;       :rL2j;,           iX87                 i@ rB                              
-                              @N            rZM8@@@L @ :0Y,,iLLu7Lr:                   XM,               @7  @                              
-                              BL          N@q:  @0@       ....                          .Bv             kO   @.                             
-                              M;        M@L     N@U                                       j7           7@    @v                             
-                              B5       @S        @v                                        7.         i@     Pj                             
-                              2B      @.         M:                                                  :@.     0J                             
-                               @     @S          @:                                                 U@       Mr                             
-                               @O    @           XY                                               L@B   O.   @                              
-                                @.  2@           u@:0                                            J@:    @    @                              
-                                J@  @M           ,@7@@E,                                  Lqi,   @v     @   Pq                              
-                                 B@ @E           :O  ikMMG5jJ7i.          .            7G@@5.   M@     2P   @                               
-                                  @0vN           .@      .,::77iLSFuvi    :kF5JLvvuE@@@@B  .   :@,     @   @E                               
-                                   @@@            @          :.    .:vL.      :uFS1L:         .@:     @@  7@                                
-                                    1@P           L@        .                .i.             5@:     :@   @                                 
-                                     :@F           j@j      :.       L.      @i            7@@       @i :@.                                 
-                                       @i            F@k                  iqS:          .S@G.       @Y L@                                   
-                                        :              J@ML.       .::irL5k,         :7@Bi        L@O B0                                    
-                                                         .;JMqi      .          .YFS7i@S        uFO@YBi                                     
-                                                           uMXEO5E@@XSXXkONk:   :;   @r       8@i;@@v                                       
-                                                        :NP7i:.:M@O5XPP1r:.         @i      E@L 2@v                                         
-                   ,u@87                               0O. 1NkO@B                  @i     i@O  Ji                 .                         
-                iO@B0r,L8N:                          rB1iFMO@@@.                  @5     L@i                   .ZBOF0EOZEU7.                
-                                             @                              :@ @      k@EBMqu,                                              
-                                                                                                                                                                  http://fav.me/d56p4h8    
-                                                                                                                                            
+Rule #1: Do NOT get Fluttershy started on the fauna!
+Rule #2: Do NOT make the CSS herp the derp
+Rule #3: You've GOT to check this CSS out! This CSS is craAAAAaazy!
+Rule #4: Never Interrupt Orschmann's morning meditation. 
 */
 /*Changing readers in sidebar*/
 div.titlebox span.word {
@@ -93,19 +45,17 @@ div.titlebox .users-online span.number:after {
     }
 */
 /*8.24.2012 NEVER FORGET*/
-.sidecontentbox a.author[href$="/Lebal"] + .flair, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair {
-    display: block;
-    background: none;
-    width: auto;
-    height: auto
-    }
-.sidecontentbox a.author[href$="/Lebal"] + .flair:before, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair:before {
-    display: inline-block;
-    content: "megadeus";
-    font-size: 10pt;
-    color: gray;
-    padding-right: 5px
-    }
+/* I FORGOT
+.sidecontentbox a.author[href$="/Lebal"] + .flair, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair {display:block;background:none;width:auto;height:auto;}
+.sidecontentbox a.author[href$="/Lebal"] + .flair:before, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair:before
+{
+ display:inline-block;
+ content:"megadeus";
+ font-size: 10pt;
+ color: gray;
+ padding-right:5px;
+}
+*/
 .sidecontentbox a.author[href$="/Lebal"] + .flair:after, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair:after {
     display: inline-block;
     content: "DOUBLE MODERATOR";
