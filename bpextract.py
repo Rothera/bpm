@@ -12,14 +12,13 @@
 
 import argparse
 import os.path
-import re
-import time
 
 import yaml
 
 import bplib
 import bplib.css
 import bplib.extract
+import bplib.file
 
 ### Serialization
 
@@ -28,7 +27,7 @@ def generate_meta(src_filename, name, display_name):
     name = name or "r_%s" % (base_name)
     display_name = display_name or "r/%s" % (base_name)
     assert "/" not in name # TODO: be more restrictive
-    return {"Name": name, "DisplayName": display_name}
+    return (name, display_name)
 
 def convert_spritesheets(spritesheets):
     return {image_url: _convert_emote_map(ss) for (image_url, ss) in spritesheets.items()}
@@ -59,14 +58,9 @@ def main():
     normal_emotes, custom_emotes = bplib.extract.classify_emotes(emote_map)
     spritesheets = bplib.extract.build_spritesheet_map(normal_emotes)
 
-    data = {
-        "Meta": generate_meta(args.css.name, args.name, args.displayname),
-        "Emotes": {
-            "Spritesheets": convert_spritesheets(spritesheets),
-            "Custom": convert_customs(custom_emotes)
-            }
-        }
-    yaml.dump(data, args.emotes)
+    name, display_name = generate_meta(args.css.name, args.name, args.displayname)
+    file = bplib.file.EmoteFile(name, display_name, custom_emotes, spritesheets.values())
+    yaml.dump(file.dump(), args.emotes)
 
 if __name__ == "__main__":
     main()

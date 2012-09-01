@@ -10,12 +10,18 @@
 ##
 ################################################################################
 
-__all__ = ["CssRule", "parse_css_file", "get_prop", "parse_size", "parse_position"]
+__all__ = ["CssRule", "parse_css_file", "prop", "as_size", "as_position", "as_url"]
+
+import re
 
 class CssRule:
     def __init__(self, selectors, properties, ignore=False):
         self.selectors = selectors
         self.properties = properties
+        # This is an odd place to have an "ignore" property, but for logspam
+        # purposes we like to filter PONYSCRIPT-IGNORE blocks before we seek
+        # out emotes. For extraction purposes, though, we need to keep the rules
+        # that get filtered out, and this is the simplest way.
         self.ignore = ignore
 
     def __repr__(self):
@@ -85,30 +91,34 @@ def _parse_properties(text):
         props[key.strip().lower()] = val.strip()
     return props
 
-def get_prop(text):
-    # TODO: Real property parsing would be nice.
+def prop(text):
     parts = text.split()
     if "!important" in parts:
         parts.remove("!important")
     return " ".join(parts)
 
-def parse_size(sz):
+def as_size(text):
     # Parses a single size declaration. Meant to be used on width/height
     # properties.
     #
     # This should always be measured in pixels, though "0px" is often abbreviated
     # to just "0".
-    if sz.endswith("px"):
-        sz = sz[:-2]
-    return int(sz)
+    return _parse_size(prop(text))
 
-def parse_position(pos, width, height):
-    # Parses a background-position declaration.
-    #
-    # The width/height associated with this emote are necessary in order to
-    # compute equivalent pixel values in cases where percentages are given.
-    (str_x, str_y) = pos.split()
-    return (_parse_pos(str_x, width), _parse_pos(str_y, height))
+def as_position(text, width, height):
+    x_text, y_text = prop(text).split()
+    return (_parse_pos(x_text, width), _parse_pos(y_text, height))
+
+def as_url(text):
+    text = prop(text)
+    if text.startswith("url(") and text.endswith(")"):
+        return text[4:-1].strip()
+    raise ValueError("Invalid URL")
+
+def _parse_size(s):
+    if s.endswith("px"):
+        s = s[:-2]
+    return int(s)
 
 def _parse_pos(s, size):
     # Hack to handle percentage values, which are essentially multiples of the
@@ -118,9 +128,4 @@ def _parse_pos(s, size):
         return int(int(s[:-1]) / 100.0 * size)
     else:
         # Value is generally negative, though there are some odd exceptions.
-        return parse_size(s)
-
-def parse_url(text):
-    if text.startswith("url(") and text.endswith(")"):
-        return text[4:-1]
-    raise ValueError("Invalid URL")
+        return _parse_size(s)

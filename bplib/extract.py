@@ -15,8 +15,12 @@ __all__ = [
     "collapse_specials_properties", "classify_emotes", "build_spritesheet_map"
     ]
 
+import re
+
 import bplib
 import bplib.css
+import bplib.file
+import bplib.emote
 
 def filter_ponyscript_ignores(css_rules):
     # Takes list of CssRule's and sets .ignore properties on them as appropriate.
@@ -50,11 +54,12 @@ def extract_raw_emotes(args, css_rules):
     for rule in css_rules:
         alias_pairs = filter(None, [_parse_emote_selector(s) for s in rule.selectors])
         for (name, suffix) in alias_pairs:
-            extract_explicit = bplib.combine_name_pair(name, suffix) in args.extract
+            extract_explicit = bplib.emote.combine_name_pair(name, suffix) in args.extract
             if extract_explicit:
                 print("NOTICE: Extracting ignored emote", (name, suffix))
             if extract_explicit or (not rule.ignore):
-                yield bplib.RawEmote(name, suffix, rule.properties.copy()) # So it's not read-only
+                # Copy CSS so it's not read-only
+                yield bplib.emote.PartialEmote(name, suffix, rule.properties.copy())
 
 def _parse_emote_selector(selector):
     # Match against 'a[href|="/emote"]'. This is complicated by a few things:
@@ -137,7 +142,8 @@ def classify_emotes(emote_map):
             # the resulting warning spam.
             normal_emotes[name_pair] = emote
         else:
-            custom_emotes[name_pair] = emote
+            # Replace one class with another, essentially
+            custom_emotes[name_pair] = bplib.emote.CustomEmote(emote.name, emote.suffix, emote.css)
 
     return (normal_emotes, custom_emotes)
 
@@ -146,13 +152,14 @@ def build_spritesheet_map(emotes):
     spritesheets = {}
 
     for (name_pair, raw_emote) in emotes.items():
-        image_url = bplib.css.parse_url(bplib.css.get_prop(raw_emote.css.pop("background-image")))
-        if image_url not in spritesheets:
-            spritesheets[image_url] = {}
-        spritesheets[image_url][name_pair] = _convert_emote(name_pair, image_url, raw_emote)
+        image_url = bplib.css.as_url(raw_emote.css.pop("background-image"))
 
-    for (image_url, ss_map) in spritesheets.items():
-        _verify_spritesheet(image_url, ss_map)
+        if image_url not in spritesheets:
+            spritesheets[image_url] = bplib.file.Spritesheet(image_url, {})
+        spritesheets[image_url].emotes[name_pair] = _convert_emote(name_pair, image_url, raw_emote)
+
+    for (image_url, ss) in spritesheets.items():
+        _verify_spritesheet(image_url, ss)
 
     return spritesheets
 
@@ -166,13 +173,12 @@ def _convert_emote(name_pair, image_url, raw_emote):
     try_pop("clear")
     try_pop("float")
 
-    width = bplib.css.parse_size(bplib.css.get_prop(css.pop("width")))
-    height = bplib.css.parse_size(bplib.css.get_prop(css.pop("height")))
+    width = bplib.css.as_size(css.pop("width"))
+    height = bplib.css.as_size(css.pop("height"))
     size = (width, height)
 
     if "background-position" in css:
-        offset = bplib.css.parse_position(bplib.css.get_prop(css["background-position"]), width, height)
-        del css["background-position"]
+        offset = bplib.css.as_position(css.pop("background-position"), width, height)
     else:
         offset = None
 
@@ -185,13 +191,12 @@ def _convert_emote(name_pair, image_url, raw_emote):
         if p not in ("margin-left", "margin-right"):
             print("WARNING: emote %r has extra property %r (%r)" % (name_pair, p, css[p]))
 
-    return bplib.Emote(name_pair[0], name_pair[1], css, size, offset, image_url)
+    return bplib.emote.NormalEmote(name_pair[0], name_pair[1], css, image_url, size, offset)
 
-
-def _verify_spritesheet(image_url, emotes):
+def _verify_spritesheet(image_url, ss):
     # Ensure that all emotes have a bg-position. Only one may lack one.
     unpositioned_emotes = []
-    for (name_pair, emote) in emotes.items():
+    for (name_pair, emote) in ss.emotes.items():
         if emote.offset is None:
             emote.offset = (0, 0)
             unpositioned_emotes.append(name_pair)

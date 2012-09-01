@@ -20,6 +20,32 @@ except ImportError:
 def load_yaml_file(file):
     return yaml.load(file, _yaml_Loader)
 
+### DELETE ME
+def RawEmote_to_css(self):
+    return (self.make_selector(), self.css.copy())
+def RawEmote_from_data(cls, data, file=None):
+    for key in data:
+        print("ERROR: Extra key on %r: %r (%r)" % ((name, suffix), key, data[key]))
+def Emote_to_css(self):
+    assert not self.nocss
+    css = {
+        "display": "block",
+        "clear": "none",
+        "float": "left",
+        "background-image": "url(%s)" % (self.image_url),
+        "width": "%spx" % (self.size[0]),
+        "height": "%spx" % (self.size[1]),
+        "background-position": "%spx %spx" % (self.offset[0], self.offset[1])
+        }
+    css.update(self.css)
+    return (self.make_selector(), css)
+def Emote_from_data(cls, image_url, data, file=None):
+    for key in data:
+        print("ERROR: Extra key on %r: %r (%r)" % ((name, suffix), key, data[key]))
+### DELETE ME
+
+### EVERYTHING BELOW THIS POINT IS LEGACY, TO SUPPORT BPGEN.PY WHILE IT IS PORTED.
+
 def combine_name_pair(name, suffix):
     if suffix:
         return name + suffix
