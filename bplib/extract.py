@@ -10,6 +10,11 @@
 ##
 ################################################################################
 
+__all__ = [
+    "filter_ponyscript_ignores", "extract_raw_emotes", "build_emote_map",
+    "collapse_specials_properties", "classify_emotes", "build_spritesheet_map"
+    ]
+
 import bplib
 import bplib.css
 
@@ -41,8 +46,9 @@ def filter_ponyscript_ignores(css_rules):
             ignoring = False
 
 def extract_raw_emotes(args, css_rules):
+    # Extracts partial emotes from a list of CSS rules.
     for rule in css_rules:
-        alias_pairs = filter(None, [parse_emote_selector(s) for s in rule.selectors])
+        alias_pairs = filter(None, [_parse_emote_selector(s) for s in rule.selectors])
         for (name, suffix) in alias_pairs:
             extract_explicit = bplib.combine_name_pair(name, suffix) in args.extract
             if extract_explicit:
@@ -50,7 +56,7 @@ def extract_raw_emotes(args, css_rules):
             if extract_explicit or (not rule.ignore):
                 yield bplib.RawEmote(name, suffix, rule.properties.copy()) # So it's not read-only
 
-def parse_emote_selector(selector):
+def _parse_emote_selector(selector):
     # Match against 'a[href|="/emote"]'. This is complicated by a few things:
     # psuedo-classes can be either with the a ("a:hover[...]") or at the end
     # ("a[...]:hover"). I'm aware of :hover, :active, and :nth-of-type(n) (which
@@ -89,6 +95,7 @@ def parse_emote_selector(selector):
     return (emote_name, suffix)
 
 def build_emote_map(partial_emotes):
+    # Combines properties in partial emotes, producing a single emote map.
     emotes = {}
     for raw_emote in partial_emotes:
         name_pair = (raw_emote.name, raw_emote.suffix)
@@ -105,7 +112,7 @@ def build_emote_map(partial_emotes):
 
 def collapse_specials_properties(emotes):
     # Basically, copies /ajdance properties to /ajdance:hover so that they can
-    # exist independently
+    # exist independently.
     #
     # Note: overwriting properties is considered valid here by necessity.
     for emote in emotes.values():
@@ -117,6 +124,8 @@ def collapse_specials_properties(emotes):
                 emote.css = base_properties
 
 def classify_emotes(emote_map):
+    # Sorts emotes based on whether or not they are "normal" emotes belonging to
+    # a spritesheet, or "custom" ones possessing only arbitrary CSS.
     normal_emotes = {}
     custom_emotes = {}
 
@@ -133,25 +142,21 @@ def classify_emotes(emote_map):
     return (normal_emotes, custom_emotes)
 
 def build_spritesheet_map(emotes):
+    # Converts a map of "normal" emotes into a map of spritesheets.
     spritesheets = {}
 
     for (name_pair, raw_emote) in emotes.items():
-        image_url = get_url(bplib.css.get_prop(raw_emote.css.pop("background-image")))
+        image_url = bplib.css.parse_url(bplib.css.get_prop(raw_emote.css.pop("background-image")))
         if image_url not in spritesheets:
             spritesheets[image_url] = {}
-        spritesheets[image_url][name_pair] = convert_emote(name_pair, image_url, raw_emote)
+        spritesheets[image_url][name_pair] = _convert_emote(name_pair, image_url, raw_emote)
 
     for (image_url, ss_map) in spritesheets.items():
-        verify_spritesheet(image_url, ss_map)
+        _verify_spritesheet(image_url, ss_map)
 
     return spritesheets
 
-def get_url(text):
-    if text.startswith("url(") and text.endswith(")"):
-        return text[4:-1]
-    raise ValueError("Invalid URL")
-
-def convert_emote(name_pair, image_url, raw_emote):
+def _convert_emote(name_pair, image_url, raw_emote):
     css = raw_emote.css.copy()
     def try_pop(prop):
         if prop in css:
@@ -161,12 +166,12 @@ def convert_emote(name_pair, image_url, raw_emote):
     try_pop("clear")
     try_pop("float")
 
-    width = parse_size(bplib.css.get_prop(css.pop("width")))
-    height = parse_size(bplib.css.get_prop(css.pop("height")))
+    width = bplib.css.parse_size(bplib.css.get_prop(css.pop("width")))
+    height = bplib.css.parse_size(bplib.css.get_prop(css.pop("height")))
     size = (width, height)
 
     if "background-position" in css:
-        offset = parse_position(bplib.css.get_prop(css["background-position"]), width, height)
+        offset = bplib.css.parse_position(bplib.css.get_prop(css["background-position"]), width, height)
         del css["background-position"]
     else:
         offset = None
@@ -182,28 +187,8 @@ def convert_emote(name_pair, image_url, raw_emote):
 
     return bplib.Emote(name_pair[0], name_pair[1], css, size, offset, image_url)
 
-def parse_size(sz):
-    # Plain numbers are typically zero, though there are some unusual emotes
-    # with positive offsets
-    if sz.endswith("px"):
-        sz = sz[:-2]
-    return int(sz)
 
-def parse_position(pos, width, height):
-    (str_x, str_y) = pos.split()
-    return (parse_pos(str_x, width), parse_pos(str_y, height))
-
-def parse_pos(s, size):
-    # Hack to handle percentage values, which are essentially multiples of the
-    # width/height. Used in r/mylittlelistentothis for some crazy reason.
-    if s[-1] == "%":
-        # Non-multiples of 100 won't work too well here, but who would do that
-        # anyway
-        return int(int(s[:-1]) / 100.0 * size)
-    else:
-        return parse_size(s)
-
-def verify_spritesheet(image_url, emotes):
+def _verify_spritesheet(image_url, emotes):
     # Ensure that all emotes have a bg-position. Only one may lack one.
     unpositioned_emotes = []
     for (name_pair, emote) in emotes.items():

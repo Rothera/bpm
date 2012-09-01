@@ -10,6 +10,8 @@
 ##
 ################################################################################
 
+__all__ = ["CssRule", "parse_css_file", "get_prop", "parse_size", "parse_position"]
+
 class CssRule:
     def __init__(self, selectors, properties, ignore=False):
         self.selectors = selectors
@@ -26,19 +28,24 @@ class CssRule:
 #
 # A decent regexp-based tokenizer isn't actually that hard, but I want this
 # code to run as fast as possible, and it doesn't matter yet.
+#
+# If necessary, a better parser could be implemented without necessarily
+# performing full lexing. A regexp able to recognize comments, strings, and
+# everything else would suffice to tokenize- then our split() based code would
+# be modified to understand the "string" objects, and not to split them up.
 
 def parse_css_file(file):
     text = file.read()
-    text = strip_comments(text)
-    return parse_all_rules(file.name, text)
+    text = _strip_comments(text)
+    return _parse_all_rules(file.name, text)
 
-def strip_comments(text):
+def _strip_comments(text):
     # Taken from a section in the CSS spec on tokenization. I'm not actually
     # sure how this works, but it'll work until someone embeds a comment
     # endpoint in a string.
     return re.sub(r"/\*[^*]*\*+(?:[^/][^*]*\*+)*/", "", text)
 
-def parse_all_rules(filename, text):
+def _parse_all_rules(filename, text):
     # No more text -> EOF
     while text.strip():
         # Search through the next pair of brackets. Mismatched pairs, and ones
@@ -50,15 +57,15 @@ def parse_all_rules(filename, text):
         except ValueError:
             print("ERROR: CSS parse error in %r" % (filename))
         else:
-            selectors = parse_selectors(selector_text)
-            properties = parse_properties(properties_text)
+            selectors = _parse_selectors(selector_text)
+            properties = _parse_properties(properties_text)
             yield CssRule(selectors, properties)
 
-def parse_selectors(text):
+def _parse_selectors(text):
     # Breaks if people put commas in weird places, of course...
     return [s.strip() for s in text.split(",")]
 
-def parse_properties(text):
+def _parse_properties(text):
     # Simplistically split on ";" and remove any empty statements.
     #
     # There are a couple of places where extraneous ";"'s are a problem, but
@@ -78,8 +85,42 @@ def parse_properties(text):
         props[key.strip().lower()] = val.strip()
     return props
 
-def get_prop(text, ignore_important=True):
+def get_prop(text):
+    # TODO: Real property parsing would be nice.
     parts = text.split()
-    if ignore_important and "!important" in parts:
+    if "!important" in parts:
         parts.remove("!important")
     return " ".join(parts)
+
+def parse_size(sz):
+    # Parses a single size declaration. Meant to be used on width/height
+    # properties.
+    #
+    # This should always be measured in pixels, though "0px" is often abbreviated
+    # to just "0".
+    if sz.endswith("px"):
+        sz = sz[:-2]
+    return int(sz)
+
+def parse_position(pos, width, height):
+    # Parses a background-position declaration.
+    #
+    # The width/height associated with this emote are necessary in order to
+    # compute equivalent pixel values in cases where percentages are given.
+    (str_x, str_y) = pos.split()
+    return (_parse_pos(str_x, width), _parse_pos(str_y, height))
+
+def _parse_pos(s, size):
+    # Hack to handle percentage values, which are essentially multiples of the
+    # width/height. Used in r/mylittlelistentothis for some crazy reason.
+    if s[-1] == "%":
+        # Non-multiples of 100 won't work too well here (but who would do that?).
+        return int(int(s[:-1]) / 100.0 * size)
+    else:
+        # Value is generally negative, though there are some odd exceptions.
+        return parse_size(s)
+
+def parse_url(text):
+    if text.startswith("url(") and text.endswith(")"):
+        return text[4:-1]
+    raise ValueError("Invalid URL")
