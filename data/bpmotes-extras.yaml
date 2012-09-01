@@ -3,17 +3,18 @@ Meta:
   DisplayName: BetterPonymotes Extras
 
 Emotes:
+  Custom: []
   Spritesheets:
     # Originates from RDJ's script, I think
     http://i.imgur.com/baE1o.png:
-      - Name: /sbf
-        Offset: [0, 0]
-        Size: [80, 66]
-      - CSS:
-          "-moz-transform": scaleX(-1)
-          "-webkit-transform": scaleX(-1)
-          "-o-transform": scaleX(-1)
-          transform: scaleX(-1)
-        Name: /rsbf
-        Offset: [0, 0]
-        Size: [80, 66]
+    - Name: /sbf
+      Offset: [0, 0]
+      Size: [80, 66]
+    - CSS:
+        "-moz-transform": scaleX(-1)
+        "-webkit-transform": scaleX(-1)
+        "-o-transform": scaleX(-1)
+        transform: scaleX(-1)
+      Name: /rsbf
+      Offset: [0, 0]
+      Size: [80, 66]
