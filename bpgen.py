@@ -202,6 +202,7 @@ def dump_sr_data(file, sr_id_map, sr_data):
     file.write(AutogenHeader)
     _dump_js_obj(file, "sr_id_map", sr_id_map)
     _dump_js_obj(file, "sr_data", sr_data)
+    # exports is used in Firefox main.js, but doesn't exist elsewhere
     file.write("if(typeof(exports) !== 'undefined') {\n")
     file.write("    exports.sr_id_map = sr_id_map;\n")
     file.write("    exports.sr_data = sr_data;\n")

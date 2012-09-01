@@ -32,7 +32,7 @@ def cmd_help(args):
     parser = argparse.ArgumentParser(description="Print help text", prog="help")
     args = parser.parse_args(args)
 
-    print(" ".join(Commands))
+    print(" ".join(sorted(Commands)))
 
 def cmd_list(args):
     parser = argparse.ArgumentParser(description="List updated files", prog="list")
