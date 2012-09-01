@@ -77,3 +77,9 @@ def parse_properties(text):
 
         props[key.strip().lower()] = val.strip()
     return props
+
+def get_prop(text, ignore_important=True):
+    parts = text.split()
+    if ignore_important and "!important" in parts:
+        parts.remove("!important")
+    return " ".join(parts)
