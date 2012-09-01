@@ -10,6 +10,7 @@
 ##
 ################################################################################
 
+import argparse
 import os
 import os.path
 import random
@@ -20,144 +21,115 @@ import sys
 import time
 import urllib.request
 
-context = None
-
 STYLESHEET_CACHE_DIR = "../stylesheet-cache"
+UA = "BetterPonymotes stylesheet update checker (1req/2.5secs; pm Typhos)"
+SESS = "reddit_session=9958622%2C2012-06-14T22%3A56%3A05%2C432b711c2f42ca0748d224c12c54ec2ed514cd7d"
 
 def ss_cache(path):
     return os.path.join(STYLESHEET_CACHE_DIR, path)
 
-def get_opt_arg(args, usage):
-    global context
-    if not len(args):
-        if context:
-            return context
-        else:
-            print(usage)
-    elif len(args) == 1:
-        context = args[0]
-        return context
-    else:
-        print(usage)
-
 def cmd_help(args):
-    if args:
-        print("Usage: help")
-    else:
-        print(" ".join(Commands))
+    parser = argparse.ArgumentParser(description="Print help text", prog="help")
+    args = parser.parse_args(args)
 
-def cmd_quit(args):
-    sys.exit(0)
+    print(" ".join(Commands))
 
 def cmd_list(args):
-    print(", ".join(os.listdir("stylesheet-updates")))
+    parser = argparse.ArgumentParser(description="List updated files", prog="list")
+    args = parser.parse_args(args)
 
-def cmd_diff_css(args):
-    subreddit = get_opt_arg(args, "Usage: diffcss <subreddit>")
-    if subreddit:
-        subprocess.Popen(["kompare", ss_cache(subreddit + ".css"), "stylesheet-updates/%s.css" % (subreddit)])
-
-def cmd_edit(args):
-    if not len(args):
-        print("Usage: edit <files...>")
-    else:
-        subprocess.Popen(["kate", "-n"] + args)
-
-def cmd_resolve_css(args):
-    subreddit = get_opt_arg(args, "Usage: resolvecss <subreddit>")
-    if subreddit:
-        shutil.move("stylesheet-updates/%s.css" % (subreddit), ss_cache(subreddit + ".css"))
-
-UA = "BetterPonymotes stylesheet update checker (1req/2.5secs; pm Typhos)"
-SESS = "reddit_session=9958622%2C2012-06-14T22%3A56%3A05%2C432b711c2f42ca0748d224c12c54ec2ed514cd7d"
+    print("Stylesheet updates:")
+    subprocess.call(["bzr", "status", STYLESHEET_CACHE_DIR])
+    print("Emote updates:")
+    subprocess.call(["bzr", "status", "emotes"])
 
 def update_css(num, total, subreddit):
     url = "http://reddit.com/r/%s/stylesheet?nocache=%s" % (subreddit, random.randrange(1000000))
 
     try:
-        old_ss = open(ss_cache(subreddit +".css"), "rb").read()
+        old_ss = open(ss_cache(subreddit + ".css"), "rb").read()
     except IOError:
         # Assume file doesn't exist; new subreddit
         print("NOTICE: %s does not exist; new subreddit?" % (ss_cache(subreddit + ".css")))
         old_ss = ""
 
-    print("%s/%s: %s" % (num+1, total, url))
+    print("[%s/%s]: %s" % (num+1, total, url))
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Cookie": SESS})
     with urllib.request.urlopen(req) as stream:
         new_ss = stream.read()
 
     if old_ss != new_ss:
         print("NOTICE: Stylesheet changed in r/%s" % (subreddit))
-        with open("stylesheet-updates/%s.css" % (subreddit), "wb") as file:
+        with open(ss_cache(subreddit + ".css"), "wb") as file:
             file.write(new_ss)
+        return subreddit
 
 def cmd_update(args):
-    global context
+    parser = argparse.ArgumentParser(description="Update stylesheet cache", prog="update")
+    parser.add_argument("subreddits", nargs="*")
+    args = parser.parse_args(args)
 
-    if not args:
+    if not args.subreddits:
         filenames = [fn for fn in sorted(os.listdir(STYLESHEET_CACHE_DIR)) if fn.endswith(".css")]
         filenames.sort()
         subreddits = [fn.split(".")[0] for fn in filenames]
     else:
-        if len(args) == 1:
-            context = args[0]
+        subreddits = args.subreddits
 
-        subreddits = args
-
+    updates = []
     for (i, sr) in enumerate(subreddits[:-1]):
-        update_css(i, len(subreddits), sr)
+        updates.append(update_css(i, len(subreddits), sr))
         time.sleep(2.5)
-    update_css(len(subreddits) - 1, len(subreddits), subreddits[-1])
+    updates.append(update_css(len(subreddits) - 1, len(subreddits), subreddits[-1]))
+
+    updates = filter(None, updates)
+    if updates:
+        print(len(updates), "updates:", *updates)
+    else:
+        print("0 updates")
 
 def cmd_extract(args):
-    if not args:
-        filenames = [fn for fn in os.listdir("stylesheet-updates") if fn.endswith(".css")]
-        filenames.sort()
-        subreddits = [fn.split(".")[0] for fn in filenames]
-    else:
-        subreddits = args
+    parser = argparse.ArgumentParser(description="Extract emotes", prog="extract")
+    parser.add_argument("subreddits", nargs="+")
+    args = parser.parse_args(args)
 
-    for sr in subreddits:
-        print("Extracting", sr)
-        # TODO: Don't hardcode relative paths...
-        subprocess.call(["./bpextract.py", "stylesheet-updates/%s.css" % (sr), "emote-updates/%s.yaml" % (sr)])
+    # TODO: Supporting nargs="*" and extracting every updated subreddit would
+    # be nice, but we'd have to call into bzrlib to check what files were
+    # modified/added or something.
 
-def cmd_extract_all(args):
-    if args:
-        print("Usage: extractall")
-        return
-
-    filenames = [fn for fn in os.listdir(STYLESHEET_CACHE_DIR) if fn.endswith(".css")]
-    filenames.sort()
-    subreddits = [fn.split(".")[0] for fn in filenames]
-
-    for sr in subreddits:
-        print("Extracting", sr)
+    for (i, sr) in enumerate(args.subreddits):
+        print("[%s/%s]: %s" % (i+1, len(args.subreddits), sr))
         # TODO: Don't hardcode relative paths...
         subprocess.call(["./bpextract.py", ss_cache(sr + ".css"), "emotes/%s.yaml" % (sr)])
 
-def cmd_diff_emotes(args):
-    subreddit = get_opt_arg(args, "Usage: diffemotes <subreddit>")
-    if subreddit:
-        subprocess.Popen(["kompare", "emotes/%s.yaml" % (subreddit), "emote-updates/%s.yaml" % (subreddit)])
+def cmd_diffcss(args):
+    parser = argparse.ArgumentParser(description="Run diff program on CSS cache", prog="diffcss")
+    args = parser.parse_args(args)
 
-def cmd_resolve_emotes(args):
-    subreddit = get_opt_arg(args, "Usage: resolveemotes <subreddit>")
-    if subreddit:
-        shutil.move("emote-updates/%s.yaml" % (subreddit), "emotes/%s.yaml" % (subreddit))
+    p1 = subprocess.Popen(["bzr", "diff", STYLESHEET_CACHE_DIR], stdout=subprocess.PIPE)
+    p2 = subprocess.Popen(["kompare", "-"], stdin=p1.stdout)
+
+def cmd_diffemotes(args):
+    parser = argparse.ArgumentParser(description="Run diff program on emotes", prog="diffemotes")
+    args = parser.parse_args(args)
+
+    p1 = subprocess.Popen(["bzr", "diff", "emotes"], stdout=subprocess.PIPE)
+    p2 = subprocess.Popen(["kompare", "-"], stdin=p1.stdout)
+
+def cmd_commitcss(args):
+    parser = argparse.ArgumentParser(description="Commit CSS cache", prog="commitcss")
+    args = parser.parse_args(args)
+
+    subprocess.call(["bzr", "commit", STYLESHEET_CACHE_DIR, "-m", time.strftime("Stylesheet updates %Y-%m-%d")])
 
 Commands = {
     "help": cmd_help,
-    "quit": cmd_quit,
     "list": cmd_list,
-    "diffcss": cmd_diff_css, "dc": cmd_diff_css,
-    "edit": cmd_edit,
-    "resolvecss": cmd_resolve_css, "rc": cmd_resolve_css,
     "update": cmd_update,
     "extract": cmd_extract,
-    "extractall": cmd_extract_all,
-    "diffemotes": cmd_diff_emotes, "de": cmd_diff_emotes,
-    "resolveemotes": cmd_resolve_emotes, "re": cmd_resolve_emotes,
+    "diffcss": cmd_diffcss,
+    "diffemotes": cmd_diffemotes,
+    "commitcss": cmd_commitcss,
     }
 
 def run_command(args):
@@ -179,7 +151,11 @@ def run_interactive():
             continue
 
         args = line.split()
-        run_command(args)
+        try:
+            run_command(args)
+        except SystemExit:
+            # Pesky argparse can't be made to stop doing this
+            pass
 
 def main():
     if len(sys.argv) > 1:

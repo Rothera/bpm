@@ -15,7 +15,9 @@ __all__ = ["convert_spritesheet_map", "EmoteFile", "Spritesheet"]
 import bplib.emote
 
 def _sort_emotes(emotes):
-    return sorted(emotes, key=lambda e: e.name_pair)
+    # Sorting by name_pair would be preferable, but suffix is usually None,
+    # which can't be compared with strings.
+    return sorted(emotes, key=lambda e: e.name)
 
 def convert_spritesheet_map(data):
     return [Spritesheet.load(image_url, ss_data) for (image_url, ss_data) in data.items()]
