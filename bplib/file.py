@@ -10,10 +10,15 @@
 ##
 ################################################################################
 
+__all__ = ["convert_spritesheet_map", "EmoteFile", "Spritesheet"]
+
 import bplib.emote
 
 def _sort_emotes(emotes):
     return sorted(emotes, key=lambda e: e.name_pair)
+
+def convert_spritesheet_map(data):
+    return [Spritesheet.load(image_url, ss_data) for (image_url, ss_data) in data.items()]
 
 class EmoteFile:
     def __init__(self, name, display_name, custom_emotes, spritesheets):
@@ -24,9 +29,9 @@ class EmoteFile:
 
         self.emotes = custom_emotes.copy()
         for spritesheet in spritesheets:
-            self._add_spritesheet(spritesheet)
+            self.add_spritesheet(spritesheet)
 
-    def _add_spritesheet(self, spritesheet):
+    def add_spritesheet(self, spritesheet):
         for name_pair in spritesheet.emotes:
             assert name_pair not in self.emotes
         self.emotes.update(spritesheet.emotes)
@@ -37,12 +42,13 @@ class EmoteFile:
         name = meta.pop("Name")
         display_name = meta.pop("DisplayName")
 
+        emotes = data.pop("Emotes")
         customs = {}
-        for custom_data in data.pop("Custom"):
+        for custom_data in emotes.pop("Custom"):
             emote = bplib.emote.CustomEmote.load(custom_data)
             customs[emote.name_pair] = emote
 
-        spritesheets = [Spritesheet.load(ss_data) for ss_data in data.pop("Spritesheets")]
+        spritesheets = convert_spritesheet_map(emotes.pop("Spritesheets"))
         return cls(name, display_name, customs, spritesheets)
 
     def dump(self):

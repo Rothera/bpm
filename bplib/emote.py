@@ -55,7 +55,7 @@ class CustomEmote(Emote):
     def load(cls, data):
         name = data.pop("Name")
         suffix = data.pop("Suffix", None)
-        css = data.pop("CSS", None)
+        css = data.pop("CSS", {})
         is_nsfw = data.pop("NSFW", False)
         custom_selector = data.pop("Selector", None)
         return cls(name, suffix, css, is_nsfw, custom_selector)
@@ -75,6 +75,9 @@ class CustomEmote(Emote):
 
         return data
 
+    def to_css(self):
+        return self.css.copy()
+
 # For lack of a better name
 class NormalEmote(Emote):
     def __init__(self, name, suffix, css, image_url, size, offset,
@@ -89,7 +92,7 @@ class NormalEmote(Emote):
     def load(cls, image_url, data):
         name = data.pop("Name")
         suffix = data.pop("Suffix", None)
-        css = data.pop("CSS", None)
+        css = data.pop("CSS", {})
         is_nsfw = data.pop("NSFW", False)
         custom_selector = data.pop("Selector", None)
         size = data.pop("Size")
@@ -114,3 +117,17 @@ class NormalEmote(Emote):
             data["Selector"] = self.custom_selector
 
         return data
+
+    def to_css(self):
+        assert not self.disable_css_gen
+        css = {
+            "display": "block",
+            "clear": "none",
+            "float": "left",
+            "background-image": "url(%s)" % (self.image_url),
+            "width": "%spx" % (self.size[0]),
+            "height": "%spx" % (self.size[1]),
+            "background-position": "%spx %spx" % (self.offset[0], self.offset[1])
+            }
+        css.update(self.css)
+        return css
