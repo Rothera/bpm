@@ -873,6 +873,18 @@ a[href|="/vshnngg"], a[href|="/hnnng"] {
     background-position: -0px -0px
     }
 /* 4: OTHER THINGS*/
+/* Hide emoticon tables in the sidebar  */
+.titlebox em {
+    color: white
+    }
+.titlebox table {
+    display: none;
+    clear: both
+    }
+div.usertext-body:hover table {
+    display: block;
+    clear: both
+    }
 /* A: APPROVAL TWILIGHT*/
 .approval-checkmark {
     height: 0px;
