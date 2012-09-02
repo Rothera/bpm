@@ -66,7 +66,7 @@ def cmd_update(args):
     args = parser.parse_args(args)
 
     if not args.subreddits:
-        filenames = [fn for fn in sorted(os.listdir(STYLESHEET_CACHE_DIR)) if fn.endswith(".css")]
+        filenames = [fn for fn in sorted(os.listdir("stylesheets")) if fn.endswith(".css")]
         filenames.sort()
         subreddits = [fn.split(".")[0] for fn in filenames]
     else:

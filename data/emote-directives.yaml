@@ -103,6 +103,8 @@ Directives:
     # Weird space things, which are broken in BPM anyway
     - [Remove, /0x10]
     - [Remove, /10x0]
+    # Broken with weird properties. Don't have a way to fix it yet.
+    - [Remove, /rscheer]
   r_seriouslyluna:
     - [SetSelector, /seriouslyGDB, bpmote-seriouslygdb]
     - [DisableCSS, /seriouslyGDB]
@@ -261,3 +263,10 @@ Merge:
     - Name: /orangered
       Offset: [-62, -570]
       Size: [15, 10]
+
+  r_mylittlesh:
+    # Edited version
+    http://d.thumbs.redditmedia.com/3hErANn4rqVDeXao.png:
+      - Name: /rscheer
+        Offset: [0, 0]
+        Size: [175, 175]
