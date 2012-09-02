@@ -24,6 +24,21 @@ Emote search/picker:
 
   - Integrate.
 
+Emote search:
+  - A full-fledged builtin emote listing/browsing tool, implemented as something
+    like a tab on the options page. Firefox lets us have multiple buttons, but
+    on Chrome and Opera all we have is the "Options"/"Preferences" links. Would
+    be nice if we could make them actually separate pages, but that may not be
+    possible.
+
+    On the left would be column with each subreddit listed, perhaps with the
+    number of emotes it has in parens. The rest of the page would be dedicated
+    to listing, searching, and browsing emotes.
+
+    Categorizing emotes is a difficult idea. We could go by spritesheet (assign
+    unique ID's), but that's not always reliable. Tagging would be better (if
+    that goes anywhere), but a lot of work.
+
 General TODO:
   - Find a better way to handle data files (including emote-map.js) in Opera.
     "make" and file.read() is awful.
