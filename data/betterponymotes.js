@@ -193,7 +193,7 @@ switch(platform) {
 // Checks whether the given element has a parent with the given ID. The element
 // itself does not count.
 function hasParentWithId(element, id) {
-    if(element.parentNode != null) {
+    if(element.parentNode !== null) {
         if(element.parentNode.id == id) {
             return true;
         } else {
@@ -395,7 +395,7 @@ function enable_drag(element, start_callback, callback) {
     }, false);
 }
 
-function setup_search() {
+function setup_search(prefs, sr_array) {
     inject_search_html();
 
     // Close it on demand
@@ -431,26 +431,43 @@ function setup_search() {
             count_element.textContent = "";
             return;
         }
+
         var results = [];
         for(var emote in emote_map) {
             if(emote.toLowerCase().indexOf(search_element.value.toLowerCase()) != -1) {
                 results.push(emote);
             }
         }
-        count_element.textContent = results.length + " results";
         results.sort();
+
         var html = "";
+        var shown = 0, hidden = 0;
         for(var i = 0; i < results.length; i++) {
-            // TODO: filter nsfw and disabled emotes out where appropriate
-            // ALSO TODO: add option to instead add the usual placeholders
-            var class_name = "bpmote-" + sanitize(results[i].slice(1));
-            // Where did I go wrong?
-            var subreddit_name = sr_data[sr_id_map[emote_map[results[i]][1]]][0];
+            var emote_name = results[i];
+            var emote_info = emote_map[emote_name];
+            var is_nsfw = emote_info[0];
+            var source_id = emote_info[1];
+
+            if(!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW)) {
+                // TODO: enable it anyway if a pref is set? Dunno what exactly
+                // we'd do
+                hidden += 1;
+                continue;
+            } else {
+                shown += 1;
+            }
+
+            // Strip off leading "/".
+            var class_name = "bpmote-" + sanitize(emote_name.slice(1));
+            var source_name = sr_data[sr_id_map[source_id]][0];
+
             // Use <span> so there's no chance of emote parse code finding
             // this
-            html += "<span class=\"bpm-result " + class_name + "\" title=\"From " + subreddit_name + "\">" + results[i] + "</span>";
+            html += "<span class=\"bpm-result " + class_name + "\" title=\"From " + source_name + "\">" + emote_name + "</span>";
         }
+
         results_element.innerHTML = html;
+        count_element.textContent = shown + " results" + (hidden ? " (" + hidden + " hidden)" : "");
     }
 
     // Listen for clicks
@@ -612,6 +629,6 @@ window.addEventListener("DOMContentLoaded", function() {
                 break;
         }
 
-        setup_search();
+        setup_search(prefs, sr_array);
     });
 }, false);
