@@ -440,6 +440,11 @@ function setup_search(prefs, sr_array) {
         }
         results.sort();
 
+        // We go through all of the results regardless of search limit (as that
+        // doesn't take very long), but stop building HTML when we reach enough
+        // shown emotes.
+        //
+        // As a result, NSFW/disabled emotes don't count toward the result.
         var html = "";
         var shown = 0, hidden = 0;
         for(var i = 0; i < results.length; i++) {
@@ -452,6 +457,10 @@ function setup_search(prefs, sr_array) {
                 // TODO: enable it anyway if a pref is set? Dunno what exactly
                 // we'd do
                 hidden += 1;
+                continue;
+            }
+
+            if(shown >= prefs.searchLimit) {
                 continue;
             } else {
                 shown += 1;
@@ -467,7 +476,16 @@ function setup_search(prefs, sr_array) {
         }
 
         results_element.innerHTML = html;
-        count_element.textContent = shown + " results" + (hidden ? " (" + hidden + " hidden)" : "");
+
+        var hit_limit = shown + hidden < results.length;
+        // Format text: "X results (out of N, Y hidden)"
+        var text = shown + " results";
+        if(hit_limit || hidden) { text += " ("; }
+        if(hit_limit)           { text += "out of " + results.length; }
+        if(hit_limit && hidden) { text += ", "; }
+        if(hidden)              { text += hidden + " hidden"; }
+        if(hit_limit || hidden) { text += ")"; }
+        count_element.textContent = text;
     }
 
     // Listen for clicks

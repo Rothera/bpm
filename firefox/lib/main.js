@@ -26,7 +26,8 @@ if(!storage.prefs) {
         "enableNSFW": false,
         "enableExtraCSS": true,
         "enabledSubreddits": {},
-        "showUnknownEmotes": true
+        "showUnknownEmotes": true,
+        "searchLimit": 200
     };
 
     if(simple_prefs.prefs.enableNSFW !== undefined) {
@@ -49,6 +50,10 @@ for(var sr in sr_data.sr_data) {
 
 if(storage.prefs.showUnknownEmotes === undefined) {
     storage.prefs.showUnknownEmotes = true;
+}
+
+if(storage.prefs.searchLimit === undefined) {
+    storage.prefs.searchLimit = 200;
 }
 
 // Setup communication with prefs page

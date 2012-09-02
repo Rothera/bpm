@@ -15,7 +15,8 @@ if(localStorage.prefs === undefined) {
         "enableNSFW": false,
         "enableExtraCSS": true,
         "enabledSubreddits": {},
-        "showUnknownEmotes": true
+        "showUnknownEmotes": true,
+        "searchLimit": 200
     };
 } else {
     prefs = JSON.parse(localStorage.prefs);
@@ -33,6 +34,10 @@ for(var sr in sr_data) {
 
 if(prefs.showUnknownEmotes === undefined) {
     prefs.showUnknownEmotes = true;
+}
+
+if(prefs.searchLimit === undefined) {
+    prefs.searchLimit = 200;
 }
 localStorage.prefs = JSON.stringify(prefs);
 

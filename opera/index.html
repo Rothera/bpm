@@ -14,7 +14,8 @@
             "enableNSFW": false,
             "enableExtraCSS": true,
             "enabledSubreddits": {},
-            "showUnknownEmotes": true
+            "showUnknownEmotes": true,
+            "searchLimit": 200
         };
     } else {
         prefs = JSON.parse(localStorage.prefs);
@@ -32,6 +33,10 @@
 
     if(prefs.showUnknownEmotes === undefined) {
         prefs.showUnknownEmotes = true;
+    }
+
+    if(prefs.searchLimit === undefined) {
+        prefs.searchLimit = 200;
     }
     localStorage.prefs = JSON.stringify(prefs);
 
