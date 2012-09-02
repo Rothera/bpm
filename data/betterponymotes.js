@@ -528,26 +528,42 @@ function setup_search(prefs, sr_array) {
     });
 }
 
-function inject_search_button(anchors) {
-    for(var i = 0; i < anchors.length; i++) {
+function wire_emotes_button(button) {
+    button.addEventListener("mouseover", function(event) {
+        grab_current_form();
+    }, false);
+
+    button.addEventListener("click", function(event) {
+        document.getElementById("bpm-search-box").style.visibility = "visible";
+        // FIXME: check if this is necessary
+        //event.stopPropagation();
+        //return false;
+    }, false);
+}
+
+function inject_search_button(spans) {
+    for(var i = 0; i < spans.length; i++) {
         // Matching the "formatting help" button is tricky- there's no great
         // way to find it. This seems to work, but I expect false positives from
         // reading the Reddit source code.
-        if(anchors[i].className.indexOf("help-toggle") > -1) {
-            var button = document.createElement("button");
-            button.setAttribute("type", "button"); // Default is "submit"; not good
-            button.textContent = "emotes";
-            anchors[i].insertBefore(button, anchors[i].firstChild);
-
-            button.addEventListener("mouseover", function(event) {
-                grab_current_form();
-            }, false);
-
-            button.addEventListener("click", function(event) {
-                document.getElementById("bpm-search-box").style.visibility = "visible";
-                event.stopPropagation();
-                return false;
-            }, false);
+        if(spans[i].className.indexOf("help-toggle") > -1) {
+            var existing = spans[i].getElementsByClassName("bpm-search-toggle");
+            /*
+             * Reddit's JS uses cloneNode() when making reply forms. As such,
+             * we need to be able to handle two distinct cases- wiring up the
+             * top-level reply box that's there from the start, and wiring up
+             * clones of that form with our button already in it.
+             */
+            if(existing.length) {
+                wire_emotes_button(existing[0]);
+            } else {
+                var button = document.createElement("button");
+                button.setAttribute("type", "button"); // Default is "submit"; not good
+                button.className = "bpm-search-toggle";
+                button.textContent = "emotes";
+                wire_emotes_button(button);
+                spans[i].insertBefore(button, spans[i].firstChild);
+            }
         }
     }
 }
@@ -577,6 +593,7 @@ window.addEventListener("DOMContentLoaded", function() {
         var sr_array = make_sr_array(prefs);
         // Initial pass- show all emotes currently on the page.
         process(prefs, sr_array, document.getElementsByTagName("a"));
+        setup_search(prefs, sr_array);
         // Find the one reply box that's there on page load
         inject_search_button(document.getElementsByTagName("span"));
 
@@ -628,7 +645,5 @@ window.addEventListener("DOMContentLoaded", function() {
                 }, false);
                 break;
         }
-
-        setup_search(prefs, sr_array);
     });
 }, false);

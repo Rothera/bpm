@@ -1,31 +1,32 @@
 {
     "background": {
         "page": "background.html"
-    }, 
+    },
     "content_scripts": [
         {
             "js": [
-                "mutation_summary.js", 
-                "emote-map.js", 
-                "sr-data.js", 
+                "mutation_summary.js",
+                "emote-map.js",
+                "sr-data.js",
                 "betterponymotes.js"
-            ], 
+            ],
             "matches": [
-                "*://*.reddit.com/*"
-            ], 
+                "*://*.reddit.com/*",
+                "http://nallar.me/redditTest.html"
+            ],
             "run_at": "document_start"
         }
-    ], 
-    "description": "View Reddit ponymotes across the site", 
-    "manifest_version": 2, 
-    "name": "Better Ponymotes", 
-    "options_page": "options.html", 
-    "update_url": "http://rainbow.mlas1.us/chrome-updates.xml", 
-    "version": "10.33", 
+    ],
+    "description": "View Reddit ponymotes across the site",
+    "manifest_version": 2,
+    "name": "Better Ponymotes",
+    "options_page": "options.html",
+    "update_url": "http://rainbow.mlas1.us/chrome-updates.xml",
+    "version": "10.33",
     "web_accessible_resources": [
-        "bpmotes.css", 
-        "emote-classes.css", 
-        "combiners.css", 
+        "bpmotes.css",
+        "emote-classes.css",
+        "combiners.css",
         "extracss.css"
     ]
 }
