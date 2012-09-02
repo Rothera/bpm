@@ -1,12 +1,7 @@
 Emote search/picker:
-  - Fix it for the new emote-map changes.
-    - Consider how nsfw emotes will work with this- will the standard CSS
-      catch them? We may need to ensure bpm-nsfw gets applied.
-    - Speaking of applying CSS, think about ensuring the core emote code
-      doesn't touch it. Either that or make sure it does- might be simpler.
+  - Make search an "and" for each space-separated keyword.
 
-  - Make search an "and" for everything in spaces. Either that or an "or".
-    Maybe even an option; I dunno. Search syntax would probably be overkill.
+  - sr:mylittlewtf subreddit syntax. Multiple subreddits would be an OR.
 
   - Prefs for its position/size. Make icons icons. Esc button to close.
   - Make default position "not lousy then" (calculate defaults based on window size)

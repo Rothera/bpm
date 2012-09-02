@@ -338,6 +338,9 @@ function inject_search_html() {
     resize_element = document.createElement("span");
 
     search_box_element.id = "bpm-search-box";
+    // Hack to make key presses work. Reddit seems to use this index in several
+    // places.
+    search_box_element.tabIndex = 100;
     toprow_element.id = "bpm-toprow";
     dragbox_element.id = "bpm-dragbox";
     search_element.id = "bpm-search";
@@ -379,19 +382,16 @@ function enable_drag(element, start_callback, callback) {
         start_y = event.clientY;
         dragging = true;
         start_callback();
-        return false;
     }, false);
 
     window.addEventListener("mouseup", function(event) {
         dragging = false;
-        return false;
     }, false);
 
     window.addEventListener("mousemove", function(event) {
         if(dragging) {
             callback(start_x, start_y, event.clientX, event.clientY)
         }
-        return false;
     }, false);
 }
 
@@ -409,6 +409,14 @@ function setup_search(prefs, sr_array) {
      */
     search_box_element.addEventListener("mouseover", function(event) {
         grab_current_form();
+    }, false);
+
+    // Another way to close it
+    search_box_element.addEventListener("keyup", function(event) {
+        // Escape key
+        if(event.keyCode == 27) {
+            search_box_element.style.visibility = "hidden";
+        }
     }, false);
 
     // Listen for keypresses and adjust search results. Delay 500ms after
@@ -472,7 +480,7 @@ function setup_search(prefs, sr_array) {
 
             // Use <span> so there's no chance of emote parse code finding
             // this
-            html += "<span class=\"bpm-result " + class_name + "\" title=\"From " + source_name + "\">" + emote_name + "</span>";
+            html += "<span class=\"bpm-result " + class_name + "\" title=\"" + emote_name + " from " + source_name + "\">" + emote_name + "</span>";
         }
 
         results_element.innerHTML = html;

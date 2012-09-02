@@ -56,11 +56,10 @@
 /* Container */
 #bpm-search-box {
     position: fixed;
-    background-color: #E0E0E0;
     width: 600px;
     height: 450px;
-    border: solid #B0B0B0;
-    border-radius: 20px;
+    background-color: #E8E8E8;
+    border: thin solid black;
     top: 400px;
     left: 500px;
     z-index: 900; /* RES uses 1000 for its console drop-down, so lets stay under that */
@@ -119,10 +118,12 @@
 /* Search result container */
 #bpm-search-results {
     margin: 20px !important; /* Override reddit */
+    background-color: white;
     font-size: xx-small;
     font-family: monospace;
     overflow-y: auto;
-    height: 360px; /* #bpm-search-box height - #bpm-toprow height - margins*3 */
+    height: 352px; /* #bpm-search-box height - #bpm-toprow height - margins*3 - padding*2 */
+    padding: 4px !important;
 }
 
 /* Bottom-right resize box */
