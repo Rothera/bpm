@@ -12,8 +12,9 @@
  * CSS for the addon itself.
  */
 
-/* Unknown emotes */
-.bpm-unknown {
+/* Placeholders */
+
+.bpm-unknown, .bpm-disabled, .bpm-nsfw {
     /* Emote common */
     display: block;
     clear: none;
@@ -22,9 +23,6 @@
     /* An average, small emote (70px with padding) */
     width: 60px;
     height: 60px;
-
-    background-color: slategray;
-    border-radius: 10px;
 
     /*
      * Need !important tags to override Reddit's CSS.
@@ -35,49 +33,115 @@
     padding: 5px;
 }
 
+/* Unknown emote placeholder */
+.bpm-unknown {
+    background-color: slategray;
+    border-radius: 10px;
+}
+
 /* Disabled emote placeholder */
 .bpm-disabled {
-    /* Emote common */
-    display: block;
-    clear: none;
-    float: left;
-
-    /* An average, small emote (70px with padding) */
-    width: 60px;
-    height: 60px;
-
     background-color: #DA4F49;
     border-radius: 10px;
-
-    color: white !important;
-    font-style: monospace;
-    font-size: xx-small;
-    padding: 5px;
 }
 
 /* NSFW emote placeholder */
 .bpm-nsfw {
-    /* Emote common */
-    display: block;
-    clear: none;
-    float: left;
-
-    /* An average, small emote (70px with padding) */
-    width: 60px;
-    height: 60px;
-
     background-color: black;
     border-radius: 10px;
-
-    color: white !important;
-    font-style: monospace;
-    font-size: xx-small;
-    padding: 5px;
 }
 
-/*
- * Misc bits of CSS, stolen from various subreddits.
- */
+/* Emote search CSS */
+
+/* Container */
+#bpm-search-box {
+    position: absolute;
+    background-color: #E0E0E0;
+    width: 600px;
+    height: 450px;
+    border: solid #B0B0B0;
+    border-radius: 20px;
+    top: 400px;
+    left: 500px;
+    z-index: 10; /* RES uses 1000 for its console drop-down, so lets stay under that */
+    visibility: hidden; /* by default */
+}
+
+/* Top row widget container */
+#bpm-toprow {
+    margin: 20px !important; /* Override reddit */
+    height: 30px;
+}
+
+/* Top-left drag box */
+#bpm-dragbox {
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    display: inline-block;
+    margin-right: 20px;
+    float: left;
+}
+
+/* Search input */
+#bpm-search {
+    /* Ensure 30px high */
+    border-width: 2px;
+    padding: 4px;
+    height: 18px;
+    /*width: 20em;*/
+    width: 240px;
+    padding: 5px !important; /* Override reddit */
+    margin-right: 20px !important; /* Override reddit */
+    float: left;
+}
+
+/* Result count element */
+#bpm-result-count {
+    color: gray;
+    font-style: italic;
+    font-weight: lighter;
+    height: 30px;
+    line-height: 30px; /* Ugly way to vertically center text */
+    float: left;
+}
+
+/* Close button */
+#bpm-close {
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-left: 20px;
+    float: right;
+}
+
+/* Search result container */
+#bpm-search-results {
+    margin: 20px !important; /* Override reddit */
+    font-size: xx-small;
+    font-family: monospace;
+    overflow-y: auto;
+    height: 360px; /* #bpm-search-box height - #bpm-toprow height - margins*3 */
+}
+
+/* Bottom-right resize box */
+#bpm-resize {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    display: inline-block;
+    float: right;
+    margin-top: -20px;
+}
+
+/* Emote search result */
+.bpm-result {
+    border: solid black thin;
+    margin: 1px;
+}
+
+/* Misc emote flags, stolen from various subreddits. */
 
 .bpflag-in, .bpflag-inp {
     float: none !important;

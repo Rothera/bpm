@@ -1,7 +1,4 @@
 Emote search/picker:
-  - Figure out where we left off. I don't remember whether or not we had
-    something left over to do.
-
   - Fix it for the new emote-map changes.
     - Consider how nsfw emotes will work with this- will the standard CSS
       catch them? We may need to ensure bpm-nsfw gets applied.
@@ -11,18 +8,7 @@ Emote search/picker:
   - Make search an "and" for everything in spaces. Either that or an "or".
     Maybe even an option; I dunno. Search syntax would probably be overkill.
 
-  - Add a way to close it. Since we'll be putting in an "open it up" button,
-    it can just go away entirely.
-
-  - Implement a hover/click control to bring it up again.
-
-  - Add drag&drop support to move it around with.
-
-  - Add resizing capability?
-
   - Prefs for its position/size. Anything else?
-
-  - Integrate.
 
 General TODO:
   - Find a better way to handle data files (including emote-map.js) in Opera.
@@ -61,6 +47,8 @@ General TODO:
 Misc:
   - Make bpextract/bpgen share as much code as possible. Make formal objects for
     EVERYTHING, with strictly-validating create/save/load methods.
+
+  - Replace all setAttribute() calls with actual attributes...
 
 Update process:
   - $ bin/version.py set -v [...]
