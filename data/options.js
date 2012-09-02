@@ -64,11 +64,13 @@ function run() {
     var enable_nsfw = document.getElementById("enableNSFW");
     var enable_extracss = document.getElementById("enableExtraCSS");
     var show_unknown_emotes = document.getElementById("showUnknownEmotes");
+    var search_limit = document.getElementById("searchLimit");
 
     // Initialize values from stored prefs
     enable_nsfw.checked = prefs.enableNSFW;
     enable_extracss.checked = prefs.enableExtraCSS;
     show_unknown_emotes.checked = prefs.showUnknownEmotes;
+    search_limit.value = prefs.searchLimit;
 
     // Listen for edits to the checkboxes
     function checkbox_pref(element, pref_name) {
@@ -81,6 +83,30 @@ function run() {
     checkbox_pref(enable_nsfw, "enableNSFW");
     checkbox_pref(enable_extracss, "enableExtraCSS");
     checkbox_pref(show_unknown_emotes, "showUnknownEmotes");
+
+    // Listen to, and validate, edits to the search limit
+    search_limit.addEventListener("input", function() {
+        // Forbid negatives. For that matter, we could probably reason that
+        // zeros don't make sense either, but whatever.
+        var limit = Math.max(parseInt(search_limit.value, 10), 0);
+        if(isNaN(limit)) {
+            // If the input is completely invalid (or missing), we reset it and
+            // pick the default.
+            limit = 200;
+            search_limit.value = "";
+        } else {
+            // Anything resembling a number we keep. Note that parseInt()
+            // ignores invalid characters after it gets a number, so this will
+            // effectively forbid non-integers.
+            //
+            // (As an edge case, inserting e.g. "x" into the middle of an
+            // otherwise valid number will truncate it.)
+            search_limit.value = limit;
+        }
+
+        prefs.searchLimit = limit;
+        browser.prefs_updated();
+    }, false);
 
     // Subreddit enabler
     var sr_list_element = document.getElementById("sr-list");
