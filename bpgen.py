@@ -55,6 +55,20 @@ def resolve_emotes(files, data):
             # Safer than deletion
             files[filename].emotes = {}
 
+    # Apply custom directives
+    for (filename, directives) in directive_map.items():
+        if filename not in files:
+            continue
+
+        for d in directives:
+            if isinstance(d, str):
+                op = d
+                args = ()
+            else:
+                op = d[0]
+                args = d[1:]
+            Directives[op](files[filename], *args)
+
     for (filename, spritesheets) in emote_merges.items():
         if filename not in files:
             continue
@@ -94,38 +108,23 @@ def resolve_emotes(files, data):
     for (name_pair, (old, new)) in conflicts.items():
         print("ERROR: CONFLICT between %s and %s over %s" % (old, new, name_pair))
 
-    # Apply custom directives
-    for (filename, directives) in directive_map.items():
-        if filename not in files:
-            continue
-
-        for d in directives:
-            if isinstance(d, str):
-                op = d
-                args = ()
-            else:
-                op = d[0]
-                args = d[1:]
-            Directives[op](emotes, files[filename], *args)
-
     return emotes
 
-def d_add_css(emotes, file, emote, css):
-    emotes[parse_emote(emote)].css.update(css)
+def d_add_css(file, emote, css):
+    file.emotes[parse_emote(emote)].css.update(css)
 
-def d_mark_nsfw(emotes, file, *es):
+def d_mark_nsfw(file, *es):
     for e in es:
         file.emotes[parse_emote(e)].is_nsfw = True
 
-def d_set_selector(emotes, file, emote, to):
+def d_set_selector(file, emote, to):
     assert file.emotes[parse_emote(emote)].custom_selector is None
     file.emotes[parse_emote(emote)].custom_selector = to
 
-def d_disable_css(emotes, file, emote):
+def d_disable_css(file, emote):
     file.emotes[parse_emote(emote)].disable_css_gen = True
 
-def d_remove_emote(emotes, file, emote):
-    del emotes[parse_emote(emote)]
+def d_remove_emote(file, emote):
     del file.emotes[parse_emote(emote)]
 
 def parse_emote(s):
