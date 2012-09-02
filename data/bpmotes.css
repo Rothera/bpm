@@ -55,7 +55,7 @@
 
 /* Container */
 #bpm-search-box {
-    position: absolute;
+    position: fixed;
     background-color: #E0E0E0;
     width: 600px;
     height: 450px;
@@ -63,7 +63,7 @@
     border-radius: 20px;
     top: 400px;
     left: 500px;
-    z-index: 10; /* RES uses 1000 for its console drop-down, so lets stay under that */
+    z-index: 900; /* RES uses 1000 for its console drop-down, so lets stay under that */
     visibility: hidden; /* by default */
 }
 

@@ -535,9 +535,6 @@ function wire_emotes_button(button) {
 
     button.addEventListener("click", function(event) {
         document.getElementById("bpm-search-box").style.visibility = "visible";
-        // FIXME: check if this is necessary
-        //event.stopPropagation();
-        //return false;
     }, false);
 }
 
@@ -627,8 +624,8 @@ window.addEventListener("DOMContentLoaded", function() {
                         inject_search_button(summaries[1].added);
                     },
                     queries: [
-                        {element: "a"},
-                        {element: "span"}
+                        {element: "a"}, // new emotes
+                        {element: "span"} // comment reply forms
                     ]});
                 break;
 
