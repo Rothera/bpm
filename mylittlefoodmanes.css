@@ -206,6 +206,14 @@ a[href|="/floutsy"] {
     height: 290px;
     width: 277px
     }
+a[href|="/conkystalker"] {
+    background-image: url(http://b.thumbs.redditmedia.com/ozRypIMSgviAyUSO.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 377px;
+    width: 460px
+    }
 a[href|="/hitmonmatt"] {
     background-image: url(http://a.thumbs.redditmedia.com/1vuk-QQ4ki8K7ZFB.png) !important;
     clear: none;
@@ -848,3 +856,13 @@ a[href|="/macinmane"] {
     }
 
 */
+/*** Nightmode fixes for the background ***/
+.content #siteTable div[onclick="click_thing(this)"] {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type > .content {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type {
+    background-color: transparent !important
+    }

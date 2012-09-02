@@ -1,8 +1,4 @@
 /* http://pastebin.com/wKXNqF9j  http://imgur.com/a/XJxbi#0 <- old emote stuffs */
-/* Hiding my name in the modbox. */
-.sidecontentbox a.author[href$="/derram_2"] {
-    display: none
-    }
 /* SHit bro, let's do CSS 
 body {
     background: url(%%bg2%%) no-repeat fixed left bottom transparent
@@ -328,388 +324,104 @@ a.author[href$="/RetardVomitPussyCunt"]:after {
 /* 2: FLAIRS */
 /* A: FLAIR */
 .flair {
-    font-size: x-small;
-    border-radius: 10px;
-    border: 1px solid #E6E6E6
+    display: inline-block;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    font-weight: 700
     }
-.flair-vinyl {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-awesome {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-scratchie {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-marine {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-twp {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-glasses {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-brokenrecord {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-doll {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-filly {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-graffiti {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-headphones {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-huggingrecord {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-huggingtail {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-laying {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-nerdy {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-parasprite {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-shrug {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-socks {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-sockssmile {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-stare {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-sweaterdirty {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-tallvinyl {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-taviscratch {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-watch {
-    padding: 1px 4px 1px 4px !important
-    }
-.flair-wut {
-    padding: 1px 4px 1px 4px !important
-    }
-/* i  : RES NIGHTMODE FLAIR FIX */
-.res-nightmode .content .flair {
-    background-color: transparent !important
-    }
-/* ii : VINYL*/
-.flair-vinyl:before {
+.flair:before {
+    background-image: url(http://b.thumbs.redditmedia.com/KIb85Qwk2DL6B3Ts.png);
+    background-position: 0px 0px;
     content: "";
+    display: inline-block;
     width: 16px;
     height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://d.thumbs.redditmedia.com/VxpK_IZnPwIg833c.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
+    background-repeat: no-repeat
     }
-/* iii: AWESOME*/
-.flair-awesome:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://b.thumbs.redditmedia.com/IoQLkJlQWWEP9d0m.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* iv : SCRATCHIE*/
-.flair-scratchie:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://c.thumbs.redditmedia.com/AFFnXwu6smOpeGlD.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* v  : MARINE*/
-.flair-marine:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://a.thumbs.redditmedia.com/4WCHnbUhlYQQSOuH.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* vi  : TWEET*/
-.flair-twp:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://f.thumbs.redditmedia.com/EYEEDdzjxi3pi7-k.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* vii  : GLASSES*/
 .flair-djabe:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://d.thumbs.redditmedia.com/HSmeBr0xhLj6FwPE.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
+    background-position: -0px -2px
     }
-/* viii  : BROKEN RECORD*/
-.flair-brokenrecord:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://d.thumbs.redditmedia.com/o00cL9mnWA9Cwlv-.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* ix  : DOLL*/
-.flair-doll:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://b.thumbs.redditmedia.com/xeyhcfOZJvEtpXsO.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* x  : FILLY*/
-.flair-filly:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://f.thumbs.redditmedia.com/7hYJpf0Ked47VZRq.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* xi  : GRAFFITI*/
-.flair-graffiti:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://d.thumbs.redditmedia.com/p_OTYHRMl3GRB92u.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* xii  : HEADPHONES*/
-.flair-headphones:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://c.thumbs.redditmedia.com/HznAjVXHSSU_K3TP.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* xiii  : HUGGING RECORD*/
-.flair-huggingrecord:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://a.thumbs.redditmedia.com/Xb96sHrPkJeUJhxl.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* xiv  : HUGGING TAIL*/
-.flair-huggingtail:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://b.thumbs.redditmedia.com/UpjXcHuOCdhXKLRs.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* xv  : LAYING*/
-.flair-laying:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://e.thumbs.redditmedia.com/PnlIHzg-3L8hZOKF.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* xvi  : NERDY*/
-.flair-nerdy:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://d.thumbs.redditmedia.com/-WJDd8C6K6echG3E.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* xvii  : PARASPRITE*/
-.flair-parasprite:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://e.thumbs.redditmedia.com/n1RvBo9AAKHVUGNp.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
-    }
-/* xviii  : SHRUG*/
 .flair-shrug:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://e.thumbs.redditmedia.com/b5wWG0k2TIzw5kFL.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
+    background-position: -0px -20px
     }
-/* xix  : SOCKS*/
+.flair-awesome:before {
+    background-position: -0px -38px
+    }
+.flair-brokenrecord:before {
+    width: 20px;
+    height: 22px;
+    background-position: -0px -56px
+    }
+.flair-marine:before {
+    background-position: -0px -80px
+    }
+.flair-doll:before {
+    background-position: -0px -98px
+    }
+.flair-filly:before {
+    background-position: -0px -116px
+    }
+.flair-vinyl:before {
+    background-position: -0px -134px
+    }
+.flair-flair:before {
+    background-position: -0px -134px
+    }
+.flair-graffiti:before {
+    background-position: -0px -152px
+    }
+.flair-headphones:before {
+    background-position: -0px -170px
+    }
+.flair-huggingrecord:before {
+    background-position: -0px -188px
+    }
+.flair-huggingtail:before {
+    background-position: -0px -206px
+    }
+.flair-laying:before {
+    background-position: -0px -224px
+    }
+.flair-nerdy:before {
+    background-position: -0px -242px
+    }
+.flair-parasprite:before {
+    background-position: -0px -260px
+    }
+.flair-scratchie:before {
+    background-position: -0px -278px
+    }
 .flair-socks:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://a.thumbs.redditmedia.com/ria7n3ZqrIOLC9mr.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
+    background-position: -0px -296px
     }
-/* xx  : SOCKS SMILE*/
 .flair-sockssmile:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://d.thumbs.redditmedia.com/p5fP3oOKJB3zcQgo.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
+    background-position: -0px -314px
     }
-/* xxi  : STARE*/
 .flair-stare:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://b.thumbs.redditmedia.com/A0Osb_RcQx7ClWQa.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
+    background-position: -0px -332px
     }
-/* xxii  : SWEATER DIRTY*/
 .flair-sweaterdirty:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://a.thumbs.redditmedia.com/sWTL1DvL6yOh8P2l.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
+    background-position: -0px -350px
     }
-/* xxiii  : TALL VINYL*/
 .flair-tallvinyl:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://f.thumbs.redditmedia.com/oEUcYah8Euvy5bFS.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
+    background-position: -0px -368px
     }
-/* xxiv  : TAVISCRATCH*/
 .flair-taviscratch:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://b.thumbs.redditmedia.com/_y_6z_GbXEQeRGZm.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
+    background-position: -0px -386px
     }
-/* xxv  : WATCH*/
+.flair-twp:before {
+    background-position: -0px -404px
+    }
 .flair-watch:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://d.thumbs.redditmedia.com/Nq_aArQpxMuFc8Oi.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
+    background-position: -0px -422px
     }
-/* xxvi  : WUT*/
 .flair-wut:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(http://f.thumbs.redditmedia.com/ZYjBXqAs-rC3xsuw.png);
-    background-position: -0px -0px;
-    vertical-align: middle;
-    margin-right: 2px
+    background-position: -0px -440px
+    }
+/* Nightmode fix for flair */
+body.res-nightmode:first-of-type .flair {
+    background-color: transparent !important
     }
 /* 3: EMOTES */
 /* Don't modify the start and stop tags please. -koobaxion */
@@ -960,6 +672,9 @@ version 1.5.1
 
 because I tend to break it
 
+
+http://i.imgur.com/12XPI.png
+[derram]
 */
 div.titlebox .subscribers span.number:after {
     content: " Wubscribers"
