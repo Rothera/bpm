@@ -77,6 +77,8 @@ Misc:
   - Make bpextract/bpgen share as much code as possible. Make formal objects for
     EVERYTHING, with strictly-validating create/save/load methods.
 
+  - Merge /rsbf into mlas1 or something.
+
 Update process:
   - $ bin/version.py set -v [...]
   - $ rm build/*.{xpi,crx,oex} # Delete old versions
