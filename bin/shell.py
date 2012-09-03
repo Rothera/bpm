@@ -22,7 +22,6 @@ import time
 import urllib.request
 
 UA = "BetterPonymotes stylesheet update checker (1req/2.5secs; pm Typhos)"
-SESS = "reddit_session=9958622%2C2012-06-14T22%3A56%3A05%2C432b711c2f42ca0748d224c12c54ec2ed514cd7d"
 
 def cmd_help(args):
     parser = argparse.ArgumentParser(description="Print help text", prog="help")
@@ -40,7 +39,7 @@ def cmd_list(args):
     subprocess.call(["bzr", "status", "emotes"])
 
 def update_css(num, total, subreddit):
-    url = "http://reddit.com/r/%s/stylesheet?nocache=%s" % (subreddit, random.randrange(1000000))
+    url = "http://reddit.com/r/%s/stylesheet.css?nocache=%s" % (subreddit, random.randrange(1000000))
 
     try:
         old_ss = open("stylesheets/%s.css" % (subreddit), "rb").read()
@@ -50,7 +49,7 @@ def update_css(num, total, subreddit):
         old_ss = ""
 
     print("[%s/%s]: %s" % (num+1, total, url))
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Cookie": SESS})
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req) as stream:
         new_ss = stream.read()
 
