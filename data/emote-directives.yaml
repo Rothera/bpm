@@ -13,7 +13,9 @@ File Ignores:
 
 Sorting:
 - [r_mylittlepony, "*"]
-- [r_mylittleandysonic1, "*"] # This, unfortunately, resolves a lot of things implicitly...
+  # These, unfortunately, resolve a lot of things implicitly...
+- [r_mylittleandysonic1, "*"]
+- [r_mlas1emotes, "*"]
 - [r_futemotes, r_ponyanarchism]
 - [r_ainbowdash, r_dashiemotes]
 - [r_idliketobeatree, r_ainbowdash]
@@ -72,7 +74,8 @@ Directives:
   r_mylittleandysonic1:
     - [SetSelector, /ajFoF, bpmote-ajfof]
     - [DisableCSS, /ajFoF]
-    # /rcrossfire exists in r_mlas1 (unlike /sbf), so just correct it
+  r_mlas1emotes:
+    # /rcrossfire exists in r_mlas1emotes (unlike /sbf), so just correct it
     # instead of redefining it elsewhere
     - [AddCSS, /rcrossfire, {"-moz-transform": scaleX(-1), "-webkit-transform": scaleX(-1), "-o-transform": scaleX(-1), transform: scaleX(-1)}]
   r_mylittleanhero23:
