@@ -58,6 +58,10 @@ switch(platform) {
                 }
             },
 
+            prefs_updated: function() {
+                self.port.emit("set_prefs", this._pref_cache);
+            },
+
             apply_css: function(filename) {
                 // CSS is handled in main.js on Firefox
             }
@@ -85,6 +89,10 @@ switch(platform) {
                 } else {
                     this._pref_callbacks.push(callback);
                 }
+            },
+
+            prefs_updated: function() {
+                chrome.extension.sendMessage({"method": "set_prefs", "prefs": this._pref_cache});
             },
 
             apply_css: function(filename) {
@@ -150,6 +158,10 @@ switch(platform) {
                 } else {
                     this._pref_callbacks.push(callback);
                 }
+            },
+
+            prefs_updated: function() {
+                opera.extension.postMessage({"method": "set_prefs", "prefs": this._pref_cache});
             },
 
             apply_css: function(filename) {
@@ -390,7 +402,7 @@ function enable_drag(element, start_callback, callback) {
 
     window.addEventListener("mousemove", function(event) {
         if(dragging) {
-            callback(start_x, start_y, event.clientX, event.clientY)
+            callback(start_x, start_y, event.clientX, event.clientY);
         }
     }, false);
 }
@@ -531,26 +543,55 @@ function setup_search(prefs, sr_array) {
         }
     }, false);
 
+    // Set up default positions
+    search_box_element.style.left = prefs.searchBoxInfo[0] + "px";
+    search_box_element.style.top = prefs.searchBoxInfo[1] + "px";
+    search_box_element.style.width = prefs.searchBoxInfo[2] + "px";
+    search_box_element.style.height = prefs.searchBoxInfo[3] + "px";
+    // 98 is a magic value from the CSS.
+    // 98 = height(topbar) + margins(topbar) + margins(results) + padding(results)
+    //    = 20             + 30*2            + 30               + 8
+    results_element.style.height = prefs.searchBoxInfo[3] - 98 + "px"; // Styling
+
     // Enable dragging the window around
     var search_box_x, search_box_y;
     enable_drag(dragbox_element, function() {
-        search_box_x = parseInt(window.getComputedStyle(search_box_element).left, 10);
-        search_box_y = parseInt(window.getComputedStyle(search_box_element).top, 10);
+        search_box_x = parseInt(search_box_element.style.left, 10);
+        search_box_y = parseInt(search_box_element.style.top, 10);
+        console.log("sbx = " + search_box_x + ", sby = " + search_box_y);
     }, function(start_x, start_y, x, y) {
-        search_box_element.style.left = Math.max(x - start_x + search_box_x, 0) + "px";
-        search_box_element.style.top = Math.max(y - start_y + search_box_y, 0) + "px";
+        // Don't permit it to move out the left/top side of the window
+        var sb_left = Math.max(x - start_x + search_box_x, 0);
+        var sb_top = Math.max(y - start_y + search_box_y, 0);
+
+        search_box_element.style.left = sb_left + "px";
+        search_box_element.style.top = sb_top + "px";
+
+        prefs.searchBoxInfo[0] = sb_left;
+        prefs.seachBoxInfo[1] = sb_top;
+        browser.prefs_updated(); // FIXME: this will be called way too often
     });
 
     // Enable dragging the resize element around (i.e. resizing it)
     var search_box_width, search_box_height, results_height;
     enable_drag(resize_element, function() {
-        search_box_width = parseInt(window.getComputedStyle(search_box_element).width, 10);
-        search_box_height = parseInt(window.getComputedStyle(search_box_element).height, 10);
-        results_height = parseInt(window.getComputedStyle(results_element).height, 10);
+        search_box_width = parseInt(search_box_element.style.width, 10);
+        search_box_height = parseInt(search_box_element.style.height, 10);
+        results_height = parseInt(results_element.style.height, 10);
     }, function(start_x, start_y, x, y) {
-        search_box_element.style.width = Math.max(x - start_x + search_box_width, 365) + "px";
-        search_box_element.style.height = Math.max(y - start_y + search_box_height, 90+5) + "px";
-        results_element.style.height = Math.max(y - start_y + results_height, 0+5) + "px";
+        // 420px wide prevents the search box from collapsing too much, and 98px
+        // is the height of the top bar + margins*3. An extra five pixels prevents
+        // the results div from disappearing completely (which can be bad).
+        var sb_width = Math.max(x - start_x + search_box_width, 420);
+        var sb_height = Math.max(y - start_y + search_box_height, 98+5);
+
+        search_box_element.style.width = sb_width + "px";
+        search_box_element.style.height = sb_height + "px";
+        results_element.style.height = sb_height - 98 + "px";
+
+        prefs.searchBoxInfo[2] = sb_width;
+        prefs.searchBoxInfo[3] = sb_height;
+        browser.prefs_updated(); // FIXME again
     });
 }
 

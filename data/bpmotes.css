@@ -51,17 +51,23 @@
     border-radius: 10px;
 }
 
-/* Emote search CSS */
+/*
+ * Emote search CSS
+ *
+ * WARNING: due to my lack of CSS skills, there are many width/height values
+ * here that cannot be changed without editing corresponding JS. See, primarily,
+ * the resizing code in bpm.js that hardcodes minimum values and offsets.
+ */
 
 /* Container */
 #bpm-search-box {
     position: fixed;
-    width: 600px;
+    width: 600px; /* These four values are reset in JS immediately, so effectively ignored */
     height: 450px;
+    top: 25px;
+    left: 600px;
     background-color: #E8E8E8;
     border: thin solid black;
-    top: 400px;
-    left: 500px;
     z-index: 900; /* RES uses 1000 for its console drop-down, so lets stay under that */
     visibility: hidden; /* by default */
 }
@@ -123,7 +129,7 @@
     font-size: xx-small;
     font-family: monospace;
     overflow-y: auto;
-    height: 352px; /* #bpm-search-box height - #bpm-toprow height - margins*3 - padding*2 */
+    height: 352px; /* #bpm-search-box height - (#bpm-toprow height - margins*3 - padding*2 = 98) */
     padding: 4px !important;
 }
 
@@ -134,7 +140,8 @@
     height: 20px;
     display: inline-block;
     float: right;
-    margin-top: -20px;
+    margin-top: -19px;
+    margin-right: -1px;
 }
 
 /* Emote search result */

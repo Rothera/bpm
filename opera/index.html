@@ -15,7 +15,8 @@
             "enableExtraCSS": true,
             "enabledSubreddits": {},
             "showUnknownEmotes": true,
-            "searchLimit": 200
+            "searchLimit": 200,
+            "searchBoxInfo": [600, 25, 600, 450]
         };
     } else {
         prefs = JSON.parse(localStorage.prefs);
@@ -37,6 +38,10 @@
 
     if(prefs.searchLimit === undefined) {
         prefs.searchLimit = 200;
+    }
+
+    if(prefs.searchBoxInfo === undefined) {
+        prefs.searchBoxInfo = [600, 25, 600, 450];
     }
     localStorage.prefs = JSON.stringify(prefs);
 
@@ -64,6 +69,10 @@
                     "method": "prefs",
                     "prefs": JSON.parse(localStorage.prefs)
                 });
+                break;
+
+            case "set_prefs":
+                localStorage.prefs = JSON.stringify(message.prefs);
                 break;
 
             case "get_file":
