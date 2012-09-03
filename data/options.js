@@ -123,10 +123,12 @@ function run() {
         return input_element;
     }
 
+    var sr_checkboxes = [];
     // Generate a page from the builtin list of subreddits
     for(var sr_name in sr_data) {
         var full_name = sr_data[sr_name][0];
         var element = gen_checkbox(full_name, prefs.enabledSubreddits[sr_name]);
+        sr_checkboxes.push(element);
 
         // Closure to capture variables
         var callback = (function(sr_name) {
@@ -138,6 +140,26 @@ function run() {
 
         element.addEventListener("change", callback, false);
     }
+
+    document.getElementById("enable-all").addEventListener("click", function() {
+        for(var i = 0; i < sr_checkboxes.length; i++) {
+            sr_checkboxes[i].checked = true;
+        }
+        for(var sr_name in sr_data) {
+            prefs.enabledSubreddits[sr_name] = true;
+        }
+        browser.prefs_updated();
+    }, false);
+
+    document.getElementById("disable-all").addEventListener("click", function() {
+        for(var i = 0; i < sr_checkboxes.length; i++) {
+            sr_checkboxes[i].checked = false;
+        }
+        for(var sr_name in sr_data) {
+            prefs.enabledSubreddits[sr_name] = false;
+        }
+        browser.prefs_updated();
+    }, false);
 }
 
 window.addEventListener("DOMContentLoaded", function() {
