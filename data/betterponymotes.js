@@ -19,99 +19,77 @@
 **
 *******************************************************************************/
 
+"use strict";
+
 // Embed JS data files, for Opera
 /*$(EMOTE_MAP)*/
 /*$(SR_DATA)*/
 
-"use strict";
-
 // Browser detection- this script runs unmodified on all supported platforms,
 // so inspect a couple of potential global variables to see what we have.
-function current_platform() {
-    // "self" exists on Chrome as well. I don't know what it is
-    if(typeof(self.on) !== "undefined") {
-        return "firefox";
-    } else if(typeof(chrome) !== "undefined") {
-        return "chrome";
-    } else if(typeof(opera) !== "undefined") {
-        return "opera";
+var platform = "unknown";
+// "self" exists on Chrome as well. I don't know what it is
+if(typeof(self.on) !== "undefined") {
+    platform = "firefox";
+} else if(typeof(chrome) !== "undefined") {
+    platform = "chrome";
+} else if(typeof(opera) !== "undefined") {
+    platform = "opera";
+}
+
+var pref_cache = null;
+var pref_callbacks = [];
+
+// callback(prefs) gets run when preferences are available
+function get_prefs(callback) {
+    if(pref_cache !== null) {
+        callback(pref_cache);
     } else {
-        return "unknown";
+        pref_callbacks.push(callback);
     }
 }
-var platform = current_platform();
+
+// Called from the browser-specific code
+function set_prefs(prefs) {
+    pref_cache = prefs;
+    for(var i = 0; i < pref_callbacks.length; i++) {
+        pref_callbacks[i](prefs);
+    }
+    pref_callbacks = [];
+}
 
 // Setup some platform-agnostic API's- preferences and CSS
-var browser;
+var prefs_updated, apply_css;
+
 switch(platform) {
     case "firefox":
-        browser = {
-            // TODO: This little block of preferences code is duplicated...
-            _pref_cache: null,
-            _pref_callbacks: [],
-
-            get_prefs: function(callback) {
-                if(this._pref_cache) {
-                    callback(this._pref_cache);
-                } else {
-                    this._pref_callbacks.push(callback);
-                }
-            },
-
-            prefs_updated: function() {
-                self.port.emit("set_prefs", this._pref_cache);
-            },
-
-            apply_css: function(filename) {
-                // CSS is handled in main.js on Firefox
-            }
+        prefs_updated = function() {
+            self.port.emit("set_prefs", pref_cache);
         };
 
-        self.port.on("prefs", function(prefs) {
-            browser._pref_cache = prefs;
-            browser._pref_callbacks.forEach(function(callback) {
-                callback(browser._pref_cache);
-            });
-            browser._pref_callbacks = [];
-        });
+        apply_css = function(filename) {
+            // CSS is handled in main.js on Firefox
+        };
 
+        self.port.on("prefs", set_prefs);
         self.port.emit("get_prefs");
         break;
 
     case "chrome":
-        browser = {
-            _pref_cache: null,
-            _pref_callbacks: [],
-
-            get_prefs: function(callback) {
-                if(this._pref_cache) {
-                    callback(this._pref_cache);
-                } else {
-                    this._pref_callbacks.push(callback);
-                }
-            },
-
-            prefs_updated: function() {
-                chrome.extension.sendMessage({"method": "set_prefs", "prefs": this._pref_cache});
-            },
-
-            apply_css: function(filename) {
-                // <link> to our embedded file
-                var tag = document.createElement("link");
-                tag.href =  chrome.extension.getURL(filename);
-                tag.rel = "stylesheet";
-                // I think this ends up in <head> for some reason
-                document.documentElement.insertBefore(tag);
-            }
+        prefs_updated = function() {
+            chrome.extension.sendMessage({"method": "set_prefs", "prefs": pref_cache});
         };
 
-        chrome.extension.sendMessage({"method": "get_prefs"}, function(prefs) {
-            browser._pref_cache = prefs;
-            browser._pref_callbacks.forEach(function(callback) {
-                callback(browser._pref_cache);
-            });
-            browser._pref_callbacks = [];
-        });
+        apply_css = function(filename) {
+            // <link> to our embedded file
+            var tag = document.createElement("link");
+            tag.href =  chrome.extension.getURL(filename);
+            tag.rel = "stylesheet";
+            // I think this ends up in <head> for some reason
+            document.documentElement.insertBefore(tag);
+        };
+
+        chrome.extension.sendMessage({"method": "get_prefs"}, set_prefs);
         break;
 
     case "opera":
@@ -148,30 +126,17 @@ switch(platform) {
             };
         }
 
-        browser = {
-            _pref_cache: null,
-            _pref_callbacks: [],
+        prefs_updated = function() {
+            opera.extension.postMessage({"method": "set_prefs", "prefs": pref_cache});
+        };
 
-            get_prefs: function(callback) {
-                if(this._pref_cache) {
-                    callback(this._pref_cache);
-                } else {
-                    this._pref_callbacks.push(callback);
-                }
-            },
-
-            prefs_updated: function() {
-                opera.extension.postMessage({"method": "set_prefs", "prefs": this._pref_cache});
-            },
-
-            apply_css: function(filename) {
-                get_file(filename, function(data) {
-                    var tag = document.createElement("style");
-                    tag.setAttribute("type", "text/css");
-                    tag.appendChild(document.createTextNode(data));
-                    document.head.insertBefore(tag, document.head.firstChild);
-                });
-            }
+        apply_css = function(filename) {
+            get_file(filename, function(data) {
+                var tag = document.createElement("style");
+                tag.setAttribute("type", "text/css");
+                tag.appendChild(document.createTextNode(data));
+                document.head.insertBefore(tag, document.head.firstChild);
+            });
         };
 
         opera.extension.addEventListener("message", function(event) {
@@ -183,11 +148,7 @@ switch(platform) {
                     break;
 
                 case "prefs":
-                    browser._pref_cache = message.prefs;
-                    browser._pref_callbacks.forEach(function(callback) {
-                        callback(browser._pref_cache);
-                    });
-                    browser._pref_callbacks = [];
+                    set_prefs(message.prefs);
                     break;
 
                 default:
@@ -324,55 +285,46 @@ var results_element;
 var resize_element;
 
 function inject_search_html() {
-    /*
-    <div id="bpm-search-box">
-      <div id="bpm-toprow">
-        <span id="bpm-dragbox"></span>
-        <input id="bpm-search" type="search" placeholder="Search"/>
-        <span id="bpm-result-count"></span>
-      </div>
-      <div id="bpm-search-results"></div>
-      <span id="bpm-resize"></span>
-    </div>
-    */
+    // Placeholder div to create HTML in
+    var bpm_div = document.createElement("div");
+    // I'd sort of prefer display:none, but then I'd have to override it
+    bpm_div.style.visibility = "hidden";
+    document.body.appendChild(bpm_div);
 
-    // FIXME: This is a really horrible way to create HTML. In the future, we
-    // should use innerHTML with our own special <div> or something.
-    //
-    // On the upside, we needed references to most of these elements anyway.
-    search_box_element = document.createElement("div");
-    var toprow_element = document.createElement("div");
-    dragbox_element = document.createElement("span");
-    search_element = document.createElement("input");
-    count_element = document.createElement("span");
-    close_element = document.createElement("span");
-    results_element = document.createElement("div");
-    resize_element = document.createElement("span");
+    var search_html = [
+        // tabindex is hack to make Esc work. Reddit uses this index in a couple
+        // of places, so probably safe.
+        '<div id="bpm-search-box" tabindex="100">',
+        '  <div id="bpm-toprow">',
+        '     <span id="bpm-dragbox"></span>',
+        '     <input id="bpm-search" type="search" placeholder="Search"/>',
+        '    <span id="bpm-result-count"></span>',
+        '    <span id="bpm-close"></span>',
+        '  </div>',
+        '  <div id="bpm-search-results"></div>',
+        '  <span id="bpm-resize"></span>',
+        '</div>'
+        ].join("\n");
+    bpm_div.innerHTML = search_html;
 
-    search_box_element.id = "bpm-search-box";
-    // Hack to make key presses work. Reddit seems to use this index in several
-    // places.
-    search_box_element.tabIndex = 100;
-    toprow_element.id = "bpm-toprow";
-    dragbox_element.id = "bpm-dragbox";
-    search_element.id = "bpm-search";
-    search_element.setAttribute("type", "search");
-    search_element.setAttribute("placeholder", "Search");
-    count_element.id = "bpm-result-count";
-    close_element.id = "bpm-close";
-    results_element.id = "bpm-search-results";
-    resize_element.id = "bpm-resize";
+    // This seems to me a rather lousy way to build HTML, but oh well
+    search_box_element = document.getElementById("bpm-search-box");
+    var toprow_element = document.getElementById("bpm-toprow");
+    dragbox_element = document.getElementById("bpm-dragbox");
+    search_element = document.getElementById("bpm-search");
+    count_element = document.getElementById("bpm-result-count");
+    close_element = document.getElementById("bpm-close");
+    results_element = document.getElementById("bpm-search-results");
+    resize_element = document.getElementById("bpm-resize");
+}
 
-    // Create hierarchy
-    toprow_element.appendChild(dragbox_element);
-    toprow_element.appendChild(search_element);
-    toprow_element.appendChild(count_element);
-    toprow_element.appendChild(close_element);
-    search_box_element.appendChild(toprow_element);
-    search_box_element.appendChild(results_element);
-    search_box_element.appendChild(resize_element);
+function show_search_box() {
+    search_box_element.style.visibility = "visible";
+    search_element.focus();
+}
 
-    document.body.appendChild(search_box_element);
+function hide_search_box() {
+    search_box_element.style.visibility = "hidden";
 }
 
 var current_form = null;
@@ -407,27 +359,116 @@ function enable_drag(element, start_callback, callback) {
     }, false);
 }
 
+function update_search(prefs, sr_array) {
+    if(!search_element.value) {
+        results_element.innerHTML = "";
+        count_element.textContent = "";
+        return;
+    }
+
+    var results = [];
+    for(var emote in emote_map) {
+        if(emote.toLowerCase().indexOf(search_element.value.toLowerCase()) != -1) {
+            results.push(emote);
+        }
+    }
+    results.sort();
+
+    // We go through all of the results regardless of search limit (as that
+    // doesn't take very long), but stop building HTML when we reach enough
+    // shown emotes.
+    //
+    // As a result, NSFW/disabled emotes don't count toward the result.
+    var html = "";
+    var shown = 0, hidden = 0;
+    for(var i = 0; i < results.length; i++) {
+        var emote_name = results[i];
+        var emote_info = emote_map[emote_name];
+        var is_nsfw = emote_info[0];
+        var source_id = emote_info[1];
+
+        if(!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW)) {
+            // TODO: enable it anyway if a pref is set? Dunno what exactly
+            // we'd do
+            hidden += 1;
+            continue;
+        }
+
+        if(shown >= prefs.searchLimit) {
+            continue;
+        } else {
+            shown += 1;
+        }
+
+        // Strip off leading "/".
+        var class_name = "bpmote-" + sanitize(emote_name.slice(1));
+        var source_name = sr_data[sr_id_map[source_id]][0];
+
+        // Use <span> so there's no chance of emote parse code finding
+        // this
+        html += "<span class=\"bpm-result " + class_name + "\" title=\"" + emote_name + " from " + source_name + "\">" + emote_name + "</span>";
+    }
+
+    results_element.innerHTML = html;
+
+    var hit_limit = shown + hidden < results.length;
+    // Format text: "X results (out of N, Y hidden)"
+    var text = shown + " results";
+    if(hit_limit || hidden) { text += " ("; }
+    if(hit_limit)           { text += "out of " + results.length; }
+    if(hit_limit && hidden) { text += ", "; }
+    if(hidden)              { text += hidden + " hidden"; }
+    if(hit_limit || hidden) { text += ")"; }
+    count_element.textContent = text;
+}
+
+function insert_emote(emote_name) {
+    if(current_form === null) {
+        return;
+    }
+
+    var start = current_form.selectionStart;
+    var end = current_form.selectionEnd;
+    if(start !== undefined && end !== undefined) {
+        var emote_len;
+        if(start != end) {
+            // Make selections into alt-text.
+            // "[](" + ' "' + '")'
+            emote_len = 7 + emote_name.length + (end - start);
+            current_form.value = (
+                current_form.value.substring(0, start) +
+                "[](" + emote_name + " \"" +
+                current_form.value.substring(start, end) + "\")" +
+                current_form.value.substring(end));
+        } else {
+            // "[](" + ")"
+            emote_len = 4 + emote_name.length;
+            current_form.value = (
+                current_form.value.substring(0, start) +
+                "[](" + emote_name + ")" +
+                current_form.value.substring(end));
+        }
+        current_form.selectionStart = end + emote_len;
+        current_form.selectionEnd = end + emote_len;
+    }
+}
+
 function setup_search(prefs, sr_array) {
     inject_search_html();
 
     // Close it on demand
-    close_element.addEventListener("click", function(event) {
-        search_box_element.style.visibility = "hidden";
-    }, false);
+    close_element.addEventListener("click", hide_search_box);
 
     /*
      * Intercept mouseover for the entire search widget, so we can remember
      * which form was being used before.
      */
-    search_box_element.addEventListener("mouseover", function(event) {
-        grab_current_form();
-    }, false);
+    search_box_element.addEventListener("mouseover", grab_current_form);
 
     // Another way to close it
     search_box_element.addEventListener("keyup", function(event) {
-        // Escape key
-        if(event.keyCode == 27) {
-            search_box_element.style.visibility = "hidden";
+        if(event.keyCode == 27) { // Escape key
+            hide_search_box();
         }
     }, false);
 
@@ -438,108 +479,20 @@ function setup_search(prefs, sr_array) {
     var waiting = false;
     search_element.addEventListener("input", function(event) {
         if(!waiting) {
-            window.setTimeout(update_search, 500);
+            window.setTimeout(function() {
+                // Re-enable searching as early as we can, just in case
+                waiting = false;
+                update_search(prefs, sr_array);
+            }, 500);
             waiting = true;
         }
     }, false);
 
-    function update_search() {
-        // Re-enable searching as early as we can, just in case
-        waiting = false;
-        if(!search_element.value) {
-            results_element.innerHTML = "";
-            count_element.textContent = "";
-            return;
-        }
-
-        var results = [];
-        for(var emote in emote_map) {
-            if(emote.toLowerCase().indexOf(search_element.value.toLowerCase()) != -1) {
-                results.push(emote);
-            }
-        }
-        results.sort();
-
-        // We go through all of the results regardless of search limit (as that
-        // doesn't take very long), but stop building HTML when we reach enough
-        // shown emotes.
-        //
-        // As a result, NSFW/disabled emotes don't count toward the result.
-        var html = "";
-        var shown = 0, hidden = 0;
-        for(var i = 0; i < results.length; i++) {
-            var emote_name = results[i];
-            var emote_info = emote_map[emote_name];
-            var is_nsfw = emote_info[0];
-            var source_id = emote_info[1];
-
-            if(!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW)) {
-                // TODO: enable it anyway if a pref is set? Dunno what exactly
-                // we'd do
-                hidden += 1;
-                continue;
-            }
-
-            if(shown >= prefs.searchLimit) {
-                continue;
-            } else {
-                shown += 1;
-            }
-
-            // Strip off leading "/".
-            var class_name = "bpmote-" + sanitize(emote_name.slice(1));
-            var source_name = sr_data[sr_id_map[source_id]][0];
-
-            // Use <span> so there's no chance of emote parse code finding
-            // this
-            html += "<span class=\"bpm-result " + class_name + "\" title=\"" + emote_name + " from " + source_name + "\">" + emote_name + "</span>";
-        }
-
-        results_element.innerHTML = html;
-
-        var hit_limit = shown + hidden < results.length;
-        // Format text: "X results (out of N, Y hidden)"
-        var text = shown + " results";
-        if(hit_limit || hidden) { text += " ("; }
-        if(hit_limit)           { text += "out of " + results.length; }
-        if(hit_limit && hidden) { text += ", "; }
-        if(hidden)              { text += hidden + " hidden"; }
-        if(hit_limit || hidden) { text += ")"; }
-        count_element.textContent = text;
-    }
-
     // Listen for clicks
     results_element.addEventListener("click", function(event) {
-        if(current_form === null) {
-            return;
-        }
-
-        if((" " + event.target.className + " ").indexOf(" bpm-result ") != -1) {
+        if((" " + event.target.className + " ").indexOf(" bpm-result ") > -1) {
             var emote_name = event.target.textContent; // Bit of a hack
-            var start = current_form.selectionStart;
-            var end = current_form.selectionEnd;
-            if(start !== undefined && end !== undefined) {
-                var emote_len;
-                if(start != end) {
-                    // Make selections into alt-text.
-                    // "[](" + ' "' + '")'
-                    emote_len = 7 + emote_name.length + (end - start);
-                    current_form.value = (
-                        current_form.value.substring(0, start) +
-                        "[](" + emote_name + " \"" +
-                        current_form.value.substring(start, end) + "\")" +
-                        current_form.value.substring(end));
-                } else {
-                    // "[](" + ")"
-                    emote_len = 4 + emote_name.length;
-                    current_form.value = (
-                        current_form.value.substring(0, start) +
-                        "[](" + emote_name + ")" +
-                        current_form.value.substring(end));
-                }
-                current_form.selectionStart = end + emote_len;
-                current_form.selectionEnd = end + emote_len;
-            }
+            insert_emote(emote_name);
         }
     }, false);
 
@@ -558,7 +511,6 @@ function setup_search(prefs, sr_array) {
     enable_drag(dragbox_element, function() {
         search_box_x = parseInt(search_box_element.style.left, 10);
         search_box_y = parseInt(search_box_element.style.top, 10);
-        console.log("sbx = " + search_box_x + ", sby = " + search_box_y);
     }, function(start_x, start_y, x, y) {
         // Don't permit it to move out the left/top side of the window
         var sb_left = Math.max(x - start_x + search_box_x, 0);
@@ -568,8 +520,8 @@ function setup_search(prefs, sr_array) {
         search_box_element.style.top = sb_top + "px";
 
         prefs.searchBoxInfo[0] = sb_left;
-        prefs.seachBoxInfo[1] = sb_top;
-        browser.prefs_updated(); // FIXME: this will be called way too often
+        prefs.searchBoxInfo[1] = sb_top;
+        prefs_updated(); // FIXME: this will be called way too often
     });
 
     // Enable dragging the resize element around (i.e. resizing it)
@@ -591,22 +543,19 @@ function setup_search(prefs, sr_array) {
 
         prefs.searchBoxInfo[2] = sb_width;
         prefs.searchBoxInfo[3] = sb_height;
-        browser.prefs_updated(); // FIXME again
+        prefs_updated(); // FIXME again
     });
 }
 
 function wire_emotes_button(button) {
-    button.addEventListener("mouseover", function(event) {
-        grab_current_form();
-    }, false);
+    button.addEventListener("mouseover", grab_current_form);
 
     button.addEventListener("click", function(event) {
         var sb_element = document.getElementById("bpm-search-box");
         if(sb_element.style.visibility != "visible") {
-            sb_element.style.visibility = "visible";
-            document.getElementById("bpm-search").focus();
+            show_search_box();
         } else {
-            search_box_element.style.visibility = "hidden";
+            hide_search_box();
         }
     }, false);
 }
@@ -632,26 +581,87 @@ function inject_search_button(spans) {
                 button.className = "bpm-search-toggle";
                 button.textContent = "emotes";
                 wire_emotes_button(button);
+                // Put it at the end- Reddit's JS uses get(0) when looking for
+                // elements related to the "formatting help" linky, and we don't
+                // want to get in the way of that.
                 spans[i].appendChild(button);
             }
         }
     }
 }
 
-// Does nothing on Firefox
-browser.apply_css("/bpmotes.css");
-browser.apply_css("/emote-classes.css");
-browser.apply_css("/combiners.css");
+function run(prefs) {
+    var sr_array = make_sr_array(prefs);
+    // Initial pass- show all emotes currently on the page.
+    process(prefs, sr_array, document.getElementsByTagName("a"));
+    setup_search(prefs, sr_array);
+    // Find the one reply box that's there on page load. This may not always work...
+    inject_search_button(document.getElementsByClassName("help-toggle"));
 
-browser.get_prefs(function(prefs) {
+    switch(platform) {
+        case "chrome":
+            // Fix for Chrome, which sometimes doesn't rerender unknown
+            // emote elements. The result is that until the element is
+            // "nudged" in some way- merely viewing it in the Console/
+            // Elements tabs will do- it won't display.
+            //
+            // RES seems to reliably set things off, but that won't
+            // always be installed. Perhaps some day we'll trigger it
+            // implicitly through other means and be able to get rid of
+            // this, but for now it seems not to matter.
+            var tag = document.createElement("style");
+            tag.setAttribute("type", "text/css");
+            document.head.appendChild(tag);
+
+            // Fallthrough
+
+        case "firefox":
+            // TODO: for our simplistic purposes, we really should just
+            // use MutationObserver directly.
+            //
+            // As a relevant side note, it's a terrible idea to set this
+            // up before the DOM is built, because otherwise monitoring
+            // it for changes slows the initial process down horribly.
+            var observer = new MutationSummary({
+                callback: function(summaries) {
+                    process(prefs, sr_array, summaries[0].added);
+                    inject_search_button(summaries[1].added);
+                },
+                queries: [
+                    {element: "a"}, // new emotes
+                    {element: "span"} // comment reply forms
+                ]});
+            break;
+
+        case "opera":
+        default:
+            // MutationObserver doesn't exist outisde Fx/Chrome, so
+            // fallback to basic DOM events.
+            document.body.addEventListener("DOMNodeInserted", function(event) {
+                var element = event.target;
+                if(element.getElementsByTagName) {
+                    process(prefs, sr_array, element.getElementsByTagName("a"));
+                    inject_search_button(element.getElementsByClassName("help-toggle"));
+                }
+            }, false);
+            break;
+    }
+}
+
+// Does nothing on Firefox
+apply_css("/bpmotes.css");
+apply_css("/emote-classes.css");
+apply_css("/combiners.css");
+
+get_prefs(function(prefs) {
     if(prefs.enableExtraCSS) {
         // TODO: The only reason we still keep extracss separate is because
         // we don't have a flag_map for it yet. Maybe this works better,
         // though- this file tends to take a surprisingly long time to add...
         if(platform === "opera" && is_opera_next) {
-            browser.apply_css("/extracss-next.css");
+            apply_css("/extracss-next.css");
         } else {
-            browser.apply_css("/extracss.css");
+            apply_css("/extracss.css");
         }
     }
 });
@@ -659,61 +669,5 @@ browser.get_prefs(function(prefs) {
 // This script is generally run before the DOM is built. Opera may break
 // that rule, but I don't know how and there's nothing we can do anyway.
 window.addEventListener("DOMContentLoaded", function() {
-    browser.get_prefs(function(prefs) {
-        var sr_array = make_sr_array(prefs);
-        // Initial pass- show all emotes currently on the page.
-        process(prefs, sr_array, document.getElementsByTagName("a"));
-        setup_search(prefs, sr_array);
-        // Find the one reply box that's there on page load. This may not always work...
-        inject_search_button(document.getElementsByClassName("help-toggle"));
-
-        switch(platform) {
-            case "chrome":
-                // Fix for Chrome, which sometimes doesn't rerender unknown
-                // emote elements. The result is that until the element is
-                // "nudged" in some way- merely viewing it in the Console/
-                // Elements tabs will do- it won't display.
-                //
-                // RES seems to reliably set things off, but that won't
-                // always be installed. Perhaps some day we'll trigger it
-                // implicitly through other means and be able to get rid of
-                // this, but for now it seems not to matter.
-                var tag = document.createElement("style");
-                tag.setAttribute("type", "text/css");
-                document.head.appendChild(tag);
-
-                // Fallthrough
-
-            case "firefox":
-                // TODO: for our simplistic purposes, we really should just
-                // use MutationObserver directly.
-                //
-                // As a relevant side note, it's a terrible idea to set this
-                // up before the DOM is built, because otherwise monitoring
-                // it for changes slows the initial process down horribly.
-                var observer = new MutationSummary({
-                    callback: function(summaries) {
-                        process(prefs, sr_array, summaries[0].added);
-                        inject_search_button(summaries[1].added);
-                    },
-                    queries: [
-                        {element: "a"}, // new emotes
-                        {element: "span"} // comment reply forms
-                    ]});
-                break;
-
-            case "opera":
-            default:
-                // MutationObserver doesn't exist outisde Fx/Chrome, so
-                // fallback to basic DOM events.
-                document.body.addEventListener("DOMNodeInserted", function(event) {
-                    var element = event.target;
-                    if(element.getElementsByTagName) {
-                        process(prefs, sr_array, element.getElementsByTagName("a"));
-                        inject_search_button(element.getElementsByClassName("help-toggle"));
-                    }
-                }, false);
-                break;
-        }
-    });
+    get_prefs(run);
 }, false);
