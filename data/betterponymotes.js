@@ -601,7 +601,13 @@ function wire_emotes_button(button) {
     }, false);
 
     button.addEventListener("click", function(event) {
-        document.getElementById("bpm-search-box").style.visibility = "visible";
+        var sb_element = document.getElementById("bpm-search-box");
+        if(sb_element.style.visibility != "visible") {
+            sb_element.style.visibility = "visible";
+            document.getElementById("bpm-search").focus();
+        } else {
+            search_box_element.style.visibility = "hidden";
+        }
     }, false);
 }
 
@@ -626,7 +632,7 @@ function inject_search_button(spans) {
                 button.className = "bpm-search-toggle";
                 button.textContent = "emotes";
                 wire_emotes_button(button);
-                spans[i].insertBefore(button, spans[i].firstChild);
+                spans[i].appendChild(button);
             }
         }
     }
@@ -658,8 +664,8 @@ window.addEventListener("DOMContentLoaded", function() {
         // Initial pass- show all emotes currently on the page.
         process(prefs, sr_array, document.getElementsByTagName("a"));
         setup_search(prefs, sr_array);
-        // Find the one reply box that's there on page load
-        inject_search_button(document.getElementsByTagName("span"));
+        // Find the one reply box that's there on page load. This may not always work...
+        inject_search_button(document.getElementsByClassName("help-toggle"));
 
         switch(platform) {
             case "chrome":
@@ -704,7 +710,7 @@ window.addEventListener("DOMContentLoaded", function() {
                     var element = event.target;
                     if(element.getElementsByTagName) {
                         process(prefs, sr_array, element.getElementsByTagName("a"));
-                        inject_search_button(element.getElementsByTagName("span"));
+                        inject_search_button(element.getElementsByClassName("help-toggle"));
                     }
                 }, false);
                 break;
