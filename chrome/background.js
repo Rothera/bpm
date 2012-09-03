@@ -15,7 +15,9 @@ if(localStorage.prefs === undefined) {
         "enableNSFW": false,
         "enableExtraCSS": true,
         "enabledSubreddits": {},
-        "showUnknownEmotes": true
+        "showUnknownEmotes": true,
+        "searchLimit": 200,
+        "searchBoxInfo": [600, 25, 600, 450]
     };
 } else {
     prefs = JSON.parse(localStorage.prefs);
@@ -34,6 +36,14 @@ for(var sr in sr_data) {
 if(prefs.showUnknownEmotes === undefined) {
     prefs.showUnknownEmotes = true;
 }
+
+if(prefs.searchLimit === undefined) {
+    prefs.searchLimit = 200;
+}
+
+if(prefs.searchBoxInfo === undefined) {
+    prefs.searchBoxInfo = [600, 25, 600, 450];
+}
 localStorage.prefs = JSON.stringify(prefs);
 
 // Content script requests
@@ -41,6 +51,10 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
     switch(message.method) {
         case "get_prefs":
             sendResponse(JSON.parse(localStorage.prefs));
+            break;
+
+        case "set_prefs":
+            localStorage.prefs = JSON.stringify(message.prefs);
             break;
 
         default:

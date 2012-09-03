@@ -1,28 +1,7 @@
 Emote search/picker:
-  - Figure out where we left off. I don't remember whether or not we had
-    something left over to do.
+  - Make search an "and" for each space-separated keyword.
 
-  - Fix it for the new emote-map changes.
-    - Consider how nsfw emotes will work with this- will the standard CSS
-      catch them? We may need to ensure bpm-nsfw gets applied.
-    - Speaking of applying CSS, think about ensuring the core emote code
-      doesn't touch it. Either that or make sure it does- might be simpler.
-
-  - Make search an "and" for everything in spaces. Either that or an "or".
-    Maybe even an option; I dunno. Search syntax would probably be overkill.
-
-  - Add a way to close it. Since we'll be putting in an "open it up" button,
-    it can just go away entirely.
-
-  - Implement a hover/click control to bring it up again.
-
-  - Add drag&drop support to move it around with.
-
-  - Add resizing capability?
-
-  - Prefs for its position/size. Anything else?
-
-  - Integrate.
+  - sr:mylittlewtf subreddit syntax. Multiple subreddits would be an OR.
 
 Emote search:
   - A full-fledged builtin emote listing/browsing tool, implemented as something
@@ -78,6 +57,8 @@ Misc:
     EVERYTHING, with strictly-validating create/save/load methods.
 
   - Merge /rsbf into mlas1 or something.
+
+  - Replace all setAttribute() calls with actual attributes...
 
 Update process:
   - $ bin/version.py set -v [...]

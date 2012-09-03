@@ -26,7 +26,9 @@ if(!storage.prefs) {
         "enableNSFW": false,
         "enableExtraCSS": true,
         "enabledSubreddits": {},
-        "showUnknownEmotes": true
+        "showUnknownEmotes": true,
+        "searchLimit": 200,
+        "searchBoxInfo": [600, 25, 600, 450]
     };
 
     if(simple_prefs.prefs.enableNSFW !== undefined) {
@@ -51,6 +53,24 @@ if(storage.prefs.showUnknownEmotes === undefined) {
     storage.prefs.showUnknownEmotes = true;
 }
 
+if(storage.prefs.searchLimit === undefined) {
+    storage.prefs.searchLimit = 200;
+}
+
+if(storage.prefs.searchBoxInfo === undefined) {
+    storage.prefs.searchBoxInfo = [600, 25, 600, 450];
+}
+
+function on_cs_attach(worker) {
+    worker.port.on("get_prefs", function() {
+        worker.port.emit("prefs", storage.prefs);
+    });
+    worker.port.on("set_prefs", function(prefs) {
+        storage.prefs = prefs;
+        prefs_updated();
+    });
+}
+
 // Setup communication with prefs page
 var prefs_mod = page_mod.PageMod({
     include: [self.data.url("options.html")],
@@ -59,15 +79,7 @@ var prefs_mod = page_mod.PageMod({
         self.data.url("sr-data.js"),
         self.data.url("options.js")
         ],
-    onAttach: function(worker) {
-        worker.port.on("get_prefs", function() {
-            worker.port.emit("prefs", storage.prefs);
-        });
-        worker.port.on("set_prefs", function(prefs) {
-            storage.prefs = prefs;
-            prefs_updated();
-        });
-    }
+    onAttach: on_cs_attach
 })
 
 // Enable the button that opens the page
@@ -91,11 +103,7 @@ var main_mod = page_mod.PageMod({
         self.data.url("sr-data.js"),
         self.data.url("betterponymotes.js")
         ],
-    onAttach: function(worker) {
-        worker.port.on("get_prefs", function() {
-            worker.port.emit("prefs", storage.prefs);
-        });
-    }
+    onAttach: on_cs_attach
 });
 
 // This is the only preference we control from this side. Other browsers do not

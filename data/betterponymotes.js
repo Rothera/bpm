@@ -58,6 +58,10 @@ switch(platform) {
                 }
             },
 
+            prefs_updated: function() {
+                self.port.emit("set_prefs", this._pref_cache);
+            },
+
             apply_css: function(filename) {
                 // CSS is handled in main.js on Firefox
             }
@@ -85,6 +89,10 @@ switch(platform) {
                 } else {
                     this._pref_callbacks.push(callback);
                 }
+            },
+
+            prefs_updated: function() {
+                chrome.extension.sendMessage({"method": "set_prefs", "prefs": this._pref_cache});
             },
 
             apply_css: function(filename) {
@@ -152,6 +160,10 @@ switch(platform) {
                 }
             },
 
+            prefs_updated: function() {
+                opera.extension.postMessage({"method": "set_prefs", "prefs": this._pref_cache});
+            },
+
             apply_css: function(filename) {
                 get_file(filename, function(data) {
                     var tag = document.createElement("style");
@@ -188,6 +200,19 @@ switch(platform) {
             "method": "get_prefs"
         });
         break;
+}
+
+// Checks whether the given element has a parent with the given ID. The element
+// itself does not count.
+function hasParentWithId(element, id) {
+    if(element.parentNode !== null) {
+        if(element.parentNode.id == id) {
+            return true;
+        } else {
+            return hasParentWithId(element.parentNode, id);
+        }
+    }
+    return false;
 }
 
 // Converts an emote name (or similar) to the associated CSS class.
@@ -289,6 +314,324 @@ function make_sr_array(prefs) {
     return sr_array;
 }
 
+// Emote search elements
+var search_box_element;
+var dragbox_element;
+var search_element;
+var count_element;
+var close_element;
+var results_element;
+var resize_element;
+
+function inject_search_html() {
+    /*
+    <div id="bpm-search-box">
+      <div id="bpm-toprow">
+        <span id="bpm-dragbox"></span>
+        <input id="bpm-search" type="search" placeholder="Search"/>
+        <span id="bpm-result-count"></span>
+      </div>
+      <div id="bpm-search-results"></div>
+      <span id="bpm-resize"></span>
+    </div>
+    */
+
+    // FIXME: This is a really horrible way to create HTML. In the future, we
+    // should use innerHTML with our own special <div> or something.
+    //
+    // On the upside, we needed references to most of these elements anyway.
+    search_box_element = document.createElement("div");
+    var toprow_element = document.createElement("div");
+    dragbox_element = document.createElement("span");
+    search_element = document.createElement("input");
+    count_element = document.createElement("span");
+    close_element = document.createElement("span");
+    results_element = document.createElement("div");
+    resize_element = document.createElement("span");
+
+    search_box_element.id = "bpm-search-box";
+    // Hack to make key presses work. Reddit seems to use this index in several
+    // places.
+    search_box_element.tabIndex = 100;
+    toprow_element.id = "bpm-toprow";
+    dragbox_element.id = "bpm-dragbox";
+    search_element.id = "bpm-search";
+    search_element.setAttribute("type", "search");
+    search_element.setAttribute("placeholder", "Search");
+    count_element.id = "bpm-result-count";
+    close_element.id = "bpm-close";
+    results_element.id = "bpm-search-results";
+    resize_element.id = "bpm-resize";
+
+    // Create hierarchy
+    toprow_element.appendChild(dragbox_element);
+    toprow_element.appendChild(search_element);
+    toprow_element.appendChild(count_element);
+    toprow_element.appendChild(close_element);
+    search_box_element.appendChild(toprow_element);
+    search_box_element.appendChild(results_element);
+    search_box_element.appendChild(resize_element);
+
+    document.body.appendChild(search_box_element);
+}
+
+var current_form = null;
+function grab_current_form() {
+    var active = document.activeElement;
+    // Ignore our own stuff and things that are not text boxes
+    if(!hasParentWithId(active, "bpm-search-box") && active !== current_form &&
+       active.selectionStart !== undefined && active.selectionEnd !== undefined) {
+        current_form = active;
+    }
+}
+
+function enable_drag(element, start_callback, callback) {
+    var start_x, start_y;
+    var dragging = false;
+
+    element.addEventListener("mousedown", function(event) {
+        start_x = event.clientX;
+        start_y = event.clientY;
+        dragging = true;
+        start_callback();
+    }, false);
+
+    window.addEventListener("mouseup", function(event) {
+        dragging = false;
+    }, false);
+
+    window.addEventListener("mousemove", function(event) {
+        if(dragging) {
+            callback(start_x, start_y, event.clientX, event.clientY);
+        }
+    }, false);
+}
+
+function setup_search(prefs, sr_array) {
+    inject_search_html();
+
+    // Close it on demand
+    close_element.addEventListener("click", function(event) {
+        search_box_element.style.visibility = "hidden";
+    }, false);
+
+    /*
+     * Intercept mouseover for the entire search widget, so we can remember
+     * which form was being used before.
+     */
+    search_box_element.addEventListener("mouseover", function(event) {
+        grab_current_form();
+    }, false);
+
+    // Another way to close it
+    search_box_element.addEventListener("keyup", function(event) {
+        // Escape key
+        if(event.keyCode == 27) {
+            search_box_element.style.visibility = "hidden";
+        }
+    }, false);
+
+    // Listen for keypresses and adjust search results. Delay 500ms after
+    // start of typing to make it more responsive (otherwise it typically
+    // starts searching after the first keystroke, which generates a lot
+    // of output for no reason).
+    var waiting = false;
+    search_element.addEventListener("input", function(event) {
+        if(!waiting) {
+            window.setTimeout(update_search, 500);
+            waiting = true;
+        }
+    }, false);
+
+    function update_search() {
+        // Re-enable searching as early as we can, just in case
+        waiting = false;
+        if(!search_element.value) {
+            results_element.innerHTML = "";
+            count_element.textContent = "";
+            return;
+        }
+
+        var results = [];
+        for(var emote in emote_map) {
+            if(emote.toLowerCase().indexOf(search_element.value.toLowerCase()) != -1) {
+                results.push(emote);
+            }
+        }
+        results.sort();
+
+        // We go through all of the results regardless of search limit (as that
+        // doesn't take very long), but stop building HTML when we reach enough
+        // shown emotes.
+        //
+        // As a result, NSFW/disabled emotes don't count toward the result.
+        var html = "";
+        var shown = 0, hidden = 0;
+        for(var i = 0; i < results.length; i++) {
+            var emote_name = results[i];
+            var emote_info = emote_map[emote_name];
+            var is_nsfw = emote_info[0];
+            var source_id = emote_info[1];
+
+            if(!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW)) {
+                // TODO: enable it anyway if a pref is set? Dunno what exactly
+                // we'd do
+                hidden += 1;
+                continue;
+            }
+
+            if(shown >= prefs.searchLimit) {
+                continue;
+            } else {
+                shown += 1;
+            }
+
+            // Strip off leading "/".
+            var class_name = "bpmote-" + sanitize(emote_name.slice(1));
+            var source_name = sr_data[sr_id_map[source_id]][0];
+
+            // Use <span> so there's no chance of emote parse code finding
+            // this
+            html += "<span class=\"bpm-result " + class_name + "\" title=\"" + emote_name + " from " + source_name + "\">" + emote_name + "</span>";
+        }
+
+        results_element.innerHTML = html;
+
+        var hit_limit = shown + hidden < results.length;
+        // Format text: "X results (out of N, Y hidden)"
+        var text = shown + " results";
+        if(hit_limit || hidden) { text += " ("; }
+        if(hit_limit)           { text += "out of " + results.length; }
+        if(hit_limit && hidden) { text += ", "; }
+        if(hidden)              { text += hidden + " hidden"; }
+        if(hit_limit || hidden) { text += ")"; }
+        count_element.textContent = text;
+    }
+
+    // Listen for clicks
+    results_element.addEventListener("click", function(event) {
+        if(current_form === null) {
+            return;
+        }
+
+        if((" " + event.target.className + " ").indexOf(" bpm-result ") != -1) {
+            var emote_name = event.target.textContent; // Bit of a hack
+            var start = current_form.selectionStart;
+            var end = current_form.selectionEnd;
+            if(start !== undefined && end !== undefined) {
+                var emote_len;
+                if(start != end) {
+                    // Make selections into alt-text.
+                    // "[](" + ' "' + '")'
+                    emote_len = 7 + emote_name.length + (end - start);
+                    current_form.value = (
+                        current_form.value.substring(0, start) +
+                        "[](" + emote_name + " \"" +
+                        current_form.value.substring(start, end) + "\")" +
+                        current_form.value.substring(end));
+                } else {
+                    // "[](" + ")"
+                    emote_len = 4 + emote_name.length;
+                    current_form.value = (
+                        current_form.value.substring(0, start) +
+                        "[](" + emote_name + ")" +
+                        current_form.value.substring(end));
+                }
+                current_form.selectionStart = end + emote_len;
+                current_form.selectionEnd = end + emote_len;
+            }
+        }
+    }, false);
+
+    // Set up default positions
+    search_box_element.style.left = prefs.searchBoxInfo[0] + "px";
+    search_box_element.style.top = prefs.searchBoxInfo[1] + "px";
+    search_box_element.style.width = prefs.searchBoxInfo[2] + "px";
+    search_box_element.style.height = prefs.searchBoxInfo[3] + "px";
+    // 98 is a magic value from the CSS.
+    // 98 = height(topbar) + margins(topbar) + margins(results) + padding(results)
+    //    = 20             + 30*2            + 30               + 8
+    results_element.style.height = prefs.searchBoxInfo[3] - 98 + "px"; // Styling
+
+    // Enable dragging the window around
+    var search_box_x, search_box_y;
+    enable_drag(dragbox_element, function() {
+        search_box_x = parseInt(search_box_element.style.left, 10);
+        search_box_y = parseInt(search_box_element.style.top, 10);
+        console.log("sbx = " + search_box_x + ", sby = " + search_box_y);
+    }, function(start_x, start_y, x, y) {
+        // Don't permit it to move out the left/top side of the window
+        var sb_left = Math.max(x - start_x + search_box_x, 0);
+        var sb_top = Math.max(y - start_y + search_box_y, 0);
+
+        search_box_element.style.left = sb_left + "px";
+        search_box_element.style.top = sb_top + "px";
+
+        prefs.searchBoxInfo[0] = sb_left;
+        prefs.seachBoxInfo[1] = sb_top;
+        browser.prefs_updated(); // FIXME: this will be called way too often
+    });
+
+    // Enable dragging the resize element around (i.e. resizing it)
+    var search_box_width, search_box_height, results_height;
+    enable_drag(resize_element, function() {
+        search_box_width = parseInt(search_box_element.style.width, 10);
+        search_box_height = parseInt(search_box_element.style.height, 10);
+        results_height = parseInt(results_element.style.height, 10);
+    }, function(start_x, start_y, x, y) {
+        // 420px wide prevents the search box from collapsing too much, and 98px
+        // is the height of the top bar + margins*3. An extra five pixels prevents
+        // the results div from disappearing completely (which can be bad).
+        var sb_width = Math.max(x - start_x + search_box_width, 420);
+        var sb_height = Math.max(y - start_y + search_box_height, 98+5);
+
+        search_box_element.style.width = sb_width + "px";
+        search_box_element.style.height = sb_height + "px";
+        results_element.style.height = sb_height - 98 + "px";
+
+        prefs.searchBoxInfo[2] = sb_width;
+        prefs.searchBoxInfo[3] = sb_height;
+        browser.prefs_updated(); // FIXME again
+    });
+}
+
+function wire_emotes_button(button) {
+    button.addEventListener("mouseover", function(event) {
+        grab_current_form();
+    }, false);
+
+    button.addEventListener("click", function(event) {
+        document.getElementById("bpm-search-box").style.visibility = "visible";
+    }, false);
+}
+
+function inject_search_button(spans) {
+    for(var i = 0; i < spans.length; i++) {
+        // Matching the "formatting help" button is tricky- there's no great
+        // way to find it. This seems to work, but I expect false positives from
+        // reading the Reddit source code.
+        if(spans[i].className.indexOf("help-toggle") > -1) {
+            var existing = spans[i].getElementsByClassName("bpm-search-toggle");
+            /*
+             * Reddit's JS uses cloneNode() when making reply forms. As such,
+             * we need to be able to handle two distinct cases- wiring up the
+             * top-level reply box that's there from the start, and wiring up
+             * clones of that form with our button already in it.
+             */
+            if(existing.length) {
+                wire_emotes_button(existing[0]);
+            } else {
+                var button = document.createElement("button");
+                button.setAttribute("type", "button"); // Default is "submit"; not good
+                button.className = "bpm-search-toggle";
+                button.textContent = "emotes";
+                wire_emotes_button(button);
+                spans[i].insertBefore(button, spans[i].firstChild);
+            }
+        }
+    }
+}
+
 // Does nothing on Firefox
 browser.apply_css("/bpmotes.css");
 browser.apply_css("/emote-classes.css");
@@ -314,6 +657,9 @@ window.addEventListener("DOMContentLoaded", function() {
         var sr_array = make_sr_array(prefs);
         // Initial pass- show all emotes currently on the page.
         process(prefs, sr_array, document.getElementsByTagName("a"));
+        setup_search(prefs, sr_array);
+        // Find the one reply box that's there on page load
+        inject_search_button(document.getElementsByTagName("span"));
 
         switch(platform) {
             case "chrome":
@@ -342,9 +688,11 @@ window.addEventListener("DOMContentLoaded", function() {
                 var observer = new MutationSummary({
                     callback: function(summaries) {
                         process(prefs, sr_array, summaries[0].added);
+                        inject_search_button(summaries[1].added);
                     },
                     queries: [
-                        {element: "a"}
+                        {element: "a"}, // new emotes
+                        {element: "span"} // comment reply forms
                     ]});
                 break;
 
@@ -356,6 +704,7 @@ window.addEventListener("DOMContentLoaded", function() {
                     var element = event.target;
                     if(element.getElementsByTagName) {
                         process(prefs, sr_array, element.getElementsByTagName("a"));
+                        inject_search_button(element.getElementsByTagName("span"));
                     }
                 }, false);
                 break;

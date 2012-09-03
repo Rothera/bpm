@@ -12,8 +12,9 @@
  * CSS for the addon itself.
  */
 
-/* Unknown emotes */
-.bpm-unknown {
+/* Placeholders */
+
+.bpm-unknown, .bpm-disabled, .bpm-nsfw {
     /* Emote common */
     display: block;
     clear: none;
@@ -22,9 +23,6 @@
     /* An average, small emote (70px with padding) */
     width: 60px;
     height: 60px;
-
-    background-color: slategray;
-    border-radius: 10px;
 
     /*
      * Need !important tags to override Reddit's CSS.
@@ -35,49 +33,124 @@
     padding: 5px;
 }
 
+/* Unknown emote placeholder */
+.bpm-unknown {
+    background-color: slategray;
+    border-radius: 10px;
+}
+
 /* Disabled emote placeholder */
 .bpm-disabled {
-    /* Emote common */
-    display: block;
-    clear: none;
-    float: left;
-
-    /* An average, small emote (70px with padding) */
-    width: 60px;
-    height: 60px;
-
     background-color: #DA4F49;
     border-radius: 10px;
-
-    color: white !important;
-    font-style: monospace;
-    font-size: xx-small;
-    padding: 5px;
 }
 
 /* NSFW emote placeholder */
 .bpm-nsfw {
-    /* Emote common */
-    display: block;
-    clear: none;
-    float: left;
-
-    /* An average, small emote (70px with padding) */
-    width: 60px;
-    height: 60px;
-
     background-color: black;
     border-radius: 10px;
-
-    color: white !important;
-    font-style: monospace;
-    font-size: xx-small;
-    padding: 5px;
 }
 
 /*
- * Misc bits of CSS, stolen from various subreddits.
+ * Emote search CSS
+ *
+ * WARNING: due to my lack of CSS skills, there are many width/height values
+ * here that cannot be changed without editing corresponding JS. See, primarily,
+ * the resizing code in bpm.js that hardcodes minimum values and offsets.
  */
+
+/* Container */
+#bpm-search-box {
+    position: fixed;
+    width: 600px; /* These four values are reset in JS immediately, so effectively ignored */
+    height: 450px;
+    top: 25px;
+    left: 600px;
+    background-color: #E8E8E8;
+    border: thin solid black;
+    z-index: 900; /* RES uses 1000 for its console drop-down, so lets stay under that */
+    visibility: hidden; /* by default */
+}
+
+/* Top row widget container */
+#bpm-toprow {
+    margin: 20px !important; /* Override reddit */
+    height: 30px;
+}
+
+/* Top-left drag box */
+#bpm-dragbox {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC9SURBVEjHY2BgYPg/QHiALQYCBnrgoWsxEHiCMF0tBgJWIL4Oxaz0tLgAyYB8ulgMBCJA/B7JABBbhB4WT8OSNabRM3FRpG/UYnRF4kA8l1SLQXpAekm2GJpPS4D4Ix7D/xOQA+ktRs/nOC0GAi8gvknFygBklhcxFntCSyRqWXwduWglJqjzYQUFmUH9HlrCsZKTuERwFQ4E9E3DVZqN5uPBb/GAVRIDVi0OWENgQJs+A9bYGx7t6hHTdwIA/NWecKA2C2UAAAAASUVORK5CYII=");
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 20px;
+    float: left;
+}
+
+/* Search input */
+#bpm-search {
+    /* Ensure 30px high */
+    border-width: 2px;
+    padding: 4px;
+    height: 18px;
+    /*width: 20em;*/
+    width: 240px;
+    padding: 5px !important; /* Override reddit */
+    margin-right: 20px !important; /* Override reddit */
+    float: left;
+}
+
+/* Result count element */
+#bpm-result-count {
+    color: gray;
+    font-style: italic;
+    font-weight: lighter;
+    height: 30px;
+    line-height: 30px; /* Ugly way to vertically center text */
+    float: left;
+}
+
+/* Close button */
+#bpm-close {
+    /* Ain't it cute. */
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACWSURBVEjH7dcxDoAgDAXQDhyROzJwREiQ4bsQLAjGH2NJ/tb4DFBQEZFCChmuQ96IwQa3xa4m1HilxqPGPQIDjahLPRxoQk3U8Cm4QUsPb9AywmfhcNH8CWAPPRN2YO3BGbl8sd011vBb6MqunsVVdKmPgWcFzSP0OzBlqimbi9ZOzAOEc2TSLgnqtWifPgZvw7/5dzoAyDAWKt02AB4AAAAASUVORK5CYII=");
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-left: 20px;
+    float: right;
+}
+
+/* Search result container */
+#bpm-search-results {
+    margin: 20px !important; /* Override reddit */
+    background-color: white;
+    font-size: xx-small;
+    font-family: monospace;
+    overflow-y: auto;
+    height: 352px; /* #bpm-search-box height - (#bpm-toprow height - margins*3 - padding*2 = 98) */
+    padding: 4px !important;
+}
+
+/* Bottom-right resize box */
+#bpm-resize {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACcSURBVDjLzdQxCoAwDAXQjOJmF1GvpSdzUU8iiHdSd9EvROhQMGkUDPzF0EehMUREx8v5CESRJUEQNSE90iDuDbDzGvuFW8Haa2xIaQUzvtnC32ckjQa50SI5MmrQx1dGJRpUNDYaVDyHUlQ12BJU/acE0AoZosEAuvGIuWiQDxbI6gGNFRz4ZjfQm0A+7HiBXItkMoOisfntxj4BkxXf5wPylQcAAAAASUVORK5CYII=");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    float: right;
+    margin-top: -19px;
+    margin-right: -1px;
+}
+
+/* Emote search result */
+.bpm-result {
+    border: solid black thin;
+    margin: 1px;
+}
+
+/* Misc emote flags, stolen from various subreddits. */
 
 .bpflag-in, .bpflag-inp {
     float: none !important;
