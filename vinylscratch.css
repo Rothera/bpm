@@ -268,6 +268,7 @@ a.author[href$="/RetardVomitPussyCunt"] {
     display: inline-block;
     vertical-align: bottom;
     overflow: hidden;
+    content: "";
     letter-spacing: -20px
     }
 a.author[href$="/RetardVomitPussyCunt"]:after {
@@ -331,93 +332,148 @@ a.author[href$="/RetardVomitPussyCunt"]:after {
     font-weight: 700
     }
 .flair:before {
-    background-image: url(http://b.thumbs.redditmedia.com/KIb85Qwk2DL6B3Ts.png);
+    background-image: url(http://f.thumbs.redditmedia.com/CXxNq8S9dTHQPka5.png);
     background-position: 0px 0px;
     content: "";
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 0px;
+    height: 0px;
     background-repeat: no-repeat
     }
 .flair-djabe:before {
-    background-position: -0px -2px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -0px
     }
 .flair-shrug:before {
-    background-position: -0px -20px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -16px
     }
 .flair-awesome:before {
-    background-position: -0px -38px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -32px
     }
 .flair-brokenrecord:before {
-    width: 20px;
-    height: 22px;
-    background-position: -0px -56px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -48px
     }
 .flair-marine:before {
-    background-position: -0px -80px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -64px
     }
 .flair-doll:before {
-    background-position: -0px -98px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -80px
     }
 .flair-filly:before {
-    background-position: -0px -116px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -96px
     }
 .flair-vinyl:before {
-    background-position: -0px -134px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -112px
     }
 .flair-flair:before {
-    background-position: -0px -134px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -128px
     }
 .flair-graffiti:before {
-    background-position: -0px -152px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -144px
     }
 .flair-headphones:before {
-    background-position: -0px -170px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -160px
     }
 .flair-huggingrecord:before {
-    background-position: -0px -188px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -176px
     }
 .flair-huggingtail:before {
-    background-position: -0px -206px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -192px
     }
 .flair-laying:before {
-    background-position: -0px -224px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -208px
     }
 .flair-nerdy:before {
-    background-position: -0px -242px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -224px
     }
 .flair-parasprite:before {
-    background-position: -0px -260px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -240px
     }
 .flair-scratchie:before {
-    background-position: -0px -278px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -256px
     }
 .flair-socks:before {
-    background-position: -0px -296px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -272px
     }
 .flair-sockssmile:before {
-    background-position: -0px -314px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -288px
     }
 .flair-stare:before {
-    background-position: -0px -332px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -304px
     }
 .flair-sweaterdirty:before {
-    background-position: -0px -350px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -320px
     }
 .flair-tallvinyl:before {
-    background-position: -0px -368px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -336px
     }
 .flair-taviscratch:before {
-    background-position: -0px -386px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -352px
     }
 .flair-twp:before {
-    background-position: -0px -404px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -368px
     }
 .flair-watch:before {
-    background-position: -0px -422px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -384px
     }
 .flair-wut:before {
-    background-position: -0px -440px
+    width: 16px;
+    height: 16px;
+    background-position: -0px -400px
+    }
+.flair-derram:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -416px
     }
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair {
@@ -681,4 +737,12 @@ div.titlebox .subscribers span.number:after {
     }
 div.titlebox .users-online span.number:after {
     content: " Wubbing it up"
+    }
+/*Remove RES tag and vote counts from moderator box because its ugly*/
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink {
+    display: none !important
+    }
+/* Hiding my name in the modbox. */
+.sidecontentbox .id-t2_8lje7, .sidecontentbox .id-t2_8lje7 ~ * {
+    display: none
     }

@@ -60,8 +60,11 @@ you want your image to be.*/
 .titlebox span.word {
     display: none
     }
-.titlebox span.number:after {
+div.titlebox .subscribers span.number:after {
     content: " wastelanders"
+    }
+div.titlebox .users-online span.number:after {
+    content: " fighting the good fight"
     }
 a[href$="/spoiler"] {
     background: #000 !important;
