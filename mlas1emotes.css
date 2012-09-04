@@ -2445,3 +2445,8 @@ a[href|="/z47"] {
     background-position: -148px -2035px
     }
 /*===End generated CSS===*/
+/* Override f7u12's fucktarded /goat hover shit, for anyone pulling both CSS sheets. */
+a[href="/goat"]:hover {
+    width: 116px !important;
+    padding-right: 0px !important
+    }
