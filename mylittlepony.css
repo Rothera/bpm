@@ -45,17 +45,21 @@ div.titlebox .users-online span.number:after {
     }
 */
 /*8.24.2012 NEVER FORGET*/
-/* I FORGOT
-.sidecontentbox a.author[href$="/Lebal"] + .flair, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair {display:block;background:none;width:auto;height:auto;}
-.sidecontentbox a.author[href$="/Lebal"] + .flair:before, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair:before
-{
- display:inline-block;
- content:"megadeus";
- font-size: 10pt;
- color: gray;
- padding-right:5px;
-}
-*/
+/* I FORGOT*/
+/* I NEVER WILL, ALSO YOU SUCK AT DISABLING BLOCKS OF CSS*/
+.sidecontentbox a.author[href$="/Lebal"] + .flair, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair {
+    display: block;
+    background: none;
+    width: auto;
+    height: auto
+    }
+.sidecontentbox a.author[href$="/Lebal"] + .flair:before, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair:before {
+    display: inline-block;
+    content: "megadeus";
+    font-size: 10pt;
+    color: gray;
+    padding-right: 5px
+    }
 .sidecontentbox a.author[href$="/Lebal"] + .flair:after, .sidecontentbox a.author[href$="/Lebal"] + span + a + .flair:after {
     display: inline-block;
     content: "DOUBLE MODERATOR";

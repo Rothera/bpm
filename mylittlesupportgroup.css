@@ -142,6 +142,16 @@ Art by http://ask-fillytwilight.tumblr.com */
 /*====================
 MLSG specific CSS
 ====================*/
+div:not(.linkflair) .thing a.flairselectbtn {
+    background-color: #ffdd94;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    padding-left: 2px;
+    padding-right: 2px
+    }
+span.rank {
+    color: #888 !important
+    }
 /*
 Phei's patented Fancy Emote Boxes™
 */
@@ -207,14 +217,94 @@ Test Post
 /*
 Link flair
 */
+/*****Link Flair*****/
+.linkflair a.title::after {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-left: -5px;
+    padding-left: 10px;
+    right: -5px;
+    z-index: 1
+    }
+.linkflair-vent a.title::after {
+    content: url(http://d.thumbs.redditmedia.com/5_8FLe84knlhI1Ei.png)
+    }
+.linkflair-offer a.title::after {
+    content: url(http://a.thumbs.redditmedia.com/FlK6mYbmORpc48DN.png)
+    }
+.linkflair-need a.title::after {
+    content: url(http://b.thumbs.redditmedia.com/QWx0jZn-VRqnPNQI.png)
+    }
+.linkflair-meta a.title::after {
+    content: url(http://d.thumbs.redditmedia.com/YonWHhlXdmqU84Ho.png)
+    }
+.linkflair-misc a.title::after {
+    content: url(http://c.thumbs.redditmedia.com/0Jm4za0AahHrto1J.png)
+    }
+.linkflair-inspiration a.title::after {
+    content: url(http://f.thumbs.redditmedia.com/xA9RJJGCsy7CrTO_.png)
+    }
+.link .title {
+    font-size: 16px
+    }
+.linkflair p.title .linkflairlabel {
+    border: solid 1px #ccc;
+    border-radius: 0px;
+    padding: 0px;
+    margin: 0px;
+    height: 14px;
+    overflow: visible;
+    position: relative;
+    top: -5px;
+    left: -6px;
+    padding-left: 10px;
+    padding-right: 5px;
+    margin-right: -2px;
+    border-left: none;
+    border-radius: 2px
+    }
+.res-nightmode .linkflair p.title .linkflairlabel {
+    background: transparent;
+    color: silver
+    }
+.sidecontentbox .thing .linkflair {
+    display: none
+    }
 .linkflair-offer {
-    background: url(http://b.thumbs.redditmedia.com/dYN4mc5rxMxbnhQm.png) repeat-y scroll left center !important
+    background-image: linear-gradient(left,#BCE7FF,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -webkit-linear-gradient(left,#BCE7FF,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -moz-linear-gradient(left,#BCE7FF,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -o-linear-gradient(left,#BCE7FF,#fff,#fff,#fff,#fff,#fff,#fff)
     }
 .linkflair-need {
-    background: url(http://c.thumbs.redditmedia.com/ohhCH5rM0jQGvQgV.png) repeat-y scroll left center !important
+    background-image: linear-gradient(left,#FDF6AE,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -webkit-linear-gradient(left,#FDF6AE,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -moz-linear-gradient(left,#FDF6AE,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -o-linear-gradient(left,#FDF6AE,#fff,#fff,#fff,#fff,#fff,#fff)
+    }
+.linkflair-vent {
+    background-image: linear-gradient(left,#E0C4FF,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -webkit-linear-gradient(left,#E0C4FF,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -moz-linear-gradient(left,#E0C4FF,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -o-linear-gradient(left,#E0C4FF,#fff,#fff,#fff,#fff,#fff,#fff)
     }
 .linkflair-meta {
-    background: url(http://f.thumbs.redditmedia.com/D0RJ9W63o-1c065q.png) repeat-y scroll left center !important
+    background-image: linear-gradient(left,#BDEEA6,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -webkit-linear-gradient(left,#BDEEA6,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -moz-linear-gradient(left,#BDEEA6,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -o-linear-gradient(left,#BDEEA6,#fff,#fff,#fff,#fff,#fff,#fff)
+    }
+.linkflair-inspiration {
+    background-image: linear-gradient(left,#FFC5DC,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -webkit-linear-gradient(left,#FFC5DC,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -moz-linear-gradient(left,#FFC5DC,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -o-linear-gradient(left,#FFC5DC,#fff,#fff,#fff,#fff,#fff,#fff)
+    }
+.linkflair-misc {
+    /* Here I'd put Rarity's coat color. IF SHE HAD ONE. */
     }
 .flairoptionpane .linkflair-offer span {
     color: #971757;
@@ -224,9 +314,21 @@ Link flair
     color: #e57eb3;
     background-color: #fff797
     }
-.flairoptionpane .linkflair-meta span {
+.flairoptionpane .linkflair-vent span {
     color: #363b74;
     background-color: #caaad1
+    }
+.flairoptionpane .linkflair-meta span {
+    color: #363b74;
+    background-color: #BDEEA6
+    }
+.flairoptionpane .linkflair-inspiration span {
+    color: #fff;
+    background-color: #ffa9cb
+    }
+.flairoptionpane .linkflair-misc span {
+    color: #541970;
+    background-color: #ffffff
     }
 .flairoptionpane .linkflair span {
     display: block !important;
@@ -234,16 +336,17 @@ Link flair
     max-width: inherit !important;
     text-align: center
     }
-.flairoptionpane .linkflair a, .linkflairlabel {
+.flairoptionpane .linkflair a {
     display: none
     }
-.flairselection a.title:after {
+.flairselection:after {
     content: "Don't forget to click save!";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;
     letter-spacing: normal;
-    color: #000
+    color: #000;
+    font-weight: bold
     }
 .flairselection a.title {
     font-size: 0px !important;
@@ -266,8 +369,14 @@ Link flair
 .res-nightmode .linkflair-offer a.title, .res-nightmode .linkflair-offer a.title:visited {
     color: #97d6f9 !important
     }
-.res-nightmode .linkflair-meta a.title, .res-nightmode .linkflair-meta a.title:visited {
+.res-nightmode .linkflair-vent a.title, .res-nightmode .linkflair-vent a.title:visited {
     color: #caaad1 !important
+    }
+.res-nightmode .linkflair-meta a.title, .res-nightmode .linkflair-meta a.title:visited {
+    color: #BDEEA6 !important
+    }
+.res-nightmode .linkflair-inspiration a.title, .res-nightmode .linkflair-inspiration a.title:visited {
+    color: #ff5497 !important
     }
 /*
 Header fix
@@ -294,9 +403,9 @@ a[href|="/rainbow!"] {
     background-color: #97d6f9 !important
     }
 a[href|="/rarity!"] {
-    color: #eef1f3 !important;
+    color: #49176d !important;
     cursor: text !important;
-    background-color: #49176d !important
+    background-color: #fafafa !important
     }
 a[href|="/twilight!"] {
     color: #363b74 !important;
@@ -308,10 +417,15 @@ a[href|="/fluttershy!"] {
     cursor: text !important;
     background-color: #fff797 !important
     }
+a[href|="/spike!"] {
+    color: #363b74 !important;
+    cursor: text !important;
+    background-color: #BDEEA6 !important
+    }
 /*
-RDJ's and Bot name change
+Bot name change
 */
-.author[href$="/RogueDarkJedi"], .author[href$="/MLSG_Bot"] {
+.author[href$="/MLSG_Bot"] {
     font-size: 0px !important;
     display: inline-block;
     letter-spacing: -20px;
@@ -323,9 +437,6 @@ RDJ's and Bot name change
     visibility: visible !important;
     display: block;
     letter-spacing: normal
-    }
-.author[href$="/RogueDarkJedi"]:after {
-    content: "RainbowDashJedi"
     }
 .author[href$="/MLSG_Bot"]:after {
     content: "Sweetie Bot"
@@ -500,16 +611,21 @@ a[href|="/muffin"], a[href|="/muffins"] {
 /**************
 A Emoticons
 **************/
-a[href|="/swagintosh"], a[href|="/a24"], a[href|="/rswagintosh"], a[href|="/ra24"] {
+a[href|="/swagintosh"], a[href|="/a24"] {
     display: block;
     clear: none;
     float: left;
     width: 70px;
     height: 70px;
-    background-image: url(http://b.thumbs.redditmedia.com/Kt_jbvLW92C9Fdqg.png)
+    background-image: url(http://f.thumbs.redditmedia.com/IugBi-28qMxAgVzw.png)
     }
 a[href|="/rswagintosh"], a[href|="/ra24"] {
-    background-position: -0px -70px !important
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://a.thumbs.redditmedia.com/ZqxffVrG2BJjyaAZ.png)
     }
 a[href|="/a00"], a[href|="/ajlie"], a[href|="/a01"], a[href|="/a10"], a[href|="/a11"], a[href|="/a21"], a[href|="/priceless"], a[href|="/a20"], a[href|="/flutterjerk"], a[href|="/celestiamad"], a[href|="/twicrazy"], a[href|="/twipride"], a[href|="/lunateehee"], a[href|="/lunawait"], a[href|="/a02"], a[href|="/a12"], a[href|="/a22"], a[href|="/a04"], a[href|="/a14"], a[href|="/a05"], a[href|="/a15"], a[href|="/paperbagderpy"], a[href|="/paperbagwizard"], a[href|="/derpwizard"], a[href|="/a03"], a[href|="/ajhappy"], a[href|="/happlejack"], a[href|="/a13"], a[href|="/ppfear"], a[href|="/pinkiefear"], a[href|="/a23"], a[href|="/twibeam"], a[href|="/raritydaww"], a[href|="/scootacheer"], a[href|="/lootascoo"], a[href|="/ajsup"], a[href|="/ajwhatsgood"], a[href|="/flutterwhoa"], a[href|="/flutterwoah"], a[href|="/a25"], a[href|="/rdsad"], a[href|="/rdcry"], a[href|="/a06"], a[href|="/ohcomeon"], a[href|="/sbcomeon"], a[href|="/ppcute"], a[href|="/cutiepie"], a[href|="/a16"], a[href|="/a26"], a[href|="/abbored"], a[href|="/abmerp"], a[href|="/a07"], a[href|="/raritypaper"], a[href|="/raritynews"], a[href|="/a17"], a[href|="/sbbook"], a[href|="/sweetiebook"], a[href|="/sbook"], a[href|="/a27"], a[href|="/scootaplease"], a[href|="/scootappeal"], a[href|="/scootaplz"], a[href|="/a08"], a[href|="/twiright"], a[href|="/satistwied"], a[href|="/a18"], a[href|="/celestiawut"], a[href|="/wutlestia"], a[href|="/a28"], a[href|="/grannysmith"], a[href|="/granny"], a[href|="/oldmareyellsatcloud"], a[href|="/a09"], a[href|="/shiningarmor"], a[href|="/shiningarmour"], a[href|="/a19"], a[href|="/chrysalis"], a[href|="/queenchrysalis"], a[href|="/changelingqueen"], a[href|="/a29"], a[href|="/cadence"], a[href|="/cadance"], a[href|="/princesscadence"], a[href|="/princesscadance"], a[href|="/princessmiamorecadenza"] {
     display: block;
@@ -1253,4 +1369,60 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 .titlebox .SuperRedditAltTextDisplay_Text {
     margin: -6px 0 !important;
     font-size: 8pt !important
+    }
+/* David's hat*/
+/*NEW GIANT HAT */
+/*Header padding for Applebloom's bow*/
+.pagename {
+    font-size: 12pt
+    }
+.titlebox form {
+    position: static
+    }
+.titlebox .usertext-body .md ol {
+    width: auto;
+    background-color: #EFF7FF;
+    border: 1px solid #5f99cf;
+    border-right: 0;
+    position: absolute;
+    top: 35px;
+    /*Normally 28 but AB's bow is huge*/
+    left: 200px;
+    z-index: 50;
+    margin: 20px 420px 0 0;
+    padding: 8px 6px;
+    padding-right: 12px;
+    list-style: none;
+    display: block;
+    white-space: normal;
+    overflow: hidden;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    z-index: 9999;
+    overflow: visible;
+    max-height: 16px;
+    white-space: nowrap
+    }
+.titlebox .usertext-body .md ol li {
+    list-style: none;
+    display: inline-block;
+    float: left;
+    overflow: auto
+    }
+.titlebox .usertext-body .md ol li strong {
+    font-size: 12px;
+    color: #EF4F91;
+    /*Scoots is #FDBC5F Pinkie is #EF4F91*/
+    }
+.titlebox .usertext-body .md ol li + li {
+    display: inline-block;
+    float: right;
+    background: url(http://b.thumbs.redditmedia.com/OoH6cP7k2zOcvEns.png);
+    width: 59px;
+    height: 60px;
+    margin-top: -33px;
+    margin-left: -1px;
+    margin-bottom: -15px;
+    margin-right: -40px
     }

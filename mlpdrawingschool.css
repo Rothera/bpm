@@ -71,11 +71,11 @@ a[href$="/spoiler"]:hover {
     display: block;
     content: "NOTE 1: If there's a critic's livestream going on, please try and get critique there in addition to posting.  Critics often attend livestreams when they're on and thus it leaves submissions sad and lonely.  NOTE 2: Check the ''new'' queue after submitting your post. If your submission doesn't show up, notify the moderators by messaging them."
     }
-/* #header {
-    background:url(%%background%%) no-repeat fixed center center;
-        margin-top: 5px;
+#header {
+    background: transparent url(http://a.thumbs.redditmedia.com/AHD7zufZMDVxUr3l.png) no-repeat left bottom;
+    background-position: 100px;
+    height: 115px
     }
-*/
 /*Background*/
 body {
     background: url(http://a.thumbs.redditmedia.com/Q0jAC907PzhurbzT.png) no-repeat fixed center center;
