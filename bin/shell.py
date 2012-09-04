@@ -19,6 +19,7 @@ import shutil
 import subprocess
 import sys
 import time
+import urllib.error
 import urllib.request
 
 UA = "BetterPonymotes stylesheet update checker (1req/2.5secs; pm Typhos)"
@@ -50,8 +51,12 @@ def update_css(num, total, subreddit):
 
     print("[%s/%s]: %s" % (num+1, total, url))
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req) as stream:
-        new_ss = stream.read()
+    try:
+        with urllib.request.urlopen(req) as stream:
+            new_ss = stream.read()
+    except urllib.error.HTTPError as error:
+        print("ERROR:", error)
+        return None
 
     if old_ss != new_ss:
         print("NOTICE: Stylesheet changed in r/%s" % (subreddit))
@@ -61,6 +66,7 @@ def update_css(num, total, subreddit):
 
 def cmd_update(args):
     parser = argparse.ArgumentParser(description="Update stylesheet cache", prog="update")
+    parser.add_argument("-s", "--start", help="Subreddit to start from")
     parser.add_argument("subreddits", nargs="*")
     args = parser.parse_args(args)
 
@@ -70,6 +76,9 @@ def cmd_update(args):
         subreddits = [fn.split(".")[0] for fn in filenames]
     else:
         subreddits = args.subreddits
+
+    if args.start is not None:
+        subreddits = subreddits[subreddits.index(args.start):]
 
     updates = []
     for (i, sr) in enumerate(subreddits[:-1]):
