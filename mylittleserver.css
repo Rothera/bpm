@@ -292,3 +292,17 @@ a.author[href$="/Gapmeister"]:after {
     display: block;
     letter-spacing: normal
     }
+a.author[href$="/thegreatholycow"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/thegreatholycow"]:after {
+    content: "GreatHolyCow";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
