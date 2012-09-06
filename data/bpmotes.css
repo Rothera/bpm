@@ -181,3 +181,38 @@
 .bpflag-tahoma_excl_ {
     font-family: Tahoma, Geneva, sans-serif
 }
+
+/*
+ * Some SFW portions of combiners. They are included here so that
+ * combiners-nsfw.css can be disabled with the NSFW option.
+ */
+
+/* SFW */
+/* lickiepie */
+a[href|="/lickiepie"][href*="-combine"] + a {
+    position: relative;
+    left: -220px;
+    top: 127px;
+    margin-right: -220px
+    }
+/* tableflip */
+a[href^="/emptytable"][href*="-combine"] {
+    z-index: 2;
+    position: relative
+    }
+a[href^="/emptytable"][href*="-combine"] + a {
+    z-index: 1;
+    position: relative;
+    margin-right: -999px;
+    margin-bottom: -999px;
+    left: -120px;
+    top: 20px;
+    max-height: 119px
+    }
+/* fixes */
+a[href^="/emptytable"][href*="-combine"] + a[href^="/pp"][href*="-combine"] + a {
+    width: 150px;
+    position: relative;
+    left: 14px;
+    top: 5px
+    }

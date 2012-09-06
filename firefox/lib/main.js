@@ -94,8 +94,6 @@ var main_mod = page_mod.PageMod({
     contentStyleFile: [
         self.data.url("bpmotes.css"),
         self.data.url("emote-classes.css"),
-        // NOTE: Keeping extracss separate in accordance with bpm.js
-        self.data.url("combiners.css"),
         ],
     contentScriptFile: [
         self.data.url("mutation_summary.js"),
@@ -109,6 +107,7 @@ var main_mod = page_mod.PageMod({
 // This is the only preference we control from this side. Other browsers do not
 // have this hot-reloading capability, though that is mostly by accident.
 var extracss_mod = null;
+var combiners_mod = null;
 
 function enable_css(filename) {
     return page_mod.PageMod({
@@ -118,13 +117,20 @@ function enable_css(filename) {
     });
 }
 
-// Monitor enableExtraCSS for changes
+// Monitor prefs for CSS-related changes
 function prefs_updated() {
     if(storage.prefs.enableExtraCSS && extracss_mod === null) {
         extracss_mod = enable_css("extracss.css");
     } else if(!storage.prefs.enableExtraCSS && extracss_mod !== null) {
         extracss_mod.destroy();
         extracss_mod = null;
+    }
+
+    if(storage.prefs.enableNSFW && combiners_mod === null) {
+        combiners_mod = enable_css("combiners-nsfw.css");
+    } else if(!storage.prefs.enableNSFW && combiners_mod !== null) {
+        combiners_mod.destroy();
+        combiners_mod = null;
     }
 }
 

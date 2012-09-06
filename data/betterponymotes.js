@@ -651,7 +651,6 @@ function run(prefs) {
 // Does nothing on Firefox
 apply_css("/bpmotes.css");
 apply_css("/emote-classes.css");
-apply_css("/combiners.css");
 
 get_prefs(function(prefs) {
     if(prefs.enableExtraCSS) {
@@ -663,6 +662,9 @@ get_prefs(function(prefs) {
         } else {
             apply_css("/extracss.css");
         }
+    }
+    if(prefs.enableNSFW) {
+        apply_css("/combiners-nsfw.css");
     }
 });
 

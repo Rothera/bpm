@@ -1,29 +1,13 @@
 /*
  * r/mylittlecombiners special support. Stolen directly from their stylesheet
  * and edited to suit BPM.
+ *
+ * This file contains only the more NSFW additions. Though the subtleties of
+ * what counts as "NSFW" wrt these things could fill an essay, for now, my
+ * involvement ends with splitting this file.
  */
 
-/*Commented out while move to Speedy's sub is tested*/
-/*a[href|="/bryvoodfun"],*/
-/*a[href|="/artfun"],*/
-/*a[href|="/pixelfun"]{*/
-/*background-image: url(%%funs%%);*/
-/*display: block;*/
-/*clear: none;*/
-/*float: left;*/
-/*width: 212px;*/
-/*height: 166px;}*/
-/*a[href|="/bryvoodfun"]{background-position: -2px -170px}*/
-/*a[href|="/artfun"]{background-position: -2px -2px}*/
-/*a[href|="/pixelfun"]{background-position: -2px -338px}*/
 /* NSFW */
-/* lickiepie */
-a[href|="/lickiepie"][href*="-combine"] + a {
-    position: relative;
-    left: -220px;
-    top: 127px;
-    margin-right: -220px
-    }
 /* jizz */
 a[href|="/jizz"][href*="-combine"] {
     z-index: 2;
@@ -120,26 +104,4 @@ a[href*="mount-combine"] + a[href^="/pp"][href*="-combine"] + a {
     left: -70px;
     top: 135px;
     z-index: 4
-    }
-/* SFW */
-/* tableflip */
-a[href^="/emptytable"][href*="-combine"] {
-    z-index: 2;
-    position: relative
-    }
-a[href^="/emptytable"][href*="-combine"] + a {
-    z-index: 1;
-    position: relative;
-    margin-right: -999px;
-    margin-bottom: -999px;
-    left: -120px;
-    top: 20px;
-    max-height: 119px
-    }
-/* fixes */
-a[href^="/emptytable"][href*="-combine"] + a[href^="/pp"][href*="-combine"] + a {
-    width: 150px;
-    position: relative;
-    left: 14px;
-    top: 5px
     }
