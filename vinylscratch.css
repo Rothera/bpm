@@ -1,3 +1,17 @@
+/*Temporary CSS to make the sidebar picture (oh god please don't fuck up everything) remove this shit after a week or so*/
+div.side {
+    padding: 435px 0px 0px 0px;
+    background-color: #fff;
+    background-image: url(http://c.thumbs.redditmedia.com/2GXLjwJpNF-lKeL8.png) !important;
+    background-position: 10px 5px !important;
+    background-repeat: no-repeat !important
+    }
+div.side:before {
+    margin: 10px;
+    font-weight: 500;
+    font-size: 1.0em;
+    content: "Congratulations to our contest winners!"
+    }
 /* http://pastebin.com/wKXNqF9j  http://imgur.com/a/XJxbi#0 <- old emote stuffs */
 /* SHit bro, let's do CSS 
 body {
@@ -646,6 +660,10 @@ a[href|="/vshnngg"], a[href|="/hnnng"] {
     background-position: -0px -0px
     }
 /* 4: OTHER THINGS*/
+a[href="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }
 /* Hide emoticon tables in the sidebar  */
 .titlebox em {
     color: white
