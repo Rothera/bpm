@@ -5,15 +5,20 @@
  * This file contains only the more NSFW additions. Though the subtleties of
  * what counts as "NSFW" wrt these things could fill an essay, for now, my
  * involvement ends with splitting this file.
+ *
+ * WRT selectors, though I replaced the a[href="..."] ones with BPM classes
+ * where I could, the original uses wildcards as actual wildcards ("*mount") in
+ * several places. Rather than expand these out, I'm simply leaving them as-is.
+ * FIXME.
  */
 
 /* NSFW */
 /* jizz */
-a[href|="/jizz"][href*="-combine"] {
+.bpmote-jizz.bpflag-combine {
     z-index: 2;
     position: relative
     }
-a[href|="/jizz"][href*="-combine"] + a {
+.bpmote-jizz.bpflag-combine + a {
     z-index: 1;
     position: relative;
     left: -110px;
@@ -55,50 +60,51 @@ a[href*="mount-combine"] + a {
     top: 153px
     }
 /* giomac */
-a[href|="/giomount-combine"]:before, a[href|="/giomount-combine"]:after {
+.bpmote-giomount.bpflag-combine:before, .bpmote-giomount.bpflag-combine:after {
     background-position: -0px -1830px
     }
 /* bigmac */
-a[href|="/bmmount-combine"]:before, a[href|="/bmmount-combine"]:after {
+.bpmote-bmmount.bpflag-combine:before, .bpmote-bmmount.bpflag-combine:after {
     background-position: -0px -1220px
     }
 /* fancy */
-a[href|="/fpmount-combine"]:before, a[href|="/fpmount-combine"]:after {
+.bpmote-fpmount.bpflag-combine:before, .bpmote-fpmount.bpflag-combine:after {
     background-position: -0px -1525px
     }
 /* soarin */
-a[href|="/soarinmount-combine"]:before, a[href|="/soarinmount-combine"]:after {
+.bpmote-soarinmount.bpflag-combine:before, .bpmote-soarinmount.bpflag-combine:after {
     background-position: -0px -915px
     }
 /* speedi */
-a[href|="/stmount-combine"]:before, a[href|="/stmount-combine"]:after {
+.bpmote-stmount.bpflag-combine:before, .bpmote-stmount.bpflag-combine:after {
     background-position: -0px -610px
     }
 /* whooves */
-a[href|="/whoovesmount-combine"]:before, a[href|="/whoovesmount-combine"]:after {
+.bpmote-whoovesmount.bpflag-combine:before, .bpmote-whoovesmount.bpflag-combine:after {
     background-position: -0px -305px
     }
 /* fancynekid */
-a[href|="/fpnmount-combine"]:before, a[href|="/fpnmount-combine"]:after {
+.bpmote-fpnmount.bpflag-combine:before, .bpmote-fpnmount.bpflag-combine:after {
     background-position: -0px -0px
     }
 /* general fix */
-a[href*="mount-combine"] + a[href^="/ajfun"] {
+a[href*="mount-combine"] + .bpmote-ajfun {
     margin-left: 0px
     }
-a[href*="mount-combine"] + a[href^="/twifun"], a[href*="mount-combine"] + a[href^="/darklefun"], a[href*="mount-combine"] + a[href^="/dashfun"] {
+a[href*="mount-combine"] + .bpmote-twifun, a[href*="mount-combine"] + .bpmote-darklefun, a[href*="mount-combine"] + .bpmote-dashfun {
     margin-left: -26px
     }
-a[href*="mount-combine"] + a[href^="/shyfun"] {
+a[href*="mount-combine"] + .bpmote-shyfun {
     margin-left: -18px
     }
-a[href*="mount-combine"] + a[href^="/rarfun"] {
+a[href*="mount-combine"] + .bpmote-rarfun {
     margin-left: -34px
     }
-a[href*="mount-combine"] + a[href^="/ppfun"] {
+a[href*="mount-combine"] + .bpmote-ppfun {
     margin-left: -10px
     }
-a[href*="mount-combine"] + a[href^="/pp"][href*="-combine"] + a {
+/* BPM NOTE: Similar to bpmotes.css, I have no idea what to do with this */
+a[href*="mount-combine"] + a[href^="/pp"].bpflag-combine + a {
     width: 150px;
     position: relative;
     left: -70px;

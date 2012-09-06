@@ -187,20 +187,19 @@
  * combiners-nsfw.css can be disabled with the NSFW option.
  */
 
-/* SFW */
 /* lickiepie */
-a[href|="/lickiepie"][href*="-combine"] + a {
+.bpmote-lickiepie.bpflag-combine + a {
     position: relative;
     left: -220px;
     top: 127px;
     margin-right: -220px
     }
 /* tableflip */
-a[href^="/emptytable"][href*="-combine"] {
+.bpmote-emptytable.bpflag-combine {
     z-index: 2;
     position: relative
     }
-a[href^="/emptytable"][href*="-combine"] + a {
+.bpmote-emptytable.bpflag-combine + a {
     z-index: 1;
     position: relative;
     margin-right: -999px;
@@ -210,7 +209,11 @@ a[href^="/emptytable"][href*="-combine"] + a {
     max-height: 119px
     }
 /* fixes */
-a[href^="/emptytable"][href*="-combine"] + a[href^="/pp"][href*="-combine"] + a {
+/*
+ * BPM NOTE: The /pp* refers to the pinkiepipes stuff from r/mlbannertest. I
+ * can't do much to make this nicer.
+ */
+.bpmote-emptytable.bpflag-combine + a[href^="/pp"].bpflag-combine + a {
     width: 150px;
     position: relative;
     left: 14px;
