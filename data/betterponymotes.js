@@ -360,17 +360,28 @@ function enable_drag(element, start_callback, callback) {
 }
 
 function update_search(prefs, sr_array) {
-    if(!search_element.value) {
+    // Split search query on spaces, remove empty strings, and lowercase terms
+    var terms = search_element.value.split(" ");
+    terms = terms.filter(function(v) { return v; });
+    terms = terms.map(function(v) { return v.toLowerCase(); });
+
+    if(!terms.length) {
         results_element.innerHTML = "";
         count_element.textContent = "";
         return;
     }
 
     var results = [];
+    no_match:
     for(var emote in emote_map) {
-        if(emote.toLowerCase().indexOf(search_element.value.toLowerCase()) != -1) {
-            results.push(emote);
+        emote = emote.toLowerCase();
+        // Match if ALL search terms match
+        for(var t = 0; t < terms.length; t++) {
+            if(emote.indexOf(terms[t]) < 0) {
+                continue no_match; // outer loop, not inner
+            }
         }
+        results.push(emote);
     }
     results.sort();
 
