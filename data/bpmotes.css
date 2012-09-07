@@ -88,7 +88,6 @@
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC9SURBVEjHY2BgYPg/QHiALQYCBnrgoWsxEHiCMF0tBgJWIL4Oxaz0tLgAyYB8ulgMBCJA/B7JABBbhB4WT8OSNabRM3FRpG/UYnRF4kA8l1SLQXpAekm2GJpPS4D4Ix7D/xOQA+ktRs/nOC0GAi8gvknFygBklhcxFntCSyRqWXwduWglJqjzYQUFmUH9HlrCsZKTuERwFQ4E9E3DVZqN5uPBb/GAVRIDVi0OWENgQJs+A9bYGx7t6hHTdwIA/NWecKA2C2UAAAAASUVORK5CYII=");
     width: 30px;
     height: 30px;
-    display: inline-block;
     margin-right: 20px;
     float: left;
 }
@@ -122,7 +121,6 @@
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACWSURBVEjH7dcxDoAgDAXQDhyROzJwREiQ4bsQLAjGH2NJ/tb4DFBQEZFCChmuQ96IwQa3xa4m1HilxqPGPQIDjahLPRxoQk3U8Cm4QUsPb9AywmfhcNH8CWAPPRN2YO3BGbl8sd011vBb6MqunsVVdKmPgWcFzSP0OzBlqimbi9ZOzAOEc2TSLgnqtWifPgZvw7/5dzoAyDAWKt02AB4AAAAASUVORK5CYII=");
     width: 30px;
     height: 30px;
-    display: inline-block;
     margin-left: 20px;
     float: right;
 }
@@ -138,15 +136,41 @@
     padding: 4px !important;
 }
 
+#bpm-bottomrow {
+    margin-top: -19px !important;
+    height: 20px; /* Fit in the margins */
+}
+
+/* Help hover */
+#bpm-help-hover {
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+#bpm-help-hover:hover > #bpm-search-help {
+    display: block;
+}
+
+/* Actual help box */
+#bpm-search-help {
+    position: absolute;
+    background-color: white;
+    border: 2px solid #D0D0D0;
+    padding: 4px;
+}
+
 /* Bottom-right resize box */
 #bpm-resize {
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACcSURBVDjLzdQxCoAwDAXQjOJmF1GvpSdzUU8iiHdSd9EvROhQMGkUDPzF0EehMUREx8v5CESRJUEQNSE90iDuDbDzGvuFW8Haa2xIaQUzvtnC32ckjQa50SI5MmrQx1dGJRpUNDYaVDyHUlQ12BJU/acE0AoZosEAuvGIuWiQDxbI6gGNFRz4ZjfQm0A+7HiBXItkMoOisfntxj4BkxXf5wPylQcAAAAASUVORK5CYII=");
     width: 20px;
     height: 20px;
-    display: inline-block;
     float: right;
-    margin-top: -19px;
     margin-right: -1px;
+}
+
+/* Help box */
+#bpm-search-help {
+    display: none;
 }
 
 /* Emote search result */

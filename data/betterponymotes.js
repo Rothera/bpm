@@ -302,7 +302,17 @@ function inject_search_html() {
         '    <span id="bpm-close"></span>',
         '  </div>',
         '  <div id="bpm-search-results"></div>',
-        '  <span id="bpm-resize"></span>',
+        '  <div id="bpm-bottomrow">',
+        '    <span id="bpm-help-hover">help',
+        '      <div id="bpm-search-help">',
+        '        <p>Searching for <code>"aj"</code> will show you all codeotes with <code>"aj"</code> in their names.',
+        '        <p>Searching for <code>"aj happy"</code> will show you all codeotes with both <code>"aj"</code> and <code>"happy"</code> in their names.',
+        '        <p>The special syntax <code>"sr:subreddit"</code> will limit your results to emotes from that subreddit.',
+        '        <p>Using more than one subreddit will show you emotes from all of them.',
+        '      </div>',
+        '    </span>',
+        '    <span id="bpm-resize"></span>',
+        '  </div>',
         '</div>'
         ].join("\n");
     bpm_div.innerHTML = search_html;
