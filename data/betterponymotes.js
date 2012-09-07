@@ -361,11 +361,26 @@ function enable_drag(element, start_callback, callback) {
 
 function update_search(prefs, sr_array) {
     // Split search query on spaces, remove empty strings, and lowercase terms
-    var terms = search_element.value.split(" ");
-    terms = terms.filter(function(v) { return v; });
-    terms = terms.map(function(v) { return v.toLowerCase(); });
+    var terms = search_element.value.split(" ").map(function(v) { return v.toLowerCase(); });
 
-    if(!terms.length) {
+    var sr_terms = [];
+    var match_terms = [];
+    for(var t = 0; t < terms.length; t++) {
+        // If it starts with "sr:" it's subreddit syntax, otherwise it's a
+        // normal search term.
+        if(terms[t].indexOf("sr:") == 0) {
+            sr_terms.push(terms[t].substr(3));
+        } else {
+            match_terms.push(terms[t]);
+        }
+    }
+
+    // Filter out empty strings
+    sr_terms = sr_terms.filter(function(v) { return v; });
+    match_terms = match_terms.filter(function(v) { return v; });
+
+    // If there's nothing to search on, reset and stop
+    if(!sr_terms.length && !match_terms.length) {
         results_element.innerHTML = "";
         count_element.textContent = "";
         return;
@@ -374,13 +389,35 @@ function update_search(prefs, sr_array) {
     var results = [];
     no_match:
     for(var emote in emote_map) {
-        emote = emote.toLowerCase();
+        // Cache lowercased version
+        var lc_emote = emote.toLowerCase();
         // Match if ALL search terms match
-        for(var t = 0; t < terms.length; t++) {
-            if(emote.indexOf(terms[t]) < 0) {
+        for(var t = 0; t < match_terms.length; t++) {
+            if(lc_emote.indexOf(match_terms[t]) < 0) {
                 continue no_match; // outer loop, not inner
             }
         }
+
+        // emote_map[emote][1] == subreddit id
+        // sr_id_map[id] == internal sr name
+        // sr_data[name][1] == "human readable name"
+        // Generally this name is already lowercase, though not for bpmextras
+        var source_sr_name = sr_data[sr_id_map[emote_map[emote][1]]][0].toLowerCase();
+
+        // Match if ANY subreddit terms match
+        if(sr_terms.length) {
+            var is_match = false;
+            for(var t = 0; t < sr_terms.length; t++) {
+                if(source_sr_name.indexOf(sr_terms[t]) > -1) {
+                    is_match = true;
+                    break;
+                }
+            }
+            if(!is_match) {
+                continue no_match;
+            }
+        }
+
         results.push(emote);
     }
     results.sort();
