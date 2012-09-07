@@ -2705,28 +2705,35 @@ a.thumbnail.self {
     }
 /*End spoilers in the title flair*/
 /*Pinkie Pie NPT Warnings*/
-.formtabs-content .infobar {
-    margin-left: 50px;
-    margin-top: 137px;
-    font-size: 0px;
-    color: #F6E69F;
-    padding: 0;
-    content: ""
-    }
-.formtabs-content .infobar:before {
-    display: inline-block;
-    margin: -137px -65px -8px -101px;
-    padding: 143px 5px 14px 126px;
-    width: 438px;
-    height: 30px;
-    background: url(http://d.thumbs.redditmedia.com/hzXJE_TUMe9sVBIc.png) no-repeat;
-    content: "Hey you! It's No-Pics Thursday! So no submitting pictures, ok? No need to worry though, you can save your pictures for another day!";
-    font-size: 12px;
-    color: black
-    }
-.formtabs-content .infobar#text-desc:before {
-    background: url(http://d.thumbs.redditmedia.com/hzXJE_TUMe9sVBIc.png) no-repeat
-    }
+/*
+.formtabs-content .infobar
+{
+ margin-left:50px;
+ margin-top:137px;
+ font-size:0px;
+ color:#F6E69F;
+ padding:0;
+ content:"";
+}
+
+.formtabs-content .infobar:before
+{
+ display:inline-block;
+ margin:-137px -65px -8px -101px;
+ padding:143px 5px 14px 126px;
+ width:438px;
+ height:30px;
+ background:url(%%pinkiemessage%%) no-repeat;
+ content:"Hey you! It's No-Pics Thursday! So no submitting pictures, ok? No need to worry though, you can save your pictures for another day!";
+ font-size:12px;
+ color:black;
+}
+
+.formtabs-content .infobar#text-desc:before
+{
+ background:url(%%pinkiemessage%%) no-repeat;
+}
+/**/
 /*Thumbnail Disabler*/
 .flairselector .linkflair-disable-thumb .linkflairlabel:before {
     content: "Disable Thumbnail"
@@ -2742,7 +2749,7 @@ a.thumbnail.self {
     }
 /*Avatars Sidebanner*/
 .side .usertext a[href="http://goo.gl/NzJ3Y"] {
-    background-image: url(http://a.thumbs.redditmedia.com/TKz0qyGgYVIUwObx.png);
+    background-image: url(http://a.thumbs.redditmedia.com/bykRBb9X2EMrfLpx.png);
     background-position: 0 0;
     background-repeat: no-repeat;
     display: block;

@@ -12,6 +12,33 @@
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px
     }
+/* *** Fixing that broken header text *** */
+.tabmenu {
+    list-style-type: none;
+    white-space: nowrap;
+    display: inline-block;
+    margin-top: 80px;
+    position: relative;
+    top: -16px
+    }
+.pagename {
+    font-weight: bold;
+    margin-right: 1ex;
+    font-variant: small-caps;
+    font-size: 1.2em;
+    position: relative;
+    top: -15px
+    }
+#header-img {
+    margin-top: 2px;
+    margin-right: 5px;
+    padding-top: 7px;
+    z-index: 2
+    }
+#header-bottom-left {
+    height: 100px
+    }
+/* *** That sidebar stuff *** */
 .titlebox blockquote a[href$="#T"] {
     cursor: text;
     color: red
