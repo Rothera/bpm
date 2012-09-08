@@ -51,13 +51,6 @@ function hasParentWithClass(element, className) {
     return false;
 }
 
-// Converts an emote name (or similar) to the associated CSS class.
-//
-// Keep this in sync with the Python code.
-function sanitize(s) {
-    return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_");
-}
-
 // Emote processing: takes prefs, a pre-processed array of enabled subreddits,
 // and a list of elements.
 function process(prefs, sr_array, elements) {

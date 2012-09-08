@@ -10,6 +10,7 @@
 
 "use strict";
 
+var match_pattern = require("match-pattern");
 var page_mod = require("page-mod");
 var self = require("self");
 var simple_prefs = require("simple-prefs");
@@ -103,10 +104,11 @@ var main_mod = page_mod.PageMod({
     onAttach: on_cs_attach
 });
 
-// This is the only preference we control from this side. Other browsers do not
-// have this hot-reloading capability, though that is mostly by accident.
+// These are the only preferences we control from this side. Other browsers do
+// not have this hot-reloading capability, though that is mostly by accident.
 var extracss_mod = null;
 var combiners_mod = null;
+var globalemotes_mod = null;
 
 function enable_css(filename) {
     return page_mod.PageMod({
@@ -130,6 +132,27 @@ function prefs_updated() {
     } else if(!storage.prefs.enableNSFW && combiners_mod !== null) {
         combiners_mod.destroy();
         combiners_mod = null;
+    }
+
+    if(storage.prefs.enableGlobalEmotes && globalemotes_mod === null) {
+        globalemotes_mod = page_mod.PageMod({
+            include: ["*"],
+            contentScriptWhen: "start",
+            contentStyleFile: [
+                self.data.url("emote-classes.css"),
+                ],
+            contentScriptFile: [
+                self.data.url("mutation_summary.js"),
+                self.data.url("emote-map.js"),
+                self.data.url("sr-data.js"),
+                self.data.url("script-common.js"),
+                self.data.url("betterglobalmotes.js")
+                ],
+            onAttach: on_cs_attach
+        });
+    } else if(!storage.prefs.enableGlobalEmotes && globalemotes_mod !== null) {
+        globalemotes_mod.destroy();
+        globalemotes_mod = null;
     }
 }
 

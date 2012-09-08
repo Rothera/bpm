@@ -147,3 +147,10 @@ switch(platform) {
         });
         break;
 }
+
+// Converts an emote name (or similar) to the associated CSS class.
+//
+// Keep this in sync with the Python code.
+function sanitize(s) {
+    return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_");
+}
