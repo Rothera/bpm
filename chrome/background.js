@@ -8,10 +8,8 @@
 **
 *******************************************************************************/
 
-// Load/initialize prefs
-var prefs;
-if(localStorage.prefs === undefined) {
-    prefs = {
+// Load/initialize prefs to defaults
+var default_prefs = {
         "enableNSFW": false,
         "enableExtraCSS": true,
         "enabledSubreddits": {},
@@ -20,12 +18,22 @@ if(localStorage.prefs === undefined) {
         "searchBoxInfo": [600, 25, 600, 450],
         "showAltText": true
     };
+
+var prefs;
+if(localStorage.prefs === undefined) {
+    prefs = {};
 } else {
     prefs = JSON.parse(localStorage.prefs);
 }
 
-if(!prefs.enabledSubreddits) {
-    prefs.enabledSubreddits = {};
+if(prefs.showAltText === undefined) {
+    prefs.showAltText = false; // Off by default for upgrades only
+}
+
+for(var key in default_prefs) {
+    if(prefs[key] === undefined) {
+        prefs[key] = default_prefs[key];
+    }
 }
 
 for(var sr in sr_data) {
@@ -33,22 +41,8 @@ for(var sr in sr_data) {
         prefs.enabledSubreddits[sr] = true;
     }
 }
+// TODO: Remove subreddits from prefs that are no longer in the addon.
 
-if(prefs.showUnknownEmotes === undefined) {
-    prefs.showUnknownEmotes = true;
-}
-
-if(prefs.searchLimit === undefined) {
-    prefs.searchLimit = 200;
-}
-
-if(prefs.searchBoxInfo === undefined) {
-    prefs.searchBoxInfo = [600, 25, 600, 450];
-}
-
-if(prefs.showAltText === undefined) {
-    prefs.showAltText = false; // Off by default for upgrades only
-}
 localStorage.prefs = JSON.stringify(prefs);
 
 // Content script requests

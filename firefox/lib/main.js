@@ -20,9 +20,8 @@ var sr_data = require("sr-data");
 
 var storage = simple_storage.storage;
 
-// Initialize prefs to defaults
-if(!storage.prefs) {
-    storage.prefs = {
+// Load/initialize prefs to defaults
+var default_prefs = {
         "enableNSFW": false,
         "enableExtraCSS": true,
         "enabledSubreddits": {},
@@ -32,6 +31,9 @@ if(!storage.prefs) {
         "showAltText": true
     };
 
+if(!storage.prefs) {
+    storage.prefs = {};
+
     if(simple_prefs.prefs.enableNSFW !== undefined) {
         // Copy old prefs
         storage.prefs.enableNSFW = simple_prefs.prefs.enableNSFW;
@@ -39,8 +41,14 @@ if(!storage.prefs) {
     }
 }
 
-if(!storage.prefs.enabledSubreddits) {
-    storage.prefs.enabledSubreddits = {};
+if(storage.prefs.showAltText === undefined) {
+    storage.prefs.showAltText = false; // Off by default for upgrades only
+}
+
+for(var key in default_prefs) {
+    if(storage.prefs[key] === undefined) {
+        storage.prefs[key] = default_prefs[key];
+    }
 }
 
 for(var sr in sr_data.sr_data) {
@@ -49,22 +57,6 @@ for(var sr in sr_data.sr_data) {
     }
 }
 // TODO: Remove subreddits from prefs that are no longer in the addon.
-
-if(storage.prefs.showUnknownEmotes === undefined) {
-    storage.prefs.showUnknownEmotes = true;
-}
-
-if(storage.prefs.searchLimit === undefined) {
-    storage.prefs.searchLimit = 200;
-}
-
-if(storage.prefs.searchBoxInfo === undefined) {
-    storage.prefs.searchBoxInfo = [600, 25, 600, 450];
-}
-
-if(storage.prefs.showAltText === undefined) {
-    storage.prefs.showAltText = false; // Off by default for upgrades only
-}
 
 function on_cs_attach(worker) {
     worker.port.on("get_prefs", function() {
