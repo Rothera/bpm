@@ -10,11 +10,17 @@
 ##
 ################################################################################
 
-script = open("opera/includes/betterponymotes.js.in").read()
-emote_map = open("build/emote-map.js").read()
-sr_data = open("build/sr-data.js").read()
+import sys
 
-script = script.replace("/*$(EMOTE_MAP)*/", emote_map)
-script = script.replace("/*$(SR_DATA)*/", sr_data)
+macros = {
+    "EMOTE_MAP": "build/emote-map.js",
+    "SR_DATA": "build/sr-data.js",
+    "SCRIPT_COMMON": "data/script-common.js"
+    }
 
-open("opera/includes/betterponymotes.js", "w").write(script)
+script = open(sys.argv[1] + ".in").read()
+
+for (macro, filename) in macros.items():
+    script = script.replace("/*$(%s)*/" % (macro), open(filename).read())
+
+open(sys.argv[1], "w").write(script)
