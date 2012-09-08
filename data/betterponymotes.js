@@ -176,6 +176,18 @@ function hasParentWithId(element, id) {
     return false;
 }
 
+// Same, but for CSS classes
+function hasParentWithClass(element, className) {
+    if(element.parentNode !== null && element.parentNode.className !== undefined) {
+        if(element.parentNode.className.indexOf(className) > -1) {
+            return true;
+        } else {
+            return hasParentWithClass(element.parentNode, className);
+        }
+    }
+    return false;
+}
+
 // Converts an emote name (or similar) to the associated CSS class.
 //
 // Keep this in sync with the Python code.
@@ -254,6 +266,38 @@ function process(prefs, sr_array, elements) {
                     }
                 }
             }
+        }
+    }
+}
+
+function display_alt_text(elements) {
+    for(var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        if(element.title) {
+            // As a note: alt-text kinda has to be a block-level element. If
+            // you make it inline, it has the nice property of putting it where
+            // the emote was in the middle of a paragraph, but since the emote
+            // itself goes to the left, it just gets split up. This also makes
+            // long chains of emotes with alt-text indecipherable.
+            //
+            // Inline *is*, however, rather important sometimes- particularly
+            // -inp emotes. As a bit of a hack, we assume the emote code has
+            // already run, and check for bpflag-in/bpflag-inp.
+            var at_element;
+            if(element.className.indexOf("bpflag-in") > -1 || element.className.indexOf("bpflag-inp") > -1) {
+                at_element = document.createElement("span");
+            } else {
+                at_element = document.createElement("div");
+            }
+
+            at_element.className = "bpm-alttext";
+            at_element.textContent = element.title;
+
+            var before = element.nextSibling;
+            if(before !== null && before.className !== undefined && before.className.indexOf("expando-button") > -1) {
+                before = before.nextSibling;
+            }
+            element.parentNode.insertBefore(at_element, before);
         }
     }
 }
@@ -653,7 +697,11 @@ function run(prefs) {
     // Initial pass- show all emotes currently on the page.
     var posts = document.getElementsByClassName("md");
     for(var i = 0; i < posts.length; i++) {
-        process(prefs, sr_array, posts[i].getElementsByTagName("a"));
+        var links = posts[i].getElementsByTagName("a");
+        // NOTE: must run alt-text AFTER emote code, always. See note in
+        // display_alt_text
+        process(prefs, sr_array, links);
+        display_alt_text(links);
     }
 
     setup_search(prefs, sr_array);
@@ -686,10 +734,14 @@ function run(prefs) {
             // it for changes slows the initial process down horribly.
             var observer = new MutationSummary({
                 callback: function(summaries) {
-                    process(prefs, sr_array, summaries[0].added);
+                    var links = summaries[0].added;
+                    process(prefs, sr_array, links);
+                    display_alt_text(links.filter(function(e) { return hasParentWithClass(e, "md"); }));
                     inject_search_button(summaries[1].added);
                 },
                 queries: [
+                    // FIXME: Ideally we'd query {element: ".md"}, but for some
+                    // reason that doesn't work.
                     {element: "a"}, // new emotes
                     {element: "span"} // comment reply forms
                 ]});
@@ -702,7 +754,12 @@ function run(prefs) {
             document.body.addEventListener("DOMNodeInserted", function(event) {
                 var element = event.target;
                 if(element.getElementsByTagName) {
-                    process(prefs, sr_array, element.getElementsByTagName("a"));
+                    var posts = element.getElementsByClassName("md");
+                    for(var i = 0; i < posts.length; i++) {
+                        var links = posts.getElementsByTagName("a");
+                        process(prefs, sr_array, links);
+                        display_alt_text(links);
+                    }
                     inject_search_button(element.getElementsByClassName("help-toggle"));
                 }
             }, false);
