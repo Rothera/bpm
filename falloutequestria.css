@@ -30,6 +30,32 @@ you want your image to be.*/
     width: 225px;
     float: left
     }
+.titlebox .redditname a {
+    display: none
+    }
+/*.side .usertext a[href="http://www.equestriadaily.com/2011/04/story-fallout-equestria.html"] {
+    background-image: url(%%sidebar-transparent%%);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: block;
+    height: 392px;
+    position: absolute;
+    right: 5px;
+    top: 110px;
+    width: 300px;
+    z-index: 900
+    }
+
+
+.side {
+    padding-top: 410px
+    } */
+.redditname a {
+    background: url(http://d.thumbs.redditmedia.com/1HzBBNeK6gF6Ty83.png);
+    height: 94px;
+    width: 225px;
+    float: left
+    }
 #header-bottom-left {
     height: 127px
     }
@@ -48,7 +74,6 @@ you want your image to be.*/
     display: inline;
     float: left
     }
-/*reddit alien from r/fallout */
 #header-img-a {
     float: right
     }
@@ -77,44 +102,6 @@ a[href$="/spoiler"]:hover {
 body {
     background: url(http://f.thumbs.redditmedia.com/EteWQ_IZMeOisGdw.png) no-repeat fixed center bottom
     }
-/* Spoiler Setter*/
-/*.marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"] {
-    font-size: 0px !important;
-    display: inline-block;
-    vertical-align: bottom;
-    overflow: hidden;
-    letter-spacing: -20px
-    }
-.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before {
-    font-size: 10px !important;
-    visibility: visible !important;
-    display: block;
-    letter-spacing: normal
-    }
-.marknsfw-button a[href="#"]:before {
-    content: "spoiler"
-    }
-.unmarknsfw-button a[href="#"]:before {
-    content: "un-spoiler"
-    }
-.nsfw-stamp acronym {
-    border: #5F99CF 1px solid !important;
-    display: inline-block;
-    font-size: 0px !important;
-    letter-spacing: 0px;
-    overflow: hidden;
-    vertical-align: bottom;
-    margin-bottom: -1px
-    }
-.nsfw-stamp acronym:after {
-    color: #336699 !important;
-    content: "SPOILER" !important;
-    display: block;
-    font-size: x-small !important;
-    text-decoration: none;
-    visibility: visible !important
-    }
-*/
 /* Hey, so I stole a bunch of CSS rules from the good folks at r/asoiaf. */
 /* ================================
  * Code to enable fancy spoilers, 
@@ -124,7 +111,7 @@ body {
 a[href="/s"] {
     color: #222222;
     background: #CCCCCC;
-    background-image: url(http://f.thumbs.redditmedia.com/1ziUG2TkCnT_n-2M.png);
+    /* background-image: url(%%spoiler%%); */
     background-repeat: no-repeat;
     padding: 0px 0px 0px 20px;
     cursor: text
@@ -140,67 +127,6 @@ a[href="/s"]::after {
     }
 a[href="/s"]:hover::after, a[href="/sr"]:active::after, a[href="/st"]:active::after, a[href="/sl"]:active::after {
     color: black
-    }
-a[href="/sr"], a[href="/st"], a[href="/sl"] {
-    color: #222222;
-    background: #CCCCCC;
-    cursor: text;
-    display: block;
-    min-width: 70px;
-    min-height: 70px;
-    border-radius: 8px;
-    margin-bottom: 2px
-    }
-a[href="/sr"]:before, a[href="/st"]:before, a[href="/sl"]:before {
-    content: "Spoiler!";
-    text-align: center;
-    text-shadow: 0px -4px 4px #ffffff, 0px 4px 4px #ffffff;
-    font-size: 16px;
-    color: #000000;
-    background-image: url(http://d.thumbs.redditmedia.com/YKSDpjdgMQmII9YE.png);
-    background-position: -70px -350px;
-    display: block;
-    margin-right: 4px;
-    vertical-align: bottom;
-    line-height: 115px;
-    float: left;
-    clear: none;
-    width: 70px;
-    height: 70px
-    }
-a[href="/st"]:before {
-    background-image: url(http://a.thumbs.redditmedia.com/afdAdOERezqeUcgB.png);
-    background-position: -140px -70px
-    }
-a[href="/sl"]:before {
-    background-image: url(http://a.thumbs.redditmedia.com/afdAdOERezqeUcgB.png);
-    background-position: -70px -140px
-    }
-a[href="/sr"]:hover, a[href="/st"]:hover, a[href="/sl"]:hover {
-    color: #8F8F8F;
-    background: #EEEEEE
-    }
-a[href="/sr"]::after, a[href="/st"]::after, a[href="/sl"]::after {
-    content: attr(title);
-    background: #CCCCCC;
-    color: #CCCCCC;
-    padding: 0px 10px 0px 10px
-    }
-a[href="/sr"]:hover::after, a[href="/s"]:active::after, a[href="/st"]:hover::after, a[href="/sl"]:hover::after {
-    color: black;
-    background: #EEEEEE
-    }
-a[href="/s"] + .SuperRedditAltTextDisplay_Text {
-    display: none
-    }
-a[href="/sr"] + .SuperRedditAltTextDisplay_Text {
-    display: none
-    }
-a[href="/st"] + .SuperRedditAltTextDisplay_Text {
-    display: none
-    }
-a[href="/sl"] + .SuperRedditAltTextDisplay_Text {
-    display: none
     }
 a[href|="/fe00"], a[href|="/fe10"], a[href|="/fe20"], a[href|="/fe30"], a[href|="/fe40"], a[href|="/fe01"], a[href|="/fe11"], a[href|="/fe21"], a[href|="/fe31"], a[href|="/fe41"], a[href|="/fe02"], a[href|="/fe12"], a[href|="/fe03"], a[href|="/fe13"], a[href|="/fe04"], a[href|="/foe00"], a[href|="/foe10"], a[href|="/foe20"], a[href|="/foe01"], a[href|="/foe02"], a[href|="/foe12"], a[href|="/foe03"], a[href|="/foe13"], a[href|="/foe23"], a[href|="/foe04"], a[href|="/foe14"], a[href|="/foe24"], a[href|="/foe05"], a[href|="/foe15"], a[href|="/foe09"], a[href|="/foe11"], a[href|="/lpwut"], a[href|="/lphurt"], a[href|="/homage"], a[href|="/bjstare"], a[href|="/bjclassy"], a[href|="/anteup"], a[href|="/queenwhiskey"], a[href|="/p21fun"], a[href|="/qnwhsk"], a[href|="/p21notamused"], a[href|="/p21"], a[href|="/glory"], a[href|="/charity"], a[href|="/bjscared"], a[href|="/rampage"], a[href|="/lphappy"], a[href|="/omnomnom"], a[href|="/givemeec1101"], a[href|="/calamity"], a[href|="/pinkeyes"], a[href|="/lpwet"], a[href|="/mmdash"], a[href|="/psychoshy"], a[href|="/fightcalamity"], a[href|="/velvetremedy"], a[href|="/lparmed"], a[href|="/gawd"], a[href|="/steelhooves"], a[href|="/lpnotwant"] {
     display: block;
