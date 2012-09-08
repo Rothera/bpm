@@ -48,6 +48,10 @@ var tag_blacklist = {
 };
 
 function run(prefs) {
+    if(!prefs.enableGlobalEmotes) {
+        return;
+    }
+
     var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     var node;
     // TreeWalker's seem to stop returning nodes if you delete a node while
@@ -64,15 +68,12 @@ function run(prefs) {
             var end_of_prev = 0; // End index of previous emote match
             var match;
 
-            console.log("BGP: processing node within " + parent);
             while((match = emote_regexp.exec(node.data)) !== null) {
-                console.log("BGP: regexp match: end_of_prev=" + end_of_prev + ", match.index=" + match.index + ", match[0].length=" + match[0].length + ": '" + match[0] + "'");
                 // Keep text between the last emote and this one (or the start
                 // of the text element)
                 var before_text = node.data.slice(end_of_prev, match.index);
                 if(before_text) {
                     parts.push(document.createTextNode(before_text));
-                    console.log("  -- BGP: extracted initial text: start=" + end_of_prev + ", end=" + match.index + ": '" + before_text + "'");
                 }
 
                 // Build emote
@@ -83,7 +84,6 @@ function run(prefs) {
                     emote_element.title = match[2];
                 }
                 parts.push(emote_element);
-                console.log("  -- BGP: built emote from '" + match[1] + "' and '" + match[2] + "'");
 
                 // Next text element will start after this emote
                 end_of_prev = match.index + match[0].length;
@@ -96,7 +96,6 @@ function run(prefs) {
                 var before_text = node.data.slice(end_of_prev);
                 if(before_text) {
                     parts.push(document.createTextNode(before_text));
-                    console.log("  -- BGP: extracted last text: start=" + end_of_prev + ": '" + before_text + "'");
                 }
 
                 // Insert all our new nodes
