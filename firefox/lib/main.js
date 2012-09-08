@@ -63,7 +63,7 @@ if(storage.prefs.searchBoxInfo === undefined) {
 }
 
 if(storage.prefs.showAltText === undefined) {
-    storage.prefs.showAltText = true;
+    storage.prefs.showAltText = false; // Off by default for upgrades only
 }
 
 function on_cs_attach(worker) {

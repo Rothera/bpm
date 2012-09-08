@@ -47,7 +47,7 @@ if(prefs.searchBoxInfo === undefined) {
 }
 
 if(prefs.showAltText === undefined) {
-    prefs.showAltText = true;
+    prefs.showAltText = false; // Off by default for upgrades only
 }
 localStorage.prefs = JSON.stringify(prefs);
 
