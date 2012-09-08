@@ -60,37 +60,29 @@ switch(platform) {
 }
 
 function run() {
-    // Cache elements
-    var enable_nsfw = document.getElementById("enableNSFW");
-    var enable_extracss = document.getElementById("enableExtraCSS");
-    var show_unknown_emotes = document.getElementById("showUnknownEmotes");
-    var show_alt_text = document.getElementById("showAltText");
-    var search_limit = document.getElementById("searchLimit");
-
-    // Initialize values from stored prefs
-    enable_nsfw.checked = prefs.enableNSFW;
-    enable_extracss.checked = prefs.enableExtraCSS;
-    show_unknown_emotes.checked = prefs.showUnknownEmotes;
-    show_alt_text.checked = prefs.showAltText;
-    search_limit.value = prefs.searchLimit;
-
-    // Listen for edits to the checkboxes
-    function checkbox_pref(element, pref_name) {
+    // Basic boolean on/off checkbox pref
+    function checkbox_pref(id) {
+        var element = document.getElementById(id);
+        element.checked = prefs[id];
         element.addEventListener("change", function() {
-            prefs[pref_name] = this.checked;
+            prefs[id] = this.checked;
             browser.prefs_updated();
         }, false);
     }
 
-    checkbox_pref(enable_nsfw, "enableNSFW");
-    checkbox_pref(enable_extracss, "enableExtraCSS");
-    checkbox_pref(show_unknown_emotes, "showUnknownEmotes");
-    checkbox_pref(show_alt_text, "showAltText");
+    checkbox_pref("enableNSFW");
+    checkbox_pref("enableExtraCSS");
+    checkbox_pref("showUnknownEmotes");
+    checkbox_pref("showAltText");
+    checkbox_pref("enableGlobalEmotes");
+
+    var search_limit = document.getElementById("searchLimit");
+    search_limit.value = prefs.searchLimit;
 
     // Listen to, and validate, edits to the search limit
     search_limit.addEventListener("input", function() {
-        // Forbid negatives. For that matter, we could probably reason that
-        // zeros don't make sense either, but whatever.
+        // Forbid negatives. We could probably reason that zeros don't make
+        // sense either, but whatever.
         var limit = Math.max(parseInt(search_limit.value, 10), 0);
         if(isNaN(limit)) {
             // If the input is completely invalid (or missing), we reset it and

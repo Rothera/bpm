@@ -28,7 +28,8 @@ var default_prefs = {
         "showUnknownEmotes": true,
         "searchLimit": 200,
         "searchBoxInfo": [600, 25, 600, 450],
-        "showAltText": true
+        "showAltText": true,
+        "enableGlobalEmotes": false
     };
 
 if(!storage.prefs) {
