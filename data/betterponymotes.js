@@ -651,7 +651,11 @@ function inject_search_button(spans) {
 function run(prefs) {
     var sr_array = make_sr_array(prefs);
     // Initial pass- show all emotes currently on the page.
-    process(prefs, sr_array, document.getElementsByTagName("a"));
+    var posts = document.getElementsByClassName("md");
+    for(var i = 0; i < posts.length; i++) {
+        process(prefs, sr_array, posts[i].getElementsByTagName("a"));
+    }
+
     setup_search(prefs, sr_array);
     // Find the one reply box that's there on page load. This may not always work...
     inject_search_button(document.getElementsByClassName("help-toggle"));
