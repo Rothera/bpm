@@ -17,7 +17,8 @@ if(localStorage.prefs === undefined) {
         "enabledSubreddits": {},
         "showUnknownEmotes": true,
         "searchLimit": 200,
-        "searchBoxInfo": [600, 25, 600, 450]
+        "searchBoxInfo": [600, 25, 600, 450],
+        "showAltText": true
     };
 } else {
     prefs = JSON.parse(localStorage.prefs);
@@ -43,6 +44,10 @@ if(prefs.searchLimit === undefined) {
 
 if(prefs.searchBoxInfo === undefined) {
     prefs.searchBoxInfo = [600, 25, 600, 450];
+}
+
+if(prefs.showAltText === undefined) {
+    prefs.showAltText = true;
 }
 localStorage.prefs = JSON.stringify(prefs);
 

@@ -701,7 +701,9 @@ function run(prefs) {
         // NOTE: must run alt-text AFTER emote code, always. See note in
         // display_alt_text
         process(prefs, sr_array, links);
-        display_alt_text(links);
+        if(prefs.showAltText) {
+            display_alt_text(links);
+        }
     }
 
     setup_search(prefs, sr_array);
@@ -736,7 +738,9 @@ function run(prefs) {
                 callback: function(summaries) {
                     var links = summaries[0].added;
                     process(prefs, sr_array, links);
-                    display_alt_text(links.filter(function(e) { return hasParentWithClass(e, "md"); }));
+                    if(prefs.showAltText) {
+                        display_alt_text(links.filter(function(e) { return hasParentWithClass(e, "md"); }));
+                    }
                     inject_search_button(summaries[1].added);
                 },
                 queries: [
@@ -754,11 +758,17 @@ function run(prefs) {
             document.body.addEventListener("DOMNodeInserted", function(event) {
                 var element = event.target;
                 if(element.getElementsByTagName) {
-                    var posts = element.getElementsByClassName("md");
-                    for(var i = 0; i < posts.length; i++) {
-                        var links = posts.getElementsByTagName("a");
-                        process(prefs, sr_array, links);
-                        display_alt_text(links);
+                    var links = element.getElementsByTagName("a");
+                    process(prefs, sr_array, links);
+                    if(prefs.showAltText) {
+                        // Filter list
+                        var at_links = [];
+                        for(var i = 0; i < links.length; i++) {
+                            if(hasParentWithClass(links[i], "md")) {
+                                at_links.push(links[i]);
+                            }
+                        }
+                        display_alt_text(at_links);
                     }
                     inject_search_button(element.getElementsByClassName("help-toggle"));
                 }

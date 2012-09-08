@@ -52,6 +52,13 @@
 }
 
 /*
+ * Alt-text display.
+ */
+.bpm-alttext {
+    color: grey;
+}
+
+/*
  * Emote search CSS
  *
  * WARNING: due to my lack of CSS skills, there are many width/height values
@@ -134,6 +141,7 @@
     overflow-y: auto;
     height: 352px; /* #bpm-search-box height - (#bpm-toprow height - margins*3 - padding*2 = 98) */
     padding: 4px !important;
+    word-wrap: break-word; /* Makes emote names a bit nicer */
 }
 
 #bpm-bottomrow {

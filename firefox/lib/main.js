@@ -28,7 +28,8 @@ if(!storage.prefs) {
         "enabledSubreddits": {},
         "showUnknownEmotes": true,
         "searchLimit": 200,
-        "searchBoxInfo": [600, 25, 600, 450]
+        "searchBoxInfo": [600, 25, 600, 450],
+        "showAltText": true
     };
 
     if(simple_prefs.prefs.enableNSFW !== undefined) {
@@ -59,6 +60,10 @@ if(storage.prefs.searchLimit === undefined) {
 
 if(storage.prefs.searchBoxInfo === undefined) {
     storage.prefs.searchBoxInfo = [600, 25, 600, 450];
+}
+
+if(storage.prefs.showAltText === undefined) {
+    storage.prefs.showAltText = true;
 }
 
 function on_cs_attach(worker) {

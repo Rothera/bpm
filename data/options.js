@@ -64,12 +64,14 @@ function run() {
     var enable_nsfw = document.getElementById("enableNSFW");
     var enable_extracss = document.getElementById("enableExtraCSS");
     var show_unknown_emotes = document.getElementById("showUnknownEmotes");
+    var show_alt_text = document.getElementById("showAltText");
     var search_limit = document.getElementById("searchLimit");
 
     // Initialize values from stored prefs
     enable_nsfw.checked = prefs.enableNSFW;
     enable_extracss.checked = prefs.enableExtraCSS;
     show_unknown_emotes.checked = prefs.showUnknownEmotes;
+    show_alt_text.checked = prefs.showAltText;
     search_limit.value = prefs.searchLimit;
 
     // Listen for edits to the checkboxes
@@ -83,6 +85,7 @@ function run() {
     checkbox_pref(enable_nsfw, "enableNSFW");
     checkbox_pref(enable_extracss, "enableExtraCSS");
     checkbox_pref(show_unknown_emotes, "showUnknownEmotes");
+    checkbox_pref(show_alt_text, "showAltText");
 
     // Listen to, and validate, edits to the search limit
     search_limit.addEventListener("input", function() {
