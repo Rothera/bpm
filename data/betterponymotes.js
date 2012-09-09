@@ -925,7 +925,7 @@ function run_gm(prefs) {
         default:
             document.body.addEventListener("DOMNodeInserted", function(event) {
                 var element = event.target;
-                process_gm(prefs, sr_array, elements[i]);
+                process_gm(prefs, sr_array, element);
             }, false);
             break;
     }
