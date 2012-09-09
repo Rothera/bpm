@@ -86,13 +86,37 @@ simple_prefs.on("openPrefs", function() {
     tabs.open(self.data.url("options.html"));
 });
 
+// Main CSS file. Due to technical limitations- we can't specify the BGM mod as
+// excluding Reddit- this is swapped between matching "*" if BGM is enabled and
+// "*.reddit.com" when disabled. An unfortunate hack.
+//
+// Additionally, swapping this out while pages are loaded with globablly
+// converted emotes will pull the CSS out from under them, making the emotes
+// effectively impossible to read. One of the cases where hot-reloading of
+// preferences in Firefox doesn't work too well.
+var core_css_mod = null;
+
+function set_core_css_filter(pattern) {
+    if(core_css_mod !== null) {
+        core_css_mod.destroy();
+        core_css_mod = null;
+    }
+
+    core_css_mod = page_mod.PageMod({
+        include: [pattern],
+        contentScriptWhen: "start",
+        contentStyleFile: [
+            self.data.url("emote-classes.css"),
+            ]
+    });
+}
+
 // Main script
 var main_mod = page_mod.PageMod({
     include: ["*.reddit.com"],
     contentScriptWhen: "start",
     contentStyleFile: [
-        self.data.url("bpmotes.css"),
-        self.data.url("emote-classes.css"),
+        self.data.url("bpmotes.css")
         ],
     contentScriptFile: [
         self.data.url("mutation_summary.js"),
@@ -134,25 +158,30 @@ function prefs_updated() {
         combiners_mod = null;
     }
 
-    if(storage.prefs.enableGlobalEmotes && globalemotes_mod === null) {
-        globalemotes_mod = page_mod.PageMod({
-            include: ["*"],
-            contentScriptWhen: "start",
-            contentStyleFile: [
-                self.data.url("emote-classes.css"),
-                ],
-            contentScriptFile: [
-                self.data.url("mutation_summary.js"),
-                self.data.url("emote-map.js"),
-                self.data.url("sr-data.js"),
-                self.data.url("script-common.js"),
-                self.data.url("betterglobalmotes.js")
-                ],
-            onAttach: on_cs_attach
-        });
-    } else if(!storage.prefs.enableGlobalEmotes && globalemotes_mod !== null) {
-        globalemotes_mod.destroy();
-        globalemotes_mod = null;
+    if(storage.prefs.enableGlobalEmotes) {
+        set_core_css_filter("*");
+
+        if(globalemotes_mod === null) {
+            globalemotes_mod = page_mod.PageMod({
+                include: ["*"],
+                contentScriptWhen: "start",
+                contentScriptFile: [
+                    self.data.url("mutation_summary.js"),
+                    self.data.url("emote-map.js"),
+                    self.data.url("sr-data.js"),
+                    self.data.url("script-common.js"),
+                    self.data.url("betterglobalmotes.js")
+                    ],
+                onAttach: on_cs_attach
+            });
+        }
+    } else {
+        set_core_css_filter("*.reddit.com");
+
+        if(globalemotes_mod !== null) {
+            globalemotes_mod.destroy();
+            globalemotes_mod = null;
+        }
     }
 }
 
