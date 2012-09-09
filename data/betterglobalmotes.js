@@ -38,7 +38,16 @@ function endsWith(text, s) {
     }
 }
 
-var emote_regexp = /\[\]\((\/[\w!:]+)\s*(?:"([^"]*)")?\)/g;
+// As a note, this regexp is a little forgiving in some respects and strict in
+// others. It will not permit text in the [] portion, but alt-text quotes don't
+// have to match each other.
+//
+// Flags are parsed, but ignored in code. This isn't for any technical reason-
+// I'm just making the assumption that more specialized syntaxes will generally
+// stay in Reddit.
+//
+//                           <  emote  ><  flags   >   <    alt-text     >
+var emote_regexp = /\[\s*\]\((\/[\w!:]+)(?:[\w!\-]*)\s*(?:["']([^"]*)["'])?\)/g;
 
 var tag_blacklist = {
     // Meta tags that we should never touch
