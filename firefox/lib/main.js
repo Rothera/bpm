@@ -126,20 +126,15 @@ function configure_css(mod, pref, filename, bgm_changed) {
     // If BGM changed and the mod is enabled, we need to reconfigure it.
     // Otherwise we just check whether or not the pref itself has changed.
 
-    console.log("configure_css: mod=" + mod + ", pref=" + pref + ", filename=" + filename + ", bgm_changed=" + bgm_changed);
     if(bgm_changed && mod !== null) {
-        console.log("bgm changed, so destroying mod");
         mod.destroy();
         mod = null;
     }
 
     if(pref && mod === null) {
-        console.log("enabling");
         var tmp = make_css_mod(filename);
-        console.log("tmp = " + tmp);
         return tmp;
     } else if(!pref && mod !== null) {
-        console.log("destroying");
         mod.destroy();
         return null;
     }
@@ -161,7 +156,6 @@ function prefs_updated() {
 
     extracss_mod = configure_css(extracss_mod, storage.prefs.enableExtraCSS, "extracss.css", bgm_changed);
     combiners_mod = configure_css(combiners_mod, storage.prefs.enableNSFW, "combiners-nsfw.css", bgm_changed);
-    console.log("extracss=" + extracss_mod + ", combiners=" + combiners_mod);
 
     if(bgm_changed) {
         if(main_mod !== null) {
