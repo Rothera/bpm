@@ -241,26 +241,29 @@ function process(prefs, sr_array, elements) {
                 var is_nsfw = emote_info[0];
                 var source_id = emote_info[1];
 
-                if(!sr_array[source_id]) {
-                    element.className += " bpm-disabled";
+                // Ordering matters a bit here- placeholders for NSFW emotes
+                // come before disabled emotes.
+                if(is_nsfw && !prefs.enableNSFW) {
+                    element.className += " bpm-nsfw";
                     if(!element.textContent) {
                         // Any existing text (there really shouldn't be any)
                         // will look funny with our custom CSS, but there's
                         // not much we can do.
+                        element.textContent = "NSFW " + emote_name;
+                    }
+                    continue;
+                }
+
+                if(!sr_array[source_id]) {
+                    element.className += " bpm-disabled";
+                    if(!element.textContent) {
                         element.textContent = "Disabled " + emote_name;
                     }
                     continue;
                 }
 
-                if(!is_nsfw || prefs.enableNSFW) {
-                    // Strip off leading "/".
-                    element.className += " bpmote-" + sanitize(emote_name.slice(1));
-                } else {
-                    element.className += " bpm-nsfw";
-                    if(!element.textContent) {
-                        element.textContent = "NSFW " + emote_name;
-                    }
-                }
+                // Strip off leading "/".
+                element.className += " bpmote-" + sanitize(emote_name.slice(1));
 
                 // Apply flags in turn. We pick on the naming a bit to prevent
                 // spaces and such from slipping in.
