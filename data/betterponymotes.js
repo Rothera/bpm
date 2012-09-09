@@ -565,6 +565,11 @@ function insert_emote(emote_name) {
         }
         current_form.selectionStart = end + emote_len;
         current_form.selectionEnd = end + emote_len;
+
+        // Trigger preview update in RES, which *specifically* listens for keyup.
+        var event = document.createEvent("Event");
+        event.initEvent("keyup", true, true);
+        current_form.dispatchEvent(event);
     }
 }
 
