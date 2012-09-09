@@ -120,7 +120,11 @@ class NormalEmote(Emote):
             "display": "block",
             "clear": "none",
             "float": "left",
-            "background-image": "url(%s)" % (self.image_url),
+            # YouTube sets a background property with an !important on it, which
+            # interferes with global emotes. This takes care of that.
+            #
+            # As yet, none of these other properties require the same consideration.
+            "background-image": "url(%s)!important" % (self.image_url),
             "width": "%spx" % (self.size[0]),
             "height": "%spx" % (self.size[1]),
             "background-position": "%spx %spx" % (self.offset[0], self.offset[1])
