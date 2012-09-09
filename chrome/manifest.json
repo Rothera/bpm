@@ -1,48 +1,48 @@
 {
     "background": {
         "page": "background.html"
-    },
+    }, 
     "content_scripts": [
         {
             "js": [
-                "mutation_summary.js",
-                "emote-map.js",
-                "sr-data.js",
-                "script-common.js",
+                "mutation_summary.js", 
+                "emote-map.js", 
+                "sr-data.js", 
+                "script-common.js", 
                 "betterponymotes.js"
-            ],
+            ], 
             "matches": [
                 "*://*.reddit.com/*"
-            ],
+            ], 
             "run_at": "document_start"
-        },
+        }, 
         {
             "exclude_matches": [
                 "*://*.reddit.com/*"
-            ],
+            ], 
             "js": [
-                "mutation_summary.js",
-                "emote-map.js",
-                "sr-data.js",
-                "script-common.js",
+                "mutation_summary.js", 
+                "emote-map.js", 
+                "sr-data.js", 
+                "script-common.js", 
                 "betterglobalmotes.js"
-            ],
+            ], 
             "matches": [
                 "*://*/*"
-            ],
+            ], 
             "run_at": "document_start"
         }
-    ],
-    "description": "View Reddit ponymotes across the site",
-    "manifest_version": 2,
-    "name": "Better Ponymotes",
-    "options_page": "options.html",
-    "update_url": "http://rainbow.mlas1.us/chrome-updates.xml",
-    "version": "14.41",
+    ], 
+    "description": "View Reddit ponymotes across the site", 
+    "manifest_version": 2, 
+    "name": "Better Ponymotes", 
+    "options_page": "options.html", 
+    "update_url": "http://rainbow.mlas1.us/chrome-updates.xml", 
+    "version": "15.41", 
     "web_accessible_resources": [
-        "bpmotes.css",
-        "emote-classes.css",
-        "combiners-nsfw.css",
+        "bpmotes.css", 
+        "emote-classes.css", 
+        "combiners-nsfw.css", 
         "extracss.css"
     ]
 }
