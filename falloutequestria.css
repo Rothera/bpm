@@ -1,6 +1,22 @@
-/*No subreddit create link */
+/*Submit a link -> Create a submission*/
+.sidebox .subtitle:before {
+    display: block;
+    clear: none;
+    content: "pony articles, pony pictures, pony videos, pony analysis, pony pony...";
+    color: dimgray;
+    font-size: 8pt !important
+    }
+.sidebox .subtitle {
+    font-size: 0px
+    }
 .sidebox.create {
     display: none
+    }
+/*LPPoint from http://cuttincows.deviantart.com/art/Littlepip-point-319005701 */
+.sidebox.submit .spacer a {
+    background-image: url(http://f.thumbs.redditmedia.com/BDfJLdTJEtCIwU1w.png);
+    background-position: -0px -0px;
+    background-repeat: no-repeat
     }
 /* Banner Image */
 /*Banner by DarkDragon774 http://darkdragon774.deviantart.com/art/Fallout-Equestria-background-STOCK-277629738) */
@@ -44,7 +60,8 @@ you want your image to be.*/
     top: 169px;
     width: 300px;
     z-index: 900;
-    color: #313224
+    /*color: #313224;*/
+    font-size: 0px
     }
 .side {
     padding-top: 392px

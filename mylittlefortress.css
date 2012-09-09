@@ -9,6 +9,9 @@ body {
     border-style: dotted inset dotted dotted !important;
     overflow: hidden !important
     }
+.sidecontentbox .flair-tf2, .sidecontentbox .flair-octavia, .sidecontentbox .flair-shadow {
+    display: none
+    }
 /* Sidebar */
 div.side {
     background: none
@@ -163,17 +166,14 @@ a.author[href$="EtherealDragon"]:after {
 a.author[href$="ovenmittbandit"]:after {
     content: ": Server admin"
     }
-a.author[href$="ovenmittbandit"]:hover:after {
-    content: ": Dear Oven, how do you type with ovenmitts on?"
+a.author[href$="timbaer"]:after {
+    content: ": Server buttsman"
     }
 a.author[href$="fyrenwater"]:hover:after {
     content: ": CABERHUGS :3"
     }
 a.author[href$="Your_Shadow"]:after {
     content: ": Server admin"
-    }
-a.author[href$="Your_Shadow"]:hover:after {
-    content: ": Stab, stab, stab."
     }
 a.author[href$="koushiro"]:before {
     content: "Sir "
@@ -202,6 +202,19 @@ a.author[href$="iiRockpuppy"]:after {
     font-size: 10px;
     color: #369;
     content: "PinkieOats- And then I said, 'Oatmeal, are you crazy?'"
+    }
+a.author[href$="Dr_Gordon_Voteman"] {
+    visibility: hidden;
+    font-size: 0
+    }
+a.author[href$="Dr_Gordon_Voteman"]:after {
+    visibility: visible;
+    font-size: 10px;
+    color: #f37b21;
+    content: url(http://e.thumbs.redditmedia.com/AZHiBACiID5JygvF.png) "Dr. Gordon Voteman"
+    }
+.sidecontentbox a.author[href$="/Dr_Gordon_Voteman"] {
+    display: none
     }
 a.author[href$="oscilox"] {
     visibility: hidden;
@@ -764,10 +777,10 @@ a[href="/freakout"]:hover:after {
     }
 .titlebox .usertext-body .md ol {
     width: auto;
-    background: url(http://b.thumbs.redditmedia.com/njwxoF9ldHXitgBg.png) no-repeat scroll 5px 5px #fff;
+    background: url(http://thumbs.reddit.com/t5_2sjdc_0.png) no-repeat scroll 5px 2px #fff;
     border: 1px solid #efefef;
     position: absolute;
-    top: 7px;
+    top: 20px;
     left: 115px;
     z-index: 50;
     margin: 20px 410px 0 0;
