@@ -47,20 +47,14 @@ var tag_blacklist = {
     "SVG": 1, "MATH": 1
 };
 
-function run(prefs) {
-    if(!prefs.enableGlobalEmotes) {
-        return;
-    }
-
-    var sr_array = make_sr_array(prefs);
-
+function process(prefs, sr_array, root) {
     // Opera does not seem to expose NodeFilter to content scripts, so we
     // cannot specify NodeFilter.SHOW_TEXT. Its value is defined to be 4 in the
     // DOM spec, though, so that works.
     //
     // Opera also throws an error if we do not specify all four arguments,
     // though Firefox and Chrome will accept just the first two.
-    var walker = document.createTreeWalker(document.body, /*NodeFilter.SHOW_TEXT*/ 4, undefined, undefined);
+    var walker = document.createTreeWalker(root, /*NodeFilter.SHOW_TEXT*/ 4, undefined, undefined);
     var node;
     // TreeWalker's seem to stop returning nodes if you delete a node while
     // iterating over it.
@@ -134,6 +128,39 @@ function run(prefs) {
     for(var i = 0; i < deletion_list.length; i++) {
         var node = deletion_list[i];
         node.parentNode.removeChild(node);
+    }
+}
+
+function run(prefs) {
+    if(!prefs.enableGlobalEmotes) {
+        return;
+    }
+
+    var sr_array = make_sr_array(prefs);
+    process(prefs, sr_array, document.body);
+
+    switch(platform) {
+        case "chrome":
+        case "firefox":
+            var observer = new MutationSummary({
+                callback: function(summaries) {
+                    var elements = summaries[0].added;
+                    for(var i = 0; i < elements.length; i++) {
+                        process(prefs, sr_array, elements[i]);
+                    }
+                },
+                queries: [
+                    {element: "*"} // All elements (since any of them can contain text)
+                ]});
+            break;
+
+        case "opera":
+        default:
+            document.body.addEventListener("DOMNodeInserted", function(event) {
+                var element = event.target;
+                process(prefs, sr_array, elements[i]);
+            }, false);
+            break;
     }
 }
 
