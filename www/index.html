@@ -27,10 +27,13 @@
     #supported-subreddits {
       margin-left: 60px;
     }
-    li {
+    #supported-subreddits li {
       font-family: monospace;
       float: left;
       width: 230px;
+    }
+    #footer {
+      clear: both;
     }
   </style>
 </head>
@@ -42,46 +45,76 @@
 
         <h3>About</h3>
         <p>Better Ponymotes is a browser addon to display ponymotes across Reddit.
-        This means things like <code>[](/c01)</code> will work outside of
+        This means things like <code>[]<!---->(/c01)</code> will work outside of
         <a href="http://reddit.com/r/mylittlepony">r/mylittlepony</a>, but also that
-        ponymotes from other subreddits (such as <code>[](/rose6)</code>) will work
+        ponymotes from other subreddits (such as <code>[]<!---->(/rose6)</code>) will work
         across the site.
+
+        <h3>Features</h3>
+        <p><b>Over seventy subreddits and 6,500 emotes.</b> Never miss another
+        hidden emote.
+
+        <p><b>Powerful built in search.</b> Search by name or by subreddit- every
+        emote at your fingertips.
+
+        <p><b>Global emotes.</b> Use emotes outside of Reddit!
+
+        <p><b>Alt-text reveal.</b> Shows hover text hidden on emotes, so you don't
+        have to.
+
+        <p><b>Easy configuration.</b> Every option easily accessible.
+
+        <p><b>Chaos script built in.</b> Rotate, flip, and spin flags.
+
+        <!-- Yeah. I went there. -->
+        <p><b>Solid and stable.</b> Bugs happen, but BetterPonymotes is thoroughly
+        tested before every release. Secure and careful coding means Derpy can't
+        accidentally mess it up.
+
+        <p><b>Native addon.</b> BetterPonymotes integrates with your browser
+        better than any userscript can.
 
         <h3>Installation</h3>
         <h4>Firefox Installation</h4>
         <img src="images/firefox-logo.png">
         <p>Install the addon from <a href="betterponymotes.xpi"><code>betterponymotes.xpi</code></a>.
 
-        <p>Firefox should handle the file automatically; if not, drag the file onto Firefox
-        and it will install then.
+        <p>Firefox should handle the file automatically. If not, download the
+        file and drag it onto Firefox.
 
         <h4>Chrome Installation</h4>
         <img src="images/chrome-logo.png">
         <p>Install the addon from <a href="betterponymotes.crx"><code>betterponymotes.crx</code></a>.
 
-        <p>Newer versions of Chrome refuse to install extensions except from the
-        Chrome Web Store. Since BetterPonymotes is not available in the web store,
-        installation requires you to download the file and drag it onto the extensions
-        page yourself. Despite this, updates will continue to function as normal.
+        <p>Newer versions of Chrome will not install extensions that are not
+        hosted by the Chrome Web Store. Since BetterPonymotes isn't available
+        in the webstore, you must download the file and drag it onto the
+        extensions page. Click wrench icon -> Settings, and go to the Extensions
+        tab on the left.
 
         <h4>Opera Installation</h4>
         <img src="images/opera-logo.png">
         <p>Install the addon from <a href="betterponymotes.oex"><code>betterponymotes.oex</code></a>.
 
-        <p>Opera should handle the file automatically; if not, drag the file onto the
-        Extensions page (Opera -> Extensions -> Manage Extensions).
+        <p>Opera should handle the file automatically. If not, download the file
+        and drag it onto the Extensions page at Opera -> Extensions -> Manage
+        Extensions.
 
         <h4>Safari Installation</h4>
         <p>Sorry! No support for Safari yet. Maybe <a href="http://nallar.me/scripts/">GrEmB</a> can help you?
 
         <h3>Updates</h3>
-        <p>No matter how you install Better Ponymotes, it will be automatically
-        updated just like any other addon. Your browser will periodically check
-        this site for new versions, and download them if available. The addon does
-        not normally require a restart for updates, however, you may have to refresh
-        pages before most new features will work (including new ponymotes).
+        <p>BetterPonymotes is periodically updated with the latest emotes and
+        features. Your browser will download these automatically.
+
+        <p>Though you do not need to restart your browser for updates, you will
+        need to reload any open pages before the update can take effect. This
+        includes new ponymotes.
 
         <h3>Preferences</h3>
+        <p>BetterPonymotes has a built in page for configuration. Follow the
+        instructions for your browser to find it.
+
         <h4>Firefox Preferences</h4>
         <p>Go to the Addons Manager (<code>about:addons</code>, Ctrl-Shift-A,
         or Firefox menu -> Add-ons), locate Better Ponymotes in the list, and
@@ -97,10 +130,7 @@
         <p>Go to the Extensions page (Opera -> Extensions -> Manage Extensions),
         locate Better Ponymotes in the list, and click the Wrench icon -> Preferences.
 
-        <h3>Options</h3>
-        <p>BetterPonymotes has two options you can change, controlling whether or not
-        certain ponymotes/features are enabled.
-
+        <h3>Available Options</h3>
         <p>Preference changes require page reloads to take effect.
 
         <h5>Enable NSFW Emotes</h5>
@@ -122,9 +152,34 @@
         <p>(Note: Most of these do not work in Opera, which lacks support for 3d
         transformations and is limited in what 2d transformations it will accept.)
 
-        <h5>Subreddits</h5>
-        <p>You may enable or disable individual subreddits by checking the
-        appropriate box.
+        <h5>Show Placeholders For Unknown Emotes</h5>
+        <p>When BPM finds an emote that it doesn't recognize, it can optionally
+        generate a placeholder so that it's still visible. Unfortunately, this
+        feature doesn't always work well when you use other emote scripts at the
+        same time. Since BPM doesn't know about these other scripts, it will
+        sometimes mark emotes as "Unknown" when it shouldn't.
+
+        <p>If BPM is conflicting in this manner, you are recommended to disable
+        this option. If ensuring unknown emotes still show up is important to you,
+        however, you can use something like Arbitrary Entity's
+        <a href="https://userscripts.org/scripts/show/117720">Reddit Show Hidden Emotes</a>
+        script, which can be configured to run last.
+
+        <h5>Reveal Hidden Alt-Text</h5>
+        <p>Emotes often have hidden text that can be seen by hovering over them.
+        This option shows the text inline, so you don't have to.
+
+        <p>You may wish to disable this option if you prefer an alternate
+        alt-text script, since running both at once will conflict.
+
+        <h5>Global Emote Conversion</h5>
+        <p>The <code>Convert emotes outside of Reddit</code> option enables
+        Global Emotes, a feature that replaces emote text on all websites.
+        It works as if BPM were running everywhere, not just Reddit.
+
+        <h4>Subreddits</h4>
+        <p>You may enable or disable emotes from entire subreddits by checking
+        the appropriate box.
 
         <p>When a subreddit is disabled, its emotes will display as a small
         red box.
@@ -135,6 +190,9 @@
         <a href="http://reddit.com/message/compose/?to=Typhos">Reddit inbox</a>.
 
         <h3>Supported Subreddits</h3>
+        <p>BetterPonymotes gets its emotes from the following subreddits. If
+        yours isn't on this list, and you'd like it to be, message me!
+
         <ul id="supported-subreddits">
           <li>r/ainbowdash
           <li>r/applebloom
