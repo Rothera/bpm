@@ -38,7 +38,7 @@ function endsWith(text, s) {
     }
 }
 
-var emote_regexp = /\[\]\(\/([\w!:]+)\s*(?:"([^"]*)")?\)/g;
+var emote_regexp = /\[\]\((\/[\w!:]+)\s*(?:"([^"]*)")?\)/g;
 
 var tag_blacklist = {
     // Meta tags that we should never touch
@@ -51,6 +51,8 @@ function run(prefs) {
     if(!prefs.enableGlobalEmotes) {
         return;
     }
+
+    var sr_array = make_sr_array(prefs);
 
     var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     var node;
@@ -69,6 +71,20 @@ function run(prefs) {
             var match;
 
             while((match = emote_regexp.exec(node.data)) !== null) {
+                // Check that emote exists
+                if(!emote_map[match[1]]) {
+                    continue;
+                }
+
+                var emote_info = emote_map[match[1]];
+                var is_nsfw = emote_info[0];
+                var source_id = emote_info[1];
+
+                // Check that it hasn't been disabled somehow
+                if(!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW)) {
+                    continue;
+                }
+
                 // Keep text between the last emote and this one (or the start
                 // of the text element)
                 var before_text = node.data.slice(end_of_prev, match.index);
@@ -78,7 +94,7 @@ function run(prefs) {
 
                 // Build emote
                 var emote_element = document.createElement("span");
-                emote_element.className = "bpmote-" + sanitize(match[1]);
+                emote_element.className = "bpmote-" + sanitize(match[1].slice(1));
                 if(match[2] !== undefined) {
                     // Alt text. (Quotes aren't captured by the regexp)
                     emote_element.title = match[2];

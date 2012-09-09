@@ -10,6 +10,13 @@
 
 "use strict";
 
+/*
+ * Misc. code common to the BPM and BGM scripts.
+ *
+ * Importing/loading this file has side-effects. A request is made to the
+ * addon backend for preference data.
+ */
+
 // Browser detection- this script runs unmodified on all supported platforms,
 // so inspect a couple of potential global variables to see what we have.
 var platform = "unknown";
@@ -153,4 +160,21 @@ switch(platform) {
 // Keep this in sync with the Python code.
 function sanitize(s) {
     return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_");
+}
+
+// Converts a map of enabled subreddits to an array, indexed by subreddit ID.
+function make_sr_array(prefs) {
+    var sr_array = [];
+    for(var id in sr_id_map) {
+        sr_array[id] = prefs.enabledSubreddits[sr_id_map[id]];
+    }
+    if(sr_array.indexOf(undefined) > -1) {
+        // Holes in the array mean holes in sr_id_map, which can't possibly
+        // happen. If it does, though, any associated emotes will be hidden.
+        //
+        // Also bad would be items in prefs not in sr_id_map, but that's
+        // more or less impossible to handle.
+        console.log("BPM: ERROR: sr_array has holes; installation or prefs are broken!");
+    }
+    return sr_array;
 }
