@@ -105,7 +105,7 @@ function process(prefs, sr_array, root) {
                 var emote_element = document.createElement("span");
                 emote_element.className = "bpmote-" + sanitize(match[1].slice(1));
                 if(match[2] !== undefined) {
-                    // Alt text. (Quotes aren't captured by the regexp)
+                    // Alt-text. (Quotes aren't captured by the regexp)
                     emote_element.title = match[2];
                 }
                 parts.push(emote_element);
