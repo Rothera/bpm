@@ -24,5 +24,5 @@ build/betterponymotes.oex: build/emote-classes.css build/emote-map.js build/sr-d
 opera/includes/betterponymotes.js: bin/make_opera_script.py data/betterponymotes.js data/script-common.js build/emote-map.js
 	bin/make_opera_script.py opera/includes/betterponymotes.js
 
-opera/includes/betterglobalmotes.js: bin/make_opera_script data/betterglobalmotes.js data/script-common.js build/emote-map.js
+opera/includes/betterglobalmotes.js: bin/make_opera_script.py data/betterglobalmotes.js data/script-common.js build/emote-map.js
 	bin/make_opera_script.py opera/includes/betterglobalmotes.js
