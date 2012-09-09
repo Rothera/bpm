@@ -12,22 +12,6 @@
                 "betterponymotes.js"
             ], 
             "matches": [
-                "*://*.reddit.com/*"
-            ], 
-            "run_at": "document_start"
-        }, 
-        {
-            "exclude_matches": [
-                "*://*.reddit.com/*"
-            ], 
-            "js": [
-                "mutation_summary.js", 
-                "emote-map.js", 
-                "sr-data.js", 
-                "script-common.js", 
-                "betterglobalmotes.js"
-            ], 
-            "matches": [
                 "*://*/*"
             ], 
             "run_at": "document_start"

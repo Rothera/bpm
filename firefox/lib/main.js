@@ -86,53 +86,39 @@ simple_prefs.on("openPrefs", function() {
     tabs.open(self.data.url("options.html"));
 });
 
-// Main CSS file. Due to technical limitations- we can't specify the BGM mod as
-// excluding Reddit- this is swapped between matching "*" if BGM is enabled and
-// "*.reddit.com" when disabled. An unfortunate hack.
-//
-// Additionally, swapping this out while pages are loaded with globablly
-// converted emotes will pull the CSS out from under them, making the emotes
-// effectively impossible to read. One of the cases where hot-reloading of
-// preferences in Firefox doesn't work too well.
-var core_css_mod = null;
+// Main script. As an optimization, we just replace this mod (in order to change
+// the list of matching URLs) whenever the global conversion option changes.
+// This has a nasty side effect- the workers don't seem to be able to save
+// settings. The practical result of this is that fiddling with the option will
+// mean currently-open pages won't save the positions of the emote search window,
+// I think.
 
-function set_core_css_filter(pattern) {
-    if(core_css_mod !== null) {
-        core_css_mod.destroy();
-        core_css_mod = null;
-    }
-
-    core_css_mod = page_mod.PageMod({
+var main_mod = null;
+function make_main_mod(pattern) {
+    return page_mod.PageMod({
         include: [pattern],
         contentScriptWhen: "start",
         contentStyleFile: [
-            self.data.url("emote-classes.css"),
-            ]
+            // TODO: I'd rather not apply bpmotes.css globally. Add an extra
+            // mod for that or something
+            self.data.url("bpmotes.css"),
+            self.data.url("emote-classes.css")
+            ],
+        contentScriptFile: [
+            self.data.url("mutation_summary.js"),
+            self.data.url("emote-map.js"),
+            self.data.url("sr-data.js"),
+            self.data.url("script-common.js"),
+            self.data.url("betterponymotes.js")
+            ],
+        onAttach: on_cs_attach
     });
 }
-
-// Main script
-var main_mod = page_mod.PageMod({
-    include: ["*.reddit.com"],
-    contentScriptWhen: "start",
-    contentStyleFile: [
-        self.data.url("bpmotes.css")
-        ],
-    contentScriptFile: [
-        self.data.url("mutation_summary.js"),
-        self.data.url("emote-map.js"),
-        self.data.url("sr-data.js"),
-        self.data.url("script-common.js"),
-        self.data.url("betterponymotes.js")
-        ],
-    onAttach: on_cs_attach
-});
 
 // These are the only preferences we control from this side. Other browsers do
 // not have this hot-reloading capability, though that is mostly by accident.
 var extracss_mod = null;
 var combiners_mod = null;
-var globalemotes_mod = null;
 
 function enable_css(filename) {
     return page_mod.PageMod({
@@ -159,29 +145,17 @@ function prefs_updated() {
     }
 
     if(storage.prefs.enableGlobalEmotes) {
-        set_core_css_filter("*");
-
-        if(globalemotes_mod === null) {
-            globalemotes_mod = page_mod.PageMod({
-                include: ["*"],
-                contentScriptWhen: "start",
-                contentScriptFile: [
-                    self.data.url("mutation_summary.js"),
-                    self.data.url("emote-map.js"),
-                    self.data.url("sr-data.js"),
-                    self.data.url("script-common.js"),
-                    self.data.url("betterglobalmotes.js")
-                    ],
-                onAttach: on_cs_attach
-            });
+        if(main_mod !== null) {
+            main_mod.destroy();
         }
+
+        main_mod = make_main_mod("*");
     } else {
-        set_core_css_filter("*.reddit.com");
-
-        if(globalemotes_mod !== null) {
-            globalemotes_mod.destroy();
-            globalemotes_mod = null;
+        if(main_mod !== null) {
+            main_mod.destroy();
         }
+
+        main_mod = make_main_mod("*.reddit.com");
     }
 }
 
