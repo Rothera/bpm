@@ -931,7 +931,6 @@ function run_gm(prefs) {
     }
 }
 
-// Manual whitelisting on Firefox, because we can't exclude URL's
 if(endsWith(document.location.hostname, "reddit.com")) {
     // Does nothing on Firefox
     apply_css("/bpmotes.css");
