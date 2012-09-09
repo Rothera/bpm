@@ -108,7 +108,6 @@ function make_main_mod(pattern) {
             self.data.url("mutation_summary.js"),
             self.data.url("emote-map.js"),
             self.data.url("sr-data.js"),
-            self.data.url("script-common.js"),
             self.data.url("betterponymotes.js")
             ],
         onAttach: on_cs_attach

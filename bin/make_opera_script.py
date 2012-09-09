@@ -14,8 +14,7 @@ import sys
 
 macros = {
     "EMOTE_MAP": "build/emote-map.js",
-    "SR_DATA": "build/sr-data.js",
-    "SCRIPT_COMMON": "data/script-common.js"
+    "SR_DATA": "build/sr-data.js"
     }
 
 script = open(sys.argv[1] + ".in").read()
