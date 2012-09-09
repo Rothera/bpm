@@ -17,12 +17,12 @@ build/betterponymotes.crx: build/emote-classes.css build/emote-map.js build/sr-d
 	mv chrome.crx build/betterponymotes.crx
 	cp build/betterponymotes.crx build/betterponymotes_`bin/version.py get`.crx
 
-build/betterponymotes.oex: build/emote-classes.css build/emote-map.js build/sr-data.js opera/includes/betterponymotes.js opera/includes/* opera/*
+build/betterponymotes.oex: build/emote-classes.css build/emote-map.js build/sr-data.js opera/includes/betterponymotes.js opera/includes/betterglobalmotes.js opera/includes/* opera/*
 	cd opera && zip -r ../build/betterponymotes.oex * && cd ..
 	cp build/betterponymotes.oex build/betterponymotes_`bin/version.py get`.oex
 
 opera/includes/betterponymotes.js: bin/make_opera_script.py data/betterponymotes.js data/script-common.js build/emote-map.js
 	bin/make_opera_script.py opera/includes/betterponymotes.js
 
-opera/includes/betterglobalmotes.js: bin/make_opera_script data/betterglobalmotes.js data/script-common.js build/emote-map.js
+opera/includes/betterglobalmotes.js: bin/make_opera_script.py data/betterglobalmotes.js data/script-common.js build/emote-map.js
 	bin/make_opera_script.py opera/includes/betterglobalmotes.js

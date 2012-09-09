@@ -54,7 +54,13 @@ function run(prefs) {
 
     var sr_array = make_sr_array(prefs);
 
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    // Opera does not seem to expose NodeFilter to content scripts, so we
+    // cannot specify NodeFilter.SHOW_TEXT. Its value is defined to be 4 in the
+    // DOM spec, though, so that works.
+    //
+    // Opera also throws an error if we do not specify all four arguments,
+    // though Firefox and Chrome will accept just the first two.
+    var walker = document.createTreeWalker(document.body, /*NodeFilter.SHOW_TEXT*/ 4, undefined, undefined);
     var node;
     // TreeWalker's seem to stop returning nodes if you delete a node while
     // iterating over it.
