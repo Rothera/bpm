@@ -42,7 +42,7 @@ function hasParentWithId(element, id) {
 // Same, but for CSS classes
 function hasParentWithClass(element, className) {
     if(element.parentNode !== null && element.parentNode.className !== undefined) {
-        if(element.parentNode.className.indexOf(className) > -1) {
+        if((" " + element.parentNode.className + " ").indexOf(" " + className + " ") > -1) {
             return true;
         } else {
             return hasParentWithClass(element.parentNode, className);
