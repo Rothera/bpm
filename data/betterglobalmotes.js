@@ -145,6 +145,15 @@ function run(prefs) {
         return;
     }
 
+    // Only apply a subset of CSS globally. We don't need bpmotes.css, extracss,
+    // or combiners nonsense as we ignore all flags and have no real "custom" stuff.
+    //
+    // We run this here, instead of down in the main bit, to avoid applying large
+    // chunks of CSS when this script is disabled.
+    //
+    // Does nothing on Firefox.
+    apply_css("/emote-classes.css");
+
     var sr_array = make_sr_array(prefs);
     process(prefs, sr_array, document.body);
 
@@ -175,11 +184,6 @@ function run(prefs) {
 
 // Manual whitelisting on Firefox, because we can't exclude URL's
 if(!endsWith(document.location.hostname, "reddit.com")) {
-    // Only apply a subset of CSS globally. We don't need bpmotes.css, extracss,
-    // or combiners nonsense as we ignore all flags and have no real "custom" stuff.
-    // Does nothing on Firefox.
-    apply_css("/emote-classes.css");
-
     // This script is generally run before the DOM is built. Opera may break
     // that rule, but I don't know how and there's nothing we can do anyway.
     window.addEventListener("DOMContentLoaded", function() {
