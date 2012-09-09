@@ -79,7 +79,7 @@ var prefs_mod = page_mod.PageMod({
         self.data.url("options.js")
         ],
     onAttach: on_cs_attach
-})
+});
 
 // Enable the button that opens the page
 simple_prefs.on("openPrefs", function() {
@@ -93,69 +93,98 @@ simple_prefs.on("openPrefs", function() {
 // mean currently-open pages won't save the positions of the emote search window,
 // I think.
 
-var main_mod = null;
-function make_main_mod(pattern) {
-    return page_mod.PageMod({
-        include: [pattern],
-        contentScriptWhen: "start",
-        contentStyleFile: [
-            // TODO: I'd rather not apply bpmotes.css globally. Add an extra
-            // mod for that or something
-            self.data.url("bpmotes.css"),
-            self.data.url("emote-classes.css")
-            ],
-        contentScriptFile: [
-            self.data.url("mutation_summary.js"),
-            self.data.url("emote-map.js"),
-            self.data.url("sr-data.js"),
-            self.data.url("betterponymotes.js")
-            ],
-        onAttach: on_cs_attach
-    });
+/*
+ * PageMod controlling code. We control the main mod, extracss, and combiners
+ * from here.
+ *
+ * There is some complexity involved in this- the global emotes option affects
+ * whether or not each of these mods affect "*" or "*.reddit.com", and we need
+ * to rebuild each one when that changes. Unfortunately, page workers seem to get
+ * "cut off" when this happens- they can no longer write to prefs, meaning the
+ * search box won't remember where it was anymore from those pages.
+ *
+ * Additionally, the extracss and combiners mod have their own options, deciding
+ * whether or not they're enabled at all.
+ */
+
+function make_mod(options) {
+    // Makes a page mod from the specified options list, automatically setting
+    // the include list to something appropriate.
+
+    options.include = [storage.prefs.enableGlobalEmotes ? "*" : "*.reddit.com"];
+    return page_mod.PageMod(options);
 }
 
-// These are the only preferences we control from this side. Other browsers do
-// not have this hot-reloading capability, though that is mostly by accident.
-var extracss_mod = null;
-var combiners_mod = null;
-
-function enable_css(filename) {
-    return page_mod.PageMod({
-        include: ["*.reddit.com"],
+function make_css_mod(filename) {
+    return make_mod({
         contentScriptWhen: "start",
         contentStyleFile: [self.data.url(filename)]
     });
 }
 
+function configure_css(mod, pref, filename, bgm_changed) {
+    // If BGM changed and the mod is enabled, we need to reconfigure it.
+    // Otherwise we just check whether or not the pref itself has changed.
+
+    console.log("configure_css: mod=" + mod + ", pref=" + pref + ", filename=" + filename + ", bgm_changed=" + bgm_changed);
+    if(bgm_changed && mod !== null) {
+        console.log("bgm changed, so destroying mod");
+        mod.destroy();
+        mod = null;
+    }
+
+    if(pref && mod === null) {
+        console.log("enabling");
+        var tmp = make_css_mod(filename);
+        console.log("tmp = " + tmp);
+        return tmp;
+    } else if(!pref && mod !== null) {
+        console.log("destroying");
+        mod.destroy();
+        return null;
+    }
+
+    return mod;
+}
+
+var main_mod = null;
+var extracss_mod = null;
+var combiners_mod = null;
+
+// Previous global emotes setting. Compare with ===/!== so the null triggers the
+// initial run properly in prefs_updated().
+var bgm_enabled = null;
+
 // Monitor prefs for CSS-related changes
 function prefs_updated() {
-    if(storage.prefs.enableExtraCSS && extracss_mod === null) {
-        extracss_mod = enable_css("extracss.css");
-    } else if(!storage.prefs.enableExtraCSS && extracss_mod !== null) {
-        extracss_mod.destroy();
-        extracss_mod = null;
-    }
+    var bgm_changed = storage.prefs.enableGlobalEmotes !== bgm_enabled;
 
-    if(storage.prefs.enableNSFW && combiners_mod === null) {
-        combiners_mod = enable_css("combiners-nsfw.css");
-    } else if(!storage.prefs.enableNSFW && combiners_mod !== null) {
-        combiners_mod.destroy();
-        combiners_mod = null;
-    }
+    extracss_mod = configure_css(extracss_mod, storage.prefs.enableExtraCSS, "extracss.css", bgm_changed);
+    combiners_mod = configure_css(combiners_mod, storage.prefs.enableNSFW, "combiners-nsfw.css", bgm_changed);
+    console.log("extracss=" + extracss_mod + ", combiners=" + combiners_mod);
 
-    if(storage.prefs.enableGlobalEmotes) {
+    if(bgm_changed) {
         if(main_mod !== null) {
             main_mod.destroy();
         }
 
-        main_mod = make_main_mod("*");
-    } else {
-        if(main_mod !== null) {
-            main_mod.destroy();
-        }
-
-        main_mod = make_main_mod("*.reddit.com");
+        main_mod = make_mod({
+            contentScriptWhen: "start",
+            contentStyleFile: [
+                self.data.url("bpmotes.css"),
+                self.data.url("emote-classes.css")
+                ],
+            contentScriptFile: [
+                self.data.url("mutation_summary.js"),
+                self.data.url("emote-map.js"),
+                self.data.url("sr-data.js"),
+                self.data.url("betterponymotes.js")
+                ],
+            onAttach: on_cs_attach
+            });
     }
+
+    bgm_enabled = storage.prefs.enableGlobalEmotes;
 }
 
 prefs_updated(); // Initial run

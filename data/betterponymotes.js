@@ -794,12 +794,8 @@ function run(prefs) {
 // others. It will not permit text in the [] portion, but alt-text quotes don't
 // have to match each other.
 //
-// Flags are parsed, but ignored in code. This isn't for any technical reason-
-// I'm just making the assumption that more specialized syntaxes will generally
-// stay in Reddit.
-//
-//                           <  emote  ><  flags   >   <    alt-text     >
-var emote_regexp = /\[\s*\]\((\/[\w!:]+)(?:[\w!\-]*)\s*(?:["']([^"]*)["'])?\)/g;
+//                           <   emote   >   <    alt-text     >
+var emote_regexp = /\[\]\((\/[\w!:\-]+)\s*(?:["']([^"]*)["'])?\)/g;
 
 var tag_blacklist = {
     // Meta tags that we should never touch
@@ -827,17 +823,21 @@ function process_gm(prefs, sr_array, root) {
         if(!tag_blacklist[parent.tagName]) {
             emote_regexp.lastIndex = 0;
 
-            var parts = [];
+            var new_elements = [];
             var end_of_prev = 0; // End index of previous emote match
             var match;
 
             while((match = emote_regexp.exec(node.data)) !== null) {
+                // Don't normalize case for emote lookup
+                var parts = match[1].split("-");
+                var emote_name = parts[0];
+
                 // Check that emote exists
-                if(!emote_map[match[1]]) {
+                if(!emote_map[emote_name]) {
                     continue;
                 }
 
-                var emote_info = emote_map[match[1]];
+                var emote_info = emote_map[emote_name];
                 var is_nsfw = emote_info[0];
                 var source_id = emote_info[1];
 
@@ -850,17 +850,26 @@ function process_gm(prefs, sr_array, root) {
                 // of the text element)
                 var before_text = node.data.slice(end_of_prev, match.index);
                 if(before_text) {
-                    parts.push(document.createTextNode(before_text));
+                    new_elements.push(document.createTextNode(before_text));
                 }
 
                 // Build emote
-                var emote_element = document.createElement("span");
-                emote_element.className = "bpmote-" + sanitize(match[1].slice(1));
+                var element = document.createElement("span");
+                element.className = "bpmote-" + sanitize(emote_name.slice(1));
+
+                // Don't need to do validation on flags, since our matching
+                // regexp is strict enough to begin with (although it will
+                // match ":", something we don't permit elsewhere).
+                for(var p = 1; p < parts.length; p++) {
+                    var flag = parts[p].toLowerCase();
+                    element.className += " bpflag-" + sanitize(flag);
+                }
+
                 if(match[2] !== undefined) {
                     // Alt-text. (Quotes aren't captured by the regexp)
-                    emote_element.title = match[2];
+                    element.title = match[2];
                 }
-                parts.push(emote_element);
+                new_elements.push(element);
 
                 // Next text element will start after this emote
                 end_of_prev = match.index + match[0].length;
@@ -868,16 +877,16 @@ function process_gm(prefs, sr_array, root) {
 
             // If length == 0, then there were no emote matches to begin with,
             // and we should just leave it alone
-            if(parts.length) {
+            if(new_elements.length) {
                 // There were emotes, so grab the last bit of text at the end
                 var before_text = node.data.slice(end_of_prev);
                 if(before_text) {
-                    parts.push(document.createTextNode(before_text));
+                    new_elements.push(document.createTextNode(before_text));
                 }
 
                 // Insert all our new nodes
-                for(var i = 0; i < parts.length; i++) {
-                    parent.insertBefore(parts[i], node);
+                for(var i = 0; i < new_elements.length; i++) {
+                    parent.insertBefore(new_elements[i], node);
                 }
 
                 // Remove original text node
@@ -897,14 +906,11 @@ function run_gm(prefs) {
         return;
     }
 
-    // Only apply a subset of CSS globally. We don't need bpmotes.css, extracss,
-    // or combiners nonsense as we ignore all flags and have no real "custom" stuff.
-    //
     // We run this here, instead of down in the main bit, to avoid applying large
     // chunks of CSS when this script is disabled.
     //
     // Does nothing on Firefox.
-    apply_css("/emote-classes.css");
+    add_bpm_css();
 
     var sr_array = make_sr_array(prefs);
     process_gm(prefs, sr_array, document.body);
@@ -934,7 +940,7 @@ function run_gm(prefs) {
     }
 }
 
-if(endsWith(document.location.hostname, "reddit.com")) {
+function add_bpm_css() {
     // Does nothing on Firefox
     apply_css("/bpmotes.css");
     apply_css("/emote-classes.css");
@@ -954,6 +960,10 @@ if(endsWith(document.location.hostname, "reddit.com")) {
             apply_css("/combiners-nsfw.css");
         }
     });
+}
+
+if(endsWith(document.location.hostname, "reddit.com")) {
+    add_bpm_css();
 
     // This script is generally run before the DOM is built. Opera may break
     // that rule, but I don't know how and there's nothing we can do anyway.
