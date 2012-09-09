@@ -923,6 +923,7 @@ function run_gm(prefs) {
     switch(platform) {
         case "chrome":
         case "firefox":
+            /*
             var observer = new MutationSummary({
                 callback: function(summaries) {
                     var elements = summaries[0].added;
@@ -934,6 +935,7 @@ function run_gm(prefs) {
                     {element: "*"} // All elements (since any of them can contain text)
                 ]});
             break;
+            */
 
         case "opera":
         default:
