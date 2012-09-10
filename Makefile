@@ -18,7 +18,7 @@ build/betterponymotes.crx: build/emote-classes.css build/emote-map.js build/sr-d
 	cp build/betterponymotes.crx build/betterponymotes_`bin/version.py get`.crx
 
 build/betterponymotes.oex: build/emote-classes.css build/emote-map.js build/sr-data.js opera/includes/betterponymotes.js opera/includes/* opera/*
-	cd opera && zip -r ../build/betterponymotes.oex * && cd ..
+	cd opera && zip -r ../build/betterponymotes.oex * -x includes/betterponymotes.js.in && cd ..
 	cp build/betterponymotes.oex build/betterponymotes_`bin/version.py get`.oex
 
 opera/includes/betterponymotes.js: bin/make_opera_script.py data/betterponymotes.js build/emote-map.js

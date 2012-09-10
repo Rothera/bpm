@@ -17,21 +17,10 @@ var simple_prefs = require("simple-prefs");
 var simple_storage = require("simple-storage");
 var tabs = require("tabs");
 
+var pref_setup = require("pref-setup");
 var sr_data = require("sr-data");
 
 var storage = simple_storage.storage;
-
-// Load/initialize prefs to defaults
-var default_prefs = {
-        "enableNSFW": false,
-        "enableExtraCSS": true,
-        "enabledSubreddits": {},
-        "showUnknownEmotes": true,
-        "searchLimit": 200,
-        "searchBoxInfo": [600, 25, 600, 450],
-        "showAltText": true,
-        "enableGlobalEmotes": false
-    };
 
 if(!storage.prefs) {
     storage.prefs = {};
@@ -43,22 +32,7 @@ if(!storage.prefs) {
     }
 }
 
-if(storage.prefs.showAltText === undefined) {
-    storage.prefs.showAltText = false; // Off by default for upgrades only
-}
-
-for(var key in default_prefs) {
-    if(storage.prefs[key] === undefined) {
-        storage.prefs[key] = default_prefs[key];
-    }
-}
-
-for(var sr in sr_data.sr_data) {
-    if(storage.prefs.enabledSubreddits[sr] === undefined) {
-        storage.prefs.enabledSubreddits[sr] = true;
-    }
-}
-// TODO: Remove subreddits from prefs that are no longer in the addon.
+pref_setup.setup_prefs(storage.prefs);
 
 function on_cs_attach(worker) {
     worker.port.on("get_prefs", function() {
