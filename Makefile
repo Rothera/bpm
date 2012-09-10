@@ -6,6 +6,7 @@ build/emote-classes.css build/emote-map.js build/sr-data.js: bpgen.py emotes/*.y
 	./bpgen.py emotes/*.yaml data/bpmotes-extras.yaml
 
 build/betterponymotes.xpi: build/emote-classes.css build/emote-map.js build/sr-data.js firefox/data/* firefox/package.json firefox/lib/main.js
+	rm -f build/*.xpi
 	cfx xpi --update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf --pkgdir=firefox
 	bin/inject_xpi_key.py betterponymotes.xpi build/betterponymotes.xpi
 	rm betterponymotes.xpi
@@ -13,12 +14,13 @@ build/betterponymotes.xpi: build/emote-classes.css build/emote-map.js build/sr-d
 	uhura -k betterponymotes.pem build/betterponymotes.xpi http://rainbow.mlas1.us/betterponymotes_`bin/version.py get`.xpi > data/betterponymotes.update.rdf
 
 build/betterponymotes.crx: build/emote-classes.css build/emote-map.js build/sr-data.js chrome/*
+	rm -f build/*.crx
 	google-chrome --pack-extension=chrome --pack-extension-key=betterponymotes.pem
 	mv chrome.crx build/betterponymotes.crx
 	cp build/betterponymotes.crx build/betterponymotes_`bin/version.py get`.crx
 
 build/betterponymotes.oex: build/emote-classes.css build/emote-map.js build/sr-data.js opera/includes/betterponymotes.js opera/includes/* opera/*
-	rm -f build/betterponymotes.oex # To avoid stale files
+	rm -f build/*.oex
 	cd opera && zip -r ../build/betterponymotes.oex * -x includes/betterponymotes.js.in && cd ..
 	cp build/betterponymotes.oex build/betterponymotes_`bin/version.py get`.oex
 
