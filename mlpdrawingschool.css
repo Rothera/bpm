@@ -987,3 +987,18 @@ a[href|="/snipsmote"] {
     font-size: 0pt !important;
     display: block !important
     }
+.flairselector .customizer {
+    display: none !important
+    }
+.flair {
+    border: none !important;
+    top: 20px;
+    padding: 0px;
+    background: url(http://d.thumbs.redditmedia.com/WUGVDcR4cPc1z8Ju.png);
+    display: inline-block
+    }
+.flair-discord:hover {
+    background-position: 0 0;
+    width: 100px;
+    height: 98px
+    }
