@@ -124,8 +124,8 @@ class NormalEmote(Emote):
             # interferes with global emotes. We need to override that in Firefox.
             #
             # As yet, none of these other properties require the same consideration.
-            "background-image": "url(%s)!important" % (self.image_url),
-            "background-position": "%spx %spx !important" % (self.offset[0], self.offset[1]),
+            "background-image": "url(%s)" % (self.image_url),
+            "background-position": "%spx %spx" % (self.offset[0], self.offset[1]),
             "width": "%spx" % (self.size[0]),
             "height": "%spx" % (self.size[1])
             }

@@ -61,64 +61,13 @@ simple_prefs.on("openPrefs", function() {
 });
 
 // Main script. As an optimization, we just replace this mod (in order to change
-// the list of matching URLs) whenever the global conversion option changes.
-// This has a nasty side effect- the workers don't seem to be able to save
-// settings. The practical result of this is that fiddling with the option will
-// mean currently-open pages won't save the positions of the emote search window,
-// I think.
-
-/*
- * PageMod controlling code. We control the main mod, extracss, and combiners
- * from here.
- *
- * There is some complexity involved in this- the global emotes option affects
- * whether or not each of these mods affect "*" or "*.reddit.com", and we need
- * to rebuild each one when that changes. Unfortunately, page workers seem to get
- * "cut off" when this happens- they can no longer write to prefs, meaning the
- * search box won't remember where it was anymore from those pages.
- *
- * Additionally, the extracss and combiners mod have their own options, deciding
- * whether or not they're enabled at all.
- */
-
-function make_mod(options) {
-    // Makes a page mod from the specified options list, automatically setting
-    // the include list to something appropriate.
-
-    options.include = [storage.prefs.enableGlobalEmotes ? "*" : "*.reddit.com"];
-    return page_mod.PageMod(options);
-}
-
-function make_css_mod(filename) {
-    return make_mod({
-        contentScriptWhen: "start",
-        contentStyleFile: [self.data.url(filename)]
-    });
-}
-
-function configure_css(mod, pref, filename, bgm_changed) {
-    // If BGM changed and the mod is enabled, we need to reconfigure it.
-    // Otherwise we just check whether or not the pref itself has changed.
-
-    if(bgm_changed && mod !== null) {
-        mod.destroy();
-        mod = null;
-    }
-
-    if(pref && mod === null) {
-        var tmp = make_css_mod(filename);
-        return tmp;
-    } else if(!pref && mod !== null) {
-        mod.destroy();
-        return null;
-    }
-
-    return mod;
-}
-
+// the list of matching URLs) whenever the global conversion option changes, so
+// that the script doesn't needlessly run on all pages if BGM is disabled.
+//
+// This has a nasty side effect- the workers get "disconnected" and don't seem
+// to be able to save settings. Consequently, changing the BGM option will mean
+// all currently-open pages won't save the emote search window. I think.
 var main_mod = null;
-var extracss_mod = null;
-var combiners_mod = null;
 
 // Previous global emotes setting. Compare with ===/!== so the null triggers the
 // initial run properly in prefs_updated().
@@ -128,20 +77,14 @@ var bgm_enabled = null;
 function prefs_updated() {
     var bgm_changed = storage.prefs.enableGlobalEmotes !== bgm_enabled;
 
-    extracss_mod = configure_css(extracss_mod, storage.prefs.enableExtraCSS, "extracss.css", bgm_changed);
-    combiners_mod = configure_css(combiners_mod, storage.prefs.enableNSFW, "combiners-nsfw.css", bgm_changed);
-
     if(bgm_changed) {
         if(main_mod !== null) {
             main_mod.destroy();
         }
 
-        main_mod = make_mod({
+        main_mod = page_mod.PageMod({
+            include: [storage.prefs.enableGlobalEmotes ? "*" : "*.reddit.com"],
             contentScriptWhen: "start",
-            contentStyleFile: [
-                self.data.url("bpmotes.css"),
-                self.data.url("emote-classes.css")
-                ],
             contentScriptFile: [
                 self.data.url("mutation_summary.js"),
                 self.data.url("emote-map.js"),

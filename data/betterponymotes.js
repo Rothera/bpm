@@ -68,7 +68,19 @@ switch(platform) {
         };
 
         apply_css = function(filename) {
-            // CSS is handled in main.js on Firefox
+            // <link> to our embedded file.
+            var tag = document.createElement("link");
+            // FIXME: This is a nasty hack. It's likely to continue working for
+            // a good long while, but we should prefer make a request to the
+            // backend for the prefix (not wanting to do that is the reason for
+            // hardcoding it). Ideally self.data.url() would be accessible to
+            // content scripts, but it's not...
+            tag.href = "resource://jid1-thrhdjxskvsicw-at-jetpack/betterponymotes/data" + filename;
+            tag.rel = "stylesheet";
+            tag.type = "text/css";
+            // Seems to work in Firefox, and we get to put our tags in a pretty
+            // place!
+            document.head.insertBefore(tag, document.head.firstChild);
         };
 
         self.port.on("prefs", set_prefs);
@@ -85,8 +97,11 @@ switch(platform) {
             var tag = document.createElement("link");
             tag.href =  chrome.extension.getURL(filename);
             tag.rel = "stylesheet";
-            // I think this ends up in <head> for some reason
-            document.documentElement.insertBefore(tag);
+            tag.type = "text/css";
+            // document.head does not exist at this point in Chrome (it's null).
+            // Trying to access it seems to blow it away. Strange. This will
+            // have to suffice (though it gets them "backwards").
+            document.documentElement.insertBefore(tag, document.documentElement.firstChild);
         };
 
         chrome.extension.sendMessage({"method": "get_prefs"}, set_prefs);
@@ -133,8 +148,9 @@ switch(platform) {
         apply_css = function(filename) {
             get_file(filename, function(data) {
                 var tag = document.createElement("style");
-                tag.setAttribute("type", "text/css");
+                tag.type = "text/css";
                 tag.appendChild(document.createTextNode(data));
+                // Seems to exist in Opera
                 document.head.insertBefore(tag, document.head.firstChild);
             });
         };
