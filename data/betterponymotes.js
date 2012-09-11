@@ -713,7 +713,7 @@ function inject_search_button(spans) {
                 wire_emotes_button(existing[0]);
             } else {
                 var button = document.createElement("button");
-                button.setAttribute("type", "button"); // Default is "submit"; not good
+                button.type = "button"; // Default is "submit"; not good
                 button.className = "bpm-search-toggle";
                 button.textContent = "emotes";
                 wire_emotes_button(button);
@@ -756,7 +756,7 @@ function run(prefs) {
             // implicitly through other means and be able to get rid of
             // this, but for now it seems not to matter.
             var tag = document.createElement("style");
-            tag.setAttribute("type", "text/css");
+            tag.type = "text/css";
             document.head.appendChild(tag);
 
             // Fallthrough
