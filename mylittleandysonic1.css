@@ -209,7 +209,7 @@ label[for="subRedditStyleCheckbox"] {
     font-weight: 700
     }
 .flair:after {
-    background-image: url(http://b.thumbs.redditmedia.com/Bp25TrhBEswipKo1.png);
+    background-image: url(http://c.thumbs.redditmedia.com/yAtKY1BMjADdPh-z.png);
     background-position: 0px 0px;
     content: "";
     display: inline-block;
@@ -530,6 +530,9 @@ label[for="subRedditStyleCheckbox"] {
     }
 .flair-crunchy:after {
     background-position: 0px -3120px
+    }
+.flair-3p:after {
+    background-position: 0px -3150px
     }
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair {
@@ -1295,7 +1298,7 @@ a[href|="/pixelfun"] {
     color: black;
     border: 0;
     border-radius: 0;
-    background-image: url(http://b.thumbs.redditmedia.com/Bp25TrhBEswipKo1.png);
+    background-image: url(http://c.thumbs.redditmedia.com/yAtKY1BMjADdPh-z.png);
     background-repeat: no-repeat;
     display: inline-block;
     width: 30px;
@@ -1317,20 +1320,23 @@ a[href="/sp"] {
     padding-right: 100%
     }
 /* Replacing somebody's name? Add it to the list here. */
-a.author[href$="shawa666"], a.author[href$="Qwerty439"], a.author[href$="HtotheGRIFF"], a.author[href$="viper9172"], a.author[href$="Lazeraze"], a.author[href$="31eipekili"], a.author[href$="derram_2"], a.author[href$="Chiv_Cortland"], a.author[href$="442B8AEF9"], a.author[href$="Ryskillz101"], a.author[href$="anonpon3"], a.author[href$="Phei"], a.author[href$="socially_broken"], a.author[href$="MisanthropicCat"], a.author[href$="Princess_Molestia_"], a.author[href$="Articulate_Angel"], a.author[href$="08G8V8"], a.author[href$=WildPlastic], a.author[href$=Avngr75], a.author[href$=tyl3rdurden], a.author[href$=Greenie_Lye], a.author[href$=DaylightDarkle], a.author[href$=RetardVomitPussyCunt], a.author[href$=BlockJuice_4], a.author[href$=andysonic2], a.author[href$="10z20Luka"], a.author[href$=Chinch335], a.author[href$=IllusionOf_Integrity], a.author[href$=PinkiePie2012], a.author[href$=DarkSideOfTheSun], a.author[href$=SkiidrowDash], a.author[href$=Backupusername], a.author[href$=Speedingturtle], a.author[href$=supercrunchy], a.author[href$=Taiokoshinketsu], a.author[href$=SolarLuna96], a.author[href$=Generic_Builder], a.author[href$=volcano_bakemeats], a.author[href$=Chillusion], a.author[href$=Esplin], a.author[href$=DarqWolff], a.author[href$=cheesemoo], a.author[href$=scriptea], a.author[href$=QdwachMD], a.author[href$=SirCinnamon], a.author[href$=Boibi], a.author[href$=CatmanIX], a.author[href$=XelNaga], a.author[href$=Catharsis25], a.author[href$=tehz], a.author[href$=tailcalled], a.author[href$=iiRockpuppy], a.author[href$=Ruuch], a.author[href$=trypsonite], a.author[href$=raritie], a.author[href$=slippy0], a.author[href$=herabek], a.author[href$=OneOfTheseDaysLuna], a.author[href$=ZZW30], a.author[href$=Zovistograt] {
+a.author[href$="shawa666"], a.author[href$="Avebone"], a.author[href$="Qwerty439"], a.author[href$="HtotheGRIFF"], a.author[href$="viper9172"], a.author[href$="Lazeraze"], a.author[href$="31eipekili"], a.author[href$="derram_2"], a.author[href$="Chiv_Cortland"], a.author[href$="442B8AEF9"], a.author[href$="Ryskillz101"], a.author[href$="anonpon3"], a.author[href$="Phei"], a.author[href$="socially_broken"], a.author[href$="MisanthropicCat"], a.author[href$="Princess_Molestia_"], a.author[href$="Articulate_Angel"], a.author[href$="08G8V8"], a.author[href$=WildPlastic], a.author[href$=Avngr75], a.author[href$=tyl3rdurden], a.author[href$=Greenie_Lye], a.author[href$=DaylightDarkle], a.author[href$=RetardVomitPussyCunt], a.author[href$=BlockJuice_4], a.author[href$=andysonic2], a.author[href$="10z20Luka"], a.author[href$=Chinch335], a.author[href$=IllusionOf_Integrity], a.author[href$=PinkiePie2012], a.author[href$=DarkSideOfTheSun], a.author[href$=SkiidrowDash], a.author[href$=Backupusername], a.author[href$=Speedingturtle], a.author[href$=supercrunchy], a.author[href$=Taiokoshinketsu], a.author[href$=SolarLuna96], a.author[href$=Generic_Builder], a.author[href$=volcano_bakemeats], a.author[href$=Chillusion], a.author[href$=Esplin], a.author[href$=DarqWolff], a.author[href$=cheesemoo], a.author[href$=scriptea], a.author[href$=QdwachMD], a.author[href$=SirCinnamon], a.author[href$=Boibi], a.author[href$=CatmanIX], a.author[href$=XelNaga], a.author[href$=Catharsis25], a.author[href$=tehz], a.author[href$=tailcalled], a.author[href$=iiRockpuppy], a.author[href$=Ruuch], a.author[href$=trypsonite], a.author[href$=raritie], a.author[href$=slippy0], a.author[href$=herabek], a.author[href$=OneOfTheseDaysLuna], a.author[href$=ZZW30], a.author[href$=Zovistograt] {
     font-size: 0 !important;
     overflow: hidden;
     display: inline-block;
     content: ""
     }
 /* Replacing somebody's name? Add it to the list here too. */
-a.author[href$="shawa666"]:before, a.author[href$="Qwerty439"]:before, a.author[href$="HtotheGRIFF"]:before, a.author[href$="viper9172"]:before, a.author[href$="Lazeraze"]:before, a.author[href$="31eipekili"]:before, a.author[href$="derram_2"]:before, a.author[href$="Chiv_Cortland"]:before, a.author[href$="442B8AEF9"]:before, a.author[href$="anonpon3"]:before, a.author[href$="Ryskillz101"]:before, a.author[href$="Phei"]:before, a.author[href$="socially_broken"]:before, a.author[href$="MisanthropicCat"]:before, a.author[href$="Princess_Molestia_"]:before, a.author[href$="Articulate_Angel"]:before, a.author[href$="08G8V8"]:before, a.author[href$=WildPlastic]:before, a.author[href$=Avngr75]:before, a.author[href$=tyl3rdurden]:before, a.author[href$=Greenie_Lye]:before, a.author[href$=DaylightDarkle]:before, a.author[href$=Chinch335]:before, a.author[href$=IllusionOf_Integrity]:before, a.author[href$=trypsonite]:before, a.author[href$=RetardVomitPussyCunt]:before, a.author[href$=andysonic2]:before, a.author[href$="10z20Luka"]:before, a.author[href$=PinkiePie2012]:before, a.author[href$=DarkSideOfTheSun]:before, a.author[href$=SkiidrowDash]:before, a.author[href$=Backupusername]:before, a.author[href$=Speedingturtle]:before, a.author[href$=supercrunchy]:before, a.author[href$=Taiokoshinketsu]:before, a.author[href$=SolarLuna96]:before, a.author[href$=Generic_Builder]:before, a.author[href$=volcano_bakemeats]:before, a.author[href$=Chillusion]:before, a.author[href$=Esplin]:before, a.author[href$=DarqWolff]:before, a.author[href$=cheesemoo]:before, a.author[href$=scriptea]:before, a.author[href$=QdwachMD]:before, a.author[href$=SirCinnamon]:before, a.author[href$=BlockJuice_4]:before, a.author[href$=Boibi]:before, a.author[href$=CatmanIX]:before, a.author[href$=XelNaga]:before, a.author[href$=Catharsis25]:before, a.author[href$=tehz]:before, a.author[href$=tailcalled]:before, a.author[href$=iiRockpuppy]:before, a.author[href$=Ruuch]:before, a.author[href$=raritie]:before, a.author[href$=slippy0]:before, a.author[href$=herabek]:before, a.author[href$=OneOfTheseDaysLuna]:before, a.author[href$=ZZW30]:before, a.author[href$=zovistograt]:before {
+a.author[href$="shawa666"]:before, a.author[href$="Avebone"]:before, a.author[href$="Qwerty439"]:before, a.author[href$="HtotheGRIFF"]:before, a.author[href$="viper9172"]:before, a.author[href$="Lazeraze"]:before, a.author[href$="31eipekili"]:before, a.author[href$="derram_2"]:before, a.author[href$="Chiv_Cortland"]:before, a.author[href$="442B8AEF9"]:before, a.author[href$="anonpon3"]:before, a.author[href$="Ryskillz101"]:before, a.author[href$="Phei"]:before, a.author[href$="socially_broken"]:before, a.author[href$="MisanthropicCat"]:before, a.author[href$="Princess_Molestia_"]:before, a.author[href$="Articulate_Angel"]:before, a.author[href$="08G8V8"]:before, a.author[href$=WildPlastic]:before, a.author[href$=Avngr75]:before, a.author[href$=tyl3rdurden]:before, a.author[href$=Greenie_Lye]:before, a.author[href$=DaylightDarkle]:before, a.author[href$=Chinch335]:before, a.author[href$=IllusionOf_Integrity]:before, a.author[href$=trypsonite]:before, a.author[href$=RetardVomitPussyCunt]:before, a.author[href$=andysonic2]:before, a.author[href$="10z20Luka"]:before, a.author[href$=PinkiePie2012]:before, a.author[href$=DarkSideOfTheSun]:before, a.author[href$=SkiidrowDash]:before, a.author[href$=Backupusername]:before, a.author[href$=Speedingturtle]:before, a.author[href$=supercrunchy]:before, a.author[href$=Taiokoshinketsu]:before, a.author[href$=SolarLuna96]:before, a.author[href$=Generic_Builder]:before, a.author[href$=volcano_bakemeats]:before, a.author[href$=Chillusion]:before, a.author[href$=Esplin]:before, a.author[href$=DarqWolff]:before, a.author[href$=cheesemoo]:before, a.author[href$=scriptea]:before, a.author[href$=QdwachMD]:before, a.author[href$=SirCinnamon]:before, a.author[href$=BlockJuice_4]:before, a.author[href$=Boibi]:before, a.author[href$=CatmanIX]:before, a.author[href$=XelNaga]:before, a.author[href$=Catharsis25]:before, a.author[href$=tehz]:before, a.author[href$=tailcalled]:before, a.author[href$=iiRockpuppy]:before, a.author[href$=Ruuch]:before, a.author[href$=raritie]:before, a.author[href$=slippy0]:before, a.author[href$=herabek]:before, a.author[href$=OneOfTheseDaysLuna]:before, a.author[href$=ZZW30]:before, a.author[href$=zovistograt]:before {
     font-size: 10px !important;
     visibility: visible !important
     }
 /* Replacing somebody's name? Put the replacement here. */
 a.author[href$="shawa666"]:before {
     content: "Slowpoke666"
+    }
+a.author[href$="Avebone"]:before {
+    content: "Ambassador of Foodmanes"
     }
 a.author[href$="Qwerty439"]:before {
     content: "something else too"
@@ -1510,7 +1516,7 @@ a.author[href$=iiRockpuppy]:before {
     color: #000;
     border: 0;
     border-radius: 0;
-    background-image: url(http://b.thumbs.redditmedia.com/Bp25TrhBEswipKo1.png);
+    background-image: url(http://c.thumbs.redditmedia.com/yAtKY1BMjADdPh-z.png);
     background-position: 0 -630px;
     background-repeat: no-repeat;
     display: inline-block;
@@ -1670,7 +1676,7 @@ a.author[href$=JIVEprinting]:after {
     color: black;
     border: 0;
     border-radius: 0;
-    background-image: url(http://b.thumbs.redditmedia.com/Bp25TrhBEswipKo1.png);
+    background-image: url(http://c.thumbs.redditmedia.com/yAtKY1BMjADdPh-z.png);
     background-repeat: no-repeat;
     display: inline-block;
     width: 30px;

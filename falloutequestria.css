@@ -63,7 +63,12 @@ you want your image to be.*/
     }
 .pagename a {
     color: white;
-    font-size: 20px
+    font-size: 20px;
+    font-family: Arial;
+    font-style: italic
+    }
+.tabmenu.formtab {
+    padding-top: 40px
     }
 .side .titlebox h1 a, .side .titlebox h1 a:link .side .titlebox h1 a:visited {
     font-family: terminal;
@@ -76,10 +81,11 @@ you want your image to be.*/
     position: relative;
     top: 0px
     }
-/*.tabmenu{
-position:relative;
-top:100%;
-margin-top:0px!important;}*/
+.tabmenu {
+    position: absolute;
+    top: 100px;
+    /*margin-top:-16px!important;*/
+    }
 .titlebox span.word {
     display: none
     }
