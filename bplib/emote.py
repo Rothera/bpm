@@ -122,8 +122,8 @@ class NormalEmote(Emote):
             "float": "left",
             "background-image": "url(%s)" % (self.image_url),
             "width": "%spx" % (self.size[0]),
-            "height": "%spx" % (self.size[1])
-            "background-position": "%spx %spx" % (self.offset[0], self.offset[1]),
+            "height": "%spx" % (self.size[1]),
+            "background-position": "%spx %spx" % (self.offset[0], self.offset[1])
             }
         css.update(self.css)
         return css
