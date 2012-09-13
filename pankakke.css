@@ -26,6 +26,7 @@ JustAnotherGDB
 - Added Conks as a mod, made a UDNT emote (8/25)
 - Fixed an issue that cropped up with the banner and nightmode.  Added an emote for DinsFire. (8/26)
 - Fixed Zealot's emote, used the previous version for Sprankton, added pgaben emote (9/1)
+- Added a new emote for DoctorDrunk (9/13)
 
 MisanthropicCat
 - Is a kitty
@@ -59,7 +60,7 @@ body #header-bottom-left {
 /**********Name changes***********/
 /********************************/
 /******Insert name here to replace******/
-a.author[href$=JustAnotherGDB], a.author[href$=MisanthropicCat], a.author[href$=Conky_], a.author[href$=floutsy], a.author[href$=ruffletuffle], a.author[href$=Apple_Snacks], a.author[href$=petraman], a.author[href$=WorstPossibleThing], a.author[href$=Esplin], a.author[href$=theMagicalCouch], a.author[href$=pickled_octopus], a.author[href$=hiero_], a.author[href$=Thecursed], a.author[href$=Apprentice1994], a.author[href$=dasflash], a.author[href$=TheDarkman67] {
+a.author[href$=JustAnotherGDB], a.author[href$=MisanthropicCat], a.author[href$=Conky_], a.author[href$=floutsy], a.author[href$=ruffletuffle], a.author[href$=Apple_Snacks], a.author[href$=petraman], a.author[href$=WorstPossibleThing], a.author[href$=Esplin], a.author[href$=theMagicalCouch], a.author[href$=pickled_octopus], a.author[href$=hiero_], a.author[href$=Thecursed], a.author[href$=Apprentice1994], a.author[href$=dasflash], a.author[href$=TheDarkman67], a.author[href$=derram_2] {
     font-size: 0 !important;
     overflow: hidden;
     display: inline-block;
@@ -130,6 +131,10 @@ a.author[href$=TheDarkman67]:before {
     content: "TheDarkPancake";
     font-size: 10px
     }
+a.author[href$=derram_2]:before {
+    content: "derramina diane pie";
+    font-size: 10px
+    }
 /************Additions*************/
 a.author[href$=JustAnotherGDB]:after {
     content: " likes the syrup hot";
@@ -150,12 +155,12 @@ a.author[href$=Conky_]:after {
 /*************Emotes**************/
 /********************************/
 /************Non-MLP*************/
-a[href|="/smothered"], a[href|="/coconutmonkey"], a[href|="/pan10"], a[href|="/panwaffbattle"], a[href|="/hellocake"], a[href|="/pfreeman"], a[href|="/bugs"], a[href|="/torgo"], a[href|="/pancalcos"], a[href|="/pgaben"] {
+a[href|="/smothered"], a[href|="/coconutmonkey"], a[href|="/pan10"], a[href|="/panwaffbattle"], a[href|="/hellocake"], a[href|="/pfreeman"], a[href|="/bugs"], a[href|="/torgo"], a[href|="/pancalcos"], a[href|="/pgaben"], a[href|="/doctordrunk"] {
     display: block;
     clear: none;
     float: left;
     height: 150px;
-    background-image: url(http://c.thumbs.redditmedia.com/wRrTgO2sQY6IR0Mt.png) !important
+    background-image: url(http://b.thumbs.redditmedia.com/xF5xLEVh2vd-NwuO.png) !important
     }
 a[href|="/smothered"] {
     background-position: -0px -0px;
@@ -196,6 +201,10 @@ a[href|="/pancalcos"] {
 a[href|="/pgaben"] {
     background-position: -1476px -0px;
     width: 184px
+    }
+a[href|="/doctordrunk"] {
+    background-position: -1660px -0px;
+    width: 154px
     }
 /************MLP-LRG*************/
 a[href|="/pghoofpump"], a[href|="/pgshock"], a[href|="/pglegcross"], a[href|="/pgshuffle"], a[href|="/ponykakke"], a[href|="/gdbsmirk"], a[href|="/dintrot"], a[href|="/sistersprankton"], a[href|="/flutterhey"], a[href|="/sisterzealot"] {
