@@ -221,10 +221,14 @@ function hasParentWithId(element, id) {
     return false;
 }
 
+function hasClass(element, className) {
+    return (" " + element.className + " ").indexOf(" " + className + " ") > -1;
+}
+
 // Same, but for CSS classes
 function hasParentWithClass(element, className) {
     if(element.parentNode !== null && element.parentNode.className !== undefined) {
-        if((" " + element.parentNode.className + " ").indexOf(" " + className + " ") > -1) {
+        if(hasClass(element.parentNode, className)) {
             return true;
         } else {
             return hasParentWithClass(element.parentNode, className);
@@ -239,7 +243,7 @@ function classInHierarchy(element, className) {
         return false;
     }
 
-    if((" " + element.className + " ").indexOf(" " + className + " ") > -1) {
+    if(hasClass(element, className)) {
         return true;
     }
 
@@ -286,6 +290,9 @@ function process(prefs, sr_array, elements) {
                 var emote_info = emote_map[emote_name];
                 var is_nsfw = emote_info[0];
                 var source_id = emote_info[1];
+
+                // Click blocker CSS/JS
+                element.className += " bpm-noclick";
 
                 // Ordering matters a bit here- placeholders for NSFW emotes
                 // come before disabled emotes.
@@ -777,6 +784,13 @@ function run(prefs) {
     setup_search(prefs, sr_array);
     // Find the one reply box that's there on page load. This may not always work...
     inject_search_button(document.getElementsByClassName("help-toggle"));
+
+    // Add emote click blocker
+    document.body.addEventListener("click", function(event) {
+        if(hasClass(event.target, "bpm-noclick")) {
+            event.preventDefault();
+        }
+    }, false);
 
     switch(platform) {
         case "chrome":
