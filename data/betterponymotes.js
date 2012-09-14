@@ -998,19 +998,24 @@ function run_gm(prefs) {
             // trying to be smart, or ours for making so many function calls and
             // TreeWalker's, but either way, DOMNodeInserted is actually the
             // better way to go here.
-            /*
-            var observer = new MutationSummary({
-                callback: function(summaries) {
-                    var elements = summaries[0].added;
-                    for(var i = 0; i < elements.length; i++) {
-                        process_gm(prefs, sr_array, elements[i]);
+            var observer = new MutationObserver(log_traceback(function(mutations, observer) {
+                for(var m = 0; m < mutations.length; m++) {
+                    var added = mutations[m].addedNodes;
+                    if(added === null || !added.length) {
+                        continue; // Nothing to do
                     }
-                },
-                queries: [
-                    {element: "*"} // All elements (since any of them can contain text)
-                ]});
+
+                    for(var a = 0; a < added.length; a++) {
+                        // Check that the "node" is actually the kind of node
+                        // we're interested in (as opposed to Text nodes for
+                        // one thing)
+                        process_gm(prefs, sr_array, added[a]);
+                    }
+                }
+            }));
+
+            observer.observe(document, {"childList": true, "subtree": true});
             break;
-            */
 
         case "opera":
         default:
