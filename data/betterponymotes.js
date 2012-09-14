@@ -258,7 +258,7 @@ function endsWith(text, s) {
     }
 }
 
-function log_traceback(f) {
+function traceback_wrapper(f) {
     return function() {
         try {
             return f.apply(this, arguments);
@@ -804,7 +804,7 @@ function run(prefs) {
             // find- whether the node in question is deep within one, or contains
             // some.
 
-            var observer = new MutationObserver(log_traceback(function(mutations, observer) {
+            var observer = new MutationObserver(traceback_wrapper(function(mutations, observer) {
                 for(var m = 0; m < mutations.length; m++) {
                     var added = mutations[m].addedNodes;
                     if(added === null || !added.length) {
@@ -998,7 +998,7 @@ function run_gm(prefs) {
             // trying to be smart, or ours for making so many function calls and
             // TreeWalker's, but either way, DOMNodeInserted is actually the
             // better way to go here.
-            var observer = new MutationObserver(log_traceback(function(mutations, observer) {
+            var observer = new MutationObserver(traceback_wrapper(function(mutations, observer) {
                 for(var m = 0; m < mutations.length; m++) {
                     var added = mutations[m].addedNodes;
                     if(added === null || !added.length) {
@@ -1055,12 +1055,12 @@ if(endsWith(document.location.hostname, "reddit.com")) {
     // This script is generally run before the DOM is built. Opera may break
     // that rule, but I don't know how and there's nothing we can do anyway.
     window.addEventListener("DOMContentLoaded", function() {
-        log_traceback(get_prefs(run));
+        get_prefs(run);
     }, false);
 } else {
     // This script is generally run before the DOM is built. Opera may break
     // that rule, but I don't know how and there's nothing we can do anyway.
     window.addEventListener("DOMContentLoaded", function() {
-        log_traceback(get_prefs(run_gm));
+        get_prefs(run_gm);
     }, false);
 }
