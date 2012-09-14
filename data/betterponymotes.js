@@ -25,6 +25,11 @@
 /*$(EMOTE_MAP)*/
 /*$(SR_DATA)*/
 
+(function(global) {
+    // Whee!
+    global.MutationObserver = global.MutationObserver || global.WebKitMutationObserver || global.MozMutationObserver;
+})(this);
+
 // Browser detection- this script runs unmodified on all supported platforms,
 // so inspect a couple of potential global variables to see what we have.
 var platform = "unknown";
@@ -228,6 +233,21 @@ function hasParentWithClass(element, className) {
     return false;
 }
 
+// Includes current node (makes more sense anyway)
+function classInHierarchy(element, className) {
+    if(element.className === undefined) {
+        return false;
+    }
+
+    if((" " + element.className + " ").indexOf(" " + className + " ") > -1) {
+        return true;
+    }
+
+    if(element.parentNode !== null) {
+        return classInHierarchy(element.parentNode, className);
+    }
+}
+
 function endsWith(text, s) {
     // FIXME this sucks
     var f = text.lastIndexOf(s);
@@ -235,6 +255,16 @@ function endsWith(text, s) {
         return f + s.length == text.length;
     } else {
         return false;
+    }
+}
+
+function log_traceback(f) {
+    return function() {
+        try {
+            return f.apply(this, arguments);
+        } catch(e) {
+            console.log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
+        }
     }
 }
 
@@ -726,10 +756,7 @@ function inject_search_button(spans) {
     }
 }
 
-function run(prefs) {
-    var sr_array = make_sr_array(prefs);
-    // Initial pass- show all emotes currently on the page.
-    var posts = document.getElementsByClassName("md");
+function process_posts(prefs, sr_array, posts) {
     for(var i = 0; i < posts.length; i++) {
         var links = posts[i].getElementsByTagName("a");
         // NOTE: must run alt-text AFTER emote code, always. See note in
@@ -739,6 +766,13 @@ function run(prefs) {
             display_alt_text(links);
         }
     }
+}
+
+function run(prefs) {
+    var sr_array = make_sr_array(prefs);
+    // Initial pass- show all emotes currently on the page.
+    var posts = document.getElementsByClassName("md");
+    process_posts(prefs, sr_array, posts);
 
     setup_search(prefs, sr_array);
     // Find the one reply box that's there on page load. This may not always work...
@@ -762,27 +796,50 @@ function run(prefs) {
             // Fallthrough
 
         case "firefox":
-            // TODO: for our simplistic purposes, we really should just
-            // use MutationObserver directly.
-            //
-            // As a relevant side note, it's a terrible idea to set this
-            // up before the DOM is built, because otherwise monitoring
-            // it for changes slows the initial process down horribly.
-            var observer = new MutationSummary({
-                callback: function(summaries) {
-                    var links = summaries[0].added;
-                    process(prefs, sr_array, links);
-                    if(prefs.showAltText) {
-                        display_alt_text(links.filter(function(e) { return hasParentWithClass(e, "md"); }));
+            // As a relevant note, it's a terrible idea to set this up before
+            // the DOM is built, because monitoring it for changes seems to slow
+            // the process down horribly.
+
+            // What we do here: for each mutation, inspect every .md we can
+            // find- whether the node in question is deep within one, or contains
+            // some.
+
+            var observer = new MutationObserver(log_traceback(function(mutations, observer) {
+                for(var m = 0; m < mutations.length; m++) {
+                    var added = mutations[m].addedNodes;
+                    if(added === null || !added.length) {
+                        continue; // Nothing to do
                     }
-                    inject_search_button(summaries[1].added);
-                },
-                queries: [
-                    // FIXME: Ideally we'd query {element: ".md"}, but for some
-                    // reason that doesn't work.
-                    {element: "a"}, // new emotes
-                    {element: "span"} // comment reply forms
-                ]});
+
+                    for(var a = 0; a < added.length; a++) {
+                        // Check that the "node" is actually the kind of node
+                        // we're interested in (as opposed to Text nodes for
+                        // one thing)
+                        var root = added[a];
+                        if(root.getElementsByTagName === undefined) {
+                            continue;
+                        }
+
+                        if(classInHierarchy(root, "md")) {
+                            // Inside of a formatted text block, take all the
+                            // links we can find
+                            process_posts(prefs, sr_array, [root]);
+                        } else {
+                            // Outside of formatted text, try to find some
+                            // underneath us
+                            var posts = root.getElementsByClassName("md");
+                            process_posts(prefs, sr_array, posts);
+                        }
+
+                        var spans = root.getElementsByTagName("span");
+                        inject_search_button(spans);
+                    }
+                }
+            }));
+
+            // FIXME: For some reason observe(document.body, [...]) doesn't work
+            // on Firefox. It just throws an exception. document works.
+            observer.observe(document, {"childList": true, "subtree": true});
             break;
 
         case "opera":
@@ -790,21 +847,17 @@ function run(prefs) {
             // MutationObserver doesn't exist outisde Fx/Chrome, so
             // fallback to basic DOM events.
             document.body.addEventListener("DOMNodeInserted", function(event) {
-                var element = event.target;
-                if(element.getElementsByTagName) {
-                    var links = element.getElementsByTagName("a");
-                    process(prefs, sr_array, links);
-                    if(prefs.showAltText) {
-                        // Filter list
-                        var at_links = [];
-                        for(var i = 0; i < links.length; i++) {
-                            if(hasParentWithClass(links[i], "md")) {
-                                at_links.push(links[i]);
-                            }
-                        }
-                        display_alt_text(at_links);
+                var root = event.target;
+
+                if(root.getElementsByTagName) {
+                    if(classInHierarchy(root, "md")) {
+                        process_posts(prefs, sr_array, [root]);
+                    } else {
+                        var posts = root.getElementsByClassName("md");
+                        process_posts(prefs, sr_array, posts);
                     }
-                    inject_search_button(element.getElementsByClassName("help-toggle"));
+
+                    inject_search_button(root.getElementsByClassName("help-toggle"));
                 }
             }, false);
             break;
@@ -997,12 +1050,12 @@ if(endsWith(document.location.hostname, "reddit.com")) {
     // This script is generally run before the DOM is built. Opera may break
     // that rule, but I don't know how and there's nothing we can do anyway.
     window.addEventListener("DOMContentLoaded", function() {
-        get_prefs(run);
+        log_traceback(get_prefs(run));
     }, false);
 } else {
     // This script is generally run before the DOM is built. Opera may break
     // that rule, but I don't know how and there's nothing we can do anyway.
     window.addEventListener("DOMContentLoaded", function() {
-        get_prefs(run_gm);
+        log_traceback(get_prefs(run_gm));
     }, false);
 }
