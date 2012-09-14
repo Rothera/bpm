@@ -86,7 +86,6 @@ function prefs_updated() {
             include: [storage.prefs.enableGlobalEmotes ? "*" : "*.reddit.com"],
             contentScriptWhen: "start",
             contentScriptFile: [
-                self.data.url("mutation_summary.js"),
                 self.data.url("emote-map.js"),
                 self.data.url("sr-data.js"),
                 self.data.url("betterponymotes.js")
