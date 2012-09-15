@@ -49,6 +49,7 @@ var prefs_mod = page_mod.PageMod({
     include: [self.data.url("options.html")],
     contentScriptWhen: "start",
     contentScriptFile: [
+        self.data.url("emote-map.js"),
         self.data.url("sr-data.js"),
         self.data.url("options.js")
         ],

@@ -23,7 +23,8 @@ var default_prefs = {
     "searchLimit": 200,
     "searchBoxInfo": [600, 25, 600, 450],
     "showAltText": true,
-    "enableGlobalEmotes": false
+    "enableGlobalEmotes": false,
+    "disabledEmotes": []
     };
 
 function setup_prefs(prefs) {

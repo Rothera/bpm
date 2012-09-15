@@ -31,6 +31,16 @@ function current_platform() {
 }
 var platform = current_platform();
 
+function traceback_wrapper(f) {
+    return function() {
+        try {
+            return f.apply(this, arguments);
+        } catch(e) {
+            console.log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
+        }
+    }
+}
+
 var _doc_loaded = false;
 var prefs = null;
 
@@ -57,6 +67,117 @@ switch(platform) {
             }
         };
         break;
+}
+
+var de_container;
+var de_input;
+
+function get_emotes() {
+    var text = de_input.value;
+
+    // Normalize things a bit
+    var emotes = text.split(",");
+    emotes = emotes.map(function(s) { return s.trim(); });
+    emotes = emotes.filter(function(s) { return s.length; })
+
+    return emotes;
+}
+
+function add_disabled_emote(emote) {
+    var element = document.createElement("span");
+    element.textContent = emote + " ";
+    element.className = "disabled-emote"
+
+    var close = document.createElement("a");
+    close.textContent = "x";
+    close.href = "#";
+
+    close.addEventListener("click", function(event) {
+        event.preventDefault();
+        prefs.disabledEmotes.splice(prefs.disabledEmotes.indexOf(emote), 1);
+        element.parentNode.removeChild(element);
+        browser.prefs_updated();
+    }, false);
+    element.appendChild(close);
+
+    de_container.insertBefore(element, de_input);
+}
+
+function insert_emotes(emotes) {
+    emotes = emotes.map(function(s) {
+        return (s[0] == "/" ? "" : "/") + s;
+    });
+
+    for(var i = 0; i < emotes.length; i++) {
+        if(prefs.disabledEmotes.indexOf(emotes[i]) > -1) {
+            continue; // Already in the list
+        }
+        if(!emote_map[emotes[i]]) {
+            continue; // Not an actual emote
+        }
+
+        prefs.disabledEmotes.push(emotes[i]);
+        browser.prefs_updated();
+        add_disabled_emote(emotes[i]);
+    }
+}
+
+function setup_de() {
+    de_container = document.getElementById("de-container");
+    de_input = document.getElementById("de-input");
+
+    // NOTE: This list is never verified against emote_map. Doing that in the
+    // backend script would make some sense, but then, maybe not.
+    for(var i = 0; i < prefs.disabledEmotes.length; i++) {
+        add_disabled_emote(prefs.disabledEmotes[i]);
+    }
+
+    // Container defers focus to input
+    de_container.addEventListener("click", function(event) {
+        de_input.focus();
+    }, false);
+
+    // Handle backspaces and enter key specially. Note that keydown sees the
+    // input element as it was BEFORE the key is handled.
+    de_input.addEventListener("keydown", traceback_wrapper(function(event) {
+        if(event.keyCode == 8) { // Backspace key
+            if(!de_input.value) {
+                // The input was previously empty, so chop off an emote
+                console.log("Removing last emote");
+            }
+        } else if(event.keyCode == 13) { // Return key
+            var emotes = get_emotes();
+            console.log("inserting", emotes.join(","))
+            insert_emotes(emotes);
+            de_input.value = "";
+        }
+    }), true);
+
+    // Handle commas with the "proper" way to handle input.
+    de_input.addEventListener("input", function(event) {
+        var emotes = get_emotes();
+        var text = de_input.value.trim();
+        if(text[text.length - 1] == ",") {
+            de_input.value = "";
+        } else {
+            de_input.value = emotes.pop() || "";
+        }
+        insert_emotes(emotes);
+    }, false);
+
+    de_input.addEventListener("submit", function(event) {
+        event.preventDefault();
+    }, false);
+
+    document.getElementById("clear-disabled").addEventListener("click", function() {
+        prefs.disabledEmotes = [];
+        // Cute hack
+        var spans = de_container.getElementsByTagName("span");
+        for(var i = 0; i < spans.length; i++) {
+            de_container.removeChild(spans[i]);
+        }
+        browser.prefs_updated();
+    }, false);
 }
 
 function run() {
@@ -155,6 +276,8 @@ function run() {
         }
         browser.prefs_updated();
     }, false);
+
+    setup_de();
 }
 
 window.addEventListener("DOMContentLoaded", function() {
