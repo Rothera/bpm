@@ -167,7 +167,12 @@ def build_js_map(emotes):
             continue
 
         assert emote.name not in emote_map
-        emote_map[emote.name] = [int(emote.is_nsfw), emote.file.file_id]
+        data = [int(emote.is_nsfw), emote.file.file_id, 0]
+
+        if hasattr(emote, "size"):
+            data[2] = max(emote.size)
+
+        emote_map[emote.name] = data
 
     return emote_map
 

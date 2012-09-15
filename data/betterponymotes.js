@@ -298,6 +298,7 @@ function process(prefs, sr_array, de_map, elements) {
                 var emote_info = emote_map[emote_name];
                 var is_nsfw = emote_info[0];
                 var source_id = emote_info[1];
+                var emote_size = emote_info[2];
 
                 // Click blocker CSS/JS
                 element.className += " bpm-noclick";
@@ -319,6 +320,14 @@ function process(prefs, sr_array, de_map, elements) {
                     element.className += " bpm-disabled";
                     if(!element.textContent) {
                         element.textContent = "Disabled " + emote_name;
+                    }
+                    continue;
+                }
+
+                if(prefs.maxEmoteSize && emote_size > prefs.maxEmoteSize) {
+                    element.className += " bpm-disabled";
+                    if(!element.textContent) {
+                        element.textContent = "Large emote " + emote_name;
                     }
                     continue;
                 }
@@ -562,8 +571,12 @@ function update_search(prefs, de_map, sr_array) {
         var emote_info = emote_map[emote_name];
         var is_nsfw = emote_info[0];
         var source_id = emote_info[1];
+        var emote_size = emote_info[2];
 
-        if(!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW) || de_map[emote_name]) {
+        if(!sr_array[source_id] ||
+           (is_nsfw && !prefs.enableNSFW) ||
+           de_map[emote_name] ||
+           (prefs.maxEmoteSize && emote_size > prefs.maxEmoteSize)) {
             // TODO: enable it anyway if a pref is set? Dunno what exactly
             // we'd do
             hidden += 1;
@@ -937,9 +950,13 @@ function process_gm(prefs, sr_array, de_map, root) {
                 var emote_info = emote_map[emote_name];
                 var is_nsfw = emote_info[0];
                 var source_id = emote_info[1];
+                var emote_size = emote_info[2];
 
                 // Check that it hasn't been disabled somehow
-                if(!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW) || de_map[emote_name]) {
+                if(!sr_array[source_id] ||
+                   (is_nsfw && !prefs.enableNSFW) ||
+                   de_map[emote_name] ||
+                   (prefs.maxEmoteSize && emote_size > prefs.maxEmoteSize)) {
                     continue;
                 }
 
