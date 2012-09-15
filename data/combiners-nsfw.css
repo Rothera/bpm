@@ -6,10 +6,14 @@
  * what counts as "NSFW" wrt these things could fill an essay, for now, my
  * involvement ends with splitting this file.
  *
- * WRT selectors, though I replaced the a[href="..."] ones with BPM classes
- * where I could, the original uses wildcards as actual wildcards ("*mount") in
- * several places. Rather than expand these out, I'm simply leaving them as-is.
- * FIXME.
+ * Note: Several places in the original CSS use a[href*="mount-combine"] as
+ * a shorthand to match all /*mount-combine emotes. This causes problems when
+ * trying to disable r/mylittlecombiners, since they remain active and cause
+ * problems.
+ *
+ * Though I expanded most of those out, this is a rather lousy solution, and
+ * the pinkiepipes ones remain as they were for sake of not making this file
+ * explode.
  */
 
 /* NSFW */
@@ -28,11 +32,22 @@
     }
 /* malefuns */
 /* general */
-a[href*="mount-combine"] {
+.bpmote-bmmount.bpflag-combine, .bpmote-fpmount.bpflag-combine,
+.bpmote-fpnmount.bpflag-combine, .bpmote-giomount.bpflag-combine,
+.bpmote-soarinmount.bpflag-combine, .bpmote-stmount.bpflag-combine,
+.bpmote-whoovesmount.bpflag-combine {
     position: relative;
     background-image: none
     }
-a[href*="mount-combine"]:before, a[href*="mount-combine"]:after {
+
+.bpmote-bmmount.bpflag-combine:before, .bpmote-fpmount.bpflag-combine:before,
+.bpmote-fpnmount.bpflag-combine:before, .bpmote-giomount.bpflag-combine:before,
+.bpmote-soarinmount.bpflag-combine:before, .bpmote-stmount.bpflag-combine:before,
+.bpmote-whoovesmount.bpflag-combine:before,
+.bpmote-bmmount.bpflag-combine:after, .bpmote-fpmount.bpflag-combine:after,
+.bpmote-fpnmount.bpflag-combine:after, .bpmote-giomount.bpflag-combine:after,
+.bpmote-soarinmount.bpflag-combine:after, .bpmote-stmount.bpflag-combine:after,
+.bpmote-whoovesmount.bpflag-combine:after {
     display: block;
     content: "";
     position: absolute;
@@ -41,24 +56,35 @@ a[href*="mount-combine"]:before, a[href*="mount-combine"]:after {
     width: 301px;
     height: 305px
     }
-a[href*="mount-combine"]:after {
+
+.bpmote-bmmount.bpflag-combine:after, .bpmote-fpmount.bpflag-combine:after,
+.bpmote-fpnmount.bpflag-combine:after, .bpmote-giomount.bpflag-combine:after,
+.bpmote-soarinmount.bpflag-combine:after, .bpmote-stmount.bpflag-combine:after,
+.bpmote-whoovesmount.bpflag-combine:after {
     z-index: 1;
     background-image: url(http://d.thumbs.redditmedia.com/ZvWZGTMatFE1ct23.png)
     }
-a[href*="mount-combine"]:before {
+
+.bpmote-bmmount.bpflag-combine:before, .bpmote-fpmount.bpflag-combine:before,
+.bpmote-fpnmount.bpflag-combine:before, .bpmote-giomount.bpflag-combine:before,
+.bpmote-soarinmount.bpflag-combine:before, .bpmote-stmount.bpflag-combine:before,
+.bpmote-whoovesmount.bpflag-combine:before {
     z-index: 3;
     background-image: url(http://c.thumbs.redditmedia.com/ABqBucsFHteNCzlz.png)
     }
-a[href*="mount-combine"] + a {
+
+.bpmote-bmmount.bpflag-combine + a, .bpmote-fpmount.bpflag-combine + a,
+.bpmote-fpnmount.bpflag-combine + a, .bpmote-giomount.bpflag-combine + a,
+.bpmote-soarinmount.bpflag-combine + a, .bpmote-stmount.bpflag-combine + a,
+.bpmote-whoovesmount.bpflag-combine + a {
     z-index: 2;
     position: relative;
     margin-right: -999px;
     margin-bottom: -999px
-    }
-a[href*="mount-combine"] + a {
     left: -207px;
     top: 153px
     }
+
 /* giomac */
 .bpmote-giomount.bpflag-combine:before, .bpmote-giomount.bpflag-combine:after {
     background-position: -0px -1830px
@@ -87,22 +113,51 @@ a[href*="mount-combine"] + a {
 .bpmote-fpnmount.bpflag-combine:before, .bpmote-fpnmount.bpflag-combine:after {
     background-position: -0px -0px
     }
+
 /* general fix */
-a[href*="mount-combine"] + .bpmote-ajfun {
+.bpmote-bmmount.bpflag-combine + .bpmote-ajfun, .bpmote-fpmount.bpflag-combine + .bpmote-ajfun,
+.bpmote-fpnmount.bpflag-combine + .bpmote-ajfun, .bpmote-giomount.bpflag-combine + .bpmote-ajfun,
+.bpmote-soarinmount.bpflag-combine + .bpmote-ajfun, .bpmote-stmount.bpflag-combine + .bpmote-ajfun,
+.bpmote-whoovesmount.bpflag-combine + .bpmote-ajfun {
     margin-left: 0px
     }
-a[href*="mount-combine"] + .bpmote-twifun, a[href*="mount-combine"] + .bpmote-darklefun, a[href*="mount-combine"] + .bpmote-dashfun {
+
+.bpmote-bmmount.bpflag-combine + .bpmote-twifun, .bpmote-fpmount.bpflag-combine + .bpmote-twifun,
+.bpmote-fpnmount.bpflag-combine + .bpmote-twifun, .bpmote-giomount.bpflag-combine + .bpmote-twifun,
+.bpmote-soarinmount.bpflag-combine + .bpmote-twifun, .bpmote-stmount.bpflag-combine + .bpmote-twifun,
+.bpmote-whoovesmount.bpflag-combine + .bpmote-twifun,
+.bpmote-bmmount.bpflag-combine + .bpmote-darklefun, .bpmote-fpmount.bpflag-combine + .bpmote-darklefun,
+.bpmote-fpnmount.bpflag-combine + .bpmote-darklefun, .bpmote-giomount.bpflag-combine + .bpmote-darklefun,
+.bpmote-soarinmount.bpflag-combine + .bpmote-darklefun, .bpmote-stmount.bpflag-combine + .bpmote-darklefun,
+.bpmote-whoovesmount.bpflag-combine + .bpmote-darklefun,
+.bpmote-bmmount.bpflag-combine + .bpmote-dashfun, .bpmote-fpmount.bpflag-combine + .bpmote-dashfun,
+.bpmote-fpnmount.bpflag-combine + .bpmote-dashfun, .bpmote-giomount.bpflag-combine + .bpmote-dashfun,
+.bpmote-soarinmount.bpflag-combine + .bpmote-dashfun, .bpmote-stmount.bpflag-combine + .bpmote-dashfun,
+.bpmote-whoovesmount.bpflag-combine + .bpmote-dashfun {
     margin-left: -26px
     }
-a[href*="mount-combine"] + .bpmote-shyfun {
+
+.bpmote-bmmount.bpflag-combine + .bpmote-shyfun, .bpmote-fpmount.bpflag-combine + .bpmote-shyfun,
+.bpmote-fpnmount.bpflag-combine + .bpmote-shyfun, .bpmote-giomount.bpflag-combine + .bpmote-shyfun,
+.bpmote-soarinmount.bpflag-combine + .bpmote-shyfun, .bpmote-stmount.bpflag-combine + .bpmote-shyfun,
+.bpmote-whoovesmount.bpflag-combine + .bpmote-shyfun {
     margin-left: -18px
     }
-a[href*="mount-combine"] + .bpmote-rarfun {
+
+.bpmote-bmmount.bpflag-combine + .bpmote-rarfun, .bpmote-fpmount.bpflag-combine + .bpmote-rarfun,
+.bpmote-fpnmount.bpflag-combine + .bpmote-rarfun, .bpmote-giomount.bpflag-combine + .bpmote-rarfun,
+.bpmote-soarinmount.bpflag-combine + .bpmote-rarfun, .bpmote-stmount.bpflag-combine + .bpmote-rarfun,
+.bpmote-whoovesmount.bpflag-combine + .bpmote-rarfun {
     margin-left: -34px
     }
-a[href*="mount-combine"] + .bpmote-ppfun {
+
+.bpmote-bmmount.bpflag-combine + .bpmote-ppfun, .bpmote-fpmount.bpflag-combine + .bpmote-ppfun,
+.bpmote-fpnmount.bpflag-combine + .bpmote-ppfun, .bpmote-giomount.bpflag-combine + .bpmote-ppfun,
+.bpmote-soarinmount.bpflag-combine + .bpmote-ppfun, .bpmote-stmount.bpflag-combine + .bpmote-ppfun,
+.bpmote-whoovesmount.bpflag-combine + .bpmote-ppfun {
     margin-left: -10px
     }
+
 /* BPM NOTE: Similar to bpmotes.css, I have no idea what to do with this */
 a[href*="mount-combine"] + a[href^="/pp"].bpflag-combine + a {
     width: 150px;

@@ -43,7 +43,9 @@
 .bpm-disabled {
     background-color: #DA4F49;
     border-radius: 10px;
+}
 
+.bpm-disabled, .bpm-disabled:before, .bpm-disabled:after, .bpm-disabled:hover, .bpm-disabled:active {
     /*
      * This class is used on existing emotes sometimes, so we need to try to
      * override subreddit CSS.
