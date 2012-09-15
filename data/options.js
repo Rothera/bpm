@@ -73,7 +73,7 @@ function setup_emote_list(container, input, clear_button, list) {
     function add_emote(emote) {
         var element = document.createElement("span");
         element.textContent = emote + " ";
-        element.className = "disabled-emote"
+        element.className = "listed-emote"
 
         var close = document.createElement("a");
         close.textContent = "x";
