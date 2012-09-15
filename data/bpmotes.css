@@ -21,8 +21,8 @@
     float: left;
 
     /* An average, small emote (70px with padding) */
-    width: 60px;
-    height: 60px;
+    width: 60px !important; /* !important for sake of .bpm-disabled */
+    height: 60px !important;
 
     /*
      * Need !important tags to override Reddit's CSS.
@@ -43,6 +43,15 @@
 .bpm-disabled {
     background-color: #DA4F49;
     border-radius: 10px;
+
+    /*
+     * This class is used on existing emotes sometimes, so we need to try to
+     * override subreddit CSS.
+     *
+     * Unfortunately we still lose if the subreddit uses !important, but there's
+     * nothing we can do about that.
+     */
+    background-image: none !important;
 }
 
 /* NSFW emote placeholder */
