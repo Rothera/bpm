@@ -487,7 +487,7 @@ function enable_drag(element, start_callback, callback) {
     }, false);
 }
 
-function update_search(prefs, sr_array) {
+function update_search(prefs, de_map, sr_array) {
     // Split search query on spaces, remove empty strings, and lowercase terms
     var terms = search_element.value.split(" ").map(function(v) { return v.toLowerCase(); });
 
@@ -563,7 +563,7 @@ function update_search(prefs, sr_array) {
         var is_nsfw = emote_info[0];
         var source_id = emote_info[1];
 
-        if(!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW)) {
+        if(!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW) || de_map[emote_name]) {
             // TODO: enable it anyway if a pref is set? Dunno what exactly
             // we'd do
             hidden += 1;
@@ -634,7 +634,7 @@ function insert_emote(emote_name) {
     }
 }
 
-function setup_search(prefs, sr_array) {
+function setup_search(prefs, de_map, sr_array) {
     inject_search_html();
 
     // Close it on demand
@@ -663,7 +663,7 @@ function setup_search(prefs, sr_array) {
             window.setTimeout(function() {
                 // Re-enable searching as early as we can, just in case
                 waiting = false;
-                update_search(prefs, sr_array);
+                update_search(prefs, de_map, sr_array);
             }, 500);
             waiting = true;
         }
@@ -790,7 +790,7 @@ function run(prefs) {
     var posts = document.getElementsByClassName("md");
     process_posts(prefs, sr_array, de_map, posts);
 
-    setup_search(prefs, sr_array);
+    setup_search(prefs, de_map, sr_array);
     // Find the one reply box that's there on page load. This may not always work...
     inject_search_button(document.getElementsByClassName("help-toggle"));
 
