@@ -208,12 +208,12 @@ function make_sr_array(prefs) {
     return sr_array;
 }
 
-function make_de_map(prefs) {
-    var de_map = {};
-    for(var i = 0; i < prefs.disabledEmotes.length; i++) {
-        de_map[prefs.disabledEmotes[i]] = 1;
+function make_emote_map(list) {
+    var map = {};
+    for(var i = 0; i < list.length; i++) {
+        map[list[i]] = 1;
     }
-    return de_map;
+    return map;
 }
 
 // Checks whether the given element has a parent with the given ID. The element
@@ -282,7 +282,7 @@ function traceback_wrapper(f) {
 
 // Emote processing: takes prefs, a pre-processed array of enabled subreddits,
 // and a list of elements.
-function process(prefs, sr_array, de_map, elements) {
+function process(prefs, sr_array, de_map, we_map, elements) {
     for(var i = 0; i < elements.length; i++) {
         var element = elements[i];
         // There is an important distinction between element.href and
@@ -303,33 +303,35 @@ function process(prefs, sr_array, de_map, elements) {
                 // Click blocker CSS/JS
                 element.className += " bpm-noclick";
 
-                // Ordering matters a bit here- placeholders for NSFW emotes
-                // come before disabled emotes.
-                if(is_nsfw && !prefs.enableNSFW) {
-                    element.className += " bpm-nsfw";
-                    if(!element.textContent) {
-                        // Any existing text (there really shouldn't be any)
-                        // will look funny with our custom CSS, but there's
-                        // not much we can do.
-                        element.textContent = "NSFW " + emote_name;
+                if(!we_map[emote_name]) {
+                    // Ordering matters a bit here- placeholders for NSFW emotes
+                    // come before disabled emotes.
+                    if(is_nsfw && !prefs.enableNSFW) {
+                        element.className += " bpm-nsfw";
+                        if(!element.textContent) {
+                            // Any existing text (there really shouldn't be any)
+                            // will look funny with our custom CSS, but there's
+                            // not much we can do.
+                            element.textContent = "NSFW " + emote_name;
+                        }
+                        continue;
                     }
-                    continue;
-                }
 
-                if(!sr_array[source_id] || de_map[emote_name]) {
-                    element.className += " bpm-disabled";
-                    if(!element.textContent) {
-                        element.textContent = "Disabled " + emote_name;
+                    if(!sr_array[source_id] || de_map[emote_name]) {
+                        element.className += " bpm-disabled";
+                        if(!element.textContent) {
+                            element.textContent = "Disabled " + emote_name;
+                        }
+                        continue;
                     }
-                    continue;
-                }
 
-                if(prefs.maxEmoteSize && emote_size > prefs.maxEmoteSize) {
-                    element.className += " bpm-disabled";
-                    if(!element.textContent) {
-                        element.textContent = "Large emote " + emote_name;
+                    if(prefs.maxEmoteSize && emote_size > prefs.maxEmoteSize) {
+                        element.className += " bpm-disabled";
+                        if(!element.textContent) {
+                            element.textContent = "Large emote " + emote_name;
+                        }
+                        continue;
                     }
-                    continue;
                 }
 
                 // Strip off leading "/".
@@ -496,7 +498,7 @@ function enable_drag(element, start_callback, callback) {
     }, false);
 }
 
-function update_search(prefs, de_map, sr_array) {
+function update_search(prefs, de_map, we_map, sr_array) {
     // Split search query on spaces, remove empty strings, and lowercase terms
     var terms = search_element.value.split(" ").map(function(v) { return v.toLowerCase(); });
 
@@ -573,10 +575,10 @@ function update_search(prefs, de_map, sr_array) {
         var source_id = emote_info[1];
         var emote_size = emote_info[2];
 
-        if(!sr_array[source_id] ||
-           (is_nsfw && !prefs.enableNSFW) ||
-           de_map[emote_name] ||
-           (prefs.maxEmoteSize && emote_size > prefs.maxEmoteSize)) {
+        // if((blacklisted) && !whitelisted)
+        if((!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW) || de_map[emote_name] ||
+            (prefs.maxEmoteSize && emote_size > prefs.maxEmoteSize))
+           && !we_map[emote_name]) {
             // TODO: enable it anyway if a pref is set? Dunno what exactly
             // we'd do
             hidden += 1;
@@ -647,7 +649,7 @@ function insert_emote(emote_name) {
     }
 }
 
-function setup_search(prefs, de_map, sr_array) {
+function setup_search(prefs, de_map, we_map, sr_array) {
     inject_search_html();
 
     // Close it on demand
@@ -676,7 +678,7 @@ function setup_search(prefs, de_map, sr_array) {
             window.setTimeout(function() {
                 // Re-enable searching as early as we can, just in case
                 waiting = false;
-                update_search(prefs, de_map, sr_array);
+                update_search(prefs, de_map, we_map, sr_array);
             }, 500);
             waiting = true;
         }
@@ -784,12 +786,12 @@ function inject_search_button(spans) {
     }
 }
 
-function process_posts(prefs, sr_array, de_map, posts) {
+function process_posts(prefs, sr_array, de_map, we_map, posts) {
     for(var i = 0; i < posts.length; i++) {
         var links = posts[i].getElementsByTagName("a");
         // NOTE: must run alt-text AFTER emote code, always. See note in
         // display_alt_text
-        process(prefs, sr_array, de_map, links);
+        process(prefs, sr_array, de_map, we_map, links);
         if(prefs.showAltText) {
             display_alt_text(links);
         }
@@ -798,12 +800,13 @@ function process_posts(prefs, sr_array, de_map, posts) {
 
 function run(prefs) {
     var sr_array = make_sr_array(prefs);
-    var de_map = make_de_map(prefs);
+    var de_map = make_emote_map(prefs.disabledEmotes);
+    var we_map = make_emote_map(prefs.whitelistedEmotes);
     // Initial pass- show all emotes currently on the page.
     var posts = document.getElementsByClassName("md");
-    process_posts(prefs, sr_array, de_map, posts);
+    process_posts(prefs, sr_array, de_map, we_map, posts);
 
-    setup_search(prefs, de_map, sr_array);
+    setup_search(prefs, de_map, we_map, sr_array);
     // Find the one reply box that's there on page load. This may not always work...
     inject_search_button(document.getElementsByClassName("help-toggle"));
 
@@ -859,12 +862,12 @@ function run(prefs) {
                         if(classInHierarchy(root, "md")) {
                             // Inside of a formatted text block, take all the
                             // links we can find
-                            process_posts(prefs, sr_array, de_map, [root]);
+                            process_posts(prefs, sr_array, de_map, we_map, [root]);
                         } else {
                             // Outside of formatted text, try to find some
                             // underneath us
                             var posts = root.getElementsByClassName("md");
-                            process_posts(prefs, sr_array, de_map, posts);
+                            process_posts(prefs, sr_array, de_map, we_map, posts);
                         }
 
                         var spans = root.getElementsByTagName("span");
@@ -887,10 +890,10 @@ function run(prefs) {
 
                 if(root.getElementsByTagName) {
                     if(classInHierarchy(root, "md")) {
-                        process_posts(prefs, sr_array, de_map, [root]);
+                        process_posts(prefs, sr_array, de_map, we_map, [root]);
                     } else {
                         var posts = root.getElementsByClassName("md");
-                        process_posts(prefs, sr_array, de_map, posts);
+                        process_posts(prefs, sr_array, de_map, we_map, posts);
                     }
 
                     inject_search_button(root.getElementsByClassName("help-toggle"));
@@ -914,7 +917,7 @@ var tag_blacklist = {
     "SVG": 1, "MATH": 1
 };
 
-function process_gm(prefs, sr_array, de_map, root) {
+function process_gm(prefs, sr_array, de_map, we_map, root) {
     // Opera does not seem to expose NodeFilter to content scripts, so we
     // cannot specify NodeFilter.SHOW_TEXT. Its value is defined to be 4 in the
     // DOM spec, though, so that works.
@@ -953,10 +956,9 @@ function process_gm(prefs, sr_array, de_map, root) {
                 var emote_size = emote_info[2];
 
                 // Check that it hasn't been disabled somehow
-                if(!sr_array[source_id] ||
-                   (is_nsfw && !prefs.enableNSFW) ||
-                   de_map[emote_name] ||
-                   (prefs.maxEmoteSize && emote_size > prefs.maxEmoteSize)) {
+                if((!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW) || de_map[emote_name] ||
+                    (prefs.maxEmoteSize && emote_size > prefs.maxEmoteSize))
+                   && !we_map[emote_name]) {
                     continue;
                 }
 
@@ -1027,8 +1029,9 @@ function run_gm(prefs) {
     add_bpm_css();
 
     var sr_array = make_sr_array(prefs);
-    var de_map = make_de_map(prefs);
-    process_gm(prefs, sr_array, de_map, document.body);
+    var de_map = make_emote_map(prefs.disabledEmotes);
+    var we_map = make_emote_map(prefs.whitelistedEmotes);
+    process_gm(prefs, sr_array, de_map, we_map, document.body);
 
     switch(platform) {
         case "chrome":
@@ -1050,7 +1053,7 @@ function run_gm(prefs) {
                         // Check that the "node" is actually the kind of node
                         // we're interested in (as opposed to Text nodes for
                         // one thing)
-                        process_gm(prefs, sr_array, de_map, added[a]);
+                        process_gm(prefs, sr_array, de_map, we_map, added[a]);
                     }
                 }
             }));
@@ -1062,7 +1065,7 @@ function run_gm(prefs) {
         default:
             document.body.addEventListener("DOMNodeInserted", function(event) {
                 var element = event.target;
-                process_gm(prefs, sr_array, de_map, element);
+                process_gm(prefs, sr_array, de_map, we_map, element);
             }, false);
             break;
     }
