@@ -24,7 +24,7 @@
     }
 
     /* Emote disabler stuff */
-    #de-container {
+    .emote-list-container {
       height: 300px;
       border-style: solid;
       border-color: red;
@@ -33,7 +33,7 @@
       border-color: gray;
       border-width: 1px;
     }
-    #de-input {
+    .emote-list-input {
       /* Hide it as best we can */
       background-color: transparent;
       border-color: transparent;
@@ -93,11 +93,11 @@
           <legend>Disabled Emotes</legend>
         </form>
         <!-- Outside of form to prevent <input> from submitting (?!?) the thing -->
-        <div id="de-container">
-          <input id="de-input">
+        <div id="de-container" class="emote-list-container">
+          <input id="de-input" class="emote-list-input">
         </div>
         <br> <!-- This is unnecessary in the form. Which we're not in. Damnit. -->
-        <button type="button" id="clear-disabled">Clear</button>
+        <button type="button" id="de-clear">Clear</button>
       </div>
     </div>
   </div>
