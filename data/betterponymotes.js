@@ -1036,12 +1036,6 @@ function run_gm(prefs) {
     switch(platform) {
         case "chrome":
         case "firefox":
-            // FIXME: This doesn't work too well. For very massive DOM insertions,
-            // we can get thousands of individual elements, which kills our
-            // performance here. I don't know whether it's the fault of MS for
-            // trying to be smart, or ours for making so many function calls and
-            // TreeWalker's, but either way, DOMNodeInserted is actually the
-            // better way to go here.
             var observer = new MutationObserver(traceback_wrapper(function(mutations, observer) {
                 for(var m = 0; m < mutations.length; m++) {
                     var added = mutations[m].addedNodes;
