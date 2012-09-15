@@ -142,7 +142,14 @@ function setup_de() {
     de_input.addEventListener("keydown", traceback_wrapper(function(event) {
         if(event.keyCode == 8) { // Backspace key
             if(!de_input.value) {
-                // The input was previously empty, so chop off an emote
+                // The input was previously empty, so chop off an emote.
+
+                // FIXME: This is a nasty way of doing things...
+                var index = prefs.disabledEmotes.length - 1;
+                prefs.disabledEmotes.splice(index, 1);
+                de_container.removeChild(de_container.children[index]);
+
+                browser.prefs_updated();
             }
         } else if(event.keyCode == 13) { // Return key
             var emotes = get_emotes();
