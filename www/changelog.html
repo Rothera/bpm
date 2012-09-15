@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>BetterPonymotes</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      padding-bottom: 80px;
+    }
+    h4 {
+      margin-left: 20px;
+      clear: both;
+    }
+    h5 {
+      margin-left: 30px;
+    }
+    p {
+      text-align: justify;
+      margin-left: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="span8 offset2">
+        <h2>Better Ponymotes Changelog</h2>
+        <p>This changelog only lists code changes. Most releases contain whatever
+        emote updates were available at the time, and are not mentioned.
+
+        <h5>current</h5>
+        <p>Added emote whitelist. Emotes listed here will override all forms of
+        blacklisting.
+
+        <h5>v20.44 - 2012-09-15</h5>
+        <p>Added max emote size option. Blocks all emotes smaller than this.
+        <p>Made disabled emotes work better on their native subs (though use of
+        !important tags will override us in turn, so this isn't perfect).
+        <p>Emote blacklist added. Override specific emotes- more fine-grained
+        than by subreddit.
+        <p>Click blocker added. Makes emotes behave less like links.
+
+        <h5>v19.43 - 2012-09-13</h5>
+        <p>(Despite being marked as an emote-only release, this version contains
+        core code changes. However, none of this is user-visible.)
+        <p>Removed MutationSummary library in favor of using MutationObserver
+        directly. Some bugs may have been introduced as a consequence, as MS was
+        quite smart about never reporting the same node twice.
+
+        <h5>v19.42 - 2012-09-11</h5>
+        <p>Made CSS application work uniformly across browsers, removing the
+        need for all the !important tags BGM needed on Firefox. Also fixes
+        subreddits overriding built-in emotes, especially r/mlplounge.
+
+        <br>
+        <br>
+        <strong>This changelog was retroactively written up to version v20.44.
+        Versions older than this cutoff have not been edited in yet.</strong>
+
+        <!-- Left off at r322 or so -->
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
