@@ -208,6 +208,14 @@ function make_sr_array(prefs) {
     return sr_array;
 }
 
+function make_de_map(prefs) {
+    var de_map = {};
+    for(var i = 0; i < prefs.disabledEmotes.length; i++) {
+        de_map[prefs.disabledEmotes[i]] = 1;
+    }
+    return de_map;
+}
+
 // Checks whether the given element has a parent with the given ID. The element
 // itself does not count.
 function hasParentWithId(element, id) {
@@ -274,7 +282,7 @@ function traceback_wrapper(f) {
 
 // Emote processing: takes prefs, a pre-processed array of enabled subreddits,
 // and a list of elements.
-function process(prefs, sr_array, elements) {
+function process(prefs, sr_array, de_map, elements) {
     for(var i = 0; i < elements.length; i++) {
         var element = elements[i];
         // There is an important distinction between element.href and
@@ -307,7 +315,7 @@ function process(prefs, sr_array, elements) {
                     continue;
                 }
 
-                if(!sr_array[source_id]) {
+                if(!sr_array[source_id] || de_map[emote_name]) {
                     element.className += " bpm-disabled";
                     if(!element.textContent) {
                         element.textContent = "Disabled " + emote_name;
@@ -763,12 +771,12 @@ function inject_search_button(spans) {
     }
 }
 
-function process_posts(prefs, sr_array, posts) {
+function process_posts(prefs, sr_array, de_map, posts) {
     for(var i = 0; i < posts.length; i++) {
         var links = posts[i].getElementsByTagName("a");
         // NOTE: must run alt-text AFTER emote code, always. See note in
         // display_alt_text
-        process(prefs, sr_array, links);
+        process(prefs, sr_array, de_map, links);
         if(prefs.showAltText) {
             display_alt_text(links);
         }
@@ -777,9 +785,10 @@ function process_posts(prefs, sr_array, posts) {
 
 function run(prefs) {
     var sr_array = make_sr_array(prefs);
+    var de_map = make_de_map(prefs);
     // Initial pass- show all emotes currently on the page.
     var posts = document.getElementsByClassName("md");
-    process_posts(prefs, sr_array, posts);
+    process_posts(prefs, sr_array, de_map, posts);
 
     setup_search(prefs, sr_array);
     // Find the one reply box that's there on page load. This may not always work...
@@ -837,12 +846,12 @@ function run(prefs) {
                         if(classInHierarchy(root, "md")) {
                             // Inside of a formatted text block, take all the
                             // links we can find
-                            process_posts(prefs, sr_array, [root]);
+                            process_posts(prefs, sr_array, de_map, [root]);
                         } else {
                             // Outside of formatted text, try to find some
                             // underneath us
                             var posts = root.getElementsByClassName("md");
-                            process_posts(prefs, sr_array, posts);
+                            process_posts(prefs, sr_array, de_map, posts);
                         }
 
                         var spans = root.getElementsByTagName("span");
@@ -865,10 +874,10 @@ function run(prefs) {
 
                 if(root.getElementsByTagName) {
                     if(classInHierarchy(root, "md")) {
-                        process_posts(prefs, sr_array, [root]);
+                        process_posts(prefs, sr_array, de_map, [root]);
                     } else {
                         var posts = root.getElementsByClassName("md");
-                        process_posts(prefs, sr_array, posts);
+                        process_posts(prefs, sr_array, de_map, posts);
                     }
 
                     inject_search_button(root.getElementsByClassName("help-toggle"));
