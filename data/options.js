@@ -168,12 +168,12 @@ function setup_emote_list(container, input, clear_button, list) {
         event.preventDefault();
     }, false);
 
-    document.getElementById("clear-disabled").addEventListener("click", function() {
-        prefs.disabledEmotes = [];
+    clear_button.addEventListener("click", function() {
+        list.splice(0, list.length); // Clear in place
         // Cute hack
-        var spans = de_container.getElementsByTagName("span");
+        var spans = container.getElementsByTagName("span");
         for(var i = 0; i < spans.length; i++) {
-            de_container.removeChild(spans[i]);
+            container.removeChild(spans[i]);
         }
         browser.prefs_updated();
     }, false);
@@ -292,8 +292,12 @@ function run() {
     var de_container = document.getElementById("de-container");
     var de_input = document.getElementById("de-input");
     var de_clear = document.getElementById("de-clear");
-
     setup_emote_list(de_container, de_input, de_clear, prefs.disabledEmotes);
+
+    var we_container = document.getElementById("we-container");
+    var we_input = document.getElementById("we-input");
+    var we_clear = document.getElementById("we-clear");
+    setup_emote_list(we_container, we_input, we_clear, prefs.whitelistedEmotes);
 }
 
 window.addEventListener("DOMContentLoaded", function() {

@@ -25,6 +25,7 @@ var default_prefs = {
     "showAltText": true,
     "enableGlobalEmotes": false,
     "disabledEmotes": [],
+    "whitelistedEmotes": [],
     "maxEmoteSize": 0
     };
 
