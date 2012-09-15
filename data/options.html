@@ -76,6 +76,15 @@
           <label>Search result limit: <input id="searchLimit" type="text"> (high values may slow down search)</label>
         </form>
 
+        <form>
+          <legend>Advanced Options</legend>
+          <!--
+            Would be nice to use Bootstrap's input-append/add-on "px", but this
+            screws up alignment somehow.
+          -->
+          <label>Maximum emote size: <input id="maxEmoteSize" type="text"> (zero is no limit)</label>
+        </form>
+
         <form class="form-inline">
           <legend>Enabled Subreddits</legend>
           <div id="sr-list"></div>

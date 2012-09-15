@@ -185,6 +185,30 @@ function setup_de() {
     }, false);
 }
 
+function force_number(element, default_value, callback) {
+    // Validate edits
+    element.addEventListener("input", function() {
+        // Forbid negatives
+        var value = Math.max(parseInt(element.value, 10), 0);
+        if(isNaN(value)) {
+            // If the input is completely invalid (or missing), we reset it and
+            // pick the default.
+            value = default_value;
+            element.value = "";
+        } else {
+            // Anything resembling a number we keep. Note that parseInt()
+            // ignores invalid characters after it gets a number, so this will
+            // effectively forbid non-integers.
+            //
+            // (As an edge case, inserting e.g. "x" into the middle of an
+            // otherwise valid number will truncate it.)
+            element.value = value;
+        }
+
+        callback(value);
+    }, false);
+}
+
 function run() {
     // Basic boolean on/off checkbox pref
     function checkbox_pref(id) {
@@ -205,29 +229,18 @@ function run() {
     var search_limit = document.getElementById("searchLimit");
     search_limit.value = prefs.searchLimit;
 
-    // Listen to, and validate, edits to the search limit
-    search_limit.addEventListener("input", function() {
-        // Forbid negatives. We could probably reason that zeros don't make
-        // sense either, but whatever.
-        var limit = Math.max(parseInt(search_limit.value, 10), 0);
-        if(isNaN(limit)) {
-            // If the input is completely invalid (or missing), we reset it and
-            // pick the default.
-            limit = 200;
-            search_limit.value = "";
-        } else {
-            // Anything resembling a number we keep. Note that parseInt()
-            // ignores invalid characters after it gets a number, so this will
-            // effectively forbid non-integers.
-            //
-            // (As an edge case, inserting e.g. "x" into the middle of an
-            // otherwise valid number will truncate it.)
-            search_limit.value = limit;
-        }
-
+    force_number(search_limit, 200, function(limit) {
         prefs.searchLimit = limit;
         browser.prefs_updated();
-    }, false);
+    });
+
+    var max_size = document.getElementById("maxEmoteSize");
+    max_size.value = prefs.maxEmoteSize;
+
+    force_number(max_size, 0, function(size) {
+        prefs.maxEmoteSize = size;
+        browser.prefs_updated();
+    });
 
     // Subreddit enabler
     var sr_list_element = document.getElementById("sr-list");
