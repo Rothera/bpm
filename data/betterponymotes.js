@@ -901,7 +901,7 @@ var tag_blacklist = {
     "SVG": 1, "MATH": 1
 };
 
-function process_gm(prefs, sr_array, root) {
+function process_gm(prefs, sr_array, de_map, root) {
     // Opera does not seem to expose NodeFilter to content scripts, so we
     // cannot specify NodeFilter.SHOW_TEXT. Its value is defined to be 4 in the
     // DOM spec, though, so that works.
@@ -939,7 +939,7 @@ function process_gm(prefs, sr_array, root) {
                 var source_id = emote_info[1];
 
                 // Check that it hasn't been disabled somehow
-                if(!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW)) {
+                if(!sr_array[source_id] || (is_nsfw && !prefs.enableNSFW) || de_map[emote_name]) {
                     continue;
                 }
 
@@ -1010,7 +1010,8 @@ function run_gm(prefs) {
     add_bpm_css();
 
     var sr_array = make_sr_array(prefs);
-    process_gm(prefs, sr_array, document.body);
+    var de_map = make_de_map(prefs);
+    process_gm(prefs, sr_array, de_map, document.body);
 
     switch(platform) {
         case "chrome":
@@ -1032,7 +1033,7 @@ function run_gm(prefs) {
                         // Check that the "node" is actually the kind of node
                         // we're interested in (as opposed to Text nodes for
                         // one thing)
-                        process_gm(prefs, sr_array, added[a]);
+                        process_gm(prefs, sr_array, de_map, added[a]);
                     }
                 }
             }));
@@ -1044,7 +1045,7 @@ function run_gm(prefs) {
         default:
             document.body.addEventListener("DOMNodeInserted", function(event) {
                 var element = event.target;
-                process_gm(prefs, sr_array, element);
+                process_gm(prefs, sr_array, de_map, element);
             }, false);
             break;
     }
