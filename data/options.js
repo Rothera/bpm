@@ -143,11 +143,9 @@ function setup_de() {
         if(event.keyCode == 8) { // Backspace key
             if(!de_input.value) {
                 // The input was previously empty, so chop off an emote
-                console.log("Removing last emote");
             }
         } else if(event.keyCode == 13) { // Return key
             var emotes = get_emotes();
-            console.log("inserting", emotes.join(","))
             insert_emotes(emotes);
             de_input.value = "";
         }
