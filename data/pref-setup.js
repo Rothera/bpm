@@ -18,7 +18,7 @@ if(this.require !== undefined) {
 var default_prefs = {
     "enableNSFW": false,
     "enableExtraCSS": true,
-    "enabledSubreddits": {},
+    "enabledSubreddits": {}, // subreddit name -> boolean enabled
     "showUnknownEmotes": true,
     "searchLimit": 200,
     "searchBoxInfo": [600, 25, 600, 450],
@@ -48,7 +48,29 @@ function setup_prefs(prefs) {
     // TODO: Remove subreddits from prefs that are no longer in the addon.
 }
 
+function manage_prefs(prefs, sync, update, download_file) {
+    // TODO: replace prefs argument with the database object, just assuming
+    // all values are string->string except for prefs
+
+    setup_prefs(prefs);
+    sync(prefs);
+    update(prefs);
+
+    return {
+        write_prefs: function(_prefs) {
+            prefs = _prefs;
+            sync(prefs);
+            update(prefs);
+            // TODO: rebuild CSS cache
+        },
+
+        get_prefs: function() {
+            return prefs;
+        }
+    };
+}
+
 // Firefox
 if(typeof(exports) !== 'undefined') {
-    exports.setup_prefs = setup_prefs;
+    exports.manage_prefs = manage_prefs;
 }

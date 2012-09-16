@@ -22,6 +22,51 @@ var sr_data = require("sr-data");
 
 var storage = simple_storage.storage;
 
+function sync_prefs(prefs) {
+    storage.prefs = prefs;
+}
+
+// Main script. As an optimization, we just replace this mod (in order to change
+// the list of matching URLs) whenever the global conversion option changes, so
+// that the script doesn't needlessly run on all pages if BGM is disabled.
+//
+// This has a nasty side effect- the workers get "disconnected" and don't seem
+// to be able to save settings. Consequently, changing the BGM option will mean
+// all currently-open pages won't save the emote search window. I think.
+var main_mod = null;
+
+// Previous global emotes setting. Compare with ===/!== so the null triggers the
+// initial run properly in prefs_updated().
+var bgm_enabled = null;
+
+// Monitor prefs for important changes
+function prefs_updated(prefs) {
+    var bgm_changed = prefs.enableGlobalEmotes !== bgm_enabled;
+
+    if(bgm_changed) {
+        if(main_mod !== null) {
+            main_mod.destroy();
+        }
+
+        main_mod = page_mod.PageMod({
+            include: [prefs.enableGlobalEmotes ? "*" : "*.reddit.com"],
+            contentScriptWhen: "start",
+            contentScriptFile: [
+                self.data.url("emote-map.js"),
+                self.data.url("sr-data.js"),
+                self.data.url("betterponymotes.js")
+                ],
+            onAttach: on_cs_attach
+            });
+    }
+
+    bgm_enabled = prefs.enableGlobalEmotes;
+}
+
+function dl_file(url) {
+    // BIG FATE NOTE: set user-agent
+}
+
 if(!storage.prefs) {
     storage.prefs = {};
 
@@ -32,15 +77,15 @@ if(!storage.prefs) {
     }
 }
 
-pref_setup.setup_prefs(storage.prefs);
+var pref_manager = pref_setup.manage_prefs(storage.prefs, sync_prefs, prefs_updated, dl_file);
 
 function on_cs_attach(worker) {
     worker.port.on("get_prefs", function() {
-        worker.port.emit("prefs", storage.prefs);
+        worker.port.emit("prefs", pref_manager.get_prefs());
     });
-    worker.port.on("set_prefs", function(prefs) {
-        storage.prefs = prefs;
-        prefs_updated();
+
+    worker.port.on("set_prefs", function(_prefs) {
+        pref_manager.write_prefs(_prefs);
     });
 }
 
@@ -60,42 +105,3 @@ var prefs_mod = page_mod.PageMod({
 simple_prefs.on("openPrefs", function() {
     tabs.open(self.data.url("options.html"));
 });
-
-// Main script. As an optimization, we just replace this mod (in order to change
-// the list of matching URLs) whenever the global conversion option changes, so
-// that the script doesn't needlessly run on all pages if BGM is disabled.
-//
-// This has a nasty side effect- the workers get "disconnected" and don't seem
-// to be able to save settings. Consequently, changing the BGM option will mean
-// all currently-open pages won't save the emote search window. I think.
-var main_mod = null;
-
-// Previous global emotes setting. Compare with ===/!== so the null triggers the
-// initial run properly in prefs_updated().
-var bgm_enabled = null;
-
-// Monitor prefs for CSS-related changes
-function prefs_updated() {
-    var bgm_changed = storage.prefs.enableGlobalEmotes !== bgm_enabled;
-
-    if(bgm_changed) {
-        if(main_mod !== null) {
-            main_mod.destroy();
-        }
-
-        main_mod = page_mod.PageMod({
-            include: [storage.prefs.enableGlobalEmotes ? "*" : "*.reddit.com"],
-            contentScriptWhen: "start",
-            contentScriptFile: [
-                self.data.url("emote-map.js"),
-                self.data.url("sr-data.js"),
-                self.data.url("betterponymotes.js")
-                ],
-            onAttach: on_cs_attach
-            });
-    }
-
-    bgm_enabled = storage.prefs.enableGlobalEmotes;
-}
-
-prefs_updated(); // Initial run

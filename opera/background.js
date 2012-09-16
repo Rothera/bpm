@@ -8,14 +8,22 @@
 **
 *******************************************************************************/
 
-var prefs;
-if(localStorage.prefs === undefined) {
-    prefs = {};
-} else {
-    prefs = JSON.parse(localStorage.prefs);
+function sync_prefs(prefs) {
+    localStorage.prefs = JSON.stringify(prefs);
 }
-setup_prefs(prefs);
-localStorage.prefs = JSON.stringify(prefs);
+
+function prefs_updated(prefs) {
+}
+
+function dl_file(url) {
+    // BIG FATE NOTE: set user-agent
+}
+
+if(localStorage.prefs === undefined) {
+    localStorage.prefs = "{}";
+}
+
+var pref_manager = manage_prefs(JSON.parse(localStorage.prefs), sync_prefs, prefs_updated, dl_file);
 
 // XHR request from background process = load file data. Weird.
 function get_file_data(filename) {
@@ -39,12 +47,12 @@ opera.extension.onmessage = function(event) {
         case "get_prefs":
             event.source.postMessage({
                 "method": "prefs",
-                "prefs": JSON.parse(localStorage.prefs)
+                "prefs": pref_manager.get_prefs()
             });
             break;
 
         case "set_prefs":
-            localStorage.prefs = JSON.stringify(message.prefs);
+            pref_manager.write_prefs(message.prefs)
             break;
 
         case "get_file":
