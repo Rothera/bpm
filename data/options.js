@@ -44,6 +44,14 @@ function traceback_wrapper(f) {
 var _doc_loaded = false;
 var prefs = null;
 
+// Called from the browser-specific code
+function set_prefs(_prefs) {
+    prefs = _prefs;
+    if(_doc_loaded && prefs !== null) {
+        run();
+    }
+}
+
 // Some basic platform API's. Not much here yet.
 var browser;
 switch(platform) {
@@ -57,13 +65,33 @@ switch(platform) {
         };
         break;
 
+    // On Chrome and Opera, localStorage can be directly written to, but we
+    // write by sending messages in order to keep CSS cache code in one place.
     case "chrome":
-    case "opera":
-        // On Chrome and Opera, localStorage is the same as what the
-        // background process accesses, so we can just modify it directly.
         browser = {
             prefs_updated: function() {
-                localStorage.prefs = JSON.stringify(prefs);
+                chrome.extension.sendMessage({"method": "set_prefs", "prefs": prefs});
+            }
+        };
+        break;
+
+    case "opera":
+        opera.extension.addEventListener("message", function(event) {
+            var message = event.data;
+            switch(message.method) {
+                case "prefs":
+                    set_prefs(message.prefs);
+                    break;
+
+                default:
+                    console.log("BPM: ERROR: Unknown request from Opera background script: '" + message.method + "'");
+                    break;
+            }
+        }, false);
+
+        browser = {
+            prefs_updated: function() {
+                opera.extension.postMessage({"method": "set_prefs", "prefs": prefs});
             }
         };
         break;
@@ -311,21 +339,15 @@ window.addEventListener("DOMContentLoaded", function() {
 switch(platform) {
     case "firefox":
         // Make backend request for prefs
-        self.port.on("prefs", function(_prefs) {
-            prefs = _prefs;
-            if(_doc_loaded && prefs !== null) {
-                run();
-            }
-        });
-
+        self.port.on("prefs", set_prefs);
         self.port.emit("get_prefs");
         break;
 
     case "chrome":
+        chrome.extension.sendMessage({"method": "get_prefs"}, set_prefs);
+        break;
+
     case "opera":
-        prefs = JSON.parse(localStorage.prefs);
-        if(_doc_loaded && prefs !== null) {
-            run();
-        }
+        opera.extension.postMessage({"method": "get_prefs"});
         break;
 }

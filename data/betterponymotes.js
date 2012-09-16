@@ -178,9 +178,7 @@ switch(platform) {
             }
         }, false);
 
-        opera.extension.postMessage({
-            "method": "get_prefs"
-        });
+        opera.extension.postMessage({"method": "get_prefs"});
         break;
 }
 
