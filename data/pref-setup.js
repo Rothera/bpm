@@ -75,7 +75,9 @@ function update_custom_css(pref_manager, subreddit, download_file) {
     console.log("BPM: Updating CSS file for r/" + subreddit);
     var key = "csscache_" + subreddit.toLowerCase();
     var random = Math.floor(Math.random() * 1000);
-    var url = "http://reddit.com/r/" + subreddit + "/stylesheet.css?nocache=" + random;
+    // Chrome doesn't permit setting User-Agent (because it sucks), but this
+    // should help a little bit
+    var url = "http://reddit.com/r/" + subreddit + "/stylesheet.css?__ua=BetterPonymotes&nocache=" + random;
     download_file(url, function(css) {
         pref_manager.db()[key] = strip_subreddit_css(css);
         pref_manager.get().customCSSSubreddits[subreddit] = Date.now();

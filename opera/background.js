@@ -27,8 +27,7 @@ function dl_file(url, callback) {
         }
     };
     request.open("GET", url, true);
-    // Not permitted because Chrome sucks
-    //request.setRequestHeader("User-Agent", "BetterPonymotes Client CSS Updater (/u/Typhos)");
+    request.setRequestHeader("User-Agent", "BetterPonymotes Client CSS Updater (/u/Typhos)");
     request.send();
 }
 
