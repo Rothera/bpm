@@ -23,7 +23,7 @@ if(localStorage.prefs === undefined) {
     localStorage.prefs = "{}";
 }
 
-var pref_manager = manage_prefs(JSON.parse(localStorage.prefs), sync_prefs, prefs_updated, dl_file);
+var pref_manager = manage_prefs(localStorage, JSON.parse(localStorage.prefs), sync_prefs, prefs_updated, dl_file);
 
 // XHR request from background process = load file data. Weird.
 function get_file_data(filename) {

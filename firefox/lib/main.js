@@ -12,6 +12,7 @@
 
 var match_pattern = require("match-pattern");
 var page_mod = require("page-mod");
+var request = require("request");
 var self = require("self");
 var simple_prefs = require("simple-prefs");
 var simple_storage = require("simple-storage");
@@ -63,8 +64,18 @@ function prefs_updated(prefs) {
     bgm_enabled = prefs.enableGlobalEmotes;
 }
 
-function dl_file(url) {
-    // BIG FATE NOTE: set user-agent
+function dl_file(url, callback) {
+    request.Request({
+        url: url,
+        headers: {"User-Agent": "BetterPonymotes Client CSS Updater (/u/Typhos)"},
+        onComplete: function(response) {
+            if(response.status == 200) {
+                callback(response.text);
+            } else {
+                console.log("BPM: ERROR: Reddit returned HTTP status " + reponse.status + " for " + url);
+            }
+        }
+    }).get();
 }
 
 if(!storage.prefs) {
@@ -77,7 +88,7 @@ if(!storage.prefs) {
     }
 }
 
-var pref_manager = pref_setup.manage_prefs(storage.prefs, sync_prefs, prefs_updated, dl_file);
+var pref_manager = pref_setup.manage_prefs(storage, storage.prefs, sync_prefs, prefs_updated, dl_file);
 
 function on_cs_attach(worker) {
     worker.port.on("get_prefs", function() {
@@ -87,6 +98,10 @@ function on_cs_attach(worker) {
     worker.port.on("set_prefs", function(_prefs) {
         pref_manager.write_prefs(_prefs);
     });
+
+    worker.port.on("force_update", function(subreddit) {
+        pref_setup.update_custom_css(storage, subreddit, dl_file);
+    })
 }
 
 // Setup communication with prefs page

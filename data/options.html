@@ -32,6 +32,7 @@
       border-style: solid;
       border-color: gray;
       border-width: 1px;
+      margin-bottom: 5px;
     }
     .emote-list-input {
       /* Hide it as best we can */
@@ -46,19 +47,22 @@
     }
     /* Styled after Derpibooru's tag list thing, with colors from Bootstrap */
     .listed-emote {
-        padding: 5px;
-        background-color: #5BC0DE;
-        color: white;
-        border-width: 1px;
-        border-color: #2F96B4;
-        border-style: solid;
-        margin-right: 5px;
-        margin-bottom: 5px;
-        float: left;
-        border-radius: 2px;
+      padding: 5px;
+      background-color: #5BC0DE;
+      color: white;
+      border-width: 1px;
+      border-color: #2F96B4;
+      border-style: solid;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      float: left;
+      border-radius: 2px;
     }
     .listed-emote > a {
-        font-weight: bold;
+      font-weight: bold;
+    }
+    .custom-subreddit {
+      margin-bottom: 5px;
     }
   </style>
 </head>
@@ -85,28 +89,48 @@
           <legend>Enabled Subreddits</legend>
           <div id="sr-list"></div>
           <br>
-          <button type="button" id="enable-all">Enable all</button>
-          <button type="button" id="disable-all">Disable all</button>
+          <button type="button" id="enable-all" class="btn">Enable all</button>
+          <button type="button" id="disable-all" class="btn">Disable all</button>
         </form>
 
-        <form class="form-inline">
+        <!--
+          onsubmit hack because some browsers (Firefox) will submit a form if
+          you press enter in its sole <input>
+        -->
+        <form class="form-inline" onsubmit="return false;">
           <legend>Disabled Emotes</legend>
+          <div id="de-container" class="emote-list-container">
+            <input id="de-input" class="emote-list-input">
+          </div>
+          <button type="button" id="de-clear" class="btn">Clear</button>
         </form>
-        <!-- Outside of form to prevent <input> from submitting (?!?) the thing -->
-        <div id="de-container" class="emote-list-container">
-          <input id="de-input" class="emote-list-input">
-        </div>
-        <br> <!-- This is unnecessary in the form. Which we're not in. Damnit. -->
-        <button type="button" id="de-clear">Clear</button>
 
-        <form class="form-inline">
+        <form class="form-inline" onsubmit="return false;">
           <legend>Whitelisted Emotes</legend>
+          <div id="we-container" class="emote-list-container">
+            <input id="we-input" class="emote-list-input">
+          </div>
+          <button type="button" id="we-clear" class="btn">Clear</button>
         </form>
-        <div id="we-container" class="emote-list-container">
-          <input id="we-input" class="emote-list-input">
-        </div>
-        <br>
-        <button type="button" id="we-clear">Clear</button>
+
+        <form class="form-inline" onsubmit="return false;">
+          <legend>Custom Subreddits</legend>
+
+          <div id="custom-subreddits">
+          </div>
+
+          <div class="row">
+            <div class="span6">
+              <label>Add a subreddit:
+                <span class="input-prepend">
+                  <span class="add-on">r/</span>
+                  <input id="add-custom-subreddit" type="text">
+                </span>
+              </label>
+              <button type="button" id="add-subreddit" class="btn">Add</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>

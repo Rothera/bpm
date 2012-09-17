@@ -23,7 +23,7 @@ if(localStorage.prefs === undefined) {
     localStorage.prefs = "{}";
 }
 
-var pref_manager = manage_prefs(JSON.parse(localStorage.prefs), sync_prefs, prefs_updated, dl_file);
+var pref_manager = manage_prefs(localStorage, JSON.parse(localStorage.prefs), sync_prefs, prefs_updated, dl_file);
 
 // Content script requests
 chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {

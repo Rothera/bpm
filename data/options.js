@@ -61,6 +61,10 @@ switch(platform) {
         browser = {
             prefs_updated: function() {
                 self.port.emit("set_prefs", prefs);
+            },
+
+            force_update: function(subreddit) {
+                self.port.emit("force_update", subreddit);
             }
         };
         break;
@@ -71,6 +75,10 @@ switch(platform) {
         browser = {
             prefs_updated: function() {
                 chrome.extension.sendMessage({"method": "set_prefs", "prefs": prefs});
+            },
+
+            force_update: function(subreddit) {
+                chrome.extension.sendMessage({"method": "force_update", "subreddit": subreddit});
             }
         };
         break;
@@ -92,6 +100,10 @@ switch(platform) {
         browser = {
             prefs_updated: function() {
                 opera.extension.postMessage({"method": "set_prefs", "prefs": prefs});
+            },
+
+            force_update: function(subreddit) {
+                opera.extension.postMessage({"method": "force_update", "subreddit": subreddit});
             }
         };
         break;
@@ -178,7 +190,7 @@ function setup_emote_list(container, input, clear_button, list) {
             insert_emotes(emotes);
             input.value = "";
         }
-    }), true);
+    }), false);
 
     // Handle commas with the "proper" way to handle input.
     input.addEventListener("input", function(event) {
@@ -190,10 +202,6 @@ function setup_emote_list(container, input, clear_button, list) {
             input.value = emotes.pop() || "";
         }
         insert_emotes(emotes);
-    }, false);
-
-    input.addEventListener("submit", function(event) {
-        event.preventDefault();
     }, false);
 
     clear_button.addEventListener("click", function() {
@@ -326,6 +334,80 @@ function run() {
     var we_input = document.getElementById("we-input");
     var we_clear = document.getElementById("we-clear");
     setup_emote_list(we_container, we_input, we_clear, prefs.whitelistedEmotes);
+
+    var custom_sr_div = document.getElementById("custom-subreddits");
+
+    function add_sr_html(subreddit) {
+        // Oh god, this is awful.
+
+        // TODO: Add some status information. Make this page dynamic, despite
+        // all the communication that will have to go between us and the
+        // backend. Show whether or not a CSS cache exists, how old it is,
+        // and the last error (404's would especially be nice).
+        var div1 = document.createElement("div");
+        var div2 = document.createElement("div");
+        var div3 = document.createElement("div");
+        div1.className = "row custom-subreddit";
+        div2.className = "span3";
+        div3.className = "span3";
+
+        var label = document.createElement("label");
+        label.textContent = "r/" + subreddit;
+
+        var force = document.createElement("button");
+        var remove = document.createElement("button");
+        force.className = remove.className = "btn";
+        force.type = remove.type = "button";
+        force.textContent = "Force Update";
+        remove.textContent = "Remove";
+
+        div1.appendChild(div2);
+        div1.appendChild(div3);
+        div2.appendChild(label);
+        div3.appendChild(force);
+        div3.appendChild(remove);
+
+        force.addEventListener("click", (function(subreddit) { return function(event) {
+            browser.force_update(subreddit);
+        }; })(subreddit), false);
+
+        remove.addEventListener("click", (function(subreddit) { return function(event) {
+            delete prefs.customCSSSubreddits[subreddit];
+            custom_sr_div.removeChild(div1);
+            browser.prefs_updated();
+        }; })(subreddit), false);
+
+        custom_sr_div.appendChild(div1);
+    }
+
+    for(var subreddit in prefs.customCSSSubreddits) {
+        add_sr_html(subreddit);
+    }
+
+    var add_input = document.getElementById("add-custom-subreddit");
+    var add_button = document.getElementById("add-subreddit");
+
+    add_input.addEventListener("input", function(event) {
+        // Dunno if subreddits can have other characters or not
+        add_input.value = add_input.value.replace(/[^a-zA-Z0-9_-]/g, "").toLowerCase();
+    }, false);
+
+    function add_subreddit() {
+        var sr = add_input.value;
+        // TODO: Make a little spinny circle icon and make a request to Reddit
+        // to confirm whether or not the subreddit even exists, and deny its
+        // creation if it doesn't.
+        prefs.customCSSSubreddits[sr] = 0;
+        browser.prefs_updated();
+        add_sr_html(sr);
+    }
+
+    add_input.addEventListener("keydown", traceback_wrapper(function(event) {
+        if(event.keyCode == 13) { // Return key
+            add_subreddit();
+        }
+    }), false);
+    add_button.addEventListener("click", add_subreddit, false);
 }
 
 window.addEventListener("DOMContentLoaded", function() {
