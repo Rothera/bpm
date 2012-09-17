@@ -92,15 +92,15 @@ var pref_manager = pref_setup.manage_prefs(storage, storage.prefs, sync_prefs, p
 
 function on_cs_attach(worker) {
     worker.port.on("get_prefs", function() {
-        worker.port.emit("prefs", pref_manager.get_prefs());
+        worker.port.emit("prefs", pref_manager.get());
     });
 
     worker.port.on("set_prefs", function(_prefs) {
-        pref_manager.write_prefs(_prefs);
+        pref_manager.write(_prefs);
     });
 
     worker.port.on("force_update", function(subreddit) {
-        pref_setup.update_custom_css(storage, subreddit, dl_file);
+        pref_setup.update_custom_css(pref_manager, subreddit, dl_file);
     })
 }
 

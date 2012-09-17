@@ -15,8 +15,21 @@ function sync_prefs(prefs) {
 function prefs_updated(prefs) {
 }
 
-function dl_file(url) {
-    // BIG FATE NOTE: set user-agent
+function dl_file(url, callback) {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if(request.readyState == 4) {
+            if(request.status == 200) {
+                callback(request.responseText);
+            } else {
+                console.log("BPM: ERROR: Reddit returned HTTP status " + request.status + " for " + url);
+            }
+        }
+    };
+    request.open("GET", url, true);
+    // Not permitted because Chrome sucks
+    //request.setRequestHeader("User-Agent", "BetterPonymotes Client CSS Updater (/u/Typhos)");
+    request.send();
 }
 
 if(localStorage.prefs === undefined) {
@@ -47,12 +60,12 @@ opera.extension.onmessage = function(event) {
         case "get_prefs":
             event.source.postMessage({
                 "method": "prefs",
-                "prefs": pref_manager.get_prefs()
+                "prefs": pref_manager.get()
             });
             break;
 
         case "set_prefs":
-            pref_manager.write_prefs(message.prefs)
+            pref_manager.write(message.prefs)
             break;
 
         case "get_file":
@@ -65,6 +78,10 @@ opera.extension.onmessage = function(event) {
                     "data": data
                 });
             }
+            break;
+
+        case "force_update":
+            update_custom_css(pref_manager, message.subreddit, dl_file);
             break;
 
         default:

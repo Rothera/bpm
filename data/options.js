@@ -400,14 +400,24 @@ function run() {
         prefs.customCSSSubreddits[sr] = 0;
         browser.prefs_updated();
         add_sr_html(sr);
+        add_input.value = "";
     }
 
     add_input.addEventListener("keydown", traceback_wrapper(function(event) {
         if(event.keyCode == 13) { // Return key
             add_subreddit();
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
         }
     }), false);
-    add_button.addEventListener("click", add_subreddit, false);
+
+    add_button.addEventListener("click", function(event) {
+        add_subreddit();
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    }, false);
 }
 
 window.addEventListener("DOMContentLoaded", function() {

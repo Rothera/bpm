@@ -50,6 +50,7 @@ function setup_prefs(prefs) {
 }
 
 var emote_regexp = /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="\/[\w:!]+"\](:[a-zA-Z\-()]+)?[^}]*}/g;
+
 function strip_subreddit_css(data) {
     // Strip comments
     data = data.replace(/\/\*[^*]*\*+(?:[^\/][^*]*\*+)*\//g, "");
@@ -70,27 +71,29 @@ function strip_subreddit_css(data) {
     return emote_text;
 }
 
-function update_custom_css(database, prefs, subreddit, download_file) {
+function update_custom_css(pref_manager, subreddit, download_file) {
     console.log("BPM: Updating CSS file for r/" + subreddit);
     var key = "csscache_" + subreddit.toLowerCase();
     var random = Math.floor(Math.random() * 1000);
     var url = "http://reddit.com/r/" + subreddit + "/stylesheet.css?nocache=" + random;
     download_file(url, function(css) {
-        database[key] = strip_subreddit_css(css);
-        prefs.customCSSSubreddits[subreddit] = Date.now();
+        pref_manager.db()[key] = strip_subreddit_css(css);
+        pref_manager.get().customCSSSubreddits[subreddit] = Date.now();
+        pref_manager.sync();
     });
 }
 
 // Once a week. TODO: Make configurable, within certain tolerances.
 var DOWNLOAD_INTERVAL = 1000 * 60 * 60 * 24 * 7;
 
-function check_css_cache(database, prefs, download_file) {
+function check_css_cache(pref_manager, download_file) {
     var now = Date.now();
+    var prefs = pref_manager.get();
     for(var sr in prefs.customCSSSubreddits) {
         // pass
         var last_dl_time = prefs.customCSSSubreddits[sr];
         if(last_dl_time === undefined || last_dl_time + DOWNLOAD_INTERVAL < now) {
-            update_custom_css(database, prefs, sr, download_file);
+            update_custom_css(pref_manager, sr, download_file);
         }
     }
     // TODO: Remove stale CSS caches
@@ -100,23 +103,33 @@ function manage_prefs(database, prefs, sync, update, download_file) {
     // TODO: replace prefs argument with the database object, just assuming
     // all values are string->string except for prefs
 
+    var manager = {
+        write: function(_prefs) {
+            prefs = _prefs;
+            this.sync();
+        },
+
+        get: function() {
+            return prefs;
+        },
+
+        db: function() {
+            return database;
+        },
+
+        sync: function() {
+            sync(prefs);
+            update(prefs);
+            check_css_cache(manager, download_file);
+        }
+    };
+
     setup_prefs(prefs); // Initialize values
     sync(prefs);        // Write to DB (in case of new prefs)
     update(prefs);      // Init browser code (just Fx right now)
-    check_css_cache(database, prefs, download_file); // Update CSS
+    check_css_cache(manager, download_file); // Update CSS
 
-    return {
-        write_prefs: function(_prefs) {
-            prefs = _prefs;
-            sync(prefs);
-            update(prefs);
-            check_css_cache(database, prefs, download_file);
-        },
-
-        get_prefs: function() {
-            return prefs;
-        }
-    };
+    return manager;
 }
 
 // Firefox
