@@ -108,12 +108,10 @@ function css_manager(pref_manager, download_file) {
 
 css_manager.prototype = {
     force_update: function(subreddit) {
-        console.log("BPM: Forcing update of " + subreddit);
         this.download_update(subreddit);
     },
 
     rebuild_cache: function() {
-        console.log("BPM: Rebuilding CSS cache");
         var prefs = this.pm.get();
         var database = this.pm.database;
         this.cached_subreddits = [];
@@ -122,7 +120,6 @@ css_manager.prototype = {
         for(var subreddit in prefs.customCSSSubreddits) {
             var key = "csscache_" + subreddit.toLowerCase();
             if(database[key] !== undefined) {
-                console.log("BPM: -- Adding " + subreddit);
                 this.css_cache += database[key];
                 this.cached_subreddits.push(subreddit);
             }
@@ -130,13 +127,11 @@ css_manager.prototype = {
     },
 
     check_cache: function() {
-        console.log("BPM: Checking whether CSS cache requires updates");
         var now = Date.now();
         var prefs = this.pm.get();
         for(var subreddit in prefs.customCSSSubreddits) {
             var last_dl_time = prefs.customCSSSubreddits[subreddit];
             if(last_dl_time === undefined || last_dl_time + DOWNLOAD_INTERVAL < now) {
-                console.log("BPM: -- need to update " + subreddit);
                 this.download_update(subreddit);
             }
         }
@@ -161,7 +156,6 @@ css_manager.prototype = {
     },
 
     after_pref_write: function() {
-        console.log("BPM: after_pref_write");
         this.check_cache();
 
         var tmp = []; // ...
@@ -172,7 +166,6 @@ css_manager.prototype = {
         var changed = subreddits_changed(this.cached_subreddits, tmp);
 
         if(this.css_cache === null || changed) {
-            console.log("BPM: after_pref_write() rebuilding CSS cache");
             this.rebuild_cache();
         }
     }
