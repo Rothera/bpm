@@ -68,7 +68,12 @@ function apply_custom_css(css) {
         var tag = document.createElement("style");
         tag.type = "text/css";
         tag.appendChild(document.createTextNode(css));
-        document.head.insertBefore(tag, document.head.firstChild);
+        if(platform == "chrome") {
+            // Quick hack
+            document.documentElement.insertBefore(tag, document.documentElement.firstChild);
+        } else {
+            document.head.insertBefore(tag, document.head.firstChild);
+        }
     }
 }
 
@@ -122,6 +127,7 @@ switch(platform) {
         };
 
         chrome.extension.sendMessage({"method": "get_prefs"}, set_prefs);
+        chrome.extension.sendMessage({"method": "get_custom_css"}, apply_custom_css);
         break;
 
     case "opera":
@@ -184,6 +190,10 @@ switch(platform) {
                     set_prefs(message.prefs);
                     break;
 
+                case "custom_css":
+                    apply_custom_css(message.css);
+                    break;
+
                 default:
                     console.log("BPM: ERROR: Unknown request from Opera background script: '" + message.method + "'");
                     break;
@@ -191,6 +201,7 @@ switch(platform) {
         }, false);
 
         opera.extension.postMessage({"method": "get_prefs"});
+        opera.extension.postMessage({"method": "get_custom_css"});
         break;
 }
 

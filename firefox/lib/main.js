@@ -100,11 +100,11 @@ function on_cs_attach(worker) {
     });
 
     worker.port.on("force_update", function(subreddit) {
-        pref_setup.force_css_update(pref_manager, subreddit, dl_file);
+        pref_manager.cm.force_update(subreddit);
     });
 
     worker.port.on("get_custom_css", function() {
-        worker.port.emit("custom_css", pref_manager.custom_css());
+        worker.port.emit("custom_css", pref_manager.cm.css_cache);
     });
 }
 

@@ -80,7 +80,14 @@ opera.extension.onmessage = function(event) {
             break;
 
         case "force_update":
-            force_css_update(pref_manager, message.subreddit, dl_file);
+            pref_manager.cm.force_update(message.subreddit);
+            break;
+
+        case "get_custom_css":
+            event.source.postMessage({
+                "method": "custom_css",
+                "css": pref_manager.cm.css_cache
+            });
             break;
 
         default:

@@ -71,108 +71,140 @@ function strip_subreddit_css(data) {
     return emote_text;
 }
 
-function update_css_cache(pref_manager, subreddit, download_file) {
-    console.log("BPM: Updating CSS file for r/" + subreddit);
-    var key = "csscache_" + subreddit.toLowerCase();
-    var random = Math.floor(Math.random() * 1000);
-    // Chrome doesn't permit setting User-Agent (because it sucks), but this
-    // should help a little bit
-    var url = "http://reddit.com/r/" + subreddit + "/stylesheet.css?__ua=BetterPonymotes&nocache=" + random;
-    download_file(url, function(css) {
-        pref_manager.db()[key] = strip_subreddit_css(css);
-        pref_manager.get().customCSSSubreddits[subreddit] = Date.now();
-        pref_manager._sync();
-    });
+// Essentially a list compare, because JS sucks
+function subreddits_changed(old, n) {
+    if(old.length != n.length) {
+        return true;
+    }
+
+    // Copy
+    var common = old.slice(0);
+
+    // Remove all elements in n
+    for(var i = 0; i < n.length; i++) {
+        var idx = common.indexOf(n[i]);
+        if(idx < 0) {
+            return true;
+        }
+        common.splice(idx, 1);
+    }
+
+    // Should be empty?
+    return common.length;
 }
 
 // Once a week. TODO: Make configurable, within certain tolerances.
 var DOWNLOAD_INTERVAL = 1000 * 60 * 60 * 24 * 7;
 
-function check_css_cache(pref_manager, old_subreddits, download_file) {
-    var now = Date.now();
-    var prefs = pref_manager.get();
-    var rebuild = false;
-    for(var sr in prefs.customCSSSubreddits) {
-        var last_dl_time = prefs.customCSSSubreddits[sr];
-        if(last_dl_time === undefined || last_dl_time + DOWNLOAD_INTERVAL < now) {
-            update_css_cache(pref_manager, sr, download_file);
-            rebuild = true;
-        }
+function css_manager(pref_manager, download_file) {
+    this.pm = pref_manager;
+    this.cached_subreddits = [];
+    this.css_cache = null;
+    this.download_file = download_file;
 
-        var idx = old_subreddits.indexOf(sr);
-        if(idx > -1) {
-            old_subreddits.splice(idx, 1);
+    // Done from pref_manager
+    //this.check_cache();
+}
+
+css_manager.prototype = {
+    force_update: function(subreddit) {
+        console.log("BPM: Forcing update of " + subreddit);
+        this.download_update(subreddit);
+    },
+
+    rebuild_cache: function() {
+        console.log("BPM: Rebuilding CSS cache");
+        var prefs = this.pm.get();
+        var database = this.pm.database;
+        this.cached_subreddits = [];
+
+        this.css_cache = "";
+        for(var subreddit in prefs.customCSSSubreddits) {
+            var key = "csscache_" + subreddit.toLowerCase();
+            if(database[key] !== undefined) {
+                console.log("BPM: -- Adding " + subreddit);
+                this.css_cache += database[key];
+                this.cached_subreddits.push(subreddit);
+            }
+        }
+    },
+
+    check_cache: function() {
+        console.log("BPM: Checking whether CSS cache requires updates");
+        var now = Date.now();
+        var prefs = this.pm.get();
+        for(var subreddit in prefs.customCSSSubreddits) {
+            var last_dl_time = prefs.customCSSSubreddits[subreddit];
+            if(last_dl_time === undefined || last_dl_time + DOWNLOAD_INTERVAL < now) {
+                console.log("BPM: -- need to update " + subreddit);
+                this.download_update(subreddit);
+            }
+        }
+        // TODO: Remove stale CSS caches
+    },
+
+    download_update: function(subreddit) {
+        // TODO: space these requests out somewhat
+        var prefs = this.pm.get();
+        console.log("BPM: Downloading updated CSS file for r/" + subreddit);
+        var key = "csscache_" + subreddit.toLowerCase();
+        var random = Math.floor(Math.random() * 1000);
+        // Chrome doesn't permit setting User-Agent (because it sucks), but this
+        // should help a little bit
+        var url = "http://reddit.com/r/" + subreddit + "/stylesheet.css?__ua=BetterPonymotes&nocache=" + random;
+        this.download_file(url, function(css) {
+            this.pm.database[key] = strip_subreddit_css(css);
+            prefs.customCSSSubreddits[subreddit] = Date.now();
+            this.pm._sync();
+            this.rebuild_cache();
+        }.bind(this));
+    },
+
+    after_pref_write: function() {
+        console.log("BPM: after_pref_write");
+        this.check_cache();
+
+        var tmp = []; // ...
+        for(var sr in this.pm.get().customCSSSubreddits) {
+            tmp.push(sr);
+        }
+        // Always true for first run (compare [] to any other list)
+        var changed = subreddits_changed(this.cached_subreddits, tmp);
+
+        if(this.css_cache === null || changed) {
+            console.log("BPM: after_pref_write() rebuilding CSS cache");
+            this.rebuild_cache();
         }
     }
-    // TODO: Remove stale CSS caches
-
-    // If there's any subreddits left, some were removed from prefs, so we need
-    // to rebuild the cache.
-    return rebuild || old_subreddits.length;
-}
-
-function force_css_update(pref_manager, subreddit, download_file) {
-    update_css_cache(pref_manager, subreddit, download_file);
-    pref_manager.rebuild_css_cache();
-}
+};
 
 function manage_prefs(database, prefs, sync, update, download_file) {
     // TODO: replace prefs argument with the database object, just assuming
     // all values are string->string except for prefs
 
-    var cached_subreddits = [];
-    var css_cache = undefined;
-
-    function _post_write() {
-        manager._sync();
-        var rebuild = check_css_cache(manager, cached_subreddits, download_file); // Update CSS
-        if(rebuild || css_cache === undefined) {
-            manager.rebuild_css_cache();
-        }
-
-        cached_subreddits = [];
-        for(var sr in prefs.customCSSSubreddits) {
-            cached_subreddits.push(sr);
-        }
-    }
-
     var manager = {
         write: function(_prefs) {
             prefs = _prefs;
-            _post_write();
+            this._sync();
+            this.cm.after_pref_write();
         },
 
         get: function() {
             return prefs;
         },
 
-        db: function() {
-            return database;
-        },
+        database: database,
 
         _sync: function() {
             sync(prefs);
             update(prefs);
-        },
-
-        rebuild_css_cache: function() {
-            css_cache = "";
-            for(var subreddit in prefs.customCSSSubreddits) {
-                var key = "csscache_" + subreddit.toLowerCase();
-                if(database[key] !== undefined) {
-                    console.log("BPM: -- Adding " + subreddit);
-                    css_cache += database[key];
-                }
-            }
-        },
-
-        custom_css: function() {
-            return css_cache;
         }
     };
 
     setup_prefs(prefs);
-    _post_write();
+    manager._sync();
+    manager.cm = new css_manager(manager, download_file);
+    manager.cm.after_pref_write();
 
     return manager;
 }
@@ -180,5 +212,4 @@ function manage_prefs(database, prefs, sync, update, download_file) {
 // Firefox
 if(typeof(exports) !== 'undefined') {
     exports.manage_prefs = manage_prefs;
-    exports.force_css_update = force_css_update;
 }
