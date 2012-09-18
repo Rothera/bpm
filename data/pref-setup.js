@@ -49,7 +49,7 @@ function setup_prefs(prefs) {
     // TODO: Remove subreddits from prefs that are no longer in the addon.
 }
 
-var emote_regexp = /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="\/[\w:!]+"\](:[a-zA-Z\-()]+)?[^}]*}/g;
+var emote_regexp = /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="\/[\w:!#\/]+"\](:[a-zA-Z\-()]+)?[^}]*}/g;
 
 function strip_subreddit_css(data) {
     // Strip comments
