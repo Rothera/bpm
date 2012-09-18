@@ -29,6 +29,22 @@
         <p>This changelog only lists code changes. Most releases contain whatever
         emote updates were available at the time, and are not mentioned.
 
+        <h5>v22.45 - 2012-09-18</h5>
+        <p>Made combiners turn off better- if you had r/mylittlecombiners
+        disabled, but NSFW on, they would still move emotes around as if they
+        were on. This has been mostly fixed (they still still react to
+        pinkiepies).
+        <p>Reworked preferences code a bit. Chrome/Opera now redirect writes
+        from options.html through background.js. Some common code was pulled
+        out. This enables backends to respond to prefs changes on all browsers.
+        <p>Fixed an overflow problem in the emote list widgets- with a large
+        number of emotes, the boxes generated for them would fall out of the
+        &lt;div&gt;.
+        <p>Added a custom CSS feature- BPM will apply the raw CSS from the
+        specified subreddits. The parser used strips out most non-emote stuff.
+        CSS is updated once a week, or when forced. This feature is somewhat
+        fragile at the moment, and should be used carefully.
+
         <h5>v21.44 - 2012-09-15</h5>
         <p>Added emote whitelist. Emotes listed here will override all forms of
         blacklisting.
