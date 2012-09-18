@@ -394,6 +394,10 @@ function run() {
 
     function add_subreddit() {
         var sr = add_input.value;
+        if(sr in prefs.customCSSSubreddits) {
+            add_input.value = "";
+            return;
+        }
         // TODO: Make a little spinny circle icon and make a request to Reddit
         // to confirm whether or not the subreddit even exists, and deny its
         // creation if it doesn't.
