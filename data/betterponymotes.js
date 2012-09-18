@@ -63,6 +63,15 @@ function set_prefs(prefs) {
     pref_callbacks = [];
 }
 
+function apply_custom_css(css) {
+    if(css) {
+        var tag = document.createElement("style");
+        tag.type = "text/css";
+        tag.appendChild(document.createTextNode(css));
+        document.head.insertBefore(tag, document.head.firstChild);
+    }
+}
+
 // Setup some platform-agnostic API's- preferences and CSS
 var prefs_updated, apply_css;
 
@@ -90,6 +99,9 @@ switch(platform) {
 
         self.port.on("prefs", set_prefs);
         self.port.emit("get_prefs");
+
+        self.port.on("custom_css", apply_custom_css);
+        self.port.emit("get_custom_css");
         break;
 
     case "chrome":
@@ -275,7 +287,7 @@ function traceback_wrapper(f) {
         } catch(e) {
             console.log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
         }
-    }
+    };
 }
 
 // Emote processing: takes prefs, a pre-processed array of enabled subreddits,
