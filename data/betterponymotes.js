@@ -343,6 +343,14 @@ var bpm_converter = {
     process: function(prefs, elements) {
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
+            if(element.className.indexOf("bpm-") > -1) {
+                // Already processed: has bpm-noclick or bpm-unknown on it. It
+                // doesn't really matter if this function runs on emotes more
+                // than once (it's safe), but that may change, and the class
+                // spam is annoying.
+                continue;
+            }
+
             // There is an important distinction between element.href and
             // element.getAttribute("href")- the former is mangled by the
             // browser to be a complete URL, which we don't want.
@@ -466,6 +474,11 @@ var bpm_converter = {
                 var before = element.nextSibling;
                 if(before !== null && before.className !== undefined && before.className.indexOf("expando-button") > -1) {
                     before = before.nextSibling;
+                }
+
+                if(before !== null && bpm_utils.has_class(before, "bpm-alttext")) {
+                    // Already processed (before node is our previous alt text)
+                    continue;
                 }
                 element.parentNode.insertBefore(at_element, before);
             }
