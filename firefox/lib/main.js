@@ -115,6 +115,10 @@ function on_cs_attach(worker) {
                 });
                 break;
 
+            case "set_pref":
+                pref_manager.set_pref(message.pref, message.value);
+                break;
+
             default:
                 console.log("BPM: ERROR: Unknown request from content script: '" + message.request + "'");
                 break;

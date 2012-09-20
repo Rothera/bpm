@@ -57,6 +57,10 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
             sendResponse(pref_manager.cm.css_cache);
             break;
 
+        case "set_pref":
+            pref_manager.set_pref(message.pref, message.value);
+            break;
+
         default:
             console.log("BPM: ERROR: Unknown request from content script: '" + message.request + "'");
             break;

@@ -291,6 +291,7 @@ var bpm_prefs = {
     prefs: null,
     sr_array: null,
     waiting: [],
+    sync_timeouts: {},
 
     when_available: function(callback) {
         if(this.prefs) {
@@ -334,8 +335,24 @@ var bpm_prefs = {
         return map;
     },
 
+    /* // DO NOT CALL: blows away all other pages, including options.html
     sync: function(prefs) {
         bpm_browser.send_message("set_prefs", {"prefs": this.prefs});
+    },
+    */
+
+    sync_key: function(key) {
+        // Schedule pref write for one second in the future, clearing out any
+        // previous timeout. Prevents excessive backend calls, which can generate
+        // some lag (on Firefox, at least).
+        if(this.sync_timeouts[key] !== undefined) {
+            clearTimeout(this.sync_timeouts[key]);
+        }
+
+        this.sync_timeouts[key] = setTimeout(function() {
+            bpm_browser.send_message("set_pref", {"pref": key, "value": this.prefs[key]});
+            delete this.sync_timeouts[key];
+        }.bind(this), 1000);
     }
 };
 
@@ -579,7 +596,7 @@ var bpm_search = {
 
             prefs.prefs.searchBoxInfo[0] = sb_left;
             prefs.prefs.searchBoxInfo[1] = sb_top;
-            bpm_prefs.sync(); // FIXME: this will be called way too often
+            bpm_prefs.sync_key("searchBoxInfo"); // FIXME: this will be called way too often
         }.bind(this));
 
         // Enable dragging the resize element around (i.e. resizing it)
@@ -601,7 +618,7 @@ var bpm_search = {
 
             prefs.prefs.searchBoxInfo[2] = sb_width;
             prefs.prefs.searchBoxInfo[3] = sb_height;
-            bpm_prefs.sync(); // FIXME again
+            bpm_prefs.sync_key("searchBoxInfo"); // FIXME again
         }.bind(this));
     },
 

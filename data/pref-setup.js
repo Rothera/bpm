@@ -182,6 +182,16 @@ function manage_prefs(database, prefs, sync, update, download_file) {
             return prefs;
         },
 
+        set_pref: function(key, value) {
+            if(prefs[key] === undefined) {
+                console.log("BPM: ERROR: Attempt to write to nonexistent pref key " + key);
+                return;
+            }
+            prefs[key] = value;
+            this._sync();
+            this.cm.after_pref_write();
+        },
+
         database: database,
 
         _sync: function() {
