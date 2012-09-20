@@ -91,20 +91,34 @@ if(!storage.prefs) {
 var pref_manager = pref_setup.manage_prefs(storage, storage.prefs, sync_prefs, prefs_updated, dl_file);
 
 function on_cs_attach(worker) {
-    worker.port.on("get_prefs", function() {
-        worker.port.emit("prefs", pref_manager.get());
-    });
+    worker.on("message", function(message) {
+        switch(message.method) {
+            case "get_prefs":
+                worker.postMessage({
+                    "method": "prefs",
+                    "prefs": pref_manager.get()
+                });
+                break;
 
-    worker.port.on("set_prefs", function(_prefs) {
-        pref_manager.write(_prefs);
-    });
+            case "set_prefs":
+                pref_manager.write(message.prefs);
+                break;
 
-    worker.port.on("force_update", function(subreddit) {
-        pref_manager.cm.force_update(subreddit);
-    });
+            case "force_update":
+                pref_manager.cm.force_update(message.subreddit);
+                break;
 
-    worker.port.on("get_custom_css", function() {
-        worker.port.emit("custom_css", pref_manager.cm.css_cache);
+            case "get_custom_css":
+                worker.postMessage({
+                    "method": "custom_css",
+                    "css": pref_manager.cm.css_cache
+                });
+                break;
+
+            default:
+                console.log("BPM: ERROR: Unknown request from content script: '" + message.request + "'");
+                break;
+        }
     });
 }
 

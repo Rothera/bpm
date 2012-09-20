@@ -31,10 +31,6 @@ var default_prefs = {
     };
 
 function setup_prefs(prefs) {
-    if(prefs.showAltText === undefined) {
-        prefs.showAltText = false; // Off by default for upgrades only
-    }
-
     for(var key in default_prefs) {
         if(prefs[key] === undefined) {
             prefs[key] = default_prefs[key];

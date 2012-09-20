@@ -58,13 +58,25 @@ switch(platform) {
     case "firefox":
         // On Firefox, this script is run as a content script, so we need
         // to communicate with main.js.
+        self.on("message", function(message) {
+            switch(message.method) {
+                case "prefs":
+                    set_prefs(message.prefs);
+                    break;
+
+                default:
+                    console.log("BPM: ERROR: Unknown request from Firefox background script: '" + message.method + "'");
+                    break;
+            }
+        });
+
         browser = {
             prefs_updated: function() {
-                self.port.emit("set_prefs", prefs);
+                self.postMessage({"method": "set_prefs", "prefs": prefs});
             },
 
             force_update: function(subreddit) {
-                self.port.emit("force_update", subreddit);
+                self.postMessage({"method": "force_update"});
             }
         };
         break;
@@ -435,8 +447,7 @@ window.addEventListener("DOMContentLoaded", function() {
 switch(platform) {
     case "firefox":
         // Make backend request for prefs
-        self.port.on("prefs", set_prefs);
-        self.port.emit("get_prefs");
+        self.postMessage({"method": "get_prefs"});
         break;
 
     case "chrome":
