@@ -29,6 +29,18 @@
         <p>This changelog only lists code changes. Most releases contain whatever
         emote updates were available at the time, and are not mentioned.
 
+        <h5>v24.46</h5>
+        <p>Massive cleanup effort began- main script essentially rewritten as
+        far as diffs go. Script concern areas split apart a bit, and a few
+        long-standing messes fixed.
+        <p>Firefox now uses the postMessage API instead of self.port, for
+        consistency.
+        <p>Fixed emote converter and alt-text code running on links more than
+        once when they were added to the page with "load more comments".
+        <p>Made writing prefs from the frontend script (specifically the emote
+        window positioning) not blow away prefs written from other sources-
+        particularly, the options page. Also may have improved lag.
+
         <h5>v22.45 - 2012-09-18</h5>
         <p>Made combiners turn off better- if you had r/mylittlecombiners
         disabled, but NSFW on, they would still move emotes around as if they
