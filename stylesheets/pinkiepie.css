@@ -1,0 +1,766 @@
+/*------------------------  Changes background -------------------------------*/
+body, body.res-nightmode:first-of-type {
+    background: url(http://a.thumbs.redditmedia.com/hzlilu6quaCfLNyZ.png) no-repeat fixed center bottom !important
+    }
+/*---------------------- Nightmode fixes for the background -------------------------------- */
+.content #siteTable div[onclick="click_thing(this)"] {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type > .content {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type {
+    background-color: transparent !important
+    }
+/*---------------------------- Scrolly sidebar thing --------------------------------------*/
+body .side a[href="http://www.reddit.com/r/Surprise/new"] {
+    display: block;
+    height: 78px;
+    width: 100px;
+    background: url(http://b.thumbs.redditmedia.com/NHUjEDmjOAA98cAU.png);
+    position: fixed;
+    top: 174px;
+    right: -10px;
+    z-index: 999
+    }
+/*---------------------- Banner Image ---------------------------------------- */
+#header-bottom-left {
+    background: url(http://c.thumbs.redditmedia.com/ipbnTRknOtq6yqDb.png);
+    background-color: transparent;
+    margin-left: 45px;
+    background-repeat: no-repeat;
+    height: 175px
+    }
+#header-img {
+    margin-left: -40px
+    }
+.pagename a {
+    background-image: url(http://d.thumbs.redditmedia.com/4efPKPz3x-Y8s8x9.png);
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    font-size: 0px;
+    padding: 43px 320px 0 0;
+    color: #364657;
+    left: 282px;
+    position: absolute;
+    top: 139px
+    }
+.tabmenu {
+    margin-left: 130px
+    }
+.tabmenu li a {
+    color: #000000;
+    background-color: #ffffff;
+    border: 0px solid black
+    }
+.pagename {
+    color: white;
+    font-size: 0pt
+    }
+#header {
+    border-bottom: 1px solid #000000;
+    z-index: 99;
+    height: 207px
+    }
+/*--------------------------------- Thumbnails! --------------------------------------*/
+.thumbnail.self, .thumbnail.nsfw, .thumbnail.default {
+    background-image: url(http://b.thumbs.redditmedia.com/lzQllYfoEFZDvJcU.png) !important
+    }
+.thumbnail.self {
+    background-position: 0px -120px !important
+    }
+.thumbnail.nsfw {
+    background-position: 0px 0px !important
+    }
+.thumbnail.default {
+    background-position: 0px -70px !important
+    }
+/*-------------------- Font! --------------------------------------*/
+a[href|="/pinkiebig!"] {
+    color: #c10064 !important;
+    font-size: 20px !important;
+    cursor: text !important;
+    background-color: #f8c0ce !important
+    }
+/* ---------- Hide "Created by..." while keeping "a community for..." in the sidebar ---------- */
+.titlebox .bottom {
+    font-size: 0px
+    }
+.age {
+    font-size: 11px !important
+    }
+a[href="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }
+/* --------------Footer-------------------------*/
+.footer-parent {
+    height: 700px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(http://c.thumbs.redditmedia.com/1CkRzpxXfudA91d2.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: -1px
+    }
+START-PONYSCRIPT-IGNORE {
+    color: red
+    }
+/*------------------------------------ THIRD TIMES THE CHARM! ---------------------------------*/
+a[href|="/1a"], a[href|="/1c"], a[href|="/2h"], a[href|="/3a"], a[href|="/3d"], a[href|="/3f"], a[href|="/5k"], a[href|="/b03"], a[href|="/b10"], a[href|="/b39"], a[href|="/c02"], a[href|="/c07"], a[href|="/c12"], a[href|="/c22"], a[href|="/c24"], a[href|="/d06"], a[href|="/d10"], a[href|="/foreverpie"], a[href|="/grumpypie"], a[href|="/huhhuh"], a[href|="/ns02"], a[href|="/ns12"], a[href|="/ns22"], a[href|="/ns26"], a[href|="/oinkoink"], a[href|="/ppfly"], a[href|="/ppforever"], a[href|="/pphello"], a[href|="/ppplot"], a[href|="/ppstache"], a[href|="/ppsurprise"], a[href|="/ppwatching"], a[href|="/st11"], a[href|="/w40"], a[href|="/wutpie"], a[href|="/xx04"], a[href|="/xx23"], a[href|="/xx24"], a[href|="/xx34"], a[href|="/y00"], a[href|="/y06"], a[href|="/y10"], a[href|="/y16"], a[href|="/y20"], a[href|="/y26"], a[href|="/y30"], a[href|="/y36"], a[href|="/y40"], a[href|="/y46"], a[href|="/z24"], a[href|="/z34"], a[href|="/z44"], a[href|="/zz20"], a[href|="/zz22"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://d.thumbs.redditmedia.com/8vIyY-emMDxOkCCE.png) !important
+    }
+a[href|="/1a"] {
+    width: 76px !important;
+    height: 139px !important;
+    background-position: -2px -2px !important
+    }
+a[href|="/1c"] {
+    width: 102px !important;
+    height: 150px !important;
+    background-position: -80px -2px !important
+    }
+a[href|="/2h"] {
+    width: 69px !important;
+    height: 150px !important;
+    background-position: -184px -2px !important
+    }
+a[href|="/3a"] {
+    width: 178px !important;
+    height: 86px !important;
+    background-position: -255px -2px !important
+    }
+a[href|="/3d"] {
+    width: 108px !important;
+    height: 150px !important;
+    background-position: -435px -2px !important
+    }
+a[href|="/3f"] {
+    width: 76px !important;
+    height: 150px !important;
+    background-position: -545px -2px !important
+    }
+a[href|="/5k"] {
+    width: 109px !important;
+    height: 154px !important;
+    background-position: -623px -2px !important
+    }
+a[href|="/b03"] {
+    width: 50px !important;
+    height: 50px !important;
+    background-position: -734px -2px !important
+    }
+a[href|="/b10"] {
+    width: 50px !important;
+    height: 50px !important;
+    background-position: -786px -2px !important
+    }
+a[href|="/b39"] {
+    width: 50px !important;
+    height: 50px !important;
+    background-position: -838px -2px !important
+    }
+a[href|="/c02"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -890px -2px !important
+    }
+a[href|="/c07"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -2px -158px !important
+    }
+a[href|="/c12"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -74px -158px !important
+    }
+a[href|="/c22"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -146px -158px !important
+    }
+a[href|="/c24"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -218px -158px !important
+    }
+a[href|="/d06"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -444px -158px !important
+    }
+a[href|="/d10"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -516px -158px !important
+    }
+a[href|="/foreverpie"] {
+    width: 96px !important;
+    height: 150px !important;
+    background-position: -588px -158px !important
+    }
+a[href|="/grumpypie"] {
+    width: 75px !important;
+    height: 90px !important;
+    background-position: -686px -158px !important
+    }
+a[href|="/huhhuh"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -763px -158px !important
+    }
+a[href|="/ns02"] {
+    width: 82px !important;
+    height: 75px !important;
+    background-position: -835px -158px !important
+    }
+a[href|="/ns12"] {
+    width: 68px !important;
+    height: 75px !important;
+    background-position: -919px -158px !important
+    }
+a[href|="/ns22"] {
+    width: 86px !important;
+    height: 75px !important;
+    background-position: -2px -310px !important
+    }
+a[href|="/ns26"] {
+    width: 74px !important;
+    height: 75px !important;
+    background-position: -90px -310px !important
+    }
+a[href|="/oinkoink"] {
+    width: 100px !important;
+    height: 175px !important;
+    background-position: -166px -310px !important
+    }
+a[href|="/ppfly"] {
+    width: 170px !important;
+    height: 86px !important;
+    background-position: -268px -310px !important
+    }
+a[href|="/ppforever"] {
+    width: 96px !important;
+    height: 150px !important;
+    background-position: -440px -310px !important
+    }
+a[href|="/pphello"] {
+    width: 77px !important;
+    height: 125px !important;
+    background-position: -538px -310px !important
+    }
+a[href|="/ppplot"] {
+    width: 150px !important;
+    height: 86px !important;
+    background-position: -617px -310px !important
+    }
+a[href|="/ppstache"] {
+    width: 102px !important;
+    height: 100px !important;
+    background-position: -769px -310px !important
+    }
+a[href|="/ppsurprise"] {
+    width: 115px !important;
+    height: 150px !important;
+    background-position: -873px -310px !important
+    }
+a[href|="/ppwatching"] {
+    width: 110px !important;
+    height: 75px !important;
+    background-position: -2px -487px !important
+    }
+a[href|="/st11"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -114px -487px !important
+    }
+a[href|="/w40"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -186px -487px !important
+    }
+a[href|="/wutpie"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -258px -487px !important
+    }
+a[href|="/xx04"] {
+    width: 83px !important;
+    height: 100px !important;
+    background-position: -330px -487px !important
+    }
+a[href|="/xx23"] {
+    width: 79px !important;
+    height: 100px !important;
+    background-position: -415px -487px !important
+    }
+a[href|="/xx24"] {
+    width: 121px !important;
+    height: 100px !important;
+    background-position: -496px -487px !important
+    }
+a[href|="/xx34"] {
+    width: 76px !important;
+    height: 100px !important;
+    background-position: -619px -487px !important
+    }
+a[href|="/y00"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -697px -487px !important
+    }
+a[href|="/y06"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -769px -487px !important
+    }
+a[href|="/y10"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -841px -487px !important
+    }
+a[href|="/y16"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -913px -487px !important
+    }
+a[href|="/y20"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -2px -589px !important
+    }
+a[href|="/y26"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -74px -589px !important
+    }
+a[href|="/y30"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -146px -589px !important
+    }
+a[href|="/y36"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -218px -589px !important
+    }
+a[href|="/y40"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -290px -589px !important
+    }
+a[href|="/y46"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -362px -589px !important
+    }
+a[href|="/z24"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -434px -589px !important
+    }
+a[href|="/z34"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -506px -589px !important
+    }
+a[href|="/z44"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -578px -589px !important
+    }
+a[href|="/zz20"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -650px -589px !important
+    }
+a[href|="/zz22"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -722px -589px !important
+    }
+a[href|="/2a"], a[href|="/4a"], a[href|="/4b"], a[href|="/4f"], a[href|="/5c"], a[href|="/5i"], a[href|="/angrypie"], a[href|="/ihaveyounow"], a[href|="/parrrtycannon"], a[href|="/pinkamena"], a[href|="/ppahh"], a[href|="/ppscared"], a[href|="/ppfrown"], a[href|="/ppmoney"], a[href|="/ppno"], a[href|="/ppquite"], a[href|="/ppsalute"], a[href|="/pptoot"], a[href|="/pudding"], a[href|="/puddinghead"], a[href|="/r2a"], a[href|="/xx13"], a[href|="/xx14"], a[href|="/xx33"], a[href|="/yy42"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://c.thumbs.redditmedia.com/6CDx1qJjM24AELJh.png) !important
+    }
+a[href|="/2a"] {
+    width: 158px !important;
+    height: 151px !important;
+    background-position: -2px -2px !important
+    }
+a[href|="/4a"] {
+    width: 159px !important;
+    height: 151px !important;
+    background-position: -162px -2px !important
+    }
+a[href|="/4b"] {
+    width: 144px !important;
+    height: 150px !important;
+    background-position: -323px -2px !important
+    }
+a[href|="/4f"] {
+    width: 119px !important;
+    height: 150px !important;
+    background-position: -469px -2px !important
+    }
+a[href|="/5c"] {
+    width: 148px !important;
+    height: 151px !important;
+    background-position: -590px -2px !important
+    }
+a[href|="/5i"] {
+    width: 137px !important;
+    height: 150px !important;
+    background-position: -740px -2px !important
+    }
+a[href|="/angrypie"] {
+    width: 169px !important;
+    height: 154px !important;
+    background-position: -2px -155px !important
+    }
+a[href|="/ihaveyounow"] {
+    width: 132px !important;
+    height: 150px !important;
+    background-position: -173px -155px !important
+    }
+a[href|="/parrrtycannon"] {
+    width: 133px !important;
+    height: 175px !important;
+    background-position: -307px -155px !important
+    }
+a[href|="/pinkamena"] {
+    width: 100px !important;
+    height: 111px !important;
+    background-position: -442px -155px !important
+    }
+a[href|="/ppahh"] {
+    width: 169px !important;
+    height: 150px !important;
+    background-position: -544px -155px !important
+    }
+a[href|="/ppscared"] {
+    width: 132px !important;
+    height: 150px !important;
+    background-position: -715px -155px !important
+    }
+a[href|="/ppfrown"] {
+    width: 108px !important;
+    height: 148px !important;
+    background-position: -849px -155px !important
+    }
+a[href|="/ppmoney"] {
+    width: 100px !important;
+    height: 126px !important;
+    background-position: -2px -332px !important
+    }
+a[href|="/ppno"] {
+    width: 220px !important;
+    height: 200px !important;
+    background-position: -104px -332px !important
+    }
+a[href|="/ppquite"] {
+    width: 100px !important;
+    height: 100px !important;
+    background-position: -326px -332px !important
+    }
+a[href|="/ppsalute"] {
+    width: 187px !important;
+    height: 150px !important;
+    background-position: -428px -332px !important
+    }
+a[href|="/pptoot"] {
+    width: 158px !important;
+    height: 141px !important;
+    background-position: -617px -332px !important
+    }
+a[href|="/pudding"] {
+    width: 112px !important;
+    height: 154px !important;
+    background-position: -777px -332px !important
+    }
+a[href|="/puddinghead"] {
+    width: 101px !important;
+    height: 175px !important;
+    background-position: -891px -332px !important
+    }
+a[href|="/r2a"] {
+    width: 163px !important;
+    height: 153px !important;
+    background-position: -2px -534px !important
+    }
+a[href|="/xx13"] {
+    width: 105px !important;
+    height: 100px !important;
+    background-position: -167px -534px !important
+    }
+a[href|="/xx14"] {
+    width: 91px !important;
+    height: 100px !important;
+    background-position: -274px -534px !important
+    }
+a[href|="/xx33"] {
+    width: 145px !important;
+    height: 100px !important;
+    background-position: -367px -534px !important
+    }
+a[href|="/yy42"] {
+    width: 150px !important;
+    height: 90px !important;
+    background-position: -514px -534px !important
+    }
+a[href|="/a13"], a[href|="/brony"], a[href|="/brony2"], a[href|="/cerealpie"], a[href|="/gypsypie"], a[href|="/pieflip"], a[href|="/pinkwithit"], a[href|="/ppfun"], a[href|="/ppgummy"], a[href|="/ppshock"], a[href|="/stageleft"], a[href|="/thatswhatisaid"], a[href|="/yy00"], a[href|="/yy01"], a[href|="/yy02"], a[href|="/yy22"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://a.thumbs.redditmedia.com/hbzbFImKaYgN-vwr.png) !important
+    }
+a[href|="/a13"] {
+    width: 70px !important;
+    height: 70px !important;
+    background-position: -2px -2px !important
+    }
+a[href|="/brony"] {
+    width: 202px !important;
+    height: 160px !important;
+    background-position: -74px -2px !important
+    }
+a[href|="/brony2"] {
+    width: 185px !important;
+    height: 160px !important;
+    background-position: -278px -2px !important
+    }
+a[href|="/cerealpie"] {
+    width: 200px !important;
+    height: 200px !important;
+    background-position: -465px -2px !important
+    }
+a[href|="/gypsypie"] {
+    width: 143px !important;
+    height: 150px !important;
+    background-position: -667px -2px !important
+    }
+a[href|="/pieflip"] {
+    width: 283px !important;
+    height: 217px !important;
+    background-position: -2px -204px !important
+    }
+a[href|="/pinkwithit"] {
+    width: 259px !important;
+    height: 267px !important;
+    background-position: -287px -204px !important
+    }
+a[href|="/ppfun"] {
+    width: 225px !important;
+    height: 150px !important;
+    background-position: -548px -204px !important
+    }
+a[href|="/ppgummy"] {
+    width: 165px !important;
+    height: 150px !important;
+    background-position: -775px -204px !important
+    }
+a[href|="/ppshock"] {
+    width: 250px !important;
+    height: 168px !important;
+    background-position: -2px -473px !important
+    }
+a[href|="/stageleft"] {
+    width: 197px !important;
+    height: 200px !important;
+    background-position: -254px -473px !important
+    }
+a[href|="/thatswhatisaid"] {
+    width: 175px !important;
+    height: 175px !important;
+    background-position: -453px -473px !important
+    }
+a[href|="/yy00"] {
+    width: 150px !important;
+    height: 139px !important;
+    background-position: -630px -473px !important
+    }
+a[href|="/yy01"] {
+    width: 150px !important;
+    height: 116px !important;
+    background-position: -782px -473px !important
+    }
+a[href|="/yy02"] {
+    width: 150px !important;
+    height: 104px !important;
+    background-position: -2px -675px !important
+    }
+a[href|="/yy22"] {
+    width: 150px !important;
+    height: 123px !important;
+    background-position: -154px -675px !important
+    }
+END-PONYSCRIPT-IGNORE {
+    color: red
+    }
+/*----------------------------------------- EMOTES AGAIN! -------------------------------------------*/
+a[href|="/pp:3"], a[href|="/ppboogie"], a[href|="/ppcake"], a[href|="/ppcannon"], a[href|="/ppcantlook"], a[href|="/ppdoublefacehoof"], a[href|="/ppcrazed"], a[href|="/ppdevious"], a[href|="/ppgasp"], a[href|="/ppglare"], a[href|="/pplie"], a[href|="/ppmina"], a[href|="/ppnervous"], a[href|="/ppoh"], a[href|="/ppoops"], a[href|="/ppparty"], a[href|="/ppserious"], a[href|="/ppsmile"], a[href|="/ppsoar"], a[href|="/ppthismuch"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://c.thumbs.redditmedia.com/1T_lhKkJI4gIEnLn.png) !important
+    }
+a[href|="/pp:3"] {
+    width: 158px;
+    height: 150px;
+    background-position: -2px -2px
+    }
+a[href|="/ppboogie"] {
+    width: 132px;
+    height: 160px;
+    background-position: -162px -2px
+    }
+a[href|="/ppcake"] {
+    width: 108px;
+    height: 100px;
+    background-position: -296px -2px
+    }
+a[href|="/ppcannon"] {
+    width: 274px;
+    height: 200px;
+    background-position: -2px -164px
+    }
+a[href|="/ppcantlook"], a[href|="/ppdoublefacehoof"] {
+    width: 106px;
+    height: 100px;
+    background-position: -278px -164px
+    }
+a[href|="/ppcrazed"] {
+    width: 83px;
+    height: 100px;
+    background-position: -386px -164px
+    }
+a[href|="/ppdevious"] {
+    width: 129px;
+    height: 149px;
+    background-position: -2px -366px
+    }
+a[href|="/ppgasp"] {
+    width: 106px;
+    height: 150px;
+    background-position: -133px -366px
+    }
+a[href|="/ppglare"] {
+    width: 141px;
+    height: 150px;
+    background-position: -241px -366px
+    }
+a[href|="/pplie"] {
+    width: 172px;
+    height: 150px;
+    background-position: -2px -518px
+    }
+a[href|="/ppmina"] {
+    width: 88px;
+    height: 100px;
+    background-position: -176px -518px
+    }
+a[href|="/ppnervous"] {
+    width: 83px;
+    height: 100px;
+    background-position: -266px -518px
+    }
+a[href|="/ppoh"] {
+    width: 139px;
+    height: 150px;
+    background-position: -351px -518px
+    }
+a[href|="/ppoops"] {
+    width: 96px;
+    height: 115px;
+    background-position: -2px -670px
+    }
+a[href|="/ppparty"] {
+    width: 187px;
+    height: 150px;
+    background-position: -100px -670px
+    }
+a[href|="/ppserious"] {
+    width: 140px;
+    height: 150px;
+    background-position: -289px -670px
+    }
+a[href|="/ppsmile"] {
+    width: 148px;
+    height: 150px;
+    background-position: -2px -822px
+    }
+a[href|="/ppsoar"] {
+    width: 150px;
+    height: 63px;
+    background-position: -152px -822px
+    }
+a[href|="/ppthismuch"] {
+    width: 152px;
+    height: 150px;
+    background-position: -304px -822px
+    }
+a[href|="/ppawesome"], a[href|="/ppbrilliant"], a[href|="/ppcheck"], a[href|="/pptick"], a[href|="/ppdress"], a[href|="/ppdrink"], a[href|="/pppout"], a[href|="/ppsing"], a[href|="/ppsteamingmad"], a[href|="/ppstrut"], a[href|="/ppwhy"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://e.thumbs.redditmedia.com/Yj8Ona1_B_1jpBHp.png) !important
+    }
+a[href|="/ppawesome"] {
+    width: 184px;
+    height: 150px;
+    background-position: -2px -2px
+    }
+a[href|="/ppbrilliant"] {
+    width: 200px;
+    height: 200px;
+    background-position: -188px -2px
+    }
+a[href|="/ppcheck"], a[href|="/pptick"] {
+    width: 100px;
+    height: 100px;
+    background-position: -390px -2px
+    }
+a[href|="/ppdress"] {
+    width: 126px;
+    height: 150px;
+    background-position: -2px -204px
+    }
+a[href|="/ppdrink"] {
+    width: 170px;
+    height: 150px;
+    background-position: -130px -204px
+    }
+a[href|="/pppout"] {
+    width: 170px;
+    height: 150px;
+    background-position: -302px -204px
+    }
+a[href|="/ppsing"] {
+    width: 102px;
+    height: 160px;
+    background-position: -2px -356px
+    }
+a[href|="/ppsteamingmad"] {
+    width: 351px;
+    height: 200px;
+    background-position: -106px -356px
+    }
+a[href|="/ppstrut"] {
+    width: 149px;
+    height: 150px;
+    background-position: -2px -558px
+    }
+a[href|="/ppwhy"] {
+    width: 103px;
+    height: 125px;
+    background-position: -153px -558px
+    }

@@ -1,0 +1,522 @@
+.flair {
+    color: black;
+    display: inline-block;
+    border: 0;
+    border-radius: 0;
+    background: transparent
+    }
+.flair:before {
+    content: "";
+    background-image: url(http://b.thumbs.redditmedia.com/O02qjK5ucMXnRiw7.png);
+    display: inline-block;
+    width: 124px;
+    height: 110px;
+    background-repeat: no-repeat
+    }
+.usertext:before {
+    margin-top: 2px !important
+    }
+.flair-mav:before {
+    background-position: 0 0px
+    }
+/*Fixed display bug on Chromium.*/
+a.author[href$="theworstnoveltyacct"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="theworstnoveltyacct"]:after {
+    content: "FutaNovelty";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="GoodChanceAndLuck"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="GoodChanceAndLuck"]:after {
+    content: "FutaBooks";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="EvilHom3r"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="EvilHom3r"]:after {
+    content: "FutaHom3r";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="aMongoose"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="aMongoose"]:after {
+    content: "FutaGoose";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="OneOfTheseDaysLuna"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="OneOfTheseDaysLuna"]:after {
+    content: "OneOfTheseDaysFuta";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+/* Make the comments fit the screen width wise to make horse dicks appear better (and emote tables) */
+.md {
+    max-width: none
+    }
+/* Remove thumbnail on emote self post */
+a[href*="/o21h4/"][class~="thumbnail"] {
+    display: none !important
+    }
+a[href*="/o21h4/"].title {
+    color: red !important
+    }
+/* Futasheet 2.0 */
+/* Easy mode: http://cssspritegenerator.net */
+a[href|="/fut1"], a[href|="/fut2"], a[href|="/fut3"], a[href|="/fut4"], a[href|="/fut5"], a[href|="/fut6"], a[href|="/fut7"], a[href|="/fut8"], a[href|="/fut9"], a[href|="/fut10"], a[href|="/fut11"], a[href|="/fut12"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://e.thumbs.redditmedia.com/SNPxQ14WGB7Hi-Ed.png)
+    }
+a[href|="/fut1"] {
+    height: 400px;
+    width: 280px;
+    background-position: 0 0
+    }
+a[href|="/fut2"] {
+    height: 225px;
+    width: 353px;
+    background-position: -280px 0
+    }
+a[href|="/fut3"] {
+    height: 300px;
+    width: 244px;
+    background-position: -280px -225px
+    }
+a[href|="/fut4"] {
+    height: 400px;
+    width: 303px;
+    background-position: -524px -225px
+    }
+a[href|="/fut5"] {
+    height: 300px;
+    width: 282px;
+    background-position: -827px -225px
+    }
+a[href|="/fut6"] {
+    height: 200px;
+    width: 249px;
+    background-position: -633px 0
+    }
+a[href|="/fut7"] {
+    height: 250px;
+    width: 304px;
+    background-position: -524px -625px
+    }
+a[href|="/fut8"] {
+    height: 250px;
+    width: 242px;
+    background-position: -280px -525px
+    }
+a[href|="/fut9"] {
+    height: 250px;
+    width: 280px;
+    background-position: -828px -625px
+    }
+a[href|="/fut10"] {
+    height: 200px;
+    width: 170px;
+    background-position: 0 -400px
+    }
+a[href|="/fut11"] {
+    height: 200px;
+    width: 178px;
+    background-position: 0 -600px
+    }
+a[href|="/fut12"] {
+    height: 200px;
+    width: 242px;
+    background-position: 0 -800px
+    }
+/* Futasheet 3 */
+a[href|="/fut13"], a[href|="/futacute"], a[href|="/fut14"], a[href|="/futaplot"], a[href|="/fut15"], a[href|="/futapomf"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://f.thumbs.redditmedia.com/KI35_MyKz9dMe57e.png)
+    }
+a[href|="/fut13"], a[href|="/futacute"] {
+    height: 300px;
+    width: 253px;
+    background-position: 0 0
+    }
+a[href|="/fut14"], a[href|="/futaplot"] {
+    height: 345px;
+    width: 400px;
+    background-position: -253px 0
+    }
+a[href|="/fut15"], a[href|="/futapomf"] {
+    height: 352px;
+    width: 350px;
+    background-position: -253px -345px
+    }
+/* Futasheet Original */
+a[href|="/andy"], a[href|="/books"], a[href|="/kitty"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://b.thumbs.redditmedia.com/8TBQKf8dRuoPbc5I.png)
+    }
+a[href|="/andy"] {
+    width: 396px;
+    height: 403px;
+    background-position: -0px -0px
+    }
+a[href|="/kitty"] {
+    width: 306px;
+    height: 300px;
+    background-position: -430px -91px
+    }
+a[href|="/books"] {
+    width: 70px;
+    height: 71px;
+    background-position: -552px -0px
+    }
+a[href|="/bigenough"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 1128px;
+    height: 1250px;
+    background-image: url(http://c.thumbs.redditmedia.com/lfTijbZZCPlbHbYh.png)
+    }
+a[href|="/hugehorsedick"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 1588px;
+    height: 2338px;
+    background-image: url(http://f.thumbs.redditmedia.com/c5K0xsvBeSKZ3Yow.png)
+    }
+/*
+AMONGOOSE WAS HERE
+
+Rainbow Emotes
+*/
+a[href|="/rdblush"], a[href|="/rdroll"], a[href|="/rdexcite"], a[href|="/rdtrumpet"], a[href|="/rdsnuff"], a[href|="/rdwin"], a[href|="/rdready"], a[href|="/rdsit"], a[href|="/rdspy"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://e.thumbs.redditmedia.com/2fFNBfJc4OHjP1EL.png)
+    }
+a[href|="/rdblush"] {
+    height: 250px;
+    width: 200px;
+    background-position: 0 0
+    }
+a[href|="/rdroll"] {
+    height: 250px;
+    width: 212px;
+    background-position: -200px 0
+    }
+a[href|="/rdexcite"] {
+    height: 250px;
+    width: 238px;
+    background-position: -412px 0
+    }
+a[href|="/rdtrumpet"] {
+    height: 250px;
+    width: 250px;
+    background-position: -650px 0
+    }
+a[href|="/rdsnuff"] {
+    height: 250px;
+    width: 283px;
+    background-position: 0 -250px
+    }
+a[href|="/rdwin"] {
+    height: 250px;
+    width: 275px;
+    background-position: -283px -250px
+    }
+a[href|="/rdready"] {
+    height: 250px;
+    width: 250px;
+    background-position: -558px -250px
+    }
+a[href|="/rdsit"] {
+    height: 340px;
+    width: 217px;
+    background-position: -808px -250px
+    }
+a[href|="/rdspy"] {
+    height: 151px;
+    width: 288px;
+    background-position: 0 -500px
+    }
+a[href|="/rdsocks"], a[href|="/rdstyle"], a[href|="/rdstretch"], a[href|="/rdworry"], a[href|="/rdsatisfied"], a[href|="/rdflaunt"], a[href|="/rdflanksup"], a[href|="/rdpuff"], a[href|="/rdunsure"], a[href|="/rdhug"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://c.thumbs.redditmedia.com/11nIIDVYoDUtX22h.png)
+    }
+a[href|="/rdsocks"] {
+    height: 250px;
+    width: 289px;
+    background-position: 0 0
+    }
+a[href|="/rdstyle"] {
+    height: 250px;
+    width: 271px;
+    background-position: -289px 0
+    }
+a[href|="/rdstretch"] {
+    height: 250px;
+    width: 270px;
+    background-position: -560px 0
+    }
+a[href|="/rdworry"] {
+    height: 150px;
+    width: 150px;
+    background-position: -830px 0
+    }
+a[href|="/rdsatisfied"] {
+    height: 250px;
+    width: 241px;
+    background-position: 0 -250px
+    }
+a[href|="/rdflaunt"] {
+    height: 250px;
+    width: 221px;
+    background-position: -241px -250px
+    }
+a[href|="/rdflanksup"] {
+    height: 411px;
+    width: 250px;
+    background-position: -472px -250px
+    }
+a[href|="/rdpuff"] {
+    height: 374px;
+    width: 251px;
+    background-position: -722px -250px
+    }
+a[href|="/rdunsure"] {
+    height: 250px;
+    width: 232px;
+    background-position: 0 -500px
+    }
+a[href|="/rdhug"] {
+    height: 251px;
+    width: 240px;
+    background-position: -232px -500px
+    }
+/*Trying out this emote business - TWNA*/
+a[href|="/selfsuck"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 580px;
+    height: 492px;
+    background-image: url(http://b.thumbs.redditmedia.com/QpSUTDbkEevI5gEs.png)
+    }
+/*Begin Fluttershy non-nsfw emotes*/
+/*Fuck you, reddit down-time. I saved my fucking work*/
+a[href|="/shy00"], a[href|="/shy01"], a[href|="/shy02"], a[href|="/shy03"], a[href|="/shy04"], a[href|="/shy05"], a[href|="/shy06"], a[href|="/shy07"], a[href|="/shy08"], a[href|="/shy09"], a[href|="/shy10"], a[href|="/shy11"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://d.thumbs.redditmedia.com/KIGMTbnxFls9StT-.png)
+    }
+a[href|="/shy00"] {
+    height: 200px;
+    width: 152px;
+    background-position: 0 0
+    }
+a[href|="/shy01"] {
+    height: 200px;
+    width: 200px;
+    background-position: -152px 0
+    }
+a[href|="/shy02"] {
+    height: 200px;
+    width: 200px;
+    background-position: -352px 0
+    }
+a[href|="/shy03"] {
+    height: 200px;
+    width: 171px;
+    background-position: -552px 0
+    }
+a[href|="/shy04"] {
+    height: 200px;
+    width: 223px;
+    background-position: -723px 0
+    }
+a[href|="/shy05"] {
+    height: 200px;
+    width: 204px;
+    background-position: -946px 0
+    }
+a[href|="/shy06"] {
+    height: 200px;
+    width: 163px;
+    background-position: 0 -200px
+    }
+a[href|="/shy07"] {
+    height: 200px;
+    width: 203px;
+    background-position: -166px -200px
+    }
+a[href|="/shy08"] {
+    height: 200px;
+    width: 163px;
+    background-position: -373px -200px
+    }
+a[href|="/shy09"] {
+    height: 200px;
+    width: 221px;
+    background-position: -536px -200px
+    }
+a[href|="/shy10"] {
+    height: 200px;
+    width: 179px;
+    background-position: -757px -200px
+    }
+a[href|="/shy11"] {
+    height: 200px;
+    width: 170px;
+    background-position: -936px -200px
+    }
+a[href|="/shy12"], a[href|="/shy13"], a[href|="/shy14"], a[href|="/shy15"], a[href|="/shy16"], a[href|="/shy17"], a[href|="/shy18"], a[href|="/shy19"], a[href|="/shy20"], a[href|="/shy21"], a[href|="/shy22"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://e.thumbs.redditmedia.com/QR5fhnWS_1jUKQfF.png)
+    }
+a[href|="/shy12"] {
+    height: 200px;
+    width: 219px;
+    background-position: 0 0
+    }
+a[href|="/shy13"] {
+    height: 200px;
+    width: 242px;
+    background-position: -219px 0
+    }
+a[href|="/shy14"] {
+    height: 200px;
+    width: 200px;
+    background-position: -461px 0
+    }
+a[href|="/shy15"] {
+    height: 200px;
+    width: 119px;
+    background-position: -661px 0
+    }
+a[href|="/shy16"] {
+    height: 200px;
+    width: 184px;
+    background-position: -780px 0
+    }
+a[href|="/shy17"] {
+    height: 200px;
+    width: 180px;
+    background-position: -964px 0
+    }
+a[href|="/shy18"] {
+    height: 200px;
+    width: 196px;
+    background-position: 0 -200px
+    }
+a[href|="/shy19"] {
+    height: 200px;
+    width: 212px;
+    background-position: -196px -200px
+    }
+a[href|="/shy20"] {
+    height: 200px;
+    width: 209px;
+    background-position: -408px -200px
+    }
+a[href|="/shy21"] {
+    height: 200px;
+    width: 312px;
+    background-position: -617px -200px
+    }
+a[href|="/shy22"] {
+    height: 200px;
+    width: 182px;
+    background-position: -929px -200px
+    }
+a[href|="/suckit"] {
+    display: block;
+    clear: none;
+    float: left;
+    height: 239px;
+    width: 158px;
+    background-image: url(http://f.thumbs.redditmedia.com/Y0j2R_fTNEgWIVM5.png)
+    }
+a[href|="/mongusta"] {
+    display: block;
+    clear: none;
+    float: left;
+    height: 150px;
+    width: 116px;
+    background-image: url(http://f.thumbs.redditmedia.com/33PF7vnvWcc76Ofw.png)
+    }
+a[href|="/twna"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 479px;
+    height: 320px;
+    background-image: url(http://f.thumbs.redditmedia.com/sRy5VouH1A3OjeVS.png)
+    }
+/*Horse Phallus*/
+a[href|="/horsedick"], a[href|="/horsecock"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://c.thumbs.redditmedia.com/g94qfMSFxa5CMVR8.png)
+    }
+a[href|="/horsedick"] {
+    width: 100px;
+    height: 40px;
+    background-position: -0px -0px
+    }
+a[href|="/horsecock"] {
+    width: 100px;
+    height: 65px;
+    background-position: -0px -40px
+    }

@@ -1,0 +1,308 @@
+/*Changes "readers"/
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox span.number:after {
+    content: " inhabitants of the Lawless Lands"
+    }
+
+/* Flair */
+.flair-banana {
+    background-image: url(http://d.thumbs.redditmedia.com/Cv5Ad9FLj2gqfHf9.png) !important
+    }
+.flair {
+    background: none;
+    background-repeat: no-repeat;
+    width: 31px;
+    height: 31px;
+    margin: 0px;
+    padding: 0px;
+    text-indent: -9999px;
+    border: none
+    }
+/*This stuff adds an 'announcement' to the top of the subreddit the text of the announcement will be in h3/### text in the reddit description  */
+body {
+    position: relative
+    }
+.content {
+    margin-top: 60px
+    }
+.pagename {
+    font-size: 16pt
+    }
+.titlebox form {
+    position: static
+    }
+.titlebox .usertext-body .md h3 {
+    width: 70%;
+    height: 1.5%;
+    background-position: 4px 4px;
+    background-repeat: no-repeat;
+    background-color: #FFFF99;
+    border: 1px solid #000000;
+    color: #000000;
+    position: absolute;
+    top: 170px;
+    left: 40px;
+    z-index: 200;
+    margin: 0;
+    padding: 4px;
+    padding-left: 5px;
+    text-align: center;
+    -moz-border-radius: 5px;
+    font-size: 90%;
+    -webkit-border-radius: 5px
+    }
+START-PONYSCRIPT-IGNORE {
+    color: red
+    }
+a[href|="/mlsb1"], a[href|="/swagintosh"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://f.thumbs.redditmedia.com/IugBi-28qMxAgVzw.png)
+    }
+a[href|="/mlsa1"], a[href|="/deranimated"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://a.thumbs.redditmedia.com/rhKQlEd5IEg-FFZ0.png)
+    }
+a[href|="/mlsa2"], a[href|="/theder"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://a.thumbs.redditmedia.com/fGlcTCWTTAqEwTnl.png)
+    }
+a[href|="/mlsa2"]:hover, a[href|="/theder"]:hover {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://f.thumbs.redditmedia.com/LyP8gsbOJXU5aZEY.png)
+    }
+a[href|="/mlsa3"], a[href|="/puzzle"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 60px;
+    height: 60px;
+    background-image: url(http://f.thumbs.redditmedia.com/TRFvct6dWo04-yHq.png)
+    }
+a[href|="/mlsa4"], a[href|="/sbinnuendo"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://d.thumbs.redditmedia.com/I3EKCGsUCu-d6pBi.png)
+    }
+a[href|="/mlsb2"], a[href|="/ww20"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 102px;
+    height: 100px;
+    background-image: url(http://b.thumbs.redditmedia.com/WadTLa5cppsd6lyy.png)
+    }
+a[href|="/mlsb2"], a[href|="/ww20"] {
+    background-position: -0px -0px
+    }
+a[href|="/mlsb3"], a[href|="/dinkleberg"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(http://f.thumbs.redditmedia.com/rH6jNeQ00YwOu6Bq.png)
+    }
+a[href|="/mlsb4"], a[href|="/space"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 60px;
+    height: 60px;
+    background-image: url(http://a.thumbs.redditmedia.com/6-f4-a_Cwxl7ckMH.png)
+    }
+a[href|="/mlsc1"], a[href|="/orangejoy"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 85px;
+    height: 66px;
+    background-image: url(http://a.thumbs.redditmedia.com/u94Abuu9WOn7Xvdr.png)
+    }
+a[href|="/mlsc2"], a[href|="/orangerage"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 85px;
+    height: 74px;
+    background-image: url(http://e.thumbs.redditmedia.com/Sp3pNLa0b0hGY2zR.png)
+    }
+a[href|="/mlsc3"], a[href|="/pwincess"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 124px;
+    height: 150px;
+    background-image: url(http://f.thumbs.redditmedia.com/3SIFpvEsv9XghkiA.png)
+    }
+a[href|="/mlsc4"], a[href|="/flutterannoyance"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 146px;
+    height: 150px;
+    background-image: url(http://c.thumbs.redditmedia.com/5aIGeAJjlJSDrAZn.png)
+    }
+a[href|="/mlsd1"], a[href|="/whosad"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 145px;
+    background-image: url(http://b.thumbs.redditmedia.com/X82OcVXfosB8phVC.png)
+    }
+a[href|="/mlsd2"], a[href|="/andmyaxe"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 134px;
+    height: 150px;
+    background-image: url(http://c.thumbs.redditmedia.com/XCmrIE5yS-ZSSZjJ.png)
+    }
+a[href|="/mlsd3"], a[href|="/intimidate"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 139px;
+    height: 149px;
+    background-image: url(http://c.thumbs.redditmedia.com/unTnIHjqjMwiGFZV.png)
+    }
+END-PONYSCRIPT-IGNORE {
+    color: red
+    }
+/*Changing Names*/
+a.author[href$="/dasredditore"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/dasredditore"]:after {
+    content: "LinkKN2 [M]";
+    font-size: 10px !important;
+    visibility: visible !important;
+    color: green !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="/rainydayman15"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/rainydayman15"]:after {
+    content: "Rarity (rainydash)";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="/slide_potentiometer"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/slide_potentiometer"]:after {
+    content: "aiee_godzirra";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="/Purple_Drank"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/Purple_Drank"]:after {
+    content: "Gombigilla";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="/TheHarashi"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/TheHarashi"]:after {
+    content: "Harashi";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="/wytelyon"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/wytelyon"]:after {
+    content: "wytelyon [A]";
+    font-size: 10px !important;
+    visibility: visible !important;
+    color: green !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="/Gapmeister"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/Gapmeister"]:after {
+    content: "Gapmeister [M]";
+    font-size: 10px !important;
+    visibility: visible !important;
+    color: green !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="/thegreatholycow"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/thegreatholycow"]:after {
+    content: "GreatHolyCow";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }

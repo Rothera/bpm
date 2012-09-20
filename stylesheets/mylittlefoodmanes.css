@@ -1,0 +1,907 @@
+/* LETS ORGANIZE THIS SHIT, I'M CONKY_ AND I LIKE SHIT ORGANIZED
+
+lolyeah organization in foodmanes okay (this, minus sarcasm and shit bro)
+
+CONKY ADDED SOME COOL SHIT, CHECK THAT SHIT OUT, NIGHTMODE FIX BACKGROUND, LARGER EDITING AREAS, AND A HIDDEN BONUS HPPY SURPRISE OF FUN.
+
+1. THE RULES: FUCKINGFOOD MANES MAN
+2. REFER TO ABOVE RULE
+3. DO NOT REFER TO THE BELOW RULE
+4. FOLLOW ALL OF THE ABOVE
+
+ */
+.flair-bestfilly {
+    color: white;
+    border: 0;
+    background: teal url(http://e.thumbs.redditmedia.com/xD-b64Q1xh4szrBX.png) top left no-repeat;
+    height: 162px;
+    width: 150px;
+    top: 0px;
+    text-indent: 1px
+    }
+/* Background Image (Avebone, don't change this(Fixed it for you ~Quill)) */
+body {
+    background: url(http://a.thumbs.redditmedia.com/AUqYX4T7aFUMu4Nr.png) no-repeat fixed center bottom transparent !important
+    }
+#siteTable .entry.dislikes .buttons:before {
+    content: "You better be saving downvotes for the next System sighting.";
+    color: red;
+    font-size: 8pt
+    }
+#siteTable .entry.dislikes:after {
+    content: url(http://d.thumbs.redditmedia.com/69BWnpHO5oGa8arQ.png);
+    position: fixed;
+    /* Used for centering (bottom center) */
+    bottom: 0px;
+    left: 50%;
+    opacity: 0.05;
+    filter: alpha(opacity=5);
+    margin-left: -577px;
+    /* 0.5 the image width */
+    z-index: -100
+    }
+#siteTable .entry.likes:after {
+    content: url(http://d.thumbs.redditmedia.com/uc0zixv7ksGeXj8Q.png);
+    position: fixed;
+    /* Used for centering (bottom center) */
+    bottom: 0px;
+    left: 50%;
+    margin-left: 140px;
+    /* 0.5 the image width */
+    z-index: -100
+    }
+.modactions.approvelink {
+    background-image: url(http://d.thumbs.redditmedia.com/j3-7vGWLC4B5osqW.png);
+    background-position: -17px -561px;
+    background-repeat: no-repeat
+    }
+/* Emotes */
+a[href|="/lcheese"], a[href|="/rmallow"] {
+    background-image: url(http://b.thumbs.redditmedia.com/G-IHzYMRY51zkl9U.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px
+    }
+a[href|="/lcheese"] {
+    background-position: 0 0px
+    }
+a[href|="/rmallow"] {
+    background-position: -93px 0
+    }
+/* RD Skittles */
+h3 {
+    font-size: 30pt;
+    font-weight: bolder;
+    color: red
+    }
+a[href|="/rdskittles"] {
+    background-image: url(http://f.thumbs.redditmedia.com/txI6SqQy8LfipHUY.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 200px;
+    width: 153px
+    }
+a[href|="/heresyourbeardemotesageireallyhopeyourehappywithyourself"] {
+    background-image: url(http://d.thumbs.redditmedia.com/1tb0z7_q7XPMdWqc.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 177px;
+    width: 267px
+    }
+a[href|="/sagepuke"] {
+    background-image: url(http://e.thumbs.redditmedia.com/bJRuSDQUmyMgMRr4.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 322px;
+    width: 301px
+    }
+a[href|="/rariberry"] {
+    background-image: url(http://b.thumbs.redditmedia.com/o2AELMviTzDQLZrU.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 274px;
+    width: 270px
+    }
+a[href|="/doubledildo"] {
+    background-image: url(http://c.thumbs.redditmedia.com/p2CF5Pb9fdTB_XNz.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 114px;
+    width: 157px
+    }
+a[href|="/buttershy"] {
+    background-image: url(http://b.thumbs.redditmedia.com/CZd5q6ssYNT8SoFa.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 166px;
+    width: 227px
+    }
+a[href|="/twistballs"] {
+    background-image: url(http://b.thumbs.redditmedia.com/lstFXQBxfYPACSlm.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 195px;
+    width: 197px
+    }
+a[href|="/derpymousse"] {
+    background-image: url(http://c.thumbs.redditmedia.com/YuBBF6Wxt2N-llQh.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 180px;
+    width: 206px
+    }
+.flair:fuckingcolors {
+    background-color: green
+    }
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox span.number:after {
+    content: ",000 Quillmasters plus 1 Ave"
+    }
+/* nou */
+a[href|="/rdskittles"] {
+    background-image: url(http://f.thumbs.redditmedia.com/txI6SqQy8LfipHUY.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 200px;
+    width: 153px
+    }
+a[href|="/lyrasup"] {
+    background-image: url(http://a.thumbs.redditmedia.com/UrpzIMXa8rsc7l2Z.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 194px;
+    width: 252px
+    }
+a[href|="/tacoshy"] {
+    background-image: url(http://e.thumbs.redditmedia.com/A8nPRKqK-lIgiPIp.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 505px;
+    width: 499px
+    }
+a[href|="/choctavia"] {
+    background-image: url(http://f.thumbs.redditmedia.com/mLWWV7k_h16ofvS5.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 245px;
+    width: 141px
+    }
+a[href|="/greatyamsoffire"] {
+    background-image: url(http://f.thumbs.redditmedia.com/eR_gtyJaB2z_LM6e.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 217px;
+    width: 325px
+    }
+a[href^="/t18"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 364px;
+    height: 500px;
+    background-image: url(http://a.thumbs.redditmedia.com/cEw2dsib7wGTDdcZ.png) !important
+    }
+a[href|="/suckitave"] {
+    background-image: url(http://d.thumbs.redditmedia.com/QX9LoWIiMQZXzK2E.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 200px;
+    width: 290px
+    }
+a[href|="/floutsy"] {
+    background-image: url(http://b.thumbs.redditmedia.com/8ibJwVp0Q2SN3TSC.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 290px;
+    width: 277px
+    }
+a[href|="/conkystalker"] {
+    background-image: url(http://b.thumbs.redditmedia.com/ozRypIMSgviAyUSO.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 377px;
+    width: 460px
+    }
+a[href|="/hitmonmatt"] {
+    background-image: url(http://a.thumbs.redditmedia.com/1vuk-QQ4ki8K7ZFB.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 300px;
+    width: 400px
+    }
+a[href|="/floutstalin"] {
+    background-image: url(http://d.thumbs.redditmedia.com/j3-7vGWLC4B5osqW.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 290px;
+    width: 277px
+    }
+a[href|="/fillytacoshy"] {
+    background-image: url(http://e.thumbs.redditmedia.com/p0uzGEf6fzhcdG14.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 280px;
+    width: 355px
+    }
+/* Merry Christmas Bryvood. Sincerely, a couch */
+a[href|="/bryvood"] {
+    background-image: url(http://b.thumbs.redditmedia.com/30CNhAjLQPOG5hmC.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 210px;
+    width: 243px
+    }
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox span.number:after {
+    content: ",000 People that are literally Hitler plus 1 Ave"
+    }
+/* Best Filly Sidebar */
+.side a[href="http://www.youtube.com/watch?v=PWNUQoMeNWM&feature=plcp"] {
+    display: block;
+    height: 92px;
+    width: 120px;
+    background: url(http://d.thumbs.redditmedia.com/ZOVokGRLNW347vYo.png);
+    position: fixed;
+    top: 260px;
+    right: -20px;
+    z-index: 999
+    }
+a[href|="/themagicalcouch"] {
+    background-image: url(http://d.thumbs.redditmedia.com/uc0zixv7ksGeXj8Q.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 206px;
+    width: 308px
+    }
+a[href|="/ave"] {
+    background-image: url(http://b.thumbs.redditmedia.com/a80kLq4jqKonTSu1.jpg) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 509px;
+    width: 941px
+    }
+a[href|="/quillmaster"] {
+    background-image: url(http://b.thumbs.redditmedia.com/W7lTbVK1X_8tryFI.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 272px;
+    width: 320px
+    }
+a[href|="/quillmaster"]:active {
+    background-image: url(http://b.thumbs.redditmedia.com/W7lTbVK1X_8tryFI.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 272px;
+    width: 320px
+    }
+a[href|="/jax"] {
+    background-image: url(http://e.thumbs.redditmedia.com/hvzgxJ4uLygfToAR.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 280px;
+    width: 368px
+    }
+a[href="/quails"] {
+    background-image: url(http://b.thumbs.redditmedia.com/sjoPGRcJnQIqTan7.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 400px;
+    width: 500px
+    }
+.linkflair-pmod .author {
+    background-color: #228822 !important;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: white !important;
+    font-weight: bold;
+    padding: 0 2px
+    }
+.linkflair-pmod .author:hover {
+    background-color: #134913 !important;
+    text-decoration: none !important
+    }
+.linkflair-pmod .tagline:after {
+    content: "[M]";
+    color: #888888 !important;
+    font-size: x-small
+    }
+.linkflair-pmod .tagline:after :first-letter {
+    color: #888888 !important
+    }
+a.author[href$="YarnTheory"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="YarnTheory"]:after {
+    content: "YamTheory";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="whisperingsage"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="whisperingsage"]:after {
+    content: "Godzilla of Puke";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="JustinRL_2point0"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="JustinRL_2point0"]:after {
+    content: "JustinRL_2point0";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="JustinRL_2point0"]:hover:after {
+    content: "FIRED";
+    color: red;
+    font-size: 20px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="selenic_smile"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="selenic_smile"]:after {
+    content: "The invincible lurker";
+    font-size: 10px !important;
+    color: #00F5FF;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="selenic_smile"]:hover:after {
+    content: "Stays in the shadows";
+    font-size: 10px !important;
+    color: black;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="Esplin"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="Esplin"]:after {
+    content: "Floaty the Lyra";
+    color: #43D58C;
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="TheQuillmaster"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="TheQuillmaster"]:after {
+    content: "TheQuailmaster";
+    font-size: 12px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="BettyMcBitterpants"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="BettyMcBitterpants"]:after {
+    content: "BettyMcRagepants, Savior of Foodmanes";
+    font-size: 12px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="bryvood"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="bryvood"]:after {
+    content: "Shaggy";
+    font-size: 12px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="Generic_Builder"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$=Generic_Builder]:before {
+    content: "Wookie";
+    font-size: 18px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="Conky_"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="Conky_"]:after {
+    content: "A gentle Lover";
+    font-family: "wingdings", cursive;
+    font-size: 16px !important;
+    color: red;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a[href|="/clamyam"] {
+    background-image: url(http://b.thumbs.redditmedia.com/zo0C-xAl7H6O19Qa.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 200px;
+    width: 268px
+    }
+a.author[href$="tacomantotherescue"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="tacomantotherescue"]:after {
+    content: "tacoshy";
+    font-size: 12px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="UDNTNOME"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="UDNTNOME"]:after {
+    content: " Schindlers Fist (The erotic journey of) ";
+    font-size: 12px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="maku450"]:after {
+    content: " is a meanieface";
+    font-size: 12px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="theMagicalCouch"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="theMagicalCouch"]:after {
+    content: "[deleted]";
+    font-size: 12px !important;
+    color: rgb(136,136,136) !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="The_Jaxom"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="The_Jaxom"]:after {
+    content: "Jolly Jim";
+    font-size: 25px !important;
+    visibility: visible !important;
+    display: block;
+    color: #FF7F00;
+    letter-spacing: normal
+    }
+a.author[href$="Avebone"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="Avebone"]:after {
+    content: "AntiSystemOutPrintln";
+    font-size: 12px !important;
+    visibility: visible !important;
+    /*color: #008000;*/
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="floutsy"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="floutsy"]:after {
+    content: "nou";
+    font-size: 12px !important;
+    visibility: visible !important;
+    /*color: #008000;*/
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="Avebone"]:hover:after {
+    content: "Quail is literally Bitler";
+    display: block;
+    color: #E3170D;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+a.author[href$="insanitydash"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="insanitydash"]:after {
+    content: "insanitydash";
+    font-size: 2px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+/*End username changes*/
+.thumbnail.self {
+    background-image: url(http://e.thumbs.redditmedia.com/NhllHtXP-V3f2ywX.png);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    background-position: 0px 0px
+    }
+/* text effects- for fucks sake, why is this not here already? */
+a[href="/spoiler"] {
+    background: black !important;
+    color: black !important
+    }
+a[href="/spoiler"]:hover {
+    color: white !important
+    }
+/*
+body {
+    font-family: "wingdings", cursive;
+}
+
+*/
+/***********************
+*
+*        Conky's extra special cool CSS shit.
+*   
+************************/
+/*** Nightmode fixes for the background ***/
+.content #siteTable div[onclick="click_thing(this)"] {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type > .content {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type {
+    background-color: transparent !important
+    }
+/*** Adds a neat style for ####text in posts. (Shamelessly jacked from /r/mylittleandysonic1, I don;t think they'll mind though ***/
+.usertext-body h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: black;
+    text-align: center;
+    padding: 3px;
+    border-radius: 19px;
+    -moz-border-radius: 19px;
+    box-shadow: 2px 2px 5px blue;
+    text-shadow: 1px 1px green
+    }
+/* Make the "community settings" text box bigger, because it's an unreadable clusterfuck when it's small. */
+.fancy-settings .linefield {
+    width: 914px
+    }
+.fancy-settings textarea {
+    width: 892px;
+    height: 500px
+    }
+/* Also make the CSS text box bigger, because why not. */
+.stylesheet-customize-container textarea {
+    height: 500px
+    }
+/*** Submit a link -> Create a submission ***/
+.sidebox.submit .morelink:before {
+    display: block;
+    clear: none;
+    content: "Create a Submission";
+    text-align: center;
+    color: #369;
+    width: 101%
+    }
+.sidebox.submit .morelink a {
+    position: absolute;
+    top: 0;
+    font-size: 1px;
+    text-align: right;
+    color: #f2f8fd
+    }
+.sidebox.submit .morelink:hover:before {
+    color: blue
+    }
+.sidebox.submit:hover a {
+    color: #b4cee5
+    }
+.sidebox .subtitle:before {
+    display: block;
+    clear: none;
+    content: "Post: LoL, Jokes, And ponies with food for manes. ";
+    color: dimgrey;
+    font-size: 8pt !important
+    }
+.sidebox .subtitle {
+    font-size: 0px
+    }
+.sidebox.create {
+    display: none
+    }
+.sidebox.submit .spacer a {
+    background-image: url(http://c.thumbs.redditmedia.com/_KfgLL5u7n-oNVWb.png);
+    background-position: -0px -0px;
+    background-repeat: no-repeat
+    }
+/*** Search bar Foodmane ***/
+#search input[type="text"] {
+    background: url(http://a.thumbs.redditmedia.com/ciey0VXjVT12o1z0.png) bottom left no-repeat !important;
+    padding: 13px 2px 15px 70px;
+    height: 20px !important;
+    width: 222px
+    }
+/***  Dat Banner?  ***/
+#header-bottom-left {
+    background-color: #8B6969;
+    background: url(http://b.thumbs.redditmedia.com/mTXeY_Y6g6nlGE5m.jpg) no-repeat center bottom
+    }
+/*** Corner hitler **
+#header {
+    background-image: url(%%Banner%%);
+    background-repeat: no-repeat;
+    }
+
+/*** Bottom page Foodmane **
+.footer-parent {
+    height: 550px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(%%DatSeriously%%);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: 4px
+    }
+*/
+/***  Emotes ***/
+a[href|="/pepperminttwist"] {
+    background-image: url(http://e.thumbs.redditmedia.com/xD-b64Q1xh4szrBX.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 150px;
+    width: 158px
+    }
+a[href|="/conky"] {
+    background-image: url(http://d.thumbs.redditmedia.com/lHXbtvTBH5Cp7o_3.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 128px;
+    width: 300px
+    }
+a[href|="/applesaurus"] {
+    background-image: url(http://e.thumbs.redditmedia.com/qBRj6g3QbeFBbmDR.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 220px;
+    width: 191px
+    }
+a[href|="/flutterrex"] {
+    background-image: url(http://f.thumbs.redditmedia.com/upyeJHyjzwNhKoe_.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 200px;
+    width: 266px
+    }
+a[href|="/espeefun"] {
+    background-image: url(http://d.thumbs.redditmedia.com/ZMH6Ni7vuiVyZM9Q.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 152px;
+    width: 214px
+    }
+a[href|="/foodlove"] {
+    background-image: url(http://f.thumbs.redditmedia.com/jdiSRETytsQWhDle.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 150px;
+    width: 159px
+    }
+a[href|="/flutterchilli"] {
+    background-image: url(http://f.thumbs.redditmedia.com/CK_ZRrkdhuAcURGG.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 130px;
+    width: 127px
+    }
+a[href|="/whatthefacannons"] {
+    background-image: url(http://f.thumbs.redditmedia.com/MKfSvz6yeI2NGkdY.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 300px;
+    width: 478px
+    }
+a[href|="/disugh"] {
+    background-image: url(http://b.thumbs.redditmedia.com/8gESjqR46ssBT8aO.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 150px;
+    width: 161px
+    }
+a[href|="/twiraptor"] {
+    background-image: url(http://d.thumbs.redditmedia.com/KxtpozfASGMrDUNK.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 300px;
+    width: 428px
+    }
+a[href|="/greatrage"] {
+    background-image: url(http://e.thumbs.redditmedia.com/b6eiAntIC4CUKnYF.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 300px;
+    width: 509px
+    }
+a[href|="/udnt"] {
+    background-image: url(http://a.thumbs.redditmedia.com/-SAeXvZA6a4WRz8f.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 100px;
+    width: 112px
+    }
+a[href|="/macinmane"] {
+    background-image: url(http://a.thumbs.redditmedia.com/LQaz8qYj6Ccw8N-T.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 300px;
+    width: 314px
+    }
+a[href|="/colgatemunism"], a[href|="/colgatemunist"] {
+    background-image: url(http://a.thumbs.redditmedia.com/AODkIMp2TAlCJ35f.png) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 220px;
+    width: 166px
+    }
+/*** Bottom page Foodmane  ***/
+.footer-parent {
+    height: 652px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(http://b.thumbs.redditmedia.com/eezQidBIs3bWXowO.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: 4px
+    }
+/*** Corner image
+#header {
+    background-image: url(%%stalin%%);
+    background-repeat: no-repeat;
+    background-position: bottom right
+    }
+
+*/
+/*** Nightmode fixes for the background ***/
+.content #siteTable div[onclick="click_thing(this)"] {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type > .content {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type {
+    background-color: transparent !important
+    }

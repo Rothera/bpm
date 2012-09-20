@@ -1,0 +1,445 @@
+.titlebox span.word {
+    display: none
+    }
+.titlebox .subscribers span.number:after {
+    content: " Alcoholicorns"
+    }
+.titlebox .users-online span.number:after {
+    content: " Ascending to godhood"
+    }
+.usertext-body td {
+    font-size: 10px
+    }
+.pagename a:after {
+    content: ": C2H5OH is magic"
+    }
+/* FOOTER */
+.footer-parent {
+    height: 900px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(http://a.thumbs.redditmedia.com/22abg_7yMJjEkdxr.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: -1px
+    }
+/* BACKGROUND */
+body {
+    background: url(http://a.thumbs.redditmedia.com/xfb2XK3YEg3GF04l.png) top right fixed no-repeat
+    }
+/*Self-Post Image, No Image, Spoiler Image*/
+.thumbnail.self, .thumbnail.nsfw, .thumbnail.default {
+    background-image: url(http://b.thumbs.redditmedia.com/I7TWkO6lmQQ9yK61.png) !important
+    }
+.thumbnail.self {
+    background-position: 0px -120px !important
+    }
+.thumbnail.nsfw {
+    background-position: 0px 0px !important
+    }
+.thumbnail.default {
+    background-position: 0px -70px !important
+    }
+/*User Flair, blatantly stolen (and slightly edited) from r/mylittleprogramming*/
+.flair {
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    position: relative;
+    top: -1px
+    }
+.flair::before {
+    vertical-align: middle;
+    background-image: url(http://b.thumbs.redditmedia.com/TFGyapR8vsh2hRp1.png);
+    margin-right: 2px;
+    display: inline-block
+    }
+.flair-rainbowdash::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: 0px 0px
+    }
+.flair-twilight::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px 0px
+    }
+.flair-fluttershy::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: 0px -16px
+    }
+.flair-applejack::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -16px
+    }
+.flair-pinkiepie::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: 0px -32px
+    }
+.flair-rarity::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -32px
+    }
+.flair-trixie::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: 0px -48px
+    }
+.flair-cmc::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -48px
+    }
+.flair-luna::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: 0px -64px
+    }
+.flair-celestia::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -64px
+    }
+.flair-derpy::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: 0px -80px
+    }
+.flair-vinyl::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -80px
+    }
+.flair-lyra::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: 0px -96px
+    }
+.flair-bonbon::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -96px
+    }
+.flair-octavia::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: 0px -112px
+    }
+.flair-doctor::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -112px
+    }
+.flair-mac::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: 0px -128px
+    }
+.flair-colgate::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -128px
+    }
+.flair-berry::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -0px -144px
+    }
+.flair-pokey::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -144px
+    }
+.flair-roseluck::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -0px -160px
+    }
+.flair-zecora::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -160px
+    }
+.flair-seafoam::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -0px -176px
+    }
+.flair-carrottop::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -176px
+    }
+.flair-screwball::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -0px -192px
+    }
+.flair-redheart::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -192px
+    }
+.flair-caramel::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -0px -208px
+    }
+.flair-braeburn::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -208px
+    }
+.flair-wonderbolts::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -0px -224px
+    }
+.flair-shadowbolts::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -224px
+    }
+.flair-scootaloo::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -0px -240px
+    }
+.flair-applebloom::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -240px
+    }
+.flair-sweetiebelle::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -0px -256px
+    }
+.flair-davenport::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -256px
+    }
+.flair-cheerilee::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -0px -272px
+    }
+.flair-nightmaremoon::before {
+    content: " ";
+    visibility: visible;
+    height: 16px;
+    width: 16px;
+    background-position: -16px -272px
+    }
+.flair-blankflank {
+    background-image: none;
+    text-indent: 5px
+    }
+/* EMOTES AND SHIT */
+a[href|="/gw00"], a[href|="/gw10"], a[href|="/gw01"], a[href|="/gw11"], a[href|="/gw02"], a[href|="/gw12"], a[href|="/gw03"], a[href|="/gw13"], a[href|="/gw04"], a[href|="/gw14"], a[href|="/gw05"], a[href|="/gw15"], a[href|="/gw06"], a[href|="/gw16"], a[href|="/bpangrydrunk"], a[href|="/bpohthesobriety"], a[href|="/bpdrinkwithit"], a[href|="/bpdrinkiepie"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://f.thumbs.redditmedia.com/EQ_wops6xLcn2FH_.png)
+    }
+a[href|="/gw00"], a[href|="/adsf"] {
+    background-position: -0px -0px
+    }
+a[href|="/gw01"], a[href|="/bpangrydrunk"] {
+    background-position: -0px -70px
+    }
+a[href|="/gw02"], a[href|="/asdf"] {
+    background-position: -0px -140px
+    }
+a[href|="/gw03"], a[href|="/asdf"] {
+    background-position: -0px -210px
+    }
+a[href|="/gw04"], a[href|="/bpohthesobriety"] {
+    background-position: -0px -280px
+    }
+a[href|="/gw05"], a[href|="/asdf"] {
+    background-position: -0px -350px
+    }
+a[href|="/gw06"], a[href|="/bpdrinkwithit"] {
+    background-position: -0px -420px
+    }
+a[href|="/gw10"], a[href|="/adsf"] {
+    background-position: -70px -0px
+    }
+a[href|="/gw11"], a[href|="/asdf"] {
+    background-position: -70px -70px
+    }
+a[href|="/gw12"], a[href|="/asdf"] {
+    background-position: -70px -140px
+    }
+a[href|="/gw13"], a[href|="/asdf"] {
+    background-position: -70px -210px
+    }
+a[href|="/gw14"], a[href|="/bpdrinkiepie"] {
+    background-position: -70px -280px
+    }
+a[href|="/gw15"], a[href|="/asdf"] {
+    background-position: -70px -350px
+    }
+a[href|="/gw16"], a[href|="/asdf"] {
+    background-position: -70px -420px
+    }
+a[href|="/gwm00"], a[href|="/gwm01"], a[href|="/gwm02"], a[href|="/gwm03"], a[href|="/gwm04"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-image: url(http://c.thumbs.redditmedia.com/7Xzab7YTi4E4LO1P.png)
+    }
+a[href|="/gwm00"], a[href|="/adsf"] {
+    background-position: -0px -0px
+    }
+a[href|="/gwm01"], a[href|="/asdf"] {
+    background-position: -0px -50px
+    }
+a[href|="/gwm02"], a[href|="/asdf"] {
+    background-position: -0px -100px
+    }
+a[href|="/gwm03"], a[href|="/asdf"] {
+    background-position: -0px -150px
+    }
+a[href|="/gwm04"], a[href|="/asdf"] {
+    background-position: -0px -200px
+    }
+a[href|="/bp00"], a[href|="/bp10"], a[href|="/bp20"], a[href|="/bp01"], a[href|="/bp11"], a[href|="/bp21"], a[href|="/bp02"], a[href|="/bp12"], a[href|="/bp22"], a[href|="/bpwhy"], a[href|="/bpwet"], a[href|="/bpdrunk"], a[href|="/bpmotherofgod"], a[href|="/bphungover"], a[href|="/bpgross"], a[href|="/bptear"], a[href|="/bphappy"], a[href|="/bpshrug"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://b.thumbs.redditmedia.com/hifKTOrX_WwMoKeO.png)
+    }
+a[href|="/bp00"], a[href|="/bpwhy"] {
+    background-position: -0px -0px
+    }
+a[href|="/bp01"], a[href|="/bpmotherofgod"] {
+    background-position: -0px -70px
+    }
+a[href|="/bp02"], a[href|="/bptear"] {
+    background-position: -0px -140px
+    }
+a[href|="/bp10"], a[href|="/bpwet"] {
+    background-position: -70px -0px
+    }
+a[href|="/bp11"], a[href|="/bphungover"] {
+    background-position: -70px -70px
+    }
+a[href|="/bp12"], a[href|="/bphappy"] {
+    background-position: -70px -140px
+    }
+a[href|="/bp20"], a[href|="/bpdrunk"] {
+    background-position: -140px -0px
+    }
+a[href|="/bp21"], a[href|="/bpgross"] {
+    background-position: -140px -70px
+    }
+a[href|="/bp22"], a[href|="/bpshrug"] {
+    background-position: -140px -140px
+    }
+a[href|="/udiditchamp"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 514px;
+    height: 514px;
+    background-image: url(http://c.thumbs.redditmedia.com/PMdgnGKRiU0jZu2n.png)
+    }
+/* USER TEXT FOR SPECIAL PONIES */
+/* Adding after-text to somebody's name? Add them here. */
+a.author[href$=Gyroburner]:after, a.author[href$=Some_wanderer]:after {
+    color: #000;
+    font-size: 10px !important;
+    letter-spacing: normal
+    }
+/* After-name text goes here. */
+a.author[href$=Gyroburner]:after {
+    content: " [winner of the synchtube endurance test]"
+    }
+a.author[href$=Some_wanderer]:after {
+    content: " [900th drunk little pony]"
+    }

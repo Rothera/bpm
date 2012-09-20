@@ -1,0 +1,970 @@
+/******
+A huge thanks to the mane sub and Orschmann for loaning the flair CSS and their emotes
+******/
+/* announcement sticky */
+div.content {
+    margin-top: 50px
+    }
+.titlebox form {
+    position: static
+    }
+.side h3:nth-of-type(1) {
+    z-index: 2;
+    position: fixed;
+    display: block;
+    top: 19px;
+    left: 265px;
+    background-color: lightyellow;
+    color: black;
+    text-align: left;
+    border-radius: 4px;
+    padding: 2px 4px 0px 2px
+    }
+div a[href|="http://www.reddit.com/r/mylittleanime//comments/rpp9u/mylittleanime_anouncements_thread/"] {
+    color: #F70077
+    }
+div#header-bottom-right {
+    z-index: 3 !important
+    }
+/* To keep the top bar visible */
+div#header {
+    z-index: 2;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    color: pink;
+    background: url(http://e.thumbs.redditmedia.com/9TvgBQHZTWpV838p.jpg)
+    }
+/* adjusts spacing without upsetting RES */
+BODY:before {
+    content: "This text is hidden";
+    color: white;
+    font-size: 735%;
+    text-align: right
+    }
+/* flair request thread, emote guide, and script link edits */
+a[href|="http://www.reddit.com/r/mylittleanime/comments/rlho5/official_flair_and_emote_request_thread/"], a[href|="http://redd.it/qxhwe"], a[href|="http://userscripts.org/scripts/show/129937"] {
+    color: #F70077;
+    font-size: 80%
+    }
+/* Renaming readers */
+.titlebox .word {
+    display: none
+    }
+.titlebox .number:after {
+    content: " otaku bronies"
+    }
+/* header edits */
+.pagename {
+    vertical-align: top;
+    margin-left: 5px;
+    background: lightyellow;
+    border-radius: 4px
+    }
+.pagename a {
+    vertical-align: top;
+    left: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: lightyellow;
+    color: black
+    }
+div#header-bottom-left .tabmenu {
+    position: absolute;
+    left: 135px;
+    top: 53px
+    }
+#header-img {
+    margin-left: 2px
+    }
+/* add footers */
+.footer-parent {
+    background: url(http://b.thumbs.redditmedia.com/lZLjhJXMf4O4IZTC.png) no-repeat bottom right;
+    display: block
+    }
+.footer-parent:before {
+    content: url(http://d.thumbs.redditmedia.com/wgJEfKWe-5tckaP-.png);
+    float: left;
+    position: relative;
+    display: inline;
+    bottom: -87px
+    }
+/*default styles*/
+BODY {
+    color: green;
+    background: url(http://a.thumbs.redditmedia.com/kqzDPsyYOmMoLo30.png) no-repeat fixed left top
+    }
+/* What appears black */
+.link .usertext, a.author, a.visited, .md p, md H1, .tagline .submitter, .thing .title.click {
+    color: black
+    }
+.thing .title.loggedin.click {
+    color: pink !important;
+    display: inline-block
+    }
+/* queue items */
+.odd, .even {
+    background: url(http://a.thumbs.redditmedia.com/zjuBr90FzZsbCqXB.png)
+    }
+.odd:hover, .even:hover {
+    background: lightyellow
+    }
+/* sidebar styles */
+div.side {
+    background: lightyellow;
+    color: green !important;
+    padding: 5px 5px 0pt;
+    display: inline-block
+    }
+/* non-sidebar elements added for coloring ease */
+.titlebox form.flairtoggle, .tabmenu li a {
+    background: lightyellow;
+    color: #F70077
+    }
+.titlebox H1 a, .thing .title.loggedin {
+    color: #F70077
+    }
+.sidebox .spacer {
+    background: transparent
+    }
+/* Submit form hacks */
+.content .spacer {
+    margin-top: -10px
+    }
+.formtabs-content {
+    vertical-align: top
+    }
+.formtabs-content .infobar {
+    display: none !important
+    }
+div#title-field.roundfield:after {
+    content: "Be sure to tag NSFW";
+    font-size: 80%
+    }
+div#reddit-field.roundfield:after {
+    content: "Some posts don't show up right away. If it has been a couple minutes and your submission isn't showing, message the mods!"
+    }
+.tabmenu.formtab a {
+    font-size: 120%
+    }
+.tabmenu.formtab.selected a {
+    font-size: 150%
+    }
+.approval-checkmark {
+    display: none
+    }
+.morelink .nub {
+    background-image: url(http://e.thumbs.redditmedia.com/5Idi02gXB7FoO8hF.png);
+    background-position: -76px -472px;
+    background-color: lightyellow
+    }
+/**** Submit a link edits ****/
+.sidebox .subtitle:before {
+    display: block;
+    clear: none;
+    content: "pony animè, animè ponies, pmvs, animè-pony analysis, ponimè, ponimè...";
+    color: dimgray;
+    font-size: 8pt !important
+    }
+.sidebox .subtitle {
+    font-size: 0px
+    }
+.sidebox.create {
+    display: none
+    }
+.sidebox.submit .spacer a {
+    background-image: url(http://e.thumbs.redditmedia.com/149HuNFgP_1s4vmL.png);
+    background-position: -0px -0px;
+    background-repeat: no-repeat
+    }
+/*Self-Post Image, No Image, Spoiler Image*/
+.thumbnail.self, .thumbnail.default {
+    background-image: url(http://a.thumbs.redditmedia.com/80LQe5R6KdUvA5Ex.png) !important
+    }
+.thumbnail.self {
+    background-position: 0px -120px !important
+    }
+.thumbnail.nsfw {
+    background: url(http://f.thumbs.redditmedia.com/HU3lPtMQlbI-tboA.png)
+    }
+.thumbnail.default {
+    background-position: 0px -70px !important
+    }
+/* Chrome bug fix for emotes */
+.usertext-body a {
+    display: inline-block
+    }
+/***Custom Emotes***/
+/* Emote table manipulation */
+.side .md table:nth-of-type(2), .side .md table:nth-of-type(3), .side .md table:nth-of-type(4), .side .md table:nth-of-type(5), .side .md table:nth-of-type(6) {
+    display: none
+    }
+.side .md:hover table:nth-of-type(2), .side .md:hover table:nth-of-type(3), .side .md:hover table:nth-of-type(4), .side .md:hover table:nth-of-type(5), .side .md:hover table:nth-of-type(6) {
+    display: block
+    }
+/* Spoiler Emote */
+a[href|="/s"] {
+    display: inline-block;
+    clear: none;
+    float: none;
+    width: 70px;
+    height: 13px;
+    background-image: url(http://a.thumbs.redditmedia.com/80LQe5R6KdUvA5Ex.png) !important
+    }
+a[href|="/chi00"], a[href|="/chi01"], a[href|="/chi02"], a[href|="/chi03"], a[href|="/chi04"], a[href|="/chi05"], a[href|="/chi06"], a[href|="/chi10"], a[href|="/chi11"], a[href|="/chi12"], a[href|="/chi13"], a[href|="/chi14"], a[href|="/chi15"], a[href|="/chi16"], a[href|="/chi20"], a[href|="/chi21"], a[href|="/chi22"], a[href|="/chi23"], a[href|="/chi24"], a[href|="/chi25"], a[href|="/chi26"], a[href|="/fshug"], a[href|="/rphug"], a[href|="/woonajuice"], a[href|="/spookyvinyl"], a[href|="/twineck"], a[href|="/twifuzz"], a[href|="/nurse"], a[href|="/foo"], a[href|="/comeatmebro"], a[href|="/scaredaloo"], a[href|="/moefs"], a[href|="/chubbyrar"], a[href|="/sadlyra"], a[href|="/muahahah"], a[href|="/blushhug"], a[href|="/sailortwi"], a[href|="/squintyvinyl"], a[href|="/chikarma"], a[href|="/chidissentia"], a[href|="/chiapathia"] {
+    display: inline-block;
+    clear: none;
+    float: none;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://f.thumbs.redditmedia.com/QyI-g91Jyi2TnG7_.png) !important
+    }
+/***Reverse Custom Emotes***/
+a[href|="/rchi00"], a[href|="/rchi01"], a[href|="/rchi02"], a[href|="/rchi03"], a[href|="/rchi04"], a[href|="/rchi05"], a[href|="/rchi06"], a[href|="/rchi10"], a[href|="/rchi11"], a[href|="/rchi12"], a[href|="/rchi13"], a[href|="/rchi14"], a[href|="/rchi15"], a[href|="/rchi16"], a[href|="/rchi20"], a[href|="/chi21"], a[href|="/chi22"], a[href|="/chi23"], a[href|="/chi24"], a[href|="/chi25"], a[href|="/rchi26"], a[href|="/rfshug"], a[href|="/rrphug"], a[href|="/rwoonajuice"], a[href|="/rspookyvinyl"], a[href|="/rtwineck"], a[href|="/rtwifuzz"], a[href|="/rnurse"], a[href|="/rfoo"], a[href|="/rcomeatmebro"], a[href|="/rscaredaloo"], a[href|="/rmoefs"], a[href|="/rchubbyrar"], a[href|="/rsadlyra"], a[href|="/rmuahahah"], a[href|="/rblushhug"], a[href|="/rsailortwi"], a[href|="/rsquintyvinyl"], a[href|="/rchikarma"], a[href|="/rchidissentia"], a[href|="/rchiapathia"] {
+    display: inline-block;
+    clear: none;
+    float: none;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://b.thumbs.redditmedia.com/EclcMZPl5ezADexg.png) !important
+    }
+/***maps***/
+a[href|="/chi00"], a[href|="/rchi00"], a[href|="/fshug"], a[href|="/rfshug"] {
+    background-position: -0px -0px
+    }
+a[href|="/chi01"], a[href|="/rchi01"], a[href|="/twineck"], a[href|="/rtwineck"] {
+    background-position: -0px -70px
+    }
+a[href|="/chi02"], a[href|="/rchi02"], a[href|="/comeatmebro"], a[href|="/rcomeatmebro"] {
+    background-position: -0px -140px
+    }
+a[href|="/chi03"], a[href|="/rchi03"], a[href|="/scaredaloo"], a[href|="/rscaredaloo"] {
+    background-position: -0px -210px
+    }
+a[href|="/chi04"], a[href|="/rchi04"], a[href|="/sadlyra"], a[href|="/rsadlyra"] {
+    background-position: -0px -280px
+    }
+a[href|="/chi05"], a[href|="/rchi05"], a[href|="/spookyvinyl"], a[href|="/rspookyvinyl"] {
+    background-position: -0px -350px
+    }
+a[href|="/chi06"], a[href|="/rchi06"], a[href|="/chikarma"], a[href|="/rchikarma"] {
+    background-position: -0px -420px
+    }
+a[href|="/chi10"], a[href|="/rchi10"], a[href|="/blushhug"], a[href|="/rblushhug"] {
+    background-position: -70px -0px
+    }
+a[href|="/chi11"], a[href|="/rchi11"], a[href|="/twifuzz"], a[href|="/rtwifuzz"] {
+    background-position: -70px -70px
+    }
+a[href|="/chi12"], a[href|="/rchi12"], a[href|="/rphug"], a[href|="/rrphug"] {
+    background-position: -70px -140px
+    }
+a[href|="/chi13"], a[href|="/rchi13"], a[href|="/foo"], a[href|="/rfoo"] {
+    background-position: -70px -210px
+    }
+a[href|="/chi14"], a[href|="/rchi14"], a[href|="/muahahah"], a[href|="/rmuahahah"] {
+    background-position: -70px -280px
+    }
+a[href|="/chi15"], a[href|="/rchi15"], a[href|="/squintyvinyl"], a[href|="/rsquintyvinyl"] {
+    background-position: -70px -350px
+    }
+a[href|="/chi16"], a[href|="/rchi16"], a[href|="/chidissentia"], a[href|="/rchidissentia"] {
+    background-position: -70px -420px
+    }
+a[href|="/chi20"], a[href|="/rchi20"], a[href|="/moefs"], a[href|="/rmoefs"] {
+    background-position: -140px -0px
+    }
+a[href|="/chi21"], a[href|="/rchi21"], a[href|="/sailortwi"], a[href|="/rsailortwi"] {
+    background-position: -140px -70px
+    }
+a[href|="/chi22"], a[href|="/rchi22"], a[href|="/chubbyrar"], a[href|="/rchubbyrar"] {
+    background-position: -140px -140px
+    }
+a[href|="/chi23"], a[href|="/rchi23"], a[href|="/evilbelle"], a[href|="/revilbelle"] {
+    background-position: -140px -210px
+    }
+a[href|="/chi24"], a[href|="/rchi24"], a[href|="/woonajuice"], a[href|="/rwoonajuice"] {
+    background-position: -140px -280px
+    }
+a[href|="/chi25"], a[href|="/rchi25"], a[href|="/nurse"], a[href|="/rnurse"] {
+    background-position: -140px -350px
+    }
+a[href|="/chi26"], a[href|="/rchi26"], a[href|="/chiapathia"], a[href|="/rchiapathia"] {
+    background-position: -140px -420px
+    }
+/*** Super-top-secret emote list. YOU SEE NOTHING!!! ***/
+a[href|="/plotattack"], a[href|="/iamaprincess"] {
+    display: inline-block;
+    clear: none;
+    float: none;
+    width: 120px;
+    height: 70px;
+    background-image: url(http://b.thumbs.redditmedia.com/3Eg_KT2eq-k34srC.png) !important
+    }
+a[href|="/plotattack"] {
+    background-position: -0px -70px
+    }
+a[href|="/iamaprincess"] {
+    background-position: -0px -140px
+    }
+/*** Mane Sub Emotes ***/
+/***********
+B Emoticons
+***********/
+a[href|="/b00"], a[href|="/b01"], a[href|="/b02"], a[href|="/b03"], a[href|="/b04"], a[href|="/b05"], a[href|="/b06"], a[href|="/b07"], a[href|="/b08"], a[href|="/b09"], a[href|="/b10"], a[href|="/b11"], a[href|="/b12"], a[href|="/b13"], a[href|="/b14"], a[href|="/b15"], a[href|="/b16"], a[href|="/b17"], a[href|="/b18"], a[href|="/b19"], a[href|="/b20"], a[href|="/b21"], a[href|="/b22"], a[href|="/b23"], a[href|="/b24"], a[href|="/b25"], a[href|="/b26"], a[href|="/b27"], a[href|="/b28"], a[href|="/b29"], a[href|="/b30"], a[href|="/b31"], a[href|="/b32"], a[href|="/b33"], a[href|="/b34"], a[href|="/b35"], a[href|="/b36"], a[href|="/b37"], a[href|="/b38"], a[href|="/b39"], a[href|="/flutterfear"], a[href|="/ajcower"], a[href|="/fluttersrs"], a[href|="/ppshrug"], a[href|="/fluttershh"], a[href|="/ajugh"], a[href|="/trixiesmug"], a[href|="/ajwut"], a[href|="/abwut"], a[href|="/rarityjudge"], a[href|="/ppboring"], a[href|="/ajsly"], a[href|="/raritydress"], a[href|="/spikenervous"], a[href|="/newrainbowdash"], a[href|="/flutteryay"], a[href|="/raritywut"], a[href|="/flutterwink"], a[href|="/twisquint"], a[href|="/manspike"], a[href|="/rarityprimp"], a[href|="/rarityyell"], a[href|="/eeyup"], a[href|="/takealetter"], a[href|="/noooo"], a[href|="/squintyjack"], a[href|="/dumbfabric"], a[href|="/rarityannoyed"], a[href|="/raritywhine"], a[href|="/cockatrice"], a[href|="/twirage"], a[href|="/fluttershy"], a[href|="/rdsmile"], a[href|="/rdwut"], a[href|="/dj"], a[href|="/threedog"], a[href|="/spikepushy"], a[href|="/raritywhy"], a[href|="/soawesome"], a[href|="/rdcool"], a[href|="/facehoof"], a[href|="/ppseesyou"] {
+    display: inline-block;
+    clear: none;
+    float: none;
+    width: 50px;
+    height: 50px;
+    background-image: url(http://e.thumbs.redditmedia.com/SdD3wwCBFtlQDVx4.png) !important
+    }
+a[href|="/rb00"], a[href|="/rb01"], a[href|="/rb02"], a[href|="/rb03"], a[href|="/rb04"], a[href|="/rb05"], a[href|="/rb06"], a[href|="/rb07"], a[href|="/rb08"], a[href|="/rb09"], a[href|="/rb10"], a[href|="/rb11"], a[href|="/rb12"], a[href|="/rb13"], a[href|="/rb14"], a[href|="/rb15"], a[href|="/rb16"], a[href|="/rb17"], a[href|="/rb18"], a[href|="/rb19"], a[href|="/rb20"], a[href|="/rb21"], a[href|="/rb22"], a[href|="/rb23"], a[href|="/rb24"], a[href|="/rb25"], a[href|="/rb26"], a[href|="/rb27"], a[href|="/rb28"], a[href|="/rb29"], a[href|="/rb30"], a[href|="/rb31"], a[href|="/rb32"], a[href|="/rb33"], a[href|="/rb34"], a[href|="/rb35"], a[href|="/rb36"], a[href|="/rb37"], a[href|="/rb38"], a[href|="/rb39"], a[href|="/rflutterfear"], a[href|="/rajcower"], a[href|="/rfluttersrs"], a[href|="/rppshrug"], a[href|="/rfluttershh"], a[href|="/rajugh"], a[href|="/rtrixiesmug"], a[href|="/rajwut"], a[href|="/rabwut"], a[href|="/rrarityjudge"], a[href|="/rppboring"], a[href|="/rajsly"], a[href|="/rraritydress"], a[href|="/rspikenervous"], a[href|="/rnewrainbowdash"], a[href|="/rflutteryay"], a[href|="/rraritywut"], a[href|="/rflutterwink"], a[href|="/rtwisquint"], a[href|="/rmanspike"], a[href|="/rrarityprimp"], a[href|="/rrarityyell"], a[href|="/reeyup"], a[href|="/rtakealetter"], a[href|="/rnoooo"], a[href|="/rsquintyjack"], a[href|="/rdumbfabric"], a[href|="/rrarityannoyed"], a[href|="/rraritywhine"], a[href|="/rcockatrice"], a[href|="/rtwirage"], a[href|="/rfluttershy"], a[href|="/rrdsmile"], a[href|="/rrdwut"], a[href|="/rdj"], a[href|="/rthreedog"], a[href|="/rspikepushy"], a[href|="/rraritywhy"], a[href|="/rsoawesome"], a[href|="/rrdcool"], a[href|="/rfacehoof"], a[href|="/rppseesyou"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-image: url(http://f.thumbs.redditmedia.com/I7qbwaE3bctckwOk.png) !important
+    }
+a[href|="/b00"], a[href|="/rb00"], a[href|="/flutterfear"], a[href|="/rflutterfear"] {
+    background-position: -0px -0px
+    }
+a[href|="/b01"], a[href|="/rb01"], a[href|="/ajcower"], a[href|="/rajcower"] {
+    background-position: -0px -50px
+    }
+a[href|="/b02"], a[href|="/rb02"], a[href|="/fluttersrs"], a[href|="/rfluttersrs"] {
+    background-position: -0px -100px
+    }
+a[href|="/b03"], a[href|="/rb03"], a[href|="/ppshrug"], a[href|="/rppshrug"] {
+    background-position: -0px -150px
+    }
+a[href|="/b04"], a[href|="/rb04"], a[href|="/fluttershh"], a[href|="/rfluttershh"] {
+    background-position: -0px -200px
+    }
+a[href|="/b05"], a[href|="/rb05"], a[href|="/ajugh"], a[href|="/rajugh"] {
+    background-position: -0px -250px
+    }
+a[href|="/b06"], a[href|="/rb06"], a[href|="/trixiesmug"], a[href|="/rtrixiesmug"] {
+    background-position: -0px -300px
+    }
+a[href|="/b07"], a[href|="/rb07"], a[href|="/ajwut"], a[href|="/rajwut"] {
+    background-position: -0px -350px
+    }
+a[href|="/b08"], a[href|="/rb08"], a[href|="/abwut"], a[href|="/rabwut"] {
+    background-position: -0px -400px
+    }
+a[href|="/b09"], a[href|="/rb09"], a[href|="/rarityjudge"], a[href|="/rrarityjudge"] {
+    background-position: -0px -450px
+    }
+a[href|="/b10"], a[href|="/rb10"], a[href|="/ppboring"], a[href|="/rppboring"] {
+    background-position: -50px -0px
+    }
+a[href|="/b11"], a[href|="/rb11"], a[href|="/ajsly"], a[href|="/rajsly"] {
+    background-position: -50px -50px
+    }
+a[href|="/b12"], a[href|="/rb12"], a[href|="/raritydress"], a[href|="/rraritydress"] {
+    background-position: -50px -100px
+    }
+a[href|="/b13"], a[href|="/rb13"], a[href|="/spikenervous"], a[href|="/rspikenervous"], a[href|="/newrainbowdash"], a[href|="/rnewrainbowdash"] {
+    background-position: -50px -150px
+    }
+a[href|="/b14"], a[href|="/rb14"], a[href|="/flutteryay"], a[href|="/rflutteryay"] {
+    background-position: -50px -200px
+    }
+a[href|="/b15"], a[href|="/rb15"], a[href|="/raritywut"], a[href|="/rraritywut"] {
+    background-position: -50px -250px
+    }
+a[href|="/b16"], a[href|="/rb16"], a[href|="/flutterwink"], a[href|="/rflutterwink"] {
+    background-position: -50px -300px
+    }
+a[href|="/b17"], a[href|="/rb17"], a[href|="/twisquint"], a[href|="/rtwisquint"] {
+    background-position: -50px -350px
+    }
+a[href|="/b18"], a[href|="/rb18"], a[href|="/manspike"], a[href|="/rmanspike"] {
+    background-position: -50px -400px
+    }
+a[href|="/b19"], a[href|="/rb19"], a[href|="/rarityprimp"], a[href|="/rrarityprimp"] {
+    background-position: -50px -450px
+    }
+a[href|="/b20"], a[href|="/rb20"], a[href|="/rarityyell"], a[href|="/rrarityyell"] {
+    background-position: -100px -0px
+    }
+a[href|="/b21"], a[href|="/rb21"], a[href|="/eeyup"], a[href|="/reeyup"] {
+    background-position: -100px -50px
+    }
+a[href|="/b22"], a[href|="/rb22"], a[href|="/takealetter"], a[href|="/rtakealetter"] {
+    background-position: -100px -100px
+    }
+a[href|="/b23"], a[href|="/rb23"], a[href|="/noooo"], a[href|="/rnoooo"] {
+    background-position: -100px -150px
+    }
+a[href|="/b24"], a[href|="/rb24"], a[href|="/squintyjack"], a[href|="/rsquintyjack"] {
+    background-position: -100px -200px
+    }
+a[href|="/b25"], a[href|="/rb25"], a[href|="/dumbfabric"], a[href|="/rdumbfabric"] {
+    background-position: -100px -250px
+    }
+a[href|="/b26"], a[href|="/rb26"], a[href|="/rarityannoyed"], a[href|="/rrarityannoyed"] {
+    background-position: -100px -300px
+    }
+a[href|="/b27"], a[href|="/rb27"], a[href|="/raritywhine"], a[href|="/rraritywhine"] {
+    background-position: -100px -350px
+    }
+a[href|="/b28"], a[href|="/rb28"], a[href|="/cockatrice"], a[href|="/rcockatrice"] {
+    background-position: -100px -400px
+    }
+a[href|="/b29"], a[href|="/rb29"], a[href|="/twirage"], a[href|="/rtwirage"] {
+    background-position: -100px -450px
+    }
+a[href|="/b30"], a[href|="/rb30"], a[href|="/fluttershy"], a[href|="/rfluttershy"] {
+    background-position: -150px -0px
+    }
+a[href|="/b31"], a[href|="/rb31"], a[href|="/rdsmile"], a[href|="/rrdsmile"] {
+    background-position: -150px -50px
+    }
+a[href|="/b32"], a[href|="/rb32"], a[href|="/rdwut"], a[href|="/rrdwut"] {
+    background-position: -150px -100px
+    }
+a[href|="/b33"], a[href|="/rb33"], a[href|="/dj"], a[href|="/rdj"], a[href|="/threedog"], a[href|="/rthreedog"] {
+    background-position: -150px -150px
+    }
+a[href|="/b34"], a[href|="/rb34"], a[href|="/spikepushy"], a[href|="/rspikepushy"] {
+    background-position: -150px -200px
+    }
+a[href|="/b35"], a[href|="/rb35"], a[href|="/raritywhy"], a[href|="/rraritywhy"] {
+    background-position: -150px -250px
+    }
+a[href|="/b36"], a[href|="/rb36"], a[href|="/soawesome"], a[href|="/rsoawesome"] {
+    background-position: -150px -300px
+    }
+a[href|="/b37"], a[href|="/rb37"], a[href|="/rdcool"], a[href|="/rrdcool"] {
+    background-position: -150px -350px
+    }
+a[href|="/b38"], a[href|="/rb38"], a[href|="/facehoof"], a[href|="/rfacehoof"] {
+    background-position: -150px -400px
+    }
+a[href|="/b39"], a[href|="/rb39"], a[href|="/ppseesyou"], a[href|="/rppseesyou"] {
+    background-position: -150px -450px
+    }
+/*** C Emotes ***/
+a[href|="/c00"], a[href|="/c01"], a[href|="/c02"], a[href|="/c03"], a[href|="/c04"], a[href|="/c05"], a[href|="/c06"], a[href|="/c07"], a[href|="/c08"], a[href|="/c09"], a[href|="/c10"], a[href|="/c11"], a[href|="/c12"], a[href|="/c13"], a[href|="/c14"], a[href|="/c15"], a[href|="/c16"], a[href|="/c17"], a[href|="/c18"], a[href|="/c19"], a[href|="/c20"], a[href|="/c21"], a[href|="/c22"], a[href|="/c23"], a[href|="/c24"], a[href|="/c25"], a[href|="/c26"], a[href|="/c27"], a[href|="/c28"], a[href|="/c29"], a[href|="/rdsitting"], a[href|="/twismug"], a[href|="/ohhi"], a[href|="/flutterblush"], a[href|="/ajfrown"], a[href|="/raritysad"], a[href|="/louder"], a[href|="/pinkamina"], a[href|="/scootaloo"], a[href|="/allmybits"], a[href|="/rdhappy"], a[href|="/twismile"], a[href|="/party"], a[href|="/gross"], a[href|="/hmmm"], a[href|="/fabulous"], a[href|="/lunasad"], a[href|="/loveme"], a[href|="/celestia"], a[href|="/zecora"], a[href|="/rdannoyed"], a[href|="/twistare"], a[href|="/hahaha"], a[href|="/derpyhappy"], a[href|="/joy"], a[href|="/derp"], a[href|="/derpyshock"], a[href|="/lunagasp"], a[href|="/angel"], a[href|="/photofinish"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://b.thumbs.redditmedia.com/mRM0EMQwBonm0jT7.png) !important
+    }
+a[href|="/rc00"], a[href|="/rc01"], a[href|="/rc02"], a[href|="/rc03"], a[href|="/rc04"], a[href|="/rc05"], a[href|="/rc06"], a[href|="/rc07"], a[href|="/rc08"], a[href|="/rc09"], a[href|="/rc10"], a[href|="/rc11"], a[href|="/rc12"], a[href|="/rc13"], a[href|="/rc14"], a[href|="/rc15"], a[href|="/rc16"], a[href|="/rc17"], a[href|="/rc18"], a[href|="/rc19"], a[href|="/rc20"], a[href|="/rc21"], a[href|="/rc22"], a[href|="/rc23"], a[href|="/rc24"], a[href|="/rc25"], a[href|="/rc26"], a[href|="/rc27"], a[href|="/rc28"], a[href|="/rc29"], a[href|="/rrdsitting"], a[href|="/rtwismug"], a[href|="/rohhi"], a[href|="/rflutterblush"], a[href|="/rajfrown"], a[href|="/rraritysad"], a[href|="/rlouder"], a[href|="/rpinkamina"], a[href|="/rscootaloo"], a[href|="/rallmybits"], a[href|="/rrdhappy"], a[href|="/rtwismile"], a[href|="/rparty"], a[href|="/rgross"], a[href|="/rhmmm"], a[href|="/rfabulous"], a[href|="/rlunasad"], a[href|="/rloveme"], a[href|="/rcelestia"], a[href|="/rzecora"], a[href|="/rrdannoyed"], a[href|="/rtwistare"], a[href|="/rhahaha"], a[href|="/rderpyhappy"], a[href|="/rjoy"], a[href|="/rderp"], a[href|="/rderpyshock"], a[href|="/rlunagasp"], a[href|="/rangel"], a[href|="/rphotofinish"] {
+    display: inline-block;
+    clear: none;
+    float: none;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://b.thumbs.redditmedia.com/mRM0EMQwBonm0jT7.png) !important
+    }
+a[href|="/c00"], a[href|="/rc00"], a[href|="/rdsitting"], a[href|="/rrdsitting"] {
+    background-position: -0px -0px
+    }
+a[href|="/c01"], a[href|="/rc01"], a[href|="/twismug"], a[href|="/rtwismug"] {
+    background-position: -0px -70px
+    }
+a[href|="/c02"], a[href|="/rc02"], a[href|="/ohhi"], a[href|="/rohhi"] {
+    background-position: -0px -140px
+    }
+a[href|="/c03"], a[href|="/rc03"], a[href|="/flutterblush"], a[href|="/rflutterblush"] {
+    background-position: -0px -210px
+    }
+a[href|="/c04"], a[href|="/rc04"], a[href|="/ajfrown"], a[href|="/rajfrown"] {
+    background-position: -0px -280px
+    }
+a[href|="/c05"], a[href|="/rc05"], a[href|="/raritysad"], a[href|="/rraritysad"] {
+    background-position: -0px -350px
+    }
+a[href|="/c06"], a[href|="/rc06"], a[href|="/louder"], a[href|="/rlouder"] {
+    background-position: -0px -420px
+    }
+a[href|="/c07"], a[href|="/rc07"], a[href|="/pinkamina"], a[href|="/rpinkamina"] {
+    background-position: -0px -490px
+    }
+a[href|="/c08"], a[href|="/rc08"], a[href|="/scootaloo"], a[href|="/rscootaloo"] {
+    background-position: -0px -560px
+    }
+a[href|="/c09"], a[href|="/rc09"], a[href|="/allmybits"], a[href|="/rallmybits"] {
+    background-position: -0px -630px
+    }
+a[href|="/c10"], a[href|="/rc10"], a[href|="/rdhappy"], a[href|="/rrdhappy"] {
+    background-position: -70px -0px
+    }
+a[href|="/c11"], a[href|="/rc11"], a[href|="/twismile"], a[href|="/rtwismile"] {
+    background-position: -70px -70px
+    }
+a[href|="/c12"], a[href|="/rc12"], a[href|="/party"], a[href|="/rparty"] {
+    background-position: -70px -140px
+    }
+a[href|="/c13"], a[href|="/rc13"], a[href|="/gross"], a[href|="/rgross"] {
+    background-position: -70px -210px
+    }
+a[href|="/c14"], a[href|="/rc14"], a[href|="/hmmm"], a[href|="/rhmmm"] {
+    background-position: -70px -280px
+    }
+a[href|="/c15"], a[href|="/rc15"], a[href|="/fabulous"], a[href|="/rfabulous"] {
+    background-position: -70px -350px
+    }
+a[href|="/c16"], a[href|="/rc16"], a[href|="/lunasad"], a[href|="/rlunasad"] {
+    background-position: -70px -420px
+    }
+a[href|="/c17"], a[href|="/rc17"], a[href|="/loveme"], a[href|="/rloveme"] {
+    background-position: -70px -490px
+    }
+a[href|="/c18"], a[href|="/rc18"], a[href|="/celestia"], a[href|="/rcelestia"] {
+    background-position: -70px -560px
+    }
+a[href|="/c19"], a[href|="/rc19"], a[href|="/zecora"], a[href|="/rzecora"] {
+    background-position: -70px -630px
+    }
+a[href|="/c20"], a[href|="/rc20"], a[href|="/rdannoyed"], a[href|="/rrdannoyed"] {
+    background-position: -140px -0px
+    }
+a[href|="/c21"], a[href|="/rc21"], a[href|="/twistare"], a[href|="/rtwistare"] {
+    background-position: -140px -70px
+    }
+a[href|="/c22"], a[href|="/rc22"], a[href|="/hahaha"], a[href|="/rhahaha"] {
+    background-position: -140px -140px
+    }
+a[href|="/c23"], a[href|="/rc23"], a[href|="/derpyhappy"], a[href|="/rderpyhappy"] {
+    background-position: -140px -210px
+    }
+a[href|="/c24"], a[href|="/rc24"], a[href|="/joy"], a[href|="/rjoy"] {
+    background-position: -140px -280px
+    }
+a[href|="/c25"], a[href|="/rc25"], a[href|="/derp"], a[href|="/rderp"] {
+    background-position: -140px -350px
+    }
+a[href|="/c26"], a[href|="/rc26"], a[href|="/derpyshock"], a[href|="/rderpyshock"] {
+    background-position: -140px -420px
+    }
+a[href|="/c27"], a[href|="/rc27"], a[href|="/lunagasp"], a[href|="/rlunagasp"] {
+    background-position: -140px -490px
+    }
+a[href|="/c28"], a[href|="/rc28"], a[href|="/angel"], a[href|="/rangel"] {
+    background-position: -140px -560px
+    }
+a[href|="/c29"], a[href|="/rc29"], a[href|="/photofinish"], a[href|="/rphotofinish"] {
+    background-position: -140px -630px
+    }
+/**************
+A Emoticons
+**************/
+a[href|="/swagintosh"], a[href|="/a24"] {
+    display: inline-block;
+    clear: none;
+    float: none;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://f.thumbs.redditmedia.com/IugBi-28qMxAgVzw.png)
+    }
+a[href|="/rswagintosh"], a[href|="/ra24"] {
+    display: inline-block;
+    clear: none;
+    float: none;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://a.thumbs.redditmedia.com/ZqxffVrG2BJjyaAZ.png)
+    }
+a[href|="/a00"], a[href|="/ajlie"], a[href|="/a01"], a[href|="/a10"], a[href|="/a11"], a[href|="/a21"], a[href|="/priceless"], a[href|="/a20"], a[href|="/flutterjerk"], a[href|="/celestiamad"], a[href|="/twicrazy"], a[href|="/twipride"], a[href|="/lunateehee"], a[href|="/lunawait"], a[href|="/a02"], a[href|="/a12"], a[href|="/a22"], a[href|="/a04"], a[href|="/a14"], a[href|="/a05"], a[href|="/a15"], a[href|="/paperbagderpy"], a[href|="/paperbagwizard"], a[href|="/derpwizard"], a[href|="/a03"], a[href|="/ajhappy"], a[href|="/happlejack"], a[href|="/a13"], a[href|="/ppfear"], a[href|="/pinkiefear"], a[href|="/a23"], a[href|="/twibeam"], a[href|="/raritydaww"], a[href|="/scootacheer"], a[href|="/lootascoo"], a[href|="/ajsup"], a[href|="/ajwhatsgood"], a[href|="/flutterwhoa"], a[href|="/flutterwoah"], a[href|="/a25"], a[href|="/rdsad"], a[href|="/a06"], a[href|="/ohcomeon"], a[href|="/sbcomeon"], a[href|="/ppcute"], a[href|="/cutiepie"], a[href|="/a16"] {
+    display: inline-block;
+    clear: none;
+    float: none;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://f.thumbs.redditmedia.com/h9OrKE9t2pLEhQAA.png) !important
+    }
+a[href|="/ra00"], a[href|="/rajlie"], a[href|="/ra01"], a[href|="/ra10"], a[href|="/ra11"], a[href|="/ra21"], a[href|="/rpriceless"], a[href|="/ra20"], a[href|="/rflutterjerk"], a[href|="/rcelestiamad"], a[href|="/rtwicrazy"], a[href|="/rtwipride"], a[href|="/rlunateehee"], a[href|="/rlunawait"], a[href|="/ra02"], a[href|="/ra12"], a[href|="/ra22"], a[href|="/ra04"], a[href|="/ra14"], a[href|="/ra05"], a[href|="/ra15"], a[href|="/rpaperbagderpy"], a[href|="/rpaperbagwizard"], a[href|="/rderpwizard"], a[href|="/ra03"], a[href|="/rajhappy"], a[href|="/rhapplejack"], a[href|="/ra13"], a[href|="/rppfear"], a[href|="/rpinkiefear"], a[href|="/ra23"], a[href|="/rtwibeam"], a[href|="/rraritydaww"], a[href|="/rscootacheer"], a[href|="/rlootascoo"], a[href|="/rajsup"], a[href|="/rajwhatsgood"], a[href|="/rflutterwhoa"], a[href|="/rflutterwoah"], a[href|="/ra25"], a[href|="/rrdsad"], a[href|="/ra06"], a[href|="/rohcomeon"], a[href|="/rsbcomeon"], a[href|="/rppcute"], a[href|="/rcutiepie"], a[href|="/ra16"] {
+    display: inline-block;
+    clear: none;
+    float: none;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://a.thumbs.redditmedia.com/zmsW360ZKeEIvdfZ.png) !important
+    }
+a[href|="/a00"], a[href|="/ra00"], a[href|="/ajlie"], a[href|="/rajlie"], a[href|="/swagintosh"], a[href|="/rswagintosh"], a[href|="/a24"], a[href|="/ra24"] {
+    background-position: -0px -0px
+    }
+a[href|="/a10"], a[href|="/ra10"], a[href|="/priceless"], a[href|="/rpriceless"] {
+    background-position: -70px -0px
+    }
+a[href|="/a20"], a[href|="/ra20"], a[href|="/flutterjerk"], a[href|="/rflutterjerk"] {
+    background-position: -140px -0px
+    }
+a[href|="/a01"], a[href|="/ra01"], a[href|="/twipride"], a[href|="/rtwipride"] {
+    background-position: -0px -70px
+    }
+a[href|="/a11"], a[href|="/ra11"], a[href|="/celestiamad"], a[href|="/rcelestiamad"] {
+    background-position: -70px -70px
+    }
+a[href|="/a21"], a[href|="/ra21"], a[href|="/twicrazy"], a[href|="/rtwicrazy"] {
+    background-position: -140px -70px
+    }
+a[href|="/a02"], a[href|="/lunateehee"], a[href|="/ra02"], a[href|="/rlunateehee"] {
+    background-position: -0px -140px
+    }
+a[href|="/a12"], a[href|="/lunawait"], a[href|="/ra12"], a[href|="/rlunawait"] {
+    background-position: -70px -140px
+    }
+a[href|="/a22"], a[href|="/paperbagderpy"], a[href|="/paperbagwizard"], a[href|="/derpwizard"], a[href|="/ra22"], a[href|="/rpaperbagderpy"], a[href|="/rpaperbagwizard"], a[href|="/rderpwizard"] {
+    background-position: -140px -140px
+    }
+a[href|="/a03"], a[href|="/ajhappy"], a[href|="/happlejack"], a[href|="/ra03"], a[href|="/rajhappy"], a[href|="/rhapplejack"] {
+    background-position: -0px -210px
+    }
+a[href|="/a13"], a[href|="/ra13"], a[href|="/ppfear"], a[href|="/rppfear"], a[href|="/pinkiefear"], a[href|="/rpinkiefear"] {
+    background-position: -70px -210px
+    }
+a[href|="/a23"], a[href|="/ra23"], a[href|="/twibeam"], a[href|="/rtwibeam"] {
+    background-position: -140px -210px
+    }
+a[href|="/a04"], a[href|="/ra04"], a[href|="/raritydaww"], a[href|="/rraritydaww"] {
+    background-position: -0px -280px
+    }
+a[href|="/a14"], a[href|="/ra14"], a[href|="/scootacheer"], a[href|="/rscootacheer"], a[href|="/lootascoo"], a[href|="/rlootascoo"] {
+    background-position: -70px -280px
+    }
+a[href|="/a05"], a[href|="/ra05"], a[href|="/ajsup"], a[href|="/rajsup"], a[href|="/ajwhatsgood"], a[href|="/rajwhatsgood"] {
+    background-position: -0px -350px
+    }
+a[href|="/a15"], a[href|="/ra15"], a[href|="/flutterwhoa"], a[href|="/rflutterwhoa"], a[href|="/flutterwoah"], a[href|="/rflutterwoah"] {
+    background-position: -70px -350px
+    }
+a[href|="/a25"], a[href|="/ra25"], a[href|="/rdsad"], a[href|="/rrdsad"] {
+    background-position: -140px -350px
+    }
+a[href|="/a06"], a[href|="/ra06"], a[href|="/ohcomeon"], a[href|="/rohcomeon"], a[href|="/sbcomeon"], a[href|="/rsbcomeon"] {
+    background-position: -0px -420px
+    }
+a[href|="/a16"], a[href|="/ra16"], a[href|="/ppcute"], a[href|="/rppcute"], a[href|="/cutiepie"], a[href|="/rcutiepie"] {
+    background-position: -70px -420px
+    }
+/*** E Emotes ***/
+a[href|="/e00"], a[href|="/e01"], a[href|="/e02"], a[href|="/e03"], a[href|="/e04"], a[href|="/e05"], a[href|="/e06"], a[href|="/e07"], a[href|="/e10"], a[href|="/e11"], a[href|="/e12"], a[href|="/e13"], a[href|="/e14"], a[href|="/e15"], a[href|="/e16"], a[href|="/e17"], a[href|="/e20"], a[href|="/e21"], a[href|="/e22"], a[href|="/e23"], a[href|="/e24"], a[href|="/e25"], a[href|="/e26"], a[href|="/e27"], a[href|="/e08"], a[href|="/e18"], a[href|="/e28"], a[href|="/l00"], a[href|="/lyra"], a[href|="/t00"], a[href|="/bonbon"], a[href|="/sbstare"], a[href|="/snails"], a[href|="/rdhuh"], a[href|="/spitfire"], a[href|="/cutealoo"], a[href|="/fillytgap"], a[href|="/happyluna"], a[href|="/lunahappy"], a[href|="/sotrue"], a[href|="/wahaha"], a[href|="/berry"], a[href|="/punchdrunk"], a[href|="/absmile"], a[href|="/huhhuh"], a[href|="/dealwithit"], a[href|="/nmm"], a[href|="/blacksnooty"], a[href|="/queenmeanie"], a[href|="/hokeysmokes"], a[href|="/whooves"], a[href|="/rdsalute"], a[href|="/octavia"], a[href|="/whomeverthisis"], a[href|="/colgate"], a[href|="/cheerilee"], a[href|="/ajconfused"], a[href|="/ajbaffle"], a[href|="/ajtherapy"], a[href|="/abhuh"], a[href|="/lily"], a[href|="/thehorror"], a[href|="/twiponder"], a[href|="/spikewtf"], a[href|="/awwyeah"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://d.thumbs.redditmedia.com/FP_ipjhyH6oI5bFE.png) !important
+    }
+a[href|="/re00"], a[href|="/re01"], a[href|="/re02"], a[href|="/re03"], a[href|="/re04"], a[href|="/re05"], a[href|="/re06"], a[href|="/re07"], a[href|="/re10"], a[href|="/re11"], a[href|="/re12"], a[href|="/re13"], a[href|="/re14"], a[href|="/re15"], a[href|="/re16"], a[href|="/re17"], a[href|="/re20"], a[href|="/re21"], a[href|="/re22"], a[href|="/re23"], a[href|="/re24"], a[href|="/re25"], a[href|="/re26"], a[href|="/re27"], a[href|="/re08"], a[href|="/re18"], a[href|="/re28"], a[href|="/rl00"], a[href|="/rlyra"], a[href|="/rt00"], a[href|="/rbonbon"], a[href|="/rsbstare"], a[href|="/rsnails"], a[href|="/rrdhuh"], a[href|="/rspitfire"], a[href|="/rcutealoo"], a[href|="/rfillytgap"], a[href|="/rhappyluna"], a[href|="/rlunahappy"], a[href|="/rsotrue"], a[href|="/rwahaha"], a[href|="/rberry"], a[href|="/rpunchdrunk"], a[href|="/rabsmile"], a[href|="/rhuhhuh"], a[href|="/rdealwithit"], a[href|="/rnmm"], a[href|="/rblacksnooty"], a[href|="/rqueenmeanie"], a[href|="/rhokeysmokes"], a[href|="/rwhooves"], a[href|="/rrdsalute"], a[href|="/roctavia"], a[href|="/rwhomeverthisis"], a[href|="/rcolgate"], a[href|="/rcheerilee"], a[href|="/rajconfused"], a[href|="/rajbaffle"], a[href|="/rajtherapy"], a[href|="/rabhuh"], a[href|="/rlily"], a[href|="/rthehorror"], a[href|="/rtwiponder"], a[href|="/rspikewtf"], a[href|="/rawwyeah"] {
+    display: inline-block;
+    clear: none;
+    float: none;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://d.thumbs.redditmedia.com/FP_ipjhyH6oI5bFE.png) !important
+    }
+a[href|="/l00"], a[href|="/rl00"], a[href|="/e01"], a[href|="/re01"], a[href|="/lyra"] {
+    background-position: -0px -0px
+    }
+a[href|="/t00"], a[href|="/rt00"], a[href|="/e00"], a[href|="/re00"], a[href|="/fillytgap"], a[href|="/rfillytgap"] {
+    background-position: -70px -0px
+    }
+a[href|="/e11"], a[href|="/re11"], a[href|="/bonbon"], a[href|="/rbonbon"] {
+    background-position: -140px -0px
+    }
+a[href|="/e20"], a[href|="/re20"], a[href|="/snails"], a[href|="/rsnails"] {
+    background-position: -0px -70px
+    }
+a[href|="/e10"], a[href|="/re10"], a[href|="/rdhuh"], a[href|="/rrdhuh"] {
+    background-position: -70px -70px
+    }
+a[href|="/e21"], a[href|="/re21"], a[href|="/spitfire"], a[href|="/rspitfire"] {
+    background-position: -140px -70px
+    }
+a[href|="/e02"], a[href|="/re02"], a[href|="/cutealoo"], a[href|="/rcutealoo"] {
+    background-position: -0px -140px
+    }
+a[href|="/e12"], a[href|="/re12"], a[href|="/happyluna"], a[href|="/rhappyluna"], a[href|="/lunahappy"], a[href|="/rlunahappy"] {
+    background-position: -70px -140px
+    }
+a[href|="/e22"], a[href|="/re22"], a[href|="/sotrue"], a[href|="/rsotrue"] {
+    background-position: -140px -140px
+    }
+a[href|="/e03"], a[href|="/re03"], a[href|="/wahaha"], a[href|="/rwahaha"] {
+    background-position: -0px -210px
+    }
+a[href|="/e13"], a[href|="/re13"], a[href|="/sbstare"], a[href|="/rsbstare"] {
+    background-position: -70px -210px
+    }
+a[href|="/e23"], a[href|="/re23"], a[href|="/berry"], a[href|="/rberry"], a[href|="/punchdrunk"], a[href|="/rpunchdrunk"] {
+    background-position: -140px -210px
+    }
+a[href|="/e14"], a[href|="/re14"], a[href|="/absmile"], a[href|="/rabsmile"] {
+    background-position: -0px -280px
+    }
+a[href|="/e04"], a[href|="/re04"], a[href|="/huhhuh"], a[href|="/rhuhhuh"] {
+    background-position: -70px -280px
+    }
+a[href|="/e24"], a[href|="/re24"], a[href|="/dealwithit"], a[href|="/rdealwithit"] {
+    background-position: -140px -280px
+    }
+a[href|="/e05"], a[href|="/re05"], a[href|="/nmm"], a[href|="/blacksnooty"], a[href|="/rnmm"], a[href|="/rblacksnooty"], a[href|="/queenmeanie"], a[href|="/rqueenmeanie"], a[href|="/hokeysmokes"], a[href|="/rhokeysmokes"] {
+    background-position: -0px -350px
+    }
+a[href|="/e15"], a[href|="/re15"], a[href|="/whooves"], a[href|="/rwhooves"] {
+    background-position: -70px -350px
+    }
+a[href|="/e25"], a[href|="/re25"], a[href|="/rdsalute"], a[href|="/rrdsalute"] {
+    background-position: -140px -350px
+    }
+a[href|="/e06"], a[href|="/re06"], a[href|="/octavia"], a[href|="/whomeverthisis"], a[href|="/rwhomeverthisis"], a[href|="/roctavia"] {
+    background-position: -0px -420px
+    }
+a[href|="/e16"], a[href|="/re16"], a[href|="/colgate"], a[href|="/rcolgate"] {
+    background-position: -70px -420px
+    }
+a[href|="/e26"], a[href|="/re26"], a[href|="/cheerilee"], a[href|="/rcheerilee"] {
+    background-position: -140px -420px
+    }
+a[href|="/e07"], a[href|="/re07"], a[href|="/ajconfused"], a[href|="/rajconfused"], a[href|="/ajbaffle"], a[href|="/rajbaffle"], a[href|="/ajtherapy"], a[href|="/rajtherapy"] {
+    background-position: -0px -490px
+    }
+a[href|="/e17"], a[href|="/re17"], a[href|="/abhuh"], a[href|="/rabhuh"] {
+    background-position: -70px -490px
+    }
+a[href|="/e27"], a[href|="/re27"], a[href|="/lily"], a[href|="/rlily"], a[href|="/thehorror"], a[href|="/rthehorror"] {
+    background-position: -140px -490px
+    }
+a[href|="/e08"], a[href|="/re08"], a[href|="/twiponder"], a[href|="/rtwiponder"] {
+    background-position: -0px -560px
+    }
+a[href|="/e18"], a[href|="/re18"], a[href|="/spikewtf"], a[href|="/rspikewtf"] {
+    background-position: -70px -560px
+    }
+a[href|="/e28"], a[href|="/re28"], a[href|="/awwyeah"], a[href|="/rawwyeah"] {
+    background-position: -140px -560px
+    }
+/* Space thingy */
+a[href|="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }
+/*in-line emotes -in and -inp, e.g. texttext[](/b24-in)texttext*/
+a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
+    float: none !important;
+    display: inline-block !important
+    }
+/**** Flair ****/
+/* User Icons */
+.flair {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(http://b.thumbs.redditmedia.com/T4ccJ2kuNqMs7ECU.png);
+    display: inline-block;
+    width: 16px;
+    height: 16px
+    }
+.flair-rainbowdash {
+    background-position: 0px 0px
+    }
+.flair-twilight {
+    background-position: -16px 0px
+    }
+.flair-fluttershy {
+    background-position: 0px -16px
+    }
+.flair-applejack {
+    background-position: -16px -16px
+    }
+.flair-pinkiepie {
+    background-position: 0px -32px
+    }
+.flair-pinkiepiecmc {
+    background-position: 0px -32px
+    }
+.flair-rarity {
+    background-position: -16px -32px
+    }
+.flair-trixie {
+    background-position: 0px -48px
+    }
+.flair-cmc {
+    background-position: -16px -48px
+    }
+.flair-luna {
+    background-position: 0px -64px
+    }
+.flair-celestia {
+    background-position: -16px -64px
+    }
+.flair-derpy {
+    background-position: 0px -80px
+    }
+.flair-vinyl {
+    background-position: -16px -80px
+    }
+.flair-octavia {
+    background-position: 0px -112px
+    }
+.flair-doctor {
+    background-position: -16px -112px
+    }
+.flair-wonderbolts {
+    background-position: -0px -224px
+    }
+.flair-shadowbolts {
+    background-position: -16px -224px
+    }
+.flair-daring {
+    background-position: -16px -288px
+    }
+.flair-scootaloo {
+    background-position: -0px -240px
+    }
+.flair-blankflank {
+    background-image: none;
+    height: 0;
+    width: 0
+    }
+/* unused flair */
+.flair-lyra {
+    background-position: 0px -96px
+    }
+.flair-bonbon {
+    background-position: -16px -96px
+    }
+.flair-mac {
+    background-position: 0px -128px
+    }
+.flair-colgate {
+    background-position: -16px -128px
+    }
+.flair-berry {
+    background-position: -0px -144px
+    }
+.flair-pokey {
+    background-position: -16px -144px
+    }
+.flair-roseluck {
+    background-position: -0px -160px
+    }
+.flair-zecora {
+    background-position: -16px -160px
+    }
+.flair-seafoam {
+    background-position: -0px -176px
+    }
+.flair-carrottop {
+    background-position: -16px -176px
+    }
+.flair-screwball {
+    background-position: -0px -192px
+    }
+.flair-redheart {
+    background-position: -16px -192px
+    }
+.flair-caramel {
+    background-position: -0px -208px
+    }
+.flair-braeburn {
+    background-position: -16px -208px
+    }
+.flair-applebloom {
+    background-position: -16px -240px
+    }
+.flair-sweetiebelle {
+    background-position: -0px -256px
+    }
+.flair-cheerilee {
+    background-position: -0px -272px
+    }
+.flair-nightmaremoon {
+    background-position: -16px -272px
+    }
+.flair-blueblood {
+    background-position: -0px -288px
+    }
+.flair-mrcake {
+    background-position: -0px -304px
+    }
+.flair-mrscake {
+    background-position: -16px -304px
+    }
+.flair-flam {
+    background-position: -0px -320px
+    }
+.flair-flim {
+    background-position: -16px -320px
+    }
+.flair-silverspoon {
+    background-position: -0px -336px
+    }
+.flair-diamondtiara {
+    background-position: -16px -336px
+    }
+.flair-snips {
+    background-position: -0px -352px
+    }
+.flair-snails {
+    background-position: -16px -352px
+    }
+.flair-twist {
+    background-position: -0px -368px
+    }
+.flair-sparkler {
+    background-position: -0px -384px
+    }
+.flair-disco {
+    background-position: -16px -384px
+    }
+.flair-fancypants {
+    background-position: -0px -400px
+    }
+.flair-davenport {
+    background-position: -16px -256px
+    }
+.flair-gaben {
+    background-position: -16px -368px
+    }
+.flair-fleur {
+    background-position: -16px -400px
+    }
+/* end extra flair */
+/* RES Nightmode flair fix */
+.res-nightmode .tagline .flair {
+    background-color: transparent !important
+    }
+.res-nightmode .side .md h3 {
+    color: #DDD !important
+    }
+.res-nightmode .side .titlebox .usertext-body .md h3 {
+    color: white !important
+    }
+/* Name edits */
+.sidecontentbox a.author[href$="/120percentcool"]:after {
+    content: "こ" "と" "み";
+    font-size: 10pt !important;
+    display: block;
+    margin-right: 0.5em;
+    overflow: hidden;
+    letter-spacing: normal;
+    vertical-align: bottom
+    }
+a.author[href$="/120percentcool"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/120percentcool"]:after {
+    content: "120percentanimation";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }

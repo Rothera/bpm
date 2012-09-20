@@ -1,0 +1,781 @@
+/*Temporary CSS to make the sidebar picture (oh god please don't fuck up everything) remove this shit after a week or so*/
+div.side {
+    padding: 435px 0px 0px 0px;
+    background-color: #fff;
+    background-image: url(http://c.thumbs.redditmedia.com/2GXLjwJpNF-lKeL8.png) !important;
+    background-position: 10px 5px !important;
+    background-repeat: no-repeat !important
+    }
+div.side:before {
+    margin: 10px;
+    font-weight: 500;
+    font-size: 1.0em;
+    content: "Congratulations to our contest winners!"
+    }
+/* http://pastebin.com/wKXNqF9j  http://imgur.com/a/XJxbi#0 <- old emote stuffs */
+/* SHit bro, let's do CSS 
+body {
+    background: url(%%bg2%%) no-repeat fixed left bottom transparent
+    }
+*/
+/* 
++
+|                  VERSION 1.5.1
+|
+|         STYLESHEET FOR R/VINYLSCRATCH         
+|        MOSTLY BY KOOBAXION AND 007GHG7        
+|ALSO SOME CREDIT GOES TO RAHLYN AND MRJOKER7854
+|              RAHLYN IS THE FLAIR GOD
+|                      ***                      
+|  THANKS TO R/ELECTROHOUSE, R/ANDROID, AND ALL 
+|THE OTHER SUBREDDITS I STOLE, I MEAN BORROWED  
+|CSS FROM.                                      
+|                                               
+|               !!! REMINDER !!!                
+|                                               
+|PLEASE USE THE CHANGELOG IF YOU CHANGE ANYTHING
+|,MARK LARGE CHANGES WITH A .1 INCREASE AND     
+|SMALLER ONES WITH SMALLER INCREASES. KOOBAXION 
+|WILL GO ALL MEDIEVAL ON YO' BEHIND IF YOU DON'T.
+|[](/ppwhat)
++
+|SECTION 1: PAGE STYLE CHANGES                  
+|  |                                            
+|  +-A: HEADER ETC.                             
+|  | |                                          
+|  | +- i  : HEADER                             
+|  | +- ii : BOTTOM RIGHT                       
+|  | +- iii: BOTTOM LEFT                        
+|  | +- iv : IMG                                
+|  | +- v  : PAGE NAME                          
+|  | +- vi : TAB MENU                           
+|  | +- vii: REDDIT NAME                        
+|  |                                            
+|  +-B: ANNOUNCEMENT BOX                        
+|  |                                           
+|  +-C: SEARCHBAR IMAGE                         
+|  |                                            
+|  +-D: SPOILER CODE                            
+|  |                                            
+|  +-E: CHANGE "SUBSCRIBERS"                    
+|  |                                            
+|  +-F: CHANGE "MODERATORS"    
+|  |
+|  +-G: CHANGE NAMES              
+|  |                                            
+|  +-H: CUSTOM ARROWS                           
+|  |                                            
+|  +-I: FOOTER
+|  |
+|  +-J: GREY ODD LINK BACKGROUNDS
+|  |
+|  +-K: RES CHANGES
+|                                       
+|SECTION 2: FLAIRS                             
+|  |                                            
+|  +-A: FLAIR                                   
+|    |                                          
+|    +- i  : RES NIGHTMODE FLAIR FIX            
+|    +- ii : VINYL                             
+|    +- iii: AWESOME                           
+|    +- iv : SCRATCHIE                         
+|    +- v  : MARINE     
+|    +- vi : TWEET
+|    +- vii : GLASSES
+|    +- viii : BROKEN RECORD   
+|    +- ix : DOLL
+|    +- x : FILLY
+|    +- xi : GRAFFITI
+|    +- xii : HEADPHONES
+|    +- xiii : HUGGING RECORD
+|    +- xiv : HUGGING TAIL
+|    +- xv : LAYING
+|    +- xvi : NERDY
+|    +- xvii : PARASPRITE
+|    +- xviii : SHRUG
+|    +- xix : SOCKS
+|    +- xx : SOCKS SMILE
+|    +- xxi : STARE
+|    +- xxii : SWEATER DIRTY
+|    +- xxiii : TALL VINYL
+|    +- xxiv : TAVISCRATCH
+|    +- xxv : WATCH
+|    +- xxvi : WUT                    
+|                                               
+|SECTION 3: EMOTES                              
+|  |                                            
+|  +-A: EMOTES                                  
+|    |
+|    +- i  : vinylscratch emotes
+|    +- ii : other emotes    
+|                                       
+|SECTION 4: OTHER STUFF                         
+|  |                                            
+|  +-A: APPROVAL TWILIGHT                       
+|                      					
+|SECTION 5: CHANGELOG                           
+|                                               
+|                                               
++
+*/
+/* 1: PAGE STYLE CHANGES*/
+/* A: HEADER ETC.*/
+/* i: HEADER */
+#header {
+    background-image: url(http://c.thumbs.redditmedia.com/9vIJmOty90zWbkon.png);
+    border-bottom: 1px solid #000000;
+    height: 144px;
+    z-index: 0;
+    -moz-box-shadow: 0px 0px 10px #888;
+    -webkit-box-shadow: 0px 0px 10px #888;
+    box-shadow: 0px 0px 10px #888;
+    margin: 0px;
+    padding: 0;
+    border-bottom: none;
+    width: 100%
+    }
+/* ii: BOTTOM RIGHT */
+#header-bottom-right {
+    background-color: black;
+    -moz-border-radius-topleft: 7px;
+    -webkit-border-top-left-radius: 7px
+    }
+#header-bottom-right a {
+    color: white
+    }
+#header-bottom-right .separator {
+    color: gray
+    }
+/* iii: BOTTOM LEFT */
+#header-bottom-left {
+    height: 77px;
+    z-index: -1;
+    font-size: larger;
+    position: absolute;
+    bottom: 0px
+    }
+/* iv: IMG */
+img#header-img {
+    left: 10px;
+    margin-bottom: -4px !important;
+    z-index: -1
+    }
+/* v: PAGE NAME */
+.pagename a {
+    font-size: 20px;
+    position: inherit;
+    text-indent: 0px
+    }
+/* vi: TAB MENU */
+.tabmenu li.selected a {
+    color: #0f32ed;
+    border: 1px solid #000000;
+    border-bottom: 1px solid white;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-top-right-radius: 0px;
+    -webkit-border-top-left-radius: 0px
+    }
+.tabmenu li a {
+    color: black;
+    background-color: #ededed;
+    border: 1px solid black;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-topleft: 0px;
+    -webkit-border-top-right-radius: 0px;
+    -webkit-border-top-left-radius: 0px
+    }
+/* vii: REDDIT NAME */
+.redditname {
+    text-shadow: 0 0 0.7em #fff, 0 0 0.7em #fff, 0 0 0.7em #fff
+    }
+.redditname a:hover {
+    text-shadow: 0 0 0.9em #fff, 0 0 0.9em #fff, 0 0 0.9em #fff, 0 0 0.9em #fff
+    }
+/* B: ANNOUNCEMENT BOX */
+.titlebox .usertext-body .md h6 {
+    display: block;
+    position: absolute;
+    top: 145px;
+    left: 20px;
+    content: "Info about the new flair system";
+    background-color: #F2F2F2;
+    background-image: url(http://f.thumbs.redditmedia.com/qvZfSAMs42KQIfgS.png);
+    background-repeat: no-repeat;
+    background-position: -140px -13px;
+    font-family: verdana, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555555;
+    text-align: left;
+    padding: 13px 5px 13px 75px;
+    margin: 15px;
+    margin-left: 4px;
+    border-radius: 8px
+    }
+/* Allow absolute positioning to page */
+.titlebox form {
+    position: static
+    }
+/* Inactive link */
+.titlebox .usertext-body .md h6 a, .titlebox .usertext-body .md h6 a:link, .titlebox .usertext-body .md h6 a:visited {
+    color: #555555
+    }
+/* Link on hover */
+.titlebox .usertext-body .md h6 a:hover {
+    color: #666666
+    }
+/* Catches all <a> */
+.titlebox .usertext-body .md h6 a:before {
+    content: "ANNOUNCEMENT";
+    color: firebrick;
+    border-right: 1px solid #444;
+    padding-right: .6em;
+    margin-right: .6em
+    }
+/* Increasing margin after header-area, necessary for comments page */
+body > .content {
+    margin-top: 35px;
+    padding-top: 36px
+    }
+/* c: SEARCHBAR IMAGE */
+#search input[type="text"] {
+    background: url(http://f.thumbs.redditmedia.com/lboA-EQXD9Jy1olA.png) top left no-repeat;
+    padding: 13px 2px 13px 50px;
+    height: 22px !important;
+    width: 245px
+    }
+/* D: SPOILER CODE */
+a[href|="/spoiler"] {
+    background: black !important;
+    color: black !important
+    }
+a[href|="/spoiler"]:hover {
+    color: white !important
+    }
+/* E: CHANGE "SUBSCRIBERS" */
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox span.number:after {
+    content: " Wubscribers"
+    }
+/* F: CHANGE "MODERATORS" */
+.sidecontentbox h1 {
+    text-align: left
+    }
+.sidecontentbox h1:not(:first-child) {
+    color: white !important;
+    font-size: 1px !important;
+    display: inline-block
+    }
+.sidecontentbox h1:not(:first-child):before {
+    color: gray !important;
+    font-size: 13px !important;
+    content: "HEAD DJS";
+    display: inline-block
+    }
+/* G: Fixing Names*/
+/* fixing RVPC's name */
+a.author[href$="/RetardVomitPussyCunt"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    content: "";
+    letter-spacing: -20px
+    }
+a.author[href$="/RetardVomitPussyCunt"]:after {
+    content: "RemixVinylBassCrossfade";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+/* H: CUSTOM ARROWS */
+.arrow.up {
+    background-image: url(http://c.thumbs.redditmedia.com/IpoB54qsX4GeOFnJ.png);
+    background-position: 0 0;
+    z-index: 999
+    }
+.arrow.down {
+    background-image: url(http://a.thumbs.redditmedia.com/a3Y4N8xTCsxTZwFZ.png);
+    background-position: 0 0
+    }
+.arrow.upmod {
+    background-image: url(http://f.thumbs.redditmedia.com/j4mHRTgCjjnStlnM.png);
+    background-position: 0 0;
+    z-index: 999
+    }
+.arrow.downmod {
+    background-image: url(http://d.thumbs.redditmedia.com/iMq1YTqOnJysLbJo.png);
+    background-position: 0 0
+    }
+/* I: FOOTER*/
+.footer-parent {
+    height: 343px;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    clear: both;
+    background-image: url(http://e.thumbs.redditmedia.com/7eHpTSlFhW0Vr34v.png);
+    text-align: center;
+    width: 100%;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: -1px
+    }
+/* J: GREY ODD LINK BACKGROUNDS */
+.link.odd {
+    background: #f8f8f8;
+    border-radius: 10px;
+    border: 1px solid #E6E6E6
+    }
+/* K: RES CHANGES */
+/*Remove RES tag from modbox*/
+.sidecontentbox .userTagLink {
+    display: none !important
+    }
+/*------------***------------*/
+/* 2: FLAIRS */
+/* A: FLAIR */
+.flair {
+    display: inline-block;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    font-weight: 700
+    }
+.flair:before {
+    background-image: url(http://e.thumbs.redditmedia.com/TfEVzr1bUToMo8-p.png);
+    background-position: 0px 0px;
+    content: "";
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    background-repeat: no-repeat
+    }
+.flair-awesome:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -20px
+    }
+.flair-brokenrecord:before {
+    width: 20px;
+    height: 22px;
+    background-position: -0px -38px
+    }
+.flair-derram:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -62px
+    }
+.flair-djabe:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -80px
+    }
+.flair-doll:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -98px
+    }
+.flair-filly:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -116px
+    }
+.flair-graffiti:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -134px
+    }
+.flair-headphones:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -152px
+    }
+.flair-huggingrecord:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -170px
+    }
+.flair-huggingtail:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -188px
+    }
+.flair-laying:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -206px
+    }
+.flair-marine:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -224px
+    }
+.flair-nerdy-flair:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -242px
+    }
+.flair-parasprite-flair:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -260px
+    }
+.flair-scratchie:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -278px
+    }
+.flair-shrug:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -296px
+    }
+.flair-socks:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -314px
+    }
+.flair-sockssmile:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -332px
+    }
+.flair-stare:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -350px
+    }
+.flair-sweaterdirty:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -368px
+    }
+.flair-tallvinyl:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -386px
+    }
+.flair-taviscratch:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -404px
+    }
+.flair-twp:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -422px
+    }
+.flair-vinyl:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -440px
+    }
+.flair-watch:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -458px
+    }
+.flair-wut:before {
+    width: 16px;
+    height: 16px;
+    background-position: -0px -476px
+    }
+/* Nightmode fix for flair */
+body.res-nightmode:first-of-type .flair {
+    background-color: transparent !important
+    }
+/* 3: EMOTES */
+/* Don't modify the start and stop tags please. -koobaxion */
+/*vs_start*/
+a[href|="/vswink"], a[href|="/vs22"], a[href|="/shrug"], a[href|="/vsshrug"], a[href|="/tableflip"], a[href|="/vsbass"], a[href|="/vs15"], a[href|="/vscurious"], a[href|="/vs13"], a[href|="/vsdeal"], a[href|="/vs01"], a[href|="/vsderp"], a[href|="/vs02"], a[href|="/vsfilly"], a[href|="/vs07"], a[href|="/vshair"], a[href|="/vs20"], a[href|="/vshappy"], a[href|="/vs14"], a[href|="/vshey"], a[href|="/vs12"], a[href|="/vshooves"], a[href|="/vs04"], a[href|="/vsjuice"], a[href|="/vs23"], a[href|="/vslook"], a[href|="/vs05"], a[href|="/vslying"], a[href|="/vs03"], a[href|="/vsmeh"], a[href|="/vs21"], a[href|="/vsmine"], a[href|="/vs25"], a[href|="/vsmog"], a[href|="/vs08"], a[href|="/vsnope"], a[href|="/vs26"], a[href|="/vsohyou"], a[href|="/vs00"], a[href|="/vsomg"], a[href|="/vs06"], a[href|="/vsoooo"], a[href|="/vs16"], a[href|="/vssad"], a[href|="/vs10"], a[href|="/vssup"], a[href|="/vs24"], a[href|="/vstear"], a[href|="/vs11"], a[href|="/vswtf"], a[href|="/vs27"], a[href|="/vswhathefuck"], a[href|="/vsyds"], a[href|="/vs17"], a[href|="/vsyoudontsay"], a[href|="/vslaying"], a[href|="/laying"], a[href|="/vsplot"], a[href|="/vscute"], a[href|="/vs18"], a[href|="/vssalute"], a[href|="/vs28"], a[href|="/vsboring"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://e.thumbs.redditmedia.com/G_rsYZol8TuWOhov.png) !important
+    }
+a[href|="/vswink"], a[href|="/vs22"] {
+    width: 70px;
+    height: 70px;
+    background-position: -2px -2px
+    }
+a[href|="/shrug"], a[href|="/vsshrug"] {
+    width: 250px;
+    height: 250px;
+    background-position: -74px -2px
+    }
+a[href|="/tableflip"] {
+    width: 298px;
+    height: 200px;
+    background-position: -2px -254px
+    }
+a[href|="/vsbass"], a[href|="/vs15"] {
+    width: 70px;
+    height: 70px;
+    background-position: -302px -254px
+    }
+a[href|="/vscurious"], a[href|="/vs13"] {
+    width: 70px;
+    height: 70px;
+    background-position: -374px -254px
+    }
+a[href|="/vsdeal"], a[href|="/vs01"] {
+    width: 70px;
+    height: 70px;
+    background-position: -2px -456px
+    }
+a[href|="/vsderp"], a[href|="/vs02"] {
+    width: 70px;
+    height: 70px;
+    background-position: -74px -456px
+    }
+a[href|="/vsfilly"], a[href|="/vs07"] {
+    width: 70px;
+    height: 70px;
+    background-position: -146px -456px
+    }
+a[href|="/vshair"], a[href|="/vs20"] {
+    width: 70px;
+    height: 70px;
+    background-position: -218px -456px
+    }
+a[href|="/vshappy"], a[href|="/vs14"] {
+    width: 70px;
+    height: 70px;
+    background-position: -290px -456px
+    }
+a[href|="/vshey"], a[href|="/vs12"] {
+    width: 70px;
+    height: 70px;
+    background-position: -362px -456px
+    }
+a[href|="/vshooves"], a[href|="/vs04"] {
+    width: 70px;
+    height: 70px;
+    background-position: -434px -456px
+    }
+a[href|="/vsjuice"], a[href|="/vs23"] {
+    width: 70px;
+    height: 70px;
+    background-position: -2px -528px
+    }
+a[href|="/vslook"], a[href|="/vs05"] {
+    width: 70px;
+    height: 70px;
+    background-position: -74px -528px
+    }
+a[href|="/vslying"], a[href|="/vs03"] {
+    width: 70px;
+    height: 70px;
+    background-position: -146px -528px
+    }
+a[href|="/vsmeh"], a[href|="/vs21"] {
+    width: 70px;
+    height: 70px;
+    background-position: -218px -528px
+    }
+a[href|="/vsmine"], a[href|="/vs25"] {
+    width: 70px;
+    height: 70px;
+    background-position: -290px -528px
+    }
+a[href|="/vsmog"], a[href|="/vs08"] {
+    width: 70px;
+    height: 70px;
+    background-position: -362px -528px
+    }
+a[href|="/vsnope"], a[href|="/vs26"] {
+    width: 70px;
+    height: 70px;
+    background-position: -434px -528px
+    }
+a[href|="/vsohyou"], a[href|="/vs00"] {
+    width: 70px;
+    height: 70px;
+    background-position: -2px -600px
+    }
+a[href|="/vsomg"], a[href|="/vs06"] {
+    width: 70px;
+    height: 70px;
+    background-position: -74px -600px
+    }
+a[href|="/vsoooo"], a[href|="/vs16"] {
+    width: 70px;
+    height: 70px;
+    background-position: -146px -600px
+    }
+a[href|="/vssad"], a[href|="/vs10"] {
+    width: 70px;
+    height: 70px;
+    background-position: -218px -600px
+    }
+a[href|="/vssup"], a[href|="/vs24"] {
+    width: 70px;
+    height: 70px;
+    background-position: -290px -600px
+    }
+a[href|="/vstear"], a[href|="/vs11"] {
+    width: 70px;
+    height: 70px;
+    background-position: -362px -600px
+    }
+a[href|="/vswtf"], a[href|="/vs27"], a[href|="/vswhathefuck"] {
+    width: 70px;
+    height: 70px;
+    background-position: -434px -600px
+    }
+a[href|="/vsyds"], a[href|="/vs17"], a[href|="/vsyoudontsay"] {
+    width: 70px;
+    height: 70px;
+    background-position: -2px -672px
+    }
+a[href|="/vslaying"], a[href|="/laying"] {
+    width: 200px;
+    height: 164px;
+    background-position: -74px -672px
+    }
+a[href|="/vsplot"] {
+    width: 124px;
+    height: 91px;
+    background-position: -280px -679px
+    }
+a[href|="/vscute"], a[href|="/vs18"] {
+    width: 60px;
+    height: 70px;
+    background-position: -0px -78px
+    }
+a[href|="/vssalute"] {
+    width: 187px;
+    height: 142px;
+    background-position: -337px -0px
+    }
+a[href|="/vs28"], a[href|="/vsboring"] {
+    width: 70px;
+    height: 70px;
+    background-position: -0px -150px
+    }
+/* Other Emotes*/
+a[href|="/vshnngg"], a[href|="/hnnng"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(http://d.thumbs.redditmedia.com/00T3gLdOawm80o--.png) !important
+    }
+a[href|="/vshnngg"], a[href|="/hnnng"] {
+    background-position: -0px -0px
+    }
+/* 4: OTHER THINGS*/
+a[href="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }
+/* Hide emoticon tables in the sidebar  */
+.titlebox em {
+    color: white
+    }
+.titlebox table {
+    display: none;
+    clear: both
+    }
+div.usertext-body:hover table {
+    display: block;
+    clear: both
+    }
+/* A: APPROVAL TWILIGHT*/
+.approval-checkmark {
+    height: 0px;
+    padding: 7.5px 7.5px;
+    background: url(http://d.thumbs.redditmedia.com/rbp3T_8-d-rzlyeu.png);
+    background-position: center bottom;
+    background-repeat: no-repeat
+    }
+/* B: NSFW CHANGES*/
+.nsfw-stamp acronym {
+    display: inline-block;
+    font-size: 0px !important;
+    letter-spacing: 0px;
+    overflow: hidden;
+    vertical-align: bottom;
+    margin-bottom: -1px
+    }
+.nsfw-stamp acronym:after {
+    content: "HORSE PORN" !important;
+    display: block;
+    font-size: x-small !important;
+    text-decoration: none;
+    visibility: visible !important
+    }
+/* 5: CHANGELOG 
+
+version 1.0
+
+[koobaxion]
+	> Changed almost everything to make it super awesome
+        
+version 1.01
+[koobaxion]
+        > Deleted background image
+        > Added footer image
+        > Colored alternate link backgrounds grey
+
+version 1.1
+[007ghg7]
+	> Changed RVPC's name to RemixVinylBassCrossfade
+
+version 1.2
+[007ghg7]
+	> added new emotes
+
+version 1.3
+[007ghg7]
+	> added a flair for tweet_poster
+
+version 1.3.1
+[007ghg7]
+	> added a flair for DJabelincoln
+
+version 1.3.2
+[007ghg7]
+	> added hnnng emote
+
+version 1.4
+[koobaxion]
+        > added thingy on banner
+
+version 1.4.1
+[koobaxion]
+        > made NSFW different
+
+version 1.5
+[Rahlyn]
+        > added flairs for sub members
+
+version 1.5.1
+[Rahlyn]
+        > added shrug, tableflip and laying emotes - not added to table 
+
+because I tend to break it
+
+
+http://i.imgur.com/12XPI.png
+[derram]
+*/
+div.titlebox .subscribers span.number:after {
+    content: " Wubscribers"
+    }
+div.titlebox .users-online span.number:after {
+    content: " Wubbing it up"
+    }
+/*Remove RES tag and vote counts from moderator box because its ugly*/
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink {
+    display: none !important
+    }
+/* Hiding my name in the modbox. */
+.sidecontentbox .id-t2_8lje7, .sidecontentbox .id-t2_8lje7 ~ * {
+    display: none
+    }

@@ -1,0 +1,106 @@
+/* Changes background  /r/mlas1 */
+body, body.res-nightmode:first-of-type {
+    background: url(http://a.thumbs.redditmedia.com/mOFAe1DZgQ_U7s6x.png) no-repeat fixed 63% 90% !important
+    }
+/* Nightmode fixes for the background */
+.content #siteTable div[onclick="click_thing(this)"] {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type > .content {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type {
+    background-color: transparent !important
+    }
+a.author[href$="waffen337"] {
+    font-size: 0px !important;
+    display: inline-block
+    }
+a.author[href$="waffen337"]:before {
+    content: "Doug";
+    font-size: 10px !important;
+    visibility: visible !important;
+    overflow: hidden
+    }
+/* Mod name modification. */
+.titlebox .bottom .author, .sidecontentbox .author {
+    display: inline-block
+    }
+.sidecontentbox a.author[href$="/derram_2"]:before {
+    content: "derram";
+    font-size: 10pt;
+    color: #369;
+    display: block;
+    margin-right: 0.5em;
+    overflow: hidden
+    }
+.sidecontentbox a.author[href$="/derram_2"] {
+    content: "";
+    color: white;
+    font-size: 0pt;
+    display: block
+    }
+/* ---------- Hide "Created by..." while keeping "a community for..." in the sidebar ---------- */
+.titlebox .bottom {
+    font-size: 0px
+    }
+.age {
+    font-size: 11px !important
+    }
+a.author[href$="XelNaga"] {
+    font-size: 0px !important;
+    display: inline-block
+    }
+a.author[href$="XelNaga"]:before {
+    content: "Rarity";
+    font-size: 10px !important;
+    visibility: visible !important;
+    overflow: hidden
+    }
+a.author[href$="derram_2"] {
+    font-size: 0px !important;
+    display: inline-block
+    }
+a.author[href$="derram_2"]:before {
+    content: "derram";
+    font-size: 10px !important;
+    visibility: visible !important;
+    overflow: hidden
+    }
+a[href|="/ajnope"] {
+    width: 200px;
+    height: 200px;
+    background-image: url(http://d.thumbs.redditmedia.com/wLVE7fnDB3o0no9o.png);
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    margin-left: 3px;
+    margin-right: 3px
+    }
+a[href|="/ajsolly"], a[href|="/pppick"], a[href|="/twisnipe"], a[href|="/twistpick"] {
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-image: url(http://b.thumbs.redditmedia.com/UJ0HDMB5OU82qJhC.png)
+    }
+a[href|="/ajsolly"] {
+    width: 121px;
+    height: 149px;
+    background-position: -115px -2px
+    }
+a[href|="/pppick"] {
+    width: 153px;
+    height: 148px;
+    background-position: -2px -154px
+    }
+a[href|="/twisnipe"] {
+    width: 227px;
+    height: 150px;
+    background-position: -2px -304px
+    }
+a[href|="/twistpick"] {
+    width: 111px;
+    height: 150px;
+    background-position: -2px -2px
+    }

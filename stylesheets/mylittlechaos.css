@@ -1,0 +1,228 @@
+/*
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------+
+    |--------------------------------------------------------------------------RULES-------------------------------------------------------------------------|
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------+
+    |-DO NOT make the CSS herp the derp.                                                                                                                     |
+    |-DO NOT edit whilst others are editing.                                                                                                                 |
+    |-DO NOT FEED THE BWOBS AFTER MIDNIGHT!                                                                                                                  |
+    |-DO NOT change the rules on a whim.                                                                                                                     |
+    |-DO document when you are editing in the log.                                                                                                           |
+    |-Everyone would like to be a tree...                                                                                                                    |
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------+
+    |--------------------------------------------------------------------------INDEX-------------------------------------------------------------------------|
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------+
+    |-SECTION-01: Making Shit Work                                                                                                             |
+    |-SECTION-01.01: Body                                                                                                                                    |
+    |-SECTION-01.02: Header                                                                                                                                  |
+    |-SECTION-01.03: Navigation                                                                                                                              |
+    |-SECTION-01.04: Text Styles (Links, Headings, Etc.)                                                                                                     |
+    |-SECTION-01.05: Layout                                                                                                                                  |
+    |-SECTION-01.06: Footer                                                                                                                                  |
+    |-SECTION-01.07: Form Styles (Article Submission)                                                                                                        |
+    |-SECTION-01.08: Reddit Compressed Styling                                                                                                               |
+    |-SECTION-01.09: Thumbnails                                                                                                                              |
+    |-SECTION-01.99: Misc. Uncategorized                                                                                                                     |
+    |                                                                                                                                                        |
+    |-SECTION-02: Da Magiks                                                                                                                                  |
+    |-SECTION-02.01: Emoticons                                                                                                                               |
+    |-SECTION-02.02: Flair                                                                                                                                   |
+    |-SECTION-02.03: Username Modifications                                                                                                                  |
+    |                                                                                                                                                        |
+    |-SECTION-03: Administration Tweaks                                                                                                                      |
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------+
+*/
+/*== SECTION-01: Making Shit Work ==*/
+/*== 01.01: Body ==*/
+body {
+    background: url(http://d.thumbs.redditmedia.com/shtWuJKQTpMyiXV3.png) no-repeat fixed 50% 110%
+    }
+/*== 01.02: Header ==*/
+#header {
+    background: url(http://e.thumbs.redditmedia.com/7oNnS1jPxJ7LzfjR.png) repeat-x left center;
+    background-color: #A0DCA0 !important;
+    border-bottom: 1px solid black
+    }
+#header-bottom-left {
+    background: url(http://f.thumbs.redditmedia.com/Uf4OLJ7wDtf3xp9w.png) no-repeat right center;
+    margin-right: 10px
+    }
+.pagename a {
+    position: relative
+    }
+.pagename a:after {
+    content: " and friends";
+    display: inline-block;
+    font-size: 12px !important;
+    color: black;
+    margin-left: 5px
+    }
+/*== SECTION-02: Da Magiks ==*/
+/*== 02.01: Emoticons ==*/
+/*Chaos*/
+a[href|="/chaos00"], a[href|="/chaos01"], a[href|="/chaos02"], a[href|="/chaos10"], a[href|="/chaos10e"], a[href|="/chaos11"], a[href|="/chaos12"], a[href|="/sayno"], a[href|="/saynoe"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://f.thumbs.redditmedia.com/DzeuoOHG6Fujg_CA.png) !important
+    }
+a[href|="/chaos00"] {
+    width: 133px !important;
+    height: 150px !important;
+    background-position: -0px -0px !important
+    }
+a[href|="/chaos01"] {
+    width: 110px;
+    height: 150px;
+    background-position: -133px -0px
+    }
+a[href|="/chaos02"] {
+    width: 95px;
+    height: 150px;
+    background-position: -243px -0px
+    }
+a[href|="/chaos10"] {
+    width: 105px;
+    height: 150px;
+    background-position: -0px -150px
+    }
+a[href|="/chaos10e"] {
+    width: 145px;
+    height: 150px;
+    background-position: -0px -150px
+    }
+a[href|="/chaos11"] {
+    width: 95px;
+    height: 150px;
+    background-position: -145px -150px
+    }
+a[href|="/chaos12"] {
+    width: 75px;
+    height: 150px;
+    background-position: -240px -150px
+    }
+a[href|="/sayno"] {
+    width: 75px;
+    height: 75px;
+    background-position: -338px -50px
+    }
+a[href|="/saynoe"] {
+    width: 75px;
+    height: 125px;
+    background-position: -338px -0px
+    }
+/*SPH Fun*/
+a[href|="/sphlyrafun"] {
+    clear: none;
+    display: block;
+    float: left;
+    background-image: url(http://f.thumbs.redditmedia.com/XbRIUePsEIGJ1xSM.png);
+    width: 201px;
+    height: 136px
+    }
+/*misc*/
+a[href|="/nightmarenyx"] {
+    clear: none;
+    display: block;
+    float: left;
+    background-image: url(http://d.thumbs.redditmedia.com/gDFiVvnVsfiZR08-.png);
+    width: 300px;
+    height: 450px
+    }
+/*Animotes*/
+a[href|="/twiday"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://b.thumbs.redditmedia.com/10eaVU_qR2dsskLO.png);
+    width: 600px;
+    height: 568px;
+    margin-bottom: 5px;
+    margin-right: 5px
+    }
+a[href|="/taco"] {
+    width: 72px;
+    height: 41px;
+    background-image: url(http://c.thumbs.redditmedia.com/nf4qPM2AARBoDPH2.png);
+    display: block;
+    clear: none;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px
+    }
+a[href|="/rapidfire"] {
+    width: 529px;
+    height: 293px;
+    background-image: url(http://e.thumbs.redditmedia.com/7QEw1jFxlFYxgwbL.png);
+    display: block;
+    clear: none;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px
+    }
+a[href|="/fillyderp"] {
+    width: 281px;
+    height: 274px;
+    background-image: url(http://b.thumbs.redditmedia.com/k9i_G9OPiiCJkY5m.png);
+    display: block;
+    clear: none;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px
+    }
+/*== 02.02: Flair ==*/
+/*
+.flair {
+    background: url(%%flair%%) transparent no-repeat;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    margin:0;
+    padding:0;
+    }
+.flair-00001 {
+    background-position: 0px 0px
+    }
+.flair-00002 {
+    background-position: 0px -30px
+    }
+.flair-00003 {
+    background-position: 0px -60px
+    }
+.flair-00004 {
+    background-position: 0px -90px
+    }
+.flair-00005 {
+    background-position: 0px -120px
+    }
+*/
+/*== 02.03: Username Modifications ==*/
+a.author[href$="CatmanIX"] {
+    font-size: 0px !important;
+    overflow: hidden;
+    display: inline-block
+    }
+a.author[href$="CatmanIX"]:before {
+    content: "Homo Felinus IX";
+    font-size: 10px !important;
+    background-color: transparent
+    }
+a.author[href$="CatmanIX"]:after {
+    content: ", Lord of the Catlands";
+    font-size: 10px !important;
+    background-color: transparent
+    }
+a.author[href$="Zovistograt"]:after {
+    content: ", Grand Instigator of Esoteric Proportions"
+    }
+Zovistograt /*== SECTION-03: Administration Tweaks ==*/ /*Make the "Community Settings" text box larger*/ .fancy-settings .linefield {
+    width: 920px
+    }
+.fancy-settings textarea {
+    width: 900px;
+    height: 500px
+    }
+/*Make the CSS edit box larger*/
+.stylesheet-customize-container textarea {
+    height: 500px
+    }
+/*fin*/
