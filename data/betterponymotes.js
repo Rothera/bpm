@@ -436,6 +436,12 @@ var bpm_converter = {
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
             if(element.title) {
+                // Work around due to RES putting tag links in the middle of
+                // posts. (Fucking brilliant!)
+                if(bpm_utils.has_class(element, "userTagLink")) {
+                    continue;
+                }
+
                 // As a note: alt-text kinda has to be a block-level element. If
                 // you make it inline, it has the nice property of putting it where
                 // the emote was in the middle of a paragraph, but since the emote
@@ -455,6 +461,8 @@ var bpm_converter = {
                 at_element.className = "bpm-alttext";
                 at_element.textContent = element.title;
 
+                // Try to move to the other side of RES's image expand buttons,
+                // because otherwise they end awfully
                 var before = element.nextSibling;
                 if(before !== null && before.className !== undefined && before.className.indexOf("expando-button") > -1) {
                     before = before.nextSibling;
@@ -558,7 +566,7 @@ var bpm_search = {
 
             prefs.prefs.searchBoxInfo[0] = sb_left;
             prefs.prefs.searchBoxInfo[1] = sb_top;
-            bpm_prefs.prefs.sync(); // FIXME: this will be called way too often
+            bpm_prefs.sync(); // FIXME: this will be called way too often
         }.bind(this));
 
         // Enable dragging the resize element around (i.e. resizing it)
