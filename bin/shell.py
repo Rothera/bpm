@@ -35,9 +35,9 @@ def cmd_list(args):
     args = parser.parse_args(args)
 
     print("Stylesheet updates:")
-    subprocess.call(["bzr", "status", "stylesheets"])
+    subprocess.call(["git", "status", "-s", "stylesheets"])
     print("Emote updates:")
-    subprocess.call(["bzr", "status", "emotes"])
+    subprocess.call(["git", "status", "-s", "emotes"])
 
 def update_css(num, total, subreddit):
     url = "http://reddit.com/r/%s/stylesheet.css?nocache=%s" % (subreddit, random.randrange(1000000))
@@ -98,8 +98,7 @@ def cmd_extract(args):
     args = parser.parse_args(args)
 
     # TODO: Supporting nargs="*" and extracting every updated subreddit would
-    # be nice, but we'd have to call into bzrlib to check what files were
-    # modified/added or something.
+    # be nice, but we'd have to ask git what files were modified somehow.
 
     for (i, sr) in enumerate(args.subreddits):
         print("[%s/%s]: %s" % (i+1, len(args.subreddits), sr))
@@ -123,24 +122,21 @@ def cmd_diffcss(args):
     parser = argparse.ArgumentParser(description="Run diff program on CSS cache", prog="diffcss")
     args = parser.parse_args(args)
 
-    # Lots of context is important when reading css diffs, but unfortunately
-    # bzr doesn't have an option to specify how many lines to output.
-    p1 = subprocess.Popen(["bzr", "diff", "stylesheets", "--diff-options=-U 10"], stdout=subprocess.PIPE)
+    p1 = subprocess.Popen(["git", "diff", "-U10", "stylesheets"], stdout=subprocess.PIPE)
     p2 = subprocess.Popen(["kompare", "-"], stdin=p1.stdout)
 
 def cmd_diffemotes(args):
     parser = argparse.ArgumentParser(description="Run diff program on emotes", prog="diffemotes")
     args = parser.parse_args(args)
 
-    p1 = subprocess.Popen(["bzr", "diff", "emotes", "--diff-options=-U 10"], stdout=subprocess.PIPE)
+    p1 = subprocess.Popen(["git", "diff", "-U10", "emotes"], stdout=subprocess.PIPE)
     p2 = subprocess.Popen(["kompare", "-"], stdin=p1.stdout)
 
 def cmd_commit(args):
     parser = argparse.ArgumentParser(description="Commit CSS and emote cache", prog="commit")
     args = parser.parse_args(args)
 
-    subprocess.call(["bzr", "commit", "stylesheets", "-m", time.strftime("Stylesheet updates %Y-%m-%d")])
-    subprocess.call(["bzr", "commit", "emotes", "-m", time.strftime("Emote updates %Y-%m-%d")])
+    subprocess.call(["git", "commit", "emotes", "stylesheets", "-m", time.strftime("Stylesheet/emote updates %Y-%m-%d")])
 
 Commands = {
     "help": cmd_help,
