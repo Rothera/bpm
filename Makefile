@@ -1,6 +1,15 @@
-default: packages
+default: packages update-files
 
 packages: build/betterponymotes.xpi build/betterponymotes.crx build/betterponymotes.oex
+
+update-files: www/betterponymotes.update.rdf www/chrome-updates.xml www/opera-updates.xml
+
+www/betterponymotes.update.rdf: build/betterponymotes.xpi
+www/chrome-updates.xml: build/betterponymotes.crx
+www/opera-updates.xml: build/betterponymotes.oex
+
+www/betterponymotes.update.rdf www/chrome-updates.xml www/opera-updates.xml:
+	bin/gen_update_files.py `bin/version.py get`
 
 build/emote-classes.css build/emote-map.js build/sr-data.js: bpgen.py emotes/*.yaml data/bpmotes-extras.yaml
 	./bpgen.py emotes/*.yaml data/bpmotes-extras.yaml
@@ -11,7 +20,6 @@ build/betterponymotes.xpi: build/emote-classes.css build/emote-map.js build/sr-d
 	bin/inject_xpi_key.py betterponymotes.xpi build/betterponymotes.xpi
 	rm betterponymotes.xpi
 	cp build/betterponymotes.xpi build/betterponymotes_`bin/version.py get`.xpi
-	uhura -k betterponymotes.pem build/betterponymotes.xpi http://rainbow.mlas1.us/betterponymotes_`bin/version.py get`.xpi > data/betterponymotes.update.rdf
 
 build/betterponymotes.crx: build/emote-classes.css build/emote-map.js build/sr-data.js chrome/*
 	rm -f build/*.crx

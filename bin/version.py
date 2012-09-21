@@ -50,20 +50,12 @@ def main():
     fx_package = JsonSource("firefox/package.json", "version")
     cr_package = JsonSource("chrome/manifest.json", "version")
     o_package = XmlSource("opera/config.xml", lambda t: t.getroot().attrib["version"])
-    # FIXME: No fx_updates... wouldn't want to set it, but checking would be nice
-    # ALSO FIXME: get both version attribs of these two files
-    cr_updates = XmlSource("data/chrome-updates.xml",
-                           lambda t: t.getroot()[0][0].attrib["version"])
-    o_updates = XmlSource("data/opera-updates.xml",
-                          lambda t: t.getroot().attrib["version"])
-    files = (fx_package, cr_package, o_package, cr_updates)
+    files = (fx_package, cr_package, o_package)
 
     if args.operation == "check":
         print("Firefox:", fx_package.version)
         print("Chrome:", cr_package.version)
         print("Opera:", o_package.version)
-        print("Chrome Updates:", cr_updates.version)
-        print("Opera Updates:", o_updates.version)
     elif args.operation == "get":
         for (i, f) in enumerate(files[1:]):
             assert files[i-1].version == f.version
@@ -75,17 +67,10 @@ def main():
         fx_package.data["version"] = args.v
         cr_package.data["version"] = args.v
         o_package.data.getroot().attrib["version"] = args.v
-        # FIXME: hardcoding these paths here sucks
-        cr_updates.data.getroot()[0][0].attrib["codebase"] = "http://rainbow.mlas1.us/betterponymotes_%s.crx" % (args.v)
-        cr_updates.data.getroot()[0][0].attrib["version"] = args.v
-        o_updates.data.getroot().attrib["src"] = "http://rainbow.mlas1.us/betterponymotes_%s.oex" % (args.v)
-        o_updates.data.getroot().attrib["version"] = args.v
 
         fx_package.save()
         cr_package.save()
         o_package.save()
-        cr_updates.save()
-        o_updates.save()
 
 if __name__ == "__main__":
     main()
