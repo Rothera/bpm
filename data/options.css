@@ -1,0 +1,57 @@
+body {
+    padding-bottom: 80px;
+}
+input[type="checkbox"] {
+    /* Fix a misalignment in bootstrap */
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+label {
+    font-family: monospace;
+}
+#sr-list > label {
+    width: 230px;
+}
+
+/* Emote disabler stuff */
+.emote-list-container {
+    height: 300px;
+    border-style: solid;
+    border-color: red;
+    padding: 5px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin-bottom: 5px;
+    overflow-y: auto;
+}
+.emote-list-input {
+    /* Hide it as best we can */
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 0px;
+    border-style: none;
+    outline-color: transparent;
+    color: black;
+    width: 150px;
+    font-family: monospace;
+}
+/* Styled after Derpibooru's tag list thing, with colors from Bootstrap */
+.listed-emote {
+    padding: 5px;
+    background-color: #5BC0DE;
+    color: white;
+    border-width: 1px;
+    border-color: #2F96B4;
+    border-style: solid;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    float: left;
+    border-radius: 2px;
+}
+.listed-emote > a {
+    font-weight: bold;
+}
+.custom-subreddit {
+    margin-bottom: 5px;
+}
