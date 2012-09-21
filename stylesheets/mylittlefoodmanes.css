@@ -356,6 +356,20 @@ a.author[href$="YarnTheory"]:after {
     display: block;
     letter-spacing: normal
     }
+a.author[href$="spokesthebrony"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="spokesthebrony"]:after {
+    content: "New Guy";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
 a.author[href$="whisperingsage"] {
     font-size: 0px !important;
     display: inline-block;

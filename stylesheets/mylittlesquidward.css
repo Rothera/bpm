@@ -480,3 +480,17 @@ a[href|="/squidfun"] {
 div.titlebox .users-online span.number:after {
     content: " Squiddifying"
     }
+.sidecontentbox h1 {
+    text-align: left
+    }
+.sidecontentbox .helplink + .title > h1 {
+    color: white !important;
+    font-size: 1px !important;
+    display: inline-block
+    }
+.sidecontentbox .helplink + .title > h1:before {
+    color: gray !important;
+    font-size: 13px !important;
+    content: "SQUIDDIE MOD CRUSADERS";
+    display: inline-block
+    }

@@ -166,18 +166,21 @@ div.titlebox .users-online span.number:after {
     content: "";
     display: block
     }
-.sidecontentbox .author.id-t2_5eqe2:before {
+/*.sidecontentbox .author.id-t2_5eqe2:before {
     content: "Pathington David";
     font-size: 10pt;
     color: #369;
-    display: block;
-    margin-right: 0.5em
+    display:block;
+    margin-right: 0.5em;
     }
 .sidecontentbox .author.id-t2_5eqe2 {
     color: white;
     font-size: 0pt !important;
     content: "";
-    display: block
+    display:block;
+    }*/
+.sidecontentbox .author.id-t2_5eqe2:after {
+    content: " ruined NPT"
     }
 /* sidebar */
 .titlebox strong {
