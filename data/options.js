@@ -17,29 +17,35 @@
 //
 // platform is "unknown" when run via <script> tag on Firefox.
 
-// Platform check
-function current_platform() {
-    if(typeof(self.on) !== "undefined") {
-        return "firefox";
-    } else if(typeof(chrome) !== "undefined") {
-        return "chrome";
-    } else if(typeof(opera) !== "undefined") {
-        return "opera";
-    } else {
-        return "unknown";
-    }
-}
-var platform = current_platform();
-
-function traceback_wrapper(f) {
-    return function() {
-        try {
-            return f.apply(this, arguments);
-        } catch(e) {
-            console.log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
+var bpm_utils = {
+    // Browser detection- this script runs unmodified on all supported platforms,
+    // so inspect a couple of potential global variables to see what we have.
+    platform: (function(global) {
+        // FIXME: "self" is a standard object, though self.on is specific to
+        // Firefox content scripts. I'd prefer something a little more clearly
+        // affiliated, though.
+        if(self.on !== undefined) {
+            return "firefox-ext";
+        } else if(global.chrome !== undefined && global.chrome.extension !== undefined) {
+            return "chrome-ext";
+        } else if(global.opera !== undefined && global.opera.extension !== undefined) {
+            return "opera-ext";
+        } else {
+            console.log("BPM: ERROR: Unknown platform!");
+            return "unknown";
         }
-    };
-}
+    })(this),
+
+    catch_errors: function(f) {
+        return function() {
+            try {
+                return f.apply(this, arguments);
+            } catch(e) {
+                console.log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
+            }
+        };
+    }
+};
 
 var _doc_loaded = false;
 var prefs = null;
@@ -54,8 +60,8 @@ function set_prefs(_prefs) {
 
 // Some basic platform API's. Not much here yet.
 var browser;
-switch(platform) {
-    case "firefox":
+switch(bpm_utils.platform) {
+    case "firefox-ext":
         // On Firefox, this script is run as a content script, so we need
         // to communicate with main.js.
         self.on("message", function(message) {
@@ -76,14 +82,14 @@ switch(platform) {
             },
 
             force_update: function(subreddit) {
-                self.postMessage({"method": "force_update", "subreddit:" subreddit});
+                self.postMessage({"method": "force_update", "subreddit": subreddit});
             }
         };
         break;
 
     // On Chrome and Opera, localStorage can be directly written to, but we
     // write by sending messages in order to keep CSS cache code in one place.
-    case "chrome":
+    case "chrome-ext":
         browser = {
             prefs_updated: function() {
                 chrome.extension.sendMessage({"method": "set_prefs", "prefs": prefs});
@@ -95,7 +101,7 @@ switch(platform) {
         };
         break;
 
-    case "opera":
+    case "opera-ext":
         opera.extension.addEventListener("message", function(event) {
             var message = event.data;
             switch(message.method) {
@@ -185,7 +191,7 @@ function setup_emote_list(container, input, clear_button, list) {
 
     // Handle backspaces and enter key specially. Note that keydown sees the
     // input element as it was BEFORE the key is handled.
-    input.addEventListener("keydown", traceback_wrapper(function(event) {
+    input.addEventListener("keydown", bpm_utils.catch_errors(function(event) {
         if(event.keyCode === 8) { // Backspace key
             if(!input.value) {
                 // The input was previously empty, so chop off an emote.
@@ -419,7 +425,7 @@ function run() {
         add_input.value = "";
     }
 
-    add_input.addEventListener("keydown", traceback_wrapper(function(event) {
+    add_input.addEventListener("keydown", bpm_utils.catch_errors(function(event) {
         if(event.keyCode === 13) { // Return key
             add_subreddit();
             event.preventDefault();
@@ -444,17 +450,17 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 }, false);
 
-switch(platform) {
-    case "firefox":
+switch(bpm_utils.platform) {
+    case "firefox-ext":
         // Make backend request for prefs
         self.postMessage({"method": "get_prefs"});
         break;
 
-    case "chrome":
+    case "chrome-ext":
         chrome.extension.sendMessage({"method": "get_prefs"}, set_prefs);
         break;
 
-    case "opera":
+    case "opera-ext":
         opera.extension.postMessage({"method": "get_prefs"});
         break;
 }
