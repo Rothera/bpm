@@ -36,6 +36,12 @@ var bpm_utils = {
         }
     })(this),
 
+    copy_properties: function(to, from) {
+        for(var key in from) {
+            to[key] = from[key];
+        }
+    },
+
     catch_errors: function(f) {
         return function() {
             try {
@@ -47,87 +53,129 @@ var bpm_utils = {
     }
 };
 
-var _doc_loaded = false;
-var prefs = null;
-
-// Called from the browser-specific code
-function set_prefs(_prefs) {
-    prefs = _prefs;
-    if(_doc_loaded && prefs !== null) {
-        run();
+var bpm_browser = {
+    send_message: function(method, data) {
+        if(data === undefined) {
+            this._send_message({"method": method});
+        } else {
+            data["method"] = method;
+            this._send_message(data);
+        }
     }
-}
+};
 
-// Some basic platform API's. Not much here yet.
-var browser;
 switch(bpm_utils.platform) {
-    case "firefox-ext":
-        // On Firefox, this script is run as a content script, so we need
-        // to communicate with main.js.
-        self.on("message", function(message) {
-            switch(message.method) {
-                case "prefs":
-                    set_prefs(message.prefs);
-                    break;
+case "firefox-ext":
+    bpm_utils.copy_properties(bpm_browser, {
+        _send_message: function(data) {
+            self.postMessage(data);
+        }
+    });
 
-                default:
-                    console.log("BPM: ERROR: Unknown request from Firefox background script: '" + message.method + "'");
-                    break;
-            }
-        });
+    self.on("message", function(message) {
+        switch(message.method) {
+        case "prefs":
+            bpm_prefs.got_prefs(message.prefs);
+            break;
 
-        browser = {
-            prefs_updated: function() {
-                self.postMessage({"method": "set_prefs", "prefs": prefs});
-            },
+        default:
+            console.log("BPM: ERROR: Unknown request from Firefox background script: '" + message.method + "'");
+            break;
+        }
+    });
+    break;
 
-            force_update: function(subreddit) {
-                self.postMessage({"method": "force_update", "subreddit": subreddit});
-            }
-        };
-        break;
+case "chrome-ext":
+    bpm_utils.copy_properties(bpm_browser, {
+        _send_message: function(data) {
+            chrome.extension.sendMessage(data);
+        }
+    });
+    break;
 
-    // On Chrome and Opera, localStorage can be directly written to, but we
-    // write by sending messages in order to keep CSS cache code in one place.
-    case "chrome-ext":
-        browser = {
-            prefs_updated: function() {
-                chrome.extension.sendMessage({"method": "set_prefs", "prefs": prefs});
-            },
+case "opera-ext":
+    bpm_utils.copy_properties(bpm_browser, {
+        _send_message: function(data) {
+            opera.extension.postMessage(data);
+        }
+    });
 
-            force_update: function(subreddit) {
-                chrome.extension.sendMessage({"method": "force_update", "subreddit": subreddit});
-            }
-        };
-        break;
+    opera.extension.addEventListener("message", function(event) {
+        var message = event.data;
+        switch(message.method) {
+        case "prefs":
+            bpm_prefs.got_prefs(message.prefs);
+            break;
 
-    case "opera-ext":
-        opera.extension.addEventListener("message", function(event) {
-            var message = event.data;
-            switch(message.method) {
-                case "prefs":
-                    set_prefs(message.prefs);
-                    break;
-
-                default:
-                    console.log("BPM: ERROR: Unknown request from Opera background script: '" + message.method + "'");
-                    break;
-            }
-        }, false);
-
-        browser = {
-            prefs_updated: function() {
-                opera.extension.postMessage({"method": "set_prefs", "prefs": prefs});
-            },
-
-            force_update: function(subreddit) {
-                opera.extension.postMessage({"method": "force_update", "subreddit": subreddit});
-            }
-        };
-        break;
+        default:
+            console.log("BPM: ERROR: Unknown request from Opera background script: '" + message.method + "'");
+            break;
+        }
+    }, false);
+    break;
 }
 
-function setup_emote_list(container, input, clear_button, list) {
+var bpm_prefs = {
+    prefs: null,
+    sr_array: null,
+    waiting: [],
+
+    when_available: function(callback) {
+        if(this.prefs) {
+            callback(this);
+        } else {
+            this.waiting.push(callback);
+        }
+    },
+
+    got_prefs: function(prefs) {
+        this.prefs = prefs;
+        this.make_sr_array();
+        this.de_map = this.make_emote_map(prefs.disabledEmotes);
+        this.we_map = this.make_emote_map(prefs.whitelistedEmotes);
+
+        for(var i = 0; i < this.waiting.length; i++) {
+            this.waiting[i](this);
+        }
+    },
+
+    make_sr_array: function() {
+        this.sr_array = [];
+        for(var id in sr_id_map) {
+            this.sr_array[id] = this.prefs.enabledSubreddits[sr_id_map[id]];
+        }
+        if(this.sr_array.indexOf(undefined) > -1) {
+            // Holes in the array mean holes in sr_id_map, which can't possibly
+            // happen. If it does, though, any associated emotes will be hidden.
+            //
+            // Also bad would be items in prefs not in sr_id_map, but that's
+            // more or less impossible to handle.
+            console.log("BPM: ERROR: sr_array has holes; installation or prefs are broken!");
+        }
+    },
+
+    make_emote_map: function(list) {
+        var map = {};
+        for(var i = 0; i < list.length; i++) {
+            map[list[i]] = 1;
+        }
+        return map;
+    },
+
+    sync_key: function(key) {
+        // No sync_timeouts for options page; would be bad as we don't want to
+        // lose any prefs due to quickly closing the page
+        bpm_browser.send_message("set_pref", {"pref": key, "value": this.prefs[key]});
+    },
+
+    force_update: function(subreddit) {
+        bpm_browser.send_message("force_update", {"subreddit": subreddit});
+    }
+};
+
+function setup_emote_list(prefs, container, input, clear_button, pref_name) {
+    var list = prefs[pref_name];
+
     function add_emote(emote) {
         var element = document.createElement("span");
         element.textContent = emote + " ";
@@ -141,7 +189,7 @@ function setup_emote_list(container, input, clear_button, list) {
             event.preventDefault();
             list.splice(list.indexOf(emote), 1);
             element.parentNode.removeChild(element);
-            browser.prefs_updated();
+            bpm_prefs.sync_key(pref_name);
         }, false);
         element.appendChild(close);
 
@@ -173,7 +221,7 @@ function setup_emote_list(container, input, clear_button, list) {
             }
 
             list.push(emotes[i]);
-            browser.prefs_updated();
+            bpm_prefs.sync_key(pref_name);
             add_emote(emotes[i]);
         }
     }
@@ -201,7 +249,7 @@ function setup_emote_list(container, input, clear_button, list) {
                 list.splice(index, 1);
                 container.removeChild(container.children[index]);
 
-                browser.prefs_updated();
+                bpm_prefs.sync_key(pref_name);
             }
         } else if(event.keyCode === 13) { // Return key
             var emotes = get_emotes();
@@ -229,7 +277,7 @@ function setup_emote_list(container, input, clear_button, list) {
         for(var i = 0; i < spans.length; i++) {
             container.removeChild(spans[i]);
         }
-        browser.prefs_updated();
+        bpm_prefs.sync_key(pref_name);
     }, false);
 }
 
@@ -257,14 +305,14 @@ function force_number(element, default_value, callback) {
     }, false);
 }
 
-function run() {
+function run(prefs) {
     // Basic boolean on/off checkbox pref
     function checkbox_pref(id) {
         var element = document.getElementById(id);
         element.checked = prefs[id];
         element.addEventListener("change", function() {
             prefs[id] = this.checked;
-            browser.prefs_updated();
+            bpm_prefs.sync_key(id);
         }, false);
     }
 
@@ -279,7 +327,7 @@ function run() {
 
     force_number(search_limit, 200, function(limit) {
         prefs.searchLimit = limit;
-        browser.prefs_updated();
+        bpm_prefs.sync_key("searchLimit");
     });
 
     var max_size = document.getElementById("maxEmoteSize");
@@ -287,7 +335,7 @@ function run() {
 
     force_number(max_size, 0, function(size) {
         prefs.maxEmoteSize = size;
-        browser.prefs_updated();
+        bpm_prefs.sync_key("maxEmoteSize");
     });
 
     // Subreddit enabler
@@ -316,7 +364,7 @@ function run() {
         var callback = (function(sr_name) {
             return function() {
                 prefs.enabledSubreddits[sr_name] = this.checked;
-                browser.prefs_updated();
+                bpm_prefs.sync_key("enabledSubreddits");
             };
         })(sr_name);
 
@@ -330,7 +378,7 @@ function run() {
         for(var sr_name in sr_data) {
             prefs.enabledSubreddits[sr_name] = true;
         }
-        browser.prefs_updated();
+        bpm_prefs.sync_key("enabledSubreddits");
     }, false);
 
     document.getElementById("disable-all").addEventListener("click", function() {
@@ -340,18 +388,18 @@ function run() {
         for(var sr_name in sr_data) {
             prefs.enabledSubreddits[sr_name] = false;
         }
-        browser.prefs_updated();
+        bpm_prefs.sync_key("enabledSubreddits");
     }, false);
 
     var de_container = document.getElementById("de-container");
     var de_input = document.getElementById("de-input");
     var de_clear = document.getElementById("de-clear");
-    setup_emote_list(de_container, de_input, de_clear, prefs.disabledEmotes);
+    setup_emote_list(prefs, de_container, de_input, de_clear, "disabledEmotes");
 
     var we_container = document.getElementById("we-container");
     var we_input = document.getElementById("we-input");
     var we_clear = document.getElementById("we-clear");
-    setup_emote_list(we_container, we_input, we_clear, prefs.whitelistedEmotes);
+    setup_emote_list(prefs, we_container, we_input, we_clear, "whitelistedEmotes");
 
     var custom_sr_div = document.getElementById("custom-subreddits");
 
@@ -386,13 +434,13 @@ function run() {
         div3.appendChild(remove);
 
         force.addEventListener("click", (function(subreddit) { return function(event) {
-            browser.force_update(subreddit);
+            bpm_prefs.force_update(subreddit);
         }; })(subreddit), false);
 
         remove.addEventListener("click", (function(subreddit) { return function(event) {
             delete prefs.customCSSSubreddits[subreddit];
             custom_sr_div.removeChild(div1);
-            browser.prefs_updated();
+            bpm_prefs.sync_key("customCSSSubreddits");
         }; })(subreddit), false);
 
         custom_sr_div.appendChild(div1);
@@ -420,7 +468,7 @@ function run() {
         // to confirm whether or not the subreddit even exists, and deny its
         // creation if it doesn't.
         prefs.customCSSSubreddits[sr] = 0;
-        browser.prefs_updated();
+        bpm_prefs.sync_key("customCSSSubreddits");
         add_sr_html(sr);
         add_input.value = "";
     }
@@ -442,15 +490,25 @@ function run() {
     }, false);
 }
 
-window.addEventListener("DOMContentLoaded", function() {
-    _doc_loaded = true;
-    // Never true in Firefox <script>
-    if(_doc_loaded && prefs !== null) {
-        run();
-    }
-}, false);
+function main() {
+    var _doc_loaded = false;
+    var _prefs_loaded = null;
 
-switch(bpm_utils.platform) {
+    window.addEventListener("DOMContentLoaded", function() {
+        _doc_loaded = true;
+        if(_doc_loaded && _prefs_loaded) {
+            run(_prefs_loaded.prefs);
+        }
+    }, false);
+
+    bpm_prefs.when_available(function(prefs) {
+        _prefs_loaded = prefs;
+        if(_doc_loaded && _prefs_loaded) {
+            run(prefs.prefs);
+        }
+    });
+
+    switch(bpm_utils.platform) {
     case "firefox-ext":
         // Make backend request for prefs
         self.postMessage({"method": "get_prefs"});
@@ -463,4 +521,7 @@ switch(bpm_utils.platform) {
     case "opera-ext":
         opera.extension.postMessage({"method": "get_prefs"});
         break;
+    }
 }
+
+main();
