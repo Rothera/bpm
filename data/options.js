@@ -38,7 +38,7 @@ function traceback_wrapper(f) {
         } catch(e) {
             console.log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
         }
-    }
+    };
 }
 
 var _doc_loaded = false;
@@ -76,7 +76,7 @@ switch(platform) {
             },
 
             force_update: function(subreddit) {
-                self.postMessage({"method": "force_update"});
+                self.postMessage({"method": "force_update", "subreddit:" subreddit});
             }
         };
         break;
@@ -125,7 +125,7 @@ function setup_emote_list(container, input, clear_button, list) {
     function add_emote(emote) {
         var element = document.createElement("span");
         element.textContent = emote + " ";
-        element.className = "listed-emote"
+        element.className = "listed-emote";
 
         var close = document.createElement("a");
         close.textContent = "x";
@@ -148,14 +148,14 @@ function setup_emote_list(container, input, clear_button, list) {
         // Normalize things a bit
         var emotes = text.split(",");
         emotes = emotes.map(function(s) { return s.trim(); });
-        emotes = emotes.filter(function(s) { return s.length; })
+        emotes = emotes.filter(function(s) { return s.length; });
 
         return emotes;
     }
 
     function insert_emotes(emotes) {
         emotes = emotes.map(function(s) {
-            return (s[0] == "/" ? "" : "/") + s;
+            return (s[0] === "/" ? "" : "/") + s;
         });
 
         for(var i = 0; i < emotes.length; i++) {
@@ -186,7 +186,7 @@ function setup_emote_list(container, input, clear_button, list) {
     // Handle backspaces and enter key specially. Note that keydown sees the
     // input element as it was BEFORE the key is handled.
     input.addEventListener("keydown", traceback_wrapper(function(event) {
-        if(event.keyCode == 8) { // Backspace key
+        if(event.keyCode === 8) { // Backspace key
             if(!input.value) {
                 // The input was previously empty, so chop off an emote.
 
@@ -197,7 +197,7 @@ function setup_emote_list(container, input, clear_button, list) {
 
                 browser.prefs_updated();
             }
-        } else if(event.keyCode == 13) { // Return key
+        } else if(event.keyCode === 13) { // Return key
             var emotes = get_emotes();
             insert_emotes(emotes);
             input.value = "";
@@ -208,7 +208,7 @@ function setup_emote_list(container, input, clear_button, list) {
     input.addEventListener("input", function(event) {
         var emotes = get_emotes();
         var text = input.value.trim();
-        if(text[text.length - 1] == ",") {
+        if(text[text.length - 1] === ",") {
             input.value = "";
         } else {
             input.value = emotes.pop() || "";
@@ -420,7 +420,7 @@ function run() {
     }
 
     add_input.addEventListener("keydown", traceback_wrapper(function(event) {
-        if(event.keyCode == 13) { // Return key
+        if(event.keyCode === 13) { // Return key
             add_subreddit();
             event.preventDefault();
             event.stopPropagation();

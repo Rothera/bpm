@@ -96,7 +96,7 @@ var bpm_utils = {
     },
 
     ends_with: function(text, s) {
-        return text.slice(-s.length) == s;
+        return text.slice(-s.length) === s;
     },
 
     catch_errors: function(f) {
@@ -173,7 +173,7 @@ case "firefox-ext":
             // hardcoding it). Ideally self.data.url() would be accessible to
             // content scripts, but it's not...
             var url = "resource://jid1-thrhdjxskvsicw-at-jetpack/betterponymotes/data" + filename;
-            var tag = bpm_utils.stylesheet_link(url)
+            var tag = bpm_utils.stylesheet_link(url);
             // Seems to work in Firefox, and we get to put our tags in a pretty
             // place!
             document.head.insertBefore(tag, document.head.firstChild);
@@ -372,7 +372,7 @@ var bpm_converter = {
             // element.getAttribute("href")- the former is mangled by the
             // browser to be a complete URL, which we don't want.
             var href = element.getAttribute("href");
-            if(href && href[0] == '/') {
+            if(href && href[0] === '/') {
                 // Don't normalize case for emote lookup
                 var parts = href.split("-");
                 var emote_name = parts[0];
@@ -444,7 +444,7 @@ var bpm_converter = {
                         var after = window.getComputedStyle(element, ":after").backgroundImage;
                         var before = window.getComputedStyle(element, ":before").backgroundImage;
                         // "" in Opera, "none" in Firefox and Chrome.
-                        if((!after || after == "none") && (!before || before == "none")) {
+                        if((!after || after === "none") && (!before || before === "none")) {
                             // Unknown emote? Good enough
                             element.className += " bpm-unknown";
                             element.textContent = "Unknown emote " + emote_name;
@@ -542,7 +542,7 @@ var bpm_search = {
 
         // Another way to close it
         this.container.addEventListener("keyup", function(event) {
-            if(event.keyCode == 27) { // Escape key
+            if(event.keyCode === 27) { // Escape key
                 this.hide();
             }
         }.bind(this), false);
@@ -657,7 +657,6 @@ var bpm_search = {
 
         // This seems to me a rather lousy way to build HTML, but oh well
         this.container = document.getElementById("bpm-search-box");
-        var toprow = document.getElementById("bpm-toprow");
         this.dragbox = document.getElementById("bpm-dragbox");
         this.search = document.getElementById("bpm-search");
         this.count = document.getElementById("bpm-result-count");
@@ -695,22 +694,22 @@ var bpm_search = {
         var end = this.target_form.selectionEnd;
         if(start !== undefined && end !== undefined) {
             var emote_len;
-            if(start != end) {
+            if(start !== end) {
                 // Make selections into alt-text.
                 // "[](" + ' "' + '")'
                 emote_len = 7 + emote_name.length + (end - start);
                 this.target_form.value = (
-                    this.target_form.value.substring(0, start) +
+                    this.target_form.value.slice(0, start) +
                     "[](" + emote_name + " \"" +
-                    this.target_form.value.substring(start, end) + "\")" +
-                    this.target_form.value.substring(end));
+                    this.target_form.value.slice(start, end) + "\")" +
+                    this.target_form.value.slice(end));
             } else {
                 // "[](" + ")"
                 emote_len = 4 + emote_name.length;
                 this.target_form.value = (
-                    this.target_form.value.substring(0, start) +
+                    this.target_form.value.slice(0, start) +
                     "[](" + emote_name + ")" +
-                    this.target_form.value.substring(end));
+                    this.target_form.value.slice(end));
             }
             this.target_form.selectionStart = end + emote_len;
             this.target_form.selectionEnd = end + emote_len;
@@ -731,8 +730,8 @@ var bpm_search = {
         for(var t = 0; t < terms.length; t++) {
             // If it starts with "sr:" it's subreddit syntax, otherwise it's a
             // normal search term.
-            if(terms[t].indexOf("sr:") == 0) {
-                sr_terms.push(terms[t].substr(3));
+            if(terms[t].indexOf("sr:") === 0) {
+                sr_terms.push(terms[t].slice(3));
             } else {
                 match_terms.push(terms[t]);
             }
@@ -800,9 +799,10 @@ var bpm_search = {
             var emote_size = emote_info[2];
 
             // if((blacklisted) && !whitelisted)
-            if((!prefs.sr_array[source_id] || (is_nsfw && !prefs.prefs.enableNSFW) || prefs.de_map[emote_name] ||
-                (prefs.prefs.maxEmoteSize && emote_size > prefs.prefs.maxEmoteSize))
-               && !prefs.we_map[emote_name]) {
+            if((!prefs.sr_array[source_id] || (is_nsfw && !prefs.prefs.enableNSFW) ||
+                prefs.de_map[emote_name] ||
+                (prefs.prefs.maxEmoteSize && emote_size > prefs.prefs.maxEmoteSize)) &&
+               !prefs.we_map[emote_name]) {
                 // TODO: enable it anyway if a pref is set? Dunno what exactly
                 // we'd do
                 hidden += 1;
@@ -874,7 +874,7 @@ var bpm_search = {
 
         button.addEventListener("click", function(event) {
             var sb_element = document.getElementById("bpm-search-box");
-            if(sb_element.style.visibility != "visible") {
+            if(sb_element.style.visibility !== "visible") {
                 this.show();
             } else {
                 this.hide();
@@ -1186,8 +1186,7 @@ var bpm_core = {
             break;
         }
 
-        if(bpm_utils.ends_with(document.location.hostname, "reddit.com") ||
-           document.location.href == "http://nallar.me/redditTest.html") {
+        if(bpm_utils.ends_with(document.location.hostname, "reddit.com")) {
             this.init_css();
 
             // This script is generally run before the DOM is built. Opera may break

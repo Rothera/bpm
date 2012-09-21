@@ -10,7 +10,6 @@
 
 "use strict";
 
-var match_pattern = require("match-pattern");
 var page_mod = require("page-mod");
 var request = require("request");
 var self = require("self");
@@ -69,7 +68,7 @@ function dl_file(url, callback) {
         url: url,
         headers: {"User-Agent": "BetterPonymotes Client CSS Updater (/u/Typhos)"},
         onComplete: function(response) {
-            if(response.status == 200) {
+            if(response.status === 200) {
                 callback(response.text);
             } else {
                 console.log("BPM: ERROR: Reddit returned HTTP status " + reponse.status + " for " + url);

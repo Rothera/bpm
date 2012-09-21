@@ -69,7 +69,7 @@ function strip_subreddit_css(data) {
 
 // Essentially a list compare, because JS sucks
 function subreddits_changed(old, n) {
-    if(old.length != n.length) {
+    if(old.length !== n.length) {
         return true;
     }
 

@@ -8,6 +8,8 @@
 **
 *******************************************************************************/
 
+"use strict";
+
 function sync_prefs(prefs) {
     localStorage.prefs = JSON.stringify(prefs);
 }
@@ -18,8 +20,8 @@ function prefs_updated(prefs) {
 function dl_file(url, callback) {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
-        if(request.readyState == 4) {
-            if(request.status == 200) {
+        if(request.readyState === 4) {
+            if(request.status === 200) {
                 callback(request.responseText);
             } else {
                 console.log("BPM: ERROR: Reddit returned HTTP status " + request.status + " for " + url);
@@ -46,7 +48,7 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
             break;
 
         case "set_prefs":
-            pref_manager.write(message.prefs)
+            pref_manager.write(message.prefs);
             break;
 
         case "force_update":
