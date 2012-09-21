@@ -132,6 +132,7 @@ var prefs_mod = page_mod.PageMod({
     contentScriptFile: [
         self.data.url("emote-map.js"),
         self.data.url("sr-data.js"),
+        self.data.url("jquery-1.8.2.js"),
         self.data.url("options.js")
         ],
     onAttach: on_cs_attach
