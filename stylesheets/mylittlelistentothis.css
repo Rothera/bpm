@@ -32,7 +32,7 @@ New log. Please use a Unix timestamp http://www.epochconverter.com/ (The number 
 1344389328 - Phei - Switched fillies, header rotation, User counter
 1344463977 - Phei - Put 70x70 emotes on one sheet
 
-Last Backup: 1345056351 by Phei
+Last Backup: 1348309455 by Phei
 
 
 
@@ -58,13 +58,15 @@ I MEAN IT
     border: 0 !important;
     font-size: 0 !important
     }
-.titlebox .md blockquote + table > thead tr th[align="left"] {
+.res-nightmode .titlebox .md blockquote + table > thead tr th[align="left"], .titlebox .md blockquote + table > thead tr th[align="left"] {
     background: transparent url(http://e.thumbs.redditmedia.com/sllAcAuKefvV7k7X.png) top left no-repeat;
     left: 0;
-    right: auto !important
+    right: auto !important;
+    border: none !important
     }
-.titlebox .md blockquote + table > thead tr th[align="right"] {
-    background: transparent url(http://d.thumbs.redditmedia.com/ykRVTx3JdqbwgPZu.png) top right no-repeat
+.res-nightmode .titlebox .md blockquote + table > thead tr th[align="right"], .titlebox .md blockquote + table > thead tr th[align="right"] {
+    background: transparent url(http://d.thumbs.redditmedia.com/ykRVTx3JdqbwgPZu.png) top right no-repeat;
+    border: none !important
     }
 span.redditname {
     display: block;
@@ -85,6 +87,9 @@ span.redditname {
     box-shadow: 0 4px 0 #41000F;
     height: 185px !important;
     z-index: auto !important
+    }
+.res-nightmode #header-bottom-left {
+    background: none !important
     }
 .pagename a {
     background-image: url(http://b.thumbs.redditmedia.com/P-JDW-CPphSbwq3a.png);
@@ -291,6 +296,9 @@ a:link, a:visited, .menuarea .dropdown.lightdrop .selected, .flat-list .selected
 .usertext-body a:not([href^="/"]) {
     border-bottom: 1px dotted #222 !important;
     color: #6d0019
+    }
+.res-nightmode .content .usertext-body a:not([href^="/"]) {
+    border-bottom: 1px dashed #770000 !important
     }
 .usertext-body a:visited:not([href^="/"]) {
     color: #666 !important
@@ -616,7 +624,7 @@ a:link, a:visited, .menuarea .dropdown.lightdrop .selected, .flat-list .selected
     padding-left: 0
     }
 .titlebox .md td, .titlebox .md th {
-    border: 1px solid #DDD
+    border: 1px solid #222
     }
 .titlebox h5 + blockquote, .titlebox h6 + blockquote {
     background: #333 !important;
@@ -635,7 +643,7 @@ a:link, a:visited, .menuarea .dropdown.lightdrop .selected, .flat-list .selected
     overflow: hidden;
     padding: 10px 10px 0 0 !important
     }
-.titlebox .md td, .titlebox .md th {
+.res-nightmode .titlebox .md td, .res-nightmode .titlebox .md th {
     border: 1px solid #222 !important
     }
 .titlebox h5 + blockquote:hover, .titlebox h6 + blockquote:hover {
@@ -702,6 +710,9 @@ shinebar {
     display: none
     }
 /* START NIGHTMODE FIXES */
+.res.res-nightmode .keyHighlight, .res.res-nightmode .keyHighlight .usertext-body, .res.res-nightmode .keyHighlight .usertext-body .md, .res.res-nightmode .keyHighlight .usertext-body .md p, .res.res-nightmode .keyHighlight .noncollapsed, .res.res-nightmode .keyHighlight .noncollapsed .md, .res.res-nightmode .keyHighlight .noncollapsed .md p {
+    background-color: #222 !important
+    }
 body:not(.moderator) a.id-t2_5qbeo:after {
     content: "I_Love_Twilight" !important
     }
@@ -754,9 +765,6 @@ body:not(.moderator) a.id-t2_5qbeo:after {
     border: none !important;
     color: #eee !important
     }
-.res-nightmode .titlebox .md td, .res-nightmode .titlebox .md th {
-    border: 1px solid #222 !important
-    }
 .res-nightmode .sidecontentbox .content {
     background-color: #333 !important;
     border: none !important;
@@ -794,13 +802,13 @@ NEW CSS END
     }
 /* Sidebar Lyra */
 .side a[href="http://www.reddit.com/r/mylittlelistentothis/new/"] {
-    background: url(http://b.thumbs.redditmedia.com/PAjVzDYx9wnk-QE7.png) repeat scroll 0 0 transparent;
+    background: url(http://b.thumbs.redditmedia.com/Lceo86M3mxvLEpEO.png) repeat scroll 0 0 transparent;
     display: block;
-    height: 100px;
+    height: 90px;
     position: fixed;
     right: -15px;
     top: 200px;
-    width: 75px;
+    width: 90px;
     z-index: 2;
     border: none !important
     }
@@ -922,7 +930,7 @@ a[href|="/twigrin"] {
     background-position: -182px -364px
     }
 /*Sheet 3*/
-a[href|="/iapprove"], a[href|="/soexcited"], a[href|="/pinkieshock"], a[href|="/pinkiesing"], a[href|="/fistpump"], a[href|="/motherof"], a[href|="/tavibored"], a[href|="/scratchyay"], a[href|="/ironwilllisten"], a[href|="/wubseverywhere"], a[href|="/fluttershock"] {
+a[href|="/iapprove"], a[href|="/soexcited"], a[href|="/pinkieshock"], a[href|="/pinkiesing"], a[href|="/fistpump"], a[href|="/motherof"], a[href|="/tavibored"], a[href|="/scratchyay"], a[href|="/ironwilllisten"], a[href|="/wubseverywhere"], a[href|="/fluttershock"], a[href|="/vinylspin"], a[href|="/scratchspin"] {
     background-image: url(http://a.thumbs.redditmedia.com/neArTCTLtPUxkALf.png) !important;
     clear: none;
     display: block;
@@ -962,6 +970,9 @@ a[href|="/wubseverywhere"] {
     }
 a[href|="/fluttershock"] {
     background-position: -91px -273px
+    }
+a[href|="/vinylspin"], a[href|="/scratchspin"] {
+    background-image: url(http://b.thumbs.redditmedia.com/Lceo86M3mxvLEpEO.png) !important
     }
 /* Ajent */
 a[href|="/bajentjfun"] {
@@ -1826,20 +1837,34 @@ a.author[href$="/Phei"] {
     vertical-align: bottom
     }
 a.author[href$="/Phei"]:after {
+    content: "Pheilight";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important;
+    color: #CE9CEF !important
+    }
+a.author[href$="/Phei"]:hover:after {
+    content: "Pinkie Phei";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important;
+    color: #f197b5 !important
+    }
+.sidecontentbox a.author[href$="/Phei"]:after {
     content: "INTERNATIONAL MOD";
     display: block;
     font-size: 12px !important;
     letter-spacing: normal;
-    visibility: visible !important;
-    /*color: #CE9CEF !important*/
+    visibility: visible !important
     }
-a.author[href$="/Phei"]:hover:after {
+.sidecontentbox a.author[href$="/Phei"]:hover:after {
     content: "Hates Adagio";
     display: block;
     font-size: 12px !important;
     letter-spacing: normal;
-    visibility: visible !important;
-    /*color: #f197b5 !important*/
+    visibility: visible !important
     }
 .author[href$="/MLSG_Bot"] {
     font-size: 0px !important;

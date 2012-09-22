@@ -141,7 +141,7 @@ div.titlebox .users-online span.number:after {
     }
 */
 .sidecontentbox a.author[href$="/IllusionOf_Integrity"]:before {
-    content: "TRIXIETRIXIETRIXIETRIXIETRIXIE";
+    content: "LuluHUMANS";
     font-size: 10pt;
     color: #369;
     display: block;
@@ -1549,4 +1549,7 @@ body.res-nightmode:first-of-type {
     }
 .content .md h1:before {
     content: ">"
+    }
+.md .RESUserTag, .md .RESUserTag + a.voteWeight, .md .RESUserTag + a.voteWeight + div.SuperRedditAltTextDisplay_Text {
+    display: none !important
     }
