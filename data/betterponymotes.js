@@ -335,12 +335,6 @@ var bpm_prefs = {
         return map;
     },
 
-    /* // DO NOT CALL: blows away all other pages, including options.html
-    sync: function(prefs) {
-        bpm_browser.send_message("set_prefs", {"prefs": this.prefs});
-    },
-    */
-
     sync_key: function(key) {
         // Schedule pref write for one second in the future, clearing out any
         // previous timeout. Prevents excessive backend calls, which can generate
