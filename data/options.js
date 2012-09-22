@@ -173,37 +173,111 @@ var bpm_prefs = {
     }
 };
 
-function setup_emote_list(prefs, container, input, clear_button, pref_name) {
-    var list = prefs[pref_name];
+function manage_option(prefs, name) {
+    var element = $("#" + name);
+    element.attr("checked", prefs[name]);
+    element.change(function(event) {
+        prefs[name] = this.checked;
+        bpm_prefs.sync_key(name);
+    });
+}
 
-    function add_emote(emote) {
-        var element = document.createElement("span");
-        element.textContent = emote + " ";
-        element.className = "listed-emote";
+function manage_number(prefs, name, default_value) {
+    var element = $("#" + name);
+    element.val(prefs[name]);
 
-        var close = document.createElement("a");
-        close.textContent = "x";
-        close.href = "#";
+    element.on("input", function(event) {
+        // Forbid negatives
+        var value = Math.max(parseInt(this.value, 10), 0);
+        if(isNaN(value)) {
+            // Completely unusable input- reset to default
+            value = default_value;
+            this.value = "";
+        } else {
+            // Effectively removes non-integers from the form.
+            this.value = value;
+        }
 
-        close.addEventListener("click", function(event) {
-            event.preventDefault();
-            list.splice(list.indexOf(emote), 1);
-            element.parentNode.removeChild(element);
-            bpm_prefs.sync_key(pref_name);
-        }, false);
-        element.appendChild(close);
+        prefs[name] = value;
+        bpm_prefs.sync_key(name);
+    });
+}
 
-        container.insertBefore(element, input);
+function manage_enabled_subreddits(prefs) {
+    // Subreddit enabler
+    var list_div = $("#enabledSubreddits");
+
+    var checkboxes = [];
+    // Generate a page from the builtin list of subreddits
+    for(var subreddit in sr_data) {
+        var full_name = sr_data[subreddit][0];
+
+        var label = $("<label><input type='checkbox'> " + full_name + "</label>");
+        var input = label.find("input");
+        list_div.append(label);
+        input.attr("checked", prefs.enabledSubreddits[subreddit]);
+        checkboxes.push(input[0]);
+
+        // Closure
+        var callback = (function(subreddit) {
+            return function(event) {
+                prefs.enabledSubreddits[subreddit] = this.checked;
+                bpm_prefs.sync_key("enabledSubreddits");
+            };
+        })(subreddit);
+
+        input.change(callback);
     }
 
-    function get_emotes() {
-        var text = input.value;
+    function set_all(value) {
+        for(var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = value;
+        }
 
-        // Normalize things a bit
+        for(var subreddit in sr_data) {
+            prefs.enabledSubreddits[subreddit] = value;
+        }
+
+        bpm_prefs.sync_key("enabledSubreddits");
+    }
+
+    $("#enable-all-subreddits").click(function(event) {
+        set_all(true);
+    });
+    $("#disable-all-subreddits").click(function(event) {
+        set_all(false);
+    });
+}
+
+function manage_emote_list(prefs, name) {
+    var container = $("#" + name);
+    var input = $("#" + name + "-input");
+    var clear_button = $("#" + name + "-clear");
+
+    var list = prefs[name];
+    var tags = [];
+
+    function insert_tag(emote) {
+        var span = $("<span class='listed-emote'>" + emote + " <a href='#'>x</a></span>");
+        var anchor = span.find("a");
+        anchor.click(function(event) {
+            event.preventDefault();
+            var index = list.indexOf(emote);
+            list.splice(index, 1);
+            tags.splice(index, 1);
+            span.remove();
+            bpm_prefs.sync_key(name);
+        });
+        input.before(span);
+        tags.push(span);
+    }
+
+    function parse_input() {
+        var text = input.val();
         var emotes = text.split(",");
+        // Normalize things a bit
         emotes = emotes.map(function(s) { return s.trim(); });
         emotes = emotes.filter(function(s) { return s.length; });
-
         return emotes;
     }
 
@@ -212,282 +286,175 @@ function setup_emote_list(prefs, container, input, clear_button, pref_name) {
             return (s[0] === "/" ? "" : "/") + s;
         });
 
+        var changed = false;
         for(var i = 0; i < emotes.length; i++) {
             if(list.indexOf(emotes[i]) > -1) {
                 continue; // Already in the list
             }
             if(!emote_map[emotes[i]]) {
-                continue; // Not an actual emote
+                continue; // Not an emote (NOTE: what about global emotes?)
             }
 
             list.push(emotes[i]);
-            bpm_prefs.sync_key(pref_name);
-            add_emote(emotes[i]);
+            insert_tag(emotes[i]);
+            changed = true;
+        }
+
+        if(changed) {
+            bpm_prefs.sync_key(name);
         }
     }
 
-    // NOTE: This list is never verified against emote_map. Doing that in the
-    // backend script would make some sense, but then, maybe not.
+    // NOTE: This list isn't verified against emote_map at all. Should we?
     for(var i = 0; i < list.length; i++) {
-        add_emote(list[i]);
+        insert_tag(list[i]);
     }
 
-    // Container defers focus to input
-    container.addEventListener("click", function(event) {
+    // Defer focus
+    container.click(function(event) {
         input.focus();
-    }, false);
+    });
 
-    // Handle backspaces and enter key specially. Note that keydown sees the
-    // input element as it was BEFORE the key is handled.
-    input.addEventListener("keydown", bpm_utils.catch_errors(function(event) {
-        if(event.keyCode === 8) { // Backspace key
-            if(!input.value) {
-                // The input was previously empty, so chop off an emote.
-
-                // FIXME: This is a nasty way of doing things...
+    // Handle enter/backspace specially. Remember that keydown sees the input
+    // as it was *before* the key is handled by the browser.
+    input.keydown(function(event) {
+        if(event.keyCode === 8) { // Backspace
+            if(!input.val() && list.length) {
+                // Empty input means chop off the last item
                 var index = list.length - 1;
-                list.splice(index, 1);
-                container.removeChild(container.children[index]);
+                tags[index].remove();
 
-                bpm_prefs.sync_key(pref_name);
+                list.splice(index, 1);
+                tags.splice(index, 1);
+
+                bpm_prefs.sync_key(name);
             }
         } else if(event.keyCode === 13) { // Return key
-            var emotes = get_emotes();
+            var emotes = parse_input();
             insert_emotes(emotes);
-            input.value = "";
+            input.val("");
         }
-    }), false);
+    });
 
-    // Handle commas with the "proper" way to handle input.
-    input.addEventListener("input", function(event) {
-        var emotes = get_emotes();
-        var text = input.value.trim();
+    // Handle commas
+    input.on("input", function(event) {
+        var emotes = parse_input();
+        var text = input.val();
         if(text[text.length - 1] === ",") {
-            input.value = "";
+            input.val("");
         } else {
-            input.value = emotes.pop() || "";
+            input.val(emotes.pop() || "");
         }
         insert_emotes(emotes);
-    }, false);
+    });
 
-    clear_button.addEventListener("click", function() {
+    clear_button.click(function(event) {
         list.splice(0, list.length); // Clear in place
-        // Cute hack
-        var spans = container.getElementsByTagName("span");
-        for(var i = 0; i < spans.length; i++) {
-            container.removeChild(spans[i]);
+        for(var i = 0; i < tags.length; i++) {
+            tags[i].remove();
         }
-        bpm_prefs.sync_key(pref_name);
-    }, false);
+        tags = [];
+        bpm_prefs.sync_key(name);
+    });
 }
 
-function force_number(element, default_value, callback) {
-    // Validate edits
-    element.addEventListener("input", function() {
-        // Forbid negatives
-        var value = Math.max(parseInt(element.value, 10), 0);
-        if(isNaN(value)) {
-            // If the input is completely invalid (or missing), we reset it and
-            // pick the default.
-            value = default_value;
-            element.value = "";
-        } else {
-            // Anything resembling a number we keep. Note that parseInt()
-            // ignores invalid characters after it gets a number, so this will
-            // effectively forbid non-integers.
-            //
-            // (As an edge case, inserting e.g. "x" into the middle of an
-            // otherwise valid number will truncate it.)
-            element.value = value;
-        }
+function manage_custom_subreddits(prefs) {
+    var div = $("#custom-subreddits");
 
-        callback(value);
-    }, false);
-}
-
-function run(prefs) {
-    // Basic boolean on/off checkbox pref
-    function checkbox_pref(id) {
-        var element = document.getElementById(id);
-        element.checked = prefs[id];
-        element.addEventListener("change", function() {
-            prefs[id] = this.checked;
-            bpm_prefs.sync_key(id);
-        }, false);
-    }
-
-    checkbox_pref("enableNSFW");
-    checkbox_pref("enableExtraCSS");
-    checkbox_pref("showUnknownEmotes");
-    checkbox_pref("showAltText");
-    checkbox_pref("enableGlobalEmotes");
-
-    var search_limit = document.getElementById("searchLimit");
-    search_limit.value = prefs.searchLimit;
-
-    force_number(search_limit, 200, function(limit) {
-        prefs.searchLimit = limit;
-        bpm_prefs.sync_key("searchLimit");
-    });
-
-    var max_size = document.getElementById("maxEmoteSize");
-    max_size.value = prefs.maxEmoteSize;
-
-    force_number(max_size, 0, function(size) {
-        prefs.maxEmoteSize = size;
-        bpm_prefs.sync_key("maxEmoteSize");
-    });
-
-    // Subreddit enabler
-    var sr_list_element = document.getElementById("sr-list");
-    function gen_checkbox(label, value) {
-        // Generate the following HTML:
-        // <label><input type="checkbox" value="?"> Some text here</label><br>
-        var label_element = document.createElement("label");
-        var input_element = document.createElement("input");
-        input_element.type = "checkbox";
-        input_element.checked = value;
-        label_element.appendChild(input_element);
-        label_element.appendChild(document.createTextNode(" " + label));
-        sr_list_element.appendChild(label_element);
-        return input_element;
-    }
-
-    var sr_checkboxes = [];
-    // Generate a page from the builtin list of subreddits
-    for(var sr_name in sr_data) {
-        var full_name = sr_data[sr_name][0];
-        var element = gen_checkbox(full_name, prefs.enabledSubreddits[sr_name]);
-        sr_checkboxes.push(element);
-
-        // Closure to capture variables
-        var callback = (function(sr_name) {
-            return function() {
-                prefs.enabledSubreddits[sr_name] = this.checked;
-                bpm_prefs.sync_key("enabledSubreddits");
-            };
-        })(sr_name);
-
-        element.addEventListener("change", callback, false);
-    }
-
-    document.getElementById("enable-all").addEventListener("click", function() {
-        for(var i = 0; i < sr_checkboxes.length; i++) {
-            sr_checkboxes[i].checked = true;
-        }
-        for(var sr_name in sr_data) {
-            prefs.enabledSubreddits[sr_name] = true;
-        }
-        bpm_prefs.sync_key("enabledSubreddits");
-    }, false);
-
-    document.getElementById("disable-all").addEventListener("click", function() {
-        for(var i = 0; i < sr_checkboxes.length; i++) {
-            sr_checkboxes[i].checked = false;
-        }
-        for(var sr_name in sr_data) {
-            prefs.enabledSubreddits[sr_name] = false;
-        }
-        bpm_prefs.sync_key("enabledSubreddits");
-    }, false);
-
-    var de_container = document.getElementById("de-container");
-    var de_input = document.getElementById("de-input");
-    var de_clear = document.getElementById("de-clear");
-    setup_emote_list(prefs, de_container, de_input, de_clear, "disabledEmotes");
-
-    var we_container = document.getElementById("we-container");
-    var we_input = document.getElementById("we-input");
-    var we_clear = document.getElementById("we-clear");
-    setup_emote_list(prefs, we_container, we_input, we_clear, "whitelistedEmotes");
-
-    var custom_sr_div = document.getElementById("custom-subreddits");
-
-    function add_sr_html(subreddit) {
-        // Oh god, this is awful.
-
+    function make_subreddit_row(subreddit) {
         // TODO: Add some status information. Make this page dynamic, despite
         // all the communication that will have to go between us and the
         // backend. Show whether or not a CSS cache exists, how old it is,
         // and the last error (404's would especially be nice).
-        var div1 = document.createElement("div");
-        var div2 = document.createElement("div");
-        var div3 = document.createElement("div");
-        div1.className = "row custom-subreddit";
-        div2.className = "span3";
-        div3.className = "span3";
+        var row = $([
+            "<div class='row custom-subreddit'>",
+            "  <div class='span3'>",
+            "    <label>r/" + subreddit + "</label>",
+            "  </div>",
+            "  <div class='span3'>",
+            "    <button class='btn' type='button'>Force Update</button>",
+            "    <button class='btn' type='button'>Remove</button>",
+            "  </div>",
+            "</div>"
+            ].join(""));
 
-        var label = document.createElement("label");
-        label.textContent = "r/" + subreddit;
+        var force_button = $(row.find("button")[0]);
+        var remove_button = $(row.find("button")[1]);
 
-        var force = document.createElement("button");
-        var remove = document.createElement("button");
-        force.className = remove.className = "btn";
-        force.type = remove.type = "button";
-        force.textContent = "Force Update";
-        remove.textContent = "Remove";
-
-        div1.appendChild(div2);
-        div1.appendChild(div3);
-        div2.appendChild(label);
-        div3.appendChild(force);
-        div3.appendChild(remove);
-
-        force.addEventListener("click", (function(subreddit) { return function(event) {
+        force_button.click(function(event) {
             bpm_prefs.force_update(subreddit);
-        }; })(subreddit), false);
+        });
 
-        remove.addEventListener("click", (function(subreddit) { return function(event) {
+        remove_button.click(function(event) {
             delete prefs.customCSSSubreddits[subreddit];
-            custom_sr_div.removeChild(div1);
+            row.remove();
             bpm_prefs.sync_key("customCSSSubreddits");
-        }; })(subreddit), false);
+        });
 
-        custom_sr_div.appendChild(div1);
+        div.append(row);
     }
 
     for(var subreddit in prefs.customCSSSubreddits) {
-        add_sr_html(subreddit);
+        make_subreddit_row(subreddit);
     }
 
-    var add_input = document.getElementById("add-custom-subreddit");
-    var add_button = document.getElementById("add-subreddit");
+    var add_input = $("#add-custom-subreddit");
+    var add_button = $("#add-subreddit");
 
-    add_input.addEventListener("input", function(event) {
+    add_input.on("input", function(event) {
         // Dunno if subreddits can have other characters or not
-        add_input.value = add_input.value.replace(/[^a-zA-Z0-9_-]/g, "").toLowerCase();
-    }, false);
+        add_input.val(add_input.val().replace(/[^a-zA-Z0-9_-]/g, "").toLowerCase());
+    });
 
     function add_subreddit() {
-        var sr = add_input.value;
+        var sr = add_input.val();
+        add_input.val("");
+
         if(sr in prefs.customCSSSubreddits) {
-            add_input.value = "";
             return;
         }
+
         // TODO: Make a little spinny circle icon and make a request to Reddit
         // to confirm whether or not the subreddit even exists, and deny its
         // creation if it doesn't.
         prefs.customCSSSubreddits[sr] = 0;
         bpm_prefs.sync_key("customCSSSubreddits");
-        add_sr_html(sr);
-        add_input.value = "";
+        make_subreddit_row(sr);
     }
 
-    add_input.addEventListener("keydown", bpm_utils.catch_errors(function(event) {
+    add_input.keydown(function(event) {
         if(event.keyCode === 13) { // Return key
             add_subreddit();
             event.preventDefault();
             event.stopPropagation();
             return false;
         }
-    }), false);
+    });
 
-    add_button.addEventListener("click", function(event) {
+    add_button.click(function(event) {
         add_subreddit();
         event.preventDefault();
         event.stopPropagation();
         return false;
-    }, false);
+    });
+}
+
+function run(prefs) {
+    manage_option(prefs, "enableNSFW");
+    manage_option(prefs, "enableExtraCSS");
+    manage_option(prefs, "showUnknownEmotes");
+    manage_option(prefs, "showAltText");
+    manage_option(prefs, "enableGlobalEmotes");
+
+    manage_number(prefs, "searchLimit", 200);
+    manage_number(prefs, "maxEmoteSize", 0);
+
+    manage_enabled_subreddits(prefs);
+
+    manage_emote_list(prefs, "disabledEmotes");
+    manage_emote_list(prefs, "whitelistedEmotes");
+
+    manage_custom_subreddits(prefs);
 }
 
 function main() {
@@ -496,30 +463,29 @@ function main() {
 
     window.addEventListener("DOMContentLoaded", function() {
         _doc_loaded = true;
-        if(_doc_loaded && _prefs_loaded) {
+        if(_doc_loaded && _prefs_loaded !== null) {
             run(_prefs_loaded.prefs);
         }
     }, false);
 
     bpm_prefs.when_available(function(prefs) {
         _prefs_loaded = prefs;
-        if(_doc_loaded && _prefs_loaded) {
+        if(_doc_loaded && _prefs_loaded !== null) {
             run(prefs.prefs);
         }
     });
 
     switch(bpm_utils.platform) {
     case "firefox-ext":
-        // Make backend request for prefs
-        self.postMessage({"method": "get_prefs"});
+        bpm_browser.send_message("get_prefs");
         break;
 
     case "chrome-ext":
-        chrome.extension.sendMessage({"method": "get_prefs"}, set_prefs);
+        chrome.extension.sendMessage({"method": "get_prefs"}, bpm_prefs.got_prefs.bind(bpm_prefs));
         break;
 
     case "opera-ext":
-        opera.extension.postMessage({"method": "get_prefs"});
+        bpm_browser.send_message("get_prefs");
         break;
     }
 }

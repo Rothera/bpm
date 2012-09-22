@@ -31,10 +31,10 @@
 
         <form class="form-inline">
           <legend>Enabled Subreddits</legend>
-          <div id="sr-list"></div>
+          <div id="enabledSubreddits"></div>
           <br>
-          <button type="button" id="enable-all" class="btn">Enable all</button>
-          <button type="button" id="disable-all" class="btn">Disable all</button>
+          <button type="button" id="enable-all-subreddits" class="btn">Enable all</button>
+          <button type="button" id="disable-all-subreddits" class="btn">Disable all</button>
         </form>
 
         <!--
@@ -43,18 +43,18 @@
         -->
         <form class="form-inline" onsubmit="return false;">
           <legend>Disabled Emotes</legend>
-          <div id="de-container" class="emote-list-container">
-            <input id="de-input" class="emote-list-input">
+          <div id="disabledEmotes" class="emote-list-container">
+            <input id="disabledEmotes-input" class="emote-list-input">
           </div>
-          <button type="button" id="de-clear" class="btn">Clear</button>
+          <button type="button" id="disabledEmotes-clear" class="btn">Clear</button>
         </form>
 
         <form class="form-inline" onsubmit="return false;">
           <legend>Whitelisted Emotes</legend>
-          <div id="we-container" class="emote-list-container">
-            <input id="we-input" class="emote-list-input">
+          <div id="whitelistedEmotes" class="emote-list-container">
+            <input id="whitelistedEmotes-input" class="emote-list-input">
           </div>
-          <button type="button" id="we-clear" class="btn">Clear</button>
+          <button type="whitelistedEmotes-clear" id="we-clear" class="btn">Clear</button>
         </form>
 
         <form class="form-inline" onsubmit="return false;">
