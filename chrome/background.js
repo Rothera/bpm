@@ -17,10 +17,11 @@ function sync_prefs(prefs) {
 function prefs_updated(prefs) {
 }
 
-function dl_file(url, callback) {
+function dl_file(done, url, callback) {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if(request.readyState === 4) {
+            done();
             if(request.status === 200) {
                 callback(request.responseText);
             } else {
@@ -38,7 +39,7 @@ if(localStorage.prefs === undefined) {
     localStorage.prefs = "{}";
 }
 
-var pref_manager = manage_prefs(localStorage, JSON.parse(localStorage.prefs), sync_prefs, prefs_updated, dl_file);
+var pref_manager = manage_prefs(localStorage, JSON.parse(localStorage.prefs), sync_prefs, prefs_updated, dl_file, setTimeout);
 
 // Content script requests
 chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {

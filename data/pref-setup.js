@@ -89,14 +89,62 @@ function subreddits_changed(old, n) {
     return common.length;
 }
 
+function TaskQueue(set_timeout, callback, delay) {
+    this.set_timeout = set_timeout;
+    this.callback = callback;
+    this.delay = delay;
+    this.last_run = 0;
+    this.queue = [];
+    this.running = false;
+}
+
+TaskQueue.prototype = {
+    add: function() {
+        this.queue.push(Array.prototype.slice.call(arguments));
+
+       // The task chain will keep itself running so long as there are items
+        // in the queue, so don't worry about that
+        if(!this.running) {
+            this.running = true;
+            // Wait until we're allowed to run things again
+            var wait = (this.last_run + this.delay) - Date.now();
+            if(wait > 0) {
+                // Google Chrome's setTimeout() does not appreciate a this
+                // parameter
+                this.set_timeout.call(undefined, this.run_next.bind(this), wait);
+            } else {
+                // May as well just call it directly
+                this.run_next();
+            }
+        }
+    },
+
+    run_next: function() {
+        // Set up args list: first is always done(), rest is as passed
+        var args = this.queue.shift();
+
+        args.unshift(function() {
+            this.last_run = Date.now();
+            // If the queue isn't empty yet, keep running
+            if(this.queue.length) {
+                this.set_timeout.call(undefined, this.run_next.bind(this), this.delay);
+            } else {
+                this.running = false;
+            }
+        }.bind(this));
+
+        // Run task
+        this.callback.apply(undefined, args);
+    }
+};
+
 // Once a week. TODO: Make configurable, within certain tolerances.
 var DOWNLOAD_INTERVAL = 1000 * 60 * 60 * 24 * 7;
 
-function css_manager(pref_manager, download_file) {
+function css_manager(pref_manager) {
     this.pm = pref_manager;
     this.cached_subreddits = [];
     this.css_cache = null;
-    this.download_file = download_file;
 
     // Done from pref_manager
     //this.check_cache();
@@ -143,7 +191,7 @@ css_manager.prototype = {
         // Chrome doesn't permit setting User-Agent (because it sucks), but this
         // should help a little bit
         var url = "http://reddit.com/r/" + subreddit + "/stylesheet.css?__ua=BetterPonymotes&nocache=" + random;
-        this.download_file(url, function(css) {
+        this.pm.dl_queue.add(url, function(css) {
             this.pm.database[key] = strip_subreddit_css(css);
             prefs.customCSSSubreddits[subreddit] = Date.now();
             this.pm._sync();
@@ -167,7 +215,7 @@ css_manager.prototype = {
     }
 };
 
-function manage_prefs(database, prefs, sync, update, download_file) {
+function manage_prefs(database, prefs, sync, update, download_file, set_timeout) {
     // TODO: replace prefs argument with the database object, just assuming
     // all values are string->string except for prefs
 
@@ -193,6 +241,8 @@ function manage_prefs(database, prefs, sync, update, download_file) {
         },
 
         database: database,
+        // Wait 2.5s between hitting Reddit
+        dl_queue: new TaskQueue(set_timeout, download_file, 2500),
 
         _sync: function() {
             sync(prefs);
@@ -202,7 +252,7 @@ function manage_prefs(database, prefs, sync, update, download_file) {
 
     setup_prefs(prefs);
     manager._sync();
-    manager.cm = new css_manager(manager, download_file);
+    manager.cm = new css_manager(manager);
     manager.cm.after_pref_write();
 
     return manager;

@@ -16,6 +16,7 @@ var self = require("self");
 var simple_prefs = require("simple-prefs");
 var simple_storage = require("simple-storage");
 var tabs = require("tabs");
+var timers = require("timers");
 
 var pref_setup = require("pref-setup");
 var sr_data = require("sr-data");
@@ -63,11 +64,12 @@ function prefs_updated(prefs) {
     bgm_enabled = prefs.enableGlobalEmotes;
 }
 
-function dl_file(url, callback) {
+function dl_file(done, url, callback) {
     request.Request({
         url: url,
         headers: {"User-Agent": "BetterPonymotes Client CSS Updater (/u/Typhos)"},
         onComplete: function(response) {
+            done();
             if(response.status === 200) {
                 callback(response.text);
             } else {
@@ -87,7 +89,7 @@ if(!storage.prefs) {
     }
 }
 
-var pref_manager = pref_setup.manage_prefs(storage, storage.prefs, sync_prefs, prefs_updated, dl_file);
+var pref_manager = pref_setup.manage_prefs(storage, storage.prefs, sync_prefs, prefs_updated, dl_file, timers.setTimeout);
 
 function on_cs_attach(worker) {
     worker.on("message", function(message) {
