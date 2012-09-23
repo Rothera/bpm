@@ -176,7 +176,7 @@ case "firefox-ext":
             var tag = bpm_utils.stylesheet_link(url);
             // Seems to work in Firefox, and we get to put our tags in a pretty
             // place!
-            document.head.insertBefore(tag, document.head.firstChild);
+            this.css_parent.insertBefore(tag, this.css_parent.firstChild);
         }
     });
 
@@ -210,7 +210,7 @@ case "chrome-ext":
             // document.head does not exist at this point in Chrome (it's null).
             // Trying to access it seems to blow it away. Strange. This will
             // have to suffice (though it gets them "backwards").
-            document.documentElement.insertBefore(tag, document.documentElement.firstChild);
+            this.css_parent.insertBefore(tag, this.css_parent.firstChild);
         }
     });
     break;
@@ -226,8 +226,8 @@ case "opera-ext":
         link_css: function(filename) {
             this._get_file(filename, function(data) {
                 var tag = bpm_utils.style_tag(data);
-                document.head.insertBefore(tag, document.head.firstChild);
-            });
+                this.css_parent.insertBefore(tag, this.css_parent.firstChild);
+            }.bind(this));
         }
     });
 
