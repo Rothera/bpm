@@ -457,7 +457,8 @@ var bpm_converter = {
             if(element.title) {
                 // Work around due to RES putting tag links in the middle of
                 // posts. (Fucking brilliant!)
-                if(bpm_utils.has_class(element, "userTagLink")) {
+                if(bpm_utils.has_class(element, "userTagLink") ||
+                   bpm_utils.has_class(element, "voteWeight")) {
                     continue;
                 }
 
