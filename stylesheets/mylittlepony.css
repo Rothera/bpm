@@ -215,11 +215,9 @@ clear: both;
     font-size: 8pt !important
     }
 /* header image location */
-/*
 #header-img {
-margin: 2px 0px -2px 0px;
-}
-*/
+    margin: 0px 0px -3px 0px
+    }
 .content {
     margin-top: 13px
     }
@@ -1301,7 +1299,8 @@ a.author[href$="/3holes2tits1fork"]:after {
     position: absolute;
     top: 28px;
     /*Normally 28 but AB's bow is huge*/
-    left: 125px;
+    left: 139px;
+    /*Normally 125px*/
     z-index: 50;
     margin: 20px 420px 0 0;
     padding: 8px 6px;
@@ -1332,17 +1331,15 @@ a.author[href$="/3holes2tits1fork"]:after {
 .titlebox .usertext-body .md ol li + li {
     display: inline-block;
     float: right;
-    background: url(http://e.thumbs.redditmedia.com/phLutuZzLrWfXiWd.png);
-    width: 53px;
+    background: url(http://d.thumbs.redditmedia.com/k7yqmK_EdNxoP3-c.png);
+    width: 86px;
     height: 61px;
     margin-top: -37px;
-    margin-left: -2px;
+    margin-left: -6px;
     margin-bottom: -14px;
     margin-right: -40px
     }
-.titlebox .usertext-body .md ol li + li:hover {
-    background-position: -53px 0px
-    }
+/* .titlebox .usertext-body .md ol li + li:hover {background-position:-53px 0px;} */
 /*OLD GIANT HAT */
 /*
 .content {
@@ -2771,9 +2768,6 @@ a.thumbnail.self {
     padding-top: 410px;
 }
 */
-#header-img {
-    margin-top: 24px
-    }
 .md .RESUserTag, .md .RESUserTag + a.voteWeight, .md .RESUserTag + a.voteWeight + div.SuperRedditAltTextDisplay_Text {
     display: none !important
     }

@@ -206,6 +206,53 @@ a[href|="/beforetacoswerecool"] {
     height: 560px;
     background-image: url(http://b.thumbs.redditmedia.com/zd0Z8dE7TZ-_e8kU.png) !important
     }
+a[href|="/tacosnack"] {
+    width: 400px;
+    height: 400px;
+    background-image: url(http://d.thumbs.redditmedia.com/cDXipTk08Kq-bVbW.png);
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    margin-left: 3px;
+    margin-right: 3px
+    }
+a[href|="/butttacos"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 400px;
+    height: 225px;
+    background-image: url(http://e.thumbs.redditmedia.com/OAiPVNRSf--Fgspp.png) !important
+    }
+a[href|="/tacosalute"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 570px;
+    height: 490px;
+    background-image: url(http://f.thumbs.redditmedia.com/84Nd6herD4zRlh1q.png) !important
+    }
+a[href|="/tacoshywillmurderyouuntilyouredead"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 550px;
+    height: 342px;
+    background-image: url(http://e.thumbs.redditmedia.com/DGgcmtbDXJztTTqF.png) !important
+    }
+a[href|="/tacogun"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 550px;
+    height: 549px;
+    background-image: url(http://a.thumbs.redditmedia.com/JWlBKB2AhmcnqYN6.png) !important
+    }
 /* ----------- Name Change ---------------- */
 a.author[href$="tacoshy"] {
     font-size: 0px !important;
@@ -300,6 +347,34 @@ a.author[href$="bryvood"] {
     }
 a.author[href$="bryvood"]:after {
     content: "King TacoShy";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="JustAnotherGDB"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="JustAnotherGDB"]:after {
+    content: "JustAnotherTaco";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="Conky_"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="Conky_"]:after {
+    content: "taConky_";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;
