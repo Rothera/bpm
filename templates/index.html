@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>BetterPonymotes Emote Tagger</title>
+  <link href="{{url_for("static", filename="css/bootstrap.css")}}" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="span8 offset2">
+        <h2>Rules and Basic Tags</h2>
+        <p>The following set of basic tags should be adhered to. Some of these
+          will have important meanings in the future.
+        <p>The Mane Six's tags are <code>ts</code>, <code>rarity</code>,
+          <code>rd</code>, <code>fs</code>, <code>pp</code>, and <code>aj</code>.
+          Though these tags may be changed in the future, it is easiest to do so
+          when they are consistently named.
+        <p>Add any and all extra tags you can think of (within reason)- but be
+          careful not to introduce multiple tags for the same thing. Tag aliases
+          can be implemented at a later date- just pick one, and stick with it.
+        <p>All explicitly pornographic emotes must be tagged <code>nsfw</code>.
+          Anything less than actual genitalia is most likely not NSFW.
+        <p>Emotes that strongly imply genitalia, sex, or similar (e.g. the
+          <code>/*fun</code> emotes, or most of r/mylittlenanners) should be
+          tagged as <code>q</code>, essentially short for "questionably sfw".
+          Though this "rating" is not currently implemented in BPM, plans do
+          exist. It does <em>not</em> include emotes like the <code>/yy*</code>
+          set, or "sexy face" emotes. Take a strong stance on this rule- when in
+          doubt, interpret it as literally as possible. Bend it as little as you
+          can.
+        <p>If an emote is merely a reversed version of another emote, or an
+          alias, mark it as <code>v</code> (variant). This includes <code>/r*</code>.
+          grid names, and most non-canonical aliases. Ideally, every emote has
+          only one non-variant alias. Variant emotes will be hidden from search
+          to reduce clutter, and used to find identical emotes. Don't tag these
+          emotes with anything else- other tags will be automatically added in
+          later by finding non-variant emotes. Only use this to mark variants
+          within a single subreddit- if an emote is a copy from elsewhere, just
+          tag it as normal.
+        <p>r/mylittlepony emotes are marked as <code>drop</code>. Don't remove
+          this tag, or <strong>do not</strong> use it anywhere else. It has
+          special meaning.
+
+        <h4>Use of Specific Tags</h4>
+        <ul>
+          <li><code>+human</code> is for humanized ponies, not actual humans.
+            Humans from the show (only applies to older generations) also apply.
+          <li><code>+nonpony</code> is for emotes with no relation to the show.
+            It doesn't mean "no ponies in the emote".
+          <li><code>+cmc</code> is to be replaced with <code>+sweetiebelle
+            +scootaloo +applebloom</code> and removed.
+          <li><code>+oc</code> is for OC's. No, you don't get your own tag.
+            Maybe some other day.
+          <li><code>+otherpony</code> is for canon ponies (in the show) that
+            don't have their own tag. Generally, unless the pony has a large
+            number of emotes to their name, you shouldn't give them their own
+            tag.
+          <li><code>+misc</code> is for when no other tag applies. Generally,
+            this means objects from the show without any ponies in them (if it's
+            not from the show, it's <code>+nonpony</code>).
+          <li><code>+mashup</code> is for "modified" ponies- e.g. a Pikachu/Pinkie
+            Pie hybrid.
+        </ul>
+
+        <h2>IRC Link</h2>
+        <iframe id="irc" src="http://espy.mlas1.us:9090/?nick=Person&channels=bpm&prompt=1" width="700" height="400"></iframe>
+
+        <h2>Current Tags</h2>
+
+        <p>
+        {% for tag in all_tags %}
+        <a href="{{url_for("taginfo", tag=tag)}}"><code>{{tag}}</code></a>
+        {% endfor %}
+
+        <h2>Subreddits</h2>
+
+        <ul>
+        {% for sr in subreddits %}
+        <p><a href="{{url_for("tag", subreddit=sr)}}">r/{{sr}}</a>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

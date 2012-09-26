@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>BetterPonymotes Emote Tagger</title>
+  <link href="{{url_for("static", filename="css/bootstrap.css")}}" rel="stylesheet">
+  <link href="{{url_for("static", filename="css/tagapp.css")}}" rel="stylesheet">
+  {%- for sr in data %}
+  <link href="{{url_for("css", subreddit=sr)}}" rel="stylesheet">
+  {% endfor -%}
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="span8 offset2">
+        <h2>Tag info: <strong>{{tag}}</strong></h2>
+
+        <form action="{{url_for("rename_tag", tag=tag)}}" method="post" id="save" class="form-inline">
+          <label>Rename this tag:
+            <input type="text" name="to"></label>
+            <button class="btn" type="submit">Rename</button>
+          </label>
+        </form>
+
+        <form action="{{url_for("delete_tag", tag=tag)}}" method="post" class="form-inline">
+          <label>Delete this tag:
+            <button class="btn" type="submit">Delete</button>
+          </label>
+        </form>
+
+        {% for (sr, emotes) in data.items() %}
+        <a href="{{url_for("tag", subreddit=sr)}}"><h4>r/{{sr}}</h4></a>
+          {% for (emote, tags) in emotes %}
+        <div class="row emote">
+          <span class="image {{emote.selector()[1:]}}"></span>
+          <code class="name">{{emote.name_pair[0]}}</code>
+            {% for tag in tags -%}
+          <span class="listed-emote">{{tag}}</span>
+            {% endfor -%}
+        </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

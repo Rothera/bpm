@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>BetterPonymotes Emote Tagger</title>
+  <link href="{{url_for("static", filename="css/bootstrap.css")}}" rel="stylesheet">
+  <link href="{{url_for("static", filename="css/tagapp.css")}}" rel="stylesheet">
+  <link href="{{url_for("css", subreddit=subreddit)}}" rel="stylesheet">
+  <script src="{{url_for("static", filename="js/jquery-1.8.2.js")}}" type="text/javascript"></script>
+  <script src="{{url_for("static", filename="js/tagger.js")}}" type="text/javascript"></script>
+  <script>
+    var tags = {{tags|safe}};
+    var emotes = [
+    {%- for (name_pair, emote) in g.sorted(file.emotes.items()) -%}
+      {%- if not name_pair[1] -%}
+      {{g.repr(name_pair[0])|safe}},
+      {%- endif -%}
+    {%- endfor %}
+      undefined
+    ];
+    emotes.length = emotes.length - 1;
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="span8 offset2">
+        <h2>IRC Link</h2>
+        <iframe id="irc" src="http://espy.mlas1.us:9090/?nick=Person&channels=bpm&prompt=1" width="700" height="400"></iframe>
+
+        <h2>Tagging r/{{subreddit}}</h2>
+
+        <form action="{{url_for("write", subreddit=subreddit)}}" method="post" id="save">
+          <legend>Save</legend>
+          <label>Magic button: <button class="btn" type="submit">Save</button></label>
+          <input type="hidden" name="tags" id="tags">
+        </form>
+
+        <form class="form-inline">
+          <legend>Batch Regexp Tag</legend>
+          <label>Regexp: <input type="text" id="batch-regexp"></label>
+          <label>Tag: <input type="text" id="batch-tag"></label>
+          <button class="btn" type="button" id="batch-go">Tag</button>
+          <input type="hidden">
+        </form>
+
+        {% for (szinfo, emotes) in g.sorted(file.se.items(), reverse=True) -%}
+          <!-- {{szinfo[1:]}} -->
+          {%- for emote in emotes -%}
+            {# Ignore :hover's and such -#}
+            {% if not emote.name_pair[1] %}
+        <div class="row emote">
+          <span class="image {{emote.selector()[1:]}}"></span>
+          <div class="emote-list-container">
+            <code class="name">{{emote.name_pair[0]}}</code>
+            {% for tag in tags.get(emote.name_pair[0], []) -%}
+            <span class="listed-emote {{"v" if tag == "v" else ""}}">{{tag}} <a href="#" class="x" tagindex="0">x</a></span>
+            {% endfor -%}
+            <input class="emote-list-input" tabindex="1">
+          </div>
+        </div>
+            {% endif %}
+          {%- endfor %}
+        {% endfor -%}
+
+        <a href="#top"><h2>Top</h2></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
