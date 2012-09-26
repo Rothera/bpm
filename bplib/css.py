@@ -96,10 +96,7 @@ def _parse_properties(text):
     return props
 
 def prop(text):
-    parts = text.split()
-    if "!important" in parts:
-        parts.remove("!important")
-    return " ".join(parts)
+    return " ".join(text.replace("!important", "").split())
 
 def as_size(text):
     # Parses a single size declaration. Meant to be used on width/height
@@ -117,7 +114,7 @@ def as_url(text):
     text = prop(text)
     if text.startswith("url(") and text.endswith(")"):
         return text[4:-1].strip()
-    raise ValueError("Invalid URL")
+    raise ValueError("Invalid URL", text)
 
 def _parse_size(s):
     if s.endswith("px"):
