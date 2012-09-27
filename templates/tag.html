@@ -42,7 +42,7 @@
         </form>
 
         {% for (szinfo, emotes) in g.sorted(file.se.items(), reverse=True) -%}
-          <!-- {{szinfo[1:]}} -->
+          <!-- {{szinfo}} -->
           {%- for emote in emotes -%}
             {# Ignore :hover's and such -#}
             {% if not emote.name_pair[1] %}
