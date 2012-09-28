@@ -51,7 +51,7 @@
           <div class="emote-list-container">
             <code class="name">{{emote.name_pair[0]}}</code>
             {% for tag in tags.get(emote.name_pair[0], []) -%}
-            <span class="listed-emote {{"v" if tag == "v" else ""}}">{{tag}} <a href="#" class="x" tagindex="0">x</a></span>
+            <span class="listed-emote {{"v" if tag == "+v" else ""}}">{{tag}} <a href="#" class="x" tagindex="0">x</a></span>
             {% endfor -%}
             <input class="emote-list-input" tabindex="1">
           </div>

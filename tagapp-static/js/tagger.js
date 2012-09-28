@@ -21,6 +21,8 @@ function run() {
     }
 
     function insert_emotes(input, list, emotes) {
+        emotes = emotes.map(function(s) { return (s[0] == "+" ? "" : "+") + s; });
+
         for(var i = 0; i < emotes.length; i++) {
             if(list.indexOf(emotes[i]) > -1) {
                 continue; // Already in the list
@@ -28,7 +30,7 @@ function run() {
 
             list.push(emotes[i]);
             var span = $("<span class='listed-emote " +
-                         (emotes[i] == "v" ? "v" : "") + "'>" + emotes[i] +
+                         (emotes[i] == "+v" ? "v" : "") + "'>" + emotes[i] +
                          " <a href='#' class='x' tabindex='0'>x</a></span>");
             input.before(span);
         }
