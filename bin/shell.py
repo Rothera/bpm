@@ -177,7 +177,7 @@ def cmd_commit(args):
     parser = argparse.ArgumentParser(description="Commit CSS and emote cache", prog="commit")
     args = parser.parse_args(args)
 
-    subprocess.call(["git", "commit", "emotes", "source-css", "minified-css", "-m", time.strftime("Stylesheet/emote updates %Y-%m-%d")])
+    subprocess.call(["git", "commit", "-v", "emotes", "source-css", "minified-css", "-m", time.strftime("Stylesheet/emote updates %Y-%m-%d")])
 
 Commands = {
     "help": cmd_help,
