@@ -22,6 +22,8 @@ import time
 import urllib.error
 import urllib.request
 
+import lxml.html
+
 UA = "BetterPonymotes stylesheet update checker (1req/2.5secs; pm Typhos)"
 
 def cmd_help(args):
@@ -35,34 +37,73 @@ def cmd_list(args):
     args = parser.parse_args(args)
 
     print("Stylesheet updates:")
-    subprocess.call(["git", "status", "-s", "stylesheets"])
+    subprocess.call(["git", "status", "-s", "minified-css", "source-css"])
     print("Emote updates:")
     subprocess.call(["git", "status", "-s", "emotes"])
 
-def update_css(num, total, subreddit):
-    url = "http://reddit.com/r/%s/stylesheet.css?nocache=%s" % (subreddit, random.randrange(1000000))
-
-    try:
-        old_ss = open("stylesheets/%s.css" % (subreddit), "rb").read()
-    except IOError:
-        # Assume file doesn't exist; new subreddit
-        print("NOTICE: stylesheets/%s.css does not exist; new subreddit?" % (subreddit))
-        old_ss = ""
-
+def download_url(num, total, url):
     print("[%s/%s]: %s" % (num+1, total, url))
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     try:
         with urllib.request.urlopen(req) as stream:
-            new_ss = stream.read()
+            data = stream.read()
+        data = data.decode("utf8")
     except urllib.error.HTTPError as error:
-        print("ERROR:", error)
+        print("ERROR: Could not download:", error)
+        return None
+    except UnicodeDecodeError as error:
+        print("ERROR: Data is not valid UTF8:", error)
         return None
 
-    if old_ss != new_ss:
-        print("NOTICE: Stylesheet changed in r/%s" % (subreddit))
-        with open("stylesheets/%s.css" % (subreddit), "wb") as file:
-            file.write(new_ss)
+    return data
+
+def update_css(num, total, subreddit):
+    # .css tricks Reddit's over18 code into permitting download on such
+    # subreddits (it's not html), but there's nothing we can do about private
+    # subreddits- and there's also nothing we can do to get around over18
+    # restrictions on /about/stylesheet.
+    minified_url = "http://reddit.com/r/%s/stylesheet.css" % (subreddit)
+    source_url = "http://reddit.com/r/%s/about/stylesheet" % (subreddit)
+
+    try:
+        old_minified_css = open("minified-css/%s.css" % (subreddit), "r").read()
+    except IOError:
+        # Assume file doesn't exist; new subreddit
+        print("NOTICE: minified-css/%s.css does not exist; new subreddit?" % (subreddit))
+        old_minified_css = ""
+
+    new_minified_css = download_url(num, total, minified_url)
+    if new_minified_css is None:
+        # Error- probably a private subreddit, or it doesn't exist
+        return None
+
+    if old_minified_css == new_minified_css:
+        # No changes. Don't bother fetching the source
+        return None
+
+    print("NOTICE: Stylesheet changed in r/%s" % (subreddit))
+    with open("minified-css/%s.css" % (subreddit), "w") as file:
+        file.write(new_minified_css)
+
+    time.sleep(2.5) # Respect rate limiting
+    html = download_url(num, total, source_url)
+    if html is None:
+        # Error here probably means a private subreddit
         return subreddit
+
+    root = lxml.html.fromstring(html)
+    code_elements = root.find_class("language-css")
+    if len(code_elements) != 1:
+        # Probably an over18 subreddit
+        print("ERROR: CSS source page has an invalid number of .language-css elements")
+        return subreddit
+
+    source = code_elements[0].text_content()
+
+    with open("source-css/%s.css" % (subreddit), "w") as file:
+        file.write(source)
+
+    return subreddit
 
 def cmd_update(args):
     parser = argparse.ArgumentParser(description="Update stylesheet cache", prog="update")
@@ -71,7 +112,7 @@ def cmd_update(args):
     args = parser.parse_args(args)
 
     if not args.subreddits:
-        filenames = [fn for fn in sorted(os.listdir("stylesheets")) if fn.endswith(".css")]
+        filenames = [fn for fn in sorted(os.listdir("minified-css")) if fn.endswith(".css")]
         filenames.sort()
         subreddits = [fn.split(".")[0] for fn in filenames]
     else:
@@ -103,26 +144,26 @@ def cmd_extract(args):
     for (i, sr) in enumerate(args.subreddits):
         print("[%s/%s]: %s" % (i+1, len(args.subreddits), sr))
         # TODO: Don't hardcode relative paths...
-        subprocess.call(["./bpextract.py", "stylesheets/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
+        subprocess.call(["./bpextract.py", "minified-css/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
 
 def cmd_extractall(args):
     parser = argparse.ArgumentParser(description="Re-extract all emotes", prog="extractall")
     args = parser.parse_args(args)
 
-    filenames = [fn for fn in sorted(os.listdir("stylesheets")) if fn.endswith(".css")]
+    filenames = [fn for fn in sorted(os.listdir("minified-css")) if fn.endswith(".css")]
     filenames.sort()
     subreddits = [fn.split(".")[0] for fn in filenames]
 
     for (i, sr) in enumerate(subreddits):
         print("[%s/%s]: %s" % (i+1, len(subreddits), sr))
         # TODO: Don't hardcode relative paths...
-        subprocess.call(["./bpextract.py", "stylesheets/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
+        subprocess.call(["./bpextract.py", "minified-css/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
 
 def cmd_diffcss(args):
     parser = argparse.ArgumentParser(description="Run diff program on CSS cache", prog="diffcss")
     args = parser.parse_args(args)
 
-    p1 = subprocess.Popen(["git", "diff", "-U10", "stylesheets"], stdout=subprocess.PIPE)
+    p1 = subprocess.Popen(["git", "diff", "-U10", "minified-css", "source-css"], stdout=subprocess.PIPE)
     p2 = subprocess.Popen(["kompare", "-"], stdin=p1.stdout)
 
 def cmd_diffemotes(args):
@@ -136,7 +177,7 @@ def cmd_commit(args):
     parser = argparse.ArgumentParser(description="Commit CSS and emote cache", prog="commit")
     args = parser.parse_args(args)
 
-    subprocess.call(["git", "commit", "emotes", "stylesheets", "-m", time.strftime("Stylesheet/emote updates %Y-%m-%d")])
+    subprocess.call(["git", "commit", "emotes", "source-css", "minified-css", "-m", time.strftime("Stylesheet/emote updates %Y-%m-%d")])
 
 Commands = {
     "help": cmd_help,

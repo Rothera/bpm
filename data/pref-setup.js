@@ -187,10 +187,9 @@ css_manager.prototype = {
         var prefs = this.pm.get();
         console.log("BPM: Downloading updated CSS file for r/" + subreddit);
         var key = "csscache_" + subreddit.toLowerCase();
-        var random = Math.floor(Math.random() * 1000);
         // Chrome doesn't permit setting User-Agent (because it sucks), but this
         // should help a little bit
-        var url = "http://reddit.com/r/" + subreddit + "/stylesheet.css?__ua=BetterPonymotes&nocache=" + random;
+        var url = "http://reddit.com/r/" + subreddit + "/stylesheet.css?__ua=BetterPonymotes";
         this.pm.dl_queue.add(url, function(css) {
             this.pm.database[key] = strip_subreddit_css(css);
             prefs.customCSSSubreddits[subreddit] = Date.now();
