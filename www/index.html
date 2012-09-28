@@ -4,6 +4,8 @@
   <meta charset="UTF-8"/>
   <title>BetterPonymotes</title>
   <link href="static/css/bootstrap.css" rel="stylesheet">
+  <link rel="chrome-webstore-item"
+    href="https://chrome.google.com/webstore/detail/hpanfimfblclppbmjhacfdaglmcnpnnb">
   <style type="text/css">
     body {
       padding-bottom: 80px;
@@ -89,13 +91,7 @@
 
         <h4>Chrome Installation</h4>
         <img src="static/images/chrome-logo.png">
-        <p>Install the addon from <a href="betterponymotes.crx"><code>betterponymotes.crx</code></a>.
-
-        <p>Newer versions of Chrome will not install extensions that are not
-        hosted by the Chrome Web Store. Since BetterPonymotes isn't available
-        in the webstore, you must download the file and drag it onto the
-        extensions page. Click wrench icon -> Settings, and go to the Extensions
-        tab on the left.
+        <button onclick="chrome.webstore.install()">Install</button>
 
         <h4>Opera Installation</h4>
         <img src="static/images/opera-logo.png">

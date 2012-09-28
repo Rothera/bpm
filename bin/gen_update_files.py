@@ -13,14 +13,6 @@
 import argparse
 import subprocess
 
-ChromeUpdateTemplate = """\
-<gupdate xmlns="http://www.google.com/update2/response" protocol="2.0">
-  <app appid="bkkmhlceghomaajdimmejkhldnpleoea">
-    <updatecheck codebase="http://rainbow.mlas1.us/betterponymotes_{version}.crx" version="{version}"/>
-  </app>
-</gupdate>
-"""
-
 OperaUpdateTemplate = """\
 <update-info xmlns="http://www.w3.org/ns/widgets" src="http://rainbow.mlas1.us/betterponymotes_{version}.oex" version="{version}"/>
 """
@@ -33,7 +25,6 @@ def main():
     subprocess.call(["uhura", "-k", "betterponymotes.pem",
                      "build/betterponymotes.xpi", "http://rainbow.mlas1.us/betterponymotes_" + args.version + ".xpi"],
                     stdout=open("www/betterponymotes.update.rdf", "w"))
-    open("www/chrome-updates.xml", "w").write(ChromeUpdateTemplate.format(version=args.version))
     open("www/opera-updates.xml", "w").write(OperaUpdateTemplate.format(version=args.version))
 
 if __name__ == "__main__":
