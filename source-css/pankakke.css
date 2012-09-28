@@ -1,0 +1,462 @@
+/*
+*                                                     *
+*                                                     *
+*           PANKAKKE STYLESHEET           *
+*                                                     *
+*                                                     *
+*/
+
+/*
+CSS shamelessly ripped from a variety of sources, 
+and edited whilst plastered.
+*/
+
+
+
+
+
+/*        CHANGE LOG
+
+JustAnotherGDB
+- Added the change log (trololol)
+- Added "/pan10" emote (7/30)
+- More name changes (7/30)
+- Started adding MLP emotes (7/30)
+- Finished the A-list MLP-motes (7/31)
+- Cleaned up some CSS (7/31)
+- Name changes (8/3) (8/5)
+- Changed sidebar "# of"
+- Added two more NMLP emotes
+- Added "pony gangnam" emotes
+- Added two more MLPmotes, name changes (8/22)
+- Added Conks as a mod, made a UDNT emote (8/25)
+- Fixed an issue that cropped up with the banner and nightmode.  Added an emote for DinsFire. (8/26)
+- Fixed Zealot's emote, used the previous version for Sprankton, added pgaben emote (9/1)
+- Added a new emote for DoctorDrunk (9/13)
+- Emote for Fearless (9/18)
+
+MisanthropicCat
+- Is a kitty
+- Successfully made THREE name changes. More to come. Suck it. (7/30) 
+
+Conky
+- Conked the mutherfucking Conk out of shit.
+
+*/
+
+
+
+
+
+/********************************/
+/***********Banner shit*************/
+/********************************/
+
+body #header-bottom-left {
+    background: url(%%PankakkeBanner%%) no-repeat center bottom !important;
+    height: 350px
+    }
+#header-img {
+    margin-top: 157px
+    }
+
+
+
+
+/********************************/
+/***********Sidebar Shit************/
+/********************************/
+
+.titlebox .number:after {
+    content: " victims"
+    }
+.titlebox .word:not(:first-child) {
+    content: "";
+    font-size: 0 !important;
+    }
+
+
+
+/********************************/
+/**********Name changes***********/
+/********************************/
+
+/******Insert name here to replace******/
+a.author[href$=JustAnotherGDB], a.author[href$=MisanthropicCat], a.author[href$=Conky_], a.author[href$=floutsy], a.author[href$=ruffletuffle], a.author[href$=Apple_Snacks], a.author[href$=petraman], a.author[href$=WorstPossibleThing], a.author[href$=Esplin], a.author[href$=theMagicalCouch], a.author[href$=pickled_octopus], a.author[href$=hiero_], a.author[href$=Thecursed], a.author[href$=Apprentice1994], a.author[href$=dasflash], a.author[href$=TheDarkman67], a.author[href$=derram_2], a.author[href$=maku450] {
+    font-size: 0 !important;
+    overflow: hidden;
+    display: inline-block;
+    content: ""
+    }
+
+/***********Replacements***********/
+a.author[href$=JustAnotherGDB]:before {
+    content: "PancakeMasterGDB";
+    font-size: 10px;
+    }
+a.author[href$=MisanthropicCat]:before {
+    content: "MisanthropicPancake";
+    font-size: 10px;
+    }
+a.author[href$=Conky_]:before {
+    content: "StickyBear";
+    font-size: 10px;
+    }
+a.author[href$=floutsy]:before {
+    content: "Floutcake";
+    font-size: 10px;
+    }
+a.author[href$=ruffletuffle]:before {
+    content: "TusslesWithPancakes";
+    font-size: 10px;
+    }
+a.author[href$=Apple_Snacks]:before {
+    content: "Apple_Pancakes";
+    font-size: 10px;
+    }
+a.author[href$=petraman]:before {
+    content: "Pancakeman";
+    font-size: 10px;
+    }
+a.author[href$=WorstPossibleThing]:before {
+    content: "WorstPossiblePancake";
+    font-size: 10px;
+    }
+a.author[href$=Esplin]:before {
+    content: "Esplincake";
+    font-size: 10px;
+    }
+a.author[href$=theMagicalCouch]:before {
+    content: "theSyrupyCouch";
+    font-size: 10px;
+    }
+a.author[href$=pickled_octopus]:before {
+    content: "pickled_flapjacks";
+    font-size: 10px;
+    }
+a.author[href$=hiero_]:before {
+    content: "hier-a-pancake";
+    font-size: 10px;
+    }
+a.author[href$=Thecursed]:before {
+    content: "TheCursedSyrup";
+    font-size: 10px;
+    }
+a.author[href$=Apprentice1994]:before {
+    content: "StudentOfPancakes";
+    font-size: 10px;
+    }
+a.author[href$=dasflash]:before {
+    content: "Flashcakes";
+    font-size: 10px;
+    }
+a.author[href$=TheDarkman67]:before {
+    content: "TheDarkPancake";
+    font-size: 10px;
+    }
+a.author[href$=derram_2]:before {
+    content: "derramina diane pie";
+    font-size: 10px;
+    }
+a.author[href$=maku450]:before {
+    content: "Pankakku450";
+    font-size: 10px;
+    }
+
+/************Additions*************/
+a.author[href$=JustAnotherGDB]:after {
+    content: " likes the syrup hot";
+    color: green;
+    font-size: 10px;
+    }
+a.author[href$=MisanthropicCat]:after {
+    content: " loves them butter-nipples";
+    color: purple;
+    font-size: 10px;
+    }
+a.author[href$=Conky_]:after {
+    content: " is intimately familiar with Aunt Jemima";
+    color: yellow;
+    font-size: 10px;
+    }
+
+
+
+/********************************/
+/*************Emotes**************/
+/********************************/
+
+/************Non-MLP*************/
+a[href|="/smothered"], a[href|="/coconutmonkey"], a[href|="/pan10"], a[href|="/panwaffbattle"], a[href|="/hellocake"], a[href|="/pfreeman"], a[href|="/bugs"], a[href|="/torgo"], a[href|="/pancalcos"], a[href|="/pgaben"], a[href|="/doctordrunk"], a[href|="/notthebees"] {
+    display: block;
+    clear: none;
+    float: left;
+    height: 150px;
+    background-image: url(%%NMLPEmoteSheet%%) !important
+    }
+a[href|="/smothered"] {
+    background-position: -0px -0px;
+    width: 185px
+    }
+a[href|="/coconutmonkey"] {
+    background-position: -185px -0px;
+    width: 150px
+    }
+a[href|="/pan10"] {
+    background-position: -335px -0px;
+    width: 107px
+    }
+a[href|="/panwaffbattle"] {
+    background-position: -442px -0px;
+    width: 234px
+    }
+a[href|="/hellocake"] {
+    background-position: -676px -0px;
+    width: 101px
+    }
+a[href|="/pfreeman"] {
+    background-position: -777px -0px;
+    width: 234px
+    }
+a[href|="/bugs"] {
+    background-position: -1011px -0px;
+    width: 205px
+    }
+a[href|="/torgo"] {
+    background-position: -1216px -0px;
+    width: 167px
+    }
+a[href|="/pancalcos"] {
+    background-position: -1383px -0px;
+    width: 93px
+    }
+a[href|="/pgaben"] {
+    background-position: -1476px -0px;
+    width: 184px
+    }
+a[href|="/doctordrunk"] {
+    background-position: -1660px -0px;
+    width: 154px
+    }
+a[href|="/notthebees"] {
+    background-position: -1814px -0px;
+    width: 190px
+    }
+
+/************MLP-LRG*************/
+a[href|="/pghoofpump"], a[href|="/pgshock"], a[href|="/pglegcross"], a[href|="/pgshuffle"], a[href|="/ponykakke"], a[href|="/gdb"], a[href|="/gdbsmirk"],  a[href|="/dinsfire"], a[href|="/dintrot"],  a[href|="/sistersprankton"], a[href|="/flutterhey"], a[href|="/sisterzealot"], a[href|="/octaviagasm"], a[href|="/mangohug"] {
+    display: block;
+    clear: none;
+    float: left;
+    height: 150px;
+    background-image: url(%%MLPemotesheet-Lrg%%) !important
+    }
+a[href|="/pghoofpump"] {
+    background-position: -0px -0px;
+    width: 71px
+    }
+a[href|="/pgshock"] {
+    background-position: -71px -0px;
+    width: 127px
+    }
+a[href|="/pglegcross"] {
+    background-position: -198px -0px;
+    width: 67px
+    }
+a[href|="/pgshuffle"] {
+    background-position: -265px -0px;
+    width: 78px
+    }
+a[href|="/ponykakke"] {
+    background-position: -343px -0px;
+    width: 139px
+    }
+a[href|="/gdb"] {
+    background-position: -482px -0px;
+    width: 119px
+    }
+a[href|="/gdbsmirk"] {
+    background-position: -482px -0px;
+    width: 119px
+    }
+a[href|="/dinsfire"] {
+    background-position: -601px -0px;
+    width: 141px
+    }
+a[href|="/dintrot"] {
+    background-position: -601px -0px;
+    width: 141px
+    }
+a[href|="/sistersprankton"] {
+    background-position: -742px -0px;
+    width: 87px
+    }
+a[href|="/flutterhey"] {
+    background-position: -829px -0px;
+    width: 150px
+    }
+a[href|="/sisterzealot"] {
+    background-position: -979px -0px;
+    width: 186px
+    }
+a[href|="/octaviagasm"] {
+    background-position: -1165px -0px;
+    width: 159px
+    }
+a[href|="/mangohug"] {
+    background-position: -1324px -0px;
+    width: 123px
+    }
+
+/***********MLP-XLRG*************/
+a[href|="/fearless"] {
+     display: block;
+     clear: none;
+     float: left;
+     height: 300px;
+     background-image: url(%%Fearless%%) !important
+     }
+a[href|="/fearless"] {
+     background-position: -0px -0px;
+     width: 252px;
+     }
+
+
+/************Mane-sub*************/
+a[href|="/pabbored"], a[href|="/pajhappy"], a[href|="/pajlie"], a[href|="/pajsup"], a[href|="/pcadance"], a[href|="/pcelestiamad"], a[href|="/pcelestiawut"], a[href|="/pchrysalis"], a[href|="/pderpwizard"], a[href|="/pflutterjerk"], a[href|="/pflutterwoah"], a[href|="/pgrannysmith"], a[href|="/plunateehee"], a[href|="/plunawait"], a[href|="/pohcomeon"], a[href|="/ppinkiefear"], a[href|="/pppcute"], a[href|="/ppriceless"], a[href|="/praritydaww"], a[href|="/praritynews"], a[href|="/prdcry"], a[href|="/psbbook"], a[href|="/pscootacheer"], a[href|="/pscootaplease"], a[href|="/pshiningarmor"], a[href|="/pswagintosh"], a[href|="/ptwibeam"], a[href|="/ptwicrazy"], a[href|="/ptwipride"], a[href|="/ptwiright"] {
+    display: block;
+    clear: none;
+    float: left;
+    height: 70px;
+    width: 70px;
+    background-image: url(%%MLPemotesheet%%) !important
+    }
+a[href|="/ptwiright"] {
+    background-position: -0px -0px
+    }
+a[href|="/ptwipride"] {
+    background-position: -70px -0px
+    }
+a[href|="/ptwicrazy"] {
+    background-position: -140px -0px
+    }
+a[href|="/ptwibeam"] {
+    background-position: -210px -0px
+    }
+a[href|="/pswagintosh"] {
+    background-position: -280px -0px
+    }
+a[href|="/pshiningarmor"] {
+    background-position: -350px -0px
+    }
+a[href|="/pscootaplease"] {
+    background-position: -420px -0px
+    }
+a[href|="/pscootacheer"] {
+    background-position: -490px -0px
+    }
+a[href|="/psbbook"] {
+    background-position: -560px -0px
+    }
+a[href|="/prdcry"] {
+    background-position: -630px -0px
+    }
+a[href|="/praritydaww"] {
+    background-position: -700px -0px
+    }
+a[href|="/praritynews"] {
+    background-position: -770px -0px
+    }
+a[href|="/ppriceless"] {
+    background-position: -840px -0px
+    }
+a[href|="/ppinkiefear"] {
+    background-position: -910px -0px
+    }
+a[href|="/pabbored"] {
+    background-position: -980px -0px
+    }
+a[href|="/pajhappy"] {
+    background-position: -1050px -0px
+    }
+a[href|="/pajlie"] {
+    background-position: -1120px -0px
+    }
+a[href|="/pajsup"] {
+    background-position: -1190px -0px
+    }
+a[href|="/pcadance"] {
+    background-position: -1260px -0px
+    }
+a[href|="/pcelestiamad"] {
+    background-position: -1330px -0px
+    }
+a[href|="/pderpwizard"] {
+    background-position: -1400px -0px
+    }
+a[href|="/pcelestiawut"] {
+    background-position: -1470px -0px
+    }
+a[href|="/pchrysalis"] {
+    background-position: -1540px -0px
+    }
+a[href|="/pflutterjerk"] {
+    background-position: -1610px -0px
+    }
+a[href|="/pflutterwoah"] {
+    background-position: -1680px -0px
+    }
+a[href|="/pohcomeon"] {
+    background-position: -1750px -0px
+    }
+a[href|="/pgrannysmith"] {
+    background-position: -1820px -0px
+    }
+a[href|="/plunateehee"] {
+    background-position: -1890px -0px
+    }
+a[href|="/pppcute"] {
+    background-position: -1960px -0px
+    }
+a[href|="/plunawait"] {
+    background-position: -2030px -0px
+    }
+
+/***********Huge Emotes***********/
+a[href|="/udntsrslydntnomedood"] {
+     display: block;
+     clear: none;
+     float: left;
+     height: 600px;
+     background-image: url(%%HugeEmotes%%) !important
+     }
+a[href|="/udntsrslydntnomedood"] {
+     background-position: -0px -0px;
+     width: 800px;
+     }
+
+/************Animotes*************/
+a[href|="/apgshuffle"] { 
+    display: block; 
+    clear: none;
+    float: left; 
+    width:98px; 
+    height:150px; 
+    background-image: url(%%pgshuffle%%); 
+    }
+a[href|="/apglegcross"] { 
+    display: block; 
+    clear: none; 
+    float: left;
+    width:88px; 
+    height:150px; 
+    background-image: url(%%pglegcross%%); 
+    }
+a[href|="/apghoofpump"] { 
+    display: block; 
+    clear: none; 
+    float: left;
+    width:92px; 
+    height:150px; 
+    background-image: url(%%pghoofpump%%); 
+    }

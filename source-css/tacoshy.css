@@ -1,0 +1,521 @@
+/* OBSERVE AS I SLOWLY FUCK EVERYTHING UP -AllTheseApples
+
+_______________________▓▓▓▓▓▓▓▓▓▓▓▓__________
+____________▓▓▓▓▓▓▓▓▓▒▒▒▒▒▐▒▐▒▒▒▓▓▓▓▓__▒░░░▒
+________▓▓▓▓▒▒▒▀▀▅▅▄▄▒▒▒▒▒▒▐▒▐▒▒▒▒▒▒▒▒▒░░░░▒
+______▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▀▄▒▒▒▒▐▒▐▒▒▒▒▒▒▒▒░░░░░▒▒
+___▓▓▓▒▒▒▒▄▄▄▄▄▒▒▒▒▒▒▒▀▒▒▒▒░░░░░░░░▒▒░░░░▒░▒
+__▓▓▓▄▅▀▀▀▒▒▒▒▒▒▀▀▀▅▒▒▒░░░░░░░░░░░░░░░░░░░▒░▒
+__▓▓▀▒▒▒▒▒▒▄▄▄▄▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░▒░░▒
+_▓▓▒▒▒▒▒▅▅▀▀▒▒▒▀▅▒▒░░░░░░░░░░░░░░░░░░░░░░▒░░░▒
+_▓▓▒▒▒▅▀▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░▒░░░░▒▓
+▓▓▒▒▒▌▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▒▓
+_▓▒▒▒▌▒▒▒▒▒▒▒▒▒▒░░░░░▄▄▄▄░░░░░░░░░░░░░░░░░░▓▒▒▓
+_▓▒▒▒▌▒▒▒▒▒▒▒▒▒▒░░░░█▀▀▀▀▀▅▅░░░░░░░░░░░░░░░▓▒▒▒▓
+_▓▒▒▒▌▒▒▒▒▒▒▒▒▒▒░░░░█____▓▓▓█▀▅▄░░░▄░░░░░░░░▓▒▒▒▓
+__▓▒▒▒▌▒▒▒▒▒▒▒▒▒░░░░▐___▓▓▓█▌____█▀▀░░▄░░░░░▓▒▒▒▒▓
+___▓▒▒▐▌▒▒▒▒▒▒▒▒▒░░░░▐__▓▓▓██▄____███▀▀░▄░░░▓▒▒▒▒▓
+____▓▒▒▒▌▒▒▒▒▒▒▒▒▒░░░░___▓▓▐█__█▄▄▓░░▀▀▀░░░▓▓▒▒▒▐▒▓
+_____▓▒▒▒▌▒▒▒▒▒▒▒▒░░░░░___▓▓██████▓░░░░░░░▓▒▒▒▒▒▐▒▓
+______▓▒▒▒▌▒▒▒▒▒▒▒░░░░░░░__▓▓▀███▀▓░░░░░░▓▒▒▒▒▒▒▐▒▓
+_______▓▒▒▒▌▒▒▒▒▒░░░░░░░░____▓▓▓▓▓_░░░░░░▓▒▒▒▒▒▒▐▒▐▓
+_________▓▒▒▒█▒▒▒░▅▀░░░░░░░░░░░░░░░░░░░░▓▒▒▒▒▒▒▐▒▐▓
+___________▓▓▒▒▌▒▒▒░░░▐░░░░░░░░░░░░░░░░▓▒▒▒▒▒▒▐▒▒▌▓
+____________▓▓▒▒▐▌▒▒▒░▀░░░░░░░░░░░▒▒░░▓▒▒▒▒▒▒▒▐▒▐▒▓
+______________▓▐▒▒▐▒▒▒▒▒▒▒▒▒▓_______▒░░▓▒▒▒▒▒▒▒█▒▒█▒▓
+________________▓▌▒▒▐▒▒▒▒▒▒▒▒▓______▒░▓▒▒▒▒▒▒▒█▒▒█▒▒▓
+_________________▓▐▒▒▀▌▒▒▒▒▒▒▓______▒▓▒▒▒▒▒▒▒█▒▒█▒▒▒▓
+__________________▓▒▐▒▒▐▒▒▒▒▒▓______▓▓▒▒▒▒▒█▀▒▒█▒▒▒▒▓
+___________________▓▒▐▒▒▐▒▒▒▒▓_____▓▓▒▒▒▒▄▀▒▒▄▀▒▒▒▒▒▓
+_______▓▓▓▓▓_____▓▒▐▒▒▒▌▒▒▓_____▓▓▒▒▒▄▀▒▒▄▀▒▒▒▒▒▓▓
+_____▓▓▒▓____▓____▓▒▐▒▒▒▐▒▒▓___▓▓▒▒▒▄▀▒▒▄▀▒▒▒▒▒▒▓
+_____▓▒▒▓________▓▒▒▒▌▒▒▒▌▓____▓▒▒▒▄▀▒▒▄▀▒▒▒▒▒▒▒▓
+_____▓▒▒▓______▓▒▒▒▒▌▒▒▒▌▓____▓▒▒▄▀▒▒▄▀▒▒▒▒▒▒▒▓
+______▓▒▒▓▓▓▓▓▒▒▒▒▐▒▒▒▒▓____▓▒▒█▒▒▒█▒▒▒▒▒▒▒▒▓
+________▓▒▒▒▒▒▒▒▒▒▐▒▒▒▓▓_____▓▒█▒▒▒█▒▒▒▒▒▒▒▒▓
+_________▓▓▒▒▒▒▒▒▒▐▒▓▓▓______▓▒▌▒▒▒▌▒▒▒▒▒▒▒▒▓
+____________▓▓▓▓▓▓▓▓▓__________▓▌▒▒▒▌▒▒▒▒▒▒▒▒▓
+___________________________________▓▓▒▒▌▒▒▒▒▒▒▒▒▓
+___________________________________▓▒▒▒▌▒▒▒▒▒▒▒▓
+___________________________________▓▒▒▒▌▒▒▒▒▒▒▒▓
+____________________________________▓▒▒▐▒▒▒▒▒▒▒▓____▓▓▓
+_____________________________________▓▒▒▐▒▒▒▒▒▒▒▓_______▓
+______________________________________▓▓▒▐▒▒▒▒▒▒▒▓▓____▓▓
+_________________________________________▓▌▒▒▒▒▒▒▒▒▓▓▓▒▓
+____________________________________________▓▓▒▒▒▒▒▒▒▒▒▓
+________________________________________________▓▓▓▓▓▓▓
+
+/***********************
+*
+*             EMOTES
+*   
+************************/
+
+
+/*------------ User Emotes ------------------*/
+
+a[href|="/t18"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 364px;
+    height: 500px;
+    background-image: url(%%t18%%) !important
+    }
+
+a[href|="/t18"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 364px;
+    height: 500px;
+    background-image: url(%%t18%%) !important
+    }
+
+a[href|="/tacostare"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 600px;
+    height: 553px;
+    background-image: url(%%tacostare%%) !important
+    }
+
+a[href|="/mcguirk"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 400px;
+    height: 360px;
+    background-image: url(%%mcguirk%%) !important
+    }
+
+a[href|="/lodsofemone"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 605px;
+    background-image: url(%%lodsofemone%%) !important
+    }
+
+a[href|="/fillytaco"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 505px;
+    background-image: url(%%tacoshy-2%%) !important
+    }
+
+a[href|="/phillytaco"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 395px;
+    background-image: url(%%aaaaaaaaaaaaaaa%%) !important
+    }
+
+a[href|="/tacolean"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 569px;
+    height: 556px;
+    background-image: url(%%tacolean%%) !important
+    }
+
+a[href|="/wettaco"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 569px;
+    background-image: url(%%wet-maned-tacoshy%%) !important
+    }
+
+a[href|="/tacohug"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 883px;
+    height: 1080px;
+    background-image: url(%%tacohug%%) !important
+    }
+
+a[href|="/sosad"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 550px;
+    height: 568px;
+    background-image: url(%%Apology-Taco%%) !important
+    }
+
+a[href|="/bryofapproval"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 640px;
+    height: 400px;
+    background-image: url(%%bry-of-approval%%) !important
+    }
+
+a[href|="/tacoclop"]
+ {
+    width: 360px;
+    height: 360px;
+    background-image: url(%%tacoclop%%);
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    margin-left: 3px;
+    margin-right: 3px
+    }
+
+a[href|="/conkyfun"]
+ {
+    width: 300px;
+    height: 159px;
+    background-image: url(%%Conkybear%%);
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+}
+
+a[href|="/tootaloo"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 493px;
+    background-image: url(%%tootaloo%%) !important
+    }
+
+a[href|="/gaptaco"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 741px;
+    height: 1000px;
+    background-image: url(%%gaptaco%%) !important
+    }
+
+a[href|="/beforetacoswerecool"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 560px;
+    background-image: url(%%beforeitwascool%%) !important
+    }
+
+a[href|="/tacosnack"]
+ {
+    width: 400px;
+    height: 400px;
+    background-image: url(%%tacosnack%%);
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    margin-left: 3px;
+    margin-right: 3px
+    }
+
+a[href|="/butttacos"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 400px;
+    height: 225px;
+    background-image: url(%%butttacos%%) !important
+    }
+
+
+a[href|="/tacosalute"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 570px;
+    height: 490px;
+    background-image: url(%%tacosalute%%) !important
+    }
+
+a[href|="/tacoshywillmurderyouuntilyouredead"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 550px;
+    height: 342px;
+    background-image: url(%%tacoshywillmurderyouuntilyouredead%%) !important
+    }
+
+a[href|="/tacogun"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 550px;
+    height: 549px;
+    background-image: url(%%murdershy%%) !important
+    }
+/* ----------- Name Change ---------------- */
+
+
+a.author[href$="tacoshy"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="tacoshy"]:after {
+    content: "Queen TacoShy";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="Tentacolt"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="Tentacolt"]:after {
+    content: "Tacocolt";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="AllTheseApples"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="AllTheseApples"]:after {
+    content: "AllTheseTacos";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="SystemOutPrintln"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="SystemOutPrintln"]:after {
+    content: "initializeSystemClass(taco)";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="MrWoo6"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="MrWoo6"]:after {
+    content: "Tacos Sudados!";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="maku450"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="maku450"]:after {
+    content: "taku450";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="bryvood"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="bryvood"]:after {
+    content: "King TacoShy";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="JustAnotherGDB"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="JustAnotherGDB"]:after {
+    content: "JustAnotherTaco";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="Conky_"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="Conky_"]:after {
+    content: "taConky_";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+/* ----------- Changes the Background ---------------- */
+body, body.res-nightmode:first-of-type {
+  background: #FFFAFA url(%%Filly-Tacoshy-3%%)  fixed center center no-repeat !important ;
+}
+
+
+/* User Icons */
+.flair {
+    padding: 0;
+    background: none;
+    color: black;
+    display: inline-block;
+    border: 0;
+    border-radius: 0;
+    }
+.flair-mextaco:before {
+    content: "";
+    background-position: 0px 0px;
+    background-image: url(%%mextaco%%);
+    display: inline-block;
+    float: left;
+    width: 46px;
+    height: 26px
+    }
+
+/* # of readers*/
+/*Replace "Readers"*/
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox span.number:after {
+    content: " Tacos"
+    }
+
+/* ----------------FOOTER----------------- */
+.footer-parent {
+    height: 505px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(%%tacostare%%);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: -1px
+    }
+
+/* System stuff */
+a[href|="/tacomania"]
+ {
+    width: 500px;
+    height: 500px;
+    background-image: url(%%tacomania%%);
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    margin-left: 3px;
+    margin-right: 3px
+    }
+
+a[href|="/tacofun"]
+ {
+    width: 500px;
+    height: 382px;
+    background-image: url(%%tacofun%%);
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+}
+
+/*   Mail */
+#mail {
+width:30px !important;
+height:18px !important;
+}
+
+#mail.nohavemail
+{
+  background-image: url(%%taco-sprite%%);
+background-position: 0px -30px;
+background-repeat: no-repeat;  
+width: 30px !important;
+}
+
+#mail.havemail
+{
+  background-image: url(%%taco-sprite%%);
+background-position: 0px 0px;
+background-repeat: no-repeat;  
+width: 30px !important;
+}
+
+/************************************************************************************************/
+
+/* Space thingy */
+a[href|="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }
+/*in-line emotes -in and -inp, e.g. texttext[](/b24-in)texttext*/
+a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
+    float: none !important;
+    display: inline-block !important
+    }
+
+/* I like tacos - tacoshy */

@@ -1,0 +1,477 @@
+/******************/
+/*Sidebar stuff*/
+/******************/
+/*Hayseeds*/
+.titlebox strong {
+    font-size: medium
+}
+div.titlebox span.word {
+display: none
+}
+div.titlebox span.number:after {
+content: " Hayseeds"
+}
+div.titlebox .users-online span.number:after {
+    content: " AJ Fans"
+    }
+
+/***Apple Barons aka mods***/
+.sidecontentbox h1:not(:first-child)::before {
+color: gray !important;
+font-size: 13px !important;
+content: "Apple Barons";
+}
+
+.sidecontentbox h1:not(:first-child) {
+color: #FFFFFF !important;
+font-size: .0px !important;
+overflow: hidden;
+}
+
+.sidebox .spacer {visibility:hidden}
+.side .create *{display:none!important;}
+.flair { background: transparent ; border: 0px ; }
+
+/****Name Change****/
+a.author[href$="reahidru"] {
+    font-size: 0px !important;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="reahidru"]:after {
+    content: "Dru";
+    font-size: 12px !important;
+    visibility: visible !important
+    }
+a.author[href$="mavrick45"] {
+    font-size: 0px !important;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="mavrick45"]:after {
+    content: "Mav";
+    font-size: 12px !important;
+    visibility: visible !important
+    }
+/*************/
+/*Main CSS*/
+/*************/
+
+
+/**changes upvote/downvote number colors**/
+.likes .score.likes {color:green}
+.dislikes .score.dislikes {color:red}
+.likes div.score.likes {color:green}
+.dislikes div.score.dislikes {color:red}
+span.rank {
+    color:green !important;
+    }
+.midcol .score.unvoted {
+color: black;
+}
+
+/* Replace the self-post image with AJ */
+.thumbnail.self {
+    background-image: url(%%self%%);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+background-position: 0 -40px;
+        }
+
+/* Replace the no-thumb image with AJ */
+.thumbnail.default {
+    background-image: url(%%self%%);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+background-position: 0 -40px;
+        }
+/* Replace the spoiler image with AJ */
+.thumbnail.nsfw {
+    background-image: url(%%spoiler%%);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+background-position: 0 -10px;
+        }
+
+/***Banner, background, bottom image***/
+#header {
+        background: url(%%bannera2%%) repeat bottom left;
+    border-bottom: 0px solid white
+    }
+.side {background-color:#E3C19C;opacity:0.9;}
+.side * {color:black;}
+.side .subtitle, .flairtoggle {color:black;}
+body {
+background-color: #E3C19C !important;
+    background: url(%%applewho%%) no-repeat fixed center center
+    }
+div.footer-parent:after {
+    width: 960px;
+    content: url(%%slowpink%%);
+    height: 370px;
+    margin-bottom: -35px
+    }
+.stylesheet-customize-container textarea {
+    height: 600px
+    }
+
+/*Change vote arrows*/  
+.arrow.up { background-image: url(%%up%%); 
+background-position: 0px 0px; 
+height: 20px; width: 20px; 
+}
+.arrow.upmod { 
+background-image: url(%%apple3%%); 
+background-position: 0px 0px; 
+height: 20px; width: 20px;  
+}
+.arrow.down { background-image: url(%%down%%); 
+background-position: 0px 0px; 
+height: 20px; width: 20px; 
+}
+.arrow.downmod { 
+background-image: url(%%downapple%%); 
+background-position: 0px 0px; 
+height: 20px; width: 20px; 
+}
+
+ /* This is important to allow oversized updown arrows all over! */
+ /* OVERRIDES INLINE CSS */    
+.midcol[style] {
+     width: 50px !important
+     }
+  .comment .midcol {
+     width: 32px
+     }
+  .gadget .midcol {
+     width: 32px;
+     margin: 0
+     }
+
+.keyHighlight {
+    background-color: transparent !important
+    }
+
+/* make H4s POP */
+.expando h4 {
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    background: orange;
+    text-align: center;
+    padding: 3px;
+    border-radius: 19px;
+    box-shadow: 2px 2px 5px #9999ff;
+    text-shadow: 1px 1px #ffffff
+}
+
+/***********************************
+//JAPPLEACK EMOTICONS BECUZ FUK U FUK U FUK U FUK U FUK U FUK U FUK U//
+***********************************/
+a[href|="/ja00"], a[href|="/ja01"], a[href|="/ja02"], a[href|="/ja03"], a[href|="/ja04"], a[href|="/ja05"], a[href|="/ja06"], a[href|="/ja07"], a[href|="/ja08"], a[href|="/ja09"], a[href|="/ja10"], a[href|="/ja11"], a[href|="/ja12"], a[href|="/ja13"], a[href|="/ja14"], a[href|="/ja15"], a[href|="/ja16"], a[href|="/ja17"], a[href|="/ja18"], a[href|="/ja19"], a[href|="/ja20"], a[href|="/ja21"], a[href|="/ja22"], a[href|="/ja23"], a[href|="/ja24"], a[href|="/ja25"], a[href|="/ja26"], a[href|="/ja27"], a[href|="/ja28"], a[href|="/ja29"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%japple-emotes%%)
+    }
+a[href|="/ja00"] {
+    background-position: -0px -0px
+    }
+a[href|="/ja01"] {
+    background-position: -0px -70px
+    }
+a[href|="/ja02"] {
+    background-position: -0px -140px
+    }
+a[href|="/ja03"] {
+    background-position: -0px -210px
+    }
+a[href|="/ja04"] {
+    background-position: -0px -280px
+    }
+a[href|="/ja05"] {
+    background-position: -0px -350px
+    }
+a[href|="/ja06"] {
+    background-position: -0px -420px
+    }
+a[href|="/ja07"] {
+    background-position: -0px -490px
+    }
+a[href|="/ja08"] {
+    background-position: -0px -560px
+    }
+a[href|="/ja09"] {
+    background-position: -0px -630px
+    }
+a[href|="/ja10"] {
+    background-position: -70px -0px
+    }
+a[href|="/ja11"] {
+    background-position: -70px -70px
+    }
+a[href|="/ja12"] {
+    background-position: -70px -140px
+    }
+a[href|="/ja13"] {
+    background-position: -70px -210px
+    }
+a[href|="/ja14"] {
+    background-position: -70px -280px
+    }
+a[href|="/ja15"] {
+    background-position: -70px -350px
+    }
+a[href|="/ja16"] {
+    background-position: -70px -420px
+    }
+a[href|="/ja17"] {
+    background-position: -70px -490px
+    }
+a[href|="/ja18"] {
+    background-position: -70px -560px
+    }
+a[href|="/ja19"] {
+    background-position: -70px -630px
+    }
+a[href|="/ja20"] {
+    background-position: -140px -0px
+    }
+a[href|="/ja21"] {
+    background-position: -140px -70px
+    }
+a[href|="/ja22"] {
+    background-position: -140px -140px
+    }
+a[href|="/ja23"] {
+    background-position: -140px -210px
+    }
+a[href|="/ja24"] {
+    background-position: -140px -280px
+    }
+a[href|="/ja25"] {
+    background-position: -140px -350px
+    }
+a[href|="/ja26"] {
+    background-position: -140px -420px
+    }
+a[href|="/ja27"] {
+    background-position: -140px -490px
+    }
+a[href|="/ja28"] {
+    background-position: -140px -560px
+    }
+a[href|="/ja29"] {
+    background-position: -140px -630px
+    }
+/***********************************
+//Custom AJ Emoticons//
+***********************************/
+a[href|="/aj00"], a[href|="/aj01"], a[href|="/aj02"], a[href|="/aj03"], a[href|="/aj04"], a[href|="/aj05"], a[href|="/aj06"], a[href|="/aj07"], a[href|="/aj08"], a[href|="/aj09"], a[href|="/aj10"], a[href|="/aj11"], a[href|="/aj12"], a[href|="/aj13"], a[href|="/aj14"], a[href|="/aj15"], a[href|="/aj16"], a[href|="/aj17"], a[href|="/aj18"], a[href|="/aj19"], a[href|="/aj20"], a[href|="/aj21"], a[href|="/aj22"], a[href|="/aj23"], a[href|="/aj24"], a[href|="/aj25"], a[href|="/aj26"], a[href|="/aj27"], a[href|="/aj28"], a[href|="/aj29"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%applejack01-shrunk%%) !important
+    }
+a[href|="/aj00"] {
+    background-position: -0px -0px
+    }
+a[href|="/aj01"] {
+    background-position: -0px -70px
+    }
+a[href|="/aj02"] {
+    background-position: -0px -140px
+    }
+a[href|="/aj03"] {
+    background-position: -0px -210px
+    }
+a[href|="/aj04"] {
+    background-position: -0px -280px
+    }
+a[href|="/aj05"] {
+    background-position: -0px -350px
+    }
+a[href|="/aj06"] {
+    background-position: -0px -420px
+    }
+a[href|="/aj07"] {
+    background-position: -0px -490px
+    }
+a[href|="/aj08"] {
+    background-position: -0px -560px
+    }
+a[href|="/aj09"] {
+    background-position: -0px -630px
+    }
+a[href|="/aj10"] {
+    background-position: -70px -0px
+    }
+a[href|="/aj11"] {
+    background-position: -70px -70px
+    }
+a[href|="/aj12"] {
+    background-position: -70px -140px
+    }
+a[href|="/aj13"] {
+    background-position: -70px -210px
+    }
+a[href|="/aj14"] {
+    background-position: -70px -280px
+    }
+a[href|="/aj15"] {
+    background-position: -70px -350px
+    }
+a[href|="/aj16"] {
+    background-position: -70px -420px
+    }
+a[href|="/aj17"] {
+    background-position: -70px -490px
+    }
+a[href|="/aj18"] {
+    background-position: -70px -560px
+    }
+a[href|="/aj19"] {
+    background-position: -70px -630px
+    }
+a[href|="/aj20"] {
+    background-position: -140px -0px
+    }
+a[href|="/aj21"] {
+    background-position: -140px -70px
+    }
+a[href|="/aj22"] {
+    background-position: -140px -140px
+    }
+a[href|="/aj23"] {
+    background-position: -140px -210px
+    }
+a[href|="/aj24"] {
+    background-position: -140px -280px
+    }
+a[href|="/aj25"] {
+    background-position: -140px -350px
+    }
+a[href|="/aj26"] {
+    background-position: -140px -420px
+    }
+a[href|="/aj27"] {
+    background-position: -140px -490px
+    }
+a[href|="/aj28"] {
+    background-position: -140px -560px
+    }
+a[href|="/aj29"] {
+    background-position: -140px -630px
+    }
+
+/* Tells the Reddit-wide ponymotes script to ignore the old-style emotes */
+START-PONYSCRIPT-IGNORE{color: red}
+
+a[href|="/00"], a[href|="/01"], a[href|="/02"], a[href|="/03"], a[href|="/04"], a[href|="/05"], a[href|="/06"], a[href|="/07"], a[href|="/08"], a[href|="/09"], a[href|="/10"], a[href|="/11"], a[href|="/12"], a[href|="/13"], a[href|="/14"], a[href|="/15"], a[href|="/16"], a[href|="/17"], a[href|="/18"], a[href|="/19"], a[href|="/20"], a[href|="/21"], a[href|="/22"], a[href|="/23"], a[href|="/24"], a[href|="/25"], a[href|="/26"], a[href|="/27"], a[href|="/28"], a[href|="/29"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%applejack01-shrunk%%)
+    }
+a[href|="/00"] {
+    background-position: -0px -0px
+    }
+a[href|="/01"] {
+    background-position: -0px -70px
+    }
+a[href|="/02"] {
+    background-position: -0px -140px
+    }
+a[href|="/03"] {
+    background-position: -0px -210px
+    }
+a[href|="/04"] {
+    background-position: -0px -280px
+    }
+a[href|="/05"] {
+    background-position: -0px -350px
+    }
+a[href|="/06"] {
+    background-position: -0px -420px
+    }
+a[href|="/07"] {
+    background-position: -0px -490px
+    }
+a[href|="/08"] {
+    background-position: -0px -560px
+    }
+a[href|="/09"] {
+    background-position: -0px -630px
+    }
+a[href|="/10"] {
+    background-position: -70px -0px
+    }
+a[href|="/11"] {
+    background-position: -70px -70px
+    }
+a[href|="/12"] {
+    background-position: -70px -140px
+    }
+a[href|="/13"] {
+    background-position: -70px -210px
+    }
+a[href|="/14"] {
+    background-position: -70px -280px
+    }
+a[href|="/15"] {
+    background-position: -70px -350px
+    }
+a[href|="/16"] {
+    background-position: -70px -420px
+    }
+a[href|="/17"] {
+    background-position: -70px -490px
+    }
+a[href|="/18"] {
+    background-position: -70px -560px
+    }
+a[href|="/19"] {
+    background-position: -70px -630px
+    }
+a[href|="/20"] {
+    background-position: -140px -0px
+    }
+a[href|="/21"] {
+    background-position: -140px -70px
+    }
+a[href|="/22"] {
+    background-position: -140px -140px
+    }
+a[href|="/23"] {
+    background-position: -140px -210px
+    }
+a[href|="/24"] {
+    background-position: -140px -280px
+    }
+a[href|="/25"] {
+    background-position: -140px -350px
+    }
+a[href|="/26"] {
+    background-position: -140px -420px
+    }
+a[href|="/27"] {
+    background-position: -140px -490px
+    }
+a[href|="/28"] {
+    background-position: -140px -560px
+    }
+a[href|="/29"] {
+    background-position: -140px -630px
+    }
+END-PONYSCRIPT-IGNORE{color: red}

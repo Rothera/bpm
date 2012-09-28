@@ -1,0 +1,137 @@
+/* Get rid of RES tags and vote weight on the modbox */
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink {
+    display: none !important
+}
+
+hr {
+    border-bottom: 1px solid #747474;
+    border-top: none
+}
+
+/* Nice looking H4s. SHUT UP DAVID. */
+
+.link .usertext .md {
+    border: 1px solid #7b7b7b;
+}
+
+.thing.self h4:before {
+    content: "";
+    width: 8px;
+    display: inline-block;
+ }
+
+.thing.self h4 {
+    width: 100%;
+    font-style: normal;
+    font-size: 2em;
+    background: #d5d5d5;
+    color: #444444;
+    margin-left: -6px;
+    padding-right: 11px;
+    display: block;
+    overflow: visible;
+    white-space: nowrap;
+    font-variant: small-caps;
+}
+
+#header {
+   background-color: #e5e5e5;
+}
+
+#header-bottom-right {
+   background-color: #c9c9c9;
+}
+
+#header-bottom-right a {
+   color: #252525;
+}
+
+#header-img {
+   margin-bottom: -4px;
+}
+
+
+/*
+* Flair
+*/
+
+.flair {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%flair%%);
+    display: inline-block;
+    height: 16px;
+}
+
+.flair-player {
+   width: 26px;
+   background-position: 0 0;
+}
+
+.flair-ghost {
+   width: 13px;
+   background-position: -26px 0;
+}
+
+/* Link flair
+*/
+
+.linkflair {
+   border-radius: 8px;
+}
+
+.linkflair-announcement {
+    background-image: linear-gradient(left,#f1f1f1,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -webkit-linear-gradient(left,#f1f1f1,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -moz-linear-gradient(left,#f1f1f1,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -o-linear-gradient(left,#f1f1f1,#fff,#fff,#fff,#fff,#fff,#fff)
+}
+
+.linkflair-day {
+    background-image: linear-gradient(left,#fcfdc7,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -webkit-linear-gradient(left,#fcfdc7,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -moz-linear-gradient(left,#fcfdc7,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -o-linear-gradient(left,#fcfdc7,#fff,#fff,#fff,#fff,#fff,#fff)
+}
+
+.linkflair-night {
+    background-image: linear-gradient(left,#d9deec,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -webkit-linear-gradient(left,#d9deec,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -moz-linear-gradient(left,#d9deec,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -o-linear-gradient(left,#d9deec,#fff,#fff,#fff,#fff,#fff,#fff)
+}
+
+/* Mafia Filly emotes, because that's basically all the CSS I know. */
+
+a[href|="/mafiadash"], a[href|="/mafiard"], a[href|="/mafiararity"], a[href|="/mafiapie"], a[href|="/mafiapinkie"], a[href|="/mafiapp"], a[href|="/mafiashy"], a[href|="/mafiafluttershy"], a[href|="/mafiaab"], a[href|="/mafiaspitfire"],   a[href|="/mafialyra"], a[href|="/mafiacelestia"], a[href|="/mafiavinyl"], a[href|="/mafiabb"], a[href|="/mafiabonbon"], a[href|="/mafialuna"], a[href|="/mafiaoctavia"], a[href|="/mafiachrysalis"] {
+
+display: block;
+clear: none;
+float: left;
+width: 120px;
+height: 120px;
+background-image: url(%%mafiafillies%%) !important
+}
+
+a[href|="/mafiadash"], a[href|="/mafiard"] { background-position: -0px -0px }
+a[href|="/mafiararity"] { background-position: -120px -0px }
+a[href|="/mafiapie"], a[href|="/mafiapinkie"], a[href|="/mafiapp"] { background-position: -240px -0px }
+a[href|="/mafiashy"], a[href|="/mafiafluttershy"] { background-position: -0px -120px }
+a[href|="/mafiaab"] { background-position: -120px -120px }
+a[href|="/mafiaspitfire"] { background-position: -240px -120px }
+a[href|="/mafialyra"] { background-position: -0px -240px }
+a[href|="/mafiacelestia"] { background-position: -120px -240px }
+a[href|="/mafiavinyl"] { background-position: -240px -240px }
+a[href|="/mafiabb"], a[href|="/mafiabonbon"] { background-position: -0px -360px }
+a[href|="/mafialuna"] { background-position: -120px -360px }
+a[href|="/mafiaoctavia"] { background-position: -240px -360px }
+a[href|="/mafiachrysalis"] { background-position: -0px -480px }
+
+/* Space thingy */
+a[href|="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }

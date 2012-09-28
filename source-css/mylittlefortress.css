@@ -1,0 +1,631 @@
+/* Setup */
+body {
+    margin: 2px auto;
+    padding-top: 2px;
+    padding-bottom: 0;
+    background-color:#fff;
+    }
+.link.last-clicked {
+    border-style: dotted inset dotted dotted !important;
+    overflow: hidden !important;
+}
+
+.sidecontentbox .flair-tf2, .sidecontentbox .flair-octavia, .sidecontentbox .flair-shadow {
+    display: none
+    }
+
+/* Sidebar */
+div.side {
+    background: none
+    }
+div.sidebox.submit div.morelink div.nub {
+    background: none
+    }
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox span.number:after {
+    content: " players"
+    }
+.side div.usertext-body:hover table {
+    display: block;
+    clear: both
+    }
+.fancy-toggle-button .add:hover:after{
+  content: " Howdy.";
+}
+
+/* Search bar spy */
+#search input[type="text"] { background: url(%%sharp-dresser%%) center left no-repeat !important; padding: 13px 2px 15px 45px; width: 250px;}
+
+/* Header */
+#header {
+    background-color: #252525;
+   background-image: url(%%bglight%%);
+    background-repeat:repeat-x;
+    border-bottom: 1px solid #000;
+    margin: 0em 2px;
+    padding: 0px;
+    color: #000;
+    }
+
+/* Top */
+#sr-header-area {
+    background-color: black;
+    border-bottom: none
+    }
+.sr-bar a, .sr-bar .separator {
+    color: #999 !important
+    }
+#sr-more-link {
+    display: none
+    }
+.dropdown .title {
+    background-color: black;
+    color: #999 !important
+    }
+.drop-choices .choice {
+    color: black !important
+    }
+.dropdown .title {
+    color: #999
+    }
+
+/* Tabs */
+.tabmenu li a {
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px
+    }
+.tabmenu li a {
+    background-color: #373331 !important;
+    color: #999
+    }
+.tabmenu li.selected a {
+    background-color: grey !important;
+    color: black;
+    border-color: black;
+    border-bottom:1px black;
+    }
+
+/* Text effects */
+a[href="/spoiler"] {
+    background: black !important;
+    color: black !important
+    }
+a[href="/spoiler"]:hover {
+    color: white !important
+    }
+
+/* Hide emoticon table */
+.titlebox em {
+    color: gray
+    }
+.titlebox table {
+    display: none;
+    clear: both
+    }
+div.usertext-body:hover table {
+    display: block;
+    clear: both
+    }
+
+/*Spoiler Image*/
+.thumbnail.nsfw {
+    background-image: url(%%spoilself%%) !important;
+    background-position: 0px 0px !important;
+    }
+.marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before {
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+.marknsfw-button a[href="#"]:before {
+    content: "spoiler"
+    }
+.unmarknsfw-button a[href="#"]:before {
+    content: "un-spoiler"
+    }
+.nsfw-stamp acronym {
+    border: #5F99CF 1px solid !important;
+    display: inline-block;
+    font-size: 0px !important;
+    letter-spacing: 0px;
+    overflow: hidden;
+    vertical-align: bottom;
+    margin-bottom: -1px
+    }
+.nsfw-stamp acronym:after {
+    color: #336699 !important;
+    content: "OH DEAR GOD SPOILERS" !important;
+    display: block;
+    font-size: x-small !important;
+    text-decoration: none;
+    visibility: visible !important
+    }
+.nsfw-stamp:hover:after {
+  margin-right: 5px;
+  content: url(%%SVJ33-2%%);
+  position: absolute;
+  display: inline-block;
+}
+
+
+/* SPECIAL FLAIR */
+a.author[href$="fap_de_oaid"]:after {
+    content: url(%%yuhb5%%)
+    }
+a.author[href$="Drifty254"]:after {
+    content: url(%%pinkyslug%%)
+    }
+a.author[href$="EtherealDragon"]:after {
+    content: ": Dragon Emissary"
+    }
+
+a.author[href$="ovenmittbandit"]:after {
+    content: ": Server admin" 
+    }
+a.author[href$="timbaer"]:after {
+    content: ": Server buttsman" 
+    }
+a.author[href$="fyrenwater"]:hover:after {
+    content: ": CABERHUGS :3"
+    }
+a.author[href$="Your_Shadow"]:after {
+    content: ": Server admin"
+    }
+a.author[href$="koushiro"]:before { content: "Sir "; }
+a.author[href$="koushiro"]:after {
+    content: " the Generous"
+    }
+a.author[href$="woodledoodledoodle"]:before {
+ content: url(%%sharp-dresser%%) 
+}
+a.author[href$="Bionic21"]:before {
+ content: url(%%backburner%%) 
+}
+a.author[href$="5moo2"]:before {
+ content: url(%%barthing%%) 
+}
+a.author[href$="Bionic21"]:hover:after {
+ content: " CONGRATZ DOOD!";
+}
+a.author[href$="iiRockpuppy"] {visibility:hidden; font-size:0;}
+a.author[href$="iiRockpuppy"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: "PinkieOats- And then I said, 'Oatmeal, are you crazy?'" 
+}
+a.author[href$="Dr_Gordon_Voteman"] {visibility:hidden; font-size:0;}
+a.author[href$="Dr_Gordon_Voteman"]:after {
+    visibility:visible; font-size: 10px; color: #f37b21; content: url(%%lambda%%) "Dr. Gordon Voteman"
+}
+.sidecontentbox a.author[href$="/Dr_Gordon_Voteman"] {
+    display: none
+}
+a.author[href$="oscilox"] {visibility:hidden; font-size:0;}
+a.author[href$="oscilox"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: "Vinyl Scratch" 
+}
+a.author[href$="Stranghill"] {visibility:hidden; font-size:0;}
+a.author[href$="Stranghill"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: "lunaREvolution" 
+}
+
+
+/* STEAM NAMES */
+a.author[href$="askanswer"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (Paulitov)" 
+}
+a.author[href$="SonicRainboom"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (Mr. Civilized!)" 
+}
+a.author[href$="Nopies4u"]:after {
+    content: " (Dr. Stones)"
+    }
+a.author[href$="DraidenMcDratini"]:after {
+    content: " (A_Doctor_Dratini)"
+    }
+a.author[href$="Reginault"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (Vintage Canterlot Aristocrat)" 
+}
+a.author[href$="jnew"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (JNew)" 
+}
+a.author[href$="Gentle_Giant"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (Recoome)" 
+}
+a.author[href$="RandomBystander"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (Mr.Sparkle)" 
+}
+a.author[href$="The_Warlord"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (Rambo Dash)"
+}
+a.author[href$="Hackey_Sack"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (undergroundmonorail)"
+}
+a.author[href$="ch3nTHEninja"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (inFluX)"
+}
+a.author[href$="A_Mirror"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (Agent Rainbow Dash)"
+}
+a.author[href$="poko610"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (poko)"
+}
+a.author[href$="wingie"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (sparklepeep)"
+}
+a.author[href$="rofl627"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (Suspiciously Slow Scout)"
+}
+a.author[href$="specs112"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (Synecdoche)"
+}
+a.author[href$="ObsidianPixl"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (#1700)"
+}
+a.author[href$="go4it7arh"]:after {
+    visibility:visible; font-size: 10px; color: #369; content: " (Oxford Comma)"
+}
+
+
+/* FLAIR */
+.flair { display:inline-block; padding: 0;  background: transparent url(%%July2012b%%) no-repeat;  color: black;  border: 0;  border-radius: 0;  text-indent: -9999px; width: 25px;  height: 25px; }
+
+/* BLU */
+.flair-bdemo { background-position: 0px 0px;}
+.flair-bscout { background-position: 0px -25px;}
+.flair-bspy { background-position: 0px -50px;}
+.flair-bengie { background-position: 0px -75px;}
+.flair-bmedic { background-position: 0px -100px;}
+.flair-bsolly { background-position: 0px -125px;}
+.flair-bheavy { background-position: 0px -150px;}
+.flair-bpyro { background-position: 0px -175px;}
+.flair-bsniper { background-position: 0px -200px;}
+
+/* RED */
+.flair-rdemo { background-position: -25px 0px;}
+.flair-rscout { background-position: -25px -25px;}
+.flair-rspy { background-position: -25px -50px;}
+.flair-rengie { background-position: -25px -75px;}
+.flair-rmedic { background-position: -25px -100px;}
+.flair-rsolly { background-position: -25px -125px;}
+.flair-rheavy { background-position: -25px -150px;}
+.flair-rpyro { background-position: -25px -175px;}
+.flair-rsniper { background-position: -25px -200px;}
+
+/* Ponies */
+.flair-zecora { background-position: -50px 0px;}
+.flair-dash { background-position: -50px -25px;}
+.flair-rarity { background-position: -50px -50px;}
+.flair-aj { background-position: -50px -75px;}
+.flair-luna { background-position: -50px -100px;}
+.flair-celestia { background-position: -50px -125px;}
+.flair-fluttershy { background-position: -50px -150px;}
+.flair-pinkie { background-position: -50px -175px;}
+.flair-twilight { background-position: -50px -200px;}
+
+/* Additional Marks*/
+.flair-time { background-position: -75px 0px;}
+.flair-shadow { background-position: -75px -25px;}
+.flair-spitfire { background-position: -75px -50px;}
+.flair-trixie { background-position: -75px -75px;}
+.flair-derpy { background-position: -75px -100px;}
+.flair-spike { background-position: -75px -125px;}
+.flair-hatspike { background-position: -75px -150px;}
+.flair-phoenix { background-position: -75px -175px;}
+.flair-discord { background-position: -75px -200px;}
+
+/* Individuals */
+.flair-tf2 { background-position: -100px 0px;}
+.flair-fyre { background-position: -100px -25px;}
+.flair-alec { background-position: -100px -50px;}
+.flair-dave { background-position: -100px -75px;}
+.flair-mic { background-position: -100px -100px;}
+
+/* 6 Emblems - RED NohbdyImporant */
+.flair-rtwilight { background-position: -125px 0px;}
+.flair-rdash { background-position: -125px -25px;}
+.flair-rrarity { background-position: -125px -50px;}
+.flair-raj { background-position: -125px -75px;}
+.flair-rfluttershy { background-position: -125px -100px;}
+.flair-rpinkie { background-position: -125px -125px;}
+
+/* Same column */
+.flair-vinyl { background-position: -125px -150px;}
+.flair-octavia { background-position: -125px -175px;}
+
+/* 6 Emblems - BLU NohbdyImporant */
+.flair-btwilight { background-position: -150px 0px;}
+.flair-bdash { background-position: -150px -25px;}
+.flair-brarity { background-position: -150px -50px;}
+.flair-baj { background-position: -150px -75px;}
+.flair-bfluttershy { background-position: -150px -100px;}
+.flair-bpinkie { background-position: -150px -125px;}
+
+
+/* Additional Emblems I - NohbdyImporant */
+.flair-rderpy { background-position: -175px 0px;}
+.flair-roctavia { background-position: -175px -25px;}
+.flair-rvinyl { background-position: -175px -50px;}
+.flair-rzecora { background-position: -175px -75px;}
+
+/* Additional Emblems II - NohbdyImporant */
+.flair-bderpy { background-position: -200px 0px;}
+.flair-boctavia { background-position: -200px -25px;}
+.flair-bvinyl { background-position: -200px -50px;}
+.flair-bzecora { background-position: -200px -75px;}
+
+
+
+/* EMOTICONS */
+/* Thanks to GeorgeCareline for the emoticon help */
+a[href="/00"], a[href="/01"], a[href="/02"], a[href="/03"], a[href="/04"], a[href="/05"], a[href="/06"], a[href="/07"], a[href="/08"], a[href="/09"], a[href="/10"], a[href="/11"], a[href="/12"], a[href="/13"], a[href="/14"], a[href="/15"], a[href="/16"], a[href="/17"], a[href="/18"], a[href="/19"], a[href="/20"], a[href="/21"], a[href="/22"], a[href="/23"], a[href="/24"], a[href="/25"], a[href="/26"], a[href="/27"], a[href="/28"], a[href="/29"], a[href="/000"], a[href="/100"], a[href="/200"], a[href="/rainbonkdash"], a[href="/demopunch"], a[href="/smugtrixie"], a[href="/rarispy"], a[href="/cheerilee"],  a[href="/001"], a[href="/101"], a[href="/sbsmug"], a[href="/201"], a[href="/002"], a[href="/102"], a[href="/202"], a[href="/003"], a[href="/103"], a[href="/203"], a[href="/rainderp"]
+   
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%emotes425%%);
+    }
+a[href="/00"] {
+    background-position: -0px -0px
+    }
+a[href="/01"] {
+    background-position: -0px -70px
+    }
+a[href="/02"] {
+    background-position: -0px -140px
+    }
+a[href="/03"] {
+    background-position: -0px -210px
+    }
+a[href="/04"] {
+    background-position: -0px -280px
+    }
+a[href="/05"] {
+    background-position: -0px -350px
+    }
+a[href="/06"] {
+    background-position: -0px -420px
+    }
+a[href="/07"] {
+    background-position: -0px -490px
+    }
+a[href="/demopunch"] {
+    background-position: 0px -490px
+    }
+a[href="/08"] {
+    background-position: -0px -560px
+    }
+a[href="/09"] {
+    background-position: -0px -630px
+    }
+a[href="/10"] {
+    background-position: -70px -0px
+    }
+a[href="/11"] {
+    background-position: -70px -70px
+    }
+a[href="/12"] {
+    background-position: -70px -140px
+    }
+a[href="/13"] {
+    background-position: -70px -210px
+    }
+a[href="/14"] {
+    background-position: -70px -280px
+    }
+a[href="/15"] {
+    background-position: -70px -350px
+    }
+a[href="/16"] {
+    background-position: -70px -420px
+    }
+a[href="/17"] {
+    background-position: -70px -490px
+    }
+a[href="/smugtrixie"] {
+    background-position: -70px -490px
+    }
+a[href="/18"] {
+    background-position: -70px -560px
+    }
+a[href="/19"] {
+    background-position: -70px -630px
+    }
+a[href="/20"] {
+    background-position: -140px -0px
+    }
+a[href="/21"] {
+    background-position: -140px -70px
+    }
+a[href="/22"] {
+    background-position: -140px -140px
+    }
+a[href="/23"] {
+    background-position: -140px -210px
+    }
+a[href="/rainbonkdash"] {
+    background-position: -140px -210px
+    }
+a[href="/24"] {
+    background-position: -140px -280px
+    }
+a[href="/25"] {
+    background-position: -140px -350px
+    }
+a[href="/26"] {
+    background-position: -140px -420px
+    }
+a[href="/27"] {
+    background-position: -140px -490px
+    }
+a[href="/28"] {
+    background-position: -140px -560px
+    }
+a[href="/29"] {
+    background-position: -140px -630px
+    }
+a[href="/000"] {
+    background-position: -0px -700px
+    }
+a[href="/100"] {
+    background-position: -70px -700px
+    }
+a[href="/rarispy"] {
+    background-position: -70px -700px
+    }
+a[href="/200"] {
+    background-position: -140px -700px
+    }
+a[href="/cheerilee"] {
+    background-position: -140px -700px
+    }
+a[href="/001"] {
+    background-position: -0px -770px
+    }
+a[href="/101"] {
+    background-position: -70px -770px
+    }
+a[href="/sbsmug"] {
+    background-position: -70px -770px
+    }
+a[href="/201"] {
+    background-position: -140px -770px
+    }
+a[href="/002"] {
+    background-position: -0px -840px
+    }
+a[href="/102"] {
+    background-position: -70px -840px
+    }
+a[href="/202"] {
+    background-position: -140px -840px
+    }
+a[href="/003"] {
+    background-position: -0px -910px
+    }
+a[href="/103"] {
+    background-position: -70px -910px
+    }
+a[href="/203"] {
+    background-position: -140px -910px
+    }
+a[href="/rainderp"] {
+    background-position: -140px -910px
+    }
+
+/* B-EMOTICONS AKA "PART 2" */
+
+a[href="/004"], a[href="/104"], a[href="/204"], a[href="/005"], a[href="/105"], a[href="/205"] 
+
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%bmotes3%%);
+    }
+a[href="/004"] {
+    background-position: -0px -0px
+    }
+a[href="/104"] {
+    background-position: -67px -0px
+    }
+a[href="/204"] {
+    background-position: -140px -0px
+    }
+a[href="/005"] {
+    background-position: -0px -70px
+    }
+a[href="/105"] {
+    background-position: -70px -70px
+    }
+a[href="/205"] {
+    background-position: -140px -70px
+    }
+
+
+/* "SECRET" EMOTICONS */
+
+a[href="/flutterstones"], a[href="/gottagofast"], a[href="/sanic"], a[href="/durrainbow"]
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%secret3%%);
+    }
+a[href="/flutterstones"] {
+    background-position: -0px -0px
+    }
+a[href="/gottagofast"],a[href="/sanic"] {
+    background-position: -70px -0px
+    }
+a[href="/durrainbow"] {
+    background-position: -140px -0px
+    }
+
+a[href="/freakout"]
+{
+   display: block;
+   clear: none;
+   float: left;
+   width: 86px;
+   height: 71px;
+   background-image: url(%%SVJ33-2%%);
+}
+
+a[href="/freakout"]:hover:after {
+   display: block;
+   height: 71px;
+   z-index: 999;
+   position: absolute;
+   content: url(%%SVJ33-2%%) url(%%SVJ33-2%%) url(%%SVJ33-2%%);
+}
+
+/*Announcement Banner*/
+/*CSS why do you hate me so*/
+    .pagename {
+        font-size: 12pt
+      }
+     
+    .titlebox form {
+    position: static
+    }
+     
+    .titlebox .usertext-body .md ol {
+    width: auto;
+    background: url(%%lambda%%) no-repeat scroll 4px 4px #fff;
+    border: 1px solid #efefef;
+    position: absolute;
+    top: 20px;
+    left: 165px;
+    z-index: 50;
+    margin: 20px 410px 0 0;
+    padding: 3px 5px 5px 30px;
+    list-style: none;
+    display: block;
+    white-space: normal;
+    overflow: hidden;
+    border-radius:10px;
+    z-index: 10000000;
+    }
+     
+    .titlebox .usertext-body .md ol li {
+    margin: 1px;
+    list-style: none
+    }

@@ -1,0 +1,2188 @@
+a[href^="/"][href*="-blink!"] {
+    text-decoration: blink !important
+    }
+/* Changes background DICKs
+body {
+    background: url(%%SSpU6%%) no-repeat fixed 64% 100%;
+
+}
+*/
+/* Makes the sidebar transparent */
+.side {
+    background-color: transparent
+    }
+/* Playing with other people's stuff */
+/* /r/mylittleandysonic */
+/*.flair {
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%flair%%);
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 18px;
+    height: 18px
+    }*/
+/*********Flair**********/
+/**********************/
+.flair {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(http://d.thumbs.redditmedia.com/NybsPOtIgd4BiObW.png);
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px
+    }
+.flair-spike {
+    width: 16px !important;
+    height: 15px !important;
+    background-position: 0px 0px
+    }
+.flair-pinkie {
+    width: 20px !important;
+    background-position: -16px 0px
+    }
+.flair-rainbow {
+    background-position: -36px 0px
+    }
+.flair-fluttershy {
+    background-position: -54px 0px
+    }
+.flair-spikeflip {
+    width: 16px !important;
+    height: 15px !important;
+    background-position: 0px -18px
+    }
+.flair-pinkieflip {
+    width: 20px !important;
+    background-position: -16px -18px
+    }
+.flair-rainbowflip {
+    background-position: -36px -18px
+    }
+.flair-fluttershyflip {
+    background-position: -54px -18px
+    }
+.flair-aj {
+    background-position: -72px 0px
+    }
+.flair-ajflip {
+    background-position: -73px 18px
+    }
+.flair-twilight {
+    background-position: -92px 0px;
+    width: 20px !important;
+    height: 18px !important
+    }
+.flair-twilightflip {
+    background-position: -93px 18px;
+    width: 19px !important;
+    height: 18px !important
+    }
+.flair-rarity {
+    background-position: -112px 0px;
+    width: 19px !important;
+    height: 18px !important
+    }
+.flair-rarityflip {
+    background-position: -113px 18px
+    }
+/* Banner Image */
+#header-bottom-left {
+    background: url(http://thumbs.reddit.com/t5_2sy9j_8.png);
+    background-color: rgb(34,34,34);
+    /*   margin-top: -300px;*/
+    background-repeat: no-repeat;
+    height: 180px
+    }
+#header-img {
+    margin-top: 125px;
+    margin-left: 0px;
+    position: absolute
+    }
+.pagename {
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+    /*background-color: black;*/
+    border-top: 0px solid black;
+    border-left: 0px solid black;
+    border-right: 0px solid black
+    }
+.pagename a {
+    color: /*black*/white;
+    padding: 5px
+    }
+.tabmenu li a {
+    color: #000000;
+    background-color: #ffffff;
+    border: 0px solid black
+    }
+#header {
+    border-bottom: 1px solid #000000;
+    position: relative;
+    z-index: 99
+    }
+/*  Names! */
+a.author[href$="Speedingturtle"] {
+    font-size: 0px !important;
+    display: inline-block
+    }
+a.author[href$="Speedingturtle"]:before {
+    content: "Slowyslowyslowslowturtle";
+    font-size: 10px !important;
+    visibility: visible !important
+    }
+a.author[href$="Speedingturtle"]:after {
+    content: " (¯|_(ツ)_/¯)";
+    color: black;
+    font-size: 10px !important;
+    letter-spacing: normal
+    }
+a.author[href$="Chinch335"] {
+    font-size: 0px !important;
+    display: inline-block
+    }
+a.author[href$="Chinch335"]:before {
+    content: "Chinchy";
+    font-size: 10px !important;
+    visibility: visible !important
+    }
+a.author[href$="volcano_bakemeats"] {
+    font-size: 0px !important;
+    display: inline-block
+    }
+a.author[href$="volcano_bakemeats"]:before {
+    content: "Stupid";
+    font-size: 11px !important;
+    visibility: visible !important
+    }
+/* Make self posts expand to the browser size (to fit the emote tables better) */
+.md {
+    max-width: none
+    }
+/* Remove thumbnail on emote self post */
+a[href*="/yqm7o/"][class~="thumbnail"] {
+    display: none !important
+    }
+a[href*="/yqm7o/"].title {
+    color: red !important
+    }
+/* gavin14's nightmode flair fix */
+.res-nightmode .content .flair {
+    background-color: transparent !important
+    }
+/*Announcement Box*/
+.content {
+    margin-top: 55px
+    }
+.pagename {
+    font-size: 12pt
+    }
+.titlebox form {
+    position: static
+    }
+.titlebox .usertext-body .md ol {
+    width: auto;
+    background: url(http://d.thumbs.redditmedia.com/EfmbIINfOK0tHLOc.png) no-repeat scroll 3px 2px #EFF7FF;
+    border: 1px solid #5f99cf;
+    position: absolute;
+    top: 195px;
+    left: 20px;
+    z-index: 50;
+    margin: 10px 310px 0 0;
+    padding: 0px 4px 2px 25px;
+    list-style: none;
+    display: block;
+    white-space: normal;
+    overflow: hidden;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px
+    }
+.titlebox .usertext-body .md ol li {
+    margin: 3px
+    }
+/*Check mark */
+/*.approval-checkmark {
+    height: 0px;
+    padding: 7.5px 7.5px;
+    background: url(%%rbp3T-8-d-rzlyeu%%);
+    background-position: center bottom;
+    background-repeat: no-repeat
+    }
+.approval-checkmark:hover {
+    height: 0px;
+    padding: 102.5px 100px;
+    background: url(%%4WPbFfqQC7dD3Jxc%%)
+    }*/
+/* ooh what does this do */
+.usertext-body h4 {
+    font-size: 40px;
+    font-weight: normal;
+    text-align: center;
+    color: #DB0000;
+    text-shadow: 2px 2px #000000;
+    font-family: "Bebas Neue", "Arial" !important
+    }
+.usertext-body h5 {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: #DB0000;
+    text-shadow: 3px 3px #000000;
+    font-family: "Bebas Neue", "Arial" !important
+    }
+.usertext-body h6 {
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    color: #DB0000;
+    text-shadow: 4px 4px #000000;
+    font-family: "Bebas Neue", "Arial" !important
+    }
+a[href="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }
+/**************/
+/* BEGIN EMOTES */
+/**************/
+a[href|="/shuffle"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 225px;
+    height: 300px;
+    background-image: url(http://c.thumbs.redditmedia.com/DO1kW--Q7aOtgd7J.png)
+    }
+a[href|="/shuffle"] {
+    background-position: -0px -0px
+    }
+a[href|="/nopespin"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 300px;
+    height: 301px;
+    background-image: url(http://e.thumbs.redditmedia.com/n-BFOLNGx0d2K49v.png)
+    }
+a[href|="/nopespin"] {
+    background-position: -0px -0px
+    }
+a[href|="/animote"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 255px;
+    height: 171px;
+    background-image: url(http://c.thumbs.redditmedia.com/YaBC0ntaYvWgrkIh.png)
+    }
+a[href|="/animote"] {
+    background-position: -0px -0px
+    }
+a[href|="/spidey"], a[href|="/spidey2"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://b.thumbs.redditmedia.com/Vxm1zWOFEkWjNz8C.jpg)
+    }
+a[href|="/spidey"] {
+    width: 293px;
+    height: 198px;
+    background-position: -472px -0px
+    }
+a[href|="/spidey2"] {
+    width: 197px;
+    height: 299px;
+    background-position: -4px -2px
+    }
+a[href|="/thefack"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 770px;
+    height: 136px;
+    background-image: url(http://f.thumbs.redditmedia.com/0m9p9dtDTXXb_0aq.png)
+    }
+a[href|="/thefack"] {
+    background-position: -0px -0px
+    }
+/*Will delete this at a later date to test image deletion on the new image system*/
+/* Or not. */
+/* [](/c22) */
+a[href|="/orschemote"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 300px;
+    height: 400px;
+    background-image: url(http://b.thumbs.redditmedia.com/2Tde7I6xFl9W0aoI.png)
+    }
+a[href|="/orschemote"] {
+    background-position: -0px -0px !important
+    }
+a[href|="/1a"], a[href|="/1b"], a[href|="/1c"], a[href|="/1d"], a[href|="/1e"], a[href|="/335"], a[href|="/1f"], a[href|="/1g"], a[href|="/1h"], a[href|="/1i"], a[href|="/ioi"], a[href|="/1j"], a[href|="/1k"], a[href|="/2a"], a[href|="/2b"], a[href|="/2c"], a[href|="/2d"], a[href|="/2e"], a[href|="/2f"], a[href|="/2g"], a[href|="/2h"], a[href|="/2i"], a[href|="/2j"], a[href|="/yourface"], a[href|="/flutterbucket"], a[href|="/2k"], a[href|="/3a"], a[href|="/3b"], a[href|="/3c"], a[href|="/3d"], a[href|="/3e"], a[href|="/3f"], a[href|="/3g"], a[href|="/3h"], a[href|="/3i"], a[href|="/ioib"], a[href|="/3j"], a[href|="/3k"], a[href|="/ajraep"], a[href|="/dashraep"], a[href|="/grumpytwi"], a[href|="/pieraep"], a[href|="/rarraep"], a[href|="/ioib"], a[href|="/shyraep"], a[href|="/twiraep"], a[href|="/pptoothover"], a[href|="/rpptoothover"]:hover {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://b.thumbs.redditmedia.com/TiiUeMVjYgIblgg1.png)
+    }
+a[href|="/1a"] {
+    width: 76px;
+    height: 139px;
+    background-position: -2px -211px
+    }
+a[href|="/1b"] {
+    width: 134px;
+    height: 103px;
+    background-position: -758px -104px
+    }
+a[href|="/1c"] {
+    width: 102px;
+    height: 150px;
+    background-position: -601px -211px
+    }
+a[href|="/1d"] {
+    width: 81px;
+    height: 154px;
+    background-position: -532px -516px
+    }
+a[href|="/1e"], a[href|="/335"] {
+    width: 138px;
+    height: 147px;
+    background-position: -327px -211px
+    }
+a[href|="/1f"] {
+    width: 73px;
+    height: 100px;
+    background-position: -572px -104px
+    }
+a[href|="/1g"] {
+    width: 60px;
+    height: 85px;
+    background-position: -2px -2px
+    }
+a[href|="/1h"] {
+    width: 146px;
+    height: 96px;
+    background-position: -417px -2px
+    }
+a[href|="/1i"], a[href|="/ioi"] {
+    width: 134px;
+    height: 151px;
+    background-position: -758px -363px
+    }
+a[href|="/1j"] {
+    width: 76px;
+    height: 140px;
+    background-position: -249px -211px
+    }
+a[href|="/1k"] {
+    width: 136px;
+    height: 154px;
+    background-position: -304px -516px
+    }
+a[href|="/2a"], a[href|="/pptoothover"], a[href|="/rpptoothover"]:hover {
+    width: 158px;
+    height: 151px;
+    background-position: -144px -516px
+    }
+a[href|="/2b"] {
+    width: 132px;
+    height: 149px;
+    background-position: -467px -211px
+    }
+a[href|="/2c"] {
+    width: 140px;
+    height: 151px;
+    background-position: -2px -516px
+    }
+a[href|="/2d"] {
+    width: 125px;
+    height: 150px;
+    background-position: -256px -363px
+    }
+a[href|="/2e"] {
+    width: 85px;
+    height: 89px;
+    background-position: -244px -2px
+    }
+a[href|="/2f"] {
+    width: 100px;
+    height: 100px;
+    background-position: -845px -2px
+    }
+a[href|="/2g"] {
+    width: 109px;
+    height: 101px;
+    background-position: -647px -104px
+    }
+a[href|="/2h"] {
+    width: 69px;
+    height: 150px;
+    background-position: -705px -211px
+    }
+a[href|="/2i"] {
+    width: 91px;
+    height: 99px;
+    background-position: -565px -2px
+    }
+a[href|="/2j"], a[href|="/yourface"], a[href|="/flutterbucket"] {
+    width: 167px;
+    height: 140px;
+    background-position: -80px -211px
+    }
+a[href|="/2k"] {
+    width: 88px;
+    height: 154px;
+    background-position: -442px -516px
+    }
+a[href|="/3a"] {
+    width: 178px;
+    height: 86px;
+    background-position: -64px -2px
+    }
+a[href|="/3b"] {
+    width: 90px;
+    height: 105px;
+    background-position: -894px -104px
+    }
+a[href|="/3c"] {
+    width: 105px;
+    height: 150px;
+    background-position: -493px -363px
+    }
+a[href|="/3d"] {
+    width: 108px;
+    height: 150px;
+    background-position: -383px -363px
+    }
+a[href|="/3e"] {
+    width: 78px;
+    height: 150px;
+    background-position: -600px -363px
+    }
+a[href|="/3f"] {
+    width: 76px;
+    height: 150px;
+    background-position: -680px -363px
+    }
+a[href|="/3g"] {
+    width: 95px;
+    height: 100px;
+    background-position: -748px -2px
+    }
+a[href|="/3h"] {
+    width: 88px;
+    height: 100px;
+    background-position: -658px -2px
+    }
+a[href|="/3i"], a[href|="/ioib"] {
+    width: 140px;
+    height: 150px;
+    background-position: -114px -363px
+    }
+a[href|="/3j"] {
+    width: 110px;
+    height: 150px;
+    background-position: -2px -363px
+    }
+a[href|="/3k"] {
+    width: 135px;
+    height: 150px;
+    background-position: -776px -211px
+    }
+a[href|="/ajraep"] {
+    width: 80px;
+    height: 100px;
+    background-position: -2px -104px
+    }
+a[href|="/dashraep"] {
+    width: 93px;
+    height: 100px;
+    background-position: -84px -104px
+    }
+a[href|="/grumpytwi"] {
+    width: 84px;
+    height: 90px;
+    background-position: -331px -2px
+    }
+a[href|="/pieraep"] {
+    width: 93px;
+    height: 100px;
+    background-position: -477px -104px
+    }
+a[href|="/rarraep"] {
+    width: 90px;
+    height: 100px;
+    background-position: -279px -104px
+    }
+a[href|="/shyraep"] {
+    width: 104px;
+    height: 100px;
+    background-position: -371px -104px
+    }
+a[href|="/twiraep"] {
+    width: 98px;
+    height: 100px;
+    background-position: -179px -104px
+    }
+a[href|="/4a"], a[href|="/4b"], a[href|="/4c"], a[href|="/4d"], a[href|="/4e"], a[href|="/4f"], a[href|="/4g"], a[href|="/4h"], a[href|="/4i"], a[href|="/4j"], a[href|="/4k"], a[href|="/4l"], a[href|="/5a"], a[href|="/5b"], a[href|="/5c"], a[href|="/5d"], a[href|="/5e"], a[href|="/5f"], a[href|="/5g"], a[href|="/5h"], a[href|="/5i"], a[href|="/5j"], a[href|="/5k"], a[href|="/applehat"], a[href|="/doubledragon"], a[href|="/doublespike"], a[href|="/peckypie"], a[href|="/peckiepie"], a[href|="/rdshadowbolt"], a[href|="/scarecrowjack"], a[href|="/starswirl"], a[href|="/rdoubledragon"], a[href|="/rdoublespike"], a[href|="/rpeckypie"], a[href|="/rpeckiepie"], a[href|="/rrdshadowbolt"], a[href|="/rscarecrowjack"], a[href|="/rstarswirl"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://a.thumbs.redditmedia.com/5BAxBli-SHRFVODB.png)
+    }
+a[href|="/4a"] {
+    width: 159px;
+    height: 151px;
+    background-position: -2px -2px
+    }
+a[href|="/4b"] {
+    width: 144px;
+    height: 150px;
+    background-position: -163px -2px
+    }
+a[href|="/4c"] {
+    width: 253px;
+    height: 150px;
+    background-position: -309px -2px
+    }
+a[href|="/4d"] {
+    width: 138px;
+    height: 150px;
+    background-position: -564px -2px
+    }
+a[href|="/4e"] {
+    width: 150px;
+    height: 150px;
+    background-position: -704px -2px
+    }
+a[href|="/4f"] {
+    width: 119px;
+    height: 150px;
+    background-position: -856px -2px
+    }
+a[href|="/4g"] {
+    width: 189px;
+    height: 200px;
+    background-position: -2px -155px
+    }
+a[href|="/4h"] {
+    width: 140px;
+    height: 151px;
+    background-position: -193px -155px
+    }
+a[href|="/4i"] {
+    width: 69px;
+    height: 150px;
+    background-position: -335px -155px
+    }
+a[href|="/4j"] {
+    width: 120px;
+    height: 148px;
+    background-position: -406px -155px
+    }
+a[href|="/4k"] {
+    width: 211px;
+    height: 200px;
+    background-position: -528px -155px
+    }
+a[href|="/4l"] {
+    width: 335px;
+    height: 150px;
+    background-position: -2px -357px
+    }
+a[href|="/5a"] {
+    width: 92px;
+    height: 100px;
+    background-position: -339px -357px
+    }
+a[href|="/5b"] {
+    width: 71px;
+    height: 100px;
+    background-position: -433px -357px
+    }
+a[href|="/5c"] {
+    width: 148px;
+    height: 151px;
+    background-position: -506px -357px
+    }
+a[href|="/5d"] {
+    width: 154px;
+    height: 150px;
+    background-position: -656px -357px
+    }
+a[href|="/5e"] {
+    width: 110px;
+    height: 150px;
+    background-position: -812px -357px
+    }
+a[href|="/5f"] {
+    width: 140px;
+    height: 152px;
+    background-position: -2px -510px
+    }
+a[href|="/5g"] {
+    width: 151px;
+    height: 150px;
+    background-position: -144px -510px
+    }
+a[href|="/5h"] {
+    width: 120px;
+    height: 150px;
+    background-position: -297px -510px
+    }
+a[href|="/5i"] {
+    width: 137px;
+    height: 150px;
+    background-position: -419px -510px
+    }
+a[href|="/5j"] {
+    width: 88px;
+    height: 105px;
+    background-position: -558px -510px
+    }
+a[href|="/5k"] {
+    width: 109px;
+    height: 154px;
+    background-position: -648px -510px
+    }
+a[href|="/applehat"] {
+    width: 109px;
+    height: 100px;
+    background-position: -759px -510px
+    }
+a[href|="/doubledragon"], a[href|="/doublespike"], a[href|="/rdoubledragon"], a[href|="/rdoublespike"] {
+    width: 70px;
+    height: 70px;
+    background-position: -870px -510px
+    }
+a[href|="/peckypie"], a[href|="/peckiepie"], a[href|="/rpeckypie"], a[href|="/rpeckiepie"] {
+    width: 70px;
+    height: 70px;
+    background-position: -942px -510px
+    }
+a[href|="/rdshadowbolt"], a[href|="/rrdshadowbolt"] {
+    width: 70px;
+    height: 70px;
+    background-position: -2px -666px
+    }
+a[href|="/scarecrowjack"], a[href|="/rscarecrowjack"] {
+    width: 70px;
+    height: 70px;
+    background-position: -74px -666px
+    }
+a[href|="/starswirl"], a[href|="/rstarswirl"] {
+    width: 70px;
+    height: 70px;
+    background-position: -146px -666px
+    }
+a[href|="/335b"], a[href|="/335c"], a[href|="/aboooh"], a[href|="/adorajack"], a[href|="/ajcider"], a[href|="/bootsncats"], a[href|="/canit"], a[href|="/cod"], a[href|="/dashhfof"], a[href|="/derpwat"], a[href|="/deviouspie"], a[href|="/dgusta"], a[href|="/duck"], a[href|="/grinaloo"], a[href|="/grumpybloom"], a[href|="/grumpypie"], a[href|="/grumpyrar"], a[href|="/grumpyscoot"], a[href|="/grumpyshy"], a[href|="/grumpytia"], a[href|="/hipsterpie"], a[href|="/oinkoink"], a[href|="/onewat"], a[href|="/ppdance"], a[href|="/pppie"], a[href|="/ppplot"], a[href|="/ppsurprise"], a[href|="/prettypony"], a[href|="/roseeyes"], a[href|="/rosetough"], a[href|="/rppsalute"], a[href|="/rworstpony"], a[href|="/scootasad"], a[href|="/slumberparty"], a[href|="/sparkwat"], a[href|="/speedy"], a[href|="/spikestache"], a[href|="/spikeyu"], a[href|="/teehee"], a[href|="/twipoker"], a[href|="/umyeah"], a[href|="/whyhello"], a[href|="/yopiegimmeafreshbeat"], a[href|="/zoidberg"], a[href|="/rzoidberg"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://f.thumbs.redditmedia.com/iUX64LF8j-6kbJZq.png)
+    }
+a[href|="/335b"] {
+    width: 74px;
+    height: 149px;
+    background-position: -2px -2px
+    }
+a[href|="/335c"] {
+    width: 77px;
+    height: 100px;
+    background-position: -78px -2px
+    }
+a[href|="/aboooh"] {
+    width: 65px;
+    height: 125px;
+    background-position: -157px -2px
+    }
+a[href|="/adorajack"] {
+    width: 97px;
+    height: 100px;
+    background-position: -224px -2px
+    }
+a[href|="/ajcider"] {
+    width: 134px;
+    height: 165px;
+    background-position: -323px -2px
+    }
+a[href|="/bootsncats"] {
+    width: 175px;
+    height: 117px;
+    background-position: -459px -2px
+    }
+a[href|="/canit"] {
+    width: 150px;
+    height: 119px;
+    background-position: -636px -2px
+    }
+a[href|="/cod"] {
+    width: 150px;
+    height: 150px;
+    background-position: -788px -2px
+    }
+a[href|="/dashhfof"] {
+    width: 127px;
+    height: 100px;
+    background-position: -2px -169px
+    }
+a[href|="/derpwat"] {
+    width: 75px;
+    height: 150px;
+    background-position: -131px -169px
+    }
+a[href|="/deviouspie"] {
+    width: 150px;
+    height: 145px;
+    background-position: -399px -169px
+    }
+a[href|="/dgusta"] {
+    width: 70px;
+    height: 72px;
+    background-position: -551px -169px
+    }
+a[href|="/duck"] {
+    width: 86px;
+    height: 80px;
+    background-position: -623px -169px
+    }
+a[href|="/grinaloo"] {
+    width: 107px;
+    height: 104px;
+    background-position: -711px -169px
+    }
+a[href|="/grumpybloom"] {
+    width: 79px;
+    height: 90px;
+    background-position: -820px -169px
+    }
+a[href|="/grumpypie"] {
+    width: 75px;
+    height: 90px;
+    background-position: -901px -169px
+    }
+a[href|="/grumpyrar"] {
+    width: 78px;
+    height: 90px;
+    background-position: -2px -321px
+    }
+a[href|="/grumpyscoot"] {
+    width: 81px;
+    height: 90px;
+    background-position: -82px -321px
+    }
+a[href|="/grumpyshy"] {
+    width: 87px;
+    height: 90px;
+    background-position: -165px -321px
+    }
+a[href|="/grumpytia"] {
+    width: 107px;
+    height: 90px;
+    background-position: -254px -321px
+    }
+a[href|="/hipsterpie"] {
+    width: 84px;
+    height: 100px;
+    background-position: -363px -321px
+    }
+a[href|="/oinkoink"] {
+    width: 100px;
+    height: 175px;
+    background-position: -449px -321px
+    }
+a[href|="/onewat"] {
+    width: 105px;
+    height: 105px;
+    background-position: -551px -321px
+    }
+a[href|="/ppdance"] {
+    width: 150px;
+    height: 125px;
+    background-position: -658px -321px
+    }
+a[href|="/pppie"] {
+    width: 137px;
+    height: 100px;
+    background-position: -810px -321px
+    }
+a[href|="/ppplot"] {
+    width: 150px;
+    height: 86px;
+    background-position: -2px -498px
+    }
+a[href|="/ppsurprise"] {
+    width: 115px;
+    height: 150px;
+    background-position: -154px -498px
+    }
+a[href|="/prettypony"] {
+    width: 70px;
+    height: 75px;
+    background-position: -271px -498px
+    }
+a[href|="/roseeyes"] {
+    width: 97px;
+    height: 100px;
+    background-position: -343px -498px
+    }
+a[href|="/rosetough"] {
+    width: 104px;
+    height: 160px;
+    background-position: -442px -498px
+    }
+a[href|="/rppsalute"] {
+    width: 173px;
+    height: 150px;
+    background-position: -548px -498px
+    }
+a[href|="/rworstpony"] {
+    width: 70px;
+    height: 100px;
+    background-position: -723px -498px
+    }
+a[href|="/scootasad"] {
+    width: 106px;
+    height: 125px;
+    background-position: -795px -498px
+    }
+a[href|="/slumberparty"] {
+    width: 97px;
+    height: 76px;
+    background-position: -903px -498px
+    }
+a[href|="/sparkwat"] {
+    width: 90px;
+    height: 100px;
+    background-position: -2px -660px
+    }
+a[href|="/speedy"] {
+    width: 101px;
+    height: 125px;
+    background-position: -94px -660px
+    }
+a[href|="/spikestache"] {
+    width: 66px;
+    height: 100px;
+    background-position: -197px -660px
+    }
+a[href|="/spikeyu"] {
+    width: 71px;
+    height: 100px;
+    background-position: -265px -660px
+    }
+a[href|="/teehee"] {
+    width: 76px;
+    height: 70px;
+    background-position: -338px -660px
+    }
+a[href|="/twipoker"] {
+    width: 118px;
+    height: 110px;
+    background-position: -416px -660px
+    }
+a[href|="/umyeah"] {
+    width: 76px;
+    height: 100px;
+    background-position: -536px -660px
+    }
+a[href|="/whyhello"] {
+    width: 121px;
+    height: 100px;
+    background-position: -614px -660px
+    }
+a[href|="/yopiegimmeafreshbeat"] {
+    width: 175px;
+    height: 117px;
+    background-position: -459px -2px
+    }
+a[href|="/zoidberg"], a[href|="/rzoidberg"] {
+    width: 70px;
+    height: 69px;
+    background-position: -737px -660px
+    }
+a[href|="/5ofclubs"], a[href|="/bonsing"], a[href|="/derpsess"], a[href|="/lunasalute"], a[href|="/lyplay"], a[href|="/lyrawithit"], a[href|="/ootdluna"], a[href|="/parrrtycannon"], a[href|="/piplean"], a[href|="/ppjam"], a[href|="/ppsalute"], a[href|="/ppshock"], a[href|="/ppshocked"], a[href|="/pudding"], a[href|="/r2a"], a[href|="/royalpain"], a[href|="/shyrose"], a[href|="/shystrut"], a[href|="/sursalute"], a[href|="/sursprisesalute"], a[href|="/this"], a[href|="/trix1"], a[href|="/rpptoothover"], a[href|="/pptoothover"]:hover {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://b.thumbs.redditmedia.com/LxzHhnJr-rZAeIbU.png)
+    }
+a[href|="/5ofclubs"] {
+    width: 174px;
+    height: 175px;
+    background-position: -2px -2px
+    }
+a[href|="/bonsing"] {
+    width: 127px;
+    height: 151px;
+    background-position: -178px -2px
+    }
+a[href|="/derpsess"] {
+    width: 167px;
+    height: 200px;
+    background-position: -307px -2px
+    }
+a[href|="/lunasalute"] {
+    width: 186px;
+    height: 155px;
+    background-position: -476px -2px
+    }
+a[href|="/lyplay"] {
+    width: 232px;
+    height: 203px;
+    background-position: -664px -2px
+    }
+a[href|="/lyrawithit"] {
+    width: 239px;
+    height: 268px;
+    background-position: -2px -207px
+    }
+a[href|="/ootdluna"] {
+    width: 127px;
+    height: 155px;
+    background-position: -243px -207px
+    }
+a[href|="/parrrtycannon"] {
+    width: 133px;
+    height: 175px;
+    background-position: -372px -207px
+    }
+a[href|="/piplean"] {
+    width: 196px;
+    height: 167px;
+    background-position: -507px -207px
+    }
+a[href|="/ppjam"] {
+    width: 203px;
+    height: 200px;
+    background-position: -705px -207px
+    }
+a[href|="/ppsalute"] {
+    width: 187px;
+    height: 150px;
+    background-position: -2px -477px
+    }
+a[href|="/ppshock"], a[href|="/ppshocked"] {
+    width: 250px;
+    height: 168px;
+    background-position: -191px -477px
+    }
+a[href|="/pudding"] {
+    width: 112px;
+    height: 154px;
+    background-position: -443px -477px
+    }
+a[href|="/r2a"], a[href|="/rpptoothover"], a[href|="/pptoothover"]:hover {
+    width: 163px;
+    height: 153px;
+    background-position: -557px -477px
+    }
+a[href|="/royalpain"] {
+    width: 203px;
+    height: 175px;
+    background-position: -722px -477px
+    }
+a[href|="/shyrose"] {
+    width: 133px;
+    height: 150px;
+    background-position: -2px -654px
+    }
+a[href|="/shystrut"] {
+    width: 187px;
+    height: 150px;
+    background-position: -137px -654px
+    }
+a[href|="/sursalute"], a[href|="/sursprisesalute"] {
+    width: 195px;
+    height: 150px;
+    background-position: -326px -654px
+    }
+a[href|="/this"] {
+    width: 128px;
+    height: 166px;
+    background-position: -523px -654px
+    }
+a[href|="/trix1"] {
+    width: 205px;
+    height: 142px;
+    background-position: -653px -654px
+    }
+a[href|="/abchill"], a[href|="/angrypie"], a[href|="/berrysmug"], a[href|="/damusics"], a[href|="/dashconfused"], a[href|="/dashhug"], a[href|="/disdrink"], a[href|="/flapple"], a[href|="/flutterdance"], a[href|="/foreverpie"], a[href|="/molestshy"], a[href|="/flutterrape"], a[href|="/ppoutofnowhere"], a[href|="/pinkieoutofnowhere"], a[href|="/ppshiteater"], a[href|="/rarsalute"], a[href|="/rartears"], a[href|="/rflutterbucket"], a[href|="/ryourface"], a[href|="/rosesmug"], a[href|="/rosewat"], a[href|="/shydaw"], a[href|="/shyexcited"], a[href|="/stageleft"], a[href|="/stretch"], a[href|="/surreally"], a[href|="/twidance"], a[href|="/twidrunk"], a[href|="/twigrimace"], a[href|="/twisquee"], a[href|="/twistsalute"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://e.thumbs.redditmedia.com/3NoiDkrAVyPz_2hv.png)
+    }
+a[href|="/abchill"] {
+    width: 112px;
+    height: 100px;
+    background-position: -2px -2px
+    }
+a[href|="/angrypie"] {
+    width: 169px;
+    height: 154px;
+    background-position: -116px -2px
+    }
+a[href|="/berrysmug"] {
+    width: 129px;
+    height: 150px;
+    background-position: -287px -2px
+    }
+a[href|="/damusics"] {
+    width: 160px;
+    height: 150px;
+    background-position: -418px -2px
+    }
+a[href|="/dashconfused"] {
+    width: 150px;
+    height: 147px;
+    background-position: -580px -2px
+    }
+a[href|="/dashhug"] {
+    width: 162px;
+    height: 175px;
+    background-position: -732px -2px
+    }
+a[href|="/disdrink"] {
+    width: 174px;
+    height: 160px;
+    background-position: -2px -179px
+    }
+a[href|="/flapple"] {
+    width: 150px;
+    height: 142px;
+    background-position: -178px -179px
+    }
+a[href|="/flutterdance"] {
+    width: 130px;
+    height: 150px;
+    background-position: -330px -179px
+    }
+a[href|="/foreverpie"] {
+    width: 96px;
+    height: 150px;
+    background-position: -462px -179px
+    }
+a[href|="/molestshy"], a[href|="/flutterrape"] {
+    width: 207px;
+    height: 203px;
+    background-position: -560px -179px
+    }
+a[href|="/ppoutofnowhere"], a[href|="/pinkieoutofnowhere"] {
+    width: 150px;
+    height: 144px;
+    background-position: -769px -179px
+    }
+a[href|="/ppshiteater"] {
+    width: 134px;
+    height: 150px;
+    background-position: -2px -384px
+    }
+a[href|="/rarsalute"] {
+    width: 176px;
+    height: 149px;
+    background-position: -138px -384px
+    }
+a[href|="/rartears"] {
+    width: 106px;
+    height: 100px;
+    background-position: -316px -384px
+    }
+a[href|="/rflutterbucket"], a[href|="/ryourface"] {
+    width: 154px;
+    height: 152px;
+    background-position: -424px -384px
+    }
+a[href|="/rosesmug"] {
+    width: 149px;
+    height: 150px;
+    background-position: -580px -384px
+    }
+a[href|="/rosewat"] {
+    width: 203px;
+    height: 150px;
+    background-position: -731px -384px
+    }
+a[href|="/shydaw"] {
+    width: 96px;
+    height: 175px;
+    background-position: -2px -538px
+    }
+a[href|="/shyexcited"] {
+    width: 211px;
+    height: 150px;
+    background-position: -100px -538px
+    }
+a[href|="/stageleft"] {
+    width: 197px;
+    height: 200px;
+    background-position: -484px -538px
+    }
+a[href|="/stretch"] {
+    width: 238px;
+    height: 154px;
+    background-position: -683px -538px
+    }
+a[href|="/surreally"] {
+    width: 151px;
+    height: 147px;
+    background-position: -2px -740px
+    }
+a[href|="/twidance"] {
+    width: 126px;
+    height: 150px;
+    background-position: -155px -740px
+    }
+a[href|="/twidrunk"] {
+    width: 145px;
+    height: 160px;
+    background-position: -283px -740px
+    }
+a[href|="/twigrimace"] {
+    width: 106px;
+    height: 100px;
+    background-position: -430px -740px
+    }
+a[href|="/twisquee"] {
+    width: 108px;
+    height: 175px;
+    background-position: -538px -740px
+    }
+a[href|="/twistsalute"] {
+    width: 140px;
+    height: 130px;
+    background-position: -648px -740px
+    }
+a[href|="/335a"], a[href|="/bawkwithit"], a[href|="/bonwithit"], a[href|="/ididntputthoseinmybagwithit"], a[href|="/boxedluna"], a[href|="/pinkiehover"], a[href|="/rpinkiehover"], a[href|="/brony"], a[href|="/brony2"], a[href|="/dat"], a[href|="/dosh"], a[href|="/ioia"], a[href|="/mahhorn"], a[href|="/rdfriendship"], a[href|="/pants"], a[href|="/rareew"], a[href|="/rargrin"], a[href|="/rbawkwithit"], a[href|="/sweetcelestia"], a[href|="/thatswhatisaid"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://d.thumbs.redditmedia.com/nUjvozHB3_MDN-3E.png)
+    }
+a[href|="/335a"] {
+    width: 195px;
+    height: 156px;
+    background-position: -2px -2px
+    }
+a[href|="/bawkwithit"] {
+    width: 279px;
+    height: 268px;
+    background-position: -199px -2px
+    }
+a[href|="/bonwithit"], a[href|="/ididntputthoseinmybagwithit"] {
+    width: 243px;
+    height: 268px;
+    background-position: -480px -2px
+    }
+a[href|="/boxedluna"] {
+    width: 247px;
+    height: 152px;
+    background-position: -725px -2px
+    }
+a[href|="/pinkiehover"], a[href|="/rpinkiehover"]:hover, a[href|="/brony"] {
+    width: 202px;
+    height: 160px;
+    background-position: -2px -272px
+    }
+a[href|="/rpinkiehover"], a[href|="/pinkiehover"]:hover, a[href|="/brony2"] {
+    width: 185px;
+    height: 160px;
+    background-position: -206px -272px
+    }
+a[href|="/dat"] {
+    width: 209px;
+    height: 150px;
+    background-position: -393px -272px
+    }
+a[href|="/dosh"] {
+    width: 160px;
+    height: 141px;
+    background-position: -604px -272px
+    }
+a[href|="/ioia"] {
+    width: 160px;
+    height: 150px;
+    background-position: -766px -272px
+    }
+a[href|="/mahhorn"], a[href|="/rdfriendship"] {
+    width: 149px;
+    height: 201px;
+    background-position: -2px -434px
+    }
+a[href|="/pants"] {
+    width: 171px;
+    height: 200px;
+    background-position: -153px -434px
+    }
+a[href|="/rareew"] {
+    width: 127px;
+    height: 150px;
+    background-position: -326px -434px
+    }
+a[href|="/rargrin"] {
+    width: 180px;
+    height: 150px;
+    background-position: -455px -434px
+    }
+a[href|="/rbawkwithit"] {
+    width: 279px;
+    height: 268px;
+    background-position: -637px -434px
+    }
+a[href|="/sweetcelestia"] {
+    width: 320px;
+    height: 200px;
+    background-position: -2px -704px
+    }
+a[href|="/thatswhatisaid"] {
+    width: 175px;
+    height: 175px;
+    background-position: -324px -704px
+    }
+a[href|="/chess"], a[href|="/dashdrunk"], a[href|="/lawl"], a[href|="/DarqWolff"], a[href|="/offthewagon"], a[href|="/pon3withit"], a[href|="/ppcandy"], a[href|="/ppnewhere"], a[href|="/ppnew"], a[href|="/ppumad"], a[href|="/rarhmph"], a[href|="/tia1"], a[href|="/twieyes"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://b.thumbs.redditmedia.com/kdJoi5VIytPv5HhO.png)
+    }
+a[href|="/chess"] {
+    width: 306px;
+    height: 150px;
+    background-position: -2px -2px
+    }
+a[href|="/dashdrunk"] {
+    width: 255px;
+    height: 175px;
+    background-position: -310px -2px
+    }
+a[href|="/lawl"], a[href|="/DarqWolff"] {
+    width: 330px;
+    height: 128px;
+    background-position: -567px -2px
+    }
+a[href|="/offthewagon"] {
+    width: 288px;
+    height: 175px;
+    background-position: -2px -179px
+    }
+a[href|="/pon3withit"] {
+    width: 246px;
+    height: 268px;
+    background-position: -292px -179px
+    }
+a[href|="/ppcandy"] {
+    width: 156px;
+    height: 200px;
+    background-position: -540px -179px
+    }
+a[href|="/ppnewhere"], a[href|="/ppnew"] {
+    width: 191px;
+    height: 250px;
+    background-position: -698px -179px
+    }
+a[href|="/ppumad"] {
+    width: 250px;
+    height: 182px;
+    background-position: -2px -449px
+    }
+a[href|="/rarhmph"] {
+    width: 269px;
+    height: 150px;
+    background-position: -254px -449px
+    }
+a[href|="/tia1"] {
+    width: 204px;
+    height: 200px;
+    background-position: -525px -449px
+    }
+a[href|="/twieyes"] {
+    width: 334px;
+    height: 203px;
+    background-position: -2px -651px
+    }
+a[href|="/abno"], a[href|="/ajno"], a[href|="/bird"], a[href|="/bonno"], a[href|="/dashno"], a[href|="/derpno"], a[href|="/dontask"], a[href|="/flutno"], a[href|="/lunano"], a[href|="/lyrano"], a[href|="/ppno"], a[href|="/rarno"], a[href|="/rlyrano"], a[href|="/sbno"], a[href|="/scootno"], a[href|="/tiano"], a[href|="/wop"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://f.thumbs.redditmedia.com/tjuUEa-adJZDqct_.png)
+    }
+a[href|="/abno"] {
+    width: 220px;
+    height: 200px;
+    background-position: -668px -254px
+    }
+a[href|="/ajno"] {
+    width: 222px;
+    height: 200px;
+    background-position: -2px -658px
+    }
+a[href|="/bird"] {
+    width: 167px;
+    height: 250px;
+    background-position: -2px -2px
+    }
+a[href|="/bonno"] {
+    width: 220px;
+    height: 200px;
+    background-position: -2px -456px
+    }
+a[href|="/dashno"] {
+    width: 220px;
+    height: 200px;
+    background-position: -446px -456px
+    }
+a[href|="/derpno"] {
+    width: 227px;
+    height: 200px;
+    background-position: -226px -658px
+    }
+a[href|="/dontask"] {
+    width: 270px;
+    height: 150px;
+    background-position: -712px -658px
+    }
+a[href|="/flutno"] {
+    width: 220px;
+    height: 200px;
+    background-position: -668px -456px
+    }
+a[href|="/lunano"] {
+    width: 198px;
+    height: 200px;
+    background-position: -171px -2px
+    }
+a[href|="/lyrano"] {
+    width: 220px;
+    height: 200px;
+    background-position: -446px -254px
+    }
+a[href|="/ppno"] {
+    width: 220px;
+    height: 200px;
+    background-position: -571px -2px
+    }
+a[href|="/rarno"] {
+    width: 220px;
+    height: 200px;
+    background-position: -793px -2px
+    }
+a[href|="/rlyrano"] {
+    width: 255px;
+    height: 200px;
+    background-position: -455px -658px
+    }
+a[href|="/sbno"] {
+    width: 220px;
+    height: 200px;
+    background-position: -2px -254px
+    }
+a[href|="/scootno"] {
+    width: 220px;
+    height: 200px;
+    background-position: -224px -254px
+    }
+a[href|="/tiano"] {
+    width: 198px;
+    height: 200px;
+    background-position: -371px -2px
+    }
+a[href|="/wop"] {
+    width: 220px;
+    height: 200px;
+    background-position: -224px -456px
+    }
+a[href|="/abflip"], a[href|="/ajflip"], a[href|="/berryflip"], a[href|="/bonflip"], a[href|="/dashflip"], a[href|="/derpflip"], a[href|="/disflip"], a[href|="/dpflip"], a[href|="/flutflip"], a[href|="/hothorn"], a[href|="/somethingnotretarded"], a[href|="/karmaflip"], a[href|="/lunaflip"], a[href|="/lyraflip"], a[href|="/notone"], a[href|="/octflip"], a[href|="/pieflip"], a[href|="/rarflip"], a[href|="/rderpflip"], a[href|="/roseflip"], a[href|="/sbflip"], a[href|="/scootflip"], a[href|="/shyflip"], a[href|="/tiaflip"], a[href|="/allthetables"], a[href|="/pon3flip"], a[href|="/scratchflip"], a[href|="/vsflip"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://b.thumbs.redditmedia.com/DyA4zhqo3sFazT67.png)
+    }
+a[href|="/abflip"] {
+    width: 179px;
+    height: 130px;
+    background-position: -364px -2px
+    }
+a[href|="/ajflip"] {
+    width: 187px;
+    height: 145px;
+    background-position: -2px -285px
+    }
+a[href|="/berryflip"] {
+    width: 199px;
+    height: 145px;
+    background-position: -191px -285px
+    }
+a[href|="/bonflip"] {
+    width: 199px;
+    height: 145px;
+    background-position: -594px -285px
+    }
+a[href|="/dashflip"] {
+    width: 200px;
+    height: 145px;
+    background-position: -392px -285px
+    }
+a[href|="/derpflip"] {
+    width: 200px;
+    height: 145px;
+    background-position: -2px -432px
+    }
+a[href|="/disflip"] {
+    width: 199px;
+    height: 145px;
+    background-position: -204px -432px
+    }
+a[href|="/dpflip"] {
+    width: 199px;
+    height: 145px;
+    background-position: -204px -432px
+    }
+a[href|="/flutflip"] {
+    width: 200px;
+    height: 134px;
+    background-position: -545px -2px
+    }
+a[href|="/hothorn"], a[href|="/somethingnotretarded"] {
+    width: 253px;
+    height: 248px;
+    background-position: -2px -634px
+    }
+a[href|="/karmaflip"] {
+    width: 199px;
+    height: 145px;
+    background-position: -795px -285px
+    }
+a[href|="/lunaflip"] {
+    width: 171px;
+    height: 145px;
+    background-position: -785px -138px
+    }
+a[href|="/lyraflip"] {
+    width: 199px;
+    height: 145px;
+    background-position: -203px -138px
+    }
+a[href|="/notone"] {
+    width: 205px;
+    height: 205px;
+    background-position: -269px -643px
+    }
+a[href|="/octflip"] {
+    width: 200px;
+    height: 134px;
+    background-position: -747px -2px
+    }
+a[href|="/pieflip"] {
+    width: 200px;
+    height: 145px;
+    background-position: -583px -138px
+    }
+a[href|="/rarflip"] {
+    width: 199px;
+    height: 145px;
+    background-position: -2px -138px
+    }
+a[href|="/rderpflip"] {
+    width: 177px;
+    height: 145px;
+    background-position: -404px -138px
+    }
+a[href|="/roseflip"] {
+    width: 200px;
+    height: 146px;
+    background-position: -405px -432px
+    }
+a[href|="/sbflip"] {
+    width: 179px;
+    height: 130px;
+    background-position: -183px -2px
+    }
+a[href|="/scootflip"] {
+    width: 179px;
+    height: 130px;
+    background-position: -2px -2px
+    }
+a[href|="/shyflip"] {
+    width: 200px;
+    height: 134px;
+    background-position: -545px -2px
+    }
+a[href|="/tiaflip"] {
+    width: 200px;
+    height: 169px;
+    background-position: -607px -432px
+    }
+a[href|="/allthetables"] {
+    width: 1011px;
+    height: 603px;
+    background-position: -0px -0px
+    }
+a[href|="/pon3flip"], a[href|="/scratchflip"], a[href|="/vsflip"] {
+    width: 200px;
+    height: 145px;
+    background-position: -812px -451px
+    }
+a[href|="/ajpose"], a[href|="/ajsalute"], a[href|="/berrygasp"], a[href|="/derpysalute"], a[href|="/fluffy"], a[href|="/fancyfluff"], a[href|="/moar"], a[href|="/ninjapie"], a[href|="/ppelementary"], a[href|="/ppthis"], a[href|="/ppwooo"], a[href|="/roseflirt"], a[href|="/rosesit"], a[href|="/rosestrut"], a[href|="/shyrock"], a[href|="/shysalute"], a[href|="/sofresh"], a[href|="/surwtf"], a[href|="/twisalute"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://d.thumbs.redditmedia.com/P-kuHC-BgmPMCOlc.png)
+    }
+a[href|="/ajpose"] {
+    width: 101px;
+    height: 150px;
+    background-position: -858px -154px
+    }
+a[href|="/ajsalute"] {
+    width: 146px;
+    height: 143px;
+    background-position: -546px -2px
+    }
+a[href|="/berrygasp"] {
+    width: 119px;
+    height: 150px;
+    background-position: -846px -2px
+    }
+a[href|="/derpysalute"] {
+    width: 172px;
+    height: 139px;
+    background-position: -2px -2px
+    }
+a[href|="/fluffy"] {
+    width: 154px;
+    height: 150px;
+    background-position: -135px -154px
+    }
+a[href|="/fancyfluff"] {
+    width: 137px;
+    height: 165px;
+    background-position: -2px -306px
+    }
+a[href|="/moar"] {
+    width: 150px;
+    height: 150px;
+    background-position: -694px -2px
+    }
+a[href|="/ninjapie"] {
+    width: 124px;
+    height: 200px;
+    background-position: -649px -306px
+    }
+a[href|="/ppelementary"] {
+    width: 162px;
+    height: 175px;
+    background-position: -141px -306px
+    }
+a[href|="/ppthis"] {
+    width: 178px;
+    height: 150px;
+    background-position: -291px -154px
+    }
+a[href|="/ppwooo"] {
+    width: 88px;
+    height: 150px;
+    background-position: -578px -154px
+    }
+a[href|="/roseflirt"] {
+    width: 105px;
+    height: 150px;
+    background-position: -471px -154px
+    }
+a[href|="/rosesit"] {
+    width: 131px;
+    height: 150px;
+    background-position: -2px -154px
+    }
+a[href|="/rosestrut"] {
+    width: 188px;
+    height: 150px;
+    background-position: -668px -154px
+    }
+a[href|="/shyrock"] {
+    width: 167px;
+    height: 200px;
+    background-position: -480px -306px
+    }
+a[href|="/shysalute"] {
+    width: 162px;
+    height: 139px;
+    background-position: -382px -2px
+    }
+a[href|="/sofresh"] {
+    width: 207px;
+    height: 200px;
+    background-position: -775px -306px
+    }
+a[href|="/surwtf"] {
+    width: 173px;
+    height: 175px;
+    background-position: -305px -306px
+    }
+a[href|="/twisalute"] {
+    width: 204px;
+    height: 139px;
+    background-position: -176px -2px
+    }
+/* Emotes from FimFiction + others */
+a[href|="/ff00"], a[href|="/ff01"], a[href|="/ff02"], a[href|="/ff04"], a[href|="/ff05"], a[href|="/ff10"], a[href|="/ff11"], a[href|="/ff12"], a[href|="/ff13"], a[href|="/ff14"], a[href|="/ff15"], a[href|="/ff20"], a[href|="/ff21"], a[href|="/ff22"], a[href|="/ff23"], a[href|="/ff24"], a[href|="/ff25"], a[href|="/ff30"], a[href|="/ff31"], a[href|="/ff32"], a[href|="/ff33"], a[href|="/ff34"], a[href|="/ff35"], a[href|="/ff40"], a[href|="/ff41"], a[href|="/ff42"], a[href|="/ff43"], a[href|="/ff44"], a[href|="/ff45"], a[href|="/ff50"], a[href|="/ff51"], a[href|="/ff52"], a[href|="/ff53"], a[href|="/ff54"], a[href|="/ff55"], a[href|="/ff60"], a[href|="/ff61"], a[href|="/ff62"], a[href|="/ff63"], a[href|="/ff64"], a[href|="/ff65"], a[href|="/ff70"], a[href|="/ff71"], a[href|="/ff72"], a[href|="/ff73"], a[href|="/ff74"], a[href|="/ff75"], a[href|="/ajbemused"], a[href|="/ajsleepy"], a[href|="/fimajsmug"], a[href|="/applejackconfused"], a[href|="/applejackunsure"], a[href|="/coolphoto"], a[href|="/derpyderp1"], a[href|="/derpyderp2"], a[href|="/derpytongue2"], a[href|="/fimduck"], a[href|="/fimeeyup"], a[href|="/fimfacehoof"], a[href|="/fluttercry"], a[href|="/flutterrage"], a[href|="/fluttershbad"], a[href|="/fluttershyouch"], a[href|="/fluttershysad"], a[href|="/heart"], a[href|="/moustache"], a[href|="/pinkiecrazy"], a[href|="/pinkiegasp"], a[href|="/pinkiehappy"], a[href|="/pinkiesad2"], a[href|="/pinkiesick"], a[href|="/pinkiesmile"], a[href|="/rainbowderp"], a[href|="/rainbowdetermined2"], a[href|="/rainbowhuh"], a[href|="/rainbowkiss"], a[href|="/rainbowlaugh"], a[href|="/rainbowwild"], a[href|="/raritycry"], a[href|="/raritydespair"], a[href|="/raritystarry"], a[href|="/raritywink"], a[href|="/scootangel"], a[href|="/trixieshiftleft"], a[href|="/trixieshiftright"], a[href|="/trollestia"], a[href|="/twilightangry2"], a[href|="/twilightblush"], a[href|="/twilightoops"], a[href|="/twilightsheepish"], a[href|="/twilightsmile"], a[href|="/twistnerd"], a[href|="/unsuresweetie"], a[href|="/fimyay"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 27px;
+    height: 27px;
+    background-image: url(http://b.thumbs.redditmedia.com/3EDHTCwpCs_YfBMs.png)
+    }
+a[href|="/wmesplin"], a[href|="/crash"], a[href|="/ff03"], a[href|="/applecry"], a[href|="/flutterthink"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://b.thumbs.redditmedia.com/3EDHTCwpCs_YfBMs.png)
+    }
+a[href|="/ff00"], a[href|="/ajbemused"] {
+    background-position: -1px -1px
+    }
+a[href|="/ff01"], a[href|="/ajsleepy"] {
+    background-position: -29px -1px
+    }
+a[href|="/ff02"], a[href|="/fimajsmug"] {
+    background-position: -57px -1px
+    }
+a[href|="/ff03"], a[href|="/applecry"] {
+    width: 34px;
+    height: 27px !important;
+    background-position: -85px -1px
+    }
+a[href|="/ff04"], a[href|="/applejackconfused"] {
+    background-position: -120px -1px
+    }
+a[href|="/ff05"], a[href|="/applejackunsure"] {
+    background-position: -148px -1px
+    }
+a[href|="/ff10"], a[href|="/coolphoto"] {
+    background-position: -176px -1px
+    }
+a[href|="/ff11"], a[href|="/derpyderp1"] {
+    background-position: -204px -1px
+    }
+a[href|="/ff12"], a[href|="/derpyderp2"] {
+    background-position: -1px -29px
+    }
+a[href|="/ff13"], a[href|="/derpytongue2"] {
+    background-position: -29px -29px
+    }
+a[href|="/ff14"], a[href|="/fimduck"] {
+    background-position: -57px -29px
+    }
+a[href|="/ff15"], a[href|="/fimeeyup"] {
+    background-position: -85px -29px
+    }
+a[href|="/ff20"], a[href|="/fimfacehoof"] {
+    background-position: -113px -29px
+    }
+a[href|="/ff21"], a[href|="/fluttercry"] {
+    background-position: -141px -29px
+    }
+a[href|="/ff22"], a[href|="/flutterrage"] {
+    background-position: -169px -29px
+    }
+a[href|="/ff23"], a[href|="/fluttershbad"] {
+    background-position: -197px -29px
+    }
+a[href|="/ff24"], a[href|="/fluttershyouch"] {
+    background-position: -225px -29px
+    }
+a[href|="/ff25"], a[href|="/fluttershysad"] {
+    background-position: -1px -57px
+    }
+a[href|="/ff30"], a[href|="/heart"] {
+    background-position: -29px -57px
+    }
+a[href|="/ff31"], a[href|="/moustache"] {
+    background-position: -57px -57px
+    }
+a[href|="/ff32"], a[href|="/pinkiecrazy"] {
+    background-position: -85px -57px
+    }
+a[href|="/ff33"], a[href|="/pinkiegasp"] {
+    background-position: -113px -57px
+    }
+a[href|="/ff34"], a[href|="/pinkiehappy"] {
+    background-position: -141px -57px
+    }
+a[href|="/ff35"], a[href|="/pinkiesad2"] {
+    background-position: -169px -57px
+    }
+a[href|="/ff40"], a[href|="/pinkiesick"] {
+    background-position: -197px -57px
+    }
+a[href|="/ff41"], a[href|="/pinkiesmile"] {
+    background-position: -225px -57px
+    }
+a[href|="/ff42"], a[href|="/rainbowderp"] {
+    background-position: -1px -85px
+    }
+a[href|="/ff43"], a[href|="/rainbowdetermined2"] {
+    background-position: -29px -85px
+    }
+a[href|="/ff44"], a[href|="/rainbowhuh"] {
+    background-position: -57px -85px
+    }
+a[href|="/ff45"], a[href|="/rainbowkiss"] {
+    background-position: -85px -85px
+    }
+a[href|="/ff50"], a[href|="/rainbowlaugh"] {
+    background-position: -113px -85px
+    }
+a[href|="/ff51"], a[href|="/rainbowwild"] {
+    background-position: -141px -85px
+    }
+a[href|="/ff52"], a[href|="/raritycry"] {
+    background-position: -169px -85px
+    }
+a[href|="/ff53"], a[href|="/raritydespair"] {
+    background-position: -197px -85px
+    }
+a[href|="/ff54"], a[href|="/raritystarry"] {
+    background-position: -225px -85px
+    }
+a[href|="/ff55"], a[href|="/raritywink"] {
+    background-position: -1px -113px
+    }
+a[href|="/ff60"], a[href|="/scootangel"] {
+    background-position: -29px -113px
+    }
+a[href|="/ff61"], a[href|="/trixieshiftleft"] {
+    background-position: -57px -113px
+    }
+a[href|="/ff62"], a[href|="/trixieshiftright"] {
+    background-position: -85px -113px
+    }
+a[href|="/ff63"], a[href|="/trollestia"] {
+    background-position: -113px -113px
+    }
+a[href|="/ff64"], a[href|="/twilightangry2"] {
+    background-position: -141px -113px
+    }
+a[href|="/ff65"], a[href|="/twilightblush"] {
+    background-position: -169px -113px
+    }
+a[href|="/ff70"], a[href|="/twilightoops"] {
+    background-position: -197px -113px
+    }
+a[href|="/ff71"], a[href|="/twilightsheepish"] {
+    background-position: -225px -113px
+    }
+a[href|="/ff72"], a[href|="/twilightsmile"] {
+    background-position: -1px -141px
+    }
+a[href|="/ff73"], a[href|="/twistnerd"] {
+    background-position: -29px -141px
+    }
+a[href|="/ff74"], a[href|="/unsuresweetie"] {
+    background-position: -57px -141px
+    }
+a[href|="/ff75"], a[href|="/fimyay"] {
+    background-position: -85px -141px
+    }
+a[href|="/crash"] {
+    background-position: -10px -175px;
+    width: 235px;
+    height: 300px
+    }
+a[href|="/wmesplin"] {
+    background-position: -260px -0px;
+    width: 169px;
+    height: 200px
+    }
+a[href|="/flutterthink"] {
+    background-position: -247px -206px;
+    width: 184px;
+    height: 145px
+    }
+a[href|="/ajheart"], a[href|="/berryheart"], a[href|="/colheart"], a[href|="/dashheart"], a[href|="/derpheart"], a[href|="/lunaheart"], a[href|="/lyraheart"], a[href|="/octheart"], a[href|="/pon3heart"], a[href|="/ppheart"], a[href|="/rarheart"], a[href|="/shyheart"], a[href|="/trixieheart"], a[href|="/twiheart"], a[href|="/wmgummy"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://b.thumbs.redditmedia.com/aDSRusoAEgQkaoma.png)
+    }
+a[href|="/ajheart"] {
+    width: 132px;
+    height: 200px;
+    background-position: -2px -2px
+    }
+a[href|="/berryheart"] {
+    width: 132px;
+    height: 200px;
+    background-position: -136px -2px
+    }
+a[href|="/colheart"] {
+    width: 123px;
+    height: 200px;
+    background-position: -270px -2px
+    }
+a[href|="/dashheart"] {
+    width: 125px;
+    height: 200px;
+    background-position: -2px -204px
+    }
+a[href|="/derpheart"] {
+    width: 131px;
+    height: 200px;
+    background-position: -129px -204px
+    }
+a[href|="/lunaheart"] {
+    width: 121px;
+    height: 200px;
+    background-position: -262px -204px
+    }
+a[href|="/lyraheart"] {
+    width: 123px;
+    height: 200px;
+    background-position: -385px -204px
+    }
+a[href|="/octheart"] {
+    width: 123px;
+    height: 200px;
+    background-position: -2px -406px
+    }
+a[href|="/pon3heart"] {
+    width: 123px;
+    height: 200px;
+    background-position: -127px -406px
+    }
+a[href|="/ppheart"] {
+    width: 131px;
+    height: 200px;
+    background-position: -252px -406px
+    }
+a[href|="/rarheart"] {
+    width: 120px;
+    height: 200px;
+    background-position: -385px -406px
+    }
+a[href|="/shyheart"] {
+    width: 120px;
+    height: 200px;
+    background-position: -2px -608px
+    }
+a[href|="/trixieheart"] {
+    width: 123px;
+    height: 200px;
+    background-position: -124px -608px
+    }
+a[href|="/twiheart"] {
+    width: 124px;
+    height: 200px;
+    background-position: -249px -608px
+    }
+a[href|="/wmgummy"] {
+    width: 106px;
+    height: 100px;
+    background-position: -391px -624px
+    }
+a[href|="/wmaj"], a[href|="/wmberry"], a[href|="/wmbm"], a[href|="/wmbon"], a[href|="/wmcand"], a[href|="/wmcarrot"], a[href|="/wmcheer"], a[href|="/wmchrys"], a[href|="/wmcol"], a[href|="/wmdash"], a[href|="/wmderp"], a[href|="/wmdis"], a[href|="/wmgs"], a[href|="/wmlyra"], a[href|="/wmtrix"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://b.thumbs.redditmedia.com/4rNWS8OrK6lleD47.png)
+    }
+a[href|="/wmaj"] {
+    width: 174px;
+    height: 200px;
+    background-position: -2px -2px
+    }
+a[href|="/wmberry"] {
+    width: 176px;
+    height: 200px;
+    background-position: -178px -2px
+    }
+a[href|="/wmbm"] {
+    width: 159px;
+    height: 210px;
+    background-position: -356px -2px
+    }
+a[href|="/wmbon"] {
+    width: 177px;
+    height: 200px;
+    background-position: -517px -2px
+    }
+a[href|="/wmcand"] {
+    width: 176px;
+    height: 200px;
+    background-position: -696px -2px
+    }
+a[href|="/wmcarrot"] {
+    width: 176px;
+    height: 200px;
+    background-position: -2px -214px
+    }
+a[href|="/wmcheer"] {
+    width: 176px;
+    height: 200px;
+    background-position: -180px -214px
+    }
+a[href|="/wmchrys"] {
+    width: 150px;
+    height: 200px;
+    background-position: -358px -214px
+    }
+a[href|="/wmcol"] {
+    width: 177px;
+    height: 200px;
+    background-position: -510px -214px
+    }
+a[href|="/wmdash"] {
+    width: 176px;
+    height: 200px;
+    background-position: -689px -214px
+    }
+a[href|="/wmderp"] {
+    width: 177px;
+    height: 200px;
+    background-position: -2px -416px
+    }
+a[href|="/wmdis"] {
+    width: 175px;
+    height: 200px;
+    background-position: -181px -416px
+    }
+a[href|="/wmgs"] {
+    width: 176px;
+    height: 200px;
+    background-position: -358px -416px
+    }
+a[href|="/wmlyra"] {
+    width: 177px;
+    height: 200px;
+    background-position: -536px -416px
+    }
+a[href|="/wmtrix"] {
+    width: 176px;
+    height: 200px;
+    background-position: -715px -416px
+    }
+a[href|="/wmapth"], a[href|="/wmkarma"], a[href|="/wmluna"], a[href|="/wmoct"], a[href|="/wmpinkamina"], a[href|="/wmpon3"], a[href|="/wmpp"], a[href|="/wmrar"], a[href|="/wmrose"], a[href|="/wmscrewball"], a[href|="/wmshy"], a[href|="/wmspitfire"], a[href|="/wmsur"], a[href|="/wmtia"], a[href|="/wmtwi"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://f.thumbs.redditmedia.com/YVqHShW6AXWU2I8q.png)
+    }
+a[href|="/wmapth"] {
+    width: 176px;
+    height: 200px;
+    background-position: -2px -2px
+    }
+a[href|="/wmkarma"] {
+    width: 177px;
+    height: 200px;
+    background-position: -180px -2px
+    }
+a[href|="/wmluna"] {
+    width: 176px;
+    height: 200px;
+    background-position: -359px -2px
+    }
+a[href|="/wmoct"] {
+    width: 176px;
+    height: 200px;
+    background-position: -537px -2px
+    }
+a[href|="/wmpinkamina"] {
+    width: 175px;
+    height: 200px;
+    background-position: -715px -2px
+    }
+a[href|="/wmpon3"] {
+    width: 176px;
+    height: 200px;
+    background-position: -2px -204px
+    }
+a[href|="/wmpp"] {
+    width: 176px;
+    height: 200px;
+    background-position: -180px -204px
+    }
+a[href|="/wmrar"] {
+    width: 176px;
+    height: 200px;
+    background-position: -358px -204px
+    }
+a[href|="/wmrose"] {
+    width: 179px;
+    height: 200px;
+    background-position: -536px -204px
+    }
+a[href|="/wmscrewball"] {
+    width: 161px;
+    height: 200px;
+    background-position: -717px -204px
+    }
+a[href|="/wmshy"] {
+    width: 176px;
+    height: 200px;
+    background-position: -2px -406px
+    }
+a[href|="/wmspitfire"] {
+    width: 176px;
+    height: 200px;
+    background-position: -180px -406px
+    }
+a[href|="/wmsur"] {
+    width: 176px;
+    height: 200px;
+    background-position: -358px -406px
+    }
+a[href|="/wmtia"] {
+    width: 176px;
+    height: 200px;
+    background-position: -536px -406px
+    }
+a[href|="/wmtwi"] {
+    width: 176px;
+    height: 200px;
+    background-position: -714px -406px
+    }
+a[href|="/abpoker"], a[href|="/ajpoker"], a[href|="/berrypoker"], a[href|="/bmpoker"], a[href|="/bonpoker"], a[href|="/braepoker"], a[href|="/carrotpoker"], a[href|="/cheerileepoker"], a[href|="/colpoker"], a[href|="/dashpoker"], a[href|="/derppoker"], a[href|="/dispoker"], a[href|="/fritpoker"], a[href|="/bbpoker"], a[href|="/lunapoker"], a[href|="/lyrapoker"], a[href|="/pppoker"], a[href|="/rarpoker"], a[href|="/rosepoker"], a[href|="/sbpoker"], a[href|="/scootpocker"], a[href|="/screwpoker"], a[href|="/shypoker"], a[href|="/sparkpoker"], a[href|="/spikepoker"], a[href|="/tiapoker"], a[href|="/trixpoker"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(http://e.thumbs.redditmedia.com/IQIHCaA5R6-Xulvp.png)
+    }
+a[href|="/abpoker"] {
+    width: 74px;
+    height: 105px;
+    background-position: -264px -2px
+    }
+a[href|="/ajpoker"] {
+    width: 118px;
+    height: 137px;
+    background-position: -351px -450px
+    }
+a[href|="/berrypoker"] {
+    width: 111px;
+    height: 110px;
+    background-position: -250px -226px
+    }
+a[href|="/bmpoker"] {
+    width: 118px;
+    height: 128px;
+    background-position: -231px -450px
+    }
+a[href|="/bonpoker"] {
+    width: 112px;
+    height: 110px;
+    background-position: -363px -226px
+    }
+a[href|="/braepoker"] {
+    width: 118px;
+    height: 139px;
+    background-position: -2px -589px
+    }
+a[href|="/carrotpoker"] {
+    width: 92px;
+    height: 110px;
+    background-position: -2px -338px
+    }
+a[href|="/cheerileepoker"] {
+    width: 114px;
+    height: 110px;
+    background-position: -223px -338px
+    }
+a[href|="/colpoker"] {
+    width: 107px;
+    height: 110px;
+    background-position: -2px -450px
+    }
+a[href|="/dashpoker"] {
+    width: 117px;
+    height: 110px;
+    background-position: -339px -338px
+    }
+a[href|="/derppoker"] {
+    width: 125px;
+    height: 110px;
+    background-position: -96px -338px
+    }
+a[href|="/dispoker"] {
+    width: 95px;
+    height: 140px;
+    background-position: -323px -589px
+    }
+a[href|="/fritpoker"], a[href|="/bbpoker"] {
+    width: 129px;
+    height: 110px;
+    background-position: -340px -2px
+    }
+a[href|="/lunapoker"] {
+    width: 99px;
+    height: 140px;
+    background-position: -122px -589px
+    }
+a[href|="/lyrapoker"] {
+    width: 109px;
+    height: 110px;
+    background-position: -2px -114px
+    }
+a[href|="/pppoker"] {
+    width: 118px;
+    height: 126px;
+    background-position: -111px -450px
+    }
+a[href|="/rarpoker"] {
+    width: 122px;
+    height: 110px;
+    background-position: -113px -114px
+    }
+a[href|="/rosepoker"] {
+    width: 121px;
+    height: 110px;
+    background-position: -237px -114px
+    }
+a[href|="/sbpoker"] {
+    width: 85px;
+    height: 81px;
+    background-position: -2px -2px
+    }
+a[href|="/scootpocker"] {
+    width: 99px;
+    height: 90px;
+    background-position: -89px -2px
+    }
+a[href|="/screwpoker"] {
+    width: 98px;
+    height: 140px;
+    background-position: -223px -589px
+    }
+a[href|="/shypoker"] {
+    width: 126px;
+    height: 110px;
+    background-position: -2px -226px
+    }
+a[href|="/sparkpoker"] {
+    width: 109px;
+    height: 110px;
+    background-position: -360px -114px
+    }
+a[href|="/spikepoker"] {
+    width: 72px;
+    height: 100px;
+    background-position: -190px -2px
+    }
+a[href|="/tiapoker"] {
+    width: 118px;
+    height: 110px;
+    background-position: -130px -226px
+    }
+a[href|="/trixpoker"] {
+    width: 118px;
+    height: 145px;
+    background-position: -2px -731px
+    }

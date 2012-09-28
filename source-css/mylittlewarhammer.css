@@ -1,0 +1,63 @@
+/* Emotes go here!*/
+a[href|="/mlwh01"]   {
+    background-image: url(%%mlwh01%%) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 70px;
+    width: 70px;
+}
+
+a[href|="/heresy"]   {
+    background-image: url(%%mlwh01%%) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 70px;
+    width: 70px;
+}
+
+/* add image to the top of the sidebar */
+.side .usertext-body { 
+    background-image: url(%%heresy-300%%);
+    background-repeat:no-repeat;
+    padding-bottom:300px;
+    background-position: bottom center;
+}
+
+/* add image to top of the sidebar */
+
+.side .usertext-body .md { 
+    background-image: url(%%MLWH-Logo-300%%);
+    background-repeat:no-repeat;
+    padding-top:133px;
+}
+
+.nsfw-stamp acronym:after {
+    content: "HERESY!" !important;
+    display: block;
+    font-size: x-small !important;
+    text-decoration: none;
+    visibility: visible !important;
+}
+
+.nsfw-stamp acronym {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: 0;
+    margin-bottom: -1px;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+
+.side a[href="http://www.reddit.com/r/mylittlewarhammer"] {
+    display: block;
+    height: 70px;
+    width: 70px;
+    background:url(%%mlwh01%%) ;
+    position: fixed;
+    top: 260px;
+    right: -13px;
+    z-index: 999
+    }

@@ -1,0 +1,645 @@
+/*CSS stylesheet last edited by Ilonis on 1/29/12*/
+/*---Added Emote---*/
+/*Emoticons Code, Flair Code, and Sidebar Hover borrowed from /r/mylittlepony*/
+/*Code Modified by Ilonis for /r/MyLittleLivestream*/
+
+/*Background*/
+body {
+    background: url(%%derpybackground%%) 
+    no-repeat fixed left center
+    }
+#header{
+	background-color: transparent;
+	}
+	
+/*Text only Announcement	
+body >.content >.sharelink ~ .sitetable:before { 
+	content: "This is a Test! This is a test with a [LINK](http://redd.it/mq2xl)"; 
+	background-color: #F6E69F;
+	border: 1px solid orange;
+	font-family: verdana, sans-serif; 
+	font-size: 14px; 
+	color: #555;
+	text-align: left;
+	display: block;
+	padding:5px 10px;
+	margin:5px 305px 5px 0px;
+	border-radius: 8px; 
+	}
+*/
+
+/* Hiding the bot from the modbox */
+.sidecontentbox a.author[href$="/LiveFromEquestria"] {
+    display: none
+}
+.sidecontentbox .flair-sweetiebelle {
+    display: none
+}
+
+/* Linkable notification at the top */
+ .content {
+   margin-top: 33px;
+   }
+	.titlebox form {
+  position: static;
+  }
+   .titlebox .usertext-body .md p > em {
+    width: 60%;
+    background-color: #5FC679;
+    border: 1px solid #ff54a2;
+    position: absolute;
+    top: 138px;
+    left: 3px;
+    z-index: 0;
+    margin: 0;
+    white-space:nowrap;
+    padding-left: 30px;
+    list-style: none;
+    display: block;
+    overflow: hidden;
+    border-radius:5px;
+	font-size:12px
+    }
+.titlebox .usertext-body .md p > em li{
+	margin: 0px;
+	}
+.titlebox .usertext-body .md p > em a {
+	font-weight:bold;
+	text-decoration:underline;
+	}
+
+
+START-PONYSCRIPT-IGNORE{
+	color:red
+	}
+/*Stream Labeler*/	
+a[href*="drawing"][class~="comments"]:before {
+    background-color: #F7F7F7 !important;
+    content: "Drawing (Freehand, Trace, Sketches, Doddles, etc.) ";
+    color: darkgreen
+    }
+a[href*="vectors"][class~="comments"]:before {
+    background-color: #F7F7F7 !important;
+    content: "Vectors (Anything involving the pen tool) ";
+    color: maroon
+    }
+a[href*="requests"][class~="comments"]:before {
+    background-color: #F7F7F7 !important;
+    content: "Requests (Drawing, Vectors, or anything else pony related) ";
+    color: darkblue
+    }
+a[href*="nsfw"][class~="comments"]:before {
+    background-color: #F7F7F7 !important;
+    content: "NSFW (Anything not allowed in the main sub) ";
+    color: red
+    }
+a[href*="clop"][class~="comments"]:before {
+    background-color: #F7F7F7 !important;
+    content: "NSFW (Anything not allowed in the main sub) ";
+    color: red
+    }
+
+a[href*="meta"][class~="comments"]:before {
+    background-color: #F7F7F7 !important;
+    content: "Relating to the subreddit rather than Livestreams ";
+    color: black
+    }
+a[href*="test"][class~="comments"]:before{
+	background-color: #F7F7F7 !important;
+	content: "Tests! God I love Tests. Dear Princess Celestia, I'm so alone. ";
+	color: purple
+	}
+	
+/*Link labeler in Self-posts*/
+#siteTable .link .usertext-body a[href*="livestream.com"] {
+	font-weight: bold;
+	padding-left: 21px;
+	background: url(%%sitelabells%%) 0 50% no-repeat;
+	width: 18px;
+    height: 18px;
+	background-position: 0px 0px
+	}
+#siteTable .link .usertext-body a[href*="justin.tv"] {
+	font-weight: bold;
+	padding-left: 21px;
+	background: url(%%sitelabeljtv%%) 0 50% no-repeat;
+	width: 18px;
+    height: 18px;
+	background-position: 0px 0px
+	}
+END-PONYSCRIPT-IGNORE{
+	color:red
+	}
+	
+	
+/* sidebar 
+.titlebox strong {
+    font-size: medium
+    }
+.titlebox code {
+	font-size:large
+	}
+.titlebox del {
+    color: white
+    }
+	*/
+.titlebox em {
+    font-size: 9px;
+    text-decoration: none;
+    font-style:normal
+    }
+	/*
+.titlebox strong em {
+    font-size: 8px;
+    font-style: normal;
+    font-weight: normal
+    }
+.titlebox table {
+    display: none;
+    clear: both
+    }
+*/
+/*Uncomment to reactivate hover for tables.
+.side div.usertext-body:hover table {
+    display: block;
+    clear: both
+    }
+*/
+	
+/*More Sidebar*/
+.side hr {
+    clear: both
+    }
+.side .titlebox h1 {
+    position: relative
+    }
+.side .titlebox h1 strong {
+    margin-left: -999em;
+    position: absolute
+    }
+.side .titlebox h1:hover strong, .titlebox h1 strong:hover {
+    border-radius: 5px;
+    background: red;
+    position: absolute;
+    left: 1em;
+    top: 1em;
+    z-index: 99;
+    margin-left: 0;
+    width: 250px
+    }
+.side .md {
+    overflow: visible
+    }
+.side .md blockquote {
+    border-left: 0px solid #369;
+    padding-left: 0px;
+    margin: 0px;
+    margin-right: 0px
+    }
+.side .md blockquote p {
+    margin: 0px
+    }
+.side .md blockquote {
+    position: relative
+    }
+.side .md blockquote table {
+    width: 280px;
+    border-collapse: separate;
+    border-spacing: 3px
+    }
+.side .md blockquote hr, .side .md blockquote th {
+    display: none
+    }
+.side .md blockquote tr:nth-child(odd) td:nth-child(odd) {
+    background: #EFF7FF
+    }
+.side .md blockquote tr:nth-child(even) td:nth-child(even) {
+    background: #EFF7FF
+    }
+.side .md blockquote blockquote blockquote {
+    margin-left: -999em;
+    position: absolute
+    }
+.side .md blockquote blockquote:hover blockquote, .side .md blockquote blockquote blockquote:hover {
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    background: white;
+    position: absolute;
+    right: 145px;
+    top: 15px;
+    z-index: 99;
+    margin-left: 0;
+    width: 300px
+    }
+.side .md blockquote blockquote p {
+    cursor: default
+    }
+.side .md blockquote hr {
+    display: none
+    }
+.side .md blockquote p {
+    text-align: center;
+    border: 3px solid #fc932b;
+    border-radius: 5px;
+    padding: 5px 0px;
+    display: block;
+    font-weight: bold;
+    background: #ffb56c
+    }
+.side .md blockquote blockquote blockquote p {
+    text-align: center;
+    border: 0px solid #AAA;
+    border-bottom: 1px dashed #AAA;
+    border-radius: 0px;
+    padding: 5px 0px;
+    background: #FFFFFF
+    }
+.side .md blockquote td {
+    border: 0px solid;
+    font-weight: bold;
+    padding: 3px 0px 3px 3px
+    }
+.side .md blockquote td:hover {
+    background: #CEE3F8 !important
+    }
+.side .md blockquote blockquote blockquote a {
+    text-align: left;
+    padding: 0px;
+    border: 0px solid;
+    border-radius: 0px;
+    display: block
+    }
+.side .md blockquote blockquote {
+    float: left;
+    width: 140px;
+    padding: 5px
+    }
+
+/*
+**********
+MLL Emotes
+**********
+*/	
+a[href|="/berryparty"], a[href|="/blegh"]{
+	display: block;
+    clear: none;
+    float: left;
+    width: 128px;
+    height: 128px;
+    background-image: url(%%MLLEmotes128%%) !important
+    }
+a[href|="/rberryparty"], a[href|="/rblegh"]{
+	display: block;
+    clear: none;
+    float: left;
+    width: 128px;
+    height: 128px;
+    background-image: url(%%MLLEmotes128r%%) !important
+	}
+a[href|="/ajplot"], a[href|="/plotdance"], a[href|="/exquisite"], a[href|="/fancydance"], a[href|="/lunawant"], a[href|="/whytwi"], a[href|="/whytwiwhy"], a[href|="/vygrab"], a[href|="/bassdrop"], a[href|="/a123"], a[href|="/twiplot"], a[href|="/plottwirl"], a[href|="/clickyclicky"], a[href|="/vyhug"], a[href|="/iscc"], a[href|="/twiannoyed"], a[href|="/vyplot"], a[href|="/plotspin"], a[href|="/raritysnub"], a[href|="/ajsketch"], a[href|="/taviplot"], a[href|="/plotpirouette"], a[href|="/tavyblobs"], a[href|="/twinkle"], a[href|="/twinkledance"], a[href|="/rarityplot"], a[href|="/plotwhirl"], a[href|="/hotrod"], a[href|="/abwant"], a[href|="/berrynotwant"], a[href|="/tavihugs"], a[href|="/howaboutyou"], a[href|="/twiscare"], a[href|="/pillzhere"], a[href|="/datplot"], a[href|="/disatwinkle"]{
+	display: block;
+    clear: none;
+    float: left;
+    width: 128px;
+    height: 128px;
+    background-image: url(%%MLLEmotes128%%) !important
+	}
+a[href|="/rajplot"], a:hover[href|="/plotdance"], a[href|="/rexquisite"], a:hover[href|="/fancydance"], a[href|="/rlunawant"], a[href|="/rwhytwi"], a:hover[href|="/whytwiwhy"], a[href|="/rvygrab"], a:hover[href|="/a123"], a[href|="/rtwiplot"], a:hover[href|="/plottwirl"], a:active[href|="/clickyclicky"], a[href|="/rvyhug"], a[href|="/riscc"], a[href|="/rtwiannoyed"], a[href|="/rvyplot"], a:hover[href|="/plotspin"], a[href|="/rraritysnub"], a[href|="/rajsketch"], a[href|="/rtaviplot"], a:hover[href|="/plotpirouette"], a[href|="/rtavyblobs"], a[href|="/rtwinkle"], a:hover[href|="/twinkledance"], a[href|="/rrarityplot"], a:hover[href|="/plotwhirl"], a[href|="/rhotrod"], a[href|="/rabwant"], a[href|="/rberrynotwant"], a[href|="/rtavihugs"], a[href|="/rhowaboutyou"], a[href|="/rtwiscare"], a[href|="/rpillzhere"], a[href|="/rdatplot"], a[href|="/rdisatwinkle"]{
+	display: block;
+	display: block;
+    clear: none;
+    float: left;
+    width: 128px;
+    height: 128px;
+    background-image: url(%%MLLEmotes128r%%) !important
+	}
+a[href|="/thumb"]{
+	display: block;
+	clear: none;
+	float: left;
+	width: 128px;
+	height: 128px;
+	background-image: url(%%thumbtest%%)
+	}
+a:hover[href|="/thumb"]{
+	display: block;
+	clear: none;
+	float: left;
+	width: 640px;
+	height: 480px;
+	background-image: url(%%thumbtestbig%%)
+	}
+a[href|="/berryparty"], a[href|="/rberryparty"]{
+    background-position: -512px -128px
+    }
+a[href|="/blegh"], a[href|="/rblegh"]{
+	background-position: -512px -0px
+	}
+a[href|="/ajplot"], a[href|="/rajplot"], a[href|="/plotdance"], a:hover[href|="/plotdance"], a[href|="/clickyclicky"]{
+	background-position: -0px -0px
+	}
+a[href|="/thumb"], a:hover[href|="/thumb"]{
+    background-position: -0px -0px
+    }
+a[href|="/exquisite"], a[href|="/rexquisite"], a[href|="/fancydance"], a:hover[href|="/fancydance"]{
+	background-position: -128px -0px
+	}
+a[href|="/lunawant"], a[href|="/rlunawant"]{
+	background-position: -0px -128px
+	}
+a[href|="/whytwi"], a[href|="/rwhytwi"], a[href|="/whytwiwhy"], a:hover[href|="/whytwiwhy"]{
+	background-position: -128px -128px
+	}
+a[href|="/vygrab"], a[href|="/rvygrab"], a[href|="/bassdrop"], a[href|="/a123"], a:hover[href|="/a123"]{
+	background-position: -0px -256px
+	}
+a[href|="/twiplot"], a[href|="/rtwiplot"], a[href|="/plottwirl"], a:hover[href|="/plottwirl"], a:active[href|="/clickyclicky"]{
+	background-position: -128px -256px
+	}
+a[href|="/vyhug"], a[href|="/rvyhug"]{
+	background-position: -0px -384px
+	}
+a[href|="/iscc"], a[href|="/riscc"]{
+	background-position: -128px -384px
+	}
+a[href|="/twiannoyed"], a[href|="/rtwiannoyed"]{
+	background-position: -256px -0px
+	}
+a[href|="/vyplot"], a[href|="/rvyplot"], a[href|="/plotspin"], a:hover[href|="/plotspin"]{
+	background-position: -256px -128px
+	}
+a[href|="/raritysnub"], a[href|="/rraritysnub"]{
+	background-position: -256px -256px
+	}
+a[href|="/ajsketch"], a[href|="/rajsketch"]{
+	background-position: -256px -384px
+	}
+a[href|="/taviplot"], a[href|="/rtaviplot"], a[href|="/plotpirouette"], a:hover[href|="/plotpirouette"]{
+	background-position: -384px -0px
+	}	
+a[href|="/tavyblobs"], a[href|="/rtavyblobs"]{
+	background-position: -384px -128px
+	}	
+a[href|="/twinkle"], a[href|="/rtwinkle"], a[href|="/twinkledance"], a:hover[href|="/twinkledance"]{
+	background-position: -384px -256px
+	}	
+a[href|="/rarityplot"], a[href|="/rrarityplot"], a[href|="/plotwhirl"], a:hover[href|="/plotwhirl"]{
+	background-position: -384px -384px
+	}
+a[href|="/hotrod"], a[href|="/rhotrod"]{
+	background-position: -512px -256px
+	}	
+a[href|="/abwant"], a[href|="/rabwant"]{
+	background-position: -512px -384px
+	}
+a[href|="/berrynotwant"], a[href|="/rberrynotwant"]{
+	background-position: -640px -0px
+	}
+a[href|="/tavihugs"], a[href|="/rtavihugs"]{
+	background-position: -640px -128px
+	}
+a[href|="/howaboutyou"], a[href|="/rhowaboutyou"]{
+	background-position: -640px -256px
+	}
+a[href|="/twiscare"], a[href|="/rtwiscare"]{
+	background-position: -640px -384px
+	}
+a[href|="/pillzhere"], a[href|="/rpillzhere"]{
+	background-position: -768px -0px
+	}
+a[href|="/datplot"], a[href|="/rdatplot"]{
+	background-position: -768px -128px
+	}
+a[href|="/disatwinkle"], a[href|="/rdisatwinkle"]{
+	background-position: -768px -256px
+	}
+
+	
+/* User Icons */
+.flair {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%2RD-3lYfyq0j9Qp-%%);
+    display: inline-block;
+    width: 16px;
+    height: 16px
+    }
+.flair-rainbowdash {
+    background-position: 0px 0px
+    }
+.flair-twilight {
+    background-position: -16px 0px
+    }
+.flair-fluttershy {
+    background-position: 0px -16px
+    }
+.flair-applejack {
+    background-position: -16px -16px
+    }
+.flair-pinkiepie {
+    background-position: 0px -32px
+    }
+.flair-pinkiepiecmc {
+    background-position: 0px -32px
+    }
+.flair-rarity {
+    background-position: -16px -32px
+    }
+.flair-trixie {
+    background-position: 0px -48px
+    }
+.flair-cmc {
+    background-position: -16px -48px
+    }
+.flair-cmcchinchy {
+    background-position: -16px -48px;
+    margin-left: 5px
+    }
+.flair-luna {
+    background-position: 0px -64px
+    }
+.flair-celestia {
+    background-position: -16px -64px
+    }
+.flair-derpy {
+    background-position: 0px -80px
+    }
+.flair-vinyl {
+    background-position: -16px -80px
+    }
+.flair-lyra {
+    background-position: 0px -96px
+    }
+.flair-bonbon {
+    background-position: -16px -96px
+    }
+.flair-octavia {
+    background-position: 0px -112px
+    }
+.flair-doctor {
+    background-position: -16px -112px
+    }
+.flair-mac {
+    background-position: 0px -128px
+    }
+.flair-colgate {
+    background-position: -16px -128px
+    }
+.flair-berry {
+    background-position: -0px -144px
+    }
+/* Pokey implemented because Sephr is uber 1337. */
+.flair-pokey {
+    background-position: -16px -144px
+    }
+.flair-roseluck {
+    background-position: -0px -160px
+    }
+.flair-zecora {
+    background-position: -16px -160px
+    }
+.flair-seafoam {
+    background-position: -0px -176px
+    }
+.flair-carrottop {
+    background-position: -16px -176px
+    }
+.flair-screwball {
+    background-position: -0px -192px
+    }
+.flair-redheart {
+    background-position: -16px -192px
+    }
+.flair-caramel {
+    background-position: -0px -208px
+    }
+.flair-braeburn {
+    background-position: -16px -208px
+    }
+.flair-wonderbolts {
+    background-position: -0px -224px
+    }
+.flair-shadowbolts {
+    background-position: -16px -224px
+    }
+.flair-scootaloo {
+    background-position: -0px -240px
+    }
+.flair-applebloom {
+    background-position: -16px -240px
+    }
+.flair-sweetiebelle {
+    background-position: -0px -256px
+    }
+.flair-davenport {
+    background-position: -16px -256px
+    }
+.flair-cheerilee {
+    background-position: -0px -272px
+    }
+.flair-nightmaremoon {
+    background-position: -16px -272px
+    }
+.flair-blankflank {
+    background-image: none;
+    height: 0;
+    width: 0
+    }
+.flair-fancypants {
+	background-position: -32px -0px
+	}
+.flair-fleur {
+	background-position: -32px -16px
+	}
+.flair-daylightdarkle {
+	background-position: -32px -32px
+	}
+.flair-twinkle {
+	background-position: -32px -48px
+	}
+.flair-spitfire {
+	background-position: -32px -64px
+	}
+.flair-soawesome {
+	padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%SAflair%%);
+    display: inline-block;
+    width: 16px;
+    height: 16px
+    }
+	
+/*Stuff for live junk*/
+
+.id-t3_px a.title:before{
+	content: url(%%live%%);
+    background-position: 0px 0px;
+    display: inline-block;
+    padding: 2px
+    }
+
+/*Falalalalala from /r/pics
+.even {
+    color: darkGreen
+    }
+.odd {
+    color: darkRed
+    }
+*/
+
+
+/*
+* BOT TERRITORY BEYOND THIS POINT. NO TOUCHING!
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*_LIVE:sbozx*/
+.id-t3_sbozx a.title:before {
+    content: url(%%live%%);
+    background-position: 0px 0px;
+    display: inline-block;
+    padding: 2px
+    }
+/*_ENDLIVE:sbozx*/
+
+
+
+/*_LIVE:t4k35*/
+.id-t3_t4k35 a.title:before {
+    content: url(%%live%%);
+    background-position: 0px 0px;
+    display: inline-block;
+    padding: 2px
+    }
+/*_ENDLIVE:t4k35*/

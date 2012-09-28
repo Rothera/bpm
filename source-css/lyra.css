@@ -1,0 +1,72 @@
+/* BonBon Heart */
+
+body .side a[href="http://www.reddit.com/r/BonBon"] {
+    display: block;
+    height: 80px;
+    width: 75px;
+    background: url(%%bon2heart%%);
+    position: fixed;
+    top: 174px;
+    right: 1px;
+    z-index: 999
+}
+
+/* Background */
+
+body, body.res-nightmode:first-of-type {
+    background: url(%%bouncinglyra%%) no-repeat fixed center bottom !important
+    }
+/* Nightmode fixes for the background */
+.content #siteTable div[onclick="click_thing(this)"] {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type > .content {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type {
+    background-color: transparent !important
+    }
+/* ---------- Hide emoticon tables in the sidebar until emote is hovered over  ---------- */
+.titlebox em {
+    color: white
+    }
+.titlebox table {
+    display: none;
+    clear: both
+    }
+div.usertext-body:hover table {
+    display: block;
+    clear: both
+    }
+
+.titlebox>.word{display:none!important;}  .titlebox>.number:after{content:" HUMANS";}
+
+a[href|='/hellolyra'], a[href|='/liera'], a[href|='/lyraawesome'], a[href|='/lyrafacehoof'], a[href|='/lyrahappy'], a[href|='/lyrahat'], a[href|='/lyrahey'], a[href|='/lyrashock'], a[href|='/lyrasit'], a[href|='/heartstrings'], a[href|='/lyradat'], a[href|='/lyrasalute'], a[href|='/lyrahugs']    
+{
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%lyra1%%)
+}
+
+a[href|='/hellolyra'] {width:196px; height:150px; background-position: -249px -2px}
+a[href|='/liera'] {width:171px; height:150px; background-position: -2px -154px}
+a[href|='/lyraawesome'] {width:70px; height:100px; background-position: -2px -2px}
+a[href|='/lyrafacehoof'] {width:96px; height:100px; background-position: -74px -2px}
+a[href|='/lyrahappy'] {width:164px; height:180px; background-position: -2px -306px}
+a[href|='/lyrahat'] {width:94px; height:150px; background-position: -299px -154px}
+a[href|='/lyrahey'] {width:221px; height:200px; background-position: -168px -306px}
+a[href|='/lyrashock'] {width:122px; height:150px; background-position: -175px -154px}
+a[href|='/lyrasit'] {width:75px; height:125px; background-position: -172px -2px}
+a[href|='/heartstrings'] {width:134px; height:249px; background-position: -442px -0px}
+a[href|='/lyradat'] {width:120px; height:150px; background-position: -434px -278px}
+a[href|='/lyrasalute'] {width:150px; height:115px; background-position: -445px -435px}
+a[href|='/lyrahugs'] {width:200px; height:128px; background-position: -0px -506px}
+
+a[href|='/lyrawalk'] { width:102px; height:150px; background-image: url(%%lyrawalk%%); background-position: 0px 0px; display: block; clear: none; float: left; margin-left: 3px; margin-right: 3px; }
+/* Make the "community settings" text box bigger, because it's an unreadable clusterfuck when it's small. */
+.fancy-settings .linefield { width: 914px; }
+.fancy-settings textarea { width: 892px; height: 500px; }
+
+/* Also make the CSS text box bigger, because why not. */
+.stylesheet-customize-container textarea { height:500px; }
