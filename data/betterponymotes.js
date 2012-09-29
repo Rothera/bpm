@@ -853,7 +853,7 @@ var bpm_search = {
 
             // Use <span> so there's no chance of emote parse code finding
             // this
-            html += "<span class=\"bpm-result " + class_name + "\" title=\"" + emote_name + " from " + source_name + "\">" + emote_name + "</span>";
+            html += "<span class=\"bpm-result " + class_name + "\" title=\"" + emote_name + " from " + source_name + "\"></span>";
         }
 
         this.results.innerHTML = html;
