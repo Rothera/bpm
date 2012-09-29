@@ -203,10 +203,11 @@
 
 /* Misc emote flags, stolen from various subreddits. */
 
+/* Don't remove this from here, as global emotes depends on it */
 .bpflag-in, .bpflag-inp {
     float: none !important;
     display: inline-block !important
-    }
+}
 
 .bpflag-ar {
     float: right !important

@@ -946,9 +946,9 @@ var bpm_global = {
                         new_elements.push(document.createTextNode(before_text));
                     }
 
-                    // Build emote
+                    // Build emote. (Global emotes are always -in)
                     var element = document.createElement("span");
-                    element.className = "bpmote-" + bpm_utils.sanitize(emote_name.slice(1));
+                    element.className = "bpflag-in bpmote-" + bpm_utils.sanitize(emote_name.slice(1));
 
                     // Don't need to do validation on flags, since our matching
                     // regexp is strict enough to begin with (although it will
