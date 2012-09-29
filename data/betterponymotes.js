@@ -355,7 +355,7 @@ var bpm_converter = {
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
             if(element.className.indexOf("bpm-") > -1) {
-                // Already processed: has bpm-noclick or bpm-unknown on it. It
+                // Already processed: has bpm-emote or bpm-unknown on it. It
                 // doesn't really matter if this function runs on emotes more
                 // than once (it's safe), but that may change, and the class
                 // spam is annoying.
@@ -378,7 +378,7 @@ var bpm_converter = {
                     var emote_size = emote_info[2];
 
                     // Click blocker CSS/JS
-                    element.className += " bpm-noclick";
+                    element.className += " bpm-emote";
 
                     if(!prefs.we_map[emote_name]) {
                         // Ordering matters a bit here- placeholders for NSFW emotes
@@ -423,6 +423,13 @@ var bpm_converter = {
                             element.className += " bpflag-" + bpm_utils.sanitize(flag);
                         }
                     }
+
+                    // Add source info element
+                    var sr_name = sr_data[sr_id_map[source_id]][0];
+                    var source_info = document.createElement("span");
+                    source_info.className = "bpm-sourceinfo";
+                    source_info.textContent = emote_name + " from " + sr_name;
+                    element.parentNode.insertBefore(source_info, element.nextSibling);
                 } else if(prefs.prefs.showUnknownEmotes) {
                     /*
                      * If there's:
@@ -484,7 +491,9 @@ var bpm_converter = {
                 // Try to move to the other side of RES's image expand buttons,
                 // because otherwise they end awfully
                 var before = element.nextSibling;
-                if(before !== null && before.className !== undefined && before.className.indexOf("expando-button") > -1) {
+                while((before !== null && before.className !== undefined) &&
+                      (bpm_utils.has_class(before, "expando-button") ||
+                       bpm_utils.has_class(before, "bpm-sourceinfo"))) {
                     before = before.nextSibling;
                 }
 
@@ -1126,8 +1135,50 @@ var bpm_core = {
 
         // Add emote click blocker
         document.body.addEventListener("click", function(event) {
-            if(bpm_utils.has_class(event.target, "bpm-noclick")) {
+            if(bpm_utils.has_class(event.target, "bpm-emote")) {
                 event.preventDefault();
+            }
+        }.bind(this), false);
+
+        // Activate source info hovers
+        var hover_timeout = 0;
+        var showing = null;
+        document.body.addEventListener("mouseover", function(event) {
+            if(bpm_utils.has_class(event.target, "bpm-emote")) {
+                if(!hover_timeout) {
+                    hover_timeout = setTimeout(bpm_utils.catch_errors(function() {
+                        hover_timeout = 0;
+
+                        // Locate sourceinfo element. It should be the next
+                        // one, but there's always a chance it may have moved.
+                        // Don't go too far.
+                        var next = event.target.nextSibling;
+                        var movements = 0;
+                        while(next !== null && next.className !== undefined &&
+                              !bpm_utils.has_class(next, "bpm-sourceinfo") &&
+                              movements < 5) {
+                            next = next.nextSibling;
+                            movements++;
+                        }
+
+                        if(movements < 5 && next !== null) {
+                            next.style.display = "inline";
+                            if(showing !== null) {
+                                // Just in case
+                                showing.style.display = "none";
+                            }
+                            showing = next;
+                        }
+                    }.bind(this)), 1000);
+                }
+            } else {
+                clearTimeout(hover_timeout);
+                hover_timeout = 0;
+
+                if(showing !== null) {
+                    showing.style.display = "none";
+                    showing = null;
+                }
             }
         }.bind(this), false);
 

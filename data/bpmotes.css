@@ -68,8 +68,24 @@
 }
 
 /* Click blocker */
-.bpm-noclick {
+.bpm-emote {
     cursor: default;
+}
+
+/*
+ * Source information thingy. Unfortunately there's no way to position an
+ * element such that it takes up no space, but stays where it was before...
+ */
+.bpm-sourceinfo {
+    display: none; /* by default */
+    font-size: 1em;
+    font-family: monospace;
+    color: #3090B0;
+    background-color: white;
+    padding: 2px;
+    border: solid thin #336699;
+    border-radius: 2px;
+    position: absolute;
 }
 
 /*
