@@ -22,6 +22,7 @@ var default_prefs = {
     "showUnknownEmotes": true,
     "searchLimit": 200,
     "searchBoxInfo": [600, 25, 600, 450],
+    "lastSearchQuery": "sr:mylittlepony", // only shows about a third, but that's ok
     "showAltText": true,
     "enableGlobalEmotes": false,
     "enableGlobalSearch": false,

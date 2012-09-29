@@ -519,6 +519,7 @@ var bpm_search = {
     results: null,
     resize: null,
     global_icon: null, // Global << thing
+    firstrun: false,
 
     init: function(prefs) {
         this.inject_html();
@@ -688,9 +689,15 @@ var bpm_search = {
         this.global_icon = document.getElementById("bpm-global-icon");
     },
 
-    show: function() {
+    show: function(prefs) {
         this.container.style.visibility = "visible";
         this.search.focus();
+
+        if(!this.firstrun) {
+            this.firstrun = true;
+            this.search.value = prefs.prefs.lastSearchQuery;
+            this.update_search(prefs);
+        }
     },
 
     hide: function() {
@@ -747,6 +754,8 @@ var bpm_search = {
     update_search: function(prefs) {
         // Split search query on spaces, remove empty strings, and lowercase terms
         var terms = this.search.value.split(" ").map(function(v) { return v.toLowerCase(); });
+        prefs.prefs.lastSearchQuery = terms.join(" ");
+        bpm_prefs.sync_key("lastSearchQuery");
 
         var sr_terms = [];
         var match_terms = [];
@@ -860,7 +869,7 @@ var bpm_search = {
         this.count.textContent = text;
     },
 
-    inject_search_button: function(spans) {
+    inject_search_button: function(prefs, spans) {
         for(var i = 0; i < spans.length; i++) {
             // Matching the "formatting help" button is tricky- there's no great
             // way to find it. This seems to work, but I expect false positives from
@@ -874,13 +883,13 @@ var bpm_search = {
                  * clones of that form with our button already in it.
                  */
                 if(existing.length) {
-                    this.wire_emotes_button(existing[0]);
+                    this.wire_emotes_button(prefs, existing[0]);
                 } else {
                     var button = document.createElement("button");
                     button.type = "button"; // Default is "submit"; not good
                     button.className = "bpm-search-toggle";
                     button.textContent = "emotes";
-                    this.wire_emotes_button(button);
+                    this.wire_emotes_button(prefs, button);
                     // Put it at the end- Reddit's JS uses get(0) when looking for
                     // elements related to the "formatting help" linky, and we don't
                     // want to get in the way of that.
@@ -890,19 +899,19 @@ var bpm_search = {
         }
     },
 
-    setup_global_search: function() {
+    setup_global_search: function(prefs) {
         this.global_icon.style.visibility = "visible";
 
         this.global_icon.addEventListener("click", function(event) {
             // Don't open at the end of a drag (only works if you release the
             // mouse button before the ctrl key though...)
             if(!event.ctrlKey) {
-                this.show();
+                this.show(prefs);
             }
         }.bind(this), false);
     },
 
-    wire_emotes_button: function(button) {
+    wire_emotes_button: function(prefs, button) {
         button.addEventListener("mouseover", function(event) {
             this.grab_target_form();
         }.bind(this), false);
@@ -910,7 +919,7 @@ var bpm_search = {
         button.addEventListener("click", function(event) {
             var sb_element = document.getElementById("bpm-search-box");
             if(sb_element.style.visibility !== "visible") {
-                this.show();
+                this.show(prefs);
             } else {
                 this.hide();
             }
@@ -1045,7 +1054,7 @@ var bpm_global = {
 
         if(prefs.prefs.enableGlobalSearch) {
             bpm_search.init(prefs);
-            bpm_search.setup_global_search();
+            bpm_search.setup_global_search(prefs);
         }
 
         this.process(prefs, document.body);
@@ -1113,7 +1122,7 @@ var bpm_core = {
 
         bpm_search.init(prefs);
         // Find the one reply box that's there on page load. This may not always work...
-        bpm_search.inject_search_button(document.getElementsByClassName("help-toggle"));
+        bpm_search.inject_search_button(prefs, document.getElementsByClassName("help-toggle"));
 
         // Add emote click blocker
         document.body.addEventListener("click", function(event) {
@@ -1176,7 +1185,7 @@ var bpm_core = {
                         }
 
                         var spans = root.getElementsByTagName("span");
-                        bpm_search.inject_search_button(spans);
+                        bpm_search.inject_search_button(prefs, spans);
                     }
                 }
             }.bind(this)));
@@ -1201,7 +1210,7 @@ var bpm_core = {
                         bpm_converter.process_posts(prefs, posts);
                     }
 
-                    bpm_search.inject_search_button(root.getElementsByClassName("help-toggle"));
+                    bpm_search.inject_search_button(prefs, root.getElementsByClassName("help-toggle"));
                 }
             }.bind(this), false);
             break;
