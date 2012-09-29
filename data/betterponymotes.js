@@ -572,7 +572,8 @@ var bpm_search = {
         // Listen for clicks
         this.results.addEventListener("click", function(event) {
             if((" " + event.target.className + " ").indexOf(" bpm-result ") > -1) {
-                var emote_name = event.target.textContent; // Bit of a hack
+                // .dataset would probably be nicer, but just in case...
+                var emote_name = event.target.getAttribute("data-emote");
                 this.insert_emote(emote_name);
             }
         }.bind(this), false);
@@ -861,8 +862,9 @@ var bpm_search = {
             var source_name = sr_data[sr_id_map[source_id]][0];
 
             // Use <span> so there's no chance of emote parse code finding
-            // this
-            html += "<span class=\"bpm-result " + class_name + "\" title=\"" + emote_name + " from " + source_name + "\"></span>";
+            // this.
+            html += "<span data-emote=\"" + emote_name + "\" class=\"bpm-result " +
+                    class_name + "\" title=\"" + emote_name + " from " + source_name + "\"></span>";
         }
 
         this.results.innerHTML = html;
