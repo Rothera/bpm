@@ -24,6 +24,8 @@ var default_prefs = {
     "searchBoxInfo": [600, 25, 600, 450],
     "showAltText": true,
     "enableGlobalEmotes": false,
+    "enableGlobalSearch": false,
+    "globalIconPos": [16, 16],
     "disabledEmotes": [],
     "whitelistedEmotes": [],
     "maxEmoteSize": 0,

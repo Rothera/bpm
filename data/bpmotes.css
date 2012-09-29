@@ -201,6 +201,18 @@
     margin: 1px;
 }
 
+/* Global << icon thingy */
+#bpm-global-icon {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAK9SURBVEjHzdc/SGpRHAdw+0OmFrg0hCJKixAhEg7R0GJLCCpJRPRnSkKC0ECcmoqWBolARQgaBBFRJNAlCFpqeA0lvaIl0KIIGhyiUvH7/N26l3vfI5736uP5gwNH5Z7z8Z7zO/yODICsHu56y9cb2qSRxf1lk3naCPZ7I5vsJ33Y2dlBpVLB/w4ykOULSLZPbblcRrsEWXhv8bPDxtLSEm5vb5ueZHNzE9lsVvLz3wKp39XVhYWFBdzc3EiewOFwMGNZLBYcHh62DtjX18f92NnZibm5OVxfX4uegP4gf8OPjo4ik8k0D3x5ecHGxgbUarUAOjs7i6urq4YnqFariMViGB4eFkDNZjPS6TRqtZo0IBulUgnb29sYGBgQQGdmZpDP5xuGEiSVSjFvkA81mUxIJpPfQv8KZOP19RXBYBAajYZ7qKOjA9PT07i4uBC17LlcDuPj4wLoyMgIEonEH9CGgWx8fHwgHA7DYDAIoE6nUzT0+PgYVqtVAKWtEI/HpQP5B+nBwQGMRiM3iN1ul5TpZ2dnsNlsAmjTQIrLy0u4XK6mgWxCqlSq1gDPz8+Z842Wln1ucHCQyVYx8fz8jEAggP7+fm6cnp4erKysSAOenp5iampKsBSUNLu7u3h7e2sY9vj4CJ/PB6VSyY0jl8vh8XhQKBTEJ8nJyQkmJycFMK1Wi729Pby/vzcMKxaLWF1dRW9vLzcO9em7+/t78cfM0dERJiYmBDCdTodQKMRkc6Nxd3cHt9vNLB8ftra2hoeHB2kH9djYmACm1+sRiUREwSi2trbQ3d3NjaNQKOD1epllbrpYoEbnXTQalVyGscUC7bf19XU8PT21plgYGhrC/v5+08Xr/Pw8/H4/k7EtKbfELuG/DLLwgcxlifZMOyDJQBbe5Um23MaXpmXZ19Vusd5+tBGMLItk+wX8pY1lHbB+/AAAAABJRU5ErkJggg==");
+    width: 40px;
+    height: 24px;
+
+    /* Hide at the bottom */
+    position: fixed;
+    left: 16px;
+    top: 15px;
+}
+
 /* Misc emote flags, stolen from various subreddits. */
 
 /* Don't remove this from here, as global emotes depends on it */

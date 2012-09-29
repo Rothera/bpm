@@ -124,7 +124,7 @@ var bpm_utils = {
             start_x = event.clientX;
             start_y = event.clientY;
             dragging = true;
-            start_callback();
+            start_callback(event);
         }, false);
 
         window.addEventListener("mouseup", function(event) {
@@ -133,7 +133,7 @@ var bpm_utils = {
 
         window.addEventListener("mousemove", function(event) {
             if(dragging) {
-                callback(start_x, start_y, event.clientX, event.clientY);
+                callback(event, start_x, start_y, event.clientX, event.clientY);
             }
         }, false);
     }
@@ -518,6 +518,7 @@ var bpm_search = {
     close: null,
     results: null,
     resize: null,
+    global_icon: null, // Global << thing
 
     init: function(prefs) {
         this.inject_html();
@@ -575,13 +576,15 @@ var bpm_search = {
         // 98 = height(topbar) + margins(topbar) + margins(results) + padding(results)
         //    = 20             + 30*2            + 30               + 8
         this.results.style.height = prefs.prefs.searchBoxInfo[3] - 98 + "px"; // Styling
+        this.global_icon.style.left = prefs.prefs.globalIconPos[0] + "px";
+        this.global_icon.style.top = prefs.prefs.globalIconPos[1] + "px";
 
         // Enable dragging the window around
         var search_box_x, search_box_y;
-        bpm_utils.enable_drag(this.dragbox, function() {
+        bpm_utils.enable_drag(this.dragbox, function(event) {
             search_box_x = parseInt(this.container.style.left, 10);
             search_box_y = parseInt(this.container.style.top, 10);
-        }.bind(this), function(start_x, start_y, x, y) {
+        }.bind(this), function(event, start_x, start_y, x, y) {
             // Don't permit it to move out the left/top side of the window
             var sb_left = Math.max(x - start_x + search_box_x, 0);
             var sb_top = Math.max(y - start_y + search_box_y, 0);
@@ -596,11 +599,11 @@ var bpm_search = {
 
         // Enable dragging the resize element around (i.e. resizing it)
         var search_box_width, search_box_height, results_height;
-        bpm_utils.enable_drag(this.resize, function() {
+        bpm_utils.enable_drag(this.resize, function(event) {
             search_box_width = parseInt(this.container.style.width, 10);
             search_box_height = parseInt(this.container.style.height, 10);
             results_height = parseInt(this.results.style.height, 10);
-        }.bind(this), function(start_x, start_y, x, y) {
+        }.bind(this), function(event, start_x, start_y, x, y) {
             // 420px wide prevents the search box from collapsing too much, and 98px
             // is the height of the top bar + margins*3. An extra five pixels prevents
             // the results div from disappearing completely (which can be bad).
@@ -615,6 +618,28 @@ var bpm_search = {
             prefs.prefs.searchBoxInfo[3] = sb_height;
             bpm_prefs.sync_key("searchBoxInfo"); // FIXME again
         }.bind(this));
+
+        // Enable dragging the global button around
+        var global_icon_x, global_icon_y;
+        bpm_utils.enable_drag(this.global_icon, function(event) {
+            global_icon_x = parseInt(this.global_icon.style.left, 10);
+            global_icon_y = parseInt(this.global_icon.style.top, 10);
+        }.bind(this), function(event, start_x, start_y, x, y) {
+            if(!event.ctrlKey) {
+                return;
+            }
+
+            // Don't permit it to move out the left/top side of the window
+            var gi_left = Math.max(x - start_x + global_icon_x, 0);
+            var gi_top = Math.max(y - start_y + global_icon_y, 0);
+
+            this.global_icon.style.left = gi_left + "px";
+            this.global_icon.style.top = gi_top + "px";
+
+            prefs.prefs.globalIconPos[0] = gi_left;
+            prefs.prefs.globalIconPos[1] = gi_top;
+            bpm_prefs.sync_key("globalIconPos"); // FIXME yet again
+        }.bind(this));
     },
 
     inject_html: function() {
@@ -622,7 +647,6 @@ var bpm_search = {
         var div = document.createElement("div");
         // I'd sort of prefer display:none, but then I'd have to override it
         div.style.visibility = "hidden";
-        document.body.appendChild(div);
 
         var html = [
             // tabindex is hack to make Esc work. Reddit uses this index in a couple
@@ -646,9 +670,11 @@ var bpm_search = {
             '    </span>',
             '    <span id="bpm-resize"></span>',
             '  </div>',
-            '</div>'
+            '</div>',
+            '<div id="bpm-global-icon" title="Hold ctrl to drag"></div>'
             ].join("\n");
         div.innerHTML = html;
+        document.body.appendChild(div);
 
         // This seems to me a rather lousy way to build HTML, but oh well
         this.container = document.getElementById("bpm-search-box");
@@ -658,6 +684,8 @@ var bpm_search = {
         this.close = document.getElementById("bpm-close");
         this.results = document.getElementById("bpm-search-results");
         this.resize = document.getElementById("bpm-resize");
+
+        this.global_icon = document.getElementById("bpm-global-icon");
     },
 
     show: function() {
@@ -862,6 +890,18 @@ var bpm_search = {
         }
     },
 
+    setup_global_search: function() {
+        this.global_icon.style.visibility = "visible";
+
+        this.global_icon.addEventListener("click", function(event) {
+            // Don't open at the end of a drag (only works if you release the
+            // mouse button before the ctrl key though...)
+            if(!event.ctrlKey) {
+                this.show();
+            }
+        }.bind(this), false);
+    },
+
     wire_emotes_button: function(button) {
         button.addEventListener("mouseover", function(event) {
             this.grab_target_form();
@@ -1002,6 +1042,11 @@ var bpm_global = {
         // We run this here, instead of down in the main bit, to avoid applying large
         // chunks of CSS when this script is disabled.
         bpm_core.init_css();
+
+        if(prefs.prefs.enableGlobalSearch) {
+            bpm_search.init(prefs);
+            bpm_search.setup_global_search();
+        }
 
         this.process(prefs, document.body);
 
@@ -1192,8 +1237,6 @@ var bpm_core = {
                 }.bind(this));
             }.bind(this), false);
         } else {
-            // This script is generally run before the DOM is built. Opera may break
-            // that rule, but I don't know how and there's nothing we can do anyway.
             window.addEventListener("DOMContentLoaded", function() {
                 bpm_prefs.when_available(function(prefs) {
                     bpm_global.run(prefs);

@@ -445,6 +445,7 @@ function run(prefs) {
     manage_option(prefs, "showUnknownEmotes");
     manage_option(prefs, "showAltText");
     manage_option(prefs, "enableGlobalEmotes");
+    manage_option(prefs, "enableGlobalSearch");
 
     manage_number(prefs, "searchLimit", 200);
     manage_number(prefs, "maxEmoteSize", 0);
