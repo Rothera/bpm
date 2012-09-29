@@ -1301,6 +1301,19 @@ var bpm_core = {
     },
 
     main: function() {
+        if(bpm_utils.ends_with(window.top.location.hostname, "reddit.com") &&
+           window !== window.top) {
+            // Avoid running in Reddit-enclosed frames. This prevents us from
+            // getting in the way inside frames added by some addons- esp.
+            // inline YT viewers. I don't know what else.
+            //
+            // Frames on other sites will just have to live with multiple copies
+            // of the global emote thing. That's usually desirable anyway, since
+            // the search box can't inject emotes into sub-frame forms. (Maybe
+            // we should, though?)
+            return;
+        }
+
         switch(bpm_utils.platform) {
         case "firefox-ext":
             bpm_browser.send_message("get_prefs");
