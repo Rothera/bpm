@@ -1127,6 +1127,36 @@ var bpm_core = {
     },
 
     run: function(prefs) {
+        // Inject our filter SVG for Firefox. Chrome renders this thing as a
+        // massive box, but "display: none" (or putting it in <head>) makes
+        // Firefox hide all of the emotes we apply the filter to- as if *they*
+        // had display:none. Furthermore, "height:0;width:0" isn't quite enough
+        // either, as margins or something make the body move down a fair bit
+        // (leaving a white gap). "position:fixed" is a workaround for that.
+        //
+        // We also can't include either the SVG or the CSS as a normal resource
+        // because Firefox throws security errors. No idea why.
+        //
+        // Can't do this before the DOM is built, because we use document.body
+        // by necessity.
+        //
+        // Christ. I hope people use the fuck out of -i after this nonsense.
+        if(bpm_utils.platform == "firefox-ext") {
+            var svg_src = [
+                '<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg"',
+                ' style="height: 0; width: 0; position: fixed">',
+                '  <filter id="bpm-invert">',
+                '    <feColorMatrix in="SourceGraphic" type="hueRotate" values="180"/>',
+                '  </filter>',
+                '</svg>'
+            ].join("\n");
+            var div = document.createElement("div");
+            div.innerHTML = svg_src;
+            document.body.insertBefore(div.firstChild, document.body.firstChild);
+
+            bpm_browser.add_css(".bpflag-i { filter: url(#bpm-invert); }");
+        }
+
         // Initial pass- show all emotes currently on the page.
         var posts = document.getElementsByClassName("md");
         bpm_converter.process_posts(prefs, posts);

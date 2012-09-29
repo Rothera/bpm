@@ -28,7 +28,6 @@
      * Need !important tags to override Reddit's CSS.
      */
     color: white !important;
-    font-style: monospace;
     font-size: xx-small;
     padding: 5px;
 }
@@ -255,6 +254,13 @@
 
 .bpflag-tahoma_excl_ {
     font-family: Tahoma, Geneva, sans-serif
+}
+
+/* Basic filters */
+.bpflag-i {
+    -webkit-filter: hue-rotate(180deg); /* Chrome */
+    /* Firefox: handled in bpm.js due to problems */
+    /* Opera: ??? neither of these approaches work */
 }
 
 /*
