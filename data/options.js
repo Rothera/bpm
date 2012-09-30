@@ -88,8 +88,20 @@ case "firefox-ext":
 case "chrome-ext":
     bpm_utils.copy_properties(bpm_browser, {
         _send_message: function(data) {
-            chrome.extension.sendMessage(data);
-        }
+            chrome.extension.sendMessage(data, this._message_handler.bind(this));
+        },
+
+        _message_handler: function(message) {
+            switch(message.method) {
+            case "prefs":
+                bpm_prefs.got_prefs(message.prefs);
+                break;
+
+            default:
+                console.log("BPM: ERROR: Unknown request from Chrome background script: '" + message.method + "'");
+                break;
+            }
+        },
     });
     break;
 
@@ -482,19 +494,7 @@ function main() {
         }
     });
 
-    switch(bpm_utils.platform) {
-    case "firefox-ext":
-        bpm_browser.send_message("get_prefs");
-        break;
-
-    case "chrome-ext":
-        chrome.extension.sendMessage({"method": "get_prefs"}, bpm_prefs.got_prefs.bind(bpm_prefs));
-        break;
-
-    case "opera-ext":
-        bpm_browser.send_message("get_prefs");
-        break;
-    }
+    bpm_browser.send_message("get_prefs");
 }
 
 main();

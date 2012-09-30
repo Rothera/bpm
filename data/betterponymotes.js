@@ -202,7 +202,23 @@ case "chrome-ext":
         css_parent: document.documentElement,
 
         _send_message: function(data) {
-            chrome.extension.sendMessage(data);
+            chrome.extension.sendMessage(data, this._message_handler.bind(this));
+        },
+
+        _message_handler: function(message) {
+            switch(message.method) {
+            case "prefs":
+                bpm_prefs.got_prefs(message.prefs);
+                break;
+
+            case "custom_css":
+                bpm_browser.add_css(message.css);
+                break;
+
+            default:
+                console.log("BPM: ERROR: Unknown request from Chrome background script: '" + message.method + "'");
+                break;
+            }
         },
 
         link_css: function(filename) {
@@ -1294,22 +1310,8 @@ var bpm_core = {
             return;
         }
 
-        switch(bpm_utils.platform) {
-        case "firefox-ext":
-            bpm_browser.send_message("get_prefs");
-            bpm_browser.send_message("get_custom_css");
-            break;
-
-        case "chrome-ext":
-            chrome.extension.sendMessage({"method": "get_prefs"}, bpm_prefs.got_prefs.bind(bpm_prefs));
-            chrome.extension.sendMessage({"method": "get_custom_css"}, bpm_browser.add_css.bind(bpm_prefs));
-            break;
-
-        case "opera-ext":
-            bpm_browser.send_message("get_prefs");
-            bpm_browser.send_message("get_custom_css");
-            break;
-        }
+        bpm_browser.send_message("get_prefs");
+        bpm_browser.send_message("get_custom_css");
 
         if(bpm_utils.ends_with(document.location.hostname, "reddit.com")) {
             this.init_css();

@@ -45,7 +45,7 @@ var pref_manager = manage_prefs(localStorage, JSON.parse(localStorage.prefs), sy
 chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
     switch(message.method) {
         case "get_prefs":
-            sendResponse(pref_manager.get());
+            sendResponse({"method": "prefs", "prefs": pref_manager.get()});
             break;
 
         case "set_prefs":
@@ -57,7 +57,7 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
             break;
 
         case "get_custom_css":
-            sendResponse(pref_manager.cm.css_cache);
+            sendResponse({"method": "custom_css", "css": pref_manager.cm.css_cache});
             break;
 
         case "set_pref":
