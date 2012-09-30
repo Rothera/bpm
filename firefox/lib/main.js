@@ -70,10 +70,11 @@ function dl_file(done, url, callback) {
         headers: {"User-Agent": "BetterPonymotes Client CSS Updater (/u/Typhos)"},
         onComplete: function(response) {
             done();
-            if(response.status === 200) {
+            var type = response.headers["Content-Type"];
+            if(response.status === 200 && type == "text/css") {
                 callback(response.text);
             } else {
-                console.log("BPM: ERROR: Reddit returned HTTP status " + reponse.status + " for " + url);
+                console.log("BPM: ERROR: Reddit returned HTTP status " + response.status + " for " + url + " (type: " + type + ")");
             }
         }
     }).get();

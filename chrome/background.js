@@ -22,10 +22,11 @@ function dl_file(done, url, callback) {
     request.onreadystatechange = function() {
         if(request.readyState === 4) {
             done();
-            if(request.status === 200) {
+            var type = request.getResponseHeader("Content-Type");
+            if(request.status === 200 && type == "text/css") {
                 callback(request.responseText);
             } else {
-                console.log("BPM: ERROR: Reddit returned HTTP status " + request.status + " for " + url);
+                console.log("BPM: ERROR: Reddit returned HTTP status " + request.status + " for " + url + " (type: " + type + ")");
             }
         }
     };
