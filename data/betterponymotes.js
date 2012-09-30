@@ -450,11 +450,22 @@ var bpm_converter = {
         }
     },
 
+    spoiler_links: ["/spoiler", "/s", "#s"],
+
     // NOTE/FIXME: Alt-text isn't really related to emote conversion as-is, but
     // since it runs on a per-emote basis, it kinda goes here anyway.
     display_alt_text: function(elements) {
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
+
+            // Ignore known spoiler emotes. FIXME: A hardcoded list sucks, but
+            // there's not a lot we can do about that. Also, not every spoiler
+            // href is known to BPM as of now, so we can't rely on .bpm-emote
+            // and data-emote to exist.
+            var href = element.getAttribute("href");
+            if(href && this.spoiler_links.indexOf(href.split("-")[0]) > -1) {
+                continue;
+            }
 
             if(element.title) {
                 // Work around due to RES putting tag links in the middle of
