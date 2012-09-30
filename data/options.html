@@ -38,11 +38,7 @@
           <button type="button" id="disable-all-subreddits" class="btn">Disable all</button>
         </form>
 
-        <!--
-          onsubmit hack because some browsers (Firefox) will submit a form if
-          you press enter in its sole <input>
-        -->
-        <form class="form-inline" onsubmit="return false;">
+        <form class="form-inline">
           <legend>Disabled Emotes</legend>
           <div id="disabledEmotes" class="emote-list-container">
             <input id="disabledEmotes-input" class="emote-list-input">
@@ -50,15 +46,15 @@
           <button type="button" id="disabledEmotes-clear" class="btn">Clear</button>
         </form>
 
-        <form class="form-inline" onsubmit="return false;">
+        <form class="form-inline">
           <legend>Whitelisted Emotes</legend>
           <div id="whitelistedEmotes" class="emote-list-container">
             <input id="whitelistedEmotes-input" class="emote-list-input">
           </div>
-          <button type="whitelistedEmotes-clear" id="we-clear" class="btn">Clear</button>
+          <button type="button" id="whitelistedEmotes-clear" class="btn">Clear</button>
         </form>
 
-        <form class="form-inline" onsubmit="return false;">
+        <form class="form-inline">
           <legend>Custom Subreddits</legend>
           <p><strong>Warning: The custom CSS feature is still in progress, and
           should not be used extensively. There are a number of known bugs.</strong>
