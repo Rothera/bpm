@@ -900,6 +900,13 @@ var bpm_search = {
                     button.type = "button"; // Default is "submit"; not good
                     button.className = "bpm-search-toggle";
                     button.textContent = "emotes";
+                    // Since we come before the save button in the DOM, we tab
+                    // first, but this is generally annoying. Correcting this
+                    // ideally would require either moving, or editing the save
+                    // button, which I'd rather not do.
+                    //
+                    // So instead it's just untabbable.
+                    button.tabIndex = 100;
                     this.wire_emotes_button(prefs, button);
                     // Put it at the end- Reddit's JS uses get(0) when looking for
                     // elements related to the "formatting help" linky, and we don't
