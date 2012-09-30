@@ -1,6 +1,6 @@
 default: packages update-files
 
-packages: build/betterponymotes.xpi build/betterponymotes.crx build/chrome.zip build/betterponymotes.oex
+packages: build/betterponymotes.xpi build/chrome build/chrome.zip build/betterponymotes.oex
 
 update-files: www/betterponymotes.update.rdf www/opera-updates.xml
 
@@ -20,11 +20,10 @@ build/betterponymotes.xpi: build/emote-classes.css build/emote-map.js build/sr-d
 	rm betterponymotes.xpi
 	cp build/betterponymotes.xpi build/betterponymotes_`bin/version.py get`.xpi
 
-build/betterponymotes.crx: build/emote-classes.css build/emote-map.js build/sr-data.js chrome/*
-	rm -f build/*.crx
-	google-chrome --pack-extension=chrome --pack-extension-key=betterponymotes.pem
-	mv chrome.crx build/betterponymotes.crx
-	cp build/betterponymotes.crx build/betterponymotes_`bin/version.py get`.crx
+build/chrome: build/emote-classes.css build/emote-map.js build/sr-data.js chrome/*
+	rm -r build/chrome
+	cp -rL chrome build
+	rm build/chrome/key.pem
 
 build/chrome.zip: build/emote-classes.css build/emote-map.js build/sr-data.js chrome/*
 	rm -f build/chrome.zip
