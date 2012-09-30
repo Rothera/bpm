@@ -58,6 +58,8 @@ Conflicts:
   Favor: r_falloutequestria # Conflict with r/mylittleanime
 - Name: [/t18, null]
   Favor: r_mylittlefoodmanes # Conflict with r/tacoshy
+- Name: [/sphlyrafun, null]
+  Favor: r_mylittlensfw # Conflict with r/mylittlechaos
 
 Directives:
   r_clopclop:
@@ -107,6 +109,9 @@ Directives:
   r_mylittlecirclejerk:
     # Breaks /dealwithit from r/mlp
     - [Remove, [/dealwithit, ":after"]]
+  r_mylittlensfw:
+    - [MarkNSFW, /sweetiebellesvirginmarshmallowpussy]
+    - [MarkNSFW, /sphlyrafun]
   r_mylittlesh:
     # Weird space things, which are broken in BPM anyway
     - [Remove, /0x10]
@@ -120,6 +125,17 @@ Directives:
     - [MarkNSFW, /sandwich, /spaceclop]
 
 Merge:
+  r_mylittlepony:
+    # These were removed from the source. They exist elsewhere, so we pretend
+    # they weren't for sake of conflict resolution and compatibility.
+    http://b.thumbs.redditmedia.com/DW12xf1EuQi8VRcI.png:
+    - Name: /rdsad
+      Offset: [-140, -350]
+      Size: [70, 70]
+    http://c.thumbs.redditmedia.com/QNdAer5mOCS_f1-J.png:
+    - Name: /rrdsad
+      Offset: [-140, -350]
+      Size: [70, 70]
   r_mlplounge:
     # These emotes are hidden in a PONYSCRIPT-IGNORE block.
     http://b.thumbs.redditmedia.com/jbwr35HVziRudQhg.png:
