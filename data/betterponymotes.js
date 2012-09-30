@@ -140,21 +140,33 @@ var bpm_utils = {
 };
 
 var bpm_browser = {
-    send_message: function(method, data) {
-        if(data === undefined) {
-            this._send_message({"method": method});
-        } else {
-            data["method"] = method;
-            this._send_message(data);
-        }
-    },
-
     add_css: function(css) {
         if(css) {
             var tag = bpm_utils.style_tag(css);
             this.css_parent.insertBefore(tag, this.css_parent.firstChild);
         }
+    },
+
+    set_pref: function(key, value) {
+        this._send_message("set_pref", {"pref": key, "value": value});
+    },
+
+    request_prefs: function() {
+        this._send_message("get_prefs");
+    },
+
+    request_custom_css: function() {
+        this._send_message("get_custom_css");
     }
+
+    // Missing attributes/methods:
+    //    var css_parent
+    //    function _send_message(method, data)
+    //    function link_css(filename)
+    // Assumed globals:
+    //    var sr_id_map
+    //    var sr_data
+    //    var emote_map
 };
 
 switch(bpm_utils.platform) {
@@ -162,7 +174,11 @@ case "firefox-ext":
     bpm_utils.copy_properties(bpm_browser, {
         css_parent: document.head,
 
-        _send_message: function(data) {
+        _send_message: function(method, data) {
+            if(data === undefined) {
+                data = {};
+            }
+            data["method"] = method;
             self.postMessage(data);
         },
 
@@ -201,7 +217,11 @@ case "chrome-ext":
     bpm_utils.copy_properties(bpm_browser, {
         css_parent: document.documentElement,
 
-        _send_message: function(data) {
+        _send_message: function(method, data) {
+            if(data === undefined) {
+                data = {};
+            }
+            data["method"] = method;
             chrome.extension.sendMessage(data, this._message_handler.bind(this));
         },
 
@@ -235,7 +255,11 @@ case "opera-ext":
     bpm_utils.copy_properties(bpm_browser, {
         css_parent: document.head,
 
-        _send_message: function(data) {
+        _send_message: function(method, data) {
+            if(data === undefined) {
+                data = {};
+            }
+            data["method"] = method;
             opera.extension.postMessage(data);
         },
 
@@ -274,7 +298,7 @@ case "opera-ext":
 
             _get_file: function(filename, callback) {
                 this._file_callbacks[filename] = callback;
-                this.send_message("get_file", {"filename": filename});
+                this._send_message("get_file", {"filename": filename});
             }
         });
     }
@@ -360,7 +384,7 @@ var bpm_prefs = {
         }
 
         this.sync_timeouts[key] = setTimeout(function() {
-            bpm_browser.send_message("set_pref", {"pref": key, "value": this.prefs[key]});
+            bpm_browser.set_pref(key, this.prefs[key]);
             delete this.sync_timeouts[key];
         }.bind(this), 1000);
     }
@@ -1214,7 +1238,7 @@ var bpm_core = {
         case "chrome-ext":
             // Fix for Chrome, which sometimes doesn't rerender unknown
             // emote elements. The result is that until the element is
-            // "nudged" in some way- merely viewing it in the Console/
+            // "nudged" in some way- merely viewing it in the Console/platform
             // Elements tabs will do- it won't display.
             //
             // RES seems to reliably set things off, but that won't
@@ -1310,8 +1334,8 @@ var bpm_core = {
             return;
         }
 
-        bpm_browser.send_message("get_prefs");
-        bpm_browser.send_message("get_custom_css");
+        bpm_browser.request_prefs();
+        bpm_browser.request_custom_css();
 
         if(bpm_utils.ends_with(document.location.hostname, "reddit.com")) {
             this.init_css();
