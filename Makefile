@@ -28,7 +28,7 @@ build/betterponymotes.crx: build/emote-classes.css build/emote-map.js build/sr-d
 
 build/chrome.zip: build/emote-classes.css build/emote-map.js build/sr-data.js chrome/*
 	rm -f build/chrome.zip
-	cd chrome && zip -r ../build/chrome.zip * && cd ..
+	cd chrome && zip -r -0 ../build/chrome.zip * && cd ..
 
 build/betterponymotes.oex: build/emote-classes.css build/emote-map.js build/sr-data.js opera/includes/betterponymotes.js opera/includes/* opera/*
 	rm -f build/*.oex
