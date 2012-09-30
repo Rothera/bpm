@@ -379,6 +379,7 @@ var bpm_converter = {
 
                     // Click blocker CSS/JS
                     element.className += " bpm-emote";
+                    element.dataset["emote"] = emote_name; // Used in alt-text
 
                     if(!prefs.we_map[emote_name]) {
                         // Ordering matters a bit here- placeholders for NSFW emotes
@@ -423,13 +424,6 @@ var bpm_converter = {
                             element.className += " bpflag-" + bpm_utils.sanitize(flag);
                         }
                     }
-
-                    // Add source info element
-                    var sr_name = sr_data[sr_id_map[source_id]][0];
-                    var source_info = document.createElement("span");
-                    source_info.className = "bpm-sourceinfo";
-                    source_info.textContent = emote_name + " from " + sr_name;
-                    element.parentNode.insertBefore(source_info, element.nextSibling);
                 } else if(prefs.prefs.showUnknownEmotes) {
                     /*
                      * If there's:
@@ -461,6 +455,7 @@ var bpm_converter = {
     display_alt_text: function(elements) {
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
+
             if(element.title) {
                 // Work around due to RES putting tag links in the middle of
                 // posts. (Fucking brilliant!)
@@ -502,6 +497,15 @@ var bpm_converter = {
                     continue;
                 }
                 element.parentNode.insertBefore(at_element, before);
+            }
+
+            // If it's an emote, replace the actual alt-text with source
+            // information
+            if(bpm_utils.has_class(element, "bpm-emote")) {
+                var emote_name = element.dataset["emote"];
+                var source_id = emote_map[emote_name][1];
+                var sr_name = sr_data[sr_id_map[source_id]][0];
+                element.title = emote_name + " from " + sr_name;
             }
         }
     },
@@ -1176,48 +1180,6 @@ var bpm_core = {
         document.body.addEventListener("click", function(event) {
             if(bpm_utils.has_class(event.target, "bpm-emote")) {
                 event.preventDefault();
-            }
-        }.bind(this), false);
-
-        // Activate source info hovers
-        var hover_timeout = 0;
-        var showing = null;
-        document.body.addEventListener("mouseover", function(event) {
-            if(bpm_utils.has_class(event.target, "bpm-emote")) {
-                if(!hover_timeout) {
-                    hover_timeout = setTimeout(bpm_utils.catch_errors(function() {
-                        hover_timeout = 0;
-
-                        // Locate sourceinfo element. It should be the next
-                        // one, but there's always a chance it may have moved.
-                        // Don't go too far.
-                        var next = event.target.nextSibling;
-                        var movements = 0;
-                        while(next !== null && next.className !== undefined &&
-                              !bpm_utils.has_class(next, "bpm-sourceinfo") &&
-                              movements < 5) {
-                            next = next.nextSibling;
-                            movements++;
-                        }
-
-                        if(movements < 5 && next !== null) {
-                            next.style.display = "inline";
-                            if(showing !== null) {
-                                // Just in case
-                                showing.style.display = "none";
-                            }
-                            showing = next;
-                        }
-                    }.bind(this)), 1000);
-                }
-            } else {
-                clearTimeout(hover_timeout);
-                hover_timeout = 0;
-
-                if(showing !== null) {
-                    showing.style.display = "none";
-                    showing = null;
-                }
             }
         }.bind(this), false);
 
