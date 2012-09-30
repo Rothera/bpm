@@ -1,0 +1,9 @@
+body:first-of-type, body.res-nightmode:first-of-type {
+   
+     background:  url(%%pincybg%%)  no-repeat  fixed 74% 100% !important;}
+/* Nightmode fixes for the background */
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
+body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
+body.res-nightmode:first-of-type {background-color: transparent!important;} 
+
+.md>hr{height:1px;border:none;background:rgb(128,128,128);margin-bottom:5px;}
