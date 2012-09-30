@@ -30,10 +30,7 @@ build/chrome.zip: build/emote-classes.css build/emote-map.js build/sr-data.js ch
 	rm -f build/chrome.zip
 	cd chrome && zip -r -0 ../build/chrome.zip * && cd ..
 
-build/betterponymotes.oex: build/emote-classes.css build/emote-map.js build/sr-data.js opera/includes/betterponymotes.js opera/includes/* opera/*
+build/betterponymotes.oex: build/emote-classes.css build/emote-map.js build/sr-data.js opera/includes/* opera/*
 	rm -f build/*.oex
-	cd opera && zip -r ../build/betterponymotes.oex * -x includes/betterponymotes.js.in && cd ..
+	cd opera && zip -r ../build/betterponymotes.oex * && cd ..
 	cp build/betterponymotes.oex build/betterponymotes_`bin/version.py get`.oex
-
-opera/includes/betterponymotes.js: bin/make_opera_script.py data/betterponymotes.js build/emote-map.js
-	bin/make_opera_script.py opera/includes/betterponymotes.js

@@ -1,6 +1,8 @@
 // ==UserScript==
 // @include http://*/*
 // @include https://*/*
+// @require emote-map.js
+// @require sr-data.js
 // ==/UserScript==
 
 /*
@@ -20,10 +22,6 @@
 *******************************************************************************/
 
 "use strict";
-
-// Embed JS files, for Opera
-/*$(EMOTE_MAP)*/
-/*$(SR_DATA)*/
 
 var bpm_utils = {
     // Browser detection- this script runs unmodified on all supported platforms,
