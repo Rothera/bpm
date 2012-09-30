@@ -40,7 +40,7 @@ if(localStorage.prefs === undefined) {
     localStorage.prefs = "{}";
 }
 
-var pref_manager = manage_prefs(localStorage, JSON.parse(localStorage.prefs), sync_prefs, prefs_updated, dl_file, setTimeout);
+var pref_manager = bpm_backendsupport.manage_prefs(localStorage, JSON.parse(localStorage.prefs), sync_prefs, prefs_updated, dl_file, setTimeout);
 
 // Content script requests
 chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {

@@ -18,7 +18,7 @@ var simple_storage = require("simple-storage");
 var tabs = require("tabs");
 var timers = require("timers");
 
-var pref_setup = require("pref-setup");
+var bpm_backendsupport = require("pref-setup").bpm_backendsupport;
 var sr_data = require("sr-data");
 
 var storage = simple_storage.storage;
@@ -90,7 +90,7 @@ if(!storage.prefs) {
     }
 }
 
-var pref_manager = pref_setup.manage_prefs(storage, storage.prefs, sync_prefs, prefs_updated, dl_file, timers.setTimeout);
+var pref_manager = bpm_backendsupport.manage_prefs(storage, storage.prefs, sync_prefs, prefs_updated, dl_file, timers.setTimeout);
 
 function on_cs_attach(worker) {
     worker.on("message", function(message) {

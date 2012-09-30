@@ -15,82 +15,127 @@ if(this.require !== undefined) {
     var sr_data = require("sr-data").sr_data;
 }
 
-var default_prefs = {
-    "enableNSFW": false,
-    "enableExtraCSS": true,
-    "enabledSubreddits": {}, // subreddit name -> boolean enabled
-    "showUnknownEmotes": true,
-    "searchLimit": 200,
-    "searchBoxInfo": [600, 25, 600, 450],
-    "lastSearchQuery": "sr:mylittlepony", // only shows about a third, but that's ok
-    "showAltText": true,
-    "enableGlobalEmotes": false,
-    "enableGlobalSearch": false,
-    "globalIconPos": [16, 16],
-    "disabledEmotes": [],
-    "whitelistedEmotes": [],
-    "maxEmoteSize": 0,
-    "customCSSSubreddits": {} // subreddit name -> timestamp
-    };
+var bpm_backendsupport = {
+    default_prefs: {
+        "enableNSFW": false,
+        "enableExtraCSS": true,
+        "enabledSubreddits": {}, // subreddit name -> boolean enabled
+        "showUnknownEmotes": true,
+        "searchLimit": 200,
+        "searchBoxInfo": [600, 25, 600, 450],
+        "lastSearchQuery": "sr:mylittlepony", // only shows about a third, but that's ok
+        "showAltText": true,
+        "enableGlobalEmotes": false,
+        "enableGlobalSearch": false,
+        "globalIconPos": [16, 16],
+        "disabledEmotes": [],
+        "whitelistedEmotes": [],
+        "maxEmoteSize": 0,
+        "customCSSSubreddits": {} // subreddit name -> timestamp
+        },
 
-function setup_prefs(prefs) {
-    for(var key in default_prefs) {
-        if(prefs[key] === undefined) {
-            prefs[key] = default_prefs[key];
+    setup_prefs: function(prefs) {
+        for(var key in this.default_prefs) {
+            if(prefs[key] === undefined) {
+                prefs[key] = this.default_prefs[key];
+            }
         }
-    }
 
-    for(var sr in sr_data) {
-        if(prefs.enabledSubreddits[sr] === undefined) {
-            prefs.enabledSubreddits[sr] = true;
+        for(var sr in sr_data) {
+            if(prefs.enabledSubreddits[sr] === undefined) {
+                prefs.enabledSubreddits[sr] = true;
+            }
         }
-    }
-    // TODO: Remove subreddits from prefs that are no longer in the addon.
-}
+        // TODO: Remove subreddits from prefs that are no longer in the addon.
+    },
 
-var emote_regexp = /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="\/[\w:!#\/]+"\](:[a-zA-Z\-()]+)?[^}]*}/g;
+    emote_regexp: /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="\/[\w:!#\/]+"\](:[a-zA-Z\-()]+)?[^}]*}/g,
 
-function strip_subreddit_css(data) {
-    // Strip comments
-    data = data.replace(/\/\*[^*]*\*+(?:[^\/][^*]*\*+)*\//g, "");
-    // Strip PONYSCRIPT-IGNORE blocks
-    data = data.replace(/START-PONYSCRIPT-IGNORE[^{]*{[^}]*}[\s\S]*?END-PONYSCRIPT-IGNORE[^{]*{[^}]*}/g, "");
-    // Strip !important tags
-    data = data.replace(/\s*!important/gi, "");
-    // Strip leading spaces and newlines
-    data = data.replace(/^\s*|\n/gm, "");
+    strip_subreddit_css: function(data) {
+        // Strip comments
+        data = data.replace(/\/\*[^*]*\*+(?:[^\/][^*]*\*+)*\//g, "");
+        // Strip PONYSCRIPT-IGNORE blocks
+        data = data.replace(/START-PONYSCRIPT-IGNORE[^{]*{[^}]*}[\s\S]*?END-PONYSCRIPT-IGNORE[^{]*{[^}]*}/g, "");
+        // Strip !important tags
+        data = data.replace(/\s*!important/gi, "");
+        // Strip leading spaces and newlines
+        data = data.replace(/^\s*|\n/gm, "");
 
-    // Locate all emote blocks
-    var emote_text = "";
-    var match;
-    while((match = emote_regexp.exec(data)) !== null) {
-        emote_text += match[0] + "\n";
-    }
+        // Locate all emote blocks
+        var emote_text = "";
+        var match;
+        while((match = this.emote_regexp.exec(data)) !== null) {
+            emote_text += match[0] + "\n";
+        }
 
-    return emote_text;
-}
+        return emote_text;
+    },
 
-// Essentially a list compare, because JS sucks
-function subreddits_changed(old, n) {
-    if(old.length !== n.length) {
-        return true;
-    }
-
-    // Copy
-    var common = old.slice(0);
-
-    // Remove all elements in n
-    for(var i = 0; i < n.length; i++) {
-        var idx = common.indexOf(n[i]);
-        if(idx < 0) {
+    // Essentially a list compare, because JS sucks
+    subreddits_changed: function(old, n) {
+        if(old.length !== n.length) {
             return true;
         }
-        common.splice(idx, 1);
-    }
 
-    // Should be empty?
-    return common.length;
-}
+        // Copy
+        var common = old.slice(0);
+
+        // Remove all elements in n
+        for(var i = 0; i < n.length; i++) {
+            var idx = common.indexOf(n[i]);
+            if(idx < 0) {
+                return true;
+            }
+            common.splice(idx, 1);
+        }
+
+        // Should be empty?
+        return common.length;
+    },
+
+    manage_prefs: function(database, prefs, sync, update, download_file, set_timeout) {
+        // TODO: replace prefs argument with the database object, just assuming
+        // all values are string->string except for prefs
+
+        var manager = {
+            write: function(_prefs) {
+                prefs = _prefs;
+                this._sync();
+                this.cm.after_pref_write();
+            },
+
+            get: function() {
+                return prefs;
+            },
+
+            set_pref: function(key, value) {
+                if(prefs[key] === undefined) {
+                    console.log("BPM: ERROR: Attempt to write to nonexistent pref key " + key);
+                    return;
+                }
+                prefs[key] = value;
+                this._sync();
+                this.cm.after_pref_write();
+            },
+
+            database: database,
+            // Wait 2.5s between hitting Reddit
+            dl_queue: new TaskQueue(set_timeout, download_file, 2500),
+
+            _sync: function() {
+                sync(prefs);
+                update(prefs);
+            }
+        };
+
+        this.setup_prefs(prefs);
+        manager._sync();
+        manager.cm = new css_manager(manager);
+        manager.cm.after_pref_write();
+
+        return manager;
+    }
+};
 
 function TaskQueue(set_timeout, callback, delay) {
     this.set_timeout = set_timeout;
@@ -194,7 +239,7 @@ css_manager.prototype = {
         // should help a little bit
         var url = "http://reddit.com/r/" + subreddit + "/stylesheet.css?__ua=BetterPonymotes";
         this.pm.dl_queue.add(url, function(css) {
-            this.pm.database[key] = strip_subreddit_css(css);
+            this.pm.database[key] = bpm_backendsupport.strip_subreddit_css(css);
             prefs.customCSSSubreddits[subreddit] = Date.now();
             this.pm._sync();
             this.rebuild_cache();
@@ -209,7 +254,7 @@ css_manager.prototype = {
             tmp.push(sr);
         }
         // Always true for first run (compare [] to any other list)
-        var changed = subreddits_changed(this.cached_subreddits, tmp);
+        var changed = bpm_backendsupport.subreddits_changed(this.cached_subreddits, tmp);
 
         if(this.css_cache === null || changed) {
             this.rebuild_cache();
@@ -217,50 +262,7 @@ css_manager.prototype = {
     }
 };
 
-function manage_prefs(database, prefs, sync, update, download_file, set_timeout) {
-    // TODO: replace prefs argument with the database object, just assuming
-    // all values are string->string except for prefs
-
-    var manager = {
-        write: function(_prefs) {
-            prefs = _prefs;
-            this._sync();
-            this.cm.after_pref_write();
-        },
-
-        get: function() {
-            return prefs;
-        },
-
-        set_pref: function(key, value) {
-            if(prefs[key] === undefined) {
-                console.log("BPM: ERROR: Attempt to write to nonexistent pref key " + key);
-                return;
-            }
-            prefs[key] = value;
-            this._sync();
-            this.cm.after_pref_write();
-        },
-
-        database: database,
-        // Wait 2.5s between hitting Reddit
-        dl_queue: new TaskQueue(set_timeout, download_file, 2500),
-
-        _sync: function() {
-            sync(prefs);
-            update(prefs);
-        }
-    };
-
-    setup_prefs(prefs);
-    manager._sync();
-    manager.cm = new css_manager(manager);
-    manager.cm.after_pref_write();
-
-    return manager;
-}
-
 // Firefox
-if(typeof(exports) !== 'undefined') {
-    exports.manage_prefs = manage_prefs;
+if(typeof(exports) !== "undefined") {
+    exports.bpm_backendsupport = bpm_backendsupport;
 }
