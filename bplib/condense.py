@@ -109,7 +109,7 @@ def condense_css(rules):
         if len(selectors) > 1:
             # For some reason, condensing these properties here gains more savings
             # than doing them separately. Oh well.
-            condense({"background-image": image_url, "display": "block", "clear": "none", "float": "left"})
+            condense({"background-image": image_url, "display": "block", "float": "left"})
 
     # Condense similar background-position's. Not likely to make a big difference
     # except for a few very similar spritesheet grids.

@@ -118,7 +118,6 @@ class NormalEmote(Emote):
         assert not self.disable_css_gen
         css = {
             "display": "block",
-            "clear": "none",
             "float": "left",
             "background-image": "url(%s)" % (self.image_url),
             "width": "%spx" % (self.size[0]),
