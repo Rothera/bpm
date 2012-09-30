@@ -1,15 +1,20 @@
 // ==UserScript==
+// @description View Reddit ponymotes across the site
+// @downloadURL http://rainbow.mlas1.us/betterponymotes.user.js
+// @grant GM_log
+// @grant GM_getValue
+// @grant GM_setValue
 // @include http://*/*
 // @include https://*/*
-// @require emote-map.js
-// @require sr-data.js
+// @name BetterPonymotes
+// @namespace http://rainbow.mlas1.us/
+// @require emote-map.js?p=1&sver=27.51.4
+// @require sr-data.js?p=1&sver=27.51.4
+// @require pref-setup.js?p=1&sver=27.51.4
+// @run-at document-start
+// @updateURL http://rainbow.mlas1.us/betterponymotes.user.js
+// @version 27.51.4
 // ==/UserScript==
-
-/*
- * THIS FILE IS NOT A USERSCRIPT. DO NOT ATTEMPT TO INSTALL IT AS SUCH.
- *
- * The above header is used by Opera.
- */
 
 /*******************************************************************************
 **
@@ -36,7 +41,10 @@ var bpm_utils = {
             return "chrome-ext";
         } else if(global.opera !== undefined && global.opera.extension !== undefined) {
             return "opera-ext";
+        } else if(global.GM_log !== undefined) {
+            return "userscript";
         } else {
+            // bpm_log doesn't exist, so this is as good a guess as we get
             console.log("BPM: ERROR: Unknown platform!");
             return "unknown";
         }
@@ -102,7 +110,7 @@ var bpm_utils = {
             try {
                 return f.apply(this, arguments);
             } catch(e) {
-                console.log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
+                bpm_log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
             }
         };
     },
@@ -136,6 +144,9 @@ var bpm_utils = {
         }, false);
     }
 };
+
+// Chrome is picky about bind().
+var bpm_log = bpm_utils.platform == "userscript" ? GM_log : console.log.bind(console);
 
 var bpm_browser = {
     add_css: function(css) {
@@ -205,7 +216,7 @@ case "firefox-ext":
             break;
 
         default:
-            console.log("BPM: ERROR: Unknown request from Firefox background script: '" + message.method + "'");
+            bpm_log("BPM: ERROR: Unknown request from Firefox background script: '" + message.method + "'");
             break;
         }
     });
@@ -234,7 +245,7 @@ case "chrome-ext":
                 break;
 
             default:
-                console.log("BPM: ERROR: Unknown request from Chrome background script: '" + message.method + "'");
+                bpm_log("BPM: ERROR: Unknown request from Chrome background script: '" + message.method + "'");
                 break;
             }
         },
@@ -285,7 +296,7 @@ case "opera-ext":
                     };
                     reader.readAsText(file);
                 } else {
-                    console.log("BPM: ERROR: Opera getFile() failed on '" + filename + "'");
+                    bpm_log("BPM: ERROR: Opera getFile() failed on '" + filename + "'");
                 }
             }
         });
@@ -318,10 +329,48 @@ case "opera-ext":
             break;
 
         default:
-            console.log("BPM: ERROR: Unknown request from Opera background script: '" + message.method + "'");
+            bpm_log("BPM: ERROR: Unknown request from Opera background script: '" + message.method + "'");
             break;
         }
     }, false);
+    break;
+
+case "userscript":
+    bpm_utils.copy_properties(bpm_browser, {
+        css_parent: document.head, // probably
+        prefs: null,
+
+        set_pref: function(key, value) {
+            // this.prefs shared with bpm_prefs, so no need to worry
+            this._sync_prefs();
+        },
+
+        _sync_prefs: function() {
+            GM_setValue("prefs", JSON.stringify(this.prefs));
+        },
+
+        request_prefs: function() {
+            var tmp = GM_getValue("prefs");
+            if(tmp === undefined) {
+                tmp = "{}";
+            }
+
+            this.prefs = JSON.parse(tmp);
+            bpm_backendsupport.setup_prefs(this.prefs);
+            this._sync_prefs();
+
+            bpm_prefs.got_prefs(this.prefs);
+        },
+
+        request_custom_css: function() {
+        },
+
+        link_css: function(filename) {
+            var url = "http://rainbow.mlas1.us/" + filename + "?p=1&v=27.51.4";
+            var tag = bpm_utils.stylesheet_link(url);
+            this.css_parent.insertBefore(tag, this.css_parent.firstChild);
+        }
+    });
     break;
 }
 
@@ -361,7 +410,7 @@ var bpm_prefs = {
             //
             // Also bad would be items in prefs not in sr_id_map, but that's
             // more or less impossible to handle.
-            console.log("BPM: ERROR: sr_array has holes; installation or prefs are broken!");
+            bpm_log("BPM: ERROR: sr_array has holes; installation or prefs are broken!");
         }
     },
 
