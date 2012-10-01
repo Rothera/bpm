@@ -742,7 +742,7 @@ var bpm_search = {
             global_icon_x = parseInt(this.global_icon.style.left, 10);
             global_icon_y = parseInt(this.global_icon.style.top, 10);
         }.bind(this), function(event, start_x, start_y, x, y) {
-            if(!event.ctrlKey) {
+            if(!event.ctrlKey && !event.metaKey) {
                 return;
             }
 
@@ -788,7 +788,7 @@ var bpm_search = {
             '    <span id="bpm-resize"></span>',
             '  </div>',
             '</div>',
-            '<div id="bpm-global-icon" title="Hold ctrl to drag"></div>'
+            '<div id="bpm-global-icon" title="Hold Ctrl (Command/Meta) to drag"></div>'
             ].join("\n");
         div.innerHTML = html;
         document.body.appendChild(div);
@@ -1028,8 +1028,8 @@ var bpm_search = {
 
         this.global_icon.addEventListener("click", function(event) {
             // Don't open at the end of a drag (only works if you release the
-            // mouse button before the ctrl key though...)
-            if(!event.ctrlKey) {
+            // mouse button before the ctrl/meta key though...)
+            if(!event.ctrlKey && !event.metaKey) {
                 this.show(prefs);
             }
         }.bind(this), false);
