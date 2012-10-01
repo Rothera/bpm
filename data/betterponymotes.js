@@ -149,10 +149,14 @@ var bpm_utils = {
 var bpm_log = bpm_utils.platform == "userscript" ? GM_log : console.log.bind(console);
 
 var bpm_browser = {
+    css_parent: function() {
+        return document.head;
+    },
+
     add_css: function(css) {
         if(css) {
             var tag = bpm_utils.style_tag(css);
-            this.css_parent.insertBefore(tag, this.css_parent.firstChild);
+            this.css_parent().insertBefore(tag, this.css_parent().firstChild);
         }
     },
 
@@ -169,7 +173,7 @@ var bpm_browser = {
     }
 
     // Missing attributes/methods:
-    //    var css_parent
+    //    function css_parent()
     //    function _send_message(method, data)
     //    function link_css(filename)
     // Assumed globals:
@@ -181,8 +185,6 @@ var bpm_browser = {
 switch(bpm_utils.platform) {
 case "firefox-ext":
     bpm_utils.copy_properties(bpm_browser, {
-        css_parent: document.head,
-
         _send_message: function(method, data) {
             if(data === undefined) {
                 data = {};
@@ -201,7 +203,7 @@ case "firefox-ext":
             var tag = bpm_utils.stylesheet_link(url);
             // Seems to work in Firefox, and we get to put our tags in a pretty
             // place!
-            this.css_parent.insertBefore(tag, this.css_parent.firstChild);
+            this.css_parent().insertBefore(tag, this.css_parent().firstChild);
         }
     });
 
@@ -224,7 +226,9 @@ case "firefox-ext":
 
 case "chrome-ext":
     bpm_utils.copy_properties(bpm_browser, {
-        css_parent: document.documentElement,
+        css_parent: function() {
+            return document.documentElement;
+        },
 
         _send_message: function(method, data) {
             if(data === undefined) {
@@ -255,15 +259,13 @@ case "chrome-ext":
             // document.head does not exist at this point in Chrome (it's null).
             // Trying to access it seems to blow it away. Strange. This will
             // have to suffice (though it gets them "backwards").
-            this.css_parent.insertBefore(tag, this.css_parent.firstChild);
+            this.css_parent().insertBefore(tag, this.css_parent().firstChild);
         }
     });
     break;
 
 case "opera-ext":
     bpm_utils.copy_properties(bpm_browser, {
-        css_parent: document.head,
-
         _send_message: function(method, data) {
             if(data === undefined) {
                 data = {};
@@ -275,7 +277,7 @@ case "opera-ext":
         link_css: function(filename) {
             this._get_file(filename, function(data) {
                 var tag = bpm_utils.style_tag(data);
-                this.css_parent.insertBefore(tag, this.css_parent.firstChild);
+                this.css_parent().insertBefore(tag, this.css_parent().firstChild);
             }.bind(this));
         }
     });
@@ -337,7 +339,6 @@ case "opera-ext":
 
 case "userscript":
     bpm_utils.copy_properties(bpm_browser, {
-        css_parent: document.head, // probably
         prefs: null,
 
         set_pref: function(key, value) {
@@ -368,7 +369,10 @@ case "userscript":
         link_css: function(filename) {
             var url = "http://rainbow.mlas1.us/" + filename + "?p=1&v=28.52";
             var tag = bpm_utils.stylesheet_link(url);
-            this.css_parent.insertBefore(tag, this.css_parent.firstChild);
+            bpm_log("link_css(" + filename + "): document.head=" + document.head +
+                    ", this.css_parent()=" + this.css_parent() + ", document.documentElement=" + document.documentElement +
+                    ", document.readyState=" + document.readyState);
+            this.css_parent().insertBefore(tag, this.css_parent().firstChild);
         }
     });
     break;
@@ -1385,11 +1389,24 @@ var bpm_core = {
         bpm_browser.request_custom_css();
 
         if(bpm_utils.ends_with(document.location.hostname, "reddit.com")) {
-            this.init_css();
+            // Most environments permit us to create <link> tags before
+            // DOMContentLoaded (though Chrome forces us to use documentElement).
+            // Scriptish is one that does not- there's no clear way to
+            // manipulate the partial DOM, so we delay.
+            var init_later = false;
+            if(bpm_browser.css_parent()) {
+                this.init_css();
+            } else {
+                init_later = true;
+            }
 
             // This script is generally run before the DOM is built. Opera may break
             // that rule, but I don't know how and there's nothing we can do anyway.
             window.addEventListener("DOMContentLoaded", function() {
+                if(init_later) {
+                    this.init_css();
+                }
+
                 bpm_prefs.when_available(function(prefs) {
                     this.run(prefs);
                 }.bind(this));
