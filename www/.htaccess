@@ -1,1 +1,23 @@
 AddType application/x-opera-extension oex
+
+ExpiresActive On
+
+<Files "bpmotes.css">
+  ExpiresDefault "access plus 1 week"
+</Files>
+<Files "emote-classes.css">
+  ExpiresDefault "access plus 1 week"
+</Files>
+<Files "combiners-nsfw.css">
+  ExpiresDefault "access plus 1 week"
+</Files>
+
+<Files "emote-map.js">
+  ExpiresDefault "access plus 1 week"
+</Files>
+<Files "sr-data.js">
+  ExpiresDefault "access plus 1 week"
+</Files>
+<Files "pref-setup.js">
+  ExpiresDefault "access plus 1 week"
+</Files>
