@@ -226,6 +226,9 @@
     position: fixed;
     left: 16px;
     top: 15px;
+
+    /* On top of most things */
+    z-index: 524287;
 }
 
 /* Misc emote flags, stolen from various subreddits. */
