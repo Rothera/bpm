@@ -8,12 +8,12 @@
 // @include https://*/*
 // @name BetterPonymotes
 // @namespace http://rainbow.mlas1.us/
-// @require emote-map.js?p=1&sver=27.51.4
-// @require sr-data.js?p=1&sver=27.51.4
-// @require pref-setup.js?p=1&sver=27.51.4
+// @require emote-map.js?p=1&sver=28.52
+// @require sr-data.js?p=1&sver=28.52
+// @require pref-setup.js?p=1&sver=28.52
 // @run-at document-start
 // @updateURL http://rainbow.mlas1.us/betterponymotes.user.js
-// @version 27.51.4
+// @version 28.52
 // ==/UserScript==
 
 /*******************************************************************************
@@ -366,7 +366,7 @@ case "userscript":
         },
 
         link_css: function(filename) {
-            var url = "http://rainbow.mlas1.us/" + filename + "?p=1&v=27.51.4";
+            var url = "http://rainbow.mlas1.us/" + filename + "?p=1&v=28.52";
             var tag = bpm_utils.stylesheet_link(url);
             this.css_parent.insertBefore(tag, this.css_parent.firstChild);
         }
