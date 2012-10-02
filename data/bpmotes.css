@@ -32,6 +32,19 @@
     padding: 5px;
 }
 
+.bpm-disabled, .bpm-disabled:before, .bpm-disabled:after, .bpm-disabled:hover, .bpm-disabled:active,
+.bpm-nsfw, .bpm-nsfw:before, .bpm-nsfw:after, .bpm-nsfw:hover, .bpm-nsfw:active {
+    /*
+     * These two classes are used to shut emotes down, so in the interests of
+     * working even in the emote's native subreddit, we try to override anything
+     * else.
+     *
+     * Unfortunately, we still lose if the subreddit uses !important, but
+     * there's not much we can do about that.
+     */
+    background-image: none !important;
+}
+
 /* Unknown emote placeholder */
 .bpm-unknown {
     background-color: slategray;
@@ -42,17 +55,6 @@
 .bpm-disabled {
     background-color: #DA4F49;
     border-radius: 10px;
-}
-
-.bpm-disabled, .bpm-disabled:before, .bpm-disabled:after, .bpm-disabled:hover, .bpm-disabled:active {
-    /*
-     * This class is used on existing emotes sometimes, so we need to try to
-     * override subreddit CSS.
-     *
-     * Unfortunately we still lose if the subreddit uses !important, but there's
-     * nothing we can do about that.
-     */
-    background-image: none !important;
 }
 
 /* NSFW emote placeholder */
