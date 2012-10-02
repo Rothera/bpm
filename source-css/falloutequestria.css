@@ -40,35 +40,9 @@
     clear: both
     }
 
-/*Changes your reddit's name (at the top) to an image. All '??' must be edited to the dimentions 
-you want your image to be.*/  
-
-
-/* .side .usertext a[href="http://www.equestriadaily.com/2011/04/story-fallout-equestria.html"] {
-    background-image: url(%%sidebar-v2%%);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    display: block;
-    height: 392px;
-    position: absolute;
-    right: 5px;
-    top: 169px;
-    width: 300px;
-    z-index: 900;
-    color: #313224;
-    font-size: 0px
-    } 
-
-
-.side {
-    padding-top: 392px
-    } */
-
-
 #header-img{
 margin-top: 5px;
 }
-
 
 
 .pagename a{
@@ -78,11 +52,6 @@ font-family:Arial;
 font-style:italic;
 
 }
-
-.tabmenu.formtab{
-padding-top:40px;
-}
-
 
 .side .titlebox h1 a, .side .titlebox h1 a:link .side .titlebox h1 a:visited {
     font-family: terminal;
@@ -97,11 +66,15 @@ padding-top:40px;
     }
 
 
-.tabmenu{
+#header UL.tabmenu{
 position:absolute;
 top:100px;
-/*margin-top:-16px!important;*/}
 
+}
+
+#header UL.tabmenu a {color: black; background-color: white; border: none;}
+
+#header UL.tabmenu li.selected a {color:#CD0000;}
 
 
 .titlebox span.word {
@@ -288,14 +261,11 @@ a[href|="/p21fh"]{ background-position: 0px -150px; width: 70px; height: 70px;}
 /* Flair */
 
 
-.flairselector .customizer {
-    display: none !important
-    }
 .flair {
     border: none !important;
     top: 20px;
     padding: 0px;
-    background: url(%%spritesheet-v16%%);
+    background: url(%%spritesheet-v16%%) no-repeat;
     display: inline-block;
 vertical-align: middle;
     }

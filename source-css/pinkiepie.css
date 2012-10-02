@@ -1,8 +1,50 @@
 /*------------------------  Changes background -------------------------------*/
 
-body, body.res-nightmode:first-of-type {
-  background: url(%%happy%%) no-repeat fixed center bottom !important ;
+body:first-of-type, body.res-nightmode:first-of-type,.side,.flairtoggle,.submit .spacer,.create .spacer,.icon-menu a,.nub { background-color: transparent !important; }
+.side a[href="/bg-pony"] { 
+    position: fixed;
+    z-index:-1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
 }
+.side .usertext[id$="a"] a[href="/bg-pony"] { background:url(%%d4jqbos%%) no-repeat  fixed 70% 100% !important; }
+.side .usertext[id$="b"] a[href="/bg-pony"] { background:url(%%happy%%) no-repeat  fixed 70% 100% !important}
+.side .usertext[id$="c"] a[href="/bg-pony"] { background:url(%%smiles%%) no-repeat  fixed 70% 100% !important}
+.side .usertext[id$="d"] a[href="/bg-pony"] { background:url(%%sing%%) no-repeat  fixed 70% 100% !important}
+.side .usertext[id$="e"] a[href="/bg-pony"] { background:url(%%speedybg%%) no-repeat  fixed 70% 100% !important}
+.side .usertext[id$="f"] a[href="/bg-pony"] { background:url(%%drazebg%%) no-repeat  fixed 70% 100% !important}
+.side .usertext[id$="g"] a[href="/bg-pony"] { background:url(%%badge%%) no-repeat  fixed 70% 100% !important}
+.side .usertext[id$="h"] a[href="/bg-pony"] { background:url(%%smiles%%) no-repeat  fixed 70% 100% !important}
+.side .usertext[id$="i"] a[href="/bg-pony"] { background:url(%%d4jqbos%%) no-repeat  fixed 70% 100% !important}
+.side .usertext[id$="j"] a[href="/bg-pony"] { background:url(%%sing%%) no-repeat  fixed 70% 100% !important}
+.side .usertext[id$="k"] a[href="/bg-pony"] { background:url(%%happy%%) no-repeat  fixed 70% 100% !important}
+.side .usertext[id$="l"] a[href="/bg-pony"] { background:url(%%happy%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="m"] a[href="/bg-pony"] { background:url(%%happy%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="n"] a[href="/bg-pony"] { background:url(%%speedybg%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="o"] a[href="/bg-pony"] { background:url(%%speedybg%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="p"] a[href="/bg-pony"] { background:url(%%badge%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="q"] a[href="/bg-pony"] { background:url(%%badge%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="r"] a[href="/bg-pony"] { background:url(%%drazebg%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="s"] a[href="/bg-pony"] { background:url(%%drazebg%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="t"] a[href="/bg-pony"] { background:url(%%sing%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="u"] a[href="/bg-pony"] { background:url(%%sing%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="v"] a[href="/bg-pony"] { background:url(%%badge%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="w"] a[href="/bg-pony"] { background:url(%%speedybg%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="x"] a[href="/bg-pony"] { background:url(%%drazebg%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="y"] a[href="/bg-pony"] { background:url(%%smiles%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="z"] a[href="/bg-pony"] { background:url(%%smiles%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="0"] a[href="/bg-pony"] { background:url(%%smiles%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="1"] a[href="/bg-pony"] { background:url(%%smiles%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="2"] a[href="/bg-pony"] { background:url(%%smiles%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="3"] a[href="/bg-pony"] { background:url(%%speedybg%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="4"] a[href="/bg-pony"] { background:url(%%speedybg%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="5"] a[href="/bg-pony"] { background:url(%%speedybg%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="6"] a[href="/bg-pony"] { background:url(%%d4jqbos%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="7"] a[href="/bg-pony"] { background:url(%%d4jqbos%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="8"] a[href="/bg-pony"] { background:url(%%d4jqbos%%) no-repeat  fixed 70% 100% !important;}
+.side .usertext[id$="9"] a[href="/bg-pony"] { background:url(%%drazebg%%) no-repeat  fixed 70% 100% !important;}
 
 /*---------------------- Nightmode fixes for the background -------------------------------- */
 .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}

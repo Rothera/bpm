@@ -443,6 +443,11 @@ div.titlebox span.word {
 div.titlebox span.number:after {
     content: " Tacos"
     }
+div.titlebox .users-online span.number:after
+{
+    content:" being eaten";
+}
+
 
 /* ----------------FOOTER----------------- */
 .footer-parent {
