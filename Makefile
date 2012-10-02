@@ -21,9 +21,8 @@ build/betterponymotes.xpi: build/emote-classes.css build/emote-map.js build/sr-d
 	cp build/betterponymotes.xpi build/betterponymotes_`bin/version.py get`.xpi
 
 build/chrome: build/emote-classes.css build/emote-map.js build/sr-data.js chrome/*
-	rm -r build/chrome
-	cp -rL chrome build
-	rm build/chrome/key.pem
+	cp -RL chrome build
+	rm -f build/chrome/key.pem
 
 build/chrome.zip: build/emote-classes.css build/emote-map.js build/sr-data.js chrome/*
 	rm -f build/chrome.zip
