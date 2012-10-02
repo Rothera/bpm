@@ -35,22 +35,25 @@ var bpm_utils = {
         // FIXME: "self" is a standard object, though self.on is specific to
         // Firefox content scripts. I'd prefer something a little more clearly
         // affiliated, though.
-        if(self.on !== undefined) {
+        //
+        // Need to check GM_log first, because stuff like chrome.extension
+        // exists even in userscript contexts.
+        if(global.GM_log !== undefined) {
+            return "userscript";
+        } else if(self.on !== undefined) {
             return "firefox-ext";
         } else if(global.chrome !== undefined && global.chrome.extension !== undefined) {
             return "chrome-ext";
         } else if(global.opera !== undefined && global.opera.extension !== undefined) {
             return "opera-ext";
-        } else if(global.GM_log !== undefined) {
-            return "userscript";
         } else {
             // bpm_log doesn't exist, so this is as good a guess as we get
             console.log("BPM: ERROR: Unknown platform!");
             return "unknown";
         }
-    })(this),
+    })(window),
 
-    MutationObserver: (function(global) { return global.MutationObserver || global.WebKitMutationObserver || global.MozMutationObserver; })(this),
+    MutationObserver: (function(global) { return global.MutationObserver || global.WebKitMutationObserver || global.MozMutationObserver; })(window),
 
     style_tag: function(css) {
         var tag = document.createElement("style");
