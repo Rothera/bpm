@@ -10,11 +10,6 @@
 
 "use strict";
 
-// Firefox
-if(this.require !== undefined) {
-    var sr_data = require("sr-data").sr_data;
-}
-
 var bpm_backendsupport = {
     default_prefs: {
         "enableNSFW": false,
@@ -34,7 +29,7 @@ var bpm_backendsupport = {
         "customCSSSubreddits": {} // subreddit name -> timestamp
         },
 
-    setup_prefs: function(prefs) {
+    setup_prefs: function(prefs, sr_data) {
         for(var key in this.default_prefs) {
             if(prefs[key] === undefined) {
                 prefs[key] = this.default_prefs[key];
@@ -93,7 +88,7 @@ var bpm_backendsupport = {
         return common.length;
     },
 
-    manage_prefs: function(database, prefs, sync, update, download_file, set_timeout) {
+    manage_prefs: function(sr_data, database, prefs, sync, update, download_file, set_timeout) {
         // TODO: replace prefs argument with the database object, just assuming
         // all values are string->string except for prefs
 
@@ -128,7 +123,7 @@ var bpm_backendsupport = {
             }
         };
 
-        this.setup_prefs(prefs);
+        this.setup_prefs(prefs, sr_data);
         manager._sync();
         manager.cm = new css_manager(manager);
         manager.cm.after_pref_write();

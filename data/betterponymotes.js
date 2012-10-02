@@ -8,9 +8,9 @@
 // @include https://*/*
 // @name BetterPonymotes
 // @namespace http://rainbow.mlas1.us/
-// @require emote-map.js?p=2&cver=28
-// @require sr-data.js?p=2&cver=28
-// @require pref-setup.js?p=2&cver=28
+// @require http://rainbow.mlas1.us/emote-map.js?p=2&cver=28
+// @require http://rainbow.mlas1.us/sr-data.js?p=2&cver=28
+// @require http://rainbow.mlas1.us/pref-setup.js?p=2&cver=28
 // @run-at document-start
 // @updateURL http://rainbow.mlas1.us/betterponymotes.user.js
 // @version 28.52
@@ -30,6 +30,9 @@
 
 var BPM_CODE_VERSION = 28;
 var BPM_DATA_VERSION = 52;
+var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us/"
+
+var _bpm_global = (!this ? window : this);
 
 var bpm_utils = {
     // Browser detection- this script runs unmodified on all supported platforms,
@@ -54,9 +57,9 @@ var bpm_utils = {
             console.log("BPM: ERROR: Unknown platform!");
             return "unknown";
         }
-    })(window),
+    })(_bpm_global),
 
-    MutationObserver: (function(global) { return global.MutationObserver || global.WebKitMutationObserver || global.MozMutationObserver; })(window),
+    MutationObserver: (function(global) { return global.MutationObserver || global.WebKitMutationObserver || global.MozMutationObserver; })(_bpm_global),
 
     style_tag: function(css) {
         var tag = document.createElement("style");
@@ -363,7 +366,7 @@ case "userscript":
             }
 
             this.prefs = JSON.parse(tmp);
-            bpm_backendsupport.setup_prefs(this.prefs);
+            bpm_backendsupport.setup_prefs(this.prefs, sr_data);
             this._sync_prefs();
 
             bpm_prefs.got_prefs(this.prefs);
@@ -373,11 +376,8 @@ case "userscript":
         },
 
         link_css: function(filename) {
-            var url = "http://rainbow.mlas1.us/" + filename + "?p=2&dver=" + BPM_DATA_VERSION;
+            var url = BPM_RESOURCE_PREFIX + filename + "?p=2&dver=" + BPM_DATA_VERSION;
             var tag = bpm_utils.stylesheet_link(url);
-            bpm_log("link_css(" + filename + "): document.head=" + document.head +
-                    ", this.css_parent()=" + this.css_parent() + ", document.documentElement=" + document.documentElement +
-                    ", document.readyState=" + document.readyState);
             this.css_parent().insertBefore(tag, this.css_parent().firstChild);
         }
     });

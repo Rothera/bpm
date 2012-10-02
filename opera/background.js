@@ -39,7 +39,7 @@ if(localStorage.prefs === undefined) {
     localStorage.prefs = "{}";
 }
 
-var pref_manager = bpm_backendsupport.manage_prefs(localStorage, JSON.parse(localStorage.prefs), sync_prefs, prefs_updated, dl_file, setTimeout);
+var pref_manager = bpm_backendsupport.manage_prefs(sr_data, localStorage, JSON.parse(localStorage.prefs), sync_prefs, prefs_updated, dl_file, setTimeout);
 
 // XHR request from background process = load file data. Weird.
 function get_file_data(filename) {

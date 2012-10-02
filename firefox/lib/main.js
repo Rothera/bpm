@@ -90,7 +90,7 @@ if(!storage.prefs) {
     }
 }
 
-var pref_manager = bpm_backendsupport.manage_prefs(storage, storage.prefs, sync_prefs, prefs_updated, dl_file, timers.setTimeout);
+var pref_manager = bpm_backendsupport.manage_prefs(sr_data.sr_data, storage, storage.prefs, sync_prefs, prefs_updated, dl_file, timers.setTimeout);
 
 function on_cs_attach(worker) {
     worker.on("message", function(message) {
