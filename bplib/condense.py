@@ -96,13 +96,16 @@ def condense_css(rules):
     # TODO: Would be nice to automatically seek out stuff we can efficiently
     # collapse, but for now, this achieves great gains for little complexity.
 
-    # Remove all useless background-position's
-    if "0px 0px" in properties.get("background-position", {}):
-        for selector in properties["background-position"]["0px 0px"]:
-            del rules[selector]["background-position"]
-            if not rules[selector]:
-                del rules[selector]
-        del properties["background-position"]["0px 0px"]
+    # FIXME: This breaks certain hovermotes. Find a proper solution another day.
+    # Until then, we'll have to live with the extra 15kb or so that these rules
+    # make for.
+    ## Remove all useless background-position's
+    #if "0px 0px" in properties.get("background-position", {}):
+    #    for selector in properties["background-position"]["0px 0px"]:
+    #        del rules[selector]["background-position"]
+    #        if not rules[selector]:
+    #            del rules[selector]
+    #    del properties["background-position"]["0px 0px"]
 
     # Condense multi-emote spritesheets (probably most of our savings)
     for (image_url, selectors) in list(properties.get("background-image", {}).items()):
