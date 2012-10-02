@@ -25,6 +25,7 @@ var bpm_backendsupport = {
         "globalIconPos": [16, 16],
         "disabledEmotes": [],
         "whitelistedEmotes": [],
+        "hideDisabledEmotes": false,
         "maxEmoteSize": 0,
         "customCSSSubreddits": {} // subreddit name -> timestamp
         },

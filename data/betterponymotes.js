@@ -479,10 +479,12 @@ var bpm_converter = {
                     element.dataset["emote"] = emote_name; // Used in alt-text
 
                     if(!prefs.we_map[emote_name]) {
+                        var nsfw_class = prefs.prefs.hideDisabledEmotes ? " bpm-hidden" : " bpm-nsfw";
+                        var disabled_class = prefs.prefs.hideDisabledEmotes ? " bpm-hidden" : " bpm-disabled";
                         // Ordering matters a bit here- placeholders for NSFW emotes
                         // come before disabled emotes.
                         if(is_nsfw && !prefs.prefs.enableNSFW) {
-                            element.className += " bpm-nsfw";
+                            element.className += nsfw_class;
                             if(!element.textContent) {
                                 // Any existing text (there really shouldn't be any)
                                 // will look funny with our custom CSS, but there's
@@ -493,7 +495,7 @@ var bpm_converter = {
                         }
 
                         if(!prefs.sr_array[source_id] || prefs.de_map[emote_name]) {
-                            element.className += " bpm-disabled";
+                            element.className += disabled_class;
                             if(!element.textContent) {
                                 element.textContent = "Disabled " + emote_name;
                             }
@@ -501,7 +503,7 @@ var bpm_converter = {
                         }
 
                         if(prefs.prefs.maxEmoteSize && emote_size > prefs.prefs.maxEmoteSize) {
-                            element.className += " bpm-disabled";
+                            element.className += disabled_class;
                             if(!element.textContent) {
                                 element.textContent = "Large emote " + emote_name;
                             }
