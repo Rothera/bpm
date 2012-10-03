@@ -1,9 +1,23 @@
 Emotes:
   Custom:
+  - CSS: {background-position: -70px -420px}
+    Name: /romana
+  - CSS: {background-position: -70px -420px}
+    Name: /rromana
   - CSS: {display: inline-block, padding-right: 100%}
     Name: /sp
   Spritesheets:
-    http://a.thumbs.redditmedia.com/2I3LRYPXfD1DF4UB.png:
+    http://a.thumbs.redditmedia.com/CZ2UcX1OSHdrKzJ6.png:
+    - Name: /ba1
+      Offset: [0, 0]
+      Size: [137, 103]
+    - Name: /ilovebananas
+      Offset: [0, 0]
+      Size: [137, 103]
+    http://a.thumbs.redditmedia.com/Wp_boacFUSwWBmEH.png:
+    - Name: /banana
+      Offset: [0, -630]
+      Size: [70, 70]
     - Name: /cyberpony
       Offset: [0, -140]
       Size: [70, 70]
@@ -44,7 +58,7 @@ Emotes:
       Offset: [-70, -210]
       Size: [70, 70]
     - Name: /dinkypresents
-      Offset: [0, 0]
+      Offset: [0, -210]
       Size: [70, 70]
     - Name: /dinkytada
       Offset: [0, -210]
@@ -73,6 +87,12 @@ Emotes:
     - Name: /dw07
       Offset: [0, -490]
       Size: [70, 70]
+    - Name: /dw08
+      Offset: [0, -560]
+      Size: [70, 70]
+    - Name: /dw09
+      Offset: [0, -630]
+      Size: [70, 70]
     - Name: /dw10
       Offset: [-70, 0]
       Size: [70, 70]
@@ -96,6 +116,12 @@ Emotes:
       Size: [70, 70]
     - Name: /dw17
       Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /dw18
+      Offset: [-70, -560]
+      Size: [70, 70]
+    - Name: /dw19
+      Offset: [-70, -630]
       Size: [70, 70]
     - Name: /dw20
       Offset: [-140, 0]
@@ -121,11 +147,26 @@ Emotes:
     - Name: /dw27
       Offset: [-140, -490]
       Size: [70, 70]
+    - Name: /dw28
+      Offset: [-140, -560]
+      Size: [70, 70]
+    - Name: /dw29
+      Offset: [-140, -630]
+      Size: [70, 70]
+    - Name: /dw3d
+      Offset: [-70, -560]
+      Size: [70, 70]
     - Name: /dwbleh
       Offset: [-140, -490]
       Size: [70, 70]
+    - Name: /dwblush
+      Offset: [-140, -560]
+      Size: [70, 70]
     - Name: /dwconcerned
       Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /dwddd
+      Offset: [-70, -560]
       Size: [70, 70]
     - Name: /dwevil
       Offset: [0, -490]
@@ -148,6 +189,12 @@ Emotes:
     - Name: /dwworried
       Offset: [0, 0]
       Size: [70, 70]
+    - Name: /evilwat
+      Offset: [0, -560]
+      Size: [70, 70]
+    - Name: /evilwut
+      Offset: [0, -560]
+      Size: [70, 70]
     - Name: /ihatepears
       Offset: [-140, -70]
       Size: [70, 70]
@@ -157,173 +204,24 @@ Emotes:
     - Name: /pear
       Offset: [-140, -140]
       Size: [70, 70]
-    http://a.thumbs.redditmedia.com/CZ2UcX1OSHdrKzJ6.png:
-    - Name: /ba1
-      Offset: [0, 0]
-      Size: [137, 103]
-    - Name: /ilovebananas
-      Offset: [0, 0]
-      Size: [137, 103]
+    - Name: /peeved
+      Offset: [-140, -630]
+      Size: [70, 70]
+    - Name: /sparklerannoyed
+      Offset: [-140, -630]
+      Size: [70, 70]
+    - Name: /sparklermad
+      Offset: [-70, -630]
+      Size: [70, 70]
+    - Name: /sparklerpeeved
+      Offset: [-140, -630]
+      Size: [70, 70]
     http://a.thumbs.redditmedia.com/ZqxffVrG2BJjyaAZ.png:
     - Name: /ra24
       Offset: [0, 0]
       Size: [70, 70]
     - Name: /rswagintosh
       Offset: [0, 0]
-      Size: [70, 70]
-    http://a.thumbs.redditmedia.com/cvTKau_uDUaBg5tf.png:
-    - Name: /rcyberpony
-      Offset: [0, -140]
-      Size: [70, 70]
-    - Name: /rdalek
-      Offset: [-70, -140]
-      Size: [70, 70]
-    - Name: /rderpycam
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rderpypeak
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rderpypout
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rdhburnt
-      Offset: [0, -350]
-      Size: [70, 70]
-    - Name: /rdhexcited
-      Offset: [0, -420]
-      Size: [70, 70]
-    - Name: /rdhmuffin
-      Offset: [-140, -420]
-      Size: [70, 70]
-    - Name: /rdhoops
-      Offset: [-70, -420]
-      Size: [70, 70]
-    - Name: /rdhsleep
-      Offset: [-70, -350]
-      Size: [70, 70]
-    - Name: /rdhstare
-      Offset: [-140, -350]
-      Size: [70, 70]
-    - Name: /rdinky
-      Offset: [-140, -210]
-      Size: [70, 70]
-    - Name: /rdinkyfire
-      Offset: [-70, -210]
-      Size: [70, 70]
-    - Name: /rdinkypresents
-      Offset: [0, -210]
-      Size: [70, 70]
-    - Name: /rdinkytada
-      Offset: [0, -210]
-      Size: [70, 70]
-    - Name: /rdw00
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rdw01
-      Offset: [0, -70]
-      Size: [70, 70]
-    - Name: /rdw02
-      Offset: [0, -140]
-      Size: [70, 70]
-    - Name: /rdw03
-      Offset: [0, -210]
-      Size: [70, 70]
-    - Name: /rdw04
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rdw05
-      Offset: [0, -350]
-      Size: [70, 70]
-    - Name: /rdw06
-      Offset: [0, -420]
-      Size: [70, 70]
-    - Name: /rdw07
-      Offset: [0, -490]
-      Size: [70, 70]
-    - Name: /rdw10
-      Offset: [-70, 0]
-      Size: [70, 70]
-    - Name: /rdw11
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /rdw12
-      Offset: [-70, -140]
-      Size: [70, 70]
-    - Name: /rdw13
-      Offset: [-70, -210]
-      Size: [70, 70]
-    - Name: /rdw14
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rdw15
-      Offset: [-70, -350]
-      Size: [70, 70]
-    - Name: /rdw16
-      Offset: [-70, -420]
-      Size: [70, 70]
-    - Name: /rdw17
-      Offset: [-70, -490]
-      Size: [70, 70]
-    - Name: /rdw20
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /rdw21
-      Offset: [-140, -70]
-      Size: [70, 70]
-    - Name: /rdw22
-      Offset: [-140, -140]
-      Size: [70, 70]
-    - Name: /rdw23
-      Offset: [-140, -210]
-      Size: [70, 70]
-    - Name: /rdw24
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rdw25
-      Offset: [-140, -350]
-      Size: [70, 70]
-    - Name: /rdw26
-      Offset: [-140, -420]
-      Size: [70, 70]
-    - Name: /rdw27
-      Offset: [-140, -490]
-      Size: [70, 70]
-    - Name: /rdwbleh
-      Offset: [-140, -490]
-      Size: [70, 70]
-    - Name: /rdwconcerned
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rdwevil
-      Offset: [0, -490]
-      Size: [70, 70]
-    - Name: /rdwfez
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /rdwhappy
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /rdwpear
-      Offset: [-140, -70]
-      Size: [70, 70]
-    - Name: /rdwstartled
-      Offset: [-70, 0]
-      Size: [70, 70]
-    - Name: /rdwtophat
-      Offset: [0, -70]
-      Size: [70, 70]
-    - Name: /rdwworried
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rihatepears
-      Offset: [-140, -70]
-      Size: [70, 70]
-    - Name: /rmaster
-      Offset: [-70, -490]
-      Size: [70, 70]
-    - Name: /rpear
-      Offset: [-140, -140]
       Size: [70, 70]
     http://b.thumbs.redditmedia.com/7sj3Qh1Ogp_CCRxy.png:
     - Name: /ajfrown
@@ -506,6 +404,134 @@ Emotes:
     - Name: /zecora
       Offset: [-70, -630]
       Size: [70, 70]
+    http://b.thumbs.redditmedia.com/YSZ7ZKo8okJ4yaHs.png:
+    - Name: /tardis
+      Offset: [0, 0]
+      Size: [433, 733]
+    http://b.thumbs.redditmedia.com/fsvgrQa1CoOVd22C.png:
+    - Name: /amy
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /donna
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /dr00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /dr01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /dr02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /dr03
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /dr04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /dr05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /dr06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /dr10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /dr11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /dr12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /dr13
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /dr14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /dr15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /dr16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /dr20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /dr21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /dr22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /dr24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /dr25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /dw10th
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /dw11th
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /dw1st
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /dw2nd
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /dw3rd
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /dw4th
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /dw5th
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /dw6th
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /dw7th
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /dw8th
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /dw9th
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /jack
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /river
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /romana2
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /romanaII
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /rory
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /rose
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /sarahjane
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /sarahjanesmith
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /sjs
+      Offset: [0, -420]
+      Size: [70, 70]
     http://b.thumbs.redditmedia.com/mRM0EMQwBonm0jT7.png:
     - Name: /rajfrown
       Offset: [0, -280]
@@ -686,6 +712,130 @@ Emotes:
       Size: [70, 70]
     - Name: /rzecora
       Offset: [-70, -630]
+      Size: [70, 70]
+    http://c.thumbs.redditmedia.com/c907Rz2n_pWzFegt.png:
+    - Name: /ramy
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /rdonna
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /rdr00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rdr01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /rdr02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /rdr03
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /rdr04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /rdr05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /rdr06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /rdr10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rdr11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /rdr12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /rdr13
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /rdr14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /rdr15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /rdr16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /rdr20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /rdr21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /rdr22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /rdr24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /rdr25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /rdw10th
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /rdw11th
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /rdw1st
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rdw2nd
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rdw3rd
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /rdw4th
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /rdw5th
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /rdw6th
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /rdw7th
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /rdw8th
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /rdw9th
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /rjack
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /rriver
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /rromana2
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /rromanaII
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /rrory
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /rrose
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /rsarahjane
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /rsarahjanesmith
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /rsjs
+      Offset: [0, -420]
       Size: [70, 70]
     http://c.thumbs.redditmedia.com/jnSYa2IBDjkbTv-2.png:
     - Name: /r02
@@ -1092,6 +1242,208 @@ Emotes:
       Size: [70, 70]
     - Name: /whooves
       Offset: [-70, -350]
+      Size: [70, 70]
+    http://d.thumbs.redditmedia.com/pSIRzHqcUEhhV_sK.png:
+    - Name: /rbanana
+      Offset: [0, -630]
+      Size: [70, 70]
+    - Name: /rcyberpony
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /rdalek
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /rderpycam
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /rderpypeak
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /rderpypout
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /rdhburnt
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /rdhexcited
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /rdhmuffin
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /rdhoops
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /rdhsleep
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /rdhstare
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /rdinky
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /rdinkyfire
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /rdinkypresents
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /rdinkytada
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /rdw00
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rdw01
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /rdw02
+      Offset: [0, -140]
+      Size: [70, 70]
+    - Name: /rdw03
+      Offset: [0, -210]
+      Size: [70, 70]
+    - Name: /rdw04
+      Offset: [0, -280]
+      Size: [70, 70]
+    - Name: /rdw05
+      Offset: [0, -350]
+      Size: [70, 70]
+    - Name: /rdw06
+      Offset: [0, -420]
+      Size: [70, 70]
+    - Name: /rdw07
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /rdw08
+      Offset: [0, -560]
+      Size: [70, 70]
+    - Name: /rdw09
+      Offset: [0, -630]
+      Size: [70, 70]
+    - Name: /rdw10
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rdw11
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /rdw12
+      Offset: [-70, -140]
+      Size: [70, 70]
+    - Name: /rdw13
+      Offset: [-70, -210]
+      Size: [70, 70]
+    - Name: /rdw14
+      Offset: [-70, -280]
+      Size: [70, 70]
+    - Name: /rdw15
+      Offset: [-70, -350]
+      Size: [70, 70]
+    - Name: /rdw16
+      Offset: [-70, -420]
+      Size: [70, 70]
+    - Name: /rdw17
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /rdw18
+      Offset: [-70, -560]
+      Size: [70, 70]
+    - Name: /rdw19
+      Offset: [-70, -630]
+      Size: [70, 70]
+    - Name: /rdw20
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /rdw21
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /rdw22
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /rdw23
+      Offset: [-140, -210]
+      Size: [70, 70]
+    - Name: /rdw24
+      Offset: [-140, -280]
+      Size: [70, 70]
+    - Name: /rdw25
+      Offset: [-140, -350]
+      Size: [70, 70]
+    - Name: /rdw26
+      Offset: [-140, -420]
+      Size: [70, 70]
+    - Name: /rdw27
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /rdw28
+      Offset: [-140, -560]
+      Size: [70, 70]
+    - Name: /rdw29
+      Offset: [-140, -630]
+      Size: [70, 70]
+    - Name: /rdw3d
+      Offset: [-70, -560]
+      Size: [70, 70]
+    - Name: /rdwbleh
+      Offset: [-140, -490]
+      Size: [70, 70]
+    - Name: /rdwblush
+      Offset: [-140, -560]
+      Size: [70, 70]
+    - Name: /rdwconcerned
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /rdwddd
+      Offset: [-70, -560]
+      Size: [70, 70]
+    - Name: /rdwevil
+      Offset: [0, -490]
+      Size: [70, 70]
+    - Name: /rdwfez
+      Offset: [-70, -70]
+      Size: [70, 70]
+    - Name: /rdwhappy
+      Offset: [-140, 0]
+      Size: [70, 70]
+    - Name: /rdwpear
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /rdwstartled
+      Offset: [-70, 0]
+      Size: [70, 70]
+    - Name: /rdwtophat
+      Offset: [0, -70]
+      Size: [70, 70]
+    - Name: /rdwworried
+      Offset: [0, 0]
+      Size: [70, 70]
+    - Name: /revilwat
+      Offset: [0, -560]
+      Size: [70, 70]
+    - Name: /revilwut
+      Offset: [0, -560]
+      Size: [70, 70]
+    - Name: /rihatepears
+      Offset: [-140, -70]
+      Size: [70, 70]
+    - Name: /rmaster
+      Offset: [-70, -490]
+      Size: [70, 70]
+    - Name: /rpear
+      Offset: [-140, -140]
+      Size: [70, 70]
+    - Name: /rpeeved
+      Offset: [-140, -630]
+      Size: [70, 70]
+    - Name: /rsparklerannoyed
+      Offset: [-140, -630]
+      Size: [70, 70]
+    - Name: /rsparklermad
+      Offset: [-70, -630]
+      Size: [70, 70]
+    - Name: /rsparklerpeeved
+      Offset: [-140, -630]
       Size: [70, 70]
     http://e.thumbs.redditmedia.com/QlQIRFx8mg-UH9kR.png:
     - Name: /ba2

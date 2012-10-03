@@ -1,19 +1,19 @@
-/* Changes background CHEESE IS A THING! */
+/* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
    
-     background:  url(%%bdaybash%%)  no-repeat  fixed 74% 100% !important;
+     background:  url(%%halloween%%)  no-repeat  fixed 74% 100% !important;
   
 } 
 
 /* Banner Image */
 #header-bottom-left {
-   background: url(%%mafia%%); 
-  background-color: transparent !important;
+   background: url(%%meatbannerpony%%); 
+  background-color: #e0d3c1 !important;
    /*   margin-top: -20px;*/
    background-repeat: no-repeat;
    background-position: 50% 0%;
-   height: 250px; /* 237 for meat's nice banner */
-   background-color:#fff;
+   height: 237px; /* 237 for meat's nice banner */
+
  }
 
 /* User stuff (name color, karma color, est.) */
@@ -34,7 +34,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     }
 
 #header-img {
-    margin-top:128px; /* 80 for meat's nice banner */
+    margin-top:120px; /* 80 for meat's nice banner */
     margin-left: 0px;
     position: absolute
     }
@@ -53,7 +53,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     padding: 5px
     }
 .tabmenu {
-    margin-top: 236px; /* 223 for meat's nice banner */
+    margin-top: 223px; /* 223 for meat's nice banner */
     margin-left: 500px
     }
 
@@ -171,18 +171,22 @@ a[href="/spoiler"]:nth-of-type(n):hover {
     display: none !important;
     width: 0px !important;
     height: 0px !important;
-    overflow: hidden !important
-    }
+    overflow: hidden !important;
+    position:absolute!important;left:-100px;    
+}
 input[name="subRedditStyleCheckbox"] {
     display: none !important;
     width: 0px !important;
-    height: 0px !important
-    }
+    height: 0px !important;
+    position:absolute!important;left:-100px;
+
+ }
 label[for="subRedditStyleCheckbox"] {
     display: none !important;
     width: 0px !important;
-    height: 0px !important
-    }
+    height: 0px !important;
+    position:absolute!important;left:-100px;
+}
 
 /* Make the "community settings" text box bigger, because it's an unreadable clusterfuck when it's small. */
 .fancy-settings .linefield { width: 914px; }
@@ -737,7 +741,7 @@ a.author[href$="HtotheGRIFF"]:before {content:"faggot"}
 a.author[href$="viper9172"]:before {content:"Sidelong"}
 a.author[href$="Lazeraze"]:before {content:"Snowlily"}
 a.author[href$="31eipekili"]:before {content:"I like pie 13"}
-a.author[href$="derram_2"]:before {content:"derramina Diane Pie"}
+a.author[href$="derram_2"]:before {content:"Butts"}
 a.author[href$="Chiv_Cortland"]:before {content:"Chivvypoop"}
 a.author[href$="442B8AEF9"]:before {content:"Socialery"}
 a.author[href$="anonpon3"]:before {content:"Artful" }
@@ -756,7 +760,7 @@ a.author[href$=Greenie_Lye]:before { content:"Greenie_Lye (Green Derram)" }
 a.author[href$=Chinch335]:before,a.author[href$=IllusionOf_Integrity]:before { content:"Chillusion" }
 a.author[href$=trypsonite]:before { content:"Who"; color:blue }
 a.author[href$=RetardVomitPussyCunt]:before { content:"RainbowViolinPancakesCider" }
-a.author[href$=andysonic2]:before { content:"andysonic4" }
+a.author[href$=andysonic2]:before { content:"andysonic5" }
 a.author[href$="10z20Luka"]:before { content:"Titty-slickers, God of Thunder and Lord of the Dance" }
 a.author[href$=PinkiePie2012]:before { content:"Empress Pie" }
 a.author[href$=DarkSideOfTheSun]:before { content:"DickSideOfTheSun" }

@@ -7,3 +7,19 @@ body.res-nightmode:first-of-type > .content {background-color: transparent!impor
 body.res-nightmode:first-of-type {background-color: transparent!important;} 
 
 .md>hr{height:1px;border:none;background:rgb(128,128,128);margin-bottom:5px;}
+
+a[href|='/onepinchy'], a[href|='/rubyblush'], a[href|='/rubyhappy'], a[href|='/rubyhugs'], a[href|='/rubyplay'], a[href|='/rubysad'], a[href|='/rubysoawesome'], a[href|='/rubysoon'] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%rubysheet%%)
+    }
+
+a[href|='/onepinchy'] {width:109px; height:105px; background-position: -2px -2px}
+a[href|='/rubyblush'] {width:75px; height:100px; background-position: -113px -2px}
+a[href|='/rubyhappy'] {width:91px; height:80px; background-position: -2px -109px}
+a[href|='/rubyhugs'] {width:101px; height:100px; background-position: -95px -109px}
+a[href|='/rubyplay'] {width:62px; height:90px; background-position: -2px -211px}
+a[href|='/rubysad'] {width:145px; height:110px; background-position: -66px -211px}
+a[href|='/rubysoawesome'] {width:87px; height:99px; background-position: -2px -323px}
+a[href|='/rubysoon'] {width:89px; height:90px; background-position: -91px -323px}
