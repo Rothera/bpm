@@ -1,1 +1,1 @@
-../data/betterponymotes.js
+../build/betterponymotes.user.js
