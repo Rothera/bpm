@@ -547,7 +547,13 @@ var bpm_converter = {
         }
     },
 
-    spoiler_links: ["/spoiler", "/s", "#s"],
+    // Known spoiler "emotes". Not all of these are known to BPM, and it's not
+    // really worth moving this to a data file somewhere.
+    // - /spoiler is from r/mylittlepony (and copied around like mad)
+    // - /s is from r/falloutequestria (and r/mylittleanime has a variant)
+    // - #s is from r/doctorwho
+    // - /b and /g are from r/dresdenfiles
+    spoiler_links: ["/spoiler", "/s", "#s", "/b", "/g"],
 
     // NOTE/FIXME: Alt-text isn't really related to emote conversion as-is, but
     // since it runs on a per-emote basis, it kinda goes here anyway.
@@ -555,10 +561,8 @@ var bpm_converter = {
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
 
-            // Ignore known spoiler emotes. FIXME: A hardcoded list sucks, but
-            // there's not a lot we can do about that. Also, not every spoiler
-            // href is known to BPM as of now, so we can't rely on .bpm-emote
-            // and data-emote to exist.
+            // Can't rely on .bpm-emote and data-emote to exist for spoiler
+            // links, as many of them aren't known.
             var href = element.getAttribute("href");
             if(href && this.spoiler_links.indexOf(href.split("-")[0]) > -1) {
                 continue;
