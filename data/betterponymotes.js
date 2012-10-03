@@ -8,12 +8,12 @@
 // @include https://*/*
 // @name BetterPonymotes
 // @namespace http://rainbow.mlas1.us/
-// @require http://rainbow.mlas1.us/emote-map.js?p=2&cver=28
-// @require http://rainbow.mlas1.us/sr-data.js?p=2&cver=28
-// @require http://rainbow.mlas1.us/pref-setup.js?p=2&cver=28
+// @require http://rainbow.mlas1.us/emote-map.js?p=2&cver=29
+// @require http://rainbow.mlas1.us/sr-data.js?p=2&cver=29
+// @require http://rainbow.mlas1.us/pref-setup.js?p=2&cver=29
 // @run-at document-start
 // @updateURL http://rainbow.mlas1.us/betterponymotes.user.js
-// @version 28.52
+// @version 29.53
 // ==/UserScript==
 
 /*******************************************************************************
@@ -28,8 +28,8 @@
 
 "use strict";
 
-var BPM_CODE_VERSION = 28;
-var BPM_DATA_VERSION = 52;
+var BPM_CODE_VERSION = 29;
+var BPM_DATA_VERSION = 53;
 var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us/"
 
 var _bpm_global = (!this ? window : this);
