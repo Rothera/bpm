@@ -30,7 +30,7 @@
 
 var BPM_CODE_VERSION = 30;
 var BPM_DATA_VERSION = 54;
-var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us/"
+var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us/";
 
 var _bpm_global = (!this ? window : this);
 
@@ -182,7 +182,7 @@ var bpm_utils = {
 };
 
 // Chrome is picky about bind().
-var bpm_log = bpm_utils.platform == "userscript" ? GM_log : console.log.bind(console);
+var bpm_log = bpm_utils.platform === "userscript" ? GM_log : console.log.bind(console);
 
 var bpm_browser = {
     css_parent: function() {
@@ -1290,7 +1290,7 @@ var bpm_core = {
         // by necessity.
         //
         // Christ. I hope people use the fuck out of -i after this nonsense.
-        if(bpm_utils.platform == "firefox-ext") {
+        if(bpm_utils.platform === "firefox-ext") {
             var svg_src = [
                 '<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg"',
                 ' style="height: 0; width: 0; position: fixed">',
