@@ -151,6 +151,16 @@ var bpm_utils = {
                 callback(event, start_x, start_y, event.clientX, event.clientY);
             }
         }, false);
+    },
+
+    with_dom: function(callback) {
+        if(document.readyState === "interactive" || document.readyState === "complete") {
+            callback();
+        } else {
+            document.addEventListener("DOMContentLoaded", function(event) {
+                callback();
+            }, false);
+        }
     }
 };
 
@@ -1417,7 +1427,7 @@ var bpm_core = {
 
             // This script is generally run before the DOM is built. Opera may break
             // that rule, but I don't know how and there's nothing we can do anyway.
-            window.addEventListener("DOMContentLoaded", function() {
+            bpm_utils.with_dom(function() {
                 if(init_later) {
                     this.init_css();
                 }
@@ -1425,13 +1435,13 @@ var bpm_core = {
                 bpm_prefs.when_available(function(prefs) {
                     this.run(prefs);
                 }.bind(this));
-            }.bind(this), false);
+            }.bind(this));
         } else {
-            window.addEventListener("DOMContentLoaded", function() {
+            bpm_utils.with_dom(function() {
                 bpm_prefs.when_available(function(prefs) {
                     bpm_global.run(prefs);
                 }.bind(this));
-            }.bind(this), false);
+            }.bind(this));
         }
     }
 };
