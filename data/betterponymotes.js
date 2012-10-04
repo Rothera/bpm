@@ -59,7 +59,24 @@ var bpm_utils = {
         }
     })(_bpm_global),
 
-    MutationObserver: (function(global) { return global.MutationObserver || global.WebKitMutationObserver || global.MozMutationObserver; })(_bpm_global),
+    MutationObserver: (function(global) { return global.MutationObserver || global.WebKitMutationObserver || global.MozMutationObserver || null; })(_bpm_global),
+
+    observe: function(setup_mo, init_mo, setup_dni) {
+        // Wrapper to run MutationObserver-based code where possible, and fall
+        // back to DOMNodeInserted otherwise.
+        if(this.MutationObserver !== null) {
+            var observer = setup_mo();
+
+            try {
+                init_mo(observer);
+                return;
+            } catch(e) {
+                bpm_log("BPM: ERROR: Can't use MutationObserver. Falling back to DOMNodeInserted. (info: L" + e.lineNumber + ": ", e.name + ": " + e.message + ")");
+            }
+        }
+
+        setup_dni();
+    },
 
     style_tag: function(css) {
         var tag = document.createElement("style");
@@ -1208,10 +1225,8 @@ var bpm_global = {
 
         this.process(prefs, document.body);
 
-        switch(bpm_utils.platform) {
-        case "chrome-ext":
-        case "firefox-ext":
-            var observer = new bpm_utils.MutationObserver(bpm_utils.catch_errors(function(mutations, observer) {
+        bpm_utils.observe(function() {
+            return new bpm_utils.MutationObserver(bpm_utils.catch_errors(function(mutations, observer) {
                 for(var m = 0; m < mutations.length; m++) {
                     var added = mutations[m].addedNodes;
                     if(added === null || !added.length) {
@@ -1226,18 +1241,14 @@ var bpm_global = {
                     }
                 }
             }.bind(this)));
-
+        }.bind(this), function(observer) {
             observer.observe(document, {"childList": true, "subtree": true});
-            break;
-
-        case "opera-ext":
-        default:
+        }, function() {
             document.body.addEventListener("DOMNodeInserted", function(event) {
                 var element = event.target;
                 this.process(prefs, element);
             }.bind(this), false);
-            break;
-        }
+        }.bind(this));
     }
 };
 
@@ -1310,8 +1321,7 @@ var bpm_core = {
             }
         }.bind(this), false);
 
-        switch(bpm_utils.platform) {
-        case "chrome-ext":
+        if(bpm_utils.platform === "chrome-ext") {
             // Fix for Chrome, which sometimes doesn't rerender unknown
             // emote elements. The result is that until the element is
             // "nudged" in some way- merely viewing it in the Console/platform
@@ -1324,10 +1334,8 @@ var bpm_core = {
             var tag = document.createElement("style");
             tag.type = "text/css";
             document.head.appendChild(tag);
+        }
 
-            // Fallthrough
-
-        case "firefox-ext":
             // As a relevant note, it's a terrible idea to set this up before
             // the DOM is built, because monitoring it for changes seems to slow
             // the process down horribly.
@@ -1335,8 +1343,8 @@ var bpm_core = {
             // What we do here: for each mutation, inspect every .md we can
             // find- whether the node in question is deep within one, or contains
             // some.
-
-            var observer = new bpm_utils.MutationObserver(bpm_utils.catch_errors(function(mutations, observer) {
+        bpm_utils.observe(function() {
+            return new bpm_utils.MutationObserver(bpm_utils.catch_errors(function(mutations, observer) {
                 for(var m = 0; m < mutations.length; m++) {
                     var added = mutations[m].addedNodes;
                     if(added === null || !added.length) {
@@ -1368,14 +1376,11 @@ var bpm_core = {
                     }
                 }
             }.bind(this)));
-
+        }.bind(this), function(observer) {
             // FIXME: For some reason observe(document.body, [...]) doesn't work
             // on Firefox. It just throws an exception. document works.
             observer.observe(document, {"childList": true, "subtree": true});
-            break;
-
-        case "opera-ext":
-        default:
+        }, function() {
             // MutationObserver doesn't exist outisde Fx/Chrome, so
             // fallback to basic DOM events.
             document.body.addEventListener("DOMNodeInserted", function(event) {
@@ -1392,8 +1397,7 @@ var bpm_core = {
                     bpm_search.inject_search_button(prefs, root.getElementsByClassName("help-toggle"));
                 }
             }.bind(this), false);
-            break;
-        }
+        }.bind(this));
     },
 
     main: function() {
