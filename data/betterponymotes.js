@@ -1401,7 +1401,10 @@ var bpm_core = {
     },
 
     main: function() {
-        if(window !== window.top) {
+        // Firefox is funny about window/.self/.parent/.top, such that comparing
+        // references is somewhat unreliable. frameElement is the only test I've
+        // found so far that works reliably.
+        if(window !== window.top || window.frameElement !== null) {
             if(bpm_utils.ends_with(window.location.hostname, "redditmedia.com")) {
                 return; // Reddit ad pages
             }
