@@ -245,18 +245,19 @@ background-image: url(%%bj-anim%%) !important;
 
 a[href|="/bjbubbles"]{ background-position: 0px 0px;}
 
-a[href|="/lpnotsure"], a[href|="/p21fh"]
+a[href|="/lpnotsure"], a[href|="/p21fh"], a[href|="/bjboom"]
 {
 display: block;
 clear: none;
 float: left;
 width: 150px;
 height: 150px;
-background-image: url(%%foe-em3-v3%%) !important;
+background-image: url(%%foe-em3-v6%%) !important;
 }
 
 a[href|="/lpnotsure"]{ background-position: 0px 0px;}
 a[href|="/p21fh"]{ background-position: 0px -150px; width: 70px; height: 70px;}
+a[href|="/bjboom"]{ background-position: 0px -225px; width: 70px; height: 70px;}
 
 /* Flair */
 

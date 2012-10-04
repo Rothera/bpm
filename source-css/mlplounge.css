@@ -151,7 +151,7 @@ div.titlebox .users-online span.number:after
     }
 */
 .sidecontentbox a.author[href$="/IllusionOf_Integrity"]:before {
-    content: "LuluHUMANS";
+    content: "Cardboard Cut-Out of Morgan Freeman";
     font-size: 10pt;
     color: #369;
     display:block;
@@ -1340,6 +1340,17 @@ a[href|="/bigmactears"],
 a[href|="/rbigmactears"]{ 
    background-position: -140px -630px !important
    }
+
+input[value="t1_c6hb8g9"] + .usertext-body a[href|="/twisquintlol"]
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-image: url(%%normaltwisquint%%) !important
+}
+
 END-PONYSCRIPT-IGNORE {color: red}
 
 /*loungemotes_start*/
@@ -2201,3 +2212,8 @@ content: ">";
 
 .md .RESUserTag, .md .RESUserTag + a.voteWeight, .md .RESUserTag + a.voteWeight + div.SuperRedditAltTextDisplay_Text
 {display:none !important;}
+
+body:not(.moderator) input[value="t3_10vuz8"] + .usertext-edit
+{
+ display:none;
+}

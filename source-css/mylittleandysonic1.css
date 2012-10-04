@@ -1,12 +1,12 @@
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
    
-     background:  url(%%halloween%%)  no-repeat  fixed 74% 100% !important;
+     background:  url(%%Halloween%%)  no-repeat  fixed 74% 100% !important;
   
 } 
 
 /* Banner Image */
-#header-bottom-left {
+#header-bottom-left:nth-of-type(n) {
    background: url(%%meatbannerpony%%); 
   background-color: #e0d3c1 !important;
    /*   margin-top: -20px;*/
@@ -34,7 +34,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     }
 
 #header-img {
-    margin-top:120px; /* 80 for meat's nice banner */
+    margin-top:116px; /* 80 for meat's nice banner */
     margin-left: 0px;
     position: absolute
     }
@@ -741,7 +741,7 @@ a.author[href$="HtotheGRIFF"]:before {content:"faggot"}
 a.author[href$="viper9172"]:before {content:"Sidelong"}
 a.author[href$="Lazeraze"]:before {content:"Snowlily"}
 a.author[href$="31eipekili"]:before {content:"I like pie 13"}
-a.author[href$="derram_2"]:before {content:"Butts"}
+a.author[href$="derram_2"]:before {content:"derramina Diane Pie"}
 a.author[href$="Chiv_Cortland"]:before {content:"Chivvypoop"}
 a.author[href$="442B8AEF9"]:before {content:"Socialery"}
 a.author[href$="anonpon3"]:before {content:"Artful" }
@@ -760,7 +760,7 @@ a.author[href$=Greenie_Lye]:before { content:"Greenie_Lye (Green Derram)" }
 a.author[href$=Chinch335]:before,a.author[href$=IllusionOf_Integrity]:before { content:"Chillusion" }
 a.author[href$=trypsonite]:before { content:"Who"; color:blue }
 a.author[href$=RetardVomitPussyCunt]:before { content:"RainbowViolinPancakesCider" }
-a.author[href$=andysonic2]:before { content:"andysonic5" }
+a.author[href$=andysonic2]:before { content:"andysonic6" }
 a.author[href$="10z20Luka"]:before { content:"Titty-slickers, God of Thunder and Lord of the Dance" }
 a.author[href$=PinkiePie2012]:before { content:"Empress Pie" }
 a.author[href$=DarkSideOfTheSun]:before { content:"DickSideOfTheSun" }
@@ -812,6 +812,7 @@ height:30px
 }
 
 /* Adding after-text to somebody's name? Add them here. */
+a.author[href$=scriptea]:after ,
 a.author[href$="ClopIsDisgusting"]:after,
 a.author[href$=Myrandall]:after,
 a.author[href$=JIVEprinting]:after,
@@ -865,7 +866,8 @@ letter-spacing:normal;
 }
 
 /* After-name text goes here. */
-a.author[href$="ClopIsDisgusting"]:after  { content:" (Exists solely to shit on other peoples fun)" }
+a.author[href$=scriptea]:after  { content:" (Too main pone for background pone status)" }
+a.author[href$="ClopIsDisgusting"]:after  { content:" (Exists solely to shit on other people's fun)" }
 a.author[href$=Myrandall]:after { content:" (Will applaud anything that doesn't resemble a plastic cock)" }
 a.author[href$=Chinch335]:after { content:" (brings the magic)" }
 a.author[href$=IllusionOf_Integrity]:after { content:" (participates in bringing the magic)" }

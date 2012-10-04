@@ -824,11 +824,11 @@ a[href|="/rdr22"], a[href|="/rdw9th"]{
 /*********************************************/
 a[href|="/dr03"],  a[href|="/dw10th"],
 a[href|="/rdr03"], a[href|="/rdw10th"]{
-    background-position: -0px -140px
+    background-position: -0px -210px
 }
 a[href|="/dr13"],  a[href|="/dw11th"],
 a[href|="/rdr13"], a[href|="/rdw11th"]{
-    background-position: -70px -140px
+    background-position: -70px -210px
 }
 /*********************************************/
 a[href|="/dr04"],  a[href|="/rose"],
@@ -932,6 +932,40 @@ a.author[href$="/shellbullet17"] {
 
 a.author[href$="/shellbullet17"]:after {
     content: "The Doctor";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+}
+
+
+.sidecontentbox a.author[href$="/_Doctor_Whooves_"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+}
+
+
+.sidecontentbox a.author[href$="/_Doctor_Whooves_"]:after {
+    content: "Doctor Whooves";
+    font-size: 13px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+
+}
+a.author[href$="/_Doctor_Whooves_"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+}
+
+a.author[href$="/_Doctor_Whooves_"]:after {
+    content: "Doctor Whooves";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;
