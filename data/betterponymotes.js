@@ -1015,7 +1015,10 @@ var bpm_search = {
                     this.wire_emotes_button(prefs, existing[0]);
                 } else {
                     var button = document.createElement("button");
-                    button.type = "button"; // Default is "submit"; not good
+                    // Default is "submit", which is not good (saves the comment).
+                    // Safari has some extremely weird bug where button.type
+                    // seems to be readonly. Writes fail silently.
+                    button.setAttribute("type", "button");
                     button.className = "bpm-search-toggle";
                     button.textContent = "emotes";
                     // Since we come before the save button in the DOM, we tab
