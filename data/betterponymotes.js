@@ -1397,17 +1397,25 @@ var bpm_core = {
     },
 
     main: function() {
-        if(bpm_utils.ends_with(window.top.location.hostname, "reddit.com") &&
-           window !== window.top) {
-            // Avoid running in Reddit-enclosed frames. This prevents us from
-            // getting in the way inside frames added by some addons- esp.
-            // inline YT viewers. I don't know what else.
-            //
-            // Frames on other sites will just have to live with multiple copies
-            // of the global emote thing. That's usually desirable anyway, since
-            // the search box can't inject emotes into sub-frame forms. (Maybe
-            // we should, though?)
-            return;
+        if(window !== window.top) {
+            if(bpm_utils.ends_with(window.location.hostname, "redditmedia.com")) {
+                return; // Reddit ad pages
+            }
+            if(bpm_utils.ends_with(window.location.hostname, "tumblr.com")) {
+                return; // Quick, hopefully temporary hack to fix a problem with Tumblr
+            }
+            // Chrome restricts our access, because Chrome is stupid
+            if(window.top !== undefined && bpm_utils.ends_with(window.top.location.hostname, "reddit.com")) {
+                // Avoid running in Reddit-enclosed frames. This prevents us from
+                // getting in the way inside frames added by some addons- esp.
+                // inline YT viewers. I don't know what else.
+                //
+                // Frames on other sites will just have to live with multiple copies
+                // of the global emote thing. That's usually desirable anyway, since
+                // the search box can't inject emotes into sub-frame forms. (Maybe
+                // we should, though?)
+                return;
+            }
         }
 
         bpm_browser.request_prefs();
