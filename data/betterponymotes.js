@@ -156,11 +156,13 @@ var bpm_utils = {
             start_x = event.clientX;
             start_y = event.clientY;
             dragging = true;
+            document.body.className += " bpm-noselect";
             start_callback(event);
         }, false);
 
         window.addEventListener("mouseup", function(event) {
             dragging = false;
+            document.body.className = document.body.className.replace(/\bbpm-noselect\b/, "");
         }, false);
 
         window.addEventListener("mousemove", function(event) {

@@ -99,6 +99,24 @@
 }
 
 /*
+ * Added to <body> when dragging things around. This works pretty well in
+ * Firefox and Chrome, and the ::selection bit makes it work a little better
+ * in Opera.
+ */
+.bpm-noselect {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none; /* Doesn't exist */
+}
+.bpm-noselect::selection {
+    background-color: transparent;
+}
+.bpm-noselect::-moz-selection {
+    background-color: transparent;
+}
+
+/*
  * Emote search CSS
  *
  * WARNING: due to my lack of CSS skills, there are many width/height values
