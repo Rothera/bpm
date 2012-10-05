@@ -14,12 +14,13 @@ if(localStorage.prefs === undefined) {
     localStorage.prefs = "{}";
 }
 
-var pref_manager = bpm_backendsupport.manage_prefs(sr_data, localStorage, JSON.parse(localStorage.prefs), {
-    sync: function(prefs) {
-        localStorage.prefs = JSON.stringify(prefs);
-    },
+var pref_manager = bpm_backendsupport.manage_prefs(sr_data, {
+    read_value: function(key) { return localStorage[key]; },
+    write_value: function(key, data) { localStorage[key] = data; },
+    read_json: function(key) { return localStorage[key] === undefined ? undefined : JSON.parse(localStorage[key]); },
+    write_json: function(key, data) { localStorage[key] = JSON.stringify(data); },
 
-    update: function(prefs) {
+    prefs_updated: function(prefs) {
     },
 
     download_file: function(done, url, callback) {

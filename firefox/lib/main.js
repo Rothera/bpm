@@ -70,12 +70,13 @@ if(!storage.prefs) {
     }
 }
 
-var pref_manager = bpm_backendsupport.manage_prefs(sr_data.sr_data, storage, storage.prefs, {
-    sync: function(prefs) {
-        storage.prefs = prefs;
-    },
+var pref_manager = bpm_backendsupport.manage_prefs(sr_data.sr_data, {
+    read_value: function(key) { return storage[key]; },
+    write_value: function(key, data) { storage[key] = data; },
+    read_json: function(key) { return storage[key]; },
+    write_json: function(key, data) { storage[key] = data; },
 
-    update: prefs_updated,
+    prefs_updated: prefs_updated,
 
     download_file: function(done, url, callback) {
         request.Request({

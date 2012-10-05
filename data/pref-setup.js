@@ -109,9 +109,8 @@ var bpm_backendsupport = {
         return common.length;
     },
 
-    manage_prefs: function(sr_data, database, prefs, hooks) {
-        // TODO: replace prefs argument with the database object, just assuming
-        // all values are string->string except for prefs
+    manage_prefs: function(sr_data, hooks) {
+        var prefs = hooks.read_json("prefs");
 
         var manager = {
             write: function(_prefs) {
@@ -124,6 +123,11 @@ var bpm_backendsupport = {
                 return prefs;
             },
 
+            db_json: hooks.read_json,
+            set_db_json: hooks.write_json,
+            db_key: hooks.read_value,
+            set_db_key: hooks.write_value,
+
             set_pref: function(key, value) {
                 if(prefs[key] === undefined) {
                     console.log("BPM: ERROR: Attempt to write to nonexistent pref key " + key);
@@ -134,13 +138,12 @@ var bpm_backendsupport = {
                 this.cm.after_pref_write();
             },
 
-            database: database,
             // Wait 2.5s between hitting Reddit
             dl_queue: new TaskQueue(hooks.set_timeout, hooks.download_file, 2500),
 
             _sync: function() {
-                hooks.sync(prefs);
-                hooks.update(prefs);
+                hooks.write_json("prefs", prefs);
+                hooks.prefs_updated(prefs);
             }
         };
 
@@ -221,14 +224,13 @@ css_manager.prototype = {
 
     rebuild_cache: function() {
         var prefs = this.pm.get();
-        var database = this.pm.database;
         this.cached_subreddits = [];
 
         this.css_cache = "";
         for(var subreddit in prefs.customCSSSubreddits) {
             var key = "csscache_" + subreddit.toLowerCase();
-            if(database[key] !== undefined) {
-                this.css_cache += database[key];
+            if(this.pm.db_key(key) !== undefined) {
+                this.css_cache += this.pm.db_key(key);
                 this.cached_subreddits.push(subreddit);
             }
         }
@@ -258,7 +260,7 @@ css_manager.prototype = {
             var tmp = bpm_backendsupport.strip_subreddit_css(css);
             var extracted_emotes = tmp[0];
             var stripped_css = tmp[1];
-            this.pm.database[key] = stripped_css;
+            this.pm.set_db_key(key, stripped_css);
 
             prefs.customCSSSubreddits[subreddit] = Date.now();
             this.pm._sync();
