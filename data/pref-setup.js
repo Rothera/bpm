@@ -45,7 +45,13 @@ var bpm_backendsupport = {
         // TODO: Remove subreddits from prefs that are no longer in the addon.
     },
 
-    emote_regexp: /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="\/[\w:!#\/]+"\](:[a-zA-Z\-()]+)?[^}]*}/g,
+    sanitize: function(s) {
+        return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_").replace("#", "_hash_").replace("/", "_slash_");
+    },
+
+    //             a    :suffix          [href |   ="( /emote name )"] :suffix         (through '}')
+    block_regexp: /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="(\/[\w:!#\/]+)"\](:[a-zA-Z\-()]+)?[^}]*}/g,
+    emote_regexp: /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="(\/[\w:!#\/]+)"\](:[a-zA-Z\-()]+)?/,
 
     strip_subreddit_css: function(data) {
         // Strip comments
@@ -57,14 +63,28 @@ var bpm_backendsupport = {
         // Strip leading spaces and newlines
         data = data.replace(/^\s*|\n/gm, "");
 
-        // Locate all emote blocks
+        this.block_regexp.lastIndex = 0;
+
+        // Locate all emotes and emote CSS
         var emote_text = "";
-        var match;
-        while((match = this.emote_regexp.exec(data)) !== null) {
-            emote_text += match[0] + "\n";
+        var emotes = {};
+        var block_match, emote_match;
+        while((block_match = this.block_regexp.exec(data)) !== null) {
+            var css_chunk = block_match[0];
+            while((emote_match = this.emote_regexp.exec(css_chunk)) !== null) {
+                var emote = emote_match[2];
+                emotes[emote] = 1;
+
+                // Sanitize class names and convert to .bpm-cmote structure
+                var class_name = (".bpm-cmote-" + this.sanitize(emote.slice(1)) +
+                                  (emote_match[1] ? emote_match[1] : "") +
+                                  (emote_match[3] ? emote_match[3] : ""));
+                css_chunk = css_chunk.replace(this.emote_regexp, class_name);
+            }
+            emote_text += css_chunk + "\n";
         }
 
-        return emote_text;
+        return [emotes, emote_text];
     },
 
     // Essentially a list compare, because JS sucks
@@ -235,7 +255,11 @@ css_manager.prototype = {
         // should help a little bit
         var url = "http://reddit.com/r/" + subreddit + "/stylesheet.css?__ua=BetterPonymotes";
         this.pm.dl_queue.add(url, function(css) {
-            this.pm.database[key] = bpm_backendsupport.strip_subreddit_css(css);
+            var tmp = bpm_backendsupport.strip_subreddit_css(css);
+            var extracted_emotes = tmp[0];
+            var stripped_css = tmp[1];
+            this.pm.database[key] = stripped_css;
+
             prefs.customCSSSubreddits[subreddit] = Date.now();
             this.pm._sync();
             this.rebuild_cache();
