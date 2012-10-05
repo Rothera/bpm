@@ -23,10 +23,6 @@ var sr_data = require("sr-data");
 
 var storage = simple_storage.storage;
 
-function sync_prefs(prefs) {
-    storage.prefs = prefs;
-}
-
 // Main script. As an optimization, we just replace this mod (in order to change
 // the list of matching URLs) whenever the global conversion option changes, so
 // that the script doesn't needlessly run on all pages if BGM is disabled.
@@ -64,22 +60,6 @@ function prefs_updated(prefs) {
     bgm_enabled = prefs.enableGlobalEmotes;
 }
 
-function dl_file(done, url, callback) {
-    request.Request({
-        url: url,
-        headers: {"User-Agent": "BetterPonymotes Client CSS Updater (/u/Typhos)"},
-        onComplete: function(response) {
-            done();
-            var type = response.headers["Content-Type"];
-            if(response.status === 200 && type == "text/css") {
-                callback(response.text);
-            } else {
-                console.log("BPM: ERROR: Reddit returned HTTP status " + response.status + " for " + url + " (type: " + type + ")");
-            }
-        }
-    }).get();
-}
-
 if(!storage.prefs) {
     storage.prefs = {};
 
@@ -90,7 +70,31 @@ if(!storage.prefs) {
     }
 }
 
-var pref_manager = bpm_backendsupport.manage_prefs(sr_data.sr_data, storage, storage.prefs, sync_prefs, prefs_updated, dl_file, timers.setTimeout);
+var pref_manager = bpm_backendsupport.manage_prefs(sr_data.sr_data, storage, storage.prefs, {
+    sync: function(prefs) {
+        storage.prefs = prefs;
+    },
+
+    update: prefs_updated,
+
+    download_file: function(done, url, callback) {
+        request.Request({
+            url: url,
+            headers: {"User-Agent": "BetterPonymotes Client CSS Updater (/u/Typhos)"},
+            onComplete: function(response) {
+                done();
+                var type = response.headers["Content-Type"];
+                if(response.status === 200 && type == "text/css") {
+                    callback(response.text);
+                } else {
+                    console.log("BPM: ERROR: Reddit returned HTTP status " + response.status + " for " + url + " (type: " + type + ")");
+                }
+            }
+        }).get();
+    },
+
+    set_timeout: timers.setTimeout
+});
 
 function on_cs_attach(worker) {
     worker.on("message", function(message) {

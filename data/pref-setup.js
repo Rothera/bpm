@@ -109,7 +109,7 @@ var bpm_backendsupport = {
         return common.length;
     },
 
-    manage_prefs: function(sr_data, database, prefs, sync, update, download_file, set_timeout) {
+    manage_prefs: function(sr_data, database, prefs, hooks) {
         // TODO: replace prefs argument with the database object, just assuming
         // all values are string->string except for prefs
 
@@ -136,11 +136,11 @@ var bpm_backendsupport = {
 
             database: database,
             // Wait 2.5s between hitting Reddit
-            dl_queue: new TaskQueue(set_timeout, download_file, 2500),
+            dl_queue: new TaskQueue(hooks.set_timeout, hooks.download_file, 2500),
 
             _sync: function() {
-                sync(prefs);
-                update(prefs);
+                hooks.sync(prefs);
+                hooks.update(prefs);
             }
         };
 

@@ -10,37 +10,39 @@
 
 "use strict";
 
-function sync_prefs(prefs) {
-    localStorage.prefs = JSON.stringify(prefs);
-}
-
-function prefs_updated(prefs) {
-}
-
-function dl_file(done, url, callback) {
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-        if(request.readyState === 4) {
-            done();
-            var type = request.getResponseHeader("Content-Type");
-            if(request.status === 200 && type == "text/css") {
-                callback(request.responseText);
-            } else {
-                console.log("BPM: ERROR: Reddit returned HTTP status " + request.status + " for " + url + " (type: " + type + ")");
-            }
-        }
-    };
-    request.open("GET", url, true);
-    // Not permitted because Chrome sucks
-    //request.setRequestHeader("User-Agent", "BetterPonymotes Client CSS Updater (/u/Typhos)");
-    request.send();
-}
-
 if(localStorage.prefs === undefined) {
     localStorage.prefs = "{}";
 }
 
-var pref_manager = bpm_backendsupport.manage_prefs(sr_data, localStorage, JSON.parse(localStorage.prefs), sync_prefs, prefs_updated, dl_file, setTimeout);
+var pref_manager = bpm_backendsupport.manage_prefs(sr_data, localStorage, JSON.parse(localStorage.prefs), {
+    sync: function(prefs) {
+        localStorage.prefs = JSON.stringify(prefs);
+    },
+
+    update: function(prefs) {
+    },
+
+    download_file: function(done, url, callback) {
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+            if(request.readyState === 4) {
+                done();
+                var type = request.getResponseHeader("Content-Type");
+                if(request.status === 200 && type == "text/css") {
+                    callback(request.responseText);
+                } else {
+                    console.log("BPM: ERROR: Reddit returned HTTP status " + request.status + " for " + url + " (type: " + type + ")");
+                }
+            }
+        };
+        request.open("GET", url, true);
+        // Not permitted because Chrome sucks
+        //request.setRequestHeader("User-Agent", "BetterPonymotes Client CSS Updater (/u/Typhos)");
+        request.send();
+    },
+
+    set_timeout: setTimeout
+});
 
 // Content script requests
 chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
