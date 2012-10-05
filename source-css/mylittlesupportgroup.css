@@ -513,12 +513,12 @@ background-color: transparent !important;
     }
 /*New post spam filtered warning*/
 #title-field.roundfield:before {
-    content: "NOTE: Check the new queue after posting. If your post doesn't show up, you were spam filtered by mistake! Message the moderators with a link to the submission.";
+    content: "NOTE: Please tag your post after submitting it! Check the sidebar for an explanation.";
     font-size: 0.86em;
     padding: 5px;
     border: 1px solid #5f99cf;
     background-color: #EFF7FF;
-    color: black;
+    color: red;
     font-weight: bold;
     display: block;
     margin-bottom: 10px
