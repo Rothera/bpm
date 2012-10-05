@@ -592,6 +592,12 @@ var bpm_converter = {
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
 
+            // Already processed- ignore, so we don't do annoying things like
+            // expanding the emote sourceinfo.
+            if(bpm_utils.has_class(element, "bpm-processed-at")) {
+                continue;
+            }
+
             // Can't rely on .bpm-emote and data-emote to exist for spoiler
             // links, as many of them aren't known.
             var href = element.getAttribute("href");
@@ -599,7 +605,11 @@ var bpm_converter = {
                 continue;
             }
 
+            var processed = false;
+
             if(element.title) {
+                processed = true;
+
                 // Work around due to RES putting tag links in the middle of
                 // posts. (Fucking brilliant!)
                 if(bpm_utils.has_class(element, "userTagLink") ||
@@ -645,10 +655,16 @@ var bpm_converter = {
             // If it's an emote, replace the actual alt-text with source
             // information
             if(bpm_utils.has_class(element, "bpm-emote")) {
+                processed = true;
                 var emote_name = element.dataset["emote"];
                 var source_id = emote_map[emote_name][1];
                 var sr_name = sr_data[sr_id_map[source_id]][0];
                 element.title = emote_name + " from " + sr_name;
+            }
+
+            if(processed) {
+                // Mark as such.
+                element.className += " bpm-processed-at";
             }
         }
     },
