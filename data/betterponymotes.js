@@ -1192,19 +1192,33 @@ var bpm_global = {
                     var parts = match[1].split("-");
                     var emote_name = parts[0];
 
-                    // Check that emote exists
-                    if(!emote_map[emote_name]) {
+                    // TODO: unduplicate this morass
+                    var is_emote = false;
+                    var is_nsfw, sr_enabled, emote_size, emote_sourcename, class_name;
+                    if(emote_map[emote_name]) {
+                        is_emote = true;
+                        var emote_info = emote_map[emote_name];
+                        is_nsfw = emote_info[0];
+                        var source_id = emote_info[1];
+                        sr_enabled = prefs.sr_array[source_id];
+                        emote_size = emote_info[2];
+                        emote_sourcename = sr_data[sr_id_map[source_id]][0];
+                        // Strip off leading "/".
+                        class_name = "bpmote-" + bpm_utils.sanitize(emote_name.slice(1));
+                    } else if(prefs.custom_emotes[emote_name]) {
+                        is_emote = true;
+                        is_nsfw = false;
+                        sr_enabled = true;
+                        emote_size = 0;
+                        emote_sourcename = "custom subreddit";
+                        class_name = "bpm-cmote-" + bpm_utils.sanitize(emote_name.slice(1));
+                    } else {
                         continue;
                     }
 
-                    var emote_info = emote_map[emote_name];
-                    var is_nsfw = emote_info[0];
-                    var source_id = emote_info[1];
-                    var emote_size = emote_info[2];
-
                     // Check that it hasn't been disabled somehow
                     if(!prefs.we_map[emote_name] &&
-                        (!prefs.sr_array[source_id] || prefs.de_map[emote_name] ||
+                        (!sr_enabled || prefs.de_map[emote_name] ||
                          (is_nsfw && !prefs.prefs.enableNSFW) ||
                          (prefs.prefs.maxEmoteSize && emote_size > prefs.prefs.maxEmoteSize))) {
                         continue;
@@ -1219,7 +1233,7 @@ var bpm_global = {
 
                     // Build emote. (Global emotes are always -in)
                     var element = document.createElement("span");
-                    element.className = "bpflag-in bpmote-" + bpm_utils.sanitize(emote_name.slice(1));
+                    element.className = "bpflag-in " + class_name;
 
                     // Don't need to do validation on flags, since our matching
                     // regexp is strict enough to begin with (although it will
