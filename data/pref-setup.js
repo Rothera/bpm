@@ -171,7 +171,7 @@ TaskQueue.prototype = {
     add: function() {
         this.queue.push(Array.prototype.slice.call(arguments));
 
-       // The task chain will keep itself running so long as there are items
+        // The task chain will keep itself running so long as there are items
         // in the queue, so don't worry about that
         if(!this.running) {
             this.running = true;
@@ -305,7 +305,7 @@ css_manager.prototype = {
         // Always true for first run (compare [] to any other list)
         var changed = bpm_backendsupport.subreddits_changed(this.cached_subreddits, tmp);
 
-        if(this.css_cache === null || changed) {
+        if(this.css_cache === null || this.emote_cache === null || changed) {
             this.rebuild_cache();
         }
     }

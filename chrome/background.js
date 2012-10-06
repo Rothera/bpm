@@ -61,7 +61,11 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
             break;
 
         case "get_custom_css":
-            sendResponse({"method": "custom_css", "css": pref_manager.cm.css_cache});
+            sendResponse({
+                "method": "custom_css",
+                "css": pref_manager.cm.css_cache,
+                "emotes": pref_manager.cm.emote_cache
+            });
             break;
 
         case "set_pref":

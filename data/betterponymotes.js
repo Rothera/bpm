@@ -145,7 +145,7 @@ var bpm_utils = {
     //
     // Keep this in sync with the Python code.
     sanitize: function(s) {
-        return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_");
+        return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_").replace("#", "_hash_").replace("/", "_slash_");
     },
 
     enable_drag: function(element, start_callback, callback) {
@@ -253,6 +253,7 @@ case "firefox-ext":
 
         case "custom_css":
             bpm_browser.add_css(message.css);
+            bpm_prefs.got_custom_emotes(message.emotes);
             break;
 
         default:
@@ -284,6 +285,7 @@ case "chrome-ext":
 
             case "custom_css":
                 bpm_browser.add_css(message.css);
+                bpm_prefs.got_custom_emotes(message.emotes);
                 break;
 
             default:
@@ -366,6 +368,7 @@ case "opera-ext":
 
         case "custom_css":
             bpm_browser.add_css(message.css);
+            bpm_prefs.got_custom_emotes(message.emotes);
             break;
 
         default:
@@ -415,12 +418,23 @@ case "userscript":
 
 var bpm_prefs = {
     prefs: null,
+    custom_emotes: null,
     sr_array: null,
     waiting: [],
     sync_timeouts: {},
 
+    _ready: function() {
+        return (this.prefs !== null && this.custom_emotes !== null);
+    },
+
+    _run_callbacks: function() {
+        for(var i = 0; i < this.waiting.length; i++) {
+            this.waiting[i](this);
+        }
+    },
+
     when_available: function(callback) {
-        if(this.prefs) {
+        if(this._ready()) {
             callback(this);
         } else {
             this.waiting.push(callback);
@@ -429,16 +443,24 @@ var bpm_prefs = {
 
     got_prefs: function(prefs) {
         this.prefs = prefs;
-        this.make_sr_array();
-        this.de_map = this.make_emote_map(prefs.disabledEmotes);
-        this.we_map = this.make_emote_map(prefs.whitelistedEmotes);
+        this._make_sr_array();
+        this.de_map = this._make_emote_map(prefs.disabledEmotes);
+        this.we_map = this._make_emote_map(prefs.whitelistedEmotes);
 
-        for(var i = 0; i < this.waiting.length; i++) {
-            this.waiting[i](this);
+        if(this._ready()) {
+            this._run_callbacks();
         }
     },
 
-    make_sr_array: function() {
+    got_custom_emotes: function(emotes) {
+        this.custom_emotes = emotes;
+
+        if(this._ready()) {
+            this._run_callbacks();
+        }
+    },
+
+    _make_sr_array: function() {
         this.sr_array = [];
         for(var id in sr_id_map) {
             this.sr_array[id] = this.prefs.enabledSubreddits[sr_id_map[id]];
@@ -453,7 +475,7 @@ var bpm_prefs = {
         }
     },
 
-    make_emote_map: function(list) {
+    _make_emote_map: function(list) {
         var map = {};
         for(var i = 0; i < list.length; i++) {
             map[list[i]] = 1;
@@ -497,15 +519,33 @@ var bpm_converter = {
                 var parts = href.split("-");
                 var emote_name = parts[0];
 
+                var is_emote = false;
+                var is_nsfw, sr_enabled, emote_size, emote_sourcename, class_name;
                 if(emote_map[emote_name]) {
+                    is_emote = true;
                     var emote_info = emote_map[emote_name];
-                    var is_nsfw = emote_info[0];
+                    is_nsfw = emote_info[0];
                     var source_id = emote_info[1];
-                    var emote_size = emote_info[2];
+                    sr_enabled = prefs.sr_array[source_id];
+                    emote_size = emote_info[2];
+                    emote_sourcename = sr_data[sr_id_map[source_id]][0];
+                    // Strip off leading "/".
+                    class_name = "bpmote-" + bpm_utils.sanitize(emote_name.slice(1));
+                } else if(prefs.custom_emotes[emote_name]) {
+                    is_emote = true;
+                    is_nsfw = false;
+                    sr_enabled = true;
+                    emote_size = 0;
+                    emote_sourcename = "custom subreddit";
+                    class_name = "bpm-cmote-" + bpm_utils.sanitize(emote_name.slice(1));
+                }
 
+                if(is_emote) {
                     // Click blocker CSS/JS
                     element.className += " bpm-emote";
-                    element.dataset["emote"] = emote_name; // Used in alt-text
+                    // Used in alt-text. (Note: dashes are invalid here)
+                    element.dataset["bpm_emotename"] = emote_name;
+                    element.dataset["bpm_srname"] = emote_sourcename;
 
                     if(!prefs.we_map[emote_name]) {
                         var nsfw_class = prefs.prefs.hideDisabledEmotes ? " bpm-hidden" : " bpm-nsfw";
@@ -523,7 +563,7 @@ var bpm_converter = {
                             continue;
                         }
 
-                        if(!prefs.sr_array[source_id] || prefs.de_map[emote_name]) {
+                        if(!sr_enabled || prefs.de_map[emote_name]) {
                             element.className += disabled_class;
                             if(!element.textContent) {
                                 element.textContent = "Disabled " + emote_name;
@@ -540,8 +580,7 @@ var bpm_converter = {
                         }
                     }
 
-                    // Strip off leading "/".
-                    element.className += " bpmote-" + bpm_utils.sanitize(emote_name.slice(1));
+                    element.className += " " + class_name;
 
                     // Apply flags in turn. We pick on the naming a bit to prevent
                     // spaces and such from slipping in.
@@ -656,9 +695,8 @@ var bpm_converter = {
             // information
             if(bpm_utils.has_class(element, "bpm-emote")) {
                 processed = true;
-                var emote_name = element.dataset["emote"];
-                var source_id = emote_map[emote_name][1];
-                var sr_name = sr_data[sr_id_map[source_id]][0];
+                var emote_name = element.dataset["bpm_emotename"];
+                var sr_name = element.dataset["bpm_srname"];
                 element.title = emote_name + " from " + sr_name;
             }
 

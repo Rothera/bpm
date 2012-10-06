@@ -118,7 +118,8 @@ function on_cs_attach(worker) {
             case "get_custom_css":
                 worker.postMessage({
                     "method": "custom_css",
-                    "css": pref_manager.cm.css_cache
+                    "css": pref_manager.cm.css_cache,
+                    "emotes": pref_manager.cm.emote_cache
                 });
                 break;
 
