@@ -67,13 +67,15 @@ var bpm_backendsupport = {
 
         // Locate all emotes and emote CSS
         var emote_text = "";
-        var emotes = {};
+        var emotes = [];
         var block_match, emote_match;
         while((block_match = this.block_regexp.exec(data)) !== null) {
             var css_chunk = block_match[0];
             while((emote_match = this.emote_regexp.exec(css_chunk)) !== null) {
-                var emote = emote_match[2];
-                emotes[emote] = 1;
+                var emote = emote_match[2].toLowerCase();
+                if(emotes.indexOf(emote) < 0) {
+                    emotes.push(emote);
+                }
 
                 // Sanitize class names and convert to .bpm-cmote structure
                 var class_name = (".bpm-cmote-" + this.sanitize(emote.slice(1)) +
@@ -124,9 +126,9 @@ var bpm_backendsupport = {
             },
 
             db_json: hooks.read_json,
-            set_db_json: hooks.write_json,
+            db_set_json: hooks.write_json,
             db_key: hooks.read_value,
-            set_db_key: hooks.write_value,
+            db_set_key: hooks.write_value,
 
             set_pref: function(key, value) {
                 if(prefs[key] === undefined) {
@@ -212,6 +214,7 @@ function css_manager(pref_manager) {
     this.pm = pref_manager;
     this.cached_subreddits = [];
     this.css_cache = null;
+    this.emote_cache = null;
 
     // Done from pref_manager
     //this.check_cache();
@@ -224,14 +227,24 @@ css_manager.prototype = {
 
     rebuild_cache: function() {
         var prefs = this.pm.get();
+        var emote_lists = this.pm.db_json("customcss_emotes");
         this.cached_subreddits = [];
 
         this.css_cache = "";
+        this.emote_cache = {};
+
         for(var subreddit in prefs.customCSSSubreddits) {
             var key = "csscache_" + subreddit.toLowerCase();
             if(this.pm.db_key(key) !== undefined) {
                 this.css_cache += this.pm.db_key(key);
                 this.cached_subreddits.push(subreddit);
+            }
+
+            if(emote_lists[subreddit] !== undefined) {
+                var emote_names = emote_lists[subreddit];
+                for(var i = 0; i < emote_names.length; i++) {
+                    this.emote_cache[emote_names[i]] = 1;
+                }
             }
         }
     },
@@ -239,6 +252,16 @@ css_manager.prototype = {
     check_cache: function() {
         var now = Date.now();
         var prefs = this.pm.get();
+
+        if(this.pm.db_json("customcss_emotes") === undefined) {
+            this.pm.db_set_json("customcss_emotes", {});
+
+            // Upgrade path: clear old CSS caches, as they're invalid
+            for(var subreddit in prefs.customCSSSubreddits) {
+                prefs.customCSSSubreddits[subreddit] = 0;
+            }
+        }
+
         for(var subreddit in prefs.customCSSSubreddits) {
             var last_dl_time = prefs.customCSSSubreddits[subreddit];
             if(last_dl_time === undefined || last_dl_time + DOWNLOAD_INTERVAL < now) {
@@ -260,7 +283,11 @@ css_manager.prototype = {
             var tmp = bpm_backendsupport.strip_subreddit_css(css);
             var extracted_emotes = tmp[0];
             var stripped_css = tmp[1];
-            this.pm.set_db_key(key, stripped_css);
+
+            var custom_emotes = this.pm.db_json("customcss_emotes");
+            custom_emotes[subreddit] = extracted_emotes;
+            this.pm.db_set_json("customcss_emotes", custom_emotes);
+            this.pm.db_set_key(key, stripped_css);
 
             prefs.customCSSSubreddits[subreddit] = Date.now();
             this.pm._sync();
