@@ -1407,13 +1407,13 @@ var bpm_core = {
             document.head.appendChild(tag);
         }
 
-            // As a relevant note, it's a terrible idea to set this up before
-            // the DOM is built, because monitoring it for changes seems to slow
-            // the process down horribly.
+        // As a relevant note, it's a terrible idea to set this up before
+        // the DOM is built, because monitoring it for changes seems to slow
+        // the process down horribly.
 
-            // What we do here: for each mutation, inspect every .md we can
-            // find- whether the node in question is deep within one, or contains
-            // some.
+        // What we do here: for each mutation, inspect every .md we can
+        // find- whether the node in question is deep within one, or contains
+        // some.
         bpm_utils.observe(function() {
             return new bpm_utils.MutationObserver(bpm_utils.catch_errors(function(mutations, observer) {
                 for(var m = 0; m < mutations.length; m++) {
@@ -1475,7 +1475,7 @@ var bpm_core = {
         // Firefox is funny about window/.self/.parent/.top, such that comparing
         // references is somewhat unreliable. frameElement is the only test I've
         // found so far that works reliably.
-        if(window !== window.top || window.frameElement !== null) {
+        if(window !== window.top || (window.frameElement !== null && window.frameElement !== undefined)) {
             if(bpm_utils.ends_with(window.location.hostname, "redditmedia.com")) {
                 return; // Reddit ad pages
             }
