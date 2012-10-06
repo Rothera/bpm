@@ -180,6 +180,13 @@ var bpm_utils = {
                 callback();
             }, false);
         }
+    },
+
+    is_frame: function() {
+        // Firefox is funny about window/.self/.parent/.top, such that comparing
+        // references is somewhat unreliable. frameElement is the only test I've
+        // found so far that works reliably.
+        return (window !== window.top || (window.frameElement !== null && window.frameElement !== undefined));
     }
 };
 
@@ -734,18 +741,71 @@ var bpm_search = {
 
     init: function(prefs) {
         this.inject_html();
+        this.init_search_box(prefs);
+    },
 
-        // Close it on demand
-        this.close.addEventListener("click", function(event) {
-            this.hide();
-        }.bind(this), false);
+    init_frame: function(prefs) {
+        // pass
+    },
 
+    inject_html: function() {
+        // Placeholder div to create HTML in
+        var div = document.createElement("div");
+        // I'd sort of prefer display:none, but then I'd have to override it
+        div.style.visibility = "hidden";
+
+        var html = [
+            // tabindex is hack to make Esc work. Reddit uses this index in a couple
+            // of places, so probably safe.
+            '<div id="bpm-search-box" tabindex="100">',
+            '  <div id="bpm-toprow">',
+            '     <span id="bpm-dragbox"></span>',
+            '     <input id="bpm-search" type="search" placeholder="Search"/>',
+            '    <span id="bpm-result-count"></span>',
+            '    <span id="bpm-close"></span>',
+            '  </div>',
+            '  <div id="bpm-search-results"></div>',
+            '  <div id="bpm-bottomrow">',
+            '    <span id="bpm-help-hover">help',
+            '      <div id="bpm-search-help">',
+            '        <p>Searching for <code>"aj"</code> will show you all emotes with <code>"aj"</code> in their names.',
+            '        <p>Searching for <code>"aj happy"</code> will show you all emotes with both <code>"aj"</code> and <code>"happy"</code> in their names.',
+            '        <p>The special syntax <code>"sr:subreddit"</code> will limit your results to emotes from that subreddit.',
+            '        <p>Using more than one subreddit will show you emotes from all of them.',
+            '      </div>',
+            '    </span>',
+            '    <span id="bpm-resize"></span>',
+            '  </div>',
+            '</div>',
+            '<div id="bpm-global-icon" title="Hold Ctrl (Command/Meta) to drag"></div>'
+            ].join("\n");
+        div.innerHTML = html;
+        document.body.appendChild(div);
+
+        // This seems to me a rather lousy way to build HTML, but oh well
+        this.container = document.getElementById("bpm-search-box");
+        this.dragbox = document.getElementById("bpm-dragbox");
+        this.search = document.getElementById("bpm-search");
+        this.count = document.getElementById("bpm-result-count");
+        this.close = document.getElementById("bpm-close");
+        this.results = document.getElementById("bpm-search-results");
+        this.resize = document.getElementById("bpm-resize");
+
+        this.global_icon = document.getElementById("bpm-global-icon");
+    },
+
+    init_search_box: function(prefs) {
         /*
          * Intercept mouseover for the entire search widget, so we can remember
          * which form was being used before.
          */
         this.container.addEventListener("mouseover", function(event) {
             this.grab_target_form();
+        }.bind(this), false);
+
+        // Close it on demand
+        this.close.addEventListener("click", function(event) {
+            this.hide();
         }.bind(this), false);
 
         // Another way to close it
@@ -831,74 +891,6 @@ var bpm_search = {
             prefs.prefs.searchBoxInfo[3] = sb_height;
             bpm_prefs.sync_key("searchBoxInfo"); // FIXME again
         }.bind(this));
-
-        // Enable dragging the global button around
-        var global_icon_x, global_icon_y;
-        bpm_utils.enable_drag(this.global_icon, function(event) {
-            global_icon_x = parseInt(this.global_icon.style.left, 10);
-            global_icon_y = parseInt(this.global_icon.style.top, 10);
-        }.bind(this), function(event, start_x, start_y, x, y) {
-            if(!event.ctrlKey && !event.metaKey) {
-                return;
-            }
-
-            // Don't permit it to move out the left/top side of the window
-            var gi_left = Math.max(x - start_x + global_icon_x, 0);
-            var gi_top = Math.max(y - start_y + global_icon_y, 0);
-
-            this.global_icon.style.left = gi_left + "px";
-            this.global_icon.style.top = gi_top + "px";
-
-            prefs.prefs.globalIconPos[0] = gi_left;
-            prefs.prefs.globalIconPos[1] = gi_top;
-            bpm_prefs.sync_key("globalIconPos"); // FIXME yet again
-        }.bind(this));
-    },
-
-    inject_html: function() {
-        // Placeholder div to create HTML in
-        var div = document.createElement("div");
-        // I'd sort of prefer display:none, but then I'd have to override it
-        div.style.visibility = "hidden";
-
-        var html = [
-            // tabindex is hack to make Esc work. Reddit uses this index in a couple
-            // of places, so probably safe.
-            '<div id="bpm-search-box" tabindex="100">',
-            '  <div id="bpm-toprow">',
-            '     <span id="bpm-dragbox"></span>',
-            '     <input id="bpm-search" type="search" placeholder="Search"/>',
-            '    <span id="bpm-result-count"></span>',
-            '    <span id="bpm-close"></span>',
-            '  </div>',
-            '  <div id="bpm-search-results"></div>',
-            '  <div id="bpm-bottomrow">',
-            '    <span id="bpm-help-hover">help',
-            '      <div id="bpm-search-help">',
-            '        <p>Searching for <code>"aj"</code> will show you all emotes with <code>"aj"</code> in their names.',
-            '        <p>Searching for <code>"aj happy"</code> will show you all emotes with both <code>"aj"</code> and <code>"happy"</code> in their names.',
-            '        <p>The special syntax <code>"sr:subreddit"</code> will limit your results to emotes from that subreddit.',
-            '        <p>Using more than one subreddit will show you emotes from all of them.',
-            '      </div>',
-            '    </span>',
-            '    <span id="bpm-resize"></span>',
-            '  </div>',
-            '</div>',
-            '<div id="bpm-global-icon" title="Hold Ctrl (Command/Meta) to drag"></div>'
-            ].join("\n");
-        div.innerHTML = html;
-        document.body.appendChild(div);
-
-        // This seems to me a rather lousy way to build HTML, but oh well
-        this.container = document.getElementById("bpm-search-box");
-        this.dragbox = document.getElementById("bpm-dragbox");
-        this.search = document.getElementById("bpm-search");
-        this.count = document.getElementById("bpm-result-count");
-        this.close = document.getElementById("bpm-close");
-        this.results = document.getElementById("bpm-search-results");
-        this.resize = document.getElementById("bpm-resize");
-
-        this.global_icon = document.getElementById("bpm-global-icon");
     },
 
     show: function(prefs) {
@@ -924,42 +916,6 @@ var bpm_search = {
         if(!bpm_utils.id_above(active, "bpm-search-box") && active !== bpm_search.target_form &&
            active.selectionStart !== undefined && active.selectionEnd !== undefined) {
             this.target_form = active;
-        }
-    },
-
-    insert_emote: function(emote_name) {
-        if(this.target_form === null) {
-            return;
-        }
-
-        var start = this.target_form.selectionStart;
-        var end = this.target_form.selectionEnd;
-        if(start !== undefined && end !== undefined) {
-            var emote_len;
-            if(start !== end) {
-                // Make selections into alt-text.
-                // "[](" + ' "' + '")'
-                emote_len = 7 + emote_name.length + (end - start);
-                this.target_form.value = (
-                    this.target_form.value.slice(0, start) +
-                    "[](" + emote_name + " \"" +
-                    this.target_form.value.slice(start, end) + "\")" +
-                    this.target_form.value.slice(end));
-            } else {
-                // "[](" + ")"
-                emote_len = 4 + emote_name.length;
-                this.target_form.value = (
-                    this.target_form.value.slice(0, start) +
-                    "[](" + emote_name + ")" +
-                    this.target_form.value.slice(end));
-            }
-            this.target_form.selectionStart = end + emote_len;
-            this.target_form.selectionEnd = end + emote_len;
-
-            // Trigger preview update in RES, which *specifically* listens for keyup.
-            var event = document.createEvent("Event");
-            event.initEvent("keyup", true, true);
-            this.target_form.dispatchEvent(event);
         }
     },
 
@@ -1082,6 +1038,42 @@ var bpm_search = {
         this.count.textContent = text;
     },
 
+    insert_emote: function(emote_name) {
+        if(this.target_form === null) {
+            return;
+        }
+
+        var start = this.target_form.selectionStart;
+        var end = this.target_form.selectionEnd;
+        if(start !== undefined && end !== undefined) {
+            var emote_len;
+            if(start !== end) {
+                // Make selections into alt-text.
+                // "[](" + ' "' + '")'
+                emote_len = 7 + emote_name.length + (end - start);
+                this.target_form.value = (
+                    this.target_form.value.slice(0, start) +
+                    "[](" + emote_name + " \"" +
+                    this.target_form.value.slice(start, end) + "\")" +
+                    this.target_form.value.slice(end));
+            } else {
+                // "[](" + ")"
+                emote_len = 4 + emote_name.length;
+                this.target_form.value = (
+                    this.target_form.value.slice(0, start) +
+                    "[](" + emote_name + ")" +
+                    this.target_form.value.slice(end));
+            }
+            this.target_form.selectionStart = end + emote_len;
+            this.target_form.selectionEnd = end + emote_len;
+
+            // Trigger preview update in RES, which *specifically* listens for keyup.
+            var event = document.createEvent("Event");
+            event.initEvent("keyup", true, true);
+            this.target_form.dispatchEvent(event);
+        }
+    },
+
     inject_search_button: function(prefs, spans) {
         for(var i = 0; i < spans.length; i++) {
             // Matching the "formatting help" button is tricky- there's no great
@@ -1122,7 +1114,33 @@ var bpm_search = {
         }
     },
 
-    setup_global_search: function(prefs) {
+    setup_global_icon: function(prefs) {
+        this.global_icon.addEventListener("mouseover", function(event) {
+            this.grab_target_form();
+        }.bind(this), false);
+
+        // Enable dragging the global button around
+        var global_icon_x, global_icon_y;
+        bpm_utils.enable_drag(this.global_icon, function(event) {
+            global_icon_x = parseInt(this.global_icon.style.left, 10);
+            global_icon_y = parseInt(this.global_icon.style.top, 10);
+        }.bind(this), function(event, start_x, start_y, x, y) {
+            if(!event.ctrlKey && !event.metaKey) {
+                return;
+            }
+
+            // Don't permit it to move out the left/top side of the window
+            var gi_left = Math.max(x - start_x + global_icon_x, 0);
+            var gi_top = Math.max(y - start_y + global_icon_y, 0);
+
+            this.global_icon.style.left = gi_left + "px";
+            this.global_icon.style.top = gi_top + "px";
+
+            prefs.prefs.globalIconPos[0] = gi_left;
+            prefs.prefs.globalIconPos[1] = gi_top;
+            bpm_prefs.sync_key("globalIconPos"); // FIXME yet again
+        }.bind(this));
+
         this.global_icon.style.visibility = "visible";
 
         this.global_icon.addEventListener("click", function(event) {
@@ -1290,8 +1308,14 @@ var bpm_global = {
         bpm_core.init_css();
 
         if(prefs.prefs.enableGlobalSearch) {
-            bpm_search.init(prefs);
-            bpm_search.setup_global_search(prefs);
+            // Never inject the search box into frames. Too many sites fuck up
+            // entirely if we do. Instead, we do some cross-frame communication.
+            if(bpm_utils.is_frame()) {
+                bpm_search.init_frame(prefs);
+            } else {
+                bpm_search.init(prefs);
+                bpm_search.setup_global_icon(prefs);
+            }
         }
 
         this.process(prefs, document.body);
@@ -1472,30 +1496,6 @@ var bpm_core = {
     },
 
     main: function() {
-        // Firefox is funny about window/.self/.parent/.top, such that comparing
-        // references is somewhat unreliable. frameElement is the only test I've
-        // found so far that works reliably.
-        if(window !== window.top || (window.frameElement !== null && window.frameElement !== undefined)) {
-            if(bpm_utils.ends_with(window.location.hostname, "redditmedia.com")) {
-                return; // Reddit ad pages
-            }
-            if(bpm_utils.ends_with(window.location.hostname, "tumblr.com")) {
-                return; // Quick, hopefully temporary hack to fix a problem with Tumblr
-            }
-            // Chrome restricts our access, because Chrome is stupid
-            if(window.top !== undefined && bpm_utils.ends_with(window.top.location.hostname, "reddit.com")) {
-                // Avoid running in Reddit-enclosed frames. This prevents us from
-                // getting in the way inside frames added by some addons- esp.
-                // inline YT viewers. I don't know what else.
-                //
-                // Frames on other sites will just have to live with multiple copies
-                // of the global emote thing. That's usually desirable anyway, since
-                // the search box can't inject emotes into sub-frame forms. (Maybe
-                // we should, though?)
-                return;
-            }
-        }
-
         bpm_browser.request_prefs();
         bpm_browser.request_custom_css();
 
