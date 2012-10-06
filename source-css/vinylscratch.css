@@ -14,6 +14,16 @@ div.side:before {
     content: "Congratulations to our contest winners!"
     }
 
+/* Nightmode fixes for the background */
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
+body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
+body.res-nightmode:first-of-type {background-color: transparent!important;}
+
+/* Changes background  */
+body:first-of-type, body.res-nightmode:first-of-type {
+   
+     background:  url(%%unce%%)  no-repeat  fixed 50% 50% !important}
+
 
 
 

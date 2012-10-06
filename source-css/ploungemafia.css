@@ -76,6 +76,42 @@ hr {
    background-position: -26px 0;
 }
 
+.flair-crown {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%flaircrown%%);
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+}
+
+.flair-deadcrown {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%deadcrown%%);
+    display: inline-block;
+    height: 27px;
+    width: 18px;
+}
+
+.flair-taco {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%taco%%);
+    display: inline-block;
+    height: 26px;
+    width: 32px;
+}
+
 /* Link flair
 */
 
