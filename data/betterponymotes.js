@@ -78,6 +78,19 @@ var bpm_utils = {
         setup_dni();
     },
 
+    _random_letters: "abcdefghijklmnopqrstuvwxyz",
+    random_id: function(length) {
+        if(length === undefined) {
+            length = 24;
+        }
+
+        var tmp = "";
+        for(var i = 0; i < length; i++) {
+            tmp += this._random_letters[Math.floor(Math.random() * (this._random_letters.length - 1))];
+        }
+        return tmp;
+    },
+
     style_tag: function(css) {
         var tag = document.createElement("style");
         tag.type = "text/css";
@@ -187,6 +200,35 @@ var bpm_utils = {
         // references is somewhat unreliable. frameElement is the only test I've
         // found so far that works reliably.
         return (window !== window.top || (window.frameElement !== null && window.frameElement !== undefined));
+    },
+
+    _msg_script: function(id, message) {
+        /* BetterPonymotes hack to enable cross-origin frame communication in Chrome */
+        // Locate iframe, send message, remove class.
+        var iframe = document.getElementsByClassName(id)[0];
+        iframe.contentWindow.postMessage(message, "*");
+        iframe.className = iframe.className.replace(RegExp("\\b" + id + "\\b"), "");
+        // Locate this script tag and remove it.
+        var script = document.getElementById(id);
+        script.parentNode.removeChild(script);
+    },
+
+    message_iframe: function(frame, message) {
+        if(frame.contentWindow === null || frame.contentWindow === undefined) {
+            // Chrome and Opera don't permit *any* access to these variables for
+            // some stupid reason, despite them being available on the page.
+            // Inject a <script> tag that does the dirty work for us.
+            var id = "__betterponymotes_esh_" + this.random_id();
+            frame.className += " " + id;
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.id = id;
+            document.head.appendChild(script);
+            script.textContent = "(" + this._msg_script.toString() + ")('" + id + "', " + JSON.stringify(message) + ");";
+        } else {
+            // Right now, only Firefox lets us access this API.
+            frame.contentWindow.postMessage(message, "*");
+        }
     }
 };
 
@@ -745,7 +787,22 @@ var bpm_search = {
     },
 
     init_frame: function(prefs) {
-        // pass
+        window.addEventListener("message", function(event) {
+            // event.source === null in Firefox (as it's from extension code)
+            var message = event.data;
+            switch(message.__betterponymotes_method) {
+                case "__bpm_inject_emote":
+                    // Call toString() just in case
+                    this.insert_emote(message.__betterponymotes_emote.toString());
+                    break;
+
+                case "__bpm_track_form":
+                    this.grab_target_form();
+                    break;
+
+                // If it's not our message, it'll be undefined. (We don't care.)
+            }
+        }.bind(this), false);
     },
 
     inject_html: function() {
@@ -909,13 +966,45 @@ var bpm_search = {
     },
 
     target_form: null,
+    target_frame: null,
 
     grab_target_form: function() {
         var active = document.activeElement;
+
+        while(active.tagName === "IFRAME") {
+            // Focus is within the frame. Find the real element (recursing just
+            // in case).
+            if(active.contentWindow === null || active.contentWindow === undefined) {
+                // Chrome is broken and does not permit us to access these
+                // from content scripts.
+                this.target_form = null;
+                this.target_frame = active;
+
+                bpm_utils.message_iframe(active, {
+                    "__betterponymotes_method": "__bpm_track_form"
+                });
+                return;
+            }
+
+            try {
+                active = active.contentDocument.activeElement;
+            } catch(e) {
+                // Addon SDK is broken
+                bpm_utils.message_iframe(active, {
+                    "__betterponymotes_method": "__bpm_track_form"
+                });
+
+                this.target_form = null;
+                this.target_frame = active;
+                return;
+            }
+        }
+
         // Ignore our own stuff and things that are not text boxes
-        if(!bpm_utils.id_above(active, "bpm-search-box") && active !== bpm_search.target_form &&
+        if(!bpm_utils.id_above(active, "bpm-search-box") && active !== this.target_form &&
            active.selectionStart !== undefined && active.selectionEnd !== undefined) {
             this.target_form = active;
+            this.target_frame = null;
         }
     },
 
@@ -1039,7 +1128,14 @@ var bpm_search = {
     },
 
     insert_emote: function(emote_name) {
-        if(this.target_form === null) {
+        if(this.target_frame !== null) {
+            bpm_utils.message_iframe(this.target_frame, {
+                "__betterponymotes_method": "__bpm_inject_emote",
+                "__betterponymotes_emote": emote_name
+            });
+
+            return;
+        } else if(this.target_form === null) {
             return;
         }
 
