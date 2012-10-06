@@ -402,6 +402,7 @@ case "userscript":
             this._sync_prefs();
 
             bpm_prefs.got_prefs(this.prefs);
+            bpm_prefs.got_custom_emotes({}); // No support
         },
 
         request_custom_css: function() {
