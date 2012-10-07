@@ -178,9 +178,7 @@ TaskQueue.prototype = {
             // Wait until we're allowed to run things again
             var wait = (this.last_run + this.delay) - Date.now();
             if(wait > 0) {
-                // Google Chrome's setTimeout() does not appreciate a this
-                // parameter
-                this.set_timeout.call(undefined, this.run_next.bind(this), wait);
+                this.set_timeout(this.run_next.bind(this), wait);
             } else {
                 // May as well just call it directly
                 this.run_next();
@@ -196,7 +194,7 @@ TaskQueue.prototype = {
             this.last_run = Date.now();
             // If the queue isn't empty yet, keep running
             if(this.queue.length) {
-                this.set_timeout.call(undefined, this.run_next.bind(this), this.delay);
+                this.set_timeout(this.run_next.bind(this), this.delay);
             } else {
                 this.running = false;
             }

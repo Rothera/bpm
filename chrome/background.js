@@ -42,7 +42,8 @@ var pref_manager = bpm_backendsupport.manage_prefs(sr_data, {
         request.send();
     },
 
-    set_timeout: setTimeout
+    // Chrome's setTimeout() does not appreciate a this parameter
+    set_timeout: setTimeout.bind(undefined)
 });
 
 // Content script requests
