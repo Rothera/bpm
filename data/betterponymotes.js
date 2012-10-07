@@ -1269,8 +1269,8 @@ var bpm_global = {
     // others. It will not permit text in the [] portion, but alt-text quotes don't
     // have to match each other.
     //
-    //                   <   emote   >   <    alt-text     >
-    emote_regexp: /\[\]\((\/[\w!:\-]+)\s*(?:["']([^"]*)["'])?\)/g,
+    //                   <   emote      >   <    alt-text     >
+    emote_regexp: /\[\]\((\/[\w:!#\/\-]+)\s*(?:["']([^"]*)["'])?\)/g,
 
     tag_blacklist: {
         // Meta tags that we should never touch

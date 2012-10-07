@@ -87,9 +87,10 @@ def _parse_emote_selector(selector):
     # Generally this is a not a problem, and may help avoid false positives on
     # selectors that we shouldn't actually be parsing.
     #
-    # ":" and "!" are permitted in emote names- the former for "/pp:3", and the
-    # latter for colored text emotes.
-    m = re.match(r'a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="(/[\w:!]+)"\](:[a-zA-Z\-()]+)?$', selector)
+    # ":", "!", "#", and "/" are permitted in emote names. ":" is used by
+    # "/pp:3", "!" for colored text emotes, and the remaining two mostly for
+    # non-pony emotes and image macros.
+    m = re.match(r'a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="(\/[\w:!#\/]+)"\](:[a-zA-Z\-()]+)?$', selector)
     if m is None:
         return None
     pc1, emote_name, pc2 = m.groups()
