@@ -21,15 +21,20 @@
     float: left;
 
     /* An average, small emote (50px with padding) */
-    width: 40px !important; /* !important for sake of .bpm-disabled */
-    height: 40px !important;
+    width: 44px !important; /* !important for sake of .bpm-disabled */
+    height: 44px !important;
 
     /*
      * Need !important tags to override Reddit's CSS.
      */
     color: white !important;
     font-size: xx-small;
-    padding: 5px;
+    font-family: monospace;
+    padding: 3px;
+    margin: 1px; /* Don't run lines of them together */
+    border-radius: 2px;
+    word-break: break-all;
+    text-align: left; /* Safari seems to center it by default, making it hard to read */
 }
 
 .bpm-disabled, .bpm-disabled:before, .bpm-disabled:after, .bpm-disabled:hover, .bpm-disabled:active,
@@ -58,19 +63,16 @@
 /* Unknown emote placeholder */
 .bpm-unknown {
     background-color: slategray;
-    border-radius: 10px;
 }
 
 /* Disabled emote placeholder */
 .bpm-disabled {
     background-color: #DA4F49;
-    border-radius: 10px;
 }
 
 /* NSFW emote placeholder */
 .bpm-nsfw {
     background-color: black;
-    border-radius: 10px;
 }
 
 /* Alt-text display. */
