@@ -51,6 +51,10 @@ body:first-of-type, body.res-nightmode:first-of-type,.side,.flairtoggle,.submit 
 .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
 body.res-nightmode:first-of-type {background-color: transparent!important;}
+.res-nightmode .tabmenu li.selected a {background-color: #222 !important;}
+.res-nightmode #header-bottom-left .tabmenu .selected a {border-bottom: 1px solid #222 !important;}
+.res-nightmode .tabmenu li a {border-bottom: 1px solid black !important;}
+
 
 /*---------------------------- Scrolly sidebar thing --------------------------------------*/
 body
@@ -73,7 +77,6 @@ body
     background-color:transparent;
      margin-left: 45px;
     background-repeat: no-repeat;
-    height: 175px;
     }
 #header-img {
     margin-left: -40px;
@@ -88,18 +91,27 @@ body
     color: #364657;
     left: 282px;
     position: absolute;
-    top: 139px
+    top: 130px
     }
+
+.tabmenu li.selected a {
+border: 1px solid black;
+border-bottom: 1px solid white;
+color: #FF0085;
+}
+
+.tabmenu li a {
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-topleft: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
 
 .tabmenu {
 margin-left: 130px;
 }
-
-.tabmenu li a {
-    color: #000000;
-    background-color: #ffffff;
-    border: 0px solid black
-    }
 
 .pagename{
     color: white;
@@ -109,7 +121,6 @@ margin-left: 130px;
 #header {
     border-bottom: 1px solid #000000;
     z-index: 99;
-    height: 207px;
     }
 /*--------------------------------- Thumbnails! --------------------------------------*/
 .thumbnail.self, .thumbnail.nsfw, .thumbnail.default {
@@ -329,4 +340,3 @@ a[href|='/ppsing'] {width:102px; height:160px; background-position: -2px -356px}
 a[href|='/ppsteamingmad'] {width:351px; height:200px; background-position: -106px -356px}
 a[href|='/ppstrut'] {width:149px; height:150px; background-position: -2px -558px}
 a[href|='/ppwhy'] {width:103px; height:125px; background-position: -153px -558px}
-

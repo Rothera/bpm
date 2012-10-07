@@ -375,7 +375,7 @@ a[href|="/b00"],
 a[href|="/rb00"],
 a[href|="/flutterfear"],
 a[href|="/rflutterfear"] {
-    background-position: -0px -0px
+    background-position: -0px -0px 
     }
 a[href|="/b01"],
 a[href|="/rb01"],
@@ -2217,3 +2217,8 @@ body:not(.moderator) input[value="t3_10vuz8"] + .usertext-edit
 {
  display:none;
 }
+
+/*DERP*/
+input[value="t1_c6in1kg"] + .usertext-body .md p:after { content: "Twist is 20% cooler."; }
+
+.thing.id-t1_c6ipose.comment a[href|="/bananaflip"]{background-image:url(%%lounge-emotes%%) !important;background-position: -140px -70px !important; width: 70px !important; height: 70px !important}

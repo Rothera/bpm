@@ -1,7 +1,7 @@
 /*
 *                                                     *
 *                                                     *
-*           PANKAKKE STYLESHEET           *
+*           PANKAKKE STYLESHEET                       *
 *                                                     *
 *                                                     *
 */
@@ -67,6 +67,7 @@ body #header-bottom-left {
 /***********Sidebar Shit************/
 /********************************/
 
+/*
 .titlebox .number:after {
     content: " victims"
     }
@@ -74,6 +75,10 @@ body #header-bottom-left {
     content: "";
     font-size: 0 !important;
     }
+*/
+div.titlebox span.word{display:none}
+div.titlebox .subscribers span.number:after{content:" victims"}
+div.titlebox .users-online span.number:after{content:" drowning in syrup"}
 
 
 
@@ -244,7 +249,7 @@ a[href|="/notthebees"] {
     }
 
 /************MLP-LRG*************/
-a[href|="/pghoofpump"], a[href|="/pgshock"], a[href|="/pglegcross"], a[href|="/pgshuffle"], a[href|="/ponykakke"], a[href|="/gdb"], a[href|="/gdbsmirk"],  a[href|="/dinsfire"], a[href|="/dintrot"],  a[href|="/sistersprankton"], a[href|="/flutterhey"], a[href|="/sisterzealot"], a[href|="/octaviagasm"], a[href|="/mangohug"] {
+a[href|="/pghoofpump"], a[href|="/pgshock"], a[href|="/pglegcross"], a[href|="/pgshuffle"], a[href|="/ponykakke"], a[href|="/gdb"], a[href|="/gdbsmirk"],  a[href|="/dinsfire"], a[href|="/dintrot"],  a[href|="/sistersprankton"], a[href|="/flutterhey"], a[href|="/sisterzealot"], a[href|="/octaviagasm"], a[href|="/mangohug"], a[href|="/petra"] {
     display: block;
     clear: none;
     float: left;
@@ -307,6 +312,10 @@ a[href|="/mangohug"] {
     background-position: -1324px -0px;
     width: 123px
     }
+a[href|="/petra"] {
+    background-position: -1447px -0px;
+    width: 114px
+    }
 
 /***********MLP-XLRG*************/
 a[href|="/fearless"] {
@@ -320,6 +329,7 @@ a[href|="/fearless"] {
      background-position: -0px -0px;
      width: 252px;
      }
+
 
 
 /************Mane-sub*************/
