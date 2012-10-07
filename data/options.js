@@ -17,24 +17,27 @@
 //
 // platform is "unknown" when run via <script> tag on Firefox.
 
+var _bpm_this = this;
+
+function _bpm_global(name) {
+    return _bpm_this[name] || window[name] || undefined;
+}
+
 var bpm_utils = {
-    // Browser detection- this script runs unmodified on all supported platforms,
-    // so inspect a couple of potential global variables to see what we have.
-    platform: (function(global) {
-        // FIXME: "self" is a standard object, though self.on is specific to
-        // Firefox content scripts. I'd prefer something a little more clearly
-        // affiliated, though.
-        if(self.on !== undefined) {
+    platform: (function() {
+        if(_bpm_global("GM_log") !== undefined) {
+            return "userscript";
+        } else if(self.on !== undefined) {
             return "firefox-ext";
-        } else if(global.chrome !== undefined && global.chrome.extension !== undefined) {
+        } else if(_bpm_global("chrome") !== undefined && chrome.extension !== undefined) {
             return "chrome-ext";
-        } else if(global.opera !== undefined && global.opera.extension !== undefined) {
+        } else if(_bpm_global("opera") !== undefined && opera.extension !== undefined) {
             return "opera-ext";
         } else {
             console.log("BPM: ERROR: Unknown platform!");
             return "unknown";
         }
-    })(this),
+    })(),
 
     copy_properties: function(to, from) {
         for(var key in from) {
@@ -47,47 +50,71 @@ var bpm_utils = {
             try {
                 return f.apply(this, arguments);
             } catch(e) {
-                console.log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
+                bpm_log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
+                throw e;
             }
         };
-    }
+    },
+
+    with_dom: function(callback) {
+        if(document.readyState === "interactive" || document.readyState === "complete") {
+            callback();
+        } else {
+            document.addEventListener("DOMContentLoaded", bpm_utils.catch_errors(function(event) {
+                callback();
+            }), false);
+        }
+    },
 };
 
+var bpm_log = bpm_utils.platform === "userscript" ? GM_log : console.log.bind(console);
+
 var bpm_browser = {
-    send_message: function(method, data) {
-        if(data === undefined) {
-            this._send_message({"method": method});
-        } else {
-            data["method"] = method;
-            this._send_message(data);
-        }
+    set_pref: function(key, value) {
+        this._send_message("set_pref", {"pref": key, "value": value});
+    },
+
+    request_prefs: function() {
+        this._send_message("get_prefs");
+    },
+
+    force_update: function(subreddit) {
+        this._send_message("force_update", {"subreddit": subreddit});
     }
 };
 
 switch(bpm_utils.platform) {
 case "firefox-ext":
     bpm_utils.copy_properties(bpm_browser, {
-        _send_message: function(data) {
+        _send_message: function(method, data) {
+            if(data === undefined) {
+                data = {};
+            }
+            data["method"] = method;
             self.postMessage(data);
         }
     });
 
-    self.on("message", function(message) {
+    self.on("message", bpm_utils.catch_errors(function(message) {
         switch(message.method) {
         case "prefs":
             bpm_prefs.got_prefs(message.prefs);
             break;
 
         default:
-            console.log("BPM: ERROR: Unknown request from Firefox background script: '" + message.method + "'");
+            bpm_log("BPM: ERROR: Unknown request from Firefox background script: '" + message.method + "'");
             break;
         }
-    });
+    }));
     break;
 
 case "chrome-ext":
     bpm_utils.copy_properties(bpm_browser, {
-        _send_message: function(data) {
+        _send_message: function(method, data) {
+            if(data === undefined) {
+                data = {};
+            }
+            data["method"] = method;
             chrome.extension.sendMessage(data, this._message_handler.bind(this));
         },
 
@@ -98,21 +125,25 @@ case "chrome-ext":
                 break;
 
             default:
-                console.log("BPM: ERROR: Unknown request from Chrome background script: '" + message.method + "'");
+                bpm_log("BPM: ERROR: Unknown request from Chrome background script: '" + message.method + "'");
                 break;
             }
-        },
+        }
     });
     break;
 
 case "opera-ext":
     bpm_utils.copy_properties(bpm_browser, {
-        _send_message: function(data) {
+        _send_message: function(method, data) {
+            if(data === undefined) {
+                data = {};
+            }
+            data["method"] = method;
             opera.extension.postMessage(data);
         }
     });
 
-    opera.extension.addEventListener("message", function(event) {
+    opera.extension.addEventListener("message", bpm_utils.catch_errors(function(event) {
         var message = event.data;
         switch(message.method) {
         case "prefs":
@@ -120,10 +151,10 @@ case "opera-ext":
             break;
 
         default:
-            console.log("BPM: ERROR: Unknown request from Opera background script: '" + message.method + "'");
+            bpm_log("BPM: ERROR: Unknown request from Opera background script: '" + message.method + "'");
             break;
         }
-    }, false);
+    }), false);
     break;
 }
 
@@ -131,9 +162,20 @@ var bpm_prefs = {
     prefs: null,
     sr_array: null,
     waiting: [],
+    sync_timeouts: {},
+
+    _ready: function() {
+        return (this.prefs !== null && this.custom_emotes !== null);
+    },
+
+    _run_callbacks: function() {
+        for(var i = 0; i < this.waiting.length; i++) {
+            this.waiting[i](this);
+        }
+    },
 
     when_available: function(callback) {
-        if(this.prefs) {
+        if(this._ready()) {
             callback(this);
         } else {
             this.waiting.push(callback);
@@ -142,16 +184,16 @@ var bpm_prefs = {
 
     got_prefs: function(prefs) {
         this.prefs = prefs;
-        this.make_sr_array();
-        this.de_map = this.make_emote_map(prefs.disabledEmotes);
-        this.we_map = this.make_emote_map(prefs.whitelistedEmotes);
+        this._make_sr_array();
+        this.de_map = this._make_emote_map(prefs.disabledEmotes);
+        this.we_map = this._make_emote_map(prefs.whitelistedEmotes);
 
-        for(var i = 0; i < this.waiting.length; i++) {
-            this.waiting[i](this);
+        if(this._ready()) {
+            this._run_callbacks();
         }
     },
 
-    make_sr_array: function() {
+    _make_sr_array: function() {
         this.sr_array = [];
         for(var id in sr_id_map) {
             this.sr_array[id] = this.prefs.enabledSubreddits[sr_id_map[id]];
@@ -162,11 +204,11 @@ var bpm_prefs = {
             //
             // Also bad would be items in prefs not in sr_id_map, but that's
             // more or less impossible to handle.
-            console.log("BPM: ERROR: sr_array has holes; installation or prefs are broken!");
+            bpm_log("BPM: ERROR: sr_array has holes; installation or prefs are broken!");
         }
     },
 
-    make_emote_map: function(list) {
+    _make_emote_map: function(list) {
         var map = {};
         for(var i = 0; i < list.length; i++) {
             map[list[i]] = 1;
@@ -175,13 +217,17 @@ var bpm_prefs = {
     },
 
     sync_key: function(key) {
-        // No sync_timeouts for options page; would be bad as we don't want to
-        // lose any prefs due to quickly closing the page
-        bpm_browser.send_message("set_pref", {"pref": key, "value": this.prefs[key]});
-    },
+        // Schedule pref write for one second in the future, clearing out any
+        // previous timeout. Prevents excessive backend calls, which can generate
+        // some lag (on Firefox, at least).
+        if(this.sync_timeouts[key] !== undefined) {
+            clearTimeout(this.sync_timeouts[key]);
+        }
 
-    force_update: function(subreddit) {
-        bpm_browser.send_message("force_update", {"subreddit": subreddit});
+        this.sync_timeouts[key] = setTimeout(bpm_utils.catch_errors(function() {
+            bpm_browser.set_pref(key, this.prefs[key]);
+            delete this.sync_timeouts[key];
+        }.bind(this)), 1000);
     }
 };
 
@@ -400,7 +446,7 @@ function manage_custom_subreddits(prefs) {
         var remove_button = $(row.find("button")[1]);
 
         force_button.click(function(event) {
-            bpm_prefs.force_update(subreddit);
+            bpm_browser.force_update(subreddit);
         });
 
         remove_button.click(function(event) {
@@ -478,24 +524,13 @@ function run(prefs) {
 }
 
 function main() {
-    var _doc_loaded = false;
-    var _prefs_loaded = null;
+    bpm_browser.request_prefs();
 
-    window.addEventListener("DOMContentLoaded", function() {
-        _doc_loaded = true;
-        if(_doc_loaded && _prefs_loaded !== null) {
-            run(_prefs_loaded.prefs);
-        }
-    }, false);
-
-    bpm_prefs.when_available(function(prefs) {
-        _prefs_loaded = prefs;
-        if(_doc_loaded && _prefs_loaded !== null) {
+    bpm_utils.with_dom(function() {
+        bpm_prefs.when_available(function(prefs) {
             run(prefs.prefs);
-        }
-    });
-
-    bpm_browser.send_message("get_prefs");
+        }.bind(this));
+    }.bind(this));
 }
 
 main();
