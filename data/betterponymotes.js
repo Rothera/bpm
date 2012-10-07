@@ -30,8 +30,8 @@
 
 var BPM_CODE_VERSION = 33;
 var BPM_DATA_VERSION = 57;
-var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us/";
-var BPM_OPTIONS_PAGE = BPM_RESOURCE_PREFIX + "options.html";
+var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us";
+var BPM_OPTIONS_PAGE = BPM_RESOURCE_PREFIX + "/options.html";
 
 var _bpm_this = this;
 
@@ -293,6 +293,9 @@ var bpm_utils = {
      * shortcomings to do so.
      *
      * "message" must be JSON-compatible.
+     *
+     * Note that the targetOrigin of the postMessage() call is "*", no matter
+     * what. Don't send anything even slightly interesting.
      */
     message_iframe: function(frame, message) {
         if(frame.contentWindow === null || frame.contentWindow === undefined) {
@@ -563,11 +566,6 @@ case "userscript":
         },
 
         link_css: function(filename) {
-            if(filename[0] === "/") {
-                // Most HTTP servers don't care about "http://...//filename.css",
-                // but one or two are picky (including one I test with).
-                filename = filename.slice(1);
-            }
             var url = BPM_RESOURCE_PREFIX + filename + "?p=2&dver=" + BPM_DATA_VERSION;
             var tag = bpm_utils.stylesheet_link(url);
             this.css_parent().insertBefore(tag, this.css_parent().firstChild);
@@ -948,7 +946,13 @@ var bpm_search = {
      */
     init_frame: function(prefs) {
         window.addEventListener("message", bpm_utils.catch_errors(function(event) {
-            // event.source === null in Firefox (as it's from extension code)
+            // Not worried about event source (it might be null in Firefox, as
+            // a note). Both of these methods are quite harmless, so it's
+            // probably ok to let them be publically abusable.
+            //
+            // I'm not sure how else we can do it, anyway- possibly by going
+            // through the backend, but not in userscripts. (Maybe we can abuse
+            // GM_setValue().)
             var message = event.data;
             switch(message.__betterponymotes_method) {
                 case "__bpm_inject_emote":
@@ -1818,7 +1822,7 @@ var bpm_core = {
                     "__betterponymotes_target": "__bpm_options_page",
                     "__betterponymotes_method": "__bpm_prefs",
                     "__betterponymotes_prefs": bpm_prefs.prefs
-                }, "*");
+                }, BPM_RESOURCE_PREFIX);
                 return true;
             } else {
                 return false;
@@ -1845,8 +1849,10 @@ var bpm_core = {
         // Listen for messages that interest us
         window.addEventListener("message", bpm_utils.catch_errors(function(event) {
             var message = event.data;
-            // Check destination
-            if(message.__betterponymotes_target !== "__bpm_extension") {
+            // Verify source and intended target (we receive our own messages,
+            // and don't want to get anything from rogue frames).
+            if(event.origin !== BPM_RESOURCE_PREFIX || event.source !== window ||
+               message.__betterponymotes_target !== "__bpm_extension") {
                 return;
             }
 

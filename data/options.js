@@ -10,6 +10,8 @@
 
 "use strict";
 
+var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us";
+
 // WARNING: This script is "executed" twice on Firefox- once as a normal <script>
 // tag, but also a a content script attached to the page. This is for code
 // sharing purposes (so we can reuse the same options.html between all browsers),
@@ -167,7 +169,7 @@ default:
                 "__betterponymotes_method": "__bpm_set_pref",
                 "__betterponymotes_pref": key,
                 "__betterponymotes_value": value
-            }, "*");
+            }, BPM_RESOURCE_PREFIX); // Probably won't work if it's a Firefox extension
         },
 
         request_prefs: function() {
@@ -185,7 +187,10 @@ default:
 
     window.addEventListener("message", bpm_utils.catch_errors(function(event) {
         var message = event.data;
-        if(message.__betterponymotes_target !== "__bpm_options_page") {
+        // Valid sources: ourselves, and chrome code
+        if((event.origin !== BPM_RESOURCE_PREFIX && event.origin !== null) ||
+           event.source !== window ||
+           message.__betterponymotes_target !== "__bpm_options_page") {
             return;
         }
 
