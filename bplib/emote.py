@@ -43,7 +43,7 @@ class Emote(BaseEmote):
         if self.custom_selector:
             return self.custom_selector
 
-        name = self.name.replace("!", "_excl_").replace(":", "_colon_").replace("#", "_hash_").replace("/", "_slash_")
+        name = "/" + self.name[1:].replace("!", "_excl_").replace(":", "_colon_").replace("#", "_hash_").replace("/", "_slash_")
         return ".bpmote-" + bplib.combine_name_pair((name, self.suffix)).lstrip("/").lower()
 
 class CustomEmote(Emote):

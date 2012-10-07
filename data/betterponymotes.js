@@ -32,45 +32,70 @@ var BPM_CODE_VERSION = 32;
 var BPM_DATA_VERSION = 56;
 var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us/";
 
-var _bpm_global = (!this ? window : this);
+var _bpm_this = this;
 
+/*
+ * Inspects the environment for global variables.
+ *
+ * On some platforms- particularly some userscript engines- the global this
+ * object !== window, and the two may have significantly different properties.
+ */
+function _bpm_global(name) {
+    return _bpm_this[name] || window[name] || undefined;
+}
+
+/*
+ * Misc. utility functions.
+ */
 var bpm_utils = {
-    // Browser detection- this script runs unmodified on all supported platforms,
-    // so inspect a couple of potential global variables to see what we have.
-    platform: (function(global) {
+    /*
+     * A string referring to the current platform BPM is running on. This is a
+     * best guess, made by inspecting global variables, and needed because this
+     * script runs unmodified on all supported platforms.
+     */
+    platform: (function() {
         // FIXME: "self" is a standard object, though self.on is specific to
         // Firefox content scripts. I'd prefer something a little more clearly
         // affiliated, though.
         //
         // Need to check GM_log first, because stuff like chrome.extension
         // exists even in userscript contexts.
-        if(global.GM_log !== undefined) {
+        if(_bpm_global("GM_log") !== undefined) {
             return "userscript";
         } else if(self.on !== undefined) {
             return "firefox-ext";
-        } else if(global.chrome !== undefined && global.chrome.extension !== undefined) {
+        } else if(_bpm_global("chrome") !== undefined && chrome.extension !== undefined) {
             return "chrome-ext";
-        } else if(global.opera !== undefined && global.opera.extension !== undefined) {
+        } else if(_bpm_global("opera") !== undefined && opera.extension !== undefined) {
             return "opera-ext";
         } else {
             // bpm_log doesn't exist, so this is as good a guess as we get
             console.log("BPM: ERROR: Unknown platform!");
             return "unknown";
         }
-    })(_bpm_global),
+    })(),
 
-    MutationObserver: (function(global) { return global.MutationObserver || global.WebKitMutationObserver || global.MozMutationObserver || null; })(_bpm_global),
+    /*
+     * A reference to the MutationObserver object. It's unprefixed on Firefox,
+     * but not on Chrome. Safari presumably has this as well. Defined to be
+     * null on platforms that don't support it.
+     */
+    MutationObserver: (_bpm_global("MutationObserver") || _bpm_global("WebKitMutationObserver") || _bpm_global("MozMutationObserver") || null),
 
+    /*
+     * Wrapper to safely set up MutationObserver-based code with DOMNodeInserted
+     * fallback. MutationObserver is frequently broken on Firefox Nightly due
+     * to Addon SDK bugs.
+     */
     observe: function(setup_mo, init_mo, setup_dni) {
-        // Wrapper to run MutationObserver-based code where possible, and fall
-        // back to DOMNodeInserted otherwise.
-        if(this.MutationObserver !== null) {
+        if(bpm_utils.MutationObserver !== null) {
             var observer = setup_mo();
 
             try {
                 init_mo(observer);
                 return;
             } catch(e) {
+                // Failed with whatever the error of the week is
                 bpm_log("BPM: ERROR: Can't use MutationObserver. Falling back to DOMNodeInserted. (info: L" + e.lineNumber + ": ", e.name + ": " + e.message + ")");
             }
         }
@@ -78,26 +103,37 @@ var bpm_utils = {
         setup_dni();
     },
 
+    /*
+     * Generates a random string made of [a-z] characters, default 24 chars
+     * long.
+     */
     _random_letters: "abcdefghijklmnopqrstuvwxyz",
     random_id: function(length) {
         if(length === undefined) {
             length = 24;
         }
 
-        var tmp = "";
+        var index, tmp = "";
         for(var i = 0; i < length; i++) {
-            tmp += this._random_letters[Math.floor(Math.random() * (this._random_letters.length - 1))];
+            index = Math.floor(Math.random() * bpm_utils._random_letters.length - 1);
+            tmp += bpm_utils._random_letters[index];
         }
         return tmp;
     },
 
+    /*
+     * Makes a nice <style> element out of the given CSS.
+     */
     style_tag: function(css) {
         var tag = document.createElement("style");
         tag.type = "text/css";
-        tag.appendChild(document.createTextNode(css));
+        tag.textContent = css;
         return tag;
     },
 
+    /*
+     * Makes a nice <link> element to the given URL (for CSS).
+     */
     stylesheet_link: function(url) {
         var tag = document.createElement("link");
         tag.href = url;
@@ -106,16 +142,25 @@ var bpm_utils = {
         return tag;
     },
 
+    /*
+     * Copies all properties on one object to another.
+     */
     copy_properties: function(to, from) {
         for(var key in from) {
             to[key] = from[key];
         }
     },
 
+    /*
+     * Determines whether the given element has a particular class name.
+     */
     has_class: function(element, class_name) {
         return (" " + element.className + " ").indexOf(" " + class_name + " ") > -1;
     },
 
+    /*
+     * Determines whether this element, or any ancestor, have the given id.
+     */
     id_above: function(element, id) {
         if(element.id === id) {
             return true;
@@ -126,6 +171,9 @@ var bpm_utils = {
         }
     },
 
+    /*
+     * Determines whether this element, or any ancestor, have the given class.
+     */
     class_above: function(element, class_name) {
         if(element.className === undefined) {
             return false;
@@ -140,70 +188,96 @@ var bpm_utils = {
         }
     },
 
+    /*
+     * str.endswith()
+     */
     ends_with: function(text, s) {
         return text.slice(-s.length) === s;
     },
 
+    /*
+     * Wraps a function with an error-detecting variant. Useful for callbacks
+     * and the like, since some browsers (Firefox...) have a way of swallowing
+     * exceptions.
+     */
     catch_errors: function(f) {
         return function() {
             try {
                 return f.apply(this, arguments);
             } catch(e) {
                 bpm_log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
+                throw e;
             }
         };
     },
 
-    // Converts an emote name (or similar) to the associated CSS class.
-    //
-    // Keep this in sync with the Python code.
+    /*
+     * Escapes an emote name (or similar) to match the CSS classes.
+     *
+     * Must be kept in sync with other copies, and the Python code.
+     */
     sanitize: function(s) {
         return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_").replace("#", "_hash_").replace("/", "_slash_");
     },
 
+    /*
+     * Helper function to make elements "draggable", i.e. clicking and dragging
+     * them will move them around.
+     */
     enable_drag: function(element, start_callback, callback) {
         var start_x, start_y;
         var dragging = false;
 
-        element.addEventListener("mousedown", function(event) {
+        element.addEventListener("mousedown", bpm_utils.catch_errors(function(event) {
             start_x = event.clientX;
             start_y = event.clientY;
             dragging = true;
             document.body.className += " bpm-noselect";
             start_callback(event);
-        }, false);
+        }), false);
 
-        window.addEventListener("mouseup", function(event) {
+        window.addEventListener("mouseup", bpm_utils.catch_errors(function(event) {
             dragging = false;
             document.body.className = document.body.className.replace(/\bbpm-noselect\b/, "");
-        }, false);
+        }), false);
 
-        window.addEventListener("mousemove", function(event) {
+        window.addEventListener("mousemove", bpm_utils.catch_errors(function(event) {
             if(dragging) {
                 callback(event, start_x, start_y, event.clientX, event.clientY);
             }
-        }, false);
+        }), false);
     },
 
+    /*
+     * Runs the given callback when the DOM is ready, i.e. when DOMContentLoaded
+     * fires. If that has already happened, runs the callback immediately.
+     */
     with_dom: function(callback) {
         if(document.readyState === "interactive" || document.readyState === "complete") {
             callback();
         } else {
-            document.addEventListener("DOMContentLoaded", function(event) {
+            document.addEventListener("DOMContentLoaded", bpm_utils.catch_errors(function(event) {
                 callback();
-            }, false);
+            }), false);
         }
     },
 
+    /*
+     * Determines, fairly reliably, whether or not BPM is currently running in
+     * a frame.
+     */
     is_frame: function() {
         // Firefox is funny about window/.self/.parent/.top, such that comparing
-        // references is somewhat unreliable. frameElement is the only test I've
-        // found so far that works reliably.
+        // references is unreliable. frameElement is the only test I've found so
+        // far that works consistently.
         return (window !== window.top || (window.frameElement !== null && window.frameElement !== undefined));
     },
 
     _msg_script: function(id, message) {
-        /* BetterPonymotes hack to enable cross-origin frame communication in Chrome */
+        /*
+         * BetterPonymotes hack to enable cross-origin frame communication in
+         * broken browsers.
+         */
         // Locate iframe, send message, remove class.
         var iframe = document.getElementsByClassName(id)[0];
         iframe.contentWindow.postMessage(message, "*");
@@ -213,6 +287,12 @@ var bpm_utils = {
         script.parentNode.removeChild(script);
     },
 
+    /*
+     * Send a message to an iframe via postMessage(), working around any browser
+     * shortcomings to do so.
+     *
+     * "message" must be JSON-compatible.
+     */
     message_iframe: function(frame, message) {
         if(frame.contentWindow === null || frame.contentWindow === undefined) {
             // Chrome and Opera don't permit *any* access to these variables for
@@ -232,14 +312,28 @@ var bpm_utils = {
     }
 };
 
+/*
+ * Log function. You should use this in preference to console.log(), which isn't
+ * always available.
+ */
 // Chrome is picky about bind().
 var bpm_log = bpm_utils.platform === "userscript" ? GM_log : console.log.bind(console);
 
+/*
+ * Browser compatibility object. (Mostly implemented per-browser.)
+ */
 var bpm_browser = {
+    /*
+     * Returns an object that CSS-related tags can be attached to before the DOM
+     * is built. May be undefined or null if there is no such object.
+     */
     css_parent: function() {
         return document.head;
     },
 
+    /*
+     * Appends a <style> tag for the given CSS.
+     */
     add_css: function(css) {
         if(css) {
             var tag = bpm_utils.style_tag(css);
@@ -247,14 +341,24 @@ var bpm_browser = {
         }
     },
 
+    /*
+     * Sends a set_pref message to the backend. Don't do this too often, as
+     * some browsers incur a significant overhead for each call.
+     */
     set_pref: function(key, value) {
         this._send_message("set_pref", {"pref": key, "value": value});
     },
 
+    /*
+     * Sends a message to the backend requesting a copy of the preferences.
+     */
     request_prefs: function() {
         this._send_message("get_prefs");
     },
 
+    /*
+     * Sends a message to the backend requesting the custom CSS data.
+     */
     request_custom_css: function() {
         this._send_message("get_custom_css");
     }
@@ -294,7 +398,7 @@ case "firefox-ext":
         }
     });
 
-    self.on("message", function(message) {
+    self.on("message", bpm_utils.catch_errors(function(message) {
         switch(message.method) {
         case "prefs":
             bpm_prefs.got_prefs(message.prefs);
@@ -309,7 +413,7 @@ case "firefox-ext":
             bpm_log("BPM: ERROR: Unknown request from Firefox background script: '" + message.method + "'");
             break;
         }
-    });
+    }));
     break;
 
 case "chrome-ext":
@@ -382,9 +486,9 @@ case "opera-ext":
                 var file = opera.extension.getFile(filename);
                 if(file) {
                     var reader = new FileReader();
-                    reader.onload = function() {
+                    reader.onload = bpm_utils.catch_errors(function() {
                         callback(reader.result);
-                    };
+                    });
                     reader.readAsText(file);
                 } else {
                     bpm_log("BPM: ERROR: Opera getFile() failed on '" + filename + "'");
@@ -403,7 +507,7 @@ case "opera-ext":
         });
     }
 
-    opera.extension.addEventListener("message", function(event) {
+    opera.extension.addEventListener("message", bpm_utils.catch_errors(function(event) {
         var message = event.data;
         switch(message.method) {
         case "file_loaded":
@@ -424,7 +528,7 @@ case "opera-ext":
             bpm_log("BPM: ERROR: Unknown request from Opera background script: '" + message.method + "'");
             break;
         }
-    }, false);
+    }), false);
     break;
 
 case "userscript":
@@ -432,7 +536,7 @@ case "userscript":
         prefs: null,
 
         set_pref: function(key, value) {
-            // this.prefs shared with bpm_prefs, so no need to worry
+            this.prefs[key] = value;
             this._sync_prefs();
         },
 
@@ -466,7 +570,16 @@ case "userscript":
     break;
 }
 
+/*
+ * Preferences interface.
+ */
 var bpm_prefs = {
+    /*
+     * Preferences object and caches:
+     *    - prefs: actual preferences object
+     *    - custom_emotes: map of extracted custom CSS emotes
+     *    - sr_array: array of enabled subreddits. sr_array[sr_id] === enabled
+     */
     prefs: null,
     custom_emotes: null,
     sr_array: null,
@@ -483,6 +596,10 @@ var bpm_prefs = {
         }
     },
 
+    /*
+     * Runs the given callback when preferences are available, possibly
+     * immediately.
+     */
     when_available: function(callback) {
         if(this._ready()) {
             callback(this);
@@ -491,6 +608,9 @@ var bpm_prefs = {
         }
     },
 
+    /*
+     * Called from browser code when preferences have been received.
+     */
     got_prefs: function(prefs) {
         this.prefs = prefs;
         this._make_sr_array();
@@ -502,6 +622,10 @@ var bpm_prefs = {
         }
     },
 
+    /*
+     * Called from browser code when the custom CSS emote list has been
+     * received.
+     */
     got_custom_emotes: function(emotes) {
         this.custom_emotes = emotes;
 
@@ -533,6 +657,11 @@ var bpm_prefs = {
         return map;
     },
 
+    /*
+     * Sync the given preference key. This may be called rapidly, as it will
+     * enforce a small delay between the last sync_key() invocation and any
+     * actual browser call is made.
+     */
     sync_key: function(key) {
         // Schedule pref write for one second in the future, clearing out any
         // previous timeout. Prevents excessive backend calls, which can generate
@@ -541,14 +670,21 @@ var bpm_prefs = {
             clearTimeout(this.sync_timeouts[key]);
         }
 
-        this.sync_timeouts[key] = setTimeout(function() {
+        this.sync_timeouts[key] = setTimeout(bpm_utils.catch_errors(function() {
             bpm_browser.set_pref(key, this.prefs[key]);
             delete this.sync_timeouts[key];
-        }.bind(this), 1000);
+        }.bind(this)), 1000);
     }
 };
 
+/*
+ * Core Reddit emote converter code.
+ */
 var bpm_converter = {
+    /*
+     * Process the given list of elements (assumed to be <a> tags), converting
+     * any that are emotes.
+     */
     process: function(prefs, elements) {
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
@@ -564,7 +700,7 @@ var bpm_converter = {
             // element.getAttribute("href")- the former is mangled by the
             // browser to be a complete URL, which we don't want.
             var href = element.getAttribute("href");
-            if(href && href[0] === '/') {
+            if(href && href[0] === "/") {
                 // Don't normalize case for emote lookup
                 var parts = href.split("-");
                 var emote_name = parts[0];
@@ -637,7 +773,7 @@ var bpm_converter = {
                     for(var p = 1; p < parts.length; p++) {
                         // Normalize case
                         var flag = parts[p].toLowerCase();
-                        if(/^[\w\!]+$/.test(flag)) {
+                        if(/^[\w:!#\/]+$/.test(flag)) {
                             element.className += " bpflag-" + bpm_utils.sanitize(flag);
                         }
                     }
@@ -675,6 +811,9 @@ var bpm_converter = {
     // - /b and /g are from r/dresdenfiles
     spoiler_links: ["/spoiler", "/s", "#s", "/b", "/g"],
 
+    /*
+     * Converts alt-text on a list of <a> elements as appropriate.
+     */
     // NOTE/FIXME: Alt-text isn't really related to emote conversion as-is, but
     // since it runs on a per-emote basis, it kinda goes here anyway.
     display_alt_text: function(elements) {
@@ -757,6 +896,9 @@ var bpm_converter = {
         }
     },
 
+    /*
+     * Processes emotes and alt-text on a list of .md objects.
+     */
     process_posts: function(prefs, posts) {
         for(var i = 0; i < posts.length; i++) {
             var links = posts[i].getElementsByTagName("a");
@@ -770,7 +912,11 @@ var bpm_converter = {
     }
 };
 
+/*
+ * Emote search, the search box, and all support code.
+ */
 var bpm_search = {
+    // Search box elements
     container: null,
     dragbox: null,
     search: null,
@@ -779,15 +925,23 @@ var bpm_search = {
     results: null,
     resize: null,
     global_icon: null, // Global << thing
-    firstrun: false,
+    firstrun: false, // Whether or not we've made any search at all yet
 
+    /*
+     * Sets up the search box for use on a page, either Reddit or the top-level
+     * frame, globally.
+     */
     init: function(prefs) {
         this.inject_html();
         this.init_search_box(prefs);
     },
 
+    /*
+     * Sets up search for use in a frame. No search box is generated, but it
+     * listens for postMessage() calls from the parent frame.
+     */
     init_frame: function(prefs) {
-        window.addEventListener("message", function(event) {
+        window.addEventListener("message", bpm_utils.catch_errors(function(event) {
             // event.source === null in Firefox (as it's from extension code)
             var message = event.data;
             switch(message.__betterponymotes_method) {
@@ -802,14 +956,18 @@ var bpm_search = {
 
                 // If it's not our message, it'll be undefined. (We don't care.)
             }
-        }.bind(this), false);
+        }.bind(this)), false);
     },
 
+    /*
+     * Builds and injects the search box HTML.
+     */
     inject_html: function() {
         // Placeholder div to create HTML in
         var div = document.createElement("div");
         // I'd sort of prefer display:none, but then I'd have to override it
         div.style.visibility = "hidden";
+        div.id = "bpm-stuff"; // Just so it's easier to find in an elements list
 
         var html = [
             // tabindex is hack to make Esc work. Reddit uses this index in a couple
@@ -851,51 +1009,54 @@ var bpm_search = {
         this.global_icon = document.getElementById("bpm-global-icon");
     },
 
+    /*
+     * Sets up the emote search box.
+     */
     init_search_box: function(prefs) {
         /*
          * Intercept mouseover for the entire search widget, so we can remember
          * which form was being used before.
          */
-        this.container.addEventListener("mouseover", function(event) {
+        this.container.addEventListener("mouseover", bpm_utils.catch_errors(function(event) {
             this.grab_target_form();
-        }.bind(this), false);
+        }.bind(this)), false);
 
         // Close it on demand
-        this.close.addEventListener("click", function(event) {
+        this.close.addEventListener("click", bpm_utils.catch_errors(function(event) {
             this.hide();
-        }.bind(this), false);
+        }.bind(this)), false);
 
         // Another way to close it
-        this.container.addEventListener("keyup", function(event) {
+        this.container.addEventListener("keyup", bpm_utils.catch_errors(function(event) {
             if(event.keyCode === 27) { // Escape key
                 this.hide();
             }
-        }.bind(this), false);
+        }.bind(this)), false);
 
         // Listen for keypresses and adjust search results. Delay 500ms after
         // start of typing to make it more responsive (otherwise it typically
         // starts searching after the first keystroke, which generates a lot
         // of output for no reason).
         var waiting = false;
-        this.search.addEventListener("input", function(event) {
+        this.search.addEventListener("input", bpm_utils.catch_errors(function(event) {
             if(!waiting) {
-                window.setTimeout(function() {
+                window.setTimeout(bpm_utils.catch_errors(function() {
                     // Re-enable searching as early as we can, just in case
                     waiting = false;
                     this.update_search(prefs);
-                }.bind(this), 500);
+                }.bind(this)), 500);
                 waiting = true;
             }
-        }.bind(this), false);
+        }.bind(this)), false);
 
         // Listen for clicks
-        this.results.addEventListener("click", function(event) {
+        this.results.addEventListener("click", bpm_utils.catch_errors(function(event) {
             if((" " + event.target.className + " ").indexOf(" bpm-result ") > -1) {
                 // .dataset would probably be nicer, but just in case...
                 var emote_name = event.target.getAttribute("data-emote");
                 this.insert_emote(emote_name);
             }
-        }.bind(this), false);
+        }.bind(this)), false);
 
         // Set up default positions
         this.container.style.left = prefs.prefs.searchBoxInfo[0] + "px";
@@ -950,10 +1111,14 @@ var bpm_search = {
         }.bind(this));
     },
 
+    /*
+     * Displays the search box.
+     */
     show: function(prefs) {
         this.container.style.visibility = "visible";
         this.search.focus();
 
+        // If we haven't run before, go search for things
         if(!this.firstrun) {
             this.firstrun = true;
             this.search.value = prefs.prefs.lastSearchQuery;
@@ -963,11 +1128,20 @@ var bpm_search = {
 
     hide: function() {
         this.container.style.visibility = "hidden";
+        // TODO: possibly clear out the search results, since it's a large pile
+        // of HTML.
     },
 
+    /*
+     * Previously focused elements. Only one of these can be non-null.
+     */
     target_form: null,
     target_frame: null,
 
+    /*
+     * Caches the currently focused element, if it's something we can inject
+     * emotes into.
+     */
     grab_target_form: function() {
         var active = document.activeElement;
 
@@ -1008,6 +1182,9 @@ var bpm_search = {
         }
     },
 
+    /*
+     * Updates the search results window according to the current query.
+     */
     update_search: function(prefs) {
         // Split search query on spaces, remove empty strings, and lowercase terms
         var terms = this.search.value.split(" ").map(function(v) { return v.toLowerCase(); });
@@ -1127,6 +1304,9 @@ var bpm_search = {
         this.count.textContent = text;
     },
 
+    /*
+     * Injects an emote into the (previously) focused element.
+     */
     insert_emote: function(emote_name) {
         if(this.target_frame !== null) {
             bpm_utils.message_iframe(this.target_frame, {
@@ -1170,6 +1350,9 @@ var bpm_search = {
         }
     },
 
+    /*
+     * Injects the "emotes" button onto Reddit.
+     */
     inject_search_button: function(prefs, spans) {
         for(var i = 0; i < spans.length; i++) {
             // Matching the "formatting help" button is tricky- there's no great
@@ -1210,10 +1393,13 @@ var bpm_search = {
         }
     },
 
+    /*
+     * Sets up the global ">>" emotes icon.
+     */
     setup_global_icon: function(prefs) {
-        this.global_icon.addEventListener("mouseover", function(event) {
+        this.global_icon.addEventListener("mouseover", bpm_utils.catch_errors(function(event) {
             this.grab_target_form();
-        }.bind(this), false);
+        }.bind(this)), false);
 
         // Enable dragging the global button around
         var global_icon_x, global_icon_y;
@@ -1239,31 +1425,37 @@ var bpm_search = {
 
         this.global_icon.style.visibility = "visible";
 
-        this.global_icon.addEventListener("click", function(event) {
+        this.global_icon.addEventListener("click", bpm_utils.catch_errors(function(event) {
             // Don't open at the end of a drag (only works if you release the
             // mouse button before the ctrl/meta key though...)
             if(!event.ctrlKey && !event.metaKey) {
                 this.show(prefs);
             }
-        }.bind(this), false);
+        }.bind(this)), false);
     },
 
+    /*
+     * Sets up one particular "emotes" button.
+     */
     wire_emotes_button: function(prefs, button) {
-        button.addEventListener("mouseover", function(event) {
+        button.addEventListener("mouseover", bpm_utils.catch_errors(function(event) {
             this.grab_target_form();
-        }.bind(this), false);
+        }.bind(this)), false);
 
-        button.addEventListener("click", function(event) {
+        button.addEventListener("click", bpm_utils.catch_errors(function(event) {
             var sb_element = document.getElementById("bpm-search-box");
             if(sb_element.style.visibility !== "visible") {
                 this.show(prefs);
             } else {
                 this.hide();
             }
-        }.bind(this), false);
+        }.bind(this)), false);
     }
 };
 
+/*
+ * Global emote conversion.
+ */
 var bpm_global = {
     // As a note, this regexp is a little forgiving in some respects and strict in
     // others. It will not permit text in the [] portion, but alt-text quotes don't
@@ -1279,6 +1471,9 @@ var bpm_global = {
         "SVG": 1, "MATH": 1
     },
 
+    /*
+     * Searches elements recursively for [](/emotes), and converts them.
+     */
     process: function(prefs, root) {
         // Opera does not seem to expose NodeFilter to content scripts, so we
         // cannot specify NodeFilter.SHOW_TEXT. Its value is defined to be 4 in the
@@ -1394,6 +1589,9 @@ var bpm_global = {
         }
     },
 
+    /*
+     * Main function when running globally.
+     */
     run: function(prefs) {
         if(!prefs.prefs.enableGlobalEmotes) {
             return;
@@ -1435,15 +1633,21 @@ var bpm_global = {
         }.bind(this), function(observer) {
             observer.observe(document, {"childList": true, "subtree": true});
         }, function() {
-            document.body.addEventListener("DOMNodeInserted", function(event) {
+            document.body.addEventListener("DOMNodeInserted", bpm_utils.catch_errors(function(event) {
                 var element = event.target;
                 this.process(prefs, element);
-            }.bind(this), false);
+            }.bind(this)), false);
         }.bind(this));
     }
 };
 
+/*
+ * main() and such.
+ */
 var bpm_core = {
+    /*
+     * Attaches all of our CSS.
+     */
     init_css: function() {
         bpm_browser.link_css("/bpmotes.css");
         bpm_browser.link_css("/emote-classes.css");
@@ -1466,6 +1670,9 @@ var bpm_core = {
         }.bind(this));
     },
 
+    /*
+     * Main function when running on Reddit.
+     */
     run: function(prefs) {
         // Inject our filter SVG for Firefox. Chrome renders this thing as a
         // massive box, but "display: none" (or putting it in <head>) makes
@@ -1481,7 +1688,7 @@ var bpm_core = {
         // by necessity.
         //
         // Christ. I hope people use the fuck out of -i after this nonsense.
-        if(bpm_utils.platform === "firefox-ext") {
+        if(bpm_utils.platform === "firefox-ext") { // TODO: detect userscript on Firefox
             var svg_src = [
                 '<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg"',
                 ' style="height: 0; width: 0; position: fixed">',
@@ -1506,11 +1713,11 @@ var bpm_core = {
         bpm_search.inject_search_button(prefs, document.getElementsByClassName("help-toggle"));
 
         // Add emote click blocker
-        document.body.addEventListener("click", function(event) {
+        document.body.addEventListener("click", bpm_utils.catch_errors(function(event) {
             if(bpm_utils.has_class(event.target, "bpm-emote")) {
                 event.preventDefault();
             }
-        }.bind(this), false);
+        }.bind(this)), false);
 
         if(bpm_utils.platform === "chrome-ext") {
             // Fix for Chrome, which sometimes doesn't rerender unknown
@@ -1574,7 +1781,7 @@ var bpm_core = {
         }, function() {
             // MutationObserver doesn't exist outisde Fx/Chrome, so
             // fallback to basic DOM events.
-            document.body.addEventListener("DOMNodeInserted", function(event) {
+            document.body.addEventListener("DOMNodeInserted", bpm_utils.catch_errors(function(event) {
                 var root = event.target;
 
                 if(root.getElementsByTagName) {
@@ -1587,10 +1794,13 @@ var bpm_core = {
 
                     bpm_search.inject_search_button(prefs, root.getElementsByClassName("help-toggle"));
                 }
-            }.bind(this), false);
+            }.bind(this)), false);
         }.bind(this));
     },
 
+    /*
+     * main()
+     */
     main: function() {
         bpm_browser.request_prefs();
         bpm_browser.request_custom_css();
