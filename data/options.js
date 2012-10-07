@@ -156,6 +156,50 @@ case "opera-ext":
         }
     }), false);
     break;
+
+default:
+    // Assume running in some context where we'll have a parent extension
+    // coming along to help us out soon
+    bpm_utils.copy_properties(bpm_browser, {
+        set_pref: function(key, value) {
+            window.postMessage({
+                "__betterponymotes_target": "__bpm_extension",
+                "__betterponymotes_method": "__bpm_set_pref",
+                "__betterponymotes_pref": key,
+                "__betterponymotes_value": value
+            }, "*");
+        },
+
+        request_prefs: function() {
+            bpm_utils.with_dom(function() {
+                // Rather than actually do anything, we just set the signal for the
+                // parent script to send prefs. It's the most we can do.
+                $("#ready").text("true");
+            });
+        },
+
+        force_update: function(subreddit) {
+            bpm_log("BPM: ERROR: forcing a subreddit update is not supported in this context");
+        }
+    });
+
+    window.addEventListener("message", bpm_utils.catch_errors(function(event) {
+        var message = event.data;
+        if(message.__betterponymotes_target !== "__bpm_options_page") {
+            return;
+        }
+
+        switch(message.__betterponymotes_method) {
+            case "__bpm_prefs":
+                bpm_prefs.got_prefs(message.__betterponymotes_prefs);
+                break;
+
+            default:
+                bpm_log("BPM: ERROR: Unknown request from parent script: '" + message.__betterponymotes_method + "'");
+                break;
+        }
+    }.bind(this)), false);
+    break;
 }
 
 var bpm_prefs = {

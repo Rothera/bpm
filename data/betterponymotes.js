@@ -31,6 +31,7 @@
 var BPM_CODE_VERSION = 33;
 var BPM_DATA_VERSION = 57;
 var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us/";
+var BPM_OPTIONS_PAGE = BPM_RESOURCE_PREFIX + "options.html";
 
 var _bpm_this = this;
 
@@ -562,6 +563,11 @@ case "userscript":
         },
 
         link_css: function(filename) {
+            if(filename[0] === "/") {
+                // Most HTTP servers don't care about "http://...//filename.css",
+                // but one or two are picky (including one I test with).
+                filename = filename.slice(1);
+            }
             var url = BPM_RESOURCE_PREFIX + filename + "?p=2&dver=" + BPM_DATA_VERSION;
             var tag = bpm_utils.stylesheet_link(url);
             this.css_parent().insertBefore(tag, this.css_parent().firstChild);
@@ -1799,11 +1805,89 @@ var bpm_core = {
     },
 
     /*
+     * Manages communication with our options page on platforms that work this
+     * way (userscripts).
+     */
+    setup_options_link: function() {
+        function _check(prefs) {
+            var tag = document.getElementById("ready");
+            var ready = tag.textContent.trim();
+
+            if(ready === "true") {
+                window.postMessage({
+                    "__betterponymotes_target": "__bpm_options_page",
+                    "__betterponymotes_method": "__bpm_prefs",
+                    "__betterponymotes_prefs": bpm_prefs.prefs
+                }, "*");
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // Impose a limit, in case something is broken.
+        var checks = 0;
+        function recheck(prefs) {
+            if(checks < 10) {
+                checks++;
+                if(!_check(prefs)) {
+                    window.setTimeout(bpm_utils.catch_errors(function() {
+                        recheck();
+                    }), 200);
+                }
+            } else {
+                bpm_log("BPM: ERROR: options page is unavailable after 2 seconds. Assuming broken.");
+                // TODO: put some kind of obvious error <div> on the page or
+                // something
+            }
+        }
+
+        // Listen for messages that interest us
+        window.addEventListener("message", bpm_utils.catch_errors(function(event) {
+            var message = event.data;
+            // Check destination
+            if(message.__betterponymotes_target !== "__bpm_extension") {
+                return;
+            }
+
+            switch(message.__betterponymotes_method) {
+                case "__bpm_set_pref":
+                    var key = message.__betterponymotes_pref;
+                    var value = message.__betterponymotes_value;
+
+                    if(bpm_prefs.prefs[key] !== undefined) {
+                        bpm_prefs.prefs[key] = value;
+                        bpm_prefs.sync_key(key);
+                    } else {
+                        bpm_log("BPM: ERROR: Invalid pref write from options page: '" + key + "'");
+                    }
+                    break;
+
+                default:
+                    bpm_log("BPM: ERROR: Unknown request from options page: '" + message.__betterponymotes_method + "'");
+                    break;
+            }
+        }.bind(this)), false);
+
+        bpm_utils.with_dom(function() {
+            bpm_prefs.when_available(function(prefs) {
+                // Wait for options.js to be ready (checking every 200ms), then
+                // send it down.
+                recheck();
+            });
+        });
+    },
+
+    /*
      * main()
      */
     main: function() {
         bpm_browser.request_prefs();
         bpm_browser.request_custom_css();
+
+        if(document.location.href === BPM_OPTIONS_PAGE) {
+            this.setup_options_link();
+        }
 
         if(bpm_utils.ends_with(document.location.hostname, "reddit.com")) {
             // Most environments permit us to create <link> tags before
