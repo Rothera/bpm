@@ -231,18 +231,25 @@ def main():
     parser.add_argument("-d", "--directives", help="Processing directives",
                         default="data/emote-directives.yaml", type=argparse.FileType("r"))
     parser.add_argument("--no-compress", help="Disable CSS compression", action="store_true")
-    parser.add_argument("emotes", help="Input emote files", nargs="+")
     args = parser.parse_args()
 
     files = {}
 
+    with open("data/emote-directives.yaml") as file:
+        config = bplib.load_yaml_file(file)
+
     print("Loading emotes")
     file_id = 0
-    for (i, filename) in enumerate(args.emotes):
+    for subreddit in config["Subreddits"]:
+        efile = bplib.file.EmoteFile.load_subreddit(subreddit)
+        efile.file_id = file_id # FIXME
+        for emote in efile.emotes.values(): emote.file = efile # FIXME
+        files[efile.name] = efile
+        file_id += 1
+    for filename in config["Extra Files"]:
         with open(filename) as file:
-            data = bplib.load_yaml_file(file)
-            efile = bplib.file.EmoteFile.load(data)
-            efile.file_id = file_id # FIXME
+            efile = bplib.file.EmoteFile.load_file(file)
+            efile.file_id = file_id
             for emote in efile.emotes.values(): emote.file = efile # FIXME
             files[efile.name] = efile
             file_id += 1

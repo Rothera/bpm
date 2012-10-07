@@ -39,7 +39,7 @@ class EmoteFile:
         self.emotes.update(spritesheet.emotes)
 
     @classmethod
-    def load(cls, data):
+    def load_from_data(cls, data):
         meta = data.pop("Meta")
         name = meta.pop("Name")
         display_name = meta.pop("DisplayName")
@@ -52,6 +52,18 @@ class EmoteFile:
 
         spritesheets = convert_spritesheet_map(emotes.pop("Spritesheets"))
         return cls(name, display_name, customs, spritesheets)
+
+    @classmethod
+    def load_subreddit(cls, subreddit):
+        filename = "emotes/" + subreddit + ".yaml"
+        with open(filename) as file:
+            data = bplib.load_yaml_file(file)
+        return cls.load_from_data(data)
+
+    @classmethod
+    def load_file(cls, file):
+        data = bplib.load_yaml_file(file)
+        return cls.load_from_data(data)
 
     def dump(self):
         return {

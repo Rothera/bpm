@@ -12,7 +12,7 @@ www/betterponymotes.update.rdf www/opera-updates.xml:
 	bin/gen_update_files.py `bin/version.py get`
 
 build/emote-classes.css build/emote-map.js build/sr-data.js: bpgen.py emotes/*.yaml data/bpmotes-extras.yaml
-	./bpgen.py emotes/*.yaml data/bpmotes-extras.yaml
+	./bpgen.py
 
 build/betterponymotes.xpi: build/emote-classes.css build/emote-map.js build/sr-data.js firefox/data/* firefox/package.json firefox/lib/main.js
 	rm -f build/*.xpi
