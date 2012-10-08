@@ -614,3 +614,34 @@ div.titlebox .users-online span.number:after
     }
 /* Hiding my name in the modbox. */
 .sidecontentbox .id-t2_8lje7, .sidecontentbox .id-t2_8lje7 ~ *{display: none}
+
+
+/* Replacing somebody's name? Add it to the list here. */
+
+a.author[href$="derram_2"],
+a.author[href$=Chinch335],
+a.author[href$="mrjoker7854"]
+
+{ 
+font-size:0!important; 
+overflow:hidden; 
+display:inline-block; 
+content: "";
+}
+
+/* Replacing somebody's name? Add it to the list here too. */
+
+a.author[href$="derram_2"]:before,
+a.author[href$=Chinch335]:before ,
+a.author[href$="mrjoker7854"]:before
+
+{
+font-size:10px!important; 
+visibility:visible!important;
+}
+
+/* Replacing somebody's name? Put the replacement here. */
+
+a.author[href$="derram_2"]:before {content:"derramina Diane Pie"}
+a.author[href$=Chinch335]:before {content:"Chinchy"}
+a.author[href$="mrjoker7854"]:before {content:"Pinkie Scratchspectacularathon"}

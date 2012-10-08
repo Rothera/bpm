@@ -1,18 +1,18 @@
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
    
-     background:  url(%%Halloween%%)  no-repeat  fixed 74% 100% !important;
+     background:  url(%%eifback%%)  no-repeat  fixed 74% 100% !important;
   
 } 
 
 /* Banner Image */
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%meatbannerpony%%); 
+   background: url(%%eifbanner%%); 
   background-color: #e0d3c1 !important;
    /*   margin-top: -20px;*/
    background-repeat: no-repeat;
    background-position: 50% 0%;
-   height: 237px; /* 237 for meat's nice banner */
+   height: 295px; /* 237 for meat's nice banner */
 
  }
 
@@ -34,7 +34,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     }
 
 #header-img {
-    margin-top:116px; /* 80 for meat's nice banner */
+    margin-top:50px; /* 80 for meat's nice banner */
     margin-left: 0px;
     position: absolute
     }
@@ -53,8 +53,8 @@ body:first-of-type, body.res-nightmode:first-of-type {
     padding: 5px
     }
 .tabmenu {
-    margin-top: 223px; /* 223 for meat's nice banner */
-    margin-left: 500px
+    margin-top: 279px; /* 223 for meat's nice banner */
+    margin-left: 900px
     }
 
 .tabmenu li a {
@@ -592,6 +592,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="mrjoker7854"],
 a.author[href$="Conky_"],
 a.author[href$="PartOfAShoe"],
 a.author[href$="shawa666"],
@@ -663,6 +664,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="mrjoker7854"]:before,
 a.author[href$="Conky_"]:before,
 a.author[href$="PartOfAShoe"]:before,
 a.author[href$="shawa666"]:before,
@@ -732,6 +734,7 @@ visibility:visible!important;
 }
 
 /* Replacing somebody's name? Put the replacement here. */
+a.author[href$="mrjoker7854"]:before {content:"Pinkie Scratchtacularin"}
 a.author[href$="Conky_"]:before {content:"Conky"}
 a.author[href$="PartOfAShoe"]:before {content:"Welt"}
 a.author[href$="shawa666"]:before {content:"Slowpoke666"}

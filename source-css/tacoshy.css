@@ -84,6 +84,17 @@ a[href|="/tacostare"] {
     background-image: url(%%tacostare%%) !important
     }
 
+a[href|="/lemonkeyface"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 336px;
+    height: 372px;
+    background-image: url(%%le-monkey-face%%) !important
+    }
+
+
 a[href|="/mcguirk"] {
     background-position: 0px 0px;
     display: block;
@@ -300,6 +311,24 @@ a[href|="/tacothis"] {
     height: 800px;
     background-image: url(%%tacothis%%) !important
     }
+a[href|="/tacowithit"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 400px;
+    height: 400px;
+    background-image: url(%%tacowithit%%) !important
+    }
+a[href|="/rufflenibbles"], a[href|="/taconibbles"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 419px;
+    background-image: url(%%taconibbles%%) !important
+    }
 /* ----------- Name Change ---------------- */
 
 
@@ -424,6 +453,21 @@ a.author[href$="Conky_"] {
     }
 a.author[href$="Conky_"]:after {
     content: "taConky_";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+
+a.author[href$="Spaghetti_Dick"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="Spaghetti_Dick"]:after {
+    content: "Taco_Sauce";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;

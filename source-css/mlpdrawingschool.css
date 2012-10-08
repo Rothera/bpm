@@ -1,20 +1,3 @@
-.sidecontentbox.collapsible .title {
-cursor: pointer;
-visibility: hidden;
-}
-
-.sidecontentbox {
-height: 20px;
-}
-
-.sidecontentbox .content {
-margin: 0;
-padding: 5px;
-border: 1px solid gray;
-font-size: larger;
-list-style: none;
-visibility: hidden;
-}
 
 /* *** Fixing the upvote arrow? *** */
 
@@ -247,17 +230,6 @@ div.titlebox .subscribers span.number:after {
 div.titlebox .users-online span.number:after {
     content: " Potential Critiquers"
     }
-
-.arrow.down {
-visibility: hidden;
-display: none
-}
-
-/*displays downvote arrow for comments only, after disabling*/
-.comment .arrow.down {
-visibility: visible;
-display: block
-}
 
 /***********
 B Emoticons
