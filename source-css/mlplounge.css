@@ -1433,6 +1433,8 @@ display: inline-block;
 padding-right: 100%
 }
 
+a[href="/sp"] + span.reddit_show_hidden_emotes_span {display:none;}
+
 /*in-line emotes -in and -inp, e.g. texttext[](/b24-in)texttext*/
 a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
     float: none !important;
@@ -2069,16 +2071,16 @@ Random Plounge Buggery
 
 /* FOOTER */
 .footer-parent {
-    height: 835px;
+    height: 800px;
     padding-bottom: 40px;
     clear: both;
     text-align: center;
     width: 100%;
-    background-image: url(%%sbstarepeek-fulloffillies%%);
+    background-image: url(%%sbstarepeek-popart%%);
     /*background-position: bottom center;*/
     background-repeat: no-repeat;
     margin-bottom: -0px;
-    background-position: 50% 300px;/*Path's OCD was here.*/
+    background-position: 50% 80px;/*Path's OCD was here.*/
     }
 html:lang(nv) .side p a[href="http://reddit.com/r/MLPLounge/"]
 {
@@ -2151,7 +2153,7 @@ background-position: -0% -300%;
 /*Night mode fixes for background. Credit to cheesemoo*/
 
 body, body.res-nightmode:first-of-type {
-    background: url(%%allmybitsinvisi%%) no-repeat fixed center center !important
+    background: url(%%ALWAYS-WATCHING%%) no-repeat fixed center center !important
     }
 body.res-nightmode:first-of-type > .content {
     background-color: transparent !important
@@ -2222,3 +2224,45 @@ body:not(.moderator) input[value="t3_10vuz8"] + .usertext-edit
 input[value="t1_c6in1kg"] + .usertext-body .md p:after { content: "Twist is 20% cooler."; }
 
 .thing.id-t1_c6ipose.comment a[href|="/bananaflip"]{background-image:url(%%lounge-emotes%%) !important;background-position: -140px -70px !important; width: 70px !important; height: 70px !important}
+
+/*Popart Sbstares:*/
+a[href|="/e13"],
+a[href|="/re13"],
+a[href|="/sbstare"],
+a[href|="/rsbstare"]
+{
+ display: block;
+ clear: none;
+ float: left;
+ width: 70px !important;
+ height: 70px !important;
+ background-image: url(%%popart-emotes%%) !important
+}
+
+a[href|="/e13"] { background-position:0% 0%; }
+a[href|="/e13"] + a[href|="/e13"] { background-position:-100% 0%; }
+a[href|="/e13"] + a[href|="/e13"] + a[href|="/e13"] { background-position:0% -100%; }
+a[href|="/e13"] + a[href|="/e13"] + a[href|="/e13"] + a[href|="/e13"] { background-position:-100% -100%; }
+a[href|="/e13"] + a[href|="/e13"] + a[href="/sp"] + a[href|="/e13"], a[href|="/e13"] + a[href|="/e13"] + a[href="/sp"] + span + a[href|="/e13"] { background-position:0% -100%; margin-top:-16px; }
+a[href|="/e13"] + a[href|="/e13"] + a[href="/sp"] + a[href|="/e13"] + a[href|="/e13"], a[href|="/e13"] + a[href|="/e13"] + a[href="/sp"] + span + a[href|="/e13"] + a[href|="/e13"] { background-position:-100% -100%; margin-top:-16px; }
+
+a[href|="/sbstare"] { background-position:0% 0%; }
+a[href|="/sbstare"] + a[href|="/sbstare"] { background-position:-100% 0%; }
+a[href|="/sbstare"] + a[href|="/sbstare"] + a[href|="/sbstare"] { background-position:0% -100%; }
+a[href|="/sbstare"] + a[href|="/sbstare"] + a[href|="/sbstare"] + a[href|="/sbstare"] { background-position:-100% -100%; }
+a[href|="/sbstare"] + a[href|="/sbstare"] + a[href="/sp"] + a[href|="/sbstare"], a[href|="/sbstare"] + a[href|="/sbstare"] + a[href="/sp"] + span + a[href|="/sbstare"] { background-position:0% -100%; margin-top:-16px; }
+a[href|="/sbstare"] + a[href|="/sbstare"] + a[href="/sp"] + a[href|="/sbstare"] + a[href|="/sbstare"], a[href|="/sbstare"] + a[href|="/sbstare"] + a[href="/sp"] + span + a[href|="/sbstare"] + a[href|="/sbstare"] { background-position:-100% -100%; margin-top:-16px; }
+
+a[href|="/re13"] { background-position:-200% 0%; }
+a[href|="/re13"] + a[href|="/re13"] { background-position:-300% 0%; }
+a[href|="/re13"] + a[href|="/re13"] + a[href|="/re13"] { background-position:-200% -100%; }
+a[href|="/re13"] + a[href|="/re13"] + a[href|="/re13"] + a[href|="/re13"] { background-position:-300% -100%; }
+a[href|="/re13"] + a[href|="/re13"] + a[href="/sp"] + a[href|="/re13"], a[href|="/re13"] + a[href|="/re13"] + a[href="/sp"] + span + a[href|="/re13"] { background-position:-200% -100%; margin-top:-16px; }
+a[href|="/re13"] + a[href|="/re13"] + a[href="/sp"] + a[href|="/re13"] + a[href|="/re13"], a[href|="/re13"] + a[href|="/re13"] + a[href="/sp"] + span + a[href|="/re13"] + a[href|="/re13"] { background-position:-300% -100%; margin-top:-16px; }
+
+a[href|="/rsbstare"] { background-position:-200% 0%; }
+a[href|="/rsbstare"] + a[href|="/rsbstare"] { background-position:-300% 0%; }
+a[href|="/rsbstare"] + a[href|="/rsbstare"] + a[href|="/rsbstare"] { background-position:-200% -100%; }
+a[href|="/rsbstare"] + a[href|="/rsbstare"] + a[href|="/rsbstare"] + a[href|="/rsbstare"] { background-position:-300% -100%; }
+a[href|="/rsbstare"] + a[href|="/rsbstare"] + a[href="/sp"] + a[href|="/rsbstare"], a[href|="/rsbstare"] + a[href|="/rsbstare"] + a[href="/sp"] + span + a[href|="/rsbstare"] { background-position:-200% -100%; margin-top:-16px; }
+a[href|="/rsbstare"] + a[href|="/rsbstare"] + a[href="/sp"] + a[href|="/rsbstare"] + a[href|="/rsbstare"], a[href|="/rsbstare"] + a[href|="/rsbstare"] + a[href="/sp"] + span + a[href|="/rsbstare"] + a[href|="/rsbstare"] { background-position:-300% -100%; margin-top:-16px; }
