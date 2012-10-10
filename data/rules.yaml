@@ -1,0 +1,125 @@
+################################################################################
+##
+## Copyright (C) 2012 Typhos
+##
+## This Source Code Form is subject to the terms of the Mozilla Public
+## License, v. 2.0. If a copy of the MPL was not distributed with this
+## file, You can obtain one at http://mozilla.org/MPL/2.0/.
+##
+################################################################################
+
+Subreddits:
+- ainbowdash
+- applebloom
+- applejack
+- clopclop
+- cuttershy
+- dashiemotes
+- daylightemotes
+- falloutequestria
+- flitter
+- futemotes
+- gallopfrey
+- gremotes
+- idliketobeatree
+- ilovedashie
+- lyra
+- minuette
+- mlas1animotes
+- mlas1emotes
+- mlas1emotes2
+- mlas1imagedump
+- mlas1party
+- mlhfis
+- mlpdrawingschool
+- mlplounge
+- molestia
+- mylittlealcoholic
+- mylittleandysonic1
+- mylittleanhero23
+- mylittleanime
+- mylittleaprilfools
+- mylittlebannertest
+- mylittlecelestias
+- mylittlechaos
+- mylittlecirclejerk
+- mylittlecombiners
+- mylittleconspiracy
+- mylittledamon
+- mylittledaww
+- mylittledramaticstory
+- mylittlefoodmanes
+- mylittlefortress
+- mylittlekindle
+- mylittlelistentothis
+- mylittlelivestream
+- mylittlemusician
+- mylittlenanners
+- mylittlenopenopenope
+- mylittlenosleep
+- mylittlensfw
+- mylittleonions
+- mylittlepony
+- mylittleserver
+- mylittlesh
+- mylittlesports
+- mylittlesquidward
+- mylittlesupportgroup
+- mylittletacos
+- mylittlewarhammer
+- mylittlewelcomewagon
+- mylittlewtf
+- octavia
+- pankakke
+- pinkiepie
+- ploungemafia
+- ponyanarchism
+- roseluck
+- rubypinch
+- seriouslyluna
+- spaceclop
+- speedingturtle
+- surprise
+- tacoshy
+- tbpimagedump
+- thebestpony
+- twilightsparkle
+- vinylscratch
+
+Sorting:
+- [r/mylittlepony, "*"]
+  # These, unfortunately, resolve a lot of things implicitly...
+- [r/mylittleandysonic1, "*"]
+- [r/mlas1emotes, "*"]
+- [r/mlas1animotes, "*"]
+- [r/futemotes, r/ponyanarchism]
+- [r/ainbowdash, r/dashiemotes]
+- [r/idliketobeatree, r/ainbowdash]
+- [r/mylittlemusician, r/mylittlelistentothis]
+- [r/futemotes, r/gremotes] # Temp fix for the copies of /fut*
+
+Conflicts:
+  /muffin:      r/mlpdrawingschool      # Conflict with r/mylittlesupportgroup
+  /twifly:      r/mlas1animotes         # Conflict with r/thebestpony
+  /woonajuice:  r/mylittledaww          # Duplicated to r/mylittleanime
+  /rwoonajuice: r/mylittledaww          # Duplicated to r/mylittleanime
+  /dw01:        r/daylightemotes        # Conflict with r/gallopfrey
+  /hugs:        r/mylittledaww          # Conflict with r/mylittlecirclejerk
+  /twipoker:    r/mylittlewtf           # Conflict with r/thebestpony
+  /ajlol:       r/mlas1animotes         # Conflict with r/tbpimagedump
+  /woona:       r/thebestpony           # Broken emote in r/mylittlesupportgroup
+  /abwant:      r/mylittlelivestream    # Conflict with r/applebloom
+  /rabwant:     r/mylittlelivestream    # Conflict with r/applebloom
+  /shrug:       r/vinylscratch          # Conflict with r/mylittlecirclejerk
+  /sadlyra:     r/mylittleonions        # Conflict with r/mylittleanime
+  /abworry:     r/tbpimagedump          # Conflict with r/mlpdrawingschool
+  /ppnervous:   r/pinkiepie             # Conflict with r/mlpdrawingschool
+  /s:           r/falloutequestria      # Conflict with r/mylittleanime
+  /t18:         r/mylittlefoodmanes     # Conflict with r/tacoshy
+  /sphlyrafun:  r/mylittlensfw          # Conflict with r/mylittlechaos
+
+  # Temporary
+  /rdsad:       r/ilovedashie
+  /rrdsad:      r/ilovedashie
+  /ovenmitt:    r/ainbowdash
+  /jizz:        r/mylittlebannertest

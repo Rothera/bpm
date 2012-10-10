@@ -156,6 +156,7 @@ def cmd_extractall(args):
 
     for (i, sr) in enumerate(subreddits):
         print("[%s/%s]: %s" % (i+1, len(subreddits), sr))
+        sys.stdout.flush() # So the output doesn't get out of order
         # TODO: Don't hardcode relative paths...
         subprocess.call(["./bpextract.py", "minified-css/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
 

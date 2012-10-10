@@ -25,16 +25,15 @@ def load_yaml_file(file):
 def safe_update(base, new, changes_only=True):
     for key in new:
         if key in base:
-            if changes_only:
-                if base[key] != new[key]:
-                    yield key
-            else:
+            if base[key] != new[key]:
                 yield key
     base.update(new)
 
-def combine_name_pair(name_pair):
-    name, suffix = name_pair
+def combine_name_pair(name, suffix):
     if suffix:
-        return name + suffix
+        if suffix[0] == ":":
+            return name + suffix
+        else:
+            return name + " " + suffix
     else:
         return name

@@ -11,16 +11,15 @@
 ################################################################################
 
 __all__ = [
-    "filter_ponyscript_ignores", "extract_raw_emotes", "build_emote_map",
-    "collapse_specials_properties", "classify_emotes", "build_spritesheet_map"
+    "filter_ponyscript_ignores", "extract_partial_emotes",
+    "combine_partial_emotes", "check_variants", "classify_emotes"
     ]
 
 import re
 
 import bplib
 import bplib.css
-import bplib.file
-import bplib.emote
+import bplib.objects
 
 def filter_ponyscript_ignores(css_rules):
     # Takes list of CssRule's and sets .ignore properties on them as appropriate.
@@ -54,182 +53,141 @@ def filter_ponyscript_ignores(css_rules):
         if "END-PONYSCRIPT-IGNORE" in rule.selectors:
             ignoring = False
 
-def extract_raw_emotes(specified_extractions, css_rules):
+def extract_partial_emotes(css_rules):
     # Extracts partial emotes from a list of CSS rules.
     for rule in css_rules:
-        # FIXME: Maybe we should warn if non-emote selectors are mixed in with
-        # valid ones. That's probably a sign of trouble.
-        alias_pairs = filter(None, [_parse_emote_selector(s) for s in rule.selectors])
+        if rule.ignore:
+            continue
 
-        for (name, suffix) in alias_pairs:
-            name_pair_str = bplib.combine_name_pair((name, suffix))
-            extract_explicit = name_pair_str in specified_extractions
+        alias_pairs = [_parse_emote_selector(s) for s in rule.selectors]
+        if any(ap is None for ap in alias_pairs) and any(ap is not None for ap in alias_pairs):
+            print("WARNING: CSS rule has both emotes and non-emote selectors")
 
-            if extract_explicit:
-                print("NOTICE: Extracting ignored emote %r" % (name_pair_str))
-                specified_extractions.remove(name_pair_str)
+        for pair in alias_pairs:
+            if pair is None:
+                continue
 
-            if extract_explicit or (not rule.ignore):
-                # Copy CSS so it's not read-only
-                yield bplib.emote.PartialEmote(name, suffix, rule.properties.copy())
+            name, suffix = pair
 
-    for name_pair_str in specified_extractions:
-        print("WARNING: %r was not found" % (name_pair_str))
+            # Copy CSS so it's not read-only
+            yield bplib.objects.PartialEmote(name, suffix, rule.properties.copy())
+
+_selector_regexp = re.compile(r"""
+    a(?P<pc1>:[\w\-()]+)?
+    \[href[|^]?=(?P<quote>["'])(?P<name>\/[\w:!#\/]+)(?P=quote)\] # Match quotes
+    (?P<pc2>:[\w:\-()]+)?\s* # Accept : to get basically any non-space thing
+    (?P<sel>[\w\s:\-()]*)
+    """, re.VERBOSE)
 
 def _parse_emote_selector(selector):
-    # Match against 'a[href|="/emote"]'. This is complicated by a few things:
-    # psuedo-classes can be either with the a ("a:hover[...]") or at the end
-    # ("a[...]:hover"). I'm aware of :hover, :active, and :nth-of-type(n) (which
-    # is used on colored text emotes), though only the first two are relevant.
-    #
-    # |= is the generally recommended attribute selector, but not everybody
-    # respects this. We accept |=, ^=, and = as alternatives, but no others.
-    # Generally this is a not a problem, and may help avoid false positives on
-    # selectors that we shouldn't actually be parsing.
-    #
-    # ":", "!", "#", and "/" are permitted in emote names. ":" is used by
-    # "/pp:3", "!" for colored text emotes, and the remaining two mostly for
-    # non-pony emotes and image macros.
-    m = re.match(r'a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="(\/[\w:!#\/]+)"\](:[a-zA-Z\-()]+)?$', selector)
-    if m is None:
+    match = re.match(_selector_regexp, selector)
+    if match is None:
         return None
-    pc1, emote_name, pc2 = m.groups()
 
-    if pc1 and pc2:
-        # Probably shouldn't ever happen (what would we do, anyway?)
-        print("WARNING: Selector %r has multiple psuedo classes" % (selector))
-    psuedo_class = pc1 or pc2
-    suffix = None
+    name = match.groupdict()["name"]
+    pc1 = match.groupdict()["pc1"] or ""
+    pc2 = match.groupdict()["pc2"] or ""
+    sel = match.groupdict()["sel"].strip()
 
-    if psuedo_class:
-        # We want to keep everything except :nth-of-type(n) (though we could
-        # safely keep it, it does nothing, so I'd prefer removal), but warn if
-        # we don't recognize it.
-        if psuedo_class in (":hover", ":active"):
-            suffix = psuedo_class
-        elif psuedo_class != ":nth-of-type(n)":
-            # Currently this just means weird non-emote things with :after and
-            # :before. It might be best just to omit these entirely (return a
-            # special value indicating deletion of the "base" selector as well),
-            # but... eh.
+    # Generally, pc1 will be empty, but some emotes put :hover there. pc2 is
+    # what we're chiefly interested in, and sel is used by image macros and
+    # such.
+
+    def verify_psuedo_class(pc):
+        if pc == ":nth-of-type(n)":
+            return "" # Drop this
+        elif pc and pc not in (":hover", ":active"):
             print("WARNING: Unknown psuedo-class on %r" % (selector))
-            suffix = psuedo_class
+        return pc
 
-    return (emote_name, suffix)
+    pc1 = verify_psuedo_class(pc1)
+    pc2 = verify_psuedo_class(pc2)
+    suffix = pc1 + pc2
+    if sel:
+        suffix += " " + sel
 
-def build_emote_map(partial_emotes):
+    return (name, suffix.strip() or None)
+
+def combine_partial_emotes(partial_emotes):
     # Combines properties in partial emotes, producing a single emote map.
     emotes = {}
-    for raw_emote in partial_emotes:
-        if raw_emote.name_pair not in emotes:
+    for partial in partial_emotes:
+        if partial.name not in emotes:
             # Newly seen emote
-            emotes[raw_emote.name_pair] = raw_emote
+            emotes[partial.name] = {partial.suffix: partial}
+        elif partial.suffix not in emotes[partial.name]:
+            # New suffix for an existing emote
+            emotes[partial.name][partial.suffix] = partial
         else:
-            # Merge properties
-            base_emote = emotes[raw_emote.name_pair]
-            for prop in bplib.safe_update(base_emote.css, raw_emote.css):
-                print("WARNING: emote %r redefined property %r from base (from %r to %r)" % (
-                    bplib.combine_name_pair(raw_emote.name_pair), prop,
-                    base_emote.css[prop], raw_emote.css[prop]))
+            # Existing emote. Check for property overwrites
+            base = emotes[partial.name][partial.suffix]
+            for (prop, value) in partial.css.items():
+                if prop in base.css and bplib.css.prop(base.css[prop]) != bplib.css.prop(value):
+                    print("WARNING: emote %r redefined property %r from base (from %r to %r)" % (
+                        bplib.combine_name_pair(partial.name, partial.suffix), prop,
+                        base.css[prop], partial.css[prop]))
+            base.css.update(partial.css)
     return emotes
 
-def collapse_specials_properties(emotes):
-    # Basically, copies /ajdance properties to /ajdance:hover so that they can
-    # exist independently.
-    #
-    # Note: overwriting properties is considered valid here by necessity.
-    for emote in emotes.values():
-        if emote.suffix:
-            base_emote = emotes.get((emote.name, None), None)
-            if base_emote is not None:
-                base_properties = base_emote.css.copy()
-                base_properties.update(emote.css)
-                emote.css = base_properties
+def check_variants(emotes):
+    # Checks that a base emote exists for all names.
+    # TODO: It might be nice to delete extra properties shared with the base
+    # emote but this could be dangerous. Consider deleting properties on a
+    # variant that are inherited (and being overridden back to default) from
+    # another variant.
+    for (name, variants) in list(emotes.items()):
+        try:
+            (base_suffix, base) = bplib.objects.base_emote(name, variants)
+        except ValueError as e:
+            print("ERROR: Cannot locate base emote for %r. (Variants: %r)" % (name, list(variants.keys())))
+            del emotes[name]
+            continue
 
-def classify_emotes(emote_map):
+def classify_emotes(emotes):
     # Sorts emotes based on whether or not they are "normal" emotes belonging to
     # a spritesheet, or "custom" ones possessing only arbitrary CSS.
-    #
-    # Normal emotes are left intact as PartialEmote's, and require further
-    # processing. Custom ones are converted to CustomEmote's.
-    normal_emotes = {}
-    custom_emotes = {}
 
-    for (name_pair, emote) in emote_map.items():
-        # Required properties (background-position is semi-required)
-        if all(k in emote.css for k in ("background-image", "width", "height")):
-            # Probably an emote. We could check for expected values of display/
-            # clear/float, but they're broken in a lot of places, and not worth
-            # the resulting warning spam.
-            normal_emotes[name_pair] = emote
-        else:
-            # Replace one class with another, essentially
-            custom_emotes[name_pair] = bplib.emote.CustomEmote(emote.name, emote.suffix, emote.css)
+    for (name, variants) in emotes.items():
+        for (suffix, raw) in variants.items():
+            # Required properties (background-position is semi-required)
+            if all(k in raw.css for k in ("background-image", "width", "height")):
+                # Probably an emote. We could check for expected values of display/
+                # clear/float, but they're broken in a lot of places, and not worth
+                # the resulting warning spam.
+                variants[suffix] = _convert_emote(name, suffix, raw)
+            else:
+                # Replace one class with another, essentially
+                variants[suffix] = bplib.objects.CustomEmote(name, suffix, raw.css)
 
-    return (normal_emotes, custom_emotes)
-
-def build_spritesheet_map(emotes):
-    # Converts a map of "normal" emotes into a map of spritesheets.
-    spritesheets = {}
-
-    for (name_pair, raw_emote) in emotes.items():
-        image_url = bplib.css.as_url(raw_emote.css.pop("background-image"))
-
-        if image_url not in spritesheets:
-            spritesheets[image_url] = bplib.file.Spritesheet(image_url, {})
-
-        # Note: this isn't ever really possible. The closest way the CSS could
-        # be broken to make this happen would be if it defined two emotes with
-        # the same name- but they would be collapsed as part of build_emote_map(),
-        # which would produce several warnings.
-        assert name_pair not in spritesheets[image_url].emotes
-        spritesheets[image_url].emotes[name_pair] = _convert_emote(name_pair, image_url, raw_emote)
-
-    for (image_url, ss) in spritesheets.items():
-        _verify_spritesheet(image_url, ss)
-
-    return spritesheets
-
-def _convert_emote(name_pair, image_url, raw_emote):
+def _convert_emote(name, suffix, raw_emote):
     css = raw_emote.css.copy()
 
-    for (prop, expected_value) in [("display", "block"), ("clear", "none"), ("float", "left")]:
+    for (prop, expected_value) in [("display", "block"), ("float", "left")]:
         if prop not in css:
-            print("WARNING: %r is missing %r property" % (bplib.combine_name_pair(name_pair), prop))
+            print("WARNING: %r is missing %r property" % (bplib.combine_name_pair(name, suffix), prop))
         else:
             if css[prop] != expected_value:
-                print("WARNING: %r has wrong value %r for property %r (expected %r)" % (
-                    bplib.combine_name_pair(name_pair), css[prop], prop, expected_value))
+                print("WARNING: %r has unexpected value %r for property %r (expected %r)" % (
+                    bplib.combine_name_pair(name, suffix), css[prop], prop, expected_value))
 
             del css[prop]
 
     width = bplib.css.as_size(css.pop("width"))
     height = bplib.css.as_size(css.pop("height"))
     size = (width, height)
+    image_url = bplib.css.as_url(css.pop("background-image"))
 
     if "background-position" in css:
         offset = bplib.css.as_position(css.pop("background-position"), width, height)
     else:
-        offset = None
+        offset = (0, 0)
 
-    for p in css:
-        print("WARNING: emote %r has extra property %r (%r)" % (bplib.combine_name_pair(name_pair), p, css[p]))
-
-    for p in ["background-repeat"]:
-        # Commonly added properties that we want to ignore
+    for p in ("background-repeat", "clear"):
+        # Commonly added useless properties that we want to ignore
         if p in css:
             del css[p]
 
-    return bplib.emote.NormalEmote(name_pair[0], name_pair[1], css, image_url, size, offset)
+    for p in css:
+        print("WARNING: emote %r has unknown extra property %r (%r)" % (bplib.combine_name_pair(name, suffix), p, css[p]))
 
-def _verify_spritesheet(image_url, ss):
-    # Ensure that all emotes have a bg-position. Only one may lack one.
-    unpositioned_emotes = []
-    for (name_pair, emote) in ss.emotes.items():
-        if emote.offset is None:
-            emote.offset = (0, 0)
-            unpositioned_emotes.append(name_pair)
-
-    if len(unpositioned_emotes) > 1:
-        print("ERROR: Multiple unsized emotes within spritesheet %r: %s" % (
-            image_url, " ".join(map(bplib.combine_name_pair, unpositioned_emotes))))
+    return bplib.objects.NormalEmote(name, suffix, css, image_url, size, offset)

@@ -15,176 +15,107 @@ import time
 
 import bplib
 import bplib.condense
-import bplib.file
+import bplib.objects
 
 ### Directive application
 
-def resolve_emotes(files, data):
-    file_ignores = data.pop("File Ignores")
-    sorting_rules = data.pop("Sorting")
-    _conflict_rules = data.pop("Conflicts")
-    directive_map = data.pop("Directives")
-    emote_merges = data.pop("Merge")
+def overrides(sorting_rules, conflict_rules, base, new, name):
+    for rule in sorting_rules:
+        if rule == [base, "*"]: # Old subreddit wins all
+            return False
+        elif rule == [new, "*"]: # New subreddit wins all
+            return True
+        elif rule == [base, new]: # Old subreddit wins vs. new
+            return False
+        elif rule == [new, base]: # New subreddit wins vs. old
+            return True
 
-    conflict_rules = {tuple(d["Name"]): d["Favor"] for d in _conflict_rules}
+    if name in conflict_rules:
+        # Does either subreddit explicitly win for this emote?
+        favor = conflict_rules[name]
+        if favor == base:
+            return False
+        elif favor == new:
+            return True
 
-    def overrides(base, new, name_pair):
-        for rule in sorting_rules:
-            if rule == [base, "*"]: # Old subreddit wins all
-                return False
-            elif rule == [new, "*"]: # New subreddit wins all
-                return True
-            elif rule == [base, new]: # Old subreddit wins vs. new
-                return False
-            elif rule == [new, base]: # New subreddit wins vs. old
-                return True
+    # No solution
+    return None
 
-        if name_pair in conflict_rules:
-            # Does either subreddit explicitly win for this emote?
-            favor = conflict_rules[name_pair]
-            if favor == base:
-                return False
-            elif favor == new:
-                return True
-
-        # No solution
-        return None
-
-    for filename in file_ignores:
-        if filename in files:
-            # Safer than deletion
-            files[filename].emotes = {}
-
-    # Apply custom directives
-    for (filename, directives) in directive_map.items():
-        if filename not in files:
-            continue
-
-        for d in directives:
-            if isinstance(d, str):
-                op = d
-                args = ()
-            else:
-                op = d[0]
-                args = d[1:]
-            Directives[op](files[filename], *args)
-
-    for (filename, spritesheets) in emote_merges.items():
-        if filename not in files:
-            continue
-
-        file = files[filename]
-        for ss in bplib.file.convert_spritesheet_map(spritesheets):
-            for emote in ss.emotes.values():
-                emote.file = file # FIXME
-            file.add_spritesheet(ss)
+def resolve_emotes(files, config):
+    sorting_rules = config.pop("Sorting")
+    conflict_rules = config.pop("Conflicts")
 
     # Converts a list of files into one big emote map
     emotes = {}
-    sources = {}
-
     conflicts = {}
 
     # Sort all emotes by prioritization
     for file in files.values():
-        for (name_pair, emote) in file.emotes.items():
-            if name_pair in emotes:
-                result = overrides(sources[name_pair], file.name, name_pair)
-                if result:
-                    # Get rid of the old one so it can't hurt anyone anymore
-                    del files[sources[name_pair]].emotes[name_pair]
-                    if name_pair in conflicts:
-                        del conflicts[name_pair]
-                    # Replace emote
-                    emotes[name_pair] = emote
-                    sources[name_pair] = file.name
-                elif result is None:
-                    # ?!? first file wins I guess
-                    conflicts[name_pair] = (file.name, sources[name_pair])
-            else:
-                emotes[name_pair] = emote
-                sources[name_pair] = file.name
+        for (name, variants) in file.emotes.items():
+            if name not in emotes:
+                emotes[name] = (file, variants)
+                continue
 
-    for (name_pair, (old, new)) in conflicts.items():
-        print("ERROR: CONFLICT between %s and %s over %s" % (old, new, name_pair))
+            result = overrides(sorting_rules, conflict_rules, emotes[name][0].name, file.name, name)
+            if result:
+                if name in conflicts:
+                    del conflicts[name]
+                # Replace emote
+                emotes[name] = (file, variants)
+            elif result is None:
+                # ?!? first file wins I guess
+                conflicts[name] = (file, emotes[name][0])
+
+    for (name, (old, new)) in conflicts.items():
+        print("ERROR: CONFLICT between %s and %s over %s" % (old.name, new.name, name))
 
     return emotes
-
-def d_add_css(file, emote, css):
-    file.emotes[parse_emote(emote)].css.update(css)
-
-def d_mark_nsfw(file, *es):
-    for e in es:
-        file.emotes[parse_emote(e)].is_nsfw = True
-
-def d_set_selector(file, emote, to):
-    assert file.emotes[parse_emote(emote)].custom_selector is None
-    file.emotes[parse_emote(emote)].custom_selector = to
-
-def d_disable_css(file, emote):
-    file.emotes[parse_emote(emote)].disable_css_gen = True
-
-def d_remove_emote(file, emote):
-    del file.emotes[parse_emote(emote)]
-
-def parse_emote(s):
-    if isinstance(s, list):
-        return tuple(s)
-    else:
-        return (s, None)
-
-Directives = {
-    "AddCSS": d_add_css,
-    "MarkNSFW": d_mark_nsfw,
-    "SetSelector": d_set_selector,
-    "DisableCSS": d_disable_css,
-    "Remove": d_remove_emote,
-    }
 
 ### Generation
 
 def build_css(emotes):
     css_rules = {}
 
-    for emote in emotes.values():
-        # FIXME
-        if hasattr(emote, "disable_css_gen") and emote.disable_css_gen:
-            continue
-
-        selector, properties = emote.selector(), emote.to_css()
-        if selector in css_rules:
-            print("ERROR: Selector %r used twice!" % (selector))
-        css_rules[selector] = properties
+    for (file, variants) in emotes.values():
+        for emote in variants.values():
+            selector, properties = emote.selector(), emote.to_css()
+            if selector in css_rules:
+                print("ERROR: Selector %r used twice!" % (selector))
+            css_rules[selector] = properties
 
     return css_rules
 
 def build_js_map(emotes):
     emote_map = {}
 
-    for emote in emotes.values():
-        if emote.suffix is not None:
-            # Assume we should ignore- I can't think of when this isn't true
-            continue
+    for (name, (file, variants)) in emotes.items():
+        for (suffix, emote) in variants.items():
+            if suffix is not None and len(variants) != 1:
+                # Assume we should ignore- I can't think of when we wouldn't
+                print("js_map ignoring %s" % (bplib.combine_name_pair(name, suffix)))
+                continue
 
-        assert emote.name not in emote_map
-        data = [int(emote.is_nsfw), emote.file.file_id, 0]
+            if name in emote_map:
+                print("ERROR: %r seen twice" % (name))
+            assert name not in emote_map
+            data = [0, file.file_id, 0]
 
-        if hasattr(emote, "size"):
-            data[2] = max(emote.size)
+            if hasattr(emote, "size"): # FIXME
+                data[2] = max(emote.size)
 
-        emote_map[emote.name] = data
+            emote_map[name] = data
 
     return emote_map
 
 def build_sr_data(files):
-    sr_id_map = {}
-    sr_data = {}
+    sr_id2name = {}
+    sr_name2id = {}
 
     for (name, file) in files.items():
-        sr_id_map[file.file_id] = name
-        sr_data[name] = [file.display_name, file.file_id]
+        sr_id2name[file.file_id] = name
+        sr_name2id[name] = [file.file_id]
 
-    return sr_id_map, sr_data
+    return sr_id2name, sr_name2id
 
 AutogenHeader = """
 /*
@@ -228,37 +159,30 @@ def main():
     parser.add_argument("-j", "--js", help="Output emote map JS file", default="build/emote-map.js")
     parser.add_argument("-s", "--srdata", help="Output subreddit data JS file", default="build/sr-data.js")
     parser.add_argument("-c", "--css", help="Output CSS file", default="build/emote-classes.css")
-    parser.add_argument("-d", "--directives", help="Processing directives",
-                        default="data/emote-directives.yaml", type=argparse.FileType("r"))
     parser.add_argument("--no-compress", help="Disable CSS compression", action="store_true")
     args = parser.parse_args()
 
     files = {}
 
-    with open("data/emote-directives.yaml") as file:
+    with open("data/rules.yaml") as file:
         config = bplib.load_yaml_file(file)
 
     print("Loading emotes")
     file_id = 0
     for subreddit in config["Subreddits"]:
-        efile = bplib.file.EmoteFile.load_subreddit(subreddit)
-        efile.file_id = file_id # FIXME
-        for emote in efile.emotes.values(): emote.file = efile # FIXME
-        files[efile.name] = efile
+        file = bplib.objects.EmoteFile.load_subreddit(subreddit)
+        if file is None:
+            continue
+        files[file.name] = file
+        files[file.name].file_id = file_id # FIXME
         file_id += 1
-    for filename in config["Extra Files"]:
-        with open(filename) as file:
-            efile = bplib.file.EmoteFile.load_file(file)
-            efile.file_id = file_id
-            for emote in efile.emotes.values(): emote.file = efile # FIXME
-            files[efile.name] = efile
-            file_id += 1
 
     print("Processing")
-    emotes = resolve_emotes(files, bplib.load_yaml_file(args.directives))
+    emotes = resolve_emotes(files, config)
+
     css_rules = build_css(emotes)
     js_map = build_js_map(emotes)
-    sr_id_map, sr_data = build_sr_data(files)
+    sr_id2name, sr_name2id = build_sr_data(files)
     if not args.no_compress:
         bplib.condense.condense_css(css_rules)
 
@@ -268,7 +192,7 @@ def main():
     with open(args.js, "w") as file:
         dump_js_map(file, js_map)
     with open(args.srdata, "w") as file:
-        dump_sr_data(file, sr_id_map, sr_data)
+        dump_sr_data(file, sr_id2name, sr_name2id)
 
 if __name__ == "__main__":
     main()
