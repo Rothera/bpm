@@ -1,345 +1,564 @@
-Emotes:
-  Custom:
-  - CSS: {display: inline-block, padding-right: 100%}
-    Name: /sp
-  Spritesheets:
-    http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png:
-    - Name: /nsc00
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /nsc01
-      Offset: [0, -70]
-      Size: [70, 70]
-    - Name: /nsc02
-      Offset: [0, -140]
-      Size: [70, 70]
-    - Name: /nsc03
-      Offset: [0, -210]
-      Size: [70, 70]
-    - Name: /nsc04
-      Offset: [0, -280]
-      Size: [70, 70]
-    - Name: /nsc05
-      Offset: [0, -350]
-      Size: [70, 70]
-    - Name: /nsc06
-      Offset: [0, -420]
-      Size: [70, 70]
-    - Name: /nsc07
-      Offset: [0, -490]
-      Size: [70, 70]
-    - Name: /nsc08
-      Offset: [0, -560]
-      Size: [70, 70]
-    - Name: /nsc09
-      Offset: [0, -630]
-      Size: [70, 70]
-    - Name: /nsc10
-      Offset: [-70, 0]
-      Size: [70, 70]
-    - Name: /nsc11
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /nsc12
-      Offset: [-70, -140]
-      Size: [70, 70]
-    - Name: /nsc13
-      Offset: [-70, -210]
-      Size: [70, 70]
-    - Name: /nsc14
-      Offset: [-70, -280]
-      Size: [70, 70]
-    - Name: /nsc15
-      Offset: [-70, -350]
-      Size: [70, 70]
-    - Name: /nsc16
-      Offset: [-70, -420]
-      Size: [70, 70]
-    - Name: /nsc17
-      Offset: [-70, -490]
-      Size: [70, 70]
-    - Name: /nsc18
-      Offset: [-70, -560]
-      Size: [70, 70]
-    - Name: /nsc19
-      Offset: [-70, -630]
-      Size: [70, 70]
-    - Name: /nsc20
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /nsc21
-      Offset: [-140, -70]
-      Size: [70, 70]
-    - Name: /nsc22
-      Offset: [-140, -140]
-      Size: [70, 70]
-    - Name: /nsc23
-      Offset: [-140, -210]
-      Size: [70, 70]
-    - Name: /nsc24
-      Offset: [-140, -280]
-      Size: [70, 70]
-    - Name: /nsc25
-      Offset: [-140, -350]
-      Size: [70, 70]
-    - Name: /nsc26
-      Offset: [-140, -420]
-      Size: [70, 70]
-    - Name: /nsc27
-      Offset: [-140, -490]
-      Size: [70, 70]
-    - Name: /nsc28
-      Offset: [-140, -560]
-      Size: [70, 70]
-    - Name: /nsc29
-      Offset: [-140, -630]
-      Size: [70, 70]
-    http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png:
-    - Name: /nsb00
-      Offset: [0, 0]
-      Size: [50, 50]
-    - Name: /nsb01
-      Offset: [0, -50]
-      Size: [50, 50]
-    - Name: /nsb02
-      Offset: [0, -100]
-      Size: [50, 50]
-    - Name: /nsb03
-      Offset: [0, -150]
-      Size: [50, 50]
-    - Name: /nsb04
-      Offset: [0, -200]
-      Size: [50, 50]
-    - Name: /nsb05
-      Offset: [0, -250]
-      Size: [50, 50]
-    - Name: /nsb06
-      Offset: [0, -300]
-      Size: [50, 50]
-    - Name: /nsb07
-      Offset: [0, -350]
-      Size: [50, 50]
-    - Name: /nsb08
-      Offset: [0, -400]
-      Size: [50, 50]
-    - Name: /nsb09
-      Offset: [0, -4500]
-      Size: [50, 50]
-    - Name: /nsb10
-      Offset: [-50, 0]
-      Size: [50, 50]
-    - Name: /nsb11
-      Offset: [-50, -50]
-      Size: [50, 50]
-    - Name: /nsb12
-      Offset: [-50, -100]
-      Size: [50, 50]
-    - Name: /nsb13
-      Offset: [-50, -150]
-      Size: [50, 50]
-    - Name: /nsb14
-      Offset: [-50, -200]
-      Size: [50, 50]
-    - Name: /nsb15
-      Offset: [-50, -250]
-      Size: [50, 50]
-    - Name: /nsb16
-      Offset: [-50, -300]
-      Size: [50, 50]
-    - Name: /nsb17
-      Offset: [-50, -350]
-      Size: [50, 50]
-    - Name: /nsb18
-      Offset: [-50, -400]
-      Size: [50, 50]
-    - Name: /nsb19
-      Offset: [-50, -450]
-      Size: [50, 50]
-    - Name: /nsb20
-      Offset: [-100, 0]
-      Size: [50, 50]
-    - Name: /nsb21
-      Offset: [-100, -50]
-      Size: [50, 50]
-    - Name: /nsb22
-      Offset: [-100, -100]
-      Size: [50, 50]
-    - Name: /nsb23
-      Offset: [-100, -150]
-      Size: [50, 50]
-    - Name: /nsb24
-      Offset: [-100, -200]
-      Size: [50, 50]
-    - Name: /nsb25
-      Offset: [-100, -250]
-      Size: [50, 50]
-    - Name: /nsb26
-      Offset: [-100, -300]
-      Size: [50, 50]
-    - Name: /nsb27
-      Offset: [-100, -350]
-      Size: [50, 50]
-    - Name: /nsb28
-      Offset: [-100, -400]
-      Size: [50, 50]
-    - Name: /nsb29
-      Offset: [-100, -450]
-      Size: [50, 50]
-    - Name: /nsb30
-      Offset: [-150, 0]
-      Size: [50, 50]
-    - Name: /nsb31
-      Offset: [-150, -50]
-      Size: [50, 50]
-    - Name: /nsb32
-      Offset: [-150, -100]
-      Size: [50, 50]
-    - Name: /nsb33
-      Offset: [-150, -150]
-      Size: [50, 50]
-    - Name: /nsb34
-      Offset: [-150, -200]
-      Size: [50, 50]
-    - Name: /nsb35
-      Offset: [-150, -250]
-      Size: [50, 50]
-    - Name: /nsb36
-      Offset: [-150, -300]
-      Size: [50, 50]
-    - Name: /nsb37
-      Offset: [-150, -350]
-      Size: [50, 50]
-    - Name: /nsb38
-      Offset: [-150, -400]
-      Size: [50, 50]
-    - Name: /nsb39
-      Offset: [-150, -450]
-      Size: [50, 50]
-    http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png:
-    - Name: /ns00
-      Offset: [-2, -2]
-      Size: [74, 75]
-    - Name: /ns01
-      Offset: [-78, -2]
-      Size: [79, 75]
-    - Name: /ns02
-      Offset: [-159, -2]
-      Size: [82, 75]
-    - Name: /ns03
-      Offset: [-243, -2]
-      Size: [82, 75]
-    - Name: /ns04
-      Offset: [-327, -2]
-      Size: [62, 75]
-    - Name: /ns05
-      Offset: [-391, -2]
-      Size: [75, 75]
-    - Name: /ns06
-      Offset: [-2, -79]
-      Size: [74, 75]
-    - Name: /ns10
-      Offset: [-78, -79]
-      Size: [76, 75]
-    - Name: /ns11
-      Offset: [-156, -79]
-      Size: [84, 75]
-    - Name: /ns12
-      Offset: [-242, -79]
-      Size: [68, 75]
-    - Name: /ns13
-      Offset: [-312, -79]
-      Size: [89, 75]
-    - Name: /ns14
-      Offset: [-403, -79]
-      Size: [59, 75]
-    - Name: /ns15
-      Offset: [-2, -156]
-      Size: [70, 75]
-    - Name: /ns16
-      Offset: [-74, -156]
-      Size: [85, 75]
-    - Name: /ns20
-      Offset: [-161, -156]
-      Size: [86, 75]
-    - Name: /ns21
-      Offset: [-249, -156]
-      Size: [75, 75]
-    - Name: /ns22
-      Offset: [-326, -156]
-      Size: [86, 75]
-    - Name: /ns23
-      Offset: [-414, -156]
-      Size: [77, 75]
-    - Name: /ns24
-      Offset: [-2, -233]
-      Size: [83, 75]
-    - Name: /ns25
-      Offset: [-87, -233]
-      Size: [86, 75]
-    - Name: /ns26
-      Offset: [-175, -233]
-      Size: [74, 75]
-    - Name: /rns00
-      Offset: [-251, -233]
-      Size: [74, 75]
-    - Name: /rns01
-      Offset: [-327, -233]
-      Size: [79, 75]
-    - Name: /rns02
-      Offset: [-408, -233]
-      Size: [82, 75]
-    - Name: /rns03
-      Offset: [-2, -310]
-      Size: [82, 75]
-    - Name: /rns04
-      Offset: [-86, -310]
-      Size: [62, 75]
-    - Name: /rns05
-      Offset: [-150, -310]
-      Size: [75, 75]
-    - Name: /rns06
-      Offset: [-227, -310]
-      Size: [74, 75]
-    - Name: /rns10
-      Offset: [-303, -310]
-      Size: [76, 75]
-    - Name: /rns11
-      Offset: [-381, -310]
-      Size: [84, 75]
-    - Name: /rns12
-      Offset: [-2, -387]
-      Size: [68, 75]
-    - Name: /rns13
-      Offset: [-72, -387]
-      Size: [89, 75]
-    - Name: /rns14
-      Offset: [-163, -387]
-      Size: [59, 75]
-    - Name: /rns15
-      Offset: [-224, -387]
-      Size: [70, 75]
-    - Name: /rns16
-      Offset: [-296, -387]
-      Size: [85, 75]
-    - Name: /rns20
-      Offset: [-383, -387]
-      Size: [86, 75]
-    - Name: /rns21
-      Offset: [-2, -464]
-      Size: [75, 75]
-    - Name: /rns22
-      Offset: [-79, -464]
-      Size: [86, 75]
-    - Name: /rns23
-      Offset: [-167, -464]
-      Size: [77, 75]
-    - Name: /rns24
-      Offset: [-246, -464]
-      Size: [83, 75]
-    - Name: /rns25
-      Offset: [-331, -464]
-      Size: [86, 75]
-    - Name: /rns26
-      Offset: [-419, -464]
-      Size: [74, 75]
-Meta: {DisplayName: r/mylittlenosleep, Name: r_mylittlenosleep}
+/ns00:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-2, -2]
+    Size: [74, 75]
+/ns01:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-78, -2]
+    Size: [79, 75]
+/ns02:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-159, -2]
+    Size: [82, 75]
+/ns03:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-243, -2]
+    Size: [82, 75]
+/ns04:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-327, -2]
+    Size: [62, 75]
+/ns05:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-391, -2]
+    Size: [75, 75]
+/ns06:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-2, -79]
+    Size: [74, 75]
+/ns10:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-78, -79]
+    Size: [76, 75]
+/ns11:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-156, -79]
+    Size: [84, 75]
+/ns12:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-242, -79]
+    Size: [68, 75]
+/ns13:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-312, -79]
+    Size: [89, 75]
+/ns14:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-403, -79]
+    Size: [59, 75]
+/ns15:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-2, -156]
+    Size: [70, 75]
+/ns16:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-74, -156]
+    Size: [85, 75]
+/ns20:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-161, -156]
+    Size: [86, 75]
+/ns21:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-249, -156]
+    Size: [75, 75]
+/ns22:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-326, -156]
+    Size: [86, 75]
+/ns23:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-414, -156]
+    Size: [77, 75]
+/ns24:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-2, -233]
+    Size: [83, 75]
+/ns25:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-87, -233]
+    Size: [86, 75]
+/ns26:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-175, -233]
+    Size: [74, 75]
+/nsb00:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [0, 0]
+    Size: [50, 50]
+/nsb01:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [0, -50]
+    Size: [50, 50]
+/nsb02:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [0, -100]
+    Size: [50, 50]
+/nsb03:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [0, -150]
+    Size: [50, 50]
+/nsb04:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [0, -200]
+    Size: [50, 50]
+/nsb05:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [0, -250]
+    Size: [50, 50]
+/nsb06:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [0, -300]
+    Size: [50, 50]
+/nsb07:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [0, -350]
+    Size: [50, 50]
+/nsb08:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [0, -400]
+    Size: [50, 50]
+/nsb09:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [0, -4500]
+    Size: [50, 50]
+/nsb10:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-50, 0]
+    Size: [50, 50]
+/nsb11:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-50, -50]
+    Size: [50, 50]
+/nsb12:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-50, -100]
+    Size: [50, 50]
+/nsb13:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-50, -150]
+    Size: [50, 50]
+/nsb14:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-50, -200]
+    Size: [50, 50]
+/nsb15:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-50, -250]
+    Size: [50, 50]
+/nsb16:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-50, -300]
+    Size: [50, 50]
+/nsb17:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-50, -350]
+    Size: [50, 50]
+/nsb18:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-50, -400]
+    Size: [50, 50]
+/nsb19:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-50, -450]
+    Size: [50, 50]
+/nsb20:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-100, 0]
+    Size: [50, 50]
+/nsb21:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-100, -50]
+    Size: [50, 50]
+/nsb22:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-100, -100]
+    Size: [50, 50]
+/nsb23:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-100, -150]
+    Size: [50, 50]
+/nsb24:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-100, -200]
+    Size: [50, 50]
+/nsb25:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-100, -250]
+    Size: [50, 50]
+/nsb26:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-100, -300]
+    Size: [50, 50]
+/nsb27:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-100, -350]
+    Size: [50, 50]
+/nsb28:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-100, -400]
+    Size: [50, 50]
+/nsb29:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-100, -450]
+    Size: [50, 50]
+/nsb30:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-150, 0]
+    Size: [50, 50]
+/nsb31:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-150, -50]
+    Size: [50, 50]
+/nsb32:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-150, -100]
+    Size: [50, 50]
+/nsb33:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-150, -150]
+    Size: [50, 50]
+/nsb34:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-150, -200]
+    Size: [50, 50]
+/nsb35:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-150, -250]
+    Size: [50, 50]
+/nsb36:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-150, -300]
+    Size: [50, 50]
+/nsb37:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-150, -350]
+    Size: [50, 50]
+/nsb38:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-150, -400]
+    Size: [50, 50]
+/nsb39:
+  null:
+    Image: http://e.thumbs.redditmedia.com/dCzKL-gNqv9H53ZR.png
+    Offset: [-150, -450]
+    Size: [50, 50]
+/nsc00:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/nsc01:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [0, -70]
+    Size: [70, 70]
+/nsc02:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [0, -140]
+    Size: [70, 70]
+/nsc03:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [0, -210]
+    Size: [70, 70]
+/nsc04:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [0, -280]
+    Size: [70, 70]
+/nsc05:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [0, -350]
+    Size: [70, 70]
+/nsc06:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [0, -420]
+    Size: [70, 70]
+/nsc07:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [0, -490]
+    Size: [70, 70]
+/nsc08:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [0, -560]
+    Size: [70, 70]
+/nsc09:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [0, -630]
+    Size: [70, 70]
+/nsc10:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-70, 0]
+    Size: [70, 70]
+/nsc11:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/nsc12:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-70, -140]
+    Size: [70, 70]
+/nsc13:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-70, -210]
+    Size: [70, 70]
+/nsc14:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-70, -280]
+    Size: [70, 70]
+/nsc15:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-70, -350]
+    Size: [70, 70]
+/nsc16:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-70, -420]
+    Size: [70, 70]
+/nsc17:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-70, -490]
+    Size: [70, 70]
+/nsc18:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-70, -560]
+    Size: [70, 70]
+/nsc19:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-70, -630]
+    Size: [70, 70]
+/nsc20:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-140, 0]
+    Size: [70, 70]
+/nsc21:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-140, -70]
+    Size: [70, 70]
+/nsc22:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-140, -140]
+    Size: [70, 70]
+/nsc23:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-140, -210]
+    Size: [70, 70]
+/nsc24:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-140, -280]
+    Size: [70, 70]
+/nsc25:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-140, -350]
+    Size: [70, 70]
+/nsc26:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-140, -420]
+    Size: [70, 70]
+/nsc27:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-140, -490]
+    Size: [70, 70]
+/nsc28:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-140, -560]
+    Size: [70, 70]
+/nsc29:
+  null:
+    Image: http://b.thumbs.redditmedia.com/BYQKdFxQZlPEdS2I.png
+    Offset: [-140, -630]
+    Size: [70, 70]
+/rns00:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-251, -233]
+    Size: [74, 75]
+/rns01:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-327, -233]
+    Size: [79, 75]
+/rns02:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-408, -233]
+    Size: [82, 75]
+/rns03:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-2, -310]
+    Size: [82, 75]
+/rns04:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-86, -310]
+    Size: [62, 75]
+/rns05:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-150, -310]
+    Size: [75, 75]
+/rns06:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-227, -310]
+    Size: [74, 75]
+/rns10:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-303, -310]
+    Size: [76, 75]
+/rns11:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-381, -310]
+    Size: [84, 75]
+/rns12:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-2, -387]
+    Size: [68, 75]
+/rns13:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-72, -387]
+    Size: [89, 75]
+/rns14:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-163, -387]
+    Size: [59, 75]
+/rns15:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-224, -387]
+    Size: [70, 75]
+/rns16:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-296, -387]
+    Size: [85, 75]
+/rns20:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-383, -387]
+    Size: [86, 75]
+/rns21:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-2, -464]
+    Size: [75, 75]
+/rns22:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-79, -464]
+    Size: [86, 75]
+/rns23:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-167, -464]
+    Size: [77, 75]
+/rns24:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-246, -464]
+    Size: [83, 75]
+/rns25:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-331, -464]
+    Size: [86, 75]
+/rns26:
+  null:
+    Image: http://f.thumbs.redditmedia.com/GdgeOwKgXg8YxSdS.png
+    Offset: [-419, -464]
+    Size: [74, 75]
+/sp:
+  null:
+    CSS: {display: inline-block, padding-right: 100%}
+    Type: Custom

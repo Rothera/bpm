@@ -1,82 +1,124 @@
-Emotes:
-  Custom:
-  - CSS: {display: inline-block, padding-right: 100%}
-    Name: /sp
-  - CSS: {background: black!important, color: black!important}
-    Name: /spoiler
-  - CSS: {background: black!important, color: white!important}
-    Name: /spoiler
-    Suffix: :hover
-  Spritesheets:
-    http://c.thumbs.redditmedia.com/5wA7HWAl2WD-UzA8.png:
-    - Name: /rsmooze
-      Offset: [0, -70]
-      Size: [70, 70]
-    - Name: /smooze
-      Offset: [0, 0]
-      Size: [70, 70]
-    http://c.thumbs.redditmedia.com/cz5tVZPB78M8qyUz.png:
-    - Name: /e13
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /re13
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /rsbstare
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /sbstare
-      Offset: [0, 0]
-      Size: [70, 70]
-    http://d.thumbs.redditmedia.com/ybVSLGRBZeyJ5xO9.png:
-    - Name: /amazingmagic
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /dishappy
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /fillyrarity
-      Offset: [0, -70]
-      Size: [70, 70]
-    - Name: /karmasalute
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /karmastare
-      Offset: [-70, 0]
-      Size: [70, 70]
-    - Name: /ohnoes
-      Offset: [0, -140]
-      Size: [70, 70]
-    - Name: /trixiedance
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /twidurr
-      Offset: [-140, -70]
-      Size: [70, 70]
-    http://f.thumbs.redditmedia.com/i-tlfxbcwqZ2pnDY.png:
-    - Name: /ramazingmagic
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rdishappy
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /rfillyrarity
-      Offset: [0, -70]
-      Size: [70, 70]
-    - Name: /rkarmasalute
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /rkarmastare
-      Offset: [-70, 0]
-      Size: [70, 70]
-    - Name: /rohnoes
-      Offset: [0, -140]
-      Size: [70, 70]
-    - Name: /rtwidurr
-      Offset: [-140, -70]
-      Size: [70, 70]
-    - Name: /trixiedance
-      Offset: [0, 0]
-      Size: [70, 70]
-      Suffix: :hover
-Meta: {DisplayName: r/mlplounge, Name: r_mlplounge}
+/amazingmagic:
+  null:
+    Image: http://d.thumbs.redditmedia.com/ybVSLGRBZeyJ5xO9.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/dishappy:
+  null:
+    Image: http://d.thumbs.redditmedia.com/ybVSLGRBZeyJ5xO9.png
+    Offset: [-140, 0]
+    Size: [70, 70]
+/e13:
+  null:
+    CSS: {margin-top: -16px}
+    Image: http://c.thumbs.redditmedia.com/cz5tVZPB78M8qyUz.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/fillyrarity:
+  null:
+    Image: http://d.thumbs.redditmedia.com/ybVSLGRBZeyJ5xO9.png
+    Offset: [0, -70]
+    Size: [70, 70]
+/karmasalute:
+  null:
+    Image: http://d.thumbs.redditmedia.com/ybVSLGRBZeyJ5xO9.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/karmastare:
+  null:
+    Image: http://d.thumbs.redditmedia.com/ybVSLGRBZeyJ5xO9.png
+    Offset: [-70, 0]
+    Size: [70, 70]
+/ohnoes:
+  null:
+    Image: http://d.thumbs.redditmedia.com/ybVSLGRBZeyJ5xO9.png
+    Offset: [0, -140]
+    Size: [70, 70]
+/ramazingmagic:
+  null:
+    Image: http://f.thumbs.redditmedia.com/i-tlfxbcwqZ2pnDY.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/rdishappy:
+  null:
+    Image: http://f.thumbs.redditmedia.com/i-tlfxbcwqZ2pnDY.png
+    Offset: [-140, 0]
+    Size: [70, 70]
+/re13:
+  null:
+    CSS: {margin-top: -16px}
+    Image: http://c.thumbs.redditmedia.com/cz5tVZPB78M8qyUz.png
+    Offset: [-210, -70]
+    Size: [70, 70]
+/rfillyrarity:
+  null:
+    Image: http://f.thumbs.redditmedia.com/i-tlfxbcwqZ2pnDY.png
+    Offset: [0, -70]
+    Size: [70, 70]
+/rkarmasalute:
+  null:
+    Image: http://f.thumbs.redditmedia.com/i-tlfxbcwqZ2pnDY.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/rkarmastare:
+  null:
+    Image: http://f.thumbs.redditmedia.com/i-tlfxbcwqZ2pnDY.png
+    Offset: [-70, 0]
+    Size: [70, 70]
+/rohnoes:
+  null:
+    Image: http://f.thumbs.redditmedia.com/i-tlfxbcwqZ2pnDY.png
+    Offset: [0, -140]
+    Size: [70, 70]
+/rsbstare:
+  null:
+    CSS: {margin-top: -16px}
+    Image: http://c.thumbs.redditmedia.com/cz5tVZPB78M8qyUz.png
+    Offset: [-210, -70]
+    Size: [70, 70]
+/rsmooze:
+  null:
+    Image: http://c.thumbs.redditmedia.com/5wA7HWAl2WD-UzA8.png
+    Offset: [0, -70]
+    Size: [70, 70]
+/rtwidurr:
+  null:
+    Image: http://f.thumbs.redditmedia.com/i-tlfxbcwqZ2pnDY.png
+    Offset: [-140, -70]
+    Size: [70, 70]
+/sbstare:
+  null:
+    CSS: {margin-top: -16px}
+    Image: http://c.thumbs.redditmedia.com/cz5tVZPB78M8qyUz.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/smooze:
+  null:
+    Image: http://c.thumbs.redditmedia.com/5wA7HWAl2WD-UzA8.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/sp:
+  null:
+    CSS: {display: none, padding-right: 100%}
+    Type: Custom
+/spoiler:
+  null:
+    CSS: {background: black!important, color: black!important}
+    Type: Custom
+  :hover:
+    CSS: {color: white!important}
+    Type: Custom
+/trixiedance:
+  null:
+    Image: http://d.thumbs.redditmedia.com/ybVSLGRBZeyJ5xO9.png
+    Offset: [0, 0]
+    Size: [70, 70]
+  :hover:
+    Image: http://f.thumbs.redditmedia.com/i-tlfxbcwqZ2pnDY.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/twidurr:
+  null:
+    Image: http://d.thumbs.redditmedia.com/ybVSLGRBZeyJ5xO9.png
+    Offset: [-140, -70]
+    Size: [70, 70]

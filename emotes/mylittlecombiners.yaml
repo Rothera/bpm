@@ -1,30 +1,51 @@
-Emotes:
-  Custom: []
-  Spritesheets:
-    http://c.thumbs.redditmedia.com/9U_7-tDvpDULG6S8.png:
-    - Name: /emptytable
-      Offset: [0, 0]
-      Size: [204, 139]
-    http://f.thumbs.redditmedia.com/5uRkE-hMPTZlXH-w.png:
-    - Name: /bmmount
-      Offset: [0, -1220]
-      Size: [301, 305]
-    - Name: /fpmount
-      Offset: [0, -1525]
-      Size: [301, 305]
-    - Name: /fpnmount
-      Offset: [0, 0]
-      Size: [301, 305]
-    - Name: /giomount
-      Offset: [0, -1830]
-      Size: [301, 305]
-    - Name: /soarinmount
-      Offset: [0, -915]
-      Size: [301, 305]
-    - Name: /stmount
-      Offset: [0, -610]
-      Size: [301, 305]
-    - Name: /whoovesmount
-      Offset: [0, -305]
-      Size: [301, 305]
-Meta: {DisplayName: r/mylittlecombiners, Name: r_mylittlecombiners}
+/bmmount:
+  null:
+    Image: http://f.thumbs.redditmedia.com/5uRkE-hMPTZlXH-w.png
+    Offset: [0, -1220]
+    Size: [301, 305]
+/emptytable:
+  null:
+    CSS: {left: 14px, margin-bottom: -999px, margin-right: -999px, max-height: 119px,
+      position: relative, top: 5px, z-index: '1'}
+    Image: http://c.thumbs.redditmedia.com/9U_7-tDvpDULG6S8.png
+    Offset: [0, 0]
+    Size: [150, 139]
+/fpmount:
+  null:
+    Image: http://f.thumbs.redditmedia.com/5uRkE-hMPTZlXH-w.png
+    Offset: [0, -1525]
+    Size: [301, 305]
+/fpnmount:
+  null:
+    Image: http://f.thumbs.redditmedia.com/5uRkE-hMPTZlXH-w.png
+    Offset: [0, 0]
+    Size: [301, 305]
+/giomount:
+  null:
+    Image: http://f.thumbs.redditmedia.com/5uRkE-hMPTZlXH-w.png
+    Offset: [0, -1830]
+    Size: [301, 305]
+/jizz:
+  null:
+    CSS: {left: -110px, margin-bottom: 0px, margin-right: 0px, position: relative,
+      top: -5px, z-index: '1'}
+    Type: Custom
+/lickiepie:
+  null:
+    CSS: {left: -220px, margin-right: -220px, position: relative, top: 127px}
+    Type: Custom
+/soarinmount:
+  null:
+    Image: http://f.thumbs.redditmedia.com/5uRkE-hMPTZlXH-w.png
+    Offset: [0, -915]
+    Size: [301, 305]
+/stmount:
+  null:
+    Image: http://f.thumbs.redditmedia.com/5uRkE-hMPTZlXH-w.png
+    Offset: [0, -610]
+    Size: [301, 305]
+/whoovesmount:
+  null:
+    Image: http://f.thumbs.redditmedia.com/5uRkE-hMPTZlXH-w.png
+    Offset: [0, -305]
+    Size: [301, 305]

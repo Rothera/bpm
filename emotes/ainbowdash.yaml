@@ -1,400 +1,655 @@
-Emotes:
-  Custom: []
-  Spritesheets:
-    http://b.thumbs.redditmedia.com/0RYrFbSuc7Cy0k51.png:
-    - Name: /wat
-      Offset: [0, 0]
-      Size: [200, 200]
-    http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png:
-    - Name: /badassdash
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /bounce
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /cooldash
-      Offset: [0, -70]
-      Size: [70, 70]
-    - Name: /coolstorybro
-      Offset: [-140, -140]
-      Size: [70, 70]
-    - Name: /dashbadass
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /dashbook
-      Offset: [-140, -140]
-      Size: [70, 70]
-    - Name: /dashhappy
-      Offset: [-70, -210]
-      Size: [70, 70]
-    - Name: /dashjoy
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /dashlovesyou
-      Offset: [-70, -210]
-      Size: [70, 70]
-    - Name: /dashmeh
-      Offset: [0, -210]
-      Size: [70, 70]
-    - Name: /dashomg
-      Offset: [-70, -140]
-      Size: [70, 70]
-    - Name: /dashponder
-      Offset: [0, -140]
-      Size: [70, 70]
-    - Name: /dashsmile
-      Offset: [-140, -70]
-      Size: [70, 70]
-    - Name: /dashsurprise
-      Offset: [-70, -210]
-      Size: [70, 70]
-    - Name: /dashthinking
-      Offset: [0, -140]
-      Size: [70, 70]
-    - Name: /dashwat
-      Offset: [-140, -210]
-      Size: [70, 70]
-    - Name: /dashwhat
-      Offset: [-140, -210]
-      Size: [70, 70]
-    - Name: /dashwut
-      Offset: [-140, -210]
-      Size: [70, 70]
-    - Name: /dealwithitdash
-      Offset: [0, -70]
-      Size: [70, 70]
-    - Name: /fillydash
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /fillyjedi
-      Offset: [-70, 0]
-      Size: [70, 70]
-    - Name: /jedifilly
-      Offset: [-70, 0]
-      Size: [70, 70]
-    - Name: /meh
-      Offset: [0, -210]
-      Size: [70, 70]
-    - Name: /naptime
-      Offset: [-140, -490]
-      Size: [70, 70]
-    - Name: /notfunny
-      Offset: [-140, -350]
-      Size: [70, 70]
-    - Name: /omgomgomg
-      Offset: [-70, -140]
-      Size: [70, 70]
-    - Name: /ovenmitt
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rd00
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rd01
-      Offset: [-70, 0]
-      Size: [70, 70]
-    - Name: /rd02
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /rd03
-      Offset: [0, -210]
-      Size: [70, 70]
-    - Name: /rd04
-      Offset: [0, -280]
-      Size: [70, 70]
-    - Name: /rd05
-      Offset: [0, -350]
-      Size: [70, 70]
-    - Name: /rd06
-      Offset: [0, -420]
-      Size: [70, 70]
-    - Name: /rd07
-      Offset: [0, -490]
-      Size: [70, 70]
-    - Name: /rd10
-      Offset: [0, -70]
-      Size: [70, 70]
-    - Name: /rd11
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /rd12
-      Offset: [-140, -70]
-      Size: [70, 70]
-    - Name: /rd13
-      Offset: [-70, -210]
-      Size: [70, 70]
-    - Name: /rd14
-      Offset: [-70, -280]
-      Size: [70, 70]
-    - Name: /rd15
-      Offset: [-70, -350]
-      Size: [70, 70]
-    - Name: /rd16
-      Offset: [-70, -420]
-      Size: [70, 70]
-    - Name: /rd17
-      Offset: [-70, -490]
-      Size: [70, 70]
-    - Name: /rd20
-      Offset: [0, -140]
-      Size: [70, 70]
-    - Name: /rd21
-      Offset: [-70, -140]
-      Size: [70, 70]
-    - Name: /rd22
-      Offset: [-140, -140]
-      Size: [70, 70]
-    - Name: /rd23
-      Offset: [-140, -210]
-      Size: [70, 70]
-    - Name: /rd24
-      Offset: [-140, -280]
-      Size: [70, 70]
-    - Name: /rd25
-      Offset: [-140, -350]
-      Size: [70, 70]
-    - Name: /rd26
-      Offset: [-140, -420]
-      Size: [70, 70]
-    - Name: /rd27
-      Offset: [-140, -490]
-      Size: [70, 70]
-    - Name: /rdangry
-      Offset: [0, -420]
-      Size: [70, 70]
-    - Name: /rdbedmane
-      Offset: [0, -280]
-      Size: [70, 70]
-    - Name: /rdchallenge
-      Offset: [0, -490]
-      Size: [70, 70]
-    - Name: /rddrool
-      Offset: [-140, -280]
-      Size: [70, 70]
-    - Name: /rdnews
-      Offset: [0, -350]
-      Size: [70, 70]
-    - Name: /rdshocked
-      Offset: [-70, -350]
-      Size: [70, 70]
-    - Name: /rdtied
-      Offset: [-70, -280]
-      Size: [70, 70]
-    - Name: /rdtoy
-      Offset: [-70, -490]
-      Size: [70, 70]
-    - Name: /rdvexed
-      Offset: [-140, -420]
-      Size: [70, 70]
-    - Name: /reading
-      Offset: [-140, -140]
-      Size: [70, 70]
-    - Name: /scootabrag
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /scootacute
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /shadowdash
-      Offset: [-70, -420]
-      Size: [70, 70]
-    - Name: /smilingdash
-      Offset: [-140, -70]
-      Size: [70, 70]
-    http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png:
-    - Name: /rbadassdash
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /rbounce
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /rcooldash
-      Offset: [0, -70]
-      Size: [70, 70]
-    - Name: /rcoolstorybro
-      Offset: [-140, -140]
-      Size: [70, 70]
-    - Name: /rdashbadass
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /rdashbook
-      Offset: [-140, -140]
-      Size: [70, 70]
-    - Name: /rdashhappy
-      Offset: [-70, -210]
-      Size: [70, 70]
-    - Name: /rdashjoy
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /rdashlovesyou
-      Offset: [-70, -210]
-      Size: [70, 70]
-    - Name: /rdashmeh
-      Offset: [0, -210]
-      Size: [70, 70]
-    - Name: /rdashomg
-      Offset: [-70, -140]
-      Size: [70, 70]
-    - Name: /rdashponder
-      Offset: [0, -140]
-      Size: [70, 70]
-    - Name: /rdashsmile
-      Offset: [-140, -70]
-      Size: [70, 70]
-    - Name: /rdashsurprise
-      Offset: [-70, -210]
-      Size: [70, 70]
-    - Name: /rdashthinking
-      Offset: [0, -140]
-      Size: [70, 70]
-    - Name: /rdashwat
-      Offset: [-140, -210]
-      Size: [70, 70]
-    - Name: /rdashwhat
-      Offset: [-140, -210]
-      Size: [70, 70]
-    - Name: /rdashwut
-      Offset: [-140, -210]
-      Size: [70, 70]
-    - Name: /rdealwithitdash
-      Offset: [0, -70]
-      Size: [70, 70]
-    - Name: /rfillydash
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /rfillyjedi
-      Offset: [-70, 0]
-      Size: [70, 70]
-    - Name: /rjedifilly
-      Offset: [-70, 0]
-      Size: [70, 70]
-    - Name: /rmeh
-      Offset: [0, -210]
-      Size: [70, 70]
-    - Name: /rnaptime
-      Offset: [-140, -490]
-      Size: [70, 70]
-    - Name: /rnotfunny
-      Offset: [-140, -350]
-      Size: [70, 70]
-    - Name: /romgomgomg
-      Offset: [-70, -140]
-      Size: [70, 70]
-    - Name: /rovenmitt
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rrd00
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rrd01
-      Offset: [-70, 0]
-      Size: [70, 70]
-    - Name: /rrd02
-      Offset: [-140, 0]
-      Size: [70, 70]
-    - Name: /rrd03
-      Offset: [0, -210]
-      Size: [70, 70]
-    - Name: /rrd04
-      Offset: [0, -280]
-      Size: [70, 70]
-    - Name: /rrd05
-      Offset: [0, -350]
-      Size: [70, 70]
-    - Name: /rrd06
-      Offset: [0, -420]
-      Size: [70, 70]
-    - Name: /rrd07
-      Offset: [0, -490]
-      Size: [70, 70]
-    - Name: /rrd10
-      Offset: [0, -70]
-      Size: [70, 70]
-    - Name: /rrd11
-      Offset: [-70, -70]
-      Size: [70, 70]
-    - Name: /rrd12
-      Offset: [-140, -70]
-      Size: [70, 70]
-    - Name: /rrd13
-      Offset: [-70, -210]
-      Size: [70, 70]
-    - Name: /rrd14
-      Offset: [-70, -280]
-      Size: [70, 70]
-    - Name: /rrd15
-      Offset: [-70, -350]
-      Size: [70, 70]
-    - Name: /rrd16
-      Offset: [-70, -420]
-      Size: [70, 70]
-    - Name: /rrd17
-      Offset: [-70, -490]
-      Size: [70, 70]
-    - Name: /rrd20
-      Offset: [0, -140]
-      Size: [70, 70]
-    - Name: /rrd21
-      Offset: [-70, -140]
-      Size: [70, 70]
-    - Name: /rrd22
-      Offset: [-140, -140]
-      Size: [70, 70]
-    - Name: /rrd23
-      Offset: [-140, -210]
-      Size: [70, 70]
-    - Name: /rrd24
-      Offset: [-140, -280]
-      Size: [70, 70]
-    - Name: /rrd25
-      Offset: [-140, -350]
-      Size: [70, 70]
-    - Name: /rrd26
-      Offset: [-140, -420]
-      Size: [70, 70]
-    - Name: /rrd27
-      Offset: [-140, -490]
-      Size: [70, 70]
-    - Name: /rrdangry
-      Offset: [0, -420]
-      Size: [70, 70]
-    - Name: /rrdbedmane
-      Offset: [0, -280]
-      Size: [70, 70]
-    - Name: /rrdchallenge
-      Offset: [0, -490]
-      Size: [70, 70]
-    - Name: /rrddrool
-      Offset: [-140, -280]
-      Size: [70, 70]
-    - Name: /rrdnews
-      Offset: [0, -350]
-      Size: [70, 70]
-    - Name: /rrdshocked
-      Offset: [-70, -350]
-      Size: [70, 70]
-    - Name: /rrdtied
-      Offset: [-70, -280]
-      Size: [70, 70]
-    - Name: /rrdtoy
-      Offset: [-70, -490]
-      Size: [70, 70]
-    - Name: /rrdvexed
-      Offset: [-140, -420]
-      Size: [70, 70]
-    - Name: /rreading
-      Offset: [-140, -140]
-      Size: [70, 70]
-    - Name: /rscootabrag
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rscootacute
-      Offset: [0, 0]
-      Size: [70, 70]
-    - Name: /rshadowdash
-      Offset: [-70, -420]
-      Size: [70, 70]
-    - Name: /rsmilingdash
-      Offset: [-140, -70]
-      Size: [70, 70]
-Meta: {DisplayName: r/ainbowdash, Name: r_ainbowdash}
+/badassdash:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, 0]
+    Size: [70, 70]
+/bounce:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/cooldash:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -70]
+    Size: [70, 70]
+/coolstorybro:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -140]
+    Size: [70, 70]
+/dashbadass:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, 0]
+    Size: [70, 70]
+/dashbook:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -140]
+    Size: [70, 70]
+/dashhappy:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -210]
+    Size: [70, 70]
+/dashjoy:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/dashlovesyou:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -210]
+    Size: [70, 70]
+/dashmeh:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -210]
+    Size: [70, 70]
+/dashomg:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -140]
+    Size: [70, 70]
+/dashponder:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -140]
+    Size: [70, 70]
+/dashsmile:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -70]
+    Size: [70, 70]
+/dashsurprise:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -210]
+    Size: [70, 70]
+/dashthinking:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -140]
+    Size: [70, 70]
+/dashwat:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -210]
+    Size: [70, 70]
+/dashwhat:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -210]
+    Size: [70, 70]
+/dashwut:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -210]
+    Size: [70, 70]
+/dealwithitdash:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -70]
+    Size: [70, 70]
+/fillydash:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/fillyjedi:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, 0]
+    Size: [70, 70]
+/jedifilly:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, 0]
+    Size: [70, 70]
+/meh:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -210]
+    Size: [70, 70]
+/naptime:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -490]
+    Size: [70, 70]
+/notfunny:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -350]
+    Size: [70, 70]
+/omgomgomg:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -140]
+    Size: [70, 70]
+/ovenmitt:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/rbadassdash:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, 0]
+    Size: [70, 70]
+/rbounce:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/rcooldash:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -70]
+    Size: [70, 70]
+/rcoolstorybro:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -140]
+    Size: [70, 70]
+/rd00:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/rd01:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, 0]
+    Size: [70, 70]
+/rd02:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, 0]
+    Size: [70, 70]
+/rd03:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -210]
+    Size: [70, 70]
+/rd04:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -280]
+    Size: [70, 70]
+/rd05:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -350]
+    Size: [70, 70]
+/rd06:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -420]
+    Size: [70, 70]
+/rd07:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -490]
+    Size: [70, 70]
+/rd10:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -70]
+    Size: [70, 70]
+/rd11:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/rd12:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -70]
+    Size: [70, 70]
+/rd13:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -210]
+    Size: [70, 70]
+/rd14:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -280]
+    Size: [70, 70]
+/rd15:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -350]
+    Size: [70, 70]
+/rd16:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -420]
+    Size: [70, 70]
+/rd17:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -490]
+    Size: [70, 70]
+/rd20:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -140]
+    Size: [70, 70]
+/rd21:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -140]
+    Size: [70, 70]
+/rd22:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -140]
+    Size: [70, 70]
+/rd23:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -210]
+    Size: [70, 70]
+/rd24:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -280]
+    Size: [70, 70]
+/rd25:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -350]
+    Size: [70, 70]
+/rd26:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -420]
+    Size: [70, 70]
+/rd27:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -490]
+    Size: [70, 70]
+/rdangry:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -420]
+    Size: [70, 70]
+/rdashbadass:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, 0]
+    Size: [70, 70]
+/rdashbook:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -140]
+    Size: [70, 70]
+/rdashhappy:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -210]
+    Size: [70, 70]
+/rdashjoy:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/rdashlovesyou:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -210]
+    Size: [70, 70]
+/rdashmeh:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -210]
+    Size: [70, 70]
+/rdashomg:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -140]
+    Size: [70, 70]
+/rdashponder:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -140]
+    Size: [70, 70]
+/rdashsmile:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -70]
+    Size: [70, 70]
+/rdashsurprise:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -210]
+    Size: [70, 70]
+/rdashthinking:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -140]
+    Size: [70, 70]
+/rdashwat:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -210]
+    Size: [70, 70]
+/rdashwhat:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -210]
+    Size: [70, 70]
+/rdashwut:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -210]
+    Size: [70, 70]
+/rdbedmane:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -280]
+    Size: [70, 70]
+/rdchallenge:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -490]
+    Size: [70, 70]
+/rddrool:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -280]
+    Size: [70, 70]
+/rdealwithitdash:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -70]
+    Size: [70, 70]
+/rdnews:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, -350]
+    Size: [70, 70]
+/rdshocked:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -350]
+    Size: [70, 70]
+/rdtied:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -280]
+    Size: [70, 70]
+/rdtoy:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -490]
+    Size: [70, 70]
+/rdvexed:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -420]
+    Size: [70, 70]
+/reading:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -140]
+    Size: [70, 70]
+/rfillydash:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/rfillyjedi:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, 0]
+    Size: [70, 70]
+/rjedifilly:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, 0]
+    Size: [70, 70]
+/rmeh:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -210]
+    Size: [70, 70]
+/rnaptime:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -490]
+    Size: [70, 70]
+/rnotfunny:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -350]
+    Size: [70, 70]
+/romgomgomg:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -140]
+    Size: [70, 70]
+/rovenmitt:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/rrd00:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/rrd01:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, 0]
+    Size: [70, 70]
+/rrd02:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, 0]
+    Size: [70, 70]
+/rrd03:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -210]
+    Size: [70, 70]
+/rrd04:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -280]
+    Size: [70, 70]
+/rrd05:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -350]
+    Size: [70, 70]
+/rrd06:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -420]
+    Size: [70, 70]
+/rrd07:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -490]
+    Size: [70, 70]
+/rrd10:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -70]
+    Size: [70, 70]
+/rrd11:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -70]
+    Size: [70, 70]
+/rrd12:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -70]
+    Size: [70, 70]
+/rrd13:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -210]
+    Size: [70, 70]
+/rrd14:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -280]
+    Size: [70, 70]
+/rrd15:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -350]
+    Size: [70, 70]
+/rrd16:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -420]
+    Size: [70, 70]
+/rrd17:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -490]
+    Size: [70, 70]
+/rrd20:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -140]
+    Size: [70, 70]
+/rrd21:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -140]
+    Size: [70, 70]
+/rrd22:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -140]
+    Size: [70, 70]
+/rrd23:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -210]
+    Size: [70, 70]
+/rrd24:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -280]
+    Size: [70, 70]
+/rrd25:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -350]
+    Size: [70, 70]
+/rrd26:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -420]
+    Size: [70, 70]
+/rrd27:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -490]
+    Size: [70, 70]
+/rrdangry:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -420]
+    Size: [70, 70]
+/rrdbedmane:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -280]
+    Size: [70, 70]
+/rrdchallenge:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -490]
+    Size: [70, 70]
+/rrddrool:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -280]
+    Size: [70, 70]
+/rrdnews:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, -350]
+    Size: [70, 70]
+/rrdshocked:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -350]
+    Size: [70, 70]
+/rrdtied:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -280]
+    Size: [70, 70]
+/rrdtoy:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -490]
+    Size: [70, 70]
+/rrdvexed:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -420]
+    Size: [70, 70]
+/rreading:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -140]
+    Size: [70, 70]
+/rscootabrag:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/rscootacute:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/rshadowdash:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-70, -420]
+    Size: [70, 70]
+/rsmilingdash:
+  null:
+    Image: http://f.thumbs.redditmedia.com/0iRc4o8962BzxOKq.png
+    Offset: [-140, -70]
+    Size: [70, 70]
+/scootabrag:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/scootacute:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [0, 0]
+    Size: [70, 70]
+/shadowdash:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-70, -420]
+    Size: [70, 70]
+/smilingdash:
+  null:
+    Image: http://d.thumbs.redditmedia.com/4NXICV9zgb6xQX1E.png
+    Offset: [-140, -70]
+    Size: [70, 70]
+/wat:
+  null:
+    Image: http://b.thumbs.redditmedia.com/0RYrFbSuc7Cy0k51.png
+    Offset: [0, 0]
+    Size: [200, 200]

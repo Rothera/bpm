@@ -1,21 +1,24 @@
-Emotes:
-  Custom:
-  - CSS: {display: inline-block, padding-right: 100%}
-    Name: /sp
-  Spritesheets:
-    http://a.thumbs.redditmedia.com/xqcT95cAGpl1Xmdf.png:
-    - Name: /sandwich
-      Offset: [0, 0]
-      Size: [258, 212]
-    - Name: /spaceclop
-      Offset: [0, 0]
-      Size: [258, 212]
-    http://d.thumbs.redditmedia.com/YKSDpjdgMQmII9YE.png:
-    - Name: /angel
-      Offset: [-140, -560]
-      Size: [70, 70]
-    http://e.thumbs.redditmedia.com/XqDfRoy7kKraBSCL.png:
-    - Name: /swh7s
-      Offset: [0, 0]
-      Size: [300, 263]
-Meta: {DisplayName: r/spaceclop, Name: r_spaceclop}
+/angel:
+  null:
+    Image: http://d.thumbs.redditmedia.com/YKSDpjdgMQmII9YE.png
+    Offset: [-140, -560]
+    Size: [70, 70]
+/sandwich:
+  null:
+    Image: http://a.thumbs.redditmedia.com/xqcT95cAGpl1Xmdf.png
+    Offset: [0, 0]
+    Size: [258, 212]
+/sp:
+  null:
+    CSS: {display: inline-block, padding-right: 100%}
+    Type: Custom
+/spaceclop:
+  null:
+    Image: http://a.thumbs.redditmedia.com/xqcT95cAGpl1Xmdf.png
+    Offset: [0, 0]
+    Size: [258, 212]
+/swh7s:
+  null:
+    Image: http://e.thumbs.redditmedia.com/XqDfRoy7kKraBSCL.png
+    Offset: [0, 0]
+    Size: [300, 263]
