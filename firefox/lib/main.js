@@ -70,7 +70,7 @@ if(!storage.prefs) {
     }
 }
 
-var pref_manager = bpm_backendsupport.manage_prefs(sr_data.sr_data, {
+var pref_manager = bpm_backendsupport.manage_prefs(sr_data.sr_name2id, {
     read_value: function(key) { return storage[key]; },
     write_value: function(key, data) { storage[key] = data; },
     read_json: function(key) { return storage[key]; },

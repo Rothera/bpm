@@ -14,7 +14,7 @@ var bpm_backendsupport = {
     default_prefs: {
         "enableNSFW": false,
         "enableExtraCSS": true,
-        "enabledSubreddits": {}, // subreddit name -> boolean enabled
+        "enabledSubreddits2": {}, // subreddit name -> 0/1 enabled
         "showUnknownEmotes": true,
         "searchLimit": 200,
         "searchBoxInfo": [600, 25, 600, 450],
@@ -30,19 +30,33 @@ var bpm_backendsupport = {
         "customCSSSubreddits": {} // subreddit name -> timestamp
         },
 
-    setup_prefs: function(prefs, sr_data) {
+    setup_prefs: function(prefs, sr_name2id) {
         for(var key in this.default_prefs) {
             if(prefs[key] === undefined) {
                 prefs[key] = this.default_prefs[key];
             }
         }
 
-        for(var sr in sr_data) {
-            if(prefs.enabledSubreddits[sr] === undefined) {
-                prefs.enabledSubreddits[sr] = true;
+        for(var sr in sr_name2id) {
+            if(prefs.enabledSubreddits2[sr] === undefined) {
+                prefs.enabledSubreddits2[sr] = true;
             }
         }
         // TODO: Remove subreddits from prefs that are no longer in the addon.
+
+        // Migration from previous schema
+        if(prefs.enabledSubreddits !== undefined) {
+            for(var old_sr in prefs.enabledSubreddits) {
+              // r_mlp -> r/mlp
+              if(old_sr === "bpmextras") {
+                  continue;
+              }
+              var new_sr = old_sr.replace("_", "/");
+              var value = Number(prefs.enabledSubreddits[old_sr])
+              prefs.enabledSubreddits2[new_sr] = value;
+            }
+            delete prefs.enabledSubreddits;
+        }
     },
 
     sanitize: function(s) {
@@ -111,7 +125,7 @@ var bpm_backendsupport = {
         return common.length;
     },
 
-    manage_prefs: function(sr_data, hooks) {
+    manage_prefs: function(sr_name2id, hooks) {
         var prefs = hooks.read_json("prefs");
 
         var manager = {
@@ -149,7 +163,7 @@ var bpm_backendsupport = {
             }
         };
 
-        this.setup_prefs(prefs, sr_data);
+        this.setup_prefs(prefs, sr_name2id);
         manager._sync();
         manager.cm = new css_manager(manager);
         manager.cm.after_pref_write();

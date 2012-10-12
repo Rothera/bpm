@@ -372,8 +372,8 @@ var bpm_browser = {
     //    function _send_message(method, data)
     //    function link_css(filename)
     // Assumed globals:
-    //    var sr_id_map
-    //    var sr_data
+    //    var sr_id2name
+    //    var sr_name2id
     //    var emote_map
 };
 
@@ -555,7 +555,7 @@ case "userscript":
             }
 
             this.prefs = JSON.parse(tmp);
-            bpm_backendsupport.setup_prefs(this.prefs, sr_data);
+            bpm_backendsupport.setup_prefs(this.prefs, sr_name2id);
             this._sync_prefs();
 
             bpm_prefs.got_prefs(this.prefs);
@@ -640,14 +640,14 @@ var bpm_prefs = {
 
     _make_sr_array: function() {
         this.sr_array = [];
-        for(var id in sr_id_map) {
-            this.sr_array[id] = this.prefs.enabledSubreddits[sr_id_map[id]];
+        for(var id in sr_id2name) {
+            this.sr_array[id] = this.prefs.enabledSubreddits2[sr_id2name[id]];
         }
         if(this.sr_array.indexOf(undefined) > -1) {
-            // Holes in the array mean holes in sr_id_map, which can't possibly
+            // Holes in the array mean holes in sr_id2name, which can't possibly
             // happen. If it does, though, any associated emotes will be hidden.
             //
-            // Also bad would be items in prefs not in sr_id_map, but that's
+            // Also bad would be items in prefs not in sr_id2name, but that's
             // more or less impossible to handle.
             bpm_log("BPM: ERROR: sr_array has holes; installation or prefs are broken!");
         }
@@ -718,7 +718,7 @@ var bpm_converter = {
                     var source_id = emote_info[1];
                     sr_enabled = prefs.sr_array[source_id];
                     emote_size = emote_info[2];
-                    emote_sourcename = sr_data[sr_id_map[source_id]][0];
+                    emote_sourcename = sr_id2name[source_id];
                     // Strip off leading "/".
                     class_name = "bpmote-" + bpm_utils.sanitize(emote_name.slice(1));
                 } else if(prefs.custom_emotes[emote_name]) {
@@ -1236,11 +1236,8 @@ var bpm_search = {
                 }
             }
 
-            // emote_map[emote][1] == subreddit id
-            // sr_id_map[id] == internal sr name
-            // sr_data[name][1] == "human readable name"
             // Generally this name is already lowercase, though not for bpmextras
-            var source_sr_name = sr_data[sr_id_map[emote_map[emote][1]]][0].toLowerCase();
+            var source_sr_name = sr_id2name[emote_map[emote][1]].toLowerCase();
 
             // Match if ANY subreddit terms match
             if(sr_terms.length) {
@@ -1293,7 +1290,7 @@ var bpm_search = {
 
             // Strip off leading "/".
             var class_name = "bpmote-" + bpm_utils.sanitize(emote_name.slice(1));
-            var source_name = sr_data[sr_id_map[source_id]][0];
+            var source_name = sr_id2name[source_id];
 
             // Use <span> so there's no chance of emote parse code finding
             // this.
@@ -1522,7 +1519,7 @@ var bpm_global = {
                         var source_id = emote_info[1];
                         sr_enabled = prefs.sr_array[source_id];
                         emote_size = emote_info[2];
-                        emote_sourcename = sr_data[sr_id_map[source_id]][0];
+                        emote_sourcename = sr_id2name[source_id];
                         // Strip off leading "/".
                         class_name = "bpmote-" + bpm_utils.sanitize(emote_name.slice(1));
                     } else if(prefs.custom_emotes[emote_name]) {

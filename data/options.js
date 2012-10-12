@@ -244,14 +244,14 @@ var bpm_prefs = {
 
     _make_sr_array: function() {
         this.sr_array = [];
-        for(var id in sr_id_map) {
-            this.sr_array[id] = this.prefs.enabledSubreddits[sr_id_map[id]];
+        for(var id in sr_id2name) {
+            this.sr_array[id] = this.prefs.enabledSubreddits2[sr_id2name[id]];
         }
         if(this.sr_array.indexOf(undefined) > -1) {
-            // Holes in the array mean holes in sr_id_map, which can't possibly
+            // Holes in the array mean holes in sr_id2name, which can't possibly
             // happen. If it does, though, any associated emotes will be hidden.
             //
-            // Also bad would be items in prefs not in sr_id_map, but that's
+            // Also bad would be items in prefs not in sr_id2name, but that's
             // more or less impossible to handle.
             bpm_log("BPM: ERROR: sr_array has holes; installation or prefs are broken!");
         }
@@ -316,20 +316,18 @@ function manage_enabled_subreddits(prefs) {
 
     var checkboxes = [];
     // Generate a page from the builtin list of subreddits
-    for(var subreddit in sr_data) {
-        var full_name = sr_data[subreddit][0];
-
-        var label = $("<label><input type='checkbox'> " + full_name + "</label>");
+    for(var subreddit in sr_name2id) {
+        var label = $("<label><input type='checkbox'> " + subreddit + "</label>");
         var input = label.find("input");
         list_div.append(label);
-        input.attr("checked", prefs.enabledSubreddits[subreddit]);
+        input.attr("checked", Boolean(prefs.enabledSubreddits2[subreddit]));
         checkboxes.push(input[0]);
 
         // Closure
         var callback = (function(subreddit) {
             return function(event) {
-                prefs.enabledSubreddits[subreddit] = this.checked;
-                bpm_prefs.sync_key("enabledSubreddits");
+                prefs.enabledSubreddits2[subreddit] = Number(this.checked);
+                bpm_prefs.sync_key("enabledSubreddits2");
             };
         })(subreddit);
 
@@ -341,11 +339,11 @@ function manage_enabled_subreddits(prefs) {
             checkboxes[i].checked = value;
         }
 
-        for(var subreddit in sr_data) {
-            prefs.enabledSubreddits[subreddit] = value;
+        for(var subreddit in sr_name2id) {
+            prefs.enabledSubreddits2[subreddit] = value;
         }
 
-        bpm_prefs.sync_key("enabledSubreddits");
+        bpm_prefs.sync_key("enabledSubreddits2");
     }
 
     $("#enable-all-subreddits").click(function(event) {
