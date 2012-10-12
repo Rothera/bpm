@@ -1,0 +1,116 @@
+RootTags:
+- +canon
+- +oc
+- +nonpony
+- +pinkiepipes
+- +oldgen
+- +formatting
+# Special tags
+- +broken
+- +remove
+# Not really- just temporary until we locate base emotes
+- +v
+
+ExclusiveTags:
+  +remove: []
+  +v: [+drop]
+
+TagImplications:
+  # Special tags
+  +broken: [+remove]
+  +formatting: [+hidden]
+  +v: [+hidden]
+
+  # Mane 6
+  +aj: [+canon, +mane, +pony]
+  +fs: [+canon, +mane, +pony]
+  +pp: [+canon, +mane, +pony]
+  +rarity: [+canon, +mane, +pony]
+  +rd: [+canon, +mane, +pony]
+  +ts: [+canon, +mane, +pony]
+
+  # CMC
+  +applebloom: [+canon, +cmc, +major, +pony]
+  +scootaloo: [+canon, +cmc, +major, +pony]
+  +sweetiebelle: [+canon, +cmc, +major, +pony]
+
+  # Significant canon characters
+  +berrypunch: [+canon, +major, +pony]
+  +bigmac: [+canon, +major, +pony]
+  +bonbon: [+canon, +major, +pony]
+  +cadance: [+canon, +major, +pony]
+  +carrottop: [+canon, +major, +pony]
+  +celestia: [+canon, +major, +pony]
+  +cheerilee: [+canon, +major, +pony]
+  +chrysalis: [+canon, +major, +pony]
+  +colgate: [+canon, +major, +pony]
+  +derpy: [+canon, +major, +pony]
+  +grannysmith: [+canon, +major, +pony]
+  +luna: [+canon, +major, +pony]
+  +lyra: [+canon, +major, +pony]
+  +octavia: [+canon, +major, +pony]
+  +roseluck: [+canon, +major, +pony]
+  +shiningarmor: [+canon, +major, +pony]
+  +spitfire: [+canon, +major, +pony]
+  +trixie: [+canon, +major, +pony]
+  +vinylscratch: [+canon, +major, +pony]
+  +zecora: [+canon, +major, +pony]
+
+  # Lesser canon characters
+  +braeburn: [+canon, +minor, +pony]
+  +caketwins: [+canon, +minor, +pony]
+  +daisy: [+canon, +minor, +pony]
+  +diamondtiara: [+canon, +minor, +pony]
+  +dinky: [+canon, +minor, +pony]
+  +fancypants: [+canon, +minor, +pony]
+  +fleurdelis: [+canon, +minor, +pony]
+  +flimandflam: [+canon, +minor, +pony]
+  +flitter: [+canon, +minor, +pony]
+  +hoitytoity: [+canon, +minor, +pony]
+  +lily: [+canon, +minor, +pony]
+  +maredowell: [+canon, +minor, +pony]
+  +mayor: [+canon, +minor, +pony]
+  +nightmaremoon: [+canon, +minor, +pony]
+  +otherpony: [+canon, +minor, +pony]
+  +photofinish: [+canon, +minor, +pony]
+  +pip: [+canon, +minor, +pony]
+  +silverspoon: [+canon, +minor, +pony]
+  +snipsandsnails: [+canon, +minor, +pony]
+  +soarin: [+canon, +minor, +pony]
+  +twist: [+canon, +minor, +pony]
+
+  # Non-pony canon characters
+  +discord: [+canon, +major]
+  +spike: [+canon, +major]
+  +angel: [+canon, +minor]
+  +cockatrice: [+canon, +minor]
+  +crankydoodle: [+canon, +minor]
+  +gilda: [+canon, +minor]
+  +gummy: [+canon, +minor]
+  +ironwill: [+canon, +minor]
+  +opalescence: [+canon, +minor]
+  +owlowiscious: [+canon, +minor]
+  +stevenmagnet: [+canon, +minor]
+  +tank: [+canon, +minor]
+  +misc: [+canon]
+
+  # OC's
+  +apathia: [+oc, +ocpony]
+  +daylightdarkle: [+oc, +ocpony]
+  +discentia: [+oc, +ocpony]
+  +doctorwhooves: [+canon, +doctorwho, +minor, +pony]
+  +futashy: [+fs, +oc, +ocpony]
+  +jappleack: [+aj, +oc, +ocpony]
+  +karma: [+oc, +ocpony]
+  +surprise: [+oc, +ocpony]
+
+  # Nonpony
+  +damon: [+nonpony]
+  +spiderman: [+nonpony]
+  +squidward: [+nonpony]
+
+  # Misc implications
+  +nsfw: [+q]
+  +ocpony: [+oc]
+  +smooze: [+oldgen]
+  +foodmane: [+mashup]
