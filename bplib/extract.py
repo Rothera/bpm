@@ -76,7 +76,7 @@ _selector_regexp = re.compile(r"""
     a(?P<pc1>:[\w\-()]+)?
     \[href[|^]?=(?P<quote>["'])(?P<name>\/[\w:!#\/]+)(?P=quote)\] # Match quotes
     (?P<pc2>:[\w:\-()]+)?\s* # Accept : to get basically any non-space thing
-    (?P<sel>[\w\s:\-()]*)
+    (?P<sel>[\w\s:\-()]*)$
     """, re.VERBOSE)
 
 def _parse_emote_selector(selector):
