@@ -11,12 +11,21 @@
 }
 
 .usertext-body td{
-font-size:10px;
+    font-size:10px;
+    background-color:white;
 }
 
 .pagename a:after {
     content: ": C2H5OH is magic";
     }
+
+.side,.titlebox form.flairtoggle,.titlebox form.toggle, .leavemoderator {
+    background-color:transparent;
+}
+
+.sidecontentbox .content{
+    background-color:white 
+}
 
 /* FOOTER */
 .footer-parent {
@@ -34,7 +43,7 @@ font-size:10px;
 
 /* BACKGROUND */
 body {
-    background: url(%%bg%%) top right fixed no-repeat;
+    background: url(%%bg-nuts%%) top right fixed no-repeat;
 }
 
 /*Self-Post Image, No Image, Spoiler Image*/

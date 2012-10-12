@@ -156,7 +156,7 @@ display: none !important;
 
 /* Sidebar Filly */
 
-.side a[href="http://www.reddit.com/r/FlutterLounge/new/"]{
+.side a[href="http://fav.me/d5fl28t"]{
    display: block;
    height: 120px;
    width: 120px;
@@ -165,4 +165,14 @@ display: none !important;
    top: 260px;
    right: -20px;
    z-index: 999;
+}
+
+/* Get rid of RES tags and vote weight on the modbox */
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink {
+    display: none !important
+}
+
+hr {
+    border-bottom: 1px solid #747474;
+    border-top: none
 }

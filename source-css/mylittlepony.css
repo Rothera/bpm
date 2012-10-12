@@ -1060,6 +1060,7 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 }
 
 /*New post spam filtered warning*/
+/*
 #title-field.roundfield:before
 {
  content:"NOTE: Check the new queue after posting. If your post doesn't show up, you were spam filtered by mistake! Message the moderators with a link to the submission.";
@@ -1072,6 +1073,22 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
  display:block;
  margin-bottom: 10px;
 }
+*/
+
+/* STOP SUBMITTING BORDERLANDS */
+#title-field.roundfield:before
+{
+ content:"PLEASE DO NOT SUBMIT THE BORDERLANDS MLP REFERENCE. IT HAS ALREADY BEEN SUBMITTED.";
+ font-size:0.86em;
+ padding:5px;
+ border:1px solid #5f99cf;
+ background-color:#EFF7FF;
+ color:black;
+ font-weight: bold;
+ display:block;
+ margin-bottom: 10px;
+}
+
 
 /*NSFW.MOV*/
 /*
@@ -1592,10 +1609,10 @@ a.author[href$="/3holes2tits1fork"]:after {
 .titlebox .usertext-body .md ol li + li {
     display:inline-block;
     float:right;
-    background:url(%%ScootaHat%%);
-    width:61px;
+    background:url(%%pinkiehat3%%);
+    width:67px;
     height:61px;
-    margin-top:-37px;
+    margin-top:-36px;
     margin-left:-8px;
     margin-bottom:-14px;
     margin-right:-40px;
@@ -2449,8 +2466,8 @@ a.thumbnail.self
 .flairselector .linkflairlabel {display:inline;}
 /*End spoilers in the title flair*/
 
-/*Pinkie Pie NPT Warnings*/
-/*
+/*Pinkie Pie NPT Warnings*//*DO _NOT_ PUT ANY COMMENTS IN-BETWEEN THE NPTWARNING TAGS! Do not remove the tags either, they are used by modtool and the bot! The tags must be on their own line!*/
+/*{NPTWARNING}*/
 .formtabs-content .infobar
 {
  margin-left:50px;
@@ -2477,7 +2494,8 @@ a.thumbnail.self
 .formtabs-content .infobar#text-desc:before
 {
  background:url(%%pinkiemessage%%) no-repeat;
-}*/
+}
+/*{/NPTWARNING}*/
 
 /*Thumbnail Disabler*/
 .flairselector .linkflair-disable-thumb .linkflairlabel:before {content:"Disable Thumbnail";}
