@@ -11,10 +11,8 @@
   <script>
     var tags = {{tags|safe}};
     var emotes = [
-    {%- for (name_pair, emote) in g.sorted(file.emotes.items()) -%}
-      {%- if not name_pair[1] -%}
-      {{g.repr(name_pair[0])|safe}},
-      {%- endif -%}
+    {%- for (name, emote) in g.sorted(file.emotes.items()) -%}
+      {{g.repr(name)|safe}},
     {%- endfor %}
       undefined
     ];
@@ -44,19 +42,16 @@
         {% for (szinfo, emotes) in g.sorted(file.se.items(), reverse=True) -%}
           <!-- {{szinfo}} -->
           {%- for emote in emotes -%}
-            {# Ignore :hover's and such -#}
-            {% if not emote.name_pair[1] %}
         <div class="row emote">
-          <span class="image {{emote.selector()[1:]}}"></span>
+          <span class="image {{emote.base_variant().selector()[1:]}}"></span>
           <div class="emote-list-container">
-            <code class="name">{{emote.name_pair[0]}}</code>
-            {% for tag in tags.get(emote.name_pair[0], []) -%}
+            <code class="name">{{emote.name}}</code>
+            {% for tag in g.sorted(emote.tags) -%}
             <span class="listed-emote {{"v" if tag == "+v" else ""}}">{{tag}} <a href="#" class="x" tagindex="0">x</a></span>
             {% endfor -%}
             <input class="emote-list-input" tabindex="1">
           </div>
         </div>
-            {% endif %}
           {%- endfor %}
         {% endfor -%}
 

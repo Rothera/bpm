@@ -70,7 +70,7 @@ def extract_partial_emotes(css_rules):
             name, suffix = pair
 
             # Copy CSS so it's not read-only
-            yield bplib.objects.PartialEmote(name, suffix, rule.properties.copy())
+            yield bplib.objects.EmoteCSSBlock(name, suffix, rule.properties.copy())
 
 _selector_regexp = re.compile(r"""
     a(?P<pc1>:[\w\-()]+)?
@@ -114,7 +114,7 @@ def combine_partial_emotes(partial_emotes):
     for partial in partial_emotes:
         if partial.name not in emotes:
             # Newly seen emote
-            emotes[partial.name] = {partial.suffix: partial}
+            emotes[partial.name] = bplib.objects.Emote(partial.name, {partial.suffix: partial}, {})
         elif partial.suffix not in emotes[partial.name]:
             # New suffix for an existing emote
             emotes[partial.name][partial.suffix] = partial
@@ -135,11 +135,11 @@ def check_variants(emotes):
     # emote but this could be dangerous. Consider deleting properties on a
     # variant that are inherited (and being overridden back to default) from
     # another variant.
-    for (name, variants) in list(emotes.items()):
+    for (name, emote) in list(emotes.items()):
         try:
-            (base_suffix, base) = bplib.objects.base_emote(name, variants)
+            base = emote.base_variant()
         except ValueError as e:
-            print("ERROR: Cannot locate base emote for %r. (Variants: %r)" % (name, list(variants.keys())))
+            print("ERROR: Cannot locate base emote for %r. (Variants: %r)" % (name, list(emote.variants.keys())))
             del emotes[name]
             continue
 
@@ -147,17 +147,17 @@ def classify_emotes(emotes):
     # Sorts emotes based on whether or not they are "normal" emotes belonging to
     # a spritesheet, or "custom" ones possessing only arbitrary CSS.
 
-    for (name, variants) in emotes.items():
-        for (suffix, raw) in variants.items():
+    for (name, emote) in emotes.items():
+        for (suffix, variant) in emote.variants.items():
             # Required properties (background-position is semi-required)
-            if all(k in raw.css for k in ("background-image", "width", "height")):
+            if all(k in variant.css for k in ("background-image", "width", "height")):
                 # Probably an emote. We could check for expected values of display/
                 # clear/float, but they're broken in a lot of places, and not worth
                 # the resulting warning spam.
-                variants[suffix] = _convert_emote(name, suffix, raw)
+                emote[suffix] = _convert_emote(name, suffix, variant)
             else:
                 # Replace one class with another, essentially
-                variants[suffix] = bplib.objects.CustomEmote(name, suffix, raw.css)
+                emote[suffix] = bplib.objects.CustomEmote(name, suffix, variant.css)
 
 def _convert_emote(name, suffix, raw_emote):
     css = raw_emote.css.copy()

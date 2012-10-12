@@ -24,8 +24,69 @@ from flask import request
 import yaml
 
 import bplib
-import bplib.file
+import bplib.objects
 import bpgen
+
+files = {}      # subreddit -> Subreddit
+all_tags = []   # sorted set
+css_cache = {}  # subreddit -> str
+
+def filter_file(file):
+    file.se = {}
+    for (name, emote) in file.emotes.items():
+        # Simple hack to essentially just remove +drop emotes, since all of
+        # r/mlp's are
+        if subreddit != "mylittlepony" and name in files["mylittlepony"].emotes:
+            continue
+
+        if hasattr(emote, "image_url"):
+            info = (emote.image_url, emote.offset[1], emote.offset[0], emote.size[0], emote.size[1])
+        else:
+            info = (-1, -1, -1, -1)
+        file.se.setdefault(info, []).append(emote)
+    if subreddit != "mylittlepony":
+        for name in files["mylittlepony"].emotes:
+            if name in file.emotes:
+                del file.emotes[name]
+    return file
+
+def make_tag_list():
+    global all_tags
+    tmp = set()
+    for (subreddit, file) in files.items():
+        for (name, emote) in file.emotes.items():
+            tmp |= emote.tags
+    all_tags = sorted(tmp)
+
+print("Loading emotes...")
+config = bplib.load_yaml_file(open("data/rules.yaml"))
+files = {}
+loader = bplib.objects.SubredditLoader()
+files["mylittlepony"] = loader.load_subreddit("mylittlepony")
+for subreddit in config["Subreddits"]:
+    if subreddit == "mylittlepony":
+        continue
+    file = loader.load_subreddit(subreddit)
+    if file is None:
+        continue
+    filter_file(file)
+    files[subreddit] = file
+make_tag_list()
+print("Done.")
+
+def sync_tags(subreddit):
+    assert subreddit in files
+    path = "tags/%s.yaml" % (subreddit)
+    file = open(path, "w")
+    yaml.dump(files[subreddit].dump_tags(), file)
+
+def get_css(subreddit):
+    if subreddit not in css_cache:
+        css_rules = bpgen.build_css(files[subreddit].emotes)
+        stream = StringIO.StringIO()
+        bpgen.dump_css(stream, css_rules)
+        css_cache[subreddit] = stream.getvalue()
+    return css_cache[subreddit]
 
 app = flask.Flask(__name__, static_folder="tagapp-static", static_url_path="/static")
 
@@ -44,81 +105,9 @@ def requires_auth(f):
         return f(*args, **kwargs)
     return decorated
 
-files = {}      # subreddit -> EmoteFile
-css_cache = {}  # subreddit -> str
-tags = {}       # subreddit -> {emote: [tags...]}
-all_tags = []   # sorted set
-
-def sync_tags(subreddit):
-    assert subreddit in tags
-    data = tags[subreddit]
-    subreddit = subreddit.translate(None, "./\\") # Paranoia
-    path = "tags/%s.yaml" % (subreddit)
-    if data:
-        file = open(path, "w")
-        yaml.dump(tags[subreddit], file)
-    else:
-        try:
-            # My god... this comes from the site...
-            os.remove(path)
-        except OSError:
-            pass
-
-def make_tag_list():
-    global all_tags
-    tmp = set()
-    for (sr, es) in tags.items():
-        for (e, t) in es.items():
-            tmp |= set(t)
-    all_tags = sorted(tmp)
-
-def get_css(sr):
-    if sr not in css_cache:
-        css_rules = bpgen.build_css(files[sr].emotes)
-        stream = StringIO.StringIO()
-        bpgen.dump_css(stream, css_rules)
-        css_cache[sr] = stream.getvalue()
-    return css_cache[sr]
-
-def load_file(sr):
-    data = bplib.load_yaml_file(open("emotes/%s.yaml" % (sr)))
-    file = bplib.file.EmoteFile.load(data)
-    file.se = {}
-    for (n, e) in file.emotes.items():
-        if sr != "mylittlepony" and n in files["mylittlepony"].emotes:
-            continue
-
-        if hasattr(e, "image_url"):
-            sz = (e.image_url, e.offset[1], e.offset[0], e.size[0], e.size[1])
-        else:
-            sz = (-1, -1, -1, -1)
-        file.se.setdefault(sz, []).append(e)
-    if sr != "mylittlepony":
-        for k in files["mylittlepony"].emotes:
-            if k in file.emotes:
-                del file.emotes[k]
-    files[sr] = file
-    try:
-        tags[sr] = bplib.load_yaml_file(open("tags/%s.yaml" % (sr)))
-    except IOError:
-        tags[sr] = {}
-
-print("Loading emotes...")
-
-subreddits = [os.path.splitext(f)[0] for f in os.listdir("emotes")]
-subreddits.remove("mylittlepony")
-subreddits.insert(0, "mylittlepony")
-
-for sr in subreddits:
-    load_file(sr)
-make_tag_list()
-
-subreddits.sort()
-print("Done.")
-
 @app.route("/")
 def index():
-    return flask.render_template("index.html", subreddits=subreddits, all_tags=all_tags)
+    return flask.render_template("index.html", subreddits=files.keys(), all_tags=all_tags)
 
 @app.route("/r/<subreddit>/tag")
 def tag(subreddit):
@@ -126,22 +115,18 @@ def tag(subreddit):
     # Used in template
     flask.g.sorted = sorted
     flask.g.repr = repr
-    return flask.render_template("tag.html", subreddit=subreddit, file=files[subreddit], tags=tags.get(subreddit, {}))
+    tags = {name: emote.tags for (name, emote) in files[subreddit].emotes.items()}
+    return flask.render_template("tag.html", subreddit=subreddit, file=files[subreddit], tags=tags)
 
 @app.route("/r/<subreddit>/write", methods=["POST"])
 def write(subreddit):
     subreddit = str(subreddit)
     data = json.loads(request.form["tags"])
-    target = tags.setdefault(subreddit, {})
-    for (k, t) in data.items():
-        assert isinstance(k, unicode)
-        assert isinstance(t, list) and all([isinstance(r, unicode) for r in t])
-        k = str(k)
-        t = map(str, t)
-        if t:
-            target[k] = sorted(t)
-        elif k in target:
-            del target[k]
+    file = files[subreddit]
+    for (name, tags) in data.items():
+        assert isinstance(name, unicode)
+        assert isinstance(tags, list) and all([isinstance(r, unicode) for r in tags])
+        file.emotes[str(name)].tags = set(map(str, tags))
     sync_tags(subreddit)
     make_tag_list()
     return flask.redirect(flask.url_for("index"))
@@ -155,13 +140,14 @@ def css(subreddit):
 def taginfo(tag):
     tag = str(tag)
     data = {}
-    for (sr, emotes) in tags.items():
-        data[sr] = []
-        for (name, t) in emotes.items():
-            if tag in t:
-                data[sr].append((files[sr].emotes[(name, None)], tags[sr][name]))
-        if not data[sr]:
-            del data[sr]
+    for (subreddit, file) in files.items():
+        data[subreddit] = []
+        for (name, emote) in file.emotes.items():
+            if tag in emote.tags:
+                data[subreddit].append(emote)
+        if not data[subreddit]:
+            del data[subreddit]
+    flask.g.sorted = sorted
     return flask.render_template("taginfo.html", tag=tag, data=data)
 
 @app.route("/tag/<tag>/rename", methods=["POST"])
@@ -169,16 +155,17 @@ def taginfo(tag):
 def rename_tag(tag):
     tag = str(tag)
     to = str(request.form["to"])
-    for (sr, emotes) in tags.items():
+    if not to.startswith("+"):
+        to = "+" + to
+    for (subreddit, file) in files.items():
         dirty = False
-        for (name, t) in emotes.items():
-            if tag in t:
-                t.remove(tag)
-                if to not in t:
-                    t.append(to)
+        for (name, emote) in file.emotes.items():
+            if tag in emote.tags:
+                emote.tags.remove(tag)
+                emote.tags.add(to)
                 dirty = True
         if dirty:
-            sync_tags(sr)
+            sync_tags(subreddit)
     all_tags.remove(tag)
     if to not in all_tags:
         all_tags.append(to)
@@ -189,14 +176,16 @@ def rename_tag(tag):
 @requires_auth
 def delete_tag(tag):
     tag = str(tag)
-    for (sr, emotes) in tags.items():
+    if not tag.startswith("+"):
+        tag = "+" + tag
+    for (subreddit, file) in files.items():
         dirty = False
-        for (name, t) in emotes.items():
-            if tag in t:
-                t.remove(tag)
+        for (name, emote) in file.emotes.items():
+            if tag in emote.tags:
+                emote.tags.remove(tag)
                 dirty = True
         if dirty:
-            sync_tags(sr)
+            sync_tags(subreddit)
     all_tags.remove(tag)
     return flask.redirect(flask.url_for("index"))
 

@@ -10,75 +10,100 @@
 ##
 ################################################################################
 
-__all__ = ["base_emote_suffix", "EmoteFile", "PartialEmote", "CustomEmote", "NormalEmote"]
+__all__ = [
+    "SubredditLoader", "Subreddit",
+    "Emote", "EmoteCSSBlock", "CustomEmote", "NormalEmote"
+    ]
 
 import bplib
 
-def base_emote(name, variants):
-    if None in variants:
-        return (None, variants[None])
-    elif len(variants) == 1:
-        key = next(iter(variants.keys()))
-        # Should probably suffice
-        if key not in (":after", ":before"):
-            print("WARNING: Unknown primary base suffix %r" % (key))
-        return (key, variants[key])
-    raise ValueError("Cannot locate base emote for %r" % (name))
+class SubredditLoader:
+    def __init__(self):
+        self.file_id = 0
 
-class EmoteFile:
-    def __init__(self, name, emotes):
+    def load_subreddit(self, subreddit):
+        emotes_filename = "emotes/" + subreddit + ".yaml"
+        tag_filename = "tags/" + subreddit + ".yaml"
+        try:
+            emote_data = bplib.load_yaml_file(open(emotes_filename))
+        except IOError:
+            return None # Subreddit just doesn't exist
+        try:
+            tag_data = bplib.load_yaml_file(open(tag_filename))
+        except IOError:
+            tag_data = {}
+        return self.load_from_data("r/" + subreddit, emote_data, tag_data)
+
+    def load_from_data(self, name, emote_data, tag_data):
+        sr = Subreddit.load_from_data(name, emote_data, tag_data)
+        sr.file_id = self.file_id
+        self.file_id += 1
+        return sr
+
+class Subreddit:
+    def __init__(self, name, emotes, tag_data):
         self.name = name
         self.emotes = emotes
+        self.tag_data = tag_data
 
     @classmethod
-    def load_from_data(cls, set_name, root):
+    def load_from_data(cls, subreddit, emote_data, tag_data):
         emotes = {}
-        for (name, variants) in root.items():
-            emotes[name] = {}
-            for (suffix, data) in variants.items():
-                type = data.pop("Type", "Normal")
-                if type == "Normal":
-                    emote = NormalEmote.load(name, suffix, data)
-                elif type == "Custom":
-                    emote = CustomEmote.load(name, suffix, data)
-                else:
-                    raise ValueError("Unknown emote type %r (under %r)" % (type, name))
-                emotes[name][suffix] = emote
-            try:
-                base_emote(name, emotes[name]) # Ensure one exists
-            except ValueError as e:
-                print("ERROR:", e)
-                raise
+        for (name, variants) in emote_data.items():
+            emotes[name] = Emote.from_data(name, variants, set(tag_data.get(name, [])))
+        return cls(subreddit, emotes, tag_data)
 
-        return cls(set_name, emotes)
+    def dump_emotes(self):
+        return {name: emote.dump() for (name, emote) in self.emotes.items()}
 
-    @classmethod
-    def load_from_file(cls, set_name, file):
-        data = bplib.load_yaml_file(file)
-        return cls.load_from_data(set_name, data)
-
-    @classmethod
-    def load_subreddit(cls, subreddit):
-        filename = "emotes/" + subreddit + ".yaml"
-        try:
-            with open(filename) as file:
-                data = bplib.load_yaml_file(file)
-        except IOError:
-            return None # No such file most likely
-        return cls.load_from_data("r/" + subreddit, data)
-
-    def dump(self):
-        data = {}
-        for (name, variants) in self.emotes.items():
-            data[name] = {}
-            for (suffix, emote) in variants.items():
-                data[name][suffix] = emote.dump()
-        return data
+    def dump_tags(self):
+        return {name: sorted(emote.tags) for (name, emote) in self.emotes.items()}
 
     def __repr__(self):
-        return "EmoteFile(%r, ...)" % (self.name)
+        return "Subreddit(%r, ...)" % (self.name)
 
-class EmoteBase:
+class Emote:
+    def __init__(self, name, variants, tags):
+        self.name = name
+        self.variants = variants
+        self.tags = tags
+
+    @classmethod
+    def from_data(cls, name, emote_data, tags):
+        variants = {}
+        for (suffix, data) in emote_data.items():
+            type = data.pop("Type", "Normal")
+            if type == "Normal":
+                emote = NormalEmote.from_data(name, suffix, data)
+            elif type == "Custom":
+                emote = CustomEmote.from_data(name, suffix, data)
+            else:
+                raise ValueError("Unknown emote type %r (under %r)" % (type, name))
+            variants[suffix] = emote
+        return cls(name, variants, tags)
+
+    def dump(self):
+        return {suffix: variant.dump() for (suffix, variant) in self.variants.items()}
+
+    def base_variant(self):
+        if None in self.variants:
+            return self.variants[None]
+        elif len(self.variants) == 1:
+            key = next(iter(self.variants.keys()))
+            # Should probably suffice
+            if key not in (":after", ":before"):
+                print("WARNING: Unknown primary base suffix %r" % (key))
+            return self.variants[key]
+        raise ValueError("Cannot locate base emote for %r" % (name))
+
+    def __contains__(self, suffix):
+        return suffix in self.variants
+    def __getitem__(self, suffix):
+        return self.variants[suffix]
+    def __setitem__(self, suffix, variant):
+        self.variants[suffix] = variant
+
+class _EmoteBase:
     def __init__(self, name, suffix, css):
         self.name = name
         self.suffix = suffix
@@ -94,20 +119,20 @@ class EmoteBase:
         else:
             return "Emote(%r)" % (self.name)
 
-class PartialEmote(EmoteBase):
+class EmoteCSSBlock(_EmoteBase):
     pass
 
-class Emote(EmoteBase):
+class _Emote(_EmoteBase):
     def __init__(self, name, suffix, css):
-        EmoteBase.__init__(self, name, suffix, css)
+        _EmoteBase.__init__(self, name, suffix, css)
 
     def selector(self):
         name = self.name[1:].replace("!", "_excl_").replace(":", "_colon_").replace("#", "_hash_").replace("/", "_slash_")
         return ".bpmote-" + bplib.combine_name_pair(name, self.suffix).lower()
 
-class CustomEmote(Emote):
+class CustomEmote(_Emote):
     @classmethod
-    def load(cls, name, suffix, data):
+    def from_data(cls, name, suffix, data):
         css = data.pop("CSS", {})
         return cls(name, suffix, css)
 
@@ -122,16 +147,15 @@ class CustomEmote(Emote):
     def to_css(self):
         return self.css.copy()
 
-# For lack of a better name
-class NormalEmote(Emote):
+class NormalEmote(_Emote):
     def __init__(self, name, suffix, css, image_url, size, offset):
-        Emote.__init__(self, name, suffix, css)
+        _Emote.__init__(self, name, suffix, css)
         self.image_url = image_url
         self.size = size
         self.offset = offset
 
     @classmethod
-    def load(cls, name, suffix, data):
+    def from_data(cls, name, suffix, data):
         css = data.pop("CSS", {})
         image_url = data.pop("Image")
         size = data.pop("Size")

@@ -47,63 +47,62 @@ def resolve_emotes(files, config):
 
     # Converts a list of files into one big emote map
     emotes = {}
+    sources = {}
     conflicts = {}
 
     # Sort all emotes by prioritization
     for file in files.values():
-        for (name, variants) in file.emotes.items():
+        for (name, emote) in file.emotes.items():
             if name not in emotes:
-                emotes[name] = (file, variants)
+                emotes[name] = emote
+                sources[name] = file
                 continue
 
-            result = overrides(sorting_rules, conflict_rules, emotes[name][0].name, file.name, name)
+            result = overrides(sorting_rules, conflict_rules, sources[name].name, file.name, name)
             if result:
                 if name in conflicts:
                     del conflicts[name]
                 # Replace emote
-                emotes[name] = (file, variants)
+                emotes[name] = emote
+                sources[name] = file
             elif result is None:
-                # ?!? first file wins I guess
-                conflicts[name] = (file, emotes[name][0])
+                # ?!? previous file wins I guess
+                conflicts[name] = (file, sources[name])
 
     for (name, (old, new)) in conflicts.items():
         print("ERROR: CONFLICT between %s and %s over %s" % (old.name, new.name, name))
 
-    return emotes
+    return emotes, sources
 
 ### Generation
 
 def build_css(emotes):
     css_rules = {}
 
-    for (file, variants) in emotes.values():
-        for emote in variants.values():
-            selector, properties = emote.selector(), emote.to_css()
-            if selector in css_rules:
+    for emote in emotes.values():
+        for variant in emote.variants.values():
+            selector, properties = variant.selector(), variant.to_css()
+            if selector in css_rules and css_rules[selector] != properties:
                 print("ERROR: Selector %r used twice!" % (selector))
             css_rules[selector] = properties
 
     return css_rules
 
-def build_js_map(emotes):
+def build_js_map(emotes, sources):
     emote_map = {}
 
-    for (name, (file, variants)) in emotes.items():
-        for (suffix, emote) in variants.items():
-            if suffix is not None and len(variants) != 1:
-                # Assume we should ignore- I can't think of when we wouldn't
-                print("js_map ignoring %s" % (bplib.combine_name_pair(name, suffix)))
-                continue
+    for (name, emote) in emotes.items():
+        base = emote.base_variant()
+        file = sources[name]
 
-            if name in emote_map:
-                print("ERROR: %r seen twice" % (name))
-            assert name not in emote_map
-            data = [0, file.file_id, 0]
+        assert name not in emote_map
 
-            if hasattr(emote, "size"): # FIXME
-                data[2] = max(emote.size)
+        data = [0, file.file_id, 0]
 
-            emote_map[name] = data
+        if hasattr(base, "size"): # FIXME
+            data[2] = max(base.size)
+
+        emote_map[name] = data
 
     return emote_map
 
@@ -113,7 +112,7 @@ def build_sr_data(files):
 
     for (name, file) in files.items():
         sr_id2name[file.file_id] = name
-        sr_name2id[name] = [file.file_id]
+        sr_name2id[name] = file.file_id
 
     return sr_id2name, sr_name2id
 
@@ -136,14 +135,14 @@ def dump_js_map(file, js_map):
     file.write(AutogenHeader)
     _dump_js_obj(file, "emote_map", js_map)
 
-def dump_sr_data(file, sr_id_map, sr_data):
+def dump_sr_data(file, sr_id2name, sr_name2id):
     file.write(AutogenHeader)
-    _dump_js_obj(file, "sr_id_map", sr_id_map)
-    _dump_js_obj(file, "sr_data", sr_data)
+    _dump_js_obj(file, "sr_id2name", sr_id2name)
+    _dump_js_obj(file, "sr_name2id", sr_name2id)
     # exports is used in Firefox main.js, but doesn't exist elsewhere
     file.write("if(typeof(exports) !== 'undefined') {\n")
-    file.write("    exports.sr_id_map = sr_id_map;\n")
-    file.write("    exports.sr_data = sr_data;\n")
+    file.write("    exports.sr_id2name = sr_id2name;\n")
+    file.write("    exports.sr_name2id = sr_name2id;\n")
     file.write("}\n")
 
 def _dump_js_obj(file, var_name, obj):
@@ -168,20 +167,18 @@ def main():
         config = bplib.load_yaml_file(file)
 
     print("Loading emotes")
-    file_id = 0
+    loader = bplib.objects.SubredditLoader()
     for subreddit in config["Subreddits"]:
-        file = bplib.objects.EmoteFile.load_subreddit(subreddit)
+        file = loader.load_subreddit(subreddit)
         if file is None:
             continue
         files[file.name] = file
-        files[file.name].file_id = file_id # FIXME
-        file_id += 1
 
     print("Processing")
-    emotes = resolve_emotes(files, config)
+    emotes, sources = resolve_emotes(files, config)
 
     css_rules = build_css(emotes)
-    js_map = build_js_map(emotes)
+    js_map = build_js_map(emotes, sources)
     sr_id2name, sr_name2id = build_sr_data(files)
     if not args.no_compress:
         bplib.condense.condense_css(css_rules)

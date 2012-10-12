@@ -40,9 +40,9 @@ def main():
 
     # Generate output file
     name = os.path.splitext(os.path.basename(args.css.name))[0]
-    file = bplib.objects.EmoteFile(name, emotes)
+    file = bplib.objects.Subreddit(name, emotes, {})
 
-    yaml.dump(file.dump(), args.emotes)
+    yaml.dump(file.dump_emotes(), args.emotes)
 
 if __name__ == "__main__":
     main()
