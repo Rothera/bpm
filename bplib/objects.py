@@ -67,6 +67,8 @@ class Emote:
         self.name = name
         self.variants = variants
         self.tags = tags
+        self._implied_tags = None
+        self._all_tags = None
 
     @classmethod
     def from_data(cls, name, emote_data, tags):
@@ -95,6 +97,19 @@ class Emote:
                 print("WARNING: Unknown primary base suffix %r" % (key))
             return self.variants[key]
         raise ValueError("Cannot locate base emote for %r" % (name))
+
+    def implied_tags(self, tagdata):
+        if self._implied_tags is None:
+            self._implied_tags = set()
+            for tag in self.tags:
+                self._implied_tags |= set(tagdata["TagImplications"].get(tag, []))
+            self._all_tags = self.tags | self._implied_tags
+        return self._implied_tags
+
+    def all_tags(self, tagdata):
+        if self._all_tags is None:
+            self.implied_tags(tagdata) # Just generate them implicitly
+        return self._all_tags
 
     def __contains__(self, suffix):
         return suffix in self.variants

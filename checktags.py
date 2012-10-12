@@ -40,16 +40,11 @@ for (subreddit, file) in files.items():
         dirty.append(subreddit)
 
     for (name, emote) in list(file.emotes.items()):
-        implied_tags = set()
-        for tag in emote.tags:
-            implied_tags |= set(tagdata["TagImplications"].get(tag, []))
-        all_tags = emote.tags | implied_tags
-
         # Handle +drop and +remove
-        if "+drop" in all_tags:
+        if "+drop" in emote.all_tags(tagdata):
             assert name not in drops
             drops[name] = subreddit
-        elif "+remove" in all_tags:
+        elif "+remove" in emote.all_tags(tagdata):
             del file.emotes[name] # Remember never to save this file...
 
 # Remove all copies of +drop emotes
@@ -75,12 +70,6 @@ for (subreddit, file) in files.items():
     variants = []
 
     for (name, emote) in list(file.emotes.items()):
-        # FIXME: copy&paste from above
-        implied_tags = set()
-        for tag in emote.tags:
-            implied_tags |= set(tagdata["TagImplications"].get(tag, []))
-        all_tags = emote.tags | implied_tags
-
         # Make sure it's tagged at all
         if not emote.tags:
             print("ERROR: In %s: %s has no tags" % (subreddit, name))
@@ -96,12 +85,12 @@ for (subreddit, file) in files.items():
                     break
 
         # Check that implied tags aren't being given
-        redundant_tags = emote.tags & implied_tags
+        redundant_tags = emote.tags & emote.implied_tags(tagdata)
         if redundant_tags:
             print("WARNING: In %s: %s has redundant tags %s" % (subreddit, name, " ".join(redundant_tags)))
 
         # Check that at least one root tag is specified
-        roots = {tag for tag in all_tags if tag in tagdata["RootTags"]}
+        roots = {tag for tag in emote.all_tags(tagdata) if tag in tagdata["RootTags"]}
         if not roots:
             print("WARNING: In %s: %s has no root tags (set: %s)" % (subreddit, name, " ".join(emote.tags)))
 
