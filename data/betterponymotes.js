@@ -997,6 +997,7 @@ var bpm_search = {
             '        <p>Searching for <code>"aj happy"</code> will show you all emotes with both <code>"aj"</code> and <code>"happy"</code> in their names.',
             '        <p>The special syntax <code>"sr:subreddit"</code> will limit your results to emotes from that subreddit.',
             '        <p>Using more than one subreddit will show you emotes from all of them.',
+            '        <p>Searching for <code>"+tag"</code> will show you emotes with the given tag.',
             '      </div>',
             '    </span>',
             '    <span id="bpm-resize"></span>',
@@ -1198,27 +1199,27 @@ var bpm_search = {
     update_search: function(prefs) {
         // Split search query on spaces, remove empty strings, and lowercase terms
         var terms = this.search.value.split(" ").map(function(v) { return v.toLowerCase(); });
+        terms = terms.filter(function(v) { return v; });
         prefs.prefs.lastSearchQuery = terms.join(" ");
         bpm_prefs.sync_key("lastSearchQuery");
 
         var sr_terms = [];
+        var tag_terms = [];
         var match_terms = [];
         for(var t = 0; t < terms.length; t++) {
             // If it starts with "sr:" it's subreddit syntax, otherwise it's a
             // normal search term.
             if(terms[t].indexOf("sr:") === 0) {
                 sr_terms.push(terms[t].slice(3));
+            } else if(terms[t][0] == "+") {
+                tag_terms.push(terms[t]);
             } else {
                 match_terms.push(terms[t]);
             }
         }
 
-        // Filter out empty strings
-        sr_terms = sr_terms.filter(function(v) { return v; });
-        match_terms = match_terms.filter(function(v) { return v; });
-
         // If there's nothing to search on, reset and stop
-        if(!sr_terms.length && !match_terms.length) {
+        if(!sr_terms.length && !tag_terms.length && !match_terms.length) {
             this.results.innerHTML = "";
             this.count.textContent = "";
             return;
@@ -1226,9 +1227,17 @@ var bpm_search = {
 
         var results = [];
         no_match:
-        for(var emote in emote_map) {
+        for(var emote_name in emote_map) {
+            var emote_info = emote_map[emote_name];
+            var emote_tags = emote_info[3];
+
+            // Ignore hidden emotes
+            if(emote_tags.indexOf("+hidden") > -1) {
+                continue no_match;
+            }
+
             // Cache lowercased version
-            var lc_emote = emote.toLowerCase();
+            var lc_emote = emote_name.toLowerCase();
             // Match if ALL search terms match
             for(var t = 0; t < match_terms.length; t++) {
                 if(lc_emote.indexOf(match_terms[t]) < 0) {
@@ -1236,11 +1245,10 @@ var bpm_search = {
                 }
             }
 
-            // Generally this name is already lowercase, though not for bpmextras
-            var source_sr_name = sr_id2name[emote_map[emote][1]].toLowerCase();
-
-            // Match if ANY subreddit terms match
+            // Match if AT LEAST ONE subreddit terms match
             if(sr_terms.length) {
+                // Generally this name is already lowercase, though not for bpmextras
+                var source_sr_name = sr_id2name[emote_info[1]].toLowerCase();
                 var is_match = false;
                 for(var t = 0; t < sr_terms.length; t++) {
                     if(source_sr_name.indexOf(sr_terms[t]) > -1) {
@@ -1253,7 +1261,14 @@ var bpm_search = {
                 }
             }
 
-            results.push(emote);
+            // Match if ALL tag terms match
+            for(var t = 0; t < tag_terms.length; t++) {
+                if(emote_tags.indexOf(tag_terms[t]) < 0) {
+                    continue no_match;
+                }
+            }
+
+            results.push(emote_name);
         }
         results.sort();
 
