@@ -46,6 +46,53 @@ class Subreddit:
         self.emotes = emotes
         self.tag_data = tag_data
 
+    def match_variants(self, matchconfig, raise_errors=True):
+        core_emotes = {}
+        variants = []
+        matches = {}
+        for (name, emote) in self.emotes.items():
+            base_variant = emote.base_variant()
+            is_core = "+v" not in emote.tags
+            if is_core:
+                matches[emote] = emote # Always
+            if hasattr(base_variant, "info_set"):
+                info = base_variant.info_set()
+                if is_core:
+                    core_emotes[info] = emote
+                else:
+                    variants.append((emote, info))
+            elif not is_core:
+                print("ERROR: In %s: Variant custom emote %s" % (self.name, name))
+        for (emote, info) in variants:
+            base_variant = emote.base_variant()
+            base = None
+            if info in core_emotes:
+                base = core_emotes[info]
+            elif emote.name[:2].lower() == "/r":
+                # Try non-reversed name?
+                test = self.emotes.get("/" + emote.name[2:])
+                if test is not None:
+                    test_base = test.base_variant()
+                    if hasattr(test_base, "info_set"):
+                        info = test_base.info_set()
+                        if info in core_emotes:
+                            base = core_emotes[info]
+            # Can't find it.
+            if emote.name in matchconfig:
+                if base is None:
+                    base = self.emotes[matchconfig[emote.name]]
+                else:
+                    # Would be nice to know
+                    print("WARNING: extraneous matchconfig for %s" % (emote.name))
+            elif base is None:
+                if raise_errors:
+                    raise ValueError("Cannot locate root emote for", emote.name)
+                else:
+                    print("ERROR: In %s: cannot locate root emote for %s" % (self.name, emote.name))
+            if base is not None:
+                matches[emote] = base
+        return matches
+
     @classmethod
     def load_from_data(cls, subreddit, emote_data, tag_data):
         emotes = {}
@@ -168,6 +215,9 @@ class NormalEmote(_Emote):
         self.image_url = image_url
         self.size = size
         self.offset = offset
+
+    def info_set(self):
+        return (self.image_url, self.size[0], self.size[1], self.offset[0], self.offset[1])
 
     @classmethod
     def from_data(cls, name, suffix, data):

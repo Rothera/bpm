@@ -59,8 +59,8 @@ for (subreddit, file) in files.items():
         del file.emotes[name] # Same
 
 def info_for(emote):
-    if hasattr(emote, "image_url"):
-        return (emote.image_url, emote.offset[0], emote.offset[1], emote.size[0], emote.size[1])
+    if hasattr(emote, "info_set"):
+        return emote.info_set()
     return None
 
 variant_log = open("checktags-variants.log", "w")
@@ -94,34 +94,9 @@ for (subreddit, file) in files.items():
         if not roots:
             print("WARNING: In %s: %s has no root tags (set: %s)" % (subreddit, name, " ".join(emote.tags)))
 
-        # Is it a variant?
-        is_core = "+v" not in emote.tags
-
-        info = info_for(emote.base_variant()) # Hmm...
-        if info is not None:
-            if is_core:
-                core_emotes[info] = name
-            else:
-                variants.append((name, info))
-
-    # Match up all variants
-    for (name, info) in variants:
-        base = None
-        if info in core_emotes:
-            base = core_emotes[info]
-        else:
-            # Try non-reversed name
-            if name[:2].lower() == "/r":
-                emote = file.emotes.get("/" + name[2:])
-                if emote is not None:
-                    info = info_for(emote.base_variant())
-                    if info is not None and info in core_emotes:
-                        base = core_emotes[info]
-
-        if base is not None:
-            print("  %s: %s" % (name, core_emotes[info]), file=variant_log)
-        else:
-            print("ERROR: In %s: Cannot locate root emote of %s" % (subreddit, name))
+    matchconfig = config["RootVariantEmotes"].get(file.name, {})
+    for (emote, base) in file.match_variants(matchconfig, False).items():
+        print("  %s: %s" % (emote.name, base.name), file=variant_log)
 variant_log.close()
 
 for subreddit in dirty:
