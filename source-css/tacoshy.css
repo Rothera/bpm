@@ -74,6 +74,16 @@ a[href|="/t18"] {
     background-image: url(%%t18%%) !important
     }
 
+a[href|="/pikachu"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 534px;
+    height: 423px;
+    background-image: url(%%Pikachu-sad%%) !important
+    }
+
 a[href|="/tacostare"] {
     background-position: 0px 0px;
     display: block;
@@ -94,6 +104,15 @@ a[href|="/lemonkeyface"] {
     background-image: url(%%le-monkey-face%%) !important
     }
 
+a[href|="/tacodown"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 600px;
+    height: 337px;
+    background-image: url(%%tacodownerS%%) !important
+    }
 
 a[href|="/mcguirk"] {
     background-position: 0px 0px;
@@ -208,11 +227,24 @@ a[href|="/tacoclop"]
     margin-right: 3px
     }
 
-a[href|="/conkyfun"]
+a[href|="/tacoclop"]
  {
-    width: 300px;
-    height: 159px;
-    background-image: url(%%Conkybear%%);
+    width: 360px;
+    height: 360px;
+    background-image: url(%%tacoclop%%);
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    margin-left: 3px;
+    margin-right: 3px
+    }
+
+a[href|="/letthetacosflow"]
+ {
+    width: 512px;
+    height: 517px;
+    background-image: url(%%flutter-cryB%%);
     background-position: 0px 0px;
     display: block;
     clear: none;
@@ -392,6 +424,20 @@ a.author[href$="SystemOutPrintln"] {
     }
 a.author[href$="SystemOutPrintln"]:after {
     content: "initializeSystemClass(taco)";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="Spaghetti_Dick"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="Spaghetti_Dick"]:after {
+    content: "Taco_Snatch";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;

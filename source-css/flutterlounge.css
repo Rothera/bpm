@@ -156,7 +156,7 @@ display: none !important;
 
 /* Sidebar Filly */
 
-.side a[href="http://fav.me/d5fl28t"]{
+.side a[href="http://fav.me/d5d0cv2"]{
    display: block;
    height: 120px;
    width: 120px;
@@ -175,4 +175,37 @@ display: none !important;
 hr {
     border-bottom: 1px solid #747474;
     border-top: none
+}
+
+.titlebox strong {
+font-size: medium;
+}
+
+
+.titlebox del {
+color: white;
+}
+
+
+.titlebox em {
+font-size:9px;
+text-decoration: none;
+font-style:normal
+}
+
+.titlebox strong em
+{
+font-size:8px;
+font-style:normal;
+font-weight:normal
+}
+
+.titlebox table {
+display: none;
+clear: both;
+}
+
+.side div.usertext-body:hover table {
+display: block;
+clear: both;
 }
