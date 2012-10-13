@@ -1254,25 +1254,40 @@ var bpm_search = {
         bpm_prefs.sync_key("lastSearchQuery");
 
         var sr_terms = [];
-        var tag_terms = [];
+        var tag_term_sets = [];
         var match_terms = [];
         for(var t = 0; t < terms.length; t++) {
+            var term = terms[t];
             // If it starts with "sr:" it's subreddit syntax, otherwise it's a
             // normal search term.
-            if(terms[t].indexOf("sr:") === 0) {
-                sr_terms.push(terms[t].slice(3));
-            } else if(terms[t][0] == "+") {
-                var id = tag_name2id[terms[t]];
+            if(term.indexOf("sr:") === 0) {
+                sr_terms.push([term.slice(3)]);
+            } else if(term[0] == "+") {
+                var id = tag_name2id[term];
                 if(id !== undefined) {
-                    tag_terms.push(id);
+                    tag_term_sets.push([id]); // Exact match
+                } else {
+                    var match_aliases = [];
+                    // Locate anything that works
+                    for(var alias in tag_name2id) {
+                        id = tag_name2id[alias];
+                        // Cut off +
+                        if(alias.slice(1).indexOf(term.slice(1)) > -1 &&
+                           match_aliases.indexOf(id) < 0) {
+                            match_aliases.push(id);
+                        }
+                    }
+                    if(match_aliases.length) {
+                        tag_term_sets.push(match_aliases);
+                    }
                 }
             } else {
-                match_terms.push(terms[t]);
+                match_terms.push(term);
             }
         }
 
         // If there's nothing to search on, reset and stop
-        if(!sr_terms.length && !tag_terms.length && !match_terms.length) {
+        if(!sr_terms.length && !tag_term_sets.length && !match_terms.length) {
             this.results.innerHTML = "";
             this.count.textContent = "";
             return;
@@ -1313,9 +1328,18 @@ var bpm_search = {
                 }
             }
 
-            // Match if ALL tag terms match
-            for(var t = 0; t < tag_terms.length; t++) {
-                if(emote_info.tags.indexOf(tag_terms[t]) < 0) {
+            // Match if ALL tag sets match
+            for(var tt_i = 0; tt_i < tag_term_sets.length; tt_i++) {
+                // Match if AT LEAST ONE of these match
+                var tag_set = tag_term_sets[tt_i];
+                var any = false;
+                for(var ts_i = 0; ts_i < tag_set.length; ts_i++) {
+                    if(emote_info.tags.indexOf(tag_set[ts_i]) > -1) {
+                        any = true;
+                        break;
+                    }
+                }
+                if(!any) {
                     continue no_match;
                 }
             }

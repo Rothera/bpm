@@ -144,6 +144,13 @@ def build_tag_map(emotes, tagdata):
                     tag_name2id[tag] = next_id
                     next_id += 1
 
+    for (name, aliases) in tagdata["TagAliases"].items():
+        for alias in aliases:
+            if alias in tag_name2id:
+                # Don't ever overwrite a tag
+                assert tag_name2id[alias] == tag_name2id[name]
+            tag_name2id[alias] = tag_name2id[name]
+
     return tag_id2name, tag_name2id
 
 def build_js_map(config, tagdata, emotes, sources, tag_name2id):
