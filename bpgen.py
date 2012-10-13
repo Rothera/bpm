@@ -68,10 +68,11 @@ def resolve_emotes(files, config, tagdata):
 
     # Sort all emotes by prioritization
     for file in files.values():
-        for (name, emote) in file.emotes.items():
+        for (name, emote) in list(file.emotes.items()):
             all_tags = emote.all_tags(tagdata)
             if "+remove" in all_tags:
                 # Removed emote: ignore completely
+                del file.emotes[name]
                 continue
             elif "+drop" in all_tags:
                 # Unique emote: win unconditionally
@@ -87,6 +88,7 @@ def resolve_emotes(files, config, tagdata):
             if name in emotes:
                 # Ignore dropped ones
                 if "+drop" in emotes[name][0].all_tags(tagdata):
+                    del file.emotes[name]
                     continue
                 else:
                     # Conflict resolution: who wins?
@@ -129,7 +131,22 @@ def build_css(emotes):
 
     return css_rules
 
-def build_js_map(config, tagdata, emotes, sources):
+def build_tag_map(emotes, tagdata):
+    tag_id2name = {}
+    tag_name2id = {}
+    next_id = 0
+
+    for (name, emote_set) in emotes.items():
+        for emote in emote_set:
+            for tag in emote.all_tags(tagdata):
+                if tag not in tag_name2id:
+                    tag_id2name[next_id] = tag
+                    tag_name2id[tag] = next_id
+                    next_id += 1
+
+    return tag_id2name, tag_name2id
+
+def build_js_map(config, tagdata, emotes, sources, tag_name2id):
     emote_map = {}
     matchdicts = {}
     for (name, emote_set) in emotes.items():
@@ -146,8 +163,10 @@ def build_js_map(config, tagdata, emotes, sources):
         all_tags = matches[emote].all_tags(tagdata) | emote.all_tags(tagdata)
         is_nsfw = "+nsfw" in emote.all_tags(tagdata)
         tags = [tag for tag in all_tags if tag not in tagdata["HiddenTags"]]
+        tag_ids = [tag_name2id[tag] for tag in tags]
+        assert all(id < 256 for id in tag_ids) # Only use one byte...
         size = max(base.size) if hasattr(base, "size") else 0
-        encoded_tags = "".join(tags) # separated by "+"
+        encoded_tags = "".join("%02x" % id for id in tag_ids)
         # NRRSSSS+tags where N=nsfw, RR=subreddit, SSSS=size
         encoded_data = "%1i%02i%04x%s" % (is_nsfw, file.file_id, size, encoded_tags)
         emote_map[name] = encoded_data
@@ -178,10 +197,12 @@ def dump_css(file, rules):
         s = "%s{%s}\n" % (selector, ";".join(property_strings))
         file.write(s)
 
-def dump_js_data(file, js_map, sr_id2name, sr_name2id):
+def dump_js_data(file, js_map, sr_id2name, sr_name2id, tag_id2name, tag_name2id):
     file.write(AutogenHeader)
     _dump_js_obj(file, "sr_id2name", sr_id2name)
     _dump_js_obj(file, "sr_name2id", sr_name2id)
+    _dump_js_obj(file, "tag_id2name", tag_id2name)
+    _dump_js_obj(file, "tag_name2id", tag_name2id)
     # exports is used in Firefox main.js, but doesn't exist elsewhere
     file.write("if(typeof(exports) !== 'undefined') {\n")
     file.write("    exports.sr_id2name = sr_id2name;\n")
@@ -223,7 +244,8 @@ def main():
     emotes, sources = resolve_emotes(files, config, tagdata)
 
     css_rules = build_css([emote_set[0] for emote_set in emotes.values()])
-    js_map = build_js_map(config, tagdata, emotes, sources)
+    tag_id2name, tag_name2id = build_tag_map(emotes, tagdata)
+    js_map = build_js_map(config, tagdata, emotes, sources, tag_name2id)
     sr_id2name, sr_name2id = build_sr_data(files)
     if not args.no_compress:
         bplib.condense.condense_css(css_rules)
@@ -232,7 +254,7 @@ def main():
     with open(args.css, "w") as file:
         dump_css(file, css_rules)
     with open(args.js, "w") as file:
-        dump_js_data(file, js_map, sr_id2name, sr_name2id)
+        dump_js_data(file, js_map, sr_id2name, sr_name2id, tag_id2name, tag_name2id)
 
 if __name__ == "__main__":
     main()

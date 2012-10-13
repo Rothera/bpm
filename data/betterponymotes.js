@@ -350,8 +350,13 @@ var bpm_data = {
         var is_nsfw = parseInt(info.slice(0, 1), 10);
         var source_id = parseInt(info.slice(1, 3), 10);
         var size = parseInt(info.slice(3, 7), 16); // Hexadecimal
-        // Strip empty string before first "+", and add back all the tags
-        var tags = info.slice(7).split("+").slice(1).map(function(tag) { return "+" + tag; });
+        var tags = [];
+        var start = 7;
+        // Two bytes per tag and do lookup
+        while((var str = info.slice(start, start+2)) !== "") {
+            tags.push(tag_id2name[parseInt(str, 16)]);
+            start += 2;
+        }
         return {
             name: name,
             is_nsfw: Boolean(is_nsfw),
