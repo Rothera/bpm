@@ -352,9 +352,10 @@ var bpm_data = {
         var size = parseInt(info.slice(3, 7), 16); // Hexadecimal
         var tags = [];
         var start = 7;
-        // Two bytes per tag and do lookup
-        while((var str = info.slice(start, start+2)) !== "") {
-            tags.push(tag_id2name[parseInt(str, 16)]);
+        // One byte per tag, hexadecimal
+        var str;
+        while((str = info.slice(start, start+2)) !== "") {
+            tags.push(parseInt(str, 16));
             start += 2;
         }
         return {
@@ -1261,7 +1262,10 @@ var bpm_search = {
             if(terms[t].indexOf("sr:") === 0) {
                 sr_terms.push(terms[t].slice(3));
             } else if(terms[t][0] == "+") {
-                tag_terms.push(terms[t]);
+                var id = tag_name2id[terms[t]];
+                if(id !== undefined) {
+                    tag_terms.push(id);
+                }
             } else {
                 match_terms.push(terms[t]);
             }
@@ -1280,7 +1284,7 @@ var bpm_search = {
             var emote_info = bpm_data.lookup_emote(emote_name);
 
             // Ignore hidden emotes
-            if(emote_info.tags.indexOf("+hidden") > -1) {
+            if(emote_info.tags.indexOf(tag_name2id["+hidden"]) > -1) {
                 continue no_match;
             }
 
