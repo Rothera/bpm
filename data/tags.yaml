@@ -15,6 +15,9 @@ ExclusiveTags:
   +remove: []
   +v: [+drop]
 
+HiddenTags:
+- +drop
+
 TagImplications:
   # Special tags
   +broken: [+remove]
@@ -74,6 +77,7 @@ TagImplications:
   +otherpony: [+canon, +minor, +pony]
   +photofinish: [+canon, +minor, +pony]
   +pip: [+canon, +minor, +pony]
+  +rubypinch: [+canon, +minor, +pony]
   +silverspoon: [+canon, +minor, +pony]
   +snipsandsnails: [+canon, +minor, +pony]
   +soarin: [+canon, +minor, +pony]

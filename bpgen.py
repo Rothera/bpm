@@ -41,7 +41,7 @@ def overrides(sorting_rules, conflict_rules, base, new, name):
     # No solution
     return None
 
-def resolve_emotes(files, config):
+def resolve_emotes(files, config, tagdata):
     sorting_rules = config.pop("Sorting")
     conflict_rules = config.pop("Conflicts")
 
@@ -49,25 +49,66 @@ def resolve_emotes(files, config):
     emotes = {}
     sources = {}
     conflicts = {}
+    drops = {}
+
+    # Process directives
+    for rule in config["Generation"]:
+        cmd, args = rule[0], rule[1:]
+        if cmd == "AddCSS":
+            source, name, variant, css = args
+            files[source].emotes[name][variant].css.update(css)
+        elif cmd == "MergeEmotes":
+            target, merge, merge_tags = args
+            # Simple way to load a dict like this
+            merge_sr = bplib.objects.Subreddit.load_from_data(target, merge, merge_tags)
+            files[target].emotes.update(merge_sr.emotes)
+            files[target].tag_data.update(merge_sr.tag_data)
+        else:
+            print("ERROR: Unknown directive: %r" % (rule))
 
     # Sort all emotes by prioritization
     for file in files.values():
         for (name, emote) in file.emotes.items():
-            if name not in emotes:
-                emotes[name] = emote
-                sources[name] = file
+            all_tags = emote.all_tags(tagdata)
+            if "+remove" in all_tags:
+                # Removed emote: ignore completely
                 continue
-
-            result = overrides(sorting_rules, conflict_rules, sources[name].name, file.name, name)
-            if result:
+            elif "+drop" in all_tags:
+                # Unique emote: win unconditionally
+                assert name not in drops
+                drops[name] = file.name
+                emotes[name] = [emote]
+                sources[name] = [file]
+                # Any prior conflict has been resolved
                 if name in conflicts:
                     del conflicts[name]
-                # Replace emote
-                emotes[name] = emote
-                sources[name] = file
-            elif result is None:
-                # ?!? previous file wins I guess
-                conflicts[name] = (file, sources[name])
+                continue
+
+            if name in emotes:
+                # Ignore dropped ones
+                if "+drop" in emotes[name][0].all_tags(tagdata):
+                    continue
+                else:
+                    # Conflict resolution: who wins?
+                    result = overrides(sorting_rules, conflict_rules, sources[name][0].name, file.name, name)
+                    if result is True:
+                        # This one wins. Put it first
+                        if name in conflicts:
+                            del conflicts[name]
+                        emotes[name].insert(0, emote)
+                        sources[name].insert(0, file)
+                    elif result is False:
+                        # Lost. Move to end (or anywhere, really)
+                        emotes[name].append(emote)
+                        sources[name].append(file)
+                    elif result is None:
+                        # ?!? previous file wins I guess. Move to end
+                        conflicts[name] = (file, sources[name][0])
+                        emotes[name].append(emote)
+                        sources[name].append(file)
+            else:
+                emotes[name] = [emote]
+                sources[name] = [file]
 
     for (name, (old, new)) in conflicts.items():
         print("ERROR: CONFLICT between %s and %s over %s" % (old.name, new.name, name))
@@ -79,7 +120,7 @@ def resolve_emotes(files, config):
 def build_css(emotes):
     css_rules = {}
 
-    for emote in emotes.values():
+    for emote in emotes:
         for variant in emote.variants.values():
             selector, properties = variant.selector(), variant.to_css()
             if selector in css_rules and css_rules[selector] != properties:
@@ -88,22 +129,26 @@ def build_css(emotes):
 
     return css_rules
 
-def build_js_map(emotes, sources):
+def build_js_map(config, tagdata, emotes, sources):
     emote_map = {}
-
-    for (name, emote) in emotes.items():
-        base = emote.base_variant()
-        file = sources[name]
-
-        assert name not in emote_map
-
-        data = [0, file.file_id, 0]
-
-        if hasattr(base, "size"): # FIXME
-            data[2] = max(base.size)
-
-        emote_map[name] = data
-
+    matchdicts = {}
+    for (name, emote_set) in emotes.items():
+        parts = []
+        for (emote, file) in zip(emote_set, sources[name]):
+            assert name not in emote_map
+            if file not in matchdicts:
+                matchconfig = config["RootVariantEmotes"].get(file.name, {})
+                matchdicts[file] = file.match_variants(matchconfig)
+            matches = matchdicts[file]
+            base = emote.base_variant()
+            root = matches[emote]
+            is_nsfw = "+nsfw" in emote.all_tags(tagdata)
+            tags = [tag for tag in root.tags if tag not in tagdata["HiddenTags"]]
+            data = [int(is_nsfw), file.file_id, 0, tags]
+            if hasattr(base, "size"): # FIXME
+                data[2] = max(base.size)
+            parts.append(data)
+        emote_map[name] = parts
     return emote_map
 
 def build_sr_data(files):
@@ -165,6 +210,8 @@ def main():
 
     with open("data/rules.yaml") as file:
         config = bplib.load_yaml_file(file)
+    with open("data/tags.yaml") as file:
+        tagdata = bplib.load_yaml_file(file)
 
     print("Loading emotes")
     loader = bplib.objects.SubredditLoader()
@@ -175,10 +222,10 @@ def main():
         files[file.name] = file
 
     print("Processing")
-    emotes, sources = resolve_emotes(files, config)
+    emotes, sources = resolve_emotes(files, config, tagdata)
 
-    css_rules = build_css(emotes)
-    js_map = build_js_map(emotes, sources)
+    css_rules = build_css([emote_set[0] for emote_set in emotes.values()])
+    js_map = build_js_map(config, tagdata, emotes, sources)
     sr_id2name, sr_name2id = build_sr_data(files)
     if not args.no_compress:
         bplib.condense.condense_css(css_rules)

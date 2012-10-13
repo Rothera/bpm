@@ -26,9 +26,16 @@ def main():
     parser.add_argument("emotes", help="Output emotes file", type=argparse.FileType(mode="w"))
     args = parser.parse_args()
 
+    name = os.path.splitext(os.path.basename(args.css.name))[0]
+
+    with open("data/rules.yaml") as file:
+        config = bplib.load_yaml_file(file)
+    extconfig = config["Extraction"].get(name, {})
+
     # Load CSS
     css_rules = list(bplib.css.parse_css_file(args.css))
-    bplib.extract.filter_ponyscript_ignores(css_rules)
+    if extconfig.get("RespectIgnore", True):
+        bplib.extract.filter_ponyscript_ignores(css_rules, extconfig)
 
     # Extract raw emote data
     partial_emotes = bplib.extract.extract_partial_emotes(css_rules)
@@ -39,7 +46,6 @@ def main():
     bplib.extract.classify_emotes(emotes)
 
     # Generate output file
-    name = os.path.splitext(os.path.basename(args.css.name))[0]
     file = bplib.objects.Subreddit(name, emotes, {})
 
     yaml.dump(file.dump_emotes(), args.emotes)

@@ -86,40 +86,138 @@ Subreddits:
 - twilightsparkle
 - vinylscratch
 
+Extraction:
+  mlplounge:
+    RespectIgnore: false
+  mylittleserver:
+    RespectIgnore: false
+
+Generation:
+  # Fix /rcrossfire not actually being reversed
+  - [AddCSS, r/mlas1emotes, /rcrossfire, null, {"-moz-transform": scaleX(-1), "-webkit-transform": scaleX(-1), "-o-transform": scaleX(-1), transform: scaleX(-1)}]
+
+  # r/mlp removed these, so put them back as a compat hack
+  - - MergeEmotes
+    - r/mylittlepony
+    - /rdsad:
+        null:
+          Image: http://f.thumbs.redditmedia.com/0eHLtku13olw-nLM.png
+          Offset: [-140, -350]
+          Size: [70, 70]
+      /rrdsad:
+        null:
+          Image: http://a.thumbs.redditmedia.com/upicooe6wp8FpQ80.png
+          Offset: [-140, -350]
+          Size: [70, 70]
+    - /rdsad: [+rd, +drop]
+      /rrdsad: [+v, +drop]
+
+  # Removed
+  - - MergeEmotes
+    - r/mylittleandysonic1
+    - /today:
+        null:
+          Image: http://d.thumbs.redditmedia.com/dN7SE1I0H0ul7jP-.png
+          Offset: [0, 0]
+          Size: [500, 270]
+      /imamakethisanemoterealquick:
+        null:
+          Image: http://e.thumbs.redditmedia.com/reUrhLuICVFtwobp.png
+          Offset: [0, 0]
+          Size: [456, 304]
+      /buzzkillturtle:
+        null:
+          Image: http://f.thumbs.redditmedia.com/qi35qdw2_kvnMUcq.png
+          Offset: [0, 0]
+          Size: [621, 511]
+      /horseporn:
+        null:
+          Image: http://f.thumbs.redditmedia.com/qi35qdw2_kvnMUcq.png
+          Offset: [0, 0]
+          Size: [621, 511]
+    - /today: [+pp, +animote]
+      /imamakethisanemoterealquick: [+shrug]
+      /buzzkillturtle: [+nsfw, +pp, +derpy]
+      /horseporn: [+v]
+
+  # Removed
+  - - MergeEmotes
+    - r/mylittlewtf
+    - /raeptime:
+        null:
+          Image: http://thumbs.reddit.com/t5_2sy9j_3.png
+          Offset: [0, 0]
+          Size: [422, 473]
+      /drama:
+        null:
+          Image: http://thumbs.reddit.com/t5_2sy9j_5.png
+          Offset: [0, 0]
+          Size: [433, 298]
+    - /raeptime: [+rd]
+      /drama: [+rarity]
+
+  # Edited version- original is broken
+  - - MergeEmotes
+    - r/mylittlesh
+    - /rscheer:
+        null:
+          Image: http://d.thumbs.redditmedia.com/3hErANn4rqVDeXao.png
+          Offset: [0, 0]
+          Size: [175, 175]
+    - /rscheer: [+ocpony]
+
 Sorting:
-- [r/mylittlepony, "*"]
-  # These, unfortunately, resolve a lot of things implicitly...
-- [r/mylittleandysonic1, "*"]
-- [r/mlas1emotes, "*"]
-- [r/mlas1animotes, "*"]
-- [r/futemotes, r/ponyanarchism]
-- [r/ainbowdash, r/dashiemotes]
-- [r/idliketobeatree, r/ainbowdash]
-- [r/mylittlemusician, r/mylittlelistentothis]
-- [r/futemotes, r/gremotes] # Temp fix for the copies of /fut*
+- [r/mylittlepony, "*"] # Not actually used, but a good failsafe
+- [r/mylittleandysonic1, "*"] # These three rules resolve a lot of things
+- [r/mlas1emotes, "*"]        # implicitly, which is unfortunate, but generally
+- [r/mlas1animotes, "*"]      # correct.
+- [r/futemotes, r/gremotes]         # r/gremotes contains copies of /fut*
+- [r/futemotes, r/ponyanarchism]    # More copies of /fut*
+- [r/idliketobeatree, r/ainbowdash] # /rd* conflicts
+- [r/mylittlemusician, r/mylittlelistentothis] # Copies of some emotes
 
 Conflicts:
-  /muffin:      r/mlpdrawingschool      # Conflict with r/mylittlesupportgroup
-  /twifly:      r/mlas1animotes         # Conflict with r/thebestpony
-  /woonajuice:  r/mylittledaww          # Duplicated to r/mylittleanime
-  /rwoonajuice: r/mylittledaww          # Duplicated to r/mylittleanime
+  /abwant:      r/mylittlelivestream    # Conflict with r/applebloom
+  /abworry:     r/tbpimagedump          # Conflict with r/mlpdrawingschool
   /dw01:        r/daylightemotes        # Conflict with r/gallopfrey
   /hugs:        r/mylittledaww          # Conflict with r/mylittlecirclejerk
-  /twipoker:    r/mylittlewtf           # Conflict with r/thebestpony
-  /ajlol:       r/mlas1animotes         # Conflict with r/tbpimagedump
-  /woona:       r/thebestpony           # Broken emote in r/mylittlesupportgroup
-  /abwant:      r/mylittlelivestream    # Conflict with r/applebloom
-  /rabwant:     r/mylittlelivestream    # Conflict with r/applebloom
-  /shrug:       r/vinylscratch          # Conflict with r/mylittlecirclejerk
-  /sadlyra:     r/mylittleonions        # Conflict with r/mylittleanime
-  /abworry:     r/tbpimagedump          # Conflict with r/mlpdrawingschool
+  /ovenmitt:    r/ainbowdash            # Conflict with r/mylittledramaticstory
   /ppnervous:   r/pinkiepie             # Conflict with r/mlpdrawingschool
+  /rabwant:     r/mylittlelivestream    # Conflict with r/applebloom
+  /rwoonajuice: r/mylittledaww          # Duplicated to r/mylittleanime
   /s:           r/falloutequestria      # Conflict with r/mylittleanime
-  /t18:         r/mylittlefoodmanes     # Conflict with r/tacoshy
+  /sadlyra:     r/mylittleonions        # Conflict with r/mylittleanime
+  /shrug:       r/vinylscratch          # Conflict with r/mylittlecirclejerk
   /sphlyrafun:  r/mylittlensfw          # Conflict with r/mylittlechaos
+  /t18:         r/mylittlefoodmanes     # Conflict with r/tacoshy
+  /twipoker:    r/mylittlewtf           # Conflict with r/thebestpony
+  /woonajuice:  r/mylittledaww          # Duplicated to r/mylittleanime
 
-  # Temporary
-  /rdsad:       r/ilovedashie
-  /rrdsad:      r/ilovedashie
-  /ovenmitt:    r/ainbowdash
-  /jizz:        r/mylittlebannertest
+RootVariantEmotes:
+  r/mylittleanime:
+    # Broken
+    /chi21: /sailortwi
+    /chi22: /chubbyrar
+    #/chi23: /evilbelle # /evilbelle itself is broken, so this is just tagged for now
+    /chi24: /woonajuice
+    /chi25: /nurse
+  r/mylittlecelestias:
+    # Unusual- /lr instead of /rl
+    /lrce00: /lce00
+    /lrce01: /lce01
+    /lrce03: /lce03
+    /lrce04: /lce04
+    /lrce05: /lce05
+    /lrce06: /lce06
+    /lrce07: /lce07
+    /lrce10: /lce10
+    /lrce11: /lce11
+    /lrcebattle: /lcebattle
+    /lrcefilly: /lcefilly
+    /lrcehail: /lcehail
+    /lrcehappy: /lcehappy
+    /lrcelordv: /lcelordv
+    /lrcescroll: /lcescroll
+    /lrcesilence: /lcesilence
+    /lrcesurprised: /lcesurprised
+    /lrcewat: /lcewat
