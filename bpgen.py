@@ -143,8 +143,9 @@ def build_js_map(config, tagdata, emotes, sources):
         matches = matchdicts[file]
         base = emote.base_variant()
         root = matches[emote]
+        all_tags = matches[emote].all_tags(tagdata) | emote.all_tags(tagdata)
         is_nsfw = "+nsfw" in emote.all_tags(tagdata)
-        tags = [tag for tag in root.tags if tag not in tagdata["HiddenTags"]]
+        tags = [tag for tag in all_tags if tag not in tagdata["HiddenTags"]]
         data = [int(is_nsfw), file.file_id, 0, tags]
         if hasattr(base, "size"): # FIXME
             data[2] = max(base.size)
