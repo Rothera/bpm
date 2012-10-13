@@ -1095,19 +1095,17 @@ var bpm_search = {
         }.bind(this)), false);
 
         // Listen for keypresses and adjust search results. Delay 500ms after
-        // start of typing to make it more responsive (otherwise it typically
-        // starts searching after the first keystroke, which generates a lot
-        // of output for no reason).
-        var waiting = false;
+        // end of typing to make it more responsive.
+        var timeout = null;
         this.search.addEventListener("input", bpm_utils.catch_errors(function(event) {
-            if(!waiting) {
-                window.setTimeout(bpm_utils.catch_errors(function() {
-                    // Re-enable searching as early as we can, just in case
-                    waiting = false;
-                    this.update_search(prefs);
-                }.bind(this)), 500);
-                waiting = true;
+            if(timeout !== null) {
+                clearTimeout(timeout);
             }
+            timeout = setTimeout(bpm_utils.catch_errors(function() {
+                // Re-enable searching as early as we can, just in case
+                timeout = null;
+                this.update_search(prefs);
+            }.bind(this)), 500);
         }.bind(this)), false);
 
         // Listen for clicks
