@@ -341,18 +341,24 @@ var bpm_data = {
      * of properties, or null if the emote doesn't exist.
      */
     lookup_core_emote: function(name) {
+        // NRRSSSS+tags where N=nsfw, RR=subreddit, SSSS=size
         var info = emote_map[name];
         if(info === undefined) {
             return null;
         }
 
+        var is_nsfw = parseInt(info.slice(0, 1), 10);
+        var source_id = parseInt(info.slice(1, 3), 10);
+        var size = parseInt(info.slice(3, 7), 16); // Hexadecimal
+        // Strip empty string before first "+", and add back all the tags
+        var tags = info.slice(7).split("+").slice(1).map(function(tag) { return "+" + tag; });
         return {
             name: name,
-            is_nsfw: Boolean(info[0]),
-            source_id: info[1],
-            source_name: sr_id2name[info[1]],
-            max_size: info[2],
-            tags: info[3],
+            is_nsfw: Boolean(is_nsfw),
+            source_id: source_id,
+            source_name: sr_id2name[source_id],
+            max_size: size,
+            tags: tags,
             css_class: "bpmote-" + bpm_utils.sanitize(name.slice(1))
         };
     },

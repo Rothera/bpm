@@ -146,10 +146,11 @@ def build_js_map(config, tagdata, emotes, sources):
         all_tags = matches[emote].all_tags(tagdata) | emote.all_tags(tagdata)
         is_nsfw = "+nsfw" in emote.all_tags(tagdata)
         tags = [tag for tag in all_tags if tag not in tagdata["HiddenTags"]]
-        data = [int(is_nsfw), file.file_id, 0, tags]
-        if hasattr(base, "size"): # FIXME
-            data[2] = max(base.size)
-        emote_map[name] = data
+        size = max(base.size) if hasattr(base, "size") else 0
+        encoded_tags = "".join(tags) # separated by "+"
+        # NRRSSSS+tags where N=nsfw, RR=subreddit, SSSS=size
+        encoded_data = "%1i%02i%04x%s" % (is_nsfw, file.file_id, size, encoded_tags)
+        emote_map[name] = encoded_data
     return emote_map
 
 def build_sr_data(files):
