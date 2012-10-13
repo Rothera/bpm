@@ -62,10 +62,10 @@ print("Loading emotes...")
 config = bplib.load_yaml_file(open("data/rules.yaml"))
 files = {}
 loader = bplib.objects.SubredditLoader()
-files["mylittlepony"] = loader.load_subreddit("mylittlepony")
+subreddits = config["Subreddits"]
+subreddits.remove("mylittlepony")
+subreddits.insert(0, "mylittlepony")
 for subreddit in config["Subreddits"]:
-    if subreddit == "mylittlepony":
-        continue
     file = loader.load_subreddit(subreddit)
     if file is None:
         continue
@@ -82,7 +82,7 @@ def sync_tags(subreddit):
 
 def get_css(subreddit):
     if subreddit not in css_cache:
-        css_rules = bpgen.build_css(files[subreddit].emotes)
+        css_rules = bpgen.build_css(files[subreddit].emotes.values())
         stream = StringIO.StringIO()
         bpgen.dump_css(stream, css_rules)
         css_cache[subreddit] = stream.getvalue()
@@ -114,8 +114,9 @@ def tag(subreddit):
     subreddit = str(subreddit)
     # Used in template
     flask.g.sorted = sorted
+    flask.g.list = list
     flask.g.repr = repr
-    tags = {name: emote.tags for (name, emote) in files[subreddit].emotes.items()}
+    tags = {name: list(emote.tags) for (name, emote) in files[subreddit].emotes.items()}
     return flask.render_template("tag.html", subreddit=subreddit, file=files[subreddit], tags=tags)
 
 @app.route("/r/<subreddit>/write", methods=["POST"])
