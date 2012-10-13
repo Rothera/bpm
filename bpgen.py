@@ -177,11 +177,7 @@ def dump_css(file, rules):
         s = "%s{%s}\n" % (selector, ";".join(property_strings))
         file.write(s)
 
-def dump_js_map(file, js_map):
-    file.write(AutogenHeader)
-    _dump_js_obj(file, "emote_map", js_map)
-
-def dump_sr_data(file, sr_id2name, sr_name2id):
+def dump_js_data(file, js_map, sr_id2name, sr_name2id):
     file.write(AutogenHeader)
     _dump_js_obj(file, "sr_id2name", sr_id2name)
     _dump_js_obj(file, "sr_name2id", sr_name2id)
@@ -190,6 +186,7 @@ def dump_sr_data(file, sr_id2name, sr_name2id):
     file.write("    exports.sr_id2name = sr_id2name;\n")
     file.write("    exports.sr_name2id = sr_name2id;\n")
     file.write("}\n")
+    _dump_js_obj(file, "emote_map", js_map)
 
 def _dump_js_obj(file, var_name, obj):
     file.write("var %s = " % (var_name))
@@ -201,8 +198,7 @@ def _dump_js_obj(file, var_name, obj):
 
 def main():
     parser = argparse.ArgumentParser(description="Generate addon data files from emotes")
-    parser.add_argument("-j", "--js", help="Output emote map JS file", default="build/emote-map.js")
-    parser.add_argument("-s", "--srdata", help="Output subreddit data JS file", default="build/sr-data.js")
+    parser.add_argument("-j", "--js", help="Output JS data file", default="build/bpm-data.js")
     parser.add_argument("-c", "--css", help="Output CSS file", default="build/emote-classes.css")
     parser.add_argument("--no-compress", help="Disable CSS compression", action="store_true")
     args = parser.parse_args()
@@ -235,9 +231,7 @@ def main():
     with open(args.css, "w") as file:
         dump_css(file, css_rules)
     with open(args.js, "w") as file:
-        dump_js_map(file, js_map)
-    with open(args.srdata, "w") as file:
-        dump_sr_data(file, sr_id2name, sr_name2id)
+        dump_js_data(file, js_map, sr_id2name, sr_name2id)
 
 if __name__ == "__main__":
     main()

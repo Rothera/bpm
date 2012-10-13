@@ -8,8 +8,7 @@
 // @include https://*/*
 // @name BetterPonymotes
 // @namespace http://rainbow.mlas1.us/
-// @require emote-map.js?p=2&dver=59
-// @require sr-data.js?p=2&dver=59
+// @require bpm-data.js?p=2&dver=59
 // @require pref-setup.js?p=2&cver=34
 // @run-at document-start
 // @updateURL http://rainbow.mlas1.us/betterponymotes.user.js

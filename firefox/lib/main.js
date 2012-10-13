@@ -19,7 +19,7 @@ var tabs = require("tabs");
 var timers = require("timers");
 
 var bpm_backendsupport = require("pref-setup").bpm_backendsupport;
-var sr_data = require("sr-data");
+var bpm_data = require("bpm-data");
 
 var storage = simple_storage.storage;
 
@@ -49,8 +49,7 @@ function prefs_updated(prefs) {
             include: [prefs.enableGlobalEmotes ? "*" : "*.reddit.com"],
             contentScriptWhen: "start",
             contentScriptFile: [
-                self.data.url("emote-map.js"),
-                self.data.url("sr-data.js"),
+                self.data.url("bpm-data.js"),
                 self.data.url("betterponymotes.js")
                 ],
             onAttach: on_cs_attach
@@ -70,7 +69,7 @@ if(!storage.prefs) {
     }
 }
 
-var pref_manager = bpm_backendsupport.manage_prefs(sr_data.sr_name2id, {
+var pref_manager = bpm_backendsupport.manage_prefs(bpm_data.sr_name2id, {
     read_value: function(key) { return storage[key]; },
     write_value: function(key, data) { storage[key] = data; },
     read_json: function(key) { return storage[key]; },
@@ -139,8 +138,7 @@ var prefs_mod = page_mod.PageMod({
     include: [self.data.url("options.html")],
     contentScriptWhen: "start",
     contentScriptFile: [
-        self.data.url("emote-map.js"),
-        self.data.url("sr-data.js"),
+        self.data.url("bpm-data.js"),
         self.data.url("jquery-1.8.2.js"),
         self.data.url("options.js")
         ],
