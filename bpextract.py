@@ -35,7 +35,7 @@ def main():
     # Load CSS
     css_rules = list(bplib.css.parse_css_file(args.css))
     if extconfig.get("RespectIgnore", True):
-        bplib.extract.filter_ponyscript_ignores(css_rules, extconfig)
+        bplib.extract.filter_ponyscript_ignores(css_rules)
 
     # Extract raw emote data
     partial_emotes = bplib.extract.extract_partial_emotes(css_rules)
