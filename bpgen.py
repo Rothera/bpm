@@ -133,22 +133,22 @@ def build_js_map(config, tagdata, emotes, sources):
     emote_map = {}
     matchdicts = {}
     for (name, emote_set) in emotes.items():
-        parts = []
-        for (emote, file) in zip(emote_set, sources[name]):
-            assert name not in emote_map
-            if file not in matchdicts:
-                matchconfig = config["RootVariantEmotes"].get(file.name, {})
-                matchdicts[file] = file.match_variants(matchconfig)
-            matches = matchdicts[file]
-            base = emote.base_variant()
-            root = matches[emote]
-            is_nsfw = "+nsfw" in emote.all_tags(tagdata)
-            tags = [tag for tag in root.tags if tag not in tagdata["HiddenTags"]]
-            data = [int(is_nsfw), file.file_id, 0, tags]
-            if hasattr(base, "size"): # FIXME
-                data[2] = max(base.size)
-            parts.append(data)
-        emote_map[name] = parts
+        emote = emote_set[0]
+        file = sources[name][0]
+
+        assert name not in emote_map
+        if file not in matchdicts:
+            matchconfig = config["RootVariantEmotes"].get(file.name, {})
+            matchdicts[file] = file.match_variants(matchconfig)
+        matches = matchdicts[file]
+        base = emote.base_variant()
+        root = matches[emote]
+        is_nsfw = "+nsfw" in emote.all_tags(tagdata)
+        tags = [tag for tag in root.tags if tag not in tagdata["HiddenTags"]]
+        data = [int(is_nsfw), file.file_id, 0, tags]
+        if hasattr(base, "size"): # FIXME
+            data[2] = max(base.size)
+        emote_map[name] = data
     return emote_map
 
 def build_sr_data(files):
