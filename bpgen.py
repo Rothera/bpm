@@ -11,6 +11,7 @@
 ################################################################################
 
 import argparse
+import json
 import time
 
 import bplib
@@ -132,17 +133,21 @@ def build_css(emotes):
     return css_rules
 
 def build_tag_map(emotes, tagdata):
-    tag_id2name = {}
+    tag_id2name = []
     tag_name2id = {}
     next_id = 0
 
+    all_tags = set()
     for (name, emote_set) in emotes.items():
         for emote in emote_set:
-            for tag in emote.all_tags(tagdata):
-                if tag not in tag_name2id:
-                    tag_id2name[next_id] = tag
-                    tag_name2id[tag] = next_id
-                    next_id += 1
+            all_tags |= emote.all_tags(tagdata)
+
+    for tag in sorted(all_tags):
+        if tag not in tag_name2id:
+            tag_id2name.append(tag)
+            tag_name2id[tag] = next_id
+            next_id += 1
+            assert len(tag_id2name) == next_id
 
     for (name, aliases) in tagdata["TagAliases"].items():
         for alias in aliases:
@@ -179,12 +184,15 @@ def build_js_map(config, tagdata, emotes, sources, tag_name2id):
     return emote_map
 
 def build_sr_data(files):
-    sr_id2name = {}
+    sr_id2name = []
     sr_name2id = {}
 
     for (name, file) in files.items():
+        sr_id2name.extend((file.file_id - len(sr_id2name) + 1) * [None])
         sr_id2name[file.file_id] = name
         sr_name2id[name] = file.file_id
+
+    assert None not in sr_id2name
 
     return sr_id2name, sr_name2id
 
@@ -207,20 +215,19 @@ def dump_js_data(file, js_map, sr_id2name, sr_name2id, tag_id2name, tag_name2id)
     file.write(AutogenHeader)
     _dump_js_obj(file, "sr_id2name", sr_id2name)
     _dump_js_obj(file, "sr_name2id", sr_name2id)
-    _dump_js_obj(file, "tag_id2name", tag_id2name)
-    _dump_js_obj(file, "tag_name2id", tag_name2id)
     # exports is used in Firefox main.js, but doesn't exist elsewhere
     file.write("if(typeof(exports) !== 'undefined') {\n")
     file.write("    exports.sr_id2name = sr_id2name;\n")
     file.write("    exports.sr_name2id = sr_name2id;\n")
     file.write("}\n")
+    _dump_js_obj(file, "tag_id2name", tag_id2name)
+    _dump_js_obj(file, "tag_name2id", tag_name2id)
     _dump_js_obj(file, "emote_map", js_map)
 
 def _dump_js_obj(file, var_name, obj):
     file.write("var %s = " % (var_name))
-    strings = ["%r:%r" % i for i in sorted(obj.items())]
-    data = "{\n" + ",\n".join(strings) + "\n};\n"
-    file.write(data)
+    json.dump(obj, file, indent=0, separators=(",", ":"))
+    file.write(";\n")
 
 ### Main
 
