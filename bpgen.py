@@ -137,27 +137,44 @@ def build_tag_map(emotes, data_manager):
 
     return tag_id2name, tag_name2id
 
+FLAG_NSFW = 1
+FLAG_REDIRECT = 1 << 1
+
+def encode(data_manager, source, emote, tag_name2id):
+    base = emote.base_variant()
+    root = source.variant_matches[emote]
+    all_tags = root.all_tags(data_manager) | emote.all_tags(data_manager)
+    emitted_tags = [tag for tag in all_tags if tag not in data_manager.tag_config["HiddenTags"]]
+    tag_ids = sorted(tag_name2id[tag] for tag in emitted_tags)
+    assert all(id < 0xff for id in tag_ids) # One byte per
+    size = max(base.size) if hasattr(base, "size") else 0
+    is_nsfw = "+nsfw" in all_tags
+    assert ("+v" in emote.tags) == (emote.name != root.name)
+    is_redirect = emote.name != root.name
+
+    # FRRSSSSTT+[//base] where F=flags, RR=subreddit, SSSS=size, TT=tags
+    flags = 0
+    if is_nsfw:
+        flags |= FLAG_NSFW
+    if is_redirect:
+        flags |= FLAG_REDIRECT
+    encoded_tags = "".join("%02x" % id for id in tag_ids)
+    data = "%1x%02i%04x%s" % (flags, source.source_id, size, encoded_tags)
+    if is_redirect:
+        data += "/" + root.name
+
+    return data
+
 def build_js_map(data_manager, emotes, sources, tag_name2id):
     emote_map = {}
     for (name, emote_set) in emotes.items():
         emote = emote_set[0]
         source = sources[name][0]
-
         assert name not in emote_map
         if source.variant_matches is None:
             source.match_variants(data_manager)
-        base = emote.base_variant()
-        root = source.variant_matches[emote]
-        all_tags = root.all_tags(data_manager) | emote.all_tags(data_manager)
-        is_nsfw = "+nsfw" in all_tags
-        tags = [tag for tag in all_tags if tag not in data_manager.tag_config["HiddenTags"]]
-        tag_ids = sorted(tag_name2id[tag] for tag in tags)
-        assert all(id < 256 for id in tag_ids) # Only use one byte...
-        size = max(base.size) if hasattr(base, "size") else 0
-        encoded_tags = "".join("%02x" % id for id in tag_ids)
-        # NRRSSSS+tags where N=nsfw, RR=subreddit, SSSS=size
-        encoded_data = "%1i%02i%04x%s" % (is_nsfw, source.source_id, size, encoded_tags)
-        emote_map[name] = encoded_data
+        data = encode(data_manager, source, emote, tag_name2id)
+        emote_map[name] = data
     return emote_map
 
 def build_sr_data(data_manager):

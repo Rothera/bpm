@@ -322,6 +322,10 @@ var bpm_utils = {
 // Chrome is picky about bind().
 var bpm_log = bpm_utils.platform === "userscript" ? GM_log : console.log.bind(console);
 
+// Keep sync with bpgen.
+var _BPM_FLAG_NSFW = 1;
+var _BPM_FLAG_REDIRECT = 1 << 1;
+
 /*
  * Emote lookup utilities. These are rather helpful, since our data format is
  * optimized for space and memory, not easy of access.
@@ -341,20 +345,34 @@ var bpm_data = {
      * of properties, or null if the emote doesn't exist.
      */
     lookup_core_emote: function(name) {
-        // NRRSSSS+tags where N=nsfw, RR=subreddit, SSSS=size
-        var info = emote_map[name];
-        if(info === undefined) {
+        // Refer to bpgen.py:encode() for the details of this encoding
+        var data = emote_map[name];
+        if(data === undefined) {
             return null;
         }
 
-        var is_nsfw = parseInt(info.slice(0, 1), 10);
-        var source_id = parseInt(info.slice(1, 3), 10);
-        var size = parseInt(info.slice(3, 7), 16); // Hexadecimal
+        var flags = parseInt(data.slice(0, 1), 16); // Hexadecimal
+        var source_id = parseInt(data.slice(1, 3), 10);
+        var size = parseInt(data.slice(3, 7), 16); // Hexadecimal
+
+        var is_nsfw = (flags & _BPM_FLAG_NSFW);
+        var is_redirect = (flags & _BPM_FLAG_REDIRECT);
+
+        var tag_ids, base;
+        if(is_redirect) {
+            var stop = data.indexOf("/");
+            tag_ids = data.slice(7, stop);
+            base = data.slice(stop+1);
+        } else {
+            tag_ids = data.slice(7);
+            base = name;
+        }
+
         var tags = [];
-        var start = 7;
+        var start = 0;
         // One byte per tag, hexadecimal
         var str;
-        while((str = info.slice(start, start+2)) !== "") {
+        while((str = tag_ids.slice(start, start+2)) !== "") {
             tags.push(parseInt(str, 16));
             start += 2;
         }
@@ -365,7 +383,8 @@ var bpm_data = {
             source_name: sr_id2name[source_id],
             max_size: size,
             tags: tags,
-            css_class: "bpmote-" + bpm_utils.sanitize(name.slice(1))
+            css_class: "bpmote-" + bpm_utils.sanitize(name.slice(1)),
+            base: base
         };
     },
 
@@ -386,6 +405,7 @@ var bpm_data = {
             max_size: null,
             tags: [],
             css_class: "bpm-cmote-" + bpm_utils.sanitize(name.slice(1)),
+            base: null
         };
     }
 };
@@ -1294,18 +1314,12 @@ var bpm_search = {
         var results = [];
         no_match:
         for(var emote_name in emote_map) {
-            var emote_info = bpm_data.lookup_emote(emote_name);
+            var emote_info = bpm_data.lookup_core_emote(emote_name);
+            var lc_emote_name = emote_name.toLowerCase();
 
-            // Ignore hidden emotes
-            if(emote_info.tags.indexOf(tag_name2id["+hidden"]) > -1) {
-                continue no_match;
-            }
-
-            // Cache lowercased version
-            var lc_emote = emote_name.toLowerCase();
             // Match if ALL search terms match
             for(var t = 0; t < match_terms.length; t++) {
-                if(lc_emote.indexOf(match_terms[t]) < 0) {
+                if(lc_emote_name.indexOf(match_terms[t]) < 0) {
                     continue no_match; // outer loop, not inner
                 }
             }
@@ -1342,9 +1356,33 @@ var bpm_search = {
                 }
             }
 
+            // At this point we have a match, so follow back to its base
+            if(emote_name !== emote_info.base) {
+                // Hunt down the non-variant version
+                emote_info = bpm_data.lookup_core_emote(emote_info.base);
+                if(emote_info.name !== emote_info.base) {
+                    bpm_log("ERROR: Followed +v from " + emote_name + " to " + emote_info.name + "; no root emote found");
+                }
+                emote_name = emote_info.name;
+            }
+
+            // Ignore hidden emotes
+            if(emote_info.tags.indexOf(tag_name2id["+hidden"]) > -1) {
+                continue no_match;
+            }
+
             results.push(emote_info);
         }
-        results.sort();
+
+        results.sort(function(a, b) {
+            if(a.name < b.name) {
+                return -1;
+            } else if(a.name > b.name) {
+                return 1;
+            } else {
+                return 0;
+            }
+        });
 
         // We go through all of the results regardless of search limit (as that
         // doesn't take very long), but stop building HTML when we reach enough
@@ -1353,8 +1391,13 @@ var bpm_search = {
         // As a result, NSFW/disabled emotes don't count toward the result.
         var html = "";
         var shown = 0, hidden = 0;
+        var prev = null;
         for(var i = 0; i < results.length; i++) {
             var emote_info = results[i];
+            if(prev === emote_info.name) {
+                continue; // Duplicates can appear when following +v emotes
+            }
+            prev = emote_info.name;
 
             // if((blacklisted) && !whitelisted)
             if((!prefs.sr_array[emote_info.source_id] || (emote_info.is_nsfw && !prefs.prefs.enableNSFW) ||
