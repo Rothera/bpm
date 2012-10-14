@@ -62,8 +62,8 @@ def update_css(num, total, subreddit):
     # subreddits (it's not html), but there's nothing we can do about private
     # subreddits- and there's also nothing we can do to get around over18
     # restrictions on /about/stylesheet.
-    minified_url = "http://reddit.com/r/%s/stylesheet.css" % (subreddit)
-    source_url = "http://reddit.com/r/%s/about/stylesheet" % (subreddit)
+    minified_url = "http://reddit.com/r/%s/stylesheet.css?nocache=%s" % (subreddit, random.randrange(10000))
+    source_url = "http://reddit.com/r/%s/about/stylesheet?nocache=%s" % (subreddit, random.randrange(10000))
 
     try:
         old_minified_css = open("minified-css/%s.css" % (subreddit), "r").read()
@@ -160,25 +160,18 @@ def cmd_extractall(args):
         # TODO: Don't hardcode relative paths...
         subprocess.call(["./bpextract.py", "minified-css/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
 
-def cmd_diffcss(args):
-    parser = argparse.ArgumentParser(description="Run diff program on CSS cache", prog="diffcss")
+def cmd_diff(args):
+    parser = argparse.ArgumentParser(description="Run diff program on stylesheets, emotes, and tags", prog="diff")
     args = parser.parse_args(args)
 
-    p1 = subprocess.Popen(["git", "diff", "-U10", "minified-css", "source-css"], stdout=subprocess.PIPE)
-    p2 = subprocess.Popen(["kompare", "-"], stdin=p1.stdout)
-
-def cmd_diffemotes(args):
-    parser = argparse.ArgumentParser(description="Run diff program on emotes", prog="diffemotes")
-    args = parser.parse_args(args)
-
-    p1 = subprocess.Popen(["git", "diff", "-U10", "emotes"], stdout=subprocess.PIPE)
+    p1 = subprocess.Popen(["git", "diff", "-U10", "minified-css", "source-css", "emotes", "tags"], stdout=subprocess.PIPE)
     p2 = subprocess.Popen(["kompare", "-"], stdin=p1.stdout)
 
 def cmd_commit(args):
     parser = argparse.ArgumentParser(description="Commit CSS and emote cache", prog="commit")
     args = parser.parse_args(args)
 
-    subprocess.call(["git", "commit", "-v", "emotes", "source-css", "minified-css", "-m", time.strftime("Stylesheet/emote updates %Y-%m-%d")])
+    subprocess.call(["git", "commit", "-v", "emotes", "source-css", "minified-css", "tags", "-m", time.strftime("Stylesheet/emote/tag updates %Y-%m-%d")])
 
 Commands = {
     "help": cmd_help,
@@ -186,8 +179,7 @@ Commands = {
     "update": cmd_update,
     "extract": cmd_extract,
     "extractall": cmd_extractall,
-    "diffcss": cmd_diffcss,
-    "diffemotes": cmd_diffemotes,
+    "diff": cmd_diff,
     "commit": cmd_commit,
     }
 
