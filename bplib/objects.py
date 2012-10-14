@@ -17,169 +17,206 @@ __all__ = [
 
 import bplib
 
-class SubredditLoader:
+class DataManager:
     def __init__(self):
-        self.file_id = 0
+        self.config = bplib.load_yaml_file(open("data/rules.yaml"))
+        self.tag_config = bplib.load_yaml_file(open("data/tags.yaml"))
+        self.sources = {}
+        self.drops = {}
 
-    def load_subreddit(self, subreddit):
-        emotes_filename = "emotes/" + subreddit + ".yaml"
-        tag_filename = "tags/" + subreddit + ".yaml"
+        self.next_source_id = 0
+
+    def load_subreddit(self, sr_key):
+        emotes_filename = "emotes/" + sr_key + ".yaml"
+        tag_filename = "tags/" + sr_key + ".yaml"
+
         try:
             emote_data = bplib.load_yaml_file(open(emotes_filename))
         except IOError:
-            return None # Subreddit just doesn't exist
+            return None # Doesn't exist or has no emotes
+
         try:
             tag_data = bplib.load_yaml_file(open(tag_filename))
         except IOError:
-            tag_data = {}
-        return self.load_from_data("r/" + subreddit, emote_data, tag_data)
+            tag_data = {} # No tags is fine
 
-    def load_from_data(self, name, emote_data, tag_data):
-        sr = Subreddit.load_from_data(name, emote_data, tag_data)
-        sr.file_id = self.file_id
-        self.file_id += 1
+        source_name = "r/" + sr_key
+        sr = Source.load_from_data(self, source_name, emote_data, tag_data)
+        sr.source_id = self.next_source_id
+        self.next_source_id += 1
+        self.sources[source_name] = sr
         return sr
 
-class Subreddit:
-    def __init__(self, name, emotes, tag_data):
+    def load_all_sources(self):
+        for sr_key in self.config["Subreddits"]:
+            self.load_subreddit(sr_key)
+
+class Source:
+    def __init__(self, name, emotes):
         self.name = name
         self.emotes = emotes
-        self.tag_data = tag_data
+        self.variant_matches = None
 
-    def match_variants(self, matchconfig, raise_errors=True):
-        core_emotes = {}
-        variants = []
-        matches = {}
-        for (name, emote) in self.emotes.items():
-            base_variant = emote.base_variant()
+    @classmethod
+    def load_from_data(cls, data_manager, source_name, emote_data, tag_data):
+        sr = cls(source_name, {})
+        sr._tag_data = tag_data # Used in checktags
+        for (name, variants) in emote_data.items():
+            tags = set(tag_data.get(name, []))
+            if "+drop" in tags:
+                if name in data_manager.drops:
+                    print("Source.load_from_data(): ERROR: %s in %s is marked as +drop, but %s has already claimed the name" %
+                            (name, source_name, data_manager.drops[name].name))
+                data_manager.drops[name] = sr
+            sr.emotes[name] = Emote.load_from_data(name, variants, tags)
+        return sr
+
+    def dump_emote_data(self):
+        return {name: emote.dump_data() for (name, emote) in self.emotes.items()}
+
+    def dump_tag_data(self, data_manager):
+        return {emote.name: sorted(emote.tags) for emote in self.undropped_emotes(data_manager)}
+
+    def dropped_emotes(self, data_manager):
+        for emote in self.emotes.values():
+            owner = data_manager.drops.get(emote.name, None)
+            if owner is not None and owner is not self:
+                yield emote
+
+    def undropped_emotes(self, data_manager):
+        for emote in self.emotes.values():
+            owner = data_manager.drops.get(emote.name, None)
+            if owner is None or owner is self:
+                yield emote
+
+    def unignored_emotes(self, data_manager):
+        for emote in self.emotes.values():
+            if "+remove" in emote.all_tags(data_manager):
+                continue
+            owner = data_manager.drops.get(emote.name, None)
+            if owner is None or owner is self:
+                yield emote
+
+    def match_variants(self, data_manager):
+        core_emotes, variants = {}, []
+        matches, errors = {}, []
+
+        # Locate core emotes. Ignore all variants but the base one.
+        for emote in self.unignored_emotes(data_manager):
             is_core = "+v" not in emote.tags
             if is_core:
-                matches[emote] = emote # Always
+                # An emote always matches itself.
+                matches[emote] = emote
+            base_variant = emote.base_variant()
             if hasattr(base_variant, "info_set"):
+                # Uniquely identifying sprite data
                 info = base_variant.info_set()
                 if is_core:
+                    if info in core_emotes:
+                        # Only one core emote per sprite, please. Common
+                        # exception: hovermotes.
+                        if len(emote.variants) == len(core_emotes[info].variants):
+                            errors.append("Multiple non-variant emotes (prev %s, new %s)" % (core_emotes[info].name, emote.name))
                     core_emotes[info] = emote
                 else:
                     variants.append((emote, info))
             elif not is_core:
-                print("ERROR: In %s: Variant custom emote %s" % (self.name, name))
+                # Custom +v emotes are not permitted
+                errors.append("Variant custom emote %s" % (emote.name))
+                matches[emote] = emote
+
+        # Match everything up.
         for (emote, info) in variants:
             base_variant = emote.base_variant()
             base = None
+            # Easy match- another identical emote exists.
             if info in core_emotes:
                 base = core_emotes[info]
             elif emote.name[:2].lower() == "/r":
                 # Try non-reversed name?
-                test = self.emotes.get("/" + emote.name[2:])
-                if test is not None:
-                    test_base = test.base_variant()
-                    if hasattr(test_base, "info_set"):
-                        info = test_base.info_set()
+                unreversed_emote = self.emotes.get("/" + emote.name[2:])
+                if unreversed_emote is not None:
+                    unreversed_base = unreversed_emote.base_variant()
+                    if hasattr(unreversed_base, "info_set"):
+                        info = unreversed_base.info_set()
                         if info in core_emotes:
+                            # Perfect match
                             base = core_emotes[info]
-            # Can't find it.
-            if emote.name in matchconfig:
+            # Can't find it. Is there an explicit rule?
+            match_config = data_manager.config["RootVariantEmotes"].get(self.name, {})
+            if emote.name in match_config:
                 if base is None:
-                    base = self.emotes[matchconfig[emote.name]]
+                    base = self.emotes[match_config[emote.name]]
                 else:
                     # Would be nice to know
-                    print("WARNING: extraneous matchconfig for %s" % (emote.name))
+                    errors.append("Extraneous match config for %s" % (emote.name))
             elif base is None:
-                if raise_errors:
-                    raise ValueError("Cannot locate root emote for", emote.name)
-                else:
-                    print("ERROR: In %s: cannot locate root emote for %s" % (self.name, emote.name))
-            if base is not None:
-                matches[emote] = base
-        return matches
+                errors.append("Cannot locate root emote for %s" % (emote.name))
+            matches[emote] = base # Even if None
 
-    @classmethod
-    def load_from_data(cls, subreddit, emote_data, tag_data):
-        emotes = {}
-        for (name, variants) in emote_data.items():
-            emotes[name] = Emote.from_data(name, variants, set(tag_data.get(name, [])))
-        return cls(subreddit, emotes, tag_data)
-
-    def dump_emotes(self):
-        return {name: emote.dump() for (name, emote) in self.emotes.items()}
-
-    def dump_tags(self):
-        return {name: sorted(emote.tags) for (name, emote) in self.emotes.items()}
+        self.variant_matches = matches
+        return errors
 
     def __repr__(self):
-        return "Subreddit(%r, ...)" % (self.name)
+        return "<Source %s>" % (self.name)
 
 class Emote:
     def __init__(self, name, variants, tags):
         self.name = name
         self.variants = variants
         self.tags = tags
+        # Caches
         self._implied_tags = None
         self._all_tags = None
 
     @classmethod
-    def from_data(cls, name, emote_data, tags):
+    def load_from_data(cls, name, variant_data, tags):
         variants = {}
-        for (suffix, data) in emote_data.items():
+        for (suffix, data) in variant_data.items():
             type = data.pop("Type", "Normal")
             if type == "Normal":
-                emote = NormalEmote.from_data(name, suffix, data)
+                emote = NormalEmote.load_from_data(name, suffix, data)
             elif type == "Custom":
-                emote = CustomEmote.from_data(name, suffix, data)
+                emote = CustomEmote.load_from_data(name, suffix, data)
             else:
                 raise ValueError("Unknown emote type %r (under %r)" % (type, name))
             variants[suffix] = emote
         return cls(name, variants, tags)
 
-    def dump(self):
-        return {suffix: variant.dump() for (suffix, variant) in self.variants.items()}
+    def dump_data(self):
+        return {suffix: variant.dump_data() for (suffix, variant) in self.variants.items()}
 
     def base_variant(self):
         if None in self.variants:
             return self.variants[None]
         elif len(self.variants) == 1:
             key = next(iter(self.variants.keys()))
-            # Should probably suffice
-            if key not in (":after", ":before"):
-                print("WARNING: Unknown primary base suffix %r" % (key))
+            ## Should probably suffice
+            #if key not in (":after", ":before"):
+            #    print("WARNING: Unknown primary base suffix %r" % (key))
             return self.variants[key]
         raise ValueError("Cannot locate base emote for %r" % (name))
 
-    def implied_tags(self, tagdata):
+    def implied_tags(self, data_manager):
         if self._implied_tags is None:
             self._implied_tags = set()
             for tag in self.tags:
-                self._implied_tags |= set(tagdata["TagImplications"].get(tag, []))
-            self._all_tags = self.tags | self._implied_tags
+                self._implied_tags |= set(data_manager.tag_config["TagImplications"].get(tag, []))
         return self._implied_tags
 
-    def all_tags(self, tagdata):
+    def all_tags(self, data_manager):
         if self._all_tags is None:
-            self.implied_tags(tagdata) # Just generate them implicitly
+            self._all_tags = self.implied_tags(data_manager) | self.tags
         return self._all_tags
 
-    def __contains__(self, suffix):
-        return suffix in self.variants
-    def __getitem__(self, suffix):
-        return self.variants[suffix]
-    def __setitem__(self, suffix, variant):
-        self.variants[suffix] = variant
+    def __repr__(self):
+        return "<Emote %s>" % (self.name)
 
 class _EmoteBase:
     def __init__(self, name, suffix, css):
         self.name = name
         self.suffix = suffix
         self.css = css
-
-    @property
-    def name_pair(self):
-        return (self.name, self.suffix)
-
-    def __repr__(self):
-        if self.suffix:
-            return "Emote(%r, %r)" % (self.name, self.suffix)
-        else:
-            return "Emote(%r)" % (self.name)
 
 class EmoteCSSBlock(_EmoteBase):
     pass
@@ -194,11 +231,11 @@ class _Emote(_EmoteBase):
 
 class CustomEmote(_Emote):
     @classmethod
-    def from_data(cls, name, suffix, data):
+    def load_from_data(cls, name, suffix, data):
         css = data.pop("CSS", {})
         return cls(name, suffix, css)
 
-    def dump(self):
+    def dump_data(self):
         data = {
             "CSS": self.css,
             "Type": "Custom"
@@ -208,6 +245,12 @@ class CustomEmote(_Emote):
 
     def to_css(self):
         return self.css.copy()
+
+    def __repr__(self):
+        if self.suffix:
+            return "<CustomEmote %s %s>" % (self.name, self.suffix)
+        else:
+            return "<CustomEmote %s>" % (self.name)
 
 class NormalEmote(_Emote):
     def __init__(self, name, suffix, css, image_url, size, offset):
@@ -220,14 +263,14 @@ class NormalEmote(_Emote):
         return (self.image_url, self.size[0], self.size[1], self.offset[0], self.offset[1])
 
     @classmethod
-    def from_data(cls, name, suffix, data):
+    def load_from_data(cls, name, suffix, data):
         css = data.pop("CSS", {})
         image_url = data.pop("Image")
         size = data.pop("Size")
         offset = data.pop("Offset", [0, 0])
         return cls(name, suffix, css, image_url, size, offset)
 
-    def dump(self):
+    def dump_data(self):
         data = {
             "Image": self.image_url,
             "Size": list(self.size)
@@ -252,3 +295,9 @@ class NormalEmote(_Emote):
             css["background-position"] = "%spx %spx" % (self.offset[0], self.offset[1])
         css.update(self.css)
         return css
+
+    def __repr__(self):
+        if self.suffix:
+            return "<NormalEmote %s %s>" % (self.name, self.suffix)
+        else:
+            return "<NormalEmote %s>" % (self.name)

@@ -5,27 +5,20 @@
   <title>BetterPonymotes Emote Tagger</title>
   <link href="{{url_for("static", filename="css/bootstrap.css")}}" rel="stylesheet">
   <link href="{{url_for("static", filename="css/tagapp.css")}}" rel="stylesheet">
-  <link href="{{url_for("css", subreddit=subreddit)}}" rel="stylesheet">
+  <link href="{{url_for("css", source_name=urlquote(source.name))}}" rel="stylesheet">
   <script src="{{url_for("static", filename="js/jquery-1.8.2.js")}}" type="text/javascript"></script>
   <script src="{{url_for("static", filename="js/tagger.js")}}" type="text/javascript"></script>
   <script>
     var tags = {{tags|safe}};
-    var emotes = [
-    {%- for (name, emote) in g.sorted(file.emotes.items()) -%}
-      {{g.repr(name)|safe}},
-    {%- endfor %}
-      undefined
-    ];
-    emotes.length = emotes.length - 1;
   </script>
 </head>
 <body>
   <div class="container">
     <div class="row">
       <div class="span8 offset2">
-        <h2>Tagging r/{{subreddit}}</h2>
+        <h2>Tagging {{source.name}}</h2>
 
-        <form action="{{url_for("write", subreddit=subreddit)}}" method="post" id="save">
+        <form action="{{url_for("write", source_name=urlquote(source.name))}}" method="post" id="save">
           <legend>Save</legend>
           <label>Magic button: <button class="btn" type="submit">Save</button></label>
           <input type="hidden" name="tags" id="tags">
@@ -39,14 +32,14 @@
           <input type="hidden">
         </form>
 
-        {% for (szinfo, emotes) in g.sorted(file.se.items(), reverse=True) -%}
+        {% for (szinfo, emotes) in given_emotes -%}
           <!-- {{szinfo}} -->
           {%- for emote in emotes -%}
         <div class="row emote">
           <span class="image {{emote.base_variant().selector()[1:]}}"></span>
           <div class="emote-list-container">
             <code class="name">{{emote.name}}</code>
-            {% for tag in g.sorted(emote.tags) -%}
+            {% for tag in sorted(emote.tags) -%}
             <span class="listed-emote {{"v" if tag == "+v" else ""}}">{{tag}} <a href="#" class="x" tagindex="0">x</a></span>
             {% endfor -%}
             <input class="emote-list-input" tabindex="1">

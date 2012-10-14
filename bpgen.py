@@ -42,79 +42,55 @@ def overrides(sorting_rules, conflict_rules, base, new, name):
     # No solution
     return None
 
-def resolve_emotes(files, config, tagdata):
-    sorting_rules = config.pop("Sorting")
-    conflict_rules = config.pop("Conflicts")
+def resolve_emotes(data_manager):
+    sorting_rules = data_manager.config["Sorting"]
+    conflict_rules = data_manager.config["Conflicts"]
 
     # Converts a list of files into one big emote map
     emotes = {}
     sources = {}
     conflicts = {}
-    drops = {}
 
     # Process directives
-    for rule in config["Generation"]:
+    for rule in data_manager.config["Generation"]:
         cmd, args = rule[0], rule[1:]
         if cmd == "AddCSS":
-            source, name, variant, css = args
-            files[source].emotes[name][variant].css.update(css)
+            source_name, name, variant, css = args
+            data_manager.sources[source_name].emotes[name].variants[variant].css.update(css)
         elif cmd == "MergeEmotes":
-            target, merge, merge_tags = args
+            target_name, merge, merge_tags = args
             # Simple way to load a dict like this
-            merge_sr = bplib.objects.Subreddit.load_from_data(target, merge, merge_tags)
-            files[target].emotes.update(merge_sr.emotes)
-            files[target].tag_data.update(merge_sr.tag_data)
+            source = bplib.objects.Source.load_from_data(data_manager, target_name, merge, merge_tags)
+            data_manager.sources[target_name].emotes.update(source.emotes)
         else:
             print("ERROR: Unknown directive: %r" % (rule))
 
     # Sort all emotes by prioritization
-    for file in files.values():
-        for (name, emote) in list(file.emotes.items()):
-            all_tags = emote.all_tags(tagdata)
-            if "+remove" in all_tags:
-                # Removed emote: ignore completely
-                del file.emotes[name]
-                continue
-            elif "+drop" in all_tags:
-                # Unique emote: win unconditionally
-                assert name not in drops
-                drops[name] = file.name
-                # Remove previous copies
-                for source in sources.get(name, []):
-                    del source.emotes[name]
-                emotes[name] = [emote]
-                sources[name] = [file]
-                # Any prior conflict has been resolved
-                if name in conflicts:
-                    del conflicts[name]
-                continue
+    for source in data_manager.sources.values():
+        for emote in source.unignored_emotes(data_manager):
+            all_tags = emote.all_tags(data_manager)
 
-            if name in emotes:
-                # Ignore dropped ones
-                if "+drop" in emotes[name][0].all_tags(tagdata):
-                    del file.emotes[name]
-                    continue
-                else:
-                    # Conflict resolution: who wins?
-                    result = overrides(sorting_rules, conflict_rules, sources[name][0].name, file.name, name)
-                    if result is True:
-                        # This one wins. Put it first
-                        if name in conflicts:
-                            del conflicts[name]
-                        emotes[name].insert(0, emote)
-                        sources[name].insert(0, file)
-                    elif result is False:
-                        # Lost. Move to end (or anywhere, really)
-                        emotes[name].append(emote)
-                        sources[name].append(file)
-                    elif result is None:
-                        # ?!? previous file wins I guess. Move to end
-                        conflicts[name] = (file, sources[name][0])
-                        emotes[name].append(emote)
-                        sources[name].append(file)
+            if emote.name in emotes:
+                # Conflict resolution: who wins?
+                result = overrides(sorting_rules, conflict_rules, sources[emote.name][0].name, source.name, emote.name)
+                if result is True:
+                    # This one wins. Put it first
+                    if emote.name in conflicts:
+                        del conflicts[emote.name]
+                    emotes[emote.name].insert(0, emote)
+                    sources[emote.name].insert(0, source)
+                elif result is False:
+                    # Lost. Move to end (or anywhere, really)
+                    emotes[emote.name].append(emote)
+                    sources[emote.name].append(source)
+                elif result is None:
+                    # ?!? previous source wins I guess. Move to end
+                    conflicts[emote.name] = (source, sources[emote.name][0])
+                    emotes[emote.name].append(emote)
+                    sources[emote.name].append(source)
             else:
-                emotes[name] = [emote]
-                sources[name] = [file]
+                emotes[emote.name] = [emote]
+                sources[emote.name] = [source]
 
     for (name, (old, new)) in conflicts.items():
         print("ERROR: CONFLICT between %s and %s over %s" % (old.name, new.name, name))
@@ -135,7 +111,7 @@ def build_css(emotes):
 
     return css_rules
 
-def build_tag_map(emotes, tagdata):
+def build_tag_map(emotes, data_manager):
     tag_id2name = []
     tag_name2id = {}
     next_id = 0
@@ -143,7 +119,7 @@ def build_tag_map(emotes, tagdata):
     all_tags = set()
     for (name, emote_set) in emotes.items():
         for emote in emote_set:
-            all_tags |= emote.all_tags(tagdata)
+            all_tags |= emote.all_tags(data_manager)
 
     for tag in sorted(all_tags):
         if tag not in tag_name2id:
@@ -152,7 +128,7 @@ def build_tag_map(emotes, tagdata):
             next_id += 1
             assert len(tag_id2name) == next_id
 
-    for (name, aliases) in tagdata["TagAliases"].items():
+    for (name, aliases) in data_manager.tag_config["TagAliases"].items():
         for alias in aliases:
             if alias in tag_name2id:
                 # Don't ever overwrite a tag
@@ -161,39 +137,37 @@ def build_tag_map(emotes, tagdata):
 
     return tag_id2name, tag_name2id
 
-def build_js_map(config, tagdata, emotes, sources, tag_name2id):
+def build_js_map(data_manager, emotes, sources, tag_name2id):
     emote_map = {}
-    matchdicts = {}
     for (name, emote_set) in emotes.items():
         emote = emote_set[0]
-        file = sources[name][0]
+        source = sources[name][0]
 
         assert name not in emote_map
-        if file not in matchdicts:
-            matchconfig = config["RootVariantEmotes"].get(file.name, {})
-            matchdicts[file] = file.match_variants(matchconfig)
+        if source.variant_matches is None:
+            source.match_variants(data_manager)
         base = emote.base_variant()
-        root = matchdicts[file][emote]
-        all_tags = root.all_tags(tagdata) | emote.all_tags(tagdata)
+        root = source.variant_matches[emote]
+        all_tags = root.all_tags(data_manager) | emote.all_tags(data_manager)
         is_nsfw = "+nsfw" in all_tags
-        tags = [tag for tag in all_tags if tag not in tagdata["HiddenTags"]]
-        tag_ids = [tag_name2id[tag] for tag in tags]
+        tags = [tag for tag in all_tags if tag not in data_manager.tag_config["HiddenTags"]]
+        tag_ids = sorted(tag_name2id[tag] for tag in tags)
         assert all(id < 256 for id in tag_ids) # Only use one byte...
         size = max(base.size) if hasattr(base, "size") else 0
         encoded_tags = "".join("%02x" % id for id in tag_ids)
         # NRRSSSS+tags where N=nsfw, RR=subreddit, SSSS=size
-        encoded_data = "%1i%02i%04x%s" % (is_nsfw, file.file_id, size, encoded_tags)
+        encoded_data = "%1i%02i%04x%s" % (is_nsfw, source.source_id, size, encoded_tags)
         emote_map[name] = encoded_data
     return emote_map
 
-def build_sr_data(files):
+def build_sr_data(data_manager):
     sr_id2name = []
     sr_name2id = {}
 
-    for (name, file) in files.items():
-        sr_id2name.extend((file.file_id - len(sr_id2name) + 1) * [None])
-        sr_id2name[file.file_id] = name
-        sr_name2id[name] = file.file_id
+    for (name, source) in data_manager.sources.items():
+        sr_id2name.extend((source.source_id - len(sr_id2name) + 1) * [None])
+        sr_id2name[source.source_id] = name
+        sr_name2id[name] = source.source_id
 
     assert None not in sr_id2name
 
@@ -243,26 +217,17 @@ def main():
 
     files = {}
 
-    with open("data/rules.yaml") as file:
-        config = bplib.load_yaml_file(file)
-    with open("data/tags.yaml") as file:
-        tagdata = bplib.load_yaml_file(file)
-
     print("Loading emotes")
-    loader = bplib.objects.SubredditLoader()
-    for subreddit in config["Subreddits"]:
-        file = loader.load_subreddit(subreddit)
-        if file is None:
-            continue
-        files[file.name] = file
+    data_manager = bplib.objects.DataManager()
+    data_manager.load_all_sources()
 
     print("Processing")
-    emotes, sources = resolve_emotes(files, config, tagdata)
+    emotes, sources = resolve_emotes(data_manager)
 
     css_rules = build_css([emote_set[0] for emote_set in emotes.values()])
-    tag_id2name, tag_name2id = build_tag_map(emotes, tagdata)
-    js_map = build_js_map(config, tagdata, emotes, sources, tag_name2id)
-    sr_id2name, sr_name2id = build_sr_data(files)
+    tag_id2name, tag_name2id = build_tag_map(emotes, data_manager)
+    js_map = build_js_map(data_manager, emotes, sources, tag_name2id)
+    sr_id2name, sr_name2id = build_sr_data(data_manager)
     if not args.no_compress:
         bplib.condense.condense_css(css_rules)
 

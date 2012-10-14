@@ -72,8 +72,8 @@
         <h2>Subreddits</h2>
 
         <ul>
-        {% for sr in subreddits %}
-        <p><a href="{{url_for("tag", subreddit=sr)}}">r/{{sr}}</a>
+        {% for source_name in sources %}
+        <p><a href="{{url_for("tag", source_name=urlquote(source_name))}}">{{source_name}}</a>
         {% endfor %}
         </ul>
       </div>

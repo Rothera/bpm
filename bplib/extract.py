@@ -115,12 +115,12 @@ def combine_partial_emotes(partial_emotes):
         if partial.name not in emotes:
             # Newly seen emote
             emotes[partial.name] = bplib.objects.Emote(partial.name, {partial.suffix: partial}, {})
-        elif partial.suffix not in emotes[partial.name]:
+        elif partial.suffix not in emotes[partial.name].variants:
             # New suffix for an existing emote
-            emotes[partial.name][partial.suffix] = partial
+            emotes[partial.name].variants[partial.suffix] = partial
         else:
             # Existing emote. Check for property overwrites
-            base = emotes[partial.name][partial.suffix]
+            base = emotes[partial.name].variants[partial.suffix]
             for (prop, value) in partial.css.items():
                 if prop in base.css and bplib.css.prop(base.css[prop]) != bplib.css.prop(value):
                     print("WARNING: emote %r redefined property %r from base (from %r to %r)" % (
@@ -154,10 +154,10 @@ def classify_emotes(emotes):
                 # Probably an emote. We could check for expected values of display/
                 # clear/float, but they're broken in a lot of places, and not worth
                 # the resulting warning spam.
-                emote[suffix] = _convert_emote(name, suffix, variant)
+                emote.variants[suffix] = _convert_emote(name, suffix, variant)
             else:
                 # Replace one class with another, essentially
-                emote[suffix] = bplib.objects.CustomEmote(name, suffix, variant.css)
+                emote.variants[suffix] = bplib.objects.CustomEmote(name, suffix, variant.css)
 
 def _convert_emote(name, suffix, raw_emote):
     css = raw_emote.css.copy()

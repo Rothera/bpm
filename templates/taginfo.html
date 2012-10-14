@@ -5,8 +5,8 @@
   <title>BetterPonymotes Emote Tagger</title>
   <link href="{{url_for("static", filename="css/bootstrap.css")}}" rel="stylesheet">
   <link href="{{url_for("static", filename="css/tagapp.css")}}" rel="stylesheet">
-  {%- for subreddit in data %}
-  <link href="{{url_for("css", subreddit=subreddit)}}" rel="stylesheet">
+  {%- for (source, emotes) in data %}
+  <link href="{{url_for("css", source_name=urlquote(source.name))}}" rel="stylesheet">
   {% endfor -%}
 </head>
 <body>
@@ -17,7 +17,7 @@
 
         <form action="{{url_for("rename_tag", tag=tag)}}" method="post" id="save" class="form-inline">
           <label>Rename this tag:
-            <input type="text" name="to"></label>
+            <input type="text" name="to">
             <button class="btn" type="submit">Rename</button>
           </label>
         </form>
@@ -28,13 +28,13 @@
           </label>
         </form>
 
-        {% for (subreddit, emotes) in data.items() %}
-        <a href="{{url_for("tag", subreddit=subreddit)}}"><h4>r/{{subreddit}}</h4></a>
+        {% for (source, emotes) in data %}
+        <a href="{{url_for("tag", source_name=urlquote(source.name))}}"><h4>{{source.name}}</h4></a>
           {% for emote in emotes %}
         <div class="row emote">
           <span class="image {{emote.base_variant().selector()[1:]}}"></span>
           <code class="name">{{emote.name}}</code>
-            {% for tag in g.sorted(emote.tags) -%}
+            {% for tag in sorted(emote.tags) -%}
           <span class="listed-emote">{{tag}}</span>
             {% endfor -%}
         </div>

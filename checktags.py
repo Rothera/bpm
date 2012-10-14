@@ -19,44 +19,22 @@ import yaml
 import bplib
 import bplib.objects
 
-config = bplib.load_yaml_file(open("data/rules.yaml"))
-tagdata = bplib.load_yaml_file(open("data/tags.yaml"))
-
-files = {}
-loader = bplib.objects.SubredditLoader()
-for subreddit in config["Subreddits"]:
-    file = loader.load_subreddit(subreddit)
-    if file is None:
-        continue
-    files[subreddit] = file
+data_manager = bplib.objects.DataManager()
+data_manager.load_all_sources()
 
 drops = {}
 dirty = []
-for (subreddit, file) in files.items():
+for source in data_manager.sources.values():
     # Find nonexistent emotes (before we start dropping things...)
-    missing = set(file.tag_data) - set(file.emotes)
+    missing = set(source._tag_data) - set(source.emotes)
     if missing:
-        print("ERROR: In %s: The following emotes have tags, but do not exist: %s" % (subreddit, " ".join(missing)))
-        dirty.append(subreddit)
+        print("ERROR: In %s: The following emotes have tags, but do not exist: %s" % (source.name, " ".join(missing)))
+        dirty.append(source)
 
-    for (name, emote) in list(file.emotes.items()):
-        # Handle +drop and +remove
-        if "+drop" in emote.all_tags(tagdata):
-            assert name not in drops
-            drops[name] = subreddit
-        elif "+remove" in emote.all_tags(tagdata):
-            del file.emotes[name] # Remember never to save this file...
-
-# Remove all copies of +drop emotes
-for (subreddit, file) in files.items():
-    for (name, src_subreddit) in drops.items():
-        if name not in file.emotes or subreddit == src_subreddit:
-            continue
-
-        if file.emotes[name].tags:
-            print("WARNING: In %s: %s is tagged, but marked as +drop in %s" % (subreddit, name, src_subreddit))
-
-        del file.emotes[name] # Same
+for source in data_manager.sources.values():
+    for emote in source.dropped_emotes(data_manager):
+        if emote.tags:
+            print("WARNING: In %s: %s is tagged, but marked as +drop in %s" % (source.name, emote.name, data_manager.drops[emote.name].name))
 
 def info_for(emote):
     if hasattr(emote, "info_set"):
@@ -64,43 +42,44 @@ def info_for(emote):
     return None
 
 variant_log = open("checktags-variants.log", "w")
-for (subreddit, file) in files.items():
-    print("r/%s:" % (subreddit), file=variant_log)
-    core_emotes = {}
-    variants = []
+for source in data_manager.sources.values():
+    print("%s:" % (source.name), file=variant_log)
 
-    for (name, emote) in list(file.emotes.items()):
+    for emote in source.unignored_emotes(data_manager):
         # Make sure it's tagged at all
         if not emote.tags:
-            print("ERROR: In %s: %s has no tags" % (subreddit, name))
+            print("ERROR: In %s: %s has no tags" % (source.name, emote.name))
             continue # No sense continuing to complain
 
         # Check that exclusive tags aren't being used with any other tags
         # (except where permitted)
-        for (ex, allowed) in tagdata["ExclusiveTags"].items():
+        for (ex, allowed) in data_manager.tag_config["ExclusiveTags"].items():
             if ex in emote.tags:
                 remaining = emote.tags - {ex} - set(allowed)
                 if remaining:
-                    print("WARNING: In %s: %s has the exclusive tag %s, but additionally: %s" % (subreddit, name, ex, " ".join(remaining)))
+                    print("WARNING: In %s: %s has the exclusive tag %s, but additionally: %s" % (source.name, emote.name, ex, " ".join(remaining)))
                     break
 
         # Check that implied tags aren't being given
-        redundant_tags = emote.tags & emote.implied_tags(tagdata)
+        redundant_tags = emote.tags & emote.implied_tags(data_manager)
         if redundant_tags:
-            print("WARNING: In %s: %s has redundant tags %s" % (subreddit, name, " ".join(redundant_tags)))
+            print("WARNING: In %s: %s has redundant tags %s" % (source.name, emote.name, " ".join(redundant_tags)))
 
         # Check that at least one root tag is specified
-        roots = {tag for tag in emote.all_tags(tagdata) if tag in tagdata["RootTags"]}
+        roots = {tag for tag in emote.all_tags(data_manager) if tag in data_manager.tag_config["RootTags"]}
         if not roots:
-            print("WARNING: In %s: %s has no root tags (set: %s)" % (subreddit, name, " ".join(emote.tags)))
+            print("WARNING: In %s: %s has no root tags (set: %s)" % (source.name, emote.name, " ".join(emote.tags)))
 
-    matchconfig = config["RootVariantEmotes"].get(file.name, {})
-    for (emote, base) in file.match_variants(matchconfig, False).items():
-        print("  %s: %s" % (emote.name, base.name), file=variant_log)
+    for error in source.match_variants(data_manager):
+        print("ERROR: In %s: %s" % (source.name, error))
+
+    for (emote, base) in sorted(source.variant_matches.items(), key=lambda e: e[0].name):
+        if emote is not base:
+            print("  %s <- %s" % (base.name, emote.name), file=variant_log)
 variant_log.close()
 
-for subreddit in dirty:
-    print("NOTICE: Rewriting %s to eliminate loose tags" % (files[subreddit].name))
-    path = "tags/%s.yaml" % (subreddit)
+for source in dirty:
+    print("NOTICE: Rewriting %s to eliminate loose tags" % (source.name))
+    path = "tags/%s.yaml" % (source.name.split("/")[-1])
     file = open(path, "w")
-    yaml.dump(files[subreddit].dump_tags(), file)
+    yaml.dump(source.dump_tag_data(), file)

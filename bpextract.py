@@ -26,29 +26,22 @@ def main():
     parser.add_argument("emotes", help="Output emotes file", type=argparse.FileType(mode="w"))
     args = parser.parse_args()
 
-    name = os.path.splitext(os.path.basename(args.css.name))[0]
+    sr_key = os.path.splitext(os.path.basename(args.css.name))[0]
 
-    with open("data/rules.yaml") as file:
-        config = bplib.load_yaml_file(file)
-    extconfig = config["Extraction"].get(name, {})
+    data_manager = bplib.objects.DataManager()
+    ext_config = data_manager.config["Extraction"].get(sr_key, {})
 
-    # Load CSS
     css_rules = list(bplib.css.parse_css_file(args.css))
-    if extconfig.get("RespectIgnore", True):
+    if ext_config.get("RespectIgnore", True):
         bplib.extract.filter_ponyscript_ignores(css_rules)
-
-    # Extract raw emote data
     partial_emotes = bplib.extract.extract_partial_emotes(css_rules)
     emotes = bplib.extract.combine_partial_emotes(partial_emotes)
     bplib.extract.check_variants(emotes)
-
-    # Process emotes
     bplib.extract.classify_emotes(emotes)
 
-    # Generate output file
-    file = bplib.objects.Subreddit(name, emotes, {})
+    source = bplib.objects.Source("r/" + sr_key, emotes)
 
-    yaml.dump(file.dump_emotes(), args.emotes)
+    yaml.dump(source.dump_emote_data(), args.emotes)
 
 if __name__ == "__main__":
     main()
