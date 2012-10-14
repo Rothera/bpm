@@ -164,11 +164,10 @@ def build_js_map(config, tagdata, emotes, sources, tag_name2id):
         if file not in matchdicts:
             matchconfig = config["RootVariantEmotes"].get(file.name, {})
             matchdicts[file] = file.match_variants(matchconfig)
-        matches = matchdicts[file]
         base = emote.base_variant()
-        root = matches[emote]
-        all_tags = matches[emote].all_tags(tagdata) | emote.all_tags(tagdata)
-        is_nsfw = "+nsfw" in emote.all_tags(tagdata)
+        root = matchdicts[file][emote]
+        all_tags = root.all_tags(tagdata) | emote.all_tags(tagdata)
+        is_nsfw = "+nsfw" in all_tags
         tags = [tag for tag in all_tags if tag not in tagdata["HiddenTags"]]
         tag_ids = [tag_name2id[tag] for tag in tags]
         assert all(id < 256 for id in tag_ids) # Only use one byte...
