@@ -79,6 +79,9 @@ def resolve_emotes(files, config, tagdata):
                 # Unique emote: win unconditionally
                 assert name not in drops
                 drops[name] = file.name
+                # Remove previous copies
+                for source in sources.get(name, []):
+                    del source.emotes[name]
                 emotes[name] = [emote]
                 sources[name] = [file]
                 # Any prior conflict has been resolved
