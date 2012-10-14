@@ -224,18 +224,19 @@ class NormalEmote(_Emote):
         css = data.pop("CSS", {})
         image_url = data.pop("Image")
         size = data.pop("Size")
-        offset = data.pop("Offset")
+        offset = data.pop("Offset", [0, 0])
         return cls(name, suffix, css, image_url, size, offset)
 
     def dump(self):
         data = {
             "Image": self.image_url,
-            "Size": list(self.size),
-            "Offset": list(self.offset)
+            "Size": list(self.size)
             }
 
         if self.css:
             data["CSS"] = self.css
+        if list(self.offset) != [0, 0]:
+            data["Offset"] = list(self.offset)
 
         return data
 
