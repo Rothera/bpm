@@ -700,7 +700,7 @@ a:link, a:visited, .menuarea .dropdown.lightdrop .selected, .flat-list .selected
 {
 	background-color:#EEE !important;
         background-image:linear-gradient(#FFF,#EEE) !important;
-       background-image:-webkit-linear-gradient(#FFF,#EEE) !important;
+        background-image:-webkit-linear-gradient(#FFF,#EEE) !important;
         background-image:-moz-linear-gradient(#FFF,#EEE) !important;
         background-image:-o-linear-gradient(#FFF,#EEE) !important;
 	border:1px solid #CCC !important;
@@ -709,6 +709,10 @@ a:link, a:visited, .menuarea .dropdown.lightdrop .selected, .flat-list .selected
 	padding:10px;
 }
 
+.res-nightmode .linkinfo, .res-nightmode #searchexpando.infobar {
+background-image:none !important;
+box-shadow:0 1px 2px #222 !important
+}
 .titlebox form.leavecontributor-button
 {
 	background-position:0 -827px !important;
@@ -920,6 +924,12 @@ shinebar {
 
 /* START NIGHTMODE FIXES */
 
+.res-nightmode .titlebox .usertext-body .md ol a {
+    border: medium none !important;
+    color: #eeeeee !important;
+}
+
+
 .res.res-nightmode .keyHighlight, .res.res-nightmode .keyHighlight .usertext-body, .res.res-nightmode .keyHighlight .usertext-body .md, .res.res-nightmode .keyHighlight .usertext-body .md p, .res.res-nightmode .keyHighlight .noncollapsed, .res.res-nightmode .keyHighlight .noncollapsed .md, .res.res-nightmode .keyHighlight .noncollapsed .md p {
     background-color:#222 !important;
     }
@@ -993,6 +1003,9 @@ padding-left: inherit !important;
 
 }
 
+.res-nightmode .flair {
+border: 1px solid #555!important
+}
 
 .res-nightmode .sidecontentbox .content
 {
@@ -1632,42 +1645,7 @@ body.res-nightmode:first-of-type .flair { background-color: transparent!importan
 
 /*ADAGIO'S DOMAIN
 
-  NO PHEI'S ALLOWED
-
-                                       
-88888888ba  88                     88  
-88      "8b 88                     ""  
-88      ,8P 88                         
-88aaaaaa8P' 88,dPPYba,   ,adPPYba, 88  
-88""""""'   88P'    "8a a8P_____88 88  
-88          88       88 8PP""""""" 88  
-88          88       88 "8b,   ,aa 88  
-88          88       88  `"Ybbd8"' 88  
-                                       
-                                       
-                                         
-                                         
-                                         
-                                         
-8b      db      d8 ,adPPYYba, ,adPPYba,  
-`8b    d88b    d8' ""     `Y8 I8[    ""  
- `8b  d8'`8b  d8'  ,adPPPPP88  `"Y8ba,   
-  `8bd8'  `8bd8'   88,    ,88 aa    ]8I  
-    YP      YP     `"8bbdP"Y8 `"YbbdP"'  
-                                         
-                                         
-                                              
-88                                            
-88                                            
-88                                            
-88,dPPYba,   ,adPPYba, 8b,dPPYba,  ,adPPYba,  
-88P'    "8a a8P_____88 88P'   "Y8 a8P_____88  
-88       88 8PP""""""" 88         8PP"""""""  
-88       88 "8b,   ,aa 88         "8b,   ,aa  
-88       88  `"Ybbd8"' 88          `"Ybbd8"'  
-                                              
-
-*/
+  NO PHEI'S ALLOWED*/
 /* User name changes */
 
 a.author[href$="/RetardVomitPussyCunt"] {
