@@ -92,7 +92,7 @@ def index():
 def tag(source_name):
     source_name = urllib.unquote(str(source_name))
     source = data_manager.sources[source_name]
-    emotes = list(source.unignored_emotes(data_manager))
+    emotes = list(source.undropped_emotes(data_manager))
     given_emotes = {}
     for emote in emotes:
         info = info_for(emote)
