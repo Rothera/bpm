@@ -40,6 +40,8 @@ def cmd_list(args):
     subprocess.call(["git", "status", "-s", "minified-css", "source-css"])
     print("Emote updates:")
     subprocess.call(["git", "status", "-s", "emotes"])
+    print("Tag updates:")
+    subprocess.call(["git", "status", "-s", "tags"])
 
 def download_url(num, total, url):
     print("[%s/%s]: %s" % (num+1, total, url))
