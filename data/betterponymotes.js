@@ -1262,6 +1262,82 @@ var bpm_search = {
     },
 
     /*
+     * Parses a search query. Returns an object that looks like this:
+     *    .sr_terms: list of subreddit names to match.
+     *    .tag_term_sets: list of [true or false, ...] tag sets to match.
+     *    .name_terms: list of emote name terms to match.
+     * or null, if there was no query.
+     */
+    parse_query: function(terms) {
+        var query = {sr_terms: [], tag_term_sets: [], name_terms: []};
+
+        function add_tag_term(positive, tags) {
+            // Negate previous tags, searching from the right, back to the left.
+            for(var i = query.tag_term_sets.length - 1; i >= 0; i--) {
+                var set = query.tag_term_sets[i];
+                if(set[0] === !positive) {
+                    // Opposite kinds of tags. Counter them where we can.
+                    for(var j = tags.length - 1; j >= 0; j--) {
+                        var index = set.indexOf(tags[j]);
+                        if(index > -1) {
+                            // When a tag and an antitag collide...
+                            set.splice(index, 1);
+                            tags.splice(j, 1);
+                            // It makes a great big mess of my search code is what
+                        }
+                    }
+                    if(set.length <= 1) {
+                        query.tag_term_sets.splice(i, 1);
+                    }
+                }
+            }
+            if(tags.length) {
+                tags.unshift(positive);
+                query.tag_term_sets.push(tags)
+            }
+        }
+
+        for(var t = 0; t < terms.length; t++) {
+            var term = terms[t];
+
+            if(term.slice(0, 3) === "sr:") {
+                query.sr_terms.push(term.slice(3));
+            } else if(term[0] === "+" || term[0] === "-") {
+                var lone_tag = term.slice(1);
+                var p_tag = "+" + lone_tag;
+                var positive = (term[0] === "+" ? true : false);
+                var id = tag_name2id[p_tag];
+                if(id !== undefined) {
+                    // Exact match
+                    add_tag_term(positive, [id]);
+                } else {
+                    var matches = [];
+                    // Find any tag that looks right
+                    for(var tag in tag_name2id) {
+                        id = tag_name2id[tag];
+                        // Cut off leading +
+                        if(tag.slice(1).indexOf(lone_tag) > -1 &&
+                           matches.indexOf(id) < 0) {
+                            matches.push(id)
+                        }
+                    }
+                    if(matches.length) {
+                        add_tag_term(positive, matches);
+                    }
+                }
+            } else {
+                query.name_terms.push(term);
+            }
+        }
+
+        if(query.sr_terms.length || query.tag_term_sets.length || query.name_terms.length) {
+            return query;
+        } else {
+            return null;
+        }
+    },
+
+    /*
      * Updates the search results window according to the current query.
      */
     update_search: function(prefs) {
@@ -1271,41 +1347,20 @@ var bpm_search = {
         prefs.prefs.lastSearchQuery = terms.join(" ");
         bpm_prefs.sync_key("lastSearchQuery");
 
-        var sr_terms = [];
-        var tag_term_sets = [];
-        var match_terms = [];
-        for(var t = 0; t < terms.length; t++) {
-            var term = terms[t];
-            // If it starts with "sr:" it's subreddit syntax, otherwise it's a
-            // normal search term.
-            if(term.indexOf("sr:") === 0) {
-                sr_terms.push([term.slice(3)]);
-            } else if(term[0] == "+") {
-                var id = tag_name2id[term];
-                if(id !== undefined) {
-                    tag_term_sets.push([id]); // Exact match
-                } else {
-                    var match_aliases = [];
-                    // Locate anything that works
-                    for(var alias in tag_name2id) {
-                        id = tag_name2id[alias];
-                        // Cut off +
-                        if(alias.slice(1).indexOf(term.slice(1)) > -1 &&
-                           match_aliases.indexOf(id) < 0) {
-                            match_aliases.push(id);
-                        }
-                    }
-                    if(match_aliases.length) {
-                        tag_term_sets.push(match_aliases);
-                    }
-                }
-            } else {
-                match_terms.push(term);
-            }
+        // Check this before we append the default search terms.
+        if(!terms.length) {
+            this.results.innerHTML = "";
+            this.count.textContent = "";
+            return;
         }
 
-        // If there's nothing to search on, reset and stop
-        if(!sr_terms.length && !tag_term_sets.length && !match_terms.length) {
+        // This doesn't work quite perfectly- searching for "+hidden" should
+        // theoretically just show all hidden emotes, but it just ends up
+        // cancelling into "-nonpony", searching for everything.
+        terms.unshift("-hidden", "-nonpony");
+        var query = this.parse_query(terms);
+        // Still nothing to do
+        if(query === null) {
             this.results.innerHTML = "";
             this.count.textContent = "";
             return;
@@ -1318,19 +1373,19 @@ var bpm_search = {
             var lc_emote_name = emote_name.toLowerCase();
 
             // Match if ALL search terms match
-            for(var t = 0; t < match_terms.length; t++) {
-                if(lc_emote_name.indexOf(match_terms[t]) < 0) {
+            for(var t = 0; t < query.name_terms.length; t++) {
+                if(lc_emote_name.indexOf(query.name_terms[t]) < 0) {
                     continue no_match; // outer loop, not inner
                 }
             }
 
             // Match if AT LEAST ONE subreddit terms match
-            if(sr_terms.length) {
+            if(query.sr_terms.length) {
                 // Generally this name is already lowercase, though not for bpmextras
                 var source_sr_name = emote_info.source_name.toLowerCase();
                 var is_match = false;
-                for(var t = 0; t < sr_terms.length; t++) {
-                    if(source_sr_name.indexOf(sr_terms[t]) > -1) {
+                for(var t = 0; t < query.sr_terms.length; t++) {
+                    if(source_sr_name.indexOf(query.sr_terms[t]) > -1) {
                         is_match = true;
                         break;
                     }
@@ -1341,17 +1396,19 @@ var bpm_search = {
             }
 
             // Match if ALL tag sets match
-            for(var tt_i = 0; tt_i < tag_term_sets.length; tt_i++) {
+            for(var tt_i = 0; tt_i < query.tag_term_sets.length; tt_i++) {
                 // Match if AT LEAST ONE of these match
-                var tag_set = tag_term_sets[tt_i];
+                var tag_set = query.tag_term_sets[tt_i];
                 var any = false;
-                for(var ts_i = 0; ts_i < tag_set.length; ts_i++) {
+                for(var ts_i = 1; ts_i < tag_set.length; ts_i++) {
                     if(emote_info.tags.indexOf(tag_set[ts_i]) > -1) {
                         any = true;
                         break;
                     }
                 }
-                if(!any) {
+                // We either didn't match, and wanted to, or matched and didn't
+                // want to.
+                if(!any === tag_set[0]) {
                     continue no_match;
                 }
             }
@@ -1364,11 +1421,6 @@ var bpm_search = {
                     bpm_log("ERROR: Followed +v from " + emote_name + " to " + emote_info.name + "; no root emote found");
                 }
                 emote_name = emote_info.name;
-            }
-
-            // Ignore hidden emotes
-            if(emote_info.tags.indexOf(tag_name2id["+hidden"]) > -1) {
-                continue no_match;
             }
 
             results.push(emote_info);
