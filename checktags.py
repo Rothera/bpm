@@ -82,4 +82,4 @@ for source in dirty:
     print("NOTICE: Rewriting %s to eliminate loose tags" % (source.name))
     path = "tags/%s.yaml" % (source.name.split("/")[-1])
     file = open(path, "w")
-    yaml.dump(source.dump_tag_data(), file)
+    yaml.dump(source.dump_tag_data(data_manager), file)
