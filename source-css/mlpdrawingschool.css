@@ -1107,3 +1107,68 @@ display: none !important;
     width: 100px;
     height: 97px
     }
+
+/*Totaly not stolen*/
+
+.side h2 {
+background: #D8D8D8;
+background-image: linear-gradient(#B9B9B9,#BBBABA)!important;
+background-image: -webkit-linear-gradient(#555,#9B9B9B)!important;
+background-image: -moz-linear-gradient(#555,#262626)!important;
+background-image: -o-linear-gradient(#555,#262626)!important;
+box-shadow: 3px 3px 5px #ACABAB;
+color: white;
+font-family: "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+font-size: 14px;
+height: 15px!important;
+margin: 15px 0 10px;
+padding: 2px 0 8px 6px;
+text-shadow: 0 0 5px #BBB;
+}
+
+.side h3 {
+background: #0C8994;
+background-image: linear-gradient(#02427E,#06F)!important;
+background-image: -webkit-linear-gradient(#02427E,#06F)!important;
+background-image: -moz-linear-gradient(#02427E,#06F)!important;
+background-image: -o-linear-gradient(#02427E,#06F)!important;
+box-shadow: 3px 3px 5px #868FFC;
+color: white;
+font-family: "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+font-size: 14px;
+text-align: center;
+height: 15px!important;
+margin: 15px 0 10px;
+padding: 2px 0 8px 6px;
+
+}
+
+/*The actual H4's:*/
+.thing.self h4:before
+{
+ content:"";
+ width:100%;
+ background:transparent url(%%fancyheaders%%) no-repeat bottom left;
+ width:14px;
+ height:46px;
+ margin-bottom:-19px;
+ position:relative;
+ left:-14px;
+ z-index:100;
+ display:inline-block;
+ overflow:hidden;
+}
+
+.thing.self h4 {
+width: 100%;
+font-style: normal;
+font-size: 2em;
+background: #CEE3F8;
+color: #5F99CF;
+margin-left: -6px;
+padding-right: 11px;
+display: block;
+overflow: visible;
+white-space: nowrap;
+font-variant: small-caps;
+}

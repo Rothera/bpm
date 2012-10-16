@@ -526,20 +526,18 @@ background-color: transparent !important;
 /*
 Hiding upvotes and downvotes 
 */
-
-html:lang(pa) p.tagline span:first-child {
+p.tagline span:first-child {
 display: none;
 }
-
-html:lang(pa) .linkinfo .score {
+.linkinfo .score {
 visibility: hidden;
 }
-html:lang(pa) .linkinfo .score .number, html:lang(pa) .linkinfo .score .word{
+.linkinfo .score .number, .linkinfo .score .word{
 visibility: visible !important;
 }
 
-html:lang(pa) .linkinfo .upvotes, html:lang(pa) .linkinfo .downvotes {
-display: none;
+.linkinfo span.upvotes, .linkinfo span.downvotes {
+display: none !important;
 }
 
 .footer-parent {
