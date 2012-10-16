@@ -1067,7 +1067,8 @@ var bpm_search = {
             '        <p>Searching for <code>"aj happy"</code> will show you all emotes with both <code>"aj"</code> and <code>"happy"</code> in their names.',
             '        <p>The special syntax <code>"sr:subreddit"</code> will limit your results to emotes from that subreddit.',
             '        <p>Using more than one subreddit will show you emotes from all of them.',
-            '        <p>Searching for <code>"+tag"</code> will show you emotes with the given tag.',
+            '        <p>Searching for <code>"+tag"</code> will show you emotes with the given tag. <code>"-tag"</code> shows emotes without it.',
+            '        <p>Some emotes are hidden by default. Use <code>"+nonpony"</code> to see them.',
             '      </div>',
             '    </span>',
             '    <span id="bpm-resize"></span>',
@@ -1286,9 +1287,10 @@ var bpm_search = {
                             // It makes a great big mess of my search code is what
                         }
                     }
-                    if(set.length <= 1) {
-                        query.tag_term_sets.splice(i, 1);
-                    }
+                    // Need to keep empty sets so our -nonpony hack works
+                    //if(set.length <= 1) {
+                    //    query.tag_term_sets.splice(i, 1);
+                    //}
                 }
             }
             if(tags.length) {
@@ -1367,6 +1369,7 @@ var bpm_search = {
         }
 
         var results = [];
+        var hidden = 0; // Defined up here for our -nonpony hack
         no_match:
         for(var emote_name in emote_map) {
             var emote_info = bpm_data.lookup_core_emote(emote_name);
@@ -1409,6 +1412,12 @@ var bpm_search = {
                 // We either didn't match, and wanted to, or matched and didn't
                 // want to.
                 if(!any === tag_set[0]) {
+                    // HACK: This is the index of -nonpony. Any matches on this
+                    // one means we blocked something by default, so make a note
+                    // of it so the user knows.
+                    if(tt_i == 1) {
+                        hidden++;
+                    }
                     continue no_match;
                 }
             }
@@ -1442,7 +1451,7 @@ var bpm_search = {
         //
         // As a result, NSFW/disabled emotes don't count toward the result.
         var html = "";
-        var shown = 0, hidden = 0;
+        var shown = 0;
         var prev = null;
         var actual_results = results.length;
         for(var i = 0; i < results.length; i++) {
