@@ -1444,9 +1444,11 @@ var bpm_search = {
         var html = "";
         var shown = 0, hidden = 0;
         var prev = null;
+        var actual_results = results.length;
         for(var i = 0; i < results.length; i++) {
             var emote_info = results[i];
             if(prev === emote_info.name) {
+                actual_results--;
                 continue; // Duplicates can appear when following +v emotes
             }
             prev = emote_info.name;
@@ -1476,11 +1478,11 @@ var bpm_search = {
 
         this.results.innerHTML = html;
 
-        var hit_limit = shown + hidden < results.length;
+        var hit_limit = shown + hidden < actual_results;
         // Format text: "X results (out of N, Y hidden)"
         var text = shown + " results";
         if(hit_limit || hidden) { text += " ("; }
-        if(hit_limit)           { text += "out of " + results.length; }
+        if(hit_limit)           { text += "out of " + actual_results; }
         if(hit_limit && hidden) { text += ", "; }
         if(hidden)              { text += hidden + " hidden"; }
         if(hit_limit || hidden) { text += ")"; }
