@@ -1,3 +1,89 @@
+.titlebox a[href|="/smilingdo"] { float: right }
+
+/*replace "users here now" with something else*/
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox .subscribers span.number:after
+{
+    content:" explorers";
+}
+div.titlebox .users-online span.number:after
+{
+    content:" adventurers exploring.";
+}
+
+/* Mod name modification. */
+.sidecontentbox a.author[href$="/lukjad007"]:before {
+    content: "lukjad" !important;
+    font-size: 10pt !important;
+    color: #369 !important;
+    display:block !important;
+    margin-right: 0.5em !important;
+    }
+
+.sidecontentbox a.author[href$="/lukjad007"] {
+    content: "" !important;
+    color: white !important;
+    font-size: 0pt !important;
+    display:block !important;
+    }
+
+.sidecontentbox a.author[href$="/Daring-Do"]:before {
+    content: "Daring Do will find it for you." !important;
+    font-size: 10pt !important;
+    color: #369 !important;
+    display:block !important;
+    margin-right: 0.5em !important;
+    }
+
+.sidecontentbox a.author[href$="/Daring-Do"] {
+    content: "" !important;
+    color: white !important;
+    font-size: 0pt !important;
+    display:block !important;
+    }
+
+/* Self post gradient using a3b46d (Daring's Shirt)*/
+
+.link .expando .usertext .md {
+border: 0px solid #dfe9c0 !important;
+background-color: #a3b46d !important;
+    }
+
+/*Background Test*/
+
+body {
+background-color: #dfe9c0;
+}
+
+/*.sidecontentbox {
+background-color: #dfe9c0;
+}
+
+.titlebox {
+background-color: #dfe9c0;
+}
+
+*/
+
+#header {
+background-color: #7d864f;
+background-image: -webkit-linear-gradient(top, #7d864f, #FFFEE6);
+background-image: -moz-linear-gradient(top, #7d864f, #FFFEE6);
+background-image: -ms-linear-gradient(top, #7d864f, #FFFEE6);
+background-image: -o-linear-gradient(top, #7d864f, #FFFEE6);
+}
+
+#siteTable .entry.dislikes .buttons:before {
+content: "Ahuizotl, we meet again.";
+color: blue;
+font-size: 7pt
+}
+
+/*Auto-generated below this point*/  
+
+
 a[href|='/ahuizotl'], a[href|='/daringboldly'], a[href|='/daringrun'], a[href|='/ddcm'], a[href|='/ddcs'], a[href|='/ddnotsure'], a[href|='/ddreflective'], a[href|='/ddsafe'], a[href|='/ddunsure'], a[href|='/ddwut'], a[href|='/smilingdo'] {
     display: block;
     float: left;

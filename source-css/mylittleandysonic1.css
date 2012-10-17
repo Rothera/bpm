@@ -54,7 +54,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     }
 .tabmenu {
     margin-top: 279px; /* 223 for meat's nice banner */
-    margin-left: 900px
+    margin-left: 505px
     }
 
 .tabmenu li a {
@@ -556,6 +556,67 @@ a[href|="/artfun"] {
 a[href|="/pixelfun"] {
     background-position: -2px -338px
     }
+
+
+a[href|="/ajsign"],a[href|="/lyrasign"],a[href|="/twisign"],a[href|="/dashsign"],a[href|="/derpysign"],a[href|="/scootasign"]{
+    background-image: url(%%signsheet%%) !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    position: relative !important;
+    width:166px; height:150px;
+    line-height: 24px !important;
+    overflow: hidden !important;
+    cursor: default !important;
+    }
+    
+a[href|="/ajsign"] em,a[href|="/lyrasign"] em,a[href|="/twisign"] em,a[href|="/dashsign"] em,a[href|="/derpysign"] em,a[href|="/scootasign"] em{
+    position: absolute !important;
+    top: 45px !important;
+    left: 90% !important;
+    margin-left: -125px !important;
+    width: 100px !important;
+    color: black !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black!important;
+    font-family: "Comic Sans" !important;
+    font-style: normal !important;
+    font-size: 24px !important;
+    }    
+a[href|="/ajsign"] {background-position: -2px -2px}
+a[href|="/lyrasign"] {background-position: -2px -154px}
+a[href|="/twisign"] {background-position: -2px -356px}
+a[href|="/dashsign"] {background-position: -170px -2px}
+a[href|="/derpysign"] {background-position: -338px -2px}
+a[href|="/scootasign"] {background-position: -313px -154px}
+
+a[href|="/ppsign"]{
+    background-image: url(%%signsheet%%) !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    position: relative !important;
+    width:166px; height:150px;
+    line-height: 24px !important;
+    overflow: hidden !important;
+    cursor: default !important;
+    }
+    
+a[href|="/ppsign"] em{
+    position: absolute !important;
+    top: 105px !important;
+    left: 95% !important;
+    margin-left: -125px !important;
+    width: 115px !important;
+    color: #ed468e !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    text-shadow: -1px 0 #b91072, 0 1px black, 1px 0 #b91072, 0 -1px #b91072!important;
+    font-family: "Comic Sans" !important;
+    font-style: normal !important;
+    font-size: 18px !important;
+    }   
+a[href|='/ppsign'] {width:141px; height:200px; background-position: -170px -154px}
+
 
 
 /* For anyone with no flair, or flair disabled, this will give them missingno flair.

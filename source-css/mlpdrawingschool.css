@@ -1,3 +1,11 @@
+.sitetable > .link:first-child, .link ~ .odd {
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+background: url(%%20tile%%) ;
+border-radius: 10px;
+margin-right: 320px;
+}
+
 /* *** Fixing the upvote arrow? *** */
 
 .midcol {
@@ -1113,9 +1121,9 @@ display: none !important;
 .side h2 {
 background: #D8D8D8;
 background-image: linear-gradient(#B9B9B9,#BBBABA)!important;
-background-image: -webkit-linear-gradient(#555,#9B9B9B)!important;
-background-image: -moz-linear-gradient(#555,#262626)!important;
-background-image: -o-linear-gradient(#555,#262626)!important;
+background-image: -webkit-linear-gradient(#9BA3BA,#C7CCE0)!important;
+background-image: -moz-linear-gradient(#9BA3BA,#C7CCE0)!important;
+background-image: -o-linear-gradient(#9BA3BA,#C7CCE0)!important;
 box-shadow: 3px 3px 5px #ACABAB;
 color: white;
 font-family: "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;

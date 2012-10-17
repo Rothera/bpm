@@ -1398,13 +1398,22 @@ a[href|="/pheicry"] {
 }
 
 a[href|="/phei"] {
-    background-image: url(%%emotephei%%) !important;
+    background-image: url(%%emotephei%%);
     clear: none;
     display: block;
     float: left;
     width: 90px;
     height: 92px;
     background-position: 0px 0px !important;
+}
+a[href|="/ppp"], a[href|="/pheispinkieplushie"] {
+background-image: url(%%emotephei%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 238px;
+    height: 269px;
+    background-position: -92px 0px !important
 }
 /* Other */
 

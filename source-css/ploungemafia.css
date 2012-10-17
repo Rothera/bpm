@@ -175,3 +175,17 @@ a[href|="/sp"] {
 /* Background for mafia win. */
 
 body { background: url(%%mafiawin%%) no-repeat fixed bottom center; }
+
+/* RES nightmode flair fix */
+
+.res-nightmode .tagline .flair {
+    background-color: transparent !important;
+}
+
+.res-nightmode .side .md h3 {
+    color:#DDD !important;
+}
+
+.res-nightmode .titlebox .usertext-body .md h3 {
+color: white !important;
+}
