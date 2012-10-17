@@ -1399,9 +1399,14 @@ var bpm_search = {
             }
 
             // Match if ALL tag sets match
-            for(var tt_i = 0; tt_i < query.tag_term_sets.length; tt_i++) {
+            for(var tt_i = query.tag_term_sets.length - 1; tt_i >= 0; tt_i--) {
                 // Match if AT LEAST ONE of these match
                 var tag_set = query.tag_term_sets[tt_i];
+                // Hack because we leave empty sets in
+                if(tag_set.length <= 1) {
+                    continue;
+                }
+
                 var any = false;
                 for(var ts_i = 1; ts_i < tag_set.length; ts_i++) {
                     if(emote_info.tags.indexOf(tag_set[ts_i]) > -1) {
