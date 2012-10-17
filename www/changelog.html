@@ -29,14 +29,18 @@
         <p>This changelog only lists code changes. Most releases contain whatever
         emote updates were available at the time, and are not mentioned.
 
-        <h5>v36.61 - 2012-10-15</h3>
+        <h5>v37.62 - 2012-10-16</h5>
+        <p>Fixed results counting. No longer counts doubled emotes (as a result
+        of variant omission) and shows the effects of hidden-by-default emotes.
+
+        <h5>v36.61 - 2012-10-15</h5>
         <p>Tag search matches against +v emotes, before replacing them with their
         base equivalent. This makes it possible to search for variant emote names.
         <p>Negative tag search implemented. You can now search for things like
         <code>+mane -ts -rarity</code> and get just the non-unicorn Mane 6.
         <p>Default search set to <code>-nonpony -hidden</code>.
 
-        <h5>v35.60 - 2012-10-13</h3>
+        <h5>v35.60 - 2012-10-13</h5>
         <p>Emote tags. Every emote has been tagged according to its content.
         Several tools written to process that data and all of it included in
         BPM.
@@ -54,22 +58,22 @@
         <p>Lots of other internal changes.
         <p>Tag search on emotes.
 
-        <h5>v34.58 - 2012-10-07</h3>
+        <h5>v34.58 - 2012-10-07</h5>
         <p>Options support for the userscript variant, using postMessage().
         <p>Stylistic improvements on emote placeholders.
 
-        <h5>v33.57 - 2012-10-06</h3>
+        <h5>v33.57 - 2012-10-06</h5>
         <p>Rewrite frame code. BPM now runs the search exclusively in top-level
         frames, delegating focus tracking and emote injection to frames as
         necessary.
         <p>Emote regexps made more consistent.
 
-        <h5>v32.56 - 2012-10-05</h3>
+        <h5>v32.56 - 2012-10-05</h5>
         <p>Minor fixes for Opera (custom css wasn't downloading) and Safari
         (wasn't running at all)
         <p>Custom CSS now works globally, and better in general.
 
-        <h5>v31.55 - 2012-10-04</h3>
+        <h5>v31.55 - 2012-10-04</h5>
         <p>Fall back on DOMNodeInserted more reliably, and on all browsers. Fix
         for Firefox nightly.
         <p>Fix frame detection on Firefox. Makes Tumblr work better, for real
@@ -80,12 +84,12 @@
         <p>Fixed alt-text converter running on freshly-made posts twice, and so
         expanding its own source info text.
 
-        <h5>v30.54 - 2012-10-03</h3>
+        <h5>v30.54 - 2012-10-03</h5>
         <p>Safari fixes: emotes button doesn't submit form, code that depends on
         DOMContentLoaded is more reliably fired.
         <p>Frames on Chrome now behave as they do on other browsers.
 
-        <h5>v29.53 - 2012-10-02</h3>
+        <h5>v29.53 - 2012-10-02</h5>
         <p>Made global search button go on top of more things.
         <p>Global search button responds to Command on Macs.
         <p>Fixed a random hovermote or two.
