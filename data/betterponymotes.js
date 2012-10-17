@@ -1888,13 +1888,13 @@ var bpm_core = {
             bpm_browser.add_css(".bpflag-i { filter: url(#bpm-invert); }");
         }
 
-        // Initial pass- show all emotes currently on the page.
-        var posts = document.getElementsByClassName("md");
-        bpm_converter.process_posts(prefs, posts);
-
         bpm_search.init(prefs);
         // Find the one reply box that's there on page load. This may not always work...
         bpm_search.inject_search_button(prefs, document.getElementsByClassName("help-toggle"));
+
+        // Initial pass- show all emotes currently on the page.
+        var posts = document.getElementsByClassName("md");
+        bpm_converter.process_posts(prefs, posts);
 
         // Add emote click blocker
         document.body.addEventListener("click", bpm_utils.catch_errors(function(event) {
