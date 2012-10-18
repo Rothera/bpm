@@ -515,6 +515,21 @@ a[href|="/vshnngg"], a[href|="/hnnng"] {
     background-position: -0px -0px
     }
 
+/* DrawPonies Emote*/
+
+a[href|="/vsdrawponies"], a[href|="/hnnng"]    {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%vsdp%%) !important
+    }
+
+a[href|="/vshnngg"], a[href|="/hnnng"] {
+    background-position: -0px -0px
+    }
+
 /* 4: OTHER THINGS*/
 
 a[href='/sp'] { display: inline-block; padding-right: 100%; }

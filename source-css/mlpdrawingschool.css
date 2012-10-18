@@ -1,3 +1,16 @@
+/*hides the downvote arrow*/  
+
+.arrow.down {
+visibility: hidden;
+display: none
+}
+
+/*displays downvote arrow for comments only, after disabling*/
+.comment .arrow.down {
+visibility: visible;
+display: block
+}
+
 .sitetable > .link:first-child, .link ~ .odd {
 -moz-border-radius: 10px;
 -webkit-border-radius: 10px;

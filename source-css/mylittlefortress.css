@@ -180,9 +180,10 @@ a.author[href$="timbaer"]:after {
 a.author[href$="fyrenwater"]:hover:after {
     content: ": CABERHUGS :3"
     }
+a.author[href$="Your_Shadow"] {visibility:hidden; font-size:0;}
 a.author[href$="Your_Shadow"]:after {
-    content: ": Server admin"
-    }
+    visibility:visible; font-size: 10px; color: #8650AC; content: "Your_Shadow: Server admin" 
+}
 a.author[href$="koushiro"]:before { content: "Sir "; }
 a.author[href$="koushiro"]:after {
     content: " the Generous"

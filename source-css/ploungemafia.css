@@ -166,6 +166,17 @@ a[href|="/mafialuna"] { background-position: -120px -360px }
 a[href|="/mafiaoctavia"] { background-position: -240px -360px }
 a[href|="/mafiachrysalis"] { background-position: -0px -480px }
 
+a[href|="/mafiaduck"]
+{
+
+ background-image: url(%%mafiaduck%%) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 93px;
+}
+
 /* Space thingy */
 a[href|="/sp"] {
     display: inline-block;
