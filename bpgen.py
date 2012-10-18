@@ -59,9 +59,8 @@ def resolve_emotes(data_manager):
             data_manager.sources[source_name].emotes[name].variants[variant].css.update(css)
         elif cmd == "MergeEmotes":
             target_name, merge, merge_tags = args
-            # Simple way to load a dict like this
-            source = bplib.objects.Source.load_from_data(data_manager, target_name, merge, merge_tags)
-            data_manager.sources[target_name].emotes.update(source.emotes)
+            target = data_manager.sources[target_name]
+            target.load_data(data_manager, merge, merge_tags)
         else:
             print("ERROR: Unknown directive: %r" % (rule))
 

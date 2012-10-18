@@ -61,15 +61,18 @@ class Source:
     def load_from_data(cls, data_manager, source_name, emote_data, tag_data):
         sr = cls(source_name, {})
         sr._tag_data = tag_data # Used in checktags
+        sr.load_data(data_manager, emote_data, tag_data)
+        return sr
+
+    def load_data(self, data_manager, emote_data, tag_data):
         for (name, variants) in emote_data.items():
             tags = set(tag_data.get(name, []))
             if "+drop" in tags:
                 if name in data_manager.drops:
                     print("Source.load_from_data(): ERROR: %s in %s is marked as +drop, but %s has already claimed the name" %
                             (name, source_name, data_manager.drops[name].name))
-                data_manager.drops[name] = sr
-            sr.emotes[name] = Emote.load_from_data(name, variants, tags)
-        return sr
+                data_manager.drops[name] = self
+            self.emotes[name] = Emote.load_from_data(name, variants, tags)
 
     def dump_emote_data(self):
         return {name: emote.dump_data() for (name, emote) in self.emotes.items()}
