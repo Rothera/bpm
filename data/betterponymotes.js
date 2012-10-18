@@ -162,12 +162,14 @@ var bpm_utils = {
      * Determines whether this element, or any ancestor, have the given id.
      */
     id_above: function(element, id) {
-        if(element.id === id) {
-            return true;
-        } else if(element.parentNode !== null) {
-            return bpm_utils.id_above(element.parentNode, id);
-        } else {
-            return false;
+        while(true) {
+            if(element.id === id) {
+                return true;
+            } else if(element.parentNode) {
+                element = element.parentNode;
+            } else {
+                return false;
+            }
         }
     },
 
@@ -175,16 +177,16 @@ var bpm_utils = {
      * Determines whether this element, or any ancestor, have the given class.
      */
     class_above: function(element, class_name) {
-        if(element.className === undefined) {
-            return false;
-        }
-
-        if(bpm_utils.has_class(element, class_name)) {
-            return true;
-        }
-
-        if(element.parentNode !== null) {
-            return bpm_utils.class_above(element.parentNode, class_name);
+        while(true) {
+            if(element.className === undefined || element.className === null) {
+                return null;
+            } else if(bpm_utils.has_class(element, class_name)) {
+                return element;
+            } else if(element.parentNode) {
+                element = element.parentNode;
+            } else {
+                return null; // Terminate loop
+            }
         }
     },
 
