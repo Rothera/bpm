@@ -22,7 +22,7 @@ body.res-nightmode:first-of-type {background-color: transparent!important;}
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
    
-     background:  url(%%unce%%)  no-repeat  fixed 50% 50% !important}
+     background:  url(%%chacha%%)  no-repeat  fixed 50% 50% !important}
 
 
 
@@ -163,9 +163,11 @@ body:first-of-type, body.res-nightmode:first-of-type {
     }
 
 /* iii: BOTTOM LEFT */
-#header-bottom-left {
+.res-nightmode #header-bottom-left, #header-bottom-left {
     height: 77px;
     z-index: -1;
+    background-color: transparent !important;
+    background: none !important;
     font-size: larger;
     position: absolute;
     bottom: 0px
@@ -461,7 +463,7 @@ body.res-nightmode:first-of-type .flair { background-color: transparent!importan
 
 /*vs_start*/
 	
-a[href|='/vswink'],a[href|='/vs22'],a[href|='/shrug'],a[href|='/vsshrug'],a[href|='/tableflip'],a[href|='/vsbass'],a[href|='/vs15'],a[href|='/vscurious'],a[href|='/vs13'],a[href|='/vsdeal'],a[href|='/vs01'],a[href|='/vsderp'],a[href|='/vs02'],a[href|='/vsfilly'],a[href|='/vs07'],a[href|='/vshair'],a[href|='/vs20'],a[href|='/vshappy'],a[href|='/vs14'],a[href|='/vshey'],a[href|='/vs12'],a[href|='/vshooves'],a[href|='/vs04'],a[href|='/vsjuice'],a[href|='/vs23'],a[href|='/vslook'],a[href|='/vs05'],a[href|='/vslying'],a[href|='/vs03'],a[href|='/vsmeh'],a[href|='/vs21'],a[href|='/vsmine'],a[href|='/vs25'],a[href|='/vsmog'],a[href|='/vs08'],a[href|='/vsnope'],a[href|='/vs26'],a[href|='/vsohyou'],a[href|='/vs00'],a[href|='/vsomg'],a[href|='/vs06'],a[href|='/vsoooo'],a[href|='/vs16'],a[href|='/vssad'],a[href|='/vs10'],a[href|='/vssup'],a[href|='/vs24'],a[href|='/vstear'],a[href|='/vs11'],a[href|='/vswtf'],a[href|='/vs27'], a[href|='/vswhathefuck'],a[href|='/vsyds'],a[href|='/vs17'], a[href|='/vsyoudontsay'],a[href|='/vslaying'],a[href|='/laying'],a[href|='/vsplot'],a[href|='/vscute'],a[href|='/vs18'],a[href|='/vssalute'],a[href|='/vs28'],a[href|='/vsboring']   {
+a[href|='/vswink'],a[href|='/vs22'],a[href|='/shrug'],a[href|='/vsshrug'],a[href|='/tableflip'],a[href|='/vsbass'],a[href|='/vs15'],a[href|='/vscurious'],a[href|='/vs13'],a[href|='/vsdeal'],a[href|='/vs01'],a[href|='/vsderp'],a[href|='/vs02'],a[href|='/vsfilly'],a[href|='/vs07'],a[href|='/vshair'],a[href|='/vs20'],a[href|='/vshappy'],a[href|='/vs14'],a[href|='/vshey'],a[href|='/vs12'],a[href|='/vshooves'],a[href|='/vs04'],a[href|='/vsjuice'],a[href|='/vs23'],a[href|='/vslook'],a[href|='/vs05'],a[href|='/vslying'],a[href|='/vs03'],a[href|='/vsmeh'],a[href|='/vs21'],a[href|='/vsmine'],a[href|='/vs25'],a[href|='/vsmog'],a[href|='/vs08'],a[href|='/vsnope'],a[href|='/vs26'],a[href|='/vsohyou'],a[href|='/vs00'],a[href|='/vsomg'],a[href|='/vs06'],a[href|='/vsoooo'],a[href|='/vs16'],a[href|='/vssad'],a[href|='/vs10'],a[href|='/vssup'],a[href|='/vs24'],a[href|='/vstear'],a[href|='/vs11'],a[href|='/vswtf'],a[href|='/vs27'], a[href|='/vswhathefuck'],a[href|='/vsyds'],a[href|='/vs17'], a[href|='/vsyoudontsay'],a[href|='/vslaying'],a[href|='/laying'],a[href|='/vsplot'],a[href|='/vscute'],a[href|='/vs18'],a[href|='/vssalute'],a[href|='/vs28'],a[href|='/vsboring'], a[href|="/vsdrawponies"], a[href|="/vshnngg"], a[href|="/hnnng"],a[href|='/vs09'] {
     display: block;
     clear: none;
     float: left;
@@ -500,35 +502,10 @@ a[href|='/vsplot'] {width:124px; height:91px; background-position: -280px -679px
 a[href|='/vscute'],a[href|='/vs18'] {width:60px; height:70px; background-position: -0px -78px}
 a[href|='/vssalute'] {width:187px; height:142px; background-position: -337px -0px}
 a[href|='/vs28'],a[href|='/vsboring']  {width:70px; height:70px; background-position: -0px -150px}
+a[href|="/vsdrawponies"], a[href|="/vshnngg"], a[href|="/hnnng"],a[href|='/vs09'] {width:59px; height:70px;background-position: -450px -253px}
+
+
 /* Other Emotes*/
-
-a[href|="/vshnngg"], a[href|="/hnnng"]    {
-    display: block;
-    clear: none;
-    float: left;
-    width: 70px;
-    height: 70px;
-    background-image: url(%%hnnng%%) !important
-    }
-
-a[href|="/vshnngg"], a[href|="/hnnng"] {
-    background-position: -0px -0px
-    }
-
-/* DrawPonies Emote*/
-
-a[href|="/vsdrawponies"], a[href|="/hnnng"]    {
-    display: block;
-    clear: none;
-    float: left;
-    width: 70px;
-    height: 70px;
-    background-image: url(%%vsdp%%) !important
-    }
-
-a[href|="/vshnngg"], a[href|="/hnnng"] {
-    background-position: -0px -0px
-    }
 
 /* 4: OTHER THINGS*/
 
@@ -645,7 +622,7 @@ div.titlebox .users-online span.number:after
     display: none !important
     }
 /* Hiding my name in the modbox. */
-.sidecontentbox .id-t2_8lje7, .sidecontentbox .id-t2_8lje7 ~ *{display: none}
+.sidecontentbox .id-t2_8lje7, .sidecontentbox .id-t2_8lje7 ~ *{display: none !important} 
 
 
 /* Replacing somebody's name? Add it to the list here. */
