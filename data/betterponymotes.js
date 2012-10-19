@@ -364,7 +364,20 @@ var bpm_utils = {
                 return none;
             }
         }
-    }
+    },
+
+    /*
+     * Current subreddit being displayed, or null if there doesn't seem to be one.
+     */
+    current_subreddit: (function() {
+        // FIXME: what other characters are valid?
+        var match = document.location.href.match(/reddit\.com\/r\/([\w]+)/);
+        if(match) {
+            return match[1].toLowerCase();
+        } else {
+            return null;
+        }
+    })()
 };
 
 /*
@@ -828,7 +841,8 @@ var bpm_converter = {
      * Process the given list of elements (assumed to be <a> tags), converting
      * any that are emotes.
      */
-    process: function(prefs, elements) {
+    process: function(prefs, elements, is_res_preview) {
+        var out_of_sub = false;
         next_emote:
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
@@ -860,6 +874,14 @@ var bpm_converter = {
                     element.dataset["bpm_state"] = "e";
                     element.dataset["bpm_emotename"] = emote_name;
                     element.dataset["bpm_srname"] = emote_info.source_name;
+
+                    if(is_res_preview) {
+                        // Highlight out-of-sub emotes.
+                        if(emote_info.source_name.toLowerCase() !== "r/" + bpm_utils.current_subreddit) {
+                            element.className += " bpm-outofsub";
+                            out_of_sub = true;
+                        }
+                    }
 
                     if(!prefs.we_map[emote_name]) {
                         var nsfw_class = prefs.prefs.hideDisabledEmotes ? " bpm-hidden" : " bpm-nsfw";
@@ -945,6 +967,7 @@ var bpm_converter = {
                 }
             }
         }
+        return out_of_sub;
     },
 
     // Known spoiler "emotes". Not all of these are known to BPM, and it's not
@@ -1068,17 +1091,27 @@ var bpm_converter = {
     },
 
     /*
-     * Processes emotes and alt-text on a list of .md objects.
+     * Processes emotes and alt-text on a list of .md elements.
      */
     process_posts: function(prefs, posts) {
         for(var i = 0; i < posts.length; i++) {
-            var links = posts[i].getElementsByTagName("a");
-            // NOTE: must run alt-text AFTER emote code, always. See note in
-            // display_alt_text
-            this.process(prefs, links);
-            if(prefs.prefs.showAltText) {
-                this.display_alt_text(links);
-            }
+            this.process_rooted_post(prefs, posts[i], posts[i]);
+        }
+    },
+
+    /*
+     * Processes emotes and alt-text under an element, given the containing .md.
+     */
+    process_rooted_post: function(prefs, post, md) {
+        var links = post.getElementsByTagName("a");
+        // Sort of a hack. Might be nicer to go up to the parent and check
+        // for .livePreview, but who cares
+        var is_res_preview = bpm_utils.has_class(md, "RESDialogContents");
+        // NOTE: must run alt-text AFTER emote code, always. See note in
+        // display_alt_text
+        this.process(prefs, links, is_res_preview);
+        if(prefs.prefs.showAltText) {
+            this.display_alt_text(links);
         }
     }
 };
@@ -2061,10 +2094,11 @@ var bpm_core = {
                             continue;
                         }
 
-                        if(bpm_utils.class_above(root, "md")) {
+                        var md;
+                        if(md = bpm_utils.class_above(root, "md")) {
                             // Inside of a formatted text block, take all the
                             // links we can find
-                            bpm_converter.process_posts(prefs, [root]);
+                            bpm_converter.process_rooted_post(prefs, root, md);
                         } else {
                             // Outside of formatted text, try to find some
                             // underneath us
@@ -2088,8 +2122,9 @@ var bpm_core = {
                 var root = event.target;
 
                 if(root.getElementsByTagName) {
-                    if(bpm_utils.class_above(root, "md")) {
-                        bpm_converter.process_posts(prefs, [root]);
+                    var md;
+                    if(md = bpm_utils.class_above(root, "md")) {
+                        bpm_converter.process_rooted_post(prefs, root, md);
                     } else {
                         var posts = root.getElementsByClassName("md");
                         bpm_converter.process_posts(prefs, posts);
