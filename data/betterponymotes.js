@@ -944,8 +944,7 @@ var bpm_converter = {
                 // because otherwise they end awfully
                 var before = element.nextSibling;
                 while((before !== null && before.className !== undefined) &&
-                      (bpm_utils.has_class(before, "expando-button") ||
-                       bpm_utils.has_class(before, "bpm-sourceinfo"))) {
+                      (bpm_utils.has_class(before, "expando-button"))) {
                     before = before.nextSibling;
                 }
 
