@@ -818,6 +818,7 @@ var bpm_converter = {
                     // Click blocker CSS/JS
                     element.className += " bpm-emote";
                     // Used in alt-text. (Note: dashes are invalid here)
+                    element.dataset["bpm_state"] = "e";
                     element.dataset["bpm_emotename"] = emote_name;
                     element.dataset["bpm_srname"] = emote_info.source_name;
 
@@ -826,29 +827,35 @@ var bpm_converter = {
                         var disabled_class = prefs.prefs.hideDisabledEmotes ? " bpm-hidden" : " bpm-disabled";
                         // Ordering matters a bit here- placeholders for NSFW emotes
                         // come before disabled emotes.
-                        if(emote_info.is_nsfw && !prefs.prefs.enableNSFW) {
-                            element.className += nsfw_class;
-                            if(!element.textContent) {
-                                // Any existing text (there really shouldn't be any)
-                                // will look funny with our custom CSS, but there's
-                                // not much we can do.
-                                element.textContent = "NSFW " + emote_name;
+                        if(emote_info.is_nsfw) {
+                            element.dataset["bpm_state"] += "n";
+                            if(!prefs.prefs.enableNSFW) {
+                                element.className += nsfw_class;
+                                element.dataset["bpm_state"] += "d";
+                                if(!element.textContent) {
+                                    // Any existing text (there really shouldn't be any)
+                                    // will look funny with our custom CSS, but there's
+                                    // not much we can do.
+                                    element.textContent = emote_name;
+                                }
+                                continue;
                             }
-                            continue;
                         }
 
                         if(!sr_enabled || prefs.de_map[emote_name]) {
                             element.className += disabled_class;
+                            element.dataset["bpm_state"] += "d";
                             if(!element.textContent) {
-                                element.textContent = "Disabled " + emote_name;
+                                element.textContent = emote_name;
                             }
                             continue;
                         }
 
                         if(prefs.prefs.maxEmoteSize && emote_size > prefs.prefs.maxEmoteSize) {
                             element.className += disabled_class;
+                            element.dataset["bpm_state"] += "d";
                             if(!element.textContent) {
-                                element.textContent = "Large emote " + emote_name;
+                                element.textContent = emote_name;
                             }
                             continue;
                         }
@@ -876,15 +883,23 @@ var bpm_converter = {
                      * Then it's probably an emote, but we don't know what it is.
                      * Thanks to nallar for his advice/code here.
                      */
-                    if(!element.textContent && /^\/[\w\-:!]+$/.test(emote_name) && !element.clientWidth) {
-                        var after = window.getComputedStyle(element, ":after").backgroundImage;
-                        var before = window.getComputedStyle(element, ":before").backgroundImage;
-                        // "" in Opera, "none" in Firefox and Chrome.
-                        if((!after || after === "none") && (!before || before === "none")) {
-                            // Unknown emote? Good enough
-                            element.className += " bpm-unknown";
-                            element.textContent = "Unknown emote " + emote_name;
-                        }
+                    if(element.textContent || !(/^\/[\w\-:!]+$/).test(emote_name) || element.clientWidth) {
+                        continue;
+                    }
+
+                    var after = window.getComputedStyle(element, ":after").backgroundImage;
+                    var before = window.getComputedStyle(element, ":before").backgroundImage;
+                    // "" in Opera, "none" in Firefox and Chrome.
+                    if((after && after !== "none") || (before && before !== "none")) {
+                        continue;
+                    }
+
+                    // Unknown emote? Good enough
+                    element.dataset["bpm_state"] = "u";
+                    element.dataset["bpm_emotename"] = emote_name;
+                    element.className += " bpm-unknown";
+                    if(!element.textContent) {
+                        element.textContent = emote_name;
                     }
                 }
             }
@@ -907,10 +922,11 @@ var bpm_converter = {
     display_alt_text: function(elements) {
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
+            var state = element.dataset["bpm_state"] || "";
 
             // Already processed- ignore, so we don't do annoying things like
             // expanding the emote sourceinfo.
-            if(bpm_utils.has_class(element, "bpm-processed-at")) {
+            if(state.indexOf("a") > -1) {
                 continue;
             }
 
@@ -922,6 +938,10 @@ var bpm_converter = {
             }
 
             var processed = false;
+            var type_inline = false;
+            if(state.indexOf("d") > -1) {
+                type_inline = true;
+            }
 
             if(element.title) {
                 processed = true;
@@ -944,6 +964,10 @@ var bpm_converter = {
                 // already run, and check for bpflag-in/bpflag-inp.
                 var at_element;
                 if(element.className.indexOf("bpflag-in") > -1 || element.className.indexOf("bpflag-inp") > -1) {
+                    type_inline = true;
+                }
+
+                if(type_inline) {
                     at_element = document.createElement("span");
                 } else {
                     at_element = document.createElement("div");
@@ -967,18 +991,31 @@ var bpm_converter = {
                 element.parentNode.insertBefore(at_element, before);
             }
 
-            // If it's an emote, replace the actual alt-text with source
-            // information
-            if(bpm_utils.has_class(element, "bpm-emote")) {
+            // If it's an emote, replace the actual alt-text with source info
+            if(state.indexOf("e") > -1) {
                 processed = true;
                 var emote_name = element.dataset["bpm_emotename"];
                 var sr_name = element.dataset["bpm_srname"];
-                element.title = emote_name + " from " + sr_name;
+                var title = "";
+                if(state.indexOf("d") > -1) {
+                    title = "Disabled ";
+                    if(state.indexOf("n") > -1) {
+                        title += "NSFW ";
+                    }
+                    title += "emote ";
+                }
+                title += emote_name + " from " + sr_name;
+                element.title = title;
+            } else if(state.indexOf("u") > -1) {
+                processed = true;
+                var emote_name = element.dataset["bpm_emotename"];
+                var title = "Unknown emote " + emote_name;
+                element.title = title;
             }
 
             if(processed) {
                 // Mark as such.
-                element.className += " bpm-processed-at";
+                element.dataset["bpm_state"] += "a";
             }
         }
     },

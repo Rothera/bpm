@@ -15,26 +15,18 @@
 /* Placeholders */
 
 .bpm-unknown, .bpm-disabled, .bpm-nsfw {
-    /* Emote common */
+    /* Behave like normal emotes do */
     display: block;
-    clear: none;
     float: left;
-
-    /* An average, small emote (50px with padding) */
-    width: 44px !important; /* !important for sake of .bpm-disabled */
-    height: 44px !important;
-
-    /*
-     * Need !important tags to override Reddit's CSS.
-     */
-    color: white !important;
-    font-size: xx-small;
+    /* Need !important tags to override Reddit and emote CSS. */
+    color: black !important;
+    border: solid thin black;
     font-family: monospace;
     padding: 3px;
     margin: 1px; /* Don't run lines of them together */
-    border-radius: 2px;
-    word-break: break-all;
-    text-align: left; /* Safari seems to center it by default, making it hard to read */
+    border-radius: 4px;
+    height: auto !important;
+    width: auto !important;
 }
 
 .bpm-disabled, .bpm-disabled:before, .bpm-disabled:after, .bpm-disabled:hover, .bpm-disabled:active,
@@ -60,19 +52,15 @@
     display: none !important;
 }
 
-/* Unknown emote placeholder */
+/* Unknown emote placeholder. Transparent red background */
 .bpm-unknown {
-    background-color: slategray;
+    background-color: hsla(0, 100%, 50%, 0.3);
 }
 
-/* Disabled emote placeholder */
-.bpm-disabled {
-    background-color: #DA4F49;
-}
-
-/* NSFW emote placeholder */
+/* NSFW emote placeholder. Doesn't look too great in night mode, unfortunately */
 .bpm-nsfw {
-    background-color: black;
+    color: white !important;
+    background-color: black !important;
 }
 
 /* Alt-text display. */
