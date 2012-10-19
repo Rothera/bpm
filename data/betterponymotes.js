@@ -1703,6 +1703,8 @@ var bpm_global = {
             var parent = node.parentNode;
 
             if(!this.tag_blacklist[parent.tagName]) {
+                // <span> elements to apply alt-text to
+                var emote_elements = [];
                 this.emote_regexp.lastIndex = 0;
                 // Keep track of how the size of the container changes
                 var scroll_parent = bpm_utils.locate_matching_ancestor(parent, function(element) {
@@ -1754,7 +1756,13 @@ var bpm_global = {
 
                     // Build emote. (Global emotes are always -in)
                     var element = document.createElement("span");
-                    element.className = "bpflag-in " + emote_info.css_class;
+                    element.className = "bpflag-in bpm-emote " + emote_info.css_class;
+                    // Some things for alt-text. The .href is a bit of a lie,
+                    // but necessary to keep spoiler emotes reasonably sane.
+                    element.setAttribute("href", emote_name);
+                    element.dataset["bpm_emotename"] = emote_name;
+                    element.dataset["bpm_srname"] = emote_info.source_name;
+                    emote_elements.push(element);
 
                     // Don't need to do validation on flags, since our matching
                     // regexp is strict enough to begin with (although it will
@@ -1790,6 +1798,13 @@ var bpm_global = {
 
                     // Remove original text node
                     deletion_list.push(node);
+                }
+
+                // Convert alt text and such. We want to do this after we insert
+                // our new nodes (so that the alt-text element goes to the right
+                // place) but before we rescroll.
+                if(emote_elements.length && prefs.prefs.showAltText) {
+                    bpm_converter.display_alt_text(emote_elements);
                 }
 
                 // If the parent element has gotten higher due to our emotes,
