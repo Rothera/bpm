@@ -314,6 +314,18 @@ var bpm_utils = {
             // Right now, only Firefox lets us access this API.
             frame.contentWindow.postMessage(message, "*");
         }
+    },
+
+    locate_matching_ancestor: function(element, predicate, none) {
+        while(true) {
+            if(predicate(element)) {
+                return element;
+            } else if(element.parentNode) {
+                element = element.parentNode;
+            } else {
+                return none;
+            }
+        }
     }
 };
 
@@ -1692,6 +1704,22 @@ var bpm_global = {
 
             if(!this.tag_blacklist[parent.tagName]) {
                 this.emote_regexp.lastIndex = 0;
+                // Keep track of how the size of the container changes
+                var scroll_parent = bpm_utils.locate_matching_ancestor(parent, function(element) {
+                    var style = window.getComputedStyle(element);
+                    if(style && (style.overflowY === "auto" || style.overflowY === "scroll")) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
+                if(scroll_parent) {
+                    var scroll_top = scroll_parent.scrollTop;
+                    var scroll_height = scroll_parent.scrollHeight;
+                    // visible height + amount hidden > total height
+                    // + 1 just for a bit of safety
+                    var at_bottom = (scroll_parent.clientHeight + scroll_top + 1 >= scroll_height);
+                }
 
                 var new_elements = [];
                 var end_of_prev = 0; // End index of previous emote match
@@ -1762,6 +1790,13 @@ var bpm_global = {
 
                     // Remove original text node
                     deletion_list.push(node);
+                }
+
+                // If the parent element has gotten higher due to our emotes,
+                // and it was at the bottom before, scroll it down by the delta.
+                if(scroll_parent && at_bottom && scroll_top && scroll_parent.scrollHeight > scroll_height) {
+                    var delta = scroll_parent.scrollHeight - scroll_height;
+                    scroll_parent.scrollTop = scroll_parent.scrollTop + delta;
                 }
             }
         }
