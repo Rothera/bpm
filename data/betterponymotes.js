@@ -1326,7 +1326,7 @@ var bpm_search = {
             // Negate previous tags, searching from the right, back to the left.
             for(var i = query.tag_term_sets.length - 1; i >= 0; i--) {
                 var set = query.tag_term_sets[i];
-                if(set[0] === !positive) {
+                if(set[0] !== positive) {
                     // Opposite kinds of tags. Counter them where we can.
                     for(var j = tags.length - 1; j >= 0; j--) {
                         var index = set.indexOf(tags[j]);
@@ -1345,7 +1345,7 @@ var bpm_search = {
             }
             if(tags.length) {
                 tags.unshift(positive);
-                query.tag_term_sets.push(tags)
+                query.tag_term_sets.push(tags);
             }
         }
 
@@ -1370,7 +1370,7 @@ var bpm_search = {
                         // Cut off leading +
                         if(tag.slice(1).indexOf(lone_tag) > -1 &&
                            matches.indexOf(id) < 0) {
-                            matches.push(id)
+                            matches.push(id);
                         }
                     }
                     if(matches.length) {
@@ -1466,11 +1466,11 @@ var bpm_search = {
                 }
                 // We either didn't match, and wanted to, or matched and didn't
                 // want to.
-                if(!any === tag_set[0]) {
+                if(any !== tag_set[0]) {
                     // HACK: This is the index of -nonpony. Any matches on this
                     // one means we blocked something by default, so make a note
                     // of it so the user knows.
-                    if(tt_i == 1) {
+                    if(tt_i === 1) {
                         hidden++;
                     }
                     continue no_match;
