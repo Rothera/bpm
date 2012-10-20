@@ -4,11 +4,12 @@ div.side {
     padding: 435px 0px 0px 0px;
     background-color: transparent;
     background-image: url(%%side%%) !important;
-    background-position: 10px 5px !important;
+    background-position: 70px 5px !important;
+    margin: 0px;
     background-repeat: no-repeat !important
     }
 div.side:before {
-    margin: 10px;
+    margin: 0px;
     font-weight: 500;
     font-size: 1.0em;
 /*    content: "Congratulations to our contest winners!" */
@@ -41,98 +42,27 @@ body:first-of-type, body.res-nightmode:first-of-type {
 |  THANKS TO R/ELECTROHOUSE, R/ANDROID, AND ALL 
 |THE OTHER SUBREDDITS I STOLE, I MEAN BORROWED  
 |CSS FROM.                                      
-|                                               
-|               !!! REMINDER !!!                
-|                                               
-|PLEASE USE THE CHANGELOG IF YOU CHANGE ANYTHING
-|,MARK LARGE CHANGES WITH A .1 INCREASE AND     
-|SMALLER ONES WITH SMALLER INCREASES. KOOBAXION 
-|WILL GO ALL MEDIEVAL ON YO' BEHIND IF YOU DON'T.
-|[](/ppwhat)
-+
-|SECTION 1: PAGE STYLE CHANGES                  
-|  |                                            
-|  +-A: HEADER ETC.                             
-|  | |                                          
-|  | +- i  : HEADER                             
-|  | +- ii : BOTTOM RIGHT                       
-|  | +- iii: BOTTOM LEFT                        
-|  | +- iv : IMG                                
-|  | +- v  : PAGE NAME                          
-|  | +- vi : TAB MENU                           
-|  | +- vii: REDDIT NAME                        
-|  |                                            
-|  +-B: ANNOUNCEMENT BOX                        
-|  |                                           
-|  +-C: SEARCHBAR IMAGE                         
-|  |                                            
-|  +-D: SPOILER CODE                            
-|  |                                            
-|  +-E: CHANGE "SUBSCRIBERS"                    
-|  |                                            
-|  +-F: CHANGE "MODERATORS"    
-|  |
-|  +-G: CHANGE NAMES              
-|  |                                            
-|  +-H: CUSTOM ARROWS                           
-|  |                                            
-|  +-I: FOOTER
-|  |
-|  +-J: GREY ODD LINK BACKGROUNDS
-|  |
-|  +-K: RES CHANGES
-|                                       
-|SECTION 2: FLAIRS                             
-|  |                                            
-|  +-A: FLAIR                                   
-|    |                                          
-|    +- i  : RES NIGHTMODE FLAIR FIX            
-|    +- ii : VINYL                             
-|    +- iii: AWESOME                           
-|    +- iv : SCRATCHIE                         
-|    +- v  : MARINE     
-|    +- vi : TWEET
-|    +- vii : GLASSES
-|    +- viii : BROKEN RECORD   
-|    +- ix : DOLL
-|    +- x : FILLY
-|    +- xi : GRAFFITI
-|    +- xii : HEADPHONES
-|    +- xiii : HUGGING RECORD
-|    +- xiv : HUGGING TAIL
-|    +- xv : LAYING
-|    +- xvi : NERDY
-|    +- xvii : PARASPRITE
-|    +- xviii : SHRUG
-|    +- xix : SOCKS
-|    +- xx : SOCKS SMILE
-|    +- xxi : STARE
-|    +- xxii : SWEATER DIRTY
-|    +- xxiii : TALL VINYL
-|    +- xxiv : TAVISCRATCH
-|    +- xxv : WATCH
-|    +- xxvi : WUT                    
-|                                               
-|SECTION 3: EMOTES                              
-|  |                                            
-|  +-A: EMOTES                                  
-|    |
-|    +- i  : vinylscratch emotes
-|    +- ii : other emotes    
-|                                       
-|SECTION 4: OTHER STUFF                         
-|  |                                            
-|  +-A: APPROVAL TWILIGHT                       
-|                      					
-|SECTION 5: CHANGELOG                           
-|                                               
-|                                               
-+
+|                                                
 */
 
 /* 1: PAGE STYLE CHANGES*/
 
 /* A: HEADER ETC.*/
+
+/*---------------------------- Scrolly sidebar thing --------------------------------------*/
+body
+
+.side a[href="http://www.reddit.com/r/pinkiepie/new"] {
+    display: block;
+    height: 110px;
+    width: 75px;
+    background: url(%%ppwatching%%);
+    position: fixed;
+    top: 174px;
+    right: -0px;
+    z-index: -1
+    }
+
 
 /* i: HEADER */
 #header {
