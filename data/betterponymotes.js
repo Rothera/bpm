@@ -165,8 +165,8 @@ var bpm_utils = {
         while(true) {
             if(element.id === id) {
                 return true;
-            } else if(element.parentNode) {
-                element = element.parentNode;
+            } else if(element.parentElement) {
+                element = element.parentElement;
             } else {
                 return false;
             }
@@ -178,12 +178,10 @@ var bpm_utils = {
      */
     class_above: function(element, class_name) {
         while(true) {
-            if(element.className === undefined || element.className === null) {
-                return null;
-            } else if(bpm_utils.has_class(element, class_name)) {
+            if(bpm_utils.has_class(element, class_name)) {
                 return element;
-            } else if(element.parentNode) {
-                element = element.parentNode;
+            } else if(element.parentElement) {
+                element = element.parentElement;
             } else {
                 return null; // Terminate loop
             }
@@ -320,8 +318,8 @@ var bpm_utils = {
         while(true) {
             if(predicate(element)) {
                 return element;
-            } else if(element.parentNode) {
-                element = element.parentNode;
+            } else if(element.parentElement) {
+                element = element.parentElement;
             } else {
                 return none;
             }
