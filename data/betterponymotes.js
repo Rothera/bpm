@@ -922,7 +922,13 @@ var bpm_converter = {
     display_alt_text: function(elements) {
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
-            var state = element.dataset["bpm_state"] || "";
+            var state;
+            try {
+                state = element.dataset["bpm_state"] || "";
+            } catch(e) {
+                // .dataset reads fail on Firefox if the attribute doesn't exist
+                state = "";
+            }
 
             // Already processed- ignore, so we don't do annoying things like
             // expanding the emote sourceinfo.
@@ -1015,7 +1021,7 @@ var bpm_converter = {
 
             if(processed) {
                 // Mark as such.
-                element.dataset["bpm_state"] += "a";
+                element.dataset["bpm_state"] = state + "a";
             }
         }
     },
@@ -1797,6 +1803,7 @@ var bpm_global = {
                     // Some things for alt-text. The .href is a bit of a lie,
                     // but necessary to keep spoiler emotes reasonably sane.
                     element.setAttribute("href", emote_name);
+                    element.dataset["bpm_state"] = "e";
                     element.dataset["bpm_emotename"] = emote_name;
                     element.dataset["bpm_srname"] = emote_info.source_name;
                     emote_elements.push(element);
