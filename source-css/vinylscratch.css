@@ -15,17 +15,59 @@ div.side:before {
 /*    content: "Congratulations to our contest winners!" */
     }
 
-/* Nightmode fixes for the background */
+/*------------------------  Changes background -------------------------------*/
+
+body:first-of-type, body.res-nightmode:first-of-type,.side,.flairtoggle,.submit .spacer,.create .spacer,.icon-menu a,.nub { background-color: transparent !important; }
+.side a[href="/bg-pony"] { 
+    position: fixed;
+    z-index:-1;
+    bottom: 0%;
+    left: 30%;
+    width: 100%;
+    height: 100%; 
+}
+
+.side .usertext[id$="a"] a[href="/bg-pony"] { background:url(%%chacha%%); width:800px; height:385px; background-position: -0px -0px !important; }
+.side .usertext[id$="b"] a[href="/bg-pony"] { background:url(%%chacha%%); width:800px; height:385px; background-position: -0px -0px !important}
+.side .usertext[id$="c"] a[href="/bg-pony"] { background:url(%%bg1%%); width:369px; height:600px; background-position: -2px -2px  !important}
+.side .usertext[id$="d"] a[href="/bg-pony"] { background:url(%%bg1%%); width:438px; height:600px; background-position: -373px -2px  !important}
+.side .usertext[id$="e"] a[href="/bg-pony"] { background:url(%%bg1%%); width:536px; height:600px; background-position: -1256px -2px !important}
+.side .usertext[id$="f"] a[href="/bg-pony"] { background:url(%%bg1%%); width:777px; height:756px; background-position: -2px -1206px   !important}
+.side .usertext[id$="g"] a[href="/bg-pony"] { background:url(%%bg1%%); width:441px; height:500px; background-position: -813px -2px !important}
+.side .usertext[id$="h"] a[href="/bg-pony"] { background:url(%%bg1%%);  width:686px; height:552px; background-position: -2px -604px !important}
+.side .usertext[id$="i"] a[href="/bg-pony"] { background:url(%%bg1%%); width:761px; height:600px; background-position: -690px -604px   !important}
+.side .usertext[id$="j"] a[href="/bg-pony"] { background:url(%%bg1%%); width:1157px; height:691px; background-position: -781px -1206px  !important}
+.side .usertext[id$="k"] a[href="/bg-pony"] { background:url(%%bg2%%); width:960px; height:600px; background-position: -2px -2px        !important}
+.side .usertext[id$="l"] a[href="/bg-pony"] { background:url(%%bg2%%); width:414px; height:472px; background-position: -964px -2px     !important;}
+.side .usertext[id$="m"] a[href="/bg-pony"] { background:url(%%bg2%%); width:665px; height:392px; background-position: -1380px -2px    !important;}
+.side .usertext[id$="n"] a[href="/bg-pony"] { background:url(%%bg2%%); width:725px; height:600px; background-position: -2px -604px      !important;}
+.side .usertext[id$="o"] a[href="/bg-pony"] { background:url(%%bg2%%); width:419px; height:500px; background-position: -729px -604px   !important;}
+.side .usertext[id$="p"] a[href="/bg-pony"] { background:url(%%bg2%%); width:662px; height:600px; background-position: -1150px -604px   !important;}
+.side .usertext[id$="q"] a[href="/bg-pony"] { background:url(%%bg2%%); width:401px; height:500px; background-position: -2px -1206px     !important;}
+.side .usertext[id$="r"] a[href="/bg-pony"] { background:url(%%bg2%%); width:960px; height:600px; background-position: -2px -2px        !important;}
+.side .usertext[id$="s"] a[href="/bg-pony"] { background:url(%%bg2%%); width:414px; height:472px; background-position: -964px -2px      !important;}
+.side .usertext[id$="t"] a[href="/bg-pony"] { background:url(%%bg2%%); width:665px; height:392px; background-position: -1380px -2px   !important;}
+.side .usertext[id$="u"] a[href="/bg-pony"] { background:url(%%bg2%%); width:725px; height:600px; background-position: -2px -604px     !important;}
+.side .usertext[id$="v"] a[href="/bg-pony"] { background:url(%%bg2%%); width:419px; height:500px; background-position: -729px -604px  !important;}
+.side .usertext[id$="w"] a[href="/bg-pony"] { background:url(%%bg2%%); width:662px; height:600px; background-position: -1150px -604px !important;}
+.side .usertext[id$="x"] a[href="/bg-pony"] { background:url(%%bg2%%); width:401px; height:500px; background-position: -2px -1206px    !important;}
+.side .usertext[id$="y"] a[href="/bg-pony"] { background:url(%%bg2%%);  width:419px; height:500px; background-position: -729px -604px !important;}
+.side .usertext[id$="z"] a[href="/bg-pony"] { background:url(%%bg1%%); width:369px; height:600px; background-position: -2px -2px !important; }
+.side .usertext[id$="0"] a[href="/bg-pony"] { background:url(%%bg1%%); width:777px; height:756px; background-position: -2px -1206px !important}
+.side .usertext[id$="1"] a[href="/bg-pony"] { background:url(%%bg1%%); width:369px; height:600px; background-position: -2px -2px  !important}
+.side .usertext[id$="2"] a[href="/bg-pony"] { background:url(%%bg1%%); width:438px; height:600px; background-position: -373px -2px  !important}
+.side .usertext[id$="3"] a[href="/bg-pony"] { background:url(%%bg1%%); width:536px; height:600px; background-position: -1256px -2px !important}
+.side .usertext[id$="4"] a[href="/bg-pony"] { background:url(%%bg1%%); width:1157px; height:691px; background-position: -781px -1206px  !important}
+.side .usertext[id$="5"] a[href="/bg-pony"] { background:url(%%bg1%%); width:441px; height:500px; background-position: -813px -2px !important}
+.side .usertext[id$="6"] a[href="/bg-pony"] { background:url(%%bg1%%); width:686px; height:552px; background-position: -2px -604px !important}
+.side .usertext[id$="7"] a[href="/bg-pony"] { background:url(%%bg1%%); width:761px; height:600px; background-position: -690px -604px   !important}
+.side .usertext[id$="8"] a[href="/bg-pony"] { background:url(%%bg1%%); width:1157px; height:691px; background-position: -781px -1206px  !important}
+.side .usertext[id$="9"] a[href="/bg-pony"]  { background:url(%%unce%%); width:240px; height:180px; background-position: -0px -0px  !important}
+
+/*---------------------- Nightmode fixes for the background -------------------------------- */
 .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
 body.res-nightmode:first-of-type {background-color: transparent!important;}
-
-/* Changes background  */
-body:first-of-type, body.res-nightmode:first-of-type {
-   
-     background:  url(%%chacha%%)  no-repeat  fixed 50% 50% !important}
-
-
 
 
 /* http://pastebin.com/wKXNqF9j  http://imgur.com/a/XJxbi#0 <- old emote stuffs */

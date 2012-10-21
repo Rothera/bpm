@@ -1,18 +1,18 @@
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
    
-     background:  url(%%eifback%%)  no-repeat  fixed 73% 100% !important;
+     background:  url(%%hello%%)  no-repeat  fixed 73% 100% !important;
   
 } 
 
 /* Banner Image */
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%eifbanner%%); 
+   background: url(%%meatbannerpony%%); 
   background-color: #e0d3c1 !important;
    /*   margin-top: -20px;*/
    background-repeat: no-repeat;
    background-position: 50% 0%;
-   height: 295px; /* 237 for meat's nice banner */
+   height: 237px; /* 237 for meat's nice banner */
 
  }
 
@@ -34,7 +34,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     }
 
 #header-img {
-    margin-top:50px; /* 80 for meat's nice banner */
+    margin-top:145px; /* 80 for meat's nice banner */
     margin-left: 0px;
     position: absolute
     }
@@ -53,7 +53,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     padding: 5px
     }
 .tabmenu {
-    margin-top: 279px; /* 223 for meat's nice banner */
+    margin-top: 220px; /* 223 for meat's nice banner */
     margin-left: 505px
     }
 
@@ -1062,3 +1062,6 @@ body.res a.author[href$="Pathogen-David"], body.res a.author[href$="Phei"] { col
 /* PROPER GREENTEXT (stolen from plounge, which stole from /r/4chan) */
 .content .md h1 { color: #789922; border-bottom: none; padding-bottom: 0px }
 .content .md h1:before { content: ">" }
+
+/*Social wanted color*/
+.id-t2_894lr.id-t2_894lr{color:#b38 !important}
