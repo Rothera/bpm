@@ -1770,22 +1770,6 @@ var bpm_global = {
             // <span> elements to apply alt-text to
             var emote_elements = [];
             this.emote_regexp.lastIndex = 0;
-            // Keep track of how the size of the container changes
-            var scroll_parent = bpm_utils.locate_matching_ancestor(parent, function(element) {
-                var style = window.getComputedStyle(element);
-                if(style && (style.overflowY === "auto" || style.overflowY === "scroll")) {
-                    return true;
-                } else {
-                    return false;
-                }
-            });
-            if(scroll_parent) {
-                var scroll_top = scroll_parent.scrollTop;
-                var scroll_height = scroll_parent.scrollHeight;
-                // visible height + amount hidden > total height
-                // + 1 just for a bit of safety
-                var at_bottom = (scroll_parent.clientHeight + scroll_top + 1 >= scroll_height);
-            }
 
             var new_elements = [];
             var end_of_prev = 0; // End index of previous emote match
@@ -1827,6 +1811,7 @@ var bpm_global = {
                 element.dataset["bpm_state"] = "e";
                 element.dataset["bpm_emotename"] = emote_name;
                 element.dataset["bpm_srname"] = emote_info.source_name;
+                new_elements.push(element);
                 emote_elements.push(element);
 
                 // Don't need to do validation on flags, since our matching
@@ -1837,11 +1822,10 @@ var bpm_global = {
                     element.className += " bpflag-" + bpm_utils.sanitize(flag);
                 }
 
-                if(match[2] !== undefined) {
+                if(match[2]) {
                     // Alt-text. (Quotes aren't captured by the regexp)
                     element.title = match[2];
                 }
-                new_elements.push(element);
 
                 // Next text element will start after this emote
                 end_of_prev = match.index + match[0].length;
@@ -1850,6 +1834,24 @@ var bpm_global = {
             // If length == 0, then there were no emote matches to begin with,
             // and we should just leave it alone
             if(new_elements.length) {
+                // Keep track of how the size of the container changes. Also,
+                // don't even dream of doing this for every node.
+                var scroll_parent = bpm_utils.locate_matching_ancestor(parent, function(element) {
+                    var style = window.getComputedStyle(element);
+                    if(style && (style.overflowY === "auto" || style.overflowY === "scroll")) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
+                if(scroll_parent) {
+                    var scroll_top = scroll_parent.scrollTop;
+                    var scroll_height = scroll_parent.scrollHeight;
+                    // visible height + amount hidden > total height
+                    // + 1 just for a bit of safety
+                    var at_bottom = (scroll_parent.clientHeight + scroll_top + 1 >= scroll_height);
+                }
+
                 // There were emotes, so grab the last bit of text at the end
                 var before_text = node.data.slice(end_of_prev);
                 if(before_text) {
@@ -1863,20 +1865,20 @@ var bpm_global = {
 
                 // Remove original text node
                 deletion_list.push(node);
-            }
 
-            // Convert alt text and such. We want to do this after we insert
-            // our new nodes (so that the alt-text element goes to the right
-            // place) but before we rescroll.
-            if(emote_elements.length && prefs.prefs.showAltText) {
-                bpm_converter.display_alt_text(emote_elements);
-            }
+                // Convert alt text and such. We want to do this after we insert
+                // our new nodes (so that the alt-text element goes to the right
+                // place) but before we rescroll.
+                if(prefs.prefs.showAltText) {
+                    bpm_converter.display_alt_text(emote_elements);
+                }
 
-            // If the parent element has gotten higher due to our emotes,
-            // and it was at the bottom before, scroll it down by the delta.
-            if(scroll_parent && at_bottom && scroll_top && scroll_parent.scrollHeight > scroll_height) {
-                var delta = scroll_parent.scrollHeight - scroll_height;
-                scroll_parent.scrollTop = scroll_parent.scrollTop + delta;
+                // If the parent element has gotten higher due to our emotes,
+                // and it was at the bottom before, scroll it down by the delta.
+                if(scroll_parent && at_bottom && scroll_top && scroll_parent.scrollHeight > scroll_height) {
+                    var delta = scroll_parent.scrollHeight - scroll_height;
+                    scroll_parent.scrollTop = scroll_parent.scrollTop + delta;
+                }
             }
         }.bind(this));
 
