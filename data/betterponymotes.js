@@ -829,6 +829,7 @@ var bpm_converter = {
      * any that are emotes.
      */
     process: function(prefs, elements) {
+        next_emote:
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
             if(element.className.indexOf("bpm-") > -1) {
@@ -925,11 +926,13 @@ var bpm_converter = {
                         continue;
                     }
 
-                    var after = window.getComputedStyle(element, ":after").backgroundImage;
-                    var before = window.getComputedStyle(element, ":before").backgroundImage;
-                    // "" in Opera, "none" in Firefox and Chrome.
-                    if((after && after !== "none") || (before && before !== "none")) {
-                        continue;
+                    var pseudos = [null, ":after", ":before"];
+                    for(var pi = 0; pi < pseudos.length; pi++) {
+                        var bg_image = window.getComputedStyle(element, pseudos[pi]).backgroundImage;
+                        // "" in Opera, "none" in Firefox/Chrome.
+                        if(bg_image && bg_image !== "none") {
+                            continue next_emote;
+                        }
                     }
 
                     // Unknown emote? Good enough
