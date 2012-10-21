@@ -387,6 +387,49 @@ var bpm_utils = {
 // Chrome is picky about bind().
 var bpm_log = bpm_utils.platform === "userscript" ? GM_log : console.log.bind(console);
 
+/*
+ * Misc utility functions to help make your way around Reddit's HTML.
+ */
+var bpm_redditutil = {
+    /*
+     * Shows an "error" message under an edit form, in the standard style.
+     * Comparable to the "we need something here" message when you try to post
+     * an empty comment.
+     */
+    enable_warning: function(bottom_area, class_name, message) {
+        var elements = bottom_area.getElementsByClassName(class_name);
+        if(elements.length > 1) {
+            bpm_log("BPM: WARNING: warning span already attached to .bottom-area");
+        }
+        var element;
+        if(elements.length) {
+            element = elements[0];
+        } else {
+            element = document.createElement("span");
+            element.className = "error " + class_name;
+            // Insert before the .usertext-buttons div, so it looks right
+            var before = bottom_area.getElementsByClassName("usertext-buttons")[0];
+            bottom_area.insertBefore(element, before);
+        }
+        element.style.display = "";
+        element.textContent = message;
+    },
+
+    /*
+     * Disables a previously-generated error message, if it exists.
+     */
+    disable_warning: function(bottom_area, class_name) {
+        //bpm_redditutil.disable_warning(bottom_area, "OUTOFSUB_EMOTE");
+        var elements = bottom_area.getElementsByClassName(class_name);
+        if(elements.length > 1) {
+            bpm_log("BPM: WARNING: multiple warning spans attached to .bottom-area");
+        } else if(!elements.length) {
+            return;
+        }
+        bottom_area.removeChild(elements[0]);
+    }
+};
+
 // Keep sync with bpgen.
 var _BPM_FLAG_NSFW = 1;
 var _BPM_FLAG_REDIRECT = 1 << 1;
@@ -875,12 +918,8 @@ var bpm_converter = {
                     element.dataset["bpm_emotename"] = emote_name;
                     element.dataset["bpm_srname"] = emote_info.source_name;
 
-                    if(is_res_preview) {
-                        // Highlight out-of-sub emotes.
-                        if(emote_info.source_name.toLowerCase() !== "r/" + bpm_utils.current_subreddit) {
-                            element.className += " bpm-outofsub";
-                            out_of_sub = true;
-                        }
+                    if(emote_info.source_name.toLowerCase() !== "r/" + bpm_utils.current_subreddit) {
+                        out_of_sub = true;
                     }
 
                     if(!prefs.we_map[emote_name]) {
@@ -1109,9 +1148,20 @@ var bpm_converter = {
         var is_res_preview = bpm_utils.has_class(md, "RESDialogContents");
         // NOTE: must run alt-text AFTER emote code, always. See note in
         // display_alt_text
-        this.process(prefs, links, is_res_preview);
+        var out_of_sub = this.process(prefs, links, is_res_preview);
         if(prefs.prefs.showAltText) {
             this.display_alt_text(links);
+        }
+        if(is_res_preview) {
+            // Should be two elements up
+            var usertext_edit = bpm_utils.class_above(md, "usertext-edit");
+            var bottom_area = usertext_edit.getElementsByClassName("bottom-area")[0];
+            if(out_of_sub) {
+                bpm_redditutil.enable_warning(bottom_area, "OUTOFSUB_EMOTE",
+                    "not everyone can see your emotes! please be considerate");
+            } else {
+                bpm_redditutil.disable_warning(bottom_area, "OUTOFSUB_EMOTE");
+            }
         }
     }
 };
