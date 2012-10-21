@@ -314,6 +314,46 @@ var bpm_utils = {
         }
     },
 
+    _tag_blacklist: {
+        // Meta tags we should never touch
+        "HEAD": 1, "TITLE": 1, "BASE": 1, "LINK": 1, "META": 1, "STYLE": 1, "SCRIPT": 1,
+        // Things I'm worried about
+        "IFRAME": 1, "OBJECT": 1, "CANVAS": 1, "SVG": 1, "MATH": 1, "TEXTAREA": 1
+    },
+    walk_dom: function(root, node_filter, process, node) {
+        node = node || root.firstChild;
+        var num = 1000;
+        while(node && num > 0) {
+            num--;
+            if(node.nodeType === node_filter) {
+                process(node);
+            }
+            if(node.hasChildNodes()) {
+                // Descend, ignoring blacklisted tags
+                if(this._tag_blacklist[node.tagName]) {
+                    node = node.nextSibling;
+                } else {
+                    node = node.firstChild;
+                }
+            } else {
+                // Ascend up the "side" of the tree until we can move horizontally
+                // again
+                while(!node.nextSibling) {
+                    node = node.parentNode;
+                    if(node === root) {
+                        return;
+                    }
+                }
+                node = node.nextSibling;
+            }
+        }
+        if(!num) {
+            setTimeout(function() {
+                this.walk_dom(root, node_filter, process, node);
+            }.bind(this), 50);
+        }
+    },
+
     locate_matching_ancestor: function(element, predicate, none) {
         while(true) {
             if(predicate(element)) {
@@ -1717,146 +1757,128 @@ var bpm_global = {
     //                   <   emote      >   <    alt-text     >
     emote_regexp: /\[\]\((\/[\w:!#\/\-]+)\s*(?:["']([^"]*)["'])?\)/g,
 
-    tag_blacklist: {
-        // Meta tags that we should never touch
-        "HTML": 1, "HEAD": 1, "TITLE": 1, "BASE": 1, "LINK": 1, "META": 1, "STYLE": 1, "SCRIPT": 1,
-        // Some random things I'm a little worried about
-        "SVG": 1, "MATH": 1
-    },
-
     /*
      * Searches elements recursively for [](/emotes), and converts them.
      */
     process: function(prefs, root) {
-        // Opera does not seem to expose NodeFilter to content scripts, so we
-        // cannot specify NodeFilter.SHOW_TEXT. Its value is defined to be 4 in the
-        // DOM spec, though, so that works.
-        //
-        // Opera also throws an error if we do not specify all four arguments,
-        // though Firefox and Chrome will accept just the first two.
-        var walker = document.createTreeWalker(root, /*NodeFilter.SHOW_TEXT*/ 4, undefined, undefined);
-        var node;
-        // TreeWalker's seem to stop returning nodes if you delete a node while
-        // iterating over it.
+        // List of nodes to delete. Would probably not work well to remove nodes
+        // while walking the DOM
         var deletion_list = [];
 
-        while((node = walker.nextNode()) !== null) {
+        bpm_utils.walk_dom(root, Node.TEXT_NODE, function(node) {
             var parent = node.parentNode;
-
-            if(!this.tag_blacklist[parent.tagName]) {
-                // <span> elements to apply alt-text to
-                var emote_elements = [];
-                this.emote_regexp.lastIndex = 0;
-                // Keep track of how the size of the container changes
-                var scroll_parent = bpm_utils.locate_matching_ancestor(parent, function(element) {
-                    var style = window.getComputedStyle(element);
-                    if(style && (style.overflowY === "auto" || style.overflowY === "scroll")) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                });
-                if(scroll_parent) {
-                    var scroll_top = scroll_parent.scrollTop;
-                    var scroll_height = scroll_parent.scrollHeight;
-                    // visible height + amount hidden > total height
-                    // + 1 just for a bit of safety
-                    var at_bottom = (scroll_parent.clientHeight + scroll_top + 1 >= scroll_height);
+            // <span> elements to apply alt-text to
+            var emote_elements = [];
+            this.emote_regexp.lastIndex = 0;
+            // Keep track of how the size of the container changes
+            var scroll_parent = bpm_utils.locate_matching_ancestor(parent, function(element) {
+                var style = window.getComputedStyle(element);
+                if(style && (style.overflowY === "auto" || style.overflowY === "scroll")) {
+                    return true;
+                } else {
+                    return false;
                 }
-
-                var new_elements = [];
-                var end_of_prev = 0; // End index of previous emote match
-                var match;
-
-                while((match = this.emote_regexp.exec(node.data)) !== null) {
-                    // Don't normalize case for emote lookup
-                    var parts = match[1].split("-");
-                    var emote_name = parts[0];
-                    var emote_info = bpm_data.lookup_emote(emote_name, prefs.custom_emotes);
-
-                    if(emote_info === null) {
-                        continue;
-                    }
-                    var sr_enabled = (emote_info.source_id !== null ? prefs.sr_array[emote_info.source_id] : true);
-                    var emote_size = emote_info.max_size || 0;
-
-                    // Check that it hasn't been disabled somehow
-                    if(!prefs.we_map[emote_name] &&
-                        (!sr_enabled || prefs.de_map[emote_name] ||
-                         (emote_info.is_nsfw && !prefs.prefs.enableNSFW) ||
-                         (prefs.prefs.maxEmoteSize && emote_size > prefs.prefs.maxEmoteSize))) {
-                        continue;
-                    }
-
-                    // Keep text between the last emote and this one (or the start
-                    // of the text element)
-                    var before_text = node.data.slice(end_of_prev, match.index);
-                    if(before_text) {
-                        new_elements.push(document.createTextNode(before_text));
-                    }
-
-                    // Build emote. (Global emotes are always -in)
-                    var element = document.createElement("span");
-                    element.className = "bpflag-in bpm-emote " + emote_info.css_class;
-                    // Some things for alt-text. The .href is a bit of a lie,
-                    // but necessary to keep spoiler emotes reasonably sane.
-                    element.setAttribute("href", emote_name);
-                    element.dataset["bpm_state"] = "e";
-                    element.dataset["bpm_emotename"] = emote_name;
-                    element.dataset["bpm_srname"] = emote_info.source_name;
-                    emote_elements.push(element);
-
-                    // Don't need to do validation on flags, since our matching
-                    // regexp is strict enough to begin with (although it will
-                    // match ":", something we don't permit elsewhere).
-                    for(var p = 1; p < parts.length; p++) {
-                        var flag = parts[p].toLowerCase();
-                        element.className += " bpflag-" + bpm_utils.sanitize(flag);
-                    }
-
-                    if(match[2] !== undefined) {
-                        // Alt-text. (Quotes aren't captured by the regexp)
-                        element.title = match[2];
-                    }
-                    new_elements.push(element);
-
-                    // Next text element will start after this emote
-                    end_of_prev = match.index + match[0].length;
-                }
-
-                // If length == 0, then there were no emote matches to begin with,
-                // and we should just leave it alone
-                if(new_elements.length) {
-                    // There were emotes, so grab the last bit of text at the end
-                    var before_text = node.data.slice(end_of_prev);
-                    if(before_text) {
-                        new_elements.push(document.createTextNode(before_text));
-                    }
-
-                    // Insert all our new nodes
-                    for(var i = 0; i < new_elements.length; i++) {
-                        parent.insertBefore(new_elements[i], node);
-                    }
-
-                    // Remove original text node
-                    deletion_list.push(node);
-                }
-
-                // Convert alt text and such. We want to do this after we insert
-                // our new nodes (so that the alt-text element goes to the right
-                // place) but before we rescroll.
-                if(emote_elements.length && prefs.prefs.showAltText) {
-                    bpm_converter.display_alt_text(emote_elements);
-                }
-
-                // If the parent element has gotten higher due to our emotes,
-                // and it was at the bottom before, scroll it down by the delta.
-                if(scroll_parent && at_bottom && scroll_top && scroll_parent.scrollHeight > scroll_height) {
-                    var delta = scroll_parent.scrollHeight - scroll_height;
-                    scroll_parent.scrollTop = scroll_parent.scrollTop + delta;
-                }
+            });
+            if(scroll_parent) {
+                var scroll_top = scroll_parent.scrollTop;
+                var scroll_height = scroll_parent.scrollHeight;
+                // visible height + amount hidden > total height
+                // + 1 just for a bit of safety
+                var at_bottom = (scroll_parent.clientHeight + scroll_top + 1 >= scroll_height);
             }
-        }
+
+            var new_elements = [];
+            var end_of_prev = 0; // End index of previous emote match
+            var match;
+
+            while((match = this.emote_regexp.exec(node.data)) !== null) {
+                // Don't normalize case for emote lookup
+                var parts = match[1].split("-");
+                var emote_name = parts[0];
+                var emote_info = bpm_data.lookup_emote(emote_name, prefs.custom_emotes);
+
+                if(emote_info === null) {
+                    continue;
+                }
+                var sr_enabled = (emote_info.source_id !== null ? prefs.sr_array[emote_info.source_id] : true);
+                var emote_size = emote_info.max_size || 0;
+
+                // Check that it hasn't been disabled somehow
+                if(!prefs.we_map[emote_name] &&
+                    (!sr_enabled || prefs.de_map[emote_name] ||
+                     (emote_info.is_nsfw && !prefs.prefs.enableNSFW) ||
+                     (prefs.prefs.maxEmoteSize && emote_size > prefs.prefs.maxEmoteSize))) {
+                    continue;
+                }
+
+                // Keep text between the last emote and this one (or the start
+                // of the text element)
+                var before_text = node.data.slice(end_of_prev, match.index);
+                if(before_text) {
+                    new_elements.push(document.createTextNode(before_text));
+                }
+
+                // Build emote. (Global emotes are always -in)
+                var element = document.createElement("span");
+                element.className = "bpflag-in bpm-emote " + emote_info.css_class;
+                // Some things for alt-text. The .href is a bit of a lie,
+                // but necessary to keep spoiler emotes reasonably sane.
+                element.setAttribute("href", emote_name);
+                element.dataset["bpm_state"] = "e";
+                element.dataset["bpm_emotename"] = emote_name;
+                element.dataset["bpm_srname"] = emote_info.source_name;
+                emote_elements.push(element);
+
+                // Don't need to do validation on flags, since our matching
+                // regexp is strict enough to begin with (although it will
+                // match ":", something we don't permit elsewhere).
+                for(var p = 1; p < parts.length; p++) {
+                    var flag = parts[p].toLowerCase();
+                    element.className += " bpflag-" + bpm_utils.sanitize(flag);
+                }
+
+                if(match[2] !== undefined) {
+                    // Alt-text. (Quotes aren't captured by the regexp)
+                    element.title = match[2];
+                }
+                new_elements.push(element);
+
+                // Next text element will start after this emote
+                end_of_prev = match.index + match[0].length;
+            }
+
+            // If length == 0, then there were no emote matches to begin with,
+            // and we should just leave it alone
+            if(new_elements.length) {
+                // There were emotes, so grab the last bit of text at the end
+                var before_text = node.data.slice(end_of_prev);
+                if(before_text) {
+                    new_elements.push(document.createTextNode(before_text));
+                }
+
+                // Insert all our new nodes
+                for(var i = 0; i < new_elements.length; i++) {
+                    parent.insertBefore(new_elements[i], node);
+                }
+
+                // Remove original text node
+                deletion_list.push(node);
+            }
+
+            // Convert alt text and such. We want to do this after we insert
+            // our new nodes (so that the alt-text element goes to the right
+            // place) but before we rescroll.
+            if(emote_elements.length && prefs.prefs.showAltText) {
+                bpm_converter.display_alt_text(emote_elements);
+            }
+
+            // If the parent element has gotten higher due to our emotes,
+            // and it was at the bottom before, scroll it down by the delta.
+            if(scroll_parent && at_bottom && scroll_top && scroll_parent.scrollHeight > scroll_height) {
+                var delta = scroll_parent.scrollHeight - scroll_height;
+                scroll_parent.scrollTop = scroll_parent.scrollTop + delta;
+            }
+        }.bind(this));
 
         for(var i = 0; i < deletion_list.length; i++) {
             var node = deletion_list[i];
