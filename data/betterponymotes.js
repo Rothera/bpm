@@ -459,38 +459,47 @@ var bpm_data = {
             return null;
         }
 
-        var flags = parseInt(data.slice(0, 1), 16); // Hexadecimal
-        var source_id = parseInt(data.slice(1, 3), 10);
-        var size = parseInt(data.slice(3, 7), 16); // Hexadecimal
+        var parts = data.split(",");
+        var flag_data = parts[0];
+        var source_data = parts[1];
+        var tag_data = parts[2];
 
+        var flags = parseInt(flag_data.slice(0, 1), 16);     // Hexadecimal
+        var source_id = parseInt(flag_data.slice(1, 3), 16); // Hexadecimal
+        var size = parseInt(flag_data.slice(3, 7), 16);      // Hexadecimal
         var is_nsfw = (flags & _BPM_FLAG_NSFW);
         var is_redirect = (flags & _BPM_FLAG_REDIRECT);
 
-        var tag_ids, base;
-        if(is_redirect) {
-            var stop = data.indexOf("/");
-            tag_ids = data.slice(7, stop);
-            base = data.slice(stop+1);
-        } else {
-            tag_ids = data.slice(7);
-            base = name;
+        var sources = [], start = 0, str;
+        while((str = source_data.slice(start, start+2)) !== "") {
+            sources.push(parseInt(str, 16));
+            start += 2;
         }
 
         var tags = [];
-        var start = 0;
-        // One byte per tag, hexadecimal
-        var str;
-        while((str = tag_ids.slice(start, start+2)) !== "") {
+        start = 0;
+        while((str = tag_data.slice(start, start+2)) !== "") {
             tags.push(parseInt(str, 16));
             start += 2;
         }
+
+        var base;
+        if(is_redirect) {
+            base = parts[3];
+        } else {
+            base = name;
+        }
+
         return {
             name: name,
             is_nsfw: Boolean(is_nsfw),
             source_id: source_id,
             source_name: sr_id2name[source_id],
             max_size: size,
+
+            sources: sources,
             tags: tags,
+
             css_class: "bpmote-" + bpm_utils.sanitize(name.slice(1)),
             base: base
         };
@@ -511,7 +520,10 @@ var bpm_data = {
             source_id: null,
             source_name: "custom subreddit",
             max_size: null,
+
+            sources: [],
             tags: [],
+
             css_class: "bpm-cmote-" + bpm_utils.sanitize(name.slice(1)),
             base: null
         };

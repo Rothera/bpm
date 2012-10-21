@@ -18,6 +18,7 @@ class DataManager:
         self.tag_config = bplib.load_yaml_file(open("data/tags.yaml"))
         self.sources = {}
         self.drops = {}
+        self.emote_sources = {}
 
         self.next_source_id = 0
 
@@ -67,7 +68,9 @@ class Source:
                     print("Source.load_from_data(): ERROR: %s in %s is marked as +drop, but %s has already claimed the name" %
                             (name, source_name, data_manager.drops[name].name))
                 data_manager.drops[name] = self
-            self.emotes[name] = Emote.load_from_data(name, variants, tags)
+            emote = Emote.load_from_data(name, variants, tags)
+            self.emotes[name] = emote
+            data_manager.emote_sources[emote] = self
 
     def dump_emote_data(self):
         return {name: emote.dump_data() for (name, emote) in self.emotes.items()}
@@ -93,16 +96,22 @@ class Source:
             if owner is None or owner is self:
                 yield emote
 
+    def is_ignored(self, emote, data_manager):
+        if emote.ignore:
+            return True
+        if "+remove" in emote.all_tags(data_manager):
+            return True
+        owner = data_manager.drops.get(emote.name, None)
+        if owner is not None and owner is not self:
+            return True
+        return False
+
     def unignored_emotes(self, data_manager):
         # Returns emotes that actually matter (not removed and not dropped)
         for emote in self.emotes.values():
-            if emote.ignore:
+            if self.is_ignored(emote, data_manager):
                 continue
-            if "+remove" in emote.all_tags(data_manager):
-                continue
-            owner = data_manager.drops.get(emote.name, None)
-            if owner is None or owner is self:
-                yield emote
+            yield emote
 
     def match_variants(self, data_manager):
         core_emotes, variants = {}, []
@@ -142,7 +151,7 @@ class Source:
             elif emote.name[:2].lower() == "/r":
                 # Try non-reversed name?
                 unreversed_emote = self.emotes.get("/" + emote.name[2:])
-                if unreversed_emote is not None:
+                if unreversed_emote is not None and not self.is_ignored(unreversed_emote, data_manager):
                     unreversed_base = unreversed_emote.base_variant()
                     if hasattr(unreversed_base, "info_set"):
                         info = unreversed_base.info_set()

@@ -46,11 +46,6 @@ def resolve_emotes(data_manager):
     sorting_rules = data_manager.config["Sorting"]
     conflict_rules = data_manager.config["Conflicts"]
 
-    # Converts a list of files into one big emote map
-    emotes = {}
-    sources = {}
-    conflicts = {}
-
     # Process directives
     for rule in data_manager.config["Generation"]:
         cmd, args = rule[0], rule[1:]
@@ -64,37 +59,40 @@ def resolve_emotes(data_manager):
         else:
             print("ERROR: Unknown directive: %r" % (rule))
 
+    emotes = {}
+    all_emotes = {}
+    conflicts = {}
+
     # Sort all emotes by prioritization
     for source in data_manager.sources.values():
-        for emote in source.unignored_emotes(data_manager):
-            all_tags = emote.all_tags(data_manager)
+        for emote in source.emotes.values():
+            all_emotes.setdefault(emote.name, []).append(emote)
+            if source.is_ignored(emote, data_manager):
+                continue
 
             if emote.name in emotes:
+                existing = emotes[emote.name]
+                prev_source = data_manager.emote_sources[existing]
                 # Conflict resolution: who wins?
-                result = overrides(sorting_rules, conflict_rules, sources[emote.name][0].name, source.name, emote.name)
+                result = overrides(sorting_rules, conflict_rules, prev_source.name, source.name, emote.name)
                 if result is True:
-                    # This one wins. Put it first
+                    # This one wins
                     if emote.name in conflicts:
                         del conflicts[emote.name]
-                    emotes[emote.name].insert(0, emote)
-                    sources[emote.name].insert(0, source)
+                    emotes[emote.name] = emote
                 elif result is False:
-                    # Lost. Move to end (or anywhere, really)
-                    emotes[emote.name].append(emote)
-                    sources[emote.name].append(source)
+                    # Lost
+                    pass
                 elif result is None:
-                    # ?!? previous source wins I guess. Move to end
-                    conflicts[emote.name] = (source, sources[emote.name][0])
-                    emotes[emote.name].append(emote)
-                    sources[emote.name].append(source)
+                    # ?!? previous source wins I guess
+                    conflicts[emote.name] = (source, prev_source)
             else:
-                emotes[emote.name] = [emote]
-                sources[emote.name] = [source]
+                emotes[emote.name] = emote
 
     for (name, (old, new)) in conflicts.items():
         print("ERROR: CONFLICT between %s and %s over %s" % (old.name, new.name, name))
 
-    return emotes, sources
+    return emotes, all_emotes
 
 ### Generation
 
@@ -110,15 +108,19 @@ def build_css(emotes):
 
     return css_rules
 
-def build_tag_map(emotes, data_manager):
+def build_tag_map(all_emotes, data_manager):
     tag_id2name = []
     tag_name2id = {}
     next_id = 0
 
     all_tags = set()
-    for (name, emote_set) in emotes.items():
+    for (name, emote_set) in all_emotes.items():
         for emote in emote_set:
+            source = data_manager.emote_sources[emote]
+            if source.is_ignored(emote, data_manager):
+                continue
             all_tags |= emote.all_tags(data_manager)
+    all_tags -= set(data_manager.tag_config["HiddenTags"])
 
     for tag in sorted(all_tags):
         if tag not in tag_name2id:
@@ -139,40 +141,51 @@ def build_tag_map(emotes, data_manager):
 FLAG_NSFW = 1
 FLAG_REDIRECT = 1 << 1
 
-def encode(data_manager, source, emote, tag_name2id):
+def encode(data_manager, source, emote, all_emotes, tag_name2id):
+    # FFFFFFF,SsSsSs,TtTtTtTt[,/base-name]
     base = emote.base_variant()
     root = source.variant_matches[emote]
     all_tags = root.all_tags(data_manager) | emote.all_tags(data_manager)
-    emitted_tags = [tag for tag in all_tags if tag not in data_manager.tag_config["HiddenTags"]]
-    tag_ids = sorted(tag_name2id[tag] for tag in emitted_tags)
-    assert all(id < 0xff for id in tag_ids) # One byte per
-    size = max(base.size) if hasattr(base, "size") else 0
+
+    # F-FF-FFFF = flags, primary source id, and size
     is_nsfw = "+nsfw" in all_tags
     assert ("+v" in emote.tags) == (emote.name != root.name)
     is_redirect = emote.name != root.name
-
-    # FRRSSSSTT+[//base] where F=flags, RR=subreddit, SSSS=size, TT=tags
     flags = 0
     if is_nsfw:
         flags |= FLAG_NSFW
     if is_redirect:
         flags |= FLAG_REDIRECT
-    encoded_tags = "".join("%02x" % id for id in tag_ids)
-    data = "%1x%02i%04x%s" % (flags, source.source_id, size, encoded_tags)
+    size = max(base.size) if hasattr(base, "size") else 0
+    flag_data = "%1x%02x%04x" % (flags, source.source_id, size)
+    assert len(flag_data) == 7
+
+    # Ss = source id list
+    sources = [data_manager.emote_sources[e] for e in all_emotes[emote.name]]
+    source_ids = sorted(s.source_id for s in sources)
+    assert all(id < 0xff for id in source_ids) # One byte per
+    source_data = "".join("%02x" % id for id in source_ids)
+
+    # Tt = tag id list
+    emitted_tags = [tag for tag in all_tags if tag not in data_manager.tag_config["HiddenTags"]]
+    tag_ids = sorted(tag_name2id[tag] for tag in emitted_tags)
+    assert all(id < 0xff for id in tag_ids) # One byte per
+    tag_data = "".join("%02x" % id for id in tag_ids)
+
+    data = "%s,%s,%s" % (flag_data, source_data, tag_data)
     if is_redirect:
-        data += "/" + root.name
+        data += "," + root.name
 
     return data
 
-def build_js_map(data_manager, emotes, sources, tag_name2id):
+def build_js_map(data_manager, emotes, all_emotes, tag_name2id):
     emote_map = {}
-    for (name, emote_set) in emotes.items():
-        emote = emote_set[0]
-        source = sources[name][0]
+    for (name, emote) in emotes.items():
+        source = data_manager.emote_sources[emote]
         assert name not in emote_map
         if source.variant_matches is None:
             source.match_variants(data_manager)
-        data = encode(data_manager, source, emote, tag_name2id)
+        data = encode(data_manager, source, emote, all_emotes, tag_name2id)
         emote_map[name] = data
     return emote_map
 
@@ -238,11 +251,11 @@ def main():
     data_manager.load_all_sources()
 
     print("Processing")
-    emotes, sources = resolve_emotes(data_manager)
+    emotes, all_emotes = resolve_emotes(data_manager)
 
-    css_rules = build_css([emote_set[0] for emote_set in emotes.values()])
-    tag_id2name, tag_name2id = build_tag_map(emotes, data_manager)
-    js_map = build_js_map(data_manager, emotes, sources, tag_name2id)
+    css_rules = build_css(emotes.values())
+    tag_id2name, tag_name2id = build_tag_map(all_emotes, data_manager)
+    js_map = build_js_map(data_manager, emotes, all_emotes, tag_name2id)
     sr_id2name, sr_name2id = build_sr_data(data_manager)
     if not args.no_compress:
         bplib.condense.condense_css(css_rules)
