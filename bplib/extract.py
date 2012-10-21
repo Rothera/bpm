@@ -10,11 +10,6 @@
 ##
 ################################################################################
 
-__all__ = [
-    "filter_ponyscript_ignores", "extract_partial_emotes",
-    "combine_partial_emotes", "check_variants", "classify_emotes"
-    ]
-
 import re
 
 import bplib
@@ -56,9 +51,6 @@ def filter_ponyscript_ignores(css_rules):
 def extract_partial_emotes(css_rules):
     # Extracts partial emotes from a list of CSS rules.
     for rule in css_rules:
-        if rule.ignore:
-            continue
-
         alias_pairs = [_parse_emote_selector(s) for s in rule.selectors]
         if any(ap is None for ap in alias_pairs) and any(ap is not None for ap in alias_pairs):
             print("WARNING: CSS rule has both emotes and non-emote selectors")
@@ -70,7 +62,7 @@ def extract_partial_emotes(css_rules):
             name, suffix = pair
 
             # Copy CSS so it's not read-only
-            yield bplib.objects.EmoteCSSBlock(name, suffix, rule.properties.copy())
+            yield bplib.objects.EmoteCSSBlock(name, suffix, rule.properties.copy(), rule.ignore)
 
 _selector_regexp = re.compile(r"""
     a(?P<pc1>:[\w\-()]+)?
@@ -114,19 +106,24 @@ def combine_partial_emotes(partial_emotes):
     for partial in partial_emotes:
         if partial.name not in emotes:
             # Newly seen emote
-            emotes[partial.name] = bplib.objects.Emote(partial.name, {partial.suffix: partial}, {})
-        elif partial.suffix not in emotes[partial.name].variants:
-            # New suffix for an existing emote
-            emotes[partial.name].variants[partial.suffix] = partial
+            emotes[partial.name] = bplib.objects.Emote(partial.name, {partial.suffix: partial}, {}, partial.ignore)
         else:
-            # Existing emote. Check for property overwrites
-            base = emotes[partial.name].variants[partial.suffix]
-            for (prop, value) in partial.css.items():
-                if prop in base.css and bplib.css.prop(base.css[prop]) != bplib.css.prop(value):
-                    print("WARNING: emote %r redefined property %r from base (from %r to %r)" % (
-                        bplib.combine_name_pair(partial.name, partial.suffix), prop,
-                        base.css[prop], partial.css[prop]))
-            base.css.update(partial.css)
+            existing = emotes[partial.name]
+            if existing.ignore ^ partial.ignore:
+                print("WARNING: Emote %s split across PONYSCRIPT-IGNORE block" % (partial.name))
+            existing.ignore = existing.ignore | partial.ignore
+            if partial.suffix not in existing.variants:
+                # New suffix for an existing emote
+                existing.variants[partial.suffix] = partial
+            else:
+                # Existing emote. Check for property overwrites
+                base = existing.variants[partial.suffix]
+                for (prop, value) in partial.css.items():
+                    if prop in base.css and bplib.css.prop(base.css[prop]) != bplib.css.prop(value):
+                        print("WARNING: emote %r redefined property %r from base (from %r to %r)" % (
+                            bplib.combine_name_pair(partial.name, partial.suffix), prop,
+                            base.css[prop], partial.css[prop]))
+                base.css.update(partial.css)
     return emotes
 
 def check_variants(emotes):

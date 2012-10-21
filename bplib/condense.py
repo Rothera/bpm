@@ -10,8 +10,6 @@
 ##
 ################################################################################
 
-__all__ = ["condense_css"]
-
 def condense_css(rules):
     # Make a copy for validation purposes
     base_rules = {sel: props.copy() for (sel, props) in rules.items()}

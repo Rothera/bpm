@@ -10,11 +10,6 @@
 ##
 ################################################################################
 
-__all__ = [
-    "SubredditLoader", "Subreddit",
-    "Emote", "EmoteCSSBlock", "CustomEmote", "NormalEmote"
-    ]
-
 import bplib
 
 class DataManager:
@@ -81,19 +76,28 @@ class Source:
         return {emote.name: sorted(emote.tags) for emote in self.undropped_emotes(data_manager)}
 
     def dropped_emotes(self, data_manager):
+        # Returns emotes with +drop
         for emote in self.emotes.values():
+            if emote.ignore:
+                continue
             owner = data_manager.drops.get(emote.name, None)
             if owner is not None and owner is not self:
                 yield emote
 
     def undropped_emotes(self, data_manager):
+        # Returns emotes that don't have a +drop applied to them
         for emote in self.emotes.values():
+            if emote.ignore:
+                continue
             owner = data_manager.drops.get(emote.name, None)
             if owner is None or owner is self:
                 yield emote
 
     def unignored_emotes(self, data_manager):
+        # Returns emotes that actually matter (not removed and not dropped)
         for emote in self.emotes.values():
+            if emote.ignore:
+                continue
             if "+remove" in emote.all_tags(data_manager):
                 continue
             owner = data_manager.drops.get(emote.name, None)
@@ -164,10 +168,11 @@ class Source:
         return "<Source %s>" % (self.name)
 
 class Emote:
-    def __init__(self, name, variants, tags):
+    def __init__(self, name, variants, tags, ignore):
         self.name = name
         self.variants = variants
         self.tags = tags
+        self.ignore = ignore
         # Caches
         self._implied_tags = None
         self._all_tags = None
@@ -175,6 +180,7 @@ class Emote:
     @classmethod
     def load_from_data(cls, name, variant_data, tags):
         variants = {}
+        ignore = variant_data.pop("Ignore", False)
         for (suffix, data) in variant_data.items():
             type = data.pop("Type", "Normal")
             if type == "Normal":
@@ -184,10 +190,13 @@ class Emote:
             else:
                 raise ValueError("Unknown emote type %r (under %r)" % (type, name))
             variants[suffix] = emote
-        return cls(name, variants, tags)
+        return cls(name, variants, tags, ignore)
 
     def dump_data(self):
-        return {suffix: variant.dump_data() for (suffix, variant) in self.variants.items()}
+        data = {suffix: variant.dump_data() for (suffix, variant) in self.variants.items()}
+        if self.ignore:
+            data["Ignore"] = self.ignore
+        return data
 
     def base_variant(self):
         if None in self.variants:
@@ -222,7 +231,9 @@ class _EmoteBase:
         self.css = css
 
 class EmoteCSSBlock(_EmoteBase):
-    pass
+    def __init__(self, name, suffix, css, ignore):
+        _EmoteBase.__init__(self, name, suffix, css)
+        self.ignore = ignore
 
 class _Emote(_EmoteBase):
     def __init__(self, name, suffix, css):

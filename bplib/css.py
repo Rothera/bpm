@@ -10,8 +10,6 @@
 ##
 ################################################################################
 
-__all__ = ["CssRule", "parse_css_file", "prop", "as_size", "as_position", "as_url"]
-
 import re
 
 class CssRule:
