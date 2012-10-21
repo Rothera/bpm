@@ -323,6 +323,9 @@ var bpm_utils = {
     walk_dom: function(root, node_filter, process, node) {
         node = node || root.firstChild;
         var num = 1000;
+        if(this._tag_blacklist[node.tagName]) {
+            return; // Don't even touch it
+        }
         while(node && num > 0) {
             num--;
             if(node.nodeType === node_filter) {
