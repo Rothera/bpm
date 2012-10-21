@@ -29,6 +29,12 @@
         <p>This changelog only lists code changes. Most releases contain whatever
         emote updates were available at the time, and are not mentioned.
 
+        <h5>v39.64 - 2012-10-19</h5>
+        <p>Optimized global emote converter. It now runs nodes in batches of
+        1000 with a custom tree walker, and doesn't trawl the DOM for scroll
+        information unless absolutely necessary. Fixes problems where BPM would
+        seem to hang on larger pages.
+
         <h5>v38.63 - 2012-10-19</h5>
         <p>Fixed merged emotes being missing.
         <p>Minor optimizations.
