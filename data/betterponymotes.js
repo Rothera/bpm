@@ -1765,7 +1765,8 @@ var bpm_global = {
         // while walking the DOM
         var deletion_list = [];
 
-        bpm_utils.walk_dom(root, Node.TEXT_NODE, function(node) {
+        // this!==window on Opera, and doesn't have this object for some reason
+        bpm_utils.walk_dom(root, _bpm_global("Node").TEXT_NODE, function(node) {
             var parent = node.parentNode;
             // <span> elements to apply alt-text to
             var emote_elements = [];
