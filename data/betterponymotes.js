@@ -899,8 +899,7 @@ var bpm_converter = {
      * Process the given list of elements (assumed to be <a> tags), converting
      * any that are emotes.
      */
-    process: function(prefs, elements, is_res_preview) {
-        var out_of_sub = false;
+    process: function(prefs, elements) {
         next_emote:
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
@@ -932,10 +931,6 @@ var bpm_converter = {
                     element.dataset["bpm_state"] = "e";
                     element.dataset["bpm_emotename"] = emote_name;
                     element.dataset["bpm_srname"] = emote_info.source_name;
-
-                    if(emote_info.source_name.toLowerCase() !== "r/" + bpm_utils.current_subreddit) {
-                        out_of_sub = true;
-                    }
 
                     if(!prefs.we_map[emote_name]) {
                         var nsfw_class = prefs.prefs.hideDisabledEmotes ? " bpm-hidden" : " bpm-nsfw";
@@ -1021,7 +1016,6 @@ var bpm_converter = {
                 }
             }
         }
-        return out_of_sub;
     },
 
     // Known spoiler "emotes". Not all of these are known to BPM, and it's not
@@ -1167,17 +1161,90 @@ var bpm_converter = {
         if(prefs.prefs.showAltText) {
             this.display_alt_text(links);
         }
-        if(is_res_preview) {
-            // Should be two elements up
-            var usertext_edit = bpm_utils.class_above(md, "usertext-edit");
-            var bottom_area = usertext_edit.getElementsByClassName("bottom-area")[0];
-            if(out_of_sub) {
-                bpm_redditutil.enable_warning(bottom_area, "OUTOFSUB_EMOTE",
-                    "not everyone can see your emotes! please be considerate");
-            } else {
-                bpm_redditutil.disable_warning(bottom_area, "OUTOFSUB_EMOTE");
-            }
+    },
+
+    hook_usertext_edit: function(prefs, usertext_edits) {
+        for(var i = 0; i < usertext_edits.length; i++) {
+            var edit = usertext_edits[i];
+            var textarea = edit.getElementsByTagName("textarea")[0];
+            var bottom_area = edit.getElementsByClassName("bottom-area")[0];
+
+            this._attach_to_usertext(prefs, textarea, bottom_area);
         }
+    },
+
+    _attach_to_usertext: function(prefs, textarea, bottom_area) {
+        var timeout = null;
+        function warn_now() {
+            bpm_redditutil.enable_warning(bottom_area, "OUTOFSUB",
+                "remember not everyone can see your emotes! please be considerate");
+        }
+        var ok = true;
+        textarea.addEventListener("input", bpm_utils.catch_errors(function(event) {
+            var text = textarea.value;
+            text = text.replace(/ *>.*?\n/, ""); // Strip quotes
+            //         [text]    (  /<emotename>         "<alt-text>")
+            var re = /\[.*?\]\s*\((\/[\w:!#\/\-]+)\s*(?:["']([^"]*)["'])?\s*\)/g;
+            var match;
+            ok = true; // innocent until proven guilty
+            var has_extern = false;
+            var has_local = false;
+            while((match = re.exec(text)) !== null) {
+                var emote_name = match[1].split("-")[0];
+                var emote_info = bpm_data.lookup_emote(emote_name, prefs.custom_emotes);
+                // Nothing we recognize.
+                if(emote_info === null) {
+                    continue;
+                }
+
+                for(var si = 0; si < emote_info.sources.length; si++) {
+                    var from_here = sr_id2name[emote_info.sources[si]] === "r/" + bpm_utils.current_subreddit;
+                    if(from_here) {
+                        has_local = true;
+                    } else {
+                        // Out-of-sub emote. Any alt-text?
+                        has_extern = true;
+                        if(match[2]) {
+                            ok = false;
+                        }
+                    }
+                }
+            }
+
+            if(!text.replace(re, "").trim()) {
+                // Emote-only post. Only complain if there's actually something
+                // here.
+                if(has_extern && !has_local) {
+                    ok = false;
+                }
+            }
+
+            if(timeout !== null) {
+                clearTimeout(timeout);
+            }
+
+            if(!ok) {
+                // Set notification to go off in two seconds.
+                timeout = setTimeout(bpm_utils.catch_errors(function() {
+                    timeout = null;
+                    warn_now();
+                }.bind(this)), 2000);
+            } else {
+                bpm_redditutil.disable_warning(bottom_area, "OUTOFSUB");
+            }
+        }.bind(this)), false);
+
+        textarea.addEventListener("blur", bpm_utils.catch_errors(function(event) {
+            // If the editor loses focus, notify immediately. This is sort of
+            // mean to catch people who are quickly tabbing to the save button,
+            // but if they hit it fast enough our warning will be hidden anyway.
+            if(!ok) {
+                if(timeout !== null) {
+                    clearTimeout(timeout);
+                }
+                warn_now();
+            }
+        }.bind(this)), false);
     }
 };
 
@@ -1747,44 +1814,58 @@ var bpm_search = {
     /*
      * Injects the "emotes" button onto Reddit.
      */
-    inject_search_button: function(prefs, spans) {
-        for(var i = 0; i < spans.length; i++) {
-            // Matching the "formatting help" button is tricky- there's no great
-            // way to find it. This seems to work, but I expect false positives from
-            // reading the Reddit source code.
-            if(spans[i].className.indexOf("help-toggle") > -1) {
-                var existing = spans[i].getElementsByClassName("bpm-search-toggle");
-                /*
-                 * Reddit's JS uses cloneNode() when making reply forms. As such,
-                 * we need to be able to handle two distinct cases- wiring up the
-                 * top-level reply box that's there from the start, and wiring up
-                 * clones of that form with our button already in it.
-                 */
-                if(existing.length) {
-                    this.wire_emotes_button(prefs, existing[0]);
-                } else {
-                    var button = document.createElement("button");
-                    // Default is "submit", which is not good (saves the comment).
-                    // Safari has some extremely weird bug where button.type
-                    // seems to be readonly. Writes fail silently.
-                    button.setAttribute("type", "button");
-                    button.className = "bpm-search-toggle";
-                    button.textContent = "emotes";
-                    // Since we come before the save button in the DOM, we tab
-                    // first, but this is generally annoying. Correcting this
-                    // ideally would require either moving, or editing the save
-                    // button, which I'd rather not do.
-                    //
-                    // So instead it's just untabbable.
-                    button.tabIndex = 100;
-                    this.wire_emotes_button(prefs, button);
-                    // Put it at the end- Reddit's JS uses get(0) when looking for
-                    // elements related to the "formatting help" linky, and we don't
-                    // want to get in the way of that.
-                    spans[i].appendChild(button);
-                }
+    inject_search_button: function(prefs, usertext_edits) {
+        for(var i = 0; i < usertext_edits.length; i++) {
+            var existing = usertext_edits[i].getElementsByClassName("bpm-search-toggle");
+            /*
+             * Reddit's JS uses cloneNode() when making reply forms. As such,
+             * we need to be able to handle two distinct cases- wiring up the
+             * top-level reply box that's there from the start, and wiring up
+             * clones of that form with our button already in it.
+             */
+            if(existing.length) {
+                this.wire_emotes_button(prefs, existing[0]);
+            } else {
+                var button = document.createElement("button");
+                // Default is "submit", which is not good (saves the comment).
+                // Safari has some extremely weird bug where button.type
+                // seems to be readonly. Writes fail silently.
+                button.setAttribute("type", "button");
+                button.className = "bpm-search-toggle";
+                button.textContent = "emotes";
+                // Since we come before the save button in the DOM, we tab
+                // first, but this is generally annoying. Correcting this
+                // ideally would require either moving, or editing the save
+                // button, which I'd rather not do.
+                //
+                // So instead it's just untabbable.
+                button.tabIndex = 100;
+                this.wire_emotes_button(prefs, button);
+                // Put it at the end- Reddit's JS uses get(0) when looking for
+                // elements related to the "formatting help" linky, and we don't
+                // want to get in the way of that.
+                var help_toggle = usertext_edits[i].getElementsByClassName("help-toggle");
+                help_toggle[0].appendChild(button);
             }
         }
+    },
+
+    /*
+     * Sets up one particular "emotes" button.
+     */
+    wire_emotes_button: function(prefs, button) {
+        button.addEventListener("mouseover", bpm_utils.catch_errors(function(event) {
+            this.grab_target_form();
+        }.bind(this)), false);
+
+        button.addEventListener("click", bpm_utils.catch_errors(function(event) {
+            var sb_element = document.getElementById("bpm-search-box");
+            if(sb_element.style.visibility !== "visible") {
+                this.show(prefs);
+            } else {
+                this.hide();
+            }
+        }.bind(this)), false);
     },
 
     /*
@@ -1824,24 +1905,6 @@ var bpm_search = {
             // mouse button before the ctrl/meta key though...)
             if(!event.ctrlKey && !event.metaKey) {
                 this.show(prefs);
-            }
-        }.bind(this)), false);
-    },
-
-    /*
-     * Sets up one particular "emotes" button.
-     */
-    wire_emotes_button: function(prefs, button) {
-        button.addEventListener("mouseover", bpm_utils.catch_errors(function(event) {
-            this.grab_target_form();
-        }.bind(this)), false);
-
-        button.addEventListener("click", bpm_utils.catch_errors(function(event) {
-            var sb_element = document.getElementById("bpm-search-box");
-            if(sb_element.style.visibility !== "visible") {
-                this.show(prefs);
-            } else {
-                this.hide();
             }
         }.bind(this)), false);
     }
@@ -2106,8 +2169,9 @@ var bpm_core = {
         }
 
         bpm_search.init(prefs);
-        // Find the one reply box that's there on page load. This may not always work...
-        bpm_search.inject_search_button(prefs, document.getElementsByClassName("help-toggle"));
+        var usertext_edits = document.getElementsByClassName("usertext-edit");
+        bpm_search.inject_search_button(prefs, usertext_edits);
+        bpm_converter.hook_usertext_edit(prefs, usertext_edits);
 
         // Initial pass- show all emotes currently on the page.
         var posts = document.getElementsByClassName("md");
@@ -2171,8 +2235,10 @@ var bpm_core = {
                             bpm_converter.process_posts(prefs, posts);
                         }
 
-                        var spans = root.getElementsByTagName("span");
-                        bpm_search.inject_search_button(prefs, spans);
+                        // TODO: move up in case we're inside it?
+                        var usertext_edits = root.getElementsByClassName("usertext-edit");
+                        bpm_search.inject_search_button(prefs, usertext_edits);
+                        bpm_converter.hook_usertext_edit(prefs, usertext_edits);
                     }
                 }
             }.bind(this)));
@@ -2195,7 +2261,9 @@ var bpm_core = {
                         bpm_converter.process_posts(prefs, posts);
                     }
 
-                    bpm_search.inject_search_button(prefs, root.getElementsByClassName("help-toggle"));
+                    var usertext_edits = root.getElementsByClassName("usertext-edit");
+                    bpm_search.inject_search_button(prefs, usertext_edits);
+                    bpm_converter.hook_usertext_edit(prefs, usertext_edits);
                 }
             }.bind(this)), false);
         }.bind(this));
