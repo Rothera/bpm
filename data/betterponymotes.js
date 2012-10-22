@@ -422,7 +422,6 @@ var bpm_redditutil = {
      * Disables a previously-generated error message, if it exists.
      */
     disable_warning: function(bottom_area, class_name) {
-        //bpm_redditutil.disable_warning(bottom_area, "OUTOFSUB_EMOTE");
         var elements = bottom_area.getElementsByClassName(class_name);
         if(elements.length > 1) {
             bpm_log("BPM: WARNING: multiple warning spans attached to .bottom-area");
@@ -1164,6 +1163,10 @@ var bpm_converter = {
     },
 
     hook_usertext_edit: function(prefs, usertext_edits) {
+        if(!prefs.prefs.warnCourtesy) {
+            return;
+        }
+
         for(var i = 0; i < usertext_edits.length; i++) {
             var edit = usertext_edits[i];
             var textarea = edit.getElementsByTagName("textarea")[0];
