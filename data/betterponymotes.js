@@ -60,13 +60,13 @@ var bpm_utils = {
         //
         // Need to check GM_log first, because stuff like chrome.extension
         // exists even in userscript contexts.
-        if(_bpm_global("GM_log") !== undefined) {
+        if(_bpm_global("GM_log")) {
             return "userscript";
-        } else if(self.on !== undefined) {
+        } else if(self.on) {
             return "firefox-ext";
-        } else if(_bpm_global("chrome") !== undefined && chrome.extension !== undefined) {
+        } else if(_bpm_global("chrome") && chrome.extension) {
             return "chrome-ext";
-        } else if(_bpm_global("opera") !== undefined && opera.extension !== undefined) {
+        } else if(_bpm_global("opera") && opera.extension) {
             return "opera-ext";
         } else {
             // bpm_log doesn't exist, so this is as good a guess as we get
@@ -83,16 +83,26 @@ var bpm_utils = {
     MutationObserver: (_bpm_global("MutationObserver") || _bpm_global("WebKitMutationObserver") || _bpm_global("MozMutationObserver") || null),
 
     /*
-     * Wrapper to safely set up MutationObserver-based code with DOMNodeInserted
-     * fallback. MutationObserver is frequently broken on Firefox Nightly due
-     * to Addon SDK bugs.
+     * Wrapper to monitor the DOM for inserted nodes, using either
+     * MutationObserver or DOMNodeInserted, falling back for a broken MO object.
      */
-    observe: function(setup_mo, init_mo, setup_dni) {
-        if(bpm_utils.MutationObserver !== null) {
-            var observer = setup_mo();
+    observe_document: function(callback) {
+        if(bpm_utils.MutationObserver) {
+            var observer = new bpm_utils.MutationObserver(bpm_utils.catch_errors(function(mutations, observer) {
+                for(var m = 0; m < mutations.length; m++) {
+                    var added = mutations[m].addedNodes;
+                    if(!added || !added.length) {
+                        continue; // Nothing to do
+                    }
+
+                    callback(added);
+                }
+            }));
 
             try {
-                init_mo(observer);
+                // FIXME: For some reason observe(document.body, [...]) doesn't work
+                // on Firefox. It just throws an exception. document works.
+                observer.observe(document, {"childList": true, "subtree": true});
                 return;
             } catch(e) {
                 // Failed with whatever the error of the week is
@@ -100,14 +110,15 @@ var bpm_utils = {
             }
         }
 
-        setup_dni();
+        document.body.addEventListener("DOMNodeInserted", bpm_utils.catch_errors(function(event) {
+            callback([event.target]);
+        }));
     },
 
     /*
      * Generates a random string made of [a-z] characters, default 24 chars
      * long.
      */
-    _random_letters: "abcdefghijklmnopqrstuvwxyz",
     random_id: function(length) {
         if(length === undefined) {
             length = 24;
@@ -115,8 +126,8 @@ var bpm_utils = {
 
         var index, tmp = "";
         for(var i = 0; i < length; i++) {
-            index = Math.floor(Math.random() * bpm_utils._random_letters.length - 1);
-            tmp += bpm_utils._random_letters[index];
+            index = Math.floor(Math.random() * 25);
+            tmp += "abcdefghijklmnopqrstuvwxyz"[index];
         }
         return tmp;
     },
@@ -152,13 +163,6 @@ var bpm_utils = {
     },
 
     /*
-     * Determines whether the given element has a particular class name.
-     */
-    has_class: function(element, class_name) {
-        return (" " + element.className + " ").indexOf(" " + class_name + " ") > -1;
-    },
-
-    /*
      * Determines whether this element, or any ancestor, have the given id.
      */
     id_above: function(element, id) {
@@ -178,12 +182,12 @@ var bpm_utils = {
      */
     class_above: function(element, class_name) {
         while(true) {
-            if(bpm_utils.has_class(element, class_name)) {
+            if(element.classList.contains(class_name)) {
                 return element;
             } else if(element.parentElement) {
                 element = element.parentElement;
             } else {
-                return null; // Terminate loop
+                return null;
             }
         }
     },
@@ -225,26 +229,23 @@ var bpm_utils = {
      * them will move them around.
      */
     enable_drag: function(element, start_callback, callback) {
+        var on_mousemove = bpm_utils.catch_errors(function(event) {
+            callback(event, start_x, start_y, event.clientX, event.clientY);
+        });
+
         var start_x, start_y;
-        var dragging = false;
 
         element.addEventListener("mousedown", bpm_utils.catch_errors(function(event) {
             start_x = event.clientX;
             start_y = event.clientY;
-            dragging = true;
-            document.body.className += " bpm-noselect";
+            window.addEventListener("mousemove", on_mousemove, false);
+            document.body.classList.add("bpm-noselect");
             start_callback(event);
         }), false);
 
         window.addEventListener("mouseup", bpm_utils.catch_errors(function(event) {
-            dragging = false;
-            document.body.className = document.body.className.replace(/\bbpm-noselect\b/, "");
-        }), false);
-
-        window.addEventListener("mousemove", bpm_utils.catch_errors(function(event) {
-            if(dragging) {
-                callback(event, start_x, start_y, event.clientX, event.clientY);
-            }
+            window.removeEventListener("mousemove", on_mousemove, false);
+            document.body.classList.remove("bpm-noselect");
         }), false);
     },
 
@@ -263,15 +264,13 @@ var bpm_utils = {
     },
 
     /*
-     * Determines, fairly reliably, whether or not BPM is currently running in
-     * a frame.
+     * A fairly reliable indicator as to whether or not BPM is currently
+     * running in a frame.
      */
-    is_frame: function() {
-        // Firefox is funny about window/.self/.parent/.top, such that comparing
-        // references is unreliable. frameElement is the only test I've found so
-        // far that works consistently.
-        return (window !== window.top || (window.frameElement !== null && window.frameElement !== undefined));
-    },
+    // Firefox is funny about window/.self/.parent/.top, such that comparing
+    // references is unreliable. frameElement is the only test I've found so
+    // far that works consistently.
+    is_frame: (window !== window.top || window.frameElement),
 
     _msg_script: function(id, message) {
         /*
@@ -280,11 +279,13 @@ var bpm_utils = {
          */
         // Locate iframe, send message, remove class.
         var iframe = document.getElementsByClassName(id)[0];
-        iframe.contentWindow.postMessage(message, "*");
-        iframe.className = iframe.className.replace(RegExp("\\b" + id + "\\b"), "");
-        // Locate this script tag and remove it.
-        var script = document.getElementById(id);
-        script.parentNode.removeChild(script);
+        if(iframe) {
+            iframe.contentWindow.postMessage(message, "*");
+            iframe.classList.remove(id);
+            // Locate this script tag and remove it.
+            var script = document.getElementById(id);
+            script.parentNode.removeChild(script);
+        }
     },
 
     /*
@@ -297,20 +298,20 @@ var bpm_utils = {
      * what. Don't send anything even slightly interesting.
      */
     message_iframe: function(frame, message) {
-        if(frame.contentWindow === null || frame.contentWindow === undefined) {
+        if(frame.contentWindow) {
+            // Right now, only Firefox and Opera let us access this API.
+            frame.contentWindow.postMessage(message, "*");
+        } else {
             // Chrome and Opera don't permit *any* access to these variables for
             // some stupid reason, despite them being available on the page.
             // Inject a <script> tag that does the dirty work for us.
             var id = "__betterponymotes_esh_" + this.random_id();
-            frame.className += " " + id;
+            frame.classList.add(id);
             var script = document.createElement("script");
             script.type = "text/javascript";
             script.id = id;
             document.head.appendChild(script);
             script.textContent = "(" + this._msg_script.toString() + ")('" + id + "', " + JSON.stringify(message) + ");";
-        } else {
-            // Right now, only Firefox lets us access this API.
-            frame.contentWindow.postMessage(message, "*");
         }
     },
 
@@ -320,43 +321,62 @@ var bpm_utils = {
         // Things I'm worried about
         "IFRAME": 1, "OBJECT": 1, "CANVAS": 1, "SVG": 1, "MATH": 1, "TEXTAREA": 1
     },
-    walk_dom: function(root, node_filter, process, node) {
-        node = node || root.firstChild;
-        var num = 1000;
-        if(this._tag_blacklist[node.tagName]) {
-            return; // Don't even touch it
+    /*
+     * Walks the DOM tree from the given root, running a callback on each node
+     * where its nodeType === node_filter. Pass only three arguments.
+     *
+     * This is supposed to be much faster than TreeWalker, and also chunks its
+     * work into batches of 1000, waiting 50ms in between in order to ensure
+     * browser responsiveness no matter the size of the tree.
+     */
+    walk_dom: function(root, node_filter, process, node, depth) {
+        if(!node) {
+            if(this._tag_blacklist[root.tagName]) {
+                return; // A bit odd, but possible
+            } else {
+                // Treat root as a special case
+                if(root.nodeType === node_filter) {
+                    process(root);
+                }
+                node = root.firstChild;
+                depth = 1;
+            }
         }
+        var num = 1000;
+        // If the node/root was null for whatever reason, we die here
         while(node && num > 0) {
             num--;
-            if(node.nodeType === node_filter) {
-                process(node);
-            }
-            if(node.hasChildNodes()) {
-                // Descend, ignoring blacklisted tags
-                if(this._tag_blacklist[node.tagName]) {
-                    node = node.nextSibling;
-                } else {
+            if(!this._tag_blacklist[node.tagName]) {
+                // Only process valid nodes.
+                if(node.nodeType === node_filter) {
+                    process(node);
+                }
+                // Descend (but never into blacklisted tags).
+                if(node.hasChildNodes()) {
                     node = node.firstChild;
+                    depth++;
+                    continue;
                 }
-            } else {
-                // Ascend up the "side" of the tree until we can move horizontally
-                // again
-                while(!node.nextSibling) {
-                    node = node.parentNode;
-                    if(node === root) {
-                        return;
-                    }
-                }
-                node = node.nextSibling;
             }
+            while(!node.nextSibling) {
+                node = node.parentNode;
+                depth--;
+                if(!depth) {
+                    return; // Done!
+                }
+            }
+            node = node.nextSibling;
         }
         if(!num) {
             setTimeout(function() {
-                this.walk_dom(root, node_filter, process, node);
+                this.walk_dom(root, node_filter, process, node, depth);
             }.bind(this), 50);
         }
     },
 
+    /*
+     * Locates an element at or above the given one matching a particular test.
+     */
     locate_matching_ancestor: function(element, predicate, none) {
         while(true) {
             if(predicate(element)) {
@@ -380,7 +400,23 @@ var bpm_utils = {
         } else {
             return null;
         }
-    })()
+    })(),
+
+    /*
+     * Locates an element with the given class name. Logs a warning message if
+     * more than one element matches. Returns null if there wasn't one.
+     */
+    find_class: function(root, class_name) {
+        var elements = root.getElementsByClassName(class_name);
+        if(!elements.length) {
+            return null;
+        } else if(elements.length === 1) {
+            return elements[0];
+        } else {
+            bpm_log("BPM: ERROR: Multiple elements under " + root + " with class '" + class_name + "'");
+            return elements[0];
+        }
+    }
 };
 
 /*
@@ -400,18 +436,13 @@ var bpm_redditutil = {
      * an empty comment.
      */
     enable_warning: function(bottom_area, class_name, message) {
-        var elements = bottom_area.getElementsByClassName(class_name);
-        if(elements.length > 1) {
-            bpm_log("BPM: WARNING: warning span already attached to .bottom-area");
-        }
-        var element;
-        if(elements.length) {
-            element = elements[0];
-        } else {
+        var element = bpm_utils.find_class(bottom_area, class_name);
+        if(!element) {
             element = document.createElement("span");
-            element.className = "error " + class_name;
-            // Insert before the .usertext-buttons div, so it looks right
-            var before = bottom_area.getElementsByClassName("usertext-buttons")[0];
+            element.classList.add("error");
+            element.classList.add(class_name);
+            // Insert before the .usertext-buttons div
+            var before = bpm_utils.find_class(bottom_area, "usertext-buttons");
             bottom_area.insertBefore(element, before);
         }
         element.style.display = "";
@@ -422,13 +453,10 @@ var bpm_redditutil = {
      * Disables a previously-generated error message, if it exists.
      */
     disable_warning: function(bottom_area, class_name) {
-        var elements = bottom_area.getElementsByClassName(class_name);
-        if(elements.length > 1) {
-            bpm_log("BPM: WARNING: multiple warning spans attached to .bottom-area");
-        } else if(!elements.length) {
-            return;
+        var element = bpm_utils.find_class(bottom_area, class_name);
+        if(element) {
+            element.parentNode.removeChild(element);
         }
-        bottom_area.removeChild(elements[0]);
     }
 };
 
@@ -457,7 +485,7 @@ var bpm_data = {
     lookup_core_emote: function(name) {
         // Refer to bpgen.py:encode() for the details of this encoding
         var data = emote_map[name];
-        if(data === undefined) {
+        if(!data) {
             return null;
         }
 
@@ -593,7 +621,7 @@ case "firefox-ext":
             if(data === undefined) {
                 data = {};
             }
-            data["method"] = method;
+            data.method = method;
             self.postMessage(data);
         },
 
@@ -639,7 +667,7 @@ case "chrome-ext":
             if(data === undefined) {
                 data = {};
             }
-            data["method"] = method;
+            data.method = method;
             chrome.extension.sendMessage(data, this._message_handler.bind(this));
         },
 
@@ -676,7 +704,7 @@ case "opera-ext":
             if(data === undefined) {
                 data = {};
             }
-            data["method"] = method;
+            data.method = method;
             opera.extension.postMessage(data);
         },
 
@@ -759,7 +787,7 @@ case "userscript":
 
         request_prefs: function() {
             var tmp = GM_getValue("prefs");
-            if(tmp === undefined) {
+            if(!tmp) {
                 tmp = "{}";
             }
 
@@ -800,7 +828,7 @@ var bpm_prefs = {
     sync_timeouts: {},
 
     _ready: function() {
-        return (this.prefs !== null && this.custom_emotes !== null);
+        return (this.prefs && this.custom_emotes);
     },
 
     _run_callbacks: function() {
@@ -902,11 +930,7 @@ var bpm_converter = {
         next_emote:
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
-            if(element.className.indexOf("bpm-") > -1) {
-                // Already processed: has bpm-emote or bpm-unknown on it. It
-                // doesn't really matter if this function runs on emotes more
-                // than once (it's safe), but that may change, and the class
-                // spam is annoying.
+            if(element.classList.contains("bpm-emote") || element.classList.contains("bpm-unknown")) {
                 continue;
             }
 
@@ -920,16 +944,16 @@ var bpm_converter = {
                 var emote_name = parts[0];
                 var emote_info = bpm_data.lookup_emote(emote_name, prefs.custom_emotes);
 
-                if(emote_info !== null) {
-                    var sr_enabled = (emote_info.source_id !== null ? prefs.sr_array[emote_info.source_id] : true);
+                if(emote_info) {
+                    var sr_enabled = (emote_info.source_id ? prefs.sr_array[emote_info.source_id] : true);
                     var emote_size = emote_info.max_size || 0;
 
                     // Click blocker CSS/JS
-                    element.className += " bpm-emote";
+                    element.classList.add("bpm-emote");
                     // Used in alt-text. (Note: dashes are invalid here)
-                    element.dataset["bpm_state"] = "e";
-                    element.dataset["bpm_emotename"] = emote_name;
-                    element.dataset["bpm_srname"] = emote_info.source_name;
+                    element.dataset.bpm_state = "e";
+                    element.dataset.bpm_emotename = emote_name;
+                    element.dataset.bpm_srname = emote_info.source_name;
 
                     if(!prefs.we_map[emote_name]) {
                         var nsfw_class = prefs.prefs.hideDisabledEmotes ? " bpm-hidden" : " bpm-nsfw";
@@ -937,10 +961,10 @@ var bpm_converter = {
                         // Ordering matters a bit here- placeholders for NSFW emotes
                         // come before disabled emotes.
                         if(emote_info.is_nsfw) {
-                            element.dataset["bpm_state"] += "n";
+                            element.dataset.bpm_state += "n";
                             if(!prefs.prefs.enableNSFW) {
-                                element.className += nsfw_class;
-                                element.dataset["bpm_state"] += "d";
+                                element.classList.add(nsfw_class);
+                                element.dataset.bpm_state += "d";
                                 if(!element.textContent) {
                                     // Any existing text (there really shouldn't be any)
                                     // will look funny with our custom CSS, but there's
@@ -952,8 +976,8 @@ var bpm_converter = {
                         }
 
                         if(!sr_enabled || prefs.de_map[emote_name]) {
-                            element.className += disabled_class;
-                            element.dataset["bpm_state"] += "d";
+                            element.classList.add(disabled_class);
+                            element.dataset.bpm_state += "d";
                             if(!element.textContent) {
                                 element.textContent = emote_name;
                             }
@@ -961,8 +985,8 @@ var bpm_converter = {
                         }
 
                         if(prefs.prefs.maxEmoteSize && emote_size > prefs.prefs.maxEmoteSize) {
-                            element.className += disabled_class;
-                            element.dataset["bpm_state"] += "d";
+                            element.classList(disabled_class);
+                            element.dataset.bpm_state += "d";
                             if(!element.textContent) {
                                 element.textContent = emote_name;
                             }
@@ -970,7 +994,7 @@ var bpm_converter = {
                         }
                     }
 
-                    element.className += " " + emote_info.css_class;
+                    element.classList.add(emote_info.css_class);
 
                     // Apply flags in turn. We pick on the naming a bit to prevent
                     // spaces and such from slipping in.
@@ -978,7 +1002,7 @@ var bpm_converter = {
                         // Normalize case
                         var flag = parts[p].toLowerCase();
                         if(/^[\w:!#\/]+$/.test(flag)) {
-                            element.className += " bpflag-" + bpm_utils.sanitize(flag);
+                            element.classList.add("bpflag-" + bpm_utils.sanitize(flag));
                         }
                     }
                 } else if(prefs.prefs.showUnknownEmotes) {
@@ -1006,9 +1030,9 @@ var bpm_converter = {
                     }
 
                     // Unknown emote? Good enough
-                    element.dataset["bpm_state"] = "u";
-                    element.dataset["bpm_emotename"] = emote_name;
-                    element.className += " bpm-unknown";
+                    element.dataset.bpm_state = "u";
+                    element.dataset.bpm_emotename = emote_name;
+                    element.classList.add("bpm-unknown");
                     if(!element.textContent) {
                         element.textContent = emote_name;
                     }
@@ -1035,7 +1059,7 @@ var bpm_converter = {
             var element = elements[i];
             var state;
             try {
-                state = element.dataset["bpm_state"] || "";
+                state = element.dataset.bpm_state || "";
             } catch(e) {
                 // .dataset reads fail on Firefox if the attribute doesn't exist
                 state = "";
@@ -1065,8 +1089,8 @@ var bpm_converter = {
 
                 // Work around due to RES putting tag links in the middle of
                 // posts. (Fucking brilliant!)
-                if(bpm_utils.has_class(element, "userTagLink") ||
-                   bpm_utils.has_class(element, "voteWeight")) {
+                if(element.classList.contains("userTagLink") ||
+                   element.classList.contains("voteWeight")) {
                     continue;
                 }
 
@@ -1080,7 +1104,7 @@ var bpm_converter = {
                 // -inp emotes. As a bit of a hack, we assume the emote code has
                 // already run, and check for bpflag-in/bpflag-inp.
                 var at_element;
-                if(element.className.indexOf("bpflag-in") > -1 || element.className.indexOf("bpflag-inp") > -1) {
+                if(element.classList.contains("bpflag-in") || element.classList.contains("bpflag-inp")) {
                     type_inline = true;
                 }
 
@@ -1090,18 +1114,18 @@ var bpm_converter = {
                     at_element = document.createElement("div");
                 }
 
-                at_element.className = "bpm-alttext";
+                at_element.classList.add("bpm-alttext");
                 at_element.textContent = element.title;
 
                 // Try to move to the other side of RES's image expand buttons,
                 // because otherwise they end awfully
                 var before = element.nextSibling;
-                while((before !== null && before.className !== undefined) &&
-                      (bpm_utils.has_class(before, "expando-button"))) {
+                while((before && before.className !== undefined) &&
+                      before.classList.contains("expando-button")) {
                     before = before.nextSibling;
                 }
 
-                if(before !== null && bpm_utils.has_class(before, "bpm-alttext")) {
+                if(before && before.classList && before.classList.contains("bpm-alttext")) {
                     // Already processed (before node is our previous alt text)
                     continue;
                 }
@@ -1109,11 +1133,12 @@ var bpm_converter = {
             }
 
             // If it's an emote, replace the actual alt-text with source info
+            var emote_name, title;
             if(state.indexOf("e") > -1) {
                 processed = true;
-                var emote_name = element.dataset["bpm_emotename"];
-                var sr_name = element.dataset["bpm_srname"];
-                var title = "";
+                emote_name = element.dataset.bpm_emotename;
+                var sr_name = element.dataset.bpm_srname;
+                title = "";
                 if(state.indexOf("d") > -1) {
                     title = "Disabled ";
                     if(state.indexOf("n") > -1) {
@@ -1125,14 +1150,14 @@ var bpm_converter = {
                 element.title = title;
             } else if(state.indexOf("u") > -1) {
                 processed = true;
-                var emote_name = element.dataset["bpm_emotename"];
-                var title = "Unknown emote " + emote_name;
+                emote_name = element.dataset.bpm_emotename;
+                title = "Unknown emote " + emote_name;
                 element.title = title;
             }
 
             if(processed) {
                 // Mark as such.
-                element.dataset["bpm_state"] = state + "a";
+                element.dataset.bpm_state = state + "a";
             }
         }
     },
@@ -1151,12 +1176,9 @@ var bpm_converter = {
      */
     process_rooted_post: function(prefs, post, md) {
         var links = post.getElementsByTagName("a");
-        // Sort of a hack. Might be nicer to go up to the parent and check
-        // for .livePreview, but who cares
-        var is_res_preview = bpm_utils.has_class(md, "RESDialogContents");
         // NOTE: must run alt-text AFTER emote code, always. See note in
         // display_alt_text
-        var out_of_sub = this.process(prefs, links, is_res_preview);
+        var out_of_sub = this.process(prefs, links);
         if(prefs.prefs.showAltText) {
             this.display_alt_text(links);
         }
@@ -1192,7 +1214,7 @@ var bpm_converter = {
             ok = true; // innocent until proven guilty
             var has_extern = false;
             var has_local = false;
-            while((match = re.exec(text)) !== null) {
+            while(match = re.exec(text)) {
                 var emote_name = match[1].split("-")[0];
                 var emote_info = bpm_data.lookup_emote(emote_name, prefs.custom_emotes);
                 // Nothing we recognize.
@@ -1396,7 +1418,7 @@ var bpm_search = {
 
         // Listen for clicks
         this.results.addEventListener("click", bpm_utils.catch_errors(function(event) {
-            if((" " + event.target.className + " ").indexOf(" bpm-result ") > -1) {
+            if(event.target.classList.contains("bpm-result")) {
                 // .dataset would probably be nicer, but just in case...
                 var emote_name = event.target.getAttribute("data-emote");
                 this.insert_emote(emote_name);
@@ -1574,7 +1596,7 @@ var bpm_search = {
                 var p_tag = "+" + lone_tag;
                 var positive = (term[0] === "+" ? true : false);
                 var id = tag_name2id[p_tag];
-                if(id !== undefined) {
+                if(id) {
                     // Exact match
                     add_tag_term(positive, [id]);
                 } else {
@@ -1641,8 +1663,8 @@ var bpm_search = {
             var lc_emote_name = emote_name.toLowerCase();
 
             // Match if ALL search terms match
-            for(var t = 0; t < query.name_terms.length; t++) {
-                if(lc_emote_name.indexOf(query.name_terms[t]) < 0) {
+            for(var nt_i = 0; nt_i < query.name_terms.length; nt_i++) {
+                if(lc_emote_name.indexOf(query.name_terms[nt_i]) < 0) {
                     continue no_match; // outer loop, not inner
                 }
             }
@@ -1652,8 +1674,8 @@ var bpm_search = {
                 // Generally this name is already lowercase, though not for bpmextras
                 var source_sr_name = emote_info.source_name.toLowerCase();
                 var is_match = false;
-                for(var t = 0; t < query.sr_terms.length; t++) {
-                    if(source_sr_name.indexOf(query.sr_terms[t]) > -1) {
+                for(var sr_i = 0; sr_i < query.sr_terms.length; sr_i++) {
+                    if(source_sr_name.indexOf(query.sr_terms[sr_i]) > -1) {
                         is_match = true;
                         break;
                     }
@@ -1725,18 +1747,18 @@ var bpm_search = {
         var prev = null;
         var actual_results = results.length;
         for(var i = 0; i < results.length; i++) {
-            var emote_info = results[i];
-            if(prev === emote_info.name) {
+            var result = results[i];
+            if(prev === result.name) {
                 actual_results--;
                 continue; // Duplicates can appear when following +v emotes
             }
-            prev = emote_info.name;
+            prev = result.name;
 
             // if((blacklisted) && !whitelisted)
-            if((!prefs.sr_array[emote_info.source_id] || (emote_info.is_nsfw && !prefs.prefs.enableNSFW) ||
-                prefs.de_map[emote_info.name] ||
-                (prefs.prefs.maxEmoteSize &&  emote_info.max_size > prefs.prefs.maxEmoteSize)) &&
-               !prefs.we_map[emote_info.name]) {
+            if((!prefs.sr_array[result.source_id] || (result.is_nsfw && !prefs.prefs.enableNSFW) ||
+                prefs.de_map[result.name] ||
+                (prefs.prefs.maxEmoteSize &&  result.max_size > prefs.prefs.maxEmoteSize)) &&
+               !prefs.we_map[result.name]) {
                 // TODO: enable it anyway if a pref is set? Dunno what exactly
                 // we'd do
                 hidden += 1;
@@ -1751,8 +1773,8 @@ var bpm_search = {
 
             // Use <span> so there's no chance of emote parse code finding
             // this.
-            html += "<span data-emote=\"" + emote_info.name + "\" class=\"bpm-result " +
-                    emote_info.css_class + "\" title=\"" + emote_info.name + " from " + emote_info.source_name + "\"></span>";
+            html += "<span data-emote=\"" + result.name + "\" class=\"bpm-result " +
+                    result.css_class + "\" title=\"" + result.name + " from " + result.source_name + "\"></span>";
         }
 
         this.results.innerHTML = html;
@@ -1834,7 +1856,7 @@ var bpm_search = {
                 // Safari has some extremely weird bug where button.type
                 // seems to be readonly. Writes fail silently.
                 button.setAttribute("type", "button");
-                button.className = "bpm-search-toggle";
+                button.classList.add("bpm-search-toggle");
                 button.textContent = "emotes";
                 // Since we come before the save button in the DOM, we tab
                 // first, but this is generally annoying. Correcting this
@@ -1943,7 +1965,7 @@ var bpm_global = {
             var end_of_prev = 0; // End index of previous emote match
             var match;
 
-            while((match = this.emote_regexp.exec(node.data)) !== null) {
+            while(match = this.emote_regexp.exec(node.data)) {
                 // Don't normalize case for emote lookup
                 var parts = match[1].split("-");
                 var emote_name = parts[0];
@@ -1972,13 +1994,15 @@ var bpm_global = {
 
                 // Build emote. (Global emotes are always -in)
                 var element = document.createElement("span");
-                element.className = "bpflag-in bpm-emote " + emote_info.css_class;
+                element.classList.add("bpflag-in");
+                element.classList.add("bpm-emote");
+                element.classList.add(emote_info.css_class);
                 // Some things for alt-text. The .href is a bit of a lie,
                 // but necessary to keep spoiler emotes reasonably sane.
                 element.setAttribute("href", emote_name);
-                element.dataset["bpm_state"] = "e";
-                element.dataset["bpm_emotename"] = emote_name;
-                element.dataset["bpm_srname"] = emote_info.source_name;
+                element.dataset.bpm_state = "e";
+                element.dataset.bpm_emotename = emote_name;
+                element.dataset.bpm_srname = emote_info.source_name;
                 new_elements.push(element);
                 emote_elements.push(element);
 
@@ -1987,7 +2011,7 @@ var bpm_global = {
                 // match ":", something we don't permit elsewhere).
                 for(var p = 1; p < parts.length; p++) {
                     var flag = parts[p].toLowerCase();
-                    element.className += " bpflag-" + bpm_utils.sanitize(flag);
+                    element.classList.add("bpflag-" + bpm_utils.sanitize(flag));
                 }
 
                 if(match[2]) {
@@ -2012,18 +2036,20 @@ var bpm_global = {
                         return false;
                     }
                 });
+
+                var scroll_top, scroll_height, at_bottom;
                 if(scroll_parent) {
-                    var scroll_top = scroll_parent.scrollTop;
-                    var scroll_height = scroll_parent.scrollHeight;
+                    scroll_top = scroll_parent.scrollTop;
+                    scroll_height = scroll_parent.scrollHeight;
                     // visible height + amount hidden > total height
                     // + 1 just for a bit of safety
-                    var at_bottom = (scroll_parent.clientHeight + scroll_top + 1 >= scroll_height);
+                    at_bottom = (scroll_parent.clientHeight + scroll_top + 1 >= scroll_height);
                 }
 
                 // There were emotes, so grab the last bit of text at the end
-                var before_text = node.data.slice(end_of_prev);
-                if(before_text) {
-                    new_elements.push(document.createTextNode(before_text));
+                var end_text = node.data.slice(end_of_prev);
+                if(end_text) {
+                    new_elements.push(document.createTextNode(end_text));
                 }
 
                 // Insert all our new nodes
@@ -2071,7 +2097,7 @@ var bpm_global = {
         if(prefs.prefs.enableGlobalSearch) {
             // Never inject the search box into frames. Too many sites fuck up
             // entirely if we do. Instead, we do some cross-frame communication.
-            if(bpm_utils.is_frame()) {
+            if(bpm_utils.is_frame) {
                 bpm_search.init_frame(prefs);
             } else {
                 bpm_search.init(prefs);
@@ -2081,29 +2107,14 @@ var bpm_global = {
 
         this.process(prefs, document.body);
 
-        bpm_utils.observe(function() {
-            return new bpm_utils.MutationObserver(bpm_utils.catch_errors(function(mutations, observer) {
-                for(var m = 0; m < mutations.length; m++) {
-                    var added = mutations[m].addedNodes;
-                    if(added === null || !added.length) {
-                        continue; // Nothing to do
-                    }
-
-                    for(var a = 0; a < added.length; a++) {
-                        // Check that the "node" is actually the kind of node
-                        // we're interested in (as opposed to Text nodes for
-                        // one thing)
-                        this.process(prefs, added[a]);
-                    }
+        bpm_utils.observe_document(function(nodes) {
+            for(var i = 0; i < nodes.length; i++) {
+                if(nodes[i].nodeType !== _bpm_global("Node").ELEMENT_NODE) {
+                    // Not really interested in other kinds.
+                    continue;
                 }
-            }.bind(this)));
-        }.bind(this), function(observer) {
-            observer.observe(document, {"childList": true, "subtree": true});
-        }, function() {
-            document.body.addEventListener("DOMNodeInserted", bpm_utils.catch_errors(function(event) {
-                var element = event.target;
-                this.process(prefs, element);
-            }.bind(this)), false);
+                this.process(prefs, nodes[i]);
+            }
         }.bind(this));
     }
 };
@@ -2182,7 +2193,7 @@ var bpm_core = {
 
         // Add emote click blocker
         document.body.addEventListener("click", bpm_utils.catch_errors(function(event) {
-            if(bpm_utils.has_class(event.target, "bpm-emote")) {
+            if(event.target.classList.contains("bpm-emote")) {
                 event.preventDefault();
             }
         }.bind(this)), false);
@@ -2209,66 +2220,31 @@ var bpm_core = {
         // What we do here: for each mutation, inspect every .md we can
         // find- whether the node in question is deep within one, or contains
         // some.
-        bpm_utils.observe(function() {
-            return new bpm_utils.MutationObserver(bpm_utils.catch_errors(function(mutations, observer) {
-                for(var m = 0; m < mutations.length; m++) {
-                    var added = mutations[m].addedNodes;
-                    if(added === null || !added.length) {
-                        continue; // Nothing to do
-                    }
-
-                    for(var a = 0; a < added.length; a++) {
-                        // Check that the "node" is actually the kind of node
-                        // we're interested in (as opposed to Text nodes for
-                        // one thing)
-                        var root = added[a];
-                        if(root.getElementsByTagName === undefined) {
-                            continue;
-                        }
-
-                        var md;
-                        if(md = bpm_utils.class_above(root, "md")) {
-                            // Inside of a formatted text block, take all the
-                            // links we can find
-                            bpm_converter.process_rooted_post(prefs, root, md);
-                        } else {
-                            // Outside of formatted text, try to find some
-                            // underneath us
-                            var posts = root.getElementsByClassName("md");
-                            bpm_converter.process_posts(prefs, posts);
-                        }
-
-                        // TODO: move up in case we're inside it?
-                        var usertext_edits = root.getElementsByClassName("usertext-edit");
-                        bpm_search.inject_search_button(prefs, usertext_edits);
-                        bpm_converter.hook_usertext_edit(prefs, usertext_edits);
-                    }
+        bpm_utils.observe_document(function(nodes) {
+            for(var i = 0; i < nodes.length; i++) {
+                var root = nodes[i];
+                if(root.nodeType !== _bpm_global("Node").ELEMENT_NODE) {
+                    // Not really interested in other kinds.
+                    continue;
                 }
-            }.bind(this)));
-        }.bind(this), function(observer) {
-            // FIXME: For some reason observe(document.body, [...]) doesn't work
-            // on Firefox. It just throws an exception. document works.
-            observer.observe(document, {"childList": true, "subtree": true});
-        }, function() {
-            // MutationObserver doesn't exist outisde Fx/Chrome, so
-            // fallback to basic DOM events.
-            document.body.addEventListener("DOMNodeInserted", bpm_utils.catch_errors(function(event) {
-                var root = event.target;
 
-                if(root.getElementsByTagName) {
-                    var md;
-                    if(md = bpm_utils.class_above(root, "md")) {
-                        bpm_converter.process_rooted_post(prefs, root, md);
-                    } else {
-                        var posts = root.getElementsByClassName("md");
-                        bpm_converter.process_posts(prefs, posts);
-                    }
-
-                    var usertext_edits = root.getElementsByClassName("usertext-edit");
-                    bpm_search.inject_search_button(prefs, usertext_edits);
-                    bpm_converter.hook_usertext_edit(prefs, usertext_edits);
+                var md;
+                if(md = bpm_utils.class_above(root, "md")) {
+                    // Inside of a formatted text block, take all the
+                    // links we can find
+                    bpm_converter.process_rooted_post(prefs, root, md);
+                } else {
+                    // Outside of formatted text, try to find some
+                    // underneath us
+                    var posts = root.getElementsByClassName("md");
+                    bpm_converter.process_posts(prefs, posts);
                 }
-            }.bind(this)), false);
+
+                // TODO: move up in case we're inside it?
+                var usertext_edits = root.getElementsByClassName("usertext-edit");
+                bpm_search.inject_search_button(prefs, usertext_edits);
+                bpm_converter.hook_usertext_edit(prefs, usertext_edits);
+            }
         }.bind(this));
     },
 
@@ -2325,7 +2301,7 @@ var bpm_core = {
                     var key = message.__betterponymotes_pref;
                     var value = message.__betterponymotes_value;
 
-                    if(bpm_prefs.prefs[key] !== undefined) {
+                    if(bpm_prefs.prefs[key]) {
                         bpm_prefs.prefs[key] = value;
                         bpm_prefs.sync_key(key);
                     } else {
