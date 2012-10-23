@@ -8,11 +8,11 @@
 // @include https://*/*
 // @name BetterPonymotes
 // @namespace http://rainbow.mlas1.us/
-// @require bpm-data.js?p=2&dver=65
-// @require pref-setup.js?p=2&cver=40
+// @require bpm-data.js?p=2&dver=66
+// @require pref-setup.js?p=2&cver=41
 // @run-at document-start
 // @updateURL http://rainbow.mlas1.us/betterponymotes.user.js
-// @version 40.65
+// @version 41.66
 // ==/UserScript==
 
 /*******************************************************************************
@@ -27,8 +27,8 @@
 
 "use strict";
 
-var BPM_CODE_VERSION = "40";
-var BPM_DATA_VERSION = "65";
+var BPM_CODE_VERSION = "41";
+var BPM_DATA_VERSION = "66";
 var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us";
 var BPM_OPTIONS_PAGE = BPM_RESOURCE_PREFIX + "/options.html";
 
