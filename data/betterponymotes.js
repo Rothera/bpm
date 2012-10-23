@@ -1222,16 +1222,19 @@ var bpm_converter = {
                     continue;
                 }
 
+                var from_here = false;
                 for(var si = 0; si < emote_info.sources.length; si++) {
-                    var from_here = sr_id2name[emote_info.sources[si]] === "r/" + bpm_utils.current_subreddit;
+                    from_here = sr_id2name[emote_info.sources[si]] === "r/" + bpm_utils.current_subreddit;
                     if(from_here) {
-                        has_local = true;
-                    } else {
-                        // Out-of-sub emote. Any alt-text?
-                        has_extern = true;
-                        if(match[2]) {
-                            ok = false;
-                        }
+                        break; // It's from at *least* this subreddit
+                    }
+                }
+                if(from_here) {
+                    has_local = true;
+                } else {
+                    has_extern = true;
+                    if(match[2]) {
+                        ok = false;
                     }
                 }
             }
