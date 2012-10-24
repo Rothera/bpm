@@ -17,126 +17,18 @@ import time
 import bplib
 import bplib.condense
 import bplib.objects
+import bplib.resolve
 
-### Directive application
-
-def overrides(sorting_rules, conflict_rules, base, new, name):
-    for rule in sorting_rules:
-        if rule == [base, "*"]: # Old subreddit wins all
-            return False
-        elif rule == [new, "*"]: # New subreddit wins all
-            return True
-        elif rule == [base, new]: # Old subreddit wins vs. new
-            return False
-        elif rule == [new, base]: # New subreddit wins vs. old
-            return True
-
-    if name in conflict_rules:
-        # Does either subreddit explicitly win for this emote?
-        favor = conflict_rules[name]
-        if favor == base:
-            return False
-        elif favor == new:
-            return True
-
-    # No solution
-    return None
-
-def resolve_emotes(data_manager):
-    sorting_rules = data_manager.config["Sorting"]
-    conflict_rules = data_manager.config["Conflicts"]
-
-    # Process directives
-    for rule in data_manager.config["Generation"]:
-        cmd, args = rule[0], rule[1:]
-        if cmd == "AddCSS":
-            source_name, name, variant, css = args
-            data_manager.sources[source_name].emotes[name].variants[variant].css.update(css)
-        elif cmd == "MergeEmotes":
-            target_name, merge, merge_tags = args
-            target = data_manager.sources[target_name]
-            target.load_data(data_manager, merge, merge_tags)
-        else:
-            print("ERROR: Unknown directive: %r" % (rule))
-
-    emotes = {}
-    all_emotes = {}
-    conflicts = {}
-
-    # Sort all emotes by prioritization
-    for source in data_manager.sources.values():
-        for emote in source.emotes.values():
-            all_emotes.setdefault(emote.name, []).append(emote)
-            if source.is_ignored(emote, data_manager):
-                continue
-
-            if emote.name in emotes:
-                existing = emotes[emote.name]
-                prev_source = data_manager.emote_sources[existing]
-                # Conflict resolution: who wins?
-                result = overrides(sorting_rules, conflict_rules, prev_source.name, source.name, emote.name)
-                if result is True:
-                    # This one wins
-                    if emote.name in conflicts:
-                        del conflicts[emote.name]
-                    emotes[emote.name] = emote
-                elif result is False:
-                    # Lost
-                    pass
-                elif result is None:
-                    # ?!? previous source wins I guess
-                    conflicts[emote.name] = (source, prev_source)
-            else:
-                emotes[emote.name] = emote
-
-    for (name, (old, new)) in conflicts.items():
-        print("ERROR: CONFLICT between %s and %s over %s" % (old.name, new.name, name))
-
-    return emotes, all_emotes
-
-### Generation
-
-def build_css(emotes):
-    css_rules = {}
-
-    for emote in emotes:
-        for variant in emote.variants.values():
-            selector, properties = variant.selector(), variant.to_css()
-            if selector in css_rules and css_rules[selector] != properties:
-                print("ERROR: Selector %r used twice!" % (selector))
-            css_rules[selector] = properties
-
-    return css_rules
-
-def build_tag_map(all_emotes, data_manager):
-    tag_id2name = []
-    tag_name2id = {}
-    next_id = 0
-
-    all_tags = set()
-    for (name, emote_set) in all_emotes.items():
-        for emote in emote_set:
-            source = data_manager.emote_sources[emote]
-            if source.is_ignored(emote, data_manager):
-                continue
-            all_tags |= emote.all_tags(data_manager)
-    all_tags -= set(data_manager.tag_config["HiddenTags"])
-
-    for tag in sorted(all_tags):
-        if tag not in tag_name2id:
-            tag_id2name.append(tag)
-            tag_name2id[tag] = next_id
-            next_id += 1
-            assert len(tag_id2name) == next_id
-
-    for (name, aliases) in data_manager.tag_config["TagAliases"].items():
-        for alias in aliases:
-            if alias in tag_name2id:
-                # Don't ever overwrite a tag
-                assert tag_name2id[alias] == tag_name2id[name]
-            tag_name2id[alias] = tag_name2id[name]
-
-    return tag_id2name, tag_name2id
+def build_js_map(data_manager, emotes, all_emotes, tag_name2id):
+    emote_map = {}
+    for (name, emote) in emotes.items():
+        source = data_manager.emote_sources[emote]
+        assert name not in emote_map
+        if source.variant_matches is None:
+            source.match_variants(data_manager)
+        data = encode(data_manager, source, emote, all_emotes, tag_name2id)
+        emote_map[name] = data
+    return emote_map
 
 FLAG_NSFW = 1
 FLAG_REDIRECT = 1 << 1
@@ -178,29 +70,17 @@ def encode(data_manager, source, emote, all_emotes, tag_name2id):
 
     return data
 
-def build_js_map(data_manager, emotes, all_emotes, tag_name2id):
-    emote_map = {}
-    for (name, emote) in emotes.items():
-        source = data_manager.emote_sources[emote]
-        assert name not in emote_map
-        if source.variant_matches is None:
-            source.match_variants(data_manager)
-        data = encode(data_manager, source, emote, all_emotes, tag_name2id)
-        emote_map[name] = data
-    return emote_map
+def build_css(emotes):
+    css_rules = {}
 
-def build_sr_data(data_manager):
-    sr_id2name = []
-    sr_name2id = {}
+    for emote in emotes:
+        for variant in emote.variants.values():
+            selector, properties = variant.selector(), variant.to_css()
+            if selector in css_rules and css_rules[selector] != properties:
+                print("ERROR: Selector %r used twice!" % (selector))
+            css_rules[selector] = properties
 
-    for (name, source) in data_manager.sources.items():
-        sr_id2name.extend((source.source_id - len(sr_id2name) + 1) * [None])
-        sr_id2name[source.source_id] = name
-        sr_name2id[name] = source.source_id
-
-    assert None not in sr_id2name
-
-    return sr_id2name, sr_name2id
+    return css_rules
 
 AutogenHeader = """
 /*
@@ -235,8 +115,6 @@ def _dump_js_obj(file, var_name, obj):
     json.dump(obj, file, indent=0, separators=(",", ":"))
     file.write(";\n")
 
-### Main
-
 def main():
     parser = argparse.ArgumentParser(description="Generate addon data files from emotes")
     parser.add_argument("-j", "--js", help="Output JS data file", default="build/bpm-data.js")
@@ -251,12 +129,12 @@ def main():
     data_manager.load_all_sources()
 
     print("Processing")
-    emotes, all_emotes = resolve_emotes(data_manager)
+    emotes, all_emotes = bplib.resolve.resolve_emotes(data_manager)
+    tag_id2name, tag_name2id = bplib.resolve.build_tag_map(all_emotes, data_manager)
+    sr_id2name, sr_name2id = bplib.resolve.build_sr_data(data_manager)
 
-    css_rules = build_css(emotes.values())
-    tag_id2name, tag_name2id = build_tag_map(all_emotes, data_manager)
     js_map = build_js_map(data_manager, emotes, all_emotes, tag_name2id)
-    sr_id2name, sr_name2id = build_sr_data(data_manager)
+    css_rules = build_css(emotes.values())
     if not args.no_compress:
         bplib.condense.condense_css(css_rules)
 
