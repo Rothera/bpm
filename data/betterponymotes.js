@@ -985,7 +985,7 @@ var bpm_converter = {
                         }
 
                         if(prefs.prefs.maxEmoteSize && emote_size > prefs.prefs.maxEmoteSize) {
-                            element.classList(disabled_class);
+                            element.classList.add(disabled_class);
                             element.dataset.bpm_state += "d";
                             if(!element.textContent) {
                                 element.textContent = emote_name;
