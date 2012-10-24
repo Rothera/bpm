@@ -144,18 +144,6 @@ a[href|="/doubledildo"]
     width: 157px;
 }
 
-a[href|="/buttershy"]
-{
-
- background-image: url(%%buttershy%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 166px;
-    width: 227px;
-}
-
-
 a[href|="/twistballs"]
 {
 
@@ -167,16 +155,7 @@ a[href|="/twistballs"]
     width: 197px;
 }
 
-a[href|="/derpymousse"]
-{
 
- background-image: url(%%derpymousse%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 180px;
-    width: 206px;
-}
 .flair:fuckingcolors{
     background-color: green;
 }
@@ -958,16 +937,7 @@ a[href|="/applesaurus"]
     width: 191px;
 }
 
-a[href|="/flutterrex"]
-{
 
- background-image: url(%%flutterrex%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 200px;
-    width: 266px;
-}
 
 a[href|="/espeefun"]
 {
@@ -980,27 +950,7 @@ a[href|="/espeefun"]
     width: 214px;
 }
 
-a[href|="/foodlove"]
-{
 
- background-image: url(%%foodlove%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 150px;
-    width: 159px;
-}
-
-a[href|="/flutterchilli"]
-{
-
- background-image: url(%%flutterchilli%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 130px;
-    width: 127px;
-}
 
 a[href|="/whatthefacannons"]
 {
@@ -1013,27 +963,6 @@ a[href|="/whatthefacannons"]
     width: 478px;
 }
 
-a[href|="/disugh"]
-{
-
- background-image: url(%%disugh%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 150px;
-    width: 161px;
-}
-
-a[href|="/twiraptor"]
-{
-
- background-image: url(%%twiraptor%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 300px;
-    width: 428px;
-}
 
 a[href|="/greatrage"]
 {
@@ -1046,16 +975,6 @@ a[href|="/greatrage"]
     width: 509px;
 }
 
-a[href|="/udnt"]
-{
-
- background-image: url(%%udnt%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 100px;
-    width: 112px;
-}
 
 a[href|="/macinmane"]
 {
@@ -1130,3 +1049,69 @@ body.res-nightmode:first-of-type {
 
 /* TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO 
 */
+
+/* I AM BREAKING SHIT, FUCK YO SHIT, BRO */
+
+
+
+/***   SPRITE SHEETS   ***/
+
+a[href|="/buttershy"], a[href|="/derpymousse"], a[href|="/disugh"], a[href|="/flutterchilli"], a[href|="/flutterrex"], a[href|="/foodlove"], a[href|="/twiraptor"], a[href|="/udnt"] { 
+
+
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image:url(%%foodsheet%%) !important
+    }
+
+
+a[href|="/buttershy"] {
+    width: 150px;
+    height: 150px;
+    background-position: -161px -322px;
+}
+
+a[href|="/derpymousse"] {
+    width: 150px;
+    height: 150px;
+    background-position: -0px -322px;
+}
+
+a[href|="/disugh"] {
+    width: 150px;
+    height: 150px;
+    background-position: -322px -161px;
+}
+
+a[href|="/flutterchilli"] {
+    width: 150px;
+    height: 150px;
+    background-position: -322px -0px;
+}
+
+a[href|="/flutterrex"] {
+    width: 150px;
+    height: 150px;
+    background-position: -161px -161px;
+}
+
+a[href|="/foodlove"] {
+    width: 150px;
+    height: 150px;
+    background-position: -0px -161px;
+}
+
+a[href|="/twiraptor"] {
+    width: 150px;
+    height: 150px;
+    background-position: -161px -0px;
+}
+
+a[href|="/udnt"] {
+    width: 150px;
+    height: 150px;
+    background-position: -0px -0px;
+}
