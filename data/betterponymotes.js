@@ -12,7 +12,7 @@
 // @require pref-setup.js?p=2&cver=42
 // @run-at document-start
 // @updateURL http://rainbow.mlas1.us/betterponymotes.user.js
-// @version 42.68.1
+// @version 42.68.2
 // ==/UserScript==
 
 /*******************************************************************************
