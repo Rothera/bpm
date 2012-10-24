@@ -122,8 +122,6 @@ def main():
     parser.add_argument("--no-compress", help="Disable CSS compression", action="store_true")
     args = parser.parse_args()
 
-    files = {}
-
     print("Loading emotes")
     data_manager = bplib.objects.DataManager()
     data_manager.load_all_sources()
