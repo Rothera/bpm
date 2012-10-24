@@ -956,8 +956,8 @@ var bpm_converter = {
                     element.dataset.bpm_srname = emote_info.source_name;
 
                     if(!prefs.we_map[emote_name]) {
-                        var nsfw_class = prefs.prefs.hideDisabledEmotes ? " bpm-hidden" : " bpm-nsfw";
-                        var disabled_class = prefs.prefs.hideDisabledEmotes ? " bpm-hidden" : " bpm-disabled";
+                        var nsfw_class = prefs.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-nsfw";
+                        var disabled_class = prefs.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-disabled";
                         // Ordering matters a bit here- placeholders for NSFW emotes
                         // come before disabled emotes.
                         if(emote_info.is_nsfw) {
