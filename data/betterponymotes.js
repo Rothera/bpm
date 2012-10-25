@@ -1749,6 +1749,7 @@ var bpm_search = {
         var shown = 0;
         var prev = null;
         var actual_results = results.length;
+        var formatting_id = tag_name2id["+formatting"];
         for(var i = 0; i < results.length; i++) {
             var result = results[i];
             if(prev === result.name) {
@@ -1777,7 +1778,11 @@ var bpm_search = {
             // Use <span> so there's no chance of emote parse code finding
             // this.
             html += "<span data-emote=\"" + result.name + "\" class=\"bpm-result " +
-                    result.css_class + "\" title=\"" + result.name + " from " + result.source_name + "\"></span>";
+                    result.css_class + "\" title=\"" + result.name + " from " + result.source_name + "\">";
+            if(result.tags.indexOf(formatting_id) > -1) {
+                html += "Example Text";
+            }
+            html += "</span>";
         }
 
         this.results.innerHTML = html;
@@ -1808,26 +1813,35 @@ var bpm_search = {
             return;
         }
 
+        var emote_info = bpm_data.lookup_core_emote(emote_name);
+        var formatting_id = tag_name2id["+formatting"];
+
         var start = this.target_form.selectionStart;
         var end = this.target_form.selectionEnd;
         if(start !== undefined && end !== undefined) {
             var emote_len;
-            if(start !== end) {
-                // Make selections into alt-text.
-                // "[](" + ' "' + '")'
-                emote_len = 7 + emote_name.length + (end - start);
-                this.target_form.value = (
-                    this.target_form.value.slice(0, start) +
-                    "[](" + emote_name + " \"" +
-                    this.target_form.value.slice(start, end) + "\")" +
-                    this.target_form.value.slice(end));
+            var before = this.target_form.value.slice(0, start);
+            var inside = this.target_form.value.slice(start, end);
+            var after = this.target_form.value.slice(end);
+            if(inside) {
+                var extra_len, emote;
+                // Make selections into text/alt-text
+                if(emote_info.tags.indexOf(formatting_id) > -1) {
+                    extra_len = 4; // '[]('' and ')'
+                    emote = "[" + inside + "](" + emote_name + ")";
+                } else {
+                    extra_len = 4; // '[](' and ' "' and '")'
+                    emote = "[](" + emote_name + " \"" + inside + "\")";
+                }
+                emote_len = extra_len + emote_name.length + (end - start);
+                this.target_form.value = (before + emote + after);
             } else {
                 // "[](" + ")"
                 emote_len = 4 + emote_name.length;
                 this.target_form.value = (
-                    this.target_form.value.slice(0, start) +
+                    before +
                     "[](" + emote_name + ")" +
-                    this.target_form.value.slice(end));
+                    after);
             }
             this.target_form.selectionStart = end + emote_len;
             this.target_form.selectionEnd = end + emote_len;
