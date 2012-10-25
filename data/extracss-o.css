@@ -1,22 +1,18 @@
 /*
- * ExtraCSS flags file for Opera. Stolen from:
+ * ExtraCSS flags file for what's currently Opera stable, which requires -o.
+ *
+ * Originally stolen from:
  *
  *    http://userstyles.org/styles/58923/reddit-my-little-chaos-script-keyframes
  *
- * And edited to suit Opera, which supports the same syntax as Firefox with
- * only vendor prefix changes.
+ * And edited to suit Opera.
  *
  * Rewritten extensively to use CSS classes.
  */
 
 /*
  * Opera does not support 3d transformations, which means that all but -zspin
- * and similar are commented out here. Additionally, the -o prefix goes away
- * in what is currently Opera Next (12.50), meaning this will break when that
- * becomes stable and people start upgrading. There's no nice way around that
- * other than duplicating a lot, since I don't think you can combine @keyframes
- * and @-o-keyframes. Since including the wrong one generates a huge amount of
- * console error spam (Opera treats them as invalid), they're omitted.
+ * and similar are commented out here.
  *
  * rotateZ() is equivalent to rotate(), except for the fact that the former is
  * unsupported, so this file is heavily edited to replace usages while retaining

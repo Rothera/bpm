@@ -2135,13 +2135,27 @@ var bpm_core = {
 
         bpm_prefs.when_available(function(prefs) {
             if(prefs.prefs.enableExtraCSS) {
-                // TODO: The only reason we still keep extracss separate is because
-                // we don't have a flag_map for it yet. Maybe this works better,
-                // though- this file tends to take a surprisingly long time to add...
-                if(bpm_utils.platform === "opera-ext" && bpm_browser._is_opera_next) {
-                    bpm_browser.link_css("/extracss-next.css");
+                // Inspect style properties to determine what extracss variant
+                // to apply.
+                //    Firefox: Old versions require -moz, but >=16.0 are unprefixed
+                //    Chrome (WebKit): -webkit
+                //    Opera: Current stable requires -o, but >=12.10 are unprefixed
+                var style = document.createElement("span").style;
+
+                if(style.transform !== undefined) {
+                    // This might actually be extracss-pure-opera for Opera
+                    // Next, since it requires some modified rules
+                    bpm_browser.link_css("/extracss-pure.css");
+                } else if(style.MozTransform !== undefined) {
+                    bpm_browser.link_css("/extracss-moz.css");
+                } else if(style.webkitTransform !== undefined) {
+                    bpm_browser.link_css("/extracss-webkit.css");
+                } else if(style.OTransform !== undefined) {
+                    bpm_browser.link_css("/extracss-o.css");
                 } else {
-                    bpm_browser.link_css("/extracss.css");
+                    bpm_log("BPM: WARNING: Cannot inspect vendor prefix needed for extracss.");
+                    // You never know, maybe it'll work
+                    bpm_browser.link_css("/extracss-pure.css");
                 }
             }
 
