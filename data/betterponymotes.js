@@ -1598,9 +1598,15 @@ var bpm_search = {
             var term = terms[t];
 
             if(term.slice(0, 3) === "sr:") {
-                query.sr_terms.push(term.slice(3));
+                var tmp = term.slice(3);
+                if(tmp) {
+                    query.sr_terms.push(tmp);
+                }
             } else if(term[0] === "+" || term[0] === "-") {
                 var lone_tag = term.slice(1);
+                if(!lone_tag) {
+                    continue;
+                }
                 var p_tag = "+" + lone_tag;
                 var positive = (term[0] === "+" ? true : false);
                 var id = tag_name2id[p_tag];
