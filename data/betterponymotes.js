@@ -329,7 +329,7 @@ var bpm_utils = {
      * work into batches of 1000, waiting 50ms in between in order to ensure
      * browser responsiveness no matter the size of the tree.
      */
-    walk_dom: function(root, node_filter, process, node, depth) {
+    walk_dom: function(root, node_filter, process, end, node, depth) {
         if(!node) {
             if(this._tag_blacklist[root.tagName]) {
                 return; // A bit odd, but possible
@@ -362,14 +362,19 @@ var bpm_utils = {
                 node = node.parentNode;
                 depth--;
                 if(!depth) {
+                    end();
                     return; // Done!
                 }
             }
             node = node.nextSibling;
         }
-        if(!num) {
+        if(num) {
+            // Ran out of nodes, or hit null somehow. I'm not sure how either
+            // of these can happen, but oh well.
+            end();
+        } else {
             setTimeout(function() {
-                this.walk_dom(root, node_filter, process, node, depth);
+                this.walk_dom(root, node_filter, process, end, node, depth);
             }.bind(this), 50);
         }
     },
@@ -2091,12 +2096,12 @@ var bpm_global = {
                     scroll_parent.scrollTop = scroll_parent.scrollTop + delta;
                 }
             }
+        }.bind(this), function() {
+            for(var i = 0; i < deletion_list.length; i++) {
+                var node = deletion_list[i];
+                node.parentNode.removeChild(node);
+            }
         }.bind(this));
-
-        for(var i = 0; i < deletion_list.length; i++) {
-            var node = deletion_list[i];
-            node.parentNode.removeChild(node);
-        }
     },
 
     /*
