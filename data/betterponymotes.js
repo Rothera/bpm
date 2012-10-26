@@ -229,11 +229,13 @@ var bpm_utils = {
      * them will move them around.
      */
     enable_drag: function(element, start_callback, callback) {
-        var on_mousemove = bpm_utils.catch_errors(function(event) {
-            callback(event, start_x, start_y, event.clientX, event.clientY);
-        });
-
         var start_x, start_y;
+
+        var on_mousemove = bpm_utils.catch_errors(function(event) {
+            var dx = event.clientX - start_x;
+            var dy = event.clientY - start_y;
+            callback(event, dx, dy);
+        });
 
         element.addEventListener("mousedown", bpm_utils.catch_errors(function(event) {
             start_x = event.clientX;
@@ -247,6 +249,32 @@ var bpm_utils = {
             window.removeEventListener("mousemove", on_mousemove, false);
             document.body.classList.remove("bpm-noselect");
         }), false);
+    },
+
+    /*
+     * Wrapper around enable_drag for the common case of moving elements.
+     */
+    make_movable: function(element, container, callback) {
+        var start_x, start_y;
+
+        bpm_utils.enable_drag(element, function(event) {
+            start_x = parseInt(container.style.left, 10);
+            start_y = parseInt(container.style.top, 10);
+        }, function(event, dx, dy) {
+            var left = Math.max(start_x + dx, 0);
+            var top = Math.max(start_y + dy, 0);
+
+            function move() {
+                container.style.left = left + "px";
+                container.style.top = top + "px";
+            }
+
+            if(callback) {
+                callback(left, top, move);
+            } else {
+                move();
+            }
+        });
     },
 
     /*
@@ -1367,29 +1395,29 @@ var bpm_search = {
             // tabindex is hack to make Esc work. Reddit uses this index in a couple
             // of places, so probably safe.
             '<div id="bpm-search-box" tabindex="100">',
-            '  <div id="bpm-toprow">',
-            '    <span id="bpm-dragbox"></span>',
-            '    <input id="bpm-search" type="search" placeholder="Search"/>',
-            '    <span id="bpm-result-count"></span>',
-            '    <span id="bpm-close"></span>',
-            '  </div>',
-            '  <div id="bpm-search-results"></div>',
-            '  <div id="bpm-bottomrow">',
-            '    <span id="bpm-help-hover">help',
-            '      <div id="bpm-search-help">',
-            '        <p>Searching for <code>"aj"</code> will show you all emotes with <code>"aj"</code> in their names.',
-            '        <p>Searching for <code>"aj happy"</code> will show you all emotes with both <code>"aj"</code> and <code>"happy"</code> in their names.',
-            '        <p>The special syntax <code>"sr:subreddit"</code> will limit your results to emotes from that subreddit.',
-            '        <p>Using more than one subreddit will show you emotes from all of them.',
-            '        <p>Searching for <code>"+tag"</code> will show you emotes with the given tag. <code>"-tag"</code> shows emotes without it.',
-            '        <p>Some emotes are hidden by default. Use <code>"+nonpony"</code> to see them.',
-            '      </div>',
-            '    </span>',
-            '    <span id="bpm-resize"></span>',
-            '  </div>',
+              '<div id="bpm-toprow">',
+                '<span id="bpm-dragbox"></span>',
+                '<input id="bpm-search" type="search" placeholder="Search"/>',
+                '<span id="bpm-result-count"></span>',
+                '<span id="bpm-close"></span>',
+              '</div>',
+              '<div id="bpm-search-results"></div>',
+              '<div id="bpm-bottomrow">',
+                '<span id="bpm-help-hover">help',
+                  '<div id="bpm-search-help">',
+                    '<p>Searching for <code>"aj"</code> will show you all emotes with <code>"aj"</code> in their names.',
+                    '<p>Searching for <code>"aj happy"</code> will show you all emotes with both <code>"aj"</code> and <code>"happy"</code> in their names.',
+                    '<p>The special syntax <code>"sr:subreddit"</code> will limit your results to emotes from that subreddit.',
+                    '<p>Using more than one subreddit will show you emotes from all of them.',
+                    '<p>Searching for <code>"+tag"</code> will show you emotes with the given tag. <code>"-tag"</code> shows emotes without it.',
+                    '<p>Some emotes are hidden by default. Use <code>"+nonpony"</code> to see them.',
+                  '</div>',
+                '</span>',
+                '<span id="bpm-resize"></span>',
+              '</div>',
             '</div>',
             '<div id="bpm-global-icon" title="Hold Ctrl (Command/Meta) to drag"></div>'
-            ].join("\n");
+            ].join("");
         div.innerHTML = html;
         document.body.appendChild(div);
 
@@ -1458,40 +1486,29 @@ var bpm_search = {
         this.container.style.width = prefs.prefs.searchBoxInfo[2] + "px";
         this.container.style.height = prefs.prefs.searchBoxInfo[3] + "px";
         // 62 is a magic value from the CSS.
-        this.results.style.height = (prefs.prefs.searchBoxInfo[3] - 62) + "px"; // Styling
+        this.results.style.height = (prefs.prefs.searchBoxInfo[3] - 62) + "px";
         this.global_icon.style.left = prefs.prefs.globalIconPos[0] + "px";
         this.global_icon.style.top = prefs.prefs.globalIconPos[1] + "px";
 
         // Enable dragging the window around
-        var search_box_x, search_box_y;
-        bpm_utils.enable_drag(this.dragbox, function(event) {
-            search_box_x = parseInt(this.container.style.left, 10);
-            search_box_y = parseInt(this.container.style.top, 10);
-        }.bind(this), function(event, start_x, start_y, x, y) {
-            // Don't permit it to move out the left/top side of the window
-            var sb_left = Math.max(x - start_x + search_box_x, 0);
-            var sb_top = Math.max(y - start_y + search_box_y, 0);
-
-            this.container.style.left = sb_left + "px";
-            this.container.style.top = sb_top + "px";
-
-            prefs.prefs.searchBoxInfo[0] = sb_left;
-            prefs.prefs.searchBoxInfo[1] = sb_top;
-            bpm_prefs.sync_key("searchBoxInfo"); // FIXME: this will be called way too often
-        }.bind(this));
+        bpm_utils.make_movable(this.dragbox, this.container, function(left, top, move) {
+            move();
+            prefs.prefs.searchBoxInfo[0] = left;
+            prefs.prefs.searchBoxInfo[1] = top;
+            bpm_prefs.sync_key("searchBoxInfo");
+        });
 
         // Enable dragging the resize element around (i.e. resizing it)
-        var search_box_width, search_box_height, results_height;
+        var search_box_width, search_box_height;
         bpm_utils.enable_drag(this.resize, function(event) {
             search_box_width = parseInt(this.container.style.width, 10);
             search_box_height = parseInt(this.container.style.height, 10);
-            results_height = parseInt(this.results.style.height, 10);
-        }.bind(this), function(event, start_x, start_y, x, y) {
-            // 420px wide prevents the search box from collapsing too much, and 98px
-            // is the height of the top bar + margins*3. An extra five pixels prevents
-            // the results div from disappearing completely (which can be bad).
-            var sb_width = Math.max(x - start_x + search_box_width, 420);
-            var sb_height = Math.max(y - start_y + search_box_height, 98+5);
+        }.bind(this), function(event, dx, dy) {
+            // 420px wide prevents the search box from collapsing too much, and
+            // the extra 5px is to prevent the results div from vanishing (which
+            // sometimes kills Opera),
+            var sb_width = Math.max(dx + search_box_width, 420);
+            var sb_height = Math.max(dy + search_box_height, 62+5);
 
             this.container.style.width = sb_width + "px";
             this.container.style.height = sb_height + "px";
@@ -1499,7 +1516,7 @@ var bpm_search = {
 
             prefs.prefs.searchBoxInfo[2] = sb_width;
             prefs.prefs.searchBoxInfo[3] = sb_height;
-            bpm_prefs.sync_key("searchBoxInfo"); // FIXME again
+            bpm_prefs.sync_key("searchBoxInfo");
         }.bind(this));
     },
 
@@ -1575,13 +1592,46 @@ var bpm_search = {
     },
 
     /*
+     * Updates the search results window according to the current query.
+     */
+    update_search: function(prefs) {
+        // Split search query on spaces, remove empty strings, and lowercase terms
+        var terms = this.search.value.split(" ").map(function(v) { return v.toLowerCase(); });
+        terms = terms.filter(function(v) { return v; });
+        prefs.prefs.lastSearchQuery = terms.join(" ");
+        bpm_prefs.sync_key("lastSearchQuery");
+
+        // Check this before we append the default search terms.
+        if(!terms.length) {
+            this.results.innerHTML = "";
+            this.count.textContent = "";
+            return;
+        }
+
+        // This doesn't work quite perfectly- searching for "+hidden" should
+        // theoretically just show all hidden emotes, but it just ends up
+        // cancelling into "-nonpony", searching for everything.
+        terms.unshift("-hidden", "-nonpony");
+        var query = this.parse_search_query(terms);
+        // Still nothing to do
+        if(query === null) {
+            this.results.innerHTML = "";
+            this.count.textContent = "";
+            return;
+        }
+
+        var results = this.do_search(query);
+        this.display_results(prefs, results);
+    },
+
+    /*
      * Parses a search query. Returns an object that looks like this:
      *    .sr_terms: list of subreddit names to match.
      *    .tag_term_sets: list of [true or false, ...] tag sets to match.
      *    .name_terms: list of emote name terms to match.
      * or null, if there was no query.
      */
-    parse_query: function(terms) {
+    parse_search_query: function(terms) {
         var query = {sr_terms: [], tag_term_sets: [], name_terms: []};
 
         function add_tag_term(positive, tags) {
@@ -1599,10 +1649,9 @@ var bpm_search = {
                             // It makes a great big mess of my search code is what
                         }
                     }
-                    // Need to keep empty sets so our -nonpony hack works
-                    //if(set.length <= 1) {
-                    //    query.tag_term_sets.splice(i, 1);
-                    //}
+                    if(set.length <= 1) {
+                        query.tag_term_sets.splice(i, 1);
+                    }
                 }
             }
             if(tags.length) {
@@ -1658,36 +1707,12 @@ var bpm_search = {
     },
 
     /*
-     * Updates the search results window according to the current query.
+     * Executes a search query. Returns an object with two properties:
+     *    .results: a sorted list of emotes
+     *    .omitted: emotes hidden by the first set of tags (our -nonpony hack)
      */
-    update_search: function(prefs) {
-        // Split search query on spaces, remove empty strings, and lowercase terms
-        var terms = this.search.value.split(" ").map(function(v) { return v.toLowerCase(); });
-        terms = terms.filter(function(v) { return v; });
-        prefs.prefs.lastSearchQuery = terms.join(" ");
-        bpm_prefs.sync_key("lastSearchQuery");
-
-        // Check this before we append the default search terms.
-        if(!terms.length) {
-            this.results.innerHTML = "";
-            this.count.textContent = "";
-            return;
-        }
-
-        // This doesn't work quite perfectly- searching for "+hidden" should
-        // theoretically just show all hidden emotes, but it just ends up
-        // cancelling into "-nonpony", searching for everything.
-        terms.unshift("-hidden", "-nonpony");
-        var query = this.parse_query(terms);
-        // Still nothing to do
-        if(query === null) {
-            this.results.innerHTML = "";
-            this.count.textContent = "";
-            return;
-        }
-
+    do_search: function(query) {
         var results = [];
-        var hidden = 0; // Defined up here for our -nonpony hack
         no_match:
         for(var emote_name in emote_map) {
             var emote_info = bpm_data.lookup_core_emote(emote_name);
@@ -1720,10 +1745,6 @@ var bpm_search = {
             for(var tt_i = query.tag_term_sets.length - 1; tt_i >= 0; tt_i--) {
                 // Match if AT LEAST ONE of these match
                 var tag_set = query.tag_term_sets[tt_i];
-                // Hack because we leave empty sets in
-                if(tag_set.length <= 1) {
-                    continue;
-                }
 
                 var any = false;
                 for(var ts_i = 1; ts_i < tag_set.length; ts_i++) {
@@ -1735,12 +1756,6 @@ var bpm_search = {
                 // We either didn't match, and wanted to, or matched and didn't
                 // want to.
                 if(any !== tag_set[0]) {
-                    // HACK: This is the index of -nonpony. Any matches on this
-                    // one means we blocked something by default, so make a note
-                    // of it so the user knows.
-                    if(tt_i === 1) {
-                        hidden++;
-                    }
                     continue no_match;
                 }
             }
@@ -1768,6 +1783,13 @@ var bpm_search = {
             }
         });
 
+        return results;
+    },
+
+    /*
+     * Converts search results to HTML and displays them.
+     */
+    display_results: function(prefs, results) {
         // We go through all of the results regardless of search limit (as that
         // doesn't take very long), but stop building HTML when we reach enough
         // shown emotes.
@@ -1775,6 +1797,7 @@ var bpm_search = {
         // As a result, NSFW/disabled emotes don't count toward the result.
         var html = "";
         var shown = 0;
+        var hidden = 0;
         var prev = null;
         var actual_results = results.length;
         var formatting_id = tag_name2id["+formatting"];
@@ -1947,26 +1970,15 @@ var bpm_search = {
         }.bind(this)), false);
 
         // Enable dragging the global button around
-        var global_icon_x, global_icon_y;
-        bpm_utils.enable_drag(this.global_icon, function(event) {
-            global_icon_x = parseInt(this.global_icon.style.left, 10);
-            global_icon_y = parseInt(this.global_icon.style.top, 10);
-        }.bind(this), function(event, start_x, start_y, x, y) {
+        bpm_utils.make_movable(this.global_icon, this.global_icon, function(left, top, move) {
             if(!event.ctrlKey && !event.metaKey) {
                 return;
             }
-
-            // Don't permit it to move out the left/top side of the window
-            var gi_left = Math.max(x - start_x + global_icon_x, 0);
-            var gi_top = Math.max(y - start_y + global_icon_y, 0);
-
-            this.global_icon.style.left = gi_left + "px";
-            this.global_icon.style.top = gi_top + "px";
-
-            prefs.prefs.globalIconPos[0] = gi_left;
-            prefs.prefs.globalIconPos[1] = gi_top;
-            bpm_prefs.sync_key("globalIconPos"); // FIXME yet again
-        }.bind(this));
+            move();
+            prefs.prefs.globalIconPos[0] = left;
+            prefs.prefs.globalIconPos[1] = top;
+            bpm_prefs.sync_key("globalIconPos");
+        });
 
         this.global_icon.style.visibility = "visible";
 
