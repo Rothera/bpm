@@ -462,6 +462,18 @@ var bpm_redditutil = {
         if(element) {
             element.parentNode.removeChild(element);
         }
+    },
+
+    _sidebar_cache: null,
+    is_sidebar: function(md) {
+        if(this._sidebar_cache) {
+            return this._sidebar_cache === md;
+        }
+        var is = bpm_utils.class_above(md, "titlebox");
+        if(is) {
+            this._sidebar_cache = md;
+        }
+        return Boolean(is);
     }
 };
 
@@ -931,7 +943,7 @@ var bpm_converter = {
      * Process the given list of elements (assumed to be <a> tags), converting
      * any that are emotes.
      */
-    process: function(prefs, elements) {
+    process: function(prefs, elements, convert_unknown) {
         next_emote:
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
@@ -1010,7 +1022,7 @@ var bpm_converter = {
                             element.classList.add("bpflag-" + bpm_utils.sanitize(flag));
                         }
                     }
-                } else if(prefs.prefs.showUnknownEmotes) {
+                } else if(convert_unknown && prefs.prefs.showUnknownEmotes) {
                     /*
                      * If there's:
                      *    1) No text
@@ -1180,15 +1192,22 @@ var bpm_converter = {
      * Processes emotes and alt-text under an element, given the containing .md.
      */
     process_rooted_post: function(prefs, post, md) {
+        // Generally, the first post on the page will be the sidebar, so this
+        // is an extremely fast test.
+        var is_sidebar = bpm_redditutil.is_sidebar(md);
         var links = post.getElementsByTagName("a");
         // NOTE: must run alt-text AFTER emote code, always. See note in
         // display_alt_text
-        var out_of_sub = this.process(prefs, links);
-        if(prefs.prefs.showAltText) {
+        var out_of_sub = this.process(prefs, links, !is_sidebar);
+        if(!is_sidebar && prefs.prefs.showAltText) {
             this.display_alt_text(links);
         }
     },
 
+    /*
+     * Attaches to a .usertext-edit element, setting hooks to monitor the input
+     * and display courtesy notifications appropriately.
+     */
     hook_usertext_edit: function(prefs, usertext_edits) {
         if(!prefs.prefs.warnCourtesy) {
             return;
