@@ -887,20 +887,7 @@ body.res-nightmode:first-of-type {
     background-repeat: no-repeat;
     }
 
-/*** Bottom page Foodmane **
-.footer-parent {
-    height: 550px;
-    padding-top: 30px;
-    padding-bottom: 40px;
-    clear: both;
-    text-align: center;
-    width: 100%;
-    background-image: url(%%DatSeriously%%);
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    margin-bottom: 4px
-    }
-*/
+
 
 /***  Emotes ***/
 
@@ -1011,16 +998,28 @@ a[href|="/mechahitler"]
 
 }
 
+a[href|="/twiststare"]
+{
+
+ background-image: url(%%twiststare%%) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 70px;
+    width: 70px;
+
+}
+
 
 /*** Bottom page Foodmane  ***/
 .footer-parent {
-    height: 652px;
+    height: 740px;
     padding-top: 30px;
     padding-bottom: 40px;
     clear: both;
     text-align: center;
     width: 100%;
-    background-image: url(%%sbtaffy%%);
+    background-image: url(%%twistalphagettis%%);
     background-position: bottom center;
     background-repeat: no-repeat;
     margin-bottom: 4px
