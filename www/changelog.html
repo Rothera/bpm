@@ -29,6 +29,20 @@
         <p>This changelog only lists code changes. Most releases contain whatever
         emote updates were available at the time, and are not mentioned.
 
+        <h5>v43.69 - 2012-10-25</h5>
+        <p>Extra CSS detection now works by introspecting the available
+        CSSStyleDeclaration object for properties. Should mean UserScripts are
+        now supported.
+        <p>Set a minimum Chrome browser version in the manifest, so outdated
+        users will stop wondering why it doesn't work (and probably start
+        wondering why it doesn't install).
+        <p>Special case <code>+formatting</code> to add text in the search box.
+        No longer hiding these emotes.
+        <p>Fix global emotes bug, not deleting old nodes properly.
+        <p>Slim down the search box.
+        <p>Don't convert alt-text or unknown emotes on sidebars. Helps some
+        subreddits.
+
         <h5>v40.65 - 2012-10-21</h5>
         <p>Improve unknown emote detection. Handles sidebars better.
         <p>Add notifications when the user is using emotes in such a way that
