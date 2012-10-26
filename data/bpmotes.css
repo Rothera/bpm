@@ -117,7 +117,11 @@
 
     background-color: #E8E8E8;
     border: thin solid black;
-    z-index: 900; /* RES uses 1000 for its console drop-down, so lets stay under that */
+    /*
+     * It'd be nice to hide under RES's console dropdown, but there's too many
+     * things we need to override to be nice like that.
+     */
+    z-index: 43112609; /* P sub 47 */
     visibility: hidden;
 }
 
