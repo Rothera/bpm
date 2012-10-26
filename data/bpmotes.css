@@ -176,6 +176,8 @@
 /* Search result container */
 #bpm-search-results {
     height: 388px; /* #bpm-search-box - 62 */
+    width: -webkit-calc(100% - 8px); /* Fit inside padding */
+    width: calc(100% - 8px);
     padding: 4px !important;
     float: left;
 
