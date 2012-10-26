@@ -1349,8 +1349,8 @@ var bpm_search = {
             // of places, so probably safe.
             '<div id="bpm-search-box" tabindex="100">',
             '  <div id="bpm-toprow">',
-            '     <span id="bpm-dragbox"></span>',
-            '     <input id="bpm-search" type="search" placeholder="Search"/>',
+            '    <span id="bpm-dragbox"></span>',
+            '    <input id="bpm-search" type="search" placeholder="Search"/>',
             '    <span id="bpm-result-count"></span>',
             '    <span id="bpm-close"></span>',
             '  </div>',
@@ -1438,10 +1438,8 @@ var bpm_search = {
         this.container.style.top = prefs.prefs.searchBoxInfo[1] + "px";
         this.container.style.width = prefs.prefs.searchBoxInfo[2] + "px";
         this.container.style.height = prefs.prefs.searchBoxInfo[3] + "px";
-        // 98 is a magic value from the CSS.
-        // 98 = height(topbar) + margins(topbar) + margins(results) + padding(results)
-        //    = 20             + 30*2            + 30               + 8
-        this.results.style.height = prefs.prefs.searchBoxInfo[3] - 98 + "px"; // Styling
+        // 62 is a magic value from the CSS.
+        this.results.style.height = (prefs.prefs.searchBoxInfo[3] - 62) + "px"; // Styling
         this.global_icon.style.left = prefs.prefs.globalIconPos[0] + "px";
         this.global_icon.style.top = prefs.prefs.globalIconPos[1] + "px";
 
@@ -1478,7 +1476,7 @@ var bpm_search = {
 
             this.container.style.width = sb_width + "px";
             this.container.style.height = sb_height + "px";
-            this.results.style.height = sb_height - 98 + "px";
+            this.results.style.height = (sb_height - 62) + "px";
 
             prefs.prefs.searchBoxInfo[2] = sb_width;
             prefs.prefs.searchBoxInfo[3] = sb_height;

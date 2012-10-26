@@ -17,7 +17,7 @@ var bpm_backendsupport = {
         "enabledSubreddits2": {}, // subreddit name -> 0/1 enabled
         "showUnknownEmotes": true,
         "searchLimit": 200,
-        "searchBoxInfo": [600, 25, 600, 450],
+        "searchBoxInfo": [600, 25, 620, 450],
         "lastSearchQuery": "sr:mylittlepony", // only shows about a third, but that's ok
         "showAltText": true,
         "enableGlobalEmotes": false,

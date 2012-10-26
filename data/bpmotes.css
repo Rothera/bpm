@@ -107,87 +107,94 @@
 /* Container */
 #bpm-search-box {
     position: fixed;
-    width: 600px; /* These four values are reset in JS immediately, so effectively ignored */
+
+    /* These four values are reset in JS immediately, so effectively ignored */
+    width: 620px;
     height: 450px;
     top: 25px;
     left: 600px;
+    padding: 5px 5px 0px 5px;
+
     background-color: #E8E8E8;
     border: thin solid black;
     z-index: 900; /* RES uses 1000 for its console drop-down, so lets stay under that */
-    visibility: hidden; /* by default */
+    visibility: hidden;
 }
 
 /* Top row widget container */
 #bpm-toprow {
-    margin: 20px !important; /* Override reddit */
     height: 30px;
+    margin-bottom: 5px;
 }
 
 /* Top-left drag box */
 #bpm-dragbox {
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC9SURBVEjHY2BgYPg/QHiALQYCBnrgoWsxEHiCMF0tBgJWIL4Oxaz0tLgAyYB8ulgMBCJA/B7JABBbhB4WT8OSNabRM3FRpG/UYnRF4kA8l1SLQXpAekm2GJpPS4D4Ix7D/xOQA+ktRs/nOC0GAi8gvknFygBklhcxFntCSyRqWXwduWglJqjzYQUFmUH9HlrCsZKTuERwFQ4E9E3DVZqN5uPBb/GAVRIDVi0OWENgQJs+A9bYGx7t6hHTdwIA/NWecKA2C2UAAAAASUVORK5CYII=");
     width: 30px;
     height: 30px;
-    margin-right: 20px;
+    margin-right: 5px;
     float: left;
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC9SURBVEjHY2BgYPg/QHiALQYCBnrgoWsxEHiCMF0tBgJWIL4Oxaz0tLgAyYB8ulgMBCJA/B7JABBbhB4WT8OSNabRM3FRpG/UYnRF4kA8l1SLQXpAekm2GJpPS4D4Ix7D/xOQA+ktRs/nOC0GAi8gvknFygBklhcxFntCSyRqWXwduWglJqjzYQUFmUH9HlrCsZKTuERwFQ4E9E3DVZqN5uPBb/GAVRIDVi0OWENgQJs+A9bYGx7t6hHTdwIA/NWecKA2C2UAAAAASUVORK5CYII=");
 }
 
 /* Search input */
 #bpm-search {
-    /* Ensure 30px high */
     border-width: 2px;
-    padding: 4px;
     height: 18px;
-    /*width: 20em;*/
     width: 240px;
-    padding: 5px !important; /* Override reddit */
-    margin-right: 20px !important; /* Override reddit */
+    padding: 5px;
     float: left;
+
+    margin-right: 5px; !important;
     box-sizing: initial; /* Fix for Chrome, which get the size wrong */
 }
 
 /* Result count element */
 #bpm-result-count {
+    height: 30px;
+    float: left;
+
     color: gray;
     font-style: italic;
     font-weight: lighter;
-    height: 30px;
     line-height: 30px; /* Ugly way to vertically center text */
-    float: left;
 }
 
 /* Close button */
 #bpm-close {
-    /* Ain't it cute. */
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACWSURBVEjH7dcxDoAgDAXQDhyROzJwREiQ4bsQLAjGH2NJ/tb4DFBQEZFCChmuQ96IwQa3xa4m1HilxqPGPQIDjahLPRxoQk3U8Cm4QUsPb9AywmfhcNH8CWAPPRN2YO3BGbl8sd011vBb6MqunsVVdKmPgWcFzSP0OzBlqimbi9ZOzAOEc2TSLgnqtWifPgZvw7/5dzoAyDAWKt02AB4AAAAASUVORK5CYII=");
     width: 30px;
     height: 30px;
-    margin-left: 20px;
     float: right;
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACWSURBVEjH7dcxDoAgDAXQDhyROzJwREiQ4bsQLAjGH2NJ/tb4DFBQEZFCChmuQ96IwQa3xa4m1HilxqPGPQIDjahLPRxoQk3U8Cm4QUsPb9AywmfhcNH8CWAPPRN2YO3BGbl8sd011vBb6MqunsVVdKmPgWcFzSP0OzBlqimbi9ZOzAOEc2TSLgnqtWifPgZvw7/5dzoAyDAWKt02AB4AAAAASUVORK5CYII=");
 }
 
 /* Search result container */
 #bpm-search-results {
-    margin: 20px !important; /* Override reddit */
+    height: 388px; /* #bpm-search-box - 62 */
+    padding: 4px !important;
+    float: left;
+
     background-color: white;
     font-size: xx-small;
     font-family: monospace;
     overflow-y: auto;
-    height: 352px; /* #bpm-search-box height - (#bpm-toprow height - margins*3 - padding*2 = 98) */
-    padding: 4px !important;
     word-wrap: break-word; /* Makes emote names a bit nicer */
 }
 
 #bpm-bottomrow {
-    margin-top: -19px !important;
     height: 20px; /* Fit in the margins */
+    float: left;
+    width: 100%;
 }
 
 /* Help hover */
 #bpm-help-hover {
     height: 20px;
-    vertical-align: middle;
     margin-left: 4px;
+    float: left;
+
+    line-height: 20px;
 }
 #bpm-help-hover:hover > #bpm-search-help {
     display: block;
@@ -195,36 +202,34 @@
 
 /* Actual help box */
 #bpm-search-help {
+    padding: 4px;
     position: absolute;
+
     background-color: white;
     border: 2px solid #D0D0D0;
-    padding: 4px;
+    display: none;
 }
 
 /* Bottom-right resize box */
 #bpm-resize {
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACcSURBVDjLzdQxCoAwDAXQjOJmF1GvpSdzUU8iiHdSd9EvROhQMGkUDPzF0EehMUREx8v5CESRJUEQNSE90iDuDbDzGvuFW8Haa2xIaQUzvtnC32ckjQa50SI5MmrQx1dGJRpUNDYaVDyHUlQ12BJU/acE0AoZosEAuvGIuWiQDxbI6gGNFRz4ZjfQm0A+7HiBXItkMoOisfntxj4BkxXf5wPylQcAAAAASUVORK5CYII=");
     width: 20px;
     height: 20px;
+    margin-right: -6px;
     float: right;
-    margin-right: -1px;
-}
 
-/* Help box */
-#bpm-search-help {
-    display: none;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACcSURBVDjLzdQxCoAwDAXQjOJmF1GvpSdzUU8iiHdSd9EvROhQMGkUDPzF0EehMUREx8v5CESRJUEQNSE90iDuDbDzGvuFW8Haa2xIaQUzvtnC32ckjQa50SI5MmrQx1dGJRpUNDYaVDyHUlQ12BJU/acE0AoZosEAuvGIuWiQDxbI6gGNFRz4ZjfQm0A+7HiBXItkMoOisfntxj4BkxXf5wPylQcAAAAASUVORK5CYII=");
 }
 
 /* Emote search result */
 .bpm-result {
-    border: solid black thin;
     margin: 1px;
     display: inline-block;
+
+    border: solid black thin;
 }
 
 /* Global << icon thingy */
 #bpm-global-icon {
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAK9SURBVEjHzdc/SGpRHAdw+0OmFrg0hCJKixAhEg7R0GJLCCpJRPRnSkKC0ECcmoqWBolARQgaBBFRJNAlCFpqeA0lvaIl0KIIGhyiUvH7/N26l3vfI5736uP5gwNH5Z7z8Z7zO/yODICsHu56y9cb2qSRxf1lk3naCPZ7I5vsJ33Y2dlBpVLB/w4ykOULSLZPbblcRrsEWXhv8bPDxtLSEm5vb5ueZHNzE9lsVvLz3wKp39XVhYWFBdzc3EiewOFwMGNZLBYcHh62DtjX18f92NnZibm5OVxfX4uegP4gf8OPjo4ik8k0D3x5ecHGxgbUarUAOjs7i6urq4YnqFariMViGB4eFkDNZjPS6TRqtZo0IBulUgnb29sYGBgQQGdmZpDP5xuGEiSVSjFvkA81mUxIJpPfQv8KZOP19RXBYBAajYZ7qKOjA9PT07i4uBC17LlcDuPj4wLoyMgIEonEH9CGgWx8fHwgHA7DYDAIoE6nUzT0+PgYVqtVAKWtEI/HpQP5B+nBwQGMRiM3iN1ul5TpZ2dnsNlsAmjTQIrLy0u4XK6mgWxCqlSq1gDPz8+Z842Wln1ucHCQyVYx8fz8jEAggP7+fm6cnp4erKysSAOenp5iampKsBSUNLu7u3h7e2sY9vj4CJ/PB6VSyY0jl8vh8XhQKBTEJ8nJyQkmJycFMK1Wi729Pby/vzcMKxaLWF1dRW9vLzcO9em7+/t78cfM0dERJiYmBDCdTodQKMRkc6Nxd3cHt9vNLB8ftra2hoeHB2kH9djYmACm1+sRiUREwSi2trbQ3d3NjaNQKOD1epllbrpYoEbnXTQalVyGscUC7bf19XU8PT21plgYGhrC/v5+08Xr/Pw8/H4/k7EtKbfELuG/DLLwgcxlifZMOyDJQBbe5Um23MaXpmXZ19Vusd5+tBGMLItk+wX8pY1lHbB+/AAAAABJRU5ErkJggg==");
     width: 40px;
     height: 24px;
 
@@ -232,6 +237,8 @@
     position: fixed;
     left: 16px;
     top: 15px;
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAK9SURBVEjHzdc/SGpRHAdw+0OmFrg0hCJKixAhEg7R0GJLCCpJRPRnSkKC0ECcmoqWBolARQgaBBFRJNAlCFpqeA0lvaIl0KIIGhyiUvH7/N26l3vfI5736uP5gwNH5Z7z8Z7zO/yODICsHu56y9cb2qSRxf1lk3naCPZ7I5vsJ33Y2dlBpVLB/w4ykOULSLZPbblcRrsEWXhv8bPDxtLSEm5vb5ueZHNzE9lsVvLz3wKp39XVhYWFBdzc3EiewOFwMGNZLBYcHh62DtjX18f92NnZibm5OVxfX4uegP4gf8OPjo4ik8k0D3x5ecHGxgbUarUAOjs7i6urq4YnqFariMViGB4eFkDNZjPS6TRqtZo0IBulUgnb29sYGBgQQGdmZpDP5xuGEiSVSjFvkA81mUxIJpPfQv8KZOP19RXBYBAajYZ7qKOjA9PT07i4uBC17LlcDuPj4wLoyMgIEonEH9CGgWx8fHwgHA7DYDAIoE6nUzT0+PgYVqtVAKWtEI/HpQP5B+nBwQGMRiM3iN1ul5TpZ2dnsNlsAmjTQIrLy0u4XK6mgWxCqlSq1gDPz8+Z842Wln1ucHCQyVYx8fz8jEAggP7+fm6cnp4erKysSAOenp5iampKsBSUNLu7u3h7e2sY9vj4CJ/PB6VSyY0jl8vh8XhQKBTEJ8nJyQkmJycFMK1Wi729Pby/vzcMKxaLWF1dRW9vLzcO9em7+/t78cfM0dERJiYmBDCdTodQKMRkc6Nxd3cHt9vNLB8ftra2hoeHB2kH9djYmACm1+sRiUREwSi2trbQ3d3NjaNQKOD1epllbrpYoEbnXTQalVyGscUC7bf19XU8PT21plgYGhrC/v5+08Xr/Pw8/H4/k7EtKbfELuG/DLLwgcxlifZMOyDJQBbe5Um23MaXpmXZ19Vusd5+tBGMLItk+wX8pY1lHbB+/AAAAABJRU5ErkJggg==");
 
     /* On top of most things */
     z-index: 524287;
