@@ -602,6 +602,33 @@ var bpm_data = {
             css_class: "bpm-cmote-" + bpm_utils.sanitize(name.slice(1)),
             base: null
         };
+    },
+
+    /*
+     * Determines whether or not an emote has been disabled by the user. Returns:
+     *    0: not disabled
+     *    1: nsfw has been turned off
+     *    2: subreddit was disabled
+     *    3: too large
+     *    4: blacklisted
+     */
+    is_disabled: function(prefs, info) {
+        if(prefs.we_map[info.name]) {
+            return 0;
+        }
+        if(info.is_nsfw && !prefs.prefs.enableNSFW) {
+            return 1;
+        }
+        if(info.source_id !== null && !prefs.sr_array[info.source_id]) {
+            return 2;
+        }
+        if(prefs.prefs.maxEmoteSize && info.max_size > prefs.prefs.maxEmoteSize) {
+            return 3;
+        }
+        if(prefs.de_map[info.name]) {
+            return 4;
+        }
+        return 0;
     }
 };
 
@@ -999,46 +1026,33 @@ var bpm_converter = {
                     element.dataset.bpm_state = "e";
                     element.dataset.bpm_emotename = emote_name;
                     element.dataset.bpm_srname = emote_info.source_name;
-
-                    if(!prefs.we_map[emote_name]) {
-                        var nsfw_class = prefs.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-nsfw";
-                        var disabled_class = prefs.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-disabled";
-                        // Ordering matters a bit here- placeholders for NSFW emotes
-                        // come before disabled emotes.
-                        if(emote_info.is_nsfw) {
-                            element.dataset.bpm_state += "n";
-                            if(!prefs.prefs.enableNSFW) {
-                                element.classList.add(nsfw_class);
-                                element.dataset.bpm_state += "d";
-                                if(!element.textContent) {
-                                    // Any existing text (there really shouldn't be any)
-                                    // will look funny with our custom CSS, but there's
-                                    // not much we can do.
-                                    element.textContent = emote_name;
-                                }
-                                continue;
-                            }
-                        }
-
-                        if(!sr_enabled || prefs.de_map[emote_name]) {
-                            element.classList.add(disabled_class);
-                            element.dataset.bpm_state += "d";
-                            if(!element.textContent) {
-                                element.textContent = emote_name;
-                            }
-                            continue;
-                        }
-
-                        if(prefs.prefs.maxEmoteSize && emote_size > prefs.prefs.maxEmoteSize) {
-                            element.classList.add(disabled_class);
-                            element.dataset.bpm_state += "d";
-                            if(!element.textContent) {
-                                element.textContent = emote_name;
-                            }
-                            continue;
-                        }
+                    if(emote_info.is_nsfw) {
+                        element.dataset.bpm_state += "n";
                     }
 
+                    var nsfw_class = prefs.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-nsfw";
+                    var disabled_class = prefs.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-disabled";
+                    var disabled = bpm_data.is_disabled(prefs, emote_info);
+                    if(disabled) {
+                        element.dataset.bpm_state += "d";
+                        if(!element.textContent) {
+                            // Any existing text (there really shouldn't be any)
+                            // will look funny with our custom CSS, but there's
+                            // not much we can do.
+                            element.textContent = emote_name;
+                        }
+                        switch(disabled) {
+                        case 1: // NSFW
+                            element.classList.add(nsfw_class);
+                            break;
+                        case 2: // subreddit
+                        case 3: // size
+                        case 4: // blacklisted
+                            element.classList.add(disabled_class);
+                            break;
+                        }
+                        continue;
+                    }
                     element.classList.add(emote_info.css_class);
 
                     // Apply flags in turn. We pick on the naming a bit to prevent
@@ -1809,12 +1823,8 @@ var bpm_search = {
             }
             prev = result.name;
 
-            // if((blacklisted) && !whitelisted)
-            if((!prefs.sr_array[result.source_id] || (result.is_nsfw && !prefs.prefs.enableNSFW) ||
-                prefs.de_map[result.name] ||
-                (prefs.prefs.maxEmoteSize &&  result.max_size > prefs.prefs.maxEmoteSize)) &&
-               !prefs.we_map[result.name]) {
-                // TODO: enable it anyway if a pref is set? Dunno what exactly
+            if(bpm_data.is_disabled(prefs, result)) {
+                // TODO: enable it anyway if a pref is set? Dunno exactly what
                 // we'd do
                 hidden += 1;
                 continue;
@@ -2031,14 +2041,8 @@ var bpm_global = {
                 if(emote_info === null) {
                     continue;
                 }
-                var sr_enabled = (emote_info.source_id !== null ? prefs.sr_array[emote_info.source_id] : true);
-                var emote_size = emote_info.max_size || 0;
 
-                // Check that it hasn't been disabled somehow
-                if(!prefs.we_map[emote_name] &&
-                    (!sr_enabled || prefs.de_map[emote_name] ||
-                     (emote_info.is_nsfw && !prefs.prefs.enableNSFW) ||
-                     (prefs.prefs.maxEmoteSize && emote_size > prefs.prefs.maxEmoteSize))) {
+                if(bpm_data.is_disabled(prefs, emote_info)) {
                     continue;
                 }
 
