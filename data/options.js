@@ -289,6 +289,19 @@ function manage_option(prefs, name) {
     });
 }
 
+function manage_enum(prefs, name) {
+    var radios = $("." + name);
+    var d = {};
+    for(var i = 0; i < radios.length; i++) {
+        d[radios[i].value] = radios[i];
+    }
+    d[prefs[name]].checked = true;
+    radios.change(function(event) {
+        prefs[name] = this.value;
+        bpm_prefs.sync_key(name);
+    });
+}
+
 function manage_number(prefs, name, default_value) {
     var element = $("#" + name);
     element.val(prefs[name]);
@@ -317,7 +330,7 @@ function manage_enabled_subreddits(prefs) {
     var checkboxes = [];
     // Generate a page from the builtin list of subreddits
     for(var subreddit in sr_name2id) {
-        var label = $("<label><input type='checkbox'> " + subreddit + "</label>");
+        var label = $("<label class='checkbox'><input type='checkbox'> " + subreddit + "</label>");
         var input = label.find("input");
         list_div.append(label);
         input.attr("checked", Boolean(prefs.enabledSubreddits2[subreddit]));
@@ -559,6 +572,7 @@ function run(prefs) {
     manage_option(prefs, "enableGlobalEmotes");
     manage_option(prefs, "enableGlobalSearch");
     manage_option(prefs, "warnCourtesy");
+    manage_option(prefs, "clickToggleSFW");
 
     manage_number(prefs, "searchLimit", 200);
     manage_number(prefs, "maxEmoteSize", 0);

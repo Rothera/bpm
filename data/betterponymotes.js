@@ -1093,10 +1093,12 @@ var bpm_converter = bpm_exports.converter = {
                     var disabled = bpm_data.is_disabled(prefs, emote_info);
                     if(disabled) {
                         element.dataset.bpm_state += "d";
+                        element.dataset.bpm_state += disabled; // Tee hee
                         if(!element.textContent) {
                             // Any existing text (there really shouldn't be any)
                             // will look funny with our custom CSS, but there's
                             // not much we can do.
+                            element.dataset.bpm_state += "T";
                             element.textContent = emote_name;
                         }
                         switch(disabled) {
@@ -2359,8 +2361,35 @@ var bpm_core = bpm_exports.core = {
 
         // Add emote click blocker
         document.body.addEventListener("click", bpm_utils.catch_errors(function(event) {
-            if(event.target.classList.contains("bpm-emote")) {
+            var element = event.target;
+            if(element.classList.contains("bpm-emote")) {
                 event.preventDefault();
+
+                // Click toggle
+                var state = element.dataset.bpm_state;
+                var is_nsfw_disabled = element.dataset.bpm_state.indexOf("1") > -1; // NSFW
+                // Not a disabled emote, or NSFW
+                if((state.indexOf("d") < 0) || (prefs.prefs.clickToggleSFW && is_nsfw_disabled)) {
+                    return;
+                }
+                var info = bpm_data.lookup_emote(element.dataset.bpm_emotename, prefs.custom_emotes);
+                if(element.classList.contains("bpm-disabled") ||
+                   element.classList.contains("bpm-nsfw")) {
+                    // Show
+                    element.classList.remove("bpm-disabled");
+                    element.classList.remove("bpm-nsfw");
+                    element.classList.add(info.css_class);
+                    if(state.indexOf("T") > -1) {
+                        element.textContent = "";
+                    }
+                } else {
+                    // Hide
+                    element.classList.remove(info.css_class);
+                    element.classList.add(is_nsfw_disabled ? "bpm-nsfw" : "bpm-disabled");
+                    if(state.indexOf("T") > -1) {
+                        element.textContent = info.name;
+                    }
+                }
             }
         }.bind(this)), false);
 

@@ -1,13 +1,12 @@
 body {
     padding-bottom: 80px;
 }
-input[type="checkbox"] {
-    /* Fix a misalignment in bootstrap */
-    margin-top: 0px;
-    margin-bottom: 2px;
-}
-label {
+p, label {
     font-family: monospace;
+}
+/* Annoying misalignment */
+.checkbox.inline, .radio.inline {
+    margin-bottom: inherit;
 }
 #enabledSubreddits > label {
     width: 230px;

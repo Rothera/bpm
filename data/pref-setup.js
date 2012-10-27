@@ -14,21 +14,23 @@ var bpm_backendsupport = {
     default_prefs: {
         "enableNSFW": false,
         "enableExtraCSS": true,
-        "enabledSubreddits2": {}, // subreddit name -> 0/1 enabled
         "showUnknownEmotes": true,
-        "searchLimit": 200,
-        "searchBoxInfo": [600, 25, 620, 450],
-        "lastSearchQuery": "sr:mylittlepony", // only shows about a third, but that's ok
+        "hideDisabledEmotes": false,
         "showAltText": true,
         "enableGlobalEmotes": false,
         "enableGlobalSearch": false,
-        "globalIconPos": [16, 16],
+        "warnCourtesy": true,
+        "clickToggleSFW": true,
+        "searchLimit": 200,
+        "maxEmoteSize": 0,
+        "enabledSubreddits2": {}, // subreddit name -> 0/1 enabled
         "disabledEmotes": [],
         "whitelistedEmotes": [],
-        "hideDisabledEmotes": false,
-        "maxEmoteSize": 0,
-        "warnCourtesy": true,
-        "customCSSSubreddits": {} // subreddit name -> timestamp
+        "customCSSSubreddits": {}, // subreddit name -> timestamp
+
+        "searchBoxInfo": [600, 25, 620, 450],
+        "lastSearchQuery": "sr:mylittlepony", // only shows about a third, but that's ok
+        "globalIconPos": [16, 16]
         },
 
     setup_prefs: function(prefs, sr_name2id) {
