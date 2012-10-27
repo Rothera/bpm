@@ -1,12 +1,14 @@
 body {
     padding-bottom: 80px;
 }
-p, label {
+label {
     font-family: monospace;
 }
-/* Annoying misalignment */
-.checkbox.inline, .radio.inline {
-    margin-bottom: inherit;
+/* Annoying misalignment. Magically affects only one browser at a time. Fuck the web. */
+@-moz-document url-prefix() {
+    input[type="checkbox"] {
+        margin-top: 0px;
+    }
 }
 #enabledSubreddits > label {
     width: 230px;
