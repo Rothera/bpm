@@ -105,7 +105,7 @@
 }
 
 /* Container */
-#bpm-search-box {
+#bpm-sb-container {
     position: fixed;
 
     /* These four values are reset in JS immediately, so effectively ignored */
@@ -126,13 +126,13 @@
 }
 
 /* Top row widget container */
-#bpm-toprow {
+#bpm-sb-toprow {
     height: 30px;
     margin-bottom: 5px;
 }
 
 /* Top-left drag box */
-#bpm-dragbox {
+#bpm-sb-dragbox {
     width: 30px;
     height: 30px;
     margin-right: 5px;
@@ -142,7 +142,7 @@
 }
 
 /* Search input */
-#bpm-search {
+#bpm-sb-input {
     border-width: 2px;
     height: 18px;
     width: 240px;
@@ -154,7 +154,7 @@
 }
 
 /* Result count element */
-#bpm-result-count {
+#bpm-sb-resultinfo {
     height: 30px;
     float: left;
 
@@ -165,7 +165,7 @@
 }
 
 /* Close button */
-#bpm-close {
+#bpm-sb-close {
     width: 30px;
     height: 30px;
     float: right;
@@ -174,7 +174,7 @@
 }
 
 /* Search result container */
-#bpm-search-results {
+#bpm-sb-results {
     height: 388px; /* #bpm-search-box - 62 */
     width: -webkit-calc(100% - 8px); /* Fit inside padding */
     width: calc(100% - 8px);
@@ -188,26 +188,26 @@
     word-wrap: break-word; /* Makes emote names a bit nicer */
 }
 
-#bpm-bottomrow {
+#bpm-sb-bottomrow {
     height: 20px; /* Fit in the margins */
     float: left;
     width: 100%;
 }
 
 /* Help hover */
-#bpm-help-hover {
+#bpm-sb-help-hover {
     height: 20px;
     margin-left: 4px;
     float: left;
 
     line-height: 20px;
 }
-#bpm-help-hover:hover > #bpm-search-help {
+#bpm-sb-help-hover:hover > #bpm-sb-help {
     display: block;
 }
 
 /* Actual help box */
-#bpm-search-help {
+#bpm-sb-help {
     padding: 4px;
     position: absolute;
 
@@ -217,7 +217,7 @@
 }
 
 /* Bottom-right resize box */
-#bpm-resize {
+#bpm-sb-resize {
     width: 20px;
     height: 20px;
     margin-right: -6px;
@@ -227,7 +227,7 @@
 }
 
 /* Emote search result */
-.bpm-result {
+.bpm-search-result {
     margin: 1px;
     display: inline-block;
 

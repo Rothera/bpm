@@ -25,14 +25,20 @@
 **
 *******************************************************************************/
 
+// For linting- every global we access, more or less
+/*
+var self, chrome, opera, GM_log, GM_getValue, GM_setValue;
+var window, document, console, setTimeout, clearTimeout, FileReader;
+var emote_map, sr_name2id, sr_id2name, tag_name2id, tag_id2name, bpm_backendsupport;
+*/
+
+(function(_bpm_this) {
 "use strict";
 
 var BPM_CODE_VERSION = "43";
 var BPM_DATA_VERSION = "69";
 var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us";
 var BPM_OPTIONS_PAGE = BPM_RESOURCE_PREFIX + "/options.html";
-
-var _bpm_this = this;
 
 /*
  * Inspects the environment for global variables.
@@ -44,10 +50,13 @@ function _bpm_global(name) {
     return _bpm_this[name] || window[name] || undefined;
 }
 
+var bpm_exports = {};
+_bpm_this.bpm = bpm_exports;
+
 /*
  * Misc. utility functions.
  */
-var bpm_utils = {
+var bpm_utils = bpm_exports.utils = {
     /*
      * A string referring to the current platform BPM is running on. This is a
      * best guess, made by inspecting global variables, and needed because this
@@ -88,6 +97,7 @@ var bpm_utils = {
      */
     observe_document: function(callback) {
         if(bpm_utils.MutationObserver) {
+            bpm_debug("Monitoring document with MutationObserver");
             var observer = new bpm_utils.MutationObserver(bpm_utils.catch_errors(function(mutations, observer) {
                 for(var m = 0; m < mutations.length; m++) {
                     var added = mutations[m].addedNodes;
@@ -106,10 +116,11 @@ var bpm_utils = {
                 return;
             } catch(e) {
                 // Failed with whatever the error of the week is
-                bpm_log("BPM: ERROR: Can't use MutationObserver. Falling back to DOMNodeInserted. (info: L" + e.lineNumber + ": ", e.name + ": " + e.message + ")");
+                bpm_warning("Can't use MutationObserver: L" + e.lineNumber + ": ", e.name + ": " + e.message + ")");
             }
         }
 
+        bpm_debug("Monitoring document with DOMNodeInserted");
         document.body.addEventListener("DOMNodeInserted", bpm_utils.catch_errors(function(event) {
             callback([event.target]);
         }));
@@ -136,6 +147,7 @@ var bpm_utils = {
      * Makes a nice <style> element out of the given CSS.
      */
     style_tag: function(css) {
+        bpm_debug("Building <style> tag");
         var tag = document.createElement("style");
         tag.type = "text/css";
         tag.textContent = css;
@@ -146,6 +158,7 @@ var bpm_utils = {
      * Makes a nice <link> element to the given URL (for CSS).
      */
     stylesheet_link: function(url) {
+        bpm_debug("Building <link> tag to", url);
         var tag = document.createElement("link");
         tag.href = url;
         tag.rel = "stylesheet";
@@ -209,19 +222,10 @@ var bpm_utils = {
             try {
                 return f.apply(this, arguments);
             } catch(e) {
-                bpm_log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
+                bpm_error("Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
                 throw e;
             }
         };
-    },
-
-    /*
-     * Escapes an emote name (or similar) to match the CSS classes.
-     *
-     * Must be kept in sync with other copies, and the Python code.
-     */
-    sanitize: function(s) {
-        return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_").replace("#", "_hash_").replace("/", "_slash_");
     },
 
     /*
@@ -270,7 +274,7 @@ var bpm_utils = {
             }
 
             if(callback) {
-                callback(left, top, move);
+                callback(event, left, top, move);
             } else {
                 move();
             }
@@ -286,6 +290,7 @@ var bpm_utils = {
             callback();
         } else {
             document.addEventListener("DOMContentLoaded", bpm_utils.catch_errors(function(event) {
+                bpm_debug("Document loaded");
                 callback();
             }), false);
         }
@@ -326,6 +331,7 @@ var bpm_utils = {
      * what. Don't send anything even slightly interesting.
      */
     message_iframe: function(frame, message) {
+        bpm_debug("Sending", message, "to", frame);
         if(frame.contentWindow) {
             // Right now, only Firefox and Opera let us access this API.
             frame.contentWindow.postMessage(message, "*");
@@ -423,6 +429,69 @@ var bpm_utils = {
     },
 
     /*
+     * Locates an element with the given class name. Logs a warning message if
+     * more than one element matches. Returns null if there wasn't one.
+     */
+    find_class: function(root, class_name) {
+        var elements = root.getElementsByClassName(class_name);
+        if(!elements.length) {
+            return null;
+        } else if(elements.length === 1) {
+            return elements[0];
+        } else {
+            bpm_warning("Multiple elements under", root, "with class '" + class_name + "'");
+            return elements[0];
+        }
+    }
+};
+
+/*
+ * Log functions. You should use these in preference to console.log(), which
+ * isn't always available.
+ */
+var _bpm_log;
+if(bpm_utils.platform === "userscript") {
+    _bpm_log = function() {
+        GM_log(Array.prototype.slice.call(arguments).join(" "));
+    };
+} else {
+    // Chrome's log() function is picky about its this parameter
+    _bpm_log = console.log.bind(console);
+}
+
+var _BPM_DEBUG = 0;
+var _BPM_INFO = 1;
+var _BPM_WARNING = 2;
+var _BPM_ERROR = 3;
+var _BPM_LOG_LEVEL = _BPM_WARNING;
+
+function _bpm_make_logger(name, level) {
+    return function() {
+        if(_BPM_LOG_LEVEL > level) {
+            return;
+        }
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift(name);
+        if(window.name) {
+            args.unshift("[" + window.name + "]:");
+        }
+        args.unshift("BPM:");
+        _bpm_log.apply(null, args);
+    };
+}
+
+var bpm_debug   = _bpm_make_logger("DEBUG:", _BPM_DEBUG);     // Coding is hard
+var bpm_info    = _bpm_make_logger("INFO:", _BPM_INFO);       // Something "interesting" happened
+var bpm_warning = _bpm_make_logger("WARNING:", _BPM_WARNING); // Probably broken but carrying on anyway
+var bpm_error   = _bpm_make_logger("ERROR:", _BPM_ERROR);     // We're screwed
+
+bpm_debug("Platform:", bpm_utils.platform);
+
+/*
+ * Misc utility functions to help make your way around Reddit's HTML.
+ */
+var bpm_redditutil = bpm_exports.redditutil = {
+    /*
      * Current subreddit being displayed, or null if there doesn't seem to be one.
      */
     current_subreddit: (function() {
@@ -435,34 +504,6 @@ var bpm_utils = {
         }
     })(),
 
-    /*
-     * Locates an element with the given class name. Logs a warning message if
-     * more than one element matches. Returns null if there wasn't one.
-     */
-    find_class: function(root, class_name) {
-        var elements = root.getElementsByClassName(class_name);
-        if(!elements.length) {
-            return null;
-        } else if(elements.length === 1) {
-            return elements[0];
-        } else {
-            bpm_log("BPM: ERROR: Multiple elements under " + root + " with class '" + class_name + "'");
-            return elements[0];
-        }
-    }
-};
-
-/*
- * Log function. You should use this in preference to console.log(), which isn't
- * always available.
- */
-// Chrome is picky about bind().
-var bpm_log = bpm_utils.platform === "userscript" ? GM_log : console.log.bind(console);
-
-/*
- * Misc utility functions to help make your way around Reddit's HTML.
- */
-var bpm_redditutil = {
     /*
      * Shows an "error" message under an edit form, in the standard style.
      * Comparable to the "we need something here" message when you try to post
@@ -510,10 +551,20 @@ var _BPM_FLAG_NSFW = 1;
 var _BPM_FLAG_REDIRECT = 1 << 1;
 
 /*
- * Emote lookup utilities. These are rather helpful, since our data format is
- * optimized for space and memory, not easy of access.
+ * Emote lookup utilities and other stuff related to BPM's data files. These
+ * are rather helpful, since our data format is optimized for space and memory,
+ * not easy of access.
  */
-var bpm_data = {
+var bpm_data = bpm_exports.data = {
+    /*
+     * Escapes an emote name (or similar) to match the CSS classes.
+     *
+     * Must be kept in sync with other copies, and the Python code.
+     */
+    sanitize: function(s) {
+        return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_").replace("#", "_hash_").replace("/", "_slash_");
+    },
+
     /*
      * Tries to locate an emote, either builtin or global.
      */
@@ -547,14 +598,14 @@ var bpm_data = {
 
         var sources = [], start = 0, str;
         while((str = source_data.slice(start, start+2)) !== "") {
-            sources.push(parseInt(str, 16));
+            sources.push(parseInt(str, 16)); // Hexadecimal
             start += 2;
         }
 
         var tags = [];
         start = 0;
         while((str = tag_data.slice(start, start+2)) !== "") {
-            tags.push(parseInt(str, 16));
+            tags.push(parseInt(str, 16)); // Hexadecimal
             start += 2;
         }
 
@@ -575,7 +626,7 @@ var bpm_data = {
             sources: sources,
             tags: tags,
 
-            css_class: "bpmote-" + bpm_utils.sanitize(name.slice(1)),
+            css_class: "bpmote-" + bpm_data.sanitize(name.slice(1)),
             base: base
         };
     },
@@ -599,7 +650,7 @@ var bpm_data = {
             sources: [],
             tags: [],
 
-            css_class: "bpm-cmote-" + bpm_utils.sanitize(name.slice(1)),
+            css_class: "bpm-cmote-" + bpm_data.sanitize(name.slice(1)),
             base: null
         };
     },
@@ -635,7 +686,7 @@ var bpm_data = {
 /*
  * Browser compatibility object. (Mostly implemented per-browser.)
  */
-var bpm_browser = {
+var bpm_browser = bpm_exports.browser = {
     /*
      * Returns an object that CSS-related tags can be attached to before the DOM
      * is built. May be undefined or null if there is no such object.
@@ -659,6 +710,7 @@ var bpm_browser = {
      * some browsers incur a significant overhead for each call.
      */
     set_pref: function(key, value) {
+        bpm_debug("Writing preference:", key, "=", value);
         this._send_message("set_pref", {"pref": key, "value": value});
     },
 
@@ -694,6 +746,7 @@ case "firefox-ext":
                 data = {};
             }
             data.method = method;
+            bpm_debug("_send_message:", data);
             self.postMessage(data);
         },
 
@@ -723,7 +776,7 @@ case "firefox-ext":
             break;
 
         default:
-            bpm_log("BPM: ERROR: Unknown request from Firefox background script: '" + message.method + "'");
+            bpm_error("Unknown request from Firefox background script: '" + message.method + "'");
             break;
         }
     }));
@@ -740,6 +793,7 @@ case "chrome-ext":
                 data = {};
             }
             data.method = method;
+            bpm_debug("_send_message:", data);
             chrome.extension.sendMessage(data, this._message_handler.bind(this));
         },
 
@@ -755,7 +809,7 @@ case "chrome-ext":
                 break;
 
             default:
-                bpm_log("BPM: ERROR: Unknown request from Chrome background script: '" + message.method + "'");
+                bpm_error("Unknown request from Chrome background script: '" + message.method + "'");
                 break;
             }
         },
@@ -792,6 +846,7 @@ case "opera-ext":
     // embedded file than making a request to the backend process. Use
     // that if available.
     if(opera.extension.getFile) {
+        bpm_debug("Using getFile data API");
         bpm_utils.copy_properties(bpm_browser, {
             _is_opera_next: true, // Close enough
 
@@ -804,11 +859,12 @@ case "opera-ext":
                     });
                     reader.readAsText(file);
                 } else {
-                    bpm_log("BPM: ERROR: Opera getFile() failed on '" + filename + "'");
+                    bpm_error("Opera getFile() failed on '" + filename + "'");
                 }
             }
         });
     } else {
+        bpm_debug("Using backend XMLHttpRequest data API");
         bpm_utils.copy_properties(bpm_browser, {
             _is_opera_next: false,
             _file_callbacks: {},
@@ -838,7 +894,7 @@ case "opera-ext":
             break;
 
         default:
-            bpm_log("BPM: ERROR: Unknown request from Opera background script: '" + message.method + "'");
+            bpm_error("Unknown request from Opera background script: '" + message.method + "'");
             break;
         }
     }), false);
@@ -849,6 +905,7 @@ case "userscript":
         prefs: null,
 
         set_pref: function(key, value) {
+            bpm_debug("Writing preference:", key, "=", value);
             this.prefs[key] = value;
             this._sync_prefs();
         },
@@ -886,7 +943,7 @@ case "userscript":
 /*
  * Preferences interface.
  */
-var bpm_prefs = {
+var bpm_prefs = bpm_exports.prefs = {
     /*
      * Preferences object and caches:
      *    - prefs: actual preferences object
@@ -904,6 +961,7 @@ var bpm_prefs = {
     },
 
     _run_callbacks: function() {
+        bpm_debug("Prefs ready");
         for(var i = 0; i < this.waiting.length; i++) {
             this.waiting[i](this);
         }
@@ -958,7 +1016,7 @@ var bpm_prefs = {
             //
             // Also bad would be items in prefs not in sr_id2name, but that's
             // more or less impossible to handle.
-            bpm_log("BPM: ERROR: sr_array has holes; installation or prefs are broken!");
+            bpm_error("sr_array has holes; installation or prefs are broken!");
         }
     },
 
@@ -993,7 +1051,7 @@ var bpm_prefs = {
 /*
  * Core Reddit emote converter code.
  */
-var bpm_converter = {
+var bpm_converter = bpm_exports.converter = {
     /*
      * Process the given list of elements (assumed to be <a> tags), converting
      * any that are emotes.
@@ -1061,7 +1119,7 @@ var bpm_converter = {
                         // Normalize case
                         var flag = parts[p].toLowerCase();
                         if(/^[\w:!#\/]+$/.test(flag)) {
-                            element.classList.add("bpflag-" + bpm_utils.sanitize(flag));
+                            element.classList.add("bpflag-" + bpm_data.sanitize(flag));
                         }
                     }
                 } else if(convert_unknown && prefs.prefs.showUnknownEmotes) {
@@ -1225,6 +1283,9 @@ var bpm_converter = {
      * Processes emotes and alt-text on a list of .md elements.
      */
     process_posts: function(prefs, posts) {
+        if(posts.length) {
+            bpm_debug("Processing", posts.length, "posts");
+        }
         for(var i = 0; i < posts.length; i++) {
             this.process_rooted_post(prefs, posts[i], posts[i]);
         }
@@ -1255,6 +1316,9 @@ var bpm_converter = {
             return;
         }
 
+        if(usertext_edits.length) {
+            bpm_debug("Monitoring", usertext_edits.length, ".usertext-edit elements");
+        }
         for(var i = 0; i < usertext_edits.length; i++) {
             var edit = usertext_edits[i];
             var textarea = edit.getElementsByTagName("textarea")[0];
@@ -1290,7 +1354,7 @@ var bpm_converter = {
 
                 var from_here = false;
                 for(var si = 0; si < emote_info.sources.length; si++) {
-                    from_here = sr_id2name[emote_info.sources[si]] === "r/" + bpm_utils.current_subreddit;
+                    from_here = sr_id2name[emote_info.sources[si]] === "r/" + bpm_redditutil.current_subreddit;
                     if(from_here) {
                         break; // It's from at *least* this subreddit
                     }
@@ -1343,301 +1407,9 @@ var bpm_converter = {
 };
 
 /*
- * Emote search, the search box, and all support code.
+ * Emote search stuff not directly tied to the search box.
  */
-var bpm_search = {
-    // Search box elements
-    container: null,
-    dragbox: null,
-    search: null,
-    count: null,
-    close: null,
-    results: null,
-    resize: null,
-    global_icon: null, // Global << thing
-    firstrun: false, // Whether or not we've made any search at all yet
-
-    /*
-     * Sets up the search box for use on a page, either Reddit or the top-level
-     * frame, globally.
-     */
-    init: function(prefs) {
-        this.inject_html();
-        this.init_search_box(prefs);
-    },
-
-    /*
-     * Sets up search for use in a frame. No search box is generated, but it
-     * listens for postMessage() calls from the parent frame.
-     */
-    init_frame: function(prefs) {
-        window.addEventListener("message", bpm_utils.catch_errors(function(event) {
-            // Not worried about event source (it might be null in Firefox, as
-            // a note). Both of these methods are quite harmless, so it's
-            // probably ok to let them be publically abusable.
-            //
-            // I'm not sure how else we can do it, anyway- possibly by going
-            // through the backend, but not in userscripts. (Maybe we can abuse
-            // GM_setValue().)
-            var message = event.data;
-            switch(message.__betterponymotes_method) {
-                case "__bpm_inject_emote":
-                    // Call toString() just in case
-                    this.insert_emote(message.__betterponymotes_emote.toString());
-                    break;
-
-                case "__bpm_track_form":
-                    this.grab_target_form();
-                    break;
-
-                // If it's not our message, it'll be undefined. (We don't care.)
-            }
-        }.bind(this)), false);
-    },
-
-    /*
-     * Builds and injects the search box HTML.
-     */
-    inject_html: function() {
-        // Placeholder div to create HTML in
-        var div = document.createElement("div");
-        // I'd sort of prefer display:none, but then I'd have to override it
-        div.style.visibility = "hidden";
-        div.id = "bpm-stuff"; // Just so it's easier to find in an elements list
-
-        var html = [
-            // tabindex is hack to make Esc work. Reddit uses this index in a couple
-            // of places, so probably safe.
-            '<div id="bpm-search-box" tabindex="100">',
-              '<div id="bpm-toprow">',
-                '<span id="bpm-dragbox"></span>',
-                '<input id="bpm-search" type="search" placeholder="Search"/>',
-                '<span id="bpm-result-count"></span>',
-                '<span id="bpm-close"></span>',
-              '</div>',
-              '<div id="bpm-search-results"></div>',
-              '<div id="bpm-bottomrow">',
-                '<span id="bpm-help-hover">help',
-                  '<div id="bpm-search-help">',
-                    '<p>Searching for <code>"aj"</code> will show you all emotes with <code>"aj"</code> in their names.',
-                    '<p>Searching for <code>"aj happy"</code> will show you all emotes with both <code>"aj"</code> and <code>"happy"</code> in their names.',
-                    '<p>The special syntax <code>"sr:subreddit"</code> will limit your results to emotes from that subreddit.',
-                    '<p>Using more than one subreddit will show you emotes from all of them.',
-                    '<p>Searching for <code>"+tag"</code> will show you emotes with the given tag. <code>"-tag"</code> shows emotes without it.',
-                    '<p>Some emotes are hidden by default. Use <code>"+nonpony"</code> to see them.',
-                  '</div>',
-                '</span>',
-                '<span id="bpm-resize"></span>',
-              '</div>',
-            '</div>',
-            '<div id="bpm-global-icon" title="Hold Ctrl (Command/Meta) to drag"></div>'
-            ].join("");
-        div.innerHTML = html;
-        document.body.appendChild(div);
-
-        // This seems to me a rather lousy way to build HTML, but oh well
-        this.container = document.getElementById("bpm-search-box");
-        this.dragbox = document.getElementById("bpm-dragbox");
-        this.search = document.getElementById("bpm-search");
-        this.count = document.getElementById("bpm-result-count");
-        this.close = document.getElementById("bpm-close");
-        this.results = document.getElementById("bpm-search-results");
-        this.resize = document.getElementById("bpm-resize");
-
-        this.global_icon = document.getElementById("bpm-global-icon");
-    },
-
-    /*
-     * Sets up the emote search box.
-     */
-    init_search_box: function(prefs) {
-        /*
-         * Intercept mouseover for the entire search widget, so we can remember
-         * which form was being used before.
-         */
-        this.container.addEventListener("mouseover", bpm_utils.catch_errors(function(event) {
-            this.grab_target_form();
-        }.bind(this)), false);
-
-        // Close it on demand
-        this.close.addEventListener("click", bpm_utils.catch_errors(function(event) {
-            this.hide();
-        }.bind(this)), false);
-
-        // Another way to close it
-        this.container.addEventListener("keyup", bpm_utils.catch_errors(function(event) {
-            if(event.keyCode === 27) { // Escape key
-                this.hide();
-            }
-        }.bind(this)), false);
-
-        // Listen for keypresses and adjust search results. Delay 500ms after
-        // end of typing to make it more responsive.
-        var timeout = null;
-        this.search.addEventListener("input", bpm_utils.catch_errors(function(event) {
-            if(timeout !== null) {
-                clearTimeout(timeout);
-            }
-            timeout = setTimeout(bpm_utils.catch_errors(function() {
-                // Re-enable searching as early as we can, just in case
-                timeout = null;
-                this.update_search(prefs);
-            }.bind(this)), 500);
-        }.bind(this)), false);
-
-        // Listen for clicks
-        this.results.addEventListener("click", bpm_utils.catch_errors(function(event) {
-            if(event.target.classList.contains("bpm-result")) {
-                // .dataset would probably be nicer, but just in case...
-                var emote_name = event.target.getAttribute("data-emote");
-                this.insert_emote(emote_name);
-            }
-        }.bind(this)), false);
-
-        // Set up default positions
-        this.container.style.left = prefs.prefs.searchBoxInfo[0] + "px";
-        this.container.style.top = prefs.prefs.searchBoxInfo[1] + "px";
-        this.container.style.width = prefs.prefs.searchBoxInfo[2] + "px";
-        this.container.style.height = prefs.prefs.searchBoxInfo[3] + "px";
-        // 62 is a magic value from the CSS.
-        this.results.style.height = (prefs.prefs.searchBoxInfo[3] - 62) + "px";
-        this.global_icon.style.left = prefs.prefs.globalIconPos[0] + "px";
-        this.global_icon.style.top = prefs.prefs.globalIconPos[1] + "px";
-
-        // Enable dragging the window around
-        bpm_utils.make_movable(this.dragbox, this.container, function(left, top, move) {
-            move();
-            prefs.prefs.searchBoxInfo[0] = left;
-            prefs.prefs.searchBoxInfo[1] = top;
-            bpm_prefs.sync_key("searchBoxInfo");
-        });
-
-        // Enable dragging the resize element around (i.e. resizing it)
-        var search_box_width, search_box_height;
-        bpm_utils.enable_drag(this.resize, function(event) {
-            search_box_width = parseInt(this.container.style.width, 10);
-            search_box_height = parseInt(this.container.style.height, 10);
-        }.bind(this), function(event, dx, dy) {
-            // 420px wide prevents the search box from collapsing too much, and
-            // the extra 5px is to prevent the results div from vanishing (which
-            // sometimes kills Opera),
-            var sb_width = Math.max(dx + search_box_width, 420);
-            var sb_height = Math.max(dy + search_box_height, 62+5);
-
-            this.container.style.width = sb_width + "px";
-            this.container.style.height = sb_height + "px";
-            this.results.style.height = (sb_height - 62) + "px";
-
-            prefs.prefs.searchBoxInfo[2] = sb_width;
-            prefs.prefs.searchBoxInfo[3] = sb_height;
-            bpm_prefs.sync_key("searchBoxInfo");
-        }.bind(this));
-    },
-
-    /*
-     * Displays the search box.
-     */
-    show: function(prefs) {
-        this.container.style.visibility = "visible";
-        this.search.focus();
-
-        // If we haven't run before, go search for things
-        if(!this.firstrun) {
-            this.firstrun = true;
-            this.search.value = prefs.prefs.lastSearchQuery;
-            this.update_search(prefs);
-        }
-    },
-
-    hide: function() {
-        this.container.style.visibility = "hidden";
-        // TODO: possibly clear out the search results, since it's a large pile
-        // of HTML.
-    },
-
-    /*
-     * Previously focused elements. Only one of these can be non-null.
-     */
-    target_form: null,
-    target_frame: null,
-
-    /*
-     * Caches the currently focused element, if it's something we can inject
-     * emotes into.
-     */
-    grab_target_form: function() {
-        var active = document.activeElement;
-
-        while(active.tagName === "IFRAME") {
-            // Focus is within the frame. Find the real element (recursing just
-            // in case).
-            if(active.contentWindow === null || active.contentWindow === undefined) {
-                // Chrome is broken and does not permit us to access these
-                // from content scripts.
-                this.target_form = null;
-                this.target_frame = active;
-
-                bpm_utils.message_iframe(active, {
-                    "__betterponymotes_method": "__bpm_track_form"
-                });
-                return;
-            }
-
-            try {
-                active = active.contentDocument.activeElement;
-            } catch(e) {
-                // Addon SDK is broken
-                bpm_utils.message_iframe(active, {
-                    "__betterponymotes_method": "__bpm_track_form"
-                });
-
-                this.target_form = null;
-                this.target_frame = active;
-                return;
-            }
-        }
-
-        // Ignore our own stuff and things that are not text boxes
-        if(!bpm_utils.id_above(active, "bpm-search-box") && active !== this.target_form &&
-           active.selectionStart !== undefined && active.selectionEnd !== undefined) {
-            this.target_form = active;
-            this.target_frame = null;
-        }
-    },
-
-    /*
-     * Updates the search results window according to the current query.
-     */
-    update_search: function(prefs) {
-        // Split search query on spaces, remove empty strings, and lowercase terms
-        var terms = this.search.value.split(" ").map(function(v) { return v.toLowerCase(); });
-        terms = terms.filter(function(v) { return v; });
-        prefs.prefs.lastSearchQuery = terms.join(" ");
-        bpm_prefs.sync_key("lastSearchQuery");
-
-        // Check this before we append the default search terms.
-        if(!terms.length) {
-            this.results.innerHTML = "";
-            this.count.textContent = "";
-            return;
-        }
-
-        // This doesn't work quite perfectly- searching for "+hidden" should
-        // theoretically just show all hidden emotes, but it just ends up
-        // cancelling into "-nonpony", searching for everything.
-        terms.unshift("-hidden", "-nonpony");
-        var query = this.parse_search_query(terms);
-        // Still nothing to do
-        if(query === null) {
-            this.results.innerHTML = "";
-            this.count.textContent = "";
-            return;
-        }
-
-        var results = this.do_search(query);
-        this.display_results(prefs, results);
-    },
-
+var bpm_search = bpm_exports.search = {
     /*
      * Parses a search query. Returns an object that looks like this:
      *    .sr_terms: list of subreddit names to match.
@@ -1645,7 +1417,7 @@ var bpm_search = {
      *    .name_terms: list of emote name terms to match.
      * or null, if there was no query.
      */
-    parse_search_query: function(terms) {
+    parse_query: function(terms) {
         var query = {sr_terms: [], tag_term_sets: [], name_terms: []};
 
         function add_tag_term(positive, tags) {
@@ -1725,7 +1497,7 @@ var bpm_search = {
      *    .results: a sorted list of emotes
      *    .omitted: emotes hidden by the first set of tags (our -nonpony hack)
      */
-    do_search: function(query) {
+    search: function(query) {
         var results = [];
         no_match:
         for(var emote_name in emote_map) {
@@ -1779,7 +1551,7 @@ var bpm_search = {
                 // Hunt down the non-variant version
                 emote_info = bpm_data.lookup_core_emote(emote_info.base);
                 if(emote_info.name !== emote_info.base) {
-                    bpm_log("ERROR: Followed +v from " + emote_name + " to " + emote_info.name + "; no root emote found");
+                    bpm_warning("Followed +v from " + emote_name + " to " + emote_info.name + "; no root emote found");
                 }
                 emote_name = emote_info.name;
             }
@@ -1798,6 +1570,366 @@ var bpm_search = {
         });
 
         return results;
+    },
+
+    /*
+     * Injects an emote into the given form.
+     */
+    inject_emote: function(target_form, emote_name) {
+        bpm_debug("Injecting ", emote_name, "into", target_form);
+        var emote_info = bpm_data.lookup_core_emote(emote_name);
+        var formatting_id = tag_name2id["+formatting"];
+
+        var start = target_form.selectionStart;
+        var end = target_form.selectionEnd;
+        if(start !== undefined && end !== undefined) {
+            var emote_len;
+            var before = target_form.value.slice(0, start);
+            var inside = target_form.value.slice(start, end);
+            var after = target_form.value.slice(end);
+            if(inside) {
+                var extra_len, emote;
+                // Make selections into text/alt-text
+                if(emote_info.tags.indexOf(formatting_id) > -1) {
+                    extra_len = 4; // '[]('' and ')'
+                    emote = "[" + inside + "](" + emote_name + ")";
+                } else {
+                    extra_len = 4; // '[](' and ' "' and '")'
+                    emote = "[](" + emote_name + " \"" + inside + "\")";
+                }
+                emote_len = extra_len + emote_name.length + (end - start);
+                target_form.value = (before + emote + after);
+            } else {
+                // "[](" + ")"
+                emote_len = 4 + emote_name.length;
+                target_form.value = (
+                    before +
+                    "[](" + emote_name + ")" +
+                    after);
+            }
+            target_form.selectionStart = end + emote_len;
+            target_form.selectionEnd = end + emote_len;
+
+            // Trigger preview update in RES, which *specifically* listens for keyup.
+            var event = document.createEvent("Event");
+            event.initEvent("keyup", true, true);
+            target_form.dispatchEvent(event);
+        }
+    }
+};
+
+/*
+ * Search box.
+ */
+var bpm_searchbox = bpm_exports.searchbox = {
+    // Search box elements
+    sb_container: null,
+    sb_dragbox: null,
+    sb_input: null,
+    sb_resultinfo: null,
+    sb_close: null,
+    sb_results: null,
+    sb_resize: null,
+    sb_global_icon: null, // Global << thing
+    firstrun: false, // Whether or not we've made any search at all yet
+
+    /*
+     * Sets up the search box for use on a page, either Reddit or the top-level
+     * frame, globally.
+     */
+    init: function(prefs) {
+        bpm_debug("Initializing search box");
+        this.inject_html();
+        this.init_search_box(prefs);
+    },
+
+    /*
+     * Sets up search for use in a frame. No search box is generated, but it
+     * listens for postMessage() calls from the parent frame.
+     */
+    init_frame: function(prefs) {
+        bpm_debug("Setting frame message hook");
+        window.addEventListener("message", bpm_utils.catch_errors(function(event) {
+            // Not worried about event source (it might be null in Firefox, as
+            // a note). Both of these methods are quite harmless, so it's
+            // probably ok to let them be publically abusable.
+            //
+            // I'm not sure how else we can do it, anyway- possibly by going
+            // through the backend, but not in userscripts. (Maybe we can abuse
+            // GM_setValue().)
+            var message = event.data;
+            switch(message.__betterponymotes_method) {
+                case "__bpm_inject_emote":
+                    // Call toString() just in case
+                    this.inject_emote(message.__betterponymotes_emote.toString());
+                    break;
+
+                case "__bpm_track_form":
+                    this.grab_target_form();
+                    break;
+
+                // If it's not our message, it'll be undefined. (We don't care.)
+            }
+        }.bind(this)), false);
+    },
+
+    /*
+     * Builds and injects the search box HTML.
+     */
+    inject_html: function() {
+        // Placeholder div to create HTML in
+        var div = document.createElement("div");
+        // I'd sort of prefer display:none, but then I'd have to override it
+        div.style.visibility = "hidden";
+        div.id = "bpm-stuff"; // Just so it's easier to find in an elements list
+
+        var html = [
+            // tabindex is hack to make Esc work. Reddit uses this index in a couple
+            // of places, so probably safe.
+            '<div id="bpm-sb-container" tabindex="100">',
+              '<div id="bpm-sb-toprow">',
+                '<span id="bpm-sb-dragbox"></span>',
+                '<input id="bpm-sb-input" type="search" placeholder="Search"/>',
+                '<span id="bpm-sb-resultinfo"></span>',
+                '<span id="bpm-sb-close"></span>',
+              '</div>',
+              '<div id="bpm-sb-results"></div>',
+              '<div id="bpm-sb-bottomrow">',
+                '<span id="bpm-sb-help-hover">help',
+                  '<div id="bpm-sb-help">',
+                    '<p>Searching for <code>"aj"</code> will show you all emotes with <code>"aj"</code> in their names.',
+                    '<p>Searching for <code>"aj happy"</code> will show you all emotes with both <code>"aj"</code> and <code>"happy"</code> in their names.',
+                    '<p>The special syntax <code>"sr:subreddit"</code> will limit your results to emotes from that subreddit.',
+                    '<p>Using more than one subreddit will show you emotes from all of them.',
+                    '<p>Searching for <code>"+tag"</code> will show you emotes with the given tag. <code>"-tag"</code> shows emotes without it.',
+                    '<p>Some emotes are hidden by default. Use <code>"+nonpony"</code> to see them.',
+                  '</div>',
+                '</span>',
+                '<span id="bpm-sb-resize"></span>',
+              '</div>',
+            '</div>',
+            '<div id="bpm-global-icon" title="Hold Ctrl (Command/Meta) to drag"></div>'
+            ].join("");
+        div.innerHTML = html;
+        document.body.appendChild(div);
+
+        // This seems to me a rather lousy way to build HTML, but oh well
+        this.sb_container = document.getElementById("bpm-sb-container");
+        this.sb_dragbox = document.getElementById("bpm-sb-dragbox");
+        this.sb_input = document.getElementById("bpm-sb-input");
+        this.sb_resultinfo = document.getElementById("bpm-sb-resultinfo");
+        this.sb_close = document.getElementById("bpm-sb-close");
+        this.sb_results = document.getElementById("bpm-sb-results");
+        this.sb_resize = document.getElementById("bpm-sb-resize");
+
+        this.sb_global_icon = document.getElementById("bpm-global-icon");
+    },
+
+    /*
+     * Sets up the emote search box.
+     */
+    init_search_box: function(prefs) {
+        /*
+         * Intercept mouseover for the entire search widget, so we can remember
+         * which form was being used before.
+         */
+        this.sb_container.addEventListener("mouseover", bpm_utils.catch_errors(function(event) {
+            this.grab_target_form();
+        }.bind(this)), false);
+
+        // Close it on demand
+        this.sb_close.addEventListener("click", bpm_utils.catch_errors(function(event) {
+            this.hide();
+        }.bind(this)), false);
+
+        // Another way to close it
+        this.sb_container.addEventListener("keyup", bpm_utils.catch_errors(function(event) {
+            if(event.keyCode === 27) { // Escape key
+                this.hide();
+            }
+        }.bind(this)), false);
+
+        // Listen for keypresses and adjust search results. Delay 500ms after
+        // end of typing to make it more responsive.
+        var timeout = null;
+        this.sb_input.addEventListener("input", bpm_utils.catch_errors(function(event) {
+            if(timeout !== null) {
+                clearTimeout(timeout);
+            }
+            timeout = setTimeout(bpm_utils.catch_errors(function() {
+                // Re-enable searching as early as we can, just in case
+                timeout = null;
+                this.update_search(prefs);
+            }.bind(this)), 500);
+        }.bind(this)), false);
+
+        // Listen for clicks
+        this.sb_results.addEventListener("click", bpm_utils.catch_errors(function(event) {
+            if(event.target.classList.contains("bpm-search-result")) {
+                // .dataset would probably be nicer, but just in case...
+                var emote_name = event.target.getAttribute("data-emote");
+                this.inject_emote(emote_name);
+            }
+        }.bind(this)), false);
+
+        // Set up default positions
+        this.sb_container.style.left = prefs.prefs.searchBoxInfo[0] + "px";
+        this.sb_container.style.top = prefs.prefs.searchBoxInfo[1] + "px";
+        this.sb_container.style.width = prefs.prefs.searchBoxInfo[2] + "px";
+        this.sb_container.style.height = prefs.prefs.searchBoxInfo[3] + "px";
+        // 62 is a magic value from the CSS.
+        this.sb_results.style.height = (prefs.prefs.searchBoxInfo[3] - 62) + "px";
+        this.sb_global_icon.style.left = prefs.prefs.globalIconPos[0] + "px";
+        this.sb_global_icon.style.top = prefs.prefs.globalIconPos[1] + "px";
+
+        // Enable dragging the window around
+        bpm_utils.make_movable(this.sb_dragbox, this.sb_container, function(event, left, top, move) {
+            move();
+            prefs.prefs.searchBoxInfo[0] = left;
+            prefs.prefs.searchBoxInfo[1] = top;
+            bpm_prefs.sync_key("searchBoxInfo");
+        });
+
+        // Enable dragging the resize element around (i.e. resizing it)
+        var search_box_width, search_box_height;
+        bpm_utils.enable_drag(this.sb_resize, function(event) {
+            search_box_width = parseInt(this.sb_container.style.width, 10);
+            search_box_height = parseInt(this.sb_container.style.height, 10);
+        }.bind(this), function(event, dx, dy) {
+            // 420px wide prevents the search box from collapsing too much, and
+            // the extra 5px is to prevent the results div from vanishing (which
+            // sometimes kills Opera),
+            var sb_width = Math.max(dx + search_box_width, 420);
+            var sb_height = Math.max(dy + search_box_height, 62+5);
+
+            this.sb_container.style.width = sb_width + "px";
+            this.sb_container.style.height = sb_height + "px";
+            this.sb_results.style.height = (sb_height - 62) + "px";
+
+            prefs.prefs.searchBoxInfo[2] = sb_width;
+            prefs.prefs.searchBoxInfo[3] = sb_height;
+            bpm_prefs.sync_key("searchBoxInfo");
+        }.bind(this));
+    },
+
+    /*
+     * Displays the search box.
+     */
+    show: function(prefs) {
+        this.sb_container.style.visibility = "visible";
+        this.sb_input.focus();
+
+        // If we haven't run before, go search for things
+        if(!this.firstrun) {
+            this.firstrun = true;
+            this.sb_input.value = prefs.prefs.lastSearchQuery;
+            this.update_search(prefs);
+        }
+    },
+
+    hide: function() {
+        this.sb_container.style.visibility = "hidden";
+        // TODO: possibly clear out the search results, since it's a large pile
+        // of HTML.
+    },
+
+    /*
+     * Previously focused elements. Only one of these can be non-null.
+     */
+    target_form: null,
+    target_frame: null,
+
+    /*
+     * Caches the currently focused element, if it's something we can inject
+     * emotes into.
+     */
+    grab_target_form: function() {
+        var active = document.activeElement;
+
+        while(active.tagName === "IFRAME") {
+            // Focus is within the frame. Find the real element (recursing just
+            // in case).
+            if(active.contentWindow === null || active.contentWindow === undefined) {
+                // Chrome is broken and does not permit us to access these
+                // from content scripts.
+                this.target_form = null;
+                this.target_frame = active;
+
+                bpm_utils.message_iframe(active, {
+                    "__betterponymotes_method": "__bpm_track_form"
+                });
+                return;
+            }
+
+            try {
+                active = active.contentDocument.activeElement;
+            } catch(e) {
+                // Addon SDK is broken
+                bpm_utils.message_iframe(active, {
+                    "__betterponymotes_method": "__bpm_track_form"
+                });
+
+                this.target_form = null;
+                this.target_frame = active;
+                return;
+            }
+        }
+
+        // Ignore our own stuff and things that are not text boxes
+        if(!bpm_utils.id_above(active, "bpm-stuff") && active !== this.target_form &&
+           active.selectionStart !== undefined && active.selectionEnd !== undefined) {
+            this.target_form = active;
+            this.target_frame = null;
+        }
+    },
+
+    /*
+     * Injects an emote into the currently focused element, taking frames into
+     * account.
+     */
+    inject_emote: function(emote_name) {
+        if(this.target_frame !== null) {
+            bpm_utils.message_iframe(this.target_frame, {
+                "__betterponymotes_method": "__bpm_inject_emote",
+                "__betterponymotes_emote": emote_name
+            });
+        } else if(this.target_form !== null) {
+            bpm_search.inject_emote(this.target_form, emote_name);
+        }
+    },
+
+    /*
+     * Updates the search results window according to the current query.
+     */
+    update_search: function(prefs) {
+        // Split search query on spaces, remove empty strings, and lowercase terms
+        var terms = this.sb_input.value.split(" ").map(function(v) { return v.toLowerCase(); });
+        terms = terms.filter(function(v) { return v; });
+        prefs.prefs.lastSearchQuery = terms.join(" ");
+        bpm_prefs.sync_key("lastSearchQuery");
+
+        // Check this before we append the default search terms.
+        if(!terms.length) {
+            this.sb_results.innerHTML = "";
+            this.sb_resultinfo.textContent = "";
+            return;
+        }
+
+        // This doesn't work quite perfectly- searching for "+hidden" should
+        // theoretically just show all hidden emotes, but it just ends up
+        // cancelling into "-nonpony", searching for everything.
+        terms.unshift("-hidden", "-nonpony");
+        var query = bpm_search.parse_query(terms);
+        // Still nothing to do
+        if(query === null) {
+            this.sb_results.innerHTML = "";
+            this.sb_resultinfo.textContent = "";
+            return;
+        }
+
+        var results = bpm_search.search(query);
+        bpm_debug("Search found", results.length, "results on query", query);
+        this.display_results(prefs, results);
     },
 
     /*
@@ -1838,7 +1970,7 @@ var bpm_search = {
 
             // Use <span> so there's no chance of emote parse code finding
             // this.
-            html += "<span data-emote=\"" + result.name + "\" class=\"bpm-result " +
+            html += "<span data-emote=\"" + result.name + "\" class=\"bpm-search-result " +
                     result.css_class + "\" title=\"" + result.name + " from " + result.source_name + "\">";
             if(result.tags.indexOf(formatting_id) > -1) {
                 html += "Example Text";
@@ -1846,7 +1978,7 @@ var bpm_search = {
             html += "</span>";
         }
 
-        this.results.innerHTML = html;
+        this.sb_results.innerHTML = html;
 
         var hit_limit = shown + hidden < actual_results;
         // Format text: "X results (out of N, Y hidden)"
@@ -1856,62 +1988,7 @@ var bpm_search = {
         if(hit_limit && hidden) { text += ", "; }
         if(hidden)              { text += hidden + " hidden"; }
         if(hit_limit || hidden) { text += ")"; }
-        this.count.textContent = text;
-    },
-
-    /*
-     * Injects an emote into the (previously) focused element.
-     */
-    insert_emote: function(emote_name) {
-        if(this.target_frame !== null) {
-            bpm_utils.message_iframe(this.target_frame, {
-                "__betterponymotes_method": "__bpm_inject_emote",
-                "__betterponymotes_emote": emote_name
-            });
-
-            return;
-        } else if(this.target_form === null) {
-            return;
-        }
-
-        var emote_info = bpm_data.lookup_core_emote(emote_name);
-        var formatting_id = tag_name2id["+formatting"];
-
-        var start = this.target_form.selectionStart;
-        var end = this.target_form.selectionEnd;
-        if(start !== undefined && end !== undefined) {
-            var emote_len;
-            var before = this.target_form.value.slice(0, start);
-            var inside = this.target_form.value.slice(start, end);
-            var after = this.target_form.value.slice(end);
-            if(inside) {
-                var extra_len, emote;
-                // Make selections into text/alt-text
-                if(emote_info.tags.indexOf(formatting_id) > -1) {
-                    extra_len = 4; // '[]('' and ')'
-                    emote = "[" + inside + "](" + emote_name + ")";
-                } else {
-                    extra_len = 4; // '[](' and ' "' and '")'
-                    emote = "[](" + emote_name + " \"" + inside + "\")";
-                }
-                emote_len = extra_len + emote_name.length + (end - start);
-                this.target_form.value = (before + emote + after);
-            } else {
-                // "[](" + ")"
-                emote_len = 4 + emote_name.length;
-                this.target_form.value = (
-                    before +
-                    "[](" + emote_name + ")" +
-                    after);
-            }
-            this.target_form.selectionStart = end + emote_len;
-            this.target_form.selectionEnd = end + emote_len;
-
-            // Trigger preview update in RES, which *specifically* listens for keyup.
-            var event = document.createEvent("Event");
-            event.initEvent("keyup", true, true);
-            this.target_form.dispatchEvent(event);
-        }
+        this.sb_resultinfo.textContent = text;
     },
 
     /*
@@ -1962,7 +2039,7 @@ var bpm_search = {
         }.bind(this)), false);
 
         button.addEventListener("click", bpm_utils.catch_errors(function(event) {
-            var sb_element = document.getElementById("bpm-search-box");
+            var sb_element = document.getElementById("bpm-sb-container");
             if(sb_element.style.visibility !== "visible") {
                 this.show(prefs);
             } else {
@@ -1975,12 +2052,13 @@ var bpm_search = {
      * Sets up the global ">>" emotes icon.
      */
     setup_global_icon: function(prefs) {
-        this.global_icon.addEventListener("mouseover", bpm_utils.catch_errors(function(event) {
+        bpm_debug("Injecting global search icon");
+        this.sb_global_icon.addEventListener("mouseover", bpm_utils.catch_errors(function(event) {
             this.grab_target_form();
         }.bind(this)), false);
 
         // Enable dragging the global button around
-        bpm_utils.make_movable(this.global_icon, this.global_icon, function(left, top, move) {
+        bpm_utils.make_movable(this.sb_global_icon, this.sb_global_icon, function(event, left, top, move) {
             if(!event.ctrlKey && !event.metaKey) {
                 return;
             }
@@ -1990,9 +2068,9 @@ var bpm_search = {
             bpm_prefs.sync_key("globalIconPos");
         });
 
-        this.global_icon.style.visibility = "visible";
+        this.sb_global_icon.style.visibility = "visible";
 
-        this.global_icon.addEventListener("click", bpm_utils.catch_errors(function(event) {
+        this.sb_global_icon.addEventListener("click", bpm_utils.catch_errors(function(event) {
             // Don't open at the end of a drag (only works if you release the
             // mouse button before the ctrl/meta key though...)
             if(!event.ctrlKey && !event.metaKey) {
@@ -2005,7 +2083,7 @@ var bpm_search = {
 /*
  * Global emote conversion.
  */
-var bpm_global = {
+var bpm_global = bpm_exports.global = {
     // As a note, this regexp is a little forgiving in some respects and strict in
     // others. It will not permit text in the [] portion, but alt-text quotes don't
     // have to match each other.
@@ -2021,8 +2099,13 @@ var bpm_global = {
         // while walking the DOM
         var deletion_list = [];
 
+        var nodes_processed = 0;
+        var emotes_matched = 0;
+
         // this!==window on Opera, and doesn't have this object for some reason
         bpm_utils.walk_dom(root, _bpm_global("Node").TEXT_NODE, function(node) {
+            nodes_processed++;
+
             var parent = node.parentNode;
             // <span> elements to apply alt-text to
             var emote_elements = [];
@@ -2033,6 +2116,8 @@ var bpm_global = {
             var match;
 
             while(match = this.emote_regexp.exec(node.data)) {
+                emotes_matched++;
+
                 // Don't normalize case for emote lookup
                 var parts = match[1].split("-");
                 var emote_name = parts[0];
@@ -2072,7 +2157,7 @@ var bpm_global = {
                 // match ":", something we don't permit elsewhere).
                 for(var p = 1; p < parts.length; p++) {
                     var flag = parts[p].toLowerCase();
-                    element.classList.add("bpflag-" + bpm_utils.sanitize(flag));
+                    element.classList.add("bpflag-" + bpm_data.sanitize(flag));
                 }
 
                 if(match[2]) {
@@ -2136,6 +2221,9 @@ var bpm_global = {
                 }
             }
         }.bind(this), function() {
+            if(nodes_processed) {
+                bpm_debug("Processed", nodes_processed, "node(s) and matched", emotes_matched, "emote(s)");
+            }
             for(var i = 0; i < deletion_list.length; i++) {
                 var node = deletion_list[i];
                 node.parentNode.removeChild(node);
@@ -2150,6 +2238,7 @@ var bpm_global = {
         if(!prefs.prefs.enableGlobalEmotes) {
             return;
         }
+        bpm_info("Running globally");
 
         // We run this here, instead of down in the main bit, to avoid applying large
         // chunks of CSS when this script is disabled.
@@ -2159,10 +2248,10 @@ var bpm_global = {
             // Never inject the search box into frames. Too many sites fuck up
             // entirely if we do. Instead, we do some cross-frame communication.
             if(bpm_utils.is_frame) {
-                bpm_search.init_frame(prefs);
+                bpm_searchbox.init_frame(prefs);
             } else {
-                bpm_search.init(prefs);
-                bpm_search.setup_global_icon(prefs);
+                bpm_searchbox.init(prefs);
+                bpm_searchbox.setup_global_icon(prefs);
             }
         }
 
@@ -2183,11 +2272,12 @@ var bpm_global = {
 /*
  * main() and such.
  */
-var bpm_core = {
+var bpm_core = bpm_exports.core = {
     /*
      * Attaches all of our CSS.
      */
     init_css: function() {
+        bpm_info("Setting up css");
         bpm_browser.link_css("/bpmotes.css");
         bpm_browser.link_css("/emote-classes.css");
 
@@ -2211,7 +2301,7 @@ var bpm_core = {
                 } else if(style.OTransform !== undefined) {
                     bpm_browser.link_css("/extracss-o.css");
                 } else {
-                    bpm_log("BPM: WARNING: Cannot inspect vendor prefix needed for extracss.");
+                    bpm_warning("Cannot inspect vendor prefix needed for extracss.");
                     // You never know, maybe it'll work
                     bpm_browser.link_css("/extracss-pure.css");
                 }
@@ -2227,6 +2317,7 @@ var bpm_core = {
      * Main function when running on Reddit.
      */
     run: function(prefs) {
+        bpm_info("Running on Reddit");
         // Inject our filter SVG for Firefox. Chrome renders this thing as a
         // massive box, but "display: none" (or putting it in <head>) makes
         // Firefox hide all of the emotes we apply the filter to- as if *they*
@@ -2257,9 +2348,9 @@ var bpm_core = {
             bpm_browser.add_css(".bpflag-i { filter: url(#bpm-invert); }");
         }
 
-        bpm_search.init(prefs);
+        bpm_searchbox.init(prefs);
         var usertext_edits = document.getElementsByClassName("usertext-edit");
-        bpm_search.inject_search_button(prefs, usertext_edits);
+        bpm_searchbox.inject_search_button(prefs, usertext_edits);
         bpm_converter.hook_usertext_edit(prefs, usertext_edits);
 
         // Initial pass- show all emotes currently on the page.
@@ -2317,7 +2408,7 @@ var bpm_core = {
 
                 // TODO: move up in case we're inside it?
                 var usertext_edits = root.getElementsByClassName("usertext-edit");
-                bpm_search.inject_search_button(prefs, usertext_edits);
+                bpm_searchbox.inject_search_button(prefs, usertext_edits);
                 bpm_converter.hook_usertext_edit(prefs, usertext_edits);
             }
         }.bind(this));
@@ -2328,6 +2419,7 @@ var bpm_core = {
      * way (userscripts).
      */
     setup_options_link: function() {
+        bpm_info("Setting up options page link");
         function _check(prefs) {
             var tag = document.getElementById("ready");
             var ready = tag.textContent.trim();
@@ -2355,7 +2447,7 @@ var bpm_core = {
                     }), 200);
                 }
             } else {
-                bpm_log("BPM: ERROR: options page is unavailable after 2 seconds. Assuming broken.");
+                bpm_error("Options page is unavailable after 2 seconds. Assuming broken.");
                 // TODO: put some kind of obvious error <div> on the page or
                 // something
             }
@@ -2380,12 +2472,12 @@ var bpm_core = {
                         bpm_prefs.prefs[key] = value;
                         bpm_prefs.sync_key(key);
                     } else {
-                        bpm_log("BPM: ERROR: Invalid pref write from options page: '" + key + "'");
+                        bpm_error("Invalid pref write from options page: '" + key + "'");
                     }
                     break;
 
                 default:
-                    bpm_log("BPM: ERROR: Unknown request from options page: '" + message.__betterponymotes_method + "'");
+                    bpm_error("Unknown request from options page: '" + message.__betterponymotes_method + "'");
                     break;
             }
         }.bind(this)), false);
@@ -2403,6 +2495,7 @@ var bpm_core = {
      * main()
      */
     main: function() {
+        bpm_info("Starting up");
         bpm_browser.request_prefs();
         bpm_browser.request_custom_css();
 
@@ -2444,3 +2537,5 @@ var bpm_core = {
 };
 
 bpm_core.main();
+
+})(this); // Script wrapper
