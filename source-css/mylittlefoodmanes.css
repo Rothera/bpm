@@ -47,6 +47,16 @@ margin-left: -577px;
 /* 0.5 the image width */
 z-index: -100
 }
+a[href|="/bro"]
+{
+
+ background-image: url(%%doesntexist%%) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 255px;
+    width: 200px;
+}
 #siteTable .entry.likes:after {
 content: url(%%themagicalcouch%%);
 position: fixed;
@@ -1013,13 +1023,13 @@ a[href|="/twiststare"]
 
 /*** Bottom page Foodmane  ***/
 .footer-parent {
-    height: 740px;
+    height: 1000px;
     padding-top: 30px;
     padding-bottom: 40px;
     clear: both;
     text-align: center;
     width: 100%;
-    background-image: url(%%twistalphagettis%%);
+    background-image: url(%%carrotpumpkin%%);
     background-position: bottom center;
     background-repeat: no-repeat;
     margin-bottom: 4px
