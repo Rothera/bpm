@@ -1198,10 +1198,6 @@ var bpm_converter = bpm_exports.converter = {
             }
 
             var processed = false;
-            var type_inline = false;
-            if(state.indexOf("d") > -1) {
-                type_inline = true;
-            }
 
             if(element.title) {
                 processed = true;
@@ -1213,6 +1209,14 @@ var bpm_converter = bpm_exports.converter = {
                     continue;
                 }
 
+                // Try to move to the other side of RES's image expand buttons,
+                // because otherwise they end awfully
+                var before = element.nextSibling;
+                while((before && before.className !== undefined) &&
+                      before.classList.contains("expando-button")) {
+                    before = before.nextSibling;
+                }
+
                 // As a note: alt-text kinda has to be a block-level element. If
                 // you make it inline, it has the nice property of putting it where
                 // the emote was in the middle of a paragraph, but since the emote
@@ -1222,32 +1226,32 @@ var bpm_converter = bpm_exports.converter = {
                 // Inline *is*, however, rather important sometimes- particularly
                 // -inp emotes. As a bit of a hack, we assume the emote code has
                 // already run, and check for bpflag-in/bpflag-inp.
-                var at_element;
-                if(element.classList.contains("bpflag-in") || element.classList.contains("bpflag-inp")) {
-                    type_inline = true;
+                var element_type = "div";
+                if(state.indexOf("d") > -1 || element.classList.contains("bpflag-in") ||
+                    element.classList.contains("bpflag-inp")) {
+                    element_type = "span";
                 }
 
-                if(type_inline) {
-                    at_element = document.createElement("span");
-                } else {
-                    at_element = document.createElement("div");
-                }
+                //                                  http://    < domain name >    /url?params#stuff
+                // \b doesn't seem to be working when I put it at the end, here??
+                // Also, note that we do grab the space at the end for formatting
+                var parts = element.title.split(/\b(https?:\/\/[a-zA-Z0-9\-.]+(?:\/[a-zA-Z0-9\-_.~'();:+\/?%#]*)?(?:\s|$))/)
 
+                var at_element = document.createElement(element_type); // Container
                 at_element.classList.add("bpm-alttext");
-                at_element.textContent = element.title;
-
-                // Try to move to the other side of RES's image expand buttons,
-                // because otherwise they end awfully
-                var before = element.nextSibling;
-                while((before && before.className !== undefined) &&
-                      before.classList.contains("expando-button")) {
-                    before = before.nextSibling;
+                for(var i = 0; i < Math.floor(parts.length / 2); i += 2) {
+                    if(parts[i]) {
+                        at_element.appendChild(document.createTextNode(parts[i]));
+                    }
+                    var link_element = document.createElement("a");
+                    link_element.textContent = parts[i + 1];
+                    link_element.href = parts[i + 1];
+                    at_element.appendChild(link_element);
+                }
+                if(parts[parts.length - 1]) {
+                    at_element.appendChild(document.createTextNode(parts[parts.length - 1]));
                 }
 
-                if(before && before.classList && before.classList.contains("bpm-alttext")) {
-                    // Already processed (before node is our previous alt text)
-                    continue;
-                }
                 element.parentNode.insertBefore(at_element, before);
             }
 
