@@ -1793,6 +1793,14 @@ var bpm_searchbox = bpm_exports.searchbox = {
             }
         }.bind(this)), false);
 
+        // Default behavior of the escape key in the search input is to clear
+        // it, which we don't want.
+        this.sb_input.addEventListener("keydown", bpm_utils.catch_errors(function(event) {
+            if(event.keyCode === 27) { // Escape key
+                event.preventDefault();
+            }
+        }.bind(this)), false);
+
         // Listen for keypresses and adjust search results. Delay 500ms after
         // end of typing to make it more responsive.
         var timeout = null;
