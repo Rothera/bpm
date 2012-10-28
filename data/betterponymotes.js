@@ -1418,80 +1418,104 @@ var bpm_converter = bpm_exports.converter = {
 var bpm_search = bpm_exports.search = {
     /*
      * Parses a search query. Returns an object that looks like this:
-     *    .sr_terms: list of subreddit names to match.
-     *    .tag_term_sets: list of [true or false, ...] tag sets to match.
+     *    .sr_term_sets: list of [true/false, term] subreddit names to match.
+     *    .tag_term_sets: list of [true/false, tags ...] tag sets to match.
      *    .name_terms: list of emote name terms to match.
      * or null, if there was no query.
      */
     parse_query: function(terms) {
-        var query = {sr_terms: [], tag_term_sets: [], name_terms: []};
+        var query = {sr_term_sets: [], tag_term_sets: [], name_terms: []};
 
-        function add_tag_term(positive, tags) {
-            // Negate previous tags, searching from the right, back to the left.
-            for(var i = query.tag_term_sets.length - 1; i >= 0; i--) {
-                var set = query.tag_term_sets[i];
+        /*
+         * Adds a list of matching ids as one term. Cancels out earlier
+         * opposites where appropriate.
+         */
+        function add_cancelable_id_list(sets, positive, ids) {
+            // Search from right to left, looking for sets of an opposite type
+            for(var set_i = sets.length - 1; set_i >= 0; set_i--) {
+                var set = sets[set_i];
                 if(set[0] !== positive) {
-                    // Opposite kinds of tags. Counter them where we can.
-                    for(var j = tags.length - 1; j >= 0; j--) {
-                        var index = set.indexOf(tags[j]);
+                    // Look for matching ids, and remove them
+                    for(var id_i = ids.length - 1; id_i >= 0; id_i--) {
+                        var index = set.indexOf(ids[id_i]);
                         if(index > -1) {
                             // When a tag and an antitag collide...
                             set.splice(index, 1);
-                            tags.splice(j, 1);
+                            ids.splice(id_i, 1);
                             // It makes a great big mess of my search code is what
                         }
                     }
+                    // This set was cancelled out completely, so remove it
                     if(set.length <= 1) {
-                        query.tag_term_sets.splice(i, 1);
+                        sets.splice(set_i, 1);
                     }
                 }
             }
-            if(tags.length) {
-                tags.unshift(positive);
-                query.tag_term_sets.push(tags);
+            // If there's still anything left, add this new set
+            if(ids.length) {
+                ids.unshift(positive);
+                sets.push(ids);
             }
         }
 
+        /*
+         * Adds an id set term, by either adding it exactly or adding all
+         * matching tags.
+         */
+        function add_id_set(sets, name2id, positive, exact, query) {
+            var id = name2id[exact];
+            if(id) {
+                add_cancelable_id_list(sets, positive, [id]); // Exact name match
+            } else {
+                // Search through all tags for one that looks like the term.
+                var matches = [];
+                for(var name in name2id) {
+                    id = name2id[name];
+                    if(name.indexOf(query) > -1 && matches.indexOf(id) < 0) {
+                        matches.push(id);
+                    }
+                }
+                // If we found anything at all, append it
+                if(matches.length) {
+                    add_cancelable_id_list(sets, positive, matches);
+                }
+            }
+        }
+
+        // Parse query
         for(var t = 0; t < terms.length; t++) {
             var term = terms[t];
-
-            if(term.slice(0, 3) === "sr:") {
-                var tmp = term.slice(3);
-                if(tmp) {
-                    query.sr_terms.push(tmp);
-                }
-            } else if(term[0] === "+" || term[0] === "-") {
-                var lone_tag = term.slice(1);
-                if(!lone_tag) {
+            var is_tag = false; // Whether it started with "+"/"-" (which could actually be a subreddit!!)
+            var positive = true;
+            if(term[0] === "+" || term[0] === "-") {
+                // It's a thing that can be negated, which means either subreddit
+                // or a tag.
+                is_tag = true;
+                positive = term[0] === "+";
+                term = term.slice(1);
+                if(!term) {
                     continue;
                 }
-                var p_tag = "+" + lone_tag;
-                var positive = (term[0] === "+" ? true : false);
-                var id = tag_name2id[p_tag];
-                if(id) {
-                    // Exact match
-                    add_tag_term(positive, [id]);
-                } else {
-                    var matches = [];
-                    // Find any tag that looks right
-                    for(var tag in tag_name2id) {
-                        id = tag_name2id[tag];
-                        // Cut off leading +
-                        if(tag.slice(1).indexOf(lone_tag) > -1 &&
-                           matches.indexOf(id) < 0) {
-                            matches.push(id);
-                        }
-                    }
-                    if(matches.length) {
-                        add_tag_term(positive, matches);
-                    }
+            }
+            if(term.slice(0, 3) === "sr:") {
+                if(term.length > 3) {
+                    // Chop off sr:
+                    add_id_set(query.sr_term_sets, sr_name2id, positive, term.slice(3), term.slice(3));
                 }
+            } else if(term.slice(0, 2) === "r/") {
+                if(term.length > 2) {
+                    // Leave the r/ on
+                    add_id_set(query.sr_term_sets, sr_name2id, positive, term, term);
+                }
+            } else if(is_tag) {
+                // A tag-like thing that isn't a subreddit = tag term
+                add_id_set(query.tag_term_sets, tag_name2id, positive, "+" + term, term);
             } else {
-                query.name_terms.push(term);
+                query.name_terms.push(term); // Anything else
             }
         }
 
-        if(query.sr_terms.length || query.tag_term_sets.length || query.name_terms.length) {
+        if(query.sr_term_sets.length || query.tag_term_sets.length || query.name_terms.length) {
             return query;
         } else {
             return null;
@@ -1501,7 +1525,6 @@ var bpm_search = bpm_exports.search = {
     /*
      * Executes a search query. Returns an object with two properties:
      *    .results: a sorted list of emotes
-     *    .omitted: emotes hidden by the first set of tags (our -nonpony hack)
      */
     search: function(query) {
         var results = [];
@@ -1517,15 +1540,29 @@ var bpm_search = bpm_exports.search = {
                 }
             }
 
-            // Match if AT LEAST ONE subreddit terms match
-            if(query.sr_terms.length) {
-                // Generally this name is already lowercase, though not for bpmextras
-                var source_sr_name = emote_info.source_name.toLowerCase();
-                var is_match = false;
-                for(var sr_i = 0; sr_i < query.sr_terms.length; sr_i++) {
-                    if(source_sr_name.indexOf(query.sr_terms[sr_i]) > -1) {
-                        is_match = true;
-                        break;
+            // Match if AT LEAST ONE positive subreddit term matches, and NONE
+            // of the negative ones.
+            if(query.sr_term_sets.length) {
+                var is_match = true; // Match by default, unless there are positive terms
+                for(var sr_set_i = 0; sr_set_i < query.sr_term_sets.length; sr_set_i++) {
+                    var sr_set = query.sr_term_sets[sr_set_i];
+                    if(sr_set[0]) {
+                        // If there are any positive terms, then we're wrong
+                        // by default. We have to match one of them (just not
+                        // any of the negative ones either).
+                        //
+                        // However, if there are *only* negative terms, then we
+                        // actually match by default.
+                        is_match = false;
+                    }
+                    // sr_set[0] is true/false and so can't interfere
+                    if(sr_set.indexOf(emote_info.source_id) > -1) {
+                        if(sr_set[0]) {
+                            is_match = true; // Matched positive term
+                            break;
+                        } else {
+                            continue no_match; // Matched negative term
+                        }
                     }
                 }
                 if(!is_match) {
