@@ -1611,6 +1611,7 @@ var bpm_search = bpm_exports.search = {
             }
             target_form.selectionStart = end + emote_len;
             target_form.selectionEnd = end + emote_len;
+            target_form.focus();
 
             // Trigger preview update in RES, which *specifically* listens for keyup.
             var event = document.createEvent("Event");
@@ -1833,6 +1834,9 @@ var bpm_searchbox = bpm_exports.searchbox = {
         this.sb_container.style.visibility = "hidden";
         // TODO: possibly clear out the search results, since it's a large pile
         // of HTML.
+        if(this.target_form) {
+            this.target_form.focus();
+        }
     },
 
     /*
@@ -1999,6 +2003,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
     inject_search_button: function(prefs, usertext_edits) {
         for(var i = 0; i < usertext_edits.length; i++) {
             var existing = usertext_edits[i].getElementsByClassName("bpm-search-toggle");
+            var textarea = usertext_edits[i].getElementsByTagName("textarea")[0];
             /*
              * Reddit's JS uses cloneNode() when making reply forms. As such,
              * we need to be able to handle two distinct cases- wiring up the
@@ -2006,7 +2011,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
              * clones of that form with our button already in it.
              */
             if(existing.length) {
-                this.wire_emotes_button(prefs, existing[0]);
+                this.wire_emotes_button(prefs, existing[0], textarea);
             } else {
                 var button = document.createElement("button");
                 // Default is "submit", which is not good (saves the comment).
@@ -2022,7 +2027,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
                 //
                 // So instead it's just untabbable.
                 button.tabIndex = 100;
-                this.wire_emotes_button(prefs, button);
+                this.wire_emotes_button(prefs, button, textarea);
                 // Put it at the end- Reddit's JS uses get(0) when looking for
                 // elements related to the "formatting help" linky, and we don't
                 // want to get in the way of that.
@@ -2035,7 +2040,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
     /*
      * Sets up one particular "emotes" button.
      */
-    wire_emotes_button: function(prefs, button) {
+    wire_emotes_button: function(prefs, button, textarea) {
         button.addEventListener("mouseover", bpm_utils.catch_errors(function(event) {
             this.grab_target_form();
         }.bind(this)), false);
@@ -2044,6 +2049,9 @@ var bpm_searchbox = bpm_exports.searchbox = {
             var sb_element = document.getElementById("bpm-sb-container");
             if(sb_element.style.visibility !== "visible") {
                 this.show(prefs);
+                if(!this.target_form) {
+                    this.target_form = textarea;
+                }
             } else {
                 this.hide();
             }
