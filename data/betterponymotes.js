@@ -1081,26 +1081,26 @@ var bpm_converter = bpm_exports.converter = {
                     // Click blocker CSS/JS
                     element.classList.add("bpm-emote");
                     // Used in alt-text. (Note: dashes are invalid here)
-                    element.dataset.bpm_state = "e";
-                    element.dataset.bpm_emotename = emote_name;
-                    element.dataset.bpm_srname = emote_info.source_name;
+                    var state = "e";
+                    element.setAttribute("data-bpm_emotename", emote_name);
+                    element.setAttribute("data-bpm_srname", emote_info.source_name);
                     if(emote_info.is_nsfw) {
-                        element.dataset.bpm_state += "n";
+                        state += "n";
                     }
 
                     var nsfw_class = prefs.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-nsfw";
                     var disabled_class = prefs.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-disabled";
                     var disabled = bpm_data.is_disabled(prefs, emote_info);
                     if(disabled) {
-                        element.dataset.bpm_state += "d";
-                        element.dataset.bpm_state += disabled; // Tee hee
+                        state += "d" + disabled; // Tee hee
                         if(!element.textContent) {
                             // Any existing text (there really shouldn't be any)
                             // will look funny with our custom CSS, but there's
                             // not much we can do.
-                            element.dataset.bpm_state += "T";
+                            state += "T";
                             element.textContent = emote_name;
                         }
+                        element.setAttribute("data-bpm_state", state);
                         switch(disabled) {
                         case 1: // NSFW
                             element.classList.add(nsfw_class);
@@ -1113,6 +1113,7 @@ var bpm_converter = bpm_exports.converter = {
                         }
                         continue;
                     }
+                    element.setAttribute("data-bpm_state", state);
                     element.classList.add(emote_info.css_class);
 
                     // Apply flags in turn. We pick on the naming a bit to prevent
@@ -1149,8 +1150,8 @@ var bpm_converter = bpm_exports.converter = {
                     }
 
                     // Unknown emote? Good enough
-                    element.dataset.bpm_state = "u";
-                    element.dataset.bpm_emotename = emote_name;
+                    element.setAttribute("data-bpm_state", "u");
+                    element.setAttribute("data-bpm_emotename", emote_name);
                     element.classList.add("bpm-unknown");
                     if(!element.textContent) {
                         element.textContent = emote_name;
@@ -1176,13 +1177,7 @@ var bpm_converter = bpm_exports.converter = {
     display_alt_text: function(elements) {
         for(var i = 0; i < elements.length; i++) {
             var element = elements[i];
-            var state;
-            try {
-                state = element.dataset.bpm_state || "";
-            } catch(e) {
-                // .dataset reads fail on Firefox if the attribute doesn't exist
-                state = "";
-            }
+            var state = element.getAttribute("data-bpm_state") || "";
 
             // Already processed- ignore, so we don't do annoying things like
             // expanding the emote sourceinfo.
@@ -1259,8 +1254,8 @@ var bpm_converter = bpm_exports.converter = {
             var emote_name, title;
             if(state.indexOf("e") > -1) {
                 processed = true;
-                emote_name = element.dataset.bpm_emotename;
-                var sr_name = element.dataset.bpm_srname;
+                emote_name = element.getAttribute("data-bpm_emotename");
+                var sr_name = element.getAttribute("data-bpm_srname");
                 title = "";
                 if(state.indexOf("d") > -1) {
                     title = "Disabled ";
@@ -1273,14 +1268,14 @@ var bpm_converter = bpm_exports.converter = {
                 element.title = title;
             } else if(state.indexOf("u") > -1) {
                 processed = true;
-                emote_name = element.dataset.bpm_emotename;
+                emote_name = element.getAttribute("data-bpm_emotename");
                 title = "Unknown emote " + emote_name;
                 element.title = title;
             }
 
             if(processed) {
                 // Mark as such.
-                element.dataset.bpm_state = state + "a";
+                element.setAttribute("data-bpm_state", state + "a");
             }
         }
     },
@@ -2205,9 +2200,9 @@ var bpm_global = bpm_exports.global = {
                 // Some things for alt-text. The .href is a bit of a lie,
                 // but necessary to keep spoiler emotes reasonably sane.
                 element.setAttribute("href", emote_name);
-                element.dataset.bpm_state = "e";
-                element.dataset.bpm_emotename = emote_name;
-                element.dataset.bpm_srname = emote_info.source_name;
+                element.setAttribute("data-bpm_state", "e");
+                element.setAttribute("data-bpm_emotename", emote_name);
+                element.setAttribute("data-bpm_srname", emote_info.source_name);
                 new_elements.push(element);
                 emote_elements.push(element);
 
@@ -2423,13 +2418,13 @@ var bpm_core = bpm_exports.core = {
                 event.preventDefault();
 
                 // Click toggle
-                var state = element.dataset.bpm_state;
-                var is_nsfw_disabled = element.dataset.bpm_state.indexOf("1") > -1; // NSFW
+                var state = element.getAttribute("data-bpm_state") || "";
+                var is_nsfw_disabled = state.indexOf("1") > -1; // NSFW
                 // Not a disabled emote, or NSFW
                 if((state.indexOf("d") < 0) || (prefs.prefs.clickToggleSFW && is_nsfw_disabled)) {
                     return;
                 }
-                var info = bpm_data.lookup_emote(element.dataset.bpm_emotename, prefs.custom_emotes);
+                var info = bpm_data.lookup_emote(element.getAttribute("data-bpm_emotename"), prefs.custom_emotes);
                 if(element.classList.contains("bpm-disabled") ||
                    element.classList.contains("bpm-nsfw")) {
                     // Show
