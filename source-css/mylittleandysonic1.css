@@ -333,6 +333,7 @@ background-repeat: no-repeat;
 .flair-Fortehlulz33:after { background-position: 0px -3180px }
 .flair-IronChewbacca:after { background-position: 0px -3210px }
 .flair-whisperingsage:after { background-position: 0px -3240px }
+.flair-applesnacks:after { background-position: 0px -3270px }
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
 
@@ -656,6 +657,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="Unsinkablesam"],
 a.author[href$="mrjoker7854"],
 a.author[href$="Conky_"],
 a.author[href$="PartOfAShoe"],
@@ -728,6 +730,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="Unsinkablesam"]:before,
 a.author[href$="mrjoker7854"]:before,
 a.author[href$="Conky_"]:before,
 a.author[href$="PartOfAShoe"]:before,
@@ -798,6 +801,7 @@ visibility:visible!important;
 }
 
 /* Replacing somebody's name? Put the replacement here. */
+a.author[href$="Unsinkablesam"]:before {content:"The Go-Go Train"}
 a.author[href$="mrjoker7854"]:before {content:"Pinkie Scratchtacularin"}
 a.author[href$="Conky_"]:before {content:"Conky"}
 a.author[href$="PartOfAShoe"]:before {content:"Welt"}
