@@ -75,6 +75,8 @@ for source in data_manager.sources.values():
 
     for (emote, base) in sorted(source.variant_matches.items(), key=lambda e: e[0].name):
         if emote is not base:
+            if base is None:
+                continue # Broken +v
             print("  %s <- %s" % (base.name, emote.name), file=variant_log)
 variant_log.close()
 
