@@ -334,6 +334,8 @@ background-repeat: no-repeat;
 .flair-IronChewbacca:after { background-position: 0px -3210px }
 .flair-whisperingsage:after { background-position: 0px -3240px }
 .flair-applesnacks:after { background-position: 0px -3270px }
+.flair-mav:after { background-position: 0px -3300px }
+.flair-SwiftSkii:after { background-position: 0px -3330px }
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
 
@@ -621,6 +623,30 @@ a[href|="/ppsign"] em{
     }   
 a[href|='/ppsign'] {width:141px; height:200px; background-position: -170px -154px}
 
+a[href='/ajsay'],  a[href='/bonshades'], a[href='/daring'],  a[href='/derpquite'], a[href='/disshrug'],  a[href='/fluffycord'],a[href='/gildafuck'], a[href='/oppositesattract'],a[href='/pphappy'], a[href='/pphmmm'],  a[href='/ppthink'], a[href='/pptrain'], a[href='/rarirage'],a[href='/rdpoker'], a[href='/slowcord'],a[href='/twiststare'], a[href='/twiyou'] {
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheet%%) }
+
+a[href|='/ajsay']  {width:150px; height:150px; background-position: -270px -393px}
+a[href|='/bonshades']  {width:107px; height:110px; background-position: -180px -2px}
+a[href|='/daring']  {width:123px; height:150px; background-position: -263px -241px}
+a[href|='/derpquite']  {width:137px; height:150px; background-position: -124px -241px}
+a[href|='/disshrug']  {width:137px; height:150px; background-position: -2px -393px}
+a[href|='/fluffycord']  {width:217px; height:200px; background-position: -2px -747px}
+a[href|='/gildafuck']  {width:120px; height:150px; background-position: -2px -241px}
+a[href|='/oppositesattract']  {width:127px; height:150px; background-position: -141px -393px}
+a[href|='/pphappy']  {width:103px; height:120px; background-position: -259px -119px}
+a[href|='/pphmmm']  {width:120px; height:120px; background-position: -137px -119px}
+a[href|='/ppthink']  {width:107px; height:150px; background-position: -2px -545px}
+a[href|='/pptrain']  {width:183px; height:200px; background-position: -111px -545px}
+a[href|='/rarirage']  {width:93px; height:115px; background-position: -289px -2px}
+a[href|='/rdpoker']  {width:133px; height:120px; background-position: -2px -119px}
+a[href|='/slowcord']  {width:101px; height:98px; background-position: -77px -2px}
+a[href|='/twiststare']  {width:73px; height:70px; background-position: -2px -2px}
+a[href|='/twiyou']  {width:99px; height:120px; background-position: -364px -119px}
 
 
 /* For anyone with no flair, or flair disabled, this will give them missingno flair.
@@ -650,7 +676,7 @@ form[class~="unmarknsfw-button"] a {
     font-size: 0;
 }
 
-a[href='/sp'] { display: inline-block; padding-right: 100%; }
+a[href='/sp'] { display: inline-block; padding-right: 100%; } 
 
 
 
@@ -701,6 +727,7 @@ a.author[href$=SolarLuna96],
 a.author[href$=Generic_Builder],
 a.author[href$=volcano_bakemeats],
 a.author[href$=Chillusion],
+a.author[href$=Jeroknite],
 a.author[href$=Esplin],
 a.author[href$=DarqWolff],
 a.author[href$=cheesemoo],
@@ -730,6 +757,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="Jeroknite"]:before,
 a.author[href$="Unsinkablesam"]:before,
 a.author[href$="mrjoker7854"]:before,
 a.author[href$="Conky_"]:before,
@@ -811,7 +839,7 @@ a.author[href$="Qwerty439"]:before {content:"Asdfgh439"}
 a.author[href$="HtotheGRIFF"]:before {content:"faggot"}
 a.author[href$="viper9172"]:before {content:"Sidelong"}
 a.author[href$="Lazeraze"]:before {content:"Snowlily"}
-a.author[href$="31eipekili"]:before {content:"I like pie 13"}
+a.author[href$="31eipekili"]:before {content:"I like pie 13 and the name JokerTime"}
 a.author[href$="derram_2"]:before {content:"derramina Diane Pie"}
 a.author[href$="Chiv_Cortland"]:before {content:"Chivvypoop"}
 a.author[href$="442B8AEF9"]:before {content:"Socialery"}
@@ -846,6 +874,7 @@ a.author[href$=volcano_bakemeats]:before { content:"Madam Le Bake" }
 a.author[href$=DaylightDarkle]:before { content:"Twilight Sparkle" }
 a.author[href$=Chillusion]:before { content:"Cchhiilllluussiioonn" }
 a.author[href$=Esplin]:before {content:"Power User"}
+a.author[href$=Jeroknite]:before {content:"JokerTine"; font-size:15px !important}
 a.author[href$=DarqWolff]:before { content:"[](/DarqWolff)" }
 a.author[href$=cheesemoo]:before { content:"Cheesemeow" }
 a.author[href$=scriptea]:before { content:"scriptease" }
@@ -907,6 +936,7 @@ a.author[href$=Generic_Builder]:after,
 a.author[href$=volcano_bakemeats]:after,
 a.author[href$=Chillusion]:after,
 a.author[href$=Esplin]:after,
+a.author[href$=Jeroknite]:after,
 a.author[href$=waffen337]:after,
 a.author[href$=sirtophat]:after,
 a.author[href$=cheesemoo]:after,
@@ -1073,5 +1103,4 @@ body.res a.author[href$="Pathogen-David"], body.res a.author[href$="Phei"] { col
 
 /*Social wanted color*/
 .id-t2_894lr.id-t2_894lr{color:#b38 !important}
-
 
