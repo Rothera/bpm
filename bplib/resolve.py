@@ -32,20 +32,24 @@ def overrides(sorting_rules, conflict_rules, base, new, name):
     # No solution
     return None
 
-def resolve_emotes(data_manager):
-    sorting_rules = data_manager.config["Sorting"]
-    conflict_rules = data_manager.config["Conflicts"]
+def resolve_emotes(context):
+    sorting_rules = context.config["Sorting"]
+    conflict_rules = context.config["Conflicts"]
 
     # Process directives
-    for rule in data_manager.config["Generation"]:
+    for rule in context.config["Generation"]:
         cmd, args = rule[0], rule[1:]
         if cmd == "AddCSS":
             source_name, name, variant, css = args
-            data_manager.sources[source_name].emotes[name].variants[variant].css.update(css)
+            var = context.sources[source_name].emotes[name].variants[variant]
+            # HACK
+            if var.css is None:
+                var.data["CSS"] = {}
+            var.css.update(css)
         elif cmd == "MergeEmotes":
             target_name, merge, merge_tags = args
-            target = data_manager.sources[target_name]
-            target.load_data(data_manager, merge, merge_tags)
+            target = context.sources[target_name]
+            target.merge(merge, merge_tags)
         else:
             print("ERROR: Unknown directive: %r" % (rule))
 
@@ -54,17 +58,16 @@ def resolve_emotes(data_manager):
     conflicts = {}
 
     # Sort all emotes by prioritization
-    for source in data_manager.sources.values():
+    for source in context.sources.values():
         for emote in source.emotes.values():
             all_emotes.setdefault(emote.name, []).append(emote)
-            if source.is_ignored(emote, data_manager):
+            if source.is_ignored(emote):
                 continue
 
             if emote.name in emotes:
                 existing = emotes[emote.name]
-                prev_source = data_manager.emote_sources[existing]
                 # Conflict resolution: who wins?
-                result = overrides(sorting_rules, conflict_rules, prev_source.name, source.name, emote.name)
+                result = overrides(sorting_rules, conflict_rules, existing.source.name, source.name, emote.name)
                 if result is True:
                     # This one wins
                     if emote.name in conflicts:
@@ -75,7 +78,7 @@ def resolve_emotes(data_manager):
                     pass
                 elif result is None:
                     # ?!? previous source wins I guess
-                    conflicts[emote.name] = (source, prev_source)
+                    conflicts[emote.name] = (source, existing.source)
             else:
                 emotes[emote.name] = emote
 
@@ -84,7 +87,7 @@ def resolve_emotes(data_manager):
 
     return emotes, all_emotes
 
-def build_tag_map(all_emotes, data_manager):
+def build_tag_map(all_emotes, context):
     tag_id2name = []
     tag_name2id = {}
     next_id = 0
@@ -92,11 +95,10 @@ def build_tag_map(all_emotes, data_manager):
     all_tags = set()
     for (name, emote_set) in all_emotes.items():
         for emote in emote_set:
-            source = data_manager.emote_sources[emote]
-            if source.is_ignored(emote, data_manager):
+            if emote.source.is_ignored(emote):
                 continue
-            all_tags |= emote.all_tags(data_manager)
-    all_tags -= set(data_manager.tag_config["HiddenTags"])
+            all_tags |= emote.all_tags(context)
+    all_tags -= set(context.tag_config["HiddenTags"])
 
     for tag in sorted(all_tags):
         if tag not in tag_name2id:
@@ -105,7 +107,7 @@ def build_tag_map(all_emotes, data_manager):
             next_id += 1
             assert len(tag_id2name) == next_id
 
-    for (name, aliases) in data_manager.tag_config["TagAliases"].items():
+    for (name, aliases) in context.tag_config["TagAliases"].items():
         for alias in aliases:
             if alias in tag_name2id:
                 # Don't ever overwrite a tag
@@ -114,11 +116,11 @@ def build_tag_map(all_emotes, data_manager):
 
     return tag_id2name, tag_name2id
 
-def build_sr_data(data_manager):
+def build_sr_data(context):
     sr_id2name = []
     sr_name2id = {}
 
-    for (name, source) in data_manager.sources.items():
+    for (name, source) in context.sources.items():
         sr_id2name.extend((source.source_id - len(sr_id2name) + 1) * [None])
         sr_id2name[source.source_id] = name
         sr_name2id[name] = source.source_id

@@ -14,27 +14,27 @@ import itertools
 import os
 import sys
 
-import yaml
-
 import bplib
+import bplib.json
 import bplib.objects
 
-data_manager = bplib.objects.DataManager()
-data_manager.load_all_sources()
+context = bplib.objects.Context()
+context.load_config()
+context.load_sources()
 
 drops = {}
 dirty = []
-for source in data_manager.sources.values():
+for source in context.sources.values():
     # Find nonexistent emotes (before we start dropping things...)
     missing = set(source._tag_data) - set(source.emotes)
     if missing:
         print("ERROR: In %s: The following emotes have tags, but do not exist: %s" % (source.name, " ".join(missing)))
         dirty.append(source)
 
-for source in data_manager.sources.values():
-    for emote in source.dropped_emotes(data_manager):
+for source in context.sources.values():
+    for emote in source.dropped_emotes():
         if emote.tags:
-            print("WARNING: In %s: %s is tagged, but marked as +drop in %s" % (source.name, emote.name, data_manager.drops[emote.name].name))
+            print("WARNING: In %s: %s is tagged, but marked as +drop in %s" % (source.name, emote.name, context.drops[emote.name].name))
 
 def info_for(emote):
     if hasattr(emote, "info_set"):
@@ -42,10 +42,10 @@ def info_for(emote):
     return None
 
 variant_log = open("checktags-variants.log", "w")
-for source in data_manager.sources.values():
+for source in context.sources.values():
     print("%s:" % (source.name), file=variant_log)
 
-    for emote in source.unignored_emotes(data_manager):
+    for emote in source.unignored_emotes():
         # Make sure it's tagged at all
         if not emote.tags:
             print("ERROR: In %s: %s has no tags" % (source.name, emote.name))
@@ -53,7 +53,7 @@ for source in data_manager.sources.values():
 
         # Check that exclusive tags aren't being used with any other tags
         # (except where permitted)
-        for (ex, allowed) in data_manager.tag_config["ExclusiveTags"].items():
+        for (ex, allowed) in context.tag_config["ExclusiveTags"].items():
             if ex in emote.tags:
                 remaining = emote.tags - {ex} - set(allowed)
                 if remaining:
@@ -61,16 +61,16 @@ for source in data_manager.sources.values():
                     break
 
         # Check that implied tags aren't being given
-        redundant_tags = emote.tags & emote.implied_tags(data_manager)
+        redundant_tags = emote.tags & emote.implied_tags(context)
         if redundant_tags:
             print("WARNING: In %s: %s has redundant tags %s" % (source.name, emote.name, " ".join(redundant_tags)))
 
         # Check that at least one root tag is specified
-        roots = {tag for tag in emote.all_tags(data_manager) if tag in data_manager.tag_config["RootTags"]}
+        roots = {tag for tag in emote.all_tags(context) if tag in context.tag_config["RootTags"]}
         if not roots:
             print("WARNING: In %s: %s has no root tags (set: %s)" % (source.name, emote.name, " ".join(emote.tags)))
 
-    for error in source.match_variants(data_manager):
+    for error in source.match_variants():
         print("ERROR: In %s: %s" % (source.name, error))
 
     for (emote, base) in sorted(source.variant_matches.items(), key=lambda e: e[0].name):
@@ -82,6 +82,6 @@ variant_log.close()
 
 for source in dirty:
     print("NOTICE: Rewriting %s to eliminate loose tags" % (source.name))
-    path = "tags/%s.yaml" % (source.name.split("/")[-1])
+    path = "tags/%s.json" % (source.name.split("/")[-1])
     file = open(path, "w")
-    yaml.dump(source.dump_tag_data(data_manager), file)
+    bplib.json.dump(source.tag_data, file, indent=0, max_depth=1, sort_keys=True)

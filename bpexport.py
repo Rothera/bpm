@@ -11,32 +11,31 @@
 ################################################################################
 
 import argparse
-import json
+import bplib.json
 
 import bplib.objects
 import bplib.resolve
 
-def dump_json(data_manager, emotes):
+def dump_json(context, emotes):
     data = {}
     for (name, emote) in emotes.items():
-        source = data_manager.emote_sources[emote]
-        if source.variant_matches is None:
-            source.match_variants(data_manager)
-        info = encode(emote, source, data_manager)
+        if emote.source.variant_matches is None:
+            emote.source.match_variants()
+        info = encode(emote, context)
         data[name] = info
     return data
 
-def encode(emote, source, data_manager):
+def encode(emote, context):
     # Info: is_nsfw?, source, size, tags
     base = emote.base_variant()
-    root = source.variant_matches[emote]
-    all_tags = root.all_tags(data_manager) | emote.all_tags(data_manager)
+    root = emote.source.variant_matches[emote]
+    all_tags = root.all_tags(context) | emote.all_tags(context)
 
     is_nsfw = "+nsfw" in all_tags
     size = max(base.size) if hasattr(base, "size") else 0
-    emitted_tags = [tag for tag in all_tags if tag not in data_manager.tag_config["HiddenTags"]]
+    emitted_tags = [tag for tag in all_tags if tag not in context.tag_config["HiddenTags"]]
 
-    info = {"source": source.name, "tags": emitted_tags, "size": size}
+    info = {"source": emote.source.name, "tags": emitted_tags, "size": size}
     if is_nsfw:
         info["is_nsfw"] = is_nsfw
     if base.css:
@@ -53,17 +52,18 @@ def main():
     args = parser.parse_args()
 
     print("Loading emotes")
-    data_manager = bplib.objects.DataManager()
-    data_manager.load_all_sources()
+    context = bplib.objects.Context()
+    context.load_config()
+    context.load_sources()
 
     print("Processing")
-    emotes, all_emotes = bplib.resolve.resolve_emotes(data_manager)
+    emotes, all_emotes = bplib.resolve.resolve_emotes(context)
 
-    data = dump_json(data_manager, emotes)
+    data = dump_json(context, emotes)
 
     print("Dumping")
     with open(args.json, "w") as file:
-        json.dump(data, file, indent=0)
+        bplib.json.dump(data, file, indent=0, max_depth=1, sort_keys=True)
 
 if __name__ == "__main__":
     main()

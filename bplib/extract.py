@@ -48,7 +48,7 @@ def filter_ponyscript_ignores(css_rules):
         if "END-PONYSCRIPT-IGNORE" in rule.selectors:
             ignoring = False
 
-def extract_partial_emotes(css_rules):
+def extract_emote_blocks(css_rules):
     # Extracts partial emotes from a list of CSS rules.
     for rule in css_rules:
         alias_pairs = [_parse_emote_selector(s) for s in rule.selectors]
@@ -76,8 +76,8 @@ def _parse_emote_selector(selector):
     if match is None:
         return None
 
-    name = match.groupdict()["name"]
     pc1 = match.groupdict()["pc1"] or ""
+    name = match.groupdict()["name"]
     pc2 = match.groupdict()["pc2"] or ""
     sel = match.groupdict()["sel"].strip()
 
@@ -98,66 +98,61 @@ def _parse_emote_selector(selector):
     if sel:
         suffix += " " + sel
 
-    return (name, suffix.strip() or None)
+    return (name, suffix.strip())
 
-def combine_partial_emotes(partial_emotes):
+def combine_emote_blocks(emote_blocks):
     # Combines properties in partial emotes, producing a single emote map.
     emotes = {}
-    for partial in partial_emotes:
-        if partial.name not in emotes:
+    for block in emote_blocks:
+        if block.name not in emotes:
             # Newly seen emote
-            emotes[partial.name] = bplib.objects.Emote(partial.name, {partial.suffix: partial}, {}, partial.ignore)
+            emotes[block.name] = (block.ignore, {block.suffix: block})
         else:
-            existing = emotes[partial.name]
-            if existing.ignore ^ partial.ignore:
-                print("WARNING: Emote %s split across PONYSCRIPT-IGNORE block" % (partial.name))
-            existing.ignore = existing.ignore | partial.ignore
-            if partial.suffix not in existing.variants:
+            ignore, variants = emotes[block.name]
+
+            if ignore ^ block.ignore:
+                print("WARNING: Emote %s split across PONYSCRIPT-IGNORE block" % (block.name))
+            ignore |= block.ignore
+
+            if block.suffix not in variants:
                 # New suffix for an existing emote
-                existing.variants[partial.suffix] = partial
+                variants[block.suffix] = block
             else:
                 # Existing emote. Check for property overwrites
-                base = existing.variants[partial.suffix]
-                for (prop, value) in partial.css.items():
+                base = variants[block.suffix]
+                for (prop, value) in block.css.items():
                     if prop in base.css and bplib.css.prop(base.css[prop]) != bplib.css.prop(value):
                         print("WARNING: emote %r redefined property %r from base (from %r to %r)" % (
-                            bplib.combine_name_pair(partial.name, partial.suffix), prop,
-                            base.css[prop], partial.css[prop]))
-                base.css.update(partial.css)
+                            bplib.combine_name_pair(block.name, block.suffix), prop,
+                            base.css[prop], block.css[prop]))
+                base.css.update(block.css)
+
+            # Update ignore
+            emotes[block.name] = (ignore, variants)
     return emotes
 
-def check_variants(emotes):
-    # Checks that a base emote exists for all names.
-    # TODO: It might be nice to delete extra properties shared with the base
-    # emote but this could be dangerous. Consider deleting properties on a
-    # variant that are inherited (and being overridden back to default) from
-    # another variant.
-    for (name, emote) in list(emotes.items()):
-        try:
-            base = emote.base_variant()
-        except ValueError as e:
-            print("ERROR: Cannot locate base emote for %r. (Variants: %r)" % (name, list(emote.variants.keys())))
-            del emotes[name]
-            continue
-
-def classify_emotes(emotes):
+def classify_emotes(emote_data):
     # Sorts emotes based on whether or not they are "normal" emotes belonging to
     # a spritesheet, or "custom" ones possessing only arbitrary CSS.
 
-    for (name, emote) in emotes.items():
-        for (suffix, variant) in emote.variants.items():
+    emotes = {}
+    for (name, (ignore, variants)) in emote_data.items():
+        vardata = {}
+        for (suffix, block) in variants.items():
             # Required properties (background-position is semi-required)
-            if all(k in variant.css for k in ("background-image", "width", "height")):
+            if all(k in block.css for k in ("background-image", "width", "height")):
                 # Probably an emote. We could check for expected values of display/
                 # clear/float, but they're broken in a lot of places, and not worth
                 # the resulting warning spam.
-                emote.variants[suffix] = _convert_emote(name, suffix, variant)
+                vardata[suffix] = _convert_emote(name, suffix, block)
             else:
                 # Replace one class with another, essentially
-                emote.variants[suffix] = bplib.objects.CustomEmote(name, suffix, variant.css)
+                vardata[suffix] = bplib.objects.CustomVariant(name, suffix, block.css)
+        emotes[name] = bplib.objects.Emote(name, vardata, {}, ignore)
+    return emotes
 
-def _convert_emote(name, suffix, raw_emote):
-    css = raw_emote.css.copy()
+def _convert_emote(name, suffix, block):
+    css = block.css.copy()
 
     for (prop, expected_value) in [("display", "block"), ("float", "left")]:
         if prop not in css:
@@ -187,4 +182,18 @@ def _convert_emote(name, suffix, raw_emote):
     for p in css:
         print("WARNING: emote %r has unknown extra property %r (%r)" % (bplib.combine_name_pair(name, suffix), p, css[p]))
 
-    return bplib.objects.NormalEmote(name, suffix, css, image_url, size, offset)
+    return bplib.objects.NormalVariant(name, suffix, image_url, size, offset, css)
+
+def check_variants(emotes):
+    # Checks that a base emote exists for all names.
+    # TODO: It might be nice to delete extra properties shared with the base
+    # emote but this could be dangerous. Consider deleting properties on a
+    # variant that are inherited (and being overridden back to default) from
+    # another variant.
+    for (name, emote) in list(emotes.items()):
+        try:
+            base = emote.base_variant()
+        except ValueError as e:
+            print("ERROR: Cannot locate base emote for %r. (Variants: %r)" % (name, list(emote.variants.keys())))
+            del emotes[name]
+            continue

@@ -13,11 +13,10 @@
 import argparse
 import os.path
 
-import yaml
-
 import bplib
 import bplib.css
 import bplib.extract
+import bplib.json
 import bplib.objects
 
 def main():
@@ -28,20 +27,21 @@ def main():
 
     sr_key = os.path.splitext(os.path.basename(args.css.name))[0]
 
-    data_manager = bplib.objects.DataManager()
-    ext_config = data_manager.config["Extraction"].get(sr_key, {})
+    context = bplib.objects.Context()
+    context.load_config()
+    ext_config = context.config["Extraction"].get(sr_key, {})
 
     css_rules = list(bplib.css.parse_css_file(args.css))
     if ext_config.get("RespectIgnore", True):
         bplib.extract.filter_ponyscript_ignores(css_rules)
-    partial_emotes = bplib.extract.extract_partial_emotes(css_rules)
-    emotes = bplib.extract.combine_partial_emotes(partial_emotes)
+    emote_blocks = bplib.extract.extract_emote_blocks(css_rules)
+    emote_data = bplib.extract.combine_emote_blocks(emote_blocks)
+    emotes = bplib.extract.classify_emotes(emote_data)
     bplib.extract.check_variants(emotes)
-    bplib.extract.classify_emotes(emotes)
 
     source = bplib.objects.Source("r/" + sr_key, emotes)
 
-    yaml.dump(source.dump_emote_data(), args.emotes)
+    bplib.json.dump(source.dump(), args.emotes, indent=2, max_depth=1, sort_keys=True)
 
 if __name__ == "__main__":
     main()

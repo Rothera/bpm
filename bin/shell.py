@@ -146,7 +146,7 @@ def cmd_extract(args):
     for (i, sr) in enumerate(args.subreddits):
         print("[%s/%s]: %s" % (i+1, len(args.subreddits), sr))
         # TODO: Don't hardcode relative paths...
-        subprocess.call(["./bpextract.py", "minified-css/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
+        subprocess.call(["./bpextract.py", "minified-css/%s.css" % (sr), "emotes/%s.json" % (sr)])
 
 def cmd_extractall(args):
     parser = argparse.ArgumentParser(description="Re-extract all emotes", prog="extractall")
@@ -160,7 +160,7 @@ def cmd_extractall(args):
         print("[%s/%s]: %s" % (i+1, len(subreddits), sr))
         sys.stdout.flush() # So the output doesn't get out of order
         # TODO: Don't hardcode relative paths...
-        subprocess.call(["./bpextract.py", "minified-css/%s.css" % (sr), "emotes/%s.yaml" % (sr)])
+        subprocess.call(["./bpextract.py", "minified-css/%s.css" % (sr), "emotes/%s.json" % (sr)])
 
 def cmd_diff(args):
     parser = argparse.ArgumentParser(description="Run diff program on stylesheets, emotes, and tags", prog="diff")

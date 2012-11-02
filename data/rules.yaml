@@ -98,21 +98,23 @@ Extraction:
 
 Generation:
   # Fix /rcrossfire not actually being reversed
-  - [AddCSS, r/mlas1emotes, /rcrossfire, null, {"-moz-transform": scaleX(-1), "-webkit-transform": scaleX(-1), "-o-transform": scaleX(-1), transform: scaleX(-1)}]
+  - [AddCSS, r/mlas1emotes, /rcrossfire, "", {"-moz-transform": scaleX(-1), "-webkit-transform": scaleX(-1), "-o-transform": scaleX(-1), transform: scaleX(-1)}]
 
   # r/mlp removed these, so put them back as a compat hack
   - - MergeEmotes
     - r/mylittlepony
     - /rdsad:
-        null:
-          Image: http://f.thumbs.redditmedia.com/0eHLtku13olw-nLM.png
-          Offset: [-140, -350]
-          Size: [70, 70]
+        Emotes:
+          "":
+            Image: http://f.thumbs.redditmedia.com/0eHLtku13olw-nLM.png
+            Offset: [-140, -350]
+            Size: [70, 70]
       /rrdsad:
-        null:
-          Image: http://a.thumbs.redditmedia.com/upicooe6wp8FpQ80.png
-          Offset: [-140, -350]
-          Size: [70, 70]
+        Emotes:
+          "":
+            Image: http://a.thumbs.redditmedia.com/upicooe6wp8FpQ80.png
+            Offset: [-140, -350]
+            Size: [70, 70]
     - /rdsad: [+drop, +hidden, +v]
       /rrdsad: [+drop, +v]
 
@@ -120,25 +122,29 @@ Generation:
   - - MergeEmotes
     - r/mylittleandysonic1
     - /today:
-        null:
-          Image: http://d.thumbs.redditmedia.com/dN7SE1I0H0ul7jP-.png
-          Offset: [0, 0]
-          Size: [500, 270]
+        Emotes:
+          "":
+            Image: http://d.thumbs.redditmedia.com/dN7SE1I0H0ul7jP-.png
+            Offset: [0, 0]
+            Size: [500, 270]
       /imamakethisanemoterealquick:
-        null:
-          Image: http://e.thumbs.redditmedia.com/reUrhLuICVFtwobp.png
-          Offset: [0, 0]
-          Size: [456, 304]
+        Emotes:
+          "":
+            Image: http://e.thumbs.redditmedia.com/reUrhLuICVFtwobp.png
+            Offset: [0, 0]
+            Size: [456, 304]
       /buzzkillturtle:
-        null:
-          Image: http://f.thumbs.redditmedia.com/qi35qdw2_kvnMUcq.png
-          Offset: [0, 0]
-          Size: [621, 511]
+        Emotes:
+          "":
+            Image: http://f.thumbs.redditmedia.com/qi35qdw2_kvnMUcq.png
+            Offset: [0, 0]
+            Size: [621, 511]
       /horseporn:
-        null:
-          Image: http://f.thumbs.redditmedia.com/qi35qdw2_kvnMUcq.png
-          Offset: [0, 0]
-          Size: [621, 511]
+        Emotes:
+          "":
+            Image: http://f.thumbs.redditmedia.com/qi35qdw2_kvnMUcq.png
+            Offset: [0, 0]
+            Size: [621, 511]
     - /today: [+pinkiepie, +animote]
       /imamakethisanemoterealquick: [+shrug]
       /buzzkillturtle: [+nsfw, +pinkiepie, +derpy]
@@ -148,15 +154,17 @@ Generation:
   - - MergeEmotes
     - r/mylittlewtf
     - /raeptime:
-        null:
-          Image: http://thumbs.reddit.com/t5_2sy9j_3.png
-          Offset: [0, 0]
-          Size: [422, 473]
+        Emotes:
+          "":
+            Image: http://thumbs.reddit.com/t5_2sy9j_3.png
+            Offset: [0, 0]
+            Size: [422, 473]
       /drama:
-        null:
-          Image: http://thumbs.reddit.com/t5_2sy9j_5.png
-          Offset: [0, 0]
-          Size: [433, 298]
+        Emotes:
+          "":
+            Image: http://thumbs.reddit.com/t5_2sy9j_5.png
+            Offset: [0, 0]
+            Size: [433, 298]
     - /raeptime: [+rainbowdash]
       /drama: [+rarity]
 
@@ -164,10 +172,11 @@ Generation:
   - - MergeEmotes
     - r/mylittlesh
     - /rscheer:
-        null:
-          Image: http://d.thumbs.redditmedia.com/3hErANn4rqVDeXao.png
-          Offset: [0, 0]
-          Size: [175, 175]
+        Emotes:
+          "":
+            Image: http://d.thumbs.redditmedia.com/3hErANn4rqVDeXao.png
+            Offset: [0, 0]
+            Size: [175, 175]
     - /rscheer: [+ocpony]
 
 Sorting:

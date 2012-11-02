@@ -12,7 +12,7 @@
 
 import re
 
-class CssRule:
+class CssRule(object):
     def __init__(self, selectors, properties, ignore=False):
         self.selectors = selectors
         self.properties = properties

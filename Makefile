@@ -11,7 +11,7 @@ www/opera-updates.xml: build/betterponymotes.oex
 www/betterponymotes.update.rdf www/opera-updates.xml:
 	bin/gen_update_files.py `bin/version.py get`
 
-build/emote-classes.css build/bpm-data.js: bpgen.py emotes/*.yaml data/rules.yaml
+build/emote-classes.css build/bpm-data.js: bpgen.py emotes/*.json data/rules.yaml
 	./bpgen.py
 
 build/betterponymotes.xpi: build/emote-classes.css build/bpm-data.js firefox/data/* firefox/package.json firefox/lib/main.js

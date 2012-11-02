@@ -22,9 +22,9 @@ import urllib
 
 import flask
 from flask import request
-import yaml
 
 import bplib
+import bplib.json
 import bplib.objects
 import bpgen
 
@@ -40,34 +40,32 @@ def info_for(emote):
 def make_tag_list():
     global all_tags
     tmp = set()
-    for source in data_manager.sources.values():
+    for source in context.sources.values():
         for emote in source.emotes.values():
             tmp |= emote.tags
     all_tags = sorted(tmp)
 
-data_manager = bplib.objects.DataManager()
-data_manager.load_all_sources()
+context = bplib.objects.Context()
+context.load_config()
+context.load_sources()
 make_tag_list()
 
 def sync_tags(source):
-    path = "tags/%s.yaml" % (source.name.split("/")[-1])
+    path = "tags/%s.json" % (source.name.split("/")[-1])
     file = open(path, "w")
-    yaml.dump(source.dump_tag_data(data_manager), file)
+    bplib.json.dump(source.dump_tags(), file, indent=0, max_depth=1, sort_keys=True)
 
 def get_css(source_name):
     if source_name not in css_cache:
-        css_rules = bpgen.build_css(data_manager.sources[source_name].emotes.values())
+        css_rules = bpgen.build_css(context.sources[source_name].emotes.values())
         stream = StringIO.StringIO()
         bpgen.dump_css(stream, css_rules)
         css_cache[source_name] = stream.getvalue()
     return css_cache[source_name]
 
-def url_quote(s):
-    return urllib.quote(s, "")
-
 app = flask.Flask(__name__, static_folder="tagapp-static", static_url_path="/static")
 app.jinja_env.globals["sorted"] = sorted
-app.jinja_env.globals["urlquote"] = url_quote
+app.jinja_env.globals["urlquote"] = lambda s: urllib.quote(s, "")
 
 secret_key = "".join(random.choice(string.letters) for _ in range(32))
 print("SECRET KEY: %s" % (secret_key))
@@ -86,13 +84,13 @@ def requires_auth(f):
 
 @app.route("/")
 def index():
-    return flask.render_template("index.html", sources=sorted(data_manager.sources), all_tags=all_tags)
+    return flask.render_template("index.html", sources=sorted(context.sources), all_tags=all_tags)
 
 @app.route("/source/<source_name>")
 def tag(source_name):
     source_name = urllib.unquote(str(source_name))
-    source = data_manager.sources[source_name]
-    emotes = list(source.undropped_emotes(data_manager))
+    source = context.sources[source_name]
+    emotes = list(source.undropped_emotes())
     given_emotes = {}
     for emote in emotes:
         info = info_for(emote)
@@ -106,11 +104,12 @@ def tag(source_name):
 def write(source_name):
     source_name = urllib.unquote(str(source_name))
     data = json.loads(request.form["tags"])
-    source = data_manager.sources[source_name]
+    source = context.sources[source_name]
     for (name, tags) in data.items():
         assert isinstance(name, unicode)
         assert isinstance(tags, list) and all([isinstance(r, unicode) for r in tags])
-        source.emotes[str(name)].tags = set(map(str, tags))
+        emote = source.emotes[str(name)]
+        emote.tags = set(map(str, tags))
     sync_tags(source)
     make_tag_list()
     return flask.redirect(flask.url_for("index"))
@@ -124,9 +123,9 @@ def css(source_name):
 def taginfo(tag):
     tag = str(tag)
     data = {}
-    for source in data_manager.sources.values():
+    for source in context.sources.values():
         data[source] = []
-        for emote in source.unignored_emotes(data_manager):
+        for emote in source.unignored_emotes():
             if tag in emote.tags:
                 data[source].append(emote)
         data[source].sort(key=lambda e: e.name)
@@ -142,12 +141,11 @@ def rename_tag(tag):
     to = str(request.form["to"])
     if not to.startswith("+"):
         to = "+" + to
-    for (source_name, source) in data_manager.sources.items():
+    for (source_name, source) in context.sources.items():
         dirty = False
         for (name, emote) in source.emotes.items():
             if tag in emote.tags:
-                emote.tags.remove(tag)
-                emote.tags.add(to)
+                emote.tags = emote.tags - {tag} | {to}
                 dirty = True
         if dirty:
             sync_tags(source)
@@ -163,11 +161,11 @@ def delete_tag(tag):
     tag = str(tag)
     if not tag.startswith("+"):
         tag = "+" + tag
-    for (source_name, source) in data_manager.source.items():
+    for (source_name, source) in context.source.items():
         dirty = False
         for (name, emote) in source.emotes.items():
             if tag in emote.tags:
-                emote.tags.remove(tag)
+                emote.tags = emote.tags - {tag}
                 dirty = True
         if dirty:
             sync_tags(source)

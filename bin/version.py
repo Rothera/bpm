@@ -15,7 +15,7 @@ import json
 
 import lxml.etree
 
-class JsonSource:
+class JsonSource(object):
     def __init__(self, filename, key):
         self.filename = filename
         self.key = key
@@ -29,7 +29,7 @@ class JsonSource:
     def save(self):
         json.dump(self.data, open(self.filename, "w"), sort_keys=True, indent=4)
 
-class XmlSource:
+class XmlSource(object):
     def __init__(self, filename, get_ver):
         self.filename = filename
 

@@ -19,25 +19,24 @@ import bplib.condense
 import bplib.objects
 import bplib.resolve
 
-def build_js_map(data_manager, emotes, all_emotes, tag_name2id):
+def build_js_map(context, emotes, all_emotes, tag_name2id):
     emote_map = {}
     for (name, emote) in emotes.items():
-        source = data_manager.emote_sources[emote]
         assert name not in emote_map
-        if source.variant_matches is None:
-            source.match_variants(data_manager)
-        data = encode(data_manager, source, emote, all_emotes, tag_name2id)
+        if emote.source.variant_matches is None:
+            emote.source.match_variants()
+        data = encode(context, emote.source, emote, all_emotes, tag_name2id)
         emote_map[name] = data
     return emote_map
 
 FLAG_NSFW = 1
 FLAG_REDIRECT = 1 << 1
 
-def encode(data_manager, source, emote, all_emotes, tag_name2id):
+def encode(context, source, emote, all_emotes, tag_name2id):
     # FFFFFFF,SsSsSs,TtTtTtTt[,/base-name]
     base = emote.base_variant()
     root = source.variant_matches[emote]
-    all_tags = root.all_tags(data_manager) | emote.all_tags(data_manager)
+    all_tags = root.all_tags(context) | emote.all_tags(context)
 
     # F-FF-FFFF = flags, primary source id, and size
     is_nsfw = "+nsfw" in all_tags
@@ -53,13 +52,13 @@ def encode(data_manager, source, emote, all_emotes, tag_name2id):
     assert len(flag_data) == 7
 
     # Ss = source id list
-    sources = [data_manager.emote_sources[e] for e in all_emotes[emote.name]]
+    sources = [e.source for e in all_emotes[emote.name]]
     source_ids = sorted(s.source_id for s in sources)
     assert all(id < 0xff for id in source_ids) # One byte per
     source_data = "".join("%02x" % id for id in source_ids)
 
     # Tt = tag id list
-    emitted_tags = [tag for tag in all_tags if tag not in data_manager.tag_config["HiddenTags"]]
+    emitted_tags = [tag for tag in all_tags if tag not in context.tag_config["HiddenTags"]]
     tag_ids = sorted(tag_name2id[tag] for tag in emitted_tags)
     assert all(id < 0xff for id in tag_ids) # One byte per
     tag_data = "".join("%02x" % id for id in tag_ids)
@@ -112,7 +111,7 @@ def dump_js_data(file, js_map, sr_id2name, sr_name2id, tag_id2name, tag_name2id)
 
 def _dump_js_obj(file, var_name, obj):
     file.write("var %s = " % (var_name))
-    json.dump(obj, file, indent=0, separators=(",", ":"))
+    json.dump(obj, file, indent=0, separators=(",", ":"), sort_keys=True)
     file.write(";\n")
 
 def main():
@@ -123,15 +122,16 @@ def main():
     args = parser.parse_args()
 
     print("Loading emotes")
-    data_manager = bplib.objects.DataManager()
-    data_manager.load_all_sources()
+    context = bplib.objects.Context()
+    context.load_config()
+    context.load_sources()
 
     print("Processing")
-    emotes, all_emotes = bplib.resolve.resolve_emotes(data_manager)
-    tag_id2name, tag_name2id = bplib.resolve.build_tag_map(all_emotes, data_manager)
-    sr_id2name, sr_name2id = bplib.resolve.build_sr_data(data_manager)
+    emotes, all_emotes = bplib.resolve.resolve_emotes(context)
+    tag_id2name, tag_name2id = bplib.resolve.build_tag_map(all_emotes, context)
+    sr_id2name, sr_name2id = bplib.resolve.build_sr_data(context)
 
-    js_map = build_js_map(data_manager, emotes, all_emotes, tag_name2id)
+    js_map = build_js_map(context, emotes, all_emotes, tag_name2id)
     css_rules = build_css(emotes.values())
     if not args.no_compress:
         bplib.condense.condense_css(css_rules)
