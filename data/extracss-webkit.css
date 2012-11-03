@@ -347,4 +347,28 @@
 .bpflag-rotate, .bpflag-lrotate {-webkit-animation:zspin 2s infinite linear}
 .bpflag-rrotate, .bpflag-lrrotate {-webkit-animation:znips 2s infinite linear}
 
+@-webkit-keyframes slide{0%{left:0%;-webkit-transform:scaleX(1)}46%{left:60%;-webkit-transform:scaleX(1)}50%{left:60%;-webkit-transform:scaleX(-1)}96%{left:0%;-webkit-transform:scaleX(-1)}100%{left:0%;-webkit-transform:scaleX(1)}}
+@-webkit-keyframes slide-r{0%{left:0%;-webkit-transform:scaleX(-1)}46%{left:60%;-webkit-transform:scaleX(-1)}50%{left:60%;-webkit-transform:scaleX(1)}96%{left:0%;-webkit-transform:scaleX(1)}100%{left:0%;-webkit-transform:scaleX(-1)}}
+@-webkit-keyframes edils{0%{left:60%;-webkit-transform:scaleX(-1)}46%{left:0%;-webkit-transform:scaleX(-1)}50%{left:0%;-webkit-transform:scaleX(1)}96%{left:60%;-webkit-transform:scaleX(1)}100%{left:60%;-webkit-transform:scaleX(-1)}}
+@-webkit-keyframes edils-r{0%{left:60%;-webkit-transform:scaleX(1)}46%{left:0%;-webkit-transform:scaleX(1)}50%{left:0%;-webkit-transform:scaleX(-1)}96%{left:60%;-webkit-transform:scaleX(-1)}100%{left:60%;-webkit-transform:scaleX(1)}}
+/*== -slide ==*/
+.bpflag-slide{position:relative;-webkit-animation:slide 8s infinite ease}
+.bpflag-r.bpflag-slide{position:relative;-webkit-animation:slide-r 8s infinite ease}
+/*== -shift ==*/
+.bpflag-shift{position:relative;-webkit-animation:slide 8s infinite linear}
+.bpflag-r.bpflag-shift{position:relative;-webkit-animation:slide-r 8s infinite linear}
+/*== -edils ==*/
+.bpflag-edils{position:relative;-webkit-animation:edils 8s infinite ease}
+.bpflag-r.bpflag-edils{position:relative;-webkit-animation:edils-r 8s infinite ease}
+/*== -tfish ==*/
+.bpflag-tfish{position:relative;-webkit-animation:edils 8s infinite linear}
+.bpflag-r.bpflag-tfish{position:relative;-webkit-animation:edils-r 8s infinite linear}
+/*== time ==*/
+.bpflag-fast{-webkit-animation-duration:6s}
+.bpflag-faster{-webkit-animation-duration:4s}
+.bpflag-fastest{-webkit-animation-duration:2s}
+.bpflag-slow{-webkit-animation-duration:10s}
+.bpflag-slower{-webkit-animation-duration:12s}
+.bpflag-slowest{-webkit-animation-duration:14s}
+
 .md{overflow-y:hidden !important}

@@ -393,4 +393,31 @@
 .bpflag-rotate, .bpflag-lrotate {-o-animation:zspin 2s infinite linear;image-rendering:-o-crisp-edges}
 .bpflag-rrotate, .bpflag-lrrotate {-o-animation:znips 2s infinite linear;image-rendering:-o-crisp-edges}
 
+/* Something about these animations makes emotes vanish */
+/*
+@-o-keyframes slide{0%{left:0%;-o-transform:scaleX(1)}46%{left:60%;-o-transform:scaleX(1)}50%{left:60%;-o-transform:scaleX(-1)}96%{left:0%;-o-transform:scaleX(-1)}100%{left:0%;-o-transform:scaleX(1)}}
+@-o-keyframes slide-r{0%{left:0%;-o-transform:scaleX(-1)}46%{left:60%;-o-transform:scaleX(-1)}50%{left:60%;-o-transform:scaleX(1)}96%{left:0%;-o-transform:scaleX(1)}100%{left:0%;-o-transform:scaleX(-1)}}
+@-o-keyframes edils{0%{left:60%;-o-transform:scaleX(-1)}46%{left:0%;-o-transform:scaleX(-1)}50%{left:0%;-o-transform:scaleX(1)}96%{left:60%;-o-transform:scaleX(1)}100%{left:60%;-o-transform:scaleX(-1)}}
+@-o-keyframes edils-r{0%{left:60%;-o-transform:scaleX(1)}46%{left:0%;-o-transform:scaleX(1)}50%{left:0%;-o-transform:scaleX(-1)}96%{left:60%;-o-transform:scaleX(-1)}100%{left:60%;-o-transform:scaleX(1)}}
+/*== -slide ==* /
+.bpflag-slide{position:relative;-o-animation:slide 8s infinite ease}
+.bpflag-r.bpflag-slide{position:relative;-o-animation:slide-r 8s infinite ease}
+/*== -shift ==* /
+.bpflag-shift{position:relative;-o-animation:slide 8s infinite linear}
+.bpflag-r.bpflag-shift{position:relative;-o-animation:slide-r 8s infinite linear}
+/*== -edils ==* /
+.bpflag-edils{position:relative;-o-animation:edils 8s infinite ease}
+.bpflag-r.bpflag-edils{position:relative;-o-animation:edils-r 8s infinite ease}
+/*== -tfish ==* /
+.bpflag-tfish{position:relative;-o-animation:edils 8s infinite linear}
+.bpflag-r.bpflag-tfish{position:relative;-o-animation:edils-r 8s infinite linear}
+/*== time ==* /
+.bpflag-fast{-o-animation-duration:6s}
+.bpflag-faster{-o-animation-duration:4s}
+.bpflag-fastest{-o-animation-duration:2s}
+.bpflag-slow{-o-animation-duration:10s}
+.bpflag-slower{-o-animation-duration:12s}
+.bpflag-slowest{-o-animation-duration:14s}
+*/
+
 .md{overflow-y:hidden !important}

@@ -343,4 +343,28 @@
 .bpflag-rotate, .bpflag-lrotate {animation:zspin 2s infinite linear}
 .bpflag-rrotate, .bpflag-lrrotate {animation:znips 2s infinite linear}
 
+@keyframes slide{0%{left:0%;transform:scaleX(1)}46%{left:60%;transform:scaleX(1)}50%{left:60%;transform:scaleX(-1)}96%{left:0%;transform:scaleX(-1)}100%{left:0%;transform:scaleX(1)}}
+@keyframes slide-r{0%{left:0%;transform:scaleX(-1)}46%{left:60%;transform:scaleX(-1)}50%{left:60%;transform:scaleX(1)}96%{left:0%;transform:scaleX(1)}100%{left:0%;transform:scaleX(-1)}}
+@keyframes edils{0%{left:60%;transform:scaleX(-1)}46%{left:0%;transform:scaleX(-1)}50%{left:0%;transform:scaleX(1)}96%{left:60%;transform:scaleX(1)}100%{left:60%;transform:scaleX(-1)}}
+@keyframes edils-r{0%{left:60%;transform:scaleX(1)}46%{left:0%;transform:scaleX(1)}50%{left:0%;transform:scaleX(-1)}96%{left:60%;transform:scaleX(-1)}100%{left:60%;transform:scaleX(1)}}
+/*== -slide ==*/
+.bpflag-slide{position:relative;animation:slide 8s infinite ease}
+.bpflag-r.bpflag-slide{position:relative;animation:slide-r 8s infinite ease}
+/*== -shift ==*/
+.bpflag-shift{position:relative;animation:slide 8s infinite linear}
+.bpflag-r.bpflag-shift{position:relative;animation:slide-r 8s infinite linear}
+/*== -edils ==*/
+.bpflag-edils{position:relative;animation:edils 8s infinite ease}
+.bpflag-r.bpflag-edils{position:relative;animation:edils-r 8s infinite ease}
+/*== -tfish ==*/
+.bpflag-tfish{position:relative;animation:edils 8s infinite linear}
+.bpflag-r.bpflag-tfish{position:relative;animation:edils-r 8s infinite linear}
+/*== time ==*/
+.bpflag-fast{animation-duration:6s}
+.bpflag-faster{animation-duration:4s}
+.bpflag-fastest{animation-duration:2s}
+.bpflag-slow{animation-duration:10s}
+.bpflag-slower{animation-duration:12s}
+.bpflag-slowest{animation-duration:14s}
+
 .md{overflow-y:hidden !important}
