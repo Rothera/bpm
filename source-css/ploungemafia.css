@@ -183,10 +183,6 @@ a[href|="/sp"] {
     padding-right: 100%
     }
 
-/* Background for mafia win. */
-
-body { background: url(%%mafiawin%%) no-repeat fixed bottom center; }
-
 /* RES nightmode flair fix */
 
 .res-nightmode .tagline .flair {
@@ -202,19 +198,10 @@ color: white !important;
 }
 
 /* spoiler tags*/
-a[href|="#spoiler"] {
-width: 16px;
-height: 16px;
-display: block;
-font-size: 0px;
-content: "";
-background-color: black
-}
-a[href|="#spoiler"]:focus {
-width: auto;
-height: auto;
-display: inline-block;
-color: white !important;
-font-size: 12px;
-background-color: black
-}
+a[href$="/spoiler"] {
+    background: #000 !important;
+    color: #000 !important
+    }
+a[href$="/spoiler"]:hover {
+    color: #FFF !important
+    }
