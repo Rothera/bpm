@@ -2414,9 +2414,11 @@ var bpm_core = bpm_exports.core = {
         // Add emote click blocker
         document.body.addEventListener("click", bpm_utils.catch_errors(function(event) {
             var element = event.target;
-            if(element.classList.contains("bpm-emote")) {
+            if(element.classList.contains("bpm-emote") || element.classList.contains("bpm-unknown")) {
                 event.preventDefault();
+            }
 
+            if(element.classList.contains("bpm-emote")) {
                 // Click toggle
                 var state = element.getAttribute("data-bpm_state") || "";
                 var is_nsfw_disabled = state.indexOf("1") > -1; // NSFW
