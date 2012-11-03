@@ -8,11 +8,11 @@
 // @include https://*/*
 // @name BetterPonymotes
 // @namespace http://rainbow.mlas1.us/
-// @require bpm-data.js?p=2&dver=72
+// @require bpm-data.js?p=2&dver=73
 // @require pref-setup.js?p=2&cver=45
 // @run-at document-start
 // @updateURL http://rainbow.mlas1.us/betterponymotes.user.js
-// @version 45.72
+// @version 45.73
 // ==/UserScript==
 
 /*******************************************************************************
@@ -36,7 +36,7 @@ var emote_map, sr_name2id, sr_id2name, tag_name2id, tag_id2name, bpm_backendsupp
 "use strict";
 
 var BPM_CODE_VERSION = "45";
-var BPM_DATA_VERSION = "72";
+var BPM_DATA_VERSION = "73";
 var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us";
 var BPM_OPTIONS_PAGE = BPM_RESOURCE_PREFIX + "/options.html";
 
