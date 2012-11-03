@@ -50,6 +50,9 @@ context.load_config()
 context.load_sources()
 make_tag_list()
 
+for source in context.sources.values():
+    source.group_emotes()
+
 def sync_tags(source):
     path = "tags/%s.json" % (source.name.split("/")[-1])
     file = open(path, "w")
@@ -91,14 +94,8 @@ def tag(source_name):
     source_name = urllib.unquote(str(source_name))
     source = context.sources[source_name]
     emotes = list(source.undropped_emotes())
-    given_emotes = {}
-    for emote in emotes:
-        info = info_for(emote)
-        given_emotes.setdefault(info, []).append(emote)
-    for info in given_emotes:
-        given_emotes[info].sort()
     tags = {emote.name: sorted(emote.tags) for emote in emotes}
-    return flask.render_template("tag.html", source=source, given_emotes=sorted(given_emotes.items()), tags=tags)
+    return flask.render_template("tag.html", source=source, given_emotes=sorted(source.emote_groups.items()), tags=tags)
 
 @app.route("/source/<source_name>/write", methods=["POST"])
 def write(source_name):

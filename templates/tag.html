@@ -33,7 +33,7 @@
         </form>
 
         {% for (szinfo, emotes) in given_emotes -%}
-          <!-- {{szinfo}} -->
+          <!-- {{szinfo|safe}} -->
           {%- for emote in emotes -%}
         <div class="row emote">
           <span class="image {{emote.base_variant().selector()[1:]}}"></span>
@@ -46,6 +46,7 @@
           </div>
         </div>
           {%- endfor %}
+        <hr>
         {% endfor -%}
 
         <a href="#top"><h2>Top</h2></a>

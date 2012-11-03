@@ -57,6 +57,7 @@ class Source(object):
         self.context = context
 
         self.variant_matches = None
+        self.emote_groups = None
         self._tag_data = {} # For checktags
 
     def merge(self, emote_data, tag_data):
@@ -118,6 +119,22 @@ class Source(object):
             if self.is_ignored(emote):
                 continue
             yield emote
+
+    def group_emotes(self):
+        groups = {}
+        for emote in self.unignored_emotes():
+            base = emote.base_variant()
+            if emote.name[:2].lower() == "/r":
+                # Try to follow reversed emotes back to the unreversed name
+                r_emote = self.emotes.get("/" + emote.name[2:])
+                if r_emote is not None and not self.is_ignored(r_emote):
+                    base = r_emote.base_variant()
+            if hasattr(base, "info_set"):
+                info = base.info_set()
+            else:
+                info = None # Custom emote
+            groups.setdefault(info, []).append(emote)
+        self.emote_groups = groups
 
     def match_variants(self):
         core_emotes, variants = {}, []
