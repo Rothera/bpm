@@ -83,7 +83,11 @@ class Source(object):
         return {name: emote.dump() for (name, emote) in self.emotes.items()}
 
     def dump_tags(self):
-        return {name: sorted(emote.tags) for (name, emote) in self.emotes.items()}
+        data = {}
+        for (name, emote) in self.emotes.items():
+            if emote.tags:
+                data[name] = sorted(emote.tags)
+        return data
 
     def dropped_emotes(self):
         # Returns emotes with +drop

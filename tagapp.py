@@ -158,7 +158,7 @@ def delete_tag(tag):
     tag = str(tag)
     if not tag.startswith("+"):
         tag = "+" + tag
-    for (source_name, source) in context.source.items():
+    for (source_name, source) in context.sources.items():
         dirty = False
         for (name, emote) in source.emotes.items():
             if tag in emote.tags:
