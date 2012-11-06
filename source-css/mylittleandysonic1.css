@@ -1,13 +1,13 @@
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
    
-     background:  url(%%hello%%)  no-repeat  fixed 73% 100% !important;
+     background:  url(%%bubble%%)  no-repeat  fixed 60% 100% !important;
   
 } 
 
 /* Banner Image */
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%meatbannerpony%%); 
+   background: url(%%woobanner%%); 
   background-color: #e0d3c1 !important;
    /*   margin-top: -20px;*/
    background-repeat: no-repeat;
@@ -53,22 +53,23 @@ body:first-of-type, body.res-nightmode:first-of-type {
     color: white;
     padding: 5px
     }
-.tabmenu {
+
+.tabmenu:not(.formtab) {
     margin-top: 220px; /* 223 for meat's nice banner */
     margin-left: 505px
     }
 
-.tabmenu li a {
+.tabmenu:not(.formtab) li a {
     color: #000000;
     background-color: #ffffff;
     border: 0px solid black
     }
+
 #header {
     border-bottom: 1px solid #000000;
     position: relative;
     z-index: 99
     }
-
 .pagename a:after {
     content: "  and Fwiends";
     display: inline-block;
@@ -203,6 +204,47 @@ visibility: hidden;
 display: none
 }
 
+/*SUBMISSION PAGE INSTRUCTIONS*/
+.titlebox .usertext-body .md ul {
+    display: none
+    }
+.submit-page .titlebox .usertext-body .md ul {
+    position: absolute;
+    top: 140px;
+    left: 0px;
+    margin: 0px 0px 0px 10px;
+    display: inline-block;
+    list-style-type: none
+    }
+.titlebox .usertext-body .md ul li {
+    padding: 3px 5px 3px 5px;
+    font-size: small
+    }
+.titlebox .usertext-body .md ul li:last-child {
+    width: 508px;
+    background-color: #F6A39F;
+    border: 1px solid #FF7700
+    }
+.res-nightmode .titlebox .usertext-body .md ul li:last-child {
+    color: #ccc;
+    background-color: transparent
+    }
+.titlebox .usertext-body .md ul li a:hover {
+    color: #F22929
+    }
+.formtabs-content .spacer:first-child:before {
+    /* "Dynamic" vertical positioning of the stuff after the red box */
+    content: "If your content is NSFW,  tag it! If it is furry, yiff, scat, contains spoilers or induces feels, add link flair as accordingly.";
+    font-size: small;
+    color: white;
+    }
+.res-nightmode .formtabs-content .spacer:first-child:before {
+    color: #222
+    }
+.formtabs-content .spacer:first-child {
+    margin-top: 10px
+    } 
+
 /**********************/
 /*********Flair**********/
 /**********************/
@@ -329,13 +371,14 @@ background-repeat: no-repeat;
 .flair-catman:after {height: 28px; background-position: 0px - 3062px }
 .flair-Lazeraze:after { background-position: 0px - 3090px }
 .flair-crunchy:after { background-position: 0px - 3120px }
-.flair-3p:after { background-position: 0px - 3150px }
+.flair-cuttershy:after { background-position: 0px - 3150px }
 .flair-Fortehlulz33:after { background-position: 0px -3180px }
 .flair-IronChewbacca:after { background-position: 0px -3210px }
 .flair-whisperingsage:after { background-position: 0px -3240px }
 .flair-applesnacks:after { background-position: 0px -3270px }
 .flair-mav:after { background-position: 0px -3300px }
 .flair-SwiftSkii:after { background-position: 0px -3330px }
+.flair-3p:after { background-position: 0px -3360px }
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
 
@@ -684,6 +727,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 /* Replacing somebody's name? Add it to the list here. */
 a.author[href$="Unsinkablesam"],
+a.author[href$="Sponce"],
 a.author[href$="mrjoker7854"],
 a.author[href$="Conky_"],
 a.author[href$="PartOfAShoe"],
@@ -749,6 +793,7 @@ a.author[href$=herabek],
 a.author[href$=OneOfTheseDaysLuna],
 a.author[href$=ZZW30],
 a.author[href$=Zovistograt]
+
 { 
 font-size:0!important; 
 overflow:hidden; 
@@ -759,6 +804,7 @@ content: "";
 /* Replacing somebody's name? Add it to the list here too. */
 a.author[href$="Jeroknite"]:before,
 a.author[href$="Unsinkablesam"]:before,
+a.author[href$="Sponce"]:before,
 a.author[href$="mrjoker7854"]:before,
 a.author[href$="Conky_"]:before,
 a.author[href$="PartOfAShoe"]:before,
@@ -830,6 +876,7 @@ visibility:visible!important;
 
 /* Replacing somebody's name? Put the replacement here. */
 a.author[href$="Unsinkablesam"]:before {content:"The Go-Go Train"}
+a.author[href$="Sponce"]:before {content:"Space"}
 a.author[href$="mrjoker7854"]:before {content:"Pinkie Scratchtacularin"}
 a.author[href$="Conky_"]:before {content:"Conky"}
 a.author[href$="PartOfAShoe"]:before {content:"Welt"}
@@ -1103,4 +1150,3 @@ body.res a.author[href$="Pathogen-David"], body.res a.author[href$="Phei"] { col
 
 /*Social wanted color*/
 .id-t2_894lr.id-t2_894lr{color:#b38 !important}
-
