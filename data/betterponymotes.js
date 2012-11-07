@@ -771,8 +771,7 @@ case "firefox-ext":
             break;
 
         case "custom_css":
-            bpm_browser.add_css(message.css);
-            bpm_prefs.got_custom_emotes(message.emotes);
+            bpm_prefs.got_custom_emotes(message.emotes, message.css);
             break;
 
         default:
@@ -804,8 +803,7 @@ case "chrome-ext":
                 break;
 
             case "custom_css":
-                bpm_browser.add_css(message.css);
-                bpm_prefs.got_custom_emotes(message.emotes);
+                bpm_prefs.got_custom_emotes(message.emotes, message.css);
                 break;
 
             default:
@@ -889,8 +887,7 @@ case "opera-ext":
             break;
 
         case "custom_css":
-            bpm_browser.add_css(message.css);
-            bpm_prefs.got_custom_emotes(message.emotes);
+            bpm_prefs.got_custom_emotes(message.emotes, message.css);
             break;
 
         default:
@@ -924,8 +921,7 @@ case "userscript":
             bpm_backendsupport.setup_prefs(this.prefs, sr_name2id);
             this._sync_prefs();
 
-            bpm_prefs.got_prefs(this.prefs);
-            bpm_prefs.got_custom_emotes({}); // No support
+            bpm_prefs.got_custom_emotes({}, ""); // No support
         },
 
         request_custom_css: function() {
@@ -952,6 +948,7 @@ var bpm_prefs = bpm_exports.prefs = {
      */
     prefs: null,
     custom_emotes: null,
+    custom_css: null,
     sr_array: null,
     waiting: [],
     sync_timeouts: {},
@@ -997,8 +994,9 @@ var bpm_prefs = bpm_exports.prefs = {
      * Called from browser code when the custom CSS emote list has been
      * received.
      */
-    got_custom_emotes: function(emotes) {
+    got_custom_emotes: function(emotes, css) {
         this.custom_emotes = emotes;
+        this.custom_css = css;
 
         if(this._ready()) {
             this._run_callbacks();
@@ -2364,6 +2362,8 @@ var bpm_core = bpm_exports.core = {
             if(prefs.prefs.enableNSFW) {
                 bpm_browser.link_css("/combiners-nsfw.css");
             }
+
+            bpm_browser.add_css(prefs.custom_css);
         }.bind(this));
     },
 
