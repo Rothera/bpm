@@ -1406,13 +1406,22 @@ a[href|="/phei"] {
     height: 92px;
     background-position: 0px 0px !important;
 }
-a[href|="/YOLO"],a[href|="/yolo"] {
-background-image: url(%%kontanyolo%%) !important;
+a[href|="/phei"] {
+    background-image: url(%%emotephei%%);
     clear: none;
     display: block;
     float: left;
-    width: 180px;
-    height: 320px;
+    width: 90px;
+    height: 92px;
+    background-position: 0px 0px !important;
+}
+a[href|="/twirock"],a[href|="/twiheadbang"] {
+background-image: url(%%twirock%%) !important;
+    clear: none;
+    display: block;
+    float: left;
+    width: 150px;
+    height: 150px;
     background-position: -0px 0px !important
 }
 /* Other */

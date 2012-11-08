@@ -1,3 +1,66 @@
+.midcol
+{ 
+width:5ex !important;
+}
+
+.thing.id-t3_12r6md .res_post_ups,
+.thing.id-t3_12r6md .res_post_downs,
+.thing.id-t3_12r6md>.midcol>.score,
+.id-t3_12r6md>.entry>.tagline>span>.score
+{ 
+font-size:0 !important;
+content: "";
+}
+
+.thing.id-t3_12r6md .res_post_ups:after
+{
+font-size:x-small !important; 
+content: "13337" !important;
+}
+
+.thing.id-t3_12r6md .res_post_downs:after
+{
+font-size:x-small !important; 
+content: "6969" !important;
+}
+
+.id-t3_12r6md>.entry>.tagline>span>.score.likes:after
+{
+font-size:x-small !important; 
+content: "9002" !important;
+}
+
+.id-t3_12r6md>.entry>.tagline>span>.score.unvoted:after
+{
+font-size:x-small !important; 
+content: "9001" !important;
+}
+
+.id-t3_12r6md>.entry>.tagline>span>.score.dislikes:after
+{
+font-size:x-small !important; 
+content: "9000" !important;
+}
+
+.thing.id-t3_12r6md>.midcol>.score.likes:after
+{
+font-size:small !important; 
+content: "9002" !important;
+}
+
+.thing.id-t3_12r6md>.midcol>.score.unvoted:after
+{
+font-size:small !important; 
+content: "9001" !important;
+}
+
+.thing.id-t3_12r6md>.midcol>.score.dislikes:after
+{
+font-size:small !important; 
+content: "9000" !important;
+}
+
+
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
    
