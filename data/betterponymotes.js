@@ -921,6 +921,7 @@ case "userscript":
             bpm_backendsupport.setup_prefs(this.prefs, sr_name2id);
             this._sync_prefs();
 
+            bpm_prefs.got_prefs(this.prefs);
             bpm_prefs.got_custom_emotes({}, ""); // No support
         },
 
