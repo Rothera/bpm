@@ -186,8 +186,8 @@ div.titlebox .users-online span.number:after
     display:block;
     }
 
-/*.sidecontentbox .author.id-t2_5eqe2:before {
-    content: "Pathington David";
+.sidecontentbox .author.id-t2_5eqe2:before {
+    content: "Pathopedia-David";
     font-size: 10pt;
     color: #369;
     display:block;
@@ -198,8 +198,8 @@ div.titlebox .users-online span.number:after
     font-size: 0pt !important;
     content: "";
     display:block;
-    }*/
-.sidecontentbox .author.id-t2_5eqe2:after {content:" likes ponies."}
+    }
+/*.sidecontentbox .author.id-t2_5eqe2:after {content:" likes ponies."}*/
 
 /* sidebar */
 
@@ -244,11 +244,13 @@ clear: both;
 }
 
 /* header image location */
-/*
+
 #header-img {
-margin: 0px 0px 0px 0px;
+margin: 0px 5px 0px 3px;
+position:relative;
+top: 3px;
 }
-*/
+
 
 .content {
    margin-top: 13px;
@@ -1084,7 +1086,7 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 /* STOP SUBMITTING BORDERLANDS */
 #title-field.roundfield:before
 {
- content:"The Season 3 date announcement has already been posted. As such, all further announcements, countdowns, etc. are being removed. Please do not submit them.";
+ content:"Remember that Gak is not pony and will be removed as a rule 3 violation!";
  font-size:0.86em;
  padding:5px;
  border:1px solid #5f99cf;
@@ -1508,6 +1510,7 @@ a.author[href$="/3holes2tits1fork"]:after {
     vertical-align: bottom;
     overflow: hidden;
     letter-spacing: -20px;
+content:"";
     }
 .unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before
 {
@@ -1531,8 +1534,8 @@ a.author[href$="/3holes2tits1fork"]:after {
      letter-spacing: 0px;
      overflow: hidden;
      vertical-align: bottom;
-     margin-bottom: -1px
-
+     margin-bottom: -1px;
+content:"";
 }
 
 .nsfw-stamp acronym:after {    
@@ -1582,9 +1585,9 @@ a.author[href$="/3holes2tits1fork"]:after {
     border-right:0;
     position: absolute;
     top: 28px;/*Normally 28 but AB's bow is huge*/
-    left: 190px;/*Normally 125px*/
+    left: 137px;/*Normally 125px*/
     z-index: 50;
-    margin: 20px 420px 0 0;
+    margin: 23px 420px 0 0;
     padding: 8px 6px;
     padding-right:12px;
     list-style: none;
@@ -1615,11 +1618,11 @@ a.author[href$="/3holes2tits1fork"]:after {
 .titlebox .usertext-body .md ol li + li {
     display:inline-block;
     float:right;
-    background:url(%%Carrot-Hat%%);
-    width:67px;
+    background:url(%%pinkie-present-hat%%);
+    width:65px;
     height:61px;
-    margin-top:-36px;
-    margin-left:-8px;
+    margin-top:-38px;
+    margin-left:-3px;
     margin-bottom:-14px;
     margin-right:-40px;
     }

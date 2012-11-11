@@ -1,7 +1,7 @@
 /* Setup */
 body {
-    margin: 2px auto;
-    padding-top: 2px;
+    margin: 0px auto;
+    padding-top: 0px;
     padding-bottom: 0;
     background-color:#fff;
     }
@@ -41,18 +41,19 @@ div.titlebox span.number:after {
 /* Header */
 #header {
     background-color: #252525;
-   background-image: url(%%bglight%%);
+    background-image: url(%%bgnew%%);
     background-repeat:repeat-x;
     border-bottom: 1px solid #000;
-    margin: 0em 2px;
-    padding: 0px;
+    height: 147px;
+    margin: 0px;
+    padding-top: 0px;
     color: #000;
     }
 
 /* Top */
 #sr-header-area {
     background-color: black;
-    border-bottom: none
+    border-bottom: 1px black;
     }
 .sr-bar a, .sr-bar .separator {
     color: #999 !important
@@ -79,11 +80,11 @@ div.titlebox span.number:after {
     -webkit-border-top-right-radius: 4px
     }
 .tabmenu li a {
-    background-color: #373331 !important;
+    background-color: #fff !important;
     color: #999
     }
 .tabmenu li.selected a {
-    background-color: grey !important;
+    background-color: #fff !important;
     color: black;
     border-color: black;
     border-bottom:1px black;

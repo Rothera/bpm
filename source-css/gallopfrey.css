@@ -739,6 +739,7 @@ a[href|="/dr12"], a[href|="/dw8th"],
 a[href|="/dr22"], a[href|="/dw9th"],
 a[href|="/dr03"], a[href|="/dw10th"],
 a[href|="/dr13"], a[href|="/dw11th"],
+a[href|="/dr23"], a[href|="/dwsalute"],
 a[href|="/dr04"], a[href|="/rose"],
 a[href|="/dr14"], a[href|="/jack"],
 a[href|="/dr24"], a[href|="/donna"],
@@ -766,6 +767,7 @@ a[href|="/rdr12"], a[href|="/rdw8th"],
 a[href|="/rdr22"], a[href|="/rdw9th"],
 a[href|="/rdr03"], a[href|="/rdw10th"],
 a[href|="/rdr13"], a[href|="/rdw11th"],
+a[href|="/rdr23"], a[href|="/rdwsalute"],
 a[href|="/rdr04"], a[href|="/rrose"],
 a[href|="/rdr14"], a[href|="/rjack"],
 a[href|="/rdr24"], a[href|="/rdonna"],
@@ -829,6 +831,11 @@ a[href|="/rdr03"], a[href|="/rdw10th"]{
 a[href|="/dr13"],  a[href|="/dw11th"],
 a[href|="/rdr13"], a[href|="/rdw11th"]{
     background-position: -70px -210px
+}
+
+a[href|="/dr23"],  a[href|="/dwsalute"],
+a[href|="/rdr23"],  a[href|="/rdwsalute"]{
+    background-position: -140px -210px
 }
 /*********************************************/
 a[href|="/dr04"],  a[href|="/rose"],

@@ -1,66 +1,3 @@
-.midcol
-{ 
-width:5ex !important;
-}
-
-.thing.id-t3_12r6md .res_post_ups,
-.thing.id-t3_12r6md .res_post_downs,
-.thing.id-t3_12r6md>.midcol>.score,
-.id-t3_12r6md>.entry>.tagline>span>.score
-{ 
-font-size:0 !important;
-content: "";
-}
-
-.thing.id-t3_12r6md .res_post_ups:after
-{
-font-size:x-small !important; 
-content: "13337" !important;
-}
-
-.thing.id-t3_12r6md .res_post_downs:after
-{
-font-size:x-small !important; 
-content: "6969" !important;
-}
-
-.id-t3_12r6md>.entry>.tagline>span>.score.likes:after
-{
-font-size:x-small !important; 
-content: "9002" !important;
-}
-
-.id-t3_12r6md>.entry>.tagline>span>.score.unvoted:after
-{
-font-size:x-small !important; 
-content: "9001" !important;
-}
-
-.id-t3_12r6md>.entry>.tagline>span>.score.dislikes:after
-{
-font-size:x-small !important; 
-content: "9000" !important;
-}
-
-.thing.id-t3_12r6md>.midcol>.score.likes:after
-{
-font-size:small !important; 
-content: "9002" !important;
-}
-
-.thing.id-t3_12r6md>.midcol>.score.unvoted:after
-{
-font-size:small !important; 
-content: "9001" !important;
-}
-
-.thing.id-t3_12r6md>.midcol>.score.dislikes:after
-{
-font-size:small !important; 
-content: "9000" !important;
-}
-
-
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
    
@@ -98,7 +35,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     }
 
 #header-img {
-    margin-top:145px; /* 80 for meat's nice banner */
+    margin-top:150px; /* 80 for meat's nice banner */
     margin-left: 0px;
     position: absolute
     }
@@ -129,6 +66,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     }
 
 #header {
+    height: 256px;
     border-bottom: 1px solid #000000;
     position: relative;
     z-index: 99
@@ -150,9 +88,9 @@ body.res-nightmode:first-of-type {background-color: transparent!important;}
 /* Makes the sidebar transparent */
 .side {background-color: transparent !important }
 .side.res-nightmode:first-of-type > .content {background-color: transparent!important;}
-.side.res-nightmode:first-of-type {background-color: transparent!important;}
+.side.res-nightmode:first-of-type {background-color: transparent!important}
 
-/* Announcement header box thingy. Jacked this from the main MLP sub. 
+/* Announcement header box thingy. Jacked this from the main MLP sub.
 .content {
     margin-top: 50px
     }
@@ -166,7 +104,6 @@ body.res-nightmode:first-of-type {background-color: transparent!important;}
     width: auto;
      height: auto;
    background: 5px 1px #EFF7FF;
-    
     border: 1px solid #5f99bcf;
     position: absolute;
     top: 100px;
@@ -184,8 +121,42 @@ body.res-nightmode:first-of-type {background-color: transparent!important;}
 .titlebox .usertext-body .md ol li {
     margin: 3px;
     list-style: none
+    } */
+
+/*Announcement Box*/
+.content {
+    margin-top: 55px
     }
-*/
+.pagename {
+    font-size: 12pt
+    }
+.titlebox form {
+    position: static
+    }
+.titlebox .usertext-body .md ol {
+    width: auto;
+    border: 1px solid #5f99cf;
+    background:url(%%announcedance%%) no-repeat scroll 5px 1px #EFF7FF;
+    font-size: 14px !important;
+    position: absolute;
+    top: 256px;
+    left: 120px;
+    z-index: 200;
+    margin: -0px 310px 0 0;
+    padding: 18px 1px 12px 45px;
+    list-style: none;
+    display: block;
+    white-space: normal;
+    overflow: hidden;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px
+    }
+.titlebox .usertext-body .md ol li {
+    margin: 3px
+    }
+
+
+
 
 /* Replace the nsfw image with screwball */
 .thumbnail.nsfw {
@@ -442,6 +413,8 @@ background-repeat: no-repeat;
 .flair-mav:after { background-position: 0px -3300px }
 .flair-SwiftSkii:after { background-position: 0px -3330px }
 .flair-3p:after { background-position: 0px -3360px }
+.flair-prez:after { background-position: 0px -3390px }
+.flair-MisanthropicCat:after { background-position: 0px -3420px }
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
 
@@ -493,7 +466,7 @@ a[href|='/trixfun'] {width:226px; height:152px; background-position: -0px -927px
 a[href|='/twifun'] {width:230px; height:152px; background-position: -0px -471px}
 
 
-a[href|='/bmwat'], a[href|='/ch35'], a[href|='/chnuzzle'], a[href|='/cheerious'], a[href|='/cheerlikesit'], a[href|='/cmcexcited'], a[href|='/cordwithit'], a[href|='/crazypie'], a[href|='/derpoops'], a[href|='/disamused'], a[href|='/disangry'], a[href|='/disexcited'], a[href|='/diskate'], a[href|='/foryou'], a[href|='/genius'], a[href|='/gildafury'], a[href|='/herhorn'], a[href|='/gildafriendship'], a[href|='/hipstertrixie'], a[href|='/iwapprove'], a[href|='/noidea'], a[href|='/notenoughbooks'], a[href|='/rarimad'], a[href|='/twinuzzle'] {
+a[href|='/bmwat'], a[href|='/ch35'], a[href|='/chnuzzle'], a[href|='/cheerious'], a[href|='/cheerlikesit'], a[href|='/cmcexcited'], a[href|='/cordwithit'], a[href|='/crazypie'], a[href|='/derpoops'], a[href|='/disamused'], a[href|='/disangry'], a[href|='/disexcited'], a[href|='/diskate'], a[href|='/foryou'], a[href|='/genetics'], a[href|='/genius'], a[href|='/gildafury'], a[href|='/herhorn'], a[href|='/gildafriendship'], a[href|='/hipstertrixie'], a[href|='/iwapprove'], a[href|='/noidea'], a[href|='/notenoughbooks'], a[href|='/rarimad'], a[href|='/twinuzzle'] {
     display: block;
     clear: none;
     float: left;
@@ -513,6 +486,7 @@ a[href|='/disangry'] {width:195px; height:202px; background-position: -0px -908p
 a[href|='/disexcited'] {width:173px; height:177px; background-position: -0px -1489px}
 a[href|='/diskate'] {width:194px; height:252px; background-position: -0px -0px}
 a[href|='/foryou'] {width:204px; height:202px; background-position: -0px -706px}
+a[href|='/genetics'] {width:80px; height:102px; background-position: -173px -1489px}
 a[href|='/genius'] {width:97px; height:102px; background-position: -106px -2769px}
 a[href|='/gildafury'] {width:256px; height:167px; background-position: -0px -1843px}
 a[href|='/herhorn'], a[href|='/gildafriendship'] {width:180px; height:202px; background-position: -0px -1110px}
@@ -729,7 +703,7 @@ a[href|="/ppsign"] em{
     }   
 a[href|='/ppsign'] {width:141px; height:200px; background-position: -170px -154px}
 
-a[href='/ajsay'],  a[href='/bonshades'], a[href='/daring'],  a[href='/derpquite'], a[href='/disshrug'],  a[href='/fluffycord'],a[href='/gildafuck'], a[href='/oppositesattract'],a[href='/pphappy'], a[href='/pphmmm'],  a[href='/ppthink'], a[href='/pptrain'], a[href='/rarirage'],a[href='/rdpoker'], a[href='/slowcord'],a[href='/twiststare'], a[href='/twiyou'] {
+a[href='/ajsay'],  a[href='/bonshades'], a[href='/daring'],  a[href='/derpquite'], a[href='/disshrug'],  a[href='/fluffycord'],a[href='/gildafuck'], a[href='/oppositesattract'],a[href='/pphappy'], a[href='/pphmmm'],  a[href='/ppthink'], a[href='/pptrain'], a[href='/rarirage'],a[href='/rdpoker'], a[href='/slowcord'],a[href='/twiststare'], a[href='/twiyou'], a[href='/ppducreux'], a[href='/raripout'] {
 
     display: block;
     clear: none;
@@ -753,7 +727,40 @@ a[href|='/rdpoker']  {width:133px; height:120px; background-position: -2px -119p
 a[href|='/slowcord']  {width:101px; height:98px; background-position: -77px -2px}
 a[href|='/twiststare']  {width:73px; height:70px; background-position: -2px -2px}
 a[href|='/twiyou']  {width:99px; height:120px; background-position: -364px -119px}
+ a[href='/ppducreux']{width:100px; height:200px; background-position: -221px -747px}
+ a[href='/raripout']{width:167px; height:150px; background-position: -296px -582px}
 
+a[href|='/ajcake'],a[href|='/ajsoawesome'],a[href|='/ccthis'],a[href|='/daisythis'],a[href|='/dashcute'],a[href|='/dashshades'],a[href|='/dashthisshit'],a[href|='/derpyfacehoof'],a[href|='/onederp'],a[href|='/ppbusiness'],a[href|='/pphorn'],a[href|='/ppjuice'],a[href|='/ppspy'],a[href|='/ppspywhat'],a[href|='/ppthisshit'],a[href|='/prettypone'],a[href|='/raridance'],a[href|='/rariexcited'],a[href|='/rarisoawesome'],a[href|='/shysoawesome'],a[href|='/twiquite'],a[href|='/twisit'],a[href|='/twisoawesome'],a[href|='/twithisshit']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%bemotesheet%%) }
+
+a[href|='/ajcake'] {width:108px; height:124px; background-position: -118px -119px}
+a[href|='/ajsoawesome'] {width:115px; height:130px; background-position: -345px -119px}
+a[href|='/ccthis'] {width:147px; height:138px; background-position: -2px -682px}
+a[href|='/daisythis'] {width:147px; height:115px; background-position: -2px -403px}
+a[href|='/dashcute'] {width:102px; height:150px; background-position: -119px -251px}
+a[href|='/dashshades'] {width:97px; height:100px; background-position: -2px -2px}
+a[href|='/dashthisshit'] {width:160px; height:122px; background-position: -2px -555px}
+a[href|='/derpyfacehoof'] {width:94px; height:110px; background-position: -101px -2px}
+a[href|='/onederp'] {width:105px; height:105px; background-position: -197px -2px}
+a[href|='/ppbusiness'] {width:156px; height:150px; background-position: -150px -822px}
+a[href|='/pphorn'] {width:172px; height:125px; background-position: -313px -682px}
+a[href|='/ppjuice'] {width:132px; height:125px; background-position: -357px -251px}
+a[href|='/ppspy'] {width:202px; height:150px; background-position: -308px -822px}
+a[href|='/ppspywhat'] {width:114px; height:115px; background-position: -2px -119px}
+a[href|='/ppthisshit'] {width:160px; height:130px; background-position: -151px -682px}
+a[href|='/prettypone'] {width:99px; height:115px; background-position: -304px -2px}
+a[href|='/raridance'] {width:128px; height:150px; background-position: -275px -403px}
+a[href|='/rariexcited'] {width:146px; height:150px; background-position: -2px -822px}
+a[href|='/rarisoawesome'] {width:115px; height:126px; background-position: -228px -119px}
+a[href|='/shysoawesome'] {width:132px; height:120px; background-position: -223px -251px}
+a[href|='/twiquite'] {width:122px; height:150px; background-position: -151px -403px}
+a[href|='/twisit'] {width:157px; height:125px; background-position: -164px -555px}
+a[href|='/twisoawesome'] {width:115px; height:130px; background-position: -2px -251px}
+a[href|='/twithisshit'] {width:160px; height:125px; background-position: -323px -555px}
 
 /* For anyone with no flair, or flair disabled, this will give them missingno flair.
     Listed before the rest of the username shit so it will be overridden by manual flair additions. */
@@ -790,7 +797,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 /* Replacing somebody's name? Add it to the list here. */
 a.author[href$="Unsinkablesam"],
-a.author[href$="Sponce"],
+a.author[href$="Ponce"],
 a.author[href$="mrjoker7854"],
 a.author[href$="Conky_"],
 a.author[href$="PartOfAShoe"],
@@ -867,7 +874,7 @@ content: "";
 /* Replacing somebody's name? Add it to the list here too. */
 a.author[href$="Jeroknite"]:before,
 a.author[href$="Unsinkablesam"]:before,
-a.author[href$="Sponce"]:before,
+a.author[href$="Ponce"]:before,
 a.author[href$="mrjoker7854"]:before,
 a.author[href$="Conky_"]:before,
 a.author[href$="PartOfAShoe"]:before,
@@ -1022,6 +1029,7 @@ height:30px
 }
 
 /* Adding after-text to somebody's name? Add them here. */
+a.author[href$="Sponce"]:after,
 a.author[href$=HtotheGRIFF]:after,
 a.author[href$=scriptea]:after ,
 a.author[href$="ClopIsDisgusting"]:after,
@@ -1077,7 +1085,8 @@ font-size:10px!important;
 letter-spacing:normal; 
 }
 
-/* After-name text goes here. */
+/* After-name text goes here. */ 
+a.author[href$="Sponce"]:after { content:" (liek dis if u cry evry time)"}
 a.author[href$=HtotheGRIFF]:after  { content:" (Is very mad)"}
 a.author[href$=scriptea]:after { content:"Too main pone for background pone status)" }
 a.author[href$="ClopIsDisgusting"]:after  { content:" (Exists solely to shit on other people's fun)" }
@@ -1133,8 +1142,8 @@ a.author[href$=JIVEprinting]:after { content:" Christfag" }
 .tagline a.author[href="http://www.reddit.com/user/qwert426"]:before,
 .tagline a.author[href="http://www.reddit.com/user/Orschmann"]:before,
 .tagline a.author[href="http://www.reddit.com/user/derram_2"]:after, 
-.tagline a.author[href="http://www.reddit.com/user/EvilHom3r"]:after
-
+.tagline a.author[href="http://www.reddit.com/user/EvilHom3r"]:after,
+.tagline a.author[href="http://www.reddit.com/user/ajtexasranger"]:after 
 {
     content: " ";
     background: none;
@@ -1175,7 +1184,11 @@ a.author[href$=JIVEprinting]:after { content:" Christfag" }
 /*   content:"Orrrsssccchhhmmmannnnn" ; */ 
   background-position: 0px -2040px;
 }
-
+/*Presidential second flair. */
+.tagline a.author[href="http://www.reddit.com/user/ajtexasranger"]:after 
+{
+  background-position: 0px -3390px;
+}
 /* Text colors! */
 a[href|="/white!"]:nth-of-type(n) { color: white !important; cursor: text !important; background-color: black !important }
 a[href|="/orange!"]:nth-of-type(n) { color: orange !important; cursor: text !important }
