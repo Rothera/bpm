@@ -192,7 +192,10 @@ div.titlebox span.word {
 div.titlebox span.number:after {
     content: " Schleeping Gummieys"
     }
-
+div.titlebox .users-online span.number:after
+{
+    content:" Whoken Gummieys";
+}
 a[href="/spoiler"]:nth-of-type(n) {
     background: #000;
     color: #000;
@@ -415,6 +418,7 @@ background-repeat: no-repeat;
 .flair-3p:after { background-position: 0px -3360px }
 .flair-prez:after { background-position: 0px -3390px }
 .flair-MisanthropicCat:after { background-position: 0px -3420px }
+.flair-chrys:after { background-position: 0px -3450px }
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
 
@@ -796,8 +800,9 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="Typhron"],
 a.author[href$="Unsinkablesam"],
-a.author[href$="Ponce"],
+a.author[href$="Sponce"],
 a.author[href$="mrjoker7854"],
 a.author[href$="Conky_"],
 a.author[href$="PartOfAShoe"],
@@ -872,9 +877,10 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="Typhron"]:before,
 a.author[href$="Jeroknite"]:before,
 a.author[href$="Unsinkablesam"]:before,
-a.author[href$="Ponce"]:before,
+a.author[href$="Sponce"]:before,
 a.author[href$="mrjoker7854"]:before,
 a.author[href$="Conky_"]:before,
 a.author[href$="PartOfAShoe"]:before,
@@ -945,6 +951,7 @@ visibility:visible!important;
 }
 
 /* Replacing somebody's name? Put the replacement here. */
+a.author[href$="Typhron"]:before {content:"Tiffany"}
 a.author[href$="Unsinkablesam"]:before {content:"The Go-Go Train"}
 a.author[href$="Sponce"]:before {content:"Space"}
 a.author[href$="mrjoker7854"]:before {content:"Pinkie Scratchtacularin"}

@@ -246,7 +246,7 @@ clear: both;
 /* header image location */
 
 #header-img {
-margin: 0px 5px 0px 3px;
+margin: 0px 5px 0px 0px;
 position:relative;
 top: 3px;
 }
@@ -1497,6 +1497,15 @@ a.author[href$="/3holes2tits1fork"]:after {
 .flair-daisy {
    background-position: -0px -480px;
    }
+.flair-chrysalis {
+   background-position: -16px -480px;
+   }
+.flair-lotus {
+   background-position: -0px -496px;
+   }
+.flair-aloe {
+   background-position: -16px -496px;
+   }
 .flair-blankflank{
     background-image: none;
     height: 0;
@@ -1585,9 +1594,9 @@ content:"";
     border-right:0;
     position: absolute;
     top: 28px;/*Normally 28 but AB's bow is huge*/
-    left: 137px;/*Normally 125px*/
+    left: 130px;/*Normally 125px*/
     z-index: 50;
-    margin: 23px 420px 0 0;
+    margin: 20px 420px 0 0;
     padding: 8px 6px;
     padding-right:12px;
     list-style: none;
