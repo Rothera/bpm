@@ -249,3 +249,26 @@ clear: both;
 .sidecontentbox .flair-slightlylessgiantflair {
   display: none;
 }
+
+/* Test */
+
+.titlebox .usertext-body .md ul li a {
+background: #fff;
+border: 1px solid #ccc;
+color: #555;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+font-size: 11px;
+position: absolute;
+left: 60px;
+top: 30px;
+padding-left: 20px;
+z-index: 100
+    }
+.titlebox .usertext-body .md ul li a:hover {
+text-decoration: underline;
+    }
