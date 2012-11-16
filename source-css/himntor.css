@@ -1,0 +1,28 @@
+div.titlebox span.word{display:none}div.titlebox .subscribers span.number:after{content:" Dunians"}div.titlebox .users-online span.number:after{content:" of them are Warriors"}
+
+/***********************
+*
+*             EMOTES
+*   
+************************/
+/**************
+A Emoticons
+**************/
+a[href|="/swordserious"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 148px;
+    background-image: url(%%swordserious%%)
+    }
+
+a[href|="/swordshrug"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 120px;
+    height: 120px;
+    background-image: url(%%swordshrug%%)
+    }
+
