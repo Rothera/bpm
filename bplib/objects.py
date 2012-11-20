@@ -126,7 +126,7 @@ class Source(object):
 
     def group_emotes(self):
         groups = {}
-        for emote in self.unignored_emotes():
+        for emote in self.undropped_emotes():
             base = emote.base_variant()
             if emote.name[:2].lower() == "/r":
                 # Try to follow reversed emotes back to the unreversed name
