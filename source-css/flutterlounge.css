@@ -34,6 +34,9 @@ a[href|="/fs24"] { background-position: -140px -281px }
 a[href|="/fs05"] { background-position: -0px -350px }
 a[href|="/fs15"] { background-position: -70px -350px }
 a[href|="/fs25"] { background-position: -140px -350px }
+a[href|="/fs06"] { background-position: -0px -420px }
+a[href|="/fs16"] { background-position: -70px -420px }
+a[href|="/fs26"] { background-position: -140px -420px }
 
 a[href|="/fluttershythis"], a[href|="/shythis"], a[href|="/flutterthis"], a[href|="/flutthis"] {
     display: block;
@@ -59,7 +62,38 @@ a[href|="/flutterhugs"] {
     height: 267px;
     background-image: url(%%flutterhugs%%)
     }
-
+a[href|="/rollerconky"], a[href|="/skatingconky"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 200px;
+    background-image: url(%%skatingconky%%)
+    }
+a[href|="/flutterwind"], a[href|="/shywind"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 313px;
+    height: 150px;
+    background-image: url(%%flutterwind%%)
+    }
+a[href|="/flutterwoo"], a[href|="/shywoo"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 263px;
+    height: 200px;
+    background-image: url(%%flutterwoo%%)
+    }
+a[href|="/fluttersmile"], a[href|="/shysmile"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 300px;
+    height: 247px;
+    background-image: url(%%fluttersmile%%)
+    }
 /* Flair! So many wonderful choices! */
 
 .flair {
@@ -271,4 +305,15 @@ z-index: 100
     }
 .titlebox .usertext-body .md ul li a:hover {
 text-decoration: underline;
+    }
+
+/* Self post icon */
+
+ /*.thumbnail[href^="/r/flutterlounge/"]{display: none} */
+    /*.thumbnail img[src^="/static/"]{display: none !important} */
+    /*.thumbnail{width: auto !important}*/
+    .thumbnail.default, .thumbnail.self {
+        background-image: url(%%icon%%);
+        background-position: center !important;
+        background-repeat: no-repeat !important
     }

@@ -703,3 +703,8 @@ a.author[href$="Kireas"]:before {content:"Octavia"}
 .author[href$="Ninja8259"] { color:aqua !important }
 .author[href$="mrjoker7854"] { color:pink !important }
 .author[href$="Kireas"] { color:purple !important }
+
+.comments:nth-child(n + 1):before {
+    content: "♪ ♫ ♩ ";
+    font-size: 14px
+    }
