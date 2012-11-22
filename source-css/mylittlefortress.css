@@ -183,7 +183,7 @@ a.author[href$="fyrenwater"]:hover:after {
     }
 a.author[href$="Your_Shadow"] {visibility:hidden; font-size:0;}
 a.author[href$="Your_Shadow"]:after {
-    visibility:visible; font-size: 10px; color: #8650AC; content: "Your_Shadow: Server admin" 
+    visibility:visible; font-size:12px; content: "The Shadowbolts: Server admin" 
 }
 a.author[href$="koushiro"]:before { content: "Sir "; }
 a.author[href$="koushiro"]:after {
@@ -191,6 +191,9 @@ a.author[href$="koushiro"]:after {
     }
 a.author[href$="woodledoodledoodle"]:before {
  content: url(%%sharp-dresser%%) 
+}
+a.author[href$="mickeymau5music"]:before {
+ content: url(%%taco%%) 
 }
 a.author[href$="Bionic21"]:before {
  content: url(%%backburner%%) 
@@ -203,37 +206,37 @@ a.author[href$="Bionic21"]:hover:after {
 }
 a.author[href$="iiRockpuppy"] {visibility:hidden; font-size:0;}
 a.author[href$="iiRockpuppy"]:after {
-    visibility:visible; font-size: 10px; color: #369; content: "PinkieOats- And then I said, 'Oatmeal, are you crazy?'" 
+    visibility:visible; font-size: 12px; content: "PinkieOats- And then I said, 'Oatmeal, are you crazy?'" 
 }
 
 a.author[href$="tuxisme"] {visibility:hidden; font-size:0;}
 a.author[href$="tuxisme"]:after {
-    visibility:visible; font-size: 10px; color: #369; content: "Hatter: Queen of the Amazons" 
+    visibility:visible; font-size: 12px; content: "Hatter: Queen of the Amazons" 
 }
 
 a.author[href$="Dr_Gordon_Voteman"] {visibility:hidden; font-size:0;}
 a.author[href$="Dr_Gordon_Voteman"]:after {
-    visibility:visible; font-size: 10px; color: #f37b21; content: url(%%lambda%%) "Dr. Gordon Voteman"
+    visibility:visible; font-size: 12px; color: #f37b21; content: url(%%lambda%%) "Dr. Gordon Voteman"
 }
 .sidecontentbox a.author[href$="/Dr_Gordon_Voteman"] {
     display: none
 }
 a.author[href$="oscilox"] {visibility:hidden; font-size:0;}
 a.author[href$="oscilox"]:after {
-    visibility:visible; font-size: 10px; color: #369; content: "Vinyl Scratch" 
+    visibility:visible; font-size: 12px; color: #369; content: "Vinyl Scratch" 
 }
 a.author[href$="Stranghill"] {visibility:hidden; font-size:0;}
 a.author[href$="Stranghill"]:after {
-    visibility:visible; font-size: 10px; color: #369; content: "lunaREvolution" 
+    visibility:visible; font-size: 12px; color: #369; content: "lunaREvolution" 
 }
 
 
 /* STEAM NAMES */
 a.author[href$="askanswer"]:after {
-    visibility:visible; font-size: 10px; color: #369; content: " (Paulitov)" 
+    visibility:visible; font-size: 12px; color: #369; content: " (Paulitov)" 
 }
 a.author[href$="SonicRainboom"]:after {
-    visibility:visible; font-size: 10px; color: #369; content: " (Mr. Civilized!)" 
+    visibility:visible; font-size: 12px; color: #369; content: " (Mr. Civilized!)" 
 }
 a.author[href$="Nopies4u"]:after {
     content: " (Dr. Stones)"
@@ -242,10 +245,10 @@ a.author[href$="DraidenMcDratini"]:after {
     content: " (A_Doctor_Dratini)"
     }
 a.author[href$="Reginault"]:after {
-    visibility:visible; font-size: 10px; color: #369; content: " (Vintage Canterlot Aristocrat)" 
+    visibility:visible; font-size: 12px; color: #369; content: " (Vintage Canterlot Aristocrat)" 
 }
 a.author[href$="jnew"]:after {
-    visibility:visible; font-size: 10px; color: #369; content: " (JNew)" 
+    visibility:visible; font-size: 12px; color: #369; content: " (JNew)" 
 }
 a.author[href$="Gentle_Giant"]:after {
     visibility:visible; font-size: 10px; color: #369; content: " (Recoome)" 
@@ -617,14 +620,14 @@ a[href="/freakout"]:hover:after {
      
     .titlebox .usertext-body .md ol {
     width: auto;
-    background: url(%%backburner%%) no-repeat scroll 2px 6px #fff;
-    border: 2px solid #efefef;
+    background: url(%%spikepoint%%) no-repeat scroll 3px 0px #fff;
+    border: 2px solid #b13637;
     position: absolute;
-    top: 20px;
-    left: 165px;
+    top: 18px;
+    left: 158px;
     z-index: 50;
-    margin: 20px 410px 0 0;
-    padding: 8px 5px 5px 55px;
+    margin: 20px 410px 0px 0px;
+    padding: 15px 10px 10px 75px;
     list-style: none;
     display: block;
     white-space: normal;

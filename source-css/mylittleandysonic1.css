@@ -1,4 +1,4 @@
-.md:after {
+.md:before {
    content: "";
    background: url(%%c22%%)!important;
    position:relative;
@@ -22,7 +22,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
    /*   margin-top: -20px;*/
    background-repeat: no-repeat;
    background-position: 50% 0%;
-   height: 280px; /* 237 for meat's nice banner */
+   height: 250px; /* 237 for meat's nice banner */
    position:relative
  }
 
@@ -45,7 +45,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     }
 
 #header-img {
-    margin-top:160px; /* 80 for meat's nice banner */
+    margin-top:127px; /* 80 for meat's nice banner */
     margin-left: 0px;
     position: absolute
     }
@@ -65,7 +65,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     }
 
 .tabmenu:not(.formtab) {
-    margin-top: 266px; /* 223 for meat's nice banner */
+    margin-top: 233px; /* 223 for meat's nice banner */
     margin-left: 505px
  }
 
@@ -76,7 +76,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     }
 
 #header {
-    height: 256px;
+    height: 265px;
     border-bottom: 1px solid #000000;
     position: relative;
     z-index: 99
@@ -102,7 +102,7 @@ body.res-nightmode:first-of-type {background-color: transparent!important;}
 
 /*Announcement Box*/
 .content {
-    margin-top: 60px
+    margin-top: 30px 
     }
 .pagename {
     font-size: 12pt
@@ -787,6 +787,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="kcirvam"],
 a.author[href$="Typhron"],
 a.author[href$="Unsinkablesam"],
 a.author[href$="Sponce"],
@@ -864,6 +865,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="kcirvam"]:before,
 a.author[href$="Typhron"]:before,
 a.author[href$="Jeroknite"]:before,
 a.author[href$="Unsinkablesam"]:before,
@@ -938,6 +940,7 @@ visibility:visible!important;
 }
 
 /* Replacing somebody's name? Put the replacement here. */
+a.author[href$="kcirvam"]:before {content: "mavrick45"}
 a.author[href$="Typhron"]:before {content:"Tiffany"}
 a.author[href$="Unsinkablesam"]:before {content:"The Go-Go Train"}
 a.author[href$="Sponce"]:before {content:"Space"}
