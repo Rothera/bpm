@@ -750,7 +750,7 @@ case "firefox-ext":
             self.postMessage(data);
         },
 
-        link_css: function(filename) {
+        make_css_link: function(filename, callback) {
             // FIXME: Hardcoding this sucks. It's likely to continue working for
             // a good long while, but we should prefer make a request to the
             // backend for the prefix (not wanting to do that is the reason for
@@ -758,9 +758,16 @@ case "firefox-ext":
             // content scripts, but it's not...
             var url = "resource://jid1-thrhdjxskvsicw-at-jetpack/betterponymotes/data" + filename;
             var tag = bpm_utils.stylesheet_link(url);
-            // Seems to work in Firefox, and we get to put our tags in a pretty
-            // place!
-            this.css_parent().insertBefore(tag, this.css_parent().firstChild);
+            callback(tag);
+        },
+
+        link_css: function(filename) {
+            this.make_css_link(filename, function(tag) {
+                // Seems to work in Firefox, and we get to put our tags in a pretty
+                // place!
+                var parent = this.css_parent();
+                parent.insertBefore(tag, parent.firstChild);
+            }.bind(this));
         }
     });
 
@@ -812,12 +819,19 @@ case "chrome-ext":
             }
         },
 
-        link_css: function(filename) {
+        make_css_link: function(filename, callback) {
             var tag = bpm_utils.stylesheet_link(chrome.extension.getURL(filename));
-            // document.head does not exist at this point in Chrome (it's null).
-            // Trying to access it seems to blow it away. Strange. This will
-            // have to suffice (though it gets them "backwards").
-            this.css_parent().insertBefore(tag, this.css_parent().firstChild);
+            callback(tag);
+        },
+
+        link_css: function(filename) {
+            this.make_css_link(filename, function(tag) {
+                // document.head does not exist at this point in Chrome (it's null).
+                // Trying to access it seems to blow it away. Strange. This will
+                // have to suffice (though it gets them "backwards").
+                var parent = this.css_parent();
+                parent.insertBefore(tag, parent.firstChild);
+            }.bind(this));
         }
     });
     break;
@@ -832,10 +846,17 @@ case "opera-ext":
             opera.extension.postMessage(data);
         },
 
-        link_css: function(filename) {
+        make_css_link: function(filename, callback) {
             this._get_file(filename, function(data) {
                 var tag = bpm_utils.style_tag(data);
-                this.css_parent().insertBefore(tag, this.css_parent().firstChild);
+                callback(tag);
+            }.bind(this));
+        },
+
+        link_css: function(filename) {
+            this.make_css_link(filename, function(tag) {
+                var parent = this.css_parent();
+                parent.insertBefore(tag, parent.firstChild);
             }.bind(this));
         }
     });
@@ -928,10 +949,17 @@ case "userscript":
         request_custom_css: function() {
         },
 
-        link_css: function(filename) {
+        make_css_link: function(filename, callback) {
             var url = BPM_RESOURCE_PREFIX + filename + "?p=2&dver=" + BPM_DATA_VERSION;
             var tag = bpm_utils.stylesheet_link(url);
-            this.css_parent().insertBefore(tag, this.css_parent().firstChild);
+            callback(tag);
+        },
+
+        link_css: function(filename) {
+            this.make_css_link(filename, function(tag) {
+                var parent = this.css_parent();
+                parent.insertBefore(tag, parent.firstChild);
+            }.bind(this));
         }
     });
     break;
@@ -2296,6 +2324,7 @@ var bpm_global = bpm_exports.global = {
         // We run this here, instead of down in the main bit, to avoid applying large
         // chunks of CSS when this script is disabled.
         bpm_core.init_css();
+        bpm_core.init_late_css();
 
         if(prefs.prefs.enableGlobalSearch) {
             // Never inject the search box into frames. Too many sites fuck up
@@ -2331,12 +2360,6 @@ var bpm_core = bpm_exports.core = {
      */
     init_css: function() {
         bpm_info("Setting up css");
-        // Needs to come last in sequence to override emote-classes.css, but
-        // our CSS gets appended in reverse order.
-        if(bpm_utils.platform === "chrome-ext" || bpm_utils.platform === "userscript") {
-            bpm_browser.link_css("/gif-animotes.css");
-        }
-
         bpm_browser.link_css("/bpmotes.css");
         bpm_browser.link_css("/emote-classes.css");
 
@@ -2375,10 +2398,9 @@ var bpm_core = bpm_exports.core = {
     },
 
     /*
-     * Main function when running on Reddit.
+     * Attaches some hacks and things that need the DOM available to function.
      */
-    run: function(prefs) {
-        bpm_info("Running on Reddit");
+    init_late_css: function() {
         // Inject our filter SVG for Firefox. Chrome renders this thing as a
         // massive box, but "display: none" (or putting it in <head>) makes
         // Firefox hide all of the emotes we apply the filter to- as if *they*
@@ -2409,6 +2431,21 @@ var bpm_core = bpm_exports.core = {
             bpm_browser.add_css(".bpflag-i { filter: url(#bpm-invert); }");
         }
 
+        // This needs to come after subreddit CSS to override their !important
+        if(bpm_utils.platform === "chrome-ext" || bpm_utils.platform === "userscript") {
+            bpm_browser.make_css_link("/gif-animotes.css", function(tag) {
+                document.head.appendChild(tag);
+            }.bind(this));
+        }
+    },
+
+    /*
+     * Main function when running on Reddit.
+     */
+    run: function(prefs) {
+        bpm_info("Running on Reddit");
+
+        this.init_late_css();
         bpm_searchbox.init(prefs);
         var usertext_edits = document.getElementsByClassName("usertext-edit");
         bpm_searchbox.inject_search_button(prefs, usertext_edits);
