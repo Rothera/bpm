@@ -2,19 +2,24 @@ AddType application/x-opera-extension oex
 
 ExpiresActive On
 
+# All of these files are accessed with a version number appended, so 1 year is fine.
+
 <Files "bpmotes.css">
-  ExpiresDefault "access plus 1 week"
+  ExpiresDefault "access plus 1 year"
 </Files>
 <Files "emote-classes.css">
-  ExpiresDefault "access plus 1 week"
+  ExpiresDefault "access plus 1 year"
 </Files>
 <Files "combiners-nsfw.css">
-  ExpiresDefault "access plus 1 week"
+  ExpiresDefault "access plus 1 year"
 </Files>
 
 <Files "bpm-data.js">
-  ExpiresDefault "access plus 1 week"
+  ExpiresDefault "access plus 1 year"
 </Files>
 <Files "pref-setup.js">
-  ExpiresDefault "access plus 1 week"
+  ExpiresDefault "access plus 1 year"
 </Files>
+
+# One year
+ExpiresByType image/gif "access plus 1 year"

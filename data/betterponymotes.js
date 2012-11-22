@@ -2331,6 +2331,12 @@ var bpm_core = bpm_exports.core = {
      */
     init_css: function() {
         bpm_info("Setting up css");
+        // Needs to come last in sequence to override emote-classes.css, but
+        // our CSS gets appended in reverse order.
+        if(bpm_utils.platform === "chrome-ext" || bpm_utils.platform === "userscript") {
+            bpm_browser.link_css("/gif-animotes.css");
+        }
+
         bpm_browser.link_css("/bpmotes.css");
         bpm_browser.link_css("/emote-classes.css");
 
