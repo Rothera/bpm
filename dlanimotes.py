@@ -66,7 +66,7 @@ def dump_css(file, images):
                 selectors.append(variant.selector())
         selector = ",".join(selectors)
         new_url = AnimoteUrlPrefix + image_path(url)
-        s = "%s{background-image:url(%s)}\n" % (selector, new_url)
+        s = "%s{background-image:url(%s)!important}\n" % (selector, new_url)
         file.write(s)
 
 def main():
