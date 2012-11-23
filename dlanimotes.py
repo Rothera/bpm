@@ -62,7 +62,6 @@ def dump_css(file, images):
     for (url, emotes) in images.items():
         selectors = []
         for emote in emotes:
-            selectors.append("a[href|='%s']" % (emote.name))
             for variant in emote.variants.values():
                 selectors.append(variant.selector())
         selector = ",".join(selectors)
