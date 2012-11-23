@@ -1,10 +1,10 @@
-.md:before {
+.md:after {
    content: "";
    background: url(%%c22%%)!important;
    position:relative;
    display: inline-block;
-   height: 83px;
-   width: 83px;
+   height: 63px;
+   width: 89px;
    float:left
  }
 
@@ -396,6 +396,9 @@ background-repeat: no-repeat;
 .flair-prez:after { background-position: 0px -3390px }
 .flair-MisanthropicCat:after { background-position: 0px -3420px }
 .flair-chrys:after { background-position: 0px -3450px }
+.flair-discentia:after { background-position: 0px -3480px }
+.flair-milkyway:after { background-position: 0px -3510px }
+ 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
 
@@ -1223,3 +1226,5 @@ body.res a.author[href$="Pathogen-David"], body.res a.author[href$="Phei"] { col
 
 /*Social wanted color*/
 .id-t2_894lr.id-t2_894lr{color:#b38 !important}
+
+.error.OUTOFSUB{display:none!important}

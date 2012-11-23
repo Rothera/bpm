@@ -4,7 +4,7 @@
     clear: none;
     content: "post pony articles, pony pictures, pony videos, pony analysis, pony pony...";
     color: dimgray;
-    font-size: 8pt !important
+    font-size: 8pt
     }
 .sidebox .subtitle {
     font-size: 0px
@@ -24,7 +24,7 @@
 #header #header-bottom-left {
     background: url(%%background-100%%);
     background-color:#939683; 
-    background-color: transparent !important;
+    background-color: transparent;
      /*  margin-top: 50px; */
     background-repeat: no-repeat;
     background-position: 0% 0%;
@@ -50,7 +50,7 @@ color:white;
 font-size:20px;
 font-family:Arial;
 font-style:italic;
-text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black !important;
+text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;
 
 }
 
@@ -59,7 +59,7 @@ color:white;
 font-size:20px;
 font-family:Arial;
 font-style:italic;
-text-shadow: 2px 2px 2px #CD0000, -2px -2px 2px #CD0000, -2px 2px 2px #CD0000, 2px -2px 2px #CD0000!important;
+text-shadow: 2px 2px 2px #CD0000, -2px -2px 2px #CD0000, -2px 2px 2px #CD0000, 2px -2px 2px #CD0000;
 text-decoration: none;
 }
 
@@ -97,8 +97,8 @@ div.titlebox .users-online span.number:after {
     content: " fighting the good fight"
     }
 
-a[href$="/spoiler"] { background:#000!important; color:#000!important; }
-a[href$="/spoiler"]:hover { color:#FFF!important; }
+a[href$="/spoiler"] { background:#000; color:#000; }
+a[href$="/spoiler"]:hover { color:#FFF; }
 
 
 /*simple, most commonly used backgrounds*/ 
@@ -146,7 +146,7 @@ clear: none;
 float: left;
 width: 70px;
 height: 70px;
-background-image: url(%%foe-em1-v1%%) !important;
+background-image: url(%%foe-em1-v1%%);
 }
 
 
@@ -174,9 +174,9 @@ a[href|="/omnomnom"], a[href|="/givemeec1101"]{ background-position: -140px -140
 
 a[href|="/calamity"]{ background-position: -0px -280px; width: 100px; height: 100px;}
 
-a[href|="/pinkeyes"]{ background-position: -100px -347px; width: 100px !important; height: 100px !important;}
+a[href|="/pinkeyes"]{ background-position: -100px -347px; width: 100px; height: 100px;}
 
-a[href|="/lpwet"]{ background-position: -200px -348px; width: 95px !important; height: 150px !important;}
+a[href|="/lpwet"]{ background-position: -200px -348px; width: 95px; height: 150px;}
 
 a[href|="/mmdash"]{ background-position: 0px -380px; width: 64px; height: 151px;}
 
@@ -198,7 +198,7 @@ clear: none;
 float: left;
 width: 70px;
 height: 70px;
-background-image: url(%%foe-em2-v25%%) !important;
+background-image: url(%%foe-em2-v27%%);
 }
 
 a[href|="/gawd"]{ background-position: 0px -361px; width: 115px; height: 150px;}
@@ -250,7 +250,7 @@ clear: none;
 float: left;
 width: 134px;
 height: 150px;
-background-image: url(%%bj-anim%%) !important;
+background-image: url(%%bj-anim%%);
 }
 
 a[href|="/bjbubbles"]{ background-position: 0px 0px;}
@@ -262,7 +262,7 @@ clear: none;
 float: left;
 width: 70px;
 height: 70px;
-background-image: url(%%foe-em3-v25%%) !important;
+background-image: url(%%foe-em3-v25%%);
 }
 
 a[href|="/lpnotsure"]{ background-position: 0px 0px; width:150px; height:150px;}
@@ -284,69 +284,69 @@ a[href|="/grumpypip"]{ background-position: 0px -2315px; width: 142px; height: 1
 
 a[href|="/advicebj"]
 {
-    width: 300px !important;
-    height: 300px !important;
-    cursor: default !important;
-    display: block !important;
-    background-repeat: no-repeat !important;
-    text-align: center !important;
-    color: white !important;
-    font-family: Impact, sans-serif !important;
-    font-size: 26px !important;
-    line-height: 24px !important;
-    text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black !important;
-    overflow: hidden !important;
-    position: relative !important;
-    text-transform: uppercase !important;
-    background-image: url(%%foe-em3-v22%%) !important;
+    width: 300px;
+    height: 300px;
+    cursor: default;
+    display: block;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    font-family: Impact, sans-serif;
+    font-size: 26px;
+    line-height: 24px;
+    text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;
+    overflow: hidden;
+    position: relative;
+    text-transform: uppercase;
+    background-image: url(%%foe-em3-v22%%);
 }
 a[href|="/advicebj"]{ background-position: 0px -950px; width: 300px; height: 300px;}
 
 a[href|='/advicebj'] em{
-    font-style: normal !important;
-    position: absolute !important;
-    top: 12px !important;
-    width: 280px !important;
-    color: white !important;
-    left: 50% !important;
-    margin-left: -140px !important
+    font-style: normal;
+    position: absolute;
+    top: 12px;
+    width: 280px;
+    color: white;
+    left: 50%;
+    margin-left: -140px;
     }
 a[href|='/advicebj'] strong{
-    font-weight: normal !important;
-    position: absolute !important;
-    bottom: 13px !important;
-    color: white !important;
-    width: 280px !important;
-    left: 50% !important;
-    margin-left: -140px !important
+    font-weight: normal;
+    position: absolute;
+    bottom: 13px;
+    color: white;
+    width: 280px;
+    left: 50%;
+    margin-left: -140px;
     }
 
 
 
 a[href|="/lpsign"]{
-    background-image: url(%%foe-em3-v22%%) !important;
-    background-repeat: no-repeat !important;
-    display: inline-block !important;
-    position: relative !important;
+    background-image: url(%%foe-em3-v22%%);
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: relative;
     width:166px; height:150px;
-    line-height: 24px !important;
-    overflow: hidden !important;
-    cursor: default !important;
+    line-height: 24px;
+    overflow: hidden;
+    cursor: default;
     }
     
 a[href|="/lpsign"] em{
-    position: absolute !important;
-    top: 50px !important;
-    left: 95% !important;
-    margin-left: -100px !important;
-    width: 93px !important;
-    color: #465A73 !important;
-    text-align: center !important;
-    text-transform: uppercase !important;
-    text-shadow: -1px 0 #394D66,0 1px #394D66,1px 0 #394D66,0 -1px #394D66!important;
-    font-family: "Comic Sans" !important;
-    font-style: normal !important;
-    font-size: 15px !important;
+    position: absolute;
+    top: 50px;
+    left: 95%;
+    margin-left: -100px;
+    width: 93px;
+    color: #465A73;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: -1px 0 #394D66,0 1px #394D66,1px 0 #394D66,0 -1px #394D66;
+    font-family: "Comic Sans";
+    font-style: normal;
+    font-size: 15px;
     }    
 a[href|='/lpsign'] {width:262px; height:300px; background-position: 0px -1600px}
 
@@ -357,7 +357,7 @@ clear: none;
 float: left;
 width: 200px;
 height: 221px;
-background-image: url(%%rsmash-v2%%) !important;
+background-image: url(%%rsmash-v2%%);
 }
 a[href|='/rampagesmash'] {background-position: 0px 0px}
 
@@ -366,7 +366,7 @@ a[href|='/rampagesmash'] {background-position: 0px 0px}
 
 
 .flair {
-    border: none !important;
+    border: none;
     top: 20px;
     padding: 0px;
     background: url(%%spritesheet-v16%%) no-repeat;
