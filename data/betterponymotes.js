@@ -1676,9 +1676,14 @@ var bpm_search = bpm_exports.search = {
             target_form.selectionEnd = end + emote_len;
             target_form.focus();
 
-            // Trigger preview update in RES, which *specifically* listens for keyup.
+            // Previous RES versions listen for keyup, but as of the time of
+            // writing this, the development version listens for input. For now
+            // we'll just send both, and remove the keyup one at a later date.
             var event = document.createEvent("Event");
             event.initEvent("keyup", true, true);
+            target_form.dispatchEvent(event);
+            event = document.createEvent("HTMLEvents");
+            event.initEvent("input", true, true);
             target_form.dispatchEvent(event);
         }
     }
