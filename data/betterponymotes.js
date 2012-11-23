@@ -89,7 +89,10 @@ var bpm_utils = bpm_exports.utils = {
      * but not on Chrome. Safari presumably has this as well. Defined to be
      * null on platforms that don't support it.
      */
-    MutationObserver: (_bpm_global("MutationObserver") || _bpm_global("WebKitMutationObserver") || _bpm_global("MozMutationObserver") || null),
+    // NOTE: As of right now, MutationObserver is badly broken on Chrome.
+    // https://code.google.com/p/chromium/issues/detail?id=160985
+    // Disabling it until they release a fix.
+    MutationObserver: (_bpm_global("MutationObserver") || /*_bpm_global("WebKitMutationObserver") ||*/ _bpm_global("MozMutationObserver") || null),
 
     /*
      * Wrapper to monitor the DOM for inserted nodes, using either
