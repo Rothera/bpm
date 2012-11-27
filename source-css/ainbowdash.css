@@ -69,7 +69,7 @@ body { background-image: url(%%rdsleeping%%) !important; background-repeat: no-r
 }
 
 /*** Rainbow tabs ***/
-.tabmenu li a {border-style: solid; border-width: 2px;}
+.tabmenu li a {border-style: solid; border-bottom: none !important; border-width: 2px;}
 .tabmenu li a[href$="ainbowdash/"]{border-color: purple !important;}
 .tabmenu li a[href$="new/"]{border-color: blue !important;}
 .tabmenu li a[href$="controversial/"]{border-color: green !important;}

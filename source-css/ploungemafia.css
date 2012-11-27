@@ -229,3 +229,29 @@ z-index: 100
 .titlebox .usertext-body .md ul li a:hover {
 text-decoration: underline;
     }
+
+.titlebox .usertext-body .md ul li a:before { 
+content: " " ; 
+margin-left: 5px;
+
+/* Red Test 
+
+background-color: #fc6c6c;
+border: 2px solid #d53f3f;
+*/
+/* Green */
+background-color: #85d462; 
+border: 2px solid #3BAE08; 
+
+
+width: 2px; 
+height: 2px; 
+border-radius: 10px; 
+display: block; 
+z-index: 300;
+padding: 2px;
+float: right;
+position: absolute;
+top: 5px;
+left: 0;
+}

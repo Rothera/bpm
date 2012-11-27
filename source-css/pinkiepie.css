@@ -143,7 +143,7 @@ a[href|="/pinkiebig!"]{ color: #c10064 !important; font-size: 20px !important; c
     }
 .age {
     font-size: 11px !important
-    }
+    } 
 a[href="/sp"] {
     display: inline-block;
     padding-right: 100%
@@ -341,3 +341,12 @@ a[href|='/ppsteamingmad'] {width:351px; height:200px; background-position: -106p
 a[href|='/ppstrut'] {width:149px; height:150px; background-position: -2px -558px}
 a[href|='/ppwhy'] {width:103px; height:125px; background-position: -153px -558px}
 a[href|='/strut'] { width:71px; height:150px; background-image: url(%%strut%%); background-position: 0px 0px; display: block; clear: none; float: left; margin-left: 3px; margin-right: 3px; }
+
+.linkflair-spoiler .thumbnail img {display:none}
+
+.linkflair-spoiler .thumbnail {  
+    background: url(%%thumbnails%%)!important;
+    background-repeat: no-repeat;
+    width: 68px;
+    height: 70px;
+    background-position: 0px -170px !important}

@@ -51,7 +51,8 @@ a.author[href$="LavenderExtract"],
 a.author[href$="rautenkranzmt"],
 a.author[href$="CrashTestDumbass"],
 a.author[href$="div_"],
-a.author[href$="di_zz"]
+a.author[href$="di_zz"],
+a.author[href$="arborcide"]
 { 
 font-size:0!important; 
 overflow:hidden; 
@@ -68,7 +69,8 @@ a.author[href$="LavenderExtract"]:before,
 a.author[href$="rautenkranzmt"]:before,
 a.author[href$="CrashTestDumbass"]:before,
 a.author[href$="div_"]:before,
-a.author[href$="di_zz"]:before
+a.author[href$="di_zz"]:before,
+a.author[href$="arborcide"]:before
 {
 font-size:10px!important; 
 visibility:visible!important;
@@ -84,6 +86,7 @@ a.author[href$="di_zz"]:before { content:"dizz" }
 a.author[href$="rautenkranzmt"]:before { content:"sehro" }
 a.author[href$="CrashTestDumbass"]:before { content:"Trahsi" }
 a.author[href$="div_"]:before { content:"wut" }
+a.author[href$="arborcide"]:before { content:"Sly_Clopper" }
 
 /*Spoiler tag within comments. Your comment should be: "[This is a spoiler sentence.](/spoiler)" */  
 a[href$="/spoiler"] {  
@@ -118,6 +121,10 @@ color: #FFF !important
 .flair-liquor2 { background-position: 0px -80px }
 .flair-beer2 { background-position: 0px -96px }
 
+/**********************/
+/*********Emotes*******/
+/**********************/
+
 a[href|="/btl00"], a[href|="/btl10"], a[href|="/btl01"], a[href|="/btl11"], a[href|="/btl02"], a[href|="/btl12"], a[href|="/btl03"], a[href|="/btl13"], a[href|="/halp"], a[href|="/onekeg"], a[href|="/scootafresh"], a[href|="/spikedapper"], a[href|="/beepbeep"], a[href|="/vinyldance"], a[href|="/octysmile"], a[href|="/octygrin"] {
 display:block;
 clear: none;
@@ -135,6 +142,16 @@ width: 140px;
 height: 70px;
 background-image: url(%%btlemotetable1%%) !important
 }
+
+/* Temporarily Removed until a blank background in progress by Kallado is finished
+a[href|="/cmcbop"]{
+display:block;
+clear: none;
+float: left;
+width: 140px;
+height: 70px;
+background-image: url(%%cmcbop%%) !important
+}*/
 
 a[href|="/btl00"], a[href|="/halp"] {
 background-position: -0px -0px

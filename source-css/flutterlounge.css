@@ -317,3 +317,45 @@ text-decoration: underline;
         background-position: center !important;
         background-repeat: no-repeat !important
     }
+
+/*** Submit a link -> Create a submission (Totally not stolen from /r/mylittlefoodmanes) ***/
+
+.sidebox.submit .morelink:before {
+    display: block;
+    clear: none;
+    content: "Create a Submission";
+    text-align: center;
+    color: #369;
+    width: 101%
+    }
+.sidebox.submit .morelink a {
+    position: absolute;
+    top: 0;
+    font-size: 1px;
+    text-align: right;
+    color: #f2f8fd
+    }
+.sidebox.submit .morelink:hover:before {
+    color: blue
+    }
+.sidebox.submit:hover a {
+    color: #b4cee5
+    }
+.sidebox .subtitle:before {
+    display: block;
+    clear: none;
+    content: " Flutter articles, Flutter pictures, Flutter videos, Flutter Flutter...";
+    color: dimgrey;
+    font-size: 8pt !important
+    }
+.sidebox .subtitle {
+    font-size: 0px
+    }
+.sidebox.create {
+    display: none
+    }
+.sidebox.submit .spacer a {
+    background-image: url(%%submissionshy%%);
+    background-position: -0px -0px;
+    background-repeat: no-repeat
+    }

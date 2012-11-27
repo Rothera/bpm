@@ -1507,6 +1507,9 @@ a.author[href$="/3holes2tits1fork"]:after {
 .flair-aloe {
    background-position: -16px -496px;
    }
+.flair-drstable {
+   background-position: -0px -512px;
+   }
 .flair-blankflank{
     background-image: none;
     height: 0;
@@ -1628,9 +1631,9 @@ content:"";
 .titlebox .usertext-body .md ol li + li {
     display:inline-block;
     float:right;
-    background:url(%%twilight-hat%%);
+    background:url(%%ajfillyhat%%);
     width:65px;
-    height:54px;
+    height:60px;
     margin-top:-31px;
     margin-left:4px;
     margin-bottom:-14px;
@@ -2479,6 +2482,23 @@ a.thumbnail.self
 /*End generated CSS*/
 
 .sidecontentbox ul.content li.more {display:none;}
+
+/*Future Spoilers in the title flair*/
+.linkflair-fespoiler .linkflairlabel {display:none;}
+.linkflair-fespoiler p.title a.title {opacity:0;}
+.linkflair-fespoiler p.title a.title:hover {opacity:100;}
+.linkflair-fespoiler p.title:before
+{
+ content:"FUTURE EPISODE SPOILER";
+ font-size:12px;
+ color:#888;
+ border:1px solid #888;
+ border-radius:3px;
+ position:relative;
+ padding:0px 2px;
+ margin-right:2px;
+ top:-1px;
+}
 
 /*Spoilers in the title flair*/
 .linkflair-spoiler .linkflairlabel {display:none;}

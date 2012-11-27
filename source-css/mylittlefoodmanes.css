@@ -30,7 +30,7 @@ body {
 }
 
 #siteTable .entry.dislikes .buttons:before {
-content: "You better be saving downvotes for the next System sighting.";
+content: "You really disabled the CSS just to downvote this?";
 color: red;
 font-size: 8pt
 }
@@ -41,7 +41,7 @@ position: fixed;
 /* Used for centering (bottom Jcenter) */
 bottom: 0px;
 left: 50%;
-opacity: 0.05;
+opacity: 0.01;
 filter: alpha(opacity=5);
 margin-left: -577px;
 /* 0.5 the image width */
@@ -58,6 +58,8 @@ margin-left: 140px;
 /* 0.5 the image width */
 z-index: -100
 }
+
+.arrow.down{visibility:hidden;display:none;}
 
 .modactions.approvelink {
  background-image:url(%%floutstalin%%);background-position: -17px -561px;background-repeat: no-repeat;

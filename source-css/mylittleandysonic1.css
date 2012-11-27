@@ -1,31 +1,37 @@
-.md:after {
-   content: "";
-   background: url(%%c22%%)!important;
-   position:relative;
-   display: inline-block;
-   height: 63px;
-   width: 89px;
-   float:left
- }
-
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-   
-     background:  url(%%rcrback%%)  no-repeat  fixed 60% 100% !important;
-  
-} 
+    background:  url(%%bubble%%)  no-repeat  fixed 60% 100% !important;
+}
 
-/* Banner Image */
+/* Banner image and associated height values */
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%tootbanner%%); 
-  background-color: #e0d3c1 !important;
-   /*   margin-top: -20px;*/
+   background: url(%%newerold%%);
    background-repeat: no-repeat;
    background-position: 50% 0%;
-   height: 250px; /* 237 for meat's nice banner */
-   position:relative
- }
+   height: 372px; /* 237 for meat's nice banner */
+}
 
+#header-img-a {
+    margin-top: 211px;
+}
+
+#header {
+    height:391px;
+    border-bottom: 1px solid #000000;
+}
+
+#header-bottom-left>* {
+    display: inline-block;
+}
+
+.pagename a:after {
+    content: "  and Fwiends";
+    display: inline-block;
+    letter-spacing: normal;
+    font-size: 14px !important;
+    color: white;
+    margin-left: 4px;
+}
 
 /* User stuff (name color, karma color, est.) */
 #header-bottom-right {
@@ -42,52 +48,6 @@ body:first-of-type, body.res-nightmode:first-of-type {
     }
 .logout a {
     color: Teal
-    }
-
-#header-img {
-    margin-top:127px; /* 80 for meat's nice banner */
-    margin-left: 0px;
-    position: absolute
-    }
-
-.pagename {
-    position: absolute;
-    bottom: 0px;
-    left: 110px;
-    /*background-color: white;*/
-    border-top: 0px solid black;
-    border-left: 0px solid black;
-    border-right: 0px solid black
-    }
-.pagename a {
-    color: white;
-    padding: 5px
-    }
-
-.tabmenu:not(.formtab) {
-    margin-top: 233px; /* 223 for meat's nice banner */
-    margin-left: 505px
- }
-
-.tabmenu:not(.formtab) li a {
-    color: #000000;
-    background-color: #ffffff;
-    border: 0px solid black
-    }
-
-#header {
-    height: 265px;
-    border-bottom: 1px solid #000000;
-    position: relative;
-    z-index: 99
-    }
-.pagename a:after {
-    content: "  and Fwiends";
-    display: inline-block;
-    letter-spacing: normal;
-    font-size: 14px !important;
-    color: white;
-    margin-left: 5px;
     }
 
 /* Nightmode fixes for the background */
@@ -161,6 +121,15 @@ body.res-nightmode:first-of-type {background-color: transparent!important;}
     height: 70px;
     background-position: 0px -140px;
 }
+
+.linkflair-spoiler .thumbnail img {display:none}
+
+.linkflair-spoiler .thumbnail {  
+    background: url(%%thumbnails%%)!important;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    background-position: 0px -210px !important}
 
 /* changes "readers" to something more fitting */
 div.titlebox span.word {
@@ -250,7 +219,7 @@ display: none
     /* "Dynamic" vertical positioning of the stuff after the red box */
     content: "If your content is NSFW,  tag it! If it is furry, yiff, scat, contains spoilers or induces feels, add link flair as accordingly.";
     font-size: small;
-    color: white;
+    color: gray !important
     }
 .res-nightmode .formtabs-content .spacer:first-child:before {
     color: #222
@@ -790,6 +759,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="EvanMacIan"],
 a.author[href$="kcirvam"],
 a.author[href$="Typhron"],
 a.author[href$="Unsinkablesam"],
@@ -868,6 +838,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="EvanMacIan"]:before,
 a.author[href$="kcirvam"]:before,
 a.author[href$="Typhron"]:before,
 a.author[href$="Jeroknite"]:before,
@@ -943,6 +914,7 @@ visibility:visible!important;
 }
 
 /* Replacing somebody's name? Put the replacement here. */
+a.author[href$="EvanMacIan"]:before {content: "Ewan McGregor"}
 a.author[href$="kcirvam"]:before {content: "mavrick45"}
 a.author[href$="Typhron"]:before {content:"Tiffany"}
 a.author[href$="Unsinkablesam"]:before {content:"The Go-Go Train"}
@@ -1228,3 +1200,29 @@ body.res a.author[href$="Pathogen-David"], body.res a.author[href$="Phei"] { col
 .id-t2_894lr.id-t2_894lr{color:#b38 !important}
 
 .error.OUTOFSUB{display:none!important}
+
+.sidecontentbox h1 {
+    text-align: left
+}
+.sidecontentbox .helplink + .title > h1 {
+    color: white !important;
+    font-size: 0px !important;
+    display: inline-block;
+    overflow: hidden
+}
+.sidecontentbox .helplink + .title > h1:before {
+    color: gray !important;
+    font-size: 13px !important;
+    content: "''moderators''";
+    display: inline-block
+}
+.sidecontentbox a.helplink {
+    color: white !important;
+    overflow: hidden;
+    font-size: 0px !important
+}
+.sidecontentbox a.helplink:after {
+    color: #369 !important;
+    font-size: 11px !important;
+    content: "message the ''moderators''"
+}
