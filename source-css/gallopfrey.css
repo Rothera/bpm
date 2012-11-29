@@ -748,13 +748,14 @@ a[href|="/dr15"], a[href|="/rory"],
 a[href|="/dr25"], a[href|="/river"],
 a[href|="/dr06"], a[href|="/sjs"], a[href|="/sarahjane"], a[href|="/sarahjanesmith"],
 a[href|="/dr16"], a[href|="/romanaII"], a[href|="/romana2"]
+a[href|="/dr26"], a[href|="/dwfacehoof"], a[href|="/dwfacehoof"]
 {
     display: block;
     clear: none;
     float: left;
     width: 70px;
     height: 70px;
-    background-image: url(%%DR%%) !important
+    background-image: url(%%DRi%%) !important
 }
 a[href|="/rdr00"], a[href|="/rdw1st"],
 a[href|="/rdr10"], a[href|="/rdw2nd"],
@@ -776,13 +777,14 @@ a[href|="/rdr15"], a[href|="/rrory"],
 a[href|="/rdr25"], a[href|="/rriver"],
 a[href|="/rdr06"], a[href|="/rsjs"], a[href|="/rsarahjane"], a[href|="/rsarahjanesmith"],
 a[href|="/rdr16"], a[href|="/rromanaII"], a[href|="/rromana2"]
+a[href|="/rdr26"],  a[href|="/rdwfacehoof"]
 {
     display: block;
     clear: none;
     float: left;
     width: 70px;
     height: 70px;
-    background-image: url(%%rDR%%) !important
+    background-image: url(%%rDr1%%) !important
 }
 /*********************************************/
 a[href|="/dr00"],  a[href|="/dw1st"],  
@@ -872,6 +874,10 @@ a[href|="/dr16"], a[href|="/romanaII"], a[href|="/romana2"], a[href|="/romana"],
 a[href|="/rdr16"], a[href|="/rromanaII"], a[href|="/rromana2"], a[href|="/rromana"]{
     background-position: -70px -420px
 }
+a[href|="/dr26"],  a[href|="/dwfacehoof"],
+a[href|="/rdr26"],  a[href|="/rdwfacehoof"]{
+    background-position: -140px -420px
+}
 /*********************************************/
 /******************************************************************************
 *           End Docotors "Dr" Emote Block                                     *
@@ -906,7 +912,7 @@ div.titlebox span.word {
     display: none
     }
 div.titlebox span.number:after {
-    content: " Whovian Bronies "
+    content: " Companions "
     }
 /* Mod name modification. */
 .titlebox .bottom .author, .sidecontentbox .author {

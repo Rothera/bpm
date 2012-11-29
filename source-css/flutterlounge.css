@@ -94,6 +94,21 @@ a[href|="/fluttersmile"], a[href|="/shysmile"] {
     height: 247px;
     background-image: url(%%fluttersmile%%)
     }
+a[href|="/shydance"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 330px;
+    height: 400px;
+    background-image: url(%%shydance%%)
+    }
+
+/* Space thingy */
+a[href|="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }
+
 /* Flair! So many wonderful choices! */
 
 .flair {

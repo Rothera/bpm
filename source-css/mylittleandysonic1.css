@@ -50,10 +50,11 @@ body:first-of-type, body.res-nightmode:first-of-type {
     color: Teal
     }
 
-/* Nightmode fixes for the background */
+/* Nightmode fixes for the background and other stuff */
 .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
 body.res-nightmode:first-of-type {background-color: transparent!important;}
+span[class="hover pagename redditname"] a:first-of-type { font-size: 1em !important; }
 
 /* Makes the sidebar transparent */
 .side {background-color: transparent !important }
@@ -76,8 +77,8 @@ body.res-nightmode:first-of-type {background-color: transparent!important;}
     background:url(%%announcedance%%) no-repeat scroll 5px 1px #EFF7FF;
     font-size: 14px !important;
     position: absolute;
-    top: 20px;
-    left: 270px;
+    top: 318px;
+    left:350px;
     z-index: 200;
     margin: -0px 310px 0 0;
     padding: 18px 1px 12px 45px;
@@ -419,13 +420,14 @@ a[href|='/trixfun'] {width:226px; height:152px; background-position: -0px -927px
 a[href|='/twifun'] {width:230px; height:152px; background-position: -0px -471px}
 
 
-a[href|='/nolove'] {
+a[href|='/applepie'], a[href|='/nolove'] {
     display: block;
     clear: none;
     float: left;
     background-image: url(%%table11%%)
     }
 
+a[href|='/applepie'] {width:207px; height:177px; background-position: -0px -252px}
 a[href|='/nolove'] {width:206px; height:252px; background-position: -0px -0px}
 
 
