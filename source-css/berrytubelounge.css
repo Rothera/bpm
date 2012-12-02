@@ -1,3 +1,10 @@
+/*messing with worldtrekka*/
+.id-t3_1420zy a.title,#siteTable_t3_1420zy div.md p{
+direction: rtl;
+unicode-bidi: bidi-override;
+text-align: left;
+}
+
 #header-bottom-left:nth-of-type(n) {
    background: url(%%banner%%); 
    background-repeat: no-repeat;
@@ -143,6 +150,24 @@ height: 70px;
 background-image: url(%%btlemotetable1%%) !important
 }
 
+a[href|="/blt00"], a[href|="/blt10"], a[href|="/blt01"], a[href|="/blt11"], a[href|="/ppwhathorrorsarewe"], a[href|="/ppmoonwalk"], a[href|="/pprumgone"], a[href|="/rawrity"] {
+display:block;
+clear: none;
+float: left;
+width: 70px;
+height: 70px;
+background-image: url(%%btlemotetable2%%) !important
+}
+
+a[href|="/blt20"], a[href|="/blt02"], a[href|="/blt22"], a[href|="/blt04"], a[href|="/blt24"], a[href|="/ppbloat"], a[href|="/ppfingers"], a[href|="/vodka"], a[href|="/wodka"], a[href|="/WODKA"], a[href|="/VODKA"], a[href|="/berryapproved"], a[href|="/bpapproves"], a[href|="/rdchairfort"] {
+display:block;
+clear: none;
+float: left;
+width: 140px;
+height: 140px;
+background-image: url(%%btlemotetable2%%) !important
+}
+
 /* Temporarily Removed until a blank background in progress by Kallado is finished
 a[href|="/cmcbop"]{
 display:block;
@@ -153,28 +178,82 @@ height: 70px;
 background-image: url(%%cmcbop%%) !important
 }*/
 
+a[href|="/octydance"]{
+display:block;
+clear: none;
+float: left;
+width: 40px;
+height: 70px;
+background-image: url(%%octydance%%) !important
+}
+
+a[href|="/avinyldance"]{
+display:block;
+clear: none;
+float: left;
+width: 57px;
+height: 70px;
+background-image: url(%%avinyldance%%) !important
+}
+
+a[href|="/tav3drag"]{
+display:block;
+clear: none;
+float: left;
+width: 192px;
+height: 70px;
+background-image: url(%%tav3drag%%) !important
+}
+
+a[href|="/octav3dance"]{
+display:block;
+clear: none;
+float: left;
+width: 137px;
+height: 70px;
+background-image: url(%%octav3dance%%) !important
+}
+
+a[href|="/poutypie"]{
+display:block;
+clear: none;
+float: left;
+width: 143px;
+height: 70px;
+background-image: url(%%poutypie%%) !important
+}
+
+/* Sheet offsets */
 a[href|="/btl00"], a[href|="/halp"] {
 background-position: -0px -0px
 }
 
-a[href|="/btl10"], a[href|="/onekeg"] {
+a[href|="/btl10"], a[href|="/onekeg"], a[href|="/blt10"], a[href|="/ppmoonwalk"] {
 background-position: -70px -0px
 }
 
-a[href|="/btl01"], a[href|="/scootafresh"] {
+a[href|="/blt20"], a[href|="/ppbloat"]{
+background-position: -140px -0px
+}
+
+a[href|="/btl01"], a[href|="/scootafresh"], a[href|="/blt01"], a[href|="/pprumgone"] {
 background-position: -0px -70px
 }
 
-a[href|="/btl11"], a[href|="/spikedapper"] {
+a[href|="/btl11"], a[href|="/spikedapper"], a[href|="/blt11"], a[href|="/rawrity"] {
 background-position: -70px -70px
 }
 
-a[href|="/btl02"], a[href|="/beepbeep"] {
+a[href|="/btl02"], a[href|="/beepbeep"], a[href|="/blt02"], a[href|="/ppfingers"] {
 background-position: -0px -140px
 }
 
 a[href|="/btl12"], a[href|="/vinyldance"] {
 background-position: -70px -140px
+}
+
+a[href|="/blt22"], a[href|="/vodka"], a[href|="/wodka"], a[href|="/WODKA"], a[href|="/VODKA"] {
+background-position: -140px -140px
 }
 
 a[href|="/btl03"], a[href|="/octysmile"] {
@@ -185,6 +264,10 @@ a[href|="/btl13"], a[href|="/octygrin"] {
 background-position: -70px -210px
 }
 
-a[href|="/btl04"], a[href|="/octav3drag"] {
+a[href|="/btl04"], a[href|="/octav3drag"], a[href|="/blt04"], a[href|="/berryapproved"], a[href|="/bpapproves"] {
 background-position: -0px -280px
+}
+
+a[href|="/blt24"], a[href|="/rdchairfort"]{
+background-position: -140px -280px
 }

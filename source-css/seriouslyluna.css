@@ -39,6 +39,8 @@ SeriouslyConky:
         > Added default NSFW, and self thumbnails
         > Added 5 more emotes
         > Added Search bar Luna
+SeriouslyMaku: 
+        > Added 
 
 */
 
@@ -895,9 +897,19 @@ a[href|="/seriouslysweetieshake"] {
     float: left;
     width: 161px;
     height: 217px;
-    background-image: url(%%shakeit%%)
+    background-image: url(%%ohgodsheet%%)
+    }
+a[href|="/seriouslykindahumancmc"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 217px;
+    height: 217px;
+    background-image: url(%%ohgodsheet%%)
     }
 
+a[href|="/seriouslysweetieshake"] { background-position: -0px -0px }
+a[href|="/seriouslykindahumancmc"] { background-position: -161px -0px }
 
 /*** Mane Six emotes ***/
 

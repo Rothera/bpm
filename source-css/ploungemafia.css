@@ -234,12 +234,12 @@ text-decoration: underline;
 content: " " ; 
 margin-left: 5px;
 
-/* Red Test 
+/* Red announcement thingy
 
 background-color: #fc6c6c;
 border: 2px solid #d53f3f;
 */
-/* Green */
+/* Green announcement thingy */
 background-color: #85d462; 
 border: 2px solid #3BAE08; 
 
@@ -255,3 +255,56 @@ position: absolute;
 top: 5px;
 left: 0;
 }
+
+/* Self post icon */
+
+ /*.thumbnail[href^="/r/ploungemafia/"]{display: none} */
+    /*.thumbnail img[src^="/static/"]{display: none !important} */
+    /*.thumbnail{width: auto !important}*/
+    .thumbnail.default, .thumbnail.self {
+        background-image: url(%%icon%%);
+        background-position: center !important;
+        background-repeat: no-repeat !important
+    }
+
+/*** Submit a link -> Create a submission (Totally not stolen from /r/mylittlefoodmanes) ***/
+
+.sidebox.submit .morelink:before {
+    display: block;
+    clear: none;
+    content: "Create a Submission";
+    text-align: center;
+    color: #369;
+    width: 101%
+    }
+.sidebox.submit .morelink a {
+    position: absolute;
+    top: 0;
+    font-size: 1px;
+    text-align: right;
+    color: #f2f8fd
+    }
+.sidebox.submit .morelink:hover:before {
+    color: blue
+    }
+.sidebox.submit:hover a {
+    color: #b4cee5
+    }
+.sidebox .subtitle:before {
+    display: block;
+    clear: none;
+    content: " Mafia/forum games, meta threads, Mafia fillies, Mafia mafia...";
+    color: dimgrey;
+    font-size: 8pt !important
+    }
+.sidebox .subtitle {
+    font-size: 0px
+    }
+.sidebox.create {
+    display: none
+    }
+.sidebox.submit .spacer a {
+    background-image: url(%%submissionmafia%%);
+    background-position: -0px -0px;
+    background-repeat: no-repeat
+    }

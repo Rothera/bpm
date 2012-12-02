@@ -158,6 +158,22 @@ a.author[href$="YarnTheory"]:after {
     letter-spacing: normal
     }
 
+a.author[href$="dda1add"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="dda1add"]:after {
+    content: "Trigger Jim";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+
+
 a.author[href$="Apprentice1994"] {
     font-size: 0px !important;
     display: inline-block;
@@ -166,7 +182,7 @@ a.author[href$="Apprentice1994"] {
     letter-spacing: -20px
     }
 a.author[href$="Apprentice1994"]:after {
-    content: "Has anyone really been far even as decided to use even go want to do look more like?";
+    content: "Hus anyune rually buun far evun as decided to use even gu wunt tu du luuk mure luke?";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;
@@ -420,13 +436,22 @@ a.author[href$="Avebone"] {
     letter-spacing: -20px
     }
 a.author[href$="Avebone"]:after {
-    content: "AntiSystemOutPrintln";
+    content: "The Cripple Casanova";
     font-size: 12px !important;
     visibility: visible !important;
     /*color: #008000;*/
     display: block;
     letter-spacing: normal
     }
+a.author[href$="Avebone"]:hover:after {
+    content: "Quail is literally going to art school";
+    font-size: 14px !important;
+    visibility: visible !important;
+    color: red;
+    display: block;
+    letter-spacing: normal
+    }
+
 a.author[href$="floutsy"] {
     font-size: 0px !important;
     display: inline-block;
@@ -442,14 +467,7 @@ a.author[href$="floutsy"]:after {
     display: block;
     letter-spacing: normal
     }
-a.author[href$="Avebone"]:hover:after {
-    content: "Quail is literally Bitler";
-    display: block;
-    color: #E3170D;
-    font-size: 12px !important;
-    letter-spacing: normal;
-    visibility: visible !important
-    }
+
 a.author[href$="insanitydash"] {
     font-size: 0px !important;
     display: inline-block;
@@ -472,6 +490,21 @@ a.author[href$="insanitydash"]:after {
     width: 70px;
     height: 70px;
     background-position: 0px 0px
+    }
+
+a.author[href$="StabbyTheLlama"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="StabbyTheLlama"]:after {
+    content: "Nigga-I-Like-Trains";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
     }
 
 /* text effects- for fucks sake, why is this not here already? */
@@ -923,4 +956,27 @@ a[href|="/milkymane"]
     height: 200px;
     width: 258px;
 
+}
+
+a[href|="/youreawesome"]
+{
+
+ background-image: url(%%youreawesome%%);
+    clear: none;
+    display: block;
+    float: left;
+    height: 275px;
+    width: 200px;
+
+}
+
+a[href|="/moarmoe"]
+{
+
+ background-image: url(%%123%%);
+    clear: none;
+    display: block;
+    float: left;
+    height: 317px;
+    width: 250px;
 }
