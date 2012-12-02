@@ -25,9 +25,10 @@ def rewrite_line(line):
         s = s.replace("a[href^='/']", "") # Useless
         if s[0] == "a": # Sometimes still there
             s = s[1:]
-        s = re.sub(r"\[href\*='-(\w+)']", r".bpflags-\1", s)
-        s = re.sub(r"\[href\$='-(\w+)']", r".bpflags-\1", s)
-        s = re.sub(r"\[href\*=-(\w+)]", r".bpflags-\1", s)
+        s = s.replace("!", "_excl_")
+        s = re.sub(r"\[href\*='-(\w+)']", r".bpflag-\1", s)
+        s = re.sub(r"\[href\$='-(\w+)']", r".bpflag-\1", s)
+        s = re.sub(r"\[href\*=-(\w+)]", r".bpflag-\1", s)
         s += ":hover" if hover else ""
         ns.append(s)
     print(", ".join(ns), props)

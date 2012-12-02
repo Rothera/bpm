@@ -1,14 +1,46 @@
 /*
  * ExtraCSS flags file for unprefixed browsers, i.e. recent Firefox versions.
-
+ *
  * Originally stolen from:
  *
- *    http://userstyles.org/styles/58923/reddit-my-little-chaos-script-keyframes
+ *    http://userstyles.org/styles/71745/reddit-chaos-firefox
  *
  * Rewritten extensively to use CSS classes.
  */
 
-/*== keyframes ==*/
+/*== mane ==*/
+.bpflag-r.bpflag-d:hover {transform:rotate(0deg)scaleX(1);image-rendering:crisp-edges}
+.bpflag-45, .bpflag-45.bpflag-r.bpflag-d:hover {transform:rotate(45deg)scaleX(1)}
+.bpflag-90, .bpflag-90.bpflag-r.bpflag-d:hover {transform:rotate(90deg)scaleX(1);image-rendering:crisp-edges}
+.bpflag-135, .bpflag-135.bpflag-r.bpflag-d:hover {transform:rotate(135deg)scaleX(1)}
+.bpflag-180, .bpflag-180.bpflag-r.bpflag-d:hover {transform:rotate(180deg)scaleX(1);image-rendering:crisp-edges}
+.bpflag-225, .bpflag-225.bpflag-r.bpflag-d:hover {transform:rotate(225deg)scaleX(1)}
+.bpflag-270, .bpflag-270.bpflag-r.bpflag-d:hover {transform:rotate(270deg)scaleX(1);image-rendering:crisp-edges}
+.bpflag-315, .bpflag-315.bpflag-r.bpflag-d:hover {transform:rotate(315deg)scaleX(1)}
+.bpflag-r, .bpflag-d:hover {transform:rotate(0deg)scaleX(-1);image-rendering:crisp-edges}
+.bpflag-45.bpflag-r, .bpflag-45.bpflag-d:hover {transform:rotate(45deg)scaleX(-1)}
+.bpflag-90.bpflag-r, .bpflag-90.bpflag-d:hover {transform:rotate(90deg)scaleX(-1);image-rendering:crisp-edges}
+.bpflag-135.bpflag-r, .bpflag-135.bpflag-d:hover {transform:rotate(135deg)scaleX(-1)}
+.bpflag-180.bpflag-r, .bpflag-180.bpflag-d:hover {transform:rotate(180deg)scaleX(-1);image-rendering:crisp-edges}
+.bpflag-225.bpflag-r, .bpflag-225.bpflag-d:hover {transform:rotate(225deg)scaleX(-1)}
+.bpflag-270.bpflag-r, .bpflag-270.bpflag-d:hover {transform:rotate(270deg)scaleX(-1);image-rendering:crisp-edges}
+.bpflag-315.bpflag-r, .bpflag-315.bpflag-d:hover {transform:rotate(315deg)scaleX(-1)}
+.bpflag-225.bpflag-f.bpflag-r, .bpflag-225.bpflag-f.bpflag-d:hover {transform:rotate(45deg)scaleX(1)}
+.bpflag-270.bpflag-f.bpflag-r, .bpflag-270.bpflag-f.bpflag-d:hover {transform:rotate(90deg)scaleX(1);image-rendering:crisp-edges}
+.bpflag-315.bpflag-f.bpflag-r, .bpflag-315.bpflag-f.bpflag-d:hover {transform:rotate(135deg)scaleX(1)}
+.bpflag-f.bpflag-r, .bpflag-f.bpflag-d:hover {transform:rotate(180deg)scaleX(1);image-rendering:crisp-edges}
+.bpflag-45.bpflag-f.bpflag-r, .bpflag-45.bpflag-f.bpflag-d:hover {transform:rotate(225deg)scaleX(1)}
+.bpflag-90.bpflag-f.bpflag-r, .bpflag-90.bpflag-f.bpflag-d:hover {transform:rotate(270deg)scaleX(1);image-rendering:crisp-edges}
+.bpflag-135.bpflag-f.bpflag-r, .bpflag-135.bpflag-f.bpflag-d:hover {transform:rotate(315deg)scaleX(1)}
+.bpflag-225.bpflag-f, .bpflag-225.bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(45deg)scaleX(-1)}
+.bpflag-270.bpflag-f, .bpflag-270.bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(90deg)scaleX(-1);image-rendering:crisp-edges}
+.bpflag-315.bpflag-f, .bpflag-315.bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(135deg)scaleX(-1)}
+.bpflag-f, .bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(180deg)scaleX(-1);image-rendering:crisp-edges}
+.bpflag-45.bpflag-f, .bpflag-45.bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(225deg)scaleX(-1)}
+.bpflag-90.bpflag-f, .bpflag-90.bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(270deg)scaleX(-1);image-rendering:crisp-edges}
+.bpflag-135.bpflag-f, .bpflag-135.bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(315deg)scaleX(-1)}
+
+/*== -spin ==*/
 @keyframes spin{from{transform:rotate(0deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(0deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
 @keyframes spin-45{from{transform:rotate(45deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(45deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
 @keyframes spin-90{from{transform:rotate(90deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(90deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
@@ -25,6 +57,86 @@
 @keyframes spin-225-r{from{transform:rotate(225deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(225deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
 @keyframes spin-270-r{from{transform:rotate(270deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(270deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
 @keyframes spin-315-r{from{transform:rotate(315deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)} to{transform:rotate(315deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)}}
+.bpflag-spin, .bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-spin, .bpflag-45.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-45 2s infinite linear}
+.bpflag-90.bpflag-spin, .bpflag-90.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-90 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-spin, .bpflag-135.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-135 2s infinite linear}
+.bpflag-180.bpflag-spin, .bpflag-180.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-180 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-225.bpflag-spin, .bpflag-225.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-225 2s infinite linear}
+.bpflag-270.bpflag-spin, .bpflag-270.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-270 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-spin, .bpflag-315.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-315 2s infinite linear}
+.bpflag-r.bpflag-spin, .bpflag-d.bpflag-spin:hover {animation:spin-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-r.bpflag-spin, .bpflag-45.bpflag-d.bpflag-spin:hover {animation:spin-45-r 2s infinite linear}
+.bpflag-90.bpflag-r.bpflag-spin, .bpflag-90.bpflag-d.bpflag-spin:hover {animation:spin-90-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-r.bpflag-spin, .bpflag-135.bpflag-d.bpflag-spin:hover {animation:spin-135-r 2s infinite linear}
+.bpflag-180.bpflag-r.bpflag-spin, .bpflag-180.bpflag-d.bpflag-spin:hover {animation:spin-180-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-225.bpflag-r.bpflag-spin, .bpflag-225.bpflag-d.bpflag-spin:hover {animation:spin-225-r 2s infinite linear}
+.bpflag-270.bpflag-r.bpflag-spin, .bpflag-270.bpflag-d.bpflag-spin:hover {animation:spin-270-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-r.bpflag-spin, .bpflag-315.bpflag-d.bpflag-spin:hover {animation:spin-315-r 2s infinite linear}
+.bpflag-225.bpflag-f.bpflag-r.bpflag-spin, .bpflag-225.bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-45 2s infinite linear}
+.bpflag-270.bpflag-f.bpflag-r.bpflag-spin, .bpflag-270.bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-90 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-f.bpflag-r.bpflag-spin, .bpflag-315.bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-135 2s infinite linear}
+.bpflag-f.bpflag-r.bpflag-spin, .bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-180 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-f.bpflag-r.bpflag-spin, .bpflag-45.bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-225 2s infinite linear}
+.bpflag-90.bpflag-f.bpflag-r.bpflag-spin, .bpflag-90.bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-270 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-f.bpflag-r.bpflag-spin, .bpflag-135.bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-315 2s infinite linear}
+.bpflag-225.bpflag-f.bpflag-spin, .bpflag-225.bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-45-r 2s infinite linear}
+.bpflag-270.bpflag-f.bpflag-spin, .bpflag-270.bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-90-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-f.bpflag-spin, .bpflag-315.bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-135-r 2s infinite linear}
+.bpflag-f.bpflag-spin, .bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-180-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-f.bpflag-spin, .bpflag-45.bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-225-r 2s infinite linear}
+.bpflag-90.bpflag-f.bpflag-spin, .bpflag-90.bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-270-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-f.bpflag-spin, .bpflag-135.bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-315-r 2s infinite linear}
+
+/*== -!spin ==*/
+@keyframes _excl_spin{from{transform:rotate(360deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(360deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-45{from{transform:rotate(45deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(45deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-90{from{transform:rotate(9360deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(9360deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-135{from{transform:rotate(135deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(135deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-180{from{transform:rotate(18360deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(18360deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-225{from{transform:rotate(225deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(225deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-270{from{transform:rotate(27360deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(27360deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-315{from{transform:rotate(315deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(315deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-r{from{transform:rotate(360deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(360deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-45-r{from{transform:rotate(45deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(45deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-90-r{from{transform:rotate(9360deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(9360deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-135-r{from{transform:rotate(135deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(135deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-180-r{from{transform:rotate(18360deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(18360deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-225-r{from{transform:rotate(225deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(225deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-270-r{from{transform:rotate(27360deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(27360deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+@keyframes _excl_spin-315-r{from{transform:rotate(315deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(315deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
+.bpflag-_excl_spin, .bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-_excl_spin, .bpflag-45.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-45 2s infinite linear}
+.bpflag-90.bpflag-_excl_spin, .bpflag-90.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-90 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-_excl_spin, .bpflag-135.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-135 2s infinite linear}
+.bpflag-180.bpflag-_excl_spin, .bpflag-180.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-180 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-225.bpflag-_excl_spin, .bpflag-225.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-225 2s infinite linear}
+.bpflag-270.bpflag-_excl_spin, .bpflag-270.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-270 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-_excl_spin, .bpflag-315.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-315 2s infinite linear}
+.bpflag-r.bpflag-_excl_spin, .bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-r.bpflag-_excl_spin, .bpflag-45.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-45-r 2s infinite linear}
+.bpflag-90.bpflag-r.bpflag-_excl_spin, .bpflag-90.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-90-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-r.bpflag-_excl_spin, .bpflag-135.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-135-r 2s infinite linear}
+.bpflag-180.bpflag-r.bpflag-_excl_spin, .bpflag-180.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-180-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-225.bpflag-r.bpflag-_excl_spin, .bpflag-225.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-225-r 2s infinite linear}
+.bpflag-270.bpflag-r.bpflag-_excl_spin, .bpflag-270.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-270-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-r.bpflag-_excl_spin, .bpflag-315.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-315-r 2s infinite linear}
+.bpflag-225.bpflag-f.bpflag-r.bpflag-_excl_spin, .bpflag-225.bpflag-f.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-45 2s infinite linear}
+.bpflag-270.bpflag-f.bpflag-r.bpflag-_excl_spin, .bpflag-270.bpflag-f.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-90 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-f.bpflag-r.bpflag-_excl_spin, .bpflag-315.bpflag-f.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-135 2s infinite linear}
+.bpflag-f.bpflag-r.bpflag-_excl_spin, .bpflag-f.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-180 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-f.bpflag-r.bpflag-_excl_spin, .bpflag-45.bpflag-f.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-225 2s infinite linear}
+.bpflag-90.bpflag-f.bpflag-r.bpflag-_excl_spin, .bpflag-90.bpflag-f.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-270 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-f.bpflag-r.bpflag-_excl_spin, .bpflag-135.bpflag-f.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-315 2s infinite linear}
+.bpflag-225.bpflag-f.bpflag-_excl_spin, .bpflag-225.bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-45-r 2s infinite linear}
+.bpflag-270.bpflag-f.bpflag-_excl_spin, .bpflag-270.bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-90-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-f.bpflag-_excl_spin, .bpflag-315.bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-135-r 2s infinite linear}
+.bpflag-f.bpflag-_excl_spin, .bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-180-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-f.bpflag-_excl_spin, .bpflag-45.bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-225-r 2s infinite linear}
+.bpflag-90.bpflag-f.bpflag-_excl_spin, .bpflag-90.bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-270-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-f.bpflag-_excl_spin, .bpflag-135.bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_spin:hover {animation:_excl_spin-315-r 2s infinite linear}
+
+/*== -xspin ==*/
 @keyframes xspin{from{transform:rotate(0deg)scaleX(1)rotateX(0deg)} to{transform:rotate(0deg)scaleX(1)rotateX(360deg)}}
 @keyframes xspin-45{from{transform:rotate(45deg)scaleX(1)rotateX(0deg)} to{transform:rotate(45deg)scaleX(1)rotateX(360deg)}}
 @keyframes xspin-90{from{transform:rotate(90deg)scaleX(1)rotateX(0deg)} to{transform:rotate(90deg)scaleX(1)rotateX(360deg)}}
@@ -41,6 +153,38 @@
 @keyframes xspin-225-r{from{transform:rotate(225deg)scaleX(-1)rotateX(0deg)} to{transform:rotate(225deg)scaleX(-1)rotateX(360deg)}}
 @keyframes xspin-270-r{from{transform:rotate(270deg)scaleX(-1)rotateX(0deg)} to{transform:rotate(270deg)scaleX(-1)rotateX(360deg)}}
 @keyframes xspin-315-r{from{transform:rotate(315deg)scaleX(-1)rotateX(0deg)} to{transform:rotate(315deg)scaleX(-1)rotateX(360deg)}}
+.bpflag-xspin, .bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-xspin, .bpflag-45.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-45 2s infinite linear}
+.bpflag-90.bpflag-xspin, .bpflag-90.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-90 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-xspin, .bpflag-135.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-135 2s infinite linear}
+.bpflag-180.bpflag-xspin, .bpflag-180.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-180 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-225.bpflag-xspin, .bpflag-225.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-225 2s infinite linear}
+.bpflag-270.bpflag-xspin, .bpflag-270.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-270 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-xspin, .bpflag-315.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-315 2s infinite linear}
+.bpflag-r.bpflag-xspin, .bpflag-d.bpflag-xspin:hover {animation:xspin-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-r.bpflag-xspin, .bpflag-45.bpflag-d.bpflag-xspin:hover {animation:xspin-45-r 2s infinite linear}
+.bpflag-90.bpflag-r.bpflag-xspin, .bpflag-90.bpflag-d.bpflag-xspin:hover {animation:xspin-90-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-r.bpflag-xspin, .bpflag-135.bpflag-d.bpflag-xspin:hover {animation:xspin-135-r 2s infinite linear}
+.bpflag-180.bpflag-r.bpflag-xspin, .bpflag-180.bpflag-d.bpflag-xspin:hover {animation:xspin-180-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-225.bpflag-r.bpflag-xspin, .bpflag-225.bpflag-d.bpflag-xspin:hover {animation:xspin-225-r 2s infinite linear}
+.bpflag-270.bpflag-r.bpflag-xspin, .bpflag-270.bpflag-d.bpflag-xspin:hover {animation:xspin-270-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-r.bpflag-xspin, .bpflag-315.bpflag-d.bpflag-xspin:hover {animation:xspin-315-r 2s infinite linear}
+.bpflag-225.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-225.bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-45 2s infinite linear}
+.bpflag-270.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-270.bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-90 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-315.bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-135 2s infinite linear}
+.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-180 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-45.bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-225 2s infinite linear}
+.bpflag-90.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-90.bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-270 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-135.bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-315 2s infinite linear}
+.bpflag-225.bpflag-f.bpflag-xspin, .bpflag-225.bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-45-r 2s infinite linear}
+.bpflag-270.bpflag-f.bpflag-xspin, .bpflag-270.bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-90-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-f.bpflag-xspin, .bpflag-315.bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-135-r 2s infinite linear}
+.bpflag-f.bpflag-xspin, .bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-180-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-f.bpflag-xspin, .bpflag-45.bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-225-r 2s infinite linear}
+.bpflag-90.bpflag-f.bpflag-xspin, .bpflag-90.bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-270-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-f.bpflag-xspin, .bpflag-135.bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-315-r 2s infinite linear}
+
+/*== -yspin ==*/
 @keyframes yspin{from{transform:rotate(0deg)scaleX(1)rotatey(0deg)} to{transform:rotate(0deg)scaleX(1)rotatey(360deg)}}
 @keyframes yspin-45{from{transform:rotate(45deg)scaleX(1)rotatey(0deg)} to{transform:rotate(45deg)scaleX(1)rotatey(360deg)}}
 @keyframes yspin-90{from{transform:rotate(90deg)scaleX(1)rotatey(0deg)} to{transform:rotate(90deg)scaleX(1)rotatey(360deg)}}
@@ -57,6 +201,38 @@
 @keyframes yspin-225-r{from{transform:rotate(225deg)scaleX(-1)rotatey(0deg)} to{transform:rotate(225deg)scaleX(-1)rotatey(360deg)}}
 @keyframes yspin-270-r{from{transform:rotate(270deg)scaleX(-1)rotatey(0deg)} to{transform:rotate(270deg)scaleX(-1)rotatey(360deg)}}
 @keyframes yspin-315-r{from{transform:rotate(315deg)scaleX(-1)rotatey(0deg)} to{transform:rotate(315deg)scaleX(-1)rotatey(360deg)}}
+.bpflag-yspin, .bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-yspin, .bpflag-45.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-45 2s infinite linear}
+.bpflag-90.bpflag-yspin, .bpflag-90.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-90 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-yspin, .bpflag-135.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-135 2s infinite linear}
+.bpflag-180.bpflag-yspin, .bpflag-180.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-180 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-225.bpflag-yspin, .bpflag-225.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-225 2s infinite linear}
+.bpflag-270.bpflag-yspin, .bpflag-270.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-270 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-yspin, .bpflag-315.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-315 2s infinite linear}
+.bpflag-r.bpflag-yspin, .bpflag-d.bpflag-yspin:hover {animation:yspin-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-r.bpflag-yspin, .bpflag-45.bpflag-d.bpflag-yspin:hover {animation:yspin-45-r 2s infinite linear}
+.bpflag-90.bpflag-r.bpflag-yspin, .bpflag-90.bpflag-d.bpflag-yspin:hover {animation:yspin-90-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-r.bpflag-yspin, .bpflag-135.bpflag-d.bpflag-yspin:hover {animation:yspin-135-r 2s infinite linear}
+.bpflag-180.bpflag-r.bpflag-yspin, .bpflag-180.bpflag-d.bpflag-yspin:hover {animation:yspin-180-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-225.bpflag-r.bpflag-yspin, .bpflag-225.bpflag-d.bpflag-yspin:hover {animation:yspin-225-r 2s infinite linear}
+.bpflag-270.bpflag-r.bpflag-yspin, .bpflag-270.bpflag-d.bpflag-yspin:hover {animation:yspin-270-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-r.bpflag-yspin, .bpflag-315.bpflag-d.bpflag-yspin:hover {animation:yspin-315-r 2s infinite linear}
+.bpflag-225.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-225.bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-45 2s infinite linear}
+.bpflag-270.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-270.bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-90 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-315.bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-135 2s infinite linear}
+.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-180 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-45.bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-225 2s infinite linear}
+.bpflag-90.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-90.bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-270 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-135.bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-315 2s infinite linear}
+.bpflag-225.bpflag-f.bpflag-yspin, .bpflag-225.bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-45-r 2s infinite linear}
+.bpflag-270.bpflag-f.bpflag-yspin, .bpflag-270.bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-90-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-f.bpflag-yspin, .bpflag-315.bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-135-r 2s infinite linear}
+.bpflag-f.bpflag-yspin, .bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-180-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-f.bpflag-yspin, .bpflag-45.bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-225-r 2s infinite linear}
+.bpflag-90.bpflag-f.bpflag-yspin, .bpflag-90.bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-270-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-f.bpflag-yspin, .bpflag-135.bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-315-r 2s infinite linear}
+
+/*== -zspin ==*/
 @keyframes zspin{from{transform:rotate(0deg)scaleX(1)rotatez(0deg)} to{transform:rotate(0deg)scaleX(1)rotatez(360deg)}}
 @keyframes zspin-45{from{transform:rotate(45deg)scaleX(1)rotatez(0deg)} to{transform:rotate(45deg)scaleX(1)rotatez(360deg)}}
 @keyframes zspin-90{from{transform:rotate(90deg)scaleX(1)rotatez(0deg)} to{transform:rotate(90deg)scaleX(1)rotatez(360deg)}}
@@ -73,292 +249,117 @@
 @keyframes zspin-225-r{from{transform:rotate(225deg)scaleX(-1)rotatez(0deg)} to{transform:rotate(225deg)scaleX(-1)rotatez(360deg)}}
 @keyframes zspin-270-r{from{transform:rotate(270deg)scaleX(-1)rotatez(0deg)} to{transform:rotate(270deg)scaleX(-1)rotatez(360deg)}}
 @keyframes zspin-315-r{from{transform:rotate(315deg)scaleX(-1)rotatez(0deg)} to{transform:rotate(315deg)scaleX(-1)rotatez(360deg)}}
-@keyframes nips{from{transform:rotate(360deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(360deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-45{from{transform:rotate(45deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(45deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-90{from{transform:rotate(9360deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(9360deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-135{from{transform:rotate(135deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(135deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-180{from{transform:rotate(18360deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(18360deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-225{from{transform:rotate(225deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(225deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-270{from{transform:rotate(27360deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(27360deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-315{from{transform:rotate(315deg)scaleX(1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(315deg)scaleX(1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-r{from{transform:rotate(360deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(360deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-45-r{from{transform:rotate(45deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(45deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-90-r{from{transform:rotate(9360deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(9360deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-135-r{from{transform:rotate(135deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(135deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-180-r{from{transform:rotate(18360deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(18360deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-225-r{from{transform:rotate(225deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(225deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-270-r{from{transform:rotate(27360deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(27360deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes nips-315-r{from{transform:rotate(315deg)scaleX(-1)rotateX(360deg)rotateY(360deg)rotateZ(360deg)} to{transform:rotate(315deg)scaleX(-1)rotateX(0deg)rotateY(0deg)rotateZ(0deg)}}
-@keyframes znips{from{transform:rotate(360deg)scaleX(1)rotatez(360deg)} to{transform:rotate(360deg)scaleX(1)rotatez(0deg)}}
-@keyframes znips-45{from{transform:rotate(45deg)scaleX(1)rotatez(360deg)} to{transform:rotate(45deg)scaleX(1)rotatez(0deg)}}
-@keyframes znips-90{from{transform:rotate(9360deg)scaleX(1)rotatez(360deg)} to{transform:rotate(9360deg)scaleX(1)rotatez(0deg)}}
-@keyframes znips-135{from{transform:rotate(135deg)scaleX(1)rotatez(360deg)} to{transform:rotate(135deg)scaleX(1)rotatez(0deg)}}
-@keyframes znips-180{from{transform:rotate(18360deg)scaleX(1)rotatez(360deg)} to{transform:rotate(18360deg)scaleX(1)rotatez(0deg)}}
-@keyframes znips-225{from{transform:rotate(225deg)scaleX(1)rotatez(360deg)} to{transform:rotate(225deg)scaleX(1)rotatez(0deg)}}
-@keyframes znips-270{from{transform:rotate(27360deg)scaleX(1)rotatez(360deg)} to{transform:rotate(27360deg)scaleX(1)rotatez(0deg)}}
-@keyframes znips-315{from{transform:rotate(315deg)scaleX(1)rotatez(360deg)} to{transform:rotate(315deg)scaleX(1)rotatez(0deg)}}
-@keyframes znips-r{from{transform:rotate(360deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(360deg)scaleX(-1)rotatez(0deg)}}
-@keyframes znips-45-r{from{transform:rotate(45deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(45deg)scaleX(-1)rotatez(0deg)}}
-@keyframes znips-90-r{from{transform:rotate(9360deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(9360deg)scaleX(-1)rotatez(0deg)}}
-@keyframes znips-135-r{from{transform:rotate(135deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(135deg)scaleX(-1)rotatez(0deg)}}
-@keyframes znips-180-r{from{transform:rotate(18360deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(18360deg)scaleX(-1)rotatez(0deg)}}
-@keyframes znips-225-r{from{transform:rotate(225deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(225deg)scaleX(-1)rotatez(0deg)}}
-@keyframes znips-270-r{from{transform:rotate(27360deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(27360deg)scaleX(-1)rotatez(0deg)}}
-@keyframes znips-315-r{from{transform:rotate(315deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(315deg)scaleX(-1)rotatez(0deg)}}
-
-/*== mane ==*/
-.bpflag-r.bpflag-d:hover {transform:rotate(0deg)scaleX(1)}
-.bpflag-45, .bpflag-45.bpflag-r.bpflag-d:hover {transform:rotate(45deg)scaleX(1)}
-.bpflag-90, .bpflag-90.bpflag-r.bpflag-d:hover {transform:rotate(90deg)scaleX(1)}
-.bpflag-135, .bpflag-135.bpflag-r.bpflag-d:hover {transform:rotate(135deg)scaleX(1)}
-.bpflag-180, .bpflag-180.bpflag-r.bpflag-d:hover {transform:rotate(180deg)scaleX(1)}
-.bpflag-225, .bpflag-225.bpflag-r.bpflag-d:hover {transform:rotate(225deg)scaleX(1)}
-.bpflag-270, .bpflag-270.bpflag-r.bpflag-d:hover {transform:rotate(270deg)scaleX(1)}
-.bpflag-315, .bpflag-315.bpflag-r.bpflag-d:hover {transform:rotate(315deg)scaleX(1)}
-.bpflag-r, .bpflag-d:hover {transform:rotate(0deg)scaleX(-1)}
-.bpflag-45.bpflag-r, .bpflag-45.bpflag-d:hover {transform:rotate(45deg)scaleX(-1)}
-.bpflag-90.bpflag-r, .bpflag-90.bpflag-d:hover {transform:rotate(90deg)scaleX(-1)}
-.bpflag-135.bpflag-r, .bpflag-135.bpflag-d:hover {transform:rotate(135deg)scaleX(-1)}
-.bpflag-180.bpflag-r, .bpflag-180.bpflag-d:hover {transform:rotate(180deg)scaleX(-1)}
-.bpflag-225.bpflag-r, .bpflag-225.bpflag-d:hover {transform:rotate(225deg)scaleX(-1)}
-.bpflag-270.bpflag-r, .bpflag-270.bpflag-d:hover {transform:rotate(270deg)scaleX(-1)}
-.bpflag-315.bpflag-r, .bpflag-315.bpflag-d:hover {transform:rotate(315deg)scaleX(-1)}
-.bpflag-225.bpflag-f.bpflag-r, .bpflag-225.bpflag-f.bpflag-d:hover {transform:rotate(45deg)scaleX(1)}
-.bpflag-270.bpflag-f.bpflag-r, .bpflag-270.bpflag-f.bpflag-d:hover {transform:rotate(90deg)scaleX(1)}
-.bpflag-315.bpflag-f.bpflag-r, .bpflag-315.bpflag-f.bpflag-d:hover {transform:rotate(135deg)scaleX(1)}
-.bpflag-f.bpflag-r, .bpflag-f.bpflag-d:hover {transform:rotate(180deg)scaleX(1)}
-.bpflag-45.bpflag-f.bpflag-r, .bpflag-45.bpflag-f.bpflag-d:hover {transform:rotate(225deg)scaleX(1)}
-.bpflag-90.bpflag-f.bpflag-r, .bpflag-90.bpflag-f.bpflag-d:hover {transform:rotate(270deg)scaleX(1)}
-.bpflag-135.bpflag-f.bpflag-r, .bpflag-135.bpflag-f.bpflag-d:hover {transform:rotate(315deg)scaleX(1)}
-.bpflag-225.bpflag-f, .bpflag-225.bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(45deg)scaleX(-1)}
-.bpflag-270.bpflag-f, .bpflag-270.bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(90deg)scaleX(-1)}
-.bpflag-315.bpflag-f, .bpflag-315.bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(135deg)scaleX(-1)}
-.bpflag-f, .bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(180deg)scaleX(-1)}
-.bpflag-45.bpflag-f, .bpflag-45.bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(225deg)scaleX(-1)}
-.bpflag-90.bpflag-f, .bpflag-90.bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(270deg)scaleX(-1)}
-.bpflag-135.bpflag-f, .bpflag-135.bpflag-f.bpflag-r.bpflag-d:hover {transform:rotate(315deg)scaleX(-1)}
-
-/*== -spin ==*/
-.bpflag-spin, .bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin 2s infinite linear}
-.bpflag-45.bpflag-spin, .bpflag-45.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-45 2s infinite linear}
-.bpflag-90.bpflag-spin, .bpflag-90.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-90 2s infinite linear}
-.bpflag-135.bpflag-spin, .bpflag-135.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-135 2s infinite linear}
-.bpflag-180.bpflag-spin, .bpflag-180.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-180 2s infinite linear}
-.bpflag-225.bpflag-spin, .bpflag-225.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-225 2s infinite linear}
-.bpflag-270.bpflag-spin, .bpflag-270.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-270 2s infinite linear}
-.bpflag-315.bpflag-spin, .bpflag-315.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-315 2s infinite linear}
-.bpflag-r.bpflag-spin, .bpflag-d.bpflag-spin:hover {animation:spin-r 2s infinite linear}
-.bpflag-45.bpflag-r.bpflag-spin, .bpflag-45.bpflag-d.bpflag-spin:hover {animation:spin-45-r 2s infinite linear}
-.bpflag-90.bpflag-r.bpflag-spin, .bpflag-90.bpflag-d.bpflag-spin:hover {animation:spin-90-r 2s infinite linear}
-.bpflag-135.bpflag-r.bpflag-spin, .bpflag-135.bpflag-d.bpflag-spin:hover {animation:spin-135-r 2s infinite linear}
-.bpflag-180.bpflag-r.bpflag-spin, .bpflag-180.bpflag-d.bpflag-spin:hover {animation:spin-180-r 2s infinite linear}
-.bpflag-225.bpflag-r.bpflag-spin, .bpflag-225.bpflag-d.bpflag-spin:hover {animation:spin-225-r 2s infinite linear}
-.bpflag-270.bpflag-r.bpflag-spin, .bpflag-270.bpflag-d.bpflag-spin:hover {animation:spin-270-r 2s infinite linear}
-.bpflag-315.bpflag-r.bpflag-spin, .bpflag-315.bpflag-d.bpflag-spin:hover {animation:spin-315-r 2s infinite linear}
-.bpflag-225.bpflag-f.bpflag-r.bpflag-spin, .bpflag-225.bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-45 2s infinite linear}
-.bpflag-270.bpflag-f.bpflag-r.bpflag-spin, .bpflag-270.bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-90 2s infinite linear}
-.bpflag-315.bpflag-f.bpflag-r.bpflag-spin, .bpflag-315.bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-135 2s infinite linear}
-.bpflag-f.bpflag-r.bpflag-spin, .bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-180 2s infinite linear}
-.bpflag-45.bpflag-f.bpflag-r.bpflag-spin, .bpflag-45.bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-225 2s infinite linear}
-.bpflag-90.bpflag-f.bpflag-r.bpflag-spin, .bpflag-90.bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-270 2s infinite linear}
-.bpflag-135.bpflag-f.bpflag-r.bpflag-spin, .bpflag-135.bpflag-f.bpflag-d.bpflag-spin:hover {animation:spin-315 2s infinite linear}
-.bpflag-225.bpflag-f.bpflag-spin, .bpflag-225.bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-45-r 2s infinite linear}
-.bpflag-270.bpflag-f.bpflag-spin, .bpflag-270.bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-90-r 2s infinite linear}
-.bpflag-315.bpflag-f.bpflag-spin, .bpflag-315.bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-135-r 2s infinite linear}
-.bpflag-f.bpflag-spin, .bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-180-r 2s infinite linear}
-.bpflag-45.bpflag-f.bpflag-spin, .bpflag-45.bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-225-r 2s infinite linear}
-.bpflag-90.bpflag-f.bpflag-spin, .bpflag-90.bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-270-r 2s infinite linear}
-.bpflag-135.bpflag-f.bpflag-spin, .bpflag-135.bpflag-f.bpflag-r.bpflag-d.bpflag-spin:hover {animation:spin-315-r 2s infinite linear}
-
-/*== -xspin ==*/
-.bpflag-xspin, .bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin 2s infinite linear}
-.bpflag-45.bpflag-xspin, .bpflag-45.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-45 2s infinite linear}
-.bpflag-90.bpflag-xspin, .bpflag-90.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-90 2s infinite linear}
-.bpflag-135.bpflag-xspin, .bpflag-135.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-135 2s infinite linear}
-.bpflag-180.bpflag-xspin, .bpflag-180.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-180 2s infinite linear}
-.bpflag-225.bpflag-xspin, .bpflag-225.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-225 2s infinite linear}
-.bpflag-270.bpflag-xspin, .bpflag-270.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-270 2s infinite linear}
-.bpflag-315.bpflag-xspin, .bpflag-315.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-315 2s infinite linear}
-.bpflag-r.bpflag-xspin, .bpflag-d.bpflag-xspin:hover {animation:xspin-r 2s infinite linear}
-.bpflag-45.bpflag-r.bpflag-xspin, .bpflag-45.bpflag-d.bpflag-xspin:hover {animation:xspin-45-r 2s infinite linear}
-.bpflag-90.bpflag-r.bpflag-xspin, .bpflag-90.bpflag-d.bpflag-xspin:hover {animation:xspin-90-r 2s infinite linear}
-.bpflag-135.bpflag-r.bpflag-xspin, .bpflag-135.bpflag-d.bpflag-xspin:hover {animation:xspin-135-r 2s infinite linear}
-.bpflag-180.bpflag-r.bpflag-xspin, .bpflag-180.bpflag-d.bpflag-xspin:hover {animation:xspin-180-r 2s infinite linear}
-.bpflag-225.bpflag-r.bpflag-xspin, .bpflag-225.bpflag-d.bpflag-xspin:hover {animation:xspin-225-r 2s infinite linear}
-.bpflag-270.bpflag-r.bpflag-xspin, .bpflag-270.bpflag-d.bpflag-xspin:hover {animation:xspin-270-r 2s infinite linear}
-.bpflag-315.bpflag-r.bpflag-xspin, .bpflag-315.bpflag-d.bpflag-xspin:hover {animation:xspin-315-r 2s infinite linear}
-.bpflag-225.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-225.bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-45 2s infinite linear}
-.bpflag-270.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-270.bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-90 2s infinite linear}
-.bpflag-315.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-315.bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-135 2s infinite linear}
-.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-180 2s infinite linear}
-.bpflag-45.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-45.bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-225 2s infinite linear}
-.bpflag-90.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-90.bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-270 2s infinite linear}
-.bpflag-135.bpflag-f.bpflag-r.bpflag-xspin, .bpflag-135.bpflag-f.bpflag-d.bpflag-xspin:hover {animation:xspin-315 2s infinite linear}
-.bpflag-225.bpflag-f.bpflag-xspin, .bpflag-225.bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-45-r 2s infinite linear}
-.bpflag-270.bpflag-f.bpflag-xspin, .bpflag-270.bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-90-r 2s infinite linear}
-.bpflag-315.bpflag-f.bpflag-xspin, .bpflag-315.bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-135-r 2s infinite linear}
-.bpflag-f.bpflag-xspin, .bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-180-r 2s infinite linear}
-.bpflag-45.bpflag-f.bpflag-xspin, .bpflag-45.bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-225-r 2s infinite linear}
-.bpflag-90.bpflag-f.bpflag-xspin, .bpflag-90.bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-270-r 2s infinite linear}
-.bpflag-135.bpflag-f.bpflag-xspin, .bpflag-135.bpflag-f.bpflag-r.bpflag-d.bpflag-xspin:hover {animation:xspin-315-r 2s infinite linear}
-
-/*== -yspin ==*/
-.bpflag-yspin, .bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin 2s infinite linear}
-.bpflag-45.bpflag-yspin, .bpflag-45.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-45 2s infinite linear}
-.bpflag-90.bpflag-yspin, .bpflag-90.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-90 2s infinite linear}
-.bpflag-135.bpflag-yspin, .bpflag-135.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-135 2s infinite linear}
-.bpflag-180.bpflag-yspin, .bpflag-180.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-180 2s infinite linear}
-.bpflag-225.bpflag-yspin, .bpflag-225.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-225 2s infinite linear}
-.bpflag-270.bpflag-yspin, .bpflag-270.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-270 2s infinite linear}
-.bpflag-315.bpflag-yspin, .bpflag-315.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-315 2s infinite linear}
-.bpflag-r.bpflag-yspin, .bpflag-d.bpflag-yspin:hover {animation:yspin-r 2s infinite linear}
-.bpflag-45.bpflag-r.bpflag-yspin, .bpflag-45.bpflag-d.bpflag-yspin:hover {animation:yspin-45-r 2s infinite linear}
-.bpflag-90.bpflag-r.bpflag-yspin, .bpflag-90.bpflag-d.bpflag-yspin:hover {animation:yspin-90-r 2s infinite linear}
-.bpflag-135.bpflag-r.bpflag-yspin, .bpflag-135.bpflag-d.bpflag-yspin:hover {animation:yspin-135-r 2s infinite linear}
-.bpflag-180.bpflag-r.bpflag-yspin, .bpflag-180.bpflag-d.bpflag-yspin:hover {animation:yspin-180-r 2s infinite linear}
-.bpflag-225.bpflag-r.bpflag-yspin, .bpflag-225.bpflag-d.bpflag-yspin:hover {animation:yspin-225-r 2s infinite linear}
-.bpflag-270.bpflag-r.bpflag-yspin, .bpflag-270.bpflag-d.bpflag-yspin:hover {animation:yspin-270-r 2s infinite linear}
-.bpflag-315.bpflag-r.bpflag-yspin, .bpflag-315.bpflag-d.bpflag-yspin:hover {animation:yspin-315-r 2s infinite linear}
-.bpflag-225.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-225.bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-45 2s infinite linear}
-.bpflag-270.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-270.bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-90 2s infinite linear}
-.bpflag-315.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-315.bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-135 2s infinite linear}
-.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-180 2s infinite linear}
-.bpflag-45.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-45.bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-225 2s infinite linear}
-.bpflag-90.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-90.bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-270 2s infinite linear}
-.bpflag-135.bpflag-f.bpflag-r.bpflag-yspin, .bpflag-135.bpflag-f.bpflag-d.bpflag-yspin:hover {animation:yspin-315 2s infinite linear}
-.bpflag-225.bpflag-f.bpflag-yspin, .bpflag-225.bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-45-r 2s infinite linear}
-.bpflag-270.bpflag-f.bpflag-yspin, .bpflag-270.bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-90-r 2s infinite linear}
-.bpflag-315.bpflag-f.bpflag-yspin, .bpflag-315.bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-135-r 2s infinite linear}
-.bpflag-f.bpflag-yspin, .bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-180-r 2s infinite linear}
-.bpflag-45.bpflag-f.bpflag-yspin, .bpflag-45.bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-225-r 2s infinite linear}
-.bpflag-90.bpflag-f.bpflag-yspin, .bpflag-90.bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-270-r 2s infinite linear}
-.bpflag-135.bpflag-f.bpflag-yspin, .bpflag-135.bpflag-f.bpflag-r.bpflag-d.bpflag-yspin:hover {animation:yspin-315-r 2s infinite linear}
-
-/*== -zspin ==*/
-.bpflag-zspin, .bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin 2s infinite linear}
+.bpflag-zspin, .bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-45.bpflag-zspin, .bpflag-45.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-45 2s infinite linear}
-.bpflag-90.bpflag-zspin, .bpflag-90.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-90 2s infinite linear}
+.bpflag-90.bpflag-zspin, .bpflag-90.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-90 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-135.bpflag-zspin, .bpflag-135.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-135 2s infinite linear}
-.bpflag-180.bpflag-zspin, .bpflag-180.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-180 2s infinite linear}
+.bpflag-180.bpflag-zspin, .bpflag-180.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-180 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-225.bpflag-zspin, .bpflag-225.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-225 2s infinite linear}
-.bpflag-270.bpflag-zspin, .bpflag-270.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-270 2s infinite linear}
+.bpflag-270.bpflag-zspin, .bpflag-270.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-270 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-315.bpflag-zspin, .bpflag-315.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-315 2s infinite linear}
-.bpflag-r.bpflag-zspin, .bpflag-d.bpflag-zspin:hover {animation:zspin-r 2s infinite linear}
+.bpflag-r.bpflag-zspin, .bpflag-d.bpflag-zspin:hover {animation:zspin-r 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-45.bpflag-r.bpflag-zspin, .bpflag-45.bpflag-d.bpflag-zspin:hover {animation:zspin-45-r 2s infinite linear}
-.bpflag-90.bpflag-r.bpflag-zspin, .bpflag-90.bpflag-d.bpflag-zspin:hover {animation:zspin-90-r 2s infinite linear}
+.bpflag-90.bpflag-r.bpflag-zspin, .bpflag-90.bpflag-d.bpflag-zspin:hover {animation:zspin-90-r 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-135.bpflag-r.bpflag-zspin, .bpflag-135.bpflag-d.bpflag-zspin:hover {animation:zspin-135-r 2s infinite linear}
-.bpflag-180.bpflag-r.bpflag-zspin, .bpflag-180.bpflag-d.bpflag-zspin:hover {animation:zspin-180-r 2s infinite linear}
+.bpflag-180.bpflag-r.bpflag-zspin, .bpflag-180.bpflag-d.bpflag-zspin:hover {animation:zspin-180-r 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-225.bpflag-r.bpflag-zspin, .bpflag-225.bpflag-d.bpflag-zspin:hover {animation:zspin-225-r 2s infinite linear}
-.bpflag-270.bpflag-r.bpflag-zspin, .bpflag-270.bpflag-d.bpflag-zspin:hover {animation:zspin-270-r 2s infinite linear}
+.bpflag-270.bpflag-r.bpflag-zspin, .bpflag-270.bpflag-d.bpflag-zspin:hover {animation:zspin-270-r 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-315.bpflag-r.bpflag-zspin, .bpflag-315.bpflag-d.bpflag-zspin:hover {animation:zspin-315-r 2s infinite linear}
 .bpflag-225.bpflag-f.bpflag-r.bpflag-zspin, .bpflag-225.bpflag-f.bpflag-d.bpflag-zspin:hover {animation:zspin-45 2s infinite linear}
-.bpflag-270.bpflag-f.bpflag-r.bpflag-zspin, .bpflag-270.bpflag-f.bpflag-d.bpflag-zspin:hover {animation:zspin-90 2s infinite linear}
+.bpflag-270.bpflag-f.bpflag-r.bpflag-zspin, .bpflag-270.bpflag-f.bpflag-d.bpflag-zspin:hover {animation:zspin-90 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-315.bpflag-f.bpflag-r.bpflag-zspin, .bpflag-315.bpflag-f.bpflag-d.bpflag-zspin:hover {animation:zspin-135 2s infinite linear}
-.bpflag-f.bpflag-r.bpflag-zspin, .bpflag-f.bpflag-d.bpflag-zspin:hover {animation:zspin-180 2s infinite linear}
+.bpflag-f.bpflag-r.bpflag-zspin, .bpflag-f.bpflag-d.bpflag-zspin:hover {animation:zspin-180 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-45.bpflag-f.bpflag-r.bpflag-zspin, .bpflag-45.bpflag-f.bpflag-d.bpflag-zspin:hover {animation:zspin-225 2s infinite linear}
-.bpflag-90.bpflag-f.bpflag-r.bpflag-zspin, .bpflag-90.bpflag-f.bpflag-d.bpflag-zspin:hover {animation:zspin-270 2s infinite linear}
+.bpflag-90.bpflag-f.bpflag-r.bpflag-zspin, .bpflag-90.bpflag-f.bpflag-d.bpflag-zspin:hover {animation:zspin-270 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-135.bpflag-f.bpflag-r.bpflag-zspin, .bpflag-135.bpflag-f.bpflag-d.bpflag-zspin:hover {animation:zspin-315 2s infinite linear}
 .bpflag-225.bpflag-f.bpflag-zspin, .bpflag-225.bpflag-f.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-45-r 2s infinite linear}
-.bpflag-270.bpflag-f.bpflag-zspin, .bpflag-270.bpflag-f.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-90-r 2s infinite linear}
+.bpflag-270.bpflag-f.bpflag-zspin, .bpflag-270.bpflag-f.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-90-r 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-315.bpflag-f.bpflag-zspin, .bpflag-315.bpflag-f.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-135-r 2s infinite linear}
-.bpflag-f.bpflag-zspin, .bpflag-f.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-180-r 2s infinite linear}
+.bpflag-f.bpflag-zspin, .bpflag-f.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-180-r 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-45.bpflag-f.bpflag-zspin, .bpflag-45.bpflag-f.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-225-r 2s infinite linear}
-.bpflag-90.bpflag-f.bpflag-zspin, .bpflag-90.bpflag-f.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-270-r 2s infinite linear}
+.bpflag-90.bpflag-f.bpflag-zspin, .bpflag-90.bpflag-f.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-270-r 2s infinite linear;image-rendering:crisp-edges}
 .bpflag-135.bpflag-f.bpflag-zspin, .bpflag-135.bpflag-f.bpflag-r.bpflag-d.bpflag-zspin:hover {animation:zspin-315-r 2s infinite linear}
 
-/*== -nips ==*/
-.bpflag-nips, .bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips 2s infinite linear}
-.bpflag-45.bpflag-nips, .bpflag-45.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-45 2s infinite linear}
-.bpflag-90.bpflag-nips, .bpflag-90.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-90 2s infinite linear}
-.bpflag-135.bpflag-nips, .bpflag-135.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-135 2s infinite linear}
-.bpflag-180.bpflag-nips, .bpflag-180.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-180 2s infinite linear}
-.bpflag-225.bpflag-nips, .bpflag-225.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-225 2s infinite linear}
-.bpflag-270.bpflag-nips, .bpflag-270.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-270 2s infinite linear}
-.bpflag-315.bpflag-nips, .bpflag-315.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-315 2s infinite linear}
-.bpflag-r.bpflag-nips, .bpflag-d.bpflag-nips:hover {animation:nips-r 2s infinite linear}
-.bpflag-45.bpflag-r.bpflag-nips, .bpflag-45.bpflag-d.bpflag-nips:hover {animation:nips-45-r 2s infinite linear}
-.bpflag-90.bpflag-r.bpflag-nips, .bpflag-90.bpflag-d.bpflag-nips:hover {animation:nips-90-r 2s infinite linear}
-.bpflag-135.bpflag-r.bpflag-nips, .bpflag-135.bpflag-d.bpflag-nips:hover {animation:nips-135-r 2s infinite linear}
-.bpflag-180.bpflag-r.bpflag-nips, .bpflag-180.bpflag-d.bpflag-nips:hover {animation:nips-180-r 2s infinite linear}
-.bpflag-225.bpflag-r.bpflag-nips, .bpflag-225.bpflag-d.bpflag-nips:hover {animation:nips-225-r 2s infinite linear}
-.bpflag-270.bpflag-r.bpflag-nips, .bpflag-270.bpflag-d.bpflag-nips:hover {animation:nips-270-r 2s infinite linear}
-.bpflag-315.bpflag-r.bpflag-nips, .bpflag-315.bpflag-d.bpflag-nips:hover {animation:nips-315-r 2s infinite linear}
-.bpflag-225.bpflag-f.bpflag-r.bpflag-nips, .bpflag-225.bpflag-f.bpflag-d.bpflag-nips:hover {animation:nips-45 2s infinite linear}
-.bpflag-270.bpflag-f.bpflag-r.bpflag-nips, .bpflag-270.bpflag-f.bpflag-d.bpflag-nips:hover {animation:nips-90 2s infinite linear}
-.bpflag-315.bpflag-f.bpflag-r.bpflag-nips, .bpflag-315.bpflag-f.bpflag-d.bpflag-nips:hover {animation:nips-135 2s infinite linear}
-.bpflag-f.bpflag-r.bpflag-nips, .bpflag-f.bpflag-d.bpflag-nips:hover {animation:nips-180 2s infinite linear}
-.bpflag-45.bpflag-f.bpflag-r.bpflag-nips, .bpflag-45.bpflag-f.bpflag-d.bpflag-nips:hover {animation:nips-225 2s infinite linear}
-.bpflag-90.bpflag-f.bpflag-r.bpflag-nips, .bpflag-90.bpflag-f.bpflag-d.bpflag-nips:hover {animation:nips-270 2s infinite linear}
-.bpflag-135.bpflag-f.bpflag-r.bpflag-nips, .bpflag-135.bpflag-f.bpflag-d.bpflag-nips:hover {animation:nips-315 2s infinite linear}
-.bpflag-225.bpflag-f.bpflag-nips, .bpflag-225.bpflag-f.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-45-r 2s infinite linear}
-.bpflag-270.bpflag-f.bpflag-nips, .bpflag-270.bpflag-f.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-90-r 2s infinite linear}
-.bpflag-315.bpflag-f.bpflag-nips, .bpflag-315.bpflag-f.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-135-r 2s infinite linear}
-.bpflag-f.bpflag-nips, .bpflag-f.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-180-r 2s infinite linear}
-.bpflag-45.bpflag-f.bpflag-nips, .bpflag-45.bpflag-f.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-225-r 2s infinite linear}
-.bpflag-90.bpflag-f.bpflag-nips, .bpflag-90.bpflag-f.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-270-r 2s infinite linear}
-.bpflag-135.bpflag-f.bpflag-nips, .bpflag-135.bpflag-f.bpflag-r.bpflag-d.bpflag-nips:hover {animation:nips-315-r 2s infinite linear}
+/*== -!zspin ==*/
+@keyframes _excl_zspin{from{transform:rotate(360deg)scaleX(1)rotatez(360deg)} to{transform:rotate(360deg)scaleX(1)rotatez(0deg)}}
+@keyframes _excl_zspin-45{from{transform:rotate(45deg)scaleX(1)rotatez(360deg)} to{transform:rotate(45deg)scaleX(1)rotatez(0deg)}}
+@keyframes _excl_zspin-90{from{transform:rotate(9360deg)scaleX(1)rotatez(360deg)} to{transform:rotate(9360deg)scaleX(1)rotatez(0deg)}}
+@keyframes _excl_zspin-135{from{transform:rotate(135deg)scaleX(1)rotatez(360deg)} to{transform:rotate(135deg)scaleX(1)rotatez(0deg)}}
+@keyframes _excl_zspin-180{from{transform:rotate(18360deg)scaleX(1)rotatez(360deg)} to{transform:rotate(18360deg)scaleX(1)rotatez(0deg)}}
+@keyframes _excl_zspin-225{from{transform:rotate(225deg)scaleX(1)rotatez(360deg)} to{transform:rotate(225deg)scaleX(1)rotatez(0deg)}}
+@keyframes _excl_zspin-270{from{transform:rotate(27360deg)scaleX(1)rotatez(360deg)} to{transform:rotate(27360deg)scaleX(1)rotatez(0deg)}}
+@keyframes _excl_zspin-315{from{transform:rotate(315deg)scaleX(1)rotatez(360deg)} to{transform:rotate(315deg)scaleX(1)rotatez(0deg)}}
+@keyframes _excl_zspin-r{from{transform:rotate(360deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(360deg)scaleX(-1)rotatez(0deg)}}
+@keyframes _excl_zspin-45-r{from{transform:rotate(45deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(45deg)scaleX(-1)rotatez(0deg)}}
+@keyframes _excl_zspin-90-r{from{transform:rotate(9360deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(9360deg)scaleX(-1)rotatez(0deg)}}
+@keyframes _excl_zspin-135-r{from{transform:rotate(135deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(135deg)scaleX(-1)rotatez(0deg)}}
+@keyframes _excl_zspin-180-r{from{transform:rotate(18360deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(18360deg)scaleX(-1)rotatez(0deg)}}
+@keyframes _excl_zspin-225-r{from{transform:rotate(225deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(225deg)scaleX(-1)rotatez(0deg)}}
+@keyframes _excl_zspin-270-r{from{transform:rotate(27360deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(27360deg)scaleX(-1)rotatez(0deg)}}
+@keyframes _excl_zspin-315-r{from{transform:rotate(315deg)scaleX(-1)rotatez(360deg)} to{transform:rotate(315deg)scaleX(-1)rotatez(0deg)}}
+.bpflag-_excl_zspin, .bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-_excl_zspin, .bpflag-45.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-45 2s infinite linear}
+.bpflag-90.bpflag-_excl_zspin, .bpflag-90.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-90 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-_excl_zspin, .bpflag-135.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-135 2s infinite linear}
+.bpflag-180.bpflag-_excl_zspin, .bpflag-180.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-180 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-225.bpflag-_excl_zspin, .bpflag-225.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-225 2s infinite linear}
+.bpflag-270.bpflag-_excl_zspin, .bpflag-270.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-270 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-_excl_zspin, .bpflag-315.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-315 2s infinite linear}
+.bpflag-r.bpflag-_excl_zspin, .bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-r.bpflag-_excl_zspin, .bpflag-45.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-45-r 2s infinite linear}
+.bpflag-90.bpflag-r.bpflag-_excl_zspin, .bpflag-90.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-90-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-r.bpflag-_excl_zspin, .bpflag-135.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-135-r 2s infinite linear}
+.bpflag-180.bpflag-r.bpflag-_excl_zspin, .bpflag-180.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-180-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-225.bpflag-r.bpflag-_excl_zspin, .bpflag-225.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-225-r 2s infinite linear}
+.bpflag-270.bpflag-r.bpflag-_excl_zspin, .bpflag-270.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-270-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-r.bpflag-_excl_zspin, .bpflag-315.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-315-r 2s infinite linear}
+.bpflag-225.bpflag-f.bpflag-r.bpflag-_excl_zspin, .bpflag-225.bpflag-f.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-45 2s infinite linear}
+.bpflag-270.bpflag-f.bpflag-r.bpflag-_excl_zspin, .bpflag-270.bpflag-f.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-90 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-f.bpflag-r.bpflag-_excl_zspin, .bpflag-315.bpflag-f.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-135 2s infinite linear}
+.bpflag-f.bpflag-r.bpflag-_excl_zspin, .bpflag-f.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-180 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-f.bpflag-r.bpflag-_excl_zspin, .bpflag-45.bpflag-f.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-225 2s infinite linear}
+.bpflag-90.bpflag-f.bpflag-r.bpflag-_excl_zspin, .bpflag-90.bpflag-f.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-270 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-f.bpflag-r.bpflag-_excl_zspin, .bpflag-135.bpflag-f.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-315 2s infinite linear}
+.bpflag-225.bpflag-f.bpflag-_excl_zspin, .bpflag-225.bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-45-r 2s infinite linear}
+.bpflag-270.bpflag-f.bpflag-_excl_zspin, .bpflag-270.bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-90-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-315.bpflag-f.bpflag-_excl_zspin, .bpflag-315.bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-135-r 2s infinite linear}
+.bpflag-f.bpflag-_excl_zspin, .bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-180-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-45.bpflag-f.bpflag-_excl_zspin, .bpflag-45.bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-225-r 2s infinite linear}
+.bpflag-90.bpflag-f.bpflag-_excl_zspin, .bpflag-90.bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-270-r 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-135.bpflag-f.bpflag-_excl_zspin, .bpflag-135.bpflag-f.bpflag-r.bpflag-d.bpflag-_excl_zspin:hover {animation:_excl_zspin-315-r 2s infinite linear}
 
-/*== -znips ==*/
-.bpflag-znips, .bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips 2s infinite linear}
-.bpflag-45.bpflag-znips, .bpflag-45.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-45 2s infinite linear}
-.bpflag-90.bpflag-znips, .bpflag-90.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-90 2s infinite linear}
-.bpflag-135.bpflag-znips, .bpflag-135.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-135 2s infinite linear}
-.bpflag-180.bpflag-znips, .bpflag-180.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-180 2s infinite linear}
-.bpflag-225.bpflag-znips, .bpflag-225.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-225 2s infinite linear}
-.bpflag-270.bpflag-znips, .bpflag-270.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-270 2s infinite linear}
-.bpflag-315.bpflag-znips, .bpflag-315.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-315 2s infinite linear}
-.bpflag-r.bpflag-znips, .bpflag-d.bpflag-znips:hover {animation:znips-r 2s infinite linear}
-.bpflag-45.bpflag-r.bpflag-znips, .bpflag-45.bpflag-d.bpflag-znips:hover {animation:znips-45-r 2s infinite linear}
-.bpflag-90.bpflag-r.bpflag-znips, .bpflag-90.bpflag-d.bpflag-znips:hover {animation:znips-90-r 2s infinite linear}
-.bpflag-135.bpflag-r.bpflag-znips, .bpflag-135.bpflag-d.bpflag-znips:hover {animation:znips-135-r 2s infinite linear}
-.bpflag-180.bpflag-r.bpflag-znips, .bpflag-180.bpflag-d.bpflag-znips:hover {animation:znips-180-r 2s infinite linear}
-.bpflag-225.bpflag-r.bpflag-znips, .bpflag-225.bpflag-d.bpflag-znips:hover {animation:znips-225-r 2s infinite linear}
-.bpflag-270.bpflag-r.bpflag-znips, .bpflag-270.bpflag-d.bpflag-znips:hover {animation:znips-270-r 2s infinite linear}
-.bpflag-315.bpflag-r.bpflag-znips, .bpflag-315.bpflag-d.bpflag-znips:hover {animation:znips-315-r 2s infinite linear}
-.bpflag-225.bpflag-f.bpflag-r.bpflag-znips, .bpflag-225.bpflag-f.bpflag-d.bpflag-znips:hover {animation:znips-45 2s infinite linear}
-.bpflag-270.bpflag-f.bpflag-r.bpflag-znips, .bpflag-270.bpflag-f.bpflag-d.bpflag-znips:hover {animation:znips-90 2s infinite linear}
-.bpflag-315.bpflag-f.bpflag-r.bpflag-znips, .bpflag-315.bpflag-f.bpflag-d.bpflag-znips:hover {animation:znips-135 2s infinite linear}
-.bpflag-f.bpflag-r.bpflag-znips, .bpflag-f.bpflag-d.bpflag-znips:hover {animation:znips-180 2s infinite linear}
-.bpflag-45.bpflag-f.bpflag-r.bpflag-znips, .bpflag-45.bpflag-f.bpflag-d.bpflag-znips:hover {animation:znips-225 2s infinite linear}
-.bpflag-90.bpflag-f.bpflag-r.bpflag-znips, .bpflag-90.bpflag-f.bpflag-d.bpflag-znips:hover {animation:znips-270 2s infinite linear}
-.bpflag-135.bpflag-f.bpflag-r.bpflag-znips, .bpflag-135.bpflag-f.bpflag-d.bpflag-znips:hover {animation:znips-315 2s infinite linear}
-.bpflag-225.bpflag-f.bpflag-znips, .bpflag-225.bpflag-f.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-45-r 2s infinite linear}
-.bpflag-270.bpflag-f.bpflag-znips, .bpflag-270.bpflag-f.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-90-r 2s infinite linear}
-.bpflag-315.bpflag-f.bpflag-znips, .bpflag-315.bpflag-f.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-135-r 2s infinite linear}
-.bpflag-f.bpflag-znips, .bpflag-f.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-180-r 2s infinite linear}
-.bpflag-45.bpflag-f.bpflag-znips, .bpflag-45.bpflag-f.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-225-r 2s infinite linear}
-.bpflag-90.bpflag-f.bpflag-znips, .bpflag-90.bpflag-f.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-270-r 2s infinite linear}
-.bpflag-135.bpflag-f.bpflag-znips, .bpflag-135.bpflag-f.bpflag-r.bpflag-d.bpflag-znips:hover {animation:znips-315-r 2s infinite linear}
-
-/*==legacy ==*/
-.bpflag-rd:hover {transform:rotate(0deg)scaleX(1)}
-.bpflag-90d, .bpflag-90rd:hover {transform:rotate(90deg)scaleX(1)}
-.bpflag-180d, .bpflag-fd:hover {transform:rotate(180deg)scaleX(1)}
-.bpflag-270d, .bpflag-270rd:hover {transform:rotate(270deg)scaleX(1)}
-.bpflag-rd {transform:rotate(0deg)scaleX(-1)}
-.bpflag-90r, .bpflag-90rd, .bpflag-90d:hover {transform:rotate(90deg)scaleX(-1)}
-.bpflag-fd, .bpflag-180d:hover {transform:rotate(180deg)scaleX(-1)}
-.bpflag-270r, .bpflag-270rd, .bpflag-270d:hover {transform:rotate(270deg)scaleX(-1)}
-.bpflag-ispin {animation:spin 2s infinite linear}
-.bpflag-rotate, .bpflag-lrotate {animation:zspin 2s infinite linear}
-.bpflag-rrotate, .bpflag-lrrotate {animation:znips 2s infinite linear}
-
+/*== -shift/-slide ==*/
 @keyframes slide{0%{left:0%;transform:scaleX(1)}46%{left:60%;transform:scaleX(1)}50%{left:60%;transform:scaleX(-1)}96%{left:0%;transform:scaleX(-1)}100%{left:0%;transform:scaleX(1)}}
 @keyframes slide-r{0%{left:0%;transform:scaleX(-1)}46%{left:60%;transform:scaleX(-1)}50%{left:60%;transform:scaleX(1)}96%{left:0%;transform:scaleX(1)}100%{left:0%;transform:scaleX(-1)}}
-@keyframes edils{0%{left:60%;transform:scaleX(-1)}46%{left:0%;transform:scaleX(-1)}50%{left:0%;transform:scaleX(1)}96%{left:60%;transform:scaleX(1)}100%{left:60%;transform:scaleX(-1)}}
-@keyframes edils-r{0%{left:60%;transform:scaleX(1)}46%{left:0%;transform:scaleX(1)}50%{left:0%;transform:scaleX(-1)}96%{left:60%;transform:scaleX(-1)}100%{left:60%;transform:scaleX(1)}}
-/*== -slide ==*/
-.bpflag-slide{position:relative;animation:slide 8s infinite ease}
-.bpflag-r.bpflag-slide{position:relative;animation:slide-r 8s infinite ease}
-/*== -shift ==*/
-.bpflag-shift{position:relative;animation:slide 8s infinite linear}
-.bpflag-r.bpflag-shift{position:relative;animation:slide-r 8s infinite linear}
-/*== -edils ==*/
-.bpflag-edils{position:relative;animation:edils 8s infinite ease}
-.bpflag-r.bpflag-edils{position:relative;animation:edils-r 8s infinite ease}
-/*== -tfish ==*/
-.bpflag-tfish{position:relative;animation:edils 8s infinite linear}
-.bpflag-r.bpflag-tfish{position:relative;animation:edils-r 8s infinite linear}
+.bpflag-slide {position:relative;animation:slide 8s infinite ease}
+.bpflag-r.bpflag-slide {position:relative;animation:slide-r 8s infinite ease}
+.bpflag-shift {position:relative;animation:slide 8s infinite linear}
+.bpflag-r.bpflag-shift {position:relative;animation:slide-r 8s infinite linear}
+
+/*== -!shift/-!slide ==*/
+@keyframes _excl_slide{0%{left:60%;transform:scaleX(-1)}46%{left:0%;transform:scaleX(-1)}50%{left:0%;transform:scaleX(1)}96%{left:60%;transform:scaleX(1)}100%{left:60%;transform:scaleX(-1)}}
+@keyframes _excl_slide-r{0%{left:60%;transform:scaleX(1)}46%{left:0%;transform:scaleX(1)}50%{left:0%;transform:scaleX(-1)}96%{left:60%;transform:scaleX(-1)}100%{left:60%;transform:scaleX(1)}}
+.bpflag-_excl_slide {position:relative;animation:_excl_slide 8s infinite ease}
+.bpflag-r.bpflag-_excl_slide {position:relative;animation:_excl_slide-r 8s infinite ease}
+.bpflag-_excl_shift {position:relative;animation:_excl_slide 8s infinite linear}
+.bpflag-r.bpflag-_excl_shift {position:relative;animation:_excl_slide-r 8s infinite linear}
+
+/*== speed ==*/
+.bpflag-s1 {animation-duration:1s}
+.bpflag-s2 {animation-duration:2s}
+.bpflag-s3 {animation-duration:3s}
+.bpflag-s4 {animation-duration:4s}
+.bpflag-s5 {animation-duration:5s}
+.bpflag-s6 {animation-duration:6s}
+.bpflag-s7 {animation-duration:7s}
+.bpflag-s8 {animation-duration:8s}
+.bpflag-s9 {animation-duration:9s}
+.bpflag-s10 {animation-duration:10s}
+.bpflag-s11 {animation-duration:11s}
+.bpflag-s12 {animation-duration:12s}
+.bpflag-s13 {animation-duration:13s}
+.bpflag-s14 {animation-duration:14s}
+.bpflag-s15 {animation-duration:15s}
 /*== time ==*/
 .bpflag-fast{animation-duration:6s}
 .bpflag-faster{animation-duration:4s}
@@ -366,5 +367,18 @@
 .bpflag-slow{animation-duration:10s}
 .bpflag-slower{animation-duration:12s}
 .bpflag-slowest{animation-duration:14s}
+
+/*==legacy ==*/
+.bpflag-rd:hover {transform:rotate(0deg)scaleX(1);image-rendering:crisp-edges}
+.bpflag-90d, .bpflag-90rd:hover {transform:rotate(90deg)scaleX(1);image-rendering:crisp-edges}
+.bpflag-180d, .bpflag-fd:hover {transform:rotate(180deg)scaleX(1);image-rendering:crisp-edges}
+.bpflag-270d, .bpflag-270rd:hover {transform:rotate(270deg)scaleX(1);image-rendering:crisp-edges}
+.bpflag-rd {transform:rotate(0deg)scaleX(-1);image-rendering:crisp-edges}
+.bpflag-90r, .bpflag-90rd, .bpflag-90d:hover {transform:rotate(90deg)scaleX(-1);image-rendering:crisp-edges}
+.bpflag-fd, .bpflag-180d:hover {transform:rotate(180deg)scaleX(-1);image-rendering:crisp-edges}
+.bpflag-270r, .bpflag-270rd, .bpflag-270d:hover {transform:rotate(270deg)scaleX(-1);image-rendering:crisp-edges}
+.bpflag-ispin {animation:spin 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-rotate, .bpflag-lrotate {animation:zspin 2s infinite linear;image-rendering:crisp-edges}
+.bpflag-rrotate, .bpflag-lrrotate {animation:znips 2s infinite linear;image-rendering:crisp-edges}
 
 .md{overflow-y:hidden !important}
