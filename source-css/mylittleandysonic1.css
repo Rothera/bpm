@@ -2,23 +2,23 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%bubble%%)  no-repeat  fixed 60% 100% !important;
+    background:  url(%%milkshake%%)  no-repeat  fixed 70% 100% !important;
 }
 
 /* Banner image and associated height values */
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%newerold%%);
+   background: url(%%changebanner%%);
    background-repeat: no-repeat;
    background-position: 50% 0%;
-   height: 372px; /* 237 for meat's nice banner */
+   height: 273px; /* 237 for meat's nice banner */
 }
 
 #header-img-a {
-    margin-top: 211px;
+    margin-top: 147px;
 }
 
 #header {
-    height:391px;
+    height:285px;
     border-bottom: 1px solid #000000;
 }
 
@@ -30,9 +30,10 @@ body:first-of-type, body.res-nightmode:first-of-type {
     content: "  and Fwiends";
     display: inline-block;
     letter-spacing: normal;
-    font-size: 14px !important;
+    font-size: 0.7em !important;
     color: white;
     margin-left: 4px;
+    text-shadow: 0px 0px 6px #000;
 }
 
 /* User stuff (name color, karma color, est.) */
@@ -56,7 +57,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
 body.res-nightmode:first-of-type {background-color: transparent!important;}
-span[class="hover pagename redditname"] a:first-of-type { font-size: 1em !important; }
+span[class="hover pagename redditname"] a:first-of-type { font-size: 1.6em !important; text-shadow: 0px 0px 6px #000; color: white; }
 
 /* Makes the sidebar transparent */
 .side {background-color: transparent !important }
@@ -64,6 +65,7 @@ span[class="hover pagename redditname"] a:first-of-type { font-size: 1em !import
 .side.res-nightmode:first-of-type {background-color: transparent!important}
 
 /*Announcement Box*/
+/*
 .content {
     margin-top: 30px 
     }
@@ -79,8 +81,8 @@ span[class="hover pagename redditname"] a:first-of-type { font-size: 1em !import
     background:url(%%announcedance%%) no-repeat scroll 5px 1px #EFF7FF;
     font-size: 14px !important;
     position: absolute;
-    top: 318px;
-    left:350px;
+    top: 60px;
+    left: 200px;
     z-index: 200;
     margin: -0px 310px 0 0;
     padding: 18px 1px 12px 45px;
@@ -94,7 +96,7 @@ span[class="hover pagename redditname"] a:first-of-type { font-size: 1em !import
 .titlebox .usertext-body .md ol li {
     margin: 3px
     }
-
+*/
 
 
 
@@ -244,7 +246,7 @@ font-weight: 700;
 }
 .flair:after
 {
-background-image: url(%%flairsheet%%);
+background-image: url(%%changelingflair%%);
 background-position: 0px 0px;
 content: "";
 display: inline-block;
@@ -422,18 +424,42 @@ a[href|='/trixfun'] {width:226px; height:152px; background-position: -0px -927px
 a[href|='/twifun'] {width:230px; height:152px; background-position: -0px -471px}
 
 
-a[href|='/applepie'], a[href|='/esplinpoker'], a[href|='/nolove'], a[href|='/surbarf'], a[href|='/sursmelledyourcloset'], a[href|='/trixieplot'] {
+a[href|='/andu'], a[href|='/applepie'], a[href|='/cheesu'], a[href|='/derru'], a[href|='/esplinpoker'], a[href|='/espy'], a[href|='/giofun'], a[href|='/adagiofun'], a[href|='/herb'], a[href|='/420BLAZEITFAGGOT'], a[href|='/mongoosewithit'], a[href|='/nolove'], a[href|='/pekoe'], a[href|='/ppurafagot'], a[href|='/queentongue'], a[href|='/chrystongue'], a[href|='/roseduck'], a[href|='/speedu'], a[href|='/spikerar'], a[href|='/spitgoggles'], a[href|='/surbarf'], a[href|='/sursmelledyourcloset'], a[href|='/trixieplot'] {
     display: block;
     clear: none;
     float: left;
     background-image: url(%%table11%%)
     }
 
-a[href|='/applepie'] {width:207px; height:177px; background-position: -0px -368px}
-a[href|='/esplinpoker'] {width:120px; height:111px; background-position: -0px -0px}
-a[href|='/nolove'] {width:206px; height:252px; background-position: -0px -116px}
-a[href|='/surbarf'], a[href|='/sursmelledyourcloset'] {width:273px; height:152px; background-position: -0px -545px}
-a[href|='/trixieplot'] {width:152px; height:116px; background-position: -120px -0px}
+a[href|='/andu'] {width:100px; height:130px; background-position: -152px -917px}
+a[href|='/applepie'] {width:207px; height:177px; background-position: -0px -252px}
+a[href|='/cheesu'] {width:130px; height:92px; background-position: -130px -1944px}
+a[href|='/derru'] {width:117px; height:130px; background-position: -152px -1047px}
+a[href|='/esplinpoker'] {width:120px; height:111px; background-position: -152px -1698px}
+a[href|='/espy'] {width:129px; height:130px; background-position: -0px -1814px}
+a[href|='/giofun'], a[href|='/adagiofun'] {width:207px; height:167px; background-position: -0px -750px}
+a[href|='/herb'], a[href|='/420BLAZEITFAGGOT'] {width:113px; height:130px; background-position: -159px -1562px}
+a[href|='/mongoosewithit'] {width:152px; height:152px; background-position: -0px -1119px}
+a[href|='/nolove'] {width:206px; height:252px; background-position: -0px -0px}
+a[href|='/pekoe'] {width:152px; height:202px; background-position: -0px -917px}
+a[href|='/ppurafagot'] {width:223px; height:169px; background-position: -0px -429px}
+a[href|='/queentongue'], a[href|='/chrystongue'] {width:92px; height:130px; background-position: -129px -1814px}
+a[href|='/roseduck'] {width:168px; height:152px; background-position: -0px -1271px}
+a[href|='/speedu'] {width:130px; height:104px; background-position: -0px -1944px}
+a[href|='/spikerar'] {width:159px; height:136px; background-position: -0px -1562px}
+a[href|='/spitgoggles'] {width:202px; height:139px; background-position: -0px -1423px}
+a[href|='/surbarf'], a[href|='/sursmelledyourcloset'] {width:273px; height:152px; background-position: -0px -598px}
+a[href|='/trixieplot'] {width:152px; height:116px; background-position: -0px -1698px}
+
+
+a[href|='/twichangeling'] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%table12%%)
+    }
+
+a[href|='/twichangeling'] {width:150px; height:202px; background-position: -0px -0px}
 
 
 a[href|='/bmwat'], a[href|='/ch35'], a[href|='/chnuzzle'], a[href|='/cheerious'], a[href|='/cheerlikesit'], a[href|='/cmcexcited'], a[href|='/cordwithit'], a[href|='/crazypie'], a[href|='/derpoops'], a[href|='/disamused'], a[href|='/disangry'], a[href|='/disexcited'], a[href|='/diskate'], a[href|='/foryou'], a[href|='/genetics'], a[href|='/genius'], a[href|='/gildafury'], a[href|='/herhorn'], a[href|='/gildafriendship'], a[href|='/hipstertrixie'], a[href|='/iwapprove'], a[href|='/noidea'], a[href|='/notenoughbooks'], a[href|='/rarimad'], a[href|='/twinuzzle'] {
@@ -933,10 +959,10 @@ a.author[href$="PartOfAShoe"]:before {content:"Welt"}
 a.author[href$="shawa666"]:before {content:"Slowpoke666"}
 a.author[href$="Avebone"]:before {content:"Ambassador of Foodmanes"}
 a.author[href$="Qwerty439"]:before {content:"Asdfgh439"}
-a.author[href$="HtotheGRIFF"]:before {content:"faggot"}
+a.author[href$="HtotheGRIFF"]:before {content:"fslurt"}
 a.author[href$="viper9172"]:before {content:"Sidelong"}
 a.author[href$="Lazeraze"]:before {content:"Snowlily"}
-a.author[href$="31eipekili"]:before {content:"I like pie 13 and the name JokerTime"}
+a.author[href$="31eipekili"]:before {content:"  :I  "}
 a.author[href$="derram_2"]:before {content:"derramina Diane Pie"}
 a.author[href$="Chiv_Cortland"]:before {content:"Chivvypoop"}
 a.author[href$="442B8AEF9"]:before {content:"Socialery"}
@@ -987,7 +1013,7 @@ a.author[href$=tehz]:before,a.author[href$=tailcalled]:before { content:"Tail Ca
 a.author[href$=Ruuch]:before { content:"Escort Sluthooves" }
 a.author[href$=herabek]:before {content:"Herb"}
 a.author[href$=OneOfTheseDaysLuna]:before { content:"OneOfThoseOneOfTheseDaysLuna" }
-a.author[href$=Zovistograt]:before { content:"[](/ww20 ''Needy Bitch'')" }
+a.author[href$=Zovistograt]:before { content:'[](/ww20 “Needy Bitch”)' }
 a.author[href$=ZZW30]:before { content:"CaptChuckles" }
 
 
@@ -1009,6 +1035,7 @@ height:30px
 }
 
 /* Adding after-text to somebody's name? Add them here. */
+a.author[href$="Scythesickle"]:after,
 a.author[href$="SRSaboutponies"]:after,
 a.author[href$="Sponce"]:after,
 a.author[href$=HtotheGRIFF]:after,
@@ -1067,10 +1094,11 @@ letter-spacing:normal;
 }
 
 /* After-name text goes here. */ 
+a.author[href$="Scythesickle"]:after { content:" (wants to be a mod)"}
 a.author[href$="SRSaboutponies"]:after {content: "(trolls trolling trolls trolling trolling trolls)"}
 a.author[href$="Sponce"]:after { content:" (liek dis if u cry evry time)"}
 a.author[href$=HtotheGRIFF]:after  { content:" (Is very mad)"}
-a.author[href$=scriptea]:after { content:"Too main pone for background pone status)" }
+a.author[href$=scriptea]:after { content:" (Too main pone for background pone status)" }
 a.author[href$="ClopIsDisgusting"]:after  { content:" (Exists solely to shit on other people's fun)" }
 a.author[href$=Myrandall]:after { content:" (Will applaud anything that doesn't resemble a plastic cock)" }
 a.author[href$=Chinch335]:after { content:" (brings the magic)" }

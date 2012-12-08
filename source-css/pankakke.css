@@ -38,6 +38,7 @@ JustAnotherGDB
 - Added a new emote for DoctorDrunk (9/13)
 - Emote for Fearless (9/18)
 - Lots-a-new emotes in the interim (10/1 - 11/3)
+- Doctorfun added.  We're being fuckin rebels. (12/4)
 
 MisanthropicCat
 - Is a kitty
@@ -259,7 +260,7 @@ a[href|="/evanmacave"] {
     }
 
 /************MLP-LRG*************/
-a[href|="/pghoofpump"], a[href|="/pgshock"], a[href|="/pglegcross"], a[href|="/pgshuffle"], a[href|="/ponykakke"], a[href|="/gdb"], a[href|="/gdbsmirk"],  a[href|="/dinsfire"], a[href|="/dintrot"],  a[href|="/sprankton"], a[href|="/sistersprankton"], a[href|="/flutterhey"], a[href|="/zealot"], a[href|="/sisterzealot"], a[href|="/octaviagasm"], a[href|="/mangohug"], a[href|="/petra"], a[href|="/acer"], a[href|="/darkman"], a[href|="/calcos"], a[href|="/synesthesia"], a[href|="/srslypickled"], a[href|="/twinazi"]{
+a[href|="/pghoofpump"], a[href|="/pgshock"], a[href|="/pglegcross"], a[href|="/pgshuffle"], a[href|="/ponykakke"], a[href|="/gdb"], a[href|="/gdbsmirk"],  a[href|="/dinsfire"], a[href|="/dintrot"],  a[href|="/sprankton"], a[href|="/sistersprankton"], a[href|="/flutterhey"], a[href|="/zealot"], a[href|="/sisterzealot"], a[href|="/octaviagasm"], a[href|="/mangohug"], a[href|="/petra"], a[href|="/acer"], a[href|="/darkman"], a[href|="/calcos"], a[href|="/synesthesia"], a[href|="/srslypickled"], a[href|="/twinazi"] {
     display: block;
     clear: none;
     float: left;
@@ -360,19 +361,22 @@ a[href|="/twinazi"] {
     }
 
 /***********MLP-XLRG*************/
-a[href|="/fearless"] {
+a[href|="/fearless"], a[href|="/doctorfun"] {
      display: block;
      clear: none;
      float: left;
-     height: 300px;
-     background-image: url(%%Fearless%%) !important
+     background-image: url(%%MLPemotesheet-XLrg%%) !important
      }
 a[href|="/fearless"] {
      background-position: -0px -0px;
      width: 252px;
+     height: 300px;
      }
-
-
+a[href|="/doctorfun"] {
+     background-position: -252px -0px;
+     width: 217px;
+     height: 152px;
+     }
 
 /************Mane-sub*************/
 a[href|="/pabbored"], a[href|="/pajhappy"], a[href|="/pajlie"], a[href|="/pajsup"], a[href|="/pcadance"], a[href|="/pcelestiamad"], a[href|="/pcelestiawut"], a[href|="/pchrysalis"], a[href|="/pderpwizard"], a[href|="/pflutterjerk"], a[href|="/pflutterwoah"], a[href|="/pgrannysmith"], a[href|="/plunateehee"], a[href|="/plunawait"], a[href|="/pohcomeon"], a[href|="/ppinkiefear"], a[href|="/pppcute"], a[href|="/ppriceless"], a[href|="/praritydaww"], a[href|="/praritynews"], a[href|="/prdcry"], a[href|="/psbbook"], a[href|="/pscootacheer"], a[href|="/pscootaplease"], a[href|="/pshiningarmor"], a[href|="/pswagintosh"], a[href|="/ptwibeam"], a[href|="/ptwicrazy"], a[href|="/ptwipride"], a[href|="/ptwiright"] {

@@ -153,7 +153,7 @@ div.titlebox .users-online span.number:after
     }
 */
 .sidecontentbox a.author[href$="/IllusionOf_Integrity"]:before {
-    content: "IllusionOf_StuffAndThings";
+    content: "Murdock";
     font-size: 10pt;
     color: #369;
     display:block;
@@ -172,15 +172,26 @@ div.titlebox .users-online span.number:after
     }
 
 .sidecontentbox a.author[href$="/RainbowCrash"]:before {
-    content: "Nice going, ";
+    content: "Attractive Female #1";
+    font-size: 10pt;
+    color: #369;
+    display:block;
+    margin-right: 0.5em;
     }
 
+.sidecontentbox a.author[href$="/RainbowCrash"] {
+    content: "";
+    color: white;
+    font-size: 0pt;
+    display:inline-block;
+    }
+/*
 .sidecontentbox a.author[href$="/RainbowCrash"]:after {
     content: "!";
     }
-
+*/
 .sidecontentbox a.author[href$="/Chinch335"]:before {
-    content: " Chinchess Chinchy" !important;
+    content: "The A-Team Van" !important;
     font-size: 10pt !important;
     color: #369 !important;
     display:inline-block !important;
@@ -195,7 +206,7 @@ div.titlebox .users-online span.number:after
     }
 
 .sidecontentbox a.author[href$="/Orschmann"]:before {
-    content: "[](/orschsquint)";
+    content: "B.A. Baracus";
     font-size: 10pt;
     color: #369;
     display:block;
@@ -210,7 +221,7 @@ div.titlebox .users-online span.number:after
     }
 
 .sidecontentbox .author[href$="/optimistic_outcome"]:before {
-    content: "Opti";
+    content: "Faceman";
     font-size: 10pt;
     color: #369;
     display:block;
@@ -224,7 +235,7 @@ div.titlebox .users-online span.number:after
     }
 
 .sidecontentbox a.author[href$="/The_Velour_Fog"]:before {
-    content: "The_Velour_Manskirt";
+    content: "Hannibal";
     font-size: 9pt;
     color: #369;
     display:block;
@@ -238,23 +249,38 @@ div.titlebox .users-online span.number:after
     display:block;
     }
 
-.sidecontentbox a.author[href$="/Snivian_Moon"]:before {
-    content: "The Anchor";
-    font-size: 10pt;
+.sidecontentbox a.author[href$="/Lebal"]:before {
+    content: "Colonel Lynch";
+    font-size: 9pt;
     color: #369;
     display:block;
     margin-right: 0.5em;
     }
 
-.sidecontentbox a.author[href$="/Snivian_Moon"] {
-    content: "" !important;
-    color: white !important;
-    font-size: 0pt !important;
-    display:inline-block !important;
+.sidecontentbox a.author[href$="/Lebal"] {
+    content: "";
+    color: white;
+    font-size: 0pt;
+    display:block;
+    }
+
+.sidecontentbox a.author[href$="/yagi_takeru"]:before {
+    content: "Attractive Female #3";
+    font-size: 9pt;
+    color: #369;
+    display:block;
+    margin-right: 0.5em;
+    }
+
+.sidecontentbox a.author[href$="/yagi_takeru"] {
+    content: "";
+    color: white;
+    font-size: 0pt;
+    display:block;
     }
 
 .sidecontentbox .author.id-t2_5eqe2:before {
-    content: "Pathogen-David stole the precious thing";
+    content: "Attractive Female #2";
     font-size: 10pt;
     color: #369;
     display:block;
@@ -1453,26 +1479,26 @@ border: 1px dotted black;
 .sidecontentbox h1 {
     text-align: left
 }
-.sidecontentbox h1:not(:first-child) {
+.sidecontentbox .helplink + .title > h1 {
     color: white !important;
     font-size: 1px !important;
-    display: inline-block;
+    display: inline-block
 }
-.sidecontentbox h1:not(:first-child):before{
-    color:gray !important;
+.sidecontentbox .helplink + .title > h1:before {
+    color: gray !important;
     font-size: 13px !important;
-    content: "CUTIE MOD CRUSADERS";
-   display: inline-block
+    content: "THE A-TEAM";
+    display: inline-block
 }
-.sidecontentbox h1:not(:first-child):after{
+.sidecontentbox .helplink + .title > h1:after {
     width: 16px;
     height: 16px;
     background-image: url(%%user-icons%%);
-    background-position: -100% -300%;
+    background-position: -16px -48px;
     display: inline-block;
     content: "";
     margin-left: -5px;
-    font-size: 1px !important; 
+    font-size: 1px !important
 }
 
 .sidecontentbox a.helplink {
@@ -2101,9 +2127,9 @@ h3 {
 
 .side a[href="http://www.reddit.com/r/MLPLounge/new/"]{
    display: block;
-   height: 87px;
-   width: 80px;
-   background: url(%%tinyrumble%%);
+   height: 70px;
+   width: 78px;
+   background: url(%%tinyrarity%%);
    position: fixed; 
    top: 260px;
    right: -10px;
@@ -2111,18 +2137,18 @@ h3 {
 }
 
 /*Hover filly*/
-/*
+
 .side a[href="http://www.reddit.com/r/MLPLounge/new/"]:hover{
    display: block;
-   height: 80px;
-   width: 73px;
-   background: url(%%tinypeanutbutter%%);
+   height: 70px;
+   width: 78px;
+   background: url(%%tinyrarity-r%%);
    position: fixed; 
    top: 260px;
-   right: -5px;
+   right: -10px;
    z-index: 999;
 }
-*/
+
 .side a.author.id-t2_51isb {
     content: "";
     color: white;
@@ -2218,7 +2244,7 @@ input[value="t1_c6in1kg"] + .usertext-body .md p:after { content: "Twist is 20% 
 .thing.id-t1_c6ipose.comment a[href|="/bananaflip"]{background-image:url(%%lounge-emotes%%) !important;background-position: -140px -70px !important; width: 70px !important; height: 70px !important}
 
 /*STUPID PLOUNGE HORSE CRAP*/
-.BLAME_PHEI_BEGIN {color:red;}
+/*.BLAME_PHEI_BEGIN {color:red;}
 a.id-t2_6ehzr {
     display: inline-block;
     font-size: 0;
@@ -2240,4 +2266,85 @@ a.id-t2_6ehzr:hover:after
 {
  content:"StabbyTheLlama"
 }
-.BLAME_PHEI_END {color:red;}
+.BLAME_PHEI_END {color:red;}*/
+
+/******************
+Filly emote
+******************/
+a[href="/filly"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%filly-table%%) !important
+ }
+/*Mane Six*/
+.usertext input[value$="a"] + .usertext-body a[href="/filly"],.usertext input[value$="b"] + .usertext-body a[href="/filly"],.usertext input[value$="c"] + .usertext-body a[href="/filly"] {
+    background-position: -0px -0px;
+  }
+
+
+.usertext input[value$="d"] + .usertext-body a[href="/filly"],.usertext input[value$="e"] + .usertext-body a[href="/filly"],.usertext input[value$="f"] + .usertext-body a[href="/filly"] {
+    background-position: -70px -0px;
+  }
+.usertext input[value$="g"] + .usertext-body a[href="/filly"],.usertext input[value$="h"] + .usertext-body a[href="/filly"],.usertext input[value$="i"] + .usertext-body a[href="/filly"] {
+    background-position: -140px -0px;
+  }
+.usertext input[value$="j"] + .usertext-body a[href="/filly"],.usertext input[value$="k"] + .usertext-body a[href="/filly"],.usertext input[value$="l"] + .usertext-body a[href="/filly"] {
+    background-position: -0px -70px;
+  }
+.usertext input[value$="m"] + .usertext-body a[href="/filly"], .usertext input[value$="n"] + .usertext-body a[href="/filly"],.usertext input[value$="o"] + .usertext-body a[href="/filly"] {
+    background-position: -70px -70px;
+  }
+.usertext input[value$="p"] + .usertext-body a[href="/filly"],.usertext input[value$="q"] + .usertext-body a[href="/filly"],.usertext input[value$="r"] + .usertext-body a[href="/filly"] {
+    background-position: -140px -70px;
+  }
+/*CMC*/
+.usertext input[value$="s"] + .usertext-body a[href="/filly"],.usertext input[value$="t"]{
+    background-position: -0px -140px;
+  }
+.usertext input[value$="u"] + .usertext-body a[href="/filly"],.usertext input[value$="v"] + .usertext-body a[href="/filly"] {
+    background-position: -70px -140px;
+  }
+.usertext input[value$="w"] + .usertext-body a[href="/filly"],.usertext input[value$="x"] + .usertext-body a[href="/filly"] {
+    background-position: -140px -140px;
+  }
+
+/*Others*/
+.usertext input[value$="y"] + .usertext-body a[href="/filly"] { 
+background-position: -0px -210px; 
+  }
+.usertext input[value$="z"] + .usertext-body a[href="/filly"] { 
+background-position: -70px -210px; 
+  }
+.usertext input[value$="0"] + .usertext-body a[href="/filly"] { 
+background-position: -140px -210px; 
+  }
+.usertext input[value$="1"] + .usertext-body a[href="/filly"] { 
+background-position: -0px -280px; 
+  }
+.usertext input[value$="2"] + .usertext-body a[href="/filly"] { 
+background-position: -70px -280px; 
+  }
+.usertext input[value$="3"] + .usertext-body a[href="/filly"] { 
+background-position: -140px -280px; 
+  }
+.usertext input[value$="4"] + .usertext-body a[href="/filly"] { 
+background-position: -0px -350px; 
+  }
+.usertext input[value$="5"] + .usertext-body a[href="/filly"] { 
+background-position: -70px -350px; 
+  }
+.usertext input[value$="6"] + .usertext-body a[href="/filly"] { 
+background-position: -140px -350px; 
+  }
+.usertext input[value$="7"] + .usertext-body a[href="/filly"] { 
+background-position: -0px -420px; 
+  }
+.usertext input[value$="8"] + .usertext-body a[href="/filly"] { 
+background-position: -70px -420px; 
+  }
+.usertext input[value$="9"] + .usertext-body a[href="/filly"] { 
+background-position: -140px -420px; 
+  }

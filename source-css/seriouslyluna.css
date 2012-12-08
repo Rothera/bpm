@@ -40,7 +40,8 @@ SeriouslyConky:
         > Added 5 more emotes
         > Added Search bar Luna
 SeriouslyMaku: 
-        > Added 
+        > Added ohgodsheet and an emote
+        > Changed Subscriber's stuff
 
 */
 
@@ -336,13 +337,20 @@ a.author[href$="Calcos323"]:after {
 
 /*** Side Bar Shit ***/
 .titlebox .number:after {
-    content: " Serious Luna's"
+    content: " Luna's"
 }
 .titlebox .word:not(:first-child) {
     content: "";
     font-size: 0 !important;
     color: white
 }
+.users-online .word {
+        display: none;
+        }  
+    .users-online .number::after {
+        content: " being serious.";
+        }
+
 .sidebox.create {
     display: none
     }

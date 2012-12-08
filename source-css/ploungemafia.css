@@ -308,3 +308,40 @@ left: 0;
     background-position: -0px -0px;
     background-repeat: no-repeat
     }
+
+/*New post spam filtered warning (borrowed from /r/mylittlepony)*/
+#title-field.roundfield:before
+{
+ content:"NOTE: Check the new queue after posting. If your post doesn't show up, you were spam filtered by mistake! Message the moderators with a link to the submission.";
+ font-size:0.86em;
+ padding:5px;
+ border:1px solid #5f99cf;
+ background-color:#EFF7FF;
+ color:black;
+ font-weight: bold;
+ display:block;
+ margin-bottom: 10px;
+}
+
+/* NEVERFORGET */
+
+.titlebox .bottom {
+    font-size: 0px;
+    cursor: text;
+}
+
+.titlebox .bottom > .age {
+    font-size: 10px;
+}
+
+.titlebox .bottom::before {
+    font-size: 10px;
+    content: "created by ";
+}
+
+.titlebox .bottom::after {
+    font-size: 10px;
+    color: #369;
+    cursor: pointer;
+    content: "Taco";
+}

@@ -167,7 +167,8 @@ a.author[href$="dda1add"] {
     }
 a.author[href$="dda1add"]:after {
     content: "Trigger Jim";
-    font-size: 10px !important;
+    /*font-family: "wingdings", cursive;*/
+    font-size: 12px !important;
     visibility: visible !important;
     display: block;
     letter-spacing: normal
@@ -183,7 +184,8 @@ a.author[href$="Apprentice1994"] {
     }
 a.author[href$="Apprentice1994"]:after {
     content: "Hus anyune rually buun far evun as decided to use even gu wunt tu du luuk mure luke?";
-    font-size: 10px !important;
+   /* font-family: "wingdings", cursive;*/
+    font-size: 12px !important;
     visibility: visible !important;
     display: block;
     letter-spacing: normal
@@ -249,8 +251,9 @@ a.author[href$="selenic_smile"] {
     letter-spacing: -20px
     }
 a.author[href$="selenic_smile"]:after {
-    content: "The invincible lurker";
-    font-size: 10px !important;
+    /*content: "The invincible lurker";
+    font-family: "wingdings", cursive;*/
+    font-size: 12px !important;
     color:  #00F5FF;
     visibility: visible !important;
     display: block;
@@ -274,7 +277,8 @@ a.author[href$="Esplin"] {
 a.author[href$="Esplin"]:after {
     content: "Floaty the Lyra";
     color: #43D58C;
-    font-size: 10px !important;
+  /*  font-family: "wingdings", cursive;*/
+    font-size: 12px !important;
     visibility: visible !important;
     display: block;
     letter-spacing: normal
@@ -289,6 +293,7 @@ a.author[href$="TheQuillmaster"] {
     }
 a.author[href$="TheQuillmaster"]:after {
     content: "TheQuailmaster";
+    /*font-family: "wingdings", cursive;*/
     font-size: 12px !important;
     visibility: visible !important;
     display: block;
@@ -305,7 +310,8 @@ a.author[href$="BettyMcBitterpants"] {
     }
 a.author[href$="BettyMcBitterpants"]:after {
     content: "BettyMcRagepants, Savior of Foodmanes";
-    font-size: 12px !important;
+    /*font-family: "wingdings", cursive;*/
+    font-size: 14px !important;
     visibility: visible !important;
     display: block;
     letter-spacing: normal
@@ -320,6 +326,7 @@ a.author[href$="bryvood"] {
     }
 a.author[href$="bryvood"]:after {
     content: "Shaggy";
+    /*font-family: "wingdings", cursive;*/
     font-size: 12px !important;
     visibility: visible !important;
     display: block;
@@ -408,6 +415,7 @@ a.author[href$="theMagicalCouch"] {
 a.author[href$="theMagicalCouch"]:after {
     content: "[deleted]";
     font-size: 12px !important;
+    font-family: "comicsans", cursive;
     color: rgb(136,136,136) !important;
     visibility: visible !important;
     display: block;
@@ -437,6 +445,7 @@ a.author[href$="Avebone"] {
     }
 a.author[href$="Avebone"]:after {
     content: "The Cripple Casanova";
+    /*font-family: "wingdings", cursive;*/
     font-size: 12px !important;
     visibility: visible !important;
     /*color: #008000;*/
@@ -873,6 +882,18 @@ a[href|="/rwololo"]
     float: left;
     height: 150px;
     width: 150px;
+
+}
+
+a[href|="/thisisnowcanon"]
+{
+
+ background-image: url(%%canon%%);
+    clear: none;
+    display: block;
+    float: left;
+    height: 285px;
+    width: 246px;
 
 }
 
