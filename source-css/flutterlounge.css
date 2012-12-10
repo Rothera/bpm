@@ -54,14 +54,6 @@ a[href|="/twirighthug"], a[href|="/twilighthug"] {
     height: 70px;
     background-image: url(%%twirighthug%%)
     }
-a[href|="/flutterhugs"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 310px;
-    height: 267px;
-    background-image: url(%%flutterhugs%%)
-    }
 a[href|="/rollerconky"], a[href|="/skatingconky"] {
     display: block;
     clear: none;
@@ -86,6 +78,9 @@ a[href|="/flutterwoo"], a[href|="/shywoo"] {
     height: 200px;
     background-image: url(%%flutterwoo%%)
     }
+
+/* Animotes - aPNG emotes! */
+
 a[href|="/fluttersmile"], a[href|="/shysmile"] {
     display: block;
     clear: none;
@@ -118,13 +113,54 @@ a[href|="/flutterbutts"], a[href|="/shysintheair"] {
     height: 421px;
     background-image: url(%%shysintheair%%)
     }
+a[href|="/bunnydance"], a[href|="/shybunnydance"], a[href|="/bunnyshydance"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 300px;
+    height: 450px;
+    background-image: url(%%flutterbunnyshake%%)
+    }
+a[href|="/fluttergift"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 166px;
+    background-image: url(%%fluttergift%%)
+    }
+a[href|="/flutterhugs"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 310px;
+    height: 267px;
+    background-image: url(%%flutterhugs%%)
+    }
+/* Wintery emotes */
 
+a[href|="/snowshy"], a[href|="/wfs00"], a[href|="/wfs01"], a[href|="/wfs02"], a[href|="/wfs10"], a[href|="/wfs20"], a[href|="/wfs11"], a[href|="/wfs12"], a[href|="/wfs21"], a[href|="/wfs22"]  {
+
+display: block;
+clear: none;
+float: left;
+width: 100px;
+height: 100px;
+background-image: url(%%wintermotes%%) !important
+}
+
+a[href|="/snowshy"], a[href|="/wfs00"] { background-position: -0px -0px }
 
 /* Space thingy */
 a[href|="/sp"] {
     display: inline-block;
     padding-right: 100%
     }
+
+/* Get rid of RES tags and vote weight on the modbox */
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink {
+    display: none !important
+}
 
 /* Flair! So many wonderful choices! */
 

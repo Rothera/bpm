@@ -477,6 +477,22 @@ a.author[href$="floutsy"]:after {
     letter-spacing: normal
     }
 
+a.author[href$="31eipekili"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="31eipekili"]:after {
+    content: "I NEED A FUNNY NAME";
+    font-size: 12px !important;
+    visibility: visible !important;
+    color: green;
+    display: block;
+    letter-spacing: normal
+    }
+
 a.author[href$="insanitydash"] {
     font-size: 0px !important;
     display: inline-block;
@@ -689,7 +705,7 @@ a[href|="/twiststare"]
     clear: both;
     text-align: center;
     width: 100%;
-    background-image: url(%%shyFooter%%);
+    background-image: url(%%twiFooter%%);
     background-position: bottom center;
     background-repeat: no-repeat;
     margin-bottom: 4px
