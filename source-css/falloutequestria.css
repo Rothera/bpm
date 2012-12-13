@@ -371,9 +371,9 @@ a[href|='/rampagesmash'] {background-position: 0px 0px}
     border: none;
     top: 20px;
     padding: 0px;
-    background: url(%%spritesheet-v16%%) no-repeat;
+    background: url(%%spritesheet-v18%%) no-repeat;
     display: inline-block;
-vertical-align: middle;
+    vertical-align: middle;
     }
 
 .flair-aaa{ background-position: 0 0; width: 50px; height: 50px; } 
@@ -381,10 +381,30 @@ vertical-align: middle;
 .flair-alicorn{ background-position: 0 -165px; width: 47px; height: 15px; } 
 .flair-dashite{ background-position: 0 -230px; width: 16px; height: 15px; } 
 .flair-littlepip{ background-position: 0 -295px; width: 36px; height: 15px; } 
-.flair-pipbuck{ background-position: 0 -360px; width: 20px; height: 15px; } 
-.flair-redeye{ background-position: 0 -425px; width: 24px; height: 15px; } 
-.flair-security{ background-position: 0 -490px; width: 37px; height: 15px; } 
-.flair-stabletec{ background-position: 0 -555px; width: 40px; height: 15px; } 
-.flair-steelrangers{ background-position: 0 -620px; width: 15px; height: 15px; } 
-.flair-stern{ background-position: 0 -685px; width: 13px; height: 15px; } 
-.flair-toasterrepairpony{ background-position: 0 -750px; width: 23px; height: 15px; } 
+.flair-pipbuck{ background-position: 0 -430px; width: 20px; height: 15px; } 
+.flair-redeye{ background-position: 0 -495px; width: 24px; height: 15px; } 
+.flair-security{ background-position: 0 -560px; width: 37px; height: 15px; } 
+.flair-stabletec{ background-position: 0 -625px; width: 40px; height: 15px; } 
+.flair-steelrangers{ background-position: 0 -690px; width: 15px; height: 15px; } 
+.flair-stern{ background-position: 0 -755px; width: 13px; height: 15px; } 
+.flair-toasterrepairpony{ background-position: 0 -820px; width: 23px; height: 15px; } 
+
+
+.flair-mom{
+background-position: 0 -360px; width: 20px; height: 20px;
+    border: 1px solid black;
+    border-radius: 2px;
+    height: 20px;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 0;
+    text-indent: 27px;
+    white-space: nowrap;
+    width: 20px;
+}
+
+.flair-mom:hover {
+    width: auto;
+min-width:18px;
+margin-top:-3px;padding:1px 3px !important;color:#FFF !important;background-color:#888;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;
+}

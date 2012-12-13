@@ -1,5 +1,7 @@
 /* Removed !important from all the emotes. Unnecessary and breaks things. -derram */ 
 
+/* Called Derram a cunth - Conky */
+
 /*CSS pre-derram fuckery: http://pastebin.com/dgDEPi34 | https://dl.dropbox.com/u/1277953/foodmanes.zip */
 
 /* LETS ORGANIZE THIS SHIT, I LIKE SHIT ORGANIZED
@@ -102,7 +104,7 @@ content: ",000 People that are literally Hitler plus 1 Ave"
 
 
 /* Best Filly Sidebar */
-.side a[href="http://www.youtube.com/watch?v=PWNUQoMeNWM&feature=plcp"] {
+.side a[href="http://www.reddit.com/r/MyLittleFoodManes/new"] {
     display: block;
     height: 92px;
     width: 120px;
@@ -168,7 +170,7 @@ a.author[href$="dda1add"] {
 a.author[href$="dda1add"]:after {
     content: "Trigger Jim";
     /*font-family: "wingdings", cursive;*/
-    font-size: 12px !important;
+    font-size: 7px !important;
     visibility: visible !important;
     display: block;
     letter-spacing: normal
@@ -325,7 +327,7 @@ a.author[href$="bryvood"] {
     letter-spacing: -20px
     }
 a.author[href$="bryvood"]:after {
-    content: "Shaggy";
+    content: "Not Shaggy Anymore";
     /*font-family: "wingdings", cursive;*/
     font-size: 12px !important;
     visibility: visible !important;
@@ -651,13 +653,6 @@ body.res-nightmode:first-of-type {
     }
 
 
-/*** Corner hitlerdidnothingwrong **
-#header {
-    background-image: url(%%Banner%%);
-    background-repeat: no-repeat;
-    }
-
-
 
 /***  Emotes ***/
 
@@ -711,15 +706,6 @@ a[href|="/twiststare"]
     margin-bottom: 4px
     }
 
-
-/*** Corner image
-#header {
-    background-image: url(%%stalin%%);
-    background-repeat: no-repeat;
-    background-position: bottom right
-    }
-
-*/
 
 /*** Nightmode fixes for the background ***/
 .content #siteTable div[onclick="click_thing(this)"] {
@@ -1017,3 +1003,20 @@ a[href|="/moarmoe"]
     height: 317px;
     width: 250px;
 }
+
+
+/*** Title Box ***/
+
+.side .titlebox .redditname a {
+    background: url(%%box%%);
+    display: block;
+    width: 247px;
+    height: 115px;
+    float: none;
+    font-size: 0
+    }
+
+/*** Corner Foodmane ***/
+#header-bottom-right {
+    background: url(%%foodcollage%%) no-repeat center bottom
+    }

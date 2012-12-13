@@ -2,24 +2,26 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%milkshake%%)  no-repeat  fixed 70% 100% !important;
+    background:  url(%%parade%%)  no-repeat  fixed 70% 100% !important;
 }
 
 /* Banner image and associated height values */
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%changebanner%%);
+   background: url(%%lol%%);
    background-repeat: no-repeat;
-   background-position: 50% 0%;
-   height: 273px; /* 237 for meat's nice banner */
+background-repeat: repeat-x;
+   background-position: 50% 100%;
+   height: 237px; /* 237 for meat's nice banner */
 }
 
 #header-img-a {
-    margin-top: 147px;
+    margin-top: 111px;
 }
 
 #header {
-    height:285px;
+    height:256px;
     border-bottom: 1px solid #000000;
+    background-color: #e0d3c1;
 }
 
 #header-bottom-left>* {
@@ -58,6 +60,8 @@ body:first-of-type, body.res-nightmode:first-of-type {
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
 body.res-nightmode:first-of-type {background-color: transparent!important;}
 span[class="hover pagename redditname"] a:first-of-type { font-size: 1.6em !important; text-shadow: 0px 0px 6px #000; color: white; }
+
+body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .side .spacer h1, body.res-nightmode .NERPageMarker, body.res-nightmode .side .spacer {background-color: transparent!important;}
 
 /* Makes the sidebar transparent */
 .side {background-color: transparent !important }
@@ -246,7 +250,7 @@ font-weight: 700;
 }
 .flair:after
 {
-background-image: url(%%changelingflair%%);
+background-image: url(%%flairsheet%%);
 background-position: 0px 0px;
 content: "";
 display: inline-block;
@@ -372,7 +376,17 @@ background-repeat: no-repeat;
 .flair-chrys:after { background-position: 0px -3450px }
 .flair-discentia:after { background-position: 0px -3480px }
 .flair-milkyway:after { background-position: 0px -3510px }
- 
+.flair-thejoker:after { background-position: 0px -3540px }
+.flair-jackie:after { background-position: 0px -3570px }
+.flair-berryscrunch:after { background-position: 0px -3600px }
+.flair-shawnyall:after { background-position: 0px -3630px }
+.flair-ajtexasranger:after { background-position: 0px -3660px }
+.flair-shypeek:after { background-position: 0px -3690px }
+.flair-twist2:after { background-position: 0px -3720px }
+.flair-twisuit:after { background-position: 0px -3750px }
+.flair-rarhorror:after { background-position: 0px -3780px }
+.flair-conky:after { background-position: 0px -3810px }
+
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
 
@@ -452,15 +466,19 @@ a[href|='/surbarf'], a[href|='/sursmelledyourcloset'] {width:273px; height:152px
 a[href|='/trixieplot'] {width:152px; height:116px; background-position: -0px -1698px}
 
 
-a[href|='/ruined'], a[href|='/twichangeling'] {
+a[href|='/chrysshake'], a[href|='/queenshake'], a[href|='/ruined'], a[href|='/samuraijack'], a[href|='/snuggle'], a[href|='/twichangeling'], a[href|='/wmdiscord'] {
     display: block;
     clear: none;
     float: left;
     background-image: url(%%table12%%)
     }
 
-a[href|='/ruined'] {width:308px; height:152px; background-position: -0px -202px}
-a[href|='/twichangeling'] {width:150px; height:202px; background-position: -0px -0px}
+a[href|='/chrysshake'], a[href|='/queenshake'] {width:114px; height:152px; background-position: -102px -0px}
+a[href|='/ruined'] {width:308px; height:152px; background-position: -0px -556px}
+a[href|='/samuraijack'] {width:102px; height:152px; background-position: -0px -0px}
+a[href|='/snuggle'] {width:131px; height:152px; background-position: -0px -152px}
+a[href|='/twichangeling'] {width:150px; height:202px; background-position: -131px -152px}
+a[href|='/wmdiscord'] {width:176px; height:202px; background-position: -0px -354px}
 
 
 a[href|='/bmwat'], a[href|='/ch35'], a[href|='/chnuzzle'], a[href|='/cheerious'], a[href|='/cheerlikesit'], a[href|='/cmcexcited'], a[href|='/cordwithit'], a[href|='/crazypie'], a[href|='/derpoops'], a[href|='/disamused'], a[href|='/disangry'], a[href|='/disexcited'], a[href|='/diskate'], a[href|='/foryou'], a[href|='/genetics'], a[href|='/genius'], a[href|='/gildafury'], a[href|='/herhorn'], a[href|='/gildafriendship'], a[href|='/hipstertrixie'], a[href|='/iwapprove'], a[href|='/noidea'], a[href|='/notenoughbooks'], a[href|='/rarimad'], a[href|='/twinuzzle'] {
@@ -794,6 +812,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="Juz16"],
 a.author[href$="EvanMacIan"],
 a.author[href$="kcirvam"],
 a.author[href$="Typhron"],
@@ -873,6 +892,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="Juz16"]:before,
 a.author[href$="EvanMacIan"]:before,
 a.author[href$="kcirvam"]:before,
 a.author[href$="Typhron"]:before,
@@ -949,6 +969,7 @@ visibility:visible!important;
 }
 
 /* Replacing somebody's name? Put the replacement here. */
+a.author[href$="Juz16"]:before {content: "Jizz"}
 a.author[href$="EvanMacIan"]:before {content: "Ewan McGregor"}
 a.author[href$="kcirvam"]:before {content: "mavrick45"}
 a.author[href$="Typhron"]:before {content:"Tiffany"}
@@ -1119,7 +1140,7 @@ a.author[href$=lord-hemingway]:after { content:" (Clopper 44)" }
 a.author[href$=Generic_Builder]:after { content:" IS SO KAWAII!" }
 a.author[href$=volcano_bakemeats]:after { content:" (Flour Sack Monster)" }
 a.author[href$=Chillusion]:after { content:" (Because I can.)" }
-a.author[href$=Esplin]:after { content:" and the Hunt for the Lost Dildo" }
+a.author[href$=Esplin]:after { content:" (New to the Internet)" }
 a.author[href$=waffen337]:after { content:"(Fucking ass ball bajongler)" }
 a.author[href$=sirtophat]:after { content:" (flaming homosexual)"; color:purple }
 a.author[href$=cheesemoo]:after { content:" (Continually fucks with the CSS)" }
