@@ -35,6 +35,8 @@ var emote_map, sr_name2id, sr_id2name, tag_name2id, tag_id2name, bpm_backendsupp
 (function(_bpm_this) {
 "use strict";
 
+var BPM_DEV_MODE = false;
+
 var BPM_CODE_VERSION = "49";
 var BPM_DATA_VERSION = "81_1";
 var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us";
@@ -466,7 +468,7 @@ var _BPM_DEBUG = 0;
 var _BPM_INFO = 1;
 var _BPM_WARNING = 2;
 var _BPM_ERROR = 3;
-var _BPM_LOG_LEVEL = _BPM_WARNING;
+var _BPM_LOG_LEVEL = BPM_DEV_MODE ? _BPM_DEBUG : _BPM_WARNING;
 
 function _bpm_make_logger(name, level) {
     return function() {
@@ -709,6 +711,16 @@ var bpm_browser = bpm_exports.browser = {
     },
 
     /*
+     * Adds a CSS resource to the page.
+     */
+    link_css: function(filename) {
+        this.make_css_link(filename, function(tag) {
+            var parent = this.css_parent();
+            parent.insertBefore(tag, parent.firstChild);
+        }.bind(this));
+    },
+
+    /*
      * Sends a set_pref message to the backend. Don't do this too often, as
      * some browsers incur a significant overhead for each call.
      */
@@ -734,7 +746,7 @@ var bpm_browser = bpm_exports.browser = {
     // Missing attributes/methods:
     //    function css_parent()
     //    function _send_message(method, data)
-    //    function link_css(filename)
+    //    function make_css_link(filename)
     // Assumed globals:
     //    var sr_id2name
     //    var sr_name2id
@@ -762,15 +774,6 @@ case "firefox-ext":
             var url = "resource://jid1-thrhdjxskvsicw-at-jetpack/betterponymotes/data" + filename;
             var tag = bpm_utils.stylesheet_link(url);
             callback(tag);
-        },
-
-        link_css: function(filename) {
-            this.make_css_link(filename, function(tag) {
-                // Seems to work in Firefox, and we get to put our tags in a pretty
-                // place!
-                var parent = this.css_parent();
-                parent.insertBefore(tag, parent.firstChild);
-            }.bind(this));
         }
     });
 
@@ -825,16 +828,6 @@ case "chrome-ext":
         make_css_link: function(filename, callback) {
             var tag = bpm_utils.stylesheet_link(chrome.extension.getURL(filename));
             callback(tag);
-        },
-
-        link_css: function(filename) {
-            this.make_css_link(filename, function(tag) {
-                // document.head does not exist at this point in Chrome (it's null).
-                // Trying to access it seems to blow it away. Strange. This will
-                // have to suffice (though it gets them "backwards").
-                var parent = this.css_parent();
-                parent.insertBefore(tag, parent.firstChild);
-            }.bind(this));
         }
     });
     break;
@@ -854,13 +847,6 @@ case "opera-ext":
                 var tag = bpm_utils.style_tag(data);
                 callback(tag);
             }.bind(this));
-        },
-
-        link_css: function(filename) {
-            this.make_css_link(filename, function(tag) {
-                var parent = this.css_parent();
-                parent.insertBefore(tag, parent.firstChild);
-            }.bind(this));
         }
     });
 
@@ -870,8 +856,6 @@ case "opera-ext":
     if(opera.extension.getFile) {
         bpm_debug("Using getFile data API");
         bpm_utils.copy_properties(bpm_browser, {
-            _is_opera_next: true, // Close enough
-
             _get_file: function(filename, callback) {
                 var file = opera.extension.getFile(filename);
                 if(file) {
@@ -888,7 +872,6 @@ case "opera-ext":
     } else {
         bpm_debug("Using backend XMLHttpRequest data API");
         bpm_utils.copy_properties(bpm_browser, {
-            _is_opera_next: false,
             _file_callbacks: {},
 
             _get_file: function(filename, callback) {
@@ -956,13 +939,6 @@ case "userscript":
             var url = BPM_RESOURCE_PREFIX + filename + "?p=2&dver=" + BPM_DATA_VERSION;
             var tag = bpm_utils.stylesheet_link(url);
             callback(tag);
-        },
-
-        link_css: function(filename) {
-            this.make_css_link(filename, function(tag) {
-                var parent = this.css_parent();
-                parent.insertBefore(tag, parent.firstChild);
-            }.bind(this));
         }
     });
     break;
