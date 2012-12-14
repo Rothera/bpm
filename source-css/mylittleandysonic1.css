@@ -386,6 +386,9 @@ background-repeat: no-repeat;
 .flair-twisuit:after { background-position: 0px -3750px }
 .flair-rarhorror:after { background-position: 0px -3780px }
 .flair-conky:after { background-position: 0px -3810px }
+.flair-Avebone:after { background-position: 0px -3840px }
+.flair-risen:after { background-position: 0px -3870px }
+.flair-tbm:after { background-position: 0px -3900px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
@@ -882,7 +885,8 @@ a.author[href$=slippy0],
 a.author[href$=herabek],
 a.author[href$=OneOfTheseDaysLuna],
 a.author[href$=ZZW30],
-a.author[href$=Zovistograt]
+a.author[href$=Zovistograt],
+a.author[href$=mrwoo6]
 
 { 
 font-size:0!important; 
@@ -962,7 +966,8 @@ a.author[href$=slippy0]:before,
 a.author[href$=herabek]:before,
 a.author[href$=OneOfTheseDaysLuna]:before,
 a.author[href$=ZZW30]:before,
-a.author[href$=zovistograt]:before
+a.author[href$=zovistograt]:before,
+a.author[href$=mrwoo6]:before
 {
 font-size:10px!important; 
 visibility:visible!important;
@@ -1037,7 +1042,7 @@ a.author[href$=herabek]:before {content:"Herb"}
 a.author[href$=OneOfTheseDaysLuna]:before { content:"OneOfTheseFutemotes" }
 a.author[href$=Zovistograt]:before { content:'[](/ww20 “Needy Bitch”)' }
 a.author[href$=ZZW30]:before { content:"CaptChuckles" }
-
+a.author[href$=mrwoo6]:before { content:"ReadingComprehension" }
 
 
 /* Replacing puppy's name with a picture of derpy */

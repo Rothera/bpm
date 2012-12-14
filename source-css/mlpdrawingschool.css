@@ -100,7 +100,10 @@ top: -15px;
     z-index: 2;
    }
 #header-bottom-left {
-  height: 100px;
+   background-image: url(%%header%%);
+   background-color: #FFFFFF;
+   background-repeat: no-repeat; 
+   height: 100px;
    }
 
 /* *** That sidebar stuff *** */
