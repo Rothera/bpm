@@ -1236,17 +1236,17 @@ var bpm_converter = bpm_exports.converter = {
                 //                                  http://    < domain name >    /url?params#stuff
                 // \b doesn't seem to be working when I put it at the end, here??
                 // Also, note that we do grab the space at the end for formatting
-                var parts = element.title.split(/\b(https?:\/\/[a-zA-Z0-9\-.]+(?:\/[a-zA-Z0-9\-_.~'();:+\/?%#]*)?(?:\s|$))/)
+                var parts = element.title.split(/\b(https?:\/\/[a-zA-Z0-9\-.]+(?:\/[a-zA-Z0-9\-_.~'();:+\/?%#]*)?(?:\s|$))/);
 
                 var at_element = document.createElement(element_type); // Container
                 at_element.classList.add("bpm-alttext");
-                for(var i = 0; i < Math.floor(parts.length / 2); i += 2) {
-                    if(parts[i]) {
-                        at_element.appendChild(document.createTextNode(parts[i]));
+                for(var j = 0; j < Math.floor(parts.length / 2); j += 2) {
+                    if(parts[j]) {
+                        at_element.appendChild(document.createTextNode(parts[j]));
                     }
                     var link_element = document.createElement("a");
-                    link_element.textContent = parts[i + 1];
-                    link_element.href = parts[i + 1];
+                    link_element.textContent = parts[j + 1];
+                    link_element.href = parts[j + 1];
                     at_element.appendChild(link_element);
                 }
                 if(parts[parts.length - 1]) {
