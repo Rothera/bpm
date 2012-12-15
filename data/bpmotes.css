@@ -173,19 +173,35 @@
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACWSURBVEjH7dcxDoAgDAXQDhyROzJwREiQ4bsQLAjGH2NJ/tb4DFBQEZFCChmuQ96IwQa3xa4m1HilxqPGPQIDjahLPRxoQk3U8Cm4QUsPb9AywmfhcNH8CWAPPRN2YO3BGbl8sd011vBb6MqunsVVdKmPgWcFzSP0OzBlqimbi9ZOzAOEc2TSLgnqtWifPgZvw7/5dzoAyDAWKt02AB4AAAAASUVORK5CYII=");
 }
 
-/* Search result container */
-#bpm-sb-results {
+#bpm-sb-tabframe {
     height: 388px; /* #bpm-search-box - 62 */
-    width: -webkit-calc(100% - 8px); /* Fit inside padding */
-    width: calc(100% - 8px);
+
     padding: 4px !important;
-    float: left;
 
     background-color: white;
+}
+
+/* Search result container */
+#bpm-sb-results {
+    height: inherit;
+    overflow-y: auto;
+
     font-size: xx-small;
     font-family: monospace;
-    overflow-y: auto;
     word-wrap: break-word; /* Makes emote names a bit nicer */
+}
+
+/* Help tab */
+#bpm-sb-helptab {
+    height: inherit;
+    display: none; /* default for this tab */
+
+    padding: 5px;
+}
+.bpm-sb-help {
+    margin-bottom: 8px;
+    font-size: small;
+    text-align: justify;
 }
 
 #bpm-sb-bottomrow {
@@ -194,26 +210,13 @@
     width: 100%;
 }
 
-/* Help hover */
-#bpm-sb-help-hover {
+/* Help link */
+#bpm-sb-helplink {
     height: 20px;
     margin-left: 4px;
     float: left;
 
     line-height: 20px;
-}
-#bpm-sb-help-hover:hover > #bpm-sb-help {
-    display: block;
-}
-
-/* Actual help box */
-#bpm-sb-help {
-    padding: 4px;
-    position: absolute;
-
-    background-color: white;
-    border: 2px solid #D0D0D0;
-    display: none;
 }
 
 /* Bottom-right resize box */

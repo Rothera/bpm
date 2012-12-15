@@ -1678,10 +1678,14 @@ var bpm_searchbox = bpm_exports.searchbox = {
     sb_input: null,
     sb_resultinfo: null,
     sb_close: null,
+    sb_tabframe: null,
     sb_results: null,
+    sb_helptab: null,
+    sb_helplink: null,
     sb_resize: null,
     sb_global_icon: null, // Global << thing
     firstrun: false, // Whether or not we've made any search at all yet
+    current_tab: null,
 
     /*
      * Sets up the search box for use on a page, either Reddit or the top-level
@@ -1743,18 +1747,31 @@ var bpm_searchbox = bpm_exports.searchbox = {
                 '<span id="bpm-sb-resultinfo"></span>',
                 '<span id="bpm-sb-close"></span>',
               '</div>',
-              '<div id="bpm-sb-results"></div>',
+              '<div id="bpm-sb-tabframe">',
+                '<div id="bpm-sb-results"></div>',
+                '<div id="bpm-sb-helptab">',
+                  '<p class="bpm-sb-help">Simple search terms will show you ',
+                    'emotes with names that match: for instance, <code>"aj"',
+                    '</code> will find all emotes with <code>"aj"</code> in ',
+                    'their names. If you use more than one term, all of them ',
+                    'must match to return an emote.</p>',
+                  '<p class="bpm-sb-help">You can filter by subreddit with the ',
+                    'special syntaxes <code>"r/subreddit"</code> and <code>"sr:',
+                    'subreddit"</code>. Using more than one such filter returns ',
+                    'results from each of them.</p>',
+                  '<p class="bpm-sb-help">All emotes are tagged according to ',
+                    'their contents, and these can be searched on like <code>',
+                    '"+twilightsparkle"</code>. Most show characters have their ',
+                    'own tags that can be easily guessed, and some classes of ',
+                    '"themed" emotes also have tags. You can also negate tags ',
+                    'with <code>"-fluttershy"</code> to remove emotes from the ',
+                    'results.</p>',
+                  '<p class="bpm-sb-help">Some emotes are hidden by default. ',
+                    'Use <code>"+nonpony"</code> to see them.</p>',
+                '</div>',
+              '</div>',
               '<div id="bpm-sb-bottomrow">',
-                '<span id="bpm-sb-help-hover">help',
-                  '<div id="bpm-sb-help">',
-                    '<p>Searching for <code>"aj"</code> will show you all emotes with <code>"aj"</code> in their names.',
-                    '<p>Searching for <code>"aj happy"</code> will show you all emotes with both <code>"aj"</code> and <code>"happy"</code> in their names.',
-                    '<p>The special syntax <code>"sr:subreddit"</code> will limit your results to emotes from that subreddit.',
-                    '<p>Using more than one subreddit will show you emotes from all of them.',
-                    '<p>Searching for <code>"+tag"</code> will show you emotes with the given tag. <code>"-tag"</code> shows emotes without it.',
-                    '<p>Some emotes are hidden by default. Use <code>"+nonpony"</code> to see them.',
-                  '</div>',
-                '</span>',
+                '<a id="bpm-sb-helplink" href="javascript:void(0)">help</a>',
                 '<span id="bpm-sb-resize"></span>',
               '</div>',
             '</div>',
@@ -1769,7 +1786,10 @@ var bpm_searchbox = bpm_exports.searchbox = {
         this.sb_input = document.getElementById("bpm-sb-input");
         this.sb_resultinfo = document.getElementById("bpm-sb-resultinfo");
         this.sb_close = document.getElementById("bpm-sb-close");
+        this.sb_tabframe = document.getElementById("bpm-sb-tabframe");
         this.sb_results = document.getElementById("bpm-sb-results");
+        this.sb_helptab = document.getElementById("bpm-sb-helptab");
+        this.sb_helplink = document.getElementById("bpm-sb-helplink");
         this.sb_resize = document.getElementById("bpm-sb-resize");
 
         this.sb_global_icon = document.getElementById("bpm-global-icon");
@@ -1779,6 +1799,8 @@ var bpm_searchbox = bpm_exports.searchbox = {
      * Sets up the emote search box.
      */
     init_search_box: function(prefs) {
+        this.current_tab = this.sb_results;
+
         /*
          * Intercept mouseover for the entire search widget, so we can remember
          * which form was being used before.
@@ -1830,13 +1852,27 @@ var bpm_searchbox = bpm_exports.searchbox = {
             }
         }.bind(this)), false);
 
+        // Listen for the "help" tab link
+        this.sb_helplink.addEventListener("click", bpm_utils.catch_errors(function(event) {
+            if(this.current_tab !== this.sb_helptab) {
+                this.switch_to_tab(this.sb_helptab);
+            } else {
+                this.switch_to_tab(this.sb_results);
+            }
+        }.bind(this)), false);
+
+        // Focusing input switches to results tab
+        this.sb_input.addEventListener("focus", bpm_utils.catch_errors(function(event) {
+            this.switch_to_tab(this.sb_results);
+        }.bind(this)), false);
+
         // Set up default positions
         this.sb_container.style.left = prefs.prefs.searchBoxInfo[0] + "px";
         this.sb_container.style.top = prefs.prefs.searchBoxInfo[1] + "px";
         this.sb_container.style.width = prefs.prefs.searchBoxInfo[2] + "px";
         this.sb_container.style.height = prefs.prefs.searchBoxInfo[3] + "px";
         // 62 is a magic value from the CSS.
-        this.sb_results.style.height = (prefs.prefs.searchBoxInfo[3] - 62) + "px";
+        this.sb_tabframe.style.height = (prefs.prefs.searchBoxInfo[3] - 62) + "px";
         this.sb_global_icon.style.left = prefs.prefs.globalIconPos[0] + "px";
         this.sb_global_icon.style.top = prefs.prefs.globalIconPos[1] + "px";
 
@@ -1862,7 +1898,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
 
             this.sb_container.style.width = sb_width + "px";
             this.sb_container.style.height = sb_height + "px";
-            this.sb_results.style.height = (sb_height - 62) + "px";
+            this.sb_tabframe.style.height = (sb_height - 62) + "px";
 
             prefs.prefs.searchBoxInfo[2] = sb_width;
             prefs.prefs.searchBoxInfo[3] = sb_height;
@@ -1876,6 +1912,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
     show: function(prefs) {
         this.sb_container.style.visibility = "visible";
         this.sb_input.focus();
+        this.switch_to_tab(this.sb_results);
 
         // If we haven't run before, go search for things
         if(!this.firstrun) {
@@ -1892,6 +1929,15 @@ var bpm_searchbox = bpm_exports.searchbox = {
         if(this.target_form) {
             this.target_form.focus();
         }
+    },
+
+    switch_to_tab: function(tab) {
+        var tabs = [this.sb_results, this.sb_helptab];
+        for(var i = 0; i < tabs.length; i++) {
+            tabs[i].style.display = "none";
+        }
+        tab.style.display = "block";
+        this.current_tab = tab;
     },
 
     /*
