@@ -87,6 +87,144 @@ var bpm_utils = bpm_exports.utils = {
     })(),
 
     /*
+     * Generates a random string made of [a-z] characters, default 24 chars
+     * long.
+     */
+    random_id: function(length) {
+        if(length === undefined) {
+            length = 24;
+        }
+
+        var index, tmp = "";
+        for(var i = 0; i < length; i++) {
+            index = Math.floor(Math.random() * 25);
+            tmp += "abcdefghijklmnopqrstuvwxyz"[index];
+        }
+        return tmp;
+    },
+
+    /*
+     * Copies all properties on one object to another.
+     */
+    copy_properties: function(to, from) {
+        for(var key in from) {
+            to[key] = from[key];
+        }
+    },
+
+    /*
+     * str.endswith()
+     */
+    ends_with: function(text, s) {
+        return text.slice(-s.length) === s;
+    },
+
+    /*
+     * Wraps a function with an error-detecting variant. Useful for callbacks
+     * and the like, since some browsers (Firefox...) have a way of swallowing
+     * exceptions.
+     */
+    catch_errors: function(f) {
+        return function() {
+            try {
+                return f.apply(this, arguments);
+            } catch(e) {
+                bpm_error("Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
+                throw e;
+            }
+        };
+    },
+
+    /*
+     * Wrapper for a one-shot event with callback list and setup function.
+     * Returns a "with_X"-like function that accepts callbacks. Example usage:
+     *
+     * var with_n = trigger(function(ready) {
+     *     ready(256);
+     * });
+     * with_n(function(n) {
+     *     bpm_log(n);
+     * });
+     */
+    trigger: function(setup) {
+        var callbacks = [];
+        var result;
+        var triggered = false;
+        var init = false;
+
+        return {
+            listen: function(callback) {
+                if(!init) {
+                    setup(this.trigger);
+                    init = true;
+                }
+
+                if(!triggered) {
+                    callbacks.push(callback);
+                } else {
+                    callback(result);
+                }
+            },
+
+            trigger: function(r) {
+                result = r;
+                for(var i = 0; i < callbacks.length; i++) {
+                    callbacks[i](r);
+                }
+                callbacks = [];
+                triggered = true;
+            }
+        };
+    }
+};
+
+/*
+ * Log functions. You should use these in preference to console.log(), which
+ * isn't always available.
+ */
+var _bpm_log;
+if(bpm_utils.platform === "userscript") {
+    _bpm_log = function() {
+        GM_log(Array.prototype.slice.call(arguments).join(" "));
+    };
+} else {
+    // Chrome's log() function is picky about its this parameter
+    _bpm_log = console.log.bind(console);
+}
+
+var _BPM_DEBUG = 0;
+var _BPM_INFO = 1;
+var _BPM_WARNING = 2;
+var _BPM_ERROR = 3;
+var _BPM_LOG_LEVEL = BPM_DEV_MODE ? _BPM_DEBUG : _BPM_WARNING;
+
+function _bpm_make_logger(name, level) {
+    return function() {
+        if(_BPM_LOG_LEVEL > level) {
+            return;
+        }
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift(name);
+        if(window.name) {
+            args.unshift("[" + window.name + "]:");
+        }
+        args.unshift("BPM:");
+        _bpm_log.apply(null, args);
+    };
+}
+
+var bpm_debug   = _bpm_make_logger("DEBUG:", _BPM_DEBUG);     // Coding is hard
+var bpm_info    = _bpm_make_logger("INFO:", _BPM_INFO);       // Something "interesting" happened
+var bpm_warning = _bpm_make_logger("WARNING:", _BPM_WARNING); // Probably broken but carrying on anyway
+var bpm_error   = _bpm_make_logger("ERROR:", _BPM_ERROR);     // We're screwed
+
+bpm_debug("Platform:", bpm_utils.platform);
+
+/*
+ * DOM utility functions.
+ */
+var bpm_dom = bpm_exports.dom = {
+    /*
      * A reference to the MutationObserver object. It's unprefixed on Firefox,
      * but not on Chrome. Safari presumably has this as well. Defined to be
      * null on platforms that don't support it.
@@ -101,9 +239,9 @@ var bpm_utils = bpm_exports.utils = {
      * MutationObserver or DOMNodeInserted, falling back for a broken MO object.
      */
     observe_document: function(callback) {
-        if(bpm_utils.MutationObserver) {
+        if(bpm_dom.MutationObserver) {
             bpm_debug("Monitoring document with MutationObserver");
-            var observer = new bpm_utils.MutationObserver(bpm_utils.catch_errors(function(mutations, observer) {
+            var observer = new bpm_dom.MutationObserver(bpm_utils.catch_errors(function(mutations, observer) {
                 for(var m = 0; m < mutations.length; m++) {
                     var added = mutations[m].addedNodes;
                     if(!added || !added.length) {
@@ -132,23 +270,6 @@ var bpm_utils = bpm_exports.utils = {
     },
 
     /*
-     * Generates a random string made of [a-z] characters, default 24 chars
-     * long.
-     */
-    random_id: function(length) {
-        if(length === undefined) {
-            length = 24;
-        }
-
-        var index, tmp = "";
-        for(var i = 0; i < length; i++) {
-            index = Math.floor(Math.random() * 25);
-            tmp += "abcdefghijklmnopqrstuvwxyz"[index];
-        }
-        return tmp;
-    },
-
-    /*
      * Makes a nice <style> element out of the given CSS.
      */
     style_tag: function(css) {
@@ -169,15 +290,6 @@ var bpm_utils = bpm_exports.utils = {
         tag.rel = "stylesheet";
         tag.type = "text/css";
         return tag;
-    },
-
-    /*
-     * Copies all properties on one object to another.
-     */
-    copy_properties: function(to, from) {
-        for(var key in from) {
-            to[key] = from[key];
-        }
     },
 
     /*
@@ -208,29 +320,6 @@ var bpm_utils = bpm_exports.utils = {
                 return null;
             }
         }
-    },
-
-    /*
-     * str.endswith()
-     */
-    ends_with: function(text, s) {
-        return text.slice(-s.length) === s;
-    },
-
-    /*
-     * Wraps a function with an error-detecting variant. Useful for callbacks
-     * and the like, since some browsers (Firefox...) have a way of swallowing
-     * exceptions.
-     */
-    catch_errors: function(f) {
-        return function() {
-            try {
-                return f.apply(this, arguments);
-            } catch(e) {
-                bpm_error("Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
-                throw e;
-            }
-        };
     },
 
     /*
@@ -266,7 +355,7 @@ var bpm_utils = bpm_exports.utils = {
     make_movable: function(element, container, callback) {
         var start_x, start_y;
 
-        bpm_utils.enable_drag(element, function(event) {
+        bpm_dom.enable_drag(element, function(event) {
             start_x = parseInt(container.style.left, 10);
             start_y = parseInt(container.style.top, 10);
         }, function(event, dx, dy) {
@@ -288,18 +377,18 @@ var bpm_utils = bpm_exports.utils = {
 
     /*
      * Runs the given callback when the DOM is ready, i.e. when DOMContentLoaded
-     * fires. If that has already happened, runs the callback immediately.
+     * fires.
      */
-    with_dom: function(callback) {
+    dom_ready: bpm_utils.trigger(function(ready) {
         if(document.readyState === "interactive" || document.readyState === "complete") {
-            callback();
+            ready();
         } else {
             document.addEventListener("DOMContentLoaded", bpm_utils.catch_errors(function(event) {
                 bpm_debug("Document loaded");
-                callback();
+                ready();
             }), false);
         }
-    },
+    }),
 
     /*
      * A fairly reliable indicator as to whether or not BPM is currently
@@ -350,7 +439,7 @@ var bpm_utils = bpm_exports.utils = {
             script.type = "text/javascript";
             script.id = id;
             document.head.appendChild(script);
-            script.textContent = "(" + this._msg_script.toString() + ")('" + id + "', " + JSON.stringify(message) + ");";
+            script.textContent = "(" + bpm_dom._msg_script.toString() + ")('" + id + "', " + JSON.stringify(message) + ");";
         }
     },
 
@@ -370,7 +459,7 @@ var bpm_utils = bpm_exports.utils = {
      */
     walk_dom: function(root, node_filter, process, end, node, depth) {
         if(!node) {
-            if(this._tag_blacklist[root.tagName]) {
+            if(bpm_dom._tag_blacklist[root.tagName]) {
                 return; // A bit odd, but possible
             } else {
                 // Treat root as a special case
@@ -385,7 +474,7 @@ var bpm_utils = bpm_exports.utils = {
         // If the node/root was null for whatever reason, we die here
         while(node && num > 0) {
             num--;
-            if(!this._tag_blacklist[node.tagName]) {
+            if(!bpm_dom._tag_blacklist[node.tagName]) {
                 // Only process valid nodes.
                 if(node.nodeType === node_filter) {
                     process(node);
@@ -413,7 +502,7 @@ var bpm_utils = bpm_exports.utils = {
             end();
         } else {
             setTimeout(function() {
-                this.walk_dom(root, node_filter, process, end, node, depth);
+                bpm_dom.walk_dom(root, node_filter, process, end, node, depth);
             }.bind(this), 50);
         }
     },
@@ -451,48 +540,6 @@ var bpm_utils = bpm_exports.utils = {
 };
 
 /*
- * Log functions. You should use these in preference to console.log(), which
- * isn't always available.
- */
-var _bpm_log;
-if(bpm_utils.platform === "userscript") {
-    _bpm_log = function() {
-        GM_log(Array.prototype.slice.call(arguments).join(" "));
-    };
-} else {
-    // Chrome's log() function is picky about its this parameter
-    _bpm_log = console.log.bind(console);
-}
-
-var _BPM_DEBUG = 0;
-var _BPM_INFO = 1;
-var _BPM_WARNING = 2;
-var _BPM_ERROR = 3;
-var _BPM_LOG_LEVEL = BPM_DEV_MODE ? _BPM_DEBUG : _BPM_WARNING;
-
-function _bpm_make_logger(name, level) {
-    return function() {
-        if(_BPM_LOG_LEVEL > level) {
-            return;
-        }
-        var args = Array.prototype.slice.call(arguments);
-        args.unshift(name);
-        if(window.name) {
-            args.unshift("[" + window.name + "]:");
-        }
-        args.unshift("BPM:");
-        _bpm_log.apply(null, args);
-    };
-}
-
-var bpm_debug   = _bpm_make_logger("DEBUG:", _BPM_DEBUG);     // Coding is hard
-var bpm_info    = _bpm_make_logger("INFO:", _BPM_INFO);       // Something "interesting" happened
-var bpm_warning = _bpm_make_logger("WARNING:", _BPM_WARNING); // Probably broken but carrying on anyway
-var bpm_error   = _bpm_make_logger("ERROR:", _BPM_ERROR);     // We're screwed
-
-bpm_debug("Platform:", bpm_utils.platform);
-
-/*
  * Misc utility functions to help make your way around Reddit's HTML.
  */
 var bpm_redditutil = bpm_exports.redditutil = {
@@ -515,13 +562,13 @@ var bpm_redditutil = bpm_exports.redditutil = {
      * an empty comment.
      */
     enable_warning: function(bottom_area, class_name, message) {
-        var element = bpm_utils.find_class(bottom_area, class_name);
+        var element = bpm_dom.find_class(bottom_area, class_name);
         if(!element) {
             element = document.createElement("span");
             element.classList.add("error");
             element.classList.add(class_name);
             // Insert before the .usertext-buttons div
-            var before = bpm_utils.find_class(bottom_area, "usertext-buttons");
+            var before = bpm_dom.find_class(bottom_area, "usertext-buttons");
             bottom_area.insertBefore(element, before);
         }
         element.style.display = "";
@@ -532,7 +579,7 @@ var bpm_redditutil = bpm_exports.redditutil = {
      * Disables a previously-generated error message, if it exists.
      */
     disable_warning: function(bottom_area, class_name) {
-        var element = bpm_utils.find_class(bottom_area, class_name);
+        var element = bpm_dom.find_class(bottom_area, class_name);
         if(element) {
             element.parentNode.removeChild(element);
         }
@@ -543,7 +590,7 @@ var bpm_redditutil = bpm_exports.redditutil = {
         if(this._sidebar_cache) {
             return this._sidebar_cache === md;
         }
-        var is = bpm_utils.class_above(md, "titlebox");
+        var is = bpm_dom.class_above(md, "titlebox");
         if(is) {
             this._sidebar_cache = md;
         }
@@ -701,11 +748,24 @@ var bpm_browser = bpm_exports.browser = {
     },
 
     /*
+     * Trigger called when css_parent() is available. May defer until dom_ready().
+     */
+    with_css_parent: function(callback) {
+        if(bpm_browser.css_parent()) {
+            callback(bpm_browser.css_parent());
+        } else {
+            bpm_dom.dom_ready.listen(function() {
+                callback(bpm_browser.css_parent());
+            });
+        }
+    },
+
+    /*
      * Appends a <style> tag for the given CSS.
      */
     add_css: function(css) {
         if(css) {
-            var tag = bpm_utils.style_tag(css);
+            var tag = bpm_dom.style_tag(css);
             this.css_parent().insertBefore(tag, this.css_parent().firstChild);
         }
     },
@@ -741,16 +801,12 @@ var bpm_browser = bpm_exports.browser = {
      */
     request_custom_css: function() {
         this._send_message("get_custom_css");
-    }
+    },
 
     // Missing attributes/methods:
-    //    function css_parent()
-    //    function _send_message(method, data)
-    //    function make_css_link(filename)
-    // Assumed globals:
-    //    var sr_id2name
-    //    var sr_name2id
-    //    var emote_map
+    // - function _send_message(method, data)
+    // - function make_css_link(filename)
+    // - function linkify_options(element)
 };
 
 switch(bpm_utils.platform) {
@@ -765,15 +821,26 @@ case "firefox-ext":
             self.postMessage(data);
         },
 
-        make_css_link: function(filename, callback) {
+        _data_url: function(filename) {
             // FIXME: Hardcoding this sucks. It's likely to continue working for
             // a good long while, but we should prefer make a request to the
             // backend for the prefix (not wanting to do that is the reason for
             // hardcoding it). Ideally self.data.url() would be accessible to
             // content scripts, but it's not...
-            var url = "resource://jid1-thrhdjxskvsicw-at-jetpack/betterponymotes/data" + filename;
-            var tag = bpm_utils.stylesheet_link(url);
+            return "resource://jid1-thrhdjxskvsicw-at-jetpack/betterponymotes/data" + filename;
+        },
+
+        make_css_link: function(filename, callback) {
+            var tag = bpm_dom.stylesheet_link(this._data_url(filename));
             callback(tag);
+        },
+
+        linkify_options: function(element) {
+            // Firefox doesn't permit linking to resource:// links or something
+            // equivalent.
+            element.addEventListener("click", bpm_utils.catch_errors(function(event) {
+                this._send_message("open_options");
+            }.bind(this)), false);
         }
     });
 
@@ -826,8 +893,12 @@ case "chrome-ext":
         },
 
         make_css_link: function(filename, callback) {
-            var tag = bpm_utils.stylesheet_link(chrome.extension.getURL(filename));
+            var tag = bpm_dom.stylesheet_link(chrome.extension.getURL(filename));
             callback(tag);
+        },
+
+        linkify_options: function(element) {
+            element.href = chrome.extension.getURL("/options.html");
         }
     });
     break;
@@ -844,9 +915,18 @@ case "opera-ext":
 
         make_css_link: function(filename, callback) {
             this._get_file(filename, function(data) {
-                var tag = bpm_utils.style_tag(data);
+                var tag = bpm_dom.style_tag(data);
                 callback(tag);
             }.bind(this));
+        },
+
+        linkify_options: function(element) {
+            // It's impossible to know the address of the options page without
+            // going through the backend, and Opera doesn't permit opening
+            // widget:// links directly anyway.
+            element.addEventListener("click", bpm_utils.catch_errors(function(event) {
+                this._send_message("open_options");
+            }.bind(this)), false);
         }
     });
 
@@ -937,8 +1017,12 @@ case "userscript":
 
         make_css_link: function(filename, callback) {
             var url = BPM_RESOURCE_PREFIX + filename + "?p=2&dver=" + BPM_DATA_VERSION;
-            var tag = bpm_utils.stylesheet_link(url);
+            var tag = bpm_dom.stylesheet_link(url);
             callback(tag);
+        },
+
+        linkify_options: function(element) {
+            element.href = BPM_OPTIONS_PAGE;
         }
     });
     break;
@@ -953,49 +1037,36 @@ var bpm_prefs = bpm_exports.prefs = {
      *    - prefs: actual preferences object
      *    - custom_emotes: map of extracted custom CSS emotes
      *    - sr_array: array of enabled subreddits. sr_array[sr_id] === enabled
+     *    - de_map/we_map: dict of blacklisted/whitelisted emotes
      */
     prefs: null,
+    sr_array: null,
+    de_map: null,
+    we_map: null,
     custom_emotes: null,
     custom_css: null,
-    sr_array: null,
-    waiting: [],
     sync_timeouts: {},
 
-    _ready: function() {
-        return (this.prefs && this.custom_emotes);
-    },
-
-    _run_callbacks: function() {
-        bpm_debug("Prefs ready");
-        for(var i = 0; i < this.waiting.length; i++) {
-            this.waiting[i](this);
-        }
-    },
+    /*
+     * Trigger called when prefs are available.
+     */
+    prefs_avail: bpm_utils.trigger(function(ready) {}),
 
     /*
-     * Runs the given callback when preferences are available, possibly
-     * immediately.
+     * Trigger called when custom CSS/emotes is available.
      */
-    when_available: function(callback) {
-        if(this._ready()) {
-            callback(this);
-        } else {
-            this.waiting.push(callback);
-        }
-    },
+    customcss_avail: bpm_utils.trigger(function(ready) {}),
 
     /*
      * Called from browser code when preferences have been received.
      */
     got_prefs: function(prefs) {
+        bpm_debug("Prefs ready");
         this.prefs = prefs;
         this._make_sr_array();
         this.de_map = this._make_emote_map(prefs.disabledEmotes);
         this.we_map = this._make_emote_map(prefs.whitelistedEmotes);
-
-        if(this._ready()) {
-            this._run_callbacks();
-        }
+        this.prefs_avail.trigger(this);
     },
 
     /*
@@ -1003,12 +1074,10 @@ var bpm_prefs = bpm_exports.prefs = {
      * received.
      */
     got_custom_emotes: function(emotes, css) {
+        bpm_debug("Custom emotes ready");
         this.custom_emotes = emotes;
         this.custom_css = css;
-
-        if(this._ready()) {
-            this._run_callbacks();
-        }
+        this.customcss_avail.trigger(this);
     },
 
     _make_sr_array: function() {
@@ -1682,6 +1751,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
     sb_results: null,
     sb_helptab: null,
     sb_helplink: null,
+    sb_optionslink: null,
     sb_resize: null,
     sb_global_icon: null, // Global << thing
     firstrun: false, // Whether or not we've made any search at all yet
@@ -1771,7 +1841,8 @@ var bpm_searchbox = bpm_exports.searchbox = {
                 '</div>',
               '</div>',
               '<div id="bpm-sb-bottomrow">',
-                '<a id="bpm-sb-helplink" href="javascript:void(0)">help</a>',
+                '<a id="bpm-sb-helplink" href="javascript:void(0)">help</a> | ',
+                '<a id="bpm-sb-optionslink" href="javascript:void(0)">bpm options</a>',
                 '<span id="bpm-sb-resize"></span>',
               '</div>',
             '</div>',
@@ -1790,6 +1861,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
         this.sb_results = document.getElementById("bpm-sb-results");
         this.sb_helptab = document.getElementById("bpm-sb-helptab");
         this.sb_helplink = document.getElementById("bpm-sb-helplink");
+        this.sb_optionslink = document.getElementById("bpm-sb-optionslink");
         this.sb_resize = document.getElementById("bpm-sb-resize");
 
         this.sb_global_icon = document.getElementById("bpm-global-icon");
@@ -1861,6 +1933,9 @@ var bpm_searchbox = bpm_exports.searchbox = {
             }
         }.bind(this)), false);
 
+        // Set up the options page link
+        bpm_browser.linkify_options(this.sb_optionslink);
+
         // Focusing input switches to results tab
         this.sb_input.addEventListener("focus", bpm_utils.catch_errors(function(event) {
             this.switch_to_tab(this.sb_results);
@@ -1877,7 +1952,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
         this.sb_global_icon.style.top = prefs.prefs.globalIconPos[1] + "px";
 
         // Enable dragging the window around
-        bpm_utils.make_movable(this.sb_dragbox, this.sb_container, function(event, left, top, move) {
+        bpm_dom.make_movable(this.sb_dragbox, this.sb_container, function(event, left, top, move) {
             move();
             prefs.prefs.searchBoxInfo[0] = left;
             prefs.prefs.searchBoxInfo[1] = top;
@@ -1886,7 +1961,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
 
         // Enable dragging the resize element around (i.e. resizing it)
         var search_box_width, search_box_height;
-        bpm_utils.enable_drag(this.sb_resize, function(event) {
+        bpm_dom.enable_drag(this.sb_resize, function(event) {
             search_box_width = parseInt(this.sb_container.style.width, 10);
             search_box_height = parseInt(this.sb_container.style.height, 10);
         }.bind(this), function(event, dx, dy) {
@@ -1962,7 +2037,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
                 this.target_form = null;
                 this.target_frame = active;
 
-                bpm_utils.message_iframe(active, {
+                bpm_dom.message_iframe(active, {
                     "__betterponymotes_method": "__bpm_track_form"
                 });
                 return;
@@ -1972,7 +2047,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
                 active = active.contentDocument.activeElement;
             } catch(e) {
                 // Addon SDK is broken
-                bpm_utils.message_iframe(active, {
+                bpm_dom.message_iframe(active, {
                     "__betterponymotes_method": "__bpm_track_form"
                 });
 
@@ -1983,7 +2058,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
         }
 
         // Ignore our own stuff and things that are not text boxes
-        if(!bpm_utils.id_above(active, "bpm-stuff") && active !== this.target_form &&
+        if(!bpm_dom.id_above(active, "bpm-stuff") && active !== this.target_form &&
            active.selectionStart !== undefined && active.selectionEnd !== undefined) {
             this.target_form = active;
             this.target_frame = null;
@@ -1996,7 +2071,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
      */
     inject_emote: function(emote_name) {
         if(this.target_frame !== null) {
-            bpm_utils.message_iframe(this.target_frame, {
+            bpm_dom.message_iframe(this.target_frame, {
                 "__betterponymotes_method": "__bpm_inject_emote",
                 "__betterponymotes_emote": emote_name
             });
@@ -2169,7 +2244,7 @@ var bpm_searchbox = bpm_exports.searchbox = {
         }.bind(this)), false);
 
         // Enable dragging the global button around
-        bpm_utils.make_movable(this.sb_global_icon, this.sb_global_icon, function(event, left, top, move) {
+        bpm_dom.make_movable(this.sb_global_icon, this.sb_global_icon, function(event, left, top, move) {
             if(!event.ctrlKey && !event.metaKey) {
                 return;
             }
@@ -2214,7 +2289,7 @@ var bpm_global = bpm_exports.global = {
         var emotes_matched = 0;
 
         // this!==window on Opera, and doesn't have this object for some reason
-        bpm_utils.walk_dom(root, _bpm_global("Node").TEXT_NODE, function(node) {
+        bpm_dom.walk_dom(root, _bpm_global("Node").TEXT_NODE, function(node) {
             nodes_processed++;
 
             var parent = node.parentNode;
@@ -2285,7 +2360,7 @@ var bpm_global = bpm_exports.global = {
             if(new_elements.length) {
                 // Keep track of how the size of the container changes. Also,
                 // don't even dream of doing this for every node.
-                var scroll_parent = bpm_utils.locate_matching_ancestor(parent, function(element) {
+                var scroll_parent = bpm_dom.locate_matching_ancestor(parent, function(element) {
                     var style = window.getComputedStyle(element);
                     if(style && (style.overflowY === "auto" || style.overflowY === "scroll")) {
                         return true;
@@ -2354,12 +2429,11 @@ var bpm_global = bpm_exports.global = {
         // We run this here, instead of down in the main bit, to avoid applying large
         // chunks of CSS when this script is disabled.
         bpm_core.init_css();
-        bpm_core.init_late_css();
 
         if(prefs.prefs.enableGlobalSearch) {
             // Never inject the search box into frames. Too many sites fuck up
             // entirely if we do. Instead, we do some cross-frame communication.
-            if(bpm_utils.is_frame) {
+            if(bpm_dom.is_frame) {
                 bpm_searchbox.init_frame(prefs);
             } else {
                 bpm_searchbox.init(prefs);
@@ -2369,7 +2443,7 @@ var bpm_global = bpm_exports.global = {
 
         this.process(prefs, document.body);
 
-        bpm_utils.observe_document(function(nodes) {
+        bpm_dom.observe_document(function(nodes) {
             for(var i = 0; i < nodes.length; i++) {
                 if(nodes[i].nodeType !== _bpm_global("Node").ELEMENT_NODE) {
                     // Not really interested in other kinds.
@@ -2389,84 +2463,111 @@ var bpm_core = bpm_exports.core = {
      * Attaches all of our CSS.
      */
     init_css: function() {
-        bpm_info("Setting up css");
-        bpm_browser.link_css("/bpmotes.css");
-        bpm_browser.link_css("/emote-classes.css");
+        // Most environments permit us to create <link> tags before
+        // DOMContentLoaded (though Chrome forces us to use documentElement).
+        // Scriptish is one that does not- there's no clear way to
+        // manipulate the partial DOM, so we delay.
+        bpm_browser.with_css_parent(function() {
+            bpm_info("Setting up css");
+            bpm_browser.link_css("/bpmotes.css");
+            bpm_browser.link_css("/emote-classes.css");
 
-        bpm_prefs.when_available(function(prefs) {
-            if(prefs.prefs.enableExtraCSS) {
-                // Inspect style properties to determine what extracss variant
-                // to apply.
-                //    Firefox: Old versions require -moz, but >=16.0 are unprefixed
-                //    Chrome (WebKit): -webkit
-                //    Opera: Current stable requires -o, but >=12.10 are unprefixed
-                var style = document.createElement("span").style;
+            bpm_prefs.prefs_avail.listen(function(prefs) {
+                if(prefs.prefs.enableExtraCSS) {
+                    // Inspect style properties to determine what extracss variant
+                    // to apply.
+                    //    Firefox: Old versions require -moz, but >=16.0 are unprefixed
+                    //    Chrome (WebKit): -webkit
+                    //    Opera: Current stable requires -o, but >=12.10 are unprefixed
+                    var style = document.createElement("span").style;
 
-                if(style.transform !== undefined) {
-                    // This might actually be extracss-pure-opera for Opera
-                    // Next, since it requires some modified rules
-                    bpm_browser.link_css("/extracss-pure.css");
-                } else if(style.MozTransform !== undefined) {
-                    bpm_browser.link_css("/extracss-moz.css");
-                } else if(style.webkitTransform !== undefined) {
-                    bpm_browser.link_css("/extracss-webkit.css");
-                } else if(style.OTransform !== undefined) {
-                    bpm_browser.link_css("/extracss-o.css");
-                } else {
-                    bpm_warning("Cannot inspect vendor prefix needed for extracss.");
-                    // You never know, maybe it'll work
-                    bpm_browser.link_css("/extracss-pure.css");
+                    if(style.transform !== undefined) {
+                        // This might actually be extracss-pure-opera for Opera
+                        // Next, since it requires some modified rules
+                        bpm_browser.link_css("/extracss-pure.css");
+                    } else if(style.MozTransform !== undefined) {
+                        bpm_browser.link_css("/extracss-moz.css");
+                    } else if(style.webkitTransform !== undefined) {
+                        bpm_browser.link_css("/extracss-webkit.css");
+                    } else if(style.OTransform !== undefined) {
+                        bpm_browser.link_css("/extracss-o.css");
+                    } else {
+                        bpm_warning("Cannot inspect vendor prefix needed for extracss.");
+                        // You never know, maybe it'll work
+                        bpm_browser.link_css("/extracss-pure.css");
+                    }
                 }
-            }
 
-            if(prefs.prefs.enableNSFW) {
-                bpm_browser.link_css("/combiners-nsfw.css");
-            }
+                if(prefs.prefs.enableNSFW) {
+                    bpm_browser.link_css("/combiners-nsfw.css");
+                }
 
-            bpm_browser.add_css(prefs.custom_css);
-        }.bind(this));
-    },
-
-    /*
-     * Attaches some hacks and things that need the DOM available to function.
-     */
-    init_late_css: function() {
-        // Inject our filter SVG for Firefox. Chrome renders this thing as a
-        // massive box, but "display: none" (or putting it in <head>) makes
-        // Firefox hide all of the emotes we apply the filter to- as if *they*
-        // had display:none. Furthermore, "height:0;width:0" isn't quite enough
-        // either, as margins or something make the body move down a fair bit
-        // (leaving a white gap). "position:fixed" is a workaround for that.
-        //
-        // We also can't include either the SVG or the CSS as a normal resource
-        // because Firefox throws security errors. No idea why.
-        //
-        // Can't do this before the DOM is built, because we use document.body
-        // by necessity.
-        //
-        // Christ. I hope people use the fuck out of -i after this nonsense.
-        if(bpm_utils.platform === "firefox-ext") { // TODO: detect userscript on Firefox
-            var svg_src = [
-                '<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg"',
-                ' style="height: 0; width: 0; position: fixed">',
-                '  <filter id="bpm-invert">',
-                '    <feColorMatrix in="SourceGraphic" type="hueRotate" values="180"/>',
-                '  </filter>',
-                '</svg>'
-            ].join("\n");
-            var div = document.createElement("div");
-            div.innerHTML = svg_src;
-            document.body.insertBefore(div.firstChild, document.body.firstChild);
-
-            bpm_browser.add_css(".bpflag-i { filter: url(#bpm-invert); }");
-        }
-
-        // This needs to come after subreddit CSS to override their !important
-        if(bpm_utils.platform === "chrome-ext" || bpm_utils.platform === "userscript") {
-            bpm_browser.make_css_link("/gif-animotes.css", function(tag) {
-                document.head.appendChild(tag);
+                if(bpm_utils.platform === "chrome-ext") {
+                    // Fix for Chrome, which sometimes doesn't rerender unknown
+                    // emote elements. The result is that until the element is
+                    // "nudged" in some way- merely viewing it in the Console/platform
+                    // Elements tabs will do- it won't display.
+                    //
+                    // RES seems to reliably set things off, but that won't
+                    // always be installed. Perhaps some day we'll trigger it
+                    // implicitly through other means and be able to get rid of
+                    // this, but for now it seems not to matter.
+                    var tag = document.createElement("style");
+                    tag.type = "text/css";
+                    document.head.appendChild(tag);
+                }
             }.bind(this));
-        }
+
+            bpm_prefs.customcss_avail.listen(function(prefs) {
+                bpm_browser.add_css(prefs.custom_css);
+            }.bind(this));
+
+            // This needs to come after subreddit CSS to override their !important,
+            // so just use document.head directly.
+            if(bpm_utils.platform === "chrome-ext" || bpm_utils.platform === "userscript") {
+                bpm_browser.make_css_link("/gif-animotes.css", function(tag) {
+                    if(document.head) {
+                        document.head.appendChild(tag);
+                    } else {
+                        bpm_dom.dom_ready.listen(function() { // Chrome, at least
+                            document.head.appendChild(tag);
+                        }.bind(this));
+                    }
+                }.bind(this));
+            }
+        }.bind(this));
+
+        bpm_dom.dom_ready.listen(function() {
+            // Inject our filter SVG for Firefox. Chrome renders this thing as a
+            // massive box, but "display: none" (or putting it in <head>) makes
+            // Firefox hide all of the emotes we apply the filter to- as if *they*
+            // had display:none. Furthermore, "height:0;width:0" isn't quite enough
+            // either, as margins or something make the body move down a fair bit
+            // (leaving a white gap). "position:fixed" is a workaround for that.
+            //
+            // We also can't include either the SVG or the CSS as a normal resource
+            // because Firefox throws security errors. No idea why.
+            //
+            // Can't do this before the DOM is built, because we use document.body
+            // by necessity.
+            //
+            // Christ. I hope people use the fuck out of -i after this nonsense.
+            if(bpm_utils.platform === "firefox-ext") { // TODO: detect userscript on Firefox
+                var svg_src = [
+                    '<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg"',
+                    ' style="height: 0; width: 0; position: fixed">',
+                    '  <filter id="bpm-invert">',
+                    '    <feColorMatrix in="SourceGraphic" type="hueRotate" values="180"/>',
+                    '  </filter>',
+                    '</svg>'
+                ].join("\n");
+                var div = document.createElement("div");
+                div.innerHTML = svg_src;
+                document.body.insertBefore(div.firstChild, document.body.firstChild);
+
+                bpm_browser.add_css(".bpflag-i { filter: url(#bpm-invert); }");
+            }
+        }.bind(this));
     },
 
     /*
@@ -2475,7 +2576,6 @@ var bpm_core = bpm_exports.core = {
     run: function(prefs) {
         bpm_info("Running on Reddit");
 
-        this.init_late_css();
         bpm_searchbox.init(prefs);
         var usertext_edits = document.getElementsByClassName("usertext-edit");
         bpm_searchbox.inject_search_button(prefs, usertext_edits);
@@ -2521,21 +2621,6 @@ var bpm_core = bpm_exports.core = {
             }
         }.bind(this)), false);
 
-        if(bpm_utils.platform === "chrome-ext") {
-            // Fix for Chrome, which sometimes doesn't rerender unknown
-            // emote elements. The result is that until the element is
-            // "nudged" in some way- merely viewing it in the Console/platform
-            // Elements tabs will do- it won't display.
-            //
-            // RES seems to reliably set things off, but that won't
-            // always be installed. Perhaps some day we'll trigger it
-            // implicitly through other means and be able to get rid of
-            // this, but for now it seems not to matter.
-            var tag = document.createElement("style");
-            tag.type = "text/css";
-            document.head.appendChild(tag);
-        }
-
         // As a relevant note, it's a terrible idea to set this up before
         // the DOM is built, because monitoring it for changes seems to slow
         // the process down horribly.
@@ -2543,7 +2628,7 @@ var bpm_core = bpm_exports.core = {
         // What we do here: for each mutation, inspect every .md we can
         // find- whether the node in question is deep within one, or contains
         // some.
-        bpm_utils.observe_document(function(nodes) {
+        bpm_dom.observe_document(function(nodes) {
             for(var i = 0; i < nodes.length; i++) {
                 var root = nodes[i];
                 if(root.nodeType !== _bpm_global("Node").ELEMENT_NODE) {
@@ -2552,7 +2637,7 @@ var bpm_core = bpm_exports.core = {
                 }
 
                 var md;
-                if(md = bpm_utils.class_above(root, "md")) {
+                if(md = bpm_dom.class_above(root, "md")) {
                     // Inside of a formatted text block, take all the
                     // links we can find
                     bpm_converter.process_rooted_post(prefs, root, md);
@@ -2639,8 +2724,8 @@ var bpm_core = bpm_exports.core = {
             }
         }.bind(this)), false);
 
-        bpm_utils.with_dom(function() {
-            bpm_prefs.when_available(function(prefs) {
+        bpm_dom.dom_ready.listen(function() {
+            bpm_prefs.prefs_avail.listen(function(prefs) {
                 // Wait for options.js to be ready (checking every 200ms), then
                 // send it down.
                 recheck();
@@ -2658,35 +2743,26 @@ var bpm_core = bpm_exports.core = {
 
         if(document.location.href === BPM_OPTIONS_PAGE) {
             this.setup_options_link();
-        }
-
-        if(bpm_utils.ends_with(document.location.hostname, "reddit.com")) {
-            // Most environments permit us to create <link> tags before
-            // DOMContentLoaded (though Chrome forces us to use documentElement).
-            // Scriptish is one that does not- there's no clear way to
-            // manipulate the partial DOM, so we delay.
-            var init_later = false;
-            if(bpm_browser.css_parent()) {
-                this.init_css();
-            } else {
-                init_later = true;
-            }
+        } else if(bpm_utils.ends_with(document.location.hostname, "reddit.com")) {
+            this.init_css();
 
             // This script is generally run before the DOM is built. Opera may break
             // that rule, but I don't know how and there's nothing we can do anyway.
-            bpm_utils.with_dom(function() {
-                if(init_later) {
-                    this.init_css();
-                }
-
-                bpm_prefs.when_available(function(prefs) {
-                    this.run(prefs);
+            //
+            // Need DOM (to operate on), prefs and customcss (to work with).
+            bpm_dom.dom_ready.listen(function() {
+                bpm_prefs.prefs_avail.listen(function(prefs) {
+                    bpm_prefs.customcss_avail.listen(function(prefs) {
+                        this.run(prefs);
+                    }.bind(this));
                 }.bind(this));
             }.bind(this));
         } else {
-            bpm_utils.with_dom(function() {
-                bpm_prefs.when_available(function(prefs) {
-                    bpm_global.run(prefs);
+            bpm_dom.dom_ready.listen(function() {
+                bpm_prefs.prefs_avail.listen(function(prefs) {
+                    bpm_prefs.customcss_avail.listen(function(prefs) {
+                        bpm_global.run(prefs);
+                    }.bind(this));
                 }.bind(this));
             }.bind(this));
         }

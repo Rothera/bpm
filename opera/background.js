@@ -86,6 +86,10 @@ opera.extension.onmessage = function(event) {
             }
             break;
 
+        case "open_options":
+            opera.extension.tabs.create({"url": "/options.html"});
+            break;
+
         case "force_update":
             pref_manager.cm.force_update(message.subreddit);
             break;

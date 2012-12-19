@@ -126,6 +126,10 @@ function on_cs_attach(worker) {
                 pref_manager.set_pref(message.pref, message.value);
                 break;
 
+            case "open_options":
+                tabs.open(self.data.url("options.html"));
+                break;
+
             default:
                 console.log("BPM: ERROR: Unknown request from content script: '" + message.request + "'");
                 break;

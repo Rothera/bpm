@@ -210,13 +210,13 @@
     width: 100%;
 }
 
-/* Help link */
-#bpm-sb-helplink {
+/* Help and options links */
+#bpm-sb-helplink, #bpm-sb-optionslink {
     height: 20px;
-    margin-left: 4px;
-    float: left;
-
     line-height: 20px;
+}
+#bpm-sb-helplink {
+    margin-left: 4px;
 }
 
 /* Bottom-right resize box */
