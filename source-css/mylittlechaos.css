@@ -1,55 +1,21 @@
-/*
-    +--------------------------------------------------------------------------------------------------------------------------------------------------------+
-    |--------------------------------------------------------------------------RULES-------------------------------------------------------------------------|
-    +--------------------------------------------------------------------------------------------------------------------------------------------------------+
-    |-DO NOT make the CSS herp the derp.                                                                                                                     |
-    |-DO NOT edit whilst others are editing.                                                                                                                 |
-    |-DO NOT FEED THE BWOBS AFTER MIDNIGHT!                                                                                                                  |
-    |-DO NOT change the rules on a whim.                                                                                                                     |
-    |-DO document when you are editing in the log.                                                                                                           |
-    |-Everyone would like to be a tree...                                                                                                                    |
-    +--------------------------------------------------------------------------------------------------------------------------------------------------------+
-    |--------------------------------------------------------------------------INDEX-------------------------------------------------------------------------|
-    +--------------------------------------------------------------------------------------------------------------------------------------------------------+
-    |-SECTION-01: Making Shit Work                                                                                                             |
-    |-SECTION-01.01: Body                                                                                                                                    |
-    |-SECTION-01.02: Header                                                                                                                                  |
-    |-SECTION-01.03: Navigation                                                                                                                              |
-    |-SECTION-01.04: Text Styles (Links, Headings, Etc.)                                                                                                     |
-    |-SECTION-01.05: Layout                                                                                                                                  |
-    |-SECTION-01.06: Footer                                                                                                                                  |
-    |-SECTION-01.07: Form Styles (Article Submission)                                                                                                        |
-    |-SECTION-01.08: Reddit Compressed Styling                                                                                                               |
-    |-SECTION-01.09: Thumbnails                                                                                                                              |
-    |-SECTION-01.99: Misc. Uncategorized                                                                                                                     |
-    |                                                                                                                                                        |
-    |-SECTION-02: Da Magiks                                                                                                                                  |
-    |-SECTION-02.01: Emoticons                                                                                                                               |
-    |-SECTION-02.02: Flair                                                                                                                                   |
-    |-SECTION-02.03: Username Modifications                                                                                                                  |
-    |                                                                                                                                                        |
-    |-SECTION-03: Administration Tweaks                                                                                                                      |
-    +--------------------------------------------------------------------------------------------------------------------------------------------------------+
-*/
+/*== Body ==*/
+body, body.res-nightmode {background: url(%%bg01%%) no-repeat fixed 50% 110% !important;}
 
+/*nightmodefix*/
+body.res-nightmode, body.res-nightmode .content, .content #siteTable .thing {background-color: transparent !important;}
 
-
-
-/*== SECTION-01: Making Shit Work ==*/
-/*== 01.01: Body ==*/
-body {
-    background: url(%%bg01%%) no-repeat fixed 50% 110%;
-}
-/*== 01.02: Header ==*/
+/*== Header ==*/
 #header {
-    background: url(%%header01%%) repeat-x left center;
-    background-color: #A0DCA0 !important;
+    background: #A0DCA0 url(%%header01%%) repeat-x left center;
     border-bottom: 1px solid black;
     }
 #header-bottom-left {
-    background: url(%%header02%%) no-repeat right center;
+    background: url(%%header02%%) no-repeat right center !important;
     margin-right: 10px;
     }
+/* nightmode fix */
+.res-nightmode #header-bottom-left {background-color: transparent !important;}
+
 .pagename a{
 position: relative;
 }
@@ -61,9 +27,22 @@ position: relative;
     margin-left: 5px
     }
 
-/*== SECTION-02: Da Magiks ==*/
-/*== 02.01: Emoticons ==*/
+/*== Sidebar ==*/
+/*change "users"*/  
+.subscribers .word, .users-online .word, .users-online::before {display: none;}  
+.subscribers .number::after {content: " Popes";}
+.users-online .number::after {content: " Poping";}
 
+/*make transparent*/
+.side, .leavemoderator, .toggle, .icon-menu a, .sidebox .spacer {background-color: transparent !important;}
+
+/*nightmode fix (seriously bleeps, this is ridiculous)*/
+.res-nightmode .side .spacer, .res-nightmode .side .spacer h1, .res-nightmode .leavemoderator, .res-nightmode .toggle, .res-nightmode .sidecontentbox, .res-nightmode .sidecontentbox .title h1, .res-nightmode .sidecontentbox .content, .res-nightmode .icon-menu a, .res-nightmode .spacer .sidebox {background-color:transparent !important;}
+
+/*Remove RES tag and vote counts from moderator box because its ugly*/
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink{display: none !important}
+
+/*== Emotes ==*/
 /*Chaos*/
 a[href|="/chaos00"], a[href|="/chaos01"], a[href|="/chaos02"], a[href|="/chaos10"], a[href|="/chaos10e"], a[href|="/chaos11"], a[href|="/chaos12"], a[href|="/sayno"], a[href|="/saynoe"] {
     display: block;
@@ -176,7 +155,7 @@ a[href|="/fillyderp"] {
     margin-bottom: 5px;
     margin-right: 5px
     }
-/*== 02.02: Flair ==*/
+/*==  Flair ==*/
 /*
 .flair {
     background: url(%%flair%%) transparent no-repeat;
@@ -202,7 +181,7 @@ a[href|="/fillyderp"] {
     background-position: 0px -120px
     }
 */
-/*== 02.03: Username Modifications ==*/
+/*== Username Modifications ==*/
 a.author[href$="CatmanIX"] {
     font-size: 0px !important;
     overflow: hidden;
@@ -223,18 +202,8 @@ a.author[href$="Zovistograt"]:after {
     content: ", Grand Instigator of Esoteric Proportions";
     }
 
-Zovistograt
-/*== SECTION-03: Administration Tweaks ==*/
-/*Make the "Community Settings" text box larger*/
-.fancy-settings .linefield {
-    width: 920px
-    }
-.fancy-settings textarea {
-    width: 900px;
-    height: 500px
-    }
-/*Make the CSS edit box larger*/
-.stylesheet-customize-container textarea {
-    height: 500px
-    }
-/*fin*/
+/*== Administration Tweaks ==*/
+.fancy-settings .linefield {width: 920px;}
+.fancy-settings textarea {height: 500px; width: 900px;}
+.stylesheet-customize-container textarea {height: 500px;}
+

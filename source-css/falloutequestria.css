@@ -409,3 +409,81 @@ background-position: 0 -360px; width: 20px; height: 20px;
 min-width:18px;
 margin-top:-3px;padding:1px 3px !important;color:#FFF !important;background-color:#888;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;
 }
+
+
+
+/* ------------------------- */
+/* BEGIN COPY */
+
+
+
+/* "No Participation"-Mode, aka "Read Only"-Mode
+ * by /u/KortoloB
+ * /r/NoParticipation
+ * 
+ * Link people to np.reddit.com/r/YourSubreddit to show them a read-only version.
+ * Subscribers will see the full page, only non-subscribers will see the read-only version.
+ * This is of course by no means fool-proof, but it should work for the average user.
+ *  */
+
+body:lang(np):not(.subscriber) .arrow
+{ 
+    visibility: hidden !important;
+}
+
+body:lang(np):not(.subscriber) .usertext-edit,
+body:lang(np):not(.subscriber) .sidebox.submit,
+body:lang(np):not(.subscriber) .commentingAs,
+body:lang(np):not(.subscriber) .markdownEditor, 
+body:lang(np):not(.subscriber) .report-button,
+body:lang(np):not(.subscriber) a[onclick*="return reply(this)"],
+body:lang(np):not(.subscriber) .subButtons,
+body:lang(np):not(.subscriber) .helplink,
+body:lang(np):not(.subscriber) .titlebox .fancy-toggle-button.toggle > .option.add
+{
+    display: none !important;
+}
+
+body:lang(np):not(.subscriber) #siteTable:before
+{
+    content: "You have been linked to a read-only version of this subreddit. Please respect the community by not voting.";
+    display: block;
+    max-width: 800px;
+    background-color: #F6E69F;
+    padding: 5px 10px;
+    margin: 5px 305px 5px 0px;
+    border: 1px solid orange;
+    font-size: small;
+}
+
+body:lang(np):not(.subscriber) .entry.likes:not(.reddit-entry):before,
+body:lang(np):not(.subscriber) .entry.dislikes:not(.reddit-entry):before
+{
+    content: "Please do not vote or comment when you come from external subreddits.";
+    color: red;
+    font-size: large;
+    font-weight: bold;
+}
+
+/* Attempts to disrupt RES from hiding CSS styles */
+body.res:lang(np):not(.subscriber) div.titlebox > div[style*='display: block !important'] input:before,
+body.res:lang(np):not(.subscriber) div.titlebox > div[style*='display: block !important'] label:before,
+body.res:lang(np):not(.subscriber) > div#keyCommandLineWidget > form:before
+{
+    content: 'Removed by NoParticipation' !important;
+    margin-left: -10000px !important;
+}
+
+/* Wiki protection */
+body.wiki-page:lang(np):not(.subscriber) span.pageactions a.wikiaction-edit:not(.wikiaction-current),
+body.wiki-page:lang(np):not(.subscriber) div.wiki-page-content form#editform label[for='reason'],
+body.wiki-page:lang(np):not(.subscriber) div.wiki-page-content form#editform input#wiki_revision_reason,
+body.wiki-page:lang(np):not(.subscriber) div.wiki-page-content form#editform input[type='submit']
+{
+    display: none !important;
+}
+
+
+
+/* END COPY */
+/* ------------------------- */

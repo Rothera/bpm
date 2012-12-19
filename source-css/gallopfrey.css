@@ -739,7 +739,7 @@ a[href|="/dr12"], a[href|="/dw8th"],
 a[href|="/dr22"], a[href|="/dw9th"],
 a[href|="/dr03"], a[href|="/dw10th"],
 a[href|="/dr13"], a[href|="/dw11th"],
-a[href|="/dr23"], a[href|="/dwsalute"],
+a[href|="/dr23"], a[href|="/tardispony"],
 a[href|="/dr04"], a[href|="/rose"],
 a[href|="/dr14"], a[href|="/jack"],
 a[href|="/dr24"], a[href|="/donna"],
@@ -748,14 +748,14 @@ a[href|="/dr15"], a[href|="/rory"],
 a[href|="/dr25"], a[href|="/river"],
 a[href|="/dr06"], a[href|="/sjs"], a[href|="/sarahjane"], a[href|="/sarahjanesmith"],
 a[href|="/dr16"], a[href|="/romanaII"], a[href|="/romana2"]
-a[href|="/dr26"], a[href|="/dwfacehoof"], a[href|="/dwfacehoof"]
+a[href|="/dr26"], a[href|="/dwfacehoof"], a[href|="/martha"]
 {
     display: block;
     clear: none;
     float: left;
     width: 70px;
     height: 70px;
-    background-image: url(%%DRi%%) !important
+    background-image: url(%%DR%%) !important
 }
 a[href|="/rdr00"], a[href|="/rdw1st"],
 a[href|="/rdr10"], a[href|="/rdw2nd"],
@@ -768,7 +768,7 @@ a[href|="/rdr12"], a[href|="/rdw8th"],
 a[href|="/rdr22"], a[href|="/rdw9th"],
 a[href|="/rdr03"], a[href|="/rdw10th"],
 a[href|="/rdr13"], a[href|="/rdw11th"],
-a[href|="/rdr23"], a[href|="/rdwsalute"],
+a[href|="/rdr23"], a[href|="/rtardispony"],
 a[href|="/rdr04"], a[href|="/rrose"],
 a[href|="/rdr14"], a[href|="/rjack"],
 a[href|="/rdr24"], a[href|="/rdonna"],
@@ -777,14 +777,14 @@ a[href|="/rdr15"], a[href|="/rrory"],
 a[href|="/rdr25"], a[href|="/rriver"],
 a[href|="/rdr06"], a[href|="/rsjs"], a[href|="/rsarahjane"], a[href|="/rsarahjanesmith"],
 a[href|="/rdr16"], a[href|="/rromanaII"], a[href|="/rromana2"]
-a[href|="/rdr26"],  a[href|="/rdwfacehoof"]
+a[href|="/rdr26"],  a[href|="/rmartha"]
 {
     display: block;
     clear: none;
     float: left;
     width: 70px;
     height: 70px;
-    background-image: url(%%rDr1%%) !important
+    background-image: url(%%rDR%%) !important
 }
 /*********************************************/
 a[href|="/dr00"],  a[href|="/dw1st"],  
@@ -835,8 +835,8 @@ a[href|="/rdr13"], a[href|="/rdw11th"]{
     background-position: -70px -210px
 }
 
-a[href|="/dr23"],  a[href|="/dwsalute"],
-a[href|="/rdr23"],  a[href|="/rdwsalute"]{
+a[href|="/dr23"],  a[href|="/tardispony"],
+a[href|="/rdr23"],  a[href|="/rtardispony"]{
     background-position: -140px -210px
 }
 /*********************************************/
@@ -874,8 +874,8 @@ a[href|="/dr16"], a[href|="/romanaII"], a[href|="/romana2"], a[href|="/romana"],
 a[href|="/rdr16"], a[href|="/rromanaII"], a[href|="/rromana2"], a[href|="/rromana"]{
     background-position: -70px -420px
 }
-a[href|="/dr26"],  a[href|="/dwfacehoof"],
-a[href|="/rdr26"],  a[href|="/rdwfacehoof"]{
+a[href|="/dr26"],  a[href|="/martha"],
+a[href|="/rdr26"],  a[href|="/rmartha"]{
     background-position: -140px -420px
 }
 /*********************************************/
@@ -883,7 +883,204 @@ a[href|="/rdr26"],  a[href|="/rdwfacehoof"]{
 *           End Docotors "Dr" Emote Block                                     *
 ******************************************************************************/
     
-    
+/******************************************************************************
+*           Begin Docotors "DD" Emote Block                                   *
+******************************************************************************/
+a[href|="/dd00"], a[href|="/dwstare"],
+a[href|="/dd10"], a[href|="/dwfacehoof"],
+a[href|="/dd20"], a[href|="/dwsalute"],
+a[href|="/dd01"], a[href|="/dwofcourse"],
+a[href|="/dd11"], a[href|="/dwclause"],
+a[href|="/dd21"], a[href|="/dwanger"],
+a[href|="/dd02"], a[href|="/dwha"],
+a[href|="/dd12"], a[href|="/dwpaper"],
+a[href|="/dd22"], a[href|="/dwhuh"],
+a[href|="/dd03"], a[href|="/dwsorry"],
+a[href|="/dd13"], a[href|="/dwhello"],
+a[href|="/dd23"], a[href|="/dwyes"],
+a[href|="/dd04"], a[href|="/dwwhy"],
+a[href|="/dd14"], a[href|="/dwscared"],
+a[href|="/dd24"], a[href|="/dwspace"],
+a[href|="/dd05"], a[href|="/dwwut"],
+a[href|="/dd15"], a[href|="/dwchange"],
+a[href|="/dd25"], a[href|="/valeyard"],
+a[href|="/dd06"], a[href|="/dwoh"],
+a[href|="/dd16"], a[href|="/dwuh"],
+a[href|="/dd26"], a[href|="/1stmaster"], a[href|="/dereckc1"],
+a[href|="/dd07"], a[href|="/sparklerwhoa"],
+a[href|="/dd17"], a[href|="/sparklerwut"],
+a[href|="/dd27"], a[href|="/sparklerhappy"],
+a[href|="/dd08"], a[href|="/dinkywat"],
+a[href|="/dd18"], a[href|="/dinkydeer"],
+a[href|="/dd28"], a[href|="/derpydeer"]
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%DD%%) !important
+}
+a[href|="/rdd00"], a[href|="/rdwstare"],
+a[href|="/rdd10"], a[href|="/rdwfacehoof"],
+a[href|="/rdd20"], a[href|="/rdwsalute"],
+a[href|="/rdd01"], a[href|="/rdwofcourse"],
+a[href|="/rdd11"], a[href|="/rdwclause"],
+a[href|="/rdd21"], a[href|="/rdwanger"],
+a[href|="/rdd02"], a[href|="/rdwha"],
+a[href|="/rdd12"], a[href|="/rdwpaper"],
+a[href|="/rdd22"], a[href|="/rdwhuh"],
+a[href|="/rdd03"], a[href|="/rdwsorry"],
+a[href|="/rdd13"], a[href|="/rdwhello"],
+a[href|="/rdd23"], a[href|="/rdwyes"],
+a[href|="/rdd04"], a[href|="/rdwwhy"],
+a[href|="/rdd14"], a[href|="/rdwscared"],
+a[href|="/rdd24"], a[href|="/rdwspace"],
+a[href|="/rdd05"], a[href|="/rdwwut"],
+a[href|="/rdd15"], a[href|="/rdwchange"],
+a[href|="/rdd25"], a[href|="/rvaleyard"],
+a[href|="/rdd06"], a[href|="/rdwoh"],
+a[href|="/rdd16"], a[href|="/rdwuh"],
+a[href|="/rdd26"], a[href|="/r1stmaster"], a[href|="/rdereckc1"],
+a[href|="/rdd07"], a[href|="/rsparklerwhoa"],
+a[href|="/rdd17"], a[href|="/rsparklerwut"],
+a[href|="/rdd27"], a[href|="/rsparklerhappy"],
+a[href|="/rdd08"], a[href|="/rdinkywat"],
+a[href|="/rdd18"], a[href|="/rdinkydeer"],
+a[href|="/rdd28"], a[href|="/rderpydeer"]
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%rDD%%) !important
+}
+/*********************************************/
+a[href|="/dd00"],  a[href|="/dwstare"],  
+a[href|="/rdd00"], a[href|="/rdwstare"]{
+    background-position: -0px -0px
+}
+a[href|="/dd10"],  a[href|="/dwfacehoof"] ,
+a[href|="/rdd10"], a[href|="/rdwfacehoof"]{
+    background-position: -70px -0px
+}
+a[href|="/dd20"],  a[href|="/dwsalute"], 
+a[href|="/rdd20"], a[href|="/rdwsalute"]{
+    background-position: -140px -0px
+} 
+/*********************************************/
+a[href|="/dd01"],  a[href|="/dwofcourse"], 
+a[href|="/rdd01"], a[href|="/rdwofcourse"]{
+    background-position: -0px -70px
+}
+a[href|="/dd11"],  a[href|="/dwclause"], 
+a[href|="/rdd11"], a[href|="/rdwclause"]{
+    background-position: -70px -70px
+}
+a[href|="/dd21"],  a[href|="/dwanger"],
+a[href|="/rdr21"], a[href|="/rdwanger"]{
+    background-position: -140px -70px
+}
+/*********************************************/
+a[href|="/dd02"],  a[href|="/dwha"],
+a[href|="/rdd02"], a[href|="/rdwha"]{
+    background-position: -0px -140px
+}
+a[href|="/dd12"],  a[href|="/dwpaper"],
+a[href|="/rdr12"], a[href|="/rdwpaper"]{
+    background-position: -70px -140px
+}
+a[href|="/dd22"],  a[href|="/dwhuh"],
+a[href|="/rdd22"], a[href|="/rdwhuh"]{
+    background-position: -140px -140px
+}
+/*********************************************/
+a[href|="/dd03"],  a[href|="/dwsorry"],
+a[href|="/rdd03"], a[href|="/rdwsorry"]{
+    background-position: -0px -210px
+}
+a[href|="/dd13"],  a[href|="/dwhello"],
+a[href|="/rdd13"], a[href|="/rdwhello"]{
+    background-position: -70px -210px
+}
+
+a[href|="/dd23"],  a[href|="/dwyes"],
+a[href|="/rdd23"],  a[href|="/rdwyes"]{
+    background-position: -140px -210px
+}
+/*********************************************/
+a[href|="/dd04"],  a[href|="/dwwhy"],
+a[href|="/rdd04"],  a[href|="/rdwwhy"]{
+    background-position: -0px -280px
+}
+a[href|="/dd14"],  a[href|="/dwscared"],
+a[href|="/rdd14"],  a[href|="/rdwscared"]{
+    background-position: -70px -280px
+}
+a[href|="/dd24"],  a[href|="/dwspace"],
+a[href|="/rdd24"],  a[href|="/rdwspace"]{
+    background-position: -140px -280px
+}
+/*********************************************/
+a[href|="/dd05"],  a[href|="/dwwut"],
+a[href|="/rdd05"],  a[href|="/rdwwut"]{
+    background-position: -0px -350px
+}
+a[href|="/dd15"],  a[href|="/dwchange"],
+a[href|="/rdd15"],  a[href|="/rdwchange"]{
+    background-position: -70px -350px
+}
+a[href|="/dd25"],  a[href|="/valeyard"],
+a[href|="/rdd25"],  a[href|="/rvaleyard"]{
+    background-position: -140px -350px
+}
+/*********************************************/
+a[href|="/dd06"], a[href|="/dwoh"], 
+a[href|="/rdd06"], a[href|="/rdwoh"]{
+    background-position: -0px -420px
+}
+a[href|="/dd16"], a[href|="/dwuh"], 
+a[href|="/rdd16"], a[href|="/rdwuh"]{
+    background-position: -70px -420px
+}
+a[href|="/dd26"],  a[href|="/1stmaster"],
+a[href|="/dereckc1"], a[href|="/rdereckc1"],
+a[href|="/rdd26"],  a[href|="/r1stmaster"]{
+    background-position: -140px -420px
+}
+/*********************************************/
+a[href|="/dd07"],  a[href|="/sparklerwhoa"],
+a[href|="/rdd07"],  a[href|="/rsparklerwhoa"]{
+    background-position: -0px -490px
+}
+a[href|="/dd17"],  a[href|="/sparklerwut"],
+a[href|="/rdd17"],  a[href|="/rsparklerwut"]{
+    background-position: -70px -490px
+}
+a[href|="/dd27"],  a[href|="/sparklerhappy"],
+a[href|="/rdd27"],  a[href|="/rsparklerhappy"]{
+    background-position: -140px -490px
+}
+/*********************************************/
+a[href|="/dd08"], a[href|="/dinkywat"], 
+a[href|="/rdd08"], a[href|="/rdinkywat"]{
+    background-position: -0px -560px
+}
+a[href|="/dd18"], a[href|="/dinkydeer"], 
+a[href|="/rdd18"], a[href|="/rdinkydeer"]{
+    background-position: -70px -560px
+}
+a[href|="/dd28"],  a[href|="/derpydeer"],
+a[href|="/rdd28"],  a[href|="/rderpydeer"]{
+    background-position: -140px -560px
+}
+/*********************************************/
+/******************************************************************************
+*           End Docotors "DD" Emote Block                                     *
+******************************************************************************/
+
+
     
 
 /**********************
@@ -1290,3 +1487,7 @@ background:none;
 vertical-align: bottom;
 display:block;
 }
+
+
+
+

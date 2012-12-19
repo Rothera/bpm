@@ -53,7 +53,7 @@ a.author[href$="XelNaga"] {
     display: inline-block
     }
 a.author[href$="XelNaga"]:before { 
-        content: "Rarity";
+        content: "Twi`Naga";
         font-size: 10px !important;
     visibility: visible !important;
     overflow: hidden
@@ -70,6 +70,34 @@ a.author[href$="derram_2"]:before {
     overflow: hidden
 }
 
+.flair-steam {
+    text-indent: -9999px;
+    margin-right: 3px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url(%%steam%%);
+    vertical-align: middle;
+    border-width: 0;
+    padding: 0;
+    background-color: transparent;
+    cursor: text;
+    border-radius: 0px
+    }
+.flair-steam:hover {
+    width: auto;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 4px;
+    text-indent: 0;
+    background-image: none;
+    border-width: 1px;
+    border-radius: 2px;
+    background-color: transparent;
+    color: black;
+    margin-right: 3px
+    }
 
 
 a[href|='/ajnope'] { width:200px; height:200px; background-image: url(%%ajnope%%); background-position: 0px 0px; display: block; clear: none; float: left; margin-left: 3px; margin-right: 3px; }

@@ -2,26 +2,25 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%parade%%)  no-repeat  fixed 70% 100% !important;
+    background:  url(%%shrug%%)  no-repeat  fixed 70% 100% !important;
 }
 
 /* Banner image and associated height values */
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%lol%%);
+   background: url(%%meatbannerpony%%);
    background-repeat: no-repeat;
-background-repeat: repeat-x;
    background-position: 50% 100%;
    height: 237px; /* 237 for meat's nice banner */
 }
 
 #header-img-a {
-    margin-top: 111px;
+    margin-top: 116px;
 }
 
-#header {
+#header, #header.res-nightmode{
     height:256px;
     border-bottom: 1px solid #000000;
-    background-color: #e0d3c1;
+    background-color: #e0d3c1!important;
 }
 
 #header-bottom-left>* {
@@ -190,11 +189,11 @@ label[for="subRedditStyleCheckbox"] {
 /* Also make the CSS text box bigger, because why not. */
 .stylesheet-customize-container textarea { height:500px; }
 
-/* ಠ_ಠ */
+/* ಠ_ಠ 
 .arrow.down {
 visibility: hidden;
 display: none
-}
+} */
 
 /*SUBMISSION PAGE INSTRUCTIONS*/
 .titlebox .usertext-body .md ul {
@@ -389,6 +388,7 @@ background-repeat: no-repeat;
 .flair-Avebone:after { background-position: 0px -3840px }
 .flair-risen:after { background-position: 0px -3870px }
 .flair-tbm:after { background-position: 0px -3900px }
+.flair-microwave:after { background-position: 0px -3930px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
@@ -886,7 +886,8 @@ a.author[href$=herabek],
 a.author[href$=OneOfTheseDaysLuna],
 a.author[href$=ZZW30],
 a.author[href$=Zovistograt],
-a.author[href$=mrwoo6]
+a.author[href$=mrwoo6],
+a.author[href$=JustAnotherGDB]
 
 { 
 font-size:0!important; 
@@ -967,7 +968,8 @@ a.author[href$=herabek]:before,
 a.author[href$=OneOfTheseDaysLuna]:before,
 a.author[href$=ZZW30]:before,
 a.author[href$=zovistograt]:before,
-a.author[href$=mrwoo6]:before
+a.author[href$=mrwoo6]:before,
+a.author[href$=JustAnotherGDB]:before
 {
 font-size:10px!important; 
 visibility:visible!important;
@@ -1043,6 +1045,7 @@ a.author[href$=OneOfTheseDaysLuna]:before { content:"OneOfTheseFutemotes" }
 a.author[href$=Zovistograt]:before { content:'[](/ww20 “Needy Bitch”)' }
 a.author[href$=ZZW30]:before { content:"CaptChuckles" }
 a.author[href$=mrwoo6]:before { content:"ReadingComprehension" }
+a.author[href$=JustAnotherGDB]:before { content:"Just Another Fox News Anchor" }
 
 
 /* Replacing puppy's name with a picture of derpy */

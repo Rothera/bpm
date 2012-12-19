@@ -222,6 +222,21 @@ a.author[href$="whisperingsage"]:after {
     letter-spacing: normal
     }
 
+a.author[href$="MemeticOutlaw"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="MemeticOutlaw"]:after {
+    content: "(Get a Load of this Guy)";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+
 
 a.author[href$="JustinRL_2point0"] {
     font-size: 0px !important;
@@ -392,8 +407,8 @@ a.author[href$="UDNTNOME"] {
     }
 
 a.author[href$="UDNTNOME"]:after {
-    content: " Schindlers Fist (The erotic journey of) ";
-    font-size: 12px !important;
+    content: " Terrible ";
+    font-size: 9px !important;
     visibility: visible !important;
     display: block;
     letter-spacing: normal

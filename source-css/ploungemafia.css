@@ -207,7 +207,7 @@ a[href$="/spoiler"]:hover {
     }
 
 
-/* Announcements box (To use, place a link in the end of the sidebar with an asterisk before it) */
+/* Announcements box (To use, place a link in the end of the sidebar in front of a bullet point) */
 
 .titlebox .usertext-body .md ul li a {
 background: #fff;
@@ -312,7 +312,7 @@ left: 0;
 /*New post spam filtered warning (borrowed from /r/mylittlepony)*/
 #title-field.roundfield:before
 {
- content:"NOTE: Check the new queue after posting. If your post doesn't show up, you were spam filtered by mistake! Message the moderators with a link to the submission.";
+ content:"NOTE: Check the new queue after posting. If your post doesn't show up, you were spam filtered by mistake! Message the moderators with a link to the submission. And if you are making a new post for your game, or a signup for a new game, please message the mods! We'll update the sidebar accordingly.";
  font-size:0.86em;
  padding:5px;
  border:1px solid #5f99cf;

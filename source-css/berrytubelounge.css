@@ -4,6 +4,11 @@ direction: rtl;
 unicode-bidi: bidi-override;
 text-align: left;
 }
+html[lang="wb"] div.md, html[lang="wb"] a.title, html[lang="wb"] .side *, html[lang="wb"] .entry *, html[lang="wb"] #sr-header-area *, html[lang="wb"] .pagename{
+direction: rtl;
+unicode-bidi: bidi-override;
+text-align: left;
+}
 
 #header-bottom-left:nth-of-type(n) {
    background: url(%%banner%%); 
