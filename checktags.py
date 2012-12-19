@@ -84,4 +84,4 @@ for source in dirty:
     print("NOTICE: Rewriting %s to eliminate loose tags" % (source.name))
     path = "tags/%s.json" % (source.name.split("/")[-1])
     file = open(path, "w")
-    bplib.json.dump(source.tag_data, file, indent=0, max_depth=1, sort_keys=True)
+    bplib.json.dump(source.dump_tags(), file, indent=0, max_depth=1, sort_keys=True)
