@@ -1,3 +1,13 @@
+a[href|="/hoppy"] { display: block; clear: none; float: left; background-image: url(%%Umrzj%%); width: 105px; height: 157px; background-position: -0px -0px }
+
+a[href|='/dashfit'] { width:153px; height:150px; background-image: url(%%dashfit%%); background-position: 0px 0px; display: block; clear: none; float: left; margin-left: 3px; margin-right: 3px}
+
+a[href|='/derpbop'] { width:150px; height:150px; background-image: url(%%derpbop%%); background-position: 0px 0px;display: block; clear: none; float: left; margin-left: 3px; margin-right: 3px}
+
+a[href|='/lyrashake'] { width:118px; height:150px; background-image: url(%%lyrashake%%); background-position: 0px 0px; display: block; clear: none; float: left; margin-left: 3px; margin-right: 3px}
+
+
+
 a[href|='/erryday'] { width:255px; height:150px; background-image: url(%%erryday%%);  display: block; clear: none; float: left;}
 
 a[href|='/twiflap'] { width:132px; height:150px; background-image: url(%%twiflap%%); background-position: 0px 0px; display: block; clear: none; float: left; margin-left: 3px; margin-right: 3px; }
@@ -121,6 +131,15 @@ a[href|='/clop43'] {width:63px; height:73px; background-position: -303px -236px}
 a[href|='/clop44'] {width:64px; height:66px; background-position: -306px -314px}
 a[href|='/clop45'], a[href|='/sur26'] {width:70px; height:75px; background-position: -3px -382px}
 a[href|='/clop46'], a[href|='/rsur26'] {width:70px; height:75px; background-position: -80px -382px}
+
+a[href|="/alltheclops"] {
+    background-image: url(%%clop-table%%);
+    clear: none;
+    display: block;
+    float: left;
+    height: 480px;
+    width: 400px;
+    }
 
 /* Hiding shit in the sidebar that we don't need. */
 div > .submit, div > .create { display: none; }

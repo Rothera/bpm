@@ -2,12 +2,12 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%shrug%%)  no-repeat  fixed 70% 100% !important;
+    background:  url(%%derpstract%%)  no-repeat  fixed 70% 100% !important;
 }
 
 /* Banner image and associated height values */
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%meatbannerpony%%);
+   background: url(%%fuckyoucheese%%);
    background-repeat: no-repeat;
    background-position: 50% 100%;
    height: 237px; /* 237 for meat's nice banner */
@@ -189,11 +189,11 @@ label[for="subRedditStyleCheckbox"] {
 /* Also make the CSS text box bigger, because why not. */
 .stylesheet-customize-container textarea { height:500px; }
 
-/* ಠ_ಠ 
+/* ಠ_ಠ */
 .arrow.down {
 visibility: hidden;
 display: none
-} */
+} 
 
 /*SUBMISSION PAGE INSTRUCTIONS*/
 .titlebox .usertext-body .md ul {
@@ -389,6 +389,7 @@ background-repeat: no-repeat;
 .flair-risen:after { background-position: 0px -3870px }
 .flair-tbm:after { background-position: 0px -3900px }
 .flair-microwave:after { background-position: 0px -3930px }
+.flair-twinaga:after { background-position: 0px -3960px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
@@ -815,6 +816,8 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="DiscordDraconequus"],
+a.author[href$="IncidentalUnicorn2"],
 a.author[href$="Juz16"],
 a.author[href$="EvanMacIan"],
 a.author[href$="kcirvam"],
@@ -897,6 +900,8 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="DiscordDraconequus"]:before,
+a.author[href$="IncidentalUnicorn2"]:before,
 a.author[href$="Juz16"]:before,
 a.author[href$="EvanMacIan"]:before,
 a.author[href$="kcirvam"]:before,
@@ -976,6 +981,8 @@ visibility:visible!important;
 }
 
 /* Replacing somebody's name? Put the replacement here. */
+a.author[href$="DiscordDraconequus"]:before {content: "therealChrysalis"}
+a.author[href$="IncidentalUnicorn2"]:before {content: "theclinger"}
 a.author[href$="Juz16"]:before {content: "Jizz"}
 a.author[href$="EvanMacIan"]:before {content: "Ewan McGregor"}
 a.author[href$="kcirvam"]:before {content: "mavrick45"}
@@ -1011,7 +1018,7 @@ a.author[href$=Greenie_Lye]:before { content:"Greenie_Lye (Green Derram)" }
 a.author[href$=Chinch335]:before,a.author[href$=IllusionOf_Integrity]:before { content:"Chillusion" }
 a.author[href$=trypsonite]:before { content:"Who"; color:blue }
 a.author[href$=RetardVomitPussyCunt]:before { content:"RainbowViolinPancakesCider" }
-a.author[href$=andysonic2]:before {content:"andysonic1"}
+a.author[href$=andysonic2]:before {content:"anHURRsonic1"}
 a.author[href$="10z20Luka"]:before { content:"Titty-slickers, God of Thunder and Lord of the Dance" }
 a.author[href$=PinkiePie2012]:before { content:"Empress Pie" }
 a.author[href$=DarkSideOfTheSun]:before { content:"DickSideOfTheSun" }
@@ -1116,7 +1123,8 @@ a.author[href$=theworstnoveltyacct]:after,
 a.author[href$=OneOfTheseDaysLuna]:after,
 a.author[href$=hermano23]:after,
 a.author[href$=herabek]:after,
-a.author[href$=Backupusername]:after
+a.author[href$=Backupusername]:after,
+a.author[href$="Conky_"]:after
 {
 color:#000; 
 font-size:10px!important; 
@@ -1136,7 +1144,7 @@ a.author[href$=IllusionOf_Integrity]:after { content:" (participates in bringing
 a.author[href$=SkiidrowDash]:after { content:" (Lord of the Hamsters)" }
 a.author[href$=trypsonite]:after { content:" is dead" }
 a.author[href$=Backupusername]:after { content:" http://www.youtube.com/watch?f&v=3JCUWl30VuM" }
-a.author[href$=andysonic2]:after { content:" THE DUDE POLICE"; color:purple }
+a.author[href$=andysonic2]:after { content:" THE DURR POLICE"; color:purple }
 a.author[href$=Capnpaddy]:after { content:" (banned)" }
 a.author[href$=Capnpaddydash]:after { content:" (shoot on sight)" }
 a.author[href$=Speedingturtle]:after { content:" (°ロ°)" }
@@ -1175,6 +1183,7 @@ a.author[href$=herabek]:after { content:" TOKIN' DAT DANK-ASS SHIT" }
 a.author[href$="10z20Luka"]:after { content:" (Wears a flaming kilt made from the blood and skin of those that have been unfortunate enough to meet him in combat. Loves horse cock, but only if it is all one color. AKA The Destroyer of Styles. Can destroy even the smallest thread with his giant after-text title. He truly shall be feared. He also employs fun-loving, cheerful racism for comedic effect (like the racist prick he is). Also, he is a douchy bag douche who douch bag with bag douche. Andy's room-mate and lover)";
  font-size:6px!important }
 a.author[href$=JIVEprinting]:after { content:" Christfag" }
+a.author[href$="Conky_"]:after { content:" In a Lot of Trouble, Mr." }
 
 
 /* Any pre/post-name flair stuff goes here */ 
@@ -1255,14 +1264,13 @@ a[href|="/luna!"]:nth-of-type(n) { font-size: 18px; font-variant: small-caps !im
 /* Adds a neat style for ####text in posts. */
 .usertext-body h4 { font-size: 20px; font-weight: bold; color: navy; background: lightblue; text-align: center; padding: 3px; border-radius: 19px; -moz-border-radius: 19px; box-shadow: 2px 2px 5px #9999ff; text-shadow: 1px 1px #ffffff }
 
-a[href|="/hoppy"] { display: block; clear: none; float: left; background-image: url(%%Umrzj%%); width: 105px; height: 157px; background-position: -0px -0px }
 
 body.res a.author[href$="Pathogen-David"], body.res a.author[href$="Phei"] { font-weight: bold; color: white !important; padding: 0 2px; border-radius: 3px }
 body.res a.author[href$="Phei"] { background-color: #D4A4E8 }
 body.res a.author[href$="Pathogen-David"] { background-color: #662D8A }
 
 /* PROPER GREENTEXT (stolen from plounge, which stole from /r/4chan) */
-.content .md h1 { color: #789922; border-bottom: none; padding-bottom: 0px }
+.content .md h1 { color: #789922; border-bottom: none!important; padding-bottom: 0px }
 .content .md h1:before { content: ">" }
 
 /*Social wanted color*/

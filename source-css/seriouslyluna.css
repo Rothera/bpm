@@ -11,6 +11,11 @@ SeriouslyGDB
         > 4 name changes (8/5, 8/6, 8/7)
         > Messin' with UDNT (8/6, 8/7)
         > Serious name changes (12/15)
+        > Starting consolidating some of the emotes not in sheets into srslyemotes (12/19)
+        > ... is awesome (and a dingus).
+        > ... agrees with the above statement :3
+        > Has pony AIDS! D:
+        > ... but is still worth cuddling <3.
 
 SeriouslyComfy
         > Centered the downvote background proper.
@@ -773,22 +778,6 @@ a[href|="/seriouslydressedup"] {
  height: 130px;
  background-image: url(%%SeriouslyDressedUp%%)
  }
-a[href|="/superseriouslypinkie"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 176px;
-    height: 244px;
-    background-image:url(%%pinkles%%)
-}
-a[href|="/seriouslybanned"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 119px;
-    height: 130px;
-    background-image:url(%%DerpyBanned%%)
-}
 a[href|="/evilcadance"] {
     display: block;
     clear: none;
@@ -843,31 +832,6 @@ a[href|="/lunasoserious"] {
     width: 114px;
     height: 130px;
     background-image:url(%%elunasoserious%%)
-    }
-a[href|="/serilee"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 136px;
-    height: 130px;
-    background-image:url(%%serilee%%)
-    }
-
-a[href|="/lunaohyou"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 163px;
-    height: 130px;
-    background-image:url(%%Ohyou130%%)
-    }
-a[href|="/seriouslyhug"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 183px;
-    height: 130px;
-    background-image:url(%%seriouslyhug%%)
     }
 a[href|="/seriouslyjuice"] {
     display: block;
@@ -956,56 +920,64 @@ a[href|="/seriouslykindahumancmc"] {
 a[href|="/seriouslysweetieshake"] { background-position: -0px -0px }
 a[href|="/seriouslykindahumancmc"] { background-position: -161px -0px }
 
-/*** Mane Six emotes ***/
 
-a[href|="/seriouslyshy"] {
+
+/*** srslyemotes ***/
+
+a[href|="/seriouslyshy"], a[href|="/seriouslyaj"], a[href|="/seriouslyrarity"], a[href|="/seriouslytwilight"], a[href|="/seriouslydash"], a[href|="/seriouslypie"], a[href|="/serilee"], a[href|="/lunaohyou"], a[href|="/seriouslyhug"], a[href|="/seriouslybanned"], a[href|="/superseriouslypinkie"] {
     display: block;
     clear: none;
     float: left;
-    width: 137px;
     height: 130px;
-    background-image:url(%%Seriouslyconky%%)
+    background-image: url(%%srslyemotes%%)
+    }
+a[href|="/seriouslyshy"] {
+    width: 137px;
+    background-position: -0px -0px
     }
 a[href|="/seriouslyaj"] {
-    display: block;
-    clear: none;
-    float: left;
     width: 116px;
-    height: 130px;
-    background-image:url(%%seriouslyaj%%)
+    background-position: -137px -0px
     }
 a[href|="/seriouslyrarity"] {
-    display: block;
-    clear: none;
-    float: left;
     width: 162px;
-    height: 130px;
-    background-image:url(%%seriouslyrarity%%)
+    background-position: -253px -0px
     }
 a[href|="/seriouslytwilight"] {
-    display: block;
-    clear: none;
-    float: left;
     width: 115px;
-    height: 130px;
-    background-image:url(%%seriouslytwilight%%)
+    background-position: -415px -0px
     }
 a[href|="/seriouslydash"] {
-    display: block;
-    clear: none;
-    float: left;
     width: 119px;
-    height: 130px;
-    background-image:url(%%seriouslydash%%)
+    background-position: -530px -0px
     }
 a[href|="/seriouslypie"] {
-    display: block;
-    clear: none;
-    float: left;
     width: 120px;
-    height: 130px;
-    background-image:url(%%seriouspie%%)
+    background-position: -649px -0px
     }
+a[href|="/serilee"] {
+    width: 136px;
+    background-position: -769px -0px
+    }
+a[href|="/lunaohyou"] {
+    width: 163px;
+    background-position: -905px -0px
+    }
+a[href|="/seriouslyhug"] {
+    width: 183px;
+    background-position: -1068px -0px
+    }
+a[href|="/seriouslybanned"] {
+    width: 119px;
+    background-position: -1251px -0px
+    }
+a[href|="/superseriouslypinkie"] {
+    width: 176px;
+    height: 244px;
+    background-position: -1370px -0px
+    }
+
+
 
 a[href|="/nightprincess"], a[href|="/lunashyhug"], a[href|="/lunashy"], a[href|="/lunadaw"] {
     display: block;

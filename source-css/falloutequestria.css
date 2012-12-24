@@ -1,3 +1,50 @@
+#header #header-bottom-left {
+height:100px;
+}
+
+.side h6 {
+    background: #000000;
+    font-family: verdana, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: White;
+    text-align: center;
+    /* padding: 7px 7px 7px 7px; */                              /* Easier to use 4 lines, doesn't float right if not individually stated */
+    padding-bottom: 0px;                                          
+    padding-left: 10px;
+    padding-right: 0px;
+    padding-top: 7px;
+    margin: 15px;
+    display: block;
+    width: 450px;
+    height: 35px;
+    border-radius: 8px;
+   background-image: url(%%lppoint%%);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    z-index:100;
+
+}
+
+.side h6 a[href="http://redd.it/156wtl"]   /* make sure capitalization matches exactly */
+{
+    color: #ff4500;
+    text-decoration: underline;
+    font-style: normal;
+    font-weight: bold; 
+}
+
+.side .usertext-body h6 {
+  Position: absolute;
+  Top: 25px;                                                    /* tweak to your preference */
+  Left: 255px;                                                     /* change this to center the sticky, put something like 300 left and 300 right */
+  Right: 0px;                                                    /* tweak to fit nicely against the sidebar */
+}
+
+
+
 /*Submit a link -> Create a submission*/
 .sidebox .subtitle:before {
     display: block;
@@ -248,12 +295,24 @@ a[href|="/bjbubbles"]
 display: block;
 clear: none;
 float: left;
-width: 134px;
+width: 130px;
 height: 150px;
-background-image: url(%%bj-anim%%);
+background-image: url(%%bjbubbles-v1%%);
 }
 
 a[href|="/bjbubbles"]{ background-position: 0px 0px;}
+
+a[href|="/bjshake"]
+{
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 150px;
+background-image: url(%%bjshake%%);
+}
+
+a[href|="/bjshake"]{ background-position: 0px 0px;}
 
 a[href|="/lpnotsure"], a[href|="/p21fh"], a[href|="/bjboom"], a[href|="/drrampage"], a[href|="/lpinspire"], a[href|="/calamitywtf"], a[href|="/harmony"], a[href|="/bjsurprise"], a[href|="/lpfilly"], a[href|="/qnwhsk"], a[href|="/bjwhiskey"], a[href|="/crazyrampage"], a[href|="/deus"], a[href|="/grumpypip"], a[href|="/g3bj"], a[href|="/mop"]
 {
@@ -360,7 +419,7 @@ clear: none;
 float: left;
 width: 200px;
 height: 221px;
-background-image: url(%%rsmash-v2%%);
+background-image: url(%%rsmash-v3%%);
 }
 a[href|='/rampagesmash'] {background-position: 0px 0px}
 

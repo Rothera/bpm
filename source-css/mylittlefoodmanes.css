@@ -317,6 +317,21 @@ a.author[href$="TheQuillmaster"]:after {
     letter-spacing: normal
     }
 
+a.author[href$="/mattymo243"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+}
+
+a.author[href$="/mattymo243"]:after {
+    content: "Eyelash";
+    font-size: 12px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+}
 
 a.author[href$="BettyMcBitterpants"] {
     font-size: 0px !important;
@@ -414,8 +429,16 @@ a.author[href$="UDNTNOME"]:after {
     letter-spacing: normal
     }
 
+a.author[href$="maku450"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+
 a.author[href$="maku450"]:after {
-    content: " is a meanieface";
+    content: "No Maku. No.";
     font-size: 12px !important;
     visibility: visible !important;
     display: block;
