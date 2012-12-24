@@ -2710,7 +2710,7 @@ var bpm_core = bpm_exports.core = {
                     var key = message.__betterponymotes_pref;
                     var value = message.__betterponymotes_value;
 
-                    if(bpm_prefs.prefs[key]) {
+                    if(bpm_prefs.prefs[key] !== undefined) {
                         bpm_prefs.prefs[key] = value;
                         bpm_prefs.sync_key(key);
                     } else {
