@@ -390,7 +390,8 @@ background-repeat: no-repeat;
 .flair-tbm:after { background-position: 0px -3900px }
 .flair-microwave:after { background-position: 0px -3930px }
 .flair-twinaga:after { background-position: 0px -3960px }
-
+.flair-turkeysnake:after { background-position: 0px -3990px }
+.flair-HtotheGRIFF:after { background-position: 0px -4020px }
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
 
@@ -816,6 +817,8 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="Rudicorn"],
+a.author[href$="jimmpony"],
 a.author[href$="DiscordDraconequus"],
 a.author[href$="IncidentalUnicorn2"],
 a.author[href$="Juz16"],
@@ -845,7 +848,7 @@ a.author[href$="MisanthropicCat"],
 a.author[href$="Princess_Molestia_"],
 a.author[href$="Articulate_Angel"],
 a.author[href$="08G8V8"],
-a.author[href$=WildPlastic],
+a.author[href$=ArtfulPon3],
 a.author[href$=Avngr75],
 a.author[href$=tyl3rdurden],
 a.author[href$=Greenie_Lye],
@@ -900,6 +903,8 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="Rudicorn"]:before,
+a.author[href$="jimmpony"]:before,
 a.author[href$="DiscordDraconequus"]:before,
 a.author[href$="IncidentalUnicorn2"]:before,
 a.author[href$="Juz16"]:before,
@@ -930,7 +935,7 @@ a.author[href$="MisanthropicCat"]:before,
 a.author[href$="Princess_Molestia_"]:before,
 a.author[href$="Articulate_Angel"]:before,
 a.author[href$="08G8V8"]:before,
-a.author[href$=WildPlastic]:before,
+a.author[href$=ArtfulPon3]:before,
 a.author[href$=Avngr75]:before,
 a.author[href$=tyl3rdurden]:before,
 a.author[href$=Greenie_Lye]:before,
@@ -981,6 +986,8 @@ visibility:visible!important;
 }
 
 /* Replacing somebody's name? Put the replacement here. */
+a.author[href$="Rudicorn"]:before {content: "Grumpledick"}
+a.author[href$="jimmpony"]:before {content: "sirtophat"}
 a.author[href$="DiscordDraconequus"]:before {content: "therealChrysalis"}
 a.author[href$="IncidentalUnicorn2"]:before {content: "theclinger"}
 a.author[href$="Juz16"]:before {content: "Jizz"}
@@ -995,7 +1002,7 @@ a.author[href$="PartOfAShoe"]:before {content:"Welt"}
 a.author[href$="shawa666"]:before {content:"Slowpoke666"}
 a.author[href$="Avebone"]:before {content:"Ambassador of Foodmanes"}
 a.author[href$="Qwerty439"]:before {content:"Asdfgh439"}
-a.author[href$="HtotheGRIFF"]:before {content:"fslurt"}
+a.author[href$="HtotheGRIFF"]:before {content:"Mad Gay"}
 a.author[href$="viper9172"]:before {content:"Sidelong"}
 a.author[href$="Lazeraze"]:before {content:"Snowlily"}
 a.author[href$="31eipekili"]:before {content:"  :I  "}
@@ -1010,7 +1017,7 @@ a.author[href$="MisanthropicCat"]:before {content: "MisanthropicPone" }
 a.author[href$="Princess_Molestia_"]:before {content: "Princess Molestia" }
 a.author[href$="Articulate_Angel"]:before {content: "ɑrtɪkjələtˈeɪnʤəl (se hara hit bringeþ þára friþhengesta pintelum)" }
 a.author[href$="08G8V8"]:before {content: "Vroom-Vroom ''Defeater 'Feet''' Trips" }
-a.author[href$=WildPlastic]:before {content:"Artful" }
+a.author[href$=ArtfulPon3]:before {content:"WildPlastic" }
 a.author[href$=Avngr75]:before {content:"Ted" }
 a.author[href$=tyl3rdurden]:before /*{ content:"Tyler Derpden" }*/ {content:"Belgium" }
 a.author[href$=raritie]:before { content:"Rarity" }
