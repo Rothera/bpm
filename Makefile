@@ -1,8 +1,14 @@
-default: packages build/chrome build/betterponymotes.user.js update-files
+default: packages build/chrome build/betterponymotes.user.js update-files build/export.json.bz2
 
 packages: build/betterponymotes.xpi build/chrome.zip build/betterponymotes.oex
 
 update-files: www/betterponymotes.update.rdf www/opera-updates.xml
+
+build/export.json.bz2: build/export.json
+	bzip2 -kf build/export.json
+
+build/export.json: bpexport.py emotes/*.json data/rules.yaml
+	./bpexport.py --json build/export.json
 
 www/betterponymotes.update.rdf: build/betterponymotes.xpi
 
