@@ -43,7 +43,7 @@ div.titlebox span.number:after {
 /*********************
 Welcome Wagon Emoticons
 *********************/
-a[href|="/wagon00"], a[href|="/wagon10"], a[href|="/wagon20"] {
+a[href|="/wagon00"], a[href|="/wagon10"], a[href|="/wagon20"], a[href|="/ajcheers"], a[href|="/hypnopinkie"], a[href|="/hypnokarma"] {
     display: block;
     clear: none;
     float: left;
@@ -51,31 +51,13 @@ a[href|="/wagon00"], a[href|="/wagon10"], a[href|="/wagon20"] {
     height: 70px;
     background-image: url(%%wagon-emotes%%) !important
     }
-a[href|="/wagon00"] {
+a[href|="/wagon00"], a[href|="/ajcheers"] {
     background-position: -0px -0px
     }
-a[href|="/wagon10"] {
+a[href|="/wagon10"], a[href|="/hypnopinkie"] {
     background-position: -70px -0px
     }
-a[href|="/wagon20"] {
-    background-position: -140px -0px
-    }
-
-a[href|="/rwagon00"], a[href|="/rwagon10"], a[href|="/rwagon20"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 70px;
-    height: 70px;
-    background-image: url(%%rwagon-emotes%%) !important
-    }
-a[href|="/rwagon00"] {
-    background-position: -0px -0px
-    }
-a[href|="/rwagon10"] {
-    background-position: -70px -0px
-    }
-a[href|="/rwagon20"] {
+a[href|="/wagon20"], a[href|="/hypnokarma"] {
     background-position: -140px -0px
     }
 

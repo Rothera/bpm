@@ -2,6 +2,8 @@
 height:100px;
 }
 
+/*######[Vote on the new rules.](http://redd.it/156wtl) The Light Bringer counts on you!*/
+
 .side h6 {
     background: #000000;
     font-family: verdana, sans-serif;
@@ -28,7 +30,7 @@ height:100px;
 
 }
 
-.side h6 a[href="http://redd.it/156wtl"]   /* make sure capitalization matches exactly */
+.side h6 a[href="http://redd.it/15vcd2"]   /* make sure capitalization matches exactly */
 {
     color: #ff4500;
     text-decoration: underline;
@@ -69,7 +71,7 @@ height:100px;
 /* Banner Image */
 /*Banner by DarkDragon774 http://darkdragon774.deviantart.com/art/Fallout-Equestria-background-STOCK-277629738) */
 #header #header-bottom-left {
-    background: url(%%background-100-v2%%);
+    background: url(%%background-100-v3%%);
     background-color:#939683; 
     background-color: transparent;
      /*  margin-top: 50px; */
@@ -278,8 +280,9 @@ a[href|="/bjbubbles"]
 display: block;
 clear: none;
 float: left;
-width: 130px;
+width: 135px;
 height: 150px;
+background-repeat: no-repeat;
 background-image: url(%%bjbubbles-v1%%);
 }
 
@@ -290,8 +293,9 @@ a[href|="/bjshake"]
 display: block;
 clear: none;
 float: left;
-width: 150px;
+width: 155px;
 height: 150px;
+background-repeat: no-repeat;
 background-image: url(%%bjshake%%);
 }
 
@@ -334,11 +338,11 @@ clear: none;
 float: left;
 width: 70px;
 height: 70px;
-background-image: url(%%foe-em4-v7%%);
+background-image: url(%%foe-em4-v8%%);
 }
 
 a[href|="/bjhate"]{background-position: 0 0; width: 70px; height: 75px;}
-a[href|="/calamitytale"]{ background-position: 0 -120px; width: 178px; height: 150px;} 
+a[href|="/calamitytale"]{ background-position: 0 -120px; width: 141px; height: 150px;} 
 a[href|="/lpfun"]{background-position: 0 -320px; width: 200px; height: 147px; } 
 a[href|="/lpspittake"]{background-position: 0 -517px; width: 129px; height: 149px; } 
 a[href|="/lpfof"]{background-position: 0 -716px; width: 87px; height: 100px }
@@ -349,7 +353,7 @@ a[href|="/fightcalamity"]{background-position: 0 -1266px; width: 154px; height: 
 
 a[href|="/advicebj"]
 {
-    width: 300px !important;
+    width: 305px !important;
     height: 300px !important;
     cursor: default !important;
     display: block !important;
@@ -360,6 +364,7 @@ a[href|="/advicebj"]
     font-size: 26px !important;
     line-height: 24px !important;
     text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black !important;
+    letter-spacing: 1px !important;
     overflow: hidden !important;
     position: relative !important;
     text-transform: uppercase !important;
@@ -442,47 +447,213 @@ a[href|='/calamitytrot'] {background-position: 0px 0px}
 /* Flair */
 
 
-.flair {
-    border: none;
+.flairselector.drop-choices.active{
+width:490px!important;
+}
+
+.flairselector ul{
+width:230px!important;
+max-width:none!important;
+}
+
+
+.flair{
+    border: none;  
+ background: url(%%spritesheet-v19%%) no-repeat;
+padding:0px;color:#FFF; background-color:transparent;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;
     top: 20px;
-    padding: 0px;
-    background: url(%%spritesheet-v18%%) no-repeat;
     display: inline-block;
-    vertical-align: middle;
-    }
-
-.flair-aaa{ background-position: 0 0; width: 50px; height: 50px; } 
-.flair-ajrangers{ background-position: 0 -100px; width: 14px; height: 15px; } 
-.flair-alicorn{ background-position: 0 -165px; width: 47px; height: 15px; } 
-.flair-dashite{ background-position: 0 -230px; width: 16px; height: 15px; } 
-.flair-littlepip{ background-position: 0 -295px; width: 36px; height: 15px; } 
-.flair-pipbuck{ background-position: 0 -430px; width: 20px; height: 15px; } 
-.flair-redeye{ background-position: 0 -495px; width: 24px; height: 15px; } 
-.flair-security{ background-position: 0 -560px; width: 37px; height: 15px; } 
-.flair-stabletec{ background-position: 0 -625px; width: 40px; height: 15px; } 
-.flair-steelrangers{ background-position: 0 -690px; width: 15px; height: 15px; } 
-.flair-stern{ background-position: 0 -755px; width: 13px; height: 15px; } 
-.flair-toasterrepairpony{ background-position: 0 -820px; width: 23px; height: 15px; } 
-
-
-.flair-mom{
-background-position: 0 -360px; width: 20px; height: 20px;
-    border: 1px solid black;
-    border-radius: 2px;
-    height: 20px;
-    line-height: 24px;
+    line-height: 30px;
     overflow: hidden;
-    padding: 0;
-    text-indent: 27px;
+    text-indent: 33px;
     white-space: nowrap;
-    width: 20px;
+}
+
+.flair-aaa {
+     color:#555;
+    text-indent: 0px;
+    line-height: 100%;
+ }
+
+
+.flair-ajrangers:hover {
+ background-position: 0 -265px; width: 26px; height: 30px;  
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+
+.flair-alicorn:hover {
+  background-position: 0 -510px; width: 94px; height: 30px; 
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-dashite:hover {
+  background-position: 0 -755px; width: 32px; height: 30px; 
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-littlepip:hover {
+  background-position: 0 -1000px; width: 73px; height: 30px;
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-mas:hover {
+ background-position: 0 -1245px; width: 22px; height: 30px;
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-moa:hover {
+ background-position: 0 -1490px; width: 44px; height: 30px; 
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-moi:hover {
+  background-position: 0 -1735px; width: 30px; height: 28px;
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
 }
 
 .flair-mom:hover {
-    width: auto;
+background-position: -194px 0; width: 30px; height: 30px;  
+ width: auto;
 min-width:18px;
-margin-top:-3px;padding:1px 3px !important;color:#FFF !important;background-color:#888;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
 }
+
+.flair-mop:hover {
+ background-position: -194px -245px; width: 30px; height: 30px;
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-pipbuck:hover {
+ background-position: -194px -490px; width: 40px; height: 30px;
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-redeye:hover {
+ background-position: -194px -735px; width: 48px; height: 30px;
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-security:hover {
+ background-position: -194px -980px; width: 74px; height: 30px;
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-stabletec:hover {
+ background-position: -194px -1225px; width: 80px; height: 30px;
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-steelrangers:hover {
+ background-position: -194px -1470px; width: 31px; height: 30px;
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-stern:hover {
+background-position: -194px -1715px; width: 27px; height: 30px;
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-toaster:hover {
+background-position: -388px 0; width: 46px; height: 30px;
+ width: auto;
+min-width:18px;
+background-color:#888;
+padding: 0px 3px;
+color:white;
+}
+
+.flair-aaa{ background-position: 0 0; width: auto; height: auto; } 
+.flair-ajrangers{ background-position: 0 -150px; width: 13px; height: 15px; } 
+.flair-ajrangers2{ background-position: 0 -265px; width: 26px; height: 30px; } 
+.flair-alicorn{ background-position: 0 -395px; width: 47px; height: 15px; text-indent: 95px; } 
+.flair-alicorn2{ background-position: 0 -510px; width: 94px; height: 30px; } 
+.flair-dashite{ background-position: 0 -640px; width: 16px; height: 15px;} 
+.flair-dashite2{ background-position: 0 -755px; width: 32px; height: 30px; } 
+.flair-littlepip{ background-position: 0 -885px; width: 36px; height: 15px; text-indent: 75px;} 
+.flair-littlepip2{ background-position: 0 -1000px; width: 73px; height: 30px; } 
+.flair-mas{ background-position: 0 -1130px; width: 11px; height: 15px; text-indent: 24px;} 
+.flair-mas2{ background-position: 0 -1245px; width: 22px; height: 30px; } 
+.flair-moa{ background-position: 0 -1375px; width: 22px; height: 15px; text-indent: 42px;} 
+.flair-moa2{ background-position: 0 -1490px; width: 44px; height: 30px; } 
+.flair-moi{ background-position: 0 -1620px; width: 16px; height: 15px; } 
+.flair-moi2{ background-position: 0 -1735px; width: 30px; height: 28px; } 
+.flair-mom{ background-position: 0 -1863px; width: 15px; height: 15px; } 
+.flair-mom2{ background-position: -194px 0; width: 30px; height: 30px; } 
+.flair-mop{ background-position: -194px -130px; width: 15px; height: 15px; } 
+.flair-mop2{ background-position: -194px -245px; width: 30px; height: 30px; } 
+.flair-pipbuck{ background-position: -194px -375px; width: 20px; height: 15px; text-indent: 43px;} 
+.flair-pipbuck2{ background-position: -194px -490px; width: 40px; height: 30px; } 
+.flair-redeye{ background-position: -194px -620px; width: 24px; height: 15px; text-indent: 53px;} 
+.flair-redeye2{ background-position: -194px -735px; width: 48px; height: 30px; } 
+.flair-security{ background-position: -194px -865px; width: 37px; height: 15px; text-indent: 75px;} 
+.flair-security2{ background-position: -194px -980px; width: 74px; height: 30px; } 
+.flair-stabletec{ background-position: -194px -1110px; width: 40px; height: 15px; text-indent: 81px;} 
+.flair-stabletec2{ background-position: -194px -1225px; width: 80px; height: 30px; } 
+.flair-steelrangers{ background-position: -194px -1355px; width: 15px; height: 15px; } 
+.flair-steelrangers2{ background-position: -194px -1470px; width: 31px; height: 30px; } 
+.flair-stern{ background-position: -194px -1600px; width: 13px; height: 15px; text-indent: 25px;} 
+.flair-stern2{ background-position: -194px -1715px; width: 27px; height: 30px; } 
+.flair-toaster{ background-position: -194px -1845px; width: 23px; height: 15px; text-indent: 49px;} 
+.flair-toaster2{ background-position: -388px 0; width: 46px; height: 30px; } 
 
 
 

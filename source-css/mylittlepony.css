@@ -1,7 +1,7 @@
 /***********************************
 * Whoa CMC, you keep editing that CSS ya gonna get a wicked bad tummy ache.  *
 ***********************************/
-/*Last edited by Shirtbrony on Smarch 13th, 1997 13:13 UTC*/
+/*Last edited by Opti on January 2 - Added Spitfire flair*/
 
 
 /*Changing readers in sidebar*/
@@ -1118,7 +1118,7 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 /*
 #title-field.roundfield:before
 {
- content:"The image about Derpy Hooves being 'canned' has been posted several times. Its legitimacy is very much in question. Please refrain from posting it.";
+ content:"Please refrain from posting screenshots of adult Silver Spoon from the Gameloft MLP game. It has been posted many times and it will be removed. Thank you.";
  font-size:0.86em;
  padding:5px;
  border:1px solid #5f99cf;
@@ -1544,6 +1544,9 @@ a.author[href$="/3holes2tits1fork"]:after {
 .flair-sewnsow {
     background-position: -16px -512px;
    }
+.flair-spitfire {
+    background-position: -0px -528px;
+   }
 .flair-blankflank{
     background-image: none;
     height: 0;
@@ -1606,6 +1609,16 @@ content:"";
 }
 */
 
+/* No Participation Mode */
+
+body:lang(np) .arrow{visibility:hidden!important}
+body:lang(np) #siteTable:before{content:"You have been linked to a read-only version of this subreddit. Please respect the community by not voting.";display:block;max-width:800px;background-color:#F6E69F;border:1px solid orange;font-size:small;margin:5px 305px 5px 0;padding:5px 10px}
+body:lang(np) .entry.likes:not(.reddit-entry):before,body:lang(np) .entry.dislikes:not(.reddit-entry):before{content:"Please do not vote or comment when you come from external subreddits.";color:red;font-size:large;font-weight:bold}
+body.res:lang(np) div.titlebox > div[style*='display: block !important'] input:before,body.res:lang(np) div.titlebox > div[style*='display: block !important'] label:before,body.res:lang(np) > div#keyCommandLineWidget > form:before{content:'Removed by NoParticipation'!important;margin-left:-10000px!important}
+body:lang(np) .usertext-edit,body:lang(np) .sidebox.submit,body:lang(np) .commentingAs,body:lang(np) .markdownEditor,body:lang(np) .report-button,body:lang(np) a[onclick*="return reply(this)"],body:lang(np) .helplink,body.wiki-page:lang(np) span.pageactions a.wikiaction-edit:not(.wikiaction-current),body.wiki-page:lang(np) div.wiki-page-content form#editform label[for=reason],body.wiki-page:lang(np) div.wiki-page-content form#editform input#wiki_revision_reason,body.wiki-page:lang(np) div.wiki-page-content form#editform input[type=submit]{display:none!important}
+
+/* END no participation mode */
+
 
 /***************************************************
 
@@ -1665,7 +1678,7 @@ content:"";
 .titlebox .usertext-body .md ol li + li {
     display:inline-block;
     float:right;
-    background:url(%%spike-hat%%);
+    background:url(%%derpy-hat%%);
     width:60px;
     height:60px;
     margin-top:-37px;
@@ -1828,207 +1841,6 @@ body.moderator div.content .flairselectbtn:after
  margin-left:8px;
 }
 
-/**************************
-
- EPISODE GUIDE BUTTONS AWW YE 
-
-**************************/
-
-input[value="t3_xy2aw"] + div.usertext-body .SuperRedditAltTextDisplay_Text
-{
- display: none !important;
-}
-
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a {
-    background: transparent url(%%buttons%%) no-repeat scroll top left;
-    color: #444;
-    display: inline-block;
-    font: normal 12px arial, sans-serif;
-    width:96px;
-    overflow:hidden;
-    height: 12px;
-    padding-top:5px;
-    padding-bottom:7px;
-    text-decoration: none;
-    text-align:center;
-    outline: none;
-    margin:0px 2px;
-}
-
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a:active {
-    background-position: bottom left;
-    color: #000;
-    outline: none;
-}
-
-/*Disable torrents until Crash gets on*/
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[href$="?m"]:before{content:"Direct";font-weight:bold;}
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[href$="?t"]:before{content:"Torrent";font-weight:bold;}
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[href$="?7"]:before{content:"Direct 720p[1]";font-weight:bold;}
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[href$="?1"]:before{content:"Direct HDTV[2]";font-weight:bold;}
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[href$="?o"]:before{content:"Direct Derp[3]";font-weight:bold;}
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[href$="?e"]:before{content:"Direct noDerp[4]";}
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[href$="?p"]:before{content:"Direct iTunes[5]";}
-
-body.comments-page #siteTable div.id-t3_xy2aw ul.flat-list.buttons {
-margin-left: 148px;
-}
-
-
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a:active:before {
-    position:relative;
-    top:1px;
-}
-
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[title="g"]:before, input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a:before {
-    margin:0;
-    padding:0;
-}
-
-input[value="t3_xy2aw"] + div.usertext-body .keyNavAnnotation {
-display:none;
-}
-
- input[value="t3_xy2aw"] + div.usertext-body + div[style="color: gray"]{
-display:none !important
-}
-
-body.comments-page #siteTable div.id-t3_xy2aw p.title, body.comments-page #siteTable div.id-t3_xy2aw a.thumbnail
-{
- display:none;
-}
-
-body.comments-page #siteTable div.id-t3_xy2aw p.tagline
-{
- position:relative;
- left:226px;
- top:220px;
-}
-
-body.comments-page #siteTable div.id-t3_xy2aw .expando
-{
- margin-left:148px;
- margin-top:220px;
-}
-
-body.comments-page #siteTable div.id-t3_xy2aw
-{
- background:transparent url(%%episodeguidebanner%%) top left no-repeat !important;
-}
-
-body.comments-page #siteTable div.id-t3_xy2aw .entry
-{
- background:transparent !important;
- outline:0px !important;
-}
-
-body.comments-page #siteTable div.id-t3_xy2aw .entry.likes
-{
- background:transparent url(%%episodeguidebanner-upvote%%) 144px 197px no-repeat !important;
-}
-
-body.comments-page #siteTable div.id-t3_xy2aw .entry.dislikes
-{
- background:transparent url(%%episodeguidebanner-downvote%%) 929px 198px no-repeat !important;
-}
-
-body.comments-page #siteTable div.id-t3_xy2aw .score
-{
- display:none !important;
-}
-
-/**Compressed mode fixes**/
-body.comments-page #siteTable div.id-t3_rxdsn.compressed .expando {
-    margin-left: 108px
-    }
-body.comments-page #siteTable div.id-t3_rxdsn.compressed p.tagline {
-    left: 217px
-    }
-body.comments-page #siteTable div.id-t3_rxdsn.compressed .entry.likes {
-    background-position: 122px 197px !important
-    }
-body.comments-page #siteTable div.id-t3_rxdsn.compressed .entry.dislikes {
-    background-position: 907px 198px !important
-    }
-
-/*Up/down buttons*/
-body.comments-page #siteTable div.id-t3_xy2aw .arrow.up, body.comments-page #siteTable div.id-t3_xy2aw .arrow.upmod, body.comments-page #siteTable div.id-t3_xy2aw .arrow.down, body.comments-page #siteTable div.id-t3_xy2aw .arrow.downmod
-{
- position:absolute;
- top:290px;
- z-index:999;
- width:20px !important;
- height:20px !important;
- padding:15px 5px !important;
- background:transparent none fixed no-repeat -1000px -1000px !important;
-}
-
-body.comments-page #siteTable div.id-t3_xy2aw .arrow.up, body.comments-page #siteTable div.id-t3_xy2aw .arrow.upmod
-{
- left:146px;
-}
-
-body.comments-page #siteTable div.id-t3_xy2aw .arrow.down, body.comments-page #siteTable div.id-t3_xy2aw .arrow.downmod
-{
- left:930px;
-}
-
-/*Unverified Link Flair*/
-div.content .linkflair-unverified .title
-{
- overflow:visible;
-}
-
-div.content .linkflair-unverified .linkflairlabel
-{
- font-size:0pt;
- color:white;
- max-width:none;
- overflow:visible;
- margin:0;
- padding:0;
- border:0;
- background:transparent;
-}
-
-div.content .linkflair-unverified .linkflairlabel::before
-{
- content:"Unverified";
- font-size:x-small;
- max-width:10em;
- overflow:hidden;
- white-space:nowrap;
- display:inline-block;
- margin-right:0.5em;
- padding:0 2px;
- background:whiteSmoke;
- color:#555;
- border:1px solid #DDD;
- border-radius:2px;
-}
-
-div.content .linkflair-unverified .linkflairlabel:hover::after
-{
- display:inline-block;
- width:320px;
- height:25px;
- margin-right:-320px;
- margin-top:-30px;
- margin-bottom:-30px;
- font-size:10px;
- color:#555;
- padding:2px;
- content:"The information contained within this post has not been verified with official sources and therefore may be false.";
- border:1px solid #DDD;
- border-radius:2px;
- border-top-left-radius:0;
- white-space:normal;
- background:whiteSmoke;
- position:relative;
- z-index:1;
- top:14px;
- left:-6px;
-}
 
 /***************************
 Sexy Headers

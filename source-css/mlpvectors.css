@@ -315,3 +315,7 @@ clear: both;
 display: block;
 clear: both;
 }
+
+/* This makes 'code' text bigger in the sidebar. */
+
+.titlebox > form > div > div > pre > code { font-size: 125%}

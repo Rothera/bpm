@@ -2,7 +2,7 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%derpstract%%)  no-repeat  fixed 70% 100% !important;
+    background:  url(%%bubble%%)  no-repeat  fixed 70% 100% !important;
 }
 
 /* Banner image and associated height values */
@@ -783,6 +783,38 @@ a[href|='/twisit'] {width:157px; height:125px; background-position: -164px -555p
 a[href|='/twisoawesome'] {width:115px; height:130px; background-position: -2px -251px}
 a[href|='/twithisshit'] {width:160px; height:125px; background-position: -323px -555px}
 
+
+a[href|="/ajfriends"], a[href|="/ajreally"], a[href|="/cmcnope"], a[href|="/darling"], a[href|="/lyranotone"], a[href|="/lyraquite"], a[href|="/naughty"], a[href|="/ppchangling"], a[href|="/ppnowai"], a[href|="/ppohgawd"], a[href|="/rarseriously"], a[href|="/rderpshrug"], a[href|="/sbserious"], a[href|="/scootsafraid"], a[href|="/spikefacepalm"], a[href|="/spikepopcorn"], a[href|="/surteehee"], a[href|="/tiadisapprove"], a[href|="/twisure"], a[href|="/twiwhat"]{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheetc%%) }
+
+
+a[href|="/ajfriends"] {width:178px; height:148px; background-position: -2px -2px}
+a[href|="/ajreally"] {width:128px; height:150px; background-position: -182px -2px}
+a[href|="/cmcnope"] {width:175px; height:120px; background-position: -312px -2px}
+a[href|="/darling"] {width:190px; height:175px; background-position: -489px -2px}
+a[href|="/lyranotone"] {width:234px; height:250px; background-position: -681px -2px}
+a[href|="/lyraquite"] {width:126px; height:125px; background-position: -2px -254px}
+a[href|="/naughty"] {width:106px; height:115px; background-position: -130px -254px}
+a[href|="/ppchangling"] {width:301px; height:175px; background-position: -238px -254px}
+a[href|="/ppnowai"] {width:144px; height:125px; background-position: -541px -254px}
+a[href|="/ppohgawd"] {width:77px; height:125px; background-position: -687px -254px}
+a[href|="/rarseriously"] {width:131px; height:150px; background-position: -766px -254px}
+a[href|="/rderpshrug"] {width:119px; height:125px; background-position: -899px -254px}
+a[href|="/sbserious"] {width:123px; height:115px; background-position: -2px -431px}
+a[href|="/scootsafraid"] {width:131px; height:100px; background-position: -127px -431px}
+a[href|="/spikefacepalm"] {width:90px; height:110px; background-position: -260px -431px}
+a[href|="/spikepopcorn"] {width:92px; height:150px; background-position: -352px -431px}
+a[href|="/surteehee"] {width:113px; height:150px; background-position: -446px -431px}
+a[href|="/tiadisapprove"] {width:118px; height:120px; background-position: -561px -431px}
+a[href|="/twisure"] {width:122px; height:150px; background-position: -681px -431px}
+a[href|="/twiwhat"] {width:162px; height:150px; background-position: -805px -431px}
+
+
+
 /* For anyone with no flair, or flair disabled, this will give them missingno flair.
     Listed before the rest of the username shit so it will be overridden by manual flair additions. */
 :not(.flair) + a.author:before {
@@ -1079,6 +1111,7 @@ height:30px
 }
 
 /* Adding after-text to somebody's name? Add them here. */
+a.author[href$="AttainedAndDestroyed"]:after,
 a.author[href$="Scythesickle"]:after,
 a.author[href$="SRSaboutponies"]:after,
 a.author[href$="Sponce"]:after,
@@ -1138,7 +1171,8 @@ font-size:10px!important;
 letter-spacing:normal; 
 }
 
-/* After-name text goes here. */ 
+/* After-name text goes here. */
+a.author[href$="AttainedAndDestroyed"]:after { content:" text"}
 a.author[href$="Scythesickle"]:after { content:" (wants to be a mod)"}
 a.author[href$="SRSaboutponies"]:after {content: "(trolls trolling trolls trolling trolling trolls)"}
 a.author[href$="Sponce"]:after { content:" (liek dis if u cry evry time)"}

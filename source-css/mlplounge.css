@@ -1700,6 +1700,16 @@ color: white !important;
  display:none !important;
 }
 
+/* No Participation Mode */
+
+body:lang(np) .arrow{visibility:hidden!important}
+body:lang(np) #siteTable:before{content:"You have been linked to a read-only version of this subreddit. Please respect the community by not voting.";display:block;max-width:800px;background-color:#F6E69F;border:1px solid orange;font-size:small;margin:5px 305px 5px 0;padding:5px 10px}
+body:lang(np) .entry.likes:not(.reddit-entry):before,body:lang(np) .entry.dislikes:not(.reddit-entry):before{content:"Please do not vote or comment when you come from external subreddits.";color:red;font-size:large;font-weight:bold}
+body.res:lang(np) div.titlebox > div[style*='display: block !important'] input:before,body.res:lang(np) div.titlebox > div[style*='display: block !important'] label:before,body.res:lang(np) > div#keyCommandLineWidget > form:before{content:'Removed by NoParticipation'!important;margin-left:-10000px!important}
+body:lang(np) .usertext-edit,body:lang(np) .sidebox.submit,body:lang(np) .commentingAs,body:lang(np) .markdownEditor,body:lang(np) .report-button,body:lang(np) a[onclick*="return reply(this)"],body:lang(np) .helplink,body.wiki-page:lang(np) span.pageactions a.wikiaction-edit:not(.wikiaction-current),body.wiki-page:lang(np) div.wiki-page-content form#editform label[for=reason],body.wiki-page:lang(np) div.wiki-page-content form#editform input#wiki_revision_reason,body.wiki-page:lang(np) div.wiki-page-content form#editform input[type=submit]{display:none!important}
+
+/* END no participation mode */
+
 
 /***************************
 Random Plounge Buggery
@@ -1712,7 +1722,7 @@ Random Plounge Buggery
     clear: both;
     text-align: center;
     width: 100%;
-    background-image: url(%%sbstarepeek-hypercube%%);
+    background-image: url(%%sbstare-equalizer%%);
     /*background-position: bottom center;*/
     background-repeat: no-repeat;
     margin-bottom: -0px;

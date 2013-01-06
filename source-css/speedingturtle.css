@@ -1,3 +1,58 @@
+/**
+Chibimotes
+**/
+
+a[href|="/chibidash"],a[href|="/chibipinkie"],a[href|="/chibiphei"], a[href|="/chibitwi"],a[href|="/chibispike"],a[href|="/chibifluttershy"],a[href|="/chibirarity"],a[href|="/chibiapplejack"] {
+background-image:url(%%chibimotes%%);
+display: block;
+clear:none;
+float:left
+}
+
+a[href|="/chibidash"] {
+width:160px;
+height:270px;
+background-position: 0px 0px
+}
+a[href|="/chibipinkie"] {
+width:135px;
+height:270px;
+background-position: -160px 0px
+}
+
+a[href|="/chibitwi"], a[href|="/chibiphei"] {
+width:235px;
+height:230px;
+background-position: -295px -35px
+}
+
+a[href|="/chibispike"] {
+width:191px;
+height:207px;
+background-position: -530px -28px
+}
+
+
+a[href|="/chibifluttershy"] {
+width:259px;
+height:167px;
+background-position: -5px -273px
+}
+
+
+a[href|="/chibirarity"] {
+width:214px;
+height:182px;
+background-position: -268px -265px
+}
+
+a[href|="/chibiapplejack"] {
+width:236px;
+height:239px;
+background-position: -482px -236px
+}
+
+
 /** OH GOD A TABLE**/
 
 /*
@@ -170,3 +225,4 @@ a[href|="/prepareyouranus"] {
 
 /* Supporting Code */
 #newlink .infobar:before{display:block;border:1px solid red;background:#F77;padding:5px;margin-bottom:5px}
+
