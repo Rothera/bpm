@@ -381,6 +381,7 @@ var bpm_dom = bpm_exports.dom = {
      */
     dom_ready: bpm_utils.trigger(function(ready) {
         if(document.readyState === "interactive" || document.readyState === "complete") {
+            bpm_debug("Document already loaded");
             ready();
         } else {
             document.addEventListener("DOMContentLoaded", bpm_utils.catch_errors(function(event) {
