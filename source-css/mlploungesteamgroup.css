@@ -1,0 +1,342 @@
+/* Stylesheet shamelessly and lazily copied from other subs */
+
+/* Sub Name Change*/
+.titlebox .word {
+    display: none
+    }
+.titlebox .number:after {
+    content: " juicebitches"
+    }
+div.titlebox .users-online span.number:after {
+    content: " stretching glutes"
+    }
+/* Side*/
+.side, .sidebox .spacer, .titlebox form.toggle, .morelink .nub, .icon-menu a, .side .spacer, .content, .sidecontentbox .content {
+    background-color: transparent !important;
+    }
+
+/*------------------------ Changes background -------------------------------*/
+
+body, body.res-nightmode:first-of-type {
+  background: url(%%ChairSex%%) no-repeat fixed 35% 120% !important;
+  z-index: 50;
+}
+
+.footer-parent {
+    height: 200px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(%%InAmerica%%);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: -1px
+    }
+
+/* Banner Image */
+#header-bottom-left {
+    background: url(%%BannerFill%%);
+    background-repeat: repeat;
+    }
+#header-img {
+    vertical-align: bottom;
+    margin: 10px 0;
+}
+
+/* Name Change */
+
+.redditname a {
+    background: url(%%HeaderText%%);
+    display: inline-block;
+    height: 34px;
+    width: 200px;
+    text-indent: -9001px;
+    }
+.side .redditname a {
+    background: url(%%HeaderTextBlack%%);
+    overflow: hidden
+    }
+/*---------------------- Nightmode fixes for the background -------------------------------- */
+.content #siteTable div[onclick="click_thing(this)"] {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type > .content {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type {
+    background-color: transparent !important
+    }
+
+a.author[href$="srsbsnsman"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px;
+    }
+a.author[href$="srsbsnsman"]:after {
+    content: "Forblaze";
+    font-size: 10px !important;
+    visibility: visible !important; 
+    display: block;
+    letter-spacing: normal;
+    }
+a.author[href$="Sangfroidish"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px;
+    }
+a.author[href$="Sangfroidish"]:after {
+    content: "Sangfroidfish";
+    font-size: 10px !important;
+    visibility: visible !important; 
+    display: block;
+    letter-spacing: normal;
+    }
+
+
+/*Self-Post Image, No Image, Spoiler Image*/
+.thumbnail.self {
+    background-image: url(%%SelfThumb%%) !important;
+background-position: 0px 0px !important
+    }
+.thumbnail.nsfw {
+    background-image: url(%%NSFWThumb%%) !important;
+background-position: 0px 0px !important
+    }
+.thumbnail.default {
+    background-image: url(%%ImageThumb%%) !important;
+background-position: 0px 0px !important
+    }
+
+/*Self post gradient (Disabled)
+.link .expando .usertext .md {
+border: 0px solid #000000 !important;
+background-color: #171614 !important;
+color: #FFFFFF;
+background-image: -webkit-linear-gradient(top, #171614, #353332);
+background-image: -moz-linear-gradient(top, #171614, #353332);
+background-image: -ms-linear-gradient(top, #171614, #353332);
+background-image: -o-linear-gradient(top, #171614, #353332);
+    }
+*/
+
+/*------------------------EMOTES------------------------------*/
+a[href|="/america"] {
+display: block;
+clear: none;
+float: left;
+width: 300px;
+height: 327px;
+background-image: url(%%ron-paul%%) !important
+}
+
+a[href|="/carefully"] {
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 167px;
+background-image: url(%%TwiWiggle%%) !important
+}
+a[href|="/hathe"] {
+display: block;
+clear: none;
+float: left;
+width: 300px;
+height: 246px;
+background-image: url(%%Hathe%%) !important
+}
+a[href|="/turnip"] {
+display: block;
+clear: none;
+float: left;
+width: 89px;
+height: 150px;
+background-image: url(%%turnip%%) !important
+}
+a[href|="/ograrity"] {
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 154px;
+background-image: url(%%ograrity%%) !important
+}
+a[href|="/twispecial"] {
+display: block;
+clear: none;
+float: left;
+width: 112px;
+height: 200px;
+background-image: url(%%twieyes%%)
+}
+a[href|="/rosesax"] {
+display: block;
+clear: none;
+float: left;
+width: 137px;
+height: 150px;
+background-image: url(%%rosesax%%) !important
+}
+
+a[href|="/tonightyou"] {
+display: block;
+clear: none;
+float: left;
+width: 200px;
+height: 193px;
+background-image: url(%%TonightYou%%) !important
+}
+a[href|="/twistcrowbar"] {
+display: block;
+clear: none;
+float: left;
+width: 300px;
+height: 217px;
+background-image: url(%%Crowbar%%) !important
+}
+
+a[href|="/karmapants"] {
+display: block;
+clear: none;
+float: left;
+width: 100px;
+height: 124px;
+background-image: url(%%KarmaPants%%) !important
+}
+
+a[href|="/catplanet"] {
+display: block;
+clear: none;
+float: left;
+width: 100px;
+height: 100px;
+background-image: url(%%CatPlanet%%) !important
+}
+
+a[href|="/cis"] {
+display: block;
+clear: none;
+float: left;
+width: 73px;
+height: 100px;
+background-image: url(%%CinorIsStupid%%) !important
+}
+
+
+/* ------MACROS------- */
+a[href="/couragewolf"] {
+    width: 300px !important;
+    height: 300px !important;
+    cursor: default !important;
+    display: inline-block !important;
+    background-image: url(%%courage%%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0 0 !important;
+    text-align: center !important;
+    color: white !important;
+    font-family: Impact, sans-serif !important;
+    font-size: 25px !important;
+    line-height: 24px !important;
+    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black !important;
+    overflow: hidden !important;
+    position: relative !important;
+    text-transform: uppercase !important
+    }
+a[href="/couragewolf"] em {
+    font-style: normal !important;
+    position: absolute !important;
+    top: 12px !important;
+    width: 280px !important;
+    left: 50% !important;
+    margin-left: -140px !important
+    }
+a[href="/couragewolf"] strong {
+    font-weight: normal !important;
+    position: absolute !important;
+    bottom: 12px !important;
+    width: 280px !important;
+    left: 50% !important;
+    margin-left: -140px !important
+    }
+a[href="/scumbagrando"] {
+    width: 300px !important;
+    height: 300px !important;
+    cursor: default !important;
+    display: inline-block !important;
+    background-image: url(%%ScumbagRando%%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0 0 !important;
+    text-align: center !important;
+    color: white !important;
+    font-family: Impact, sans-serif !important;
+    font-size: 25px !important;
+    line-height: 24px !important;
+    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black !important;
+    overflow: hidden !important;
+    position: relative !important;
+    text-transform: uppercase !important
+    }
+a[href="/scumbagrando"] em {
+    font-style: normal !important;
+    position: absolute !important;
+    top: 12px !important;
+    width: 280px !important;
+    left: 50% !important;
+    margin-left: -140px !important
+    }
+a[href="/scumbagrando"] strong {
+    font-weight: normal !important;
+    position: absolute !important;
+    bottom: 12px !important;
+    width: 280px !important;
+    left: 50% !important;
+    margin-left: -140px !important
+    }
+/* Nightmode fix for flair */
+body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
+
+
+.tagline .flair {border-color: transparent}
+/*-------------------- Flair ---------------------------------------*/
+
+.flair{
+    color: black;
+    display: inline-block;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    content: "";
+    background-image: url(%%flair%%);
+    display: inline-block;
+    background-repeat: no-repeat
+}
+.flair-flitter {width:40px; height:28px; background-position: 0px 0px}
+.flair-exbike {width:40px; height:43px; background-position: 0px -28px}
+.flair-turnip {width:35px; height:38px; background-position: 0px -71px}
+.flair-rosebutt {width:35px; height:35px; background-position: 0px -109px}
+.flair-pringles {width:35px; height:35px; background-position: 0px -144px}
+.flair-potato {width:35px; height:24px; background-position: 0px -179px}
+.flair-comcan {width:35px; height:23px; background-position: 0px -203px}
+.flair-hathelp {width:35px; height:35px; background-position: 0px -226px}
+.flair-crumpet {width:35px; height:27px; background-position: 0px -296px}
+.flair-hitler {width:35px; height:34px; background-position: 0px -323px}
+.flair-apple {width:34px; height:35px; background-position: 0px -358px}
+.flair-twist {width:27px; height:40px; background-position: 0px -393px}
+.flair-fishjuice {width:26px; height:55px; background-position: 0px -433px}
+.flair-soup {background-image: url(%%soupflair%%); width:35px; height:32px}
+.flair-catplanet {background-image: url(%%catflair%%); width:35px; height:35px}
+.flair-tree {background-image: url(%%treeflair%%); width:33px; height:40px}
+.flair-derpeye {background-image: url(%%derpeyeflair%%); width:35px; height:35px}
+.flair-sausage {background-image: url(%%sausageflair%%); width:35px; height:35px}
+.flair-lunasad {background-image: url(%%lunasadflair%%); width:35px; height:35px}
+.flair-nopants {background-image: url(%%nopantsflair%%); width:28px; height:35px}
+.flair-wagonsabutt {background-image: url(%%lol%%); width:20px; height:25px}
+.flair-b24 {background-image: url(%%b24%%); width:30px; height:30px}
+.flair-cap {background-image: url(%%capflair%%); width:30px; height:28px}
+.flair-bed {background-image: url(%%bedflair%%); width:30px; height:19px}

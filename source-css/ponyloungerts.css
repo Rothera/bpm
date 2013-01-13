@@ -1,0 +1,337 @@
+/* Stylesheet shamelessly and lazily copied from other subs, especially mylittlebravery */
+
+.pagename a, .titlebox h1 a {color:DeepPink!important;font-size:xx-large!important;text-decoration:none!important;text-shadow: 3px 0px 0px white, 3px 3px 0px white, 3px -3px 0px white, 0px 3px 0px white, 0px -3px 0px white, -3px 3px 0px white, -3px 0px 0px white, -3px -3px 0px white}
+#header {background-color:paleturquoise!important;}
+.tabmenu a {color:deeppink!important;}
+.tabmenu li.selected a {color:hotpink!important;}
+
+.side {background-color:lightpink!important;}
+body{background:url(%%-mudbackground%%) no-repeat fixed center center}
+
+/*---------------------- Nightmode fixes for the background -------------------------------- */
+.content #siteTable div[onclick="click_thing(this)"] {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type > .content {
+    background-color: transparent !important
+    }
+body.res-nightmode:first-of-type {
+    background-color: transparent !important
+    }
+
+/* Sub Name Change*/
+.titlebox .word {
+    display: none
+    }
+.titlebox .number:after {
+    content: " Mudcrabs"
+    }
+div.titlebox .users-online span.number:after {
+    content: " Chasing Dovashy"
+    }
+
+.footer-parent {
+    height: 500px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(%%BreadTwiTrans%%);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: -1px
+    }
+
+
+/*i literally stole this from /r/braveryjerk*/
+/*upron*/
+.arrow.up{background-image:url(%%notupron%%)!important;background-position:0px 0px!important;height:27px!important;width:22px!important}
+.arrow.upmod{background-image:url(%%upron%%)!important;background-position:0px 0px!important;height:27px!important;width:22px!important}
+.comment .midcol {width: 25px}
+.midcol {overflow:visible}
+
+body{position:relative}
+.content{margin-top:50px}
+.titlebox form{position:static}
+.titlebox .usertext-body .md ol{width:auto;background-color:transparent;border:none;position:absolute;top:100px;left:20px;z-index:-1;margin:0;padding:4px;list-style:none;display:block;white-space:nowrap;overflow:hidden;font-size:11px!important;font-family:'lucida grande',tahoma,verdana,arial,sans-serif}
+.titlebox .usertext-body .md ol a:hover{background-color:#FF0000!important}
+.titlebox .usertext-body .md del{text-decoration:none!important;color:black!important}
+.titlebox .usertext-body .md ol li{text-align:center!important; font-size: 26px;}
+.titlebox .usertext-body .md ol li a{padding:5px;}
+
+
+/*stop all the downronning!*/
+.arrow.down {
+visibility: hidden;
+display: none
+}
+/*attempt at sidebar pony thing*/
+.side a[href="http://isitchristmas.com/"] {
+    display: block;
+    height: 285px;
+    width: 129px;
+    background: url(%%doubleflutter-tophat%%);
+    position: fixed;
+    top: 260px;
+    right: -15px;
+    z-index: 999;
+    }
+
+/*flutterthink stolen from http://trotpilgrim.deviantart.com/art/Fluttershy-Thinking-284336433*/
+
+/*el emotes*/
+
+a[href|="/tonightyou"] {
+display: block;
+clear: none;
+float: left;
+width: 200px;
+height: 193px;
+background-image: url(%%tonightyou%%) !important
+}
+
+
+a[href|="/upron"] {
+display: block;
+clear: none;
+float: left;
+width: 22px;
+height: 28px;
+background-image: url(%%upron%%) !important
+}
+
+
+a[href|="/notupron"] {
+display: block;
+clear: none;
+float: left;
+width: 22px;
+height: 27px;
+background-image: url(%%notupron%%) !important
+}
+a[href|="/twigusta"] {
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 149px;
+background-image: url(%%twigusta%%) !important
+}
+a[href|="/gremlintwi"] {
+display: block;
+clear: none;
+float: left;
+width: 120px;
+height: 145px;
+background-image: url(%%gremlintwi%%) !important
+}
+a[href|="/twistahp"] {
+display: block;
+clear: none;
+float: left;
+width: 200px;
+height: 118px;
+background-image: url(%%twistahp%%) !important
+}
+a[href|="/toiletshy"] {
+display: block;
+clear: none;
+float: left;
+width: 126px;
+height: 200px;
+background-image: url(%%toiletshy%%) !important
+}
+a[href|="/twispin"] {
+display: block;
+clear: none;
+float: left;
+width: 250px;
+height: 281px;
+background-image: url(%%twispin%%) !important
+}
+a[href|="/flutterstache"] {
+display: block;
+clear: none;
+float: left;
+width: 149px;
+height: 150px;
+background-image: url(%%flutterstache%%) !important
+}
+a[href|="/urafaget"] {
+display: block;
+clear: none;
+float: left;
+width: 199px;
+height: 125px;
+background-image: url(%%urafaget%%) !important
+}
+a[href|="/flutteralien"] {
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 175px;
+background-image: url(%%flutteralien%%) !important
+}
+a[href|="/flutterok"] {
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 164px;
+background-image: url(%%flutterok%%) !important
+}
+a[href|="/flutterstahp"] {
+display: block;
+clear: none;
+float: left;
+width: 200px;
+height: 118px;
+background-image: url(%%flutterstahp%%) !important
+}
+a[href|="/twiball"] {
+display: block;
+clear: none;
+float: left;
+width: 125px;
+height: 113px;
+background-image: url(%%twiball%%) !important
+}
+a[href|="/doyoulift"] {
+display: block;
+clear: none;
+float: left;
+width: 250px;
+height: 267px;
+background-image: url(%%doyoulift%%) !important
+}
+
+a[href|="/konapenis"] {
+display: block;
+clear: none;
+float: left;
+width: 76px;
+height: 135px;
+background-image: url(%%konapenis%%) !important
+}
+a[href|="/fluttersomething"] {
+display: block;
+clear: none;
+float: left;
+width: 129px;
+height: 151px;
+background-image: url(%%flutterle%%) !important
+}
+
+a[href|="/konahappy"] {
+display: block;
+clear: none;
+float: left;
+width: 104px;
+height: 78px;
+background-image: url(%%konabenned%%) !important
+}
+
+a[href|="/konahappy2"] {
+display: block;
+clear: none;
+float: left;
+width: 104px;
+height: 78px;
+background-image: url(%%konahappy2%%) !important
+}
+
+a[href|="/flutterpls"] {
+display: block;
+clear: none;
+float: left;
+width: 242px;
+height: 217px;
+background-image: url(%%flutterpls%%) !important
+}
+
+a[href|="/ajsbanana"] {
+display: block;
+clear: none;
+float: left;
+width: 109px;
+height: 245px;
+background-image: url(%%ajsbanana%%) !important
+}
+
+a[href|="/shyherp"] {
+display: block;
+clear: none;
+float: left;
+width: 242px;
+height: 191px;
+background-image: url(%%shyherp%%) !important
+}
+
+a[href|="/mudcrab"] {
+display: block;
+clear: none;
+float: left;
+width: 217px;
+height: 180px;
+background-image: url(%%minimudcrab%%) !important
+}
+
+a[href|="/mudcrabarmor"] {
+display: block;
+clear: none;
+float: left;
+width: 232px;
+height: 180px;
+background-image: url(%%minimudcrabarmor%%) !important
+}
+a.author[href$="srsbsnsman"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px;
+    }
+
+a.author[href$="srsbsnsman"]:after {
+    content: "Kona Penis";
+    font-size: 10px !important;
+    visibility: visible !important; 
+    display: block;
+    letter-spacing: normal;
+    }
+
+
+
+/*test*/
+div.linkflair-quality a.thumbnail{border-left:10px solid #FDD017;margin-left:0px}
+
+div.linkflair-quality a.thumbnail:hover::before{display:block;padding:2px;content:"Topic:Cake";background-color:#FDD017;color:#FFF;width:120px;font-size:12px;border-bottom-right-radius:10px;border-top-right-radius:10px;position:absolute;opacity:1.0;z-index:100}
+
+flair.benned2{background:black}
+flair.benned2:before,flair.benned:after{background:url(%%bn8T7vwT7Lyio5iX%%) 0 0!important;display:inline-block!important;width:50px!important;height:50px!important}
+
+
+.flair-benned {
+    border: none !important;
+    background: url(%%bn8T7vwT7Lyio5iX%%) no-repeat;
+    text-indent: 28px;
+    height: 57px;
+    width: 60px;
+    position: relative;
+    top: 0;
+    line-height:40px;
+    vertical-align: bottom;
+}
+.flair-letest {
+    border: none !important;
+    background: url(%%bn8T7vwT7Lyio5iX%%) no-repeat;
+    background-position: -1px -57px;
+    text-indent: 28px;
+    height: 60px;
+    width: 60px;
+    position: relative;
+    top: 0;
+    line-height:40px;
+    vertical-align: bottom;
