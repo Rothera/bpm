@@ -62,17 +62,7 @@ a[href|="/tacodance"] {
     width: 330px;
     height: 400px;
     background-image: url(%%tacodance%%)
-    }
-
-a[href|="/t18"] {
-    background-position: 0px 0px;
-    display: block;
-    clear: none;
-    float: left;
-    width: 364px;
-    height: 500px;
-    background-image: url(%%t18%%) !important
-    }
+}
 
 a[href|="/t18"] {
     background-position: 0px 0px;
@@ -420,6 +410,39 @@ a[href|="/tacolove"] {
     height: 256px;
     background-image: url(%%tacolove%%)
     }
+a[href|="/tacoshrug"], a[href|="/tsshrug"], a[href|="/wtaco"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%tacospriteshrug%%)
+    }
+a[href|="/tacoshrug"], a[href|="/tsshrug"] {
+    width: 300px;
+    height: 300px;
+     background-position: -0px -0px
+    }
+a[href|="/wtaco"] {
+    width: 70px;
+    height: 70px;
+    background-position: -300px -0px 
+    }
+a[href|="/tacoyou"], a[href|="/tyou"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 200px;
+    background-image: url(%%ohtaco%%)
+    }
+
+a[href|="/pineapple"], a[href|="/floutsapple"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 160px;
+    height: 120px;
+    background-image: url(%%Pineapple%%)
+    }
 /* ----------- Name Change ---------------- */
 
 
@@ -692,3 +715,27 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
     }
 
 /* I like tacos - tacoshy */
+
+/* Testing random taco emote /tacos */
+
+a[href|="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 505px;
+    background-image: url(%%tacoshy-2%%) !important
+}
+/* 0 */
+.usertext input[value$="0"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 330px;
+    height: 400px;
+    background-image: url(%%tacodance%%)
+}

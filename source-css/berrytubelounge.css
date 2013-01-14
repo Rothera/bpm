@@ -212,6 +212,33 @@ height: 140px;
 background-image: url(%%btlemotetable3%%) !important
 }
 
+a[href|="/berryshake"], a[href|="/bpfight"], a[href|="/bpiv"], a[href|="/astronomicalwanker"], a[href|="/tomwithit"], a[href|="/ranboshad"], a[href|="/sweetiewubs"], a[href|="/greatscott"], a[href|="/longlines"], a[href|="/fry"] {
+display:block;
+clear: none;
+float: left;
+width: 70px;
+height: 70px;
+background-image: url(%%btlemotetable4%%) !important
+}
+
+a[href|="/racistbarn"], a[href|="/lyrahalp"] {
+display:block;
+clear: none;
+float: left;
+width: 140px;
+height: 140px;
+background-image: url(%%btlemotetable4%%) !important
+}
+
+a[href|="/ihavenomouthandimustscream"], a[href|="/sovietsalute"], a[href|="/nomeansno"]{
+display:block;
+clear: none;
+float: left;
+width: 210px;
+height: 140px;
+background-image: url(%%btlemotetable4%%) !important
+}
+
 a[href|="/octydance"]{
 display:block;
 clear: none;
@@ -428,32 +455,38 @@ height: 86px;
 background-image: url(%%pixpunch%%) !important
 }
 
+
+
 /* Sheet offsets */
 a[href|="/btl00"], a[href|="/halp"] {
 background-position: -0px -0px
 }
 
-a[href|="/btl10"], a[href|="/onekeg"], a[href|="/blt10"], a[href|="/ppmoonwalk"], a[href|="/miggyb"], a[href|="/crystalmuffins"] {
+a[href|="/btl10"], a[href|="/onekeg"], a[href|="/blt10"], a[href|="/ppmoonwalk"], a[href|="/miggyb"], a[href|="/crystalmuffins"], a[href|="/bpfight"] {
 background-position: -70px -0px
 }
 
-a[href|="/blt20"], a[href|="/ppbloat"], a[href|="/jebkerman"]{
+a[href|="/blt20"], a[href|="/ppbloat"], a[href|="/jebkerman"] , a[href|="/bpiv"]{
 background-position: -140px -0px
 }
 
-a[href|="/btl01"], a[href|="/scootafresh"], a[href|="/blt01"], a[href|="/pprumgone"], a[href|="/wubjection"] {
+a[href|="/btl01"], a[href|="/scootafresh"], a[href|="/blt01"], a[href|="/pprumgone"], a[href|="/wubjection"], a[href|="/astronomicalwanker"] {
 background-position: -0px -70px
 }
 
-a[href|="/btl11"], a[href|="/spikedapper"], a[href|="/blt11"], a[href|="/rawrity"] {
+a[href|="/btl11"], a[href|="/spikedapper"], a[href|="/blt11"], a[href|="/rawrity"], a[href|="/tomwithit"] {
 background-position: -70px -70px
 }
 
-a[href|="/btl02"], a[href|="/beepbeep"], a[href|="/blt02"], a[href|="/ppfingers"], a[href|="/omnomtom"] {
+a[href|="/ranboshad"] {
+background-position: -140px -70px
+}
+
+a[href|="/btl02"], a[href|="/beepbeep"], a[href|="/blt02"], a[href|="/ppfingers"], a[href|="/omnomtom"], a[href|="/sweetiewubs"] {
 background-position: -0px -140px
 }
 
-a[href|="/btl12"], a[href|="/vinyldance"], a[href|="/crystaldiva"] {
+a[href|="/btl12"], a[href|="/vinyldance"], a[href|="/crystaldiva"], a[href|="/lyrahalp"] {
 background-position: -70px -140px
 }
 
@@ -461,7 +494,7 @@ a[href|="/blt22"], a[href|="/vodka"], a[href|="/wodka"], a[href|="/WODKA"], a[hr
 background-position: -140px -140px
 }
 
-a[href|="/btl03"], a[href|="/octysmile"], a[href|="/jeb"] {
+a[href|="/btl03"], a[href|="/octysmile"], a[href|="/jeb"], a[href|="/greatscott"] {
 background-position: -0px -210px
 }
 
@@ -469,10 +502,30 @@ a[href|="/btl13"], a[href|="/octygrin"] {
 background-position: -70px -210px
 }
 
-a[href|="/btl04"], a[href|="/octav3drag"], a[href|="/blt04"], a[href|="/berryapproved"], a[href|="/bpapproves"], a[href|="/daftworth"] {
+a[href|="/btl04"], a[href|="/octav3drag"], a[href|="/blt04"], a[href|="/berryapproved"], a[href|="/bpapproves"], a[href|="/daftworth"], a[href|="/longlines"] {
 background-position: -0px -280px
+}
+
+a[href|="/racistbarn"] {
+background-position: -70px -280px
 }
 
 a[href|="/blt24"], a[href|="/rdchairfort"], a[href|="/derpshake"]{
 background-position: -140px -280px
+}
+
+a[href|="/fry"] {
+background-position: -0px -350px
+}
+
+a[href|="/ihavenomouthandimustscream"] {
+background-position: -0px -420px
+}
+
+a[href|="/sovietsalute"] {
+background-position: -0px -560px
+}
+
+a[href|="/nomeansno"] {
+background-position: -0px -700px
 }

@@ -2,19 +2,19 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%bubble%%)  no-repeat  fixed 70% 100% !important;
+    background:  url(%%horselandbg%%)  no-repeat  fixed 60% 95% !important;
 }
 
 /* Banner image and associated height values */
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%fuckyoucheese%%);
+   background: url(%%fuckyoucheese2%%);
    background-repeat: no-repeat;
    background-position: 50% 100%;
    height: 237px; /* 237 for meat's nice banner */
 }
 
 #header-img-a {
-    margin-top: 116px;
+    margin-top: 80px;
 }
 
 #header, #header.res-nightmode{
@@ -392,6 +392,9 @@ background-repeat: no-repeat;
 .flair-twinaga:after { background-position: 0px -3960px }
 .flair-turkeysnake:after { background-position: 0px -3990px }
 .flair-HtotheGRIFF:after { background-position: 0px -4020px }
+.flair-StabbyTheLlama:after { background-position: 0px -4050px }
+.flair-CustomOriginal:after { background-position: 0px -4080px }
+
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
 
@@ -784,7 +787,7 @@ a[href|='/twisoawesome'] {width:115px; height:130px; background-position: -2px -
 a[href|='/twithisshit'] {width:160px; height:125px; background-position: -323px -555px}
 
 
-a[href|="/ajfriends"], a[href|="/ajreally"], a[href|="/cmcnope"], a[href|="/darling"], a[href|="/lyranotone"], a[href|="/lyraquite"], a[href|="/naughty"], a[href|="/ppchangling"], a[href|="/ppnowai"], a[href|="/ppohgawd"], a[href|="/rarseriously"], a[href|="/rderpshrug"], a[href|="/sbserious"], a[href|="/scootsafraid"], a[href|="/spikefacepalm"], a[href|="/spikepopcorn"], a[href|="/surteehee"], a[href|="/tiadisapprove"], a[href|="/twisure"], a[href|="/twiwhat"]{
+a[href|="/ajfriends"], a[href|="/ajreally"], a[href|="/cmcnope"], a[href|="/darling"], a[href|="/lyranotone"], a[href|="/lyraquite"], a[href|="/naughty"], a[href|="/ppchangeling"], a[href|="/ppnowai"], a[href|="/ppohgawd"], a[href|="/rarseriously"], a[href|="/rderpshrug"], a[href|="/sbserious"], a[href|="/scootsafraid"], a[href|="/spikefacepalm"], a[href|="/spikepopcorn"], a[href|="/surteehee"], a[href|="/tiadisapprove"], a[href|="/twisure"], a[href|="/twiwhat"]{
 
     display: block;
     clear: none;
@@ -799,7 +802,7 @@ a[href|="/darling"] {width:190px; height:175px; background-position: -489px -2px
 a[href|="/lyranotone"] {width:234px; height:250px; background-position: -681px -2px}
 a[href|="/lyraquite"] {width:126px; height:125px; background-position: -2px -254px}
 a[href|="/naughty"] {width:106px; height:115px; background-position: -130px -254px}
-a[href|="/ppchangling"] {width:301px; height:175px; background-position: -238px -254px}
+a[href|="/ppchangeling"] {width:301px; height:175px; background-position: -238px -254px}
 a[href|="/ppnowai"] {width:144px; height:125px; background-position: -541px -254px}
 a[href|="/ppohgawd"] {width:77px; height:125px; background-position: -687px -254px}
 a[href|="/rarseriously"] {width:131px; height:150px; background-position: -766px -254px}
@@ -849,6 +852,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="V17Ds"],
 a.author[href$="Rudicorn"],
 a.author[href$="jimmpony"],
 a.author[href$="DiscordDraconequus"],
@@ -880,7 +884,7 @@ a.author[href$="MisanthropicCat"],
 a.author[href$="Princess_Molestia_"],
 a.author[href$="Articulate_Angel"],
 a.author[href$="08G8V8"],
-a.author[href$=ArtfulPon3],
+a.author[href$=ArtfulPon],
 a.author[href$=Avngr75],
 a.author[href$=tyl3rdurden],
 a.author[href$=Greenie_Lye],
@@ -927,6 +931,7 @@ a.author[href$=Zovistograt],
 a.author[href$=mrwoo6],
 a.author[href$=JustAnotherGDB]
 
+
 { 
 font-size:0!important; 
 overflow:hidden; 
@@ -935,6 +940,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="V17Ds"]:before,
 a.author[href$="Rudicorn"]:before,
 a.author[href$="jimmpony"]:before,
 a.author[href$="DiscordDraconequus"]:before,
@@ -967,7 +973,7 @@ a.author[href$="MisanthropicCat"]:before,
 a.author[href$="Princess_Molestia_"]:before,
 a.author[href$="Articulate_Angel"]:before,
 a.author[href$="08G8V8"]:before,
-a.author[href$=ArtfulPon3]:before,
+a.author[href$=ArtfulPon]:before,
 a.author[href$=Avngr75]:before,
 a.author[href$=tyl3rdurden]:before,
 a.author[href$=Greenie_Lye]:before,
@@ -1011,13 +1017,16 @@ a.author[href$=OneOfTheseDaysLuna]:before,
 a.author[href$=ZZW30]:before,
 a.author[href$=zovistograt]:before,
 a.author[href$=mrwoo6]:before,
-a.author[href$=JustAnotherGDB]:before
+a.author[href$=JustAnotherGDB]:before,
+a.author[href$=Swiftskii]:before
+
 {
 font-size:10px!important; 
 visibility:visible!important;
 }
 
 /* Replacing somebody's name? Put the replacement here. */
+a.author[href$="V17Ds"]:before {content: "SwiftV17Ds"}
 a.author[href$="Rudicorn"]:before {content: "Grumpledick"}
 a.author[href$="jimmpony"]:before {content: "sirtophat"}
 a.author[href$="DiscordDraconequus"]:before {content: "therealChrysalis"}
@@ -1037,7 +1046,7 @@ a.author[href$="Qwerty439"]:before {content:"Asdfgh439"}
 a.author[href$="HtotheGRIFF"]:before {content:"Mad Gay"}
 a.author[href$="viper9172"]:before {content:"Sidelong"}
 a.author[href$="Lazeraze"]:before {content:"Snowlily"}
-a.author[href$="31eipekili"]:before {content:"  :I  "}
+a.author[href$="31eipekili"]:before {content:"  :I The whispering Jew "}
 a.author[href$="derram_2"]:before {content:"derramina Diane Pie"}
 a.author[href$="Chiv_Cortland"]:before {content:"Chivvypoop"}
 a.author[href$="442B8AEF9"]:before {content:"Socialery"}
@@ -1049,7 +1058,7 @@ a.author[href$="MisanthropicCat"]:before {content: "MisanthropicPone" }
 a.author[href$="Princess_Molestia_"]:before {content: "Princess Molestia" }
 a.author[href$="Articulate_Angel"]:before {content: "ɑrtɪkjələtˈeɪnʤəl (se hara hit bringeþ þára friþhengesta pintelum)" }
 a.author[href$="08G8V8"]:before {content: "Vroom-Vroom ''Defeater 'Feet''' Trips" }
-a.author[href$=ArtfulPon3]:before {content:"WildPlastic" }
+a.author[href$=ArtfulPon]:before {content:"WildPlastic" }
 a.author[href$=Avngr75]:before {content:"Ted" }
 a.author[href$=tyl3rdurden]:before /*{ content:"Tyler Derpden" }*/ {content:"Belgium" }
 a.author[href$=raritie]:before { content:"Rarity" }
@@ -1063,7 +1072,7 @@ a.author[href$=PinkiePie2012]:before { content:"Empress Pie" }
 a.author[href$=DarkSideOfTheSun]:before { content:"DickSideOfTheSun" }
 a.author[href$=SkiidrowDash]:before { content:"Ski iDrow Toity" }
 a.author[href$=Backupusername]:before { content:"Cocksucker Shittytits" }
-a.author[href$=Speedingturtle]:before { content:"Slowyslowyslowslowturtle" }
+a.author[href$=Speedingturtle]:before { content:"Ambidextrous Tortoise" }
 a.author[href$=supercrunchy]:before { content:"Crumcju" }
 a.author[href$=Taiokoshinketsu]:before { content:"Tia" }
 a.author[href$=SolarLuna96]:before { content:"Fluttershy's Wrath" }
@@ -1086,12 +1095,14 @@ a.author[href$=XelNaga]:before { content:"Twi`Naga" }
 a.author[href$=Catharsis25]:before { content:"Catharsis" }
 a.author[href$=tehz]:before,a.author[href$=tailcalled]:before { content:"Tail Call" }
 a.author[href$=Ruuch]:before { content:"Escort Sluthooves" }
-a.author[href$=herabek]:before {content:"Herb"}
+a.author[href$=herabek]:before {content:"420 BLAZE IT FGT"}
 a.author[href$=OneOfTheseDaysLuna]:before { content:"OneOfTheseFutemotes" }
 a.author[href$=Zovistograt]:before { content:'[](/ww20 “Needy Bitch”)' }
 a.author[href$=ZZW30]:before { content:"CaptChuckles" }
-a.author[href$=mrwoo6]:before { content:"ReadingComprehension" }
-a.author[href$=JustAnotherGDB]:before { content:"Just Another Fox News Anchor" }
+a.author[href$=mrwoo6]:before { content:"Get On Skype" }
+a.author[href$=JustAnotherGDB]:before { content:"Just Another Face in the Clouds" }
+a.author[href$=Swiftskii]:before { content:"FairyFacedWizardFelcher" }
+
 
 
 /* Replacing puppy's name with a picture of derpy */
@@ -1172,14 +1183,14 @@ letter-spacing:normal;
 }
 
 /* After-name text goes here. */
-a.author[href$="AttainedAndDestroyed"]:after { content:" text"}
+a.author[href$="AttainedAndDestroyed"]:after { content:" saggy tits are swaggy tits"}
 a.author[href$="Scythesickle"]:after { content:" (wants to be a mod)"}
 a.author[href$="SRSaboutponies"]:after {content: "(trolls trolling trolls trolling trolling trolls)"}
 a.author[href$="Sponce"]:after { content:" (liek dis if u cry evry time)"}
 a.author[href$=HtotheGRIFF]:after  { content:" (Is very mad)"}
 a.author[href$=scriptea]:after { content:" (Too main pone for background pone status)" }
 a.author[href$="ClopIsDisgusting"]:after  { content:" (Exists solely to shit on other people's fun)" }
-a.author[href$=Myrandall]:after { content:" (Will applaud anything that doesn't resemble a plastic cock)" }
+a.author[href$=Myrandall]:after { content:" (Should leave them kids alone)" }
 a.author[href$=Chinch335]:after { content:" (brings the magic)" }
 a.author[href$=IllusionOf_Integrity]:after { content:" (participates in bringing the magic)" }
 a.author[href$=SkiidrowDash]:after { content:" (Lord of the Hamsters)" }
@@ -1221,10 +1232,11 @@ a.author[href$=socially_broken]:after  { content:" This guy knows the best vore 
 a.author[href$=OneOfTheseDaysLuna]:after { content:" [](/fut8)" }
 a.author[href$=hermano23]:after { content:" the entertainer" }
 a.author[href$=herabek]:after { content:" TOKIN' DAT DANK-ASS SHIT" }
-a.author[href$="10z20Luka"]:after { content:" (Wears a flaming kilt made from the blood and skin of those that have been unfortunate enough to meet him in combat. Loves horse cock, but only if it is all one color. AKA The Destroyer of Styles. Can destroy even the smallest thread with his giant after-text title. He truly shall be feared. He also employs fun-loving, cheerful racism for comedic effect (like the racist prick he is). Also, he is a douchy bag douche who douch bag with bag douche. Andy's room-mate and lover)";
+a.author[href$="10z20Luka"]:after { content:" (Wears a flaming kilt made from the blood and skin of those that have been unfortunate enough to meet him in combat. Loves horse cock, but only if it is all one color. AKA The Destroyer of Styles. Can destroy even the smallest thread with his giant after-text title. He truly shall be feared. He also employs fun-loving, cheerful racism for comedic effect (like the racist prick he is). Also, he is a douchy bag douche who douche bag with bag douche. Andy's room-mate and lover)";
  font-size:6px!important }
 a.author[href$=JIVEprinting]:after { content:" Christfag" }
 a.author[href$="Conky_"]:after { content:" In a Lot of Trouble, Mr." }
+a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 
 
 /* Any pre/post-name flair stuff goes here */ 

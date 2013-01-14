@@ -184,7 +184,7 @@ a.author[href$=Calcos323]:before {
 /************Additions*************/
 a.author[href$=JustAnotherGDB]:after {
     content: " likes the syrup hot";
-    color: green;
+    color: red;
     font-size: 10px;
     }
 a.author[href$=MisanthropicCat]:after {
@@ -398,7 +398,7 @@ a[href|="/worldtrekka"] {
     }
 
 /***********MLP-XLRG*************/
-a[href|="/fearless"], a[href|="/doctorfun"] {
+a[href|="/fearless"], a[href|="/doctorfun"], a[href|="/nsfz"], a[href|="/notsafeforzealot"] {
      display: block;
      clear: none;
      float: left;
@@ -413,6 +413,16 @@ a[href|="/doctorfun"] {
      background-position: -252px -0px;
      width: 217px;
      height: 152px;
+     }
+a[href|="/nsfz"] {
+     background-position: -469px -0px;
+     width: 250px;
+     height: 300px;
+     }
+a[href|="/notsafeforzealot"] {
+     background-position: -469px -0px;
+     width: 250px;
+     height: 300px;
      }
 
 /************Mane-sub*************/

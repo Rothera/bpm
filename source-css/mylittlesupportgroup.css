@@ -1715,10 +1715,10 @@ clear: both;
 .titlebox .usertext-body .md ol li + li {
     display: inline-block;
     float: right;
-    background: url(%%subscribers%%);
-    width: 59px;
-    height: 65px;
-    margin-top: -33px;
+    background: url(%%pphat%%);
+    width: 60px;
+    height: 60px;
+    margin-top: -35px;
     margin-left: -1px;
     margin-bottom: 4px;
     margin-right: -40px
@@ -2155,3 +2155,7 @@ clear: both;
 /*End generated CSS*/
 
 .sidecontentbox ul.content li.more {display:none;}
+
+body:not(.subscriber) div.linkflair-meta {
+display: none !important;
+}

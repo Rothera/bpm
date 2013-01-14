@@ -1242,9 +1242,9 @@ a[href|="/twigrin"]
 
 /*Sheet 3*/
 
-a[href|="/iapprove"], a[href|="/soexcited"], a[href|="/pinkieshock"], a[href|="/pinkiesing"], a[href|="/fistpump"], a[href|="/motherof"], a[href|="/tavibored"], a[href|="/scratchyay"], a[href|="/ironwilllisten"], a[href|="/wubseverywhere"], a[href|="/fluttershock"], a[href|="/vinylspin"], a[href|="/scratchspin"]
+a[href|="/iapprove"], a[href|="/soexcited"], a[href|="/pinkieshock"], a[href|="/pinkiesing"], a[href|="/fistpump"], a[href|="/motherof"], a[href|="/tavibored"], a[href|="/scratchyay"], a[href|="/ironwilllisten"], a[href|="/wubseverywhere"], a[href|="/fluttershock"]
 {
-    background-image: url(%%emotes3%%) !important;
+    background-image: url(%%emotes3%%);
     clear: none;
     display: block;
     float: left;
@@ -1306,7 +1306,12 @@ a[href|="/fluttershock"]
 
 
 a[href|="/vinylspin"], a[href|="/scratchspin"] {
-    background-image: url(%%vinylspin%%) 
+    background-image: url(%%vinylspin%%);
+    clear: none;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px
 }
 
 
