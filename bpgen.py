@@ -135,6 +135,7 @@ def main():
     css_rules = build_css(emotes.values())
     if not args.no_compress:
         bplib.condense.condense_css(css_rules)
+        bplib.condense.chunkify(css_rules) # See comment in chunkify()
 
     print("Dumping")
     with open(args.css, "w") as file:

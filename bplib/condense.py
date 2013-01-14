@@ -132,3 +132,26 @@ def condense_css(rules):
     # Locate and combine identical rules
     for (selector, props) in rules.copy().items():
         condense(props.copy())
+
+def chunkify(rules):
+    # Due to a curious limitation discovered in Chrome, rules with very large
+    # numbers of selectors break in strange ways. As of writing, the largest
+    # rule we generate has over 4200 selectors in it. The last 200 or so are
+    # ignored, breaking the emotes. More damning, sometimes the properties are
+    # applied to the entire page- and an on-hover "width: 70px" is completely
+    # unacceptable.
+    #
+    # So this is a quick hack to break up large rules. A limit of 4000
+    # selectors would probably be enough to fix this, but I'm picking a more
+    # conservative value of 1000 just in case.
+
+    for selector in list(rules.keys()):
+        parts = selector.split(",")
+        if len(parts) > 1000:
+            props = rules[selector]
+            del rules[selector]
+
+            for start in range(0, len(parts), 1000):
+                selectors = parts[start:start+1000]
+                s = ",".join(selectors)
+                rules[s] = props
