@@ -198,15 +198,17 @@ var _BPM_WARNING = 2;
 var _BPM_ERROR = 3;
 var _BPM_LOG_LEVEL = BPM_DEV_MODE ? _BPM_DEBUG : _BPM_WARNING;
 
-function _bpm_make_logger(name, level) {
+var _bpm_log_buffer = [];
+function _bpm_make_logger(msg_prefix, level) {
     return function() {
-        if(_BPM_LOG_LEVEL > level) {
-            return;
-        }
         var args = Array.prototype.slice.call(arguments);
-        args.unshift(name);
+        args.unshift(msg_prefix);
         if(window.name) {
             args.unshift("[" + window.name + "]:");
+        }
+        _bpm_log_buffer.push(args.join(" ")); // TODO: Length limit?
+        if(_BPM_LOG_LEVEL > level) {
+            return;
         }
         args.unshift("BPM:");
         _bpm_log.apply(null, args);
@@ -219,6 +221,40 @@ var bpm_warning = _bpm_make_logger("WARNING:", _BPM_WARNING); // Probably broken
 var bpm_error   = _bpm_make_logger("ERROR:", _BPM_ERROR);     // We're screwed
 
 bpm_debug("Platform:", bpm_utils.platform);
+
+var bpm_logutil = bpm_exports.logutil = {
+    /*
+     * Injects a sneaky little link at the bottom of each Reddit page that
+     * displays the logs.
+     */
+    inject_log_dumper: function() {
+        var reddit_footer = bpm_dom.find_class(document.body, "footer-parent");
+        var reddit_debuginfo = bpm_dom.find_class(reddit_footer, "debuginfo");
+
+        // <div><pre>...</pre> <a>[dump bpm logs]</a></div>
+        var container = document.createElement("div");
+        container.className = "bottommenu";
+        var output = document.createElement("pre");
+        output.style.display = "none";
+        output.style.textAlign = "left";
+        output.style.borderStyle = "solid";
+        output.style.width = "50%";
+        output.style.margin = "auto auto auto auto";
+        var link = document.createElement("a");
+        link.href = "javascript:void(0)";
+        link.innerText = "[dump bpm logs]";
+        container.appendChild(link);
+        container.appendChild(output);
+
+        link.addEventListener("click", bpm_utils.catch_errors(function(event) {
+            output.style.display = "block";
+            var logs = _bpm_log_buffer.join("\n");
+            output.textContent = logs;
+        }.bind(this)), false);
+
+        reddit_footer.insertBefore(container, reddit_debuginfo);
+    }
+};
 
 /*
  * DOM utility functions.
@@ -2752,6 +2788,8 @@ var bpm_core = bpm_exports.core = {
             //
             // Need DOM (to operate on), prefs and customcss (to work with).
             bpm_dom.dom_ready.listen(function() {
+                bpm_logutil.inject_log_dumper(); // Do this early
+
                 bpm_prefs.prefs_avail.listen(function(prefs) {
                     bpm_prefs.customcss_avail.listen(function(prefs) {
                         this.run(prefs);
