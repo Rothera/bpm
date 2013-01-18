@@ -35,7 +35,7 @@ var emote_map, sr_name2id, sr_id2name, tag_name2id, tag_id2name, bpm_backendsupp
 (function(_bpm_this) {
 "use strict";
 
-var BPM_DEV_MODE = false;
+var BPM_DEV_MODE = true;
 
 var BPM_CODE_VERSION = "56";
 var BPM_DATA_VERSION = "87";
@@ -229,7 +229,6 @@ var bpm_logutil = bpm_exports.logutil = {
      */
     inject_log_dumper: function() {
         var reddit_footer = bpm_dom.find_class(document.body, "footer-parent");
-        var reddit_debuginfo = bpm_dom.find_class(reddit_footer, "debuginfo");
 
         // <div><pre>...</pre> <a>[dump bpm logs]</a></div>
         var container = document.createElement("div");
@@ -242,7 +241,7 @@ var bpm_logutil = bpm_exports.logutil = {
         output.style.margin = "auto auto auto auto";
         var link = document.createElement("a");
         link.href = "javascript:void(0)";
-        link.innerText = "[dump bpm logs]";
+        link.textContent = "[dump bpm logs]";
         container.appendChild(link);
         container.appendChild(output);
 
@@ -252,7 +251,7 @@ var bpm_logutil = bpm_exports.logutil = {
             output.textContent = logs;
         }.bind(this)), false);
 
-        reddit_footer.insertBefore(container, reddit_debuginfo);
+        reddit_footer.appendChild(container);
     }
 };
 
