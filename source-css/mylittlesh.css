@@ -193,15 +193,21 @@ html[lang|="dd"] .id-t3_sb7rz { /*Amnesia custom story contest*/
  width:305px;
 }
 
-/* - change the name of the subscribers (from "readers" to "yourNameHere"), make 
+  /*Subscribers*/
+ .subscribers .word {
+ display: none;
+ }  
+ .subscribers .number::after {
+  content: " Members of The Midnight Society";
+  }
 
-sure to have the space before - */
-div.titlebox span.number:after {  
-  content: " Members of The Midnight Society"  
-}
-div.titlebox span.word {  
-  display: none  
-}
+ /*users here now*/
+ .users-online .word {
+ display: none;
+ }
+ .users-online .number::after {
+ content: " Currently Present";
+ }
 
 /* - alerts - use "###lorem ipsum" to activate (goes anywhere in sidebar), oh - 
 

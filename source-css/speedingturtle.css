@@ -2,7 +2,7 @@
 Chibimotes
 **/
 
-a[href|="/chibidash"],a[href|="/chibipinkie"],a[href|="/chibiphei"], a[href|="/chibitwi"],a[href|="/chibispike"],a[href|="/chibifluttershy"],a[href|="/chibirarity"],a[href|="/chibiapplejack"] {
+a[href|="/chibidash"],a[href|="/chibipinkie"],a[href|="/chibisurprise"],a[href|="/chibiphei"], a[href|="/chibitwi"],a[href|="/chibispike"],a[href|="/chibifluttershy"],a[href|="/chibirarity"],a[href|="/chibiapplejack"] {
 background-image:url(%%chibimotes%%);
 display: block;
 clear:none;
@@ -19,7 +19,11 @@ width:135px;
 height:270px;
 background-position: -160px 0px
 }
-
+a[href|="/chibisurprise"] {
+width:135px;
+height:270px;
+background-position: -715px 0px
+}
 a[href|="/chibitwi"], a[href|="/chibiphei"] {
 width:235px;
 height:230px;
@@ -140,13 +144,13 @@ a[href|="/manlytoast"] {
     background-position: -0px -0px
     }
 
-a[href|="/bobbobbington"] {
+a[href|="/notbobbobbington"] {
     display: block;
     clear: none;
     float: left;
     background-image: url(%%bobbobbington%%)
     }
-a[href|="/bobbobbington"] {
+a[href|="/notbobbobbington"] {
     width: 70px;
     height: 73px;
     background-position: -0px -0px
@@ -227,11 +231,129 @@ a[href|="/prepareyouranus"] {
     list-style: none
     }
 
+.redditname > a {
+    font-size: 0;
+}
+.redditname > a:before {
+font-size: 16px !important;
+content: "Speedingturtle";
+text-decoration: line-through;
+}
+.redditname > a:after {
+font-size: 16px !important;
+content: " Phei's emote dump";
+text-decoration:none !important;
+}
 
-/* Settings */
-#newlink .infobar:before{content:"Do not post Hoof Beat 2 or any other pay to view works unless the artist or author has allowed it to be released publicly."}
+
+/* Settings 
+#newlink .infobar:before{content:"Do not post Hoof Beat 2 or any other pay to view works unless the artist or author has allowed it to be released publicly."}*/
 
 
 /* Supporting Code */
 #newlink .infobar:before{display:block;border:1px solid red;background:#F77;padding:5px;margin-bottom:5px}
 
+
+a[href|='/flutterwut'],a[href|='/twiscarf'],a[href|='/twiheadphones'],a[href|='/twigift'],a[href|='/twisnuggle1'],a[href|='/twisnuggle2'],a[href|='/scootabass'],a[href|='/alan'],a[href|='/ppsit'],a[href|='/abjuggle'],a[href|='/pheisock'],a[href|='/adventureflutters'],a[href|='/twihmm']{
+background-image: url(%%diabeetus%%);
+display: block;
+float: left
+}
+
+a[href|='/flutterwut'] {
+	background-position: -211px -12px;
+	width: 299px;
+	height: 171px;
+}
+a[href|='/twiscarf'] {
+	background-position: -25px -186px;
+	width: 158px;
+	height: 191px;
+}
+a[href|='/twiheadphones'] {
+	background-position: -187px -185px;
+	width: 138px;
+	height: 198px;
+}
+a[href|='/twigift'] {
+	background-position: -332px -193px;
+	width: 144px;
+	height: 190px;
+}
+a[href|='/twisnuggle1'] {
+	background-position: -3px -407px;
+	width: 181px;
+	height: 135px;
+}
+a[href|='/twisnuggle2'] {
+	background-position: -356px -401px;
+	width: 139px;
+	height: 234px;
+}
+a[href|='/scootabass'],a[href|='/alan'] {
+	background-position: -108px -553px;
+	width: 222px;
+	height: 236px;
+}
+a[href|='/ppsit'] {
+	background-position: -345px -651px;
+	width: 149px;
+	height: 257px;
+}
+a[href|='/abjuggle'] {
+	background-position: -15px -787px;
+	width: 169px;
+	height: 217px;
+}
+a[href|='/pheisock'] {
+	background-position: -228px -911px;
+	width: 242px;
+	height: 122px;
+}
+a[href|='/adventureflutters'] {
+	background-position: -8px -1042px;
+	width: 212px;
+	height: 210px;
+}
+a[href|='/twihmm'] {
+	background-position: -349px -1097px;
+	width: 135px;
+	height: 170px;
+}
+
+a[href|="/raribee"],a[href|="/beelight"],a[href|="/twibee"],a[href|="/applebee"],a[href|="/pinkiebee"],a[href|="/flutterbee"],a[href|="/rainbee"] {
+background-image: url(%%beemotes%%);
+display: block;
+float: left
+}
+
+a[href|="/raribee"] {
+	background-position: -31px -28px;
+	width: 125px;
+	height: 84px;
+}
+a[href|="/beelight"],a[href|="/twibee"] {
+	background-position: -174px -25px;
+	width: 107px;
+	height: 88px;
+}
+a[href|="/applebee"] {
+	background-position: -292px -34px;
+	width: 117px;
+	height: 73px;
+}
+a[href|="/pinkiebee"] {
+	background-position: -434px -18px;
+	width: 137px;
+	height: 92px;
+}
+a[href|="/flutterbee"] {
+	background-position: -585px -21px;
+	width: 142px;
+	height: 94px;
+}
+a[href|="/rainbee"] {
+	background-position: -761px -30px;
+	width: 199px;
+	height: 76px;
+}

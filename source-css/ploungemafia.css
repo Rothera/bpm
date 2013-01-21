@@ -343,7 +343,7 @@ left: 0;
     font-size: 10px;
     color: #369;
     cursor: pointer;
-    content: "best Taco ♥";
+    content: "taco";
 }
 
 /* No flair on modbox */
@@ -419,6 +419,22 @@ a.author[href$="DiscordDraconequus"]:after {
     display: block;
     letter-spacing: normal
     }
+a.author[href$="Phei"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="Phei"]:after {
+    content: "Pheilight";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal;
+    }
+
+/* I CAN ADD SPECIAL NAMES FOR WHOEVER I WANT */
 
 
 /* Juz (PSST I DEFINITELY DIDN'T STEAL THIS FROM THE PLOUNGE ARE YOU CRAZY PFFFFT) */
@@ -438,6 +454,24 @@ a.author[href$="DiscordDraconequus"]:after {
     display: block;
     letter-spacing: normal;
     }
+/* Pretzels */
+/* 
+#siteTable_t3_11f1rk a.author {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px;
+    }
+    
+
+.usertext input[value$="a"] + .usertext-body a[href=" "], #siteTable_t3_11f1rk, a.author:after {
+    content: "test";
+    font-size: 10px !important;
+    visibility: visible !important; 
+    display: block;
+    letter-spacing: normal;   
+} */
 
 /******************
 shy emote

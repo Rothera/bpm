@@ -30,7 +30,7 @@ height:100px;
 
 }
 
-.side h6 a[href="http://redd.it/15vcd2"]   /* make sure capitalization matches exactly */
+.side h6 a[href="http://lunaloves.us/"]   /* make sure capitalization matches exactly */
 {
     color: #ff4500;
     text-decoration: underline;
@@ -356,6 +356,19 @@ a[href|="/murk"]{ background-position: 0 -1737px; width: 103px; height: 150px; }
 a[href|="/plotseverywhere"]{ background-position: 0 -1937px; width: 180px; height: 150px; }
 a[href|="/psychoshy"]{ background-position: -250px 0; width: 98px; height: 150px;}
 a[href|="/psychoshy"]:hover{background-position: -250px -200px; width: 98px; height: 150px;}
+
+a[href|="/lpmintals"], a[href|="/redeye"]
+{
+display: block;
+clear: none;
+float: left;
+width: 70px;
+height: 70px;
+background-image: url(%%foe-em5-v2%%);
+}
+ 
+a[href|="/lpmintals"]{ background-position: 0 0; width: 71px; height: 100px; } 
+a[href|="/redeye"]{ background-position: 0 -150px; width: 64px; height: 100px; } 
 
 
 a[href|="/advicebj"]

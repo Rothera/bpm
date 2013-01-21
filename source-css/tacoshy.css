@@ -439,10 +439,41 @@ a[href|="/pineapple"], a[href|="/floutsapple"] {
     display: block;
     clear: none;
     float: left;
-    width: 160px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     background-image: url(%%Pineapple%%)
     }
+a[href|="/tacoshake"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 347px;
+    height: 434px;
+    background-image: url(%%tacoshake%%)
+    }
+/* Taco-emotes sprite sheet */
+
+a[href|="/tacotunes"], a[href|="/tacomusic"], a[href|="/tacopretty"] {  
+
+display: block;
+clear: none;
+float: left;
+height: 400px;
+background-image: url(%%tacomotes%%)
+}
+
+a[href|="/tacotunes"], a[href|="/tacomusic"] {
+
+width: 450px;
+background-position: -0px -0px
+}
+
+a[href|="/tacopretty"] {
+
+width: 240px;
+background-position: -451px -0px 
+}
+
 /* ----------- Name Change ---------------- */
 
 
@@ -726,7 +757,7 @@ a[href|="/tacos"]
     float: left;
     width: 500px;
     height: 505px;
-    background-image: url(%%tacoshy-2%%) !important
+    background-image: url(%%tacoshy-2%%)
 }
 /* 0 */
 .usertext input[value$="0"]+.usertext-body a[href="/tacos"]
@@ -738,4 +769,358 @@ a[href|="/tacos"]
     width: 330px;
     height: 400px;
     background-image: url(%%tacodance%%)
+}
+
+/* 1 */
+.usertext input[value$="1"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 364px;
+    height: 500px;
+    background-image: url(%%t18%%) !important
+}
+.usertext input[value$="2"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 600px;
+    height: 646px;
+    background-image: url(%%bussiness-tacoSS%%) !important
+}
+.usertext input[value$="3"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 534px;
+    height: 423px;
+    background-image: url(%%Pikachu-sad%%) !important
+}
+.usertext input[value$="4"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 600px;
+    height: 553px;
+    background-image: url(%%tacostare%%) !important
+}
+.usertext input[value$="5"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 336px;
+    height: 372px;
+    background-image: url(%%le-monkey-face%%) !important
+}
+.usertext input[value$="6"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 600px;
+    height: 337px;
+    background-image: url(%%tacodownerS%%) !important
+}
+.usertext input[value$="7"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 395px;
+    background-image: url(%%aaaaaaaaaaaaaaa%%) !important
+}
+.usertext input[value$="8"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 569px;
+    height: 556px;
+    background-image: url(%%tacolean%%) !important
+}
+.usertext input[value$="9"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 569px;
+    background-image: url(%%wet-maned-tacoshy%%) !important
+}
+.usertext input[value$="a"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 883px;
+    height: 1080px;
+    background-image: url(%%tacohug%%) !important
+}
+.usertext input[value$="b"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 640px;
+    height: 400px;
+    background-image: url(%%bry-of-approval%%) !important
+    
+}
+.usertext input[value$="c"]+.usertext-body a[href="/tacos"]
+{
+background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 550px;
+    height: 568px;
+    background-image: url(%%Apology-Taco%%) !important
+}
+.usertext input[value$="d"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 500px;
+    background-image: url(%%datass%%) !important
+}
+.usertext input[value$="e"]+.usertext-body a[href="/tacos"]
+{
+   width: 360px;
+    height: 360px;
+    background-image: url(%%tacoclop%%);
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    margin-left: 3px;
+    margin-right: 3px
+}
+.usertext input[value$="f"]+.usertext-body a[href="/tacos"]
+{
+    width: 512px;
+    height: 517px;
+    background-image: url(%%flutter-cryB%%);
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+}
+.usertext input[value$="g"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 741px;
+    height: 1000px;
+    background-image: url(%%gaptaco%%) !important
+}
+.usertext input[value$="h"]+.usertext-body a[href="/tacos"]
+{
+ background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 560px;
+    background-image: url(%%beforeitwascool%%) !important
+}
+.usertext input[value$="i"]+.usertext-body a[href="/tacos"]
+{
+    width: 400px;
+    height: 400px;
+    background-image: url(%%tacosnack%%);
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    margin-left: 3px;
+    margin-right: 3px
+}
+.usertext input[value$="j"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 400px;
+    height: 225px;
+    background-image: url(%%butttacos%%)
+}
+.usertext input[value$="k"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 570px;
+    height: 490px;
+    background-image: url(%%tacosalute%%) !important
+}
+.usertext input[value$="l"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 550px;
+    height: 342px;
+    background-image: url(%%tacoshywillmurderyouuntilyouredead%%) !important
+}
+.usertext input[value$="m"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 550px;
+    height: 549px;
+    background-image: url(%%murdershy%%) !important
+}
+.usertext input[value$="n"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 640px;
+    height: 800px;
+    background-image: url(%%tacothis%%) !important
+}
+.usertext input[value$="o"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 400px;
+    height: 400px;
+    background-image: url(%%tacowithit%%) !important
+}
+.usertext input[value$="p"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 500px;
+    height: 419px;
+    background-image: url(%%taconibbles%%) 
+}
+.usertext input[value$="q"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 399px;
+    height: 399px;
+    background-image: url(%%tacobop%%)
+}
+.usertext input[value$="r"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 458px;
+    height: 414px;
+    background-image: url(%%tacosmug%%) !important
+}
+.usertext input[value$="s"]+.usertext-body a[href="/tacos"]
+{
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 234px;
+    background-image: url(%%chocotaco%%) !important
+}
+.usertext input[value$="t"]+.usertext-body a[href="/tacos"]
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 225px;
+    height: 150px;
+    background-image: url(%%tacosup%%)
+}
+.usertext input[value$="u"]+.usertext-body a[href="/tacos"]
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 300px;
+    height: 256px;
+    background-image: url(%%tacolove%%)
+}
+.usertext input[value$="v"]+.usertext-body a[href="/tacos"]
+{
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%tacospriteshrug%%);
+    width: 300px;
+    height: 300px;
+     background-position: -0px -0px
+}
+.usertext input[value$="w"]+.usertext-body a[href="/tacos"]
+{
+display: block;
+clear: none;
+float: left;
+height: 400px;
+background-image: url(%%tacomotes%%);
+width: 240px;
+background-position: -451px -0px;
+}
+.usertext input[value$="x"]+.usertext-body a[href="/tacos"]
+{
+
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 200px;
+    background-image: url(%%ohtaco%%)
+}
+.usertext input[value$="y"]+.usertext-body a[href="/tacos"]
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 200px;
+    background-image: url(%%ohtaco%%)
+}
+.usertext input[value$="z"]+.usertext-body a[href="/tacos"]
+{
+display: block;
+clear: none;
+float: left;
+height: 400px;
+background-image: url(%%tacomotes%%);
+width: 450px;
+background-position: -0px -0px;
 }

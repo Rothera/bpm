@@ -16,17 +16,17 @@
 
 /*Oh God! Not the Bees!*/
 
-/*Changing readers in sidebar*/
+/*Changing readers in sidebar*/ 
 div.titlebox span.word {
     display: none
     }
 div.titlebox .subscribers span.number:after
 {
-    content:" Giant Hats";
+    content:" Happy Bees";
 }
 div.titlebox .users-online span.number:after
 {
-    content:" being worn";
+    content:" buzzing about";
 }
 
 .sidecontentbox .flair-cmc, .titlebox .flair-cmc, .sidecontentbox .flair-cmcchinchy, .titlebox .flair-cmcchinchy, .sidecontentbox .flair-pinkiepiecmc, .titlebox .flair-pinkiepiecmc {
@@ -1339,6 +1339,7 @@ a.author[href$="/3holes2tits1fork"]:after {
     display: inline-block;
     width: 16px;
     height: 16px;
+text-indent:-9999px;
      }
 
 .flair-rainbowdash {
@@ -1732,11 +1733,11 @@ Random Plounge Buggery
     clear: both;
     text-align: center;
     width: 100%;
-    background-image: url(%%sbstare-equalizer%%);
+    background-image: url(%%sbstare-bee%%);
     /*background-position: bottom center;*/
     background-repeat: no-repeat;
     margin-bottom: -0px;
-    background-position: 50% 250px;/*Path's OCD was here. Fuck yo OCD, ~Veller*/
+    background-position: 50% 100%;/*Path's OCD was here. Fuck yo OCD, ~Veller :((( ~Path*/
     }
 html:lang(nv) .side p a[href="http://reddit.com/r/MLPLounge/"]
 {
@@ -1766,11 +1767,11 @@ display: none !important;
 .side a[href="http://www.reddit.com/r/MLPLounge/new/"]{
    display: block;
    height: 70px;
-   width: 64px;
-   background: url(%%filly-punch%%);
+   width: 70px;
+   background: url(%%tiny-bee%%);
    position: fixed; 
    top: 260px;
-   right: 0px;
+   right: -10px;
    z-index: 999;
 }
 

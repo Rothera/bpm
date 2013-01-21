@@ -28,7 +28,7 @@ lolyeah organization in foodmanes okay
 
 /* Background Image (Avebone, don't change this(Fixed it for you ~Quill)) */
 body {
-	background: url(%%fillytacoback%%) no-repeat fixed center bottom transparent !important;
+	background: url(%%namipoo%%) no-repeat fixed center bottom transparent !important;
 }
 
 #siteTable .entry.dislikes .buttons:before {
@@ -157,6 +157,23 @@ a.author[href$="YarnTheory"]:after {
     font-size: 10px !important;
     visibility: visible !important;
     display: block;
+    letter-spacing: normal
+    }
+
+a.author[href$="DaylightDarkle"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="DaylightDarkle"]:after {
+    content: "Jarmaul";
+    font-size: 23px !important;
+    font-family: "Impact", Charcoal;
+    visibility: visible !important;
+    display: block;
+    color: #C8F526;
     letter-spacing: normal
     }
 
@@ -357,11 +374,12 @@ a.author[href$="bryvood"] {
     letter-spacing: -20px
     }
 a.author[href$="bryvood"]:after {
-    content: "Not Shaggy Anymore";
+    content: "Becoming Shaggy Again";
     /*font-family: "wingdings", cursive;*/
-    font-size: 12px !important;
+    font-size: 16px !important;
     visibility: visible !important;
     display: block;
+    color: #00ffff;
     letter-spacing: normal
     }
 
@@ -373,7 +391,7 @@ a.author[href$="Generic_Builder"] {
     letter-spacing: -20px
     }
 a.author[href$=Generic_Builder]:before {
-    content: "Wookie";
+    content: "http://www.f-list.net/c/genericbuilder";
     font-size: 18px !important;
     visibility: visible !important;
     display: block;
@@ -486,6 +504,7 @@ a.author[href$="The_Jaxom"] {
 a.author[href$="The_Jaxom"]:after {
     content: "Jolly Jim the Seacow";
     font-size: 25px !important;
+    font-family: "Verdana", serif;
     visibility: visible !important;
     display: block;
     color: #FF7F00;
@@ -501,9 +520,9 @@ a.author[href$="Avebone"] {
 a.author[href$="Avebone"]:after {
     content: "The Cripple Casanova";
     /*font-family: "wingdings", cursive;*/
-    font-size: 12px !important;
+    font-size: 18px !important;
     visibility: visible !important;
-    /*color: #008000;*/
+    color: #9574a8;
     display: block;
     letter-spacing: normal
     }
