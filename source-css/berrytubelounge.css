@@ -529,3 +529,16 @@ background-position: -0px -560px
 a[href|="/nomeansno"] {
 background-position: -0px -700px
 }
+
+.subscribers .word {
+        display: none;
+        }  
+.subscribers .number::after {
+        content: " TerryBoobers";
+        }
+    .users-online .word {
+        display: none;
+        }  
+    .users-online .number::after {
+        content: " TerryBoobers online now";
+        }

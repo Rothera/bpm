@@ -97,6 +97,20 @@ a.author[href$="Sangfroidish"]:after {
     display: block;
     letter-spacing: normal;
     }
+a.author[href$="ctare"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px;
+    }
+a.author[href$="ctare"]:after {
+    content: "Cone Engineer Master Interpreter Sensei Editor Card Czar Commander Overlord Wearwolf Jesus Captain Care Bear Ctare";
+    font-size: 10px !important;
+    visibility: visible !important; 
+    display: block;
+    letter-spacing: normal;
+    }
 
 
 /*Self-Post Image, No Image, Spoiler Image*/
@@ -342,4 +356,5 @@ body.res-nightmode:first-of-type .flair { background-color: transparent!importan
 .flair-bed {background-image: url(%%bedflair%%); width:30px; height:19px}
 .flair-ass {background-image: url(%%assflair%%); width:26px; height:30px}
 .flair-penis {background-image: url(%%apenisflair%%); width:47px; height:10px}
+.flair-hat {background-image: url(%%hatlfair%%); width:30px; height:28px}
 

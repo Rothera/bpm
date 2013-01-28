@@ -55,6 +55,12 @@ hr {
 * Flair
 */
 
+.flair-murder { 
+    background-image: none !important;
+    width: auto !important;
+    height: auto !important;
+}
+
 .flair {
     padding: 0;
     background: none;
@@ -419,19 +425,27 @@ a.author[href$="DiscordDraconequus"]:after {
     display: block;
     letter-spacing: normal
     }
+/* Removed cause taco's a butt. */
+
 a.author[href$="Phei"] {
-    font-size: 0px !important;
-    display: inline-block;
-    vertical-align: bottom;
-    overflow: hidden;
-    letter-spacing: -20px
-    }
+   font-size:0!important; 
+   overflow:hidden; 
+   display:inline-block; 
+   content: "";
+   }
+
+a.author[href$="Phei"]:before {
+    font-size:10px!important; 
+    visibility:visible!important;
+    content: "Phei ";
+    } 
 a.author[href$="Phei"]:after {
-    content: "Pheilight";
+    content: " thinks Twilight Sparkle is worst pony";
     font-size: 10px !important;
     visibility: visible !important;
-    display: block;
     letter-spacing: normal;
+    display: inline-block;
+/*  color: #FFFF33 */
     }
 
 /* I CAN ADD SPECIAL NAMES FOR WHOEVER I WANT */

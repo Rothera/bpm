@@ -453,12 +453,12 @@ a[href|="/tacoshake"] {
     }
 /* Taco-emotes sprite sheet */
 
-a[href|="/tacotunes"], a[href|="/tacomusic"], a[href|="/tacopretty"] {  
+a[href|="/tacotunes"], a[href|="/tacomusic"], a[href|="/tacopretty"], a[href|="/tacoman"], a[href|="/tacomare"] {  
 
+height: 400px;
 display: block;
 clear: none;
 float: left;
-height: 400px;
 background-image: url(%%tacomotes%%)
 }
 
@@ -470,8 +470,14 @@ background-position: -0px -0px
 
 a[href|="/tacopretty"] {
 
-width: 240px;
+width: 225px;
 background-position: -451px -0px 
+}
+
+a[href|="/tacoman"], a[href|="/tacomare"] {
+
+width: 312px;
+background-position: -677px -0px
 }
 
 /* ----------- Name Change ---------------- */
@@ -1092,7 +1098,7 @@ clear: none;
 float: left;
 height: 400px;
 background-image: url(%%tacomotes%%);
-width: 240px;
+width: 225px;
 background-position: -451px -0px;
 }
 .usertext input[value$="x"]+.usertext-body a[href="/tacos"]

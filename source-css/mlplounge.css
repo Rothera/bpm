@@ -20,13 +20,14 @@
 div.titlebox span.word {
     display: none
     }
+
 div.titlebox .subscribers span.number:after
 {
-    content:" Happy Bees";
+    content:" people";
 }
 div.titlebox .users-online span.number:after
 {
-    content:" buzzing about";
+    content:" not having fun";
 }
 
 .sidecontentbox .flair-cmc, .titlebox .flair-cmc, .sidecontentbox .flair-cmcchinchy, .titlebox .flair-cmcchinchy, .sidecontentbox .flair-pinkiepiecmc, .titlebox .flair-pinkiepiecmc {
@@ -37,14 +38,10 @@ div.titlebox .users-online span.number:after
     display: none;
 }
 
-/* Mod name modification. */
 .titlebox .bottom .author, .sidecontentbox .author {
     display: inline-block;
     }
-.sidecontentbox a.author[href$="/megadeus"]:before {
-    content: "DOUBLE MODERATOR ";
-    color: #EE2C2C
-    }
+
 /*
 .sidecontentbox a.author[href$="/IllusionOf_Integrity"]:before {
     content: "[](/b06 ''";
@@ -614,7 +611,7 @@ a[href|="/b00"], a[href|="/b01"], a[href|="/b02"], a[href|="/b03"], a[href|="/b0
     float: left;
     width: 70px;
     height: 70px;
-    background-image: url(%%bmotes%%) !important
+    background-image: url(%%bmotes-invertedtwi%%) !important
     }
 a[href|="/rb00"], a[href|="/rb01"], a[href|="/rb02"], a[href|="/rb03"], a[href|="/rb04"], a[href|="/rb05"], a[href|="/rb06"], a[href|="/rb07"], a[href|="/rb08"], a[href|="/rb09"], a[href|="/rb10"], a[href|="/rb11"], a[href|="/rb12"], a[href|="/rb13"], a[href|="/rb14"], a[href|="/rb15"], a[href|="/rb16"], a[href|="/rb17"], a[href|="/rb18"], a[href|="/rb19"], a[href|="/rb20"], a[href|="/rb21"], a[href|="/rb22"], a[href|="/rb23"], a[href|="/rb24"], a[href|="/rb25"], a[href|="/rb26"], a[href|="/rb27"], a[href|="/rb28"], a[href|="/rb29"], a[href|="/rb30"], a[href|="/rb31"], a[href|="/rb32"], a[href|="/rb34"], a[href|="/rb35"], a[href|="/rb36"], a[href|="/rb37"], a[href|="/rb38"], a[href|="/rb39"], a[href|="/rflutterfear"], a[href|="/rajcower"], a[href|="/rfluttersrs"], a[href|="/rppshrug"], a[href|="/rfluttershh"], a[href|="/rajugh"], a[href|="/rtrixiesmug"], a[href|="/rajwut"], a[href|="/rabwut"], a[href|="/rrarityjudge"], a[href|="/rppboring"], a[href|="/rajsly"], a[href|="/rraritydress"], a[href|="/rspikenervous"], a[href|="/rnewrainbowdash"], a[href|="/rflutteryay"], a[href|="/rraritywut"], a[href|="/rflutterwink"], a[href|="/rtwisquint"], a[href|="/rmanspike"], a[href|="/rrarityprimp"], a[href|="/rrarityyell"], a[href|="/reeyup"], a[href|="/rtakealetter"], a[href|="/rnoooo"], a[href|="/rsquintyjack"], a[href|="/rdumbfabric"], a[href|="/rrarityannoyed"], a[href|="/rraritywhine"], a[href|="/rcockatrice"], a[href|="/rtwirage"], a[href|="/rfluttershy"], a[href|="/rrdsmile"], a[href|="/rrdwut"], a[href|="/rspikepushy"], a[href|="/rraritywhy"], a[href|="/rsoawesome"], a[href|="/rrdcool"], a[href|="/rfacehoof"], a[href|="/rppseesyou"], a:hover[href|="/pinkiedance"], a:hover[href|="/sweetiedance"], a:hover[href|="/dashdance"] {
     display: block;
@@ -622,8 +619,8 @@ a[href|="/rb00"], a[href|="/rb01"], a[href|="/rb02"], a[href|="/rb03"], a[href|=
     float: left;
     width: 70px;
     height: 70px;
-    background-image: url(%%bmotes-flipped%%) !important
-    }
+    background-image: url(%%bmotes-flipped-invertedtwi%%) !important
+    } 
 a[href|="/b00"], a[href|="/rb00"], a[href|="/flutterfear"], a[href|="/rflutterfear"] {
     background-position: -0% -0%
     }
@@ -1733,7 +1730,7 @@ Random Plounge Buggery
     clear: both;
     text-align: center;
     width: 100%;
-    background-image: url(%%sbstare-bee%%);
+    background-image: url(%%AmbassadorBelle%%);
     /*background-position: bottom center;*/
     background-repeat: no-repeat;
     margin-bottom: -0px;
@@ -1757,21 +1754,27 @@ display: none !important;
     padding-right: 50px;
 }
 
-
+/*Giant idiot headers*/
 .content h3 {
     font-size: 30pt;
     font-weight: bolder;
     color: red;
 }
 
+h3.imgTitle{
+    font-size: 13px;
+    padding: 2px;
+    color: #000;
+}
+
 .side a[href="http://www.reddit.com/r/MLPLounge/new/"]{
    display: block;
    height: 70px;
    width: 70px;
-   background: url(%%tiny-bee%%);
+   background: url(%%AmbassadorRarity%%);
    position: fixed; 
    top: 260px;
-   right: -10px;
+   right: -5px;
    z-index: 999;
 }
 
@@ -1970,7 +1973,7 @@ background-position: -140px -420px;
 
 /*Table Backgrounds*/
 .side .md table:nth-of-type(1) tr:nth-of-type(odd) td + td:after {background:url(%%amotes%%);}
-.side .md table:nth-of-type(2) tr:nth-of-type(odd) td + td:after {background:url(%%bmotes%%);}
+.side .md table:nth-of-type(2) tr:nth-of-type(odd) td + td:after {background:url(%%bmotes-invertedtwi%%);}
 .side .md table:nth-of-type(3) tr:nth-of-type(odd) td + td:after {background:url(%%cmotes%%);}
 .side .md table:nth-of-type(4) tr:nth-of-type(odd) td + td:after {background:url(%%emotes%%);}
 .side .md table td {padding:0;}

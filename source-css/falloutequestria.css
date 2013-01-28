@@ -195,6 +195,7 @@ clear: none;
 float: left;
 width: 70px;
 height: 70px;
+background-repeat: no-repeat;
 background-image: url(%%foe-em1-v6%%);
 }
 
@@ -230,6 +231,7 @@ clear: none;
 float: left;
 width: 70px;
 height: 70px;
+background-repeat: no-repeat;
 background-image: url(%%foe-em2-v27%%);
 }
 
@@ -308,6 +310,7 @@ clear: none;
 float: left;
 width: 70px;
 height: 70px;
+background-repeat: no-repeat;
 background-image: url(%%foe-em3-v34%%);
 }
 
@@ -339,6 +342,7 @@ clear: none;
 float: left;
 width: 70px;
 height: 70px;
+background-repeat: no-repeat;
 background-image: url(%%foe-em4-v9%%);
 }
 
@@ -357,18 +361,20 @@ a[href|="/plotseverywhere"]{ background-position: 0 -1937px; width: 180px; heigh
 a[href|="/psychoshy"]{ background-position: -250px 0; width: 98px; height: 150px;}
 a[href|="/psychoshy"]:hover{background-position: -250px -200px; width: 98px; height: 150px;}
 
-a[href|="/lpmintals"], a[href|="/redeye"]
+a[href|="/lpflirty"], a[href|="/lpmintals"], a[href|="/redeye"]
 {
 display: block;
 clear: none;
 float: left;
 width: 70px;
 height: 70px;
-background-image: url(%%foe-em5-v2%%);
+background-repeat: no-repeat;
+background-image: url(%%foe-em5-v1%%);
 }
- 
-a[href|="/lpmintals"]{ background-position: 0 0; width: 71px; height: 100px; } 
-a[href|="/redeye"]{ background-position: 0 -150px; width: 64px; height: 100px; } 
+
+a[href|="/lpflirty"]{ background-position: 0 0; width: 137px; height: 150px; } 
+a[href|="/lpmintals"]{ background-position: 0 -200px; width: 71px; height: 100px; } 
+a[href|="/redeye"]{ background-position: 0 -350px; width: 64px; height: 100px; } 
 
 
 a[href|="/advicebj"]
@@ -423,6 +429,7 @@ a[href|="/lpsign"]{
     line-height: 24px !important;
     overflow: hidden !important;
     cursor: default !important;
+    background-repeat: no-repeat !important;
     }
     
 a[href|="/lpsign"] em{
@@ -448,6 +455,7 @@ clear: none;
 float: left;
 width: 200px;
 height: 221px;
+background-repeat: no-repeat;
 background-image: url(%%rsmash-v3%%);
 }
 a[href|='/rampagesmash'] {background-position: 0px 0px}
@@ -459,10 +467,22 @@ clear: none;
 float: left;
 width: 88px;
 height: 92px;
+background-repeat: no-repeat;
 background-image: url(%%calamity%%);
 }
 a[href|='/calamitytrot'] {background-position: 0px 0px}
 
+a[href|="/gravityfalls"]
+{
+display: block;
+clear: none;
+float: left;
+width: 171px;
+height: 150px;
+background-repeat: no-repeat;
+background-image: url(%%gravityfalls%%);
+}
+a[href|='/gravityfalls'] {background-position: 0px 0px}
 
 /* Flair */
 
