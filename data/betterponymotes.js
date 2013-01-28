@@ -42,6 +42,14 @@ var BPM_DATA_VERSION = "88";
 var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us";
 var BPM_OPTIONS_PAGE = BPM_RESOURCE_PREFIX + "/options.html";
 
+// Domain names on which the global emote converter will refuse to run,
+// typically due to bad behavior. A common problem is JS attempting to
+// dynamically manipulate page stylesheets, which will fail when it hits ours
+// (as reading links back to chrome addresses are generally forbidden).
+var BPM_DOMAIN_BLACKLIST = [
+    "read.amazon.com" // Reads document.styleSheets and crashes
+];
+
 /*
  * Inspects the environment for global variables.
  *
@@ -2804,6 +2812,14 @@ var bpm_core = bpm_exports.core = {
                 }.bind(this));
             }.bind(this));
         } else {
+            // Check against domain blacklist
+            for(var i = 0; i < BPM_DOMAIN_BLACKLIST.length; i++) {
+                if(BPM_DOMAIN_BLACKLIST[i] == document.location.host) {
+                    bpm_warning("Refusing to run on '" + document.location.host + "': domain is blacklisted (probably broken)");
+                    return;
+                }
+            }
+
             bpm_dom.dom_ready.listen(function() {
                 bpm_prefs.prefs_avail.listen(function(prefs) {
                     bpm_prefs.customcss_avail.listen(function(prefs) {
