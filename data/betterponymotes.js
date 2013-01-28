@@ -2592,8 +2592,15 @@ var bpm_core = bpm_exports.core = {
                 var svg_src = [
                     '<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg"',
                     ' style="height: 0; width: 0; position: fixed">',
-                    '  <filter id="bpm-invert">',
+                    '  <filter id="bpm-darkle">',
                     '    <feColorMatrix in="SourceGraphic" type="hueRotate" values="180"/>',
+                    '  </filter>',
+                    '  <filter id="bpm-invert">',
+                    '    <feColorMatrix in="SourceGraphic" type="matrix" values="',
+                    '                   -1  0  0 0 1',
+                    '                    0 -1  0 0 1',
+                    '                    0  0 -1 0 1',
+                    '                    0  0  0 1 0"/>',
                     '  </filter>',
                     '</svg>'
                 ].join("\n");
@@ -2601,7 +2608,8 @@ var bpm_core = bpm_exports.core = {
                 div.innerHTML = svg_src;
                 document.body.insertBefore(div.firstChild, document.body.firstChild);
 
-                bpm_browser.add_css(".bpflag-i { filter: url(#bpm-invert); }");
+                bpm_browser.add_css(".bpflag-i { filter: url(#bpm-darkle); }" +
+                                    ".bpflag-invert { filter: url(#bpm-invert); }");
             }
         }.bind(this));
     },

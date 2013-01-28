@@ -281,11 +281,15 @@
     font-family: Tahoma, Geneva, sans-serif
 }
 
-/* Basic filters */
+/*
+ * Basic filters: Chrome supports filter(), Firefox uses an SVG hack in bpm.js,
+ * and Opera seems to support neither of these.
+ */
 .bpflag-i {
-    -webkit-filter: hue-rotate(180deg); /* Chrome */
-    /* Firefox: handled in bpm.js due to problems */
-    /* Opera: ??? neither of these approaches work */
+    -webkit-filter: hue-rotate(180deg);
+}
+.bpflag-invert {
+    -webkit-filter: invert(100%);
 }
 
 /*
