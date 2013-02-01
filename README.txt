@@ -105,17 +105,18 @@ REPOSITORY STRUCTURE
         chrome-updates.xml  Also useless.
 
     # Addon directories
-    chrome/                 Chrome addon. This gets zipped up into the CRX file
-        background.html     Background page. Holds prefs and things for the addon.
-        background.js       Background code.
-        manifest.json       Manifest file.
-    firefox/                Firefox addon. Built into the XPI by cfx.
-        lib/main.js         Backend script.
-        package.json        Addon manifest.
-    opera/                  Opera extension directory
-        background.js       Backend script.
-        config.xml          Addon manifest.
-        index.html          Backend page.
+    addon/
+        chrome/             Chrome addon. This gets zipped up into the CRX file
+            background.html Background page. Holds prefs and things for the addon.
+            background.js   Background code.
+            manifest.json   Manifest file.
+        firefox/            Firefox addon. Built into the XPI by cfx.
+            lib/main.js     Backend script.
+            package.json    Addon manifest.
+        opera/              Opera extension directory
+            background.js   Backend script.
+            config.xml      Addon manifest.
+            index.html      Backend page.
 
     # Data files
     data/                   Misc data files you need to maintain.

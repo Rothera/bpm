@@ -47,9 +47,9 @@ def main():
     parser.add_argument("-v")
     args = parser.parse_args()
 
-    fx_package = JsonSource("firefox/package.json", "version")
-    cr_package = JsonSource("chrome/manifest.json", "version")
-    o_package = XmlSource("opera/config.xml", lambda t: t.getroot().attrib["version"])
+    fx_package = JsonSource("addon/firefox/package.json", "version")
+    cr_package = JsonSource("addon/chrome/manifest.json", "version")
+    o_package = XmlSource("addon/opera/config.xml", lambda t: t.getroot().attrib["version"])
     files = (fx_package, cr_package, o_package)
 
     if args.operation == "check":
