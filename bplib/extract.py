@@ -139,8 +139,9 @@ def classify_emotes(emote_data):
     for (name, (ignore, variants)) in emote_data.items():
         vardata = {}
         for (suffix, block) in variants.items():
-            # Required properties (background-position is semi-required)
-            if all(k in block.css for k in ("background-image", "width", "height")):
+            # Required properties (background-position is semi-required). One
+            # subreddit uses background instead of background-image.
+            if all(k in block.css for k in ("width", "height")) and ("background-image" in block.css or "background" in block.css):
                 # Probably an emote. We could check for expected values of display/
                 # clear/float, but they're broken in a lot of places, and not worth
                 # the resulting warning spam.
@@ -167,7 +168,18 @@ def _convert_emote(name, suffix, block):
     width = bplib.css.as_size(css.pop("width"))
     height = bplib.css.as_size(css.pop("height"))
     size = (width, height)
-    image_url = bplib.css.as_url(css.pop("background-image"))
+
+    if "background-image" in css:
+        image_url = bplib.css.as_url(css.pop("background-image"))
+    elif "background" in css:
+        # Ignore all but the url() bit we're looking for. Properly parsing the
+        # entire declaration would be a fair bit of work.
+        # TODO: What if both this and bg-image are present?
+        parts = css.pop("background").split()
+        for p in parts:
+            if p.startswith("url("):
+                image_url = bplib.css.as_url(p)
+                break
 
     if "background-position" in css:
         offset = bplib.css.as_position(css.pop("background-position"), width, height)
