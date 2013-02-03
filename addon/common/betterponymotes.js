@@ -1194,9 +1194,6 @@ var bpm_converter = bpm_exports.converter = {
                 var emote_info = bpm_data.lookup_emote(emote_name, prefs.custom_emotes);
 
                 if(emote_info) {
-                    var sr_enabled = (emote_info.source_id ? prefs.sr_array[emote_info.source_id] : true);
-                    var emote_size = emote_info.max_size || 0;
-
                     // Click blocker CSS/JS
                     element.classList.add("bpm-emote");
                     // Used in alt-text. (Note: dashes are invalid here)
