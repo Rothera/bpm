@@ -40,13 +40,6 @@ var bpm_backendsupport = {
             }
         }
 
-        for(var sr in sr_name2id) {
-            if(prefs.enabledSubreddits2[sr] === undefined) {
-                prefs.enabledSubreddits2[sr] = true;
-            }
-        }
-        // TODO: Remove subreddits from prefs that are no longer in the addon.
-
         // Migration from previous schema
         if(prefs.enabledSubreddits !== undefined) {
             for(var old_sr in prefs.enabledSubreddits) {
@@ -59,6 +52,23 @@ var bpm_backendsupport = {
               prefs.enabledSubreddits2[new_sr] = value;
             }
             delete prefs.enabledSubreddits;
+        }
+
+        // New subreddits
+        for(var sr in sr_name2id) {
+            if(prefs.enabledSubreddits2[sr] === undefined) {
+                prefs.enabledSubreddits2[sr] = 1;
+            }
+        }
+        // Removed subreddits
+        for(var sr in prefs.enabledSubreddits2) {
+            // Cast to int while we're at it- I think I screwed this up before
+            prefs.enabledSubreddits2[sr] = +prefs.enabledSubreddits2[sr];
+
+            if(sr_name2id[sr] === undefined) {
+                console.log("Deleting " + sr);
+                delete prefs.enabledSubreddits2[sr];
+            }
         }
     },
 
