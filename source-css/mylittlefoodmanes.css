@@ -27,9 +27,10 @@ lolyeah organization in foodmanes okay
 
 
 /* Background Image (Avebone, don't change this(Fixed it for you ~Quill)) */
-body {
-	background: url(%%namipoo%%) no-repeat fixed center bottom transparent !important;
-}
+body:first-of-type, body.res-nightmode:first-of-type {
+    background:  url(%%bottomthingy%%)  no-repeat  fixed 60% 95% !important; }
+
+
 
 #siteTable .entry.dislikes .buttons:before {
 content: "You really disabled the CSS just to downvote this?";
@@ -56,9 +57,9 @@ position: fixed;
 /* Used for centering (bottom center) */
 bottom: 0px;
 left: 50%;
-margin-left: 140px;
+margin-left: 250px;
 /* 0.5 the image width */
-z-index: -100
+z-index: -150
 }
 
 .arrow.down{visibility:hidden;display:none;}
@@ -374,7 +375,7 @@ a.author[href$="bryvood"] {
     letter-spacing: -20px
     }
 a.author[href$="bryvood"]:after {
-    content: "Becoming Shaggy Again";
+    content: "Approximately 78% Shaggy";
     /*font-family: "wingdings", cursive;*/
     font-size: 16px !important;
     visibility: visible !important;
@@ -543,7 +544,7 @@ a.author[href$="floutsy"] {
     letter-spacing: -20px
     }
 a.author[href$="floutsy"]:after {
-    content: "nou";
+    content: "whyhedodat";
     font-size: 12px !important;
     visibility: visible !important;
     /*color: #008000;*/
@@ -766,13 +767,13 @@ a[href|="/twiststare"]
 
 /*** Bottom page Foodmane  ***/
 .footer-parent {
-    height: 1000px;
+    height: 400px;
     padding-top: 30px;
     padding-bottom: 40px;
     clear: both;
     text-align: center;
     width: 100%;
-    background-image: url(%%twiFooter%%);
+    background-image: url(%%mechahitler-copy%%);
     background-position: bottom center;
     background-repeat: no-repeat;
     margin-bottom: 4px
@@ -1105,3 +1106,9 @@ a[href|="/potatojob"]
 #header-bottom-right {
     background: url(%%foodcollage%%) no-repeat center bottom
     }
+
+/* Nightmode fixes for the background and other stuff */
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
+body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
+body.res-nightmode:first-of-type {background-color: transparent!important;}
+span[class="hover pagename redditname"] a:first-of-type { font-size: 1.6em !important; text-shadow: 0px 0px 6px #000; color: white; }

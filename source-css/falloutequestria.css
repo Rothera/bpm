@@ -146,23 +146,24 @@ div.titlebox .users-online span.number:after {
     content: " fighting the good fight"
     }
 
+
+START-PONYSCRIPT-IGNORE { color: red; }
+
+a[href|="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }
+a[href|="/sp"] + .reddit_show_hidden_emotes_span {display:none;}
+/*in-line emotes -in and -inp, e.g. texttext[](/b24-in)texttext*/
+a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
+    float: none !important;
+    display: inline-block !important
+    }
+
+
+/* Stuff that BPM will ignore */
 a[href$="/spoiler"] { background:#000; color:#000; }
 a[href$="/spoiler"]:hover { color:#FFF; }
-
-
-/*simple, most commonly used backgrounds*/ 
-body {
-background: url(%%lilpip3025%%)  
-no-repeat fixed center bottom
-}
-
-/* Hey, so I stole a bunch of CSS rules from the good folks at r/asoiaf. */
-
-/* ================================
- * Code to enable fancy spoilers, 
- * because the plot must be protected
- * at all costs!
- */
 
 a[href="/s"] {
     color: #222222;
@@ -186,6 +187,17 @@ a[href="/s"]:hover::after, a[href="/sr"]:active::after, a[href="/st"]:active::af
     color: black
 }
 
+END-PONYSCRIPT-IGNORE { color: red; }
+
+
+
+/*simple, most commonly used backgrounds*/ 
+body {
+background: url(%%lilpip3025%%)  
+no-repeat fixed center bottom
+}
+
+
 
 a[href|="/lpwut"], a[href|="/lphurt"], a[href|="/homage"], a[href|="/bjstare"], a[href|="/bjclassy"], a[href|="/anteup"], a[href|="/p21fun"],
 a[href|="/p21notamused"], a[href|="/p21"], a[href|="/glory"], a[href|="/charity"], a[href|="/bjscared"], a[href|="/rampage"], a[href|="/lphappy"], a[href|="/omnomnom"], a[href|="/givemeec1101"], a[href|="/calamity"], a[href|="/pinkeyes"], a[href|="/lpwet"], a[href|="/mmdash"], a[href|="/velvetremedy"], a[href|="/lparmed"], a[href|="/gawd"], a[href|="/steelhooves"], a[href|="/lpnotwant"]
@@ -204,7 +216,7 @@ a[href|="/lphappy"]{ background-position: 0 -1190px; width: 70px; height: 70px; 
 a[href|="/lpwut"]{ background-position: 0 -1749px; width: 70px; height: 70px; }
 a[href|="/lphurt"]{ background-position: 0 -1310px; width: 70px; height: 70px; }
 a[href|="/homage"]{ background-position: 0 -870px; width: 70px; height: 70px; }
-a[href|="/bjstare"]{ background-position: 0 -360px; width: 70px; height: 70px; }
+a[href|="/bjstare"]{ background-position: 0 -360px; width: 72px; height: 70px; }
 a[href|="/bjclassy"]{ background-position: 0 -120px; width: 70px; height: 70px; }
 a[href|="/p21"]{ background-position: -202px -256px; width: 70px; height: 70px; }
 a[href|="/glory"]{ background-position: 0 -750px; width: 70px; height: 70px; }
@@ -361,7 +373,7 @@ a[href|="/plotseverywhere"]{ background-position: 0 -1937px; width: 180px; heigh
 a[href|="/psychoshy"]{ background-position: -250px 0; width: 98px; height: 150px;}
 a[href|="/psychoshy"]:hover{background-position: -250px -200px; width: 98px; height: 150px;}
 
-a[href|="/lpflirty"], a[href|="/lpmintals"], a[href|="/redeye"]
+a[href|="/lpmintals"], a[href|="/redeye"], a[href|="/vrcrazy"]
 {
 display: block;
 clear: none;
@@ -369,12 +381,12 @@ float: left;
 width: 70px;
 height: 70px;
 background-repeat: no-repeat;
-background-image: url(%%foe-em5-v1%%);
+background-image: url(%%foe-em5-v3%%);
 }
 
-a[href|="/lpflirty"]{ background-position: 0 0; width: 137px; height: 150px; } 
-a[href|="/lpmintals"]{ background-position: 0 -200px; width: 71px; height: 100px; } 
-a[href|="/redeye"]{ background-position: 0 -350px; width: 64px; height: 100px; } 
+a[href|="/lpmintals"]{ background-position: 0 0; width: 71px; height: 100px; } 
+a[href|="/redeye"]{ background-position: 0 -150px; width: 64px; height: 100px; }
+a[href|="/vrcrazy"]{ background-position: 0 -300px; width: 70px; height: 70px; } 
 
 
 a[href|="/advicebj"]
@@ -471,6 +483,18 @@ background-repeat: no-repeat;
 background-image: url(%%calamity%%);
 }
 a[href|='/calamitytrot'] {background-position: 0px 0px}
+
+a[href|="/pinke"]
+{
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 125px;
+background-repeat: no-repeat;
+background-image: url(%%pinkiesprite%%);
+}
+a[href|='/pinke'] {background-position: 0px 0px}
 
 a[href|="/gravityfalls"]
 {

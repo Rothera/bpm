@@ -17,6 +17,9 @@ background-color: #BFBFBF;
 .side {
 background-color: #BFBFBF;
 }
+.thing .usertext-body .md { 
+background-color: #CCCCCC;
+}
 .comment {
 background-color: #CCCCCC;
 }
@@ -493,8 +496,25 @@ background-image: url(%%Vote%%);
 background-position: 0 0;
 }
 
+.score.unvoted {
+color: #8B8386 !important;
+}
+
 /*** MISCELLANEOUS***/
+
+.rank {
+color: #8B8386 !important;
+}
 
 .submit-page #reddit-field {
 display: none;
+}
+
+header-bottom-right, .tabmenu li {
+background-color: #CCCCCC; 
+color: #8B8386;
+}
+.tabmenu li a { 
+background-color: #CCCCCC !important; 
+color: #8B8386;
 }

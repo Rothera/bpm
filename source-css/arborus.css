@@ -153,8 +153,8 @@ a[href|="/q0"] {
     display: block;
     clear: none;
     float: left;
-    width: 582px;
-    height: 479px;
+    width: 200px;
+    height: 200px;
     background-image: url(%%q0%%) }
 
 
@@ -347,13 +347,13 @@ a[href|="/qcgala"] {
     height: 300px;
     background-image: url(%%qcgala%%) }
 
-a[href|="/areyoufuckingkiddingme"], a[href|="/creepypie"], a[href|="/itspartytime"], a[href|="/scratchout"], a[href|="/lyredrink"], a[href|="/chakolatechip"], a[href|="/babbychris"], a[href|="/blueshiftsealofapproval"], a[href|="/xmasscratch"], a[href|="/qcmeme"], a[href|="/somuchlove"], a[href|="/doeshelooklikeabitch"], a[href|="/st3rox"], a[href|="/madmeansealofapproval"], a[href|="/tentenwouldmarmshat"] {
+a[href|="/areyoufuckingkiddingme"], a[href|="/creepypie"], a[href|="/itspartytime"], a[href|="/scratchout"], a[href|="/lyredrink"], a[href|="/chakolatechip"], a[href|="/babbychris"], a[href|="/blueshiftsealofapproval"], a[href|="/xmasscratch"] {
     display: block;
     clear: none;
     float: left;
     width: 200px;
     height: 200px;
-    background-image: url(%%emotesheet1%%)
+    background-image: url(%%emotesheet28%%)
 }
 a[href|="/areyoufuckingkiddingme"] {
     background-position: -0px -0px
@@ -376,8 +376,9 @@ a[href|="/lyredrink"] {
     }
 
 a[href|="/chakolatechip"] {
-    background-position: -1000px -0px
+    background-position: -0px -200px
     }
+
 
 a[href|="/babbychris"] {
     background-position: -200px -200px
@@ -388,25 +389,46 @@ a[href|="/blueshiftsealofapproval"] {
     }
 
 a[href|="/xmasscratch"] {
-    background-position: -600px -200px
-    }
-
-a[href|="/qcmeme"] {
     background-position: -800px -200px
     }
 
+
+a[href|="/qcmeme"], a[href|="/somuchlove"], a[href|="/doeshelooklikeabitch"], a[href|="/st3rox"], a[href|="/madmeansealofapproval"], a[href|="/tentenwouldmarmshat"] {
+ display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 200px;
+    background-image: url(%%emotesheet3%%) }
+
+a[href|="/qcmeme"] {
+    background-position: 0px 0px
+    }
+
 a[href|="/somuchlove"] {
-    background-position: -1000px -200px
+    background-position: -200px 0px
     }
 
 a[href|="/doeshelooklikeabitch"] {
-    background-position: -200px -400px
+    background-position: -400px 0px
     }
 
 a[href|="/st3rox"] {
-    background-position: -400px -400px
+    background-position: -600px 0px
     }
 
 a[href|="/madmeansealofapproval"] {
-    background-position: -600px -400px
+    background-position: -800px 0px
     }
+
+a[href|="/tentenwouldmarmshat"] {
+    background-position: -0px -200px
+    }
+
+a[href|="/ohmy"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 145px;
+    background-image: url(%%chrysbounce200%%) }

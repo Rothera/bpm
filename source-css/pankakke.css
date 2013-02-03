@@ -434,7 +434,47 @@ a[href|="/wr3nch"] {
      height: 350px;
      }
 
+/***********Huge Emotes***********/
+a[href|="/udntsrslydntnomedood"] {
+     display: block;
+     clear: none;
+     float: left;
+     height: 600px;
+     background-image: url(%%HugeEmotes%%) !important
+     }
+a[href|="/udntsrslydntnomedood"] {
+     background-position: -0px -0px;
+     width: 800px;
+     }
+
+/************Animotes*************/
+a[href|="/apgshuffle"] { 
+    display: block; 
+    clear: none;
+    float: left; 
+    width:98px; 
+    height:150px; 
+    background-image: url(%%pgshuffle%%); 
+    }
+a[href|="/apglegcross"] { 
+    display: block; 
+    clear: none; 
+    float: left;
+    width:88px; 
+    height:150px; 
+    background-image: url(%%pglegcross%%); 
+    }
+a[href|="/apghoofpump"] { 
+    display: block; 
+    clear: none; 
+    float: left;
+    width:92px; 
+    height:150px; 
+    background-image: url(%%pghoofpump%%); 
+    }
+
 /************Mane-sub*************/
+START-PONYSCRIPT-IGNORE { color: red; }
 a[href|="/pabbored"], a[href|="/pajhappy"], a[href|="/pajlie"], a[href|="/pajsup"], a[href|="/pcadance"], a[href|="/pcelestiamad"], a[href|="/pcelestiawut"], a[href|="/pchrysalis"], a[href|="/pderpwizard"], a[href|="/pflutterjerk"], a[href|="/pflutterwoah"], a[href|="/pgrannysmith"], a[href|="/plunateehee"], a[href|="/plunawait"], a[href|="/pohcomeon"], a[href|="/ppinkiefear"], a[href|="/pppcute"], a[href|="/ppriceless"], a[href|="/praritydaww"], a[href|="/praritynews"], a[href|="/prdcry"], a[href|="/psbbook"], a[href|="/pscootacheer"], a[href|="/pscootaplease"], a[href|="/pshiningarmor"], a[href|="/pswagintosh"], a[href|="/ptwibeam"], a[href|="/ptwicrazy"], a[href|="/ptwipride"], a[href|="/ptwiright"] {
     display: block;
     clear: none;
@@ -533,42 +573,4 @@ a[href|="/pppcute"] {
 a[href|="/plunawait"] {
     background-position: -2030px -0px
     }
-
-/***********Huge Emotes***********/
-a[href|="/udntsrslydntnomedood"] {
-     display: block;
-     clear: none;
-     float: left;
-     height: 600px;
-     background-image: url(%%HugeEmotes%%) !important
-     }
-a[href|="/udntsrslydntnomedood"] {
-     background-position: -0px -0px;
-     width: 800px;
-     }
-
-/************Animotes*************/
-a[href|="/apgshuffle"] { 
-    display: block; 
-    clear: none;
-    float: left; 
-    width:98px; 
-    height:150px; 
-    background-image: url(%%pgshuffle%%); 
-    }
-a[href|="/apglegcross"] { 
-    display: block; 
-    clear: none; 
-    float: left;
-    width:88px; 
-    height:150px; 
-    background-image: url(%%pglegcross%%); 
-    }
-a[href|="/apghoofpump"] { 
-    display: block; 
-    clear: none; 
-    float: left;
-    width:92px; 
-    height:150px; 
-    background-image: url(%%pghoofpump%%); 
-    }
+END-PONYSCRIPT-IGNORE { color: red; }
