@@ -1,1 +1,1 @@
-../data/pref-setup.js
+../addon/common/pref-setup.js

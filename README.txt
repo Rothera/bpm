@@ -19,9 +19,7 @@ First off, there are some files and directories that aren't in the git repo but
 need to exist.
 
     animotes/
-    build/
-    betterponymotes.pem
-    chrome/key.pem (same file)
+    ../secret/betterponymotes.pem
 
 The PEM file is a private, unencrypted RSA key. It looks like this:
 
@@ -29,9 +27,9 @@ The PEM file is a private, unencrypted RSA key. It looks like this:
     [lots of base64 stuff]
     -----END PRIVATE KEY-----
 
-In the repo it's a symlink to ../secret/betterponymotes.pem. It doesn't have to
-be, but whatever you do, **NEVER** expose it and **NEVER** lose it. Update
-security depends on it.
+The Makefile expects it to be available from ../secret (relative to the project
+directory), but you can edit it if you like. The only thing that matters is that
+you **NEVER** expose it and **NEVER** lose it. Update security depends on it.
 
 You'll need some tools:
 
@@ -92,7 +90,6 @@ REPOSITORY STRUCTURE
     build/                  Build directory (not in repo)
     Makefile                Pretty much the whole build process. Its main target
                             rebuilds all data files and addons.
-    betterponymotes.pem     Used to sign the Firefox XPI.
     www/                    A complete copy of the site. Synced to rainbow.mlas1.us.
         betterponymotes.update.rdf
                             Firefox update manifest file.
@@ -106,6 +103,23 @@ REPOSITORY STRUCTURE
 
     # Addon directories
     addon/
+	common/             All common code and static data files (CSS).
+            betterponymotes.js  Main script.
+            pref-setup.js       All-around utility and framework for backend scripts.
+                                Does a lot more than just preferences.
+            bpmotes.css         Misc CSS used by the addon, and some things that can't
+                                be put anywhere else.
+            combiners-nsfw.css  NSFW components of r/mylittlecombiners that aren't emotes.
+            extracss-moz.css        <
+            extracss-o.css          < Chaos script. Most fancy emote flags are here.
+            extracss-pure.css       < This CSS is not compatible between browsers
+            extracss-pure-opera.css < and so comes in a few different forms.
+            extracss-webkit.css     <
+            options.html        Options page.
+            options.js          Options page code.
+            options.css         Options page CSS.
+            bootstrap.css       Bootstrap. Used on the options page.
+            jquery-1.8.2.js     JQuery, for the options page.
         chrome/             Chrome addon. This gets zipped up into the CRX file
             background.html Background page. Holds prefs and things for the addon.
             background.js   Background code.
@@ -122,23 +136,7 @@ REPOSITORY STRUCTURE
     data/                   Misc data files you need to maintain.
         rules.yaml          Main controlling data file for the addon.
         tags.yaml           Tag rules.
-        betterponymotes.js  Main script.
-        pref-setup.js       All-around utility and framework for backend scripts.
-                            Does a lot more than just preferences.
-        bpmotes.css         Misc CSS used by the addon, and some things that can't
-                            be put anywhere else.
-        combiners-nsfw.css  NSFW components of r/mylittlecombiners that aren't emotes.
-        extracss-moz.css        <
-        extracss-o.css          < Chaos script. Most fancy emote flags are here.
-        extracss-pure.css       < This CSS is not compatible between browsers
-        extracss-pure-opera.css < and so comes in a few different forms.
-        extracss-webkit.css     <
         icons.svg           Original SVG for the icons BPM has. Encoded into CSS manually.
-        options.html        Options page.
-        options.js          Options page code.
-        options.css         Options page CSS.
-        bootstrap.css       Bootstrap. Used on the options page.
-        jquery-1.8.2.js     JQuery, for the options page.
 
     # Cached data
     emotes/                 Extracted emote cache. All of these can be regenerated.
@@ -167,9 +165,10 @@ runs on its own, and content scripts that run in the pages. The former must
 obviously be written to the specific browser, but the latter is largely
 independent except where it has to communicate with the backend.
 
-Firefox's background script is firefox/lib/main.js. Chrome has
-chrome/background.html and opera has opera/index.html. As these scripts share
-a large amount of functionality, most of that is now held in data/pref-setup.js.
+Firefox's background script is addon/firefox/lib/main.js. Chrome has
+addon/chrome/background.html and opera has addon/opera/index.html. As these
+scripts share a large amount of functionality, most of that is now held in
+data/pref-setup.js.
 
 The backend is chiefly responsible for storing and managing preferences,
 applying the necessary files to pages (JS and CSS), and maintaining the custom
@@ -187,14 +186,15 @@ hosted externally.
 DEVELOPMENT PROCESS
 ===================
 
-Most of the addon proper in the content script in data/betterponymotes.js. Most
-new features can be implemented here without touching anything else.
+Most of the addon proper in the content script in addon/common/betterponymotes.js.
+Most new features can be implemented here without touching anything else.
 
 Changing BPM_DEV_MODE at the top enables a bunch of extra logging, which may
 help if you're getting crashes or strange behavior. Remember to disable it
 before release.
 
-Changes to preferences require editing data/pref-setup.py and the options page.
+Changes to preferences require editing addon/common/pref-setup.js and the
+options page.
 
 Changes involving the data backend are too complicated to go over here.
 
@@ -299,8 +299,8 @@ automatically. Running:
 
     bin/version.py set -v xx.yy
 
-Will update the package manifest files (firefox/package.json, chrome/manifest.json,
-and opera/config.xml) and no others.
+Will update the package manifest files (addon/firefox/package.json,
+addon/chrome/manifest.json, and addon/opera/config.xml) and no others.
 
 betterponymotes.js encodes the version in three places, in the header.
 

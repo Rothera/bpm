@@ -1,44 +1,127 @@
-default: packages build/chrome build/betterponymotes.user.js update-files build/export.json.bz2
+KEYFILE = ../secret/betterponymotes.pem
+VERSION = $(shell bin/version.py get)
 
-packages: build/betterponymotes.xpi build/chrome.zip build/betterponymotes.oex
+COMPILED_SCRIPT = build/betterponymotes.js
+COMMON_SOURCES = addon/common/* $(COMPILED_SCRIPT)
+FIREFOX_SOURCES = addon/firefox/* $(COMMON_SOURCES)
+CHROME_SOURCES = addon/chrome/* $(COMMON_SOURCES)
+OPERA_SOURCES = addon/opera/* $(COMMON_SOURCES)
 
-update-files: www/betterponymotes.update.rdf www/opera-updates.xml
+FIREFOX_PACKAGES = build/betterponymotes.xpi #build/betterponymotes_$(VERSION).xpi
+CHROME_PACKAGES = build/chrome.zip
+OPERA_PACKAGES = build/betterponymotes.oex #build/betterponymotes_$(VERSION).oex
+USERSCRIPT = build/betterponymotes.user.js
 
-build/export.json.bz2: build/export.json
-	bzip2 -kf build/export.json
+EMOTE_DATA = emotes/*.json tags/*.json data/rules.yaml data/tags.yaml
+ADDON_DATA = build/bpm-data.js build/emote-classes.css build/gif-animotes.css
+EXPORT_FILES = build/export.json build/export.json.bz2
+UPDATE_MANIFESTS = build/betterponymotes.update.rdf build/opera-updates.xml
 
-build/export.json: bpexport.py emotes/*.json data/rules.yaml
-	./bpexport.py --json build/export.json
+default: $(FIREFOX_PACKAGES) $(CHROME_PACKAGES) $(OPERA_PACKAGES) $(USERSCRIPT) $(UPDATE_MANIFESTS) $(EXPORT_FILES)
 
-www/betterponymotes.update.rdf: build/betterponymotes.xpi
-
-www/opera-updates.xml: build/betterponymotes.oex
-
-www/betterponymotes.update.rdf www/opera-updates.xml:
-	bin/gen_update_files.py `bin/version.py get`
-
-build/emote-classes.css build/bpm-data.js: bpgen.py emotes/*.json data/rules.yaml
+$(ADDON_DATA): bpgen.py dlanimotes.py $(EMOTE_DATA)
+	mkdir -p build
+	./dlanimotes.py
 	./bpgen.py
 
-build/betterponymotes.xpi: build/emote-classes.css build/bpm-data.js addon/firefox/data/* addon/firefox/package.json addon/firefox/lib/main.js
-	rm -f build/*.xpi
-	cfx xpi --update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf --pkgdir=addon/firefox
+$(EXPORT_FILES): bpexport.py $(EMOTE_DATA)
+	mkdir -p build
+	./bpexport.py --json build/export.json
+	bzip2 -kf build/export.json
+
+$(FIREFOX_PACKAGES): firefox-files bin/inject_xpi_key.py
+	cfx xpi --update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf --pkgdir=build/firefox
 	bin/inject_xpi_key.py betterponymotes.xpi build/betterponymotes.xpi
 	rm betterponymotes.xpi
-	cp build/betterponymotes.xpi build/betterponymotes_`bin/version.py get`.xpi
+	cp build/betterponymotes.xpi build/betterponymotes_$(VERSION).xpi
 
-build/chrome.zip: build/emote-classes.css build/bpm-data.js addon/chrome/*
+$(CHROME_PACKAGES): chrome-files
 	rm -f build/chrome.zip
-	cd addon/chrome && zip -r -0 -q ../../build/chrome.zip * && cd ../..
+	cd build/chrome && cp ../../$(KEYFILE) key.pem && zip -r -0 -q ../chrome.zip * && rm key.pem
 
-build/betterponymotes.oex: build/emote-classes.css build/bpm-data.js addon/opera/includes/* addon/opera/*
-	rm -f build/*.oex
-	cd addon/opera && zip -r -q ../../build/betterponymotes.oex * && cd ../..
-	cp build/betterponymotes.oex build/betterponymotes_`bin/version.py get`.oex
+$(OPERA_PACKAGES): opera-files
+	cd build/opera && zip -r -q ../betterponymotes.oex *
+	cp build/betterponymotes.oex build/betterponymotes_$(VERSION).oex
 
-build/chrome: build/emote-classes.css build/bpm-data.js addon/chrome/*
-	cp -RL addon/chrome build
-	rm -f build/chrome/key.pem
+$(USERSCRIPT): addon/common/betterponymotes.js bin/make_userscript.py
+	mkdir -p build
+	bin/make_userscript.py $(COMPILED_SCRIPT) $(USERSCRIPT) http://rainbow.mlas1.us
 
-build/betterponymotes.user.js: data/betterponymotes.js bin/make_userscript.py
-	bin/make_userscript.py data/betterponymotes.js build/betterponymotes.user.js http://rainbow.mlas1.us/
+$(UPDATE_MANIFESTS): $(FIREFOX_PACKAGES) $(OPERA_PACKAGES)
+	bin/gen_update_files.py $(VERSION) $(KEYFILE)
+
+$(COMPILED_SCRIPT): addon/common/betterponymotes.js #addon/common/bpm-*.js
+	cp addon/common/betterponymotes.js $(COMPILED_SCRIPT)
+
+firefox-files: $(FIREFOX_SOURCES) $(ADDON_DATA)
+	mkdir -p build/firefox build/firefox/lib build/firefox/data
+	# / - package metadata
+	cp addon/firefox/package.json       build/firefox
+	# /lib - backend
+	cp addon/firefox/main.js            build/firefox/lib
+	cp addon/common/pref-setup.js       build/firefox/lib
+	cp build/bpm-data.js                build/firefox/lib
+	# /data - content script
+	cp $(COMPILED_SCRIPT)               build/firefox/data
+	cp addon/common/bpmotes.css         build/firefox/data
+	cp addon/common/combiners-nsfw.css  build/firefox/data
+	cp addon/common/extracss-pure.css   build/firefox/data
+	cp addon/common/extracss-moz.css    build/firefox/data
+	# /data - options page
+	cp addon/common/options.html        build/firefox/data
+	cp addon/common/options.css         build/firefox/data
+	cp addon/common/options.js          build/firefox/data
+	cp addon/common/bootstrap.css       build/firefox/data
+	cp addon/common/jquery-1.8.2.js     build/firefox/data
+	# /data - data files
+	cp build/bpm-data.js                build/firefox/data
+	cp build/emote-classes.css          build/firefox/data
+
+chrome-files: $(CHROME_SOURCES) $(ADDON_DATA)
+	mkdir -p build/chrome
+	# / - package metadata
+	cp addon/chrome/manifest.json        build/chrome
+	# / - backend
+	cp addon/chrome/background.html      build/chrome
+	cp addon/chrome/background.js        build/chrome
+	cp addon/common/pref-setup.js        build/chrome
+	# / - content script
+	cp $(COMPILED_SCRIPT)                build/chrome
+	cp addon/common/bpmotes.css          build/chrome
+	cp addon/common/combiners-nsfw.css   build/chrome
+	cp addon/common/extracss-pure.css    build/chrome
+	cp addon/common/extracss-webkit.css  build/chrome
+	# / - options page
+	cp addon/common/options.html         build/chrome
+	cp addon/common/options.css          build/chrome
+	cp addon/common/options.js           build/chrome
+	cp addon/common/bootstrap.css        build/chrome
+	cp addon/common/jquery-1.8.2.js      build/chrome
+	# / - data files
+	cp build/bpm-data.js                 build/chrome
+	cp build/emote-classes.css           build/chrome
+	cp build/gif-animotes.css            build/chrome
+
+opera-files: $(OPERA_SOURCES) $(ADDON_DATA)
+	mkdir -p build/opera build/opera/includes
+	# / - package metadata
+	cp addon/opera/config.xml     build/opera
+	# / - backend
+	cp addon/opera/index.html     build/opera
+	cp addon/opera/background.js  build/opera
+	cp addon/common/pref-setup.js build/opera
+	# / and /includes - content script
+	cp $(COMPILED_SCRIPT)                    build/opera/includes
+	cp addon/common/bpmotes.css              build/opera
+	cp addon/common/combiners-nsfw.css       build/opera
+	cp addon/common/extracss-pure-opera.css  build/opera/extracss-pure.css
+	cp addon/common/extracss-o.css           build/opera
+	# / - options page
+	cp addon/common/options.html             build/opera
+	cp addon/common/options.css              build/opera
+	cp addon/common/options.js               build/opera
+	cp addon/common/bootstrap.css            build/opera
+	cp addon/common/jquery-1.8.2.js          build/opera
+	# / and /includes - data files
+	cp build/bpm-data.js                     build/opera/includes
+	cp build/emote-classes.css               build/opera

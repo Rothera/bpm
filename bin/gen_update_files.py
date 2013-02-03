@@ -20,12 +20,13 @@ OperaUpdateTemplate = """\
 def main():
     parser = argparse.ArgumentParser(description="Version tool")
     parser.add_argument("version")
+    parser.add_argument("pem")
     args = parser.parse_args()
 
-    subprocess.call(["uhura", "-k", "betterponymotes.pem",
+    subprocess.call(["uhura", "-k", args.pem,
                      "build/betterponymotes.xpi", "http://rainbow.mlas1.us/betterponymotes_" + args.version + ".xpi"],
-                    stdout=open("www/betterponymotes.update.rdf", "w"))
-    open("www/opera-updates.xml", "w").write(OperaUpdateTemplate.format(version=args.version))
+                    stdout=open("build/betterponymotes.update.rdf", "w"))
+    open("build/opera-updates.xml", "w").write(OperaUpdateTemplate.format(version=args.version))
 
 if __name__ == "__main__":
     main()

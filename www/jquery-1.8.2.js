@@ -1,1 +1,1 @@
-../data/jquery-1.8.2.js
+../addon/common/jquery-1.8.2.js
