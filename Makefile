@@ -124,4 +124,5 @@ opera-files: $(OPERA_SOURCES) $(ADDON_DATA)
 	cp addon/common/jquery-1.8.2.js          build/opera
 	# / and /includes - data files
 	cp build/bpm-data.js                     build/opera/includes
+	cp build/bpm-data.js 		         build/opera
 	cp build/emote-classes.css               build/opera
