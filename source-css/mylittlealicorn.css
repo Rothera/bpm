@@ -1,5 +1,5 @@
 /** Emotes **/
-a[href="/generictwilicorn"], a[href="/princesstwi"], a[href="/princesstwi2"], a[href="/stellartwilicorn"], a[href="/octaviacorn"], a[href="/princesspp"], a[href="/princessrbd"], a[href="/princessrarity"], a[href="/princessaj"], a[href="/princessfs"], a[href="/scootacorn"], a[href="/princessts"], a[href="/crazytwilicorn"], a[href="/madtwilicorn"], a[href="/gracefultwilicorn"], a[href="/happytwilicorn"], a[href="/determinedtwilicorn"], a[href="/twilicornoops"], a[href="/wavingtwilicorn"] {
+a[href="/generictwilicorn"], a[href="/princesstwi"], a[href="/princesstwi2"], a[href="/stellartwilicorn"], a[href="/octaviacorn"], a[href="/princesspp"], a[href="/princessrbd"], a[href="/princessrarity"], a[href="/princessaj"], a[href="/princessfs"], a[href="/scootacorn"], a[href="/princessts"], a[href="/crazytwilicorn"], a[href="/madtwilicorn"], a[href="/gracefultwilicorn"], a[href="/happytwilicorn"], a[href="/determinedtwilicorn"], a[href="/twilicornoops"] {
     display: block;
     clear: none;
     float: left;
@@ -7,13 +7,13 @@ a[href="/generictwilicorn"], a[href="/princesstwi"], a[href="/princesstwi2"], a[
     height: 140px!important;
     background-image:url(%%emotesheet%%);
 }
-a[href="/wavingtwilicorn"] {
+a[href="/wavingtwilicorn"], a[href="/bashfultwilicorn"] {
     display: block;
     clear: none;
     float: left;
     width: 140px!important;
     height: 140px!important;
-    background:url(%%emotesheetb%%) top left;
+    background-image:url(%%emotesheetb%%);
 }
 
 a[href="/determinedtwilicorn"] { background-position: 0 1400px; }
@@ -33,7 +33,7 @@ a[href="/princessrarity"] { background-position:140px 560px; }
 a[href="/princessaj"] { background-position:0 420px; }
 a[href="/princessfs"] { background-position:140px 420px; }
 a[href="/scootacorn"], a[href="/wavingtwilicorn"] { background-position:0 280px; }
-a[href="/princessts"] { background-position:140px 280px; }
+a[href="/princessts"], a[href="/bashfultwilicorn"] { background-position:140px 280px; }
 
 /** Small Emotes **/
 a[href="/sgenerictwilicorn"], a[href="/sprincesstwi"], a[href="/sprincesstwi2"], a[href="/sstellartwilicorn"], a[href="/soctaviacorn"], a[href="/sprincesspp"], a[href="/sprincessrbd"], a[href="/sprincessrarity"], a[href="/sprincessaj"], a[href="/sprincessfs"], a[href="/sscootacorn"], a[href="/sprincessts"], a[href="/scrazytwilicorn"], a[href="/smadtwilicorn"], a[href="/sgracefultwilicorn"], a[href="/shappytwilicorn"], a[href="/sdeterminedtwilicorn"], a[href="/stwilicornoops"] {
@@ -42,15 +42,15 @@ a[href="/sgenerictwilicorn"], a[href="/sprincesstwi"], a[href="/sprincesstwi2"],
     float: left;
     width: 70px!important;
     height: 70px!important;
-    background:url(%%emotesheetsmall%%) top left;
+    background-image:url(%%emotesheetsmall%%);
 }
-a[href="/swavingtwilicorn"] {
+a[href="/swavingtwilicorn"], a[href="/sbashfultwilicorn"] {
     display: block;
     clear: none;
     float: left;
     width: 70px!important;
     height: 70px!important;
-    background:url(%%emotesheetbsmall%%) top left;
+    background-image:url(%%emotesheetbsmall%%);
 }
 a[href="/sdeterminedtwilicorn"] { background-position: 0 700px; }
 a[href="/stwilicornoops"] { background-position: 70px 700px; }
@@ -69,7 +69,7 @@ a[href="/sprincessrarity"] { background-position:70px 280px; }
 a[href="/sprincessaj"] { background-position:0 210px; }
 a[href="/sprincessfs"] { background-position:70px 210px; }
 a[href="/sscootacorn"], a[href="/swavingtwilicorn"] { background-position:0 140px; }
-a[href="/sprincessts"] { background-position:70px 140px; }
+a[href="/sprincessts"], a[href="/sbashfultwilicorn"] { background-position:70px 140px; }
 
 /** Sidebar titles **/
 .titlebox .md p:nth-of-type(2) strong { display:block; margin-top:60px; font-size:150%; border-bottom:1px solid #bbb; }
