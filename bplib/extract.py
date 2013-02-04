@@ -169,17 +169,22 @@ def _convert_emote(name, suffix, block):
     height = bplib.css.as_size(css.pop("height"))
     size = (width, height)
 
+    # TODO: Handle this better. I think CSS dictates that the last one present
+    # wins out, but we don't have that information.
+    images = []
     if "background-image" in css:
-        image_url = bplib.css.as_url(css.pop("background-image"))
-    elif "background" in css:
+        images.append(bplib.css.as_url(css.pop("background-image")))
+    if "background" in css:
         # Ignore all but the url() bit we're looking for. Properly parsing the
         # entire declaration would be a fair bit of work.
-        # TODO: What if both this and bg-image are present?
         parts = css.pop("background").split()
         for p in parts:
             if p.startswith("url("):
-                image_url = bplib.css.as_url(p)
+                images.append(bplib.css.as_url(p))
                 break
+    if len(images) != 1:
+        print("WARNING: %r has multiple background images: using first of (%r)" % (bplib.combine_name_pair(name, suffix), images))
+    image_url = images[0]
 
     if "background-position" in css:
         offset = bplib.css.as_position(css.pop("background-position"), width, height)
