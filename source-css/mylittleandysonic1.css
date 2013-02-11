@@ -402,6 +402,10 @@ background-repeat: no-repeat;
 .flair-TripsOcho:after { background-position: 0px -4260px }
 .flair-CarlosAmuroRay:after { background-position: 0px -4290px }
 .flair-Ceolt0ir:after { background-position: 0px -4320px }
+.flair-DVF:after { background-position: 0px -4350px }
+.flair-BettyMcBitterpants:after { background-position: 0px -4380px }
+.flair-zovistograt2:after { background-position: 0px -4410px }
+.flair-Berrytube:after { background-position: 0px -4440px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
@@ -482,7 +486,7 @@ a[href|='/surbarf'], a[href|='/sursmelledyourcloset'] {width:273px; height:152px
 a[href|='/trixieplot'] {width:152px; height:116px; background-position: -0px -1698px}
 
 
-a[href|='/chrysshake'], a[href|='/queenshake'], a[href|='/ruined'], a[href|='/samuraijack'], a[href|='/snuggle'], a[href|='/twichangeling'], a[href|='/wmdiscord'] {
+a[href|='/chrysshake'], a[href|='/queenshake'], a[href|='/cinnapie'], a[href|='/ruined'], a[href|='/samuraijack'], a[href|='/snuggle'], a[href|='/twichangeling'], a[href|='/wmdiscord'] {
     display: block;
     clear: none;
     float: left;
@@ -490,11 +494,12 @@ a[href|='/chrysshake'], a[href|='/queenshake'], a[href|='/ruined'], a[href|='/sa
     }
 
 a[href|='/chrysshake'], a[href|='/queenshake'] {width:114px; height:152px; background-position: -102px -0px}
-a[href|='/ruined'] {width:308px; height:152px; background-position: -0px -556px}
+a[href|='/cinnapie'] {width:132px; height:149px; background-position: -131px -152px}
+a[href|='/ruined'] {width:308px; height:152px; background-position: -0px -708px}
 a[href|='/samuraijack'] {width:102px; height:152px; background-position: -0px -0px}
 a[href|='/snuggle'] {width:131px; height:152px; background-position: -0px -152px}
-a[href|='/twichangeling'] {width:150px; height:202px; background-position: -131px -152px}
-a[href|='/wmdiscord'] {width:176px; height:202px; background-position: -0px -354px}
+a[href|='/twichangeling'] {width:150px; height:202px; background-position: -0px -304px}
+a[href|='/wmdiscord'] {width:176px; height:202px; background-position: -0px -506px}
 
 
 a[href|='/bmwat'], a[href|='/ch35'], a[href|='/chnuzzle'], a[href|='/cheerious'], a[href|='/cheerlikesit'], a[href|='/cmcexcited'], a[href|='/cordwithit'], a[href|='/crazypie'], a[href|='/derpoops'], a[href|='/disamused'], a[href|='/disangry'], a[href|='/disexcited'], a[href|='/diskate'], a[href|='/foryou'], a[href|='/genetics'], a[href|='/genius'], a[href|='/gildafury'], a[href|='/herhorn'], a[href|='/gildafriendship'], a[href|='/hipstertrixie'], a[href|='/iwapprove'], a[href|='/noidea'], a[href|='/notenoughbooks'], a[href|='/rarimad'], a[href|='/twinuzzle'] {
@@ -1251,7 +1256,6 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 
 
 /* Any pre/post-name flair stuff goes here */ 
-.tagline a.author[href$="/srsdelendaest"]:before,
 .tagline a.author[href$="/RainbowCrash"]:before,
 .tagline a.author[href$="/245001"]:before,
 .tagline a.author[href$="/Orschmann"]:before,
@@ -1304,8 +1308,6 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 {
   background-position: 0px -3390px;
 }
-.tagline a.author[href$="/srsdelendaest"]:before
- { background-position: 0px -2010px;}
 
 /* Text colors! */
 a[href|="/white!"]:nth-of-type(n) { color: white !important; cursor: text !important; background-color: black !important }

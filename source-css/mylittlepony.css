@@ -226,9 +226,9 @@ display: none !important;
 /* header image location */
 
 #header-img {
-margin: 0px 5px 0px 0px;
+margin: 15px 5px 0px 0px;
 position:relative;
-top: 3px;
+
 }
 
 
@@ -1558,6 +1558,9 @@ text-indent:-9999px;
 .flair-spitfire {
     background-position: -0px -528px;
    }
+.flair-mayor {
+    background-position: -16px -528px;
+    }
 .flair-blankflank{
     background-image: none;
     height: 0;
@@ -1640,7 +1643,7 @@ body:lang(np) .usertext-edit,body:lang(np) .sidebox.submit,body:lang(np) .commen
 /*Header padding for Applebloom's bow*/
 #header-bottom-left
 {
- padding-top:15px;
+ padding-top:20px;
 }
 
 .pagename {
@@ -1655,8 +1658,8 @@ body:lang(np) .usertext-edit,body:lang(np) .sidebox.submit,body:lang(np) .commen
     border: 1px solid #5f99cf;
     border-right:0;
     position: absolute;
-    top: 28px;/*Normally 28 but AB's bow is huge*/
-    left: 130px;/*Normally 125px*/
+    top: 31px;/*Normally 28 but AB's bow is huge*/
+    left: 150px;/*Normally 125px*/
     z-index: 50;
     margin: 20px 420px 0 0;
     padding: 8px 6px;

@@ -147,8 +147,6 @@ div.titlebox .users-online span.number:after {
     }
 
 
-START-PONYSCRIPT-IGNORE { color: red; }
-
 a[href|="/sp"] {
     display: inline-block;
     padding-right: 100%
@@ -161,34 +159,15 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
     }
 
 
-/* Stuff that BPM will ignore */
-a[href$="/spoiler"] { background:#000; color:#000; }
-a[href$="/spoiler"]:hover { color:#FFF; }
+a[href="/spoiler"] {background: black !important; color: black !important;}
+a[href="/spoiler"]:hover {color: white !important;}
 
-a[href="/s"] {
-    color: #222222;
-    background: #CCCCCC;
-    /* background-image: url(%%spoiler%%); */
-    background-repeat: no-repeat;
-    padding: 0px 0px 0px 0px;
-    cursor: text
-    }
-a[href="/s"]:hover {
-    color: #8F8F8F
-    }
-a[href="/s"]::after {
-    content: attr(title);
-    background: #CCCCCC;
-    color: #CCCCCC;
-    padding: 0px 10px 0px 10px
-    }
-    
-a[href="/s"]:hover::after, a[href="/sr"]:active::after, a[href="/st"]:active::after, a[href="/sl"]:active::after {
-    color: black
-}
+a[href="#spoiler"] {background: black !important; color: black !important;}
+a[href="#spoiler"]:hover {color: white !important;}
 
-END-PONYSCRIPT-IGNORE { color: red; }
+a[href="/s"] { color: #222222; background: #CCCCCC;} a[href="/s"]:hover { color: #8F8F8F } a[href="/s"]::after { content: attr(title); background: #CCCCCC; color: #CCCCCC; padding: 0px 10px 0px 10px }
 
+a[href="/s"]:hover::after, a[href="/sr"]:active::after, a[href="/st"]:active::after, a[href="/sl"]:active::after { color: black }
 
 
 /*simple, most commonly used backgrounds*/ 
@@ -352,8 +331,6 @@ a[href|="/bjhate"], a[href|="/bjunimpressed"], a[href|="/calamitytale"], a[href|
 display: block;
 clear: none;
 float: left;
-width: 70px;
-height: 70px;
 background-repeat: no-repeat;
 background-image: url(%%foe-em4-v9%%);
 }
@@ -373,20 +350,19 @@ a[href|="/plotseverywhere"]{ background-position: 0 -1937px; width: 180px; heigh
 a[href|="/psychoshy"]{ background-position: -250px 0; width: 98px; height: 150px;}
 a[href|="/psychoshy"]:hover{background-position: -250px -200px; width: 98px; height: 150px;}
 
-a[href|="/lpmintals"], a[href|="/redeye"], a[href|="/vrcrazy"]
+a[href|="/lpmintals"], a[href|="/redeye"], a[href|="/vrcrazy"], a[href|="/mglory"]
 {
 display: block;
 clear: none;
 float: left;
-width: 70px;
-height: 70px;
 background-repeat: no-repeat;
-background-image: url(%%foe-em5-v3%%);
+background-image: url(%%foe-em5-v6%%);
 }
 
 a[href|="/lpmintals"]{ background-position: 0 0; width: 71px; height: 100px; } 
-a[href|="/redeye"]{ background-position: 0 -150px; width: 64px; height: 100px; }
-a[href|="/vrcrazy"]{ background-position: 0 -300px; width: 70px; height: 70px; } 
+a[href|="/mglory"]{  background-position: 0 -150px; width: 150px; height: 146px; }
+a[href|="/redeye"]{ background-position: 0 -346px; width: 66px; height: 100px; }
+a[href|="/vrcrazy"]{background-position: 0 -496px; width: 70px; height: 70px; } 
 
 
 a[href|="/advicebj"]
@@ -472,7 +448,7 @@ background-image: url(%%rsmash-v3%%);
 }
 a[href|='/rampagesmash'] {background-position: 0px 0px}
 
-a[href|="/calamitytrot"]
+a[href|="/walkingcalamity"], a[href|="/calamitytrot"]
 {
 display: block;
 clear: none;
@@ -482,7 +458,7 @@ height: 92px;
 background-repeat: no-repeat;
 background-image: url(%%calamity%%);
 }
-a[href|='/calamitytrot'] {background-position: 0px 0px}
+a[href|='/walkingcalamity'],  a[href|="/calamitytrot"] {background-position: 0px 0px}
 
 a[href|="/pinke"]
 {

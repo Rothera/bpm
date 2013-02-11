@@ -1411,19 +1411,14 @@ a[href|="/phei"], a[href|="/rainbowdash"], a[href|="/applejack"], a[href|="/rari
     clear: none;
     display: block;
     float: left;
-    width: 90px;
-    height: 92px;
-    background-position: 0px 0px !important;
+/*    width: 90px;
+    height: 92px; 
+    background-position: 0px 0px !important;*/
+    width: 96px !important;
+    height: 116px !important; 
+    background-position: 0px -92px !important;
 }
-a[href|="/phei"] {
-    background-image: url(%%emotephei%%);
-    clear: none;
-    display: block;
-    float: left;
-    width: 90px;
-    height: 92px;
-    background-position: 0px 0px !important;
-}
+
 a[href|="/twirock"],a[href|="/twiheadbang"] {
 background-image: url(%%twirock%%) ;
     clear: none;
