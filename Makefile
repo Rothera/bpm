@@ -40,6 +40,7 @@ $(EXPORT_FILES): bpexport.py $(EMOTE_DATA)
 	bzip2 -kf build/export.json
 
 $(FIREFOX_PACKAGES): firefox-files bin/inject_xpi_key.py
+	rm -fv build/*.xpi # Remove stale packages
 	cfx xpi --update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf --pkgdir=build/firefox
 	bin/inject_xpi_key.py betterponymotes.xpi build/betterponymotes.xpi
 	rm betterponymotes.xpi
@@ -50,6 +51,7 @@ $(CHROME_PACKAGES): chrome-files
 	cd build/chrome && cp ../../$(KEYFILE) key.pem && zip -r -0 -q ../chrome.zip * && rm key.pem
 
 $(OPERA_PACKAGES): opera-files
+	rm -fv build/*.oex # Remove stale packages
 	cd build/opera && zip -r -q ../betterponymotes.oex *
 	cp build/betterponymotes.oex build/betterponymotes_$(VERSION).oex
 
