@@ -54,6 +54,7 @@ REPOSITORY STRUCTURE
     # Scripts and code
     bin/                    Support scripts and tools
         encodeicon.py       Random little tool to encode a PNG file to a data: URI.
+        filter.py           Makes variable substitions in various source files.
         gen_update_files.py Regenerates the Opera and Firefox update manifests.
                             Part of this is invoking Uhura to generate the
                             signature in the update file.
@@ -68,8 +69,6 @@ REPOSITORY STRUCTURE
         shell.py            All-around emote update tool. Handles downloading
                             new stylesheets.
         sync.sh             Updates www/ from build/ and uploads it.
-        version.py          Little tool to modify the version number in a couple
-                            places where it's duplicated.
     bplib/                  Python support library
         condense.py         CSS compressor
         css.py              CSS parsing
@@ -90,21 +89,22 @@ REPOSITORY STRUCTURE
     build/                  Build directory (not in repo)
     Makefile                Pretty much the whole build process. Its main target
                             rebuilds all data files and addons.
+    web/                    Most actual site files.
+        index.html          Main page.
+        changelog.html      Changelog.
+        chrome-update.html  Useless page from when the Chrome addon relocated.
+        chrome-updates.xml  Also useless.
     www/                    A complete copy of the site. Synced to rainbow.mlas1.us.
         betterponymotes.update.rdf
                             Firefox update manifest file.
         opera-updates.xml   Opera update manifest file.
 
-        index.html          Main page.
-        changelog.html      Changelog.
         *.xpi, *.oex        Hosted addon files.
-        chrome-update.html  Useless page from when the Chrome addon relocated.
-        chrome-updates.xml  Also useless.
 
     # Addon directories
     addon/
 	common/             All common code and static data files (CSS).
-            betterponymotes.js  Main script.
+            bpm-*.js            Main script.
             pref-setup.js       All-around utility and framework for backend scripts.
                                 Does a lot more than just preferences.
             bpmotes.css         Misc CSS used by the addon, and some things that can't
@@ -186,8 +186,9 @@ hosted externally.
 DEVELOPMENT PROCESS
 ===================
 
-Most of the addon proper in the content script in addon/common/betterponymotes.js.
-Most new features can be implemented here without touching anything else.
+Most of the addon proper in the content script split up between the
+addon/common/bpm-*.js files. Most new features can be implemented here without
+touching anything else.
 
 Changing BPM_DEV_MODE at the top enables a bunch of extra logging, which may
 help if you're getting crashes or strange behavior. Remember to disable it
@@ -294,31 +295,8 @@ This process is heavily controlled by data/rules.yaml, which lists:
       individual emote.
     - Explicit matchups for +v emotes that the code can't autodetect.
 
-The version number is encoded in many places, only some of which can be updated
-automatically. Running:
-
-    bin/version.py set -v xx.yy
-
-Will update the package manifest files (addon/firefox/package.json,
-addon/chrome/manifest.json, and addon/opera/config.xml) and no others.
-
-betterponymotes.js encodes the version in three places, in the header.
-
-    // @require bpm-data.js?p=2&dver=82
-    // @require pref-setup.js?p=2&cver=53
-
-    // @version 53.82
-
-    var BPM_CODE_VERSION = "53";
-    var BPM_DATA_VERSION = "82";
-
-Where CODE_VER is the major version, and DATA_VER is the minor, in the form the
-project uses. The first two lines are used by Opera to reference its data files,
-and all of them by userscript engines. The two @require lines are rewritten to
-point at http://rainbow.mlas1.us/ at build time for the userscript variant,
-which then uses the variables further down to link to the CSS files.
-
-www/index.html also contains a copy of the current version number.
+The version number is encoded in config.json, which is used by the Makefile to
+regenerate every file that embeds it.
 
 When everything is updated, running "make" is sufficient to rebuild all packages.
 
@@ -334,7 +312,7 @@ webstore.
 RELEASE PROCESS
 ===============
 
-In a nutshell: $ make && bin/sync.sh
+In a nutshell: $ make sync
 
 Rebuild all packages and upload the XPI, OEX, animotes, userscript files, etc.
 to the site. The chrome.zip file must be uploaded to the Chrome webstore
