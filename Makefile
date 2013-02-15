@@ -50,8 +50,17 @@ $(USERSCRIPT): addon/common/betterponymotes.js bin/make_userscript.py
 $(UPDATE_MANIFESTS): $(FIREFOX_PACKAGES) $(OPERA_PACKAGES)
 	bin/gen_update_files.py $(VERSION) $(KEYFILE)
 
-$(COMPILED_SCRIPT): addon/common/betterponymotes.js #addon/common/bpm-*.js
-	cp addon/common/betterponymotes.js $(COMPILED_SCRIPT)
+$(COMPILED_SCRIPT): addon/common/bpm-*.js
+	cat addon/common/bpm-header.js \
+	    addon/common/bpm-utils.js \
+	    addon/common/bpm-data.js \
+	    addon/common/bpm-browser.js \
+	    addon/common/bpm-prefs.js \
+	    addon/common/bpm-reddit.js \
+	    addon/common/bpm-search.js \
+	    addon/common/bpm-global.js \
+	    addon/common/bpm-main.js \
+	    > $(COMPILED_SCRIPT)
 
 firefox-files: $(FIREFOX_SOURCES) $(ADDON_DATA)
 	mkdir -p build/firefox build/firefox/lib build/firefox/data
