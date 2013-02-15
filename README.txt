@@ -102,35 +102,31 @@ REPOSITORY STRUCTURE
         *.xpi, *.oex        Hosted addon files.
 
     # Addon directories
-    addon/
-	common/             All common code and static data files (CSS).
-            bpm-*.js            Main script.
-            pref-setup.js       All-around utility and framework for backend scripts.
-                                Does a lot more than just preferences.
-            bpmotes.css         Misc CSS used by the addon, and some things that can't
-                                be put anywhere else.
-            combiners-nsfw.css  NSFW components of r/mylittlecombiners that aren't emotes.
-            extracss-moz.css        <
-            extracss-o.css          < Chaos script. Most fancy emote flags are here.
-            extracss-pure.css       < This CSS is not compatible between browsers
-            extracss-pure-opera.css < and so comes in a few different forms.
-            extracss-webkit.css     <
-            options.html        Options page.
-            options.js          Options page code.
-            options.css         Options page CSS.
-            bootstrap.css       Bootstrap. Used on the options page.
-            jquery-1.8.2.js     JQuery, for the options page.
-        chrome/             Chrome addon. This gets zipped up into the CRX file
-            background.html Background page. Holds prefs and things for the addon.
-            background.js   Background code.
-            manifest.json   Manifest file.
-        firefox/            Firefox addon. Built into the XPI by cfx.
-            lib/main.js     Backend script.
-            package.json    Addon manifest.
-        opera/              Opera extension directory
-            background.js   Backend script.
-            config.xml      Addon manifest.
-            index.html      Backend page.
+    addon/                  All common code and static data files (CSS).
+        bpm-*.js            Main script.
+        pref-setup.js       All-around utility and framework for backend scripts.
+                            Does a lot more than just preferences.
+        bpmotes.css         Misc CSS used by the addon, and some things that can't
+                            be put anywhere else.
+        combiners-nsfw.css  NSFW components of r/mylittlecombiners that aren't emotes.
+        extracss-moz.css        <
+        extracss-o.css          < Chaos script. Most fancy emote flags are here.
+        extracss-pure.css       < This CSS is not compatible between browsers
+        extracss-pure-opera.css < and so comes in a few different forms.
+        extracss-webkit.css     <
+        options.html        Options page.
+        options.js          Options page code.
+        options.css         Options page CSS.
+        bootstrap.css       Bootstrap. Used on the options page.
+        jquery-1.8.2.js     JQuery, for the options page.
+        cr-background.html  Chrome background page. Holds prefs and things for the addon.
+        cr-background.js    Chrome background code.
+        cr-manifest.json    Chrome addon manifest.
+        fx-main.js          Firefox backend script.
+        fx-package.json     Firefox addon manifest.
+        o-background.js     Opera backend script.
+        o-config.xml        Opera addon manifest.
+        o-index.html        Opera backend page.
 
     # Data files
     data/                   Misc data files you need to maintain.

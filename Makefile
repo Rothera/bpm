@@ -2,10 +2,7 @@ KEYFILE = ../secret/betterponymotes.pem
 VERSION = $(shell bin/filter.py data/config.json -v version)
 
 COMPILED_SCRIPT = build/betterponymotes.js
-COMMON_SOURCES = addon/common/* $(COMPILED_SCRIPT)
-FIREFOX_SOURCES = addon/firefox/* $(COMMON_SOURCES)
-CHROME_SOURCES = addon/chrome/* $(COMMON_SOURCES)
-OPERA_SOURCES = addon/opera/* $(COMMON_SOURCES)
+ADDON_SOURCES = addon/* $(COMPILED_SCRIPT)
 
 FIREFOX_PACKAGES = build/betterponymotes.xpi #build/betterponymotes_$(VERSION).xpi
 CHROME_PACKAGES = build/chrome.zip
@@ -80,71 +77,71 @@ firefox-files: $(ADDON_SOURCES) $(ADDON_DATA) bin/filter.py data/config.json
 	# / - package metadata
 	bin/filter.py data/config.json < addon/fx-package.json > build/firefox/package.json
 	# /lib - backend
-	cp addon/firefox/main.js            build/firefox/lib
-	cp addon/common/pref-setup.js       build/firefox/lib
-	cp build/bpm-data.js                build/firefox/lib
+	cp addon/fx-main.js          build/firefox/lib/main.js
+	cp addon/pref-setup.js       build/firefox/lib
+	cp build/bpm-data.js         build/firefox/lib
 	# /data - content script
-	cp $(COMPILED_SCRIPT)               build/firefox/data
-	cp addon/common/bpmotes.css         build/firefox/data
-	cp addon/common/combiners-nsfw.css  build/firefox/data
-	cp addon/common/extracss-pure.css   build/firefox/data
-	cp addon/common/extracss-moz.css    build/firefox/data
+	cp $(COMPILED_SCRIPT)        build/firefox/data
+	cp addon/bpmotes.css         build/firefox/data
+	cp addon/combiners-nsfw.css  build/firefox/data
+	cp addon/extracss-pure.css   build/firefox/data
+	cp addon/extracss-moz.css    build/firefox/data
 	# /data - options page
-	cp addon/common/options.html        build/firefox/data
-	cp addon/common/options.css         build/firefox/data
-	cp addon/common/options.js          build/firefox/data
-	cp addon/common/bootstrap.css       build/firefox/data
-	cp addon/common/jquery-1.8.2.js     build/firefox/data
+	cp addon/options.html        build/firefox/data
+	cp addon/options.css         build/firefox/data
+	cp addon/options.js          build/firefox/data
+	cp addon/bootstrap.css       build/firefox/data
+	cp addon/jquery-1.8.2.js     build/firefox/data
 	# /data - data files
-	cp build/bpm-data.js                build/firefox/data
-	cp build/emote-classes.css          build/firefox/data
+	cp build/bpm-data.js         build/firefox/data
+	cp build/emote-classes.css   build/firefox/data
 
 chrome-files: $(ADDON_SOURCES) $(ADDON_DATA) bin/filter.py data/config.json
 	mkdir -p build/chrome
 	# / - package metadata
 	bin/filter.py data/config.json < addon/cr-manifest.json > build/chrome/manifest.json
 	# / - backend
-	cp addon/chrome/background.html      build/chrome
-	cp addon/chrome/background.js        build/chrome
-	cp addon/common/pref-setup.js        build/chrome
+	cp addon/cr-background.html   build/chrome/background.html
+	cp addon/cr-background.js     build/chrome/background.js
+	cp addon/pref-setup.js        build/chrome
 	# / - content script
-	cp $(COMPILED_SCRIPT)                build/chrome
-	cp addon/common/bpmotes.css          build/chrome
-	cp addon/common/combiners-nsfw.css   build/chrome
-	cp addon/common/extracss-pure.css    build/chrome
-	cp addon/common/extracss-webkit.css  build/chrome
+	cp $(COMPILED_SCRIPT)         build/chrome
+	cp addon/bpmotes.css          build/chrome
+	cp addon/combiners-nsfw.css   build/chrome
+	cp addon/extracss-pure.css    build/chrome
+	cp addon/extracss-webkit.css  build/chrome
 	# / - options page
-	cp addon/common/options.html         build/chrome
-	cp addon/common/options.css          build/chrome
-	cp addon/common/options.js           build/chrome
-	cp addon/common/bootstrap.css        build/chrome
-	cp addon/common/jquery-1.8.2.js      build/chrome
+	cp addon/options.html         build/chrome
+	cp addon/options.css          build/chrome
+	cp addon/options.js           build/chrome
+	cp addon/bootstrap.css        build/chrome
+	cp addon/jquery-1.8.2.js      build/chrome
 	# / - data files
-	cp build/bpm-data.js                 build/chrome
-	cp build/emote-classes.css           build/chrome
-	cp build/gif-animotes.css            build/chrome
+	cp build/bpm-data.js          build/chrome
+	cp build/emote-classes.css    build/chrome
+	cp build/gif-animotes.css     build/chrome
 
 opera-files: $(ADDON_SOURCES) $(ADDON_DATA) bin/filter.py data/config.json
 	mkdir -p build/opera build/opera/includes
 	# / - package metadata
 	bin/filter.py data/config.json < addon/o-config.xml > build/opera/config.xml
 	# / - backend
-	cp addon/opera/index.html     build/opera
-	cp addon/opera/background.js  build/opera
-	cp addon/common/pref-setup.js build/opera
+	cp addon/o-index.html     build/opera/index.html
+	cp addon/o-background.js  build/opera/background.js
+	cp addon/pref-setup.js    build/opera
 	# / and /includes - content script
-	cp $(COMPILED_SCRIPT)                    build/opera/includes
-	cp addon/common/bpmotes.css              build/opera
-	cp addon/common/combiners-nsfw.css       build/opera
-	cp addon/common/extracss-pure-opera.css  build/opera/extracss-pure.css
-	cp addon/common/extracss-o.css           build/opera
+	cp $(COMPILED_SCRIPT)             build/opera/includes
+	cp addon/bpmotes.css              build/opera
+	cp addon/combiners-nsfw.css       build/opera
+	cp addon/extracss-pure-opera.css  build/opera/extracss-pure.css
+	cp addon/extracss-o.css           build/opera
 	# / - options page
-	cp addon/common/options.html             build/opera
-	cp addon/common/options.css              build/opera
-	cp addon/common/options.js               build/opera
-	cp addon/common/bootstrap.css            build/opera
-	cp addon/common/jquery-1.8.2.js          build/opera
+	cp addon/options.html             build/opera
+	cp addon/options.css              build/opera
+	cp addon/options.js               build/opera
+	cp addon/bootstrap.css            build/opera
+	cp addon/jquery-1.8.2.js          build/opera
 	# / and /includes - data files
-	cp build/bpm-data.js                     build/opera/includes
-	cp build/bpm-data.js 		         build/opera
-	cp build/emote-classes.css               build/opera
+	cp build/bpm-data.js              build/opera/includes
+	cp build/bpm-data.js 		  build/opera
+	cp build/emote-classes.css        build/opera

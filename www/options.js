@@ -1,1 +1,1 @@
-../addon/common/options.js
+../addon/options.js
