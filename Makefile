@@ -1,5 +1,5 @@
 KEYFILE = ../secret/betterponymotes.pem
-VERSION = $(shell bin/version.py get)
+VERSION = $(shell bin/filter.py data/config.json -v version)
 
 COMPILED_SCRIPT = build/betterponymotes.js
 COMMON_SOURCES = addon/common/* $(COMPILED_SCRIPT)
@@ -19,7 +19,17 @@ UPDATE_MANIFESTS = build/betterponymotes.update.rdf build/opera-updates.xml
 
 default: $(FIREFOX_PACKAGES) $(CHROME_PACKAGES) $(OPERA_PACKAGES) $(USERSCRIPT) $(UPDATE_MANIFESTS) $(EXPORT_FILES)
 
-$(ADDON_DATA): bpgen.py dlanimotes.py $(EMOTE_DATA)
+sync: update-www
+	cd www && rsync -vvLr --delete ./ ref@mlas1.us:www
+	echo "Remember to upload the CRX to the Chrome Webstore!"
+
+update-www: $(FIREFOX_PACKAGES) $(OPERA_PACKAGES) $(USERSCRIPT) bin/filter.py data/config.json web/*
+	cp web/changelog.html web/chrome-update.html web/*.png www
+	bin/filter.py data/config.json < web/index.html > www/index.html
+	rm -fv www/*.xpi www/*.oex
+	cp -v build/*.xpi build/*.oex www
+
+$(ADDON_DATA): bpgen.py dlanimotes.py $(SOURCE_EMOTE_DATA)
 	mkdir -p build
 	./dlanimotes.py
 	./bpgen.py
@@ -43,29 +53,30 @@ $(OPERA_PACKAGES): opera-files
 	cd build/opera && zip -r -q ../betterponymotes.oex *
 	cp build/betterponymotes.oex build/betterponymotes_$(VERSION).oex
 
-$(USERSCRIPT): addon/common/betterponymotes.js bin/make_userscript.py
+$(USERSCRIPT): $(COMPILED_SCRIPT) bin/make_userscript.py
 	mkdir -p build
 	bin/make_userscript.py $(COMPILED_SCRIPT) $(USERSCRIPT) http://rainbow.mlas1.us
 
 $(UPDATE_MANIFESTS): $(FIREFOX_PACKAGES) $(OPERA_PACKAGES)
 	bin/gen_update_files.py $(VERSION) $(KEYFILE)
 
-$(COMPILED_SCRIPT): addon/common/bpm-*.js
-	cat addon/common/bpm-header.js \
-	    addon/common/bpm-utils.js \
-	    addon/common/bpm-data.js \
-	    addon/common/bpm-browser.js \
-	    addon/common/bpm-prefs.js \
-	    addon/common/bpm-reddit.js \
-	    addon/common/bpm-search.js \
-	    addon/common/bpm-global.js \
-	    addon/common/bpm-main.js \
+$(COMPILED_SCRIPT): bin/filter.py data/config.json addon/bpm-*.js
+	cat addon/bpm-header.js \
+	    addon/bpm-utils.js \
+	    addon/bpm-data.js \
+	    addon/bpm-browser.js \
+	    addon/bpm-prefs.js \
+	    addon/bpm-reddit.js \
+	    addon/bpm-search.js \
+	    addon/bpm-global.js \
+	    addon/bpm-main.js \
+	    | bin/filter.py data/config.json \
 	    > $(COMPILED_SCRIPT)
 
-firefox-files: $(FIREFOX_SOURCES) $(ADDON_DATA)
+firefox-files: $(ADDON_SOURCES) $(ADDON_DATA) bin/filter.py data/config.json
 	mkdir -p build/firefox build/firefox/lib build/firefox/data
 	# / - package metadata
-	cp addon/firefox/package.json       build/firefox
+	bin/filter.py data/config.json < addon/fx-package.json > build/firefox/package.json
 	# /lib - backend
 	cp addon/firefox/main.js            build/firefox/lib
 	cp addon/common/pref-setup.js       build/firefox/lib
@@ -86,10 +97,10 @@ firefox-files: $(FIREFOX_SOURCES) $(ADDON_DATA)
 	cp build/bpm-data.js                build/firefox/data
 	cp build/emote-classes.css          build/firefox/data
 
-chrome-files: $(CHROME_SOURCES) $(ADDON_DATA)
+chrome-files: $(ADDON_SOURCES) $(ADDON_DATA) bin/filter.py data/config.json
 	mkdir -p build/chrome
 	# / - package metadata
-	cp addon/chrome/manifest.json        build/chrome
+	bin/filter.py data/config.json < addon/cr-manifest.json > build/chrome/manifest.json
 	# / - backend
 	cp addon/chrome/background.html      build/chrome
 	cp addon/chrome/background.js        build/chrome
@@ -111,10 +122,10 @@ chrome-files: $(CHROME_SOURCES) $(ADDON_DATA)
 	cp build/emote-classes.css           build/chrome
 	cp build/gif-animotes.css            build/chrome
 
-opera-files: $(OPERA_SOURCES) $(ADDON_DATA)
+opera-files: $(ADDON_SOURCES) $(ADDON_DATA) bin/filter.py data/config.json
 	mkdir -p build/opera build/opera/includes
 	# / - package metadata
-	cp addon/opera/config.xml     build/opera
+	bin/filter.py data/config.json < addon/o-config.xml > build/opera/config.xml
 	# / - backend
 	cp addon/opera/index.html     build/opera
 	cp addon/opera/background.js  build/opera
