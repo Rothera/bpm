@@ -116,7 +116,7 @@ def _dump_js_obj(file, var_name, obj):
 
 def main():
     parser = argparse.ArgumentParser(description="Generate addon data files from emotes")
-    parser.add_argument("-j", "--js", help="Output JS data file", default="build/bpm-data.js")
+    parser.add_argument("-j", "--js", help="Output JS data file", default="build/bpm-resources.js")
     parser.add_argument("-c", "--css", help="Output CSS file", default="build/emote-classes.css")
     parser.add_argument("--no-compress", help="Disable CSS compression", action="store_true")
     args = parser.parse_args()

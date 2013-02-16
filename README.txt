@@ -83,7 +83,7 @@ REPOSITORY STRUCTURE
     bpextract.py            Extracts emote data from minified CSS files.
                             minified-css/ -> emotes/
     bpgen.py                Builds the addon data files.
-                            emotes/ + tags/ + data/ -> build/bpm-data.js
+                            emotes/ + tags/ + data/ -> build/bpm-resources.js
 
     # Build process
     build/                  Build directory (not in repo)
@@ -219,8 +219,8 @@ it quite conveniently diffable and greppable.
 
 The bpgen.py tool (run by make automatically) reads the data/rules.yaml file
 for instructions, loads all emote and tag data, and compiles it into a set of
-JS data files (build/bpm-data.js) and CSS (build/emote-classes.css). These are
-used by the addon directly.
+JS data files (build/bpm-resources.js) and CSS (build/emote-classes.css). These
+are used by the addon directly.
 
 ==============
 TAGGING EMOTES

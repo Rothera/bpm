@@ -9,8 +9,8 @@ CHROME_PACKAGES = build/chrome.zip
 OPERA_PACKAGES = build/betterponymotes.oex #build/betterponymotes_$(VERSION).oex
 USERSCRIPT = build/betterponymotes.user.js
 
-EMOTE_DATA = emotes/*.json tags/*.json data/rules.yaml data/tags.yaml
-ADDON_DATA = build/bpm-data.js build/emote-classes.css build/gif-animotes.css
+SOURCE_EMOTE_DATA = emotes/*.json tags/*.json data/rules.yaml data/tags.yaml
+ADDON_DATA = build/bpm-resources.js build/emote-classes.css build/gif-animotes.css
 EXPORT_FILES = build/export.json build/export.json.bz2
 UPDATE_MANIFESTS = build/betterponymotes.update.rdf build/opera-updates.xml
 
@@ -31,7 +31,7 @@ $(ADDON_DATA): bpgen.py dlanimotes.py $(SOURCE_EMOTE_DATA)
 	./dlanimotes.py
 	./bpgen.py
 
-$(EXPORT_FILES): bpexport.py $(EMOTE_DATA)
+$(EXPORT_FILES): bpexport.py $(SOURCE_EMOTE_DATA)
 	mkdir -p build
 	./bpexport.py --json build/export.json
 	bzip2 -kf build/export.json
@@ -79,7 +79,7 @@ firefox-files: $(ADDON_SOURCES) $(ADDON_DATA) bin/filter.py data/config.json
 	# /lib - backend
 	cp addon/fx-main.js          build/firefox/lib/main.js
 	cp addon/pref-setup.js       build/firefox/lib
-	cp build/bpm-data.js         build/firefox/lib
+	cp build/bpm-resources.js    build/firefox/lib
 	# /data - content script
 	cp $(COMPILED_SCRIPT)        build/firefox/data
 	cp addon/bpmotes.css         build/firefox/data
@@ -93,7 +93,7 @@ firefox-files: $(ADDON_SOURCES) $(ADDON_DATA) bin/filter.py data/config.json
 	cp addon/bootstrap.css       build/firefox/data
 	cp addon/jquery-1.8.2.js     build/firefox/data
 	# /data - data files
-	cp build/bpm-data.js         build/firefox/data
+	cp build/bpm-resources.js    build/firefox/data
 	cp build/emote-classes.css   build/firefox/data
 
 chrome-files: $(ADDON_SOURCES) $(ADDON_DATA) bin/filter.py data/config.json
@@ -117,7 +117,7 @@ chrome-files: $(ADDON_SOURCES) $(ADDON_DATA) bin/filter.py data/config.json
 	cp addon/bootstrap.css        build/chrome
 	cp addon/jquery-1.8.2.js      build/chrome
 	# / - data files
-	cp build/bpm-data.js          build/chrome
+	cp build/bpm-resources.js     build/chrome
 	cp build/emote-classes.css    build/chrome
 	cp build/gif-animotes.css     build/chrome
 
@@ -142,6 +142,6 @@ opera-files: $(ADDON_SOURCES) $(ADDON_DATA) bin/filter.py data/config.json
 	cp addon/bootstrap.css            build/opera
 	cp addon/jquery-1.8.2.js          build/opera
 	# / and /includes - data files
-	cp build/bpm-data.js              build/opera/includes
-	cp build/bpm-data.js 		  build/opera
+	cp build/bpm-resources.js         build/opera/includes
+	cp build/bpm-resources.js 	  build/opera
 	cp build/emote-classes.css        build/opera

@@ -8,7 +8,7 @@
 // @include https://*/*
 // @name BetterPonymotes
 // @namespace http://rainbow.mlas1.us/
-// @require bpm-data.js?p=2&dver=/*{{data_version}}*/
+// @require bpm-resources.js?p=2&dver=/*{{data_version}}*/
 // @require pref-setup.js?p=2&cver=/*{{code_version}}*/
 // @run-at document-start
 // @updateURL http://rainbow.mlas1.us/betterponymotes.user.js

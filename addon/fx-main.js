@@ -19,7 +19,7 @@ var tabs = require("tabs");
 var timers = require("timers");
 
 var bpm_backendsupport = require("pref-setup").bpm_backendsupport;
-var bpm_data = require("bpm-data");
+var bpm_data = require("bpm-resources");
 
 var storage = simple_storage.storage;
 
@@ -49,7 +49,7 @@ function prefs_updated(prefs) {
             include: [prefs.enableGlobalEmotes ? "*" : "*.reddit.com"],
             contentScriptWhen: "start",
             contentScriptFile: [
-                self.data.url("bpm-data.js"),
+                self.data.url("bpm-resources.js"),
                 self.data.url("betterponymotes.js")
                 ],
             onAttach: on_cs_attach
@@ -142,7 +142,7 @@ var prefs_mod = page_mod.PageMod({
     include: [self.data.url("options.html")],
     contentScriptWhen: "start",
     contentScriptFile: [
-        self.data.url("bpm-data.js"),
+        self.data.url("bpm-resources.js"),
         self.data.url("jquery-1.8.2.js"),
         self.data.url("options.js")
         ],
