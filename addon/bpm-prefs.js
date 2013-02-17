@@ -1,7 +1,7 @@
 /*
  * Preferences interface.
  */
-var bpm_prefs = bpm_exports.prefs = {
+var bpm_prefs = {
     /*
      * Preferences object and caches:
      *    - prefs: actual preferences object
@@ -20,23 +20,23 @@ var bpm_prefs = bpm_exports.prefs = {
     /*
      * Trigger called when prefs are available.
      */
-    prefs_avail: bpm_utils.trigger(function(ready) {}),
+    with_prefs: event(function(ready) {}),
 
     /*
      * Trigger called when custom CSS/emotes is available.
      */
-    customcss_avail: bpm_utils.trigger(function(ready) {}),
+    with_customcss: event(function(ready) {}),
 
     /*
      * Called from browser code when preferences have been received.
      */
     got_prefs: function(prefs) {
-        bpm_debug("Prefs ready");
+        log_debug("Prefs ready");
         this.prefs = prefs;
         this._make_sr_array();
         this.de_map = this._make_emote_map(prefs.disabledEmotes);
         this.we_map = this._make_emote_map(prefs.whitelistedEmotes);
-        this.prefs_avail.trigger(this);
+        this.with_prefs.trigger(this);
     },
 
     /*
@@ -44,10 +44,10 @@ var bpm_prefs = bpm_exports.prefs = {
      * received.
      */
     got_custom_emotes: function(emotes, css) {
-        bpm_debug("Custom emotes ready");
+        log_debug("Custom emotes ready");
         this.custom_emotes = emotes;
         this.custom_css = css;
-        this.customcss_avail.trigger(this);
+        this.with_customcss.trigger(this);
     },
 
     _make_sr_array: function() {
@@ -61,7 +61,7 @@ var bpm_prefs = bpm_exports.prefs = {
             //
             // Also bad would be items in prefs not in sr_id2name, but that's
             // more or less impossible to handle.
-            bpm_error("sr_array has holes; installation or prefs are broken!");
+            log_error("sr_array has holes; installation or prefs are broken!");
         }
     },
 
@@ -86,8 +86,8 @@ var bpm_prefs = bpm_exports.prefs = {
             clearTimeout(this.sync_timeouts[key]);
         }
 
-        this.sync_timeouts[key] = setTimeout(bpm_utils.catch_errors(function() {
-            bpm_browser.set_pref(key, this.prefs[key]);
+        this.sync_timeouts[key] = setTimeout(catch_errors(function() {
+            set_pref(key, this.prefs[key]);
             delete this.sync_timeouts[key];
         }.bind(this)), 1000);
     }

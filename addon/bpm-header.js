@@ -32,21 +32,19 @@ var window, document, console, setTimeout, clearTimeout, FileReader;
 var emote_map, sr_name2id, sr_id2name, tag_name2id, tag_id2name, bpm_backendsupport;
 */
 
-(function(_bpm_this) {
+(function(_global_this) {
 "use strict";
 
-var BPM_DEV_MODE = false;
+var DEV_MODE = false;
 
-var BPM_CODE_VERSION = "/*{{code_version}}*/";
-var BPM_DATA_VERSION = "/*{{data_version}}*/";
-var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.us";
-var BPM_OPTIONS_PAGE = BPM_RESOURCE_PREFIX + "/options.html";
+var EXT_RESOURCE_PREFIX = "http://rainbow.mlas1.us";
+var EXT_OPTIONS_PAGE = EXT_RESOURCE_PREFIX + "/options.html";
 
 // Domain names on which the global emote converter will refuse to run,
 // typically due to bad behavior. A common problem is JS attempting to
 // dynamically manipulate page stylesheets, which will fail when it hits ours
 // (as reading links back to chrome addresses are generally forbidden).
-var BPM_DOMAIN_BLACKLIST = [
+var DOMAIN_BLACKLIST = [
     "read.amazon.com" // Reads document.styleSheets and crashes
 ];
 
@@ -56,9 +54,6 @@ var BPM_DOMAIN_BLACKLIST = [
  * On some platforms- particularly some userscript engines- the global this
  * object !== window, and the two may have significantly different properties.
  */
-function _bpm_global(name) {
-    return _bpm_this[name] || window[name] || undefined;
+function find_global(name) {
+    return _global_this[name] || window[name] || undefined;
 }
-
-var bpm_exports = {};
-_bpm_this.bpm = bpm_exports;
