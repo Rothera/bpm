@@ -32,13 +32,14 @@ function _wrap_logger(cname, prefix, level) {
     if(_LOG_LEVEL > level) {
         return (function() {});
     }
+    var cfunc;
     if(_console && _console[cname]) {
-        var cfunc = _console[cname].bind(_console);
+        cfunc = _console[cname].bind(_console);
     } else {
-        var cfunc = _raw_log;
+        cfunc = _raw_log;
     }
     return function() {
-        var args = Array.prototype.slice.call(arguments)
+        var args = Array.prototype.slice.call(arguments);
         args.unshift(prefix);
         if(window.name) {
             args.unshift("[" + window.name + "]:");
@@ -46,12 +47,12 @@ function _wrap_logger(cname, prefix, level) {
         _log_buffer.push(args.join(" "));
         args.unshift("BPM:");
         cfunc.apply(null, args);
-    }
+    };
 }
 
 var log_debug = _wrap_logger("log", "DEBUG:", _LOG_DEBUG);
 var log_info = _wrap_logger("log", "INFO:", _LOG_INFO);
-var log_warn = _wrap_logger("warn", "WARNING:", _LOG_WARNING);
+var log_warning = _wrap_logger("warn", "WARNING:", _LOG_WARNING);
 var log_error = _wrap_logger("error", "ERROR:", _LOG_ERROR);
 var log_trace = function() {};
 if(_console && _console.trace) {
@@ -152,8 +153,14 @@ function catch_errors(f) {
             return f.apply(this, arguments);
         } catch(e) {
             log_error("Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
-            log_error("Current stack:");
-            log_trace(); // Not as useful as we'd like since we're calling it from here
+            if(e.trace) {
+                log_error("Stack trace:");
+                log_error(e.trace);
+            } else {
+                log_error("Current stack:");
+                // This probably isn't very useful...
+                log_trace();
+            }
             throw e;
         }
     };

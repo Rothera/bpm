@@ -63,35 +63,23 @@ opera.extension.onmessage = function(event) {
     var message = event.data;
 
     switch(message.method) {
+        case "get_initdata":
+            var reply = {"method": "initdata"};
+            if(message.want["prefs"]) {
+                reply.prefs = pref_manager.get();
+            }
+            if(message.want["customcss"]) {
+                reply.emotes = pref_manager.cm.emote_cache;
+                reply.css = pref_manager.cm.css_cache;
+            }
+            event.source.postMessage(reply);
+            break;
+
         case "get_prefs":
             event.source.postMessage({
                 "method": "prefs",
                 "prefs": pref_manager.get()
             });
-            break;
-
-        case "set_prefs":
-            pref_manager.write(message.prefs);
-            break;
-
-        case "get_file":
-            var data = get_file_data(message.filename);
-
-            if(data) {
-                event.source.postMessage({
-                    "method": "file_loaded",
-                    "filename": message.filename,
-                    "data": data
-                });
-            }
-            break;
-
-        case "open_options":
-            opera.extension.tabs.create({"url": "/options.html"});
-            break;
-
-        case "force_update":
-            pref_manager.cm.force_update(message.subreddit);
             break;
 
         case "get_custom_css":
@@ -104,6 +92,30 @@ opera.extension.onmessage = function(event) {
 
         case "set_pref":
             pref_manager.set_pref(message.pref, message.value);
+            break;
+
+        case "set_prefs":
+            pref_manager.write(message.prefs);
+            break;
+
+        case "force_update":
+            pref_manager.cm.force_update(message.subreddit);
+            break;
+
+        case "open_options":
+            opera.extension.tabs.create({"url": "/options.html"});
+            break;
+
+        case "get_file":
+            var data = get_file_data(message.filename);
+
+            if(data) {
+                event.source.postMessage({
+                    "method": "file_loaded",
+                    "filename": message.filename,
+                    "data": data
+                });
+            }
             break;
 
         default:

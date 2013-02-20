@@ -8,7 +8,7 @@ var emote_regexp = /\[\]\((\/[\w:!#\/\-]+)\s*(?:["']([^"]*)["'])?\)/g;
 /*
  * Searches elements recursively for [](/emotes), and converts them.
  */
-function process_global(prefs, root) {
+function process_text(store, root) {
     // List of nodes to delete. Would probably not work well to remove nodes
     // while walking the DOM
     var deletion_list = [];
@@ -35,13 +35,13 @@ function process_global(prefs, root) {
             // Don't normalize case for emote lookup
             var parts = match[1].split("-");
             var emote_name = parts[0];
-            var emote_info = lookup_emote(emote_name, prefs.custom_emotes);
+            var emote_info = store.lookup_emote(emote_name);
 
             if(emote_info === null) {
                 continue;
             }
 
-            if(is_disabled(prefs, emote_info)) {
+            if(store.is_disabled(emote_info)) {
                 continue;
             }
 
@@ -123,8 +123,8 @@ function process_global(prefs, root) {
             // Convert alt text and such. We want to do this after we insert
             // our new nodes (so that the alt-text element goes to the right
             // place) but before we rescroll.
-            if(prefs.prefs.showAltText) {
-                display_alt_text(emote_elements);
+            if(store.prefs.showAltText) {
+                process_alt_text(emote_elements);
             }
 
             // If the parent element has gotten higher due to our emotes,
@@ -148,28 +148,28 @@ function process_global(prefs, root) {
 /*
  * Main function when running globally.
  */
-function run_global(prefs) {
-    if(!prefs.prefs.enableGlobalEmotes) {
+function run_global(store) {
+    if(!store.prefs.enableGlobalEmotes) {
         return;
     }
     log_info("Running globally");
 
     // We run this here, instead of down in the main bit, to avoid applying large
     // chunks of CSS when this script is disabled.
-    init_css();
+    init_css(store);
 
-    if(prefs.prefs.enableGlobalSearch) {
+    if(store.prefs.enableGlobalSearch) {
         // Never inject the search box into frames. Too many sites fuck up
         // entirely if we do. Instead, we do some cross-frame communication.
         if(running_in_frame) {
-            init_frame(prefs);
+            init_frame_search(store);
         } else {
-            init(prefs);
-            setup_global_icon(prefs);
+            init_search_box(store);
+            setup_global_icon(store);
         }
     }
 
-    process_global(prefs, document.body);
+    process_text(store, document.body);
 
     observe_document(function(nodes) {
         for(var i = 0; i < nodes.length; i++) {
@@ -177,7 +177,21 @@ function run_global(prefs) {
                 // Not really interested in other kinds.
                 continue;
             }
-            process_global(prefs, nodes[i]);
+            process_text(store, nodes[i]);
         }
+    });
+}
+
+function global_main(store) {
+    // Check against domain blacklist
+    for(var i = 0; i < DOMAIN_BLACKLIST.length; i++) {
+        if(DOMAIN_BLACKLIST[i] === document.location.host) {
+            log_warning("Refusing to run on '" + document.location.host + "': domain is blacklisted (probably broken)");
+            return;
+        }
+    }
+
+    with_dom(function() {
+        run_global(store);
     });
 }

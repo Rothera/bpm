@@ -5,7 +5,7 @@
  *    .name_terms: list of emote name terms to match.
  * or null, if there was no query.
  */
-function parse_query(terms) {
+function parse_search_query(terms) {
     var query = {sr_term_sets: [], tag_term_sets: [], name_terms: []};
 
     /*
@@ -108,11 +108,11 @@ function parse_query(terms) {
  * Executes a search query. Returns an object with two properties:
  *    .results: a sorted list of emotes
  */
-function search(query) {
+function execute_search(store, query) {
     var results = [];
     no_match:
     for(var emote_name in emote_map) {
-        var emote_info = lookup_core_emote(emote_name);
+        var emote_info = store.lookup_core_emote(emote_name);
         var lc_emote_name = emote_name.toLowerCase();
 
         // Match if ALL search terms match
@@ -174,7 +174,7 @@ function search(query) {
         // At this point we have a match, so follow back to its base
         if(emote_name !== emote_info.base) {
             // Hunt down the non-variant version
-            emote_info = lookup_core_emote(emote_info.base);
+            emote_info = store.lookup_core_emote(emote_info.base);
             if(emote_info.name !== emote_info.base) {
                 log_warning("Followed +v from " + emote_name + " to " + emote_info.name + "; no root emote found");
             }
@@ -200,9 +200,9 @@ function search(query) {
 /*
  * Injects an emote into the given form.
  */
-function inject_emote_into(target_form, emote_name) {
+function inject_emote_into_form(store, target_form, emote_name) {
     log_debug("Injecting ", emote_name, "into", target_form);
-    var emote_info = lookup_core_emote(emote_name);
+    var emote_info = store.lookup_core_emote(emote_name);
     var formatting_id = tag_name2id["+formatting"];
 
     var start = target_form.selectionStart;
@@ -261,24 +261,25 @@ var sb_helplink = null;
 var sb_optionslink = null;
 var sb_resize = null;
 var sb_global_icon = null; // Global << thing
-var firstrun = false; // Whether or not we've made any search at all yet
-var current_tab = null;
+
+var sb_firstrun = false; // Whether or not we've made any search at all yet
+var current_sb_tab = null;
 
 /*
  * Sets up the search box for use on a page, either Reddit or the top-level
  * frame, globally.
  */
-function init(prefs) {
+function init_search_box(store) {
     log_debug("Initializing search box");
-    inject_html();
-    init_search_box(prefs);
+    inject_search_box();
+    init_search_ui(store);
 }
 
 /*
  * Sets up search for use in a frame. No search box is generated, but it
  * listens for postMessage() calls from the parent frame.
  */
-function init_frame(prefs) {
+function init_frame_search(store) {
     log_debug("Setting frame message hook");
     window.addEventListener("message", catch_errors(function(event) {
         // Not worried about event source (it might be null in Firefox, as
@@ -292,7 +293,7 @@ function init_frame(prefs) {
         switch(message.__betterponymotes_method) {
             case "__bpm_inject_emote":
                 // Call toString() just in case
-                inject_emote(message.__betterponymotes_emote.toString());
+                inject_emote(store, message.__betterponymotes_emote.toString());
                 break;
 
             case "__bpm_track_form":
@@ -307,7 +308,7 @@ function init_frame(prefs) {
 /*
  * Builds and injects the search box HTML.
  */
-function inject_html() {
+function inject_search_box() {
     // Placeholder div to create HTML in
     var div = document.createElement("div");
     // I'd sort of prefer display:none, but then I'd have to override it
@@ -377,8 +378,8 @@ function inject_html() {
 /*
  * Sets up the emote search box.
  */
-function init_search_box(prefs) {
-    current_tab = sb_results;
+function init_search_ui(store) {
+    current_sb_tab = sb_results;
 
     /*
      * Intercept mouseover for the entire search widget, so we can remember
@@ -390,13 +391,13 @@ function init_search_box(prefs) {
 
     // Close it on demand
     sb_close.addEventListener("click", catch_errors(function(event) {
-        hide();
+        hide_search_box();
     }), false);
 
     // Another way to close it
     sb_container.addEventListener("keyup", catch_errors(function(event) {
         if(event.keyCode === 27) { // Escape key
-            hide();
+            hide_search_box();
         }
     }), false);
 
@@ -418,7 +419,7 @@ function init_search_box(prefs) {
         timeout = setTimeout(catch_errors(function() {
             // Re-enable searching as early as we can, just in case
             timeout = null;
-            update_search(prefs);
+            update_search_results(store);
         }), 500);
     }), false);
 
@@ -427,16 +428,16 @@ function init_search_box(prefs) {
         if(event.target.classList.contains("bpm-search-result")) {
             // .dataset would probably be nicer, but just in case...
             var emote_name = event.target.getAttribute("data-emote");
-            inject_emote(emote_name);
+            inject_emote(store, emote_name);
         }
     }), false);
 
     // Listen for the "help" tab link
     sb_helplink.addEventListener("click", catch_errors(function(event) {
-        if(current_tab !== sb_helptab) {
-            switch_to_tab(sb_helptab);
+        if(current_sb_tab !== sb_helptab) {
+            switch_to_sb_tab(sb_helptab);
         } else {
-            switch_to_tab(sb_results);
+            switch_to_sb_tab(sb_results);
         }
     }), false);
 
@@ -445,25 +446,25 @@ function init_search_box(prefs) {
 
     // Focusing input switches to results tab
     sb_input.addEventListener("focus", catch_errors(function(event) {
-        switch_to_tab(sb_results);
+        switch_to_sb_tab(sb_results);
     }), false);
 
     // Set up default positions
-    sb_container.style.left = prefs.prefs.searchBoxInfo[0] + "px";
-    sb_container.style.top = prefs.prefs.searchBoxInfo[1] + "px";
-    sb_container.style.width = prefs.prefs.searchBoxInfo[2] + "px";
-    sb_container.style.height = prefs.prefs.searchBoxInfo[3] + "px";
+    sb_container.style.left = store.prefs.searchBoxInfo[0] + "px";
+    sb_container.style.top = store.prefs.searchBoxInfo[1] + "px";
+    sb_container.style.width = store.prefs.searchBoxInfo[2] + "px";
+    sb_container.style.height = store.prefs.searchBoxInfo[3] + "px";
     // 62 is a magic value from the CSS.
-    sb_tabframe.style.height = (prefs.prefs.searchBoxInfo[3] - 62) + "px";
-    sb_global_icon.style.left = prefs.prefs.globalIconPos[0] + "px";
-    sb_global_icon.style.top = prefs.prefs.globalIconPos[1] + "px";
+    sb_tabframe.style.height = (store.prefs.searchBoxInfo[3] - 62) + "px";
+    sb_global_icon.style.left = store.prefs.globalIconPos[0] + "px";
+    sb_global_icon.style.top = store.prefs.globalIconPos[1] + "px";
 
     // Enable dragging the window around
     make_movable(sb_dragbox, sb_container, function(event, left, top, move) {
         move();
-        prefs.prefs.searchBoxInfo[0] = left;
-        prefs.prefs.searchBoxInfo[1] = top;
-        bpm_prefs.sync_key("searchBoxInfo");
+        store.prefs.searchBoxInfo[0] = left;
+        store.prefs.searchBoxInfo[1] = top;
+        store.sync_key("searchBoxInfo");
     });
 
     // Enable dragging the resize element around (i.e. resizing it)
@@ -482,29 +483,29 @@ function init_search_box(prefs) {
         sb_container.style.height = sb_height + "px";
         sb_tabframe.style.height = (sb_height - 62) + "px";
 
-        prefs.prefs.searchBoxInfo[2] = sb_width;
-        prefs.prefs.searchBoxInfo[3] = sb_height;
-        bpm_prefs.sync_key("searchBoxInfo");
+        store.prefs.searchBoxInfo[2] = sb_width;
+        store.prefs.searchBoxInfo[3] = sb_height;
+        store.sync_key("searchBoxInfo");
     });
 }
 
 /*
  * Displays the search box.
  */
-function show(prefs) {
+function show_search_box(store) {
     sb_container.style.visibility = "visible";
     sb_input.focus();
-    switch_to_tab(sb_results);
+    switch_to_sb_tab(sb_results);
 
     // If we haven't run before, go search for things
-    if(!firstrun) {
-        firstrun = true;
-        sb_input.value = prefs.prefs.lastSearchQuery;
-        update_search(prefs);
+    if(!sb_firstrun) {
+        sb_firstrun = true;
+        sb_input.value = store.prefs.lastSearchQuery;
+        update_search_results(store);
     }
 }
 
-function hide() {
+function hide_search_box() {
     sb_container.style.visibility = "hidden";
     // TODO: possibly clear out the search results, since it's a large pile
     // of HTML.
@@ -513,13 +514,13 @@ function hide() {
     }
 }
 
-function switch_to_tab(tab) {
+function switch_to_sb_tab(tab) {
     var tabs = [sb_results, sb_helptab];
     for(var i = 0; i < tabs.length; i++) {
         tabs[i].style.display = "none";
     }
     tab.style.display = "block";
-    current_tab = tab;
+    current_sb_tab = tab;
 }
 
 /*
@@ -576,26 +577,26 @@ function grab_target_form() {
  * Injects an emote into the currently focused element, taking frames into
  * account.
  */
-function inject_emote(emote_name) {
+function inject_emote(store, emote_name) {
     if(target_frame !== null) {
         message_iframe(target_frame, {
             "__betterponymotes_method": "__bpm_inject_emote",
             "__betterponymotes_emote": emote_name
         });
     } else if(target_form !== null) {
-        inject_emote_into(target_form, emote_name);
+        inject_emote_into_form(store, target_form, emote_name);
     }
 }
 
 /*
  * Updates the search results window according to the current query.
  */
-function update_search(prefs) {
+function update_search_results(store) {
     // Split search query on spaces, remove empty strings, and lowercase terms
     var terms = sb_input.value.split(" ").map(function(v) { return v.toLowerCase(); });
     terms = terms.filter(function(v) { return v; });
-    prefs.prefs.lastSearchQuery = terms.join(" ");
-    bpm_prefs.sync_key("lastSearchQuery");
+    store.prefs.lastSearchQuery = terms.join(" ");
+    store.sync_key("lastSearchQuery");
 
     // Check this before we append the default search terms.
     if(!terms.length) {
@@ -608,7 +609,7 @@ function update_search(prefs) {
     // theoretically just show all hidden emotes, but it just ends up
     // cancelling into "-nonpony", searching for everything.
     terms.unshift("-hidden", "-nonpony");
-    var query = parse_query(terms);
+    var query = parse_search_query(terms);
     // Still nothing to do
     if(query === null) {
         sb_results.innerHTML = "";
@@ -616,15 +617,15 @@ function update_search(prefs) {
         return;
     }
 
-    var results = search(query);
+    var results = execute_search(store, query);
     log_debug("Search found", results.length, "results on query", query);
-    display_results(prefs, results);
+    display_search_results(store, results);
 }
 
 /*
  * Converts search results to HTML and displays them.
  */
-function display_results(prefs, results) {
+function display_search_results(store, results) {
     // We go through all of the results regardless of search limit (as that
     // doesn't take very long), but stop building HTML when we reach enough
     // shown emotes.
@@ -644,14 +645,14 @@ function display_results(prefs, results) {
         }
         prev = result.name;
 
-        if(is_disabled(prefs, result)) {
+        if(store.is_disabled(result)) {
             // TODO: enable it anyway if a pref is set? Dunno exactly what
             // we'd do
             hidden += 1;
             continue;
         }
 
-        if(shown >= prefs.prefs.searchLimit) {
+        if(shown >= store.prefs.searchLimit) {
             continue;
         } else {
             shown += 1;
@@ -683,7 +684,7 @@ function display_results(prefs, results) {
 /*
  * Injects the "emotes" button onto Reddit.
  */
-function inject_search_button(prefs, usertext_edits) {
+function inject_emotes_button(store, usertext_edits) {
     for(var i = 0; i < usertext_edits.length; i++) {
         var existing = usertext_edits[i].getElementsByClassName("bpm-search-toggle");
         var textarea = usertext_edits[i].getElementsByTagName("textarea")[0];
@@ -694,7 +695,7 @@ function inject_search_button(prefs, usertext_edits) {
          * clones of that form with our button already in it.
          */
         if(existing.length) {
-            wire_emotes_button(prefs, existing[0], textarea);
+            wire_emotes_button(store, existing[0], textarea);
         } else {
             var button = document.createElement("button");
             // Default is "submit", which is not good (saves the comment).
@@ -710,7 +711,7 @@ function inject_search_button(prefs, usertext_edits) {
             //
             // So instead it's just untabbable.
             button.tabIndex = 100;
-            wire_emotes_button(prefs, button, textarea);
+            wire_emotes_button(store, button, textarea);
             // Put it at the end- Reddit's JS uses get(0) when looking for
             // elements related to the "formatting help" linky, and we don't
             // want to get in the way of that.
@@ -723,7 +724,7 @@ function inject_search_button(prefs, usertext_edits) {
 /*
  * Sets up one particular "emotes" button.
  */
-function wire_emotes_button(prefs, button, textarea) {
+function wire_emotes_button(store, button, textarea) {
     button.addEventListener("mouseover", catch_errors(function(event) {
         grab_target_form();
     }), false);
@@ -731,12 +732,12 @@ function wire_emotes_button(prefs, button, textarea) {
     button.addEventListener("click", catch_errors(function(event) {
         var sb_element = document.getElementById("bpm-sb-container");
         if(sb_element.style.visibility !== "visible") {
-            show(prefs);
+            show_search_box(store);
             if(!target_form) {
                 target_form = textarea;
             }
         } else {
-            hide();
+            hide_search_box();
         }
     }), false);
 }
@@ -744,7 +745,7 @@ function wire_emotes_button(prefs, button, textarea) {
 /*
  * Sets up the global ">>" emotes icon.
  */
-function setup_global_icon(prefs) {
+function setup_global_icon(store) {
     log_debug("Injecting global search icon");
     sb_global_icon.addEventListener("mouseover", catch_errors(function(event) {
         grab_target_form();
@@ -756,9 +757,9 @@ function setup_global_icon(prefs) {
             return;
         }
         move();
-        prefs.prefs.globalIconPos[0] = left;
-        prefs.prefs.globalIconPos[1] = top;
-        bpm_prefs.sync_key("globalIconPos");
+        store.prefs.globalIconPos[0] = left;
+        store.prefs.globalIconPos[1] = top;
+        store.sync_key("globalIconPos");
     });
 
     sb_global_icon.style.visibility = "visible";
@@ -767,7 +768,7 @@ function setup_global_icon(prefs) {
         // Don't open at the end of a drag (only works if you release the
         // mouse button before the ctrl/meta key though...)
         if(!event.ctrlKey && !event.metaKey) {
-            show(prefs);
+            show_search_box(store);
         }
     }), false);
 }

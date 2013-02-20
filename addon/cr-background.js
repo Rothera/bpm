@@ -49,16 +49,20 @@ var pref_manager = bpm_backendsupport.manage_prefs(sr_name2id, {
 // Content script requests
 chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
     switch(message.method) {
+        case "get_initdata":
+            var reply = {"method": "initdata"};
+            if(message.want["prefs"]) {
+                reply.prefs = pref_manager.get();
+            }
+            if(message.want["customcss"]) {
+                reply.emotes = pref_manager.cm.emote_cache;
+                reply.css = pref_manager.cm.css_cache;
+            }
+            sendResponse(reply);
+            break;
+
         case "get_prefs":
             sendResponse({"method": "prefs", "prefs": pref_manager.get()});
-            break;
-
-        case "set_prefs":
-            pref_manager.write(message.prefs);
-            break;
-
-        case "force_update":
-            pref_manager.cm.force_update(message.subreddit);
             break;
 
         case "get_custom_css":
@@ -71,6 +75,14 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
 
         case "set_pref":
             pref_manager.set_pref(message.pref, message.value);
+            break;
+
+        case "set_prefs":
+            pref_manager.write(message.prefs);
+            break;
+
+        case "force_update":
+            pref_manager.cm.force_update(message.subreddit);
             break;
 
         default:

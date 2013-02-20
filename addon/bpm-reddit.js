@@ -56,7 +56,7 @@ function is_sidebar(md) {
  * Process the given list of elements (assumed to be <a> tags), converting
  * any that are emotes.
  */
-function process(prefs, elements, convert_unknown) {
+function process_links(store, elements, convert_unknown) {
     next_emote:
     for(var i = 0; i < elements.length; i++) {
         var element = elements[i];
@@ -72,7 +72,7 @@ function process(prefs, elements, convert_unknown) {
             // Don't normalize case for emote lookup
             var parts = href.split("-");
             var emote_name = parts[0];
-            var emote_info = lookup_emote(emote_name, prefs.custom_emotes);
+            var emote_info = store.lookup_emote(emote_name);
 
             if(emote_info) {
                 // Click blocker CSS/JS
@@ -85,9 +85,9 @@ function process(prefs, elements, convert_unknown) {
                     state += "n";
                 }
 
-                var nsfw_class = prefs.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-nsfw";
-                var disabled_class = prefs.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-disabled";
-                var disabled = is_disabled(prefs, emote_info);
+                var nsfw_class = store.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-nsfw";
+                var disabled_class = store.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-disabled";
+                var disabled = store.is_disabled(emote_info);
                 if(disabled) {
                     state += "d" + disabled; // Tee hee
                     if(!element.textContent) {
@@ -122,7 +122,7 @@ function process(prefs, elements, convert_unknown) {
                         element.classList.add("bpflag-" + sanitize_emote(flag));
                     }
                 }
-            } else if(convert_unknown && prefs.prefs.showUnknownEmotes) {
+            } else if(convert_unknown && store.prefs.showUnknownEmotes) {
                 /*
                  * If there's:
                  *    1) No text
@@ -171,7 +171,7 @@ var spoiler_links = ["/spoiler", "/s", "#s", "/b", "/g"];
  */
 // NOTE/FIXME: Alt-text isn't really related to emote conversion as-is, but
 // since it runs on a per-emote basis, it kinda goes here anyway.
-function display_alt_text(elements) {
+function process_alt_text(elements) {
     for(var i = 0; i < elements.length; i++) {
         var element = elements[i];
         var state = element.getAttribute("data-bpm_state") || "";
@@ -280,28 +280,28 @@ function display_alt_text(elements) {
 /*
  * Processes emotes and alt-text on a list of .md elements.
  */
-function process_posts(prefs, posts) {
+function process_posts(store, posts) {
     if(posts.length) {
         log_debug("Processing", posts.length, "posts");
     }
     for(var i = 0; i < posts.length; i++) {
-        process_rooted_post(prefs, posts[i], posts[i]);
+        process_rooted_post(store, posts[i], posts[i]);
     }
 }
 
 /*
  * Processes emotes and alt-text under an element, given the containing .md.
  */
-function process_rooted_post(prefs, post, md) {
+function process_rooted_post(store, post, md) {
     // Generally, the first post on the page will be the sidebar, so this
     // is an extremely fast test.
     var sidebar = is_sidebar(md);
     var links = post.getElementsByTagName("a");
     // NOTE: must run alt-text AFTER emote code, always. See note in
-    // display_alt_text
-    var out_of_sub = process(prefs, links, !sidebar);
-    if(!sidebar && prefs.prefs.showAltText) {
-        display_alt_text(links);
+    // process_alt_text
+    var out_of_sub = process_links(store, links, !sidebar);
+    if(!sidebar && store.prefs.showAltText) {
+        process_alt_text(links);
     }
 }
 
@@ -309,8 +309,8 @@ function process_rooted_post(prefs, post, md) {
  * Attaches to a .usertext-edit element, setting hooks to monitor the input
  * and display courtesy notifications appropriately.
  */
-function hook_usertext_edit(prefs, usertext_edits) {
-    if(!prefs.prefs.warnCourtesy) {
+function hook_usertext_edit(store, usertext_edits) {
+    if(!store.prefs.warnCourtesy) {
         return;
     }
 
@@ -322,11 +322,11 @@ function hook_usertext_edit(prefs, usertext_edits) {
         var textarea = edit.getElementsByTagName("textarea")[0];
         var bottom_area = edit.getElementsByClassName("bottom-area")[0];
 
-        _attach_to_usertext(prefs, textarea, bottom_area);
+        _attach_to_usertext(store, textarea, bottom_area);
     }
 }
 
-function _attach_to_usertext(prefs, textarea, bottom_area) {
+function _attach_to_usertext(store, textarea, bottom_area) {
     var timeout = null;
     function warn_now() {
         enable_warning(bottom_area, "OUTOFSUB",
@@ -344,7 +344,7 @@ function _attach_to_usertext(prefs, textarea, bottom_area) {
         var has_local = false;
         while(match = re.exec(text)) {
             var emote_name = match[1].split("-")[0];
-            var emote_info = lookup_emote(emote_name, prefs.custom_emotes);
+            var emote_info = store.lookup_emote(emote_name);
             // Nothing we recognize.
             if(emote_info === null) {
                 continue;
@@ -401,4 +401,103 @@ function _attach_to_usertext(prefs, textarea, bottom_area) {
             warn_now();
         }
     }), false);
+}
+
+/*
+ * Main function when running on Reddit.
+ */
+function run_reddit(store) {
+    log_info("Running on Reddit");
+
+    init_search_box(store);
+    var usertext_edits = document.getElementsByClassName("usertext-edit");
+    inject_emotes_button(store, usertext_edits);
+    hook_usertext_edit(store, usertext_edits);
+
+    // Initial pass- show all emotes currently on the page.
+    var posts = document.getElementsByClassName("md");
+    process_posts(store, posts);
+
+    // Add emote click blocker
+    document.body.addEventListener("click", catch_errors(function(event) {
+        var element = event.target;
+        if(element.classList.contains("bpm-emote") || element.classList.contains("bpm-unknown")) {
+            event.preventDefault();
+        }
+
+        if(element.classList.contains("bpm-emote")) {
+            // Click toggle
+            var state = element.getAttribute("data-bpm_state") || "";
+            var is_nsfw_disabled = state.indexOf("1") > -1; // NSFW
+            // Not a disabled emote, or NSFW
+            if((state.indexOf("d") < 0) || (store.prefs.clickToggleSFW && is_nsfw_disabled)) {
+                return;
+            }
+            var info = store.lookup_emote(element.getAttribute("data-bpm_emotename"));
+            if(element.classList.contains("bpm-disabled") ||
+               element.classList.contains("bpm-nsfw")) {
+                // Show
+                element.classList.remove("bpm-disabled");
+                element.classList.remove("bpm-nsfw");
+                element.classList.add(info.css_class);
+                if(state.indexOf("T") > -1) {
+                    element.textContent = "";
+                }
+            } else {
+                // Hide
+                element.classList.remove(info.css_class);
+                element.classList.add(is_nsfw_disabled ? "bpm-nsfw" : "bpm-disabled");
+                if(state.indexOf("T") > -1) {
+                    element.textContent = info.name;
+                }
+            }
+        }
+    }), false);
+
+    // As a relevant note, it's a terrible idea to set this up before
+    // the DOM is built, because monitoring it for changes seems to slow
+    // the process down horribly.
+
+    // What we do here: for each mutation, inspect every .md we can
+    // find- whether the node in question is deep within one, or contains
+    // some.
+    observe_document(function(nodes) {
+        for(var i = 0; i < nodes.length; i++) {
+            var root = nodes[i];
+            if(root.nodeType !== find_global("Node").ELEMENT_NODE) {
+                // Not really interested in other kinds.
+                continue;
+            }
+
+            var md;
+            if(md = class_above(root, "md")) {
+                // Inside of a formatted text block, take all the
+                // links we can find
+                process_rooted_post(store, root, md);
+            } else {
+                // Outside of formatted text, try to find some
+                // underneath us
+                var posts = root.getElementsByClassName("md");
+                process_posts(store, posts);
+            }
+
+            // TODO: move up in case we're inside it?
+            var usertext_edits = root.getElementsByClassName("usertext-edit");
+            inject_emotes_button(store, usertext_edits);
+            hook_usertext_edit(store, usertext_edits);
+        }
+    });
+}
+
+function reddit_main(store) {
+    init_css(store);
+
+    // This script is generally run before the DOM is built. Opera may break
+    // that rule, but I don't know how and there's nothing we can do anyway.
+    //
+    // Need DOM (to operate on), prefs and customcss (to work with).
+    with_dom(function() {
+        inject_reddit_log_button(); // Do this early
+        run_reddit(store);
+    });
 }

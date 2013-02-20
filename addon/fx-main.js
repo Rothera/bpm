@@ -99,19 +99,23 @@ var pref_manager = bpm_backendsupport.manage_prefs(bpm_data.sr_name2id, {
 function on_cs_attach(worker) {
     worker.on("message", function(message) {
         switch(message.method) {
+            case "get_initdata":
+                var reply = {"method": "initdata"};
+                if(message.want["prefs"]) {
+                    reply.prefs = pref_manager.get();
+                }
+                if(message.want["customcss"]) {
+                    reply.emotes = pref_manager.cm.emote_cache;
+                    reply.css = pref_manager.cm.css_cache;
+                }
+                worker.postMessage(reply);
+                break;
+
             case "get_prefs":
                 worker.postMessage({
                     "method": "prefs",
                     "prefs": pref_manager.get()
                 });
-                break;
-
-            case "set_prefs":
-                pref_manager.write(message.prefs);
-                break;
-
-            case "force_update":
-                pref_manager.cm.force_update(message.subreddit);
                 break;
 
             case "get_custom_css":
@@ -124,6 +128,14 @@ function on_cs_attach(worker) {
 
             case "set_pref":
                 pref_manager.set_pref(message.pref, message.value);
+                break;
+
+            case "set_prefs":
+                pref_manager.write(message.prefs);
+                break;
+
+            case "force_update":
+                pref_manager.cm.force_update(message.subreddit);
                 break;
 
             case "open_options":

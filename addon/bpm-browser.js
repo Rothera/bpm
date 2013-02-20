@@ -7,7 +7,7 @@
  * is built. May be undefined or null if there is no such object.
  */
 function css_parent() {
-    return document.head;
+    return document.head || document.documentElement || null;
 }
 
 /*
@@ -52,19 +52,42 @@ var set_pref = function(key, value) {
     _send_message("set_pref", {"pref": key, "value": value});
 };
 
-/*
- * Sends a message to the backend requesting a copy of the preferences.
- */
-var request_prefs = function() {
-    _send_message("get_prefs");
+var request_initdata = function(want) {
+    _send_message("get_initdata", {"want": want});
 };
 
-/*
- * Sends a message to the backend requesting the custom CSS data.
- */
-var request_custom_css = function() {
-    _send_message("get_custom_css");
+var _initdata_want = null;
+var _initdata_hook = null;
+var setup_browser = function(want, callback) {
+    _initdata_want = want;
+    _initdata_hook = callback;
+    _send_message("get_initdata", {"want": want});
 };
+
+function _complete_setup(initdata) {
+    var store = new Store();
+
+    if(_initdata_want.prefs) {
+        if(initdata.prefs !== undefined) {
+            store.setup_prefs(initdata.prefs);
+        } else {
+            log_error("Backend sent wrong initdata: no prefs");
+            return;
+        }
+    }
+    if(_initdata_want.customcss) {
+        if(initdata.emotes !== undefined && initdata.css !== undefined) {
+            store.setup_customcss(initdata.emotes, initdata.css);
+        } else {
+            log_error("Backend sent wrong initdata: no custom css");
+            return;
+        }
+    }
+
+    _initdata_hook(store);
+    _initdata_want = null;
+    _initdata_hook = null;
+}
 
 // Missing attributes/methods:
 var _send_message = null;
@@ -106,12 +129,8 @@ case "firefox-ext":
 
     self.on("message", catch_errors(function(message) {
         switch(message.method) {
-        case "prefs":
-            bpm_prefs.got_prefs(message.prefs);
-            break;
-
-        case "custom_css":
-            bpm_prefs.got_custom_emotes(message.emotes, message.css);
+        case "initdata":
+            _complete_setup(message);
             break;
 
         default:
@@ -122,10 +141,6 @@ case "firefox-ext":
     break;
 
 case "chrome-ext":
-    css_parent = function() {
-        return document.documentElement;
-    };
-
     _send_message = function(method, data) {
         if(data === undefined) {
             data = {};
@@ -135,21 +150,17 @@ case "chrome-ext":
         chrome.extension.sendMessage(data, _message_handler);
     };
 
-    var _message_handler = function(message) {
+    var _message_handler = catch_errors(function(message) {
         switch(message.method) {
-        case "prefs":
-            bpm_prefs.got_prefs(message.prefs);
-            break;
-
-        case "custom_css":
-            bpm_prefs.got_custom_emotes(message.emotes, message.css);
+        case "initdata":
+            _complete_setup(message);
             break;
 
         default:
             log_error("Unknown request from Chrome background script: '" + message.method + "'");
             break;
         }
-    }
+    });
 
     make_css_link = function(filename, callback) {
         var tag = stylesheet_link(chrome.extension.getURL(filename));
@@ -170,7 +181,6 @@ case "opera-ext":
         opera.extension.postMessage(data);
     };
 
-    var _get_file = null;
     make_css_link = function(filename, callback) {
         _get_file(filename, function(data) {
             var tag = style_tag(data);
@@ -190,7 +200,7 @@ case "opera-ext":
     // Opera Next (12.50) has a better API to load the contents of an
     // embedded file than making a request to the backend process. Use
     // that if available.
-    var _get_file;
+    var _get_file = null;
     if(opera.extension.getFile) {
         log_debug("Using getFile data API");
         _get_file = function(filename, callback) {
@@ -218,17 +228,13 @@ case "opera-ext":
     opera.extension.addEventListener("message", catch_errors(function(event) {
         var message = event.data;
         switch(message.method) {
+        case "initdata":
+            _complete_setup(message);
+            break;
+
         case "file_loaded":
             _file_callbacks[message.filename](message.data);
             delete _file_callbacks[message.filename];
-            break;
-
-        case "prefs":
-            bpm_prefs.got_prefs(message.prefs);
-            break;
-
-        case "custom_css":
-            bpm_prefs.got_custom_emotes(message.emotes, message.css);
             break;
 
         default:
@@ -249,9 +255,9 @@ case "userscript":
 
     var _sync_prefs = function() {
         GM_setValue("prefs", JSON.stringify(_pref_cache));
-    }
+    };
 
-    request_prefs = function() {
+    request_initdata = function(want) {
         var tmp = GM_getValue("prefs");
         if(!tmp) {
             tmp = "{}";
@@ -261,11 +267,9 @@ case "userscript":
         bpm_backendsupport.setup_prefs(_pref_cache, sr_name2id);
         _sync_prefs();
 
-        bpm_prefs.got_prefs(_pref_cache);
-        bpm_prefs.got_custom_emotes({}, ""); // No support
+        // No support for custom CSS
+        _complete_setup({"prefs": _pref_cache, "emotes": {}, "css": ""});
     };
-
-    request_custom_css = function() {};
 
     make_css_link = function(filename, callback) {
         var url = EXT_RESOURCE_PREFIX + filename + "?p=2&dver=/*{{data_version}}*/";

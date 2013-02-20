@@ -369,9 +369,8 @@ def sync(ctx):
 ScriptFiles = [
     "addon/bpm-header.js",
     "addon/bpm-utils.js",
-    "addon/bpm-data.js",
     "addon/bpm-browser.js",
-    "addon/bpm-prefs.js",
+    "addon/bpm-store.js",
     "addon/bpm-reddit.js",
     "addon/bpm-search.js",
     "addon/bpm-global.js",
