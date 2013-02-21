@@ -45,7 +45,7 @@ def cmd_list(args):
 
 def download_url(num, total, url):
     print("[%s/%s]: %s" % (num+1, total, url))
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Cookie": "over18=1"})
     try:
         with urllib.request.urlopen(req) as stream:
             data = stream.read()
