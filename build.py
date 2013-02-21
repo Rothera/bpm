@@ -312,11 +312,21 @@ def o_package(ctx):
         ctx.remove("build/*.oex")
         ctx.zip("build/betterponymotes.oex", "build/opera/")
 
-UserscriptResourcePrefix = "http://rainbow.mlas1.us/"
+# NO TRAILING SLASHES; EXT_RESOURCE_PREFIX wants to have none
+UserscriptResourcePrefix = "http://rainbow.mlas1.us"
+UserscriptTestPrefix = "http://localhost:8000"
 
 @target("userscript", "build/betterponymotes.user.js")
 def gen_userscript(ctx):
     make_script(ctx, "build/betterponymotes.user.js", extravars={"require_prefix": UserscriptResourcePrefix})
+
+@target("userscript-test")
+def gen_test_userscript(ctx):
+    ctx.mkdir("build/us-test")
+    build_data(ctx)
+    make_script(ctx, "build/us-test/betterponymotes.user.js", extravars={"require_prefix": UserscriptTestPrefix})
+    ctx.copy("addon/pref-setup.js", "build/us-test")
+    ctx.copy("build/bpm-resources.js", "build/us-test")
 
 @target("update-manifests", "build/betterponymotes.update.rdf", "build/opera-updates.xmls")
 def gen_update_manifests(ctx):

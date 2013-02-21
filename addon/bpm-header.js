@@ -8,8 +8,8 @@
 // @include https://*/*
 // @name BetterPonymotes
 // @namespace http://rainbow.mlas1.us/
-// @require /*{{require_prefix}}*/bpm-resources.js?p=2&dver=/*{{data_version}}*/
-// @require /*{{require_prefix}}*/pref-setup.js?p=2&cver=/*{{code_version}}*/
+// @require /*{{require_prefix}}*//bpm-resources.js?p=2&dver=/*{{data_version}}*/
+// @require /*{{require_prefix}}*//pref-setup.js?p=2&cver=/*{{code_version}}*/
 // @run-at document-start
 // @updateURL http://rainbow.mlas1.us/betterponymotes.user.js
 // @version /*{{version}}*/
@@ -37,7 +37,7 @@ var emote_map, sr_name2id, sr_id2name, tag_name2id, tag_id2name, bpm_backendsupp
 
 var DEV_MODE = false;
 
-var EXT_RESOURCE_PREFIX = "http://rainbow.mlas1.us";
+var EXT_RESOURCE_PREFIX = "/*{{require_prefix}}*/";
 var EXT_OPTIONS_PAGE = EXT_RESOURCE_PREFIX + "/options.html";
 
 // Domain names on which the global emote converter will refuse to run,

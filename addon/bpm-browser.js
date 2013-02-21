@@ -61,7 +61,7 @@ var _initdata_hook = null;
 var setup_browser = function(want, callback) {
     _initdata_want = want;
     _initdata_hook = callback;
-    _send_message("get_initdata", {"want": want});
+    request_initdata(want);
 };
 
 function _complete_setup(initdata) {

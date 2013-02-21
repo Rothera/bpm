@@ -108,7 +108,7 @@ function init_css(store) {
             document.body.insertBefore(div.firstChild, document.body.firstChild);
 
             add_css(".bpflag-i { filter: url(#bpm-darkle); }" +
-                                ".bpflag-invert { filter: url(#bpm-invert); }");
+                    ".bpflag-invert { filter: url(#bpm-invert); }");
         }
     });
 }
