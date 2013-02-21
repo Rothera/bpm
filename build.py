@@ -287,7 +287,7 @@ def o_package(ctx):
     build_data(ctx)
 
     with ctx.cd(dest="build/opera"):
-        ctx.filter("addon/o-config.xml", dest="confg.xml")
+        ctx.filter("addon/o-config.xml", dest="config.xml")
         ctx.copy("addon/o-index.html", "index.html")
         ctx.copy("addon/o-background.js", "background.js")
 
