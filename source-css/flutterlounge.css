@@ -165,10 +165,70 @@ a[href|="/fluttersmug"] {
     width: 327px;
     background-position: -1094px -0px 
     }
+/* EMOTES EMOTES */
+
+a[href|="/hi"], a[href|="/shypinkie"], a[href|="/shyflower"], a[href|="/fluttermas"], a[href|="/flutterheart"] {
+
+    display: block;
+    clear: none;
+    float: left;
+    height: 300px;
+    background-image: url(%%fluttersheet2%%) !important
+    }
+a[href|="/hi"], a[href|="/shypinkie"] {
+    width: 468px;
+    background-position: -0px -0px 
+    }
+a[href|="/shyflower"] {
+    width: 308px;
+    background-position: -469px -0px 
+    }
+a[href|="/fluttermas"]  {
+    width: 234px;
+    background-position: -777px -0px 
+    }
+a[href|="/flutterheart"]  {
+    width: 234px;
+    background-position: -1011px -0px 
+    }
+/* HOLY SHEET MORE EMOTES */
+a[href|="/loveyou"], a[href|="/fluttershylovesyou"], a[href|="/loveyou"], a[href|="/fluttertine"], a[href|="/shytine"] {
+
+    display: block;
+    clear: none;
+    float: left;
+    height: 200px;
+    background-image: url(%%fluttersheet3%%) !important
+    }
+a[href|="/loveyou"], a[href|="/fluttershylovesyou"] {
+    width: 171px;
+    background-position: -0px -0px 
+    }
+a[href|="/fluttertine"], a[href|="/shytine"] {
+    width: 135px;
+    background-position: -171px -0px 
+    }
+/* SNUGGLES */
+a[href|="/shydashiesnuggle"], a[href|="/shydashsnuggle"], a[href|="/flutterdashsnuggle"], a[href|="/shyhuggle"], a[href|="/flutterhuggle"] {
+
+    display: block;
+    clear: none;
+    float: left;
+    height: 200px;
+    background-image: url(%%snugglesheet%%) !important
+    }
+a[href|="/shydashiesnuggle"], a[href|="/shydashsnuggle"], a[href|="/flutterdashsnuggle"]  {
+    width: 288px;
+    background-position: -0px -0px 
+    }
+a[href|="/shyhuggle"], a[href|="/flutterhuggle"] {
+    width: 85px;
+    background-position: -289px -0px 
+    }
 
 /* FinalFlutter emotes, full of cute! */
 
-a[href|="/flutterstache"], a[href|="/shystache"], a[href|="/shysnooze"], a[href|="/bunnysnooze"], a[href|="/bookfortshy"], a[href|="/hidingshy"], a[href|="/saveme"], a[href|="/ineedanadult"], a[href|="/shyhelp"] {
+a[href|="/flutterstache"], a[href|="/shystache"], a[href|="/shysnooze"], a[href|="/bunnysnooze"], a[href|="/bookfortshy"], a[href|="/hidingshy"], a[href|="/saveme"], a[href|="/ineedanadult"], a[href|="/shyhelp"], a[href|="/cookieshy"], a[href|="/fluttercookie"] {
 
     display: block;
     clear: none;
@@ -197,6 +257,10 @@ a[href|="/saveme"], a[href|="/ineedanadult"], a[href|="/shyhelp"] {
     background-position: -600px -0px 
     }
 
+a[href|="/cookieshy"], a[href|="/fluttercookie"] {
+    width: 157px;
+    background-position: -800px -0px 
+    }
 /* Animotes - aPNG emotes! */
 
 a[href|="/fluttersmile"], a[href|="/shysmile"] {
@@ -548,7 +612,7 @@ text-decoration: underline;
     }
 
 /*** Submit a link -> Create a submission (Totally not stolen from /r/mylittlefoodmanes) ***/
-
+/*
 .sidebox.submit .morelink:before {
     display: block;
     clear: none;
@@ -556,39 +620,21 @@ text-decoration: underline;
     text-align: center;
     color: #369;
     width: 101%
-    }
-.sidebox.submit .morelink a {
-    position: absolute;
-    top: 0;
-    font-size: 1px;
-    text-align: right;
-    color: #f2f8fd
-    }
+    } */
 .sidebox.submit .morelink:hover:before {
     color: blue
     }
 .sidebox.submit:hover a {
     color: #b4cee5
     }
-.sidebox .subtitle:before {
-    display: block;
-    clear: none;
-    content: " Flutter articles, Flutter pictures, Flutter videos, Flutter Flutter...";
-    color: dimgrey;
-    font-size: 8pt !important
-    }
-.sidebox .subtitle {
-    font-size: 0px
-    }
-.sidebox.create {
-    display: none
-    }
+
+/*
 .sidebox.submit .spacer a {
     background-image: url(%%submissionshy%%);
     background-position: -0px -0px;
     background-repeat: no-repeat
     }
-
+*/
 /******************
 shy emote
 ******************/

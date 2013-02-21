@@ -84,7 +84,13 @@ body.res-nightmode:first-of-type {background-color: transparent!important;}
 |                              
 */
 
-/* 1: PAGE STYLE CHANGES*/
+/*
+| 
+| ▀█    █▀█ █▀█ █▀▀ █▀▀   █▀▀ ▀█▀ █ █ █   █▀▀
+|  █    █▀▀ █▀█ █ ▄ █▀    ▀▀█  █   █  █   █▀
+| ▀▀▀ ▀ ▀   ▀ ▀ ▀▀▀ ▀▀▀   ▀▀▀  ▀   ▀  ▀▀▀ ▀▀▀
+|
+*/
 
 /* A: HEADER ETC.*/
 
@@ -105,9 +111,11 @@ body
 
 /* i: HEADER */
 #header {
-    background-image: url(%%banner2%%);
+    background-image: url(%%banner3%%);
+    background-repeat: no-repeat;
+    background-position: left bottom;
     border-bottom: 1px solid #000000;
-    height: 144px;
+    height: 162px;
     z-index: 0;
     -moz-box-shadow: 0px 0px 10px #888;
     -webkit-box-shadow: 0px 0px 10px #888;
@@ -191,7 +199,7 @@ img#header-img{
 .titlebox .usertext-body .md h6 {
     display: block;
     position: absolute;
-    top: 145px;
+    top: 160px;
     left: 20px;
     
     content: "Info about the new flair system";
@@ -305,29 +313,29 @@ a.author[href$="/RetardVomitPussyCunt"]:after {
 /* H: CUSTOM ARROWS */ 
 
 .arrow.up {
-    background-image: url(%%upoff%%) !important;
-    background-position: 0 0 !important;
+    background-image: url(%%arrows%%) !important;
+    background-position: -15px 0px !important;
     z-index: 999;
     }
 .arrow.down {
-    background-image: url(%%downoff%%) !important;
-    background-position: 0 0 !important;
+    background-image: url(%%arrows%%) !important;
+    background-position: 0px 0px !important;
     }
 .arrow.upmod {
-    background-image: url(%%up%%) !important;
-    background-position: 0 0 !important;
+    background-image: url(%%arrows%%) !important;
+    background-position: -15px -15px !important;
     z-index: 999;
     }
 .arrow.downmod {
-    background-image: url(%%down%%) !important;
-    background-position: 0 0 !important
+    background-image: url(%%arrows%%) !important;
+    background-position: 0px -15px !important
     }
 .arrow.down:hover:before {
     position: absolute;
     display: block;
     z-index: 1000;
     width: 85px;
-    content: "But, I wub you"; 
+    content: "But... But I wub you"; 
     padding: 5px;
     border: 0px solid #333;
     text-align: center;
@@ -374,7 +382,13 @@ a.author[href$="/RetardVomitPussyCunt"]:after {
 /*------------***------------*/
 
 
-/* 2: FLAIRS */
+/*
+|
+| ▀▀█   █▀▀ █   █▀█ ▀█▀ █▀▀█ █▀▀
+| █▀▀   █▀  █   █▀█  █  █▀█▀ ▀▀█
+| ▀▀▀ ▀ ▀   ▀▀▀ ▀ ▀ ▀▀▀ ▀  ▀ ▀▀▀
+|
+*/
 
 /* A: FLAIR */
 
@@ -426,77 +440,106 @@ background-repeat: no-repeat;
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
 
-/* 3: EMOTES */
+/*
+| 
+| ▀▀█   █▀▀ █▀█▀█ █▀█ ▀█▀ █▀▀ █▀▀
+| ▀▀█   █▀  █ ▀ █ █ █  █  █▀  ▀▀█
+| ▀▀▀ ▀ ▀▀▀ ▀   ▀ ▀▀▀  ▀  ▀▀▀ ▀▀▀
+|
+*/
 
 /* Don't modify the start and stop tags please. -koobaxion */
 
-/*vs_start*/
+/* vs_start */
 	
-a[href|='/vswink'],a[href|='/vs22'],a[href|='/shrug'],a[href|='/vsshrug'],a[href|='/tableflip'],a[href|='/vsbass'],a[href|='/vs15'],a[href|='/vscurious'],a[href|='/vs13'],a[href|='/vsdeal'],a[href|='/vs01'],a[href|='/vsderp'],a[href|='/vs02'],a[href|='/vsfilly'],a[href|='/vs07'],a[href|='/vshair'],a[href|='/vs20'],a[href|='/vshappy'],a[href|='/vs14'],a[href|='/vshey'],a[href|='/vs12'],a[href|='/vshooves'],a[href|='/vs04'],a[href|='/vsjuice'],a[href|='/vs23'],a[href|='/vslook'],a[href|='/vs05'],a[href|='/vslying'],a[href|='/vs03'],a[href|='/vsmeh'],a[href|='/vs21'],a[href|='/vsmine'],a[href|='/vs25'],a[href|='/vsmog'],a[href|='/vs08'],a[href|='/vsnope'],a[href|='/vs26'],a[href|='/vsohyou'],a[href|='/vs00'],a[href|='/vsomg'],a[href|='/vs06'],a[href|='/vsoooo'],a[href|='/vs16'],a[href|='/vssad'],a[href|='/vs10'],a[href|='/vssup'],a[href|='/vs24'],a[href|='/vstear'],a[href|='/vs11'],a[href|='/vswtf'],a[href|='/vs27'], a[href|='/vswhathefuck'],a[href|='/vsyds'],a[href|='/vs17'], a[href|='/vsyoudontsay'],a[href|='/vslaying'],a[href|='/laying'],a[href|='/vsplot'],a[href|='/vscute'],a[href|='/vs18'],a[href|='/vssalute'],a[href|='/vs28'],a[href|='/vsboring'], a[href|="/vsdrawponies"], a[href|="/vshnngg"], a[href|="/hnnng"],a[href|='/vs09'], a[href|='/vssquee'],a[href|='/vs19'],a[href|='/vs29'], a[href|='/vseyeroll'],a[href|='/vsheh'],a[href|='/vswubs'],a[href|='/vsmilkshake'],a[href|='/vsyes'],a[href|='/vsconcerned'],a[href|='/vsa2'],a[href|='/vsa1'],a[href|='/vsa0'],a[href|='/vsb1']{
+a[href|='/shrug'],a[href|="/vsshrug"],a[href|='/tableflip'],a[href|='/vslaying'],a[href|='/laying'],a[href|='/vsplot'],a[href|='/vssalute'],a[href|='/vssquee'],a[href|='/vsohyou'],a[href|='/vsdeal'],a[href|='/vsderp'],a[href|='/vslying'],a[href|='/vshooves'],a[href|='/vslook'],a[href|='/vsomg'],a[href|='/vsfilly'],a[href|='/vsmog'],a[href|="/vsdrawponies"],a[href|="/vshnngg"],a[href|="/hnnng"],a[href|='/vswubs'],a[href|='/vssad'],a[href|='/vstear'],a[href|='/vshey'],a[href|='/vscurious'],a[href|='/vshappy'],a[href|='/vsbass'],a[href|='/vsoooo'],a[href|='/vsyds'],a[href|='/vsyoudontsay'],a[href|='/vscute'],a[href|='/vseyeroll'],a[href|='/vsmilkshake'],a[href|='/vsconcerned'],a[href|='/vshair'],a[href|='/vsmeh'],a[href|='/vswink'],a[href|='/vsjuice'],a[href|='/vssup'],a[href|='/vsmine'],a[href|='/vsnope'],a[href|='/vswtf'],a[href|='/vswhatthefuck'],a[href|='/vsboring'],a[href|='/vsheh'],a[href|='/vsyes'],a[href|='/vs00'],a[href|='/vs01'],a[href|='/vs02'],a[href|='/vs03'],a[href|='/vs04'],a[href|='/vs05'],a[href|='/vs06'],a[href|='/vs07'],a[href|='/vs08'],a[href|='/vs09'],a[href|='/vs0a'],a[href|='/vs10'],a[href|='/vs11'],a[href|='/vs12'],a[href|='/vs13'],a[href|='/vs14'],a[href|='/vs15'],a[href|='/vs16'],a[href|='/vs17'],a[href|='/vs18'],a[href|='/vs19'],a[href|='/vs1a'],a[href|='/vs1b'],a[href|='/vs20'],a[href|='/vs21'],a[href|='/vs22'],a[href|='/vs23'],a[href|='/vs24'],a[href|='/vs25'],a[href|='/vs26'],a[href|='/vs27'],a[href|='/vs28'],a[href|='/vs29'],a[href|='/vs2a']{
     display: block;
     clear: none;
     float: left;
     background-image: url(%%vssheet%%) !important
     }
 
-a[href|='/vswink'],a[href|='/vs22'] {width:70px; height:70px; background-position: -2px -2px}
-a[href|='/shrug'],a[href|="/vsshrug"] {width:250px; height:250px; background-position: -74px -2px}
-a[href|='/tableflip'] {width:298px; height:200px; background-position: -2px -254px}
-a[href|='/vsbass'],a[href|='/vs15'] {width:70px; height:70px; background-position: -302px -254px}
-a[href|='/vscurious'],a[href|='/vs13'] {width:70px; height:70px; background-position: -374px -254px}
-a[href|='/vsdeal'],a[href|='/vs01'] {width:70px; height:70px; background-position: -2px -456px}
-a[href|='/vsderp'],a[href|='/vs02'] {width:70px; height:70px; background-position: -74px -456px}
-a[href|='/vsfilly'],a[href|='/vs07'] {width:70px; height:70px; background-position: -146px -456px}
-a[href|='/vshair'],a[href|='/vs20'] {width:70px; height:70px; background-position: -218px -456px}
-a[href|='/vshappy'],a[href|='/vs14'] {width:70px; height:70px; background-position: -290px -456px}
-a[href|='/vshey'],a[href|='/vs12'] {width:70px; height:70px; background-position: -362px -456px}
-a[href|='/vshooves'],a[href|='/vs04'] {width:70px; height:70px; background-position: -434px -456px}
-a[href|='/vsjuice'],a[href|='/vs23'] {width:70px; height:70px; background-position: -2px -528px}
-a[href|='/vslook'],a[href|='/vs05'] {width:70px; height:70px; background-position: -74px -528px}
-a[href|='/vslying'],a[href|='/vs03'] {width:70px; height:70px; background-position: -146px -528px}
-a[href|='/vsmeh'],a[href|='/vs21'] {width:70px; height:70px; background-position: -218px -528px}
-a[href|='/vsmine'],a[href|='/vs25'] {width:70px; height:70px; background-position: -290px -528px}
-a[href|='/vsmog'],a[href|='/vs08'] {width:70px; height:70px; background-position: -362px -528px}
-a[href|='/vsnope'],a[href|='/vs26'] {width:70px; height:70px; background-position: -434px -528px}
-a[href|='/vsohyou'],a[href|='/vs00'] {width:70px; height:70px; background-position: -2px -600px}
-a[href|='/vsomg'],a[href|='/vs06'] {width:70px; height:70px; background-position: -74px -600px}
-a[href|='/vsoooo'],a[href|='/vs16'] {width:70px; height:70px; background-position: -146px -600px}
-a[href|='/vssad'],a[href|='/vs10'] {width:70px; height:70px; background-position: -218px -600px}
-a[href|='/vssup'],a[href|='/vs24'] {width:70px; height:70px; background-position: -290px -600px}
-a[href|='/vstear'],a[href|='/vs11'] {width:70px; height:70px; background-position: -362px -600px}
-a[href|='/vswtf'],a[href|='/vs27'], a[href|='/vswhathefuck'] {width:70px; height:70px; background-position: -434px -600px}
-a[href|='/vsyds'] ,a[href|='/vs17'], a[href|='/vsyoudontsay']{width:70px; height:70px; background-position: -2px -672px}
-a[href|='/vslaying'],a[href|='/laying'] {width:200px; height:164px; background-position: -74px -672px}
-a[href|='/vsplot'] {width:124px; height:91px; background-position: -280px -679px}
-a[href|='/vscute'],a[href|='/vs18'] {width:60px; height:70px; background-position: -0px -78px}
-a[href|='/vssalute'] {width:187px; height:142px; background-position: -337px -0px}
-a[href|='/vs28'],a[href|='/vsboring']  {width:70px; height:70px; background-position: -0px -150px}
-a[href|="/vsdrawponies"], a[href|="/vshnngg"], a[href|="/hnnng"],a[href|='/vs09'] {width:59px; height:70px;background-position: -450px -253px}
-a[href|='/vssquee'] {width:102px; height:80px;background-position: -422px -147px}
-a[href|='/vs19'], a[href|='/vseyeroll']{width:80px; height:77px;background-position: -415px -672px}
-a[href|='/vs29'],a[href|='/vsheh']{width:67px; height:80px;background-position: -417px -749px}
-a[href|='/vswubs'],a[href|='/vsa0']{width:70px; height:65px;background-position: -302px -324px}
-a[href|='/vsmilkshake'],a[href|='/vsa1']{width:70px; height:92px;background-position: -394px -332px}
-a[href|='/vsconcerned'],a[href|='/vsb1']{width:70px; height:97px;background-position: -341px -153px}
-a[href|='/vsyes'],a[href|='/vsa2']{width:70px; height:73px;background-position: 0px -765px}
-
-/* Second Flair Sheet */
-
-a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vsb0']{
+a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vs0b']{
     display: block;
     clear: none;
     float: left;
     background-image: url(%%vssheet2%%) !important
     }
 
-a[href|='/vspuppy']{width:148px; height:145px;background-position: -145px 0px}
-a[href|='/vssuave'],a[href|='/vsb0']{width:70px; height:83px;background-position: -145px -145px}
-a[href|='/vsexcited']{width:132px; height:295px;background-position: 0px 0px}
+/* Sheet 1 */
+/* Non-charted Emotes */
+a[href|='/shrug'],a[href|="/vsshrug"] {width:250px; height:250px; background-position: -74px -2px}
+a[href|='/tableflip'] {width:298px; height:200px; background-position: -2px -254px}
+a[href|='/vslaying'],a[href|='/laying'] {width:200px; height:164px; background-position: -74px -672px}
+a[href|='/vsplot'] {width:124px; height:91px; background-position: -280px -679px}
+a[href|='/vssalute'] {width:187px; height:142px; background-position: -337px -0px}
+a[href|='/vssquee'] {width:102px; height:80px;background-position: -422px -147px}
+
+/* 0 Column */
+a[href|='/vsohyou'],a[href|='/vs00'] {width:70px; height:70px; background-position: -2px -600px}
+a[href|='/vsdeal'],a[href|='/vs01'] {width:70px; height:70px; background-position: -2px -456px}
+a[href|='/vsderp'],a[href|='/vs02'] {width:70px; height:70px; background-position: -74px -456px}
+a[href|='/vslying'],a[href|='/vs03'] {width:70px; height:70px; background-position: -146px -528px}
+a[href|='/vshooves'],a[href|='/vs04'] {width:70px; height:70px; background-position: -434px -456px}
+a[href|='/vslook'],a[href|='/vs05'] {width:70px; height:70px; background-position: -74px -528px}
+a[href|='/vsomg'],a[href|='/vs06'] {width:70px; height:70px; background-position: -74px -600px}
+a[href|='/vsfilly'],a[href|='/vs07'] {width:70px; height:70px; background-position: -146px -456px}
+a[href|='/vsmog'],a[href|='/vs08'] {width:70px; height:70px; background-position: -362px -528px}
+a[href|="/vsdrawponies"], a[href|="/vshnngg"], a[href|="/hnnng"],a[href|='/vs09'] {width:59px; height:70px;background-position: -450px -253px}
+a[href|='/vswubs'],a[href|='/vs0a'] {width:70px; height:65px;background-position: -302px -324px}
+
+/* 1 Column */
+a[href|='/vssad'],a[href|='/vs10'] {width:70px; height:70px; background-position: -218px -600px}
+a[href|='/vstear'],a[href|='/vs11'] {width:70px; height:70px; background-position: -362px -600px}
+a[href|='/vshey'],a[href|='/vs12'] {width:70px; height:70px; background-position: -362px -456px}
+a[href|='/vscurious'],a[href|='/vs13'] {width:70px; height:70px; background-position: -374px -254px}
+a[href|='/vshappy'],a[href|='/vs14'] {width:70px; height:70px; background-position: -290px -456px}
+a[href|='/vsbass'],a[href|='/vs15'] {width:70px; height:70px; background-position: -302px -254px}
+a[href|='/vsoooo'],a[href|='/vs16'] {width:70px; height:70px; background-position: -146px -600px}
+a[href|='/vsyds'] ,a[href|='/vs17'], a[href|='/vsyoudontsay']{width:70px; height:70px; background-position: -2px -672px}
+a[href|='/vscute'],a[href|='/vs18'] {width:60px; height:70px; background-position: -0px -78px}
+a[href|='/vseyeroll'],a[href|='/vs19'] {width:80px; height:77px;background-position: -415px -672px}
+a[href|='/vsmilkshake'],a[href|='/vs1a'] {width:70px; height:92px;background-position: -394px -332px}
+a[href|='/vsconcerned'],a[href|='/vs1b'] {width:70px; height:97px;background-position: -341px -153px}
+
+/* 2 Column */
+a[href|='/vshair'],a[href|='/vs20'] {width:70px; height:70px; background-position: -218px -456px}
+a[href|='/vsmeh'],a[href|='/vs21'] {width:70px; height:70px; background-position: -218px -528px}
+a[href|='/vswink'],a[href|='/vs22'] {width:70px; height:70px; background-position: -2px -2px}
+a[href|='/vsjuice'],a[href|='/vs23'] {width:70px; height:70px; background-position: -2px -528px}
+a[href|='/vssup'],a[href|='/vs24'] {width:70px; height:70px; background-position: -290px -600px}
+a[href|='/vsmine'],a[href|='/vs25'] {width:70px; height:70px; background-position: -290px -528px}
+a[href|='/vsnope'],a[href|='/vs26'] {width:70px; height:70px; background-position: -434px -528px}
+a[href|='/vswtf'],a[href|='/vs27'], a[href|='/vswhatthefuck'] {width:70px; height:70px; background-position: -434px -600px}
+a[href|='/vsboring'],a[href|='/vs28'] {width:70px; height:70px; background-position: -0px -150px}
+a[href|='/vsheh'],a[href|='/vs29'] {width:67px; height:80px;background-position: -417px -749px}
+a[href|='/vsyes'],a[href|='/vs2a'] {width:70px; height:73px;background-position: 0px -765px}
+
+/* Sheet 2 */
+/* Non-charted Emotes */
+a[href|='/vspuppy'] {background-image: url(%%vssheet2%%);width:148px; height:145px;background-position: -145px 0px}
+a[href|='/vsexcited'] {background-image: url(%%vssheet2%%);width:132px; height:295px;background-position: 0px 0px}
+
+/* 0 Column */
+a[href|='/vssuave'],a[href|='/vs0b'] {background-image: url(%%vssheet2%%);width:70px; height:83px;background-position: -145px -145px}
+
+/* 1 Column */
+
+
+/* 2 Column */
 
 
 /* Other Emotes*/
 a[href|='/vsdance'] { width:110px; height:110px; background-image: url(%%vsdance%%); display: block; clear: none; float: left; }
-/* 4: OTHER THINGS*/
+
+
+/*
+|
+| █ █    █▀█ ▀█▀ █ █ █▀▀ █▀▄
+| ▀▀█    █ █  █  █▀█ █▀  █▄▀ 
+|   ▀ ▀  ▀▀▀  ▀  ▀ ▀ ▀▀▀ ▀ ▀
+|
+*/
 
 a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
@@ -517,8 +560,8 @@ div.usertext-body:hover table {
 .approval-checkmark {
     height: 0px;
     padding: 7.5px 7.5px;
-    background: url(%%approved-small%%);
-    background-position: center bottom;
+    background: url(%%arrows%%);
+    background-position: 0px -30px !important;
     background-repeat: no-repeat
     }
 
@@ -540,7 +583,12 @@ div.usertext-body:hover table {
     visibility: visible !important
     }
 
-/* 5: CHANGELOG 
+/*
+| 
+| █▀▀   █▀▀ █ █ █▀█ █▄ █ █▀▀ █▀▀ █   █▀█ █▀▀
+| ▀▀█   █   █▀█ █▀█ █ ▀█ █ ▄ █▀  █   █ █ █ ▄
+| ▀▀▀ ▀ ▀▀▀ ▀ ▀ ▀ ▀ ▀  ▀ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀ 
+|
 
 version 1.0
 
@@ -595,8 +643,18 @@ version 1.5.2
 [Mrjoker7854 PINKIE BEST PONY]
         > added name change to the Wubbers and added color and accounting this version for all other updates between Rhy's version and this on [](/1c)
 
+version 1.5.3 - 2/12/13
+[AlisterDX]
+        Late accounting for 7 new emotes: Suave, Milkshake, concerned, Wubs, and yes (added to table), and puppy and excited (not added to table)
+        Partially Reorganized:
+            - Voting arrows and Approval Twilight condensed into one image; appropriate code changes made
+            - Second emote spritesheed added
+            - Emote section organized (grouped by column, ordered by row)
+            - Numbered headers remade in ASCII block text (for skim-searching ease)
+            --- More to come next time I have some free time
 
-http://i.imgur.com/12XPI.png
+
+http://i.imgur.com/12XPI.png 
 [derram]
 */
 
@@ -703,7 +761,7 @@ visibility:visible!important;
 
 a.author[href$="derram_2"]:before {content:"derramina Diane Pie"}
 a.author[href$=Chinch335]:before {content:"Chinchy"}
-a.author[href$="mrjoker7854"]:before {content:"Pinkie Scratchspectacularathon"}
+a.author[href$="mrjoker7854"]:before {content:"Pinkie BEST PONY! AND DAMN RIGHT I MADE A VINYL SUB!"}
 a.author[href$="120percentP0N3"]:before {content:"120percentcooler"}
 a.author[href$="simgaleed"]:before {content:"DarkNote"}
 a.author[href$="coggy9"]:before {content:"Steve"}
@@ -730,3 +788,5 @@ a.author[href$="AlisterDX"]:before {content:"MySecretVinylAccount"}
     content: "♪ ♫ ♩ ";
     font-size: 14px
     }
+
+.id-t1_c8cyp7o .author[href$="poktanju"]:after { content:" Thread winner"; color:#DEDB3C; }

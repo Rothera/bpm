@@ -2,12 +2,12 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%sharkjump%%)  no-repeat  fixed 60% 95% !important;
+    background:  url(%%bubble%%)  no-repeat  fixed 60% 95% !important;
 }
 
 /* Banner image and associated height values */
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%fuckyoucheese2%%);
+   background: url(%%tootbanner%%);
    background-repeat: no-repeat;
    background-position: 50% 100%;
    height: 237px; /* 237 for meat's nice banner */
@@ -406,6 +406,7 @@ background-repeat: no-repeat;
 .flair-BettyMcBitterpants:after { background-position: 0px -4380px }
 .flair-zovistograt2:after { background-position: 0px -4410px }
 .flair-Berrytube:after { background-position: 0px -4440px }
+.flair-maku450:after { background-position: 0px -4470px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
@@ -429,31 +430,32 @@ a[href|='/shitemote']:hover {width:270px; height:263px; background-position: -27
 a[href|='/shitemote']:active {width:275px; height:266px; background-position: -0px -0px}
 
 
-a[href|='/ajfun'], a[href|='/bonfun'], a[href|='/braefun'], a[href|='/charliefun'], a[href|='/rcrfun'], a[href|='/cheerfun'], a[href|='/darkfun'], a[href|='/dolcefun'], a[href|='/dashfun'], a[href|='/derpfun'], a[href|='/esplinfun'], a[href|='/flitterfun'], a[href|='/lyrafun'], a[href|='/orschfun'], a[href|='/pinkiefun'], a[href|='/ppfun'], a[href|='/rarfun'], a[href|='/rosefun'], a[href|='/shyfun'], a[href|='/speedyfun'], a[href|='/tlfun'], a[href|='/thunderlanefun'], a[href|='/trixfun'], a[href|='/twifun'] {
+a[href|='/ajfun'], a[href|='/ajtrfun'], a[href|='/bonfun'], a[href|='/braefun'], a[href|='/charliefun'], a[href|='/rcrfun'], a[href|='/cheerfun'], a[href|='/darkfun'], a[href|='/dolcefun'], a[href|='/dashfun'], a[href|='/derpfun'], a[href|='/esplinfun'], a[href|='/flitterfun'], a[href|='/lyrafun'], a[href|='/orschfun'], a[href|='/pinkiefun'], a[href|='/ppfun'], a[href|='/rarfun'], a[href|='/rosefun'], a[href|='/shyfun'], a[href|='/speedyfun'], a[href|='/tlfun'], a[href|='/thunderlanefun'], a[href|='/trixfun'], a[href|='/twifun'] {
     display: block;
     clear: none;
     float: left;
     background-image: url(%%ponyfun%%)
     }
 
-a[href|='/ajfun'] {width:210px; height:152px; background-position: -0px -1689px}
-a[href|='/bonfun'] {width:217px; height:152px; background-position: -0px -1231px}
-a[href|='/braefun'] {width:202px; height:152px; background-position: -0px -2601px}
+a[href|='/ajfun'] {width:210px; height:152px; background-position: -0px -1841px}
+a[href|='/ajtrfun'] {width:225px; height:152px; background-position: -0px -1079px}
+a[href|='/bonfun'] {width:217px; height:152px; background-position: -0px -1383px}
+a[href|='/braefun'] {width:202px; height:152px; background-position: -0px -2753px}
 a[href|='/charliefun'], a[href|='/rcrfun'] {width:230px; height:152px; background-position: -0px -623px}
-a[href|='/cheerfun'] {width:216px; height:152px; background-position: -0px -1383px}
-a[href|='/darkfun'], a[href|='/dolcefun'] {width:208px; height:152px; background-position: -0px -1993px}
+a[href|='/cheerfun'] {width:216px; height:152px; background-position: -0px -1535px}
+a[href|='/darkfun'], a[href|='/dolcefun'] {width:208px; height:152px; background-position: -0px -2145px}
 a[href|='/dashfun'] {width:231px; height:152px; background-position: -0px -319px}
-a[href|='/derpfun'] {width:221px; height:152px; background-position: -0px -1079px}
-a[href|='/esplinfun'] {width:202px; height:152px; background-position: -0px -2449px}
-a[href|='/flitterfun'] {width:204px; height:152px; background-position: -0px -2145px}
-a[href|='/lyrafun'] {width:202px; height:152px; background-position: -0px -2297px}
-a[href|='/orschfun'] {width:211px; height:154px; background-position: -0px -1535px}
+a[href|='/derpfun'] {width:221px; height:152px; background-position: -0px -1231px}
+a[href|='/esplinfun'] {width:202px; height:152px; background-position: -0px -2601px}
+a[href|='/flitterfun'] {width:204px; height:152px; background-position: -0px -2297px}
+a[href|='/lyrafun'] {width:202px; height:152px; background-position: -0px -2449px}
+a[href|='/orschfun'] {width:211px; height:154px; background-position: -0px -1687px}
 a[href|='/pinkiefun'], a[href|='/ppfun'] {width:227px; height:152px; background-position: -0px -775px}
 a[href|='/rarfun'] {width:248px; height:152px; background-position: -0px -0px}
-a[href|='/rosefun'] {width:201px; height:152px; background-position: -0px -2753px}
+a[href|='/rosefun'] {width:201px; height:152px; background-position: -0px -2905px}
 a[href|='/shyfun'] {width:234px; height:167px; background-position: -0px -152px}
-a[href|='/speedyfun'] {width:193px; height:152px; background-position: -0px -2905px}
-a[href|='/tlfun'], a[href|='/thunderlanefun'] {width:208px; height:152px; background-position: -0px -1841px}
+a[href|='/speedyfun'] {width:193px; height:152px; background-position: -0px -3057px}
+a[href|='/tlfun'], a[href|='/thunderlanefun'] {width:208px; height:152px; background-position: -0px -1993px}
 a[href|='/trixfun'] {width:226px; height:152px; background-position: -0px -927px}
 a[href|='/twifun'] {width:230px; height:152px; background-position: -0px -471px}
 
@@ -941,8 +943,8 @@ a.author[href$=herabek],
 a.author[href$=OneOfTheseDaysLuna],
 a.author[href$=ZZW30],
 a.author[href$=Zovistograt],
-a.author[href$=mrwoo6],
-a.author[href$=JustAnotherGDB]
+a.author[href$=JustAnotherGDB],
+a.author[href$=Lord_Ninka]
 
 
 { 
@@ -1029,9 +1031,9 @@ a.author[href$=herabek]:before,
 a.author[href$=OneOfTheseDaysLuna]:before,
 a.author[href$=ZZW30]:before,
 a.author[href$=zovistograt]:before,
-a.author[href$=mrwoo6]:before,
 a.author[href$=JustAnotherGDB]:before,
-a.author[href$=Swiftskii]:before
+a.author[href$=Swiftskii]:before,
+a.author[href$=Lord_Ninka]:before
 
 {
 font-size:10px!important; 
@@ -1115,10 +1117,9 @@ a.author[href$=herabek]:before {content:"Princess 420 BLAZE IT FGT"}
 a.author[href$=OneOfTheseDaysLuna]:before { content:"Princess OneOfTheseFutemotes" }
 a.author[href$=Zovistograt]:before { content:'[](/ww20 “Needy Bitch”)' }
 a.author[href$=ZZW30]:before { content:"Princess CaptChuckles" }
-a.author[href$=mrwoo6]:before { content:"Princess Get On Skype" }
 a.author[href$=JustAnotherGDB]:before { content:"Princess Just Another Face in the Clouds" }
 a.author[href$=Swiftskii]:before { content:"Princess FairyFacedWizardFelcher" }
-
+a.author[href$=Lord_Ninka]:before { content:"Princess Ninka" }
 
 
 /* Replacing puppy's name with a picture of derpy */
@@ -1336,10 +1337,10 @@ a[href|="/luna!"]:nth-of-type(n) { font-size: 18px; font-variant: small-caps !im
 .usertext-body h4 { font-size: 20px; font-weight: bold; color: navy; background: lightblue; text-align: center; padding: 3px; border-radius: 19px; -moz-border-radius: 19px; box-shadow: 2px 2px 5px #9999ff; text-shadow: 1px 1px #ffffff }
 
 
-body.res a.author[href$="Pathogen-David"], body.res a.author[href$="Phei"] { font-weight: bold; color: white !important; padding: 0 2px; border-radius: 3px }
+body.res a.author[href$="Pathogen-David"], body.res a.author[href$="Phei"], body.res a.author[href$="myrandall"] { font-weight: bold; color: white !important; padding: 0 2px; border-radius: 3px }
 body.res a.author[href$="Phei"] { background-color: #D4A4E8 }
 body.res a.author[href$="Pathogen-David"] { background-color: #662D8A }
-
+body.res a.author[href$="Myrandall"] {color:#FF69B4!important}
 /* PROPER GREENTEXT (stolen from plounge, which stole from /r/4chan) */
 .content .md h1 { color: #789922; border-bottom: none!important; padding-bottom: 0px }
 .content .md h1:before { content: ">" }

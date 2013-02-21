@@ -48,25 +48,44 @@ height:100px;
 
 
 /*Submit a link -> Create a submission*/
-.sidebox .subtitle:before {
-    display: block;
-    clear: none;
-    content: "post pony articles, pony pictures, pony videos, pony analysis, pony pony...";
-    color: dimgray;
-    font-size: 8pt
-    }
-.sidebox .subtitle {
-    font-size: 0px
-    }
-.sidebox.create {
-    display: none
-    }
-/*LPPoint from http://cuttincows.deviantart.com/art/Littlepip-point-319005701 */
-.sidebox.submit .spacer a {
-    background-image: url(%%lppoint%%);
+.submit .morelink a{
+font-size:0;content:"";
+overflow:hidden;text-indent:-300px
+}
+.submit .morelink a:before{ 
+   content:"";
+   float:left;
+   width:27px;
+   height:27px;
+ margin-left:20px;
+background-image: url(%%littlepip-point-27%%);
     background-position: -0px -0px;
-    background-repeat: no-repeat
-    }
+    background-repeat: no-repeat;
+}
+.submit .morelink a:after{
+content:"Submit a new thread";
+font-size:15px;
+margin-left:253px
+}
+.sidebox.submit .morelink:hover:before {
+color: white;
+}
+.side .submit .spacer { display: none; }
+.submit-text { display: none }
+
+/* from r/awesome */
+  .sidebox.create .morelink {
+   display: none;
+}
+.sidebox .spacer{
+   Display: none !important;
+}
+
+body.res-nightmode .submit .morelink a:before{ 
+ margin-left:0px;
+}
+
+/*LPPoint from http://cuttincows.deviantart.com/art/Littlepip-point-319005701 */
 
 /* Banner Image */
 /*Banner by DarkDragon774 http://darkdragon774.deviantart.com/art/Fallout-Equestria-background-STOCK-277629738) */
@@ -80,6 +99,7 @@ height:100px;
     height: 100px;
   /*  border-bottom: 1px solid #000000; */
     }
+
 .side div.usertext-body table {
     display: none;
     }
@@ -88,6 +108,7 @@ height:100px;
     display: block;
     clear: both
     }
+
 
 #header-img{
 margin-top: 5px;
@@ -184,14 +205,12 @@ a[href|="/p21notamused"], a[href|="/p21"], a[href|="/glory"], a[href|="/charity"
 display: block;
 clear: none;
 float: left;
-width: 70px;
-height: 70px;
 background-repeat: no-repeat;
 background-image: url(%%foe-em1-v6%%);
 }
 
 
-a[href|="/lphappy"]{ background-position: 0 -1190px; width: 70px; height: 70px; }
+a[href|="/lphappy"]{ background-position: 0 -1190px; width: 72px; height: 70px; }
 a[href|="/lpwut"]{ background-position: 0 -1749px; width: 70px; height: 70px; }
 a[href|="/lphurt"]{ background-position: 0 -1310px; width: 70px; height: 70px; }
 a[href|="/homage"]{ background-position: 0 -870px; width: 70px; height: 70px; }
@@ -220,8 +239,6 @@ a[href|="/velvetremedy"], a[href|="/gawd"], a[href|="/lacunae"], a[href|="/murky
 display: block;
 clear: none;
 float: left;
-width: 70px;
-height: 70px;
 background-repeat: no-repeat;
 background-image: url(%%foe-em2-v27%%);
 }
@@ -350,19 +367,25 @@ a[href|="/plotseverywhere"]{ background-position: 0 -1937px; width: 180px; heigh
 a[href|="/psychoshy"]{ background-position: -250px 0; width: 98px; height: 150px;}
 a[href|="/psychoshy"]:hover{background-position: -250px -200px; width: 98px; height: 150px;}
 
-a[href|="/lpmintals"], a[href|="/redeye"], a[href|="/vrcrazy"], a[href|="/mglory"]
+a[href|="/lpmintals"], a[href|="/redeye"], a[href|="/vrcrazy"], a[href|="/mglory"], a[href|="/hiredgun"], a[href|="/bjwindow"], a[href|="/calamityspooky"], a[href|="/murkyinsecure"], a[href|="/bjinabowl"], a[href|="/tapdancingbj"], a[href|="/bjbored"]
 {
 display: block;
 clear: none;
 float: left;
 background-repeat: no-repeat;
-background-image: url(%%foe-em5-v6%%);
+background-image: url(%%foe-em5-v18%%);
 }
-
-a[href|="/lpmintals"]{ background-position: 0 0; width: 71px; height: 100px; } 
-a[href|="/mglory"]{  background-position: 0 -150px; width: 150px; height: 146px; }
-a[href|="/redeye"]{ background-position: 0 -346px; width: 66px; height: 100px; }
-a[href|="/vrcrazy"]{background-position: 0 -496px; width: 70px; height: 70px; } 
+a[href|="/bjbored"]{background-position: 0 0; width: 70px; height: 70px; }
+a[href|="/bjinabowl"]{ background-position: 0 -120px; width: 73px; height: 70px; }
+a[href|="/bjwindow"]{  background-position: 0 -240px; width: 96px; height: 100px;}
+a[href|="/calamityspooky"]{ background-position: 0 -390px; width: 129px; height: 100px; }
+a[href|="/hiredgun"]{ background-position: 0 -540px; width: 117px; height: 150px; }
+a[href|="/lpmintals"]{background-position: 0 -740px; width: 71px; height: 100px; } 
+a[href|="/mglory"]{ background-position: 0 -890px; width: 154px; height: 150px; }
+a[href|="/murkyinsecure"]{ background-position: 0 -1090px; width: 81px; height: 100px; }
+a[href|="/redeye"]{ background-position: 0 -1240px; width: 64px; height: 100px; }
+a[href|="/tapdancingbj"]{ background-position: 0 -1390px; width: 127px; height: 150px; }
+a[href|="/vrcrazy"]{ background-position: 0 -1590px; width: 70px; height: 70px; } 
 
 
 a[href|="/advicebj"]
@@ -448,7 +471,7 @@ background-image: url(%%rsmash-v3%%);
 }
 a[href|='/rampagesmash'] {background-position: 0px 0px}
 
-a[href|="/walkingcalamity"], a[href|="/calamitytrot"]
+a[href|="/walkingcalamity"]
 {
 display: block;
 clear: none;
@@ -458,7 +481,7 @@ height: 92px;
 background-repeat: no-repeat;
 background-image: url(%%calamity%%);
 }
-a[href|='/walkingcalamity'],  a[href|="/calamitytrot"] {background-position: 0px 0px}
+a[href|='/walkingcalamity'] {background-position: 0px 0px}
 
 a[href|="/pinke"]
 {

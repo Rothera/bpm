@@ -1,18 +1,27 @@
 /* Stylesheet shamelessly and lazily copied from other subs */
 
+/*DoomedCivilian Has made the following changes;
+DC01 - Removed.
+DC02 - Removal of downvote arrow. and addition of Catvotes.
+DC03 - Sidebar fuckery (Search removed, created by removed, creat new subreddit removed, mod names changed)
+10Feb2012 - Formating of code considerably improved. Except for macros.
+20Feb2012 - Catvotes ported to res-nightmode. !important; fixes everything
+20Feb2012 - Considerable changes to the res-nightmode flags. Changes should mostly effect it. Plounge Chat logo is now visible on the sidebar.
+DC04 - Someone requested an increase in Roseluck. Submit buttons are now changed. Plan on using something else for one of them, just havn't decided what yet.
+Use Ctrl-F to find and remove them. */
+
+
 /* Sub Name Change*/
 .titlebox .word {
     display: none
     }
+
 .titlebox .number:after {
     content: " juicebitches"
     }
+
 div.titlebox .users-online span.number:after {
     content: " stretching glutes"
-    }
-/* Side*/
-.side, .sidebox .spacer, .titlebox form.toggle, .morelink .nub, .icon-menu a, .side .spacer, .content, .sidecontentbox .content {
-    background-color: transparent !important;
     }
 
 /*------------------------ Changes background -------------------------------*/
@@ -54,10 +63,6 @@ body, body.res-nightmode:first-of-type {
     width: 200px;
     text-indent: -9001px;
     }
-.side .redditname a {
-    background: url(%%HeaderTextBlack%%);
-    overflow: hidden
-    }
 /*---------------------- Nightmode fixes for the background -------------------------------- */
 .content #siteTable div[onclick="click_thing(this)"] {
     background-color: transparent !important
@@ -68,6 +73,212 @@ body.res-nightmode:first-of-type > .content {
 body.res-nightmode:first-of-type {
     background-color: transparent !important
     }
+
+/*Self-Post Image, No Image, Spoiler Image*/
+.thumbnail.self {
+    background-image: url(%%SelfThumb%%) !important;
+    background-position: 0px 0px !important
+    }
+.thumbnail.nsfw {
+    background-image: url(%%NSFWThumb%%) !important;
+    background-position: 0px 0px !important
+    }
+.thumbnail.default {
+    background-image: url(%%ImageThumb%%) !important;
+    background-position: 0px 0px !important
+    }
+
+/*Self post gradient (Disabled)
+.link .expando .usertext .md {
+    border: 0px solid #000000 !important;
+    background-color: #171614 !important;
+    color: #FFFFFF;
+    background-image: -webkit-linear-gradient(top, #171614, #353332);
+    background-image: -moz-linear-gradient(top, #171614, #353332);
+    background-image: -ms-linear-gradient(top, #171614, #353332);
+    background-image: -o-linear-gradient(top, #171614, #353332);
+    }
+*/
+
+
+/*=========================================*/
+/*DC02 This code disables the downvote button. And makes upvotes cats. */
+/* Even for .res-nightmode, suck it Draze, all your votes are catvotes */
+
+.res-nightmode .arrow, .arrow {
+    height: 18px !important;
+    width: 18px !important;
+    }
+
+.res-nightmode .arrow.down, .arrow.down {
+    background:url(%%Tinycatdown%%) 0 0 !important;
+    }
+
+.res-nightmode .arrow.down:hover{
+    background:url(%%Tinycatdown%%) !important;
+    }
+
+.res-nightmode .arrow.downmod, .arrow.downmod {
+    background:url(%%Tinycatdownblue%%) 0 0 !important;
+    }
+
+.res-nightmode .arrow.upmod, .arrow.upmod { 
+    background:url(%%Tinycatorange%%) 0 0 !important;
+    }
+
+.res-nightmode .arrow.up, .arrow.up { 
+    background:url(%%Tinycat%%) 0 0 !important;
+    }
+
+.res-nightmode .arrow.up:hover {
+    background:url(%%Tinycat%%) !important;
+    }
+
+.res-nightmode .midcol[style], .midcol[style] {
+    width: 30px !important;
+    }
+
+.res-nightmode .comment .midcol, .comment .midcol {
+    width:18px !important;
+    }
+
+.res-nightmode .gadget .midcol, .gadget .midcol {
+    width:18px !important; 
+    margin:0 !important;
+    }
+
+/*=========================================*/
+/*DC03 Sidebar modification*/
+
+.side, .sidebox .spacer, .titlebox form.toggle, .sidebox .morelink, .icon-menu a, .side .spacer, .content, .sidecontentbox .content {
+    background-color: transparent;
+    }
+
+.res-nightmode .side, .res-nightmode .side .title, .res-nightmode .sidebox, .res-nightmode .sidecontentbox {
+    background-color: #222 !important;
+    }
+
+.side .spacer {
+    margin: 0 0 0 0;
+    }
+
+/*Search bar removed because I can*/
+#search {
+    display: none;
+    }
+
+/*Nightmode fixes*/
+
+.res-nightmode .sidebox.submit {
+    padding-left: 0px !important;
+    background-image: none !important;
+    border: none !important;
+    background: #222 !important;
+    }
+
+/*DC04 Submit button changes */
+.morelink, .morelink:hover, res-nightmode .morelink, res-nightmode .morelink:hover {
+    display: block !important;
+    text-align: center !important;
+    position: relative !important;
+    background: none !important;
+    border: none !important;
+    background-image: none !important;
+    font-weight: bold !important;
+    letter-spacing: -1px;
+    line-height: 80px !important;
+    height: 80px !important;
+    width: 300px !important;
+}
+
+.sidebox.submit-link a, res-nightmode .sidebox.submit-link a {
+    display: block;
+    font-size: 0;
+    text-align: left;
+    content: "";
+    height: 80px;
+    width: 300px;
+    background-image: url(%%submitlink%%) !important;
+    }
+
+.sidebox.submit-text a {
+    display: block;
+    font-size: 0;
+    text-align: left;
+    content: "";
+    height: 80px;
+    width: 300px;
+    background-image: url(%%submittext%%) !important;
+    }
+
+
+/*All this does is remove the angle at the end of the submit buttons */
+.morelink .nub {
+    display: none;
+    }
+
+/*Subreddit name logo sidebar*/
+
+.res-nightmode .side .redditname a {
+    background: url(%%HeaderText%%) !important;
+    margin: 5px 0 0 0;
+    }
+
+.side .redditname a {
+    background: url(%%HeaderTextBlack%%);
+    margin: 5px 0 0 0;
+    overflow: hidden;
+    }
+
+
+.side .bottom {
+    display: none;
+    }
+
+.side .create {
+    display: none;
+    }
+
+/*No ad*/
+
+#ad-frame {
+    display: none;
+    }
+
+/*==========Moderator Box==========*/
+/* Username ids are as follows;
+    t2_5n3bs Draze
+    t2_5ifnt duruz
+    t2_75mzg DoomedCivilian */
+
+.sidecontentbox a.author.id-t2_5n3bs, .sidecontentbox a.author.id-t2_5ifnt,.sidecontentbox a.author.id-t2_75mzg {
+    content:"";
+    font-size: 0pt;
+    }
+
+.sidecontentbox .flair {
+    display: none;
+    }
+
+.sidecontentbox a.author.id-t2_5n3bs:before, .sidecontentbox a.author.id-t2_5ifnt:before,.sidecontentbox a.author.id-t2_75mzg:before {
+    font-size:10pt;
+    color:#369;
+    display:inline-block;
+    }
+
+.sidecontentbox a.author.id-t2_5n3bs:before {
+    content:"Mother Mustang";
+    }
+
+.sidecontentbox a.author.id-t2_5ifnt:before {
+    content: "Master Sausage Chief";
+    }
+
+.sidecontentbox a.author.id-t2_75mzg:before {
+    content: "Likely at fault";
+    }
+
+/*==================Names & Flare==================*/
 
 a.author[href$="srsbsnsman"] {
     font-size: 0px !important;
@@ -111,142 +322,121 @@ a.author[href$="ctare"]:after {
     display: block;
     letter-spacing: normal;
     }
-a.author[href$="starkinmn"]:after
-{
-color:#000; 
-font-size:10px!important; 
-letter-spacing:normal;
-content:"  Give me my fucking good flair, asshooe horsefuckers";
-}
-
-/*Self-Post Image, No Image, Spoiler Image*/
-.thumbnail.self {
-    background-image: url(%%SelfThumb%%) !important;
-background-position: 0px 0px !important
-    }
-.thumbnail.nsfw {
-    background-image: url(%%NSFWThumb%%) !important;
-background-position: 0px 0px !important
-    }
-.thumbnail.default {
-    background-image: url(%%ImageThumb%%) !important;
-background-position: 0px 0px !important
+a.author[href$="starkinmn"]:after {
+    color:#000; 
+    font-size:10px!important; 
+    letter-spacing:normal;
+    content:"  Give me my fucking good flair, asshooe horsefuckers";
     }
 
-/*Self post gradient (Disabled)
-.link .expando .usertext .md {
-border: 0px solid #000000 !important;
-background-color: #171614 !important;
-color: #FFFFFF;
-background-image: -webkit-linear-gradient(top, #171614, #353332);
-background-image: -moz-linear-gradient(top, #171614, #353332);
-background-image: -ms-linear-gradient(top, #171614, #353332);
-background-image: -o-linear-gradient(top, #171614, #353332);
-    }
-*/
-
-/*------------------------EMOTES------------------------------*/
+/*==================EMOTES==================*/
 a[href|="/america"] {
-display: block;
-clear: none;
-float: left;
-width: 300px;
-height: 327px;
-background-image: url(%%ron-paul%%) !important
-}
+    display: block;
+    clear: none;
+    float: left;
+    width: 300px;
+    height: 327px;
+    background-image: url(%%ron-paul%%) !important
+    }
 
 a[href|="/carefully"] {
-display: block;
-clear: none;
-float: left;
-width: 150px;
-height: 167px;
-background-image: url(%%TwiWiggle%%) !important
-}
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 167px;
+    background-image: url(%%TwiWiggle%%) !important
+    }
+
 a[href|="/hathe"] {
-display: block;
-clear: none;
-float: left;
-width: 300px;
-height: 246px;
-background-image: url(%%Hathe%%) !important
-}
+    display: block;
+    clear: none;
+    float: left;
+    width: 300px;
+    height: 246px;
+    background-image: url(%%Hathe%%) !important
+    }
+
 a[href|="/turnip"] {
-display: block;
-clear: none;
-float: left;
-width: 89px;
-height: 150px;
-background-image: url(%%turnip%%) !important
-}
+    display: block;
+    clear: none;
+    float: left;
+    width: 89px;
+    height: 150px;
+    background-image: url(%%turnip%%) !important
+    }
+
 a[href|="/ograrity"] {
-display: block;
-clear: none;
-float: left;
-width: 150px;
-height: 154px;
-background-image: url(%%ograrity%%) !important
-}
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 154px;
+    background-image: url(%%ograrity%%) !important
+    }
+
 a[href|="/twispecial"] {
-display: block;
-clear: none;
-float: left;
-width: 112px;
-height: 200px;
-background-image: url(%%twieyes%%)
-}
+    display: block;
+    clear: none;
+    float: left;
+    width: 112px;
+    height: 200px;
+    background-image: url(%%twieyes%%)
+    }
+
 a[href|="/rosesax"] {
-display: block;
-clear: none;
-float: left;
-width: 137px;
-height: 150px;
-background-image: url(%%rosesax%%) !important
-}
+    display: block;
+    clear: none;
+    float: left;
+    width: 137px;
+    height: 150px;
+    background-image: url(%%rosesax%%) !important
+    }
 
 a[href|="/tonightyou"] {
-display: block;
-clear: none;
-float: left;
-width: 200px;
-height: 193px;
-background-image: url(%%TonightYou%%) !important
-}
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 193px;
+    background-image: url(%%TonightYou%%) !important
+    }
+
 a[href|="/twistcrowbar"] {
-display: block;
-clear: none;
-float: left;
-width: 300px;
-height: 217px;
-background-image: url(%%Crowbar%%) !important
-}
+    display: block;
+    clear: none;
+    float: left;
+    width: 300px;
+    height: 217px;
+    background-image: url(%%Crowbar%%) !important
+    }
 
 a[href|="/karmapants"] {
-display: block;
-clear: none;
-float: left;
-width: 100px;
-height: 124px;
-background-image: url(%%KarmaPants%%) !important
-}
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 124px;
+    background-image: url(%%KarmaPants%%) !important
+    }
 
 a[href|="/catplanet"] {
-display: block;
-clear: none;
-float: left;
-width: 100px;
-height: 100px;
-background-image: url(%%CatPlanet%%) !important
-}
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url(%%CatPlanet%%) !important
+    }
 
 a[href|="/cis"] {
-display: block;
-clear: none;
-float: left;
-width: 73px;
-height: 100px;
-background-image: url(%%CinorIsStupid%%) !important
-}
+    display: block;
+    clear: none;
+    float: left;
+    width: 73px;
+    height: 100px;
+    background-image: url(%%CinorIsStupid%%) !important
+    }
 
 
 /* ------MACROS------- */
@@ -363,4 +553,4 @@ body.res-nightmode:first-of-type .flair { background-color: transparent!importan
 .flair-ass {background-image: url(%%assflair%%); width:26px; height:30px}
 .flair-penis {background-image: url(%%apenisflair%%); width:47px; height:10px}
 .flair-hat {background-image: url(%%hatlfair%%); width:30px; height:28px}
-
+.flair-harry {background-image: url(%%harryflair%%); width:30px; height:30px}

@@ -2,7 +2,9 @@
 background: white;
 }
 
-/* Linkable notification at the top */
+/* Linkable notification at the top 
+That big yellow box thing
+*/
  .content {
    margin-top: 33px;
    }
@@ -10,11 +12,15 @@ background: white;
   position: static
   }
 .titlebox .usertext-body .md p > em {
-   width: 60%;
+    width: 60%;
     background-color: #FFFEE6;
     border: 1px solid #E1B000;
     position: absolute;
-    top: 138px;
+    font-size: 1em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 15px;
+    top: 124px;
     left: 3px;
     z-index: 0;
     margin: 0;
@@ -1279,6 +1285,18 @@ a[href|="/snipsmote"] {
     background-image: url(%%snipsmote%%)
     } 
 a[href|="/snipsmote"] { 
+    background-position: -0px -0px;
+    }
+
+a[href|="/thankyakindly"] { 
+    display: block; 
+    clear: none; 
+    float: left; 
+    width: 100px; 
+    height: 100px; 
+    background-image: url(%%thankyakindly%%)
+    } 
+a[href|="/thankyakindly"] { 
     background-position: -0px -0px;
     }
 

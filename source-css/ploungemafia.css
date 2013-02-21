@@ -273,6 +273,11 @@ left: 0;
         background-repeat: no-repeat !important
     }
 
+/* Remove create a link */
+
+.submit-link {
+    display:none !important;
+}
 /*** Submit a link -> Create a submission (Totally not stolen from /r/mylittlefoodmanes) ***/
 
 .sidebox.submit .morelink:before {
@@ -283,7 +288,8 @@ left: 0;
     color: #369;
     width: 101%
     }
-.sidebox.submit .morelink a {
+
+.sidebox.submit-text .morelink a {
     position: absolute;
     top: 0;
     font-size: 1px;
@@ -293,9 +299,10 @@ left: 0;
 .sidebox.submit .morelink:hover:before {
     color: blue
     }
-.sidebox.submit:hover a {
+.sidebox.submit-text:hover a {
     color: #b4cee5
     }
+/*
 .sidebox .subtitle:before {
     display: block;
     clear: none;
@@ -309,11 +316,11 @@ left: 0;
 .sidebox.create {
     display: none
     }
-.sidebox.submit .spacer a {
+.sidebox.submit-text .spacer a {
     background-image: url(%%submissionmafia%%);
     background-position: -0px -0px;
     background-repeat: no-repeat
-    }
+    } */
 
 /*New post spam filtered warning (borrowed from /r/mylittlepony)*/
 #title-field.roundfield:before
