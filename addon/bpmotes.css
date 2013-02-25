@@ -14,7 +14,7 @@
 
 /* Placeholders */
 
-.bpm-unknown, .bpm-disabled, .bpm-nsfw {
+.bpm-unknown, .bpm-disabled {
     /* Behave like normal emotes do */
     display: block;
     float: left;
@@ -29,12 +29,10 @@
     width: auto !important;
 }
 
-.bpm-disabled, .bpm-disabled:before, .bpm-disabled:after, .bpm-disabled:hover, .bpm-disabled:active,
-.bpm-nsfw, .bpm-nsfw:before, .bpm-nsfw:after, .bpm-nsfw:hover, .bpm-nsfw:active {
+.bpm-disabled, .bpm-disabled:before, .bpm-disabled:after, .bpm-disabled:hover, .bpm-disabled:active {
     /*
-     * These two classes are used to shut emotes down, so in the interests of
-     * working even in the emote's native subreddit, we try to override anything
-     * else.
+     * This class used to shut emotes down, so in the interests of working even
+     * in the emote's native subreddit, we try to override anything else.
      *
      * Unfortunately, we still lose if the subreddit uses !important, but
      * there's not much we can do about that.
@@ -55,12 +53,6 @@
 /* Unknown emote placeholder. Transparent red background */
 .bpm-unknown {
     background-color: hsla(0, 100%, 50%, 0.3);
-}
-
-/* NSFW emote placeholder. Doesn't look too great in night mode, unfortunately */
-.bpm-nsfw {
-    color: white !important;
-    background-color: black !important;
 }
 
 /* Alt-text display. */

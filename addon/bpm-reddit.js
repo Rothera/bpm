@@ -85,8 +85,6 @@ function process_links(store, elements, convert_unknown) {
                     state += "n";
                 }
 
-                var nsfw_class = store.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-nsfw";
-                var disabled_class = store.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-disabled";
                 var disabled = store.is_disabled(emote_info);
                 if(disabled) {
                     state += "d" + disabled; // Tee hee
@@ -98,16 +96,7 @@ function process_links(store, elements, convert_unknown) {
                         element.textContent = emote_name;
                     }
                     element.setAttribute("data-bpm_state", state);
-                    switch(disabled) {
-                    case 1: // NSFW
-                        element.classList.add(nsfw_class);
-                        break;
-                    case 2: // subreddit
-                    case 3: // size
-                    case 4: // blacklisted
-                        element.classList.add(disabled_class);
-                        break;
-                    }
+                    element.classList.add(store.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-disabled");
                     continue;
                 }
                 element.setAttribute("data-bpm_state", state);
@@ -434,11 +423,9 @@ function run_reddit(store) {
                 return;
             }
             var info = store.lookup_emote(element.getAttribute("data-bpm_emotename"));
-            if(element.classList.contains("bpm-disabled") ||
-               element.classList.contains("bpm-nsfw")) {
+            if(element.classList.contains("bpm-disabled")) {
                 // Show
                 element.classList.remove("bpm-disabled");
-                element.classList.remove("bpm-nsfw");
                 element.classList.add(info.css_class);
                 if(state.indexOf("T") > -1) {
                     element.textContent = "";
@@ -446,7 +433,7 @@ function run_reddit(store) {
             } else {
                 // Hide
                 element.classList.remove(info.css_class);
-                element.classList.add(is_nsfw_disabled ? "bpm-nsfw" : "bpm-disabled");
+                element.classList.add("bpm-disabled");
                 if(state.indexOf("T") > -1) {
                     element.textContent = info.name;
                 }
