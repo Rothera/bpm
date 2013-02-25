@@ -73,7 +73,7 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
  position:relative;
  top:3px
 }
-#header-bottom-left{padding-top:15px}
+#header-bottom-left{padding-top:25px}
 .pagename {font-size:12pt}
 .titlebox form{position: static}
 .titlebox .usertext-body .md ol
@@ -83,7 +83,7 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
  border:1px solid #5f99cf;
  border-right:0;
  position:absolute;
- top:28px;
+ top:40px;
  left:130px;
  z-index:50;
  margin:20px 420px 0 0;
@@ -107,7 +107,8 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
  list-style: none;
  display:inline-block;
  float:left;
- overflow:auto
+ overflow:auto;
+ margin-top: -3px
 }
 
 .titlebox .usertext-body .md ol li strong{font-size:12px;color:#EF4F91}
@@ -119,7 +120,7 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
  background:url(%%twilight-hat%%);
  width:65px;
  height:54px;
- margin-top:-31px;
+ margin-top:-29px;
  margin-left:4px;
  margin-bottom:-14px;
  margin-right:-40px;
@@ -138,7 +139,7 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
 .sidecontentbox a.author.id-t2_5agom:before {content:"Chinchy-Bon"}
 .sidecontentbox a.author.id-t2_51isb:before {content:"TrixieOf_Trixtegrity"}
 .sidecontentbox a.author.id-t2_51isb:after {content:" (oh and also Trixie is best pony.)"; font-size:8px; padding-left:10px;}
-.sidecontentbox a.author.id-t2_5eqe2:before {content:"Pathopedia-David"}
+.sidecontentbox a.author.id-t2_5eqe2:before {content:"Pathopædia-David"}
 .sidecontentbox a.author.id-t2_5fmql {display:none;}
 a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,a.author.id-t2_52j0w,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
 a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,a.author.id-t2_52j0w:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after{font-size:10px!important;display:block;letter-spacing:normal}
@@ -332,6 +333,70 @@ div.over18 .entry .buttons .first{padding-left: 0px}
 .res-nightmode .morelink{height: 29px!important}
 .res-nightmode .morelink{background:rgb(39, 63, 87)!important}
 .res-nightmode .morelink:hover{background:#9edbf8!important;border-color:#9edbf8!important}
+
+/* subscribe / unsubscribe */
+
+.fancy-toggle-button .add, .RESshortcut.RESshortcutside, .RESDashboardToggle
+{
+    background-image: url(%%sub%%);
+    background-position: -0px -0px;
+    background-repeat: repeat;
+}
+ 
+.fancy-toggle-button .remove, .RESshortcut.RESshortcutside.remove, .RESDashboardToggle.remove
+{
+    background-image: url(%%unsub%%);
+    background-position: -0px -0px;
+    background-repeat: repeat;
+}
+ 
+.fancy-toggle-button .add:active, .RESshortcut.RESshortcutside:active, .RESDashboardToggle:active
+{
+    background-image: url(%%subclick%%) !important;
+    background-position: 0px -24px !important;
+    background-repeat: repeat;
+}
+ 
+.fancy-toggle-button .remove:active, .RESshortcut.RESshortcutside.remove:active, .RESDashboardToggle.remove:active
+{
+    background-image: url(%%unsubclick%%) !important;
+    background-position: 0px -24px !important;
+    background-repeat: repeat;
+}
+
+.fancy-toggle-button .add:hover, #subButtons-mylittlepony .RESshortcut.RESshortcutside:hover, #subButtons-mylittlepony .RESDashboardToggle:hover
+{
+   background: #8bcf00;
+}
+
+.fancy-toggle-button .remove:hover, #subButtons-mylittlepony .RESshortcut.RESshortcutside.remove:hover, #subButtons-mylittlepony .RESDashboardToggle.remove:hover
+{
+   background: rgb(255, 94, 99); 
+}
+ 
+.fancy-toggle-button .active
+{
+    border: none;
+    width: 78px;
+    height: 24px;
+    padding: 3px 5px;
+    outline: none;
+}
+#subButtons-mylittlepony
+{
+    padding-top: 7px !important;
+    padding-bottom: 3px !important;
+}
+ 
+.RESshortcut.RESshortcutside, .RESDashboardToggle
+{
+    border: none !important;
+    padding: 3px 3px 3px 3px !important;
+}
+ 
+/* end subscribe buttons */
+
+
 .flair
 {
  padding:0;
@@ -343,7 +408,8 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  display:inline-block;
  width:16px;
  height:16px;
- text-indent:-9999px;}
+ text-indent:-9999px;
+ line-height: 240%;}
 a[href|="/ajlie"],a[href|="/a00"],a[href|="/priceless"],a[href|="/a10"],a[href|="/flutterjerk"],a[href|="/a20"],a[href|="/flutterroll"],a[href|="/a30"],a[href|="/twipride"],a[href|="/a01"],a[href|="/celestiamad"],a[href|="/a11"],a[href|="/twicrazy"],a[href|="/a21"],a[href|="/spikemeh"],a[href|="/a31"],a[href|="/lunateehee"],a[href|="/a02"],a[href|="/lunawait"],a[href|="/a12"],a[href|="/paperbagderpy"],a[href|="/paperbagwizard"],a[href|="/derpwizard"],a[href|="/a22"],a[href|="/abmeh"],a[href|="/a32"],a[href|="/ajhappy"],a[href|="/happlejack"],a[href|="/a03"],a[href|="/ppfear"],a[href|="/pinkiefear"],a[href|="/a13"],a[href|="/twibeam"],a[href|="/a23"],a[href|="/scootaderp"],a[href|="/didneyworl"],a[href|="/DIDNEYWORL"],a[href|="/a33"],a[href|="/raritydaww"],a[href|="/a04"],a[href|="/scootacheer"],a[href|="/lootascoo"],a[href|="/a14"],a[href|="/pinkieawe"],a[href|="/ppawe"],a[href|="/areyouawizard"],a[href|="/a34"],a[href|="/ajsup"],a[href|="/ajwhatsgood"],a[href|="/a05"],a[href|="/flutterwhoa"],a[href|="/flutterwoah"],a[href|="/a15"],a[href|="/rdcry"],a[href|="/a25"],a[href|="/silverspoon"],a[href|="/sspout"],a[href|="/a35"],a[href|="/ohcomeon"],a[href|="/sbcomeon"],a[href|="/a06"],a[href|="/ppcute"],a[href|="/cutiepie"],a[href|="/a16"],a[href|="/abbored"],a[href|="/abmerp"],a[href|="/a26"],a[href|="/rarityreally"],a[href|="/a36"],a[href|="/raritypaper"],a[href|="/raritynews"],a[href|="/a07"],a[href|="/sbbook"],a[href|="/sweetiebook"],a[href|="/sbook"],a[href|="/a17"],a[href|="/scootaplease"],a[href|="/scootappeal"],a[href|="/scootaplz"],a[href|="/a27"],a[href|="/applegasp"],a[href|="/a37"],a[href|="/twiright"],a[href|="/satistwied"],a[href|="/a08"],a[href|="/celestiawut"],a[href|="/wutlestia"],a[href|="/a18"],a[href|="/grannysmith"],a[href|="/granny"],a[href|="/oldmareyellsatcloud"],a[href|="/a28"],a[href|="/rarishock"],a[href|="/a38"],a[href|="/shiningarmor"],a[href|="/shiningarmour"],a[href|="/a09"],a[href|="/chrysalis"],a[href|="/queenchrysalis"],a[href|="/changelingqueen"],a[href|="/a19"],a[href|="/cadence"],a[href|="/cadance"],a[href|="/princesscadance"],a[href|="/princesscadence"],a[href|="/princessmiamorecadenza"],a[href|="/a29"],a[href|="/applederp"],a[href|="/a39"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%amotes%%)!important}
 
@@ -527,7 +593,7 @@ a[href|="/squintyjack"],a[href|="/b24"],a[href|="/rsquintyjack"],a[href|="/rb24"
 a[href|="/flutterroll"],a[href|="/a30"],a[href|="/rflutterroll"],a[href|="/ra30"],a[href|="/fluttershy"],a[href|="/b30"],a[href|="/rfluttershy"],a[href|="/rb30"],a[href|="/trixiesad"],a[href|="/c30"],a[href|="/rtrixiesad"],a[href|="/rc30"],.flair-applejack,.side .md table tr:nth-of-type(1) td:nth-of-type(5):after
 {background-position:-300% 0}
 
-a[href|="/spikemeh"],a[href|="/a31"],a[href|="/rspikemeh"],a[href|="/ra31"],a[href|="/rdsmile"],a[href|="/b31"],a[href|="/rrdsmile"],a[href|="/rb31"],a[href|="/changeling"],a[href|="/c31"],a[href|="/rchangeling"],a[href|="/rc31"],.flair-cmc,.side .md table tr:nth-of-type(3) td:nth-of-type(5):after
+a[href|="/spikemeh"],a[href|="/a31"],a[href|="/rspikemeh"],a[href|="/ra31"],a[href|="/rdsmile"],a[href|="/b31"],a[href|="/rrdsmile"],a[href|="/rb31"],a[href|="/changeling"],a[href|="/c31"],a[href|="/rchangeling"],a[href|="/rc31"],.flair-cmc,.flair-cmcchinchy,.side .md table tr:nth-of-type(3) td:nth-of-type(5):after
 {background-position:-300% -100%}
 
 a[href|="/abmeh"],a[href|="/a32"],a[href|="/rabmeh"],a[href|="/ra32"],a[href|="/rdwut"],a[href|="/b32"],a[href|="/rrdwut"],a[href|="/rb32"],.flair-vinyl,.side .md table tr:nth-of-type(5) td:nth-of-type(5):after

@@ -74,13 +74,13 @@ body.res-nightmode:first-of-type {background-color: transparent!important;}
 
 /*
 +
-|                  VERSION 1.5.1
+|                     VERSION 1.5.2
 |
-|         STYLESHEET FOR R/VINYLSCRATCH         
-|        MOSTLY BY KOOBAXION AND 007GHG7        
-|ALSO SOME CREDIT GOES TO RAHLYN AND MRJOKER7854
-|              RAHLYN IS THE FLAIR GOD
-|         HAI GUIZ I DID NAMEZ SO I HELPED -Joker                                     
+|              STYLESHEET FOR R/VINYLSCRATCH         
+|             MOSTLY BY KOOBAXION AND 007GHG7        
+|ALSO SOME CREDIT GOES TO RAHLYN AND MRJOKER7854 AND ALISTERDX
+|                RAHLYN IS THE FLAIR GOD
+|       HAI GUIZ I DID NAMEZ SO I HELPED -PINKIE PIE                                     
 |                              
 */
 
@@ -363,14 +363,14 @@ a.author[href$="/RetardVomitPussyCunt"]:after {
     margin-bottom: -1px;
 }
 
-/* J: GREY ODD LINK BACKGROUNDS */
+/* J: GREY ODD LINK BACKGROUNDS 
 
 .link.odd {
     background: #f8f8f8;
     border-radius: 10px;
     border: 1px solid #E6E6E6
 }
-
+*/
 
 /* K: RES CHANGES */
 
@@ -436,6 +436,7 @@ background-repeat: no-repeat;
 .flair-vinyl:before {width:16px; height:16px; background-position: -0px -440px}
 .flair-watch:before {width:16px; height:16px; background-position: -0px -458px}
 .flair-wut:before {width:16px; height:16px; background-position: -0px -476px}
+.flair-gold:before {width:16px; height:16px; background-position: -0px -492px}
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
@@ -459,7 +460,7 @@ a[href|='/shrug'],a[href|="/vsshrug"],a[href|='/tableflip'],a[href|='/vslaying']
     background-image: url(%%vssheet%%) !important
     }
 
-a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vs0b']{
+a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vsdance2'],a[href|='/vsgrump'],a[href|='/vs0b'],a[href|='/vs2b']{
     display: block;
     clear: none;
     float: left;
@@ -518,7 +519,8 @@ a[href|='/vsyes'],a[href|='/vs2a'] {width:70px; height:73px;background-position:
 /* Sheet 2 */
 /* Non-charted Emotes */
 a[href|='/vspuppy'] {background-image: url(%%vssheet2%%);width:148px; height:145px;background-position: -145px 0px}
-a[href|='/vsexcited'] {background-image: url(%%vssheet2%%);width:132px; height:295px;background-position: 0px 0px}
+a[href|='/vsexcited'] {background-image: url(%%vssheet2%%);width:132px; height:294px;background-position: 0px 0px}
+a[href|='/vsgrump'] {background-image: url(%%vssheet2%%);width:100px; height:104px;background-position: 0px -295px}
 
 /* 0 Column */
 a[href|='/vssuave'],a[href|='/vs0b'] {background-image: url(%%vssheet2%%);width:70px; height:83px;background-position: -145px -145px}
@@ -527,7 +529,7 @@ a[href|='/vssuave'],a[href|='/vs0b'] {background-image: url(%%vssheet2%%);width:
 
 
 /* 2 Column */
-
+a[href|='/vsdance2'],a[href|='/vs2b'] {background-image: url(%%vssheet2%%);width:70px; height:104px; background-position: -222px -145px}
 
 /* Other Emotes*/
 a[href|='/vsdance'] { width:110px; height:110px; background-image: url(%%vsdance%%); display: block; clear: none; float: left; }
@@ -722,7 +724,8 @@ a.author[href$="Toklankitsune"],
 a.author[href$="bryvood"],
 a.author[href$="otwem"],
 a.author[href$="Kireas"],
-a.author[href$="AlisterDX"]
+a.author[href$="AlisterDX"],
+a.author[href$="upvote_machine_1"]
 
 { 
 font-size:0!important; 
@@ -749,7 +752,8 @@ a.author[href$="Toklankitsune"]:before ,
 a.author[href$="bryvood"]:before ,
 a.author[href$="otwem"]:before ,
 a.author[href$="Kireas"]:before, 
-a.author[href$="AlisterDX"]:before 
+a.author[href$="AlisterDX"]:before, 
+a.author[href$="upvote_machine_1"]:before 
 
 
 {
@@ -776,6 +780,7 @@ a.author[href$="bryvood"]:before {content:"DJ Toaster Scratchaloo"}
 a.author[href$="otwem"]:before {content:"Otwem Scratch"}
 a.author[href$="Kireas"]:before {content:"Octavia"}
 a.author[href$="AlisterDX"]:before {content:"MySecretVinylAccount"}
+a.author[href$="upvote_machine_1"]:before {content:"mrjoker7854"}
 
 /* Replacing somebody's name color? Put the css here. */
 

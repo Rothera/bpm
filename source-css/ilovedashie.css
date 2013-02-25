@@ -125,6 +125,7 @@ a.author:after {
 .sidebox.create {
     display: none
 }
+.submit-text { display: none }
 .sidebox.submit .morelink:before {
     display: block;
     clear: none;
@@ -209,7 +210,7 @@ a[href|="/dashieawesome"], a[href|="/dashiebeg"], a[href|="/dashiecheer"], a[hre
     float: left;
     height: 130px;
     background-repeat: no-repeat;
-    background-image: url(%%EmoteSheet2Fixed%%) !important
+    background-image: url(%%EmoteSheet2Fixed%%)
 }
 a[href|="/dashieawesome"] {
     width: 126px;
@@ -323,7 +324,7 @@ a[href|="/vx60"], a[href|="/dashiegrin"], a[href|="/vx61"], a[href|="/dashietail
     float: left;
     height: 130px;
     background-repeat: no-repeat;
-    background-image: url(%%EmoteSheet1Fixed%%) !important
+    background-image: url(%%EmoteSheet1Fixed%%)
     }
 a[href|="/rvx00"], a[href|="/rdashiestrut"],a[href|="/rvx01"], a[href|="/rdashiepose"], a[href|="/rvx02"], a[href|="/rdashiebucket"], a[href|="/rvx10"], a[href|="/rdashiefacehoof"] , a[href|="/rvx11"], a[href|="/rdashieswag"], a[href|="/rvx12"], a[href|="/rdashierage"], a[href|="/rvx20"], a[href|="/rdashiechef"], a[href|="/rvx21"], a[href|="/rdashiepie"], a[href|="/rvx22"], a[href|="/rdashiewedding"], a[href|="/rvx30"], a[href|="/rdashiecunning"], a[href|="/rvx31"], a[href|="/rdashiebunny"], a[href|="/rvx32"], a[href|="/rrainbowpie"],
 a[href|="/rvx40"], a[href|="/rdashiewhat"], a[href|="/rvx41"], a[href|="/rdashiepissed"], a[href|="/rvx42"], a[href|="/rdashiesmile"], 
@@ -334,7 +335,7 @@ a[href|="/rvx60"], a[href|="/rdashiegrin"], a[href|="/rvx61"], a[href|="/rdashie
     float: left;
     height: 130px;
     background-repeat: no-repeat;
-    background-image: url(%%REmoteSheet1Fixed%%) !important
+    background-image: url(%%REmoteSheet1Fixed%%)
     }
 a[href|="/vx00"], a[href|="/dashiestrut"],a[href|="/rvx00"], a[href|="/rdashiestrut"] {
     width: 161px;
@@ -422,17 +423,19 @@ a[href|="/vx62"], a[href|="/dashiepose2"], a[href|="/rvx62"], a[href|="/rdashiep
     }
 
 
-a[href|="/dashiescared"] {
+a[href|="/dashiescared"], a[href|="/dashieskating"] {
     display: block;
     clear: none;
     float: left;
     height: 130px;
     background-repeat: no-repeat;
-    background-image: url(%%rd-sheet3-v1%%) !important
+    background-image: url(%%rd-sheet3-v3%%)
 }
 a[href|="/dashiescared"]{
-    width: 183px;
-    background-position: -0px -0px
+background-position: 0 0; width: 183px;
+    }
+a[href|="/dashieskating"]{
+background-position: 0 -180px; width: 114px; 
     }
 
 /***********************

@@ -1401,17 +1401,3 @@ white-space: nowrap;
 font-variant: small-caps;
 }
 
-a.author[href$="/hushnowquietnow"] {
-    font-size: 0px !important;
-    display: inline-block;
-    vertical-align: bottom;
-    overflow: hidden;
-    letter-spacing: -20px;
-    }
-a.author[href$="/hushnowquietnow"]:after {
-    content: "Princess of the 32nd biweekly";
-    font-size: 10px !important;
-    visibility: visible !important; 
-    display: block;
-    letter-spacing: normal;
-    }

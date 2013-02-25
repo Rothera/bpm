@@ -7,7 +7,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 
 /* Banner image and associated height values */
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%tootbanner%%);
+   background: url(%%fuckyoucheese2%%);
    background-repeat: no-repeat;
    background-position: 50% 100%;
    height: 237px; /* 237 for meat's nice banner */
@@ -1139,6 +1139,7 @@ height:30px
 }
 
 /* Adding after-text to somebody's name? Add them here. */
+a.author[href$="cecinestpasunepony"]:after,
 a.author[href$="AttainedAndDestroyed"]:after,
 a.author[href$="Scythesickle"]:after,
 a.author[href$="SRSaboutponies"]:after,
@@ -1200,6 +1201,7 @@ letter-spacing:normal;
 }
 
 /* After-name text goes here. */
+a.author[href$="cecinestpasunepony"]:after { content:" writes shitty mlas1 erotic fanfiction"}
 a.author[href$="AttainedAndDestroyed"]:after { content:" saggy tits are swaggy tits"}
 a.author[href$="Scythesickle"]:after { content:" (wants to be a mod)"}
 a.author[href$="SRSaboutponies"]:after {content: "(trolls trolling trolls trolling trolling trolls)"}

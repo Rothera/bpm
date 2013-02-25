@@ -321,6 +321,14 @@ a[href|='/twihmm'] {
 	height: 170px;
 }
 
+a[href|="/twidashupinthispost"] {
+background-image: url(%%twidash%%);
+display: block;
+float: left;
+width: 300px;
+height: 234px
+}
+
 a[href|="/raribee"],a[href|="/beelight"],a[href|="/twibee"],a[href|="/applebee"],a[href|="/pinkiebee"],a[href|="/flutterbee"],a[href|="/rainbee"] {
 background-image: url(%%beemotes%%);
 display: block;
