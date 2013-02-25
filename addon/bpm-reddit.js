@@ -85,22 +85,38 @@ function process_links(store, elements, convert_unknown) {
                     state += "n";
                 }
 
+                var can_modify_text = !element.textContent;
+                if(can_modify_text) {
+                    state += "T";
+                }
+
                 var disabled = store.is_disabled(emote_info);
                 if(disabled) {
                     state += "d" + disabled; // Tee hee
-                    if(!element.textContent) {
+                    if(can_modify_text) {
                         // Any existing text (there really shouldn't be any)
                         // will look funny with our custom CSS, but there's
                         // not much we can do.
-                        state += "T";
                         element.textContent = emote_name;
                     }
                     element.setAttribute("data-bpm_state", state);
-                    element.classList.add(store.prefs.hideDisabledEmotes ? "bpm-hidden" : "bpm-disabled");
+                    if(store.prefs.hideDisabledEmotes) {
+                        element.classList.add("bpm-hidden");
+                    } else {
+                        element.classList.add("bpm-minified");
+                    }
                     continue;
                 }
                 element.setAttribute("data-bpm_state", state);
-                element.classList.add(emote_info.css_class);
+                if(store.prefs.stealthMode) {
+                    element.classList.add("bpm-minified");
+                    if(can_modify_text) {
+                        element.textContent = emote_name;
+                    }
+                    continue;
+                } else {
+                    element.classList.add(emote_info.css_class);
+                }
 
                 // Apply flags in turn. We pick on the naming a bit to prevent
                 // spaces and such from slipping in.
@@ -138,6 +154,7 @@ function process_links(store, elements, convert_unknown) {
                 // Unknown emote? Good enough
                 element.setAttribute("data-bpm_state", "u");
                 element.setAttribute("data-bpm_emotename", emote_name);
+                element.classList.add("bpm-minified");
                 element.classList.add("bpm-unknown");
                 if(!element.textContent) {
                     element.textContent = emote_name;
@@ -417,22 +434,23 @@ function run_reddit(store) {
             // Click toggle
             var state = element.getAttribute("data-bpm_state") || "";
             var is_nsfw_disabled = state.indexOf("1") > -1; // NSFW
-            // Not a disabled emote, or NSFW
-            if((state.indexOf("d") < 0) || (store.prefs.clickToggleSFW && is_nsfw_disabled)) {
+            if(store.prefs.clickToggleSFW && is_nsfw_disabled) {
                 return;
             }
             var info = store.lookup_emote(element.getAttribute("data-bpm_emotename"));
-            if(element.classList.contains("bpm-disabled")) {
-                // Show
-                element.classList.remove("bpm-disabled");
+            if(element.classList.contains("bpm-minified")) {
+                // Show: unminify, enable, give it its CSS, and remove the bit
+                // of text we added
+                element.classList.remove("bpm-minified");
                 element.classList.add(info.css_class);
                 if(state.indexOf("T") > -1) {
                     element.textContent = "";
                 }
             } else {
-                // Hide
+                // Hide: remove its CSS, minify, optionally disable, and put
+                // our bit of text back
                 element.classList.remove(info.css_class);
-                element.classList.add("bpm-disabled");
+                element.classList.add("bpm-minified");
                 if(state.indexOf("T") > -1) {
                     element.textContent = info.name;
                 }

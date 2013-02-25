@@ -16,6 +16,7 @@ var bpm_backendsupport = {
         "enableExtraCSS": true,
         "showUnknownEmotes": true,
         "hideDisabledEmotes": false,
+        "stealthMode": false,
         "showAltText": true,
         "enableGlobalEmotes": false,
         "enableGlobalSearch": false,

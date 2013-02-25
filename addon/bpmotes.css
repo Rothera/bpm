@@ -14,7 +14,7 @@
 
 /* Placeholders */
 
-.bpm-unknown, .bpm-disabled {
+.bpm-minified, .bpm-minified:before, .bpm-minified:after, .bpm-minified:hover, .bpm-minified:active {
     /* Behave like normal emotes do */
     display: block;
     float: left;
@@ -27,9 +27,6 @@
     border-radius: 4px;
     height: auto !important;
     width: auto !important;
-}
-
-.bpm-disabled, .bpm-disabled:before, .bpm-disabled:after, .bpm-disabled:hover, .bpm-disabled:active {
     /*
      * This class used to shut emotes down, so in the interests of working even
      * in the emote's native subreddit, we try to override anything else.
