@@ -29,9 +29,6 @@ if(_console && _console.log) {
 }
 
 function _wrap_logger(cname, prefix, level) {
-    if(_LOG_LEVEL > level) {
-        return (function() {});
-    }
     var cfunc;
     if(_console && _console[cname]) {
         cfunc = _console[cname].bind(_console);
@@ -46,7 +43,9 @@ function _wrap_logger(cname, prefix, level) {
         }
         _log_buffer.push(args.join(" "));
         args.unshift("BPM:");
-        cfunc.apply(null, args);
+        if(_LOG_LEVEL <= level) {
+            cfunc.apply(null, args);
+        }
     };
 }
 
