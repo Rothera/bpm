@@ -208,8 +208,7 @@ function process_alt_text(elements) {
             // -inp emotes. As a bit of a hack, we assume the emote code has
             // already run, and check for bpflag-in/bpflag-inp.
             var element_type = "div";
-            if(state.indexOf("d") > -1 || element.classList.contains("bpflag-in") ||
-                element.classList.contains("bpflag-inp")) {
+            if(element.classList.contains("bpflag-in") || element.classList.contains("bpflag-inp")) {
                 element_type = "span";
             }
 
