@@ -112,7 +112,7 @@ function execute_search(store, query) {
     var results = [];
     no_match:
     for(var emote_name in emote_map) {
-        var emote_info = store.lookup_core_emote(emote_name);
+        var emote_info = store.lookup_core_emote(emote_name, true);
         var lc_emote_name = emote_name.toLowerCase();
 
         // Match if ALL search terms match
@@ -174,7 +174,7 @@ function execute_search(store, query) {
         // At this point we have a match, so follow back to its base
         if(emote_name !== emote_info.base) {
             // Hunt down the non-variant version
-            emote_info = store.lookup_core_emote(emote_info.base);
+            emote_info = store.lookup_core_emote(emote_info.base, true);
             if(emote_info.name !== emote_info.base) {
                 log_warning("Followed +v from " + emote_name + " to " + emote_info.name + "; no root emote found");
             }
@@ -202,7 +202,7 @@ function execute_search(store, query) {
  */
 function inject_emote_into_form(store, target_form, emote_name) {
     log_debug("Injecting ", emote_name, "into", target_form);
-    var emote_info = store.lookup_core_emote(emote_name);
+    var emote_info = store.lookup_core_emote(emote_name, true);
     var formatting_id = tag_name2id["+formatting"];
 
     var start = target_form.selectionStart;

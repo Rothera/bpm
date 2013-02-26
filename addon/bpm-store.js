@@ -74,15 +74,15 @@ Store.prototype = {
     /*
      * Tries to locate an emote, either builtin or global.
      */
-    lookup_emote: function(name) {
-        return this.lookup_core_emote(name) || this.lookup_custom_emote(name) || null;
+    lookup_emote: function(name, want_tags) {
+        return this.lookup_core_emote(name, want_tags) || this.lookup_custom_emote(name) || null;
     },
 
     /*
      * Looks up a builtin emote's information. Returns an object with a couple
      * of properties, or null if the emote doesn't exist.
      */
-    lookup_core_emote: function(name) {
+    lookup_core_emote: function(name, want_tags) {
         // Refer to bpgen.py:encode() for the details of this encoding
         var data = emote_map[name];
         if(!data) {
@@ -100,24 +100,29 @@ Store.prototype = {
         var is_nsfw = (flags & _FLAG_NSFW);
         var is_redirect = (flags & _FLAG_REDIRECT);
 
-        var sources = [], start = 0, str;
-        while((str = source_data.slice(start, start+2)) !== "") {
-            sources.push(parseInt(str, 16)); // Hexadecimal
-            start += 2;
-        }
+        var sources = null, tags = null, base = null;
+        if(want_tags) {
+            var start, str;
 
-        var tags = [];
-        start = 0;
-        while((str = tag_data.slice(start, start+2)) !== "") {
-            tags.push(parseInt(str, 16)); // Hexadecimal
-            start += 2;
-        }
+            sources = [];
+            start = 0;
+            while((str = source_data.slice(start, start+2)) !== "") {
+                sources.push(parseInt(str, 16)); // Hexadecimal
+                start += 2;
+            }
 
-        var base;
-        if(is_redirect) {
-            base = parts[3];
-        } else {
-            base = name;
+            tags = [];
+            start = 0;
+            while((str = tag_data.slice(start, start+2)) !== "") {
+                tags.push(parseInt(str, 16)); // Hexadecimal
+                start += 2;
+            }
+
+            if(is_redirect) {
+                base = parts[3];
+            } else {
+                base = name;
+            }
         }
 
         return {
@@ -151,8 +156,8 @@ Store.prototype = {
             source_name: "custom subreddit",
             max_size: null,
 
-            sources: [],
-            tags: [],
+            sources: null,
+            tags: null,
 
             css_class: "bpm-cmote-" + sanitize_emote(name.slice(1)),
             base: null

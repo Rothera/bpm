@@ -72,7 +72,7 @@ function process_links(store, elements, convert_unknown) {
             // Don't normalize case for emote lookup
             var parts = href.split("-");
             var emote_name = parts[0];
-            var emote_info = store.lookup_emote(emote_name);
+            var emote_info = store.lookup_emote(emote_name, false);
 
             if(emote_info) {
                 // Click blocker CSS/JS
@@ -349,7 +349,7 @@ function _attach_to_usertext(store, textarea, bottom_area) {
         var has_local = false;
         while(match = re.exec(text)) {
             var emote_name = match[1].split("-")[0];
-            var emote_info = store.lookup_emote(emote_name);
+            var emote_info = store.lookup_emote(emote_name, true);
             // Nothing we recognize.
             if(emote_info === null) {
                 continue;
@@ -437,7 +437,7 @@ function run_reddit(store) {
             if(store.prefs.clickToggleSFW && is_nsfw_disabled) {
                 return;
             }
-            var info = store.lookup_emote(element.getAttribute("data-bpm_emotename"));
+            var info = store.lookup_emote(element.getAttribute("data-bpm_emotename"), false);
             if(element.classList.contains("bpm-minified")) {
                 // Show: unminify, enable, give it its CSS, and remove the bit
                 // of text we added

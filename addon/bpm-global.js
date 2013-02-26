@@ -35,7 +35,7 @@ function process_text(store, root) {
             // Don't normalize case for emote lookup
             var parts = match[1].split("-");
             var emote_name = parts[0];
-            var emote_info = store.lookup_emote(emote_name);
+            var emote_info = store.lookup_emote(emote_name, false);
 
             if(emote_info === null) {
                 continue;
