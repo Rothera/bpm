@@ -138,6 +138,9 @@ function process_links(store, elements, convert_unknown) {
                         element.classList.add("bpm-hidden");
                     } else {
                         element.classList.add("bpm-minified");
+                        if(disabled === 1) {
+                            element.classList.add("bpm-nsfw");
+                        }
                     }
                     continue;
                 }
@@ -476,6 +479,7 @@ function run_reddit(store) {
                 // Show: unminify, enable, give it its CSS, and remove the bit
                 // of text we added
                 element.classList.remove("bpm-minified");
+                element.classList.remove("bpm-nsfw");
                 element.classList.add(info.css_class);
                 if(state.indexOf("T") > -1) {
                     element.textContent = "";
@@ -485,6 +489,9 @@ function run_reddit(store) {
                 // our bit of text back
                 element.classList.remove(info.css_class);
                 element.classList.add("bpm-minified");
+                if(is_nsfw_disabled) {
+                    element.classList.add("bpm-nsfw");
+                }
                 if(state.indexOf("T") > -1) {
                     element.textContent = info.name;
                 }

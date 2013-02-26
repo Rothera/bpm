@@ -52,6 +52,12 @@
     background-color: hsla(0, 100%, 50%, 0.3);
 }
 
+/* NSFW emote placeholder. Doesn't look too great in night mode, unfortunately. */
+.bpm-nsfw, .bpm-nsfw:hover {
+    color: white !important;
+    background-color: black !important;
+}
+
 /* Alt-text display. */
 .bpm-alttext {
     color: grey;
