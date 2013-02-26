@@ -5,6 +5,9 @@
 //                        <   emote      >   <    alt-text     >
 var emote_regexp = /\[\]\((\/[\w:!#\/\-]+)\s*(?:["']([^"]*)["'])?\)/g;
 
+// this!==window on Opera, and doesn't have this object for some reason
+var Node = find_global("Node");
+
 /*
  * Searches elements recursively for [](/emotes), and converts them.
  */
@@ -16,8 +19,7 @@ function process_text(store, root) {
     var nodes_processed = 0;
     var emotes_matched = 0;
 
-    // this!==window on Opera, and doesn't have this object for some reason
-    walk_dom(root, find_global("Node").TEXT_NODE, function(node) {
+    walk_dom(root, Node.TEXT_NODE, function(node) {
         nodes_processed++;
 
         var parent = node.parentNode;
@@ -173,7 +175,7 @@ function run_global(store) {
 
     observe_document(function(nodes) {
         for(var i = 0; i < nodes.length; i++) {
-            if(nodes[i].nodeType !== find_global("Node").ELEMENT_NODE) {
+            if(nodes[i].nodeType !== Node.ELEMENT_NODE) {
                 // Not really interested in other kinds.
                 continue;
             }
