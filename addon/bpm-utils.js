@@ -87,37 +87,6 @@ if(_gm_log) {
 log_debug("Platform:", platform);
 
 /*
- * Injects a sneaky little link at the bottom of each Reddit page that
- * displays the logs.
- */
-function inject_reddit_log_button() {
-    var reddit_footer = find_class(document.body, "footer-parent");
-
-    // <div><pre>...</pre> <a>[dump bpm logs]</a></div>
-    var container = document.createElement("div");
-    container.className = "bottommenu";
-    var output = document.createElement("pre");
-    output.style.display = "none";
-    output.style.textAlign = "left";
-    output.style.borderStyle = "solid";
-    output.style.width = "50%";
-    output.style.margin = "auto auto auto auto";
-    var link = document.createElement("a");
-    link.href = "javascript:void(0)";
-    link.textContent = "[dump bpm logs]";
-    container.appendChild(link);
-    container.appendChild(output);
-
-    link.addEventListener("click", catch_errors(function(event) {
-        output.style.display = "block";
-        var logs = _log_buffer.join("\n");
-        output.textContent = logs;
-    }), false);
-
-    reddit_footer.appendChild(container);
-}
-
-/*
  * Generates a random string made of [a-z] characters, default 24 chars
  * long.
  */
@@ -486,9 +455,9 @@ function walk_dom(root, node_filter, process, end, node, depth) {
         // of these can happen, but oh well.
         end();
     } else {
-        setTimeout(function() {
+        setTimeout(catch_errors(function() {
             walk_dom(root, node_filter, process, end, node, depth);
-        }, 50);
+        }), 50);
     }
 }
 
