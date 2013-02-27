@@ -169,6 +169,7 @@ case "chrome-ext":
 
     linkify_options = function(element) {
         element.href = chrome.extension.getURL("/options.html");
+        element.target = "_blank";
     };
     break;
 
@@ -279,6 +280,7 @@ case "userscript":
 
     linkify_options = function(element) {
         element.href = EXT_OPTIONS_PAGE;
+        element.target = "_blank";
     };
     break;
 }
