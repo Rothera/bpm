@@ -6,19 +6,19 @@
  * Returns an object that CSS-related tags can be attached to before the DOM
  * is built. May be undefined or null if there is no such object.
  */
-function css_parent() {
+function _css_parent() {
     return document.head || document.documentElement || null;
 }
 
 /*
- * Trigger called when css_parent() is available. May defer until with_dom().
+ * Trigger called when _css_parent() is available. May defer until with_dom().
  */
 function with_css_parent(callback) {
-    if(css_parent()) {
-        callback(css_parent());
+    if(_css_parent()) {
+        callback(_css_parent());
     } else {
         with_dom(function() {
-            callback(css_parent());
+            callback(_css_parent());
         });
     }
 }
@@ -29,7 +29,7 @@ function with_css_parent(callback) {
 function add_css(css) {
     if(css) {
         var tag = style_tag(css);
-        css_parent().insertBefore(tag, css_parent().firstChild);
+        _css_parent().insertBefore(tag, _css_parent().firstChild);
     }
 }
 
@@ -38,7 +38,7 @@ function add_css(css) {
  */
 function link_css(filename) {
     make_css_link(filename, function(tag) {
-        var parent = css_parent();
+        var parent = _css_parent();
         parent.insertBefore(tag, parent.firstChild);
     });
 }
@@ -52,7 +52,7 @@ var set_pref = function(key, value) {
     _send_message("set_pref", {"pref": key, "value": value});
 };
 
-var request_initdata = function(want) {
+var _request_initdata = function(want) {
     _send_message("get_initdata", {"want": want});
 };
 
@@ -61,7 +61,7 @@ var _initdata_hook = null;
 var setup_browser = function(want, callback) {
     _initdata_want = want;
     _initdata_hook = callback;
-    request_initdata(want);
+    _request_initdata(want);
 };
 
 function _complete_setup(initdata) {
@@ -258,7 +258,7 @@ case "userscript":
         GM_setValue("prefs", JSON.stringify(_pref_cache));
     };
 
-    request_initdata = function(want) {
+    _request_initdata = function(want) {
         var tmp = GM_getValue("prefs");
         if(!tmp) {
             tmp = "{}";
