@@ -338,7 +338,7 @@ function process_rooted_post(store, post, md) {
     // Generally, the first post on the page will be the sidebar, so this
     // is an extremely fast test.
     var sidebar = is_sidebar(md);
-    var links = post.getElementsByTagName("a");
+    var links = slice(post.getElementsByTagName("a"));
     // NOTE: must run alt-text AFTER emote code, always. See note in
     // process_alt_text
     var out_of_sub = process_links(store, links, !sidebar);
@@ -452,12 +452,12 @@ function run_reddit(store) {
     log_info("Running on Reddit");
 
     init_search_box(store);
-    var usertext_edits = document.getElementsByClassName("usertext-edit");
+    var usertext_edits = slice(document.getElementsByClassName("usertext-edit"));
     inject_emotes_button(store, usertext_edits);
     hook_usertext_edit(store, usertext_edits);
 
     // Initial pass- show all emotes currently on the page.
-    var posts = document.getElementsByClassName("md");
+    var posts = slice(document.getElementsByClassName("md"));
     process_posts(store, posts);
 
     // Add emote click blocker
@@ -522,12 +522,12 @@ function run_reddit(store) {
             } else {
                 // Outside of formatted text, try to find some
                 // underneath us
-                var posts = root.getElementsByClassName("md");
+                var posts = slice(root.getElementsByClassName("md"));
                 process_posts(store, posts);
             }
 
             // TODO: move up in case we're inside it?
-            var usertext_edits = root.getElementsByClassName("usertext-edit");
+            var usertext_edits = slice(root.getElementsByClassName("usertext-edit"));
             inject_emotes_button(store, usertext_edits);
             hook_usertext_edit(store, usertext_edits);
         }

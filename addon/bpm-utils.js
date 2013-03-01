@@ -491,3 +491,9 @@ function find_class(root, class_name) {
         return elements[0];
     }
 }
+
+/*
+ * Lazy way to get to A.slice() on any list-like. Useful for getElements()
+ * calls, since the returned objects are slow to access.
+ */
+var slice = Array.prototype.slice.call.bind(Array.prototype.slice);
