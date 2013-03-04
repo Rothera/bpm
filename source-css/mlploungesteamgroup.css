@@ -12,7 +12,6 @@ DC05 - Announcement bar created
 24Feb2013 - Name change system changed
 Use Ctrl-F to find and remove them. */
 
-
 /* Sub Name Change*/
 .titlebox .word {
     display: none
@@ -106,7 +105,7 @@ body.res-nightmode:first-of-type {
 /*DC05 The blurb that links to whatever post I want it to*/
 /*As best I can tell; Reddit disallows hyperlinks in this field. Likely a security feature, but annoying*/
 /*At some point Draze smells will be the announcement (Draze: :( ).*/
-/* r/Hitler in socks tba*/
+/*Link232 Wants game night Week 9*/
 
 body > .content:before{
     display: block;
@@ -117,9 +116,9 @@ body > .content:before{
     color: #000000 !important;
     border: 1px solid;
     border-color: #000000;
-    border-radius: 15px;
+    border-radius: 14px;
     width: 1480px;
-    content: "Game Night Week 7 - Planetside 2 - March 2nd @ 5:00 pm Eastern";
+    content: "Make sure to visit the classiest WW2 related subreddit; r/hitlerinsocks";
     }
 
 /*===============Arrow Votes Change===============*/
@@ -188,7 +187,7 @@ body > .content:before{
     margin: 0 0 0 0;
     }
 
-/*Search bar removed because I can
+/*Search bar unremoved because Draze smells
 #search {
     display: none;
     }
@@ -277,9 +276,11 @@ body > .content:before{
 /* Username ids are as follows;
     t2_5n3bs Draze
     t2_5ifnt duruz
-    t2_75mzg DoomedCivilian */
+    t2_75mzg DoomedCivilian
+    t2_6k0ud LunarWolves
+*/
 
-.sidecontentbox a.author.id-t2_5n3bs, .sidecontentbox a.author.id-t2_5ifnt,.sidecontentbox a.author.id-t2_75mzg {
+.sidecontentbox a.author.id-t2_5n3bs, .sidecontentbox a.author.id-t2_5ifnt, .sidecontentbox a.author.id-t2_75mzg, .sidecontentbox a.author.id-t2_6k0ud {
     content:"";
     font-size: 0pt;
     }
@@ -288,14 +289,14 @@ body > .content:before{
     display: none;
     }
 
-.sidecontentbox a.author.id-t2_5n3bs:before, .sidecontentbox a.author.id-t2_5ifnt:before,.sidecontentbox a.author.id-t2_75mzg:before {
+.sidecontentbox a.author.id-t2_5n3bs:before, .sidecontentbox a.author.id-t2_5ifnt:before,.sidecontentbox a.author.id-t2_75mzg:before, .sidecontentbox a.author.id-t2_6k0ud:before {
     font-size:10pt!important;
     color:#369;
     display:inline-block;
     }
 
 .sidecontentbox a.author.id-t2_5n3bs:before {
-    content:"Mother Mustang";
+    content:"Sol Ray";
     }
 
 .sidecontentbox a.author.id-t2_5ifnt:before {
@@ -306,6 +307,9 @@ body > .content:before{
     content: "Likely at fault";
     }
 
+.sidecontentbox a.author.id-t2_6k0ud:before {
+    content: "God Emperor";
+    }
 
 /*==================Names==================*/
 
@@ -391,10 +395,10 @@ a.author:before{
     content:"Silly pony "
     }
 */
-/* This is to add text to the end of everyones name. Remove comments to activate*/
+/* This is to add text to the end of everyones name. Remove comments to activate.*/
 /*
 a.author:after{
-    content:" is a silly pony"
+    content:" is a silly pony"!important
     }
 */
 
@@ -462,6 +466,14 @@ a[href|="/rosesax"] {
     height: 150px;
     background-image: url(%%rosesax%%) !important
     }
+a[href|="/catplanetfun"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 149px;
+    height: 150px;
+    background-image: url(%%catplanetfun%%) !important
+    }
 
 a[href|="/tonightyou"] {
     display: block;
@@ -498,14 +510,114 @@ a[href|="/catplanet"] {
     height: 100px;
     background-image: url(%%CatPlanet%%) !important
     }
+a[href|="/lunaughty"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 250px;
+    height: 241px;
+    background-image: url(%%LunaNaughty%%) !important
+    }
+a[href|="/lunahorror"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 154px;
+    height: 200px;
+    background-image: url(%%lunashock%%) !important
+    }
 
-a[href|="/cis"] {
+a[href|="/rosewhat"] {
     display: block;
     clear: none;
     float: left;
     width: 73px;
     height: 100px;
     background-image: url(%%CinorIsStupid%%) !important
+    }
+
+a[href|="/unhug"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 135px;
+    background-image: url(%%unhug%%) !important
+    }
+
+
+a[href|="/rarityfff"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 170px;
+    height: 170px;
+    background-image: url(%%RarityFFF%%) !important
+    }
+
+
+a[href|="/ppnowhy"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 146px;
+    height: 150px;
+    background-image: url(%%PPnowhy%%) !important
+    }
+
+a[href|="/ppwhyno"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 146px;
+    height: 150px;
+    background-image: url(%%PPnowhy%%) !important
+    }
+
+
+a[href|="/octaviayes"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 202px;
+    height: 250px;
+    background-image: url(%%Octaviayes%%) !important
+    }
+
+a[href|="/ppdude"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%PPDude%%) !important
+    }
+
+a[href|="/ajnopeavi"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 196px;
+    height: 200px;
+    background-image: url(%%AJNopeavi%%) !important
+    }
+
+a[href|="/rarmegawhy"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%megawhy%%) !important
+    }
+
+a[href|="/twicasualno"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 129px;
+    background-image: url(%%twino%%) !important
     }
 
 

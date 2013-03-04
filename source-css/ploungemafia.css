@@ -240,15 +240,23 @@ text-decoration: underline;
 content: " " ; 
 margin-left: 5px;
 
-/* Red announcement thingy
+/* Red announcement thingy 
 
 background-color: #fc6c6c;
 border: 2px solid #d53f3f;
 */
-/* Green announcement thingy */
+/* Green announcement thingy 
 background-color: #85d462; 
 border: 2px solid #3BAE08; 
+*/
+/* Blue announcement thingy */ 
+background-color: #0099CC; 
+border: 2px solid #00688B; 
 
+/* Purple announcement thingy
+background-color: #8A2BE2; 
+border: 2px solid #2E0854;
+*/
 
 width: 2px; 
 height: 2px; 
@@ -325,7 +333,20 @@ left: 0;
 /*New post spam filtered warning (borrowed from /r/mylittlepony)*/
 #title-field.roundfield:before
 {
- content:"NOTE: Check the new queue after posting. If your post doesn't show up, you were spam filtered by mistake! Message the moderators with a link to the submission. And if you are making a new post for your game, or a signup for a new game, please message the mods! We'll update the sidebar accordingly.";
+ content:"NOTE: Check the new queue after posting. If your post doesn't show up, you were spam filtered by mistake! Message the moderators with a link to the submission.";
+ font-size:0.86em;
+ padding:5px;
+ border:1px solid #5f99cf;
+ background-color:#EFF7FF;
+ color:black;
+ font-weight: bold;
+ display:block;
+ margin-bottom: 10px;
+}
+
+#text-field.roundfield:before
+{
+ content:"If you are making a new post for your game, or a signup for a new game, please message the mods! We'll update the sidebar accordingly.";
  font-size:0.86em;
  padding:5px;
  border:1px solid #5f99cf;
@@ -426,7 +447,7 @@ a.author[href$="DiscordDraconequus"] {
     letter-spacing: -20px
     }
 a.author[href$="DiscordDraconequus"]:after {
-    content: "PretzelDraconequus";
+    content: "CupcakeDraconequus";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;

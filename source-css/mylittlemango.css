@@ -18,6 +18,12 @@ Added emotes (1/15/13)
 
 /* Background*/
 
+body{background:url(%%mlmbackground%%) no-repeat fixed center center!important}
+.res-nightmode .content{background-color:transparent!important}
+.res-nightmode{background-color:transparent !important}
+.content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
+.content .md h1:before{content:">"}
+
 .footer-parent {
     height: 850px;
     padding-bottom: 0px;
@@ -265,3 +271,25 @@ a[href|="/minisexualhealing"] {
      }
 
 a[href|="/minisexualhealing"] { background-position: -0px -0px; width: 166px; height: 200px; }
+
+a[href|="/queenheart"], a[href|="/bestvillain"], a[href|="/iwillkillyoualltodeath"], a[href|="/yourehurtingmyideas"], a[href|="/queenstare"], a[href|="/singinmerryment"], a[href|="/queenwtf"], a[href|="/sexualwizards"], a[href|="/queenme"], a[href|="/mybodyisready"], a[href|="/whataridiculoussentiment"], a[href|="/queenhello"], a[href|="/queenohyou"], a[href|="/fillychrysalis"] {
+     display: block;
+     clear: none;
+     float: left;
+     background-image: url(%%chrysalisemotesheet%%) !important
+     }
+
+a[href|="/queenheart"] { background-position: -0px -0px; width: 151px; height: 250px; }
+a[href|="/bestvillain"] { background-position: -0px -250px; width: 172px; height: 250px; }
+a[href|="/iwillkillyoualltodeath"] { background-position: -0px -500px; width: 189px; height: 200px; }
+a[href|="/yourehurtingmyideas"] { background-position: -0px -700px; width: 200px; height: 187px; }
+a[href|="/queenstare"] { background-position: -0px -887px; width: 200px; height: 168px; }
+a[href|="/singinmerryment"] { background-position: -0px -1055px; width: 101px; height: 151px; }
+a[href|="/queenwtf"] { background-position: -0px -1206px; width: 150px; height: 150px; }
+a[href|="/sexualwizards"] { background-position: -0px -1356px; width: 114px; height: 150px; }
+a[href|="/queenme"] { background-position: -0px -1506px; width: 126px; height: 150px; }
+a[href|="/mybodyisready"] { background-position: -101px -1055px; width: 86px; height: 100px; }
+a[href|="/whataridiculoussentiment"] { background-position: -0px -1656px; width: 100px; height: 100px; }
+a[href|="/queenhello"] { background-position: -100px -1656px; width: 89px; height: 100px; }
+a[href|="/queenohyou"] { background-position: -0px -1756px; width: 96px; height: 96px; }
+a[href|="/fillychrysalis"] { background-position: -96px -1756px; width: 100px; height: 94px; }

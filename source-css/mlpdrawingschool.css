@@ -1301,24 +1301,6 @@ a[href|="/thankyakindly"] {
     }
 
 
-.titlebox .bottom .author, .sidecontentbox .author {
-    display: inline-block
-    }
-
-.sidecontentbox a.author[href$="/brandarxiii"]:before {
-    content: " Brandar" !important;
-    font-size: 10pt !important;
-    color: #369 !important;
-    display: block !important;
-    margin-right: 0.5em !important
-    }
-.sidecontentbox a.author[href$="/brandarxiii"] {
-    content: "" !important;
-    color: white !important;
-    font-size: 0pt !important;
-    display: block !important
-    }
-
 .flairselector .customizer {
 display: none !important;
 }
@@ -1400,4 +1382,3 @@ overflow: visible;
 white-space: nowrap;
 font-variant: small-caps;
 }
-

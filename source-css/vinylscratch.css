@@ -460,7 +460,7 @@ a[href|='/shrug'],a[href|="/vsshrug"],a[href|='/tableflip'],a[href|='/vslaying']
     background-image: url(%%vssheet%%) !important
     }
 
-a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vsdance2'],a[href|='/vsgrump'],a[href|='/vs0b'],a[href|='/vs2b']{
+a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vsdance2'],a[href|='/vsgrump'],a[href|='/vstears'],a[href|='/vssinep'],a[href|='/kixandra'],a[href|='/vsholyshit'],a[href|='/vsfacehoof'],a[href|='/vssrs'],a[href|='/vssoawesome'],a[href|='/vssupersad'],a[href|='/vssmug'],a[href|='/vysmug'],a[href|='/vs0b'],a[href|='/vs2b'],a[href|='/vs0c'],a[href|='/vs1c'],a[href|='/vs2c'],a[href|='/vs0d'],a[href|='/vs1d'],a[href|='/vs2d'],a[href|='/vs0e'] {
     display: block;
     clear: none;
     float: left;
@@ -521,18 +521,65 @@ a[href|='/vsyes'],a[href|='/vs2a'] {width:70px; height:73px;background-position:
 a[href|='/vspuppy'] {background-image: url(%%vssheet2%%);width:148px; height:145px;background-position: -145px 0px}
 a[href|='/vsexcited'] {background-image: url(%%vssheet2%%);width:132px; height:294px;background-position: 0px 0px}
 a[href|='/vsgrump'] {background-image: url(%%vssheet2%%);width:100px; height:104px;background-position: 0px -295px}
+a[href|='/vssinep'],a[href|='/kixandra'] {background-image: url(%%vssheet2%%);width:200px; height:107px;background-position: -100px -305px}
 
 /* 0 Column */
 a[href|='/vssuave'],a[href|='/vs0b'] {background-image: url(%%vssheet2%%);width:70px; height:83px;background-position: -145px -145px}
+a[href|='/vstears'],a[href|='/vs0c'] {background-image: url(%%vssheet2%%);width:70px; height:77px;background-position: -145px -228px}
+a[href|='/vsholyshit'],a[href|='/vs0d'] {background-image: url(%%vssheet2%%);width:70px; height:80px; background-position: -300px -154px}
+a[href|='/vssmug'],a[href|='/vysmug'],a[href|='/vs0e'] {background-image: url(%%vssheet2%%);width:70px; height:70px; background-position: -370px 0px}
 
 /* 1 Column */
-
+a[href|='/vsfacehoof'],a[href|='/vs1c'] {background-image: url(%%vssheet2%%);width:70px; height:71px;background-position: -300px 0px}
+a[href|='/vssrs'],a[href|='/vs1d'] {background-image: url(%%vssheet2%%);width:70px; height:63px;background-position: -300px -234px}
 
 /* 2 Column */
 a[href|='/vsdance2'],a[href|='/vs2b'] {background-image: url(%%vssheet2%%);width:70px; height:104px; background-position: -222px -145px}
+a[href|='/vssoawesome'],a[href|='/vs2c'] {background-image: url(%%vssheet2%%);width:70px; height:83px; background-position: -300px -71px}
+a[href|='/vssupersad'],a[href|='/vs2d'] {background-image: url(%%vssheet2%%);width:70px; height:70px; background-position: -300px -297px}
 
 /* Other Emotes*/
 a[href|='/vsdance'] { width:110px; height:110px; background-image: url(%%vsdance%%); display: block; clear: none; float: left; }
+
+/* Since the /r/mylittleadvicepony mods suck and cant add an emote for a fellow mod: styling for the OAV 'mote */
+a[href|='/overlyattachedvinyl'],a[href|='/oav'] {
+    width: 300px !important;
+    height: 300px !important;
+    cursor: default !important;
+    display: block !important;
+    background-image: url(%%oav%%) !important;
+    background-repeat: no-repeat !important;
+    text-align: center !important;
+    color: white !important;
+    font-family: Impact, sans-serif !important;
+    font-size: 26px !important;
+    line-height: 24px !important;
+    text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black !important;
+    overflow: hidden !important;
+    position: relative !important;
+    text-transform: uppercase !important
+}
+a[href|='/overlyattachedvinyl'],a[href|='/oav'] {width:300px; height:300px; background-position: 0px 0px}
+
+a[href|='/overlyattachedvinyl'] em,a[href|='/oav'] em {
+    font-style: normal !important;
+    position: absolute !important;
+    top: 12px !important;
+    width: 280px !important;
+    color: white !important;
+    left: 50% !important;
+    margin-left: -140px !important
+    }
+
+a[href|='/overlyattachedvinyl'] strong,a[href|='/oav'] strong {
+    font-weight: normal !important;
+    position: absolute !important;
+    bottom: 18px !important;
+    color: white !important;
+    width: 280px !important;
+    left: 50% !important;
+    margin-left: -140px !important
+    }
 
 
 /*
@@ -667,7 +714,7 @@ div.titlebox .subscribers span.number:after
 
 div.titlebox .users-online span.number:after
 {
-    content:" Wubbing it up";
+    content:" Vinyl Scratch voice actor's voicing";
 }
 
 /*Remove RES tag and vote counts from moderator box because its ugly*/

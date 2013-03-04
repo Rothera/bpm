@@ -20,7 +20,7 @@ Dashie:
 	> Added tonne of emotes
 
 tebee:
-        -Added /dashiescared
+        -Added tons new emotes
         -made emote sheets non-repeated
         -removed Mane Sub Emotes (nopony was using them anyway) 
 */
@@ -423,19 +423,53 @@ a[href|="/vx62"], a[href|="/dashiepose2"], a[href|="/rvx62"], a[href|="/rdashiep
     }
 
 
-a[href|="/dashiescared"], a[href|="/dashieskating"] {
+a[href|="/dashiehelp"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 143px;
+    height: 136px;
+    background-repeat: no-repeat;
+    background-image: url(%%dashiehelp%%)
+    }
+
+a[href|="/ajhai"], a[href|="/dashieguilt"], a[href|="/dashiehai"], a[href|="/dashienudge"], a[href|="/dashiereading"], a[href|="/dashiescared"], a[href|="/dashieskating"], a[href|="/dashievolunteer"], a[href|="/dashiewince"], a[href|="/dashiespeechless"] {
     display: block;
     clear: none;
     float: left;
     height: 130px;
     background-repeat: no-repeat;
-    background-image: url(%%rd-sheet3-v3%%)
+    background-image: url(%%rd-sheet3-v5%%)
 }
+a[href|="/ajhai"]{
+background-position: 0 0; width: 117px; height: 130px;
+    }
+a[href|="/dashiehai"]{
+background-position: 0 -180px; width: 104px; height: 130px;
+    }
+a[href|="/dashieguilt"]{
+background-position: 0 -360px; width: 97px; height: 130px; 
+    }
+a[href|="/dashienudge"]{
+background-position: 0 -540px; width: 177px; height: 130px;
+    }
+a[href|="/dashiereading"]{
+background-position: 0 -720px; width: 180px; height: 150px;
+    }
 a[href|="/dashiescared"]{
-background-position: 0 0; width: 183px;
+background-position: 0 -920px; width: 183px; height: 130px; 
     }
 a[href|="/dashieskating"]{
-background-position: 0 -180px; width: 114px; 
+background-position: 0 -1100px; width: 114px; height: 130px;
+    }
+a[href|="/dashiespeechless"]{
+background-position: 0 -1280px; width: 126px; height: 130px; 
+    }
+a[href|="/dashievolunteer"]{
+background-position: 0 -1460px; width: 128px; height: 130px; 
+    }
+a[href|="/dashiewince"]{
+background-position: 0 -1640px; width: 140px; height: 130px;
     }
 
 /***********************
