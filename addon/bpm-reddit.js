@@ -45,35 +45,6 @@ var current_subreddit = (function() {
     }
 })();
 
-/*
- * Shows an "error" message under an edit form, in the standard style.
- * Comparable to the "we need something here" message when you try to post
- * an empty comment.
- */
-function enable_warning(bottom_area, class_name, message) {
-    var element = find_class(bottom_area, class_name);
-    if(!element) {
-        element = document.createElement("span");
-        element.classList.add("error");
-        element.classList.add(class_name);
-        // Insert before the .usertext-buttons div
-        var before = find_class(bottom_area, "usertext-buttons");
-        bottom_area.insertBefore(element, before);
-    }
-    element.style.display = "";
-    element.textContent = message;
-}
-
-/*
- * Disables a previously-generated error message, if it exists.
- */
-function disable_warning(bottom_area, class_name) {
-    var element = find_class(bottom_area, class_name);
-    if(element) {
-        element.parentNode.removeChild(element);
-    }
-}
-
 var _sidebar_cache = null;
 function is_sidebar(md) {
     if(_sidebar_cache) {
