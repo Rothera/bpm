@@ -20,7 +20,6 @@ var bpm_backendsupport = {
         "showAltText": true,
         "enableGlobalEmotes": false,
         "enableGlobalSearch": false,
-        "warnCourtesy": true,
         "clickToggleSFW": true,
         "searchLimit": 200,
         "maxEmoteSize": 0,

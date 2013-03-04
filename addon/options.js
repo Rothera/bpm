@@ -572,7 +572,6 @@ function run(prefs) {
     manage_option(prefs, "showAltText");
     manage_option(prefs, "enableGlobalEmotes");
     manage_option(prefs, "enableGlobalSearch");
-    manage_option(prefs, "warnCourtesy");
     manage_option(prefs, "clickToggleSFW");
 
     manage_number(prefs, "searchLimit", 200);

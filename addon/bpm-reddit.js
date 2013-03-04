@@ -348,104 +348,6 @@ function process_rooted_post(store, post, md) {
 }
 
 /*
- * Attaches to a .usertext-edit element, setting hooks to monitor the input
- * and display courtesy notifications appropriately.
- */
-function hook_usertext_edit(store, usertext_edits) {
-    if(!store.prefs.warnCourtesy) {
-        return;
-    }
-
-    if(usertext_edits.length) {
-        log_debug("Monitoring", usertext_edits.length, ".usertext-edit elements");
-    }
-    for(var i = 0; i < usertext_edits.length; i++) {
-        var edit = usertext_edits[i];
-        var textarea = edit.getElementsByTagName("textarea")[0];
-        var bottom_area = edit.getElementsByClassName("bottom-area")[0];
-
-        _attach_to_usertext(store, textarea, bottom_area);
-    }
-}
-
-function _attach_to_usertext(store, textarea, bottom_area) {
-    var timeout = null;
-    function warn_now() {
-        enable_warning(bottom_area, "OUTOFSUB",
-            "remember not everyone can see your emotes! please be considerate");
-    }
-    var ok = true;
-    textarea.addEventListener("input", catch_errors(function(event) {
-        var text = textarea.value;
-        text = text.replace(/ *>.*?\n/, ""); // Strip quotes
-        //         [text]    (  /<emotename>         "<alt-text>")
-        var re = /\[.*?\]\s*\((\/[\w:!#\/\-]+)\s*(?:["']([^"]*)["'])?\s*\)/g;
-        var match;
-        ok = true; // innocent until proven guilty
-        var has_extern = false;
-        var has_local = false;
-        while(match = re.exec(text)) {
-            var emote_name = match[1].split("-")[0];
-            var emote_info = store.lookup_emote(emote_name, true);
-            // Nothing we recognize.
-            if(emote_info === null) {
-                continue;
-            }
-
-            var from_here = false;
-            for(var si = 0; si < emote_info.sources.length; si++) {
-                from_here = sr_id2name[emote_info.sources[si]] === "r/" + current_subreddit;
-                if(from_here) {
-                    break; // It's from at *least* this subreddit
-                }
-            }
-            if(from_here) {
-                has_local = true;
-            } else {
-                has_extern = true;
-                if(match[2]) {
-                    ok = false;
-                }
-            }
-        }
-
-        if(!text.replace(re, "").trim()) {
-            // Emote-only post. Only complain if there's actually something
-            // here.
-            if(has_extern && !has_local) {
-                ok = false;
-            }
-        }
-
-        if(timeout !== null) {
-            clearTimeout(timeout);
-        }
-
-        if(!ok) {
-            // Set notification to go off in two seconds.
-            timeout = setTimeout(catch_errors(function() {
-                timeout = null;
-                warn_now();
-            }), 2000);
-        } else {
-            disable_warning(bottom_area, "OUTOFSUB");
-        }
-    }), false);
-
-    textarea.addEventListener("blur", catch_errors(function(event) {
-        // If the editor loses focus, notify immediately. This is sort of
-        // mean to catch people who are quickly tabbing to the save button,
-        // but if they hit it fast enough our warning will be hidden anyway.
-        if(!ok) {
-            if(timeout !== null) {
-                clearTimeout(timeout);
-            }
-            warn_now();
-        }
-    }), false);
-}
-
-/*
  * Main function when running on Reddit.
  */
 function run_reddit(store) {
@@ -454,7 +356,6 @@ function run_reddit(store) {
     init_search_box(store);
     var usertext_edits = slice(document.getElementsByClassName("usertext-edit"));
     inject_emotes_button(store, usertext_edits);
-    hook_usertext_edit(store, usertext_edits);
 
     // Initial pass- show all emotes currently on the page.
     var posts = slice(document.getElementsByClassName("md"));
@@ -529,7 +430,6 @@ function run_reddit(store) {
             // TODO: move up in case we're inside it?
             var usertext_edits = slice(root.getElementsByClassName("usertext-edit"));
             inject_emotes_button(store, usertext_edits);
-            hook_usertext_edit(store, usertext_edits);
         }
     });
 }
