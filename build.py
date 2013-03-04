@@ -373,7 +373,7 @@ def sync(ctx):
     update_www(ctx)
 
     os.chdir("www")
-    ctx.run("rsync", "-vvLr", "--delete", "./", "ref@mlas1.us:www")
+    ctx.run("rsync", "-zvvLr", "--delete", "./", "ref@mlas1.us:www")
     os.chdir("..")
 
 ScriptFiles = [
