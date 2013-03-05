@@ -312,7 +312,7 @@ function process_rooted_post(store, post, md) {
     var links = slice(post.getElementsByTagName("a"));
     // NOTE: must run alt-text AFTER emote code, always. See note in
     // process_alt_text
-    var out_of_sub = process_links(store, links, !sidebar);
+    process_links(store, links, !sidebar);
     if(!sidebar && store.prefs.showAltText) {
         process_alt_text(links);
     }
