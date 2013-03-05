@@ -381,9 +381,15 @@ ScriptFiles = [
     "addon/bpm-utils.js",
     "addon/bpm-browser.js",
     "addon/bpm-store.js",
-    "addon/bpm-reddit.js",
     "addon/bpm-search.js",
+    "addon/bpm-inject.js",
+    "addon/bpm-searchbox.js",
+    "addon/bpm-frames.js",
+    "addon/bpm-alttext.js",
+    "addon/bpm-post.js",
+    "addon/bpm-reddit.js",
     "addon/bpm-global.js",
+    "addon/bpm-optionslink.js",
     "addon/bpm-main.js"
     ]
 

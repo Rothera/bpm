@@ -2,26 +2,25 @@
  * Attaches all of our CSS.
  */
 function init_css(store) {
-    // Most environments permit us to create <link> tags before
-    // DOMContentLoaded (though Chrome forces us to use documentElement).
-    // Scriptish is one that does not- there's no clear way to
-    // manipulate the partial DOM, so we delay.
+    // Most environments permit us to create <link> tags before DOMContentLoaded
+    // (though Chrome forces us to use documentElement). Scriptish is one that
+    // does not- there's no clear way to manipulate the partial DOM, so we delay.
     with_css_parent(function() {
         log_info("Setting up css");
         link_css("/bpmotes.css");
         link_css("/emote-classes.css");
 
         if(store.prefs.enableExtraCSS) {
-            // Inspect style properties to determine what extracss variant
-            // to apply.
+            // Inspect style properties to determine what extracss variant to
+            // apply.
             //    Firefox: Old versions require -moz, but >=16.0 are unprefixed
             //    Chrome (WebKit): -webkit
             //    Opera: Current stable requires -o, but >=12.10 are unprefixed
             var style = document.createElement("span").style;
 
             if(style.transform !== undefined) {
-                // This might actually be extracss-pure-opera for Opera
-                // Next, since it requires some modified rules
+                // This might actually be extracss-pure-opera for Opera Next,
+                // since it requires some modified rules
                 link_css("/extracss-pure.css");
             } else if(style.MozTransform !== undefined) {
                 link_css("/extracss-moz.css");
@@ -41,15 +40,15 @@ function init_css(store) {
         }
 
         if(platform === "chrome-ext") {
-            // Fix for Chrome, which sometimes doesn't rerender unknown
-            // emote elements. The result is that until the element is
-            // "nudged" in some way- merely viewing it in the Console/platform
-            // Elements tabs will do- it won't display.
+            // Fix for Chrome, which sometimes doesn't rerender unknown emote
+            // elements. The result is that until the element is "nudged" in
+            // some way- merely viewing it in the Console/platform Elements
+            // tabs will do- it won't display.
             //
-            // RES seems to reliably set things off, but that won't
-            // always be installed. Perhaps some day we'll trigger it
-            // implicitly through other means and be able to get rid of
-            // this, but for now it seems not to matter.
+            // RES seems to reliably set things off, but that won't always be
+            // installed. Perhaps some day we'll trigger it implicitly through
+            // other means and be able to get rid of this, but for now it seems
+            // not to matter.
             var tag = document.createElement("style");
             tag.type = "text/css";
             document.head.appendChild(tag);
@@ -113,84 +112,6 @@ function init_css(store) {
     });
 }
 
-/*
- * Manages communication with our options page on platforms that work this
- * way (userscripts).
- */
-function setup_options_link(store) {
-    log_info("Setting up options page link");
-    function _check() {
-        var tag = document.getElementById("ready");
-        var ready = tag.textContent.trim();
-
-        if(ready === "true") {
-            window.postMessage({
-                "__betterponymotes_target": "__bpm_options_page",
-                "__betterponymotes_method": "__bpm_prefs",
-                "__betterponymotes_prefs": store.prefs
-            }, EXT_RESOURCE_PREFIX);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    // Impose a limit, in case something is broken.
-    var checks = 0;
-    function recheck() {
-        if(checks < 10) {
-            checks++;
-            if(!_check()) {
-                window.setTimeout(catch_errors(function() {
-                    recheck();
-                }), 200);
-            }
-        } else {
-            log_error("Options page is unavailable after 2 seconds. Assuming broken.");
-            // TODO: put some kind of obvious error <div> on the page or
-            // something
-        }
-    }
-
-    // Listen for messages that interest us
-    window.addEventListener("message", catch_errors(function(event) {
-        var message = event.data;
-        // Verify source and intended target (we receive our own messages,
-        // and don't want to get anything from rogue frames).
-        if(event.origin !== EXT_RESOURCE_PREFIX || event.source !== window ||
-           message.__betterponymotes_target !== "__bpm_extension") {
-            return;
-        }
-
-        switch(message.__betterponymotes_method) {
-            case "__bpm_set_pref":
-                var key = message.__betterponymotes_pref;
-                var value = message.__betterponymotes_value;
-
-                if(store.prefs[key] !== undefined) {
-                    store.prefs[key] = value;
-                    store.sync_key(key);
-                } else {
-                    log_error("Invalid pref write from options page: '" + key + "'");
-                }
-                break;
-
-            default:
-                log_error("Unknown request from options page: '" + message.__betterponymotes_method + "'");
-                break;
-        }
-    }), false);
-
-    with_dom(function() {
-        // Wait for options.js to be ready (checking every 200ms), then
-        // send it down.
-        recheck();
-    });
-}
-
-/*
- * main()
- */
 function main() {
     log_info("Starting up");
     setup_browser({"prefs": 1, "customcss": 1}, function(store) {

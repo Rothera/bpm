@@ -87,30 +87,6 @@ if(_gm_log) {
 log_debug("Platform:", platform);
 
 /*
- * Generates a random string made of [a-z] characters, default 24 chars
- * long.
- */
-function random_id(length) {
-    if(length === undefined) {
-        length = 24;
-    }
-
-    var index, tmp = "";
-    for(var i = 0; i < length; i++) {
-        index = Math.floor(Math.random() * 25);
-        tmp += "abcdefghijklmnopqrstuvwxyz"[index];
-    }
-    return tmp;
-}
-
-/*
- * str.endswith()
- */
-function ends_with(text, s) {
-    return text.slice(-s.length) === s;
-}
-
-/*
  * Wraps a function with an error-detecting variant. Useful for callbacks
  * and the like, since some browsers (Firefox...) have a way of swallowing
  * exceptions.
@@ -135,47 +111,45 @@ function catch_errors(f) {
 }
 
 /*
- * Wrapper for a one-shot event with callback list and setup function.
- * Returns a "with_X"-like function that accepts callbacks. Example usage:
- *
- * var with_n = event(function(ready) {
- *     ready(256);
- * });
- * with_n(function(n) {
- *     log_debug(n);
- * });
+ * Usage: with_dom(function() { ... code ... });
  */
-function event(setup) {
+var with_dom = (function() {
     var callbacks = [];
-    var result;
-    var triggered = false;
-    var init = false;
+    var listening = false;
+    var is_ready = function() {
+        return (document.readyState === "interactive" || document.readyState === "complete");
+    };
+    var ready = is_ready();
 
-    function listen(callback) {
-        if(!init) {
-            setup(trigger);
-            init = true;
+    if(ready) {
+        log_debug("Document loaded on startup");
+    }
+
+    var loaded = function(event) {
+        log_debug("Document loaded");
+        ready = true;
+
+        for(var i = 0; i < callbacks.length; i++) {
+            callbacks[i]();
         }
 
-        if(triggered) {
-            callback(result);
+        callbacks = null; // unreference, just in case
+    };
+
+    var add = function(callback) {
+        if(ready || is_ready()) {
+            callback();
         } else {
             callbacks.push(callback);
+            if(!listening) {
+                listening = true;
+                document.addEventListener("DOMContentLoaded", catch_errors(loaded), false);
+            }
         }
-    }
+    };
 
-    function trigger(r) {
-        result = r;
-        triggered = true;
-        for(var i = 0; i < callbacks.length; i++) {
-            callbacks[i](r);
-        }
-        callbacks = null;
-    }
-
-    listen.trigger = trigger;
-    return listen;
-}
+    return add;
+})();
 
 /*
  * A reference to the MutationObserver object. It's unprefixed on Firefox,
@@ -222,187 +196,13 @@ function observe_document(callback) {
     }));
 }
 
-/*
- * Makes a nice <style> element out of the given CSS.
- */
-function style_tag(css) {
-    log_debug("Building <style> tag");
-    var tag = document.createElement("style");
-    tag.type = "text/css";
-    tag.textContent = css;
-    return tag;
-}
-
-/*
- * Makes a nice <link> element to the given URL (for CSS).
- */
-function stylesheet_link(url) {
-    log_debug("Building <link> tag to", url);
-    var tag = document.createElement("link");
-    tag.href = url;
-    tag.rel = "stylesheet";
-    tag.type = "text/css";
-    return tag;
-}
-
-/*
- * Determines whether this element, or any ancestor, have the given id.
- */
-function id_above(element, id) {
-    while(true) {
-        if(element.id === id) {
-            return true;
-        } else if(element.parentElement) {
-            element = element.parentElement;
-        } else {
-            return false;
-        }
-    }
-}
-
-/*
- * Determines whether this element, or any ancestor, have the given class.
- */
-function class_above(element, class_name) {
-    while(true) {
-        if(element.classList.contains(class_name)) {
-            return element;
-        } else if(element.parentElement) {
-            element = element.parentElement;
-        } else {
-            return null;
-        }
-    }
-}
-
-/*
- * Helper function to make elements "draggable", i.e. clicking and dragging
- * them will move them around.
- */
-function enable_drag(element, start_callback, callback) {
-    var start_x, start_y;
-
-    var on_mousemove = catch_errors(function(event) {
-        var dx = event.clientX - start_x;
-        var dy = event.clientY - start_y;
-        callback(event, dx, dy);
-    });
-
-    element.addEventListener("mousedown", catch_errors(function(event) {
-        start_x = event.clientX;
-        start_y = event.clientY;
-        window.addEventListener("mousemove", on_mousemove, false);
-        document.body.classList.add("bpm-noselect");
-        start_callback(event);
-    }), false);
-
-    window.addEventListener("mouseup", catch_errors(function(event) {
-        window.removeEventListener("mousemove", on_mousemove, false);
-        document.body.classList.remove("bpm-noselect");
-    }), false);
-}
-
-/*
- * Wrapper around enable_drag for the common case of moving elements.
- */
-function make_movable(element, container, callback) {
-    var start_x, start_y;
-
-    enable_drag(element, function(event) {
-        start_x = parseInt(container.style.left, 10);
-        start_y = parseInt(container.style.top, 10);
-    }, function(event, dx, dy) {
-        var left = Math.max(start_x + dx, 0);
-        var top = Math.max(start_y + dy, 0);
-
-        function move() {
-            container.style.left = left + "px";
-            container.style.top = top + "px";
-        }
-
-        if(callback) {
-            callback(event, left, top, move);
-        } else {
-            move();
-        }
-    });
-}
-
-/*
- * Runs the given callback when the DOM is ready, i.e. when DOMContentLoaded
- * fires.
- */
-var with_dom = event(function(ready) {
-    if(document.readyState === "interactive" || document.readyState === "complete") {
-        log_debug("Document already loaded");
-        ready();
-    } else {
-        document.addEventListener("DOMContentLoaded", catch_errors(function(event) {
-            log_debug("Document loaded");
-            ready();
-        }), false);
-    }
-});
-
-/*
- * A fairly reliable indicator as to whether or not BPM is currently
- * running in a frame.
- */
-// Firefox is funny about window/.self/.parent/.top, such that comparing
-// references is unreliable. frameElement is the only test I've found so
-// far that works consistently.
-var running_in_frame = (window !== window.top || window.frameElement);
-
-function _msg_delegate_hack(id, message) {
-    /*
-     * BetterPonymotes hack to enable cross-origin frame communication in
-     * broken browsers.
-     */
-    // Locate iframe, send message, remove class.
-    var iframe = document.getElementsByClassName(id)[0];
-    if(iframe) {
-        iframe.contentWindow.postMessage(message, "*");
-        iframe.classList.remove(id);
-        // Locate this script tag and remove it.
-        var script = document.getElementById(id);
-        script.parentNode.removeChild(script);
-    }
-}
-
-/*
- * Send a message to an iframe via postMessage(), working around any browser
- * shortcomings to do so.
- *
- * "message" must be JSON-compatible.
- *
- * Note that the targetOrigin of the postMessage() call is "*", no matter
- * what. Don't send anything even slightly interesting.
- */
-function message_iframe(frame, message) {
-    log_debug("Sending", message, "to", frame);
-    if(frame.contentWindow) {
-        // Right now, only Firefox and Opera let us access this API.
-        frame.contentWindow.postMessage(message, "*");
-    } else {
-        // Chrome and Opera don't permit *any* access to these variables for
-        // some stupid reason, despite them being available on the page.
-        // Inject a <script> tag that does the dirty work for us.
-        var id = "__betterponymotes_esh_" + random_id();
-        frame.classList.add(id);
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.id = id;
-        document.head.appendChild(script);
-        script.textContent = "(" + _msg_delegate_hack.toString() + ")('" + id + "', " + JSON.stringify(message) + ");";
-    }
-}
-
 var _tag_blacklist = {
     // Meta tags we should never touch
     "HEAD": 1, "TITLE": 1, "BASE": 1, "LINK": 1, "META": 1, "STYLE": 1, "SCRIPT": 1,
     // Things I'm worried about
     "IFRAME": 1, "OBJECT": 1, "CANVAS": 1, "SVG": 1, "MATH": 1, "TEXTAREA": 1
 };
+
 /*
  * Walks the DOM tree from the given root, running a callback on each node
  * where its nodeType === node_filter. Pass only three arguments.
@@ -462,6 +262,112 @@ function walk_dom(root, node_filter, process, end, node, depth) {
 }
 
 /*
+ * Helper function to make elements "draggable", i.e. clicking and dragging
+ * them will move them around.
+ */
+function enable_drag(element, start_callback, callback) {
+    var start_x, start_y;
+
+    var on_mousemove = catch_errors(function(event) {
+        var dx = event.clientX - start_x;
+        var dy = event.clientY - start_y;
+        callback(event, dx, dy);
+    });
+
+    element.addEventListener("mousedown", catch_errors(function(event) {
+        start_x = event.clientX;
+        start_y = event.clientY;
+        window.addEventListener("mousemove", on_mousemove, false);
+        document.body.classList.add("bpm-noselect");
+        start_callback(event);
+    }), false);
+
+    window.addEventListener("mouseup", catch_errors(function(event) {
+        window.removeEventListener("mousemove", on_mousemove, false);
+        document.body.classList.remove("bpm-noselect");
+    }), false);
+}
+
+/*
+ * Wrapper around enable_drag for the common case of moving elements.
+ */
+function make_movable(element, container, callback) {
+    var start_x, start_y;
+
+    enable_drag(element, function(event) {
+        start_x = parseInt(container.style.left, 10);
+        start_y = parseInt(container.style.top, 10);
+    }, function(event, dx, dy) {
+        var left = Math.max(start_x + dx, 0);
+        var top = Math.max(start_y + dy, 0);
+
+        function move() {
+            container.style.left = left + "px";
+            container.style.top = top + "px";
+        }
+
+        if(callback) {
+            callback(event, left, top, move);
+        } else {
+            move();
+        }
+    });
+}
+
+/*
+ * Makes a nice <style> element out of the given CSS.
+ */
+function style_tag(css) {
+    log_debug("Building <style> tag");
+    var tag = document.createElement("style");
+    tag.type = "text/css";
+    tag.textContent = css;
+    return tag;
+}
+
+/*
+ * Makes a nice <link> element to the given URL (for CSS).
+ */
+function stylesheet_link(url) {
+    log_debug("Building <link> tag to", url);
+    var tag = document.createElement("link");
+    tag.href = url;
+    tag.rel = "stylesheet";
+    tag.type = "text/css";
+    return tag;
+}
+
+/*
+ * Determines whether this element, or any ancestor, have the given id.
+ */
+function id_above(element, id) {
+    while(true) {
+        if(element.id === id) {
+            return true;
+        } else if(element.parentElement) {
+            element = element.parentElement;
+        } else {
+            return false;
+        }
+    }
+}
+
+/*
+ * Determines whether this element, or any ancestor, have the given class.
+ */
+function class_above(element, class_name) {
+    while(true) {
+        if(element.classList.contains(class_name)) {
+            return element;
+        } else if(element.parentElement) {
+            element = element.parentElement;
+        } else {
+            return null;
+        }
+    }
+}
+
+/*
  * Locates an element at or above the given one matching a particular test.
  */
 function locate_matching_ancestor(element, predicate, none) {
@@ -490,6 +396,13 @@ function find_class(root, class_name) {
         log_warning("Multiple elements under", root, "with class '" + class_name + "'");
         return elements[0];
     }
+}
+
+/*
+ * str.endswith()
+ */
+function ends_with(text, s) {
+    return text.slice(-s.length) === s;
 }
 
 /*

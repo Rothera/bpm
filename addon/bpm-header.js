@@ -27,9 +27,9 @@
 
 // For linting- every global we access, more or less
 /*
-var self, chrome, opera, GM_log, GM_getValue, GM_setValue;
-var window, document, console, setTimeout, clearTimeout, FileReader;
-var emote_map, sr_name2id, sr_id2name, tag_name2id, tag_id2name, bpm_backendsupport;
+var self, chrome, opera, GM_getValue, GM_setValue; // Platform
+var window, document, setTimeout, clearTimeout, FileReader; // Standard
+var emote_map, sr_name2id, sr_id2name, tag_name2id, tag_id2name, bpm_backendsupport; // Data
 */
 
 (function(_global_this) {
@@ -37,6 +37,7 @@ var emote_map, sr_name2id, sr_id2name, tag_name2id, tag_id2name, bpm_backendsupp
 
 var DEV_MODE = false;
 
+// Set at build time. Only relevant to the userscript.
 var EXT_RESOURCE_PREFIX = "/*{{require_prefix}}*/";
 var EXT_OPTIONS_PAGE = EXT_RESOURCE_PREFIX + "/options.html";
 

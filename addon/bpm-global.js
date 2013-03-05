@@ -1,3 +1,12 @@
+/*
+ * A fairly reliable indicator as to whether or not BPM is currently
+ * running in a frame.
+ */
+// Firefox is funny about window/.self/.parent/.top, such that comparing
+// references is unreliable. frameElement is the only test I've found so
+// far that works consistently.
+var running_in_frame = (window !== window.top || window.frameElement);
+
 // As a note, this regexp is a little forgiving in some respects and strict in
 // others. It will not permit text in the [] portion, but alt-text quotes don't
 // have to match each other.
@@ -68,13 +77,7 @@ function process_text(store, root) {
             new_elements.push(element);
             emote_elements.push(element);
 
-            // Don't need to do validation on flags, since our matching
-            // regexp is strict enough to begin with (although it will
-            // match ":", something we don't permit elsewhere).
-            for(var p = 1; p < parts.length; p++) {
-                var flag = parts[p].toLowerCase();
-                element.classList.add("bpflag-" + sanitize_emote(flag));
-            }
+            add_flags(element, parts);
 
             if(match[2]) {
                 // Alt-text. (Quotes aren't captured by the regexp)
@@ -126,7 +129,9 @@ function process_text(store, root) {
             // our new nodes (so that the alt-text element goes to the right
             // place) but before we rescroll.
             if(store.prefs.showAltText) {
-                process_alt_text(emote_elements);
+                for(var i = 0; i < emote_elements.length; i++) {
+                    process_alt_text(emote_elements[i]);
+                }
             }
 
             // If the parent element has gotten higher due to our emotes,
@@ -151,15 +156,6 @@ function process_text(store, root) {
  * Main function when running globally.
  */
 function run_global(store) {
-    if(!store.prefs.enableGlobalEmotes) {
-        return;
-    }
-    log_info("Running globally");
-
-    // We run this here, instead of down in the main bit, to avoid applying large
-    // chunks of CSS when this script is disabled.
-    init_css(store);
-
     if(store.prefs.enableGlobalSearch) {
         // Never inject the search box into frames. Too many sites fuck up
         // entirely if we do. Instead, we do some cross-frame communication.
@@ -176,7 +172,8 @@ function run_global(store) {
     observe_document(function(nodes) {
         for(var i = 0; i < nodes.length; i++) {
             if(nodes[i].nodeType !== Node.ELEMENT_NODE) {
-                // Not really interested in other kinds.
+                // Not interested in other kinds of nodes.
+                // FIXME: this makes no sense
                 continue;
             }
             process_text(store, nodes[i]);
@@ -185,6 +182,10 @@ function run_global(store) {
 }
 
 function global_main(store) {
+    if(!store.prefs.enableGlobalEmotes) {
+        return;
+    }
+
     // Check against domain blacklist
     for(var i = 0; i < DOMAIN_BLACKLIST.length; i++) {
         if(DOMAIN_BLACKLIST[i] === document.location.host) {
@@ -192,6 +193,10 @@ function global_main(store) {
             return;
         }
     }
+
+    log_info("Running globally");
+
+    init_css(store);
 
     with_dom(function() {
         run_global(store);

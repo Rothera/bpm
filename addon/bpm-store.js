@@ -188,12 +188,6 @@ Store.prototype = {
     }
 };
 
-/*
- * Emote lookup utilities and other stuff related to BPM's data files. These
- * are rather helpful, since our data format is optimized for space and memory,
- * not easy of access.
- */
-
 // Keep in sync with bpgen.
 var _FLAG_NSFW = 1;
 var _FLAG_REDIRECT = 1 << 1;
