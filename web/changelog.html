@@ -23,277 +23,268 @@
 </head>
 <body>
   <div class="container">
-    <div class="row">
-      <div class="span8 offset2">
-        <h2>BetterPonymotes Changelog</h2>
-        <p>This changelog only lists code changes. Most releases contain whatever
-        emote updates were available at the time, and are not mentioned.
+  <div class="row">
+  <div class="span8 offset2">
 
-        <h5>v59.94 - 2013-03-04</h5>
-        <p>Added stealth mode. Removed out-of-sub emote notifications.
+  <h2>BetterPonymotes Changelog</h2>
+  <p>This changelog only lists code changes. Most releases contain whatever
+    emote updates were available at the time, and are not mentioned.</p>
 
-        <h5>v57.89 - 2013-01-28</h5>
-        <p>Added domain blacklist due to difficult-to-fix compatability issues
-        with certain sites.
+  <h5>v59.94 - 2013-03-04</h5>
+  <p>Added stealth mode. Removed out-of-sub emote notifications.</p>
 
-        <h5>v56.87 - 2013-01-13</h5>
-        <p>Added a sneaky little button to the bottom of every Reddit page that
-        dumps the debug logs.
+  <h5>v57.89 - 2013-01-28</h5>
+  <p>Added domain blacklist due to difficult-to-fix compatability issues with
+    certain sites.</p>
 
-        <h5>v54.83 - 2012-11-23</h5>
-        <p>Minor tweaks to the search box- has a proper help tab and options page
-        link at the bottom now.
+  <h5>v56.87 - 2013-01-13</h5>
+  <p>Added a sneaky little button to the bottom of every Reddit page that dumps
+    the debug logs.</p>
 
-        <h5>v49.79 - 2012-11-23</h5>
-        <p>GIF animote fixes, disable MutationObserver on Chrome due to bug,
-        and compatibility with the development version of RES.
+  <h5>v54.83 - 2012-11-23</h5>
+  <p>Minor tweaks to the search box- has a proper help tab and options page
+    link at the bottom now.</p>
 
-        <h5>v47.78 - 2012-11-21</h5>
-        <p>Include support for animotes on Chrome, by converting APNG's to GIF
-        and hosting them externally.
+  <h5>v49.79 - 2012-11-23</h5>
+  <p>GIF animote fixes, disable MutationObserver on Chrome due to bug, and
+    compatibility with the development version of RES.</p>
 
-        <h5>v46.75 - 2012-11-07</h5>
-        <p>Bugfix: custom css was being applied globally even when global emotes
-        were disabled.
+  <h5>v47.78 - 2012-11-21</h5>
+  <p>Include support for animotes on Chrome, by converting APNG's to GIF and
+    hosting them externally.</p>
 
-        <h5>v45.71 - 2012-10-28</h5>
-        <p>Add click toggle option.
-        <p>Improved options page.
-        <p>Search box handles focus better.
-        <p>Alt-text converter now procesess embedded links.
-        <p>Implemented <code>r/</code> search syntax and negative subreddit queries.
+  <h5>v46.75 - 2012-11-07</h5>
+  <p>Bugfix: custom css was being applied globally even when global emotes were
+    disabled.</p>
 
-        <h5>v44.70 - 2012-10-27</h5>
-        <p>Fix z-index problems with the search box and make the width of the
-        results area stop changing size so badly.
-        <p>Lots of random internal cleanup.
+  <h5>v45.71 - 2012-10-28</h5>
+  <p>Add click toggle option.</p>
+  <p>Improved options page.</p>
+  <p>Search box handles focus better.</p>
+  <p>Alt-text converter now procesess embedded links.</p>
+  <p>Implemented <code>r/</code> search syntax and negative subreddit queries.</p>
 
-        <h5>v43.69 - 2012-10-25</h5>
-        <p>Extra CSS detection now works by introspecting the available
-        CSSStyleDeclaration object for properties. Should mean UserScripts are
-        now supported.
-        <p>Set a minimum Chrome browser version in the manifest, so outdated
-        users will stop wondering why it doesn't work (and probably start
-        wondering why it doesn't install).
-        <p>Special case <code>+formatting</code> to add text in the search box.
-        No longer hiding these emotes.
-        <p>Fix global emotes bug, not deleting old nodes properly.
-        <p>Slim down the search box.
-        <p>Don't convert alt-text or unknown emotes on sidebars. Helps some
-        subreddits.
+  <h5>v44.70 - 2012-10-27</h5>
+  <p>Fix z-index problems with the search box and make the width of the results
+    area stop changing size so badly.</p>
+  <p>Lots of random internal cleanup.</p>
 
-        <h5>v40.65 - 2012-10-21</h5>
-        <p>Improve unknown emote detection. Handles sidebars better.
-        <p>Add notifications when the user is using emotes in such a way that
-        non-script users will have problems with the post. (Alt-text in
-        non-native emotes, and "blank posts".) Includes an option to disable.
+  <h5>v43.69 - 2012-10-25</h5>
+  <p>Extra CSS detection now works by introspecting the available
+    CSSStyleDeclaration object for properties. Should mean UserScripts are now
+    supported.</p>
+  <p>Set a minimum Chrome browser version in the manifest, so outdated users
+    will stop wondering why it doesn't work (and probably start wondering why
+    it doesn't install).</p>
+  <p>Special case <code>+formatting</code> to add text in the search box. No
+    longer hiding these emotes.</p>
+  <p>Fix global emotes bug, not deleting old nodes properly.</p>
+  <p>Slim down the search box.</p>
+  <p>Don't convert alt-text or unknown emotes on sidebars. Helps some subreddits.</p>
 
-        <h5>v39.64 - 2012-10-21</h5>
-        <p>Optimized global emote converter. It now runs nodes in batches of
-        1000 with a custom tree walker, and doesn't trawl the DOM for scroll
-        information unless absolutely necessary. Fixes problems where BPM would
-        seem to hang on larger pages.
+  <h5>v40.65 - 2012-10-21</h5>
+  <p>Improve unknown emote detection. Handles sidebars better.</p>
+  <p>Add notifications when the user is using emotes in such a way that
+    non-script users will have problems with the post. (Alt-text in
+    non-native emotes, and "blank posts".) Includes an option to disable.</p>
 
-        <h5>v38.63 - 2012-10-19</h5>
-        <p>Fixed merged emotes being missing.
-        <p>Minor optimizations.
-        <p>Global emote converter now tries to automatically scroll enclosing
-        elements where applicable. This makes chat windows far more tolerable.
-        <p>Alt-text is now converted globally.
-        <p>Restyled disabled/nsfw/unknown emote placeholders to be substantially
-        less annoying (they're inline now).
+  <h5>v39.64 - 2012-10-21</h5>
+  <p>Optimized global emote converter. It now runs nodes in batches of 1000
+    with a custom tree walker, and doesn't trawl the DOM for scroll information
+    unless absolutely necessary. Fixes problems where BPM would seem to hang on
+    larger pages.</p>
 
-        <h5>v37.62.1 - 2012-10-16</h5>
-        <p>Fixed more bugs in results counting. Tag negation and default tags
-        are thorny.
+  <h5>v38.63 - 2012-10-19</h5>
+  <p>Fixed merged emotes being missing.</p>
+  <p>Minor optimizations.</p>
+  <p>Global emote converter now tries to automatically scroll enclosing elements
+    where applicable. This makes chat windows far more tolerable.</p>
+  <p>Alt-text is now converted globally.</p>
+  <p>Restyled disabled/nsfw/unknown emote placeholders to be substantially less
+    annoying (they're inline now).</p>
 
-        <h5>v37.62 - 2012-10-16</h5>
-        <p>Fixed results counting. No longer counts doubled emotes (as a result
-        of variant omission) and shows the effects of hidden-by-default emotes.
+  <h5>v37.62.1 - 2012-10-16</h5>
+  <p>Fixed more bugs in results counting. Tag negation and default tags are
+    thorny.</p>
 
-        <h5>v36.61 - 2012-10-15</h5>
-        <p>Tag search matches against +v emotes, before replacing them with their
-        base equivalent. This makes it possible to search for variant emote names.
-        <p>Negative tag search implemented. You can now search for things like
-        <code>+mane -ts -rarity</code> and get just the non-unicorn Mane 6.
-        <p>Default search set to <code>-nonpony -hidden</code>.
+  <h5>v37.62 - 2012-10-16</h5>
+  <p>Fixed results counting. No longer counts doubled emotes (as a result of
+    variant omission) and shows the effects of hidden-by-default emotes.</p>
 
-        <h5>v35.60 - 2012-10-13</h5>
-        <p>Emote tags. Every emote has been tagged according to its content.
-        Several tools written to process that data and all of it included in
-        BPM.
-        <p>Variant tags- all extra aliases are tagged <code>+v</code>, and
-        hidden from search output. Several other emotes have been hidden as
-        well.
-        <p>Emote file format overhauled.
-        <p>Backend significantly rewritten to compensate.
-        <p>Addon data files combined and restructured. Data now encoded in short
-        strings for sake of memory.
-        <p>PONYSCRIPT-IGNORE is now selectively disrespected. Used on r/mlplounge.
-        <p>Rules file restructured. Tags now used to implement many of its
-        previous purposes.
-        <p>"BetterPonymotes Extras" has been removed.
-        <p>Lots of other internal changes.
-        <p>Tag search on emotes.
+  <h5>v36.61 - 2012-10-15</h5>
+  <p>Tag search matches against +v emotes, before replacing them with their base
+    equivalent. This makes it possible to search for variant emote names.</p>
+  <p>Negative tag search implemented. You can now search for things like
+    <code>+mane -ts -rarity</code> and get just the non-unicorn Mane 6.</p>
+  <p>Default search set to <code>-nonpony -hidden</code>.</p>
 
-        <h5>v34.58 - 2012-10-07</h5>
-        <p>Options support for the userscript variant, using postMessage().
-        <p>Stylistic improvements on emote placeholders.
+  <h5>v35.60 - 2012-10-13</h5>
+  <p>Emote tags. Every emote has been tagged according to its content. Several
+    tools written to process that data and all of it included in BPM.</p>
+  <p>Variant tags- all extra aliases are tagged <code>+v</code>, and hidden
+    from search output. Several other emotes have been hidden as well.</p>
+  <p>Emote file format overhauled.</p>
+  <p>Backend significantly rewritten to compensate.</p>
+  <p>Addon data files combined and restructured. Data now encoded in short
+    strings for sake of memory.</p>
+  <p>PONYSCRIPT-IGNORE is now selectively disrespected. Used on r/mlplounge.</p>
+  <p>Rules file restructured. Tags now used to implement many of its previous
+    purposes.</p>
+  <p>"BetterPonymotes Extras" has been removed.</p>
+  <p>Lots of other internal changes.</p>
+  <p>Tag search on emotes.</p>
 
-        <h5>v33.57 - 2012-10-06</h5>
-        <p>Rewrite frame code. BPM now runs the search exclusively in top-level
-        frames, delegating focus tracking and emote injection to frames as
-        necessary.
-        <p>Emote regexps made more consistent.
+  <h5>v34.58 - 2012-10-07</h5>
+  <p>Options support for the userscript variant, using postMessage().</p>
+  <p>Stylistic improvements on emote placeholders.</p>
 
-        <h5>v32.56 - 2012-10-05</h5>
-        <p>Minor fixes for Opera (custom css wasn't downloading) and Safari
-        (wasn't running at all)
-        <p>Custom CSS now works globally, and better in general.
+  <h5>v33.57 - 2012-10-06</h5>
+  <p>Rewrite frame code. BPM now runs the search exclusively in top-level frames,
+    delegating focus tracking and emote injection to frames as necessary.</p>
+  <p>Emote regexps made more consistent.</p>
 
-        <h5>v31.55 - 2012-10-04</h5>
-        <p>Fall back on DOMNodeInserted more reliably, and on all browsers. Fix
-        for Firefox nightly.
-        <p>Fix frame detection on Firefox. Makes Tumblr work better, for real
-        this time.
-        <p>Dragging the search box around no longer selects anything on Firefox
-        and Chrome. Some other elements still show signs of being selected on
-        Opera.
-        <p>Fixed alt-text converter running on freshly-made posts twice, and so
-        expanding its own source info text.
+  <h5>v32.56 - 2012-10-05</h5>
+  <p>Minor fixes for Opera (custom css wasn't downloading) and Safari (wasn't
+    running at all)</p>
+  <p>Custom CSS now works globally, and better in general.</p>
 
-        <h5>v30.54 - 2012-10-03</h5>
-        <p>Safari fixes: emotes button doesn't submit form, code that depends on
-        DOMContentLoaded is more reliably fired.
-        <p>Frames on Chrome now behave as they do on other browsers.
+  <h5>v31.55 - 2012-10-04</h5>
+  <p>Fall back on DOMNodeInserted more reliably, and on all browsers. Fix for
+    Firefox nightly.</p>
+  <p>Fix frame detection on Firefox. Makes Tumblr work better, for real this
+    time.</p>
+  <p>Dragging the search box around no longer selects anything on Firefox and
+    Chrome. Some other elements still show signs of being selected on Opera.</p>
+  <p>Fixed alt-text converter running on freshly-made posts twice, and so
+    expanding its own source info text.</p>
 
-        <h5>v29.53 - 2012-10-02</h5>
-        <p>Made global search button go on top of more things.
-        <p>Global search button responds to Command on Macs.
-        <p>Fixed a random hovermote or two.
-        <p>A good bit of unreleased work toward userscripts.
-        <p>Added a couple spoiler emotes I didn't know about.
-        <p>Add option to hide disabled emotes completely.
-        <p>Make disabled NSFW emotes more strongly disabled, so subreddits don't
-        override them.
+  <h5>v30.54 - 2012-10-03</h5>
+  <p>Safari fixes: emotes button doesn't submit form, code that depends on
+    DOMContentLoaded is more reliably fired.</p>
+  <p>Frames on Chrome now behave as they do on other browsers.</p>
 
-        <h5>v29.52 - 2012-10-01</h5>
-        <p>Cache control set on CSS host (for userscripts).
-        <p>Fixed global search button a bit- it goes on top of things better.
-        <p>Made it work in Scriptish (document.head is not defined early on).
-        <p>Global search button respects both Ctrl and Meta/Command for dragging
-        now. An improvement for Mac users.
-        <p>Fixed a couple random hovermotes.
+  <h5>v29.53 - 2012-10-02</h5>
+  <p>Made global search button go on top of more things.</p>
+  <p>Global search button responds to Command on Macs.</p>
+  <p>Fixed a random hovermote or two.</p>
+  <p>A good bit of unreleased work toward userscripts.</p>
+  <p>Added a couple spoiler emotes I didn't know about.</p>
+  <p>Add option to hide disabled emotes completely.</p>
+  <p>Make disabled NSFW emotes more strongly disabled, so subreddits don't
+    override them.</p>
 
-        <h5>v28.52 - 2012-09-30</h5>
-        <p>Ignores a couple of hard-coded spoiler tags when expanding alt-text.
-        <p>Fixed the custom CSS feature not being able to download new files on
-        Chrome.
-        <p>Fixed the emote blacklist input boxes, again. Pressing enter doesn't
-        "submit" the page anymore. Maybe for good this time!
-        <p>Custom CSS handles nonexistent subreddits better now- Reddit no longer
-        seems to return a 404, so it checks that the Content-Type is text/css.
-        <p>Figured out how to make the search input the right size on Chrome.
-        <p>Basic UserScript support. Core functionality tested on GreaseMonkey.
+  <h5>v29.52 - 2012-10-01</h5>
+  <p>Cache control set on CSS host (for userscripts).</p>
+  <p>Fixed global search button a bit- it goes on top of things better.</p>
+  <p>Made it work in Scriptish (document.head is not defined early on).</p>
+  <p>Global search button respects both Ctrl and Meta/Command for dragging
+    now. An improvement for Mac users.</p>
+  <p>Fixed a couple random hovermotes.</p>
 
-        <h5>v27.51 - 2012-09-29</h5>
-        <p>Corrected tabbing order with the emotes button- instead of coming
-        before save, is now out of the tab order entirely. This sucks, but a
-        proper fix requires messing with the save button a little bit.
-        <p>Gave up on the sourceinfo bubbles and moved it to alt-text, like
-        GrEmB did.
-        <p>CSS is a few kb smaller by omitting <code>clear: none</code>.
+  <h5>v28.52 - 2012-09-30</h5>
+  <p>Ignores a couple of hard-coded spoiler tags when expanding alt-text.</p>
+  <p>Fixed the custom CSS feature not being able to download new files on
+    Chrome.</p>
+  <p>Fixed the emote blacklist input boxes, again. Pressing enter doesn't
+    "submit" the page anymore. Maybe for good this time!</p>
+  <p>Custom CSS handles nonexistent subreddits better now- Reddit no longer
+    seems to return a 404, so it checks that the Content-Type is text/css.</p>
+  <p>Figured out how to make the search input the right size on Chrome.</p>
+  <p>Basic UserScript support. Core functionality tested on GreaseMonkey.</p>
 
-        <h5>v26.51 - 2012-09-29</h5>
-        <p>Fixed emote injection from the search box, which was broken by the
-        removal of text in the last release.
-        <p>Made the <code>-i</code> (invert) flag work on Firefox and Chrome.
-        Chrome uses CSS, Firefox requires a small hack with SVG filters, and
-        Opera doesn't seem to support either mechanism.
-        <p>Removed global emotes button from frames when on Reddit. Helps with
-        certain kinds of addons.
+  <h5>v27.51 - 2012-09-29</h5>
+  <p>Corrected tabbing order with the emotes button- instead of coming before
+    save, is now out of the tab order entirely. This sucks, but a proper fix
+    requires messing with the save button a little bit.</p>
+  <p>Gave up on the sourceinfo bubbles and moved it to alt-text, like GrEmB
+    did.</p>
+  <p>CSS is a few kb smaller by omitting <code>clear: none</code>.</p>
 
-        <h5>v25.50 - 2012-09-29</h5>
-        <p>Moved the Chrome version to the webstore.
-        <p>Global emotes imply the <code>-in</code> flag, as a formatting fix.
-        <p>Added an option to show emote search globally (hidden behind a small
-        icon).
-        <p>The search box now remembers the last thing you searched on. It
-        defaults to <code>sr:mylittlepony</code> as a convenience, so it's not
-        blank when you open it.
-        <p>Removed the emote name from the search results, so it's easier to
-        see the emote. (It's in the title text anyway, so not missing.)
-        <p>Hovering over an emote now shows source information in a small pop-up
-        box.
+  <h5>v26.51 - 2012-09-29</h5>
+  <p>Fixed emote injection from the search box, which was broken by the removal
+    of text in the last release.</p>
+  <p>Made the <code>-i</code> (invert) flag work on Firefox and Chrome. Chrome
+    uses CSS, Firefox requires a small hack with SVG filters, and Opera doesn't
+    seem to support either mechanism.</p>
+  <p>Removed global emotes button from frames when on Reddit. Helps with certain
+    kinds of addons.</p>
 
-        <h5>v24.48 - 2012-09-24</h5>
-        <p>Continued cleanup by fixing up options.js.
-        <p>Fixed another problem with RES's new "feature". BPM ignored the user
-        tag link, but not the votes display as I had not seen it used yet.
-        <p>Custom CSS download code now spaces out its requests to Reddit, in
-        accordance with their rules.
+  <h5>v25.50 - 2012-09-29</h5>
+  <p>Moved the Chrome version to the webstore.</p>
+  <p>Global emotes imply the <code>-in</code> flag, as a formatting fix.</p>
+  <p>Added an option to show emote search globally (hidden behind a small icon).</p>
+  <p>The search box now remembers the last thing you searched on. It defaults
+    to <code>sr:mylittlepony</code> as a convenience, so it's not blank when
+    you open it.</p>
+  <p>Removed the emote name from the search results, so it's easier to see the
+    emote. (It's in the title text anyway, so not missing.)</p>
+  <p>Hovering over an emote now shows source information in a small pop-up box.</p>
 
-        <h5>v24.46 - 2012-09-20</h5>
-        <p>Massive cleanup effort began- main script essentially rewritten as
-        far as diffs go. Script concern areas split apart a bit, and a few
-        long-standing messes fixed.
-        <p>Firefox now uses the postMessage API instead of self.port, for
-        consistency.
-        <p>Fixed emote converter and alt-text code running on links more than
-        once when they were added to the page with "load more comments".
-        <p>Made writing prefs from the frontend script (specifically the emote
-        window positioning) not blow away prefs written from other sources-
-        particularly, the options page. Also may have improved lag.
+  <h5>v24.48 - 2012-09-24</h5>
+  <p>Continued cleanup by fixing up options.js.</p>
+  <p>Fixed another problem with RES's new "feature". BPM ignored the user tag
+    link, but not the votes display as I had not seen it used yet.</p>
+  <p>Custom CSS download code now spaces out its requests to Reddit, in
+    accordance with their rules.</p>
 
-        <h5>v22.45 - 2012-09-18</h5>
-        <p>Made combiners turn off better- if you had r/mylittlecombiners
-        disabled, but NSFW on, they would still move emotes around as if they
-        were on. This has been mostly fixed (they still still react to
-        pinkiepies).
-        <p>Reworked preferences code a bit. Chrome/Opera now redirect writes
-        from options.html through background.js. Some common code was pulled
-        out. This enables backends to respond to prefs changes on all browsers.
-        <p>Fixed an overflow problem in the emote list widgets- with a large
-        number of emotes, the boxes generated for them would fall out of the
-        &lt;div&gt;.
-        <p>Added a custom CSS feature- BPM will apply the raw CSS from the
-        specified subreddits. The parser used strips out most non-emote stuff.
-        CSS is updated once a week, or when forced. This feature is somewhat
-        fragile at the moment, and should be used carefully.
+  <h5>v24.46 - 2012-09-20</h5>
+  <p>Massive cleanup effort began- main script essentially rewritten as far as
+    diffs go. Script concern areas split apart a bit, and a few long-standing
+    messes fixed.</p>
+  <p>Firefox now uses the postMessage API instead of self.port, for consistency.</p>
+  <p>Fixed emote converter and alt-text code running on links more than once
+    when they were added to the page with "load more comments".</p>
+  <p>Made writing prefs from the frontend script (specifically the emote window
+    positioning) not blow away prefs written from other sources- particularly,
+    the options page. Also may have improved lag.</p>
 
-        <h5>v21.44 - 2012-09-15</h5>
-        <p>Added emote whitelist. Emotes listed here will override all forms of
-        blacklisting.
+  <h5>v22.45 - 2012-09-18</h5>
+  <p>Made combiners turn off better- if you had r/mylittlecombiners disabled,
+    but NSFW on, they would still move emotes around as if they were on. This
+    has been mostly fixed (they still still react to pinkiepies).</p>
+  <p>Reworked preferences code a bit. Chrome/Opera now redirect writes from
+    options.html through background.js. Some common code was pulled out. This
+    enables backends to respond to prefs changes on all browsers.</p>
+  <p>Fixed an overflow problem in the emote list widgets- with a large number
+    of emotes, the boxes generated for them would fall out of the &lt;div&gt;.</p>
+  <p>Added a custom CSS feature- BPM will apply the raw CSS from the specified
+    subreddits. The parser used strips out most non-emote stuff. CSS is updated
+    once a week, or when forced. This feature is somewhat fragile at the moment,
+    and should be used carefully.</p>
 
-        <h5>v20.44 - 2012-09-15</h5>
-        <p>Added max emote size option. Blocks all emotes larger than this.
-        <p>Made disabled emotes work better on their native subs (though use of
-        !important tags will override us in turn, so this isn't perfect).
-        <p>Emote blacklist added. Override specific emotes- more fine-grained
-        than by subreddit.
-        <p>Click blocker added. Makes emotes behave less like links.
+  <h5>v21.44 - 2012-09-15</h5>
+  <p>Added emote whitelist. Emotes listed here will override all forms of
+    blacklisting.</p>
 
-        <h5>v19.43 - 2012-09-13</h5>
-        <p>(Despite being marked as an emote-only release, this version contains
-        core code changes. However, none of this is user-visible.)
-        <p>Removed MutationSummary library in favor of using MutationObserver
-        directly. Some bugs may have been introduced as a consequence, as MS was
-        quite smart about never reporting the same node twice.
+  <h5>v20.44 - 2012-09-15</h5>
+  <p>Added max emote size option. Blocks all emotes larger than this.</p>
+  <p>Made disabled emotes work better on their native subs (though use of
+    !important tags will override us in turn, so this isn't perfect).</p>
+  <p>Emote blacklist added. Override specific emotes- more fine-grained than by
+    subreddit.</p>
+  <p>Click blocker added. Makes emotes behave less like links.</p>
 
-        <h5>v19.42 - 2012-09-11</h5>
-        <p>Made CSS application work uniformly across browsers, removing the
-        need for all the !important tags BGM needed on Firefox. Also fixes
-        subreddits overriding built-in emotes, especially r/mlplounge.
+  <h5>v19.43 - 2012-09-13</h5>
+  <p>(Despite being marked as an emote-only release, this version contains core
+    code changes. However, none of this is user-visible.)</p>
+  <p>Removed MutationSummary library in favor of using MutationObserver directly.
+    Some bugs may have been introduced as a consequence, as MS was quite smart
+    about never reporting the same node twice.</p>
 
-        <br>
-        <br>
-        <strong>This changelog was retroactively written up to version v20.44.
-        Versions older than this cutoff have not been edited in yet.</strong>
+  <h5>v19.42 - 2012-09-11</h5>
+  <p>Made CSS application work uniformly across browsers, removing the need for
+    all the !important tags BGM needed on Firefox. Also fixes subreddits
+    overriding built-in emotes, especially r/mlplounge.</p>
 
-        <!-- Left off at r322 or so -->
+  <br>
+  <br>
+  <p><strong>This changelog was retroactively written up to version v20.44.
+    Versions older than this cutoff have not been edited in yet.</strong></p>
 
-      </div>
-    </div>
+  <!-- Left off at r322 or so -->
+
+  </div>
+  </div>
   </div>
 </body>
 </html>
