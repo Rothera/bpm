@@ -32,19 +32,6 @@ function inject_reddit_log_button() {
     reddit_footer.appendChild(container);
 }
 
-/*
- * Current subreddit being displayed, or null if there doesn't seem to be one.
- */
-var current_subreddit = (function() {
-    // FIXME: what other characters are valid?
-    var match = document.location.href.match(/reddit\.com\/r\/([\w]+)/);
-    if(match) {
-        return match[1].toLowerCase();
-    } else {
-        return null;
-    }
-})();
-
 var _sidebar_cache = null;
 function is_sidebar(md) {
     if(_sidebar_cache) {
