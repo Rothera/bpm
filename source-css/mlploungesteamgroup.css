@@ -10,6 +10,7 @@ DC03 - Sidebar fuckery (Search removed, created by removed, creat new subreddit 
 DC04 - Someone requested an increase in Roseluck. Submit buttons are now changed. Plan on using something else for one of them, just havn't decided what yet.
 DC05 - Announcement bar created
 24Feb2013 - Name change system changed
+08Mar2013 - Announcement bar updated to allow links
 Use Ctrl-F to find and remove them. */
 
 /* Sub Name Change*/
@@ -103,9 +104,10 @@ body.res-nightmode:first-of-type {
 
 /*==================Announcement==================*/
 /*DC05 The blurb that links to whatever post I want it to*/
-/*As best I can tell; Reddit disallows hyperlinks in this field. Likely a security feature, but annoying*/
+/*CHANGE THIS FIELD IN THE SIDEBAR. Do not remove the hash tags. Follows same rules as comment links*/
+/*Changing background color? Change it in BOTH fields*/
 /*At some point Draze smells will be the announcement (Draze: :( ).*/
-/*Link232 Wants game night Week 9*/
+/*Wagon Week 10 Trouble in Terrorist town maybe?*/
 
 body > .content:before{
     display: block;
@@ -113,13 +115,30 @@ body > .content:before{
     padding: 6px;
     background-color: #CCC;
     font-size: 16px;
+    height: 16px;
     color: #000000 !important;
     border: 1px solid;
     border-color: #000000;
     border-radius: 14px;
     width: 1480px;
-    content: "Make sure to visit the classiest WW2 related subreddit; r/hitlerinsocks";
+    content: "";
     }
+
+
+
+.side .md h6 {
+    position: absolute;
+    top: 153px;
+    left: 80px;
+    z-index: 100;
+    background: #CCC;
+    font-size: 16px;
+    height: 16px;
+    border: none;
+    border-color: #000000;
+    border-radius: 3px;  
+    }
+
 
 /*===============Arrow Votes Change===============*/
 /*DC02 This code disables the downvote button. And makes upvotes cats. */
@@ -429,6 +448,14 @@ a[href|="/hathe"] {
     width: 300px;
     height: 246px;
     background-image: url(%%Hathe%%) !important
+    }
+a[href|="/americanlunasalute"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 197px;
+    height: 200px;
+    background-image: url(%%americanlunasalute%%) !important
     }
 
 a[href|="/turnip"] {

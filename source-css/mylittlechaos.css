@@ -182,18 +182,18 @@ a[href|="/fillyderp"] {
     }
 */
 /*== Username Modifications ==*/
-a.author[href$="CatmanIX"] {
+a.author[href$="nekoningen"] {
     font-size: 0px !important;
     overflow: hidden;
     display: inline-block;
     }
-a.author[href$="CatmanIX"]:before {
-    content: "Homo Felinus IX";
+a.author[href$="nekoningen"]:before {
+    content: "Cattus Sapiens IX";
     font-size: 10px !important;
     background-color: transparent;
     }
-a.author[href$="CatmanIX"]:after {
-    content: ", Lord of the Catlands";
+a.author[href$="nekoningen"]:after {
+    content: ", Lord of the Litterbox";
     font-size: 10px !important;
     background-color: transparent;
     }
@@ -206,4 +206,3 @@ a.author[href$="Zovistograt"]:after {
 .fancy-settings .linefield {width: 920px;}
 .fancy-settings textarea {height: 500px; width: 900px;}
 .stylesheet-customize-container textarea {height: 500px;}
-

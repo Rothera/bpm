@@ -6,7 +6,7 @@
 .tabmenu li.selected a {color:hotpink!important;}
 
 .side {background-color:lightpink!important;}
-body{background:url(%%-mudbackground%%) no-repeat fixed center center}
+body{background:url(%%background1%%) no-repeat fixed center center}
 
 /*---------------------- Nightmode fixes for the background -------------------------------- */
 .content #siteTable div[onclick="click_thing(this)"] {
@@ -99,6 +99,15 @@ float: left;
 width: 22px;
 height: 28px;
 background-image: url(%%upron%%) !important
+}
+
+a[href|="/twirub"] {
+display: block;
+clear: none;
+float: left;
+width: 250px;
+height: 250px;
+background-image: url(%%Twirub%%) !important
 }
 
 
