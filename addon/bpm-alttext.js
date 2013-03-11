@@ -35,35 +35,38 @@ function add_sourceinfo(element, state, is_emote, is_unknown) {
  * Decides whether or not the alt-text on this element needs to be processed.
  * Returns bpm_state if yes, null if no.
  */
-function should_convert_alt_text(element) {
-    if(!element.title) {
-        // Note, we don't bother setting state="a" in this case
-        return null;
+function should_convert_alt_text(element, state, is_emote) {
+    if(is_emote) {
+        // Emotes require a sourceinfo hover, no matter what
+        return true;
     }
 
-    var state = element.getAttribute("data-bpm_state") || "";
+    if(!element.title) {
+        // Note, we don't bother setting state="a" in this case
+        return false;
+    }
 
     // Already processed? Avoid doing silly things like expanding things again
     // (or our sourceinfo hover)
     if(state.indexOf("a") > -1) {
-        return null;
+        return false;
     }
 
     // Avoid spoiler links. We can't rely on any emote data to exist, as
     // of them aren't known as emotes
     var href = element.getAttribute("href");
     if(href && spoiler_links.indexOf(href.split("-")[0]) > -1) {
-        return null;
+        return false;
     }
 
     // Work around RES putting tag links and other things with alt-text on
     // them in the middle of posts- we don't want to expand those.
     if(element.classList.contains("userTagLink") ||
        element.classList.contains("voteWeight")) {
-        return null;
+        return false;
     }
 
-    return state;
+    return true;
 }
 
 /*
@@ -71,11 +74,12 @@ function should_convert_alt_text(element) {
  */
 function generate_alt_text(title, container) {
     // Split on links, so we can turn those into real links. These are rare,
-    // but worth handling nicely.
+    // but worth handling nicely. Also prepend a space for formatting- it makes
+    // the most difference on non-emote elements.
     // (\b doesn't seem to be working when I put it at the end, here??
     // Also, note that we do grab the space at the end for formatting)
     //                                  http://    < domain name >    /url?params#stuff
-    var parts = title.split(/\b(https?:\/\/[a-zA-Z0-9\-.]+(?:\/[a-zA-Z0-9\-_.~'();:+\/?%#]*)?(?:\s|$))/);
+    var parts = (" " + title).split(/\b(https?:\/\/[a-zA-Z0-9\-.]+(?:\/[a-zA-Z0-9\-_.~'();:+\/?%#]*)?(?:\s|$))/);
 
     // Handle items in pairs: one chunk of text and one link at a time
     for(var j = 0; j < Math.floor(parts.length / 2); j += 2) {
@@ -94,19 +98,7 @@ function generate_alt_text(title, container) {
     }
 }
 
-/*
- * Converts alt-text on an <a> element as appropriate. Will respond to the emote
- * converter if it has already run on this element.
- */
-function process_alt_text(element) {
-    var state = should_convert_alt_text(element);
-    if(!state) {
-        return;
-    }
-
-    var is_emote = state.indexOf("e") > -1;
-    var is_unknown = state.indexOf("u") > -1;
-
+function convert_alt_text(element, is_emote, is_unknown) {
     // If this is an image link, try to put the alt-text on the other side
     // of the RES expando button. It looks better that way.
     var before = element.nextSibling; // Thing to put alt-text before
@@ -133,9 +125,31 @@ function process_alt_text(element) {
     container.classList.add("bpm-alttext");
     generate_alt_text(element.title, container);
     element.parentNode.insertBefore(container, before);
+}
 
-    // If it's an emote, replace the actual alt-text with source info
-    add_sourceinfo(element, state, is_emote, is_unknown);
+/*
+ * Converts alt-text on an <a> element as appropriate. Will respond to the emote
+ * converter if it has already run on this element.
+ */
+function process_alt_text(element) {
+    var state = element.getAttribute("data-bpm_state") || "";
+    var is_emote = state.indexOf("e") > -1;
+    var is_unknown = state.indexOf("u") > -1;
+
+    // Early exit- some elements we just ignore completely
+    if(!should_convert_alt_text(element, state, is_emote)) {
+        return;
+    }
+
+    // Actual alt-text conversion
+    if(element.title) {
+        convert_alt_text(element, is_emote, is_unknown);
+    }
+
+    // Special support for emotes- replace the alt-text with source info
+    if(is_emote || is_unknown) {
+        add_sourceinfo(element, state, is_emote, is_unknown);
+    }
 
     // Mark as handled, so we don't ever run into it again.
     element.setAttribute("data-bpm_state", state + "a");
