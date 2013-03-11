@@ -36,6 +36,12 @@ function add_sourceinfo(element, state, is_emote, is_unknown) {
  * Returns bpm_state if yes, null if no.
  */
 function should_convert_alt_text(element, state, is_emote) {
+    // Already processed? Avoid doing silly things like expanding things again
+    // (or our sourceinfo hover)
+    if(state.indexOf("a") > -1) {
+        return false;
+    }
+
     if(is_emote) {
         // Emotes require a sourceinfo hover, no matter what
         return true;
@@ -43,12 +49,6 @@ function should_convert_alt_text(element, state, is_emote) {
 
     if(!element.title) {
         // Note, we don't bother setting state="a" in this case
-        return false;
-    }
-
-    // Already processed? Avoid doing silly things like expanding things again
-    // (or our sourceinfo hover)
-    if(state.indexOf("a") > -1) {
         return false;
     }
 
