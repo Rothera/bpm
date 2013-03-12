@@ -42,6 +42,13 @@ function should_convert_alt_text(element, state, is_emote) {
         return false;
     }
 
+    // Avoid spoiler links. We can't rely on any emote data to exist, as
+    // of them aren't known as emotes
+    var href = element.getAttribute("href");
+    if(href && spoiler_links.indexOf(href.split("-")[0]) > -1) {
+        return false;
+    }
+
     if(is_emote) {
         // Emotes require a sourceinfo hover, no matter what
         return true;
@@ -49,13 +56,6 @@ function should_convert_alt_text(element, state, is_emote) {
 
     if(!element.title) {
         // Note, we don't bother setting state="a" in this case
-        return false;
-    }
-
-    // Avoid spoiler links. We can't rely on any emote data to exist, as
-    // of them aren't known as emotes
-    var href = element.getAttribute("href");
-    if(href && spoiler_links.indexOf(href.split("-")[0]) > -1) {
         return false;
     }
 
