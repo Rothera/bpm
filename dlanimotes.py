@@ -34,7 +34,10 @@ AnimoteUrlPrefix = "http://rainbow.mlas1.us/"
 def find_animotes(emotes):
     images = {}
     for (name, emote) in emotes.items():
-        if "+animote" in emote.tags:
+        if emote.source.variant_matches is None:
+            emote.source.match_variants()
+        root = emote.source.variant_matches[emote]
+        if "+animote" in root.tags:
             images.setdefault(emote.base_variant().image_url, []).append(emote)
     return images
 
