@@ -112,24 +112,6 @@ Generation:
   # Fix /rcrossfire not actually being reversed
   - [AddCSS, r/mlas1emotes, /rcrossfire, "", {"-moz-transform": scaleX(-1), "-webkit-transform": scaleX(-1), "-o-transform": scaleX(-1), transform: scaleX(-1)}]
 
-  # r/mlp removed these, so put them back as a compat hack
-  - - MergeEmotes
-    - r/mylittlepony
-    - /rdsad:
-        Emotes:
-          "":
-            Image: http://e.thumbs.redditmedia.com/Dh6Id_PfG08Fq47d.png
-            Offset: [-140, -350]
-            Size: [70, 70]
-      /rrdsad:
-        Emotes:
-          "":
-            Image: http://d.thumbs.redditmedia.com/tbWBi7_H7mdASEVi.png
-            Offset: [-140, -350]
-            Size: [70, 70]
-    - /rdsad: [+drop, +hidden, +v]
-      /rrdsad: [+drop, +v]
-
   # Edited version- original is broken
   - - MergeEmotes
     - r/mylittlesh
