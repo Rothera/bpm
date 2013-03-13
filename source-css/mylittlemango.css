@@ -51,7 +51,8 @@ div.titlebox .users-online span.number:after{content:" Under the mango tree"}
 /* Name changes */
 
 /******Insert name here to replace******/
-a.author[href$=hell00001], a.author[href$=butterfilly], a.author[href$=mouse_fitzgerald], a.author[href$=V17Ds] {
+a.author[href$=hell00001], a.author[href$=butterfilly], a.author[href$=mouse_fitzgerald], a.author[href$=V17Ds],
+a.author[href$=romneyfan] {
 font-size: 0 !important;
     overflow: hidden;
     display: inline-block;
@@ -71,6 +72,11 @@ a.author[href$=butterfilly]:before {
 
 a.author[href$=mouse_fitzgerald]:before {
     content: "Little Billy";
+    font-size: 12px;
+    }
+
+a.author[href$=romneyfan]:before {
+    content: "Mango Romney II";
     font-size: 12px;
     }
 
@@ -99,6 +105,12 @@ a.author[href$=mouse_fitzgerald]:after {
     font-size: 10px;
     }
 
+a.author[href$=romneyfan]:after {
+    content: " Vote Mangoes 2016";
+    color: blue;
+    font-size: 10px;
+    }
+
 /* Replace the self-post with Luna */
 
 .thumbnail.self {
@@ -115,52 +127,7 @@ a.author[href$=mouse_fitzgerald]:after {
     background-position: 0 0
 }
 
-START-PONYSCRIPT-IGNORE {color: red}
-
 /* Emotes */
-
-a[href|="/dflutterwoah"], a[href|="/dcadence"], a[href|="/dlunawait"], a[href|="/dlunateehee"], a[href|="/dajlie"], a[href|="/dtwipride"], a[href|="/dflutterjerk"], a[href|="/dtwibeam"], a[href|="/ddiscord"], a[href|="/draritynews"], a[href|="/dscootaplease"], a[href|="/dajhappy"], a[href|="/dpinkiefear"], a[href|="/dgrannysmith"], a[href|="/dchrysalis"], a[href|="/dppcute"], a[href|="/dswagintosh"], a[href|="/dppcutecum"], a[href|="/dderpwizard"], a[href|="/dtwicrazy"], a[href|="/dscootacheer"], a[href|="/draritydawwcum"], a[href|="/dsbbook"], a[href|="/dlunawaitcum"], a[href|="/dabbored"], a[href|="/dshiningarmor"], a[href|="/dohcomeon"], a[href|="/dtwiright"], a[href|="/drdsad"], a[href|="/dcelestiawut"], a[href|="/dcelestiamad"], a[href|="/draritydaww"], a[href|="/dajsup"] {
-     display: block;
-     clear: none;
-     float: left;
-     background-image: url(%%emotesheet1%%) !important
-     }
-
-a[href|="/dflutterwoah"] { background-position: -0px -0px; width: 70px; height: 70px; }
-a[href|="/dcadence"] { background-position: -70px -0px; width: 70px; height: 70px; }
-a[href|="/dlunawait"] { background-position: -140px -0px; width: 70px; height: 70px; }
-a[href|="/dlunateehee"] { background-position: -210px -0px; width: 70px; height: 70px; }
-a[href|="/dajlie"] { background-position: -280px -0px; width: 70px; height: 70px; }
-a[href|="/dtwipride"] { background-position: -0px -70px; width: 70px; height: 70px; }
-a[href|="/dflutterjerk"] { background-position: -70px -70px; width: 70px; height: 70px; }
-a[href|="/dtwibeam"] { background-position: -140px -70px; width: 70px; height: 70px; }
-a[href|="/ddiscord"] { background-position: -210px -70px; width: 70px; height: 70px; }
-a[href|="/draritynews"] { background-position: -280px -70px; width: 70px; height: 70px; }
-a[href|="/dscootaplease"] { background-position: -0px -140px; width: 70px; height: 70px; }
-a[href|="/dajhappy"] { background-position: -70px -140px; width: 70px; height: 70px; }
-a[href|="/dpinkiefear"] { background-position: -140px -140px; width: 70px; height: 70px; }
-a[href|="/dgrannysmith"] { background-position: -210px -140px; width: 70px; height: 70px; }
-a[href|="/dchrysalis"] { background-position: -280px -140px; width: 70px; height: 70px; }
-a[href|="/dppcute"] { background-position: -0px -210px; width: 70px; height: 70px; }
-a[href|="/dswagintosh"] { background-position: -70px -210px; width: 70px; height: 70px; }
-a[href|="/dppcutecum"] { background-position: -140px -210px; width: 70px; height: 70px; }
-a[href|="/dderpwizard"] { background-position: -210px -210px; width: 70px; height: 70px; }
-a[href|="/dtwicrazy"] { background-position: -280px -210px; width: 70px; height: 70px; }
-a[href|="/dscootacheer"] { background-position: -0px -280px; width: 70px; height: 70px; }
-a[href|="/draritydawwcum"] { background-position: -70px -280px; width: 70px; height: 70px; }
-a[href|="/dsbbook"] { background-position: -140px -280px; width: 70px; height: 70px; }
-a[href|="/dlunawaitcum"] { background-position: -210px -280px; width: 70px; height: 70px; }
-a[href|="/dabbored"] { background-position: -280px -280px; width: 70px; height: 70px; }
-a[href|="/dshiningarmor"] { background-position: -0px -350px; width: 70px; height: 70px; }
-a[href|="/dohcomeon"] { background-position: -70px -350px; width: 70px; height: 70px; }
-a[href|="/dtwiright"] { background-position: -140px -350px; width: 70px; height: 70px; }
-a[href|="/drdsad"] { background-position: -210px -350px; width: 70px; height: 70px; }
-a[href|="/dcelestiawut"] { background-position: -280px -350px; width: 70px; height: 70px; }
-a[href|="/dcelestiamad"] { background-position: -0px -420px; width: 70px; height: 70px; }
-a[href|="/draritydaww"] { background-position: -70px -420px; width: 70px; height: 70px; }
-a[href|="/dajsup"] { background-position: -140px -420px; width: 70px; height: 70px; }
-
-END-PONYSCRIPT-IGNORE {color: red}
 
 /* Raremotes */
 
@@ -293,3 +260,20 @@ a[href|="/whataridiculoussentiment"] { background-position: -0px -1656px; width:
 a[href|="/queenhello"] { background-position: -100px -1656px; width: 89px; height: 100px; }
 a[href|="/queenohyou"] { background-position: -0px -1756px; width: 96px; height: 96px; }
 a[href|="/fillychrysalis"] { background-position: -96px -1756px; width: 100px; height: 94px; }
+
+a[href|="/spraklefun"], a[href|="/excelianfun"], a[href|="/zirconiafun"], a[href|="/gdbfun"], a[href|="/petrafun"],
+a[href|="/purplefun"], a[href|="/willowfun"], a[href|="/vialfun"] {
+     display: block;
+     clear: none;
+     float: left;
+     background-image: url(%%funsheet%%) !important
+     }
+
+a[href|="/spraklefun"] { background-position: -0px -0px; width: 250px; height: 164px; }
+a[href|="/excelianfun"] { background-position: -0px -164px; width: 255px; height: 162px; }
+a[href|="/zirconiafun"] { background-position: -0px -326px; width: 250px; height: 160px; }
+a[href|="/gdbfun"] { background-position: -0px -486px; width: 250px; height: 155px; }
+a[href|="/petrafun"] { background-position: -0px -641px; width: 250px; height: 155px; }
+a[href|="/purplefun"] { background-position: -0px -796px; width: 250px; height: 155px; }
+a[href|="/willowfun"] { background-position: -0px -951px; width: 250px; height: 155px; }
+a[href|="/vialfun"] { background-position: -0px -1106px; width: 250px; height: 155px; }

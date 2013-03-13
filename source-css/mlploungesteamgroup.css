@@ -105,26 +105,14 @@ body.res-nightmode:first-of-type {
 /*==================Announcement==================*/
 /*DC05 The blurb that links to whatever post I want it to*/
 /*CHANGE THIS FIELD IN THE SIDEBAR. Do not remove the hash tags. Follows same rules as comment links*/
-/*Changing background color? Change it in BOTH fields*/
 /*At some point Draze smells will be the announcement (Draze: :( ).*/
 /*Wagon Week 10 Trouble in Terrorist town maybe?*/
 
 body > .content:before{
     display: block;
-    margin: 0 0 10px 60px;
-    padding: 6px;
-    background-color: #CCC;
-    font-size: 16px;
-    height: 16px;
-    color: #000000 !important;
-    border: 1px solid;
-    border-color: #000000;
-    border-radius: 14px;
-    width: 1480px;
+    margin: 0 0 60px 60px;
     content: "";
     }
-
-
 
 .side .md h6 {
     position: absolute;
@@ -133,10 +121,14 @@ body > .content:before{
     z-index: 100;
     background: #CCC;
     font-size: 16px;
-    height: 16px;
+    height: 32px;
+    line-height: 32px;
+    text-indent: 5px;
     border: none;
-    border-color: #000000;
-    border-radius: 3px;  
+    border-color: #ffffff;
+    border: 1px solid;
+    border-radius: 16px;
+    padding-right: 5px;
     }
 
 
@@ -439,6 +431,14 @@ a[href|="/carefully"] {
     width: 150px;
     height: 167px;
     background-image: url(%%TwiWiggle%%) !important
+    }
+a[href|="/hmsnipple"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 300px;
+    height: 258px;
+    background-image: url(%%HMSNipple%%) !important
     }
 
 a[href|="/hathe"] {

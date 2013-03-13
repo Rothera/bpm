@@ -285,6 +285,62 @@ a[href|='/sqtrixiefun'] {width:261px; height:150px; background-position: -756px 
 a[href|='/sqtwifun'] {width:229px; height:150px; background-position: -2px -745px}
 a[href|='/squidfun'] {width:150px; height:122px; background-position: -233px -745px}
 
+
+/*** ---Begin miscellaneous emotes--- ***/
+/** CSS Courtesy of /r/MyLittleAnhero23 Thanks! **/
+/*shitgotreal*/
+a[href="/shitgotreal"] {
+    width: 640px !important;
+    height: 480px !important;
+    cursor: default !important;
+    display: inline-block !important;
+    background-image: url(%%SHITGOTREAL%%) !important;
+    background-repeat: no-repeat !important;
+    text-align: center !important;
+    color: White !important;
+    font-family: Impact, sans-serif !important;
+    text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black !important;
+    overflow: hidden !important;
+    position: relative !important;
+    text-transform: uppercase !important
+    }
+a[href="/shitgotreal"] em {
+    font-style: normal !important;
+    position: absolute !important;
+    top: 5px !important;
+    width: 400px !important;
+    left: 50% !important;
+    margin-left: -200px !important;
+    font-size: 30px !important;
+    line-height: 30px !important;
+    visibility: visible
+    }
+a[href="/shitgotreal"] strong {
+    font-family: Impact, sans-serif !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-size: 30px !important;
+    line-height: 30px !important;
+    position: absolute !important;
+    bottom: 5px !important;
+    width: 400px !important;
+    left: 50% !important;
+    margin-left: -200px !important;
+    visibility: visible
+    }
+
+/** CSS Modified from /r/MyLittleDamon Thanks! **/
+/*cheeriwat*/
+a[href|="/cheeriwat"] {
+    width: 264px !important;
+    height: 322px !important;
+    display: block !important;
+    clear: none !important;
+    float: left !important;
+    background-image: url(%%CHEERIWAT%%) !important;
+    }
+/*** ---End miscellaneous emotes--- ***/
+
 /* Announcement header box thingy. Uncomment to activate giant hat. */
 
 .pagename {

@@ -14,7 +14,14 @@ content: " Hayseeds"
 div.titlebox .users-online span.number:after {
     content: " AJ Fans"
     }
-
+.titlebox table {
+    display: none;
+    clear: both
+    }
+.side div.usertext-body:hover table {
+    display: block;
+    clear: both
+    }
 /***Apple Barons aka mods***/
 .sidecontentbox h1:not(:first-child)::before {
 color: gray !important;
@@ -370,6 +377,107 @@ a[href|="/aj28"] {
     background-position: -140px -560px
     }
 a[href|="/aj29"] {
+    background-position: -140px -630px
+    }
+
+/***TABLE 2***/
+
+a[href|="/apj00"], a[href|="/apj01"], a[href|="/apj02"], a[href|="/apj03"], a[href|="/apj04"], a[href|="/apj05"], a[href|="/apj06"], a[href|="/apj07"], a[href|="/apj08"], a[href|="/apj09"], a[href|="/apj10"], a[href|="/apj11"], a[href|="/apj12"], a[href|="/apj13"], a[href|="/apj14"], a[href|="/apj15"], a[href|="/apj16"], a[href|="/apj17"], a[href|="/apj18"], a[href|="/apj19"], a[href|="/apj20"], a[href|="/apj21"], a[href|="/apj22"], a[href|="/apj23"], a[href|="/apj24"], a[href|="/apj25"], a[href|="/apj26"], a[href|="/apj27"], a[href|="/apj28"], a[href|="/apj29"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%applejack02-shrunk%%) !important
+    }
+a[href|="/apj00"] {
+    background-position: -0px -0px
+    }
+a[href|="/apj01"] {
+    background-position: -0px -70px
+    }
+a[href|="/apj02"] {
+    background-position: -0px -140px
+    }
+a[href|="/apj03"] {
+    background-position: -0px -210px
+    }
+a[href|="/apj04"] {
+    background-position: -0px -280px
+    }
+a[href|="/apj05"] {
+    background-position: -0px -350px
+    }
+a[href|="/apj06"] {
+    background-position: -0px -420px
+    }
+a[href|="/apj07"] {
+    background-position: -0px -490px
+    }
+a[href|="/apj08"] {
+    background-position: -0px -560px
+    }
+a[href|="/apj09"] {
+    background-position: -0px -630px
+    }
+a[href|="/apj10"] {
+    background-position: -70px -0px
+    }
+a[href|="/apj11"] {
+    background-position: -70px -70px
+    }
+a[href|="/apj12"] {
+    background-position: -70px -140px
+    }
+a[href|="/apj13"] {
+    background-position: -70px -210px
+    }
+a[href|="/apj14"] {
+    background-position: -70px -280px
+    }
+a[href|="/apj15"] {
+    background-position: -70px -350px
+    }
+a[href|="/apj16"] {
+    background-position: -70px -420px
+    }
+a[href|="/apj17"] {
+    background-position: -70px -490px
+    }
+a[href|="/apj18"] {
+    background-position: -70px -560px
+    }
+a[href|="/apj19"] {
+    background-position: -70px -630px
+    }
+a[href|="/apj20"] {
+    background-position: -140px -0px
+    }
+a[href|="/apj21"] {
+    background-position: -140px -70px
+    }
+a[href|="/apj22"] {
+    background-position: -140px -140px
+    }
+a[href|="/apj23"] {
+    background-position: -140px -210px
+    }
+a[href|="/apj24"] {
+    background-position: -140px -280px
+    }
+a[href|="/apj25"] {
+    background-position: -140px -350px
+    }
+a[href|="/apj26"] {
+    background-position: -140px -420px
+    }
+a[href|="/apj27"] {
+    background-position: -140px -490px
+    }
+a[href|="/apj28"] {
+    background-position: -140px -560px
+    }
+a[href|="/apj29"] {
     background-position: -140px -630px
     }
 
