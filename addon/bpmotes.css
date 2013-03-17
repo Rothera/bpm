@@ -31,20 +31,44 @@
      * This class used to shut emotes down, so in the interests of working even
      * in the emote's native subreddit, we try to override anything else.
      *
-     * Unfortunately, we still lose if the subreddit uses !important, but
-     * there's not much we can do about that.
+     * Unfortunately, due to the placement of this CSS, !important flags in the
+     * subreddit's CSS can override us. The background-size bit is a extra
+     * trick to try to stop that.
      */
     background-image: none !important;
+    background-size: 0% !important;
+
+    /* Kill animations */
+    transform: none !important;
+    -moz-transform: none !important;
+    -webkit-transform: none !important;
+    -o-transform: none !important;
+    animation: none;
+    -moz-animation: none;
+    -webkit-animation: none;
+    -o-animation: none;
 }
 
 .bpm-hidden, .bpm-hidden:before, .bpm-hidden:after, .bpm-hidden:hover, .bpm-hidden:active {
     /*
      * Similar- but we don't even show the placeholder.
      */
-    background-image: none !important;
     width: 0px !important;
     height: 0px !important;
     display: none !important;
+
+    background-image: none !important;
+    background-size: 0% !important;
+
+    /* Kill animations */
+    transform: none !important;
+    -moz-transform: none !important;
+    -webkit-transform: none !important;
+    -o-transform: none !important;
+    animation: none !important;
+    -moz-animation: none !important;
+    -webkit-animation: none !important;
+    -o-animation: none !important;
 }
 
 /* Unknown emote placeholder. Transparent red background */
