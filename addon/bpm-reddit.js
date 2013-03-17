@@ -41,17 +41,19 @@ function toggle_emote(store, element) {
     }
     var info = store.lookup_emote(element.getAttribute("data-bpm_emotename"), false);
     if(element.classList.contains("bpm-minified")) {
-        // Show: unminify, enable, give it its CSS, and remove the bit
-        // of text we added
+        // Show: unminify, enable, give it its CSS, remove the bit of text we
+        // added, enable flags.
         element.classList.remove("bpm-minified");
         element.classList.remove("bpm-nsfw");
         element.classList.add(info.css_class);
         if(state.indexOf("T") > -1) {
             element.textContent = "";
         }
+        var parts = element.getAttribute("href").split("-");
+        add_flags(element, parts);
     } else {
-        // Hide: remove its CSS, minify, optionally disable, and put
-        // our bit of text back
+        // Hide: remove its CSS, minify, optionally disable, put our bit of
+        // text back, and kill flags.
         element.classList.remove(info.css_class);
         element.classList.add("bpm-minified");
         if(is_nsfw_disabled) {
@@ -60,6 +62,7 @@ function toggle_emote(store, element) {
         if(state.indexOf("T") > -1) {
             element.textContent = info.name;
         }
+        strip_flags(element);
     }
 }
 

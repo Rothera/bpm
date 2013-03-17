@@ -12,6 +12,19 @@ function add_flags(element, parts) {
 }
 
 /*
+ * Removes all flags from an emote.
+ */
+function strip_flags(element) {
+    for(var i = 0; i < element.classList.length; i++) {
+        var name = element.classList[i];
+        if(starts_with(name, "bpflag-")) {
+            element.classList.remove(name);
+            i--; // Sure hope this works
+        }
+    }
+}
+
+/*
  * Mangle a recognized <a> element to be an emote. Applies all CSS, state, and
  * flags. Handles disabled emotes.
  */

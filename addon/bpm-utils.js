@@ -398,9 +398,11 @@ function find_class(root, class_name) {
     }
 }
 
-/*
- * str.endswith()
- */
+/* str.startswith() and str.endswith() */
+function starts_with(text, s) {
+    return text.slice(0, s.length) === s;
+}
+
 function ends_with(text, s) {
     return text.slice(-s.length) === s;
 }
