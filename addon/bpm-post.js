@@ -41,7 +41,7 @@ function convert_emote_element(store, element, parts, name, info) {
     }
     element.setAttribute("data-bpm_state", state);
 
-    if(disabled) {
+    if(disabled || store.prefs.stealthMode) {
         if(can_modify_text) {
             // Any existing text (generally, there shouldn't be any) will look
             // a little funny with our custom CSS, but there's not much we can
@@ -49,7 +49,9 @@ function convert_emote_element(store, element, parts, name, info) {
             element.textContent = name;
         }
 
-        if(store.prefs.hideDisabledEmotes) {
+        // Combining these two prefs makes absolutely no sense, but try to do
+        // something sane anyway
+        if(store.prefs.hideDisabledEmotes && !store.prefs.stealthMode) {
             // "Ignore" mode- don't minify it, just hide it completely
             element.classList.add("bpm-hidden");
         } else {
@@ -60,14 +62,6 @@ function convert_emote_element(store, element, parts, name, info) {
             }
         }
 
-        return;
-    }
-
-    if(store.prefs.stealthMode) {
-        element.classList.add("bpm-minified"); // Minify emote
-        if(can_modify_text) {
-            element.textContent = name;
-        }
         return;
     }
 
