@@ -10,7 +10,7 @@ var spoiler_links = ["/spoiler", "/s", "#s", "/b", "/g"];
  * Sets the sourceinfo hover on an emote element.
  */
 function add_sourceinfo(element, state, is_emote, is_unknown) {
-    var name = element.getAttribute("data-bpm_emotename");
+    var name = element.getAttribute("href");
     var title = "";
 
     if(is_emote) {

@@ -60,7 +60,7 @@ function toggle_emote(store, element) {
             element.classList.add("bpm-nsfw");
         }
         if(state.indexOf("T") > -1) {
-            element.textContent = info.name;
+            element.textContent = element.getAttribute("href");
         }
         strip_flags(element);
     }
