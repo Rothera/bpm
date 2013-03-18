@@ -329,16 +329,17 @@ a[href="/shitgotreal"] strong {
     visibility: visible
     }
 
-/** CSS Modified from /r/MyLittleDamon Thanks! **/
-/*cheeriwat*/
-a[href|="/cheeriwat"] {
-    width: 264px !important;
-    height: 322px !important;
-    display: block !important;
-    clear: none !important;
-    float: left !important;
-    background-image: url(%%CHEERIWAT%%) !important;
+/** CSS Courtesy of /r/MyLittleDamon Thanks! **/
+/*/___wat*/
+a[href|="/eeewat"], a[href|="/cheeriwat"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%WAT%%)
     }
+
+a[href|="/eeewat"] {width: 140px; height: 205px; background-position: 0px -10px;}
+a[href|="/cheeriwat"] {width: 140px; height: 170px; background-position: -140px -50px;}
 /*** ---End miscellaneous emotes--- ***/
 
 /* Announcement header box thingy. Uncomment to activate giant hat. */

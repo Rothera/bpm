@@ -2,59 +2,68 @@
 Chibimotes
 **/
 
-a[href|="/chibidash"],a[href|="/chibipinkie"],a[href|="/chibisurprise"],a[href|="/chibiphei"], a[href|="/chibitwi"],a[href|="/chibispike"],a[href|="/chibifluttershy"],a[href|="/chibirarity"],a[href|="/chibiapplejack"] {
-background-image:url(%%chibimotes%%);
+a[href|="/chibidash"],a[href|="/chibipinkie"],a[href|="/chibisurprise"],a[href|="/chibiphei"], a[href|="/chibitwi"],a[href|="/chibispike"],a[href|="/chibifluttershy"],a[href|="/chibirarity"],a[href|="/chibiapplejack"],a[href|="/chibimac"],a[href|="/chibibandalo"] {
+background-image:url(%%chibimotes-nothuge%%);
 display: block;
 clear:none;
 float:left
 }
 
+a[href|="/chibimac"],a[href|="/chibibandalo"] {
+background-position: -438px -177px; 
+width: 112px; 
+height: 131px; 
+}
+
 a[href|="/chibidash"] {
-width:160px;
-height:270px;
+width:96px;
+height:162px;
 background-position: 0px 0px
 }
-a[href|="/chibipinkie"] {
-width:135px;
-height:270px;
-background-position: -160px 0px
-}
-a[href|="/chibisurprise"] {
-width:135px;
-height:270px;
-background-position: -715px 0px
-}
-a[href|="/chibitwi"], a[href|="/chibiphei"] {
 
-width:259px;
-height:167px;
-background-position: -5px -273px
+a[href|="/chibipinkie"] {
+width:81px;
+height:162px;
+background-position: -96px 0px
+}
+
+a[href|="/chibisurprise"] {
+width:81px;
+height:162px;
+background-position: -429px 0px
+}
+
+a[href|="/chibitwi"], a[href|="/chibiphei"] {
+width:141px;
+height:138px;
+background-position: -177px -21px
+
 }
 
 a[href|="/chibispike"] {
-width:191px;
-height:207px;
-background-position: -530px -28px
+width:114px;
+height:125px;
+background-position: -318px -17px
 }
 
 
 a[href|="/chibifluttershy"] {
-width:235px;
-height:230px;
-background-position: -295px -35px
+width:155px;
+height:100px;
+background-position: -3px -164px
 }
 
 
 a[href|="/chibirarity"] {
-width:214px;
-height:182px;
-background-position: -268px -265px
+width:128px;
+height:110px;
+background-position: -161px -159px
 }
 
 a[href|="/chibiapplejack"] {
-width:236px;
-height:239px;
-background-position: -482px -236px
+width:141px;
+height:143px;
+background-position: -289px -141px
 }
 
 

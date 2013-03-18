@@ -66,12 +66,12 @@ margin:0;
 
 div.link.odd {
 color: #cccccc;
-background-color:#333333;
+background-color:transparent;
 }
 
 div.link.even {
 color:#cccccc;
-background-color:#333333;
+background-color:transparent;
 }
 
 .thing .title {
@@ -422,7 +422,7 @@ Height: 111px;
 background-image: url(%%scoottongue%%) !important
 }
 
-a[href="/shakeeee"] {
+/*a[href="/shakeeee"] {
 background-position: 0px 0px;
 Display: block;
 Clear: none;
@@ -430,7 +430,7 @@ Float: left;
 Width: 650px;
 Height: 500px;
 background-image: url(%%shakeeee%%) !important
-}
+}*/
 
 a[href="/raritycozy"] {
 background-position: 0px 0px;
@@ -450,4 +450,14 @@ Float: left;
 Width: 150px;
 Height: 165px;
 background-image: url(%%twiglaredown%%) !important
+}
+
+a[href="/sweetiewhatthe"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 100px;
+Height: 132px;
+background-image: url(%%sweetiewhatthe%%) !important
 }
