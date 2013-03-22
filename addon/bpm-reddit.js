@@ -105,8 +105,8 @@ function run_reddit(store) {
     // find- whether the node in question is deep within one, or contains
     // some.
     observe_document(function(nodes) {
-        for(var i = 0; i < nodes.length; i++) {
-            var root = nodes[i];
+        for(var n = 0; n < nodes.length; n++) {
+            var root = nodes[n];
             if(root.nodeType !== find_global("Node").ELEMENT_NODE) {
                 // Not interested in other kinds of nodes.
                 continue;
@@ -121,8 +121,8 @@ function run_reddit(store) {
                 var posts = slice(root.getElementsByClassName("md"));
                 if(posts.length) {
                     log_debug("Processing", posts.length, "new posts");
-                    for(var i = 0; i < posts.length; i++) {
-                        process_post(store, posts[i], posts[i]);
+                    for(var p = 0; p < posts.length; p++) {
+                        process_post(store, posts[p], posts[p]);
                     }
                 }
             }
