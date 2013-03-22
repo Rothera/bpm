@@ -117,6 +117,12 @@ class Source(object):
             return True
         return False
 
+    def ignored_emotes(self):
+        # Returns emotes that are removed for some reason
+        for emote in self.emotes.values():
+            if self.is_ignored(emote):
+                yield emote
+
     def unignored_emotes(self):
         # Returns emotes that actually matter (not removed and not dropped)
         for emote in self.emotes.values():

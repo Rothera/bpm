@@ -23,13 +23,13 @@ context.load_config()
 context.load_sources()
 
 drops = {}
-dirty = []
+dirty = set()
 for source in context.sources.values():
     # Find nonexistent emotes (before we start dropping things...)
     missing = set(source._tag_data) - set(source.emotes)
     if missing:
         print("ERROR: In %s: The following emotes have tags, but do not exist: %s" % (source.name, " ".join(missing)))
-        dirty.append(source)
+        dirty.add(source)
 
 for source in context.sources.values():
     for emote in source.dropped_emotes():
@@ -69,6 +69,12 @@ for source in context.sources.values():
         roots = {tag for tag in emote.all_tags(context) if tag in context.tag_config["RootTags"]}
         if not roots:
             print("WARNING: In %s: %s has no root tags (set: %s)" % (source.name, emote.name, " ".join(emote.tags)))
+
+    for emote in source.ignored_emotes():
+        if emote.tags and emote.ignore:
+            print("WARNING: In %s: %s is tagged, but ignored" % (source.name, emote.name))
+            emote.tags = set()
+            dirty.add(source)
 
     for error in source.match_variants():
         print("ERROR: In %s: %s" % (source.name, error))
