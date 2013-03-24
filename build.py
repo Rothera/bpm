@@ -243,7 +243,7 @@ def fx_package(ctx):
     if newer(glob_all(["build/firefox/*", "build/firefox/data/*", "build/firefox/lib/*"]),
                  ["build/betterponymotes.xpi"]):
         ctx.remove("build/*.xpi")
-        ctx.run("cfx", "xpi", "--update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf", "--pkgdir=build/firefox")
+        ctx.run("cfx", "xpi", "--update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf", "--pkgdir=build/firefox", "--force-mobile")
         inject_xpi_key("betterponymotes.xpi", "build/betterponymotes.xpi")
         ctx.remove("betterponymotes.xpi")
 
