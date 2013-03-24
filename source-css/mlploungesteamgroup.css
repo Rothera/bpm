@@ -443,6 +443,14 @@ a[href|="/hmsnipple"] {
     height: 258px;
     background-image: url(%%HMSNipple%%) !important
     }
+a[href|="/twifinger"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 208px;
+    height: 200px;
+    background-image: url(%%Twifinger%%) !important
+    }
 
 a[href|="/hathe"] {
     display: block;
@@ -622,6 +630,15 @@ a[href|="/ppdude"] {
     height: 150px;
     background-image: url(%%PPDude%%) !important
     }
+a[href|="/ppexcite"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 168px;
+    height: 200px;
+    background-image: url(%%ppexcite%%) !important
+    }
+
 
 a[href|="/ajnopeavi"] {
     display: block;
@@ -687,7 +704,18 @@ a[href="/scumbagrando"] strong {
     margin-left: -140px !important
     }
 
-
+a[href="/adviceshy"] {
+    text-shadow: none!important;
+    width: 300px !important;
+    height: 300px !important;
+    background-position: 0 0 !important;
+    display: inline-block !important;
+    background-repeat: no-repeat !important;
+    background-image: url(%%Adviceshy%%) !important;
+    font-size: 11px !important;
+    font-family: arial !important;
+    color: #FFF !Important;
+}
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
 

@@ -192,7 +192,7 @@ a[href|="/flutterheart"]  {
     background-position: -1011px -0px 
     }
 /* HOLY SHEET MORE EMOTES */
-a[href|="/loveyou"], a[href|="/fluttershylovesyou"], a[href|="/loveyou"], a[href|="/fluttertine"], a[href|="/shytine"], a[href|="/rarityshynibble"], a[href|="/earnibble"], a[href|="/cuteflutter"], a[href|="/animuflutter"], a[href|="/cloudbutt"], a[href|="/flutterbutt"], a[href|="/imsorry"], a[href|="/ididntmeanit"] {
+a[href|="/loveyou"], a[href|="/fluttershylovesyou"], a[href|="/loveyou"], a[href|="/fluttertine"], a[href|="/shytine"], a[href|="/rarityshynibble"], a[href|="/earnibble"], a[href|="/cuteflutter"], a[href|="/animuflutter"], a[href|="/cloudbutt"], a[href|="/flutterbutt"], a[href|="/imsorry"], a[href|="/ididntmeanit"],  a[href|="/fluttertongue"] {
 
     display: block;
     clear: none;
@@ -224,7 +224,10 @@ a[href|="/cuteflutter"], a[href|="/animuflutter"] {
     width: 293px;
     background-position: -1028px -0px 
     }
-
+a[href|="/fluttertongue"] {
+    width: 162px;
+    background-position: -1321px -0px 
+    }
 /* SNUGGLES */
 a[href|="/shydashiesnuggle"], a[href|="/shydashsnuggle"], a[href|="/flutterdashsnuggle"], a[href|="/shyhuggle"], a[href|="/flutterhuggle"] {
 
@@ -343,6 +346,14 @@ a[href|="/fluttermane"], a[href|="/shymane"] {
     width: 240px;
     height: 200px;
     background-image: url(%%shymane%%)
+    }
+a[href|="/danceshy"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%danceshy%%)
     }
 /* Wintery emotes - Only four */
 

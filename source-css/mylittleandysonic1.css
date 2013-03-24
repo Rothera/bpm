@@ -10,7 +10,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
    background: url(%%fuckyoucheese2%%);
    background-repeat: no-repeat;
    background-position: 50% 100%;
-   height: 237px; /* 237 for meat's nice banner */
+   height: 237px; /* 237 for meat's nice banner and general banner size */
 }
 
 #header-img-a {
@@ -867,6 +867,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="fwinest_JediThug"],
 a.author[href$="V17Ds"],
 a.author[href$="Rudicorn"],
 a.author[href$="jimmpony"],
@@ -956,6 +957,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="fwinest_JediThug"]:before,
 a.author[href$="V17Ds"]:before,
 a.author[href$="Rudicorn"]:before,
 a.author[href$="jimmpony"]:before,
@@ -1046,6 +1048,7 @@ visibility:visible!important;
 /*a.author:before{
     content:"Princess "
     }*/
+a.author[href$="fwinest_JediThug"]:before {content:"Wincest_JediThug"}
 a.author[href$="V17Ds"]:before {content:"SwiftV17Ds"}
 a.author[href$="Rudicorn"]:before {content:"Grumpledick"}
 a.author[href$="jimmpony"]:before {content:"sirtophat"}
@@ -1142,6 +1145,8 @@ height:30px
 }
 
 /* Adding after-text to somebody's name? Add them here. */
+a.author[href$="DrinkiePie"]:after,
+a.author[href$="XelNaga"]:after,
 a.author[href$="cecinestpasunepony"]:after,
 a.author[href$="AttainedAndDestroyed"]:after,
 a.author[href$="Scythesickle"]:after,
@@ -1204,6 +1209,8 @@ letter-spacing:normal;
 }
 
 /* After-name text goes here. */
+a.author[href$="DrinkiePie"]:after {content:" Never got text flair :("}
+a.author[href$="XelNaga"]:after {content:" (Is totally internet famous)"}
 a.author[href$="cecinestpasunepony"]:after { content:" writes shitty mlas1 erotic fanfiction"}
 a.author[href$="AttainedAndDestroyed"]:after { content:" saggy tits are swaggy tits"}
 a.author[href$="Scythesickle"]:after { content:" (wants to be a mod)"}

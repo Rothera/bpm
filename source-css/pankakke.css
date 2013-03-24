@@ -96,7 +96,7 @@ div.titlebox .users-online span.number:after{content:" drowning in syrup"}
 /********************************/
 
 /******Insert name here to replace******/
-a.author[href$=JustAnotherGDB], a.author[href$=MisanthropicCat], a.author[href$=Conky_], a.author[href$=floutsy], a.author[href$=ruffletuffle], a.author[href$=Apple_Snacks], a.author[href$=petraman], a.author[href$=WorstPossibleThing], a.author[href$=Esplin], a.author[href$=theMagicalCouch], a.author[href$=pickled_octopus], a.author[href$=hiero_], a.author[href$=Thecursed], a.author[href$=Apprentice1994], a.author[href$=dasflash], a.author[href$=TheDarkman67], a.author[href$=derram_2], a.author[href$=maku450], a.author[href$=Calcos323] {
+a.author[href$=JustAnotherGDB], a.author[href$=MisanthropicCat], a.author[href$=Conky_], a.author[href$=floutsy], a.author[href$=ruffletuffle], a.author[href$=Apple_Snacks], a.author[href$=petraman], a.author[href$=WorstPossibleThing], a.author[href$=Esplin], a.author[href$=theMagicalCouch], a.author[href$=pickled_octopus], a.author[href$=hiero_], a.author[href$=Thecursed], a.author[href$=Apprentice1994], a.author[href$=dasflash], a.author[href$=TheDarkman67], a.author[href$=derram_2], a.author[href$=maku450], a.author[href$=Calcos323], a.author[href$=iiRockpuppy] {
     font-size: 0 !important;
     overflow: hidden;
     display: inline-block;
@@ -178,6 +178,10 @@ a.author[href$=maku450]:before {
     }
 a.author[href$=Calcos323]:before {
     content: "ButteryCalcos";
+    font-size: 10px;
+    }
+a.author[href$=iiRockpuppy]:before {
+    content: "iiRockpancake";
     font-size: 10px;
     }
 
@@ -404,6 +408,17 @@ a[href|="/theclopping"] {
     background-position: -3009px -0px;
     width: 126px
     }
+a[href|="/trixnazi"] {
+    display: block;
+    clear: none;
+    float: left;
+    height: 150px;
+    background-image: url(%%MLPemotesheet-Lrg2%%) !important
+    }
+a[href|="/trixnazi"] {
+    background-position: -0px -0px;
+    width: 137px
+    }
 
 /***********MLP-XLRG*************/
 a[href|="/fearless"], a[href|="/doctorfun"], a[href|="/nsfz"], a[href|="/notsafeforzealot"], a[href|="/wr3nch"], a[href|="/doublevision"] {
@@ -583,3 +598,27 @@ a[href|="/plunawait"] {
     background-position: -2030px -0px
     }
 END-PONYSCRIPT-IGNORE { color: red; }
+
+
+
+
+
+
+
+
+
+/* Sidebar Filly
+
+.side a[href="http://www.reddit.com/r/MLPLounge/new/"]
+{
+ display:block;
+ width:100px;
+ height:100px;
+ background:url(%%HugeEmotes%%);
+ position:fixed; 
+ top:250px;
+ right:-10px;
+ z-index:999
+}
+
+*/

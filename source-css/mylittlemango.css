@@ -18,11 +18,28 @@ Added emotes (1/15/13)
 
 /* Background*/
 
+/* Save this for later
+
+body:first-of-type, body.res-nightmode:first-of-type {
+    background:  url(%%background1%%)  no-repeat  fixed 50% 65% !important;
+} */
+
 body{background:url(%%background1%%) no-repeat fixed center center!important}
 .res-nightmode .content{background-color:transparent!important}
 .res-nightmode{background-color:transparent !important}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
 .content .md h1:before{content:">"}
+
+/* Background Nightmode Fix */
+
+content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
+body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
+body.res-nightmode:first-of-type {background-color: transparent!important;}
+span[class="hover pagename redditname"] a:first-of-type { font-size: 1.6em !important; text-shadow: 0px 0px 6px #000; color: white; }
+
+body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .side .spacer h1, body.res-nightmode .NERPageMarker, body.res-nightmode .side .spacer {background-color: transparent!important;}
+
+/* Naked mangoman */
 
 .footer-parent {
     height: 850px;
@@ -261,7 +278,7 @@ a[href|="/queenhello"] { background-position: -100px -1656px; width: 89px; heigh
 a[href|="/queenohyou"] { background-position: -0px -1756px; width: 96px; height: 96px; }
 a[href|="/fillychrysalis"] { background-position: -96px -1756px; width: 100px; height: 94px; }
 
-a[href|="/spraklefun"], a[href|="/excelianfun"], a[href|="/zirconiafun"], a[href|="/gdbfun"], a[href|="/petrafun"],
+a[href|="/udntfun"], a[href|="/spraklefun"], a[href|="/excelianfun"], a[href|="/zirconiafun"], a[href|="/gdbfun"], a[href|="/petrafun"],
 a[href|="/purplefun"], a[href|="/willowfun"], a[href|="/vialfun"] {
      display: block;
      clear: none;
@@ -269,11 +286,46 @@ a[href|="/purplefun"], a[href|="/willowfun"], a[href|="/vialfun"] {
      background-image: url(%%funsheet%%) !important
      }
 
-a[href|="/spraklefun"] { background-position: -0px -0px; width: 250px; height: 164px; }
-a[href|="/excelianfun"] { background-position: -0px -164px; width: 255px; height: 162px; }
-a[href|="/zirconiafun"] { background-position: -0px -326px; width: 250px; height: 160px; }
-a[href|="/gdbfun"] { background-position: -0px -486px; width: 250px; height: 155px; }
-a[href|="/petrafun"] { background-position: -0px -641px; width: 250px; height: 155px; }
-a[href|="/purplefun"] { background-position: -0px -796px; width: 250px; height: 155px; }
-a[href|="/willowfun"] { background-position: -0px -951px; width: 250px; height: 155px; }
-a[href|="/vialfun"] { background-position: -0px -1106px; width: 250px; height: 155px; }
+a[href|="/udntfun"] { background-position: -0px -0px; width: 250px; height: 173px; }
+a[href|="/spraklefun"] { background-position: -0px -173px; width: 250px; height: 164px; }
+a[href|="/excelianfun"] { background-position: -0px -337px; width: 255px; height: 162px; }
+a[href|="/zirconiafun"] { background-position: -0px -499px; width: 250px; height: 160px; }
+a[href|="/gdbfun"] { background-position: -0px -659px; width: 250px; height: 155px; }
+a[href|="/petrafun"] { background-position: -0px -814px; width: 250px; height: 155px; }
+a[href|="/purplefun"] { background-position: -0px -969px; width: 250px; height: 155px; }
+a[href|="/willowfun"] { background-position: -0px -1124px; width: 250px; height: 155px; }
+a[href|="/vialfun"] { background-position: -0px -1279px; width: 250px; height: 155px; }
+
+a[href|="/femship"], a[href|="/catbug2"], a[href|="/catbug4"], a[href|="/catbug3"], a[href|="/sadqueen"], a[href|="/catbug1"], a[href|="/chaoticgenes"], a[href|="/lopezislife"]{
+     display: block;
+     clear: none;
+     float: left;
+     background-image: url(%%spitesheetthingie%%) !important
+     }
+
+a[href|="/femship"] { background-position: -0px -0px; width: 150px; height: 160px; }
+a[href|="/catbug2"] { background-position: -0px -160px; width: 100px; height: 100px; }
+a[href|="/catbug4"] { background-position: -0px -260px; width: 100px; height: 100px; }
+a[href|="/catbug3"] { background-position: -0px -360px; width: 150px; height: 100px; }
+a[href|="/sadqueen"] { background-position: -0px -460px; width: 100px; height: 98px; }
+a[href|="/catbug1"] { background-position: -0px -558px; width: 125px; height: 97px; }
+a[href|="/chaoticgenes"] { background-position: -0px -655px; width: 74px; height: 87px; }
+a[href|="/lopezislife"] { background-position: -0px -742px; width: 100px; height: 86px; }
+
+a[href|="/snowdropkisses"], a[href|="/snowdrophappy"], a[href|="/toomuchinternet"], a[href|="/snowdropsad"], a[href|="/itsnotwhatyouthink"], a[href|="/snowdrop1"], a[href|="/snowdrop2"], a[href|="/snowdrop"], a[href|="/primdrop"], a[href|="/snowdropfilly"] {
+     display: block;
+     clear: none;
+     float: left;
+     background-image: url(%%snowdrop%%) !important
+     }
+
+a[href|="/snowdropkisses"] { background-position: -0px -0px; width: 141px; height: 150px; }
+a[href|="/snowdrophappy"] { background-position: -0px -150px; width: 145px; height: 150px; }
+a[href|="/toomuchinternet"] { background-position: -0px -300px; width: 253px; height: 150px; }
+a[href|="/snowdropsad"] { background-position: -0px -450px; width: 150px; height: 150px; }
+a[href|="/itsnotwhatyouthink"] { background-position: -0px -600px; width: 250px; height: 147px; }
+a[href|="/snowdrop1"] { background-position: -0px -747px; width: 150px; height: 128px; }
+a[href|="/snowdrop2"] { background-position: -0px -875px; width: 150px; height: 121px; }
+a[href|="/snowdrop"] { background-position: -0px -996px; width: 150px; height: 115px; }
+a[href|="/primdrop"] { background-position: -0px -1111px; width: 150px; height: 114px; }
+a[href|="/snowdropfilly"] { background-position: -141px -0px; width: 95px; height: 100px; }

@@ -1,25 +1,22 @@
 	/*othercrap - Remove once malefuns etc get added to some other sub in MAP*/
-		a[href|="/fpnmount"],a[href|="/whoovesmount"],a[href|="/stmount"],a[href|="/soarinmount"],a[href|="/bmmount"],a[href|="/fpmount"],a[href|="/giomount"]{
-			display: block;
-			clear: none;
-			float: left;
-			background-image: url(%%default2%%);
-			width: 301px;
-			height: 305px;}
-		a[href|="/fpnmount"]{
-			background-position: -0px -0px}
-		a[href|="/whoovesmount"]{
-			background-position: -0px -305px}
-		a[href|="/stmount"]{
-			background-position: -0px -610px}
-		a[href|="/soarinmount"]{
-			background-position: -0px -915px}
-		a[href|="/bmmount"]{
-			background-position: -0px -1220px}
-		a[href|="/fpmount"]{
-			background-position: -0px -1525px}
-		a[href|="/giomount"]{
-			background-position: -0px - 1830px}
+		a[href|="/fpnmount"],a[href|="/whoovesmount"],a[href|="/stmount"],a[href|="/soarinmount"],a[href|="/bmmount"],a[href|="/fpmount"],a[href|="/giomount"],a[href|="/ajtrmount"],a[href|="/chivmount"] {
+background-image:url(%%default3%%);
+clear:none;
+display:block;
+float:left;
+height:305px;
+width:301px;
+}
+a[href|="/fpnmount"] {background-position:0 0;}
+a[href|="/whoovesmount"] {background-position:0 -305px;}
+a[href|="/stmount"] {background-position:0 -610px;}
+a[href|="/soarinmount"] {background-position:0 -915px;}
+a[href|="/bmmount"] {background-position:0 -1220px;}
+a[href|="/fpmount"] {background-position:0 -1525px;}
+a[href|="/giomount"] {background-position:0 -1830px;}
+a[href|="/ajtrmount"] {background-position:0 -2135px;}
+a[href|="/chivmount"] {background-position:0 -2440px;}
+	
 		a[href|="/emptytable"]{
 			display: block;
 			clear: none;
@@ -60,63 +57,55 @@
 				top: -5px;
 				margin-right: 0px;
 				margin-bottom: 0px;}
-		/* malefuns */
-			/* general */
-				a[href*="mount-combine"]{position:relative;
-					background-image:none;}
-				a[href*="mount-combine"]:before,a[href*="mount-combine"]:after{
-					display:block;content:"";
-					position:absolute;top:0;left:0;
-					width:301px; height:305px;}
-				a[href*="mount-combine"]:after{
-					z-index:1;background-image:url(%%back2%%);}
-				a[href*="mount-combine"]:before{
-					z-index:3;background-image:url(%%fore2%%);}
-				a[href*="mount-combine"]+a{
-					z-index:2;
-					position:relative;
-					margin-right:-999px;
-					margin-bottom:-999px;}
-				a[href*="mount-combine"]+a{
-					left:-207px;top:153px;}
-			/* giomac */
-				a[href|="/giomount-combine"]:before,a[href|="/giomount-combine"]:after{
-					background-position: -0px -1830px}
-			/* bigmac */
-				a[href|="/bmmount-combine"]:before,a[href|="/bmmount-combine"]:after{
-					background-position: -0px -1220px}
-			/* fancy */
-				a[href|="/fpmount-combine"]:before,a[href|="/fpmount-combine"]:after{
-					background-position: -0px -1525px}
-			/* soarin */
-				a[href|="/soarinmount-combine"]:before,a[href|="/soarinmount-combine"]:after{
-					background-position: -0px -915px}
-			/* speedi */
-				a[href|="/stmount-combine"]:before,a[href|="/stmount-combine"]:after{
-					background-position: -0px -610px}
-			/* whooves */
-				a[href|="/whoovesmount-combine"]:before,a[href|="/whoovesmount-combine"]:after{
-					background-position: -0px -305px}
-			/* fancynekid */
-				a[href|="/fpnmount-combine"]:before,a[href|="/fpnmount-combine"]:after{
-					background-position: -0px -0px}
 
-			/* general fix */
-				a[href*="mount-combine"]+a[href^="/ajfun"]{
-					margin-left:0px;}
-				a[href*="mount-combine"]+a[href^="/twifun"],a[href*="mount-combine"]+a[href^="/darklefun"],a[href*="mount-combine"]+a[href^="/dashfun"]{
-					margin-left:-26px;}
-				a[href*="mount-combine"]+a[href^="/shyfun"]{
-					margin-left:-18px;}
-				a[href*="mount-combine"]+a[href^="/rarfun"]{
-					margin-left:-34px;}
-				a[href*="mount-combine"]+a[href^="/ppfun"]{
-					margin-left:-10px;}
-				a[href*="mount-combine"]+a[href^="/pp"][href*="-combine"]+a{
-					width:150px;
-					position:relative;
-					left:-70px; top:135px;
-					z-index:4;}
+
+/* malefuns */
+a[href|="/ajtrmount-combine"]:after,a[href|="/bmmount-combine"]:after,a[href|="/chivmount-combine"]:after,a[href|="/fpmount-combine"]:after,a[href|="/fpnmount-combine"]:after,a[href|="/orionmount-combine"]:after,a[href|="/soarinmount-combine"]:after,a[href|="/stmount-combine"]:after,a[href|="/whoovesmount-combine"]:after{background:url(%%catfront%%) no-repeat;z-index:3;}
+a[href|="/ajtrmount-combine"]:before,a[href|="/bmmount-combine"]:before,a[href|="/chivmount-combine"]:before,a[href|="/fpmount-combine"]:before,a[href|="/fpnmount-combine"]:before,a[href|="/orionmount-combine"]:before,a[href|="/soarinmount-combine"]:before,a[href|="/stmount-combine"]:before,a[href|="/whoovesmount-combine"]:before{background:url(%%catback%%) no-repeat;z-index:1;}
+a[href|="/ajtrmount-combine"]:before,a[href|="/stmount-combine"]:after{background-position:0 -305px;height:305px;width:301px;}
+a[href|="/ajtrmount-combine"]:after,a[href|="/stmount-combine"]:before{background-position:0 -1525px;height:305px;width:301px;}
+a[href|="/bmmount-combine"]:before,a[href|="/orionmount-combine"]:after{background-position:0 -1220px;height:305px;width:301px;}
+a[href|="/bmmount-combine"]:after,a[href|="/orionmount-combine"]:before{background-position:0 -2135px;height:305px;width:301px;}
+a[href|="/chivmount-combine"]:before,a[href|="/fpnmount-combine"]:after{background-position:0 -1830px;height:305px;width:301px;}
+a[href|="/chivmount-combine"]:after,a[href|="/soarinmount-combine"]:before{background-position:0 -915px;height:305px;width:301px;}
+a[href|="/fpmount-combine"]:before,a[href|="/soarinmount-combine"]:after{background-position:0 0;height:305px;width:301px;}
+a[href|="/fpmount-combine"]:after,a[href|="/fpnmount-combine"]:before{background-position:0 -610px;height:305px;width:301px;}
+a[href|="/whoovesmount-combine"]:before,a[href|="/whoovesmount-combine"]:after{background-position:0 -2440px;height:305px;width:301px;}
+
+
+a[href*="mount-combine"]{position:relative;background-image:none;}
+a[href*="mount-combine"]:before,a[href*="mount-combine"]:after{display:block;content:"";position:absolute;top:0;left:0;}
+a[href*="mount-combine"] + a{z-index:2;position:relative;margin-right:-999px;margin-bottom:-999px;top:153px;left:-207px;}
+
+/*Fixes*/
+a[href|="/bmmount-combine"] + a,a[href|="/chivmount-combine"] + a{left:-219px !important;}
+a[href*="mount-combine"] + a[href|="/dashfun"]{margin-left:-22px;}
+a[href*="mount-combine"] + a[href|="/shyfun"]{margin-left:-18px;}
+a[href*="mount-combine"] + a[href|="/ppfun"]{margin-left:-9px;}
+a[href*="mount-combine"] + a[href|="/ajtrfun"]{margin-left:-2px;}
+a[href*="mount-combine"] + a[href|="/bajfun"]{margin-left:-5px;}
+a[href*="mount-combine"] + a[href|="/bbonfun"]{margin-left:-31px;}
+a[href*="mount-combine"] + a[href|="/blyrafun"]{margin-left:-8px;}
+a[href*="mount-combine"] + a[href|="/bonfun"]{margin-left:-14px;}
+a[href*="mount-combine"] + a[href|="/brarfun"]{margin-left:-49px;}
+a[href*="mount-combine"] + a[href|="/brosefun"]{margin-left:-7px;}
+a[href*="mount-combine"] + a[href|="/doctorfun"]{margin-left:-1px;}
+a[href*="mount-combine"] + a[href|="/espeefun"]{margin-left:-4px;}
+a[href*="mount-combine"] + a[href|="/esplinfun"]{margin-left:3px;}
+a[href*="mount-combine"] + a[href|="/excelianfun"]{margin-left:-33px;}
+a[href*="mount-combine"] + a[href|="/orschfun"]{margin-left:4px;}
+a[href*="mount-combine"] + a[href|="/speedyfun"]{margin-left:7px;}
+a[href*="mount-combine"] + a[href|="/surfun"]{margin-left:-10px;}
+a[href*="mount-combine"] + a[href|="/thunderlanefun"]{margin-left:1px;}
+a[href*="mount-combine"] + a[href|="/ajfun"],a[href*="mount-combine"] + a[href|="/braefun"],a[href*="mount-combine"] + a[href|="/darkfun"]{margin-left:2px;}
+a[href*="mount-combine"] + a[href|="/twifun"],a[href*="mount-combine"] + a[href|="/darklefun"]{margin-left:-24px;}
+a[href*="mount-combine"] + a[href|="/rarfun"],a[href*="mount-combine"] + a[href|="/bdashfun"],a[href*="mount-combine"] + a[href|="/bderpfun"]{margin-left:-32px;}
+a[href*="mount-combine"] + a[href|="/bcheerfun"],a[href*="mount-combine"] + a[href|="/rcrfun"]{margin-left:-25px;}
+a[href*="mount-combine"] + a[href|="/bppfun"],a[href*="mount-combine"] + a[href|="/cheerfun"]{margin-left:-15px;}
+a[href*="mount-combine"] + a[href|="/btrixfun"],a[href*="mount-combine"] + a[href|="/spraklefun"]{margin-left:-30px;}
+a[href*="mount-combine"] + a[href|="/derpfun"],a[href*="mount-combine"] + a[href|="/trixfun"]{margin-left:-12px;}
+a[href*="mount-combine"] + a[href|="/lyrafun"],a[href*="mount-combine"] + a[href|="/rosefun"]{margin-left:0;}
+
 	/* SFW */
 		/* tableflip */
 			a[href^="/emptytable"][href*="-combine"]{
