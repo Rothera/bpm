@@ -18,7 +18,7 @@ var simple_storage = require("simple-storage");
 var tabs = require("tabs");
 var timers = require("timers");
 
-var bpm_backendsupport = require("pref-setup").bpm_backendsupport;
+var manage_prefs = require("pref-setup").manage_prefs;
 var bpm_data = require("bpm-resources");
 
 var storage = simple_storage.storage;
@@ -69,7 +69,7 @@ if(!storage.prefs) {
     }
 }
 
-var pref_manager = bpm_backendsupport.manage_prefs(bpm_data.sr_name2id, {
+var pref_manager = manage_prefs(bpm_data.sr_name2id, {
     read_value: function(key) { return storage[key]; },
     write_value: function(key, data) { storage[key] = data; },
     read_json: function(key) { return storage[key]; },

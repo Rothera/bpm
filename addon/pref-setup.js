@@ -10,180 +10,178 @@
 
 "use strict";
 
-var bpm_backendsupport = {
-    default_prefs: {
-        "enableNSFW": false,
-        "enableExtraCSS": true,
-        "showUnknownEmotes": true,
-        "hideDisabledEmotes": false,
-        "stealthMode": false,
-        "showAltText": true,
-        "enableGlobalEmotes": false,
-        "enableGlobalSearch": false,
-        "clickToggleSFW": true,
-        "searchLimit": 200,
-        "maxEmoteSize": 0,
-        "enabledSubreddits2": {}, // subreddit name -> 0/1 enabled
-        "disabledEmotes": [],
-        "whitelistedEmotes": [],
-        "customCSSSubreddits": {}, // subreddit name -> timestamp
+var default_prefs = {
+    "enableNSFW": false,
+    "enableExtraCSS": true,
+    "showUnknownEmotes": true,
+    "hideDisabledEmotes": false,
+    "stealthMode": false,
+    "showAltText": true,
+    "enableGlobalEmotes": false,
+    "enableGlobalSearch": false,
+    "clickToggleSFW": true,
+    "searchLimit": 200,
+    "maxEmoteSize": 0,
+    "enabledSubreddits2": {}, // subreddit name -> 0/1 enabled
+    "disabledEmotes": [],
+    "whitelistedEmotes": [],
+    "customCSSSubreddits": {}, // subreddit name -> timestamp
 
-        "searchBoxInfo": [600, 25, 620, 450],
-        "lastSearchQuery": "sr:mylittlepony", // only shows about a third, but that's ok
-        "globalIconPos": [16, 16]
-        },
+    "searchBoxInfo": [600, 25, 620, 450],
+    "lastSearchQuery": "sr:mylittlepony",
+    "globalIconPos": [16, 16]
+    };
 
-    setup_prefs: function(prefs, sr_name2id) {
-        for(var key in this.default_prefs) {
-            if(prefs[key] === undefined) {
-                prefs[key] = this.default_prefs[key];
-            }
+function initialize_prefs(prefs, sr_name2id) {
+    for(var key in default_prefs) {
+        if(prefs[key] === undefined) {
+            prefs[key] = default_prefs[key];
         }
+    }
 
-        // Migration from previous schema
-        if(prefs.enabledSubreddits !== undefined) {
-            for(var old_sr in prefs.enabledSubreddits) {
-              // r_mlp -> r/mlp
-              if(old_sr === "bpmextras") {
-                  continue;
-              }
-              var new_sr = old_sr.replace("_", "/");
-              var value = Number(prefs.enabledSubreddits[old_sr])
-              prefs.enabledSubreddits2[new_sr] = value;
-            }
-            delete prefs.enabledSubreddits;
+    // Migration from previous schema
+    if(prefs.enabledSubreddits !== undefined) {
+        for(var old_sr in prefs.enabledSubreddits) {
+          // r_mlp -> r/mlp
+          if(old_sr === "bpmextras") {
+              continue;
+          }
+          var new_sr = old_sr.replace("_", "/");
+          var value = Number(prefs.enabledSubreddits[old_sr])
+          prefs.enabledSubreddits2[new_sr] = value;
         }
+        delete prefs.enabledSubreddits;
+    }
 
-        // New subreddits
-        for(var sr in sr_name2id) {
-            if(prefs.enabledSubreddits2[sr] === undefined) {
-                prefs.enabledSubreddits2[sr] = 1;
-            }
+    // New subreddits
+    for(var sr in sr_name2id) {
+        if(prefs.enabledSubreddits2[sr] === undefined) {
+            prefs.enabledSubreddits2[sr] = 1;
         }
-        // Removed subreddits
-        for(var sr in prefs.enabledSubreddits2) {
-            // Cast to int while we're at it- I think I screwed this up before
-            prefs.enabledSubreddits2[sr] = +prefs.enabledSubreddits2[sr];
+    }
+    // Removed subreddits
+    for(var sr in prefs.enabledSubreddits2) {
+        // Cast to int while we're at it- I think I screwed this up before
+        prefs.enabledSubreddits2[sr] = +prefs.enabledSubreddits2[sr];
 
-            if(sr_name2id[sr] === undefined) {
-                console.log("Deleting " + sr);
-                delete prefs.enabledSubreddits2[sr];
-            }
+        if(sr_name2id[sr] === undefined) {
+            console.log("Deleting " + sr);
+            delete prefs.enabledSubreddits2[sr];
         }
-    },
+    }
+}
 
-    sanitize: function(s) {
-        return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_").replace("#", "_hash_").replace("/", "_slash_");
-    },
+function sanitize_emote(s) {
+    return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_").replace("#", "_hash_").replace("/", "_slash_");
+}
 
-    //             a    :suffix          [href |   ="( /emote name )"] :suffix         (through '}')
-    block_regexp: /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="(\/[\w:!#\/]+)"\](:[a-zA-Z\-()]+)?[^}]*}/g,
-    emote_regexp: /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="(\/[\w:!#\/]+)"\](:[a-zA-Z\-()]+)?/,
+//                  a    :suffix          [href |   ="( /emote name )"] :suffix         (through '}')
+var block_regexp = /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="(\/[\w:!#\/]+)"\](:[a-zA-Z\-()]+)?[^}]*}/g;
+var emote_regexp = /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="(\/[\w:!#\/]+)"\](:[a-zA-Z\-()]+)?/;
 
-    strip_subreddit_css: function(data) {
-        // Strip comments
-        data = data.replace(/\/\*[^*]*\*+(?:[^\/][^*]*\*+)*\//g, "");
-        // Strip PONYSCRIPT-IGNORE blocks
-        data = data.replace(/START-PONYSCRIPT-IGNORE[^{]*{[^}]*}[\s\S]*?END-PONYSCRIPT-IGNORE[^{]*{[^}]*}/g, "");
-        // Strip !important tags
-        data = data.replace(/\s*!important/gi, "");
-        // Strip leading spaces and newlines
-        data = data.replace(/^\s*|\n/gm, "");
+function strip_subreddit_css(data) {
+    // Strip comments
+    data = data.replace(/\/\*[^*]*\*+(?:[^\/][^*]*\*+)*\//g, "");
+    // Strip PONYSCRIPT-IGNORE blocks
+    data = data.replace(/START-PONYSCRIPT-IGNORE[^{]*{[^}]*}[\s\S]*?END-PONYSCRIPT-IGNORE[^{]*{[^}]*}/g, "");
+    // Strip !important tags
+    data = data.replace(/\s*!important/gi, "");
+    // Strip leading spaces and newlines
+    data = data.replace(/^\s*|\n/gm, "");
 
-        this.block_regexp.lastIndex = 0;
+    block_regexp.lastIndex = 0;
 
-        // Locate all emotes and emote CSS
-        var emote_text = "";
-        var emotes = [];
-        var block_match, emote_match;
-        while((block_match = this.block_regexp.exec(data)) !== null) {
-            var css_chunk = block_match[0];
-            while((emote_match = this.emote_regexp.exec(css_chunk)) !== null) {
-                var emote = emote_match[2].toLowerCase();
-                if(emotes.indexOf(emote) < 0) {
-                    emotes.push(emote);
-                }
-
-                // Sanitize class names and convert to .bpm-cmote structure
-                var class_name = (".bpm-cmote-" + this.sanitize(emote.slice(1)) +
-                                  (emote_match[1] ? emote_match[1] : "") +
-                                  (emote_match[3] ? emote_match[3] : ""));
-                css_chunk = css_chunk.replace(this.emote_regexp, class_name);
+    // Locate all emotes and emote CSS
+    var emote_text = "";
+    var emotes = [];
+    var block_match, emote_match;
+    while((block_match = block_regexp.exec(data)) !== null) {
+        var css_chunk = block_match[0];
+        while((emote_match = emote_regexp.exec(css_chunk)) !== null) {
+            var emote = emote_match[2].toLowerCase();
+            if(emotes.indexOf(emote) < 0) {
+                emotes.push(emote);
             }
-            emote_text += css_chunk + "\n";
+
+            // Sanitize class names and convert to .bpm-cmote structure
+            var class_name = (".bpm-cmote-" + sanitize_emote(emote.slice(1)) +
+                              (emote_match[1] ? emote_match[1] : "") +
+                              (emote_match[3] ? emote_match[3] : ""));
+            css_chunk = css_chunk.replace(emote_regexp, class_name);
         }
+        emote_text += css_chunk + "\n";
+    }
 
-        return [emotes, emote_text];
-    },
+    return [emotes, emote_text];
+}
 
-    // Essentially a list compare, because JS sucks
-    subreddits_changed: function(old, n) {
-        if(old.length !== n.length) {
+// Essentially a list compare, because JS sucks
+function subreddits_changed(old, n) {
+    if(old.length !== n.length) {
+        return true;
+    }
+
+    // Copy
+    var common = old.slice(0);
+
+    // Remove all elements in n
+    for(var i = 0; i < n.length; i++) {
+        var idx = common.indexOf(n[i]);
+        if(idx < 0) {
             return true;
         }
-
-        // Copy
-        var common = old.slice(0);
-
-        // Remove all elements in n
-        for(var i = 0; i < n.length; i++) {
-            var idx = common.indexOf(n[i]);
-            if(idx < 0) {
-                return true;
-            }
-            common.splice(idx, 1);
-        }
-
-        // Should be empty?
-        return common.length;
-    },
-
-    manage_prefs: function(sr_name2id, hooks) {
-        var prefs = hooks.read_json("prefs");
-
-        var manager = {
-            write: function(_prefs) {
-                prefs = _prefs;
-                this._sync();
-                this.cm.after_pref_write();
-            },
-
-            get: function() {
-                return prefs;
-            },
-
-            db_json: hooks.read_json,
-            db_set_json: hooks.write_json,
-            db_key: hooks.read_value,
-            db_set_key: hooks.write_value,
-
-            set_pref: function(key, value) {
-                if(prefs[key] === undefined) {
-                    console.log("BPM: ERROR: Attempt to write to nonexistent pref key " + key);
-                    return;
-                }
-                prefs[key] = value;
-                this._sync();
-                this.cm.after_pref_write();
-            },
-
-            // Wait 2.5s between hitting Reddit
-            dl_queue: new TaskQueue(hooks.set_timeout, hooks.download_file, 2500),
-
-            _sync: function() {
-                hooks.write_json("prefs", prefs);
-                hooks.prefs_updated(prefs);
-            }
-        };
-
-        this.setup_prefs(prefs, sr_name2id);
-        manager._sync();
-        manager.cm = new css_manager(manager);
-        manager.cm.after_pref_write();
-
-        return manager;
+        common.splice(idx, 1);
     }
-};
+
+    // Should be empty?
+    return common.length;
+}
+
+function manage_prefs(sr_name2id, hooks) {
+    var prefs = hooks.read_json("prefs");
+
+    var manager = {
+        write: function(_prefs) {
+            prefs = _prefs;
+            this._sync();
+            this.cm.after_pref_write();
+        },
+
+        get: function() {
+            return prefs;
+        },
+
+        db_json: hooks.read_json,
+        db_set_json: hooks.write_json,
+        db_key: hooks.read_value,
+        db_set_key: hooks.write_value,
+
+        set_pref: function(key, value) {
+            if(prefs[key] === undefined) {
+                console.log("BPM: ERROR: Attempt to write to nonexistent pref key " + key);
+                return;
+            }
+            prefs[key] = value;
+            this._sync();
+            this.cm.after_pref_write();
+        },
+
+        // Wait 2.5s between hitting Reddit
+        dl_queue: new TaskQueue(hooks.set_timeout, hooks.download_file, 2500),
+
+        _sync: function() {
+            hooks.write_json("prefs", prefs);
+            hooks.prefs_updated(prefs);
+        }
+    };
+
+    initialize_prefs(prefs, sr_name2id);
+    manager._sync();
+    manager.cm = new css_manager(manager);
+    manager.cm.after_pref_write();
+
+    return manager;
+}
 
 function TaskQueue(set_timeout, callback, delay) {
     this.set_timeout = set_timeout;
@@ -305,7 +303,7 @@ css_manager.prototype = {
         // should help a little bit
         var url = "http://reddit.com/r/" + subreddit + "/stylesheet.css?__ua=BetterPonymotes";
         this.pm.dl_queue.add(url, function(css) {
-            var tmp = bpm_backendsupport.strip_subreddit_css(css);
+            var tmp = strip_subreddit_css(css);
             var extracted_emotes = tmp[0];
             var stripped_css = tmp[1];
 
@@ -328,7 +326,7 @@ css_manager.prototype = {
             tmp.push(sr);
         }
         // Always true for first run (compare [] to any other list)
-        var changed = bpm_backendsupport.subreddits_changed(this.cached_subreddits, tmp);
+        var changed = subreddits_changed(this.cached_subreddits, tmp);
 
         if(this.css_cache === null || this.emote_cache === null || changed) {
             this.rebuild_cache();
@@ -338,5 +336,5 @@ css_manager.prototype = {
 
 // Firefox
 if(typeof(exports) !== "undefined") {
-    exports.bpm_backendsupport = bpm_backendsupport;
+    exports.manage_prefs = manage_prefs;
 }

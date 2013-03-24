@@ -265,7 +265,7 @@ case "userscript":
         }
 
         _pref_cache = JSON.parse(tmp);
-        bpm_backendsupport.setup_prefs(_pref_cache, sr_name2id);
+        initialize_prefs(_pref_cache, sr_name2id);
         _sync_prefs();
 
         // No support for custom CSS
