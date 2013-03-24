@@ -1,168 +1,61 @@
 /*
- * r/mylittlecombiners special support. Stolen directly from their stylesheet
- * and edited to suit BPM.
+ * r/mylittlecombiners special support.
  *
  * This file contains only the more NSFW additions. Though the subtleties of
  * what counts as "NSFW" wrt these things could fill an essay, for now, my
  * involvement ends with splitting this file.
  *
- * Note: Several places in the original CSS use a[href*="mount-combine"] as
- * a shorthand to match all /*mount-combine emotes. This causes problems when
- * trying to disable r/mylittlecombiners, since they remain active and cause
- * problems.
+ * The current CSS was provided by the combiners maintainer directly, and has
+ * not been modified. The volominous size comes from this being an NxM matrix
+ * of hardcoded pixel-perfect adjustments between N /*mount emotes and M /*fun
+ * emotes, that still does not manage to cover the entire set of fun's (more of
+ * which are still being added).
  *
- * Though I expanded most of those out, this is a rather lousy solution, and
- * the pinkiepipes ones remain as they were for sake of not making this file
- * explode.
+ * I have made one minor edit to make /rainbowponysemen combine in the same
+ * fashion as /jizz.
  */
 
-/* NSFW */
-/* jizz */
-.bpmote-jizz.bpflag-combine {
-    z-index: 2;
-    position: relative
-    }
-.bpmote-jizz.bpflag-combine + a {
-    z-index: 1;
-    position: relative;
-    left: -110px;
-    top: -5px;
-    margin-right: 0px;
-    margin-bottom: 0px
-    }
-/* malefuns */
-/* general */
-.bpmote-bmmount.bpflag-combine, .bpmote-fpmount.bpflag-combine,
-.bpmote-fpnmount.bpflag-combine, .bpmote-giomount.bpflag-combine,
-.bpmote-soarinmount.bpflag-combine, .bpmote-stmount.bpflag-combine,
-.bpmote-whoovesmount.bpflag-combine {
-    position: relative;
-    background-image: none
-    }
-
-.bpmote-bmmount.bpflag-combine:before, .bpmote-fpmount.bpflag-combine:before,
-.bpmote-fpnmount.bpflag-combine:before, .bpmote-giomount.bpflag-combine:before,
-.bpmote-soarinmount.bpflag-combine:before, .bpmote-stmount.bpflag-combine:before,
-.bpmote-whoovesmount.bpflag-combine:before,
-.bpmote-bmmount.bpflag-combine:after, .bpmote-fpmount.bpflag-combine:after,
-.bpmote-fpnmount.bpflag-combine:after, .bpmote-giomount.bpflag-combine:after,
-.bpmote-soarinmount.bpflag-combine:after, .bpmote-stmount.bpflag-combine:after,
-.bpmote-whoovesmount.bpflag-combine:after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 301px;
-    height: 305px
-    }
-
-.bpmote-bmmount.bpflag-combine:after, .bpmote-fpmount.bpflag-combine:after,
-.bpmote-fpnmount.bpflag-combine:after, .bpmote-giomount.bpflag-combine:after,
-.bpmote-soarinmount.bpflag-combine:after, .bpmote-stmount.bpflag-combine:after,
-.bpmote-whoovesmount.bpflag-combine:after {
-    z-index: 1;
-    background-image: url(http://d.thumbs.redditmedia.com/ZvWZGTMatFE1ct23.png)
-    }
-
-.bpmote-bmmount.bpflag-combine:before, .bpmote-fpmount.bpflag-combine:before,
-.bpmote-fpnmount.bpflag-combine:before, .bpmote-giomount.bpflag-combine:before,
-.bpmote-soarinmount.bpflag-combine:before, .bpmote-stmount.bpflag-combine:before,
-.bpmote-whoovesmount.bpflag-combine:before {
-    z-index: 3;
-    background-image: url(http://c.thumbs.redditmedia.com/ABqBucsFHteNCzlz.png)
-    }
-
-.bpmote-bmmount.bpflag-combine + a, .bpmote-fpmount.bpflag-combine + a,
-.bpmote-fpnmount.bpflag-combine + a, .bpmote-giomount.bpflag-combine + a,
-.bpmote-soarinmount.bpflag-combine + a, .bpmote-stmount.bpflag-combine + a,
-.bpmote-whoovesmount.bpflag-combine + a {
-    z-index: 2;
-    position: relative;
-    margin-right: -999px;
-    margin-bottom: -999px;
-    left: -207px;
-    top: 153px
-    }
-
-/* giomac */
-.bpmote-giomount.bpflag-combine:before, .bpmote-giomount.bpflag-combine:after {
-    background-position: -0px -1830px
-    }
-/* bigmac */
-.bpmote-bmmount.bpflag-combine:before, .bpmote-bmmount.bpflag-combine:after {
-    background-position: -0px -1220px
-    }
-/* fancy */
-.bpmote-fpmount.bpflag-combine:before, .bpmote-fpmount.bpflag-combine:after {
-    background-position: -0px -1525px
-    }
-/* soarin */
-.bpmote-soarinmount.bpflag-combine:before, .bpmote-soarinmount.bpflag-combine:after {
-    background-position: -0px -915px
-    }
-/* speedi */
-.bpmote-stmount.bpflag-combine:before, .bpmote-stmount.bpflag-combine:after {
-    background-position: -0px -610px
-    }
-/* whooves */
-.bpmote-whoovesmount.bpflag-combine:before, .bpmote-whoovesmount.bpflag-combine:after {
-    background-position: -0px -305px
-    }
-/* fancynekid */
-.bpmote-fpnmount.bpflag-combine:before, .bpmote-fpnmount.bpflag-combine:after {
-    background-position: -0px -0px
-    }
-
-/* general fix */
-.bpmote-bmmount.bpflag-combine + .bpmote-ajfun, .bpmote-fpmount.bpflag-combine + .bpmote-ajfun,
-.bpmote-fpnmount.bpflag-combine + .bpmote-ajfun, .bpmote-giomount.bpflag-combine + .bpmote-ajfun,
-.bpmote-soarinmount.bpflag-combine + .bpmote-ajfun, .bpmote-stmount.bpflag-combine + .bpmote-ajfun,
-.bpmote-whoovesmount.bpflag-combine + .bpmote-ajfun {
-    margin-left: 0px
-    }
-
-.bpmote-bmmount.bpflag-combine + .bpmote-twifun, .bpmote-fpmount.bpflag-combine + .bpmote-twifun,
-.bpmote-fpnmount.bpflag-combine + .bpmote-twifun, .bpmote-giomount.bpflag-combine + .bpmote-twifun,
-.bpmote-soarinmount.bpflag-combine + .bpmote-twifun, .bpmote-stmount.bpflag-combine + .bpmote-twifun,
-.bpmote-whoovesmount.bpflag-combine + .bpmote-twifun,
-.bpmote-bmmount.bpflag-combine + .bpmote-darklefun, .bpmote-fpmount.bpflag-combine + .bpmote-darklefun,
-.bpmote-fpnmount.bpflag-combine + .bpmote-darklefun, .bpmote-giomount.bpflag-combine + .bpmote-darklefun,
-.bpmote-soarinmount.bpflag-combine + .bpmote-darklefun, .bpmote-stmount.bpflag-combine + .bpmote-darklefun,
-.bpmote-whoovesmount.bpflag-combine + .bpmote-darklefun,
-.bpmote-bmmount.bpflag-combine + .bpmote-dashfun, .bpmote-fpmount.bpflag-combine + .bpmote-dashfun,
-.bpmote-fpnmount.bpflag-combine + .bpmote-dashfun, .bpmote-giomount.bpflag-combine + .bpmote-dashfun,
-.bpmote-soarinmount.bpflag-combine + .bpmote-dashfun, .bpmote-stmount.bpflag-combine + .bpmote-dashfun,
-.bpmote-whoovesmount.bpflag-combine + .bpmote-dashfun {
-    margin-left: -26px
-    }
-
-.bpmote-bmmount.bpflag-combine + .bpmote-shyfun, .bpmote-fpmount.bpflag-combine + .bpmote-shyfun,
-.bpmote-fpnmount.bpflag-combine + .bpmote-shyfun, .bpmote-giomount.bpflag-combine + .bpmote-shyfun,
-.bpmote-soarinmount.bpflag-combine + .bpmote-shyfun, .bpmote-stmount.bpflag-combine + .bpmote-shyfun,
-.bpmote-whoovesmount.bpflag-combine + .bpmote-shyfun {
-    margin-left: -18px
-    }
-
-.bpmote-bmmount.bpflag-combine + .bpmote-rarfun, .bpmote-fpmount.bpflag-combine + .bpmote-rarfun,
-.bpmote-fpnmount.bpflag-combine + .bpmote-rarfun, .bpmote-giomount.bpflag-combine + .bpmote-rarfun,
-.bpmote-soarinmount.bpflag-combine + .bpmote-rarfun, .bpmote-stmount.bpflag-combine + .bpmote-rarfun,
-.bpmote-whoovesmount.bpflag-combine + .bpmote-rarfun {
-    margin-left: -34px
-    }
-
-.bpmote-bmmount.bpflag-combine + .bpmote-ppfun, .bpmote-fpmount.bpflag-combine + .bpmote-ppfun,
-.bpmote-fpnmount.bpflag-combine + .bpmote-ppfun, .bpmote-giomount.bpflag-combine + .bpmote-ppfun,
-.bpmote-soarinmount.bpflag-combine + .bpmote-ppfun, .bpmote-stmount.bpflag-combine + .bpmote-ppfun,
-.bpmote-whoovesmount.bpflag-combine + .bpmote-ppfun {
-    margin-left: -10px
-    }
-
-/* BPM NOTE: Similar to bpmotes.css, I have no idea what to do with this */
-a[href*="mount-combine"] + a[href^="/pp"].bpflag-combine + a {
-    width: 150px;
-    position: relative;
-    left: -70px;
-    top: 135px;
-    z-index: 4
-    }
+.bpmote-jizz.bpflag-combine, .bpmote-rainbowponysemen.bpflag-combine{z-index:2;position:relative;}
+.bpmote-jizz.bpflag-combine+a, .bpmote-rainbowponysemen.bpflag-combine+a{z-index:1;position:relative;left:-110px;top:-5px;margin-right:0;margin-bottom:0;}
+.back-sprite,.bpmote-ajtrmount.bpflag-combine:after,.bpmote-bmmount.bpflag-combine:after,.bpmote-chivmount.bpflag-combine:after,.bpmote-fpmount.bpflag-combine:after,.bpmote-fpnmount.bpflag-combine:after,.bpmote-orionmount.bpflag-combine:after,.bpmote-soarinmount.bpflag-combine:after,.bpmote-stmount.bpflag-combine:after,.bpmote-whoovesmount.bpflag-combine:after{background:url(http://b.thumbs.redditmedia.com/XfJfpVCHuPUSL6WO.png) no-repeat;z-index:1;}
+.front-sprite,.bpmote-ajtrmount.bpflag-combine:before,.bpmote-bmmount.bpflag-combine:before,.bpmote-chivmount.bpflag-combine:before,.bpmote-fpmount.bpflag-combine:before,.bpmote-fpnmount.bpflag-combine:before,.bpmote-orionmount.bpflag-combine:before,.bpmote-soarinmount.bpflag-combine:before,.bpmote-stmount.bpflag-combine:before,.bpmote-whoovesmount.bpflag-combine:before{background:url(http://e.thumbs.redditmedia.com/BjsntZx3Tw3-0YX4.png) no-repeat;z-index:3;}
+.bpmote-ajtrmount.bpflag-combine,.bpmote-bmmount.bpflag-combine,.bpmote-chivmount.bpflag-combine,.bpmote-fpmount.bpflag-combine,.bpmote-fpnmount.bpflag-combine,.bpmote-orionmount.bpflag-combine,.bpmote-soarinmount.bpflag-combine,.bpmote-stmount.bpflag-combine,.bpmote-whoovesmount.bpflag-combine{background-image:none;position:relative;}
+.bpmote-ajtrmount.bpflag-combine:after,.bpmote-stmount.bpflag-combine:before{background-position:0 -305px;}
+.bpmote-ajtrmount.bpflag-combine:before,.bpmote-stmount.bpflag-combine:after{background-position:0 -1525px;}
+.bpmote-ajtrmount.bpflag-combine:before,.bpmote-ajtrmount.bpflag-combine:after,.bpmote-bmmount.bpflag-combine:before,.bpmote-bmmount.bpflag-combine:after,.bpmote-chivmount.bpflag-combine:before,.bpmote-chivmount.bpflag-combine:after,.bpmote-fpmount.bpflag-combine:before,.bpmote-fpmount.bpflag-combine:after,.bpmote-fpnmount.bpflag-combine:before,.bpmote-fpnmount.bpflag-combine:after,.bpmote-orionmount.bpflag-combine:before,.bpmote-orionmount.bpflag-combine:after,.bpmote-soarinmount.bpflag-combine:before,.bpmote-soarinmount.bpflag-combine:after,.bpmote-stmount.bpflag-combine:before,.bpmote-stmount.bpflag-combine:after,.bpmote-whoovesmount.bpflag-combine:before,.bpmote-whoovesmount.bpflag-combine:after{content:"";display:block;height:305px;left:0;position:absolute;top:0;width:301px;}
+.bpmote-ajtrmount.bpflag-combine+a,.bpmote-fpmount.bpflag-combine+a,.bpmote-fpnmount.bpflag-combine+a,.bpmote-orionmount.bpflag-combine+a,.bpmote-soarinmount.bpflag-combine+a,.bpmote-stmount.bpflag-combine+a,.bpmote-whoovesmount.bpflag-combine+a{left:-207px;margin-bottom:-999px;margin-right:-999px;position:relative;top:153px;z-index:2;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-ajfun,.bpmote-ajtrmount.bpflag-combine+.bpmote-braefun,.bpmote-ajtrmount.bpflag-combine+.bpmote-darkfun,.bpmote-bmmount.bpflag-combine+.bpmote-ajfun,.bpmote-bmmount.bpflag-combine+.bpmote-braefun,.bpmote-bmmount.bpflag-combine+.bpmote-darkfun,.bpmote-chivmount.bpflag-combine+.bpmote-ajfun,.bpmote-chivmount.bpflag-combine+.bpmote-braefun,.bpmote-chivmount.bpflag-combine+.bpmote-darkfun,.bpmote-fpmount.bpflag-combine+.bpmote-ajfun,.bpmote-fpmount.bpflag-combine+.bpmote-braefun,.bpmote-fpmount.bpflag-combine+.bpmote-darkfun,.bpmote-fpnmount.bpflag-combine+.bpmote-ajfun,.bpmote-fpnmount.bpflag-combine+.bpmote-braefun,.bpmote-fpnmount.bpflag-combine+.bpmote-darkfun,.bpmote-orionmount.bpflag-combine+.bpmote-ajfun,.bpmote-orionmount.bpflag-combine+.bpmote-braefun,.bpmote-orionmount.bpflag-combine+.bpmote-darkfun,.bpmote-soarinmount.bpflag-combine+.bpmote-ajfun,.bpmote-soarinmount.bpflag-combine+.bpmote-braefun,.bpmote-soarinmount.bpflag-combine+.bpmote-darkfun,.bpmote-stmount.bpflag-combine+.bpmote-ajfun,.bpmote-stmount.bpflag-combine+.bpmote-braefun,.bpmote-stmount.bpflag-combine+.bpmote-darkfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-ajfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-braefun,.bpmote-whoovesmount.bpflag-combine+.bpmote-darkfun{margin-left:2px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-twifun,.bpmote-ajtrmount.bpflag-combine+.bpmote-darklefun,.bpmote-bmmount.bpflag-combine+.bpmote-twifun,.bpmote-bmmount.bpflag-combine+.bpmote-darklefun,.bpmote-chivmount.bpflag-combine+.bpmote-twifun,.bpmote-chivmount.bpflag-combine+.bpmote-darklefun,.bpmote-fpmount.bpflag-combine+.bpmote-twifun,.bpmote-fpmount.bpflag-combine+.bpmote-darklefun,.bpmote-fpnmount.bpflag-combine+.bpmote-twifun,.bpmote-fpnmount.bpflag-combine+.bpmote-darklefun,.bpmote-orionmount.bpflag-combine+.bpmote-twifun,.bpmote-orionmount.bpflag-combine+.bpmote-darklefun,.bpmote-soarinmount.bpflag-combine+.bpmote-twifun,.bpmote-soarinmount.bpflag-combine+.bpmote-darklefun,.bpmote-stmount.bpflag-combine+.bpmote-twifun,.bpmote-stmount.bpflag-combine+.bpmote-darklefun,.bpmote-whoovesmount.bpflag-combine+.bpmote-twifun,.bpmote-whoovesmount.bpflag-combine+.bpmote-darklefun{margin-left:-24px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-dashfun,.bpmote-bmmount.bpflag-combine+.bpmote-dashfun,.bpmote-chivmount.bpflag-combine+.bpmote-dashfun,.bpmote-fpmount.bpflag-combine+.bpmote-dashfun,.bpmote-fpnmount.bpflag-combine+.bpmote-dashfun,.bpmote-orionmount.bpflag-combine+.bpmote-dashfun,.bpmote-soarinmount.bpflag-combine+.bpmote-dashfun,.bpmote-stmount.bpflag-combine+.bpmote-dashfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-dashfun{margin-left:-22px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-shyfun,.bpmote-bmmount.bpflag-combine+.bpmote-shyfun,.bpmote-chivmount.bpflag-combine+.bpmote-shyfun,.bpmote-fpmount.bpflag-combine+.bpmote-shyfun,.bpmote-fpnmount.bpflag-combine+.bpmote-shyfun,.bpmote-orionmount.bpflag-combine+.bpmote-shyfun,.bpmote-soarinmount.bpflag-combine+.bpmote-shyfun,.bpmote-stmount.bpflag-combine+.bpmote-shyfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-shyfun{margin-left:-18px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-rarfun,.bpmote-ajtrmount.bpflag-combine+.bpmote-bdashfun,.bpmote-ajtrmount.bpflag-combine+.bpmote-bderpfun,.bpmote-bmmount.bpflag-combine+.bpmote-rarfun,.bpmote-bmmount.bpflag-combine+.bpmote-bdashfun,.bpmote-bmmount.bpflag-combine+.bpmote-bderpfun,.bpmote-chivmount.bpflag-combine+.bpmote-rarfun,.bpmote-chivmount.bpflag-combine+.bpmote-bdashfun,.bpmote-chivmount.bpflag-combine+.bpmote-bderpfun,.bpmote-fpmount.bpflag-combine+.bpmote-rarfun,.bpmote-fpmount.bpflag-combine+.bpmote-bdashfun,.bpmote-fpmount.bpflag-combine+.bpmote-bderpfun,.bpmote-fpnmount.bpflag-combine+.bpmote-rarfun,.bpmote-fpnmount.bpflag-combine+.bpmote-bdashfun,.bpmote-fpnmount.bpflag-combine+.bpmote-bderpfun,.bpmote-orionmount.bpflag-combine+.bpmote-rarfun,.bpmote-orionmount.bpflag-combine+.bpmote-bdashfun,.bpmote-orionmount.bpflag-combine+.bpmote-bderpfun,.bpmote-soarinmount.bpflag-combine+.bpmote-rarfun,.bpmote-soarinmount.bpflag-combine+.bpmote-bdashfun,.bpmote-soarinmount.bpflag-combine+.bpmote-bderpfun,.bpmote-stmount.bpflag-combine+.bpmote-rarfun,.bpmote-stmount.bpflag-combine+.bpmote-bdashfun,.bpmote-stmount.bpflag-combine+.bpmote-bderpfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-rarfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-bdashfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-bderpfun{margin-left:-32px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-ppfun,.bpmote-bmmount.bpflag-combine+.bpmote-ppfun,.bpmote-chivmount.bpflag-combine+.bpmote-ppfun,.bpmote-fpmount.bpflag-combine+.bpmote-ppfun,.bpmote-fpnmount.bpflag-combine+.bpmote-ppfun,.bpmote-orionmount.bpflag-combine+.bpmote-ppfun,.bpmote-soarinmount.bpflag-combine+.bpmote-ppfun,.bpmote-stmount.bpflag-combine+.bpmote-ppfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-ppfun{margin-left:-9px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-ajtrfun,.bpmote-bmmount.bpflag-combine+.bpmote-ajtrfun,.bpmote-chivmount.bpflag-combine+.bpmote-ajtrfun,.bpmote-fpmount.bpflag-combine+.bpmote-ajtrfun,.bpmote-fpnmount.bpflag-combine+.bpmote-ajtrfun,.bpmote-orionmount.bpflag-combine+.bpmote-ajtrfun,.bpmote-soarinmount.bpflag-combine+.bpmote-ajtrfun,.bpmote-stmount.bpflag-combine+.bpmote-ajtrfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-ajtrfun{margin-left:-2px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-bajfun,.bpmote-bmmount.bpflag-combine+.bpmote-bajfun,.bpmote-chivmount.bpflag-combine+.bpmote-bajfun,.bpmote-fpmount.bpflag-combine+.bpmote-bajfun,.bpmote-fpnmount.bpflag-combine+.bpmote-bajfun,.bpmote-orionmount.bpflag-combine+.bpmote-bajfun,.bpmote-soarinmount.bpflag-combine+.bpmote-bajfun,.bpmote-stmount.bpflag-combine+.bpmote-bajfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-bajfun{margin-left:-5px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-bbonfun,.bpmote-bmmount.bpflag-combine+.bpmote-bbonfun,.bpmote-chivmount.bpflag-combine+.bpmote-bbonfun,.bpmote-fpmount.bpflag-combine+.bpmote-bbonfun,.bpmote-fpnmount.bpflag-combine+.bpmote-bbonfun,.bpmote-orionmount.bpflag-combine+.bpmote-bbonfun,.bpmote-soarinmount.bpflag-combine+.bpmote-bbonfun,.bpmote-stmount.bpflag-combine+.bpmote-bbonfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-bbonfun{margin-left:-31px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-bcheerfun,.bpmote-ajtrmount.bpflag-combine+.bpmote-rcrfun,.bpmote-bmmount.bpflag-combine+.bpmote-bcheerfun,.bpmote-bmmount.bpflag-combine+.bpmote-rcrfun,.bpmote-chivmount.bpflag-combine+.bpmote-bcheerfun,.bpmote-chivmount.bpflag-combine+.bpmote-rcrfun,.bpmote-fpmount.bpflag-combine+.bpmote-bcheerfun,.bpmote-fpmount.bpflag-combine+.bpmote-rcrfun,.bpmote-fpnmount.bpflag-combine+.bpmote-bcheerfun,.bpmote-fpnmount.bpflag-combine+.bpmote-rcrfun,.bpmote-orionmount.bpflag-combine+.bpmote-bcheerfun,.bpmote-orionmount.bpflag-combine+.bpmote-rcrfun,.bpmote-soarinmount.bpflag-combine+.bpmote-bcheerfun,.bpmote-soarinmount.bpflag-combine+.bpmote-rcrfun,.bpmote-stmount.bpflag-combine+.bpmote-bcheerfun,.bpmote-stmount.bpflag-combine+.bpmote-rcrfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-bcheerfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-rcrfun{margin-left:-25px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-blyrafun,.bpmote-bmmount.bpflag-combine+.bpmote-blyrafun,.bpmote-chivmount.bpflag-combine+.bpmote-blyrafun,.bpmote-fpmount.bpflag-combine+.bpmote-blyrafun,.bpmote-fpnmount.bpflag-combine+.bpmote-blyrafun,.bpmote-orionmount.bpflag-combine+.bpmote-blyrafun,.bpmote-soarinmount.bpflag-combine+.bpmote-blyrafun,.bpmote-stmount.bpflag-combine+.bpmote-blyrafun,.bpmote-whoovesmount.bpflag-combine+.bpmote-blyrafun{margin-left:-8px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-bonfun,.bpmote-bmmount.bpflag-combine+.bpmote-bonfun,.bpmote-chivmount.bpflag-combine+.bpmote-bonfun,.bpmote-fpmount.bpflag-combine+.bpmote-bonfun,.bpmote-fpnmount.bpflag-combine+.bpmote-bonfun,.bpmote-orionmount.bpflag-combine+.bpmote-bonfun,.bpmote-soarinmount.bpflag-combine+.bpmote-bonfun,.bpmote-stmount.bpflag-combine+.bpmote-bonfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-bonfun{margin-left:-14px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-bppfun,.bpmote-ajtrmount.bpflag-combine+.bpmote-cheerfun,.bpmote-bmmount.bpflag-combine+.bpmote-bppfun,.bpmote-bmmount.bpflag-combine+.bpmote-cheerfun,.bpmote-chivmount.bpflag-combine+.bpmote-bppfun,.bpmote-chivmount.bpflag-combine+.bpmote-cheerfun,.bpmote-fpmount.bpflag-combine+.bpmote-bppfun,.bpmote-fpmount.bpflag-combine+.bpmote-cheerfun,.bpmote-fpnmount.bpflag-combine+.bpmote-bppfun,.bpmote-fpnmount.bpflag-combine+.bpmote-cheerfun,.bpmote-orionmount.bpflag-combine+.bpmote-bppfun,.bpmote-orionmount.bpflag-combine+.bpmote-cheerfun,.bpmote-soarinmount.bpflag-combine+.bpmote-bppfun,.bpmote-soarinmount.bpflag-combine+.bpmote-cheerfun,.bpmote-stmount.bpflag-combine+.bpmote-bppfun,.bpmote-stmount.bpflag-combine+.bpmote-cheerfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-bppfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-cheerfun{margin-left:-15px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-brarfun,.bpmote-bmmount.bpflag-combine+.bpmote-brarfun,.bpmote-chivmount.bpflag-combine+.bpmote-brarfun,.bpmote-fpmount.bpflag-combine+.bpmote-brarfun,.bpmote-fpnmount.bpflag-combine+.bpmote-brarfun,.bpmote-orionmount.bpflag-combine+.bpmote-brarfun,.bpmote-soarinmount.bpflag-combine+.bpmote-brarfun,.bpmote-stmount.bpflag-combine+.bpmote-brarfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-brarfun{margin-left:-49px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-brosefun,.bpmote-bmmount.bpflag-combine+.bpmote-brosefun,.bpmote-chivmount.bpflag-combine+.bpmote-brosefun,.bpmote-fpmount.bpflag-combine+.bpmote-brosefun,.bpmote-fpnmount.bpflag-combine+.bpmote-brosefun,.bpmote-orionmount.bpflag-combine+.bpmote-brosefun,.bpmote-soarinmount.bpflag-combine+.bpmote-brosefun,.bpmote-stmount.bpflag-combine+.bpmote-brosefun,.bpmote-whoovesmount.bpflag-combine+.bpmote-brosefun{margin-left:-7px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-btrixfun,.bpmote-ajtrmount.bpflag-combine+.bpmote-spraklefun,.bpmote-bmmount.bpflag-combine+.bpmote-btrixfun,.bpmote-bmmount.bpflag-combine+.bpmote-spraklefun,.bpmote-chivmount.bpflag-combine+.bpmote-btrixfun,.bpmote-chivmount.bpflag-combine+.bpmote-spraklefun,.bpmote-fpmount.bpflag-combine+.bpmote-btrixfun,.bpmote-fpmount.bpflag-combine+.bpmote-spraklefun,.bpmote-fpnmount.bpflag-combine+.bpmote-btrixfun,.bpmote-fpnmount.bpflag-combine+.bpmote-spraklefun,.bpmote-orionmount.bpflag-combine+.bpmote-btrixfun,.bpmote-orionmount.bpflag-combine+.bpmote-spraklefun,.bpmote-soarinmount.bpflag-combine+.bpmote-btrixfun,.bpmote-soarinmount.bpflag-combine+.bpmote-spraklefun,.bpmote-stmount.bpflag-combine+.bpmote-btrixfun,.bpmote-stmount.bpflag-combine+.bpmote-spraklefun,.bpmote-whoovesmount.bpflag-combine+.bpmote-btrixfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-spraklefun{margin-left:-30px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-derpfun,.bpmote-ajtrmount.bpflag-combine+.bpmote-trixfun,.bpmote-bmmount.bpflag-combine+.bpmote-derpfun,.bpmote-bmmount.bpflag-combine+.bpmote-trixfun,.bpmote-chivmount.bpflag-combine+.bpmote-derpfun,.bpmote-chivmount.bpflag-combine+.bpmote-trixfun,.bpmote-fpmount.bpflag-combine+.bpmote-derpfun,.bpmote-fpmount.bpflag-combine+.bpmote-trixfun,.bpmote-fpnmount.bpflag-combine+.bpmote-derpfun,.bpmote-fpnmount.bpflag-combine+.bpmote-trixfun,.bpmote-orionmount.bpflag-combine+.bpmote-derpfun,.bpmote-orionmount.bpflag-combine+.bpmote-trixfun,.bpmote-soarinmount.bpflag-combine+.bpmote-derpfun,.bpmote-soarinmount.bpflag-combine+.bpmote-trixfun,.bpmote-stmount.bpflag-combine+.bpmote-derpfun,.bpmote-stmount.bpflag-combine+.bpmote-trixfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-derpfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-trixfun{margin-left:-12px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-doctorfun,.bpmote-bmmount.bpflag-combine+.bpmote-doctorfun,.bpmote-chivmount.bpflag-combine+.bpmote-doctorfun,.bpmote-fpmount.bpflag-combine+.bpmote-doctorfun,.bpmote-fpnmount.bpflag-combine+.bpmote-doctorfun,.bpmote-orionmount.bpflag-combine+.bpmote-doctorfun,.bpmote-soarinmount.bpflag-combine+.bpmote-doctorfun,.bpmote-stmount.bpflag-combine+.bpmote-doctorfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-doctorfun{margin-left:-1px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-espeefun,.bpmote-bmmount.bpflag-combine+.bpmote-espeefun,.bpmote-chivmount.bpflag-combine+.bpmote-espeefun,.bpmote-fpmount.bpflag-combine+.bpmote-espeefun,.bpmote-fpnmount.bpflag-combine+.bpmote-espeefun,.bpmote-orionmount.bpflag-combine+.bpmote-espeefun,.bpmote-soarinmount.bpflag-combine+.bpmote-espeefun,.bpmote-stmount.bpflag-combine+.bpmote-espeefun,.bpmote-whoovesmount.bpflag-combine+.bpmote-espeefun{margin-left:-4px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-esplinfun,.bpmote-bmmount.bpflag-combine+.bpmote-esplinfun,.bpmote-chivmount.bpflag-combine+.bpmote-esplinfun,.bpmote-fpmount.bpflag-combine+.bpmote-esplinfun,.bpmote-fpnmount.bpflag-combine+.bpmote-esplinfun,.bpmote-orionmount.bpflag-combine+.bpmote-esplinfun,.bpmote-soarinmount.bpflag-combine+.bpmote-esplinfun,.bpmote-stmount.bpflag-combine+.bpmote-esplinfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-esplinfun{margin-left:3px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-excelianfun,.bpmote-bmmount.bpflag-combine+.bpmote-excelianfun,.bpmote-chivmount.bpflag-combine+.bpmote-excelianfun,.bpmote-fpmount.bpflag-combine+.bpmote-excelianfun,.bpmote-fpnmount.bpflag-combine+.bpmote-excelianfun,.bpmote-orionmount.bpflag-combine+.bpmote-excelianfun,.bpmote-soarinmount.bpflag-combine+.bpmote-excelianfun,.bpmote-stmount.bpflag-combine+.bpmote-excelianfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-excelianfun{margin-left:-33px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-lyrafun,.bpmote-ajtrmount.bpflag-combine+.bpmote-rosefun,.bpmote-bmmount.bpflag-combine+.bpmote-lyrafun,.bpmote-bmmount.bpflag-combine+.bpmote-rosefun,.bpmote-chivmount.bpflag-combine+.bpmote-lyrafun,.bpmote-chivmount.bpflag-combine+.bpmote-rosefun,.bpmote-fpmount.bpflag-combine+.bpmote-lyrafun,.bpmote-fpmount.bpflag-combine+.bpmote-rosefun,.bpmote-fpnmount.bpflag-combine+.bpmote-lyrafun,.bpmote-fpnmount.bpflag-combine+.bpmote-rosefun,.bpmote-orionmount.bpflag-combine+.bpmote-lyrafun,.bpmote-orionmount.bpflag-combine+.bpmote-rosefun,.bpmote-soarinmount.bpflag-combine+.bpmote-lyrafun,.bpmote-soarinmount.bpflag-combine+.bpmote-rosefun,.bpmote-stmount.bpflag-combine+.bpmote-lyrafun,.bpmote-stmount.bpflag-combine+.bpmote-rosefun,.bpmote-whoovesmount.bpflag-combine+.bpmote-lyrafun,.bpmote-whoovesmount.bpflag-combine+.bpmote-rosefun{margin-left:0;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-orschfun,.bpmote-bmmount.bpflag-combine+.bpmote-orschfun,.bpmote-chivmount.bpflag-combine+.bpmote-orschfun,.bpmote-fpmount.bpflag-combine+.bpmote-orschfun,.bpmote-fpnmount.bpflag-combine+.bpmote-orschfun,.bpmote-orionmount.bpflag-combine+.bpmote-orschfun,.bpmote-soarinmount.bpflag-combine+.bpmote-orschfun,.bpmote-stmount.bpflag-combine+.bpmote-orschfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-orschfun{margin-left:4px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-speedyfun,.bpmote-bmmount.bpflag-combine+.bpmote-speedyfun,.bpmote-chivmount.bpflag-combine+.bpmote-speedyfun,.bpmote-fpmount.bpflag-combine+.bpmote-speedyfun,.bpmote-fpnmount.bpflag-combine+.bpmote-speedyfun,.bpmote-orionmount.bpflag-combine+.bpmote-speedyfun,.bpmote-soarinmount.bpflag-combine+.bpmote-speedyfun,.bpmote-stmount.bpflag-combine+.bpmote-speedyfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-speedyfun{margin-left:7px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-surfun,.bpmote-bmmount.bpflag-combine+.bpmote-surfun,.bpmote-chivmount.bpflag-combine+.bpmote-surfun,.bpmote-fpmount.bpflag-combine+.bpmote-surfun,.bpmote-fpnmount.bpflag-combine+.bpmote-surfun,.bpmote-orionmount.bpflag-combine+.bpmote-surfun,.bpmote-soarinmount.bpflag-combine+.bpmote-surfun,.bpmote-stmount.bpflag-combine+.bpmote-surfun,.bpmote-whoovesmount.bpflag-combine+.bpmote-surfun{margin-left:-10px;}
+.bpmote-ajtrmount.bpflag-combine+.bpmote-thunderlanefun,.bpmote-bmmount.bpflag-combine+.bpmote-thunderlanefun,.bpmote-chivmount.bpflag-combine+.bpmote-thunderlanefun,.bpmote-fpmount.bpflag-combine+.bpmote-thunderlanefun,.bpmote-fpnmount.bpflag-combine+.bpmote-thunderlanefun,.bpmote-orionmount.bpflag-combine+.bpmote-thunderlanefun,.bpmote-soarinmount.bpflag-combine+.bpmote-thunderlanefun,.bpmote-stmount.bpflag-combine+.bpmote-thunderlanefun,.bpmote-whoovesmount.bpflag-combine+.bpmote-thunderlanefun{margin-left:1px;}
+.bpmote-ajtrmount.bpflag-combine+a[href^=/pp].bpflag-combine+a,.bpmote-bmmount.bpflag-combine+a[href^=/pp].bpflag-combine+a,.bpmote-chivmount.bpflag-combine+a[href^=/pp].bpflag-combine+a,.bpmote-fpmount.bpflag-combine+a[href^=/pp].bpflag-combine+a,.bpmote-fpnmount.bpflag-combine+a[href^=/pp].bpflag-combine+a,.bpmote-orionmount.bpflag-combine+a[href^=/pp].bpflag-combine+a,.bpmote-soarinmount.bpflag-combine+a[href^=/pp].bpflag-combine+a,.bpmote-stmount.bpflag-combine+a[href^=/pp].bpflag-combine+a,.bpmote-whoovesmount.bpflag-combine+a[href^=/pp].bpflag-combine+a{left:-70px;position:relative;top:135px;width:150px;z-index:4;}
+.bpmote-bmmount.bpflag-combine:after,.bpmote-orionmount.bpflag-combine:before{background-position:0 -1220px;}
+.bpmote-bmmount.bpflag-combine:before,.bpmote-orionmount.bpflag-combine:after{background-position:0 -2135px;}
+.bpmote-bmmount.bpflag-combine+a,.bpmote-chivmount.bpflag-combine+a{left:-219px!important;margin-bottom:-999px;margin-right:-999px;position:relative;top:153px;z-index:2;}
+.bpmote-chivmount.bpflag-combine:after,.bpmote-fpnmount.bpflag-combine:before{background-position:0 -1830px;}
+.bpmote-chivmount.bpflag-combine:before,.bpmote-soarinmount.bpflag-combine:after{background-position:0 -915px;}
+.bpmote-fpmount.bpflag-combine:after,.bpmote-soarinmount.bpflag-combine:before{background-position:0 0;}
+.bpmote-fpmount.bpflag-combine:before,.bpmote-fpnmount.bpflag-combine:after{background-position:0 -610px;}
+.bpmote-whoovesmount.bpflag-combine:after,.bpmote-whoovesmount.bpflag-combine:before{background-position:0 -2440px;}
