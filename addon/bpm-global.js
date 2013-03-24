@@ -17,6 +17,37 @@ var emote_regexp = /\[\]\((\/[\w:!#\/\-]+)\s*(?:["']([^"]*)["'])?\)/g;
 // this!==window on Opera, and doesn't have this object for some reason
 var Node = find_global("Node");
 
+function preserve_scroll(node, callback) {
+    // Move up through the DOM and see if there's a container element that
+    // scrolls, so we can keep track of how the size of its contents change.
+    // Also, this is really expensive.
+    var container = locate_matching_ancestor(parent, function(element) {
+        var style = window.getComputedStyle(element);
+        if(style && (style.overflowY === "auto" || style.overflowY === "scroll")) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+
+    if(container) {
+        var top = container.scrollTop;
+        var height = container.scrollHeight;
+        // visible height + amount hidden > total height
+        // + 1 just for a bit of safety
+        var at_bottom = (container.clientHeight + top + 1 >= height);
+    }
+
+    callback();
+
+    // If the parent element has gotten higher due to our emotes, and it was at
+    // the bottom before, scroll it down by the delta.
+    if(container && at_bottom && top && container.scrollHeight > height) {
+        var delta = container.scrollHeight - height;
+        container.scrollTop = container.scrollTop + delta;
+    }
+}
+
 /*
  * Searches elements recursively for [](/emotes), and converts them.
  */
@@ -40,6 +71,8 @@ function process_text(store, root) {
         var end_of_prev = 0; // End index of previous emote match
         var match;
 
+        // Locate every emote we can in this text node. Each time through,
+        // append the text before it and our new emote node to new_elements.
         while(match = emote_regexp.exec(node.data)) {
             emotes_matched++;
 
@@ -91,57 +124,35 @@ function process_text(store, root) {
         // If length == 0, then there were no emote matches to begin with,
         // and we should just leave it alone
         if(new_elements.length) {
-            // Keep track of how the size of the container changes. Also,
-            // don't even dream of doing this for every node.
-            var scroll_parent = locate_matching_ancestor(parent, function(element) {
-                var style = window.getComputedStyle(element);
-                if(style && (style.overflowY === "auto" || style.overflowY === "scroll")) {
-                    return true;
-                } else {
-                    return false;
-                }
-            });
-
-            var scroll_top, scroll_height, at_bottom;
-            if(scroll_parent) {
-                scroll_top = scroll_parent.scrollTop;
-                scroll_height = scroll_parent.scrollHeight;
-                // visible height + amount hidden > total height
-                // + 1 just for a bit of safety
-                at_bottom = (scroll_parent.clientHeight + scroll_top + 1 >= scroll_height);
-            }
-
-            // There were emotes, so grab the last bit of text at the end
+            // There were emotes, so grab the last bit of text at the end too
             var end_text = node.data.slice(end_of_prev);
             if(end_text) {
                 new_elements.push(document.createTextNode(end_text));
             }
 
-            // Insert all our new nodes
-            for(var i = 0; i < new_elements.length; i++) {
-                parent.insertBefore(new_elements[i], node);
-            }
-
-            // Remove original text node
-            deletion_list.push(node);
-
-            // Convert alt text and such. We want to do this after we insert
-            // our new nodes (so that the alt-text element goes to the right
-            // place) but before we rescroll.
-            if(store.prefs.showAltText) {
-                for(var i = 0; i < emote_elements.length; i++) {
-                    process_alt_text(emote_elements[i]);
+            preserve_scroll(parent, function() {
+                // Insert all our new nodes
+                for(var i = 0; i < new_elements.length; i++) {
+                    parent.insertBefore(new_elements[i], node);
                 }
-            }
 
-            // If the parent element has gotten higher due to our emotes,
-            // and it was at the bottom before, scroll it down by the delta.
-            if(scroll_parent && at_bottom && scroll_top && scroll_parent.scrollHeight > scroll_height) {
-                var delta = scroll_parent.scrollHeight - scroll_height;
-                scroll_parent.scrollTop = scroll_parent.scrollTop + delta;
-            }
+                // Remove original text node. FIXME: since we delay this, are we
+                // affecting the scroll-fixing code by resizing stuff later?
+                deletion_list.push(node);
+
+                // Convert alt text and such. We want to do this after we insert
+                // our new nodes (so that the alt-text element goes to the right
+                // place) but before we rescroll.
+                if(store.prefs.showAltText) {
+                    for(var i = 0; i < emote_elements.length; i++) {
+                        process_alt_text(emote_elements[i]);
+                    }
+                }
+            });
         }
     }, function() {
+        // Code run after the entire tree has been walked- delete the text
+        // nodes that we deferred
         if(nodes_processed) {
             log_debug("Processed", nodes_processed, "node(s) and matched", emotes_matched, "emote(s)");
         }
