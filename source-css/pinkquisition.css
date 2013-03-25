@@ -1,0 +1,449 @@
+#header
+{
+border-bottom:5px solid #c10058;
+position:relative;
+background-color:#ffb9de;
+z-index:99}
+div.titlebox span.word {
+    display: none;
+    color:#ffb9de;
+    border-bottom:#c10058;
+    font-family:"Ariel";
+    font-size:20px;
+    }
+div.titlebox .subscribers span.number:after {
+    color:black;
+    font-family:"Ariel";
+    font-size:20px;
+
+    content: " Pinkquisitioners"
+    }
+div.titlebox .users-online span.number:after {
+    content: " Online Now"
+    }
+/*body
+{
+background-color:#ffb9de;
+}*/
+h1
+{
+background-color:#ffb9de;
+text-align:center;
+font-size:30px;
+}
+p
+{
+font-family:"Ariel";
+font-size:20px;
+color:black;
+}
+#sr-header-area
+{
+background-color:#ee80c4;
+white-space:nowrap;
+text-transform:uppercase;
+border-bottom:1px solid gray;
+font-size:90%;
+height:18px;
+line-height:18px
+}
+#mail
+{
+position:relative;
+top:2px;
+background-color:pink;
+display:inline-block;
+text-indent:-9999px;
+overflow:hidden;
+width:15px;
+height:10px
+}
+#mail.havemail
+{
+background-position:-102px -616px;
+background-repeat:no-repeat}
+
+/*div#header
+{
+background-color:#E3A1BC;
+border-bottom:1px solid #7A5765
+}*/
+.tabmenu li a
+{
+background-color:#FFE0ED;
+color:#6E565F
+}
+.tabmenu li.selected a
+{
+border:1px solid #7A5765;
+border-bottom:1px solid white
+}
+
+
+/*Motes Motes Motes Motes...*/
+
+
+
+a[href|="/chibitavi"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 162px;
+    background-image: url(%%chibitavi%%) !important
+    }
+a[href|="/rchibitavi"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 162px;
+    background-image: url(%%rchibitavi%%) !important
+    }
+a[href|="/twihornblow"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 140px;
+    height: 150px;
+    background-image: url(%%twihorn2%%) !important
+    }
+a[href|="/rtwihornblow"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 140px;
+    height: 150px;
+    background-image: url(%%rtwihorn2%%) !important
+    }
+a[href|="/chibipie"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 135px;
+    height: 150px;
+    background-image: url(%%chibipie%%) !important
+    }
+a[href|="/rchibipie"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 135px;
+    height: 150px;
+    background-image: url(%%rchibipie%%) !important
+    }
+a[href|="/sittiepie"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 116px;
+    height: 150px;
+    background-image: url(%%sittiepie%%) !important
+    }
+a[href|="/rsittiepie"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 116px;
+    height: 150px;
+    background-image: url(%%rsittiepie%%) !important
+    }
+a[href|="/givemeyourpants"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%givemeyourpants%%) !important
+    }
+a[href|="/rgivemeyourpants"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%rgivemeyourpants%%) !important
+    }
+a[href|="/cakeshake"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 199px;
+    background-image: url(%%cakeshake%%) !important
+    }
+a[href|="/rcakeshake"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 199px;
+    background-image: url(%%rcakeshake%%) !important
+    }
+a[href|="/pinkiesquiggle"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 133px;
+    height: 150px;
+    background-image: url(%%pinkiesquiggle%%) !important
+    }
+a[href|="/rpinkiesquiggle"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 133px;
+    height: 150px;
+    background-image: url(%%rpinkiesquiggle%%) !important
+    }
+a[href|="/steampink"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 146px;
+    height: 150px;
+    background-image: url(%%steampink%%) !important
+    }
+a[href|="/rsteampink"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 146px;
+    height: 150px;
+    background-image: url(%%rsteampink%%) !important
+    }
+a[href|="/totheface"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 113px;
+    background-image: url(%%totheface%%) !important
+    }
+a[href|="/rtotheface"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 113px;
+    background-image: url(%%rtotheface%%) !important
+    }
+a[href|="/zoeylee"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 125px;
+    height: 150px;
+    background-image: url(%%zoilee%%) !important
+    }
+a[href|="/rzoeylee"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 125px;
+    height: 150px;
+    background-image: url(%%rzoilee%%) !important
+    }
+a[href|="/fillyglaze"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 149px;
+    height: 150px;
+    background-image: url(%%fillyglaze%%) !important
+    }
+a[href|="/rfillyglaze"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 149px;
+    height: 150px;
+    background-image: url(%%rfillyglaze%%) !important
+    }
+a[href|="/fillytombstone"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 149px;
+    height: 150px;
+    background-image: url(%%fillytombstone%%) !important
+    }
+a[href|="/rfillytombstone"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 149px;
+    height: 150px;
+    background-image: url(%%rfillytombstone%%) !important
+    }
+a[href|="/pinkiepresent"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 136px;
+    background-image: url(%%pinkiepresent%%) !important
+    }
+a[href|="/rpinkiepresent"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 136px;
+    background-image: url(%%rpinkiepresent%%) !important
+    }
+a[href|="/schooliepie"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 118px;
+    background-image: url(%%schooliepie%%) !important
+    }
+a[href|="/rschooliepie"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 118px;
+    background-image: url(%%rschooliepie%%) !important
+    }
+a[href|="/pinkiefire"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 111px;
+    background-image: url(%%pinkiefire%%) !important
+    }
+a[href|="/rpinkiefire"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 111px;
+    background-image: url(%%rpinkiefire%%) !important
+    }
+a[href|="/crossmyheart"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%crossmyheart%%) !important
+    }
+a[href|="/rcrossmyheart"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%rcrossmyheart%%) !important
+    }
+a[href|="/inmyeye"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 135px;
+    height: 150px;
+    background-image: url(%%inmyeye%%) !important
+    }
+a[href|="/rinmyeye"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 135px;
+    height: 150px;
+    background-image: url(%%rinmyeye%%) !important
+    }
+a[href|="/pperpsweat"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 97px;
+    background-image: url(%%pperpsweat%%) !important
+    }
+a[href|="/rpperpsweat"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 97px;
+    background-image: url(%%rpperpsweat%%) !important
+    }
+a[href|="/pinkiebow"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 143px;
+    background-image: url(%%pinkiebow%%) !important
+    }
+a[href|="/rpinkiebow"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 143px;
+    background-image: url(%%rpinkiebow%%) !important
+    }
+a[href|="/ppholmes"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 147px;
+    background-image: url(%%ppholmes%%) !important
+    }
+a[href|="/rppholmes"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 147px;
+    background-image: url(%%rppholmes%%) !important
+    }
+a[href|="/ppwhatsup"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 110px;
+    background-image: url(%%pptempname%%) !important
+    }
+a[href|="/rppwhatsup"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 110px;
+    background-image: url(%%rpptempname%%) !important
+    }
+
+/*Side Bar*/
+
+.titlebox strong {
+    font-size: medium
+    }
+.titlebox del {
+    color: white
+    }
+.titlebox em {
+    font-size: 9px;
+    text-decoration: none;
+    font-style: normal
+    }
+.titlebox strong em {
+    font-size: 8px;
+    font-style: normal;
+    font-weight: normal
+    }
+.titlebox table {
+    display: none;
+    clear: both
+    }
+.side div.usertext-body:hover table {
+    display: block;
+    clear: both
+    }
