@@ -118,9 +118,23 @@
  * the resizing code in bpm.js that hardcodes minimum values and offsets.
  */
 
-/* "emotes" button */
+/*
+ * Emotes button on the standard display requires some special margins.
+ */
 .bpm-search-toggle {
     margin: 0 0px 0 5px !important;
+}
+
+/*
+ * Emotes button on .compact display, for mobile niceness. Reset margins back
+ * to their default, and replicate the padding that the help button has.
+ *
+ * (Not that it matters, since as of right now, the "help" link is weird and
+ * ugly on Firefox for some reason.)
+ */
+.bpm-search-toggle.newbutton {
+    padding: 0px;
+    margin: 3px 2px 2px 2px !important;
 }
 
 /* Container */
@@ -142,6 +156,17 @@
      */
     z-index: 43112609; /* P sub 47 */
     visibility: hidden;
+}
+
+/*
+ * Compact display changes: kill the drag/resize boxes (useless), the results
+ * count (uses valuable space), and let the inpux box take up as much room as
+ * possible
+ */
+#bpm-sb-container.bpm-compact #bpm-sb-dragbox,
+#bpm-sb-container.bpm-compact #bpm-sb-resize,
+#bpm-sb-container.bpm-compact #bpm-sb-resultinfo {
+    display: none;
 }
 
 /* Top row widget container */
@@ -233,6 +258,8 @@
 #bpm-sb-helplink, #bpm-sb-optionslink {
     height: 20px;
     line-height: 20px;
+    text-decoration: none;
+    font-size: x-small;
 }
 #bpm-sb-helplink {
     margin-left: 4px;

@@ -1,3 +1,7 @@
+// Whether or not we're running on Reddit's .compact display, i.e. their mobile
+// version. We modify the search box UI a fair bit to compensate in this case.
+var is_compact = ends_with(document.location.pathname, ".compact");
+
 // Search box elements
 var sb_container = null;
 var sb_dragbox = null;
@@ -94,6 +98,10 @@ function inject_search_box() {
     sb_resize = document.getElementById("bpm-sb-resize");
 
     sb_global_icon = document.getElementById("bpm-global-icon");
+
+    if(is_compact) {
+        sb_container.classList.add("bpm-compact");
+    }
 }
 
 /*
@@ -150,6 +158,12 @@ function init_search_ui(store) {
             // .dataset would probably be nicer, but just in case...
             var emote_name = event.target.getAttribute("data-emote");
             inject_emote(store, emote_name);
+            // On compact display, we want to get out of the way as soon as
+            // possible. (Might want to default to this on standard display too,
+            // but we're not so offensively invasive there.)
+            if(is_compact) {
+                hide_search_box();
+            }
         }
     }), false);
 
@@ -170,13 +184,15 @@ function init_search_ui(store) {
         switch_to_sb_tab(sb_results);
     }), false);
 
-    // Set up default positions
-    sb_container.style.left = store.prefs.searchBoxInfo[0] + "px";
-    sb_container.style.top = store.prefs.searchBoxInfo[1] + "px";
-    sb_container.style.width = store.prefs.searchBoxInfo[2] + "px";
-    sb_container.style.height = store.prefs.searchBoxInfo[3] + "px";
-    // 62 is a magic value from the CSS.
-    sb_tabframe.style.height = (store.prefs.searchBoxInfo[3] - 62) + "px";
+    // Set up default positions. NOTE: The container size we set doesn't matter
+    // in compact mode. As soon as we open the box, it goes fullscreen anyway.
+    var sizeinfo = store.prefs.searchBoxInfo;
+    if(is_compact) {
+        set_sb_position(0, 0);
+    } else {
+        set_sb_position(sizeinfo[0], sizeinfo[1]);
+        set_sb_size(sizeinfo[2], sizeinfo[3]);
+    }
     sb_global_icon.style.left = store.prefs.globalIconPos[0] + "px";
     sb_global_icon.style.top = store.prefs.globalIconPos[1] + "px";
 
@@ -200,14 +216,32 @@ function init_search_ui(store) {
         var sb_width = Math.max(dx + search_box_width, 420);
         var sb_height = Math.max(dy + search_box_height, 62+5);
 
-        sb_container.style.width = sb_width + "px";
-        sb_container.style.height = sb_height + "px";
-        sb_tabframe.style.height = (sb_height - 62) + "px";
+        set_sb_size(sb_width, sb_height);
 
         store.prefs.searchBoxInfo[2] = sb_width;
         store.prefs.searchBoxInfo[3] = sb_height;
         store.sync_key("searchBoxInfo");
     });
+}
+
+function set_sb_position(left, top) {
+    sb_container.style.left = left + "px";
+    sb_container.style.top = top + "px";
+}
+
+function set_sb_size(width, height) {
+    // 12 and 7 are compensation for container margins/border/padding. Source
+    // values are hardcoded in CSS.
+    sb_container.style.width = (width - 12) + "px";
+    sb_container.style.height = (height - 7) + "px";
+    // 62: compensation for top row, bottom row, and various margins (inc.
+    // padding of tabframe itself).
+    sb_tabframe.style.height = (height - 70) + "px";
+    if(is_compact) {
+        // 61: width of top row minus close button and various margins (results
+        // text and dragbox are not present). Take up all remaining space.
+        sb_input.style.width = (width - 61) + "px";
+    }
 }
 
 /*
@@ -248,6 +282,13 @@ function show_search_box(store) {
     sb_container.style.visibility = "visible";
     sb_input.focus();
     switch_to_sb_tab(sb_results);
+
+    if(is_compact) {
+        // In compact mode, we force it to be fullscreen. We do that here in
+        // case the size has changed since last time (i.e. on page load, a
+        // scrollbar will appear).
+        set_sb_size(document.documentElement.clientWidth, document.documentElement.clientHeight);
+    }
 
     // If we haven't run before, go search for things
     if(!sb_firstrun) {
@@ -390,6 +431,10 @@ function inject_emotes_button(store, usertext_edits) {
             // be readonly. Writes fail silently.
             button.setAttribute("type", "button");
             button.classList.add("bpm-search-toggle");
+            if(is_compact) {
+                // Blend in with the other mobile buttons
+                button.classList.add("newbutton");
+            }
             button.textContent = "emotes";
             // Since we come before the save button in the DOM, we tab first,
             // but this is generally annoying. Correcting this ideally would
@@ -399,11 +444,20 @@ function inject_emotes_button(store, usertext_edits) {
             // So instead it's just untabbable.
             button.tabIndex = 100;
             wire_emotes_button(store, button, textarea);
-            // Put it at the end- Reddit's JS uses get(0) when looking for
-            // elements related to the "formatting help" linky, and we don't
-            // want to get in the way of that.
-            var help_toggle = usertext_edits[i].getElementsByClassName("help-toggle");
-            help_toggle[0].appendChild(button);
+            // On the standard display, we want the emotes button to be all the
+            // way to the right, next to the "formatting help" link. However,
+            // this breaks rather badly on .compact display (sort of merging
+            // into it), so do something different there.
+            if(is_compact) {
+                var button_bar = find_class(usertext_edits[i], "usertext-buttons");
+                button_bar.insertBefore(button, find_class(button_bar, "status"));
+            } else {
+                // Make sure we put it at the end- Reddit's JS uses get(0) when
+                // looking for elements related to the "formatting help" linky,
+                // and we don't want to get in the way of that.
+                var help_toggle = usertext_edits[i].getElementsByClassName("help-toggle");
+                help_toggle[0].appendChild(button);
+            }
         }
     }
 }
