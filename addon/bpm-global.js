@@ -21,7 +21,7 @@ function preserve_scroll(node, callback) {
     // Move up through the DOM and see if there's a container element that
     // scrolls, so we can keep track of how the size of its contents change.
     // Also, this is really expensive.
-    var container = locate_matching_ancestor(parent, function(element) {
+    var container = locate_matching_ancestor(node, function(element) {
         var style = window.getComputedStyle(element);
         if(style && (style.overflowY === "auto" || style.overflowY === "scroll")) {
             return true;
@@ -103,7 +103,7 @@ function process_text(store, root) {
             element.classList.add(emote_info.css_class);
             // Some things for alt-text. The .href is a bit of a lie,
             // but necessary to keep spoiler emotes reasonably sane.
-            element.setAttribute("href", emote_name);
+            element.setAttribute("href", match[1]);
             element.setAttribute("data-bpm_state", "e");
             element.setAttribute("data-bpm_emotename", emote_name);
             element.setAttribute("data-bpm_srname", emote_info.source_name);
