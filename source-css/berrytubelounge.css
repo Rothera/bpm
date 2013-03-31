@@ -609,7 +609,7 @@ clear: none;
 float: left;
 width: 150px;
 height: 113px;
-background-image: url(%%itsafake%%)
+background-image: url(%%cadessheet%%)
 }
 a[href|="/itsreal"], a[href|="/dontyouunderstand"], a[href|="/itsareal"]{
 display:block;
@@ -617,7 +617,7 @@ clear: none;
 float: left;
 width: 150px;
 height: 125px;
-background-image: url(%%itsreal%%)
+background-image: url(%%cadessheet%%)
 }
 a[href|="/calmdowntwilight"]{
 display:block;
@@ -633,7 +633,7 @@ clear: none;
 float: left;
 width: 150px;
 height: 133px;
-background-image: url(%%bpfreakout%%)
+background-image: url(%%cadessheet%%)
 }
 a[href|="/bpdrinkout"]{
 display:block;
@@ -641,7 +641,7 @@ clear: none;
 float: left;
 width: 150px;
 height: 132px;
-background-image: url(%%bpdrinkout%%)
+background-image: url(%%cadessheet%%)
 }
 a[href|="/ponykoreaisbestkorea"]{
 display:block;
@@ -657,11 +657,28 @@ clear: none;
 float: left;
 width: 150px;
 height: 110px;
-background-image: url(%%pinkfluffy%%)
+background-image: url(%%cadessheet%%)
 }
 
 /* End Cades' Edits */
 
+a[href|="/drinktime"], a[href|="/timetodrink"], a[href|="/drinksoclock"]{
+display:block;
+clear: none;
+float: left;
+width: 352px;
+height: 242px;
+background-image: url(%%cadessheet%%)
+}
+
+a[href|="/shotstime"], a[href|="/shotsoclock"], a[href|="/ppdrinktime"]{
+display:block;
+clear: none;
+float: left;
+width: 352px;
+height: 242px;
+background-image: url(%%cadessheet%%)
+}
 
 /* Sheet offsets */
 
@@ -743,6 +760,30 @@ background-position: -140px -560px
 
 a[href|="/nomeansno"] {
 background-position: -0px -700px
+}
+
+a[href|="/pfudon"], a[href|="/pfudor"], a[href|="/pinkfluffyunicornsdancingonrainbows"], a[href|="/pinkfluffyunicorndancingonrainbows"] {
+background-position: -0px -245px
+}
+
+a[href|="/itsafake"], a[href|="/itsfake"] {
+background-position: -0px -132px
+}
+
+a[href|="/itsreal"], a[href|="/dontyouunderstand"], a[href|="/itsareal"] {
+background-position: -150px -133px
+}
+
+a[href|="/bpfreakout"] {
+background-position: -150px -0px
+}
+
+a[href|="/drinktime"], a[href|="/timetodrink"], a[href|="/drinksoclock"] {
+background-position: -0px -355px
+}
+
+a[href|="/shotstime"], a[href|="/shotsoclock"], a[href|="/ppdrinktime"] {
+background-position: -0px -597px
 }
 
 .subscribers .word {

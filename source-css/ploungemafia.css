@@ -117,7 +117,18 @@ hr {
     height: 26px;
     width: 32px;
 }
-
+.flair-submitter {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%submitter3%%);
+    display: inline-block;
+    margin-bottom:-2px;
+    height: 10px;
+    width: 17px;
+}
 /* Link flair
 */
 
@@ -367,6 +378,47 @@ left: 0;
     content: "taco";
 }
 
+/* Signup test */
+/*
+a[href*="signup"].title:link {
+   color: blue;   
+}
+
+a[href*="signup"].title:link .commentarea .usertext-edit:before {
+    content: "Test.";
+    display: block;
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: 4px;
+    margin-right: -5px;
+    padding: 4px;
+    color: #000 !important;
+    background-color:#f6e69f;
+    border:1px solid orange;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+a[href*="signups"].title:link {
+   color: blue;   
+}
+
+a[href*="signups"].title:link .commentarea .usertext-edit:before {
+    content: "Test.";
+    display: block;
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: 4px;
+    margin-right: -5px;
+    padding: 4px;
+    color: #000 !important;
+    background-color:#f6e69f;
+    border:1px solid orange;
+    font-size: 11px;
+    font-weight: bold;
+} */
+
 /* No flair on modbox */
 
 .sidecontentbox .flair {
@@ -434,12 +486,27 @@ a.author[href$="DiscordDraconequus"] {
     letter-spacing: -20px
     }
 a.author[href$="DiscordDraconequus"]:after {
-    content: "CupcakeDraconequus";
+    content: "_______Draconequus";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;
     letter-spacing: normal
     }
+
+
+
+body.res a.author[href$="______Draconequus"] {color: white; background-color: #0055DF }
+body.res a.author[href$="PretzelDraconequus"] {color: white; background-color: #0055DF }
+body.res a.author[href$="CupcakeDraconequus"] {color: white; background-color: #0055DF }
+/*
+a.author[href$="CupcakeDraconequus"], a.author[href$="PretzelDraconequus"], a.author[href$="______Draconequus"] {
+    content: "[S]";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    } */
+
 /* Removed cause taco's a butt. */
 
 a.author[href$="Phei"] {

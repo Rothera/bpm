@@ -105,8 +105,6 @@ body.res-nightmode:first-of-type {
 /*==================Announcement==================*/
 /*DC05 The blurb that links to whatever post I want it to*/
 /*CHANGE THIS FIELD IN THE SIDEBAR. Do not remove the hash tags. Follows same rules as comment links*/
-/*At some point Draze smells will be the announcement (Draze: :( ).*/
-/*Wagon Week 10 Trouble in Terrorist town maybe?*/
 
 body > .content:before{
     display: block;
@@ -324,7 +322,7 @@ body > .content:before{
 
 /*==================Names==================*/
 
-/*Add a name here to replace it. Ensure , ends each line except the final one. Capitalization is important*/
+/*Add a name here to replace it. Ensure , ends each line except the final one. Capitalization is important*//*
 
 a.author[href$="srsbsnsman"],
 a.author[href$="Sangfroidish"],
@@ -343,7 +341,8 @@ a.author[href$="sna_fu_bar"]
     content: "";
     }
 
-/*And here; Remember to maintain formatting*/
+*/
+/*And here; Remember to maintain formatting*//*
 
 a.author[href$="srsbsnsman"]:before,
 a.author[href$="Sangfroidish"]:before,
@@ -371,7 +370,8 @@ a.author[href$="Dundrioundio"]:before {content: "Dundrio"}
 a.author[href$="Dwarflord"]:before {content: "Cinor"}
 a.author[href$="thepostaldud3"]:before {content: "steev"}
 
-/*Names for extra text go here*/
+*/
+/*Names for extra text go here *//*
 a.author[href$="Sangfroidish"]:after,
 a.author[href$="DoomedCivilian"]:after,
 a.author[href$="Draze"]:after,
@@ -390,7 +390,9 @@ a.author[href$="starkinmn"]:after
     font-size:10px!important; 
     letter-spacing:normal; 
     }
-/*Extra text here, add spaces so it looks nice*/
+
+*/
+/*Extra text here, add spaces so it looks nice*//*
 a.author[href$="Sangfroidish"]:after { content:" Shoehorn Sexpert "}
 a.author[href$="DoomedCivilian"]:after { content:" CSS Breaker "}
 a.author[href$="Draze"]:after { content: " Giddy Up "}
@@ -402,7 +404,7 @@ a.author[href$="ctare"]:after {content: " Among other things "}
 a.author[href$="Dwarflord"]:after {content: " Will write that fic someday "}
 a.author[href$="moonomnom"]:after {content: " Dayum shame"}
 
-
+*/
 /* This is to append something to everyone. Remove comments to activate*/
 /*
 a.author:before{
@@ -415,6 +417,22 @@ a.author:after{
     content:" is a silly pony"!important
     }
 */
+
+/*April fools stuff :)*/
+
+a.author{ 
+    font-size:0!important; 
+    overflow:hidden; 
+    display:inline-block; 
+    content: "";
+    }
+
+a.author:before{
+    font-size:10px!important; 
+    visibility:visible!important;
+    content:"Draze";
+    }
+
 
 
 /*==================EMOTES==================*/
