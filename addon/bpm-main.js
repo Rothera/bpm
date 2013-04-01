@@ -33,10 +33,10 @@ function init_css(store) {
                 // You never know, maybe it'll work
                 link_css("/extracss-pure.css");
             }
-        }
 
-        if(store.prefs.enableNSFW) {
-            link_css("/combiners-nsfw.css");
+            if(store.prefs.enableNSFW) {
+                link_css("/combiners-nsfw.css");
+            }
         }
 
         if(platform === "chrome-ext") {
