@@ -48,6 +48,29 @@ function preserve_scroll(node, callback) {
     }
 }
 
+function make_emote(match, parts, name, info) {
+    // Build emote. (Global emotes are always -in)
+    var element = document.createElement("span");
+    element.classList.add("bpflag-in");
+
+    // Some lies for alt-text.
+    element.setAttribute("href", match[1]);
+    if(match[2]) {
+        // Note: the quotes aren't captured by the regexp
+        element.title = match[2];
+    }
+
+    element.classList.add("bpm-emote");
+    element.setAttribute("data-bpm_emotename", name);
+    element.setAttribute("data-bpm_srname", info.source_name);
+    element.setAttribute("data-bpm_state", "eT"); // TODO: "n" flag
+
+    element.classList.add(info.css_class);
+    add_flags(element, parts);
+
+    return element;
+}
+
 /*
  * Searches elements recursively for [](/emotes), and converts them.
  */
@@ -78,14 +101,14 @@ function process_text(store, root) {
 
             // Don't normalize case for emote lookup
             var parts = match[1].split("-");
-            var emote_name = parts[0];
-            var emote_info = store.lookup_emote(emote_name, false);
+            var name = parts[0];
+            var info = store.lookup_emote(name, false);
 
-            if(emote_info === null) {
+            if(info === null) {
                 continue;
             }
 
-            if(store.is_disabled(emote_info)) {
+            if(store.is_disabled(info)) {
                 continue;
             }
 
@@ -96,26 +119,10 @@ function process_text(store, root) {
                 new_elements.push(document.createTextNode(before_text));
             }
 
-            // Build emote. (Global emotes are always -in)
-            var element = document.createElement("span");
-            element.classList.add("bpflag-in");
-            element.classList.add("bpm-emote");
-            element.classList.add(emote_info.css_class);
-            // Some things for alt-text. The .href is a bit of a lie,
-            // but necessary to keep spoiler emotes reasonably sane.
-            element.setAttribute("href", match[1]);
-            element.setAttribute("data-bpm_state", "e");
-            element.setAttribute("data-bpm_emotename", emote_name);
-            element.setAttribute("data-bpm_srname", emote_info.source_name);
+            element = make_emote(match, parts, name, info);
+
             new_elements.push(element);
             emote_elements.push(element);
-
-            add_flags(element, parts);
-
-            if(match[2]) {
-                // Alt-text. (Quotes aren't captured by the regexp)
-                element.title = match[2];
-            }
 
             // Next text element will start after this emote
             end_of_prev = match.index + match[0].length;
@@ -152,7 +159,10 @@ function process_text(store, root) {
         }
     }, function() {
         // Code run after the entire tree has been walked- delete the text
-        // nodes that we deferred
+        // nodes that we deferred. FIXME: this is dumb, we should be removing
+        // stuff as we go so the scrollfix code works right, and so huge pages
+        // behave more sanely (you'll see emotes appear, then MUCH LATER the
+        // text disappear).
         if(nodes_processed) {
             log_debug("Processed", nodes_processed, "node(s) and matched", emotes_matched, "emote(s)");
         }
