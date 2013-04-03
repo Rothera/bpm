@@ -8,6 +8,7 @@
     href="https://chrome.google.com/webstore/detail/bkkmhlceghomaajdimmejkhldnpleoea">
   <style type="text/css">
     body {
+      padding-top: 40px;
       padding-bottom: 80px;
     }
     h4 {
@@ -46,7 +47,6 @@
 
   <h2>BetterPonymotes <small>(current release: <strong>v/*{{version}}*/</strong>)</small></h2>
 
-  <h3>About</h3>
   <p>BetterPonymotes is a browser addon to display ponymotes across Reddit. This
     means things like <code>[]<!---->(/c01)</code> will work outside of
     <a href="http://reddit.com/r/mylittlepony">r/mylittlepony</a>, but also
@@ -86,59 +86,49 @@
   <h3>Installation</h3>
   <p>Before installing, remember to remove any other emote scripts you have
     installed. BetterPonymotes replaces all of them and then some, and leaving
-    them will slow your browser down unnecessarily (or even cause conflicts).</p>
+    them will slow your browser down unnecessarily (or even cause conflicts).
+    Remember to check your UserScripts as well, if you have any.</p>
 
-  <h4>Firefox Installation</h4>
+  <h3>Firefox &amp; Firefox Mobile</h3>
   <img src="firefox-logo.png" alt="">
   <p>Install the addon from <a href="betterponymotes.xpi"><code>betterponymotes.xpi</code></a>.</p>
-
   <p>Firefox should handle the file automatically. If not, download the file and
     drag it onto Firefox.</p>
+  <p>To access preferences on Firefox, go to the Addons Manager
+    (<code>about:addons</code>, Ctrl-Shift-A, or Firefox menu -> Add-ons),
+    locate BetterPonymotes in the list, and click the "Preferences" button.
+    Then click the second "Preferences" button.</p>
 
-  <h4>Chrome Installation</h4>
+  <h3>Chrome</h3>
   <img src="chrome-logo.png" alt="">
-  <button onclick="chrome.webstore.install()">Install</button>
+  <p>BetterPonymotes is available on the Chrome Webstore
+    <a href="https://chrome.google.com/webstore/detail/betterponymotes/bkkmhlceghomaajdimmejkhldnpleoea">here</a>.
+    Or, just click: <button onclick="chrome.webstore.install()">Install</button></p>
+  <p>To access preferences on Chrome, go to the Extensions page
+    (<code>chrome:extensions</code>, or wrench menu -> Settings, then click
+    Extensions on the left), locate BetterPonymotes in the list, and click the
+    "Options" link below.</p>
 
-  <h4>Opera Installation</h4>
+  <h3>Opera</h3>
   <img src="opera-logo.png" alt="">
   <p>Install the addon from <a href="betterponymotes.oex"><code>betterponymotes.oex</code></a>.</p>
-
   <p>Opera should handle the file automatically. If not, download the file and
     drag it onto the Extensions page at Opera -> Extensions -> Manage Extensions.</p>
+  <p>To access preferences on Opera, go to the Extensions page (Opera ->
+    Extensions -> Manage Extensions), locate BetterPonymotes in the list, and
+    click the wrench icon -> Preferences.</p>
 
-  <h4>Safari Installation</h4>
+  <h3>Safari &amp; Other Platforms</h3>
   <p>A userscript variant is available <a href="betterponymotes.user.js">here</a>.
-    <a href="https://github.com/os0x/NinjaKit">NinjaKit</a> is required to
-    run userscripts on Safari.</p>
-
+    You will need to install <a href="https://github.com/os0x/NinjaKit">NinjaKit</a>
+    in order to run UserScripts on Safari, so get that first.</p>
+  <p>Other browsers <em>may</em> work, if they can be made to run UserScripts.</p>
   <p>Options can be changed by going <a href="options.html">here</a>.</p>
 
   <h3>Updates</h3>
   <p>BetterPonymotes is periodically updated with the latest emotes and
-    features. Your browser will download these automatically.</p>
-
-  <p>Though you do not need to restart your browser for updates, you will need
-    to reload any open pages before the update can take effect. This includes
-    new ponymotes.</p>
-
-  <h3>Preferences</h3>
-  <p>BetterPonymotes has a built in page for configuration. Follow the
-    instructions for your browser to find it.</p>
-
-  <h4>Firefox Preferences</h4>
-  <p>Go to the Addons Manager (<code>about:addons</code>, Ctrl-Shift-A, or
-    Firefox menu -> Add-ons), locate BetterPonymotes in the list, and click the
-    "Preferences" button. Then click the second "Preferences" button.</p>
-
-  <h4>Chrome Preferences</h4>
-  <p>Go to the Extensions page (<code>chrome:extensions</code>, or Wrench menu
-    -> Settings, then click Extensions on the left), locate BetterPonymotes in
-    the list, and click the "Options" link.</p>
-
-  <h4>Opera Preferences</h4>
-  <p>Go to the Extensions page (Opera -> Extensions -> Manage Extensions),
-    locate BetterPonymotes in the list, and click the Wrench icon ->
-    Preferences.</p>
+    features. Your browser will download these automatically and does not need
+    to be restarted.</p>
 
   <h3>Feedback</h3>
   <p>Bug reports, feature requests, questions, general feedback or anything
