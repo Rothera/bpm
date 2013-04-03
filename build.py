@@ -145,8 +145,8 @@ class Context:
             print("run: %s" % " ".join(args))
             subprocess.call(args, **kwargs)
 
-    def zip(self, zipfn, root, prefix=None):
-        zip = zipfile.ZipFile(zipfn, "w")
+    def zip(self, zipfn, root, prefix=None, compression=zipfile.ZIP_DEFLATED):
+        zip = zipfile.ZipFile(zipfn, "w", compression=compression)
         print("zip: making %s from %s" % (zipfn, root))
         if not prefix:
             prefix = root
@@ -195,7 +195,7 @@ PGm6yzGLSn8/cG7tG9XvpnyxGAX8TfQyV602NhAucqJXYGvCNePalZGU7FJbeJc1
 def inject_xpi_key(ifn, ofn):
     print("xpi: injecting key into", ofn)
     xpi_in = zipfile.ZipFile(ifn, "r")
-    xpi_out = zipfile.ZipFile(ofn, "w")
+    xpi_out = zipfile.ZipFile(ofn, "w", compression=zipfile.ZIP_DEFLATED)
 
     for item in xpi_in.infolist():
         data = xpi_in.read(item.filename)
@@ -277,7 +277,7 @@ def cr_package(ctx):
         ctx.copy("addon/jquery-1.8.2.js")
 
     if newer(glob.glob("build/chrome/*"), ["build/chrome.zip"]):
-        zip = ctx.zip("build/chrome.zip", "build/chrome/")
+        zip = ctx.zip("build/chrome.zip", "build/chrome/", compression=zipfile.ZIP_STORED)
         zip.write(KeyFile, "key.pem")
 
 @target("o-package", "build/betterponymotes.oex")
