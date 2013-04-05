@@ -90,8 +90,10 @@ function parse_search_query(terms) {
                 add_id_set(query.sr_term_sets, sr_name2id, positive, term, term);
             }
         } else if(is_tag) {
-            // A tag-like thing that isn't a subreddit = tag term
-            add_id_set(query.tag_term_sets, tag_name2id, positive, "+" + term, term);
+            if(term.length > 1) {
+                // A tag-like thing that isn't a subreddit = tag term
+                add_id_set(query.tag_term_sets, tag_name2id, positive, "+" + term, term);
+            }
         } else {
             query.name_terms.push(term); // Anything else
         }
