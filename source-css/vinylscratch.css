@@ -858,7 +858,8 @@ a.author[href$="otwem"],
 a.author[href$="Kireas"],
 a.author[href$="AlisterDX"],
 a.author[href$="upvote_machine_1"],
-a.author[href$="Harakou"]
+a.author[href$="Harakou"],
+a.author[href$="nightpony"]
 
 { 
 font-size:0!important; 
@@ -887,7 +888,8 @@ a.author[href$="otwem"]:before ,
 a.author[href$="Kireas"]:before, 
 a.author[href$="AlisterDX"]:before, 
 a.author[href$="upvote_machine_1"]:before, 
-a.author[href$="Harakou"]:before
+a.author[href$="Harakou"]:before,
+a.author[href$="nightpony"]:before
 
 {
 font-size:10px!important; 
@@ -912,9 +914,10 @@ a.author[href$="Toklankitsune"]:before {content:"DJ T0ki"}
 a.author[href$="bryvood"]:before {content:"DJ Toaster Scratchaloo"}
 a.author[href$="otwem"]:before {content:"Otwem Scratch"}
 a.author[href$="Kireas"]:before {content:"Octavia"}
-a.author[href$="AlisterDX"]:before {content:"MySecretVinylAccount"}
+a.author[href$="AlisterDX"]:before {content:"il sok u m8"}
 a.author[href$="upvote_machine_1"]:before {content:"il sok u m8"}
 a.author[href$="Harakou"]:before {content:"Taco Illuminati"}
+a.author[href$="nightpony"]:before {content:"DJ NightPon3"}
 
 /* Replacing somebody's name color? Put the css here. */
 
@@ -923,6 +926,7 @@ a.author[href$="Harakou"]:before {content:"Taco Illuminati"}
 .author[href$="Kireas"] { color:purple !important }
 .author[href$="AlisterDX"] { color:red !important }
 .author[href$="Harakou"] { color:brown !important }
+.author[href$="nightpony"] { color:#a100a1 !important }
 
 .comments:nth-child(n + 1):before {
     content: "♪ ♫ ♩ ";

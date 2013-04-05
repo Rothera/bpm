@@ -21,6 +21,7 @@ SeriouslyComfy
         > Centered the downvote background proper.
         > Added a srsname. (Not sure if this is logworthy, but bleh.)
         > Updated a srsname. 9/3
+        > emote woo 4/2
 
 QueenSerious:
 	> More name changes
@@ -814,12 +815,45 @@ a[href|="/lunawink"] {
     height: 130px;
     background-image:url(%%lunawink%%)
     }
+a[href|="/cheeriflatter"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 116px;
+    height: 137px;
+    background-image:url(%%cheeriflatter%%)
+    }
+a[href|="/cheeriwhatisthistrash"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 170px;
+    height: 179px;
+    background-image:url(%%cheerigetaway%%)
+    }
+a[href|="/cheerishame"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 119px;
+    background-image:url(%%cheerishame%%)
+    }
+ 
 a[href|="/seriouslyhappy"], a[href|="/seriouslyunamused"], a[href|="/seriouslyupset"], a[href|="/seriouslypissed"] {
     display: block;
     clear: none;
     float: left;
     height: 130px;
     background-image:url(%%EmotionSheet%%)
+    }
+a[href|="/cheeriwaitwhat"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 127px;
+    height: 165px;
+    background-image:url(%%cheeriwaitwhat%%)
     }
 a[href|="/seriouslyhappy"] {
     width: 137px;

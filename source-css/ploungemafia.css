@@ -486,26 +486,20 @@ a.author[href$="DiscordDraconequus"] {
     letter-spacing: -20px
     }
 a.author[href$="DiscordDraconequus"]:after {
-    content: "_______Draconequus";
+    content: "AaronDraconequus";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;
     letter-spacing: normal
     }
 
-
-
+body.res a.author[href$="CupcakeDraconequus"], body.res a.author[href$="PretzelDraconequus"], body.res a.author[href$="______Draconequus"] {
+     font-weight: bold; color: white !important; padding: 0 2px; border-radius: 3px } 
 body.res a.author[href$="______Draconequus"] {color: white; background-color: #0055DF }
 body.res a.author[href$="PretzelDraconequus"] {color: white; background-color: #0055DF }
 body.res a.author[href$="CupcakeDraconequus"] {color: white; background-color: #0055DF }
-/*
-a.author[href$="CupcakeDraconequus"], a.author[href$="PretzelDraconequus"], a.author[href$="______Draconequus"] {
-    content: "[S]";
-    font-size: 10px !important;
-    visibility: visible !important;
-    display: block;
-    letter-spacing: normal
-    } */
+
+
 
 /* Removed cause taco's a butt. */
 

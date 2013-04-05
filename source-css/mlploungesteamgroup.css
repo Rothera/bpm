@@ -322,7 +322,7 @@ body > .content:before{
 
 /*==================Names==================*/
 
-/*Add a name here to replace it. Ensure , ends each line except the final one. Capitalization is important*//*
+/*Add a name here to replace it. Ensure , ends each line except the final one. Capitalization is important*/
 
 a.author[href$="srsbsnsman"],
 a.author[href$="Sangfroidish"],
@@ -341,8 +341,8 @@ a.author[href$="sna_fu_bar"]
     content: "";
     }
 
-*/
-/*And here; Remember to maintain formatting*//*
+
+/*And here; Remember to maintain formatting*/
 
 a.author[href$="srsbsnsman"]:before,
 a.author[href$="Sangfroidish"]:before,
@@ -370,8 +370,8 @@ a.author[href$="Dundrioundio"]:before {content: "Dundrio"}
 a.author[href$="Dwarflord"]:before {content: "Cinor"}
 a.author[href$="thepostaldud3"]:before {content: "steev"}
 
-*/
-/*Names for extra text go here *//*
+
+/*Names for extra text go here */
 a.author[href$="Sangfroidish"]:after,
 a.author[href$="DoomedCivilian"]:after,
 a.author[href$="Draze"]:after,
@@ -391,8 +391,8 @@ a.author[href$="starkinmn"]:after
     letter-spacing:normal; 
     }
 
-*/
-/*Extra text here, add spaces so it looks nice*//*
+
+/*Extra text here, add spaces so it looks nice*/
 a.author[href$="Sangfroidish"]:after { content:" Shoehorn Sexpert "}
 a.author[href$="DoomedCivilian"]:after { content:" CSS Breaker "}
 a.author[href$="Draze"]:after { content: " Giddy Up "}
@@ -404,7 +404,7 @@ a.author[href$="ctare"]:after {content: " Among other things "}
 a.author[href$="Dwarflord"]:after {content: " Will write that fic someday "}
 a.author[href$="moonomnom"]:after {content: " Dayum shame"}
 
-*/
+
 /* This is to append something to everyone. Remove comments to activate*/
 /*
 a.author:before{
@@ -417,22 +417,6 @@ a.author:after{
     content:" is a silly pony"!important
     }
 */
-
-/*April fools stuff :)*/
-
-a.author{ 
-    font-size:0!important; 
-    overflow:hidden; 
-    display:inline-block; 
-    content: "";
-    }
-
-a.author:before{
-    font-size:10px!important; 
-    visibility:visible!important;
-    content:"Draze";
-    }
-
 
 
 /*==================EMOTES==================*/
@@ -477,6 +461,24 @@ a[href|="/hathe"] {
     width: 300px;
     height: 246px;
     background-image: url(%%Hathe%%) !important
+    }
+
+a[href|="/adviceshy"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 222px;
+    height: 250px;
+    background-image: url(%%adviceshy%%) !important
+    }
+
+a[href|="/adviceshybubble"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 244px;
+    height: 250px;
+    background-image: url(%%adviceshybubble%%) !important
     }
 a[href|="/americanlunasalute"] {
     display: block;
@@ -582,6 +584,14 @@ a[href|="/lunahorror"] {
     height: 200px;
     background-image: url(%%lunashock%%) !important
     }
+a[href|="/rdsmug"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 196px;
+    background-image: url(%%rdsmug%%) !important
+    }
 
 a[href|="/rosewhat"] {
     display: block;
@@ -685,6 +695,16 @@ a[href|="/twicasualno"] {
     background-image: url(%%twino%%) !important
     }
 
+a[href|="/rosetits"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 175px;
+    height: 175px;
+    background-image: url(%%Imgmap%%) !important;
+    background-position: 0px -160px
+    }
+
 
 /* ------MACROS------- */
 a[href="/scumbagrando"] {
@@ -722,24 +742,14 @@ a[href="/scumbagrando"] strong {
     margin-left: -140px !important
     }
 
-a[href="/adviceshy"] {
-    text-shadow: none!important;
-    width: 300px !important;
-    height: 300px !important;
-    background-position: 0 0 !important;
-    display: inline-block !important;
-    background-repeat: no-repeat !important;
-    background-image: url(%%Adviceshy%%) !important;
-    font-size: 11px !important;
-    font-family: arial !important;
-    color: #FFF !Important;
-}
+
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
 
 
 .tagline .flair {border-color: transparent}
 /*-------------------- Flair ---------------------------------------*/
+
 
 .flair{
     color: black;

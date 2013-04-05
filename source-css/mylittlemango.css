@@ -10,13 +10,13 @@ Added emotes (1/15/13)
 /* Header */
 
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%mylittlemangoheader%%);
+   background: url(%%chrysalisbanner%%);
    background-repeat: no-repeat;
    background-position: 50% 100%;
    height: 200px; 
 }
 
-span.redditname
+/*span.redditname
 {
 	display:block;
 	margin:0 auto;
@@ -42,7 +42,7 @@ span.redditname
 	vertical-align:bottom;
 }
 
-
+*/
 /* Background*/
 
 /* Save this for later
@@ -51,7 +51,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     background:  url(%%background1%%)  no-repeat  fixed 50% 65% !important;
 } */
 
-body{background:url(%%background1%%) no-repeat fixed center center!important}
+body{background:url(%%mlmbackground1%%) no-repeat fixed center center!important}
 .res-nightmode .content{background-color:transparent!important}
 .res-nightmode{background-color:transparent !important}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
@@ -74,7 +74,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .
     clear: both;
     text-align: center;
     width: 100%;
-    background-image: url(%%background%%);
+    background-image: url(%%mlmfooter%%);
     /*background-position: bottom center;*/
     background-repeat: no-repeat;
     margin-bottom: -0px;
@@ -85,7 +85,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .
 
 div.titlebox span.word {display:none; }
 div.titlebox .subscribers span.number:after {content:" Sexual Mangoes";}
-div.titlebox .users-online span.number:after{content:" Under the mango tree"}
+div.titlebox .users-online span.number:after{content:" under the mango tree"}
 
 /* PROPER GREENTEXT (stolen from mlas, which stole from plounge, which stole from /r/4chan) */
 
@@ -369,3 +369,27 @@ a[href|="/scrambledeggs"] { background-position: -0px -232px; width: 300px; heig
 a[href|="/rarinsane"] { background-position: -0px -457px; width: 150px; height: 179px; }
 a[href|="/chrysisnuggles"] { background-position: -150px -457px; width: 150px; height: 142px; }
 a[href|="/mangodesu"] { background-position: -150px -599px; width: 150px; height: 138px; }
+
+a[href|="/spamsprakle"], a[href|="/chryssixtia"], a[href|="/ohshitbby"], a[href|="/twinotamused"] {
+     display: block;
+     clear: none;
+     float: left;
+     background-image: url(%%emotesheetsomething%%) !important
+     }
+
+a[href|="/spamsprakle"] { background-position: -0px -0px; width: 300px; height: 194px; }
+a[href|="/chryssixtia"] { background-position: -0px -194px; width: 200px; height: 167px; }
+a[href|="/ohshitbby"] { background-position: -200px -194px; width: 100px; height: 100px; }
+a[href|="/twinotamused"] { background-position: -0px -361px; width: 127px; height: 99px; }
+
+a[href|="/queenohshit"], a[href|="/queenofthehookah"], a[href|="/thekommandant"], a[href|="/mangosyrup"] {
+     display: block;
+     clear: none;
+     float: left;
+     background-image: url(%%emotesheeeeeeet%%) !important
+     }
+
+a[href|="/queenohshit"] { background-position: -0px -0px; width: 401px; height: 479px; }
+a[href|="/queenofthehookah"] { background-position: -0px -479px; width: 240px; height: 250px; }
+a[href|="/thekommandant"] { background-position: -0px -729px; width: 200px; height: 147px; }
+a[href|="/mangosyrup"] { background-position: -200px -729px; width: 200px; height: 109px; }

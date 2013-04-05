@@ -786,35 +786,6 @@ font-weight:bold;
 text-decoration:underline;
 }
 
-/* Announcement Bar */
-.pagename {
-    font-size: 12pt
-    }
-.titlebox form {
-    position: static
-    }
-.titlebox .usertext-body .md ol {
-    width: auto;
-    background: url(%%mlp%%) no-repeat scroll 100% 5px #EFF7FF;
-    border: 1px solid #5f99cf;
-    position: absolute;
-
-    top: 15px;
-    left: 35%;
-    z-index:20px 310px 0 0;
-    padding: 8px 45px 8px 8px;
-    list-style: none;
-    display: block;
-    white-space: normal;
-    overflow: hidden;
-    border-radius: 10px;
-    z-index: 10000000
-    }
-.titlebox .usertext-body .md ol li {
-    margin: 1px;
-    list-style: none
-    }
-
 
 .wiki-page .md {
 background: white;
@@ -1188,6 +1159,35 @@ a[href|="/thankyakindly"] {
     } 
 a[href|="/thankyakindly"] { 
     background-position: -0px -0px;
+    }
+
+/* Announcement Bar */
+.pagename {
+    font-size: 12pt
+    }
+.titlebox form {
+    position: static
+    }
+.titlebox .usertext-body .md ol {
+    width: auto;
+    background: url(%%mlp%%) no-repeat scroll 100% 5px #EFF7FF;
+    border: 1px solid #5f99cf;
+    position: absolute;
+
+    top: 15px;
+    left: 37%;
+    z-index:20px 310px 0 0;
+    padding: 8px 45px 8px 8px;
+    list-style: none;
+    display: block;
+    white-space: normal;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 10000000
+    }
+.titlebox .usertext-body .md ol li {
+    margin: 1px;
+    list-style: none
     }
 
 

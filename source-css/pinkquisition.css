@@ -356,6 +356,30 @@ a[href|="/ppthumb"] {
     height: 127px;
     background-image: url(%%ppthumb%%) 
     }
+a[href|="/pinkqistodian"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%pinkqistodian%%) 
+    }
+a[href|="/ccserene"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 107px;
+    background-image: url(%%ccserene%%) 
+    }
+a[href|="/pphithere"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 145px;
+    height: 150px;
+    background-image: url(%%pphithere%%) 
+    }
 
 /*Side Bar*/
 
@@ -382,4 +406,64 @@ a[href|="/ppthumb"] {
 .side div.usertext-body:hover table {
     display: block;
     clear: both
+    }
+
+/*Mod Box*/
+.titlebox .bottom .author, .sidecontentbox .author {
+    display: inline-block
+    }
+.sidecontentbox a.author[href$="/QueenCadence"]:before {
+    content: "Captain Of Cupcakes";
+    font-size: 10pt;
+    color: #369;
+    display: block;
+    margin-right: 0.5em;
+    overflow: hidden
+    }
+.sidecontentbox a.author[href$="/QueenCadence"] {
+    content: "";
+    color: white;
+    font-size: 0pt;
+    display: block
+    }
+.sidecontentbox a.author[href$="/Tenth-Gear"]:before {
+    content: "Grand Overpie";
+    font-size: 10pt;
+    color: #369;
+    display: block;
+    margin-right: 0.5em;
+    overflow: hidden
+    }
+.sidecontentbox a.author[href$="/Tenth-Gear"] {
+    content: "";
+    color: white;
+    font-size: 0pt;
+    display: block
+    }
+.sidecontentbox a.author[href$="/HappyCamper101"]:before {
+    content: "HappyCamper101";
+    font-size: 10pt;
+    color: #369;
+    display: block;
+    margin-right: 0.5em;
+    overflow: hidden
+    }
+.sidecontentbox a.author[href$="/HappyCamper101"] {
+    content: "";
+    color: white;
+    font-size: 0pt;
+    display: block
+    }
+
+.sidecontentbox .helplink + .title > h1:before
+{
+ color:gray!important;
+ font-size:13px!important;
+ content:"Leaders Of The Pinkquisition";
+ display:inline-block
+}
+
+/*No RES tags in ModBox*/
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink {
+    display: none !important
     }
