@@ -324,7 +324,6 @@ class NormalVariant(_Variant):
 
     def to_css(self):
         css = {
-            "display": "block",
             "float": "left",
             "background-image": "url(%s)" % (self.image_url),
             "width": "%spx" % (self.size[0]),

@@ -155,7 +155,7 @@ def classify_emotes(emote_data):
 def _convert_emote(name, suffix, block):
     css = block.css.copy()
 
-    for (prop, expected_value) in [("display", "block"), ("float", "left")]:
+    for (prop, expected_value) in [("float", "left")]:
         if prop not in css:
             print("WARNING: %r is missing %r property" % (bplib.combine_name_pair(name, suffix), prop))
         else:
@@ -191,7 +191,7 @@ def _convert_emote(name, suffix, block):
     else:
         offset = (0, 0)
 
-    for p in ("background-repeat", "clear"):
+    for p in ("background-repeat", "clear", "display"):
         # Commonly added useless properties that we want to ignore
         if p in css:
             del css[p]
