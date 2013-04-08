@@ -125,6 +125,19 @@ Generation:
             Size: [175, 175]
     - /rscheer: [+ocpony]
 
+  # Original is unrecognizable, and we customize it a bit for BPM
+  - - MergeEmotes
+    - r/mylittlepony
+    - /spoiler:
+        Emotes:
+          "":
+            CSS: {"background": "black!important", "color": "black!important"}
+            Type: Custom
+          ":hover":
+            CSS: {"color": "white!important"}
+            Type: Custom
+    - /spoiler: [+drop, +formatting, +hidden]
+
 Sorting:
 - [r/mylittlepony, "*"] # Not actually used, but a good failsafe
 - [r/mylittleandysonic1, "*"] # These three rules resolve a lot of things

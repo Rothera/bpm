@@ -338,6 +338,15 @@
     -webkit-filter: invert(100%);
 }
 
+/* BPM doesn't have any idea what to do with this kind of selector */
+.bpm-emote.bpmote-spoiler {
+    color: black !important;
+    background: black !important;
+}
+.bpm-emote.bpmote-spoiler:hover {
+    color: white !important;
+}
+
 /*
  * Some SFW portions of combiners. They are included here so that
  * combiners-nsfw.css can be disabled with the NSFW option.
