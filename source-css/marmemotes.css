@@ -15,7 +15,9 @@ a[href|="/glutes"] {
     height: 64px;
     background-image: url(%%glutes%%)
     }
-a[href|="/shoppleblag"], a[href|="/abspin"]{
+a[href|="/shoppleblag"], 
+a[href|="/abspin"], 
+a[href|="/ponyspin"]{
     display: block;
     clear: none;
     float: left;
@@ -1059,6 +1061,12 @@ a[href|="/fsforyou"]
 {
     width: 184px;
     background-position: -0px -1120px;
+}
+a[href|="/mwno"]
+{
+    width: 110px;
+    height: 200px;
+    background-position: -0px -1400px;
 }
 a[href|="/applebloomaruu"],
 a[href|="/abhai"]

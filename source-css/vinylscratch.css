@@ -535,7 +535,7 @@ a[href|='/shrug'],a[href|="/vsshrug"],a[href|='/tableflip'],a[href|='/vslaying']
     background-image: url(%%vssheet%%) !important
     }
 
-a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vsdance2'],a[href|='/vsgrump'],a[href|='/vstears'],a[href|='/vssinep'],a[href|='/kixandra'],a[href|='/vsholyshit'],a[href|='/vsfacehoof'],a[href|='/vssrs'],a[href|='/vssoawesome'],a[href|='/vssupersad'],a[href|='/vssmug'],a[href|='/vysmug'],a[href|='/vsdontask'],a[href|='/vs0b'],a[href|='/vs2b'],a[href|='/vs0c'],a[href|='/vs1c'],a[href|='/vs2c'],a[href|='/vs0d'],a[href|='/vs1d'],a[href|='/vs2d'],a[href|='/vs0e'] {
+a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vsdance2'],a[href|='/vsgrump'],a[href|='/vstears'],a[href|='/vssinep'],a[href|='/kixandra'],a[href|='/vsholyshit'],a[href|='/vsfacehoof'],a[href|='/vssrs'],a[href|='/vssoawesome'],a[href|='/vssupersad'],a[href|='/vssmug'],a[href|='/vysmug'],a[href|='/vsdontask'],a[href|='/modstar'],a[href|='/vs0b'],a[href|='/vs2b'],a[href|='/vs0c'],a[href|='/vs1c'],a[href|='/vs2c'],a[href|='/vs0d'],a[href|='/vs1d'],a[href|='/vs2d'],a[href|='/vs0e'] {
     display: block;
     clear: none;
     float: left;
@@ -598,6 +598,7 @@ a[href|='/vsexcited'] {background-image: url(%%vssheet2%%);width:132px; height:2
 a[href|='/vsgrump'] {background-image: url(%%vssheet2%%);width:100px; height:104px;background-position: 0px -295px}
 a[href|='/vssinep'],a[href|='/kixandra'] {background-image: url(%%vssheet2%%);width:200px; height:107px;background-position: -100px -305px}
 a[href|='/vsdontask'] {background-image: url(%%vssheet2%%);width:123px; height:100px;background-position: 0px -412px}
+a[href|='/modstar'] {background-image: url(%%vssheet2%%);width:250px; height:250px;background-position: -124px -412px}
 
 /* 0 Column */
 a[href|='/vssuave'],a[href|='/vs0b'] {background-image: url(%%vssheet2%%);width:70px; height:83px;background-position: -145px -145px}
@@ -859,7 +860,11 @@ a.author[href$="Kireas"],
 a.author[href$="AlisterDX"],
 a.author[href$="upvote_machine_1"],
 a.author[href$="Harakou"],
-a.author[href$="nightpony"]
+a.author[href$="nightpony"],
+a.author[href$="Rahlyn"],
+a.author[href$="007ghg7"],
+a.author[href$="koobaxion"],
+a.author[href$="Vinyl__Scratch"]
 
 { 
 font-size:0!important; 
@@ -889,7 +894,11 @@ a.author[href$="Kireas"]:before,
 a.author[href$="AlisterDX"]:before, 
 a.author[href$="upvote_machine_1"]:before, 
 a.author[href$="Harakou"]:before,
-a.author[href$="nightpony"]:before
+a.author[href$="nightpony"]:before,
+a.author[href$="Rahlyn"]:before,
+a.author[href$="007ghg7"]:before,
+a.author[href$="koobaxion"]:before,
+a.author[href$="Vinyl__Scratch"]:before
 
 {
 font-size:10px!important; 
@@ -900,7 +909,7 @@ visibility:visible!important;
 
 a.author[href$="derram_2"]:before {content:"derramina Diane Pie"}
 a.author[href$=Chinch335]:before {content:"Chinchy"}
-a.author[href$="mrjoker7854"]:before {content:"Pinkie BEST PONY! AND DAMN RIGHT I MADE A VINYL SUB!"}
+a.author[href$="mrjoker7854"]:before {content:"swer on me mum"}
 a.author[href$="120percentP0N3"]:before {content:"120percentcooler"}
 a.author[href$="simgaleed"]:before {content:"DarkNote"}
 a.author[href$="coggy9"]:before {content:"Steve"}
@@ -914,10 +923,14 @@ a.author[href$="Toklankitsune"]:before {content:"DJ T0ki"}
 a.author[href$="bryvood"]:before {content:"DJ Toaster Scratchaloo"}
 a.author[href$="otwem"]:before {content:"Otwem Scratch"}
 a.author[href$="Kireas"]:before {content:"Octavia"}
-a.author[href$="AlisterDX"]:before {content:"il sok u m8"}
+a.author[href$="AlisterDX"]:before {content:"m8"}
 a.author[href$="upvote_machine_1"]:before {content:"il sok u m8"}
 a.author[href$="Harakou"]:before {content:"Taco Illuminati"}
 a.author[href$="nightpony"]:before {content:"DJ NightPon3"}
+a.author[href$="Rahlyn"]:before {content:"il"}
+a.author[href$="007ghg7"]:before {content:"fukn"}
+a.author[href$="koobaxion"]:before {content:"sok"}
+a.author[href$="Vinyl__Scratch"]:before {content:"u"}
 
 /* Replacing somebody's name color? Put the css here. */
 
