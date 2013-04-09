@@ -13,21 +13,17 @@ function init_css(store) {
         if(store.prefs.enableExtraCSS) {
             // Inspect style properties to determine what extracss variant to
             // apply.
-            //    Firefox: Old versions require -moz, but >=16.0 are unprefixed
-            //    Chrome (WebKit): -webkit
-            //    Opera: Current stable requires -o, but >=12.10 are unprefixed
+            //    Firefox: <16.0 requires -moz, which we don't support
+            //    Chrome (WebKit): Always needs -webkit
+            //    Opera: Current stable versions are unprefixed, but need tweaks
             var style = document.createElement("span").style;
 
             if(style.transform !== undefined) {
                 // This might actually be extracss-pure-opera for Opera Next,
                 // since it requires some modified rules
                 link_css("/extracss-pure.css");
-            } else if(style.MozTransform !== undefined) {
-                link_css("/extracss-moz.css");
             } else if(style.webkitTransform !== undefined) {
                 link_css("/extracss-webkit.css");
-            } else if(style.OTransform !== undefined) {
-                link_css("/extracss-o.css");
             } else {
                 log_warning("Cannot inspect vendor prefix needed for extracss.");
                 // You never know, maybe it'll work

@@ -40,13 +40,9 @@
 
     /* Kill animations */
     transform: none !important;
-    -moz-transform: none !important;
     -webkit-transform: none !important;
-    -o-transform: none !important;
     animation: none;
-    -moz-animation: none;
     -webkit-animation: none;
-    -o-animation: none;
 }
 
 .bpm-hidden, .bpm-hidden:before, .bpm-hidden:after, .bpm-hidden:hover, .bpm-hidden:active {
@@ -62,13 +58,9 @@
 
     /* Kill animations */
     transform: none !important;
-    -moz-transform: none !important;
     -webkit-transform: none !important;
-    -o-transform: none !important;
     animation: none !important;
-    -moz-animation: none !important;
     -webkit-animation: none !important;
-    -o-animation: none !important;
 }
 
 /* Unknown emote placeholder. Transparent red background */
@@ -341,27 +333,19 @@
 /* Some basic flags extracted from extracss, since they're nice to have generally */
 .bpflag-r.bpflag-d:hover {
     transform:         none;
-    -moz-transform:    none;
     -webkit-transform: none;
-    -o-transform:      none;
 }
 .bpflag-r, .bpflag-d:hover {
     transform:         scaleX(-1);
-    -moz-transform:    scaleX(-1);
     -webkit-transform: scaleX(-1);
-    -o-transform:      scaleX(-1);
 }
 .bpflag-f, .bpflag-r.bpflag-f.bpflag-d:hover {
     transform:         scaleY(-1);
-    -moz-transform:    scaleY(-1);
     -webkit-transform: scaleY(-1);
-    -o-transform:      scaleY(-1);
 }
 .bpflag-r.bpflag-f, .bpflag-f.bpflag-d:hover {
     transform:         scaleX(-1) scaleY(-1);
-    -moz-transform:    scaleX(-1) scaleY(-1);
     -webkit-transform: scaleX(-1) scaleY(-1);
-    -o-transform:      scaleX(-1) scaleY(-1);
 }
 
 /* BPM doesn't have any idea what to do with this kind of selector */
