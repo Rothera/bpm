@@ -35,6 +35,18 @@ var emote_map, sr_name2id, sr_id2name, tag_name2id, tag_id2name, manage_prefs; /
 (function(_global_this) {
 "use strict";
 
+var _start_time = Date.now();
+var _last_time = _start_time;
+var _last_checkpoint = "head";
+function _checkpoint(name) {
+    var now = Date.now();
+    var delta = (now - _last_time);
+    var total = (now - _start_time);
+    log_debug("Timing: " + _last_checkpoint + "->" + name + " = " + delta + " (total " + total + ")");
+    _last_time = now;
+    _last_checkpoint = name;
+}
+
 var DEV_MODE = false;
 
 // Set at build time. Only relevant to the userscript.

@@ -127,6 +127,7 @@ var with_dom = (function() {
 
     var loaded = function(event) {
         log_debug("Document loaded");
+        _checkpoint("dom");
         ready = true;
 
         for(var i = 0; i < callbacks.length; i++) {

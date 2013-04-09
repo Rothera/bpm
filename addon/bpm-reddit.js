@@ -138,9 +138,11 @@ function reddit_main(store) {
     log_info("Running on Reddit");
 
     init_css(store);
+    _checkpoint("css");
 
     with_dom(function() {
         inject_log_button(); // Try to do this early
         run_reddit(store);
+        _checkpoint("done");
     });
 }

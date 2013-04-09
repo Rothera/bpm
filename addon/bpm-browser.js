@@ -59,12 +59,14 @@ var _request_initdata = function(want) {
 var _initdata_want = null;
 var _initdata_hook = null;
 var setup_browser = function(want, callback) {
+    _checkpoint("startup");
     _initdata_want = want;
     _initdata_hook = callback;
     _request_initdata(want);
 };
 
 function _complete_setup(initdata) {
+    _checkpoint("ready");
     var store = new Store();
 
     if(_initdata_want.prefs) {

@@ -218,8 +218,10 @@ function global_main(store) {
     log_info("Running globally");
 
     init_css(store);
+    _checkpoint("css");
 
     with_dom(function() {
         run_global(store);
+        _checkpoint("done");
     });
 }
