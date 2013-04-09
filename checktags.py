@@ -41,11 +41,20 @@ def info_for(emote):
         return emote.info_set()
     return None
 
+known_tags = (set(context.tag_config["RootTags"]) |
+              set(context.tag_config["ExclusiveTags"]) |
+              set(context.tag_config["HiddenTags"]) |
+              set(context.tag_config["TagImplications"]) |
+              set(context.tag_config["OtherTags"]))
+all_tags = set()
+
 variant_log = open("checktags-variants.log", "w")
 for source in context.sources.values():
     print("%s:" % (source.name), file=variant_log)
 
     for emote in source.unignored_emotes():
+        all_tags |= emote.tags
+
         # Make sure it's tagged at all
         if not emote.tags:
             print("ERROR: In %s: %s has no tags" % (source.name, emote.name))
@@ -71,6 +80,8 @@ for source in context.sources.values():
             print("WARNING: In %s: %s has no root tags (set: %s)" % (source.name, emote.name, " ".join(emote.tags)))
 
     for emote in source.ignored_emotes():
+        all_tags |= emote.tags
+
         if emote.tags and emote.ignore:
             print("WARNING: In %s: %s is tagged, but ignored" % (source.name, emote.name))
             emote.tags = set()
@@ -91,3 +102,5 @@ for source in dirty:
     path = "tags/%s.json" % (source.name.split("/")[-1])
     file = open(path, "w")
     bplib.json.dump(source.dump_tags(), file, indent=0, max_depth=1, sort_keys=True)
+
+print("Unknown tags:", (all_tags - known_tags))
