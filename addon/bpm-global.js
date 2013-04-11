@@ -119,7 +119,7 @@ function process_text(store, root) {
                 new_elements.push(document.createTextNode(before_text));
             }
 
-            element = make_emote(match, parts, name, info);
+            var element = make_emote(match, parts, name, info);
 
             new_elements.push(element);
             emote_elements.push(element);
