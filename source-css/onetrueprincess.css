@@ -128,8 +128,8 @@ background:transparent!important;
 
 /* GIANT SIDEBAR MESS ======================================================================================*/
 
-div.titlebox span.word { display: none }  
-div.titlebox span.number:after { content: " Ploungers" } 
+div.titlebox span.word { display: none }
+div.titlebox span.number:after { content: " Ploungers" }
 .side form#search {
     position: relative;
     z-index: 9999;
@@ -280,474 +280,73 @@ div.titlebox {
     padding-right: 5px;
     }
 
-/*EMOTES ===================================================================================================*/
+/*EMOTES ====================================================================================================================================*/
 
-a[href="/zecoraback"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 185px;
-background-image: url(%%zecoraback%%) !important
-}
+a[href|='/twiley'], a[href|='/smiley'], a[href|='/shining'], a[href|='/werenotrelated'], a[href|='/shiningninja'], a[href|='/shining4'], a[href|='/shiningheil'], a[href|='/armorarmor'], a[href|='/shining3'], a[href|='/shininghottie'], a[href|='/donttellmywife'], a[href|='/shining1'], a[href|='/shining2'], a[href|='/shiningheythere'], a[href|='/shininghugs'], a[href|='/shiningderp'], a[href|='/shiningcuddle']{
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%ss1%%)
+    }
 
-a[href="/zecoraeyes"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 98px;
-background-image: url(%%zecoraeyes%%) !important
-}
+a[href|='/twiley']{ background-position: -0px -0px; width: 300px; height: 300px; }
+a[href|='/smiley']{ background-position: -0px -300px; width: 150px; height: 258px; }
+a[href|='/shining']{ background-position: -150px -300px; width: 150px; height: 242px; }
+a[href|='/werenotrelated']{ background-position: -150px -542px; width: 150px; height: 206px; }
+a[href|='/shiningninja']{ background-position: -0px -748px; width: 221px; height: 200px; }
+a[href|='/shining4']{ background-position: -0px -948px; width: 163px; height: 199px; }
+a[href|='/shiningheil']{ background-position: -0px -558px; width: 150px; height: 180px; }
+a[href|='/armorarmor']{ background-position: -0px -1147px; width: 150px; height: 166px; }
+a[href|='/shining3']{ background-position: -150px -1147px; width: 150px; height: 150px; }
+a[href|='/shininghottie']{ background-position: -150px -1297px; width: 150px; height: 150px; }
+a[href|='/donttellmywife']{ background-position: -0px -1313px; width: 150px; height: 138px; }
+a[href|='/shining1']{ background-position: -150px -1447px; width: 150px; height: 128px; }
+a[href|='/shining2']{ background-position: -0px -1451px; width: 150px; height: 124px; }
+a[href|='/shiningheythere']{ background-position: -0px -1575px; width: 150px; height: 122px; }
+a[href|='/shininghugs']{ background-position: -150px -1575px; width: 150px; height: 118px; }
+a[href|='/shiningderp']{ background-position: -150px -1693px; width: 150px; height: 112px; }
+a[href|='/shiningcuddle']{ background-position: -0px -1697px; width: 150px; height: 99px; }
 
-a[href="/zecoraflee"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 127px;
-background-image: url(%%zecoraflee%%) !important
-}
+a[href|='/ajcozy'], a[href|='/pinkiecozy'], a[href|='/twicozy'], a[href|='/dashcozy'], a[href|='/fluttercozy'], a[href|='/raritycozy'], a[href|='/derpycozy']{
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%ss2%%)
+    }
 
-a[href="/zecorahood"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 99px;
-background-image: url(%%zecorahood%%) !important
-}
+a[href|='/ajcozy']{ background-position: -0px -0px; width: 150px; height: 193px; }
+a[href|='/pinkiecozy']{ background-position: -150px -0px; width: 150px; height: 193px; }
+a[href|='/twicozy']{ background-position: -0px -193px; width: 150px; height: 191px; }
+a[href|='/dashcozy']{ background-position: -150px -193px; width: 150px; height: 191px; }
+a[href|='/fluttercozy']{ background-position: -0px -384px; width: 150px; height: 191px; }
+a[href|='/raritycozy']{ background-position: -150px -384px; width: 150px; height: 191px; }
+a[href|='/derpycozy']{ background-position: -0px -575px; width: 150px; height: 190px; }
 
-a[href="/zecoraspiders"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 135px;
-background-image: url(%%zecoraspiders%%) !important
-}
 
-a[href="/zecoraup"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 150px;
-background-image: url(%%zecoraup%%) !important
-}
+a[href|='/raritywhythankyou'], a[href|='/notanapple'], a[href|='/flutterbraid'], a[href|='/zecoraback'], a[href|='/zecorawhat'], a[href|='/twiglaredown'], a[href|='/erispoint'], a[href|='/erisiscute'], a[href|='/zecoraup'], a[href|='/erispoint'], a[href|='/rarityworried'], a[href|='/dashfirenom'], a[href|='/flufflehop'], a[href|='/flufflefall'], a[href|='/zecoraspiders'], a[href|='/sweetiewhatthe'], a[href|='/zecoraflee'], a[href|='/miniluna'], a[href|='/scoottongue'], a[href|='/zecorahood'], a[href|='/zecoraeyes']{
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%ss3%%)
+    }
 
-a[href="/zecorawhat"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 184px;
-background-image: url(%%zecorawhat%%) !important
-}
-
-a[href="/ajcozy"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 193px;
-background-image: url(%%ajcozy%%) !important
-}
-
-a[href="/dashcozy"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 191px;
-background-image: url(%%dashcozy%%) !important
-}
-
-a[href="/derpycozy"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 190px;
-background-image: url(%%derpycozy%%) !important
-}
-
-a[href="/fluttercozy"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 191px;
-background-image: url(%%fluttercozy%%) !important
-}
-
-a[href="/pinkiecozy"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 193px;
-background-image: url(%%pinkiecozy%%) !important
-}
-
-a[href="/twicozy"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 193px;
-background-image: url(%%twicozy%%) !important
-}
-
-a[href="/scoottongue"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 111px;
-background-image: url(%%scoottongue%%) !important
-}
-
-/*a[href="/shakeeee"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 650px;
-Height: 500px;
-background-image: url(%%shakeeee%%) !important
-}*/
-
-a[href="/raritycozy"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 191px;
-background-image: url(%%raritycozy%%) !important
-}
-
-a[href="/twiglaredown"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 165px;
-background-image: url(%%twiglaredown%%) !important
-}
-
-a[href="/sweetiewhatthe"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 100px;
-Height: 132px;
-background-image: url(%%sweetiewhatthe%%) !important
-}
-
-a[href="/dashfirenom"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 150px;
-background-image: url(%%dashfirenom%%) !important
-}
-
-a[href="/flutterbraid"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 194px;
-background-image: url(%%flutterbraid%%) !important
-}
-
-a[href="/lunawtfisthat"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 150px;
-background-image: url(%%lunawtfisthat%%) !important
-}
-
-a[href="/eriscute"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 93px;
-Height: 150px;
-background-image: url(%%discordcute%%) !important
-}
-
-a[href="/erisme"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 151px;
-background-image: url(%%erispoint%%) !important
-}
-
-a[href="/miniluna"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 113px;
-background-image: url(%%miniluna%%) !important
-}
-
-a[href="/flufflehop"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 146px;
-background-image: url(%%flufflehop%%) !important
-}
-
-a[href="/flufflefall"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 138px;
-background-image: url(%%flufflefall%%) !important
-}
-
-a[href="/raritywhythankyou"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 236px;
-background-image: url(%%raritywhythankyou%%) !important
-}
-
-a[href="/rarityworried"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 150px;
-background-image: url(%%rarityworried%%) !important
-}
-
-a[href="/shining1"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 128px;
-background-image: url(%%shining1%%) !important
-}
-
-a[href="/shiningderp"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 112px;
-background-image: url(%%shiningderp%%) !important
-}
-
-a[href="/shininghottie"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 150px;
-background-image: url(%%shininghottie%%) !important
-}
-
-a[href="/shiningheil"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 180px;
-background-image: url(%%shiningheil%%) !important
-}
-
-a[href="/shining"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 242px;
-background-image: url(%%shining%%) !important
-}
-
-a[href="/donttellmywife"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 138px;
-background-image: url(%%donttellmywife%%) !important
-}
-
-a[href="/shiningninja"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 221px;
-Height: 200px;
-background-image: url(%%shiningninja%%) !important
-}
-
-a[href="/shiningcuddle"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 99px;
-background-image: url(%%shiningcuddle%%) !important
-}
-
-a[href="/armorarmor"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 166px;
-background-image: url(%%armorarmor%%) !important
-}
-
-a[href="/shiningheythere"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 122px;
-background-image: url(%%shiningheythere%%) !important
-}
-
-a[href="/smiley"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 258px;
-background-image: url(%%smiley%%) !important
-}
-
-a[href="/shininghugs"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 118px;
-background-image: url(%%shininghugs%%) !important
-}
-
-a[href="/shining2"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 124px;
-background-image: url(%%shining2%%) !important
-}
-
-a[href="/shining2"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 124px;
-background-image: url(%%shining2%%) !important
-}
-
-a[href="/shining3"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 150px;
-background-image: url(%%shining3%%) !important
-}
-
-a[href="/shining4"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 163px;
-Height: 199px;
-background-image: url(%%shining4%%) !important
-}
-
-a[href="/werenotrelated"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 206px;
-background-image: url(%%werenotrelated%%) !important
-}
-
-a[href="/twiley"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 300px;
-Height: 300px;
-background-image: url(%%twiley%%) !important
-}
-
-a[href="/notanapple"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 225px;
-background-image: url(%%rsz-notanapple%%) !important
-}
+a[href|='/raritywhythankyou']{background-position: -0px -0px; width: 150px; height: 236px; }
+a[href|='/notanapple']{ background-position: -0px -236px; width: 150px; height: 225px; }
+a[href|='/flutterbraid']{ background-position: -0px -461px; width: 150px; height: 194px; }
+a[href|='/zecoraback']{ background-position: -0px -655px; width: 150px; height: 185px; }
+a[href|='/zecorawhat']{  background-position: -0px -840px; width: 150px; height: 184px;  }
+a[href|='/twiglaredown']{ background-position: -0px -1024px; width: 150px; height: 165px; }
+a[href|='/erispoint']{ background-position: -0px -1189px; width: 150px; height: 151px; }
+a[href|='/erisiscute']{ background-position: -0px -1340px; width: 93px; height: 150px; }
+a[href|='/zecoraup']{ background-position: -0px -1490px; width: 150px; height: 150px;  }
+a[href|='/rarityworried']{ background-position: -0px -1640px; width: 150px; height: 150px; }
+a[href|='/dashfirenom']{ background-position: -0px -1790px; width: 150px; height: 148px; }
+a[href|='/flufflehop']{ background-position: -0px -1938px; width: 150px; height: 146px; }
+a[href|='/flufflefall']{ background-position: -0px -2084px; width: 150px; height: 138px; }
+a[href|='/zecoraspiders']{ background-position: -0px -2222px; width: 150px; height: 135px; }
+a[href|='/sweetiewhatthe']{ background-position: -0px -2357px; width: 100px; height: 132px; }
+a[href|='/zecoraflee']{ background-position: -0px -2489px; width: 150px; height: 127px; }
+a[href|='/miniluna']{ background-position: -0px -2616px; width: 150px; height: 113px; }
+a[href|='/scoottongue']{ background-position: -0px -2729px; width: 150px; height: 111px; }
+a[href|='/zecorahood']{ background-position: -0px -2840px; width: 150px; height: 99px; }
+a[href|='/zecoraeyes']{ background-position: -0px -2939px; width: 150px; height: 98px;  }

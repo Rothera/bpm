@@ -490,7 +490,7 @@ a[href|='/surbarf'], a[href|='/sursmelledyourcloset'] {width:273px; height:152px
 a[href|='/trixieplot'] {width:152px; height:116px; background-position: -0px -1698px}
 
 
-a[href|='/chrysshake'], a[href|='/queenshake'], a[href|='/cinnapie'], a[href|='/ruined'], a[href|='/samuraijack'], a[href|='/snuggle'], a[href|='/twichangeling'], a[href|='/wmdiscord'] {
+a[href|='/chrysshake'], a[href|='/queenshake'], a[href|='/cinnapie'], a[href|='/espbanana'], a[href|='/ruined'], a[href|='/samuraijack'], a[href|='/snuggle'], a[href|='/twichangeling'], a[href|='/wmdiscord'] {
     display: block;
     clear: none;
     float: left;
@@ -499,7 +499,8 @@ a[href|='/chrysshake'], a[href|='/queenshake'], a[href|='/cinnapie'], a[href|='/
 
 a[href|='/chrysshake'], a[href|='/queenshake'] {width:114px; height:152px; background-position: -102px -0px}
 a[href|='/cinnapie'] {width:132px; height:149px; background-position: -131px -152px}
-a[href|='/ruined'] {width:308px; height:152px; background-position: -0px -708px}
+a[href|='/espbanana'] {width:183px; height:202px; background-position: -0px -708px}
+a[href|='/ruined'] {width:308px; height:152px; background-position: -0px -910px}
 a[href|='/samuraijack'] {width:102px; height:152px; background-position: -0px -0px}
 a[href|='/snuggle'] {width:131px; height:152px; background-position: -0px -152px}
 a[href|='/twichangeling'] {width:150px; height:202px; background-position: -0px -304px}
@@ -870,6 +871,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 /* Replacing somebody's name? Add it to the list here. */
 a.author[href$="numberlock"],
+a.author[href$="CodenameToon"],
 a.author[href$="thedarklordkyp"],
 a.author[href$="fwinest_JediThug"],
 a.author[href$="V17Ds"],
@@ -961,6 +963,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="CodenameToon"]:before,
 a.author[href$="numberlock"]:before,
 a.author[href$="thedarklordkyp"]:before,
 a.author[href$="fwinest_JediThug"]:before,
@@ -1054,6 +1057,7 @@ visibility:visible!important;
 /*a.author:before{
     content:"Princess "
     }*/
+a.author[href$="CodenameToon"]:before {content:"Coggler"}
 a.author[href$="numberlock"]:before {content:"BeerPony"}
 a.author[href$="thedarklordkyp"]:before {content:"A_Drunk_Changeling"}
 a.author[href$="fwinest_JediThug"]:before {content:"Wincest_JediThug"}
@@ -1279,7 +1283,6 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 
 
 /* Any pre/post-name flair stuff goes here */ 
-.tagline a.author[href$="/Udent_Gnome"]:before,
 .tagline a.author[href$="/Indubitableness"]:before,
 .tagline a.author[href$="/RainbowCrash"]:before,
 .tagline a.author[href$="/245001"]:before,
@@ -1305,7 +1308,6 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 
 /* Flour sack flair for anyone we've noticed that has flair disabled. Don't forget to add them above too.*/ 
 .tagline a.author[href$="/Indubitableness"]:before,
-.tagline a.author[href$="/Udent_Gnome"]:before,
 .tagline a.author[href$="/EvanMacIan"]:before,
 .tagline a.author[href$="/RainbowCrash"]:before,
 .tagline a.author[href$="/Latiel"]:before,

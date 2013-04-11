@@ -96,7 +96,7 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
  border-radius:10px;
  border-top-right-radius: 0px;
  border-bottom-right-radius: 0px;
- z-index:9999;
+ z-index:1000;
  overflow:visible;
  max-height:16px;
  white-space:nowrap
@@ -272,7 +272,6 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  border-color:#9edbf8;
  background-image:url(%%rainbow%%);
  background-repeat:no-repeat;
- color:#1e97d2
 }
 
 .sidebox.submit.submit-text .morelink:hover
@@ -293,39 +292,23 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  width:145px
 }
 
-.morelink a,.morelink a:hover{color: white}
-
-.sidebox.submit-link .morelink::before 
-{
- display:block;
- clear:none;
- content:"Submit a Link";
- font-size:95%;
-}
-
 .titlebox li h4 { padding-top: 4px; }
-
-.sidebox.submit-text .morelink::before 
-{
- display:block;
- clear:none;
- content:"Submit a Text Post";
- font-size:90%;
- padding-left:2px;
-}
 
 .sidebox.submit .morelink a 
 {
  position:absolute;
  top:0;
- padding-left:1000px;
- font-size:0px;
- text-align:right;
- color:#56a6f7
+ color:white;
+ font-size:90% !important;
 }
 
-.sidebox.submit.submit-link{width: 150px}
-.sidebox.submit.submit-text{margin-top: -42px;margin-left: 153px}
+.sidebox.submit.submit-link .morelink:hover a {color:#1e97d2}
+.sidebox.submit.submit-link .morelink a {font-size:95% !important}
+.sidebox.submit.submit-text .morelink:hover a {color:#662c89}
+
+
+.sidebox.submit.submit-link{width: 150px;font-size:95%;}
+.sidebox.submit.submit-text{margin-top: -42px;margin-left: 153px;padding-left:2px;}
 .morelink .nub,.sidebox.create,.sidebox.submit.disabled{display: none}
 
 .res-nightmode .sidebox.submit.submit-text{background:none!important;margin-top:-45px;margin-left:153px}

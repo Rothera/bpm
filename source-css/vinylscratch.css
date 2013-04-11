@@ -72,13 +72,13 @@ ______________________________________________▀▀▀▀▀
 
 */
 
-/*Temporary CSS to make the sidebar picture (oh god please don't fuck up everything) remove this shit after a week or so*/
+/*Temporary CSS to make the sidebar picture (oh god please don't fuck up everything) remove this shit after a week or so......... HAHAHHAHA NO*/
 
 div.side {
-    padding: 435px 0px 0px 0px;
+    padding: 535px 0px 0px 0px;
 /*    background-color: transparent; */
     background-image: url(%%side%%) !important;
-    background-position: 70px 5px !important;
+    background-position: 0px 0px !important;
     margin: 0px;
     background-repeat: no-repeat !important
     }
@@ -149,9 +149,9 @@ body.res-nightmode:first-of-type {background-color: transparent!important;}
 
 /*
 +
-|                     VERSION 1.5.2
+|                             VERSION 2?
 |
-|              STYLESHEET FOR R/VINYLSCRATCH         
+|                      STYLESHEET FOR R/VINYLSCRATCH         
 |             MOSTLY BY KOOBAXION (sub a wub dub dub) AND 007GHG7 (secrit agnt mahn)       
 |ALSO SOME CREDIT GOES TO RAHLYN (that Rhy guy) AND MRJOKER7854 (no who best pone iz) AND ALISTERDX (Da guy who knows teh 'list')
 |                RAHLYN IS THE FLAIR GOD
@@ -362,7 +362,7 @@ div.titlebox span.number:after {
 .sidecontentbox h1:not(:first-child):before {
     color: gray !important;
     font-size: 13px !important;
-    content: "HEAD DJS";
+    content: "Guards the club";
     display: inline-block
     }
 
@@ -535,7 +535,7 @@ a[href|='/shrug'],a[href|="/vsshrug"],a[href|='/tableflip'],a[href|='/vslaying']
     background-image: url(%%vssheet%%) !important
     }
 
-a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vsdance2'],a[href|='/vsgrump'],a[href|='/vstears'],a[href|='/vssinep'],a[href|='/kixandra'],a[href|='/vsholyshit'],a[href|='/vsfacehoof'],a[href|='/vssrs'],a[href|='/vssoawesome'],a[href|='/vssupersad'],a[href|='/vssmug'],a[href|='/vysmug'],a[href|='/vsdontask'],a[href|='/modstar'],a[href|='/vs0b'],a[href|='/vs2b'],a[href|='/vs0c'],a[href|='/vs1c'],a[href|='/vs2c'],a[href|='/vs0d'],a[href|='/vs1d'],a[href|='/vs2d'],a[href|='/vs0e'] {
+a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vsdance2'],a[href|='/vsgrump'],a[href|='/vstears'],a[href|='/vssinep'],a[href|='/kixandra'],a[href|='/vsholyshit'],a[href|='/vsfacehoof'],a[href|='/vssrs'],a[href|='/vssoawesome'],a[href|='/vssupersad'],a[href|='/vssmug'],a[href|='/vysmug'],a[href|='/vsdontask'],a[href|='/modstar'],a[href|='/vssmile'],a[href|='/vsdrunk'],a[href|='/vshipster'],a[href|='/vs0b'],a[href|='/vs2b'],a[href|='/vs0c'],a[href|='/vs1c'],a[href|='/vs2c'],a[href|='/vs0d'],a[href|='/vs1d'],a[href|='/vs2d'],a[href|='/vs0e'],a[href|='/vs2e'],a[href|='/vs1e'],a[href|='/vs0e'] {
     display: block;
     clear: none;
     float: left;
@@ -605,15 +605,18 @@ a[href|='/vssuave'],a[href|='/vs0b'] {background-image: url(%%vssheet2%%);width:
 a[href|='/vstears'],a[href|='/vs0c'] {background-image: url(%%vssheet2%%);width:70px; height:77px;background-position: -145px -228px}
 a[href|='/vsholyshit'],a[href|='/vs0d'] {background-image: url(%%vssheet2%%);width:70px; height:80px; background-position: -300px -154px}
 a[href|='/vssmug'],a[href|='/vysmug'],a[href|='/vs0e'] {background-image: url(%%vssheet2%%);width:70px; height:70px; background-position: -370px 0px}
+a[href|='/vshipster'],a[href|='/vs0e'] {background-image: url(%%vssheet2%%);width:70px; height:72px; background-position: -370px -71px}
 
 /* 1 Column */
 a[href|='/vsfacehoof'],a[href|='/vs1c'] {background-image: url(%%vssheet2%%);width:70px; height:71px;background-position: -300px 0px}
 a[href|='/vssrs'],a[href|='/vs1d'] {background-image: url(%%vssheet2%%);width:70px; height:63px;background-position: -300px -234px}
+a[href|='/vsdrunk'],a[href|='/vs1e'] {background-image: url(%%vssheet2%%);width:70px; height:68px;background-position: -370px -144px}
 
 /* 2 Column */
 a[href|='/vsdance2'],a[href|='/vs2b'] {background-image: url(%%vssheet2%%);width:70px; height:104px; background-position: -222px -145px}
 a[href|='/vssoawesome'],a[href|='/vs2c'] {background-image: url(%%vssheet2%%);width:70px; height:83px; background-position: -300px -71px}
 a[href|='/vssupersad'],a[href|='/vs2d'] {background-image: url(%%vssheet2%%);width:70px; height:70px; background-position: -300px -297px}
+a[href|='/vssmile'],a[href|='/vs2e'] {background-image: url(%%vssheet2%%);width:70px; height:70px; background-position: -370px -213px}
 
 /* Other Emotes*/
 a[href|='/vsdance'] { width:110px; height:110px; background-image: url(%%vsdance%%); display: block; clear: none; float: left; }
