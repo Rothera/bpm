@@ -353,6 +353,7 @@ def update_www(ctx):
     ctx.copy("web/firefox-logo.png", "www")
     ctx.copy("web/chrome-logo.png", "www")
     ctx.copy("web/opera-logo.png", "www")
+    ctx.copy("web/redditnews-logo.png", "www")
     ctx.filter("web/index.html", dest="www/index.html")
     if newer(["build/betterponymotes.xpi", "build/betterponymotes.oex"],
                  ["www/betterponymotes.xpi", "www/betterponymotes.oex"]):
