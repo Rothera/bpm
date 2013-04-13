@@ -243,7 +243,7 @@ a[href|="/dappershy"], a[href|="fancyshy"] {
 
 /* Wide Emotes */
 
-a[href|="/shysocks"], a[href|="/snugglysocks"] {
+a[href|="/shysocks"], a[href|="/snugglysocks"], a[href|="/yayflutter"], a[href|="/woohoo"] {
 
     display: block;
     clear: none;
@@ -255,6 +255,11 @@ a[href|="/shysocks"], a[href|="/snugglysocks"] {
 a[href|="/shysocks"], a[href|="/snugglysocks"] {
     width: 298px;
     background-position: -0px -0px;
+    }
+
+a[href|="/yayflutter"], a[href|="/woohoo"] {
+    width: 226px;
+    background-position: -298px -0px;
     }
 
 /* SNUGGLES */
@@ -386,6 +391,14 @@ a[href|="/danceshy"] {
     width: 150px;
     height: 150px;
     background-image: url(%%danceshy%%)
+    }
+a[href|="/hmm"], a[href|="/sorrywhat"], a[href|="/flutterbook"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 180px;
+    height: 196px;
+    background-image: url(%%flutterbook%%)
     }
 /* Wintery emotes - Only four */
 
