@@ -96,7 +96,7 @@ div.titlebox .users-online span.number:after{content:" drowning in syrup"}
 /********************************/
 
 /******Insert name here to replace******/
-a.author[href$=JustAnotherGDB], a.author[href$=MisanthropicCat], a.author[href$=Conky_], a.author[href$=floutsy], a.author[href$=ruffletuffle], a.author[href$=Apple_Snacks], a.author[href$=petraman], a.author[href$=WorstPossibleThing], a.author[href$=Esplin], a.author[href$=theMagicalCouch], a.author[href$=pickled_octopus], a.author[href$=hiero_], a.author[href$=Thecursed], a.author[href$=Apprentice1994], a.author[href$=dasflash], a.author[href$=TheDarkman67], a.author[href$=derram_2], a.author[href$=maku450], a.author[href$=Calcos323], a.author[href$=iiRockpuppy] {
+a.author[href$=JustAnotherGDB], a.author[href$=MisanthropicCat], a.author[href$=Conky_], a.author[href$=floutsy], a.author[href$=ruffletuffle], a.author[href$=Apple_Snacks], a.author[href$=petraman], a.author[href$=WorstPossibleThing], a.author[href$=Esplin], a.author[href$=theMagicalCouch], a.author[href$=pickled_octopus], a.author[href$=hiero_], a.author[href$=Thecursed], a.author[href$=Apprentice1994], a.author[href$=dasflash], a.author[href$=TheDarkman67], a.author[href$=derram_2], a.author[href$=maku450], a.author[href$=Calcos323], a.author[href$=iiRockpuppy], a.author[href$=Beatbawx] {
     font-size: 0 !important;
     overflow: hidden;
     display: inline-block;
@@ -184,6 +184,10 @@ a.author[href$=iiRockpuppy]:before {
     content: "iiRockpancake";
     font-size: 10px;
     }
+a.author[href$=Beatbawx]:before {
+    content: "Beatpancake";
+    font-size: 10px;
+    }
 
 /************Additions*************/
 a.author[href$=JustAnotherGDB]:after {
@@ -199,6 +203,11 @@ a.author[href$=MisanthropicCat]:after {
 a.author[href$=Conky_]:after {
     content: " is intimately familiar with Aunt Jemima";
     color: yellow;
+    font-size: 10px;
+    }
+a.author[href$=Beatbawx]:after {
+    content: " is a professional survey maker";
+    color: black;
     font-size: 10px;
     }
 

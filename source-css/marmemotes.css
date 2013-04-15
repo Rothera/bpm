@@ -301,6 +301,17 @@ a[href|="/mmmbananas"]{
     height: 140px;
     background-image: url(%%mmmbananas%%)
     }
+
+a[href|="/stampontheground"],
+a[href|="/fsstamp"]
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 115px;
+    height: 140px;
+    background-image: url(%%stampontheground%%)
+}
 /*end animotes*/
 
 /* sheet1 */
@@ -1164,7 +1175,9 @@ a[href|="/enemyatthegates"],
 a[href|="/ponymead"],
 a[href|="/smuglestia"],
 a[href|="/ridinintothedangerzone"],
-a[href|="/bpsalute"]
+a[href|="/bpsalute"],
+a[href|="/bpdrunkagain"],
+a[href|="/HOERS"]
 {
     display: block;
     clear: none;
@@ -1251,5 +1264,17 @@ a[href|="/bpsalute"]
 {
 	width: 187px;
 	background-position: -125px -980px;
+}
+
+a[href|="/bpdrunkagain"]
+{
+	width: 117px;
+	background-position: -0px -1120px;
+}
+a[href|="/HOERS"]
+{
+	width: 146px;
+        height: 139px;
+	background-position: -117px -1121px;
 }
 /* end sheet 9 */

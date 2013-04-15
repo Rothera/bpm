@@ -7,10 +7,11 @@ DC03 - Sidebar fuckery (Search removed, created by removed, creat new subreddit 
 10Feb2013 - Formating of code considerably improved. Except for macros.
 20Feb2013 - Catvotes ported to res-nightmode. !important; fixes everything
 20Feb2013 - Considerable changes to the res-nightmode flags. Changes should mostly effect it. Plounge Chat logo is now visible on the sidebar.
-DC04 - Someone requested an increase in Roseluck. Submit buttons are now changed. Plan on using something else for one of them, just havn't decided what yet.
+DC04 - Someone requested an increase in Roseluck. Submit buttons are now changed.
 DC05 - Announcement bar created
 24Feb2013 - Name change system changed
 08Mar2013 - Announcement bar updated to allow links
+13Apr2013 - Removed suffix from moderation box
 Use Ctrl-F to find and remove them. */
 
 /* Sub Name Change*/
@@ -291,6 +292,10 @@ body > .content:before{
 .sidecontentbox a.author.id-t2_5n3bs, .sidecontentbox a.author.id-t2_5ifnt, .sidecontentbox a.author.id-t2_75mzg, .sidecontentbox a.author.id-t2_6k0ud {
     content:"";
     font-size: 0pt;
+    }
+
+.sidecontentbox a.author.id-t2_5n3bs:after, .sidecontentbox a.author.id-t2_5ifnt:after,.sidecontentbox a.author.id-t2_75mzg:after, .sidecontentbox a.author.id-t2_6k0ud:after {
+    display: none;
     }
 
 .sidecontentbox .flair {

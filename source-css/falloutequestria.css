@@ -46,21 +46,24 @@ height:100px;
 }
 
 
-
-/*Submit a link -> Create a submission*/
-.submit .morelink a{
-font-size:0;content:"";
-overflow:hidden;text-indent:-300px
-}
 .submit .morelink a:before{ 
    content:"";
    float:left;
    width:27px;
    height:27px;
  margin-left:20px;
+margin-right: 15px;
 background-image: url(%%littlepip-point-27%%);
     background-position: -0px -0px;
     background-repeat: no-repeat;
+}
+.submit .morelink a{
+text-align:left;
+}
+
+/* .submit .morelink a{
+font-size:0;content:"";
+overflow:hidden;text-indent:-300px
 }
 .submit .morelink a:after{
 content:"Submit a new thread";
@@ -69,8 +72,8 @@ margin-left:253px
 }
 .sidebox.submit .morelink:hover:before {
 color: white;
-}
-.side .submit .spacer { display: none; }
+} */
+.side .submit .spacer { display: none; } 
 .submit-text { display: none }
 
 /* from r/awesome */

@@ -70,7 +70,76 @@ ______________________________________________▀▀▀▀▀
 
 ...Really, Joker? You put an ASCII Pinkie in the stylesheet of a Vinyl sub? PINKIE PIE BEST PONE BIAAAAAAAAAAAATTTCCHHH!!!! [](/wmdis)[](/wmkarma)[](/wmpinkamina)[](/wmaj) WURDS R SO SXY!
 
+
+                             .
+                             ...
+...                         .:::.                         ...
+·::::...                   :::::::                   ...::::·
+ ·::::::::...     ..      .........      ..     ...::::::::·
+  :::::::::::::..  ::   .::       ::.   ::  ..:::::::::::::
+     ········::::::::  .::::.   .::::.  ::::::::········
+                  ::: .::::::. .::::::. :::
+            ......:::                   :::......
+     ::::::::::::::::.                 .::::::::::::::::
+     ·::::::::···  .:::.      .      .:::.  ···::::::::·
+      ·::···     ..::::::.   :::   .::::::..     ···::·
+               .:::· ·:::·  .:::.  ·:::· ·:::.
+            .::::·   ·:·   .:::::.   ·:·  ·::::.
+           ·::::·   ·::·   :::::::   ·::·  ·::::·
+             ··    ·::·     ·:::·     ·::·   ··
+                   ·::·   .  ·:·  .   ·::·
+                         ::  :::  ::
+                   .....::·  ·:·  ·::.....
+                   ···        ·        ···
+
+
+
+
 */
+
+/* Super awesome navigation menu thingy adapted from /r/android by Star */
+
+#header-bottom-left .tabmenu { position: absolute;
+    bottom: 21px;
+    left: 200px;
+}
+
+.formtabs-content {
+    margin-top: 20px;
+}
+
+.tabmenu li  { margin: 0px 1px 0px 0px; }
+
+.tabmenu li a, .tabmenu li.selected a { border: 0;
+background: transparent none no-repeat scroll bottom left;
+background-image: url(%%unselected%%);
+background-position: bottom center;
+text-transform: uppercase;
+padding: 10px 12px 21px 12px !important;
+color: #000;
+box-shadow: 3px 3px 5px #777; }
+
+.tabmenu li:first-child.selected a { background-image: url(%%selected%%); background-repeat: no-repeat; background-color: #ededed; }
+
+.tabmenu li:first-child a { background: #ededed no-repeat bottom center;
+background-image: url(%%unselected%%); }
+
+.tabmenu li.selected a { background-image: url(%%selected%%); }
+
+.tabmenu li a:hover, .tabmenu li.selected a:hover {color:#1F96CA;}
+
+.res-nightmode #header #header-bottom-left .tabmenu .selected a {padding: 10px 12px 21px !important; background-image: url(%%unselected%%) !important;}
+
+.res-nightmode .tabmenu li a {background-color:transparent!important;}
+
+.tabmenu li a[href$="/ad/"] {
+	visibility: hidden;
+    }	
+	
+.tabmenu li a[href$="/ad/"]:after {
+    content: "new";
+	visibility: visible;
+    }
 
 /*Temporary CSS to make the sidebar picture (oh god please don't fuck up everything) remove this shit after a week or so......... HAHAHHAHA NO*/
 
@@ -174,6 +243,20 @@ body
 
 h3{
     font-size: 150%;
+}
+
+h4{
+    font-size: 14px;
+    background: #333;
+    background-image: linear-gradient(#18e7e7,#36c)!important;
+    background-image: -webkit-linear-gradient(#18e7e7,#36c)!important;
+    background-image: -moz-linear-gradient(#18e7e7,#36c)!important;
+    background-image: -o-linear-gradient(#18e7e7,#36c)!important;
+    box-shadow: 3px 3px 5px #1f3e7c;
+    color: #FFF;
+    height: 15px!important;
+    margin: 5px 0 10px;
+    padding: 6px 0 8px 10px;
 }
 
 .side a[href="http://www.reddit.com/r/pinkiepie/new"] {
@@ -458,6 +541,58 @@ a.author[href$="/RetardVomitPussyCunt"]:after {
     display: none !important
     }
 
+/* L: START EMOTEBOX */ 
+.titlebox blockquote {
+    border-left: 0;
+    margin: 0;
+    padding-left: 0;
+}
+.titlebox .md td, .titlebox .md th {
+    border: 1px solid #222;
+} 
+.titlebox h5 + blockquote, .titlebox h6 + blockquote {
+    background: #333 !important;
+    background-image: linear-gradient(#555,#262626) !important;
+    background-image: -webkit-linear-gradient(#555,#262626) !important;
+    background-image: -moz-linear-gradient(#555,#262626) !important;
+    background-image: -o-linear-gradient(#555,#262626) !important;
+    box-shadow: 3px 3px 5px #777; border:none !important;
+    color: #eee !important;
+    cursor: auto; display: block;
+    height: 50px; margin: 0;
+    max-width: 300px;
+    overflow: hidden;
+    padding: 10px 10px 0 0 !important;
+}
+
+.res-nightmode .titlebox .md td, .res-nightmode .titlebox .md th {
+    border: 1px solid #222 !important;
+}
+
+.titlebox h5 + blockquote:hover, .titlebox h6 + blockquote:hover {
+    height: 100%; 
+    max-width: none; 
+    min-height: 60px; 
+    background-color: #f3f3f3; 
+    background-image: none !important; 
+    border: 1px solid #CCC; 
+    box-shadow: 3px 3px 5px #777; 
+}
+.titlebox h6 + blockquote > table {
+    margin-left: 0;
+}
+.titlebox h5 + blockquote > table {
+    margin-left: 5px;
+}
+.side .md {
+    overflow: visible;
+}
+.titlebox .md > h5, .titlebox h5 + blockquote:before, .titlebox .md > h6, .titlebox h6 + blockquote:before {
+    content: url(%%emotes%%);
+    display: block;
+}
+
+
 /*------------***------------*/
 
 
@@ -519,6 +654,7 @@ background-repeat: no-repeat;
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
+
 
 /*
 | 
@@ -589,7 +725,7 @@ a[href|='/vsheh'],a[href|='/vs29'] {width:67px; height:80px;background-position:
 a[href|='/vsyes'],a[href|='/vs2a'] {width:70px; height:73px;background-position: 0px -765px}
 
 
-a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vsdance2'],a[href|='/vsgrump'],a[href|='/vstears'],a[href|='/vssinep'],a[href|='/kixandra'],a[href|='/vsholyshit'],a[href|='/vsfacehoof'],a[href|='/vssrs'],a[href|='/vssoawesome'],a[href|='/vssupersad'],a[href|='/vssmug'],a[href|='/vysmug'],a[href|='/vsdontask'],a[href|='/modstar'],a[href|='/vssmile'],a[href|='/vsdrunk'],a[href|='/vshipster'],a[href|='/vstiredofyourshit'],a[href|='/goddammitjoker'],a[href|='/vspride'],a[href|='/vsproud'],a[href|='/vscuter'],a[href|='/vswoah'],a[href|='/vshotdamn'],a[href|='/vsdance3'],a[href|='/vsno'],a[href|='/vsermergerd'],a[href|='/vs0b'],a[href|='/vs2b'],a[href|='/vs0c'],a[href|='/vs1c'],a[href|='/vs2c'],a[href|='/vs0d'],a[href|='/vs1d'],a[href|='/vs2d'],a[href|='/vs0e'],a[href|='/vs2e'],a[href|='/vs1e'],a[href|='/vs0e'],a[href|='/vs0f'],a[href|='/vs1f'],a[href|='/vs2f'] {
+a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vsdance2'],a[href|='/vsgrump'],a[href|='/vstears'],a[href|='/vssinep'],a[href|='/kixandra'],a[href|='/vsholyshit'],a[href|='/vsfacehoof'],a[href|='/vssrs'],a[href|='/vssoawesome'],a[href|='/vssupersad'],a[href|='/vssmug'],a[href|='/vysmug'],a[href|='/vsdontask'],a[href|='/modstar'],a[href|='/vssmile'],a[href|='/vsdrunk'],a[href|='/vshipster'],a[href|='/vstiredofyourshit'],a[href|='/goddammitjoker'],a[href|='/vspride'],a[href|='/vsproud'],a[href|='/vscuter'],a[href|='/vswoah'],a[href|='/vshotdamn'],a[href|='/vsdance3'],a[href|='/vsno'],a[href|='/vsermergerd'],a[href|='/vswatching'],a[href|='/vscrazed'],a[href|='/vsweegee'],a[href|='/weegee'],a[href|='/vs0b'],a[href|='/vs2b'],a[href|='/vs0c'],a[href|='/vs1c'],a[href|='/vs2c'],a[href|='/vs0d'],a[href|='/vs1d'],a[href|='/vs2d'],a[href|='/vs0e'],a[href|='/vs2e'],a[href|='/vs1e'],a[href|='/vs0e'],a[href|='/vs0f'],a[href|='/vs1f'],a[href|='/vs2f'],a[href|='/vs0g'],a[href|='/vs1g'] {
     display: block;
     clear: none;
     float: left;
@@ -608,6 +744,7 @@ a[href|='/vstiredofyourshit'],a[href|='/goddammitjoker'] {background-image: url(
 a[href|='/vsno'] {background-image: url(%%vssheet2%%);width:150px; height:127px;background-position: 0px -697px}
 a[href|='/vsdance3'] {background-image: url(%%vssheet2%%);width:145px; height:178px;background-position: 0px -825px}
 a[href|='/vswoah'],a[href|='/vshotdamn'] {background-image: url(%%vssheet2%%);width:100px; height:77px;background-position: -154px -663px}
+a[href|='/vsweegee'],a[href|='/weegee'] {background-image: url(%%vssheet2%%);width:100px; height:148px;background-position: -154px -741px}
 
 /* 0 Column */
 a[href|='/vssuave'],a[href|='/vs0b'] {background-image: url(%%vssheet2%%);width:70px; height:83px;background-position: -145px -145px}
@@ -616,12 +753,14 @@ a[href|='/vsholyshit'],a[href|='/vs0d'] {background-image: url(%%vssheet2%%);wid
 a[href|='/vssmug'],a[href|='/vysmug'],a[href|='/vs0e'] {background-image: url(%%vssheet2%%);width:70px; height:70px; background-position: -370px 0px}
 a[href|='/vshipster'],a[href|='/vs0e'] {background-image: url(%%vssheet2%%);width:70px; height:72px; background-position: -370px -71px}
 a[href|='/vspride'],a[href|='/vsproud'],a[href|='/vs0f'] {background-image: url(%%vssheet2%%);width:70px; height:76px; background-position: -370px -284px}
+a[href|='/vswatching'],a[href|='/vs0g'] {background-image: url(%%vssheet2%%);width:70px; height:49px; background-position: -370px -361px}
 
 /* 1 Column */
 a[href|='/vsfacehoof'],a[href|='/vs1c'] {background-image: url(%%vssheet2%%);width:70px; height:71px;background-position: -300px 0px}
 a[href|='/vssrs'],a[href|='/vs1d'] {background-image: url(%%vssheet2%%);width:70px; height:63px;background-position: -300px -234px}
 a[href|='/vsdrunk'],a[href|='/vs1e'] {background-image: url(%%vssheet2%%);width:70px; height:68px;background-position: -370px -144px}
 a[href|='/vscuter'],a[href|='/vs1f'] {background-image: url(%%vssheet2%%);width:70px; height:64px;background-position: 0px -513px}
+a[href|='/vscrazed'],a[href|='/vs1g']{background-image: url(%%vssheet2%%);width:70px; height:82px;background-position: -370px -741px}
 
 /* 2 Column */
 a[href|='/vsdance2'],a[href|='/vs2b'] {background-image: url(%%vssheet2%%);width:70px; height:104px; background-position: -222px -145px}
@@ -693,7 +832,7 @@ display: block;
 
 a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
-/* Hide emoticon tables in the sidebar  */
+/* Hide emoticon tables in the sidebar  
 .titlebox em {
     color: white
     }
@@ -705,6 +844,8 @@ div.usertext-body:hover table {
     display: block;
     clear: both
     }
+*/
+
 /* A: APPROVAL TWILIGHT*/
 
 .approval-checkmark {
