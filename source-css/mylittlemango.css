@@ -10,7 +10,7 @@ Added emotes (1/15/13)
 /* Header */
 
 #header-bottom-left:nth-of-type(n) {
-   background: url(%%chrysalisbanner%%);
+   background: url(%%mylittlemangobanner3%%);
    background-repeat: no-repeat;
    background-position: 50% 100%;
    height: 200px; 
@@ -51,7 +51,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     background:  url(%%background1%%)  no-repeat  fixed 50% 65% !important;
 } */
 
-body{background:url(%%mlmbackground1%%) no-repeat fixed center center!important}
+body{background:url(%%chrysalisbackground%%) no-repeat fixed center center!important}
 .res-nightmode .content{background-color:transparent!important}
 .res-nightmode{background-color:transparent !important}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
@@ -251,7 +251,7 @@ a[href|="/lunacheer"] { background-position: -0px -417px; width: 200px; height: 
 a[href|="/rawrr"] { background-position: -0px -613px; width: 170px; height: 171px; }
 a[href|="/mcoolstorybro"] { background-position: -0px -784px; width: 200px; height: 164px; }
 
-a[href|="/partytime"], a[href|="/mrapidfire"], a[href|="/imgonnacry"], a[href|="/insidecelestia"], a[href|="/thisjustin"] {
+a[href|="/partytime"], a[href|="/mrapidfire"], a[href|="/imgonnacry"], a[href|="/insidecelestia"], a[href|="/thisjustin"], a[href|="/queencadance"] {
      display: block;
      clear: none;
      float: left;
@@ -263,6 +263,8 @@ a[href|="/mrapidfire"] { background-position: -0px -200px; width: 200px; height:
 a[href|="/imgonnacry"] { background-position: -0px -392px; width: 200px; height: 168px; }
 a[href|="/insidecelestia"] { background-position: -0px -560px; width: 250px; height: 143px; }
 a[href|="/thisjustin"] { background-position: -0px -703px; width: 100px; height: 84px; }
+a[href|="/queencadance"] { background-position: -0px -787px; width: 150px; height: 146px; }
+
 
 a[href|="/hasanyonereallybeenfarevenasdecidedtouseevengowanttodolookmorelike"], a[href|="/whywouldyoudothat"] {
      display: block;
@@ -307,7 +309,7 @@ a[href|="/fillychrysalis"] { background-position: -96px -1756px; width: 100px; h
 a[href|="/queenofthenerds"] { background-position: -0px -1852px; width: 103px; height: 150px; }
 
 a[href|="/udntfun"], a[href|="/spraklefun"], a[href|="/excelianfun"], a[href|="/zirconiafun"], a[href|="/gdbfun"], a[href|="/petrafun"],
-a[href|="/purplefun"], a[href|="/willowfun"], a[href|="/vialfun"] {
+a[href|="/purplefun"], a[href|="/vialfun"], a[href|="/willowfun"], a[href|="/savvybeanfun"], a[href|="/ashleefun"] {
      display: block;
      clear: none;
      float: left;
@@ -321,8 +323,11 @@ a[href|="/zirconiafun"] { background-position: -0px -499px; width: 250px; height
 a[href|="/gdbfun"] { background-position: -0px -659px; width: 250px; height: 155px; }
 a[href|="/petrafun"] { background-position: -0px -814px; width: 250px; height: 155px; }
 a[href|="/purplefun"] { background-position: -0px -969px; width: 250px; height: 155px; }
-a[href|="/willowfun"] { background-position: -0px -1124px; width: 250px; height: 155px; }
 a[href|="/vialfun"] { background-position: -0px -1279px; width: 250px; height: 155px; }
+a[href|="/willowfun"] { background-position: -0px -1434px; width: 250px; height: 172px; }
+a[href|="/savvybeanfun"] { background-position: -0px -1606px; width: 250px; height: 166px; }
+a[href|="/ashleefun"] { background-position: -0px -1772px; width: 250px; height: 164px; }
+
 
 a[href|="/femship"], a[href|="/catbug2"], a[href|="/catbug4"], a[href|="/catbug3"], a[href|="/sadqueen"], a[href|="/catbug1"], a[href|="/chaoticgenes"], a[href|="/lopezislife"]{
      display: block;
@@ -459,4 +464,88 @@ a[href|="/lyrayes"]{
     width: 150px;
     height: 150px;
     background-position: -90px -440px !important;
+}
+
+/* 
+   
+*/
+
+a[href|="/hoofsmack"],a[href|="/bonnews"],a[href|="/hellobon"],a[href|="/milkywut"],a[href|="/babsohh"],a[href|="/boncute"],a[href|="/queenlovesyou"],a[href|="/raritea"],a[href|="/queendogoon"],a[href|="/surpriseball"],a[href|="/braeburnpop"],a[href|="/dashjuice"]{
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotepack2%%)
+}
+
+
+a[href|="/hoofsmack"]{
+    width: 150px;
+    height: 72px;
+    background-position: 0 0 !important;
+}
+
+a[href|="/bonnews"]{
+    width: 150px;
+    height: 77px;
+    background-position: 0 -72px !important;
+}
+
+a[href|="/hellobon"]{
+    width: 150px;
+    height: 96px;
+    background-position: 0 -149px !important;
+}
+
+a[href|="/milkywut"]{
+    width: 100px;
+    height: 100px;
+    background-position: -150px -149px !important;
+}
+
+a[href|="/babsohh"]{
+    width: 100px;
+    height: 100px;
+    background-position: 0 -249px !important;
+}
+
+a[href|="/boncute"]{
+    width: 74px;
+    height: 100px;
+    background-position: -100px -249px !important;
+}
+
+a[href|="/queenlovesyou"]{
+    width: 100px;
+    height: 150px;
+    background-position: 0 -349px !important;
+}
+
+a[href|="/raritea"]{
+    width: 120px;
+    height: 150px;
+    background-position: -100px -349px !important;
+}
+
+a[href|="/queendogoon"]{
+    width: 112px;
+    height: 150px;
+    background-position: 0 -499px !important;
+}
+
+a[href|="/surpriseball"]{
+    width: 101px;
+    height: 150px;
+    background-position: -112px -499px !important;
+}
+
+a[href|="/braeburnpop"]{
+    width: 150px;
+    height: 150px;
+    background-position: 0 -649px !important;
+}
+
+a[href|="/dashjuice"]{
+    width: 106px;
+    height: 150px;
+    background-position: -150px -649px !important;
 }

@@ -227,7 +227,7 @@ a[href|="/supershy"], a[href|="/ohhmy"] {
     }
 /* FANCY SHEET I MEAN SHEET #4 */
 
-a[href|="/dappershy"], a[href|="fancyshy"] {
+a[href|="/dappershy"], a[href|="/fancyshy"], a[href|="/colonthree"], a[href|="/cutieflutter"] {
 
         display: block;
     clear: none;
@@ -236,9 +236,13 @@ a[href|="/dappershy"], a[href|="fancyshy"] {
     background-image: url(%%fluttersheet4%%) !important
     }
 
-a[href|="/dappershy"], a[href|="fancyshy"] {
+a[href|="/dappershy"], a[href|="/fancyshy"] {
     width: 128px;
     background-position: -0px -0px;
+    }
+a[href|="/colonthree"], a[href|="/cutieflutter"] {
+    width: 270px;
+    background-position: -128px -0px;
     }
 
 /* Wide Emotes */
@@ -592,7 +596,7 @@ display: none !important;
 
 /* Best sidebar Filly */
 
-.side a[href="http://fav.me/d4pw6t9"]{
+.side a[href="http://fav.me/d5es5w1"]{
    display: block;
    height: 120px;
    width: 120px;
@@ -684,30 +688,6 @@ text-decoration: underline;
         background-repeat: no-repeat !important
     }
 
-/*** Submit a link -> Create a submission (Totally not stolen from /r/mylittlefoodmanes) ***/
-/*
-.sidebox.submit .morelink:before {
-    display: block;
-    clear: none;
-    content: "Create a Submission";
-    text-align: center;
-    color: #369;
-    width: 101%
-    } */
-.sidebox.submit .morelink:hover:before {
-    color: blue
-    }
-.sidebox.submit:hover a {
-    color: #b4cee5
-    }
-
-/*
-.sidebox.submit .spacer a {
-    background-image: url(%%submissionshy%%);
-    background-position: -0px -0px;
-    background-repeat: no-repeat
-    }
-*/
 /******************
 shy emote
 ******************/

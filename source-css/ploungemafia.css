@@ -224,9 +224,9 @@ a[href$="/spoiler"]:hover {
     }
 
 
-/* Announcements box (To use, place a link in the end of the sidebar in front of a bullet point) */
+/* Announcements box (To use, place the announcement, link or not in the sidebar with ## before it.)*/
 
-.titlebox .usertext-body .md ul li a {
+.titlebox .usertext-body h2:first-of-type {
 background: #fff;
 border: 1px solid #ccc;
 color: #555;
@@ -243,11 +243,11 @@ top: 30px;
 padding-left: 20px;
 z-index: 100
     }
-.titlebox .usertext-body .md ul li a:hover {
+.titlebox .usertext-body h2:first-of-type a:hover {
 text-decoration: underline;
     }
 
-.titlebox .usertext-body .md ul li a:before { 
+.titlebox .usertext-body h2:first-of-type a:before { 
 content: " " ; 
 margin-left: 5px;
 
@@ -280,6 +280,66 @@ position: absolute;
 top: 5px;
 left: 0;
 }
+
+/* BOX 2: ### EDITION */
+
+.titlebox .usertext-body h3:first-of-type
+{
+background: #fff;
+border: 1px solid #ccc;
+color: #555;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+font-size: 11px;
+position: absolute;
+left: 90px;
+top: 60px;
+padding-left: 20px;
+z-index: 100
+}
+
+.titlebox .usertext-body h3:first-of-type a:hover {
+text-decoration: underline;
+    }
+
+.titlebox .usertext-body h3:first-of-type a:before { 
+content: " " ; 
+margin-left: 5px;
+
+/* Orange */
+
+background-color: #FF5721;
+border: 2px solid #CD3700;
+
+/* Green 
+background-color: #85d462; 
+border: 2px solid #3BAE08; 
+*/
+/* Blue
+background-color: #0099CC; 
+border: 2px solid #00688B; 
+*/
+/* Purple
+background-color: #8A2BE2; 
+border: 2px solid #2E0854;
+*/
+
+width: 2px; 
+height: 2px; 
+border-radius: 10px; 
+display: block; 
+z-index: 300;
+padding: 2px;
+float: right;
+position: absolute;
+top: 5px;
+left: 0;
+}
+
 
 /* Self post icon */
 
