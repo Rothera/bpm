@@ -49,10 +49,10 @@ known_tags = (set(context.tag_config["RootTags"]) |
 all_tags = set()
 
 variant_log = open("checktags-variants.log", "w")
-for source in context.sources.values():
+for source in sorted(context.sources.values(), key=lambda s: s.name):
     print("%s:" % (source.name), file=variant_log)
 
-    for emote in source.unignored_emotes():
+    for emote in sorted(source.unignored_emotes(), key=lambda e: e.name):
         all_tags |= emote.tags
 
         # Make sure it's tagged at all
