@@ -139,9 +139,11 @@
     top: 25px;
     left: 600px;
     padding: 5px 5px 0px 5px;
+    margin: 0px !important;
 
     background-color: #E8E8E8;
-    border: thin solid black;
+    border: thin solid black !important;
+    border-radius: 0px !important;
     /*
      * It'd be nice to hide under RES's console dropdown, but there's too many
      * things we need to override to be nice like that.
@@ -164,7 +166,9 @@
 /* Top row widget container */
 #bpm-sb-toprow {
     height: 30px;
-    margin-bottom: 5px;
+    margin: 0px 0px 5px 0px !important;
+    padding: 0px !important;
+    width: 100% !important;
 }
 
 /* Top-left drag box */
@@ -179,14 +183,17 @@
 
 /* Search input */
 #bpm-sb-input {
-    border-width: 2px;
-    height: 18px;
-    width: 240px;
-    padding: 5px;
+    border-width: 2px !important;
+    height: 18px !important;
+    width: 240px !important;
+    padding: 5px !important;
     float: left;
+    /* Fix for Chrome, which get the size wrong. Also a fix to make this
+       somewhat saner in quirks mode documents */
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
 
     margin-right: 5px; !important;
-    box-sizing: initial; /* Fix for Chrome, which get the size wrong */
 }
 
 /* Result count element */
@@ -213,6 +220,9 @@
     height: 388px; /* #bpm-search-box - 62 */
 
     padding: 4px !important;
+    margin: 0px !important;
+    border-radius: 0px !important;
+    width: auto !important;
 
     background-color: white;
 }
@@ -221,6 +231,10 @@
 #bpm-sb-results {
     height: inherit;
     overflow-y: auto;
+    padding: 0px !important;
+    margin: 0px !important;
+    border-radius: 0px !important;
+    width: 100% !important;
 
     font-size: xx-small;
     font-family: monospace;
@@ -242,6 +256,9 @@
 
 #bpm-sb-bottomrow {
     height: 20px; /* Fit in the margins */
+    padding: 0px !important;
+    margin: 0px !important;
+    border-radius: 0px !important;
     float: left;
     width: 100%;
 }
@@ -277,8 +294,13 @@
 
 /* Global << icon thingy */
 #bpm-global-icon {
-    width: 40px;
-    height: 24px;
+    width: 40px !important;
+    height: 24px !important;
+
+    /* Fix for screwy sites */
+    padding: 0px !important;
+    border: none !important;
+    border-radius: 0px !important;
 
     /* Hide at the bottom */
     position: fixed;
