@@ -4,7 +4,15 @@
 // - /s is from r/falloutequestria (and r/mylittleanime has a variant)
 // - #s is from r/doctorwho
 // - /b and /g are from r/dresdenfiles
-var spoiler_links = ["/spoiler", "/s", "#s", "/b", "/g"];
+var spoiler_links = [
+    "/spoiler", // r/mylittlepony and many other subreddits
+    "/s",       // r/falloutequestria, and a variant in r/mylittleanime
+    "/g",       // r/dresdenfiles
+    "/b",       // r/dresdenfiles
+    "#s",       // r/doctorwho and r/gameofthrones
+    "#g",       // r/gameofthrones
+    "#b",       // r/gamofthrones
+    ];
 
 /*
  * Sets the sourceinfo hover on an emote element.
