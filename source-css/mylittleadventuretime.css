@@ -1,8 +1,12 @@
-#header{padding: 0px; padding-bottom: 0px; height:163px; padding-right:0px;}
-#header-bottom-left{position:static;background:url(%%atbg2%%) top left no-repeat;background-position:0px -10px;height:50px;padding-top:95px;
-margin-bottom:0px;   }
-#header-img{text-indent:-9999px;background-position:0px -258px;background-repeat:no-repeat;height:145px;width:440px;vertical-align:bottom;margin-bottom:3px; margin-top:-95px; margin-right:-250px;}
+#header-img{margin-top:6px; margin-bottom:-4px; padding-bottom:0px;}
+.tabmenu{position: absolute; top: 99px;}
+#header-bottom-left {padding-bottom:0px; margin-bottom: 0px; margin-left:-150px;}
 
+#header-bottom-left{background:url(%%atbg2%%) top left no-repeat;background-position:0px -10px;height:50px;padding-top:93px; margin-left: -110px;}
+
+#header-img{text-indent:-9999px;background-position:0px -258px;background-repeat:no-repeat;height:145px;width:440px; margin-top:-95px; margin-right:-250px;}
+
+.tabmenu{position: absolute;  padding-top: 49px; margin: 0px; left: 265px;}
 
 
 .redditname a{
@@ -12,17 +16,10 @@ text-indent:-9001px;
 
 .pagename {color: white; font-size: 325%; font-family:arial;}
 
-#header-img-a,
-.redditname a,
-.tabmenu {
+.redditname a {
 display: block;
 float: left;
 }
-
-.tabmenu{
-position:relative;
-top:100%;
-margin-top:-15px!important;}
 
 #newlink{ margin-top:18px;}
 

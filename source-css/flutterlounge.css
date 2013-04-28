@@ -227,7 +227,7 @@ a[href|="/supershy"], a[href|="/ohhmy"] {
     }
 /* FANCY SHEET I MEAN SHEET #4 */
 
-a[href|="/dappershy"], a[href|="/fancyshy"], a[href|="/colonthree"], a[href|="/cutieflutter"] {
+a[href|="/dappershy"], a[href|="/fancyshy"], a[href|="/colonthree"], a[href|="/cutieflutter"], a[href|="/flutterland"], a[href|="/lostinflutterland"], a[href|="/mad"], a[href|="/attention"] {
 
         display: block;
     clear: none;
@@ -244,7 +244,14 @@ a[href|="/colonthree"], a[href|="/cutieflutter"] {
     width: 270px;
     background-position: -128px -0px;
     }
-
+a[href|="/flutterland"], a[href|="/lostinflutterland"], a[href|="/mad"] {
+    width: 263px;
+    background-position: -398px -0px;
+    }
+a[href|="/attention"] {
+    width: 193px;
+    background-position: -661px -0px;
+    }
 /* Wide Emotes */
 
 a[href|="/shysocks"], a[href|="/snugglysocks"], a[href|="/yayflutter"], a[href|="/woohoo"] {
@@ -574,14 +581,14 @@ color: white !important;
 
 .footer-parent {
     height: 600px;
-    padding-bottom: 80px;
+    padding-bottom: 0px;
     clear: both;
     text-align: center;
     width: 800px;
     background-image: url(%%fluttersbackground%%);
-    /*background-position: bottom center;*/
+  /*background-position: bottom center;*/
     background-repeat: no-repeat;
-    margin-bottom: -0px;
+    margin-bottom: -30px;
     background-position: 50% 80px;/*Path's OCD was here.*/
     }
 html:lang(nv) .side p a[href="http://reddit.com/r/FlutterLounge/"]

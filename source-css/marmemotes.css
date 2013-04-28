@@ -1315,3 +1315,67 @@ a[href|="/raricoffee"]
 	background-position: -0px -140px;
 }
 /* end sheet 10 */
+
+/* GIR sheet */
+a[href|="/girtwi"],
+a[href|="/girspike"],
+a[href|="/girlestia"],
+a[href|="/giraj"],
+a[href|="/girmac"],
+a[href|="/girluna"],
+a[href|="/girpie"],
+a[href|="/girshy"],
+a[href|="/girderpy"]
+{
+    display: block;
+    clear: none;
+    float: left;
+    height: 140px;
+    background-image: url(%%girsheet%%)
+}
+a[href|="/girtwi"]
+{
+	width: 119px;
+	background-position: -0px -0px;
+}
+a[href|="/girspike"]
+{
+	width: 115px;
+	background-position: -119px -0px;
+}
+a[href|="/girlestia"]
+{
+	width: 167px;
+	background-position: -234px -0px;
+}
+a[href|="/giraj"]
+{
+	width: 103px;
+	background-position: -0px -140px;
+}
+a[href|="/girmac"]
+{
+	width: 110px;
+	background-position: -103px -140px;
+}
+a[href|="/girluna"]
+{
+	width: 196px;
+	background-position: -213px -140px;
+}
+a[href|="/girpie"]
+{
+	width: 101px;
+	background-position: -0px -280px;
+}
+a[href|="/girshy"]
+{
+	width: 121px;
+	background-position: -101px -280px;
+}
+a[href|="/girderpy"]
+{
+	width: 112px;
+	background-position: -222px -280px;
+}
+/* end GIR sheet */

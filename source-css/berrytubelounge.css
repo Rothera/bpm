@@ -659,6 +659,14 @@ width: 150px;
 height: 110px;
 background-image: url(%%cadessheet%%)
 }
+a[href|="/twisay"], a[href|="/idosay"]{
+display:block;
+clear: none;
+float: left;
+width: 134px;
+height: 133px;
+background-image:url(%%cadessheet%%)
+}
 
 /* End Cades' Edits */
 
@@ -784,6 +792,9 @@ background-position: -0px -355px
 
 a[href|="/shotstime"], a[href|="/shotsoclock"], a[href|="/ppdrinktime"] {
 background-position: -0px -597px
+}
+a[href|="/twisay"], a[href|="/idosay"]{
+background-position: -300px -0px
 }
 
 .subscribers .word {

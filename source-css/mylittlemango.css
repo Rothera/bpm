@@ -96,7 +96,7 @@ div.titlebox .users-online span.number:after{content:" under the mango tree"}
 
 /******Insert name here to replace******/
 a.author[href$=hell00001], a.author[href$=butterfilly], a.author[href$=mouse_fitzgerald], a.author[href$=V17Ds],
-a.author[href$=romneyfan] {
+a.author[href$=romneyfan], a.author[href$=Captain_Awesomex] {
 font-size: 0 !important;
     overflow: hidden;
     display: inline-block;
@@ -129,6 +129,10 @@ a.author[href$=V17Ds]:before {
     font-size: 12px;
     }
 
+a.author[href$=Captain_Awesomex]:before {
+    content: "Avocado-Fucker";
+    font-size: 12px;
+    }
 
 /************Additions*************/
 a.author[href$=hell00001]:after {
@@ -154,6 +158,13 @@ a.author[href$=romneyfan]:after {
     color: blue;
     font-size: 10px;
     }
+
+a.author[href$=Captain_Awesomex]:after {
+    content: " JUNGLE FEVER";
+    color: blue;
+    font-size: 10px;
+    }
+
 
 /* Replace the self-post with Luna */
 
@@ -549,3 +560,32 @@ a[href|="/dashjuice"]{
     height: 150px;
     background-position: -150px -649px !important;
 }
+
+a[href|="/queenyouwantwhatinmybutt"], a[href|="/queenoops"], a[href|="/spraklekun"], a[href|="/queenponytail"], a[href|="/queenevil"], a[href|="/colpillow"], a[href|="/queensex"], a[href|="/lyrabubbles"], a[href|="/twiventurer"], a[href|="/twicookie"], a[href|="/queenshrug"], a[href|="/lilpip"], a[href|="/thebearded"], a[href|="/pickupdashie"], a[href|="/nostrils"], a[href|="/catbug7"], a[href|="/catbug5"], a[href|="/scootajew"], a[href|="/twimango"], a[href|="/catbug6"], a[href|="/badvibes"] {
+     display: block;
+     clear: none;
+     float: left;
+     background-image: url(%%sexualemotesheet%%) !important
+     }
+
+a[href|="/queenyouwantwhatinmybutt"] { background-position: -0px -0px; width: 161px; height: 200px; }
+a[href|="/queenoops"] { background-position: -0px -200px; width: 158px; height: 199px; }
+a[href|="/spraklekun"] { background-position: -0px -399px; width: 88px; height: 199px; }
+a[href|="/queenponytail"] { background-position: -0px -598px; width: 114px; height: 151px; }
+a[href|="/queenevil"] { background-position: -0px -749px; width: 90px; height: 150px; }
+a[href|="/colpillow"] { background-position: -0px -899px; width: 111px; height: 150px; }
+a[href|="/queensex"] { background-position: -0px -1049px; width: 144px; height: 150px; }
+a[href|="/lyrabubbles"] { background-position: -0px -1199px; width: 150px; height: 125px; }
+a[href|="/twiventurer"] { background-position: -88px -399px; width: 71px; height: 105px; }
+a[href|="/twicookie"] { background-position: -0px -1324px; width: 150px; height: 103px; }
+a[href|="/queenshrug"] { background-position: -0px -1427px; width: 100px; height: 100px; }
+a[href|="/lilpip"] { background-position: -0px -1527px; width: 100px; height: 94px; }
+a[href|="/thebearded"] { background-position: -0px -1621px; width: 105px; height: 88px; }
+a[href|="/pickupdashie"] { background-position: -0px -1709px; width: 150px; height: 87px; }
+a[href|="/nostrils"] { background-position: -0px -1796px; width: 89px; height: 172px; }
+a[href|="/catbug7"] { background-position: -0px -1968px; width: 120px; height: 100px; }
+a[href|="/catbug5"] { background-position: -0px -2068px; width: 120px; height: 100px; }
+a[href|="/scootajew"] { background-position: -0px -2168px; width: 100px; height: 100px; }
+a[href|="/twimango"] { background-position: -0px -2268px; width: 100px; height: 100px; }
+a[href|="/catbug6"] { background-position: -0px -2368px; width: 100px; height: 100px; }
+a[href|="/badvibes"] { background-position: -0px -2468px; width: 150px; height: 100px; }
