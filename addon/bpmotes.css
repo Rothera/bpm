@@ -379,6 +379,11 @@
     color: white !important;
 }
 
+/* More hacks because RES night mode is fucking garbage */
+.bpm-emote:hover {
+    opacity: 1.0 !important;
+}
+
 /*
  * Some SFW portions of combiners. They are included here so that
  * combiners-nsfw.css can be disabled with the NSFW option.
