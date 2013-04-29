@@ -11,12 +11,27 @@
 "use strict";
 
 var page_mod = require("page-mod");
-var request = require("request");
+var request = null;
 var self = require("self");
 var simple_prefs = require("simple-prefs");
 var simple_storage = require("simple-storage");
-var tabs = require("tabs");
-var timers = require("timers");
+var tabs = null;
+var timers = null;
+
+// Try to work anyway if certain modules crash on load. Various almost-Firefox
+// browsers can make this happen, and sometimes they're just broken... most of
+// the other modules we load we can't easily do without, so just crash if those
+// are broken.
+try {
+    request = require("request");
+    tabs = require("tabs");
+    timers = require("timers");
+} catch(e) {
+    console.error("BPM: ERROR: Failed to load Addon SDK modules. Some important functionality may be broken or missing.");
+    console.error("BPM: ERROR: On line " + e.lineNumber + ": ", e.name + ": " + e.message)
+    console.error(e);
+    console.error(e.trace);
+}
 
 var manage_prefs = require("pref-setup").manage_prefs;
 var bpm_data = require("bpm-resources");
@@ -78,6 +93,12 @@ var pref_manager = manage_prefs(bpm_data.sr_name2id, {
     prefs_updated: prefs_updated,
 
     download_file: function(done, url, callback) {
+        if(!request) {
+            console.warn("BPM: WARNING: Unable to download file due to broken installation");
+            done();
+            return;
+        }
+
         request.Request({
             url: url,
             headers: {"User-Agent": "BetterPonymotes Client CSS Updater (/u/Typhos)"},
@@ -93,8 +114,19 @@ var pref_manager = manage_prefs(bpm_data.sr_name2id, {
         }).get();
     },
 
-    set_timeout: timers.setTimeout
+    set_timeout: (timers ? timers.setTimeout : function() {
+        console.warn("BPM: WARNING: Unable to start timer due to broken installation");
+    })
 });
+
+function open_options_page() {
+    if(!tabs) {
+        console.warn("BPM: WARNING: Unable to open options page due to broken installation");
+        return;
+    }
+
+    tabs.open(self.data.url("options.html"));
+}
 
 function on_cs_attach(worker) {
     worker.on("message", function(message) {
@@ -139,7 +171,7 @@ function on_cs_attach(worker) {
                 break;
 
             case "open_options":
-                tabs.open(self.data.url("options.html"));
+                open_options_page();
                 break;
 
             default:
@@ -162,6 +194,4 @@ var prefs_mod = page_mod.PageMod({
 });
 
 // Enable the button that opens the page
-simple_prefs.on("openPrefs", function() {
-    tabs.open(self.data.url("options.html"));
-});
+simple_prefs.on("openPrefs", open_options_page);
