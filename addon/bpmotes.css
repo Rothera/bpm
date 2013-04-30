@@ -264,7 +264,7 @@
 }
 
 /* Help and options links */
-#bpm-sb-helplink, #bpm-sb-optionslink {
+#bpm-sb-helplink, #bpm-sb-optionslink, #bpm-sb-srlink {
     height: 20px;
     line-height: 20px;
     text-decoration: none;
@@ -272,6 +272,10 @@
 }
 #bpm-sb-helplink {
     margin-left: 4px;
+}
+#bpm-sb-srlink {
+    float: right;
+    margin-right: 4px;
 }
 
 /* Bottom-right resize box */
