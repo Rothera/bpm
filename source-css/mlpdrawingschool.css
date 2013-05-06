@@ -1190,4 +1190,19 @@ a[href|="/thankyakindly"] {
     list-style: none
     }
 
+a.author[href$="/numberlock"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+}
+
+a.author[href$="/numberlock"]:after {
+    content: "Beerpony";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+} 
 

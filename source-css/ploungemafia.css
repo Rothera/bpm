@@ -409,7 +409,7 @@ left: 0;
     font-size: 10px;
     color: #369;
     cursor: pointer;
-    content: "taco";
+    content: "tacospaco";
 }
 
 /* Signup test */
@@ -434,11 +434,11 @@ a[href*="signup"].title:link .commentarea .usertext-edit:before {
 }
 
 
-a[href*="signups"].title:link {
-   color: blue;   
+a.title[href*="signups!"] {
+   color: blue!important;   
 }
 
-a[href*="signups"].title:link .commentarea .usertext-edit:before {
+.commentarea .usertext-edit:before a.title[href*="signups!"] {
     content: "Test.";
     display: block;
     text-align: center;
@@ -451,8 +451,8 @@ a[href*="signups"].title:link .commentarea .usertext-edit:before {
     border:1px solid orange;
     font-size: 11px;
     font-weight: bold;
-} */
-
+} 
+*/
 /* No flair on modbox */
 
 .sidecontentbox .flair {

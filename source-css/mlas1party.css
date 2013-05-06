@@ -5,6 +5,8 @@ body, body.res-nightmode:first-of-type {
     
 }
 
+/* list fix */ .side .md ul{margin:2px 0 2px 1em;list-style:none}
+
 /* Nightmode fixes for the background */
 .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}

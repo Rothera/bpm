@@ -69,11 +69,12 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
 .sidecontentbox ul.content li.more{display:none}
 #header-img
 {
- margin:0px 5px 0px 0px;
+ margin:0px 5px -12px 0px;
  position:relative;
- top:3px
+ top:3px;
+ left:6px;
 }
-#header-bottom-left{padding-top:25px}
+#header-bottom-left{padding-top:15px}
 .pagename {font-size:12pt}
 .titlebox form{position: static}
 .titlebox .usertext-body .md ol
@@ -84,7 +85,7 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
  border-right:0;
  position:absolute;
  top:40px;
- left:130px;
+ left:180px;
  z-index:50;
  margin:20px 420px 0 0;
  padding:8px 6px;
@@ -117,10 +118,10 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
 {
  display:inline-block;
  float:right;
- background:url(%%Derp-Hat%%);
- width:67px;
- height:60px;
- margin-top:-35px;
+ background:url(%%twilight-hat%%);
+ width:65px;
+ height:54px;
+ margin-top:-29px;
  margin-left:4px;
  margin-bottom:0px;
  margin-right:-40px;
@@ -1146,4 +1147,7 @@ display: none !important;
 
 #siteTable_t3_18mfkn {
 display: none !important;
+}
+.sitetable.linklisting {
+    padding-top: 5px;
 }
