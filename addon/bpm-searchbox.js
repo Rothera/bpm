@@ -453,11 +453,8 @@ function inject_emotes_button(store, usertext_edits) {
                 var button_bar = find_class(usertext_edits[i], "usertext-buttons");
                 button_bar.insertBefore(button, find_class(button_bar, "status"));
             } else {
-                // Make sure we put it at the end- Reddit's JS uses get(0) when
-                // looking for elements related to the "formatting help" linky,
-                // and we don't want to get in the way of that.
-                var help_toggle = usertext_edits[i].getElementsByClassName("help-toggle");
-                help_toggle[0].appendChild(button);
+                var bottom_area = find_class(usertext_edits[i], "bottom-area");
+                bottom_area.insertBefore(button, bottom_area.firstChild);
             }
         }
     }
