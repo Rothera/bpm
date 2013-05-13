@@ -196,13 +196,85 @@ a[href|="/bpshuffle"]{
     height: 140px;
     background-image: url(%%bpshuffle%%)
     }
+a[href|="/rdbrows"]{
+    display: block;
+    clear: none;
+    float: left;
+    width: 140px;
+    height: 140px;
+    background-image: url(%%allthebrows%%)
+    }
+a[href|="/scootabrows"]{
+    display: block;
+    clear: none;
+    float: left;
+    width: 140px;
+    height: 140px;
+    background-position: -140px 0px;
+    background-image: url(%%allthebrows%%)
+    }
+a[href|="/ppbrows"]{
+    display: block;
+    clear: none;
+    float: left;
+    width: 140px;
+    height: 140px;
+    background-position: -280px 0px;
+    background-image: url(%%allthebrows%%)
+    }
+a[href|="/celestibrows"]{
+    display: block;
+    clear: none;
+    float: left;
+    width: 140px;
+    height: 140px;
+    background-position: 0px -140px;
+    background-image: url(%%allthebrows%%)
+    }
+a[href|="/blushershy"]{
+    display: block;
+    clear: none;
+    float: left;
+    width: 140px;
+    height: 140px;
+    background-position: -140px -140px;
+    background-image: url(%%allthebrows%%)
+    }
+a[href|="/lunabrows"]{
+    display: block;
+    clear: none;
+    float: left;
+    width: 140px;
+    height: 140px;
+    background-position: -280px -140px;
+    background-image: url(%%allthebrows%%)
+    }
 a[href|="/lyrabrows"]{
     display: block;
     clear: none;
     float: left;
     width: 140px;
     height: 140px;
-    background-image: url(%%lyrabrows%%)
+    background-position: 0px -280px;
+    background-image: url(%%allthebrows%%)
+    }
+a[href|="/trixiebrows"]{
+    display: block;
+    clear: none;
+    float: left;
+    width: 140px;
+    height: 140px;
+    background-position: -140px -280px;
+    background-image: url(%%allthebrows%%)
+    }
+a[href|="/cheeribrows"]{
+    display: block;
+    clear: none;
+    float: left;
+    width: 140px;
+    height: 140px;
+    background-position: -280px -280px;
+    background-image: url(%%allthebrows%%)
     }
 a[href|="/freebooze"]{
     display: block;
@@ -1098,7 +1170,11 @@ a[href|="/badonkadonk"],
 a[href|="/scrunchylyra"],
 a[href|="/seahoers"],
 a[href|="/megan"],
-a[href|="/seanigel"]
+a[href|="/seanigel"],
+a[href|="/indignanttwilight"],
+a[href|="/indignantcadance"],
+a[href|="/indignantcelestia"],
+a[href|="/indignantluna"]
 {
     display: block;
     clear: none;
@@ -1156,6 +1232,26 @@ a[href|="/seanigel"]
 {
 	width: 71px;
 	background-position: -130px -280px;
+}
+a[href|="/indignanttwilight"]
+{
+	width: 153px;
+	background-position: -201px -280px;
+}
+a[href|="/indignantcadance"]
+{
+	width: 140px;
+	background-position: -354px -280px;
+}
+a[href|="/indignantcelestia"]
+{
+	width: 180px;
+	background-position: -0px -420px;
+}
+a[href|="/indignantluna"]
+{
+	width: 181px;
+	background-position: -180px -420px;
 }
 /* end sheet 8 */
 
@@ -1286,7 +1382,20 @@ a[href|="/HOERS"]
 a[href|="/letsspinthis"],
 a[href|="/bizzaam"],
 a[href|="/bplouis"],
-a[href|="/raricoffee"]
+a[href|="/raricoffee"],
+a[href|="/immaletyoufinish"],
+a[href|="/art"],
+a[href|="/bpfluffle"],
+a[href|="/derpburp"],
+a[href|="/flufflegala"],
+a[href|="/flufflescrunchie"],
+a[href|="/octydd"],
+a[href|="/octyrofl"],
+a[href|="/powerbuttondrunk"],
+a[href|="/rdtoilet"],
+a[href|="/bptoilet"],
+a[href|="/holyfuck"],
+a[href|="/lyrapenisdoubt"]
 {
     display: block;
     clear: none;
@@ -1313,6 +1422,75 @@ a[href|="/raricoffee"]
 {
 	width: 189px;
 	background-position: -0px -140px;
+}
+a[href|="/immaletyoufinish"]
+{
+	width: 178px;
+	background-position: -189px -140px;
+}
+a[href|="/art"]
+{
+	width: 179px;
+	background-position: -0px -280px;
+}
+a[href|="/bpfluffle"]
+{
+	width: 141px;
+	background-position: -179px -280px;
+}
+a[href|="/derpburp"]
+{
+	width: 129px;
+	background-position: -0px -420px;
+}
+a[href|="/flufflegala"]
+{
+	width: 170px;
+	background-position: -129px -420px;
+}
+a[href|="/flufflescrunchie"]
+{
+	width: 158px;
+	background-position: -0px -560px;
+}
+a[href|="/octydd"]
+{
+	width: 184px;
+	background-position: -158px -560px;
+}
+a[href|="/octyrofl"]
+{
+	width: 192px;
+	background-position: -0px -700px;
+}
+a[href|="/powerbuttondrunk"]
+{
+	width: 140px;
+	background-position: -192px -700px;
+}
+a[href|="/rdtoilet"]
+{
+	width: 210px;
+	height: 200px;
+	background-position: -0px -840px;
+}
+a[href|="/bptoilet"]
+{
+	width: 141px;
+	height: 200px;
+	background-position: -210px -840px;
+}
+a[href|="/holyfuck"]
+{
+	width: 123px;
+	height: 200px;
+	background-position: -0px -1040px;
+}
+a[href|="/lyrapenisdoubt"]
+{
+	width: 130px;
+	height: 200px;
+	background-position: -123px -1041px;
 }
 /* end sheet 10 */
 

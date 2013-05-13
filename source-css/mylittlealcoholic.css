@@ -333,7 +333,6 @@ body {
 }
 
 /* EMOTES AND SHIT */
-
 a[href|="/gw00"], a[href|="/gw10"], a[href|="/gw01"],a[href|="/bpdoublehoof"], a[href|="/gw11"], a[href|="/gw02"], a[href|="/gw12"], a[href|="/gw03"], a[href|="/gw13"], a[href|="/gw04"], a[href|="/gw14"], a[href|="/gw05"], a[href|="/gw15"], a[href|="/gw06"], a[href|="/gw16"], a[href|="/bpangrydrunk"], a[href|="/bpohthesobriety"], a[href|="/bpdrinkwithit"], a[href|="/bpdrinkiepie"] {
     display: block;
     clear: none;
@@ -452,6 +451,15 @@ a[href|="/udiditchamp"]{
     width: 514px;
     height: 514px;
     background-image: url(%%champ%%)
+    }
+
+a[href|="/ponyjoe"]{
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url(%%run%%)
     }
 
 /* USER TEXT FOR SPECIAL PONIES */

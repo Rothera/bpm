@@ -122,6 +122,24 @@ a[href|="/twiflutterhappy"], a[href|="/twishyhappy"] {
     height: 200px;
     background-image: url(%%twiflutterhappy%%)
     }
+/* 100px Sheet */
+
+a[href|="/scrunchieshy"], a[href|="/flutterboo"] {
+
+    display: block;
+    clear: none;
+    float: left;
+    height: 100px;
+    background-image: url(%%smallsheet%%) !important
+    }
+
+a[href|="/scrunchieshy"] {
+    width: 100px;
+    }
+a[href|="/flutterboo"] {
+    width: 79px;
+    background-position: -100px -0px     
+    }
 
 
 /* More Flutter emotes - with a new sheet! */
@@ -227,7 +245,7 @@ a[href|="/supershy"], a[href|="/ohhmy"] {
     }
 /* FANCY SHEET I MEAN SHEET #4 */
 
-a[href|="/dappershy"], a[href|="/fancyshy"], a[href|="/colonthree"], a[href|="/cutieflutter"], a[href|="/flutterland"], a[href|="/lostinflutterland"], a[href|="/mad"], a[href|="/attention"] {
+a[href|="/dappershy"], a[href|="/fancyshy"], a[href|="/colonthree"], a[href|="/cutieflutter"], a[href|="/flutterland"], a[href|="/lostinflutterland"], a[href|="/mad"], a[href|="/attention"], a[href|="/flutterchill"], a[href|="/fluttercool"], a[href|="/chillshy"], a[href|="/allyouneed"], a[href|="/ilu"], a[href|="/shylove"]  {
 
         display: block;
     clear: none;
@@ -251,6 +269,14 @@ a[href|="/flutterland"], a[href|="/lostinflutterland"], a[href|="/mad"] {
 a[href|="/attention"] {
     width: 193px;
     background-position: -661px -0px;
+    }
+a[href|="/flutterchill"], a[href|="/fluttercool"], a[href|="/chillshy"] {
+    width: 149px;
+    background-position: -854px -0px;
+    }
+a[href|="/allyouneed"], a[href|="/ilu"], a[href|="/shylove"] {
+    width: 137px;
+    background-position: -1003px -0px;
     }
 /* Wide Emotes */
 
