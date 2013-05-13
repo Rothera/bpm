@@ -171,7 +171,6 @@ function manage_prefs(sr_name2id, hooks) {
 
         _sync: function() {
             hooks.write_json("prefs", prefs);
-            hooks.prefs_updated(prefs);
         }
     };
 

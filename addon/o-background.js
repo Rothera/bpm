@@ -20,9 +20,6 @@ var pref_manager = manage_prefs(sr_name2id, {
     read_json: function(key) { return localStorage[key] === undefined ? undefined : JSON.parse(localStorage[key]); },
     write_json: function(key, data) { localStorage[key] = JSON.stringify(data); },
 
-    prefs_updated: function(prefs) {
-    },
-
     download_file: function(done, url, callback) {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function() {

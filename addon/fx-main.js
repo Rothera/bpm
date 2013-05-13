@@ -38,42 +38,6 @@ var bpm_data = require("bpm-resources");
 
 var storage = simple_storage.storage;
 
-// Main script. As an optimization, we just replace this mod (in order to change
-// the list of matching URLs) whenever the global conversion option changes, so
-// that the script doesn't needlessly run on all pages if BGM is disabled.
-//
-// This has a nasty side effect- the workers get "disconnected" and don't seem
-// to be able to save settings. Consequently, changing the BGM option will mean
-// all currently-open pages won't save the emote search window. I think.
-var main_mod = null;
-
-// Previous global emotes setting. Compare with ===/!== so the null triggers the
-// initial run properly in prefs_updated().
-var bgm_enabled = null;
-
-// Monitor prefs for important changes
-function prefs_updated(prefs) {
-    var bgm_changed = prefs.enableGlobalEmotes !== bgm_enabled;
-
-    if(bgm_changed) {
-        if(main_mod !== null) {
-            main_mod.destroy();
-        }
-
-        main_mod = page_mod.PageMod({
-            include: [prefs.enableGlobalEmotes ? "*" : "*.reddit.com"],
-            contentScriptWhen: "start",
-            contentScriptFile: [
-                self.data.url("bpm-resources.js"),
-                self.data.url("betterponymotes.js")
-                ],
-            onAttach: on_cs_attach
-            });
-    }
-
-    bgm_enabled = prefs.enableGlobalEmotes;
-}
-
 if(!storage.prefs) {
     storage.prefs = {};
 
@@ -89,8 +53,6 @@ var pref_manager = manage_prefs(bpm_data.sr_name2id, {
     write_value: function(key, data) { storage[key] = data; },
     read_json: function(key) { return storage[key]; },
     write_json: function(key, data) { storage[key] = data; },
-
-    prefs_updated: prefs_updated,
 
     download_file: function(done, url, callback) {
         if(!request) {
@@ -180,6 +142,16 @@ function on_cs_attach(worker) {
         }
     });
 }
+
+var main_mod = page_mod.PageMod({
+    include: ["*"],
+    contentScriptWhen: "start",
+    contentScriptFile: [
+        self.data.url("bpm-resources.js"),
+        self.data.url("betterponymotes.js")
+        ],
+    onAttach: on_cs_attach
+});
 
 // Setup communication with prefs page
 var prefs_mod = page_mod.PageMod({
