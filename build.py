@@ -365,11 +365,7 @@ def update_www(ctx):
 
 @target("sync")
 def sync(ctx):
-    fx_package(ctx)
-    cr_package(ctx)
-    o_package(ctx)
-    gen_userscript(ctx)
-    update_www(ctx)
+    default(ctx)
 
     os.chdir("www")
     ctx.run("rsync", "-zvvLr", "--delete", "./", "ref@mlas1.us:www")
