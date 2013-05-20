@@ -36,11 +36,6 @@ for source in context.sources.values():
         if emote.tags:
             print("WARNING: In %s: %s is tagged, but marked as +drop in %s" % (source.name, emote.name, context.drops[emote.name].name))
 
-def info_for(emote):
-    if hasattr(emote, "info_set"):
-        return emote.info_set()
-    return None
-
 known_tags = (set(context.tag_config["RootTags"]) |
               set(context.tag_config["ExclusiveTags"]) |
               set(context.tag_config["HiddenTags"]) |
