@@ -49,13 +49,15 @@ background:none;
 vertical-align: bottom;
 display:block;
 }
-
 /******************************************************************************
 *           My Little AdventureTime Emote Block                               *
 ******************************************************************************/
 a[href|="/at00"], a[href|="/finn"],
 a[href|="/at10"], a[href|="/twiventure"],
-a[href|="/at20"], a[href|="/jake"]
+a[href|="/at20"], a[href|="/jake"],
+a[href|="/at02"], a[href|="/flamepony"],
+a[href|="/at12"], a[href|="/marcelinepony"],
+a[href|="/at22"], a[href|="/pbpony"]
 {
     display: block;
     clear: none;
@@ -75,9 +77,24 @@ a[href|="/at03"], a[href|="/atcharge"]
     height: 140px;
     background-image: url(%%MLAT-Emotes-Table%%) !important
 }
+
+a[href|="/at03"], a[href|="/rainicorn"],
+a[href|="/at03"], a[href|="/atcharge"]
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 210px;
+    height: 140px;
+    background-image: url(%%MLAT-Emotes-Table%%) !important
+}
+
 a[href|="/rat00"], a[href|="/rfinn"],
 a[href|="/rat10"], a[href|="/rtwiventure"],
-a[href|="/rat20"], a[href|="/rjake"]
+a[href|="/rat20"], a[href|="/rjake"],
+a[href|="/rat02"], a[href|="/rflamepony"],
+a[href|="/rat12"], a[href|="/rmarcelinepony"],
+a[href|="/rat22"], a[href|="/rpbpony"]
 {
     display: block;
     clear: none;
@@ -112,6 +129,21 @@ a[href|="/rat20"], a[href|="/rjake"]{
     background-position: -140px -0px
 } 
 /*********************************************/
+a[href|="/at02"], a[href|="/flamepony"],
+a[href|="/rat02"], a[href|="/rflamepony"]
+{
+    background-position: -0px -350px
+}
+a[href|="/at12"], a[href|="/marcelinepony"],
+a[href|="/rat12"], a[href|="/rmarcelinepony"]
+{
+    background-position: -70px -350px
+}
+a[href|="/at22"], a[href|="/pbpony"], 
+a[href|="/rat22"], a[href|="/rpbpony"]{
+    background-position: -140px -350px
+} 
+/*********************************************/
 
 a[href|="/at01"],  a[href|="/rainicorn"], 
 a[href|="/rat01"], a[href|="/rrainicorn"]{
@@ -125,5 +157,5 @@ a[href|="/rat03"], a[href|="/ratcharge"]{
 }
 /*********************************************/
 /******************************************************************************
-*           End Docotors My Little AdventureTime Emote Block                  *
+*           End My Little AdventureTime Emote Block                            *
 ******************************************************************************/

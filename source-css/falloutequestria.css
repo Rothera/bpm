@@ -191,7 +191,7 @@ a[href="#spoiler"]:hover {color: white !important;}
 
 a[href="/s"] { color: #222222; background: #CCCCCC;} a[href="/s"]:hover { color: #8F8F8F } a[href="/s"]::after { content: attr(title); background: #CCCCCC; color: #CCCCCC; padding: 0px 10px 0px 10px }
 
-a[href="/s"]:hover::after, a[href="/sr"]:active::after, a[href="/st"]:active::after, a[href="/sl"]:active::after { color: black }
+a[href="/s"]:hover::after { color: black }
 
 
 /*simple, most commonly used backgrounds*/ 

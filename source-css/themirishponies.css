@@ -939,375 +939,425 @@ a[href$="#spoiler"][title]::before {
 }
 
 /*EMOTES ===================================================================================================*/
+/* Animotes */
 
-a[href="/lyrastpaddys"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 100px;
-Height: 100px;
-background-image: url(%%lyrastpaddys%%)
-}
+a[href|="/flutterstress"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-image: url(%%flutterstress%%)
+    }
 
-a[href="/shamrock"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 100px;
-Height: 100px;
-background-image: url(%%shamrock%%)
-}
+a[href|="/twihappydance"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 147px;
+    height: 150px;
+    background-image: url(%%twihappydance%%)
+    }
 
-a[href="/shamrockbox"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 200px;
-Height: 100px;
-background-image: url(%%shamrockbox%%)
-}
+a[href|="/twihappydance"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 147px;
+    height: 150px;
+    background-image: url(%%twihappydance%%)
+    }
 
-a[href="/shamrocklike"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 70px;
-Height: 58px;
-background-image: url(%%shamrocklike%%)
-}
+a[href|="/rdup"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 140px;
+    background-image: url(%%rdup%%)
+    }
 
-a[href="/shamrockpc"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 182px;
-background-image: url(%%shamrockpc%%)
-}
+a[href|="/flutterpout"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 105px;
+    background-image: url(%%flutterpout%%)
+    }
 
-a[href="/shamrockpoker"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 70px;
-Height: 56px;
-background-image: url(%%shamrockpoker%%)
-}
+a[href|="/impluna"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 127px;
+    height: 150px;
+    background-image: url(%%impluna%%)
+    }
 
-a[href="/shamrockrealise"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 100px;
-Height: 100px;
-background-image: url(%%shamrockrealise%%)
-}
+a[href|="/lolidunno"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url(%%lolidunno%%)
+    }
 
-a[href="/stpinkie"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 100px;
-Height: 137px;
-background-image: url(%%stpinkie%%)
-}
+a[href|="/lyraswagger"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 136px;
+    background-image: url(%%lyraswagger%%)
+    }
 
-a[href="/tiajuice"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 150px;
-Height: 179px;
-background-image: url(%%tiajuice%%)
-}
+a[href|="/sombrachargin"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url(%%sombrachargin%%)
+    }
 
-a[href="/adority"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 123px;
-Height: 100px;
-background-image: url(%%adority%%)
-}
+/* Animotes End */
 
-a[href="/ajab"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 100px;
-Height: 100px;
-background-image: url(%%ajab%%)
-}
+/* Sheet1 */
 
-a[href="/nmmab"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 100px;
-Height: 100px;
-background-image: url(%%nmmab%%)
-}
-
-a[href="/pinkieab"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 100px;
-Height: 100px;
-background-image: url(%%pinkieab%%)
-}
-
-a[href="/rarityab"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 100px;
-Height: 100px;
-background-image: url(%%rarityab%%)
-}
-
-a[href="/rbdab"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 100px;
-Height: 100px;
-background-image: url(%%rbdab%%)
-}
+a[href|="/spikeab"],a[href|="/twiab"],a[href|="/ajab"],a[href|="/pinkieab"],a[href|="/tiaab"],a[href|="/rarityab"],a[href|="/rbdab"],a[href|="/flutterab"],a[href="/nmmab"],a[href="/shamrockrealise"],a[href="/lyrastpaddys"],a[href="/shamrock"],a[href="/whassamattayou"],a[href="/tavilie"],a[href="/berrypunchdress"],a[href="/lyradress"],a[href="/stpinkie"],a[href="/adority"]
+{display:block;clear:none;float:left;width:100px;height:100px;background-image:url(%%100motes%%)}
 
 a[href="/spikeab"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
+background-position: -0px -0px;
 Width: 100px;
 Height: 100px;
-background-image: url(%%spikeab%%)
 }
 
 a[href="/twiab"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
+background-position: -100px -0px;
 Width: 100px;
 Height: 100px;
-background-image: url(%%twiab%%)
 }
 
-a[href="/flutterab"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
+a[href="/ajab"] {
+background-position: -200px -0px;
 Width: 100px;
 Height: 100px;
-background-image: url(%%flutterab%%)
+}
+
+a[href="/pinkieab"] {
+background-position: -300px -0px;
+Width: 100px;
+Height: 100px;
 }
 
 a[href="/tiaab"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
+background-position: -0px -100px;
 Width: 100px;
 Height: 100px;
-background-image: url(%%tiaab%%)
 }
 
-a[href="/nmmnova"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
+a[href="/rarityab"] {
+background-position: -100px -100px;
 Width: 100px;
-Height: 137px;
-background-image: url(%%nmmnova%%)
+Height: 100px;
 }
 
-a[href="/twicontemplate"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
+a[href="/rbdab"] {
+background-position: -200px -100px;
+Width: 100px;
+Height: 100px;
+}
+
+a[href="/flutterab"] {
+background-position: -300px -100px;
+Width: 100px;
+Height: 100px;
+}
+
+a[href="/nmmab"] {
+background-position: -0px -200px;
+Width: 100px;
+Height: 100px;
+}
+
+a[href="/shamrockrealise"] {
+background-position: -100px -200px;
+Width: 100px;
+Height: 100px;
+}
+
+a[href="/lyrastpaddys"] {
+background-position: -200px -200px;
+Width: 100px;
+Height: 100px;
+}
+
+a[href="/shamrock"] {
+background-position: -300px -200px;
+Width: 100px;
+Height: 100px;
+}
+
+a[href="/whassamattayou"] {
+background-position: -0px -300px;
+Width: 100px;
+Height: 100px;
+}
+
+a[href="/tavilie"] {
+background-position: -100px -300px;
+Width: 100px;
+Height: 100px;
+}
+
+a[href="/berrypunchdress"] {
+background-position: -200px -300px;
+Width: 100px;
+Height: 100px;
+}
+
+a[href="/lyradress"] {
+background-position: -300px -300px;
+Width: 100px;
+Height: 100px;
+}
+
+a[href="/stpinkie"] {
+background-position: -0px -400px;
+Width: 100px;
+Height: 100px;
+}
+
+a[href="/adority"] {
+background-position: -100px -400px;
+Width: 100px;
+Height: 100px;
+}
+
+/* Sheet1 End */
+
+/* Misc */
+
+a[href|="/shamrockbox"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 100px;
+    background-image: url(%%shamrockbox%%)
+    }
+
+a[href|="/shamrocklike"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 58px;
+    background-image: url(%%shamrocklike%%)
+    }
+
+a[href|="/nervouscited"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 80px;
+    height: 108px;
+    background-image: url(%%nervouscited%%)
+    }
+
+a[href|="/queenfaust"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 144px;
+    background-image: url(%%queenfaust%%)
+    }
+
+a[href|="/tiajuice"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 179px;
+    background-image: url(%%tiajuice%%)
+    }
+a[href|="/flutterbag"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 140px;
+    background-image: url(%%flutterbag%%)
+    }
+
+a[href|="/nmmnova"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 137px;
+    background-image: url(%%nmmnova%%)
+    }
+
+a[href|="/daftponies"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 126px;
+    background-image: url(%%daftponies%%)
+    }
+
+a[href|="/fearthebees"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 60px;
+    background-image: url(%%fearthebees%%)
+    }
+
+a[href|="/pinkiebutton"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 128px;
+    height: 100px;
+    background-image: url(%%pinkiebutton%%)
+    }
+
+a[href|="/twicookiejar"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 163px;
+    background-image: url(%%twicookiejar%%)
+    }
+
+a[href|="/shamrockpoker"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 56px;
+    background-image: url(%%shamrockpoker%%)
+    }
+
+a[href|="/twicontemplate"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 151px;
+    background-image: url(%%twicontemplate%%)
+    }
+
+a[href|="/bandaloobestpony"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 210px;
+    background-image: url(%%bandaloobestpony%%)
+    }
+
+a[href|="/lunasocks"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 167px;
+    background-image: url(%%lunasocks%%)
+    }
+
+a[href|="/egstare"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%egstare%%)
+    }
+
+/* Misc End */
+
+/* Tavimotes */
+
+a[href|="/tavijumpforjoy"],a[href|="/taviwink"],a[href|="/tavisrsly"],a[href="/taviskeptical"],a[href="/tavinap"],a[href="/tavilie"],a[href="/taviyay"],a[href="/tav3sleep"],a[href="/tav3nuzzle"],a[href="/lyralyre"],a[href="/tavicello"]
+{display:block;clear:none;float:left;background-image:url(%%testtest%%)}
+
+a[href="/tavijumpforjoy"] {
+background-position: -0px -0px;
+Width: 100px;
+Height: 136px;
+}
+
+a[href="/taviwink"] {
+background-position: -100px -0px;
+Width: 100px;
+Height: 182px;
+}
+
+a[href="/tavisrsly"] {
+background-position: -200px -0px;
+Width: 60px;
+Height: 100px;
+}
+
+a[href="/taviskeptical"] {
+background-position: -260px -0px;
+Width: 115px;
+Height: 150px;
+}
+
+a[href="/tavinap"] {
+background-position: -0px -200px;
+Width: 189px;
+Height: 100px;
+}
+
+a[href="/tavilie"] {
+background-position: -189px -200px;
 Width: 150px;
-Height: 151px;
-background-image: url(%%twicontemplate%%)
+Height: 150px;
 }
 
-a[href="/queenfaust"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 100px;
-Height: 144px;
-background-image: url(%%queenfaust%%)
+a[href="/taviyay"] {
+background-position: -0px -400px;
+Width: 162px;
+Height: 150px;
 }
 
-a[href|="/rdup"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 150px;
-height: 140px;
-background-image: url(%%rdup%%)
+a[href="/tav3sleep"] {
+background-position: -162px -400px;
+Width: 148px;
+Height: 100px;
 }
 
-a[href|="/lyraswagger"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 100px;
-height: 136px;
-background-image: url(%%lyraswagger%%)
+a[href="/tav3nuzzle"] {
+background-position: -0px -600px;
+Width: 216px;
+Height: 100px;
 }
 
-a[href|="/twihappydance"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 147px;
-height: 150px;
-background-image: url(%%twihappydance%%)
+a[href="/lyralyre"] {
+background-position: -216px -600px;
+Width: 67px;
+Height: 100px;
 }
 
-a[href|="/sombrachargin"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 140px;
-height: 140px;
-background-image: url(%%sombrachargin%%)
+a[href="/tavicello"] {
+background-position: -283px -600px;
+Width: 77px;
+Height: 100px;
 }
 
-a[href|="/impluna"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 127px;
-height: 150px;
-background-image: url(%%impluna%%)
-}
 
-a[href|="/lunasocks"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 150px;
-height: 167px;
-background-image: url(%%lunasocks%%)
-}
-
-a[href|="/daftponies"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 150px;
-height: 126px;
-background-image: url(%%daftponies%%)
-}
-
-a[href|="/fearthebees"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 100px;
-height: 60px;
-background-image: url(%%fearthebees%%)
-}
-
-a[href|="/flutterbag"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 100px;
-height: 140px;
-background-image: url(%%flutterbag%%)
-}
-
-a[href|="/flutterstress"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 80px;
-height: 80px;
-background-image: url(%%flutterstress%%)
-}
-
-a[href|="/lolidunno"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 100px;
-height: 100px;
-background-image: url(%%lolidunno%%)
-}
-
-a[href|="/lyradress"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 100px;
-height: 154px;
-background-image: url(%%lyradress%%)
-}
-
-a[href|="/whassamattayou"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 100px;
-height: 100px;
-background-image: url(%%whassamattayou%%)
-}
-
-a[href|="/bandaloobestpony"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 100px;
-height: 210px;
-background-image: url(%%bandaloobestpony%%)
-}
-
-a[href|="/flutterpout"]{
-background-position: 0px 0px;
-display:block;
-clear: none;
-float: left;
-width: 100px;
-height: 105px;
-background-image: url(%%flutterpout%%)
-}
+/* Tavimotes End */
 
 /* ==Boxed reddit CSS Theme v1.1.3 - (http://www.reddit.com/r/boxed/)== */

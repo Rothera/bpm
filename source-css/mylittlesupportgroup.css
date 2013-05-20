@@ -451,7 +451,7 @@ a[href|="/spike!"]{color:#363b74 !important;cursor:text !important;background-co
 /*
 Bot name change
 */
-.author[href$="/MLSG_Bot"]
+.author[href$="/MLSG_Bot"],.author[href$="/Pinkie_Pie"]
     {
         font-size: 0px !important;
         display: inline-block;
@@ -841,8 +841,3 @@ clear: both;
     margin-right: -40px
     }
 
-
-
-body:not(.subscriber) div.linkflair-meta {
-display: none !important;
-}

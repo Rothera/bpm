@@ -118,14 +118,15 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
 {
  display:inline-block;
  float:right;
- background:url(%%twilight-hat%%);
- width:65px;
- height:54px;
- margin-top:-29px;
+ background:url(%%discentia-hat%%);
+ width:60px;
+ height:60px;
+ margin-top:-35px;
  margin-left:4px;
  margin-bottom:0px;
  margin-right:-40px;
 }
+
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important}
 .thumbnail.self{background-position:0px -120px!important}
 .thumbnail.nsfw{background-position:0px 0px!important}
@@ -236,6 +237,45 @@ body a[href="/spoiler"]:hover{color:white!important}/*Pinkie Pie NPT Warnings*//
 }
 
 div.over18 .entry .buttons .first{padding-left: 0px}
+
+/*Subreddit Wiki CSS*/
+.wiki-page h5
+{
+color: black !important;
+}
+
+.md.wiki 
+{
+border-width: 2px;
+border-style: solid;
+border-color: rgb(107, 107, 107);
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+-webkit-border-top-left-radius: 15px;
+-webkit-border-top-right-radius: 15px;
+-moz-border-radius-topright: 15px;
+-moz-border-radius-topleft: 15px;
+}
+
+.wiki-page .wiki-page-content .md 
+{
+max-width: 950px;
+margin-left: 5%;
+padding: 2px 25px 20px 25px;
+background-image:url(%%cream-pixels%%)
+}
+
+body.wiki-page-outofsubemotes .wikititle
+{
+display:none;
+}
+
+body.wiki-page-outofsubemotes .pageactions
+{
+margin-left: 5% !important;
+background-color: white !important;
+}
+
 /*New post spam filtered warning*/
 #title-field.roundfield:before
 {

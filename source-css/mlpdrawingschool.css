@@ -1206,3 +1206,18 @@ a.author[href$="/numberlock"]:after {
     letter-spacing: normal
 } 
 
+a.author[href$="/The8BitF0x"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+}
+
+a.author[href$="/The8BitF0x"]:after {
+    content: "The8BitPony";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+} 

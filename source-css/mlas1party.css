@@ -23,6 +23,19 @@ a.author[href$="waffen337"]:before {
     overflow: hidden
 
     }
+a.author[href$="EvanMacIan"] {
+    font-size: 0px !important;
+    display: inline-block
+    }
+a.author[href$="EvanMacIan"]:before { 
+        content: "Krashie";
+        font-size: 10px !important;
+    visibility: visible !important;
+    overflow: hidden
+
+    }
+
+
 /* Mod name modification. */
 .titlebox .bottom .author, .sidecontentbox .author {
     display: inline-block

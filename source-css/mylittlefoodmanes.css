@@ -69,9 +69,18 @@ z-index: -150
 }
 
 /* Emotes */
-a[href|="/lcheese"], a[href|="/rmallow"]
+a[href|="/lcheese"], a[href|="/rmallow"], a[href|="/NissanVersa"]
 {
     background-image: url(%%Emote1%%);
+    clear: none;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px;
+}
+ a[href|="/NissanVersa"]
+{
+    background-image: url(%%NissanVersa%%);
     clear: none;
     display: block;
     float: left;

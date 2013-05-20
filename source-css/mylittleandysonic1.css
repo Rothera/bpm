@@ -2,7 +2,7 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%bubble%%)  no-repeat  fixed 70% 85% !important;
+    background:  url(%%1Untitsled%%)  no-repeat  fixed 70% 85% !important;
 }
 
 /* Banner image and associated height values */
@@ -410,6 +410,10 @@ background-repeat: no-repeat;
 .flair-Berrytube:after { background-position: 0px -4440px }
 .flair-maku450:after { background-position: 0px -4470px }
 .flair-pwny:after { background-position: 0px -4500px }
+.flair-PaultheMellow:after { background-position: 0px -4530px }
+.flair-flare561:after { background-position: 0px -4560px }
+.flair-Tollaneer:after { background-position: 0px -4590px }
+.flair-zecora:after { background-position: 0px -4620px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
@@ -491,7 +495,7 @@ a[href|='/surbarf'], a[href|='/sursmelledyourcloset'] {width:273px; height:152px
 a[href|='/trixieplot'] {width:152px; height:116px; background-position: -0px -1698px}
 
 
-a[href|='/chrysshake'], a[href|='/queenshake'], a[href|='/cinnapie'], a[href|='/espbanana'], a[href|='/ruined'], a[href|='/samuraijack'], a[href|='/snuggle'], a[href|='/twichangeling'], a[href|='/wmdiscord'] {
+a[href|='/chrysshake'], a[href|='/queenshake'], a[href|='/cinnapie'], a[href|='/espbanana'], a[href|='/moonpie'], a[href|='/ruined'], a[href|='/samuraijack'], a[href|='/snuggle'], a[href|='/twichangeling'], a[href|='/wmdiscord'] {
     display: block;
     clear: none;
     float: left;
@@ -501,7 +505,8 @@ a[href|='/chrysshake'], a[href|='/queenshake'], a[href|='/cinnapie'], a[href|='/
 a[href|='/chrysshake'], a[href|='/queenshake'] {width:114px; height:152px; background-position: -102px -0px}
 a[href|='/cinnapie'] {width:132px; height:149px; background-position: -131px -152px}
 a[href|='/espbanana'] {width:183px; height:202px; background-position: -0px -708px}
-a[href|='/ruined'] {width:308px; height:152px; background-position: -0px -910px}
+a[href|='/moonpie'] {width:252px; height:125px; background-position: -0px -910px}
+a[href|='/ruined'] {width:308px; height:152px; background-position: -0px -1035px}
 a[href|='/samuraijack'] {width:102px; height:152px; background-position: -0px -0px}
 a[href|='/snuggle'] {width:131px; height:152px; background-position: -0px -152px}
 a[href|='/twichangeling'] {width:150px; height:202px; background-position: -0px -304px}
@@ -724,7 +729,7 @@ a[href|="/ppsign"]{
     display: inline-block !important;
     position: relative !important;
     width:166px; height:150px;
-    line-height: 24px !important;
+    line-height: 20px !important;
     overflow: hidden !important;
     cursor: default !important;
     }
@@ -1161,6 +1166,7 @@ height:30px
 }
 
 /* Adding after-text to somebody's name? Add them here. */
+a.author[href$="Ceolt0ir"]:after,
 a.author[href$="DrinkiePie"]:after,
 a.author[href$="thedarklordkyp"]:after,
 a.author[href$="XelNaga"]:after,
@@ -1226,6 +1232,7 @@ letter-spacing:normal;
 }
 
 /* After-name text goes here. */
+a.author[href$="Ceolt0ir"]:after {content:" ★★★"}
 a.author[href$="DrinkiePie"]:after {content:" Never got text flair :("}
 a.author[href$="thedarklordkyp"]:after {content:" http://i.imm.io/11QxU.jpeg"}
 a.author[href$="XelNaga"]:after {content:" (Is totally internet famous)"}
