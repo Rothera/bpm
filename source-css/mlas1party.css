@@ -113,7 +113,39 @@ a.author[href$="derram_2"]:before {
     color: black;
     margin-right: 3px
     }
+/*Announcement Box*/
+.content {
+    margin-top: 45px
+    }
+.pagename {
+    font-size: 12pt
+    }
+.titlebox form {
+    position: static
+    }
+.titlebox .usertext-body .md ol {
+    width: auto;
+    background: url(%%steam%%) no-repeat scroll 3px 2px #EFF7FF;
+    border: 1px solid #5f99cf;
+    position: absolute;
+    top: 167px;
+    left: 20px;
+    z-index: 50;
+    margin: 10px 310px 0 0;
+    padding: 0px 4px 2px 15px;
+    list-style: none;
+    display: block;
+    white-space: normal;
+    overflow: hidden;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px
+    }
+.titlebox .usertext-body .md ol li {
+    margin: 3px
+    }
 
+
+/* Emotes */
 
 a[href|='/ajnope'] { width:200px; height:200px; background-image: url(%%ajnope%%); background-position: 0px 0px; display: block; clear: none; float: left; margin-left: 3px; margin-right: 3px; }
 

@@ -276,6 +276,10 @@ margin-left: 5% !important;
 background-color: white !important;
 }
 
+.wiki-page .wiki-page-content .md.wiki>.toc>ul{
+background-color: white;
+}
+
 /*New post spam filtered warning*/
 #title-field.roundfield:before
 {
@@ -1190,4 +1194,17 @@ display: none !important;
 }
 .sitetable.linklisting {
     padding-top: 5px;
+}
+.report-button:hover:before {
+    position: absolute;
+    display: block;
+    z-index: 1000;
+    padding: 3px;
+    border: 2px solid #94C1EF;
+    background-color: #CEE3F8;
+    content: "Please message the moderators with the reason for your report.";
+    text-align: center;
+    font-size: 10px;
+    font-weight: normal;
+    margin-top: 5px
 }

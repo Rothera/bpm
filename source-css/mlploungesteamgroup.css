@@ -12,6 +12,7 @@ DC05 - Announcement bar created
 24Feb2013 - Name change system changed
 08Mar2013 - Announcement bar updated to allow links
 13Apr2013 - Removed suffix from moderation box
+DC06 - Bannercat hover
 Use Ctrl-F to find and remove them. */
 
 /* Sub Name Change*/
@@ -56,6 +57,19 @@ body, body.res-nightmode:first-of-type {
     vertical-align: bottom;
     margin: 0px 0;
 }
+/*DC06 - To change this simply modify the 100 x 200 px "bannercatnew" .png. The 100 x 100 block to the right is the standard, the 100 x 100 block to the left is the hover. The blank image in the subreddit settings is required, anything else causes that image to always be on top. You can replace it with a 1x1 blank, but that would require adding margin modifiers below to make it look right.*/
+#header-img{
+    background: url(%%bannercatnew%%);
+    background-position: 100px 0px;
+    width: 100px;
+    height: 100px;
+    }
+#header-img:hover {
+    background: url(%%bannercatnew%%);
+    background-position: 0px 0px;
+    width: 100px;
+    height: 100px;
+    }
 
 /* Name Change */
 
@@ -767,6 +781,14 @@ a[href|="/twicutesmile"] {
     background-image: url(%%twicutesmile%%) !important;
     }
 
+a[href|="/jeisj"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 253px;
+    height: 200px;
+    background-image: url(%%jeisj%%) !important;
+    }
 
 /* ------MACROS------- */
 a[href="/scumbagrando"] {
