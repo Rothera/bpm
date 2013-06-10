@@ -1434,45 +1434,28 @@ a.author[href$="/_Doctor_Whooves_"]:after {
     }
 
 /**************************Banner*******************************************************************/
-#header{padding: 0px; padding-bottom: 0px; height:164px;}
-#header-bottom-left{position:static;background:url(%%gallopfrey-bg%%) top left no-repeat;background-position:0px -10px;height:50px;padding-top:95px;
-margin-bottom:0px;  }
-#header-img{text-indent:-9999px;background-image:url(%%gallopfrey-logo-title%%);background-position:0px -258px;background-repeat:no-repeat;height:145px;width:472px;vertical-align:bottom;margin-bottom:3px; margin-top:-95px; margin-right:-420px;}
+#header-bottom-left{background:url(%%gallopfrey-bg%%) top left repeat;}
 
 
-
-.redditname a{
-text-indent:-9001px;
-
+.pagename{
+    color: black;
+    font-size: 0pt;
 }
 
-.pagename {color: white; font-size: 325%; font-family:arial;}
+.pagename a{
+    background-image: url(%%gallopfrey-blank-logo%%); 
+    margin: 0 auto;
+    font-size: 0px;
+    padding: 30px 185px 0 0;
+    color: #364657;
+    left: 40px;
+    position: absolute;
+    top: 135px
+}
 
-#header-img-a,
-.redditname a,
 .tabmenu {
-display: block;
-float: left;
+margin-left: -240px;
 }
-
-.tabmenu{
-position:relative;
-top:100%;
-margin-top:-15px!important;}
-
-#newlink{ margin-top:18px;}
-
-
-/* This uses a blank transparent image as the logo because of a strange rendering thing in chrome */
-.redditname a{
-/*background:url(%%gallopfrey-blank-logo%%);*/
-vertical-align: bottom;
-height: 48px;
-width: 185px;
-margin-left: -8px;
-
-}
-
 
 .titlebox h1{
 background:none;
@@ -1487,7 +1470,6 @@ background:none;
 vertical-align: bottom;
 display:block;
 }
-
 
 
 

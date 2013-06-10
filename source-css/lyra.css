@@ -6,7 +6,7 @@ body .side a[href="http://www.reddit.com/r/BonBon"] {
     width: 75px;
     background: url(%%bon2heart%%);
     position: fixed;
-    top: 174px;
+    top: 280px;
     right: 1px;
     z-index: 999
 }
@@ -39,8 +39,6 @@ div.usertext-body:hover table {
     clear: both
     }
 
-.titlebox>.word{display:none!important;}  .titlebox>.number:after{content:" HUMANS";}
-
 a[href|='/hellolyra'], a[href|='/liera'], a[href|='/lyraawesome'], a[href|='/lyrafacehoof'], a[href|='/lyrahappy'], a[href|='/lyrahat'], a[href|='/lyrahey'], a[href|='/lyrashock'], a[href|='/lyrasit'], a[href|='/heartstrings'], a[href|='/lyradat'], a[href|='/lyrasalute'], a[href|='/lyrahugs']    
 {
     display: block;
@@ -66,9 +64,31 @@ a[href|='/lyrahugs'] {width:200px; height:128px; background-position: -0px -506p
 a[href|='/lyrawalk'] { width:102px; height:150px; background-image: url(%%lyrawalk%%); background-position: 0px 0px; display: block; clear: none; float: left; margin-left: 3px; margin-right: 3px; }
 
 a[href|='/implyra'] { width:127px; height:150px; background-image: url(%%implyra%%); display: block; clear: none; float: left; }
-/* Make the "community settings" text box bigger, because it's an unreadable clusterfuck when it's small. */
-.fancy-settings .linefield { width: 914px; }
-.fancy-settings textarea { width: 892px; height: 500px; }
 
-/* Also make the CSS text box bigger, because why not. */
-.stylesheet-customize-container textarea { height:500px; }
+
+/* ---------- Change "Readers" and "users" ---------- */
+.titlebox strong {
+    font-size: medium
+    }
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox .subscribers span.number:after {
+    content: " Lyra fanatics"
+    }
+div.titlebox .users-online span.number:after {
+    content: " humans here now"
+    }
+
+/* ---------- Make the "community settings" description box bigger  ---------- */
+.fancy-settings .linefield {
+    width: 622px
+    }
+.fancy-settings textarea[name=description] {
+    width: 600px;
+    height: 500px
+    }
+/* ---------- Make the CSS text box bigger ---------- */
+.stylesheet-customize-container textarea {
+    height: 600px
+    }

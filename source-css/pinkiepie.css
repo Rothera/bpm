@@ -30,21 +30,21 @@ body:first-of-type, body.res-nightmode:first-of-type,.side,.flairtoggle,.submit 
 .side .usertext[id$="r"] a[href="/bg-pony"] { background:url(%%bg%%); width:441px; height:600px; background-position: -1457px -1341px !important;}
 .side .usertext[id$="s"] a[href="/bg-pony"] { background:url(%%bg%%); width:541px; height:700px; background-position: -379px -1341px !important;}
 .side .usertext[id$="t"] a[href="/bg-pony"] { background:url(%%bg%%); width:533px; height:400px; background-position: -922px -1341px}
-.side .usertext[id$="u"] a[href="/bg-pony"] { background:url(%%bg%%); width:358px; height:382px; background-position: -1270px -2px !important;}
+.side .usertext[id$="u"] a[href="/bg-pony"] { background:url(%%bg2%%); width:466px; height:600px; background-position: -2px -1206px !important;}
 .side .usertext[id$="v"] a[href="/bg-pony"] { background:url(%%bg%%); width:529px; height:500px; background-position: -739px -2px !important;}
 .side .usertext[id$="w"] a[href="/bg-pony"] { background:url(%%bg%%); width:735px; height:735px; background-position: -2px -2px !important;}
 .side .usertext[id$="x"] a[href="/bg-pony"] { background:url(%%bg%%); width:529px; height:500px; background-position: -739px -2px !important;}
 .side .usertext[id$="y"] a[href="/bg-pony"] { background:url(%%bg%%); width:352px; height:600px; background-position: -1630px -2px !important;}
 .side .usertext[id$="z"] a[href="/bg-pony"] { background:url(%%bg%%); width:358px; height:382px; background-position: -1270px -2px !important;}
 .side .usertext[id$="0"] a[href="/bg-pony"] { background:url(%%bg%%); width:352px; height:600px; background-position: -1630px -2px!important;}
-.side .usertext[id$="1"] a[href="/bg-pony"] { background:url(%%bg%%); width:375px; height:700px; background-position: -2px -1341px !important;}
-.side .usertext[id$="2"] a[href="/bg-pony"] { background:url(%%bg%%); width:375px; height:700px; background-position: -2px -1341px !important;}
+.side .usertext[id$="1"] a[href="/bg-pony"] { background:url(%%bg2%%); width:458px; height:600px; background-position: -462px -604px !important;}
+.side .usertext[id$="2"] a[href="/bg-pony"] { background:url(%%bg2%%); width:532px; height:600px; background-position: -470px -1206px !important;}
 .side .usertext[id$="3"] a[href="/bg-pony"] { background:url(%%bg%%); width:611px; height:400px; background-position: -2px -739px !important;}
-.side .usertext[id$="4"] a[href="/bg-pony"] { background:url(%%bg%%); width:500px; height:500px; background-position: -1193px -739px !important;}
-.side .usertext[id$="5"] a[href="/bg-pony"] { background:url(%%bg%%); width:500px; height:500px; background-position: -1193px -739px!important;}
-.side .usertext[id$="6"] a[href="/bg-pony"] { background:url(%%bg%%); width:576px; height:600px; background-position: -615px -739px !important;}
+.side .usertext[id$="4"] a[href="/bg-pony"] { background:url(%%bg2%%); width:532px; height:600px; background-position: -470px -1206px !important;}
+.side .usertext[id$="5"] a[href="/bg-pony"] { background:url(%%bg2%%); width:466px; height:600px; background-position: -2px -1206px!important;}
+.side .usertext[id$="6"] a[href="/bg-pony"] { background:url(%%bg2%%); width:418px; height:600px; background-position: -2px -2px !important;}
 .side .usertext[id$="7"] a[href="/bg-pony"] { background:url(%%bg%%); width:352px; height:600px; background-position: -1630px -2px !important }
-.side .usertext[id$="8"] a[href="/bg-pony"] { background:url(%%bg%%); width:483px; height:600px; background-position: -995px -2043px !important;}
+.side .usertext[id$="8"] a[href="/bg-pony"] { background:url(%%bg2%%); width:406px; height:500px; background-position: -422px -2px !important;}
 .side .usertext[id$="9"] a[href="/bg-pony"] { background:url(%%bg%%); width:576px; height:600px; background-position: -615px -739px !important;}
 
 /*---------------------- Nightmode fixes for the background -------------------------------- */
@@ -72,11 +72,11 @@ body
 
 
 /*---------------------- Banner Image ---------------------------------------- */
-#header-bottom-left {
-    background: url(%%pinkiebg%%);
+ #header #header-bottom-left {
+    background: url(%%pinkiebg%%)!important;
     background-color:transparent;
      margin-left: 45px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
     }
 #header-img {
     margin-left: -40px;

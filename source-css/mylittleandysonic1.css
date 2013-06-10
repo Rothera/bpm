@@ -2,16 +2,18 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%1Untitsled%%)  no-repeat  fixed 70% 85% !important;
+    background:  url(%%bubble%%)  no-repeat  fixed 40% 100% !important;
 }
 
 /* Banner image and associated height values */
-#header-bottom-left:nth-of-type(n) {
-   background: url(%%rdsCQR9%%);
-   background-repeat: no-repeat;
-   background-position: 50% 100%;
+ #header #header-bottom-left {
+   background: url(%%meatbannerpony%%)!important;
+   background-repeat: no-repeat!important;
+   background-position: 40% 100%!important;
    height: 237px; /* 237 for meat's nice banner and general banner size */
 }
+
+
 
 #header-img-a {
     margin-top: 13px;
@@ -70,6 +72,22 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .
 .side.res-nightmode:first-of-type {background-color: transparent!important}
 
 /*Announcement Box*/
+.side ol:nth-of-type(1) {
+ position: absolute;
+ display: block;
+ top: 255px; left: 13px;
+ padding: 2px 10px 2px 60px; /*top right bottom left*/
+ background:url(%%announcedance%%) no-repeat scroll 5px 2px;
+ /*background-color: #526da4; /*Change for different background color*/
+ border: 1px solid #3b5998; /*Change for different outline color*/
+ border-left: 8px solid #3b5998;
+ text-align: center;
+ font-size: 14px;
+ z-index: 2147483647;
+ list-style:none;
+}
+div.content {margin-top:79px;}
+
 /*
 .content {
     margin-top: 30px 
@@ -102,7 +120,6 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .
     margin: 3px
     }
 */
-
 
 
 /* Replace the nsfw image with screwball */
@@ -982,7 +999,9 @@ a.author[href$=ZZW30],
 a.author[href$=Zovistograt],
 a.author[href$=JustAnotherGDB],
 a.author[href$=Lord_Ninka],
-a.author[href$=StabbyTheLlama]
+a.author[href$=StabbyTheLlama],
+a.author[href$=thezooman123]
+
 
 
 { 
@@ -1000,6 +1019,7 @@ a.author[href$="numberlock"]:before,
 a.author[href$="thedarklordkyp"]:before,
 a.author[href$="fwinest_JediThug"]:before,
 a.author[href$="V17Ds"]:before,
+a.author[href$="thezooman123"]:before,
 a.author[href$="Rudicorn"]:before,
 a.author[href$="jimmpony"]:before,
 a.author[href$="DiscordDraconequus"]:before,
@@ -1090,12 +1110,12 @@ visibility:visible!important;
     content:"Princess "
     }*/
 a.author[href$="CodenameToon"]:before {content:"Coggler"}
-a.author[href$="CarlosAmuroRay"]:before {content:"Chuck"}
+a.author[href$="thezooman123"]:before {content:"Actual Racist"}
 a.author[href$="-20"]:before {content:"“just a douchebag”"}
 a.author[href$="numberlock"]:before {content:"BeerPony"}
 a.author[href$="thedarklordkyp"]:before {content:"A_Drunk_Changeling"}
 a.author[href$="fwinest_JediThug"]:before {content:"Wincest_JediThug"}
-a.author[href$="V17Ds"]:before {content:"SwiftV17Ds"}
+a.author[href$="V17Ds"]:before {content:"Plounger"}
 a.author[href$="Rudicorn"]:before {content:"Grumpledick"}
 a.author[href$="jimmpony"]:before {content:"sirtophat"}
 a.author[href$="DiscordDraconequus"]:before {content:"therealChrysalis"}
@@ -1112,7 +1132,7 @@ a.author[href$="PartOfAShoe"]:before {content:"Welt"}
 a.author[href$="shawa666"]:before {content:"Slowpoke666"}
 a.author[href$="Avebone"]:before {content:"Ambassador of Foodmanes"}
 a.author[href$="Qwerty439"]:before {content:"Asdfgh439"}
-a.author[href$="NeonSequitur"]:before {content:"Mad Gay"}
+a.author[href$="NeonSequitur"]:before {content:"Hunter x Hunter"}
 a.author[href$="viper9172"]:before {content:"Sidelong"}
 a.author[href$="Lazeraze"]:before {content:"Snowlily"}
 a.author[href$="31eipekili"]:before {content:"  :I The whispering Jew "}
@@ -1191,6 +1211,7 @@ height:30px
 }
 
 /* Adding after-text to somebody's name? Add them here. */
+a.author[href$="dylantrevor"]:after,
 a.author[href$="Ceolt0ir"]:after,
 a.author[href$="DrinkiePie"]:after,
 a.author[href$="thedarklordkyp"]:after,
@@ -1257,6 +1278,7 @@ letter-spacing:normal;
 }
 
 /* After-name text goes here. */
+a.author[href$="dylantrevor"]:after {content:" Free stickers! Ask me how!"}
 a.author[href$="Ceolt0ir"]:after {content:" ★★★"}
 a.author[href$="DrinkiePie"]:after {content:" Never got text flair :("}
 a.author[href$="thedarklordkyp"]:after {content:" http://i.imm.io/11QxU.jpeg"}
@@ -1265,8 +1287,8 @@ a.author[href$="cecinestpasunepony"]:after { content:" writes shitty mlas1 eroti
 a.author[href$="AttainedAndDestroyed"]:after { content:" saggy tits are swaggy tits"}
 a.author[href$="Scythesickle"]:after { content:" (wants to be a mod)"}
 a.author[href$="SRSaboutponies"]:after {content: "(trolls trolling trolls trolling trolling trolls)"}
-a.author[href$="Sponce"]:after { content:" (liek dis if u cry evry time)"}
-a.author[href$=NeonSequitur]:after  { content:" (Is very mad)"}
+a.author[href$="Sponce"]:after { content:" (lik dis f u cri evertim)"}
+a.author[href$=NeonSequitur]:after  { content:" (Is good anime)"}
 a.author[href$=scriptea]:after { content:" (Too main pone for background pone status)" }
 a.author[href$="ClopIsDisgusting"]:after  { content:" (Exists solely to shit on other people's fun)" }
 a.author[href$=Myrandall]:after { content:" (Should leave them kids alone)" }
@@ -1319,14 +1341,15 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 
 
 /* Any pre/post-name flair stuff goes here */ 
-.tagline a.author[href$="/Username_Steve"]:before,
+.tagline a.author[href$="/Esrou"]:before,
 .tagline a.author[href$="/Indubitableness"]:before,
 .tagline a.author[href$="/RainbowCrash"]:before,
 .tagline a.author[href$="/245001"]:before,
 .tagline a.author[href$="/Orschmann"]:before,
 .tagline a.author[href$="/derram_2"]:after, 
 .tagline a.author[href$="/EvilHom3r"]:after,
-.tagline a.author[href$="/ajtexasranger"]:after
+.tagline a.author[href$="/ajtexasranger"]:after,
+.tagline a.author[href$="/fsakj"]:before
 
 {
     content: " ";
@@ -1344,12 +1367,13 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 }
 
 /* Flour sack flair for anyone we've noticed that has flair disabled. Don't forget to add them above too.*/ 
-.tagline a.author[href$="/Username_Steve"]:before,
+.tagline a.author[href$="/Esrou"]:before,
 .tagline a.author[href$="/Indubitableness"]:before,
 .tagline a.author[href$="/EvanMacIan"]:before,
 .tagline a.author[href$="/RainbowCrash"]:before,
 .tagline a.author[href$="/Latiel"]:before,
-.tagline a.author[href$="/245001"]:before
+.tagline a.author[href$="/245001"]:before,
+.tagline a.author[href$="/fsakj"]:before
 {
     background-position: 0px -540px;
 }
@@ -1409,13 +1433,14 @@ body.res a.author[href$="Phei"] { background-color: #D4A4E8 }
 body.res a.author[href$="Pathogen-David"] { background-color: #662D8A }
 body.res a.author[href$="Myrandall"] {color:#FF69B4!important}
 body.res a.author[href$="RAINBOW_PONY_SEMEN"] {color:#ff00f7!important}
+body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 
 /* PROPER GREENTEXT (stolen from plounge, which stole from /r/4chan) */
 .content .md h1 { color: #789922; border-bottom: none!important; padding-bottom: 0px }
 .content .md h1:before { content: ">" }
 
 /*Social wanted color*/
-.id-t2_894lr.id-t2_894lr{color:#b38 !important}
+.id-t2_894lr{color:#0b0}.id-t2_894lr:before{content:" > "}
 
 .error.OUTOFSUB{display:none!important}
 

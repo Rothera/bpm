@@ -50,6 +50,16 @@ hr {
    margin-bottom: -4px;
 }
 
+/* Comment background */
+.commentarea>.usertext textarea {
+	background-image: url(%%comment-background%%);
+	background-repeat: no-repeat;
+	border: 1px solid #ccc;
+}
+.commentarea>.usertext textarea:focus {
+	background-position: -504px -104px;
+}
+
 
 /*
 * Flair

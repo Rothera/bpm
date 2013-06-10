@@ -164,12 +164,13 @@ body a[href="/spoiler"]:hover{color:white!important}/* Spoiler Setter*/
 div.over18 .entry .buttons .first{padding-left: 0px}
 .footer-parent
 {
- height:1000px;
+ height:1100px;
  padding-bottom:0px;
  clear:both;
  text-align:center;
  width:100%;
- background-image:url(%%egstare%%);
+/*Sweetie Belle Soup by /u/PingasLord*/
+ background-image:url(%%sbstare-soup%%);
  background-repeat:no-repeat;
  margin-bottom:-30px;
  background-position: 50% 100%;
@@ -198,7 +199,7 @@ h3.imgTitle{
  display:block;
  width:70px;
  height:70px;
- background:url(%%tinyrarity%%);
+ background:url(%%tiny-rarity-bee%%);
  position:fixed; 
  top:260px;
  right:-3px;
@@ -883,7 +884,7 @@ body:lang(np):not(.subscriber) .entry.likes:not(.reddit-entry):before,body:lang(
 body.res:lang(np):not(.subscriber) div.titlebox > div[style*='display: block !important'] input:before,body.res:lang(np):not(.subscriber) div.titlebox > div[style*='display: block !important'] label:before,body.res:lang(np):not(.subscriber) > div#keyCommandLineWidget > form:before{content:'Removed by NoParticipation'!important;margin-left:-10000px!important}
 body:lang(np):not(.subscriber) .usertext-edit,body:lang(np):not(.subscriber) .sidebox.submit,body:lang(np):not(.subscriber) .commentingAs,body:lang(np):not(.subscriber) .markdownEditor,body:lang(np):not(.subscriber) .report-button,body:lang(np):not(.subscriber) a[onclick*="return reply(this)"],body:lang(np):not(.subscriber) .subButtons,body:lang(np):not(.subscriber) .helplink,body:lang(np):not(.subscriber) .titlebox .fancy-toggle-button.toggle > .option.add,body.wiki-page:lang(np):not(.subscriber) span.pageactions a.wikiaction-edit:not(.wikiaction-current),body.wiki-page:lang(np):not(.subscriber) div.wiki-page-content form#editform label[for=reason],body.wiki-page:lang(np):not(.subscriber) div.wiki-page-content form#editform input#wiki_revision_reason,body.wiki-page:lang(np):not(.subscriber) div.wiki-page-content form#editform input[type=submit]{display:none!important}
 
-#header-img {margin-right:-50px;}
+#header-img {margin-right: 0px;}
 #header span.pagename.redditname {position:relative;z-index:10;}
 
 .side a[href="http://redd.it/1bkvw7"]{ display: block; height: 78px; width: 300px; background: url(%%sbstare-banner%%); position: absolute; top: 20px; left: 400px; z-index: 999; margin: 20px 0 0 0; overflow: hidden; border-radius:10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; }

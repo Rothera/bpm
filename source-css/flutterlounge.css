@@ -4,6 +4,56 @@ Rule 2. No plagiarism.
 Rule 3. No plagiarismm.
 Rule 4. Make lots of emotes. */
 
+/* Header color */
+
+#header {
+   background-color: #f2dbf2;
+}
+
+body {
+   background-color: #fffce3;
+}
+
+.sidebox .spacer {
+    background:  #fffce3 none no-repeat scroll top left;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.titlebox form.toggle, .leavemoderator {
+    background-color:  #fffce3;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.sitetable > .link:first-child, .link ~ .odd {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background-color: #fffce3;
+    border-radius: 10px;
+    margin-right: 320px
+    }
+
+body, .side {
+    background: #fffce3;
+    }
+
+.comment {
+background-color: #fffbc9;
+}
+
+.res .comment .comment{background-color: #fffcdb !important}
+.res .comment .comment .comment{background-color: #fffbc9 !important}
+.res .comment .comment .comment .comment{background-color: #fffcdb !important}
+.res .comment .comment .comment .comment .comment{background-color: #fffbc9 !important}
+.res .comment .comment .comment .comment .comment .comment{background-color: #fffcdb !important}
+.res .comment .comment .comment .comment .comment .comment .comment{background-color: #fffbc9 !important}
+.res .comment .comment .comment .comment .comment .comment .comment .comment{background-color: #fffcdb !important}
+.res .comment .comment .comment .comment .comment .comment .comment .comment .comment{background-color: #fffbc9 !important}
+.res .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment{background-color: #fffcdb !important}
+
 /* Fluttermotes because why not.*/
 
 a[href|="/fs00"], a[href|="/fs10"], a[href|="/fs20"], a[href|="/fs01"], a[href|="/fs11"], a[href|="/fs21"], a[href|="/fs02"], a[href|="/fs12"], a[href|="/fs22"], a[href|="/fs03"], a[href|="/fs13"], a[href|="/fs23"], a[href|="/fs04"], a[href|="/fs14"], a[href|="/fs24"], a[href|="/fs05"], a[href|="/fs15"], a[href|="/fs25"], a[href|="/fs06"], a[href|="/fs16"], a[href|="/fs26"] {
@@ -760,9 +810,7 @@ text-decoration: underline;
         background-repeat: no-repeat !important
     }
 
-/******************
-shy emote
-******************/
+/* /shy emote I DIDN'T STEAL THIS FROM THE PLOUNGE I SWEAR */
 a[href="/shy"] {
     display: block;
     clear: none;

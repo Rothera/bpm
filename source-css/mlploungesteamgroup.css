@@ -121,16 +121,18 @@ body.res-nightmode:first-of-type {
 /*DC05 The blurb that links to whatever post I want it to*/
 /*CHANGE THIS FIELD IN THE SIDEBAR. Do not remove the hash tags. Follows same rules as comment links*/
 
+/* Use if moving announce back
 body > .content:before{
     display: block;
-    margin: 0 0 60px 60px;
+    margin: 0 0 60px 0px;
     content: "";
     }
-
+*/
 .side .md h6 {
     position: absolute;
-    top: 133px;
-    left: 80px;
+/* Old was top 133px Left 80px*/
+    top: 33px;
+    left: 120px;
     z-index: 100;
     background: #CCC;
     font-size: 16px;
