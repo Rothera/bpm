@@ -1,0 +1,76 @@
+/*Most bits of these CSS are stolen from Plounge */
+
+div.titlebox span.word {display:none}
+div.titlebox .subscribers span.number:after {content:" Spikes"}
+div.titlebox .users-online span.number:after {content:" Spiking"}
+
+/*Name replace*/
+
+a.author.id-t2_8gh9f{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
+a.author.id-t2_8gh9f:after{font-size:10px!important;display:block;letter-spacing:normal}
+a.author.id-t2_8gh9f:after {content:" no_one"}
+
+a.author.id-t2_aj4cg{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
+a.author.id-t2_aj4cg:after{font-size:10px!important;display:block;letter-spacing:normal}
+a.author.id-t2_aj4cg:after {content:" uo‾ouǝ"}
+
+
+/*Background (stolen from Plounge) for testing*/ 
+
+body {
+background: url(%%Alwayswatching%%)  
+no-repeat fixed center center
+}
+
+/*Ponymote (CSS stolen from AnotherPonymotesSub, whose Gwingle stole it from plounge)*/
+
+a[href="/spikehmph"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 64px;
+Height: 78px;
+background-image: url(%%spikehmph%%) !important
+}
+
+a[href="/fluttersquint"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 70px;
+Height: 70px;
+background-image: url(%%fluttersquint%%) !important
+}
+
+a[href="/caesar"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 140px;
+Height: 140px;
+background-image: url(%%caesar%%) !important
+}
+
+
+a[href="/sbload"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 72px;
+Height: 82px;
+background-image: url(%%sbload%%) !important
+}
+
+a[href="/rdwut"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 70px;
+Height: 70px;
+background-image: url(%%rdwut%%) !important
+}
