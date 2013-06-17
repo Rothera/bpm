@@ -53,7 +53,7 @@ FYI MAKING ALL COMMENTS SAY THE SAME FUCKING THING IS A SUBREDDIT BANNABLE OFFEN
 
 *******************************/
 
-/* We need more flitter */
+
 
 
 /* Esplin nearly saved Equestria. <3 */
@@ -172,9 +172,8 @@ span.rank {padding-top: .45% !important;}
 .click-gadget .midcol { margin: 0 !important; }
 
 /* ----------- Changes the Background ---------------- */
-
 body, body.res-nightmode:first-of-type {
-  background: #f0fcfb url(%%flitterglutes%%) no-repeat fixed bottom center !important;
+  background: #f0fcfb url(%%flitterglutes%%) fixed bottom left no-repeat !important ;
 }
 
 /* ----- PrincessCelestia Hath Spoken ----- */
@@ -184,7 +183,7 @@ body, body.res-nightmode:first-of-type {
   }
 .titlebox .usertext-body .md ol {
 width: auto;
-background: url(%%flitterlol3%%) no-repeat scroll 5px 1px #EFF7FF;
+background: url(%%cheerilol3%%) no-repeat scroll 5px 1px #EFF7FF;
 border: 1px solid #5f99cf;
 position: absolute;
 top: -20px;
@@ -238,16 +237,16 @@ body.res-nightmode:first-of-type {background-color: transparent!important;}
     background: #bbade6
     }
 #header-img {
-    margin-bottom: -60px;
+    margin-bottom: -4px;
     margin-left: 3px;
     }
 #header-bottom-left {
-    background: transparent url(%%TOPLEL%%)
+    background: transparent url(%%flittercm%%) top right no-repeat
     }
 /* Display a pony-readable one instead */
 span.hover.pagename.redditname a:before {
-    color: #d4ebf2;
-    content: "BronyHate";
+    color: #e5b3c4;
+    content: "BronyHate FLITTER IS BEST POKEMON";
     text-shadow: 1px 1px 2px #000;
     visibility: visible
     }
@@ -392,15 +391,7 @@ a[href="/mahnigga"] {
 }
 
 /* Brony place your code of doom above here*/
-a[href="/TI994A"] 
-{
-    display: block;
-    clear: none;
-    float: left;
-    width: 230px;
-    height: 364px;
-    background-image: url(%%TI-994A%%)
-    }
+
 /*a[href="/SWAPSPACE"] 
 {
     display: block;
@@ -438,11 +429,9 @@ a[href="/hugs"] {
 .md:after {
    content:""
 }
-a[href="/dealwithit"]:after {
-    content: url(%%dealwithit%%)
-    }
 
-/* Brony place your code of doom above here*/
+/* Brony place your code of doom above here */
+
 
 .flair-15 {
     padding: 0;
@@ -522,15 +511,6 @@ a[href="/dealwithit"]:after {
     height: 16px;
     background-image: url(%%Bananacutie%%);
     }
-
-a[href|="/evilhom3r"] {
-    display: block;
-    clear: none;
-    float: left;
-    background-image:url(%%JVZTlY-z-Dtkp6lt%%);
-    height: 70px;
-    width: 48px;
-}
 
 START-PONYSCRIPT-IGNORE {
     color: red
@@ -1394,7 +1374,6 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
     float: none !important;
     display: inline-block !important
     }
-* {cursor:wait;}
 END-PONYSCRIPT-IGNORE {
     color: red
     }
@@ -1415,46 +1394,249 @@ a.author[href$="Coggler"]:after {
     letter-spacing: normal
     }
 
-a[href="/spoiler"] {
-    visibility: hidden;
-    display: inline-block
- }
-a[href="/spoiler"]::after {
-    content: attr(title);
-    background: black;
-    color: black;
-    visibility: visible
+/* Fixed Emotes */
+
+a[href="/praisethesun"] 
+{
+ display: block;
+ clear: none;
+ float: left;
+ width: 142px;
+ height: 200px;
+ background-image: url(%%Praise-the-sun%%)
 }
-a[href="/spoiler"]:hover::after, a[href="/spoiler"]:active::after {
-    color: white;
+a[href="/praisethesun"] {
+ background-position: -0px -0px
 }
-.flair-green3dflair {
-    font-size: 3em;
-    background-color: #22AD15;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: white;
-    border-color: darkgreen;
-    padding: 2px;
-    box-shadow: 0px 0px 3px #ffd700;
-}
-    .flair-green3dflair:hover{
-        font-size: 3em;
-        box-shadow: 0px 7px 5px -4px #14690D;
-        text-shadow: 1px 1px #3CFC2B, -1px 0px #3CFC2B;
-        cursor: default;
+
+a[href="/dealwithitt"] 
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 151px;
+    height: 200px;
+    background-image: url(%%dealwithit%%);
     }
 
-/* System's corner of evil */
-
-a[href|="/flitbig"]
+a[href="/TI994A"] 
 {
-width: 510px;
-height: 346px;
-z-index:-999999999999999999999999999999;
-position:fixed;
+    display: block;
+    clear: none;
+    float: left;
+    width: 535px;
+    height: 310px;
+    background-image: url(%%TI-994A%%)
+    }
 
-top:10%;
-left:25%;
+/* "No Participation"-Mode, aka "Read Only"-Mode
+ * by /u/KortoloB
+ * /r/NoParticipation
+ * 
+ * Link people to np.reddit.com/r/YourSubreddit to show them a read-only version.
+ * Subscribers will see the full page, only non-subscribers will see the read-only version.
+ * This is of course by no means fool-proof, but it should work for the average user.
+ *  */
 
+body:lang(np):not(.subscriber) .arrow
+{ 
+	visibility: hidden !important;
+}
+
+body:lang(np):not(.subscriber) .usertext-edit,
+body:lang(np):not(.subscriber) .sidebox.submit,
+body:lang(np):not(.subscriber) .commentingAs,
+body:lang(np):not(.subscriber) .markdownEditor, 
+body:lang(np):not(.subscriber) .report-button,
+body:lang(np):not(.subscriber) a[onclick*="return reply(this)"],
+body:lang(np):not(.subscriber) .subButtons,
+body:lang(np):not(.subscriber) .helplink,
+body:lang(np):not(.subscriber) .titlebox .fancy-toggle-button.toggle > .option.add
+{
+	display: none !important;
+}
+
+body:lang(np):not(.subscriber) #siteTable:before
+{
+	content: "lol, no participation mode";
+	display: block;
+	max-width: 800px;
+	background-color: #F6E69F;
+	padding: 5px 10px;
+	margin: 5px 305px 5px 0px;
+	border: 1px solid orange;
+	font-size: small;
+}
+
+body:lang(np):not(.subscriber) .entry.likes:not(.reddit-entry):before,
+body:lang(np):not(.subscriber) .entry.dislikes:not(.reddit-entry):before
+{
+	content: "lol, no participation mode";
+	color: red;
+	font-size: large;
+	font-weight: bold;
+}
+
+/* Attempts to disrupt RES form hiding CSS styles */
+body.res:lang(np):not(.subscriber) div.titlebox > div[style*='display: block !important'] input:before,
+body.res:lang(np):not(.subscriber) div.titlebox > div[style*='display: block !important'] label:before,
+body.res:lang(np):not(.subscriber) > div#keyCommandLineWidget > form:before
+{
+	content: 'Removed by NoParticipation' !important;
+	margin-left: -10000px !important;
+}
+
+/* Unjerk text type */
+
+a[href$="/unjerk"] {  
+    background: #d2ffe9  !important;  
+    color: #d2ffe9  !important;
+    border: 1px solid #9e87d2;
+    padding-right: 1px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}  
+
+a[href$="/unjerk"]:hover {  
+color: #9e87d2 !important  
+}  
+
+a[href$="/unjerk"]::before {
+    background: #FFF !important;
+    color: #9e87d2 !important;
+    padding: 0px 1px;
+    margin: 0px;
+    margin-right: 1px;
+}
+
+a[href$="/unjerk"]::before {
+    content: "Unjerk for a second! ";
+}
+
+a[href$="/flittertext"] {  
+font-size: 10pt;
+color: #d2ffe9 !important;
+background-color: #cdbceb !important;
+font-weight: bold;
+letter-spacing: 1px;
+max-width: none;
+border-top: 5px solid;
+border-bottom: 5px solid;
+border-color: #9e87d2;
+padding: 4px;
+margin-right: 5px;
+box-shadow: 1px 3px 5px #9e87d2;
+display: inline;
+}  
+
+/* Flittertext text type */
+
+a[href$="/flittertext"]:hover {  
+    color: #d2ffe9 !important;
+    font-size: 24pt;
+    text-shadow: 3px 0px #9e87d2, -3px 0px #9e87d2;
+    box-shadow: 0px 10px 4px -5px #888888;
+    cursor: default;
+}  
+
+/* I have no idea what I'm doing <3 */
+/* (Actually this code recolors self-post titles based on keywords) */
+
+#siteTable a[href*="cheerilee"].title { color: #903069 } 
+#siteTable a[href*="flitter"].title { color: #cdbceb } 
+#siteTable a[href*="twilight"].title { color: #ed438d } 
+#siteTable a[href*="bravery"].title { color: #fcec61 } 
+#siteTable a[href*="brave"].title { color: #fcec61 } 
+#siteTable a[href*="brony"].title { color: #ff1e00 } 
+#siteTable a[href*="20%"].title { color: #9fd6f5 } 
+#siteTable a[href*="dash"].title { color: #9fd6f5 } 
+#siteTable a[href*="bronyhate"].title { color: #000000 } 
+#siteTable a[href*="r/bronyhate"].title { color: #000000 } 
+#siteTable a[href*="/r/bronyhate"].title { color: #000000 } 
+#siteTable a[href*="larson"].title { color: violet } 
+#siteTable a[href*="mod"].title { color: green } 
+
+/* Greentext (use # before text lines) */
+
+.content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
+.content .md h1:before{content:">"}
+
+
+/* Le downglute box */
+
+.thing .down:hover:before {
+content: 'You wont';
+color: #273873;
+text-shadow: 3px 0px #ed438d, -3px 0px #662d8a;
+position: absolute;
+z-index: 99;
+margin: -3em 0 0 2em;
+padding: .3em;
+border: .1em dashed;
+background: #9edbf8;
+background-image: url(%%swagintosh%%);
+font-size: 24pt;
+font-weight: bold;
+font-family: "Segoe Script";
+width: 8em;
+text-align: center;
+}
+
+/* Header */
+
+
+#header { 
+        background:  url(%%TOPLEL%%) bottom left;
+        height: 320px;
+        position: relative;
+    }
+
+
+/* Old Method
+
+#header {
+    border-bottom-color: #30d5c8;
+    background: #bbade6
+    }
+#header-img {
+    margin-bottom: -30px;
+    margin-left: 3px;
+    }
+#header-bottom-left {
+    background: transparent url(%%TOPLEL%%)
+    } 
+
+End Old Method */
+
+/* Spoiler tag */
+
+a[href$="/spoiler"] {  
+    background: #000 !important;  
+    color: #000 !important;
+    border: 1px solid black;
+    padding-right: 1px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}  
+
+a[href$="/spoiler"]:hover {  
+    color: #FFF !important; 
+}
+
+a[href$="/spoiler"]::before {
+    background: #FFF !important;
+    color: #000 !important;
+    padding: 0px 1px;
+    margin: 0px;
+    margin-right: 1px;
+}
+
+a[href$="/spoiler"]::before {
+    content: "Spoiler";
+}
+
+a[href$="/spoiler"][title]::before {
+    content: attr(title) " Spoiler";
 }

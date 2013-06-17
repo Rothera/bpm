@@ -7,7 +7,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%meatbannerpony%%)!important;
+   background: url(%%risenbanner%%)!important;
    background-repeat: no-repeat!important;
    background-position: 40% 100%!important;
    height: 237px; /* 237 for meat's nice banner and general banner size */
@@ -16,13 +16,14 @@ body:first-of-type, body.res-nightmode:first-of-type {
 
 
 #header-img-a {
-    margin-top: 13px;
+    margin-top: 75px;
     margin-left: 15px;
 }
 
 #header, #header.res-nightmode{
     height:256px;
     border-bottom: 1px solid #000000;
+    /*background-color: transparent!important;*/
     background-color: #e0d3c1!important;
 }
 
@@ -75,7 +76,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .
 .side ol:nth-of-type(1) {
  position: absolute;
  display: block;
- top: 255px; left: 13px;
+ top: 280px; left: 13px;
  padding: 2px 10px 2px 60px; /*top right bottom left*/
  background:url(%%announcedance%%) no-repeat scroll 5px 2px;
  /*background-color: #526da4; /*Change for different background color*/
@@ -88,7 +89,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .
 }
 div.content {margin-top:79px;}
 
-/*
+
 .content {
     margin-top: 30px 
     }
@@ -104,7 +105,7 @@ div.content {margin-top:79px;}
     background:url(%%announcedance%%) no-repeat scroll 5px 1px #EFF7FF;
     font-size: 14px !important;
     position: absolute;
-    top: 60px;
+    top: 275px;
     left: 200px;
     z-index: 200;
     margin: -0px 310px 0 0;
@@ -119,7 +120,7 @@ div.content {margin-top:79px;}
 .titlebox .usertext-body .md ol li {
     margin: 3px
     }
-*/
+
 
 
 /* Replace the nsfw image with screwball */
@@ -431,6 +432,15 @@ background-repeat: no-repeat;
 .flair-flare561:after { background-position: 0px -4560px }
 .flair-Tollaneer:after { background-position: 0px -4590px }
 .flair-zecora:after { background-position: 0px -4620px }
+.flair-tuckels:after { background-position: 0px -4650px }
+.flair-Flappi46:after { background-position: 0px -4680px }
+.flair-Sponce:after { background-position: 0px -4710px }
+.flair-20:after { background-position: 0px -4740px }
+.flair-RAINBOWPONYSEMEN:after { background-position: 0px -4770px }
+.flair-ShoddyVaccine:after { background-position: 0px -4800px }
+.flair-dereckc1:after { background-position: 0px -4830px }
+.flair-0x:after { background-position: 0px -4860px }
+.flair-LITERALLYCheerilee:after { background-position: 0px -4890px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
@@ -915,6 +925,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="0x_"],
 a.author[href$="-20"],
 a.author[href$="CarlosAmuroRay"],
 a.author[href$="numberlock"],
@@ -1000,7 +1011,9 @@ a.author[href$=Zovistograt],
 a.author[href$=JustAnotherGDB],
 a.author[href$=Lord_Ninka],
 a.author[href$=StabbyTheLlama],
-a.author[href$=thezooman123]
+a.author[href$=thezooman123],
+a.author[href$=Nagashizuri],
+a.author[href$=andresonic1]
 
 
 
@@ -1012,6 +1025,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="0x_"]:before,
 a.author[href$="-20"]:before,
 a.author[href$="CodenameToon"]:before,
 a.author[href$="CarlosAmuroRay"]:before,
@@ -1098,7 +1112,9 @@ a.author[href$=zovistograt]:before,
 a.author[href$=JustAnotherGDB]:before,
 a.author[href$=Swiftskii]:before,
 a.author[href$=Lord_Ninka]:before,
-a.author[href$=StabbyTheLlama]:before
+a.author[href$=StabbyTheLlama]:before,
+a.author[href$=Nagashizuri]:before,
+a.author[href$=andresonic1]:before
 
 {
 font-size:10px!important; 
@@ -1107,8 +1123,9 @@ visibility:visible!important;
 
 /* Replacing somebody's name? Put the replacement here. */
 /*a.author:before{
-    content:"Princess "
+    content:"Princess " 
     }*/
+a.author[href$="0x_"]:before {content:"just ox"}
 a.author[href$="CodenameToon"]:before {content:"Coggler"}
 a.author[href$="thezooman123"]:before {content:"Actual Racist"}
 a.author[href$="-20"]:before {content:"“just a douchebag”"}
@@ -1192,6 +1209,8 @@ a.author[href$=JustAnotherGDB]:before { content:"Just Another Face in the Clouds
 a.author[href$=Swiftskii]:before { content:"FairyFacedWizardFelcher" }
 a.author[href$=Lord_Ninka]:before { content:"Ninka" }
 a.author[href$=StabbyTheLlama]:before { content:"StabbyTheBOOBS" }
+a.author[href$=Nagashizuri]:before { content:"Maga" }
+a.author[href$=andresonic1]:before { content:"Fake" }
 
 
 /* Replacing puppy's name with a picture of derpy */
@@ -1270,6 +1289,7 @@ a.author[href$=OneOfTheseDaysLuna]:after,
 a.author[href$=hermano23]:after,
 a.author[href$=herabek]:after,
 a.author[href$=Backupusername]:after,
+a.author[href$= Nagashizuri]:after,
 a.author[href$="Conky_"]:after
 {
 color:#000; 
@@ -1341,7 +1361,6 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 
 
 /* Any pre/post-name flair stuff goes here */ 
-.tagline a.author[href$="/Esrou"]:before,
 .tagline a.author[href$="/Indubitableness"]:before,
 .tagline a.author[href$="/RainbowCrash"]:before,
 .tagline a.author[href$="/245001"]:before,
@@ -1367,13 +1386,13 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 }
 
 /* Flour sack flair for anyone we've noticed that has flair disabled. Don't forget to add them above too.*/ 
-.tagline a.author[href$="/Esrou"]:before,
-.tagline a.author[href$="/Indubitableness"]:before,
-.tagline a.author[href$="/EvanMacIan"]:before,
-.tagline a.author[href$="/RainbowCrash"]:before,
-.tagline a.author[href$="/Latiel"]:before,
-.tagline a.author[href$="/245001"]:before,
-.tagline a.author[href$="/fsakj"]:before
+:not(.flair) + .tagline a.author[href$="/Esrou"]:before,
+:not(.flair) + .tagline a.author[href$="/Indubitableness"]:before,
+:not(.flair) + .tagline a.author[href$="/EvanMacIan"]:before,
+:not(.flair) + .tagline a.author[href$="/RainbowCrash"]:before,
+:not(.flair) + .tagline a.author[href$="/Latiel"]:before,
+:not(.flair) + .tagline a.author[href$="/245001"]:before,
+:not(.flair) + .tagline a.author[href$="/fsakj"]:before
 {
     background-position: 0px -540px;
 }
@@ -1469,3 +1488,19 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
     font-size: 11px !important;
     content: "message the ''moderators''"
 }
+
+
+/* --------------Footer-------------------------*/
+
+.footer-parent {
+    height: 420px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    clear: both;
+    text-align: center;
+    width: 100%;
+    background-image: url(%%lelhuehue%%);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: -1px;
+    }
