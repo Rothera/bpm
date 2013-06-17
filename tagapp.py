@@ -12,7 +12,6 @@
 
 import argparse
 import functools
-import json
 import os
 import os.path
 import random
@@ -100,12 +99,10 @@ def tag(source_name):
 @app.route("/source/<source_name>/write", methods=["POST"])
 def write(source_name):
     source_name = urllib.unquote(str(source_name))
-    data = json.loads(request.form["tags"])
+    data = bplib.json.loads(request.form["tags"])
     source = context.sources[source_name]
     for (name, tags) in data.items():
-        assert isinstance(name, unicode)
-        assert isinstance(tags, list) and all([isinstance(r, unicode) for r in tags])
-        emote = source.emotes[str(name)]
+        emote = source.emotes[name]
         emote.tags = set(map(str, tags))
     sync_tags(source)
     make_tag_list()

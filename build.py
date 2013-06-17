@@ -14,7 +14,6 @@ import argparse
 import bz2
 import glob
 import itertools
-import json
 import os
 import os.path
 import shutil
@@ -22,6 +21,8 @@ import subprocess
 import zipfile
 
 import lxml.etree
+
+import bplib.json
 
 def log(fmt, *args):
     print(fmt % args)
@@ -421,7 +422,7 @@ def main():
     args = parser.parse_args()
 
     with open(args.c) as file:
-        vars = json.load(file)
+        vars = bplib.json.load(file)
     expand_vars(vars)
     ctx = Context(args.c, vars)
 

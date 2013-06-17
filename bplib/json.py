@@ -33,11 +33,33 @@ level of items and no more.
 from __future__ import absolute_import
 
 import sys
+import json
+from json import encoder
 
 if sys.version_info < (3,):
-    from simplejson import encoder, load, loads
+    # Our code is bad and assumes str objects from the JSON module. I used to get
+    # them, but weirdly, it doesn't do that anymore with a change of Python install.
+    # For now, while I work on moving to a proper Python3-based system, this will
+    # suffice as a workaround.
+    def _fix(obj):
+        if isinstance(obj, dict):
+            return {_fix(key): _fix(value) for key, value in obj.iteritems()}
+        elif isinstance(obj, list):
+            return [_fix(element) for element in obj]
+        elif isinstance(obj, unicode):
+            return obj.encode("utf8")
+        else:
+            return obj
+
+    def load(*args, **kwargs):
+        obj = json.load(*args, **kwargs)
+        return _fix(obj)
+
+    def loads(*args, **kwargs):
+        obj = json.loads(*args, **kwargs)
+        return _fix(obj)
 else:
-    from json import encoder, load, loads
+    from json import load, loads
 
 def _encode(obj, indent, split_lists, max_depth, sort_keys):
     if max_depth is not None:
