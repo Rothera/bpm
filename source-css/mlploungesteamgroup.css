@@ -49,10 +49,16 @@ body, body.res-nightmode:first-of-type {
     }
 
 /* Banner Image */
+/* Banner Image */
+
 #header-bottom-left {
-    background: url(%%BannerFill%%);
-    background-repeat: repeat;
+    background: url(%%BackgroundDesatLight%%) repeat-x 0 0;
     }
+
+body.res-nightmode #header-bottom-left {
+    background: url(%%BackgroundDesatNight%%) repeat-x 0 0!important;
+    }
+
 #header-img {
     vertical-align: bottom;
     margin: 0px 0;
@@ -71,15 +77,26 @@ body, body.res-nightmode:first-of-type {
     height: 100px;
     }
 
-/* Name Change */
+/* Subreddit Name */
 
 .redditname a {
-    background: url(%%HeaderText%%);
+    background: url(%%Imgmap%%);
     display: inline-block;
-    height: 34px;
+    height: 35px;
     width: 200px;
-    text-indent: -9001px;
+    background-position: 0px -80px;
+    text-indent: -9000px;
     }
+
+body.res-nightmode .redditname a {
+    background: url(%%Imgmap%%);
+    display: inline-block;
+    height: 35px;
+    width: 200px;
+    background-position: 0px -115px;
+    text-indent: -9000px;
+    }
+
 /*---------------------- Nightmode fixes for the background -------------------------------- */
 .content #siteTable div[onclick="click_thing(this)"] {
     background-color: transparent !important
@@ -117,43 +134,27 @@ body.res-nightmode:first-of-type {
     }
 */
 
-/*==================Announcement==================*/
-/*DC05 The blurb that links to whatever post I want it to*/
-/*CHANGE THIS FIELD IN THE SIDEBAR. Do not remove the hash tags. Follows same rules as comment links*/
+/*Announce Box*/
+/* Make changes next to the 6 # in subreddit settings */
+/* NOT HERE. */
 
-/* Use if moving announce back
-body > .content:before{
-    display: block;
-    margin: 0 0 60px 0px;
-    content: "";
-    }
-*/
+body > .content { padding-top: 24px }
+
 .side .md h6 {
     position: absolute;
-/* Old was top 133px Left 80px*/
-    top: 33px;
-    left: 120px;
+    top: 120px;
+    left: 20px;
     z-index: 100;
     background: #CCC;
     font-size: 16px;
-    height: 32px;
-    line-height: 32px;
+    height: 20px;
+    line-height: 20px;
     text-indent: 5px;
     border-color: #000000!important;
     color: #000000;
     border: 1px solid;
-    border-radius: 16px;
+    border-radius: 2px;
     padding-right: 5px;
-    }
-
-.side .md h5 {
-    font-size: 12px;
-    line-height: 13px;
-    background: #CCC!important;
-    border-color: #000000!important;
-    border: 1px solid;
-    border-radius: 0px;
-    padding: 5px;
     }
     
 
@@ -249,12 +250,11 @@ body > .content:before{
     text-align: center !important;
     position: relative !important;
     background: none !important;
-    border: none !important;
     background-image: none !important;
+    border: none !important;
     font-weight: bold !important;
     letter-spacing: -1px;
-    line-height: 80px !important;
-    height: 80px !important;
+    height: 40px !important;
     width: 300px !important;
 }
 
@@ -263,42 +263,31 @@ body > .content:before{
     font-size: 0;
     text-align: left;
     content: "";
-    height: 80px;
+    height: 40px;
     width: 300px;
-    background-image: url(%%Imgmap%%) !important;
-    background-position: -18px -80px !important;
+    background-image: url(%%Imgmap%%);
     }
+
+res-nightmode .sidebox.submit-link a { background-position: -318px -0px }
+.sidebox.submit-link a { background-position: -18px -0px !important }
 
 .sidebox.submit-text a {
     display: block;
     font-size: 0;
     text-align: left;
     content: "";
-    height: 80px;
+    height: 40px;
     width: 300px;
-    background-image: url(%%Imgmap%%) !important;
-    background-position: -18px 0 !important;
+    background-image: url(%%Imgmap%%);
     }
 
+.sidebox.submit-text a { background-position: -18px -40px }
+res-nightmode .sidebox.submit-text a { background-position: -318px -40px !important }
 
 /*All this does is remove the angle at the end of the submit buttons */
 .morelink .nub {
     display: none;
     }
-
-/*Subreddit name logo sidebar*/
-
-.res-nightmode .side .redditname a {
-    background: url(%%HeaderText%%) !important;
-    margin: 5px 0 0 0;
-    }
-
-.side .redditname a {
-    background: url(%%HeaderTextBlack%%);
-    margin: 5px 0 0 0;
-    overflow: hidden;
-    }
-
 
 .side .bottom {
     display: none;
@@ -574,6 +563,14 @@ a[href|="/flittergasp"] {
     height: 200px;
     background-image: url(%%flittergasp%%)
     }
+a[href|="/thatsnice"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 250px;
+    height: 250px;
+    background-image: url(%%thatsnice%%)
+    }
 
 a[href|="/rosesax"] {
     display: block;
@@ -760,7 +757,7 @@ a[href|="/rosetits"] {
     float: left;
     width: 175px;
     height: 175px;
-    background-image: url(%%Imgmap%%) !important;
+    background-image: url(%%emotesquare%%) !important;
     background-position: 0px -160px
     }
 
@@ -770,7 +767,7 @@ a[href|="/ajhaybale"] {
     float: left;
     width: 175px;
     height: 175px;
-    background-image: url(%%Imgmap%%) !important;
+    background-image: url(%%emotesquare%%) !important;
     background-position: -175px -160px
     }
 

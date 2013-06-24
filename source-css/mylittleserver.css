@@ -261,7 +261,7 @@ a.author[href$="/dasredditore"] {
     letter-spacing: -20px
     }
 a.author[href$="/dasredditore"]:after {
-    content: "LinkKN2 [M]";
+    content: "LinkKN2";
     font-size: 10px !important;
     visibility: visible !important;
     color: green !important;
@@ -277,7 +277,7 @@ a.author[href$="/rainydayman15"] {
     letter-spacing: -20px
     }
 a.author[href$="/rainydayman15"]:after {
-    content: "Rarity (rainydash)";
+    content: "rainydash";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;
@@ -337,10 +337,9 @@ a.author[href$="/wytelyon"] {
     letter-spacing: -20px
     }
 a.author[href$="/wytelyon"]:after {
-    content: "wytelyon [A]";
+    content: "wytelyon";
     font-size: 10px !important;
     visibility: visible !important;
-    color: green !important;
     display: block;
     letter-spacing: normal
     }
@@ -353,10 +352,9 @@ a.author[href$="/Gapmeister"] {
     letter-spacing: -20px
     }
 a.author[href$="/Gapmeister"]:after {
-    content: "Gapmeister [M]";
+    content: "Gapmeister";
     font-size: 10px !important;
     visibility: visible !important;
-    color: green !important;
     display: block;
     letter-spacing: normal
     }
@@ -370,6 +368,20 @@ a.author[href$="/thegreatholycow"] {
     }
 a.author[href$="/thegreatholycow"]:after {
     content: "GreatHolyCow";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+a.author[href$="/IAmTtraveler"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/IAmTtraveler"]:after {
+    content: "TheSTtraveler";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;

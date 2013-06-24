@@ -7,7 +7,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%risenbanner%%)!important;
+   background: url(%%bannera%%)!important;
    background-repeat: no-repeat!important;
    background-position: 40% 100%!important;
    height: 237px; /* 237 for meat's nice banner and general banner size */
@@ -441,6 +441,7 @@ background-repeat: no-repeat;
 .flair-dereckc1:after { background-position: 0px -4830px }
 .flair-0x:after { background-position: 0px -4860px }
 .flair-LITERALLYCheerilee:after { background-position: 0px -4890px }
+.flair-Nagashizuri:after { background-position: 0px -4920px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
@@ -1361,6 +1362,7 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 
 
 /* Any pre/post-name flair stuff goes here */ 
+
 .tagline a.author[href$="/Indubitableness"]:before,
 .tagline a.author[href$="/RainbowCrash"]:before,
 .tagline a.author[href$="/245001"]:before,
@@ -1394,7 +1396,7 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 :not(.flair) + .tagline a.author[href$="/245001"]:before,
 :not(.flair) + .tagline a.author[href$="/fsakj"]:before
 {
-    background-position: 0px -540px;
+    background-position: 0px -540px !important;
 }
 
 /* Derram pie */

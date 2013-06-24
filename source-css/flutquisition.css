@@ -1,49 +1,3 @@
-a.author[href$="LIATG"] {
-    font-size: 0px !important;
-    display: inline-block;
-    vertical-align: bottom;
-    overflow: hidden;
-    letter-spacing: -20px
-    }
-a.author[href$="LIATG"]:after {
-    content: "LIAshy";
-    font-size: 11px !important;
-    visibility: visible !important;
-    display: block;
-    letter-spacing: normal
-    }
-a.author[href$="LIATG"]:hover:after {
-    content: "likes hugs";
-    font-size: 9px !important;
-    visibility: visible !important;
-    color: yellow;
-    display: block;
-    letter-spacing: normal
-    }
-
-a.author[href$="theMagicalCouch"] {
-    font-size: 0px !important;
-    display: inline-block;
-    vertical-align: bottom;
-    overflow: hidden;
-    letter-spacing: -20px
-    }
-a.author[href$="theMagicalCouch"]:after {
-    content: "theFlutteralCouch";
-    font-size: 11px !important;
-    visibility: visible !important;
-    display: block;
-    letter-spacing: normal
-    }
-a.author[href$="theMagicalCouch"]:hover:after {
-    content: "adorable";
-    font-size: 9px !important;
-    visibility: visible !important;
-    color: yellow;
-    display: block;
-    letter-spacing: normal
-    }
-
 /* EMOOOOOOTES */
 
 a[href|="/flutterproud"] {
@@ -116,7 +70,8 @@ a[href|="/af1"] {
     float: left;
     width: 200px;
     height: 104px;
-    background-image:url(%%af1%%)
+    background-image:url(%%afspritesheet%%);
+    background-position: -0px -0px;  
 }
 a[href|="/lunataviahug"] {
     display: block;
@@ -132,7 +87,8 @@ a[href|="/af2"] {
     float: left;
     width: 200px;
     height: 102px;
-    background-image:url(%%af2%%)
+    background-image:url(%%afspritesheet%%);
+    background-position: -0px -108px;  
 }
 a[href|="/af3"] {
     display: block;
@@ -140,7 +96,8 @@ a[href|="/af3"] {
     float: left;
     width: 150px;
     height: 104px;
-    background-image:url(%%af3%%)
+    background-image:url(%%afspritesheet%%);
+    background-position: -0px -219px;  
 }
 a[href|="/flutterbow"] {
     display: block;
@@ -222,3 +179,151 @@ a[href|="/shyprisehug"] {
     height: 150px;
     background-image:url(%%Shyprisehug%%)
 }
+a[href|="/flutterfrench"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 90px;
+ height: 200px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -327px -1003px;  
+}
+
+a[href|="/flutterdeathglare"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 444px;
+ height: 200px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -0px -0px;  
+}
+
+a[href|="/fluttersleepy"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 350px;
+ height: 200px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -0px -201px;  
+}
+
+a[href|="/fluttergala"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 319px;
+ height: 200px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -0px -402px;  
+}  
+
+a[href|="/flutterjoy"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 119px;
+ height: 200px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -319px -402px;  
+}  
+
+a[href|="/flutteruh"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 218px;
+ height: 200px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -0px -601px;  
+}  
+
+
+a[href|="/adorableshy"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 143px;
+ height: 175px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -217px -601px;  
+}  
+
+a[href|="/fillyshycute"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 207px;
+ height: 200px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -0px -801px;  
+}  
+
+a[href|="/areyousure"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 233px;
+ height: 201px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -207px -801px;  
+} 
+
+a[href|="/rarishypossessive"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 188px;
+ height: 200px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -0px -1002px;  
+} 
+
+a[href|="/smileyshy"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 138px;
+ height: 199px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -188px -1003px;  
+} 
+
+a[href|="/flutterserious"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 137px;
+ height: 200px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -278px -1203px;  
+} 
+
+a[href|="/fluttertoocoolforyou"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 148px;
+ height: 200px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -0px -1403px;  
+} 
+
+a[href|="/fluttershyisthecutestgoddamnthingontheplanet"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 221px;
+ height: 200px;
+ background-image: url(%%FlutterEmotes1%%);
+ background-position: -148px -1403px;  
+}     
+a[href|="/colgateshyhug"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 149px;
+ height: 150px;
+ background-image: url(%%Colgateshy%%);
+} 

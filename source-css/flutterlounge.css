@@ -403,6 +403,41 @@ a[href|="/shyhuggle"], a[href|="/flutterhuggle"] {
     background-position: -289px -0px 
     }
 
+/* Cuddly emotes! */
+
+a[href|="/pinkieflutterhug"], a[href|="/dashieshyhug"], a[href|="/dashieshycuddle"], a[href|="/hugpls"], a[href|="/hugplz"], a[href|="/hugme"], a[href|="/shyderpyhug"], a[href|="/flutterderpyhug"], a[href|="/flutterpinkiehug"] {
+
+    display: block;
+    clear: none;
+    float: left;
+    height: 150px;
+    background-image: url(%%cuddlesheet%%) !important
+    }
+
+a[href|="/pinkieflutterhug"] {
+    width: 138px;
+    background-position: -0px -0px 
+    }
+
+a[href|="/dashieshyhug"], a[href|="/dashieshycuddle"] {
+    width: 218px;
+    background-position: -138px -0px 
+    }
+
+a[href|="/hugpls"], a[href|="/hugplz"], a[href|="/hugme"] {
+    width: 267px;
+    background-position: -356px -0px 
+    }
+
+a[href|="/shyderpyhug"], a[href|="/flutterderpyhug"] {
+    width: 174px;
+    background-position: -623px -0px 
+    }
+
+a[href|="/flutterpinkiehug"] {
+    width: 141px;
+    background-position: -797px -0px 
+    }
 /* FinalFlutter emotes, full of cute! */
 
 a[href|="/flutterstache"], a[href|="/shystache"], a[href|="/shysnooze"], a[href|="/bunnysnooze"], a[href|="/bookfortshy"], a[href|="/hidingshy"], a[href|="/saveme"], a[href|="/ineedanadult"], a[href|="/shyhelp"], a[href|="/cookieshy"], a[href|="/fluttercookie"], a[href|="/scaredshy"], a[href|="/scarymonsters"] {
@@ -526,6 +561,23 @@ a[href|="/hmm"], a[href|="/sorrywhat"], a[href|="/flutterbook"] {
     height: 196px;
     background-image: url(%%flutterbook%%)
     }
+a[href|="/fluttercordhug"], a[href|="/flutterdishug"], a[href|="/fluttercord"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 191px;
+    height: 250px;
+    background-image: url(%%fluttercord%%)
+    }
+a[href|="/discordfluttercuddle"], a[href|="/flutterdiscuddle"], a[href|="/fluttercordhuggle"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 117px;
+    height: 200px;
+    background-image: url(%%discordflutterhug%%)
+    }
+
 /* Wintery emotes - Only four */
 
 

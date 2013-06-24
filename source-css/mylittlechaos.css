@@ -125,16 +125,6 @@ a[href|="/twiday"] {
     margin-bottom: 5px;
     margin-right: 5px
     }
-a[href|="/taco"] {
-    width: 72px;
-    height: 41px;
-    background-image: url(%%taco%%);
-    display: block;
-    clear: none;
-    float: left;
-    margin-bottom: 5px;
-    margin-right: 5px
-    }
 a[href|="/rapidfire"] {
     width: 529px;
     height: 293px;
@@ -155,6 +145,26 @@ a[href|="/fillyderp"] {
     margin-bottom: 5px;
     margin-right: 5px
     }
+a[href|="/derpylikesyou"] {
+    width: 337px;
+    height: 543px;
+    background-image: url(%%derpylikesyou%%);
+    display: block;
+    clear: none;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px
+    }
+a[href|="/shakedatassmatt"], a[href|="/shakedatassluna"] {
+    width: 500px;
+    height: 281px;
+    background-image: url(%%shakedatassmatt%%);
+    display: block;
+    clear: none;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px
+    }
 a[href|="/spikefinger"] {
     width: 448px;
     height: 252px;
@@ -164,6 +174,34 @@ a[href|="/spikefinger"] {
     float: left;
     margin-bottom: 5px;
     margin-right: 5px
+    }
+
+
+
+/*== For Tubing ==*/
+a[href|="/dyefooter"] {
+    width: 500px;
+    height: 500px;
+    background-image: url(%%dyefooter%%);
+    display: block;
+    clear: none;
+    float: left;
+    }
+a[href|="/karmahoers"] {
+    width: 146px;
+    height: 138px;
+    background-image: url(%%karmahoers%%);
+    display: block;
+    clear: none;
+    float: left;
+    }
+a[href|="/yasickfuck"], a[href|="/yasickfreak"] {
+    width: 256px;
+    height: 243px;
+    background-image: url(%%yasickfuck%%);
+    display: block;
+    clear: none;
+    float: left;
     }
 
 /*==  Flair ==*/
@@ -199,12 +237,12 @@ a.author[href$="nekoningen"] {
     display: inline-block;
     }
 a.author[href$="nekoningen"]:before {
-    content: "Cattus Sapiens IX";
+    content: "Captain Jack Fenderson";
     font-size: 10px !important;
     background-color: transparent;
     }
 a.author[href$="nekoningen"]:after {
-    content: ", Lord of the Litterbox";
+    content: ", Saint of the Blasphemous Word";
     font-size: 10px !important;
     background-color: transparent;
     }

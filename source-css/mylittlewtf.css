@@ -76,8 +76,8 @@ a[href^='/'][href*='-blink!'] {
     background-position: -113px 18px
     }
 /* Banner Image */
-#header-bottom-left {
-    background: url(%%bannercrop%%);
+#header #header-bottom-left {
+    background: url(%%bannercrop%%)!important;
     background-color: rgb(34,34,34);
     /*   margin-top: -300px;*/
     background-repeat: no-repeat;
@@ -2036,7 +2036,7 @@ a[href|='/wmtwi'] {
     height: 200px;
     background-position: -714px -406px
     }
-a[href|='/abpoker'], a[href|='/ajpoker'], a[href|='/berrypoker'], a[href|='/bmpoker'], a[href|='/bonpoker'], a[href|='/braepoker'], a[href|='/carrotpoker'], a[href|='/cheerileepoker'], a[href|='/colpoker'], a[href|='/dashpoker'], a[href|='/derppoker'], a[href|='/dispoker'], a[href|='/fritpoker'], a[href|='/bbpoker'], a[href|='/lunapoker'], a[href|='/lyrapoker'], a[href|='/pppoker'], a[href|='/rarpoker'], a[href|='/rosepoker'], a[href|='/sbpoker'], a[href|='/scootpocker'], a[href|='/screwpoker'], a[href|='/shypoker'], a[href|='/sparkpoker'], a[href|='/spikepoker'], a[href|='/tiapoker'], a[href|='/trixpoker'] {
+a[href|='/abpoker'], a[href|='/ajpoker'], a[href|='/berrypoker'], a[href|='/bmpoker'], a[href|='/bonpoker'], a[href|='/braepoker'], a[href|='/carrotpoker'], a[href|='/cheerileepoker'], a[href|='/colpoker'], a[href|='/dashpoker'], a[href|='/derppoker'], a[href|='/dispoker'], a[href|='/fritpoker'], a[href|='/bbpoker'], a[href|='/lunapoker'], a[href|='/lyrapoker'], a[href|='/pppoker'], a[href|='/rarpoker'], a[href|='/rosepoker'], a[href|='/sbpoker'], a[href|='/scootpocker'], a[href|='/screwpoker'], a[href|='/shypoker'], a[href|='/sparkpoker'], a[href|='/spikepoker'], a[href|='/tiapoker'], a[href|='/trixpoker'], a[href|='/jokerpoker'] {
     display: block;
     clear: none;
     float: left;
@@ -2171,6 +2171,11 @@ a[href|='/trixpoker'] {
     width: 118px;
     height: 145px;
     background-position: -2px -731px
+    }
+a[href|='/jokerpoker'] {
+    width: 111px;
+    height: 130px;
+    background-position: -123px -743px
     }
 a[href="/raeptime"] {
    display: block;
