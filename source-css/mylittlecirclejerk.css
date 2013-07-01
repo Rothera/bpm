@@ -1396,6 +1396,19 @@ a.author[href$="Coggler"]:after {
 
 /* Fixed Emotes */
 
+a[href="/ponies"] 
+{
+ display: block;
+ clear: none;
+ float: left;
+ width: 343px;
+ height: 194px;
+ background-image: url(%%ponies%%)
+}
+a[href="/ponies"] {
+ background-position: -0px -0px
+}
+
 a[href="/praisethesun"] 
 {
  display: block;

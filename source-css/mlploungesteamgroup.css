@@ -145,18 +145,16 @@ body > .content { padding-top: 24px }
     top: 120px;
     left: 20px;
     z-index: 100;
-    background: #CCC;
     font-size: 16px;
     height: 20px;
     line-height: 20px;
     text-indent: 5px;
-    border-color: #000000!important;
+    background: #E0E3E9;
     color: #000000;
     border: 1px solid;
     border-radius: 2px;
     padding-right: 5px;
     }
-    
 
 /*===============Arrow Votes Change===============*/
 /*DC02 This code disables the downvote button. And makes upvotes cats. */
@@ -268,8 +266,8 @@ body > .content { padding-top: 24px }
     background-image: url(%%Imgmap%%);
     }
 
-res-nightmode .sidebox.submit-link a { background-position: -318px -0px }
-.sidebox.submit-link a { background-position: -18px -0px !important }
+.res-nightmode .sidebox.submit-link a { background-position: -318px -0px }
+.sidebox.submit-link a { background-position: -18px -0px }
 
 .sidebox.submit-text a {
     display: block;
@@ -282,7 +280,7 @@ res-nightmode .sidebox.submit-link a { background-position: -318px -0px }
     }
 
 .sidebox.submit-text a { background-position: -18px -40px }
-res-nightmode .sidebox.submit-text a { background-position: -318px -40px !important }
+.res-nightmode .sidebox.submit-text a { background-position: -318px -40px }
 
 /*All this does is remove the angle at the end of the submit buttons */
 .morelink .nub {
@@ -343,7 +341,7 @@ res-nightmode .sidebox.submit-text a { background-position: -318px -40px !import
     }
 
 .sidecontentbox a.author.id-t2_6k0ud:before {
-    content: "God Emperor";
+    content: "False God Emperor";
     }
 
 
@@ -405,12 +403,14 @@ a.author[href$="DoomedCivilian"]:after,
 a.author[href$="Draze"]:after,
 a.author[href$="ctare"]:after,
 a.author[href$="LunarWolves"]:after,
+a.author[href$="HatzHeartsIcecream"]:after,
 a.author[href$="duruz"]:after,
 a.author[href$="moonomnom"]:after,
 a.author[href$="MotharChoddar"]:after,
 a.author[href$="Dwarflord"]:after,
 a.author[href$="sna_fu_bar"]:after,
 a.author[href$="starkinmn"]:after,
+a.author[href$="TheCommieDuck"]:after,
 a.author[href$="Broken_Wagonwheel"]:after
 
 {   border-radius: 4px;
@@ -425,14 +425,16 @@ a.author[href$="Broken_Wagonwheel"]:after
 /*Extra text here, add spaces so it looks nice*/
 a.author[href$="Sangfroidish"]:after { content:" Lost his personal divining rod "}
 a.author[href$="sna_fu_bar"]:after {content:" Sneaky squid "}
-a.author[href$="DoomedCivilian"]:after { content:" CSS Breaker "}
+a.author[href$="DoomedCivilian"]:after { content:" CSS Puppet Master "}
 a.author[href$="Draze"]:after { content: " Giddy Up "}
+a.author[href$="TheCommieDuck"]:after {content:" 9/10 10yo "}
 a.author[href$="duruz"]:after { content: " Doesn't oil up "}
 a.author[href$="starkinmn"]:after { content: " Give me my fucking good flair, asshooe horsefuckers "}
 a.author[href$="MotharChoddar"]:after { content: " Finnish drunk "}
-a.author[href$="LunarWolves"]:after { content: " Dear Leader "}
+a.author[href$="LunarWolves"]:after { content: " Heretical Leader "}
 a.author[href$="ctare"]:after {content: " Among other things "}
-a.author[href$="Dwarflord"]:after {content: " Will write that fic someday "}
+a.author[href$="HatzHeartsIcecream"]:after {content: " ❤ "}
+a.author[href$="Dwarflord"]:after {content: " Fic ETA:____ "}
 a.author[href$="moonomnom"]:after {content: " Dayum shame"}
 a.author[href$="Broken_Wagonwheel"]:after {content: " Sang's Slave "}
 
@@ -873,3 +875,6 @@ body.res-nightmode:first-of-type .flair { background-color: transparent!importan
 .flair-hat {width:30px; height:28px; background-position: 0px -843px}
 .flair-harry {width:30px; height:30px; background-position: 0px -872px}
 .flair-nopants {width:28px; height:35px; background-position: 0px -902px}
+.flair-nerdyflair {width:30px; height:30px; background-position: -50px -20px}
+.flair-badcard {width:18px; height:20px; background-position: -50px 0px}
+.flair-nonet {width:25px; height:25px; background-position: -50px -50px}

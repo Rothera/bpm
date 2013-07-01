@@ -9,12 +9,22 @@ Added emotes (1/15/13)
 
 /* Header */
 
-#header-bottom-left:nth-of-type(n) {
-   background: url(%%mangoheader21%%);
-   background-repeat: no-repeat;
-   background-position: 50% 100%;
+ #header #header-bottom-left {
+   background: url(%%mangoheader21%%) !important;
+   background-repeat: no-repeat !important;
+   background-position: 50% 100% !important;
    height: 200px; 
 }
+
+#header-bottom-left>* {
+    display: inline-block;
+}
+
+/* Makes the sidebar transparent */
+.side {background-color: transparent !important }
+.side.res-nightmode:first-of-type > .content {background-color: transparent!important;}
+.side.res-nightmode:first-of-type {background-color: transparent!important}
+
 
 /*span.redditname
 {

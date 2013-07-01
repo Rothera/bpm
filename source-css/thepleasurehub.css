@@ -8,6 +8,130 @@ div.titlebox .users-online span.number:after {
     content: " Clopping"
     }
 
+.md blockquote {
+    border: 0;
+    margin: 0;
+    color: #789922;
+    display: block
+    }
+.md blockquote p:before {
+    content: ">";
+    float: left;
+    display: block
+    }
+
+.sidebox.create .morelink {display: none;}
+
+.sidebox.submit .spacer , .sidebox.create .spacer  {display: none; }
+
+.comment {
+    color:white;
+}
+
+.submit .morelink {
+    background-image: none;
+    background-color: #000000;
+}
+
+.nub { display: none; }
+
+.side .leavemoderator, .side .titlebox .flairtoggle {
+    background:transparent;
+}
+
+#header-bottom-right { background: #2C3539; }
+
+#header-bottom-right * { color: #ffffff; }
+
+#header {background-color: #2C3539;}
+
+#header * {background-color: #2C3539;}
+
+.res .RES-keyNav-activeElement, .res .commentarea .RES-keyNav-activeElement .md, .res .commentarea .RES-keyNav-activeElement.entry .noncollapsed {
+    background-color: 	#000000 !important;
+}
+
+
+
+
+
+body {
+    background: url('%%skybackground%%') no-repeat fixed bottom center !important;
+    background-color:#2C3539 !important;
+} 
+
+.self .title { color: yellow !important; }
+
+A:visited { color: #6CC417 !important } 
+
+a:visited {color: green;}
+
+a:link {color: green;}
+
+a:hover {color: green;}
+
+a:focus{color:green;}
+
+a:active{color:green;}
+
+
+.res:not(.res-nightmode) .commentarea .comment {background-color:Black!important;}
+.res:not(.res-nightmode) .commentarea .comment .comment {background-color:#2C3539!important;}
+.res:not(.res-nightmode) .commentarea .comment .comment .comment {background-color:Black!important;}
+.res:not(.res-nightmode) .commentarea .comment .comment .comment .comment {background-color:#2C3539!important;}
+.res:not(.res-nightmode) .commentarea .comment .comment .comment .comment .comment {background-color:Black!important;}
+.res:not(.res-nightmode) .commentarea .comment .comment .comment .comment .comment .comment {background-color:#2C3539!important;}
+.res:not(.res-nightmode) .commentarea .comment .comment .comment .comment .comment .comment .comment {background-color:Black!important;}
+.res:not(.res-nightmode) .commentarea .comment .comment .comment .comment .comment .comment .comment .comment {background-color:#2C3539!important;}
+.res:not(.res-nightmode) .commentarea .comment .comment .comment .comment .comment .comment .comment .comment .comment {background-color:Black!important;}
+.res:not(.res-nightmode) .commentarea .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment{background-color:#2C3539!important;}
+
+#header #header-bottom-left {
+   background: url(%%pleasurehubbanner2%%) !important;
+   background-repeat: no-repeat !important;
+   background-position: 50% 100% !important;
+   height: 205px; 
+}
+
+.side {
+color: #ffffff;
+background-color: #2C3539 !important;
+margin-left: 0px;
+margin-right: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 10px;
+border-left: 3px solid #000000;
+border-bottom: 3px solid #000000;
+width: 300px;
+border-bottom-left-radius: 3px
+}
+
+
+
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
+body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
+body.res-nightmode:first-of-type {background-color: transparent!important;}
+span[class="hover pagename redditname"] a:first-of-type { font-size: 1.6em !important; text-shadow: 0px 0px 6px #000; color: white; }
+
+
+body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .side .spacer h1, body.res-nightmode .NERPageMarker, body.res-nightmode .side .spacer {background-color: transparent!important;}
+
+
+
+.res-nightmode .content .flair {
+background-color: transparent !important
+}
+
+.side .bottom a {
+    display: none;
+}
+
+.side .bottom:after {
+    content: " Enyo and Sky Runner"; 
+}
+
+
 
 a[href|="/apexwhattheclop"], a[href|="/archmagesea"], a[href|="/gildatongue"], a[href|="/vinyltail"], a[href|="/skyenyodrag"],
 a[href|="/colgatebringit"], a[href|="/gildawhatever"], a[href|="/cappypony"], a[href|="/aussticky"], a[href|="/celestiatail"],
@@ -289,6 +413,50 @@ a[href|="/cadancemean"]{
 
 }
 
+a[href|="/eyebulgearmor"], a[href|="/whiningarmor"], a[href|="/twilightarmor"], a[href|="/armoredshiningarmor"], a[href|="/yellingarmor"]{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%shiningsprite%%)
+
+}
+
+a[href|="/eyebulgearmor"]{
+    width:116px;
+    height:150px;
+    background-position: -0px -0px !important;
+
+}
 
 
+a[href|="/whiningarmor"]{
+    width:147px;
+    height:150px;
+    background-position: -0px -150px !important;
 
+}
+
+
+a[href|="/twilightarmor"]{
+    width:225px;
+    height:150px;
+    background-position: -0px -300px !important;
+
+}
+
+
+a[href|="/armoredshiningarmor"]{
+    width:93px;
+    height:150px;
+    background-position: -0px -450px !important;
+
+}
+
+
+a[href|="/yellingarmor"]{
+    width:153px;
+    height:150px;
+    background-position: -0px -600px !important;
+
+}

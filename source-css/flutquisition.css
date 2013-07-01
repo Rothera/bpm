@@ -22,7 +22,8 @@ a[href|="/rarishyhug"] {
     float: left;
     width: 151px;
     height: 150px;
-    background-image:url(%%rarishyhug%%)
+    background-position: -108px -0px;  
+    background-image:url(%%Spritesheet%%)
 }
 a[href|="/angelshy"] {
     display: block;
@@ -31,14 +32,6 @@ a[href|="/angelshy"] {
     width: 125px;
     height: 247px;
     background-image:url(%%Angelshy%%)
-}
-a[href|="/macinshyhug"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 193px;
-    height: 150px;
-    background-image:url(%%Macinshy%%)
 }
 a[href|="/macinshyhug"] {
     display: block;
@@ -113,7 +106,8 @@ a[href|="/tavishyhug"] {
     float: left;
     width: 150px;
     height: 134px;
-    background-image:url(%%tavishy%%)
+    background-position: -340px -0px; 
+    background-image:url(%%Spritesheet%%)
 }
 a[href|="/classyshy"] {
     display: block;
@@ -177,7 +171,7 @@ a[href|="/shyprisehug"] {
     float: left;
     width: 190px;
     height: 150px;
-    background-image:url(%%Shyprisehug%%)
+    background-image:url(%%Spritesheet%%)
 }
 a[href|="/flutterfrench"] {  
  display: block;
@@ -326,4 +320,12 @@ a[href|="/colgateshyhug"] {
  width: 149px;
  height: 150px;
  background-image: url(%%Colgateshy%%);
+} 
+a[href|="/braaap"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 186px;
+ height: 120px;
+ background-image: url(%%braaap%%);
 } 

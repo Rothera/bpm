@@ -17,6 +17,7 @@ background: -ms-linear-gradient(top, #ff0000,#fffc00,#01b439,#00eaff,#000390,#ff
 background: linear-gradient(top, #ff0000,#fffc00,#01b439,#00eaff,#000390,#ff00c6, #ff0000)  !important
 
 }
+
 /* Nightmode fixes for the background */
 .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
@@ -555,4 +556,7 @@ a[href|="/catleaves"] {
     background-position: 0px 0px;
     }
 
-
+a[href="/sp"] {
+    display:inline-block;
+    padding-right:100%
+}
