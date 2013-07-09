@@ -1,0 +1,502 @@
+/* CSS started Sun, Feb 17th, 1 AM: Asceveris  */
+/* KEEP THE FORMATTING CONSISTENT, DAMN IT */
+
+/* Don't touch. On a side note, I need to consolidate all of these "don't touches" into one block*/  
+div.titlebox span.word {  
+  display: none  
+}
+
+.redditname a {
+  color: #FF00FF;
+}
+
+#header {
+  background: #FFFFFF;
+  font-family: arial;
+  border: 0px solid #000000;
+}
+
+/* This block changes the reddit name to an image. if you want the image to change, upload a new image as title and delete the one that is currently here */
+#header .redditname a {
+  background:url(%%title%%);
+  height: 145px; /* Change this to the height of your image */
+  width: 625px; /* Change this to the width */
+}
+
+#header-bottom-left {
+  height: 145px; /* Height again */
+}
+
+#header .redditname a {
+  text-indent: -90001px;
+}
+
+#header-img-a, .redditname a, .tabmenu {
+  display: inline;
+  float: left;
+}
+
+.tabmenu {
+  position:relative;
+  top:100%;
+  margin-top:-16px!important;
+}
+
+/* Aforementioned block ends here */
+
+.sidecontentbox h1:not(:first-child):after {
+  font-size: 10pt !important;
+  content: "PWETTIEST PWINKEST PWINCESSES"
+}
+
+/* This is the subscribers label */
+div.titlebox .subscribers span.number:after {
+  content:" pwink pwincesses";
+}
+
+/* This is the online users label */
+div.titlebox .users-online span.number:after {
+  content:" being cweepy";
+}
+
+/* font controls, color is color of text that isn't modified by any other css */
+body {
+  font-family: Courier;
+  color:#770077;
+}
+
+/* Self post background. */
+.link .expando .usertext .md {
+  border: 1px solid #990099 !important;
+  background-color: #FFAAFF !important;
+}
+
+/* content is the message displayed when someone downvotes a post */
+#siteTable .entry.dislikes .buttons:before {
+  content: "Why'd you click that, muwdewew!";
+  color: #EE82EE;
+  font-size: 7pt
+}
+
+
+/* Gets rid of the "use subreddit css" toggle. Do not touch */
+.styleToggle {
+  visibility: hidden;
+}
+
+/* link colors */
+a {
+  color:#FF82FF;
+}
+
+/* Code for spoiler tags */
+a[href|="/spoiler"] {
+  background: #000 !important;
+  color: #000 !important
+}
+
+a[href|="/spoiler"]:hover {
+  color: #FFF !important
+}
+
+#header-img-a {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.content:before{
+  content: "DO YOU EVEN SUBSCRIBE";
+  margin:4px;
+  color:#FF33FF;
+}
+
+.subscriber .content:before{
+  content: " " !important;
+}
+
+.side .content:before {
+  content: " " !important
+}
+
+/*Changing 'MODERATORS in sidebar*/  
+  .sidecontentbox h1:not(:first-child) {
+  font-size: 0pt !important
+}
+
+
+.sidecontentbox h1:not(:first-child):after {
+  font-size: 10pt !important;
+  content: "PWETTIEST PWINCESSES"
+}
+
+/*Change vote arrows*/  
+.arrow.up { background-image: url(%%cstare0%%); 
+  background-position: 0px 0px; 
+  height: 24px; width: 26px; 
+}
+
+.arrow.upmod { 
+  background-image: url(%%cstare1%%); 
+  background-position: 0px 0px; 
+  height: 24px; width: 26px;  
+}
+
+.arrow.down {
+  background-image: url(%%lstare0%%); 
+  background-position: 0px 0px; 
+  height: 24px; width: 26px; 
+}
+
+.arrow.downmod { 
+  background-image: url(%%lstare1%%); 
+  background-position: 0px 0px; 
+  height: 24px; width: 26px; 
+}
+
+.arrow {
+  height: 24px;
+  width: 26px;
+}
+
+.sidecontentbox {
+  background: #FFDDFF;
+  border-radius: 3px;
+  border: 1px solid #990099;
+}
+
+ul.flat-vert.icon-menu {
+  background: #FFAAFF;
+}
+
+div.entry {
+  background: #FFDDFF;
+  border: 1px solid #AA00AA;
+  border-radius: 5px;
+}
+
+/*
+a.author[href|="SaultSpartan"] {
+  font-size:0!important; 
+  overflow:hidden; 
+  display:inline-block; 
+  content: "";
+}
+a.author[href|="SaultSpartan"]:before {
+  content: "Dead Pwincess SaultSpartan"
+}
+*/
+a.author:before
+{
+  font-size:10px!important; 
+  visibility:visible!important;
+  content: "Pwetty Pwincess "
+}
+a.author:after
+{
+  font-size:10px!important; 
+  visibility:visible!important;
+  content: "-kun"
+}
+/*
+h1.redditname {
+  font-size:0!important; 
+  overflow:hidden; 
+  display:inline-block; 
+  content: "";
+}
+
+h1.redditname:before
+{
+  font-size:20px!important; 
+  visibility:visible!important;
+  content: "In Memory of SaultSpartan 1977-2013"
+}*/
+
+a[href|="/rarrifle"] {
+  background-image: url(%%Rarimote%%);
+  display:block;
+  clear:none;
+  float:left;
+  width: 500px;
+  height: 267px;
+}
+
+a[href|="/applecorn"] {
+  background-image: url(%%applecorn%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:112px;
+}
+
+a[href|="/aliloo"] {
+  background-image: url(%%aliloo%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:150px;
+}
+
+a[href|="/pinkicorn"] {
+  background-image: url(%%pinkicorn%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:200px;
+  height:150px;
+}
+
+a[href|="/hairdownchaser"] {
+  background-image: url(%%hairdownchaser%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:143px;
+  height:150px;
+}
+
+a[href|="/gabepony"] {
+  background-image: url(%%gabepony%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:132px;
+  height:150px;
+}
+
+a[href|="/foreheadkiss"] {
+  background-image: url(%%foreheadkiss%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:102px;
+}
+
+a[href|="/pwettyfluffles"] {
+  background-image: url(%%pwettyfluffles%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:170px;
+}
+
+a[href|="/saultspartan"] {
+  background-image: url(%%saultspartan%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:165px;
+}
+
+a[href|="/pwetty"] {
+  background-image: url(%%pwetty%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:150px;
+}
+
+a[href|="/huggingcloudchaser"] {
+  background-image: url(%%huggingcloudchaser%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:114px;
+}
+
+a[href|="/alicorneyes"] {
+  background-image: url(%%alicorneyes%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:170px;
+}
+
+a[href|="/sockchaser"] {
+  background-image: url(%%sockchaser%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:92px;
+}
+
+a[href|="/bigappleicorn"] {
+  background-image: url(%%Bigappleicorn%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:135px;
+  height:125px;
+}
+
+a[href|="/chibicorn"] {
+  background-image: url(%%chibicorn%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:175px;
+}
+
+a[href|="/crystalchaser"] {
+  background-image: url(%%crystalchaser%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:150px;
+}
+
+a[href|="/cutetwi"] {
+  background-image: url(%%cutetwi%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:102px;
+  height:150px;
+}
+
+a[href|="/ducklestia"] {
+  background-image: url(%%ducklestia%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:176px;
+}
+
+a[href|="/jackicorn"] {
+  background-image: url(%%jackicorn%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:109px;
+}
+
+a[href|="/mechapwincess"] {
+  background-image: url(%%MechaPwincess%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:147px;
+}
+
+a[href|="/nonsexual"] {
+  background-image: url(%%nonsexualandsilly%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:145px;
+}
+
+a[href|="/peasants"] {
+  background-image: url(%%peasants%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:200px;
+  height:150px;
+}
+
+a[href|="/peekingchaser"] {
+  background-image: url(%%peekingchaser%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:165px;
+  height:150px;
+}
+
+a[href|="/pwettyflank"] {
+  background-image: url(%%pwettyflankilicious%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:150px;
+  height:85px;
+}
+
+a[href|="/pwettypwincesses"] {
+  background-image: url(%%pwettypwincess%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:155px;
+  height:145px;
+}
+
+a[href|="/pwettygala"] {
+  background-image: url(%%pwettypwincess2%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:221px;
+  height:150px;
+}
+
+a[href|="/shootingchaser"] {
+  background-image: url(%%shootingchaser%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:149px;
+  height:150px;
+}
+
+a[href|="/shiningcadence"] {
+  background-image: url(%%shiningcadence%%);
+  display:block;
+  clear:none;
+  float:left;
+  width: 98px;
+  height: 150px;
+}
+
+a[href|="/waticorn"] {
+  background-image: url(%%waticorn%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:173px;
+  height:150px;
+}
+
+a[href|="/pwettypwease"] {
+  background-image: url(%%pwettypwease%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:144px;
+  height:150px;
+}
+
+a[href|="/disgusting"] {
+  background-image: url(%%chocolate-ice-cream-cone%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:113px;
+  height:150px;
+}
+
+a[href|="/smfds"] {
+  background-image: url(%%SMFdumptrucks%%);
+  display:block;
+  clear:none;
+  float:left;
+  width:183px;
+  height:150px;
+}
