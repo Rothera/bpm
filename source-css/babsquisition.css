@@ -362,7 +362,7 @@ width: 949px;
 .side {
  float: right;
  background-color: #f6f0c1;
- margin: 5px 5px 0 5px;
+ margin: 65px 5px 0 5px;
  width: 300px;
  padding: 5px;
  box-shadow: 2px 2px 0px rgb(185, 177, 115);
@@ -464,7 +464,22 @@ width: 949px;
  display: none;
 }
 
-
+.usertext-body .md h4 {  
+ position: absolute;
+ top: 155px;
+ right: 5px;
+ height: 50px;
+ width: 310px;
+ box-shadow: 2px 2px 0px rgb(185, 177, 115);
+ background-color: #eadb64;
+ font-weight: bold;
+ font-size: 18px;
+ text-align: center;
+ padding-top: 5px;
+ vertical-align: 11px;
+ color: #3f2520;
+ font-family: verdana;
+}
   
 
 /* Misc */  
@@ -533,6 +548,16 @@ a[href|="/babsgrin"] {
  background-image:url(%%BabsGrin%%)
 }
   
+a[href|="/conan"] {
+ display: block;
+ clear: none;
+ float: left;
+ width: 519px;
+ height: 649px;
+ background-image:url(%%conan%%)
+}
+  
+
 /*  Colors to know:  
     #eadb64 - Tabmenu background  
     #3f2520 - The brown in the top thingy  

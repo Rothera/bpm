@@ -2,7 +2,7 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%bubble%%)  no-repeat  fixed 40% 100% !important;
+    background:  url(%%implybg%%)  no-repeat  fixed 60% 100% !important;
 }
 
 /* Banner image and associated height values */
@@ -72,15 +72,15 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .
 .side.res-nightmode:first-of-type > .content {background-color: transparent!important;}
 .side.res-nightmode:first-of-type {background-color: transparent!important}
 
-/*Announcement Box*/
+/*Announcement Box
 .side ol:nth-of-type(1) {
  position: absolute;
  display: block;
  top: 280px; left: 13px;
- padding: 2px 10px 2px 60px; /*top right bottom left*/
+ padding: 2px 10px 2px 60px;  *top right bottom left*
  background:url(%%announcedance%%) no-repeat scroll 5px 2px;
- /*background-color: #526da4; /*Change for different background color*/
- border: 1px solid #3b5998; /*Change for different outline color*/
+ /*background-color: #526da4; *Change for different background color*
+ border: 1px solid #3b5998; *Change for different outline color*
  border-left: 8px solid #3b5998;
  text-align: center;
  font-size: 14px;
@@ -121,7 +121,7 @@ div.content {margin-top:79px;}
     margin: 3px
     }
 
-
+*/
 
 /* Replace the nsfw image with screwball */
 .thumbnail.nsfw {
@@ -442,6 +442,11 @@ background-repeat: no-repeat;
 .flair-0x:after { background-position: 0px -4860px }
 .flair-LITERALLYCheerilee:after { background-position: 0px -4890px }
 .flair-Nagashizuri:after { background-position: 0px -4920px }
+.flair-PossibleGold:after { background-position: 0px -4950px }
+.flair-PerturbedPropagator:after { background-position: 0px -4980px }
+.flair-SMUTADDICT:after { background-position: 0px -5010px }
+.flair-AphxTwn666:after { background-position: 0px -5040px }
+
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
@@ -890,6 +895,29 @@ a[href|="/tiadisapprove"] {width:118px; height:120px; background-position: -561p
 a[href|="/twisure"] {width:122px; height:150px; background-position: -681px -431px}
 a[href|="/twiwhat"] {width:162px; height:150px; background-position: -805px -431px}
 
+a[href|='/ajstahp'],a[href|='/lyrailikethis'],a[href|='/lyrastahp'], a[href|='/lyrastop'],a[href|='/lyraunimpressed'],a[href|='/ppstahp'],a[href|='/raristahp'],a[href|='/rariwhy'],a[href|='/rdattention'],a[href|='/restahp'],a[href|='/sbtear'],a[href|='/serioushat'],a[href|='/problemshy'],a[href|='/tavismirk']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheetd%%) }
+
+
+a[href|='/ajstahp'] {width:100px; height:65px; background-position: -2px -69px}
+a[href|='/lyrailikethis'] {width:77px; height:90px; background-position: -162px -69px}
+a[href|='/lyrastahp'] {width:108px; height:65px; background-position: -335px -2px}
+a[href|='/lyrastop'] {width:202px; height:200px; background-position: -112px -323px}
+a[href|='/lyraunimpressed'] {width:91px; height:100px; background-position: -414px -69px}
+a[href|='/ppstahp'] {width:108px; height:65px; background-position: -114px -2px}
+a[href|='/raristahp'] {width:110px; height:65px; background-position: -2px -2px}
+a[href|='/rariwhy'] {width:176px; height:150px; background-position: -318px -171px}
+a[href|='/rdattention'] {width:108px; height:150px; background-position: -2px -323px}
+a[href|='/restahp'] {width:109px; height:65px; background-position: -224px -2px}
+a[href|='/sbtear'] {width:56px; height:70px; background-position: -104px -69px}
+a[href|='/serioushat'] {width:314px; height:147px; background-position: -2px -171px}
+a[href|='/problemshy'] {width:80px; height:100px; background-position: -241px -69px}
+a[href|='/tavismirk'] {width:89px; height:100px; background-position: -323px -69px}
+
 
 
 /* For anyone with no flair, or flair disabled, this will give them missingno flair.
@@ -927,6 +955,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 /* Replacing somebody's name? Add it to the list here. */
 a.author[href$="0x_"],
+a.author[href$="theodorejhooker"],a.author[href$="pr0n0tr0n"],
 a.author[href$="-20"],
 a.author[href$="CarlosAmuroRay"],
 a.author[href$="numberlock"],
@@ -1027,6 +1056,7 @@ content: "";
 
 /* Replacing somebody's name? Add it to the list here too. */
 a.author[href$="0x_"]:before,
+a.author[href$="theodorejhooker"]:before,a.author[href$="pr0n0tr0n"]:before,
 a.author[href$="-20"]:before,
 a.author[href$="CodenameToon"]:before,
 a.author[href$="CarlosAmuroRay"]:before,
@@ -1126,6 +1156,7 @@ visibility:visible!important;
 /*a.author:before{
     content:"Princess " 
     }*/
+a.author[href$="pr0n0tr0n"]:before,a.author[href$="theodorejhooker"]:before {content:"theodoreajhooker"}
 a.author[href$="CarlosAmuroRay"]:before {content:"ChuckAmuroRay"}
 a.author[href$="0x_"]:before {content:"just ox"}
 a.author[href$="CodenameToon"]:before {content:"Coggler"}
@@ -1232,6 +1263,7 @@ height:30px
 }
 
 /* Adding after-text to somebody's name? Add them here. */
+a.author[href$="AphxTwn666"]:after,
 a.author[href$="dylantrevor"]:after,
 a.author[href$="Ceolt0ir"]:after,
 a.author[href$="DrinkiePie"]:after,
@@ -1300,6 +1332,7 @@ letter-spacing:normal;
 }
 
 /* After-name text goes here. */
+a.author[href$="AphxTwn666"]:after {content:" Bienvenidos de la Mall of the Millenium!"}
 a.author[href$="dylantrevor"]:after {content:" Free stickers! Ask me how!"}
 a.author[href$="Ceolt0ir"]:after {content:" ★★★"}
 a.author[href$="DrinkiePie"]:after {content:" Never got text flair :("}
@@ -1364,6 +1397,7 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 
 /* Any pre/post-name flair stuff goes here */ 
 
+.tagline a.author[href$="/Lnozell"]:before,
 .tagline a.author[href$="/Indubitableness"]:before,
 .tagline a.author[href$="/RainbowCrash"]:before,
 .tagline a.author[href$="/245001"]:before,
@@ -1389,6 +1423,7 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 }
 
 /* Flour sack flair for anyone we've noticed that has flair disabled. Don't forget to add them above too.*/ 
+:not(.flair) + .tagline a.author[href$="/Lnozell"]:before,
 :not(.flair) + .tagline a.author[href$="/Esrou"]:before,
 :not(.flair) + .tagline a.author[href$="/Indubitableness"]:before,
 :not(.flair) + .tagline a.author[href$="/EvanMacIan"]:before,

@@ -4,7 +4,7 @@
  font-size:larger;
  background-color:#a50c4c;
  }
-.pagename a {color:#fefdde;}
+.pagename a {color:#fefdde !important;}
 .side .redditname a {color:#4d0223;}
 .redditname { }
 .newpagelink 
@@ -15,6 +15,15 @@
 #header-bottom-right 
 {
 background-color:#fefdde;
+}
+
+/* Links */
+a {
+color:#a50c4c;
+}
+
+a:visited {
+color:#4d0223;
 }
 
 /* BACKGROUND 
@@ -101,5 +110,5 @@ width: 100%;
 background-image: url(%%rosebiscuit%%);
 background-position: bottom center;
 background-repeat: no-repeat;
-margin-bottom: -1px
+margin-bottom: -25px;
 }

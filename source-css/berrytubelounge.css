@@ -616,6 +616,15 @@ height: 140px;
 background-image: url(%%princessgummy%%)
 }
 
+a[href|="/itshappening"], a[href|="/efnw"]{
+display:block;
+clear: none;
+float: left;
+width: 300px;
+height: 200px;
+background-image: url(%%itshappening%%)
+}
+
 /* Added by Cades because lol */
 
 a[href|="/itsafake"], a[href|="/itsfake"]{

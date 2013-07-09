@@ -61,8 +61,8 @@ Conky
 /***********Banner shit*************/
 /********************************/
 
-body #header-bottom-left {
-    background: url(%%PankakkeBanner%%) no-repeat center bottom !important;
+#header #header-bottom-left {
+    background:  url(%%PankakkeBanner%%) no-repeat center bottom !important;
     height: 350px
     }
 #header-img {

@@ -24,7 +24,7 @@
 
 .tabmenu li a, .tabmenu li.selected a { border: 0;
 background: transparent none no-repeat scroll bottom left;
-background-image: url(%%unselected%%);
+background-image: none;
 background-position: bottom center;
 text-transform: uppercase;
 padding: 10px 12px 21px 12px !important;
@@ -34,7 +34,7 @@ box-shadow: 3px 3px 5px #777; }
 .tabmenu li:first-child.selected a { background-image: url(%%selected%%); background-repeat: no-repeat; background-color: #ededed; }
 
 .tabmenu li:first-child a { background: #ededed no-repeat bottom center;
-background-image: url(%%unselected%%); }
+background-image: none; }
 
 .tabmenu li.selected a { background-image: url(%%selected%%); }
 

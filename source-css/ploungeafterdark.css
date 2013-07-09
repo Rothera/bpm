@@ -9,7 +9,41 @@ div.titlebox .users-online span.number:after {
     }
 
 
+.md blockquote {
+    border: 0;
+    margin: 0;
+    color: #789922;
+    display: block
+    }
+.md blockquote p:before {
+    content: ">";
+    float: left;
+    display: block
+    }
 
+div.over18 .entry .buttons .first{padding-left: 0px}
+.footer-parent
+{
+ height:300px;
+ padding-bottom:250px;
+ clear:both;
+ text-align:center;
+ width:100%;
+ background-image:url(%%pad-footer%%);
+ background-repeat:no-repeat;
+ margin-bottom:-30px;
+ background-position: 50% 100%;
+}
+
+.side .bottom a {
+    display: none;
+}
+
+.side .bottom:after {
+    content: " the Padlers."; 
+}
+
+ .sidebox.create .morelink {display: none;}
 
 body {
     background: url('%%lunabg3%%') no-repeat fixed bottom center !important;

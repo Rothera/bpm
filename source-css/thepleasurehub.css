@@ -1,3 +1,5 @@
+
+
 div.titlebox span.word {
     display: none;
     }
@@ -39,13 +41,13 @@ div.titlebox .users-online span.number:after {
     background:transparent;
 }
 
-#header-bottom-right { background: #2C3539; }
+#header-bottom-right { background: black; }
 
 #header-bottom-right * { color: #ffffff; }
 
-#header {background-color: #2C3539;}
+#header {background-color: black;}
 
-#header * {background-color: #2C3539;}
+#header * {background-color: black;}
 
 .res .RES-keyNav-activeElement, .res .commentarea .RES-keyNav-activeElement .md, .res .commentarea .RES-keyNav-activeElement.entry .noncollapsed {
     background-color: 	#000000 !important;
@@ -57,22 +59,29 @@ div.titlebox .users-online span.number:after {
 
 body {
     background: url('%%skybackground%%') no-repeat fixed bottom center !important;
-    background-color:#2C3539 !important;
+    background-color:black !important;
 } 
 
-.self .title { color: yellow !important; }
+.self .title { color: #4AA02C !important; }
 
-A:visited { color: #6CC417 !important } 
+.self .title A:visited { color: #822DA1 !important; }
 
-a:visited {color: green;}
 
-a:link {color: green;}
 
-a:hover {color: green;}
 
-a:focus{color:green;}
+A:visited { color: #822DA1 !important } 
 
-a:active{color:green;}
+a:visited {color: #822DA1 !important}
+
+a:link {color: #4AA02C !important}
+
+a:hover {color: #4AA02C !important}
+
+a:focus {color: #4AA02C !important}
+
+a:active {color: #4AA02C !important}
+
+
 
 
 .res:not(.res-nightmode) .commentarea .comment {background-color:Black!important;}
@@ -95,7 +104,7 @@ a:active{color:green;}
 
 .side {
 color: #ffffff;
-background-color: #2C3539 !important;
+background-color: black !important;
 margin-left: 0px;
 margin-right: 0px;
 padding-left: 0px;

@@ -60,7 +60,8 @@ div.usertext-body:hover table {
     display: block;
     clear: both
     }
-
+/* ---------- Literally adds an ! to the name of the sub ----------- */
+.redditname>a:after{content:"!"}
 /* ---------- Hide "Created by..." while keeping "a community for..." in the sidebar ---------- */
 .titlebox .bottom {
     font-size: 0px

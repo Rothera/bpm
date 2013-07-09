@@ -729,9 +729,11 @@ body.res-nightmode:first-of-type {
     }
 
 /***  Dat Banner?  ***/
-#header-bottom-left {
-    background-color:  #8B6969;
-    background: url(%%Banner%%) no-repeat center bottom
+#header #header-bottom-left {
+    background-color:  transparent!important;
+    background: url(%%Banner%%)no-repeat bottom center !important;
+     height: 234px
+
     }
 
 
@@ -1133,3 +1135,32 @@ a[href|="/genericbuilder"]
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
 body.res-nightmode:first-of-type {background-color: transparent!important;}
 span[class="hover pagename redditname"] a:first-of-type { font-size: 1.6em !important; text-shadow: 0px 0px 6px #000; color: white; }
+#header-img-a {
+    margin-top: 75px;
+    margin-left: 15px;
+}
+
+#header, #header.res-nightmode{
+    height:254px;
+    border-bottom: 1px solid #000000;
+    /*background-color: transparent!important;*/
+    
+}
+
+#header-bottom-left>* {
+    display: inline-block;
+}
+
+.tabmenu {
+    margin-top:  218px;
+    margin-left: 365px
+    } 
+#header-img {
+    margin-top: -78px;
+    margin-left: 0px;
+    position: absolute
+    }
+.pagename {
+    position: absolute;
+    bottom: -2px;
+    left: 95px;
