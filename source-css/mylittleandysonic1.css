@@ -2,7 +2,7 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%implybg%%)  no-repeat  fixed 60% 100% !important;
+    background:  url(%%rcrback%%)  no-repeat  fixed 60% 100% !important;
 }
 
 /* Banner image and associated height values */
@@ -791,7 +791,7 @@ a[href|="/ppsign"]{
     
 a[href|="/ppsign"] em{
     position: absolute !important;
-    top: 105px !important;
+    top: 108px !important;
     left: 95% !important;
     margin-left: -125px !important;
     width: 115px !important;
@@ -1423,14 +1423,14 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 }
 
 /* Flour sack flair for anyone we've noticed that has flair disabled. Don't forget to add them above too.*/ 
-:not(.flair) + .tagline a.author[href$="/Lnozell"]:before,
-:not(.flair) + .tagline a.author[href$="/Esrou"]:before,
-:not(.flair) + .tagline a.author[href$="/Indubitableness"]:before,
-:not(.flair) + .tagline a.author[href$="/EvanMacIan"]:before,
-:not(.flair) + .tagline a.author[href$="/RainbowCrash"]:before,
-:not(.flair) + .tagline a.author[href$="/Latiel"]:before,
-:not(.flair) + .tagline a.author[href$="/245001"]:before,
-:not(.flair) + .tagline a.author[href$="/fsakj"]:before
+:not(.flair) .tagline a.author[href$="/Lnozell"]:before,
+:not(.flair) .tagline a.author[href$="/Esrou"]:before,
+:not(.flair) .tagline a.author[href$="/Indubitableness"]:before,
+:not(.flair) .tagline a.author[href$="/EvanMacIan"]:before,
+:not(.flair) .tagline a.author[href$="/RainbowCrash"]:before,
+:not(.flair) .tagline a.author[href$="/Latiel"]:before,
+:not(.flair) .tagline a.author[href$="/245001"]:before,
+:not(.flair) .tagline a.author[href$="/fsakj"]:before
 {
     background-position: 0px -540px !important;
 }

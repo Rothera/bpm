@@ -1262,3 +1262,13 @@ body.res-nightmode:first-of-type {
     box-shadow: 2px 2px 5px #9999ff;
     text-shadow: 1px 1px black
     }
+
+/* Comment background */
+.commentarea>.usertext textarea {
+	background-image: url(%%commentbox%%);
+	background-repeat: no-repeat;
+	border: 1px solid #ccc;
+}
+.commentarea>.usertext textarea:focus {
+	background-position: -504px -104px;
+}

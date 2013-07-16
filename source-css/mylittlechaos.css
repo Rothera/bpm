@@ -133,6 +133,16 @@ a[href|="/twiday"] {
     margin-bottom: 5px;
     margin-right: 5px
     }
+a[href|="/lunaday"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%lunaday%%);
+    width: 500px;
+    height: 270px;
+    margin-bottom: 5px;
+    margin-right: 5px
+    }
 a[href|="/rapidfire"] {
     width: 529px;
     height: 293px;
@@ -183,7 +193,26 @@ a[href|="/spikefinger"] {
     margin-bottom: 5px;
     margin-right: 5px
     }
-
+a[href|="/angstybloom"] {
+    width: 450px;
+    height: 500px;
+    background-image: url(%%angstybloom%%);
+    display: block;
+    clear: none;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px
+    }
+a[href|="/scrunchingintensifies"] {
+    width: 450px;
+    height: 350px;
+    background-image: url(%%scrunchingintensifies%%);
+    display: block;
+    clear: none;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px
+    }
 
 
 /*== For Tubing ==*/

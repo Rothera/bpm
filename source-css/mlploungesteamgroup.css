@@ -425,10 +425,10 @@ a.author[href$="Broken_Wagonwheel"]:after
 /*Extra text here, add spaces so it looks nice*/
 a.author[href$="Sangfroidish"]:after { content:" Lost his personal divining rod "}
 a.author[href$="sna_fu_bar"]:after {content:" Sneaky squid "}
-a.author[href$="DoomedCivilian"]:after { content:" CSS Puppet Master "}
+a.author[href$="DoomedCivilian"]:after { content:" CSS Puppet Master and lesser Demigod "}
 a.author[href$="Draze"]:after { content: " Giddy Up "}
 a.author[href$="TheCommieDuck"]:after {content:" 9/10 10yo "}
-a.author[href$="duruz"]:after { content: " Doesn't oil up "}
+a.author[href$="duruz"]:after { content: " Still doesn't oil up "}
 a.author[href$="starkinmn"]:after { content: " Give me my fucking good flair, asshooe horsefuckers "}
 a.author[href$="MotharChoddar"]:after { content: " Finnish drunk "}
 a.author[href$="LunarWolves"]:after { content: " Heretical Leader "}
@@ -760,7 +760,7 @@ a[href|="/rosetits"] {
     width: 175px;
     height: 175px;
     background-image: url(%%emotesquare%%) !important;
-    background-position: 0px -160px
+    background-position: 0px -175px
     }
 
 a[href|="/ajhaybale"] {
@@ -770,7 +770,7 @@ a[href|="/ajhaybale"] {
     width: 175px;
     height: 175px;
     background-image: url(%%emotesquare%%) !important;
-    background-position: -175px -160px
+    background-position: -175px -175px
     }
 
 a[href|="/twicutesmile"] {
@@ -789,6 +789,26 @@ a[href|="/jeisj"] {
     width: 253px;
     height: 200px;
     background-image: url(%%jeisj%%) !important;
+    }
+
+a[href|="/idiot"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 250px;
+    height: 250px;
+    background-image: url(%%emotesquare%%) !important;
+    background-position: -350px 0px;
+    }
+
+a[href|="/rosecry"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 160px;
+    height: 175px;
+    background-image: url(%%emotesquare%%) !important;
+    background-position: 0px 0px;
     }
 
 /* ------MACROS------- */

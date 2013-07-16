@@ -31,7 +31,8 @@ a[href|="/angelshy"] {
     float: left;
     width: 125px;
     height: 247px;
-    background-image:url(%%Angelshy%%)
+    background-position: -640px -0px;  
+    background-image:url(%%Spritesheet%%)
 }
 a[href|="/macinshyhug"] {
     display: block;
@@ -39,6 +40,7 @@ a[href|="/macinshyhug"] {
     float: left;
     width: 193px;
     height: 150px;
+    background-position: -0px -152px;  
     background-image:url(%%Macinshy%%)
 }
 a[href|="/swagshy"] {
@@ -71,8 +73,9 @@ a[href|="/lunataviahug"] {
     clear: none;
     float: left;
     width: 150px;
-    height: 135px;
-    background-image:url(%%lunatavia%%)
+    height: 131px;
+    background-position: -490px -0px;  
+    background-image:url(%%Spritesheet%%)
 }
 a[href|="/af2"] {
     display: block;
@@ -328,4 +331,12 @@ a[href|="/braaap"] {
  width: 186px;
  height: 120px;
  background-image: url(%%braaap%%);
+} 
+a[href|="/kittyshy"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 250px;
+ height: 208px;
+ background-image: url(%%Fluffershy%%);
 } 

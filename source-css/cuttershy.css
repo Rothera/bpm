@@ -88,13 +88,29 @@
 */
 
 
+/* Banner image and associated height values */
+ #header #header-bottom-left {
+   background: url(%%cutterheader%%)!important;
+   background-repeat: no-repeat!important;
+   background-position: 50% 100%!important;
+   height:190px}
 
+#header, #header.res-nightmode{
+    height:212px;}
 
-#header-bottom-left {
-    background: url(%%cutterheader%%);
-    width: 526px;
-    height: 290px;
-}
+.tabmenu {
+    margin-top:  175px;
+    margin-left: 200px
+    } 
+#header-img {
+    margin-top: 150px;
+    margin-left: 00px;
+    position: absolute
+    }
+.pagename {
+    position: absolute;
+    bottom: -2px;
+    left: 120px;}
 
 /* Emotes */
 
