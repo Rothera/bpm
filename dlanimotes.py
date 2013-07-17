@@ -29,7 +29,7 @@ AutogenHeader = """
 """ % (time.strftime("%c"))
 
 TempFilename = "animote-temp.png"
-AnimoteUrlPrefix = "http://rainbow.mlas1.us/"
+AnimoteUrlPrefix = "http://rainbow.mlas1.com/"
 
 def find_animotes(emotes):
     images = {}

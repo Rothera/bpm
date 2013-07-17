@@ -243,7 +243,7 @@ def fx_package(ctx):
     if newer(glob_all(["build/firefox/*", "build/firefox/data/*", "build/firefox/lib/*"]),
                  ["build/betterponymotes.xpi"]):
         ctx.remove("build/*.xpi")
-        ctx.run("cfx", "xpi", "--update-url=http://rainbow.mlas1.us/betterponymotes.update.rdf", "--pkgdir=build/firefox", "--force-mobile")
+        ctx.run("cfx", "xpi", "--update-url=http://rainbow.mlas1.com/betterponymotes.update.rdf", "--pkgdir=build/firefox", "--force-mobile")
         inject_xpi_key("betterponymotes.xpi", "build/betterponymotes.xpi")
         ctx.remove("betterponymotes.xpi")
 
@@ -312,7 +312,7 @@ def o_package(ctx):
         ctx.zip("build/betterponymotes.oex", "build/opera/")
 
 # NO TRAILING SLASHES; EXT_RESOURCE_PREFIX wants to have none
-UserscriptResourcePrefix = "http://rainbow.mlas1.us"
+UserscriptResourcePrefix = "http://rainbow.mlas1.com"
 UserscriptTestPrefix = "http://localhost:8000"
 
 @target("userscript", "build/betterponymotes.user.js")
@@ -332,13 +332,13 @@ def gen_update_manifests(ctx):
     if newer(["build/betterponymotes.xpi"], ["build/betterponymotes.update.rdf"]):
         # Have to check deps ourselves due to open() call
         ctx.run("uhura", "-k", KeyFile, "build/betterponymotes.xpi",
-                "http://rainbow.mlas1.us/betterponymotes_%s.xpi" % (ctx.vars["version"]),
+                "http://rainbow.mlas1.com/betterponymotes_%s.xpi" % (ctx.vars["version"]),
                 stdout=open("build/betterponymotes.update.rdf", "w"))
     if newer(["build/betterponymotes.oex"], ["build/opera-updates.xml"]):
         version = ctx.vars["version"]
         open("build/opera-updates.xml", "w").write(
             '<update-info xmlns="http://www.w3.org/ns/widgets" ' +
-            'src="http://rainbow.mlas1.us/betterponymotes_%s.oex" version="%s"/>\n' % (version, version))
+            'src="http://rainbow.mlas1.com/betterponymotes_%s.oex" version="%s"/>\n' % (version, version))
 
 @target("exports", "build/export.json")
 def gen_exports(ctx):
@@ -368,7 +368,7 @@ def update_www(ctx):
 def sync(ctx):
     default(ctx)
 
-    ctx.run("rsync", "-zvvLr", "--delete", "www/", "ref@mc.mlas1.us:~/www")
+    ctx.run("rsync", "-zvvLr", "--delete", "www/", "ref@mc.mlas1.com:~/www")
 
 ScriptFiles = [
     "addon/bpm-header.js",
