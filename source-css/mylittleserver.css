@@ -250,6 +250,30 @@ a[href|="/mlsf3"], a[href|="/cocaineking"] {
     height: 349px;
     background-image: url(%%cocaineking%%)
     }
+a[href|="/mlsf4"], a[href|="/zalgoberg"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%zalgoberg%%)
+    }
+a[href|="/mlsg1"], a[href|="/hecomes"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%dinkleberg%%)
+    }
+a[href|="/mlsg1"]:hover, a[href|="/hecomes"]:hover {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%zalgoberg%%)
+    }
 END-PONYSCRIPT-IGNORE{color:red;}
 
 /*Changing Names*/

@@ -2,7 +2,7 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%rcrback%%)  no-repeat  fixed 60% 100% !important;
+    background:  url(%%1Untitsled%%)  no-repeat  fixed 60% 100% !important;
 }
 
 /* Banner image and associated height values */
@@ -16,7 +16,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 
 
 #header-img-a {
-    margin-top: 75px;
+    margin-top: 12px;
     margin-left: 15px;
 }
 
@@ -37,7 +37,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     display: inline-block;
     letter-spacing: normal;
     font-size: 0.7em !important;
-    color: white;
+    color: white !important;
     margin-left: 4px;
     text-shadow: 0px 0px 6px #000;
 }
@@ -72,15 +72,15 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .
 .side.res-nightmode:first-of-type > .content {background-color: transparent!important;}
 .side.res-nightmode:first-of-type {background-color: transparent!important}
 
-/*Announcement Box
+/*Announcement Box */
 .side ol:nth-of-type(1) {
  position: absolute;
  display: block;
  top: 280px; left: 13px;
- padding: 2px 10px 2px 60px;  *top right bottom left*
- background:url(%%announcedance%%) no-repeat scroll 5px 2px;
- /*background-color: #526da4; *Change for different background color*
- border: 1px solid #3b5998; *Change for different outline color*
+ padding: 2px 10px 2px 60px;  /* top right bottom left */
+ /* background:url(%%%%) no-repeat scroll 5px 2px; */
+ background-color: #00FFFF; /* Change for different background color */
+ border: 1px solid #3b5998; /* Change for different outline color */
  border-left: 8px solid #3b5998;
  text-align: center;
  font-size: 14px;
@@ -102,14 +102,14 @@ div.content {margin-top:79px;}
 .titlebox .usertext-body .md ol {
     width: auto;
     border: 1px solid #5f99cf;
-    background:url(%%announcedance%%) no-repeat scroll 5px 1px #EFF7FF;
+    /* background:url(%%announcedance%%) no-repeat scroll 5px 1px #EFF7FF; */
     font-size: 14px !important;
     position: absolute;
     top: 275px;
     left: 200px;
     z-index: 200;
     margin: -0px 310px 0 0;
-    padding: 18px 1px 12px 45px;
+    padding: 8px 1px 12px 2px;
     list-style: none;
     display: block;
     white-space: normal;
@@ -121,7 +121,7 @@ div.content {margin-top:79px;}
     margin: 3px
     }
 
-*/
+
 
 /* Replace the nsfw image with screwball */
 .thumbnail.nsfw {
@@ -954,6 +954,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="bryvood"],
 a.author[href$="0x_"],
 a.author[href$="theodorejhooker"],a.author[href$="pr0n0tr0n"],
 a.author[href$="-20"],
@@ -1043,8 +1044,8 @@ a.author[href$=Lord_Ninka],
 a.author[href$=StabbyTheLlama],
 a.author[href$=thezooman123],
 a.author[href$=Nagashizuri],
-a.author[href$=andresonic1]
-
+a.author[href$=andresonic1],
+a.author[href$=Bflat13]
 
 
 { 
@@ -1055,6 +1056,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="bryvood"]:before,
 a.author[href$="0x_"]:before,
 a.author[href$="theodorejhooker"]:before,a.author[href$="pr0n0tr0n"]:before,
 a.author[href$="-20"]:before,
@@ -1145,7 +1147,8 @@ a.author[href$=Swiftskii]:before,
 a.author[href$=Lord_Ninka]:before,
 a.author[href$=StabbyTheLlama]:before,
 a.author[href$=Nagashizuri]:before,
-a.author[href$=andresonic1]:before
+a.author[href$=andresonic1]:before,
+a.author[href$=Bflat13]:before
 
 {
 font-size:10px!important; 
@@ -1156,6 +1159,7 @@ visibility:visible!important;
 /*a.author:before{
     content:"Princess " 
     }*/
+a.author[href$="bryvood"]:before,a.author[href$="Ezreal"]:before {content:"Ezreal"}
 a.author[href$="pr0n0tr0n"]:before,a.author[href$="theodorejhooker"]:before {content:"theodoreajhooker"}
 a.author[href$="CarlosAmuroRay"]:before {content:"ChuckAmuroRay"}
 a.author[href$="0x_"]:before {content:"just ox"}
@@ -1244,7 +1248,7 @@ a.author[href$=Lord_Ninka]:before { content:"Ninka" }
 a.author[href$=StabbyTheLlama]:before { content:"StabbyTheBOOBS" }
 a.author[href$=Nagashizuri]:before { content:"Maga" }
 a.author[href$=andresonic1]:before { content:"Fake" }
-
+a.author[href$=Bflat13]:before { content:"BECAUSE OF THE MOTHER FUCKING SUGAR!" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
