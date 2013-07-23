@@ -368,7 +368,7 @@ def update_www(ctx):
 def sync(ctx):
     default(ctx)
 
-    ctx.run("rsync", "-zvvLr", "--delete", "www/", "ref@mc.mlas1.com:~/www")
+    ctx.run("rsync", "-zvLr", "--delete", "www/", "ref@mc.mlas1.com:~/www")
 
 ScriptFiles = [
     "addon/bpm-header.js",
