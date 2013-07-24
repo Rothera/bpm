@@ -1,3 +1,13 @@
+var current_subreddit = (function() {
+    // FIXME: what other characters are valid?
+    var match = document.location.href.match(/reddit\.com\/(r\/[\w]+)/);
+    if(match) {
+        return match[1].toLowerCase();
+    } else {
+        return null;
+    }
+})();
+
 /*
  * Injects a sneaky little link at the bottom of each Reddit page that
  * displays the logs.

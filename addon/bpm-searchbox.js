@@ -329,9 +329,15 @@ function update_search_results(store) {
 
     // Check this before we append the default search terms.
     if(!terms.length) {
-        sb_results.innerHTML = "";
-        sb_resultinfo.textContent = "";
-        return;
+        // If we're on a subreddit that has some of its own emotes, show those
+        // instead of nothing.
+        if(current_subreddit && sr_name2id[current_subreddit] !== undefined) {
+            terms = [current_subreddit];
+        } else {
+            sb_results.innerHTML = "";
+            sb_resultinfo.textContent = "";
+            return;
+        }
     }
 
     // This doesn't work quite perfectly- searching for "+hidden" should
