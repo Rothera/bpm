@@ -369,7 +369,7 @@ function manage_enabled_subreddits(prefs) {
 
 function manage_emote_list(prefs, name) {
     var container = $("#" + name);
-    var form = container.parent();
+    var form = container.parent().parent();
     var input = $("#" + name + "-input");
     var clear_button = $("#" + name + "-clear");
 
