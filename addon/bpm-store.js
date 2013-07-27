@@ -91,8 +91,7 @@ Store.prototype = {
 
         var parts = data.split(",");
         var flag_data = parts[0];
-        var source_data = parts[1];
-        var tag_data = parts[2];
+        var tag_data = parts[1];
 
         var flags = parseInt(flag_data.slice(0, 1), 16);     // Hexadecimal
         var source_id = parseInt(flag_data.slice(1, 3), 16); // Hexadecimal
@@ -100,16 +99,9 @@ Store.prototype = {
         var is_nsfw = (flags & _FLAG_NSFW);
         var is_redirect = (flags & _FLAG_REDIRECT);
 
-        var sources = null, tags = null, base = null;
+        var tags = null, base = null;
         if(want_tags) {
             var start, str;
-
-            sources = [];
-            start = 0;
-            while((str = source_data.slice(start, start+2)) !== "") {
-                sources.push(parseInt(str, 16)); // Hexadecimal
-                start += 2;
-            }
 
             tags = [];
             start = 0;
@@ -119,7 +111,7 @@ Store.prototype = {
             }
 
             if(is_redirect) {
-                base = parts[3];
+                base = parts[2];
             } else {
                 base = name;
             }
@@ -132,7 +124,6 @@ Store.prototype = {
             source_name: sr_id2name[source_id],
             max_size: size,
 
-            sources: sources,
             tags: tags,
 
             css_class: "bpmote-" + sanitize_emote(name.slice(1)),

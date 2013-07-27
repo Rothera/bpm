@@ -33,7 +33,7 @@ FLAG_NSFW = 1
 FLAG_REDIRECT = 1 << 1
 
 def encode(context, source, emote, all_emotes, tag_name2id):
-    # FFFFFFF,SsSsSs,TtTtTtTt[,/base-name]
+    # FFFFFFF,TtTtTtTt[,/base-name]
     base = emote.base_variant()
     root = source.variant_matches[emote]
     all_tags = root.all_tags(context) | emote.all_tags(context)
@@ -51,19 +51,13 @@ def encode(context, source, emote, all_emotes, tag_name2id):
     flag_data = "%1x%02x%04x" % (flags, source.source_id, size)
     assert len(flag_data) == 7
 
-    # Ss = source id list
-    sources = [e.source for e in all_emotes[emote.name]]
-    source_ids = sorted(s.source_id for s in sources)
-    assert all(id < 0xff for id in source_ids) # One byte per
-    source_data = "".join("%02x" % id for id in source_ids)
-
     # Tt = tag id list
     emitted_tags = [tag for tag in all_tags if tag not in context.tag_config["HiddenTags"]]
     tag_ids = sorted(tag_name2id[tag] for tag in emitted_tags)
     assert all(id < 0xff for id in tag_ids) # One byte per
     tag_data = "".join("%02x" % id for id in tag_ids)
 
-    data = "%s,%s,%s" % (flag_data, source_data, tag_data)
+    data = "%s,%s" % (flag_data, tag_data)
     if is_redirect:
         data += "," + root.name
 
