@@ -118,11 +118,11 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
 {
  display:inline-block;
  float:right;
- background:url(%%ginger-snap-hat%%);
+ background:url(%%trixie-hat%%);
  width:70px;
  height:70px;
  margin-top:-45px;
- margin-left:1px;
+ margin-left:5px;
  margin-bottom:0px;
  margin-right:-40px;
 }
@@ -200,7 +200,7 @@ body a[href="/spoiler"]:hover{color:white!important}/*Pinkie Pie NPT Warnings*//
 {
  font-size:0px!important;
  display:inline-block;
- vertical-align:bottom;
+ vertical-align:top;
  overflow:hidden;
  letter-spacing:-20px;
  content:""
@@ -233,7 +233,12 @@ body a[href="/spoiler"]:hover{color:white!important}/*Pinkie Pie NPT Warnings*//
  content:"SPOILER"!important;
  display:block;
  font-size:x-small!important;
- text-decoration:none
+ text-decoration:none;
+ margin: -15px 2px 1px;
+}
+
+noindex:-o-prefocus, .nsfw-stamp acronym {
+  display:none!important
 }
 
 div.over18 .entry .buttons .first{padding-left: 0px}
@@ -1206,5 +1211,8 @@ display: none !important;
     text-align: center;
     font-size: 10px;
     font-weight: normal;
-    margin-top: 5px
+    margin-top: 20px
+}
+.res-nightmode .report-button:hover:before {
+    background-color: #000;
 }

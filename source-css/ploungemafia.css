@@ -307,7 +307,7 @@ color: #555;
 font-size: 11px;
 position: absolute;
 left: 90px;
-top: 60px;
+top: 55px;
 padding-left: 20px;
 z-index: 100
 }
@@ -350,6 +350,63 @@ top: 5px;
 left: 0;
 }
 
+/* #### FOUR THE CLAN (tacoclanobvsly) */
+
+.titlebox .usertext-body h4:first-of-type {
+background: #fff;
+border: 1px solid #ccc;
+color: #555;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+font-size: 11px;
+position: absolute;
+left: 90px;
+top: 80px;
+padding-left: 20px;
+z-index: 100
+    }
+.titlebox .usertext-body h4:first-of-type a:hover {
+text-decoration: underline;
+    }
+
+.titlebox .usertext-body h4:first-of-type a:before { 
+content: " " ; 
+margin-left: 5px;
+
+/* Red announcement thingy 
+
+background-color: #fc6c6c;
+border: 2px solid #d53f3f;
+*/
+/* Green announcement thingy */ 
+background-color: #85d462; 
+border: 2px solid #3BAE08; 
+
+/* Blue announcement thingy 
+background-color: #0099CC; 
+border: 2px solid #00688B; 
+*/
+/* Purple announcement thingy
+background-color: #8A2BE2; 
+border: 2px solid #2E0854;
+*/
+
+width: 2px; 
+height: 2px; 
+border-radius: 10px; 
+display: block; 
+z-index: 300;
+padding: 2px;
+float: right;
+position: absolute;
+top: 5px;
+left: 0;
+}
+
 
 /* Self post icon */
 
@@ -361,6 +418,8 @@ left: 0;
         background-position: center !important;
         background-repeat: no-repeat !important
     }
+
+
 
 /* Remove create a link */
 
@@ -385,9 +444,33 @@ left: 0;
     margin-top:35px
     }
 
+/* Signup Flair */
+
+.linkflair-signups .usertext-body:after {
+    content: "Please take signups seriously. If you might not be able to be an active player, consider waiting until you're sure to sign up. Inactive players can ruin games for everyone.";
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 4px;
+    margin-right: 50px;
+    padding: 4px;
+    color: #000 !important;
+    border:1px solid #333;
+    background-color:#FFF;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Submit button Advisory (from /r/theoryofreddit)*/
+
+div[title~=why]:after {
+    display: block;
+    margin-top: 1em;
+    content: "If you're posting sign-ups for a new game, remember to tag your post with the sign-ups flair.";
+}
+
 /*New post spam filtered warning (borrowed from /r/mylittlepony)*/
-#title-field.roundfield:before
-{
+#title-field.roundfield:before {
  content:"NOTE: Check the new queue after posting. If your post doesn't show up, you were spam filtered by mistake! Message the moderators with a link to the submission.";
  font-size:0.86em;
  padding:5px;
@@ -448,7 +531,7 @@ a.title[href*="signups!"] {
    color: blue!important;   
 }
 
-.commentarea .usertext-edit:before a.title[href*="signups!"] {
+.commentarea .usertext-edit:before {
     content: "Test.";
     display: block;
     text-align: center;

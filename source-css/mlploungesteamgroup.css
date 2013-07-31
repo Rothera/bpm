@@ -13,7 +13,9 @@ DC05 - Announcement bar created
 08Mar2013 - Announcement bar updated to allow links
 13Apr2013 - Removed suffix from moderation box
 DC06 - Bannercat hover
-Use Ctrl-F to find and remove them. */
+28July2013 - Bannercat hover merged into imgmap
+
+*/
 
 /* Sub Name Change*/
 .titlebox .word {
@@ -21,11 +23,11 @@ Use Ctrl-F to find and remove them. */
     }
 
 .titlebox .number:after {
-    content: " Space Stallions"
+    content: " Law Abiding Judges"
     }
 
 div.titlebox .users-online span.number:after {
-    content: " Stretching Glutes"
+    content: " Plotting Justice"
     }
 
 /*------------------------ Changes background -------------------------------*/
@@ -36,16 +38,13 @@ body, body.res-nightmode:first-of-type {
 }
 
 .footer-parent {
-    height: 420px;
-    padding-top: 020px;
-    padding-bottom: 40px;
-    clear: both;
+    height: 600px;
+    padding-top: 0px;
     text-align: center;
     width: 100%;
-    background-image: url(%%canada%%);
-    background-position: bottom center;
+    background-image: url(%%chaos%%);
     background-repeat: no-repeat;
-    margin-bottom: -1px;
+    background-position: center;
     }
 
 /* Banner Image */
@@ -65,14 +64,14 @@ body.res-nightmode #header-bottom-left {
 }
 /*DC06 - To change this simply modify the 100 x 200 px "bannercatnew" .png. The 100 x 100 block to the right is the standard, the 100 x 100 block to the left is the hover. The blank image in the subreddit settings is required, anything else causes that image to always be on top. You can replace it with a 1x1 blank, but that would require adding margin modifiers below to make it look right.*/
 #header-img{
-    background: url(%%bannercatnew%%);
-    background-position: 100px 0px;
+    background: url(%%Imgmap%%);
+    background-position: -100px -150px;
     width: 100px;
     height: 100px;
     }
 #header-img:hover {
-    background: url(%%bannercatnew%%);
-    background-position: 0px 0px;
+    background: url(%%Imgmap%%);
+    background-position: 0px -150px;
     width: 100px;
     height: 100px;
     }
@@ -329,19 +328,19 @@ body > .content { padding-top: 24px }
     }
 
 .sidecontentbox a.author.id-t2_5n3bs:before {
-    content:"Sol Ray";
+    content:"Judge Sol Ray";
     }
 
 .sidecontentbox a.author.id-t2_5ifnt:before {
-    content: "Master Sausage Chief";
+    content: "Master Sergeant Sausage Chef";
     }
 
 .sidecontentbox a.author.id-t2_75mzg:before {
-    content: "Likely at fault";
+    content: "Judge Best Pony";
     }
 
 .sidecontentbox a.author.id-t2_6k0ud:before {
-    content: "False God Emperor";
+    content: "Chief Judge Lunar";
     }
 
 

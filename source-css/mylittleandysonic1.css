@@ -9,14 +9,14 @@ body:first-of-type, body.res-nightmode:first-of-type {
  #header #header-bottom-left {
    background: url(%%bannera%%)!important;
    background-repeat: no-repeat!important;
-   background-position: 40% 100%!important;
+   background-position: 50% 100%!important;
    height: 237px; /* 237 for meat's nice banner and general banner size */
 }
 
 
 
 #header-img-a {
-    margin-top: 12px;
+    margin-top: 32px;
     margin-left: 15px;
 }
 
@@ -79,19 +79,19 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .
  top: 280px; left: 13px;
  padding: 2px 10px 2px 60px;  /* top right bottom left */
  /* background:url(%%%%) no-repeat scroll 5px 2px; */
- background-color: #00FFFF; /* Change for different background color */
- border: 1px solid #3b5998; /* Change for different outline color */
+ background-color: #FFFFFF; /* Change for different background color */
+ border: 1px solid #000000; /* Change for different outline color */
  border-left: 8px solid #3b5998;
  text-align: center;
  font-size: 14px;
  z-index: 2147483647;
  list-style:none;
 }
-div.content {margin-top:79px;}
+div.content {margin-top:130px;} /* pushes down everything under the announcer box */
 
 
 .content {
-    margin-top: 30px 
+    margin-top: 35px 
     }
 .pagename {
     font-size: 12pt
@@ -105,8 +105,8 @@ div.content {margin-top:79px;}
     /* background:url(%%announcedance%%) no-repeat scroll 5px 1px #EFF7FF; */
     font-size: 14px !important;
     position: absolute;
-    top: 275px;
-    left: 200px;
+    top: 280px;
+    left: 50px;
     z-index: 200;
     margin: -0px 310px 0 0;
     padding: 8px 1px 12px 2px;
@@ -120,7 +120,6 @@ div.content {margin-top:79px;}
 .titlebox .usertext-body .md ol li {
     margin: 3px
     }
-
 
 
 /* Replace the nsfw image with screwball */
@@ -158,6 +157,9 @@ div.content {margin-top:79px;}
     width: 70px;
     height: 70px;
     background-position: 0px -210px !important}
+
+/* Link flair - the giant red link flair */
+.linkflairlabel { max-width: none; font-size: inherit; border: none; background-color: transparent; padding: 0; display: inline; margin-right: 5px; color: darkred; }
 
 /* changes "readers" to something more fitting */
 div.titlebox span.word {
@@ -422,8 +424,8 @@ background-repeat: no-repeat;
 .flair-TripsOcho:after { background-position: 0px -4260px }
 .flair-CarlosAmuroRay:after { background-position: 0px -4290px }
 .flair-Ceolt0ir:after { background-position: 0px -4320px }
-.flair-DVF:after { background-position: 0px -4350px }
-.flair-BettyMcBitterpants:after { background-position: 0px -4380px }
+.flair-DVF:after { background-position: 0px -4351px }
+.flair-BettyMcBitterpants:after { background-position: 0px -4381px }
 .flair-zovistograt2:after { background-position: 0px -4410px }
 .flair-Berrytube:after { background-position: 0px -4440px }
 .flair-maku450:after { background-position: 0px -4470px }
@@ -446,6 +448,16 @@ background-repeat: no-repeat;
 .flair-PerturbedPropagator:after { background-position: 0px -4980px }
 .flair-SMUTADDICT:after { background-position: 0px -5010px }
 .flair-AphxTwn666:after { background-position: 0px -5040px }
+.flair-Udent:after { background-position: 0px -5070px }
+.flair-DevaKitty:after { background-position: 0px -5100px }
+.flair-MrWoo:after { background-position: 0px -5130px }
+.flair-zaxsauce:after { background-position: 0px -5160px }
+.flair-zhil:after { background-position: 0px -5190px }
+.flair-slowpoke:after { background-position: 0px -5220px }
+.flair-coggler:after { background-position: 0px -5250px }
+.flair-stickybun:after { background-position: 0px -5280px }
+.flair-mansister:after { background-position: 0px -5310px }
+.flair-beautifulpony:after { background-position: 0px -5340px }
 
 
 /* Nightmode fix for flair */
@@ -895,7 +907,7 @@ a[href|="/tiadisapprove"] {width:118px; height:120px; background-position: -561p
 a[href|="/twisure"] {width:122px; height:150px; background-position: -681px -431px}
 a[href|="/twiwhat"] {width:162px; height:150px; background-position: -805px -431px}
 
-a[href|='/ajstahp'],a[href|='/lyrailikethis'],a[href|='/lyrastahp'], a[href|='/lyrastop'],a[href|='/lyraunimpressed'],a[href|='/ppstahp'],a[href|='/raristahp'],a[href|='/rariwhy'],a[href|='/rdattention'],a[href|='/restahp'],a[href|='/sbtear'],a[href|='/serioushat'],a[href|='/problemshy'],a[href|='/tavismirk']{
+a[href|='/ajstahp'],a[href|='/lyrailikethis'],a[href|='/lyrastahp'], a[href|='/lyrastop'],a[href|='/lyraunimpressed'],a[href|='/ppstahp'],a[href|='/raristahp'],a[href|='/rariwhy'],a[href|='/rdattention'],a[href|='/restahp'],a[href|='/sbtear'],a[href|='/serioushat'],a[href|='/problemshy'],a[href|='/tavismirk'],a[href|='/artthoumad'],a[href|='/pillowdash'],a[href|='/takeaseat'],a[href|='/wonderfucks']{
 
     display: block;
     clear: none;
@@ -917,7 +929,10 @@ a[href|='/sbtear'] {width:56px; height:70px; background-position: -104px -69px}
 a[href|='/serioushat'] {width:314px; height:147px; background-position: -2px -171px}
 a[href|='/problemshy'] {width:80px; height:100px; background-position: -241px -69px}
 a[href|='/tavismirk'] {width:89px; height:100px; background-position: -323px -69px}
-
+a[href|='/artthoumad'] {width:148px; height:135px; background-position: -314px -324px}
+a[href|='/pillowdash'] {width:118px; height:130px; background-position: -0px -480px}
+a[href|='/takeaseat'] {width:135px; height:135px; background-position: -122px -523px}
+a[href|='/wonderfucks'] {width:198px; height:155px; background-position: -314px -459px}
 
 
 /* For anyone with no flair, or flair disabled, this will give them missingno flair.
@@ -954,6 +969,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 
 /* Replacing somebody's name? Add it to the list here. */
+a.author[href$="PUBLIQclopAccountant"],
 a.author[href$="bryvood"],
 a.author[href$="0x_"],
 a.author[href$="theodorejhooker"],a.author[href$="pr0n0tr0n"],
@@ -1056,6 +1072,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="PUBLIQclopAccountant"]:before,
 a.author[href$="bryvood"]:before,
 a.author[href$="0x_"]:before,
 a.author[href$="theodorejhooker"]:before,a.author[href$="pr0n0tr0n"]:before,
@@ -1159,6 +1176,7 @@ visibility:visible!important;
 /*a.author:before{
     content:"Princess " 
     }*/
+a.author[href$="PUBLIQclopAccountant"]:before {content:"The Public Clop Accounting Firm, LLC"}
 a.author[href$="bryvood"]:before,a.author[href$="Ezreal"]:before {content:"Ezreal"}
 a.author[href$="pr0n0tr0n"]:before,a.author[href$="theodorejhooker"]:before {content:"theodoreajhooker"}
 a.author[href$="CarlosAmuroRay"]:before {content:"ChuckAmuroRay"}
@@ -1172,7 +1190,7 @@ a.author[href$="fwinest_JediThug"]:before {content:"Wincest_JediThug"}
 a.author[href$="V17Ds"]:before {content:"Plounger"}
 a.author[href$="Rudicorn"]:before {content:"Grumpledick"}
 a.author[href$="jimmpony"]:before {content:"sirtophat"}
-a.author[href$="DiscordDraconequus"]:before {content:"therealChrysalis"}
+a.author[href$="DiscordDraconequus"]:before {content:"The Real Chrysalis"}
 a.author[href$="IncidentalUnicorn2"]:before {content:"theclinger"}
 a.author[href$="Juz16"]:before {content:"Jizz"}
 a.author[href$="EvanMacIan"]:before {content:"Ewan McGregor"}
@@ -1209,7 +1227,7 @@ a.author[href$=Greenie_Lye]:before { content:"Greenie_Lye (Green Derram)" }
 a.author[href$=Chinch335]:before,a.author[href$=IllusionOf_Integrity]:before { content:"Chillusion" }
 a.author[href$=trypsonite]:before { content:"Who"; color:blue }
 a.author[href$=RetardVomitPussyCunt]:before { content:"RainbowViolinPancakesCider" }
-a.author[href$=andysonic2]:before {content:"anHURRsonic1"}
+a.author[href$=andysonic2]:before {content:"andysonic1"}
 a.author[href$="10z20Luka"]:before { content:"Titty-slickers, God of Thunder and Lord of the Dance" }
 a.author[href$=PinkiePie2012]:before { content:"Empress Pie" }
 a.author[href$=DarkSideOfTheSun]:before { content:"DickSideOfTheSun" }
@@ -1356,7 +1374,7 @@ a.author[href$=IllusionOf_Integrity]:after { content:" (participates in bringing
 a.author[href$=SkiidrowDash]:after { content:" (Lord of the Hamsters)" }
 a.author[href$=trypsonite]:after { content:" is dead" }
 a.author[href$=Backupusername]:after { content:" http://www.youtube.com/watch?f&v=3JCUWl30VuM" }
-a.author[href$=andysonic2]:after { content:" THE DURR POLICE"; color:purple }
+a.author[href$=andysonic2]:after { content:" THE NO FUN POLICE"; color:purple }
 a.author[href$=Capnpaddy]:after { content:" (banned)" }
 a.author[href$=Capnpaddydash]:after { content:" (shoot on sight)" }
 a.author[href$=Speedingturtle]:after { content:" (°ロ°)" }

@@ -498,6 +498,14 @@ a[href|="/tavibra"] {
  background-position: -0px -900px;
 } 
 
+a[href|="/sombravia"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 230px;
+    height: 150px;
+    background-image:url(%%sombravia%%);
+}
 
 /*
 
@@ -537,13 +545,6 @@ a[href|="/drunktavia"] {
  background-image: url(%%drunktavia%%);
 } 
 
-a[href|="/tavibra"] {  
- display: block;
- clear: none;
- float: left; 
- width: 230px;
- height: 150px;
- background-image: url(%%tavibra%%);
-} 
+
 
 */

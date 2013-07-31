@@ -127,7 +127,7 @@ body a[href="/spoiler"]:hover{color:white!important}/* Spoiler Setter*/
 {
  font-size:0px!important;
  display:inline-block;
- vertical-align:bottom;
+ vertical-align:top;
  overflow:hidden;
  letter-spacing:-20px;
  content:""
@@ -160,7 +160,8 @@ body a[href="/spoiler"]:hover{color:white!important}/* Spoiler Setter*/
  content:"SPOILER"!important;
  display:block;
  font-size:x-small!important;
- text-decoration:none
+ text-decoration:none;
+ margin: -15px 2px 1px;
 }
 
 div.over18 .entry .buttons .first{padding-left: 0px}
