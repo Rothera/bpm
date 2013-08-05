@@ -91,10 +91,6 @@ opera.extension.onmessage = function(event) {
             pref_manager.set_pref(message.pref, message.value);
             break;
 
-        case "set_prefs":
-            pref_manager.write(message.prefs);
-            break;
-
         case "force_update":
             pref_manager.cm.force_update(message.subreddit);
             break;

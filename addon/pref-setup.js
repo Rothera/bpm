@@ -10,6 +10,11 @@
 
 "use strict";
 
+// public functions:
+// - initialize_prefs() from userscript
+// - manage_prefs() from backends
+// cm.force_update() from backends
+
 var default_prefs = {
     "enableNSFW": false,
     "enableExtraCSS": true,
@@ -141,12 +146,6 @@ function manage_prefs(sr_name2id, hooks) {
     var prefs = hooks.read_json("prefs");
 
     var manager = {
-        write: function(_prefs) {
-            prefs = _prefs;
-            this._sync();
-            this.cm.after_pref_write();
-        },
-
         get: function() {
             return prefs;
         },
