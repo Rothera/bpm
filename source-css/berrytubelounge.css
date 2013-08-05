@@ -12,6 +12,52 @@
     margin: 20px 0;
     text-align: center;
 }
+/* Important stuff link flair*/
+div.linkflair-btimportant div.entry {
+background-color: rgb(252, 225, 243) !important;
+border: 2px dashed rgb(243, 112, 200) !important;
+border-radius: 10px;
+}
+div.thing.link.linkflair-btimportant, div.thing.link.linkflair-btimportant + div.clearleft {
+display: table-header-group;
+}
+div.sitetable.linklisting{
+display: table;
+}
+
+
+
+/*Fancy h4s from /r/mlp*/
+.titlebox li h4 { padding-top: 4px; }
+.thing.self h4:before
+{
+ content:"";
+ width:100%;
+ background:transparent url(%%fancyheaders%%) no-repeat bottom left;
+ width:14px;
+ height:46px;
+ margin-bottom:-19px;
+ position:relative;
+ left:-14px;
+ z-index:100;
+ display:inline-block;
+ overflow:hidden
+}
+
+.thing.self h4
+{
+ width:100%;
+ font-style:normal;
+ font-size:2em;
+ background:#CEE3F8;
+ color:#5F99CF;
+ margin-left:-6px;
+ padding-right:11px;
+ display:block;
+ overflow:visible;
+ white-space:nowrap;
+ font-variant:small-caps
+}
 
 /*messing with worldtrekka*/
 .id-t3_1420zy a.title,#siteTable_t3_1420zy div.md p{

@@ -24,20 +24,30 @@ div.titlebox .users-online span.number:after {
 
 .sidebox.submit .spacer , .sidebox.create .spacer  {display: none; }
 
+/*
+
 .comment {
     color:white;
 }
+
+*/
+
+/*
 
 .submit .morelink {
     background-image: none;
     background-color: #000000;
 }
 
+*/
+
 .nub { display: none; }
 
 .side .leavemoderator, .side .titlebox .flairtoggle {
     background:transparent;
 }
+
+/*
 
 #header-bottom-right { background: black; }
 
@@ -47,25 +57,33 @@ div.titlebox .users-online span.number:after {
 
 #header * {background-color: black;}
 
+*/
+
+/*
+
 .res .RES-keyNav-activeElement, .res .commentarea .RES-keyNav-activeElement .md, .res .commentarea .RES-keyNav-activeElement.entry .noncollapsed {
     background-color: 	#000000 !important;
 }
 
-
+*/
 
 
 
 body {
-    background: url('%%pleasurehubbg%%') no-repeat fixed bottom center !important;
-    background-color:black !important;
+    background: url('%%otterbg%%') no-repeat fixed bottom right !important;
+    background-color:white !important;
 } 
+
+/*
 
 .self .title { color: #4AA02C !important; }
 
 .self .title A:visited { color: #822DA1 !important; }
 
+*/
 
 
+/* 
 
 A:visited { color: #822DA1 !important } 
 
@@ -79,8 +97,12 @@ a:focus {color: #4AA02C !important}
 
 a:active {color: #4AA02C !important}
 
+*/
 
 
+
+
+/* 
 
 .res:not(.res-nightmode) .commentarea .comment {background-color:Black!important;}
 .res:not(.res-nightmode) .commentarea .comment .comment {background-color:#2C3539!important;}
@@ -93,12 +115,16 @@ a:active {color: #4AA02C !important}
 .res:not(.res-nightmode) .commentarea .comment .comment .comment .comment .comment .comment .comment .comment .comment {background-color:Black!important;}
 .res:not(.res-nightmode) .commentarea .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment{background-color:#2C3539!important;}
 
+*/
+
 #header #header-bottom-left {
    background: url(%%pleasurehubbanner2%%) !important;
    background-repeat: no-repeat !important;
    background-position: 50% 100% !important;
    height: 205px; 
 }
+
+/* 
 
 .side {
 color: #ffffff;
@@ -114,7 +140,7 @@ width: 300px;
 border-bottom-left-radius: 3px
 }
 
-
+*/
 
 .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}

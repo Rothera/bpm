@@ -31,7 +31,7 @@ no-repeat fixed center center
 
 /*Ponymotes*/
 
-a[href="/spikehmph"] {
+a[href="/spikehmph"],a[href|="/spikeurgh"] {
 background-position: 0px 0px;
 Display: block;
 Clear: none;
@@ -86,3 +86,20 @@ a[href="/sp"] {
     display:inline-block;
     padding-right:100%
 }
+
+/*Title flair*/
+.linkflair-important .linkflairlabel {display:none;}
+.linkflair-important p.title a.title {opacity:0;}
+.linkflair-important p.title a.title:hover {opacity:100;}
+.linkflair-important p.title:before
+{
+ content:"THIS IS SOMEHOW IMPORTANT";
+ font-size:12px;
+ color:#888;
+ border:1px solid #888;
+ border-radius:3px;
+ position:relative;
+ padding:0px 2px;
+ margin-right:2px;
+ top:-1px;
+

@@ -1378,4 +1378,24 @@ Height: 100px;
 
 /* Tavimotes End */
 
+/* Other Emotes */
+
+a[href|="/flutterface"], a[href|="/thatirishfella"]
+{display:block;clear:none;float:left;background-image:url(%%Other%%)}
+
+a[href="/flutterface"] {
+background-position: -0px -0px;
+Width: 150px;
+Height: 150px;
+}
+
+a[href="/thatirishfella"] {
+background-position: -150px -0px;
+Width: 150px;
+Height: 181px;
+}
+
+
+/* Other Emotes End */
+
 /* ==Boxed reddit CSS Theme v1.1.3 - (http://www.reddit.com/r/boxed/)== */

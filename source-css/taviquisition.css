@@ -507,44 +507,61 @@ a[href|="/sombravia"] {
     background-image:url(%%sombravia%%);
 }
 
-/*
-
-a[href|="/raritavi"] {  
+a[href|="/hoofsies"] {  
  display: block;
  clear: none;
  float: left; 
- width: 156px;
- height: 150px;
- background-image: url(%%raritavi%%);
+ width: 259px;
+ height: 200px;
+ background-image: url(%%spritesheet3%%);
+ background-position: -156px -750px;
 } 
 
-a[href|="/lyracantmusic"] {  
+a[href|="/hoofsies"]:hover {  
+ background-position: -156px -950px;
+}
+
+a[href|="/angrytavi"] {  
  display: block;
  clear: none;
  float: left; 
- width: 164px;
+ width: 231px;
  height: 150px;
- background-image: url(%%lyracantmusic%%);
+ background-image: url(%%angrytavi%%);
 } 
 
-a[href|="/octadash"] {  
+a[href|="/blushingtavi"] {  
  display: block;
  clear: none;
  float: left; 
- width: 194px;
+ width: 120px;
  height: 150px;
- background-image: url(%%octydash%%);
+ background-image: url(%%blushingtavi%%);
 } 
 
-a[href|="/drunktavia"] {  
+a[href|="/tavicheer"] {  
  display: block;
  clear: none;
  float: left; 
- width: 150px;
+ width: 186px;
  height: 150px;
- background-image: url(%%drunktavia%%);
+ background-image: url(%%tavicheer%%);
 } 
 
+a[href|="/crazytavi"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 124px;
+ height: 150px;
+ background-image: url(%%crazytavi%%);
+} 
 
-
-*/
+a[href|="/vinylimgoingtokillyou"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 161px;
+ height: 150px;
+ background-image: url(%%vinylimgoingtokillyou%%);
+} 
