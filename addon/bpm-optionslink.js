@@ -13,7 +13,7 @@ function setup_options_link(store) {
                 "__betterponymotes_target": "__bpm_options_page",
                 "__betterponymotes_method": "__bpm_prefs",
                 "__betterponymotes_prefs": store.prefs
-            }, EXT_RESOURCE_PREFIX);
+            }, US_RESOURCE_PREFIX);
             return true;
         } else {
             return false;
@@ -42,7 +42,7 @@ function setup_options_link(store) {
         var message = event.data;
         // Verify source and intended target (we receive our own messages,
         // and don't want to get anything from rogue frames).
-        if(event.origin !== EXT_RESOURCE_PREFIX || event.source !== window ||
+        if(event.origin !== US_RESOURCE_PREFIX || event.source !== window ||
            message.__betterponymotes_target !== "__bpm_extension") {
             return;
         }

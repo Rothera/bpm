@@ -1,4 +1,14 @@
 /*
+ * Inspects the environment for global variables.
+ *
+ * On some platforms- particularly some userscript engines- the global this
+ * object !== window, and the two may have significantly different properties.
+ */
+function find_global(name) {
+    return _global_this[name] || window[name] || undefined;
+}
+
+/*
  * Log functions. You should use these in preference to console.log(), which
  * isn't always available.
  */

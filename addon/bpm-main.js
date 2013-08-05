@@ -111,7 +111,7 @@ function init_css(store) {
 function main() {
     log_info("Starting up");
     setup_browser({"prefs": 1, "customcss": 1}, function(store) {
-        if(document.location.href === EXT_OPTIONS_PAGE) {
+        if(document.location.href === US_OPTIONS_PAGE) {
             setup_options_link(store);
         } else if(ends_with(document.location.hostname, "reddit.com")) {
             reddit_main(store);

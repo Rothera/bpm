@@ -275,13 +275,13 @@ case "userscript":
     };
 
     make_css_link = function(filename, callback) {
-        var url = EXT_RESOURCE_PREFIX + filename + "?p=2&dver=/*{{data_version}}*/";
+        var url = US_RESOURCE_PREFIX + filename + "?p=2&dver=/*{{data_version}}*/";
         var tag = stylesheet_link(url);
         callback(tag);
     };
 
     linkify_options = function(element) {
-        element.href = EXT_OPTIONS_PAGE;
+        element.href = US_OPTIONS_PAGE;
         element.target = "_blank";
     };
     break;
