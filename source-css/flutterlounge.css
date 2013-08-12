@@ -653,6 +653,17 @@ background-position: -210px -0px;
 width: 340px;
 }
 
+a[href|="/pretzelnom"] {
+
+background-position: -550px -0px;
+display: block;
+clear: none;
+float: left;
+height: 150px;
+width: 139px;
+background-image: url(%%pretzelsheet%%) !important
+}
+
 /* Space thingy */
 a[href|="/sp"] {
     display: inline-block;

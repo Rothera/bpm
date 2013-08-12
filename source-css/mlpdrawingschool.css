@@ -67,7 +67,13 @@ h6 {
     padding-top: 7px;
     z-index: 1;
    }
- 
+
+.thumbnail.nsfw {
+height: 70px;
+background-image:url(%%nsfw%%) ;
+background-position: 0px 0px;
+background-repeat: no-repeat;
+} 
 /*Changes reddit name to image. */
 .redditname a{
 background:url(%%logo%%) no-repeat;

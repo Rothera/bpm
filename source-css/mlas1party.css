@@ -8,9 +8,10 @@ body, body.res-nightmode:first-of-type {
 /* list fix */ .side .md ul{margin:2px 0 2px 1em;list-style:none}
 
 /* Nightmode fixes for the background */
-.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;} 
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
-body.res-nightmode:first-of-type {background-color: transparent!important;}
+.res-nightmode body{background-color: #222222!important;}
+
 
 a.author[href$="waffen337"] {
     font-size: 0px !important;

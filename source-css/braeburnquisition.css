@@ -601,6 +601,26 @@ a[href|="/twixiegenie"] {
     background-image:url(%%spritesheet2%%)
 }
 
+a[href|="/twixiehug"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 195px;
+    height: 172px;
+    background-position: 0px  -1761px; 
+    background-image:url(%%spritesheet2%%)
+}
+
+a[href|="/alicorns"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 177px;
+    height: 229px;
+    background-position: 0px  -1933px; 
+    background-image:url(%%spritesheet2%%)
+}
+
 a[href|="/angrybelle"] {
     display: block;
     clear: none;
@@ -963,6 +983,35 @@ a[href|="/socklyra"] {
     background-image:url(%%spritesheet5%%)
 }
 
+a[href|="/crystalsunset"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 166px;
+ height: 189px;
+ background-image: url(%%spritesheet1%%);
+ background-position: -0px -1733px;
+}
+ 
+a[href|="/shimmerworry"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 166px;
+ height: 223px;
+ background-image: url(%%spritesheet1%%);
+ background-position: -0px -1924px;
+} 
+
+a[href|="/gimmeback"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 220px;
+ height: 120px;
+ background-image: url(%%spritesheet6%%);
+ background-position: 0px 0px;
+} 
 div.titlebox span.word {display:none; }
 div.titlebox span.number:after {content:" Sexy Beasts";}
 

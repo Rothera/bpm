@@ -1,6 +1,6 @@
 /*------------------------  Changes background -------------------------------*/
 
-body:first-of-type, body.res-nightmode:first-of-type,.side,.flairtoggle,.submit .spacer,.create .spacer,.icon-menu a,.nub { background-color: transparent !important; }
+body:first-of-type, .side,.flairtoggle,.submit .spacer,.create .spacer,.icon-menu a,.nub { background-color: transparent !important; }
 .side a[href="/bg-pony"] { 
     position: fixed;
     z-index:-1;
@@ -47,10 +47,10 @@ body:first-of-type, body.res-nightmode:first-of-type,.side,.flairtoggle,.submit 
 .side .usertext[id$="8"] a[href="/bg-pony"] { background:url(%%bg2%%); width:406px; height:500px; background-position: -422px -2px !important;}
 .side .usertext[id$="9"] a[href="/bg-pony"] { background:url(%%bg%%); width:576px; height:600px; background-position: -615px -739px !important;}
 
-/*---------------------- Nightmode fixes for the background -------------------------------- */
-.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
+/*--------------- Nightmode fixes for the background -----------------------*/
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;} 
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
-body.res-nightmode:first-of-type {background-color: transparent!important;}
+.res-nightmode body{background-color: #222222!important;}
 .res-nightmode .tabmenu li.selected a {background-color: #222 !important;}
 .res-nightmode #header-bottom-left .tabmenu .selected a {border-bottom: 1px solid #222 !important;}
 .res-nightmode .tabmenu li a {border-bottom: 1px solid black !important;}

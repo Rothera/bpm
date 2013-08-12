@@ -1,26 +1,6 @@
-/*
-~ Background ~
-            */
-body:first-of-type,
-body.res-nightmode:first-of-type{
-  background:url(%%pincybg%%) no-repeat fixed 74% 100%!important;}
+.md>hr{height:1px;border:none;background:rgb(128,128,128);margin-bottom:5px;}
 
-/* Nightmode fixes for the background */
-.content #siteTable div[onclick="click_thing(this)"]{
-  background-color:transparent!important;}
-body.res-nightmode:first-of-type>.content{
-  background-color:transparent!important;}
-body.res-nightmode:first-of-type{
-  background-color:transparent!important;}
-.md>hr{/*?*/
-  height:1px;
-  border:none;
-  background:rgb(128,128,128);
-  margin-bottom:5px;}
-
-/*     
-~ Emotes ~
-        */
+/* Emotes */
 a[href|='/onepinchy'],
 a[href|='/rubyblush'],
 a[href|='/rubyhappy'],
@@ -28,7 +8,8 @@ a[href|='/rubyhugs'],
 a[href|='/rubyplay'],
 a[href|='/rubysad'],
 a[href|='/rubysoawesome'],
-a[href|='/rubysoon'],a[href|='/rubystare']{
+a[href|='/rubysoon'],
+a[href|='/rubystare']{
   display: block;
   clear: none;
   float: left;
@@ -43,17 +24,22 @@ a[href|='/rubysoawesome']{width: 87px; height: 99px; background-position:   -2px
 a[href|='/rubysoon'],
 a[href|='/rubystare']    {width: 89px; height: 90px; background-position:  -91px -323px}
 
-a[href|='/rubytrot']{
-  display: block;
-  clear: none;
-  float: left;
-  background-image: url(%%trot%%);
-  width: 50px; height: 50px}
+a[href|="/letssetfires"],
+a[href|="/pinchywat"],
+a[href|="/rubywatstare"],
+a[href|="/rubywatstare2"],
+a[href|="/rubyyay"]{
+  display:block;
+  clear:none;
+  float:left;
+  background-image:url(%%eee%%)}
+a[href|="/letssetfires"]{width:188px;height:210px;background-position:-293px -210px}
+a[href|="/pinchywat"]{width:254px;height:208px;background-position:-293px -1px}
+a[href|="/rubywatstare"]{width:171px;height:199px;background-position:-548px -201px}
+a[href|="/rubywatstare2"]{width:171px;height:199px;background-position:-548px -1px}
+a[href|="/rubyyay"]{width:291px;height:348px;background-position:-1px -1px}
 
-
-a[href|='/pinchytrot']{
-  display: block;
-  clear: none;
-  float: left;
-  background-image: url(%%rubytrot%%);
-  width: 88px; height:82px}
+/* Animotes */
+a[href|='/rubytrot']{display:block;clear:none;float:left;background-image:url(%%trot%%);width:50px; height:50px}
+a[href|='/pinchytrot']{display:block;clear:none;float:left;background-image:url(%%rubytrot%%);width:88px;height:82px}
+a[href|='/rubythink']{display:block;clear:none;float:left;background-image:url(%%rubythrawb%%);width:100px;height:94px}

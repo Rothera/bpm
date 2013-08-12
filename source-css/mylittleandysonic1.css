@@ -2,12 +2,12 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%animebackground1%%)  no-repeat  fixed 60% 100% !important;
+    background:  url(%%backgroundground%%)  no-repeat  fixed 66% 100% !important;
 }
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%animebanner1a%%)!important;
+   background: url(%%kittybanner2%%)!important;
    background-repeat: no-repeat!important;
    background-position: 50% 100%!important;
    height: 237px; /* 237 for meat's nice banner and general banner size */
@@ -23,7 +23,6 @@ body:first-of-type, body.res-nightmode:first-of-type {
 #header, #header.res-nightmode{
     height:256px;
     border-bottom: 1px solid #000000;
-    /*background-color: transparent!important;*/
     background-color: #e0d3c1!important;
 }
 
@@ -61,16 +60,16 @@ body:first-of-type, body.res-nightmode:first-of-type {
 
 /* Nightmode fixes for the background and other stuff */
 .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
-body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
-body.res-nightmode:first-of-type {background-color: transparent!important;}
+body.res-nightmode:first-of-type > .content {background-color: #222!important;}
+body.res-nightmode:first-of-type {background-color: #222!important;}
 span[class="hover pagename redditname"] a:first-of-type { font-size: 1.6em !important; text-shadow: 0px 0px 6px #000; color: white; }
 
-body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .side .spacer h1, body.res-nightmode .NERPageMarker, body.res-nightmode .side .spacer {background-color: transparent!important;}
+body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .side .spacer h1, body.res-nightmode .NERPageMarker, body.res-nightmode .side .spacer {background-color: #222!important;}
 
 /* Makes the sidebar transparent */
 .side {background-color: transparent !important }
-.side.res-nightmode:first-of-type > .content {background-color: transparent!important;}
-.side.res-nightmode:first-of-type {background-color: transparent!important}
+.side.res-nightmode:first-of-type > .content {background-color: #222!important;}
+.side.res-nightmode:first-of-type {background-color: #222!important}
 
 /*Announcement Box */
 .side ol:nth-of-type(1) {
@@ -458,10 +457,14 @@ background-repeat: no-repeat;
 .flair-stickybun:after { background-position: 0px -5280px }
 .flair-mansister:after { background-position: 0px -5310px }
 .flair-beautifulpony:after { background-position: 0px -5340px }
+.flair-astronnilath:after { background-position: 0px -5370px }
+.flair-jeep8790:after { background-position: 0px -5400px }
+.flair-rapidfire:after { background-position: 0px -5430px }
+.flair-djturt:after { background-position: 0px -5460px }
 
 
 /* Nightmode fix for flair */
-body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
+body.res-nightmode:first-of-type .flair { background-color: #222!important; }
 
 /*===Begin generated CSS===*/
 a[href|='/flutterumm'], a[href|='/flutterwhat'], a[href|='/sackflip'], a[href|='/sackfun'], a[href|='/shitemote'] {
@@ -1241,7 +1244,7 @@ a.author[href$=Generic_Builder]:before { content:"Genewic Bwuilda" }
 a.author[href$=volcano_bakemeats]:before { content:"Madam Le Bake" }
 a.author[href$=DaylightDarkle]:before { content:"Twilight Sparkle" }
 a.author[href$=Chillusion]:before { content:"Cchhiilllluussiioonn" }
-a.author[href$=Esplin]:before {content:"something witty"}
+a.author[href$=Esplin]:before {content:"IGNORE ME"}
 a.author[href$=Jeroknite]:before {content:"JokerTine"; font-size:15px !important}
 a.author[href$=DarqWolff]:before { content:"[](/DarqWolff)" }
 a.author[href$=cheesemoo]:before { content:"Cheesemeow" }
@@ -1386,7 +1389,7 @@ a.author[href$=lord-hemingway]:after { content:" (Clopper 44)" }
 a.author[href$=Generic_Builder]:after { content:" IS SO KAWAII!" }
 a.author[href$=volcano_bakemeats]:after { content:" (Flour Sack Monster)" }
 a.author[href$=Chillusion]:after { content:" (Because I can.)" }
-a.author[href$=Esplin]:after { content:" (aaaaaaa)" }
+a.author[href$=Esplin]:after { content:" (why am I still here)" }
 a.author[href$=waffen337]:after { content:"(Fucking ass ball bajongler)" }
 a.author[href$=sirtophat]:after { content:" (flaming homosexual)"; color:purple }
 a.author[href$=cheesemoo]:after { content:" (Continually fucks with the CSS)" }

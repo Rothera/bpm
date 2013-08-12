@@ -1,3 +1,5 @@
+
+
 /* EvilHom3r did shit here */
 
 /* Change color of selected/linked comment */
@@ -59,15 +61,7 @@ margin-top: -14px;
 /*Background color and image ----Nightmode fixes for the background --- /r/mlas-----*/
 
 body, body.res-nightmode:first-of-type{ background: #000000 url(%%zalpink%%) no-repeat fixed 59% 100% !important }
-.content #siteTable div[onclick="click_thing(this)"] {
-    background-color: transparent !important
-    }
-body.res-nightmode:first-of-type > .content {
-    background-color: transparent !important
-    }
-body.res-nightmode:first-of-type {
-    background-color: transparent !important
-    }
+
 
 /*header links*/
 a {
@@ -902,3 +896,9 @@ background-image: url(%%jukebox%%)
 }
 
 END-PONYSCRIPT-IGNORE{color:red}
+
+
+/* Nightmode fixes for the background */
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;} 
+body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
+.res-nightmode body{background-color: #222222!important;}

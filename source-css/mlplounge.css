@@ -173,7 +173,7 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  text-align:center;
  width:100%;
 /*Current footer by /u/9ninenein*/
- background-image:url(%%sbstare-tunnel%%);
+ background-image:url(%%sbstare-abyss%%);
  background-repeat:no-repeat;
  margin-bottom:-30px;
  background-position: 50% 100%;
@@ -208,9 +208,7 @@ h3.imgTitle{
  right:-3px;
  z-index:999
 }
-body{background:url(%%scoots-bg%%) no-repeat fixed center center!important}
-.res-nightmode .content{background-color:transparent !important}
-.res-nightmode{background-color:transparent !important}
+body{background:url(%%scoots-bg%%) no-repeat fixed center center}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
 .content .md h1:before{content:">"}
 /*New post spam filtered warning*/
@@ -891,3 +889,6 @@ body:lang(np):not(.subscriber) .usertext-edit,body:lang(np):not(.subscriber) .si
 #header span.pagename.redditname {position:relative;z-index:10;}
 
 .side a[href="http://redd.it/1bkvw7"]{ display: block; height: 78px; width: 300px; background: url(%%sbstare-banner%%); position: absolute; top: 20px; left: 400px; z-index: 999; margin: 20px 0 0 0; overflow: hidden; border-radius:10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; }
+
+.RESDialogSmall.livePreview > h3 {color: black;font-size: 14px;margin-top: 6px;margin-bottom: 10px;font-weight: normal;}
+.res-nightmode .RESDialogSmall h3 {color: #ccc}

@@ -163,6 +163,10 @@ no-repeat fixed right bottom
 .side.res-nightmode:first-of-type > .content {background-color: transparent!important;}
 .side.res-nightmode:first-of-type {background-color: transparent!important;}
 
+/* Nightmode fixes for the background */
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;} 
+body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
+.res-nightmode body{background-color: #222222!important;}
 
 /*Stealing the main sub's stuff. */
 /*Self-Post Image, No Image, Spoiler Image*/
