@@ -35,7 +35,7 @@ var emote_map, sr_name2id, sr_id2name, tag_name2id, tag_id2name, manage_prefs; /
 (function(_global_this) {
 "use strict";
 
-function _checkpoint = (function() {
+var _checkpoint = (function() {
     var _start_time = Date.now(); // Grab this value before we do ANYTHING else
     var _last_time = _start_time;
     var _last_checkpoint = "head";
