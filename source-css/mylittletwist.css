@@ -214,6 +214,21 @@ a.author[href$="ChromeCrash"]:after {
     content: "Friend of Twist ";
     }
 
+a.author[href$="/Twilight_Sparkles"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/Twilight_Sparkles"]:after {
+    content: "EVIL GYPSY";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
+    }
+
 
 /***background (and side bar colouring) ***/
 

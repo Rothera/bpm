@@ -1208,6 +1208,10 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
     letter-spacing: normal
 }
 
+.markdownEditor {
+white-space: normal !important;
+}
+
 .sidecontentbox a.author[href$="/jettj12"]:after {
     content: "Dr. Doctor";
     font-size: 13px !important;

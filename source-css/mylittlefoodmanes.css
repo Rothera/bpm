@@ -13,6 +13,20 @@ lolyeah organization in foodmanes okay
 
  */
 
+body.res-nightmode .titlebox a[href="/r/shutupnobodylikesyou"] 
+ {
+    background-color: #FFFFFF;
+    background-image: url(%%nightmodefix%%);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 500;
+}
+
 .res-nightmode .link {
 	background-color: transparent;
 }
@@ -617,6 +631,21 @@ a.author[href$="StabbyTheLlama"]:after {
     visibility: visible !important;
     display: block;
     letter-spacing: normal
+    }
+
+a.author[href$="/Twilight_Sparkles"] {
+    display: inline-block;
+    font-size: 0 !important;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+a.author[href$="/Twilight_Sparkles"]:after {
+    content: "EVIL GYPSY";
+    display: block;
+    font-size: 10px !important;
+    letter-spacing: normal;
+    visibility: visible !important
     }
 
 /* text effects- for fucks sake, why is this not here already? */
