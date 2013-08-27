@@ -1,71 +1,49 @@
-/*_______________________________________________¦¦¦¦¦¦¦¦_ 
-____________________________________________¦¦¦¦¦¦¦¦¦¦¦¦¦_ 
-___________________________________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦_ 
-_________________________________¦¦¦¦¦__¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-__________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-______________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-___________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-_________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-_______¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-______¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¯¯¯¯¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦___¦?
-??¦¦¦¦¦¦_ 
-_____¦¦¦¦¦¦¦¦¦¦¦¦¯¯___________¯¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦??
-?¦¦¦¦¦_ 
-____¦¦¦¦¦¦¦¦¦¦¦¯_______________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦??
-?¦¦¦¦¦¦ 
-____¦¦¦¦¦¦¦¦¦¦_____________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦?
-??¦¦¦¦¦¦¦¦ 
-_____¦¦¦¦¦¦¦¦____________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦?
-??¦¦¦¦¦¦¦¦¦ 
-__¦¦_¦¦¦¦¦¦¦___________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦?
-??¦¦¦¦¦¦¦¦¦¦¦ 
-_¦¦¦_¦¦¦¦¦¦__________¦__¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦
-¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-¦¦¦¦¦¦¦¦¦¦_________¦¦¦¦¦¦¦¦¦¦¦¦¦¦_¦¦¦¦¦_¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦
-¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-¦¦¦¦¦¦¦¦¦________¯_¦¦¦¦¦¦¦¦¦¦¦_¦¯¦¦¦¦¦¦¯¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦?
-??¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-_¦¦¦¦¦¦¦________¯¯_¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦
-¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-___¯¯¯¯__________¯_¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦??
-?¦¦¦¦¦¦¦¦¦¦¦ 
-__________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦___?¦¦¦¦¦¦¦¦¦¦¦¦¦
-¦¦¦¦¦¦¦¦¦ 
-_________________¦¦¦¯¦¦¦¦¦¦¦¦¦¦¯¦¦¦¦¦¦¦¦¦¦¦¦¦¯__?¦¦¦¦¦¦¦¦¦¦¦¦?
-??¦¦¦¦¦¦¦¦ 
-__________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¯__¦¦¦¦¦¦¦¦¦¦¦¦¦¦
-¦¦¦¦¦¦¦ 
-___________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦??
-?¦¦¦¦¦ 
-____________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦?
-??¦¦¦ 
-_______________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦?
-??¦¦ 
-_______________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦?
-??¦¦¦ 
-_______________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦?
-??¦¦¦¦ 
-_______________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦?
-??¦¦¦¦¦ 
-_____________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦
-¦¦¦¦¦¦ 
-______________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦??
-?¦¦¦¦¦ 
-_____________________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦?
-??¦ 
-___________________________________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-__________________________________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-_________________________________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-_________________________________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-__________________________________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-___________________________________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-____________________________________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-__________________________________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-_________________________________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-________________________________________¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦ 
-_________________________________________¦¦¦¦¦¦¦¦¯¯¯¯¯¯¯ 
-___________________________________________¦¦¦¦¦¦¦¦¦__ 
-______________________________________________¯¯¯¯¯
+/*
+  ______________________________________▄▄████████▄
+______________________________________▄█▓▓▓█▓▓▓▓▓▓██▄
+_____________________________________█▓▓▓▓▓██▓▓▓▓▓▓▓█▄
+___________________________▄█████▄__█▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓█
+________________▄▄██████████▓▓▓▓▓▓▓██▓▓▓▓▓▓▓█▓▓▓▓▓▓▓██
+_____________▄█▓▓▓▓▓▓▓▓▓▓█▓██▓▓▓▓▓▓▓█▓▓▓▓▓█▓▓▓▓▓▓▓█▓█
+__________▄█▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓█▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓█▓▓█
+________▄█▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓██▓▓█
+_______█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓███▓▓▓▓█
+______█▓▓▓▓▓▓▓▓▓▓▓▓███▀▀▀▀██▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓█▓▓▓▓█___▄█████████▄
+_____█▓▓▓▓▓▓▓▓▓▓█▀▀___________▀█▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓█▓▓▓███▓▓▓▓▓▓▓▓▓▓█▄
+____█▓▓▓▓▓▓▓▓▓█▀_______________▓▓█▓▓▓▓███████▓███▓▓▓▓▓▓▓░░░▓▓▓▓▓▓▓▓▓█
+____█▓▓▓▓▓▓▓▓█_____________▓▓▓░░░█▓██░░░░░░░███▓▓▓▓▓▓░░░░░░▓▓▓▓▓▓▓▓▓▓█
+_____█▓▓▓▓▓▓█____________▓▓░░░░░░██░░░░░░░░░░░░███▓░░░░░░░░░▓▓▓▓▓▓▓▓▓▓█
+__█▌_█▓▓▓▓▓█___________▓░░░░░░░░░░░░░░░░░░░░░░░░▓░░░░░░░▓░░▓▓▓▓▓▓▓▓▓▓▓█
+_█▓█_█▓▓▓▓█__________▓▄▄░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓░░░▓▓▓▓▓▓▓▓▓▓▓█
+█▓▓▓██▓▓▓█_________▓█░░▐░░░░░░░░░▄█████▄░░░░░░░░░░░░░▓░░░░▓▓▓▓▓▓▓▓▓▓▓█
+█▓▓▓▓▓▓▓█________▀▄█░░░▐░░░░░░▄█▀░░░░░░▀█░░░░░░░░░░░▓░░░░▓▓▓▓█▓▓▓▓████
+_██▓▓▓██________▀▀▄▌░░░▐░░░░░░█░░░░░░░░░░█░░░░░░░░░▓░░░░░▓▓▓▓█▓███▓▓▓█
+___▀▀▀▀__________▀▄█░░░░▐░░░░░█░░░░░░░░░░░▐▌░░░░░░░▓░░░░░▓▓▓▓█▓▓▓▓▓▓▓█
+__________________▓░░▓▓▓▓░░░░░░█░░░░░░░░░░░░▐▄▄▄▅░░░░░░░░░▓████▓▓▓▓▓▓▓█
+_________________▓░░▀░░░░░░░░░░▀░░░░░░░░░░░░▐▀▄▄▅░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓█
+__________________▓░░░░░░░░░░░░░░░░░░░░░░░░░░▀▄▄░░░░░░░░█▓▓▓▓▓▓▓▓▓▓▓█
+___________________▓░░░░░▓▓▓░░░░░░░░░░░░░░░░░░░░░███████▓▓▓▓▓▓▓▓▓▓▓█
+____________________▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██
+_______________________▓▓▓▓▓░░░░░░░░░░░░░░░░░░█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████
+_____________IWTCIRD___▓▓▓▓▓░░░░░░░░░░░░░░░░░█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓█
+_______________________▓▓▓▓▓░░░░░░░░░░░░░░░░░█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓█
+_______________________▓▒▒▓░░░░░░░░░░░░░░░░░░░█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓█
+_____________________▓▓▒▓░░░░░░░░░░░░░░░░░░░████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓█
+______________________▓▓▓▓▓░░░░░░░░░░░░░░███▓▓▓▓█▓▓▓██▓▓▓▓██▓▓▓▓▓█▓▓▓█
+_____________________________▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓█▓▓█▓▓▓▓█▓█████▓▓▓▓█
+___________________________________________█▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓█▓▓▓▓▓▓▓▓▓▓█
+__________________________________________█▓▓▓▓▓▓▓▓████▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓█
+_________________________________________█▓▓▓▓▓▓▓▓▓▓█▓▓██████▓▓▓▓▓▓▓▓▓█
+_________________________________________█▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓███
+__________________________________________█▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓███████
+___________________________________________█▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓█
+____________________________________________█▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓█
+__________________________________________███████████▓▓▓▓▓▓▓▓█
+_________________________________________█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█
+________________________________________█▓▓▓▓▓██▓▓▓▓▓▓▓▓██
+_________________________________________█▓▓▓▓▓▓█▀▀▀▀▀▀▀
+___________________________________________██▓▓▓▓███▄▄
+______________________________________________▀▀▀
 */
 /* 
 |
@@ -80,47 +58,39 @@ ______________________________________________¯¯¯¯¯
 
 /* Super awesome navigation menu thingy adapted from /r/android by Star */
 
-#header-bottom-left .tabmenu { position: absolute;
-    bottom: 21px;
-    left: 200px;
+#header{
+    background: url(%%headerbg%%);
+    height: 120px;
 }
 
-.formtabs-content {
-    margin-top: 20px;
+#header-bottom-left .tabmenu {
+    position: absolute;
+    margin-top: 62px;
+    margin-left: -500px;
 }
 
-.tabmenu li  { margin: 0px 1px 0px 0px; }
+span.pagename{
+    display: inline-block;
+    height: 30px;
+    width: 522px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    background-image: url(%%name%%);
+    background-position: 0px 0px;
+    font-size: 0px;
+}
 
-.tabmenu li a, .tabmenu li.selected a { border: 0;
-background: transparent none no-repeat scroll bottom left;
-background-image: none;
-background-position: bottom center;
-text-transform: uppercase;
-padding: 10px 12px 21px 12px !important;
-color: #000;
-box-shadow: 3px 3px 5px #777; }
+span.pagename:hover{
+    background-position: 0px -30px;
+}
 
-.tabmenu li:first-child.selected a { background-image: url(%%selected%%); background-repeat: no-repeat; background-color: #ededed; }
-
-.tabmenu li:first-child a { background: #ededed no-repeat bottom center;
-background-image: none; }
-
-.tabmenu li.selected a { background-image: url(%%selected%%); }
-
-.tabmenu li a:hover, .tabmenu li.selected a:hover {color:#1F96CA;}
-
-.res-nightmode #header #header-bottom-left .tabmenu .selected a {padding: 10px 12px 21px !important; background-image: url(%%unselected%%) !important;}
-
-.res-nightmode .tabmenu li a {background-color:transparent!important;}
-
-.tabmenu li a[href$="/ad/"] {
-	visibility: hidden;
-    }	
-	
-.tabmenu li a[href$="/ad/"]:after {
-    content: "new";
-	visibility: visible;
-    }
+span.pagename a{
+    display: block;
+    height: 30px;
+    width: 522px;
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
 
 /*Temporary CSS to make the sidebar picture (oh god please don't fuck up everything) remove this shit after a week or so......... HAHAHHAHA NO*/
 
@@ -141,7 +111,14 @@ div.side:before {
 
 /*------------------------  Changes background -------------------------------*/
 
-body:first-of-type, body.res-nightmode:first-of-type,.side,.flairtoggle,.submit .spacer,.create .spacer,.icon-menu a,.nub { background-color: white } 
+/******************************************************************************/
+/******************************************************************************/
+/******************************************************************************/
+body{
+    background: url(%%bodybg%%);
+}
+
+/* body:first-of-type, body.res-nightmode:first-of-type,.side,.flairtoggle,.submit .spacer,.create .spacer,.icon-menu a,.nub { background-color: white } 
 .side a[href="/bg-pony"] { 
     position: fixed;
     z-index:-1;
@@ -189,11 +166,12 @@ body:first-of-type, body.res-nightmode:first-of-type,.side,.flairtoggle,.submit 
 .side .usertext[id$="9"] a[href="/bg-pony"]  { background:url(%%unce%%); width:240px; height:180px; background-position: -0px -0px  !important}
 .side .usertext[id$="10"] a[href="/bg-pony"] { background:url(%%bg3%%);  width:400px; height:530px; background-position: 0px 0px !important;}
 
-/*---------------------- Nightmode fixes for the background -------------------------------- */
+---------------------- Nightmode fixes for the background -------------------------------- 
 .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
 body.res-nightmode:first-of-type {background-color: transparent!important;}
 
+*/
 
 /* http://pastebin.com/wKXNqF9j  http://imgur.com/a/XJxbi#0 <- old emote stuffs */
 
@@ -246,7 +224,7 @@ h4{
     }
 
 
-/* i: HEADER */
+/* i: HEADER 
 #header {
     background-image: url(%%banner3%%);
     background-repeat: no-repeat;
@@ -262,6 +240,8 @@ h4{
     border-bottom: none;
     width: 100%;
     }
+
+*/
 
 /* ii: BOTTOM RIGHT */
 #header-bottom-right {
@@ -336,7 +316,7 @@ img#header-img{
 .titlebox .usertext-body .md h6 {
     display: block;
     position: absolute;
-    top: 160px;
+    top: 120px;
     left: 20px;
     
     content: "Info about the new flair system";
@@ -583,15 +563,16 @@ a.author[href$="/RetardVomitPussyCunt"]:after {
 
 .flair
 {
-display: inline-block;
+display:inline-block;
 border: 0;
 border-radius: 0;
 background: transparent;
 font-weight: 700;
 }
+
 .flair:before
 {
-background-image: url(%%vsflairsheet%%);
+background-image: url(%%flair%%);
 background-position: 0px 0px;
 content: "";
 display: inline-block;
@@ -599,33 +580,74 @@ width: 0px;
 height: 0px;
 background-repeat: no-repeat;
 }
-.flair-awesome:before {width:16px; height:16px; background-position: -0px -20px}
-.flair-brokenrecord:before {width:20px; height:22px; background-position: -0px -38px}
-.flair-derram:before {width:16px; height:16px; background-position: -0px -62px}
-.flair-djabe:before {width:16px; height:16px; background-position: -0px -80px}
-.flair-doll:before {width:16px; height:16px; background-position: -0px -98px}
-.flair-filly:before {width:16px; height:16px; background-position: -0px -116px}
-.flair-graffiti:before {width:16px; height:16px; background-position: -0px -134px}
-.flair-headphones:before {width:16px; height:16px; background-position: -0px -152px}
-.flair-huggingrecord:before {width:16px; height:16px; background-position: -0px -170px}
-.flair-huggingtail:before {width:16px; height:16px; background-position: -0px -188px}
-.flair-laying:before {width:16px; height:16px; background-position: -0px -206px}
-.flair-marine:before {width:16px; height:16px; background-position: -0px -224px}
-.flair-nerdy-flair:before {width:16px; height:16px; background-position: -0px -242px}
-.flair-parasprite-flair:before {width:16px; height:16px; background-position: -0px -260px}
-.flair-scratchie:before {width:16px; height:16px; background-position: -0px -278px}
-.flair-shrug:before {width:16px; height:16px; background-position: -0px -296px}
-.flair-socks:before {width:16px; height:16px; background-position: -0px -314px}
-.flair-sockssmile:before {width:16px; height:16px; background-position: -0px -332px}
-.flair-stare:before {width:16px; height:16px; background-position: -0px -350px}
-.flair-sweaterdirty:before {width:16px; height:16px; background-position: -0px -368px}
-.flair-tallvinyl:before {width:16px; height:16px; background-position: -0px -386px}
-.flair-taviscratch:before {width:16px; height:16px; background-position: -0px -404px}
-.flair-twp:before {width:16px; height:16px; background-position: -0px -422px}
-.flair-vinyl:before {width:16px; height:16px; background-position: -0px -440px}
-.flair-watch:before {width:16px; height:16px; background-position: -0px -458px}
-.flair-wut:before {width:16px; height:16px; background-position: -0px -476px}
-.flair-gold:before {width:16px; height:16px; background-position: -0px -492px}
+/* Column 1 */
+.flair-pinka:before {width:35px; height:35px; background-position: -0px -0px}
+.flair-glasses:before {width:35px; height:35px; background-position: -0px -35px}
+.flair-dj:before {width:35px; height:35px; background-position: -0px -70px}
+.flair-milkshake:before {width:35px; height:35px; background-position: -0px -105px}
+.flair-wubs:before {width:35px; height:35px; background-position: -0px -140px}
+.flair-broken:before {width:35px; height:35px; background-position: -0px -175px}
+.flair-heh:before {width:35px; height:35px; background-position: -0px -210px}
+.flair-drawponies:before {width:35px; height:35px; background-position: -0px -245px}
+/* Column 2 */
+.flair-tavi:before {width:35px; height:35px; background-position: -35px -70px}
+.flair-yay:before {width:35px; height:35px; background-position: -35px -105px}
+.flair-usmc:before {width:35px; height:35px; background-position: -35px -140px}
+.flair-usaf:before {width:35px; height:35px; background-position: -35px -175px}
+.flair-filly:before {width:35px; height:35px; background-position: -35px -210px}
+.flair-wubseverywhere:before {width:35px; height:35px; background-position: -35px -245px}
+/* Column 3 */
+.flair-oav:before {width:35px; height:35px; background-position: -70px -70px}
+.flair-belle:before {width:35px; height:35px; background-position: -70px -105px}
+.flair-dammit:before {width:35px; height:35px; background-position: -70px -140px}
+.flair-rariscratch:before {width:35px; height:35px; background-position: -70px -175px}
+.flair-sweater:before {width:35px; height:35px; background-position: -70px -210px}
+.flair-wubwizard:before {width:35px; height:35px; background-position: -70px -245px}
+/* Column 4 */
+.flair-wat:before {width:35px; height:35px; background-position: -105px -70px}
+.flair-basscannon:before {width:35px; height:35px; background-position: -105px -105px}
+.flair-forgehe:before {width:35px; height:35px; background-position: -105px -140px}
+.flair-roid:before {width:35px; height:35px; background-position: -105px -175px}
+.flair-yamhamdan:before {width:35px; height:35px; background-position: -105px -210px} /* Yamhamdan custom */
+.flair-badboy7576:before {width:35px; height:35px; background-position: -105px -245px} /* Badboy7576 custom */
+/* Column 5 */
+.flair-blank:before {width:35px; height:35px; background-position: -140px -70px}
+.flair-blank:before {width:35px; height:35px; background-position: -140px -105px}
+.flair-blank:before {width:35px; height:35px; background-position: -140px -140px}
+.flair-blank:before {width:35px; height:35px; background-position: -140px -175px}
+.flair-blank:before {width:35px; height:35px; background-position: -140px -210px}
+.flair-blank:before {width:35px; height:35px; background-position: -140px -245px}
+.flair-blank:before {width:35px; height:35px; background-position: -140px -280px}
+.flair-blank:before {width:35px; height:35px; background-position: -140px -315px}
+/* Column 6 */
+.flair-blank:before {width:35px; height:35px; background-position: -175px -70px}
+.flair-blank:before {width:35px; height:35px; background-position: -175px -105px}
+.flair-blank:before {width:35px; height:35px; background-position: -175px -140px}
+.flair-blank:before {width:35px; height:35px; background-position: -175px -175px}
+.flair-blank:before {width:35px; height:35px; background-position: -175px -210px}
+.flair-blank:before {width:35px; height:35px; background-position: -175px -245px}
+.flair-blank:before {width:35px; height:35px; background-position: -175px -280px}
+.flair-blank:before {width:35px; height:35px; background-position: -175px -315px}
+/* Column 7 */
+.flair-blank:before {width:35px; height:35px; background-position: -210px -70px}
+.flair-blank:before {width:35px; height:35px; background-position: -210px -105px}
+.flair-blank:before {width:35px; height:35px; background-position: -210px -140px}
+.flair-blank:before {width:35px; height:35px; background-position: -210px -175px}
+.flair-blank:before {width:35px; height:35px; background-position: -210px -210px}
+.flair-blank:before {width:35px; height:35px; background-position: -210px -245px}
+.flair-blank:before {width:35px; height:35px; background-position: -210px -280px}
+.flair-blank:before {width:35px; height:35px; background-position: -210px -315px}
+/* Column 8 */
+.flair-blank:before {width:35px; height:35px; background-position: -245px -70px}
+.flair-blank:before {width:35px; height:35px; background-position: -245px -105px}
+.flair-blank:before {width:35px; height:35px; background-position: -245px -140px}
+.flair-blank:before {width:35px; height:35px; background-position: -245px -175px}
+.flair-blank:before {width:35px; height:35px; background-position: -245px -210px}
+.flair-blank:before {width:35px; height:35px; background-position: -245px -245px}
+.flair-blank:before {width:35px; height:35px; background-position: -245px -280px}
+.flair-blank:before {width:35px; height:35px; background-position: -245px -315px}
+
+
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: transparent!important; }
@@ -948,6 +970,13 @@ Fuck it.
 
 http://i.imgur.com/12XPI.png 
 [derram]
+
+version 2.1 - 8/20/13
+[Kixandra]
+         You guys update this shit rarely. Replaced flairs with larger more pretty ones. Changed
+sub header name font and added a header/body background. Removed nav bar since it looks awful
+(code for nav bar was commented out and cut to the test sub, if we plan on editing it to our liking
+later)
 */
 
 div.titlebox .subscribers span.number:after
@@ -999,7 +1028,7 @@ div.titlebox .users-online span.number:after
 /* Replacing somebody's name? Add it to the list here. */
 
 a.author[href$="derram_2"],
-a.author[href$=Chinch335],
+a.author[href$="Chinch335"],
 a.author[href$="mrjoker7854"],
 a.author[href$="120percentP0N3"],
 a.author[href$="simgaleed"],
@@ -1033,7 +1062,7 @@ content: "";
 /* Replacing somebody's name? Add it to the list here too. */
 
 a.author[href$="derram_2"]:before,
-a.author[href$=Chinch335]:before ,
+a.author[href$="Chinch335"]:before ,
 a.author[href$="mrjoker7854"]:before ,
 a.author[href$="120percentP0N3"]:before ,
 a.author[href$="simgaleed"]:before ,
@@ -1065,7 +1094,7 @@ visibility:visible!important;
 /* Replacing somebody's name? Put the replacement here. */
 
 a.author[href$="derram_2"]:before {content:"derramina Diane Pie"}
-a.author[href$=Chinch335]:before {content:"Chinchy"}
+a.author[href$="Chinch335"]:before {content:"Chinchy"}
 a.author[href$="mrjoker7854"]:before {content:"Ponky Pone"}
 a.author[href$="120percentP0N3"]:before {content:"120percentcooler"}
 a.author[href$="simgaleed"]:before {content:"DarkNote"}
@@ -1081,7 +1110,7 @@ a.author[href$="bryvood"]:before {content:"DJ Toaster Scratchaloo"}
 a.author[href$="otwem"]:before {content:"Otwem Scratch"}
 a.author[href$="Kireas"]:before {content:"Octavia"}
 a.author[href$="AlisterDX"]:before {content:"Homage"}
-a.author[href$="upvote_machine_1"]:before {content:"XDretsilA"}
+a.author[href$="upvote_machine_1"]:before {content:"Homage"}
 a.author[href$="Harakou"]:before {content:"Taco OIA"}
 a.author[href$="nightpony"]:before {content:"DJ NightPon3"}
 a.author[href$="007ghg7"]:before {content:"fukn"}
@@ -1098,6 +1127,7 @@ a.author[href$="JadeMeteor"]:before {content:"Octavia"}
 .author[href$="Harakou"] { color:brown !important }
 .author[href$="nightpony"] { color:#a100a1 !important }
 .author[href$="JadeMeteor"] { color:purple !important }
+.author[href$="upvote_machine_1"] { color:blue !important }
 
 .comments:nth-child(n + 1):before {
     content: "♪ ♫ ♩ ";

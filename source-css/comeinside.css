@@ -1,3 +1,5 @@
+/* .side { background-image: url(%%fireplace%%) ; background-repeat: no-repeat;} */
+
 /* Banner Image */
  #header #header-bottom-left {
     background: url(%%banner%%) no-repeat center bottom !important;
@@ -22,7 +24,8 @@
     color: #364657;
     left: 55px;
     position: absolute;
-    top: 80px}
+    top: 80px;
+    text-indent: -9999px}
 
 
 
@@ -131,7 +134,7 @@ a[href|='/usawut'] {width:135px; height:125px; background-position: -330px -2px}
 a[href|='/woonawolf'] {width:93px; height:100px; background-position: -81px -2px}
 a[href|='/horrify'] {width:151px; height:150px; background-position: -361px -439px}
 
-
+a[href='/sp'] {    display: inline-block;    padding-right: 100%}
 
 
 /* PROPER GREENTEXT */
@@ -155,7 +158,7 @@ div.titlebox span.number:after {
     }
 div.titlebox .users-online span.number:after
 {
-    content:" Lenny the Squeelers";
+    content:" Hova-priced bagels";
 }
 
 /* Hides downvote arrow -circle jerks ahoy!*/
@@ -323,6 +326,7 @@ background-repeat: no-repeat;
 .flair-spike:before { background-position: 0px -1360px}
 .flair-molestia:before { background-position: 0px -1400px}
 .flair-fluffy:before { background-position: 0px -1440px}
+.flair-Generic:before { background-position: 0px -1480px}
 /* For anyone with no flair, or flair disabled, this will give them missingno flair.
     Listed before the rest of the username shit so it will be overridden by manual flair additions. */
 :not(.flair) + a.author:before  {

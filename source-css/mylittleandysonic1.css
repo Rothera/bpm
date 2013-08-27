@@ -2,12 +2,12 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%animebackground5%%)  no-repeat  fixed 66% 100% !important;
+    background:  url(%%sanicbg%%)  no-repeat  fixed 66% 100% !important;
 }
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%kittybanner3%%)!important;
+   background: url(%%ponybanner1%%)!important;
    background-repeat: no-repeat!important;
    background-position: 50% 100%!important;
    height: 237px; /* 237 for meat's nice banner and general banner size */
@@ -72,53 +72,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .
 .side.res-nightmode:first-of-type {background-color: #222!important}
 
 /*Announcement Box */
-.side ol:nth-of-type(1) {
- position: absolute;
- display: block;
- top: 280px; left: 13px;
- padding: 2px 10px 2px 60px;  /* top right bottom left */
- /* background:url(%%%%) no-repeat scroll 5px 2px; */
- background-color: #FFFFFF; /* Change for different background color */
- border: 1px solid #000000; /* Change for different outline color */
- border-left: 8px solid #3b5998;
- text-align: center;
- font-size: 14px;
- z-index: 2147483647;
- list-style:none;
-}
-div.content {margin-top:130px;} /* pushes down everything under the announcer box */
-
-
-.content {
-    margin-top: 35px 
-    }
-.pagename {
-    font-size: 12pt
-    }
-.titlebox form {
-    position: static
-    }
-.titlebox .usertext-body .md ol {
-    width: auto;
-    border: 1px solid #5f99cf;
-    /* background:url(%%announcedance%%) no-repeat scroll 5px 1px #EFF7FF; */
-    font-size: 14px !important;
-    position: absolute;
-    top: 280px;
-    left: 50px;
-    z-index: 200;
-    margin: -0px 310px 0 0;
-    padding: 8px 1px 12px 2px;
-    list-style: none;
-    display: block;
-    white-space: normal;
-    overflow: hidden;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px
-    }
-.titlebox .usertext-body .md ol li {
-    margin: 3px
-    }
+/* saved to .txt offsite, can also be found stored in /r/twilightxtrixie CSS */
 
 
 /* Replace the nsfw image with screwball */
@@ -462,6 +416,9 @@ background-repeat: no-repeat;
 .flair-rapidfire:after { background-position: 0px -5430px }
 .flair-djturt:after { background-position: 0px -5460px }
 .flair-espieface:after { background-position: 0px -5490px }
+.flair-silverstar:after { background-position: 0px -5520px }
+.flair-nopaint:after { background-position: 0px -5550px }
+.flair-choaticgenes:after { background-position: 0px -5580px }
 
 
 /* Nightmode fix for flair */
@@ -911,7 +868,7 @@ a[href|="/tiadisapprove"] {width:118px; height:120px; background-position: -561p
 a[href|="/twisure"] {width:122px; height:150px; background-position: -681px -431px}
 a[href|="/twiwhat"] {width:162px; height:150px; background-position: -805px -431px}
 
-a[href|='/ajstahp'],a[href|='/lyrailikethis'],a[href|='/lyrastahp'], a[href|='/lyrastop'],a[href|='/lyraunimpressed'],a[href|='/ppstahp'],a[href|='/raristahp'],a[href|='/rariwhy'],a[href|='/rdattention'],a[href|='/restahp'],a[href|='/sbtear'],a[href|='/serioushat'],a[href|='/problemshy'],a[href|='/tavismirk'],a[href|='/artthoumad'],a[href|='/pillowdash'],a[href|='/takeaseat'],a[href|='/wonderfucks']{
+a[href|='/ajstahp'],a[href|='/lyrailikethis'],a[href|='/lyrastahp'], a[href|='/lyrastop'],a[href|='/lyraunimpressed'],a[href|='/ppstahp'],a[href|='/raristahp'],a[href|='/rariwhy'],a[href|='/rdattention'],a[href|='/restahp'],a[href|='/sbtear'],a[href|='/serioushat'],a[href|='/problemshy'],a[href|='/tavismirk'],a[href|='/artthoumad'],a[href|='/pillowdash'],a[href|='/takeaseat'],a[href|='/wonderfucks'],a[href|='/rariwant'],a[href|='/ppohmygosh'],a[href|='/rainbowpiesnuggles'],a[href|='/flutterfinejeez']{
 
     display: block;
     clear: none;
@@ -937,6 +894,10 @@ a[href|='/artthoumad'] {width:148px; height:135px; background-position: -314px -
 a[href|='/pillowdash'] {width:118px; height:130px; background-position: -0px -480px}
 a[href|='/takeaseat'] {width:135px; height:135px; background-position: -122px -523px}
 a[href|='/wonderfucks'] {width:198px; height:155px; background-position: -314px -459px}
+a[href|='/rariwant'] {width:150px; height:115px; background-position: -0px -650px}
+a[href|='/ppohmygosh'] {width:113px; height:115px; background-position: -150px -655px}
+a[href|='/rainbowpiesnuggles'] {width:150px; height:110px; background-position: -263px -615px}
+a[href|='/flutterfinejeez'] {width:130px; height:130px; background-position: -0px -768px}
 
 
 /* For anyone with no flair, or flair disabled, this will give them missingno flair.
@@ -1393,7 +1354,7 @@ a.author[href$=Chillusion]:after { content:" (Because I can.)" }
 a.author[href$=Esplin]:after { content:" (why am I still here)" }
 a.author[href$=waffen337]:after { content:"(Fucking ass ball bajongler)" }
 a.author[href$=sirtophat]:after { content:" (flaming homosexual)"; color:purple }
-a.author[href$=cheesemoo]:after { content:" (Continually fucks with the CSS)" }
+a.author[href$=cheesemoo]:after { content:" (Still exists, apparently)" }
 a.author[href$=TwilightSpackle]:after { content:" (loves huge d***)" }
 a.author[href$=koobaxion]:after { content:" i.imgur.com/VUNCC.jpg" }
 a.author[href$=InWarAndPieces]:after { content:" i.imgur.com/v4VVJ.gif" }

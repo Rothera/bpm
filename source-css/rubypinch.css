@@ -1,44 +1,25 @@
 .md>hr{height:1px;border:none;background:rgb(128,128,128);margin-bottom:5px;}
 
 /* Emotes */
-a[href|='/onepinchy'],
-a[href|='/rubyblush'],
-a[href|='/rubyhappy'],
-a[href|='/rubyhugs'],
-a[href|='/rubyplay'],
-a[href|='/rubysad'],
-a[href|='/rubysoawesome'],
-a[href|='/rubysoon'],
-a[href|='/rubystare']{
-  display: block;
-  clear: none;
-  float: left;
-  background-image: url(%%rubysheet%%)}
-a[href|='/onepinchy']    {width:109px; height:105px; background-position:   -2px   -2px}
-a[href|='/rubyblush']    {width: 75px; height:100px; background-position: -113px   -2px}
-a[href|='/rubyhappy']    {width: 91px; height: 80px; background-position:   -2px -109px}
-a[href|='/rubyhugs']     {width:101px; height:100px; background-position:  -95px -109px}
-a[href|='/rubyplay']     {width: 62px; height: 90px; background-position:   -2px -211px}
-a[href|='/rubysad']      {width:145px; height:110px; background-position:  -66px -211px}
-a[href|='/rubysoawesome']{width: 87px; height: 99px; background-position:   -2px -323px}
-a[href|='/rubysoon'],
-a[href|='/rubystare']    {width: 89px; height: 90px; background-position:  -91px -323px}
 
-a[href|="/letssetfires"],
-a[href|="/pinchywat"],
-a[href|="/rubywatstare"],
-a[href|="/rubywatstare2"],
-a[href|="/rubyyay"]{
-  display:block;
-  clear:none;
-  float:left;
-  background-image:url(%%eee%%)}
-a[href|="/letssetfires"]{width:188px;height:210px;background-position:-293px -210px}
-a[href|="/pinchywat"]{width:254px;height:208px;background-position:-293px -1px}
-a[href|="/rubywatstare"]{width:171px;height:199px;background-position:-548px -201px}
-a[href|="/rubywatstare2"]{width:171px;height:199px;background-position:-548px -1px}
-a[href|="/rubyyay"]{width:291px;height:348px;background-position:-1px -1px}
+a[href|="/fukuby"],a[href|="/letssetfires"],a[href|="/pinchywat"],a[href|="/onepinchy"],a[href|="/rubyblush"],a[href|="/rubyhappy"],a[href|="/rubyhugs"],a[href|="/rubyplay"],a[href|="/rubysad"],a[href|="/rubysoawesome"],a[href|="/rubysoon"],a[href|="/rubystare"],a[href|="/rubywatstare"],a[href|="/rubywatstare2"],a[href|="/rubyyay"]{display: block;clear: none;float: left;background-image: url(%%rubynewsheet%%)}
+a[href|="/fukuby"]{width:141px; height:150px; background-position: -0px -349px}
+a[href|="/letssetfires"]{width:188px; height:210px; background-position: -547px -0px}
+a[href|="/pinchywat"]{width:254px; height:208px; background-position: -292px -0px}
+a[href|="/onepinchy"]{width:108px; height:105px; background-position: -636px -211px}
+a[href|="/rubyblush"]{width:74px; height:99px; background-position: -468px -411px}
+a[href|="/rubyhappy"]{width:91px; height:80px; background-position: -288px -409px}
+a[href|="/rubyhugs"]{width:101px; height:97px; background-position: -636px -317px}
+a[href|="/rubyplay"]{width:62px; height:90px; background-position: -633px -415px}
+a[href|="/rubysad"]{width:145px; height:110px; background-position: -142px -349px}
+a[href|="/rubysoawesome"]{width:87px; height:99px; background-position: -380px -411px}
+a[href|="/rubysoon"],a[href|="/rubystare"]{width:89px; height:90px; background-position: -543px -411px}
+a[href|="/rubywatstare"]{width:171px; height:199px; background-position: -464px -211px}
+a[href|="/rubywatstare2"]{width:171px; height:199px; background-position: -292px -209px}
+a[href|="/rubyyay"]{width:291px; height:348px; background-position: -0px -0px}
 
+
+/* 420 420 420 420 420 420 420 420 420 420 420 420 420 420 420 420 420 420 420 */
 /* Animotes */
 a[href|='/rubytrot']{display:block;clear:none;float:left;background-image:url(%%trot%%);width:50px; height:50px}
 a[href|='/pinchytrot']{display:block;clear:none;float:left;background-image:url(%%rubytrot%%);width:88px;height:82px}

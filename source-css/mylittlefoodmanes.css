@@ -13,19 +13,6 @@ lolyeah organization in foodmanes okay
 
  */
 
-body.res-nightmode .titlebox a[href="/r/shutupnobodylikesyou"] 
- {
-    background-color: #FFFFFF;
-    background-image: url(%%nightmodefix%%);
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    z-index: 500;
-}
 
 .res-nightmode .link {
 	background-color: transparent;
@@ -418,7 +405,7 @@ a.author[href$="Generic_Builder"] {
     letter-spacing: -20px
     }
 a.author[href$=Generic_Builder]:before {
-    content: "http://www.f-list.net/c/genericbuilder";
+    content: "Mare S Ephemeral";
     font-size: 18px !important;
     visibility: visible !important;
     display: block;
@@ -669,16 +656,10 @@ body {
 *   
 ************************/
 
-/*** Nightmode fixes for the background ***/
-.content #siteTable div[onclick="click_thing(this)"] {
-    background-color: transparent !important
-    }
-body.res-nightmode:first-of-type > .content {
-    background-color: transparent !important
-    }
-body.res-nightmode:first-of-type {
-    background-color: transparent !important
-    }
+/* Nightmode fixes for the background */
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;} 
+body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
+.res-nightmode body{background-color: #222222!important;}
 
 /*** Adds a neat style for ####text in posts. (Shamelessly jacked from /r/mylittleandysonic1, I don;t think they'll mind though ***/
 .usertext-body h4 {
@@ -823,16 +804,7 @@ a[href|="/twiststare"]
     }
 
 
-/*** Nightmode fixes for the background ***/
-.content #siteTable div[onclick="click_thing(this)"] {
-    background-color: transparent !important
-    }
-body.res-nightmode:first-of-type > .content {
-    background-color: transparent !important
-    }
-body.res-nightmode:first-of-type {
-    background-color: transparent !important
-    }
+
 
 /* TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO TACO 
 */
@@ -1163,9 +1135,6 @@ a[href|="/genericbuilder"]
     }
 
 /* Nightmode fixes for the background and other stuff */
-.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
-body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
-body.res-nightmode:first-of-type {background-color: transparent!important;}
 span[class="hover pagename redditname"] a:first-of-type { font-size: 1.6em !important; text-shadow: 0px 0px 6px #000; color: white; }
 #header-img-a {
     margin-top: 75px;

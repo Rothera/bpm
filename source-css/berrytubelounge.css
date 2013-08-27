@@ -198,6 +198,52 @@ color: #FFF !important
 .flair-liquor2 { background-position: 0px -80px }
 .flair-beer2 { background-position: 0px -96px }
 
+
+/***************************/
+/*Upstrawberries/downgrapes*/
+/***************************/
+
+
+.score.dislikes, .score.unvoted, .score.likes 
+{
+    height: 14px !important;
+    margin-top: -2px !important;
+}
+
+span.rank {padding-top: .45% !important;}
+
+.arrow.upmod, .arrow.downmod, .arrow.up, .arrow.down 
+{
+    background-image: url(%%berries%%) !important; 
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.arrow.upmod {background-position: -40px 0px !important;}
+.arrow.downmod {background-position: 0px 0px !important;}
+.arrow.up {background-position: -60px 0px !important;}
+.arrow.down {background-position: -20px 0px !important;}
+
+.midcol[style] {    width: 4ex !important; }
+.midcol { overflow: visible !important; margin-right:8px !important; }
+.click-gadget .midcol { margin: 0 !important; }
+
+.link .score.likes {
+color: #ff185a;
+}
+
+.link .score.dislikes {
+color: #c247d5;
+}
+.res_post_ups{
+color: #ff2462 !important;
+}
+
+.res_post_downs{
+color: #f194ff !important;
+}
+
+
 /**********************/
 /*********Emotes*******/
 /**********************/

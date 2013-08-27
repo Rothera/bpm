@@ -442,6 +442,52 @@ a[href="/scootsshrug"] {
  background-position: -0px -1195px
 }
 
+a[href="/ponies"] 
+{
+ display: block;
+ clear: none;
+ float: left;
+ width: 343px;
+ height: 194px;
+ background-image: url(%%ponies%%)
+}
+a[href="/ponies"] {
+ background-position: -0px -0px
+}
+
+a[href="/praisethesun"] 
+{
+ display: block;
+ clear: none;
+ float: left;
+ width: 142px;
+ height: 200px;
+ background-image: url(%%Praise-the-sun%%)
+}
+a[href="/praisethesun"] {
+ background-position: -0px -0px
+}
+
+a[href="/dealwithitt"] 
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 151px;
+    height: 200px;
+    background-image: url(%%dealwithit%%);
+    }
+
+a[href="/TI994A"] 
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 535px;
+    height: 310px;
+    background-image: url(%%TI-994A%%)
+    }
+
 a[href="/D:"] 
 {
  display: block;
@@ -467,6 +513,30 @@ a[href="/mahnigga"]
 a[href="/mahnigga"] {
  background-position: -0px -0px
 }
+
+a[href$="/flittertext"] {  
+font-size: 10pt;
+color: #d2ffe9 !important;
+background-color: #cdbceb !important;
+font-weight: bold;
+letter-spacing: 1px;
+max-width: none;
+border-top: 5px solid;
+border-bottom: 5px solid;
+border-color: #9e87d2;
+padding: 4px;
+margin-right: 5px;
+box-shadow: 1px 3px 5px #9e87d2;
+display: inline;
+}  
+
+a[href$="/flittertext"]:hover {  
+    color: #d2ffe9 !important;
+    font-size: 24pt;
+    text-shadow: 3px 0px #9e87d2, -3px 0px #9e87d2;
+    box-shadow: 0px 10px 4px -5px #888888;
+    cursor: default;
+}  
 
 /* Brony place your code of doom above here*/
 
@@ -1472,54 +1542,6 @@ a.author[href$="Coggler"]:after {
     letter-spacing: normal
     }
 
-/* Fixed Emotes */
-
-a[href="/ponies"] 
-{
- display: block;
- clear: none;
- float: left;
- width: 343px;
- height: 194px;
- background-image: url(%%ponies%%)
-}
-a[href="/ponies"] {
- background-position: -0px -0px
-}
-
-a[href="/praisethesun"] 
-{
- display: block;
- clear: none;
- float: left;
- width: 142px;
- height: 200px;
- background-image: url(%%Praise-the-sun%%)
-}
-a[href="/praisethesun"] {
- background-position: -0px -0px
-}
-
-a[href="/dealwithitt"] 
-{
-    display: block;
-    clear: none;
-    float: left;
-    width: 151px;
-    height: 200px;
-    background-image: url(%%dealwithit%%);
-    }
-
-a[href="/TI994A"] 
-{
-    display: block;
-    clear: none;
-    float: left;
-    width: 535px;
-    height: 310px;
-    background-image: url(%%TI-994A%%)
-    }
-
 /* "No Participation"-Mode, aka "Read Only"-Mode
  * by /u/KortoloB
  * /r/NoParticipation
@@ -1604,32 +1626,6 @@ a[href$="/unjerk"]::before {
 a[href$="/unjerk"]::before {
     content: "Unjerk for a second! ";
 }
-
-a[href$="/flittertext"] {  
-font-size: 10pt;
-color: #d2ffe9 !important;
-background-color: #cdbceb !important;
-font-weight: bold;
-letter-spacing: 1px;
-max-width: none;
-border-top: 5px solid;
-border-bottom: 5px solid;
-border-color: #9e87d2;
-padding: 4px;
-margin-right: 5px;
-box-shadow: 1px 3px 5px #9e87d2;
-display: inline;
-}  
-
-/* Flittertext text type */
-
-a[href$="/flittertext"]:hover {  
-    color: #d2ffe9 !important;
-    font-size: 24pt;
-    text-shadow: 3px 0px #9e87d2, -3px 0px #9e87d2;
-    box-shadow: 0px 10px 4px -5px #888888;
-    cursor: default;
-}  
 
 /* I have no idea what I'm doing <3 */
 /* (Actually this code recolors self-post titles based on keywords) */
