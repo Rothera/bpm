@@ -31,7 +31,7 @@ no-repeat fixed center center
 
 /*Ponymotes*/
 
-a[href="/spikehmph"],a[href|="/spikeurgh"] {
+a[href="/spikeurgh"],a[href="/spikehmph"],a[href="/spikeangry"],a[href="/angryspike"] {
 background-position: 0px 0px;
 Display: block;
 Clear: none;
@@ -56,13 +56,13 @@ background-position: 0px 0px;
 Display: block;
 Clear: none;
 Float: left;
-Width: 140px;
-Height: 140px;
+Width: 70px;
+Height: 77px;
 background-image: url(%%caesar%%) !important
 }
 
 
-a[href="/sbload"] {
+a[href="/sbload"],a[href="/sbthrobber"],a[href="/sbbusy"] {
 background-position: 0px 0px;
 Display: block;
 Clear: none;
@@ -82,9 +82,32 @@ Height: 70px;
 background-image: url(%%rdwut%%) !important
 }
 
-a[href="/sp"] {
-    display:inline-block;
-    padding-right:100%
+a[href="/trufflepaper"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 200px;
+Height: 155px;
+background-image: url(%%trufflepaper%%) !important
+}
+
+a[href="/sbtarget"],a[href="/sweetiebottarget"],a[href="/sbmissile"],a[href|="/fearme"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 200px;
+Height: 200px;
+background-image: url(%%sbtarget%%) !important
+}
+
+a[href|="/sp"]
+{
+ display:inline-block;
+ padding-right:100%;
+ width:0px;
+ height:0px
 }
 
 /*Title flair*/

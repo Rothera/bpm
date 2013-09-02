@@ -118,13 +118,20 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
 {
  display:inline-block;
  float:right;
- background:url(%%applehat%%);
- width:60px;
- height:60px;
- margin-top:-35px;
+ background:url(%%mac-hat%%);
+ width:70px;
+ height:70px;
+ margin-top:-45px;
  margin-left:0px;
  margin-bottom:0px;
  margin-right:-40px;
+}
+
+/*Footer*/
+.debuginfo
+{
+ background:url(%%KSP-footer%%) no-repeat scroll 50%;
+ height: 550px;
 }
 
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important}

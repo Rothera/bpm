@@ -1029,7 +1029,6 @@ div.titlebox .users-online span.number:after
 
 a.author[href$="derram_2"],
 a.author[href$="Chinch335"],
-a.author[href$="mrjoker7854"],
 a.author[href$="120percentP0N3"],
 a.author[href$="simgaleed"],
 a.author[href$="coggy9"],
@@ -1063,7 +1062,6 @@ content: "";
 
 a.author[href$="derram_2"]:before,
 a.author[href$="Chinch335"]:before ,
-a.author[href$="mrjoker7854"]:before ,
 a.author[href$="120percentP0N3"]:before ,
 a.author[href$="simgaleed"]:before ,
 a.author[href$="coggy9"]:before ,
@@ -1095,7 +1093,6 @@ visibility:visible!important;
 
 a.author[href$="derram_2"]:before {content:"derramina Diane Pie"}
 a.author[href$="Chinch335"]:before {content:"Chinchy"}
-a.author[href$="mrjoker7854"]:before {content:"Ponky Pone"}
 a.author[href$="120percentP0N3"]:before {content:"120percentcooler"}
 a.author[href$="simgaleed"]:before {content:"DarkNote"}
 a.author[href$="coggy9"]:before {content:"Steve"}
@@ -1121,13 +1118,38 @@ a.author[href$="JadeMeteor"]:before {content:"Octavia"}
 /* Replacing somebody's name color? Put the css here. */
 
 .author[href$="Ninja8259"] { color:aqua !important }
-.author[href$="mrjoker7854"] { color:pink !important }
 .author[href$="Kireas"] { color:purple !important }
 .author[href$="AlisterDX"] { color:aqua !important }
 .author[href$="Harakou"] { color:brown !important }
 .author[href$="nightpony"] { color:#a100a1 !important }
 .author[href$="JadeMeteor"] { color:purple !important }
 .author[href$="upvote_machine_1"] { color:blue !important }
+
+a.author[href$="/mrjoker7854"] {
+    display: inline-block;
+    font-size: 0;
+    letter-spacing: -20px;
+    overflow: hidden;
+    vertical-align: bottom
+    }
+
+a.author[href$="/mrjoker7854"]:after {
+    content: "Ponky Pone";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important;
+    color: pink !important
+    }
+
+a.author[href$="/mrjoker7854"]:hover:after {
+    content: "Smile you bundle of sticks";
+    display: block;
+    font-size: 12px !important;
+    letter-spacing: normal;
+    visibility: visible !important;
+    color: pink !important
+    }
 
 .comments:nth-child(n + 1):before {
     content: "♪ ♫ ♩ ";

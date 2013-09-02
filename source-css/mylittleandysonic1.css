@@ -7,7 +7,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%ponybanner1%%)!important;
+   background: url(%%bannerbanner%%)!important;
    background-repeat: no-repeat!important;
    background-position: 50% 100%!important;
    height: 237px; /* 237 for meat's nice banner and general banner size */
@@ -868,7 +868,7 @@ a[href|="/tiadisapprove"] {width:118px; height:120px; background-position: -561p
 a[href|="/twisure"] {width:122px; height:150px; background-position: -681px -431px}
 a[href|="/twiwhat"] {width:162px; height:150px; background-position: -805px -431px}
 
-a[href|='/ajstahp'],a[href|='/lyrailikethis'],a[href|='/lyrastahp'], a[href|='/lyrastop'],a[href|='/lyraunimpressed'],a[href|='/ppstahp'],a[href|='/raristahp'],a[href|='/rariwhy'],a[href|='/rdattention'],a[href|='/restahp'],a[href|='/sbtear'],a[href|='/serioushat'],a[href|='/problemshy'],a[href|='/tavismirk'],a[href|='/artthoumad'],a[href|='/pillowdash'],a[href|='/takeaseat'],a[href|='/wonderfucks'],a[href|='/rariwant'],a[href|='/ppohmygosh'],a[href|='/rainbowpiesnuggles'],a[href|='/flutterfinejeez']{
+a[href|='/ajstahp'],a[href|='/lyrailikethis'],a[href|='/lyrastahp'], a[href|='/lyrastop'],a[href|='/lyraunimpressed'],a[href|='/ppstahp'],a[href|='/raristahp'],a[href|='/rariwhy'],a[href|='/rdattention'],a[href|='/restahp'],a[href|='/sbtear'],a[href|='/serioushat'],a[href|='/problemshy'],a[href|='/tavismirk'],a[href|='/artthoumad'],a[href|='/pillowdash'],a[href|='/takeaseat'],a[href|='/wonderfucks'],a[href|='/rariwant'],a[href|='/ppohmygosh'],a[href|='/rainbowpiesnuggles'],a[href|='/flutterfinejeez'],a[href|='/twibooks']{
 
     display: block;
     clear: none;
@@ -898,6 +898,7 @@ a[href|='/rariwant'] {width:150px; height:115px; background-position: -0px -650p
 a[href|='/ppohmygosh'] {width:113px; height:115px; background-position: -150px -655px}
 a[href|='/rainbowpiesnuggles'] {width:150px; height:110px; background-position: -263px -615px}
 a[href|='/flutterfinejeez'] {width:130px; height:130px; background-position: -0px -768px}
+a[href|='/twibooks'] {width:160px; height:162px; background-position: -263px -715px}
 
 
 /* For anyone with no flair, or flair disabled, this will give them missingno flair.
@@ -965,7 +966,6 @@ a.author[href$="NeonSequitur"],
 a.author[href$="viper9172"],
 a.author[href$="Lazeraze"],
 a.author[href$="31eipekili"],
-a.author[href$="derram_2"],
 a.author[href$="Chiv_Cortland"],
 a.author[href$="442B8AEF9"],
 a.author[href$="Ryskillz101"],
@@ -1070,7 +1070,6 @@ a.author[href$="NeonSequitur"]:before,
 a.author[href$="viper9172"]:before,
 a.author[href$="Lazeraze"]:before,
 a.author[href$="31eipekili"]:before,
-a.author[href$="derram_2"]:before,
 a.author[href$="Chiv_Cortland"]:before,
 a.author[href$="442B8AEF9"]:before,
 a.author[href$="anonpon3"]:before,
@@ -1173,7 +1172,6 @@ a.author[href$="NeonSequitur"]:before {content:"Hunter x Hunter"}
 a.author[href$="viper9172"]:before {content:"Sidelong"}
 a.author[href$="Lazeraze"]:before {content:"Snowlily"}
 a.author[href$="31eipekili"]:before {content:"  :I The whispering Jew "}
-a.author[href$="derram_2"]:before {content:"derramina Diane Pie"}
 a.author[href$="Chiv_Cortland"]:before {content:"Chivvypoop"}
 a.author[href$="442B8AEF9"]:before {content:"Socialery"}
 a.author[href$="anonpon3"]:before {content:"Artful" }
@@ -1206,7 +1204,7 @@ a.author[href$=Generic_Builder]:before { content:"Genewic Bwuilda" }
 a.author[href$=volcano_bakemeats]:before { content:"Madam Le Bake" }
 a.author[href$=DaylightDarkle]:before { content:"Twilight Sparkle" }
 a.author[href$=Chillusion]:before { content:"Cchhiilllluussiioonn" }
-a.author[href$=Esplin]:before {content:"IGNORE ME"}
+a.author[href$=Esplin]:before {content:"Esplando"}
 a.author[href$=Jeroknite]:before {content:"JokerTine"; font-size:15px !important}
 a.author[href$=DarqWolff]:before { content:"[](/DarqWolff)" }
 a.author[href$=cheesemoo]:before { content:"Cheesemeow" }
@@ -1351,7 +1349,7 @@ a.author[href$=lord-hemingway]:after { content:" (Clopper 44)" }
 a.author[href$=Generic_Builder]:after { content:" IS SO KAWAII!" }
 a.author[href$=volcano_bakemeats]:after { content:" (Flour Sack Monster)" }
 a.author[href$=Chillusion]:after { content:" (Because I can.)" }
-a.author[href$=Esplin]:after { content:" (why am I still here)" }
+a.author[href$=Esplin]:after { content:" Andy's Waifu" }
 a.author[href$=waffen337]:after { content:"(Fucking ass ball bajongler)" }
 a.author[href$=sirtophat]:after { content:" (flaming homosexual)"; color:purple }
 a.author[href$=cheesemoo]:after { content:" (Still exists, apparently)" }
@@ -1389,7 +1387,6 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 .tagline a.author[href$="/RainbowCrash"]:before,
 .tagline a.author[href$="/245001"]:before,
 .tagline a.author[href$="/Orschmann"]:before,
-.tagline a.author[href$="/derram_2"]:after, 
 .tagline a.author[href$="/EvilHom3r"]:after,
 .tagline a.author[href$="/ajtexasranger"]:after,
 .tagline a.author[href$="/fsakj"]:before
@@ -1420,12 +1417,6 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 :not(.flair) .tagline a.author[href$="/fsakj"]:before
 {
     background-position: 0px -540px !important;
-}
-
-/* Derram pie */
-.tagline a.author[href$="/derram_2"]:after
-{
-    background-position: 0px -720px;
 }
 
 /* Extra AJ flair for homer since he's a pretty cool guy */

@@ -272,7 +272,7 @@ margin-right:0px;
 */  
 
 .side {  
-    padding: 15px 25px 0 25px;  
+    padding: 15px 0px 0px 25px;  
     background:none;  
 }  
 form#search {  
@@ -683,7 +683,10 @@ margin-right: 320px;
 
 /*Background*/
 body {
-   background: url(%%background%%) no-repeat fixed right bottom;
+   background-image: url(%%background%%);
+   background-repeat: no-repeat;
+   background-position: right bottom;
+   background-attachment:fixed;
    margin-top: 5px;
    }
 
