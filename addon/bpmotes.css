@@ -16,14 +16,14 @@
 
 .bpm-minified, .bpm-minified:before, .bpm-minified:after, .bpm-minified:hover, .bpm-minified:active {
     /* Behave like normal emotes do */
-    display: block;
+    display: block !important;
     float: left;
     /* Need !important tags to override Reddit and emote CSS. */
     color: black !important;
     border: solid thin black;
     font-family: monospace;
-    padding: 3px;
-    margin: 1px; /* Don't run lines of them together */
+    padding: 3px !important;
+    margin: 1px !important; /* Don't run lines of them together */
     border-radius: 4px;
     height: auto !important;
     width: auto !important;
