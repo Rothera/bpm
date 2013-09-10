@@ -133,6 +133,27 @@ body.res-nightmode:first-of-type > .content {background-color: transparent!impor
 
 /* ------ Emotes! --------- */
 
+a[href|='/ajface'], a[href|='/cutiefire'], a[href|='/dawhgs'], a[href|='/elementary'], a[href|='/forscience'], a[href|='/isay'], a[href|='/ppsahme'], a[href|='/pptears'], a[href|='/ppthumbsup'], a[href|='/ppuncheck'], a[href|='/teeth'], a[href|='/twiumm']{
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%csheet%%)
+    }
+
+a[href|='/ajface'] {width:105px; height:125px; background-position: -262px -2px}
+a[href|='/cutiefire'] {width:105px; height:150px; background-position: -301px -139px}
+a[href|='/dawhgs'] {width:190px; height:200px; background-position: -257px -493px}
+a[href|='/elementary'] {width:88px; height:120px; background-position: -114px -2px}
+a[href|='/forscience'] {width:220px; height:200px; background-position: -201px -291px}
+a[href|='/isay'] {width:56px; height:125px; background-position: -204px -2px}
+a[href|='/ppsahme'] {width:253px; height:200px; background-position: -2px -493px}
+a[href|='/pptears'] {width:150px; height:150px; background-position: -2px -139px}
+a[href|='/ppthumbsup'] {width:145px; height:150px; background-position: -154px -139px}
+a[href|='/ppuncheck'] {width:197px; height:170px; background-position: -2px -291px}
+a[href|='/teeth'] {width:118px; height:135px; background-position: -369px -2px}
+a[href|='/twiumm'] {width:110px; height:120px; background-position: -2px -2px}
+
+
 a[href|='/gotobread'], a[href|='/haveacookie'], a[href|='/horseonfire'], a[href|='/mylifeisinshambles'], a[href|='/ohgosh'], a[href|='/ppshiggy'], a[href|='/ppsmirk'], a[href|='/scootafied'], a[href|='/scootafried'], a[href|='/sleepymac'], a[href|='/stitchbystitch'], a[href|='/surstageleft'], a[href|='/tavisalute'], a[href|='/thebaz'], a[href|='/twiface'], a[href|='/twilongdidntread'] {
     display: block;
     clear: none;
@@ -231,7 +252,7 @@ div.titlebox span.number:after {
     }
 div.titlebox .users-online span.number:after
 {
-    content:" Fancy Pants Dancers";
+    content:" Fancy-Pants Dancers";
 }
 
 /* Hides downvote arrow -circle jerks ahoy!*/
@@ -290,12 +311,15 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 /* Names */
 
 /* here first */
+a.author[href$=XelNaga],
 a.author[href$=Princess_Molestia_],
 a.author[href$=V17Ds],
 a.author[href$=ZZW30],
 a.author[href$=derram_2],
 a.author[href$=CodenameToon],
-a.author[href$=Jeroknite]
+a.author[href$=Jeroknite],
+a.author[href$="0x_"],
+a.author[href$="Backupusername"]
 
 { 
 font-size:0!important; 
@@ -305,25 +329,30 @@ content: "";
 }
 
 /* here second */
+a.author[href$=XelNaga]:before,
 a.author[href$=Princess_Molestia_]:before,
 a.author[href$=V17Ds]:before,
 a.author[href$=ZZW30]:before,
 a.author[href$=derram_2]:before,
 a.author[href$=CodenameToon]:before,
-a.author[href$=Jeroknite]:before
-
+a.author[href$=Jeroknite]:before,
+a.author[href$="0x_"]:before,
+a.author[href$="Backupusername"]:before
 {
 font-size:10px!important; 
 visibility:visible!important;
 }
 
 /*and the replacement*/
+a.author[href$=XelNaga]:before {content:"Twi`Naga"}
 a.author[href$=Princess_Molestia_]:before {content:"Princess Molestia"}
 a.author[href$=V17Ds]:before {content:"SkiftSwii"}
 a.author[href$=ZZW30]:before {content:"CaptChuckles"}
 a.author[href$="derram_2"]:before {content:"derramina Diane Pie"}
 a.author[href$=CodenameToon]:before {content:"Coggler"}
 a.author[href$=Jeroknite]:before {content:"JokerTine"; font-size:15px !important}
+a.author[href$="0x_"]:before {content:"Just Ox"}
+a.author[href$="Backupusername"]:before {content: "Not anyone special"}
 
 a.author[href$="videogamewonder"]:after
 {
@@ -401,6 +430,7 @@ background-repeat: no-repeat;
 .flair-fluffy:before { background-position: 0px -1440px}
 .flair-Generic:before { background-position: 0px -1480px}
 .flair-dda1add:before { background-position: 0px -1520px}
+.flair-DevaKitty:before { background-position: 0px -1560px}
 /* For anyone with no flair, or flair disabled, this will give them missingno flair.
     Listed before the rest of the username shit so it will be overridden by manual flair additions. */
 :not(.flair) + a.author:before  {
@@ -433,3 +463,7 @@ span.age::before {visibility:visible!important;font-size:8pt;content:'A communit
 {
     background-position: 0px -60px !important;
 }
+
+a[href|="/-blink!"]:nth-of-type(n){
+    text-decoration: blink !important
+    }

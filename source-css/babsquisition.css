@@ -575,6 +575,75 @@ a[href|="/babscute"] {
  background-image:url(%%babscute%%)
 }
   
+a[href|="/arch"] {  
+ display: block;
+ clear: none;
+ float: left;
+ width: 282px;
+ height: 311px;
+ background-image:url(%%stylesheet%%);
+ background-position: -0px -0px; 
+}
+
+a[href|="/debian"] {  
+ display: block;
+ clear: none;
+ float: left;
+ width: 318px;
+ height: 298px;
+ background-image:url(%%stylesheet%%);
+ background-position: -282px -0px; 
+}
+
+a[href|="/fedora"] {  
+ display: block;
+ clear: none;
+ float: left;
+ width: 297px;
+ height: 314px;
+ background-image:url(%%stylesheet%%);
+ background-position: -0px -311px; 
+}
+
+a[href|="/openSUSE"] {  
+ display: block;
+ clear: none;
+ float: left;
+ width: 259px;
+ height: 305px;
+ background-image:url(%%stylesheet%%);
+ background-position: -297px -311px; 
+}
+
+a[href|="/redhat"] {  
+ display: block;
+ clear: none;
+ float: left;
+ width: 234px;
+ height: 305px;
+ background-image:url(%%stylesheet%%);
+ background-position: -0px -625px; 
+}
+
+a[href|="/slackware"] {  
+ display: block;
+ clear: none;
+ float: left;
+ width: 196px;
+ height: 291px;
+ background-image:url(%%stylesheet%%);
+ background-position: -234px -625px; 
+}
+
+a[href|="/ubuntu"] {  
+ display: block;
+ clear: none;
+ float: left;
+ width: 224px;
+ height: 283px;
+ background-image:url(%%stylesheet%%);
+ background-position: -0px -930px; 
+}
 
 /*  Colors to know:  
     #eadb64 - Tabmenu background  

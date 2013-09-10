@@ -7,7 +7,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%bannerbanner%%)!important;
+   background: url(%%banbanner%%)!important;
    background-repeat: no-repeat!important;
    background-position: 50% 100%!important;
    height: 237px; /* 237 for meat's nice banner and general banner size */
@@ -73,6 +73,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .
 
 /*Announcement Box */
 /* saved to .txt offsite, can also be found stored in /r/twilightxtrixie CSS */
+
 
 
 /* Replace the nsfw image with screwball */
@@ -419,118 +420,16 @@ background-repeat: no-repeat;
 .flair-silverstar:after { background-position: 0px -5520px }
 .flair-nopaint:after { background-position: 0px -5550px }
 .flair-choaticgenes:after { background-position: 0px -5580px }
+.flair-customog:after { background-position: 0px -5610px }
+.flair-llamaindrag:after { background-position: 0px -5640px }
+.flair-twilightsparkles:after { background-position: 0px -5670px }
+.flair-hatereddit:after { background-position: 0px -5700px }
 
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: #222!important; }
 
 /*===Begin generated CSS===*/
-a[href|='/flutterumm'], a[href|='/flutterwhat'], a[href|='/sackflip'], a[href|='/sackfun'], a[href|='/shitemote'] {
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%hovermotes%%)
-    }
-
-a[href|='/flutterumm'], a[href|='/flutterwhat']:hover {width:146px; height:152px; background-position: -1709px -0px}
-a[href|='/flutterwhat'], a[href|='/flutterumm']:hover {width:146px; height:152px; background-position: -1563px -0px}
-a[href|='/sackflip'] {width:199px; height:129px; background-position: -1364px -0px}
-a[href|='/sackflip']:hover {width:199px; height:129px; background-position: -1165px -0px}
-a[href|='/sackfun'] {width:187px; height:220px; background-position: -978px -0px}
-a[href|='/sackfun']:hover {width:187px; height:220px; background-position: -791px -0px}
-a[href|='/shitemote'] {width:246px; height:252px; background-position: -545px -0px}
-a[href|='/shitemote']:hover {width:270px; height:263px; background-position: -275px -0px}
-a[href|='/shitemote']:active {width:275px; height:266px; background-position: -0px -0px}
-
-
-a[href|='/ajfun'], a[href|='/ajtrfun'], a[href|='/bonfun'], a[href|='/braefun'], a[href|='/charliefun'], a[href|='/rcrfun'], a[href|='/cheerfun'], a[href|='/darkfun'], a[href|='/dolcefun'], a[href|='/dashfun'], a[href|='/derpfun'], a[href|='/esplinfun'], a[href|='/flitterfun'], a[href|='/lyrafun'], a[href|='/orschfun'], a[href|='/pinkiefun'], a[href|='/ppfun'], a[href|='/rarfun'], a[href|='/rosefun'], a[href|='/shyfun'], a[href|='/speedyfun'], a[href|='/tlfun'], a[href|='/thunderlanefun'], a[href|='/trixfun'], a[href|='/twifun'] {
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%ponyfun%%)
-    }
-
-a[href|='/ajfun'] {width:210px; height:152px; background-position: -0px -1841px}
-a[href|='/ajtrfun'] {width:225px; height:152px; background-position: -0px -1079px}
-a[href|='/bonfun'] {width:217px; height:152px; background-position: -0px -1383px}
-a[href|='/braefun'] {width:202px; height:152px; background-position: -0px -2753px}
-a[href|='/charliefun'], a[href|='/rcrfun'] {width:230px; height:152px; background-position: -0px -623px}
-a[href|='/cheerfun'] {width:216px; height:152px; background-position: -0px -1535px}
-a[href|='/darkfun'], a[href|='/dolcefun'] {width:208px; height:152px; background-position: -0px -2145px}
-a[href|='/dashfun'] {width:231px; height:152px; background-position: -0px -319px}
-a[href|='/derpfun'] {width:221px; height:152px; background-position: -0px -1231px}
-a[href|='/esplinfun'] {width:202px; height:152px; background-position: -0px -2601px}
-a[href|='/flitterfun'] {width:204px; height:152px; background-position: -0px -2297px}
-a[href|='/lyrafun'] {width:202px; height:152px; background-position: -0px -2449px}
-a[href|='/orschfun'] {width:211px; height:154px; background-position: -0px -1687px}
-a[href|='/pinkiefun'], a[href|='/ppfun'] {width:227px; height:152px; background-position: -0px -775px}
-a[href|='/rarfun'] {width:248px; height:152px; background-position: -0px -0px}
-a[href|='/rosefun'] {width:201px; height:152px; background-position: -0px -2905px}
-a[href|='/shyfun'] {width:234px; height:167px; background-position: -0px -152px}
-a[href|='/speedyfun'] {width:193px; height:152px; background-position: -0px -3057px}
-a[href|='/tlfun'], a[href|='/thunderlanefun'] {width:208px; height:152px; background-position: -0px -1993px}
-a[href|='/trixfun'] {width:226px; height:152px; background-position: -0px -927px}
-a[href|='/twifun'] {width:230px; height:152px; background-position: -0px -471px}
-
-
-a[href|='/andu'], a[href|='/applepie'], a[href|='/cheesu'], a[href|='/derru'], a[href|='/esplinpoker'], a[href|='/espy'], a[href|='/giofun'], a[href|='/adagiofun'], a[href|='/herb'], a[href|='/420BLAZEITFAGGOT'], a[href|='/mongoosewithit'], a[href|='/nolove'], a[href|='/pekoe'], a[href|='/ppurafagot'], a[href|='/queentongue'], a[href|='/chrystongue'], a[href|='/roseduck'], a[href|='/speedu'], a[href|='/spikerar'], a[href|='/spitgoggles'], a[href|='/surbarf'], a[href|='/sursmelledyourcloset'], a[href|='/trixieplot'] {
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%table11%%)
-    }
-
-a[href|='/andu'] {width:100px; height:130px; background-position: -152px -917px}
-a[href|='/applepie'] {width:207px; height:177px; background-position: -0px -252px}
-a[href|='/cheesu'] {width:130px; height:92px; background-position: -130px -1944px}
-a[href|='/derru'] {width:117px; height:130px; background-position: -152px -1047px}
-a[href|='/esplinpoker'] {width:120px; height:111px; background-position: -152px -1698px}
-a[href|='/espy'] {width:129px; height:130px; background-position: -0px -1814px}
-a[href|='/giofun'], a[href|='/adagiofun'] {width:207px; height:167px; background-position: -0px -750px}
-a[href|='/herb'], a[href|='/420BLAZEITFAGGOT'] {width:113px; height:130px; background-position: -159px -1562px}
-a[href|='/mongoosewithit'] {width:152px; height:152px; background-position: -0px -1119px}
-a[href|='/nolove'] {width:206px; height:252px; background-position: -0px -0px}
-a[href|='/pekoe'] {width:152px; height:202px; background-position: -0px -917px}
-a[href|='/ppurafagot'] {width:223px; height:169px; background-position: -0px -429px}
-a[href|='/queentongue'], a[href|='/chrystongue'] {width:92px; height:130px; background-position: -129px -1814px}
-a[href|='/roseduck'] {width:168px; height:152px; background-position: -0px -1271px}
-a[href|='/speedu'] {width:130px; height:104px; background-position: -0px -1944px}
-a[href|='/spikerar'] {width:159px; height:136px; background-position: -0px -1562px}
-a[href|='/spitgoggles'] {width:202px; height:139px; background-position: -0px -1423px}
-a[href|='/surbarf'], a[href|='/sursmelledyourcloset'] {width:273px; height:152px; background-position: -0px -598px}
-a[href|='/trixieplot'] {width:152px; height:116px; background-position: -0px -1698px}
-
-
-a[href|='/ajhorror'], a[href|='/celestea'], a[href|='/notcoffee'], a[href|='/chibinmm'], a[href|='/chrysshake'], a[href|='/queenshake'], a[href|='/cinnapie'], a[href|='/colgateshock'], a[href|='/outoftoothpaste'], a[href|='/disjizz'], a[href|='/dizjizz'], a[href|='/dizzlejizzle'], a[href|='/espbanana'], a[href|='/gildairballoon'], a[href|='/hurrdurrcolgate'], a[href|='/moonpie'], a[href|='/notimpressed'], a[href|='/pieinthesky'], a[href|='/pinkiememe'], a[href|='/pptoofar'], a[href|='/rdsucks'], a[href|='/ruined'], a[href|='/samuraijack'], a[href|='/snuggle'], a[href|='/twichangeling'], a[href|='/wmdiscord'] {
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%table12%%)
-    }
-
-a[href|='/ajhorror'] {width:120px; height:152px; background-position: -0px -471px}
-a[href|='/celestea'], a[href|='/notcoffee'] {width:171px; height:152px; background-position: -0px -1129px}
-a[href|='/chibinmm'] {width:142px; height:152px; background-position: -142px -775px}
-a[href|='/chrysshake'], a[href|='/queenshake'] {width:114px; height:152px; background-position: -0px -319px}
-a[href|='/cinnapie'] {width:132px; height:149px; background-position: -131px -623px}
-a[href|='/colgateshock'], a[href|='/outoftoothpaste'] {width:106px; height:152px; background-position: -104px -167px}
-a[href|='/disjizz'], a[href|='/dizjizz'], a[href|='/dizzlejizzle'] {width:117px; height:127px; background-position: -114px -319px}
-a[href|='/espbanana'] {width:183px; height:202px; background-position: -0px -1483px}
-a[href|='/gildairballoon'] {width:187px; height:202px; background-position: -0px -1685px}
-a[href|='/hurrdurrcolgate'] {width:142px; height:127px; background-position: -0px -775px}
-a[href|='/moonpie'] {width:252px; height:125px; background-position: -0px -1887px}
-a[href|='/notimpressed'] {width:92px; height:167px; background-position: -84px -0px}
-a[href|='/pieinthesky'] {width:302px; height:94px; background-position: -0px -2012px}
-a[href|='/pinkiememe'] {width:84px; height:152px; background-position: -0px -0px}
-a[href|='/pptoofar'] {width:131px; height:127px; background-position: -120px -471px}
-a[href|='/rdsucks'] {width:104px; height:152px; background-position: -0px -167px}
-a[href|='/ruined'] {width:308px; height:152px; background-position: -0px -2106px}
-a[href|='/samuraijack'] {width:102px; height:152px; background-position: -176px -0px}
-a[href|='/snuggle'] {width:131px; height:152px; background-position: -0px -623px}
-a[href|='/twichangeling'] {width:150px; height:202px; background-position: -0px -927px}
-a[href|='/wmdiscord'] {width:176px; height:202px; background-position: -0px -1281px}
-
-
 a[href|='/bigmad'] {
     display: block;
     clear: none;
@@ -541,365 +440,8 @@ a[href|='/bigmad'] {
 a[href|='/bigmad'] {width:120px; height:152px; background-position: -0px -0px}
 
 
-a[href|='/bmwat'], a[href|='/ch35'], a[href|='/chnuzzle'], a[href|='/cheerious'], a[href|='/cheerlikesit'], a[href|='/cmcexcited'], a[href|='/cordwithit'], a[href|='/crazypie'], a[href|='/derpoops'], a[href|='/disamused'], a[href|='/disangry'], a[href|='/disexcited'], a[href|='/diskate'], a[href|='/foryou'], a[href|='/genetics'], a[href|='/genius'], a[href|='/gildafury'], a[href|='/herhorn'], a[href|='/gildafriendship'], a[href|='/hipstertrixie'], a[href|='/iwapprove'], a[href|='/noidea'], a[href|='/notenoughbooks'], a[href|='/rarimad'], a[href|='/twinuzzle'] {
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%table10%%)
-    }
-
-a[href|='/bmwat'] {width:83px; height:127px; background-position: -156px -1666px}
-a[href|='/ch35'], a[href|='/chnuzzle'] {width:113px; height:152px; background-position: -0px -2466px}
-a[href|='/cheerious'] {width:147px; height:152px; background-position: -0px -2162px}
-a[href|='/cheerlikesit'] {width:125px; height:127px; background-position: -113px -2466px}
-a[href|='/cmcexcited'] {width:228px; height:152px; background-position: -0px -2010px}
-a[href|='/cordwithit'] {width:126px; height:252px; background-position: -0px -252px}
-a[href|='/crazypie'] {width:141px; height:152px; background-position: -0px -2314px}
-a[href|='/derpoops'] {width:106px; height:117px; background-position: -0px -2769px}
-a[href|='/disamused'] {width:118px; height:177px; background-position: -126px -252px}
-a[href|='/disangry'] {width:195px; height:202px; background-position: -0px -908px}
-a[href|='/disexcited'] {width:173px; height:177px; background-position: -0px -1489px}
-a[href|='/diskate'] {width:194px; height:252px; background-position: -0px -0px}
-a[href|='/foryou'] {width:204px; height:202px; background-position: -0px -706px}
-a[href|='/genetics'] {width:80px; height:102px; background-position: -173px -1489px}
-a[href|='/genius'] {width:97px; height:102px; background-position: -106px -2769px}
-a[href|='/gildafury'] {width:256px; height:167px; background-position: -0px -1843px}
-a[href|='/herhorn'], a[href|='/gildafriendship'] {width:180px; height:202px; background-position: -0px -1110px}
-a[href|='/hipstertrixie'] {width:156px; height:177px; background-position: -0px -1666px}
-a[href|='/iwapprove'] {width:232px; height:177px; background-position: -0px -1312px}
-a[href|='/noidea'] {width:105px; height:152px; background-position: -147px -2162px}
-a[href|='/notenoughbooks'] {width:184px; height:151px; background-position: -0px -2618px}
-a[href|='/rarimad'] {width:207px; height:202px; background-position: -0px -504px}
-a[href|='/twinuzzle'] {width:112px; height:152px; background-position: -141px -2314px}
-
-
-a[href|='/a_lot'], a[href|='/flutalot'], a[href|='/absneer'], a[href|='/applepuff'], a[href|='/bendover'], a[href|='/bonwut'], a[href|='/cadancewat'], a[href|='/cadencewat'], a[href|='/chryswat'], a[href|='/cmcderp'], a[href|='/derpshrug'], a[href|='/derpsrs'], a[href|='/disbored'], a[href|='/discordwtf'], a[href|='/disgusta'], a[href|='/doitfilly'], a[href|='/eeveedash'], a[href|='/hatefuck'], a[href|='/pbf'], a[href|='/ppchainsaw'], a[href|='/ppteeth'], a[href|='/raritywooo'], a[href|='/rarizee'], a[href|='/rubysquee'], a[href|='/sbeyeroll'], a[href|='/sbgrin'], a[href|='/shyduck'], a[href|='/sockcord'], a[href|='/twipoke'], a[href|='/twiread'], a[href|='/wuna'] {
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%table8%%)
-    }
-
-a[href|='/a_lot'], a[href|='/flutalot'] {width:256px; height:142px; background-position: -0px -1851px}
-a[href|='/absneer'] {width:90px; height:102px; background-position: -166px -787px}
-a[href|='/applepuff'] {width:99px; height:102px; background-position: -154px -939px}
-a[href|='/bendover'] {width:152px; height:152px; background-position: -0px -1091px}
-a[href|='/bonwut'] {width:89px; height:152px; background-position: -0px -1699px}
-a[href|='/cadancewat'], a[href|='/cadencewat'] {width:85px; height:127px; background-position: -146px -1243px}
-a[href|='/chryswat'] {width:122px; height:127px; background-position: -97px -1547px}
-a[href|='/cmcderp'] {width:175px; height:127px; background-position: -0px -1993px}
-a[href|='/derpshrug'] {width:115px; height:127px; background-position: -99px -1395px}
-a[href|='/derpsrs'] {width:105px; height:102px; background-position: -0px -2228px}
-a[href|='/disbored'] {width:99px; height:152px; background-position: -0px -1395px}
-a[href|='/discordwtf'] {width:154px; height:152px; background-position: -0px -939px}
-a[href|='/disgusta'] {width:146px; height:152px; background-position: -0px -1243px}
-a[href|='/doitfilly'] {width:185px; height:202px; background-position: -0px -231px}
-a[href|='/eeveedash'] {width:79px; height:102px; background-position: -175px -1993px}
-a[href|='/hatefuck'] {width:256px; height:231px; background-position: -0px -0px}
-a[href|='/pbf'] {width:66px; height:82px; background-position: -185px -231px}
-a[href|='/ppchainsaw'] {width:226px; height:152px; background-position: -0px -635px}
-a[href|='/ppteeth'] {width:166px; height:152px; background-position: -0px -787px}
-a[href|='/raritywooo'] {width:100px; height:152px; background-position: -146px -433px}
-a[href|='/rarizee'] {width:97px; height:102px; background-position: -105px -2228px}
-a[href|='/rubysquee'] {width:124px; height:127px; background-position: -89px -1699px}
-a[href|='/sbeyeroll'] {width:69px; height:77px; background-position: -185px -313px}
-a[href|='/sbgrin'] {width:74px; height:77px; background-position: -91px -2330px}
-a[href|='/shyduck'] {width:91px; height:102px; background-position: -0px -2330px}
-a[href|='/sockcord'] {width:97px; height:152px; background-position: -0px -1547px}
-a[href|='/twipoke'] {width:101px; height:102px; background-position: -152px -1091px}
-a[href|='/twiread'] {width:253px; height:108px; background-position: -0px -2120px}
-a[href|='/wuna'] {width:146px; height:202px; background-position: -0px -433px}
-
-
-a[href|='/cowpony'], a[href|='/creamsicle'], a[href|='/crossdresscord'], a[href|='/ishygdadt'], a[href|='/diswut'], a[href|='/dod'], a[href|='/dresscord'], a[href|='/eagleeye'], a[href|='/hawkeye'], a[href|='/flutterpout'], a[href|='/frightenpie'], a[href|='/inurbutt'], a[href|='/lunadark'], a[href|='/macgasp'], a[href|='/ppfof'], a[href|='/ppsly'], a[href|='/psychiatwi'], a[href|='/twithis'], a[href|='/queencheer'], a[href|='/rarhorror'], a[href|='/rosefof'], a[href|='/sbshy'], a[href|='/scootscared'], a[href|='/sexymac'], a[href|='/soarinshock'], a[href|='/twicake'], a[href|='/twiglare'], a[href|='/twiteehee'], a[href|='/twiteeth'] {
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%table9%%)
-    }
-
-a[href|='/cowpony'] {width:147px; height:177px; background-position: -0px -2022px}
-a[href|='/creamsicle'] {width:127px; height:163px; background-position: -0px -2775px}
-a[href|='/crossdresscord'], a[href|='/ishygdadt'] {width:251px; height:202px; background-position: -0px -0px}
-a[href|='/diswut'] {width:174px; height:202px; background-position: -0px -960px}
-a[href|='/dod'] {width:110px; height:127px; background-position: -141px -2478px}
-a[href|='/dresscord'] {width:158px; height:252px; background-position: -0px -1466px}
-a[href|='/eagleeye'], a[href|='/hawkeye'] {width:160px; height:152px; background-position: -0px -1314px}
-a[href|='/flutterpout'] {width:130px; height:127px; background-position: -0px -2648px}
-a[href|='/frightenpie'] {width:113px; height:152px; background-position: -130px -2757px}
-a[href|='/inurbutt'] {width:157px; height:177px; background-position: -0px -1718px}
-a[href|='/lunadark'] {width:183px; height:202px; background-position: -0px -606px}
-a[href|='/macgasp'] {width:101px; height:152px; background-position: -147px -2173px}
-a[href|='/ppfof'] {width:176px; height:152px; background-position: -0px -808px}
-a[href|='/ppsly'] {width:111px; height:152px; background-position: -140px -2605px}
-a[href|='/psychiatwi'], a[href|='/twithis'] {width:210px; height:202px; background-position: -0px -202px}
-a[href|='/queencheer'] {width:155px; height:127px; background-position: -0px -1895px}
-a[href|='/rarhorror'] {width:162px; height:152px; background-position: -0px -1162px}
-a[href|='/rosefof'] {width:144px; height:152px; background-position: -0px -2199px}
-a[href|='/sbshy'] {width:85px; height:127px; background-position: -162px -1162px}
-a[href|='/scootscared'] {width:140px; height:129px; background-position: -0px -2519px}
-a[href|='/sexymac'] {width:200px; height:202px; background-position: -0px -404px}
-a[href|='/soarinshock'] {width:110px; height:127px; background-position: -141px -2351px}
-a[href|='/twicake'] {width:124px; height:125px; background-position: -127px -2909px}
-a[href|='/twiglare'] {width:124px; height:101px; background-position: -0px -2938px}
-a[href|='/twiteehee'] {width:103px; height:151px; background-position: -147px -2022px}
-a[href|='/twiteeth'] {width:141px; height:168px; background-position: -0px -2351px}
-
-
 
 /*===End generated CSS===*/
-
-/*Filly Table*/
-
-a[href|='/fillyab'], a[href|='/fillyaj'], a[href|='/fillybonbon'], a[href|='/fillycelestia'], a[href|='/fillycheerile'], a[href|='/fillydashready'], a[href|='/fillyderpy'], a[href|='/fillydis'], a[href|='/fillyflirt'], a[href|='/fillyfluttershy'], a[href|='/fillyfluttershysing'], a[href|='/fillyfritter'], a[href|='/fillykarma'], a[href|='/fillyluna'], a[href|='/fillylyra'], a[href|='/fillyoctavia'], a[href|='/fillypinkie'], a[href|='/fillyrd'], a[href|='/fillydash'], a[href|='/fillyrose'], a[href|='/fillysbstare'], a[href|='/fillyspitfire'], a[href|='/fillystrudel'], a[href|='/fillytrixie'], a[href|='/fillytwidance'], a[href|='/fillyvinyl'], a[href|='/rarityfilly'], a[href|='/scootasmile'], a[href|='/ppwhat'], a[href|='/bonheart'], a[href|='/chaosgun'], a[href|='/ajFoF'], a[href|='/ajfof'], a[href|='/ppsoawesome'], a[href|='/crackle'], a[href|='/scootawat'], a[href|='/discordquite'], a[href|='/abthis'], a[href|='/rarisup'], a[href|='/ppfacehoof'], a[href|='/umad']
- {
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%fillytable%%)
-    }
-
-a[href|='/fillyab'] {height:70px;width:52px;background-position:0px 0px;}
-a[href|='/fillyaj'] {height:70px;width:58px;background-position:-52px 0px;}
-a[href|='/fillybonbon'] {height:70px;width:62px;background-position:-110px 0px;}
-a[href|='/fillycelestia'] {height:70px;width:65px;background-position:-172px 0px;}
-a[href|='/fillycheerile'] {height:70px;width:42px;background-position:0 -70px;}
-a[href|='/fillydashready']{height:70px;width:113px;background-position:-237px 0px;}
-a[href|='/fillyderpy'] {height:70px;width:69px;background-position:-350px 0px;}
-a[href|='/fillydis'] {height:70px;width:78px;background-position:-52px -70px;}
-a[href|='/fillyflirt'] {height:70px;width:109px;background-position:-130px -70px;}
-a[href|='/fillyfluttershy'] {height:70px;width:76px;background-position:-52px -140px;}
-a[href|='/fillyfluttershysing'] {height:70px;width:97px;background-position:-239px -70px;}
-a[href|='/fillyfritter'] {height:70px;width:67px;background-position:-52px -210px;}
-a[href|='/fillykarma'] {height:70px;width:78px;background-position:-52px -280px;}
-a[href|='/fillyluna'] {height:70px;width:62px;background-position:-52px -350px;}
-a[href|='/fillylyra']{height:70px;width:65px;background-position:-336px -70px;}
-a[href|='/fillyoctavia']{height:70px;width:69px;background-position:-130px -140px;}
-a[href|='/fillypinkie'] {height:70px;width:70px;background-position:-199px -140px;}
-a[href|='/fillyrd'], a[href|='/fillydash'] {height:70px;width:61px;background-position:-130px -210px;}
-a[href|='/fillyrose']{height:70px;width:71px;background-position:-269px -140px;}
-a[href|='/fillysbstare'] {height:70px;width:72px;background-position:-340px -140px;}
-a[href|='/fillyspitfire'] {height:70px;width:50px;background-position:0px -140px;}
-a[href|='/fillystrudel'] {height:70px;width:68px;background-position:-130px -280px;}
-a[href|='/fillytrixie'] {height:70px;width:61px;background-position:-130px -350px;}
-a[href|='/fillytwidance'] {height:70px;width:74px;background-position:-199px -210px;}
-a[href|='/fillyvinyl'] {height:70px;width:57px;background-position:-199px -280px;}
-a[href|='/rarityfilly'] {height:70px;width:74px;background-position:-199px -350px;}
-a[href|='/scootasmile'] {height:70px;width:65px;background-position:-273px -210px;}
-a[href|='/ppwhat'] {height:109px;width:116px;background-position:-285px -304px;}
-a[href|='/bonheart'] {height:200px;width:131px;background-position:-0px -424px;}
-a[href|='/chaosgun'] {height:250px;width:176px;background-position:-142px -425px;}
-a[href|='/ajFoF'], a[href|='/ajfof']  {height:120px;width:128px;background-position:-322px -420px;}
-a[href|='/ppsoawesome'] {height:120px;width:115px;background-position:-332px -544px;}
-a[href|='/crackle'] {height:150px;width:198px;background-position:-0px -677px;}
-a[href|='/scootawat'] {height:115px;width:115px;background-position:-198px -711px;}
-a[href|='/discordquite'] {height:150px;width:126px;background-position:-313px -676px;}
-a[href|='/abthis'] {height:105px;width:123px;background-position:-0px -835px;}
-a[href|='/rarisup'] {height:116px;width:130px;background-position:-144px -838px;}
-a[href|='/umad'] {height:120px;width:134px;background-position:-278px -834px;}
-a[href|='/ppfacehoof'] {height:100px;width:93px;background-position:-381px -210px;}
-/** Moved some of the male funs over. **/
-
-a[href|="/bryvoodfun"], a[href|="/artfun"], a[href|="/pixelfun"] {
-    background-image: url(%%somefuns%%);
-    display: block;
-    clear: none;
-    float: left;
-    width: 212px;
-    height: 166px
-    }
-a[href|="/bryvoodfun"] {
-    background-position: -2px -170px
-    }
-a[href|="/artfun"] {
-    background-position: -2px -2px
-    }
-a[href|="/pixelfun"] {
-    background-position: -2px -338px
-    }
-
-
-a[href|="/ajsign"],a[href|="/lyrasign"],a[href|="/twisign"],a[href|="/dashsign"],a[href|="/derpysign"],a[href|="/scootasign"]{
-    background-image: url(%%signsheet%%) !important;
-    background-repeat: no-repeat !important;
-    display: inline-block !important;
-    position: relative !important;
-    width:166px; height:150px;
-    line-height: 24px !important;
-    overflow: hidden !important;
-    cursor: default !important;
-    }
-    
-a[href|="/ajsign"] em,a[href|="/lyrasign"] em,a[href|="/twisign"] em,a[href|="/dashsign"] em,a[href|="/derpysign"] em,a[href|="/scootasign"] em{
-    position: absolute !important;
-    top: 45px !important;
-    left: 85% !important;
-    margin-left: -125px !important;
-    width: 100px !important;
-    color: black !important;
-    text-align: center !important;
-    text-transform: uppercase !important;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black!important;
-    font-family: "Comic Sans" !important;
-    font-style: normal !important;
-    font-size: 24px !important;
-    }    
-a[href|="/ajsign"] {background-position: -2px -2px}
-a[href|="/lyrasign"] {background-position: -2px -154px}
-a[href|="/twisign"] {background-position: -2px -356px}
-a[href|="/dashsign"] {background-position: -170px -2px}
-a[href|="/derpysign"] {background-position: -338px -2px}
-a[href|="/scootasign"] {background-position: -313px -154px}
-
-a[href|="/ppsign"]{
-    background-image: url(%%signsheet%%) !important;
-    background-repeat: no-repeat !important;
-    display: inline-block !important;
-    position: relative !important;
-    width:166px; height:150px;
-    line-height: 20px !important;
-    overflow: hidden !important;
-    cursor: default !important;
-    }
-    
-a[href|="/ppsign"] em{
-    position: absolute !important;
-    top: 108px !important;
-    left: 95% !important;
-    margin-left: -125px !important;
-    width: 115px !important;
-    color: #ed468e !important;
-    text-align: center !important;
-    text-transform: uppercase !important;
-    text-shadow: -1px 0 #b91072, 0 1px black, 1px 0 #b91072, 0 -1px #b91072!important;
-    font-family: "Comic Sans" !important;
-    font-style: normal !important;
-    font-size: 18px !important;
-    }   
-a[href|='/ppsign'] {width:141px; height:200px; background-position: -170px -154px}
-
-a[href='/ajsay'],  a[href='/bonshades'], a[href='/daring'],  a[href='/derpquite'], a[href='/disshrug'],  a[href='/fluffycord'],a[href='/gildafuck'], a[href='/oppositesattract'],a[href='/pphappy'], a[href='/pphmmm'],  a[href='/ppthink'], a[href='/pptrain'], a[href='/rarirage'],a[href='/rdpoker'], a[href='/slowcord'],a[href='/twiststare'], a[href='/twiyou'], a[href='/ppducreux'], a[href='/raripout'], a[href='/trixiestahp'] {
-
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%emotesheet%%) }
-
-a[href|='/ajsay']  {width:150px; height:150px; background-position: -270px -393px}
-a[href|='/bonshades']  {width:107px; height:110px; background-position: -180px -2px}
-a[href|='/daring']  {width:123px; height:150px; background-position: -263px -241px}
-a[href|='/derpquite']  {width:137px; height:150px; background-position: -124px -241px}
-a[href|='/disshrug']  {width:137px; height:150px; background-position: -2px -393px}
-a[href|='/fluffycord']  {width:217px; height:200px; background-position: -2px -747px}
-a[href|='/gildafuck']  {width:120px; height:150px; background-position: -2px -241px}
-a[href|='/oppositesattract']  {width:127px; height:150px; background-position: -141px -393px}
-a[href|='/pphappy']  {width:103px; height:120px; background-position: -259px -119px}
-a[href|='/pphmmm']  {width:120px; height:120px; background-position: -137px -119px}
-a[href|='/ppthink']  {width:107px; height:150px; background-position: -2px -545px}
-a[href|='/pptrain']  {width:183px; height:200px; background-position: -111px -545px}
-a[href|='/rarirage']  {width:93px; height:115px; background-position: -289px -2px}
-a[href|='/rdpoker']  {width:133px; height:120px; background-position: -2px -119px}
-a[href|='/slowcord']  {width:101px; height:98px; background-position: -77px -2px}
-a[href|='/twiststare']  {width:73px; height:70px; background-position: -2px -2px}
-a[href|='/twiyou']  {width:99px; height:120px; background-position: -364px -119px}
- a[href='/ppducreux']{width:100px; height:200px; background-position: -221px -747px}
- a[href='/raripout']{width:167px; height:150px; background-position: -296px -582px}
-a[href='/trixiestahp']{width:100px; height:60px; background-position: -355px -770px}
-
-a[href|='/ajcake'],a[href|='/ajsoawesome'],a[href|='/ccthis'],a[href|='/daisythis'],a[href|='/dashcute'],a[href|='/dashshades'],a[href|='/dashthisshit'],a[href|='/derpyfacehoof'],a[href|='/onederp'],a[href|='/ppbusiness'],a[href|='/pphorn'],a[href|='/ppjuice'],a[href|='/ppspy'],a[href|='/ppspywhat'],a[href|='/ppthisshit'],a[href|='/prettypone'],a[href|='/raridance'],a[href|='/rariexcited'],a[href|='/rarisoawesome'],a[href|='/shysoawesome'],a[href|='/twiquite'],a[href|='/twisit'],a[href|='/twisoawesome'],a[href|='/twithisshit']{
-
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%bemotesheet%%) }
-
-a[href|='/ajcake'] {width:108px; height:124px; background-position: -118px -119px}
-a[href|='/ajsoawesome'] {width:115px; height:130px; background-position: -345px -119px}
-a[href|='/ccthis'] {width:147px; height:138px; background-position: -2px -682px}
-a[href|='/daisythis'] {width:147px; height:115px; background-position: -2px -403px}
-a[href|='/dashcute'] {width:102px; height:150px; background-position: -119px -251px}
-a[href|='/dashshades'] {width:97px; height:100px; background-position: -2px -2px}
-a[href|='/dashthisshit'] {width:160px; height:122px; background-position: -2px -555px}
-a[href|='/derpyfacehoof'] {width:94px; height:110px; background-position: -101px -2px}
-a[href|='/onederp'] {width:105px; height:105px; background-position: -197px -2px}
-a[href|='/ppbusiness'] {width:156px; height:150px; background-position: -150px -822px}
-a[href|='/pphorn'] {width:172px; height:125px; background-position: -313px -682px}
-a[href|='/ppjuice'] {width:132px; height:125px; background-position: -357px -251px}
-a[href|='/ppspy'] {width:202px; height:150px; background-position: -308px -822px}
-a[href|='/ppspywhat'] {width:114px; height:115px; background-position: -2px -119px}
-a[href|='/ppthisshit'] {width:160px; height:130px; background-position: -151px -682px}
-a[href|='/prettypone'] {width:99px; height:115px; background-position: -304px -2px}
-a[href|='/raridance'] {width:128px; height:150px; background-position: -275px -403px}
-a[href|='/rariexcited'] {width:146px; height:150px; background-position: -2px -822px}
-a[href|='/rarisoawesome'] {width:115px; height:126px; background-position: -228px -119px}
-a[href|='/shysoawesome'] {width:132px; height:120px; background-position: -223px -251px}
-a[href|='/twiquite'] {width:122px; height:150px; background-position: -151px -403px}
-a[href|='/twisit'] {width:157px; height:125px; background-position: -164px -555px}
-a[href|='/twisoawesome'] {width:115px; height:130px; background-position: -2px -251px}
-a[href|='/twithisshit'] {width:160px; height:125px; background-position: -323px -555px}
-
-
-a[href|="/ajfriends"], a[href|="/ajreally"], a[href|="/cmcnope"], a[href|="/darling"], a[href|="/lyranotone"], a[href|="/lyraquite"], a[href|="/naughty"], a[href|="/ppchangeling"], a[href|="/ppnowai"], a[href|="/ppohgawd"], a[href|="/rarseriously"], a[href|="/rderpshrug"], a[href|="/sbserious"], a[href|="/scootsafraid"], a[href|="/spikefacepalm"], a[href|="/spikepopcorn"], a[href|="/surteehee"], a[href|="/tiadisapprove"], a[href|="/twisure"], a[href|="/twiwhat"]{
-
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%emotesheetc%%) }
-
-
-a[href|="/ajfriends"] {width:178px; height:148px; background-position: -2px -2px}
-a[href|="/ajreally"] {width:128px; height:150px; background-position: -182px -2px}
-a[href|="/cmcnope"] {width:175px; height:120px; background-position: -312px -2px}
-a[href|="/darling"] {width:190px; height:175px; background-position: -489px -2px}
-a[href|="/lyranotone"] {width:234px; height:250px; background-position: -681px -2px}
-a[href|="/lyraquite"] {width:126px; height:125px; background-position: -2px -254px}
-a[href|="/naughty"] {width:106px; height:115px; background-position: -130px -254px}
-a[href|="/ppchangeling"] {width:301px; height:175px; background-position: -238px -254px}
-a[href|="/ppnowai"] {width:144px; height:125px; background-position: -541px -254px}
-a[href|="/ppohgawd"] {width:77px; height:125px; background-position: -687px -254px}
-a[href|="/rarseriously"] {width:131px; height:150px; background-position: -766px -254px}
-a[href|="/rderpshrug"] {width:119px; height:125px; background-position: -899px -254px}
-a[href|="/sbserious"] {width:123px; height:115px; background-position: -2px -431px}
-a[href|="/scootsafraid"] {width:131px; height:100px; background-position: -127px -431px}
-a[href|="/spikefacepalm"] {width:90px; height:110px; background-position: -260px -431px}
-a[href|="/spikepopcorn"] {width:92px; height:150px; background-position: -352px -431px}
-a[href|="/surteehee"] {width:113px; height:150px; background-position: -446px -431px}
-a[href|="/tiadisapprove"] {width:118px; height:120px; background-position: -561px -431px}
-a[href|="/twisure"] {width:122px; height:150px; background-position: -681px -431px}
-a[href|="/twiwhat"] {width:162px; height:150px; background-position: -805px -431px}
-
-a[href|='/ajstahp'],a[href|='/lyrailikethis'],a[href|='/lyrastahp'], a[href|='/lyrastop'],a[href|='/lyraunimpressed'],a[href|='/ppstahp'],a[href|='/raristahp'],a[href|='/rariwhy'],a[href|='/rdattention'],a[href|='/restahp'],a[href|='/sbtear'],a[href|='/serioushat'],a[href|='/problemshy'],a[href|='/tavismirk'],a[href|='/artthoumad'],a[href|='/pillowdash'],a[href|='/takeaseat'],a[href|='/wonderfucks'],a[href|='/rariwant'],a[href|='/ppohmygosh'],a[href|='/rainbowpiesnuggles'],a[href|='/flutterfinejeez'],a[href|='/twibooks']{
-
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%emotesheetd%%) }
-
-
-a[href|='/ajstahp'] {width:100px; height:65px; background-position: -2px -69px}
-a[href|='/lyrailikethis'] {width:77px; height:90px; background-position: -162px -69px}
-a[href|='/lyrastahp'] {width:108px; height:65px; background-position: -335px -2px}
-a[href|='/lyrastop'] {width:202px; height:200px; background-position: -112px -323px}
-a[href|='/lyraunimpressed'] {width:91px; height:100px; background-position: -414px -69px}
-a[href|='/ppstahp'] {width:108px; height:65px; background-position: -114px -2px}
-a[href|='/raristahp'] {width:110px; height:65px; background-position: -2px -2px}
-a[href|='/rariwhy'] {width:176px; height:150px; background-position: -318px -171px}
-a[href|='/rdattention'] {width:108px; height:150px; background-position: -2px -323px}
-a[href|='/restahp'] {width:109px; height:65px; background-position: -224px -2px}
-a[href|='/sbtear'] {width:56px; height:70px; background-position: -104px -69px}
-a[href|='/serioushat'] {width:314px; height:147px; background-position: -2px -171px}
-a[href|='/problemshy'] {width:80px; height:100px; background-position: -241px -69px}
-a[href|='/tavismirk'] {width:89px; height:100px; background-position: -323px -69px}
-a[href|='/artthoumad'] {width:148px; height:135px; background-position: -314px -324px}
-a[href|='/pillowdash'] {width:118px; height:130px; background-position: -0px -480px}
-a[href|='/takeaseat'] {width:135px; height:135px; background-position: -122px -523px}
-a[href|='/wonderfucks'] {width:198px; height:155px; background-position: -314px -459px}
-a[href|='/rariwant'] {width:150px; height:115px; background-position: -0px -650px}
-a[href|='/ppohmygosh'] {width:113px; height:115px; background-position: -150px -655px}
-a[href|='/rainbowpiesnuggles'] {width:150px; height:110px; background-position: -263px -615px}
-a[href|='/flutterfinejeez'] {width:130px; height:130px; background-position: -0px -768px}
-a[href|='/twibooks'] {width:160px; height:162px; background-position: -263px -715px}
-
 
 /* For anyone with no flair, or flair disabled, this will give them missingno flair.
     Listed before the rest of the username shit so it will be overridden by manual flair additions. */
@@ -999,7 +541,7 @@ a.author[href$=Generic_Builder],
 a.author[href$=volcano_bakemeats],
 a.author[href$=Chillusion],
 a.author[href$=Jeroknite],
-a.author[href$=Esplin],
+a.author[href$=Esplin_2],
 a.author[href$=DarqWolff],
 a.author[href$=cheesemoo],
 a.author[href$=scriptea],
@@ -1026,7 +568,9 @@ a.author[href$=StabbyTheLlama],
 a.author[href$=thezooman123],
 a.author[href$=Nagashizuri],
 a.author[href$=andresonic1],
-a.author[href$=Bflat13]
+a.author[href$=Bflat13],
+a.author[href$=theclinger_4],
+a.author[href$=FUCKING_HATE_REDDIT]
 
 
 { 
@@ -1102,7 +646,7 @@ a.author[href$=SolarLuna96]:before,
 a.author[href$=Generic_Builder]:before,
 a.author[href$=volcano_bakemeats]:before,
 a.author[href$=Chillusion]:before,
-a.author[href$=Esplin]:before,
+a.author[href$=Esplin_2]:before,
 a.author[href$=DarqWolff]:before,
 a.author[href$=cheesemoo]:before,
 a.author[href$=scriptea]:before,
@@ -1129,7 +673,9 @@ a.author[href$=Lord_Ninka]:before,
 a.author[href$=StabbyTheLlama]:before,
 a.author[href$=Nagashizuri]:before,
 a.author[href$=andresonic1]:before,
-a.author[href$=Bflat13]:before
+a.author[href$=Bflat13]:before,
+a.author[href$=theclinger_4]:before,
+a.author[href$=FUCKING_HATE_REDDIT]:before
 
 {
 font-size:10px!important; 
@@ -1204,7 +750,7 @@ a.author[href$=Generic_Builder]:before { content:"Genewic Bwuilda" }
 a.author[href$=volcano_bakemeats]:before { content:"Madam Le Bake" }
 a.author[href$=DaylightDarkle]:before { content:"Twilight Sparkle" }
 a.author[href$=Chillusion]:before { content:"Cchhiilllluussiioonn" }
-a.author[href$=Esplin]:before {content:"Esplando"}
+a.author[href$=Esplin_2]:before {content:"Esplando"}
 a.author[href$=Jeroknite]:before {content:"JokerTine"; font-size:15px !important}
 a.author[href$=DarqWolff]:before { content:"[](/DarqWolff)" }
 a.author[href$=cheesemoo]:before { content:"Cheesemeow" }
@@ -1230,6 +776,8 @@ a.author[href$=StabbyTheLlama]:before { content:"StabbyTheBOOBS" }
 a.author[href$=Nagashizuri]:before { content:"Maga" }
 a.author[href$=andresonic1]:before { content:"Fake" }
 a.author[href$=Bflat13]:before { content:"BECAUSE OF THE MOTHER FUCKING SUGAR!" }
+a.author[href$=theclinger_4]:before { content:"The Cringler" }
+a.author[href$=FUCKING_HATE_REDDIT]:before { content:"Freakin' Dislike Webplace" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -1282,7 +830,7 @@ a.author[href$=lord-hemingway]:after,
 a.author[href$=Generic_Builder]:after,
 a.author[href$=volcano_bakemeats]:after,
 a.author[href$=Chillusion]:after,
-a.author[href$=Esplin]:after,
+a.author[href$=Esplin_2]:after,
 a.author[href$=Jeroknite]:after,
 a.author[href$=waffen337]:after,
 a.author[href$=sirtophat]:after,
@@ -1309,7 +857,9 @@ a.author[href$=hermano23]:after,
 a.author[href$=herabek]:after,
 a.author[href$=Backupusername]:after,
 a.author[href$= Nagashizuri]:after,
-a.author[href$="Conky_"]:after
+a.author[href$="Conky_"]:after,
+a.author[href$="theclinger_4"]:after
+
 {
 color:#000; 
 font-size:10px!important; 
@@ -1349,7 +899,7 @@ a.author[href$=lord-hemingway]:after { content:" (Clopper 44)" }
 a.author[href$=Generic_Builder]:after { content:" IS SO KAWAII!" }
 a.author[href$=volcano_bakemeats]:after { content:" (Flour Sack Monster)" }
 a.author[href$=Chillusion]:after { content:" (Because I can.)" }
-a.author[href$=Esplin]:after { content:" Andy's Waifu" }
+a.author[href$=Esplin_2]:after { content:" the one and only" }
 a.author[href$=waffen337]:after { content:"(Fucking ass ball bajongler)" }
 a.author[href$=sirtophat]:after { content:" (flaming homosexual)"; color:purple }
 a.author[href$=cheesemoo]:after { content:" (Still exists, apparently)" }
@@ -1378,6 +928,7 @@ a.author[href$="10z20Luka"]:after { content:" (Wears a flaming kilt made from th
 a.author[href$=JIVEprinting]:after { content:" Christfag" }
 a.author[href$="Conky_"]:after { content:" In a Lot of Trouble, Mr." }
 a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
+a.author[href$="theclinger_4"]:after { content:" is tired of your bullshit" }
 
 
 /* Any pre/post-name flair stuff goes here */ 
@@ -1435,6 +986,30 @@ a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 {
   background-position: 0px -3390px;
 }
+
+/********** Emotes ************/
+
+a[href|='/pokeypeek'],a[href|='/screwwut'],a[href|='/cogglerbluh'], a[href|='/derpywat'],a[href|='/duckfacesombra'],a[href|='/lunabats'],a[href|='/bonbonwat'],a[href|='/mlas1'],a[href|='/mangobatpony'],a[href|='/flutterwatter'],a[href|='/macnopebait'],a[href|='/scootscoot'],a[href|='/celestiasad'],a[href|='/fluttergetout']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheetaa%%) }
+
+a[href|="/pokeypeek"] {width:80px; height:57px; background-position: -0px -0px}
+a[href|="/screwwut"] {width:148px; height:148px; background-position: -81px -0px}
+a[href|="/cogglerbluh"] {width:126px; height:140px; background-position: -230px -0px}
+a[href|="/derpywat"] {width:105px; height:125px; background-position: -357px -0px}
+a[href|="/duckfacesombra"] {width:150px; height:145px; background-position: -0px -150px}
+a[href|="/lunabats"] {width:252px; height:182px; background-position: -154px -150px}
+a[href|="/bonbonwat"] {width:94px; height:140px; background-position: -406px -120px}
+a[href|="/mlas1"] {width:420px; height:133px; background-position: -30px -331px}
+a[href|="/mangobatpony"] {width:159px; height:220px; background-position: -0px -466px}
+a[href|="/flutterwatter"] {width:155px; height:105px; background-position: -162px -465px}
+a[href|="/macnopebait"] {width:165px; height:160px; background-position: -320px -465px}
+a[href|="/scootscoot"] {width:155px; height:185px; background-position: -162px -570px}
+a[href|="/celestiasad"] {width:145px; height:200px; background-position: -0px -700px}
+a[href|="/fluttergetout"] {width:168px; height:270px; background-position: -320px -625px}
 
 /* Text colors! */
 a[href|="/white!"]:nth-of-type(n) { color: white !important; cursor: text !important; background-color: black !important }

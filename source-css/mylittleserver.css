@@ -1,59 +1,4 @@
-/*Changes "readers"/
-div.titlebox span.word {
-    display: none
-    }
-div.titlebox span.number:after {
-    content: " inhabitants of the Lawless Lands"
-    }
-
-/* Flair */
-.flair-banana {
-    background-image: url(%%bananaflair%%) !important
-    }
-.flair {
-    background: none;
-    background-repeat: no-repeat;
-    width: 31px;
-    height: 31px;
-    margin: 0px;
-    padding: 0px;
-    text-indent: -9999px;
-    border: none
-    }
-
-/*This stuff adds an 'announcement' to the top of the subreddit the text of the announcement will be in h3/### text in the reddit description  */
-body {
-    position: relative
-    }
-.content {
-    margin-top: 60px
-    }
-.pagename {
-    font-size: 16pt
-    }
-.titlebox form {
-    position: static
-    }
-.titlebox .usertext-body .md h3 {
-    width: 70%;
-    height: 1.5%;
-    background-position: 4px 4px;
-    background-repeat: no-repeat;
-    background-color: #FFFF99;
-    border: 1px solid #000000;
-    color: #000000;
-    position: absolute;
-    top: 170px;
-    left: 40px;
-    z-index: 200;
-    margin: 0;
-    padding: 4px;
-    padding-left: 5px;
-    text-align: center;
-    -moz-border-radius: 5px;
-    font-size: 90%;
-    -webkit-border-radius: 5px
-    }
+/* Emotes */
 START-PONYSCRIPT-IGNORE{color:red;}
 a[href|="/mlsb1"], a[href|="/swagintosh"] {
     display: block;
@@ -273,6 +218,14 @@ a[href|="/mlsg1"]:hover, a[href|="/hecomes"]:hover {
     width: 150px;
     height: 150px;
     background-image: url(%%zalgoberg%%)
+    }
+a[href|="/mlsg2"], a[href|="/deaugh"], a[href|="/notatallboy"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 206px;
+    background-image: url(%%deaugh%%)
     }
 END-PONYSCRIPT-IGNORE{color:red;}
 

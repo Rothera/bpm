@@ -140,7 +140,18 @@ a[href|="/shybunny"] { background-position: -0px -350px; width: 192px; height: 1
 a[href|="/startledshy"] { background-position: -0px -500px; width: 100px; height: 150px; }
 a[href|="/shysheep"] { background-position: -100px -500px; width: 71px; height: 100px; }
 
-
+/* Sprite #4 */
+ 
+a[href|="/princesswoona"], a[href|="/hanginthere"], a[href|="/businessshy"], a[href|="/nomnom"], a[href|="/allmine"],
+a[href|="/wolfshy"]
+{ display: block; background: url(%%sprite3%%) no-repeat; float: left;}
+ 
+a[href|="/princesswoona"] { background-position: -0px -0px; width: 120px; height: 200px; }
+a[href|="/hanginthere"] { background-position: -0px -200px; width: 128px; height: 200px; }
+a[href|="/businessshy"] { background-position: -0px -400px; width: 140px; height: 150px; }
+a[href|="/nomnom"] { background-position: -0px -550px; width: 176px; height: 150px; }
+a[href|="/allmine"] { background-position: -0px -700px; width: 78px; height: 150px; }
+a[href|="/wolfshy"] { background-position: -0px -850px; width: 189px; height: 120px; }
 
 /* Redone Flutter emotes */
 
@@ -723,42 +734,6 @@ a[href|="/kontanlovesyou"] {
 
 .flair-flutter6 {
    background-position: 0 -120px;
-}
-
-.flair-giantflair {
-    padding: 0;
-    background: none;
-    color: black;
-    border: 0;
-    border-radius: 0;
-    background-image: url(%%giantflair%%);
-    display: inline-block;
-    height: 200px;
-    width: 200px;
-}
-
-.flair-slightlylessgiantflair {
-    padding: 0;
-    background: none;
-    color: black;
-    border: 0;
-    border-radius: 0;
-    background-image: url(%%slightlylessgiantflair%%);
-    display: inline-block;
-    height: 75px;
-    width: 75px;
-}
-
-.flair-tacogiantflair {
-    padding: 0;
-    background: none;
-    color: black;
-    border: 0;
-    border-radius: 0;
-    background-image: url(%%tacogiantflair%%);
-    display: inline-block;
-    height: 50px;
-    width: 50px;
 }
 
 /* Subscribers and active users */
