@@ -133,7 +133,38 @@ body.res-nightmode:first-of-type > .content {background-color: transparent!impor
 
 /* ------ Emotes! --------- */
 
-a[href|='/ajface'], a[href|='/cutiefire'], a[href|='/dawhgs'], a[href|='/elementary'], a[href|='/forscience'], a[href|='/isay'], a[href|='/ppsahme'], a[href|='/pptears'], a[href|='/ppthumbsup'], a[href|='/ppuncheck'], a[href|='/teeth'], a[href|='/twiumm']{
+a[href|='/ajsquee'], a[href|='/appleyell'], a[href|='/bonsocks'], a[href|='/chuck'], a[href|='/dashing'], a[href|='/dashoh'], a[href|='/ldready'], a[href|='/lyracute'], a[href|='/motherofgod'], a[href|='/notathing'], a[href|='/notcool'], a[href|='/notsureifwant'], a[href|='/sbcool'], a[href|='/scootacool'], a[href|='/shyreally'], a[href|='/spikesmug'], a[href|='/sureh'], a[href|='/trixoh'], a[href|='/ttshrug'], a[href|='/twising'] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%dsheet%%)
+    } 
+
+a[href|='/ajsquee'] {width:109px; height:125px; background-position: -331px -129px}
+a[href|='/appleyell'] {width:226px; height:175px; background-position: -151px -712px}
+a[href|='/bonsocks'] {width:203px; height:150px; background-position: -188px -560px}
+a[href|='/chuck'] {width:95px; height:150px; background-position: -393px -560px}
+a[href|='/dashing'] {width:125px; height:125px; background-position: -204px -129px}
+a[href|='/dashoh'] {width:78px; height:150px; background-position: -108px -560px}
+a[href|='/ldready'] {width:217px; height:150px; background-position: -225px -256px}
+a[href|='/lyracute'] {width:104px; height:150px; background-position: -2px -560px}
+a[href|='/motherofgod'] {width:147px; height:175px; background-position: -2px -712px}
+a[href|='/notathing'] {width:81px; height:125px; background-position: -2px -129px}
+a[href|='/notcool'] {width:117px; height:125px; background-position: -85px -129px}
+a[href|='/notsureifwant'] {width:148px; height:125px; background-position: -238px -2px}
+a[href|='/sbcool'] {width:85px; height:120px; background-position: -68px -2px}
+a[href|='/scootacool'] {width:233px; height:150px; background-position: -242px -408px}
+a[href|='/shyreally'] {width:221px; height:150px; background-position: -2px -256px}
+a[href|='/spikesmug'] {width:67px; height:125px; background-position: -388px -2px}
+a[href|='/sureh'] {width:114px; height:150px; background-position: -2px -408px}
+a[href|='/trixoh'] {width:122px; height:150px; background-position: -118px -408px}
+a[href|='/ttshrug'] {width:64px; height:70px; background-position: -2px -2px}
+a[href|='/twising'] {width:81px; height:125px; background-position: -155px -2px}
+
+
+
+
+a[href|='/ajface'], a[href|='/cutiefire'], a[href|='/dawhgs'], a[href|='/elementary'], a[href|='/forscience'], a[href|='/isay'], a[href|='/ppshame'], a[href|='/pptears'], a[href|='/ppthumbsup'], a[href|='/ppuncheck'], a[href|='/teeth'], a[href|='/twiumm']{
     display: block;
     clear: none;
     float: left;
@@ -146,7 +177,7 @@ a[href|='/dawhgs'] {width:190px; height:200px; background-position: -257px -493p
 a[href|='/elementary'] {width:88px; height:120px; background-position: -114px -2px}
 a[href|='/forscience'] {width:220px; height:200px; background-position: -201px -291px}
 a[href|='/isay'] {width:56px; height:125px; background-position: -204px -2px}
-a[href|='/ppsahme'] {width:253px; height:200px; background-position: -2px -493px}
+a[href|='/ppshame'] {width:253px; height:200px; background-position: -2px -493px}
 a[href|='/pptears'] {width:150px; height:150px; background-position: -2px -139px}
 a[href|='/ppthumbsup'] {width:145px; height:150px; background-position: -154px -139px}
 a[href|='/ppuncheck'] {width:197px; height:170px; background-position: -2px -291px}
@@ -302,7 +333,7 @@ a[href="/spoiler"]:nth-of-type(n):hover {
     background-position: 0px -210px !important}
 
 /* gavin14's nightmode flair fix */
-.res-nightmode .content .flair {
+.res-nightmode .content .flair  {
 background-color: transparent!important;
 }
 
@@ -312,6 +343,8 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 
 /* here first */
 a.author[href$=XelNaga],
+a.author[href$=EvanMacIan],
+a.author[href$=SirCinnamon],
 a.author[href$=Princess_Molestia_],
 a.author[href$=V17Ds],
 a.author[href$=ZZW30],
@@ -329,6 +362,8 @@ content: "";
 }
 
 /* here second */
+a.author[href$=EvanMacIan]:before,
+a.author[href$=SirCinnamon]:before,
 a.author[href$=XelNaga]:before,
 a.author[href$=Princess_Molestia_]:before,
 a.author[href$=V17Ds]:before,
@@ -344,6 +379,9 @@ visibility:visible!important;
 }
 
 /*and the replacement*/
+a.author[href$=EvanMacIan]:before {content:"EwanMacIan"}
+
+a.author[href$=SirCinnamon]:before {content:"King Cinnamon"}
 a.author[href$=XelNaga]:before {content:"Twi`Naga"}
 a.author[href$=Princess_Molestia_]:before {content:"Princess Molestia"}
 a.author[href$=V17Ds]:before {content:"SkiftSwii"}
@@ -353,7 +391,7 @@ a.author[href$=CodenameToon]:before {content:"Coggler"}
 a.author[href$=Jeroknite]:before {content:"JokerTine"; font-size:15px !important}
 a.author[href$="0x_"]:before {content:"Just Ox"}
 a.author[href$="Backupusername"]:before {content: "Not anyone special"}
-
+a.author[href$=EvanMacIan]:after {color:#000; font-size:9px; content:" Prefers dick"}
 a.author[href$="videogamewonder"]:after
 {
 color:#000; 

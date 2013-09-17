@@ -2,12 +2,12 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%sanicbg%%)  no-repeat  fixed 66% 100% !important;
+    background:  url(%%backgroundground%%)  no-repeat  fixed 66% 100% !important;
 }
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%banbanner%%)!important;
+   background: url(%%bannerban%%)!important;
    background-repeat: no-repeat!important;
    background-position: 50% 100%!important;
    height: 237px; /* 237 for meat's nice banner and general banner size */
@@ -424,6 +424,19 @@ background-repeat: no-repeat;
 .flair-llamaindrag:after { background-position: 0px -5640px }
 .flair-twilightsparkles:after { background-position: 0px -5670px }
 .flair-hatereddit:after { background-position: 0px -5700px }
+.flair-MemeticOutlaw:after { background-position: 0px -5730px }
+.flair-capawesome:after { background-position: 0px -5760px }
+.flair-ave6:after { background-position: 0px -5790px }
+.flair-amazingkent:after { background-position: 0px -5820px }
+.flair-icenub:after { background-position: 0px -5850px }
+.flair-homertime:after { background-position: 0px -5880px }
+.flair-loversh:after { background-position: 0px -5910px }
+.flair-mastersublink:after { background-position: 0px -5940px }
+.flair-southpaw:after { background-position: 0px -5970px }
+.flair-rockpuppy:after { background-position: 0px -6000px }
+.flair-earhole:after { background-position: 0px -6030px }
+.flair-wwwi:after { background-position: 0px -6060px }
+.flair-videogamewonder:after { background-position: 0px -6090px }
 
 
 /* Nightmode fix for flair */
@@ -541,7 +554,7 @@ a.author[href$=Generic_Builder],
 a.author[href$=volcano_bakemeats],
 a.author[href$=Chillusion],
 a.author[href$=Jeroknite],
-a.author[href$=Esplin_2],
+a.author[href$=Edriss562],
 a.author[href$=DarqWolff],
 a.author[href$=cheesemoo],
 a.author[href$=scriptea],
@@ -646,7 +659,7 @@ a.author[href$=SolarLuna96]:before,
 a.author[href$=Generic_Builder]:before,
 a.author[href$=volcano_bakemeats]:before,
 a.author[href$=Chillusion]:before,
-a.author[href$=Esplin_2]:before,
+a.author[href$=Edriss562]:before,
 a.author[href$=DarqWolff]:before,
 a.author[href$=cheesemoo]:before,
 a.author[href$=scriptea]:before,
@@ -750,7 +763,7 @@ a.author[href$=Generic_Builder]:before { content:"Genewic Bwuilda" }
 a.author[href$=volcano_bakemeats]:before { content:"Madam Le Bake" }
 a.author[href$=DaylightDarkle]:before { content:"Twilight Sparkle" }
 a.author[href$=Chillusion]:before { content:"Cchhiilllluussiioonn" }
-a.author[href$=Esplin_2]:before {content:"Esplando"}
+a.author[href$=Edriss562]:before {content:"Esplando"}
 a.author[href$=Jeroknite]:before {content:"JokerTine"; font-size:15px !important}
 a.author[href$=DarqWolff]:before { content:"[](/DarqWolff)" }
 a.author[href$=cheesemoo]:before { content:"Cheesemeow" }
@@ -830,7 +843,7 @@ a.author[href$=lord-hemingway]:after,
 a.author[href$=Generic_Builder]:after,
 a.author[href$=volcano_bakemeats]:after,
 a.author[href$=Chillusion]:after,
-a.author[href$=Esplin_2]:after,
+a.author[href$=Edriss562]:after,
 a.author[href$=Jeroknite]:after,
 a.author[href$=waffen337]:after,
 a.author[href$=sirtophat]:after,
@@ -899,7 +912,7 @@ a.author[href$=lord-hemingway]:after { content:" (Clopper 44)" }
 a.author[href$=Generic_Builder]:after { content:" IS SO KAWAII!" }
 a.author[href$=volcano_bakemeats]:after { content:" (Flour Sack Monster)" }
 a.author[href$=Chillusion]:after { content:" (Because I can.)" }
-a.author[href$=Esplin_2]:after { content:" the one and only" }
+a.author[href$=Edriss562]:after { content:" the one and only" }
 a.author[href$=waffen337]:after { content:"(Fucking ass ball bajongler)" }
 a.author[href$=sirtophat]:after { content:" (flaming homosexual)"; color:purple }
 a.author[href$=cheesemoo]:after { content:" (Still exists, apparently)" }
@@ -940,7 +953,9 @@ a.author[href$="theclinger_4"]:after { content:" is tired of your bullshit" }
 .tagline a.author[href$="/Orschmann"]:before,
 .tagline a.author[href$="/EvilHom3r"]:after,
 .tagline a.author[href$="/ajtexasranger"]:after,
-.tagline a.author[href$="/fsakj"]:before
+.tagline a.author[href$="/fsakj"]:before,
+.tagline a.author[href$="/durpyDash"]:before
+
 
 {
     content: " ";
@@ -965,7 +980,9 @@ a.author[href$="theclinger_4"]:after { content:" is tired of your bullshit" }
 :not(.flair) .tagline a.author[href$="/RainbowCrash"]:before,
 :not(.flair) .tagline a.author[href$="/Latiel"]:before,
 :not(.flair) .tagline a.author[href$="/245001"]:before,
-:not(.flair) .tagline a.author[href$="/fsakj"]:before
+:not(.flair) .tagline a.author[href$="/fsakj"]:before,
+:not(.flair) .tagline a.author[href$="/durpyDash"]:before
+
 {
     background-position: 0px -540px !important;
 }
@@ -989,7 +1006,7 @@ a.author[href$="theclinger_4"]:after { content:" is tired of your bullshit" }
 
 /********** Emotes ************/
 
-a[href|='/pokeypeek'],a[href|='/screwwut'],a[href|='/cogglerbluh'], a[href|='/derpywat'],a[href|='/duckfacesombra'],a[href|='/lunabats'],a[href|='/bonbonwat'],a[href|='/mlas1'],a[href|='/mangobatpony'],a[href|='/flutterwatter'],a[href|='/macnopebait'],a[href|='/scootscoot'],a[href|='/celestiasad'],a[href|='/fluttergetout']{
+a[href|='/pokeypeek'],a[href|='/screwwut'],a[href|='/cogglerbluh'], a[href|='/derpywat'],a[href|='/duckfacesombra'],a[href|='/lunabats'],a[href|='/bonbonwat'],a[href|='/mlas1'],a[href|='/mangobatpony'],a[href|='/flutterwatter'],a[href|='/macnopebait'],a[href|='/scootscoot'],a[href|='/celestiasad'],a[href|='/fluttergetout'],a[href|='/pokeyhugs']{
 
     display: block;
     clear: none;
@@ -1010,6 +1027,9 @@ a[href|="/macnopebait"] {width:165px; height:160px; background-position: -320px 
 a[href|="/scootscoot"] {width:155px; height:185px; background-position: -162px -570px}
 a[href|="/celestiasad"] {width:145px; height:200px; background-position: -0px -700px}
 a[href|="/fluttergetout"] {width:168px; height:270px; background-position: -320px -625px}
+a[href|="/pokeyhugs"] {width:150px; height:145px; background-position: -160px -755px}
+
+/********** End of Emotes ************/
 
 /* Text colors! */
 a[href|="/white!"]:nth-of-type(n) { color: white !important; cursor: text !important; background-color: black !important }

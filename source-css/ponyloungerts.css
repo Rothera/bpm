@@ -1,12 +1,50 @@
-/* Stylesheet shamelessly and lazily copied from other subs, especially mylittlebravery */
+/* nicer stylesheet thingy */
+.stylesheet-customize-container { width: 100%; }
+#subreddit_stylesheet { display: block; overflow: hidden; }
+.sheets { margin: 0;}
+#stylesheet_contents{
+font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+padding:5px;
+background-color:#222;
+color:#ace;
+border:2px solid #222; 
+height: 500px; 
+font-size: 13px;}
+body.res-nightmode #stylesheet_contents{
+background-color:#111;
+border-color:#111; 
+height: 500px; 
+font-size: 13px;
+}
 
-.pagename a, .titlebox h1 a {color:#e2a9e9!important;font-size:x-large!important;text-decoration:none!important;text-shadow: 2px 0px 0px white, 2px 2px 0px white, 2px -2px 0px white, 0px 2px 0px white, 0px -2px 0px white, -2px 2px 0px white, -2px 0px 0px white, -2px -2px 0px white}
-#header {background-color:#71d4f0!important;}
-.tabmenu a {color:#e2a9e9!important;}
-.tabmenu li.selected a {color:#e2a9e9!important;}
 
-.side {background-color:#80dab7!important;}
-body{background:url(%%background%%) no-repeat fixed center center}
+/* Banner Image  http://karl97.deviantart.com/art/Butterfly-Wallpaper-397554440 */
+#header-bottom-left {
+    background: url(%%banner%%);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 30%;
+    height: 204px
+    }
+#header-img {
+    margin-left: 0px;
+    margin-top: 103px
+    }
+
+/* hides default reddit logo text */
+#header-img.default-header { width: 35px; }
+
+/* Stylesheet shamelessly and lazily copied from other subs*/
+
+
+/* sidebar background color*/
+.side {background-color:#FFF5EE!important;}
+
+/*background*/ 
+body {
+background: url(%%background%%)  
+no-repeat fixed center center
+}
 
 
 /*---------------------- Nightmode fixes for the background -------------------------------- */
@@ -25,12 +63,11 @@ body.res-nightmode:first-of-type {
     display: none
     }
 .titlebox .number:after {
-    content: " Mudcrabs"
+    content: " Whatever our joke is now"
     }
 div.titlebox .users-online span.number:after {
-    content: " Chasing Dovashy"
+    content: " Something"
     }
-
 .footer-parent {
     height: 500px;
     padding-top: 0px;
@@ -44,29 +81,228 @@ div.titlebox .users-online span.number:after {
     margin-bottom: -1px
     }
 
+/*upflutter*/
+.arrow.up {
+background-image: url(%%downflutter2%%);
+width: 22px;
+height: 28px;
+background-position: 0 0    
+}
+.arrow.upmod {
+background-image: url(%%upflutter3%%);
+width: 22px;
+height: 28px;
+background-position: 0 0
+}
+.midcol {
+width: 30px !important;
+}
 
-/*i literally stole this from /r/braveryjerk*/
-/*upron*/
-.arrow.up{background-image:url(%%downflutter1%%)!important;background-position:0px 0px!important;height:25px!important;width:30px!important}
-.arrow.upmod{background-image:url(%%upflutter2%%)!important;background-position:0px 0px!important;height:25px!important;width:30px!important}
-.comment .midcol {width: 35px}
-.midcol {overflow:visible}
 
-body{position:relative}
-.content{margin-top:50px}
-.titlebox form{position:static}
-.titlebox .usertext-body .md ol{width:auto;background-color:transparent;border:none;position:absolute;top:100px;left:20px;z-index:-1;margin:0;padding:4px;list-style:none;display:block;white-space:nowrap;overflow:hidden;font-size:11px!important;font-family:'lucida grande',tahoma,verdana,arial,sans-serif}
-.titlebox .usertext-body .md ol a:hover{background-color:#FF0000!important}
-.titlebox .usertext-body .md del{text-decoration:none!important;color:black!important}
-.titlebox .usertext-body .md ol li{text-align:center!important; font-size: 26px;}
-.titlebox .usertext-body .md ol li a{padding:5px;}
 
+/* header shadow gradient */
+#header {
+-moz-box-shadow: 0px 0px 10px #888;
+-webkit-box-shadow: 0px 0px 10px #888;
+box-shadow: 0px 0px 10px #888;
+margin:0px;
+padding:0;
+border-bottom:none;
+width:100%;
+z-index:100;
+}
+/* end logo bar*/
+
+
+/*greentext*/
+.md blockquote {
+    border: 0;
+    margin: 0;
+    color: #789922;
+    display: block;
+    line-height: 0.8
+    }
+
+.md blockquote p:before {
+    content: ">";
+    float: left;
+    display: block;
+    }
+
+
+/*submit a link fancy formatting*/
+.sidebox.submit {
+width: 300px;
+}
+body:not(.listing-page) .morelink {
+border-color: #5ba2fd!important;
+border-radius: 2px!important;
+background: none transparent;
+background-color: #acd9fc;
+background-image: -webkit-linear-gradient(top,#acd9fc,#8ccbfc)!important;
+background-image: -moz-linear-gradient(top,#acd9fc,#8ccbfc)!important;
+background-image: linear-gradient(top,#acd9fc,#8ccbfc)!important;
+color: #2154a3;
+}
+body:not(.listing-page) .morelink a {
+color: #2154a3!important;
+text-shadow: 1px 1px 2px #eee;
+}
+body .morelink {
+padding: 4px 10px;
+border-color: #3079ed!important;
+border-radius: 2px!important;
+background: none transparent;
+background-color: #5ba2fd;
+background-image: -webkit-linear-gradient(top,#5ba2fd,#4b8adb)!important;
+background-image: -moz-linear-gradient(top,#5ba2fd,#4b8adb)!important;
+background-image: linear-gradient(top,#5ba2fd,#4b8adb)!important;
+color: #fff;
+font-weight: normal;
+letter-spacing: 0;
+}
+body .morelink:hover,
+body:not(.listing-page) .morelink:hover {
+border-color: #08c;
+background: none transparent;
+background-color: #357ae8;
+background-image: -webkit-linear-gradient(top,#4d90fe,#357ae8)!important;
+background-image: -moz-linear-gradient(top,#4d90fe,#357ae8)!important;
+background-image: linear-gradient(top,#4d90fe,#4787ed)!important;
+color: #fff;
+}
+body .morelink a {
+color: #fff!important;
+font-weight: bold;
+font-size: 16px;
+text-shadow: 1px 1px 2px #0f0f0f;
+}
+body .morelink a:hover,
+body:not(.listing-page) .morelink:hover a,
+body:not(.listing-page) .morelink a:hover {
+color: #fff!important;
+text-shadow: 1px 1px 2px #0f0f0f!important;
+}
+body .morelink .nub,
+body .morelink:hover .nub,
+body .disabled .morelink .nub,
+body .disabled .morelink:hover .nub {
+background: none transparent!important;
+}
+body .disabled .morelink,
+body .disabled .morelink:hover {
+border-color: #f5f5f5!important;
+background-color: #eee;
+background-image: none!important;
+}
+body .disabled .morelink a,
+body .disabled .morelink a:hover {
+color: #aaa!important;
+text-shadow: none!important;
+cursor: default!important;
+}
+.sidebox.submit {
+width: 147px;
+word-spacing: 1px;
+letter-spacing: -1px;
+}
+.sidebox.submit-link {
+position: relative;
+display: block;
+margin-left: 0px;
+text-indent: 0px;
+}
+.sidebox.submit-link .morelink .nub:before {
+content: 'OR';
+position: relative;
+top: 4px;
+margin-left: 12px;
+padding: 5px;
+height: auto;
+border: 1px solid #fbfbf9;
+border-radius: 20px;
+background-color: #fbfbf9!important;
+color: #2977c6;
+font-weight: bold;
+font-size: 12px;
+text-shadow: 1px 1px 1px #fff,1px 1px 2px #808088;
+z-index: 1;
+}
+.sidebox.submit-text {
+position: relative;
+float: right;
+margin-top: -51px; /*If the buttons aren't parallel, adjust this line*/
+text-align: right;
+}
+body.res-nightmode .sidebox.submit-link .morelink .nub {
+display: block!important;
+}
+body.res-nightmode .sidebox.submit-link .morelink .nub:before {
+border: 1px solid #222222;
+background-color: #222222!important;
+color: #bb6107;
+text-shadow: 1px 1px 1px #000,1px 1px 2px #1f1f1f;
+}
+body.res-nightmode .sidebox.submit-text {
+top: -2px;
+}
+
+/* end fancy formatting thingy*/
+
+/*simple announcement banner*/
+.side .md h4:nth-of-type(1) {    
+list-style-type:none!important;
+position: absolute;
+font-size: 12pt;
+display: block;
+top: 70px; /*Change this in relation to your header's height*/
+left: 5px; /*adjust this is well*/
+margin:0;
+background-color: #f6f7f8!important; /*Change for different background color*/
+color: #555; /*Change for different for color*/
+text-align: left;
+border-radius: 2px;
+border: 1px solid #dbdbdb;
+width: auto;
+padding: 7px 10px 7px 10px;
+white-space: nowrap;
+overflow: hidden;
+}
+
+.side .md h1:nth-of-type(1) a {
+color: rgb(51, 102, 153); /*Changes the colors of the links*/
+}
+
+.content {
+margin-top:45px; /*Increase or decrease depending on how much room you need*/
+}
+/*end simple banner*/
 
 /*stop all the downronning!*/
 .arrow.down {
 visibility: hidden;
 display: none
 }
+/*literally threaten downronners/downshysers*/
+#siteTable .entry.dislikes .buttons:before {
+content: "Ron Paul will literally fite you irl and wreck u m8";
+color: blue;
+font-size: 7pt
+}
+
+/*sidebar highlight text thing*/
+.side .md p > em {
+
+display: inline-block;
+padding: 5px;
+background: #F6E69F;
+border: 1px solid orange
+}
+.side .md p > em > strong {
+
+font-style: italic
+}
+
 /*attempt at sidebar pony thing*/
 .side a[href="http://isitchristmas.com/"] {
     display: block;
@@ -79,7 +315,86 @@ display: none
     right: -15px;
     z-index: 999;
     }
-/*flutterthink stolen from http://trotpilgrim.deviantart.com/art/Fluttershy-Thinking-284336433*/
+
+
+/*Change the text in the NSFW tag*/
+.nsfw-stamp acronym { display: none; }
+.nsfw-stamp:after {
+  content: 'To Brave For Work'; /*Change SPOILER to whatever you want it to say*/
+  border: 1px solid;
+  color: #ac3939;
+  padding: 0 2px;
+  border-radius: 3px;
+} 
+
+/*text over upvote arrow*/
+.arrow.up:hover:before {
+position: absolute;
+display: block;
+z-index: 1000;
+width: 210px;
+padding: 5px;
+border: 0px solid #333;
+background: #fca;
+content: " Literally this";
+text-align: center;
+font-size: 10px;
+color: red;
+margin-left: 25px;
+margin-top: 5px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-border-radius: 4px
+}
+
+/*Self-post Thumbnail Icon*/
+.thumbnail.self {
+height: 50px; /*Adjust to your Images height*/
+background-image: url(%%twirubselfpost%%);
+background-position: 8px 0px;
+background-repeat: no-repeat;
+} 
+
+
+/* clickable sidebar thing */
+.side h5 { /* list button */
+  position: relative;
+  margin: 0 0 10px 0;
+  padding: 5px;
+  background: #F5F5F5;
+  border: 1px solid #DDD;
+  font-size: 12px;
+  color: #111;
+  cursor: pointer;
+}
+.side h5:after { /* "click to expand" text */
+  content: "click to expand";
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  font-size: 9px;
+  font-weight: normal;
+  color: gray;
+}
+.side h5 + ul { /* styles (+ hides) the list */
+  position: relative;
+  margin: -40px 0 10px;
+  padding: 28px 0 0;
+  list-style: none;
+  border: 1px solid #DDD;
+  display: none;
+}
+.side h5:active + ul, /* displays list when button is clicked */
+.side h5 + ul:hover { /* and when hovering over expanded list */
+  display: block;
+}
+.side h5 + ul li { /* styles list items */
+  position: relative;
+  padding: 5px;
+  border-top: 1px solid #DDD;
+  font-size: 11px;
+}
+/* end clickable sidebar thing*/
 
 /*el emotes*/
 
@@ -279,23 +594,7 @@ height: 191px;
 background-image: url(%%shyherp%%) !important
 }
 
-a[href|="/mudcrab"] {
-display: block;
-clear: none;
-float: left;
-width: 217px;
-height: 180px;
-background-image: url(%%minimudcrab%%) !important
-}
 
-a[href|="/mudcrabarmor"] {
-display: block;
-clear: none;
-float: left;
-width: 232px;
-height: 180px;
-background-image: url(%%minimudcrabarmor%%) !important
-}
 
 /* -----flair test-----*/
 /************

@@ -1062,9 +1062,6 @@ background-image: url(%%Banana%%);
 }
 a[href|='/Bananaspin'] {background-position: 0px 0px}
 
-
-/*end of test*/
-
 a[href|="/rbdscoot"] {
     display: block;
     clear: none;
@@ -1284,6 +1281,7 @@ a.author[href$="/Oxiproxd9"]:after {
 
 
 			
+			
 	body {
 		min-width: 940px;
 		background-color: #e5e5e5;
@@ -1291,6 +1289,7 @@ a.author[href$="/Oxiproxd9"]:after {
 		font-family: arial, sans-serif;
 	}
 
+		/* Custom browser CSS */
 		:focus {outline: 0px;}
 			
 		::-webkit-scrollbar {
@@ -1318,10 +1317,11 @@ a.author[href$="/Oxiproxd9"]:after {
 				color: #555555;
 			}
 		
-		::selection {background-color:#427FED;color:white;font-weight:bold;}
+		::selection {background-color:#5b92fa;color:white;font-weight:bold;}
 
+		/* Link */
 		a {
-			color: #427FED;
+			color: #5b92fa;
 		}
 		
 			a:hover {
@@ -1338,122 +1338,100 @@ a.author[href$="/Oxiproxd9"]:after {
 				content: "... so go ahead and tell us what you think!";
 			}
 
+		/* General Button*/
 		button, #search input[type='submit'], .wiki-page .wiki-page-content .wiki_button {
 			margin: 3px 3px 3px 3px;
-			padding: 0px 8px 0px 8px;
-			background-color: #53a93f;
-			border: 0px;
-			border-top: 2px solid #53a93f;
-			border-bottom: 2px solid #53a93f;
+			padding: 0px 8px 1px 8px;
+			background-color: #ffffff;
+			border: 1px solid #d4d4d4;
 			border-radius: 2px;
 			-webkit-box-shadow: 0 1px 0 #e2e0e0;
 			box-shadow: 0 1px 0 #e2e0e0;
-			color: #fff !important;
+			color: #737373 !important;
 			text-transform: capitalize;
 			font-weight: bold;
 			line-height: 26px;
+			cursor: default;
 		}
 
 			button:hover, #search input[type='submit']:hover, .wiki-page .wiki-page-content .wiki_button:hover {
-				background-color: #65b045;
-				border-bottom: 2px solid #4c8534;
-				-webkit-box-shadow: none;
-				box-shadow: none;
+				padding-bottom: 0px;
+				border-color: #bababa;
+				border-bottom-width: 2px;
+				color: #333 !important;
 			}
 
 				button:active, #search input[type='submit']:active, .wiki-page .wiki-page-content .wiki_button:active {
-					background-color: #3e802f;
-					border-top: 2px solid #2f6124;
-					border-bottom: 2px solid #3e802f;
+					padding-bottom: 0px;
+					background-color: #e5e5e5;
+					border-color: #a7a7a7;
+					border-top-width: 2px;
+					border-bottom-width: 1px;
 					-webkit-box-shadow: none;
 					box-shadow: none;
+					color: #333 !important;
+					line-height: 25px;
 				}
 
+
+		/* Header Area */
+		/* Top Most header */
 		#sr-header-area {
-			visibility: hidden;
-			height: 20px;
-			background-color: #2d2d2d;
-			border-bottom: 0px solid;
-			-webkit-box-shadow: 0px 0px 1px #868686;
-			box-shadow: 0px 0px 1px #868686;
-			font-weight: 500;
-			font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-			line-height: 20px;
+			opacity: 0.4;
+			filter: alpha(opacity=40);
+			height: 18px;
+			background-color: #333;
+			border-bottom: 1px solid #333;
+
 		}
 
-			#sr-header-area:hover {visibility: visible;opacity: 1;}
-
-			#sr-header-area:after {
-				visibility: visible !important;
-				position: absolute;
-				top: 0px;
-				width: 100%;
-				color: #fff;
-				content: "▼";
-				text-align: center;
-				font-size: 12px;
-				opacity: 0.65;
+			#sr-header-area:hover {
+				opacity: 100;
+				filter: alpha(opacity=100);
 			}
 
-				#sr-header-area:hover:after {
-					z-index: -1;
-				}
-		
 			#sr-header-area a {
-				color: #bcbcbc;
-				text-transform: capitalize;
-				font-weight: 400;
-				font-size: 12px;
-				font-family: Arial, sans-serif;
+				color: #C4C4C4;
+				font-family: Verdana, Arial, sans-serif;
 			}
 		
-				#sr-header-area a:hover {color: white;text-decoration: none;}
+				#sr-header-area a:hover {
+					color: #5b92fa; 
+					text-decoration: none;
+				}
 		
 			#sr-more-link {
 				position: absolute;
-				background-color: #2d2d2d;
-				color: #bcbcbc;
+				background-color: #333;
+				color: #C4C4C4;
 			}
 		
-			.dropdown.srdrop .selected {color: #bcbcbc;}
-			#sr-header-area .drop-choices.srdrop {margin-left: 0px;}
-			#sr-header-area .dropdown.srdrop {
-				text-transform: capitalize;
-				font-size: 12px;
-				font-family: Arial, sans-serif;
+			.dropdown.srdrop .selected {background-image: none;}
+				.dropdown.srdrop .selected:after {content: "▼";}
+			.sr-bar .separator {color: #333;}
+
+			#sr-header-area .width-clip .dropdown.srdrop .selected.title {
+				color: #C4C4C4;
+				font-size: 9px;
+				font-weight: normal;
+				font-family: Verdana, Arial, sans-serif;
+				padding-right: 3px;
 			}
 
-			.dropdown.srdrop .selected {
-				background-image: none;
-			}
-
-				.dropdown.srdrop .selected:after {
-					content: "▼";
+				#sr-header-area .width-clip .dropdown.srdrop .selected.title:hover {
+					color: #5b92fa;
 				}
 
-			.sr-bar .separator {color: #e5e5e5;}
-
-			#sr-header-area .drop-choices.srdrop a {color: #757575;}
-
-			.drop-choices {
-				z-index: 100;
-				padding: 10px;
-				background-color: white;
-				border: 1px solid #BEBEBE;
-				border-radius: 1px;
-				color: #3b3b3b;
-				text-align: left;
-				font-size: 14px;
-				font-family: Arial, sans-serif;
+			#sr-header-area .drop-choices a.choice {
+				color: #333 !important;
 			}
-			
-				.drop-choices a {color: #3b3b3b;}
-				
-					.drop-choices a.choice:hover {
-						background-color: white;
-						color: #427FED !important;
-					}
 
+			 #sr-header-area .drop-choices a.choice:hover {
+			 	background-color: #5b92fa;
+			 	color: #fff !important;
+			 }
+		
+		/* Header Image */
 		#header {
 			height: 119px;
 			background-color: #cee3f8;
@@ -1490,7 +1468,7 @@ a.author[href$="/Oxiproxd9"]:after {
 
 				#header-img:hover {background-position: -35px -49px;}
 			
-			.pagename a {
+.pagename a {
 				display: block;
 				visibility: visible !important;
 				position: absolute;
@@ -1517,6 +1495,7 @@ a.author[href$="/Oxiproxd9"]:after {
 
 				.pagename {visibility: hidden;}
 
+		/* HOT / NEW / ETC */
 		#header .tabmenu {
 			display: block;
 			position: absolute;
@@ -1532,9 +1511,10 @@ a.author[href$="/Oxiproxd9"]:after {
 			vertical-align: bottom;
 			text-align: center;
 			white-space: nowrap;
-			font-weight: lighter;
+			font-weight: normal;
 			font-size: 15px;
 			font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+			min-width: 450px;
 		}
 
 			.tabmenu li {
@@ -1553,13 +1533,13 @@ a.author[href$="/Oxiproxd9"]:after {
 					font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
 				}
 
-					.tabmenu li a:hover {border-bottom: 2px solid #427fed;color: #262626;text-decoration: none;}
+					.tabmenu li a:hover {border-bottom: 2px solid #5b92fa;color: #262626;text-decoration: none;}
 			
 				.tabmenu li.selected a {
 					z-index: 100;
 					background-color: transparent;
 					border: 0px solid;
-					border-bottom: 2px solid #427FED;
+					border-bottom: 2px solid #5b92fa;
 					color: #262626;
 					font-size: 22px;
 					font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
@@ -1567,19 +1547,12 @@ a.author[href$="/Oxiproxd9"]:after {
 					.tabmenu li.selected a:hover {
 						border-color: #719ff2;
 					}
-				
-				/* Hey! Remove any of the lines below to show what they hide */
-				.listing-page .tabmenu li:nth-of-type(3),	/* Rising */
-				.listing-page .tabmenu li:nth-of-type(4),	/* Controversial */
-				.listing-page .tabmenu li:nth-of-type(6),	/* Saved links */
-				.listing-page .tabmenu li:nth-of-type(7),	/* Wiki */
-				.listing-page .tabmenu li:nth-of-type(8), 	/* Promoted Links */ 
-				a#viewImagesButton {display:none;}
 
+		/* User bar */
 		#header-bottom-right {
 			visibility: hidden;
 			position: absolute;
-			top: 117px;
+			top: 182px;
 			right: 0px;
 			overflow: hidden;
 			margin-right: 10px;
@@ -1613,14 +1586,12 @@ a.author[href$="/Oxiproxd9"]:after {
 				}
 
 			.user {
-				color: #fff;
+				color: #666;
 			}
 
 				.loggedin .user {
-					color: #f5f5f5;
+					color: #666;
 				}
-
-				.user .userkarma {display: none;}
 			
 			#header-bottom-right a {
 				color: #262626;
@@ -1629,34 +1600,32 @@ a.author[href$="/Oxiproxd9"]:after {
 			}
 
 				#header-bottom-right a:hover {
-					border-bottom: 1px solid #427fed;
+					border-bottom: 1px solid #5b92fa;
 					color: #333;
 					text-decoration: none;
 				}
-/*			#mail {
+
+			/* Mail / Modmail icons */
+			#mail {
 				top: -1px;
 				overflow: visible;
 				width: 16px;
 				height: 16px;
 				background-image: url(%%spritesheet%%) !important;
-				opacity: 0.9;
-				filter: alpha(opacity=90);
 			}
 
 				#mail:hover, #modmail:hover {
 					border-bottom: 0px solid !important;
-					opacity: 1;
-					filter: alpha(opacity=100);
 				}
 			
 				#mail.nohavemail {background-position: -64px 0px;}
-				#mail.havemail   {background-position:-80px 0px;}
+				#mail.havemail   {background-position:-80px 0px;} 
 
 					#mail.havemail:before, #modmail.havemail:before  {
 						display: block;
 						visibility: visible !important;
 						position: fixed;
-						top: 2px;
+						top: 22px;
 						right: 10px;
 						z-index: 2;
 						z-index: 0;
@@ -1664,11 +1633,9 @@ a.author[href$="/Oxiproxd9"]:after {
 						height: 25px;
 						background-color: #fff;
 						background-image: url(%%spritesheet%%);
-						background-position: -151px -48px;
+						background-position: -151px -50px;
 						border-radius: 50%;
 						content: " ";
-						opacity: 1;
-						filter: alpha(opacity=100);
 					}
 
 			
@@ -1683,8 +1650,10 @@ a.author[href$="/Oxiproxd9"]:after {
 
 				#modmail.havemail   {background-position:-112px 0px;}
 				#modmail.nohavemail {background-position:-96px 0px;}
-				#modmail.havemail:before {background-position: -126px -48px}
-*/
+				#modmail.havemail:before {background-position: -126px -50px; margin-right: 40px;}
+
+
+		/* Sidebar */
 		.side {
 			float: right;
 			margin: 37px 10px 0px 0px;
@@ -1698,50 +1667,54 @@ a.author[href$="/Oxiproxd9"]:after {
 			text-align: left;
 			font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 		}
-
 		
-			.account-activity-box, .sidebox.create, .morelink .nub, .sidebox.submit.submit-link {display: none;}
-
+		
+		
+			
+			/* SUBMIT LINK OR POST */
 			.morelink {
 				position: absolute;
 				top: 164px;
-				right: 350px;
+				right: 336px;
 				z-index: 97;
 				width: 175px;
 				height: 26px;
-				background-color: #427fed;
-				background-image: none !important;
+				background-color: #5b92fa;
+				background-image: none!important;
 				border: none;
-				border-top: 2px solid #427fed;
-				border-bottom: 2px solid #427fed;
+				border-top: 2px solid #5b92fa;
+				border-bottom: 3px solid #5b92fa;
 				border-radius: 2px;
-				-webkit-box-shadow: 0 1px 0 #e2e0e0;
-				box-shadow: 0 1px 0 #e2e0e0;
+				-webkit-box-shadow: 0 1px 0 #E2E0E0;
+				box-shadow: 0 1px 0 #E2E0E0;
 				line-height: 26px;
 			}
 
 				.morelink:hover {
-					background-color: #4285f4;
-					border-top: 2px solid #4285f4;
-					border-bottom: 2px solid #2f69c2;
+					background-color: #6599fa;
+					border-top: 2px solid #6599fa;
+					border-bottom: 3px solid #3863b6;
 					-webkit-box-shadow: none;
 					box-shadow: none;
 				}
 
 					.morelink:active {
-						background-color: #2c56b1;
-						border-top: 2px solid #21448d;
-						border-bottom: 2px solid #2c56b1;
+						background-color: #3863b6;
+						border-top: 2px solid #21407a;
+						border-bottom: 3px solid #3863b6;
 						-webkit-box-shadow: none;
 						box-shadow: none;
 					}
 
 				.morelink a {
-					color: #fff;
+					color: #fff !important;
+					text-shadow: 0px 1px 0px #5787e1;
 					letter-spacing: 0px;
 					font-weight: bold;
-					font-size: 14px;
+					font-size: 15px;
 					font-family: arial, sans-serif;
+					cursor: default;
+					line-height: 28px;
 				}
 
 					.morelink a:hover {text-decoration: none;}
@@ -1753,10 +1726,22 @@ a.author[href$="/Oxiproxd9"]:after {
 					font-size: 0px;
 					background-color: #c8c8c8;
 					margin-top: 3px;
+					text-shadow: none;
 				}
 
-					.disabled .morelink a {color: #fff;}
+					.disabled .morelink a {
+						color: #fff;
+						letter-spacing: 0px;
+						font-weight: 600;
+						font-size: 14px;
+						font-family: sans-serif;
+						cursor: default;
+						text-indent: 0px;
+						text-shadow: none;
+					}
 
+					.account-activity-box, .sidebox.create, .morelink .nub {display: none;}
+			/* Subreddit name sidebar */
 			.titlebox h1 a {
 				position: absolute;
 				top: 164px;
@@ -1770,10 +1755,11 @@ a.author[href$="/Oxiproxd9"]:after {
 				font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 			}
 			
-				.titlebox h1 a:hover {color: #427FED;text-decoration: none;}
+				.titlebox h1 a:hover {color: #5b92fa;text-decoration: none;}
 
 			.sidebox .subtitle {font-size: 1.6em;}
-
+		
+			/* Sub / Unsub button */
 			.fancy-toggle-button .active {
 				padding: 1px 8px;
 				background-image: none !important;
@@ -1783,85 +1769,94 @@ a.author[href$="/Oxiproxd9"]:after {
 				color: #fff !important;
 				text-transform: capitalize;
 				font-weight: bold;
-				font-size: 13px;
+				font-size: 12px;
 				font-family: arial, sans-serif!important;
 				line-height: 26px;
+				cursor: default;
 			}	
 
+				/* Sub */
 				.fancy-toggle-button .add {
-					background-color: #53a93f;
-					border-top: 2px solid #53a93f;
-					border-bottom: 2px solid #53a93f;
+					background-color: #5b92fa;
+					border-top: 2px solid #5b92fa;
+					border-bottom: 2px solid #5b92fa;
 					-webkit-box-shadow: 0 1px 0 #e2e0e0;
 					box-shadow: 0 1px 0 #e2e0e0;					
 				}
 
 					.fancy-toggle-button .add:hover {
-						background-color: #65b045;
-						border-top: 2px solid #65b045;
-						border-bottom: 2px solid #4c8534;
+						background-color: #6599fa;
+						border-top: 2px solid #6599fa;
+						border-bottom: 2px solid #3863b6;
 						-webkit-box-shadow: none;
 						box-shadow: none;
 						text-decoration: none;
 					}
 
 						.fancy-toggle-button .add:active {
-							background-color: #3e802f;
-							border-top: 2px solid #2f6124;
-							border-bottom: 2px solid #3e802f;
+							background-color: #3863b6;
+							border-top: 2px solid #21407a;
+							border-bottom: 2px solid #3863b6;
 							-webkit-box-shadow: none;
 							box-shadow: none;
 						}
 
+				/* Unsub */
+
+				/* Unsub */
 				.fancy-toggle-button .remove {
-					background-color: #d73d32;
-					border-top: 2px solid #d73d32;
-					border-bottom: 2px solid #d73d32;
+					background-color: #fff;
+					border: 1px solid #d4d4d4;
 					-webkit-box-shadow: 0 1px 0 #e2e0e0;
 					box-shadow: 0 1px 0 #e2e0e0;
 					font-size: 9px;
 					line-height: 16px;
+					color: #737373 !important;
+					cursor: pointer;
 				}
 
 					.fancy-toggle-button .remove:hover {
-						background-color: #e74b37;
-						border-top: 2px solid #e74b37;
-						border-bottom: 2px solid #b23826;
-						-webkit-box-shadow: none;
-						box-shadow: none;
+						background-color: #fff;
+						color: #333;
+						border-bottom-width: 2px;
+						border-color: #bababa;
 						text-decoration: none;
 					}
 
 						.fancy-toggle-button .remove:active {
-							background-color: #be3e2e;
-							border-top: 2px solid #9a3323;
-							border-bottom: 2px solid #be3e2e;
-							-webkit-box-shadow: none;
-							box-shadow: none;
+							background-color: #e5e5e5;
+							border-color: #a7a7a7;
+							border-top-width: 2px;
+							color: #333;
 						}
 
+
+				/* Sub notice */
 				.fancy-toggle-button .add:after {
 					position: fixed;
 					top: 0px;
 					left: 15px;
 					z-index: 98;
-					color: #427FED;
-					content: "Hey! Why not subscribe?";
+					color: #5b92fa;
+					content: "Subscribe?";
 					line-height: 28px;
 				}
 					.fancy-toggle-button .add:hover:after {
-						border-bottom: 2px solid #427FED;
+						border-bottom: 2px solid #5b92fa;
 					}
-
-				div.titlebox span.number:after {content: " readers";}
+			
+			/*Replace readers.. */
 				div.titlebox span.word {display: none;}
 				.titlebox .users-online {display: inline;}
 				.titlebox .users-online:before {display: none;}
 				.titlebox .users-online .number {font-style: italic;font-size: 12px;}
 				.titlebox .users-online .number:before {content: "(";}
 				.titlebox .users-online .number:after {content: " here)";}
-				.titlelebox .word {display: none;}			
+				.titlelebox .word {display: none;}
+				.titlebox .users-online, .titlebox .number {cursor: text;}	
+				.titlebox .tagline {font-size: 12px;}	
 
+			/* Subreddit description */
 			.titlebox {
 				padding: 0px 15px 15px 15px;
 				color: #404040;
@@ -1879,11 +1874,12 @@ a.author[href$="/Oxiproxd9"]:after {
 					font-size: 110%;
 				}
 
+				/* Download button */
 				.titlebox h5 {
 					width: 100%;
 					height: 30px;
 					color: #fff;
-					background-color: #4385f5;
+					background-color: #5b92fa;
 					border-bottom: 2px solid #306cd1;
 					display: block;
 					font-size: 18px;
@@ -1896,11 +1892,12 @@ a.author[href$="/Oxiproxd9"]:after {
 					.titlebox h5 a, .titlebox h5 a:hover {
 						text-decoration: none;
 						color: #fff;
+						cursor: pointer;
 					}
 
 					.titlebox h5:hover {
 						background-color: #77a7fb;
-						border-bottom: 2px solid #4385f5;
+						border-bottom: 2px solid #5b92fa;
 						text-decoration: none;
 					}
 
@@ -1909,6 +1906,7 @@ a.author[href$="/Oxiproxd9"]:after {
 							border-bottom: 2px solid #306cd1;
 						}
 
+			/* Search */
 			#search {
 
 			}
@@ -1918,7 +1916,7 @@ a.author[href$="/Oxiproxd9"]:after {
 					padding: 5px 0px 5px 40px;
 					width: 258px;
 					background-image: url(%%spritesheet%%);
-					background-position: -128px 0px;
+					background-position: -129px 0px;
 					background-repeat: no-repeat;
 					border: none;
 					border-top: 1px solid #d5d5d5;
@@ -1957,9 +1955,11 @@ a.author[href$="/Oxiproxd9"]:after {
 									.search-page form#search label {font-size: 150%;cursor: pointer;}
 			
 					#search_showmore {display: none;}
-
+			
+			/* Ad Frame */
 			#ad-frame,#ad_main {text-align: center;}
 
+			/* Sidebar mod box */
 			.sidecontentbox {
 				padding: 0px 5px 0px 15px;
 			}
@@ -2002,73 +2002,88 @@ a.author[href$="/Oxiproxd9"]:after {
 				}
 			
 					.sidecontentbox .content a:hover {
-						color: #427FED;
+						color: #5b92fa;
 						text-decoration: underline;
 					}
 
+			/* Mod icons */
 			.icon-menu a {background-color: transparent;}
-			.icon-menu .reddit-edit:before{background-image:url(%%spritesheet%%);background-position: 0px  -32px;}
+			.icon-menu .reddit-edit:before{background-image:url(%%spritesheet%%);background-position: 0px  -33px;}
 			.icon-menu .moderator-mail:before{margin-top:-1px;height:16px;background-image:url(%%spritesheet%%);background-position: -16px -32px;}
-			.icon-menu .reddit-moderators:before{background-image:url(%%spritesheet%%);background-position: -32px -32px;}
-			.icon-menu .reddit-contributors:before{background-image:url(%%spritesheet%%);background-position: -48px -32px;}
+			.icon-menu .reddit-moderators:before{background-image:url(%%spritesheet%%);background-position: -32px -33px;}
+			.icon-menu .reddit-contributors:before{background-image:url(%%spritesheet%%);background-position: -48px -33px;}
 			.icon-menu .reddit-traffic:before{background-image:url(%%spritesheet%%);background-position: -64px -32px;}
 			.icon-menu .reddit-modqueue:before{background-image:url(%%spritesheet%%);background-position: -80px -32px;}
 			.icon-menu .reddit-reported:before{background-image:url(%%spritesheet%%);background-position: -96px -32px;}
 			.icon-menu .reddit-spam:before{background-image:url(%%spritesheet%%);background-position: -112px -32px;}
 			.icon-menu .reddit-ban:before{background-image:url(%%spritesheet%%);background-position: -128px -32px;}
 			.icon-menu .reddit-flair:before{background-image:url(%%spritesheet%%);background-position: -144px -32px;}
-			.icon-menu .reddit-moderationlog:before{background-image:url(%%spritesheet%%);background-position: -160px -32px;}
+			.icon-menu .reddit-moderationlog:before{background-image:url(%%spritesheet%%);background-position: -160px -33px;}
 			.icon-menu a.reddit-unmoderated {display: none;}
 
+			/* Message the mods */
 				.sidecontentbox a.helplink {
 					display: block;
 					margin-right: 27px;
 					margin-bottom: 15px;
 					width: 80%;
-					background-color: #d73d32;
+					background-color: #5b92fa;
 					background-image: none!important;
 					border: none;
-					border-top: 2px solid #d73d32;
-					border-bottom: 2px solid #d73d32;
+					border-top: 2px solid #5b92fa;
+					border-bottom: 2px solid #5b92fa;
+					-webkit-box-shadow: 0 1px 0 #E2E0E0;
+					box-shadow: 0 1px 0 #E2E0E0;
 					color: #fff !important;
 					text-align: center;
 					text-transform: capitalize;
+					text-shadow: 0px 1px 0px #5787e1;
+					letter-spacing: 0px;
 					font-weight: bold;
 					font-size: 13px;
 					font-family: Arial, sans-serif;
 					line-height: 26px;
+					cursor: default;
 				}
 
 					.sidecontentbox a.helplink:hover {
-						background-color: #e74b37;
-						border-top: 2px solid #e74b37;
-						border-bottom: 2px solid #b23826;
+						background-color: #6599fa;
+						border-top: 2px solid #6599fa;
+						border-bottom: 2px solid #3863b6;
 						-webkit-box-shadow: none;
 						box-shadow: none;
 						text-decoration: none;
 					}
 
 						.sidecontentbox a.helplink:active {
-							background-color: #be3e2e;
-							border-top: 2px solid #9a3323;
-							border-bottom: 2px solid #be3e2e;
+							background-color: #3863b6;
+							border-top: 2px solid #21407a;
+							border-bottom: 2px solid #3863b6;
 							-webkit-box-shadow: none;
 							box-shadow: none;
 						}
+				
 
+
+	/* Links/Posts Area */
+	/* Actual Links */
 		.content {
 			margin-top: 88px;
 			margin-left: 10px;
 		}
 
+		/* LeftHover box */
+
+
+			/* Content Banner */
 			.titlebox h6:nth-of-type(1) {
 				display: block;
 				position: absolute;
 				top: 155px;
-				right: 330px;
+				right: 325px;
 				left: 10px;
 				padding: 14px 0px 14px 15px;
-				min-width: 583px;
+				min-width: 588px;
 				background-color: #f5f5f5;
 				border: 1px solid #dcdcdc;
 				border-radius: 2px;
@@ -2078,12 +2093,13 @@ a.author[href$="/Oxiproxd9"]:after {
 			}
 
 				.titlebox h6:nth-of-type(1) a{
-					color: #427FED;
+					color: #5b92fa;
 					font-weight: bold;
 				}
 
 					.titlebox h6:nth-of-type(1) a:hover{border:none;text-decoration: underline;}
 
+				/* Fixed Scroll Banner */
 				.titlebox h6:nth-of-type(2) {
 					position: fixed;
 					top:0px;
@@ -2108,21 +2124,38 @@ a.author[href$="/Oxiproxd9"]:after {
 					}
 
 						.titlebox h6:nth-of-type(2) a:hover {
-							border-bottom: 2px solid #427FED;
+							border-bottom: 2px solid #5b92fa;
 							color: #262626;
 							text-decoration: none;
 						}
 
 			.link {
-				margin-right: 325px;
-				margin-bottom: 1px;
-				padding: 7px 10px 7px 10px;
+				margin-right: 320px;
+				margin-bottom: 2px;
+				padding: 8px 10px 6px 10px;
 				background-color: white;
 				border: 1px solid #d8d8d8;
 				border-top: 0px solid;
 				border-bottom: 3px solid #d8d8d8;
 				border-radius: 3px;
 			}
+
+				/* Stickied Link */
+				.stickied.link {
+					border-bottom-color: #95D190;
+					border-bottom-right-radius: 5px;
+					border-bottom-left-radius: 5px;
+				}
+					.thing.stickied a.title {color: #65b354!important;}
+					.thing.stickied a.thumbnail {background-position: -102px -209px;}
+
+				/* Promoted Link */
+				.organic-listing {
+					margin-right: 320px;
+					border: 1px solid #D0D6DD;
+					border-bottom-width: 3px;
+					border-top-width: 0px;
+				}
 
 				.link .title {
 					font-weight: normal;
@@ -2131,12 +2164,13 @@ a.author[href$="/Oxiproxd9"]:after {
 					line-height: 100%;
 				}
 
-					.link .title:hover {color: #427FED !important;}
-
-		/*Unvisited*/	.thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title {color:#427fed;}
+					.link .title:hover {color: #5b92fa !important;}
+						/* Link Titles */
+		/*Unvisited*/	.thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title {color:#5b92fa;}
 		/*Visited  */	.thing .title.loggedin:visited, .thing .title:visited {color:#555;}
-		/*Clicking */	.thing .title.loggedin.click:visited, .thing .title.click:visited {color:#427FED;}
+		/*Clicking */	.thing .title.loggedin.click:visited, .thing .title.click:visited {color:#5b92fa;}
 
+				/* Upvote and downvotes */
 				.link .score {margin-bottom: -1px;margin-left: 1px;color:#999;font-family: arial, sans-serif;}
 			
 					.link .score.likes {color: #ee5821;}	
@@ -2159,6 +2193,7 @@ a.author[href$="/Oxiproxd9"]:after {
 					.arrow.down {background-position: 0px 0px;}
 					.arrow.downmod {background-position: -16px 0px;}
 
+					/* Disable Downvotes on posts with less than 3 total votes */
 					.link[data-ups="2"][data-downs="0"] .midcol:after, .link[data-ups="1"][data-downs="1"] .midcol:after, .link[data-ups="0"][data-downs="2"] .midcol:after,
 					.link[data-ups="1"][data-downs="0"] .midcol:after, .link[data-ups="0"][data-downs="1"] .midcol:after, 
 					.link[data-ups="0"][data-downs="0"] .midcol:after {
@@ -2171,30 +2206,33 @@ a.author[href$="/Oxiproxd9"]:after {
 					  opacity: 0.7;
 					}
 
+
+				/* Expand post */
 				.expando-button {
-					margin: 1px 3px 1px 1px !important;
+					margin: 0px 5px 0px 0px !important;
 					width: 16px !important;
-					height: 13px !important;
+					height: 16px !important;
 					background-color: transparent !important;
 					background-image: url(%%spritesheet%%) !important;
 					cursor: pointer;
 				}
 		
-		/*  +  */	.content .expando-button.selftext.collapsed {background-position:0 -16px;}				
-		/*  +  */	.content .expando-button.selftext.collapsed:hover {background-position:-16px -16px;}
-		/*  -  */	.content .expando-button.selftext.expanded {background-position:-32px -16px;}				
-		/*  -  */	.content .expando-button.selftext.expanded:hover {background-position:-48px -16px;}	
+		/*  +  */	.content .expando-button.selftext.collapsed {background-position:0 -17px;}				
+		/*  +  */	.content .expando-button.selftext.collapsed:hover {background-position:-16px -17px;}
+		/*  -  */	.content .expando-button.selftext.expanded {background-position:-32px -17px;}				
+		/*  -  */	.content .expando-button.selftext.expanded:hover {background-position:-48px -17px;}	
 
-					.expando-button.video.collapsed {background-position: -64px -16px;}
-					.expando-button.video.collapsed:hover, .eb-vch {background-position: -80px -16px;}
-					.expando-button.video.expanded, .eb-ve {background-position: -64px -16px;}
-					.expando-button.video.expanded:hover, .eb-veh {background-position: -80px -16px;}
+					.expando-button.video.collapsed {background-position: -64px -17px;}
+					.expando-button.video.collapsed:hover, .eb-vch {background-position: -80px -17px;}
+					.expando-button.video.expanded, .eb-ve {background-position: -64px -17px;}
+					.expando-button.video.expanded:hover, .eb-veh {background-position: -80px -17px;}
 
-					.res .expando-button.image.collapsedExpando {background-position: -96px -18px!important;}
-					.res .expando-button.image.collapsedExpando:hover {background-position: -112px -18px!important;}
-					.res .expando-button.image.expanded {background-position: -96px -18px!important;}
-					.res .expando-button.image.expanded:hover {background-position: -112px -18px!important;}
+					.res .expando-button.image.collapsedExpando {background-position: -96px -17px!important;}
+					.res .expando-button.image.collapsedExpando:hover {background-position: -112px -17px!important;}
+					.res .expando-button.image.expanded {background-position: -96px -17px!important;}
+					.res .expando-button.image.expanded:hover {background-position: -112px -17px!important;}
 
+					/* Selftext expand */
 					.link .usertext .md {
 						padding: 0 5px;
 						background-color: #fff;
@@ -2210,7 +2248,7 @@ a.author[href$="/Oxiproxd9"]:after {
 
 			.domain {color: white;}
 				.domain a {color: #c0c0c0;}
-					.domain a:hover {color: #427FED;text-decoration: none;}
+					.domain a:hover {color: #5b92fa;text-decoration: none;}
 
 			.link .tagline {
 				color: #999;
@@ -2254,12 +2292,12 @@ a.author[href$="/Oxiproxd9"]:after {
 				}
 
 					.entry .buttons li a:hover {
-						color: #427FED;
+						color: #5b92fa;
 					}
 
 					.link .entry li .comments {
 						visibility: visible;
-						color: #427FED;
+						color: #5b92fa;
 						font-weight: bold;
 						font-size: 13px;
 					}
@@ -2270,7 +2308,7 @@ a.author[href$="/Oxiproxd9"]:after {
 					.nsfw-stamp acronym {visibility: visible;background-color: #e82e63;border-radius:0px;color:#fff;cursor: help;}
 
 					.entry .buttons a[onclick*="reply"] {
-						color: #427FED !important;
+						color: #5b92fa !important;
 						font-weight: bold !important;
 						font-size: 13px !important;
 					}
@@ -2287,7 +2325,7 @@ a.author[href$="/Oxiproxd9"]:after {
 							background-color: #f5f5f5;
 							border: 1px solid #d8d8d8;
 						}
-
+			/* Mod Report buttons */
 			.entry .buttons li.reported-stamp {
 				background-color: #f5b400;
 				border-radius: 2px;
@@ -2325,13 +2363,13 @@ a.author[href$="/Oxiproxd9"]:after {
 			}
 
 			.menuarea {
-				margin-right: 325px;
+				margin-right: 320px;
 				border: none;
 				font-size: 16px;
 			}
 
 			.infobar {
-				margin-right: 325px;
+				margin-right: 320px;
 				background-color: #4B4A4A;
 				border: none;
 				color: #fff;
@@ -2340,6 +2378,7 @@ a.author[href$="/Oxiproxd9"]:after {
 
 				.infobar a {color: #89B3FF;}
 
+				/* First time visit infobar */
 				.infobar.welcome {
 					margin-right: 326px;
 					color: #333;
@@ -2347,17 +2386,23 @@ a.author[href$="/Oxiproxd9"]:after {
 				}
 
 			.nextprev {
-				margin-right: 325px;
+				margin-top: 8px;
+				margin-right: 320px;
+				height: 35px;
+				background-color: #fff;
+				border: 1px solid #d8d8d8;
+				border-top-width: 0px;
+				border-bottom-width: 3px;
 				color: #737373;
 				text-align:center;
 				font-size: 16px;
+				line-height: 35px;
 			}
 
 				.nextprev a {
 					background-color: transparent;
 					border: none;
-					color: #427FED;
-					text-transform: capitalize;
+					color: #5b92fa;
 				}
 
 					.nextprev a:hover {
@@ -2365,6 +2410,8 @@ a.author[href$="/Oxiproxd9"]:after {
 						border: none;
 					}
 
+
+		/* Submit Page */
 		form#newlink.submit.content {
 			margin-top: 105px;
 		}
@@ -2376,7 +2423,7 @@ a.author[href$="/Oxiproxd9"]:after {
 				background-color: white;
 				border: 1px solid #d8d8d8;
 				border-top: 0px;
-				border-bottom: 1px solid #d8d8d8;
+				border-bottom-width: 3px;
 				border-radius: 3px;
 				border-top-left-radius: 0px;
 				border-top-right-radius: 0px;
@@ -2388,21 +2435,20 @@ a.author[href$="/Oxiproxd9"]:after {
 
 				.formtabs-content .infobar:before {
 					display: block;
-					content: "Here you can set text that users will see when submitting.";
 					text-indent: 0px;
 					font-size: 16px;
 				}
 			
 			.submit-page .tabmenu li a {margin:0px;}
 			.submit-page ul.tabmenu.formtab {padding-left: 0px;width: 500px;text-align:center; }
-			.formtabs-content {padding-top: 0px;border-top: 4px solid #427FED;}	
+			.formtabs-content {padding-top: 0px;border-top: 4px solid #5b92fa;}	
 		
 				.submit-page .tabmenu.formtab a {
 					padding: 5px 55px 0px 55px;
 					width: 100px;
 					background-color: white;
 					border: 0px solid;
-					color: #427FED;
+					color: #5b92fa;
 					text-align: center;
 					font-weight:normal;
 					font-size: 14px;
@@ -2413,7 +2459,7 @@ a.author[href$="/Oxiproxd9"]:after {
 				
 					.submit-page .tabmenu.formtab .selected a {
 						padding: 5px 60px 0px 60px;
-						background-color: #427FED;
+						background-color: #5b92fa;
 						color: #fff;
 						font-size: 18px;
 					}
@@ -2422,7 +2468,8 @@ a.author[href$="/Oxiproxd9"]:after {
 				padding: 10px 10px 10px 10px;
 				background-color: white;
 				border: 1px solid #d8d8d8;
-				border-bottom: 1px solid #d8d8d8;
+				border-bottom-width: 3px;
+				border-top-width: 0px;
 				border-radius: 3px;
 				color: #707070;
 			}
@@ -2448,7 +2495,9 @@ a.author[href$="/Oxiproxd9"]:after {
 
 					.linefield .usertext-edit textarea {height: 500px;}
 
-			.submit-page button {
+					.submit-page .content textarea, .submit-page .content input[type=url], .submit-page .content input[type=text] {width: 488px;}
+
+			.submit-page .content button {
 				margin-bottom: 30px;
 				margin-left: 0px;
 				padding: 10px 10px 10px 10px;
@@ -2463,7 +2512,7 @@ a.author[href$="/Oxiproxd9"]:after {
 			}
 
 				.submit-page button:hover {
-					background-color: #427FED;
+					background-color: #5b92fa;
 					color: white !important;
 				}
 
@@ -2475,27 +2524,29 @@ a.author[href$="/Oxiproxd9"]:after {
 					.submit-page .side h1 {display: inherit;}
 
 		.content.submit .info-notice {
-			margin-bottom: 8px;
+			margin: 0px 0px 4px 0px;
 			padding: 20px 10px 20px 10px;
 			background-color: white;
 			border: 1px solid #d8d8d8;
-			border-bottom: 1px solid #d8d8d8;
+			border-top-width: 0px;
+			border-bottom-width: 3px;
 			border-radius: 3px;
 			color: #707070;
 			text-align: center;
 		}
-		
+
 			.content.submit .info-notice a {
 				text-decoration: none;
-				text-transform: uppercase;
 				font-size: 120%;
 			}
 
 				.content.submit .info-notice a:hover {text-decoration: underline;}
-				.thing.spam {background-color: #dd7b7b;}			
+				.thing.spam {border-color: #F3B9B9; background-color: #fff;margin-right: 320px;}			
 				#file {margin: 10px;}		
 				.submit-page .gray, #url-field button, #suggested-reddits {display: none;}
+				.submit-page form .spacer+.spacer {margin: 8px 0px;}
 
+		/* Flair Selector */
 		.flairselector.drop-choices.active {
 			visibility: visible !important;
 			background-color: #fff;
@@ -2532,21 +2583,27 @@ a.author[href$="/Oxiproxd9"]:after {
 			.flairsample-left {text-align: left !important;}
 			.flairselector ul {overflow: visible;}
 			.flairselector li.selected {background-color: #e5ebf8;border:none;}
+
+		/* Flairs */
+
+		/* LINKFLAIRS */
 		.linkflairlabel {
 			padding: 0px 2px;
 			height: auto;
 			border-radius: 0px;
-			color: #fff;
+			color: #333;
 			font-weight: bold;
 			font-style: normal;
 			font-variant: normal;
 			font-size: 12px;
 			font-family: Tahoma, Arial, sans-serif;
+			cursor: default;
 		}
 
 			.linkflair-mod .linkflairlabel {
 				background-color: #109d59;
 				border: 1px solid #0a904f;
+				color: #fff;
 			}
 
 				.linkflair-mod .thumbnail.default, .linkflair-mod .thumbnail.self {
@@ -2558,17 +2615,21 @@ a.author[href$="/Oxiproxd9"]:after {
 			.linkflair-image .linkflairlabel {
 				background-color: #dc4437;
 				border: 1px solid #d03e32;
+				color: #fff;
 			}
 
 			.linkflair-gif .linkflairlabel {
 				background-color: #f5b400;
 				border: 1px solid #e5a800;
+				color: #fff;
 			}
 
 			.linkflair-extra .linkflairlabel {
-				background-color: #4385f5;
+				background-color: #5b92fa;
 				border: 1px solid #3a7ae6;
+				color: #fff;
 			}
+
 		.flair {
 			height: auto;
 			background-color: transparent;
@@ -2576,9 +2637,11 @@ a.author[href$="/Oxiproxd9"]:after {
 			color: #555;
 			font-size: small !important;
 			font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+			border: 1px solid #DADADA;
+			padding: 0px 3px 2px 3px;
+			cursor: help;
 		}
-
-			.flair {
+.flair {
     padding: 0;
     background: none;
     color: black;
@@ -2766,6 +2829,12 @@ a.author[href$="/Oxiproxd9"]:after {
     height: 0;
     width: 0
     }
+.flair-Tacoflair{
+background-image: url(%%Tacoflair%%);
+    display: inline-block;
+    width: 16px;
+    height: 16px	
+		}
 		div.tabpane-content {
 			padding: 4px 4px 4px 4px;
 			border: 0px solid #e5e5e5 !important;
@@ -2784,7 +2853,7 @@ a.author[href$="/Oxiproxd9"]:after {
 		
 				.linefield .title {
 					padding: 1px 10px;
-					color: #427FED;
+					color: #5b92fa;
 				}
 
 				.linefield .title+.gray {font-size: small;}
@@ -2792,7 +2861,7 @@ a.author[href$="/Oxiproxd9"]:after {
 
 				.flairrow {
 					margin-top: 2px;
-					margin-right: 325px;
+					margin-right: 320px;
 					padding: 3px 5px 5px 3px;
 					background: white;
 					color: #707070;
@@ -2813,87 +2882,15 @@ a.author[href$="/Oxiproxd9"]:after {
 					.tabmenu li#tab-grant.selected a, .tabmenu li#tab-grant a:hover,
 					.tabmenu li#tab-templates.selected a, .tabmenu li#tab-templates a:hover, 
 					.tabmenu li#tab-link_templates.selected a, .tabmenu li#tab-link_templates a:hover {color: #333;}
-		.wiki-page .wiki-page-content {
-		 	margin: 5px 325px 10px 0px;
-		 	padding: 5px 10px 5px 10px;
-			background-color: #fff;
-		 	border: 1px solid #d8d8d8;
-		}
 
-			.wiki-page .wiki-page-content .md.wiki h1 {
-				margin-top: 0.5em;
-				color: #333;
-				font-size: 1.5em;
-				font-family: Arial, sans-serif;
-			}
-
-				.wiki-page .wiki-page-content .md.wiki h2 {font-size: 1.45em;}
-				.wiki-page .wiki-page-content .md.wiki h3 {font-size: 1.4em;}
-				.wiki-page .wiki-page-content .md.wiki h4 {font-size: 1.35em;}
-
-			.wiki-page .wiki-page-content .md.wiki p, .wiki-page .wiki-page-content .md.wiki .md.wiki blockquote {
-				color: #404040;
-				font-weight: normal;
-				font-size: 13px;
-				font-family: Arial, sans-serif;
-				line-height: 1.5em;
-			}
-
-			.wiki-page .pageactions {
-				border: none;
-				border-radius: 0px;
-			}
-
-				.wiki-page .pageactions .wikiaction {
-					text-transform: capitalize;
-					font-size: 110%;
-				}
-
-					.wiki-page .pageactions .wikiaction:hover {
-						background-color: transparent;
-					}
-
-					.wiki-page .pageactions .wikiaction-current {
-						background-color: #427FED;
-						border-radius: 0px;
-						color: #fff;
-					}
-
-						.wiki-page .pageactions .wikiaction-current:hover {
-							background-color: #528bf3;
-							text-decoration: none;
-						}
-
-			.wiki-page .wiki-page-content .md.wiki>.toc>ul {
-				padding: 10px 10px;
-				border: 1px solid #e5e5e5;
-				font-weight: normal;
-				font-size: 110%;
-			}
-
-			.wiki-page .wiki-page-content .discussionlink {
-				display: inline-block;
-				position: relative;
-				top: inherit;
-				right: inherit;
-				left: inherit;
-				padding: inherit;
-				width: 175px;
-			}
-
-				.wiki-page .wiki-page-content .discussionlink a {
-					padding-left: 0px;
-				}
-
-				.wiki-page .nextprev {display: none;}
-				.wiki-page-content em, .wiki-page-content form#editform label {font-size: 120%;}
 		.pretty-form {
-			margin-right: 325px;
+			margin-right: 320px;
 			margin-bottom: 10px;
 			padding: 10px 10px 10px 10px;
 			background-color: white;
 			border: 1px solid #d8d8d8;
-			border-bottom: 1px solid #d8d8d8;
+			border-bottom-width: 3px;
+			border-top-width: 0px;
 			border-radius: 3px;
 			color: #707070;
 		}
@@ -2910,20 +2907,23 @@ a.author[href$="/Oxiproxd9"]:after {
 			color: #707070;
 			font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 		}
-
-			.sheets .col textarea {width: 150%;}		
+		
 			.sheets .btn.right {display: none;}
+			.sheets .col textarea {width: 100%;background-color: #F8F8F8;}
+			.sheets {margin-right: 0px;}
 		
 		#images {
-			margin-right: 325px;
+			margin-right: 320px;
 			margin-bottom: 30px;
 			padding: 10px 10px 10px 10px;
 			height: 1280px;
 			background-color: white;
 			border: 1px solid #d8d8d8;
-			border-bottom: 1px solid #d8d8d8;
+			border-bottom-width: 3px;
+			border-top-width: 0px;
 			border-radius: 3px;
 			color: #707070;
+
 		}
 		
 			ul#image-preview-list {
@@ -2931,6 +2931,7 @@ a.author[href$="/Oxiproxd9"]:after {
 				padding-bottom: 80px;
 				font-size: larger;
 			}
+
 		.linkinfo {
 			margin-top: -10px;
 			padding-left: 10px;
@@ -2944,12 +2945,13 @@ a.author[href$="/Oxiproxd9"]:after {
 			
 		.commentarea {
 			margin-top: 10px;
-			margin-right: 325px;
+			margin-right: 320px;
 			margin-bottom: 30px;
 			padding: 10px 10px 10px 10px;
 			background-color: #f8f8f8;
 			border: 1px solid #d8d8d8;
-			border-bottom: 1px solid #d8d8d8;
+			border-bottom-width: 3px;
+			border-top-width: 0px;
 			border-radius: 0px;
 			color: #3b3b3b;
 		}
@@ -2957,12 +2959,12 @@ a.author[href$="/Oxiproxd9"]:after {
 			.commentarea>.usertext {
 				overflow:visible;
 				margin: 0px 0px 10px 0px;
-				padding: 10px 0px 0px 0px;
+				padding: 0px 0px 0px 0px;
 			}
 			
 			a.author {
 				margin-right:4px;
-				color: #427FED;
+				color: #5b92fa;
 			}
 				
 			.comments-page .tagline {
@@ -2974,7 +2976,7 @@ a.author[href$="/Oxiproxd9"]:after {
 				.comments-page .tagline a {
 					margin-top: 1px;
 					background-color: transparent;
-					color: #427FED;
+					color: #5b92fa;
 					letter-spacing: 1px;
 					font-weight: bold;
 					font-size: 12px;
@@ -2992,9 +2994,10 @@ a.author[href$="/Oxiproxd9"]:after {
 			
 			.comment .midcol {margin-top: 6px;width: 15px !important;}
 		 	.comment .score {font-size: small;}
+
 			.commentarea .menuarea {
 				display: inline;
-				margin: 0 0px 10px -315px;
+				margin: 0 0px 10px -320px;
 				padding: 0;
 				color: #c0c0c0;
 				font-weight: normal;
@@ -3006,8 +3009,29 @@ a.author[href$="/Oxiproxd9"]:after {
 					border-bottom: 1px solid #e5e5e5;
 					color: #c0c0c0;
 				}
-			
-				.commentarea .menuarea .toggle a, .panestack-title .title, .help-hoverable {display: none;}
+
+				.panestack-title .title {display: none;}
+				.menuarea .spacer {margin-right: -15px;}
+				.commentarea .menuarea .toggle a {font-size: 11px;color:#c0c0c0;font-weight: normal; }
+				.menuarea .spacer .drop-choices.lightdrop {
+					padding: 5px;
+					border-color: #DFDDDD;
+					box-shadow: 0px 1px 1px #C9C9C9;
+					font-family: arial, sans-serif;
+				}
+
+					.menuarea .spacer .drop-choices.lightdrop a.choice, .commentarea .menuarea form {
+						padding: 0.5px;
+						font-size: 14px;
+						color: #5b92fa;
+					}
+
+					.menuarea .spacer .drop-choices.lightdrop a.choice:hover, .commentarea .menuarea form:hover {
+						background-color: #5b92fa;
+						color: #fff;
+						text-decoration: none;
+					}
+
 			
 				.menuarea .dropdown.lightdrop .selected {
 					background-image: none;
@@ -3018,7 +3042,7 @@ a.author[href$="/Oxiproxd9"]:after {
 					cursor: pointer;
 				}
 
-					.menuarea .dropdown.lightdrop .selected:hover {color: #427FED;}
+					.menuarea .dropdown.lightdrop .selected:hover {color: #5b92fa;}
 					.menuarea .dropdown.lightdrop .selected:after {
 						content: " ≡";
 						vertical-align: middle;
@@ -3076,6 +3100,7 @@ a.author[href$="/Oxiproxd9"]:after {
 					margin-left: 15px;
 					border-left: 0px solid;
 				}
+
 		.link .usertext .md h2, .comments-page .comment .md h2,
 		.link .usertext .md h3, .comments-page .comment .md h3,
 		.link .usertext .md h4, .comments-page .comment .md h4,
@@ -3089,9 +3114,10 @@ a.author[href$="/Oxiproxd9"]:after {
 		}
 
 			.link .usertext .md h2, .comments-page .comment .md h2 {color: #d73d32;}
-			.link .usertext .md h3, .comments-page .comment .md h3 {color: #427fed;}
+			.link .usertext .md h3, .comments-page .comment .md h3 {color: #5b92fa;}
 			.link .usertext .md h4, .comments-page .comment .md h4 {color: #53a93f;}
 			.link .usertext .md h5, .comments-page .comment .md h5 {color: #f4b400;}
+
 		.footer-parent {
 			margin-top: 120px;
 			padding-top: 0px;
@@ -3108,10 +3134,10 @@ a.author[href$="/Oxiproxd9"]:after {
 				display: block;
 				margin: 10px;
 				padding: 10px;
-				color: #427FED;
+				color: #5b92fa;
 				content: "Subreddit Layout /r/Naut";
 				text-transform: none;
-				font-size: 10px;
+				font-size: 16px;
 				font-family: arial, sans-serif;
 			}
 		
@@ -3122,7 +3148,7 @@ a.author[href$="/Oxiproxd9"]:after {
 			}
 
 				.footer a:hover {
-					color: #427FED;
+					color: #5b92fa;
 					text-decoration: underline;
 				}
 
@@ -3133,6 +3159,12 @@ a.author[href$="/Oxiproxd9"]:after {
 			border: 0px;
 			border-bottom: 1px solid #d8d8d8;
 			font-size: 120%;
+			margin: 10px;
+		}
+
+		.login-form-side input[type=text], .login-form-side input[type=password] {
+			margin: 10px 0px;
+			width: 265px;
 		}
 		
 			.popup {
@@ -3159,6 +3191,7 @@ a.author[href$="/Oxiproxd9"]:after {
 					opacity: .6;
 					filter: alpha(opacity=60);
 				}
+
 		.search-page #search {
 			position: relative;
 			top: 0px;
@@ -3170,7 +3203,7 @@ a.author[href$="/Oxiproxd9"]:after {
 		}	
 
 			.search-page .searchpane {
-				margin: 5px 325px 5px 0px;
+				margin: 5px 320px 5px 0px;
 				padding-left: 96px;
 				height: 120px;
 				background-color: white;
@@ -3192,7 +3225,7 @@ a.author[href$="/Oxiproxd9"]:after {
 			
 			.searchfacets {
 				margin-top: 10px;
-				margin-right: 325px;
+				margin-right: 320px;
 				padding: 10px;
 				background: white;
 				border: 1px solid #d8d8d8;
@@ -3206,16 +3239,18 @@ a.author[href$="/Oxiproxd9"]:after {
 			.search-page .side {padding-top: 40px;}
 			
 			.search-summary {margin-right: 40px;}
+
 		.res .keyHighlight {
 			background-color: transparent;
 			outline: 0px solid;
 		}
 
 			.res .RES-keyNav-activeElement, .res .commentarea .RES-keyNav-activeElement .md, .res .commentarea .RES-keyNav-activeElement.entry .noncollapsed {
-				background-color: #f3f3f3 !important;
+				background-color: transparent !important;
 			}
 
-				.res .RES-keyNav-activeElement {outline: 1px dashed #dadada !important;}
+				.res .RES-keyNav-activeElement {outline: 1px dashed #dadada !important;border-right: 5px solid #5b92fa; border-radius: 0px !important;}
+
 		.RESDialogSmall {
 			border: 1px solid #DFDFDF!important;
 			border-radius: 0px!important;
@@ -3233,7 +3268,7 @@ a.author[href$="/Oxiproxd9"]:after {
 			margin-bottom: 3px !important;
 			border: 1px solid #f8f8f8 !important;
 		}
-		
+
 			.comments-page .comment {background-color: #f8f8f8 !important;}
 			.comments-page .comment .comment {background-color: #f8f8f8 !important;}
 			.comments-page .comment .comment .comment {background-color: #f8f8f8 !important;}
@@ -3252,7 +3287,7 @@ a.author[href$="/Oxiproxd9"]:after {
 			background-image: none !important;
 			border: 0px solid !important;
 			border-radius: 0px !important;
-			color: #427FED !important;
+			color: #5b92fa !important;
 			text-transform: capitalize !important;
 			font-weight: 500 !important;
 			font-size: 14px !important;
@@ -3275,7 +3310,7 @@ a.author[href$="/Oxiproxd9"]:after {
 				background-image: none !important;
 				border: 0px solid !important;
 				border-radius: 0px !important;
-				color: #427FED !important;
+				color: #5b92fa !important;
 				text-transform: capitalize !important;
 				font-weight: 500 !important;
 				font-size: 14px !important;
@@ -3300,9 +3335,19 @@ a.author[href$="/Oxiproxd9"]:after {
 					background-color: #2d2d2d !important;
 					color: #979797 !important;
 				}
-		
-		#progressIndicator, #NERFail {
-			margin-right: 325px !important;
+
+			#srLeftContainer, #RESShortcutsViewport, #RESShortcutsEditContainer {
+				border-left: 1px solid #666;
+				padding-left: 10px;
+			}
+
+			.res #RESShortcutsSort {width: 30px !important;background-color: transparent !important;color:#B1B1B1 !important; }
+			.content .RESBigEditorPop  {color: #333 !important; padding:2px;}
+			.markdownEditor {white-space: inherit !important;}
+
+
+		#progressIndicator, #NERFail, .NERPageMarker {
+			margin-right: 320px !important;
 			width: inherit !important;
 			background-color: white !important;
 			border: 1px solid #d8d8d8 !important;
@@ -3310,13 +3355,15 @@ a.author[href$="/Oxiproxd9"]:after {
 			border-bottom: 3px solid #d8d8d8 !important;
 			border-radius: 2px !important;
 		}
+
+
 		
 		
 		.RESSubscriptionButton {
 			background-color: white !important;
 			border: 0px solid !important;
 			border-radius: 0px !important;
-			color: #427FED !important;
+			color: #5b92fa !important;
 		}
 		
 		.res #header-bottom-right {
@@ -3354,57 +3401,64 @@ a.author[href$="/Oxiproxd9"]:after {
 				}
 
 			.res .blueButton {
-                                margin-top: 3px;
 				padding: 2px 3px !important;
 				background-color: #53a93f !important;
 				border: none !important;
 				border-radius: 0px !important;
 
 			}
-				.res-nightmode #header, .res-nightmode #header-bottom-left, .res-nightmode .modactions {
-					background: transparent !important;
-					background-color: #4C81E9 !important;
-					background-color: #E5E5E5 !important;
-					background-image: -webkit-linear-gradient(right,#4C81E9,#D5463F) !important;
-					background-image: -moz-linear-gradient(right,#4C81E9,#D5463F) !important;
-					background-image: linear-gradient(right,#4C81E9,#D5463F) !important;
+
+			.linkflair-one .linkflairlabel {
+				background-color: #dc4437;
+				border: 1px solid #d03e32;
+				color: #fff;
+			}
+
+			.linkflair-two .linkflairlabel {
+				background-color: #f5b400;
+				border: 1px solid #e5a800;
+				color: #fff;
+			}
+
+			.linkflair-three .linkflairlabel {
+				background-color: #5b92fa;
+				border: 1px solid #3a7ae6;
+				color: #fff;
+			}
+
+						
+				.linkflair-squee .linkflairlabel { 
+				background-color: #5b92fa; /* Base color */
+				border: 1px solid #3a7ae6;	/* Slightly darker to create nice edges */
+				color: #fff; /* Text color - alternatively use #333 when white is too light */
 				}
 
-				 .res .res-nightmode #header {background: transparent !important;} 
+		.listing-page .tabmenu li:nth-of-type(3),	/* Rising */
+		.listing-page .tabmenu li:nth-of-type(4),	/* Controversial */
+		.listing-page .tabmenu li:nth-of-type(6),	/* Saved links */
+		.listing-page .tabmenu li:nth-of-type(7),	/* Wiki */
+		.listing-page .tabmenu li:nth-of-type(8) 	/* Promoted Links.. seriously leave this one hidden */ 
+		{display:none;}
 
-				.res-nightmode #header .tabmenu, .res-nightmode .tabmenu li.selected a, .res-nightmode .tabmenu li a {
-					background-color: #2c2c2c !important;
-				}  
+			.sidebox.submit.submit-link {display: none;} 
 
-					.res-nightmode .tabmenu li a {color: #737373 !important;}
-					.res-nightmode .tabmenu li.selected a {border-bottom:2px solid #427FED!important;color: #427FED !important;}
-				.res-nightmode .link {
-					margin-bottom: 8px !important;
-					padding: 7px 10px 7px 10px !important;
-					background-color: #2c2c2c !important;
-					border: 0px solid !important;
-					border-radius: 2px !important;
-					-webkit-box-shadow: 0px 3px 5px -3px #0d0d0d !important;
-					box-shadow: 0px 3px 5px -3px #0d0d0d !important;
-				}
+		.formtabs-content .infobar:before {
+			content: "Here you can set text that users will see when submitting."; /* Don't delete the " "'s*/
+		}
 
-				.res-nightmode .RES-keyNav-activeElement, 
-				.res-nightmode .RES-keyNav-activeElement .usertext-body, 
-				.res-nightmode .RES-keyNav-activeElement .usertext-body .md, 
-				.res-nightmode .RES-keyNav-activeElement .usertext-body .md p, 
-				.res-nightmode .commentarea .RES-keyNav-activeElement .noncollapsed, 
-				.res-nightmode .RES-keyNav-activeElement .noncollapsed .md, 
-				.res-nightmode .RES-keyNav-activeElement .noncollapsed .md p {
-					background-color: #535353 !important;
-					outline: 1px dashed #646464 !important;
-					color: #427FED !important;
-				}
+		div.titlebox span.number:after {content: " readers";} /* Leave the space before the name! */
 
-				.res .res-nightmode .RES-keyNav-activeElement {
-					background-color: #535353 !important;
-					outline: 1px dashed #646464 !important;
-					color: #427FED !important;
-				}
+		#header {
+			background-position: 50% 0%; /* To CENTER the image */									
+		}								 /* Play with the 50% to move the image
+											leave the 0%. */
 
 
-		
+		.pagename a {
+			top: 70px; /* The length the logo is moved from the top of the page */
+			width: 365px;/* TOTAL Image width */
+			margin-left: -54px; /* This HAS to be ->50%< of the TOTAL image width. Don't delete the MINUS! */
+			height: 57px; /* 50% of the TOTAL height of the image. */
+		}
+	
+			.pagename a:hover {background-position: 0px -57px;} /* Replace the 77 with your height */

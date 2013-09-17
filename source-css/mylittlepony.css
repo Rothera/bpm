@@ -74,7 +74,7 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
  top:3px;
  left:6px;
 }
-#header-bottom-left{padding-top:15px}
+#header-bottom-left{padding-top:20px}
 .pagename {font-size:12pt}
 .titlebox form{position: static}
 .titlebox .usertext-body .md ol
@@ -118,11 +118,11 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
 {
  display:inline-block;
  float:right;
- background:url(%%mac-hat%%);
- width:70px;
- height:70px;
- margin-top:-45px;
- margin-left:0px;
+ background:url(%%celestia-cm-hat%%);
+ width:65px;
+ height:65px;
+ margin-top:-25px;
+ margin-left:3px;
  margin-bottom:0px;
  margin-right:-40px;
 }
@@ -288,7 +288,7 @@ background-color: white;
 /*New post spam filtered warning*/
 #title-field.roundfield:before
 {
- content:"NOTE: Check the new queue after posting. If your post doesn't show up, you were spam filtered by mistake! Message the moderators with a link to the submission.";
+ content:"NOTE: Check the new queue after posting. If your post doesn't show up, you were spam filtered by mistake! Message the moderators with a link to the submission. Also, before posting, remember to read the rules in the sidebar!";
  font-size:0.86em;
  padding:5px;
  border:1px solid #5f99cf;

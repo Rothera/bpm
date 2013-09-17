@@ -1,3 +1,5 @@
+
+
 div.titlebox span.word {
     display: none;
     }
@@ -8,6 +10,18 @@ div.titlebox .users-online span.number:after {
     content: " Checking out Braeburns's sweet apples"
     }
 
+a.author[href$=wicked_sonya] {
+font-size: 0 !important;
+    overflow: hidden;
+    display: inline-block;
+    content: ""
+}
+
+a.author[href$=wicked_sonya]:before {
+    content: "icumdubstep";
+    font-size: 12px;
+
+}
 
 .md blockquote {
     border: 0;
@@ -29,7 +43,7 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  clear:both;
  text-align:center;
  width:100%;
- background-image:url(%%cadancefooter%%);
+ background-image:url(%%braefooter%%);
  background-repeat:no-repeat;
  margin-bottom:-30px;
  background-position: 50% 100%;
@@ -46,12 +60,12 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  .sidebox.create .morelink {display: none;}
 
 body {
-    background: url('%%cadancebg2%%') no-repeat fixed right bottom !important;
+    background: url('%%braebg3%%') no-repeat fixed right bottom !important;
     background-color:#ffffff !important;
 } 
 
 #header #header-bottom-left {
-   background: url(%%cadanceheader5%%) !important;
+   background: url(%%braebanner1%%) !important;
    background-repeat: no-repeat !important;
    background-position: 50% 100% !important;
    height: 205px; 
@@ -63,53 +77,14 @@ body.res-nightmode:first-of-type {background-color: transparent!important;}
 span[class="hover pagename redditname"] a:first-of-type { font-size: 1.6em !important; text-shadow: 0px 0px 6px #000; color: white; }
 
 
+body.res-nightmode:first-of-type {
+    background-color: #222!important;
+}
+
 body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .side .spacer h1, body.res-nightmode .NERPageMarker, body.res-nightmode .side .spacer {background-color: transparent!important;}
-
-
 
 .res-nightmode .content .flair {
 background-color: transparent !important
-}
-
-
-
-
-
-
-
-
-
-
-a[href="/jclop"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 200px;
-Height: 259px;
-background-image: url(%%jclop%%) !important
-}
-
-a[href="/twiwantshugs"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 400px;
-Height: 225px;
-background-image: url(%%twiwantshugs%%) !important
-}
-
-
-
-a[href="/twisquint"] {
-background-position: 0px 0px;
-Display: block;
-Clear: none;
-Float: left;
-Width: 70px;
-Height: 70px;
-background-image: url(%%twisquint%%) !important
 }
 
 .flairselector .customizer {
@@ -163,6 +138,37 @@ display:inline-block;
 .flair-trixieflair{ background-position: -80px -960px; width: 30px; height: 30px; } 
 .flair-zecoraflair{ background-position: -80px -1040px; width: 30px; height: 30px; }
 
+a[href="/jclop"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 200px;
+Height: 259px;
+background-image: url(%%jclop%%) !important
+}
+
+a[href="/twiwantshugs"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 400px;
+Height: 225px;
+background-image: url(%%twiwantshugs%%) !important
+}
+
+
+
+a[href="/twisquint"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 70px;
+Height: 70px;
+background-image: url(%%twisquint%%) !important
+}
 
 a[href|="/doublebutts"], a[href|="/tavibass"], a[href|="/triumvirateofevil"], a[href|="/queenblush"], a[href|="/flufflechomp"], a[href|="/minisombra"], a[href|="/vinylbutt"], a[href|="/sweetiedaww"], a[href|="/cadancesmirk"], a[href|="/lyrabonfillies"], a[href|="/taviwine"], a[href|="/lyrabutt"], a[href|="/gildasocks"], a[href|="/sistersofthenight"], a[href|="/wubmepls"], a[href|="/sombrashake"], a[href|="/dashwink"], a[href|="/tavishake"], a[href|="/lyrasockscheer"] {
 
