@@ -2,28 +2,65 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%backgroundground%%)  no-repeat  fixed 66% 100% !important;
+    background:  url(%%animebackground5%%)  no-repeat  fixed 66% 100% !important;
 }
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%bannerban%%)!important;
+   background: url(%%lunabanner%%)!important;
    background-repeat: no-repeat!important;
    background-position: 50% 100%!important;
-   height: 237px; /* 237 for meat's nice banner and general banner size */
 }
-
-
 
 #header-img-a {
-    margin-top: 220px;
-    margin-left: 15px;
+/* with logo
+margin-top: 127px;
+*/
+
+/* without logo 
+margin-top: 240px;
+margin-left: 100px;
+*/
+
+/* above text */
+margin-top: 93px;
+margin-bottom: 31px;
+
 }
 
+#header-img {
+margin-left: 15px;
+}
+
+/* above text */
+.hover.pagename.redditname {
+margin-left: -110px;
+}
+
+/* without logo 
+#header-img{display: none}*/
+
+/* header borders */
 #header, #header.res-nightmode{
-    height:256px;
-    border-bottom: 1px solid #000000;
-    background-color: #e0d3c1!important;
+    border-bottom: 1px solid #4149cd;
+    background-color: black!important;
+}
+
+.tabmenu li.selected a {
+border: 1px solid #4149cd;
+border-bottom: 1px solid white;
+color: #8f4be4 !important;
+}
+
+.tabmenu li a {
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-topleft: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+color: #000000;
+background-color: #c5bbf2;
 }
 
 #header-bottom-left>* {
@@ -64,7 +101,7 @@ body.res-nightmode:first-of-type > .content {background-color: #222!important;}
 body.res-nightmode:first-of-type {background-color: #222!important;}
 span[class="hover pagename redditname"] a:first-of-type { font-size: 1.6em !important; text-shadow: 0px 0px 6px #000; color: white; }
 
-body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, .side .spacer h1, body.res-nightmode .NERPageMarker, body.res-nightmode .side .spacer {background-color: #222!important;}
+body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, body.res-nightmode .NERPageMarker, body.res-nightmode .side .spacer {background-color: #222!important;}
 
 /* Makes the sidebar transparent */
 .side {background-color: transparent !important }
@@ -120,11 +157,11 @@ div.titlebox span.word {
     display: none
     }
 div.titlebox span.number:after {
-    content: " Schleeping Gummieys"
+    content: " Sleepy Gammies"
     }
 div.titlebox .users-online span.number:after
 {
-    content:" Tolkien Gummieys";
+    content:" Wakey Gammies";
 }
 a[href="/spoiler"]:nth-of-type(n) {
     background: #000;
@@ -437,6 +474,8 @@ background-repeat: no-repeat;
 .flair-earhole:after { background-position: 0px -6030px }
 .flair-wwwi:after { background-position: 0px -6060px }
 .flair-videogamewonder:after { background-position: 0px -6090px }
+.flair-screwball3:after { background-position: 0px -6120px }
+.flair-screwball4:after { background-position: 0px -6150px }
 
 
 /* Nightmode fix for flair */
@@ -478,11 +517,6 @@ a[href|='/bigmad'] {width:120px; height:152px; background-position: -0px -0px}
     cursor: text !important
 }
 
-form[class~="unmarknsfw-button"] a {
-    visibility: hidden !important;
-    font-size: 0;
-}
-
 a[href='/sp'] { display: inline-block; padding-right: 100%; } 
 
 
@@ -494,7 +528,6 @@ a.author[href$="PUBLIQclopAccountant"],
 a.author[href$="bryvood"],
 a.author[href$="0x_"],
 a.author[href$="theodorejhooker"],a.author[href$="pr0n0tr0n"],
-a.author[href$="-20"],
 a.author[href$="CarlosAmuroRay"],
 a.author[href$="numberlock"],
 a.author[href$="CodenameToon"],
@@ -583,7 +616,10 @@ a.author[href$=Nagashizuri],
 a.author[href$=andresonic1],
 a.author[href$=Bflat13],
 a.author[href$=theclinger_4],
-a.author[href$=FUCKING_HATE_REDDIT]
+a.author[href$=FUCKING_HATE_REDDIT],
+a.author[href$=andysonic3],
+a.author[href$=andysonic0],
+a.author[href$=Andysonic-1]
 
 
 { 
@@ -598,7 +634,6 @@ a.author[href$="PUBLIQclopAccountant"]:before,
 a.author[href$="bryvood"]:before,
 a.author[href$="0x_"]:before,
 a.author[href$="theodorejhooker"]:before,a.author[href$="pr0n0tr0n"]:before,
-a.author[href$="-20"]:before,
 a.author[href$="CodenameToon"]:before,
 a.author[href$="CarlosAmuroRay"]:before,
 a.author[href$="numberlock"]:before,
@@ -688,7 +723,10 @@ a.author[href$=Nagashizuri]:before,
 a.author[href$=andresonic1]:before,
 a.author[href$=Bflat13]:before,
 a.author[href$=theclinger_4]:before,
-a.author[href$=FUCKING_HATE_REDDIT]:before
+a.author[href$=FUCKING_HATE_REDDIT]:before,
+a.author[href$=andysonic3]:before,
+a.author[href$=andysonic0]:before,
+a.author[href$=Andysonic-1]:before
 
 {
 font-size:10px!important; 
@@ -706,7 +744,6 @@ a.author[href$="CarlosAmuroRay"]:before {content:"ChuckAmuroRay"}
 a.author[href$="0x_"]:before {content:"just ox"}
 a.author[href$="CodenameToon"]:before {content:"Coggler"}
 a.author[href$="thezooman123"]:before {content:"Actual Racist"}
-a.author[href$="-20"]:before {content:"“just a douchebag”"}
 a.author[href$="numberlock"]:before {content:"BeerPony"}
 a.author[href$="thedarklordkyp"]:before {content:"A_Drunk_Changeling"}
 a.author[href$="fwinest_JediThug"]:before {content:"Wincest_JediThug"}
@@ -791,6 +828,9 @@ a.author[href$=andresonic1]:before { content:"Fake" }
 a.author[href$=Bflat13]:before { content:"BECAUSE OF THE MOTHER FUCKING SUGAR!" }
 a.author[href$=theclinger_4]:before { content:"The Cringler" }
 a.author[href$=FUCKING_HATE_REDDIT]:before { content:"Freakin' Dislike Webplace" }
+a.author[href$=andysonic3]:before { content:"Chibi Andy" }
+a.author[href$=andysonic0]:before { content:"Mini Andy" }
+a.author[href$=Andysonic-1]:before { content:"Tiny Andy" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -871,7 +911,10 @@ a.author[href$=herabek]:after,
 a.author[href$=Backupusername]:after,
 a.author[href$= Nagashizuri]:after,
 a.author[href$="Conky_"]:after,
-a.author[href$="theclinger_4"]:after
+a.author[href$="theclinger_4"]:after,
+a.author[href$="andysonic3"]:after,
+a.author[href$="andysonic0"]:after,
+a.author[href$="Andysonic-1"]:after
 
 {
 color:#000; 
@@ -900,7 +943,7 @@ a.author[href$=IllusionOf_Integrity]:after { content:" (participates in bringing
 a.author[href$=SkiidrowDash]:after { content:" (Lord of the Hamsters)" }
 a.author[href$=trypsonite]:after { content:" is dead" }
 a.author[href$=Backupusername]:after { content:" http://www.youtube.com/watch?f&v=3JCUWl30VuM" }
-a.author[href$=andysonic2]:after { content:" THE NO FUN POLICE"; color:purple }
+a.author[href$=andysonic2]:after { content:" GOD OF NO FUN"; color:purple }
 a.author[href$=Capnpaddy]:after { content:" (banned)" }
 a.author[href$=Capnpaddydash]:after { content:" (shoot on sight)" }
 a.author[href$=Speedingturtle]:after { content:" (°ロ°)" }
@@ -942,7 +985,9 @@ a.author[href$=JIVEprinting]:after { content:" Christfag" }
 a.author[href$="Conky_"]:after { content:" In a Lot of Trouble, Mr." }
 a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 a.author[href$="theclinger_4"]:after { content:" is tired of your bullshit" }
-
+a.author[href$="andysonic3"]:after { content:" THE NO FUN DEPUTY" }
+a.author[href$="andysonic0"]:after { content:" THE NO FUN CHIEF" }
+a.author[href$="Andysonic-1"]:after { content:" THE NO FUN ROOKIE" }
 
 /* Any pre/post-name flair stuff goes here */ 
 
@@ -1004,7 +1049,7 @@ a.author[href$="theclinger_4"]:after { content:" is tired of your bullshit" }
   background-position: 0px -3390px;
 }
 
-/********** Emotes ************/
+/********** Start of Emotes ************/
 
 a[href|='/pokeypeek'],a[href|='/screwwut'],a[href|='/cogglerbluh'], a[href|='/derpywat'],a[href|='/duckfacesombra'],a[href|='/lunabats'],a[href|='/bonbonwat'],a[href|='/mlas1'],a[href|='/mangobatpony'],a[href|='/flutterwatter'],a[href|='/macnopebait'],a[href|='/scootscoot'],a[href|='/celestiasad'],a[href|='/fluttergetout'],a[href|='/pokeyhugs']{
 
@@ -1028,6 +1073,28 @@ a[href|="/scootscoot"] {width:155px; height:185px; background-position: -162px -
 a[href|="/celestiasad"] {width:145px; height:200px; background-position: -0px -700px}
 a[href|="/fluttergetout"] {width:168px; height:270px; background-position: -320px -625px}
 a[href|="/pokeyhugs"] {width:150px; height:145px; background-position: -160px -755px}
+
+a[href|='/fillychrysalisrun'], a[href|='/twibangbangbang'], a[href|='/disblegh'], a[href|='/flushocshock'], a[href|='/rosehappy'], a[href|='/twiwannabet'], a[href|='/twinotprepared'], a[href|='/lunadreamtime'], a[href|='/cheerileevest'], a[href|='/pphdpunch'], a[href|='/cheerileefull'], a[href|='/cheerileegangster'], a[href|='/twipreen'], a[href|='/cheerileehappy']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheetbb%%) }
+
+a[href|="/fillychrysalisrun"] {width:160px; height:172px; background-position: -0px -0px}
+a[href|="/twibangbangbang"] {width:160px; height:220px; background-position: -160px -0px}
+a[href|="/disblegh"] {width:230px; height:185px; background-position: -320px -0px}
+a[href|="/flushocshock"] {width:170px; height:170px; background-position: -0px -172px}
+a[href|="/rosehappy"] {width:165px; height:190px; background-position: -165px -225px}
+a[href|="/twiwannabet"] {width:158px; height:162px; background-position: -330px -185px}
+a[href|="/twinotprepared"] {width:152px; height:120px; background-position: -0px -345px}
+a[href|="/lunadreamtime"] {width:152px; height:170px; background-position: -152px -415px}
+a[href|="/cheerileevest"] {width:180px; height:170px; background-position: -355px -346px}
+a[href|="/pphdpunch"] {width:130px; height:175px; background-position: -0px -470px}
+a[href|="/cheerileefull"] {width:256px; height:133px; background-position: -304px -516px}
+a[href|="/cheerileegangster"] {width:170px; height:205px; background-position: -0px -645px}
+a[href|="/twipreen"] {width:172px; height:173px; background-position: -170px -645px}
+a[href|="/cheerileehappy"] {width:173px; height:200px; background-position: -378px -648px}
 
 /********** End of Emotes ************/
 
@@ -1074,31 +1141,7 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 
 .error.OUTOFSUB{display:none!important}
 
-.sidecontentbox h1 {
-    text-align: left
-}
-.sidecontentbox .helplink + .title > h1 {
-    color: white !important;
-    font-size: 0px !important;
-    display: inline-block;
-    overflow: hidden
-}
-.sidecontentbox .helplink + .title > h1:before {
-    color: gray !important;
-    font-size: 13px !important;
-    content: "''moderators''";
-    display: inline-block
-}
-.sidecontentbox a.helplink {
-    color: white !important;
-    overflow: hidden;
-    font-size: 0px !important
-}
-.sidecontentbox a.helplink:after {
-    color: #369 !important;
-    font-size: 11px !important;
-    content: "message the ''moderators''"
-}
+
 
 
 /* --------------Footer-------------------------*/

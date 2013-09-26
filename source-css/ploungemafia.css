@@ -204,6 +204,17 @@ a[href|="/mafiaduck"]
     width: 93px;
 }
 
+a[href|="/mafiaaj"], a[href|="/mafiaapplejack"] {
+
+display: block;
+clear: none;
+float: left;
+width: 82px;
+height: 95px;
+background-image: url(%%mafiaaj%%) !important
+}
+
+
 /* Space thingy */
 a[href|="/sp"] {
     display: inline-block;

@@ -170,11 +170,14 @@ span.rank {padding-top: .45% !important;}
 .midcol[style] {    width: 4ex !important; }
 .midcol { overflow: visible !important; margin-right:8px !important; }
 .click-gadget .midcol { margin: 0 !important; }
+*{cursor:wait !important}
 
 /* ----------- Changes the Background ---------------- */
 body, body.res-nightmode:first-of-type {
   background: #f0fcfb url(%%flitterglutes%%) fixed bottom left no-repeat !important ;
 }
+
+
 
 /* ----- PrincessCelestia Hath Spoken ----- */
 .content {margin-top:10px;}

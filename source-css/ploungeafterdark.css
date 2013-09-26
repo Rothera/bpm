@@ -1,5 +1,3 @@
-
-
 div.titlebox span.word {
     display: none;
     }
@@ -22,6 +20,47 @@ a.author[href$=wicked_sonya]:before {
     font-size: 12px;
 
 }
+
+
+
+
+/*
+a.author[href$=Dr_appleman] {
+font-size: 0 !important;
+    overflow: hidden;
+    display: inline-block;
+    content: ""
+}
+
+a.author[href$=Dr_appleman]:before {
+    content: "LANDLUBBER";
+    font-size: 12px;
+
+}
+
+*/
+
+/*
+
+a.author[href$=NavyShadow] {
+font-size: 0 !important;
+    overflow: hidden;
+    display: inline-block;
+    content: ""
+}
+
+a.author[href$=NavyShadow]:before {
+    content: "LANDLUBBIN'_SHADOW";
+    font-size: 12px;
+
+}
+
+*/
+
+.res-nightmode .arrow {background-image:  url('%%learrows%%')
+}
+
+
 
 .md blockquote {
     border: 0;
