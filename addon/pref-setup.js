@@ -31,6 +31,7 @@ var default_prefs = {
     "disabledEmotes": [],
     "whitelistedEmotes": [],
     "customCSSSubreddits": {}, // subreddit name -> timestamp
+    "blacklistedSubreddits": {}, // subreddit name -> true
 
     "searchBoxInfo": [600, 25, 620, 450],
     "lastSearchQuery": "sr:mylittlepony",

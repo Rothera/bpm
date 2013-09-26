@@ -181,14 +181,16 @@ function is_sidebar(md) {
 /*
  * Processes emotes and alt-text under an element, given the containing .md.
  */
-function process_post(store, post, md) {
+function process_post(store, post, md, expand_emotes) {
     // Generally, the first post on the page will be the sidebar, so this
     // is an extremely fast test.
     var sidebar = is_sidebar(md);
     var links = slice(post.getElementsByTagName("a"));
     for(var i = 0; i < links.length; i++) {
         var element = links[i];
-        process_element(store, element, !sidebar);
+        if(expand_emotes) {
+            process_element(store, element, !sidebar);
+        }
         // NOTE: must run alt-text AFTER emote code, always. See note in
         // process_alt_text
         if(!sidebar && store.prefs.showAltText) {

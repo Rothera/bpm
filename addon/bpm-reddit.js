@@ -8,11 +8,24 @@ var current_subreddit = (function() {
     }
 })();
 
+function is_blacklisted(store) {
+    return !!store.prefs.blacklistedSubreddits[current_subreddit];
+}
+
 /*
  * Injects a sneaky little link at the bottom of each Reddit page that
  * displays the logs.
  */
-function inject_log_button() {
+function inject_buttons(store) {
+    function add_link(container, text, callback) {
+        var link = document.createElement("a");
+        link.href = "javascript:void(0)";
+        link.textContent = text;
+        container.appendChild(link);
+        link.addEventListener("click", catch_errors(callback), false);
+        return link;
+    }
+
     var reddit_footer = find_class(document.body, "footer-parent");
     if(!reddit_footer) {
         return;
@@ -21,25 +34,37 @@ function inject_log_button() {
     // <div><pre>...</pre> <a>[dump bpm logs]</a></div>
     var container = document.createElement("div");
     container.className = "bottommenu";
+    reddit_footer.appendChild(container);
+
     var output = document.createElement("pre");
     output.style.display = "none";
     output.style.textAlign = "left";
     output.style.borderStyle = "solid";
     output.style.width = "50%";
     output.style.margin = "auto auto auto auto";
-    var link = document.createElement("a");
-    link.href = "javascript:void(0)";
-    link.textContent = "[dump bpm logs]";
-    container.appendChild(link);
-    container.appendChild(output);
 
-    link.addEventListener("click", catch_errors(function(event) {
+    // Log link
+    add_link(container, "[dump bpm logs] ", function(event) {
         output.style.display = "block";
         var logs = _log_buffer.join("\n");
         output.textContent = logs;
-    }), false);
+    });
+    container.appendChild(output);
 
-    reddit_footer.appendChild(container);
+    // Subreddit blacklist control. This isn't available from the prefs page
+    function bl_text() {
+        return "[" + (is_blacklisted(store) ? "whitelist" : "blacklist") + " subreddit]";
+    }
+
+    var bl_link = add_link(container, bl_text(), function(event) {
+        if(is_blacklisted(store)) {
+            delete store.prefs.blacklistedSubreddits[current_subreddit];
+        } else {
+            store.prefs.blacklistedSubreddits[current_subreddit] = true;
+        }
+        store.sync_key("blacklistedSubreddits")
+        bl_link.textContent = bl_text();
+    });
 }
 
 function toggle_emote(store, element) {
@@ -90,7 +115,7 @@ function block_click(store, event) {
 /*
  * Main function when running on Reddit.
  */
-function run_reddit(store) {
+function run_reddit(store, expand_emotes) {
     init_search_box(store);
     var usertext_edits = slice(document.getElementsByClassName("usertext-edit"));
     inject_emotes_button(store, usertext_edits);
@@ -99,7 +124,7 @@ function run_reddit(store) {
     var posts = slice(document.getElementsByClassName("md"));
     log_debug("Processing", posts.length, "initial posts");
     for(var i = 0; i < posts.length; i++) {
-        process_post(store, posts[i], posts[i]);
+        process_post(store, posts[i], posts[i], expand_emotes);
     }
 
     // Add emote click blocker
@@ -125,14 +150,14 @@ function run_reddit(store) {
             var md;
             if(md = class_above(root, "md")) {
                 // We're inside of a post- so only handle links underneath here
-                process_post(store, root, md);
+                process_post(store, root, md, expand_emotes);
             } else {
                 // Are there any posts below us?
                 var posts = slice(root.getElementsByClassName("md"));
                 if(posts.length) {
                     log_debug("Processing", posts.length, "new posts");
                     for(var p = 0; p < posts.length; p++) {
-                        process_post(store, posts[p], posts[p]);
+                        process_post(store, posts[p], posts[p], expand_emotes);
                     }
                 }
             }
@@ -151,8 +176,12 @@ function reddit_main(store) {
     _checkpoint("css");
 
     with_dom(function() {
-        inject_log_button(); // Try to do this early
-        run_reddit(store);
+        inject_buttons(store); // Try to do this early
+        var expand_emotes = !is_blacklisted(store);
+        if(!expand_emotes) {
+            log_info("Disabling emote expansion on blacklisted subreddit /r/" + current_subreddit)
+        }
+        run_reddit(store, expand_emotes);
         _checkpoint("done");
     });
 }
