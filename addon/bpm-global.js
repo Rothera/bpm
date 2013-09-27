@@ -209,7 +209,8 @@ function global_main(store) {
 
     // Check against domain blacklist
     for(var i = 0; i < DOMAIN_BLACKLIST.length; i++) {
-        if(DOMAIN_BLACKLIST[i] === document.location.host) {
+        if(document.location.host === DOMAIN_BLACKLIST[i] ||
+           document.location.host.endsWith(DOMAIN_BLACKLIST[i])) {
             log_warning("Refusing to run on '" + document.location.host + "': domain is blacklisted (probably broken)");
             return;
         }
