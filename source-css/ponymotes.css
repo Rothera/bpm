@@ -1,0 +1,257 @@
+/* vote diagram */
+.wiki-page a[href="/ponymotesvotediagram"] {
+background: url(%%votediagram%%) no-repeat;
+width: 710px;
+height: 160px;
+display: inline-block;
+float: left;
+}
+
+/* Stop RES voteweight & tags in mod box, and wiki pages */
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink, .wiki-page .voteWeight, .wiki-page .userTagLink {
+display: none !important;
+}
+
+/* Header Image stuff */
+#header-img {
+margin-top: -1px;
+margin-bottom: -3px;
+}
+
+/* /r/mylittlepony Announcement Banner, AKA Giant Hat. Edited somewhat */
+.titlebox .usertext-body .md h6 {
+width: auto;
+background: url(%%ballot%%) no-repeat scroll 5px 5px #EFF7FF;
+border: 1px solid #5f99cf;
+position: absolute;
+top: 30px;
+left: 180px;
+margin: 20px 420px 0 0;
+padding: 8px 6px 8px 50px;
+list-style: none;
+display: block;
+white-space: normal;
+overflow: hidden;
+border-radius:10px;
+z-index: 10000000;
+font-weight: normal;
+}
+
+.res-nightmode .titlebox .usertext-body .md h6 {
+background-color: #222222;
+border-color: #5F99CF;
+color: #DDDDDD;
+}
+/* Fin Giant Hat */
+
+/* Day of submission shower */
+.link time:after {
+content: " - (" attr(title) ")";
+}
+
+/* link flairs */
+.linkflair-closed {
+opacity: 0.4;
+}
+
+.linkflair-closed .arrow {
+visibility: hidden;
+}
+
+.linkflair-closed .entry {
+background: url(%%linkflairclosed%%) 10px 0 no-repeat;
+padding-left: 55px;
+}
+
+.linkflair-denied .linkflairlabel {
+color: #AC3939;
+background-color: transparent;
+border: 1px solid #D27979;
+text-transform: uppercase;
+}
+
+
+.linkflair-approved .entry {
+background: url(%%linkflairapproved%%) 0 0 no-repeat;
+padding-left: 55px;
+}
+
+.linkflair-denied .entry {
+background: url(%%linkflairdenied%%) 0 0 no-repeat;
+padding-left: 55px;
+}
+
+.linkflair-approved .linkflairlabel {
+color: #6ECF5B;
+border: 1px solid #8EEF7B;
+background: transparent;
+}
+
+.thing {margin-right: 310px;}
+
+.click-gadget .thing {margin-right: 0px;} /* This is the 'Recently viewed links' box in the sidebar */
+
+.linkflair-denied {
+background-image: linear-gradient(90deg, #e7cdcd, #fff, #fff, #fff, #fff, #fff);
+}
+
+.res-nightmode .linkflair-denied {
+background-image: linear-gradient(-90deg, #300303, #222);
+}
+
+.linkflair-approved {
+background-image: linear-gradient(90deg, #cde7cd, #fff, #fff, #fff, #fff, #fff);
+}
+
+.res-nightmode .linkflair-approved {
+background-image: linear-gradient(-90deg, #033004, #222);
+}
+
+body.listing-page .linkflair-denied div.RES-keyNav-activeElement, body.listing-page .linkflair-approved div.RES-keyNav-activeElement
+{background-color: transparent !important;}
+
+/* user flair */
+.flair {border: none; padding: 0; margin: 0; background-color: transparent !important;}
+
+.flair-nobodyvoted {
+background: url(%%voted%%) 0 0 transparent no-repeat !important;
+height: 13px;
+width: 39px;
+text-indent: -9999px;
+vertical-align: middle;
+}
+
+/* Cutie mark flairs combined with I voted userflair */
+.flair-voted {
+width: 38px !important;
+}
+
+.flair-cm {
+width: 16px;
+height: 16px;
+background: url(%%cutievoted%%) no-repeat transparent;
+text-indent: -9999px;
+vertical-align: middle;
+}
+
+.flair-rainbowdash {background-position: 0 0;} /* Not needed, but for completeness */
+.flair-pinkiepie {background-position: 0 -16px;}
+.flair-luna {background-position: 0 -32px;}
+.flair-lyra {background-position: 0 -48px;}
+.flair-bigmac {background-position: 0 -64px;}
+.flair-roseluck {background-position: 0 -80px;}
+.flair-screwball {background-position: 0 -96px;}
+.flair-wonderbolt {background-position: 0 -112px;}
+.flair-sweetiebelle {background-position: 0 -128px;}
+.flair-blueblood {background-position: 0 -144px;}
+.flair-flam {background-position: 0 -160px;}
+.flair-snips {background-position: 0 -176px;}
+.flair-sparkler {background-position: 0 -192px;} /* AKA Amethyst Star */
+.flair-cadence {background-position: 0 -208px;}
+.flair-cloudchaser {background-position: 0 -224px;}
+.flair-daisy {background-position: 0 -240px;}
+.flair-doctorstable {background-position: 0 -256px;}
+.flair-twilightsparkle {background-position: 0 -272px;}
+.flair-rarity {background-position: 0 -288px;}
+.flair-celestia {background-position: 0 -304px;}
+.flair-bonbon {background-position: 0 -320px;}
+.flair-colgate {background-position: 0 -336px;}
+.flair-zecora {background-position: 0 -352px;}
+.flair-nurseredheart {background-position: 0 -368px;}
+.flair-shadowbolt {background-position: 0 -384px;}
+.flair-davenport {background-position: 0 -400px;}
+.flair-daringdo {background-position: 0 -416px;}
+.flair-flim {background-position: 0 -432px;}
+.flair-snails {background-position: 0 -448px;}
+.flair-dancefever {background-position: 0 -464px;} /* Called "Hairy Tipper" in /r/mylittlepony */
+.flair-shiningarmour {background-position: 0 -480px;}
+.flair-flitter {background-position: 0 -496px;}
+.flair-changeling {background-position: 0 -512px;}
+.flair-sewnsow {background-position: 0 -528px;} /* That's "Sew 'n' Sow" */
+.flair-fluttershy {background-position: 0 -544px;}
+.flair-trixie {background-position: 0 -560px;}
+.flair-derpy {background-position: 0 -576px;}
+.flair-octavia {background-position: 0 -592px;}
+.flair-berrypunch {background-position: 0 -608px;}
+.flair-seaswirl {background-position: 0 -624px;}
+.flair-caramel {background-position: 0 -640px;}
+.flair-scootaloo {background-position: 0 -656px;}
+.flair-cheerilee {background-position: 0 -672px;}
+.flair-mrcake {background-position: 0 -688px;}
+.flair-silverspoon {background-position: 0 -704px;}
+.flair-twist {background-position: 0 -720px;}
+.flair-fancypants {background-position: 0 -736px;}
+.flair-filthyrich {background-position: 0 -752px;}
+.flair-lily {background-position: 0 -768px;}
+.flair-lotus {background-position: 0 -784px;}
+.flair-spitfire {background-position: 0 -800px;}
+.flair-applejack {background-position: 0 -816px;}
+.flair-cmc {background-position: 0 -832px;}
+.flair-vinyl {background-position: 0 -848px;}
+.flair-doctorwhooves {background-position: 0 -864px;}
+.flair-pokeypierce {background-position: 0 -880px;}
+.flair-carrottop {background-position: 0 -896px;}
+.flair-braeburn {background-position: 0 -912px;}
+.flair-applebloom {background-position: 0 -928px;}
+.flair-nightmaremoon {background-position: 0 -944px;}
+.flair-mrscake {background-position: 0 -960px;}
+.flair-diamondtiara {background-position: 0 -976px;}
+.flair-truffleshuffle {background-position: 0 -992px;}
+.flair-fleurdelis {background-position: 0 -1008px;}
+.flair-hoitytoity {background-position: 0 -1024px;}
+.flair-grannysmith {background-position: 0 -1040px;}
+.flair-aloe {background-position: 0 -1056px;}
+.flair-mayormare {background-position: 0 -1072px;}
+
+/* EMOTES */
+
+/* HOW TO EMOTE
+ * Find the 'spritesheet' that the emote should go on.
+ * If emote is 70x70 it's the latest non-full 70x70 image...
+ * Download and add the emote to the image. Images have a grid pattern, so make sure you add the emote in line with the grid.
+ * Upload the updated image using the form, make sure the 'new image name' section is the same as the image it's replacing.
+ * (So if you update the 70x70a image, make sure it says "70x70a").
+ * In the form: `a[href|="/emotecode"]`, add the emote to the corresponding sprite sheet CSS below. [Without the backticks, and don't forget the comma!]
+ * If the emote is a misfit you're going to have to define it's width and height yourself.
+ * In the form: `a[href|="/emotecode"] {width:[X]px;height:[Y]px;}` Where [X] and [Y] are the width and height of the emote respectively.
+ * Now you need to add it to the correct grid position css rule. 0,0 is the top left, 1,0 is the one one to the right of that. etc. etc.
+ * If the emote is a misfit, you'll need to define it yourself.
+ * In the form: `a[href|="/emotecode"] {background-position: -[X]px -[Y]px;}` Where [X] and [Y] are the horizontal and vertical distance from
+ * the top left of the image to the top left of the emote in pixels respectively.
+ * Click save and you should be done! Test if it works. If reddit throws a CSS validation error at you double check you haven't missed out any
+ * semi-colons or curly brackets or the like, or you haven't typo'd the name of a CSS property. etc. etc...
+ */
+
+/* 70x70a 'motes. */
+a[href|="/ppparalyzedshrug"], a[href|="/considerthefollowing"]
+{background-image:url(%%70x70a%%);background-repeat:no-repeat;width:70px;height:70px;display:block;float:left;}
+
+/* 100x100a 'motes. */
+a[href|="/cadface"]
+{background-image:url(%%100x100a%%);width:100px;height:100px;display:block;float:left;}
+
+/* 200x200a 'motes. */
+a[href|="/regret"]
+{background-image:url(%%200x200a%%);width:200px;height:200px;display:block;float:left;}
+
+/* 300x300a 'motes */
+a[href|="/pinkieplease"], a[href|="/twispike"]
+{background-image:url(%%300x300a%%);width:300px;height:300px;display:block;float:left;}
+
+/* Misfits a */
+a[href|="/fillycadance"], a[href|="/lyratonguebite"], a[href|="/buttonsmom"], a[href|="/buttonsmum"]
+{background-image:url(%%misfitsa%%);display:block;float:left;}
+
+/* Grid pos 0,0 'motes. Not needed but for completeness... */
+a[href|="/ppparalyzedshrug"], a[href|="/considerthefollowing"], a[href|="/cadface"], a[href|="/pinkieplease"], a[href|="/regret"]
+{background-position: 0 0;}
+
+/* Gird pos 1,0 'motes */
+a[href|="/twispike"]
+{background-position: -100% 0%;}
+
+/* Misfits and animated emotes */
+a[href|="/moofintezzter"], a[href|="/muffintester"] {background: url(%%muffintester%%) no-repeat;width:200px;height:177px;display:block;float:left;}
+a[href|="/fillycadance"] {width:100px;height:126px;}
+a[href|="/lyratonguebite"] {width:280px;height:210px;background-position: -100px 0;}
+a[href|="/buttonsmom"], a[href|="/buttonsmum"] {width:100px;height:136px;background-position: 0 -126px;}
