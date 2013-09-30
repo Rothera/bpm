@@ -10,7 +10,7 @@ Added emotes (1/15/13)
 /* Header */
 
  #header #header-bottom-left {
-   background: url(%%mangoheader21%%) !important;
+   background: url(%%mlmbackgroundcomic%%) !important;
    background-repeat: no-repeat !important;
    background-position: 50% 100% !important;
    height: 200px; 
@@ -53,6 +53,36 @@ Added emotes (1/15/13)
 }
 
 */
+
+    body {
+    font-family:"Comic Sans MS", "Comic Sans";
+    }
+
+
+/*body
+{
+	font-family:comicsans !important;
+}
+
+.link .title
+{
+	font-family:"comicsans";
+	margin-bottom:2px;
+	word-spacing:-1px;
+}
+
+.titlebox h1 a
+{
+	font-family:"comicsans";
+	word-spacing:-1px;
+}
+
+.sidecontentbox .content {
+
+    font-family: "comicsans";
+
+    }
+*/
 /* Background*/
 
 /* Save this for later
@@ -61,7 +91,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     background:  url(%%background1%%)  no-repeat  fixed 50% 65% !important;
 } */
 
-body{background:url(%%mlmbackground%%) no-repeat fixed center center!important}
+body{background:url(%%mangobackground%%) no-repeat fixed center center!important}
 .res-nightmode .content{background-color:transparent!important}
 .res-nightmode{background-color:transparent !important}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
