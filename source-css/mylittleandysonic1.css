@@ -7,7 +7,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%ponybanner1%%)!important;
+   background: url(%%nightmarebanner2%%)!important;
    background-repeat: no-repeat!important;
    background-position: 50% 100%!important;
 }
@@ -476,6 +476,7 @@ background-repeat: no-repeat;
 .flair-videogamewonder:after { background-position: 0px -6090px }
 .flair-screwball3:after { background-position: 0px -6120px }
 .flair-screwball4:after { background-position: 0px -6150px }
+.flair-clinger:after { background-position: 0px -6180px }
 
 
 /* Nightmode fix for flair */
@@ -525,6 +526,7 @@ a[href='/sp'] { display: inline-block; padding-right: 100%; }
 
 /* Replacing somebody's name? Add it to the list here. */
 a.author[href$="PUBLIQclopAccountant"],
+a.author[href$="AttackTheMoon"],
 a.author[href$="bryvood"],
 a.author[href$="0x_"],
 a.author[href$="theodorejhooker"],a.author[href$="pr0n0tr0n"],
@@ -630,6 +632,7 @@ content: "";
 }
 
 /* Replacing somebody's name? Add it to the list here too. */
+a.author[href$="AttackTheMoon"]:before,
 a.author[href$="PUBLIQclopAccountant"]:before,
 a.author[href$="bryvood"]:before,
 a.author[href$="0x_"]:before,
@@ -737,6 +740,7 @@ visibility:visible!important;
 /*a.author:before{
     content:"Princess " 
     }*/
+a.author[href$="AttackTheMoon"]:before {content:"SpookPaul420"}
 a.author[href$="PUBLIQclopAccountant"]:before {content:"The Public Clop Accounting Firm, LLC"}
 a.author[href$="bryvood"]:before,a.author[href$="Ezreal"]:before {content:"Ezreal"}
 a.author[href$="pr0n0tr0n"]:before,a.author[href$="theodorejhooker"]:before {content:"theodoreajhooker"}
@@ -800,7 +804,7 @@ a.author[href$=Generic_Builder]:before { content:"Genewic Bwuilda" }
 a.author[href$=volcano_bakemeats]:before { content:"Madam Le Bake" }
 a.author[href$=DaylightDarkle]:before { content:"Twilight Sparkle" }
 a.author[href$=Chillusion]:before { content:"Cchhiilllluussiioonn" }
-a.author[href$=Edriss562]:before {content:"Esplando"}
+a.author[href$=Edriss562]:before {content:"Government Shutdown"}
 a.author[href$=Jeroknite]:before {content:"JokerTine"; font-size:15px !important}
 a.author[href$=DarqWolff]:before { content:"[](/DarqWolff)" }
 a.author[href$=cheesemoo]:before { content:"Cheesemeow" }
@@ -955,7 +959,7 @@ a.author[href$=lord-hemingway]:after { content:" (Clopper 44)" }
 a.author[href$=Generic_Builder]:after { content:" IS SO KAWAII!" }
 a.author[href$=volcano_bakemeats]:after { content:" (Flour Sack Monster)" }
 a.author[href$=Chillusion]:after { content:" (Because I can.)" }
-a.author[href$=Edriss562]:after { content:" the one and only" }
+a.author[href$=Edriss562]:after { content:" furloughed my butt" }
 a.author[href$=waffen337]:after { content:"(Fucking ass ball bajongler)" }
 a.author[href$=sirtophat]:after { content:" (flaming homosexual)"; color:purple }
 a.author[href$=cheesemoo]:after { content:" (Still exists, apparently)" }
@@ -1095,6 +1099,8 @@ a[href|="/cheerileefull"] {width:256px; height:133px; background-position: -304p
 a[href|="/cheerileegangster"] {width:170px; height:205px; background-position: -0px -645px}
 a[href|="/twipreen"] {width:172px; height:173px; background-position: -170px -645px}
 a[href|="/cheerileehappy"] {width:173px; height:200px; background-position: -378px -648px}
+
+a[href|="/nighthairity"] { display: block; clear: none; float: left; background-image: url(%%nighthairity%%); width: 250px; height: 250px; background-position: -0px -0px }
 
 /********** End of Emotes ************/
 

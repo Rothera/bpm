@@ -42,6 +42,15 @@ div.titlebox p.users-online span.word { display: none }
  display:inline-block
 }
 
+.tabmenu li a {
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-topleft: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
 .sidecontentbox .helplink + .title > h1:after
 {
  width: 16px;
@@ -296,6 +305,28 @@ body{background:url(%%scoots-bg%%) no-repeat fixed center center}
  font-size:0px;
  text-align:right;
  color:#56a6f7
+}
+
+/* Make deleted messages less noticeable /u/djimbob */
+form.grayed, 
+form.grayed ~ ul.flat-list.buttons {
+  display: none
+}
+p.tagline > a.expand:first-child + em:after, 
+div.collapsed > a.expand:first-child + em:after {
+  visibility: visible;
+  font-size: x-small;
+  font-weight: bold;
+  content: "Comment deleted or removed"
+}
+p.tagline > a.expand:first-child + em, 
+div.collapsed > a.expand:first-child + em {
+  visibility: hidden;
+  font-size: 0
+}
+div.collapsed > a.expand:first-child + em + time + a.expand,
+div.collapsed > a.expand:first-child + em + time + em + a.expand {
+  display: none;
 }
 
 .sidebox.submit.submit-link{width: 150px}

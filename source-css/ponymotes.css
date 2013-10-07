@@ -7,8 +7,8 @@ display: inline-block;
 float: left;
 }
 
-/* Stop RES voteweight & tags in mod box, and wiki pages */
-.sidecontentbox .voteWeight, .sidecontentbox .userTagLink, .wiki-page .voteWeight, .wiki-page .userTagLink {
+/* Stop RES voteweight & tags in mod box, wiki pages, and comments */
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink, .wiki-page .voteWeight, .wiki-page .userTagLink, .comment .voteWeight, .comment .userTagLink {
 display: none !important;
 }
 
@@ -54,7 +54,7 @@ content: " - (" attr(title) ")";
 opacity: 0.4;
 }
 
-.linkflair-closed .arrow {
+.linkflair-closed .arrow, .linkflair-denied .arrow, .linkflair-approved .arrow {
 visibility: hidden;
 }
 
@@ -223,15 +223,19 @@ vertical-align: middle;
  */
 
 /* 70x70a 'motes. */
-a[href|="/ppparalyzedshrug"], a[href|="/considerthefollowing"]
+a[href|="/apathiasquint"]
 {background-image:url(%%70x70a%%);background-repeat:no-repeat;width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
 a[href|="/cadface"]
 {background-image:url(%%100x100a%%);width:100px;height:100px;display:block;float:left;}
 
+/* 150x150a 'motes. */
+a[href|="/tuxpony"], a[href|="/chibiluna"]
+{background-image:url(%%150x150a%%);width:150px;height:150px;display:block;float:left;}
+
 /* 200x200a 'motes. */
-a[href|="/regret"]
+a[href|="/regret"], a[href|="/pinkiemail"]
 {background-image:url(%%200x200a%%);width:200px;height:200px;display:block;float:left;}
 
 /* 300x300a 'motes */
@@ -239,15 +243,15 @@ a[href|="/pinkieplease"], a[href|="/twispike"]
 {background-image:url(%%300x300a%%);width:300px;height:300px;display:block;float:left;}
 
 /* Misfits a */
-a[href|="/fillycadance"], a[href|="/lyratonguebite"], a[href|="/buttonsmom"], a[href|="/buttonsmum"]
+a[href|="/fillycadance"], a[href|="/lyratonguebite"], a[href|="/buttonsmom"], a[href|="/buttonsmum"], a[href|="/fabpie"]
 {background-image:url(%%misfitsa%%);display:block;float:left;}
 
 /* Grid pos 0,0 'motes. Not needed but for completeness... */
-a[href|="/ppparalyzedshrug"], a[href|="/considerthefollowing"], a[href|="/cadface"], a[href|="/pinkieplease"], a[href|="/regret"]
+a[href|="/cadface"], a[href|="/pinkieplease"], a[href|="/regret"], a[href|="/apathiasquint"], a[href|="/tuxpony"]
 {background-position: 0 0;}
 
 /* Gird pos 1,0 'motes */
-a[href|="/twispike"]
+a[href|="/twispike"], a[href|="/pinkiemail"], a[href|="/chibiluna"]
 {background-position: -100% 0%;}
 
 /* Misfits and animated emotes */
@@ -255,3 +259,5 @@ a[href|="/moofintezzter"], a[href|="/muffintester"] {background: url(%%muffintes
 a[href|="/fillycadance"] {width:100px;height:126px;}
 a[href|="/lyratonguebite"] {width:280px;height:210px;background-position: -100px 0;}
 a[href|="/buttonsmom"], a[href|="/buttonsmum"] {width:100px;height:136px;background-position: 0 -126px;}
+a[href|="/crazyface"], a[href|="/pinkface"] {background-image: url(%%crazyface%%);width:220px;height:150px;display:block;float:left;}
+a[href|="/fabpie"] {width:120px;height:200px;background-position: -380px 0;}

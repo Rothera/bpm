@@ -8,6 +8,8 @@ div.titlebox .users-online span.number:after {
     content: " Checking out Braeburns's sweet apples"
     }
 
+a.author[href$="PinkiePieladin"]:after{content:" - User of the Month Sept. 2013"}
+
 a.author[href$=wicked_sonya] {
 font-size: 0 !important;
     overflow: hidden;
@@ -137,6 +139,9 @@ padding:0px;
 background: url(%%spritesheet%%);
 display:inline-block;
 }
+
+
+
 .flair-ApplbloomFlair{ background-position: 0 0; width: 30px; height: 30px; } 
 .flair-Applejackflair{ background-position: 0 -80px; width: 30px; height: 30px; } 
 .flair-BigMacFlair{ background-position: 0 -160px; width: 30px; height: 30px; } 

@@ -204,7 +204,7 @@ a.author:after {
 *      EMOTES (This section will become massive soon, excessive labelling is mandatory)
 *   
 ************************/
-a[href|="/dashieawesome"], a[href|="/dashiebeg"], a[href|="/dashiecheer"], a[href|="/dashieclaus"], a[href|="/dashieconfident"], a[href|="/dashiecrystal"], a[href|="/dashiederp"], a[href|="/dashiedowant"], a[href|="/dashiedry"], a[href|="/dashiefillysit"], a[href|="/dashieheythere"], a[href|="/dashiehuh"], a[href|="/dashieinnocent"], a[href|="/dashielick"], a[href|="/dashielounge"], a[href|="/dashiemad"], a[href|="/dashiepeak"], a[href|="/dashieplay"], a[href|="/dashiesleep"], a[href|="/dashieweddingdress"], a[href|="/dashiewjat"], a[href|="/dashiewubwoo"], a[href|="/dashiebashful"] {
+a[href|="/dashieawesome"], a[href|="/dashiecheer"], a[href|="/dashieclaus"], a[href|="/dashieconfident"], a[href|="/dashiecrystal"], a[href|="/dashiederp"], a[href|="/dashiedowant"], a[href|="/dashiedry"], a[href|="/dashiefillysit"], a[href|="/dashieheythere"], a[href|="/dashiehuh"], a[href|="/dashieinnocent"], a[href|="/dashielick"], a[href|="/dashielounge"], a[href|="/dashiemad"], a[href|="/dashiepeak"], a[href|="/dashieplay"], a[href|="/dashiesleep"], a[href|="/dashieweddingdress"], a[href|="/dashiewjat"], a[href|="/dashiewubwoo"], a[href|="/dashiebashful"] {
     display: block;
     clear: none;
     float: left;
@@ -215,10 +215,6 @@ a[href|="/dashieawesome"], a[href|="/dashiebeg"], a[href|="/dashiecheer"], a[hre
 a[href|="/dashieawesome"] {
     width: 126px;
     background-position: -0px -0px
-}
-a[href|="/dashiebeg"] {
-    width: 113px;
-    background-position: -126px -0px
 }
 a[href|="/dashiecheer"] {
     width: 101px;
@@ -424,13 +420,13 @@ a[href|="/vx62"], a[href|="/dashiepose2"]{
 [](/dashiehelp)|/dashiehelp|[Zpony on Deviantart](http://zpony.deviantart.com/art/RD-Help-356146974)|
 */
 
-a[href|="/ajhai"], a[href|="/dashieguilt"], a[href|="/dashiehai"], a[href|="/dashienudge"], a[href|="/dashiereading"], a[href|="/dashiescared"], a[href|="/dashieskating"], a[href|="/dashievolunteer"], a[href|="/dashiewince"], a[href|="/dashiespeechless"] {
+a[href|="/ajhai"], a[href|="/dashieguilt"], a[href|="/dashiehai"], a[href|="/dashienudge"], a[href|="/dashiereading"], a[href|="/dashiescared"], a[href|="/dashieskating"], a[href|="/dashievolunteer"], a[href|="/dashiewince"], a[href|="/dashiespeechless"], a[href|="/dashiebrainhurt"], a[href|="/dashiedepressed"], a[href|="/dashieshrug"] {
     display: block;
     clear: none;
     float: left;
     height: 130px;
     background-repeat: no-repeat;
-    background-image: url(%%rd-sheet3-v6%%)
+    background-image: url(%%rd-sheet3-v8%%)
 }
 a[href|="/ajhai"]{
 background-position: 0 0; width: 117px; height: 130px;
@@ -461,6 +457,15 @@ background-position: 0 -1440px; width: 128px; height: 130px;
     }
 a[href|="/dashiewince"]{
 background-position: 0 -1620px; width: 140px; height: 130px;
+    }
+a[href|="/dashiebrainhurt"]{
+background-position: 0 -1800px; width: 300px; height: 130px;
+    }
+a[href|="/dashiedepressed"]{
+background-position: -350px 0; width: 142px; height: 130px;
+    }
+a[href|="/dashieshrug"]{
+background-position: -350px -180px; width: 106px; height: 130px;
     }
 
 /***********************
@@ -500,6 +505,20 @@ a[href|="/fx12"], a[href|="/fluttermad"], a[href|="/rfx12"], a[href|="/rflutterm
     width: 139px;
     background-position: -258px -0px
     }
+
+
+/* Animated dashiebeg */
+a[href|="/dashiebeg"] {
+    background-position: -0px -0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 174px;
+    background-repeat: no-repeat;
+    background-image: url(%%dashiebeg%%)
+    }
+
 
 
 /**********************

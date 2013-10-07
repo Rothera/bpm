@@ -1,89 +1,5 @@
-/*
-                @r 
-               @@@ 
-             :@k @F
-            N@,  v@ 
-           @@   ..@,           .rFM@@@@@@@@@@@M2;
-          @Z    . @j       :N@@MPL;:.        .:7jPGOL
-        v@7    2: 8B    i0@Bj:                  .iS@@@r
-       Z@  ..  @Y k@  k@Mi                 :1GBXS@ 
-      @@  ... .@, 2@L@F.                ;@@@@7   @ 
-     @@  ...  @@ .O@E                      .vG@O@@
-    @@  ...  U@.. @7                            u@@:
-   q@  ...  1@. :v@,               ;7:            r@@j
-  :@  ...  u@  U2@M               ur:BF             :@@:
-  @i .... J@  iX @                    :               :@P
- L@  ...  @, ,: @@Z        i                            @N 
- @: .... G@ ,i.@@ 5@       M@q.            .Z            @i 
-X@  .... OM ,BXu.. 7@@:     i@@58Uvi77rr7:r@. Y          i@
-@P ..... :@   GM: 8@8XM@1     @E G@@PqkSO@@O@@@ZEv.       @L
-@8 ...... :Mj: :@@B     rB@J   rB@@       @@ZB  iZ@@L     @O
-5@  ...... :L0Ou@k         O@@Y:r@E        M@      :@@.   @O
- @: .......   .@@           ,@N:2@@:        @u       2@.  @U
- O@  .......,:.@:             @. @@@@@@      @        i@ ,@ 
-  @r  ......,,i@               @ ,@@@@@      @@        @S@i
-  :@L  .....,,i@               7@ 0@@@,       @        @@.
-    @M, .......@B.      :       Mv @i         @@       :
-     @@i ..... X@@     O.       i@ .@.       :@F@;
-    v@,  .....  @@@i,r@@@        @  .@@:     @i ,Z@:
-    u@Y ....... .@@@@@@@@;      .@    rMOMOPB@v   S@ 
-    vkG:........ .@@@@@@@;    .,@@7i     .:i:.@.  MS                 rSXui
-    ,@.@i.,.....   ;@@@@8 r0M@MXriY7 .....   .@  .@                E@OF5NM@@M
-     @ i@j.,,.....   .r@@E2i.       ......   @u  @v               k@,  ....iM@q
-     50  @@r.:,....   u5    ....vv2M       :@B :@7                @7@   ..,,.:@@
-      @   L@@r,,,...     .......r@@,    :N@O, @@                 r@:@  .....,. @@     ,
-       @    S@@u:....   ........  7G@@@8Fr  rBr                  5@ @. ....... ,@MG17@@@@@@E
-       ,@     7@@M1;,     .......       .i8@@.                   OZ @5  ......  @8 vB@@@G@@@q.,::: 
-         @Y     .7O@@@Pr.    .... .:72MBO1riiLXZG8G0kLi:.       :@i@8@. ......  @@    :M@@uSPNFFuLFPFr.
-          0@        .7q@@@1:      SMOui           .,irYq8MB@Eq@@@,@u 1@.  ...   @N ...  :@q      YE5;jEMFUG@N 
-           :@k          .u@@@87.        ...........         ,r5E5@M   U@P.    :@@  .....  @@ .  @@8M@B@:r@@@@@O.
-             O@        :    :F@@@U,    .....    ......   YBOS2..Y@  .. :@@@8B@@7           Z:  @@ZEPMB@@  v@@@@i
-              :@       @M,      rZ@@5,      ..     ...  M@@MO@@U@Z .,,.   :i:.                 @@@@@@@@@:  .@@@
-               .@     :@.18B0J,    iE@@j. Y@@@@@Bv  .. M@@@@@@@ BP ,,,,.                        @@@@@@S  .. ,@@PO0Sv.        
-                ;@    @v    .r10Z     @@5@@r,,,iF@@E,..@@@@@@@L 8@ .,...             kPi.        JPM@J  .... OB :iLkBB5      
-                 @.  u@         7@    @. @X ..    :@@7BG Uuir,  i@                 L@@B@@5               ...  @. ..  ,N@Y    
-                 @. F@           @J  @@  P@ ,.      ;@@              .;           N@BZNO@@                    @v .,,,. .@@@Z 
-                 @,@@           v@vq@U    @.::.....   @U          :7N@i           @@@@@@@@,                  :@  ...,,, .@@@r
-                @@L           YB@2;.    :@@r.::,....  ;@       :@@@B@@           .@@@@@@@7                   :,  ....,,. @@B@
-                r                      5@E@@,,::,....  @7      @M55S8@            .1@@Y;7                          ..... 5@@@
-                                       O@M@@@:.,,..    @r     @@S5G@@@@2                           :XBBGF:           ... Z@@M
-                                       @@@@ 1@BL:.   .@@     E@@@M@@@@@7kF                        @@@BOO@@7              @:  
-                                       v@@   :P@@@@@@@5       X@@@@@@@,  .                       @@@@M@B0@Z             X@   
-                                        7@ ...  .ivr,   .        rBO:@                           @@@@@@@@@YiuYr        ,@k   
-                                        @G .,,,,.     ....       8r           i                 rqqM@@@@@L.:,i8@.     ,@M@v  
-                                        u@ .,,:,,. @M ....     :@E@          @@@.          .u        iOi  :@r  . .@: v@@5@@  
-                                         @2  ,,,. N@@O  ..    X@i @@       J@U.u@:        ,@@@.  ...    :@8Z@   r@@@  B@@@@. 
-                                         :@M   . U@..@M     .@@:,:,@v     @@:,:.r@P      ;@L X@G  .,. .@@Y .@i P@i @O  @uvL  
-                                          .@@j. 7@:,,.@@   u@J.:i:.r@   J@u.:iii,,@@.   r@r.:.:@@7   7@E.,:.8@k@,..:@: @7@   
-                                            @@@8@r :::.@@.B@:,iiii:.8@ B@:,iiiii::.5@P 7@;.:i::.L@@ N@7.:ii:.@@ ,:: O@Mi@2   
-                                             @u:Y@v.::: @@j.:iiiiii:.@@L.:iiiii::::.:@@@i.iiiii:,.q@@,.:iii: @u.ii:.MJ i@    
-                                              @L i@U.::,:@:.:iiiiiii.v@ ,::::::,,.... @0 :iiiiii:,:@.,iiiii::@::ii::@: @i    
-                                               @L :@L.::.X@.:iiiiii:: @q ,,,,,....... @P :iiiiiii,7@.:ii:::.r@ :::.v@ j@     
-                                               :@i r@i,::.@L.::::::,. v@  ..........  @E ::iiiiii,L@.:::,.. 2M .,, 0@ @r     
-                                                1@. q@.::.1@ ........  @: ..........  @P .,::::::.7@......  Bu ... @P @      
-                                                 @@ .@F.::.@: .......  @5 ........... @q .....,,. :@  ..... @r ..  @.r@      
-                                                  @i 7@,:: BG  ....... F@ ........... 8@ ........ :@  ....  @: .. .@ @v      
-                                                  OB. @Z.:.7@  ....... :@  .......... u@ ........ :@  ....  @. .. 7@ @       
-                                                  :@..7@,::.@r .......  @: .......... 7@ ........ ,@  .... .@  .. Bj,@       
-                                                   @:,.@u.:.BB ........ @1 .......... :@  ....... .@. .... :@  .  @ @r       
-                                                   @P..P@.:.j@ ........ 5@ .......... .@  .......  @, .... :@ .. .@ @        
-                                                   1@.,:@i:,i@......... i@ ..........  @, .......  @r .... i@ .. vM @        
-                                                   .@,:.@u.:.@7 ....... :@  .......... @; ........ @F .... v@ .. U1vO        
-                                                    @i,.@M.:.@k ....... .@  .......... @k ........ N@ .... 7@ .. 8iPu        
-                                                    @F..P@.:.@k .......  @i .......... 2@ ........ r@  ... :@  . @ @:        
-                                                    @@..u@.:.@k .......  @j .......... i@  ....... .@  ... ,@    @.@         
-                                                    F@..j@.:.@P.,......  OM  .........  @. .......  @: ...  @    @7@         
-                                                    :@..J@.:.@F.:::,,,,. U@ ..........  @u .......  @F ...  @:   @2q         
-                                                    :@. F@.:,@L,iii:i:::.L@.,:::::::,,. J@ ........ P@ ..,. MF .:@Br         
-                                                    i@. M@.,i@::iiiiiiii::@::iiiiiiii::,,@:,:::::::.r@.::::.uM..i@@.         
-                                                    U@  @U..5@.:iiiiiiii::@r,iiiiiiiiiii.@Z.iiiiiii:,@r:iii:,@,,5@@          
-                                                    7@BO@i. @@ :iiiiiiii:.@k.iiiiiiiiiii,r@,:iiiiii:.@N ,,:ir@@@0i           
-                                                       iFMMZ@2.,,,::::ii: @N.:iiiiiiiiii:.@1.:::,,,,.J@uZ@@@Bv               
-                                                           ,LNB@MN2vi::,, @N .,,,,,,,,,,. u@.iL2NO@@@M@1i.                   
-                                                                 :vuYu5FUvBZL2JUuU2YuU2uuuX8JuuLr                     http://fav.me/d6kc256
-*/
-
-/* CSS last generated on Sat, 16 Feb 2013 02:05:57 -0600 by UNKNOWN on derpy */div.titlebox span.word {display:none}
+/* CSS last generated on Sat, 16 Feb 2013 02:05:57 -0600 by UNKNOWN on derpy */
+div.titlebox span.word {display:none}
 div.titlebox .subscribers span.number:after {content:" Faithful Students"}
 div.titlebox .users-online span.number:after {content:" Learning about Friendship"}
 
@@ -109,6 +25,15 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
  border:1px dotted black
 }
 .sidecontentbox h1{text-align:left}
+
+.tabmenu li a {
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-topleft: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
 
 .sidecontentbox .helplink + .title > h1
 {
@@ -492,6 +417,8 @@ background-color: white;
 {
    background: rgb(255, 94, 99); 
 }
+
+
  
 .fancy-toggle-button .active
 {
@@ -515,6 +442,29 @@ background-color: white;
  
 /* end subscribe buttons */
 
+/* Make deleted messages less noticeable /u/djimbob */
+form.grayed, 
+form.grayed ~ ul.flat-list.buttons {
+  display: none
+}
+p.tagline > a.expand:first-child + em:after, 
+div.collapsed > a.expand:first-child + em:after {
+  visibility: visible;
+  font-size: x-small;
+  font-weight: bold;
+  content: "Comment deleted or removed"
+}
+p.tagline > a.expand:first-child + em, 
+div.collapsed > a.expand:first-child + em {
+  visibility: hidden;
+  font-size: 0
+}
+div.collapsed > a.expand:first-child + em + time + a.expand,
+div.collapsed > a.expand:first-child + em + time + em + a.expand {
+  display: none;
+}
+
+/* end fancy deletes */
 
 .flair
 {
