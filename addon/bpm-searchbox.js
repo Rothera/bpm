@@ -40,6 +40,10 @@ function inject_search_box() {
     div.style.visibility = "hidden";
     div.id = "bpm-stuff"; // Just so it's easier to find in an elements list
 
+    // NOTE: Do not add elements to this without first considering whether or
+    // not they need to have "visibility: inherit;" in bpmotes.css. It probably
+    // does. See the note there.
+
     var html = [
         // tabindex is a hack to make Esc work. Reddit uses this index in a
         // couple of places, so it's probably safe.

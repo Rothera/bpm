@@ -154,6 +154,14 @@
 }
 
 /*
+ * Note: attach visibility: inherit; to EVERY sub-element of #bpm-sb-container.
+ * Failure to do so makes certain sites who like to screw around with the
+ * visibility setting look wrong.
+ *
+ * This is in preference to a "#bpm-sb-container *" universal rule.
+ */
+
+/*
  * Compact display changes: kill the drag/resize boxes (useless), the results
  * count (uses valuable space), and let the inpux box take up as much room as
  * possible
@@ -170,6 +178,8 @@
     margin: 0px 0px 5px 0px !important;
     padding: 0px !important;
     width: 100% !important;
+
+    visibility: inherit;
 }
 
 /* Top-left drag box */
@@ -180,6 +190,8 @@
     float: left;
 
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC9SURBVEjHY2BgYPg/QHiALQYCBnrgoWsxEHiCMF0tBgJWIL4Oxaz0tLgAyYB8ulgMBCJA/B7JABBbhB4WT8OSNabRM3FRpG/UYnRF4kA8l1SLQXpAekm2GJpPS4D4Ix7D/xOQA+ktRs/nOC0GAi8gvknFygBklhcxFntCSyRqWXwduWglJqjzYQUFmUH9HlrCsZKTuERwFQ4E9E3DVZqN5uPBb/GAVRIDVi0OWENgQJs+A9bYGx7t6hHTdwIA/NWecKA2C2UAAAAASUVORK5CYII=");
+
+    visibility: inherit;
 }
 
 /* Search input */
@@ -195,6 +207,8 @@
     -moz-box-sizing: content-box;
 
     margin-right: 5px !important;
+
+    visibility: inherit;
 }
 
 /* Result count element */
@@ -206,6 +220,8 @@
     font-style: italic;
     font-weight: lighter;
     line-height: 30px; /* Ugly way to vertically center text */
+
+    visibility: inherit;
 }
 
 /* Close button */
@@ -215,6 +231,8 @@
     float: right;
 
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACWSURBVEjH7dcxDoAgDAXQDhyROzJwREiQ4bsQLAjGH2NJ/tb4DFBQEZFCChmuQ96IwQa3xa4m1HilxqPGPQIDjahLPRxoQk3U8Cm4QUsPb9AywmfhcNH8CWAPPRN2YO3BGbl8sd011vBb6MqunsVVdKmPgWcFzSP0OzBlqimbi9ZOzAOEc2TSLgnqtWifPgZvw7/5dzoAyDAWKt02AB4AAAAASUVORK5CYII=");
+
+    visibility: inherit;
 }
 
 #bpm-sb-tabframe {
@@ -226,6 +244,8 @@
     width: auto !important;
 
     background-color: white;
+
+    visibility: inherit;
 }
 
 /* Search result container */
@@ -240,6 +260,8 @@
     font-size: xx-small;
     font-family: monospace;
     word-wrap: break-word; /* Makes emote names a bit nicer */
+
+    visibility: inherit;
 }
 
 /* Help tab */
@@ -248,11 +270,15 @@
     display: none; /* default for this tab */
 
     padding: 5px;
+
+    visibility: inherit;
 }
 .bpm-sb-help {
     margin-bottom: 8px;
     font-size: small;
     text-align: justify;
+
+    visibility: inherit;
 }
 
 #bpm-sb-bottomrow {
@@ -262,6 +288,8 @@
     border-radius: 0px !important;
     float: left;
     width: 100%;
+
+    visibility: inherit;
 }
 
 /* Help and options links */
@@ -270,6 +298,8 @@
     line-height: 20px;
     text-decoration: none;
     font-size: x-small;
+
+    visibility: inherit;
 }
 #bpm-sb-helplink {
     margin-left: 4px;
@@ -287,6 +317,8 @@
     float: right;
 
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACcSURBVDjLzdQxCoAwDAXQjOJmF1GvpSdzUU8iiHdSd9EvROhQMGkUDPzF0EehMUREx8v5CESRJUEQNSE90iDuDbDzGvuFW8Haa2xIaQUzvtnC32ckjQa50SI5MmrQx1dGJRpUNDYaVDyHUlQ12BJU/acE0AoZosEAuvGIuWiQDxbI6gGNFRz4ZjfQm0A+7HiBXItkMoOisfntxj4BkxXf5wPylQcAAAAASUVORK5CYII=");
+
+    visibility: inherit;
 }
 
 /* Emote search result */
@@ -295,6 +327,8 @@
     display: inline-block;
 
     border: solid black thin;
+
+    visibility: inherit;
 }
 
 /* Global << icon thingy */
