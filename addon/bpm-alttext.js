@@ -11,7 +11,10 @@ var spoiler_links = [
     "/b",       // r/dresdenfiles
     "#s",       // r/doctorwho and r/gameofthrones
     "#g",       // r/gameofthrones
-    "#b",       // r/gamofthrones
+    "#b",       // r/gameofthrones
+    "/a",       // r/ShingekiNoKyojin
+    "/m",       // r/ShingekiNoKyojin
+    "/t",       // r/ShingekiNoKyojin
     ];
 
 /*
