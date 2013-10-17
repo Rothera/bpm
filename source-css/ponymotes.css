@@ -7,8 +7,8 @@ display: inline-block;
 float: left;
 }
 
-/* Stop RES voteweight & tags in mod box, wiki pages, and comments */
-.sidecontentbox .voteWeight, .sidecontentbox .userTagLink, .wiki-page .voteWeight, .wiki-page .userTagLink, .comment .voteWeight, .comment .userTagLink {
+/* Stop RES voteweight & tags in mod box, wiki pages, and comment bodies */
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink, .wiki-page .voteWeight, .wiki-page .userTagLink, .comment .md .voteWeight, .comment .md .userTagLink {
 display: none !important;
 }
 
@@ -227,7 +227,7 @@ a[href|="/apathiasquint"]
 {background-image:url(%%70x70a%%);background-repeat:no-repeat;width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
-a[href|="/cadface"]
+a[href|="/cadface"], a[href|="/apathiablankstare"]
 {background-image:url(%%100x100a%%);width:100px;height:100px;display:block;float:left;}
 
 /* 150x150a 'motes. */
@@ -243,7 +243,8 @@ a[href|="/pinkieplease"], a[href|="/twispike"]
 {background-image:url(%%300x300a%%);width:300px;height:300px;display:block;float:left;}
 
 /* Misfits a */
-a[href|="/fillycadance"], a[href|="/lyratonguebite"], a[href|="/buttonsmom"], a[href|="/buttonsmum"], a[href|="/fabpie"]
+a[href|="/fillycadance"], a[href|="/lyratonguebite"], a[href|="/buttonsmom"], a[href|="/buttonsmum"], a[href|="/fabpie"], a[href|="/changelinghug"], a[href|="/twiembarrassed"],
+a[href|="/twismirk"], a[href|="/huglife"], a[href|="/happyderp"]
 {background-image:url(%%misfitsa%%);display:block;float:left;}
 
 /* Grid pos 0,0 'motes. Not needed but for completeness... */
@@ -251,7 +252,7 @@ a[href|="/cadface"], a[href|="/pinkieplease"], a[href|="/regret"], a[href|="/apa
 {background-position: 0 0;}
 
 /* Gird pos 1,0 'motes */
-a[href|="/twispike"], a[href|="/pinkiemail"], a[href|="/chibiluna"]
+a[href|="/twispike"], a[href|="/pinkiemail"], a[href|="/chibiluna"], a[href|="/apathiablankstare"]
 {background-position: -100% 0%;}
 
 /* Misfits and animated emotes */
@@ -261,3 +262,12 @@ a[href|="/lyratonguebite"] {width:280px;height:210px;background-position: -100px
 a[href|="/buttonsmom"], a[href|="/buttonsmum"] {width:100px;height:136px;background-position: 0 -126px;}
 a[href|="/crazyface"], a[href|="/pinkface"] {background-image: url(%%crazyface%%);width:220px;height:150px;display:block;float:left;}
 a[href|="/fabpie"] {width:120px;height:200px;background-position: -380px 0;}
+a[href|="/reallysadluna"] {background-image: url(%%reallysadluna%%);width:165px;height:165px;display:block;float:left;}
+a[href|="/thedonutswilllastforever"], a[href|="/mightyjoe"] {background-image: url(%%thedonutswilllastforever%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/changelinghug"] {width:113px;height:200px;background-position: 0 -262px;}
+a[href|="/arcade"] {background-image: url(%%arcade%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/twiembarrassed"] {width:200px;height:155px;background-position: -113px -210px;}
+a[href|="/rddealwithit"] {background-image: url(%%rddealwithit%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/twismirk"] {width:253px;height:150px;background-position: -113px -365px;}
+a[href|="/huglife"] {width:150px;height:200px;background-position: 0 -515px;}
+a[href|="/happyderp"] {width:150px;height:235px;background-position: 0 -715px;}

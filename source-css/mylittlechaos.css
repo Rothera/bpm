@@ -1,20 +1,21 @@
 /*== Body ==*/
-body, body.res-nightmode {background: url(%%bg01%%) no-repeat fixed 50% 110% !important;}
+body {background: rgb(130, 200, 223) url(%%bg01%%) no-repeat fixed 50% 110% !important;}
 
-/*nightmodefix*/
+/*nightmodefix*//*
 body.res-nightmode, body.res-nightmode .content, .content #siteTable .thing {background-color: transparent !important;}
-
+*/
 /*== Header ==*/
-#header {
-    background: #A0DCA0 url(%%header01%%) repeat-x left center;
+#header, .res-nightmode #header {
+    background: #A0DCA0 url(%%header01%%) repeat-x left center !important;
     border-bottom: 1px solid black;
     }
-#header-bottom-left {
+#header-bottom-left, .res-nightmode #header-bottom-left {
     background: url(%%header02%%) no-repeat right center !important;
     margin-right: 10px;
     }
-/* nightmode fix */
-.res-nightmode #header-bottom-left {background-color: transparent !important;}
+.res-nightmode #header {
+    background-color: rgb(102, 102, 96) !important;
+}
 
 .pagename a{
 position: relative;
@@ -287,6 +288,11 @@ a.author[href$="nekoningen"]:after {
 a.author[href$="Zovistograt"]:after {
     content: ", Grand Instigator of Esoteric Proportions";
     }
+
+/* Nightmode fixes for the background */
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;} 
+body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
+.res-nightmode body{background-color: #222222!important;}
 
 /*== Administration Tweaks ==*/
 .fancy-settings .linefield {width: 920px;}

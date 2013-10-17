@@ -10,22 +10,28 @@ background: url(%%Name%%) no-repeat center top
 #header {
 background-color: #7F7F7F;
 }
+
 body {
 color: #000000;
 background-color: #BFBFBF;
 }
+
 .side {
 background-color: #BFBFBF;
 }
-.thing .usertext-body .md { 
-background-color: #CCCCCC;
+
+.thing .usertext-body .md {
+background-color: transparent;
 }
+
 .comment {
-background-color: #CCCCCC;
+background-color: transparent;
 }
+
 .comment .child {
-background-color: #CCCCCC;
+background-color: transparent;
 }
+
 .res .keyHighlight {
 background-color: #CCCCCC;
 }
@@ -436,13 +442,16 @@ background-image: url(%%rfortunesquint%%) !important
 
 .subscribers .word {
 display: none;
-}  
+}
+
 .subscribers .number::after {
 content: " survivors";
 }
+
 .users-online .word {
 display: none;
-}  
+}
+
 .users-online .number::after {
 content: " reading/writing";
 }
@@ -453,28 +462,34 @@ content: " reading/writing";
 content: "happened ";
 font-size: x-small;
 }
+
 .link .entry .tagline {
 font-size: 0px !important;
 }
+
 .link .entry .tagline time:not(.edited-timestamp)::after {
 content: " ago with ";
 font-size: x-small;
 }
-.link .entry .tagline time, 
-.entry .tagline a, 
-.tagline span {
+
+.link .entry .tagline time, .entry .tagline a, .tagline span {
 color: #7F7F7F;
 font-size: x-small;
 }
 
-.submit .morelink a { 
+.submit .morelink a {
 font-size: 0;
 content: 'Start surviving';
 color: #7F7F7F;
 }
-.submit .morelink a::before { 
-content: 'Start Surviving'; 
+
+.submit .morelink a::before {
+content: 'Start Surviving';
 font-size: 15px;
+}
+
+.nub {
+display: none
 }
 
 /***ARROWS***/
@@ -483,15 +498,18 @@ font-size: 15px;
 visibility: hidden;
 display: none
 }
+
 .arrow {
 height: 20px;
 width: 100px;
 }
-.arrow.upmod { 
+
+.arrow.upmod {
 background-image: url(%%Upvote%%);
 background-position: 0 0;
 }
-.arrow.up { 
+
+.arrow.up {
 background-image: url(%%Vote%%);
 background-position: 0 0;
 }
@@ -511,10 +529,22 @@ display: none;
 }
 
 header-bottom-right, .tabmenu li {
-background-color: transparent; 
+background-color: transparent;
 color: #BFBFBF;
 }
-.tabmenu li a { 
-background-color: transparent !important; 
+
+.tabmenu li a {
+background-color: transparent !important;
 color: #BFBFBF;
+}
+
+#header-bottom-right { 
+background-color: #BFBFBF; 
+padding: 4px; 
+-moz-border-radius-topleft: 7px; 
+-webkit-border-top-left-radius: 7px 
+}
+
+.sidebox .spacer {
+display: none;
 }
