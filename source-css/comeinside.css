@@ -206,7 +206,7 @@ a[href|='/teeth'] {width:118px; height:135px; background-position: -369px -2px}
 a[href|='/twiumm'] {width:110px; height:120px; background-position: -2px -2px}
 
 
-a[href|='/gotobread'], a[href|='/haveacookie'], a[href|='/horseonfire'], a[href|='/mylifeisinshambles'], a[href|='/ohgosh'], a[href|='/ppshiggy'], a[href|='/ppsmirk'], a[href|='/scootafied'], a[href|='/scootafried'], a[href|='/sleepymac'], a[href|='/stitchbystitch'], a[href|='/surstageleft'], a[href|='/tavisalute'], a[href|='/thebaz'], a[href|='/twiface'], a[href|='/twilongdidntread'], a[href|='/bjshrug'], a[href|='/rbjshrug'], a[href|='/flare'],a[href|='/hehehehe'] {
+a[href|='/gotobread'], a[href|='/haveacookie'], a[href|='/horseonfire'], a[href|='/mylifeisinshambles'], a[href|='/ohgosh'], a[href|='/ppshiggy'], a[href|='/ppishygddt'], a[href|='/ppsmirk'], a[href|='/scootafied'], a[href|='/scootafried'], a[href|='/sleepymac'], a[href|='/stitchbystitch'], a[href|='/surstageleft'], a[href|='/tavisalute'], a[href|='/thebaz'], a[href|='/twiface'], a[href|='/twilongdidntread'], a[href|='/rbjshrug'], a[href|='/flare'],a[href|='/hehehehe'] {
     display: block;
     clear: none;
     float: left;
@@ -214,7 +214,7 @@ a[href|='/gotobread'], a[href|='/haveacookie'], a[href|='/horseonfire'], a[href|
     }
 
 
-a[href|='/bjshrug'] {width:73px; height:70px; background-position: -77px -2px}
+
 a[href|='/flare'] {width:108px; height:150px; background-position: -899px -129px}
 a[href|='/gotobread'] {width:185px; height:120px; background-position: -512px -2px}
 a[href|='/haveacookie'] {width:150px; height:150px; background-position: -2px -281px}
@@ -222,10 +222,10 @@ a[href|='/hehehehe'] {width:500px; height:250px; background-position: -2px -483p
 a[href|='/horseonfire'] {width:190px; height:125px; background-position: -2px -129px}
 a[href|='/mylifeisinshambles'] {width:122px; height:150px; background-position: -154px -281px}
 a[href|='/ohgosh'] {width:188px; height:125px; background-position: -699px -2px}
-a[href|='/ppshiggy'] {width:137px; height:120px; background-position: -261px -2px}
+a[href|='/ppshiggy'], a[href|='/ppishygddt'] {width:137px; height:120px; background-position: -261px -2px}
 a[href|='/ppsmirk'] {width:110px; height:120px; background-position: -400px -2px}
 a[href|='/rbjshrug'] {width:73px; height:70px; background-position: -2px -2px}
-a[href|='/scootafied'] {width:107px; height:110px; background-position: -152px -2px}
+a[href|='/scootafied'], a[href|='/scootafried'] {width:107px; height:110px; background-position: -152px -2px}
 a[href|='/sleepymac'] {width:206px; height:175px; background-position: -278px -281px}
 a[href|='/stitchbystitch'] {width:141px; height:150px; background-position: -640px -129px}
 a[href|='/surstageleft'] {width:134px; height:150px; background-position: -504px -129px}
@@ -234,6 +234,18 @@ a[href|='/thebaz'] {width:114px; height:150px; background-position: -783px -129p
 a[href|='/twiface'] {width:151px; height:150px; background-position: -194px -129px}
 a[href|='/twiface']:hover {width:300px; height:300px; background-position: -504px -483px}
 a[href|='/twilongdidntread'] {width:176px; height:200px; background-position: -486px -281px}
+
+START-PONYSCRIPT-IGNORE {color: red }
+
+a[href|='/bjshrug']{
+  display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%bsheet%%)
+    }
+
+a[href|='/bjshrug'] {width:73px; height:70px; background-position: -77px -2px}
+END-PONYSCRIPT-IGNORE {color: red }
 
 a[href|="/iamafillyandwhatisthis"]
 {display:block;clear:none;float:left;width:65px;height:100px;background-image:url(%%iamafilly%%)!important}
@@ -255,7 +267,7 @@ a[href|='/tavilol'] { width:197px; height:150px; background-image: url(%%tavilol
 a[href|='/boop'] { width:241px; height:200px; background-image: url(%%boop%%);  display: block; clear: none; float: left;}
 
 
-a[href|='/sprite'], a[href|='/adorkable'], a[href|='/ajhowdy'], a[href|='/appleshrug'], a[href|='/disneat'], a[href|='/minakowhy'], a[href|='/ppeh'], a[href|='/ppjoy'], a[href|='/spikewhatever'], a[href|='/tavimix'], a[href|='/taviwooo'], a[href|='/trixicone'], a[href|='/twitank'], a[href|='/usawut'], a[href|='/woonawolf'], a[href|='/horrify']{
+a[href|='/adorkable'], a[href|='/ajhowdy'], a[href|='/appleshrug'], a[href|='/disneat'], a[href|='/minakowhy'], a[href|='/ppeh'], a[href|='/ppjoy'], a[href|='/spikewhatever'], a[href|='/tavimix'], a[href|='/taviwooo'], a[href|='/trixicone'], a[href|='/twitank'], a[href|='/usawut'], a[href|='/woonawolf'], a[href|='/horrify']{
     display: block;
     clear: none;
     float: left;

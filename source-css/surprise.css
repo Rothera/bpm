@@ -12,7 +12,7 @@
     background: url(%%4WPbFfqQC7dD3Jxc%%)
     }*/
 /*------------------------ Changes background ----------------------------------*/
-body, body.res-nightmode:first-of-type {
+body, res-nightmode.body, body.res-nightmode {
   background: url(%%lastresortbg%%) no-repeat fixed 60% 100% !important ;
 }
 
@@ -30,10 +30,10 @@ body, body.res-nightmode:first-of-type {
     }
 
 
-/* ----------------------Nightmode fixes for the background --- /r/mlas1 -------------*/
- .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;} 
+/* Nightmode fixes for the background */
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;} 
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
-body.res-nightmode:first-of-type {background-color: transparent!important;}
+.res-nightmode body{background-color: #222222!important;}
 
 /*---------------------------- Scrolly sidebar thing --------------------------------------*/
 .side a[href="http://www.reddit.com/r/pinkiepie/new"] {

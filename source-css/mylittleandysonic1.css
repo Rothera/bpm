@@ -6,11 +6,35 @@ body:first-of-type, body.res-nightmode:first-of-type {
 }
 
 /* Banner image and associated height values */
+
  #header #header-bottom-left {
-   background: url(%%derpybook%%)!important;
+   background: url(%%enterchatbanner2%%) 50% 5px !important;
    background-repeat: no-repeat!important;
-   background-position: 50% 100%!important;
+   background-position: 35% 0px;
 }
+
+
+.side a[href="https://webchat.mlas1.org/?nick=Gummy...&channels=mlas1&prompt=1"]
+{
+   display:block;
+   width: 512px;
+   height: 84px;
+   position: absolute;
+   background: url(%%transperent%%) !important;
+   top: 173px;
+   left: 50%;
+   z-index: 99 !important;
+   margin-left: -256px;
+}
+
+
+#header-bottom-right
+{
+z-index:110 !important;
+}
+
+
+
 
 #header-img-a {
 /* with logo
@@ -23,7 +47,7 @@ margin-left: 100px;
 */
 
 /* above text */
-margin-top: 93px;
+margin-top: 123px;
 margin-bottom: 31px;
 
 }
@@ -804,7 +828,7 @@ a.author[href$=Generic_Builder]:before { content:"Genewic Bwuilda" }
 a.author[href$=volcano_bakemeats]:before { content:"Madam Le Bake" }
 a.author[href$=DaylightDarkle]:before { content:"Twilight Sparkle" }
 a.author[href$=Chillusion]:before { content:"Cchhiilllluussiioonn" }
-a.author[href$=Edriss562]:before {content:"Government Shutdown"}
+a.author[href$=Edriss562]:before {content:"Shadowy Overlord"}
 a.author[href$=Jeroknite]:before {content:"JokerTine"; font-size:15px !important}
 a.author[href$=DarqWolff]:before { content:"[](/DarqWolff)" }
 a.author[href$=cheesemoo]:before { content:"Cheesemeow" }
@@ -959,7 +983,7 @@ a.author[href$=lord-hemingway]:after { content:" (Clopper 44)" }
 a.author[href$=Generic_Builder]:after { content:" IS SO KAWAII!" }
 a.author[href$=volcano_bakemeats]:after { content:" (Flour Sack Monster)" }
 a.author[href$=Chillusion]:after { content:" (Because I can.)" }
-a.author[href$=Edriss562]:after { content:" furloughed my butt" }
+a.author[href$=Edriss562]:after { content:" ignore the Andy behind the curtain" }
 a.author[href$=waffen337]:after { content:"(Fucking ass ball bajongler)" }
 a.author[href$=sirtophat]:after { content:" (flaming homosexual)"; color:purple }
 a.author[href$=cheesemoo]:after { content:" (Still exists, apparently)" }
