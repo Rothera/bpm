@@ -151,7 +151,7 @@ border-top-right-radius: 5px;
 {
  margin:0px 5px -12px 0px;
  position:relative;
- top:4px;
+ top:5px;
  left:6px;
 }
 #header-bottom-left{padding-top:20px}
@@ -213,8 +213,8 @@ border-top-right-radius: 5px;
 .thumbnail.default{ background-position:0px -70px!important}
 .thing[data-fullname$="d"] .thumbnail.nsfw,.thing[data-fullname$="i"] .thumbnail.nsfw,.thing[data-fullname$="s"] .thumbnail.nsfw,.thing[data-fullname$="c"] .thumbnail.nsfw,.thing[data-fullname$="e"] .thumbnail.nsfw,
 .thing[data-fullname$="n"] .thumbnail.nsfw,.thing[data-fullname$="t"] .thumbnail.nsfw,.thing[data-fullname$="a"] .thumbnail.nsfw{background-position:0px -170px!important}
-.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2 {content:"";color:white;font-size:0pt;display:block}
-.sidecontentbox a.author.id-t2_3l5j0:before ,.sidecontentbox a.author.id-t2_4a7lu:before ,.sidecontentbox a.author.id-t2_4f80o:before ,.sidecontentbox a.author.id-t2_5agom:before ,.sidecontentbox a.author.id-t2_51isb:before ,.sidecontentbox a.author.id-t2_51isb:after ,.sidecontentbox a.author.id-t2_5eqe2:before {font-size:10pt;color:#369;display:inline-block;}
+.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2, .sidecontentbox ul.content li.more a {content:"";color:white;font-size:0pt;display:block}
+.sidecontentbox a.author.id-t2_3l5j0:before ,.sidecontentbox a.author.id-t2_4a7lu:before ,.sidecontentbox a.author.id-t2_4f80o:before ,.sidecontentbox a.author.id-t2_5agom:before ,.sidecontentbox a.author.id-t2_51isb:before ,.sidecontentbox a.author.id-t2_51isb:after ,.sidecontentbox a.author.id-t2_5eqe2:before, .sidecontentbox ul.content li.more a:before {font-size:10pt;color:#369;display:inline-block;}
 .sidecontentbox a.author.id-t2_3l5j0:before {content:"Le-bal"}
 .sidecontentbox a.author.id-t2_4a7lu:before {content:"Orschie Pie"}
 .sidecontentbox a.author.id-t2_4f80o:before {content:"Opti"}
@@ -222,8 +222,12 @@ border-top-right-radius: 5px;
 .sidecontentbox a.author.id-t2_51isb:before {content:"TrixieOf_Trixtegrity"}
 .sidecontentbox a.author.id-t2_51isb:after {content:" (oh and also Trixie is best pony.)"; font-size:8px; padding-left:10px;}
 .sidecontentbox a.author.id-t2_5eqe2:before {content:"Pathopædia-David"}
+.sidecontentbox ul.content li.more a:before {content:"LankyGit"}
 .sidecontentbox a.author.id-t2_5fmql {display:none;}
 .sidecontentbox a.author.id-t2_6ua87 {display:none;}
+
+.sidecontentbox ul.content li.more {margin:0;text-align:left;}
+
 a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,a.author.id-t2_52j0w,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
 a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,a.author.id-t2_52j0w:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after{font-size:10px!important;display:block;letter-spacing:normal}
 a.author.id-t2_4mwnz:after{content:"DerpyHiccupKittyTail"}
@@ -1326,3 +1330,4 @@ display: none !important;
 .res-nightmode .report-button:hover:before {
     background-color: #000;
 }
+div.content{margin-top:10px}

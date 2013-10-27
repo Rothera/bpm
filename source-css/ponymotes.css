@@ -231,11 +231,11 @@ a[href|="/cadface"], a[href|="/apathiablankstare"]
 {background-image:url(%%100x100a%%);width:100px;height:100px;display:block;float:left;}
 
 /* 150x150a 'motes. */
-a[href|="/tuxpony"], a[href|="/chibiluna"], a[href|="/shiningcadancehug"]
+a[href|="/tuxpony"], a[href|="/chibiluna"], a[href|="/shiningcadancehug"], a[href|="/twihappycry"], a[href|="/properbudget"], a[href|="/celestiaglee"]
 {background-image:url(%%150x150a%%);width:150px;height:150px;display:block;float:left;}
 
 /* 200x200a 'motes. */
-a[href|="/regret"], a[href|="/pinkiemail"]
+a[href|="/regret"], a[href|="/pinkiemail"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"]
 {background-image:url(%%200x200a%%);width:200px;height:200px;display:block;float:left;}
 
 /* 300x300a 'motes */
@@ -244,7 +244,7 @@ a[href|="/pinkieplease"], a[href|="/twispike"]
 
 /* Misfits a */
 a[href|="/fillycadance"], a[href|="/lyratonguebite"], a[href|="/buttonsmom"], a[href|="/buttonsmum"], a[href|="/fabpie"], a[href|="/changelinghug"], a[href|="/twiembarrassed"],
-a[href|="/twismirk"], a[href|="/huglife"], a[href|="/happyderp"], a[href|="/speakingfancy"]
+a[href|="/twismirk"], a[href|="/huglife"], a[href|="/happyderp"], a[href|="/speakingfancy"], a[href|="/twidashkiss"], a[href|="/lyracomehere"]
 {background-image:url(%%misfitsa%%);display:block;float:left;}
 
 /* Grid pos 0,0 'motes. Not needed but for completeness... */
@@ -256,8 +256,20 @@ a[href|="/twispike"], a[href|="/pinkiemail"], a[href|="/chibiluna"], a[href|="/a
 {background-position: -100% 0%;}
 
 /* Grid pos 2,0 'motes */
-a[href|="/shiningcadancehug"]
+a[href|="/shiningcadancehug"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"]
 {background-position: -200% 0%;}
+
+/* Grid pos 0,1 'motes */
+a[href|="/twihappycry"]
+{background-position: 0 -100%;}
+
+/* Grid pos 1,1 'motes */
+a[href|="/properbudget"]
+{background-position: -100% -100%;}
+
+/* Grid pos 2,1 'motes */
+a[href|="/celestiaglee"]
+{background-position: -200% -100%;}
 
 /* Misfits and animated emotes */
 a[href|="/moofintezzter"], a[href|="/muffintester"] {background: url(%%muffintester%%) no-repeat;width:200px;height:177px;display:block;float:left;}
@@ -276,3 +288,6 @@ a[href|="/twismirk"] {width:253px;height:150px;background-position: -113px -365p
 a[href|="/huglife"] {width:150px;height:200px;background-position: 0 -515px;}
 a[href|="/happyderp"] {width:150px;height:235px;background-position: 0 -715px;}
 a[href|="/speakingfancy"] {width:250px;height:178px; background-position: -150px -515px;}
+a[href|="/twidashkiss"] {width:300px;height:167px;background-position: -150px -693px;}
+a[href|="/lyracomehere"] {width:119px;height:150px;background-position: -381px -200px;}
+a[href|="/muffindreams"] {background-image: url(%%muffindreams%%);width:220px;height:220px;display:block;float:left;}

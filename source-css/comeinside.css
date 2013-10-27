@@ -1,4 +1,4 @@
-.side:after { width: 415px; height: 507px; background-image: url(%%fireplace%%); content: " "; position: fixed; bottom:2%; left: 5%; z-index: -1; }
+html:lang(en) .side:after { width: 415px; height: 507px; background-image: url(%%fireplace%%); content: " "; position: fixed; bottom:2%; left: 5%; z-index: -1; }
 
 /*Announcement Shit*/
 .titlebox .usertext-body .md h6 {
@@ -76,8 +76,7 @@
 
 
 /*------------------------  Changes background ------------------------------- */
-
-body, .side,.flairtoggle,.submit .spacer,.create .spacer,.icon-menu a,.nub { background-color: transparent !important; }
+ body, .side,.flairtoggle,.submit .spacer,.create .spacer,.icon-menu a,.nub { background-color: transparent !important; }
 .side a[href="/cibg-pony"] { 
     position: fixed;
     z-index:-1;
@@ -87,52 +86,51 @@ body, .side,.flairtoggle,.submit .spacer,.create .spacer,.icon-menu a,.nub { bac
     background-color: transparent!important;
     height: 100%; 
 }
-.side .usertext[id$="a"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:497px; height:400px; background-position: -1061px -816px !important}
-.side .usertext[id$="b"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:484px; height:400px; background-position: -509px -1218px  !important}
-.side .usertext[id$="c"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:505px; height:400px; background-position: -2px -1218px !important}
-.side .usertext[id$="d"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:447px; height:410px; background-position: -2px -2px !important}
-.side .usertext[id$="e"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:541px; height:410px; background-position: -926px -2px !important}
-.side .usertext[id$="f"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:473px; height:410px; background-position: -451px -2px !important}
-.side .usertext[id$="g"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:598px; height:400px; background-position: -2px -816px !important}
-.side .usertext[id$="h"] a[href="/cibg-pony"] { background:url(%%cibg2%%) ; width:512px; height:400px; background-position: -1116px -414px!important}
-.side .usertext[id$="i"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:537px; height:400px; background-position: -2px -414px !important}
-.side .usertext[id$="j"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:573px; height:400px; background-position: -541px -414px !important;}
-.side .usertext[id$="k"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:556px; height:400px; background-position: -1469px -2px !important;}
-.side .usertext[id$="l"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:268px; height:200px; background-position: -995px -1218px!important;}
-.side .usertext[id$="m"] a[href="/cibg-pony"] { background:url(%%cibg2%%);width:457px; height:400px; background-position: -602px -816px !important;}
-.side .usertext[id$="n"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:522px; height:400px; background-position: -2px -806px!important;}
-.side .usertext[id$="o"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:531px; height:400px; background-position: -526px -806px !important;}
-.side .usertext[id$="p"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:535px; height:400px; background-position: -2px -1208px !important;}
-.side .usertext[id$="q"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:430px; height:400px; background-position: -2px -2px!important;}
-.side .usertext[id$="r"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:457px; height:400px; background-position: -1317px -2px!important;}
-.side .usertext[id$="s"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:486px; height:400px; background-position: -480px -404px !important;}
-.side .usertext[id$="t"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:531px; height:400px; background-position: -1059px -806px!important}
-.side .usertext[id$="u"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:518px; height:400px; background-position: -1471px -404px!important;}
-.side .usertext[id$="v"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:434px; height:400px; background-position: -434px -2px!important;}
-.side .usertext[id$="w"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:537px; height:400px; background-position: -539px -1208px!important;}
-.side .usertext[id$="x"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:552px; height:400px; background-position: -1078px -1208px !important;}
-.side .usertext[id$="y"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:445px; height:400px; background-position: -870px -2px!important;}
-.side .usertext[id$="z"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:501px; height:400px; background-position: -968px -404px!important;}
-.side .usertext[id$="0"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:476px; height:400px; background-position: -2px -404px!important;}
-.side .usertext[id$="1"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:637px; height:400px; background-position: -1312px -1246px!important;}
-.side .usertext[id$="2"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:486px; height:400px; background-position: -480px -404px !important;}
-.side .usertext[id$="3"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:457px; height:400px; background-position: -1317px -2px!important;}
-.side .usertext[id$="4"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:430px; height:400px; background-position: -2px -2px !important;}
-.side .usertext[id$="5"] a[href="/cibg-pony"] { background:url(%%cibg2%%);width:505px; height:400px; background-position: -2px -1218px!important;}
-.side .usertext[id$="6"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:535px; height:400px; background-position: -2px -1208px!important;}
-.side .usertext[id$="7"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:476px; height:400px; background-position: -2px -404px!important }
-.side .usertext[id$="8"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:522px; height:400px; background-position: -2px -806px!important;}
-.side .usertext[id$="9"] a[href="/cibg-pony"] { background:url(%%cibg2%%);width:512px; height:400px; background-position: -1116px -414px!important;}
+html:lang(en) .side .usertext[id$="a"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:497px; height:400px; background-position: -1061px -816px !important}
+html:lang(en) .side .usertext[id$="b"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:484px; height:400px; background-position: -509px -1218px  !important}
+html:lang(en) .side .usertext[id$="c"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:505px; height:400px; background-position: -2px -1218px !important}
+html:lang(en) .side .usertext[id$="d"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:447px; height:410px; background-position: -2px -2px !important}
+html:lang(en) .side .usertext[id$="e"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:541px; height:410px; background-position: -926px -2px !important}
+html:lang(en) .side .usertext[id$="f"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:473px; height:410px; background-position: -451px -2px !important}
+html:lang(en) .side .usertext[id$="g"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:598px; height:400px; background-position: -2px -816px !important}
+html:lang(en) .side .usertext[id$="h"] a[href="/cibg-pony"] { background:url(%%cibg2%%) ; width:512px; height:400px; background-position: -1116px -414px!important}
+html:lang(en) .side .usertext[id$="i"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:537px; height:400px; background-position: -2px -414px !important}
+html:lang(en) .side .usertext[id$="j"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:573px; height:400px; background-position: -541px -414px !important;}
+html:lang(en) .side .usertext[id$="k"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:556px; height:400px; background-position: -1469px -2px !important;}
+html:lang(en) .side .usertext[id$="l"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:268px; height:200px; background-position: -995px -1218px!important;}
+html:lang(en) .side .usertext[id$="m"] a[href="/cibg-pony"] { background:url(%%cibg2%%);width:457px; height:400px; background-position: -602px -816px !important;}
+html:lang(en) .side .usertext[id$="n"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:522px; height:400px; background-position: -2px -806px!important;}
+html:lang(en) .side .usertext[id$="o"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:531px; height:400px; background-position: -526px -806px !important;}
+html:lang(en) .side .usertext[id$="p"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:535px; height:400px; background-position: -2px -1208px !important;}
+html:lang(en) .side .usertext[id$="q"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:430px; height:400px; background-position: -2px -2px!important;}
+html:lang(en) .side .usertext[id$="r"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:457px; height:400px; background-position: -1317px -2px!important;}
+html:lang(en) .side .usertext[id$="s"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:486px; height:400px; background-position: -480px -404px !important;}
+html:lang(en) .side .usertext[id$="t"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:531px; height:400px; background-position: -1059px -806px!important}
+html:lang(en) .side .usertext[id$="u"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:518px; height:400px; background-position: -1471px -404px!important;}
+html:lang(en) .side .usertext[id$="v"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:434px; height:400px; background-position: -434px -2px!important;}
+html:lang(en) .side .usertext[id$="w"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:537px; height:400px; background-position: -539px -1208px!important;}
+html:lang(en) .side .usertext[id$="x"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:552px; height:400px; background-position: -1078px -1208px !important;}
+html:lang(en) .side .usertext[id$="y"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:445px; height:400px; background-position: -870px -2px!important;}
+html:lang(en) .side .usertext[id$="z"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:501px; height:400px; background-position: -968px -404px!important;}
+html:lang(en) .side .usertext[id$="0"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:476px; height:400px; background-position: -2px -404px!important;}
+html:lang(en) .side .usertext[id$="1"] a[href="/cibg-pony"] { background:url(%%cibg2%%); width:637px; height:400px; background-position: -1312px -1246px!important;}
+html:lang(en) .side .usertext[id$="2"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:486px; height:400px; background-position: -480px -404px !important;}
+html:lang(en) .side .usertext[id$="3"] a[href="/cibg-pony"] { background:url(%%cibg%%); width:457px; height:400px; background-position: -1317px -2px!important;}
+html:lang(en) .side .usertext[id$="4"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:430px; height:400px; background-position: -2px -2px !important;}
+html:lang(en) .side .usertext[id$="5"] a[href="/cibg-pony"] { background:url(%%cibg2%%);width:505px; height:400px; background-position: -2px -1218px!important;}
+html:lang(en) .side .usertext[id$="6"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:535px; height:400px; background-position: -2px -1208px!important;}
+html:lang(en) .side .usertext[id$="7"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:476px; height:400px; background-position: -2px -404px!important }
+html:lang(en) .side .usertext[id$="8"] a[href="/cibg-pony"] { background:url(%%cibg%%);width:522px; height:400px; background-position: -2px -806px!important;}
+html:lang(en) .side .usertext[id$="9"] a[href="/cibg-pony"] { background:url(%%cibg2%%);width:512px; height:400px; background-position: -1116px -414px!important;}
 
-/* Nightmode fixes for the background */
-.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;} 
-body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
-.res-nightmode body{background-color: #222222!important;}
+
 
 
 /* ------ Emotes! --------- */
 
-a[href|='/ablie'], a[href|='/babs'], a[href|='/bestprincess'], a[href|='/blobbieshy'], a[href|='/creepaloo'], a[href|='/partyshy'], a[href|='/ppgrump'], a[href|='/rdlie'], a[href|='/seriouspie'], a[href|='/spooked'], a[href|='/twilie'], a[href|='/vslie'], a[href|='/whoovescake'] {
+
+
+a[href|='/babs'], a[href|='/bestprincess'], a[href|='/blobbieshy'], a[href|='/creepaloo'], a[href|='/partyshy'], a[href|='/ppgrump'], a[href|='/rdlie'], a[href|='/seriouspie'], a[href|='/spooked'], a[href|='/twilie'], a[href|='/vslie'], a[href|='/whoovescake'], a[href|='/ablie']{
     display: block;
     clear: none;
     float: left;
@@ -299,7 +297,7 @@ a[href='/sp'] {    display: inline-block;    padding-right: 100%}
 .content .md h1:before { content: ">" }
 
 /* Replace the nsfw image */
-.thumbnail.nsfw {
+html:lang(en) .thumbnail.nsfw {
     background-image: url(%%thumbnails%%);
     background-repeat: no-repeat;
     width: 70px;
@@ -318,12 +316,6 @@ div.titlebox .users-online span.number:after
     content:" Fambees";
 }
 
-/* Hides downvote arrow -circle jerks ahoy!*/
-.arrow.down {
-visibility: hidden;
-display: none
-}
-.arrow.down::after{visibility:visible!important;font-size:8pt;content:" ಠ_ಠ";}
 
 /*Remove RES tag and vote counts from moderator box because its ugly, as well as subname.*/
 .sidecontentbox .voteWeight, .sidecontentbox .userTagLink, .titlebox .redditname{display: none !important;}
@@ -338,7 +330,7 @@ a[href="/spoiler"]:nth-of-type(n):hover {
     color: #000;
     }
 /* Replace the self-post image  */
-.thumbnail.self {
+html:lang(en) .thumbnail.self {
     background-image: url(%%thumbnails%%);
     background-repeat: no-repeat;
     width: 70px;
@@ -347,7 +339,7 @@ a[href="/spoiler"]:nth-of-type(n):hover {
 }
 
 /* Replace the no-thumb */
-.thumbnail.default {
+html:lang(en) .thumbnail.default {
     background-image: url(%%thumbnails%%);
     background-repeat: no-repeat;
     width: 70px;
@@ -355,9 +347,9 @@ a[href="/spoiler"]:nth-of-type(n):hover {
     background-position: 0px -140px;
 }
 
-.linkflair-spoiler .thumbnail img {display:none}
+html:lang(en) .linkflair-spoiler .thumbnail img {display:none}
 
-.linkflair-spoiler .thumbnail {  
+html:lang(en) .linkflair-spoiler .thumbnail {  
     background: url(%%thumbnails%%)!important;
     background-repeat: no-repeat;
     width: 70px;
@@ -462,7 +454,6 @@ width: 40px;
 height: 40px;
 background-repeat: no-repeat;
 }
-
 .flair-pinkie:before { background-position: 0px 0px}
 .flair-rarity:before { background-position: 0px -40px}
 .flair-whooves:before { background-position: 0px -80px}
@@ -536,6 +527,49 @@ span.age::before {visibility:visible!important;font-size:8pt;content:'A communit
     background-position: 0px -60px !important;
 }
 
-a[href|="/-blink!"]:nth-of-type(n){
-    text-decoration: blink !important
-    }
+.side a[href="http://np.reddit.com/r/ComeInside"] {
+    display: block;
+    background-color: lightgrey;
+    color: black!important;
+    border: 1px solid red;
+    border-radius: 3px;
+    padding: 4px 0 4px 4px;
+    margin: 2px 0;}
+
+.side a[href="http://www.reddit.com/r/ComeInside"] {display:none}
+
+/*------ nonpone ----- */
+
+/*--background--*/
+html:lang(np) body, html:lang(np) res-nightmode.body, html:lang(np) body.res-nightmode {background: url(%%atbg%%)  no-repeat fixed 63% 90% !important;} 
+
+ /* Banner Image */
+html:lang(np) #header #header-bottom-left {background: url(%%gfbanner%%) no-repeat center bottom !important; height: 205px; }
+
+html:lang(np) #header-img {display:none!important}
+
+html:lang(np) #header-img-a {display:inline-block!important;margin-top: 100px; height: 95px; width: 108px; background-image:url(%%npheader%%)!important}
+
+html:lang(np) .flair{display:none!important}
+
+html:lang(np) .flair:before{display:none!important}
+
+html:lang(np) :not(.flair) + a.author:before  {display:none!important}
+
+html:lang(np) .side a[href="http://np.reddit.com/r/ComeInside"] {display:none}
+
+html:lang(np) .side a[href="http://www.reddit.com/r/ComeInside"] {
+    display: block;
+    background-color: lightgrey;
+    color: black!important;
+    border: 1px solid red;
+    border-radius: 3px;
+    padding: 4px 0 4px 4px;
+    margin: 2px 0;}
+
+/* Nightmode fixes for the background */
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;} 
+body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
+.res-nightmode body{background-color: #222222!important;}
+html:lang(np)  body.res-nightmode{background-color: #222222!important;}
+
