@@ -55,9 +55,11 @@ body, body.res-nightmode:first-of-type {
     background: url(%%BackgroundDesatLight%%) repeat-x 0 0;
     }
 
+/* Note mode currently does not work. Image removed. Contact Civ for a copy of it.
 body.res-nightmode #header-bottom-left {
     background: url(%%BackgroundDesatNight%%) repeat-x 0 0!important;
     }
+*/
 
 #header-img {
     vertical-align: bottom;
@@ -430,7 +432,7 @@ a.author[href$="Dundrioundio"]:after
 a.author[href$="Sangfroidish"]:after { content:" Lost his personal divining rod "}
 a.author[href$="sna_fu_bar"]:after {content:" Sneaky squid "}
 a.author[href$="DoomedCivilian"]:after { content:" CSS Puppet Master and lesser Demigod "}
-a.author[href$="Draze"]:after { content: " Fled the country "}
+a.author[href$="Draze"]:after { content: " Leader of the Dark Bronies "}
 a.author[href$="TheCommieDuck"]:after {content:" 9/10 10yo "}
 a.author[href$="duruz"]:after { content: " Still doesn't oil up "}
 a.author[href$="starkinmn"]:after { content: " Give me my fucking good flair, asshooe horsefuckers "}
@@ -571,6 +573,15 @@ a[href|="/twispecial"] {
     background-image: url(%%twieyes%%)
     }
 
+a[href|="/catdash"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 169px;
+    height: 150px;
+    background-image: url(%%catdash%%)
+    }
+
 a[href|="/flittergasp"] {
     display: block;
     clear: none;
@@ -596,6 +607,17 @@ a[href|="/rosesax"] {
     height: 150px;
     background-image: url(%%rosesax%%) !important
     }
+
+a[href|="/roseew"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 137px;
+    height: 150px;
+    background-image: url(%%rosesax%%) !important;
+    background-position: -138px -0px
+    }
+
 a[href|="/catplanetfun"] {
     display: block;
     clear: none;
@@ -932,4 +954,4 @@ body.res-nightmode:first-of-type .flair { background-color: transparent!importan
 .flair-nerdyflair {width:30px; height:30px; background-position: -50px -20px}
 .flair-badcard {width:18px; height:20px; background-position: -50px 0px}
 .flair-nonet {width:25px; height:25px; background-position: -50px -50px}
-.flair-clock {background-image: url(%%clockflair%%);width:30px; height:30px; background-position: 0px 0px}
+.flair-clock {width:30px; height:30px; background-position: -50px -75px}

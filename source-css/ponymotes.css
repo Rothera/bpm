@@ -1,3 +1,9 @@
+/* LIMITS:
+ * Limit on number of images uploaded is 50. I'll probably create /r/ponyanimotes when we hit 30 or something.
+ * Limit on CSS size is approx 100,000 characters
+ * Limit on image size is 500kb
+ */
+
 /* vote diagram */
 .wiki-page a[href="/ponymotesvotediagram"] {
 background: url(%%votediagram%%) no-repeat;
@@ -247,6 +253,10 @@ a[href|="/fillycadance"], a[href|="/lyratonguebite"], a[href|="/buttonsmom"], a[
 a[href|="/twismirk"], a[href|="/huglife"], a[href|="/happyderp"], a[href|="/speakingfancy"], a[href|="/twidashkiss"], a[href|="/lyracomehere"]
 {background-image:url(%%misfitsa%%);display:block;float:left;}
 
+/* Misfits b */
+a[href|="/braecozy"]
+{background-image:url(%%misfitsb%%);display:block;float:left;}
+
 /* Grid pos 0,0 'motes. Not needed but for completeness... */
 a[href|="/cadface"], a[href|="/pinkieplease"], a[href|="/regret"], a[href|="/apathiasquint"], a[href|="/tuxpony"]
 {background-position: 0 0;}
@@ -291,3 +301,7 @@ a[href|="/speakingfancy"] {width:250px;height:178px; background-position: -150px
 a[href|="/twidashkiss"] {width:300px;height:167px;background-position: -150px -693px;}
 a[href|="/lyracomehere"] {width:119px;height:150px;background-position: -381px -200px;}
 a[href|="/muffindreams"] {background-image: url(%%muffindreams%%);width:220px;height:220px;display:block;float:left;}
+a[href|="/twidanceydance"] {background-image: url(%%twidanceydance%%);width:150px;height:135px;display:block;float:left;}
+a[href|="/derpypanic"] {background-image: url(%%derpypanic%%);width:300px;height:151px;display:block;float:left;}
+a[href|="/everyponypanic"] {background-image: url(%%everyponypanic%%);width:300px;height:150px;display:block;float:left;}
+a[href|="/braecozy"] {width:146px;height:192px;background-position: 0 0;}

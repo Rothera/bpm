@@ -164,7 +164,7 @@ border-top-right-radius: 5px;
  border:1px solid #5f99cf;
  border-right:0;
  position:absolute;
- top:40px;
+ top:60px;
  left:180px;
  z-index:50;
  margin:20px 420px 0 0;
@@ -202,9 +202,9 @@ border-top-right-radius: 5px;
  width:70px;
  height:70px;
  margin-top:-45px;
- margin-left:3px;
+ margin-left:5px;
  margin-bottom:0px;
- margin-right:-45px;
+ margin-right:-55px;
 }
 
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important}
@@ -213,16 +213,20 @@ border-top-right-radius: 5px;
 .thumbnail.default{ background-position:0px -70px!important}
 .thing[data-fullname$="d"] .thumbnail.nsfw,.thing[data-fullname$="i"] .thumbnail.nsfw,.thing[data-fullname$="s"] .thumbnail.nsfw,.thing[data-fullname$="c"] .thumbnail.nsfw,.thing[data-fullname$="e"] .thumbnail.nsfw,
 .thing[data-fullname$="n"] .thumbnail.nsfw,.thing[data-fullname$="t"] .thumbnail.nsfw,.thing[data-fullname$="a"] .thumbnail.nsfw{background-position:0px -170px!important}
-.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2, .sidecontentbox ul.content li.more a {content:"";color:white;font-size:0pt;display:block}
-.sidecontentbox a.author.id-t2_3l5j0:before ,.sidecontentbox a.author.id-t2_4a7lu:before ,.sidecontentbox a.author.id-t2_4f80o:before ,.sidecontentbox a.author.id-t2_5agom:before ,.sidecontentbox a.author.id-t2_51isb:before ,.sidecontentbox a.author.id-t2_51isb:after ,.sidecontentbox a.author.id-t2_5eqe2:before, .sidecontentbox ul.content li.more a:before {font-size:10pt;color:#369;display:inline-block;}
-.sidecontentbox a.author.id-t2_3l5j0:before {content:"Le-bal"}
-.sidecontentbox a.author.id-t2_4a7lu:before {content:"Orschie Pie"}
+.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2,.sidecontentbox a.author.id-t2_6uo3t, .sidecontentbox a.author.id-t2_5dxi7, .sidecontentbox a.author.id-t2_55ojn, .sidecontentbox a.author.id-t2_3fvpf, .sidecontentbox ul.content li.more a {content:"";color:white;font-size:0pt;display:block}
+.sidecontentbox a.author.id-t2_3l5j0:before ,.sidecontentbox a.author.id-t2_4a7lu:before ,.sidecontentbox a.author.id-t2_4f80o:before ,.sidecontentbox a.author.id-t2_5agom:before ,.sidecontentbox a.author.id-t2_51isb:before ,.sidecontentbox a.author.id-t2_51isb:after ,.sidecontentbox a.author.id-t2_5eqe2:before, .sidecontentbox a.author.id-t2_6uo3t:before, .sidecontentbox a.author.id-t2_55ojn:before, .sidecontentbox a.author.id-t2_5dxi7:before, .sidecontentbox a.author.id-t2_3fvpf:before, .sidecontentbox ul.content li.more a:before {font-size:10pt;color:#369;display:inline-block;}
+.sidecontentbox a.author.id-t2_3l5j0:before {content:"Lebal of the House of Usher"}
+.sidecontentbox a.author.id-t2_4a7lu:before {content:"Orsch Mannos: The Hands of Fate"}
+.sidecontentbox a.author.id-t2_55ojn:before {content:"Rainbow Brite"}
 .sidecontentbox a.author.id-t2_4f80o:before {content:"Opti"}
-.sidecontentbox a.author.id-t2_5agom:before {content:"Chinchy-Bon"}
-.sidecontentbox a.author.id-t2_51isb:before {content:"TrixieOf_Trixtegrity"}
-.sidecontentbox a.author.id-t2_51isb:after {content:" (oh and also Trixie is best pony.)"; font-size:8px; padding-left:10px;}
-.sidecontentbox a.author.id-t2_5eqe2:before {content:"Pathopædia-David"}
-.sidecontentbox ul.content li.more a:before {content:"LankyGit"}
+.sidecontentbox a.author.id-t2_5agom:before {content:"Chinchy-bon"}
+.sidecontentbox a.author.id-t2_51isb:before {content:"TrixieOf_Trixtegria"}
+.sidecontentbox a.author.id-t2_51isb:after {content:" (oh and also Trixie is a horse.)"; font-size:8px; padding-left:10px;}
+.sidecontentbox a.author.id-t2_5eqe2:before {content:"Pathogen-David Hasselhoff"}
+.sidecontentbox a.author.id-t2_3fvpf:before {content:"The Velour Frog"}
+.sidecontentbox a.author.id-t2_6uo3t:before {content:"spokesthebrony"}
+.sidecontentbox a.author.id-t2_5dxi7:before {content:"TheeLinker"}
+.sidecontentbox ul.content li.more a:before {content:"Lanky Kong"}
 .sidecontentbox a.author.id-t2_5fmql {display:none;}
 .sidecontentbox a.author.id-t2_6ua87 {display:none;}
 
@@ -232,7 +236,7 @@ a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,a.author.id-t2_52j0w,div.content a.aut
 a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,a.author.id-t2_52j0w:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after{font-size:10px!important;display:block;letter-spacing:normal}
 a.author.id-t2_4mwnz:after{content:"DerpyHiccupKittyTail"}
 a.author.id-t2_8kzeb:after{content:"RAINBOW_PONY_JUICEBOX"}
-a.author.id-t2_52j0w:after{content:"RainbowDashJedi"}
+a.author.id-t2_52j0w:after{content:"RainbowDoshJedi"}
 div.content a.author.id-t2_5agom:after{content:"Chinchy"}
 a.author.id-t2_5o2lh:after{content:"Luna_in_Equestria"}
 a.author.id-t2_4uott:after{content:"3cakes2pies1fork"}
@@ -269,7 +273,7 @@ body a[href="/spoiler"]:hover{color:white!important}/*Pinkie Pie NPT Warnings*//
  width:438px;
  height:30px;
  background:url(%%pinkiemessage%%) no-repeat;
- content:"Hey you! It's No-Pics Thursday! So no submitting pictures, ok? No need to worry though, you can save your pictures for another day!";
+ content:"Hey you! It's No-Pics Friday! So no submitting pictures, ok? No need to worry though, you can save your pictures for another day!";
  font-size:12px;
  color:black;
 }

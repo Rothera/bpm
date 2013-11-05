@@ -5,24 +5,13 @@ div.titlebox .subscribers span.number:after {
     content: " Fillies"
     }
 div.titlebox .users-online span.number:after {
-    content: " Checking out Braeburns's sweet apples"
+    content: " Trick or Treating"
     }
 
 a.author[href$="PinkiePieladin"]:after{content:" - User of the Month Sept. 2013"}
 
-a.author[href$=wicked_sonya] {
-font-size: 0 !important;
-    overflow: hidden;
-    display: inline-block;
-    content: ""
-}
 
-a.author[href$=wicked_sonya]:before {
-    content: "icumdubstep";
-    font-size: 12px;
-
-}
-
+a.author[href$="Isaaccclarke"]:after{content:" - User of the Month Oct. 2013"}
 
 
 
@@ -84,7 +73,7 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  clear:both;
  text-align:center;
  width:100%;
- background-image:url(%%braefooter%%);
+ background-image:url(%%gildafooter%%);
  background-repeat:no-repeat;
  margin-bottom:-30px;
  background-position: 50% 100%;
@@ -101,12 +90,12 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  .sidebox.create .morelink {display: none;}
 
 body {
-    background: url('%%braebg3%%') no-repeat fixed right bottom !important;
+    background: url('%%gildabg2%%') no-repeat fixed right bottom !important;
     background-color:#ffffff !important;
 } 
 
 #header #header-bottom-left {
-   background: url(%%braebanner1%%) !important;
+   background: url(%%gildaheader3%%) !important;
    background-repeat: no-repeat !important;
    background-position: 50% 100% !important;
    height: 205px; 
