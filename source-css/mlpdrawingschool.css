@@ -1,11 +1,21 @@
+/*Background upload a new file with the filename background at 500kb or less to allow it to upload and replace the background file. You have to hit save when you are done or it will not show the image globally. Normally I will do the opacity around 15% or less to make sure it does not disrupt the text. For ones that work like the present one I will add 300px to the side so they pass the sidebar.
+
+To move it from the side to the middle change Background-position: bottom right; to Background-position: center center;*/
+
+body {
+   background-image: url(%%background%%);
+   background-repeat: no-repeat;
+   background-position: Center Center;
+   background-attachment:fixed;
+   margin-top: 5px;
+   background-color:#F6F9FC;  
+   font-family:sans-serif !important;
+   }
+
 html {
     position: relative;
 }
-
-body {   
-    background:#F6F9FC;  
-    font-family:sans-serif !important;
-} 
+ 
 .titlebox h1 a {
     color:#0077BB !important;  
     font-size:18px; 
@@ -681,14 +691,6 @@ border-radius: 10px;
 margin-right: 320px;
 }
 
-/*Background*/
-body {
-   background-image: url(%%background%%);
-   background-repeat: no-repeat;
-   background-position: bottom right;
-   background-attachment:fixed;
-   margin-top: 5px;
-   }
 
 /* Linkable notification at the top 
 That big yellow box thing

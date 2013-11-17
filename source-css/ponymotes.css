@@ -134,6 +134,17 @@ background-image: linear-gradient(-90deg, #033004, #222);
 body.listing-page .linkflair-denied div.RES-keyNav-activeElement, body.listing-page .linkflair-approved div.RES-keyNav-activeElement
 {background-color: transparent !important;}
 
+/* New page prompter */
+body.hot-page ul.tabmenu li a[href$="/new/"]:before {
+font-size: xx-small;
+content: "Never miss an emote, browse the ";
+}
+
+body.hot-page ul.tabmenu li a[href$="/new/"]:after {
+font-size: xx-small;
+content: " page!";
+}
+
 /* user flair */
 .flair {border: none; padding: 0; margin: 0; background-color: transparent !important;}
 
@@ -247,7 +258,7 @@ vertical-align: middle;
  */
 
 /* 70x70a 'motes. */
-a[href|="/apathiasquint"], a[href|="/rdohyeah"]
+a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"]
 {background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
@@ -262,21 +273,25 @@ a[href|="/tuxpony"], a[href|="/chibiluna"], a[href|="/shiningcadancehug"], a[hre
 a[href|="/regret"], a[href|="/pinkiemail"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"], a[href|="/nightmaresparkle"]
 {background-image:url(%%200x200a%%);width:200px;height:200px;display:block;float:left;}
 
+/* 250x250a 'motes. */
+a[href|="/karmashark"], a[href|="/jumptheshark"]
+{background-image:url(%%250x250a%%);width:250px;height:250px;display:block;float:left;}
+
 /* 300x300a 'motes */
 a[href|="/pinkieplease"], a[href|="/twispike"]
 {background-image:url(%%300x300a%%);width:300px;height:300px;display:block;float:left;}
 
 /* Misfits a */
 a[href|="/fillycadance"], a[href|="/lyratonguebite"], a[href|="/buttonsmom"], a[href|="/buttonsmum"], a[href|="/fabpie"], a[href|="/changelinghug"], a[href|="/twiembarrassed"],
-a[href|="/twismirk"], a[href|="/huglife"], a[href|="/happyderp"], a[href|="/speakingfancy"], a[href|="/twidashkiss"], a[href|="/lyracomehere"], a[href|="/sbincredulous"]
+a[href|="/twismirk"], a[href|="/huglife"], a[href|="/happyderp"], a[href|="/speakingfancy"], a[href|="/twidashkiss"], a[href|="/lyracomehere"], a[href|="/sbincredulous"], a[href|="/lemonshock"], a[href|="/headcanon"]
 {background-image:url(%%misfitsa%%);display:block;float:left;}
 
 /* Misfits b */
-a[href|="/braecozy"]
+a[href|="/braecozy"], a[href|="/caramelsad"]
 {background-image:url(%%misfitsb%%);display:block;float:left;}
 
 /* Grid pos 0,0 'motes. Not needed but for completeness... */
-a[href|="/cadface"], a[href|="/pinkieplease"], a[href|="/regret"], a[href|="/apathiasquint"], a[href|="/tuxpony"]
+a[href|="/cadface"], a[href|="/pinkieplease"], a[href|="/regret"], a[href|="/apathiasquint"], a[href|="/tuxpony"], a[href|="/karmashark"], a[href|="/jumptheshark"]
 {background-position: 0 0;}
 
 /* Grid pos 1,0 'motes */
@@ -284,7 +299,7 @@ a[href|="/twispike"], a[href|="/pinkiemail"], a[href|="/chibiluna"], a[href|="/a
 {background-position: -100% 0%;}
 
 /* Grid pos 2,0 'motes */
-a[href|="/shiningcadancehug"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"], a[href|="/twicider"]
+a[href|="/shiningcadancehug"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"], a[href|="/twicider"], a[href|="/rainbowstache"]
 {background-position: -200% 0%;}
 
 /* Grid pos 0,1 'motes */
@@ -325,3 +340,6 @@ a[href|="/everyponypanic"] {background-image: url(%%everyponypanic%%);width:300p
 a[href|="/braecozy"] {width:146px;height:192px;background-position: 0 0;}
 a[href|="/sbincredulous"] {width:118px;height:150px;background-position: -382px -350px;}
 a[href|="/hypnopony"] {background-image: url(%%hypnopony%%);width:123px;height:150px;display:block;float:left;}
+a[href|="/lemonshock"] {width:206px;height:140px;background-position: -150px -860px;}
+a[href|="/headcanon"] {width:70px;height:45px;background-position: -0px -950px;}
+a[href|="/caramelsad"] {width:150px;height:100px;background-position: -146px 0;}

@@ -126,9 +126,28 @@ html:lang(en) .side .usertext[id$="9"] a[href="/cibg-pony"] { background:url(%%c
 
 
 
+
 /* ------ Emotes! --------- */
 
+a[href|='/bonangry'], a[href|='/lunahate'], a[href|='/lyracringe'], a[href|='/lyrawink'], a[href|='/psychiatrix'], a[href|='/rarioh'], a[href|='/rosecringe'], a[href|='/shythink'], a[href|='/skepticalpie'], a[href|='/twigrump'],a[href|='/lyraexcited']{
 
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%fsheet%%)
+    } 
+
+a[href|='/bonangry'] {width:140px; height:150px; background-position: -2px -2px}
+a[href|='/lunahate'] {width:304px; height:250px; background-position: -144px -2px}
+a[href|='/lyracringe'] {width:108px; height:150px; background-position: -450px -2px}
+a[href|='/lyraexcited'] {width:135px; height:150px; background-position: -560px -2px}
+a[href|='/lyrawink'] {width:117px; height:120px; background-position: -697px -2px}
+a[href|='/psychiatrix'] {width:93px; height:140px; background-position: -816px -2px}
+a[href|='/rarioh'] {width:129px; height:150px; background-position: -911px -2px}
+a[href|='/rosecringe'] {width:106px; height:150px; background-position: -1042px -2px}
+a[href|='/shythink'] {width:167px; height:150px; background-position: -1150px -2px}
+a[href|='/skepticalpie'] {width:100px; height:125px; background-position: -1319px -2px}
+a[href|='/twigrump'] {width:166px; height:150px; background-position: -1421px -2px}
 
 a[href|='/babs'], a[href|='/bestprincess'], a[href|='/blobbieshy'], a[href|='/creepaloo'], a[href|='/partyshy'], a[href|='/ppgrump'], a[href|='/rdlie'], a[href|='/seriouspie'], a[href|='/spooked'], a[href|='/twilie'], a[href|='/vslie'], a[href|='/whoovescake'], a[href|='/ablie']{
     display: block;
@@ -539,9 +558,54 @@ span.age::before {visibility:visible!important;font-size:8pt;content:'A communit
 .side a[href="http://www.reddit.com/r/ComeInside"] {display:none}
 
 /*------ nonpone ----- */
+/*------------------------  Changes background ------------------------------- */
+ body, .side,.flairtoggle,.submit .spacer,.create .spacer,.icon-menu a,.nub { background-color: transparent !important; }
+.side a[href="/cibg-pony"] { 
+    position: fixed;
+    z-index:-1;
+    bottom: 0%;
+    left: 40%;
+    width: 100%;
+    background-color: transparent!important;
+    height: 100%; }
 
-/*--background--*/
-html:lang(np) body, html:lang(np) res-nightmode.body, html:lang(np) body.res-nightmode {background: url(%%atbg%%)  no-repeat fixed 63% 90% !important;} 
+html:lang(np) .side .usertext[id$="a"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:590px; height:500px; background-position: -2px -604px!important}
+html:lang(np) .side .usertext[id$="b"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:730px; height:600px; background-position: -681px -1106px!important}
+html:lang(np) .side .usertext[id$="c"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:429px; height:600px; background-position: -395px -2px!important}
+html:lang(np) .side .usertext[id$="d"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:391px; height:600px; background-position: -2px -2px!important}
+html:lang(np) .side .usertext[id$="e"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:677px; height:500px; background-position: -2px -1106px!important}
+html:lang(np) .side .usertext[id$="f"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:477px; height:393px; background-position: -826px -2px!important}
+html:lang(np) .side .usertext[id$="g"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:646px; height:500px; background-position: -594px -604px!important}
+html:lang(np) .side .usertext[id$="h"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:590px; height:500px; background-position: -2px -604px!important}
+html:lang(np) .side .usertext[id$="i"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:730px; height:600px; background-position: -681px -1106px!important}
+html:lang(np) .side .usertext[id$="j"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:429px; height:600px; background-position: -395px -2px!important}
+html:lang(np) .side .usertext[id$="k"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:391px; height:600px; background-position: -2px -2px!important}
+html:lang(np) .side .usertext[id$="l"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:677px; height:500px; background-position: -2px -1106px!important}
+html:lang(np) .side .usertext[id$="m"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:477px; height:393px; background-position: -826px -2px!important}
+html:lang(np) .side .usertext[id$="n"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:646px; height:500px; background-position: -594px -604px!important}
+html:lang(np) .side .usertext[id$="o"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:590px; height:500px; background-position: -2px -604px!important}
+html:lang(np) .side .usertext[id$="p"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:730px; height:600px; background-position: -681px -1106px!important}
+html:lang(np) .side .usertext[id$="q"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:429px; height:600px; background-position: -395px -2px!important}
+html:lang(np) .side .usertext[id$="r"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:391px; height:600px; background-position: -2px -2px!important}
+html:lang(np) .side .usertext[id$="s"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:677px; height:500px; background-position: -2px -1106px!important}
+html:lang(np) .side .usertext[id$="t"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:477px; height:393px; background-position: -826px -2px!important}
+html:lang(np) .side .usertext[id$="u"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:646px; height:500px; background-position: -594px -604px!important}
+html:lang(np) .side .usertext[id$="v"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:590px; height:500px; background-position: -2px -604px!important}
+html:lang(np) .side .usertext[id$="w"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:730px; height:600px; background-position: -681px -1106px!important}
+html:lang(np) .side .usertext[id$="x"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:429px; height:600px; background-position: -395px -2px!important}
+html:lang(np) .side .usertext[id$="y"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:391px; height:600px; background-position: -2px -2px!important}
+html:lang(np) .side .usertext[id$="z"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:677px; height:500px; background-position: -2px -1106px!important}
+html:lang(np) .side .usertext[id$="0"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:477px; height:393px; background-position: -826px -2px!important}
+html:lang(np) .side .usertext[id$="1"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:646px; height:500px; background-position: -594px -604px!important}
+html:lang(np) .side .usertext[id$="2"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:590px; height:500px; background-position: -2px -604px!important}
+html:lang(np) .side .usertext[id$="3"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:730px; height:600px; background-position: -681px -1106px!important}
+html:lang(np) .side .usertext[id$="4"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:429px; height:600px; background-position: -395px -2px!important}
+html:lang(np) .side .usertext[id$="5"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:391px; height:600px; background-position: -2px -2px!important}
+html:lang(np) .side .usertext[id$="6"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:677px; height:500px; background-position: -2px -1106px!important}
+html:lang(np) .side .usertext[id$="7"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:477px; height:393px; background-position: -826px -2px!important}
+html:lang(np) .side .usertext[id$="8"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:646px; height:500px; background-position: -594px -604px!important}
+html:lang(np) .side .usertext[id$="9"] a[href="/cibg-pony"] { background:url(%%npbg%%);width:590px; height:500px; background-position: -2px -604px!important}
+
 
  /* Banner Image */
 html:lang(np) #header #header-bottom-left {background: url(%%gfbanner%%) no-repeat center bottom !important; height: 205px; }

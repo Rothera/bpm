@@ -149,7 +149,7 @@ border-top-right-radius: 5px;
 
 #header-img
 {
- margin:0px 0px -12px 0px;
+ margin:0px 0px -1px 0px;
  position:relative;
  top:9px;
  left:0px;
@@ -165,7 +165,7 @@ border-top-right-radius: 5px;
  border-right:0;
  position:absolute;
  top:60px;
- left:180px;
+ left:420px;/*180px w/o countdown*/
  z-index:50;
  margin:20px 420px 0 0;
  padding:8px 6px;
@@ -198,14 +198,39 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%twilight-smile-hat%%);
+ background:url(%%twistare-hat%%);
  width:70px;
  height:70px;
  margin-top:-45px;
- margin-left:5px;
+ margin-left:-5px;
  margin-bottom:0px;
- margin-right:-55px;
+ margin-right:-25px;
 }
+
+.titlebox .usertext-body .md ol li:nth-of-type(3)
+{
+ background:url(%%countdown-numbers%%);
+ width:91px;
+ height:107px;
+ background-position:-0% -105%;
+ display:block;
+ position:absolute;
+ left:-250px;
+ top:-15px;
+}
+
+.res-nightmode #header-bottom-left
+{
+ background:url(%%banner-day-7%%) no-repeat !important;
+ background-image:url(%%banner-day-7%%)!important;
+}
+
+#header-bottom-left
+{
+ background:url(%%banner-day-7%%) no-repeat;
+ background-position: 0px 7px;
+}
+
 
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important}
 .thumbnail.self{background-position:0px -120px!important}
