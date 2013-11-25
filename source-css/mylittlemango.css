@@ -674,3 +674,12 @@ a[href|="/horse"] {
      }
 
 a[href|="/horse"]  { background-position: -0px -0px; width: 200px; height: 200px; }
+
+a[href|="/pinkboop"] {
+     display: block;
+     clear: none;
+     float: left;
+     background-image: url(%%pinkboop%%) !important
+     }
+
+a[href|="/pinkboop"] { background-position: -0px -0px; width: 150px; height: 150px; }

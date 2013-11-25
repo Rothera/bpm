@@ -149,12 +149,12 @@ border-top-right-radius: 5px;
 
 #header-img
 {
- margin:0px 0px -1px 0px;
+ margin:0px 0px -3px 0px;
  position:relative;
- top:9px;
+ top:0px;
  left:0px;
 }
-#header-bottom-left{padding-top:20px}
+#header-bottom-left{padding-top:0px}
 .pagename {font-size:12pt}
 .titlebox form{position: static}
 .titlebox .usertext-body .md ol
@@ -207,28 +207,17 @@ border-top-right-radius: 5px;
  margin-right:-25px;
 }
 
-.titlebox .usertext-body .md ol li:nth-of-type(3)
-{
- background:url(%%countdown-numbers%%);
- width:91px;
- height:107px;
- background-position:-0% -105%;
- display:block;
- position:absolute;
- left:-250px;
- top:-15px;
-}
-
 .res-nightmode #header-bottom-left
 {
- background:url(%%banner-day-7%%) no-repeat !important;
- background-image:url(%%banner-day-7%%)!important;
+ background:url(%%banner-day-0%%) no-repeat !important;
+ background-image:url(%%banner-day-0%%)!important;
+ background-position: 0px 0px;
 }
 
 #header-bottom-left
 {
- background:url(%%banner-day-7%%) no-repeat;
- background-position: 0px 7px;
+ background:url(%%banner-day-0%%) no-repeat;
+ background-position: 0px 0px;
 }
 
 
@@ -249,16 +238,16 @@ border-top-right-radius: 5px;
 .sidecontentbox a.author.id-t2_51isb:after {content:" (married to the pwetty chinchess)"; font-size:8px; padding-left:10px;}
 .sidecontentbox a.author.id-t2_5eqe2:before {content:"Pathogen-David Hasselhoff"}
 .sidecontentbox a.author.id-t2_3fvpf:before {content:"The Velour Frog"}
-.sidecontentbox a.author.id-t2_6uo3t:before {content:"spokesthebrony"}
-.sidecontentbox a.author.id-t2_5dxi7:before {content:"TheeLinker"}
+.sidecontentbox a.author.id-t2_6uo3t:before {content:"spokesthephony"}
+.sidecontentbox a.author.id-t2_5dxi7:before {content:"ThreeLinker"}
 .sidecontentbox ul.content li.more a:before {content:"Lanky Kong"}
 .sidecontentbox a.author.id-t2_5fmql {display:none;}
 .sidecontentbox a.author.id-t2_6ua87 {display:none;}
 
 .sidecontentbox ul.content li.more {margin:0;text-align:left;}
 
-a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,a.author.id-t2_52j0w,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
-a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,a.author.id-t2_52j0w:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after{font-size:10px!important;display:block;letter-spacing:normal}
+a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,a.author.id-t2_52j0w,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott,a.author.id-t2_dq6ce{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
+a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,a.author.id-t2_52j0w:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after,a.author.id-t2_dq6ce:after{font-size:10px!important;display:block;letter-spacing:normal}
 a.author.id-t2_4mwnz:after{content:"DerpyHiccupKittyTail"}
 a.author.id-t2_8kzeb:after{content:"RAINBOW_PONY_JUICEBOX"}
 a.author.id-t2_52j0w:after{content:"RainbowDoshJedi"}
@@ -266,6 +255,7 @@ div.content a.author.id-t2_5agom:after{content:"Chinchy"}
 a.author.id-t2_5o2lh:after{content:"Luna_in_Equestria"}
 a.author.id-t2_4uott:after{content:"3cakes2pies1fork"}
 a.author.id-t2_3klgq:after {content:" is an artist";}
+a.author.id-t2_dq6ce:after{content:"GOOUTSIDERAINBOWDAS"}
 a[href|="/sp"]
 {
  display:inline-block;
@@ -1360,3 +1350,4 @@ display: none !important;
     background-color: #000;
 }
 div.content{margin-top:15px}
+

@@ -1,7 +1,7 @@
 /* LIMITS:
  * Limit on number of images uploaded is 50. I'll probably create /r/ponyanimotes when we hit 30 or something.
  * Limit on CSS size is approx 100,000 characters
- * Limit on image size is 500kb
+ * Limit on image size is 500kB
  */
 
 /* vote diagram */
@@ -82,11 +82,6 @@ opacity: 0.4;
 visibility: hidden;
 }
 
-.linkflair-closed .entry {
-background: url(%%linkflairclosed%%) 10px 0 no-repeat;
-padding-left: 55px;
-}
-
 .linkflair-denied .linkflairlabel {
 color: #AC3939;
 background-color: transparent;
@@ -94,14 +89,18 @@ border: 1px solid #D27979;
 text-transform: uppercase;
 }
 
-
 .linkflair-approved .entry {
-background: url(%%linkflairapproved%%) 0 0 no-repeat;
+background: url(%%linkflairs%%) -200px 0 no-repeat;
 padding-left: 55px;
 }
 
 .linkflair-denied .entry {
-background: url(%%linkflairdenied%%) 0 0 no-repeat;
+background: url(%%linkflairs%%) -100px -100px no-repeat;
+padding-left: 55px;
+}
+
+.linkflair-closed .entry {
+background: url(%%linkflairs%%) 10px -200px no-repeat;
 padding-left: 55px;
 }
 
@@ -143,6 +142,55 @@ content: "Never miss an emote, browse the ";
 body.hot-page ul.tabmenu li a[href$="/new/"]:after {
 font-size: xx-small;
 content: " page!";
+}
+
+/* Spoiler thumbnail */
+.thumbnail.nsfw {
+background-image: url(%%linkflairs%%);
+background-position: 0 0;
+height: 70px;
+}
+
+/* NSFW -> Spoiler. Shamelessly ripped from /r/mylittlepony */
+.marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"]
+{
+ font-size:0px!important;
+ display:inline-block;
+ vertical-align:top;
+ overflow:hidden;
+ letter-spacing:-20px;
+ content:""
+}
+
+.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before
+{
+ font-size:10px!important;
+ display:block;
+ letter-spacing:normal;
+ content:"spoiler"
+}
+.unmarknsfw-button a[href="#"]:before{content:"un-spoiler";}
+
+.nsfw-stamp acronym
+{
+ border:#5F99CF 1px solid!important;
+ display:inline-block;
+ font-size:0px!important;
+ letter-spacing:0px;
+ overflow:hidden;
+ vertical-align:bottom;
+ margin-bottom:-1px;
+ content:""
+}
+
+.nsfw-stamp acronym:after
+{ 
+ color:#336699!important;
+ content:"SPOILER"!important;
+ display:block;
+ font-size:x-small!important;
+ text-decoration:none;
+ margin: -15px 2px 1px;
 }
 
 /* user flair */
@@ -262,11 +310,11 @@ a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"]
 {background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
-a[href|="/cadface"], a[href|="/apathiablankstare"], a[href|="/twicider"]
+a[href|="/cadface"], a[href|="/apathiablankstare"], a[href|="/twicider"], a[href|="/nomakeup"]
 {background-image:url(%%100x100a%%);width:100px;height:100px;display:block;float:left;}
 
 /* 150x150a 'motes. */
-a[href|="/tuxpony"], a[href|="/chibiluna"], a[href|="/shiningcadancehug"], a[href|="/twihappycry"], a[href|="/properbudget"], a[href|="/celestiaglee"]
+a[href|="/tuxpony"], a[href|="/chibiluna"], a[href|="/shiningcadancehug"], a[href|="/twihappycry"], a[href|="/properbudget"], a[href|="/celestiaglee"], a[href|="/frittergasp"]
 {background-image:url(%%150x150a%%);width:150px;height:150px;display:block;float:left;}
 
 /* 200x200a 'motes. */
@@ -287,7 +335,7 @@ a[href|="/twismirk"], a[href|="/huglife"], a[href|="/happyderp"], a[href|="/spea
 {background-image:url(%%misfitsa%%);display:block;float:left;}
 
 /* Misfits b */
-a[href|="/braecozy"], a[href|="/caramelsad"]
+a[href|="/braecozy"], a[href|="/caramelsad"], a[href|="/twilicry"], a[href|="/sfpride"], a[href|="/sfmotherofgod"], a[href|="/sbdisgusting"], a[href|="/absolutelydisgusting"], a[href|="/ppwhywouldyoudothat"], a[href|="/fluttersnoo"]
 {background-image:url(%%misfitsb%%);display:block;float:left;}
 
 /* Grid pos 0,0 'motes. Not needed but for completeness... */
@@ -303,7 +351,7 @@ a[href|="/shiningcadancehug"], a[href|="/obsessivetrixie"], a[href|="/trixiebein
 {background-position: -200% 0%;}
 
 /* Grid pos 0,1 'motes */
-a[href|="/twihappycry"], a[href|="/nightmaresparkle"]
+a[href|="/twihappycry"], a[href|="/nightmaresparkle"], a[href|="/nomakeup"]
 {background-position: 0 -100%;}
 
 /* Grid pos 1,1 'motes */
@@ -314,32 +362,44 @@ a[href|="/properbudget"]
 a[href|="/celestiaglee"]
 {background-position: -200% -100%;}
 
-/* Misfits and animated emotes */
+/* Grid pos 0,2 'motes */
+a[href|="/frittergasp"]
+{background-position: 0 -200%;}
+
+/* Animated Emotes */
 a[href|="/moofintezzter"], a[href|="/muffintester"] {background: url(%%muffintester%%) no-repeat;width:200px;height:177px;display:block;float:left;}
+a[href|="/crazyface"], a[href|="/pinkface"] {background-image: url(%%crazyface%%);width:220px;height:150px;display:block;float:left;}
+a[href|="/reallysadluna"] {background-image: url(%%reallysadluna%%);width:165px;height:165px;display:block;float:left;}
+a[href|="/thedonutswilllastforever"], a[href|="/mightyjoe"] {background-image: url(%%thedonutswilllastforever%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/arcade"] {background-image: url(%%arcade%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/rddealwithit"] {background-image: url(%%rddealwithit%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/muffindreams"] {background-image: url(%%muffindreams%%);width:220px;height:220px;display:block;float:left;}
+a[href|="/twidanceydance"] {background-image: url(%%twidanceydance%%);width:150px;height:135px;display:block;float:left;}
+a[href|="/derpypanic"] {background-image: url(%%derpypanic%%);width:300px;height:151px;display:block;float:left;}
+a[href|="/everyponypanic"] {background-image: url(%%everyponypanic%%);width:300px;height:150px;display:block;float:left;}
+a[href|="/hypnopony"] {background-image: url(%%hypnopony%%);width:123px;height:150px;display:block;float:left;}
+
+/* Misfit Emotes */
 a[href|="/fillycadance"] {width:100px;height:126px;}
 a[href|="/lyratonguebite"] {width:280px;height:210px;background-position: -100px 0;}
 a[href|="/buttonsmom"], a[href|="/buttonsmum"] {width:100px;height:136px;background-position: 0 -126px;}
-a[href|="/crazyface"], a[href|="/pinkface"] {background-image: url(%%crazyface%%);width:220px;height:150px;display:block;float:left;}
 a[href|="/fabpie"] {width:120px;height:200px;background-position: -380px 0;}
-a[href|="/reallysadluna"] {background-image: url(%%reallysadluna%%);width:165px;height:165px;display:block;float:left;}
-a[href|="/thedonutswilllastforever"], a[href|="/mightyjoe"] {background-image: url(%%thedonutswilllastforever%%);width:150px;height:150px;display:block;float:left;}
 a[href|="/changelinghug"] {width:113px;height:200px;background-position: 0 -262px;}
-a[href|="/arcade"] {background-image: url(%%arcade%%);width:150px;height:150px;display:block;float:left;}
 a[href|="/twiembarrassed"] {width:200px;height:155px;background-position: -113px -210px;}
-a[href|="/rddealwithit"] {background-image: url(%%rddealwithit%%);width:150px;height:150px;display:block;float:left;}
 a[href|="/twismirk"] {width:253px;height:150px;background-position: -113px -365px;}
 a[href|="/huglife"] {width:150px;height:200px;background-position: 0 -515px;}
 a[href|="/happyderp"] {width:150px;height:235px;background-position: 0 -715px;}
 a[href|="/speakingfancy"] {width:250px;height:178px; background-position: -150px -515px;}
 a[href|="/twidashkiss"] {width:300px;height:167px;background-position: -150px -693px;}
 a[href|="/lyracomehere"] {width:119px;height:150px;background-position: -381px -200px;}
-a[href|="/muffindreams"] {background-image: url(%%muffindreams%%);width:220px;height:220px;display:block;float:left;}
-a[href|="/twidanceydance"] {background-image: url(%%twidanceydance%%);width:150px;height:135px;display:block;float:left;}
-a[href|="/derpypanic"] {background-image: url(%%derpypanic%%);width:300px;height:151px;display:block;float:left;}
-a[href|="/everyponypanic"] {background-image: url(%%everyponypanic%%);width:300px;height:150px;display:block;float:left;}
 a[href|="/braecozy"] {width:146px;height:192px;background-position: 0 0;}
 a[href|="/sbincredulous"] {width:118px;height:150px;background-position: -382px -350px;}
-a[href|="/hypnopony"] {background-image: url(%%hypnopony%%);width:123px;height:150px;display:block;float:left;}
 a[href|="/lemonshock"] {width:206px;height:140px;background-position: -150px -860px;}
 a[href|="/headcanon"] {width:70px;height:45px;background-position: -0px -950px;}
 a[href|="/caramelsad"] {width:150px;height:100px;background-position: -146px 0;}
+a[href|="/twilicry"] {width:119px;height:100px;background-position: -296px 0;}
+a[href|="/sfpride"] {width:116px;height:175px;background-position: 0 -192px;}
+a[href|="/sfmotherofgod"] {width:150px;height:137px;background-position: -146px -100px;}
+a[href|="/sbdisgusting"], a[href|="/absolutelydisgusting"] {width:300px;height:192px;background-position: 0 -808px;}
+a[href|="/ppwhywouldyoudothat"] {width:295px;height:176px;background-position: -116px -237px;}
+a[href|="/fluttersnoo"] {width:114px;height:150px;background-position: 0 -367px;}
