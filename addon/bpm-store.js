@@ -71,6 +71,10 @@ Store.prototype = {
         return 0;
     },
 
+    custom_emotes: function() {
+        return this._custom_emotes;
+    },
+
     /*
      * Tries to locate an emote, either builtin or global.
      */
@@ -136,7 +140,9 @@ Store.prototype = {
      * sparse, but roughly compatible with core emote's properties.
      */
     lookup_custom_emote: function(name) {
-        if(this._custom_emotes[name] === undefined) {
+        var source_subreddit = this._custom_emotes[name];
+        if(source_subreddit === undefined) {
+            // Emote doesn't actually exist
             return null;
         }
 
@@ -144,11 +150,10 @@ Store.prototype = {
             name: name,
             is_nsfw: false,
             source_id: null,
-            source_name: "custom subreddit",
+            source_name: "r/" + source_subreddit,
             max_size: null,
 
-            sources: null,
-            tags: null,
+            tags: [],
 
             css_class: "bpm-cmote-" + sanitize_emote(name.slice(1)),
             base: null

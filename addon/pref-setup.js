@@ -265,7 +265,7 @@ css_manager.prototype = {
             if(emote_lists[subreddit] !== undefined) {
                 var emote_names = emote_lists[subreddit];
                 for(var i = 0; i < emote_names.length; i++) {
-                    this.emote_cache[emote_names[i]] = 1;
+                    this.emote_cache[emote_names[i]] = subreddit;
                 }
             }
         }

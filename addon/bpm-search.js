@@ -60,6 +60,11 @@ function parse_search_query(terms) {
             // If we found anything at all, append it
             if(matches.length) {
                 add_cancelable_id_list(sets, positive, matches);
+            } else {
+                // Else, try adding the original query. It'll probably fail to
+                // match anything at all (killing the results is acceptable for
+                // typos), or possibly work on custom subreddits.
+                add_cancelable_id_list(sets, positive, [exact]);
             }
         }
     }
@@ -107,70 +112,81 @@ function parse_search_query(terms) {
 }
 
 /*
+ * Checks whether a single emote matches against a search query.
+ */
+function emote_matches_query(query, emote_info, lc_emote_name) {
+    // Match if ALL search terms match
+    for(var nt_i = 0; nt_i < query.name_terms.length; nt_i++) {
+        if(lc_emote_name.indexOf(query.name_terms[nt_i]) < 0) {
+            return false; // outer loop, not inner
+        }
+    }
+
+    // Match if AT LEAST ONE positive subreddit term matches, and NONE
+    // of the negative ones.
+    if(query.sr_term_sets.length) {
+        var is_match = true; // Match by default, unless there are positive terms
+        for(var sr_set_i = 0; sr_set_i < query.sr_term_sets.length; sr_set_i++) {
+            var sr_set = query.sr_term_sets[sr_set_i];
+            if(sr_set[0]) {
+                // If there are any positive terms, then we're wrong
+                // by default. We have to match one of them (just not
+                // any of the negative ones either).
+                //
+                // However, if there are *only* negative terms, then we
+                // actually match by default.
+                is_match = false;
+            }
+            // sr_set[0] is true/false and so can't interfere
+            if(sr_set.indexOf(emote_info.source_id) > -1 || sr_set.indexOf(emote_info.source_name) > -1) {
+                if(sr_set[0]) {
+                    is_match = true; // Matched positive term
+                    return true;
+                } else {
+                    return false; // Matched negative term
+                }
+            }
+        }
+        if(!is_match) {
+            return false;
+        }
+    }
+
+    // Match if ALL tag sets match
+    for(var tt_i = query.tag_term_sets.length - 1; tt_i >= 0; tt_i--) {
+        // Match if AT LEAST ONE of these match
+        var tag_set = query.tag_term_sets[tt_i];
+
+        var any = false;
+        for(var ts_i = 1; ts_i < tag_set.length; ts_i++) {
+            if(emote_info.tags.indexOf(tag_set[ts_i]) > -1) {
+                any = true;
+                return true;
+            }
+        }
+        // We either didn't match, and wanted to, or matched and didn't
+        // want to.
+        if(any !== tag_set[0]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+/*
  * Executes a search query. Returns an object with two properties:
  *    .results: a sorted list of emotes
  */
 function execute_search(store, query) {
     var results = [];
-    no_match:
+
     for(var emote_name in emote_map) {
         var emote_info = store.lookup_core_emote(emote_name, true);
         var lc_emote_name = emote_name.toLowerCase();
 
-        // Match if ALL search terms match
-        for(var nt_i = 0; nt_i < query.name_terms.length; nt_i++) {
-            if(lc_emote_name.indexOf(query.name_terms[nt_i]) < 0) {
-                continue no_match; // outer loop, not inner
-            }
-        }
-
-        // Match if AT LEAST ONE positive subreddit term matches, and NONE
-        // of the negative ones.
-        if(query.sr_term_sets.length) {
-            var is_match = true; // Match by default, unless there are positive terms
-            for(var sr_set_i = 0; sr_set_i < query.sr_term_sets.length; sr_set_i++) {
-                var sr_set = query.sr_term_sets[sr_set_i];
-                if(sr_set[0]) {
-                    // If there are any positive terms, then we're wrong
-                    // by default. We have to match one of them (just not
-                    // any of the negative ones either).
-                    //
-                    // However, if there are *only* negative terms, then we
-                    // actually match by default.
-                    is_match = false;
-                }
-                // sr_set[0] is true/false and so can't interfere
-                if(sr_set.indexOf(emote_info.source_id) > -1) {
-                    if(sr_set[0]) {
-                        is_match = true; // Matched positive term
-                        break;
-                    } else {
-                        continue no_match; // Matched negative term
-                    }
-                }
-            }
-            if(!is_match) {
-                continue no_match;
-            }
-        }
-
-        // Match if ALL tag sets match
-        for(var tt_i = query.tag_term_sets.length - 1; tt_i >= 0; tt_i--) {
-            // Match if AT LEAST ONE of these match
-            var tag_set = query.tag_term_sets[tt_i];
-
-            var any = false;
-            for(var ts_i = 1; ts_i < tag_set.length; ts_i++) {
-                if(emote_info.tags.indexOf(tag_set[ts_i]) > -1) {
-                    any = true;
-                    break;
-                }
-            }
-            // We either didn't match, and wanted to, or matched and didn't
-            // want to.
-            if(any !== tag_set[0]) {
-                continue no_match;
-            }
+        if(!emote_matches_query(query, emote_info, lc_emote_name)) {
+            continue;
         }
 
         // At this point we have a match, so follow back to its base
@@ -181,6 +197,25 @@ function execute_search(store, query) {
                 log_warning("Followed +v from " + emote_name + " to " + emote_info.name + "; no root emote found");
             }
             emote_name = emote_info.name;
+        }
+
+        results.push(emote_info);
+    }
+
+    for(var emote_name in store.custom_emotes()) {
+        if(emote_map[emote_name] !== undefined) {
+            // Quick hack: force custom emotes to lose precedence vs. core ones.
+            // This is partially for consistency (this happens when converting
+            // as well and would be confusing), but also to conveniently drop
+            // duplicates, e.g. r/mlp copies.
+            continue;
+        }
+
+        var emote_info = store.lookup_custom_emote(emote_name);
+        var lc_emote_name = emote_name.toLowerCase();
+
+        if(!emote_matches_query(query, emote_info, lc_emote_name)) {
+            continue;
         }
 
         results.push(emote_info);
