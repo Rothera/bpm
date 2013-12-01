@@ -1,20 +1,77 @@
+/**************SANTA CSS*************************
+*************************************************
+*********SHAMELESSLY STOLEN FROM*****************
+*************************************************
+*******THE GLORIOUS MAIN SUB MODS****************
+*************************************************/
+
+body.comments-page #siteTable div.id-t3_1rmel8 p.title, body.comments-page #siteTable div.id-t3_1rmel8 a.thumbnail
+{
+ display:none;
+}
+
+body.comments-page #siteTable div.id-t3_1rmel8 p.tagline
+{
+ display:none;
+}
+
+body.comments-page #siteTable div.id-t3_1rmel8 .expando
+{
+ margin-left:34px;
+ margin-top:263px;
+}
+
+body.comments-page #siteTable div.id-t3_1rmel8
+{
+ background:transparent url(%%santa%%) top left no-repeat !important;
+}
+
+body.comments-page #siteTable div.id-t3_1rmel8 form.usertext
+{
+ min-height:300px;
+}
+
+body.comments-page #siteTable div.id-t3_1rmel8 .midcol {
+margin-top: 278px;
+margin-left: 96px;
+}
+
+body.comments-page #siteTable div.id-t3_1rmel8 .flat-list.buttons {
+margin-left: 40px;
+}
+
+body.comments-page #siteTable div.id-t3_1rmel8 .entry
+{
+ background:transparent !important;
+ outline:0px !important;
+}
+
+/**Santa Compressed mode fixes**/
+body.comments-page #siteTable div.id-t3_1rmel8.compressed .expando {margin-left:108px;}
+body.comments-page #siteTable div.id-t3_1rmel8.compressed p.tagline {left:200px;}
+body.comments-page #siteTable div.id-t3_1rmel8.compressed .entry.likes {background-position:122px 197px !important;}
+body.comments-page #siteTable div.id-t3_1rmel8.compressed .entry.dislikes {background-position:907px 198px !important;}
+
+/******** END OF Awesome santa CSS of Super Duper Awesomeness ******/
+
+
 .id-t3_145m8r.link .title{font-size:large}
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%bbbbb%%)  no-repeat  fixed 66% 100% !important;
+    background:  url(%%screwwinter%%)  no-repeat  fixed 66% 100% !important;
 }
 
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%disapony2%%) 50% 0px !important;
+   background: url(%%SecretSanta1%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
 
 
-.side a[href="https://webchat.mlas1.org/?nick=Gummy...&channels=mlas1&prompt=1"]
+.side a[href="http://redd.it/1rmel8"]
 {
    display:block;
    width: 512px;
@@ -429,7 +486,7 @@ background-repeat: no-repeat;
 .flair-twinaga:after { background-position: 0px -3960px }
 .flair-turkeysnake:after { background-position: 0px -3990px }
 .flair-HtotheGRIFF:after { background-position: 0px -4020px }
-.flair-StabbyTheLlama:after { background-position: 0px -4050px }
+.flair-LlamaInDrag:after { background-position: 0px -4050px }
 .flair-CustomOriginal:after { background-position: 0px -4080px }
 .flair-tsyuan:after { background-position: 0px -4110px }
 .flair-Unsinkablesam:after { background-position: 0px -4140px }
@@ -501,6 +558,7 @@ background-repeat: no-repeat;
 .flair-screwball3:after { background-position: 0px -6120px }
 .flair-screwball4:after { background-position: 0px -6150px }
 .flair-clinger:after { background-position: 0px -6180px }
+.flair-dinostabby:after { background-position: 0px -6210px }
 
 
 /* Nightmode fix for flair */
@@ -636,7 +694,7 @@ a.author[href$=ZZW30],
 a.author[href$=Zovistograt],
 a.author[href$=JustAnotherGDB],
 a.author[href$=Lord_Ninka],
-a.author[href$=StabbyTheLlama],
+a.author[href$=LlamaInDrag],
 a.author[href$=thezooman123],
 a.author[href$=Nagashizuri],
 a.author[href$=andresonic1],
@@ -745,7 +803,7 @@ a.author[href$=zovistograt]:before,
 a.author[href$=JustAnotherGDB]:before,
 a.author[href$=Swiftskii]:before,
 a.author[href$=Lord_Ninka]:before,
-a.author[href$=StabbyTheLlama]:before,
+a.author[href$=LlamaInDrag]:before,
 a.author[href$=Nagashizuri]:before,
 a.author[href$=andresonic1]:before,
 a.author[href$=Bflat13]:before,
@@ -850,7 +908,7 @@ a.author[href$=ZZW30]:before { content:"CaptChuckles" }
 a.author[href$=JustAnotherGDB]:before { content:"Just Another Face in the Clouds" }
 a.author[href$=Swiftskii]:before { content:"FairyFacedWizardFelcher" }
 a.author[href$=Lord_Ninka]:before { content:"Ninka" }
-a.author[href$=StabbyTheLlama]:before { content:"StabbyTheBOOBS" }
+a.author[href$=LlamaInDrag]:before { content:"A REAL FUCKING DINOSAUR" }
 a.author[href$=Nagashizuri]:before { content:"Maga" }
 a.author[href$=andresonic1]:before { content:"Fake" }
 a.author[href$=Bflat13]:before { content:"BECAUSE OF THE MOTHER FUCKING SUGAR!" }

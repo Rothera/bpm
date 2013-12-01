@@ -440,7 +440,7 @@ a.author[href$="MotharChoddar"]:after { content: " Finnish drunk "}
 a.author[href$="LunarWolves"]:after { content: " Heretical Leader "}
 a.author[href$="ctare"]:after {content: " Among other things "}
 a.author[href$="HatzHeartsIcecream"]:after {content: " ❤ "}
-a.author[href$="Dwarflord"]:after {content: " Fic ETA:____ "}
+a.author[href$="Dwarflord"]:after {content: " ClopFic ETA:____ "}
 a.author[href$="moonomnom"]:after {content: " Dayum shame"}
 a.author[href$="Broken_Wagonwheel"]:after {content: " Sang's Slave "}
 a.author[href$="Dundrioundio"]:after {content: " Never cuddle "}
@@ -571,6 +571,14 @@ a[href|="/twispecial"] {
     width: 112px;
     height: 200px;
     background-image: url(%%twieyes%%)
+    }
+a[href|="/spikeeyebrows"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 158px;
+    height: 200px;
+    background-image: url(%%spikeeyebrows%%)
     }
 
 a[href|="/catdash"] {

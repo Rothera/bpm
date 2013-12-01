@@ -148,13 +148,27 @@ border-top-right-radius: 5px;
 }
 
 #header-img
-{
- margin:0px 0px -3px 0px;
+{ 
+ margin:10px 10px 0px 10px;
  position:relative;
- top:0px;
+ top:16px;
  left:0px;
+ background: url(%%karma-dis-peek%%);
+ height: 0;
+ width: 0;
+ padding-top: 96px;
+ padding-left: 80px;
+ background-position: 0% 0%;
 }
-#header-bottom-left{padding-top:0px}
+
+#header-img:hover
+{ 
+ background: url(%%karma-dis-peek%%);
+ background-position: 80px 0px;
+}
+
+
+#header-bottom-left{padding-top:10px}
 .pagename {font-size:12pt}
 .titlebox form{position: static}
 .titlebox .usertext-body .md ol
@@ -164,10 +178,10 @@ border-top-right-radius: 5px;
  border:1px solid #5f99cf;
  border-right:0;
  position:absolute;
- top:60px;
- left:420px;/*180px w/o countdown*/
+ top:30px;
+ left:180px;
  z-index:50;
- margin:20px 420px 0 0;
+ margin:22px 250px 0 0;
  padding:8px 6px;
  padding-right:12px;
  list-style:none;
@@ -189,7 +203,7 @@ border-top-right-radius: 5px;
  display:inline-block;
  float:left;
  overflow:auto;
- margin-top: -3px
+ margin-top: 0px
 }
 
 .titlebox .usertext-body .md ol li strong{font-size:12px;color:#EF4F91}
@@ -198,28 +212,14 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%twistare-hat%%);
- width:70px;
- height:70px;
- margin-top:-45px;
- margin-left:-5px;
+ background:url(%%twilight-hat%%);
+ width:65px;
+ height:54px;
+ margin-top:-29px;
+ margin-left:5px;
  margin-bottom:0px;
  margin-right:-25px;
 }
-
-.res-nightmode #header-bottom-left
-{
- background:url(%%banner-day-0%%) no-repeat !important;
- background-image:url(%%banner-day-0%%)!important;
- background-position: 0px 0px;
-}
-
-#header-bottom-left
-{
- background:url(%%banner-day-0%%) no-repeat;
- background-position: 0px 0px;
-}
-
 
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important}
 .thumbnail.self{background-position:0px -120px!important}
@@ -288,7 +288,7 @@ body a[href="/spoiler"]:hover{color:white!important}/*Pinkie Pie NPT Warnings*//
  width:438px;
  height:30px;
  background:url(%%pinkiemessage%%) no-repeat;
- content:"Hey you! It's No-Pics Friday! So no submitting pictures, ok? No need to worry though, you can save your pictures for another day!";
+ content:"Hey you! It's No Pics Thursday! So no submitting pictures, ok? No need to worry though, you can save your pictures for another day!";
  font-size:12px;
  color:black;
 }
@@ -535,26 +535,22 @@ background-color: white;
  
 /* end subscribe buttons */
 
-/* Make deleted messages less noticeable /u/djimbob */
-form.grayed, 
-form.grayed ~ ul.flat-list.buttons {
-  display: none
+/* Make deleted messages less noticeable*/
+.deleted .grayed {
+	display: none;
 }
-p.tagline > a.expand:first-child + em:after, 
-div.collapsed > a.expand:first-child + em:after {
-  visibility: visible;
-  font-size: x-small;
-  font-weight: bold;
-  content: "Comment deleted or removed"
+
+.deleted > .entry .noncollapsed:after {
+	opacity: .25;
+	color: #858585;
 }
-p.tagline > a.expand:first-child + em, 
-div.collapsed > a.expand:first-child + em {
-  visibility: hidden;
-  font-size: 0
+
+.deleted>.entry .expand {
+	visibility: visible;
 }
-div.collapsed > a.expand:first-child + em + time + a.expand,
-div.collapsed > a.expand:first-child + em + time + em + a.expand {
-  display: none;
+
+.deleted.comment> .entry .tagline {
+	visibility: hidden;
 }
 
 /* end fancy deletes */
@@ -1351,3 +1347,14 @@ display: none !important;
 }
 div.content{margin-top:15px}
 
+.gilded-comment-icon { opacity: 100 !important; }
+.gilded-comment-icon:before {
+    background-image: url(%%gilded-comment-scepter%%);
+    background-position: 0 8px;
+    margin-right: 2px;
+    vertical-align: -12px;
+    width: 20px;
+    height: 28px;
+    padding-bottom: 6px;
+    opacity: 100 !important;
+}

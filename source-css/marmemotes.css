@@ -384,6 +384,17 @@ a[href|="/fsstamp"]
     height: 140px;
     background-image: url(%%stampontheground%%)
 }
+a[href|="/ppdrool"],
+a[href|="/frosting"]
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 142px;
+    height: 140px;
+    background-image: url(%%ppdrool%%)
+}
+
 /*end animotes*/
 
 /* sheet1 */
@@ -1183,7 +1194,8 @@ a[href|="/teatimetoast"],
 a[href|="/literallybrohoof"],
 a[href|="/abhowyoudoin"],
 a[href|="/pootishorn"],
-a[href|="/lyramaster"]
+a[href|="/lyramaster"],
+a[href|="/unprofessionalbehavior"]
 {
     display: block;
     clear: none;
@@ -1302,6 +1314,11 @@ a[href|="/lyramaster"]
 {
 	width: 175px;
 	background-position: -193px -840px;
+}
+a[href|="/unprofessionalbehavior"]
+{
+	width: 174px;
+	background-position: -0px -980px;
 }
 /* end sheet 8 */
 
@@ -1822,23 +1839,9 @@ a[href|="/sacreblueshift"]
 	background-position: -0px -1040px;
 }
 /* end sheet 12 */
-/* sheet 13 */
-a[href|="/twilightstrapkle"]
-{
-    display: block;
-    clear: none;
-    float: left;
-    height: 200px;
-    background-image: url(%%sheet13%%)
-}
-a[href|="/twilightstrapkle"]
-{
-	width: 199px;
-	background-position: -0px -0px;
-}
-/* end sheet 13 */
-/* start sheet 14 */
 
+/* start sheet 14 */
+a[href|="/twilightstrapkle"],
 a[href|="/whoers"],
 a[href|="/ahambreakfast"],
 a[href|="/abscrunchie"],
@@ -1921,6 +1924,12 @@ a[href|="/thatsnothowyouspellmiggyb"]
 {
 	width: 135px;
 	background-position: -136px -840px;
+}
+a[href|="/twilightstrapkle"]
+{
+        height: 200px;
+	width: 199px;
+	background-position: -0px -980px;
 }
 /* end sheet 14*/
 

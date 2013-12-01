@@ -306,15 +306,15 @@ vertical-align: middle;
  */
 
 /* 70x70a 'motes. */
-a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"]
+a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"]
 {background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
-a[href|="/cadface"], a[href|="/apathiablankstare"], a[href|="/twicider"], a[href|="/nomakeup"]
+a[href|="/cadface"], a[href|="/apathiablankstare"], a[href|="/twicider"], a[href|="/nomakeup"], a[href|="/twiscepter"], a[href|="/twisceptre"], a[href|="/winona"]
 {background-image:url(%%100x100a%%);width:100px;height:100px;display:block;float:left;}
 
 /* 150x150a 'motes. */
-a[href|="/tuxpony"], a[href|="/chibiluna"], a[href|="/shiningcadancehug"], a[href|="/twihappycry"], a[href|="/properbudget"], a[href|="/celestiaglee"], a[href|="/frittergasp"]
+a[href|="/tuxpony"], a[href|="/chibiluna"], a[href|="/shiningcadancehug"], a[href|="/twihappycry"], a[href|="/properbudget"], a[href|="/celestiaglee"], a[href|="/frittergasp"], a[href|="/twiimbetterthanyou"], a[href|="/twimbetterthanyou"], a[href|="/bonboudicca"], a[href|="/celticbonbon"]
 {background-image:url(%%150x150a%%);width:150px;height:150px;display:block;float:left;}
 
 /* 200x200a 'motes. */
@@ -351,20 +351,28 @@ a[href|="/shiningcadancehug"], a[href|="/obsessivetrixie"], a[href|="/trixiebein
 {background-position: -200% 0%;}
 
 /* Grid pos 0,1 'motes */
-a[href|="/twihappycry"], a[href|="/nightmaresparkle"], a[href|="/nomakeup"]
+a[href|="/twihappycry"], a[href|="/nightmaresparkle"], a[href|="/nomakeup"], a[href|="/lemonglee"]
 {background-position: 0 -100%;}
 
 /* Grid pos 1,1 'motes */
-a[href|="/properbudget"]
+a[href|="/properbudget"], a[href|="/twiscepter"], a[href|="/twisceptre"]
 {background-position: -100% -100%;}
 
 /* Grid pos 2,1 'motes */
-a[href|="/celestiaglee"]
+a[href|="/celestiaglee"], a[href|="/winona"]
 {background-position: -200% -100%;}
 
 /* Grid pos 0,2 'motes */
 a[href|="/frittergasp"]
 {background-position: 0 -200%;}
+
+/* Grid pos 1,2 'motes */
+a[href|="/twiimbetterthanyou"], a[href|="/twimbetterthanyou"]
+{background-position: -100% -200%;}
+
+/* Grid pos 2,2 'motes */
+a[href|="/bonboudicca"], a[href|="/celticbonbon"]
+{background-position: -200% -200%;}
 
 /* Animated Emotes */
 a[href|="/moofintezzter"], a[href|="/muffintester"] {background: url(%%muffintester%%) no-repeat;width:200px;height:177px;display:block;float:left;}
@@ -378,6 +386,7 @@ a[href|="/twidanceydance"] {background-image: url(%%twidanceydance%%);width:150p
 a[href|="/derpypanic"] {background-image: url(%%derpypanic%%);width:300px;height:151px;display:block;float:left;}
 a[href|="/everyponypanic"] {background-image: url(%%everyponypanic%%);width:300px;height:150px;display:block;float:left;}
 a[href|="/hypnopony"] {background-image: url(%%hypnopony%%);width:123px;height:150px;display:block;float:left;}
+a[href|="/intensefire"], a[href|="/spitfireintensifies"] {background-image: url(%%intensefire%%);width:100px;height:100px;display:block;float:left;}
 
 /* Misfit Emotes */
 a[href|="/fillycadance"] {width:100px;height:126px;}

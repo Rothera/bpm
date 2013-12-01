@@ -182,7 +182,7 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  text-align:center;
  width:100%;
 /*Footer image by /u/TheJBW*/
- background-image:url(%%cmc-security-agency%%);
+ background-image:url(%%sweetie-actual-bell%%);
  background-repeat:no-repeat;
  margin-bottom:-80px;
  background-position: 50% 100%;
@@ -308,27 +308,25 @@ body{background:url(%%scoots-bg%%) no-repeat fixed center center}
  color:#56a6f7
 }
 
-/* Make deleted messages less noticeable /u/djimbob */
-form.grayed, 
-form.grayed ~ ul.flat-list.buttons {
-  display: none
+/* Make deleted messages less noticeable*/
+.deleted .grayed {
+	display: none;
 }
-p.tagline > a.expand:first-child + em:after, 
-div.collapsed > a.expand:first-child + em:after {
-  visibility: visible;
-  font-size: x-small;
-  font-weight: bold;
-  content: "Comment deleted or removed"
+
+.deleted > .entry .noncollapsed:after {
+	opacity: .25;
+	color: #858585;
 }
-p.tagline > a.expand:first-child + em, 
-div.collapsed > a.expand:first-child + em {
-  visibility: hidden;
-  font-size: 0
+
+.deleted>.entry .expand {
+	visibility: visible;
 }
-div.collapsed > a.expand:first-child + em + time + a.expand,
-div.collapsed > a.expand:first-child + em + time + em + a.expand {
-  display: none;
+
+.deleted.comment> .entry .tagline {
+	visibility: hidden;
 }
+
+/* end fancy deletes */
 
 .sidebox.submit.submit-link{width: 150px}
 .sidebox.submit.submit-text{margin-top: -42px;margin-left: 153px}

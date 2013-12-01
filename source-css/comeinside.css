@@ -129,6 +129,25 @@ html:lang(en) .side .usertext[id$="9"] a[href="/cibg-pony"] { background:url(%%c
 
 /* ------ Emotes! --------- */
 
+a[href|='/ajscepter'], a[href|='/dashscepter'], a[href|='/derpsecpter'], a[href|='/ppscepter'], a[href|='/rariscepter'], a[href|='/shysecpter'], a[href|='/spikescepter'], a[href|='/taviscepter'], a[href|='/trixscepter'], a[href|='/vsscepter']{
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%scepter%%)
+    } 
+
+a[href|='/ajscepter'] {width:44px; height:175px; background-position: -2px -2px}
+a[href|='/dashscepter'] {width:43px; height:175px; background-position: -2px -179px}
+a[href|='/derpsecpter'] {width:43px; height:175px; background-position: -2px -356px}
+a[href|='/ppscepter'] {width:57px; height:175px; background-position: -2px -533px}
+a[href|='/rariscepter'] {width:52px; height:175px; background-position: -2px -710px}
+a[href|='/shysecpter'] {width:49px; height:175px; background-position: -2px -887px}
+a[href|='/spikescepter'] {width:38px; height:175px; background-position: -2px -1064px}
+a[href|='/taviscepter'] {width:42px; height:175px; background-position: -2px -1241px}
+a[href|='/trixscepter'] {width:44px; height:175px; background-position: -2px -1418px}
+a[href|='/vsscepter'] {width:48px; height:175px; background-position: -2px -1595px}
+
+
 a[href|='/ajterror'], a[href|='/cookieninja'], a[href|='/dashready'], a[href|='/disapprovowl'], a[href|='/duckface'], a[href|='/flutterterror'], a[href|='/seewhatyoudidthere'], a[href|='/ldsalute'], a[href|='/rariderp'], a[href|='/shyohu'], a[href|='/skepticaldash'], a[href|='/spikemad'], a[href|='/twifetish'], a[href|='/twiwhatever'], a[href|='/scepter']{
     display: block;
     clear: none;
