@@ -118,7 +118,7 @@ function emote_matches_query(query, emote_info, lc_emote_name) {
     // Match if ALL search terms match
     for(var nt_i = 0; nt_i < query.name_terms.length; nt_i++) {
         if(lc_emote_name.indexOf(query.name_terms[nt_i]) < 0) {
-            return false; // outer loop, not inner
+            return false;
         }
     }
 
@@ -141,7 +141,7 @@ function emote_matches_query(query, emote_info, lc_emote_name) {
             if(sr_set.indexOf(emote_info.source_id) > -1 || sr_set.indexOf(emote_info.source_name) > -1) {
                 if(sr_set[0]) {
                     is_match = true; // Matched positive term
-                    return true;
+                    break;
                 } else {
                     return false; // Matched negative term
                 }
@@ -161,7 +161,7 @@ function emote_matches_query(query, emote_info, lc_emote_name) {
         for(var ts_i = 1; ts_i < tag_set.length; ts_i++) {
             if(emote_info.tags.indexOf(tag_set[ts_i]) > -1) {
                 any = true;
-                return true;
+                break;
             }
         }
         // We either didn't match, and wanted to, or matched and didn't
