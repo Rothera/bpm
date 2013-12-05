@@ -375,7 +375,6 @@ function display_search_results(store, results) {
     var hidden = 0;
     var prev = null;
     var actual_results = results.length;
-    var formatting_id = tag_name2id["+formatting"];
     for(var i = 0; i < results.length; i++) {
         var result = results[i];
         if(prev === result.name) {
@@ -401,7 +400,7 @@ function display_search_results(store, results) {
         // this.
         html += "<span data-emote=\"" + result.name + "\" class=\"bpm-search-result " +
                 result.css_class + "\" title=\"" + result.name + " from " + result.source_name + "\">";
-        if(result.tags.indexOf(formatting_id) > -1) {
+        if(result.tags.indexOf(formatting_tag_id) > -1) {
             html += "Example Text";
         }
         html += "</span>";

@@ -54,7 +54,7 @@ function convert_emote_element(store, element, parts, name, info) {
     }
     element.setAttribute("data-bpm_state", state);
 
-    if(disabled || store.prefs.stealthMode) {
+    if(disabled || (store.prefs.stealthMode && info.tags.indexOf(formatting_tag_id) < 0)) {
         if(can_modify_text) {
             // Any existing text (generally, there shouldn't be any) will look
             // a little funny with our custom CSS, but there's not much we can
@@ -152,7 +152,7 @@ function process_element(store, element, convert_unknown) {
         // Don't normalize case for emote lookup- they are case sensitive
         var parts = href.split("-");
         var name = parts[0];
-        var info = store.lookup_emote(name, false);
+        var info = store.lookup_emote(name, true);
 
         if(info) {
             // Found an emote

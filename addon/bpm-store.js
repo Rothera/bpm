@@ -196,3 +196,5 @@ var _FLAG_REDIRECT = 1 << 1;
 function sanitize_emote(s) {
     return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_").replace("#", "_hash_").replace("/", "_slash_");
 }
+
+var formatting_tag_id = tag_name2id["+formatting"];

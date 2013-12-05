@@ -109,7 +109,6 @@ function track_focus() {
 function inject_emote_into_form(store, target_form, emote_name) {
     log_debug("Injecting ", emote_name, "into", target_form);
     var emote_info = store.lookup_core_emote(emote_name, true);
-    var formatting_id = tag_name2id["+formatting"];
 
     var start = target_form.selectionStart;
     var end = target_form.selectionEnd;
@@ -121,7 +120,7 @@ function inject_emote_into_form(store, target_form, emote_name) {
         if(inside) {
             var extra_len, emote;
             // Make selections into text/alt-text
-            if(emote_info.tags.indexOf(formatting_id) > -1) {
+            if(emote_info.tags.indexOf(formatting_tag_id) > -1) {
                 extra_len = 4; // '[]('' and ')'
                 emote = "[" + inside + "](" + emote_name + ")";
             } else {
