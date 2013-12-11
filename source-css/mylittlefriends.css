@@ -1277,19 +1277,14 @@ a.author[href$="/Oxiproxd9"]:after {
     visibility: visible !important;
     display: block;
     letter-spacing: normal
-} 
-
-
-			
-			
+} 			
 	body {
 		min-width: 940px;
-		background-color: #e5e5e5;
+		background-color: #f1f1f1;
 		color: #3b3b3b;
 		font-family: arial, sans-serif;
 	}
 
-		/* Custom browser CSS */
 		:focus {outline: 0px;}
 			
 		::-webkit-scrollbar {
@@ -1319,7 +1314,7 @@ a.author[href$="/Oxiproxd9"]:after {
 		
 		::selection {background-color:#5b92fa;color:white;font-weight:bold;}
 
-		/* Link */
+		
 		a {
 			color: #5b92fa;
 		}
@@ -1338,7 +1333,6 @@ a.author[href$="/Oxiproxd9"]:after {
 				content: "... so go ahead and tell us what you think!";
 			}
 
-		/* General Button*/
 		button, #search input[type='submit'], .wiki-page .wiki-page-content .wiki_button {
 			margin: 3px 3px 3px 3px;
 			padding: 0px 8px 1px 8px;
@@ -1373,9 +1367,6 @@ a.author[href$="/Oxiproxd9"]:after {
 					line-height: 25px;
 				}
 
-
-		/* Header Area */
-		/* Top Most header */
 		#sr-header-area {
 			opacity: 0.4;
 			filter: alpha(opacity=40);
@@ -1386,8 +1377,8 @@ a.author[href$="/Oxiproxd9"]:after {
 		}
 
 			#sr-header-area:hover {
-				opacity: 100;
-				filter: alpha(opacity=100);
+				opacity: 90;
+				filter: alpha(opacity=90);
 			}
 
 			#sr-header-area a {
@@ -1396,7 +1387,7 @@ a.author[href$="/Oxiproxd9"]:after {
 			}
 		
 				#sr-header-area a:hover {
-					color: #5b92fa; 
+					color: #7CA9FF; 
 					text-decoration: none;
 				}
 		
@@ -1430,17 +1421,13 @@ a.author[href$="/Oxiproxd9"]:after {
 			 	background-color: #5b92fa;
 			 	color: #fff !important;
 			 }
-		
-		/* Header Image */
+
 		#header {
 			height: 119px;
-			background-color: #cee3f8;
-			background-image: url(%%headerimg%%);
-			background-attachment: fixed;
-			background-repeat: no-repeat;
+			background: #2a2b2e url(%%headerimg%%) no-repeat fixed 68% 0%;
 			border-bottom: 0px solid;
-                        background-position: top center;
 		}
+
 			#header:after {
 				position: absolute;
 				top: 117px;
@@ -1448,15 +1435,15 @@ a.author[href$="/Oxiproxd9"]:after {
 				z-index: -1;
 				width: 100%;
 				height: 35px;
-				background: #f5f5f5;
-				border-bottom: 1px solid #DADADA;
+				background: #fff;
+				border-bottom: 0px solid;
 				content: " ";
 				text-indent: -999px;
 			}
 
 			#header-img {
 				position: absolute;
-				top:115px;
+				top: 115px;
 				left: 0px;
 				z-index: 99;
 				width: 35px;
@@ -1468,45 +1455,35 @@ a.author[href$="/Oxiproxd9"]:after {
 
 				#header-img:hover {background-position: -35px -49px;}
 			
-.pagename a {
+			.pagename a {
 				display: block;
 				visibility: visible !important;
 				position: absolute;
-				top: 70px;
 				left: 5%;
 				z-index: 99;
-				margin-left: -54.5px;
-				width: 365px;
-				height: 57px;
 				background-image: url(%%logo%%);
 				background-position: 0px 0px;
 				background-repeat: no-repeat;
-				color: #fff;
 				text-indent: -9999px;
 			}
 
-				.pagename a:hover {
-					background-position: 0px -57px;
-				}
+				.pagename a:hover {background-position: 0px -57px;}
 
-					.pagename a:active {
-						background-position: 0px -57px;
-					}
 
 				.pagename {visibility: hidden;}
 
-		/* HOT / NEW / ETC */
 		#header .tabmenu {
 			display: block;
 			position: absolute;
-			top: 112px;
+			top: 113px;
+			margin: 0px;
 			right:0px;
 			left: 0px;
-			padding: 3px 0px 7px 0px;
+			padding: 0px;
 			height: 25px;
-			background-color: #f5f5f5;
-			border-bottom: 1px solid #DADADA;
-			color: #707070;
+			background-color: transparent;
+			border-bottom: 0px solid;
+			color: #999;
 			list-style-type: none;
 			vertical-align: bottom;
 			text-align: center;
@@ -1519,15 +1496,15 @@ a.author[href$="/Oxiproxd9"]:after {
 
 			.tabmenu li {
 				display: inline-block;
-				margin:0px;
+				margin:7px 0px 0px 0px;
 			}
 			
 				.tabmenu li a {
-					margin: 0px 20px 0px 20px;
-					padding: 2px 5px 4px 5px;
+					margin: 0px 17px 0px 17px;
+					padding: 8px 0px 3px 0px;
 					background-color: transparent;
 					border: 0px solid;
-					color: #737373;
+					color: #999;
 					font-weight: normal;
 					font-size: 22px;
 					font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
@@ -1548,53 +1525,31 @@ a.author[href$="/Oxiproxd9"]:after {
 						border-color: #719ff2;
 					}
 
-		/* User bar */
+				.res #header .tabmenu {
+					text-align: left;
+					margin-left: 55px;
+				}
+
+		.listing-page .tabmenu li:nth-of-type(3),
+		.listing-page .tabmenu li:nth-of-type(4),	
+		.listing-page .tabmenu li a[href*="/promoted"], 
+		.listing-page .tabmenu li a[href*="/gilded"]	
+		{display:none;}
+
 		#header-bottom-right {
-			visibility: hidden;
 			position: absolute;
 			top: 182px;
 			right: 0px;
-			overflow: hidden;
-			margin-right: 10px;
 			padding: 8px 15px 7px 15px;
-			width: 50px;
-			height: 20px;
-			background-color: #f5f5f5;
+			width: auto;
+			height: 12px;
+			background-color: #fff;
 		}
-
-			#header-bottom-right:before {
-				visibility: visible !important;
-				z-index: 99;
-				background-color: #f5f5f5;
-				color: #252525;
-				content: "«";
-				font-size: 25px;
-				line-height: 15px;
-				cursor: pointer;
-			}
-
-			#header-bottom-right:hover {
-				visibility: visible;
-				z-index: 100;
-				width: inherit;
-				color: #f5f5f5 !important;
-				line-height: 13px;
-			}
-
-				#header-bottom-right:hover:before {
-					content: " ";
-				}
-
-			.user {
-				color: #666;
-			}
-
-				.loggedin .user {
-					color: #666;
-				}
+			.user {color: #7A7A7A;}
+				.loggedin .user {color: #7A7A7A;}
 			
 			#header-bottom-right a {
-				color: #262626;
+				color: #7A7A7A;
 				font-weight: normal;
 				font-size: 15px;
 			}
@@ -1605,7 +1560,6 @@ a.author[href$="/Oxiproxd9"]:after {
 					text-decoration: none;
 				}
 
-			/* Mail / Modmail icons */
 			#mail {
 				top: -1px;
 				overflow: visible;
@@ -1619,7 +1573,7 @@ a.author[href$="/Oxiproxd9"]:after {
 				}
 			
 				#mail.nohavemail {background-position: -64px 0px;}
-				#mail.havemail   {background-position:-80px 0px;} 
+				#mail.havemail   {background-position:-80px 0px;}
 
 					#mail.havemail:before, #modmail.havemail:before  {
 						display: block;
@@ -1633,7 +1587,7 @@ a.author[href$="/Oxiproxd9"]:after {
 						height: 25px;
 						background-color: #fff;
 						background-image: url(%%spritesheet%%);
-						background-position: -151px -50px;
+						background-position: -126px -50px;
 						border-radius: 50%;
 						content: " ";
 					}
@@ -1650,58 +1604,75 @@ a.author[href$="/Oxiproxd9"]:after {
 
 				#modmail.havemail   {background-position:-112px 0px;}
 				#modmail.nohavemail {background-position:-96px 0px;}
-				#modmail.havemail:before {background-position: -126px -50px; margin-right: 40px;}
+				#modmail.havemail:before {background-position: -151px -50px; margin-right: 40px;}
 
+			#header-bottom-right a.pref-lang, .loggedin .logout a{
+				background-position: -96px -49px;
+				background-image: url(%%spritesheet%%);
+				width: 16px;
+				height: 16px;
+				display: inline-block;
+				text-indent: -9999px;
+				margin: 0px;
+				position: relative;
+				top: -2px;
+			}
 
-		/* Sidebar */
+				.loggedin .logout a {background-position: -80px -49px;}
+
+			.gearIcon {
+				background-image: url(%%spritesheet%%)!important;
+				background-position: -80px -65px!important;
+				height: 16px!important;
+				width: 17px!important;
+			}
+
+			#modmail, #mail, .gearIcon, #header-bottom-right a.pref-lang, 
+			.loggedin .logout a {
+				opacity: 0.75;
+			}
+
+				#modmail:hover, #mail:hover, #header-bottom-right a.pref-lang:hover, 
+				.loggedin .logout a:hover, .gearIcon:hover {
+					opacity: 1;
+					text-decoration: none !important;
+					border-bottom: 0px solid !important;
+				}
+
 		.side {
 			float: right;
-			margin: 37px 10px 0px 0px;
+			margin: 38px 10px 0px 0px;
 			padding-top: 25px;
 			width: 300px;
-			background-color: #FFF;
-			-webkit-border-radius: 3px;
-			border-radius: 3px;
-			-webkit-box-shadow: 0px 2px 5px #cecece;
-			box-shadow: 0px 2px 5px #cecece;
 			text-align: left;
 			font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 		}
-		
-		
-		
-			
-			/* SUBMIT LINK OR POST */
+
 			.morelink {
-				position: absolute;
-				top: 164px;
-				right: 336px;
 				z-index: 97;
 				width: 175px;
 				height: 26px;
-				background-color: #5b92fa;
+				background-color: #5B92FA;
 				background-image: none!important;
 				border: none;
-				border-top: 2px solid #5b92fa;
-				border-bottom: 3px solid #5b92fa;
-				border-radius: 2px;
-				-webkit-box-shadow: 0 1px 0 #E2E0E0;
-				box-shadow: 0 1px 0 #E2E0E0;
-				line-height: 26px;
+				border-top: 2px solid #5B92FA;
+				border-bottom: 3px solid #5B92FA;
+				border-radius: 1px;
+				-webkit-box-shadow: 0 1px 2px #CECECE;
+				box-shadow: 0 1px 2px #CECECE;
+				margin-left: 15px;
 			}
 
 				.morelink:hover {
-					background-color: #6599fa;
-					border-top: 2px solid #6599fa;
-					border-bottom: 3px solid #3863b6;
-					-webkit-box-shadow: none;
-					box-shadow: none;
+					background-color: #7BA8FF;
+					border-top: 2px solid #7BA8FF;
+					border-bottom: 3px solid #3863B6;
 				}
 
 					.morelink:active {
-						background-color: #3863b6;
-						border-top: 2px solid #21407a;
-						border-bottom: 3px solid #3863b6;
+						background-color: #3863B6;
+						border-top: 2px solid #21365F;
+						border-bottom: 3px solid #3863B6;
 						-webkit-box-shadow: none;
 						box-shadow: none;
 					}
@@ -1714,10 +1685,22 @@ a.author[href$="/Oxiproxd9"]:after {
 					font-size: 15px;
 					font-family: arial, sans-serif;
 					cursor: default;
-					line-height: 28px;
+					line-height: 30px;
 				}
 
 					.morelink a:hover {text-decoration: none;}
+
+
+					.subscriber .morelink a:after {
+						position: fixed;
+						top: 4px;
+						right: 30px;
+						z-index: 98;
+						background-color: #5B92FA;
+						color: #FFF;
+						content: "Submit Content";
+						padding: 0px 12px;
+					}
 			
 				.disabled .morelink,.disabled .morelink:hover {
 					background-image: none;
@@ -1727,6 +1710,7 @@ a.author[href$="/Oxiproxd9"]:after {
 					background-color: #c8c8c8;
 					margin-top: 3px;
 					text-shadow: none;
+					box-shadow:none;
 				}
 
 					.disabled .morelink a {
@@ -1741,7 +1725,7 @@ a.author[href$="/Oxiproxd9"]:after {
 					}
 
 					.account-activity-box, .sidebox.create, .morelink .nub {display: none;}
-			/* Subreddit name sidebar */
+
 			.titlebox h1 a {
 				position: absolute;
 				top: 164px;
@@ -1758,8 +1742,7 @@ a.author[href$="/Oxiproxd9"]:after {
 				.titlebox h1 a:hover {color: #5b92fa;text-decoration: none;}
 
 			.sidebox .subtitle {font-size: 1.6em;}
-		
-			/* Sub / Unsub button */
+
 			.fancy-toggle-button .active {
 				padding: 1px 8px;
 				background-image: none !important;
@@ -1775,7 +1758,6 @@ a.author[href$="/Oxiproxd9"]:after {
 				cursor: default;
 			}	
 
-				/* Sub */
 				.fancy-toggle-button .add {
 					background-color: #5b92fa;
 					border-top: 2px solid #5b92fa;
@@ -1801,15 +1783,12 @@ a.author[href$="/Oxiproxd9"]:after {
 							box-shadow: none;
 						}
 
-				/* Unsub */
-
-				/* Unsub */
 				.fancy-toggle-button .remove {
 					background-color: #fff;
 					border: 1px solid #d4d4d4;
 					-webkit-box-shadow: 0 1px 0 #e2e0e0;
 					box-shadow: 0 1px 0 #e2e0e0;
-					font-size: 9px;
+					font-size: 10px;
 					line-height: 16px;
 					color: #737373 !important;
 					cursor: pointer;
@@ -1830,22 +1809,22 @@ a.author[href$="/Oxiproxd9"]:after {
 							color: #333;
 						}
 
-
-				/* Sub notice */
 				.fancy-toggle-button .add:after {
 					position: fixed;
-					top: 0px;
-					left: 15px;
+					top: 4px;
+					right: 25px;
 					z-index: 98;
-					color: #5b92fa;
-					content: "Subscribe?";
-					line-height: 28px;
+					background-color: #5B92FA;
+					color: #FFF;
+					content: "Subscribe Now";
+					padding: 0px 16px;
 				}
 					.fancy-toggle-button .add:hover:after {
-						border-bottom: 2px solid #5b92fa;
+						background-color: #7BA8FF;
+						border-bottom: 3px solid #3863B6 ;
+						height: 23px;
 					}
-			
-			/*Replace readers.. */
+
 				div.titlebox span.word {display: none;}
 				.titlebox .users-online {display: inline;}
 				.titlebox .users-online:before {display: none;}
@@ -1856,14 +1835,14 @@ a.author[href$="/Oxiproxd9"]:after {
 				.titlebox .users-online, .titlebox .number {cursor: text;}	
 				.titlebox .tagline {font-size: 12px;}	
 
-			/* Subreddit description */
 			.titlebox {
 				padding: 0px 15px 15px 15px;
 				color: #404040;
 		
 			}
 				.titlebox .md {
-					font-size: 13px;
+					font-size: 14px;
+					line-height: 1.35em;
 					font-family: arial, sans-serif;
 				}
 
@@ -1874,7 +1853,6 @@ a.author[href$="/Oxiproxd9"]:after {
 					font-size: 110%;
 				}
 
-				/* Download button */
 				.titlebox h5 {
 					width: 100%;
 					height: 30px;
@@ -1906,7 +1884,6 @@ a.author[href$="/Oxiproxd9"]:after {
 							border-bottom: 2px solid #306cd1;
 						}
 
-			/* Search */
 			#search {
 
 			}
@@ -1955,11 +1932,9 @@ a.author[href$="/Oxiproxd9"]:after {
 									.search-page form#search label {font-size: 150%;cursor: pointer;}
 			
 					#search_showmore {display: none;}
-			
-			/* Ad Frame */
+
 			#ad-frame,#ad_main {text-align: center;}
 
-			/* Sidebar mod box */
 			.sidecontentbox {
 				padding: 0px 5px 0px 15px;
 			}
@@ -2006,7 +1981,6 @@ a.author[href$="/Oxiproxd9"]:after {
 						text-decoration: underline;
 					}
 
-			/* Mod icons */
 			.icon-menu a {background-color: transparent;}
 			.icon-menu .reddit-edit:before{background-image:url(%%spritesheet%%);background-position: 0px  -33px;}
 			.icon-menu .moderator-mail:before{margin-top:-1px;height:16px;background-image:url(%%spritesheet%%);background-position: -16px -32px;}
@@ -2021,7 +1995,6 @@ a.author[href$="/Oxiproxd9"]:after {
 			.icon-menu .reddit-moderationlog:before{background-image:url(%%spritesheet%%);background-position: -160px -33px;}
 			.icon-menu a.reddit-unmoderated {display: none;}
 
-			/* Message the mods */
 				.sidecontentbox a.helplink {
 					display: block;
 					margin-right: 27px;
@@ -2062,94 +2035,85 @@ a.author[href$="/Oxiproxd9"]:after {
 							-webkit-box-shadow: none;
 							box-shadow: none;
 						}
-				
 
-
-	/* Links/Posts Area */
-	/* Actual Links */
 		.content {
-			margin-top: 88px;
+			margin-top: 38px;
 			margin-left: 10px;
 		}
 
-		/* LeftHover box */
-
-
-			/* Content Banner */
-			.titlebox h6:nth-of-type(1) {
-				display: block;
-				position: absolute;
-				top: 155px;
-				right: 325px;
-				left: 10px;
-				padding: 14px 0px 14px 15px;
-				min-width: 588px;
-				background-color: #f5f5f5;
-				border: 1px solid #dcdcdc;
-				border-radius: 2px;
-				color: #666;
-				font-weight: normal;
-				font-size: 16px;
-			}
-
-				.titlebox h6:nth-of-type(1) a{
-					color: #5b92fa;
-					font-weight: bold;
-				}
-
-					.titlebox h6:nth-of-type(1) a:hover{border:none;text-decoration: underline;}
-
-				/* Fixed Scroll Banner */
-				.titlebox h6:nth-of-type(2) {
+				.titlebox h6 {
 					position: fixed;
 					top:0px;
 					right: 0px;
 					left: 0px;
 					z-index: 97;
-					height: 29px;
+					height: 35px;
 					background-color: #fff;
-					-webkit-box-shadow: 0 2px 4px 0 #c8c8c8;
-					box-shadow: 0 2px 4px 0 #c8c8c8;
+					-webkit-box-shadow: 0 2px 4px 0 #d3d3d3;
+					box-shadow: 0 2px 4px 0 #d3d3d3;
 					color: #737373;
 					text-align: center;
 					font-weight: normal;
-					font-size: 16px;
-					line-height: 29px;
+					font-size: 22px;
+					line-height: 35px;
 				}
 
-					.titlebox h6:nth-of-type(2) a {
-						margin: 0px 30px;
-						padding-bottom: 4px;
-						color: #737373;
+					.titlebox h6 a {
+						margin: 0px 17px 0px 17px;
+						padding: 2px 0px 2px 0px;
+						border: 0px solid;
+						color: #999;
+						font-weight: normal;
+						font-size: 22px;
+						font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
 					}
 
-						.titlebox h6:nth-of-type(2) a:hover {
-							border-bottom: 2px solid #5b92fa;
-							color: #262626;
+						.titlebox h6 a:hover {
+							border-bottom: 2px solid #5b92fa !important;
+							color: #262626 !important;
 							text-decoration: none;
 						}
 
+						.titlebox h6 a[href*="http://www.reddit.com#top"] {
+							position: fixed;
+							left:0px;
+							top:0px;
+							height: 35px;
+							width: 35px;
+							background-color: #ff0;
+							background-image: url(%%spritesheet%%);
+							background-position: 0px -49px;
+							border-bottom: 0px;
+							text-indent: -9999px;
+							padding: 0px;
+							margin: 0px;
+						}
+
+							.titlebox h6 a[href*="http://www.reddit.com#top"]:hover {
+								background-position: -35px -49px;
+							}
+
+						.new-page .titlebox h6 a[href*="/new"], .top-page .titlebox h6 a[href*="/top"], .hot-page .titlebox h6 a[href*="/hot"]  {border-bottom: 2px solid #5b92fa; color: #262626;}
+
+
 			.link {
-				margin-right: 320px;
+				margin-right: 311px;
 				margin-bottom: 2px;
 				padding: 8px 10px 6px 10px;
-				background-color: white;
-				border: 1px solid #d8d8d8;
-				border-top: 0px solid;
-				border-bottom: 3px solid #d8d8d8;
-				border-radius: 3px;
 			}
 
-				/* Stickied Link */
-				.stickied.link {
-					border-bottom-color: #95D190;
-					border-bottom-right-radius: 5px;
-					border-bottom-left-radius: 5px;
+				.link, .side, .submit-page .infobar, .roundfield, .submit-page .content button,
+				.content.submit .info-notice, .stylesheet-customize-container .pretty-form, #images, .search-page .raisedbox, 
+				.search-page .searchfacets, .linefield, .search-page .searchpane, .nextprev {
+					border: 0px;
+					border-bottom: 3px solid #e5e5e5 !important;
+					background-color: #fff;
 				}
-					.thing.stickied a.title {color: #65b354!important;}
+
+				.stickied.link {border-bottom-color: #C4DAC2 !important;}
+					.thing.stickied a.title, .thing.stickied a {color: #65b354!important;}
 					.thing.stickied a.thumbnail {background-position: -102px -209px;}
 
-				/* Promoted Link */
 				.organic-listing {
 					margin-right: 320px;
 					border: 1px solid #D0D6DD;
@@ -2158,19 +2122,17 @@ a.author[href$="/Oxiproxd9"]:after {
 				}
 
 				.link .title {
-					font-weight: normal;
-					font-size: 17px;
+					font-weight: bold;
 					font-family: Arial, sans-serif;
 					line-height: 100%;
 				}
 
 					.link .title:hover {color: #5b92fa !important;}
-						/* Link Titles */
-		/*Unvisited*/	.thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title {color:#5b92fa;}
-		/*Visited  */	.thing .title.loggedin:visited, .thing .title:visited {color:#555;}
-		/*Clicking */	.thing .title.loggedin.click:visited, .thing .title.click:visited {color:#5b92fa;}
 
-				/* Upvote and downvotes */
+.thing .title.loggedin.click, .thing .title.click, .thing .title.loggedin, .thing .title {color:#5b92fa;}
+thing .title:visited, .thing.visited .title {color:#7D5D8A;}
+	.thing .title.loggedin.click:visited, .thing .title.click:visited {color:#5b92fa;}
+
 				.link .score {margin-bottom: -1px;margin-left: 1px;color:#999;font-family: arial, sans-serif;}
 			
 					.link .score.likes {color: #ee5821;}	
@@ -2193,21 +2155,6 @@ a.author[href$="/Oxiproxd9"]:after {
 					.arrow.down {background-position: 0px 0px;}
 					.arrow.downmod {background-position: -16px 0px;}
 
-					/* Disable Downvotes on posts with less than 3 total votes */
-					.link[data-ups="2"][data-downs="0"] .midcol:after, .link[data-ups="1"][data-downs="1"] .midcol:after, .link[data-ups="0"][data-downs="2"] .midcol:after,
-					.link[data-ups="1"][data-downs="0"] .midcol:after, .link[data-ups="0"][data-downs="1"] .midcol:after, 
-					.link[data-ups="0"][data-downs="0"] .midcol:after {
-					  position: absolute;
-					  margin-top: -16px;
-					  width: 20px;
-					  height: 16px;
-					  background-color: white;
-					  content: ' ';
-					  opacity: 0.7;
-					}
-
-
-				/* Expand post */
 				.expando-button {
 					margin: 0px 5px 0px 0px !important;
 					width: 16px !important;
@@ -2227,12 +2174,11 @@ a.author[href$="/Oxiproxd9"]:after {
 					.expando-button.video.expanded, .eb-ve {background-position: -64px -17px;}
 					.expando-button.video.expanded:hover, .eb-veh {background-position: -80px -17px;}
 
-					.res .expando-button.image.collapsedExpando {background-position: -96px -17px!important;}
-					.res .expando-button.image.collapsedExpando:hover {background-position: -112px -17px!important;}
+					.res .expando-button.image.collapsed,.expando-button.image.gallery.collapsedExpando, .expando-button.image.collapsedExpando {background-position: -96px -17px!important;}
+					.res .expando-button.image.collapsed:hover, .expando-button.image.collapsedExpando:hover, .expando-button.image.gallery.collapsedExpando:hover {background-position: -112px -17px!important;}
 					.res .expando-button.image.expanded {background-position: -96px -17px!important;}
 					.res .expando-button.image.expanded:hover {background-position: -112px -17px!important;}
 
-					/* Selftext expand */
 					.link .usertext .md {
 						padding: 0 5px;
 						background-color: #fff;
@@ -2243,7 +2189,7 @@ a.author[href$="/Oxiproxd9"]:after {
 						font-weight: normal;
 						font-size: 14px;
 						font-family: arial, sans-serif;
-						line-height: 1.45em;
+						line-height: 1.35em;
 					}
 
 			.domain {color: white;}
@@ -2288,7 +2234,7 @@ a.author[href$="/Oxiproxd9"]:after {
 					padding: 0 1px;
 					color: #999;
 					font-weight: 400;
-					font-size: 12px;
+					font-size: 13px;
 				}
 
 					.entry .buttons li a:hover {
@@ -2322,10 +2268,11 @@ a.author[href$="/Oxiproxd9"]:after {
 						.link .rank {display: none;}
 						.link.last-clicked {
 							overflow: hidden;
-							background-color: #f5f5f5;
-							border: 1px solid #d8d8d8;
+							background-color: #f8f8f8;
+							border: 0px solid #d8d8d8;
+							border-bottom: 3px solid #e5e5e5;
 						}
-			/* Mod Report buttons */
+
 			.entry .buttons li.reported-stamp {
 				background-color: #f5b400;
 				border-radius: 2px;
@@ -2373,14 +2320,13 @@ a.author[href$="/Oxiproxd9"]:after {
 				background-color: #4B4A4A;
 				border: none;
 				color: #fff;
-				font-size: 110%;
+				font-size: 14px;
 			}
 
 				.infobar a {color: #89B3FF;}
 
-				/* First time visit infobar */
 				.infobar.welcome {
-					margin-right: 326px;
+					margin-right: 321px;
 					color: #333;
 					margin-bottom: 8px;
 				}
@@ -2389,14 +2335,11 @@ a.author[href$="/Oxiproxd9"]:after {
 				margin-top: 8px;
 				margin-right: 320px;
 				height: 35px;
-				background-color: #fff;
-				border: 1px solid #d8d8d8;
-				border-top-width: 0px;
-				border-bottom-width: 3px;
 				color: #737373;
 				text-align:center;
 				font-size: 16px;
 				line-height: 35px;
+				padding: 10px;
 			}
 
 				.nextprev a {
@@ -2410,23 +2353,15 @@ a.author[href$="/Oxiproxd9"]:after {
 						border: none;
 					}
 
-
-		/* Submit Page */
 		form#newlink.submit.content {
-			margin-top: 105px;
+			margin-top: 40px;
 		}
+
 
 			.submit-page .infobar {
 				margin-top: 0px;
 				margin-bottom: 8px;
 				padding: 10px 10px 10px 10px;
-				background-color: white;
-				border: 1px solid #d8d8d8;
-				border-top: 0px;
-				border-bottom-width: 3px;
-				border-radius: 3px;
-				border-top-left-radius: 0px;
-				border-top-right-radius: 0px;
 				color: #3b3b3b;
 				text-align: center;
 				text-indent: -9999px;
@@ -2466,11 +2401,6 @@ a.author[href$="/Oxiproxd9"]:after {
 				
 			.roundfield {
 				padding: 10px 10px 10px 10px;
-				background-color: white;
-				border: 1px solid #d8d8d8;
-				border-bottom-width: 3px;
-				border-top-width: 0px;
-				border-radius: 3px;
 				color: #707070;
 			}
 			
@@ -2502,22 +2432,22 @@ a.author[href$="/Oxiproxd9"]:after {
 				margin-left: 0px;
 				padding: 10px 10px 10px 10px;
 				width: 522px;
-				background-color: white;
-				border: 1px solid #d8d8d8;
-				border-bottom: 1px solid #d8d8d8;
-				border-radius: 3px;
 				color: #707070 !important;
 				text-align: center;
 				cursor: pointer;
+				border: 0px;
+				border-bottom: 3px solid #E5E5E5;
 			}
 
 				.submit-page button:hover {
 					background-color: #5b92fa;
 					color: white !important;
+					border-bottom: 4px solid #477ADB;
 				}
 
 					.submit-page button:active {
 						background-color: #315fb2;
+						border-bottom-color: #315fb2;
 					}
 
 				.submit-page h1 {display: none;}
@@ -2526,13 +2456,10 @@ a.author[href$="/Oxiproxd9"]:after {
 		.content.submit .info-notice {
 			margin: 0px 0px 4px 0px;
 			padding: 20px 10px 20px 10px;
-			background-color: white;
-			border: 1px solid #d8d8d8;
-			border-top-width: 0px;
-			border-bottom-width: 3px;
-			border-radius: 3px;
 			color: #707070;
 			text-align: center;
+			border: 0px;
+			border-bottom: 3px solid #E5E5E5;
 		}
 
 			.content.submit .info-notice a {
@@ -2546,7 +2473,6 @@ a.author[href$="/Oxiproxd9"]:after {
 				.submit-page .gray, #url-field button, #suggested-reddits {display: none;}
 				.submit-page form .spacer+.spacer {margin: 8px 0px;}
 
-		/* Flair Selector */
 		.flairselector.drop-choices.active {
 			visibility: visible !important;
 			background-color: #fff;
@@ -2584,31 +2510,32 @@ a.author[href$="/Oxiproxd9"]:after {
 			.flairselector ul {overflow: visible;}
 			.flairselector li.selected {background-color: #e5ebf8;border:none;}
 
-		/* Flairs */
-
-		/* LINKFLAIRS */
 		.linkflairlabel {
-			padding: 0px 2px;
+			padding: 0px 6px 1px 6px;
 			height: auto;
 			border-radius: 0px;
 			color: #333;
 			font-weight: bold;
 			font-style: normal;
 			font-variant: normal;
-			font-size: 12px;
+			font-size: 13px;
 			font-family: Tahoma, Arial, sans-serif;
 			cursor: default;
+			vertical-align: middle;
+
 		}
 
 			.linkflair-mod .linkflairlabel {
-				background-color: #109d59;
-				border: 1px solid #0a904f;
+				background-color: #5fb04d;
+				border: 1px solid #4c8d3e;
 				color: #fff;
 			}
 
+				.linkflair-mod a {color: #4c8d3e !important;}
+
 				.linkflair-mod .thumbnail.default, .linkflair-mod .thumbnail.self {
-					background-image: url(%%spritesheet%%);
-					background-position: -22px -90px;
+					background-image: url(%%spritesheet%%)!important;
+					background-position: -22px -90px!important;
 					background-repeat: no-repeat;
 				}
 
@@ -2834,21 +2761,22 @@ background-image: url(%%Tacoflair%%);
     display: inline-block;
     width: 16px;
     height: 16px	
-		}
+}
 		div.tabpane-content {
 			padding: 4px 4px 4px 4px;
-			border: 0px solid #e5e5e5 !important;
+			border: 0px solid #e5e5e5;
+			border-bottom-width: 3px;
+			background-color: #fff;
+			width: 1080px;
+			margin-top: 7px;
 		}
 			
 			.linefield {
 				margin-bottom: 5px;
 				padding: 10px 10px 10px 10px;
 				width: 55.5%;
-				background-color: white;
-				border: none;
-				border-bottom: 2px solid #e5e5e5;
-				border-radius: 0px;
 				color: #707070;
+				margin-bottom: 15px;
 			}
 		
 				.linefield .title {
@@ -2859,25 +2787,18 @@ background-image: url(%%Tacoflair%%);
 				.linefield .title+.gray {font-size: small;}
 	
 
-				.flairrow {
-					margin-top: 2px;
-					margin-right: 320px;
-					padding: 3px 5px 5px 3px;
-					background: white;
-					color: #707070;
-					text-transform: capitalize;
-				}
-			
-					.flairrow .tagline {
-						margin-right: 0px;
-						margin-left: 0px;
-						width: 150px;
-						font-size: 100%;
-					}
-
 					.flairtemplate .flairrow {
-						margin: 3px;
-					}
+						margin-top: 2px;
+						margin-right: 320px;
+						padding: 5px 5px 8px 3px;
+						color: #707070;
+						text-transform: capitalize;
+						width: 100%;
+						margin-bottom: 8px;
+					} 
+
+					.tabmenu li#tab-grant.selected, .tabmenu li#tab-templates.selected, 
+					.tabmenu li#tab-link_templates.selected {margin: 7px 0px 4px 0px;}
 
 					.tabmenu li#tab-grant.selected a, .tabmenu li#tab-grant a:hover,
 					.tabmenu li#tab-templates.selected a, .tabmenu li#tab-templates a:hover, 
@@ -2887,11 +2808,6 @@ background-image: url(%%Tacoflair%%);
 			margin-right: 320px;
 			margin-bottom: 10px;
 			padding: 10px 10px 10px 10px;
-			background-color: white;
-			border: 1px solid #d8d8d8;
-			border-bottom-width: 3px;
-			border-top-width: 0px;
-			border-radius: 3px;
 			color: #707070;
 		}
 
@@ -2909,7 +2825,9 @@ background-image: url(%%Tacoflair%%);
 		}
 		
 			.sheets .btn.right {display: none;}
-			.sheets .col textarea {width: 100%;background-color: #F8F8F8;}
+			.sheets .col textarea {width: 100%;background-color: #fff;}
+				.sheets .col textarea:hover {border-color: #B1B1B1;}
+					.sheets .col textarea:focus {border-color: #5b92fa;}
 			.sheets {margin-right: 0px;}
 		
 		#images {
@@ -2917,19 +2835,13 @@ background-image: url(%%Tacoflair%%);
 			margin-bottom: 30px;
 			padding: 10px 10px 10px 10px;
 			height: 1280px;
-			background-color: white;
-			border: 1px solid #d8d8d8;
-			border-bottom-width: 3px;
-			border-top-width: 0px;
-			border-radius: 3px;
 			color: #707070;
-
 		}
 		
 			ul#image-preview-list {
 				margin: 15px 0px 0px 0px;
 				padding-bottom: 80px;
-				font-size: larger;
+				font-size: 14px;
 			}
 
 		.linkinfo {
@@ -2948,11 +2860,8 @@ background-image: url(%%Tacoflair%%);
 			margin-right: 320px;
 			margin-bottom: 30px;
 			padding: 10px 10px 10px 10px;
-			background-color: #f8f8f8;
-			border: 1px solid #d8d8d8;
-			border-bottom-width: 3px;
-			border-top-width: 0px;
-			border-radius: 0px;
+			background-color: #FCFCFC;
+			border-bottom: 3px solid #e5e5e5;
 			color: #3b3b3b;
 		}
 
@@ -3053,9 +2962,9 @@ background-image: url(%%Tacoflair%%);
 			.comments-page .comment .md {
 				color: #161616;
 				font-weight: normal;
-				font-size: 13px;
+				font-size: 14px;
 				font-family: Arial, sans-serif;
-				line-height: 1.5em;
+				line-height: 1.35em;
 			}
 
 				hr {
@@ -3195,7 +3104,7 @@ background-image: url(%%Tacoflair%%);
 		.search-page #search {
 			position: relative;
 			top: 0px;
-			margin: 0px 0px 0px 80px;
+			margin: 0px 150px 0px 80px;
 			height: 50px;
 			background: none !important;
 			background-color: transparent;
@@ -3206,10 +3115,6 @@ background-image: url(%%Tacoflair%%);
 				margin: 5px 320px 5px 0px;
 				padding-left: 96px;
 				height: 120px;
-				background-color: white;
-				border: 1px solid #d8d8d8;
-				border-bottom: 1px solid #d8d8d8;
-				border-radius: 3px;
 			}
 			
 				.search-page .raisedbox {
@@ -3227,12 +3132,10 @@ background-image: url(%%Tacoflair%%);
 				margin-top: 10px;
 				margin-right: 320px;
 				padding: 10px;
-				background: white;
-				border: 1px solid #d8d8d8;
-				border-bottom: 1px solid #d8d8d8;
-				border-radius: 3px;
 				box-shadow:none;
 				color: #3b3b3b;
+				border: 0px solid;
+				border-bottom: 3px solid #E5E5E5;
 			}
 
 			.search-page #header .tabmenu {display: none !important;}
@@ -3249,7 +3152,7 @@ background-image: url(%%Tacoflair%%);
 				background-color: transparent !important;
 			}
 
-				.res .RES-keyNav-activeElement {outline: 1px dashed #dadada !important;border-right: 5px solid #5b92fa; border-radius: 0px !important;}
+				.res .RES-keyNav-activeElement {outline: 1px dashed #C5C5C5 !important; border-radius: 0px !important;}
 
 		.RESDialogSmall {
 			border: 1px solid #DFDFDF!important;
@@ -3269,16 +3172,16 @@ background-image: url(%%Tacoflair%%);
 			border: 1px solid #f8f8f8 !important;
 		}
 
-			.comments-page .comment {background-color: #f8f8f8 !important;}
-			.comments-page .comment .comment {background-color: #f8f8f8 !important;}
-			.comments-page .comment .comment .comment {background-color: #f8f8f8 !important;}
-			.comments-page .comment .comment .comment .comment {background-color: #f8f8f8 !important;}
-			.comments-page .comment .comment .comment .comment .comment {background-color: #f8f8f8 !important;}
-			.comments-page .comment .comment .comment .comment .comment .comment {background-color: #f8f8f8 !important;}
-			.comments-page .comment .comment .comment .comment .comment .comment .comment {background-color: #f8f8f8 !important;}
-			.comments-page .comment .comment .comment .comment .comment .comment .comment .comment {background-color: #f8f8f8 !important;}
-			.comments-page .comment .comment .comment .comment .comment .comment .comment .comment .comment {background-color: #f8f8f8 !important;}
-			.comments-page .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment {background-color: #f8f8f8 !important;}
+			.comments-page .comment {background-color: #FCFCFC !important;}
+			.comments-page .comment .comment {background-color: #FCFCFC !important;}
+			.comments-page .comment .comment .comment {background-color: #FCFCFC !important;}
+			.comments-page .comment .comment .comment .comment {background-color: #FCFCFC !important;}
+			.comments-page .comment .comment .comment .comment .comment {background-color: #FCFCFC !important;}
+			.comments-page .comment .comment .comment .comment .comment .comment {background-color: #FCFCFC !important;}
+			.comments-page .comment .comment .comment .comment .comment .comment .comment {background-color: #FCFCFC !important;}
+			.comments-page .comment .comment .comment .comment .comment .comment .comment .comment {background-color: #FCFCFC !important;}
+			.comments-page .comment .comment .comment .comment .comment .comment .comment .comment .comment {background-color: #FCFCFC !important;}
+			.comments-page .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment {background-color: #FCFCFC !important;}
 		
 		.RESshortcutside {
 			padding: 0px 0px !important;
@@ -3356,9 +3259,15 @@ background-image: url(%%Tacoflair%%);
 			border-radius: 2px !important;
 		}
 
+			.res #NREFloat {
+				top: 8px;
+				z-index: 100;
+			}
 
-		
-		
+				.res .fancy-toggle-button .add:after {
+					right: 50px !important;
+				}
+
 		.RESSubscriptionButton {
 			background-color: white !important;
 			border: 0px solid !important;
@@ -3367,13 +3276,13 @@ background-image: url(%%Tacoflair%%);
 		}
 		
 		.res #header-bottom-right {
+			right: 10px;
 			top: 121px !important;
 			padding: 4px 2px 5px 2px !important;
-			border-bottom: 1px solid #e5e5e5 !important;
 			border-radius: 0px !important;
 		}
 
-			#RESPrefsDropdown, #RESMainGearOverlay, #openRESPrefs {display: none !important;}
+			
 		
 			.res #userbarToggle {display: none !important;}
 
@@ -3426,39 +3335,39 @@ background-image: url(%%Tacoflair%%);
 				color: #fff;
 			}
 
-						
+						/* "squee" can be anything! 
+						This is what you use in the CSS field at the flair page */
 				.linkflair-squee .linkflairlabel { 
 				background-color: #5b92fa; /* Base color */
 				border: 1px solid #3a7ae6;	/* Slightly darker to create nice edges */
 				color: #fff; /* Text color - alternatively use #333 when white is too light */
 				}
 
-		.listing-page .tabmenu li:nth-of-type(3),	/* Rising */
-		.listing-page .tabmenu li:nth-of-type(4),	/* Controversial */
-		.listing-page .tabmenu li:nth-of-type(6),	/* Saved links */
-		.listing-page .tabmenu li:nth-of-type(7),	/* Wiki */
-		.listing-page .tabmenu li:nth-of-type(8) 	/* Promoted Links.. seriously leave this one hidden */ 
-		{display:none;}
+		/* My subreddit mainly uses SELF posts */
 
 			.sidebox.submit.submit-link {display: none;} 
+	
+		/* My subreddit mainly uses LINK posts */
+			/* Then add to the line above and remove  from
+			the line below the asterix and slahes */
+
+
+			/*.sidebox.submit.submit-text {display: none;}*/
 
 		.formtabs-content .infobar:before {
-			content: "Here you can set text that users will see when submitting."; /* Don't delete the " "'s*/
+			content: "Here you can set text that users will see when submitting."; /* Don't delete the " "*/
 		}
 
 		div.titlebox span.number:after {content: " readers";} /* Leave the space before the name! */
 
-		#header {
-			background-position: 50% 0%; /* To CENTER the image */									
-		}								 /* Play with the 50% to move the image
-											leave the 0%. */
-
-
 		.pagename a {
 			top: 70px; /* The length the logo is moved from the top of the page */
-			width: 365px;/* TOTAL Image width */
+			width: 365px; /* TOTAL Image width */
 			margin-left: -54px; /* This HAS to be ->50%< of the TOTAL image width. Don't delete the MINUS! */
 			height: 57px; /* 50% of the TOTAL height of the image. */
 		}
 	
 			.pagename a:hover {background-position: 0px -57px;} /* Replace the 77 with your height */
+
+			
+			

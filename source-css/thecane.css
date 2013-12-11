@@ -7,7 +7,7 @@
 
 .sidecontentbox .helplink + .title > h1
 {
- color:white!important;
+ color:#e2c642!important;
  font-size:1px!important;
  display:inline-block
 }
@@ -141,12 +141,31 @@ color:#a3892a;
 color:#6c5701;
 }
 
+.upvotes .word {
+font-size:0px
+}
+
+.upvotes .word:after {
+font-size:10px;
+content:"upcanes"
+}
+
+.downvotes .word {
+font-size:0px
+}
+
+.downvotes .word:after {
+font-size:10px;
+content:"downscepters"
+}
+
 .side {
 border-left:2px solid #a3892a;
 padding-left:2px;
 background-color:#e2c642;
 margin:0px;
-padding-right:5px;
+padding-right:3px;
+padding-left:2px;
 }
 
 .side a {
@@ -187,11 +206,11 @@ background-image:none;
 background-color:#f7e869;
 border-top-left-radius:10px;
 border-bottom-left-radius:10px;
-border-top:3px solid #6b5600;
-border-left:3px solid #6b5600;
+border-top:2px solid #6b5600;
+border-left:2px solid #6b5600;
 border-right:1px dashed #6b5600;
-border-bottom:3px solid #6b5600;
-right:156px;
+border-bottom:2px solid #6b5600;
+right:155px;
 display:inline;
 text-align:center
 }
@@ -206,14 +225,14 @@ background-image:none;
 background-color:#f7e869;
 border-top-right-radius:10px;
 border-bottom-right-radius:10px;
-border-bottom:3px solid #6b5600;
+border-bottom:2px solid #6b5600;
 border-left:1px dashed #6b5600;
-border-right:3px solid #6b5600;
-border-top:3px solid #6b5600;
+border-right:2px solid #6b5600;
+border-top:2px solid #6b5600;
 width:150px;
 display:inline;
 text-align:center;
-right:3px
+right:2px
 }
 
 div.sidebox.submit.submit-text div.morelink:hover {
@@ -356,6 +375,10 @@ text-shadow: 1px 1px 1px #c0a221;
 .link .score.dislikes {
 color:#c0a221;
 text-shadow: 1px 1px 1px #6c5701;
+}
+
+.footer-parent {
+border-top:2px solid #a3892a;
 }
 
 /*emotes stolen from /r/mlp*/

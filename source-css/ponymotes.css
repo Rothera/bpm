@@ -1,5 +1,6 @@
 /* LIMITS:
  * Limit on number of images uploaded is 50. I'll probably create /r/ponyanimotes when we hit 30 or something.
+ * Second thoughts: /r/ponymotesanimated would be better, as they'd still show up when you search "r/ponymotes".
  * Limit on CSS size is approx 100,000 characters
  * Limit on image size is 500kB
  */
@@ -23,6 +24,17 @@ display: none !important;
 margin-top: -1px;
 margin-bottom: -3px;
 }
+
+/* Snowflake banner */
+#header {
+background: url(%%snowflake-banner%%) 0 18px repeat-x #CEE3F8;
+}
+
+body.res-nightmode #header {
+background: url(%%snowflake-banner%%) 0 18px repeat-x #666660 !important;
+}
+body.res-nightmode #header-bottom-left { background: transparent !important; }
+
 
 /* /r/mylittlepony Announcement Banner, AKA Giant Hat. Edited somewhat */
 .titlebox .usertext-body .md h6 {
@@ -306,7 +318,7 @@ vertical-align: middle;
  */
 
 /* 70x70a 'motes. */
-a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"]
+a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"], a[href|="/grannyglad"], a[href|="/aloe"]
 {background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
@@ -314,11 +326,11 @@ a[href|="/cadface"], a[href|="/apathiablankstare"], a[href|="/twicider"], a[href
 {background-image:url(%%100x100a%%);width:100px;height:100px;display:block;float:left;}
 
 /* 150x150a 'motes. */
-a[href|="/tuxpony"], a[href|="/chibiluna"], a[href|="/shiningcadancehug"], a[href|="/twihappycry"], a[href|="/properbudget"], a[href|="/celestiaglee"], a[href|="/frittergasp"], a[href|="/twiimbetterthanyou"], a[href|="/twimbetterthanyou"], a[href|="/bonboudicca"], a[href|="/celticbonbon"]
+a[href|="/tuxpony"], a[href|="/chibiluna"], a[href|="/shiningcadancehug"], a[href|="/twihappycry"], a[href|="/properbudget"], a[href|="/celestiaglee"], a[href|="/frittergasp"], a[href|="/twiimbetterthanyou"], a[href|="/twimbetterthanyou"], a[href|="/bonboudicca"], a[href|="/celticbonbon"], a[href|="/whatatwist"], a[href|="/rdsquishyface"], a[href|="/soveryawesome"], a[href|="/rdsmirk"], a[href|="/sombrarage"]
 {background-image:url(%%150x150a%%);width:150px;height:150px;display:block;float:left;}
 
 /* 200x200a 'motes. */
-a[href|="/regret"], a[href|="/pinkiemail"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"], a[href|="/nightmaresparkle"]
+a[href|="/regret"], a[href|="/pinkiemail"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"], a[href|="/nightmaresparkle"], a[href|="/magnemites"]
 {background-image:url(%%200x200a%%);width:200px;height:200px;display:block;float:left;}
 
 /* 250x250a 'motes. */
@@ -335,7 +347,7 @@ a[href|="/twismirk"], a[href|="/huglife"], a[href|="/happyderp"], a[href|="/spea
 {background-image:url(%%misfitsa%%);display:block;float:left;}
 
 /* Misfits b */
-a[href|="/braecozy"], a[href|="/caramelsad"], a[href|="/twilicry"], a[href|="/sfpride"], a[href|="/sfmotherofgod"], a[href|="/sbdisgusting"], a[href|="/absolutelydisgusting"], a[href|="/ppwhywouldyoudothat"], a[href|="/fluttersnoo"]
+a[href|="/braecozy"], a[href|="/caramelsad"], a[href|="/twilicry"], a[href|="/sfpride"], a[href|="/sfmotherofgod"], a[href|="/sbdisgusting"], a[href|="/absolutelydisgusting"], a[href|="/ppwhywouldyoudothat"], a[href|="/fluttersnoo"], a[href|="/twilicute"], a[href|="/superlazy"], a[href|="/dashcuteblanket"]
 {background-image:url(%%misfitsb%%);display:block;float:left;}
 
 /* Grid pos 0,0 'motes. Not needed but for completeness... */
@@ -355,11 +367,11 @@ a[href|="/twihappycry"], a[href|="/nightmaresparkle"], a[href|="/nomakeup"], a[h
 {background-position: 0 -100%;}
 
 /* Grid pos 1,1 'motes */
-a[href|="/properbudget"], a[href|="/twiscepter"], a[href|="/twisceptre"]
+a[href|="/properbudget"], a[href|="/twiscepter"], a[href|="/twisceptre"], a[href|="/grannyglad"], a[href|="/magnemites"]
 {background-position: -100% -100%;}
 
 /* Grid pos 2,1 'motes */
-a[href|="/celestiaglee"], a[href|="/winona"]
+a[href|="/celestiaglee"], a[href|="/winona"], a[href|="/aloe"]
 {background-position: -200% -100%;}
 
 /* Grid pos 0,2 'motes */
@@ -374,6 +386,22 @@ a[href|="/twiimbetterthanyou"], a[href|="/twimbetterthanyou"]
 a[href|="/bonboudicca"], a[href|="/celticbonbon"]
 {background-position: -200% -200%;}
 
+/* Grid pos 0,3 'motes */
+a[href|="/whatatwist"]
+{background-position: 0% -300%;}
+
+/* Grid pos 1,3 'motes */
+a[href|="/rdsquishyface"], a[href|="/soveryawesome"]
+{background-position: -100% -300%;}
+
+/* Grid pos 2,3 'motes */
+a[href|="/rdsmirk"]
+{background-position: -200% -300%;}
+
+/* Grid pos 0,4 'motes */
+a[href|="/sombrarage"]
+{background-position: 0 -400%;}
+
 /* Animated Emotes */
 a[href|="/moofintezzter"], a[href|="/muffintester"] {background: url(%%muffintester%%) no-repeat;width:200px;height:177px;display:block;float:left;}
 a[href|="/crazyface"], a[href|="/pinkface"] {background-image: url(%%crazyface%%);width:220px;height:150px;display:block;float:left;}
@@ -387,6 +415,7 @@ a[href|="/derpypanic"] {background-image: url(%%derpypanic%%);width:300px;height
 a[href|="/everyponypanic"] {background-image: url(%%everyponypanic%%);width:300px;height:150px;display:block;float:left;}
 a[href|="/hypnopony"] {background-image: url(%%hypnopony%%);width:123px;height:150px;display:block;float:left;}
 a[href|="/intensefire"], a[href|="/spitfireintensifies"] {background-image: url(%%intensefire%%);width:100px;height:100px;display:block;float:left;}
+a[href|="/majestic"] {background-image: url(%%majestic%%);width:140px;height:100px;display:block;float:left;}
 
 /* Misfit Emotes */
 a[href|="/fillycadance"] {width:100px;height:126px;}
@@ -412,3 +441,5 @@ a[href|="/sfmotherofgod"] {width:150px;height:137px;background-position: -146px 
 a[href|="/sbdisgusting"], a[href|="/absolutelydisgusting"] {width:300px;height:192px;background-position: 0 -808px;}
 a[href|="/ppwhywouldyoudothat"] {width:295px;height:176px;background-position: -116px -237px;}
 a[href|="/fluttersnoo"] {width:114px;height:150px;background-position: 0 -367px;}
+a[href|="/twilicute"] {width:200px;height:150px;background-position: -114px -413px;}
+a[href|="/superlazy"], a[href|="/dashcuteblanket"] {width:200px;height:93px;background-position: -296px -100px;}

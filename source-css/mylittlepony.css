@@ -541,8 +541,13 @@ background-color: white;
 }
 
 .deleted > .entry .noncollapsed:after {
-	opacity: .25;
+	opacity: .35;
 	color: #858585;
+        content: "Comment deleted or removed.";
+        font-size: 1.2em;
+        padding-top:4px;
+        display: block;
+
 }
 
 .deleted>.entry .expand {
@@ -552,6 +557,8 @@ background-color: white;
 .deleted.comment> .entry .tagline {
 	visibility: hidden;
 }
+
+div.thing.deleted.comment a.toggleChildren {display:none}
 
 /* end fancy deletes */
 

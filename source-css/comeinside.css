@@ -129,23 +129,47 @@ html:lang(en) .side .usertext[id$="9"] a[href="/cibg-pony"] { background:url(%%c
 
 /* ------ Emotes! --------- */
 
+a[href|='/abshocking'], a[href|='/dashboo'], a[href|='/dashcantlook'], a[href|='/froasting'], a[href|='/hips'], a[href|='/lewd'], a[href|='/lunarage'], a[href|='/ppcoffee'], a[href|='/sciencetime'], a[href|='/shycry'], a[href|='/skepticaljack'], a[href|='/taviblush'], a[href|='/vahacondios']{
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%hsheet%%)
+    } 
+
+a[href|='/abshocking'] {width:146px; height:150px; background-position: -2px -356px}
+a[href|='/dashboo'] {width:102px; height:150px; background-position: -102px -2px}
+a[href|='/dashcantlook'] {width:151px; height:150px; background-position: -150px -356px}
+a[href|='/froasting'] {width:140px; height:150px; background-position: -263px -204px}
+a[href|='/hips'] {width:98px; height:175px; background-position: -2px -2px}
+a[href|='/lewd'] {width:189px; height:200px; background-position: -2px -508px}
+a[href|='/lunarage'] {width:329px; height:175px; background-position: -2px -722px}
+a[href|='/ppcoffee'] {width:300px; height:212px; background-position: -193px -508px}
+a[href|='/sciencetime'] {width:122px; height:200px; background-position: -328px -2px}
+a[href|='/shycry'] {width:184px; height:150px; background-position: -303px -356px}
+a[href|='/skepticaljack'] {width:120px; height:150px; background-position: -206px -2px}
+a[href|='/taviblush'] {width:129px; height:150px; background-position: -132px -204px}
+a[href|='/vahacondios'] {width:128px; height:150px; background-position: -2px -204px}
+
 a[href|='/ajscepter'], a[href|='/dashscepter'], a[href|='/derpsecpter'], a[href|='/ppscepter'], a[href|='/rariscepter'], a[href|='/shysecpter'], a[href|='/spikescepter'], a[href|='/taviscepter'], a[href|='/trixscepter'], a[href|='/vsscepter']{
     display: block;
     clear: none;
     float: left;
     background-image: url(%%scepter%%)
     } 
+a[href|='/abshock '] {width:146px; height:150px; background-position: -2px -356px}
+a[href|='/dashboo'] {width:102px; height:150px; background-position: -102px -2px}
+a[href|='/dashcantlook'] {width:151px; height:150px; background-position: -150px -356px}
+a[href|='/froasting'] {width:140px; height:150px; background-position: -263px -204px}
+a[href|='/hips'] {width:98px; height:175px; background-position: -2px -2px}
+a[href|='/lewd'] {width:189px; height:200px; background-position: -2px -508px}
+a[href|='/lunarage'] {width:329px; height:175px; background-position: -2px -722px}
+a[href|='/ppcoffee'] {width:300px; height:212px; background-position: -193px -508px}
+a[href|='/sciencetime'] {width:122px; height:200px; background-position: -328px -2px}
+a[href|='/shycry'] {width:184px; height:150px; background-position: -303px -356px}
+a[href|='/skepticaljack'] {width:120px; height:150px; background-position: -206px -2px}
+a[href|='/taviblush'] {width:129px; height:150px; background-position: -132px -204px}
+a[href|='/vahacondios'] {width:128px; height:150px; background-position: -2px -204px}
 
-a[href|='/ajscepter'] {width:44px; height:175px; background-position: -2px -2px}
-a[href|='/dashscepter'] {width:43px; height:175px; background-position: -2px -179px}
-a[href|='/derpsecpter'] {width:43px; height:175px; background-position: -2px -356px}
-a[href|='/ppscepter'] {width:57px; height:175px; background-position: -2px -533px}
-a[href|='/rariscepter'] {width:52px; height:175px; background-position: -2px -710px}
-a[href|='/shysecpter'] {width:49px; height:175px; background-position: -2px -887px}
-a[href|='/spikescepter'] {width:38px; height:175px; background-position: -2px -1064px}
-a[href|='/taviscepter'] {width:42px; height:175px; background-position: -2px -1241px}
-a[href|='/trixscepter'] {width:44px; height:175px; background-position: -2px -1418px}
-a[href|='/vsscepter'] {width:48px; height:175px; background-position: -2px -1595px}
 
 
 a[href|='/ajterror'], a[href|='/cookieninja'], a[href|='/dashready'], a[href|='/disapprovowl'], a[href|='/duckface'], a[href|='/flutterterror'], a[href|='/seewhatyoudidthere'], a[href|='/ldsalute'], a[href|='/rariderp'], a[href|='/shyohu'], a[href|='/skepticaldash'], a[href|='/spikemad'], a[href|='/twifetish'], a[href|='/twiwhatever'], a[href|='/scepter']{
@@ -440,7 +464,8 @@ a.author[href$=derram_2],
 a.author[href$=CodenameToon],
 a.author[href$=Jeroknite],
 a.author[href$="0x_"],
-a.author[href$="Backupusername"]
+a.author[href$="Backupusername"],
+a.author[href$="flare561"]
 
 { 
 font-size:0!important; 
@@ -462,7 +487,8 @@ a.author[href$=derram_2]:before,
 a.author[href$=CodenameToon]:before,
 a.author[href$=Jeroknite]:before,
 a.author[href$="0x_"]:before,
-a.author[href$="Backupusername"]:before
+a.author[href$="Backupusername"]:before,
+a.author[href$="flare561"]:before
 {
 font-size:10px!important; 
 visibility:visible!important;
@@ -479,7 +505,7 @@ a.author[href$=V17Ds]:before {content:"SkiftSwii"}
 a.author[href$=ZZW30]:before {content:"CaptChuckles"}
 a.author[href$="derram_2"]:before {content:"derram"}
 a.author[href$=CodenameToon]:before {content:"Coggler"}
-a.author[href$=Jeroknite]:before {content:"JokerTine"; font-size:15px !important}
+a.author[href$=Jeroknite]:before {content:"bees"; font-size:15px !important}
 a.author[href$="0x_"]:before {content:"Just Ox"}
 a.author[href$="Backupusername"]:before {content: "Not anyone special"}
 a.author[href$=EvanMacIan]:after {color:#000; font-size:9px; content:" Prefers dick"}
@@ -489,6 +515,7 @@ color:#000;
 font-size:10px!important; 
 letter-spacing:normal; 
 }
+a.author[href$="flare561"]:before {content: "NoteAss"}
 
 /* After-name text goes here. */
 
@@ -793,4 +820,10 @@ html:lang(np) .side a[href="http://www.reddit.com/r/ComeInside"] {
 body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
 .res-nightmode body{background-color: #222222!important;}
 html:lang(np)  .res-nightmode{background-color: #222222!important;}
+
+
+.sitetable:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n)
+.comment:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n){   
+ background-color: transparent !important;
+      border-color: transparent !important} 
 
