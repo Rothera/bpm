@@ -1,0 +1,70 @@
+a[href|="/twidetermined"] {
+display: block;
+clear: none;
+float: left;
+width: 70px;
+height: 70px;
+background-image: url(%%twidetermined%%);
+}
+a[href|="/twigasp"] {
+display: block;
+clear: none;
+float: left;
+width: 70px;
+height: 70px;
+background-image: url(%%twigasp%%);
+}
+a[href|="/twihuh"] {
+display: block;
+clear: none;
+float: left;
+width: 70px;
+height: 70px;
+background-image: url(%%twihuh%%);
+}
+a[href|="/twiadorkable"] {
+display: block;
+clear: none;
+float: left;
+width: 70px;
+height: 70px;
+background-image: url(%%twiadorkable%%);
+}
+a[href|="/twiwalk"] {
+display: block;
+clear: none;
+float: left;
+width: 100px;
+height: 150px;
+background-image: url(%%twiwalk%%);
+}
+a[href|="/spitfireuniform"] {
+display: block;
+clear: none;
+float: left;
+width: 180px;
+height: 228px;
+background-image: url(%%spitfireuniform%%);
+}
+a[href|="/cozyfire"] {
+display: block;
+clear: none;
+float: left;
+width: 170px;
+height: 217px;
+background-image: url(%%cozyfire%%);
+}
+.subscribers .word {
+display: none;
+}  
+.subscribers .number::after {
+content: " best ponies";
+}
+.users-online .word {
+display: none;
+}  
+.users-online .number::after {
+content: " Twilight-lovers here now";
+}
+.side .helplink + .title h1 { display: none; } .side .helplink + .title::before { content: 'Masters of the pone'; display: block; font-size: 130%; color: gray; text-transform: uppercase;
+}
