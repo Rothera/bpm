@@ -128,6 +128,27 @@ html:lang(en) .side .usertext[id$="9"] a[href="/cibg-pony"] { background:url(%%c
 
 
 /* ------ Emotes! --------- */
+a[href|='/cheekyaj'], a[href|='/cheekyderp'], a[href|='/cheekylyra'], a[href|='/cheekypp'], a[href|='/cheekyrara'], a[href|='/cheekyscoots'], a[href|='/cheekyshy'], a[href|='/cheekytwi'], a[href|='/cheekyvs'],a[href|='/cheekynoteass'], a[href|='/roselie'], a[href|='/octibored'], a[href|='/topunf'] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%isheet%%)
+    } 
+
+a[href|='/cheekyaj'] {width:96px; height:135px; background-position: -2px -657px}
+a[href|='/cheekyderp'] {width:114px; height:130px; background-position: -99px -393px}
+a[href|='/cheekylyra'] {width:105px; height:130px; background-position: -101px -525px}
+a[href|='/cheekypp'] {width:97px; height:130px; background-position: -2px -525px}
+a[href|='/cheekyrara'] {width:95px; height:130px; background-position: -2px -393px}
+a[href|='/cheekyscoots'] {width:82px; height:115px; background-position: -2px -2px}
+a[href|='/cheekyshy'] {width:95px; height:130px; background-position: -2px -261px}
+a[href|='/cheekytwi'] {width:99px; height:130px; background-position: -2px -129px}
+a[href|='/cheekyvs'],a[href|='/cheekynoteass'] {width:102px; height:130px; background-position: -103px -129px}
+a[href|='/roselie'] {width:175px; height:150px; background-position: -2px -794px}
+a[href|='/octibored'] {width:100px; height:125px; background-position: -86px -2px}
+a[href|='/topunf'] {width:119px; height:130px; background-position: -99px -261px}
+
+
 
 a[href|='/abshocking'], a[href|='/dashboo'], a[href|='/dashcantlook'], a[href|='/froasting'], a[href|='/hips'], a[href|='/lewd'], a[href|='/lunarage'], a[href|='/ppcoffee'], a[href|='/sciencetime'], a[href|='/shycry'], a[href|='/skepticaljack'], a[href|='/taviblush'], a[href|='/vahacondios']{
     display: block;
@@ -150,25 +171,23 @@ a[href|='/skepticaljack'] {width:120px; height:150px; background-position: -206p
 a[href|='/taviblush'] {width:129px; height:150px; background-position: -132px -204px}
 a[href|='/vahacondios'] {width:128px; height:150px; background-position: -2px -204px}
 
-a[href|='/ajscepter'], a[href|='/dashscepter'], a[href|='/derpsecpter'], a[href|='/ppscepter'], a[href|='/rariscepter'], a[href|='/shysecpter'], a[href|='/spikescepter'], a[href|='/taviscepter'], a[href|='/trixscepter'], a[href|='/vsscepter']{
+a[href|='/ajscepter'], a[href|='/dashscepter'], a[href|='/derpscepter'], a[href|='/ppscepter'], a[href|='/rariscepter'], a[href|='/shysecpter'], a[href|='/spikescepter'], a[href|='/taviscepter'], a[href|='/trixscepter'], a[href|='/vsscepter']{
     display: block;
     clear: none;
     float: left;
     background-image: url(%%scepter%%)
     } 
-a[href|='/abshock '] {width:146px; height:150px; background-position: -2px -356px}
-a[href|='/dashboo'] {width:102px; height:150px; background-position: -102px -2px}
-a[href|='/dashcantlook'] {width:151px; height:150px; background-position: -150px -356px}
-a[href|='/froasting'] {width:140px; height:150px; background-position: -263px -204px}
-a[href|='/hips'] {width:98px; height:175px; background-position: -2px -2px}
-a[href|='/lewd'] {width:189px; height:200px; background-position: -2px -508px}
-a[href|='/lunarage'] {width:329px; height:175px; background-position: -2px -722px}
-a[href|='/ppcoffee'] {width:300px; height:212px; background-position: -193px -508px}
-a[href|='/sciencetime'] {width:122px; height:200px; background-position: -328px -2px}
-a[href|='/shycry'] {width:184px; height:150px; background-position: -303px -356px}
-a[href|='/skepticaljack'] {width:120px; height:150px; background-position: -206px -2px}
-a[href|='/taviblush'] {width:129px; height:150px; background-position: -132px -204px}
-a[href|='/vahacondios'] {width:128px; height:150px; background-position: -2px -204px}
+a[href|='/ajscepter'] {width:44px; height:175px; background-position: -2px -2px}
+a[href|='/dashscepter'] {width:43px; height:175px; background-position: -2px -179px}
+a[href|='/derpscepter'] {width:43px; height:175px; background-position: -2px -356px}
+a[href|='/ppscepter'] {width:57px; height:175px; background-position: -2px -533px}
+a[href|='/rariscepter'] {width:52px; height:175px; background-position: -2px -710px}
+a[href|='/shysecpter'] {width:49px; height:175px; background-position: -2px -887px}
+a[href|='/spikescepter'] {width:38px; height:175px; background-position: -2px -1064px}
+a[href|='/taviscepter'] {width:42px; height:175px; background-position: -2px -1241px}
+a[href|='/trixscepter'] {width:44px; height:175px; background-position: -2px -1418px}
+a[href|='/vsscepter'] {width:48px; height:175px; background-position: -2px -1595px}
+
 
 
 
@@ -557,7 +576,7 @@ html:lang(en) .flair-tia:before { background-position: 0px -240px}
 html:lang(en) .flair-lyra:before { background-position: 0px -280px}
 html:lang(en) .flair-aj:before { background-position: 0px -320px}
 html:lang(en) .flair-cadance:before { background-position: 0px -360px}
-html:lang(en) .flair-luna:before { background-position: 0px -400px}
+html:lang(en) .flair-moonbutt:before { background-position: 0px -400px}
 html:lang(en) .flair-cheerilee:before { background-position: 0px -440px}
 html:lang(en) .flair-chrys:before { background-position: 0px -480px}
 html:lang(en) .flair-derpy:before { background-position: 0px -520px}
@@ -724,7 +743,7 @@ html:lang(np) .flair-tia:before {width:40px;height:40px;background-position:-2px
 html:lang(np) .flair-lyra:before {width:40px;height:40px;background-position:-2px -287px}
 html:lang(np) .flair-aj:before {width:40px;height:40px;background-position:-2px -329px}
 html:lang(np) .flair-cadance:before {width:40px;height:40px;background-position:-2px -661px}
-html:lang(np) .flair-luna:before {width:40px;height:40px;background-position:-2px -783px}
+html:lang(np) .flair-moonbutt:before {width:40px;height:40px;background-position:-2px -783px}
 html:lang(np) .flair-cheerilee:before {width:40px;height:40px;background-position:-2px -451px}
 html:lang(np) .flair-chrys:before {width:35px;height:40px;background-position:-2px -493px}
 html:lang(np) .flair-derpy:before {width:41px;height:41px;background-position:-2px -535px}
