@@ -8,6 +8,10 @@ function Store() {
     this._we_map = null;
 
     this._sync_timeouts = {};
+
+    // Can't make this a global because, on Opera, bpm-resources.js doesn't
+    // seem to actually exist early on.
+    this.formatting_tag_id = tag_name2id["+formatting"];
 }
 
 Store.prototype = {
@@ -17,6 +21,7 @@ Store.prototype = {
         this._make_sr_array();
         this._de_map = this._make_emote_map(prefs.disabledEmotes);
         this._we_map = this._make_emote_map(prefs.whitelistedEmotes);
+
     },
 
     setup_customcss: function(emotes, css) {
@@ -196,5 +201,3 @@ var _FLAG_REDIRECT = 1 << 1;
 function sanitize_emote(s) {
     return s.toLowerCase().replace("!", "_excl_").replace(":", "_colon_").replace("#", "_hash_").replace("/", "_slash_");
 }
-
-var formatting_tag_id = tag_name2id["+formatting"];

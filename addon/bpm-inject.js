@@ -120,7 +120,7 @@ function inject_emote_into_form(store, target_form, emote_name) {
         if(inside) {
             var extra_len, emote;
             // Make selections into text/alt-text
-            if(emote_info.tags.indexOf(formatting_tag_id) > -1) {
+            if(emote_info.tags.indexOf(store.formatting_tag_id) > -1) {
                 extra_len = 4; // '[]('' and ')'
                 emote = "[" + inside + "](" + emote_name + ")";
             } else {

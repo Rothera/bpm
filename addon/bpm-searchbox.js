@@ -400,7 +400,7 @@ function display_search_results(store, results) {
         // this.
         html += "<span data-emote=\"" + result.name + "\" class=\"bpm-search-result " +
                 result.css_class + "\" title=\"" + result.name + " from " + result.source_name + "\">";
-        if(result.tags.indexOf(formatting_tag_id) > -1) {
+        if(result.tags.indexOf(store.formatting_tag_id) > -1) {
             html += "Example Text";
         }
         html += "</span>";
