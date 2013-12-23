@@ -35,6 +35,7 @@ a[href|="/bestcentaur"]{background-position:0 -220px;width:225px;height:250px}
 a[href|="/lolwhatisthisidonteven"]{background-image:url(%%FIFAHeader%%);clear:none;display:block;float:left;height:117px;width:1700px}
 a[href|="/sphlyrafun"]{background-image:url(%%sphfun%%);clear:none;display:block;float:left;height:136px;width:201px}
 a[href|="/rockhard"]{background-image:url(%%RockHard%%);clear:none;display:block;float:left;height:240px;width:300px}
+a[href|="/flutterdash69"]{background-image:url(%%flutterdash69%%);clear:none;display:block;float:left;height:147px;width:200px}
 
 /*Animotes*/
 a[href|="/ajshake"]{background-image:url(%%ajshake%%);clear:none;display:block;float:left;height:142px;width:200px}
@@ -75,3 +76,8 @@ a.author[href$="CatmanIX"]:before {
 .fancy-settings .linefield {width: 920px;}
 .fancy-settings textarea {height: 500px; width: 900px;}
 .stylesheet-customize-container textarea {height: 500px;}
+
+/* New Nightmode fixes for the background */
+.content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;} 
+body.res-nightmode:first-of-type > .content {background-color: transparent!important;}
+.res-nightmode body{background-color: #222222!important;}

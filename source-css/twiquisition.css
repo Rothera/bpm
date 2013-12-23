@@ -1,3 +1,111 @@
+.stylesheet-customize-container { width: 100%; }
+#subreddit_stylesheet { display: block; overflow: hidden; }
+.sheets { margin: 0;}
+#stylesheet_contents {
+  padding-left: 5px;
+  padding-top: 5px;
+  background-color: white;
+  color: #042eae;
+  height: 500px;
+}
+.morelink
+{
+font-weight:normal;
+letter-spacing:0;
+background: purple;
+border: none;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+-khtml-border-radius:2px;
+border-radius:2px;
+height: 30px;
+line-height: 30px;
+overflow: hidden;
+color: white;
+}
+
+.morelink:hover
+{
+background: #A6B9CB;
+background-color: #FF0000;
+border-color: #FF0000;
+}
+
+.morelink .nub
+{
+display: none;
+}
+
+.morelink
+{
+color:#FFF;
+font-family:Verdana, Arial, sans-serif;
+font-size:16px;
+width: 145px;
+}
+
+.morelink a, .morelink a:hover
+{
+color: white;
+}
+
+.sidebox.submit-link .morelink::before
+{
+display: block;
+clear: none;
+content: "Submit a Link";
+font-size: 95%;
+}
+
+.sidebox.submit-text .morelink::before
+{
+display: block;
+clear: none;
+content: "Submit a Self Post";
+font-size: 90%;
+}
+
+.sidebox.submit .morelink a
+{
+position: absolute;
+top: 0;
+padding-left: 1000px;
+font-size: 0px;
+text-align: right;
+color: #56a6f7;
+}
+
+.sidebox.submit.submit-link {
+width: 150px;
+}
+
+.sixebos.submit.submit-text
+{
+margin-top: -42px;
+margin-left: 153px;
+}
+
+.sidebox.create
+{
+display: none;
+}
+
+.sidebox.submit.disabled
+{
+display: none;
+}
+
+
+
+
+
+body {
+background: url(%%twilightbackground%%)
+no-repeat fixed center center
+}
+
+#header {background-color: #BB75C9;}
+
 a[href|="/twidetermined"] {
 display: block;
 clear: none;
@@ -50,9 +158,145 @@ a[href|="/cozyfire"] {
 display: block;
 clear: none;
 float: left;
-width: 170px;
-height: 217px;
+width: 150px;
+height: 191px;
 background-image: url(%%cozyfire%%);
+}
+a[href|="/twiaplus"] {
+display: block;
+clear: none;
+float: left;
+width: 160px;
+height: 146px;
+background-image: url(%%twiaplus%%);
+}
+a[href|="/sfwondersuit"] {
+display: block;
+clear: none;
+float: left;
+width: 156px;
+height: 215px;
+background-image: url(%%sfwondersuit%%);
+}
+a[href|="/sfstand"] {
+display: block;
+clear: none;
+float: left;
+width: 156px;
+height: 197px;
+background-image: url(%%sfstand%%);
+}
+a[href|="/angryfire"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 226px;
+background-image: url(%%angryfire%%);
+}
+a[href|="/notthefaceofmercy"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 181px;
+background-image: url(%%notthefaceofmercy%%);
+}
+a[href|="/spitconfident"] {
+display: block;
+clear: none;
+float: left;
+width: 160px;
+height: 160px;
+background-image: url(%%spitconfident%%);
+}
+a[href|="/lightningsalute"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 258px;
+background-image: url(%%lightningsalute%%);
+}
+a[href|="/twipotion"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 210px;
+background-image: url(%%twipotion%%);
+}
+a[href|="/facepaper"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 200px;
+background-image: url(%%facepaper%%);
+}
+a[href|="/twitongue"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 343px;
+background-image: url(%%twitongue%%);
+}
+a[href|="/lyrawha"] {
+display: block;
+clear: none;
+float: left;
+width: 199px;
+height: 220px;
+background-image: url(%%lyrawha%%);
+}
+a[href|="/lyrahi"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 262px;
+background-image: url(%%lyrahi%%);
+}
+a[href|="/lyralook"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 268px;
+background-image: url(%%lyralook%%);
+}
+a[href|="/lyrastand"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 318px;
+background-image: url(%%lyrastand%%);
+}
+a[href|="/lyrasitting"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 300px;
+background-image: url(%%lyrasitting%%);
+}
+a[href|="/lyrawhoa"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 192px;
+background-image: url(%%lyrawhoa%%);
+}
+a[href|="/8bitsombra"] {
+display: block;
+clear: none;
+float: left;
+width: 256px;
+height: 376px;
+background-image: url(%%8bitsombra%%);
 }
 .subscribers .word {
 display: none;

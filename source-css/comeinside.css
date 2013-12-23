@@ -471,8 +471,8 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 /* Names */
 
 /* here first */
+a.author[href$='thezooman123'],
 a.author[href$=maku450],
-a.author[href$=Saltbearer],
 a.author[href$=XelNaga],
 a.author[href$=EvanMacIan],
 a.author[href$=SirCinnamon],
@@ -494,8 +494,8 @@ content: "";
 }
 
 /* here second */
+a.author[href$='thezooman123']:before,
 a.author[href$=maku450]:before,
-a.author[href$=Saltbearer]:before,
 a.author[href$=EvanMacIan]:before,
 a.author[href$=SirCinnamon]:before,
 a.author[href$=XelNaga]:before,
@@ -514,9 +514,9 @@ visibility:visible!important;
 }
 
 /*and the replacement*/
+a.author[href$='thezooman123']:before {content:"zooman"}
 a.author[href$=maku450]:before {content:"maku"}
 a.author[href$=EvanMacIan]:before {content:"Mr. Califag MacIan"}
-a.author[href$=Saltbearer]:before {content:"S_1000X9_11X2_2"}
 a.author[href$=SirCinnamon]:before {content:"King Cinnamon"}
 a.author[href$=XelNaga]:before {content:"Twi`Naga"}
 a.author[href$=Princess_Molestia_]:before {content:"Princess Molestia"}
@@ -606,6 +606,7 @@ html:lang(en) .flair-fluffy:before { background-position: 0px -1440px}
 html:lang(en) .flair-Generic:before { background-position: 0px -1480px}
 html:lang(en) .flair-dda1add:before { background-position: 0px -1520px}
 html:lang(en) .flair-DevaKitty:before { background-position: 0px -1560px} 
+.flair-blueribbion:before { background-position: 0px -1600px} 
 /* For anyone with no flair, or flair disabled, this will give them missingno flair.
     Listed before the rest of the username shit so it will be overridden by manual flair additions. */
 :not(.flair) + a.author:before  {

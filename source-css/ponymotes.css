@@ -85,6 +85,11 @@ background-color: #222222;
 content: " - (" attr(title) ")";
 }
 
+/* RES upvote count highlighter */
+span.res_post_ups {
+text-shadow: orangered 0 0 2px;
+}
+
 /* link flairs */
 .linkflair-closed {
 opacity: 0.4;
@@ -318,11 +323,11 @@ vertical-align: middle;
  */
 
 /* 70x70a 'motes. */
-a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"], a[href|="/grannyglad"], a[href|="/aloe"], a[href|="/ohyeah"]
+a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"], a[href|="/grannyglad"], a[href|="/aloe"], a[href|="/ohyeah"], a[href|="/neutraljack"]
 {background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
-a[href|="/cadface"], a[href|="/apathiablankstare"], a[href|="/twicider"], a[href|="/nomakeup"], a[href|="/twiscepter"], a[href|="/twisceptre"], a[href|="/winona"], a[href|="/feelsgoodtwilight"]
+a[href|="/cadface"], a[href|="/apathiablankstare"], a[href|="/twicider"], a[href|="/nomakeup"], a[href|="/twiscepter"], a[href|="/twisceptre"], a[href|="/winona"], a[href|="/lunahmm"], a[href|="/scootexcited"]
 {background-image:url(%%100x100a%%);width:100px;height:100px;display:block;float:left;}
 
 /* 150x150a 'motes. */
@@ -330,7 +335,7 @@ a[href|="/tuxpony"], a[href|="/chibiluna"], a[href|="/shiningcadancehug"], a[hre
 {background-image:url(%%150x150a%%);width:150px;height:150px;display:block;float:left;}
 
 /* 200x200a 'motes. */
-a[href|="/regret"], a[href|="/pinkiemail"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"], a[href|="/nightmaresparkle"], a[href|="/magnemites"]
+a[href|="/regret"], a[href|="/pinkiemail"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"], a[href|="/nightmaresparkle"], a[href|="/magnemites"], a[href|="/princessfluttershy"]
 {background-image:url(%%200x200a%%);width:200px;height:200px;display:block;float:left;}
 
 /* 250x250a 'motes. */
@@ -347,8 +352,12 @@ a[href|="/twismirk"], a[href|="/huglife"], a[href|="/happyderp"], a[href|="/spea
 {background-image:url(%%misfitsa%%);display:block;float:left;}
 
 /* Misfits b */
-a[href|="/braecozy"], a[href|="/caramelsad"], a[href|="/twilicry"], a[href|="/sfpride"], a[href|="/sfmotherofgod"], a[href|="/sbdisgusting"], a[href|="/absolutelydisgusting"], a[href|="/ppwhywouldyoudothat"], a[href|="/fluttersnoo"], a[href|="/twilicute"], a[href|="/superlazy"], a[href|="/dashcuteblanket"], a[href|="/paperwork"], a[href|="/objection"]
+a[href|="/braecozy"], a[href|="/caramelsad"], a[href|="/twilicry"], a[href|="/sfpride"], a[href|="/sfmotherofgod"], a[href|="/sbdisgusting"], a[href|="/absolutelydisgusting"], a[href|="/ppwhywouldyoudothat"], a[href|="/fluttersnoo"], a[href|="/twilicute"], a[href|="/superlazy"], a[href|="/dashcuteblanket"], a[href|="/paperwork"], a[href|="/objection"], a[href|="/lunacomehere"], a[href|="/fluttryay"]
 {background-image:url(%%misfitsb%%);display:block;float:left;}
+
+/* Misfits c */
+a[href|="/twitiger"], a[href|="/twiger"], a[href|="/tanktwi"], a[href|="/lunacelehug"]
+{background-image:url(%%misfitsc%%);display:block;float:left;}
 
 /* Grid pos 0,0 'motes. Not needed but for completeness... */
 a[href|="/cadface"], a[href|="/pinkieplease"], a[href|="/regret"], a[href|="/apathiasquint"], a[href|="/tuxpony"], a[href|="/karmashark"], a[href|="/jumptheshark"]
@@ -371,15 +380,15 @@ a[href|="/properbudget"], a[href|="/twiscepter"], a[href|="/twisceptre"], a[href
 {background-position: -100% -100%;}
 
 /* Grid pos 2,1 'motes */
-a[href|="/celestiaglee"], a[href|="/winona"], a[href|="/aloe"]
+a[href|="/celestiaglee"], a[href|="/winona"], a[href|="/aloe"], a[href|="/princessfluttershy"]
 {background-position: -200% -100%;}
 
 /* Grid pos 0,2 'motes */
-a[href|="/frittergasp"], a[href|="/ohyeah"], a[href|="/feelsgoodtwilight"]
+a[href|="/frittergasp"], a[href|="/ohyeah"], a[href|="/lunahmm"]
 {background-position: 0 -200%;}
 
 /* Grid pos 1,2 'motes */
-a[href|="/twiimbetterthanyou"], a[href|="/twimbetterthanyou"]
+a[href|="/twiimbetterthanyou"], a[href|="/twimbetterthanyou"], a[href|="/neutraljack"], a[href|="/scootexcited"]
 {background-position: -100% -200%;}
 
 /* Grid pos 2,2 'motes */
@@ -402,6 +411,10 @@ a[href|="/rdsmirk"]
 a[href|="/sombrarage"]
 {background-position: 0 -400%;}
 
+/* Grid pos 1,4 'motes */
+/* There doesn't seem to be anything here
+{background-position: -100% -400%;} */
+
 /* Animated Emotes */
 a[href|="/moofintezzter"], a[href|="/muffintester"] {background: url(%%muffintester%%) no-repeat;width:200px;height:177px;display:block;float:left;}
 a[href|="/crazyface"], a[href|="/pinkface"] {background-image: url(%%crazyface%%);width:220px;height:150px;display:block;float:left;}
@@ -416,6 +429,10 @@ a[href|="/everyponypanic"] {background-image: url(%%everyponypanic%%);width:300p
 a[href|="/hypnopony"] {background-image: url(%%hypnopony%%);width:123px;height:150px;display:block;float:left;}
 a[href|="/intensefire"], a[href|="/spitfireintensifies"] {background-image: url(%%intensefire%%);width:100px;height:100px;display:block;float:left;}
 a[href|="/majestic"] {background-image: url(%%majestic%%);width:140px;height:100px;display:block;float:left;}
+a[href|="/twichargin"], a[href|="/twiscrunch"] {background-image: url(%%twichargin%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/manspikebrows"], a[href|="/sexualharrassment"] {background-image: url(%%sexualharrassment%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/manspikeheythere"], a[href|="/msheythere"], a[href|="/spikeheythere"] {background-image: url(%%heythere%%);width:150px;height:150px;display:block;float:left;}
+
 
 /* Misfit Emotes */
 a[href|="/fillycadance"] {width:100px;height:126px;}
@@ -445,3 +462,7 @@ a[href|="/twilicute"] {width:200px;height:150px;background-position: -114px -413
 a[href|="/superlazy"], a[href|="/dashcuteblanket"] {width:200px;height:93px;background-position: -296px -100px;}
 a[href|="/paperwork"] {width:250px;height:213px;background-position: 0 -563px;}
 a[href|="/objection"] {width:225px;height:120px;background-position: -250px -563px;}
+a[href|="/twitiger"], a[href|="/twiger"], a[href|="/tanktwi"] {width:300px;height:236px;}
+a[href|="/lunacelehug"] {width:300px;height:205px;background-position: 0 -236px;}
+a[href|="/lunacomehere"] {width:175px;height:200px;background-position: -300px -683px;}
+a[href|="/fluttryay"] {width:150px;height:111px;background-position: -314px -413px;}
