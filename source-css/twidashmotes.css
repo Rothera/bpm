@@ -1,3 +1,11 @@
+a[href|="/tdboop"] {
+    float:left;
+    width:300px;
+    height:150px;
+    background-repeat:no-repeat;
+    background-image:url(%%tdboop%%);
+}
+
 a[href|="/tdhug"] {
     float:left;
     width:165px;
@@ -22,7 +30,7 @@ a[href|="/tdfly"] {
     background-image:url(%%tdfly%%);
 }
 
-a[href|="/tdkiss"] {
+a[href|="/tdkiss2"] {
     float:left;
     width:150px;
     height:178px;
@@ -71,6 +79,7 @@ a[href|="/tdwub"] {
 }
 
 
+/* Spritesheet 1 */
 a[href|="/lightshow"], a[href|="/chibitwidash"], a[href|="/tdpassion"], a[href|="/readingismagic"], a[href|="/readingismagic"], a[href|="/tdkiss"], a[href|="/tditllbeok"], a[href|="/tdsleep"]{
 
     display: block;
@@ -134,4 +143,99 @@ a[href|="/tdsleep"]{
     height:150px;
     background-position: -0px -1173px !important;
 
+}
+
+
+/* Spritesheet 2*/
+a[href|="/tdcomehere"], a[href|="/tdkiss3"], a[href|="/tdkiss4"], a[href|="/tdonlyyou"], a[href|="/tdoops"], a[href|="/tdshock"], a[href|="/tdstare"], a[href|="/tdunimpressed"], a[href|="/tdwtfhair"] {
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%spritesheet2%%)
+}
+
+a[href|="/tdcomehere"] {
+    width: 200px;
+    height: 135px;
+    background-position: -5px -5px;
+}
+
+a[href|="/tdkiss3"] {
+    width: 200px;
+    height: 117px;
+    background-position: -5px -150px;
+}
+
+a[href|="/tdkiss4"] {
+    width: 200px;
+    height: 143px;
+    background-position: -5px -277px;
+}
+
+a[href|="/tdonlyyou"] {
+    width: 200px;
+    height: 200px;
+    background-position: -5px -430px;
+}
+
+a[href|="/tdoops"] {
+    width: 200px;
+    height: 136px;
+    background-position: -5px -640px;
+}
+
+a[href|="/tdshock"] {
+    width: 180px;
+    height: 182px;
+    background-position: -5px -932px;
+}
+
+a[href|="/tdstare"] {
+    width: 200px;
+    height: 126px;
+    background-position: -5px -1124px;
+}
+
+a[href|="/tdunimpressed"] {
+    width: 200px;
+    height: 133px;
+    background-position: -5px -1260px;
+}
+
+a[href|="/tdwtfhair"] {
+    width: 200px;
+    height: 136px;
+    background-position: -5px -1403px;
+}
+
+
+/* Spritesheet 3 */
+a[href|="/tdblub"], a[href|="/tdplay"], a[href|="/tdspark"], a[href|="/tdsquish"] {
+    background-image: url(%%spritesheet3%%);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+a[href|="/tdblub"] {
+    width: 230px;
+    height: 115px;
+    background-position: -5px -5px;
+}
+
+a[href|="/tdplay"] {
+    width: 200px;
+    height: 183px;
+    background-position: -5px -130px;
+}
+
+a[href|="/tdspark"] {
+    width: 200px;
+    height: 107px;
+    background-position: -5px -323px;
+}
+
+a[href|="/tdsquish"] {
+    width: 200px;
+    height: 92px;
+    background-position: -5px -440px;
 }

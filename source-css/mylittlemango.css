@@ -10,7 +10,7 @@ Added emotes (1/15/13)
 /* Header */
 
  #header #header-bottom-left {
-   background: url(%%mlmbannerthingie%%) !important;
+   background: url(%%MANGO-BANNER%%) !important;
    background-repeat: no-repeat !important;
    background-position: 50% 100% !important;
    height: 200px; 
@@ -683,3 +683,18 @@ a[href|="/pinkboop"] {
      }
 
 a[href|="/pinkboop"] { background-position: -0px -0px; width: 150px; height: 150px; }
+
+a[href|="/queenbashful"], a[href|="/blushyocty"], a[href|="/chryssyangry"], a[href|="/queenflowerfilly"], a[href|="/waifuqueen"], a[href|="/queensing"], a[href|="/queencrystalball"] {
+     display: block;
+     clear: none;
+     float: left;
+     background-image: url(%%thisisaspritesheet%%) !important
+     }
+
+a[href|="/queenbashful"] { background-position: -0px -0px; width: 158px; height: 200px; }
+a[href|="/blushyocty"] { background-position: -0px -200px; width: 166px; height: 200px; }
+a[href|="/chryssyangry"] { background-position: -0px -400px; width: 139px; height: 200px; }
+a[href|="/queenflowerfilly"] { background-position: -0px -600px; width: 156px; height: 200px; }
+a[href|="/waifuqueen"] { background-position: -0px -800px; width: 200px; height: 171px; }
+a[href|="/queensing"] { background-position: -0px -971px; width: 200px; height: 170px; }
+a[href|="/queencrystalball"] { background-position: -0px -1141px; width: 250px; height: 145px; }

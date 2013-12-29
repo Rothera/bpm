@@ -210,6 +210,38 @@ width: 160px;
 height: 160px;
 background-image: url(%%spitconfident%%);
 }
+a[href|="/cloud9"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 135px;
+background-image: url(%%cloud9%%);
+}
+a[href|="/sfeww"] {
+display: block;
+clear: none;
+float: left;
+width: 135px;
+height: 130px;
+background-image: url(%%sfeww%%);
+}
+a[href|="/warface"] {
+display: block;
+clear: none;
+float: left;
+width: 160px;
+height: 141px;
+background-image: url(%%warface%%);
+}
+a[href|="/smugfire"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 281px;
+background-image: url(%%smugfire%%);
+}
 a[href|="/lightningsalute"] {
 display: block;
 clear: none;
@@ -298,6 +330,8 @@ width: 256px;
 height: 376px;
 background-image: url(%%8bitsombra%%);
 }
+
+
 .subscribers .word {
 display: none;
 }  
