@@ -103,12 +103,23 @@ function toggle_emote(store, element) {
 
 function block_click(store, event) {
     var element = event.target;
-    if(element.classList.contains("bpm-emote") || element.classList.contains("bpm-unknown")) {
-        event.preventDefault();
-    }
 
-    if(element.classList.contains("bpm-emote")) {
-        toggle_emote(store, element);
+    // Go up a level or two to see if one of the parent nodes is an emote. This
+    // improves behavior on the "text" emotes e.g. e.g. [*Free hugs*](/lpsign).
+    //
+    // We somewhat arbitrarily only go up one element here. That should be
+    // enough for our purposes, and keeps this particular check short and fast.
+    for(var tries = 0; element && tries < 2; tries++) {
+        if(element.classList.contains("bpm-emote")) {
+            event.preventDefault();
+            toggle_emote(store, element);
+            break;
+        } else if(element.classList.contains("bpm-unknown")) {
+            event.preventDefault();
+            break;
+        }
+
+        element = element.parentElement;
     }
 }
 
