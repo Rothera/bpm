@@ -1,0 +1,199 @@
+#header { background : #ffee4c }
+
+body {
+background: url(%%backgroundpic%%)
+no-repeat fixed center center
+}
+
+
+
+
+/*Spitfire Emotes*/
+
+a[href|="/spitfireuniform"] {
+display: block;
+clear: none;
+float: left;
+width: 180px;
+height: 228px;
+background-image: url(%%spitfireuniform%%);
+}
+a[href|="/cozyfire"] {
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 191px;
+background-image: url(%%cozyfire%%);
+}
+a[href|="/sfwondersuit"] {
+display: block;
+clear: none;
+float: left;
+width: 156px;
+height: 215px;
+background-image: url(%%sfwondersuit%%);
+}
+a[href|="/sfstand"] {
+display: block;
+clear: none;
+float: left;
+width: 156px;
+height: 197px;
+background-image: url(%%sfstand%%);
+}
+a[href|="/angryfire"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 226px;
+background-image: url(%%angryfire%%);
+}
+a[href|="/notthefaceofmercy"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 181px;
+background-image: url(%%notthefaceofmercy%%);
+}
+a[href|="/spitconfident"] {
+display: block;
+clear: none;
+float: left;
+width: 160px;
+height: 160px;
+background-image: url(%%spitconfident%%);
+}
+a[href|="/cloud9"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 135px;
+background-image: url(%%cloud9%%);
+}
+a[href|="/sfeww"] {
+display: block;
+clear: none;
+float: left;
+width: 135px;
+height: 130px;
+background-image: url(%%sfeww%%);
+}
+a[href|="/warface"] {
+display: block;
+clear: none;
+float: left;
+width: 160px;
+height: 141px;
+background-image: url(%%warface%%);
+}
+a[href|="/smugfire"] {
+display: block;
+clear: none;
+float: left;
+width: 170px;
+height: 217px;
+background-image: url(%%smugfire%%);
+}
+a[href|="/sfwondersuitalt"] {
+display: block;
+clear: none;
+float: left;
+width: 156px;
+height: 215px;
+background-image: url(%%sfwondersuitalt%%);
+}
+a[href|="/guiltyfire"] {
+display: block;
+clear: none;
+float: left;
+width: 130px;
+height: 130px;
+background-image: url(%%guiltyfire%%);
+}
+
+
+
+
+/*Rainbow Dash Emotes*/
+
+a[href|="/dashiewink"] {
+display: block;
+clear: none;
+float: left;
+width: 130px;
+height: 110px;
+background-image: url(%%dashiewink%%);
+}
+a[href|="/dashsocks"] {
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 153px;
+background-image: url(%%dashsocks%%);
+}
+a[href|="/fillydasheager"] {
+display: block;
+clear: none;
+float: left;
+width: 120px;
+height: 154px;
+background-image: url(%%fillydasheager%%);
+}
+a[href|="/dashwave"] {
+display: block;
+clear: none;
+float: left;
+width: 85px;
+height: 150px;
+background-image: url(%%dashwave%%);
+}
+a[href|="/scootadashruffle"] {
+display: block;
+clear: none;
+float: left;
+width: 170px;
+height: 134px;
+background-image: url(%%scootadashruffle%%);
+}
+a[href|="/scootadashplay"] {
+display: block;
+clear: none;
+float: left;
+width: 180px;
+height: 105px;
+background-image: url(%%scootadashplay%%);
+}
+
+
+
+/*Dashfire emotes*/
+
+a[href|="/dashfiretail"] {
+display: block;
+clear: none;
+float: left;
+width: 142px;
+height: 103px;
+background-image: url(%%dashfiretail%%);
+}
+
+
+
+.flairselector .customizer {
+display: none !important;
+}
+
+.flair {
+border: none !important;
+padding:0px;
+background: url(%%spritesheet%%) no-repeat -9999px -9999px;
+display:inline-block;
+}
+
+.flair-dashieflair{ background-position: 0 0; width: 40px; height: 31px; } 
+.flair-spitfireflair{ background-position: 0 -81px; width: 35px; height: 38px; } 
