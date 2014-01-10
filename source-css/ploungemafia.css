@@ -6,7 +6,7 @@
 /* We're discord's bitches now */
 
 /* The things we do for pretzels... */
-
+/* PRETZEL DISABLED by Sixjester for PMIII
 body:first-of-type {
     background-image: url(%%dicks%%);
     background-repeat:no-repeat;
@@ -15,17 +15,11 @@ body:first-of-type {
     width: 100%;
 }
 
+*/
+
 hr {
     border-bottom: 1px solid #747474;
     border-top: none
-}
-
-/* Pretzels */
-
-.comment {
-    background-image: url(%%pretzelad%%);
-    background-repeat:no-repeat;
-    background-position:right top;
 }
 
 /* Nice looking H4s. SHUT UP DAVID. */
@@ -102,6 +96,42 @@ hr {
     height: 16px;
 }
 
+.flair-dragon {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%dragon%%);
+    display: inline-block;
+    height: 23px;
+    width: 29px;
+}
+
+.flair-redmage {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%redmage%%);
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+}
+
+.flair-rogue {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%rogue%%);
+    display: inline-block;
+    height: 16px;
+    width: 12px;
+}
+
 .flair-player {
    width: 26px;
    background-position: 0 0;
@@ -110,6 +140,18 @@ hr {
 .flair-ghost {
    width: 13px;
    background-position: -26px 0;
+}
+
+.flair-wraith {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%wraith%%);
+    display: inline-block;
+    height: 16px;
+    width: 14px;
 }
 
 .flair-crown {
@@ -630,21 +672,6 @@ a.author[href$="Juz19"] {
     }
 a.author[href$="Juz19"]:after {
     content: "Juz16";
-    font-size: 10px !important;
-    visibility: visible !important;
-    display: block;
-    letter-spacing: normal
-    }
-
-a.author[href$="DiscordDraconequus"] {
-    font-size: 0px !important;
-    display: inline-block;
-    vertical-align: bottom;
-    overflow: hidden;
-    letter-spacing: -20px
-    }
-a.author[href$="DiscordDraconequus"]:after {
-    content: "FluffyDraconequus";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;

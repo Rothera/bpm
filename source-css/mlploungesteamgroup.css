@@ -222,9 +222,11 @@ body > .content { padding-top: 24px }
     background-color: transparent;
     }
 
+
 .res-nightmode .side, .res-nightmode .side .title, .res-nightmode .sidebox, .res-nightmode .sidecontentbox {
     background-color: #222 !important;
     }
+
 
 .side .spacer {
     margin: 10px 0 0 0;
@@ -237,12 +239,15 @@ body > .content { padding-top: 24px }
 */
 /*Nightmode fixes*/
 
+
 .res-nightmode .sidebox.submit {
     padding-left: 0px !important;
     background-image: none !important;
     border: none !important;
     background: #222 !important;
     }
+
+
 
 /*DC04 Submit button changes */
 .morelink, .morelink:hover, res-nightmode .morelink, res-nightmode .morelink:hover {
@@ -395,7 +400,7 @@ a.author[href$="Sangfroidish"]:before {content: "Sangfroidfish"}
 a.author[href$="ctare"]:before {content: "Time Keeper Cone Engineer Master Interpreter Sensei Editor Card Czar Commander Overlord Wearwolf Jesus Captain Care Bear Ctare"}
 a.author[href$="Draze"]:before {content: "Mother Mustang"}
 a.author[href$="KommandantSprakle"]:before {content: "PeasantSprakle"}
-a.author[href$="sna_fu_bar"]:before {content: "anus_barf"}
+a.author[href$="sna_fu_bar"]:before {content: "foreman anus_barf"}
 a.author[href$="Dundrioundio"]:before {content: "Dundrio"}
 a.author[href$="Dwarflord"]:before {content: "Cinor"}
 a.author[href$="scix"]:before {content: "Hi"}
@@ -581,7 +586,7 @@ a[href|="/spikeeyebrows"] {
     background-image: url(%%spikeeyebrows%%)
     }
 
-a[href|="/catdash"] {
+/*a[href|="/catdash"] {
     display: block;
     clear: none;
     float: left;
@@ -589,7 +594,7 @@ a[href|="/catdash"] {
     height: 150px;
     background-image: url(%%catdash%%)
     }
-
+*/
 a[href|="/flittergasp"] {
     display: block;
     clear: none;

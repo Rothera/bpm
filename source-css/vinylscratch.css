@@ -669,7 +669,15 @@ a[href="/spoiler"],a[href="/donttelljoker"],a[href="/HORSLIOR"] {
 a[href="/spoiler"]:hover,a[href="/donttelljoker"]:hover,a[href="/HORSLIOR"]:hover {
     color: #fff;
     }
-
+a[href|="/r/mlpcharacters"] {
+display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%mlpcharacters%%) !important;
+    height: 29px;
+    width: 298px;
+    background-position: 0px 0px;
+}
 /* Don't modify the start and stop tags please. -koobaxion */
 
 /* vs_start */

@@ -309,7 +309,7 @@ a[href|='/teeth'] {width:118px; height:135px; background-position: -369px -2px}
 a[href|='/twiumm'] {width:110px; height:120px; background-position: -2px -2px}
 
 
-a[href|='/gotobread'], a[href|='/haveacookie'], a[href|='/horseonfire'], a[href|='/mylifeisinshambles'], a[href|='/ohgosh'], a[href|='/ppshiggy'], a[href|='/ppishygddt'], a[href|='/ppsmirk'], a[href|='/scootafied'], a[href|='/scootafried'], a[href|='/sleepymac'], a[href|='/stitchbystitch'], a[href|='/surstageleft'], a[href|='/tavisalute'], a[href|='/thebaz'], a[href|='/twiface'], a[href|='/twilongdidntread'], a[href|='/rbjshrug'], a[href|='/flare'],a[href|='/hehehehe'] {
+a[href|='/gotobread'], a[href|='/haveacookie'], a[href|='/horseonfire'], a[href|='/mylifeisinshambles'], a[href|='/ohgosh'], a[href|='/ppshiggy'], a[href|='/ppishygddt'], a[href|='/ppsmirk'], a[href|='/scootafied'], a[href|='/scootafried'], a[href|='/sleepymac'], a[href|='/stitchbystitch'], a[href|='/surstageleft'], a[href|='/tavisalute'], a[href|='/thebaz'], a[href|='/twiface'], a[href|='/twilongdidntread'], a[href|='/rbjshrug'], a[href|='/flare'],a[href|='/hehehehe'],a[href|='/corndogs']{
     display: block;
     clear: none;
     float: left;
@@ -337,6 +337,7 @@ a[href|='/thebaz'] {width:114px; height:150px; background-position: -783px -129p
 a[href|='/twiface'] {width:151px; height:150px; background-position: -194px -129px}
 a[href|='/twiface']:hover {width:300px; height:300px; background-position: -504px -483px}
 a[href|='/twilongdidntread'] {width:176px; height:200px; background-position: -486px -281px}
+a[href|='/corndogs'] {width:163px; height:200px; background-position: -844px -294px}
 
 START-PONYSCRIPT-IGNORE {color: red }
 
@@ -806,6 +807,9 @@ html:lang(np) .flair-DevaKitty:before {width:40px;height:40px;background-positio
 
 .side a[href="http://www.reddit.com/r/ComeInside"] {display:none}
 
+.side a[href="http://aj.comeinside.org:8080/scripts/np.user.js"] {display:none}
+
+html:lang(np) .side a[href="http://aj.comeinside.org:8080/scripts/np.user.js"] {display:block}
 
 html:lang(np) .side a[href="http://np.reddit.com/r/ComeInside"] {display:none}
 

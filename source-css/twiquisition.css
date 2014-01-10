@@ -146,22 +146,6 @@ width: 100px;
 height: 150px;
 background-image: url(%%twiwalk%%);
 }
-a[href|="/spitfireuniform"] {
-display: block;
-clear: none;
-float: left;
-width: 180px;
-height: 228px;
-background-image: url(%%spitfireuniform%%);
-}
-a[href|="/cozyfire"] {
-display: block;
-clear: none;
-float: left;
-width: 150px;
-height: 191px;
-background-image: url(%%cozyfire%%);
-}
 a[href|="/twiaplus"] {
 display: block;
 clear: none;
@@ -169,78 +153,6 @@ float: left;
 width: 160px;
 height: 146px;
 background-image: url(%%twiaplus%%);
-}
-a[href|="/sfwondersuit"] {
-display: block;
-clear: none;
-float: left;
-width: 156px;
-height: 215px;
-background-image: url(%%sfwondersuit%%);
-}
-a[href|="/sfstand"] {
-display: block;
-clear: none;
-float: left;
-width: 156px;
-height: 197px;
-background-image: url(%%sfstand%%);
-}
-a[href|="/angryfire"] {
-display: block;
-clear: none;
-float: left;
-width: 220px;
-height: 226px;
-background-image: url(%%angryfire%%);
-}
-a[href|="/notthefaceofmercy"] {
-display: block;
-clear: none;
-float: left;
-width: 220px;
-height: 181px;
-background-image: url(%%notthefaceofmercy%%);
-}
-a[href|="/spitconfident"] {
-display: block;
-clear: none;
-float: left;
-width: 160px;
-height: 160px;
-background-image: url(%%spitconfident%%);
-}
-a[href|="/cloud9"] {
-display: block;
-clear: none;
-float: left;
-width: 220px;
-height: 135px;
-background-image: url(%%cloud9%%);
-}
-a[href|="/sfeww"] {
-display: block;
-clear: none;
-float: left;
-width: 135px;
-height: 130px;
-background-image: url(%%sfeww%%);
-}
-a[href|="/warface"] {
-display: block;
-clear: none;
-float: left;
-width: 160px;
-height: 141px;
-background-image: url(%%warface%%);
-}
-a[href|="/smugfire"] {
-display: block;
-clear: none;
-float: left;
-width: 220px;
-height: 281px;
-background-image: url(%%smugfire%%);
 }
 a[href|="/lightningsalute"] {
 display: block;
@@ -274,54 +186,6 @@ width: 220px;
 height: 343px;
 background-image: url(%%twitongue%%);
 }
-a[href|="/lyrawha"] {
-display: block;
-clear: none;
-float: left;
-width: 199px;
-height: 220px;
-background-image: url(%%lyrawha%%);
-}
-a[href|="/lyrahi"] {
-display: block;
-clear: none;
-float: left;
-width: 220px;
-height: 262px;
-background-image: url(%%lyrahi%%);
-}
-a[href|="/lyralook"] {
-display: block;
-clear: none;
-float: left;
-width: 220px;
-height: 268px;
-background-image: url(%%lyralook%%);
-}
-a[href|="/lyrastand"] {
-display: block;
-clear: none;
-float: left;
-width: 220px;
-height: 318px;
-background-image: url(%%lyrastand%%);
-}
-a[href|="/lyrasitting"] {
-display: block;
-clear: none;
-float: left;
-width: 220px;
-height: 300px;
-background-image: url(%%lyrasitting%%);
-}
-a[href|="/lyrawhoa"] {
-display: block;
-clear: none;
-float: left;
-width: 220px;
-height: 192px;
-background-image: url(%%lyrawhoa%%);
-}
 a[href|="/8bitsombra"] {
 display: block;
 clear: none;
@@ -346,3 +210,18 @@ content: " Twilight-lovers here now";
 }
 .side .helplink + .title h1 { display: none; } .side .helplink + .title::before { content: 'Masters of the pone'; display: block; font-size: 130%; color: gray; text-transform: uppercase;
 }
+.flairselector .customizer {
+display: none !important;
+}
+
+.flair {
+border: none !important;
+padding:0px;
+background: url(%%spritesheet%%) no-repeat -9999px -9999px;
+display:inline-block;
+}
+.flair-cadancesmug{ background-position: 0 0; width: 35px; height: 36px; } 
+.flair-dashaloo{ background-position: 0 -86px; width: 35px; height: 44px; } 
+.flair-spitfireface{ background-position: 0 -180px; width: 35px; height: 41px; } 
+
+/*Twilight is a super fat ugly pone and a useless princess.*/

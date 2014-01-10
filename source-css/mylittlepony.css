@@ -204,13 +204,13 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%twilight-hat%%);
- width:65px;
- height:54px;
- margin-top:-29px;
+ background:url(%%pinkie-stache-hat%%);
+ width:60px;
+ height:60px;
+ margin-top:-35px;
  margin-left:5px;
  margin-bottom:0px;
- margin-right:-25px;
+ margin-right:-40px;
 }
 
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important}
@@ -261,7 +261,7 @@ a[href^="/"][href*="-in-"],a[href^="/"][href$="-in"],a[href^="/"][href*="-inp-"]
 
 body a[href="/spoiler"]{background:black!important;color:black!important}
 body a[href="/spoiler"]:hover{color:white!important}/*Pinkie Pie NPT Warnings*//*DO _NOT_ PUT ANY COMMENTS IN-BETWEEN THE NPTWARNING TAGS! Do not remove the tags either, they are used by modtool and the bot! The tags must be on their own line!*/
-/*{NPTWARNING}
+/*{NPTWARNING}*/
 .formtabs-content .infobar
 {
  margin-left:50px;
@@ -289,7 +289,7 @@ body a[href="/spoiler"]:hover{color:white!important}/*Pinkie Pie NPT Warnings*//
 {
  background:url(%%pinkiemessage%%) no-repeat;
 }
-{/NPTWARNING}*/
+/*{/NPTWARNING}*/
 /* Spoiler Setter*/
 .marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"]
 {
@@ -381,7 +381,7 @@ background-color: white;
 }
 
 /*New post spam filtered warning*/
-#title-field.roundfield:before
+/*#title-field.roundfield:before
 {
  content:"NOTE: Check the new queue after posting. If your post doesn't show up, you were spam filtered by mistake! Message the moderators with a link to the submission. Also, before posting, remember to read the rules in the sidebar!";
  font-size:0.86em;
@@ -389,6 +389,18 @@ background-color: white;
  border:1px solid #5f99cf;
  background-color:#EFF7FF;
  color:black;
+ font-weight:bold;
+ display:block;
+ margin-bottom:10px
+}*/
+#title-field.roundfield:before
+{
+ content:"Note: Please refrain from posting screenshots of the pony with the grumpy cat cutie mark. It has been posted many times. It will be removed.";
+ font-size:1.0em;
+ padding:5px;
+ border:1px solid #5f99cf;
+ background-color:#EFF7FF;
+ color:red;
  font-weight:bold;
  display:block;
  margin-bottom:10px
