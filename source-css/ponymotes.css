@@ -1,7 +1,7 @@
 /* LIMITS:
  * Limit on number of images uploaded is 50.
  * Limit on CSS size is approx 100,000 characters
- * Limit on image size is 500kB (Approx)
+ * Limit on image size is 512kB (Approx)
  */
 
 /* Subscriber count + active user text changer */
@@ -152,7 +152,7 @@ background-image: linear-gradient(90deg, #e7cdcd, #fff, #fff, #fff, #fff, #fff);
 }
 
 .res-nightmode .linkflair-denied {
-background-image: linear-gradient(-90deg, #300303, #222);
+background-image: linear-gradient(-90deg, #600303, #222);
 }
 
 .linkflair-approved {
@@ -160,7 +160,7 @@ background-image: linear-gradient(90deg, #cde7cd, #fff, #fff, #fff, #fff, #fff);
 }
 
 .res-nightmode .linkflair-approved {
-background-image: linear-gradient(-90deg, #033004, #222);
+background-image: linear-gradient(-90deg, #036004, #222);
 }
 
 body.listing-page .linkflair-denied div.RES-keyNav-activeElement, body.listing-page .linkflair-approved div.RES-keyNav-activeElement
@@ -340,19 +340,23 @@ vertical-align: middle;
  */
 
 /* 70x70a 'motes. */
-a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"], a[href|="/grannyglad"], a[href|="/aloe"], a[href|="/ohyeah"], a[href|="/neutraljack"], a[href|="/fillyfirefly"]
+a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"], a[href|="/grannyglad"], a[href|="/aloe"], a[href|="/ohyeah"], a[href|="/neutraljack"], a[href|="/fillyfirefly"], a[href|="/rdwat"]
 {background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
-a[href|="/cadface"], a[href|="/apathiablankstare"], a[href|="/twicider"], a[href|="/nomakeup"], a[href|="/twiscepter"], a[href|="/twisceptre"], a[href|="/winona"], a[href|="/lunahmm"], a[href|="/scootexcited"], a[href|="/fluttereyebrow"], a[href|="/smugcolgate"], a[href|="/trixielecture"]
+a[href|="/cadface"], a[href|="/apathiablankstare"], a[href|="/twicider"], a[href|="/nomakeup"], a[href|="/twiscepter"], a[href|="/twisceptre"], a[href|="/winona"], a[href|="/lunahmm"], a[href|="/scootexcited"], a[href|="/fluttereyebrow"], a[href|="/smugcolgate"], a[href|="/trixielecture"], a[href|="/ajdur"] 
 {background-image:url(%%100x100a%%);width:100px;height:100px;display:block;float:left;}
 
 /* 150x150a 'motes. */
 a[href|="/tuxpony"], a[href|="/chibiluna"], a[href|="/shiningcadancehug"], a[href|="/twihappycry"], a[href|="/properbudget"], a[href|="/celestiaglee"], a[href|="/frittergasp"], a[href|="/twiimbetterthanyou"], a[href|="/twimbetterthanyou"], a[href|="/bonboudicca"], a[href|="/celticbonbon"], a[href|="/whatatwist"], a[href|="/rdsquishyface"], a[href|="/soveryawesome"], a[href|="/rdsmirk"], a[href|="/cheekydash"], a[href|="/sombrarage"], a[href|="/gildaconfused"], a[href|="/rarityspy"], a[href|="/twilightyay"], a[href|="/tiadisapproval"]
 {background-image:url(%%150x150a%%);width:150px;height:150px;display:block;float:left;}
 
+/* 150x150b 'motes. */
+a[href|="/flutterbatscowl"], a[href|="/ppduckface"], a[href|="/duckfaceselfie"], a[href|="/libwawy"], a[href|="/ohgoditstoocute"]
+{background-image:url(%%150x150b%%);width:150px;height:150px;display:block;float:left;}
+
 /* 200x200a 'motes. */
-a[href|="/regret"], a[href|="/pinkiemail"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"], a[href|="/nightmaresparkle"], a[href|="/magnemites"], a[href|="/princessfluttershy"], a[href|="/pinkpyro"], a[href|="/happynewyear"], a[href|="/flutterbat"], a[href|="/hnng"]
+a[href|="/regret"], a[href|="/pinkiemail"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"], a[href|="/nightmaresparkle"], a[href|="/magnemites"], a[href|="/princessfluttershy"], a[href|="/pinkpyro"], a[href|="/happynewyear"], a[href|="/hnng"]
 {background-image:url(%%200x200a%%);width:200px;height:200px;display:block;float:left;}
 
 /* 250x250a 'motes. */
@@ -373,19 +377,19 @@ a[href|="/braecozy"], a[href|="/caramelsad"], a[href|="/twilicry"], a[href|="/sf
 {background-image:url(%%misfitsb%%);display:block;float:left;}
 
 /* Misfits c */
-a[href|="/twitiger"], a[href|="/twiger"], a[href|="/tanktwi"], a[href|="/lunacelehug"], a[href|="/magicmissile"], a[href|="/icastmagicmissile"], a[href|="/pinkmage"], a[href|="/trixiedisappointed"], a[href|="/trixiedoublefacehoof"], a[href|="/raribat"]
+a[href|="/twitiger"], a[href|="/twiger"], a[href|="/tanktwi"], a[href|="/lunacelehug"], a[href|="/magicmissile"], a[href|="/icastmagicmissile"], a[href|="/pinkmage"], a[href|="/trixiedisappointed"], a[href|="/trixiedoublefacehoof"], a[href|="/raribat"], a[href|="/ppblushing"]
 {background-image:url(%%misfitsc%%);display:block;float:left;}
 
 /* Grid pos 0,0 'motes. Not needed but for completeness... */
-a[href|="/cadface"], a[href|="/pinkieplease"], a[href|="/regret"], a[href|="/apathiasquint"], a[href|="/tuxpony"], a[href|="/karmashark"], a[href|="/jumptheshark"]
+a[href|="/cadface"], a[href|="/pinkieplease"], a[href|="/regret"], a[href|="/apathiasquint"], a[href|="/tuxpony"], a[href|="/karmashark"], a[href|="/jumptheshark"], a[href|="/flutterbatscowl"]
 {background-position: 0 0;}
 
 /* Grid pos 1,0 'motes */
-a[href|="/twispike"], a[href|="/pinkiemail"], a[href|="/chibiluna"], a[href|="/apathiablankstare"], a[href|="/rdohyeah"]
+a[href|="/twispike"], a[href|="/pinkiemail"], a[href|="/chibiluna"], a[href|="/apathiablankstare"], a[href|="/rdohyeah"], a[href|="/ppduckface"], a[href|="/duckfaceselfie"]
 {background-position: -100% 0%;}
 
 /* Grid pos 2,0 'motes */
-a[href|="/shiningcadancehug"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"], a[href|="/twicider"], a[href|="/rainbowstache"], a[href|="/sparklelove"]
+a[href|="/shiningcadancehug"], a[href|="/obsessivetrixie"], a[href|="/trixiebeingcreepy"], a[href|="/twicider"], a[href|="/rainbowstache"], a[href|="/sparklelove"], a[href|="/libwawy"], a[href|="/ohgoditstoocute"]
 {background-position: -200% 0%;}
 
 /* Grid pos 0,1 'motes */
@@ -409,12 +413,12 @@ a[href|="/twiimbetterthanyou"], a[href|="/twimbetterthanyou"], a[href|="/neutral
 {background-position: -100% -200%;}
 
 /* Grid pos 2,2 'motes */
-a[href|="/bonboudicca"], a[href|="/celticbonbon"], a[href|="/flutterbat"], a[href|="/fluttereyebrow"], a[href|="/fillyfirefly"]
+a[href|="/bonboudicca"], a[href|="/celticbonbon"], a[href|="/fluttereyebrow"], a[href|="/fillyfirefly"]
 {background-position: -200% -200%;}
 
 
 /* Grid pos 0,3 'motes */
-a[href|="/whatatwist"],  a[href|="/hnng"], a[href|="/smugcolgate"]
+a[href|="/whatatwist"],  a[href|="/hnng"], a[href|="/smugcolgate"], a[href|="/rdwat"]
 {background-position: 0% -300%;}
 
 /* Grid pos 1,3 'motes */
@@ -423,7 +427,7 @@ a[href|="/rdsquishyface"], a[href|="/soveryawesome"], a[href|="/trixielecture"]
 
 
 /* Grid pos 2,3 'motes */
-a[href|="/rdsmirk"], a[href|="/cheekydash"]
+a[href|="/rdsmirk"], a[href|="/cheekydash"], a[href|="/ajdur"] 
 {background-position: -200% -300%;}
 
 /* Grid pos 0,4 'motes */
@@ -502,3 +506,4 @@ a[href|="/magicmissile"], a[href|="/icastmagicmissile"], a[href|="/pinkmage"] {w
 a[href|="/jaglad"] {width:68px;height:100px;background-position: -415px 0;}
 a[href|="/trixiedisappointed"], a[href|="/trixiedoublefacehoof"] {width:118px;height:100px;background-position: -225px -441px;}
 a[href|="/raribat"] {width:200px;height:141px;background-position: -300px 0;}
+a[href|="/ppblushing"] {width:158px;height:200px;background-position: -300px -141px;}
