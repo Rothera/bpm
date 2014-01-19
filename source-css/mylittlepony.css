@@ -89,7 +89,7 @@ div.over18 .entry .buttons .first{padding-left: 0px}
 
 #searchexpando.infobar 
 {
- background-image:url(%%KarmaHawks%%);
+ background-image:url(%%crackle%%);
  background-repeat:no-repeat;
  background-position:right bottom;
  background-color:transparent;
@@ -382,7 +382,7 @@ background-color: white;
 }
 
 /*New post spam filtered warning*/
-/*#title-field.roundfield:before
+#title-field.roundfield:before
 {
  content:"NOTE: Check the new queue after posting. If your post doesn't show up, you were spam filtered by mistake! Message the moderators with a link to the submission. Also, before posting, remember to read the rules in the sidebar!";
  font-size:0.86em;
@@ -390,18 +390,6 @@ background-color: white;
  border:1px solid #5f99cf;
  background-color:#EFF7FF;
  color:black;
- font-weight:bold;
- display:block;
- margin-bottom:10px
-}*/
-#title-field.roundfield:before
-{
- content:"Note: Please refrain from posting screenshots of the pony with the grumpy cat cutie mark. It has been posted many times. It will be removed.";
- font-size:1.0em;
- padding:5px;
- border:1px solid #5f99cf;
- background-color:#EFF7FF;
- color:red;
  font-weight:bold;
  display:block;
  margin-bottom:10px
@@ -1376,4 +1364,22 @@ div.content{margin-top:15px}
     height: 28px;
     padding-bottom: 6px;
     opacity: 100 !important;
+}
+
+/*Sidebar image*/
+.side .usertext a[href="http://goo.gl/UQQ9I5"] {
+    background-image: url(%%cccc-new-horizons%%);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: block;
+    height: 483px;
+    position: absolute;
+    right: 5px;
+    top: 115px;
+    width: 300px;
+    z-index: 900;
+}
+
+.side{
+    padding-top: 486px;
 }

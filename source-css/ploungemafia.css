@@ -649,6 +649,21 @@ body:not(.moderator) input[value="t3_10vuz8"] + .usertext-edit
  display:none;
 }
 
+a.author[href$="DiscordDraconequus"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+
+a.author[href$="DiscordDraconequus"]:after {
+    content: "DiscordDraquneqqussamithson ";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
 a.author[href$="Juz11"] {
     font-size: 0px !important;
     display: inline-block;
@@ -847,3 +862,7 @@ background-position: -200px -600px;
 .stylesheet-customize-container textarea {
     height: 500px
     }
+
+.res-nightmode .linkflair-announcement { background-image: linear-gradient(90deg, #0E0E0E, transparent, transparent, transparent, transparent, transparent, transparent) !important; }
+.res-nightmode .linkflair-day { background-image: linear-gradient(90deg, #30300E, transparent, transparent, transparent, transparent, transparent, transparent) !important; }
+.res-nightmode .linkflair-night { background-image: linear-gradient(90deg, #000000, transparent, transparent, transparent, transparent, transparent, transparent) !important; }

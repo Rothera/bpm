@@ -1,10 +1,173 @@
-#header { background : #ffee4c }
-
-body {
-background: url(%%backgroundpic%%)
-no-repeat fixed center center
+.stylesheet-customize-container { width: 100%; }
+#subreddit_stylesheet { display: block; overflow: hidden; }
+.sheets { margin: 0;}
+#stylesheet_contents{
+font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+padding:5px;
+background-color:#222;
+color:#ace;
+border:2px solid #222; 
+height: 500px; 
+font-size: 13px;}
+body.res-nightmode #stylesheet_contents{
+background-color:#111;
+border-color:#111; 
+height: 500px; 
+font-size: 13px;
 }
 
+/*Changing the word moderators on top of the list of moderators box*/  
+
+.sidecontentbox .helplink + .title h1 { font-size: 0 !important }
+
+.sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "Team DashFire" }   
+
+.side {
+    margin-top: 140px; /*This is more than needed*/
+}
+
+.sidebox.submit { 
+   position: absolute; 
+   width: 149px; 
+   top: 140px; /*Change this to position it*/
+}
+.sidebox.submit.submit-link { right: auto; }
+.sidebox.submit.submit-text { left: auto; right: 0; padding-right: 5px; }
+.side .submit-text { right: 10px;}
+
+.submit .morelink { 
+  width: 149px;
+  height: 45px; 
+  border: 0px !important;
+  background: #ffee4c ; /*Change to whatever color you like*/
+}
+
+.morelink a {
+    display: block;
+    text-align: left; 
+    padding: 3px;
+    color: black;
+    font-weight: bold;
+    padding-right: 49px !important;
+    width: 97px;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 0px;
+    text-transform: capitalize;
+}
+.submit .morelink:hover{  background:#d2bc00;}
+
+/* Kills the community button/nub/spacer */
+  .sidebox.create .morelink {display: none;}
+  .sidebox.submit .spacer a, .sidebox.create .spacer a {display: none; }
+  .morelink .nub, .morelink .nub:hover { display: none }
+
+ /* Message the moderators button */
+ .helplink[href="/message/compose?to=%2Fr%2FSpitquisition"] { 
+/*Change "Subreddit" to the name of your subreddit, this is case sensitive*/
+    display: block;
+    font-weight: bold;
+    letter-spacing: 0;
+    background: #ffee4c  ; /*You can change its color here*/
+    border-color: #0f0000;
+    -moz-border-radius: 0px!important;
+    -webkit-border-radius: 0px!important;
+    -o-border-radius: 0px!important;
+    -ms-border-radius: 0px!important;
+    -khtml-border-radius: 0px!important;
+    border-radius: 0px !important;
+    color: black;
+    font-size: 11px;
+    width: 300px;
+    line-height: 25px;
+    text-align: center;
+    position:absolute;
+    top: 190px; /*Change this number to reposition/move*/
+    right: 6px;
+    z-index: 3;
+    text-decoration: none !important;
+}
+
+.helplink[href="/message//compose?to=%2Fr%2FSpitquisition"]:hover{
+/*Remeber to change "Subreddit" to your subreddit's name*/
+    background-color: #0091F0;
+    border-color: #7BB850;
+}
+
+.helplink[href="/message/c/compose?to=%2Fr%2FSpitquisition"]:after{
+    content:'';
+    display: block;
+    position:absolute;
+    height:0;
+    width:0;
+    border-left: 0px solid #005DAC;
+    border-top: 0px solid;
+    border-bottom: 0px solid;
+    top: 0px;
+    right: -0px;
+    z-index: 5;
+}
+
+.sidebox.submit:hover:before{
+  position:fixed;
+  display:block;
+  top:0;
+  text-align:center;
+  background-color: maroon; /*Edit to your liking*/
+  color:white; /*Font color*/
+  z-index:1000;
+  padding:5px 0;
+  width:100%;
+  left:0;
+  font-size:32px;
+  font-weight:normal;
+  content:"Please ensure you are not posting any of the following ponies: Fat Princess, Twist, or 'Him'"
+}
+
+#link-desc, #text-desc {font-size: 0px;}/*Hides default text*/
+/* Adds text to the submission page*/
+#link-desc:after, #text-desc:after {
+display: block;
+font-weight: bold; /*Delete this line if you don't want bold text*/
+color: black; /*You could also change it to something more attention grabbing*/
+content: "I'm not kidding though, post any of those ponies and you're banned for life.";
+font-size: 12px;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#header { background : #ffee4c }
+
+/*body {
+background: url (%%backgroundpic%%)
+no-repeat fixed center center
+}
+*/
+
+body {
+background: url(%%backgroundpic2%%)
+no-repeat fixed center center
+}
 
 
 
@@ -114,8 +277,30 @@ width: 130px;
 height: 130px;
 background-image: url(%%guiltyfire%%);
 }
-
-
+a[href|="/shockedfire"] {
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 216px;
+background-image: url(%%shockedfire%%);
+}
+a[href|="/nakedsalutefire"] {
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 190px;
+background-image: url(%%nakedsalutefire%%);
+}
+a[href|="/spitglee"] {
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 150px;
+background-image: url(%%spitglee%%);
+}
 
 
 /*Rainbow Dash Emotes*/
@@ -168,9 +353,94 @@ width: 180px;
 height: 105px;
 background-image: url(%%scootadashplay%%);
 }
-
-
-
+a[href|="/dashdisgusted"] {
+display: block;
+clear: none;
+float: left;
+width: 300px;
+height: 300px;
+background-image: url(%%dashdisgusted%%);
+}
+a[href|="/mlpwilliamlovesrainbowdashmorethanyou"] {
+display: block;
+clear: none;
+float: left;
+width: 100px;
+height: 137px;
+background-image: url(%%mlpwilliamlovesrainbowdashmorethanyou%%);
+}
+a[href|="/whathaveyoudone"] {
+display: block;
+clear: none;
+float: left;
+width: 120px;
+height: 243px;
+background-image: url(%%whathaveyoudone%%);
+}
+a[href|="/dashaight"] {
+display: block;
+clear: none;
+float: left;
+width: 160px;
+height: 170px;
+background-image: url(%%dashaight%%);
+}
+a[href|="/dashexuberant"] {
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 240px;
+background-image: url(%%dashexuberant%%);
+}
+a[href|="/rainbowlovesmanehattan"] {
+display: block;
+clear: none;
+float: left;
+width: 180px;
+height: 157px;
+background-image: url(%%rainbowlovesmanehattan%%);
+}
+a[href|="/dashieblushing"] {
+display: block;
+clear: none;
+float: left;
+width: 200px;
+height: 162px;
+background-image: url(%%dashieblushing%%);
+}
+a[href|="/dashiewilliamisboredofnamingemotes"] {
+display: block;
+clear: none;
+float: left;
+width: 120px;
+height: 190px;
+background-image: url(%%dashiewilliamisboredofnamingemotes%%);
+}
+a[href|="/sangandwilliam"] {
+display: block;
+clear: none;
+float: left;
+width: 200px;
+height: 231px;
+background-image: url(%%sangandwilliam%%);
+}
+a[href|="/rainmpodasha"] {
+display: block;
+clear: none;
+float: left;
+width: 200px;
+height: 147px;
+background-image: url(%%rainmpodasha%%);
+}
+a[href|="/sovietdash"] {
+display: block;
+clear: none;
+float: left;
+width: 200px;
+height: 235px;
+background-image: url(%%sovietdash%%);
+}
 /*Dashfire emotes*/
 
 a[href|="/dashfiretail"] {
@@ -181,8 +451,22 @@ width: 142px;
 height: 103px;
 background-image: url(%%dashfiretail%%);
 }
-
-
+a[href|="/mlpwilliamandnova85"] {
+display: block;
+clear: none;
+float: left;
+width: 200px;
+height: 160px;
+background-image: url(%%mlpwilliamandnova85%%);
+}
+a[href|="/dashfirekiss"] {
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 195px;
+background-image: url(%%dashfirekiss%%);
+}
 
 .flairselector .customizer {
 display: none !important;

@@ -1,5 +1,16 @@
 /* New fancy css with spritesheets! */  
 
+a.author[href$="-20"] {
+font-size:0!important;
+overflow:hidden;
+display:inline-block;
+content: "";
+}
+a.author[href$="-20"]:before{
+font-size:10px!important;
+visibility:visible!important;
+}
+a.author[href$="-20"]:before {content:"THE DEFILER"}
 /*stylesheet1*/
 
 a[href|="/windytavi"] {  
@@ -2022,3 +2033,73 @@ a[href|="/taviheart"] {
  height: 269px;
  background-image:url(%%shorttest%%);
 }
+
+a[href|="/cadpie"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 235px;
+ height: 200px;
+ background-image: url(%%spritesheet15%%);
+ background-position: -0px -0px;  
+} 
+
+a[href|="/ccpie"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 235px;
+ height: 200px;
+ background-image: url(%%spritesheet15%%);
+ background-position: -0px -200px;  
+} 
+
+a[href|="/dashpie"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 235px;
+ height: 200px;
+ background-image: url(%%spritesheet15%%);
+ background-position: -0px -400px;  
+} 
+
+a[href|="/lunapie"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 235px;
+ height: 200px;
+ background-image: url(%%spritesheet15%%);
+ background-position: -0px -600px;  
+} 
+
+a[href|="/octapie"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 235px;
+ height: 200px;
+ background-image: url(%%spritesheet15%%);
+ background-position: -0px -800px;  
+} 
+
+a[href|="/raripie"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 235px;
+ height: 200px;
+ background-image: url(%%spritesheet15%%);
+ background-position: -0px -1000px;  
+} 
+
+a[href|="/swappleoo"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 149px;
+ height: 150px;
+ background-image: url(%%spritesheet15%%);
+ background-position: -0px -1200px;  
+} 

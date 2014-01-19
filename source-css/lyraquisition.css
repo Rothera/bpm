@@ -1,3 +1,13 @@
+body
+{
+    color: #006B47;
+    min-width:1000px;
+}
+html, body {
+	background: #C7FFEC;
+}
+ .domain, domain a {color: #00FF99;}
+
 a[href|="/lyrahi"] {
 display: block;
 clear: none;
@@ -26,7 +36,7 @@ a[href|="/lyrastand"] {
 display: block;
 clear: none;
 float: left;
-width: 104px;
+width: 102px;
 height: 150px;
 background-image: url(%%lyrastand%%);
 }
@@ -213,4 +223,165 @@ float: left;
 width: 174px;
 height: 150px;
 background-image: url(%%hellohuman%%);
+}
+a[href|="/lyramarine"] {
+display: block;
+clear: none;
+float: left;
+width: 149px;
+height: 150px;
+background-image: url(%%lyramarine%%);
+}
+a[href|="/spyra"] {
+display: block;
+clear: none;
+float: left;
+width: 171px;
+height: 150px;
+background-image: url(%%spyra%%);
+}
+a[href|="/meetthehydro"] {
+display: block;
+clear: none;
+float: left;
+width: 125px;
+height: 150px;
+background-image: url(%%meetthehydro%%);
+}
+a[href|="/lyrabridesmaidrun"] {
+display: block;
+clear: none;
+float: left;
+width: 243px;
+height: 150px;
+background-image: url(%%lyrabridesmaidrun%%);
+}
+a[href|="/lyrafilly3"] {
+display: block;
+clear: none;
+float: left;
+width: 148px;
+height: 150px;
+background-image: url(%%lyrafilly3%%);
+}
+a[href|="/lyraimbalanced"] {
+display: block;
+clear: none;
+float: left;
+width: 135px;
+height: 150px;
+background-image: url(%%lyraimbalanced%%);
+}
+a[href|="/lyralikeabaws"] {
+display: block;
+clear: none;
+float: left;
+width: 97px;
+height: 150px;
+background-image: url(%%lyralikeabaws%%);
+}
+a[href|="/lyramummy"] {
+display: block;
+clear: none;
+float: left;
+width: 134px;
+height: 150px;
+background-image: url(%%lyramummy%%);
+}
+a[href|="/lyranotimpressed"] {
+display: block;
+clear: none;
+float: left;
+width: 114px;
+height: 150px;
+background-image: url(%%lyranotimpressed%%);
+}
+a[href|="/lyrapower"] {
+display: block;
+clear: none;
+float: left;
+width: 132px;
+height: 150px;
+background-image: url(%%lyrapower%%);
+}
+a[href|="/lyrastandingup"] {
+display: block;
+clear: none;
+float: left;
+width: 171px;
+height: 150px;
+background-image: url(%%lyrastandingup%%);
+}
+a[href|="/lyrathearcher"] {
+display: block;
+clear: none;
+float: left;
+width: 135px;
+height: 200px;
+background-image: url(%%lyrathearcher%%);
+}
+a[href|="/lyrarave"] {
+display: block;
+clear: none;
+float: left;
+width: 136px;
+height: 150px;
+background-image: url(%%lyrarave%%);
+}
+a[href|="/lyradevious"] {
+display: block;
+clear: none;
+float: left;
+width: 148px;
+height: 150px;
+background-image: url(%%lyradevious%%);
+}
+a[href|="/gary"] {
+display: block;
+clear: none;
+float: left;
+width: 139px;
+height: 186px;
+background-image: url(%%gary%%);
+}
+.flair:before{
+    display:inline-block;
+    width:10px;
+    height:10px;
+}
+.flair-mod:before{
+    content:'';
+    background:url(%%mod%%) 0 0 no-repeat;
+}
+.subscribers .word {
+display: none;
+}  
+.subscribers .number::after {
+content: " best ponies";
+}
+.users-online .word {
+display: none;
+}
+.users-online .number::after {
+content: " inquisitors here now";
+}
+.side .helplink + .title h1 { display: none; } .side .helplink + .title::before { content: 'Your overlords:'; display: block; font-size: 130%; color: gray; text-transform: uppercase;
+}
+.arrow.up { background-image: url(%%Upvote1%%); 
+background-position: 0px 0px; 
+height: 14px; width: 15px; 
+}
+.arrow.upmod { 
+background-image: url(%%Upvote2%%); 
+background-position: 0px 0px; 
+height: 14px; width: 15px;  
+}
+.arrow.down { background-image: url(%%Downvote1%%); 
+background-position: 0px 0px; 
+height: 14px; width: 15px; 
+}
+.arrow.downmod { 
+background-image: url(%%Downvote2%%); 
+background-position: 0px 0px; 
+height: 14px; width: 15px; 
 }

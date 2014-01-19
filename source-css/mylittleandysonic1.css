@@ -1,60 +1,3 @@
-/**************SANTA CSS*************************
-*************************************************
-*********SHAMELESSLY STOLEN FROM*****************
-*************************************************
-*******THE GLORIOUS MAIN SUB MODS****************
-*************************************************/
-
-body.comments-page #siteTable div.id-t3_1rmel8 p.title, body.comments-page #siteTable div.id-t3_1rmel8 a.thumbnail
-{
- display:none;
-}
-
-body.comments-page #siteTable div.id-t3_1rmel8 p.tagline
-{
- display:none;
-}
-
-body.comments-page #siteTable div.id-t3_1rmel8 .expando
-{
- margin-left:34px;
- margin-top:263px;
-}
-
-body.comments-page #siteTable div.id-t3_1rmel8
-{
- background:transparent url(%%santa%%) top left no-repeat !important;
-}
-
-body.comments-page #siteTable div.id-t3_1rmel8 form.usertext
-{
- min-height:300px;
-}
-
-body.comments-page #siteTable div.id-t3_1rmel8 .midcol {
-margin-top: 278px;
-margin-left: 96px;
-}
-
-body.comments-page #siteTable div.id-t3_1rmel8 .flat-list.buttons {
-margin-left: 40px;
-}
-
-body.comments-page #siteTable div.id-t3_1rmel8 .entry
-{
- background:transparent !important;
- outline:0px !important;
-}
-
-/**Santa Compressed mode fixes**/
-body.comments-page #siteTable div.id-t3_1rmel8.compressed .expando {margin-left:108px;}
-body.comments-page #siteTable div.id-t3_1rmel8.compressed p.tagline {left:200px;}
-body.comments-page #siteTable div.id-t3_1rmel8.compressed .entry.likes {background-position:122px 197px !important;}
-body.comments-page #siteTable div.id-t3_1rmel8.compressed .entry.dislikes {background-position:907px 198px !important;}
-
-/******** END OF Awesome santa CSS of Super Duper Awesomeness ******/
-
-
 .id-t3_145m8r.link .title{font-size:large}
 
 /* Changes background  */
@@ -65,7 +8,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%eaglemercy%%) 50% 0px !important;
+   background: url(%%chatchatbanner%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -559,6 +502,8 @@ background-repeat: no-repeat;
 .flair-screwball4:after { background-position: 0px -6150px }
 .flair-clinger:after { background-position: 0px -6180px }
 .flair-dinostabby:after { background-position: 0px -6210px }
+.flair-dominos:after { background-position: 0px -6240px }
+
 
 
 /* Nightmode fix for flair */
@@ -703,8 +648,8 @@ a.author[href$=theclinger_4],
 a.author[href$=FUCKING_HATE_REDDIT],
 a.author[href$=andysonic3],
 a.author[href$=andysonic0],
-a.author[href$=Andysonic-1]
-
+a.author[href$=Andysonic-1],
+a.author[href$=The_MSPainter]
 
 { 
 font-size:0!important; 
@@ -811,7 +756,8 @@ a.author[href$=theclinger_4]:before,
 a.author[href$=FUCKING_HATE_REDDIT]:before,
 a.author[href$=andysonic3]:before,
 a.author[href$=andysonic0]:before,
-a.author[href$=Andysonic-1]:before
+a.author[href$=Andysonic-1]:before,
+a.author[href$=The_MSPainter]:before
 
 {
 font-size:10px!important; 
@@ -916,6 +862,7 @@ a.author[href$=FUCKING_HATE_REDDIT]:before { content:"Freakin' Dislike Webplace"
 a.author[href$=andysonic3]:before { content:"Chibi Andy" }
 a.author[href$=andysonic0]:before { content:"Mini Andy" }
 a.author[href$=Andysonic-1]:before { content:"Tiny Andy" }
+a.author[href$=The_MSPainter]:before { content:"Domino's Pizza" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -999,7 +946,8 @@ a.author[href$="Conky_"]:after,
 a.author[href$="IncidentalUnicorn2"]:after,
 a.author[href$="andysonic3"]:after,
 a.author[href$="andysonic0"]:after,
-a.author[href$="Andysonic-1"]:after
+a.author[href$="Andysonic-1"]:after,
+a.author[href$="The_MSPainter"]:after
 
 {
 color:#000; 
@@ -1073,6 +1021,7 @@ a.author[href$="IncidentalUnicorn2"]:after { content:" Making no fun, fun!" }
 a.author[href$="andysonic3"]:after { content:" THE NO FUN DEPUTY" }
 a.author[href$="andysonic0"]:after { content:" THE NO FUN CHIEF" }
 a.author[href$="Andysonic-1"]:after { content:" THE NO FUN ROOKIE" }
+a.author[href$="The_MSPainter"]:after { content:" (local delivery in 30 minutes or less)" }
 
 /* Any pre/post-name flair stuff goes here */ 
 
