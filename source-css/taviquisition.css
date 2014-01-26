@@ -601,7 +601,8 @@ a[href|="/spoonderland"] {
  float: left; 
  width: 161px;
  height: 150px;
- background-image: url(%%spoonderland%%);
+ background-image: url(%%spritesheet16%%);
+ background-position: -0px -0px; 
 } 
 
 a[href|="/floatavia"] {  
@@ -2102,4 +2103,33 @@ a[href|="/swappleoo"] {
  height: 150px;
  background-image: url(%%spritesheet15%%);
  background-position: -0px -1200px;  
+} 
+
+a[href|="/taviroughmorning"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 129px;
+ height: 150px;
+ background-image: url(%%taviroughmorning%%); 
+} 
+
+a[href|="/readingdash"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 138px;
+ height: 150px;
+ background-image: url(%%spritesheet16%%);
+ background-position: -0px -150px; 
+} 
+
+a[href|="/pinkiepiemouth"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 150px;
+ height: 150px;
+ background-image: url(%%spritesheet16%%);
+ background-position: -0px -300px; 
 } 

@@ -2,7 +2,7 @@ body{background:url(%%CCisBP%%) no-repeat fixed left center}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
 .content .md h1:before{content:">"}
 /*New post spam filtered warning*/
-#title-field.roundfield:before
+#title-field.roundfield:before {}
 
 
 /*stylesheet1 "sheet1"*/
@@ -536,6 +536,22 @@ width:170px;
 height:146px;
 background-repeat:no-repeat;
 background-image:url(%%cchappy2%%);
+}
+
+a[href|="/ccdash"] {
+float:left;
+width:163px;
+height:180px;
+background-repeat:no-repeat;
+background-image:url(%%ccdash%%);
+}
+
+a[href|="/ccdash2"] {
+float:left;
+width:155px;
+height:180px;
+background-repeat:no-repeat;
+background-image:url(%%ccdash2%%);
 }
 /*un-assigned end*/
 

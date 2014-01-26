@@ -700,6 +700,9 @@ a[href|="/chrysalis"],a[href|="/queenchrysalis"],a[href|="/changelingqueen"],a[h
 .flair-sewnsow
 {background-position:-100% -1600%}
 
+.flair-soarin
+{background-position:-100% -1700%}
+
 a[href|="/flutterjerk"],a[href|="/a20"],a[href|="/rflutterjerk"],a[href|="/ra20"],a[href|="/rarityyell"],a[href|="/b20"],a[href|="/rrarityyell"],a[href|="/rb20"],a[href|="/rdannoyed"],a[href|="/c20"],a[href|="/rrdannoyed"],a[href|="/rc20"],a[href|="/snails"],a[href|="/e20"],a[href|="/rsnails"],a[href|="/re20"],.flair-fluttershy,.side .md table tr:nth-of-type(1) td:nth-of-type(4):after
 {background-position:-200% 0}
 
@@ -1278,9 +1281,9 @@ a.thumbnail.self{margin-right:-14px}
 
 .thing.self h4.imgCaptions:before {display:none;}
 .thing.self h4.imgCaptions {font-size:1em;background:transparent;color:inherit;margin:0;padding:0;font-variant:normal;}
-input[value="t3_xy2aw"] + div.usertext-body .SuperRedditAltTextDisplay_Text{display:none!important}
+.wiki-page-episode_list div.md.wiki .SuperRedditAltTextDisplay_Text{display:none!important}
  
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a
+.wiki-page-episode_list div.md.wiki table tbody tr td + td a
 {
  background: transparent url(%%buttons%%) no-repeat scroll top left;
  color: #444;
@@ -1297,14 +1300,23 @@ input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a
  margin:0px 2px
 }
  
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a:active
+.wiki-page-episode_list div.md.wiki table tbody tr td + td a:active
 {
  background-position:bottom left;
  color:#000;
  outline:none
 }
 
-input[value="t3_xy2aw"] + div.usertext-body table tbody tr td + td a[href$="?e"]:before{content:"Synopsis";font-weight:bold}
+.wiki-page-episode_list div.md.wiki table tbody tr td + td a[href$="?e"]:before{content:"Synopsis";font-weight:bold}
+
+.wiki-page-episode_list div.md.wiki a[href="/spoiler"]
+{
+ width: auto !important;
+ margin: auto !important;
+ height: auto !important;
+ padding: 0 4px !important;
+}
+
 .md .RESUserTag, .md .RESUserTag + a.voteWeight,.md .RESUserTag + a.voteWeight + div.SuperRedditAltTextDisplay_Text{display:none!important;}
 .res-nightmode .tagline .flair{background-color:transparent!important}
 .res-nightmode .side .md h3{color:#DDD!important}
@@ -1368,18 +1380,18 @@ div.content{margin-top:15px}
 
 /*Sidebar image*/
 .side .usertext a[href="http://goo.gl/UQQ9I5"] {
-    background-image: url(%%cccc-new-horizons%%);
+    background-image: url(%%join-the-cccc%%);
     background-position: 0 0;
     background-repeat: no-repeat;
     display: block;
-    height: 483px;
     position: absolute;
     right: 5px;
     top: 115px;
+    height: 412px;
     width: 300px;
     z-index: 900;
 }
 
 .side{
-    padding-top: 486px;
+    padding-top: 416px;
 }

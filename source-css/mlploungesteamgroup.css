@@ -522,7 +522,8 @@ a[href|="/adviceshy"] {
     float: left;
     width: 222px;
     height: 250px;
-    background-image: url(%%adviceshy%%) !important
+    background-position: -600px 0px;
+    background-image: url(%%emotesquare%%) !important
     }
 
 a[href|="/adviceshybubble"] {
@@ -724,7 +725,8 @@ a[href|="/unhug"] {
     float: left;
     width: 298px;
     height: 200px;
-    background-image: url(%%unhug%%) !important
+    background-position: 0px -501px;
+    background-image: url(%%emotesquare%%) !important
     }
 
 
@@ -887,6 +889,16 @@ a[href|="/cuddlerape"] {
     height: 175px;
     background-image: url(%%emotesquare%%) !important;
     background-position: -175px -0px;
+    }
+
+a[href|="/offend"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%emotesquare%%) !important;
+    background-position: 0px -350px;
     }
 
 /* ------MACROS------- */

@@ -238,7 +238,22 @@
         height: 259px;
         background-image: url(%%ftfy%%)
         }
-  
+    a[href|="/ppgrin"], a[href|="/i03"], a[href|="/sunshineandrainbows"] {
+        display: block;
+        clear: none;
+        float: left;
+        width: 130px;
+        height: 108px;
+        background-image: url(%%ppgrin%%)
+        }
+    a[href|="/warpspeed"], a[href|="/i04"] {
+        display: block;
+        clear: none;
+        float: left;
+        width: 640px;
+        height: 480px;
+        background-image: url(%%warpspeed%%)
+        }
     /**********************
     *
     *    OTHER EMOTE STUFF

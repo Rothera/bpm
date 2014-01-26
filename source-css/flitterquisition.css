@@ -5,6 +5,21 @@ position:relative;
 background-color:#c9afe0;
 z-index:99}
 
+div.over18 .entry .buttons .first{padding-left: 0px}
+.footer-parent
+{
+ height:100%;
+ padding-bottom:0px;
+ clear:both;
+ text-align:center;
+ width:100%;
+
+ background-image:url(%%ccandflitterbg%%);
+ background-repeat:no-repeat;
+ margin-bottom:-80px;
+ background-position: 50% 100%;
+}
+
 a[href|="/flitterbucket"] {
     display: block;
     clear: none;
@@ -58,20 +73,7 @@ a[href|="/flitterbolt"] {
     height: 150px;
     background-image: url(%%flitterbolt%%) 
     }
-div.over18 .entry .buttons .first{padding-left: 0px}
-.footer-parent
-{
- height:100%;
- padding-bottom:0px;
- clear:both;
- text-align:center;
- width:100%;
 
- background-image:url(%%ccandflitterbg%%);
- background-repeat:no-repeat;
- margin-bottom:-80px;
- background-position: 50% 100%;
-}
 
 a[href|="/flittersohigh"] {
     display: block;
@@ -121,4 +123,12 @@ a[href|="/flittermad"] {
     width: 111px;
     height: 150px;
     background-image: url(%%flittermad%%) 
+    }
+a[href|="/bowofapproval"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 250px;
+    height: 161px;
+    background-image: url(%%bowofapproval%%) 
     }
