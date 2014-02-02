@@ -1,0 +1,362 @@
+/*Change the word for 'readers' and the currently online*/
+.subscribers .word, .users-online .word{
+display:none;
+}
+.subscribers .number:after { 
+content: " Vinyl Scratch devotees"
+}
+.users-online .number:after { 
+content: " devotees currently raving" 
+}
+
+
+/*emotes*/
+a[href|="/sadvinyl"]
+{
+ background-image: url(%%sadvinyl%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 230px;
+    height: 124px;
+}
+
+a[href|="/vinylblush"]
+{
+ background-image: url(%%vinylblush%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 137px;
+    height: 151px;
+}
+
+a[href|="/lyrascratchhug"]
+{
+ background-image: url(%%lyrascratchhug%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 150px;
+    height: 146px;
+}
+
+a[href|="/rainbowscratch"]
+{
+ background-image: url(%%rainbowscratch%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 241px;
+    height: 150px;
+}
+
+a[href|="/vinylangrysocks"]
+{
+ background-image: url(%%vinylangrysocks%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 260px;
+    height: 150px;
+}
+
+a[href|="/vinylbangs"]
+{
+ background-image: url(%%vinylbangs%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 74px;
+    height: 150px;
+}
+
+a[href|="/vinylmonocle"]
+{
+ background-image: url(%%vinylmonocle%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 115px;
+    height: 150px;
+}
+
+a[href|="/vinylrecord"]
+{
+ background-image: url(%%vinylrecord%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 154px;
+    height: 145px;
+}
+
+a[href|="/vinylsleepless"]
+{
+ background-image: url(%%vinylsleepless%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 101px;
+    height: 150px;
+}
+
+a[href|="/vsletsdothis"] 
+{
+ background-image: url(%%vsletsdothis%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 92px;
+    height: 150px;
+}
+
+a[href|="/vsbrokeglasses"] 
+{
+ background-image: url(%%vsbrokeglasses%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 97px;
+    height: 150px;
+}
+
+a[href|="/vsbringit"] 
+{
+ background-image: url(%%vsbringit%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 229px;
+    height: 142px;
+}
+
+a[href|="/vsassassin"] 
+{
+ background-image: url(%%vsassassin%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 137px;
+    height: 150px;
+}
+
+a[href|="/vscheer"] 
+{
+ background-image: url(%%vscheer%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 147px;
+    height: 150px;
+}
+
+a[href|="/vslick"] 
+{
+ background-image: url(%%vslick%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 130px;
+    height: 150px;
+}
+
+a[href|="/vsshine"] 
+{
+ background-image: url(%%vsshine%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 120px;
+    height: 150px;
+}
+
+a[href|="/vstrippinballs"] 
+{
+ background-image: url(%%vstrippinballs%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 123px;
+    height: 142px;
+}
+
+a[href|="/alicornscratch"] 
+{
+ background-image: url(%%alicornscratch%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 139px;
+    height: 150px;
+}
+
+a[href|="/vsattack"] 
+{
+ background-image: url(%%vsattack%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 205px;
+    height: 149px;
+}
+
+a[href|="/vshoofstand"] 
+{
+ background-image: url(%%vshoofstand%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 85px;
+    height: 150px;
+}
+
+a[href|="/vsjump"] 
+{
+ background-image: url(%%vsjump%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 107px;
+    height: 150px;
+}
+
+a[href|="/vssit"] 
+{
+ background-image: url(%%vssit%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 73px;
+    height: 150px;
+}
+
+a[href|="/vsspa"] 
+{
+ background-image: url(%%vsspa%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 123px;
+    height: 153px;
+}
+
+a[href|="/vsviolin"] 
+{
+ background-image: url(%%vsviolin%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 133px;
+    height: 150px;
+}
+
+a[href|="/tgappon3"] 
+{
+ background-image: url(%%tgappon3%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 154px;
+    height: 147px;
+}
+
+a[href|="/vschillax"] 
+{
+ background-image: url(%%vschillax%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 213px;
+    height: 156px;
+}
+
+a[href|="/vsdone"] 
+{
+ background-image: url(%%vsdone%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 117px;
+    height: 150px;
+}
+
+a[href|="/vshai"] 
+{
+ background-image: url(%%vshai%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 95px;
+    height: 150px;
+}
+
+a[href|="/vsfieryrage"] 
+{
+ background-image: url(%%vsfieryrage%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 162px;
+    height: 176px;
+}
+
+a[href|="/vsfun"] 
+{
+ background-image: url(%%vsfun%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 230px;
+    height: 152px;
+}
+
+a[href|="/vsscheme"] 
+{
+ background-image: url(%%vsscheme%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 108px;
+    height: 153px;
+}
+
+a[href|="/vsspider"] 
+{
+ background-image: url(%%vsspider%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 112px;
+    height: 101px;
+}
+
+a[href|="/vinyllyrascratch"] 
+{
+ background-image: url(%%vinyllyrascratch%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 154px;
+    height: 141px;
+}
+
+a[href|="/vskeyboard"] 
+{
+ background-image: url(%%vskeyboard%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 124px;
+    height: 150px;
+}
+
+a[href|="/vsguns"] 
+{
+ background-image: url(%%vsguns%%);
+    clear: none;
+    display: block;
+    float: left;
+    width: 173px;
+    height: 170px;
+}
