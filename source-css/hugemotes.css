@@ -1,0 +1,99 @@
+/* HOW TO EMOTE
+ * Find the 'spritesheet' that the emote should go on.
+ * If emote is 70x70 it's the latest non-full 70x70 image...
+ * Download and add the emote to the image. Images have a grid pattern, so make sure you add the emote in line with the grid.
+ * Upload the updated image using the form, make sure the 'new image name' section is the same as the image it's replacing.
+ * (So if you update the 70x70a image, make sure it says "70x70a").
+ * In the form: `a[href|="/emotecode"]`, add the emote to the corresponding sprite sheet CSS below. [Without the backticks, and don't forget the comma!]
+ * If the emote is a misfit you're going to have to define it's width and height yourself.
+ * In the form: `a[href|="/emotecode"] {width:[X]px;height:[Y]px;}` Where [X] and [Y] are the width and height of the emote respectively.
+ * Now you need to add it to the correct grid position css rule. 0,0 is the top left, 1,0 is the one one to the right of that. etc. etc.
+ * If the emote is a misfit, you'll need to define it yourself.
+ * In the form: `a[href|="/emotecode"] {background-position: -[X]px -[Y]px;}` Where [X] and [Y] are the horizontal and vertical distance from
+ * the top left of the image to the top left of the emote in pixels respectively.
+ * Click save and you should be done! Test if it works. If reddit throws a CSS validation error at you double check you haven't missed out any
+ * semi-colons or curly brackets or the like, or you haven't typo'd the name of a CSS property. etc. etc...
+ */
+
+/* 70x70a 'motes. */
+a[href|="/examplecode1"]
+{background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
+
+/* 100x100a 'motes. */
+a[href|="/examplecode2"]
+{background-image:url(%%100x100a%%);width:100px;height:100px;display:block;float:left;}
+
+/* 150x150a 'motes. */
+a[href|="/appledashhug"], a[href|="/dashcadancelove"], a[href|="/diamondrumblekiss"], a[href|="/twilightspikesmile"], a[href|="/shinelightsnuggle"]
+{background-image:url(%%150x150a%%);width:150px;height:150px;display:block;float:left;}
+
+/* 200x200a 'motes. */
+a[href|="/flowerpowerhug"]
+{background-image:url(%%200x200a%%);width:200px;height:200px;display:block;float:left;}
+
+/* 250x250a 'motes. */
+a[href|="/cheesypienuzzle"]
+{background-image:url(%%250x250a%%);width:250px;height:250px;display:block;float:left;}
+
+/* 300x300a 'motes */
+a[href|="/example6"]
+{background-image:url(%%300x300a%%);width:300px;height:300px;display:block;float:left;}
+
+/* Grid pos 0,0 'motes. Not needed but for completeness... */
+a[href|="/appledashhug"], a[href|="/flowerpowerhug"], a[href|="/cheesypienuzzle"]
+{background-position: 0 0;}
+
+/* Grid pos 1,0 'motes. */
+a[href|="/dashcadancelove"]
+{Background-position: -100% 0%;}
+
+/* Grid pos 2,0 'motes. */
+a[href|="/diamondrumblekiss"]
+{Background-position: -200% 0%;}
+
+/* Grid pos 0,1 'motes. */
+a[href|="/twilightspikesmile"]
+{Background-position: 0% -100%;}
+
+/* Grid pos 1,1 'motes. */
+a[href|="/shinelightsnuggle"]
+{Background-position: -100% -100%;}
+
+/* Misfits a */
+a[href|="/applepiehug"], a[href|="/bloomjacknuzzle"], a[href|="/daringdashhug"], a[href|="/dashderpyhug"], a[href|="/flutterdashstuff"], a[href|="/flutterfirehug"], a[href|="/raritysbhug"], a[href|="/scootadashnuzzle"], a[href|="/twilightspikehug"]
+{background-image:url(%%misfitsa%%);display:block;float:left;}
+
+/* Misfits 2 a */
+a[href|="/flutterjackhug"], a[href|="/fluttertwikiss"], a[href|="/fluttertwikinky"], a[href|="/lunashycuddle"], a[href|="/pinkieshyface"], a[href|="/pinkietwihug"], a[href|="/twishininghug"], a[href|="/shiningcadancekiss"], a[href|="/silvertiaranuzzle"], a[href|="/twispikeleghug"], a[href|="/twixhug"]
+{background-image:url(%%misfits2a%%);display:block;float:left;}
+
+/* Misfits 3 a */
+a[href|="/masterraceotp"], a[href|="/fluttertwihug"], a[href|="/flutterrosecuddle"]
+{background-image:url(%%misfits3a%%);display:block;float:left;}
+
+/* Animated Emotes */
+
+/* Misfit Emotes */
+a[href|="/applepiehug"] {width:300px;height:194px;}
+a[href|="/bloomjacknuzzle"] {width:243px;height:300px;background-position: 0px -194px;}
+a[href|="/daringdashhug"] {width:200px;height:127px;background-position: -300px 0px;}
+a[href|="/dashderpyhug"] {width:250px;height:155px;background-position: -243px -194px;}
+a[href|="/flutterdashstuff"] {width:300px;height:220px;background-position: 0px -494px;}
+a[href|="/flutterfirehug"] {width:300px;height:266px;background-position: 0px -714px;}
+a[href|="/raritysbhug"] {width:174px;height:200px;background-position: -300px -349px;}
+a[href|="/scootadashnuzzle"] {width:179px;height:200px;background-position: -300px -549px;}
+a[href|="/twilightspikehug"] {width:169px;height:200px;background-position: -300px -749px;}
+a[href|="/flutterjackhug"] {width:250px;height:166px;}
+a[href|="/fluttertwikiss"] {width:250px;height:141px;background-position: -250px 0px;}
+a[href|="/fluttertwikinky"] {width:250px;height:233px;background-position: 0px -166px;}
+a[href|="/lunashycuddle"] {width:250px;height:181px;background-position: -250px -141px;}
+a[href|="/pinkieshyface"] {width:250px;height:155px;background-position: -250px -322px;}
+a[href|="/pinkietwihug"] {width:250px;height:176px;background-position: 0px -399px;}
+a[href|="/twishininghug"] {width:250px;height:167px;background-position: -250px -477px;}
+a[href|="/shiningcadancekiss"] {width:250px;height:199px;background-position: 0px -575px;}
+a[href|="/silvertiaranuzzle"] {width:193px;height:226px;background-position: 0px -774px;}
+a[href|="/twispikeleghug"] {width:200px;height:187px;background-position: -250px -644px;}
+a[href|="/twixhug"] {width:250px;height:159px;background-position: -193px -831px;}
+a[href|="/masterraceotp"] {width:250px;height:132px;}
+a[href|="/fluttertwihug"] {width:201px;height:225px;background-position: -250px -0px;}
+a[href|="/flutterrosecuddle"] {width:250px;height:204px;background-position: 0px -132px;}
