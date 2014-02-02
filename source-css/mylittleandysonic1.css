@@ -8,7 +8,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%chatchatbanner%%) 50% 0px !important;
+   background: url(%%manesub%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -1033,9 +1033,8 @@ a.author[href$="The_MSPainter"]:after { content:" (local delivery in 30 minutes 
 .tagline a.author[href$="/EvilHom3r"]:after,
 .tagline a.author[href$="/ajtexasranger"]:after,
 .tagline a.author[href$="/fsakj"]:before,
-.tagline a.author[href$="/durpyDash"]:before
-
-
+.tagline a.author[href$="/durpyDash"]:before,
+.tagline a.author[href$="/gremlinpower"]:before
 {
     content: " ";
     background: none;
@@ -1060,7 +1059,8 @@ a.author[href$="The_MSPainter"]:after { content:" (local delivery in 30 minutes 
 :not(.flair) .tagline a.author[href$="/Latiel"]:before,
 :not(.flair) .tagline a.author[href$="/245001"]:before,
 :not(.flair) .tagline a.author[href$="/fsakj"]:before,
-:not(.flair) .tagline a.author[href$="/durpyDash"]:before
+:not(.flair) .tagline a.author[href$="/durpyDash"]:before,
+:not(.flair) .tagline a.author[href$="/gremlinpower"]:before
 
 {
     background-position: 0px -540px !important;

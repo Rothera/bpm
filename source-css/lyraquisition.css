@@ -341,8 +341,16 @@ display: block;
 clear: none;
 float: left;
 width: 139px;
-height: 186px;
+height: 183px;
 background-image: url(%%gary%%);
+}
+a[href|="/wow"] {
+display: block;
+clear: none;
+float: left;
+width: 256px;
+height: 300px;
+background-image: url(%%wow%%);
 }
 .flair:before{
     display:inline-block;

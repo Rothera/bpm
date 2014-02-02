@@ -309,7 +309,7 @@ a[href|='/teeth'] {width:118px; height:135px; background-position: -369px -2px}
 a[href|='/twiumm'] {width:110px; height:120px; background-position: -2px -2px}
 
 
-a[href|='/gotobread'], a[href|='/haveacookie'], a[href|='/horseonfire'], a[href|='/mylifeisinshambles'], a[href|='/ohgosh'], a[href|='/ppshiggy'], a[href|='/ppishygddt'], a[href|='/ppsmirk'], a[href|='/scootafied'], a[href|='/scootafried'], a[href|='/sleepymac'], a[href|='/stitchbystitch'], a[href|='/surstageleft'], a[href|='/tavisalute'], a[href|='/thebaz'], a[href|='/twiface'], a[href|='/twilongdidntread'], a[href|='/rbjshrug'], a[href|='/flare'],a[href|='/hehehehe'],a[href|='/corndogs']{
+a[href|='/gotobread'], a[href|='/haveacookie'], a[href|='/horseonfire'], a[href|='/mylifeisinshambles'], a[href|='/ohgosh'], a[href|='/ppshiggy'], a[href|='/ppishygddt'], a[href|='/ppsmirk'], a[href|='/scootafied'], a[href|='/scootafried'], a[href|='/sleepymac'], a[href|='/stitchbystitch'], a[href|='/surstageleft'], a[href|='/tavisalute'], a[href|='/thebaz'], a[href|='/twiface'], a[href|='/twilongdidntread'], a[href|='/rbjshrug'], a[href|='/flare'],a[href|='/hehehehe'],a[href|='/corndogs'],a[href|='/theface']{
     display: block;
     clear: none;
     float: left;
@@ -337,7 +337,8 @@ a[href|='/thebaz'] {width:114px; height:150px; background-position: -783px -129p
 a[href|='/twiface'] {width:151px; height:150px; background-position: -194px -129px}
 a[href|='/twiface']:hover {width:300px; height:300px; background-position: -504px -483px}
 a[href|='/twilongdidntread'] {width:176px; height:200px; background-position: -486px -281px}
-a[href|='/corndogs'] {width:163px; height:200px; background-position: -844px -294px}
+a[href|='/corndogs'] {width:163px; height:150px; background-position: -844px -294px}
+a[href|='/theface'] {width:103px; height:150px; background-position: -879px -496px}
 
 START-PONYSCRIPT-IGNORE {color: red }
 
@@ -472,6 +473,7 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 /* Names */
 
 /* here first */
+a.author[href$='ZetsuXIII'],
 a.author[href$='thezooman123'],
 a.author[href$=maku450],
 a.author[href$=XelNaga],
@@ -495,6 +497,7 @@ content: "";
 }
 
 /* here second */
+a.author[href$='ZetsuXIII']:before,
 a.author[href$='thezooman123']:before,
 a.author[href$=maku450]:before,
 a.author[href$=EvanMacIan]:before,
@@ -515,8 +518,9 @@ visibility:visible!important;
 }
 
 /*and the replacement*/
+a.author[href$='ZetsuXIII']:before {content:"Element"}
 a.author[href$='thezooman123']:before {content:"zooman"}
-a.author[href$=maku450]:before {content:"maku"}
+a.author[href$=maku450]:before {content:"Flutterbat"}
 a.author[href$=EvanMacIan]:before {content:"Mr. Califag MacIan"}
 a.author[href$=SirCinnamon]:before {content:"King Cinnamon"}
 a.author[href$=XelNaga]:before {content:"Twi`Naga"}
