@@ -1,0 +1,194 @@
+body { 
+    background: url(%%colt%%) 
+    no-repeat fixed center center;
+}
+
+/*Change the word for 'readers' and the currently online*/
+.subscribers .word, .users-online .word{
+display:none;
+}
+
+.subscribers .number:after { 
+content: " party planners"
+}
+.users-online .number:after { 
+content: " having a party" 
+}
+
+.footer-parent:after {
+    content: url(%%cutiemark%%);
+}
+
+/*** Emotes ***/
+
+/* 100px shared values */
+a[href|="/cheese"], a[href|="/boneless"]{
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url(%%csemotes100a%%) !important
+}
+
+/* 100px offsets */
+a[href|="/cheese"]{ background-position:-0px -0px }
+a[href|="/boneless"]{ background-position:-100px -0px }
+
+/* 150px shared values */
+a[href|="/cheeseshock"], a[href|="/cheesethis"], a[href|="/cheesehappy"], a[href|="/cheeseandpinkie"], a[href|="/accordian"], a[href|="/partyhard"]{
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-image: url(%%csemotes150a%%) !important
+}
+
+/* 150px offsets */
+a[href|="/cheeseshock"]{ background-position:-0px -0px }
+a[href|="/cheesethis"]{ background-position:-150px -0px }
+a[href|="/cheesehappy"]{ background-position:-300px -0px }
+a[href|="/cheeseandpinkie"]{ background-position:-0px -150px }
+a[href|="/accordian"]{ background-position:-150px -150px }
+a[href|="/partyhard"]{ background-position:-300px -150px }
+
+/* oddballs */
+a[href|="/rubberchickendance"] { 
+     background-position: 0px 0px; 
+     display: block; 
+     clear: none; 
+     float: left; 
+     width: 200px; 
+     height: 64px; 
+     background-image: url(%%rubberchickendance%%) !important
+}
+
+
+a[href|="/cheeseplay"] { 
+     background-position: 0px 0px; 
+     display: block; 
+     clear: none; 
+     float: left; 
+     width: 84px; 
+     height: 122px; 
+     background-image: url(%%cheeseaccordian-84x122-by-millennialdan-d75siyz%%) !important
+}
+
+a[href|="/cheeseidle"] { 
+     background-position: 0px 0px; 
+     display: block; 
+     clear: none; 
+     float: left; 
+     width: 106px; 
+     height: 104px; 
+     background-image: url(%%cheeseidle-106x104-by-millennialdan-d75shhs%%) !important
+}
+
+a[href|="/cheesetrot"] { 
+     background-position: 0px 0px; 
+     display: block; 
+     clear: none; 
+     float: left; 
+     width: 110px; 
+     height: 108px; 
+     background-image: url(%%cheesetrot-110x108-by-millennialdan-d75sj04%%) !important
+}
+
+/*** Flairs ***/
+
+/* main setup */
+.flair {
+     padding: 0;
+     background: none;
+     color: black;
+     border: 0;
+     border-radius: 0;
+     background-image: url(%%cheeseflair%%);
+     display: inline-block;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px;
+     line-height: 240%;
+}
+
+/* disable flair text selection */
+.flairselector .customizer input { display: none !important; }
+
+/* individual flair names and offsets */
+/* (these are the names to reference when editing flair) */
+.flair-rainbowdash,.side .md table tr:nth-of-type(1) td:nth-of-type(2):after{background-position:0 0}
+.flair-twilightsparkle,.side .md table tr:nth-of-type(1) td:nth-of-type(3):after{background-position:-100% 0}
+.flair-fluttershy,.side .md table tr:nth-of-type(1) td:nth-of-type(4):after{background-position:-200% 0}
+.flair-applejack,.side .md table tr:nth-of-type(1) td:nth-of-type(5):after{background-position:-300% 0}
+.flair-pinkiepie,.side .md table tr:nth-of-type(3) td:nth-of-type(2):after{background-position:0 -100%}
+.flair-rarity,.side .md table tr:nth-of-type(3) td:nth-of-type(3):after{background-position:-100% -100%}
+.flair-trixie,.side .md table tr:nth-of-type(3) td:nth-of-type(4):after{background-position:-200% -100%}
+.flair-applefritter,.side .md table tr:nth-of-type(3) td:nth-of-type(5):after{background-position:-300% -100%}
+.flair-princessluna,.side .md table tr:nth-of-type(5) td:nth-of-type(2):after{background-position:0 -200%}
+.flair-princesscelestia,.side .md table tr:nth-of-type(5) td:nth-of-type(3):after{background-position:-100% -200%}
+.flair-derpyhooves,.side .md table tr:nth-of-type(5) td:nth-of-type(4):after{background-position:-200% -200%}
+.flair-vinylscratch,.side .md table tr:nth-of-type(5) td:nth-of-type(5):after{background-position:-300% -200%}
+.flair-lyraheartstrings,.side .md table tr:nth-of-type(7) td:nth-of-type(2):after{background-position:0 -300%}
+.flair-bonbon,.side .md table tr:nth-of-type(7) td:nth-of-type(3):after{background-position:-100% -300%}
+.flair-octaviamelody,.side .md table tr:nth-of-type(7) td:nth-of-type(4):after{background-position:-200% -300%}
+.flair-doctorwhooves,.side .md table tr:nth-of-type(7) td:nth-of-type(5):after{background-position:-300% -300%}
+.flair-bigmacintosh,.side .md table tr:nth-of-type(9) td:nth-of-type(2):after{background-position:0 -400%}
+.flair-colgate,.side .md table tr:nth-of-type(9) td:nth-of-type(3):after{background-position:-100% -400%}
+.flair-berrypunch,.side .md table tr:nth-of-type(9) td:nth-of-type(4):after{background-position:-200% -400%}
+.flair-pokeypierce,.side .md table tr:nth-of-type(9) td:nth-of-type(5):after{background-position:-300% -400%}
+.flair-roseluck,.side .md table tr:nth-of-type(11) td:nth-of-type(2):after{background-position:0 -500%}
+.flair-zecora,.side .md table tr:nth-of-type(11) td:nth-of-type(3):after{background-position:-100% -500%}
+.flair-seaswirl,.side .md table tr:nth-of-type(11) td:nth-of-type(4):after{background-position:-200% -500%}
+.flair-carrottop,.side .md table tr:nth-of-type(11) td:nth-of-type(5):after{background-position:-300% -500%}
+.flair-screwball,.side .md table tr:nth-of-type(13) td:nth-of-type(2):after{background-position:0 -600%}
+.flair-nurseredheart,.side .md table tr:nth-of-type(13) td:nth-of-type(3):after{background-position:-100% -600%}
+.flair-caramel,.side .md table tr:nth-of-type(13) td:nth-of-type(4):after{background-position:-200% -600%}
+.flair-braeburn,.side .md table tr:nth-of-type(13) td:nth-of-type(5):after{background-position:-300% -600%}
+.flair-wonderbolts,.side .md table tr:nth-of-type(15) td:nth-of-type(2):after{background-position:0 -700%}
+.flair-shadowbolts,.side .md table tr:nth-of-type(15) td:nth-of-type(3):after{background-position:-100% -700%}
+.flair-scootaloo,.side .md table tr:nth-of-type(15) td:nth-of-type(4):after{background-position:-200% -700%}
+.flair-applebloom,.side .md table tr:nth-of-type(15) td:nth-of-type(5):after{background-position:-300% -700%}
+.flair-sweetiebelle,.side .md table tr:nth-of-type(17) td:nth-of-type(2):after{background-position:0 -800%}
+.flair-davenport,.side .md table tr:nth-of-type(17) td:nth-of-type(3):after{background-position:-100% -800%}
+.flair-cheerilee,.side .md table tr:nth-of-type(17) td:nth-of-type(4):after{background-position:-200% -800%}
+.flair-nightmaremoon,.side .md table tr:nth-of-type(17) td:nth-of-type(5):after{background-position:-300% -800%}
+.flair-princeblueblood,.side .md table tr:nth-of-type(19) td:nth-of-type(2):after{background-position:0 -900%}
+.flair-daringdo,.side .md table tr:nth-of-type(19) td:nth-of-type(3):after{background-position:-100% -900%}
+.flair-carrotcake,.side .md table tr:nth-of-type(19) td:nth-of-type(4):after{background-position:-200% -900%}
+.flair-cupcake,.side .md table tr:nth-of-type(19) td:nth-of-type(5):after{background-position:-300% -900%}
+.flair-flam,.side .md table tr:nth-of-type(21) td:nth-of-type(2):after{background-position:0 -1000%}
+.flair-flim,.side .md table tr:nth-of-type(21) td:nth-of-type(3):after{background-position:-100% -1000%}
+.flair-silverspoon,.side .md table tr:nth-of-type(21) td:nth-of-type(4):after{background-position:-200% -1000%}
+.flair-diamondtiara,.side .md table tr:nth-of-type(21) td:nth-of-type(5):after{background-position:-300% -1000%}
+.flair-snips,.side .md table tr:nth-of-type(23) td:nth-of-type(2):after{background-position:0 -1100%}
+.flair-snails,.side .md table tr:nth-of-type(23) td:nth-of-type(3):after{background-position:-100% -1100%}
+.flair-twist,.side .md table tr:nth-of-type(23) td:nth-of-type(4):after{background-position:-200% -1100%}
+.flair-truffleshuffle,.side .md table tr:nth-of-type(23) td:nth-of-type(5):after{background-position:-300% -1100%}
+.flair-amethyststar,.side .md table tr:nth-of-type(25) td:nth-of-type(2):after{background-position:0 -1200%}
+.flair-hairytipper,.side .md table tr:nth-of-type(25) td:nth-of-type(3):after{background-position:-100% -1200%}
+.flair-fancypants,.side .md table tr:nth-of-type(25) td:nth-of-type(4):after{background-position:-200% -1200%}
+.flair-fleurdelis,.side .md table tr:nth-of-type(25) td:nth-of-type(5):after{background-position:-300% -1200%}
+.flair-princesscadance,.side .md table tr:nth-of-type(27) td:nth-of-type(2):after{background-position:0 -1300%}
+.flair-shiningarmor,.side .md table tr:nth-of-type(27) td:nth-of-type(3):after{background-position:-100% -1300%}
+.flair-filthyrich,.side .md table tr:nth-of-type(27) td:nth-of-type(4):after{background-position:-200% -1300%}
+.flair-hoitytoity,.side .md table tr:nth-of-type(27) td:nth-of-type(5):after{background-position:-300% -1300%}
+.flair-cloudchaser,.side .md table tr:nth-of-type(29) td:nth-of-type(2):after{background-position:0 -1400%}
+.flair-flitter,.side .md table tr:nth-of-type(29) td:nth-of-type(3):after{background-position:-100% -1400%}
+.flair-lilyvalley,.side .md table tr:nth-of-type(29) td:nth-of-type(4):after{background-position:-200% -1400%}
+.flair-grannysmith,.side .md table tr:nth-of-type(29) td:nth-of-type(5):after{background-position:-300% -1400%}
+.flair-daisy,.side .md table tr:nth-of-type(31) td:nth-of-type(2):after{background-position:0 -1500%}
+.flair-queenchrysalis,.side .md table tr:nth-of-type(31) td:nth-of-type(3):after{background-position:-100% -1500%}
+.flair-lotusblossom,.side .md table tr:nth-of-type(31) td:nth-of-type(4):after{background-position:-200% -1500%}
+.flair-aloe,.side .md table tr:nth-of-type(31) td:nth-of-type(5):after{background-position:-300% -1500%}
+.flair-drstable,.side .md table tr:nth-of-type(33) td:nth-of-type(2):after{background-position:0 -1600%}
+.flair-sewnsow,.side .md table tr:nth-of-type(33) td:nth-of-type(3):after{background-position:-100% -1600%}
+.flair-spitfire,.side .md table tr:nth-of-type(33) td:nth-of-type(4):after{background-position:-200% -1600%}
+.flair-mayormare,.side .md table tr:nth-of-type(33) td:nth-of-type(5):after{background-position:-300% -1600%}
+.flair-surprise,.side .md table tr:nth-of-type(35) td:nth-of-type(2):after{background-position:0 -1700%}
+.flair-soarin,.side .md table tr:nth-of-type(35) td:nth-of-type(3):after{background-position:-100% -1700%}
+.flair-sunsetshimmer,.side .md table tr:nth-of-type(37) td:nth-of-type(2):after{background-position:0 -1800%}
+.flair-snowdrop,.side .md table tr:nth-of-type(37) td:nth-of-type(3):after{background-position:-100% -1800%}
+.flair-flashsentry,.side .md table tr:nth-of-type(37) td:nth-of-type(4):after{background-position:-200% -1800%}
+.flair-cocopommel,.side .md table tr:nth-of-type(37) td:nth-of-type(5):after{background-position:-300% -1800%}
+.flair-cheesesandwich,.side .md table tr:nth-of-type(39) td:nth-of-type(2):after{background-position:0 -1900%}
