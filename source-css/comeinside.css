@@ -473,6 +473,8 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 /* Names */
 
 /* here first */
+a.author[href$='Generic_Builder'],
+a.author[href$='FrigidMcThunderballs'],
 a.author[href$='ZetsuXIII'],
 a.author[href$='thezooman123'],
 a.author[href$=maku450],
@@ -497,6 +499,8 @@ content: "";
 }
 
 /* here second */
+a.author[href$='Generic_Builder']:before,
+a.author[href$='FrigidMcThunderballs']:before,
 a.author[href$='ZetsuXIII']:before,
 a.author[href$='thezooman123']:before,
 a.author[href$=maku450]:before,
@@ -518,12 +522,14 @@ visibility:visible!important;
 }
 
 /*and the replacement*/
+a.author[href$='Generic_Builder']:before {content:"genny"}
+a.author[href$='FrigidMcThunderballs']:before {content:"Dr. Chandragupta Maurya, M.S"}
 a.author[href$='ZetsuXIII']:before {content:"Element"}
 a.author[href$='thezooman123']:before {content:"zooman"}
 a.author[href$=maku450]:before {content:"Flutterbat"}
 a.author[href$=EvanMacIan]:before {content:"Mr. Califag MacIan"}
 a.author[href$=SirCinnamon]:before {content:"King Cinnamon"}
-a.author[href$=XelNaga]:before {content:"Twi`Naga"}
+a.author[href$=XelNaga]:before {content:"Princess Twi`Naga"}
 a.author[href$=Princess_Molestia_]:before {content:"Princess Molestia"}
 a.author[href$=V17Ds]:before {content:"SkiftSwii"}
 a.author[href$=ZZW30]:before {content:"CaptChuckles"}
@@ -855,3 +861,20 @@ html:lang(np)  .res-nightmode{background-color: #222222!important;}
  background-color: transparent !important;
       border-color: transparent !important} 
 
+
+/*-- removed downvoting for people not subscribed stolen from /r/sips --*/
+body:not(.subscriber) .down
+{     visibility: hidden !important;}
+body:not(.subscriber) #siteTable:before
+{
+     content: "You are not a member of this community.";
+    display: block;
+    max-width: 800px;
+    background-color: #F6E69F;
+    padding: 5px 10px;
+    margin: 5px 305px 5px 0px;
+    border: 1px solid orange;
+    font-size: small;}
+
+
+/*Subscribe-unsubscribe button*/ 

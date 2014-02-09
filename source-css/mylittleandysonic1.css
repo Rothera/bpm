@@ -2,13 +2,13 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%screwwinter%%)  no-repeat  fixed 66% 100% !important;
+    background:  url(%%animebackground5%%)  no-repeat  fixed 66% 100% !important;
 }
 
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%manesub%%) 50% 0px !important;
+   background: url(%%enterchatbanner3%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -649,7 +649,9 @@ a.author[href$=FUCKING_HATE_REDDIT],
 a.author[href$=andysonic3],
 a.author[href$=andysonic0],
 a.author[href$=Andysonic-1],
-a.author[href$=The_MSPainter]
+a.author[href$=The_MSPainter],
+a.author[href$=theclinger_5],
+a.author[href$=FrigidMcThunderballs]
 
 { 
 font-size:0!important; 
@@ -757,7 +759,9 @@ a.author[href$=FUCKING_HATE_REDDIT]:before,
 a.author[href$=andysonic3]:before,
 a.author[href$=andysonic0]:before,
 a.author[href$=Andysonic-1]:before,
-a.author[href$=The_MSPainter]:before
+a.author[href$=The_MSPainter]:before,
+a.author[href$=theclinger_5]:before,
+a.author[href$=FrigidMcThunderballs]:before
 
 {
 font-size:10px!important; 
@@ -814,7 +818,7 @@ a.author[href$=Avngr75]:before {content:"Ted" }
 a.author[href$=tyl3rdurden]:before /*{ content:"Tyler Derpden" }*/ {content:"Belgium" }
 a.author[href$=raritie]:before { content:"Rarity" }
 a.author[href$=Greenie_Lye]:before { content:"Greenie_Lye (Green Derram)" } 
-a.author[href$=Chinch335]:before,a.author[href$=IllusionOf_Integrity]:before { content:"Chillusion" }
+a.author[href$=Chinch335]:before,a.author[href$=IllusionOf_Integrity]:before { content:"Ch-ch-ch-chillusion" }
 a.author[href$=trypsonite]:before { content:"Who"; color:blue }
 a.author[href$=RetardVomitPussyCunt]:before { content:"RainbowViolinPancakesCider" }
 a.author[href$=andysonic2]:before {content:"andysonic1"}
@@ -863,6 +867,8 @@ a.author[href$=andysonic3]:before { content:"Chibi Andy" }
 a.author[href$=andysonic0]:before { content:"Mini Andy" }
 a.author[href$=Andysonic-1]:before { content:"Tiny Andy" }
 a.author[href$=The_MSPainter]:before { content:"Domino's Pizza" }
+a.author[href$=theclinger_5]:before { content:"IncidentalUnicorn2" }
+a.author[href$=FrigidMcThunderballs]:before  { content:"Dr. Chandragupta Maurya, M.S." }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 

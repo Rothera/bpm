@@ -1,53 +1,7 @@
-/*
-  ______________________________________▄▄████████▄
-______________________________________▄█▓▓▓█▓▓▓▓▓▓██▄
-_____________________________________█▓▓▓▓▓██▓▓▓▓▓▓▓█▄
-___________________________▄█████▄__█▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓█
-________________▄▄██████████▓▓▓▓▓▓▓██▓▓▓▓▓▓▓█▓▓▓▓▓▓▓██
-_____________▄█▓▓▓▓▓▓▓▓▓▓█▓██▓▓▓▓▓▓▓█▓▓▓▓▓█▓▓▓▓▓▓▓█▓█
-__________▄█▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓█▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓█▓▓█
-________▄█▓▓▓▓▓▓▓▓▓▓▓▓▓▓████▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓██▓▓█
-_______█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓███▓▓▓▓█
-______█▓▓▓▓▓▓▓▓▓▓▓▓███▀▀▀▀██▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓█▓▓▓▓█___▄█████████▄
-_____█▓▓▓▓▓▓▓▓▓▓█▀▀___________▀█▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓█▓▓▓███▓▓▓▓▓▓▓▓▓▓█▄
-____█▓▓▓▓▓▓▓▓▓█▀_______________▓▓█▓▓▓▓███████▓███▓▓▓▓▓▓▓░░░▓▓▓▓▓▓▓▓▓█
-____█▓▓▓▓▓▓▓▓█_____________▓▓▓░░░█▓██░░░░░░░███▓▓▓▓▓▓░░░░░░▓▓▓▓▓▓▓▓▓▓█
-_____█▓▓▓▓▓▓█____________▓▓░░░░░░██░░░░░░░░░░░░███▓░░░░░░░░░▓▓▓▓▓▓▓▓▓▓█
-__█▌_█▓▓▓▓▓█___________▓░░░░░░░░░░░░░░░░░░░░░░░░▓░░░░░░░▓░░▓▓▓▓▓▓▓▓▓▓▓█
-_█▓█_█▓▓▓▓█__________▓▄▄░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓░░░▓▓▓▓▓▓▓▓▓▓▓█
-█▓▓▓██▓▓▓█_________▓█░░▐░░░░░░░░░▄█████▄░░░░░░░░░░░░░▓░░░░▓▓▓▓▓▓▓▓▓▓▓█
-█▓▓▓▓▓▓▓█________▀▄█░░░▐░░░░░░▄█▀░░░░░░▀█░░░░░░░░░░░▓░░░░▓▓▓▓█▓▓▓▓████
-_██▓▓▓██________▀▀▄▌░░░▐░░░░░░█░░░░░░░░░░█░░░░░░░░░▓░░░░░▓▓▓▓█▓███▓▓▓█
-___▀▀▀▀__________▀▄█░░░░▐░░░░░█░░░░░░░░░░░▐▌░░░░░░░▓░░░░░▓▓▓▓█▓▓▓▓▓▓▓█
-__________________▓░░▓▓▓▓░░░░░░█░░░░░░░░░░░░▐▄▄▄▅░░░░░░░░░▓████▓▓▓▓▓▓▓█
-_________________▓░░▀░░░░░░░░░░▀░░░░░░░░░░░░▐▀▄▄▅░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓█
-__________________▓░░░░░░░░░░░░░░░░░░░░░░░░░░▀▄▄░░░░░░░░█▓▓▓▓▓▓▓▓▓▓▓█
-___________________▓░░░░░▓▓▓░░░░░░░░░░░░░░░░░░░░░███████▓▓▓▓▓▓▓▓▓▓▓█
-____________________▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██
-_______________________▓▓▓▓▓░░░░░░░░░░░░░░░░░░█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████
-_____________IWTCIRD___▓▓▓▓▓░░░░░░░░░░░░░░░░░█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓█
-_______________________▓▓▓▓▓░░░░░░░░░░░░░░░░░█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓█
-_______________________▓▒▒▓░░░░░░░░░░░░░░░░░░░█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓█
-_____________________▓▓▒▓░░░░░░░░░░░░░░░░░░░████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▓█
-______________________▓▓▓▓▓░░░░░░░░░░░░░░███▓▓▓▓█▓▓▓██▓▓▓▓██▓▓▓▓▓█▓▓▓█
-_____________________________▓▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓█▓▓█▓▓▓▓█▓█████▓▓▓▓█
-___________________________________________█▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓█▓▓▓▓▓▓▓▓▓▓█
-__________________________________________█▓▓▓▓▓▓▓▓████▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓█
-_________________________________________█▓▓▓▓▓▓▓▓▓▓█▓▓██████▓▓▓▓▓▓▓▓▓█
-_________________________________________█▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓▓▓███
-__________________________________________█▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓███████
-___________________________________________█▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓█
-____________________________________________█▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓█
-__________________________________________███████████▓▓▓▓▓▓▓▓█
-_________________________________________█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█
-________________________________________█▓▓▓▓▓██▓▓▓▓▓▓▓▓██
-_________________________________________█▓▓▓▓▓▓█▀▀▀▀▀▀▀
-___________________________________________██▓▓▓▓███▄▄
-______________________________________________▀▀▀
-*/
+/* Return of Pinkie Pending */
 /* 
 |
-|                       VERSION JOKER GOT THIS SHIT?!
+|                       VERSION: JOKER GOT THIS SHIT?!
 |
 |                      STYLESHEET FOR R/VINYLSCRATCH         
 |        MOSTLY BY KOOBAXION (sub a wub dub dub) AND 007GHG7 (secrit agnt mahn)       
@@ -92,7 +46,8 @@ span.pagename a{
     filter:alpha(opacity=0);
 }
 
-/*Temporary CSS to make the sidebar picture (oh god please don't fuck up everything) remove this shit after a week or so......... HAHAHHAHA NO*/
+/* Sidebar Picture */
+/* "remove this shit after a week or so........."-About a year ago*/
 
 div.side {
     padding: 535px 0px 0px 0px;
@@ -739,7 +694,7 @@ a[href|='/vsheh'],a[href|='/vs29'] {width:67px; height:80px;background-position:
 a[href|='/vsyes'],a[href|='/vs2a'] {width:70px; height:73px;background-position: 0px -765px}
 
 
-a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vsdance2'],a[href|='/vsgrump'],a[href|='/vstears'],a[href|='/vssinep'],a[href|='/kixandra'],a[href|='/vsholyshit'],a[href|='/vsfacehoof'],a[href|='/vssrs'],a[href|='/vssoawesome'],a[href|='/vssupersad'],a[href|='/vssmug'],a[href|='/vysmug'],a[href|='/vsdontask'],a[href|='/modstar'],a[href|='/vssmile'],a[href|='/vsdrunk'],a[href|='/vshipster'],a[href|='/vstiredofyourshit'],a[href|='/goddammitjoker'],a[href|='/vspride'],a[href|='/vsproud'],a[href|='/vscuter'],a[href|='/vswoah'],a[href|='/vshotdamn'],a[href|='/vsdance3'],a[href|='/vsno'],a[href|='/vsermergerd'],a[href|='/vswatching'],a[href|='/vscrazed'],a[href|='/vsweegee'],a[href|='/weegee'],a[href|='/vsblush'],a[href|='/vsorly'],a[href|='/vsohhaithere'],a[href|='/vsraggle'],a[href|='/vsyay'],a[href|='/riverangry'],a[href|='/riversleep'],a[href|='/vsriver'],a[href|='/vs0h'],a[href|='/vs2g'],a[href|='/vs0b'],a[href|='/vs2b'],a[href|='/vs0c'],a[href|='/vs1c'],a[href|='/vs2c'],a[href|='/vs0d'],a[href|='/vs1d'],a[href|='/vs2d'],a[href|='/vs0e'],a[href|='/vs2e'],a[href|='/vs1e'],a[href|='/vs0e'],a[href|='/vs0f'],a[href|='/vs1f'],a[href|='/vs2f'],a[href|='/vs0g'],a[href|='/vs1g'] {
+a[href|='/vspuppy'],a[href|='/vssuave'],a[href|='/vsexcited'],a[href|='/vsdance2'],a[href|='/vsgrump'],a[href|='/vstears'],a[href|='/vssinep'],a[href|='/kixandra'],a[href|='/vsholyshit'],a[href|='/vsfacehoof'],a[href|='/vssrs'],a[href|='/vssoawesome'],a[href|='/vssupersad'],a[href|='/vssmug'],a[href|='/vysmug'],a[href|='/vsdontask'],a[href|='/modstar'],a[href|='/vssmile'],a[href|='/vsdrunk'],a[href|='/vshipster'],a[href|='/vstiredofyourshit'],a[href|='/goddammitjoker'],a[href|='/vspride'],a[href|='/vsproud'],a[href|='/vscuter'],a[href|='/vswoah'],a[href|='/vshotdamn'],a[href|='/vsdance3'],a[href|='/vsno'],a[href|='/vsermergerd'],a[href|='/vswatching'],a[href|='/vscrazed'],a[href|='/vsweegee'],a[href|='/weegee'],a[href|='/vsblush'],a[href|='/vsorly'],a[href|='/vsohhaithere'],a[href|='/vsraggle'],a[href|='/vsyay'],a[href|='/riverangry'],a[href|='/riversleep'],a[href|='/vsriver'],a[href|='/iwubu'],a[href|='/vs0h'],a[href|='/vs2g'],a[href|='/vs0b'],a[href|='/vs2b'],a[href|='/vs0c'],a[href|='/vs1c'],a[href|='/vs2c'],a[href|='/vs0d'],a[href|='/vs1d'],a[href|='/vs2d'],a[href|='/vs0e'],a[href|='/vs2e'],a[href|='/vs1e'],a[href|='/vs0e'],a[href|='/vs0f'],a[href|='/vs1f'],a[href|='/vs2f'],a[href|='/vs0g'],a[href|='/vs1g'] {
     display: block;
     clear: none;
     float: left;
@@ -763,6 +718,7 @@ a[href|='/vsorly'] {background-image: url(%%vssheet2%%);width:150px; height:139p
 a[href|='/riverangry'] {width:91px; height:100px;background-position: -0px -1050px}
 a[href|='/riversleep'] {width:137px; height:100px;background-position: -92px -1050px}
 a[href|='/vsriver'] {width:115px; height:100px;background-position: -230px -1050px}
+a[href|='/iwubu'] {width:125px; height:150px;background-position: 0px -1150px}
 
 /* 0 Column */
 a[href|='/vssuave'],a[href|='/vs0b'] {background-image: url(%%vssheet2%%);width:70px; height:83px;background-position: -145px -145px}
@@ -997,7 +953,7 @@ div.titlebox .subscribers span.number:after
 
 div.titlebox .users-online span.number:after
 {
-    content:" Vinyl Scratch voice actor's voicing";
+    content:" Fans Wubbin' it up";
 }
 
 /*Remove RES tag and vote counts from moderator box because its ugly*/
@@ -1119,7 +1075,7 @@ a.author[href$="otwem"]:before {content:"Otwem Scratch"}
 a.author[href$="Kireas"]:before {content:"Octavia"}
 a.author[href$="Nephrited"]:before {content:"Octavia"}
 a.author[href$="AlisterDX"]:before {content:"Homage"}
-a.author[href$="upvote_machine_1"]:before {content:"BANNED"}
+a.author[href$="upvote_machine_1"]:before {content:"MrJoker7854"}
 a.author[href$="Harakou"]:before {content:"Taco OIA"}
 a.author[href$="nightpony"]:before {content:"DJ NightPon3"}
 a.author[href$="koobaxion"]:before {content:"sok"}

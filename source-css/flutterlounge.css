@@ -240,7 +240,7 @@ a[href|="/flutterboo"] {
 
 /* SKAAAAAAAH */
 
-a[href|="/flutterbat"], a[href|="/thisisminenow"], a[href|="/myapple"], a[href|="/iguessimavampire"], a[href|="/okaaay"] { 
+a[href|="/flutterbat"], a[href|="/thisisminenow"], a[href|="/myapple"], a[href|="/iguessimavampire"], a[href|="/okaaay"], a[href|="/lilbat"], a[href|="/whatarewegonnadoontheapple"] { 
     display: block; 
     background: url(%%batsheet%%); 
     float: left;
@@ -250,6 +250,18 @@ a[href|="/flutterbat"], a[href|="/thisisminenow"], a[href|="/myapple"], a[href|=
 a[href|="/flutterbat"] { background-position: -0px -0px; width: 150px; height: 150px; }
 a[href|="/thisisminenow"], a[href|="/myapple"] { background-position: -0px -150px; width: 162px; height: 125px; }
 a[href|="/iguessimavampire"], a[href|="/okaaay"] { background-position: -0px -275px; width: 179px; height: 100px; }
+a[href|="/lilbat"], a[href|="/whatarewegonnadoontheapple"] { background-position: -0px -375px; width: 112px; height: 150px; }
+
+a[href|="/bestbutt"], a[href|="/batbutt"], a[href|="/butts"]
+{
+
+ background-image: url(%%bestbutt%%);
+    clear: none;
+    display: block;
+    float: left;
+    height: 136px;
+    width: 200px;
+}
 
 /* More Flutter emotes - with a new sheet! */
 
