@@ -1,3 +1,5 @@
+#header-bottom-left { background-color: #fff798; }
+
 body { 
     background: url(%%colt%%) 
     no-repeat fixed center center;
@@ -19,10 +21,43 @@ content: " having a party"
     content: url(%%cutiemark%%);
 }
 
+/* comment spoiler tag */
+a[href|="/spoiler"] { background: #000 !important; color: #000 !important; }
+a[href|="/spoiler"]:hover { color: #fff !important; }
+
+/* comment emote spacer */
+a[href|="/sp"]{ display: inline-block; padding-right: 100%; width: 0px; height: 0px; }
+
+/*** Arrows ***/
+.arrow.upmod {
+    background-image: url(%%csarrows%%);
+    background-position: -0px -0px;
+    height: 15px;
+    width: 15px;
+}
+.arrow.downmod {
+    background-image: url(%%csarrows%%);
+    background-position: -0px -15px;
+    height: 15px;
+    width: 15px;
+}
+.arrow.up {
+    background-image: url(%%csarrows%%);
+    background-position: -0px -30px;
+    height: 15px;
+    width: 15px;
+}
+.arrow.down {
+    background-image: url(%%csarrows%%);
+    background-position: -0px -45px;
+    height: 15px;
+    width: 15px;
+}
+
 /*** Emotes ***/
 
 /* 100px shared values */
-a[href|="/cheese"], a[href|="/boneless"]{
+a[href|="/cheese"], a[href|="/boneless"], a[href|="/cheesesquint"], a[href|="/cheesestare"], a[href|="/imfine"]{
     display: block;
     clear: none;
     float: left;
@@ -34,9 +69,12 @@ a[href|="/cheese"], a[href|="/boneless"]{
 /* 100px offsets */
 a[href|="/cheese"]{ background-position:-0px -0px }
 a[href|="/boneless"]{ background-position:-100px -0px }
+a[href|="/cheesesquint"]{ background-position: -200px -0px }
+a[href|="/cheesestare"]{ background-position: -0px -100px }
+a[href|="/imfine"]{ background-position: -100px -100px }
 
 /* 150px shared values */
-a[href|="/cheeseshock"], a[href|="/cheesethis"], a[href|="/cheesehappy"], a[href|="/cheeseandpinkie"], a[href|="/accordian"], a[href|="/partyhard"]{
+a[href|="/cheeseshock"], a[href|="/cheesethis"], a[href|="/cheesehappy"], a[href|="/cheeseandpinkie"], a[href|="/accordian"], a[href|="/partyhard"], a[href|="/cheesesmile"]{
     display: block;
     clear: none;
     float: left;
@@ -52,6 +90,7 @@ a[href|="/cheesehappy"]{ background-position:-300px -0px }
 a[href|="/cheeseandpinkie"]{ background-position:-0px -150px }
 a[href|="/accordian"]{ background-position:-150px -150px }
 a[href|="/partyhard"]{ background-position:-300px -150px }
+a[href|="/cheesesmile"]{ background-position: -0px -300px; width: 103px }
 
 /* oddballs */
 a[href|="/rubberchickendance"] { 

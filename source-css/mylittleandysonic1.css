@@ -2,13 +2,13 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%animebackground5%%)  no-repeat  fixed 66% 100% !important;
+    background:  url(%%ableist%%)  no-repeat  fixed 66% 100% !important;
 }
 
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%enterchatbanner3%%) 50% 0px !important;
+   background: url(%%eaglemercy%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -503,7 +503,7 @@ background-repeat: no-repeat;
 .flair-clinger:after { background-position: 0px -6180px }
 .flair-dinostabby:after { background-position: 0px -6210px }
 .flair-dominos:after { background-position: 0px -6240px }
-
+.flair-lemonkun:after { background-position: 0px -6270px }
 
 
 /* Nightmode fix for flair */
@@ -651,7 +651,9 @@ a.author[href$=andysonic0],
 a.author[href$=Andysonic-1],
 a.author[href$=The_MSPainter],
 a.author[href$=theclinger_5],
-a.author[href$=FrigidMcThunderballs]
+a.author[href$=FrigidMcThunderballs],
+a.author[href$=j-brony],
+a.author[href$=RisenLordM]
 
 { 
 font-size:0!important; 
@@ -761,8 +763,9 @@ a.author[href$=andysonic0]:before,
 a.author[href$=Andysonic-1]:before,
 a.author[href$=The_MSPainter]:before,
 a.author[href$=theclinger_5]:before,
-a.author[href$=FrigidMcThunderballs]:before
-
+a.author[href$=FrigidMcThunderballs]:before,
+a.author[href$=j-brony]:before,
+a.author[href$=RisenLordM]:before
 {
 font-size:10px!important; 
 visibility:visible!important;
@@ -856,7 +859,7 @@ a.author[href$=Zovistograt]:before { content:'[](/ww20 “Needy Bitch”)' }
 a.author[href$=ZZW30]:before { content:"CaptChuckles" }
 a.author[href$=JustAnotherGDB]:before { content:"Just Another Face in the Clouds" }
 a.author[href$=Swiftskii]:before { content:"FairyFacedWizardFelcher" }
-a.author[href$=Lord_Ninka]:before { content:"Ninka" }
+a.author[href$=Lord_Ninka]:before { content:"Nimpa" }
 a.author[href$=LlamaInDrag]:before { content:"A REAL FUCKING DINOSAUR" }
 a.author[href$=Nagashizuri]:before { content:"Maga" }
 a.author[href$=andresonic1]:before { content:"Fake" }
@@ -869,6 +872,8 @@ a.author[href$=Andysonic-1]:before { content:"Tiny Andy" }
 a.author[href$=The_MSPainter]:before { content:"Domino's Pizza" }
 a.author[href$=theclinger_5]:before { content:"IncidentalUnicorn2" }
 a.author[href$=FrigidMcThunderballs]:before  { content:"Dr. Chandragupta Maurya, M.S." }
+a.author[href$=j-brony]:before { content:"J's Brownies" }
+a.author[href$=RisenLordM]:before { content:"Risen" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -953,7 +958,10 @@ a.author[href$="IncidentalUnicorn2"]:after,
 a.author[href$="andysonic3"]:after,
 a.author[href$="andysonic0"]:after,
 a.author[href$="Andysonic-1"]:after,
-a.author[href$="The_MSPainter"]:after
+a.author[href$="The_MSPainter"]:after,
+a.author[href$=j-brony]:after,
+a.author[href$=RisenLordM]:after,
+a.author[href$=Lord_Ninka]:after
 
 {
 color:#000; 
@@ -1028,6 +1036,9 @@ a.author[href$="andysonic3"]:after { content:" THE NO FUN DEPUTY" }
 a.author[href$="andysonic0"]:after { content:" THE NO FUN CHIEF" }
 a.author[href$="Andysonic-1"]:after { content:" THE NO FUN ROOKIE" }
 a.author[href$="The_MSPainter"]:after { content:" (local delivery in 30 minutes or less)" }
+a.author[href$=j-brony]:after { content:" Get em while they're hot!" }
+a.author[href$=RisenLordM]:after { content:" from the dead" }
+a.author[href$=Lord_Ninka]:after { content:" The forgotten DBZ character" }
 
 /* Any pre/post-name flair stuff goes here */ 
 

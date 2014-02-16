@@ -54,6 +54,16 @@ ________________________________________________▓▓▓▓▓▓▓
 
 /*------------ User Emotes ------------------*/
 
+a[href|="/shellbullet"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 380px;
+    height: 686px;
+    background-image: url(%%shell%%)
+}
+
 a[href|="/tacobutt"] {
     background-position: 0px 0px;
     display: block;

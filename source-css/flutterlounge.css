@@ -263,6 +263,17 @@ a[href|="/bestbutt"], a[href|="/batbutt"], a[href|="/butts"]
     width: 200px;
 }
 
+/* twish */
+a[href|="/twishy3"], a[href|="/twishy2"], a[href|="/twishy"], a[href|="/mei"], a[href|="/mei2"], a[href|="/mei3"] { 
+    display: block; 
+    background: url(%%twishy%%);
+    float:left;
+    clear:none; }
+ 
+a[href|="/twishy3"], a[href|="/mei3"] { background-position: -0px -0px; width: 200px; height: 167px; }
+a[href|="/twishy2"], a[href|="/mei2"] { background-position: -0px -167px; width: 200px; height: 143px; }
+a[href|="/twishy"], a[href|="/mei"] { background-position: -0px -310px; width: 200px; height: 136px; }
+
 /* More Flutter emotes - with a new sheet! */
 
 a[href|="/shystar"], a[href|="/shysnowman"], a[href|="/tuneshy"], a[href|="/musicshy"], a[href|="/prettyshy"], a[href|="/fluttersmug"] {
