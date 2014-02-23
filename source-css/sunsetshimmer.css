@@ -573,9 +573,25 @@ a[href|="/sunsetgrin"]
 a[href|="/rsunsetgrin"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes-flipped%%)!important; background-position: -200% -100%;}
 
+a[href|="/sunsetscrunch"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes%%)!important; background-position: -300% -100%;}
+
+a[href|="/rsunsetscrunch"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes-flipped%%)!important; background-position: -300% -100%;}
+
 a[href|="/spaceholder"] {
 display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes%%)!important;
 background-position:-300% -900%;
+}
+
+a[href|="/snailssalute"] {
+display:block;clear:none;float:left;width:96px;height:150px;background-image:url(%%snailssalute%%)!important;
+background-position:0 0;
+}
+
+a[href|="/rsnailssalute"] {
+display:block;clear:none;float:left;width:96px;height:150px;background-image:url(%%snailssalute%%)!important;
+background-position:0 -100%;
 }
 
 a[href|="/sunsetwhy"] {
@@ -659,6 +675,26 @@ a[href|="/rsunsetshades"] {
 display:block;clear:none;float:left;width:70px;height:112px;background-image:url(%%sunsetshades%%)!important;
 background-position:0 -100%;
 }
+
+
+a[href|="/sunsetspin"] {
+display:block;clear:none;float:left;width:65px;height:65px;background-image:url(%%sunsetspin%%)!important;
+}
+
+a[href|="/rsunsetspin"] {
+display:block;clear:none;float:left;width:65px;height:65px;background-image:url(%%sunsetspin%%)!important;
+background-position:0 -100%;
+}
+
+a[href|="/ssterror"] {
+display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%theterror%%)!important;
+}
+
+a[href|="/rssterror"] {
+display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%theterror%%)!important;
+background-position:0 -100%;
+}
+
 
 /* toplink */
 

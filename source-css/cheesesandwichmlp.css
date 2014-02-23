@@ -5,6 +5,10 @@ body {
     no-repeat fixed center center;
 }
 
+/* add 4 pixels to sidebar so our emotes tables */
+/* don't make it grow a scroll bar DERP */
+.side { width: 304px !important; }
+
 /*Change the word for 'readers' and the currently online*/
 .subscribers .word, .users-online .word{
 display:none;
@@ -28,7 +32,40 @@ a[href|="/spoiler"]:hover { color: #fff !important; }
 /* comment emote spacer */
 a[href|="/sp"]{ display: inline-block; padding-right: 100%; width: 0px; height: 0px; }
 
+/*** Emote tabs ***/
+
+.side .md h3 {
+    border: 1px solid #ccc;
+    border-bottom: none;
+    color: #000;
+    background-color: #fff798;
+    padding: 4px;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.side .md table {
+    border: 1px solid #ccc !important;
+    margin: 0;
+    padding-bottom: 19px;
+    display: none;
+}
+
+.side .md th { display: none; }
+
+.side .md tr,td {
+    border: 1px solid #ccc !important;
+    padding: 0px !important;
+}
+
+.side .md h3:nth-of-type(1):hover ~ table:nth-of-type(1),.side .md table:nth-of-type(1):hover { display :table; }
+.side .md h3:nth-of-type(2):hover ~ table:nth-of-type(2),.side .md table:nth-of-type(2):hover { display :table; }
+.side .md h3:nth-of-type(3):hover ~ table:nth-of-type(3),.side .md table:nth-of-type(3):hover { display :table; }
+.side .md h3:nth-of-type(4):hover ~ table:nth-of-type(4),.side .md table:nth-of-type(4):hover { display :table; }
+
 /*** Arrows ***/
+
 .arrow.upmod {
     background-image: url(%%csarrows%%);
     background-position: -0px -0px;
@@ -132,6 +169,12 @@ a[href|="/cheesetrot"] {
      width: 110px; 
      height: 108px; 
      background-image: url(%%cheesetrot-110x108-by-millennialdan-d75sj04%%) !important
+}
+
+/* comment inline emotes */
+a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
+    float: none !important;
+    display: inline-block !important;
 }
 
 /*** Flairs ***/

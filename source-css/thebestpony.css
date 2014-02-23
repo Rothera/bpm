@@ -167,24 +167,12 @@ html:lang(nv) .side p a[href="http://nv.reddit.com/r/TheBestPony/"] {
 .flair-shhh {
     background-position: 0px -112px
     }
+.flair-syn {
+    background-position: 0px -128px
+    }
 /*********
 *usernames*
 *********/
-/*flutterfan1*/
-a.author[href$="/njdevils2626"] {
-    font-size: 0px !important;
-    display: inline-block;
-    vertical-align: bottom;
-    overflow: hidden;
-    letter-spacing: -20px
-    }
-a.author[href$="/njdevils2626"]:after {
-    content: "Flutterfan1";
-    font-size: 10px !important;
-    visibility: visible !important;
-    display: block;
-    letter-spacing: normal
-    }
 /*Synapsid*/
 a.author[href$="/synapticsynapsid"] {
     font-size: 0px !important;
@@ -195,6 +183,21 @@ a.author[href$="/synapticsynapsid"] {
     }
 a.author[href$="/synapticsynapsid"]:after {
     content: "Synapsid";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+/*flutterfan1*/
+a.author[href$="/njdevils2626"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/njdevils2626"]:after {
+    content: "Flutterfan1";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;

@@ -562,6 +562,22 @@ background-repeat:no-repeat;
 background-image:url(%%fillycc%%);
 }
 
+a[href|="/ccwait"] {
+float:left;
+width:182px;
+height:200px;
+background-repeat:no-repeat;
+background-image:url(%%ccwait%%);
+}
+
+a[href|="/ccbow"] {
+float:left;
+width:159px;
+height:170px;
+background-repeat:no-repeat;
+background-image:url(%%ccbow%%);
+}
+
 /*un-assigned end*/
 
 a.author[href$="LunarMist2"] {  

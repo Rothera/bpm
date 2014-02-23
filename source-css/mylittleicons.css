@@ -254,6 +254,14 @@
         height: 480px;
         background-image: url(%%warpspeed%%)
         }
+    a[href|="/dam"], a[href|="/damn"], a[href|="/i10"] {
+        display: block;
+        clear: none;
+        float: left;
+        width: 400px;
+        height: 345px;
+        background-image: url(%%dam%%)
+        }
     /**********************
     *
     *    OTHER EMOTE STUFF

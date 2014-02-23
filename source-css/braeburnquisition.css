@@ -1560,8 +1560,8 @@ z-index:100;
 
 /*Simple Background*/
 body {
-background: url(%%braeburn-by-heart-of-stitches-d4au5xn%%)  
-no-repeat fixed center center
+background: url(%%braeburn-by-heart-of-stitches-d4au5xn%%)
+no-repeat fixed center center;
 } 
 
 .side { padding-top: 250px; background: url(%%sidebrae3%%) no-repeat 0 10px; } 
@@ -1569,4 +1569,9 @@ no-repeat fixed center center
 
 .sidecontentbox .more a {
 display: none;
+}
+/*This doesn't do what I want it to, but fuck it. It stays.*/
+#img-preview-braeburn-by-heart-of-stitches-d4au5xn {
+opacity:0.4;
+filter:alpha(opacity=40); /*for IE8 and earlier*/
 }
