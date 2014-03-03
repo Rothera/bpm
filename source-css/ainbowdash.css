@@ -74,7 +74,7 @@ body { background-image: url(%%rdsleeping%%) !important; background-repeat: no-r
 .tabmenu li a[href$="new/"]{border-color: blue !important;}
 .tabmenu li a[href$="controversial/"]{border-color: green !important;}
 .tabmenu li a[href$="top/"]{border-color: yellow !important;}
-.tabmenu li a[href$="saved/"]{border-color: orangered !important;}
+.tabmenu li a[href$="saved/"], .tabmenu li a[href$="gilded/"] {border-color: orangered !important;}
 .tabmenu li a[href="javascript:void(0);"] { display: none !important; }
 
 /******************************************************************************

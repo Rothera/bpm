@@ -578,6 +578,68 @@ background-repeat:no-repeat;
 background-image:url(%%ccbow%%);
 }
 
+a[href|="/cowcc"] {
+float:left;
+width:220px;
+height:215px;
+background-repeat:no-repeat;
+background-image:url(%%cowcc%%);
+}
+
+a[href|="/ccsaurus"] {
+float:left;
+width:168px;
+height:206px;
+background-repeat:no-repeat;
+background-image:url(%%ccsaurus%%);
+background-position: 0px 0px;
+}
+
+a[href|="/ccpuff"] {
+float:left;
+width:150px;
+height:150px;
+background-repeat:no-repeat;
+background-image:url(%%ccpuff%%);
+background-position: 0px 0px;
+}
+
+a[href|="/ccheart"] {
+float:left;
+width:153px;
+height:240px;
+background-repeat:no-repeat;
+background-image:url(%%ccheart%%);
+background-position: 0px 0px;
+}
+
+a[href|="/cclook2"] {
+float:left;
+width:203px;
+height:160px;
+background-repeat:no-repeat;
+background-image:url(%%cclook2%%);
+background-position: 0px 0px;
+}
+
+a[href|="/captaincc"] {
+float:left;
+width:138px;
+height:190px;
+background-repeat:no-repeat;
+background-image:url(%%captaincc%%);
+background-position: 0px 0px;
+}
+
+a[href|="/ccboard"] {
+float:left;
+width:180px;
+height:180px;
+background-repeat:no-repeat;
+background-image:url(%%ccboard%%);
+background-position: 0px 0px;
+}
+
 /*un-assigned end*/
 
 a.author[href$="LunarMist2"] {  
@@ -606,7 +668,7 @@ a.author[href$="BurChaBow"]:before{
     visibility:visible!important;  
     }
 
-a.author[href$="BurChaBow"]:before {content:"Captain Burchy"}
+a.author[href$="BurChaBow"]:before {content:"Ask me about having durpy waifus!"}
 
 a.author[href$="durpyDash"] {  
 font-size:0!important;  
@@ -616,11 +678,11 @@ font-size:0!important;
     }
 
 a.author[href$="durpyDash"]:before{  
-    font-size:10px!important;  
+    font-size:12px!important;  
     visibility:visible!important;  
     }
 
-a.author[href$="durpyDash"]:before {content:"8=====D"}
+a.author[href$="durpyDash"]:before {content:"-20"}
 
 a.author[href$="-20"] {
 font-size:0!important;
@@ -629,7 +691,7 @@ display:inline-block;
 content: "";
 }
 a.author[href$="-20"]:before{
-font-size:10px!important;
+font-size:12px!important;
 visibility:visible!important;
 }
-a.author[href$="-20"]:before {content:"IS DRUNK WITH POWER"}
+a.author[href$="-20"]:before {content:"+20"}

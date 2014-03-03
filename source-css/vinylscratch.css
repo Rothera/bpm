@@ -963,6 +963,10 @@ div.titlebox .users-online span.number:after
 /* Hiding my name in the modbox. */
 .sidecontentbox .id-t2_8lje7, .sidecontentbox .id-t2_8lje7 ~ *{display: none !important} 
 
+ul.content li span.flair{
+    display:none;
+}
+
 
 /* Replace the nsfw image */
 .thumbnail.nsfw {
@@ -1014,8 +1018,6 @@ a.author[href$="AlisterDX"],
 a.author[href$="upvote_machine_1"],
 a.author[href$="Harakou"],
 a.author[href$="nightpony"],
-a.author[href$="koobaxion"],
-a.author[href$="Vinyl__Scratch"],
 a.author[href$="JadeMeteor"]
 
 { 
@@ -1047,8 +1049,6 @@ a.author[href$="AlisterDX"]:before,
 a.author[href$="upvote_machine_1"]:before, 
 a.author[href$="Harakou"]:before,
 a.author[href$="nightpony"]:before,
-a.author[href$="koobaxion"]:before,
-a.author[href$="Vinyl__Scratch"]:before,
 a.author[href$="JadeMeteor"]:before
 
 {
@@ -1078,8 +1078,6 @@ a.author[href$="AlisterDX"]:before {content:"Star"}
 a.author[href$="upvote_machine_1"]:before {content:"MrJoker7854"}
 a.author[href$="Harakou"]:before {content:"Taco OIA"}
 a.author[href$="nightpony"]:before {content:"DJ NightPon3"}
-a.author[href$="koobaxion"]:before {content:"sok"}
-a.author[href$="Vinyl__Scratch"]:before {content:"u"}
 a.author[href$="JadeMeteor"]:before {content:"Octavia"}
 
 /* Replacing somebody's name color? Put the css here. */

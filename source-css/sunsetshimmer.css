@@ -14,13 +14,16 @@ div#header-bottom-left ul.tabmenu {
 }
 
 .tabmenu li a {
+  background: repeat-x;
   background: -webkit-linear-gradient(#fdfcc7, #e98b97, #dd99d9);
   background: -moz-linear-gradient(#fdfcc7, #e98b97, #dd99d9);
   background: -ms-linear-gradient(#fdfcc7, #e98b97, #dd99d9);
   background: -o-linear-gradient(#fdfcc7, #e98b97, #dd99d9);
-  background: linear-gradient(#fdfcc7, #e98b97, #dd99d9);
+  background: linear-gradient(#FDFCC7, #E98B97, #DD99D9);
   color: #e1e1e1!important;
-  border: 0px solid #FFFFFF;
+  background-repeat:repeat-x;
+  border: 2px solid;
+  border-color: transparent;
 }
 
 .tabmenu li.selected a {
@@ -33,13 +36,13 @@ div#header-bottom-left ul.tabmenu {
 
 .tabmenu li.selected a:hover {
   background-color: transparent!important;
-  color: #8C4DA9 !important;
+  color: #ff572a !important;
   border-color: #000000 !important;
 }
 
 .tabmenu li a:hover {
   background-color: transparent!important;
-  color: #EDE5F1 !important;
+  color: #fbe9ff !important;
   border-color: #000000 !important;
   border-style: solid;
   border-width: 2px;
@@ -579,6 +582,25 @@ a[href|="/sunsetscrunch"]
 a[href|="/rsunsetscrunch"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes-flipped%%)!important; background-position: -300% -100%;}
 
+a[href|="/sunsetmine"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes%%)!important; background-position: 0 -200%;}
+
+a[href|="/rsunsetmine"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes-flipped%%)!important; background-position: 0 -200%;}
+
+
+a[href|="/sunsetsmirk"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes%%)!important; background-position: -100% -200%;}
+
+a[href|="/rsunsetsmirk"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes-flipped%%)!important; background-position: -100% -200%;}
+
+a[href|="/sunsetexplains"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes%%)!important; background-position: -200% -200%;}
+
+a[href|="/rsunsetexplains"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes-flipped%%)!important; background-position: -200% -200%;}
+
 a[href|="/spaceholder"] {
 display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes%%)!important;
 background-position:-300% -900%;
@@ -683,6 +705,15 @@ display:block;clear:none;float:left;width:65px;height:65px;background-image:url(
 
 a[href|="/rsunsetspin"] {
 display:block;clear:none;float:left;width:65px;height:65px;background-image:url(%%sunsetspin%%)!important;
+background-position:0 -100%;
+}
+
+a[href|="/sunsetpokerface"] {
+display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunsetpokerface%%)!important;
+}
+
+a[href|="/rsunsetpokerface"] {
+display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunsetpokerface%%)!important;
 background-position:0 -100%;
 }
 
