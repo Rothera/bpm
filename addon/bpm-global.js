@@ -209,9 +209,9 @@ function global_main(store) {
 
     // Check against domain blacklist
     for(var i = 0; i < DOMAIN_BLACKLIST.length; i++) {
-        if(document.location.host === DOMAIN_BLACKLIST[i] ||
-           ends_with(document.location.host, DOMAIN_BLACKLIST[i])) {
-            log_warning("Refusing to run on '" + document.location.host + "': domain is blacklisted (probably broken)");
+        if(document.location.hostname === DOMAIN_BLACKLIST[i] ||
+           ends_with(document.location.hostname, DOMAIN_BLACKLIST[i])) {
+            log_warning("Refusing to run on '" + document.location.hostname + "': domain is blacklisted (probably broken)");
             return;
         }
     }

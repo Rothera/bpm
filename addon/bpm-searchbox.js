@@ -1,6 +1,10 @@
 // Whether or not we're running on Reddit's .compact display, i.e. their mobile
 // version. We modify the search box UI a fair bit to compensate in this case.
-var is_compact = ends_with(document.location.pathname, ".compact");
+//
+// i.reddit.com is another way to get the compact UI. Occasionally it'll
+// redirect users to .compact links, but in the meantime we need to work
+// correctly there as well.
+var is_compact = ends_with(document.location.pathname, ".compact") || starts_with(document.location.hostname, "i.");
 
 // Search box elements
 var sb_container = null;
