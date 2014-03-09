@@ -415,6 +415,15 @@ background-image:url(%%sheet10%%);
 background-position: -200px -200px;
 }
 
+a[href|="/nerdchaser"] {
+float:left;
+width:131px;
+height:180px;
+background-repeat:no-repeat;
+background-image:url(%%sheet10%%);
+background-position: 0px -395px;
+}
+
 /*stylesheet10 "sheet10" end*/
 
 
@@ -640,6 +649,14 @@ background-image:url(%%ccboard%%);
 background-position: 0px 0px;
 }
 
+a[href|="/ccbee"] {
+float:left;
+width:70px;
+height:70px;
+background-repeat:no-repeat;
+background-image:url(%%ccbee%%);
+}
+
 /*un-assigned end*/
 
 a.author[href$="LunarMist2"] {  
@@ -650,11 +667,11 @@ font-size:0!important;
     }
 
 a.author[href$="LunarMist2"]:before{  
-    font-size:10px!important;  
+    font-size:12px!important;  
     visibility:visible!important;  
     }
 
-a.author[href$="LunarMist2"]:before {content:"MistyMistMistMist-Kun"}
+a.author[href$="LunarMist2"]:before {content:"Burchette"}
 
 a.author[href$="BurChaBow"] {  
 font-size:0!important;  
@@ -664,11 +681,11 @@ font-size:0!important;
     }
 
 a.author[href$="BurChaBow"]:before{  
-    font-size:10px!important;  
+    font-size:12px!important;  
     visibility:visible!important;  
     }
 
-a.author[href$="BurChaBow"]:before {content:"Ask me about having durpy waifus!"}
+a.author[href$="BurChaBow"]:before {content:"Captain Burchles and the Burchettes"}
 
 a.author[href$="durpyDash"] {  
 font-size:0!important;  
@@ -682,7 +699,7 @@ a.author[href$="durpyDash"]:before{
     visibility:visible!important;  
     }
 
-a.author[href$="durpyDash"]:before {content:"-20"}
+a.author[href$="durpyDash"]:before {content:"Burchette"}
 
 a.author[href$="-20"] {
 font-size:0!important;
@@ -694,4 +711,4 @@ a.author[href$="-20"]:before{
 font-size:12px!important;
 visibility:visible!important;
 }
-a.author[href$="-20"]:before {content:"+20"}
+a.author[href$="-20"]:before {content:"Burchette"}

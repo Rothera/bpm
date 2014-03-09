@@ -111,7 +111,7 @@ a[href|="/cheesestare"]{ background-position: -0px -100px }
 a[href|="/imfine"]{ background-position: -100px -100px }
 
 /* 150px shared values */
-a[href|="/cheeseshock"], a[href|="/cheesethis"], a[href|="/cheesehappy"], a[href|="/cheeseandpinkie"], a[href|="/accordian"], a[href|="/partyhard"], a[href|="/cheesesmile"]{
+a[href|="/cheeseshock"], a[href|="/cheesethis"], a[href|="/cheesehappy"], a[href|="/cheeseandpinkie"], a[href|="/accordian"], a[href|="/partyhard"], a[href|="/cheesesmile"], a[href|="/cheesehug"], a[href|="/ppcheesehug"]{
     display: block;
     clear: none;
     float: left;
@@ -128,6 +128,8 @@ a[href|="/cheeseandpinkie"]{ background-position:-0px -150px }
 a[href|="/accordian"]{ background-position:-150px -150px }
 a[href|="/partyhard"]{ background-position:-300px -150px }
 a[href|="/cheesesmile"]{ background-position: -0px -300px; width: 103px }
+a[href|="/cheesehug"]{ background-position: -150px -300px }
+a[href|="/ppcheesehug"]{ background-position: -300px -300px }
 
 /* oddballs */
 a[href|="/rubberchickendance"] { 
@@ -136,10 +138,9 @@ a[href|="/rubberchickendance"] {
      clear: none; 
      float: left; 
      width: 200px; 
-     height: 64px; 
+     height: 70px; 
      background-image: url(%%rubberchickendance%%) !important
 }
-
 
 a[href|="/cheeseplay"] { 
      background-position: 0px 0px; 

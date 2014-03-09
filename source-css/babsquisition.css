@@ -4,19 +4,20 @@
   
 body .content {
  margin-top: 65px;
- width: 1000px;
+ width: 78%;
  padding: 5px;
  background: #f6f0c1;
  box-shadow: 2px 2px 0px rgb(185, 177, 115);
 }    
   
+
 body .content:before {  
  background-image: url(%%backgroundbeige%%);  
  position: absolute;  
  content: '';  
  top: 155px;  
  left: 5px;  
- width: 1010px;  
+ width: 78.7%;  
  height: 55px;  
  box-shadow: 2px 2px 0px rgb(185, 177, 115);
 }
@@ -61,7 +62,7 @@ margin-top: 5px;
 vertical-align: bottom;
 left: 109px;
 text-align: center;
-bottom: -59px;
+bottom: -85px;
 z-index: -5;
 }
 
@@ -105,7 +106,7 @@ width: 949px;
  vertical-align: bottom;
  left: 109px;
  text-align: center;
- bottom: -59px;
+ bottom: -85px;
 }  
 
 
@@ -674,6 +675,14 @@ a[href|="/themoreyouknow"] {
  background-image:url(%%themoreyouknow%%);
 }
 
+a[href|="/jackiecat"] {  
+ display: block;
+ clear: none;
+ float: left;
+ width: 131px;
+ height: 119px;
+ background-image:url(%%JackieCat%%);
+}
 
 /*  Colors to know:  
     #eadb64 - Tabmenu background  

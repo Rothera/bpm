@@ -43,7 +43,7 @@ a[href|="/smugsmile"]     {background-position:-280px -0px}
 
 /*200px emotes*/
 
-a[href|="/notamusedtrixie"], a[href|="/wasthereeveranydoubt"], a[href|="/trixiesocks"], a[href|="/Trixiewillreku"], a[href|="/thebestponyishappy"] 
+a[href|="/notamusedtrixie"], a[href|="/wasthereeveranydoubt"], a[href|="/trixiesocks"], a[href|="/Trixiewillreku"], a[href|="/thebestponyishappy"], a[href|="/didntseeyouthere"], a[href|="/trixieisbestnerd"] 
 {
   display: block;
   clear: none;
@@ -55,12 +55,13 @@ a[href|="/notamusedtrixie"], a[href|="/wasthereeveranydoubt"], a[href|="/trixies
 
 /*offsets*/
 
-a[href|="/notamusedtrixie"]      {background-position: -0px -0px}
-a[href|="/wasthereeveranydoubt"] {background-position: -200px -0px}
-a[href|="/trixiesocks"]          {background-position: -400px -0px}
-a[href|="/Trixiewillreku"]       {background-position: -600px -0px}
-a[href|="/thebestponyishappy"]     {background-position: -0px -200px}
-
+a[href|="/notamusedtrixie"]      {background-position: -0px -0px    }
+a[href|="/wasthereeveranydoubt"] {background-position: -200px -0px  }
+a[href|="/trixiesocks"]          {background-position: -400px -0px  }
+a[href|="/Trixiewillreku"]       {background-position: -600px -0px  }
+a[href|="/thebestponyishappy"]   {background-position: -0px -200px  }
+a[href|="/didntseeyouthere"]     {background-position: -400px -200px}   
+a[href|="/trixieisbestnerd"]     {background-position: -600px -200px}
 /*heterogeneous emotes*/
 
 a[href|="/EGtrixieisbesthuman"] {
@@ -80,4 +81,13 @@ Float: left;
 Width: 100px;
 Height: 131px;
 Background-image: url(%%cutetrixie%%) !important }
+
+a[href|="/trixiefilly"] {
+Background-position: -0px -0px;
+Display: Block;
+CLear: None;
+Float: left;
+Width: 91px;
+Height: 115px;
+Background-image: url(%%trixiefilly%%) !important }
 

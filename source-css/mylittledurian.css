@@ -4,7 +4,7 @@ div.titlebox span.word {display:none}
 div.titlebox .subscribers span.number:after {content:" Spikes"}
 div.titlebox .users-online span.number:after {content:" Spiking"}
 
-/*Header sticking on the "ground"*/
+/*Header sticking on the 'ground'*/
 
 #header-img-a
 {
@@ -117,6 +117,17 @@ Width: 200px;
 Height: 200px;
 background-image: url(%%sbtarget%%) !important
 }
+
+a[href="/sbsquint"]{
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 70px;
+Height: 70px;
+background-image: url(%%sbsquint%%) !important
+}
+
 
 a[href|="/sp"]
 {

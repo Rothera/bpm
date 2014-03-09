@@ -191,7 +191,7 @@ a[href|='/vsscepter'] {width:48px; height:175px; background-position: -2px -1595
 
 
 
-a[href|='/ajterror'], a[href|='/cookieninja'], a[href|='/dashready'], a[href|='/disapprovowl'], a[href|='/duckface'], a[href|='/flutterterror'], a[href|='/seewhatyoudidthere'], a[href|='/ldsalute'], a[href|='/rariderp'], a[href|='/shyohu'], a[href|='/skepticaldash'], a[href|='/spikemad'], a[href|='/twifetish'], a[href|='/twiwhatever'], a[href|='/scepter']{
+a[href|='/ajterror'], a[href|='/cookieninja'], a[href|='/dashready'], a[href|='/disapprovowl'], a[href|='/duckface'], a[href|='/flutterterror'], a[href|='/seewhatyoudidthere'], a[href|='/ldsalute'], a[href|='/rariderp'], a[href|='/shyohu'], a[href|='/skepticaldash'], a[href|='/spikemad'], a[href|='/twifetish'], a[href|='/twiwhatever'], a[href|='/scepter'], a[href|='/pancakes'], a[href|='/gildawat']{
     display: block;
     clear: none;
     float: left;
@@ -212,6 +212,8 @@ a[href|='/skepticaldash'] {width:102px; height:125px; background-position: -1429
 a[href|='/spikemad'] {width:79px; height:125px; background-position: -1533px -2px}
 a[href|='/twifetish'] {width:217px; height:200px; background-position: -1614px -2px}
 a[href|='/twiwhatever'] {width:99px; height:125px; background-position: -1833px -2px}
+a[href|='/pancakes'] {width:241px; height:200px; background-position: -1998px -0px}
+a[href|='/gildawat'] {width:249px; height:143px; background-position: -2244px -0px}
 
 
 
@@ -473,6 +475,8 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 /* Names */
 
 /* here first */
+a.author[href$='RisenLordM'],
+a.author[href$='Beatbawx'],
 a.author[href$='Generic_Builder'],
 a.author[href$='FrigidMcThunderballs'],
 a.author[href$='ZetsuXIII'],
@@ -499,6 +503,8 @@ content: "";
 }
 
 /* here second */
+a.author[href$='RisenLordM']:before,
+a.author[href$='Beatbawx']:before,
 a.author[href$='Generic_Builder']:before,
 a.author[href$='FrigidMcThunderballs']:before,
 a.author[href$='ZetsuXIII']:before,
@@ -522,6 +528,8 @@ visibility:visible!important;
 }
 
 /*and the replacement*/
+a.author[href$='RisenLordM']:before {content: "RisenLM"}
+a.author[href$='Beatbawx']:before {content:"Bones"}
 a.author[href$='Generic_Builder']:before {content:"genny"}
 a.author[href$='FrigidMcThunderballs']:before {content:"Dr. Chandragupta Maurya, M.S"}
 a.author[href$='ZetsuXIII']:before {content:"Element"}
@@ -552,7 +560,7 @@ a.author[href$="flare561"]:before {content: "Echo"}
 a.author[href$="videogamewonder"]:after {content:" (le)teral fempire shill"}
 
 
-
+.sidecontentbox a.author[href$='RisenLordM']:before,
 .sidecontentbox a.author[href$="derram_2"]:before,
 .sidecontentbox a.author[href$="flare561"]:before 
 { font-size: 10pt !important; }

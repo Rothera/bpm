@@ -262,6 +262,30 @@
         height: 345px;
         background-image: url(%%dam%%)
         }
+a[href|="/busted"], a[href|="/mythbusted"], a[href|="/i11"] {
+        display: block;
+        clear: none;
+        float: left;
+        width: 348px;
+        height: 150px;
+        background-image: url(%%busted%%)
+        }
+a[href|="/plausible"], a[href|="/i12"] {
+        display: block;
+        clear: none;
+        float: left;
+        width: 326px;
+        height: 148px;
+        background-image: url(%%plausible%%)
+        }
+a[href|="/confirmed"], a[href|="/i13"] {
+        display: block;
+        clear: none;
+        float: left;
+        width: 394px;
+        height: 168px;
+        background-image: url(%%confirmed%%)
+        }
     /**********************
     *
     *    OTHER EMOTE STUFF

@@ -178,18 +178,11 @@ a.author[href$="EtherealDragon"]:after {
     content: ": Dragon Emissary"
     }
 
-/*
-a.author[href$="ovenmittbandit"]:after {
-    content: ": Server admin" 
-    }
-*/
+
 a.author[href$="fyrenwater"]:hover:after {
     content: ": CABERHUGS :3"
     }
-a.author[href$="Your_Shadow"] {visibility:hidden; font-size:0;}
-a.author[href$="Your_Shadow"]:after {
-    visibility:visible; font-size:12px; content: "The Shadowbolts: Server admin" 
-}
+
 a.author[href$="koushiro"]:before { content: "Sir "; }
 a.author[href$="koushiro"]:after {
     content: " the Generous"
