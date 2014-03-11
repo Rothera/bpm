@@ -1,0 +1,320 @@
+/*Changing readers in sidebar*/
+div.titlebox span.word {
+    display: none
+    }
+div.titlebox span.number:after {
+    content: " Cutetastically Fantastics"
+    }
+
+.side .titlebox .users-online .number:after {
+    content: " are making capes!" !important;
+    }
+.sidecontentbox .flair-cmc, .titlebox .flair-cmc, .sidecontentbox .flair-cmcchinchy, .titlebox .flair-cmcchinchy, .sidecontentbox .flair-pinkiepiecmc, .titlebox .flair-pinkiepiecmc {
+    display: none
+    }
+/*LINK COLORS*/
+
+#siteTable div.thing a.title { color: #A47BB4; }
+#siteTable div.thing a.title:visited { color: #EAA9CA }
+.comment .flat-list.buttons li a {
+    color:  #A6D397;
+}
+
+/*BACKGROUND*/ 
+body {
+background: url(%%sbstare%%)  
+no-repeat fixed center center
+}
+
+/*SUBMISSIONS*/
+
+.sidebox.submit-link .morelink {
+    background: #EAA9CA;
+    border: 2px #A6D397;
+    border-radius: 10px /*too much?*/
+    }
+
+.sidebox.submit-link .morelink:hover {
+    background: #EAA9CA;
+    }
+
+.sidebox.submit-link .morelink a {
+    font-size: 0;
+    content: "" ;
+    }
+
+.sidebox.submit-link .morelink a:after {
+    content: "Submit a Sweetie Belle";
+    font-size: 15px;
+    color: #A47BB4;
+    }
+
+.sidebox.submit-link .morelink a:hover:after {
+    color: #FFFFFF;
+    }
+
+.sidebox.submit-link .nub {
+    display: none;
+    }
+
+
+.sidebox.submit-text .morelink {
+    background: #EAA9CA;
+    border: 2px #A6D397;
+    border-radius: 10px /*too much?*/
+    }
+
+.sidebox.submit-text .morelink:hover {
+    background: #EAA9CA;
+    }
+
+.sidebox.submit-text .morelink a {
+    font-size: 0;
+    content: "" ;
+    }
+
+.sidebox.submit-text .morelink a:after {
+    content: "Submit a Dictionary Belle";
+    font-size: 15px;
+    color: #A47BB4;
+    }
+
+.sidebox.submit-text .morelink a:hover:after {
+    color: #FFFFFF;
+    }
+
+.sidebox.submit-text .nub {
+    display: none;
+    }
+
+
+/*UPHOOVES AND DOWNHOOVES*/
+
+.arrow.upmod { background: url(%%arrowup%%) no-repeat 0 0; }
+.arrow.downmod { background: url(%%arrowdown%%) no-repeat 0 0; }
+.midcol .score.likes {
+    color: #A6D397;
+    }
+.midcol .score.dislikes {
+    color: #A6D397;
+    }
+.midcol .score.unvoted {
+    color: #A6D397;
+    }
+
+/* FLAIR */
+.flairselector .customizer {
+display: none !important;
+}
+
+.flair {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%flair%%);
+    display: inline-block;
+    width: 16px;
+    height: 16px
+    }
+.flair-CMC {
+    background-position: 0 0px
+    }
+.flair-derelle {
+    background-position: 0px -26px;
+    }
+.flair-Sweetie {
+    background-position: 0px -52px;
+    }
+.flair-sweetiebelle {
+    background-position: 0px -78px;
+    }
+
+
+/* Dictionary */
+#search input[type="text"] {
+    background: url(%%searchbarsweets%%) top left no-repeat !important;
+    padding: 17px 7px 18px 57px !important;
+    height: 22px !important;
+    width: 245px !important
+    }
+
+
+/* Table for Emotes */
+/* sidebar */
+.titlebox strong {
+    font-size: medium
+    }
+.titlebox del {
+    color: white
+    }
+.titlebox em {
+    font-size: 9px;
+    text-decoration: none;
+    font-style: normal
+    }
+.titlebox strong em {
+    font-size: 8px;
+    font-style: normal;
+    font-weight: normal
+    }
+.titlebox table {
+    display: none;
+    clear: both
+    }
+ .side div.usertext-body:hover table {
+    display: block;
+    clear: both
+    }
+/* mainpage hover selections */
+#siteTable .link {
+    position: relative;
+    overflow: hidden;
+    padding-top: 3px;
+    padding-bottom: 3px
+    }
+
+/* ---------- Emoticons ---------- */
+/***********
+SB Emoticons
+***********/
+
+
+a[href|="/sb00"], a[href|="/sb01"], a[href|="/sb02"], a[href|="/sb03"], a[href|="/sb04"], a[href|="/sb05"], a[href|="/sb15"], a[href|="/sb06"], a[href|="/sb16"], a[href|="/sb14"], a[href|="/sb10"], a[href|="/sb11"], a[href|="/sb12"], a[href|="/sb13"], a[href|="/aww"], a[href|="/derelle"], a[href|="/derp"], a[href|="/haithar"], a[href|="/happy"], a[href|="/hushnow"], a[href|="/mad"], a[href|="/sad"], a[href|="/scootabelle"], a[href|="/sly"], a[href|="/stare"], a[href|="/wawity"], a[href|="/wow"], a[href|="/wut"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url(%%emotes%%) !important
+    }
+
+a[href|="/sb00"], a[href|="/aww"] {
+    background-position: -0px -0px
+    }
+a[href|="/sb01"], a[href|="/derelle"] {
+    background-position: -0px -150px
+    }
+a[href|="/sb02"], a[href|="/derp"] {
+    background-position: -0px -350px
+    }
+a[href|="/sb03"], a[href|="/haithar"] {
+    background-position: -0px -500px
+    }
+a[href|="/sb04"], a[href|="/happy"] {
+    background-position: -0px -638px
+    }
+a[href|="/sb05"], a[href|="/hushnow"] {
+    background-position: -0px -788px
+    }
+a[href|="/sb15"], a[href|="/mad"] {
+    background-position: -0px -922px
+    }
+a[href|="/sb06"], a[href|="/sad"] {
+    background-position: -0px -1072px
+    }
+a[href|="/sb16"], a[href|="/scootabelle"] {
+    background-position: -0px -1222px
+    }
+a[href|="/sb14"], a[href|="/sly"] {
+    background-position: -0px -1323px
+    }
+a[href|="/sb10"], a[href|="/stare"] {
+    background-position: -0px -1481px
+    }
+a[href|="/sb11"], a[href|="/wawity"] {
+    background-position: -0px -1627px
+    }
+a[href|="/sb12"], a[href|="/wow"] {
+    background-position: -0px -1770px
+    }
+a[href|="/sb13"], a[href|="/wut"] {
+    background-position: -0px -1884px
+    }
+a[href|="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }
+
+/* ---------- Hide emoticon tables in the sidebar until sb14 is hovered over ---------- */
+/* sidebar */
+.titlebox strong {
+    font-size: medium
+    }
+.titlebox del {
+    color: white
+    }
+.titlebox em {
+    font-size: 9px;
+    text-decoration: none;
+    font-style: normal
+    }
+.titlebox strong em {
+    font-size: 8px;
+    font-style: normal;
+    font-weight: normal
+    }
+.titlebox table {
+    display: none;
+    clear: both
+    }
+ .side div.usertext-body:hover table {
+    display: block;
+    clear: both
+    }
+
+
+/* remove subreddit bar border */
+#sr-header-area {
+    border: none !important
+    }
+/* hover style for header tabs */
+.side .md ol li a:hover, .tabmenu li a:hover, .pagename a:hover, #newlink li.selected a:hover {
+    background-color: #FFFFC2;
+    color: red;
+    text-decoration: none
+    }
+/* curved borders for tabs */
+.tabmenu li a, .pagename a {
+    /*   border-top-left-radius: 5px;
+        border-top-right-radius: 5px */
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px
+    }
+
+/* ---------- Make the CSS text box bigger ---------- */
+.stylesheet-customize-container textarea {
+    height: 600px
+    }
+
+/* ---------- Announcement box at the top. ---------- */
+/* Uncomment to activate. To edit the text, put the following at the bottom of the sidebar: "1. TEXT HERE" */
+.content {
+    margin-top: 55px
+    }
+.pagename {
+    font-size: 12pt
+    }
+.titlebox form {
+    position: static
+    }
+.titlebox .usertext-body .md ol {
+    width: auto;
+    border: 1px solid #E6EB9D;
+    position: absolute;
+    top: 135px;
+    left: 20px;
+    z-index: 50;
+    margin: 10px 310px 0 0;
+    padding: 18px 10px 3px 45px;
+    list-style: none;
+    display: block;
+    white-space: normal;
+    overflow: hidden;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px
+    }
+.titlebox .usertext-body .md ol li {
+    margin: 3px
+    }
