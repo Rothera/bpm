@@ -1,0 +1,410 @@
+/* HEADER */
+#header { background: url(%%up%%); }
+
+/* BACKGROUND */
+body { background: url(%%4waffleLite%%) center center ; }
+
+/* FLAIR */
+.flairselector .customizer {
+display: none !important;
+}
+
+/* SINGLE EMOTES */
+
+a[href="/flitterheart"] {
+    background-position: 0px 0px;
+    Display: block;
+    Clear: none;
+    Float: left;
+    Width: 124px;
+    Height: 201px;
+    background-image: url(%%flitterheart%%)
+}
+
+a[href="/arousing"] {
+    background-position: 0px 0px;
+    Display: block;
+    Clear: none;
+    Float: left;
+    Width: 146px;
+    Height: 139px;
+    background-image: url(%%arousing%%)
+}
+
+a[href|="/rosecute"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 71px;
+    background-repeat: no-repeat;
+    background-image: url(%%rosecute%%)
+}
+
+a[href|="/best"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 120px;
+    height: 88px;
+    background-repeat: no-repeat;
+    background-image: url(%%best%%)
+}
+
+/* ARROWS */
+.arrow.up { background: url(%%waf%%) 0 0; } 
+.arrow.upmod { background: url(%%up%%) 0 0; } 
+
+.arrow.down { background: url(%%yat%%) 0 0; } 
+.arrow.downmod { background: url(%%ta%%) 0 0; }
+
+/* THINGS */
+a[href="YATTAA"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 500px;
+Height: 442px;
+background-image: url(%%YATTAA%%) !important
+}
+
+a[href="best"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 120px;
+Height: 88px;
+background-image: url(%%best%%) !important
+}
+
+a[href|="killerrabbit"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-image: url(%%killerrabbit%%)
+}
+
+/*le scrollbar*/
+:focus {outline: 0px;}
+			
+		::-webkit-scrollbar {
+			width: 12px;
+			height: 12px;
+			background-color: #f5f5f5;
+			border-left: 1px solid #d2d2d2;
+		}
+		
+			::-webkit-scrollbar-thumb {
+				background-color: #FFB6C1; /*le pink*/
+				border-top: 1px solid #b6b6b6;
+				border-bottom: 1px solid #969696;
+				border-left: 1px solid #b6b6b6;
+			}
+			
+			::-webkit-scrollbar-button {
+				display: none;
+				width: 0;
+				height: 0;
+			}
+		
+			::-webkit-scrollbar-corner {
+				background-color: transparent;
+				color: #555555;
+			}
+		
+		::selection {background-color:#FFB6C1;color:white;font-weight:bold;}
+/*le scrollbar le end*/
+
+
+
+/*apples*/
+.side .titlebox h6:hover {bottom:-10px;}
+/*apples end*/
+
+/*NO. I KNOW WHY YOU ARE HERE. TO MAKE EMOTES FROM THAT POST. NO. I'M THE CSS GUY AHAHAHAHAHAHAHAHAHHA*/
+.md blockquote {
+    border: 0;
+    margin: 0;
+    color: #FFDFDD;
+    display: block;
+    line-height: 0.8
+    }
+
+.md blockquote p:before {
+    content: "-";
+    float: left;
+    display: block;
+    }
+
+.md blockquote {
+    border: 0;
+    margin: 0;
+    color: #FFFFFF;
+    display: block;
+    line-height: 0.8
+    }
+
+.md blockquote p:before {
+    content: ")";
+    float: left;
+    display: block;
+    }
+
+.md blockquote {
+    border: 0;
+    margin: 0;
+    color: #789922;
+    display: block;
+    line-height: 0.8
+    }
+
+.md blockquote p:before {
+    content: ">";
+    float: left;
+    display: block;
+}
+
+.report-button:hover:after { position: absolute; display: block; z-index: 100000; padding: 5px; border: 1px solid #333; background-color: #FFF; content: "Please only report posts that Gary disapproves of."; text-align: center; font-weight: normal; margin-left: 5px; margin-top: 5px;  }
+
+.titlebox .bottom .author, .sidecontentbox .author {
+    display: inline-block
+}
+
+.sidecontentbox a.author[href$="/shellbullet17"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+
+}
+
+/*Bob Ross Search Man*/
+
+.sidecontentbox .flair {display:none}
+.titlebox strong {font-size: medium;}
+.titlebox .SuperRedditAltTextDisplay_Text{display:none!important}
+.titlebox .expando-button.collapsed.video{display:none!important}
+.sidecontentbox .voteWeight,.sidecontentbox .userTagLink{display:none!important}
+#search input[type='text']
+{
+ background:url(%%sexyross%%) top left no-repeat!important;
+ padding:13px 2px 13px 50px!important;
+ height:22px!important;
+ width:245px!important
+}
+
+/* SUBSCRIBERS */
+.subscribers .word, .users-online .word{
+display:none;
+}
+.subscribers .number:after { 
+content: " Garys"
+}
+.users-online .number:after { 
+content: " Garys here now" 
+} 
+
+/* FOOTER */
+.footer-parent:after {
+    content: url(%%wafflestare%%);
+}
+
+/* [](/sp) */
+a[href|="/sp"]{ display: inline-block; padding-right: 100%; width: 0px; height: 0px; }
+
+/* EMOTES */
+a[href="/berryuhh"], a[href="/carrotshock"], a[href="/cheershrug"], a[href="/clickityhack"], a[href="/crystalpinkie"], a[href="/hwpeekaboo"], a[href="/mmkay"], a[href="/raindropsheh"] {
+          display: block;
+          clear: none;
+          float: left;
+          width: 100px;
+          height: 100px;
+          background-image: url(%%100by100%%) !important
+}
+
+a[href="/berryuhh"]{ background-position: 0 0; width: 100px; height: 100px; } 
+a[href="/carrotshock"]{ background-position: 0 -200px; width: 100px; height: 100px; } 
+a[href="/cheershrug"]{ background-position: 0 -400px; width: 100px; height: 100px; } 
+a[href="/clickityhack"]{ background-position: 0 -600px; width: 100px; height: 100px; } 
+a[href="/crystalpinkie"]{ background-position: 0 -800px; width: 100px; height: 100px; } 
+a[href="/hwpeekaboo"]{ background-position: 0 -1000px; width: 100px; height: 100px; } 
+a[href="/mmkay"]{ background-position: 0 -1200px; width: 100px; height: 100px; } 
+a[href="/raindropsheh"]{ background-position: 0 -1400px; width: 100px; height: 100px; } 
+
+/* EMOTES */
+a[href="/berrysocks"], a[href="/flitterexcite"]{
+          display: block;
+          clear: none;
+          float: left;
+          width: 100px;
+          height: 110px;
+          background-image: url(%%100by110%%) !important
+}
+
+a[href="/berrysocks"]{ background-position: 0 0; width: 100px; height: 100px; } 
+a[href="/flitterexcite"]{ background-position: 0 -210px; width: 100px; height: 110px; }
+
+/* EMOTES */
+
+a[href="/ccflitcheer"], a[href="/dtlaugh"], a[href="/dtwut"], a[href="/smithlaugh"]{
+          display: block;
+          clear: none;
+          float: left;
+          width: 100px;
+          height: 120px;
+          background-image: url(%%100by120%%) !important
+}
+
+a[href="/ccflitcheer"]{ background-position: 0 0; width: 100px; height: 120px; } 
+a[href="/dtlaugh"]{ background-position: 0 -240px; width: 100px; height: 120px; } 
+a[href="/dtwut"]{ background-position: 0 -480px; width: 100px; height: 120px; } 
+a[href="/smithlaugh"]{ background-position: 0 -720px; width: 100px; height: 120px; }
+
+/* EMOTES */
+
+a[href="/babsseed"], a[href="/carrotexcite"], a[href="/dtmad"], a[href="/harshwhinny"], a[href="/msawkward"], a[href="/professionalism"]{
+          display: block;
+          clear: none;
+          float: left;
+          width: 100px;
+          height: 130px;
+          background-image: url(%%100by130%%) !important
+}
+
+a[href="/babsseed"]{ background-position: 0 0; width: 100px; height: 130px; } 
+a[href="/carrotexcite"]{ background-position: 0 -260px; width: 100px; height: 130px; } 
+a[href="/dtmad"]{ background-position: 0 -520px; width: 100px; height: 130px; } 
+a[href="/harshwhinny"]{ background-position: 0 -780px; width: 100px; height: 130px; } 
+a[href="/msawkward"]{ background-position: 0 -1040px; width: 100px; height: 130px; } 
+a[href="/professionalism"]{ background-position: 0 -1300px; width: 100px; height: 130px; } 
+
+/* EMOTES */
+
+a[href="/carrotpose"], a[href="/flitterfilly"], a[href="/grannygimme"], a[href="/silverhappy"], a[href="/silverhmm"]{
+          display: block;
+          clear: none;
+          float: left;
+          width: 100px;
+          height: 140px;
+          background-image: url(%%100by140%%) !important
+}
+
+a[href="/carrotpose"]{ background-position: 0 0; width: 100px; height: 140px; } 
+a[href="/flitterfilly"]{ background-position: 0 -280px; width: 100px; height: 140px; } 
+a[href="/grannygimme"]{ background-position: 0 -560px; width: 100px; height: 140px; } 
+a[href="/silverhappy"]{ background-position: 0 -840px; width: 100px; height: 140px; } 
+a[href="/silverhmm"]{ background-position: 0 -1120px; width: 100px; height: 140px; } 
+
+/* EMOTES */
+
+a[href="/cantclop"], a[href="/dtdizzy"], a[href="/flitterblush"], a[href="/hwnotamused"], a[href="/rosetease"], a[href="/waffle"]{
+          display: block;
+          clear: none;
+          float: left;
+          width: 100px;
+          height: 150px;
+          background-image: url(%%100by150%%) !important
+}
+
+a[href="/cantclop"]{ background-position: 0 0; width: 100px; height: 150px; } 
+a[href="/dtdizzy"]{ background-position: 0 -300px; width: 100px; height: 150px; } 
+a[href="/flitterblush"]{ background-position: 0 -600px; width: 100px; height: 150px; } 
+a[href="/hwnotamused"]{ background-position: 0 -900px; width: 100px; height: 150px; } 
+a[href="/rosetease"]{ background-position: 0 -1200px; width: 100px; height: 150px; } 
+a[href="/waffle"]{ background-position: 0 -1500px; width: 100px; height: 150px; }
+
+/* EMOTES */
+
+a[href="/abandbabs"], a[href="/berrypounce"]{
+          display: block;
+          clear: none;
+          float: left;
+          width: 150px;
+          height: 100px;
+          background-image: url(%%150by100%%) !important
+}
+
+a[href="/abandbabs"]{ background-position: 0 0; width: 150px; height: 100px; } 
+a[href="/berrypounce"]{ background-position: 0 -200px; width: 150px; height: 100px; } 
+
+/* EMOTES */
+
+a[href="/dtsshaha"], a[href="/flitterstretch"], a[href="/fritteryay"]{
+          display: block;
+          clear: none;
+          float: left;
+          width: 150px;
+          height: 110px;
+          background-image: url(%%150by110%%) !important
+}
+
+a[href="/dtsshaha"]{ background-position: 0 0; width: 150px; height: 110px; } 
+a[href="/flitterstretch"]{ background-position: 0 -220px; width: 150px; height: 110px; } 
+a[href="/fritteryay"]{ background-position: 0 -440px; width: 150px; height: 110px; } 
+
+/* EMOTES */
+
+a[href="/flitternotbad"], a[href="/intensegaming"]{
+          display: block;
+          clear: none;
+          float: left;
+          width: 150px;
+          height: 120px;
+          background-image: url(%%150by120%%) !important
+}
+
+a[href="/flitternotbad"]{ background-position: 0 0; width: 150px; height: 120px; } 
+a[href="/intensegaming"]{ background-position: 0 -240px; width: 150px; height: 120px; }
+
+/* EMOTES */
+
+a[href="/babsmean"], a[href="/carrotannoyed"], a[href="/flitterlook"], a[href="/forgiveme"]{
+          display: block;
+          clear: none;
+          float: left;
+          width: 150px;
+          height: 130px;
+          background-image: url(%%150by130%%) !important
+}
+
+a[href="/babsmean"]{ background-position: 0 0; width: 150px; height: 130px; } 
+a[href="/carrotannoyed"]{ background-position: 0 -260px; width: 150px; height: 130px; } 
+a[href="/flitterlook"]{ background-position: 0 -520px; width: 150px; height: 130px; } 
+a[href="/forgiveme"]{ background-position: 0 -780px; width: 150px; height: 130px; } 
+
+/* EMOTES */
+
+a[href="/cakestada"], a[href="/flitterannoyed"], a[href="/grannyworried"], a[href="/harshwat"], a[href="/raindropsconcerned"]{
+          display: block;
+          clear: none;
+          float: left;
+          width: 150px;
+          height: 140px;
+          background-image: url(%%150by140%%) !important
+}
+
+a[href="/cakestada"]{ background-position: 0 0; width: 150px; height: 140px; } 
+a[href="/flitterannoyed"]{ background-position: 0 -280px; width: 150px; height: 140px; } 
+a[href="/grannyworried"]{ background-position: 0 -560px; width: 150px; height: 140px; } 
+a[href="/harshwat"]{ background-position: 0 -840px; width: 150px; height: 140px; } 
+a[href="/raindropsconcerned"]{ background-position: 0 -1120px; width: 150px; height: 140px; } 
+
+/* EMOTES */
+a[href="/cocowave"], a[href="/grannyumad"], a[href="/woonaexcited"]{
+          display: block;
+          clear: none;
+          float: left;
+          width: 150px;
+          height: 150px;
+          background-image: url(%%150by150%%) !important
+}
+
+a[href="/cocowave"]{ background-position: 0 0; width: 150px; height: 150px; } 
+a[href="/grannyumad"]{ background-position: 0 -300px; width: 150px; height: 150px; } 
+a[href="/woonaexcited"]{ background-position: 0 -600px; width: 150px; height: 150px; } 
