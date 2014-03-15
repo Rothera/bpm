@@ -103,18 +103,6 @@ hr {
    background-position: -26px 0;
 }
 
-.flair-wraith {
-    padding: 0;
-    background: none;
-    color: black;
-    border: 0;
-    border-radius: 0;
-    background-image: url(%%wraith%%);
-    display: inline-block;
-    height: 16px;
-    width: 14px;
-}
-
 .flair-crown {
     padding: 0;
     background: none;
@@ -620,20 +608,6 @@ a.author[href$="DiscordDraconequus"] {
 
 a.author[href$="DiscordDraconequus"]:after {
     content: "Butt ";
-    font-size: 10px !important;
-    visibility: visible !important;
-    display: block;
-    letter-spacing: normal
-    }
-a.author[href$="ErisDraconequus"] {
-    font-size: 0px !important;
-    display: inline-block;
-    vertical-align: bottom;
-    overflow: hidden;
-    letter-spacing: -20px
-    }
-a.author[href$="ErisDraconequus"]:after {
-    content: "AlsoButt ";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;

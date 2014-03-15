@@ -51,6 +51,46 @@ a[href|="/best"] {
     background-image: url(%%best%%)
 }
 
+a[href|="/bobross"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 164px;
+    height: 207px;
+    background-repeat: no-repeat;
+    background-image: url(%%bobross%%)
+}
+
+a[href|="/tgapflutters"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 144px;
+    background-repeat: no-repeat;
+    background-image: url(%%tgapflutters%%)
+}
+
+a[href="/flitterhi"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-image: url(%%flitterhi%%)
+}
+
+a[href="/wmflitter"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 115px;
+    background-repeat: no-repeat;
+    background-image: url(%%wmflitter%%)
+}
+
 /* ARROWS */
 .arrow.up { background: url(%%waf%%) 0 0; } 
 .arrow.upmod { background: url(%%up%%) 0 0; } 
@@ -268,7 +308,7 @@ a[href="/smithlaugh"]{ background-position: 0 -720px; width: 100px; height: 120p
 
 /* EMOTES */
 
-a[href="/babsseed"], a[href="/carrotexcite"], a[href="/dtmad"], a[href="/harshwhinny"], a[href="/msawkward"], a[href="/professionalism"]{
+a[href="/babsseed"], a[href="/carrotexcite"], a[href="/dtmad"], a[href="/dtreally"], a[href="/harshwhinny"], a[href="/msawkward"], a[href="/professionalism"]{
           display: block;
           clear: none;
           float: left;
@@ -280,9 +320,10 @@ a[href="/babsseed"], a[href="/carrotexcite"], a[href="/dtmad"], a[href="/harshwh
 a[href="/babsseed"]{ background-position: 0 0; width: 100px; height: 130px; } 
 a[href="/carrotexcite"]{ background-position: 0 -260px; width: 100px; height: 130px; } 
 a[href="/dtmad"]{ background-position: 0 -520px; width: 100px; height: 130px; } 
-a[href="/harshwhinny"]{ background-position: 0 -780px; width: 100px; height: 130px; } 
-a[href="/msawkward"]{ background-position: 0 -1040px; width: 100px; height: 130px; } 
-a[href="/professionalism"]{ background-position: 0 -1300px; width: 100px; height: 130px; } 
+a[href="/dtreally"]{background-position: 0 -780px; width: 100px; height: 130px;}
+a[href="/harshwhinny"]{ background-position: 0 -1040px; width: 100px; height: 130px; } 
+a[href="/msawkward"]{ background-position: 0 -1300px; width: 100px; height: 130px; } 
+a[href="/professionalism"]{ background-position: 0 -1560px; width: 100px; height: 130px; } 
 
 /* EMOTES */
 

@@ -43,6 +43,24 @@ background-image:url(%%sheet1%%);
 background-position: -200px -200px;
 }
 
+a[href|="/sweaterchaser"] {
+float:left;
+width:115px;
+height:204px;
+background-repeat:no-repeat;
+background-image:url(%%sheet1%%);
+background-position: -3px -394px;
+}
+
+a[href|="/cookiechaser"] {
+float:left;
+width:170px;
+height:150px;
+background-repeat:no-repeat;
+background-image:url(%%sheet1%%);
+background-position: -200px -416px;
+}
+
 /*stylesheet1 "sheet1" end*/
 
 
@@ -82,6 +100,15 @@ height:145px;
 background-repeat:no-repeat;
 background-image:url(%%sheet2%%);
 background-position: -200px -200px;
+}
+
+a[href|="/fillycc2"] {
+float:left;
+width:72px;
+height:90px;
+background-repeat:no-repeat;
+background-image:url(%%sheet2%%);
+background-position: -38px -390px;
 }
 
 /*stylesheet2 "sheet2" end*/
@@ -424,6 +451,15 @@ background-image:url(%%sheet10%%);
 background-position: 0px -395px;
 }
 
+a[href|="/ccnotacop"] {
+float:left;
+width:152px;
+height:170px;
+background-repeat:no-repeat;
+background-image:url(%%sheet10%%);
+background-position: -210px -395px;
+}
+
 /*stylesheet10 "sheet10" end*/
 
 
@@ -493,6 +529,15 @@ height:80px;
 background-repeat:no-repeat;
 background-image:url(%%sheet12%%);
 background-position: 0px -250px;
+}
+
+a[href|="/batchaser"] {
+float:left;
+width:150px;
+height:136px;
+background-repeat:no-repeat;
+background-image:url(%%sheet12%%);
+background-position: -3px -365px;
 }
 
 /*stylesheet12 "sheet12" end*/
