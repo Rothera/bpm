@@ -90,12 +90,12 @@ div#header-bottom-left ul.tabmenu {
   display:none;
 }
 
-.subscribers .number:after {
+.subscribers .number:after { 
   content: " Minions"
 }
 
-.users-online .number:after {
-  content: " Prodigies"
+.users-online .number:after { 
+  content: " Prodigies" 
 }
 
 .sidecontentbox .helplink + .title h1 {
@@ -106,14 +106,14 @@ div#header-bottom-left ul.tabmenu {
   font-size: 10pt !important; content: "Delinquents"
 }
 
-a[href$="/spoiler"] {
-  background: #000 !important;
-  color: #000 !important
-}
+a[href$="/spoiler"] {  
+  background: #000 !important;  
+  color: #000 !important  
+}  
 
 a[href$="/spoiler"]:hover {
-  color: #FFF !important
-}
+  color: #FFF !important  
+}  
 
 
 
@@ -121,28 +121,28 @@ body {
   background: url(%%sunsetbg3%%) no-repeat fixed center bottom;
 }
 
-.arrow.up { background-image: url(%%Sunsets-Other-Crown-Gray%%);
-  background-position: 0px 0px;
-  height: 20px; width: 15px;
+.arrow.up { background-image: url(%%Sunsets-Other-Crown-Gray%%); 
+  background-position: 0px 0px; 
+  height: 20px; width: 15px; 
 }
 
 .arrow.down { background-image: url(%%Twilights-Crown-Gray%%);
-  background-position: 0px 0px;
-  height: 16px; width: 15px;
+  background-position: 0px 0px; 
+  height: 16px; width: 15px; 
 }
 
-.arrow.upmod {
-  background-image: url(%%Sunsets-Other-Crown%%);
-  background-position: 0px 0px;
-  height: 20px; width: 15px;
+.arrow.upmod { 
+  background-image: url(%%Sunsets-Other-Crown%%); 
+  background-position: 0px 0px; 
+  height: 20px; width: 15px;  
 }
 
-.arrow.downmod {
+.arrow.downmod { 
   background-image: url(%%Twilights-Crown%%);
-  background-position: 0px 0px;
-  height: 16px; width: 15px;
+  background-position: 0px 0px; 
+  height: 16px; width: 15px;  
 }
-
+	
 .arrow.down {
   visibility: hidden; display: none
 }
@@ -152,7 +152,7 @@ body {
   display: block;
   z-index: 1000;
   width: 85px;
-  content: "Vote for your One True Princess!";
+  content: "Vote for your One True Princess!"; 
   padding: 5px;
   border: 0px solid #333;
   text-align: center;
@@ -169,7 +169,7 @@ body {
   display: block;
   z-index: 1000;
   width: 85px;
-  content: "Oh yes, she's SO special!";
+  content: "Oh yes, she's SO special!"; 
   padding: 5px;
   border: 0px solid #333;
   text-align: center;
@@ -184,7 +184,7 @@ body {
     /***********************
     *
     *             EMOTES
-    *
+    *  
     ************************/
     /**************
     A Emoticons
@@ -639,7 +639,7 @@ display:block;clear:none;float:left;width:96px;height:150px;background-image:url
 background-position:0 -100%;
 }
 
-a[href|="/sunsetwhy"],a[href|="/sswhy"]
+a[href|="/sunsetwhy"],a[href|="/sswhy"] 
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunsetwhy%%)!important;
 }
 
