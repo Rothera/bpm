@@ -10,7 +10,7 @@
 
 "use strict";
 
-var BPM_RESOURCE_PREFIX = "http://rainbow.mlas1.com";
+var BPM_RESOURCE_PREFIX = "http://rainbow.adery.net";
 
 // WARNING: This script is "executed" twice on Firefox- once as a normal <script>
 // tag, but also a a content script attached to the page. This is for code
