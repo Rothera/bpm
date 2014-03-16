@@ -419,6 +419,8 @@ def main():
     parser.add_argument("targets", nargs="*", help="Targets to build", default=["default"])
     args = parser.parse_args()
 
+    os.umask(0o022)
+
     with open(args.c) as file:
         vars = bplib.json.load(file)
     expand_vars(vars)
