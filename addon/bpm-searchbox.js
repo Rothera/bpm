@@ -4,7 +4,8 @@
 // i.reddit.com is another way to get the compact UI. Occasionally it'll
 // redirect users to .compact links, but in the meantime we need to work
 // correctly there as well.
-var is_compact = ends_with(document.location.pathname, ".compact") || starts_with(document.location.hostname, "i.");
+var is_compact = ends_with(document.location.pathname, ".compact") ||
+                 document.location.hostname.split(".").indexOf("i") > -1;
 
 // Search box elements
 var sb_container = null;
