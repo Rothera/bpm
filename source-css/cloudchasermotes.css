@@ -1,4 +1,4 @@
-body{background:url(%%CCisBP%%) no-repeat fixed left center}
+body{background:url(%%background%%) no-repeat fixed left center}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
 .content .md h1:before{content:">"}
 /*New post spam filtered warning*/
@@ -162,6 +162,15 @@ background-image:url(%%sheet3%%);
 background-position: -200px -200px;
 }
 
+a[href|="/plotchaser"] {
+float:left;
+width:202px;
+height:141px;
+background-repeat:no-repeat;
+background-image:url(%%sheet3%%);
+background-position: -190px -400px;
+}
+
 /*stylesheet3 "sheet3" end*/
 
 
@@ -202,6 +211,15 @@ height:150px;
 background-repeat:no-repeat;
 background-image:url(%%sheet4%%);
 background-position: -200px -200px;
+}
+
+a[href|="/ccrdnuzzle"] {
+float:left;
+width:250px;
+height:212px;
+background-repeat:no-repeat;
+background-image:url(%%sheet4%%);
+background-position: -72px -375px;
 }
 
 /*stylesheet4 "sheet4" end*/
@@ -246,6 +264,25 @@ background-image:url(%%sheet5%%);
 background-position: -200px -200px;
 }
 
+a[href|="/shadowchaser"] {
+float:left;
+width:160px;
+height:160px;
+background-repeat:no-repeat;
+background-image:url(%%sheet5%%);
+background-position: -15px -393px;
+}
+
+a[href|="/shadowchaser2"] {
+float:left;
+width:200px;
+height:147px;
+background-repeat:no-repeat;
+background-image:url(%%sheet5%%);
+background-position: -190px -401px;
+}
+
+
 /*stylesheet5 "sheet5" end*/
 
 
@@ -285,6 +322,15 @@ height:150px;
 background-repeat:no-repeat;
 background-image:url(%%sheet6%%);
 background-position: -200px -200px;
+}
+
+a[href|="/sweaterchaser2"] {
+float:left;
+width:113px;
+height:180px;
+background-repeat:no-repeat;
+background-image:url(%%sheet6%%);
+background-position: -10px -394px;
 }
 
 /*stylesheet6 "sheet6" end*/
@@ -575,8 +621,65 @@ background-position: 0px -200px;
 
 /*stylesheet13 "sheet13" end*/
 
+/*stylesheet1 "sheet14"*/
+
+a[href|="/chasercorn"] {
+float:left;
+width:106px;
+height:170px;
+background-repeat:no-repeat;
+background-image:url(%%sheet14%%);
+background-position: 0px 0px;
+}
+
+a[href|="/lunachaser"] {
+float:left;
+width:195px;
+height:131px;
+background-repeat:no-repeat;
+background-image:url(%%sheet14%%);
+background-position: -128px -18px;
+}
+
+a[href|="/lunachaser2"] {
+float:left;
+width:180px;
+height:159px;
+background-repeat:no-repeat;
+background-image:url(%%sheet14%%);
+background-position: 0px -207px;
+}
+
+a[href|="/cloudchasarizard"] {
+float:left;
+width:208px;
+height:150px;
+background-repeat:no-repeat;
+background-image:url(%%sheet14%%);
+background-position: -207px -201px;
+}
+
+a[href|="/ccprincess"] {
+float:left;
+width:160px;
+height:198px;
+background-repeat:no-repeat;
+background-image:url(%%sheet14%%);
+background-position: 0px -397px;
+}
+
+/*stylesheet1 "sheet14" end*/
 
 /*un-assigned*/
+
+a[href|="/chasercat"] {
+float:left;
+width:350px;
+height:300px;
+background-repeat:no-repeat;
+background-image:url(%%chasercat%%);
+}
+
 
 a[href|="/ccxrdsnuggle"] {
 float:left;
@@ -712,6 +815,31 @@ background-repeat:no-repeat;
 background-image:url(%%ccbee%%);
 }
 
+a[href|="/ccwut"] {
+float:left;
+width:306px;
+height:245px;
+background-repeat:no-repeat;
+background-image:url(%%ccwut%%);
+}
+
+a[href|="/cccheer"] {
+float:left;
+width:250px;
+height:182px;
+background-repeat:no-repeat;
+background-image:url(%%cccheer%%);
+}
+
+a[href|="/ccifies"] {
+float:left;
+width:148px;
+height:136px;
+background-repeat:no-repeat;
+background-image:url(%%ccifies%%);
+}
+
+
 /*un-assigned end*/
 
 a.author[href$="LunarMist2"] {  
@@ -726,7 +854,7 @@ a.author[href$="LunarMist2"]:before{
     visibility:visible!important;  
     }
 
-a.author[href$="LunarMist2"]:before {content:"Burchette"}
+a.author[href$="LunarMist2"]:before {content:">rebel"}
 
 a.author[href$="BurChaBow"] {  
 font-size:0!important;  

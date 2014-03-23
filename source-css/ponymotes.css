@@ -143,9 +143,9 @@ border: 1px solid #8EEF7B;
 background: transparent;
 }
 
-.thing {margin-right: 310px;}
+.listing-page .content[role="main"], .comments-page .content[role="main"] {margin-right: 310px;}
 
-.click-gadget .thing {margin-right: 0px;} /* This is the 'Recently viewed links' box in the sidebar */
+/* .click-gadget .thing {margin-right: 0px;} /* This is the 'Recently viewed links' box in the sidebar */
 
 .linkflair-denied {
 background-image: linear-gradient(90deg, #e7cdcd, #fff, #fff, #fff, #fff, #fff);
@@ -340,7 +340,7 @@ vertical-align: middle;
  */
 
 /* 70x70a 'motes. */
-a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"], a[href|="/grannyglad"], a[href|="/aloe"], a[href|="/ohyeah"], a[href|="/neutraljack"], a[href|="/fillyfirefly"], a[href|="/rdwat"], a[href|="/cocosmile"], a[href|="/cocohappy"], a[href|="/cocosad"], a[href|="/grimfluff"], a[href|="/ajduckface"]
+a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"], a[href|="/grannyglad"], a[href|="/aloe"], a[href|="/ohyeah"], a[href|="/neutraljack"], a[href|="/fillyfirefly"], a[href|="/rdwat"], a[href|="/cocosmile"], a[href|="/cocohappy"], a[href|="/cocosad"], a[href|="/grimfluff"], a[href|="/ajduckface"], a[href|="/maud"], a[href|="/maudsmile"]
 {background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
@@ -348,7 +348,7 @@ a[href|="/cadface"], a[href|="/apathiablankstare"], a[href|="/twicider"], a[href
 {background-image:url(%%100x100a%%);width:100px;height:100px;display:block;float:left;}
 
 /* 100x100b 'motes */
-a[href|="/rarityparanoid"], a[href|="/rarinoid"], a[href|="/flutterfreaked"], a[href|="/applewat"], a[href|="/fspuppyeyes"], a[href|="/fspout"], a[href|="/scootasquee"], a[href|="/fillycoco"], a[href|="/ajrescue"], a[href|="/scaryaj"], a[href|="/pptsundere"]
+a[href|="/rarityparanoid"], a[href|="/rarinoid"], a[href|="/flutterfreaked"], a[href|="/applewat"], a[href|="/fspuppyeyes"], a[href|="/fspout"], a[href|="/scootasquee"], a[href|="/fillycoco"], a[href|="/ajrescue"], a[href|="/scaryaj"], a[href|="/pptsundere"], a[href|="/rdtsundere"]
 {background-image:url(%%100x100b%%);width:100px;height:100px;display:block;float:left;}
 
 /* 150x150a 'motes. */
@@ -389,7 +389,7 @@ a[href|="/sonavinyl"], a[href|="/pinkierage"], a[href|="/pinkrage"], a[href|="/l
 {background-image:url(%%misfitsd%%);display:block;float:left;}
 
 /* Misfits e */
-a[href|="/twidorable"], a[href|="/nerdcheese"], a[href|="/50scoco"], a[href|="/50sflutters"], a[href|="/flutterteen"], a[href|="/sweetiebat"], a[href|="/scootabat"]
+a[href|="/twidorable"], a[href|="/nerdcheese"], a[href|="/50scoco"], a[href|="/50sflutters"], a[href|="/flutterteen"], a[href|="/sweetiebat"], a[href|="/scootabat"], a[href|="/dalekboop"], a[href|="/youngtia"]
 {background-image:url(%%misfitse%%);display:block;float:left;}
 
 /* Grid pos 0,0 'motes. Not needed but for completeness... */
@@ -425,7 +425,7 @@ a[href|="/twiimbetterthanyou"], a[href|="/twimbetterthanyou"], a[href|="/neutral
 {background-position: -100% -200%;}
 
 /* Grid pos 2,2 'motes */
-a[href|="/bonboudicca"], a[href|="/celticbonbon"], a[href|="/fluttereyebrow"], a[href|="/fillyfirefly"], a[href|="/woonabounce"], a[href|="/nerdscratch"]
+a[href|="/bonboudicca"], a[href|="/celticbonbon"], a[href|="/fluttereyebrow"], a[href|="/fillyfirefly"], a[href|="/woonabounce"], a[href|="/nerdscratch"], a[href|="/rdtsundere"]
 {background-position: -200% -200%;}
 
 
@@ -455,11 +455,11 @@ a[href|="/rarityspy"], a[href|="/discoin"], a[href|="/ajduckface"], a[href|="/ne
 {background-position: -200% -400%;}
 
 /* Grid pos 0,5 'motes */
-a[href|="/twilightyay"], a[href|="/twidoubt"], a[href|="/nerdtrixie"]
+a[href|="/twilightyay"], a[href|="/twidoubt"], a[href|="/nerdtrixie"], a[href|="/maud"]
 {background-position: 0 -500%;}
 
 /* Grid pos 1,5 'motes */
-a[href|="/tiadisapproval"], a[href|="/ppdoubt"], a[href|="/nerdpie"]
+a[href|="/tiadisapproval"], a[href|="/ppdoubt"], a[href|="/nerdpie"], a[href|="/maudsmile"]
 {background-position: -100% -500%;}
 
 /* Grid pos 2,5 'motes */
@@ -576,6 +576,7 @@ a[href|="/raribrows"] {background-image: url(%%raribrows%%);width:122px;height:1
 a[href|="/cmccovet"] {background-image: url(%%cmccovet%%);width:150px;height:108px;display:block;float:left;}
 a[href|="/kittyluna"] {background-image: url(%%kittyluna%%);width:200px;height:175px;display:block;float:left;}
 a[href|="/twilestianuzzle"] {background-image: url(%%twilestianuzzle%%);width:170px;height:140px;display:block;float:left;}
+a[href|="/fsbatnom"] {background-image: url(%%fsbatnom%%);width:200px;height:130px;display:block;float:left;}
 
 /* Misfit Emotes */
 a[href|="/fillycadance"] {width:100px;height:126px;}
@@ -640,3 +641,5 @@ a[href|="/50scoco"] {width:153px;height:200px;background-position: -200px 0;}
 a[href|="/50sflutters"], a[href|="/flutterteen"] {width:200px;height:193px;background-position: -353px 0;}
 a[href|="/sweetiebat"] {width:108px;height:150px;background-position: 0 -262px;}
 a[href|="/scootabat"] {width:138px;height:150px;background-position: -562px 0;}
+a[href|="/dalekboop"] {width:200px;height:152px;background-position: -108px -200px;}
+a[href|="/youngtia"] {width:200px;height:173px;background-position: -308px -200px;}

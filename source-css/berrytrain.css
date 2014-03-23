@@ -1,3 +1,5 @@
+/*I don't know who organized the stylesheet, but noice job*/
+
 /* HEADER */
 #header { background: url(%%up%%); }
 
@@ -21,6 +23,16 @@ a[href="/flitterheart"] {
     background-image: url(%%flitterheart%%)
 }
 
+a[href="/poetmaud"] {
+    background-position: 0px 0px;
+    Display: block;
+    Clear: none;
+    Float: left;
+    Width: 183px;
+    Height: 227px;
+    background-image: url(%%poetmaud%%)
+}
+
 a[href="/arousing"] {
     background-position: 0px 0px;
     Display: block;
@@ -29,6 +41,16 @@ a[href="/arousing"] {
     Width: 146px;
     Height: 139px;
     background-image: url(%%arousing%%)
+}
+
+a[href="/nataliapoklonskaya"] {
+    background-position: 0px 0px;
+    Display: block;
+    Clear: none;
+    Float: left;
+    Width: 292px;
+    Height: 150px;
+    background-image: url(%%nataliapoklonskaya%%)
 }
 
 a[href|="/rosecute"] {
@@ -258,7 +280,7 @@ content: " Garys here now"
 /* [](/sp) */
 a[href|="/sp"]{ display: inline-block; padding-right: 100%; width: 0px; height: 0px; }
 
-/* EMOTES */
+/* EMOTES 100 by 100*/
 a[href="/berryuhh"], a[href="/carrotshock"], a[href="/cheershrug"], a[href="/clickityhack"], a[href="/crystalpinkie"], a[href="/hwpeekaboo"], a[href="/mmkay"], a[href="/raindropsheh"] {
           display: block;
           clear: none;
@@ -277,7 +299,7 @@ a[href="/hwpeekaboo"]{ background-position: 0 -1000px; width: 100px; height: 100
 a[href="/mmkay"]{ background-position: 0 -1200px; width: 100px; height: 100px; } 
 a[href="/raindropsheh"]{ background-position: 0 -1400px; width: 100px; height: 100px; } 
 
-/* EMOTES */
+/* EMOTES 100 by 110 */
 a[href="/berrysocks"], a[href="/flitterexcite"]{
           display: block;
           clear: none;
@@ -290,7 +312,7 @@ a[href="/berrysocks"], a[href="/flitterexcite"]{
 a[href="/berrysocks"]{ background-position: 0 0; width: 100px; height: 100px; } 
 a[href="/flitterexcite"]{ background-position: 0 -210px; width: 100px; height: 110px; }
 
-/* EMOTES */
+/* EMOTES 100 by 120 */
 
 a[href="/ccflitcheer"], a[href="/dtlaugh"], a[href="/dtwut"], a[href="/smithlaugh"]{
           display: block;
@@ -306,7 +328,7 @@ a[href="/dtlaugh"]{ background-position: 0 -240px; width: 100px; height: 120px; 
 a[href="/dtwut"]{ background-position: 0 -480px; width: 100px; height: 120px; } 
 a[href="/smithlaugh"]{ background-position: 0 -720px; width: 100px; height: 120px; }
 
-/* EMOTES */
+/* EMOTES 100 by 130 */
 
 a[href="/babsseed"], a[href="/carrotexcite"], a[href="/dtmad"], a[href="/dtreally"], a[href="/harshwhinny"], a[href="/msawkward"], a[href="/professionalism"]{
           display: block;
@@ -325,7 +347,7 @@ a[href="/harshwhinny"]{ background-position: 0 -1040px; width: 100px; height: 13
 a[href="/msawkward"]{ background-position: 0 -1300px; width: 100px; height: 130px; } 
 a[href="/professionalism"]{ background-position: 0 -1560px; width: 100px; height: 130px; } 
 
-/* EMOTES */
+/* EMOTES 100 by 140 */
 
 a[href="/carrotpose"], a[href="/flitterfilly"], a[href="/grannygimme"], a[href="/silverhappy"], a[href="/silverhmm"]{
           display: block;
@@ -342,9 +364,9 @@ a[href="/grannygimme"]{ background-position: 0 -560px; width: 100px; height: 140
 a[href="/silverhappy"]{ background-position: 0 -840px; width: 100px; height: 140px; } 
 a[href="/silverhmm"]{ background-position: 0 -1120px; width: 100px; height: 140px; } 
 
-/* EMOTES */
+/* EMOTES 100 by 150 */
 
-a[href="/cantclop"], a[href="/dtdizzy"], a[href="/flitterblush"], a[href="/hwnotamused"], a[href="/rosetease"], a[href="/waffle"]{
+a[href="/cantclop"], a[href="/dtdizzy"], a[href="/flitterblush"], a[href="/hwnotamused"], a[href="/roseluckheart"], a[href="/rosetease"], a[href="/waffle"]{
           display: block;
           clear: none;
           float: left;
@@ -357,12 +379,13 @@ a[href="/cantclop"]{ background-position: 0 0; width: 100px; height: 150px; }
 a[href="/dtdizzy"]{ background-position: 0 -300px; width: 100px; height: 150px; } 
 a[href="/flitterblush"]{ background-position: 0 -600px; width: 100px; height: 150px; } 
 a[href="/hwnotamused"]{ background-position: 0 -900px; width: 100px; height: 150px; } 
-a[href="/rosetease"]{ background-position: 0 -1200px; width: 100px; height: 150px; } 
-a[href="/waffle"]{ background-position: 0 -1500px; width: 100px; height: 150px; }
+a[href="/roseluckheart"]{ background-position: 0 -1200px; width: 100px; height: 150px;}
+a[href="/rosetease"]{ background-position: 0 -1500px; width: 100px; height: 150px; } 
+a[href="/waffle"]{ background-position: 0 -1800px; width: 100px; height: 150px; }
 
-/* EMOTES */
+/* EMOTES 150 by 100 */
 
-a[href="/abandbabs"], a[href="/berrypounce"]{
+a[href="/abandbabs"], a[href="/berrypounce"], a[href="/lunabored"]{
           display: block;
           clear: none;
           float: left;
@@ -373,8 +396,9 @@ a[href="/abandbabs"], a[href="/berrypounce"]{
 
 a[href="/abandbabs"]{ background-position: 0 0; width: 150px; height: 100px; } 
 a[href="/berrypounce"]{ background-position: 0 -200px; width: 150px; height: 100px; } 
+a[href="/lunabored"]{ background-position: 0 -400px; width: 150px; height: 90px; }
 
-/* EMOTES */
+/* EMOTES 150 by 110 */
 
 a[href="/dtsshaha"], a[href="/flitterstretch"], a[href="/fritteryay"]{
           display: block;
@@ -389,7 +413,7 @@ a[href="/dtsshaha"]{ background-position: 0 0; width: 150px; height: 110px; }
 a[href="/flitterstretch"]{ background-position: 0 -220px; width: 150px; height: 110px; } 
 a[href="/fritteryay"]{ background-position: 0 -440px; width: 150px; height: 110px; } 
 
-/* EMOTES */
+/* EMOTES 150 by 120 */
 
 a[href="/flitternotbad"], a[href="/intensegaming"]{
           display: block;
@@ -403,7 +427,7 @@ a[href="/flitternotbad"], a[href="/intensegaming"]{
 a[href="/flitternotbad"]{ background-position: 0 0; width: 150px; height: 120px; } 
 a[href="/intensegaming"]{ background-position: 0 -240px; width: 150px; height: 120px; }
 
-/* EMOTES */
+/* EMOTES 150 by 130 */
 
 a[href="/babsmean"], a[href="/carrotannoyed"], a[href="/flitterlook"], a[href="/forgiveme"]{
           display: block;
@@ -419,7 +443,7 @@ a[href="/carrotannoyed"]{ background-position: 0 -260px; width: 150px; height: 1
 a[href="/flitterlook"]{ background-position: 0 -520px; width: 150px; height: 130px; } 
 a[href="/forgiveme"]{ background-position: 0 -780px; width: 150px; height: 130px; } 
 
-/* EMOTES */
+/* EMOTES 150 by 140 */
 
 a[href="/cakestada"], a[href="/flitterannoyed"], a[href="/grannyworried"], a[href="/harshwat"], a[href="/raindropsconcerned"]{
           display: block;
@@ -436,7 +460,7 @@ a[href="/grannyworried"]{ background-position: 0 -560px; width: 150px; height: 1
 a[href="/harshwat"]{ background-position: 0 -840px; width: 150px; height: 140px; } 
 a[href="/raindropsconcerned"]{ background-position: 0 -1120px; width: 150px; height: 140px; } 
 
-/* EMOTES */
+/* EMOTES 150 by 150 */
 a[href="/cocowave"], a[href="/grannyumad"], a[href="/woonaexcited"]{
           display: block;
           clear: none;
