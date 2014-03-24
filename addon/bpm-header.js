@@ -64,5 +64,6 @@ var US_OPTIONS_PAGE = US_RESOURCE_PREFIX + "/options.html";
 // (as reading links back to chrome addresses are generally forbidden).
 var DOMAIN_BLACKLIST = [
     "read.amazon.com", // Reads document.styleSheets and crashes
-    "outlook.com" // Reported conflict; cause unknown
+    "outlook.com", // Reported conflict; cause unknown
+    "panelbase.net" // Reported conflict; cause unknown
 ];
