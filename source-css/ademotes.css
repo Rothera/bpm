@@ -1,3 +1,18 @@
+/* Emotes */
+
+a[href|='/ajnope'] { width:200px; height:200px; background-image: url(%%ajnope%%); background-position: 0px 0px; display: block; clear: none; float: left; margin-left: 3px; margin-right: 3px; }
+
+a[href|='/ajsolly'], a[href|='/pppick'], a[href|='/twisnipe'], a[href|='/twistpick'] 
+
+{display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(%%emotes%%) }
+
+a[href|='/ajsolly'] {width:121px; height:149px; background-position: -115px -2px}
+a[href|='/pppick'] {width:153px; height:148px; background-position: -2px -154px}
+a[href|='/twisnipe'] {width:227px; height:150px; background-position: -2px -304px}
+a[href|='/twistpick'] {width:111px; height:150px; background-position: -2px -2px}
+
+
+
 a[href|='/flutterumm'], a[href|='/flutterwhat'], a[href|='/sackflip'], a[href|='/sackfun'], a[href|='/shitemote'] {
     display: block;
     clear: none;

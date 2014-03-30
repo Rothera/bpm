@@ -839,6 +839,21 @@ background-repeat:no-repeat;
 background-image:url(%%ccifies%%);
 }
 
+a[href|="/ccrdboop"] {
+float:left;
+width:260px;
+height:159px;
+background-repeat:no-repeat;
+background-image:url(%%ccrdboop%%);
+}
+
+a[href|="/cfboop"] {
+float:left;
+width:200px;
+height:168px;
+background-repeat:no-repeat;
+background-image:url(%%cfboop%%);
+}
 
 /*un-assigned end*/
 
@@ -854,7 +869,7 @@ a.author[href$="LunarMist2"]:before{
     visibility:visible!important;  
     }
 
-a.author[href$="LunarMist2"]:before {content:">rebel"}
+a.author[href$="LunarMist2"]:before {content:"misty-sempai"}
 
 a.author[href$="BurChaBow"] {  
 font-size:0!important;  
@@ -868,7 +883,7 @@ a.author[href$="BurChaBow"]:before{
     visibility:visible!important;  
     }
 
-a.author[href$="BurChaBow"]:before {content:"Captain Burchles and the Burchettes"}
+a.author[href$="BurChaBow"]:before {content:"burchy-san"}
 
 a.author[href$="durpyDash"] {  
 font-size:0!important;  
@@ -882,7 +897,7 @@ a.author[href$="durpyDash"]:before{
     visibility:visible!important;  
     }
 
-a.author[href$="durpyDash"]:before {content:"Burchette"}
+a.author[href$="durpyDash"]:before {content:"durpy-san"}
 
 a.author[href$="-20"] {
 font-size:0!important;
@@ -894,4 +909,4 @@ a.author[href$="-20"]:before{
 font-size:12px!important;
 visibility:visible!important;
 }
-a.author[href$="-20"]:before {content:"Burchette"}
+a.author[href$="-20"]:before {content:"pancake-chan"}
