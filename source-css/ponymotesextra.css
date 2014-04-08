@@ -1,0 +1,85 @@
+/* /r/ponymotesextra CSS!
+ * Just animotes from /r/PonyMotes really.
+ * Image Count: 28/50
+ */
+
+/* Animated Emotes */
+a[href|="/moofintezzter"], a[href|="/muffintester"] {background: url(%%muffintester%%) no-repeat;width:200px;height:177px;display:block;float:left;}
+a[href|="/crazyface"], a[href|="/pinkface"] {background-image: url(%%crazyface%%);width:220px;height:150px;display:block;float:left;}
+a[href|="/reallysadluna"] {background-image: url(%%reallysadluna%%);width:165px;height:165px;display:block;float:left;}
+a[href|="/thedonutswilllastforever"], a[href|="/mightyjoe"] {background-image: url(%%thedonutswilllastforever%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/arcade"] {background-image: url(%%arcade%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/rddealwithit"] {background-image: url(%%rddealwithit%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/muffindreams"] {background-image: url(%%muffindreams%%);width:220px;height:220px;display:block;float:left;}
+a[href|="/twidanceydance"] {background-image: url(%%twidanceydance%%);width:150px;height:135px;display:block;float:left;}
+a[href|="/derpypanic"] {background-image: url(%%derpypanic%%);width:300px;height:151px;display:block;float:left;}
+a[href|="/everyponypanic"] {background-image: url(%%everyponypanic%%);width:300px;height:150px;display:block;float:left;}
+a[href|="/hypnopony"] {background-image: url(%%hypnopony%%);width:123px;height:150px;display:block;float:left;}
+a[href|="/intensefire"], a[href|="/spitfireintensifies"] {background-image: url(%%intensefire%%);width:100px;height:100px;display:block;float:left;}
+a[href|="/majestic"] {background-image: url(%%majestic%%);width:140px;height:100px;display:block;float:left;}
+a[href|="/twichargin"], a[href|="/twiscrunch"] {background-image: url(%%twichargin%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/manspikebrows"], a[href|="/sexualharrassment"] {background-image: url(%%sexualharrassment%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/manspikeheythere"], a[href|="/msheythere"], a[href|="/spikeheythere"] {background-image: url(%%heythere%%);width:150px;height:150px;display:block;float:left;}
+a[href|="/lyrapimpstrings"] {background-image: url(%%lyrapimpstrings%%);width:159px;height:170px;display:block;float:left;}
+a[href|="/woonatype"] {background-image: url(%%woonatype%%);width:200px;height:187px;display:block;float:left;}
+a[href|="/octabelleintensifies"], a[href|="/octybelleintensifies"] {background-image: url(%%octabelleintensifies%%);width:113px;height:150px;display:block;float:left;}
+a[href|="/crazytwi"] {background-image: url(%%crazytwi%%);width:130px;height:150px;display:block;float:left;}
+a[href|="/applebrow"] {background-image: url(%%applebrow%%);width:100px;height:90px;display:block;float:left;}
+a[href|="/downvotingpony"] {background-image: url(%%downvotingpony%%);width:230px;height:185px;display:block;float:left;}
+a[href|="/raribrows"] {background-image: url(%%raribrows%%);width:122px;height:110px;display:block;float:left;}
+a[href|="/cmccovet"] {background-image: url(%%cmccovet%%);width:150px;height:108px;display:block;float:left;}
+a[href|="/kittyluna"] {background-image: url(%%kittyluna%%);width:200px;height:175px;display:block;float:left;}
+a[href|="/twilestianuzzle"] {background-image: url(%%twilestianuzzle%%);width:170px;height:140px;display:block;float:left;}
+a[href|="/fsbatnom"] {background-image: url(%%fsbatnom%%);width:200px;height:130px;display:block;float:left;}
+a[href|="/lunarainbowbarf"], a[href|="/lunabarf"] {background-image: url(%%lunarainbowbarf%%);width:191px;height:155px;display:block;float:left;}
+
+/*
+ ************
+ */
+
+/* Not emotes */
+
+ul#image-preview-list li:nth-child(11):after {
+content: "10th image";
+color: green;
+padding-left: 5px;
+}
+
+ul#image-preview-list li:nth-child(21):after {
+content: "20th image";
+color: green;
+padding-left: 5px;
+}
+
+ul#image-preview-list li:nth-child(31):after {
+content: "30th image";
+color: yellow;
+padding-left: 5px;
+}
+
+ul#image-preview-list li:nth-child(41):after {
+content: "40th image";
+color: orangered;
+padding-left: 5px;
+}
+
+ul#image-preview-list li:nth-child(46):after {
+content: "45th image";
+color: red;
+padding-left: 5px;
+}
+
+ul#image-preview-list li:nth-child(50):after {
+content: "49th image";
+color: red;
+padding-left: 5px;
+font-weight: bold;
+}
+
+ul#image-preview-list li:nth-child(51):after {
+content: "50th image";
+color: red;
+padding-left: 5px;
+font-weight: bolder;
+font-size: large;
+}

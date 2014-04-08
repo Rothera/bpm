@@ -110,6 +110,7 @@ Subreddits:
 - ponyanarchism
 - ponyloungerts
 - ponymotes
+- ponymotesextra
 - pwettypwinkpwincesses
 - roseluck
 - rubypinch
@@ -143,7 +144,7 @@ Extraction:
 
 Generation:
   # Fix /rcrossfire not actually being reversed
-  - [AddCSS, r/mlas1emotes, /rcrossfire, "", {"-moz-transform": scaleX(-1), "-webkit-transform": scaleX(-1), "-o-transform": scaleX(-1), transform: scaleX(-1)}]
+  - [AddCSS, r/ademotes, /rcrossfire, "", {"-moz-transform": scaleX(-1), "-webkit-transform": scaleX(-1), "-o-transform": scaleX(-1), transform: scaleX(-1)}]
 
   # Edited version- original is broken
   - - MergeEmotes
@@ -171,10 +172,10 @@ Generation:
 
 Sorting:
 - [r/mylittlepony, "*"] # Not actually used, but a good failsafe
-- [r/cianimotes, "*"] # Whee.
-- [r/mylittleandysonic1, "*"] # These three rules resolve a lot of things
-- [r/mlas1emotes, "*"]        # implicitly, which is unfortunate, but generally
-- [r/mlas1animotes, "*"]      # correct.
+- [r/ademotes, "*"]
+- [r/cianimotes, "*"]
+- [r/mylittleandysonic1, "*"]
+- [r/mlas1animotes, "*"]
 - [r/futemotes, r/ponyanarchism]    # More copies of /fut*
 - [r/idliketobeatree, r/ainbowdash] # /rd* conflicts
 - [r/mylittlemusician, r/mylittlelistentothis] # Copies of some emotes
