@@ -1018,7 +1018,6 @@ a.author[href$="otwem"],
 a.author[href$="Kireas"],
 a.author[href$="Nephrited"],
 a.author[href$="AlisterDX"],
-a.author[href$="upvote_machine_1"],
 a.author[href$="Harakou"],
 a.author[href$="nightpony"],
 a.author[href$="JadeMeteor"]
@@ -1048,8 +1047,7 @@ a.author[href$="bryvood"]:before ,
 a.author[href$="otwem"]:before ,
 a.author[href$="Kireas"]:before, 
 a.author[href$="Nephrited"]:before, 
-a.author[href$="AlisterDX"]:before, 
-a.author[href$="upvote_machine_1"]:before, 
+a.author[href$="AlisterDX"]:before,
 a.author[href$="Harakou"]:before,
 a.author[href$="nightpony"]:before,
 a.author[href$="JadeMeteor"]:before
@@ -1078,7 +1076,6 @@ a.author[href$="otwem"]:before {content:"Otwem Scratch"}
 a.author[href$="Kireas"]:before {content:"Octavia"}
 a.author[href$="Nephrited"]:before {content:"Octavia"}
 a.author[href$="AlisterDX"]:before {content:"Star"}
-a.author[href$="upvote_machine_1"]:before {content:"MrJoker7854"}
 a.author[href$="Harakou"]:before {content:"Taco OIA"}
 a.author[href$="nightpony"]:before {content:"DJ NightPon3"}
 a.author[href$="JadeMeteor"]:before {content:"Octavia"}
@@ -1093,7 +1090,7 @@ a.author[href$="JadeMeteor"]:before {content:"Octavia"}
 .author[href$="nightpony"] { color:#a100a1 !important }
 .author[href$="JadeMeteor"] { color:purple !important }
 
-a.author[href$="/mrjoker7854"] {
+a.author[href$="/mrjoker7854"],a.author[href$="/upvote_machine_1"] {
     display: inline-block;
     font-size: 0;
     letter-spacing: -20px;
@@ -1101,7 +1098,7 @@ a.author[href$="/mrjoker7854"] {
     vertical-align: bottom
     }
 
-a.author[href$="/mrjoker7854"]:after {
+a.author[href$="/mrjoker7854"]:after,a.author[href$="/upvote_machine_1"]:after {
     content: "Ponky Pone";
     display: block;
     font-size: 12px !important;
@@ -1110,7 +1107,7 @@ a.author[href$="/mrjoker7854"]:after {
     color: pink !important
     }
 
-a.author[href$="/mrjoker7854"]:hover:after {
+a.author[href$="/mrjoker7854"]:hover:after,a.author[href$="/upvote_machine_1"]:hover:after {
     content: "Smile you bundle of sticks";
     display: block;
     font-size: 12px !important;

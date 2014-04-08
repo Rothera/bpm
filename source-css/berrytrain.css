@@ -1,10 +1,26 @@
-/*I don't know who organized the stylesheet, but noice job*/
+/*Start of [REDACTED]*/
+
+
+.side {
+    padding-top: 100px;
+    background: url(%%tart%%) no-repeat 0 5px;
+}
+
+/*End of [REDACTED]*/
+
+/*I don't know who organized the stylesheet, but noice job */
+
+/* thanks */
+
+/*No problem*/
 
 /* HEADER */
 #header { background: url(%%up%%); }
 
 /* BACKGROUND */
-body { background: url(%%4waffleLite%%) center center ; }
+body { background: url(%%4waffleLite%%)
+
+repeat fixed center center ; }
 
 /* FLAIR */
 .flairselector .customizer {
@@ -93,6 +109,16 @@ a[href|="/tgapflutters"] {
     background-image: url(%%tgapflutters%%)
 }
 
+a[href|="/culminated"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-image: url(%%culminated%%)
+}
+
 a[href="/flitterhi"] {
     display: block;
     clear: none;
@@ -113,6 +139,15 @@ a[href="/wmflitter"] {
     background-image: url(%%wmflitter%%)
 }
 
+a[href="/flitterexcite"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 110px;
+    background-repeat: no-repeat;
+    background-image: url(%%flitterexcite%%)
+}
 /* ARROWS */
 .arrow.up { background: url(%%waf%%) 0 0; } 
 .arrow.upmod { background: url(%%up%%) 0 0; } 
@@ -301,19 +336,6 @@ a[href="/hwpeekaboo"]{ background-position: 0 -1000px; width: 100px; height: 100
 a[href="/mmkay"]{ background-position: 0 -1200px; width: 100px; height: 100px; } 
 a[href="/raindropsheh"]{ background-position: 0 -1400px; width: 100px; height: 100px; } 
 
-/* EMOTES 100 by 110 */
-a[href="/berrysocks"], a[href="/flitterexcite"]{
-          display: block;
-          clear: none;
-          float: left;
-          width: 100px;
-          height: 110px;
-          background-image: url(%%100by110%%) !important
-}
-
-a[href="/berrysocks"]{ background-position: 0 0; width: 100px; height: 100px; } 
-a[href="/flitterexcite"]{ background-position: 0 -210px; width: 100px; height: 110px; }
-
 /* EMOTES 100 by 120 */
 
 a[href="/ccflitcheer"], a[href="/dtlaugh"], a[href="/dtwut"], a[href="/smithlaugh"]{
@@ -463,18 +485,19 @@ a[href="/harshwat"]{ background-position: 0 -840px; width: 150px; height: 140px;
 a[href="/raindropsconcerned"]{ background-position: 0 -1120px; width: 150px; height: 140px; } 
 
 /* EMOTES 150 by 150 */
-a[href="/cocowave"], a[href="/grannyumad"], a[href="/woonaexcited"]{
+a[href="/berrysocks"], a[href="/cocowave"], a[href="/grannyumad"], a[href="/woonaexcited"]{
           display: block;
           clear: none;
           float: left;
-          width: 150px;
+          width: 155px;
           height: 150px;
           background-image: url(%%150by150%%) !important
 }
 
-a[href="/cocowave"]{ background-position: 0 0; width: 150px; height: 150px; } 
-a[href="/grannyumad"]{ background-position: 0 -300px; width: 150px; height: 150px; } 
-a[href="/woonaexcited"]{ background-position: 0 -600px; width: 150px; height: 150px; } 
+a[href="/berrysocks"]{ background-position: 0 0; width: 150px; height: 155px;}
+a[href="/cocowave"]{ background-position: 0 -305px; width: 150px; height: 150px; } 
+a[href="/grannyumad"]{ background-position: 0 -605px; width: 150px; height: 150px; } 
+a[href="/woonaexcited"]{ background-position: 0 -905px; width: 150px; height: 150px; } 
 
 /*Mega Awesome /r/Berrytrain exclusive mail changer machine 4200 with air conditioning and scones*/
 
@@ -492,4 +515,27 @@ background:url(%%BerryMail%%);
 
 /*The End of the Mega Awesome /r/Berrytrain exclusive mail changer machine 4200 with air conditioning and scones*/
 
+/* NAME CHANGE */
+.sidecontentbox a.author[href$="/therosebudpony"]:after {
+    content: "Rosebud";
+    font-size: 13px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+}
 
+a.author[href$="/therosebudpony"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+}
+
+a.author[href$="/therosebudpony"]:after {
+    content: "Rosebud";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+}

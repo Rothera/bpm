@@ -100,6 +100,17 @@ a[href|="/rose12"]
 {background-position: -140px -210px}
 
 
+.md h1 {
+color: #789922;
+border-bottom: 0 !important;
+}
+
+
+.md h1:before {
+color: #789922;
+content:">"
+}
+
 /* NOMNOMNOM */
 .footer-parent {
 height: 700px;

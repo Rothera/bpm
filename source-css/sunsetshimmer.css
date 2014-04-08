@@ -556,6 +556,18 @@ a[href|="/searchingsunset"],a[href|="/searchingss"]
 a[href|="/rsearchingsunset"],a[href|="/rsearchingss"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnyamotes-flipped%%)!important; background-position: -200% -300%;}
 
+a[href|="/sunsetshiver"],a[href|="/ssshiver"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnyamotes%%)!important; background-position: -300% -300%;}
+
+a[href|="/rsunsetshiver"],a[href|="/rssshiver"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnyamotes-flipped%%)!important; background-position: -300% -300%;}
+
+a[href|="/sunsetshrug"],a[href|="/ssshrug"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnyamotes%%)!important; background-position: 0 -400%;}
+
+a[href|="/rsunsetshrug"],a[href|="/rssshrug"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnyamotes-flipped%%)!important; background-position: 0 -400%;}
+
 a[href|="/sunnybunch"],a[href|="/sunsetadorable"],a[href|="/ssadorable"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes%%)!important}
 
@@ -652,13 +664,23 @@ background-position:-300% -900%;
 }
 
 a[href|="/snailssalute"] {
-display:block;clear:none;float:left;width:96px;height:150px;background-image:url(%%snailssalute%%)!important;
+display:block;clear:none;float:left;width:97px;height:150px;background-image:url(%%snailssalute%%)!important;
 background-position:0 0;
 }
 
 a[href|="/rsnailssalute"] {
-display:block;clear:none;float:left;width:96px;height:150px;background-image:url(%%snailssalute%%)!important;
-background-position:0 -100%;
+display:block;clear:none;float:left;width:97px;height:150px;background-image:url(%%snailssalute%%)!important;
+background-position: -269px 0;
+}
+
+a[href|="/snipssalute"] {
+display:block;clear:none;float:left;width:86px;height:150px;background-image:url(%%snailssalute%%)!important;
+background-position: -97px 0;
+}
+
+a[href|="/rsnipssalute"] {
+display:block;clear:none;float:left;width:86px;height:150px;background-image:url(%%snailssalute%%)!important;
+background-position: -183px 0;
 }
 
 a[href|="/sunsetwhy"],a[href|="/sswhy"] 
@@ -719,7 +741,6 @@ background-position:0 -100%;
 a[href|="/sunsetlaugh"],a[href|="/sslaugh"]
 {display:block;clear:none;float:left;width:112px;height:114px;background-image:url(%%sunsetlaugh%%)!important;
 }
-
 
 a[href|="/rsunsetlaugh"],a[href|="/rsslaugh"]
 {display:block;clear:none;float:left;width:112px;height:114px;background-image:url(%%sunsetlaugh-flipped%%)!important;
@@ -788,7 +809,6 @@ a[href|="/rsschubbie"]:hover {
 display:block;clear:none;float:left;width:150px;height:126px;background-image:url(%%chubbies%%)!important;
 background-position:0 -500%;
 }
-
 
 a[href|="/chubbiesunset"],a[href|="/chubbiess"]
 {display:block;clear:none;float:left;width:150px;height:126px;background-image:url(%%chubbies%%)!important;background-position:0 -200%;
