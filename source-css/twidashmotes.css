@@ -1,11 +1,3 @@
-a[href|="/tdsleep2"] {
-    float:left;
-    width:250px;
-    height:135px;
-    background-repeat:no-repeat;
-    background-image:url(%%tdsleep2%%);
-}
-
 a[href|="/tdboop"] {
     float:left;
     width:300px;
@@ -246,4 +238,42 @@ a[href|="/tdsquish"] {
     width: 200px;
     height: 92px;
     background-position: -5px -440px;
+}
+
+
+/* Spritesheet 4 */
+a[href|="/tdbigkiss"], a[href|="/tdblush"], a[href|="/tdeyes"], a[href|="/tdnuzzle"], a[href|="/tdsleep2"] {
+    background-image: url(%%spritesheet4%%);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+a[href|="/tdbigkiss"] {
+    width: 197px;
+    height: 140px;
+    background-position: -5px -5px;
+}
+
+a[href|="/tdblush"] {
+    width: 200px;
+    height: 118px;
+    background-position: -5px -155px;
+}
+
+a[href|="/tdeyes"] {
+    width: 196px;
+    height: 135px;
+    background-position: -212px -5px;
+}
+
+a[href|="/tdnuzzle"] {
+    width: 138px;
+    height: 113px;
+    background-position: -418px -5px;
+}
+
+a[href|="/tdsleep2"] {
+    width: 250px;
+    height: 135px;
+    background-position: -215px -150px;
 }

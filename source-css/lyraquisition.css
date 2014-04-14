@@ -352,14 +352,6 @@ width: 256px;
 height: 300px;
 background-image: url(%%wow%%);
 }
-a[href|="/shrek"] {
-display: block;
-clear: none;
-float: left;
-width: 218px;
-height: 241px;
-background-image: url(%%shrekmote%%);
-}
 a[href|="/lyraponytail"] {
 display: block;
 clear: none;
@@ -367,6 +359,14 @@ float: left;
 width: 174px;
 height: 157px;
 background-image: url(%%lyraponytail%%);
+}
+a[href|="/twoworldscoexisting"] {
+display: block;
+clear: none;
+float: left;
+width: 220px;
+height: 174px;
+background-image: url(%%FSTWC%%);
 }
 .flair:before{
     display:inline-block;

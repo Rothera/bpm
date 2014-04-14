@@ -839,6 +839,14 @@ background-repeat:no-repeat;
 background-image:url(%%ccifies%%);
 }
 
+a[href|="/cfmaxscrunch"] {
+float:left;
+width:189px;
+height:147px;
+background-repeat:no-repeat;
+background-image:url(%%cfmaxscrunch%%);
+}
+
 a[href|="/ccrdboop"] {
 float:left;
 width:260px;
@@ -853,6 +861,38 @@ width:200px;
 height:168px;
 background-repeat:no-repeat;
 background-image:url(%%cfboop%%);
+}
+
+a[href|="/saintcowchaser"] {
+float:left;
+width:176px;
+height:180px;
+background-repeat:no-repeat;
+background-image:url(%%saintcowchaser%%);
+}
+
+a[href|="/ccfacehoof"] {
+float:left;
+width:190px;
+height:148px;
+background-repeat:no-repeat;
+background-image:url(%%ccfacehoof%%);
+}
+
+a[href|="/ccinabox"] {
+float:left;
+width:210px;
+height:138px;
+background-repeat:no-repeat;
+background-image:url(%%ccinabox%%);
+}
+
+a[href|="/dickchaser"] {
+float:left;
+width:70px;
+height:114px;
+background-repeat:no-repeat;
+background-image:url(%%dickchaser%%);
 }
 
 /*un-assigned end*/
@@ -909,4 +949,16 @@ a.author[href$="-20"]:before{
 font-size:12px!important;
 visibility:visible!important;
 }
-a.author[href$="-20"]:before {content:"pancake-chan"}
+a.author[href$="-20"]:before {content:"waffle-chan"}
+
+a.author[href$="cowofdoom"] {
+font-size:0!important;
+overflow:hidden;
+display:inline-block;
+content: "";
+}
+a.author[href$="cowofdoom"]:before{
+font-size:12px!important;
+visibility:visible!important;
+}
+a.author[href$="cowofdoom"]:before {content:"Saint Cowchaser-sama"}

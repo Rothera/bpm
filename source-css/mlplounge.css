@@ -12,7 +12,7 @@ div.titlebox p.users-online span.word { display: none }
 .sidecontentbox .voteWeight,.sidecontentbox .userTagLink{display:none!important}
 #search input[type='text']
 /*{
- background:url(%%sonabackground%%) top left no-repeat!important;
+ background:url(%%background%%) top left no-repeat!important;
  padding:13px 2px 13px 50px!important;
  height:22px!important;
  width:110px!important
@@ -208,7 +208,7 @@ h3.imgTitle{
  right:-5px;
  z-index:999
 }
-body{background:url(%%sonabackground%%) no-repeat fixed center center}
+body{background:url(%%background%%) no-repeat fixed center center}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
 .content .md h1:before{content:">"}
 /*New post spam filtered warning*/

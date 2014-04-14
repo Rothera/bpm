@@ -6,7 +6,16 @@
 /* We're discord's bitches now */
 
 /* Rainbow Wookie */
-
+.res .moderator:after, .res .submitter:after, .res .admin:after, .res .friend:after {
+    font-weight: bold;
+    padding: 0 3px;
+    border-radius: 3px;
+    margin-right: .3em;
+}
+.res .moderator:after { background-color: #282; }
+.res .submitter:after { background-color: #0055df; }
+.res .admin:after { background-color: #f01; }
+.res .friend:after { background-color: #ff4500; }
 /* The things we do for pretzels... */
 body:first-of-type {
     background-image: url(%%dicks%%);
