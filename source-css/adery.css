@@ -447,9 +447,11 @@ a[href|="/banjo"] { display: block; clear: none; float: left; background-image: 
 
 a[href|="/scrunchbattle"] { display: block; clear: none; float: left; background-image: url(%%scrunchbattle%%); width: 288px; height: 200px; background-position: -0px -0px }
 
+a[href|="/ppcleanse"] { display: block; clear: none; float: left; background-image: url(%%ppcleanse%%); width: 213px; height: 200px; background-position: -0px -0px }
 
+a[href|="/twifight"] { display: block; clear: none; float: left; background-image: url(%%twifight%%); width: 163px; height: 175px; background-position: -0px -0px }
 
-
+a[href|="/rarafight"] { display: block; clear: none; float: left; background-image: url(%%rarafight%%); width: 175px; height: 175px; background-position: -0px -0px }
 /* gavin14's nightmode flair fix */
 .res-nightmode .content .flair  {
 background-color: transparent!important;
@@ -461,6 +463,7 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 
 /* here first */
 a.author[href$='scix'],
+a.author[href$='SGIG'],
 a.author[href$='SMUT_ADDICT'],
 a.author[href$='BooksAgain'],
 a.author[href$='sympathyfordiscord'],
@@ -492,6 +495,7 @@ content: "";
 }
 
 /* here second */
+a.author[href$='SGIG']:before,
 a.author[href$='scix']:before,
 a.author[href$='SMUT_ADDICT']:before,
 a.author[href$='BooksAgain']:before,
@@ -521,6 +525,7 @@ visibility:visible!important;
 }
 
 /*and the replacement*/ 
+a.author[href$='SGIG']:before {content: "Fig"}
 a.author[href$='scix']:before {content: "enohp_xics"}
 a.author[href$='SMUT_ADDICT']:before {content: "Spammy"}
 a.author[href$='BooksAgain']:before {content: "Books"}

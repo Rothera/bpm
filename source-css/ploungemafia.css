@@ -1,270 +1,124 @@
-/* Get rid of RES tags and vote weight on the modbox */
-.sidecontentbox .voteWeight, .sidecontentbox .userTagLink {
-    display: none !important
+/* Menu */
+
+
+div.content {
+
 }
 
-/* We're discord's bitches now */
-
-/* Rainbow Wookie */
-.res .moderator:after, .res .submitter:after, .res .admin:after, .res .friend:after {
-    font-weight: bold;
-    padding: 0 3px;
-    border-radius: 3px;
-    margin-right: .3em;
-}
-.res .moderator:after { background-color: #282; }
-.res .submitter:after { background-color: #0055df; }
-.res .admin:after { background-color: #f01; }
-.res .friend:after { background-color: #ff4500; }
-/* The things we do for pretzels... */
-body:first-of-type {
-    background-image: url(%%dicks%%);
-    background-repeat:no-repeat;
-    background-position:center;    
-    height: 100%;
-    width: 100%;
+.titlebox form {
+position: static
 }
 
-hr {
-    border-bottom: 1px solid #747474;
-    border-top: none
+.titlebox blockquote:first-child {
+border-left: none;
+position: absolute;
+z-index: 999;
+top: 50px;/*This moves the menu up and down :D*/
+left: 175px;
+background: transparent !important;
 }
 
-/* Nice looking H4s. SHUT UP DAVID. */
-
-.link .usertext .md {
-    border: 1px solid #7b7b7b;
-}
-
-.thing.self h4:before {
-    content: "";
-    width: 8px;
-    display: inline-block;
- }
-
-.thing.self h4 {
-    width: 100%;
-    font-style: normal;
-    font-size: 2em;
-    background: #d5d5d5;
-    color: #444444;
-    margin-left: -6px;
-    padding-right: 11px;
-    display: block;
-    overflow: visible;
-    white-space: nowrap;
-    font-variant: small-caps;
-}
-
-#header {
-   background-color: #e5e5e5;
-}
-
-#header-bottom-right {
-   background-color: #c9c9c9;
-}
-
-#header-bottom-right a {
-   color: #252525;
-}
-
-#header-img {
-   margin-bottom: -4px;
-}
-
-/* Comment background */
-.commentarea>.usertext textarea {
-	background-image: url(%%comment-background%%);
-	background-repeat: no-repeat;
-	border: 1px solid #ccc;
-}
-.commentarea>.usertext textarea:focus {
-	background-position: -504px -104px;
-}
-
-
-/*
-* Flair
-*/
-
-.flair-murder { 
-    background-image: none !important;
-    width: auto !important;
-    height: auto !important;
-}
-
-.flair {
-    padding: 0;
-    background: none;
-    color: black;
-    border: 0;
-    border-radius: 0;
-    background-image: url(%%flair%%);
-    display: inline-block;
-    height: 16px;
-}
-
-.flair-player {
-   width: 26px;
-   background-position: 0 0;
-}
-
-.flair-ghost {
-   width: 13px;
-   background-position: -26px 0;
-}
-
-.flair-crown {
-    padding: 0;
-    background: none;
-    color: black;
-    border: 0;
-    border-radius: 0;
-    background-image: url(%%flaircrown%%);
-    display: inline-block;
-    height: 16px;
-    width: 16px;
-}
-
-.flair-deadcrown {
-    padding: 0;
-    background: none;
-    color: black;
-    border: 0;
-    border-radius: 0;
-    background-image: url(%%deadcrown%%);
-    display: inline-block;
-    height: 27px;
-    width: 18px;
-}
-
-.flair-taco {
-    padding: 0;
-    background: none;
-    color: black;
-    border: 0;
-    border-radius: 0;
-    background-image: url(%%taco%%);
-    display: inline-block;
-    height: 26px;
-    width: 32px;
-}
-.flair-submitter {
-    padding: 0;
-    background: none;
-    color: black;
-    border: 0;
-    border-radius: 0;
-    background-image: url(%%submitter3%%);
-    display: inline-block;
-    margin-bottom:-2px;
-    height: 10px;
-    width: 17px;
-}
-/* Link flair
-*/
-
-.linkflair {
-   border-radius: 8px;
-}
-
-.linkflair-announcement {
-    background-image: linear-gradient(left,#f1f1f1,#fff,#fff,#fff,#fff,#fff,#fff);
-    background-image: -webkit-linear-gradient(left,#f1f1f1,#fff,#fff,#fff,#fff,#fff,#fff);
-    background-image: -moz-linear-gradient(left,#f1f1f1,#fff,#fff,#fff,#fff,#fff,#fff);
-    background-image: -o-linear-gradient(left,#f1f1f1,#fff,#fff,#fff,#fff,#fff,#fff)
-}
-
-.linkflair-day {
-    background-image: linear-gradient(left,#fcfdc7,#fff,#fff,#fff,#fff,#fff,#fff);
-    background-image: -webkit-linear-gradient(left,#fcfdc7,#fff,#fff,#fff,#fff,#fff,#fff);
-    background-image: -moz-linear-gradient(left,#fcfdc7,#fff,#fff,#fff,#fff,#fff,#fff);
-    background-image: -o-linear-gradient(left,#fcfdc7,#fff,#fff,#fff,#fff,#fff,#fff)
-}
-
-.linkflair-night {
-    background-image: linear-gradient(left,#d9deec,#fff,#fff,#fff,#fff,#fff,#fff);
-    background-image: -webkit-linear-gradient(left,#d9deec,#fff,#fff,#fff,#fff,#fff,#fff);
-    background-image: -moz-linear-gradient(left,#d9deec,#fff,#fff,#fff,#fff,#fff,#fff);
-    background-image: -o-linear-gradient(left,#d9deec,#fff,#fff,#fff,#fff,#fff,#fff)
-}
-
-/* Mafia Filly emotes, because that's basically all the CSS I know. */
-
-a[href|="/mafiadash"], a[href|="/mafiard"], a[href|="/mafiararity"], a[href|="/mafiapie"], a[href|="/mafiapinkie"], a[href|="/mafiapp"], a[href|="/mafiashy"], a[href|="/mafiafluttershy"], a[href|="/mafiaab"], a[href|="/mafiaspitfire"],   a[href|="/mafialyra"], a[href|="/mafiacelestia"], a[href|="/mafiavinyl"], a[href|="/mafiabb"], a[href|="/mafiabonbon"], a[href|="/mafialuna"], a[href|="/mafiaoctavia"], a[href|="/mafiachrysalis"] {
-
-display: block;
-clear: none;
+.titlebox blockquote:first-child p:first-child {
+margin-top: 0px;
+padding: 5px;
 float: left;
-width: 120px;
-height: 120px;
-background-image: url(%%mafiafillies%%) !important
+font-size: 8pt;
+background: #ffffff;
+border: 1px solid #bfbfbf;
+font-weight: bold;
+color: #555;
+cursor:default;
 }
 
-a[href|="/mafiadash"], a[href|="/mafiard"] { background-position: -0px -0px }
-a[href|="/mafiararity"] { background-position: -120px -0px }
-a[href|="/mafiapie"], a[href|="/mafiapinkie"], a[href|="/mafiapp"] { background-position: -240px -0px }
-a[href|="/mafiashy"], a[href|="/mafiafluttershy"] { background-position: -0px -120px }
-a[href|="/mafiaab"] { background-position: -120px -120px }
-a[href|="/mafiaspitfire"] { background-position: -240px -120px }
-a[href|="/mafialyra"] { background-position: -0px -240px }
-a[href|="/mafiacelestia"] { background-position: -120px -240px }
-a[href|="/mafiavinyl"] { background-position: -240px -240px }
-a[href|="/mafiabb"], a[href|="/mafiabonbon"] { background-position: -0px -360px }
-a[href|="/mafialuna"] { background-position: -120px -360px }
-a[href|="/mafiaoctavia"] { background-position: -240px -360px }
-a[href|="/mafiachrysalis"] { background-position: -0px -480px }
+.titlebox blockquote ul {
+float: right;
+padding: 1px;
+background: #eff7ff;
 
-a[href|="/mafiaduck"]
+margin:0px;
+}
+
+.titlebox blockquote ul:nth-of-type(1) {
+border-right: 0px;
+}
+
+.titlebox blockquote ul li {
+display: none;
+padding:0px;
+text-align:center;
+}
+
+.titlebox blockquote li a {
+display:block;
+}
+
+.titlebox blockquote ul li:first-child, .titlebox blockquote ul:hover li 
+{
+display: block;
+
+}
+.titlebox blockquote ul
+{
+font-size:12px;
+margin-left:10px;
+padding: 0px;
+}
+
+.titlebox blockquote li
+{
+border:1px solid #5f99cf;
+border-top:0px;
+}
+.titlebox blockquote li:first-child {
+font-size:  14px;
+color: #369;
+padding: 4px;
+cursor:default;
+background: #eff7ff;
+border:0px;
+border-bottom: 1px solid #5f99cf;
+font-weight:bold;
+margin-top:1px;
+}
+.titlebox blockquote li:first-child:hover
 {
 
- background-image: url(%%mafiaduck%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 90px;
-    width: 93px;
 }
 
-a[href|="/mafiaaj"], a[href|="/mafiaapplejack"] {
-
-display: block;
-clear: none;
-float: left;
-width: 82px;
-height: 95px;
-background-image: url(%%mafiaaj%%) !important
+.titlebox blockquote:first-child ul:hover li:nth-child(1)
+{
+border: 1px solid #5f99cf;
+border-bottom:0px;
+margin-top:0px;
 }
 
-
-/* Space thingy */
-a[href|="/sp"] {
-    display: inline-block;
-    padding-right: 100%
-    }
-
-/* RES nightmode flair fix */
-
-.res-nightmode .tagline .flair {
-    background-color: transparent !important;
+.titlebox blockquote:first-child ul li:hover 
+{
+background:white;
 }
 
-.res-nightmode .side .md h3 {
-    color:#DDD !important;
+.titlebox blockquote li a:hover {
+color: orangered;
+}
+.titlebox blockquote li a
+{
+padding:4px;
+
+
 }
 
-.res-nightmode .titlebox .usertext-body .md h3 {
-color: white !important;
+.titlebox blockquote li:nth-child(2)
+{
+border-top:1px solid #5f99cf;
 }
+/* 1 is the last position and 6 is the first position. It's backwards cause reasons. */
 
-/* spoiler tags*/
-a[href$="/spoiler"] {
-    background: #000 !important;
-    color: #000 !important
-    }
-a[href$="/spoiler"]:hover {
-    color: #FFF !important
-    }
+.titlebox blockquote ul:nth-of-type(1) {width: 150px;}
+.titlebox blockquote ul:nth-of-type(2) {width: 190px;} 
+.titlebox blockquote ul:nth-of-type(3) {width: 160px;}
+.titlebox blockquote ul:nth-of-type(4) {width: 60px;}
+
+
 
 
 /* Announcements box (To use, place the announcement, link or not in the sidebar with ## before it.)*/
@@ -439,6 +293,402 @@ position: absolute;
 top: 5px;
 left: 0;
 }
+
+/* Filters */
+
+div:lang(su) .sitetable .link, 
+div:lang(g1) .sitetable .link, 
+div:lang(g2) .sitetable .link, 
+div:lang(g3) .sitetable .link, 
+div:lang(g4) .sitetable .link, 
+div:lang(g5) .sitetable .link,
+div:lang(g6) .sitetable .link
+{
+  display: none 
+}
+.stickied
+{
+    display: block !important;
+}
+div:lang(su) .linkflair-signup
+{
+    display: block !important;
+}
+div:lang(g1) .linkflair-gameA
+{
+    display: block !important;
+}
+div:lang(g2) .linkflair-gameB
+{
+    display: block !important;
+}
+div:lang(g3) .linkflair-gameC
+{
+    display: block !important;
+}
+div:lang(g4) .linkflair-gameD
+{
+    display: block !important;
+}
+div:lang(g5) .linkflair-gameE
+{
+    display: block !important;
+}
+div:lang(g6) .linkflair-gameF
+{
+    display: block !important;
+}
+.linkflairlabel
+{
+    display: none;
+}
+
+.flairoptionpane .linkflairlabel
+{
+    display: inline-block  !important;
+}
+.linkflair-signup
+{
+
+}
+.linkflair-gameA
+{
+   border-left: 3px solid red;
+ }
+.linkflair-gameB
+{
+ border-left: 3px solid green;
+}
+.linkflair-gameC
+{
+border-left: 3px solid blue;
+}
+.linkflair-gameD
+{
+border-left: 3px solid orange;
+ }
+.linkflair-gameE
+{
+border-left: 3px solid black;
+}
+.linkflair-gameF
+{
+border-left: 3px solid purple;
+}
+.titlebox blockquote ul li a[href*='/r/ploungemafia/']
+{
+ margin-left: 2px;
+}
+
+.titlebox blockquote ul li a[href*='g1.reddit']
+{
+      border-left: 3px solid red;
+}
+
+.titlebox blockquote ul li a[href*='g2.reddit']
+{
+ border-left: 3px solid green;
+}
+.titlebox blockquote ul li a[href*='g3.reddit']
+{
+border-left: 3px solid blue;
+}
+.titlebox blockquote ul li a[href*='g4.reddit']
+{
+border-left: 3px solid orange;
+}
+.titlebox blockquote ul li a[href*='g5.reddit']
+{
+border-left: 3px solid black;
+}
+.titlebox blockquote ul li a[href*='g6.reddit']
+{
+border-left: 3px solid purple;
+}
+
+.submitter:after
+{
+/*content:'Game Host';*/
+}
+
+
+/* Get rid of RES tags and vote weight on the modbox */
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink {
+    display: none !important
+}
+.RES-keyNav-activeElement
+{
+  background-color: transparent !important;
+}
+
+/* We're discord's bitches now */
+
+/* Rainbow Wookie */
+.res .moderator:after, .res .submitter:after, .res .admin:after, .res .friend:after {
+    font-weight: bold;
+    padding: 0 3px;
+    border-radius: 3px;
+    margin-right: .3em;
+}
+.res .moderator:after { background-color: #282; }
+.res .submitter:after { background-color: #0055df; }
+.res .admin:after { background-color: #f01; }
+.res .friend:after { background-color: #ff4500; }
+/* The things we do for pretzels... */
+body:first-of-type {
+    background-image: url(%%dicks%%);
+    background-repeat:no-repeat;
+    background-position:center;    
+    height: 100%;
+    width: 100%;
+}
+
+hr {
+    border-bottom: 1px solid #747474;
+    border-top: none
+}
+
+/* Nice looking H4s. SHUT UP DAVID. */
+
+.link .usertext .md {
+    border: 1px solid #7b7b7b;
+}
+
+.thing.self h4:before {
+    content: "";
+    width: 8px;
+    display: inline-block;
+ }
+
+.thing.self h4 {
+    width: 100%;
+    font-style: normal;
+    font-size: 2em;
+    background: #d5d5d5;
+    color: #444444;
+    margin-left: -6px;
+    padding-right: 11px;
+    display: block;
+    overflow: visible;
+    white-space: nowrap;
+    font-variant: small-caps;
+}
+
+#header {
+   background-color: #e5e5e5;
+}
+
+#header-bottom-right {
+   background-color: #c9c9c9;
+}
+
+#header-bottom-right a {
+   color: #252525;
+}
+
+#header-img {
+   margin-bottom: -4px;
+}
+
+/* Comment background */
+.commentarea>.usertext textarea {
+	background-image: url(%%comment-background%%);
+	background-repeat: no-repeat;
+	border: 1px solid #ccc;
+}
+.commentarea>.usertext textarea:focus {
+	background-position: -504px -104px;
+}
+
+
+/*
+* Flair
+*/
+
+.flair-murder { 
+    background-image: none !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+.flair {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%flair%%);
+    display: inline-block;
+    height: 16px;
+}
+
+.flair-player {
+   width: 26px;
+   background-position: 0 0;
+}
+
+.flair-ghost {
+   width: 13px;
+   background-position: -26px 0;
+}
+
+.flair-crown {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%flaircrown%%);
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+}
+
+.flair-deadcrown {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%deadcrown%%);
+    display: inline-block;
+    height: 27px;
+    width: 18px;
+}
+
+.flair-taco {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%taco%%);
+    display: inline-block;
+    height: 26px;
+    width: 32px;
+}
+
+.flair-submitter {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%submitter3%%);
+    display: inline-block;
+    margin-bottom:-2px;
+    height: 10px;
+    width: 17px;
+}
+/* Link flair
+*/
+
+
+
+.linkflair-announcement {
+    background-image: linear-gradient(left,#f1f1f1,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -webkit-linear-gradient(left,#f1f1f1,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -moz-linear-gradient(left,#f1f1f1,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -o-linear-gradient(left,#f1f1f1,#fff,#fff,#fff,#fff,#fff,#fff)
+}
+
+.linkflair-day {
+    background-image: linear-gradient(left,#fcfdc7,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -webkit-linear-gradient(left,#fcfdc7,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -moz-linear-gradient(left,#fcfdc7,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -o-linear-gradient(left,#fcfdc7,#fff,#fff,#fff,#fff,#fff,#fff)
+}
+
+.linkflair-night {
+    background-image: linear-gradient(left,#d9deec,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -webkit-linear-gradient(left,#d9deec,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -moz-linear-gradient(left,#d9deec,#fff,#fff,#fff,#fff,#fff,#fff);
+    background-image: -o-linear-gradient(left,#d9deec,#fff,#fff,#fff,#fff,#fff,#fff)
+}
+
+
+/* Mafia Filly emotes, because that's basically all the CSS I know. */
+
+a[href|="/mafiadash"], a[href|="/mafiard"], a[href|="/mafiararity"], a[href|="/mafiapie"], a[href|="/mafiapinkie"], a[href|="/mafiapp"], a[href|="/mafiashy"], a[href|="/mafiafluttershy"], a[href|="/mafiaab"], a[href|="/mafiaspitfire"],   a[href|="/mafialyra"], a[href|="/mafiacelestia"], a[href|="/mafiavinyl"], a[href|="/mafiabb"], a[href|="/mafiabonbon"], a[href|="/mafialuna"], a[href|="/mafiaoctavia"], a[href|="/mafiachrysalis"] {
+
+display: block;
+clear: none;
+float: left;
+width: 120px;
+height: 120px;
+background-image: url(%%mafiafillies%%) !important
+}
+
+a[href|="/mafiadash"], a[href|="/mafiard"] { background-position: -0px -0px }
+a[href|="/mafiararity"] { background-position: -120px -0px }
+a[href|="/mafiapie"], a[href|="/mafiapinkie"], a[href|="/mafiapp"] { background-position: -240px -0px }
+a[href|="/mafiashy"], a[href|="/mafiafluttershy"] { background-position: -0px -120px }
+a[href|="/mafiaab"] { background-position: -120px -120px }
+a[href|="/mafiaspitfire"] { background-position: -240px -120px }
+a[href|="/mafialyra"] { background-position: -0px -240px }
+a[href|="/mafiacelestia"] { background-position: -120px -240px }
+a[href|="/mafiavinyl"] { background-position: -240px -240px }
+a[href|="/mafiabb"], a[href|="/mafiabonbon"] { background-position: -0px -360px }
+a[href|="/mafialuna"] { background-position: -120px -360px }
+a[href|="/mafiaoctavia"] { background-position: -240px -360px }
+a[href|="/mafiachrysalis"] { background-position: -0px -480px }
+
+a[href|="/mafiaduck"]
+{
+
+ background-image: url(%%mafiaduck%%) !important;
+    clear: none;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 93px;
+}
+
+a[href|="/mafiaaj"], a[href|="/mafiaapplejack"] {
+
+display: block;
+clear: none;
+float: left;
+width: 82px;
+height: 95px;
+background-image: url(%%mafiaaj%%) !important
+}
+
+
+/* Space thingy */
+a[href|="/sp"] {
+    display: inline-block;
+    padding-right: 100%
+    }
+
+/* RES nightmode flair fix */
+
+.res-nightmode .tagline .flair {
+    background-color: transparent !important;
+}
+
+.res-nightmode .side .md h3 {
+    color:#DDD !important;
+}
+
+.res-nightmode .titlebox .usertext-body .md h3 {
+color: white !important;
+}
+
+/* spoiler tags*/
+a[href$="/spoiler"] {
+    background: #000 !important;
+    color: #000 !important
+    }
+a[href$="/spoiler"]:hover {
+    color: #FFF !important
+    }
+
+
+
+
+
+
 
 
 /* Self post icon */
@@ -851,3 +1101,4 @@ div[data-fullname$="8"] .usertext-body .md:after{content:" Also, I'm a townie";}
 div[data-fullname$="9"] .usertext-body .md:after{content:" Also, I'm mafia";} */
 
 .id-t1_cgi1p64 .entry .usertext-body .md:after {content:" Also, I'm a butt." !important;}
+

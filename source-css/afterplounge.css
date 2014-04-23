@@ -429,7 +429,7 @@ z-index: -1;
 
 .redditname a{
 
-background:url(%%headerwide%%);
+background:url(%%rastaplounge%%);
 height: 55px;
 margin-top:10px;
 margin-bottom:10px;
@@ -458,9 +458,10 @@ margin-top:-16px!important;}
 /* --------------Header Tabs------------- */
 
 .tabmenu li.selected a {
-border: 1px solid #4149cd;
-border-bottom: 1px solid white;
-color: #98C8D9 !important;
+border: 1px solid #00CC00;
+background-color: #FFFF00 !important;
+border-bottom: 1px solid #FFFF00;
+color: #FF0000 !important;
 }
 
 .tabmenu li a {
@@ -470,8 +471,8 @@ color: #98C8D9 !important;
 -moz-border-radius-topleft: 5px;
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;
-color: #FFFFFF;
-background-color: #98C8D9;
+color: #00CC00;
+background-color: black;
 top: -5px !important;
 left: 30px !important;
 }
@@ -481,36 +482,36 @@ left: 30px !important;
 /* --------------User header (name color, karma color, preferences)------------- */
 
 #header-bottom-right {
-    background-color: #98C8D9
+    background-color: #FFFFF0
     }
 #userbarToggle {
-background-color: #98C8D9 !important; color: #FFFFFF !important;
+background-color: #666633 !important; color: red !important;
     }
 .user {
     padding-left:5px;
-    color: white
+    color: black
     }
 .user a {
-    color: white
+    color: black
     }
 .pref-lang {
-    color: white
+    color: black
     }
 .logout a {
     padding-right:5px;
-    color: white
+    color: black
     }
 
 
 /**** ----------------announcement bar----------------- ****/
 
 body >.content >.sharelink ~ .sitetable:before { 
-content: "Important Reminder: Holy shit, ghosts!"; 
-background-color: #FFFFFF;
-border: 1px solid #0099CC;
+content: "Check the stickied event post for upcoming events!"; 
+background-color: #FFFF00;
+border: 3px solid #00CC00;
 
 font-size: 14px; 
-color: #0099CC;
+color: #FF0000;
 text-align: center;
 display: block;
 padding:5px 10px;
@@ -559,7 +560,7 @@ div.titlebox p.users-online span.word { display: none }
 
 .noncollapsed {background: url('%%wt50%%') left bottom !important;}
 
-.linkinfo { background-color: #CEE5ED !important; color: black !important; border: solid #98C8D9 !important; }
+.linkinfo { background-color: #FFFF00 !important; color: #FF0000 !important; border: solid #00CC00 !important; }
 
 
 .entry{
@@ -575,13 +576,13 @@ padding-left: 5px;
 
 
 .roundfield {
-background-color: #98C8D9 !important; color: white !important; border: 1px solid black;
+background-color: #00CC00 !important; color: white !important; border: 1px solid black;
 }
 
 .linefield .title {color:black !important;}
 
 .linefield { 
-background-color: #CEE5ED !important; color: black !important; border: solid black;
+background-color: #70DB70 !important; color: black !important; border: solid black;
 }
 
 .md {
@@ -594,7 +595,7 @@ background: url(%%wt50%%) !important;
 
 
 .infobar {
-background-color: #CEE5ED !important; color: black !important; border: solid black !important;
+background-color: #70DB70 !important; color: black !important; border: solid black !important;
 
 }
 
@@ -605,7 +606,7 @@ background: url(%%wt50%%) !important;
 
 
 .md blockquote, .help blockquote {
-border-left: 2px solid #98C8D9;
+border-left: 2px solid #00CC00;
 padding-left: 4px;
 margin: 5px;
 margin-right: 15px;
@@ -616,14 +617,18 @@ margin-right: 15px;
 text-shadow: white 0 0 10px !important;
 }
 
-.content .md h1{color:#789922 !important;border-bottom:none;padding-bottom:0px}
-.content .md h1:before{content:">" !important}
+
+
+h1 {
+color: #00CC00 !important;
+}
 
 h2 {
-color: #98C8D9 !important;
+color: #E6E600 !important;
 }
 
 h3 {
+color: #FF0000 !important;
 font-size: 130% !important;
 }
 
@@ -632,7 +637,7 @@ font-size: 130% !important;
 /* --------------Change the color of a link post title----------------- */  
 
  a.title:link {
- color: #0099CC !important;
+ color: #00CC00 !important;
 }
 a.title:visited {
  color: #000000 !important;
@@ -668,7 +673,7 @@ background: url(%%wt50%%) !important;
 {
  color:gray!important;
  font-size:13px!important;
- content:"Gatekeeper Spirits";
+ content:"ST0N3RZ";
  display:inline-block
 }
 .tabmenu li a {
@@ -705,7 +710,7 @@ border-top-right-radius: 5px;
 {
  color:#369!important;
  font-size:11px!important;
- content:"conduct a séance"
+ content:"pass da bong"
 }
 
 .sidecontentbox ul.content li.more{display:none}
@@ -717,7 +722,8 @@ border-top-right-radius: 5px;
 
 a.author[href$="MissSpelled"],
 a.author[href$="RAGErER"],
-a.author[href$="therosebudpony"]
+a.author[href$="therosebudpony"],
+a.author[href$="Fuzzy_Gauntlets"]
 
 { 
 font-size:0!important; 
@@ -730,7 +736,8 @@ content: "";
 
 a.author[href$="MissSpelled"]:before,
 a.author[href$="RAGErER"]:before,
-a.author[href$="therosebudpony"]:before
+a.author[href$="therosebudpony"]:before,
+a.author[href$="Fuzzy_Gauntlets"]:before
 
 {
 font-size:12px!important; 
@@ -742,6 +749,7 @@ visibility:visible!important;
 a.author[href$="MissSpelled"]:before {content:"MisterSpelled"}
 a.author[href$="RAGErER"]:before {content:"IMAGErER"}
 a.author[href$="therosebudpony"]:before {content:"therosebudghost"}
+a.author[href$="Fuzzy_Gauntlets"]:before {content:"Fuzzy_Ghost"}
 
 
 /* -----------Spoiler tag within comments.--------------- */  
@@ -760,18 +768,18 @@ color: #FFF !important;
 /**** ----------shortcut subreddits---------- ****/
 
 #sr-header-area {
-    background-color: #98C8D9;
-    border-bottom: white
+    background-color: black;
+    border-bottom: black
     }
 .sr-bar a, .sr-bar .separator {
-    color: white !important
+    color: #00CC00 !important
     }
 #RESShortcutsEditContainer {
-background-color:#98C8D9 !important;
+background-color:black !important;
 }
 
 #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash {
-background-color:#98C8D9 !important; color:white !important;
+background-color:black !important; color:#00CC00 !important;
 }
 
 
@@ -793,7 +801,7 @@ background-color:#98C8D9 !important; color:white !important;
 {
  font-weight:normal;
  letter-spacing:0;
- background:#98C8D9;
+ background:#00CC00;
  border: none;
  -moz-border-radius:2px;
  -webkit-border-radius:2px;
@@ -817,7 +825,7 @@ background-color:#98C8D9 !important; color:white !important;
 
 .sidebox.submit.submit-text .morelink:hover
 {
- background:#98C8D9;
+ background:#00CC00;
  background-color:#B2E0F0;
  border-color:#B2E0F0;
  background-repeat:no-repeat;
@@ -863,7 +871,7 @@ background-color:#98C8D9 !important; color:white !important;
 
 .fancy-toggle-button .add, .RESshortcut.RESshortcutside, .RESDashboardToggle
 {
-    background: #98C8D9 !important;
+    background: #00CC00 !important;
     background-position: -0px -0px;
     background-repeat: repeat;
 }
@@ -877,7 +885,7 @@ background-color:#98C8D9 !important; color:white !important;
  
 .fancy-toggle-button .add:active, .RESshortcut.RESshortcutside:active, .RESDashboardToggle:active
 {
-    background-color: #98C8D9 !important;
+    background-color: #00CC00 !important;
     background-position: 0px -24px !important;
     background-repeat: repeat;
 }
@@ -891,7 +899,7 @@ background-color:#98C8D9 !important; color:white !important;
 
 .fancy-toggle-button .add:hover, #subButtons-mylittlepony .RESshortcut.RESshortcutside:hover, #subButtons-mylittlepony .RESDashboardToggle:hover
 {
-   background: #98C8D9;
+   background: #00CC00;
 }
 
 .fancy-toggle-button .remove:hover, #subButtons-mylittlepony .RESshortcut.RESshortcutside.remove:hover, #subButtons-mylittlepony .RESDashboardToggle.remove:hover
@@ -937,12 +945,13 @@ text-align: center;
     }
 
 
+
 /**** ----------------highlighting------------ ****/
 
 ::selection {
     background-color: #BAE3F2;
     color: #000000
-    }
+    } 
 
 /**** --------------reddit name in sidebar-------------- ****/
 
@@ -1101,5 +1110,5 @@ END-PONYSCRIPT-IGNORE { color: red; }
 /* -------------Change background image-------------- */
 
 body {
-    background: url('%%ppghostfaded%%') no-repeat fixed left bottom !important;
-    background-color:#ffffff !important;
+    background: url('%%rastabg%%') no-repeat fixed left bottom !important;
+    background-color:#666666 !important;

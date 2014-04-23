@@ -25,6 +25,128 @@ content: " having a party"
     content: url(%%cutiemark%%);
 }
 
+/* Style Buttons */
+
+.titlebox .fancy-toggle-button a,
+span.RESshortcutside,
+span.RESshortcutside:hover,
+span.RESDashboardToggle {
+   color:#663300;
+   background:#FFFF66;
+   border:1px solid #FFFFFF;
+}
+
+.fancy-toggle-button a.remove,
+.subButtons span.remove{
+   background:#FF9933;
+}
+
+.morelink 
+{
+    font-weight:normal;
+    letter-spacing:0;
+    background:#FFCC99;
+    border: none;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    -o-border-radius:2px;
+    -ms-border-radius:2px;
+    -khtml-border-radius:2px;
+    border-radius:2px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    color: #000000;
+}
+
+.morelink:hover
+{
+    background: #FFFFFF;
+    background-color: #FFFFCC;
+    border-color: #FFFFFF;
+}
+
+.morelink .nub 
+{
+    display: none;
+}
+
+.morelink 
+{
+    color:#000000; 
+    font-family:Verdana, Arial, sans-serif; 
+    font-size:16px; 
+    width: 145px;
+}
+
+.sidebox.submit-link .morelink::before 
+{
+    display: block;
+    clear: none;
+    content: "Submit a Link";
+    font-size: 100%;
+}
+
+.sidebox.submit-text .morelink::before 
+{
+    display: block;
+    clear: none;
+    content: "Submit a Self Post";
+    font-size: 100%;
+}
+
+.sidebox.submit .morelink a 
+{
+    position: absolute;
+    top: 0;
+    padding-left: 1000px;
+    font-size: 0px;
+    text-align: right;
+    color: #FFFFFF;
+}
+
+.sidebox.submit.submit-link {
+    width: 150px;
+}
+
+.sidebox.submit.submit-text
+{
+    margin-top: -42px;
+    margin-left: 153px;
+}
+
+.sidebox.create 
+{
+    display: none;
+}
+
+.sidebox.submit.disabled 
+{
+    display: none;
+}
+.res-nightmode .sidebox.submit.submit-text
+{
+    background: none !important;
+    margin-top: -45px;
+    margin-left: 153px;
+}
+
+.res-nightmode .sidebox 
+{
+    padding-left: 0px !important;
+    border: 2px solid #151515 !important;
+}
+
+.res-nightmode .morelink 
+{
+     height: 29px !important;
+}
+
+.res-nightmode .morelink
+{
+    background: #606060 !important;
+}
+
 /* comment spoiler tag */
 a[href|="/spoiler"] { background: #000 !important; color: #000 !important; }
 a[href|="/spoiler"]:hover { color: #fff !important; }
