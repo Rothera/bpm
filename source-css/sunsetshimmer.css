@@ -697,6 +697,12 @@ a[href|="/pleasantsunset"],a[href|="/pleasantss"]
 a[href|="/rpleasantsunset"],a[href|="/rpleasantss"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes-flipped%%)!important; background-position: -100% -400%;}
 
+a[href|="/sunsetplotting"],a[href|="/ssplotting"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes%%)!important; background-position: -200% -400%;}
+
+a[href|="/rsunsetplotting"],a[href|="/rssplotting"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes-flipped%%)!important; background-position: -200% -400%;}
+
 a[href|="/spaceholder"] {
 display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnybmotes%%)!important;
 background-position:-300% -900%;
@@ -906,6 +912,22 @@ display:block;clear:none;float:left;width:70px;height:70px;background-image:url(
 background-position: -100% -100%;
 }
 
+a[href|="/sunsetsoda"],a[href|="/sssoda"] {
+display:block;clear:none;float:left;width:109px;height:140px;background-image:url(%%theterror%%)!important;
+background-position: -140px 0;
+}
+
+a[href|="/rsunsetsoda"],a[href|="/rsssoda"] {
+display:block;clear:none;float:left;width:109px;height:140px;background-image:url(%%theterror%%)!important;
+background-position: -249px 0;
+}
+
+a[href|="/sp"]{display:inline-block;padding-right:100%;width:0px;height:0px}
+
+a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
+    float: none !important;
+    display: inline-block !important;
+}
 
 /* toplink */
 

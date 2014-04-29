@@ -409,6 +409,9 @@ a[href|="/rmaudballplay"],a[href|="/rmpballplay"]
 a[href|="/maudpoker"]
 {display:block;clear:none;float:left;width:150px;height:141px;background-image:url(%%maudpoker%%)!important; background-position: 0 0;}
 
+a[href|="/maudshrug"]
+{display:block;clear:none;float:left;width:80px;height:80px;background-image:url(%%maudshrug%%)!important; background-position: 0 0;}
+
 a[href|="/maudexcited"],a[href|="/mpexcited"] {
 display:block;clear:none;float:left;width:141px;height:150px;background-image:url(%%maudexcited%%)!important;
 background-position:0 0;
@@ -470,4 +473,11 @@ color:gray!important;
 font-size:13px!important;
 content:"MAUDERATORS";
 display:inline-block
+}
+
+a[href|="/sp"]{display:inline-block;padding-right:100%;width:0px;height:0px}
+
+a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
+    float: none !important;
+    display: inline-block !important;
 }

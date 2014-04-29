@@ -8,7 +8,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%joker%%) 50% 0px !important;
+   background: url(%%newguyfolder%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -653,7 +653,8 @@ a.author[href$=The_MSPainter],
 a.author[href$=theclinger_5],
 a.author[href$=FrigidMcThunderballs],
 a.author[href$=j-brony],
-a.author[href$=RisenLordM]
+a.author[href$=RisenLordM],
+a.author[href$=Princess_Pwny]
 
 { 
 font-size:0!important; 
@@ -765,7 +766,8 @@ a.author[href$=The_MSPainter]:before,
 a.author[href$=theclinger_5]:before,
 a.author[href$=FrigidMcThunderballs]:before,
 a.author[href$=j-brony]:before,
-a.author[href$=RisenLordM]:before
+a.author[href$=RisenLordM]:before,
+a.author[href$=Princess_Pwny]:before
 {
 font-size:10px!important; 
 visibility:visible!important;
@@ -874,6 +876,7 @@ a.author[href$=theclinger_5]:before { content:"IncidentalUnicorn2" }
 a.author[href$=FrigidMcThunderballs]:before  { content:"Dr. Chandragupta Maurya, M.S." }
 a.author[href$=j-brony]:before { content:"J's Brownies" }
 a.author[href$=RisenLordM]:before { content:"Risen" }
+a.author[href$=Princess_Pwny]:before { content:"Pwnyed" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -961,7 +964,8 @@ a.author[href$="Andysonic-1"]:after,
 a.author[href$="The_MSPainter"]:after,
 a.author[href$=j-brony]:after,
 a.author[href$=RisenLordM]:after,
-a.author[href$=Lord_Ninka]:after
+a.author[href$=Lord_Ninka]:after,
+a.author[href$=Princess_Pwny]:after
 
 {
 color:#000; 
@@ -1039,6 +1043,7 @@ a.author[href$="The_MSPainter"]:after { content:" (local delivery in 30 minutes 
 a.author[href$=j-brony]:after { content:" Get em while they're hot!" }
 a.author[href$=RisenLordM]:after { content:" from the dead" }
 a.author[href$=Lord_Ninka]:after { content:" The forgotten DBZ character" }
+a.author[href$=Princess_Pwny]:after { content:" your fun" }
 
 /* Any pre/post-name flair stuff goes here */ 
 

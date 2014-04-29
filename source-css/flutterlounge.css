@@ -744,6 +744,8 @@ a[href|="/kontanlovesyou"] {
 .flair {
     padding: 0;
     background: none;
+    color: black;
+    text-indent: -9999px;
     border: 0;
     border-radius: 0;
     background-image: url(%%flutterflair%%);
@@ -754,30 +756,76 @@ a[href|="/kontanlovesyou"] {
 
 
 .flair-flutter1 {
-   background-position: 0 0;
+   background-position: 0px 0px;
+    height: 24px;
+    width: 24px;
 }
 
 
 .flair-flutter2 {
-   background-position: 0 -24px;
+   background-position: 0px -24px;
+    height: 24px;
+    width: 24px;
 }
 
 
 .flair-flutter3 {
-   background-position: 0 -48px;
+   background-position: 0px -48px;
+    height: 24px;
+    width: 24px;
 }
 
 .flair-flutter4 {
-   background-position: 0 -72px;
+   background-position: 0px -72px;
+    height: 24px;
+    width: 24px;
 }
 
 .flair-flutter5 {
-   background-position: 0 -96px;
-}
+   background-position: 0px -96px;
+    height: 24px;
+    width: 24px;}
 
 .flair-flutter6 {
-   background-position: 0 -120px;
+   background-position: 0px -120px;
+    height: 24px;
+    width: 24px;
 }
+
+.flair-bat {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%flutterbatflair%%);
+    display: inline-block;
+    height: 16px; /* It's smaller because fuck you I'm lazy */
+    width: 16px;
+}
+
+/* Makes the flair selector look better */
+.flairselectbtn {
+    font-weight: bold
+    }
+.flairselectbtn:after {
+    content: " - click to add flair";
+    font-weight: normal
+    }
+/* Show the flair text on hover */
+.flair-flutter1:hover, .flair-flutter2:hover, .flair-flutter3:hover, .flair-flutter4:hover, .flair-flutter5:hover, .flair-flutter6:hover, .flair-bat:hover {
+    width: auto;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 4px;
+    text-indent: 0;
+    background-image: none;
+    border-width: 1px;
+    border-radius: 2px;
+    background-color: whitesmoke;
+    color: black;
+    margin-right: 3px
+    }
 
 /* Subscribers and active users */
 
@@ -807,7 +855,7 @@ a[href|="/kontanlovesyou"] {
 
 .res-nightmode .titlebox .usertext-body .md h3 {
 color: white !important;
-}
+} 
 
 /* Footer */
 
@@ -846,10 +894,14 @@ display: none !important;
    z-index: 999;
 }
 
-/* Get rid of RES tags, vote weight and flair on the modbox */
-.sidecontentbox .voteWeight, .sidecontentbox .userTagLink, .flair {
+/* Get rid of RES tags, vote weight and flair on the modbox */ 
+.sidecontentbox .voteWeight, .sidecontentbox .userTagLink {
     display: none !important
+} 
+.sidecontentbox .flair {
+  display: none;
 }
+
 
 hr {
     border-bottom: 1px solid #747474;

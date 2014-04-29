@@ -520,3 +520,133 @@ a[href="/harshwat"] { width: 150px; height: 140px; background-position: -5px -47
 a[href="/poetmaud"] { width: 150px; height: 186px; background-position: -165px -475px; }
 a[href="/tgapflutters"] { width: 150px; height: 144px; background-position: -325px -475px; }
 a[href="/woonaexcited"] { width: 150px; height: 150px; background-position: -485px -475px; }
+
+/*color text*/
+
+/*Large Red*/
+
+h9{
+color:red;
+font-size:25pt;
+}
+
+h9:after {content:"";}
+
+/*wot*/
+
+h8{
+color:violet;
+font-size:10pt;
+}
+
+h8:after {content:" Also I'm a douchebag.";}
+
+
+/*color text End*/
+
+/*Announcement Text*/
+
+blockquote blockquote blockquote {
+	position: absolute;
+	left: 5px;
+	display: table;
+	background: none;
+	right: 304px;
+	text-align: left;
+	border: 0 !important;
+	font-weight: normal;
+	height: 38px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.side blockquote blockquote blockquote h6 {
+	color: #333 !important;
+	text-transform: none;
+	letter-spacing: 1px;
+	background: none;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.side blockquote blockquote blockquote h6 a {
+	color: #4BA6E0;
+}
+
+.side blockquote blockquote blockquote h6 a:hover {
+	color: #97CE68;
+}
+
+/*Announcemet Text End*/
+
+
+
+
+
+
+
+/*Sidebar magic*/
+
+.side h6 {
+	color: #FFF!important;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: normal!important;
+	display: block;
+	padding-left: 2px;
+	font-size: 140%;
+	background: #FF6766;
+}
+
+.side h6+blockquote {
+	display: block;
+	background-color: #FEF0F0;
+	border: 0;
+	color: #000!important;
+	margin: 0px 0 5px 0 !important;
+	padding: 5px;
+}
+
+.side h4 {
+	color: #FFF!important;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: normal!important;
+	display: block;
+	padding-left: 2px;
+	font-size: 140%;
+	background: #68ADCE;
+}
+
+.side h4+blockquote {
+	display: block;
+	background-color: #EAEAFF;
+	border: 0;
+	color: #000!important;
+	margin: 0px 0 5px 0 !important;
+	padding: 5px;
+}
+
+.side h5 {
+	color: #FFF!important;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: normal!important;
+	display: block;
+	padding-left: 2px;
+	font-size: 140%;
+	background: #97CE68;
+}
+
+.side h5+blockquote {
+	display: block;
+	background-color: #E9FFE6;
+	border: 0;
+	color: #000!important;
+	margin: 0px 0 5px 0 !important;
+	padding: 5px;
+}
+
+
+/*Magic End*/
