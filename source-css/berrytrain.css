@@ -498,7 +498,7 @@ a[href="/forgiveme"] { width: 150px; height: 130px; background-position: -321px 
 a[href="/intensegaming"] { width: 150px; height: 120px; background-position: -481px -5px; }
 
 /* 150 by 150 */
-a[href="/berrysocks"], a[href="/bobross"], a[href="/cakestada"], a[href="/cocowave"], a[href="/culminated"], a[href="/flitterannoyed"], a[href="/flitterhi"], a[href="/flitterwhat"], a[href="/grannyumad"], a[href="/grannyworried"], a[href="/harshwat"], a[href="/poetmaud"], a[href="/tgapflutters"], a[href="/woonaexcited"] {
+a[href="/berrysocks"], a[href="/bobross"], a[href="/cakestada"], a[href="/cocowave"], a[href="/culminated"], a[href="/flitterannoyed"], a[href="/flitterhi"], a[href="/flitterwhat"], a[href="/grannyumad"], a[href="/grannyworried"], a[href="/harshwat"], a[href="/poetmaud"], a[href="/tgapflutters"], a[href="/winterbutt"], a[href="/woonaexcited"] {
     display: block;
     clear: none;
     float: left;
@@ -519,7 +519,8 @@ a[href="/grannyworried"] { width: 150px; height: 140px; background-position: -48
 a[href="/harshwat"] { width: 150px; height: 140px; background-position: -5px -475px; }
 a[href="/poetmaud"] { width: 150px; height: 186px; background-position: -165px -475px; }
 a[href="/tgapflutters"] { width: 150px; height: 144px; background-position: -325px -475px; }
-a[href="/woonaexcited"] { width: 150px; height: 150px; background-position: -485px -475px; }
+a[href="/winterbutt"]{ width: 150 px; height: 159px; background-position: -485px -475px; }
+a[href="/woonaexcited"] { width: 150px; height: 150px; background-position: -637px -5px; }
 
 /*color text*/
 
@@ -650,3 +651,98 @@ blockquote blockquote blockquote {
 
 
 /*Magic End*/
+
+/*CSS3*/
+
+a[href="/intensifies"] {
+  color: #000000;
+  text-transform: uppercase;
+  display: block;
+  font-size: 32px;
+  animation: intensify .1s steps(5) infinite;
+  -webkit-animation: intensify .1s steps(5) infinite;
+}
+
+a[href="/intensifies"]:before {
+  content: "[";
+}
+
+a[href="/intensifies"]:after {
+  content: "]";
+}
+
+@keyframes intensify {
+ 0% { margin-left: 0px; }
+ 100% { margin-left: 20px; }
+}
+
+@-webkit-keyframes intensify {
+ 0% { margin-left: 0px; }
+ 100% { margin-left: 20px; }
+}
+
+/*---*/
+
+.content .midcol,.content .commentarea .comment {overflow:visible !important;}
+
+.arrow.upmod{
+  animation: upMoon ease 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation: upMoon ease .7s;
+  -webkit-animation-iteration-count: 1;
+}
+@keyframes upMoon{
+  0% { transform:translate(0,0); opacity:1; }
+  10% { transform:translate(4px,0) rotate(5deg); }
+  15% { transform:translate(-4px,0) rotate(-15deg); }
+  20% { transform:translate(0,0); }
+  50% { transform:translate(0,10px); opacity:1; }
+  88% { transform:translate(0,-140px); opacity:0; }
+  94% { transform:translate(0,14px); opacity:0;}
+  100% { transform:translate(0,0); opacity:1; }
+}
+
+@-webkit-keyframes upMoon{
+  0% { -webkit-transform:translate(0,0); opacity:1; }
+  10% { -webkit-transform:translate(4px,0) rotate(5deg); }
+  15% { -webkit-transform:translate(-4px,0) rotate(-15deg); }
+  20% { -webkit-transform:translate(0,0); }
+  50% { -webkit-transform:translate(0,10px); opacity:1; }
+  88% { -webkit-transform:translate(0,-140px); opacity:0; }
+  94% { -webkit-transform:translate(0,14px); opacity:0;}
+  100% { -webkit-transform:translate(0,0); opacity:1; }
+}
+
+/*---*/
+
+.content .midcol,.content .commentarea .comment {overflow:visible !important;}
+
+.arrow.downmod{
+  animation: downMoon ease 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation: downMoon ease .6s;
+  -webkit-animation-iteration-count: 1000;
+}
+@keyframes downMoon{
+  0% { transform:translate(0,0); opacity:1; }
+  10% { transform:translate(4px,0) rotate(5deg); }
+  15% { transform:translate(-4px,0) rotate(-15deg); }
+  20% { transform:translate(0,0); }
+  50% { transform:translate(0,10px); opacity:1; }
+  88% { transform:translate(0,-140px); opacity:0; }
+  94% { transform:translate(0,14px); opacity:0;}
+  100% { transform:translate(0,0); opacity:1; }
+}
+
+@-webkit-keyframes downMoon{
+  0% { -webkit-transform:translate(0,0); opacity:1; }
+  10% { -webkit-transform:translate(5px,0) rotate(5deg); }
+  15% { -webkit-transform:translate(-4px,0) rotate(-15deg); }
+  20% { -webkit-transform:translate(0,0); }
+  50% { -webkit-transform:translate(0,10px); opacity:1; }
+  88% { -webkit-transform:translate(0,-140px); opacity:0; }
+  94% { -webkit-transform:translate(0,14px); opacity:0;}
+  100% { -webkit-transform:translate(0,0); opacity:1; }
+}
+
+/*---*/

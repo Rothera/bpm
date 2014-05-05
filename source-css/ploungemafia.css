@@ -302,7 +302,8 @@ div:lang(g2) .sitetable .link,
 div:lang(g3) .sitetable .link, 
 div:lang(g4) .sitetable .link, 
 div:lang(g5) .sitetable .link,
-div:lang(g6) .sitetable .link
+div:lang(g6) .sitetable .link,
+div:lang(g7) .sitetable .link
 {
   display: none 
 }
@@ -338,6 +339,10 @@ div:lang(g6) .linkflair-gameF
 {
     display: block !important;
 }
+div:lang(g7) .linkflair-gameG
+{
+    display: block !important;
+}
 .linkflairlabel
 {
     display: none;
@@ -347,9 +352,9 @@ div:lang(g6) .linkflair-gameF
 {
     display: inline-block  !important;
 }
-.linkflair-signup
+.linkflair-signup .title
 {
-
+   font-weight: bold;
 }
 .linkflair-gameA
 {
@@ -374,6 +379,17 @@ border-left: 3px solid black;
 .linkflair-gameF
 {
 border-left: 3px solid purple;
+}
+.linkflair-gameG .parent
+{
+
+width: 3px;
+height: 65px;
+float: left;
+
+background-image: -webkit-linear-gradient( top, red, red, orange, yellow, green, blue, purple, purple);
+background-image: -moz-linear-gradient( top, red, red, orange, yellow, green, blue,purple, purple);
+background-image: -ms-linear-gradient( top, red, red, orange, yellow, green, blue,purple, purple);
 }
 .titlebox blockquote ul li a[href*='/r/ploungemafia/']
 {
@@ -406,6 +422,13 @@ border-left: 3px solid black;
 border-left: 3px solid purple;
 }
 
+.titlebox blockquote ul li a[href*='g7.reddit']
+{
+color:black;
+background-image: -webkit-linear-gradient( left, pink, gold, yellow, lightgreen,lightblue,violet);
+background-image: -moz-linear-gradient( left, pink, gold, yellow, lightgreen,lightblue,violet);
+background-image: -ms-linear-gradient( left, pink, gold, yellow, lightgreen, lightblue,violet);
+}
 .submitter:after
 {
 /*content:'Game Host';*/
@@ -620,7 +643,7 @@ background-image: url(%%mafiafillies%%) !important
 }
 
 a[href|="/mafiadash"], a[href|="/mafiard"] { background-position: -0px -0px }
-a[href|="/mafiararity"] { background-position: -120px -0px }
+a[href|="/mafiararity"] { background-position: -120px -0px; animation:spin 5s infinite; -webkit-animation:spin 5s infinite; }
 a[href|="/mafiapie"], a[href|="/mafiapinkie"], a[href|="/mafiapp"] { background-position: -240px -0px }
 a[href|="/mafiashy"], a[href|="/mafiafluttershy"] { background-position: -0px -120px }
 a[href|="/mafiaab"] { background-position: -120px -120px }
@@ -632,6 +655,26 @@ a[href|="/mafiabb"], a[href|="/mafiabonbon"] { background-position: -0px -360px 
 a[href|="/mafialuna"] { background-position: -120px -360px }
 a[href|="/mafiaoctavia"] { background-position: -240px -360px }
 a[href|="/mafiachrysalis"] { background-position: -0px -480px }
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
 
 a[href|="/mafiaduck"]
 {
@@ -1101,4 +1144,3 @@ div[data-fullname$="8"] .usertext-body .md:after{content:" Also, I'm a townie";}
 div[data-fullname$="9"] .usertext-body .md:after{content:" Also, I'm mafia";} */
 
 .id-t1_cgi1p64 .entry .usertext-body .md:after {content:" Also, I'm a butt." !important;}
-
