@@ -60,7 +60,8 @@ def _parse_all_rules(filename, text):
             selector_text, text = text.split("{", 1)
             properties_text, text = text.split("}", 1)
         except ValueError:
-            print("ERROR: CSS parse error in %r" % (filename))
+            print("ERROR: CSS parse error in %r: %s bytes left" % (filename, len(text)))
+            return # Assume no more rules
         else:
             selectors = _parse_selectors(selector_text)
             properties = _parse_properties(properties_text)
@@ -111,7 +112,7 @@ def as_position(text, width, height):
 def as_url(text):
     text = prop(text)
     if text.startswith("url(") and text.endswith(")"):
-        return text[4:-1].strip()
+        return text[4:-1].strip().strip('"')
     raise ValueError("Invalid URL", text)
 
 def _parse_size(s):
