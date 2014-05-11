@@ -525,32 +525,14 @@ background-color: white;
  
 /* end subscribe buttons */
 
-/* Make deleted messages less noticeable*/
-.deleted .grayed {
-	display: none;
+/* Make nuked comment trees easier to navigate, thanks /u/gavin19 */
+
+.deleted .grayed, .deleted > .entry em {
+    display: none; 
 }
-
-.deleted > .entry .noncollapsed:after {
-	opacity: .35;
-	color: #858585;
-        content: "Comment deleted or removed.";
-        font-size: 1.2em;
-        padding-top:4px;
-        display: block;
-
+.deleted > .entry .tagline:before { 
+    content: ' (Comment deleted or removed)  '; 
 }
-
-.deleted>.entry .expand {
-	visibility: visible;
-}
-
-.deleted.comment> .entry .tagline {
-	visibility: hidden;
-}
-
-div.thing.deleted.comment a.toggleChildren {display:none}
-
-/* end fancy deletes */
 
 .flair
 {

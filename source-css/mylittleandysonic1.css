@@ -2,13 +2,13 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%animebackground5%%)  no-repeat  fixed 66% 100% !important;
+    background:  url(%%backgroundsaff%%)  no-repeat  fixed 66% 100% !important;
 }
 
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%patpatpatbanner%%) 50% 0px !important;
+   background: url(%%tmobile%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -392,14 +392,14 @@ background-repeat: no-repeat;
 .flair-housemc:after { background-position: 0px -2850px }
 .flair-lunchy:after { background-position: 0px -2880px }
 .flair-joker:after { background-position: 0px -2910px }
-.flair-Herabek:after { background-position: 0px - 2940px }
-.flair-dickboot:after { background-position: 0px - 2970px }
-.flair-mwam:after { background-position: 0px - 3000px }
-.flair-darklecrazy:after { background-position: 0px - 3030px }
-.flair-catman:after {height: 28px; background-position: 0px - 3062px }
-.flair-Lazeraze:after { background-position: 0px - 3090px }
-.flair-crunchy:after { background-position: 0px - 3120px }
-.flair-cuttershy:after { background-position: 0px - 3150px }
+.flair-Herabek:after { background-position: 0px -2940px }
+.flair-dickboot:after { background-position: 0px -2970px }
+.flair-mwam:after { background-position: 0px -3000px }
+.flair-darklecrazy:after { background-position: 0px -3030px }
+.flair-catman:after {height: 28px; background-position: 0px -3062px }
+.flair-Lazeraze:after { background-position: 0px -3090px }
+.flair-crunchy:after { background-position: 0px -3120px }
+.flair-cuttershy:after { background-position: 0px -3150px }
 .flair-Fortehlulz33:after { background-position: 0px -3180px }
 .flair-IronChewbacca:after { background-position: 0px -3210px }
 .flair-whisperingsage:after { background-position: 0px -3240px }
@@ -654,7 +654,8 @@ a.author[href$=theclinger_5],
 a.author[href$=FrigidMcThunderballs],
 a.author[href$=j-brony],
 a.author[href$=RisenLordM],
-a.author[href$=Princess_Pwny]
+a.author[href$=Princess_Pwny],
+a.author[href$=tuckels]
 
 { 
 font-size:0!important; 
@@ -767,7 +768,8 @@ a.author[href$=theclinger_5]:before,
 a.author[href$=FrigidMcThunderballs]:before,
 a.author[href$=j-brony]:before,
 a.author[href$=RisenLordM]:before,
-a.author[href$=Princess_Pwny]:before
+a.author[href$=Princess_Pwny]:before,
+a.author[href$=tuckels]:before
 {
 font-size:10px!important; 
 visibility:visible!important;
@@ -877,6 +879,7 @@ a.author[href$=FrigidMcThunderballs]:before  { content:"Dr. Chandragupta Maurya,
 a.author[href$=j-brony]:before { content:"J's Brownies" }
 a.author[href$=RisenLordM]:before { content:"Risen" }
 a.author[href$=Princess_Pwny]:before { content:"Pwnyed" }
+a.author[href$=tuckels]:before { content:"KING TUCKELS" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -965,7 +968,8 @@ a.author[href$="The_MSPainter"]:after,
 a.author[href$=j-brony]:after,
 a.author[href$=RisenLordM]:after,
 a.author[href$=Lord_Ninka]:after,
-a.author[href$=Princess_Pwny]:after
+a.author[href$=Princess_Pwny]:after,
+a.author[href$=tuckels]:after
 
 {
 color:#000; 
@@ -1009,7 +1013,7 @@ a.author[href$=Chillusion]:after { content:" (Because I can.)" }
 a.author[href$=Edriss562]:after { content:" the prodigal son returns"; color:goldenrod }
 a.author[href$=waffen337]:after { content:"(Fucking ass ball bajongler)" }
 a.author[href$=sirtophat]:after { content:" (flaming homosexual)"; color:purple }
-a.author[href$=cheesemoo]:after { content:" (Still exists, apparently)" }
+a.author[href$=cheesemoo]:after { content:" (Is somehow still a mod)" }
 a.author[href$=TwilightSpackle]:after { content:" (loves huge d***)" }
 a.author[href$=koobaxion]:after { content:" i.imgur.com/VUNCC.jpg" }
 a.author[href$=InWarAndPieces]:after { content:" i.imgur.com/v4VVJ.gif" }
@@ -1044,6 +1048,7 @@ a.author[href$=j-brony]:after { content:" Get em while they're hot!" }
 a.author[href$=RisenLordM]:after { content:" from the dead" }
 a.author[href$=Lord_Ninka]:after { content:" The forgotten DBZ character" }
 a.author[href$=Princess_Pwny]:after { content:" your fun" }
+a.author[href$=tuckels]:after { content:" on 05/08/2014" }
 
 /* Any pre/post-name flair stuff goes here */ 
 
@@ -1255,7 +1260,7 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 
 
 
-/* --------------Footer-------------------------*/
+/* --------------Footer-------------------------
 
 .footer-parent {
     height: 420px;
@@ -1269,3 +1274,5 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
     background-repeat: no-repeat;
     margin-bottom: -1px;
     }
+
+*/
