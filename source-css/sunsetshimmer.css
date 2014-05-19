@@ -89,7 +89,7 @@ div#header-bottom-left ul.tabmenu {
 
 .titlebox {
   width:320px;
-  padding: 0 0 0 4px;
+  padding: 0 1px 0 4px;
 }
 
 .subscribers .word, .users-online .word {
@@ -680,6 +680,14 @@ a[href|="/rsunsetshades"],a[href|="/rssshades"]
 background-position:0 -100%;
 }
 
+a[href|="/sunsetstainedglass"],a[href|="/ssstainedglass"]
+{display:block;clear:none;float:left;width:224px;height:224px;background-image:url(%%sunsetshades%%)!important;background-position:-640px 0;
+}
+
+a[href|="/rsunsetstainedglass"],a[href|="/rssstainedglass"]
+{display:block;clear:none;float:left;width:224px;height:224px;background-image:url(%%sunsetshades%%)!important;
+background-position:-864px 0;
+}
 
 a[href|="/sunsetspin"],a[href|="/ssspin"]
 {display:block;clear:none;float:left;width:65px;height:65px;background-image:url(%%sunsetspin%%)!important;

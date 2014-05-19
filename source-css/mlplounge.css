@@ -165,20 +165,20 @@ body a[href="/spoiler"]:hover{color:white!important}/* Spoiler Setter*/
 }
 
 div.over18 .entry .buttons .first{padding-left: 0px}
-.footer-parent
+/*.footer-parent
 {
  height:500px;
  padding-bottom:0px;
  clear:both;
  text-align:center;
  width:100%;
-/*Footer image by /u/DoctorDerpy*/
+Footer image by /u/DoctorDerpy
  background-image:url(%%DoctorDerpy%%);
  background-repeat:no-repeat;
  margin-bottom:-80px;
  background-position: 50% 100%;
 }
-
+*/
 #header-bottom-left
 {
  background:url(%%minidis%%) bottom right no-repeat;
@@ -919,3 +919,12 @@ body:lang(np):not(.subscriber) .usertext-edit,body:lang(np):not(.subscriber) .si
 
 .RESDialogSmall.livePreview > h3 {color: black;font-size: 14px;margin-top: 6px;margin-bottom: 10px;font-weight: normal;}
 .res-nightmode .RESDialogSmall h3 {color: #ccc}
+
+a[href|="/ripferrbearand20"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 204px;
+ height: 250px;
+ background-image: url(%%ripferrbearand20%%);  
+} 

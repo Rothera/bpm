@@ -89,65 +89,69 @@ background-image: url(%%flairsheet%%);
 content: "";
 display: inline-block;
 background-repeat: no-repeat;
+width:40px; 
+height:40px;
 }
-
-.flair-adagio:after {width:40px; height:40px; background-position: -1px -1px}
-.flair-aj:after {width:40px; height:40px; background-position: -1px -42px}
+.flair-adagio:after {background-position: -1px -1px}
+.flair-aj:after {background-position: -1px -42px}
 .flair-alien:after {width:40px; height:38px; background-position: -1px -83px}
-.flair-anime:after {width:40px; height:40px; background-position: -1px -122px}
-.flair-awesome:after {width:40px; height:40px; background-position: -1px -163px}
+.flair-anime:after {background-position: -1px -122px}
+.flair-awesome:after {background-position: -1px -163px}
 .flair-batman:after {width:32px; height:40px; background-position: -1px -204px}
-.flair-blackjack:after {width:40px; height:40px; background-position: -1px -245px}
-.flair-blush:after {width:40px; height:40px; background-position: -1px -286px}
+.flair-blackjack:after {background-position: -1px -245px}
+.flair-blush:after {background-position: -1px -286px}
 .flair-buttercup:after {width:40px; height:33px; background-position: -1px -327px}
-.flair-cadance:after {width:40px; height:40px; background-position: -1px -361px}
-.flair-celestia:after {width:40px; height:40px; background-position: -1px -402px}
-.flair-cheerilee:after {width:40px; height:40px; background-position: -1px -443px}
-.flair-chrys:after {width:40px; height:40px; background-position: -1px -484px}
-.flair-cloudchaser:after {width:40px; height:40px; background-position: -1px -525px}
-.flair-colgate:after {width:40px; height:40px; background-position: -1px -566px}
-.flair-colon3:after {width:40px; height:40px; background-position: -1px -607px}
-.flair-cool:after {width:40px; height:40px; background-position: -1px -648px}
-.flair-dash:after {width:40px; height:40px; background-position: -1px -689px}
-.flair-derpy:after {width:40px; height:40px; background-position: -1px -730px}
-.flair-flitter:after {width:40px; height:40px; background-position: -1px -771px}
-.flair-fluttershy:after {width:40px; height:40px; background-position: -1px -812px}
+.flair-cadance:after {background-position: -1px -361px}
+.flair-celestia:after {background-position: -1px -402px}
+.flair-cheerilee:after {background-position: -1px -443px}
+.flair-chrys:after {background-position: -1px -484px}
+.flair-cloudchaser:after {background-position: -1px -525px}
+.flair-colgate:after {background-position: -1px -566px}
+.flair-colon3:after {background-position: -1px -607px}
+.flair-cool:after {background-position: -1px -648px}
+.flair-dash:after {background-position: -1px -689px}
+.flair-derpy:after {background-position: -1px -730px}
+.flair-flitter:after {background-position: -1px -771px}
+.flair-fluttershy:after {background-position: -1px -812px}
 .flair-gis:after {width:40px; height:36px; background-position: -1px -853px}
-.flair-guy:after {width:40px; height:40px; background-position: -1px -890px}
-.flair-herp:after {width:40px; height:40px; background-position: -1px -931px}
+.flair-guy:after {background-position: -1px -890px}
+.flair-herp:after {background-position: -1px -931px}
 .flair-hitler:after {width:35px; height:40px; background-position: -1px -972px}
-.flair-kitty:after {width:40px; height:40px; background-position: -1px -1013px}
-.flair-lod:after {width:40px; height:40px; background-position: -1px -1054px}
-.flair-luna:after {width:40px; height:40px; background-position: -1px -1095px}
-.flair-lyra:after {width:40px; height:40px; background-position: -1px -1136px}
+.flair-kitty:after {background-position: -1px -1013px}
+.flair-lod:after {background-position: -1px -1054px}
+.flair-luna:after {background-position: -1px -1095px}
+.flair-lyra:after {background-position: -1px -1136px}
 .flair-medic:after {width:38px; height:40px; background-position: -1px -1177px}
-.flair-milkyway:after {width:40px; height:40px; background-position: -1px -1218px}
-.flair-molestia:after {width:40px; height:40px; background-position: -1px -1259px}
-.flair-pinkamina:after {width:40px; height:40px; background-position: -1px -1300px}
-.flair-pinkie:after {width:40px; height:40px; background-position: -1px -1341px}
-.flair-puft:after {width:40px; height:40px; background-position: -1px -1382px}
-.flair-pyro:after {width:40px; height:40px; background-position: -1px -1423px}
-.flair-rarity:after {width:40px; height:40px; background-position: -1px -1464px}
-.flair-roseluck:after {width:40px; height:40px; background-position: -1px -1505px}
-.flair-scoots:after {width:40px; height:40px; background-position: -1px -1546px}
+.flair-milkyway:after {background-position: -1px -1218px}
+.flair-molestia:after {background-position: -1px -1259px}
+.flair-pinkamina:after {background-position: -1px -1300px}
+.flair-pinkie:after {background-position: -1px -1341px}
+.flair-puft:after {background-position: -1px -1382px}
+.flair-pyro:after {background-position: -1px -1423px}
+.flair-rarity:after {background-position: -1px -1464px}
+.flair-roseluck:after {background-position: -1px -1505px}
+.flair-scoots:after {background-position: -1px -1546px}
 .flair-snake:after {width:40px; height:36px; background-position: -1px -1587px}
-.flair-spike:after {width:40px; height:40px; background-position: -1px -1624px}
+.flair-spike:after {background-position: -1px -1624px}
 .flair-spy:after {width:40px; height:38px; background-position: -1px -1665px}
-.flair-stoned:after {width:40px; height:40px; background-position: -1px -1704px}
-.flair-sumebo:after {width:40px; height:40px; background-position: -1px -1745px}
-.flair-sweetie:after {width:40px; height:40px; background-position: -1px -1786px}
+.flair-stoned:after {background-position: -1px -1704px}
+.flair-sumebo:after {background-position: -1px -1745px}
+.flair-sweetie:after {background-position: -1px -1786px}
 .flair-toph:after {width:40px; height:38px; background-position: -1px -1827px}
-.flair-trixie:after {width:40px; height:40px; background-position: -1px -1866px}
-.flair-twi:after {width:40px; height:40px; background-position: -1px -1907px}
+.flair-trixie:after {background-position: -1px -1866px}
+.flair-twi:after {background-position: -1px -1907px}
 .flair-prequel:after {width:40px; height:36px; background-position: -1px -1948px}
 .flair-twinaga:after {width:40px; height:39px; background-position: -1px -1985px}
-.flair-vinyl:after {width:40px; height:40px; background-position: -1px -2025px}
-.flair-whooves:after {width:40px; height:40px; background-position: -1px -2066px}
-.flair-echo:after {width:40px; height:40px; background-position: -1px -2107px}
-.flair-Beatbawx:after {width:40px; height:40px; background-position: -1px -2147px}
-.flair-jeroknite:after {width:40px; height:40px; background-position: -1px -2187px}
-.flair-Saltbearer:after {width:40px; height:40px; background-position: -1px -2227px}
-.flair-spammy:after {width:40px; height:40px; background-position: -2px -2267px}
+.flair-vinyl:after {background-position: -1px -2025px}
+.flair-whooves:after {background-position: -1px -2066px}
+.flair-echo:after {background-position: -1px -2107px}
+.flair-Beatbawx:after {background-position: -1px -2147px}
+.flair-jeroknite:after {background-position: -1px -2187px}
+.flair-Saltbearer:after {background-position: -1px -2227px}
+.flair-spammy:after {background-position: -2px -2267px}
+.flair-Monoclebear:after {background-position: -2px -2307px}
+.flair-Kwulhu:after {background-position: -2px -2347px}
+
 
 /* ------ Emotes! --------- */
 a[href|='/cocoawkward'], a[href|='/funnay'], a[href|='/gildabird'], a[href|='/holyshit'], a[href|='/keytar'], a[href|='/pinkiebat'], a[href|='/ppchug'], a[href|='/rdscary'], a[href|='/twiperturbed'], a[href|='/lyra10']{ 
@@ -462,6 +466,8 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 /* Names */
 
 /* here first */
+a.author[href$='Kwulhu'],
+a.author[href$='Monoclebear'],
 a.author[href$='scix'],
 a.author[href$='SGIG'],
 a.author[href$='SMUT_ADDICT'],
@@ -495,6 +501,8 @@ content: "";
 }
 
 /* here second */
+a.author[href$='Kwulhu']:before,
+a.author[href$='Monoclebear']:before,
 a.author[href$='SGIG']:before,
 a.author[href$='scix']:before,
 a.author[href$='SMUT_ADDICT']:before,
@@ -525,6 +533,8 @@ visibility:visible!important;
 }
 
 /*and the replacement*/ 
+a.author[href$='Kwulhu']:before {content: "Primeminister Kwu"}
+a.author[href$='Monoclebear']:before {content: "Queen Mono XIII"}
 a.author[href$='SGIG']:before {content: "Fig"}
 a.author[href$='scix']:before {content: "enohp_xics"}
 a.author[href$='SMUT_ADDICT']:before {content: "Spammy"}

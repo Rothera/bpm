@@ -10,15 +10,15 @@ body {
 .side { width: 304px !important; }
 
 /*Change the word for 'readers' and the currently online*/
-.subscribers .word, .users-online .word{
-display:none;
+.subscribers .word, .users-online .word {
+    display:none;
 }
 
 .subscribers .number:after { 
-content: " party planners"
+    content: " party planners"
 }
 .users-online .number:after { 
-content: " having a party" 
+    content: " having a party" 
 }
 
 .footer-parent:after {
@@ -212,6 +212,52 @@ a[href|="/sp"]{ display: inline-block; padding-right: 100%; width: 0px; height: 
     height: 15px;
     width: 15px;
 }
+
+/*** Spoiler Tags ***/
+
+.nsfw-stamp acronym {
+    border: #5f99cf 1px solid !important;
+    display: inline-block;
+    font-size: 0px !important;
+    letter-spacing: 0px;
+    overflow: hidden;
+    vertical-align: bottom;
+    margin-bottom:-1px ;
+    content: "";
+}
+
+.nsfw-stamp acronym:after {
+    color: #336699 !important;
+    content: "SPOILER" !important;
+    display: block;
+    font-size: x-small !important;
+    text-decoration: none;
+    margin:-14px 2px 1px
+}
+
+.marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    letter-spacing: -20px;
+    content: "";
+}
+
+.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before {
+    font-size: 9px !important;
+    display: block;
+    letter-spacing: normal;
+    content:"spoiler";
+}
+
+.unmarknsfw-button a[href="#"]:before { content:"un-spoiler"; }
+
+.thumbnail.nsfw {
+    background-image: url(%%thumbnails%%) !important;
+    background-position: 0px 0px !important;
+}
+
 
 /*** Emotes ***/
 

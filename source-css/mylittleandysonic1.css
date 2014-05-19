@@ -8,7 +8,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%tmobile%%) 50% 0px !important;
+   background: url(%%coggybanner%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -504,6 +504,7 @@ background-repeat: no-repeat;
 .flair-dinostabby:after { background-position: 0px -6210px }
 .flair-dominos:after { background-position: 0px -6240px }
 .flair-lemonkun:after { background-position: 0px -6270px }
+.flair-ashamed:after { background-position: 0px -6300px }
 
 
 /* Nightmode fix for flair */
@@ -559,7 +560,7 @@ a.author[href$="0x_"],
 a.author[href$="theodorejhooker"],a.author[href$="pr0n0tr0n"],
 a.author[href$="CarlosAmuroRay"],
 a.author[href$="numberlock"],
-a.author[href$="CodenameToon"],
+a.author[href$="CogglerSenpai"],
 a.author[href$="thedarklordkyp"],
 a.author[href$="fwinest_JediThug"],
 a.author[href$="V17Ds"],
@@ -670,7 +671,7 @@ a.author[href$="PUBLIQclopAccountant"]:before,
 a.author[href$="bryvood"]:before,
 a.author[href$="0x_"]:before,
 a.author[href$="theodorejhooker"]:before,a.author[href$="pr0n0tr0n"]:before,
-a.author[href$="CodenameToon"]:before,
+a.author[href$="CogglerSenpai"]:before,
 a.author[href$="CarlosAmuroRay"]:before,
 a.author[href$="numberlock"]:before,
 a.author[href$="thedarklordkyp"]:before,
@@ -785,7 +786,7 @@ a.author[href$="bryvood"]:before,a.author[href$="Ezreal"]:before {content:"Ezrea
 a.author[href$="pr0n0tr0n"]:before,a.author[href$="theodorejhooker"]:before {content:"theodoreajhooker"}
 a.author[href$="CarlosAmuroRay"]:before {content:"ChuckAmuroRay"}
 a.author[href$="0x_"]:before {content:"just ox"}
-a.author[href$="CodenameToon"]:before {content:"Coggler"}
+a.author[href$="CogglerSenpai"]:before {content:"Coggler"}
 a.author[href$="thezooman123"]:before {content:"Actual Racist"}
 a.author[href$="numberlock"]:before {content:"BeerPony"}
 a.author[href$="thedarklordkyp"]:before {content:"A_Drunk_Changeling"}
@@ -969,7 +970,8 @@ a.author[href$=j-brony]:after,
 a.author[href$=RisenLordM]:after,
 a.author[href$=Lord_Ninka]:after,
 a.author[href$=Princess_Pwny]:after,
-a.author[href$=tuckels]:after
+a.author[href$=tuckels]:after,
+a.author[href$=CogglerSenpai]:after
 
 {
 color:#000; 
@@ -1049,6 +1051,7 @@ a.author[href$=RisenLordM]:after { content:" from the dead" }
 a.author[href$=Lord_Ninka]:after { content:" The forgotten DBZ character" }
 a.author[href$=Princess_Pwny]:after { content:" your fun" }
 a.author[href$=tuckels]:after { content:" on 05/08/2014" }
+a.author[href$=CogglerSenpai]:after { content:" the art master" }
 
 /* Any pre/post-name flair stuff goes here */ 
 
@@ -1061,7 +1064,8 @@ a.author[href$=tuckels]:after { content:" on 05/08/2014" }
 .tagline a.author[href$="/ajtexasranger"]:after,
 .tagline a.author[href$="/fsakj"]:before,
 .tagline a.author[href$="/durpyDash"]:before,
-.tagline a.author[href$="/gremlinpower"]:before
+.tagline a.author[href$="/gremlinpower"]:before,
+.tagline a.author[href$="/Theologica"]:before
 {
     content: " ";
     background: none;
@@ -1087,7 +1091,8 @@ a.author[href$=tuckels]:after { content:" on 05/08/2014" }
 :not(.flair) .tagline a.author[href$="/245001"]:before,
 :not(.flair) .tagline a.author[href$="/fsakj"]:before,
 :not(.flair) .tagline a.author[href$="/durpyDash"]:before,
-:not(.flair) .tagline a.author[href$="/gremlinpower"]:before
+:not(.flair) .tagline a.author[href$="/gremlinpower"]:before,
+:not(.flair) .tagline a.author[href$="/Theologica"]:before
 
 {
     background-position: 0px -540px !important;
@@ -1245,7 +1250,7 @@ body.res a.author[href$="Pathogen-David"], body.res a.author[href$="Phei"], body
 body.res a.author[href$="Phei"] { background-color: #D4A4E8 }
 body.res a.author[href$="Pathogen-David"] { background-color: #662D8A }
 body.res a.author[href$="Myrandall"] {color:#FF69B4!important}
-body.res a.author[href$="RAINBOW_PONY_SEMEN"] {color:#ff00f7!important}
+body.res a.author[href$="RAINBOW_PONY_SEMEN"] {color:#00FF00!important}
 body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 
 /* PROPER GREENTEXT (stolen from plounge, which stole from /r/4chan) */
