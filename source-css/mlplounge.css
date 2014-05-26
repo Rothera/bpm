@@ -1,8 +1,433 @@
-/* CSS last generated on Sat, 16 Feb 2013 02:06:21 -0600 by UNKNOWN on derpy*/ div.titlebox span.word {display:none}
+/* CSS last generated on Sat, 16 Feb 2013 02:06:21 -0600 by UNKNOWN on derpy*/ 
 
-div.titlebox .subscribers span.number:after {content:" Sillies and Numpties"}
+
+/* HEY LUNAR AND FRENCHY, THIS IS THE PRINCESS LINE*/
+
+#header { 
+        background: #cee3f8 url(%%princessheader%%) bottom center repeat;
+        height: 115px;
+        position: relative;
+    }
+
+/* It's not as fun if it forces people to turn off subreddit style
+.title.click, .title:visited { color: blue !important; }
+.title:link { color:purple !important; }
+*/
+.author[href$="/Of_The_Plounge"]:before {content: '';}
+.author[href$="/french_guy_al"]:after {content: ' of all things Tavi';}
+.author[href$="/LunarWolves"]:after {content: ' of the Warp';} 
+.author[href$="/ofEquestria"]:before {content: '';}
+.author[href$="/of-the-plounge"]:before {content: '';}
+.author[href$="/Entilliumn"]:before {content: 'Serf';}
+.author[href$="/Sharkman8282"]:after {content: ' of tsundere';}
+.author[href$="/randyrules"]:before {content: 'Bloody Peasant';}
+.author[href$="/randyrules"]:after {content: ' is being repressed!';}
+.author[href$="/Chaotic-Genes"]:after {content: ' of recursion';}
+.author[href$="/hedwin"]:after {content: ' of wizard lizards';}
+.author[href$="/Bread Princess"]:after {content: ' of bags';}
+.author[href$="/GeniusIComeAnon"]:after {content: ' of mary sues';}
+.author[href$="/ipretendiamacat"]:after {content: ' of string theory';}
+.author[href$="/Heir_of_Rick"]:after {content: ' of haberdashery';}
+.author[href$="/Dr_Trixie"]:after {content: ' of prada';}
+.author[href$="/Twilydash"]:after {content: ' of $6 Bread sticks at Domino`s';}
+.author[href$="/BlameTheJungler"]:after {content: ' of the reason you lost lane';}
+.author[href$="/isaaccclark"]:after {content: ' of ok';}
+.author[href$="/viwrastupr"]:after {content: ' of higher tuition';}
+.author[href$="/Rammiloh"]:after {content: ' of philosophy';}
+.author[href$="/greenstrawipod"]:after {content: ' of ants';}
+.author[href$="/bagelman"]:after {content: ' of [citation needed]';}
+.author[href$="/Vampiric-Argonian"]:after {content: ' of smrpg2';}
+.author[href$="/unlimited_downvotes"]:after {content: ' of donkeys';}
+.author[href$="/BlackFerretC"]:after {content: ' of Prego';}
+.author[href$="/Apophis62"]:after {content: ' of whistle blowing';}
+.author[href$="/Banjoeman"]:after {content: ' of breakfast';}
+.author[href$="/redworm"]:after {content: ' of braille';}
+.author[href$="/Danocide"]:after {content: ' of indecision';}
+.author[href$="/Cellmate086"]:after {content: ' of illogical notions';}
+.author[href$="/Danocide"]:after {content: ' of lift';}
+.author[href$="/Mykinius"]:after {content: ' of pandas';}
+.author[href$="/battlesmit"]:after {content: ' of frustration';}
+.author[href$="/DiscordDraconequus"]:after {content: ' of Boris';}
+.author[href$="/MasterThief"]:after {content: ' of annoyances';}
+.author[href$="/Ponygrenadier"]:after {content: ' of potato';}
+.author[href$="/vojelly"]:after {content: ' of alligators';}
+.author[href$="/Zaphy1415926"]:after {content: ' of drawing best princess every time I see a thread from you I don`t care if the drawings never turn out well look at how this one is shaded and everything';}
+.author[href$="/oldmanwhatshisname"]:after {content: ' of green';}
+.author[href$="/shellbullet17"]:after {content: ' of [](/zilean)';}
+.author[href$="/kupiakos"]:after {content: ' of widgets';}
+.author[href$="/Zanorfgor"]:after {content: ' of motivation';}
+.author[href$="/TehFalchion"]:after {content: ' of Nami';}
+.author[href$="/Lamborghini333"]:after {content: ' of beets';}
+.author[href$="/Thisguy2021"]:after {content: ' of democracy';}
+.author[href$="/ilm2112"]:after {content: ' of marriage';}
+.author[href$="/MahouShoujoTomCruise"]:after {content: ' of sharks';}
+.author[href$="/James"]:after {content: ' of agendas';}
+.author[href$="/Shad0wDashie"]:after {content: ' of roofing';}
+.author[href$="/starkinmn"]:after {content: ' of potassium';}
+.author[href$="/bluegreenwookie"]:after {content: ' of google ultron';}
+.author[href$="/IvannaDaviniaVerran"]:after {content: ' of delusions';}
+.author[href$="/iKickComputers"]:after {content: ' of tnetennba';}
+.author[href$="/Ms_Cheerilee"]:after {content: ' of sitting';}
+.author[href$="/cdiddy265"]:after {content: ' of illumination';}
+.author[href$="/momomojito"]:after {content: ' of pixie sticks';}
+.author[href$="/h2ooctane"]:after {content: ' of com101';}
+.author[href$="/Mystical_Magical_Egg"]:after {content: ' of probably upgrades sightstone';}
+.author[href$="/jawa299"]:after {content: ' of cox';}
+.author[href$="/Arstilax"]:after {content: ' of downtime';}
+.author[href$="/Captain_Awesomex"]:after {content: ' of nope';}
+.author[href$="/DarkLordSnuffles"]:after {content: ' of change';}
+.author[href$="/kupiakos"]:after {content: ' of method';}
+.author[href$="/NEREVAR!!&"]:after {content: ' of vaccinations';}
+.author[href$="/BlTGamer"]:after {content: ' of echoes';}
+.author[href$="/Decht"]:after {content: ' of Pacman';}
+.author[href$="/dutton89"]:after {content: ' of dish soap';}
+.author[href$="/ZoneSystem"]:after {content: ' of mice';}
+.author[href$="/iRap"]:after {content: ' of snake staff';}
+.author[href$="/Spart33"]:after {content: ' of life';}
+.author[href$="/Brony_Starstruck"]:after {content: ' Blackjack';}
+.author[href$="/T3Schism"]:after {content: ' of quick time events';}
+.author[href$="/Waifu_Thief"]:after {content: ' of smurfs';}
+.author[href$="/wastedchick3n"]:after {content: ' of figure heads';}
+.author[href$="/ChangelingFluttershy"]:after {content: ' of ego';}
+.author[href$="/PacloverN1"]:after {content: ' of not enough apples';}
+.author[href$="/ImTheMoon"]:after {content: ' of dedededededededede';}
+.author[href$="/roflzors"]:after {content: ' of Comcast';}
+.author[href$="/SickScorpionJacket "]:after {content: ' of hot clothing in the summer';}
+.author[href$="/SonOfPlinkett"]:after {content: ' of rats';}
+.author[href$="/TheIdeaMachine"]:after {content: ' of blindness';}
+.author[href$="/HerbertLP"]:after {content: ' of pillows';}
+.author[href$="/MonkPreston"]:after {content: ' of Neatness';}
+.author[href$="/deathdude223"]:after {content: ' of not even Cadance';}
+.author[href$="/Coterminus"]:after {content: ' of unscheduled downtimes';}
+.author[href$="/aveilleux"]:after {content: ' of oblivion dlc';}
+.author[href$="/Lumpyguy"]:after {content: ' of what';}
+.author[href$="/Cirrusoul"]:after {content: ' of stat dumps';}
+.author[href$="/Sleipnir_alt"]:after {content: ' of cuteness';}
+.author[href$="/Eltrion"]:after {content: ' of 'greased electricity;}
+.author[href$="/1kingdomheart"]:after {content: ' of the name of the dots on dice';}
+.author[href$="/Fuzzy_Gauntlets"]:after {content: ' of duel disks';}
+.author[href$="/Wordsmith_Pony"]:after {content: ' of unoriginality';}
+.author[href$="/NotEnoughApples"]:after {content: ' of oranges';}
+.author[href$="/TheKinginYellow"]:after {content: ' of blades';}
+.author[href$="/manfartwish"]:after {content: ' of lackluster art';}
+.author[href$="/BandNerdMafia"]:after {content: ' of mid or afk';}
+.author[href$="/HurricaneFan13"]:after {content: ' of complicated requests';}
+.author[href$="/Night Coder"]:after {content: ' of singing owls';}
+.author[href$="/Gamer_KM"]:after {content: ' of expectations';}
+.author[href$="/SailorToon"]:after {content: ' of unnecessarily long transformation scenes, like this title';}
+.author[href$="/bndnrdgirl"]:after {content: ' of reading rule 1';}
+.author[href$="/Not_a_blimp"]:after {content: ' of no u';}
+.author[href$="/TwistedMuffin"]:after {content: ' of Procedural Baking';}
+.author[href$="/Dwarflord"]:after {content: ' of Roseluck fics';}
+.author[href$="/Terrad"]:after {content: ' of clicking buttons';}
+.author[href$="/Fogeck"]:after {content: '_dirty_peasantry';}
+.author[href$="/Eevn"]:after {content: ' of can`t';}
+.author[href$="/KillerRabbit1253"]:after {content: ' of Lactose';}
+.author[href$="/therosebudpony"]:after {content: ' of metaphorical sleds';}
+.author[href$="/Xeladner"]:after {content: ' of charisma and intelligence';}
+.author[href$="/ZephyrC"]:after {content: ' of Luna`s Sombrero';}
+.author[href$="/Eevn"]:before {content: 'I Can`t Princess ';}
+.author[href$="/Heylookabrony"]:after {content: ' of Season 3';}
+.author[href$="/Thardoc"]:after {content: ' of loose change';}
+.author[href$="/moss1873"]:after {content: ' of soberness';}
+.author[href$="/1337fidoS10"]:after {content: ' of hiking';}
+.author[href$="/MLP_William"]:after {content: ' of Waifu Fanclubs';}
+.author[href$="/Xunderground"]:after {content: ' of stuff';}
+.author[href$="/anon2lol"]:after {content: ' of the irony mark';}
+.author[href$="/TwoWorldsCoexisting"]:after {content: ' of messages in a bottle';}
+.author[href$="/sprankton"]:after {content: ' of this title';}
+.author[href$="/LunarMist2"]:after {content: ' of automation';}
+.author[href$="/Brega"]:after {content: ' of changeling supremacy';}
+.author[href$="/Staravia492"]:after {content: ' of hopeless causes';}
+.author[href$="/MasterSubLink"]:after {content: ' of yes';}
+.author[href$="/xkcd_transcriber"]:after {content: ' of eckskayseedee';}
+.author[href$="/Gen_Victus94"]:after {content: ' of middle names';}
+.author[href$="/Alexkai"]:after {content: ' of architecture';}
+.author[href$="/chrisXII"]:after {content: ' of someday';}
+.author[href$="/goffer54"]:after {content: ' of treachery';}
+.author[href$="/Protosega"]:after {content: ' of HEART';}
+.author[href$="/D_for_Diabetes"]:before {content: ' Dial';} 
+.author[href$="/electrashock"]:after {content: ' of fisherman Gordon';}
+.author[href$="/allofthesocks"]:after {content: ' of bears';}
+.author[href$="/Nox_Alchemist"]:after {content: ' of purse owner';}
+.author[href$="/willowmvp227"]:after {content: ' of horrendous singing';}
+.author[href$="/RainbowPlatypus"]:after {content: ' of bad puns';}
+.author[href$="/-Plasmahawk-"]:after {content: ' of lost loose change';}
+.author[href$="/Kodiologist"]:after {content: ' of the Nigerian stock market';}
+.author[href$="/JoshwaarBee"]:after {content: ' of ';}
+.author[href$="/Gen_Victus94"]:after {content: ' of the Truman Show';}
+.author[href$="/Synes7hesia"]:after {content: ' of date expectations';}
+.author[href$="/Soyuz118"]:after {content: ' of fig newtons';}
+.author[href$="/croakometer"]:after {content: ' of imminent doom';}
+.author[href$="/Seanachain"]:after {content: ' of liking worst pony';}
+.author[href$="/OtterSigma"]:after {content: ' of clams';}
+.author[href$="/Im_Not_Pinkie_Pie"]:after {content: ' :International Mare of Mystery';}
+.author[href$="/CogglerSenpai"]:after {content: ' of being noticed';}
+.author[href$="/DaylightDarkle"]:before {content: 'Prettiest Pinkest Princess';}
+.author[href$="/DaylightDarkle"]:after {content: ' of Princess Lounge';}
+.author[href$="/Buddhakyle"]:after {content: ' of frosted butts';}
+.author[href$="/-20"]:after {content: ' the ex Stormwalker';}
+.author[href$="/Middypie"]:after {content: ' of no other subs';}
+.author[href$="/HonorInDefeat"]:after {content: ' of gouged customers';} 
+.author[href$="/MasterT231"]:before {content: 'Queen ';}
+.author[href$="/MasterT231"]:after {content: ' of drama';} 
+.author[href$="/BigMaclsNotABurger"]:after {content: ' of Pluto';}
+.author[href$="/BurChaBow"]:before {content: ' Guard ';}
+.author[href$="/BurChaBow"]:after {content: ' of the actual Princess Lounge';}
+.author[href$="/BazookaBang"]:after {content: ' of childsafe pyrotechnics';}
+.author[href$="/NOT_AN_APPLE"]:after {content: ' of [](/ppjuice)';}
+.author[href$="/Chessyfan"]:after {content: ' of Chessyfanland Fan emporium';}
+.author[href$="/Dr_appleman"]:after {content: ' of long restful sleeps';}
+.author[href$="/BucketHelm"]:after {content: ' of Fluid container based headgear';}
+.author[href$="/ChromeCrash"]:after {content: ' of firefox failures';}
+.author[href$="/Dalek_Kolt"]:after {content: ' of natural selection';}
+.author[href$="/DonnyGreene"]:after {content: ' of Suck, Squeeze, Bang, and Blow';}
+.author[href$="/andysonic2"]:after {content: ' the SJW';}
+.author[href$="/Gayburn_Wright"]:after {content: ' Ill roasts';}
+.author[href$="/OrganizedDiscord"]:after {content: ' of Expertly Sorted Entropy';}
+.author[href$="/v_force"]:after {content: ' of projectile dynamics';}
+.author[href$="/Re4p3r123"]:after {content: ' of his own username';}
+.author[href$="/Sangfroidish"]:after {content: ' of Castle Sparkles';}
+.author[href$="/Gulneck"]:after {content: ' of Helpful PSAs';}
+.author[href$="/katrus"]:after {content: ' of Wasps';}
+.author[href$="/Rockdio"]:after {content: ' of Rolls';}
+.author[href$="/Alecay"]:after {content: ' of admin work';}
+.author[href$="/Xuin"]:before {content: ' Count';}
+.author[href$="/sun_cat"]:after {content: ' of pyrofoxes';}
+.author[href$="/Poni"]:after {content: ' of the machine that goes Bing!';}
+.author[href$="/Acer"]:after {content: ' of VGTG';}
+.author[href$="/The_Poni"]:after {content: ' of construction';}
+.author[href$="/imnotashinobi"]:after {content: ' of Spyro';}
+.author[href$="/Rilig"]:after {content: ' of newts';}
+.author[href$="/brushie_brushiee"]:after {content: ' of Crest Whitestrips';}
+.author[href$="/Relia"]:after {content: ' of rap lyrics';}
+.author[href$="/ristar2"]:after {content: ' of interesting tattoos';}
+.author[href$="/SpanishMeerkat"]:after {content: ' of French chickens';}
+.author[href$="/Fernando"]:after {content: ' of miniature posteriors';}
+.author[href$="/RavenHaunt"]:after {content: ' of alarm clocks';}
+.author[href$="/Ben_is_the_name"]:after {content: ' of the spacebar key';}
+.author[href$="/xylos"]:after {content: ' of fun house mirrors';}
+.author[href$="/CoderCandy"]:after {content: ' of molasses';}
+.author[href$="/Pokemaniac_Ron"]:after {content: ' of pet rocks';}
+.author[href$="/Donut_Joe"]:after {content: ' of stale bagels';}
+.author[href$="/Crossbowshootr"]:after {content: ' of depressurization chambers';}
+.author[href$="/Man_Gell"]:after {content: ' of inactive spying';}
+.author[href$="/IronicDashie"]:after {content: ' of low expectations';}
+.author[href$="/computeteen5"]:after {content: ' is dead';}
+.author[href$="/Master57i"]:after {content: ' of hospital walls';}
+.author[href$="/HolyMoonPie"]:after {content: ' of Sealand`s Helipad';}
+.author[href$="/MagicalKartWizard"]:after {content: ' of a known entity';}
+.author[href$="/Fancysaurus"]:after {content: ' of bony top hats';}
+.author[href$="/ParalyticParamedic"]:after {content: ' of cheese nips';}
+.author[href$="/Brony_of_Solitude"]:after {content: ' of Blockbuster';}
+.author[href$="/dereckc1"]:after {content: ' of timelocks';}
+.author[href$="/Homelyb"]:after {content: ' of making cents';}
+.author[href$="/BWandstuffs"]:after {content: ' of baked lies';}
+.author[href$="/JedTheKrampus"]:after {content: ' of sugary drinks';}
+.author[href$="/Clarkeeyyy"]:after {content: ' of dead TV Programs';}
+.author[href$="/123porter"]:after {content: ' of an abacus';}
+.author[href$="/MyLittleNeko-Chan"]:after {content: ' of Necco wafers';}
+.author[href$="/edmazing"]:after {content: ' of all night studying';}
+.author[href$="/devotedpupa"]:after {content: ' will get a kingdom soon';}
+.author[href$="/Sparkiye"]:after {content: ' of new shuttlecocks';}
+.author[href$="/CrystalLord"]:after {content: ' of Foyman';}
+.author[href$="/Spazzmatism"]:after {content: ' of not fun procedures';}
+.author[href$="/lulzy12"]:before {content: ' Peasant';}
+.author[href$="/lacoizumi"]:after {content: ' of Surprise';}
+.author[href$="/Aceofspade159"]:after {content: ' of metaphysics';}
+.author[href$="/MultiScootaloo"]:after {content: ' of Cuccos';}
+.author[href$="/IncredibleMeh"]:after {content: ' of dead foul planets';}
+.author[href$="/Mlm61099"]:after {content: ' of plot devices';}
+.author[href$="/theBenger"]:after {content: ' of perfect hotpockets';}
+.author[href$="/RogueAxle"]:after {content: ' of explosions that ruined IPs';}
+.author[href$="/TheKittenMaestro"]:after {content: ' of the Bonzo Dog Doo-Dah Band';}
+.author[href$="/GunStinger"]:after {content: ' holey footwear';}
+.author[href$="/Foyman"]:after {content: ' of CrystalLord';}
+.author[href$="/SumVerendus"]:after {content: ' of spaghetti pockets';}
+.author[href$="/Cobalt_Blaze"]:after {content: ' of Redshirt Stormtroopers';}
+.author[href$="/PonyInDisguise"]:after {content: ' of ________________';}
+.author[href$="/SchnitzelLover"]:after {content: ' of overcooked pork products';}
+.author[href$="/Tenumi"]:after {content: ' of ____ Flanks';}
+.author[href$="/1zacster"]:after {content: ' of pony D&D dump stat sheets';}
+.author[href$="/VinylandOctavia"]:after {content: ' Heir to the Steam Box OS';}
+.author[href$="/nateious"]:after {content: ' of the North Korean Missile Program';}
+.author[href$="/TerminalHunter"]:after {content: ' is still thinking of a good title';}
+.author[href$="/NimbleWing"]:after {content: ' of Flight suits';}
+.author[href$="/Szkieletor"]:after {content: ', Heir to the Jelly Pony';}
+.author[href$="/Delroc"]:after {content: ' of Beggar`s Canyon';}
+.author[href$="/antryshortround"]:after {content: ' of interpretive dances';}
+.author[href$="/Saakra"]:after {content: ' of cargo shipping manifests';}
+.author[href$="/MLP_Spitfire"]:after {content: ' of Swedish Spitfire and her pies';}
+.author[href$="/TimeLordPony"]:after {content: ' of ticking away the moments that make up a productive day';}
+.author[href$="/ParaspriteHugger"]:after {content: ' of Oddish';}
+.author[href$="/Middypie"]:after {content: ' of dramatic couches';}
+.author[href$="/rogerdodger37"]:after {content: ' of the broken inception button';}
+.author[href$="/cornettogreen"]:after {content: ' of maple syrup';}
+.author[href$="/Dylando"]:after {content: ' of D I G I T A L   S P O R T S';}
+.author[href$="/whiterun_garda"]:after {content: ' of the Dungeon in the Shivering Isles';}
+.author[href$="/jagd_ucsc"]:after {content: ' of Alderaan';}
+.author[href$="/hyoioyh"]:after {content: ' of 2+2=5';}
+.author[href$="/RavenclawDash"]:after {content: ' of something.com';}
+.author[href$="/Meno_Self"]:after {content: ' of proper language and nice language';}
+.author[href$="/Contradius"]:after {content: ' of TTAAAAAAAAAA!';}
+.author[href$="/AdamMilk"]:after {content: ' of Coconut Milk ';}
+.author[href$="/Shercock_Holmes"]:after {content: ' of the Kingdom of Zambambo';}
+.author[href$="/sushisaki"]:after {content: ' of chats certainly not of any devious nature';}
+.author[href$="/ThatOneBronyDude"]:after {content: ' of the Empire of Vietnam';}
+.author[href$="/Ocarina_of_Timelord"]:after {content: ' of Dramatic_Rarity and her Army of Sweetie Belles';}
+.author[href$="/InSarcasmWeType"]:after {content: ' of his mom';}
+.author[href$="/genericdave"]:after {content: ' of Bel Air ';}
+.author[href$="/scubafire4"]:after {content: ' of the feels';}
+.author[href$="/liljohnnybobby"]:after {content: ' of toothpaste';}
+.author[href$="/KateWissen"]:after {content: ' of Derpyness';}
+.author[href$="/PossibleGold"]:after {content: ' of fabulosity';}
+.author[href$="/OrangeSorcerer"]:after {content: ' of Lord Smooze';}
+.author[href$="/iridis_discurro"]:after {content: ' of mod appreciation <3';}
+.author[href$="/trobke"]:after {content: ' of creativity ';}
+.author[href$="/ckonold5503"]:after {content: ' of almost certain genocide';}
+.author[href$="/Poni_the_Poni"]:after {content: ' of Poni';}
+.author[href$="/FonsoTheWhitesican"]:after {content: ' of some wealth and power';}
+.author[href$="/coolboycal"]:after {content: ' of serfs';}
+.author[href$="/Crash15"]:after {content: ' of being 12';}
+.author[href$="/1125a"]:after {content: ' of a quiet area';}
+.author[href$="/Grannatz"]:after {content: ' of falafel';}
+.author[href$="/Failoe"]:after {content: ' of elaborately decorated fishnet stockings';}
+.author[href$="/Smoke_Gak_Everynight"]:after {content: ' of being a 12 year old';}
+.author[href$="/RDbrony"]:after {content: ' of eccentricity';}
+.author[href$="/windyvalkyrie"]:after {content: ' of not so bad decisions';}
+.author[href$="/StarBP"]:after {content: ' of not princesses';}
+.author[href$="/bungeous"]:after {content: ' of the day before yesterday';}
+.author[href$="/Silberkralle"]:after {content: ' of just reading the lay of the land';}
+.author[href$="/phoenix616"]:after {content: ' of needing to explain what you are the princess of';}
+.author[href$="/IrisGoddamnIllych"]:after {content: ' of the headless pony figures';}
+.author[href$="/FluffeeDream"]:after {content: ' of that Dungeon Tyrion is trapped in';}
+.author[href$="/Hatweed"]:after {content: ' of Slowsketchistan';}
+.author[href$="/Matzumonosan"]:after {content: ' of awful memes';}
+.author[href$="/Gontor"]:after {content: ' of bugger all';}
+.author[href$="/cinnamonthecat"]:after {content: ' of cat-like things';}
+.author[href$="/MaltMix"]:after {content: ' of ponies in 3.14 piece suits';}
+.author[href$="/thesweman123"]:after {content: ' of painful unoriginality';}
+.author[href$="/czarsmackey"]:after {content: ' of cool sunglasses';}
+.author[href$="/NerdyNinjaAssassin"]:after {content: ' of anxiety';}
+.author[href$="/Thelosther0"]:after {content: ' of Internet Spaceships';}
+.author[href$="/MrJeebusJuice"]:after {content: ' of Euphoric Cishet Pony-kins of Colour';}
+.author[href$="/Drowsybobcat"]:after {content: ' of Mecha';}
+.author[href$="/lukjad007"]:after {content: ' of Secrets and Shenanigans';}
+.author[href$="/NtmrMoon"]:after {content: ' of Brilliant White Light';}
+.author[href$="/purpleleash"]:after {content: ' has no crown';}
+.author[href$="/Xeonneo"]:after {content: ' of perpetually broken computers';}
+.author[href$="/fvaceslav"]:after {content: ' of Whimsy';}
+.author[href$="/DoctorBoson"]:after {content: ' of Aperture';}
+.author[href$="/Spookies_"]:after {content: ' the leet';}
+.author[href$="/potato_masterbator"]:after {content: ' of perturbed lettuce';}
+.author[href$="/dabkilm2"]:after {content: ' of illegible notes';}
+.author[href$="/Secretly_a_flamingo"]:after {content: ' is most definitely a Penguin';}
+.author[href$="/IndigoMichigan"]:after {content: ' of';}
+.author[href$="/Chalcedon"]:after {content: ' of forgotten cities';}
+.author[href$="/Bull3tM0nk3y"]:after {content: ' of posterior punishment';}
+.author[href$="/Himntor"]:after {content: ' of kosher food products';}
+.author[href$="/N-TG"]:after {content: ', Celestia`s Time Keeper';}
+.author[href$="/fishii10"]:after {content: ' is in need of ADD meds';}
+.author[href$="/thekcrimsonking"]:after {content: ' of 2 page draft memos';}
+.author[href$="/kiffren"]:after {content: ' of broken arms and armors';}
+.author[href$="/gabe2252"]:after {content: ' is in search of intelligent life';}
+.author[href$="/King_Sombra"]:after {content: ' is after things that will attract the mares';}
+.author[href$="/ApSciLeonard"]:after {content: ' of short simple frowns';}
+.author[href$="/pennello"]:after {content: ' of 404 DA links';}
+.author[href$="/headbanger141"]:after {content: ' of sit-down entertainment';}
+.author[href$="/mehgamer"]:after {content: ', Heir to Apathia';}
+.author[href$="/ayrl"]:before {content: ' Congresspony';}
+.author[href$="/ayrl"]:after {content: ', Representative-Elect on behalf of Twist';}
+.author[href$="/xxgxx"]:after {content: ' of that Great House not mentioned in Game of Thrones';}
+.author[href$="/SlumDogDiggity"]:after {content: ' of making holotapes on Star Trek';}
+.author[href$="/Arsenic_Waffles"]:after {content: ' of stories not allowed in Plounge';}
+.author[href$="/Liiiink"]:after {content: ' will get their title tomorrow';}
+.author[href$="/Alexkal"]:after {content: ' needs to check their flair';}
+.author[href$="/unfinishe"]:after {content: ' o ';}
+.author[href$="/MrSketchCity"]:after {content: ' of never taking Leave';}
+.author[href$="/dexashman"]:after {content: ' of Cheeseheads';}
+.author[href$="/dinsfire64"]:after {content: ', Maker of Reddit Ponymotes on Android';}
+.author[href$="/wakowjakow"]:after {content: ' has new flair';}
+.author[href$="/specs112"]:after {content: ' is on trial for crimes against Ponykind';}
+.author[href$="/mmonsoon326"]:after {content: ', Pretender to the mod position currently not available at this time';}
+.author[href$="/pickledstone"]:after {content: ' of kid-friendly words';}
+.author[href$="/ArkaneBass"]:after {content: ', Stunt Double for Rarity';}
+.author[href$="/Crifire"]:after {content: ', Heir to the Children of the Night';}
+.author[href$="/twilydash"]:after {content: ' of new-age affection';}
+.author[href$="/silly_jimmies"]:after {content: ' of pastry based treats such as, but not including, pie';}
+.author[href$="/Wolf_Father"]:after {content: ' of Puck, Miranda, Ariel, Umbriel, Titania and Oberon';}
+.author[href$="/Plasmacore"]:after {content: ' of pwetty lights';}
+.author[href$="/clinically_alive"]:after {content: ' of Euphoria';}
+.author[href$="/therock66"]:after {content: ' of smiley faces, kittens and rainbows <333';}
+.author[href$="/Nick5683"]:after {content: ' of taking too long';}
+.author[href$="/-Fennekin-"]:after {content: ' of being pursued by water ninja frogs';}
+.author[href$="/A_Mirror"]:after {content: ' of reflected views';}
+.author[href$="/wyattman854"]:after {content: ' of Turkey Twizzlers';}
+.author[href$="/ObamaRobot"]:before {content: ' El Presidente';}
+.author[href$="/ObamaRobot"]:after {content: ', Heir to Skynet';}
+.author[href$="/Stern_John"]:before {content: ' Sultan';}
+.author[href$="/Stern_John"]:after {content: ' of Dire Straights';}
+.author[href$="/Rahlyn"]:after {content: ' of the Eternal Winter';}
+.author[href$="/shortyman09"]:after {content: ' of just too short USB cables';}
+.author[href$="/minusgreen"]:after {content: ' of Välfärd';}
+.author[href$="/ICanCountToPurple"]:after {content: ' of Peaches';}
+.author[href$="/rjarby"]:after {content: ' needs to do his work';}
+.author[href$="/romaniwolf"]:after {content: ' of silly lists and pleading to mods';}
+.author[href$="/Bandalo"]:after {content: ', Demi-God of Plounge, and Duke of Magic Crystals';}
+.author[href$="/Cirruspon3"]:after {content: ' of slight disappointment';}
+.author[href$="/MasterFasth"]:after {content: ' of _______';}
+.author[href$="/Dakuel1"]:after {content: ' of poncey Vampires';}
+.author[href$="/Meeter77"]:after {content: ' of motivation - you can do it bud!';}
+.author[href$="/thrae"]:after {content: ' of being the Pimping Imp of Westeros';}
+.author[href$="/asceveris"]:after {content: ' of Peanut Butter';}
+.author[href$="/Ausar"]:after {content: ' of Car Boot Sales';}
+.author[href$="/Patzilla05"]:after {content: ' of poor dietary decisions';}
+.author[href$="/Spaceguy5"]:after {content: ' of definitely not space, thats for sure';}
+.author[href$="/shawa666"]:after {content: ' of fancy speak';}
+.author[href$="/Jerdana"]:after {content: ' of Piss Poor Attitude';}
+.author[href$="/Blueshark25"]:after {content: ' of Dirt';}
+.author[href$="/tehcrashxor"]:after {content: ' of Poorly Constructed Walls';}
+.author[href$="/Muninn"]:after {content: ' of Beastly Biceps';}
+.author[href$="/PsychoDuck"]:after {content: ' of Abandoning us ;_;';}
+.author[href$="/never_pessimistic"]:after {content: ' of pessimism';}
+.author[href$="/Axillion24"]:after {content: ' definitely is a princess despite what you might hear';}
+.author[href$="/seiyonoryuu"]:after {content: ' of Plounge Water DAE lol';}
+.author[href$="/luissteam"]:after {content: ' of Ailurophilia =^.^=';}
+.author[href$="/BucketOfWhales"]:after {content: ' of magic nano-gnomes whatever that means';}
+.author[href$="/gear9242"]:after {content: ' of Being Tall, Blond and working in Ikea';}
+.author[href$="/blind_duck"]:after {content: ' of ______';}
+.author[href$="/Discflame"]:after {content: ' needs to get of their backside and do some work';}
+.author[href$="/dominantseventh"]:after {content: ' of Dusk';}
+.author[href$="/FederalX"]:after {content: ' of Tiaras and Dresses';}
+.author[href$="/palehorse864"]:after {content: ' of Shotput';}
+.author[href$="/TheAsianTroll"]:after {content: ' of painfully unoriginal flair requests (but we still love them <3)';}
+.author[href$="/Orchestral_Design"]:after {content: ' of Music and Cuddles';}
+.author[href$="/BigSilverN"]:after {content: ' of Water in all its forms';}
+.author[href$="/Anyntay"]:after {content: ' of being a Princess';}
+.author[href$="/Anyntay"]:before {content: 'Not Princess';}
+.author[href$="/Zirconia"]:after {content: ' of Fun!';}
+.author[href$="/Kjqaz"]:after {content: ', Mini-Darkle';} 
+
+
+.author[href$="/HurricaneFan13"]:before {content: 'Dame ';}
+.sidecontentbox a.author[href$="DoomedCivilian"]:before {font-size:10pt!important}
+a.author[href$="Master_Zimmermanned"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Master_Zimmermanned"]:before {font-size:10px!important; visibility:visible!important; content: "Master_Zimmermanned as James Bond in Octoprincess"} 
+a.author[href$="DoomedCivilian"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="DoomedCivilian"]:before {font-size:10px!important; visibility:visible!important; content: "[Deleted]"} /*Blame Lunar; Lunar saw and laughs*/
+.author:before {content: 'Princess ';}
+
+body.res-nightmode #header { background: url(%%princessheader%%) bottom center repeat !important; }
+body.res-nightmode #header-bottom-left { background: transparent !important; }
+
+/* IF YOU WANT TO GET RID OF THE PRINCESS CHANGE, DELETE THIS LINE*/
+
+
+div.titlebox span.word {display:none}
+
+div.titlebox .subscribers span.number:after {content:" Princesses of various things"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " Being Silly" }
+div.titlebox p.users-online span.number:after { content: " doing Princess stuff" }
 div.titlebox p.users-online span.word { display: none }
 
 .sidecontentbox .flair {display:none}
@@ -99,17 +524,7 @@ border-top-right-radius: 5px;
 .thumbnail.self{background-position:0px -120px!important}
 .thumbnail.nsfw{background-position:0px 0px!important}
 .thumbnail.default{ background-position:0px -70px!important}
-.sidecontentbox a.author.id-t2_5fmql {display:none;}
-a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,a.author.id-t2_52j0w,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
-a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,a.author.id-t2_52j0w:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after{font-size:10px!important;display:block;letter-spacing:normal}
-a.author.id-t2_4mwnz:after{content:"DerpyHiccupKittyTail"}
-a.author.id-t2_8kzeb:after{content:"RAINBOW_PONY_JUICEBOX"}
-a.author.id-t2_52j0w:after{content:"RainbowDashJedi"}
-div.content a.author.id-t2_5agom:after{content:"Chinchy"}
-a.author.id-t2_5o2lh:after{content:"Luna_in_Equestria"}
-a.author.id-t2_4uott:after{content:"3cakes2pies1fork"}
-a.author.id-t2_3klgq:after{content:" is an artist";}
-a.author.id-t2_67xn1:after{content:" Wordsmith_Pony"}
+
 a[href|="/sp"]
 {
  display:inline-block;
@@ -165,20 +580,23 @@ body a[href="/spoiler"]:hover{color:white!important}/* Spoiler Setter*/
 }
 
 div.over18 .entry .buttons .first{padding-left: 0px}
-/*.footer-parent
+
+/*Footer image by /u/DoctorDerpy*/
+
+.footer-parent
 {
+ padding-bottom: 210px;
  height:500px;
- padding-bottom:0px;
  clear:both;
  text-align:center;
  width:100%;
-Footer image by /u/DoctorDerpy
  background-image:url(%%DoctorDerpy%%);
  background-repeat:no-repeat;
- margin-bottom:-80px;
- background-position: 50% 100%;
+ margin-bottom:-25px;
+ background-position: bottom center;
 }
-*/
+
+
 #header-bottom-left
 {
  background:url(%%minidis%%) bottom right no-repeat;
@@ -200,14 +618,16 @@ h3.imgTitle{
 .side a[href="/r/MLPLounge/new/"]
 {
  display:block;
- width:75px;
- height:70px;
- background:url(%%lyra%%);
+ width:56px;
+ height:75px;
+ background:url(%%princess-lounge%%);
  position:fixed; 
- top: 290px;
- right:-5px;
+ top: 220px;
+ right: 20px;
  z-index:999
 }
+
+
 body{background:url(%%twilightbackground%%) no-repeat fixed center center}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
 .content .md h1:before{content:">"}
@@ -588,6 +1008,9 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 .flair-mayor
 {background-position:-300% -1600%}
 
+.flair-maud
+{background-position:-100% -1700%}
+
 .side .md table th + th:after {font-weight:normal;}
 .side .md table:nth-of-type(1) th:nth-of-type(1):after {content:"a";}
 .side .md table:nth-of-type(1) tr:nth-of-type(odd) td + td:after {background-image:url(%%amotes%%);}
@@ -928,3 +1351,21 @@ a[href|="/ripferrbearand20"] {
  height: 250px;
  background-image: url(%%ripferrbearand20%%);  
 } 
+
+/*Name Changes are Below*/
+
+a.author[href$="Prince_Fogeck"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Prince_Fogeck"]:before {font-size:10px!important; visibility:visible!important; content: "Console_Peasent_Fogeck"}
+
+/*Name Changes from the old Plounge mod team*/
+.sidecontentbox a.author.id-t2_5fmql {display:none;}
+a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,a.author.id-t2_52j0w,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
+a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,a.author.id-t2_52j0w:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after{font-size:10px!important;display:block;letter-spacing:normal}
+a.author.id-t2_4mwnz:after{content:"DerpyHiccupKittyTail"}
+a.author.id-t2_8kzeb:after{content:"RAINBOW_PONY_JUICEBOX"}
+a.author.id-t2_52j0w:after{content:"RainbowDashJedi"}
+div.content a.author.id-t2_5agom:after{content:"Chinchy"}
+a.author.id-t2_5o2lh:after{content:"Luna_in_Equestria"}
+a.author.id-t2_4uott:after{content:"3cakes2pies1fork"}
+a.author.id-t2_3klgq:after{content:" is an artist";}
+a.author.id-t2_67xn1:after{content:" Wordsmith_Pony"}

@@ -113,10 +113,16 @@ border-top:1px solid #5f99cf;
 }
 /* 1 is the last position and 6 is the first position. It's backwards cause reasons. */
 
+
 .titlebox blockquote ul:nth-of-type(1) {width: 150px;}
-.titlebox blockquote ul:nth-of-type(2) {width: 190px;} 
-.titlebox blockquote ul:nth-of-type(3) {width: 160px;}
-.titlebox blockquote ul:nth-of-type(4) {width: 60px;}
+.titlebox blockquote ul:nth-of-type(2) {width: 150px;} 
+.titlebox blockquote ul:nth-of-type(3) {width: 150px;}
+.titlebox blockquote ul {width: 150px;}
+
+.titlebox blockquote ul li:first-child a
+{
+ padding: 0px;
+}
 
 
 
@@ -643,7 +649,7 @@ background-image: url(%%mafiafillies%%) !important
 }
 
 a[href|="/mafiadash"], a[href|="/mafiard"] { background-position: -0px -0px }
-a[href|="/mafiararity"] { background-position: -120px -0px; animation:spin 5s infinite; -webkit-animation:spin 5s infinite; }
+a[href|="/mafiararity"] { background-position: -120px -0px;}
 a[href|="/mafiapie"], a[href|="/mafiapinkie"], a[href|="/mafiapp"] { background-position: -240px -0px }
 a[href|="/mafiashy"], a[href|="/mafiafluttershy"] { background-position: -0px -120px }
 a[href|="/mafiaab"] { background-position: -120px -120px }
