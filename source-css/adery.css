@@ -154,7 +154,7 @@ height:40px;
 
 
 /* ------ Emotes! --------- */
-a[href|='/cocoawkward'], a[href|='/funnay'], a[href|='/gildabird'], a[href|='/holyshit'], a[href|='/keytar'], a[href|='/pinkiebat'], a[href|='/ppchug'], a[href|='/rdscary'], a[href|='/twiperturbed'], a[href|='/lyra10']{ 
+a[href|='/cocoawkward'], a[href|='/funnay'], a[href|='/gildabird'], a[href|='/holyshit'], a[href|='/keytar'], a[href|='/pinkiebat'], a[href|='/ppchug'], a[href|='/rdscary'], a[href|='/twiperturbed'], a[href|='/lyra10'], a[href|='/cishetscum']{ 
     display: block;
     clear: none;
     float: left;
@@ -171,6 +171,7 @@ a[href|='/ppchug'] {width:97px; height:140px; background-position: -2px -124px}
 a[href|='/rdscary'] {width:95px; height:120px; background-position: -2px -2px}
 a[href|='/twiperturbed'] {width:107px; height:130px; background-position: -101px -124px}
 a[href|='/lyra10'] {width:196px; height:150px; background-position: -1px -963px}
+a[href|='/cishetscum'] {width:203px; height:200px; background-position: -172px -456px}
 
 a[href|='/cheekyaj'], a[href|='/cheekyderp'], a[href|='/cheekylyra'], a[href|='/cheekypp'], a[href|='/cheekyrara'], a[href|='/cheekyscoots'], a[href|='/cheekyshy'], a[href|='/cheekytwi'], a[href|='/cheekyvs'],a[href|='/cheekynoteass'], a[href|='/roselie'], a[href|='/octibored'], a[href|='/topunf'] {
     display: block;
@@ -458,12 +459,17 @@ a[href|="/twifight"] { display: block; clear: none; float: left; background-imag
 a[href|="/rarafight"] { display: block; clear: none; float: left; background-image: url(%%rarafight%%); width: 175px; height: 175px; background-position: -0px -0px }
 
 a[href|="/bedtimestory"] { display: block; clear: none; float: left; background-image: url(%%bedtimestory%%); width: 412px; height: 200px; background-position: -0px -0px }
+
+a[href|="/myrandall"] { display: block; clear: none; float: left; background-image: url(%%myrandall%%); width: 245px; height: 200px; background-position: -0px -0px }
+
 /* gavin14's nightmode flair fix */
 .res-nightmode .content .flair  {
 background-color: transparent!important;
 }
 
 body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
+
+body.res a.author[href$="SGIG"] {color:#FF9EF2!important}
 
 /* Names */
 
@@ -487,6 +493,7 @@ a.author[href$=EvanMacIan],
 a.author[href$=SirCinnamon],
 a.author[href$=Princess_Molestia_],
 a.author[href$=V17Ds],
+a.author[href$=SGIG],
 a.author[href$=ZZW30],
 a.author[href$=derram_2],
 a.author[href$=CodenameToon],
@@ -503,6 +510,7 @@ content: "";
 }
 
 /* here second */
+a.author[href$=SGIG]:before,
 a.author[href$='Kwulhu']:before,
 a.author[href$='Monoclebear']:before,
 a.author[href$='SGIG']:before,
@@ -535,9 +543,10 @@ visibility:visible!important;
 }
 
 /*and the replacement*/ 
+a.author[href$=SGIG]:before {content: "Fionna"}
 a.author[href$='Kwulhu']:before {content: "Primeminister Kwu"}
 a.author[href$='Monoclebear']:before {content: "Queen Mono XIII"}
-a.author[href$='SGIG']:before {content: "Fig"}
+a.author[href$='SGIG']:before {content: "Fionna"}
 a.author[href$='scix']:before {content: "enohp_xics"}
 a.author[href$='SMUT_ADDICT']:before {content: "Spammy"}
 a.author[href$='BooksAgain']:before {content: "Books"}

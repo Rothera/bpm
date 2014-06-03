@@ -94,6 +94,11 @@ span.res_post_ups {
 text-shadow: orangered 0 0 2px;
 }
 
+/* Footer thing */
+.footer-parent {
+background: url(%%votediagram%%) -710px bottom no-repeat;
+}
+
 /* link flairs */
 .linkflair-closed {
 opacity: 0.4;
@@ -319,6 +324,41 @@ vertical-align: middle;
 .flair-aloe {background-position: 0 -1056px;}
 .flair-mayormare {background-position: 0 -1072px;}
 .flair-surprise {background-position: 0 -1088px;}
+.flair-maud {background-position: 0 -1104px;}
+.flair-bulkbiceps {background-position: 0 -1120px;}
+.flair-spike {background-position: 0 -1136px;}
+.flair-harshwhinny {background-position: 0 -1152px;}
+.flair-cocopommel {background-position: 0 -1168px;}
+.flair-discord {background-position: 0 -1184px;} /* We steal the Plounge's flairs, so /u/RAGErER made this one. */
+.flair-soarin {background-position: 0 -1200px;}
+.flair-lightningdust {background-position: 0 -1216px;}
+.flair-cheesesandwich {background-position: 0 -1232px;}
+.flair-apathia {background-position: 0 -1248px;}
+.flair-discentia {background-position: 0 -1264px;}
+.flair-karma {background-position: 0 -1280px;}
+.flair-sheriffsilverstar {background-position: 0 -1296px;}
+.flair-mspeachbottom {background-position: 0 -1312px}
+.flair-flashsentry {background-position: 0 -1328px;}
+.flair-sunsetshimmer {background-position: 0 -1344px;}
+
+/* Super secret flairs */
+
+.flair-jib {
+animation: jib-flair 20s ease 0s infinite none;
+background-position: -38px 0;
+}
+
+@keyframes jib-flair {
+
+0% {background-position: -38px 0;}
+25% {background-position: -38px 0;}
+33% {background-position: -38px -16px;}
+58% {background-position: -38px -16px;}
+66% {background-position: -38px -32px;}
+91% {background-position: -38px -32px;}
+100% {background-position: -38px -48px;}
+
+}
 
 /* CSS image indicators! */
 
@@ -386,7 +426,7 @@ height: 800px;
  */
 
 /* 70x70a 'motes. */
-a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"], a[href|="/grannyglad"], a[href|="/aloe"], a[href|="/ohyeah"], a[href|="/neutraljack"], a[href|="/fillyfirefly"], a[href|="/rdwat"], a[href|="/cocosmile"], a[href|="/cocohappy"], a[href|="/cocosad"], a[href|="/grimfluff"], a[href|="/ajduckface"], a[href|="/rarapossessed"], a[href|="/maudsmile"], a[href|="/dashsquint"], a[href|="/rastare"], a[href|="/rdfacehoof"], a[href|="/rdtwifacehoof"], a[href|="/rdtwipride"], a[href|="/rdtwismile"], a[href|="/rdtwicrazy"], a[href|="/rdtwibeam"], a[href|="/rdtwisquint"], a[href|="/rdtwistare"], a[href|="/rdtwiponder"], a[href|="/scootcontent"], a[href|="/twilightstare"], a[href|="/nursesaywhat"]
+a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"], a[href|="/grannyglad"], a[href|="/aloe"], a[href|="/ohyeah"], a[href|="/neutraljack"], a[href|="/fillyfirefly"], a[href|="/rdwat"], a[href|="/cocosmile"], a[href|="/cocohappy"], a[href|="/cocosad"], a[href|="/grimfluff"], a[href|="/ajduckface"], a[href|="/rarapossessed"], a[href|="/maudsmile"], a[href|="/dashsquint"], a[href|="/rastare"], a[href|="/rdfacehoof"], a[href|="/rdtwifacehoof"], a[href|="/rdtwipride"], a[href|="/rdtwismile"], a[href|="/rdtwicrazy"], a[href|="/rdtwibeam"], a[href|="/rdtwisquint"], a[href|="/rdtwistare"], a[href|="/rdtwiponder"], a[href|="/scootcontent"], a[href|="/twilightstare"], a[href|="/nursesaywhat"], a[href|="/twiworry"]
 {background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
@@ -418,7 +458,7 @@ a[href|="/rariluna"], a[href|="/superalicorn"]
 {background-image:url(%%200x200b%%);width:200px;height:200px;display:block;float:left;}
 
 /* 250x250a 'motes. */
-a[href|="/karmashark"], a[href|="/jumptheshark"]
+a[href|="/karmashark"], a[href|="/jumptheshark"], a[href|="/season4"]
 {background-image:url(%%250x250a%%);width:250px;height:250px;display:block;float:left;}
 
 /* 300x300a 'motes */
@@ -447,7 +487,7 @@ a[href|="/twidorable"], a[href|="/nerdcheese"], a[href|="/50scoco"], a[href|="/5
 {background-image:url(%%misfitse%%);display:block;float:left;}
 
 /* Misfits f */
-a[href|="/sleepyrarijack"], a[href|="/disapproveowl"], a[href|="/smugspike"], a[href|="/flashsentry"], a[href|="/medicredheart"], a[href|="/imagination"], a[href|="/redheartbutt"], a[href|="/fluttershibe"], a[href|="/graceful"], a[href|="/applejaguar"], a[href|="/happynurse"], a[href|="/curiousredheart"], a[href|="/discordsquee"], a[href|="/glassesdash"], a[href|="/casualdash"], a[href|="/applejackderp"]
+a[href|="/sleepyrarijack"], a[href|="/disapproveowl"], a[href|="/smugspike"], a[href|="/flashsentry"], a[href|="/medicredheart"], a[href|="/imagination"], a[href|="/redheartbutt"], a[href|="/fluttershibe"], a[href|="/graceful"], a[href|="/applejaguar"], a[href|="/happynurse"], a[href|="/curiousredheart"], a[href|="/discordsquee"], a[href|="/glassesdash"], a[href|="/casualdash"], a[href|="/applejackderp"], a[href|="/fusroyay"], a[href|="/flutterborn"]
 {background-image:url(%%misfitsf%%);display:block;float:left;}
 
 /* Grid pos 0,0 'motes. Not needed but for completeness... */
@@ -455,7 +495,7 @@ a[href|="/cadface"], a[href|="/pinkieplease"], a[href|="/regret"], a[href|="/apa
 {background-position: 0 0;}
 
 /* Grid pos 1,0 'motes */
-a[href|="/twispike"], a[href|="/pinkiemail"], a[href|="/chibiluna"], a[href|="/apathiablankstare"], a[href|="/rdohyeah"], a[href|="/ppduckface"], a[href|="/duckfaceselfie"], a[href|="/flutterfreaked"], a[href|="/uwotdahling"], a[href|="/superalicorn"]
+a[href|="/twispike"], a[href|="/pinkiemail"], a[href|="/chibiluna"], a[href|="/apathiablankstare"], a[href|="/rdohyeah"], a[href|="/ppduckface"], a[href|="/duckfaceselfie"], a[href|="/flutterfreaked"], a[href|="/uwotdahling"], a[href|="/superalicorn"], a[href|="/season4"]
 {background-position: -100% 0%;}
 
 /* Grid pos 2,0 'motes */
@@ -573,7 +613,7 @@ a[href|="/shibederp"], a[href|="/nursesaywhat"]
 {background-position: -200% -900%;}
 
 /* Grid pos 0,10 'motes */
-a[href|="/shibeshy"]
+a[href|="/shibeshy"], a[href|="/twiworry"]
 {background-position: -0% -1000%;}
 
 /* Grid pos 1,10 'motes */
@@ -606,6 +646,24 @@ overflow: hidden;
 }
 a[href|="/gravestone"]:hover, a[href|="/theydied"]:hover
 {text-decoration: none !important;}
+
+/* Perplexity */
+a[href|="/twiperplexity"], a[href|="/dashperplexity"], a[href|="/rarityperplexity"], a[href|="/flutterperplexity"], a[href|="/ajperplexity"], a[href|="/pinkieperplexity"], a[href|="/surpriseperplexity"], a[href|="/derpyperplexity"], a[href|="/vinylperplexity"], a[href|="/scootperplexity"], a[href|="/applebloomperplexity"], a[href|="/sweetieperplexity"]
+{background-image:url(%%perplexity%%);display:block;float:left;}
+
+a[href|="/twiperplexity"] {width:70px;height:150px;}
+a[href|="/dashperplexity"] {width:73px;height:150px;background-position: -100px 0;}
+a[href|="/rarityperplexity"] {width:75px;height:150px;background-position: -200px 0;}
+a[href|="/flutterperplexity"] {width:85px;height:150px;background-position: -300px 0;}
+a[href|="/ajperplexity"] {width:72px;height:150px;background-position: 0 -156px;}
+a[href|="/pinkieperplexity"] {width:76px;height:150px;background-position: -100px -155px;}
+a[href|="/surpriseperplexity"] {width:75px;height:150px;background-position: -200px -155px;}
+a[href|="/derpyperplexity"] {width:71px;height:150px;background-position: -300px -155px;}
+a[href|="/vinylperplexity"] {width:85px;height:150px;background-position: 0 -310px;}
+a[href|="/scootperplexity"] {width:70px;height:109px;background-position: -100px -352px;}
+a[href|="/applebloomperplexity"] {width:70px;height:121px;background-position: -200px -339px;}
+a[href|="/sweetieperplexity"] {width:70px;height:116px;background-position: -300px -344px;}
+
 
 /* Pony Warfare a */
 a[href|="/shywarfare"], a[href|="/raritywarfare"], a[href|="/pinkiewarfare"], a[href|="/ajwarfare"], a[href|="/bonwarfare"], a[href|="/lyrawarfare"], a[href|="/vinylwarfare"], a[href|="/octywarfare"], a[href|="/lotuswarfare"], a[href|="/colgatewarfare"], a[href|="/carrotwarfare"], a[href|="/junebugwarfare"], a[href|="/daisywarfare"], a[href|="/doctorwarfare"], a[href|="/shoeshinewarfare"], a[href|="/trixiewarfare"], a[href|="/derpywarfare"], a[href|="/twiwarfare"], a[href|="/aloewarfare"], a[href|="/cheerileewarfare"], a[href|="/rainbowwarfare"], a[href|="/rosewarfare"], a[href|="/lilywarfare"], a[href|="/cherryberrywarfare"], a[href|="/lemonheartswarfare"], a[href|="/merrywaywarfare"], a[href|="/lightningboltwarfare"], a[href|="/heartthrobwarfare"], a[href|="/flitterwarfare"], a[href|="/cloudchaserwarfare"], a[href|="/peppermintcrunchwarfare"], a[href|="/blossomforthwarfare"], a[href|="/milliewarfare"], a[href|="/sunsetblisswarfare"], a[href|="/aprilshowerswarfare"], a[href|="/pinkladywarfare"], a[href|="/diamondmintwarfare"], a[href|="/spikewarfare"], a[href|="/angelwarfare"], a[href|="/winonawarfare"], a[href|="/tankwarfare"], a[href|="/gummywarfare"], a[href|="/owlowisciouswarfare"], a[href|="/owloysiuswarfare"], a[href|="/opalescencewarfare"], a[href|="/photofinishwarfare"], a[href|="/hoitytoitywarfare"], a[href|="/fancypantswarfare"], a[href|="/fleurwarfare"], a[href|="/sapphireshoreswarfare"]
@@ -662,7 +720,7 @@ a[href|="/fleurwarfare"] {width:72px;height:96px;background-position: -200px -15
 a[href|="/sapphireshoreswarfare"] {width:96px;height:96px;background-position: 0 -1600px;}
 
 /* Pony Warfare b */
-a[href|="/celestiawarfare"], a[href|="/lunawarfare"], a[href|="/caramelwarfare"], a[href|="/silverspeedwarfare"], a[href|="/thunderlanewarfare"], a[href|="/twinkleshinewarfare"], a[href|="/twilightskywarfare"], a[href|="/wildfirewarfare"], a[href|="/luckywarfare"], a[href|="/sparklerwarfare"], a[href|="/snailswarfare"], a[href|="/snipswarfare"], a[href|="/truffleshufflewarfare"], a[href|="/halfnotewarfare"], a[href|="/licketysplitwarfare"], a[href|="/rumblewarfare"], a[href|="/featherweightwarfare"], a[href|="/buttonmashwarfare"], a[href|="/highstylewarfare"], a[href|="/powderrougewarfare"], a[href|="/prettyvisionwarfare"], a[href|="/regalcandentwarfare"], a[href|="/roxiewarfare"], a[href|="/soignefoliowarfare"], a[href|="/midnightfunwarfare"]
+a[href|="/celestiawarfare"], a[href|="/lunawarfare"], a[href|="/caramelwarfare"], a[href|="/silverspeedwarfare"], a[href|="/thunderlanewarfare"], a[href|="/twinkleshinewarfare"], a[href|="/twilightskywarfare"], a[href|="/wildfirewarfare"], a[href|="/luckywarfare"], a[href|="/sparklerwarfare"], a[href|="/snailswarfare"], a[href|="/snipswarfare"], a[href|="/truffleshufflewarfare"], a[href|="/halfnotewarfare"], a[href|="/licketysplitwarfare"], a[href|="/rumblewarfare"], a[href|="/featherweightwarfare"], a[href|="/buttonmashwarfare"], a[href|="/highstylewarfare"], a[href|="/powderrougewarfare"], a[href|="/prettyvisionwarfare"], a[href|="/regalcandentwarfare"], a[href|="/roxiewarfare"], a[href|="/soignefoliowarfare"], a[href|="/midnightfunwarfare"], a[href|="/stellawarfare"], a[href|="/cadancewarfare"], a[href|="/shiningarmourwarfare"], a[href|="/shiningarmorwarfare"], a[href|="/chrysaliswarfare"], a[href|="/nightmaremoonwarfare"], a[href|="/sombrawarfare"], a[href|="/peachbottomwarfare"], a[href|="/harshwhinnywarfare"], a[href|="/lightningdustwarfare"], a[href|="/babswarfare"], a[href|="/rainbowblitzwarfare"], a[href|="/pizzellewarfare"], a[href|="/crescendowarfare"], a[href|="/midnightstrikewarfare"], a[href|="/honeycombwarfare"], a[href|="/rosequartzwarfare"], a[href|="/dandybrushwarfare"], a[href|="/honeytonewarfare"], a[href|="/goldenglitterwarfare"], a[href|="/unclewingwarfare"], a[href|="/billneighwarfare"], a[href|="/turfwarfare"], a[href|="/surfwarfare"], a[href|="/berryfrostwarfare"], a[href|="/candymanewarfare"]
 {background-image:url(%%ponywarfareb%%);display:block;float:left;}
 
 a[href|="/celestiawarfare"] {width:100px;height:54px;}
@@ -690,6 +748,31 @@ a[href|="/regalcandentwarfare"] {width:71px;height:79px;background-position: 0 -
 a[href|="/roxiewarfare"] {width:79px;height:87px;background-position: -100px -700px;}
 a[href|="/soignefoliowarfare"] {width:70px;height:98px;background-position: -200px -700px;}
 a[href|="/midnightfunwarfare"] {width:83px;height:100px;background-position: 0 -800px;}
+a[href|="/stellawarfare"] {width:67px;height:94px;background-position: -100px -800px;}
+a[href|="/cadancewarfare"] {width:86px;height:80px;background-position: -200px -800px;}
+a[href|="/shiningarmourwarfare"], a[href|="/shiningarmorwarfare"] {width:84px;height:68px;background-position: 0 -900px;}
+a[href|="/chrysaliswarfare"] {width:78px;height:96px;background-position: -100px -900px;}
+a[href|="/nightmaremoonwarfare"] {width:94px;height:100px;background-position: -200px -900px;}
+a[href|="/sombrawarfare"] {width:84px;height:73px;background-position: 0 -1000px;}
+a[href|="/peachbottomwarfare"] {width:78px;height:80px;background-position: -100px -1000px;}
+a[href|="/harshwhinnywarfare"] {width:83px;height:80px;background-position: -200px -1000px;}
+a[href|="/lightningdustwarfare"] {width:80px;height:81px;background-position: 0 -1100px;}
+a[href|="/babswarfare"] {width:91px;height:79px;background-position: -100px -1100px;}
+a[href|="/rainbowblitzwarfare"] {width:91px;height:72px;background-position: -200px -1100px;}
+a[href|="/pizzellewarfare"] {width:100px;height:74px;background-position: 0 -1200px;}
+a[href|="/crescendowarfare"] {width:92px;height:87px;background-position: -100px -1200px;}
+a[href|="/midnightstrikewarfare"] {width:78px;height:79px;background-position: -200px -1200px;}
+a[href|="/honeycombwarfare"] {width:71px;height:97px;background-position: 0 -1300px;}
+a[href|="/rosequartzwarfare"] {width:82px;height:86px;background-position: -100px -1300px;}
+a[href|="/dandybrushwarfare"] {width:86px;height:93px;background-position: -200px -1300px;}
+a[href|="/honeytonewarfare"] {width:86px;height:95px;background-position: 0 -1400px;}
+a[href|="/goldenglitterwarfare"] {width:76px;height:100px;background-position: -100px -1400px;}
+a[href|="/unclewingwarfare"] {width:59px;height:86px;background-position: -200px -1400px;}
+a[href|="/billneighwarfare"] {width:85px;height:95px;background-position: 0 -1500px;}
+a[href|="/turfwarfare"] {width:72px;height:79px;background-position: -100px -1500px;}
+a[href|="/surfwarfare"] {width:81px;height:70px;background-position: -200px -1500px;}
+a[href|="/berryfrostwarfare"] {width:50px;height:77px;background-position: 0 -1600px;}
+a[href|="/candymanewarfare"] {width:59px;height:72px;background-position: -100px -1600px;}
 
 /* Animated Emotes */
 /* Have moved to /r/ponymotesextra! */
@@ -781,3 +864,5 @@ a[href|="/curiousredheart"] {width:121px;height:150px;background-position: 0 -35
 a[href|="/discordsquee"] {width:115px;height:150px;background-position: -132px -254px;}
 a[href|="/glassesdash"], a[href|="/casualdash"] {width:85px;height:150px;background-position: -247px -254px;}
 a[href|="/applejackderp"] {width:74px;height:100px;background-position: -121px -404px;}
+a[href|="/fusroyay"] {width:150px;height:123px;background-position: -195px -404px;}
+a[href|="/flutterborn"] {width:150px;height:126px;background-position: -200px -527px;}

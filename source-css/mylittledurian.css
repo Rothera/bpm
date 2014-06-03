@@ -63,7 +63,7 @@ Display: block;
 Clear: none;
 Float: left;
 Width: 70px;
-Height: 70px;
+Height: 69px;
 background-image: url(%%fluttersquint%%) !important
 }
 
@@ -147,6 +147,22 @@ a[href|="/sp"]
  height:0px
 }
 
+/*Replaces self post and NSFW thumbnail with Fine Line*/
+.thumbnail.self {
+    background-image: url(%%test%%);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    background-position: 0px 0px;
+}
+.thumbnail.nsfw {
+    background-image: url(%%nsfw%%);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    background-position: 0px 0px;
+}
+
 /*Title flair*/
 .linkflair-important .linkflairlabel {display:none;}
 .linkflair-important p.title a.title {opacity:0;}
@@ -162,4 +178,5 @@ a[href|="/sp"]
  padding:0px 2px;
  margin-right:2px;
  top:-1px;
+
 

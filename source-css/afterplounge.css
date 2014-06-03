@@ -833,7 +833,8 @@ border-top-right-radius: 5px;
 
 a.author[href$="MissSpelled"],
 a.author[href$="RAGErER"],
-a.author[href$="therosebudpony"]
+a.author[href$="therosebudpony"],
+a.author[href$="Mr_Saek"]
 
 { 
 font-size:0!important; 
@@ -848,7 +849,8 @@ content: "";
 a.author[href$="MissSpelled"],
 a.author[href$="RAGErER"],
 a.author[href$="therosebudpony"],
-a.author[href$="Fuzzy_Gauntlets"]
+a.author[href$="Fuzzy_Gauntlets"],
+a.author[href$="Mr_Saek"]
 
 { 
 font-size:0!important; 
@@ -857,14 +859,14 @@ display:inline-block;
 content: "";
 }
 
-.author:before {content: 'Prince ';}
 
 /* ~~~~~~~~~~~~~~~~~~~~~Replacing somebody's name? Add it to the list here too.~~~~~~~~~~~~~~~~ */
 
 a.author[href$="MissSpelled"]:before,
 a.author[href$="RAGErER"]:before,
 a.author[href$="therosebudpony"]:before,
-a.author[href$="Fuzzy_Gauntlets"]:before
+a.author[href$="Fuzzy_Gauntlets"]:before,
+a.author[href$="Mr_Saek"]:before
 
 {
 font-size:12px!important; 
@@ -873,25 +875,11 @@ visibility:visible!important;
 
 /* ~~~~~~~~~~~~~~~~~~~~Replacing somebody's name? Put the replacement here.~~~~~~~~~~~~~~~~~~~~~ */
 
-a.author[href$="MissSpelled"]:before {content:"Prince MisterSpelled"}
-a.author[href$="RAGErER"]:before {content:"Prince IMAGErER of ghosties"}
-a.author[href$="therosebudpony"]:before {content:"Prince therosebudghost of genericdave's butt"}
-a.author[href$="Fuzzy_Gauntlets"]:before {content:"Prince Fuzzy_Ghost of TwiDash shipfics"}
-
-/* ~~~~~~~~~~~~~~~~~~~Coronating someone? Put their title here.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-a.author[href$="NotEnoughApples"]:after {content:" of oranges"}
-a.author[href$="TheKinginYellow"]:after {content:" of horror buttfiction"}
-a.author[href$="HonorInDefeat"]:after {content:" of spooky movies"}
-a.author[href$="unimaginative_ID"]:after {content:" of mediocrity"}
-a.author[href$="Battlesmit"]:after {content:" of Super Hexagon"}
-a.author[href$="therock66"]:after {content:" of fucking swearing"}
-a.author[href$="Dr_appleman"]:after {content:" of bad taste"}
-a.author[href$="dabkilm2"]:after {content:" of drugs (the illegal kind)"}
-a.author[href$="Derpinglots"]:after {content:" of The Twilight Zone"}
-a.author[href$="RavenclawDash"]:after {content:" of not things"}
-a.author[href$="Meeter77"]:after {content:" of lying in bed like a loser"}
-a.author[href$="Entilliumn"]:after {content:" of analyzing things just a teensy weensy bit overzealously"}
+a.author[href$="MissSpelled"]:before {content:"MisterSpelled"}
+a.author[href$="RAGErER"]:before {content:"IMAGErER"}
+a.author[href$="therosebudpony"]:before {content:"therosebudghost"}
+a.author[href$="Fuzzy_Gauntlets"]:before {content:"Fuzzy_Ghost"}
+a.author[href$="Mr_Saek"]:before {content:"Mr_Satan"}
 
 
 /* -----------Spoiler tag within comments.--------------- */  
