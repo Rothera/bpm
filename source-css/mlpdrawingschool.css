@@ -78,9 +78,17 @@ h6 {
     z-index: 1;
    }
 
+.thumbnail.self {
+    background-image: url(%%self%%);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    background-position: 0px 0px;
+}
+
 .thumbnail.nsfw {
 height: 70px;
-background-image:url(%%nsfw%%) ;
+background-image:url(%%nsfw2%%) ;
 background-position: 0px 0px;
 background-repeat: no-repeat;
 } 

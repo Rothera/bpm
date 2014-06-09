@@ -1,6 +1,92 @@
+a[href|="/filly"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%filly-table%%)!important}
 
+/*Rarity*/
+.usertext input[value$="a"] + .usertext-body a[href="/filly"],
+.usertext input[value$="c"] + .usertext-body a[href="/filly"]{background-position: 0 0}
 
-/*Moving header from /r/yiff. Where else would I be spending my time?*/
+/*Pinkie Pie*/
+.usertext input[value$="j"] + .usertext-body a[href="/filly"],
+.usertext input[value$="k"] + .usertext-body a[href="/filly"],
+.usertext input[value$="l"] + .usertext-body a[href="/filly"]{background-position:0 -100%}
+
+/*Scootaloo*/
+.usertext input[value$="0"] + .usertext-body a[href="/filly"]{background-position:0 -200%}
+
+/*Lyra*/
+.usertext input[value$="y"] + .usertext-body a[href="/filly"]{background-position:0 -300%}
+
+/*Vinyl Scratch*/
+.usertext input[value$="1"] + .usertext-body a[href="/filly"]{background-position:0 -400%}
+
+/*Roseluck*/
+.usertext input[value$="4"] + .usertext-body a[href="/filly"]{background-position:0 -500%}
+
+/*Princess Celestia*/
+.usertext input[value$="7"] + .usertext-body a[href="/filly"]{background-position:0 -600%}
+
+/*Princess Cadance*/
+.usertext input[value$="t"] + .usertext-body a[href="/filly"],
+.usertext input[value$="b"] + .usertext-body a[href="/filly"] {background-position:0 -700%}
+
+/*Applejack*/
+.usertext input[value$="d"] + .usertext-body a[href="/filly"],
+.usertext input[value$="e"] + .usertext-body a[href="/filly"],
+.usertext input[value$="f"] + .usertext-body a[href="/filly"]{background-position:-100% 0}
+
+/*Rainbow Dash*/
+.usertext input[value$="m"] + .usertext-body a[href="/filly"],
+.usertext input[value$="n"] + .usertext-body a[href="/filly"]{background-position:-100% -100%}
+
+/*Applebloom*/
+.usertext input[value$="u"] + .usertext-body a[href="/filly"]{background-position:-100% -200%}
+
+/*Bon Bon*/
+.usertext input[value$="z"] + .usertext-body a[href="/filly"]{background-position:-100% -300%}
+
+/*Octavia*/
+.usertext input[value$="2"] + .usertext-body a[href="/filly"],
+.usertext input[value$="o"] + .usertext-body a[href="/filly"]{background-position:-100% -400%}
+
+/*Carrot Top*/
+.usertext input[value$="5"] + .usertext-body a[href="/filly"]{background-position:-100% -500%}
+
+/*Luna*/
+.usertext input[value$="8"] + .usertext-body a[href="/filly"],
+.usertext input[value$="r"] + .usertext-body a[href="/filly"]{background-position:-100% -600%}
+
+/*Zecora*/
+.usertext input[value$="v"] + .usertext-body a[href="/filly"]{background-position:-100% -700%}
+
+/*Twilight Sparkle*/
+.usertext input[value$="g"] + .usertext-body a[href="/filly"],
+.usertext input[value$="h"] + .usertext-body a[href="/filly"],
+.usertext input[value$="i"] + .usertext-body a[href="/filly"]{background-position:-200% 0}
+
+/*Fluttershy*/
+.usertext input[value$="p"] + .usertext-body a[href="/filly"],
+.usertext input[value$="q"] + .usertext-body a[href="/filly"]{background-position:-200% -100%}
+
+/*Sweetiebelle*/
+.usertext input[value$="w"] + .usertext-body a[href="/filly"]{background-position:-200% -200%}
+
+/*Cheerilee*/
+.usertext input[value$="s"] + .usertext-body a[href="/filly"]{background-position:-200% -300%}
+
+/*Spitfire*/
+.usertext input[value$="3"] + .usertext-body a[href="/filly"]{background-position:-200% -400%}
+
+/*Derpy*/
+.usertext input[value$="6"] + .usertext-body a[href="/filly"]{background-position:-200% -500%}
+
+/*Karma*/
+.usertext input[value$="9"] + .usertext-body a[href="/filly"]{background-position:-200% -600%}
+
+/*Minuette*/
+.usertext input[value$="x"] + .usertext-body a[href="/filly"]{background-position:-200% -700%}
+
+/*End filly code*/
+
 
 #header {
 	border: 0px;
@@ -243,6 +329,16 @@ a[href="/flitterheart"] {
     background-image: url(%%flitterheart%%)
 }
 
+a[href="/twikillme"] {
+    background-position: 0px 0px;
+    Display: block;
+    Clear: none;
+    Float: left;
+    Width: 100px;
+    Height: 139px;
+    background-image: url(%%twikillme%%)
+}
+
 a[href|="/best"] {
     display: block;
     clear: none;
@@ -430,7 +526,7 @@ a.author[href$="/therosebudpony"]:after {
 /* STYLESHEET EMOTES */
 
 /* 70 by 70 */
-a[href="/fluttershyhide"], a[href="/pinkiehide"], a[href="/rosecute"] {
+a[href="/chibirose"], a[href="/fluttershyhide"], a[href="/pinkiehide"], a[href="/rosecute"], a[href="/rosenotimpressed"], a[href="/roseyay"] {
     display: block;
     clear: none;
     float: left;
@@ -438,12 +534,15 @@ a[href="/fluttershyhide"], a[href="/pinkiehide"], a[href="/rosecute"] {
     height: 70px;
     background-image: url(%%70by70%%) !important
 }
-a[href="/fluttershyhide"] { width: 70px; height: 75px; background-position: -5px -5px; }
-a[href="/pinkiehide"] { width: 70px; height: 70px; background-position: -85px -5px; }
-a[href="/rosecute"] { width: 70px; height: 71px; background-position: -85px -85px; }
+a[href="/chibirose"] {width: 70px; height: 70px; background-position: -5px -5px; }
+a[href="/fluttershyhide"] { width: 70px; height: 75px; background-position: -85px -5px; } 
+a[href="/pinkiehide"] { width: 70px; height: 70px; background-position: -5px -90px; }
+a[href="/rosecute"] { width: 70px; height: 71px; background-position: -85px -90px; }
+a[href="/rosenotimpressed"] { width: 70px; height: 70px; background-position: -165px -5px; }
+a[href="/roseyay"] { width: 70px; height: 80px; background-position: -165px 85px; }
 
 /* 100 by 100 */
-a[href="/berryuhh"], a[href="/carrotshock"], a[href="/cheershrug"], a[href="/clickityhack"], a[href="/crystalpinkie"], a[href="/flitterexcite"], a[href="/hwpeekaboo"], a[href="/mmkay"], a[href="/raindropsheh"], a[href="/sunsetplot"], a[href="/wmflitter"] {
+a[href="/berryuhh"], a[href="/carrotshock"], a[href="/cheershrug"], a[href="/clickityhack"], a[href="/crystalpinkie"], a[href="/flitterexcite"], a[href="/hwpeekaboo"], a[href="/mmkay"], a[href="/pinkieissad"], a[href="/raindropsheh"], a[href="/rarfacehoof"], a[href="/sunsetplot"], a[href="/wmflitter"] {
     display: block;
     clear: none;
     float: left;
@@ -459,9 +558,11 @@ a[href="/crystalpinkie"] { width: 100px; height: 100px; background-position: -11
 a[href="/flitterexcite"] { width: 100px; height: 110px; background-position: -225px -115px; }
 a[href="/hwpeekaboo"] { width: 100px; height: 100px; background-position: -5px -235px; }
 a[href="/mmkay"] { width: 100px; height: 100px; background-position: -115px -235px; }
-a[href="/raindropsheh"] { width: 100px; height: 100px; background-position: -225px -235px; }
-a[href="/sunsetplot"] { width: 100px; height: 95px; background-position: -335px -5px; }
-a[href="/wmflitter"] {width: 100px; height: 115px; background-position: -335px -110px; }
+a[href="/pinkieissad"] {width: 100px; height: 110px; background-position: -225px -235px;}
+a[href="/raindropsheh"] { width: 100px; height: 100px; background-position: -335px -5px; }
+a[href="/rarfacehoof"] {width: 100px; height: 114px; background-position: -335px -115px;}
+a[href="/sunsetplot"] { width: 100px; height: 95px; background-position: -335px -239px; }
+a[href="/wmflitter"] {width: 100px; height: 115px; background-position: -335px -344px; }
 
 /* 100 by 130 */
 a[href="/babsseed"], a[href="/carrotexcite"], a[href="/carrotpose"], a[href="/ccflitcheer"], a[href="/dtlaugh"], a[href="/dtmad"], a[href="/dtreally"], a[href="/dtwut"], a[href="/harshwhinny"], a[href="/msawkward"], a[href="/professionalism"], a[href="/smithlaugh"] {

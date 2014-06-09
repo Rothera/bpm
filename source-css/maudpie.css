@@ -338,6 +338,12 @@ a[href|="/maudparty"]
 a[href|="/rmaudparty"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudparty%%)!important; background-position: 0 -100%;}
 
+a[href|="/maudglare"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudmadglare%%)!important; background-position: 0 0;}
+
+a[href|="/rmaudglare"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudmadglare%%)!important; background-position: 0 -100%;}
+
 a[href|="/maudheart"]
 {display:block;clear:none;float:left;width:131px;height:200px;background-image:url(%%maudpieheart%%)!important; background-position: 0 0;}
 
@@ -422,6 +428,16 @@ background-position:0 0;
 
 a[href|="/rmaudexcited"],a[href|="/rmpexcited"] {
 display:block;clear:none;float:left;width:141px;height:150px;background-image:url(%%maudexcited-flipped%%)!important;
+background-position:0 0;
+}
+
+a[href|="/maudblink"],a[href|="/mpblink"] {
+display:block;clear:none;float:left;width:140px;height:200px;background-image:url(%%maudblink%%)!important;
+background-position:0 0;
+}
+
+a[href|="/rmaudblink"],a[href|="/rmpblink"] {
+display:block;clear:none;float:left;width:140px;height:200px;background-image:url(%%maudblink-flipped%%)!important;
 background-position:0 0;
 }
 

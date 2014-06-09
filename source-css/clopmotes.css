@@ -302,7 +302,7 @@ a[href|="/shykisscock"]
 {background-image:url(%%150x150a%%);width:150px;height:150px;display:block;float:left;}
 
 /* 200x200a 'motes. */
-a[href|="/cheesesocks"], a[href|="/festivebuttplug"], a[href|="/wetqueen"]
+a[href|="/cheesesocks"], a[href|="/festivebuttplug"], a[href|="/wetqueen"], a[href|="/doublemoon"], a[href|="/wetmoons"], a[href|="/kissmyass"], a[href|="/tiapresenting"], a[href|="/creammuffin"], a[href|="/sexygaming"]
 {background-image:url(%%200x200a%%);width:200px;height:200px;display:block;float:left;}
 
 /* 250x250a 'motes. */
@@ -325,9 +325,37 @@ a[href|="/festivebuttplug"]
 a[href|="/wetqueen"]
 {background-position: -200% 0%;}
 
+/* Grid pos 0,1 'motes */
+a[href|="/doublemoon"]
+{background-position: 0% -100%;}
+
+/* Grid pos 1,1 'motes */
+a[href|="/wetmoons"]
+{background-position: -100% -100%;}
+
+/* Grid pos 2,1 'motes */
+a[href|="/kissmyass"]
+{background-position: -200% -100%;}
+
+/* Grid pos 0,2 'motes */
+a[href|="/tiapresenting"]
+{background-position: 0% -200%;}
+
+/* Grid pos 1,2 'motes */
+a[href|="/creammuffin"]
+{background-position: -100% -200%;}
+
+/* Grid pos 2,2 'motes */
+a[href|="/sexygaming"]
+{background-position: -200% -200%;}
+
 /* Misfits a */
-a[href|="/trixiepresents"], a[href|="/queenpresents"], a[href|="/itschristmas"], a[href|="/queennurse"], a[href|="/cherry"], a[href|="/fullmoon"]
+a[href|="/trixiepresents"], a[href|="/queenpresents"], a[href|="/itschristmas"], a[href|="/queennurse"], a[href|="/cherry"], a[href|="/fullmoon"], a[href|="/pinkiepresents"], a[href|="/bbinsocks"]
 {background-image:url(%%misfitsa%%);display:block;float:left;}
+
+/* Misfits b */
+a[href|="/nmmbj"], a[href|="/nmmbent"], a[href|="/applesocks"]
+{background-image:url(%%misfitsb%%);display:block;float:left;}
 
 /* Animated Emotes */
 a[href|="/twichug"], a[href|="/chugchugchug"] {background: url(%%chugchugchug%%) no-repeat;width:150px;height:116px;display:block;float:left;}
@@ -340,3 +368,8 @@ a[href|="/itschristmas"] {width: 187px;height:250px;background-position: 0px -20
 a[href|="/queennurse"] {width: 195px;height:250px;background-position: -187px -200px;}
 a[href|="/cherry"] {width: 200px;height:250px;background-position: 0px -450px;}
 a[href|="/fullmoon"] {width: 197px;height:250px;background-position: -200px -450px;}
+a[href|="/pinkiepresents"] {width: 170px;height:200px;background-position: 0px -700px;}
+a[href|="/bbinsocks"] {width: 225px;height:174px;background-position: -170px -700px;}
+a[href|="/nmmbj"] {width: 225px;height:193px;}
+a[href|="/nmmbent"] {width: 182px;height:225px;background-position: -225px 0px;}
+a[href|="/applesocks"] {width: 144px;height:225px;background-position: 0px -193px;}

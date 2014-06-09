@@ -46,54 +46,14 @@ div.titlebox span.number:after {
 
 /* Header */
 #header {
-    background-color: #cee3f8; 
-    background-image: url(%%rainboom-small3%%);
+    background-color: #bdd2e7; 
+    /* background-image: url(%%rainboom-small3%%); */
     background-repeat:repeat-x;
     border-bottom: 1px solid #000;
-    height: 147px;
+    height: 150px;
     margin: 0px;
     padding-top: 0px;
     color: #000;
-    }
-
-/* Top */
-#sr-header-area {
-    background-color: white;
-    border-bottom: 1px white;
-    }
-.sr-bar a, .sr-bar .separator {
-    color: #111 !important
-    }
-#sr-more-link {
-    display: none
-    }
-.dropdown .title {
-    background-color: white;
-    color: #111 !important
-    }
-.drop-choices .choice {
-    color: white !important
-    }
-.dropdown .title {
-    color: #111
-    }
-
-/* Tabs */
-.tabmenu li a {
-    -moz-border-radius-topleft: 4px;
-    -moz-border-radius-topright: 4px;
-    -webkit-border-top-left-radius: 4px;
-    -webkit-border-top-right-radius: 4px
-    }
-.tabmenu li a {
-    background-color: #fff !important;
-    color: #999
-    }
-.tabmenu li.selected a {
-    background-color: #fff !important;
-    color: black;
-    border-color: black;
-    border-bottom:1px black;
     }
 
 /* Text effects */
@@ -685,7 +645,7 @@ a[href="/freakout"]:hover:after {
     position: absolute;
     top: 5px;
     left: 120px;
-    margin: 60px 410px 0px 0px;
+    margin: 25px 410px 0px 0px;
     padding: 31px 7px 3px 60px;
     list-style: none;
     display: block;
