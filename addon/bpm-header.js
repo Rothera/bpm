@@ -1,6 +1,6 @@
 // ==UserScript==
 // @description View Reddit ponymotes across the site
-// @downloadURL http://rainbow.adery.net/betterponymotes.user.js
+// @downloadURL https://ponymotes.net/betterponymotes.user.js
 // @grant GM_log
 // @grant GM_getValue
 // @grant GM_setValue
@@ -11,7 +11,7 @@
 // @require /*{{require_prefix}}*//bpm-resources.js?p=2&dver=/*{{data_version}}*/
 // @require /*{{require_prefix}}*//pref-setup.js?p=2&cver=/*{{code_version}}*/
 // @run-at document-start
-// @updateURL http://rainbow.adery.net/betterponymotes.user.js
+// @updateURL https://ponymotes.net/betterponymotes.user.js
 // @version /*{{version}}*/
 // ==/UserScript==
 
