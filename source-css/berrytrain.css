@@ -195,115 +195,6 @@ div.over18 .entry .buttons .first{padding-left: 0px}
 
 /*No problem*/
 
-/* Submit Buttons */
-.morelink 
-{
-    font-weight:normal;
-    letter-spacing:0;
-    background:#FF6633;
-    border: none;
-    -moz-border-radius:2px;
-    -webkit-border-radius:2px;
-    -o-border-radius:2px;
-    -ms-border-radius:2px;
-    -khtml-border-radius:2px;
-    border-radius:2px;
-    height: 30px;
-    line-height: 30px;
-    overflow: hidden;
-    color: #CCFFFF;
-}
-
-.morelink:hover
-{
-    background: #CCFFFF;
-    background-color: #CC6699;
-    border-color: #FFCCCC;
-}
-
-.morelink .nub 
-{
-    display: none;
-}
-
-.morelink 
-{
-    color:#FFFFFF; 
-    font-family:Verdana, Arial, sans-serif; 
-    font-size:16px; 
-    width: 145px;
-}
-
-.sidebox.submit-link .morelink::before 
-{
-    display: block;
-    clear: none;
-    content: "Submit Waffle";
-    font-size: 100%;
-}
-
-.sidebox.submit-text .morelink::before 
-{
-    display: block;
-    clear: none;
-    content: "Submit Text";
-    font-size: 100%;
-}
-
-.sidebox.submit .morelink a 
-{
-    position: absolute;
-    top: 0;
-    padding-left: 1000px;
-    font-size: 0px;
-    text-align: right;
-    color: #FFFFFF;
-}
-
-.sidebox.submit.submit-link {
-    width: 150px;
-}
-
-.sidebox.submit.submit-text
-{
-    margin-top: -42px;
-    margin-left: 153px;
-}
-
-.sidebox.create 
-{
-    display: none;
-}
-
-.sidebox.submit.disabled 
-{
-    display: none;
-}
-
-/* Nightmode Fix */
-.res-nightmode .sidebox.submit.submit-text
-{
-    background: none !important;
-    margin-top: -45px;
-    margin-left: 153px;
-}
-
-.res-nightmode .sidebox 
-{
-    padding-left: 0px !important;
-    border: 2px solid #151515 !important;
-}
-
-.res-nightmode .morelink 
-{
-     height: 29px !important;
-}
-
-.res-nightmode .morelink
-{
-    background: #383838 !important;
-}
-
 /* HEADER */
 #header { background: url(%%up%%); }
 
@@ -493,31 +384,6 @@ background:url(%%BerryMail%%);
 
 /*The End of the Mega Awesome /r/Berrytrain exclusive mail changer machine 4200 with air conditioning and scones*/
 
-/* NAME CHANGE */
-.sidecontentbox a.author[href$="/therosebudpony"]:after {
-    content: "Queen Ging Rosebud the butterfly";
-    font-size: 13px !important;
-    visibility: visible !important;
-    display: block;
-    letter-spacing: normal
-}
-
-a.author[href$="/therosebudpony"] {
-    font-size: 0px !important;
-    display: inline-block;
-    vertical-align: bottom;
-    overflow: hidden;
-    letter-spacing: -20px
-}
-
-a.author[href$="/therosebudpony"]:after {
-    content: "Queen Ging Rosebud the butterfly";
-    font-size: 10px !important;
-    visibility: visible !important;
-    display: block;
-    letter-spacing: normal
-}
-
 .author[href$="/KillerRabbit1253"]:before {content: 'King Queen ' ;}
 .author[href$="/KillerRabbit1253"]:after {content: ' is the princess of ice cream, BerryTrain, and Boxy' ;}
 
@@ -542,7 +408,7 @@ a[href="/rosenotimpressed"] { width: 70px; height: 70px; background-position: -1
 a[href="/roseyay"] { width: 70px; height: 80px; background-position: -165px 85px; }
 
 /* 100 by 100 */
-a[href="/berryuhh"], a[href="/carrotshock"], a[href="/cheershrug"], a[href="/clickityhack"], a[href="/crystalpinkie"], a[href="/flitterexcite"], a[href="/hwpeekaboo"], a[href="/mmkay"], a[href="/pinkieissad"], a[href="/raindropsheh"], a[href="/rarfacehoof"], a[href="/sunsetplot"], a[href="/wmflitter"] {
+a[href="/berryuhh"], a[href="/carrotshock"], a[href="/celsit"], a[href="/cheershrug"], a[href="/clickityhack"], a[href="/crystalpinkie"], a[href="/ewwstraight"], a[href="/flitterexcite"], a[href="/hwpeekaboo"], a[href="/mmkay"], a[href="/pinkieissad"], a[href="/raindropsheh"], a[href="/rarfacehoof"], a[href="/sunsetplot"], a[href="/wmflitter"] {
     display: block;
     clear: none;
     float: left;
@@ -552,17 +418,19 @@ a[href="/berryuhh"], a[href="/carrotshock"], a[href="/cheershrug"], a[href="/cli
 }
 a[href="/berryuhh"] { width: 100px; height: 100px; background-position: -5px -5px; }
 a[href="/carrotshock"] { width: 100px; height: 100px; background-position: -115px -5px; }
-a[href="/cheershrug"] { width: 100px; height: 100px; background-position: -225px -5px; }
-a[href="/clickityhack"] { width: 100px; height: 100px; background-position: -5px -115px; }
+a[href="/celsit"] {width: 100px; height: 90px; background-position: -225px -5px; }
+a[href="/cheershrug"] { width: 100px; height: 100px; background-position: -225px -105px; }
+a[href="/clickityhack"] { width: 100px; height: 100px; background-position: -5px -215px; }
 a[href="/crystalpinkie"] { width: 100px; height: 100px; background-position: -115px -115px; }
-a[href="/flitterexcite"] { width: 100px; height: 110px; background-position: -225px -115px; }
-a[href="/hwpeekaboo"] { width: 100px; height: 100px; background-position: -5px -235px; }
-a[href="/mmkay"] { width: 100px; height: 100px; background-position: -115px -235px; }
-a[href="/pinkieissad"] {width: 100px; height: 110px; background-position: -225px -235px;}
-a[href="/raindropsheh"] { width: 100px; height: 100px; background-position: -335px -5px; }
-a[href="/rarfacehoof"] {width: 100px; height: 114px; background-position: -335px -115px;}
-a[href="/sunsetplot"] { width: 100px; height: 95px; background-position: -335px -239px; }
-a[href="/wmflitter"] {width: 100px; height: 115px; background-position: -335px -344px; }
+a[href="/ewwstraight"] { width: 100px; height: 100px; background-position: -225px -215px; }
+a[href="/flitterexcite"] { width: 100px; height: 110px; background-position: -335px -5px; }
+a[href="/hwpeekaboo"] { width: 100px; height: 100px; background-position: -335px -125px; }
+a[href="/mmkay"] { width: 100px; height: 100px; background-position: -335px -235px; }
+a[href="/pinkieissad"] {width: 100px; height: 110px; background-position: -5px -345px;}
+a[href="/raindropsheh"] { width: 100px; height: 100px; background-position: -115px -345px; }
+a[href="/rarfacehoof"] {width: 100px; height: 114px; background-position: -225px -345px;}
+a[href="/sunsetplot"] { width: 100px; height: 95px; background-position: -335px -345px; }
+a[href="/wmflitter"] {width: 100px; height: 115px; background-position: -445px -5px; }
 
 /* 100 by 130 */
 a[href="/babsseed"], a[href="/carrotexcite"], a[href="/carrotpose"], a[href="/ccflitcheer"], a[href="/dtlaugh"], a[href="/dtmad"], a[href="/dtreally"], a[href="/dtwut"], a[href="/harshwhinny"], a[href="/msawkward"], a[href="/professionalism"], a[href="/smithlaugh"] {
@@ -610,7 +478,7 @@ a[href="/waffle"] { width: 100px; height: 150px; background-position: -5px -465p
 a[href="/winterwat"] {width: 100px; height: 151px; background-position: -115px -465px;}
 
 /* 150 by 100 */
-a[href="/abandbabs"], a[href="/berrypounce"], a[href="/cheerswoon"], a[href="/dtsshaha"], a[href="/flitterstretch"], a[href="/fritteryay"], a[href="/lunabored"], a[href="/nataliapoklonskaya"], a[href="/wintersleep"]{
+a[href="/abandbabs"], a[href="/berrypounce"], a[href="/cadblush"], a[href="/ccflittada"], a[href="/celstartled"], a[href="/cheerswoon"], a[href="/ddrdhug"], a[href="/dtsshaha"], a[href="/flitterstretch"], a[href="/flufflesquee"], a[href="/fritteryay"], a[href="/lunabored"], a[href="/nataliapoklonskaya"], a[href="/rosescrunch"], a[href="/wintersleep"]{
     display: block;
     clear: none;
     float: left;
@@ -620,13 +488,19 @@ a[href="/abandbabs"], a[href="/berrypounce"], a[href="/cheerswoon"], a[href="/dt
 }
 a[href="/abandbabs"] { width: 150px; height: 100px; background-position: -5px -5px; }
 a[href="/berrypounce"] { width: 150px; height: 100px; background-position: -165px -5px; }
-a[href="/cheerswoon"] {width: 150px; height: 115px; background-position: -5px -115px;}
-a[href="/dtsshaha"] { width: 150px; height: 110px; background-position: -165px -115px; }
-a[href="/flitterstretch"] {width: 150px; height: 110px; background-position: -165px -235px; }
-a[href="/fritteryay"] { width: 150px; height: 110px; background-position: -325px -5px; }
-a[href="/lunabored"] { width: 150px; height: 90px; background-position: -325px -125px; }
-a[href="/nataliapoklonskaya"] { width: 195px; height: 100px; background-position: -325px -225px; }
-a[href="/wintersleep"] {width: 150px; height: 118px; background-position: -5px -335px;}
+a[href="/cadblush"] {width: 150px; height: 84px; background-position: -325px -5px; }
+a[href="/ccflittada"] { width: 150px; height: 113px; background-position: -325px -99px; }
+a[href="/celstartled"] { width: 150px; height: 115px; background-position: -5px -222px; }
+a[href="/cheerswoon"] {width: 150px; height: 115px; background-position: -165px -222px; }
+a[href="/ddrdhug"] { width: 150px; height: 97px; background-position: -325px -222px; }
+a[href="/dtsshaha"] { width: 150px; height: 110px; background-position: -325px -329px; }
+a[href="/flitterstretch"] {width: 150px; height: 110px; background-position: -485px -5px; }
+a[href="/flufflesquee"] { width: 153px; height: 100px; background-position: -485px -125px;}
+a[href="/fritteryay"] { width: 150px; height: 110px; background-position: -485px -235px; }
+a[href="/lunabored"] { width: 150px; height: 90px; background-position: -5px -355px; }
+a[href="/nataliapoklonskaya"] { width: 195px; height: 100px; background-position: -485px -355px; }
+a[href="/rosescrunch"] { width: 158px; height: 100px; background-position: -5px -465px; }
+a[href="/wintersleep"] {width: 150px; height: 118px; background-position: -173px -465px; }
 
 /* 150 by 130 */
 a[href="/arousing"], a[href="/babsmean"], a[href="/carrotannoyed"], a[href="/flitterlook"], a[href="/flitternotbad"], a[href="/forgiveme"], a[href="/intensegaming"] {

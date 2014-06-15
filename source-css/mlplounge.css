@@ -1,6 +1,6 @@
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Common Ponies"}
+div.titlebox .subscribers span.number:after {content:" Equestrian Cup Hooligans"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
 div.titlebox p.users-online span.number:after { content: " Plounging about" }
 div.titlebox p.users-online span.word { display: none }
@@ -156,16 +156,16 @@ body a[href="/spoiler"]:hover{color:white!important}/* Spoiler Setter*/
 
 div.over18 .entry .buttons .first{padding-left: 0px}
 
-/*Footer image by /u/DoctorDerpy*/
+/*Footer image by frenchie <3*/
 
 .footer-parent
 {
  padding-bottom: 210px;
- height:500px;
+ height:716px;
  clear:both;
  text-align:center;
  width:100%;
- background-image:url(%%DoctorDerpy%%);
+ background-image:url(%%3-lions%%);
  background-repeat:no-repeat;
  margin-bottom:-25px;
  background-position: bottom center;
@@ -197,9 +197,9 @@ h3.imgTitle{
 .side a[href="/r/MLPLounge/new/"]
 {
  display:block;
- width:84px;
+ width:87px;
  height:100px;
- background:url(%%princess-lounge%%);
+ background:url(%%englandsbravetavi%%);
  position:fixed; 
  top: 320px;
  right: 20px;
@@ -207,12 +207,12 @@ h3.imgTitle{
 }
 
 
-body{background:url(%%twilightbackground%%) no-repeat fixed center center}
+body{background:url(%%taviengland%%) no-repeat fixed center center}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
 .content .md h1:before{content:">"}
 
 .res-nightmode body {
-background: url(%%twilightbackground%%) center center no-repeat fixed #222222 !important;
+background: url(%%taviengland%%) center center no-repeat fixed #222222 !important;
 }
 
 body.res-nightmode div.content {
@@ -498,7 +498,7 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 
 
 a[href|="/filly"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%filly-table%%)!important}
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%filly-table-wc%%)!important}
 
 /*Rarity*/
 .usertext input[value$="a"] + .usertext-body a[href="/filly"],
@@ -529,6 +529,12 @@ a[href|="/filly"]
 
 /*Twist*/
 .usertext input[value$="l"] + .usertext-body a[href="/filly"] {background-position:0 -800%}
+
+/*Cloud Chaser 0 -900%*/
+
+/*Pipsqueak 0 -1000%*/
+
+/*Big Macintosh 0 -1100%*/
 
 /*Applejack*/
 .usertext input[value$="d"] + .usertext-body a[href="/filly"],
@@ -561,6 +567,12 @@ a[href|="/filly"]
 /*Queen Chrysalis*/
 .usertext input[value$="f"] + .usertext-body a[href="/filly"]{background-position:-100% -800%}
 
+/*Flitter -100% -900%*/
+
+/*Rumble -100% -1000%*/
+
+/*Braeburn -100% -1100%*/
+
 /*Twilight Sparkle*/
 .usertext input[value$="g"] + .usertext-body a[href="/filly"],
 .usertext input[value$="h"] + .usertext-body a[href="/filly"]{background-position:-200% 0}
@@ -590,6 +602,12 @@ a[href|="/filly"]
 /*The Great and Powerful Trixie*/
 .usertext input[value$="i"] + .usertext-body a[href="/filly"]{background-position:-200% -800%}
 
+/*Maud -200% -900%*/
+
+/*Soarin -200% -1000%*/
+
+/*Bulk Biceps -200% -1100%*/
+
 /*End filly code*/
 
 /*Below is all the code for the sidebar emote tables*/
@@ -604,7 +622,7 @@ a[href|="/filly"]
 .side .md table:nth-of-type(4) th:nth-of-type(1):after {content:"e";}
 .side .md table:nth-of-type(4) tr:nth-of-type(odd) td + td:after {background-image:url(%%emotes%%);}
 .side .md table:nth-of-type(5) th:nth-of-type(1):after {content:"f";}
-.side .md table:nth-of-type(5) tr:nth-of-type(odd) td + td:after {background-image:url(%%filly-table%%);}
+.side .md table:nth-of-type(5) tr:nth-of-type(odd) td + td:after {background-image:url(%%filly-table-wc%%);}
 .side .md table td {padding:0;}
 
 .side .md table th:nth-of-type(2):after {content:"0";}
@@ -1135,7 +1153,7 @@ a[href|="/ripferrbearand20"] {
 .flair-cmcal {background-position: -300% -100%}
 .flair-cmcal:hover {background-position: -200% -300%} /*For french_guy_al; Tavi Hover*/
 .flair-cmcdc {background-position: -300% -100%}
-.flair-cmcdc:hover {background-position: -100% -200%} /*For DoomedCivilian; Celestia Hover*/ 
+.flair-cmcdc:hover {background-position: -300% 0} /*For DoomedCivilian; Applejack Hover*/ 
 
 /*Doomed Civilians to-add list; Feel free to add to this list!
 Emotes! Main sub has more emotes; They have been moved over, they just need to be messed with. Fear the DC, for he is bored.
@@ -1145,9 +1163,14 @@ Emotes! Main sub has more emotes; They have been moved over, they just need to b
 
 /*Name Changes are Below*/
 
+a.author[href$="ZephyrC"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="ZephyrC"]:before {font-size:10px!important; visibility:visible!important; content: "Steve Carlsberg"}
 
 a.author[href$="BlameTheJungler"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="BlameTheJungler"]:before {font-size:10px!important; visibility:visible!important; content: "LeafOnTheWind"}
+
+a.author[href$="Saakra"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Saakra"]:before {font-size:10px!important; visibility:visible!important; content: "My Waifu would never read my fics ;_;"}
 
 /*Name Changes from the old Plounge mod team*/
 .sidecontentbox a.author.id-t2_5fmql {display:none;}
@@ -1161,3 +1184,14 @@ a.author.id-t2_5o2lh:after{content:"Luna_in_Equestria"}
 a.author.id-t2_4uott:after{content:"3cakes2pies1fork"}
 a.author.id-t2_3klgq:after{content:" is an artist";}
 a.author.id-t2_67xn1:after{content:" Wordsmith_Pony"}
+
+/*Old header text ~ Y'know, a pastel-coloured unicorn sitting in an armchair, drinking tea, while possibly observing some offscreen absurdity is about as accurate a depiction as you'll get for this subreddit........ ~*/
+
+a[href|="/tavicheer"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 186px;
+ height: 150px;
+ background-image: url(%%itscominghome2%%);
+} 
