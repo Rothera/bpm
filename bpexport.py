@@ -31,6 +31,9 @@ def encode(emote, context):
     root = emote.source.variant_matches[emote]
     all_tags = root.all_tags(context) | emote.all_tags(context)
 
+    for tag in list(all_tags):
+        all_tags |= set(context.tag_config["TagAliases"].get(tag, []))
+
     is_nsfw = "+nsfw" in all_tags
     size = max(base.size) if hasattr(base, "size") else 0
     emitted_tags = [tag for tag in all_tags if tag not in context.tag_config["HiddenTags"]]
@@ -44,6 +47,8 @@ def encode(emote, context):
         info["image_url"] = base.image_url
         info["size"] = base.size
         info["offset"] = base.offset
+    if emote.name != root.name: # Redirect
+        info["primary"] = root.name
     return info
 
 def main():
