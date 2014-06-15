@@ -10,11 +10,11 @@
 
 "use strict";
 
-var page_mod = require("page-mod");
+var page_mod = require("sdk/page-mod");
 var request = null;
-var self = require("self");
-var simple_prefs = require("simple-prefs");
-var simple_storage = require("simple-storage");
+var self = require("sdk/self");
+var simple_prefs = require("sdk/simple-prefs");
+var simple_storage = require("sdk/simple-storage");
 var tabs = null;
 var timers = null;
 
@@ -23,9 +23,9 @@ var timers = null;
 // the other modules we load we can't easily do without, so just crash if those
 // are broken.
 try {
-    request = require("request");
-    tabs = require("tabs");
-    timers = require("timers");
+    request = require("sdk/request");
+    tabs = require("sdk/tabs");
+    timers = require("sdk/timers");
 } catch(e) {
     console.error("BPM: ERROR: Failed to load Addon SDK modules. Some important functionality may be broken or missing.");
     console.error("BPM: ERROR: On line " + e.lineNumber + ": ", e.name + ": " + e.message)
