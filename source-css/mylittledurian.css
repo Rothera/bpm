@@ -147,6 +147,16 @@ a[href|="/sp"]
  height:0px
 }
 
+/*Tabthingy*/
+.tabmenu li a {
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-topleft: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
 /*Replaces self post and NSFW thumbnail with Fine Line*/
 .thumbnail.self {
     background-image: url(%%flselfthumbnail22%%);

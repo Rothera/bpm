@@ -1131,17 +1131,15 @@ a[href|="/ripferrbearand20"] {
 
 .flair-lightningdust {background-position: 0% -1900%}
 .flair-cheesesandwich {background-position: -100% -1900%}
-.flair-burrito {background-position: -200% -1900%} /*Not user selectable*/
-.flair-apathia {background-position: -300% -1900%;transition-delay:30s} /* /u/Jibodeah fixed it to be readable */
-.flair-apathia:active {background-position: -100% -2000%;transition-delay:0s!important}
+.flair-apathia {background-position: -300% -1900%} /* /u/Jibodeah fixed it to be readable */
 
 .flair-discentia {background-position: 0% -2000%}
-.flair-karma {background-position: -100% -2000%;transition-delay:30s}
-.flair-karma:active {background-position: -300% -1900%;transition-delay:0s!important}
+.flair-karma {background-position: -100% -2000%}
 .flair-silverstar {background-position: -200% -2000%}
 .flair-peachbottom {background-position: -300% -2000%}
 
-.flair-flash {background-position: 0% -2100%}
+/*.flair-flash {background-position: 0% -2100%}*/
+.flair-flash {background-position: -200% -1900%} /*FLASH GORDON! SAVIOR OF THE UNIVERSE!*/
 .flair-sunset {background-position: -100% -2100%}
 
 /*HOVER FLAIRS! Because yay. Follow same formating to make a new one*/
@@ -1163,14 +1161,17 @@ Emotes! Main sub has more emotes; They have been moved over, they just need to b
 
 /*Name Changes are Below*/
 
+a.author[href$="bryvood"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="bryvood"]:before {font-size:10px!important; visibility:visible!important; content: "Miss Doom"}
+
 a.author[href$="ZephyrC"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="ZephyrC"]:before {font-size:10px!important; visibility:visible!important; content: "Steve Carlsberg"}
+a.author[href$="ZephyrC"]:before {font-size:10px!important; visibility:visible!important; content: "I smite clothing"}
 
 a.author[href$="BlameTheJungler"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="BlameTheJungler"]:before {font-size:10px!important; visibility:visible!important; content: "LeafOnTheWind"}
 
-a.author[href$="Saakra"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="Saakra"]:before {font-size:10px!important; visibility:visible!important; content: "My Waifu would never read my fics ;_;"}
+a.author[href$="french_guy_al"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="french_guy_al"]:before {font-size:10px!important; visibility:visible!important; content: "I'm a stupid moron with an ugly face and a big butt and my butt smells and I like to kiss my own butt"}
 
 /*Name Changes from the old Plounge mod team*/
 .sidecontentbox a.author.id-t2_5fmql {display:none;}
@@ -1195,3 +1196,55 @@ a[href|="/tavicheer"] {
  height: 150px;
  background-image: url(%%itscominghome2%%);
 } 
+
+/*Remove below when votes stop being funny*/
+
+.res-nightmode .arrow, .arrow {
+    height: 14px !important;
+    width: 15px !important;
+    }
+
+.res-nightmode .arrow.up, .arrow.up { 
+    background:url(%%votes%%)!important;
+    background-position: 0 0 !important;
+    }
+
+.res-nightmode .arrow.up:hover, .arrow.up:hover {
+    background:url(%%votes%%)!important;
+    background-position: 0 -100% !important;
+    }
+
+.res-nightmode .arrow.upmod, .arrow.upmod { 
+    background:url(%%votes%%)!important;
+    background-position: 0 -100% !important;
+    }
+
+.res-nightmode .arrow.down, .arrow.down {
+    background:url(%%votes%%)!important;
+    background-position: 0 0 !important;
+    }
+
+.res-nightmode .arrow.down:hover, .arrow.down:hover {
+    background:url(%%votes%%)!important;
+    background-position: 0 -200% !important;
+    }
+
+.res-nightmode .arrow.downmod, .arrow.downmod {
+    background:url(%%votes%%)!important;
+    background-position: 0 -200% !important;
+    }
+
+.res-nightmode .midcol[style], .midcol[style] {
+    width: 30px !important;
+    }
+
+.res-nightmode .comment .midcol, .comment .midcol {
+    width:15px !important;
+    }
+
+.res-nightmode .gadget .midcol, .gadget .midcol {
+    width:15px !important; 
+    margin:0 !important;
+    }
+
+.score, .likes.score, .dislikes.score {display:none!important}
