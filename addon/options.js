@@ -10,7 +10,7 @@
 
 "use strict";
 
-var BPM_RESOURCE_PREFIX = "https://ponymotes.net";
+var BPM_RESOURCE_PREFIX = "https://ponymotes.net/bpm";
 
 // WARNING: This script is "executed" twice on Firefox- once as a normal <script>
 // tag, but also a a content script attached to the page. This is for code

@@ -243,7 +243,7 @@ def fx_package(ctx):
     if newer(glob_all(["build/firefox/*", "build/firefox/data/*", "build/firefox/lib/*"]),
                  ["build/betterponymotes.xpi"]):
         ctx.remove("build/*.xpi")
-        ctx.run("cfx", "xpi", "--update-url=https://ponymotes.net/betterponymotes.update.rdf", "--pkgdir=build/firefox", "--force-mobile")
+        ctx.run("cfx", "xpi", "--update-url=https://ponymotes.net/bpm/betterponymotes.update.rdf", "--pkgdir=build/firefox", "--force-mobile")
         inject_xpi_key("betterponymotes.xpi", "build/betterponymotes.xpi")
         ctx.remove("betterponymotes.xpi")
 
@@ -312,7 +312,7 @@ def o_package(ctx):
         ctx.zip("build/betterponymotes.oex", "build/opera/")
 
 # NO TRAILING SLASHES; EXT_RESOURCE_PREFIX wants to have none
-UserscriptResourcePrefix = "https://ponymotes.net"
+UserscriptResourcePrefix = "https://ponymotes.net/bpm"
 UserscriptTestPrefix = "http://localhost:8000"
 
 @target("userscript", "build/betterponymotes.user.js")
@@ -332,13 +332,13 @@ def gen_update_manifests(ctx):
     if newer(["build/betterponymotes.xpi"], ["build/betterponymotes.update.rdf"]):
         # Have to check deps ourselves due to open() call
         ctx.run("uhura", "-k", KeyFile, "build/betterponymotes.xpi",
-                "https://ponymotes.net/betterponymotes_%s.xpi" % (ctx.vars["version"]),
+                "https://ponymotes.net/bpm/betterponymotes_%s.xpi" % (ctx.vars["version"]),
                 stdout=open("build/betterponymotes.update.rdf", "w"))
     if newer(["build/betterponymotes.oex"], ["build/opera-updates.xml"]):
         version = ctx.vars["version"]
         open("build/opera-updates.xml", "w").write(
             '<update-info xmlns="http://www.w3.org/ns/widgets" ' +
-            'src="https://ponymotes.net/betterponymotes_%s.oex" version="%s"/>\n' % (version, version))
+            'src="https://ponymotes.net/bpm/betterponymotes_%s.oex" version="%s"/>\n' % (version, version))
 
 @target("exports", "build/export.json")
 def gen_exports(ctx):
@@ -368,7 +368,8 @@ def update_www(ctx):
 def sync(ctx):
     default(ctx)
 
-    ctx.run("rsync", "-e", "ssh -p 40719", "-zvLr", "--delete", "www/", "lyra@162.243.98.207:/var/www/ponymotes.net")
+    ctx.run("rsync", "-e", "ssh -p 40719", "-zvLr", "--delete", "animotes/", "lyra@ponymotes.net:/var/www/ponymotes.net/animotes")
+    ctx.run("rsync", "-e", "ssh -p 40719", "-zvLr", "--delete", "www/", "lyra@ponymotes.net:/var/www/ponymotes.net/bpm")
 
 ScriptFiles = [
     "addon/bpm-header.js",
