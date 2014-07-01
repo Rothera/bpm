@@ -1154,7 +1154,7 @@ a[href|="/ripferrbearand20"] {
 .flair-cmcdc:hover {background-position: -300% 0} /*For DoomedCivilian; Applejack Hover*/ 
 
 /*Doomed Civilians to-add list; Feel free to add to this list!
-Emotes! Main sub has more emotes; They have been moved over, they just need to be messed with. Fear the DC, for he is bored.
+Emotes! Main sub has more emotes; They have been moved over, they just need to be messed with. Fear the DC, for he is bored. Lunar edit: Let's try to not change things as often.
 */
 
 /* End Flair */
@@ -1164,11 +1164,11 @@ Emotes! Main sub has more emotes; They have been moved over, they just need to b
 a.author[href$="bryvood"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="bryvood"]:before {font-size:10px!important; visibility:visible!important; content: "Miss Doom"}
 
-a.author[href$="ZephyrC"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="ZephyrC"]:before {font-size:10px!important; visibility:visible!important; content: "I smite clothing"}
-
 a.author[href$="BlameTheJungler"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="BlameTheJungler"]:before {font-size:10px!important; visibility:visible!important; content: "LeafOnTheWind"}
+
+a.author[href$="MLP_William"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="MLP_William"]:before {font-size:10px!important; visibility:visible!important; content: "MLP_WiIIiam"}
 
 a.author[href$="french_guy_al"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="french_guy_al"]:before {font-size:10px!important; visibility:visible!important; content: "I'm a stupid moron with an ugly face and a big butt and my butt smells and I like to kiss my own butt"}
@@ -1221,7 +1221,7 @@ a[href|="/tavicheer"] {
 
 .res-nightmode .arrow.down, .arrow.down {
     background:url(%%votes%%)!important;
-    background-position: 0 0 !important;
+    background-position: 0 -300% !important;
     }
 
 .res-nightmode .arrow.down:hover, .arrow.down:hover {
@@ -1247,4 +1247,23 @@ a[href|="/tavicheer"] {
     margin:0 !important;
     }
 
-.score, .likes.score, .dislikes.score {display:none!important}
+.midcol .likes {color: #9494ff!important}
+
+.midcol .dislikes {color: #FF8A5E!important}
+
+.newComments {color: #9494ff!important}
+
+#mail {
+position: relative;
+display: inline-block;
+text-indent: -9999px;
+overflow: hidden;
+width: 15px; 
+height: 10px;
+}
+#mail.havemail {
+background:url(%%votes%%);
+background-position: -15px 0;
+}
+
+#header {background-color: #AFD3F7}
