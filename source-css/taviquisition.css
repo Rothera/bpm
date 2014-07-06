@@ -634,15 +634,6 @@ a[href|="/sicktavi"] {
  background-image: url(%%sicktavi%%);
 } 
 
-a[href|="/tavimasterpiece"] {  
- display: block;
- clear: none;
- float: left; 
- width: 184px;
- height: 150px;
- background-image: url(%%tavimasterpeice%%);
-} 
-
 a[href|="/chibitavicello"] {  
  display: block;
  clear: none;
@@ -2285,4 +2276,24 @@ a[href|="/blushingtavi"] {
  width: 120px;
  height: 150px;
  background-image: url(%%blushingtavi%%);
+} 
+
+a[href|="/surprose"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 127px;
+ height: 150px;
+ background-image: url(%%spritesheet18%%);
+ background-position: -0px -1000px;
+} 
+
+a[href|="/usapplejack"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 150px;
+ height: 150px;
+ background-image: url(%%spritesheet18%%);
+ background-position: -0px -1150px;
 } 

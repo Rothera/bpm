@@ -1,3 +1,11 @@
+/* in memoriam */
+.bottom .author { font-size: 0; }
+.bottom .author:after {
+    font-size: x-small !important;
+    content: "therosebudpony";
+    color: #369;
+}
+
 #header-bottom-left { background-color: #fff798; }
 
 body { 
@@ -187,6 +195,9 @@ a[href|="/sp"]{ display: inline-block; padding-right: 100%; width: 0px; height: 
 .side .md h3:nth-of-type(4):hover ~ table:nth-of-type(4),.side .md table:nth-of-type(4):hover { display :table; }
 
 /*** Arrows ***/
+
+.arrow.down { visibility: hidden; display: none; }
+.comment .arrow.down { visibility: visible; display: block; }
 
 .arrow.upmod {
     background-image: url(%%csarrows%%);

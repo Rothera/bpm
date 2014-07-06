@@ -505,6 +505,7 @@ background-repeat: no-repeat;
 .flair-dominos:after { background-position: 0px -6240px }
 .flair-lemonkun:after { background-position: 0px -6270px }
 .flair-ashamed:after { background-position: 0px -6300px }
+.flair-TripsOchoPls:after { background-position: 0px -6330px }
 
 
 /* Nightmode fix for flair */
@@ -875,7 +876,7 @@ a.author[href$=FUCKING_HATE_REDDIT]:before { content:"Sailor Freakin' Dislike We
 a.author[href$=andysonic3]:before { content:"Chibi Sailor Andy" }
 a.author[href$=andysonic0]:before { content:"Sailor Mini Andy" }
 a.author[href$=Andysonic-1]:before { content:"Sailor Tiny Andy" }
-a.author[href$=The_MSPainter]:before { content:"Sailor Domino's Pizza" }
+a.author[href$=The_MSPainter]:before { content:"Domino's Pizza" }
 a.author[href$=theclinger_5]:before { content:"Sailor IncidentalUnicorn2" }
 a.author[href$=FrigidMcThunderballs]:before  { content:"Dr. Chandragupta Maurya, M.S." }
 a.author[href$=j-brony]:before { content:"J's Brownies" }
@@ -998,7 +999,7 @@ a.author[href$="Sponce"]:after { content:" (lik dis f u cri evertim)"}
 a.author[href$=NeonSequitur]:after  { content:" (Is good anime)"}
 a.author[href$=scriptea]:after { content:" (Too main pone for background pone status)" }
 a.author[href$="ClopIsDisgusting"]:after  { content:" (Exists solely to shit on other people's fun)" }
-a.author[href$=Myrandall]:after { content:" (Should leave them alone)" }
+a.author[href$=Myrandall]:after { content:" (Should shut the hell up)" }
 a.author[href$=Chinch335]:after { content:" (brings the magic)" }
 a.author[href$=IllusionOf_Integrity]:after { content:" (participates in bringing the magic)" }
 a.author[href$=SkiidrowDash]:after { content:" (Lord of the Hamsters)" }
@@ -1085,6 +1086,17 @@ a.author[href$=TripsOcho]:after { content:" sucks all the mods' dicks" }
     height: 30px;
     margin-bottom: -2px;
     overflow: hidden;    
+}
+
+.flair-pwny{
+    transform-origin:50% 65% 0;
+    -webkit-transform-origin:50% 65% 0;
+    -webkit-transition-duration: 0.33s;
+    transition-duration: 0.33s;
+}
+.flair-pwny:hover{
+   -webkit-transform:rotate(-360deg);
+   transform:rotate(-360deg);
 }
 
 /* Flour sack flair for anyone we've noticed that has flair disabled. Don't forget to add them above too.*/ 

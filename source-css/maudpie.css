@@ -441,6 +441,11 @@ display:block;clear:none;float:left;width:140px;height:200px;background-image:ur
 background-position:0 0;
 }
 
+a[href|="/partytimemaud"] {
+display:block;clear:none;float:left;width:209px;height:200px;background-image:url(%%partytimemaud%%)!important;
+background-position:0 0;
+}
+
 a[href|="/wetmanemaud"],a[href|="/wetmanemp"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-table%%)!important; background-position: 0 -600%;}
 
