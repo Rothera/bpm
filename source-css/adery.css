@@ -151,10 +151,11 @@ height:40px;
 .flair-spammy:after {background-position: -2px -2267px}
 .flair-Monoclebear:after {background-position: -2px -2307px}
 .flair-Kwulhu:after {background-position: -2px -2347px}
+.flair-sympathyfordiscord:after {background-position: -2px -2387px}
 
 
 /* ------ Emotes! --------- */
-a[href|='/cocoawkward'], a[href|='/funnay'], a[href|='/gildabird'], a[href|='/holyshit'], a[href|='/keytar'], a[href|='/pinkiebat'], a[href|='/ppchug'], a[href|='/rdscary'], a[href|='/twiperturbed'], a[href|='/lyra10'], a[href|='/cishetscum']{ 
+a[href|='/cocoawkward'], a[href|='/funnay'], a[href|='/gildabird'], a[href|='/holyshit'], a[href|='/keytar'], a[href|='/pinkiebat'], a[href|='/ppchug'], a[href|='/rdscary'], a[href|='/twiperturbed'], a[href|='/lyra10'], a[href|='/cishetscum'], a[href|='/augie']{ 
     display: block;
     clear: none;
     float: left;
@@ -172,6 +173,7 @@ a[href|='/rdscary'] {width:95px; height:120px; background-position: -2px -2px}
 a[href|='/twiperturbed'] {width:107px; height:130px; background-position: -101px -124px}
 a[href|='/lyra10'] {width:196px; height:150px; background-position: -1px -963px}
 a[href|='/cishetscum'] {width:203px; height:200px; background-position: -172px -456px}
+a[href|='/augie'] {width:156px; height:150px; background-position: -227px -662px}
 
 a[href|='/cheekyaj'], a[href|='/cheekyderp'], a[href|='/cheekylyra'], a[href|='/cheekypp'], a[href|='/cheekyrara'], a[href|='/cheekyscoots'], a[href|='/cheekyshy'], a[href|='/cheekytwi'], a[href|='/cheekyvs'],a[href|='/cheekynoteass'], a[href|='/roselie'], a[href|='/octibored'], a[href|='/topunf'] {
     display: block;
@@ -462,6 +464,8 @@ a[href|="/bedtimestory"] { display: block; clear: none; float: left; background-
 
 a[href|="/myrandall"] { display: block; clear: none; float: left; background-image: url(%%myrandall%%); width: 245px; height: 200px; background-position: -0px -0px }
 
+a[href|="/16bitpie"] { display: block; clear: none; float: left; background-image: url(%%16bitpie%%); width: 150px; height: 150px; background-position: -0px -0px }
+
 /* gavin14's nightmode flair fix */
 .res-nightmode .content .flair  {
 background-color: transparent!important;
@@ -474,6 +478,7 @@ body.res a.author[href$="SGIG"] {color:#FF9EF2!important}
 /* Names */
 
 /* here first */
+a.author[href$='AWESOEM'],
 a.author[href$='Kwulhu'],
 a.author[href$='Monoclebear'],
 a.author[href$='scix'],
@@ -510,6 +515,7 @@ content: "";
 }
 
 /* here second */
+a.author[href$='AWESOEM']:before,
 a.author[href$=SGIG]:before,
 a.author[href$='Kwulhu']:before,
 a.author[href$='Monoclebear']:before,
@@ -543,6 +549,7 @@ visibility:visible!important;
 }
 
 /*and the replacement*/ 
+a.author[href$='AWESOEM']:before {content: "tablekat"}
 a.author[href$=SGIG]:before {content: "Fionna"}
 a.author[href$='Kwulhu']:before {content: "Primeminister Kwu"}
 a.author[href$='Monoclebear']:before {content: "Queen Mono XIII"}
@@ -597,61 +604,6 @@ a.author[href$="videogamewonder"]:after {content:" (le)teral fempire shill"}
       border-color: transparent !important} 
 
 
-/* Replace the nsfw image */
-html:lang(en) .thumbnail.nsfw {
-    background-image: url(%%thumbnails%%);
-    background-repeat: no-repeat;
-    width: 70px;
-    height: 70px;
-    background-position: 0px 0px;}
-a[href="/spoiler"]:nth-of-type(n) {
-    background: #000;
-    color: #000;
-    cursor: text
-    }
-a[href="/spoiler"]:nth-of-type(n):hover {
-    background: #fff;
-    color: #000;
-    }
-/* Replace the self-post image  */
-html:lang(en) .thumbnail.self {
-    background-image: url(%%thumbnails%%);
-    background-repeat: no-repeat;
-    width: 70px;
-    height: 70px;
-    background-position: 0px -70px;
-}
 
-/* Replace the no-thumb */
-html:lang(en) .thumbnail.default {
-    background-image: url(%%thumbnails%%);
-    background-repeat: no-repeat;
-    width: 70px;
-    height: 70px;
-    background-position: 0px -140px;
-}
-
-html:lang(en) .linkflair-spoiler .thumbnail img {display:none}
-
-html:lang(en) .linkflair-spoiler .thumbnail {  
-    background: url(%%thumbnails%%)!important;
-    background-repeat: no-repeat;
-    width: 70px;
-    height: 70px;
-    background-position: 0px -210px !important}
-
-/*-- removed downvoting for people not subscribed stolen from /r/sips --*/
-body:not(.subscriber) .down
-{     visibility: hidden !important;}
-body:not(.subscriber) #siteTable:before
-{
-     content: ":3 Hi! If you click subscribe this ugly bar goes away and the downvotes come back!";
-    display: block;
-    max-width: 800px;
-    background-color: #F6E69F;
-    padding: 5px 10px;
-    margin: 5px 305px 5px 0px;
-    border: 1px solid orange;
-    font-size: small;}
 
 

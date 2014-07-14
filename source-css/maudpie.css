@@ -1,3 +1,7 @@
+body {
+  background: url(%%maudbackg%%) no-repeat fixed center bottom;
+}
+
    /***********************
     *
     *             EMOTES
@@ -421,6 +425,9 @@ a[href|="/maudpoker"]
 a[href|="/maudshrug"]
 {display:block;clear:none;float:left;width:80px;height:80px;background-image:url(%%maudshrug%%)!important; background-position: 0 0;}
 
+a[href|="/maudlie"]
+{display:block;clear:none;float:left;width:165px;height:150px;background-image:url(%%maudlie%%)!important; background-position: 0 0;}
+
 a[href|="/maudexcited"],a[href|="/mpexcited"] {
 display:block;clear:none;float:left;width:141px;height:150px;background-image:url(%%maudexcited%%)!important;
 background-position:0 0;
@@ -442,7 +449,7 @@ background-position:0 0;
 }
 
 a[href|="/partytimemaud"] {
-display:block;clear:none;float:left;width:209px;height:200px;background-image:url(%%partytimemaud%%)!important;
+display:block;clear:none;float:left;width:209px;height:200px;background-image:url(%%noisemaud%%)!important;
 background-position:0 0;
 }
 

@@ -1,10 +1,13 @@
-/* in memoriam */
+/*** In Memoriam ***/
+
 .bottom .author { font-size: 0; }
 .bottom .author:after {
     font-size: x-small !important;
     content: "therosebudpony";
     color: #369;
 }
+
+/*** Theme ***/
 
 #header-bottom-left { background-color: #fff798; }
 
@@ -13,98 +16,68 @@ body {
     no-repeat fixed center center;
 }
 
-/* add 4 pixels to sidebar so our emotes tables */
-/* don't make it grow a scroll bar DERP */
 .side { width: 304px !important; }
 
-/*Change the word for 'readers' and the currently online*/
-.subscribers .word, .users-online .word {
-    display:none;
-}
+.subscribers .word, .users-online .word { display:none; }
+.subscribers .number:after { content: " party planners"; }
+.users-online .number:after { content: " having a party"; }
 
-.subscribers .number:after { 
-    content: " party planners"
-}
-.users-online .number:after { 
-    content: " having a party" 
-}
+.footer-parent:after { content: url(%%cutiemark%%); }
 
-.footer-parent:after {
-    content: url(%%cutiemark%%);
-}
+/*** Style Buttons ***/
 
-/* Style Buttons */
-
-.titlebox .fancy-toggle-button a,
-span.RESshortcutside,
-span.RESshortcutside:hover,
-span.RESDashboardToggle {
+.titlebox .fancy-toggle-button a, span.RESshortcutside,
+span.RESshortcutside:hover, span.RESDashboardToggle {
    color:#663300;
    background:#FFFF66;
    border:1px solid #FFFFFF;
 }
 
-.fancy-toggle-button a.remove,
-.subButtons span.remove{
-   background:#FF9933;
-}
+.fancy-toggle-button a.remove, .subButtons span.remove { background: #FF9933; }
 
-.morelink 
-{
-    font-weight:normal;
-    letter-spacing:0;
-    background:#FFCC99;
+.morelink {
+    font-family: Verdana, Arial, sans-serif; 
+    font-size: 16px; 
+    font-weight: normal;
+    letter-spacing: 0;
+    background: #FFCC99;
     border: none;
-    -moz-border-radius:2px;
-    -webkit-border-radius:2px;
-    -o-border-radius:2px;
-    -ms-border-radius:2px;
-    -khtml-border-radius:2px;
-    border-radius:2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
     height: 30px;
+    width: 145px;
     line-height: 30px;
     overflow: hidden;
     color: #000000;
 }
 
-.morelink:hover
-{
+.morelink:hover {
     background: #FFFFFF;
     background-color: #FFFFCC;
     border-color: #FFFFFF;
 }
 
-.morelink .nub 
-{
-    display: none;
-}
+.morelink .nub { display: none; }
 
-.morelink 
-{
-    color:#000000; 
-    font-family:Verdana, Arial, sans-serif; 
-    font-size:16px; 
-    width: 145px;
-}
-
-.sidebox.submit-link .morelink::before 
-{
+.sidebox.submit-link .morelink::before {
     display: block;
     clear: none;
     content: "Submit a Link";
     font-size: 100%;
 }
 
-.sidebox.submit-text .morelink::before 
-{
+.sidebox.submit-text .morelink::before {
     display: block;
     clear: none;
     content: "Submit a Self Post";
     font-size: 100%;
 }
 
-.sidebox.submit .morelink a 
-{
+.sidebox.submit .morelink a {
     position: absolute;
     top: 0;
     padding-left: 1000px;
@@ -113,115 +86,31 @@ span.RESDashboardToggle {
     color: #FFFFFF;
 }
 
-.sidebox.submit.submit-link {
-    width: 150px;
-}
+.sidebox.submit.submit-link { width: 150px; }
 
-.sidebox.submit.submit-text
-{
+.sidebox.submit.submit-text {
     margin-top: -42px;
     margin-left: 153px;
 }
 
-.sidebox.create 
-{
-    display: none;
-}
+.sidebox.create { display: none; }
 
-.sidebox.submit.disabled 
-{
-    display: none;
-}
-.res-nightmode .sidebox.submit.submit-text
-{
+.sidebox.submit.disabled { display: none; }
+
+.res-nightmode .sidebox.submit.submit-text {
     background: none !important;
     margin-top: -45px;
     margin-left: 153px;
 }
 
-.res-nightmode .sidebox 
-{
+.res-nightmode .sidebox {
     padding-left: 0px !important;
     border: 2px solid #151515 !important;
 }
 
-.res-nightmode .morelink 
-{
-     height: 29px !important;
-}
-
-.res-nightmode .morelink
-{
+.res-nightmode .morelink {
+    height: 29px !important;
     background: #606060 !important;
-}
-
-/* comment spoiler tag */
-a[href|="/spoiler"] { background: #000 !important; color: #000 !important; }
-a[href|="/spoiler"]:hover { color: #fff !important; }
-
-/* comment emote spacer */
-a[href|="/sp"]{ display: inline-block; padding-right: 100%; width: 0px; height: 0px; }
-
-/*** Emote tabs ***/
-
-.side .md h3 {
-    border: 1px solid #ccc;
-    border-bottom: none;
-    color: #000;
-    background-color: #fff798;
-    padding: 4px;
-    margin: 0;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.side .md table {
-    border: 1px solid #ccc !important;
-    margin: 0;
-    padding-bottom: 19px;
-    display: none;
-}
-
-.side .md th { display: none; }
-
-.side .md tr,td {
-    border: 1px solid #ccc !important;
-    padding: 0px !important;
-}
-
-.side .md h3:nth-of-type(1):hover ~ table:nth-of-type(1),.side .md table:nth-of-type(1):hover { display :table; }
-.side .md h3:nth-of-type(2):hover ~ table:nth-of-type(2),.side .md table:nth-of-type(2):hover { display :table; }
-.side .md h3:nth-of-type(3):hover ~ table:nth-of-type(3),.side .md table:nth-of-type(3):hover { display :table; }
-.side .md h3:nth-of-type(4):hover ~ table:nth-of-type(4),.side .md table:nth-of-type(4):hover { display :table; }
-
-/*** Arrows ***/
-
-.arrow.down { visibility: hidden; display: none; }
-.comment .arrow.down { visibility: visible; display: block; }
-
-.arrow.upmod {
-    background-image: url(%%csarrows%%);
-    background-position: -0px -0px;
-    height: 15px;
-    width: 15px;
-}
-.arrow.downmod {
-    background-image: url(%%csarrows%%);
-    background-position: -0px -15px;
-    height: 15px;
-    width: 15px;
-}
-.arrow.up {
-    background-image: url(%%csarrows%%);
-    background-position: -0px -30px;
-    height: 15px;
-    width: 15px;
-}
-.arrow.down {
-    background-image: url(%%csarrows%%);
-    background-position: -0px -45px;
-    height: 15px;
-    width: 15px;
 }
 
 /*** Spoiler Tags ***/
@@ -269,52 +158,132 @@ a[href|="/sp"]{ display: inline-block; padding-right: 100%; width: 0px; height: 
     background-position: 0px 0px !important;
 }
 
+/*** Sidebar Emote Tables ***/
+
+.side .md h3 {
+    border: 1px solid #ccc;
+    border-bottom: none;
+    color: #000;
+    background-color: #fff798;
+    padding: 4px;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.side .md table {
+    border: 1px solid #ccc !important;
+    margin: 0;
+    padding-bottom: 19px;
+    display: none;
+}
+
+.side .md th { display: none; }
+
+.side .md tr,td {
+    border: 1px solid #ccc !important;
+    padding: 0px !important;
+}
+
+.side .md h3:nth-of-type(1):hover ~ table:nth-of-type(1),
+.side .md table:nth-of-type(1):hover { display :table; }
+
+.side .md h3:nth-of-type(2):hover ~ table:nth-of-type(2),
+.side .md table:nth-of-type(2):hover { display :table; }
+
+.side .md h3:nth-of-type(3):hover ~ table:nth-of-type(3),
+.side .md table:nth-of-type(3):hover { display :table; }
+
+.side .md h3:nth-of-type(4):hover ~ table:nth-of-type(4),
+.side .md table:nth-of-type(4):hover { display :table; }
+
+/*** Comments ***/
+
+a[href|="/spoiler"] {
+    background: #000 !important;
+    color: #000 !important;
+}
+
+a[href|="/spoiler"]:hover {
+    color: #fff !important;
+}
+
+a[href|="/sp"] {
+    display: inline-block;
+    padding-right: 100%;
+    width: 0px;
+    height: 0px;
+}
+
+/*** Arrows ***/
+
+.link .arrow.down { visibility: hidden; display: none; }
+
+.arrow.upmod {
+    background-image: url(%%csarrows%%);
+    background-position: -0px -0px;
+    height: 15px;
+    width: 15px;
+}
+.arrow.downmod {
+    background-image: url(%%csarrows%%);
+    background-position: -0px -15px;
+    height: 15px;
+    width: 15px;
+}
+.arrow.up {
+    background-image: url(%%csarrows%%);
+    background-position: -0px -30px;
+    height: 15px;
+    width: 15px;
+}
+.arrow.down {
+    background-image: url(%%csarrows%%);
+    background-position: -0px -45px;
+    height: 15px;
+    width: 15px;
+}
 
 /*** Emotes ***/
 
-/* 100px shared values */
-a[href|="/cheese"], a[href|="/boneless"], a[href|="/cheesesquint"], a[href|="/cheesestare"], a[href|="/imfine"], a[href|="/cheesechill"], a[href|="/cheesemad"]{
+a[href|="/cheese"], a[href|="/boneless"], a[href|="/cheesesquint"], a[href|="/cheesestare"], a[href|="/imfine"], a[href|="/cheesechill"], a[href|="/cheesemad"] {
     display: block;
     clear: none;
     float: left;
     width: 100px;
     height: 100px;
-    background-image: url(%%csemotes100a%%) !important
+    background-image: url(%%csemotes100a%%) !important;
 }
 
-/* 100px offsets */
-a[href|="/cheese"]{ background-position:-0px -0px }
-a[href|="/boneless"]{ background-position:-100px -0px }
-a[href|="/cheesesquint"]{ background-position: -200px -0px }
-a[href|="/cheesestare"]{ background-position: -0px -100px }
-a[href|="/imfine"]{ background-position: -100px -100px }
-a[href|="/cheesechill"]{ background-position: -200px -100px }
-a[href|="/cheesemad"]{ background-position: -0px -200px }
+a[href|="/cheese"] { background-position:-0px -0px; }
+a[href|="/boneless"] { background-position:-100px -0px; }
+a[href|="/cheesesquint"] { background-position: -200px -0px; }
+a[href|="/cheesestare"] { background-position: -0px -100px; }
+a[href|="/imfine"] { background-position: -100px -100px; }
+a[href|="/cheesechill"] { background-position: -200px -100px; }
+a[href|="/cheesemad"] { background-position: -0px -200px; }
 
-/* 150px shared values */
-a[href|="/cheeseshock"], a[href|="/cheesethis"], a[href|="/cheesehappy"], a[href|="/cheeseandpinkie"], a[href|="/accordian"], a[href|="/partyhard"], a[href|="/cheesesmile"], a[href|="/cheesehug"], a[href|="/ppcheesehug"], a[href|="/argumentinvalid"], a[href|="/cheeseandtubamouse"], a[href|="/cheesewtf"]{
+a[href|="/cheeseshock"], a[href|="/cheesethis"], a[href|="/cheesehappy"], a[href|="/cheeseandpinkie"], a[href|="/accordian"], a[href|="/partyhard"], a[href|="/cheesesmile"], a[href|="/cheesehug"], a[href|="/ppcheesehug"], a[href|="/argumentinvalid"], a[href|="/cheeseandtubamouse"], a[href|="/cheesewtf"] {
     display: block;
     clear: none;
     float: left;
     width: 150px;
     height: 150px;
-    background-image: url(%%csemotes150a%%) !important
+    background-image: url(%%csemotes150a%%) !important;
 }
 
-/* 150px offsets */
-a[href|="/cheeseshock"]{ background-position:-0px -0px }
-a[href|="/cheesethis"]{ background-position:-150px -0px }
-a[href|="/cheesehappy"]{ background-position:-300px -0px }
-a[href|="/cheeseandpinkie"]{ background-position:-0px -150px }
-a[href|="/accordian"]{ background-position:-150px -150px }
-a[href|="/partyhard"]{ background-position:-300px -150px }
-a[href|="/cheesesmile"]{ background-position: -0px -300px; width: 103px }
-a[href|="/cheesehug"]{ background-position: -150px -300px }
-a[href|="/ppcheesehug"]{ background-position: -300px -300px }
-a[href|="/argumentinvalid"], a[href|="/cheeseandtubamouse"]{ background-position: -0px -450px }
-a[href|="/cheesewtf"]{ background-position: -150px -450px }
+a[href|="/cheeseshock"] { background-position:-0px -0px; }
+a[href|="/cheesethis"] { background-position:-150px -0px; }
+a[href|="/cheesehappy"] { background-position:-300px -0px; }
+a[href|="/cheeseandpinkie"] { background-position:-0px -150px; }
+a[href|="/accordian"] { background-position:-150px -150px; }
+a[href|="/partyhard"] { background-position:-300px -150px; }
+a[href|="/cheesesmile"] { background-position: -0px -300px; width: 103px; }
+a[href|="/cheesehug"] { background-position: -150px -300px; }
+a[href|="/ppcheesehug"] { background-position: -300px -300px; }
+a[href|="/argumentinvalid"], a[href|="/cheeseandtubamouse"] { background-position: -0px -450px; }
+a[href|="/cheesewtf"] { background-position: -150px -450px; }
 
-/* oddballs */
 a[href|="/rubberchickendance"] { 
      background-position: 0px 0px; 
      display: block; 
@@ -322,7 +291,7 @@ a[href|="/rubberchickendance"] {
      float: left; 
      width: 200px; 
      height: 70px; 
-     background-image: url(%%rubberchickendance%%) !important
+     background-image: url(%%rubberchickendance%%) !important;
 }
 
 a[href|="/cheeseplay"] { 
@@ -332,7 +301,7 @@ a[href|="/cheeseplay"] {
      float: left; 
      width: 84px; 
      height: 122px; 
-     background-image: url(%%cheeseplay%%) !important
+     background-image: url(%%cheeseplay%%) !important;
 }
 
 a[href|="/cheeseidle"] { 
@@ -342,7 +311,7 @@ a[href|="/cheeseidle"] {
      float: left; 
      width: 106px; 
      height: 104px; 
-     background-image: url(%%cheeseidle%%) !important
+     background-image: url(%%cheeseidle%%) !important;
 }
 
 a[href|="/cheesetrot"] { 
@@ -352,10 +321,9 @@ a[href|="/cheesetrot"] {
      float: left; 
      width: 110px; 
      height: 108px; 
-     background-image: url(%%cheesetrot%%) !important
+     background-image: url(%%cheesetrot%%) !important;
 }
 
-/* comment inline emotes */
 a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
     float: none !important;
     display: inline-block !important;
@@ -363,7 +331,6 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 
 /*** Flairs ***/
 
-/* main setup */
 .flair {
     padding: 0;
     background: none;
@@ -378,8 +345,6 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
     line-height: 240%;
 }
 
-/* individual flair names and offsets */
-/* (these are the names to reference when editing flair) */
 .flair-rainbowdash { background-position: 0 0; }
 .flair-twilightsparkle { background-position: -100% 0; }
 .flair-fluttershy { background-position: -200% 0; }

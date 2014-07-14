@@ -506,6 +506,15 @@ background-repeat: no-repeat;
 .flair-lemonkun:after { background-position: 0px -6270px }
 .flair-ashamed:after { background-position: 0px -6300px }
 .flair-TripsOchoPls:after { background-position: 0px -6330px }
+.flair-RPS:after { background-position: 0px -6360px }
+.flair-possiblegold:after { background-position: 0px -6391px }
+.flair-laughingcheetah:after { background-position: 0px -6420px }
+.flair-agentgamma:after { background-position: 0px -6452px }
+.flair-orthak:after { background-position: 0px -6480px }
+.flair-bitchtrips:after { background-position: 0px -6510px }
+.flair-sympathyfordiscord:after { background-position: 0px -6540px }
+.flair-dylantrevor:after { background-position: 0px -6570px }
+.flair-rawrcharlierawr:after { background-position: 0px -6600px }
 
 
 /* Nightmode fix for flair */
@@ -656,7 +665,8 @@ a.author[href$=FrigidMcThunderballs],
 a.author[href$=j-brony],
 a.author[href$=RisenLordM],
 a.author[href$=Princess_Pwny],
-a.author[href$=tuckels]
+a.author[href$=tuckels],
+a.author[href$=ZhilTP9112]
 
 { 
 font-size:0!important; 
@@ -772,118 +782,120 @@ a.author[href$=j-brony]:before,
 a.author[href$=RisenLordM]:before,
 a.author[href$=Princess_Pwny]:before,
 a.author[href$=randyrules]:before,
-a.author[href$=tuckels]:before
+a.author[href$=tuckels]:before,
+a.author[href$=ZhilTP9112]:before
 {
 font-size:10px!important; 
 visibility:visible!important;
 }
 
 /* Replacing somebody's name? Put the replacement here. */
-a.author:before{
+/* a.author:before{
     content:"Sailor " 
-    }
-a.author[href$="AttackTheMoon"]:before {content:"Sailor ATMachine"}
+    } */
+a.author[href$="AttackTheMoon"]:before {content:"ATMachine"}
 a.author[href$="PUBLIQclopAccountant"]:before {content:"The Public Clop Accounting Firm, Sailor LLC"}
 a.author[href$="bryvood"]:before,a.author[href$="Ezreal"]:before {content:"Ezreal"}
-a.author[href$="pr0n0tr0n"]:before,a.author[href$="theodorejhooker"]:before {content:"Sailor theodoreajhooker"}
-a.author[href$="CarlosAmuroRay"]:before {content:"Sailor ChuckAmuroRay"}
-a.author[href$="0x_"]:before {content:"Sailor ox"}
+a.author[href$="pr0n0tr0n"]:before,a.author[href$="theodorejhooker"]:before {content:"theodoreajhooker"}
+a.author[href$="CarlosAmuroRay"]:before {content:"ChuckAmuroRay"}
+a.author[href$="0x_"]:before {content:"ox"}
 a.author[href$="CogglerSenpai"]:before {content:"Pretty Sailor Soldier Coggler"}
-a.author[href$="thezooman123"]:before {content:"Sailor Racist"}
-a.author[href$="numberlock"]:before {content:"Sailor BeerPony"}
-a.author[href$="thedarklordkyp"]:before {content:"Sailor_Drunk_Changeling"}
-a.author[href$="fwinest_JediThug"]:before {content:"Sailor Wincest_JediThug"}
-a.author[href$="V17Ds"]:before {content:"Sailor Plounger"}
-a.author[href$="Rudicorn"]:before {content:"Sailor Grumpledick"}
-a.author[href$="jimmpony"]:before {content:"Sailor sirtophat"}
+a.author[href$="thezooman123"]:before {content:"Racist"}
+a.author[href$="numberlock"]:before {content:"BeerPony"}
+a.author[href$="thedarklordkyp"]:before {content:"A_Drunk_Changeling"}
+a.author[href$="fwinest_JediThug"]:before {content:"Wincest_JediThug"}
+a.author[href$="V17Ds"]:before {content:"Plounger Queen"}
+a.author[href$="Rudicorn"]:before {content:"Grumpledick"}
+a.author[href$="jimmpony"]:before {content:"sirtophat"}
 a.author[href$="DiscordDraconequus"]:before {content:"The Real Sailor Chrysalis"}
-a.author[href$="Juz16"]:before {content:"Sailor Jizz"}
-a.author[href$="EvanMacIan"]:before {content:"Sailor Ewan McGregor"}
-a.author[href$="kcirvam"]:before {content:"Sailor mavrick45"}
-a.author[href$="Typhron"]:before {content:"Sailor Tiffany"}
-a.author[href$="Unsinkablesam"]:before {content:"Sailor Go-Go Train"}
-a.author[href$="Sponce"]:before {content:"Sailor Space"}
-a.author[href$="mrjoker7854"]:before {content:"Sailor Pinkie Scratchtacularin"}
-a.author[href$="Conky_"]:before {content:"Sailor Conky"}
-a.author[href$="PartOfAShoe"]:before {content:"Sailor Welt"}
-a.author[href$="shawa666"]:before {content:"Sailor Slowpoke666"}
-a.author[href$="Avebone"]:before {content:"Sailor Foodmane"}
-a.author[href$="Qwerty439"]:before {content:"Sailor Asdfgh439"}
-a.author[href$="NeonSequitur"]:before {content:"Sailor Hunter x Hunter"}
-a.author[href$="viper9172"]:before {content:"Sailor Sidelong"}
-a.author[href$="Lazeraze"]:before {content:"Sailor Snowlily"}
-a.author[href$="31eipekili"]:before {content:"  Sailor Whispering Jew "}
-a.author[href$="Chiv_Cortland"]:before {content:"Sailor Chivvypoop"}
-a.author[href$="442B8AEF9"]:before {content:"Sailor Socialery"}
-a.author[href$="anonpon3"]:before {content:"Sailor Artful" }
-a.author[href$="Ryskillz101"]:before {content:"Sailor Ryrity"}
-a.author[href$="Phei"]:before {content:"Sailor Pheilight Sparkle"}
-a.author[href$="socially_broken"]:before {content:"Sailor 3p"}
-a.author[href$="MisanthropicCat"]:before {content:"Sailor MisanthropicPone" }
-a.author[href$="Princess_Molestia_"]:before {content:"Sailor Molestia" }
+a.author[href$="Juz16"]:before {content:"Jizz"}
+a.author[href$="EvanMacIan"]:before {content:"Ewan McGregor"}
+a.author[href$="kcirvam"]:before {content:"mavrick45"}
+a.author[href$="Typhron"]:before {content:"Tiffany"}
+a.author[href$="Unsinkablesam"]:before {content:"The Go-Go Train"}
+a.author[href$="Sponce"]:before {content:"Space"}
+a.author[href$="mrjoker7854"]:before {content:"Pinkie Scratchtacularin"}
+a.author[href$="Conky_"]:before {content:"Conky"}
+a.author[href$="PartOfAShoe"]:before {content:"Welt"}
+a.author[href$="shawa666"]:before {content:"Slowpoke666"}
+a.author[href$="Avebone"]:before {content:"Ambassador of Foodmanes"}
+a.author[href$="Qwerty439"]:before {content:"Asdfgh439"}
+a.author[href$="NeonSequitur"]:before {content:"Hunter x Hunter"}
+a.author[href$="viper9172"]:before {content:"Sidelong"}
+a.author[href$="Lazeraze"]:before {content:"Snowlily"}
+a.author[href$="31eipekili"]:before {content:"  Whispering Jew "}
+a.author[href$="Chiv_Cortland"]:before {content:"Chivvypoop"}
+a.author[href$="442B8AEF9"]:before {content:"Socialery"}
+a.author[href$="anonpon3"]:before {content:"Artful" }
+a.author[href$="Ryskillz101"]:before {content:"Ryrity"}
+a.author[href$="Phei"]:before {content:"Pheilight Sparkle"}
+a.author[href$="socially_broken"]:before {content:"3p"}
+a.author[href$="MisanthropicCat"]:before {content:"MisanthropicPone" }
+a.author[href$="Princess_Molestia_"]:before {content:"Molestia" }
 a.author[href$="Articulate_Angel"]:before {content:"?rt?kj?l?t'e?n??l (se hara hit bringeþ þára friþhengesta pintelum)" }
-a.author[href$="08G8V8"]:before {content:"Sailor Vroom-Vroom ''Defeater 'Feet''' Trips" }
-a.author[href$=ArtfulPon]:before {content:"Sailor WildPlastic" }
-a.author[href$=Avngr75]:before {content:"Sailor Ted" }
-a.author[href$=tyl3rdurden]:before /*{ content:"Sailor Tyler Derpden" }*/ {content:"Belgium" }
+a.author[href$="08G8V8"]:before {content:"Vroom-Vroom ''Defeater 'Feet''' Trips" }
+a.author[href$=ArtfulPon]:before {content:"WildPlastic" }
+a.author[href$=Avngr75]:before {content:"Ted" }
+a.author[href$=tyl3rdurden]:before /*{ content:"Tyler Derpden" }*/ {content:"Belgium" }
 a.author[href$=raritie]:before { content:"Sailor Rarity" }
 a.author[href$=Greenie_Lye]:before { content:"Greenie_Lye (Green Derram)" } 
-a.author[href$=Chinch335]:before,a.author[href$=IllusionOf_Integrity]:before { content:"Sailor Ch-ch-ch-chillusion" }
-a.author[href$=trypsonite]:before { content:"Sailor Who"; color:blue }
-a.author[href$=RetardVomitPussyCunt]:before { content:"Sailor RainbowViolinPancakesCider" }
-a.author[href$=andysonic2]:before {content:"Sailor andysonic1"}
-a.author[href$="10z20Luka"]:before { content:"Sailor Titty-slickers, God of Thunder and Lord of the Dance" }
-a.author[href$=PinkiePie2012]:before { content:"Sailor Empress Pie" }
-a.author[href$=DarkSideOfTheSun]:before { content:"Sailor DickSideOfTheSun" }
-a.author[href$=SkiidrowDash]:before { content:"Sailor Ski iDrow Toity" }
-a.author[href$=Backupusername]:before { content:"Sailor Cocksucker Shittytits" }
-a.author[href$=Speedingturtle]:before { content:"Sailor Ambidextrous Tortoise" }
-a.author[href$=supercrunchy]:before { content:"Sailor Crumcju" }
-a.author[href$=Taiokoshinketsu]:before { content:"Sailor Tia" }
+a.author[href$=Chinch335]:before,a.author[href$=IllusionOf_Integrity]:before { content:"Ch-ch-ch-chillusion" }
+a.author[href$=trypsonite]:before { content:"Who"; color:blue }
+a.author[href$=RetardVomitPussyCunt]:before { content:"RainbowViolinPancakesCider" }
+a.author[href$=andysonic2]:before {content:"andysonic1"}
+a.author[href$="10z20Luka"]:before { content:"Titty-slickers, God of Thunder and Lord of the Dance" }
+a.author[href$=PinkiePie2012]:before { content:"Empress Pie" }
+a.author[href$=DarkSideOfTheSun]:before { content:"DickSideOfTheSun" }
+a.author[href$=SkiidrowDash]:before { content:"Ski iDrow Toity" }
+a.author[href$=Backupusername]:before { content:"Cocksucker Shittytits" }
+a.author[href$=Speedingturtle]:before { content:"Ambidextrous Tortoise" }
+a.author[href$=supercrunchy]:before { content:"Crumcju" }
+a.author[href$=Taiokoshinketsu]:before { content:"Tia" }
 a.author[href$=SolarLuna96]:before { content:"Sailor Fluttershy's Wrath" }
-a.author[href$=Generic_Builder]:before { content:"Sailor Genewic Bwuilda" }
-a.author[href$=volcano_bakemeats]:before { content:Sailor "Madam Le Bake" }
-a.author[href$=DaylightDarkle]:before { content:"Sailor Twilight Sparkle" }
-a.author[href$=Chillusion]:before { content:"Sailor Cchhiilllluussiioonn" }
-a.author[href$=Edriss562]:before {content:"Sailor Esplendid"}
-a.author[href$=Jeroknite]:before {content:"Sailor JokerTine"; font-size:15px !important}
+a.author[href$=Generic_Builder]:before { content:"Genewic Bwuilda" }
+a.author[href$=volcano_bakemeats]:before { content:"Madam Le Bake" }
+a.author[href$=DaylightDarkle]:before { content:"Twilight Sparkle" }
+a.author[href$=Chillusion]:before { content:"Cchhiilllluussiioonn" }
+a.author[href$=Edriss562]:before {content:"Esplendid"}
+a.author[href$=Jeroknite]:before {content:"JokerTine"; font-size:15px !important}
 a.author[href$=DarqWolff]:before { content:"[](/DarqWolff)" }
-a.author[href$=cheesemoo]:before { content:"Sailor Cheesemeow" }
-a.author[href$=scriptea]:before { content:"Sailor scriptease" }
-a.author[href$=QdwachMD]:before { content:"Sailor Queen QdwacgMD II " }
-a.author[href$=SirCinnamon]:before { content:"Sailor KingCinnamon" }
-a.author[href$=BlockJuice_4]:before { content:"Sailor [deleted]"; color: rgb(136, 136, 136) !important; cursor: text !important }
-a.author[href$=Boibi]:before { content:"Sailor Boibi, M.D." }
-a.author[href$=nekoningen]:before { content:"Sailor Scatman" }
-a.author[href$=slippy0]:before { content:"Sailor emily" }
-a.author[href$=XelNaga]:before { content:"Sailor Twi`Naga" }
-a.author[href$=Catharsis25]:before { content:Sailor "Catharsis" }
-a.author[href$=tehz]:before,a.author[href$=tailcalled]:before { content:"Sailor Tail Call" }
-a.author[href$=Ruuch]:before { content:"Sailor Escort Sluthooves" }
-a.author[href$=herabek]:before {content:"Sailor 420 BLAZE IT FGT"}
-a.author[href$=OneOfTheseDaysLuna]:before { content:"Sailor OneOfTheseMoonAsses" }
-a.author[href$=Zovistograt]:before { content:'[](/ww20 “Needy Sailor”)' }
-a.author[href$=ZZW30]:before { content:"Sailor Chuckles" }
-a.author[href$=JustAnotherGDB]:before { content:"Sailor Face in my Butts" }
-a.author[href$=Swiftskii]:before { content:"Sailor FairyFacedWizardFelcher" }
-a.author[href$=Lord_Ninka]:before { content:"Sailor Nimpa" }
-a.author[href$=LlamaInDrag]:before { content:"Sailor DINOSAUR" }
-a.author[href$=Nagashizuri]:before { content:"Sailor Maga" }
-a.author[href$=andresonic1]:before { content:"Sailor Fake" }
-a.author[href$=Bflat13]:before { content:"Sailor MOTHER FUCKING SUGAR!" }
-a.author[href$=IncidentalUnicorn2]:before { content:"Sailor Cringler" }
-a.author[href$=FUCKING_HATE_REDDIT]:before { content:"Sailor Freakin' Dislike Webplace" }
+a.author[href$=cheesemoo]:before { content:"Cheesemeow" }
+a.author[href$=scriptea]:before { content:"scriptease" }
+a.author[href$=QdwachMD]:before { content:"Queen QdwacgMD II " }
+a.author[href$=SirCinnamon]:before { content:"KingCinnamon" }
+a.author[href$=BlockJuice_4]:before { content:"[deleted]"; color: rgb(136, 136, 136) !important; cursor: text !important }
+a.author[href$=Boibi]:before { content:"Boibi, M.D." }
+a.author[href$=nekoningen]:before { content:"Scatman" }
+a.author[href$=slippy0]:before { content:"emily" }
+a.author[href$=XelNaga]:before { content:"Twi`Naga" }
+a.author[href$=Catharsis25]:before { content:"Catharsis" }
+a.author[href$=tehz]:before,a.author[href$=tailcalled]:before { content:"Tail Call" }
+a.author[href$=Ruuch]:before { content:"Escort Sluthooves" }
+a.author[href$=herabek]:before {content:"420 BLAZE IT FGT"}
+a.author[href$=OneOfTheseDaysLuna]:before { content:"OneOfTheseMoonAsses" }
+a.author[href$=Zovistograt]:before { content:'[](/ww20 “Needy”)' }
+a.author[href$=ZZW30]:before { content:"Cptn Chuckles" }
+a.author[href$=JustAnotherGDB]:before { content:"Face in my Butts" }
+a.author[href$=Swiftskii]:before { content:"FairyFacedWizardFelcher" }
+a.author[href$=Lord_Ninka]:before { content:"Nimpa" }
+a.author[href$=LlamaInDrag]:before { content:"A FKN DINOSAUR" }
+a.author[href$=Nagashizuri]:before { content:"Maga" }
+a.author[href$=andresonic1]:before { content:"Fake" }
+a.author[href$=Bflat13]:before { content:"MOTHER FUCKING SUGAR!" }
+a.author[href$=IncidentalUnicorn2]:before { content:"The Cringler" }
+a.author[href$=FUCKING_HATE_REDDIT]:before { content:"Freakin' Dislike Webplace" }
 a.author[href$=andysonic3]:before { content:"Chibi Sailor Andy" }
-a.author[href$=andysonic0]:before { content:"Sailor Mini Andy" }
-a.author[href$=Andysonic-1]:before { content:"Sailor Tiny Andy" }
+a.author[href$=andysonic0]:before { content:"Mini Andy" }
+a.author[href$=Andysonic-1]:before { content:"Tiny Andy" }
 a.author[href$=The_MSPainter]:before { content:"Domino's Pizza" }
-a.author[href$=theclinger_5]:before { content:"Sailor IncidentalUnicorn2" }
+a.author[href$=theclinger_5]:before { content:"IncidentalUnicorn2" }
 a.author[href$=FrigidMcThunderballs]:before  { content:"Dr. Chandragupta Maurya, M.S." }
 a.author[href$=j-brony]:before { content:"J's Brownies" }
-a.author[href$=RisenLordM]:before { content:"Sailor Risen" }
-a.author[href$=Princess_Pwny]:before { content:"Sailor Pwnyed" }
-a.author[href$=randyrules]:before { content:"Sailor Princess " }
-a.author[href$=tuckels]:before { content:"Sailor TUCKELS" }
+a.author[href$=RisenLordM]:before { content:"Risen" }
+a.author[href$=Princess_Pwny]:before { content:"Princess Pwnyed" }
+a.author[href$=randyrules]:before { content:"Princess " }
+a.author[href$=tuckels]:before { content:"TUCKELS" }
+a.author[href$=ZhilTP9112]:before { content:"Mechafag Zhil" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -975,7 +987,9 @@ a.author[href$=Lord_Ninka]:after,
 a.author[href$=Princess_Pwny]:after,
 a.author[href$=tuckels]:after,
 a.author[href$=randyrules]:after,
-a.author[href$=CogglerSenpai]:after
+a.author[href$=CogglerSenpai]:after,
+a.author[href$=sympathyfordiscord]:after,
+a.author[href$=rawrcharlierawr]:after
 
 {
 color:#000; 
@@ -1017,7 +1031,7 @@ a.author[href$=lord-hemingway]:after { content:" (Clopper 44)" }
 a.author[href$=Generic_Builder]:after { content:" IS SO KAWAII!" }
 a.author[href$=volcano_bakemeats]:after { content:" (Flour Sack Monster)" }
 a.author[href$=Chillusion]:after { content:" (Because I can.)" }
-a.author[href$=Edriss562]:after { content:" the prodigal son returns"; color:goldenrod }
+a.author[href$=Edriss562]:after { content:" Not a dead pone yet."; color:goldenrod }
 a.author[href$=waffen337]:after { content:"(Fucking ass ball bajongler)" }
 a.author[href$=sirtophat]:after { content:" (flaming homosexual)"; color:purple }
 a.author[href$=cheesemoo]:after { content:" (Is somehow still a mod)" }
@@ -1058,7 +1072,9 @@ a.author[href$=Princess_Pwny]:after { content:" your fun" }
 a.author[href$=tuckels]:after { content:" on 05/08/2014" }
 a.author[href$=CogglerSenpai]:after { content:" the art master" }
 a.author[href$=randyrules]:after {content:" of [BANNED]"}
-a.author[href$=TripsOcho]:after { content:" sucks all the mods' dicks" }
+a.author[href$=TripsOcho]:after { content:" touches all the butts" }
+a.author[href$=sympathyfordiscord]:after { content:" ~ augie" }
+a.author[href$=rawrcharlierawr]:after { content:": a blast from the past" }
 
 /* Any pre/post-name flair stuff goes here */ 
 
@@ -1191,7 +1207,7 @@ a[href|='/ninkafun'] {
 
 a[href|='/ninkafun'] {width:233px; height:220px; background-position: -120px -0px}
 
-a[href|='/boredshy'],a[href|='/rainbowmaid1'],a[href|='/drunktwi'],a[href|='/unchangelingprincess'],a[href|='/speedytwins'],a[href|='/scootabunny'],a[href|='/wrongcrimescum'],a[href|='/raritydoggystyle'],a[href|='/slavetofaust'],a[href|='/twililovebook'],a[href|='/sweetierarsoap'],a[href|='/screwhappy'],a[href|='/spikegetti'],a[href|='/cmcformation'],a[href|='/ewcriminalscrum'],a[href|='/derpybroughtyouanupvote'],a[href|='/flutterranger'],a[href|='/rainbowmaid2'],a[href|='/slowpone'],a[href|='/screwstretch'],a[href|='/screwplay'],a[href|='/dirtytwi'],a[href|='/rarityjudge2'],a[href|='/gameover'],a[href|='/deadgummy'],a[href|='/trixieroughmorning'],a[href|='/twipain'],a[href|='/twispike2'],a[href|='/babydragon'],a[href|='/twisoon'],a[href|='/rainbowlikes'],a[href|='/lyrawhatthefuckamireading']{
+a[href|='/boredshy'],a[href|='/rainbowmaid1'],a[href|='/drunktwi'],a[href|='/unchangelingprincess'],a[href|='/speedytwins'],a[href|='/scootabunny'],a[href|='/wrongcrimescum'],a[href|='/raritydoggystyle'],a[href|='/slavetofaust'],a[href|='/twililovebook'],a[href|='/sweetierarsoap'],a[href|='/screwhappy'],a[href|='/spikegetti'],a[href|='/cmcformation'],a[href|='/ewcriminalscrum'],a[href|='/derpybroughtyouanupvote'],a[href|='/flutterranger'],a[href|='/rainbowmaid2'],a[href|='/slowpone'],a[href|='/screwstretch'],a[href|='/screwplay'],a[href|='/dirtytwi'],a[href|='/rarityjudge2'],a[href|='/gameover'],a[href|='/deadgummy'],a[href|='/trixieroughmorning'],a[href|='/twipain'],a[href|='/twispike2'],a[href|='/babydragon'],a[href|='/twisoon'],a[href|='/rainbowlikes'],a[href|='/lyrawhatthefuckamireading'],a[href|='/vidya'],a[href|='/augie'],a[href|='/anonesphug']{
 
     display: block;
     clear: none;
@@ -1234,6 +1250,9 @@ a[href|="/twisoon"] {width:195px; height:215px; background-position: -900px -910
 a[href|="/rainbowlikes"] {width:240px; height:215px; background-position: -1090px -920px}
 /* fifth row */
 a[href|="/lyrawhatthefuckamireading"] {width:325px; height:170px; background-position: -0px -1080px}
+a[href|="/vidya"] {width:220px; height:200px; background-position: -329px -1086px}
+a[href|="/augie"] {width:177px; height:170px; background-position: -549px -1084px}
+a[href|="/anonesphug"] {width:200px; height:198px; background-position: -727px -1140px}
 
 /********** End of Emotes ************/
 
