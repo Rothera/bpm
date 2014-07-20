@@ -336,6 +336,12 @@ a[href|="/maudwhat"]
 a[href|="/rmaudwhat"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudwhat%%)!important; background-position: 0 -100%;}
 
+a[href|="/maudwink"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%winkmaud%%)!important; background-position: 0 0;}
+
+a[href|="/rmaudwink"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%winkmaud%%)!important; background-position: 0 -100%;}
+
 a[href|="/maudparty"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudparty%%)!important; background-position: 0 0;}
 
@@ -395,6 +401,9 @@ display:block;clear:none;float:left;width:70px;height:43px;background-image:url(
 background-position:0 0;
 }
 
+a[href|="/maudbored"]
+{display:block;clear:none;float:left;width:118px;height:150px;background-image:url(%%maudbored%%)!important; background-position: 0 0; margin-bottom: -24px; position:relative; z-index: 9999999999999999999}
+
 a[href|="/rsuperiormaud"],a[href|="/rsuperiormp"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-table%%)!important; background-position: 0 -200%;}
 
@@ -452,6 +461,9 @@ a[href|="/partytimemaud"] {
 display:block;clear:none;float:left;width:209px;height:200px;background-image:url(%%noisemaud%%)!important;
 background-position:0 0;
 }
+
+a[href|="/fillymaud"]
+{display:block;clear:none;float:left;width:100px;height:149px;background-image:url(%%fillymaud%%)!important; background-position: 0 0;}
 
 a[href|="/wetmanemaud"],a[href|="/wetmanemp"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-table%%)!important; background-position: 0 -600%;}

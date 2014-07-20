@@ -1,8 +1,8 @@
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Equestrian Cup Hooligans"}
+div.titlebox .subscribers span.number:after {content:" Sillies and Numpties"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " Plounging about" }
+div.titlebox p.users-online span.number:after { content: " being Silly" }
 div.titlebox p.users-online span.word { display: none }
 
 .sidecontentbox .flair {display:none}
@@ -12,7 +12,7 @@ div.titlebox p.users-online span.word { display: none }
 .sidecontentbox .voteWeight,.sidecontentbox .userTagLink{display:none!important}f
 #search input[type='text']
 /*{
- background:url(%%background%%) top left no-repeat!important;
+ background:url(%%e1tfI%%) top left no-repeat!important;
  padding:13px 2px 13px 50px!important;
  height:22px!important;
  width:110px!important
@@ -160,12 +160,12 @@ div.over18 .entry .buttons .first{padding-left: 0px}
 
 .footer-parent
 {
- padding-bottom: 210px;
- height:716px;
+ padding-bottom: 220px;
  clear:both;
  text-align:center;
+ height:750px;
  width:100%;
- background-image:url(%%3-lions%%);
+ background-image:url(%%tavistare%%);
  background-repeat:no-repeat;
  margin-bottom:-25px;
  background-position: bottom center;
@@ -194,25 +194,130 @@ h3.imgTitle{
     color: #000;
 }
 
+/*Sidebar Filly Start*/
+
+/*Random based on first link on page*/
+div.thing.link:first-child:after {
+ position: fixed;
+ top: 240px;
+ right: 10px;
+ z-index: 998;
+ width: 70px;
+ height: 70px;
+ border: 0;
+ content: "";
+ background:url(%%filly-table%%)
+}
+
+div.thing.link:first-child[data-fullname$="0"]:after{background-position: 0 0}
+div.thing.link:first-child[data-fullname$="1"]:after{background-position: 0 -100%}
+div.thing.link:first-child[data-fullname$="2"]:after{background-position: 0 -200%}
+div.thing.link:first-child[data-fullname$="3"]:after{background-position: 0 -300%}
+div.thing.link:first-child[data-fullname$="4"]:after{background-position: 0 -400%}
+div.thing.link:first-child[data-fullname$="5"]:after{background-position: 0 -500%}
+div.thing.link:first-child[data-fullname$="6"]:after{background-position: 0 -600%}
+div.thing.link:first-child[data-fullname$="7"]:after{background-position: 0 -700%}
+div.thing.link:first-child[data-fullname$="8"]:after{background-position: 0 -800%}
+div.thing.link:first-child[data-fullname$="9"]:after{background-position: 0 -900%}
+div.thing.link:first-child[data-fullname$="a"]:after{background-position: 0 -1000%}
+div.thing.link:first-child[data-fullname$="b"]:after{background-position: 0 -1100%}
+div.thing.link:first-child[data-fullname$="c"]:after{background-position: -100% 0}
+div.thing.link:first-child[data-fullname$="d"]:after{background-position: -100% -100%}
+div.thing.link:first-child[data-fullname$="e"]:after{background-position: -100% -200%}
+div.thing.link:first-child[data-fullname$="f"]:after{background-position: -100% -300%}
+div.thing.link:first-child[data-fullname$="g"]:after{background-position: -100% -400%}
+div.thing.link:first-child[data-fullname$="h"]:after{background-position: -100% -500%}
+div.thing.link:first-child[data-fullname$="i"]:after{background-position: -100% -600%}
+div.thing.link:first-child[data-fullname$="j"]:after{background-position: -100% -700%}
+div.thing.link:first-child[data-fullname$="k"]:after{background-position: -100% -800%}
+div.thing.link:first-child[data-fullname$="l"]:after{background-position: -100% -900%}
+div.thing.link:first-child[data-fullname$="m"]:after{background-position: -100% -1000%}
+div.thing.link:first-child[data-fullname$="n"]:after{background-position: -100% -1100%}
+div.thing.link:first-child[data-fullname$="o"]:after{background-position: -200% 0}
+div.thing.link:first-child[data-fullname$="p"]:after{background-position: -200% -100%}
+div.thing.link:first-child[data-fullname$="q"]:after{background-position: -200% -200%}
+div.thing.link:first-child[data-fullname$="r"]:after{background-position: -200% -300%}
+div.thing.link:first-child[data-fullname$="s"]:after{background-position: -200% -400%}
+div.thing.link:first-child[data-fullname$="t"]:after{background-position: -200% -500%}
+div.thing.link:first-child[data-fullname$="u"]:after{background-position: -200% -600%}
+div.thing.link:first-child[data-fullname$="v"]:after{background-position: -200% -700%}
+div.thing.link:first-child[data-fullname$="w"]:after{background-position: -200% -800%}
+div.thing.link:first-child[data-fullname$="x"]:after{background-position: -200% -900%}
+div.thing.link:first-child[data-fullname$="y"]:after{background-position: -200% -1000%}
+div.thing.link:first-child[data-fullname$="z"]:after{background-position: -200% -1100%}
+
+/*Random based on log out id*/
+/*
+input[name=uh] ~ a:after {
+ position: fixed;
+ top: 240px;
+ right: 10px;
+ z-index: 0;
+ width: 70px;
+ height: 70px;
+ border: 0;
+ content: "";
+ background:url(%%filly-table%%)
+}
+
+input[name=uh][value$="0"] ~ a:after {background-position: 0 0}
+input[name=uh][value$="1"] ~ a:after {background-position: 0 -100%}
+input[name=uh][value$="2"] ~ a:after {background-position: 0 -200%}
+input[name=uh][value$="3"] ~ a:after {background-position: 0 -300%}
+input[name=uh][value$="4"] ~ a:after {background-position: 0 -400%}
+input[name=uh][value$="5"] ~ a:after {background-position: 0 -500%}
+input[name=uh][value$="6"] ~ a:after {background-position: 0 -600%}
+input[name=uh][value$="7"] ~ a:after {background-position: 0 -700%}
+input[name=uh][value$="8"] ~ a:after {background-position: 0 -800%}
+input[name=uh][value$="9"] ~ a:after {background-position: 0 -900%}
+input[name=uh][value$="a"] ~ a:after {background-position: 0 -1000%}
+input[name=uh][value$="b"] ~ a:after {background-position: 0 -1100%}
+input[name=uh][value$="c"] ~ a:after {background-position: -100% 0}
+input[name=uh][value$="d"] ~ a:after {background-position: -100% -100%}
+input[name=uh][value$="e"] ~ a:after {background-position: -100% -200%}
+input[name=uh][value$="f"] ~ a:after {background-position: -100% -300%}
+input[name=uh][value$="g"] ~ a:after {background-position: -100% -400%}
+input[name=uh][value$="h"] ~ a:after {background-position: -100% -500%}
+input[name=uh][value$="i"] ~ a:after {background-position: -100% -600%}
+input[name=uh][value$="j"] ~ a:after {background-position: -100% -700%}
+input[name=uh][value$="k"] ~ a:after {background-position: -100% -800%}
+input[name=uh][value$="l"] ~ a:after {background-position: -100% -900%}
+input[name=uh][value$="m"] ~ a:after {background-position: -100% -1000%}
+input[name=uh][value$="n"] ~ a:after {background-position: -100% -1100%}
+input[name=uh][value$="o"] ~ a:after {background-position: -200% 0}
+input[name=uh][value$="p"] ~ a:after {background-position: -200% -100%}
+input[name=uh][value$="q"] ~ a:after {background-position: -200% -200%}
+input[name=uh][value$="r"] ~ a:after {background-position: -200% -300%}
+input[name=uh][value$="s"] ~ a:after {background-position: -200% -400%}
+input[name=uh][value$="t"] ~ a:after {background-position: -200% -500%}
+input[name=uh][value$="u"] ~ a:after {background-position: -200% -600%}
+input[name=uh][value$="v"] ~ a:after {background-position: -200% -700%}
+input[name=uh][value$="w"] ~ a:after {background-position: -200% -800%}
+input[name=uh][value$="x"] ~ a:after {background-position: -200% -900%}
+input[name=uh][value$="y"] ~ a:after {background-position: -200% -1000%}
+input[name=uh][value$="z"] ~ a:after {background-position: -200% -1100%}
+*/
+
 .side a[href="/r/MLPLounge/new/"]
 {
  display:block;
- width:87px;
- height:100px;
- background:url(%%englandsbravetavi%%);
+ width:70px;
+ height:70px;
  position:fixed; 
- top: 320px;
- right: 20px;
+ top: 240px;
+ right: 10px;
  z-index:999
 }
 
+/*Sidebar Filly end*/
 
-body{background:url(%%taviengland%%) no-repeat fixed center center}
+
+body{background:url(%%twilightbackground%%) no-repeat fixed center center}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
 .content .md h1:before{content:">"}
 
 .res-nightmode body {
-background: url(%%taviengland%%) center center no-repeat fixed #222222 !important;
+background: url(%%twilightbackground%%) center center no-repeat fixed #222222 !important;
 }
 
 body.res-nightmode div.content {
@@ -498,115 +603,115 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 
 
 a[href|="/filly"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%filly-table-wc%%)!important}
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%filly-table%%)!important}
 
 /*Rarity*/
-.usertext input[value$="a"] + .usertext-body a[href="/filly"],
-.usertext input[value$="c"] + .usertext-body a[href="/filly"]{background-position: 0 0}
+.usertext input[value$="a"] + .usertext-body a[href="/filly"]{background-position: 0 0}
 
 /*Pinkie Pie*/
-.usertext input[value$="j"] + .usertext-body a[href="/filly"],
-.usertext input[value$="k"] + .usertext-body a[href="/filly"]{background-position:0 -100%}
+.usertext input[value$="b"] + .usertext-body a[href="/filly"]{background-position:0 -100%}
 
 /*Scootaloo*/
-.usertext input[value$="0"] + .usertext-body a[href="/filly"]{background-position:0 -200%}
+.usertext input[value$="c"] + .usertext-body a[href="/filly"]{background-position:0 -200%}
 
 /*Lyra*/
-.usertext input[value$="y"] + .usertext-body a[href="/filly"]{background-position:0 -300%}
+.usertext input[value$="d"] + .usertext-body a[href="/filly"]{background-position:0 -300%}
 
 /*Vinyl Scratch*/
-.usertext input[value$="1"] + .usertext-body a[href="/filly"]{background-position:0 -400%}
+.usertext input[value$="e"] + .usertext-body a[href="/filly"]{background-position:0 -400%}
 
 /*Roseluck*/
-.usertext input[value$="4"] + .usertext-body a[href="/filly"]{background-position:0 -500%}
+.usertext input[value$="f"] + .usertext-body a[href="/filly"]{background-position:0 -500%}
 
 /*Princess Celestia*/
-.usertext input[value$="7"] + .usertext-body a[href="/filly"]{background-position:0 -600%}
+.usertext input[value$="g"] + .usertext-body a[href="/filly"]{background-position:0 -600%}
 
 /*Princess Cadance*/
-.usertext input[value$="t"] + .usertext-body a[href="/filly"],
-.usertext input[value$="b"] + .usertext-body a[href="/filly"] {background-position:0 -700%}
+.usertext input[value$="h"] + .usertext-body a[href="/filly"]{background-position:0 -700%}
 
 /*Twist*/
-.usertext input[value$="l"] + .usertext-body a[href="/filly"] {background-position:0 -800%}
+.usertext input[value$="i"] + .usertext-body a[href="/filly"]{background-position:0 -800%}
 
-/*Cloud Chaser 0 -900%*/
+/*Cloud Chaser*/
+.usertext input[value$="j"] + .usertext-body a[href="/filly"]{background-position:0 -900%}
 
 /*Pipsqueak 0 -1000%*/
+.usertext input[value$="k"] + .usertext-body a[href="/filly"]{background-position:0 -1000%}
 
 /*Big Macintosh 0 -1100%*/
+.usertext input[value$="l"] + .usertext-body a[href="/filly"]{background-position:0 -1100%}
 
 /*Applejack*/
-.usertext input[value$="d"] + .usertext-body a[href="/filly"],
-.usertext input[value$="e"] + .usertext-body a[href="/filly"]{background-position:-100% 0}
+.usertext input[value$="m"] + .usertext-body a[href="/filly"]{background-position:-100% 0}
 
 /*Rainbow Dash*/
-.usertext input[value$="m"] + .usertext-body a[href="/filly"],
 .usertext input[value$="n"] + .usertext-body a[href="/filly"]{background-position:-100% -100%}
 
 /*Applebloom*/
-.usertext input[value$="u"] + .usertext-body a[href="/filly"]{background-position:-100% -200%}
+.usertext input[value$="o"] + .usertext-body a[href="/filly"]{background-position:-100% -200%}
 
 /*Bon Bon*/
-.usertext input[value$="z"] + .usertext-body a[href="/filly"]{background-position:-100% -300%}
+.usertext input[value$="p"] + .usertext-body a[href="/filly"]{background-position:-100% -300%}
 
 /*Octavia*/
-.usertext input[value$="2"] + .usertext-body a[href="/filly"],
-.usertext input[value$="o"] + .usertext-body a[href="/filly"]{background-position:-100% -400%}
+.usertext input[value$="q"] + .usertext-body a[href="/filly"]{background-position:-100% -400%}
 
 /*Carrot Top*/
-.usertext input[value$="5"] + .usertext-body a[href="/filly"]{background-position:-100% -500%}
+.usertext input[value$="r"] + .usertext-body a[href="/filly"]{background-position:-100% -500%}
 
 /*Luna*/
-.usertext input[value$="8"] + .usertext-body a[href="/filly"],
-.usertext input[value$="r"] + .usertext-body a[href="/filly"]{background-position:-100% -600%}
+.usertext input[value$="s"] + .usertext-body a[href="/filly"]{background-position:-100% -600%}
 
 /*Zecora*/
-.usertext input[value$="v"] + .usertext-body a[href="/filly"]{background-position:-100% -700%}
+.usertext input[value$="t"] + .usertext-body a[href="/filly"]{background-position:-100% -700%}
 
 /*Queen Chrysalis*/
-.usertext input[value$="f"] + .usertext-body a[href="/filly"]{background-position:-100% -800%}
+.usertext input[value$="u"] + .usertext-body a[href="/filly"]{background-position:-100% -800%}
 
-/*Flitter -100% -900%*/
+/*Flitter*/
+.usertext input[value$="v"] + .usertext-body a[href="/filly"]{background-position:-100% -900%}
 
-/*Rumble -100% -1000%*/
+/*Rumble*/
+.usertext input[value$="w"] + .usertext-body a[href="/filly"]{background-position:-100% -1000%}
 
-/*Braeburn -100% -1100%*/
+/*Braeburn*/
+.usertext input[value$="x"] + .usertext-body a[href="/filly"]{background-position:-100% -1100%}
 
 /*Twilight Sparkle*/
-.usertext input[value$="g"] + .usertext-body a[href="/filly"],
-.usertext input[value$="h"] + .usertext-body a[href="/filly"]{background-position:-200% 0}
+.usertext input[value$="y"] + .usertext-body a[href="/filly"]{background-position:-200% 0}
 
 /*Fluttershy*/
-.usertext input[value$="p"] + .usertext-body a[href="/filly"],
-.usertext input[value$="q"] + .usertext-body a[href="/filly"]{background-position:-200% -100%}
+.usertext input[value$="z"] + .usertext-body a[href="/filly"]{background-position:-200% -100%}
 
 /*Sweetiebelle*/
-.usertext input[value$="w"] + .usertext-body a[href="/filly"]{background-position:-200% -200%}
+.usertext input[value$="1"] + .usertext-body a[href="/filly"]{background-position:-200% -200%}
 
 /*Cheerilee*/
-.usertext input[value$="s"] + .usertext-body a[href="/filly"]{background-position:-200% -300%}
+.usertext input[value$="2"] + .usertext-body a[href="/filly"]{background-position:-200% -300%}
 
 /*Spitfire*/
 .usertext input[value$="3"] + .usertext-body a[href="/filly"]{background-position:-200% -400%}
 
 /*Derpy*/
-.usertext input[value$="6"] + .usertext-body a[href="/filly"]{background-position:-200% -500%}
+.usertext input[value$="4"] + .usertext-body a[href="/filly"]{background-position:-200% -500%}
 
 /*Karma*/
-.usertext input[value$="9"] + .usertext-body a[href="/filly"]{background-position:-200% -600%}
+.usertext input[value$="5"] + .usertext-body a[href="/filly"]{background-position:-200% -600%}
 
 /*Minuette*/
-.usertext input[value$="x"] + .usertext-body a[href="/filly"]{background-position:-200% -700%}
+.usertext input[value$="6"] + .usertext-body a[href="/filly"]{background-position:-200% -700%}
 
 /*The Great and Powerful Trixie*/
-.usertext input[value$="i"] + .usertext-body a[href="/filly"]{background-position:-200% -800%}
+.usertext input[value$="7"] + .usertext-body a[href="/filly"]{background-position:-200% -800%}
 
-/*Maud -200% -900%*/
+/*Maud*/
+.usertext input[value$="8"] + .usertext-body a[href="/filly"]{background-position:-200% -900%}
 
-/*Soarin -200% -1000%*/
+/*Soarin*/
+.usertext input[value$="9"] + .usertext-body a[href="/filly"]{background-position:-200% -1000%}
 
-/*Bulk Biceps -200% -1100%*/
+/*Bulk Biceps*/
+.usertext input[value$="0"] + .usertext-body a[href="/filly"]{background-position:-200% -1100%}
 
 /*End filly code*/
 
@@ -622,7 +727,7 @@ a[href|="/filly"]
 .side .md table:nth-of-type(4) th:nth-of-type(1):after {content:"e";}
 .side .md table:nth-of-type(4) tr:nth-of-type(odd) td + td:after {background-image:url(%%emotes%%);}
 .side .md table:nth-of-type(5) th:nth-of-type(1):after {content:"f";}
-.side .md table:nth-of-type(5) tr:nth-of-type(odd) td + td:after {background-image:url(%%filly-table-wc%%);}
+.side .md table:nth-of-type(5) tr:nth-of-type(odd) td + td:after {background-image:url(%%filly-table%%);}
 .side .md table td {padding:0;}
 
 .side .md table th:nth-of-type(2):after {content:"0";}
@@ -643,16 +748,18 @@ a[href|="/filly"]
 .side .md table tbody tr:nth-of-type(15) td:nth-of-type(1):after {content:"7";}
 .side .md table tbody tr:nth-of-type(17) td:nth-of-type(1):after {content:"8";}
 .side .md table tbody tr:nth-of-type(19) td:nth-of-type(1):after {content:"9";}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(1) td:nth-of-type(1):after {content:"f"!important}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(1) td:nth-of-type(1):after {content:"F"!important}
 .side .md table:nth-of-type(5) tbody tr:nth-of-type(3) td:nth-of-type(1):after {content:"i"!important}
 .side .md table:nth-of-type(5) tbody tr:nth-of-type(5) td:nth-of-type(1):after {content:"l"!important}
 .side .md table:nth-of-type(5) tbody tr:nth-of-type(7) td:nth-of-type(1):after {content:"l"!important}
 .side .md table:nth-of-type(5) tbody tr:nth-of-type(9) td:nth-of-type(1):after {content:"i"!important}
 .side .md table:nth-of-type(5) tbody tr:nth-of-type(11) td:nth-of-type(1):after {content:"e"!important}
 .side .md table:nth-of-type(5) tbody tr:nth-of-type(13) td:nth-of-type(1):after {content:"s"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(15) td:nth-of-type(1):after {content:"!"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(17) td:nth-of-type(1):after {content:"!"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(19) td:nth-of-type(1):after {content:""!important}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(15) td:nth-of-type(1):after {content:""!important}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(17) td:nth-of-type(1):after {content:"Y"!important}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(19) td:nth-of-type(1):after {content:"a"!important}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(21) td:nth-of-type(1):after {content:"y"!important}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(23) td:nth-of-type(1):after {content:"!"!important}
 
 /*Row/col sizes: (And some undoing for number col*/
 .side .md table th + th
@@ -956,6 +1063,24 @@ a[href|="/filly"]
 .side .md table:nth-of-type(5) tr:nth-of-type(18) td:nth-of-type(2):after{content:"filly"}
 .side .md table:nth-of-type(5) tr:nth-of-type(18) td:nth-of-type(3):after{content:"filly"}
 .side .md table:nth-of-type(5) tr:nth-of-type(18) td:nth-of-type(4):after{content:"filly"}
+.side .md table:nth-of-type(5) tr:nth-of-type(19) td:nth-of-type(2):after{background-position: 0 -900%}
+.side .md table:nth-of-type(5) tr:nth-of-type(19) td:nth-of-type(3):after{background-position: -100% -900%}
+.side .md table:nth-of-type(5) tr:nth-of-type(19) td:nth-of-type(4):after{background-position: -200% -900%}
+.side .md table:nth-of-type(5) tr:nth-of-type(20) td:nth-of-type(2):after{content:"filly"}
+.side .md table:nth-of-type(5) tr:nth-of-type(20) td:nth-of-type(3):after{content:"filly"}
+.side .md table:nth-of-type(5) tr:nth-of-type(20) td:nth-of-type(4):after{content:"filly"}
+.side .md table:nth-of-type(5) tr:nth-of-type(21) td:nth-of-type(2):after{background-position: 0 -1000%}
+.side .md table:nth-of-type(5) tr:nth-of-type(21) td:nth-of-type(3):after{background-position: -100% -1000%}
+.side .md table:nth-of-type(5) tr:nth-of-type(21) td:nth-of-type(4):after{background-position: -200% -1000%}
+.side .md table:nth-of-type(5) tr:nth-of-type(22) td:nth-of-type(2):after{content:"filly"}
+.side .md table:nth-of-type(5) tr:nth-of-type(22) td:nth-of-type(3):after{content:"filly"}
+.side .md table:nth-of-type(5) tr:nth-of-type(22) td:nth-of-type(4):after{content:"filly"}
+.side .md table:nth-of-type(5) tr:nth-of-type(23) td:nth-of-type(2):after{background-position: 0 -1100%}
+.side .md table:nth-of-type(5) tr:nth-of-type(23) td:nth-of-type(3):after{background-position: -100% -1100%}
+.side .md table:nth-of-type(5) tr:nth-of-type(23) td:nth-of-type(4):after{background-position: -200% -1100%}
+.side .md table:nth-of-type(5) tr:nth-of-type(24) td:nth-of-type(2):after{content:"filly"}
+.side .md table:nth-of-type(5) tr:nth-of-type(24) td:nth-of-type(3):after{content:"filly"}
+.side .md table:nth-of-type(5) tr:nth-of-type(24) td:nth-of-type(4):after{content:"filly"}
 
 /*End sidebar emote code*/
 
@@ -1014,6 +1139,16 @@ a[href|="/ripferrbearand20"] {
  width: 204px;
  height: 250px;
  background-image: url(%%ripferrbearand20%%);  
+} 
+
+
+a[href|="/tavicheer"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 186px;
+ height: 150px;
+ background-image: url(%%itscominghome2%%);
 } 
 
 /* Begin Flair Code */
@@ -1170,100 +1305,19 @@ a.author[href$="BlameTheJungler"]:before {font-size:10px!important; visibility:v
 a.author[href$="MLP_William"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="MLP_William"]:before {font-size:10px!important; visibility:visible!important; content: "MLP_WiIIiam"}
 
-a.author[href$="french_guy_al"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="french_guy_al"]:before {font-size:10px!important; visibility:visible!important; content: "I'm a stupid moron with an ugly face and a big butt and my butt smells and I like to kiss my own butt"}
+a.author[href$="DaylightDarkle"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="DaylightDarkle"]:before {font-size:10px!important; visibility:visible!important; content: "Pylo"}
+.sidecontentbox a.author[href$="DaylightDarkle"]:before {font-size:12px!important; visibility:visible!important; content: "SnapGracklePop"!important}
 
-/*Name Changes from the old Plounge mod team*/
-.sidecontentbox a.author.id-t2_5fmql {display:none;}
-a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,a.author.id-t2_52j0w,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
-a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,a.author.id-t2_52j0w:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after{font-size:10px!important;display:block;letter-spacing:normal}
-a.author.id-t2_4mwnz:after{content:"DerpyHiccupKittyTail"}
-a.author.id-t2_8kzeb:after{content:"RAINBOW_PONY_JUICEBOX"}
-a.author.id-t2_52j0w:after{content:"RainbowDashJedi"}
-div.content a.author.id-t2_5agom:after{content:"Chinchy"}
-a.author.id-t2_5o2lh:after{content:"Luna_in_Equestria"}
-a.author.id-t2_4uott:after{content:"3cakes2pies1fork"}
-a.author.id-t2_3klgq:after{content:" is an artist";}
-a.author.id-t2_67xn1:after{content:" Wordsmith_Pony"}
+.sidecontentbox a.author[href$="DoomedCivilian"] {color: #ff23ff}
 
-/*Old header text ~ Y'know, a pastel-coloured unicorn sitting in an armchair, drinking tea, while possibly observing some offscreen absurdity is about as accurate a depiction as you'll get for this subreddit........ ~*/
+a.author[href$="Clop_Stains"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Clop_Stains"]:before {font-size:10px!important; visibility:visible!important; content: "Pirate Santa"}
+a.author[href$="Pony_Ass"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Pony_Ass"]:before {font-size:10px!important; visibility:visible!important; content: "A Capsule of Dirty Gak"}
+a.author[href$="Filly_wang"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Filly_wang"]:before {font-size:10px!important; visibility:visible!important; content: "Smoke Silly Putty Every Night"}
+a.author[href$="DoomeedCivilian"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="DoomeedCivilian"]:before {font-size:10px!important; visibility:visible!important; content: "Poorly Mimiced Mod Name"}
 
-a[href|="/tavicheer"] {  
- display: block;
- clear: none;
- float: left; 
- width: 186px;
- height: 150px;
- background-image: url(%%itscominghome2%%);
-} 
-
-/*Remove below when votes stop being funny*/
-
-.res-nightmode .arrow, .arrow {
-    height: 14px !important;
-    width: 15px !important;
-    }
-
-.res-nightmode .arrow.up, .arrow.up { 
-    background:url(%%votes%%)!important;
-    background-position: 0 0 !important;
-    }
-
-.res-nightmode .arrow.up:hover, .arrow.up:hover {
-    background:url(%%votes%%)!important;
-    background-position: 0 -100% !important;
-    }
-
-.res-nightmode .arrow.upmod, .arrow.upmod { 
-    background:url(%%votes%%)!important;
-    background-position: 0 -100% !important;
-    }
-
-.res-nightmode .arrow.down, .arrow.down {
-    background:url(%%votes%%)!important;
-    background-position: 0 -300% !important;
-    }
-
-.res-nightmode .arrow.down:hover, .arrow.down:hover {
-    background:url(%%votes%%)!important;
-    background-position: 0 -200% !important;
-    }
-
-.res-nightmode .arrow.downmod, .arrow.downmod {
-    background:url(%%votes%%)!important;
-    background-position: 0 -200% !important;
-    }
-
-.res-nightmode .midcol[style], .midcol[style] {
-    width: 30px !important;
-    }
-
-.res-nightmode .comment .midcol, .comment .midcol {
-    width:15px !important;
-    }
-
-.res-nightmode .gadget .midcol, .gadget .midcol {
-    width:15px !important; 
-    margin:0 !important;
-    }
-
-.midcol .likes {color: #9494ff!important}
-
-.midcol .dislikes {color: #FF8A5E!important}
-
-.newComments {color: #9494ff!important}
-
-#mail {
-position: relative;
-display: inline-block;
-text-indent: -9999px;
-overflow: hidden;
-width: 15px; 
-height: 10px;
-}
-#mail.havemail {
-background:url(%%votes%%);
-background-position: -15px 0;
-}
-
-#header {background-color: #AFD3F7}
+.sidecontentbox a.author[href$="Pinkie_Pie"] {font-size:0!important; overflow:hidden; display:none; content: "";}

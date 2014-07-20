@@ -155,7 +155,7 @@ height:40px;
 
 
 /* ------ Emotes! --------- */
-a[href|='/cocoawkward'], a[href|='/funnay'], a[href|='/gildabird'], a[href|='/holyshit'], a[href|='/keytar'], a[href|='/pinkiebat'], a[href|='/ppchug'], a[href|='/rdscary'], a[href|='/twiperturbed'], a[href|='/lyra10'], a[href|='/cishetscum'], a[href|='/augie']{ 
+a[href|='/cocoawkward'], a[href|='/funnay'], a[href|='/gildabird'], a[href|='/holyshit'], a[href|='/keytar'], a[href|='/pinkiebat'], a[href|='/ppchug'], a[href|='/rdscary'], a[href|='/twiperturbed'], a[href|='/lyra10'], a[href|='/cishetscum'], a[href|='/augie'], a[href|='/bestofabadsituation']{ 
     display: block;
     clear: none;
     float: left;
@@ -174,6 +174,7 @@ a[href|='/twiperturbed'] {width:107px; height:130px; background-position: -101px
 a[href|='/lyra10'] {width:196px; height:150px; background-position: -1px -963px}
 a[href|='/cishetscum'] {width:203px; height:200px; background-position: -172px -456px}
 a[href|='/augie'] {width:156px; height:150px; background-position: -227px -662px}
+ a[href|='/bestofabadsituation'] {width:248px; height:200px; background-position: -225px -826px}
 
 a[href|='/cheekyaj'], a[href|='/cheekyderp'], a[href|='/cheekylyra'], a[href|='/cheekypp'], a[href|='/cheekyrara'], a[href|='/cheekyscoots'], a[href|='/cheekyshy'], a[href|='/cheekytwi'], a[href|='/cheekyvs'],a[href|='/cheekynoteass'], a[href|='/roselie'], a[href|='/octibored'], a[href|='/topunf'] {
     display: block;
@@ -478,6 +479,7 @@ body.res a.author[href$="SGIG"] {color:#FF9EF2!important}
 /* Names */
 
 /* here first */
+a.author[href$='swishyfeather'],
 a.author[href$='AWESOEM'],
 a.author[href$='Kwulhu'],
 a.author[href$='Monoclebear'],
@@ -515,6 +517,7 @@ content: "";
 }
 
 /* here second */
+a.author[href$='swishyfeather']:before,
 a.author[href$='AWESOEM']:before,
 a.author[href$=SGIG]:before,
 a.author[href$='Kwulhu']:before,
@@ -549,6 +552,7 @@ visibility:visible!important;
 }
 
 /*and the replacement*/ 
+a.author[href$='swishyfeather']:before {content: "Syni"}
 a.author[href$='AWESOEM']:before {content: "tablekat"}
 a.author[href$=SGIG]:before {content: "Fionna"}
 a.author[href$='Kwulhu']:before {content: "Primeminister Kwu"}
@@ -569,9 +573,9 @@ a.author[href$=EvanMacIan]:before {content:"Mr. Califag MacIan"}
 a.author[href$=SirCinnamon]:before {content:"King Cinnamon"}
 a.author[href$=XelNaga]:before {content:"Princess Twi`Naga"}
 a.author[href$=Princess_Molestia_]:before {content:"Princess Molestia"}
-a.author[href$=V17Ds]:before {content:"terra"}
+a.author[href$=V17Ds]:before {content:"tara"}
 a.author[href$=ZZW30]:before {content:"CaptChuckles"}
-a.author[href$="derram_2"]:before {content:"derram"}
+a.author[href$="derram_2"]:before {content:"derr bear"}
 a.author[href$=CodenameToon]:before {content:"Coggler"}
 a.author[href$=Jeroknite]:before {content:"bees"; font-size:15px !important}
 a.author[href$="0x_"]:before {content:"Just Ox"}

@@ -1,7 +1,7 @@
 /* LIMITS:
  * Limit on number of images uploaded is 50.
  * Limit on CSS size is approx 100,000 characters
- * Limit on image size is 512kB (Approx)
+ * Limit on image size is 500kB (Approx)
  */
 
 /* Subscriber count + active user text changer */
@@ -21,6 +21,11 @@ float: left;
 /* Stop RES voteweight & tags in mod box, wiki pages, and comment bodies */
 .sidecontentbox .voteWeight, .sidecontentbox .userTagLink, .wiki-page .voteWeight, .wiki-page .userTagLink, .comment .md .voteWeight, .comment .md .userTagLink {
 display: none !important;
+}
+
+/* Stop unneccessary margins in mod box wiki pages comments etc. etc. */
+.sidecontentbox .userTagged, .wiki-page .userTagged, .comment .md .userTagged {
+margin-right: 0 !important;
 }
 
 /* Header Image stuff */
@@ -403,7 +408,7 @@ height: 800px;
  */
 
 /* 70x70a 'motes. */
-a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"], a[href|="/grannyglad"], a[href|="/aloe"], a[href|="/ohyeah"], a[href|="/neutraljack"], a[href|="/fillyfirefly"], a[href|="/rdwat"], a[href|="/cocosmile"], a[href|="/cocohappy"], a[href|="/cocosad"], a[href|="/grimfluff"], a[href|="/ajduckface"], a[href|="/rarapossessed"], a[href|="/maudsmile"], a[href|="/dashsquint"], a[href|="/rastare"], a[href|="/rdfacehoof"], a[href|="/rdtwifacehoof"], a[href|="/rdtwipride"], a[href|="/rdtwismile"], a[href|="/rdtwicrazy"], a[href|="/rdtwibeam"], a[href|="/rdtwisquint"], a[href|="/rdtwistare"], a[href|="/rdtwiponder"], a[href|="/scootcontent"], a[href|="/twilightstare"], a[href|="/nursesaywhat"], a[href|="/twiworry"], a[href|="/apathiareally"], a[href|="/karmasmile"], a[href|="/discentiahurry"], a[href|="/karmacute"], a[href|="/discentiashock"], a[href|="/apathiashock"], a[href|="/karmahappy"], a[href|="/discentiaelated"], a[href|="/cadshrug"]
+a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[href|="/lemonglee"], a[href|="/grannyglad"], a[href|="/aloe"], a[href|="/ohyeah"], a[href|="/neutraljack"], a[href|="/fillyfirefly"], a[href|="/rdwat"], a[href|="/cocosmile"], a[href|="/cocohappy"], a[href|="/cocosad"], a[href|="/grimfluff"], a[href|="/ajduckface"], a[href|="/rarapossessed"], a[href|="/maudsmile"], a[href|="/dashsquint"], a[href|="/rastare"], a[href|="/rdfacehoof"], a[href|="/rdtwifacehoof"], a[href|="/rdtwipride"], a[href|="/rdtwismile"], a[href|="/rdtwicrazy"], a[href|="/rdtwibeam"], a[href|="/rdtwisquint"], a[href|="/rdtwistare"], a[href|="/rdtwiponder"], a[href|="/scootcontent"], a[href|="/twilightstare"], a[href|="/nursesaywhat"], a[href|="/twiworry"], a[href|="/apathiareally"], a[href|="/karmasmile"], a[href|="/discentiahurry"], a[href|="/karmacute"], a[href|="/discentiashock"], a[href|="/apathiashock"], a[href|="/karmahappy"], a[href|="/discentiaelated"], a[href|="/cadshrug"], a[href|="/fillysurprise"]
 {background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
@@ -411,7 +416,7 @@ a[href|="/cadface"], a[href|="/apathiablankstare"], a[href|="/twicider"], a[href
 {background-image:url(%%100x100a%%);width:100px;height:100px;display:block;float:left;}
 
 /* 100x100b 'motes */
-a[href|="/rarityparanoid"], a[href|="/rarinoid"], a[href|="/flutterfreaked"], a[href|="/applewat"], a[href|="/fspuppyeyes"], a[href|="/fspout"], a[href|="/scootasquee"], a[href|="/fillycoco"], a[href|="/ajrescue"], a[href|="/scaryaj"], a[href|="/pptsundere"], a[href|="/rdtsundere"], a[href|="/fsfascinating"], a[href|="/maudxrock"], a[href|="/sweetiebitch"], a[href|="/raracheeks"], a[href|="/lunapersona"], a[href|="/lunaselfcest"], a[href|="/rdscreaminginternally"], a[href|="/twijoy"], a[href|="/seapeeve"], a[href|="/loveletter"], a[href|="/twilightglare"], a[href|="/tirekunamused"], a[href|="/rarityunamused"], a[href|="/karmawat"], a[href|="/apathiaunsure"], a[href|="/apathiashrug"], a[href|="/chrome"], a[href|="/firefox"], a[href|="/derpyhasmuffin"], a[href|="/raraglee"], a[href|="/fillyderpysit"]
+a[href|="/rarityparanoid"], a[href|="/rarinoid"], a[href|="/flutterfreaked"], a[href|="/applewat"], a[href|="/fspuppyeyes"], a[href|="/fspout"], a[href|="/scootasquee"], a[href|="/fillycoco"], a[href|="/ajrescue"], a[href|="/scaryaj"], a[href|="/pptsundere"], a[href|="/rdtsundere"], a[href|="/fsfascinating"], a[href|="/maudxrock"], a[href|="/sweetiebitch"], a[href|="/raracheeks"], a[href|="/lunapersona"], a[href|="/lunaselfcest"], a[href|="/rdscreaminginternally"], a[href|="/twijoy"], a[href|="/seapeeve"], a[href|="/loveletter"], a[href|="/twilightglare"], a[href|="/tirekunamused"], a[href|="/rarityunamused"], a[href|="/karmawat"], a[href|="/apathiaunsure"], a[href|="/apathiashrug"], a[href|="/chrome"], a[href|="/firefox"], a[href|="/derpyhasmuffin"], a[href|="/raraglee"], a[href|="/fillyderpysit"], a[href|="/suggestia"]
 {background-image:url(%%100x100b%%);width:100px;height:100px;display:block;float:left;}
 
 /* 150x150a 'motes. */
@@ -476,7 +481,7 @@ a[href|="/kawaiidash"], a[href|="/cadmad"], a[href|="/cadbrow"], a[href|="/spitf
 {background-image:url(%%misfitsg%%);display:block;float:left;}
 
 /* Misfits h */
-a[href|="/slowbro"], a[href|="/oddish"], a[href|="/mankey"]
+a[href|="/slowbro"], a[href|="/oddish"], a[href|="/mankey"], a[href|="/applelaugh"], a[href|="/thrackerpoint"], a[href|="/soyouhaveponyaids"], a[href|="/notenoughrarity"], a[href|="/notenoughgems"], a[href|="/notenoughshy"], a[href|="/notenoughflutter"], a[href|="/notenoughflutters"]
 {background-image:url(%%misfitsh%%);display:block;float:left;}
 
 /* Grid pos 0,0 'motes. Not needed but for completeness... */
@@ -601,7 +606,7 @@ a[href|="/shibederp"], a[href|="/nursesaywhat"], a[href|="/fillyderpysit"]
 {background-position: -200% -900%;}
 
 /* Grid pos 0,10 'motes */
-a[href|="/shibeshy"], a[href|="/twiworry"]
+a[href|="/shibeshy"], a[href|="/twiworry"], a[href|="/suggestia"]
 {background-position: -0% -1000%;}
 
 /* Grid pos 1,10 'motes */
@@ -639,6 +644,10 @@ a[href|="/discentiaelated"]
 /* Grid pos 0,13 'motes */
 a[href|="/cadshrug"]
 {background-position: 0 -1300%;}
+
+/* Grid pso 1,13 'motes */
+a[href|="/fillysurprise"]
+{background-position: -100% -1300%;}
 
 /* Text Emotes */
 a[href|="/gravestone"] em, a[href|="/theydied"] em
@@ -910,3 +919,7 @@ a[href|="/arbok"] {width:98px;height:150px;background-position: -648px -265px;}
 a[href|="/slowbro"] {width:121px;height:150px;}
 a[href|="/oddish"] {width:114px;height:150px;background-position: -121px 0;}
 a[href|="/mankey"] {width:107px;height:150px;background-position: -235px 0;}
+a[href|="/applelaugh"] {width:100px;height:150px;background-position: -342px 0;}
+a[href|="/thrackerpoint"], a[href|="/soyouhaveponyaids"] {width:113px;height:150px;background-position: -442px 0;}
+a[href|="/notenoughrarity"], a[href|="/notenoughgems"] {width:193px;height:150px;background-position: 0 -150px;}
+a[href|="/notenoughshy"], a[href|="/notenoughflutter"], a[href|="/notenoughflutters"] {width:187px;height:150px;background-position: -193px -150px;}

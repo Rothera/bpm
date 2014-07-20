@@ -515,6 +515,7 @@ background-repeat: no-repeat;
 .flair-sympathyfordiscord:after { background-position: 0px -6540px }
 .flair-dylantrevor:after { background-position: 0px -6570px }
 .flair-rawrcharlierawr:after { background-position: 0px -6600px }
+.flair-plank:after { background-position: 0px -6630px }
 
 
 /* Nightmode fix for flair */
@@ -666,7 +667,8 @@ a.author[href$=j-brony],
 a.author[href$=RisenLordM],
 a.author[href$=Princess_Pwny],
 a.author[href$=tuckels],
-a.author[href$=ZhilTP9112]
+a.author[href$=ZhilTP9112],
+a.author[href$=I_Steal_Subreddits]
 
 { 
 font-size:0!important; 
@@ -783,7 +785,9 @@ a.author[href$=RisenLordM]:before,
 a.author[href$=Princess_Pwny]:before,
 a.author[href$=randyrules]:before,
 a.author[href$=tuckels]:before,
-a.author[href$=ZhilTP9112]:before
+a.author[href$=ZhilTP9112]:before,
+a.author[href$=I_Steal_Subreddits]:before
+
 {
 font-size:10px!important; 
 visibility:visible!important;
@@ -896,6 +900,7 @@ a.author[href$=Princess_Pwny]:before { content:"Princess Pwnyed" }
 a.author[href$=randyrules]:before { content:"Princess " }
 a.author[href$=tuckels]:before { content:"TUCKELS" }
 a.author[href$=ZhilTP9112]:before { content:"Mechafag Zhil" }
+a.author[href$=I_Steal_Subreddits]:before { content:"RowBotnick" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
