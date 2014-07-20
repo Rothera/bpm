@@ -377,9 +377,15 @@ def main():
     parser = argparse.ArgumentParser(description="BPM Build Tool")
     parser.add_argument("-c", default="data/config.json", metavar="config", help="Config file")
     parser.add_argument("targets", nargs="*", help="Targets to build", default=["default"])
+    parser.add_argument("-l", "--list", action="store_true", help="List targets")
     args = parser.parse_args()
 
     os.umask(0o022)
+
+    if args.list:
+        for t in sorted(Targets, key=lambda i: ("." in i or "/" in i, i)):
+            print(t)
+        return
 
     with open(args.c) as file:
         vars = bplib.json.load(file)
