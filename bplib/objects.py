@@ -323,9 +323,10 @@ class NormalVariant(_Variant):
         return (self.image_url, self.size[0], self.size[1], self.offset[0], self.offset[1])
 
     def to_css(self):
+        download_url = bplib.image_download_url(self.image_url)
         css = {
             "float": "left",
-            "background-image": "url(%s)" % (self.image_url),
+            "background-image": "url(%s)" % (download_url),
             "width": "%spx" % (self.size[0]),
             "height": "%spx" % (self.size[1]),
             }

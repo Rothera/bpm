@@ -11,8 +11,9 @@
 ################################################################################
 
 import argparse
-import bplib.json
 
+import bplib
+import bplib.json
 import bplib.objects
 import bplib.resolve
 
@@ -44,7 +45,7 @@ def encode(emote, context):
     if base.css:
         info["css"] = base.css
     if hasattr(base, "image_url"): # FIXME
-        info["image_url"] = base.image_url
+        info["image_url"] = bplib.image_download_url(base.image_url)
         info["size"] = base.size
         info["offset"] = base.offset
     if emote.name != root.name: # Redirect

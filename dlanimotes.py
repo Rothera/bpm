@@ -17,6 +17,7 @@ import subprocess
 import time
 import urllib.request
 
+import bplib
 import bplib.objects
 import bplib.resolve
 
@@ -52,8 +53,12 @@ def update_cache(images):
         if os.path.exists(gif_filename):
             continue
 
-        print("[%s/%s] %s -> %s" % (i + 1, len(images), url, gif_filename))
-        req = urllib.request.Request(url)
+        download_url = bplib.image_download_url(url)
+        print("[%s/%s] Original URL: %s" % (i + 1, len(images), url))
+        print("[%s/%s] Download URL: %s" % (i + 1, len(images), download_url))
+        print("[%s/%s] Target file: %s" % (i + 1, len(images), gif_filename))
+        print()
+        req = urllib.request.Request(download_url)
         with urllib.request.urlopen(req) as stream:
             data = stream.read()
         open(TempFilename, "wb").write(data)
