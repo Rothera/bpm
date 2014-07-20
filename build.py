@@ -313,7 +313,6 @@ def gen_exports(ctx):
 
 @target("update-www", "www")
 def update_www(ctx):
-    ctx.copy("web/changelog.html", "www")
     ctx.copy("web/firefox-logo.png", "www")
     ctx.copy("web/chrome-logo.png", "www")
     ctx.copy("web/redditnews-logo.png", "www")
