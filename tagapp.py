@@ -30,12 +30,6 @@ import bpgen
 all_tags = []   # sorted set
 css_cache = {}  # source_name -> str
 
-def info_for(emote):
-    if hasattr(emote, "image_url"):
-        return (emote.image_url, emote.offset[1], emote.offset[0], emote.size[0], emote.size[1])
-    else:
-        return (-1, -1, -1, -1)
-
 def make_tag_list():
     global all_tags
     tmp = set()
