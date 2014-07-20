@@ -33,8 +33,6 @@ var bpm_utils = {
             return "firefox-ext";
         } else if(_bpm_global("chrome") !== undefined && chrome.extension !== undefined) {
             return "chrome-ext";
-        } else if(_bpm_global("opera") !== undefined && opera.extension !== undefined) {
-            return "opera-ext";
         } else {
             console.log("BPM: ERROR: Unknown platform!");
             return "unknown";
@@ -132,31 +130,6 @@ case "chrome-ext":
             }
         }
     });
-    break;
-
-case "opera-ext":
-    bpm_utils.copy_properties(bpm_browser, {
-        _send_message: function(method, data) {
-            if(data === undefined) {
-                data = {};
-            }
-            data["method"] = method;
-            opera.extension.postMessage(data);
-        }
-    });
-
-    opera.extension.addEventListener("message", bpm_utils.catch_errors(function(event) {
-        var message = event.data;
-        switch(message.method) {
-        case "prefs":
-            bpm_prefs.got_prefs(message.prefs);
-            break;
-
-        default:
-            bpm_log("BPM: ERROR: Unknown request from Opera background script: '" + message.method + "'");
-            break;
-        }
-    }), false);
     break;
 
 default:

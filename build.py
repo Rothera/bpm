@@ -180,7 +180,6 @@ def target(*names):
 def default(ctx):
     fx_package(ctx)
     cr_package(ctx)
-    o_package(ctx)
     gen_userscript(ctx)
     gen_update_manifests(ctx)
     gen_exports(ctx)
@@ -280,37 +279,6 @@ def cr_package(ctx):
         zip = ctx.zip("build/chrome.zip", "build/chrome/", compression=zipfile.ZIP_STORED)
         zip.write(KeyFile, "key.pem")
 
-@target("o-package", "build/betterponymotes.oex")
-def o_package(ctx):
-    ctx.mkdir("build/opera/includes")
-    build_script(ctx)
-    build_data(ctx)
-
-    with ctx.cd(dest="build/opera"):
-        ctx.filter("addon/o-config.xml", dest="config.xml")
-        ctx.copy("addon/o-index.html", "index.html")
-        ctx.copy("addon/o-background.js", "background.js")
-
-        ctx.copy("build/betterponymotes.js", "includes")
-        ctx.copy("build/bpm-resources.js", "includes")
-        ctx.copy("build/bpm-resources.js")
-        ctx.copy("build/emote-classes.css")
-
-        ctx.copy("addon/pref-setup.js")
-        ctx.copy("addon/bpmotes.css")
-        ctx.copy("addon/combiners-nsfw.css")
-        ctx.copy("addon/extracss-pure-opera.css", "extracss-pure.css")
-        ctx.copy("addon/options.html")
-        ctx.copy("addon/options.css")
-        ctx.copy("addon/options.js")
-        ctx.copy("addon/bootstrap.css")
-        ctx.copy("addon/jquery-1.8.2.js")
-
-    if newer(glob_all(["build/opera/*", "build/opera/includes/*"]),
-                 ["build/betterponymotes.oex"]):
-        ctx.remove("build/*.oex")
-        ctx.zip("build/betterponymotes.oex", "build/opera/")
-
 # NO TRAILING SLASHES; EXT_RESOURCE_PREFIX wants to have none
 UserscriptResourcePrefix = "https://ponymotes.net/bpm"
 UserscriptTestPrefix = "http://localhost:8000"
@@ -327,18 +295,13 @@ def gen_test_userscript(ctx):
     ctx.copy("addon/pref-setup.js", "build/us-test")
     ctx.copy("build/bpm-resources.js", "build/us-test")
 
-@target("update-manifests", "build/betterponymotes.update.rdf", "build/opera-updates.xmls")
+@target("update-manifests", "build/betterponymotes.update.rdf")
 def gen_update_manifests(ctx):
     if newer(["build/betterponymotes.xpi"], ["build/betterponymotes.update.rdf"]):
         # Have to check deps ourselves due to open() call
         ctx.run("uhura", "-k", KeyFile, "build/betterponymotes.xpi",
                 "https://ponymotes.net/bpm/betterponymotes_%s.xpi" % (ctx.vars["version"]),
                 stdout=open("build/betterponymotes.update.rdf", "w"))
-    if newer(["build/betterponymotes.oex"], ["build/opera-updates.xml"]):
-        version = ctx.vars["version"]
-        open("build/opera-updates.xml", "w").write(
-            '<update-info xmlns="http://www.w3.org/ns/widgets" ' +
-            'src="https://ponymotes.net/bpm/betterponymotes_%s.oex" version="%s"/>\n' % (version, version))
 
 @target("exports", "build/export.json")
 def gen_exports(ctx):
@@ -353,16 +316,13 @@ def update_www(ctx):
     ctx.copy("web/changelog.html", "www")
     ctx.copy("web/firefox-logo.png", "www")
     ctx.copy("web/chrome-logo.png", "www")
-    ctx.copy("web/opera-logo.png", "www")
     ctx.copy("web/redditnews-logo.png", "www")
     ctx.filter("web/index.html", dest="www/index.html")
-    if newer(["build/betterponymotes.xpi", "build/betterponymotes.oex"],
-                 ["www/betterponymotes.xpi", "www/betterponymotes.oex"]):
-        ctx.remove("www/*.xpi", "www/*.oex")
+    if newer(["build/betterponymotes.xpi"],
+                 ["www/betterponymotes.xpi"]):
+        ctx.remove("www/*.xpi")
         ctx.copy("build/betterponymotes.xpi", "www")
         ctx.copy("build/betterponymotes.xpi", "www/betterponymotes_%s.xpi" % (ctx.vars["version"]))
-        ctx.copy("build/betterponymotes.oex", "www")
-        ctx.copy("build/betterponymotes.oex", "www/betterponymotes_%s.oex" % (ctx.vars["version"]))
 
 @target("sync")
 def sync(ctx):
