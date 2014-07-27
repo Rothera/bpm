@@ -2,13 +2,13 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%backgroundsaff%%)  no-repeat  fixed 66% 100% !important;
+    background:  url(%%ableist%%)  no-repeat  fixed 66% 100% !important;
 }
 
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%PwnyBanner%%) 50% 0px !important;
+   background: url(%%ponybanner%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -516,7 +516,12 @@ background-repeat: no-repeat;
 .flair-dylantrevor:after { background-position: 0px -6570px }
 .flair-rawrcharlierawr:after { background-position: 0px -6600px }
 .flair-plank:after { background-position: 0px -6630px }
-
+.flair-Beatbawx:after { background-position: 0px -6660px }
+.flair-usernamesteve:after { background-position: 0px -6690px }
+.flair-dashsmile:after { background-position: 0px -6720px }
+.flair-symphony:after { background-position: 0px -6750px }
+.flair-yesterdaysvoid:after { background-position: 0px -6780px }
+.flair-gameboy17:after { background-position: 0px -6810px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: #222!important; }
@@ -668,7 +673,13 @@ a.author[href$=RisenLordM],
 a.author[href$=Princess_Pwny],
 a.author[href$=tuckels],
 a.author[href$=ZhilTP9112],
-a.author[href$=I_Steal_Subreddits]
+a.author[href$=I_Steal_Subreddits],
+a.author[href$=Beatbawx],
+a.author[href$=Username_Steve_Again],
+a.author[href$=BitJit],
+a.author[href$=Solidus_Tripsy],
+a.author[href$=videogamewonder],
+a.author[href$=agentgamma]
 
 { 
 font-size:0!important; 
@@ -786,7 +797,13 @@ a.author[href$=Princess_Pwny]:before,
 a.author[href$=randyrules]:before,
 a.author[href$=tuckels]:before,
 a.author[href$=ZhilTP9112]:before,
-a.author[href$=I_Steal_Subreddits]:before
+a.author[href$=I_Steal_Subreddits]:before,
+a.author[href$=Beatbawx]:before,
+a.author[href$=Username_Steve_Again]:before,
+a.author[href$=BitJit]:before,
+a.author[href$=Solidus_Tripsy]:before,
+a.author[href$=videogamewonder]:before,
+a.author[href$=agentgamma]:before
 
 {
 font-size:10px!important; 
@@ -808,7 +825,7 @@ a.author[href$="thezooman123"]:before {content:"Racist"}
 a.author[href$="numberlock"]:before {content:"BeerPony"}
 a.author[href$="thedarklordkyp"]:before {content:"A_Drunk_Changeling"}
 a.author[href$="fwinest_JediThug"]:before {content:"Wincest_JediThug"}
-a.author[href$="V17Ds"]:before {content:"Plounger Queen"}
+a.author[href$="V17Ds"]:before {content:"Plounge Princess"}
 a.author[href$="Rudicorn"]:before {content:"Grumpledick"}
 a.author[href$="jimmpony"]:before {content:"sirtophat"}
 a.author[href$="DiscordDraconequus"]:before {content:"The Real Sailor Chrysalis"}
@@ -861,7 +878,7 @@ a.author[href$=volcano_bakemeats]:before { content:"Madam Le Bake" }
 a.author[href$=DaylightDarkle]:before { content:"Twilight Sparkle" }
 a.author[href$=Chillusion]:before { content:"Cchhiilllluussiioonn" }
 a.author[href$=Edriss562]:before {content:"Esplendid"}
-a.author[href$=Jeroknite]:before {content:"JokerTine"; font-size:15px !important}
+a.author[href$=Jeroknite]:before {content:"JokerBee"; font-size:15px !important}
 a.author[href$=DarqWolff]:before { content:"[](/DarqWolff)" }
 a.author[href$=cheesemoo]:before { content:"Cheesemeow" }
 a.author[href$=scriptea]:before { content:"scriptease" }
@@ -901,6 +918,12 @@ a.author[href$=randyrules]:before { content:"Princess " }
 a.author[href$=tuckels]:before { content:"TUCKELS" }
 a.author[href$=ZhilTP9112]:before { content:"Mechafag Zhil" }
 a.author[href$=I_Steal_Subreddits]:before { content:"RowBotnick" }
+a.author[href$=Beatbawx]:before { content:"BeatBonesBawx" }
+a.author[href$=Username_Steve_Again]:before { content:"Username_Steve" }
+a.author[href$=BitJit]:before { content:"Rocketmaan" }
+a.author[href$=Solidus_Tripsy]:before { content:"Tripsy" }
+a.author[href$=videogamewonder]:before { content:"Vudya" }
+a.author[href$=agentgamma]:before { content:"Sergeant of Master Sergeants Most Important Person of Extreme Sergeants to the Max Gamma" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -994,7 +1017,9 @@ a.author[href$=tuckels]:after,
 a.author[href$=randyrules]:after,
 a.author[href$=CogglerSenpai]:after,
 a.author[href$=sympathyfordiscord]:after,
-a.author[href$=rawrcharlierawr]:after
+a.author[href$=rawrcharlierawr]:after,
+a.author[href$=SiliconeLube]:after,
+a.author[href$=YesterdaysVoid]:after
 
 {
 color:#000; 
@@ -1060,7 +1085,7 @@ a.author[href$=socially_broken]:after  { content:" This guy knows the best vore 
 a.author[href$=OneOfTheseDaysLuna]:after { content:" [](/fut8)" }
 a.author[href$=hermano23]:after { content:" the entertainer" }
 a.author[href$=herabek]:after { content:" TOKIN' DAT DANK-ASS SHIT" }
-a.author[href$="10z20Luka"]:after { content:" (Wears a flaming kilt made from the blood and skin of those that have been unfortunate enough to meet him in combat. Loves horse cock, but only if it is all one color. AKA The Destroyer of Styles. Can destroy even the smallest thread with his giant after-text title. He truly shall be feared. He also employs fun-loving, cheerful racism for comedic effect (like the racist prick he is). Also, he is a douchy bag douche who douche bag with bag douche. Andy's room-mate and lover)";
+a.author[href$="10z20Luka"]:after { content:" (Wears, a flaming kilt made from the blood and skin of those that have been unfortunate enough to meet him in combat. Loves horse cock, but only if it is all one color. AKA The Destroyer of Styles. Can destroy even the smallest thread with his giant after-text title. He truly shall be feared. He also employs fun-loving, cheerful racism for comedic effect (like the racist prick he is). Also, he is a douchy bag douche who douche bag with bag douche. Andy's room-mate and lover)";
  font-size:6px!important }
 a.author[href$=JIVEprinting]:after { content:" Christfag" }
 a.author[href$="Conky_"]:after { content:" In a Lot of Trouble, Mr." }
@@ -1080,6 +1105,8 @@ a.author[href$=randyrules]:after {content:" of [BANNED]"}
 a.author[href$=TripsOcho]:after { content:" touches all the butts" }
 a.author[href$=sympathyfordiscord]:after { content:" ~ augie" }
 a.author[href$=rawrcharlierawr]:after { content:": a blast from the past" }
+a.author[href$=SiliconeLube]:after { content:" the Sexualizer" }
+a.author[href$=YesterdaysVoid]:after { content:" ~ Drank Celestia's Coughsyrup" }
 
 /* Any pre/post-name flair stuff goes here */ 
 
@@ -1218,6 +1245,7 @@ a[href|='/boredshy'],a[href|='/rainbowmaid1'],a[href|='/drunktwi'],a[href|='/unc
     clear: none;
     float: left;
     background-image: url(%%emotesheetcc%%) }
+
 /* first row */
 a[href|="/boredshy"] {width:190px; height:220px; background-position: -0px -0px}
 a[href|="/rainbowmaid1"] {width:230px; height:220px; background-position: -190px -0px}
@@ -1259,6 +1287,141 @@ a[href|="/vidya"] {width:220px; height:200px; background-position: -329px -1086p
 a[href|="/augie"] {width:177px; height:170px; background-position: -549px -1084px}
 a[href|="/anonesphug"] {width:200px; height:198px; background-position: -727px -1140px}
 
+/* Coggy's Attempt at a New Emote Sheet. Sorry it's not labeled well! */
+a[href|='/andyfun'],a[href|='/angrytrixiestretch'],a[href|='/bathbat'],a[href|='/batshy'],a[href|='/beershy'],a[href|='/bobbeh'],a[href|='/butwhy'],a[href|='/cmcpyramid'],a[href|='/cutestchangling'],a[href|='/dashblruh']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheetdd%%) }
+
+a[href|="/andyfun"] {width:200px; height:154px; background-position: -0px -305px}
+a[href|="/angrytrixiestretch"] {width:200px; height:186px; background-position: -0px -472px}
+a[href|="/bathbat"] {width:300px; height:265px; background-position: -417px -0px}
+a[href|="/batshy"] {width:200px; height:169px; background-position: -377px -270px}
+a[href|="/beershy"] {width:160px; height:200px; background-position: -212px -203px}
+a[href|="/bobbeh"] {width:200px; height:198px; background-position: -212px -0px}
+a[href|="/butwhy"] {width:300px; height:214px; background-position: -205px -444px}
+a[href|="/cmcpyramid"] {width:207px; height:300px; background-position: -0px -0px}
+a[href|="/cutestchangling"] {width:200px; height:180px; background-position: -510px -478px}
+a[href|="/dashblruh"] {width:155px; height:200px; background-position: -582px -270px}
+
+
+a[href|='/elementofgenerosity'],a[href|='/elementofhonesty'],a[href|='/elementofkindness'],a[href|='/elementoflaughter'],a[href|='/elementofloyalty'],a[href|='/elementofmagic'],a[href|='/flashsentryfull'],a[href|='/gameover'],a[href|='/hatdashdance'],a[href|='/heavybreathingcat'],a[href|='/itsgarbage'],a[href|='/jellybig']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheetee%%) }
+
+a[href|="/elementofgenerosity"] {width:170px; height:200px; background-position: -311px -465px}
+a[href|="/elementofhonesty"] {width:160px; height:200px; background-position: -192px -670px}
+a[href|="/elementofkindness"] {width:187px; height:200px; background-position: -0px -670px}
+a[href|="/elementoflaughter"] {width:306px; height:200px; background-position: -0px -465px}
+a[href|="/elementofloyalty"] {width:133px; height:200px; background-position: -357px -670px}
+a[href|="/elementofmagic"] {width:142px; height:200px; background-position: -495px -670px}
+a[href|="/flashsentryfull"] {width:200px; height:248px; background-position: -437px -0px}
+a[href|="/gameover"] {width:150px; height:200px; background-position: -487px -465px}
+a[href|="/hatdashdance"] {width:199px; height:200px; background-position: -0px -257px}
+a[href|="/heavybreathingcat"] {width:200px; height:207px; background-position: -437px -253px}
+a[href|="/itsgarbage"] {width:200px; height:188px; background-position: -204px -257px}
+a[href|="/jellybig"] {width:400px; height:252px; background-position: -0px -0px}
+
+
+a[href|='/lambdalaugh'],a[href|='/literallymyrandall'],a[href|='/majestictwi'],a[href|='/morningtrixie'],a[href|='/mrcakeshock'],a[href|='/twiowww'],a[href|='/necro'],a[href|='/orgy'],a[href|='/paperhorse']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheetff%%) }
+
+a[href|="/lambdalaugh"] {width:200px; height:227px; background-position: -405px -0px}
+a[href|="/literallymyrandall"] {width:400px; height:379px; background-position: -0px -0px}
+a[href|="/majestictwi"] {width:200px; height:167px; background-position: -1015px -226px}
+a[href|="/morningtrixie"] {width:400px; height:162px; background-position: -610px -231px}
+a[href|="/mrcakeshock"] {width:131px; height:200px; background-position: -1220px -193px}
+a[href|="/twiowww"] {width:250px; height:223px; background-position: -610px -0px}
+a[href|="/necro"] {width:200px; height:153px; background-position: -405px -240px}
+a[href|="/orgy"] {width:300px; height:188px; background-position: -1051px -0px}
+a[href|="/paperhorse"] {width:170px; height:200px; background-position: -876px -0px}
+
+a[href|='/partyluna'],a[href|='/perhaps'],a[href|='/piecupcakeget'],a[href|='/piefly'],a[href|='/pieprise'],a[href|='/pinkiefinger'],a[href|='/pokeypie'],a[href|='/raritypillow'],a[href|='/raritywat']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheetgg%%) }
+
+a[href|="/partyluna"] {width:200px; height:198px; background-position: -363px -0px}
+a[href|="/perhaps"] {width:300px; height:210px; background-position: -536px -201px}
+a[href|="/piecupcakeget"] {width:111px; height:200px; background-position: -707px 0}
+a[href|="/piefly"] {width:400px; height:157px; background-position: -0px -400px}
+a[href|="/pieprise"] {width:400px; height:301px; background-position: -401px -453px}
+a[href|="/pinkiefinger"] {width:142px; height:200px; background-position: -564px -0px}
+a[href|="/pokeypie"] {width:362px; height:394px; background-position: -0px -0px}
+a[href|="/raritypillow"] {width:400px; height:196px; background-position: -0px -558px}
+a[href|="/raritywat"] {width:172px; height:200px; background-position: -363px -199px}
+
+
+a[href|='/shyfrazzled'],a[href|='/smartypantsu'],a[href|='/soniccane'],a[href|='/squintyjackextreme'],a[href|='/swootiaraspoonbloom'],a[href|='/thatpost'],a[href|='/thatrar'],a[href|='/twiapple'],a[href|='/twigood'],a[href|='/twikick'],a[href|='/twilistread'],a[href|='/twishark']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheethh%%) }
+
+a[href|="/shyfrazzled"] {width:143px; height:200px; background-position: -478px -205px}
+a[href|="/smartypantsu"] {width:180px; height:200px; background-position: -601px -410px}
+a[href|="/soniccane"] {width:138px; height:200px; background-position: -626px -205px}
+a[href|="/squintyjackextreme"] {width:186px; height:200px; background-position: -410px -410px}
+a[href|="/swootiaraspoonbloom"] {width:200px; height:200px; background-position: -205px -410px}
+a[href|="/thatpost"] {width:318px; height:210px; background-position: -0px -0px}
+a[href|="/thatrar"] {width:200px; height:209px; background-position: -0px -215px}
+a[href|="/twiapple"] {width:150px; height:200px; background-position: -323px -205px}
+a[href|="/twigood"] {width:113px; height:150px; background-position: -205px -215px}
+a[href|="/twikick"] {width:229px; height:200px; background-position: -323px -0px}
+a[href|="/twilistread"] {width:200px; height:172px; background-position: -0px -438px}
+a[href|="/twishark"] {width:233px; height:200px; background-position: -557px -0px}
+
+
+a[href|='/scootaomg'],a[href|='/sexiestemote'],a[href|='/sexyqueen'],a[href|='/shutuppie'],a[href|='/shuvel']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheetii%%) }
+
+a[href|="/scootaomg"] {width:178px; height:200px; background-position: -884px -0px}
+a[href|="/sexiestemote"] {width:200px; height:208px; background-position: -502px -0px}
+a[href|="/sexyqueen"] {width:200px; height:209px; background-position: -301px -0px}
+a[href|="/shutuppie"] {width:300px; height:176px; background-position: -0px -0px}
+a[href|="/shuvel"] {width:180px; height:200px; background-position: -703px -0px}
+
+
+a[href|='/babysitter'],a[href|='/degeso'],a[href|='/teenagespike'],a[href|='/wooo'],a[href|='/youreunderarrest']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheetjj%%) }
+
+a[href|="/babysitter"] {width:300px; height:283px; background-position: -534px -0px}
+a[href|="/degeso"] {width:529px; height:251px; background-position: -0px -0px}
+a[href|="/teenagespike"] {width:200px; height:233px; background-position: -1144px -0px}
+a[href|="/wooo"] {width:300px; height:200px; background-position: -839px -0px}
+a[href|="/youreunderarrest"] {width:200px; height:180px; background-position: -0px -255px}
+
+
+a[href|='/loligagging'],a[href|='/ponyjpeg']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheetshit%%) }
+
+a[href|="/loligagging"] {width:584px; height:163px; background-position: -0px -351px}
+a[href|="/ponyjpeg"]{width:400px; height:346px; background-position: -0px -0px}
+
 /********** End of Emotes ************/
 
 /* Text colors! */
@@ -1288,12 +1451,14 @@ a[href|="/luna!"]:nth-of-type(n) { font-size: 18px; font-variant: small-caps !im
 .usertext-body h4 { font-size: 20px; font-weight: bold; color: navy; background: lightblue; text-align: center; padding: 3px; border-radius: 19px; -moz-border-radius: 19px; box-shadow: 2px 2px 5px #9999ff; text-shadow: 1px 1px #ffffff }
 
 
-body.res a.author[href$="Pathogen-David"], body.res a.author[href$="Phei"], body.res a.author[href$="myrandall"], body.res a.author[href$="RAINBOW_PONY_SEMEN"] { font-weight: bold; color: white !important; padding: 0 2px; border-radius: 3px }
+body.res a.author[href$="Pathogen-David"], body.res a.author[href$="Phei"], body.res a.author[href$="myrandall"], body.res a.author[href$="RAINBOW_PONY_SEMEN"], body.res a.author[href$="Beatbawx"], body.res a.authr[href$="Parasprite"] { font-weight: bold; color: white !important; padding: 0 2px; border-radius: 3px }
 body.res a.author[href$="Phei"] { background-color: #D4A4E8 }
 body.res a.author[href$="Pathogen-David"] { background-color: #662D8A }
 body.res a.author[href$="Myrandall"] {color:#FF69B4!important}
 body.res a.author[href$="RAINBOW_PONY_SEMEN"] {color:#00FF00!important}
 body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
+body.res a.author[href$="Beatbawx"] {color:#FF9933!important}
+body.res a.author[href$="Parasprite"] {color:#D19FE3!important}
 
 /* PROPER GREENTEXT (stolen from plounge, which stole from /r/4chan) */
 .content .md h1 { color: #789922; border-bottom: none!important; padding-bottom: 0px }
@@ -1303,7 +1468,6 @@ body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
 .id-t2_894lr{color:#0b0}.id-t2_894lr:before{content:" > "}
 
 .error.OUTOFSUB{display:none!important}
-
 
 
 

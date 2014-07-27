@@ -1,3 +1,18 @@
+
+.sidecontentbox .helplink + .title > h1 {
+    color: white !important;
+    font-size: 0px !important;
+    display: inline-block;
+    overflow: hidden
+}
+.sidecontentbox .helplink + .title > h1:before {
+    color: gray !important;
+    font-size: 13px !important;
+    content: "NON-ZOOMENS";
+    display: inline-block
+}
+
+
 /*------------------------  Changes background ------------------------------- */
  body, .side,.flairtoggle,.submit .spacer,.create .spacer,.icon-menu a,.nub { background-color: transparent !important; }
 .side a[href="/adbg"] { 
@@ -155,7 +170,7 @@ height:40px;
 
 
 /* ------ Emotes! --------- */
-a[href|='/cocoawkward'], a[href|='/funnay'], a[href|='/gildabird'], a[href|='/holyshit'], a[href|='/keytar'], a[href|='/pinkiebat'], a[href|='/ppchug'], a[href|='/rdscary'], a[href|='/twiperturbed'], a[href|='/lyra10'], a[href|='/cishetscum'], a[href|='/augie'], a[href|='/bestofabadsituation']{ 
+a[href|='/cocoawkward'], a[href|='/funnay'], a[href|='/gildabird'], a[href|='/holyshit'], a[href|='/keytar'], a[href|='/pinkiebat'], a[href|='/ppchug'], a[href|='/rdscary'], a[href|='/twiperturbed'], a[href|='/lyra10'], a[href|='/cishetscum'], a[href|='/augie'], a[href|='/bestofabadsituation'], a[href|='/helloboys']{ 
     display: block;
     clear: none;
     float: left;
@@ -174,7 +189,8 @@ a[href|='/twiperturbed'] {width:107px; height:130px; background-position: -101px
 a[href|='/lyra10'] {width:196px; height:150px; background-position: -1px -963px}
 a[href|='/cishetscum'] {width:203px; height:200px; background-position: -172px -456px}
 a[href|='/augie'] {width:156px; height:150px; background-position: -227px -662px}
- a[href|='/bestofabadsituation'] {width:248px; height:200px; background-position: -225px -826px}
+a[href|='/bestofabadsituation'] {width:248px; height:200px; background-position: -225px -826px}
+a[href|='/helloboys'] {width:179px; height:200px; background-position: -238px -2px}
 
 a[href|='/cheekyaj'], a[href|='/cheekyderp'], a[href|='/cheekylyra'], a[href|='/cheekypp'], a[href|='/cheekyrara'], a[href|='/cheekyscoots'], a[href|='/cheekyshy'], a[href|='/cheekytwi'], a[href|='/cheekyvs'],a[href|='/cheekynoteass'], a[href|='/roselie'], a[href|='/octibored'], a[href|='/topunf'] {
     display: block;
@@ -606,8 +622,6 @@ a.author[href$="videogamewonder"]:after {content:" (le)teral fempire shill"}
 .comment:nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n):nth-child(n){   
  background-color: transparent !important;
       border-color: transparent !important} 
-
-
 
 
 

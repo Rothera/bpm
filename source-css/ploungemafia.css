@@ -300,8 +300,50 @@ top: 5px;
 left: 0;
 }
 
-/* Filters */
+/* Game Flairs */
 
+
+/* Game Link Flairs */
+.linkflair-gameRed
+{
+   border-left: 3px solid red;
+ }
+.linkflair-gameGreen
+{
+ border-left: 3px solid green;
+}
+.linkflair-gameBlue
+{
+border-left: 3px solid blue;
+}
+.linkflair-gameOrange
+{
+border-left: 3px solid orange;
+ }
+.linkflair-gameBlack
+{
+border-left: 3px solid black;
+}
+.linkflair-gamePurple
+{
+border-left: 3px solid purple;
+}
+.linkflair-gameRainbow .parent
+{
+
+width: 3px;
+height: 65px;
+float: left;
+
+background-image: -webkit-linear-gradient( top, red, red, orange, yellow, green, blue, purple, purple);
+background-image: -moz-linear-gradient( top, red, red, orange, yellow, green, blue,purple, purple);
+background-image: -ms-linear-gradient( top, red, red, orange, yellow, green, blue,purple, purple);
+}
+.linkflair-gamePink
+{
+   border-left: 3px solid pink;
+ }
+/* Filter Games */
 div:lang(su) .sitetable .link, 
 div:lang(g1) .sitetable .link, 
 div:lang(g2) .sitetable .link, 
@@ -309,7 +351,8 @@ div:lang(g3) .sitetable .link,
 div:lang(g4) .sitetable .link, 
 div:lang(g5) .sitetable .link,
 div:lang(g6) .sitetable .link,
-div:lang(g7) .sitetable .link
+div:lang(g7) .sitetable .link,
+div:lang(g8) .sitetable .link
 {
   display: none 
 }
@@ -321,35 +364,35 @@ div:lang(su) .linkflair-signup
 {
     display: block !important;
 }
-div:lang(g1) .linkflair-gameA
+div:lang(g1) .linkflair-gameRed
 {
     display: block !important;
 }
-div:lang(g2) .linkflair-gameB
+div:lang(g2) .linkflair-gameGreen
 {
     display: block !important;
 }
-div:lang(g3) .linkflair-gameC
+div:lang(g3) .linkflair-gameBlue
 {
     display: block !important;
 }
-div:lang(g4) .linkflair-gameD
+div:lang(g4) .linkflair-gameOrange
 {
     display: block !important;
 }
-div:lang(g5) .linkflair-gameE
+div:lang(g5) .linkflair-gameBlack
 {
     display: block !important;
 }
-div:lang(g6) .linkflair-gameF
+div:lang(g6) .linkflair-gamePurple
 {
     display: block !important;
 }
-div:lang(g7) .linkflair-gameG
+div:lang(g7) .linkflair-gameRainbow
 {
     display: block !important;
 }
-div:lang(g8) .linkflair-gameh
+div:lang(g8) .linkflair-gamePink
 {
     display: block !important;
 }
@@ -358,58 +401,8 @@ div:lang(g8) .linkflair-gameh
     display: none;
 }
 
-.flairoptionpane .linkflairlabel
-{
-    display: inline-block  !important;
-}
-.linkflair-signup .title
-{
-   font-weight: bold;
-}
-.linkflair-gameA
-{
-   border-left: 3px solid red;
- }
-.linkflair-gameB
-{
- border-left: 3px solid green;
-}
-.linkflair-gameC
-{
-border-left: 3px solid blue;
-}
-.linkflair-gameD
-{
-border-left: 3px solid orange;
- }
-.linkflair-gameE
-{
-border-left: 3px solid black;
-}
-.linkflair-gameF
-{
-border-left: 3px solid purple;
-}
-.linkflair-gameG .parent
-{
 
-width: 3px;
-height: 65px;
-float: left;
-
-background-image: -webkit-linear-gradient( top, red, red, orange, yellow, green, blue, purple, purple);
-background-image: -moz-linear-gradient( top, red, red, orange, yellow, green, blue,purple, purple);
-background-image: -ms-linear-gradient( top, red, red, orange, yellow, green, blue,purple, purple);
-}
-.linkflair-gameH
-{
-   border-left: 3px solid pink;
- }
-.titlebox blockquote ul li a[href*='/r/ploungemafia/']
-{
- margin-left: 2px;
-}
-
+/* Game Filters Menu */
 .titlebox blockquote ul li a[href*='g1.reddit']
 {
       border-left: 3px solid red;
@@ -443,6 +436,33 @@ background-image: -webkit-linear-gradient( left, pink, gold, yellow, lightgreen,
 background-image: -moz-linear-gradient( left, pink, gold, yellow, lightgreen,lightblue,violet);
 background-image: -ms-linear-gradient( left, pink, gold, yellow, lightgreen, lightblue,violet);
 }
+.titlebox blockquote ul li a[href*='g8.reddit']
+{
+border-left: 3px solid pink;
+}
+
+
+
+
+
+/* End Game Flairs */
+
+.flairoptionpane .linkflairlabel
+{
+    display: inline-block  !important;
+}
+.linkflair-signup .title
+{
+   font-weight: bold;
+}
+
+.titlebox blockquote ul li a[href*='/r/ploungemafia/']
+{
+ margin-left: 2px;
+}
+
+
+
 .submitter:after
 {
 /*content:'Game Host';*/
