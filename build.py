@@ -180,7 +180,6 @@ def target(*names):
 def default(ctx):
     fx_package(ctx)
     cr_package(ctx)
-    gen_userscript(ctx)
     gen_update_manifests(ctx)
     gen_exports(ctx)
     update_www(ctx)
@@ -279,22 +278,6 @@ def cr_package(ctx):
         zip = ctx.zip("build/chrome.zip", "build/chrome/", compression=zipfile.ZIP_STORED)
         zip.write(KeyFile, "key.pem")
 
-# NO TRAILING SLASHES; EXT_RESOURCE_PREFIX wants to have none
-UserscriptResourcePrefix = "https://ponymotes.net/bpm"
-UserscriptTestPrefix = "http://localhost:8000"
-
-@target("userscript", "build/betterponymotes.user.js")
-def gen_userscript(ctx):
-    make_script(ctx, "build/betterponymotes.user.js", extravars={"require_prefix": UserscriptResourcePrefix})
-
-@target("userscript-test")
-def gen_test_userscript(ctx):
-    ctx.mkdir("build/us-test")
-    build_data(ctx)
-    make_script(ctx, "build/us-test/betterponymotes.user.js", extravars={"require_prefix": UserscriptTestPrefix})
-    ctx.copy("addon/pref-setup.js", "build/us-test")
-    ctx.copy("build/bpm-resources.js", "build/us-test")
-
 @target("update-manifests", "build/betterponymotes.update.rdf")
 def gen_update_manifests(ctx):
     if newer(["build/betterponymotes.xpi"], ["build/betterponymotes.update.rdf"]):
@@ -343,7 +326,6 @@ ScriptFiles = [
     "addon/bpm-post.js",
     "addon/bpm-reddit.js",
     "addon/bpm-global.js",
-    "addon/bpm-optionslink.js",
     "addon/bpm-main.js"
     ]
 

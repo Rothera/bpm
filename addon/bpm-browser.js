@@ -174,43 +174,4 @@ case "chrome-ext":
         element.target = "_blank";
     };
     break;
-
-case "userscript":
-    var _pref_cache = null;
-
-    set_pref = function(key, value) {
-        log_debug("Writing preference:", key, "=", value);
-        _pref_cache[key] = value;
-        _sync_prefs();
-    };
-
-    var _sync_prefs = function() {
-        GM_setValue("prefs", JSON.stringify(_pref_cache));
-    };
-
-    _request_initdata = function(want) {
-        var tmp = GM_getValue("prefs");
-        if(!tmp) {
-            tmp = "{}";
-        }
-
-        _pref_cache = JSON.parse(tmp);
-        initialize_prefs(_pref_cache, sr_name2id);
-        _sync_prefs();
-
-        // No support for custom CSS
-        _complete_setup({"prefs": _pref_cache, "emotes": {}, "css": ""});
-    };
-
-    make_css_link = function(filename, callback) {
-        var url = US_RESOURCE_PREFIX + filename + "?p=2&dver=/*{{data_version}}*/";
-        var tag = stylesheet_link(url);
-        callback(tag);
-    };
-
-    linkify_options = function(element) {
-        element.href = US_OPTIONS_PAGE;
-        element.target = "_blank";
-    };
-    break;
 }

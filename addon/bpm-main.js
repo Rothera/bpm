@@ -51,7 +51,7 @@ function init_css(store) {
 
         // This needs to come after subreddit CSS to override their !important,
         // so just use document.head directly.
-        if(platform === "chrome-ext" || platform === "userscript") {
+        if(platform === "chrome-ext") {
             make_css_link("/gif-animotes.css", function(tag) {
                 if(document.head) {
                     document.head.appendChild(tag);
@@ -79,7 +79,7 @@ function init_css(store) {
         // by necessity.
         //
         // Christ. I hope people use the fuck out of -i after this nonsense.
-        if(platform === "firefox-ext") { // TODO: detect userscript on Firefox
+        if(platform === "firefox-ext") {
             var svg_src = [
                 '<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg"',
                 ' style="height: 0; width: 0; position: fixed">',
@@ -108,9 +108,7 @@ function init_css(store) {
 function main() {
     log_info("Starting up");
     setup_browser({"prefs": 1, "customcss": 1}, function(store) {
-        if(document.location.href === US_OPTIONS_PAGE) {
-            setup_options_link(store);
-        } else if(ends_with(document.location.hostname, "reddit.com")) {
+        if(document.location && document.location.hostname && ends_with(document.location.hostname, "reddit.com")) {
             reddit_main(store);
         } else {
             global_main(store);

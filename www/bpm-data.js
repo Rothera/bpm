@@ -1,1 +1,0 @@
-../build/bpm-resources.js

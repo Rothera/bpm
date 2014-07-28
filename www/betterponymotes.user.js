@@ -1,1 +1,0 @@
-../build/betterponymotes.user.js

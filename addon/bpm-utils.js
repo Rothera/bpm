@@ -77,12 +77,7 @@ var platform;
 // FIXME: "self" is a standard object, though self.on is specific to
 // Firefox content scripts. I'd prefer something a little more clearly
 // affiliated, though.
-//
-// Need to check GM_log first, because stuff like chrome.extension
-// exists even in userscript contexts.
-if(_gm_log) {
-    platform = "userscript";
-} else if(self.on) {
+if(self.on) {
     platform = "firefox-ext";
 } else if(find_global("chrome") && chrome.extension) {
     platform = "chrome-ext";

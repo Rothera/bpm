@@ -1,20 +1,3 @@
-// ==UserScript==
-// @description View Reddit ponymotes across the site
-// @downloadURL https://ponymotes.net/bpm/betterponymotes.user.js
-// @grant GM_log
-// @grant GM_getValue
-// @grant GM_setValue
-// @include http://*/*
-// @include https://*/*
-// @name BetterPonymotes
-// @namespace http://rainbow.mlas1.us/
-// @require /*{{require_prefix}}*//bpm-resources.js?p=2&dver=/*{{data_version}}*/
-// @require /*{{require_prefix}}*//pref-setup.js?p=2&cver=/*{{code_version}}*/
-// @run-at document-start
-// @updateURL https://ponymotes.net/bpm/betterponymotes.user.js
-// @version /*{{version}}*/
-// ==/UserScript==
-
 /*******************************************************************************
 **
 ** Copyright (C) 2012 Typhos
@@ -52,11 +35,6 @@ var _checkpoint = (function() {
 })();
 
 var DEV_MODE = false;
-
-// Set at build time. Only relevant to the userscript.
-var US_RESOURCE_PREFIX = "/*{{require_prefix}}*/";
-
-var US_OPTIONS_PAGE = US_RESOURCE_PREFIX + "/options.html";
 
 // Domain names on which the global emote converter will refuse to run,
 // typically due to bad behavior. A common problem is JS attempting to

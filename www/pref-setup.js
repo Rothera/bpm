@@ -1,1 +1,0 @@
-../addon/pref-setup.js

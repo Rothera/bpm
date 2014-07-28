@@ -27,9 +27,7 @@ function _bpm_global(name) {
 
 var bpm_utils = {
     platform: (function() {
-        if(_bpm_global("GM_log") !== undefined) {
-            return "userscript";
-        } else if(self.on !== undefined) {
+        if(self.on !== undefined) {
             return "firefox-ext";
         } else if(_bpm_global("chrome") !== undefined && chrome.extension !== undefined) {
             return "chrome-ext";
@@ -50,7 +48,7 @@ var bpm_utils = {
             try {
                 return f.apply(this, arguments);
             } catch(e) {
-                bpm_log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
+                console.log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
                 throw e;
             }
         };
@@ -66,8 +64,6 @@ var bpm_utils = {
         }
     },
 };
-
-var bpm_log = bpm_utils.platform === "userscript" ? GM_log : console.log.bind(console);
 
 var bpm_browser = {
     set_pref: function(key, value) {
@@ -102,7 +98,7 @@ case "firefox-ext":
             break;
 
         default:
-            bpm_log("BPM: ERROR: Unknown request from Firefox background script: '" + message.method + "'");
+            console.log("BPM: ERROR: Unknown request from Firefox background script: '" + message.method + "'");
             break;
         }
     }));
@@ -125,7 +121,7 @@ case "chrome-ext":
                 break;
 
             default:
-                bpm_log("BPM: ERROR: Unknown request from Chrome background script: '" + message.method + "'");
+                console.log("BPM: ERROR: Unknown request from Chrome background script: '" + message.method + "'");
                 break;
             }
         }
@@ -154,7 +150,7 @@ default:
         },
 
         force_update: function(subreddit) {
-            bpm_log("BPM: ERROR: forcing a subreddit update is not supported in this context");
+            console.log("BPM: ERROR: forcing a subreddit update is not supported in this context");
         }
     });
 
@@ -173,7 +169,7 @@ default:
                 break;
 
             default:
-                bpm_log("BPM: ERROR: Unknown request from parent script: '" + message.__betterponymotes_method + "'");
+                console.log("BPM: ERROR: Unknown request from parent script: '" + message.__betterponymotes_method + "'");
                 break;
         }
     }.bind(this)), false);
@@ -226,7 +222,7 @@ var bpm_prefs = {
             //
             // Also bad would be items in prefs not in sr_id2name, but that's
             // more or less impossible to handle.
-            bpm_log("BPM: ERROR: sr_array has holes; installation or prefs are broken!");
+            console.log("BPM: ERROR: sr_array has holes; installation or prefs are broken!");
         }
     },
 
