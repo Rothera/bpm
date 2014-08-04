@@ -83,7 +83,7 @@ color: #8f4be4 !important;
 -moz-border-radius-topleft: 5px;
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;
-color: #000000;
+color: #ffffff;
 background-color: #c5bbf2;
 }
 
@@ -522,6 +522,7 @@ background-repeat: no-repeat;
 .flair-symphony:after { background-position: 0px -6750px }
 .flair-yesterdaysvoid:after { background-position: 0px -6780px }
 .flair-gameboy17:after { background-position: 0px -6810px }
+.flair-minibug:after { background-position: 0px -6840px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: #222!important; }
@@ -679,7 +680,9 @@ a.author[href$=Username_Steve_Again],
 a.author[href$=BitJit],
 a.author[href$=Solidus_Tripsy],
 a.author[href$=videogamewonder],
-a.author[href$=agentgamma]
+a.author[href$=agentgamma],
+a.author[href$=lefthandedspatula],
+a.author[href$=gremlinpower]
 
 { 
 font-size:0!important; 
@@ -803,7 +806,9 @@ a.author[href$=Username_Steve_Again]:before,
 a.author[href$=BitJit]:before,
 a.author[href$=Solidus_Tripsy]:before,
 a.author[href$=videogamewonder]:before,
-a.author[href$=agentgamma]:before
+a.author[href$=agentgamma]:before,
+a.author[href$=lefthandedspatula]:before,
+a.author[href$=gremlinpower]:before
 
 {
 font-size:10px!important; 
@@ -828,7 +833,7 @@ a.author[href$="fwinest_JediThug"]:before {content:"Wincest_JediThug"}
 a.author[href$="V17Ds"]:before {content:"Plounge Princess"}
 a.author[href$="Rudicorn"]:before {content:"Grumpledick"}
 a.author[href$="jimmpony"]:before {content:"sirtophat"}
-a.author[href$="DiscordDraconequus"]:before {content:"The Real Sailor Chrysalis"}
+a.author[href$="DiscordDraconequus"]:before {content:"Chrysalis the Clinquant"}
 a.author[href$="Juz16"]:before {content:"Jizz"}
 a.author[href$="EvanMacIan"]:before {content:"Ewan McGregor"}
 a.author[href$="kcirvam"]:before {content:"mavrick45"}
@@ -924,6 +929,8 @@ a.author[href$=BitJit]:before { content:"Rocketmaan" }
 a.author[href$=Solidus_Tripsy]:before { content:"Tripsy" }
 a.author[href$=videogamewonder]:before { content:"Vudya" }
 a.author[href$=agentgamma]:before { content:"Sergeant of Master Sergeants Most Important Person of Extreme Sergeants to the Max Gamma" }
+a.author[href$=lefthandedspatula]:before { content:"horsfkr" }
+a.author[href$=gremlinpower]:before { content:"Lampasaurus" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -1119,7 +1126,6 @@ a.author[href$=YesterdaysVoid]:after { content:" ~ Drank Celestia's Coughsyrup" 
 .tagline a.author[href$="/ajtexasranger"]:after,
 .tagline a.author[href$="/fsakj"]:before,
 .tagline a.author[href$="/durpyDash"]:before,
-.tagline a.author[href$="/gremlinpower"]:before,
 .tagline a.author[href$="/Theologica"]:before
 {
     content: " ";
@@ -1157,7 +1163,6 @@ a.author[href$=YesterdaysVoid]:after { content:" ~ Drank Celestia's Coughsyrup" 
 :not(.flair) .tagline a.author[href$="/245001"]:before,
 :not(.flair) .tagline a.author[href$="/fsakj"]:before,
 :not(.flair) .tagline a.author[href$="/durpyDash"]:before,
-:not(.flair) .tagline a.author[href$="/gremlinpower"]:before,
 :not(.flair) .tagline a.author[href$="/Theologica"]:before
 
 {

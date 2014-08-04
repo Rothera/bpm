@@ -149,29 +149,24 @@ body {
 }
 
 .arrow.up { background-image: url(%%Sunsets-Other-Crown-Gray%%); 
-  background-position: 0px 0px; 
+  background-position: 0px 0px;
   height: 20px; width: 15px; 
 }
 
 .arrow.down { background-image: url(%%Twilights-Crown-Gray%%);
-  background-position: 0px 0px; 
   height: 20px; width: 15px; 
+  visibility: hidden; display: none
 }
 
 .arrow.upmod { 
   background-image: url(%%Sunsets-Other-Crown%%); 
-  background-position: 0px 0px; 
+  background-position: 0px 0px;
   height: 20px; width: 15px;  
 }
 
 .arrow.downmod { 
   background-image: url(%%Twilights-Crown%%);
-  background-position: 0px 0px; 
   height: 16px; width: 15px;  
-}
-	
-.arrow.down {
-  visibility: hidden; display: none
 }
 
 .arrow.up:hover:before {
@@ -651,8 +646,7 @@ a[href^="/snailssalute"][href*="-combine"]+a{
 }
 
 a[href|="/bossysunset"],a[href|="/bossyss"],a[href|="/bowtome"],a[href|="/rbossysunset"],a[href|="/rbossyss"],a[href|="/rbowtome"] {
-display:block;clear:none;float:left;width:83px;height:175px;background-image:url(%%snailssalute%%)!important;
-background-position: 0 0; margin-right:20px;
+display:block;clear:none;float:left;width:83px;height:175px;background-image:url(%%snailssalute%%)!important; margin-right:20px;
 }
 
 a[href|="/breeziess"],a[href|="/breeziesunset"],a[href|="/rbreeziess"],a[href|="/rbreeziesunset"] {
@@ -771,18 +765,18 @@ clear: none;
 background-image: url(%%clappingsunset%%)!important;
 height: 70px;
 width: 70px;
--webkit-animation: ssclap .3s steps(3,end) infinite;
-animation: ssclap .3s steps(3,end) infinite
+-webkit-animation: ssclap 275ms steps(3) infinite;
+animation: ssclap 275ms steps(3) infinite
 }
 
 @-webkit-keyframes ssclap{
-from{background-position: 0 0}
-to{background-position: -210px 0}
+from{background-position: 0}
+to{background-position: -210px}
 }
 
 @keyframes ssclap{
-from{background-position: 0 0}
-to{background-position: -210px 0}
+from{background-position: 0}
+to{background-position: -210px}
 }
 
 a[href|="/rajlie"],a[href|="/ra00"],a[href|="/rpriceless"],a[href|="/ra10"],a[href|="/rflutterjerk"],a[href|="/ra20"],a[href|="/rflutterroll"],a[href|="/ra30"],a[href|="/rtwipride"],a[href|="/ra01"],a[href|="/rcelestiamad"],a[href|="/ra11"],a[href|="/rtwicrazy"],a[href|="/ra21"],a[href|="/rspikemeh"],a[href|="/ra31"],a[href|="/rlunateehee"],a[href|="/ra02"],a[href|="/rlunawait"],a[href|="/ra12"],a[href|="/rpaperbagderpy"],a[href|="/rpaperbagwizard"],a[href|="/rderpwizard"],a[href|="/ra22"],a[href|="/rabmeh"],a[href|="/ra32"],a[href|="/rajhappy"],a[href|="/rhapplejack"],a[href|="/ra03"],a[href|="/rppfear"],a[href|="/rpinkiefear"],a[href|="/ra13"],a[href|="/rtwibeam"],a[href|="/ra23"],a[href|="/rscootaderp"],a[href|="/rdidneyworl"],a[href|="/rDIDNEYWORL"],a[href|="/ra33"],a[href|="/rraritydaww"],a[href|="/ra04"],a[href|="/rscootacheer"],a[href|="/rlootascoo"],a[href|="/ra14"],a[href|="/rpinkieawe"],a[href|="/rppawe"],a[href|="/rareyouawizard"],a[href|="/ra34"],a[href|="/rajsup"],a[href|="/rajwhatsgood"],a[href|="/ra05"],a[href|="/rflutterwhoa"],a[href|="/rflutterwoah"],a[href|="/ra15"],a[href|="/rrdcry"],a[href|="/ra25"],a[href|="/rsilverspoon"],a[href|="/rsspout"],a[href|="/ra35"],a[href|="/rohcomeon"],a[href|="/rsbcomeon"],a[href|="/ra06"],a[href|="/rppcute"],a[href|="/rcutiepie"],a[href|="/ra16"],a[href|="/rabbored"],a[href|="/rabmerp"],a[href|="/ra26"],a[href|="/rrarityreally"],a[href|="/ra36"],a[href|="/rraritypaper"],a[href|="/rraritynews"],a[href|="/ra07"],a[href|="/rsbbook"],a[href|="/rsweetiebook"],a[href|="/rsbook"],a[href|="/ra17"],a[href|="/rscootaplease"],a[href|="/rscootappeal"],a[href|="/rscootaplz"],a[href|="/ra27"],a[href|="/rapplegasp"],a[href|="/ra37"],a[href|="/rtwiright"],a[href|="/rsatistwied"],a[href|="/ra08"],a[href|="/rcelestiawut"],a[href|="/rwutlestia"],a[href|="/ra18"],a[href|="/rgrannysmith"],a[href|="/rgranny"],a[href|="/roldmareyellsatcloud"],a[href|="/ra28"],a[href|="/rrarishock"],a[href|="/ra38"],a[href|="/rshiningarmor"],a[href|="/rshiningarmour"],a[href|="/ra09"],a[href|="/rchrysalis"],a[href|="/rqueenchrysalis"],a[href|="/rchangelingqueen"],a[href|="/ra19"],a[href|="/rcadence"],a[href|="/rcadance"],a[href|="/rprincesscadance"],a[href|="/rprincesscadence"],a[href|="/rprincessmiamorecadenza"],a[href|="/ra29"],a[href|="/rapplederp"],a[href|="/ra39"],
@@ -958,17 +952,6 @@ border:0;
 
 /* Headers */
 
-.titlebox .usertext-body .md h3 {
-  background-image: url(%%mlp-resource-eqg--sunset-shimmer-s-cutie-mark-by-mewtwogray%%);
-  height:46px;
-  padding:23px 0px 0px 0px;
-  color:white;
-  font-size:14pt;
-  text-align:center;
-  color:black;
-  font-family: Georgia,"Times New Roman",Times,sans-serif;
-}
-
 .titlebox li h4 { padding-top: 4px; }
 
 .thing.self .entry{padding-left:14px}
@@ -1123,4 +1106,3 @@ background-position:0px -70px!important
 .thing[data-fullname$="n"] ,.thing[data-fullname$="t"] ,.thing[data-fullname$="a"] {
   background-position:0px -170px!important
 }
-

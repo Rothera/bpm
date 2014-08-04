@@ -810,6 +810,14 @@ height: 242px;
 background-image: url(%%cadessheet%%)
 }
 
+a[href|="/duchess"], a[href|="/archer"]{
+display:block;
+clear: none;
+float: left;
+width: 139px;
+height: 140px;
+}
+
 /* Sheet offsets */
 
 a[href|="/btl10"], a[href|="/onekeg"], a[href|="/blt10"], a[href|="/ppmoonwalk"], a[href|="/crystalmuffins"], a[href|="/miggyb"], a[href|="/bpfight"], a[href|="/shiteatinggrin"] {

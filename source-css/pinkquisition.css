@@ -657,8 +657,20 @@ a[href|="/ppscream"] {
     width:115px; height:139px; background-position: -0px -150px; 
     background-image: url(%%spritesheet2%%) !important
     }
-
-
+a[href|="/pinkieface"] {
+    display: block;
+    clear: none;
+    float: left;
+    width:150px; height:141px; background-position: -0px -282px; 
+    background-image: url(%%pinkiefacetemp%%) !important
+    }
+a[href|="/pinkieface"]:hover {
+    display: block;
+    clear: none;
+    float: left;
+    width:300px; height:282px; background-position: -0px -0px; 
+    background-image: url(%%pinkiefacetemp%%) !important
+    }
 
 /*Side Bar*/
 

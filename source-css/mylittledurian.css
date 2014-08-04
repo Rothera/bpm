@@ -147,6 +147,7 @@ a[href|="/sp"]
  height:0px
 }
 
+
 /*Tabthingy*/
 .tabmenu li a {
 -webkit-border-top-left-radius: 5px;
@@ -156,6 +157,29 @@ a[href|="/sp"]
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;
 }
+
+/*  
+*************************  
+*** My Reddits Drop down list  
+*************************  
+*/  
+
+.drop-choices{  
+    background-color:#333 !important;  
+    border:2px solid #0088CC;  
+    border-radius:7px !important;  
+    padding: 2px 10px;  
+}  
+.drop-choices a {  
+    color:#999  !important;  
+}  
+#sr-header-area div.srdrop a.choice.bottom-option {  
+    color: white !important;  
+}  
+#sr-header-area div.drop-choices a.choice:hover {  
+    background-color: #333 !important;  
+    color: white !important;  
+}  
 
 /*Replaces self post and NSFW thumbnail with Fine Line*/
 .thumbnail.self {
