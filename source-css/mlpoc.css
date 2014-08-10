@@ -1,0 +1,861 @@
+/*CHANGE PAGE NAME*/
+.pagename a {
+    font-size: 0;
+    content: '';
+
+}
+.pagename a:after {
+    content: "My Little OC";
+    font-size: medium;
+    position: relative;
+    top: 6px;
+}
+/*END CHANGE PAGE NAME*/
+/*CHANGE NAME OF MODERATORS BOX*/  
+
+.sidecontentbox .helplink + .title h1 { font-size: 0}
+
+.sidecontentbox .helplink + .title h1:before { font-size: 10pt; content: "RED 'N' BLACK ALICORN GODS" }  
+
+/*END CHANGE NAME OF MODERATORS BOX*/
+
+/*hide tabs*/
+.listing-page .tabmenu li:nth-of-type(3),	/* Rising */
+.listing-page .tabmenu li:nth-of-type(4),	/* Controversial */
+.listing-page .tabmenu li:nth-of-type(6),	/* Saved links */
+
+/*LINK FLAIRS*/
+.linkflairlabel { max-width: none; }
+.linkflair-art .linkflairlabel {color:green; border:1px solid green}
+.linkflair-music .linkflairlabel {color:orange; border:1px solid orange}
+.linkflair-fiction .linkflairlabel {color:blue; border:1px solid blue}
+.linkflair-joke .linkflairlabel {color:black; border:1px solid black}
+.linkflair-crossover .linkflairlabel {color:purple; border:1px solid purple}
+.linkflair-help .linkflairlabel {color:red; border:1px solid red}
+.linkflair-introduction .linkflairlabel {color:#006666; border:1px solid #006666}
+.linkflair-wiki .linkflairlabel {color:black; border:1px solid yellow}
+/*END LINK FLAIRS*/
+/*HEADER BG COLOUR*/
+#header {background-color: white; border: 0px hidden white}
+/*END HEADER BG COLOUR*/
+
+/*SUB NAME FONT*/
+.pagename a:after{
+    color: #008888; /*Change to make your subreddit name a different color*/
+    font-size: 35px; /*Font size of it*/
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+.pagename a:after:hover {
+    color: #FFFFFF; /*Choose the color for it when hovering over it*/
+    text-decoration:none;
+}
+/*END SUB NAME FONT*/
+/*TAB COLOURS*/
+.tabmenu li a{
+    color: #008888;
+    background-color: white;
+    border: 1px outset #008888;
+    border-radius: 9px;
+}
+
+.tabmenu li a:hover{
+    color: #008888;
+    background-color: #eee;
+    border: 1px solid #008888;
+    border-radius: 9px;
+}
+
+.tabmenu li.selected a{
+    color: #00AAAA;
+    background-color: #BBBBBB;
+    border: 1px solid #00BBBB;
+}
+/*END TAB COLOURS*/
+/*HIDE AND 1 MORE >>>*/
+.sidecontentbox .more a {
+    display: none;
+}
+/*END HIDE & 1 MORE >>>*/
+/*NO DOWNVOTING UNLESS SUBSCRIBED*/
+body:not(.subscriber) .down
+{ 
+    visibility: hidden !important;
+}
+body:not(.subscriber) #siteTable:before
+{
+     content: "You are not a member of this community. Please respect that by not downvoting.";
+    display: block;
+    max-width: 800px;
+    background-color: #F6E69F;
+    padding: 5px 10px;
+    margin: 5px 305px 5px 0px;
+    border: 1px solid orange;
+    font-size: small;
+}
+/*END NO DOWNVOTING UNLESS SUBSCRIBED*/
+/*REPORT MESSAGE*/
+.report-button:hover:after {
+    position: absolute;
+    white-space: normal;
+    display: block;
+    z-index: 1000;
+    width: 350px;
+    padding: 5px;
+    border: 0px solid #333;
+    background: #fca;
+    content: "Please also message the moderators a link and reason why you are reporting this, thanks. ";
+    text-align: center;
+    font-size: 10px;
+    color: red;
+    margin-left: 25px;
+    margin-top: 5px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px
+}
+/*END REPORT MESSAGE*/
+
+/*DOWNVOTE WARNING*/
+.arrow.down:hover:before {
+     position: absolute;
+     display: block;
+     z-index: 1000;
+     width: 210px;
+     padding: 5px;
+     border: 0px solid #333;
+     border-radius: 15px;
+     background: #fca;
+     content: " Is the OC badly made or not well-rounded? Is the post/comment's content hateful?";
+     text-align: center;
+     font-size: 10px;
+     color: red;
+     margin-left: 25px;
+     margin-top: 5px;
+     -moz-border-radius: 4px;
+     border-radius: 4px;
+     -webkit-border-radius: 4px
+}
+/*END DOWNVOTE WARNING*/
+
+/* PRETTY SUBMIT LINK (1 bar) by /u/RainbowCrash (modified by Sabvegas)*/
+.morelink
+{
+    font-weight:normal;
+    letter-spacing:2px;
+    background:  #007777;
+    border: none;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    -o-border-radius:2px;
+    -ms-border-radius:2px;
+    -khtml-border-radius:2px;
+    border-radius:20px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    color: white;
+}
+.morelink:hover
+{
+    background: #A7B9CB;
+    background-color: #224444;
+    border-color: #FF0000;
+}
+
+.morelink .nub 
+{
+    display: none;
+}
+
+.morelink 
+{
+    color:#FFF; 
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size:19px; 
+    width: 301px;
+}
+
+.morelink a, .morelink a:hover
+{
+    color: white;
+}
+
+.sidebox.create 
+{
+    display: none;
+}
+
+.sidebox.submit.disabled 
+{
+    display: none;
+}
+/* NIGHTMODE FIXES */
+.res-nightmode .sidebox.submit.submit-text
+{
+    background: none !important;
+    margin-top: -45px;
+    margin-left: 153px;
+}
+
+.res-nightmode .sidebox 
+{
+    padding-left: 0px !important;
+    border: 2px solid #151515 !important;
+}
+
+.res-nightmode .morelink 
+{
+     height: 29px !important;
+}
+
+.res-nightmode .morelink
+{
+    background:rgb(39, 63, 87) !important;
+}
+
+.res-nightmode .morelink:hover
+{
+    background: #449ef8 !important;
+    background-color: #9edbf8 !important;
+    border-color: #9edbf8 !important;
+}
+/* END NIGHTMODE FIX */
+/* END PRETTY SUBMIT LINKS */
+
+/*CHANGE NSFW TAG TEXT*/
+.nsfw-stamp acronym { display: none; }
+.nsfw-stamp:after {
+    content: 'SUGGESTIVE'; 
+    border: 1px solid;
+    color: #ac3939;
+    padding: 0 2px;
+    border-radius: 3px;
+} 
+
+/*NEW SUBMIT BUTTONS*/
+
+#header {height:97px}
+
+.titlebox h6:nth-of-type(1) {top:300px}
+
+#header .tabmenu {top:295px}
+
+#header-img {top:300px}
+
+.morelink {top:300px}
+
+.sidebox.submit .morelink {display:none}
+
+.side .md h4 a {
+    border-radius: 30px;
+    border: 4px outset #066;
+    color: #008080;
+    background: #fff;
+    position: absolute;
+    top: 100px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    width: 300px;
+    font-size: 22px;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    letter-spacing: -1px;
+}
+.side .md h4 a:hover {
+    border-color: #006666;
+    color: #008080;
+    background: #eeeeee;
+}
+.side .usertext-body h4:nth-last-of-type(2) a {
+   top: 130px;
+}
+.side .usertext-body h4:nth-last-of-type(3) a {
+   top: 160px;
+}
+.side .usertext-body h4:nth-last-of-type(4) a {
+   top: 190px;
+}
+.side .usertext-body h4:nth-last-of-type(5) a {
+   top: 220px;
+}
+.side .usertext-body h4:nth-last-of-type(6) a {
+   top: 250px;
+}
+.side {
+   padding-top: 180px;
+}
+/*END NEW SUBMIT BUTTONS*/
+/*ANNOUNCEMENTS*/
+.side .md h5:nth-of-type(1) {
+    list-style-type:none!important;
+    position: absolute;
+    font-size: 14px;
+    display: block;
+    top: 105px; /*Change this in relation to your header's height*/
+    left: 18%; /*adjust this is well*/
+    margin:0;
+    background-color: #dddddd!important; /*Change for different background color*/
+    color: #f00; /*Change for different for color*/
+    text-align: center;
+    border-radius: 37px;
+    border: 5px solid #006666;
+    width: 500px;
+    height: 100px
+    padding: 7px 10px 0px 0px;
+    white-space: normal;
+    overflow: hidden;
+}
+
+.side .md h1:nth-of-type(1) a {
+    color: rgb(51, 102, 153); /*Changes the colors of the links*/
+}
+
+.content {
+    margin-top:110px; /*Increase or decrease depending on how much room you need*/
+}
+/*END ANNOUNCEMENTS*/
+
+/*******************
+  START Drop down 
+*******************/
+
+
+/***Layer and attributes***/
+
+.titlebox blockquote:first-child {
+border-left:none;
+position:absolute;
+z-index:20;
+border:none;
+
+/***this adjust location from the top***/
+
+top:70px;
+left:-30px;
+}
+
+/***turns first paragraph into menu title***/
+
+.titlebox blockquote h1 {
+display:none;
+}
+
+/***************Creates list of menus*
+
+.titlebox blockquote:first-child p:first-child {
+margin-top:0;
+padding:5px;
+float:left;
+font-size:12pt;
+background:#ddd;
+border:1px solid #000;
+font-weight:700;
+color:#FFF;
+cursor:default;
+}
+
+/***turns the LISTS into horiz menus***/
+
+.titlebox blockquote ul {
+display:absolute;
+float:left;
+padding:0;
+
+/***Styles the menus***/
+
+background:#ddd;
+font-family:verdana;
+border-radius: 20px;
+margin:5px;
+}
+
+/***styles lists/dropdown menus***/
+
+.titlebox blockquote ul li {
+display:none;
+padding:0;
+margin:0;
+text-align:center;
+}
+
+.titlebox blockquote ul li:first-child,.titlebox blockquote ul:hover li {
+display:block;
+}
+
+/***ios click menu hack-Needs work***/
+
+#header:target ~ * {
+display:none;
+}
+
+/*makes whole list item selectable?*/
+
+.titlebox blockquote li a {
+color:#000012;/*color of the text in menu */
+display:block;
+font-weight:700;
+padding-left:0;
+line-height:2em;
+}
+
+/*shows menu on hover*/
+
+.titlebox blockquote ul li:first-child,.titlebox blockquote ul:hover li {
+display:block;
+}
+
+/*turns top list item into section header*/
+
+.titlebox blockquote li:first-child {
+font-size:12.5pt;
+padding:5px;
+cursor:default;
+}
+
+.titlebox blockquote:first-child {
+border-left:none;
+position:absolute;
+z-index:20;
+top:10px;
+left:125px;
+}
+
+/*styling menu items*/
+
+.titlebox blockquote:first-child ul li:hover {
+/* adjust the highlighted color */
+background:#FC6;
+}
+
+/* changes the text color while highlighted */
+
+.titlebox blockquote li a:hover {
+color:#066;
+background: #fff
+}
+
+/*Size of each menu. Expandable*/
+
+.titlebox blockquote ul:nth-of-type(1) {
+width:180px;
+}
+
+.titlebox blockquote ul:nth-of-type(2) {
+width:180px;
+}
+
+.titlebox blockquote ul:nth-of-type(3) {
+width:180px;
+}
+
+.titlebox blockquote ul:nth-of-type(4) {
+width:180px;
+}
+
+/*******************
+  END Drop down 
+*******************/
+
+a[href="/gcadorkable"], a[href="/gcangry"], a[href="/gcconfident"], a[href="/gcfacehoof"], a[href="/gcrevelation"], a[href="/gcrock"], a[href="/gcsmug"], a[href="/gcwoo"], a[href="/gcyummy"], a[href="/mintcopy"], a[href="/minthappy"], a[href="/mintmad"], a[href="/mintsad"], a[href="/mintthink"], a[href="/nighttimesalute"], a[href="/paigehappy"], a[href="/paigeyell"], a[href="/rubyprimp"], a[href="/rubyreally"], a[href="/rubysmirk"], a[href="/sebored"], a[href="/sehahaha"], a[href="/sesly"], a[href="/sscaketopper"], a[href="/starstrucksuave"], a[href="/synponder"], a[href="/synsquint"], a[href="/syntaxadorkable"], a[href="/syntaxderp"], a[href="/thiskillsthegame"]
+{
+    background-image: url(%%spritesheet%%); background-repeat: no-repeat; display: block; clear: none; float: left;
+}
+a[href="/gcadorkable"] {
+    width: 70px;
+    height: 91px;
+    background-position: -5px -5px;
+}
+
+a[href="/gcangry"] {
+    width: 70px;
+    height: 66px;
+    background-position: -85px -5px;
+}
+
+a[href="/gcconfident"] {
+    width: 70px;
+    height: 68px;
+    background-position: -165px -5px;
+}
+
+a[href="/gcfacehoof"] {
+    width: 70px;
+    height: 70px;
+    background-position: -245px -5px;
+}
+
+a[href="/gcrevelation"] {
+    width: 70px;
+    height: 104px;
+    background-position: -325px -5px;
+}
+
+a[href="/gcrock"] {
+    width: 70px;
+    height: 112px;
+    background-position: -5px -119px;
+}
+
+a[href="/gcsmug"] {
+    width: 70px;
+    height: 78px;
+    background-position: -85px -119px;
+}
+
+a[href="/gcwoo"] {
+    width: 70px;
+    height: 73px;
+    background-position: -165px -119px;
+}
+
+a[href="/gcyummy"] {
+    width: 70px;
+    height: 129px;
+    background-position: -245px -119px;
+}
+
+a[href="/mintcopy"] {
+    width: 70px;
+    height: 70px;
+    background-position: -325px -119px;
+}
+
+a[href="/minthappy"] {
+    width: 70px;
+    height: 70px;
+    background-position: -325px -199px;
+}
+
+a[href="/mintmad"] {
+    width: 70px;
+    height: 70px;
+    background-position: -5px -279px;
+}
+
+a[href="/mintsad"] {
+    width: 70px;
+    height: 70px;
+    background-position: -85px -279px;
+}
+
+a[href="/mintthink"] {
+    width: 70px;
+    height: 70px;
+    background-position: -165px -279px;
+}
+
+a[href="/nighttimesalute"] {
+    width: 70px;
+    height: 57px;
+    background-position: -245px -279px;
+}
+
+a[href="/paigehappy"] {
+    width: 70px;
+    height: 83px;
+    background-position: -325px -279px;
+}
+
+a[href="/paigeyell"] {
+    width: 70px;
+    height: 82px;
+    background-position: -5px -372px;
+}
+
+a[href="/rubyprimp"] {
+    width: 70px;
+    height: 70px;
+    background-position: -85px -372px;
+}
+
+a[href="/rubyreally"] {
+    width: 70px;
+    height: 78px;
+    background-position: -165px -372px;
+}
+
+a[href="/rubysmirk"] {
+    width: 70px;
+    height: 80px;
+    background-position: -245px -372px;
+}
+
+a[href="/sebored"] {
+    width: 70px;
+    height: 56px;
+    background-position: -325px -372px;
+}
+
+a[href="/sehahaha"] {
+    width: 70px;
+    height: 70px;
+    background-position: -405px -5px;
+}
+
+a[href="/sesly"] {
+    width: 70px;
+    height: 70px;
+    background-position: -405px -85px;
+}
+
+a[href="/sscaketopper"] {
+    width: 70px;
+    height: 70px;
+    background-position: -405px -165px;
+}
+
+a[href="/starstrucksuave"] {
+    width: 70px;
+    height: 70px;
+    background-position: -405px -245px;
+}
+
+a[href="/synponder"] {
+    width: 70px;
+    height: 70px;
+    background-position: -405px -325px;
+}
+
+a[href="/synsquint"] {
+    width: 70px;
+    height: 70px;
+    background-position: -405px -405px;
+}
+
+a[href="/syntaxadorkable"] {
+    width: 70px;
+    height: 116px;
+    background-position: -485px -5px;
+}
+
+a[href="/syntaxderp"] {
+    width: 70px;
+    height: 70px;
+    background-position: -485px -131px;
+}
+
+a[href="/thiskillsthegame"] {
+    width: 70px;
+    height: 75px;
+    background-position: -485px -211px;
+}
+
+
+
+/*USER FLAIRS*/
+
+.flair-gamechanger
+{ color:#ffffff; 
+border: 2px solid maroon; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#006666 }
+
+.flair-sketchynote
+{ color:white; 
+border: 2px solid grey; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:black }
+
+.flair-blueballblitz
+{ color:#fff; 
+border: 2px solid #fff; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#0000ee }
+
+.flair-skyrunner
+{ color:#d00; 
+border: 2px solid #d00; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#eee }
+
+.flair-opensource
+{ color:#fff; 
+border: 2px solid #fff; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#00f}
+
+.flair-mkemiafarasi
+{ color:#333; 
+border: 2px solid #eee; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#ddd}
+
+.flair-starstrucksymphony
+{ color:#eff; 
+border: 2px solid #eff; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:maroon}
+
+.flair-bleedingheart
+{ color:black; 
+border: 2px solid black; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:fuchsia}
+
+.flair-dalekkolt
+{ color:#b29600; 
+border: 2px solid #b29600; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#7f6b00}
+
+.flair-sugarfree
+{ color:fuchsia; 
+border: 2px solid fuchsia; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:white}
+
+.flair-jonasjospell
+{ color:white; 
+border: 2px solid teal; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#00f}
+
+.flair-flamethrower
+{ color:brown; 
+border: 2px solid brown; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:teal}
+
+.flair-sunbreak
+{ color:#DDA0DD; 
+border: 2px solid #DDA0DD; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:grey}
+
+.flair-spellcheck
+{ color:yellow; 
+border: 2px solid yellow; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:grey}
+
+.flair-nighttimemelody
+{ color:blue; 
+border: 2px solid blue; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:lightblue}
+
+.flair-willow
+{ color:brown; 
+border: 2px solid brown; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:lightblue;}
+
+.flair-paige
+{ color:grey; 
+border: 2px solid grey; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:lightblue;}
+
+.flair-mintcopy
+{ color:white; 
+border: 2px solid grey; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:red;}
+
+.flair-goldengraham
+{ color:brown; 
+border: 2px solid brown; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:yellow;}
+
+.flair-almostsurely
+{ color:white; 
+border: 2px solid green; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:grey;}
+
+.flair-syntaxerror
+{ color:#21ff21; 
+border: 2px solid #98ff98; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#fffff0;}
+
+.flair-clackerspotlight
+{ color:black; 
+border: 2px solid black; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#006666;}
+
+.flair-miamorecadenza
+{ color:#999900; 
+border: 2px solid yellow; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:pink;}
+
+.flair-ironmaiden
+{ color:black; 
+border: 2px solid black; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:grey;}
+
+.flair-xeon
+{ color:grey; 
+border: 2px solid black; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:brown;}
+
+.flair-ruby
+{ color:red; 
+border: 2px solid red; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:ivory;}
+
+.flair-thunderstrike
+{ color:maroon; 
+border: 2px solid maroon; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:yellow;}
+
+.flair-diamondtip
+{ color:orange; 
+border: 2px solid orange; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:white;}
+
+.flair-4330715
+{ color:blue; 
+border: 2px solid green; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:black;}
+
+.flair-soundbyte
+{ color:blue; 
+border: 2px solid blue; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:tan;}
+
+.flair-technicalwaters
+{ color:cyan; 
+border: 2px solid #006666; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:olive;}
+
+.flair-curtaincall
+{ color:yellow; 
+border: 2px solid red; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:blue;}
+
+.flair-peachfuzz
+{ color:#C58512; 
+border: 2px solid #C58512; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#E1D877;}
+
+.flair-duxfortis
+{ color:brown; 
+border: 2px solid tan; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:lightblue;}
+
+.flair-nimblehooves
+{ color:blue; 
+border: 2px solid blue; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:grey;}
+
+.flair-dochelix
+{ color:yellow; 
+border: 2px solid yellow; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:blue;}
