@@ -847,7 +847,6 @@ body:lang(np):not(.subscriber) .usertext-edit,
 body:lang(np):not(.subscriber) .sidebox.submit,
 body:lang(np):not(.subscriber) .commentingAs,
 body:lang(np):not(.subscriber) .markdownEditor, 
-body:lang(np):not(.subscriber) .report-button,
 body:lang(np):not(.subscriber) a[onclick*="return reply(this)"],
 body:lang(np):not(.subscriber) .subButtons,
 body:lang(np):not(.subscriber) .helplink,
@@ -875,15 +874,6 @@ body:lang(np):not(.subscriber) .entry.dislikes:not(.reddit-entry):before
     color: red;
     font-size: large;
     font-weight: bold;
-}
-
-/* Attempts to disrupt RES from hiding CSS styles */
-body.res:lang(np):not(.subscriber) div.titlebox > div[style*='display: block !important'] input:before,
-body.res:lang(np):not(.subscriber) div.titlebox > div[style*='display: block !important'] label:before,
-body.res:lang(np):not(.subscriber) > div#keyCommandLineWidget > form:before
-{
-    content: 'Removed by NoParticipation' !important;
-    margin-left: -10000px !important;
 }
 
 /* Wiki protection */

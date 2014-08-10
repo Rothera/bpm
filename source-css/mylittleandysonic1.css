@@ -14,6 +14,18 @@ body:first-of-type, body.res-nightmode:first-of-type {
 }
 
 
+.gilded-icon{
+    transform-origin:50% 65% 0;
+    -webkit-transform-origin:50% 65% 0;
+    -webkit-transition-duration: 3s;
+    transition-duration: 3s;
+}
+.gilded-icon:hover{
+    -webkit-transform:rotate(-1360deg);
+    transform:translate(500px , 0px)
+}
+
+
 .side a[href="https://webchat.mlas1.org/?nick=Gummy...&channels=mlas1&prompt=1"]
 {
    display:block;

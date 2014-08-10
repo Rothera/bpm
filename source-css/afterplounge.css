@@ -295,20 +295,20 @@ black or #000000 - for all black stuff, including post titles
     /* Primary Theme Color (dark) */
 
 
-.flairselector h2, .tabmenu li a, #header-bottom-right, #userbarToggle, .NERPageMarker,  .roundfield, #sr-header-area, #RESShortcutsEditContainer, #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash, .fancy-toggle-button .add:active, .RESshortcut.RESshortcutside:active, .RESDashboardToggle:active
-{ background-color: #87A5B7 !important;}
+.flairselector h2, .tabmenu li a, #header-bottom-right, #userbarToggle, .NERPageMarker,  .roundfield, #sr-header-area, #RESShortcutsEditContainer, #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash, .fancy-toggle-button .add:active, .RESshortcut.RESshortcutside:active, .RESDashboardToggle:active, .md thead
+{ background-color: #C684AF !important;}
 
 .morelink, .morelink:hover, .sidebox.submit.submit-text .morelink:hover, .fancy-toggle-button .add, .RESshortcut.RESshortcutside, .RESDashboardToggle, .fancy-toggle-button .add:hover, #subButtons-mylittlepony .RESshortcut.RESshortcutside:hover, #subButtons-mylittlepony .RESDashboardToggle:hover
-{ background: #87A5B7 !important;}
+{ background: #C684AF !important;}
 
 .tabmenu li.selected a, h2
-{ color: #87A5B7 !important;}
+{ color: #C684AF !important;}
 
 .linkinfo, .md table, .md thead, .md tbody, .md tr, .md blockquote, .help blockquote
-{ border: solid #87A5B7 !important;}
+{ border: solid #C684AF !important;}
 
 .linkinfo, .md table, .md thead, .md tbody, .md tr, .md blockquote, .help blockquote
-{ border-color: #87A5B7 !important;}
+{ border-color: #C684AF !important;}
 
 
 
@@ -316,27 +316,27 @@ black or #000000 - for all black stuff, including post titles
 
 
 .linkinfo, .linefield, .infobar, .searchpane, .md table
-{ background-color: #BCCDD7 !important;}
+{ background-color: #DBACC4 !important;}
 
 
    /* Tertiary Theme Color (light) */
 
 
-.morelink:hover, .sidebox.submit.submit-text .morelink:hover, ::selection, .md blockquote, .help blockquote
-{ background-color: #D4E4F0 !important;}
+.morelink:hover, .sidebox.submit.submit-text .morelink:hover, ::selection, .md blockquote, .help blockquote, #title-field.roundfield:before, .md table
+{ background-color: #E6C5D6 !important;}
 
 .morelink:hover, .sidebox.submit.submit-text .morelink:hover
-{ border-color: #D4E4F0 !important;}
+{ border-color: #E6C5D6 !important;}
 
 
    /* Quaternary Theme Color (very dark) */
 
 
 body >.content >.sharelink ~ .sitetable:before, a.title:link, .sidebox.submit.submit-text .morelink:hover,  .sidebox.submit.submit-link .morelink:hover a, .sidebox.submit.submit-text .morelink:hover a
-{ color: #6C8492 !important;}
+{ color: #AD5C85 !important;}
 
 #header, #header.res-nightmode, body >.content >.sharelink ~ .sitetable:before, .side form#search input[name="q"]
-{ border-color: #6C8492 !important;}
+{ border-color: #AD5C85 !important;}
 
 
                                 /* ############------NIGHT MODE------############ */
@@ -457,6 +457,18 @@ border: 2px solid white; border-radius: 20px;
 padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
 background-color:#C67D33 }
 
+.flair-molten 
+{ color:#FFE270 ; 
+border: 2px solid #B80000; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#E65C00 }
+
+.flair-sky 
+{ color:#8AB8E6 ; 
+border: 2px solid #8AB8E6; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:white }
+
 
 
 .flairselector h2 {
@@ -559,7 +571,7 @@ left: 30px !important;
 /**** ----------------announcement bar----------------- ****/
 
 body >.content >.sharelink ~ .sitetable:before { 
-content: "The Afterplounge: Where PAD's retired backgrounds rest in peace."; 
+content: "All your spook are belong to us."; 
 background-color: #FFFFFF;
 border: 1px solid ;
 
@@ -658,14 +670,14 @@ background: url(%%wt50%%) !important;
 
 
 .md table {
-     background-color: #BCCDD7 !important; color: black; 
+      color: black; 
 border-left: solid black !important;
 border-right: solid black !important;
 border: solid black !important;
 border-color: black !important;
 }
 .md thead {
-    background-color: #87A5B7 !important; color: white !important; border-left: solid black !important;
+     color: white !important; border-left: solid black !important;
 border-right: solid black !important; border: solid black !important; border-color: black !important;
 }
 .md tbody {
@@ -696,7 +708,6 @@ padding-right: 7px !important;
 padding: 4px;
 margin: 5px;
 margin-right: 15px;
-font-style: italic;
 }
 
 .content .md blockquote:before{content:" Quote: " !important;}
@@ -889,7 +900,7 @@ color: #FFF !important;
  font-size:0.86em;
  padding:5px;
  border:1px solid #5f99cf;
- background-color:#EFF7FF;
+ 
  color:black;
  font-weight:bold;
  display:block;
