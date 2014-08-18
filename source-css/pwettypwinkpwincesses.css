@@ -2,7 +2,9 @@
 /* KEEP THE FORMATTING CONSISTENT, DAMN IT */
 /* Sorry for fucking with it Asc. -SMFD */
 
-/* Don't touch. On a side note, I need to consolidate all of these "don't touches" into one block*/  
+/* Don't touch. On a side note, I need to consolidate all 
+
+of these "don't touches" into one block*/  
 div.titlebox span.word {  
    display: none  
 }
@@ -42,7 +44,7 @@ height: 0x;
 }
 
 #header-bottom-left {
- /* background:url(%%newbanner%%)!important;
+ /* background:url(%%animatedheader%%)!important;
   background-repeat:no-repeat!important;
   background-position:50% 100%!important;*/
   height:237px;
@@ -62,7 +64,7 @@ height: 0x;
     height: 237px;
     display: inline-block;
     position: absolute;
-    left: 1px;
+    left: 100px;
     top: 20px;
     text-indent: -9999px;
     z-index: 100;
@@ -102,7 +104,9 @@ div.titlebox .users-online span.number:after {
   content:" being cweepy";
 }
 
-/* font controls, color is color of text that isn't modified by any other css */
+/* font controls, color is color of text that isn't 
+
+modified by any other css */
 body {
   /*font-family: Arial;*/
   color:#770077 !important;
@@ -148,7 +152,9 @@ color: #770077 !important;
    color: #770077 !important;
 }
 
-/* content is the message displayed when someone downvotes a post */
+/* content is the message displayed when someone 
+
+downvotes a post */
 #siteTable .entry.dislikes .buttons:before {
   content: "Why'd you click that, muwdewew!";
   color: #EE82EE;
@@ -156,7 +162,9 @@ color: #770077 !important;
 }
 
 
-/* Gets rid of the "use subreddit css" toggle. Do not touch */
+/* Gets rid of the "use subreddit css" toggle. Do not 
+
+touch */
 .styleToggle {
   visibility: hidden;
 }
@@ -738,26 +746,75 @@ a[href|="/rdteehee"] {
   height:153px;
 }
 
-/* CSS text box bigger, because it being small annoys me. */
-.stylesheet-customize-container textarea { height:500px; }
+/* CSS text box bigger, because it being small annoys me. 
+
+*/
+.stylesheet-customize-container textarea { height:500px; 
+
+}
 
  /* Silly garbage */
 /*i don't think this works how u think it works */
 /*It works exactly how I thought it worked, fuck you.*/
 
-div[data-fullname$="s"] .usertext-body .md:after{content:" Also, Season 4 is great."; color: #707 !important;}
-div[data-fullname$="m"] .usertext-body .md:after{content:" Also, Season 4 is great."; color: #707 !important;}
-div[data-fullname$="f"] .usertext-body .md:after{content:" Also, Season 4 is great."; color: #707 !important;}
-div[data-fullname$="d"] .usertext-body .md:after{content:" Also, Season 4 is great."; color: #707 !important;}
-div[data-fullname$="z"] .usertext-body .md:after{content:" Also, Xandrez sucks."; color: #707 !important;}
-div[data-fullname$="666"] .usertext-body .md:after{content:"I just noticed this comment, and I don't mean to sound like a parasprite, but I feel like you're being like a big Discord now. Trying to stir things up and ruin the Harmony of this subreddit. Speaking as the element of moderation here, I feel like you're being bucking crazy and everypony knows that you need to be less sarcastic. Neighsayers come and go, but you're being bucking mean right now by being sarcastic about this super important thing. It's 20% cooler to be kind and keep the harmony of friends because Friendship is truly Magic. Because we gotta share, and we gotta care in our sub. It's the right thing to do. It's the mane thing to do. /) Hoofbump! "; color: #707 !important;}
+div[data-fullname$="p"] .usertext-body .md:after
+
+{content:" You know what I mean?"; color: #707 !
+
+important;}
+div[data-fullname$="a"] .usertext-body .md:after
+
+{content:" Yunno what I'm saying?"; color: #707 !
+
+important;}
+div[data-fullname$="t"] .usertext-body .md:after
+
+{content:" Perfect."; color: #707 !important;}
+div[data-fullname$="w"] .usertext-body .md:after
+
+{content:" See what I mean?"; color: #707 !important;}
+div[data-fullname$="o"] .usertext-body .md:after
+
+{content:" Now drop the shield."; color: #707 !
+
+important;}
+div[data-fullname$="s"] .usertext-body .md:after
+
+{content:" Also, Season 4 is great."; color: #707 !
+
+important;}
+div[data-fullname$="m"] .usertext-body .md:after
+
+{content:" Also, Season 4 is great."; color: #707 !
+
+important;}
+div[data-fullname$="f"] .usertext-body .md:after
+
+{content:" Also, Season 4 is great."; color: #707 !
+
+important;}
+div[data-fullname$="d"] .usertext-body .md:after
+
+{content:" Also, Season 4 is great."; color: #707 !
+
+important;}
+div[data-fullname$="z"] .usertext-body .md:after
+
+{content:" Also, Xandrez sucks."; color: #707 !important;}
+
 
 /* Animated Header */
-/* Vector source: http://fc02.deviantart.net/fs71/i/2013/030/c/8/alicorn_twilight_by_designjh-d5t8ga8.png*/
+/* Vector source: 
+
+http://fc02.deviantart.net/fs71/i/2013/030/c/8/alicorn_tw
+
+ilight_by_designjh-d5t8ga8.png*/
 
 #header {
 animation:heavybreathing 60s ease-in-out infinite;
--webkit-animation:heavybreathing 60s ease-in-out infinite;
+-webkit-animation:heavybreathing 60s ease-in-out 
+
+infinite;
 }
 
 @-webkit-keyframes heavybreathing{
@@ -838,28 +895,36 @@ animation:heavybreathing 60s ease-in-out infinite;
     left:0px;
     top:0px;
     opacity:1;
-    transform:   rotateY(-180deg) translateX(1000px) rotate(-90deg);
+    transform:   rotateY(-180deg) translateX(1000px) 
+
+rotate(-90deg);
   }
 
   50% {
     left:0px;
     top:0px;
     opacity:1;
-    transform:   rotateY(-180deg) translateY(600px) translateX(1000px) rotate(-90deg);
+    transform:   rotateY(-180deg) translateY(600px) 
+
+translateX(1000px) rotate(-90deg);
   }
 
   51% {
     left:0px;
     top:0px;
     opacity:1;
-    transform:   rotateY(-180deg) translateY(600px) translateX(1000px) rotate(-180deg);
+    transform:   rotateY(-180deg) translateY(600px) 
+
+translateX(1000px) rotate(-180deg);
   }
 
   75% {
     left:0px;
     top:0px;
     opacity:1;
-    transform:  rotateY(-180deg) translateX(0px) translateY(600px) rotate(-180deg);
+    transform:  rotateY(-180deg) translateX(0px) 
+
+translateY(600px) rotate(-180deg);
   }
 
 
@@ -867,28 +932,36 @@ animation:heavybreathing 60s ease-in-out infinite;
     left:0px;
     top:0px;
     opacity:1;
-    transform:  rotateY(-180deg) translateX(0px) translateY(600px) rotate(-90deg);
+    transform:  rotateY(-180deg) translateX(0px) 
+
+translateY(600px) rotate(-90deg);
   }
 
 98% {
     left:0px;
     top:0px;
     opacity:1;
-    transform:  rotateY(-180deg) translateX(0px) translateY(10px) rotate(-90deg);
+    transform:  rotateY(-180deg) translateX(0px) 
+
+translateY(10px) rotate(-90deg);
   }
 
   99% {
     left:0px;
     top:0px;
     opacity:1;
-    transform:  rotateY(-180deg) translateX(0px) translateY(10px) rotate(0deg);
+    transform:  rotateY(-180deg) translateX(0px) 
+
+translateY(10px) rotate(0deg);
   }
 
   100% {
     left:0px;
     top:0px;
     opacity:1;
-    transform:  rotateY(-180deg) translate(0px,0px) rotate(0deg);
+    transform:  rotateY(-180deg) translate(0px,0px) 
+
+rotate(0deg);
   }
 
 }
@@ -904,35 +977,45 @@ animation:heavybreathing 60s ease-in-out infinite;
     left:0px;
     top:0px;
     opacity:1;
-    -webkit-transform:   rotateY(-180deg) translateX(1000px) ;
+    -webkit-transform:   rotateY(-180deg) translateX
+
+(1000px) ;
   }
 
   26% {
     left:0px;
     top:0px;
     opacity:1;
-    -webkit-transform:   rotateY(-180deg) translateX(1000px) rotate(-90deg);
+    -webkit-transform:   rotateY(-180deg) translateX
+
+(1000px) rotate(-90deg);
   }
 
   50% {
     left:0px;
     top:0px;
     opacity:1;
-    -webkit-transform:   rotateY(-180deg) translateY(600px) translateX(1000px) rotate(-90deg);
+    -webkit-transform:   rotateY(-180deg) translateY
+
+(600px) translateX(1000px) rotate(-90deg);
   }
 
   51% {
     left:0px;
     top:0px;
     opacity:1;
-    -webkit-transform:   rotateY(-180deg) translateY(600px) translateX(1000px) rotate(-180deg);
+    -webkit-transform:   rotateY(-180deg) translateY
+
+(600px) translateX(1000px) rotate(-180deg);
   }
 
   75% {
     left:0px;
     top:0px;
     opacity:1;
-    -webkit-transform:  rotateY(-180deg) translateX(0px) translateY(600px) rotate(-180deg);
+    -webkit-transform:  rotateY(-180deg) translateX(0px) 
+
+translateY(600px) rotate(-180deg);
   }
 
 
@@ -940,31 +1023,41 @@ animation:heavybreathing 60s ease-in-out infinite;
     left:0px;
     top:0px;
     opacity:1;
-    -webkit-transform:  rotateY(-180deg) translateX(0px) translateY(600px) rotate(-90deg);
+    -webkit-transform:  rotateY(-180deg) translateX(0px) 
+
+translateY(600px) rotate(-90deg);
   }
 
   98% {
     left:0px;
     top:0px;
     opacity:1;
-    -webkit-transform:  rotateY(-180deg) translateX(0px) translateY(10px) rotate(-90deg);
+    -webkit-transform:  rotateY(-180deg) translateX(0px) 
+
+translateY(10px) rotate(-90deg);
   }
 
 99% {
     left:0px;
     top:0px;
     opacity:1;
-    -webkit-transform:  rotateY(-180deg) translateX(0px) translateY(10px) rotate(0deg);
+    -webkit-transform:  rotateY(-180deg) translateX(0px) 
+
+translateY(10px) rotate(0deg);
   }
 
   100% {
     left:0px;
     top:0px;
     opacity:1;
-    -webkit-transform:  rotateY(-180deg) translate(0px,0px) rotate(0deg);
+    -webkit-transform:  rotateY(-180deg) translate
+
+(0px,0px) rotate(0deg);
   }
 }
 
-.res-nightmode .usertext.border .usertext-body { background-color: rgb(255, 170, 255) !important; }
+.res-nightmode .usertext.border .usertext-body { 
+
+background-color: rgb(255, 170, 255) !important; }
 
 

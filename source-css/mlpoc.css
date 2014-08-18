@@ -23,6 +23,10 @@
 .listing-page .tabmenu li:nth-of-type(3),	/* Rising */
 .listing-page .tabmenu li:nth-of-type(4),	/* Controversial */
 .listing-page .tabmenu li:nth-of-type(6),	/* Saved links */
+.listing-page .tabmenu li:nth-of-type(9),	/* Wiki */
+.listing-page .tabmenu li:nth-of-type(8) /* Promoted Links*/  {
+    display: none;
+} 	
 
 /*LINK FLAIRS*/
 .linkflairlabel { max-width: none; }
@@ -33,7 +37,7 @@
 .linkflair-crossover .linkflairlabel {color:purple; border:1px solid purple}
 .linkflair-help .linkflairlabel {color:red; border:1px solid red}
 .linkflair-introduction .linkflairlabel {color:#006666; border:1px solid #006666}
-.linkflair-wiki .linkflairlabel {color:black; border:1px solid yellow}
+.linkflair-update .linkflairlabel {color:black; border:1px solid yellow}
 /*END LINK FLAIRS*/
 /*HEADER BG COLOUR*/
 #header {background-color: white; border: 0px hidden white}
@@ -56,6 +60,8 @@
     background-color: white;
     border: 1px outset #008888;
     border-radius: 9px;
+    position: relative;
+    top: -5px;
 }
 
 .tabmenu li a:hover{
@@ -357,16 +363,12 @@ cursor:default;
 /***turns the LISTS into horiz menus***/
 
 .titlebox blockquote ul {
-display:absolute;
-float:left;
-padding:0;
-
-/***Styles the menus***/
-
-background:#ddd;
-font-family:verdana;
-border-radius: 20px;
-margin:5px;
+    padding: 0;
+    background: #fff;
+    border: 5px outset #066;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    border-radius: 20px;
+    margin: 5px auto;
 }
 
 /***styles lists/dropdown menus***/
@@ -391,11 +393,13 @@ display:none;
 /*makes whole list item selectable?*/
 
 .titlebox blockquote li a {
-color:#000012;/*color of the text in menu */
+font-size: 14px;
+color: #006666;
+font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 display:block;
 font-weight:700;
 padding-left:0;
-line-height:2em;
+line-height:18px;
 }
 
 /*shows menu on hover*/
@@ -408,7 +412,7 @@ display:block;
 
 .titlebox blockquote li:first-child {
 font-size:12.5pt;
-padding:5px;
+padding:0px;
 cursor:default;
 }
 
@@ -431,32 +435,52 @@ background:#FC6;
 
 .titlebox blockquote li a:hover {
 color:#066;
-background: #fff
+background:#ddd;
 }
 
 /*Size of each menu. Expandable*/
 
 .titlebox blockquote ul:nth-of-type(1) {
-width:180px;
+width:280px;
 }
 
 .titlebox blockquote ul:nth-of-type(2) {
-width:180px;
+width:280px;
 }
 
 .titlebox blockquote ul:nth-of-type(3) {
-width:180px;
+width:280px;
 }
 
 .titlebox blockquote ul:nth-of-type(4) {
-width:180px;
+width:280px;
 }
 
+.titlebox blockquote { border: 0; }
 /*******************
   END Drop down 
 *******************/
 
-a[href="/gcadorkable"], a[href="/gcangry"], a[href="/gcconfident"], a[href="/gcfacehoof"], a[href="/gcrevelation"], a[href="/gcrock"], a[href="/gcsmug"], a[href="/gcwoo"], a[href="/gcyummy"], a[href="/mintcopy"], a[href="/minthappy"], a[href="/mintmad"], a[href="/mintsad"], a[href="/mintthink"], a[href="/nighttimesalute"], a[href="/paigehappy"], a[href="/paigeyell"], a[href="/rubyprimp"], a[href="/rubyreally"], a[href="/rubysmirk"], a[href="/sebored"], a[href="/sehahaha"], a[href="/sesly"], a[href="/sscaketopper"], a[href="/starstrucksuave"], a[href="/synponder"], a[href="/synsquint"], a[href="/syntaxadorkable"], a[href="/syntaxderp"], a[href="/thiskillsthegame"]
+/*LINK FLAIR FILTERS, WOOP*/
+
+html:lang(jo) .link:not(.linkflair-joke) {
+    display: none    }
+html:lang(cr) .link:not(.linkflair-crossover) {
+    display: none    }
+html:lang(nt) .link:not(.linkflair-introduction) {
+    display: none    }
+html:lang(mu) .link:not(.linkflair-music) {
+    display: none    }
+html:lang(on) .link:not(.linkflair-fiction) {
+    display: none    }
+html:lang(rt) .link:not(.linkflair-art) {
+    display: none    }
+html:lang(he) .link:not(.linkflair-help) {
+    display: none    }
+html:lang(up) .link:not(.linkflair-update) {
+    display: none    }
+
+a[href="/gcadorkable"], a[href="/gcangry"], a[href="/gcconfident"], a[href="/gcfacehoof"], a[href="/gchmm"], a[href="/gcrevelation"], a[href="/gcrock"], a[href="/gcsmug"], a[href="/gcwoo"], a[href="/gcyummy"], a[href="/mintcopy"], a[href="/minthappy"], a[href="/mintmad"], a[href="/mintsad"], a[href="/mintthink"], a[href="/nighttimesalute"], a[href="/nimblefun"], a[href="/paigehappy"], a[href="/paigeyell"], a[href="/rubybendover"], a[href="/rubyprimp"], a[href="/rubyreally"], a[href="/rubysmirk"], a[href="/sebored"], a[href="/sehahaha"], a[href="/sesly"], a[href="/sscaketopper"], a[href="/starstrucksuave"], a[href="/sugarbutt"], a[href="/sugarfree"], a[href="/sugarico"], a[href="/sugarscared"], a[href="/sugarsmarm"], a[href="/sugarsmile"], a[href="/sugarwut"], a[href="/swordbashful"], a[href="/swordbee"], a[href="/swordfacehoof"], a[href="/swordgrr"], a[href="/swordguilt"], a[href="/swordlie"], a[href="/swordmad"], a[href="/swordmirror"], a[href="/swordpride"], a[href="/swordsad"], a[href="/swordscowl"], a[href="/swordseesham"], a[href="/swordshock"], a[href="/swordshrug"], a[href="/swordspear"], a[href="/swordstare"], a[href="/swordsuave"], a[href="/sworduham"], a[href="/swordulan"], a[href="/synpoker"], a[href="/synponder"], a[href="/synsquint"], a[href="/syntaxadorkable"], a[href="/syntaxderp"], a[href="/thiskillsthegame"], a[href="/Thumb"], a[href="/thunderdrink"]
 {
     background-image: url(%%spritesheet%%); background-repeat: no-repeat; display: block; clear: none; float: left;
 }
@@ -484,175 +508,376 @@ a[href="/gcfacehoof"] {
     background-position: -245px -5px;
 }
 
+a[href="/gchmm"] {
+    width: 70px;
+    height: 70px;
+    background-position: -325px -5px;
+}
+
 a[href="/gcrevelation"] {
     width: 70px;
     height: 104px;
-    background-position: -325px -5px;
+    background-position: -405px -5px;
 }
 
 a[href="/gcrock"] {
     width: 70px;
     height: 112px;
-    background-position: -5px -119px;
+    background-position: -485px -5px;
 }
 
 a[href="/gcsmug"] {
     width: 70px;
     height: 78px;
-    background-position: -85px -119px;
+    background-position: -565px -5px;
 }
 
 a[href="/gcwoo"] {
     width: 70px;
     height: 73px;
-    background-position: -165px -119px;
+    background-position: -645px -5px;
 }
 
 a[href="/gcyummy"] {
     width: 70px;
     height: 129px;
-    background-position: -245px -119px;
+    background-position: -85px -88px;
 }
 
 a[href="/mintcopy"] {
     width: 70px;
     height: 70px;
-    background-position: -325px -119px;
+    background-position: -165px -88px;
 }
 
 a[href="/minthappy"] {
     width: 70px;
     height: 70px;
-    background-position: -325px -199px;
+    background-position: -245px -88px;
 }
 
 a[href="/mintmad"] {
     width: 70px;
     height: 70px;
-    background-position: -5px -279px;
+    background-position: -325px -88px;
 }
 
 a[href="/mintsad"] {
     width: 70px;
     height: 70px;
-    background-position: -85px -279px;
+    background-position: -645px -88px;
 }
 
 a[href="/mintthink"] {
     width: 70px;
     height: 70px;
-    background-position: -165px -279px;
+    background-position: -5px -168px;
 }
 
 a[href="/nighttimesalute"] {
     width: 70px;
     height: 57px;
-    background-position: -245px -279px;
+    background-position: -165px -168px;
+}
+
+a[href="/nimblefun"] {
+    width: 150px;
+    height: 101px;
+    background-position: -245px -168px;
 }
 
 a[href="/paigehappy"] {
     width: 70px;
     height: 83px;
-    background-position: -325px -279px;
+    background-position: -405px -168px;
 }
 
 a[href="/paigeyell"] {
     width: 70px;
     height: 82px;
-    background-position: -5px -372px;
+    background-position: -485px -168px;
+}
+
+a[href="/rubybendover"] {
+    width: 150px;
+    height: 112px;
+    background-position: -565px -168px;
 }
 
 a[href="/rubyprimp"] {
     width: 70px;
     height: 70px;
-    background-position: -85px -372px;
+    background-position: -5px -290px;
 }
 
 a[href="/rubyreally"] {
     width: 70px;
     height: 78px;
-    background-position: -165px -372px;
+    background-position: -85px -290px;
 }
 
 a[href="/rubysmirk"] {
     width: 70px;
     height: 80px;
-    background-position: -245px -372px;
+    background-position: -165px -290px;
 }
 
 a[href="/sebored"] {
     width: 70px;
     height: 56px;
-    background-position: -325px -372px;
+    background-position: -245px -290px;
 }
 
 a[href="/sehahaha"] {
     width: 70px;
     height: 70px;
-    background-position: -405px -5px;
+    background-position: -325px -290px;
 }
 
 a[href="/sesly"] {
     width: 70px;
     height: 70px;
-    background-position: -405px -85px;
+    background-position: -405px -290px;
 }
 
 a[href="/sscaketopper"] {
     width: 70px;
     height: 70px;
-    background-position: -405px -165px;
+    background-position: -485px -290px;
 }
 
 a[href="/starstrucksuave"] {
     width: 70px;
     height: 70px;
-    background-position: -405px -245px;
+    background-position: -565px -290px;
+}
+
+a[href="/sugarbutt"] {
+    width: 150px;
+    height: 88px;
+    background-position: -245px -370px;
+}
+
+a[href="/sugarfree"] {
+    width: 70px;
+    height: 70px;
+    background-position: -645px -290px;
+}
+
+a[href="/sugarico"] {
+    width: 70px;
+    height: 70px;
+    background-position: -5px -370px;
+}
+
+a[href="/sugarscared"] {
+    width: 70px;
+    height: 70px;
+    background-position: -405px -370px;
+}
+
+a[href="/sugarsmarm"] {
+    width: 70px;
+    height: 70px;
+    background-position: -485px -370px;
+}
+
+a[href="/sugarsmile"] {
+    width: 70px;
+    height: 70px;
+    background-position: -565px -370px;
+}
+
+a[href="/sugarwut"] {
+    width: 70px;
+    height: 82px;
+    background-position: -645px -370px;
+}
+
+a[href="/swordbashful"] {
+    width: 70px;
+    height: 70px;
+    background-position: -5px -462px;
+}
+
+a[href="/swordbee"] {
+    width: 101px;
+    height: 77px;
+    background-position: -85px -462px;
+}
+
+a[href="/swordfacehoof"] {
+    width: 70px;
+    height: 70px;
+    background-position: -405px -462px;
+}
+
+a[href="/swordgrr"] {
+    width: 70px;
+    height: 70px;
+    background-position: -485px -462px;
+}
+
+a[href="/swordguilt"] {
+    width: 70px;
+    height: 70px;
+    background-position: -565px -462px;
+}
+
+a[href="/swordlie"] {
+    width: 70px;
+    height: 65px;
+    background-position: -645px -462px;
+}
+
+a[href="/swordmad"] {
+    width: 70px;
+    height: 70px;
+    background-position: -196px -537px;
+}
+
+a[href="/swordmirror"] {
+    width: 112px;
+    height: 150px;
+    background-position: -276px -537px;
+}
+
+a[href="/swordpride"] {
+    width: 100px;
+    height: 158px;
+    background-position: -645px -537px;
+}
+
+a[href="/swordsad"] {
+    width: 70px;
+    height: 70px;
+    background-position: -725px -5px;
+}
+
+a[href="/swordscowl"] {
+    width: 70px;
+    height: 70px;
+    background-position: -725px -85px;
+}
+
+a[href="/swordseesham"] {
+    width: 150px;
+    height: 149px;
+    background-position: -805px -5px;
+}
+
+a[href="/swordshock"] {
+    width: 70px;
+    height: 70px;
+    background-position: -805px -164px;
+}
+
+a[href="/swordshrug"] {
+    width: 70px;
+    height: 70px;
+    background-position: -885px -164px;
+}
+
+a[href="/swordspear"] {
+    width: 170px;
+    height: 189px;
+    background-position: -725px -244px;
+}
+
+a[href="/swordstare"] {
+    width: 150px;
+    height: 149px;
+    background-position: -755px -443px;
+}
+
+a[href="/swordsuave"] {
+    width: 150px;
+    height: 174px;
+    background-position: -5px -602px;
+}
+
+a[href="/sworduham"] {
+    width: 70px;
+    height: 70px;
+    background-position: -905px -244px;
+}
+
+a[href="/swordulan"] {
+    width: 100px;
+    height: 133px;
+    background-position: -398px -602px;
+}
+
+a[href="/synpoker"] {
+    width: 70px;
+    height: 70px;
+    background-position: -905px -324px;
 }
 
 a[href="/synponder"] {
     width: 70px;
     height: 70px;
-    background-position: -405px -325px;
+    background-position: -915px -404px;
 }
 
 a[href="/synsquint"] {
     width: 70px;
     height: 70px;
-    background-position: -405px -405px;
+    background-position: -915px -484px;
 }
 
 a[href="/syntaxadorkable"] {
     width: 70px;
     height: 116px;
-    background-position: -485px -5px;
+    background-position: -508px -564px;
 }
 
 a[href="/syntaxderp"] {
     width: 70px;
     height: 70px;
-    background-position: -485px -131px;
+    background-position: -915px -564px;
 }
 
 a[href="/thiskillsthegame"] {
     width: 70px;
     height: 75px;
-    background-position: -485px -211px;
+    background-position: -165px -644px;
 }
 
+a[href="/thunderdrink"] {
+    width: 70px;
+    height: 99px;
+    background-position: -755px -644px;
+}
+
+a[href="/thunderwut"] {
+    width: 70px;
+    height: 92px;
+    background-position: -835px -644px;
+}
+
+a[href="/nhpoker"]
+{
+    background-image: url(%%spritesheet2%%); background-repeat: no-repeat; display: block; clear: none; float: left;
+}
+a[href="/nhpoker"] {
+    width: 150px;
+    height: 170px;
+    background-position: -5px -5px;
+}
 
 
 /*USER FLAIRS*/
 
 .flair-gamechanger
 { color:#ffffff; 
-border: 2px solid maroon; border-radius: 20px; 
+border: 2px outset maroon; border-radius: 20px; 
 padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
 background-color:#006666 }
 
 .flair-sketchynote
 { color:white; 
-border: 2px solid grey; border-radius: 20px; 
+border: 2px outset grey; border-radius: 20px; 
 padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
 background-color:black }
 
@@ -670,7 +895,7 @@ background-color:#eee }
 
 .flair-opensource
 { color:#fff; 
-border: 2px solid #fff; border-radius: 20px; 
+border: 2px outset #fff; border-radius: 20px; 
 padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
 background-color:#00f}
 
@@ -859,3 +1084,39 @@ background-color:grey;}
 border: 2px solid yellow; border-radius: 20px; 
 padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
 background-color:blue;}
+
+.flair-apples
+{ color:turquoise; 
+border: 2px solid turquoise; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:tan;}
+
+.flair-icewisp
+{ color:mint; 
+border: 2px solid mint; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:teal;}
+
+.flair-fieldmarks
+{ color:ivory; 
+border: 2px solid brown; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:tan;}
+
+.flair-swordulanthundershield
+{ color:yellow; 
+border: 2px solid orange; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:tan;}
+
+.flair-rockcandy
+{ color:ivory; 
+border: 2px solid ivory; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:purple;}
+
+.flair-automoderator
+{ color:grey; 
+border: 2px outset grey; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:white;}

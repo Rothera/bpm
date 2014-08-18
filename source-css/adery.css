@@ -174,7 +174,7 @@ height:40px;
 
 
 /* ------ Emotes! --------- */
-a[href|='/cocoawkward'], a[href|='/funnay'], a[href|='/gildabird'], a[href|='/holyshit'], a[href|='/keytar'], a[href|='/pinkiebat'], a[href|='/ppchug'], a[href|='/rdscary'], a[href|='/twiperturbed'], a[href|='/lyra10'], a[href|='/cishetscum'], a[href|='/augie'], a[href|='/bestofabadsituation'], a[href|='/helloboys']{ 
+a[href|='/cocoawkward'], a[href|='/funnay'], a[href|='/gildabird'], a[href|='/holyshit'], a[href|='/keytar'], a[href|='/pinkiebat'], a[href|='/ppchug'], a[href|='/rdscary'], a[href|='/twiperturbed'], a[href|='/lyra10'], a[href|='/cishetscum'], a[href|='/augie'], a[href|='/bestofabadsituation'], a[href|='/helloboys'], a[href|='/cheekyaugie'], a[href|='/kappa']{ 
     display: block;
     clear: none;
     float: left;
@@ -195,6 +195,9 @@ a[href|='/cishetscum'] {width:203px; height:200px; background-position: -172px -
 a[href|='/augie'] {width:156px; height:150px; background-position: -227px -662px}
 a[href|='/bestofabadsituation'] {width:248px; height:200px; background-position: -225px -826px}
 a[href|='/helloboys'] {width:179px; height:200px; background-position: -238px -2px}
+a[href|='/cheekyaugie']{width:100px; height:150px; background-position: -267px -203px}
+a[href|='/kappa']{width:32px; height:32px; background-position: -449px -2px}
+a[href|='/kappa']:hover {width:96px; height:130px; background-position: -382px -236px}
 
 a[href|='/cheekyaj'], a[href|='/cheekyderp'], a[href|='/cheekylyra'], a[href|='/cheekypp'], a[href|='/cheekyrara'], a[href|='/cheekyscoots'], a[href|='/cheekyshy'], a[href|='/cheekytwi'], a[href|='/cheekyvs'],a[href|='/cheekynoteass'], a[href|='/roselie'], a[href|='/octibored'], a[href|='/topunf'] {
     display: block;
@@ -499,8 +502,10 @@ body.res a.author[href$="SGIG"] {color:#FF9EF2!important}
 /* Names */
 
 /* here first */
+a.author[href$='Citizen1139'],
 a.author[href$='swishyfeather'],
 a.author[href$='AWESOEM'],
+a.author[href$='magicmuffintheft'],
 a.author[href$='Kwulhu'],
 a.author[href$='Monoclebear'],
 a.author[href$='scix'],
@@ -537,7 +542,9 @@ content: "";
 }
 
 /* here second */
+a.author[href$='Citizen1139']:before,
 a.author[href$='swishyfeather']:before,
+a.author[href$='magicmuffintheft']:before,
 a.author[href$='AWESOEM']:before,
 a.author[href$=SGIG]:before,
 a.author[href$='Kwulhu']:before,
@@ -572,7 +579,9 @@ visibility:visible!important;
 }
 
 /*and the replacement*/ 
+a.author[href$='Citizen1139']:before{content: "Artemis"}
 a.author[href$='swishyfeather']:before {content: "Syni"}
+a.author[href$='magicmuffintheft']:before {content: "PapayaKing"}
 a.author[href$='AWESOEM']:before {content: "tablekat"}
 a.author[href$=SGIG]:before {content: "Fionna"}
 a.author[href$='Kwulhu']:before {content: "Primeminister Kwu"}

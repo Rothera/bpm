@@ -1,6 +1,3 @@
-.author[href="http://www.reddit.com/user/therosebudpony"]:after
-{    content:url(%%heart%%)
-}
 
 /*testest*/
 
@@ -235,6 +232,16 @@ a[href|="killerrabbit"] {
     height: 300px;
     background-repeat: no-repeat;
     background-image: url(%%killerrabbit%%)
+}
+
+a[href|="lowkek"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 164px;
+    height: 201px;
+    background-repeat: no-repeat;
+    background-image: url(%%lowkek%%)
 }
 
 /*le scrollbar*/
