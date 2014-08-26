@@ -1,6 +1,6 @@
 /* /r/ponymotesextra CSS!
  * Just animotes from /r/PonyMotes really.
- * Image Count: 37/50 - It looks like /r/ponymotesextra2 is on the horizon.
+ * Image Count: 38/50 - It looks like /r/ponymotesextra2 is on the horizon.
  */
 
 /* Animated Emotes */
@@ -41,6 +41,8 @@ a[href|="/sitandspin"] {background-image: url(%%sitandspin%%);width:140px;height
 a[href|="/celestiadansen"] {background-image: url(%%celestiadansen%%);width:214px;height:250px;display:block;float:left;}
 a[href|="/rarhugs"] {background-image: url(%%rarhugs%%);width:300px;height:285px;display:block;float:left;}
 a[href|="/derpymilkshake"] {background-image: url(%%derpymilkshake%%);width:137px;height:150px;display:block;float:left;}
+a[href|="/allthescrunch"] {background-image: url(%%allthescrunch%%);width:150px;height:200px;display:block;float:left;}
+a[href|="/hypnoderp"], a[href|="/allglorytothehypnoderp"] {background-image: url(%%hypnoderp%%);width:112px;height:150px;display:block;float:left;}
 
 /*
  ************
@@ -67,26 +69,26 @@ padding-left: 5px;
 }
 
 ul#image-preview-list li:nth-child(41):after {
-content: "40th image";
+content: "40th image!";
 color: orangered;
 padding-left: 5px;
 }
 
 ul#image-preview-list li:nth-child(46):after {
-content: "45th image";
+content: "45th image!";
 color: red;
 padding-left: 5px;
 }
 
 ul#image-preview-list li:nth-child(50):after {
-content: "49th image";
+content: "49th image!!";
 color: red;
 padding-left: 5px;
 font-weight: bold;
 }
 
 ul#image-preview-list li:nth-child(51):after {
-content: "50th image";
+content: "50th image!!!";
 color: red;
 padding-left: 5px;
 font-weight: bolder;
