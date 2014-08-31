@@ -355,11 +355,6 @@ display:block;clear:none;float:left;width:261px;height:192px;background-image:ur
 background-position:0 0;
 }
 
-a[href|="/maudcrunchy"] {
-display:block;clear:none;float:left;width:192px;height:150px;background-image:url(%%maudcrunch%%)!important;
-background-position:0 0;
-}
-
 a[href|="/rockmuffin"] {
 display:block;clear:none;float:left;width:175px;height:200px;background-image:url(%%muffinrocks%%)!important;
 background-position:0 0;
@@ -370,41 +365,59 @@ display:block;clear:none;float:left;width:200px;height:142px;background-image:ur
 background-position:0 0;
 }
 
-a[href|="/maudreally"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudreally%%)!important; background-position: 0 0;}
-
-a[href|="/rmaudreally"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudreally%%)!important; background-position: 0 -100%;}
-
-a[href|="/maudglad"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudglad%%)!important; background-position: 0 0;}
-
-a[href|="/rmaudglad"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudglad%%)!important; background-position: 0 -100%;}
-
-a[href|="/maudwhat"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudwhat%%)!important; background-position: 0 0;}
-
-a[href|="/rmaudwhat"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudwhat%%)!important; background-position: 0 -100%;}
-
 a[href|="/maudwink"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%winkmaud%%)!important; background-position: 0 0;}
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: 0 0;}
 
 a[href|="/rmaudwink"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%winkmaud%%)!important; background-position: 0 -100%;}
-
-a[href|="/maudparty"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudparty%%)!important; background-position: 0 0;}
-
-a[href|="/rmaudparty"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudparty%%)!important; background-position: 0 -100%;}
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: 0 -100%;}
 
 a[href|="/maudglare"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudmadglare%%)!important; background-position: 0 0;}
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: -100% 0;}
 
 a[href|="/rmaudglare"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maudmadglare%%)!important; background-position: 0 -100%;}
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: -100% -100%;}
+
+a[href|="/maudreally"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: -200% 0;}
+
+a[href|="/rmaudreally"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: -200% -100%;}
+
+a[href|="/maudparty"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: -300% 0;}
+
+a[href|="/rmaudparty"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: -300% -100%;}
+
+a[href|="/maudglad"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: 0 -200%;}
+
+a[href|="/rmaudglad"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: 0 -300%;}
+
+a[href|="/maudwhat"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: -100% -200%;}
+
+a[href|="/rmaudwhat"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: -100% -300%;}
+
+a[href|="/maudroll"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: -200% -200%;}
+
+a[href|="/rmaudroll"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: -200% -300%;}
+
+a[href|="/maudponder"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: -300% -200%;}
+
+a[href|="/rmaudponder"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: -300% -300%;}
+
+a[href|="/maudfacehoof"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: 0 -400%;}
+
+a[href|="/rmaudfacehoof"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-sheet%%)!important; background-position: 0 -500%;}
 
 a[href|="/maudheart"]
 {display:block;clear:none;float:left;width:131px;height:200px;background-image:url(%%maudpieheart%%)!important; background-position: 0 0;}
@@ -453,8 +466,20 @@ display:block;clear:none;float:left;width:70px;height:43px;background-image:url(
 background-position:0 0;
 }
 
+a[href|="/maudlie"]
+{display:block;clear:none;float:left;width:165px;height:150px;background-image:url(%%medium%%)!important; background-position: 0 0;}
+
+a[href|="/maudsalute"]
+{display:block;clear:none;float:left;width:200px;height:150px;background-image:url(%%medium%%)!important; background-position: -165px 0;}
+
 a[href|="/maudbored"]
-{display:block;clear:none;float:left;width:118px;height:150px;background-image:url(%%maudbored%%)!important; background-position: 0 0; margin-bottom: -24px; position:relative; z-index: 9999999999999999999}
+{display:block;clear:none;float:left;width:118px;height:150px;background-image:url(%%medium%%)!important; background-position: -365px 0; margin-bottom: -24px; position:relative; z-index: 9999999999999999999}
+
+a[href|="/maudcrunchy"]
+{display:block;clear:none;float:left;width:192px;height:150px;background-image:url(%%medium%%)!important; background-position: -483px 0;}
+
+a[href|="/seriousmaud"],a[href|="/monoclemaud"]
+{display:block;clear:none;float:left;width:125px;height:175px;background-image:url(%%medium%%)!important; background-position: -675px 0;}
 
 a[href|="/rsuperiormaud"],a[href|="/rsuperiormp"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-table%%)!important; background-position: 0 -200%;}
@@ -485,9 +510,6 @@ a[href|="/maudpoker"]
 
 a[href|="/maudshrug"]
 {display:block;clear:none;float:left;width:80px;height:80px;background-image:url(%%maudshrug%%)!important; background-position: 0 0;}
-
-a[href|="/maudlie"]
-{display:block;clear:none;float:left;width:165px;height:150px;background-image:url(%%maudlie%%)!important; background-position: 0 0;}
 
 a[href|="/maudexcited"],a[href|="/mpexcited"] {
 display:block;clear:none;float:left;width:141px;height:150px;background-image:url(%%maudexcited%%)!important;
@@ -534,9 +556,6 @@ a[href|="/maudlookingback"],a[href|="/mplookingback"]
 
 a[href|="/rmaudlookingback"],a[href|="/rmplookingback"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%maud-table%%)!important; background-position: -200% -700%;}
-
-a[href|="/maudsalute"]
-{display:block;clear:none;float:left;width:200px;height:150px;background-image:url(%%maudsalute%%)!important; background-position: 0 0;}
 
 a[href|="/umaudbro"], a[href|="/maudsmirk"] {
     display: block;
