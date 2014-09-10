@@ -23,6 +23,11 @@ div.titlebox .users-online span.number:after {content:" Spiking"}
  padding:0px 5px
 }
 
+body:hover #header{
+    background-position: -9999px 0;
+    transition: background-position 800s linear; /*Comment out this rule to remove fancy spinning header thingy*/
+}
+
 /*Name replace*/
 
 a.author.id-t2_8gh9f{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
@@ -148,7 +153,7 @@ Clear: none;
 Float: left;
 Width: 122px;
 Height: 150px;
-background-image: url(%%coloneye%%) !important
+background-image: url(%%coloneye2%%) !important
 }
 
 

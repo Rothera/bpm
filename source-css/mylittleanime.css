@@ -3,7 +3,6 @@ A huge thanks to the mane sub and Orschmann for loaning the flair CSS and their 
 ******/
 
 /* announcement sticky */
-div.content {margin-top:50px}
 .titlebox form {position: static}
 .side h3:nth-of-type(1) {
   z-index:2;
@@ -24,7 +23,7 @@ div#header-bottom-right{z-index:3!important}
 /* To keep the top bar visible */
 div#header{
   z-index:2;
-  position:fixed;
+
   top: 0px;
   left: 0px;
   right: 0px;
@@ -32,8 +31,7 @@ div#header{
   background:url(%%Pink%%)
 }
 
-/* adjusts spacing without upsetting RES */
-BODY:before{content:"This text is hidden"; color:white; font-size:735%; text-align:right}
+
 
 /* flair request thread, emote guide, and script link edits */
 a[href|="http://www.reddit.com/r/mylittleanime/comments/rlho5/official_flair_and_emote_request_thread/"], a[href|="http://redd.it/qxhwe"], a[href|="http://userscripts.org/scripts/show/129937"]{color:#F70077; font-size:80%}
@@ -63,7 +61,7 @@ div#header-bottom-left .tabmenu {position:absolute; left:135px; top:53px}
 /*default styles*/
 BODY {
   color: green;
-  background:url(%%fluttershyBG%%) no-repeat fixed left top;
+  background:url(%%fluttershyBG%%) no-repeat fixed center bottom;
 }
 
 /* What appears black */

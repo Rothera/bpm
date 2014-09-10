@@ -1,4 +1,3 @@
-
 /*testest*/
 
 .side .titlebox h6 {position:fixed;z-index:1000;bottom:-270px;right:350px;display:block;width:240px;height:286px;padding:0;background:transparent url(%%dolphin%%) no-repeat top left;font-size:0;text-indent:-9999px;overflow:hidden; transition: bottom 1s;}
@@ -349,6 +348,8 @@ background:url(%%BerryMail%%);
 }
 
 /*The End of the Mega Awesome /r/Berrytrain exclusive mail changer machine 4200 with air conditioning and scones*/
+
+.author[href$="/Battlesmit"]:before {content: 'Captain ' ;}
 
 .author[href$="/KillerRabbit1253"]:before {content: 'King Queen ' ;}
 .author[href$="/KillerRabbit1253"]:after {content: ' is the princess of ice cream, BerryTrain, and Boxy ' ;}

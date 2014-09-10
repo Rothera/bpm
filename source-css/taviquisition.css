@@ -2158,3 +2158,24 @@ a[href|="/usapplejack"] {
  background-image: url(%%spritesheet18%%);
  background-position: -0px -1150px;
 } 
+
+
+a[href|="/thanos"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 350px;
+ height: 400px;
+ background-image: url(%%spritesheetThanos%%);
+ background-position: -0px -0px;
+} 
+
+a[href|="/tavithanos"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 350px;
+ height: 400px;
+ background-image: url(%%spritesheetThanos%%);
+ background-position: -0px -400px;
+} 

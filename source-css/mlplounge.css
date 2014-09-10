@@ -5,6 +5,7 @@ div.titlebox .subscribers span.number:after {font-size:12px!important; }
 div.titlebox p.users-online span.number:after { content: " being Silly" }
 div.titlebox p.users-online span.word { display: none }
 
+
 .sidecontentbox .flair {display:none}
 .titlebox strong {font-size: medium;}
 .titlebox .SuperRedditAltTextDisplay_Text{display:none!important}
@@ -161,9 +162,9 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  padding-bottom: 220px;
  clear:both;
  text-align:center;
- height:750px;
+ height:500px;
  width:100%;
- background-image:url(%%Cheeristare%%);
+ background-image:url(%%tavitia%%);
  background-repeat:no-repeat;
  margin-bottom:-25px;
  background-position: bottom center;
@@ -1140,7 +1141,7 @@ a[href|="/ripferrbearand20"] {
 } 
 
 
-a[href|="/tavicheer"] {  
+a[href|="/engtavicheer"] {  
  display: block;
  clear: none;
  float: left; 
@@ -1315,7 +1316,7 @@ a.author[href$="BlameTheJungler"] {font-size:0!important; overflow:hidden; displ
 a.author[href$="BlameTheJungler"]:before {font-size:10px!important; visibility:visible!important; content: "LeafOnTheWind"}
 
 a.author[href$="MLP_William"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="MLP_William"]:before {font-size:10px!important; visibility:visible!important; content: "MLP_WiIIiam"}
+a.author[href$="MLP_William"]:before {font-size:10px!important; visibility:visible!important; content: "MLP_WiII_i_am"}
 
 a.author[href$="HeWho_MustNotBeNamed"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="HeWho_MustNotBeNamed"]:before {font-size:10px!important; visibility:visible!important; content: "HeWho_MustLoveFluttershy"}
@@ -1327,14 +1328,35 @@ a.author[href$="DaylightDarkle"]:before {font-size:10px!important; visibility:vi
 .sidecontentbox a.author[href$="DoomedCivilian"] {color: #ff23ff}
 
 a.author[href$="Peacefulzealot"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="Peacefulzealot"]:before {font-size:10px!important; visibility:visible!important; content: "Zelly Belly"}
+a.author[href$="Peacefulzealot"]:before {font-size:10px!important; visibility:visible!important; content: "Zealy-kun"}
 
 a.author[href$="ZephyrC"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="ZephyrC"]:before {font-size:10px!important; visibility:visible!important; content: "ZephyrC is fedorable"}
+a.author[href$="ZephyrC"]:before {font-size:10px!important; visibility:visible!important; content: "ZephyrC is missing"}
 
 a.author[href$="Tenth-Gear"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="Tenth-Gear"]:before {font-size:10px!important; visibility:visible!important; content: "Tenth-Gear the Court Jester"}
 
-a.author[href$="MishaDjent"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="MishaDjent"]:before {font-size:10px!important; visibility:visible!important; content: "MishaDjent doesn't know when to shut up"}
+a.author[href$="deathdude223"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="deathdude223"]:before {font-size:10px!important; visibility:visible!important; content: "deathdude222"} 
+
+a.author[href$="DoctorBoson"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="DoctorBoson"]:before {font-size:10px!important; visibility:visible!important; content: "[Insert current name here]"} 
+
+a.author[href$="TwoWorldsCoexisting"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="TwoWorldsCoexisting"]:before {font-size:10px!important; visibility:visible!important; content: "TwoDogesCoexisting"}
+
+a.author[href$="1125a"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="1125a"]:before {font-size:10px!important; visibility:visible!important; content: "1125au"}
+
 .sidecontentbox a.author[href$="Pinkie_Pie"] {font-size:0!important; overflow:hidden; display:none; content: "";}
+
+/*Changes gild icon to gold sbstare*/
+.gilded-icon:before {
+    content: normal;
+}
+.gilded-icon {
+    background: url(%%gild%%);
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+}

@@ -205,10 +205,10 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%trixie-hat%%);
- width:70px;
- height:70px;
- margin-top:-45px;
+ background:url(%%discentia-hat%%);
+ width:60px;
+ height:60px;
+ margin-top:-36px;
  margin-left:5px;
  margin-bottom:0px;
  margin-right:-40px;
@@ -260,7 +260,8 @@ a[href^="/"][href*="-in-"],a[href^="/"][href$="-in"],a[href^="/"][href*="-inp-"]
 
 body a[href="/spoiler"]{background:black!important;color:black!important}
 body a[href="/spoiler"]:hover{color:white!important}/*Pinkie Pie NPT Warnings*//*DO _NOT_ PUT ANY COMMENTS IN-BETWEEN THE NPTWARNING TAGS! Do not remove the tags either, they are used by modtool and the bot! The tags must be on their own line!*/
-/*{NPTWARNING}
+/*{NPTWARNING}*/
+/*
 .formtabs-content .infobar
 {
  margin-left:50px;
@@ -288,7 +289,8 @@ body a[href="/spoiler"]:hover{color:white!important}/*Pinkie Pie NPT Warnings*//
 {
  background:url(%%pinkiemessage%%) no-repeat;
 }
-{/NPTWARNING}*/
+*/
+/*{/NPTWARNING}*/
 /* Spoiler Setter*/
 .marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"]
 {
