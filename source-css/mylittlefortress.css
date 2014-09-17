@@ -47,14 +47,18 @@ div.titlebox span.number:after {
 /* Header */
 #header {
     background-color: #bdd2e7; 
-    /* background-image: url(%%rainboom-small3%%); */
+    background-image: url(%%mannmanor%%);
     background-repeat:repeat-x;
     border-bottom: 1px solid #000;
-    height: 150px;
+    height: 200px;
     margin: 0px;
     padding-top: 0px;
     color: #000;
     }
+#header-bottom-left { position: absolute; bottom: 0; }
+
+.pagename a { color: #fff; }
+
 
 /* Text effects */
 a[href="/spoiler"] {

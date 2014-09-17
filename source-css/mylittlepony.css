@@ -150,7 +150,7 @@ border-top-right-radius: 5px;
 
 #header-img
 { 
- margin:0px 10px 0px 10px;
+ margin:0px 10px -3px 10px;
 }
 
 /*
@@ -220,10 +220,10 @@ border-top-right-radius: 5px;
 .thumbnail.default{ background-position:0px -70px!important}
 .thing[data-fullname$="d"] .thumbnail.nsfw,.thing[data-fullname$="i"] .thumbnail.nsfw,.thing[data-fullname$="s"] .thumbnail.nsfw,.thing[data-fullname$="c"] .thumbnail.nsfw,.thing[data-fullname$="e"] .thumbnail.nsfw,
 .thing[data-fullname$="n"] .thumbnail.nsfw,.thing[data-fullname$="t"] .thumbnail.nsfw,.thing[data-fullname$="a"] .thumbnail.nsfw{background-position:0px -170px!important}
-.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2,.sidecontentbox a.author.id-t2_6uo3t, .sidecontentbox a.author.id-t2_5dxi7, .sidecontentbox a.author.id-t2_3fvpf, .sidecontentbox ul.content li.more a {content:"";color:white;font-size:0pt;display:block}
-.sidecontentbox a.author.id-t2_3l5j0:before ,.sidecontentbox a.author.id-t2_4a7lu:before ,.sidecontentbox a.author.id-t2_4f80o:before ,.sidecontentbox a.author.id-t2_5agom:before ,.sidecontentbox a.author.id-t2_51isb:before ,.sidecontentbox a.author.id-t2_51isb:after ,.sidecontentbox a.author.id-t2_5eqe2:before, .sidecontentbox a.author.id-t2_6uo3t:before, .sidecontentbox a.author.id-t2_5dxi7:before, .sidecontentbox a.author.id-t2_3fvpf:before, .sidecontentbox ul.content li.more a:before {font-size:10pt;color:#369;display:inline-block;}
+.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2,.sidecontentbox a.author.id-t2_6uo3t, .sidecontentbox a.author.id-t2_5dxi7, .sidecontentbox a.author.id-t2_3fvpf, .sidecontentbox a.author.id-t2_5o8ly ,.sidecontentbox a.author.id-t2_6gpcb ,.sidecontentbox ul.content li.more a {content:"";color:white;font-size:0pt;display:block}
+.sidecontentbox a.author.id-t2_3l5j0:before, .sidecontentbox a.author.id-t2_4a7lu:before ,.sidecontentbox a.author.id-t2_4f80o:before ,.sidecontentbox a.author.id-t2_5agom:before ,.sidecontentbox a.author.id-t2_51isb:before ,.sidecontentbox a.author.id-t2_51isb:after ,.sidecontentbox a.author.id-t2_5eqe2:before, .sidecontentbox a.author.id-t2_6uo3t:before, .sidecontentbox a.author.id-t2_5dxi7:before, .sidecontentbox a.author.id-t2_3fvpf:before, .sidecontentbox ul.content li.more a:before, .sidecontentbox a.author.id-t2_5o8ly:before, .sidecontentbox a.author.id-t2_6gpcb:before {font-size:10pt;color:#369;display:inline-block;}
 .sidecontentbox a.author.id-t2_3l5j0:before {content:"Lebal of the House of Usher"}
-.sidecontentbox a.author.id-t2_4a7lu:before {content:"Orsch Mannos: The Hands of Fate"}
+.sidecontentbox a.author.id-t2_4a7lu:before {content:"xOrScHxMaNNx"}
 /*.sidecontentbox a.author.id-t2_55ojn:before {content:"Rainbow Brite"}*/
 .sidecontentbox a.author.id-t2_4f80o:before {content:"Opti"}
 .sidecontentbox a.author.id-t2_5agom:before {content:"Chinchy-bon"}
@@ -231,7 +231,9 @@ border-top-right-radius: 5px;
 .sidecontentbox a.author.id-t2_5eqe2:before {content:"Pathogen-David Hasselhoff"}
 .sidecontentbox a.author.id-t2_3fvpf:before {content:"The Velour Frog"}
 .sidecontentbox a.author.id-t2_6uo3t:before {content:"spokesthephony"}
-.sidecontentbox a.author.id-t2_5dxi7:before {content:"ThreeLinker"}
+.sidecontentbox a.author.id-t2_5dxi7:before {content:"TheeLanker"}
+.sidecontentbox a.author.id-t2_6gpcb:before {content:"Linkygit"}
+.sidecontentbox a.author.id-t2_5o8ly:before {content:"xHaZxFaTx"}
 .sidecontentbox ul.content li.more {display:none}
 .sidecontentbox a.author.id-t2_5fmql {display:none;}
 .sidecontentbox a.author.id-t2_6ua87 {display:none;}
@@ -1421,3 +1423,8 @@ div.content{margin-top:15px}
     padding-top: 416px;
 }
 */
+
+div.thing.id-t1_ckgwu85 a[href|="/nmm"] {
+background-image: url(%%cmotes%%) !important;
+background-position: -300% -400% !important;
+}

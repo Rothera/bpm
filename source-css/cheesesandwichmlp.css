@@ -246,7 +246,7 @@ a[href|="/sp"] {
 
 /*** Emotes ***/
 
-a[href|="/cheese"], a[href|="/boneless"], a[href|="/cheesesquint"], a[href|="/cheesestare"], a[href|="/imfine"], a[href|="/cheesechill"], a[href|="/cheesemad"] {
+a[href|="/cheese"], a[href|="/boneless"], a[href|="/cheesesquint"], a[href|="/cheesestare"], a[href|="/imfine"], a[href|="/cheesechill"], a[href|="/cheesemad"], a[href|="/sarcasticcheese"] {
     display: block;
     clear: none;
     float: left;
@@ -255,13 +255,14 @@ a[href|="/cheese"], a[href|="/boneless"], a[href|="/cheesesquint"], a[href|="/ch
     background-image: url(%%csemotes100a%%) !important;
 }
 
-a[href|="/cheese"] { background-position:-0px -0px; }
-a[href|="/boneless"] { background-position:-100px -0px; }
+a[href|="/cheese"] { background-position: -0px -0px; }
+a[href|="/boneless"] { background-position: -100px -0px; }
 a[href|="/cheesesquint"] { background-position: -200px -0px; }
 a[href|="/cheesestare"] { background-position: -0px -100px; }
 a[href|="/imfine"] { background-position: -100px -100px; }
 a[href|="/cheesechill"] { background-position: -200px -100px; }
 a[href|="/cheesemad"] { background-position: -0px -200px; }
+a[href|="/sarcasticcheese"] { background-position: -100px -200px; }
 
 a[href|="/cheeseshock"], a[href|="/cheesethis"], a[href|="/cheesehappy"], a[href|="/cheeseandpinkie"], a[href|="/accordian"], a[href|="/partyhard"], a[href|="/cheesesmile"], a[href|="/cheesehug"], a[href|="/ppcheesehug"], a[href|="/argumentinvalid"], a[href|="/cheeseandtubamouse"], a[href|="/cheesewtf"] {
     display: block;
@@ -423,3 +424,13 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 .flair-applefritter { background-position: -100% -1900%; }
 .flair-snowdrop { background-position: -200% -1900%; }
 .flair-blossomforth { background-position: -300% -1900%; }
+.flair-roidrage {background-position: 0 -2000%}
+.flair-discord {background-position: -100% -2000%}
+.flair-lightning {background-position: -200% -2000%}
+.flair-peachbottom {background-position: -300% -2000%}
+.flair-harshwhinny {background-position: 0 -2100%}
+.flair-thunderlane {background-position: -100% -2100%}
+.flair-flutterbat {background-position: -200% -2100%}
+.flair-adagiodazzle {background-position:0% -2200%}
+.flair-ariablaze {background-position:-100% -2200%}
+.flair-sonatadusk {background-position:-200% -2200%}

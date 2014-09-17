@@ -201,10 +201,11 @@ color: white ;
 /*sidebar images*/
 
 a[href$="deathdudeandoldman"] {
-width:263px;
+width:269px;
 height:150px;
 content:"";
-background-image:url(%%lplove%%);
+background-image:url(%%ship-spritesheet%%);
+background-position: 0 0;
 position:relative;
 display:inline-block;
 cursor:default;
@@ -214,7 +215,8 @@ a[href$="dranold"] {
 width:272px;
 height:150px;
 content:"";
-background-image:url(%%twijacknuzzle%%);
+background-image:url(%%ship-spritesheet%%);
+background-position: -460px 0;
 position:relative;
 display:inline-block;
 cursor:default;
@@ -866,54 +868,6 @@ a.author[href$="RAGErER"]:before {font-size:11.5px!important; color:#A66BBF; vis
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   EMOTES   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-/* Uberpouts */
-
-a[href|="/ajuberpout"] {
-    float:left;
-    width:121px;
-    height:160px;
-    background-image:url(%%ajuberpout%%);
-}
-
-a[href|="/fsuberpout"] {
-    float:left;
-    width:121px;
-    height:160px;
-    background-image:url(%%fsuberpout%%);
-}
-
-a[href|="/ppuberpout"] {
-    float:left;
-    width:121px;
-    height:160px;
-    background-image:url(%%ppuberpout%%);
-}
-
-a[href|="/raruberpout"] {
-    float:left;
-    width:121px;
-    height:160px;
-    background-image:url(%%raruberpout%%);
-}
-
-a[href|="/rduberpout"] {
-    float:left;
-    width:121px;
-    height:160px;
-    background-image:url(%%rduberpout%%);
-}
-
-a[href|="/twiuberpout"] {
-    float:left;
-    width:121px;
-    height:160px;
-    background-image:url(%%twiuberpout%%);
-}
-
-/* End of Uberpouts */
-
-
-
 /* Butt emotes */
 
 a[href|="/applejackbutt"], a[href|="/bonbonbutt"], a[href|="/derpybutt"], a[href|="/fluttershybutt"], a[href|="/nurseredheartbutt"], a[href|="/octaviabutt"], a[href|="/pinkiebutt"], a[href|="/raritybutt"], a[href|="/rainbowbutt"], a[href|="/twilightbutt"], a[href|="/vinylscratchbutt"], a[href|="/carrotbutt"]
@@ -945,214 +899,91 @@ a[href|="/dancershy"] {
 
 /* End of Animated emotes */
 
-/* Normal emotes */
+/* Normal Spritesheet 1 */
 
-a[href|="/abclassy"] {
-    float:left;
-    width:161px;
-    height:215px;
-    background-image:url(%%abclassy%%);
-}
+a[href|="/abclassy"], a[href|="/appulbluh"], a[href|="/appuldurp"], a[href|="/autographfilly"], a[href|="/badpony"], a[href|="/caketwins"], a[href|="/chryssihuh"], a[href|="/daringscared"], a[href|="/fresh"], a[href|="/grumpity"], a[href|="/idreamofpinkie"], a[href|="/killmenow"], a[href|="/ihatemondays"], a[href|="/lyragawp"], a[href|="/flutterdrunk"]
+{background-image:url(%%normal-spritesheet1%%);display:block;float:left;}
 
-a[href|="/autographfilly"] {
-    float:left;
-    width:210px;
-    height:150px;
-    background-image:url(%%autographfilly%%);
-}
+a[href|="/abclassy"] {width:161px;height:215px;}
+a[href|="/appulbluh"] {width:171px;height:170px;background-position: -161px 0;}
+a[href|="/appuldurp"] {width:171px;height:170px;background-position: -332px 0;}
+a[href|="/autographfilly"] {width:189px;height:150px;background-position: -503px 0;}
+a[href|="/badpony"] {width:160px;height:150px;background-position: -692px 0;}
+a[href|="/caketwins"] {width:162px;height:170px;background-position: -849px 0;}
+a[href|="/chryssihuh"] {width:189px;height:200px;background-position: -1011px 0;}
+a[href|="/daringscared"] {width:192px;height:200px;background-position: -1200px 0;}
+a[href|="/fresh"] {width:378px;height:350px;background-position: 0 -300px;}
+a[href|="/grumpity"] {width:168px;height:150px;background-position: -378px -300px;}
+a[href|="/idreamofpinkie"] {width:175px;height:300px;background-position: -546px -300px;}
+a[href|="/killmenow"], a[href|="/ihatemondays"] {width:164px;height:200px;background-position: -721px -300px;}
+a[href|="/lyragawp"] {width:128px;height:150px;background-position: -885px -300px;}
+a[href|="/flutterdrunk"] {width:299px;height:300px;background-position: -1013px -300px;}
 
-a[href|="/badpony"] {
-    float:left;
-    width:159px;
-    height:150px;
-    background-image:url(%%badpony%%);
-}
+/* End of Normal Spritesheet 1 */
 
-a[href|="/caketwins"] {
-    float:left;
-    width:163px;
-    height:170px;
-    background-image:url(%%caketwins%%);
-}
+/* Normal Spritesheet 2 */
 
-a[href|="/daringscared"] {
-    float:left;
-    width:192px;
-    height:200px;
-    background-image:url(%%daringscared%%);
-}
+a[href|="/pinkiebeard"], a[href|="/rainbowcrash"], a[href|="/rockyballoons"], a[href|="/sadtrixie"], a[href|="/seductivetwi"], a[href|="/smokeappleseveryday"], a[href|="/squeakity"], a[href|="/sweetieblargh"], a[href|="/sbappul"], a[href|="/tsunderetrixie"], a[href|="/twioohshiny"], a[href|="/toastlestia"], a[href|="/twishocked"], a[href|="/zecorababby"], a[href|="/mfilly"], a[href|="/movealongcitizen"], a[href|="/pieorami"], a[href|="/pinkieistiredofyourshit"]
+{background-image:url(%%normal-spritesheet2%%);display:block;float:left;}
 
-a[href|="/idreamofpinkie"] {
-    float:left;
-    width:177px;
-    height:300px;
-    background-image:url(%%idreamofpinkie%%);
-}
+a[href|="/pinkiebeard"] {width:150px;height:180px;}
+a[href|="/rainbowcrash"] {width:144px;height:125px;background-position: -150px 0;}
+a[href|="/rockyballoons"] {width:168px;height:170px;background-position: -294px 0;}
+a[href|="/sadtrixie"] {width:173px;height:160px;background-position: -462px 0;}
+a[href|="/seductivetwi"] {width:137px;height:150px;background-position: -635px 0;}
+a[href|="/smokeappleseveryday"] {width:171px;height:200px;background-position: -772px 0;}
+a[href|="/squeakity"] {width:153px;height:160px;background-position: -943px 0;}
+a[href|="/sweetieblargh"], a[href|="/sbappul"] {width:204px;height:150px;background-position: -1096px 0;}
+a[href|="/tsunderetrixie"] {width:186px;height:250px;background-position: -1300px 0;}
+a[href|="/twioohshiny"] {width:155px;height:150px;background-position: -1486px 0;}
+a[href|="/toastlestia"] {width:400px;height:325px;background-position: 0 -180px;}
+a[href|="/twishocked"] {width:145px;height:165px;background-position: -400px -180px;}
+a[href|="/zecorababby"] {width:145px;height:170px;background-position: -545px -180px;}
+a[href|="/mfilly"] {width:343px;height:250px;background-position: -690px -200px;}
+a[href|="/movealongcitizen"] {width:93px;height:160px;background-position: -1033px -250px;}
+a[href|="/pieorami"] {width:179px;height:150px;background-position: -1126px -250px;}
+a[href|="/pinkieistiredofyourshit"] {width:150px;height:149px;background-position: -1305px -250px;}
 
-a[href|="/killmenow"], a[href|="/ihatemondays"] {
-    float:left;
-    width:165px;
-    height:200px;
-    background-image:url(%%killmenow%%);
-}
+/* End of Normal Spritesheet 2 */
 
-a[href|="/lplove"], a[href|="/deathdudeandoldman"] {
-    float:left;
-    width:263px;
-    height:150px;
-    background-image:url(%%lplove%%);
-}
+/* Normal Spritesheet 3 */
 
-a[href|="/lyragawp"] {
-    float:left;
-    width:129px;
-    height:150px;
-    background-image:url(%%lyragawp%%);
-}
+a[href|="/rainbowderp"], a[href|="/maudfun"], a[href|="/applegasm"], a[href|="/zecorawooo"]
+{background-image:url(%%normal-spritesheet3%%);display:block;float:left;}
 
-a[href|="/mfilly"] {
-    float:left;
-    width:342px;
-    height:250px;
-    background-image:url(%%mfilly%%);
-}
+a[href|="/rainbowderp"] {width:131px;height:150px;}
+a[href|="/maudfun"] {width:230px;height:150px;background-position: -131px 0;}
+a[href|="/applegasm"] {width:185px;height:200px;background-position: 0 -150px;}
+a[href|="/zecorawooo"] {width:103px;height:200px;background-position: -185px -150px;}
 
-a[href|="/movealongcitizen"] {
-    float:left;
-    width:97px;
-    height:160px;
-    background-image:url(%%movealongcitizen%%);
-}
+/* End of Normal Spritesheet 3 */
 
-a[href|="/pieorami"] {
-    float:left;
-    width:179px;
-    height: 150px;
-    background-image:url(%%pieorami%%);
-}
+/* Ship Spritesheet */
 
-a[href|="/rockyballoons"] {
-    float:left;
-    width:168px;
-    height: 170px;
-    background-image:url(%%rockyballoons%%);
-}
+a[href|="/lplove"], a[href|="/deathdudeandoldman"], a[href|="/twidashlove"], a[href|="/spanishragerer"], a[href|="/twijacknuzzle"], a[href|="/dranold"]
+{background-image:url(%%ship-spritesheet%%);display:block;float:left;}
 
-a[href|="/squeakity"] {
-    float:left;
-    width:154px;
-    height:160px;
-    background-image:url(%%squeakity%%);
-}
+a[href|="/lplove"], a[href|="/deathdudeandoldman"] {width:269px;height:150px;}
+a[href|="/twidashlove"], a[href|="/spanishragerer"] {width:191px;height:150px;background-position: -269px 0;}
+a[href|="/twijacknuzzle"], a[href|="/dranold"] {width:272px;height:150px;background-position: -460px 0;}
 
-a[href|="/sweetieblargh"], a[href|="/sbappul"] {
-    float:left;
-    width:188px;
-    height:150px;
-    background-image:url(%%sweetieblargh%%);
-}
+/* End of Ship Spritesheet */
 
-a[href|="/toastlestia"] {
-    float:left;
-    width:400px;
-    height:325px;
-    background-image:url(%%toastlestia%%);
-}
+/* Pout Spritesheet */
 
-a[href|="/twidashlove"], a[href|="/spanishragerer"] {
-    float:left;
-    width:191px;
-    height:150px;
-    background-image:url(%%twidashlove%%);
-}	 
+a[href|="/ajuberpout"], a[href|="/fsuberpout"], a[href|="/ppuberpout"], a[href|="/raruberpout"], a[href|="/rduberpout"], a[href|="/twiuberpout"]
+{background-image:url(%%pout-spritesheet%%);display:block;float:left;}
 
-a[href|="/twioohshiny"] {
-    float:left;
-    width:156px;
-    height:150px;
-    background-image:url(%%twioohshiny%%);
-}
+a[href|="/twiuberpout"] {width:121px;height:160px;}
+a[href|="/raruberpout"] {width:121px;height:160px;background-position: -121px 0;}
+a[href|="/ppuberpout"] {width:121px;height:160px;background-position: -242px 0;}
+a[href|="/rduberpout"] {width:121px;height:160px;background-position: 0 -160px;}
+a[href|="/fsuberpout"] {width:121px;height:160px;background-position: -121px -160px;}
+a[href|="/ajuberpout"] {width:121px;height:160px;background-position: -242px -160px}
 
-a[href|="/twijacknuzzle"], a[href|="/dranold"] {
-    float:left;
-    width:272px;
-    height:150px;
-    background-image:url(%%twijacknuzzle%%);
-}
+/* End of Pout Spritesheet */
 
-a[href|="/twishocked"] {
-    float:left;
-    width:167px;
-    height:165px;
-    background-image:url(%%twishocked%%);
-}
 
-a[href|="/zecorababby"] {
-    float:left;
-    width:146px;
-    height:170px;
-    background-image:url(%%zecorababby%%);
-}
+/* Single Emotes */
 
-a[href|="/rainbowcrash"] {
-    float:left;
-    width:144px;
-    height:125px;
-    background-image:url(%%rainbowcrash%%);
-}
-
-a[href|="/seductivetwi"] {
-    float:left;
-    width:140px;
-    height:150px;
-    background-image:url(%%seductivetwi%%);
-}
-
-a[href|="/pinkiebeard"] {
-    float:left;
-    width:152px;
-    height:180px;
-    background-image:url(%%pinkiebeard%%);
-}
-
-a[href|="/fresh"] {
-    float:left;
-    width:388px;
-    height:350px;
-    background-image:url(%%fresh%%);
-}
-
-a[href|="/chryssihuh"] {
-    float:left;
-    width:195px;
-    height:200px;
-    background-image:url(%%chryssihuh%%);
-}
-
-a[href|="/flutterdrunk"] {
-    float:left;
-    width:297px;
-    height:300px;
-    background-image:url(%%flutterdrunk%%);
-}
-
-a[href|="/grumpity"] {
-    float:left;
-    width:168px;
-    height:150px;
-    background-image:url(%%grumpity%%);
-}
-
-a[href|="/sadtrixie"] {
-    float:left;
-    width:172px;
-    height:160px;
-    background-image:url(%%sadtrixie%%);
-}
-
-a[href|="/appulbluh"] {
-    float:left;
-    width:173px;
-    height:170px;
-    background-image:url(%%appulbluh%%);
-}
+/* End of Single Emotes */

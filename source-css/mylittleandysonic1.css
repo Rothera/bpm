@@ -2,13 +2,13 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%badtaste%%)  no-repeat  fixed 66% 100% !important;
+    background:  url(%%NEWBACKGROUNDFOREVER%%)  no-repeat  fixed 66% 100% !important;
 }
 
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%genius%%) 50% 0px !important;
+   background: url(%%fig%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -694,7 +694,9 @@ a.author[href$=Solidus_Tripsy],
 a.author[href$=videogamewonder],
 a.author[href$=agentgamma],
 a.author[href$=lefthandedspatula],
-a.author[href$=gremlinpower]
+a.author[href$=gremlinpower],
+a.author[href$=Doktor_Elcaro],
+a.author[href$=The_Assistant]
 
 { 
 font-size:0!important; 
@@ -820,7 +822,9 @@ a.author[href$=Solidus_Tripsy]:before,
 a.author[href$=videogamewonder]:before,
 a.author[href$=agentgamma]:before,
 a.author[href$=lefthandedspatula]:before,
-a.author[href$=gremlinpower]:before
+a.author[href$=gremlinpower]:before,
+a.author[href$=Doktor_Elcaro]:before,
+a.author[href$=The_Assistant]:before
 
 {
 font-size:10px!important; 
@@ -943,6 +947,8 @@ a.author[href$=videogamewonder]:before { content:"Vudya" }
 a.author[href$=agentgamma]:before { content:"Sergeant of Master Sergeants Most Important Person of Extreme Sergeants to the Max Gamma" }
 a.author[href$=lefthandedspatula]:before { content:"horsfkr" }
 a.author[href$=gremlinpower]:before { content:"Lampasaurus" }
+a.author[href$=Doktor_Elcaro]:before { content:"get pretty coggler pony to change my name on the sub via his hilariously outdated css" }
+a.author[href$=The_Assistant]:before { content:"SuperAtomica" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -1468,14 +1474,14 @@ a[href|="/luna!"]:nth-of-type(n) { font-size: 18px; font-variant: small-caps !im
 .usertext-body h4 { font-size: 20px; font-weight: bold; color: navy; background: lightblue; text-align: center; padding: 3px; border-radius: 19px; -moz-border-radius: 19px; box-shadow: 2px 2px 5px #9999ff; text-shadow: 1px 1px #ffffff }
 
 
-body.res a.author[href$="Pathogen-David"], body.res a.author[href$="Phei"], body.res a.author[href$="myrandall"], body.res a.author[href$="RAINBOW_PONY_SEMEN"], body.res a.author[href$="Beatbawx"], body.res a.authr[href$="Parasprite"] { font-weight: bold; color: white !important; padding: 0 2px; border-radius: 3px }
-body.res a.author[href$="Phei"] { background-color: #D4A4E8 }
-body.res a.author[href$="Pathogen-David"] { background-color: #662D8A }
-body.res a.author[href$="Myrandall"] {color:#FF69B4!important}
-body.res a.author[href$="RAINBOW_PONY_SEMEN"] {color:#00FF00!important}
-body.res a.author[href$="V17Ds"] {color:#FF9EF2!important}
-body.res a.author[href$="Beatbawx"] {color:#FF9933!important}
-body.res a.author[href$="Parasprite"] {color:#D19FE3!important}
+a.author[href$="Pathogen-David"], a.author[href$="Phei"], a.author[href$="myrandall"], a.author[href$="RAINBOW_PONY_SEMEN"], a.author[href$="Beatbawx"], a.author[href$="Parasprite"] { font-weight: bold; color: white !important; padding: 0 2px; border-radius: 3px }
+a.author[href$="Phei"] { background-color: #D4A4E8 }
+a.author[href$="Pathogen-David"] { background-color: #662D8A }
+a.author[href$="Myrandall"] {color:#FF69B4!important}
+a.author[href$="RAINBOW_PONY_SEMEN"] {color:#00FF00!important}
+a.author[href$="V17Ds"] {color:#FF9EF2!important}
+a.author[href$="Beatbawx"] {color:#FF9933!important}
+a.author[href$="Parasprite"] {color:#D19FE3!important}
 
 /* PROPER GREENTEXT (stolen from plounge, which stole from /r/4chan) */
 .content .md h1 { color: #789922; border-bottom: none!important; padding-bottom: 0px }

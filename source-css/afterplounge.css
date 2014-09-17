@@ -295,20 +295,20 @@ black or #000000 - for all black stuff, including post titles
     /* Primary Theme Color (dark) */
 
 
-.flairselector h2, .tabmenu li a, #header-bottom-right, #userbarToggle, .NERPageMarker,  .roundfield, #sr-header-area, #RESShortcutsEditContainer, #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash, .fancy-toggle-button .add:active, .RESshortcut.RESshortcutside:active, .RESDashboardToggle:active, .md thead
-{ background-color: #C684AF !important;}
+.flairselector h2, .tabmenu li a, #header-bottom-right, #userbarToggle, .NERPageMarker,  .roundfield, #sr-header-area, #RESShortcutsEditContainer,  #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash, .fancy-toggle-button .add:active, .RESshortcut.RESshortcutside:active, .RESDashboardToggle:active, .md thead
+{ background-color: #76B8AF !important;}
 
 .morelink, .morelink:hover, .sidebox.submit.submit-text .morelink:hover, .fancy-toggle-button .add, .RESshortcut.RESshortcutside, .RESDashboardToggle, .fancy-toggle-button .add:hover, #subButtons-mylittlepony .RESshortcut.RESshortcutside:hover, #subButtons-mylittlepony .RESDashboardToggle:hover
-{ background: #C684AF !important;}
+{ background: #76B8AF !important;}
 
-.tabmenu li.selected a, h2
-{ color: #C684AF !important;}
+.tabmenu li.selected a, .RESDropdownList, .RESDropdownList a, #RESSubredditGroupDropdown .RESShortcutsEditButtons .delete, #RESSubredditGroupDropdown .RESShortcutsEditButtons .edit, h2
+{ color: #76B8AF !important;}
+
+.linkinfo, #RESSubredditGroupDropdown, .RESDropdownList, .md table, .md thead, .md tbody, .md tr, .md blockquote, .help blockquote
+{ border: solid #76B8AF !important;}
 
 .linkinfo, .md table, .md thead, .md tbody, .md tr, .md blockquote, .help blockquote
-{ border: solid #C684AF !important;}
-
-.linkinfo, .md table, .md thead, .md tbody, .md tr, .md blockquote, .help blockquote
-{ border-color: #C684AF !important;}
+{ border-color: #76B8AF !important;}
 
 
 
@@ -316,29 +316,33 @@ black or #000000 - for all black stuff, including post titles
 
 
 .linkinfo, .linefield, .infobar, .searchpane, .md table
-{ background-color: #DBACC4 !important;}
+{ background-color: #C8E3DF !important;}
 
 
    /* Tertiary Theme Color (light) */
 
 
 .morelink:hover, .sidebox.submit.submit-text .morelink:hover, ::selection, .md blockquote, .help blockquote, #title-field.roundfield:before, .md table
-{ background-color: #E6C5D6 !important;}
+{ background-color: #D8EBE8 !important;}
 
 .morelink:hover, .sidebox.submit.submit-text .morelink:hover
-{ border-color: #E6C5D6 !important;}
+{ border-color: #D8EBE8 !important;}
 
 
    /* Quaternary Theme Color (very dark) */
 
 
 body >.content >.sharelink ~ .sitetable:before, a.title:link, .sidebox.submit.submit-text .morelink:hover,  .sidebox.submit.submit-link .morelink:hover a, .sidebox.submit.submit-text .morelink:hover a
-{ color: #AD5C85 !important;}
+{ color: #6AA69E !important;}
 
 #header, #header.res-nightmode, body >.content >.sharelink ~ .sitetable:before, .side form#search input[name="q"]
-{ border-color: #AD5C85 !important;}
+{ border-color: #6AA69E !important;}
 
 
+   /* Fifthwordthing Theme Color (white) */
+
+#RESSubredditGroupDropdown, .RESDropdownList, #RESMainGearOverlay 
+{ background-color: white !important;}
                                 /* ############------NIGHT MODE------############ */
 
 
@@ -469,6 +473,58 @@ border: 2px solid #8AB8E6; border-radius: 20px;
 padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
 background-color:white }
 
+.flair-fluttershy 
+{ color: #00ADA8 ; 
+border: 2px solid #EB81B4; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color: #FDF6AF }
+
+.flair-twilight 
+{ color: white ; 
+border: 2px solid #131F46; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color: #B689C8 }
+
+.flair-dash 
+{ color:#F9E97A ; 
+border: 2px solid #EE4035; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color: #9EDBF9 }
+
+.flair-rarity 
+{ color:#6193C9 ; 
+border: 2px solid #5E4FA2; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color: #EBEFFI }
+
+.flair-pinkie 
+{ color:#82DIF4 ; 
+border: 2px solid #ED458B; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color: #F3B6CF }
+
+.flair-applejack 
+{ color:#63BC4F ; 
+border: 2px solid #FDF6AF; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color: #FFC261 }
+
+.flair-rainbow 
+{ color:#9900CC ; 
+border-top: 2px solid #FF9900; border-radius: 20px; 
+border-left: 2px solid #FF0000; border-radius: 20px;
+border-right: 2px solid #FFFF00; border-radius: 20px;
+border-bottom: 2px solid #33CC33; border-radius: 20px;
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color: #66CCFF }
+
+.flair-golden 
+{ color:#CC9900 ; 
+border: 2px solid #CC9900; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color: #FFD633 }
+
+
 
 
 .flairselector h2 {
@@ -571,7 +627,7 @@ left: 30px !important;
 /**** ----------------announcement bar----------------- ****/
 
 body >.content >.sharelink ~ .sitetable:before { 
-content: "All your spook are belong to us."; 
+content: "Remember to give us your opinion on using the Afterplounge's wiki as a memorial!"; 
 background-color: #FFFFFF;
 border: 1px solid ;
 
