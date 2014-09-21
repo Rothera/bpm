@@ -1,3 +1,33 @@
+a[href^="/rdbreath"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 140px;
+    height: 140px;
+    background-image: url(%%rdbreath%%)
+    }
+
+a[href^="/badpinkie"], a[href^="/ppbad"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 280px;
+    background-image: url(%%bad-pinky-comic-280%%)
+    }
+
+a[href^="/deepcelebounce"] {
+    background-position: 0px 0px;
+    display: block;
+    clear: none;
+    float: left;
+    width: 97px;
+    height: 85px;
+    background-image: url(%%deepcelebounce%%)
+    }
+
 a[href^="/deepcelebounce"] {
     background-position: 0px 0px;
     display: block;
@@ -168,17 +198,6 @@ a[href^="/chibitwiwalk"] {
     background-image: url(%%chibitwiwalk%%)
     }
 
-a[href^="/APTWK"] {
-    background-position: 0px 0px;
-    display: block;
-    clear: none;
-    float: left;
-    width: 140px;
-    height: 140px;
-    background-image: url(%%APTWK%%)
-    }
-
-
 a[href^="/everybodypanic"] {
     background-position: 0px 0px;
     display: block;
@@ -270,7 +289,7 @@ a[href^="/gottaspinfast"] {
     }
 
 
-a[href|="/longbonz"], a[href|="/longbonstairs"], a[href|="/skippytherock"], a[href|="/hoo2"], a[href|="/hoo1"], a[href|="/eeeeviiil"], a[href|="/talltwi"], a[href|="/lbsalute"], a[href|="/lbcomicscrunch"], a[href|="/lbdive"], a[href|="/lbintro"], a[href|="/lbohthis"], a[href|="/lbpushthebutton"], a[href|="/lbrearing"], a[href|="/lbrelaxing"], a[href|="/lbwalk"], a[href|="/lbshrug"], a[href|="/lbteeny"], a[href|="/lbglance"]
+a[href|="/longbonz"], a[href|="/longbonstairs"], a[href|="/skippytherock"], a[href|="/hoo2"], a[href|="/hoo1"], a[href|="/eeeeviiil"], a[href|="/talltwi"], a[href|="/lbsalute"], a[href|="/lbcomicscrunch"], a[href|="/lbdive"], a[href|="/lbintro"], a[href|="/lbohthis"], a[href|="/lbpushthebutton"], a[href|="/lbrearing"], a[href|="/lbrelaxing"], a[href|="/lbwalk"], a[href|="/lbshrug"], a[href|="/lbteeny"], a[href|="/lbglance"], a[href|="/sbsmirk"]
 
  {
     display: block;
@@ -376,4 +395,9 @@ a[href|="/lbteeny"] {
     width: 50px;
     height: 50px;
     background-position: -72px -160px
+    }
+a[href|="/sbsmirk"] {
+    width: 129px;
+    height: 140px;
+    background-position: -286px -490px
     }

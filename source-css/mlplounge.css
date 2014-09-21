@@ -1,8 +1,8 @@
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Sillies and Numpties"}
+div.titlebox .subscribers span.number:after {content:" Ninjas and Shinobi "}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " being Silly" }
+div.titlebox p.users-online span.number:after { content: " sneaking around" }
 div.titlebox p.users-online span.word { display: none }
 
 
@@ -181,6 +181,7 @@ body.res-nightmode #header-bottom-left {
     background: url(%%minidis%%) bottom right no-repeat transparent !important;
 }
 
+
 .content h3 {
     font-size: 30pt;
     font-weight: bolder;
@@ -192,6 +193,9 @@ h3.imgTitle{
     padding: 2px;
     color: #000;
 }
+
+
+
 
 /*Sidebar Filly Start*/
 
@@ -430,6 +434,17 @@ background-color: transparent !important;
 }
 
 /* end fancy deletes */
+
+/*Changes gild icon to gold sbstare*/
+.gilded-icon:before {
+    content: normal;
+}
+.gilded-icon {
+    background: url(%%gild%%);
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+}
 
 .sidebox.submit.submit-link{width: 150px}
 .sidebox.submit.submit-text{margin-top: -42px;margin-left: 153px}
@@ -1341,7 +1356,7 @@ a.author[href$="deathdude223"] {font-size:0!important; overflow:hidden; display:
 a.author[href$="deathdude223"]:before {font-size:10px!important; visibility:visible!important; content: "deathdude222"} 
 
 a.author[href$="DoctorBoson"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="DoctorBoson"]:before {font-size:10px!important; visibility:visible!important; content: "Doctor Feelgood"} 
+a.author[href$="DoctorBoson"]:before {font-size:10px!important; visibility:visible!important; content: "DOCTOR FEELGOOD"} 
 
 a.author[href$="TwoWorldsCoexisting"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="TwoWorldsCoexisting"]:before {font-size:10px!important; visibility:visible!important; content: "TwoDogesCoexisting"}
@@ -1351,13 +1366,4 @@ a.author[href$="1125a"]:before {font-size:10px!important; visibility:visible!imp
 
 .sidecontentbox a.author[href$="Pinkie_Pie"] {font-size:0!important; overflow:hidden; display:none; content: "";}
 
-/*Changes gild icon to gold sbstare*/
-.gilded-icon:before {
-    content: normal;
-}
-.gilded-icon {
-    background: url(%%gild%%);
-    display: inline-block;
-    height: 15px;
-    width: 15px;
-}
+
