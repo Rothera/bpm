@@ -385,7 +385,8 @@
 .bpflag-rotate, .bpflag-lrotate {animation:zspin 2s infinite linear;image-rendering:-moz-crisp-edges}
 .bpflag-rrotate, .bpflag-lrrotate {animation:znips 2s infinite linear;image-rendering:-moz-crisp-edges}
 
-.md{overflow-y:hidden !important}
+.md { overflow-y: hidden !important }
+.titlebox .md { overflow-y: inherit !important; }
 
 @keyframes intensifies {
     0% { left: 0px; top: 0px; }
