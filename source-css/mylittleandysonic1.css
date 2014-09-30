@@ -2,13 +2,13 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%NEWBACKGROUNDFOREVER%%)  no-repeat  fixed 66% 100% !important;
+    background:  url(%%screwwinter%%)  no-repeat  fixed 66% 100% !important;
 }
 
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%fig%%) 50% 0px !important;
+   background: url(%%CogBanner%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -1044,7 +1044,8 @@ a.author[href$=CogglerSenpai]:after,
 a.author[href$=sympathyfordiscord]:after,
 a.author[href$=rawrcharlierawr]:after,
 a.author[href$=SiliconeLube]:after,
-a.author[href$=YesterdaysVoid]:after
+a.author[href$=YesterdaysVoid]:after,
+a.author[href$=Solidus_Tripsy]:after
 
 {
 color:#000; 
@@ -1132,6 +1133,7 @@ a.author[href$=sympathyfordiscord]:after { content:" ~ augie" }
 a.author[href$=rawrcharlierawr]:after { content:": a blast from the past" }
 a.author[href$=SiliconeLube]:after { content:" the Sexualizer" }
 a.author[href$=YesterdaysVoid]:after { content:" ~ Drank Celestia's Coughsyrup" }
+a.author[href$=Solidus_Tripsy]:after { content:" touches all the butts"; color:brown }
 
 /* Any pre/post-name flair stuff goes here */ 
 
@@ -1160,17 +1162,15 @@ a.author[href$=YesterdaysVoid]:after { content:" ~ Drank Celestia's Coughsyrup" 
     overflow: hidden;    
 }
 
-.flair-pwny{
-    transform-origin:50% 65% 0;
-    -webkit-transform-origin:50% 65% 0;
-    -webkit-transition-duration: 0.33s;
-    transition-duration: 0.33s;
-}
-.flair-pwny:hover{
-   -webkit-transform:rotate(-360deg);
-   transform:rotate(-360deg);
-}
+/********** Pwny's Animated Flair that defiantly won't break everything ************/
 
+.flair-pwny:after { background-image: url(%%PwnyFlair%%)!important;background-position: 0 0;-webkit-animation: animate 20s steps(314) infinite;-moz-animation: animate 20s steps(314) infinite;-ms-animation: animate 20s steps(314) infinite;-o-animation: animate 20s steps(314) infinite;animation: animate 20s steps(314) infinite; background-repeat:no-repeat}
+
+@-webkit-keyframes animate {from{background-position: 0 0;}to{ background-position: 0px -9419px; }} 
+@-moz-keyframes animate {from {background-position: 0 0;}to{ background-position: 0px -9419px; } } 
+@-ms-keyframes animate{from {background-position: 0 0; }to{ background-position: 0px -9419px; } } 
+@-o-keyframes animate {from {background-position: 0 0; }to{ background-position: 0px -9419px; } } 
+@keyframes animate {from { background-position: 0 0; }to{ background-position: 0px -9419px; } } 
 /* Flour sack flair for anyone we've noticed that has flair disabled. Don't forget to add them above too.*/ 
 :not(.flair) .tagline a.author[href$="/Lnozell"]:before,
 :not(.flair) .tagline a.author[href$="/Esrou"]:before,
@@ -1502,6 +1502,14 @@ a.author[href$="Parasprite"] {color:#D19FE3!important}
 
 .error.OUTOFSUB{display:none!important}
 
+/* Username Rainbow */
+/*
+a.author, .res a.author {
+    color:white!important;
+    background: -moz-linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
+}
+*/
 
 
 /* --------------Footer-------------------------

@@ -1,36 +1,44 @@
-/*Nothing fancy here, now shoo.*/
+/*[](/ppseesyou)*/
 
-div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Spikes"}
-div.titlebox .users-online span.number:after {content:" Spiking"}
+* {
+font-family:Consolas, Segoe UI;
+font-weight:bold;
+}
+
+div.titlebox span.word {
+display:none
+}
+
+div.titlebox .subscribers span.number:after {
+content:" Spikes"
+}
+
+div.titlebox .users-online span.number:after {
+content:" Spiking"
+}
 
 /*Header sticking on the 'ground'*/
 
-#header-img-a
-{
- height:5px;
- position:relative;
- bottom:0px;
- left:0;
- top:0;
- margin-right:-10px;
- padding:0
+#header-img-a {
+height:5px;
+position:relative;
+bottom:0px;
+left:0;
+top:0;
+margin-right:-10px;
+padding:0
 }
 
 #header-img
 {
- margin:5px 3px -3px 0px;
- padding:0px 5px
+margin:5px 3px -3px 0px;
+padding:0px 5px
 }
 
-body:hover #header{
-    background-position: -9999px 0;
-    transition: background-position 800s linear; /*Comment out this rule to remove fancy spinning header thingy*/
-}
+/*Name substuite*/
 
-/*Name replace*/
 
-a.author.id-t2_8gh9f{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
+a.author.id-t2_8gh9f {content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
 a.author.id-t2_8gh9f:after{font-size:10px!important;display:block;letter-spacing:normal}
 a.author.id-t2_8gh9f:after {content:" a horse"}
 
@@ -42,18 +50,14 @@ a.author.id-t2_a26t0{content:"";font-size:0px!important;display:inline-block;ver
 a.author.id-t2_a26t0:after{font-size:8px!important;display:block;letter-spacing:normal}
 a.author.id-t2_a26t0:after {content:"I had nothing to do with anything in here"}
 
-a.author .ChickenSteve{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
-a.author.ChickenSteve:after{font-size:10px!important;display:block;letter-spacing:normal}
-a.author.ChickenSteve:after {content:" not_a_chick"}
-
-/*Background (stolen from Plounge) for testing*/ 
+/*Background*/ 
 
 body {
 background: url(%%Alwayswatching%%)  
 no-repeat fixed center center
 }
 
-/*Ponymotes*/
+/*Emotes*/
 
 a[href="/spikeurgh"],a[href="/spikehmph"],a[href="/spikeangry"],a[href="/angryspike"] {
 background-position: 0px 0px;
@@ -166,7 +170,7 @@ a[href|="/sp"]
 }
 
 
-/*Tabthingy*/
+/*Making the tabs' corners more rounded (stole from r/mylittlepony)*/
 .tabmenu li a {
 -webkit-border-top-left-radius: 5px;
 -webkit-border-top-right-radius: 5px;
@@ -176,28 +180,25 @@ border-top-left-radius: 5px;
 border-top-right-radius: 5px;
 }
 
-/*  
-*************************  
-*** My Reddits Drop down list  
-*************************  
-*/  
+/*Tab test*/
+.tabmenu li a {  
+border: none;  
+font-size:14px;  
+margin: 0 10px 0;  
+line-height:1.4;
+}
+ 
+.tabmenu li.selected a {  
+color:red;  
+background-color:#fafcff; 
+border:none;  
+}  
 
-.drop-choices{  
-    background-color:#333 !important;  
-    border:2px solid #0088CC;  
-    border-radius:7px !important;  
-    padding: 2px 10px;  
-}  
-.drop-choices a {  
-    color:#999  !important;  
-}  
-#sr-header-area div.srdrop a.choice.bottom-option {  
-    color: white !important;  
-}  
-#sr-header-area div.drop-choices a.choice:hover {  
-    background-color: #333 !important;  
-    color: white !important;  
-}  
+.tabmenu li a:hover {  
+color:red;  
+background-color:#fefeff;  
+border:none;  
+}
 
 /*Replaces self post and NSFW thumbnail with Fine Line*/
 .thumbnail.self {
@@ -214,21 +215,3 @@ border-top-right-radius: 5px;
     height: 70px;
     background-position: 0px 0px;
 }
-
-/*Title flair*/
-.linkflair-important .linkflairlabel {display:none;}
-.linkflair-important p.title a.title {opacity:0;}
-.linkflair-important p.title a.title:hover {opacity:100;}
-.linkflair-important p.title:before
-{
- content:"THIS IS SOMEHOW IMPORTANT";
- font-size:12px;
- color:#888;
- border:1px solid #888;
- border-radius:3px;
- position:relative;
- padding:0px 2px;
- margin-right:2px;
- top:-1px;
-
-

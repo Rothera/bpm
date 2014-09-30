@@ -1977,3 +1977,24 @@ a[href="/nullsquiggly"]{ background-image: url(%%nullsquiggly%%); display: block
 a[href="/nullstargaze"]{ background-image: url(%%nullstargaze%%); display: block; clear: none; float: left; width: 152px; height: 175px; } 
 a[href="/nulltoothless"]{ background-image: url(%%nulltoothless%%); display: block; clear: none; float: left; width: 139px; height: 175px; }
 a[href="/nulltrot"]{ background-image: url(%%nulltrot%%); display: block; clear: none; float: left; width: 106px; height: 96px; }
+a[href="/nullgrin"]{ background-image: url(%%nullgrin%%); display: block; clear: none; float: left; width: 148px; height: 134px; }
+
+/*Flair */
+
+.flairselector .customizer {
+display: none !important;
+}
+
+.flair {
+border: none !important;
+top:20px;
+padding:0px;
+background: url(%%flairsheet%%);
+display:inline-block;
+}
+.flair-Gn{ background-position: 0 0; width: 30px; height: 30px; } 
+.flair-Hn{ background-position: 0 -80px; width: 30px; height: 30px; } 
+.flair-Kd{ background-position: 0 -160px; width: 30px; height: 30px; } 
+.flair-Lh{ background-position: 0 -240px; width: 30px; height: 30px; } 
+.flair-Ly{ background-position: 0 -320px; width: 30px; height: 30px; } 
+.flair-Mg{ background-position: 0 -400px; width: 30px; height: 30px; } 

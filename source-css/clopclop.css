@@ -2,8 +2,9 @@
     is currently editing it and the time and date, to avoid collisions. */
 /* UTC time: http://www.time.gov/timezone.cgi?UTC/s/0 */
 /********************************
-* LAST EDITED BY: Reahidru
-7:57 AM 4/2/2012
+* LAST EDITED BY: TNF
+* 9:13 AM 9/22/2014
+* Hiding automoderator
 *********************************/
 
 body:not(.res-nightmode) .link, body:not(.res-nightmode) .comment { background-color: #fff; } 
@@ -790,3 +791,20 @@ of the page */
 
 /* Supporting Code */
 #newlink .infobar:before{display:block;border:1px solid red;background:#F77;padding:5px;margin-bottom:5px}
+
+/* Hiding Automoderator */
+.author[href*="user/AutoModerator"] { 
+    font-size: 0pt; 
+    } 
+
+
+/*** April Futas' Day ***/
+/*
+.redditname a {
+    font-size: 0px;
+}
+.redditname a:after {
+  content: "FutaClopClop";
+  font-size: 18px;
+}
+*/

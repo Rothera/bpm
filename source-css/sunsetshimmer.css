@@ -1,6 +1,6 @@
 /*Banner*/
 #header {
-  background: url(%%header%%) repeat scroll center left!important;border:none!important;height:114px!important
+  background: url(%%header4%%) no-repeat scroll top left!important;border:none!important;height:211px!important
 }
 
 #header-img {
@@ -59,7 +59,7 @@ div#header-bottom-left ul.tabmenu {
 
 .pagename {
   position:absolute;
-  top:30px;
+  top:65px;
   left:103px;
   right:103px;
 }
@@ -72,7 +72,11 @@ div#header-bottom-left ul.tabmenu {
   margin: 0 auto;
   display: block;
   font-size:0;
-  margin-bottom:65px;
+}
+
+.pagename a:after {
+  content: " <p> ";
+  margin-bottom: 65px;
 }
 
 .pagename a:hover {
@@ -123,7 +127,7 @@ div#header-bottom-left ul.tabmenu {
 
 .side h6 {
 position: absolute;
-top: 114px;
+top: 211px;
 left: 0px;
 padding: 14px 0px 14px 60px;
 background:url(%%Crown-Bullet%%) no-repeat 14px 6px;
