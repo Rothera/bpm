@@ -1,6 +1,6 @@
 /*Banner*/
 #header {
-  background: url(%%header4%%) no-repeat scroll top left!important;border:none!important;height:211px!important
+  background: url(%%header%%) repeat-x scroll top left!important;border:none!important;height:114px!important
 }
 
 #header-img {
@@ -59,7 +59,7 @@ div#header-bottom-left ul.tabmenu {
 
 .pagename {
   position:absolute;
-  top:65px;
+  top:32px;
   left:103px;
   right:103px;
 }
@@ -74,10 +74,6 @@ div#header-bottom-left ul.tabmenu {
   font-size:0;
 }
 
-.pagename a:after {
-  content: " <p> ";
-  margin-bottom: 65px;
-}
 
 .pagename a:hover {
   text-decoration:none;
@@ -102,11 +98,11 @@ div#header-bottom-left ul.tabmenu {
 }
 
 .subscribers .number:after { 
-  content: " Minions"
+  content: " classmates"
 }
 
 .users-online .number:after { 
-  content: " Prodigies" 
+  content: " becoming better friends" 
 }
 
 .sidecontentbox .helplink + .title h1 {
@@ -127,7 +123,7 @@ div#header-bottom-left ul.tabmenu {
 
 .side h6 {
 position: absolute;
-top: 211px;
+top: 114px;
 left: 0px;
 padding: 14px 0px 14px 60px;
 background:url(%%Crown-Bullet%%) no-repeat 14px 6px;
@@ -148,7 +144,9 @@ a[href$="/spoiler"]:hover {
   color: #FFF !important  
 }  
 
-
+.side h6 a[href$="viewform"] {
+  color: #74010e !important;
+}
 
 body {
   background: url(%%sunsetbg%%) no-repeat fixed center bottom;
@@ -625,6 +623,12 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 .flair-100-sunset
 {background-position: -32px -368px;height:42px;width:32px;}
 
+.flair-200-emblem
+{background-position: 0 -410px;height:42px;width:32px;}
+
+.flair-200-sunset
+{background-position: -32px -410px;height:42px;width:32px;}
+
 a[href|="/sunsetshocked"],a[href|="/ssshocked"],a[href|="/sneakysunset"],a[href|="/sneakyss"],a[href|="/disgustedsunset"],a[href|="/disgustedss"],a[href|="/sunsetshimmer"],a[href|="/ssshimmer"],a[href|="/sunsetstare"],a[href|="/ssstare"],a[href|="/sunsetbored"],a[href|="/ssbored"],a[href|="/sunsetpuppyeyes"],a[href|="/sspuppyeyes"],a[href|="/sunsetderp"],a[href|="/ssderp"],a[href|="/sunsethappy"],a[href|="/sshappy"],a[href|="/sunsetsosorry"],a[href|="/sssosorry"],a[href|="/sleepysunset"],a[href|="/sleepyss"],a[href|="/sunsetohyou"],a[href|="/ssohyou"],a[href|="/sunsetsneer"],a[href|="/sssneer"],a[href|="/sunsetyay"],a[href|="/ssyay"],a[href|="/searchingsunset"],a[href|="/searchingss"],a[href|="/sunsetshiver"],a[href|="/ssshiver"],a[href|="/sunsetshrug"],a[href|="/ssshrug"],a[href|="/sunsetfacehoof"],a[href|="/ssfacehoof"],a[href|="/sunsetindeed"],a[href|="/ssindeed"],a[href|="/ifyouknowwhatimean"],a[href|="/sunsetwait"],a[href|="/sswait"],
 a[href|="/rsunsetshocked"],a[href|="/rssshocked"],a[href|="/rsneakysunset"],a[href|="/rsneakyss"],a[href|="/rdisgustedsunset"],a[href|="/rdisgustedss"],a[href|="/rsunsetshimmer"],a[href|="/rssshimmer"],a[href|="/rsunsetstare"],a[href|="/rssstare"],a[href|="/rsunsetbored"],a[href|="/rssbored"],a[href|="/rsunsetbored"],a[href|="/rssbored"],a[href|="/rsunsetpuppyeyes"],a[href|="/rsspuppyeyes"],a[href|="/rsunsetderp"],a[href|="/rssderp"],a[href|="/rsunsethappy"],a[href|="/rsshappy"],a[href|="/rsunsetsosorry"],a[href|="/rsssosorry"],a[href|="/rsleepysunset"],a[href|="/rsleepyss"],a[href|="/rsunsetohyou"],a[href|="/rssohyou"],a[href|="/rsunsetsneer"],a[href|="/rsssneer"],a[href|="/rsunsetyay"],a[href|="/rssyay"],a[href|="/rsearchingsunset"],a[href|="/rsearchingss"],a[href|="/rsunsetshiver"],a[href|="/rssshiver"],a[href|="/rsunsetshrug"],a[href|="/rssshrug"],a[href|="/rsunsetfacehoof"],a[href|="/rssfacehoof"],a[href|="/rsunsetindeed"],a[href|="/rssindeed"],a[href|="/rifyouknowwhatimean"],a[href|="/rsunsetwait"],a[href|="/rsswait"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%sunnyamotes%%)!important}
@@ -792,6 +796,12 @@ width: 70px;
 animation: ssclap 275ms steps(3) infinite
 }
 
+a[href|="/sunsetapplauds"],a[href|="/rsunsetapplauds"],a[href|="/ssapplauds"],a[href|="/rssapplauds"] {
+display:block;clear:none;float:left;width:96px;height:120px;background-image:url(%%sunsetapplauds%%)!important;
+background-position:0 0;
+}
+
+
 @-webkit-keyframes ssclap{
 from{background-position: 0}
 to{background-position: -210px}
@@ -822,6 +832,7 @@ a[href|="/rsunsetgallop"],a[href|="/rssgallop"],
 a[href|="/revilsunsetidle"],a[href|="/revilssidle"],
 a[href|="/rsunsetlaugh"],a[href|="/rsslaugh"],
 a[href|="/rclappingsunset"],a[href|="/rclappingss"],
+a[href|="/rsunsetapplauds"],a[href|="/rssapplauds"],
 a[href|="/rsunsetshades"],a[href|="/rssshades"],
 a[href|="/rsunsetstainedglass"],a[href|="/rssstainedglass"],
 a[href|="/rsunsetpokerface"],a[href|="/rsspokerface"],

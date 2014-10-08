@@ -8,7 +8,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%CogBanner%%) 50% 0px !important;
+   background: url(%%patpatpatbanner%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -25,7 +25,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
     transform:translate(500px , 0px)
 }
 
-
+/*
 .side a[href="https://webchat.mlas1.org/?nick=Gummy...&channels=mlas1&prompt=1"]
 {
    display:block;
@@ -38,7 +38,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
    z-index: 99 !important;
    margin-left: -256px;
 }
-
+*/
 
 #header-bottom-right
 {
@@ -59,7 +59,7 @@ margin-left: 100px;
 */
 
 /* above text */
-margin-top: 123px;
+margin-top: 1px;
 margin-bottom: 31px;
 
 }
@@ -1443,6 +1443,17 @@ a[href|='/ravenraven'],a[href|='/sausagefest']{
 
 a[href|="/ravenraven"] {width:477px; height:389px; background-position: -0px -0px}
 a[href|="/sausagefest"] {width:260px; height:270px; background-position: -478px -0px}
+
+a[href|='/drowningsorrows'],a[href|='/wellfuck'],a[href|='/wellftwi']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%emotesheetll%%) }
+
+a[href|="/drowningsorrows"] {width:200px; height:171px; background-position: 0px 0px}
+a[href|="/wellfuck"] {width:200px; height:199px; background-position: -200px -0px}
+a[href|="/wellftwi"] {width:171px; height:200px; background-position: -400px -0px}
 
 
 a[href|='/loligagging'],a[href|='/ponyjpeg']{

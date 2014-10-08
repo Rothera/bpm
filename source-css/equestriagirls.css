@@ -156,15 +156,19 @@ position:relative;
 bottom:73px;
 }
 
-div#header {
+#header {
     border-bottom: 1px solid #2c1061;
 }
 
-div#header-bottom-left {
+#header-bottom-left {
+    background: url(%%rrheader%%) no-repeat #040318;
+}
+
+/*div#header-bottom-left {
     background-image: url(%%eqgback2%%);
     background-repeat: repeat;
     background-color: #e57bc6;
-}
+}*/
 
 #header-bottom-right {
     background-color:#2e1364;

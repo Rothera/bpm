@@ -1,8 +1,16 @@
 /*[](/ppseesyou)*/
 
-* {
+/* {
 font-family:Consolas, Segoe UI;
 font-weight:bold;
+}*/
+
+.flairselector .customizer {
+display: none !important;
+}
+
+ .link .flair, .entry .tagline .flair {
+float:right;
 }
 
 div.titlebox span.word {
@@ -18,7 +26,7 @@ content:" Spiking"
 }
 
 /*Header sticking on the 'ground'*/
-
+/*
 #header-img-a {
 height:5px;
 position:relative;
@@ -34,8 +42,9 @@ padding:0
 margin:5px 3px -3px 0px;
 padding:0px 5px
 }
+*/
 
-/*Name substuite*/
+/*Name substitute*/
 
 
 a.author.id-t2_8gh9f {content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
@@ -49,13 +58,6 @@ a.author.id-t2_aj4cg:after {content:" uo‾ouǝ"}
 a.author.id-t2_a26t0{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
 a.author.id-t2_a26t0:after{font-size:8px!important;display:block;letter-spacing:normal}
 a.author.id-t2_a26t0:after {content:"I had nothing to do with anything in here"}
-
-/*Background*/ 
-
-body {
-background: url(%%Alwayswatching%%)  
-no-repeat fixed center center
-}
 
 /*Emotes*/
 
@@ -180,14 +182,14 @@ border-top-left-radius: 5px;
 border-top-right-radius: 5px;
 }
 
-/*Tab test*/
+/*Tab test
 .tabmenu li a {  
 border: none;  
 font-size:14px;  
 margin: 0 10px 0;  
 line-height:1.4;
 }
- 
+
 .tabmenu li.selected a {  
 color:red;  
 background-color:#fafcff; 
@@ -199,8 +201,64 @@ color:red;
 background-color:#fefeff;  
 border:none;  
 }
+*/
 
-/*Replaces self post and NSFW thumbnail with Fine Line*/
+/*Trying to copy everything from MLPDS's CSS codes*/
+
+/*start*/
+
+body {
+  /* background-image: url(%%Alwayswatching%%);
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-attachment:fixed;
+   margin-top: 5px; */
+   background-color:#F6F9FC;  
+   font-family:sans-serif;
+   }
+
+
+html {
+    position: relative;
+}
+
+.titlebox h1 a {      /*Going to be that picture thingy on the sidebar? Why's it necessary?*/
+    color:#0077BB;  
+    font-size:18px; 
+}
+
+h2 {  
+    color:#000000;  
+    font-size:18px; 
+}
+
+/*h4 { 
+    margin: 20px  40px 0;
+}*/ /*Makes the searchthingy too spacey and ugly, at least for me*/
+
+/*h5 {  
+    font-family:sans-serif;  
+    font-size:1.3em;  
+    margin-top:1em;  
+    line-height:1.5;  
+} */ /*Which is <h5>?*/
+
+/*h6 {  
+    font-family:sans-serif;  
+    font-size:1.3em;  
+    margin-top:1em;  
+    line-height:1.5;  
+} */ /*Same with h5.*/
+
+/*Header image*/
+
+#header-img {
+    margin-top: 2px;
+    margin-right: 5px;
+    padding-top: 7px;
+    z-index: 1;
+   }
+
 .thumbnail.self {
     background-image: url(%%flsmilerandbrigshgisathumbnail%%);
     background-repeat: no-repeat;
@@ -215,3 +273,185 @@ border:none;
     height: 70px;
     background-position: 0px 0px;
 }
+
+/*Changes reddit name to image.*/
+
+.redditname a{
+    background:url(%%logo%%) no-repeat;
+    height: 86px;
+    width: 288px;
+    margin-top:1px;
+}
+
+#header-bottom-left{
+   background-image: url(%%header%%);
+   background-color: #FFFFFF;
+   background-repeat: no-repeat; 
+   height: 100px;
+}
+
+
+#header-img-a, .redditname a, .tabmenu {
+   display: inline;
+   padding-left:0px;
+   float: left;
+}
+
+#header-img {
+   margin-right:0px;
+}
+
+/*Top link bar*/  
+
+#sr-header-area {  
+    background: #F6F9FC;  
+    border-bottom:2px solid #0088CC;  
+    height:11px;  
+    line-height:10px;  
+    margin-top: 2px;
+}  
+
+/*Them pesky RES shortcuts stuff*/
+
+#RESShortcutsEditContainer {
+    background: #F6F9FC !important;
+    height:10px !important;
+}
+
+#RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd {
+    width:11px !important;
+    height:10px !important;
+    background:#F6F9FC !important;
+    margin-top:-3px !important;
+}
+
+#RESShortcutsSort {
+    width:11px !important;
+    height:10px !important;
+    background:#F6F9FC !important;
+    margin-top:-5px !important;
+}
+
+#sort-menu.drop-choices {
+    margin-top:6px !important;
+    
+}
+
+/*Figure these stuff out later, I'm tired*/
+
+.sr-bar a {  
+    color:#000;  
+}  
+
+#sr-header-area .separator {  
+    color:#0088CC;  
+}  
+
+#sr-more-link { 
+    background-color: #F6F9FC;  
+    color:#000;  
+}  
+
+#sr-header-area .srdrop .selected {  
+    color: #000;  
+}  
+
+/*Drop down list*/
+
+.drop-choices{  
+    background-color:#F6F9FC !important;  
+    border:1px solid #0088CC;  
+    border-radius:6px !important;  
+    padding: 2px 10px;  
+}  
+
+.drop-choices a {  
+    color:#999  !important;  
+}  
+
+#sr-header-area div.srdrop a.choice.bottom-option {  
+    color: #0088CC !important;  
+}  
+
+#sr-header-area div.drop-choices a.choice:hover {  
+    background-color: #333 !important;  
+    color: #0088CC !important;  
+}  
+
+/*Tab menu*/
+
+.tabmenu li a {  
+    color: white;  
+    background: url(%%50tile%%) !important;
+    border: none;  
+    font-size:14px;  
+    margin: 0 14px 0;  
+    line-height:1.4;
+}  
+
+.tabmenu li.selected a {  
+    color:red;  
+    background-color:transparent;  
+    border:none;  
+}  
+
+.tabmenu li a:hover {  
+    color:red;  
+    background-color:transparent;  
+    border:none;  
+}  
+
+.tabmenu {   
+    padding:0 0 0 0;  
+    position:absolute;
+    top:91px; 
+    left: -15px;
+}  
+
+#header-bottom-right { 
+ 
+    position:absolute; 
+    top:82px;
+    right:41px;
+}  
+
+
+#header-bottom-right a {  
+    color:#808080;  
+    font-weight:normal;
+}
+
+#header-bottom-right a:hover {  
+    color:#333;  
+    text-decoration:none;
+}  
+
+.res #userbarToggle {
+
+    background-color:#ECF2F5;
+    color:#BBCCDD;
+    border-color:#BBCCDD;
+}
+
+.res .content {
+    margin-top:20px;
+}
+
+#RESSettingsButton {
+    margin-top:-12px !important;
+}
+
+.res #header-bottom-right img, .res #RESAccountSwitcherIconOverlay{
+    margin-top:-10px !important;
+}
+
+.res #RESPrefsDropdown {
+    margin-top: 0px;
+}
+
+.res #userbarToggle, .res #RESMainGearOverlay {
+    height: 24px !important;
+}
+
+/*#header-bottom-right.res-navTop {
+    */

@@ -81,6 +81,49 @@ background-color: #222222;
 content: " - (" attr(title) ")";
 }
 
+/*change a name*/
+.author[href$="/MonkPreston"] {
+    font-size: 0;
+    content: '';
+}
+.author[href$="/MonkPreston"]:after {
+    font-size: x-small;
+    content: 'Flutterbutter';
+}
+.author[href$="/VicePresidentLuna"] {
+    font-size: 0;
+    content: '';
+}
+.author[href$="/VicePresidentLuna"]:after {
+    font-size: x-small;
+    content: 'Princess Loony';
+}
+.author[href$="/m103"] {
+    font-size: 0;
+    content: '';
+}
+.author[href$="/m103"]:after {
+    font-size: x-small;
+    content: 'Mr. Inactive';
+}
+.author[href$="/GoldenNeko"] {
+    font-size: 0;
+    content: '';
+}
+.author[href$="/GoldenNeko"]:after {
+    font-size: x-small;
+    content: 'KittyPone';
+}
+.res .moderator:after, .res .submitter:after, .res .admin:after, .res .friend:after {
+    font-weight: bold;
+    padding: 0 2px;
+    border-radius: 3px;
+}
+.res .moderator:after { background-color: #282; }
+.res .submitter:after { background-color: #0055df; }
+.res .admin:after { background-color: #f01; }
+.res .friend:after { background-color: #ff4500; }
+
 /* RES upvote count highlighter */
 span.res_post_ups {
 text-shadow: orangered 0 0 2px;
@@ -302,7 +345,7 @@ a[href|="/shykisscock"]
 {background-image:url(%%150x150a%%);width:150px;height:150px;display:block;float:left;}
 
 /* 200x200a 'motes. */
-a[href|="/cheesesocks"], a[href|="/festivebuttplug"], a[href|="/wetqueen"], a[href|="/doublemoon"], a[href|="/wetmoons"], a[href|="/kissmyass"], a[href|="/tiapresenting"], a[href|="/creammuffin"], a[href|="/sexygaming"], a[href|="/pm"]
+a[href|="/cheesesocks"], a[href|="/festivebuttplug"], a[href|="/wetqueen"], a[href|="/doublemoon"], a[href|="/wetmoons"], a[href|="/kissmyass"], a[href|="/tiapresenting"], a[href|="/creammuffin"], a[href|="/sexygaming"], a[href|="/pm"], a[href|="/cadancebj"]
 {background-image:url(%%200x200a%%);width:200px;height:200px;display:block;float:left;}
 
 /* 250x250a 'motes. */
@@ -353,13 +396,22 @@ a[href|="/sexygaming"]
 a[href|="/pm"]
 {background-position: 0% -300%;}
 
+/* Grid pos 1,3 'motes */
+a[href|="/cadancebj"]
+{background-position: -100% -300%;}
+
 /* Misfits a */
 a[href|="/trixiepresents"], a[href|="/queenpresents"], a[href|="/itschristmas"], a[href|="/queennurse"], a[href|="/cherry"], a[href|="/fullmoon"], a[href|="/pinkiepresents"], a[href|="/bbinsocks"]
 {background-image:url(%%misfitsa%%);display:block;float:left;}
 
 /* Misfits b */
-a[href|="/nmmbj"], a[href|="/nmmbent"], a[href|="/applesocks"], a[href|="/sunandmoon"], a[href|="/royalflush"], a[href|="/maidmolly"], a[href|="/more"]
+a[href|="/nmmbj"], a[href|="/nmmbent"], a[href|="/applesocks"], a[href|="/sunandmoon"], a[href|="/royalflush"], a[href|="/maidmolly"], a[href|="/more"], a[href|="/celestiapresents"]
 {background-image:url(%%misfitsb%%);display:block;float:left;}
+
+/* Misfits c */
+a[href|="/smugass"], a[href|="/cellyshy"], a[href|="/mistletoe"], a[href|="/piledriver"], a[href|="/sisterlylove"]
+{background-image:url(%%misfitsc%%);display:block;float:left;}
+
 
 /* Animated Emotes */
 a[href|="/twichug"], a[href|="/chugchugchug"] {background: url(%%chugchugchug%%) no-repeat;width:150px;height:116px;display:block;float:left;}
@@ -381,3 +433,9 @@ a[href|="/sunandmoon"] {width: 200px;height:250px;background-position: -144px -2
 a[href|="/royalflush"] {width: 250px;height:175px;background-position: 0px -475px;}
 a[href|="/maidmolly"] {width: 188px;height:250px;background-position: -250px -475px;}
 a[href|="/more"] {width: 227px;height:250px;background-position: 0px -650px;}
+a[href|="/celestiapresents"] {width: 250px;height:179px;background-position: -227px -725px;}
+a[href|="/smugass"] {width: 164px;height:200px;background-position: 0px 0px;}
+a[href|="/cellyshy"] {width: 235px;height:250px;background-position: 0px -200px;}
+a[href|="/mistletoe"] {width: 171px;height:200px;background-position: 0px -450px;}
+a[href|="/piledriver"] {width: 214px;height:250px;background-position: 0px -650px;}
+a[href|="/sisterlylove"] {width: 200px;height:150px;background-position: -164px 0px;}

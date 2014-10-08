@@ -1,5 +1,60 @@
+/* hide eqg maud thumbnail */
+.thing[data-fullname="t3_2htjsm"] .thumbnail { visibility: hidden !important; }
+.thing[data-fullname="t3_2htjsm"] .entry a.title::before { content: "[SPOILER] " }
+
 body {
   background: url(%%maudbackg%%) no-repeat fixed center bottom;
+}
+
+/*** Spoiler Tags ***/
+
+.nsfw-stamp acronym {
+    border: #5f99cf 1px solid !important;
+    display: inline-block;
+    font-size: 0px !important;
+    letter-spacing: 0px;
+    overflow: hidden;
+    vertical-align: bottom;
+    margin-bottom:-1px ;
+    content: "";
+}
+
+.nsfw-stamp acronym:after {
+    color: #336699 !important;
+    content: "SPOILER" !important;
+    display: block;
+    font-size: x-small !important;
+    text-decoration: none;
+    margin:-14px 2px 1px
+}
+
+.marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    letter-spacing: -20px;
+    content: "";
+}
+
+.unmarknsfw-button a[href="#"]:before { content:"un-spoiler"; }
+
+.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before {
+    font-size: 9px !important;
+    display: block;
+    letter-spacing: normal;
+    content:"spoiler";
+}
+
+.thumbnail:empty { background-image: url(%%thumbnails%%) !important; }
+.thumbnail.self { background-position: -0px -120px !important; }
+.thumbnail.nsfw { background-position: -0px -0px !important; }
+.thumbnail.default { background-position: -0px -70px !important; }
+.thing[data-fullname$="d"] .thumbnail.nsfw, .thing[data-fullname$="i"] .thumbnail.nsfw,
+.thing[data-fullname$="s"] .thumbnail.nsfw, .thing[data-fullname$="c"] .thumbnail.nsfw,
+.thing[data-fullname$="e"] .thumbnail.nsfw, .thing[data-fullname$="n"] .thumbnail.nsfw,
+.thing[data-fullname$="t"] .thumbnail.nsfw, .thing[data-fullname$="a"] .thumbnail.nsfw {
+    background-position: -0px -170px !important;
 }
 
    /***********************

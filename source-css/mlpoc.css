@@ -318,6 +318,10 @@ body:not(.subscriber) #siteTable:before
     overflow: hidden;
 }
 
+.side .md h5 .bpm-emote.bpmote-gcadorkable {
+    background-position: 0 0;
+}
+
 .side .md h1:nth-of-type(1) a {
     color: rgb(51, 102, 153); /*Changes the colors of the links*/
 }
@@ -467,6 +471,12 @@ width:280px;
   END Drop down 
 *******************/
 
+/* Wiki header text */
+
+body .content .wiki-page-content .md.wiki h1 {
+color: red;
+}
+
 /*LINK FLAIR FILTERS, WOOP*/
 
 html:lang(jo) .link:not(.linkflair-joke) {
@@ -485,393 +495,6 @@ html:lang(he) .link:not(.linkflair-help) {
     display: none    }
 html:lang(up) .link:not(.linkflair-update) {
     display: none    }
-
-a[href="/gcadorkable"], a[href="/gcangry"], a[href="/gcconfident"], a[href="/gcfacehoof"], a[href="/gchmm"], a[href="/gcrevelation"], a[href="/gcrock"], a[href="/gcsmug"], a[href="/gcwoo"], a[href="/gcyummy"], a[href="/mintcopy"], a[href="/minthappy"], a[href="/mintmad"], a[href="/mintsad"], a[href="/mintthink"], a[href="/nighttimesalute"], a[href="/nimblefun"], a[href="/paigehappy"], a[href="/paigeyell"], a[href="/rubybendover"], a[href="/rubyprimp"], a[href="/rubyreally"], a[href="/rubysmirk"], a[href="/sebored"], a[href="/sehahaha"], a[href="/sesly"], a[href="/sscaketopper"], a[href="/starstrucksuave"], a[href="/sugarbutt"], a[href="/sugarfree"], a[href="/sugarico"], a[href="/sugarscared"], a[href="/sugarsmarm"], a[href="/sugarsmile"], a[href="/sugarwut"], a[href="/swordbashful"], a[href="/swordbee"], a[href="/swordfacehoof"], a[href="/swordgrr"], a[href="/swordguilt"], a[href="/swordlie"], a[href="/swordmad"], a[href="/swordmirror"], a[href="/swordpride"], a[href="/swordsad"], a[href="/swordscowl"], a[href="/swordseesham"], a[href="/swordshock"], a[href="/swordshrug"], a[href="/swordspear"], a[href="/swordstare"], a[href="/swordsuave"], a[href="/sworduham"], a[href="/swordulan"], a[href="/synpoker"], a[href="/synponder"], a[href="/synsquint"], a[href="/syntaxadorkable"], a[href="/syntaxderp"], a[href="/thiskillsthegame"], a[href="/thunderdrink"], a[href="/thunderwut"]
-{
-    background-image: url(%%spritesheet%%); background-repeat: no-repeat; display: block; clear: none; float: left;
-}
-a[href="/gcadorkable"] {
-    width: 70px;
-    height: 91px;
-    background-position: -5px -5px;
-}
-
-a[href="/gcangry"] {
-    width: 70px;
-    height: 66px;
-    background-position: -85px -5px;
-}
-
-a[href="/gcconfident"] {
-    width: 70px;
-    height: 68px;
-    background-position: -165px -5px;
-}
-
-a[href="/gcfacehoof"] {
-    width: 70px;
-    height: 70px;
-    background-position: -245px -5px;
-}
-
-a[href="/gchmm"] {
-    width: 70px;
-    height: 70px;
-    background-position: -325px -5px;
-}
-
-a[href="/gcrevelation"] {
-    width: 70px;
-    height: 104px;
-    background-position: -405px -5px;
-}
-
-a[href="/gcrock"] {
-    width: 70px;
-    height: 112px;
-    background-position: -485px -5px;
-}
-
-a[href="/gcsmug"] {
-    width: 70px;
-    height: 78px;
-    background-position: -565px -5px;
-}
-
-a[href="/gcwoo"] {
-    width: 70px;
-    height: 73px;
-    background-position: -645px -5px;
-}
-
-a[href="/gcyummy"] {
-    width: 70px;
-    height: 129px;
-    background-position: -85px -88px;
-}
-
-a[href="/mintcopy"] {
-    width: 70px;
-    height: 70px;
-    background-position: -165px -88px;
-}
-
-a[href="/minthappy"] {
-    width: 70px;
-    height: 70px;
-    background-position: -245px -88px;
-}
-
-a[href="/mintmad"] {
-    width: 70px;
-    height: 70px;
-    background-position: -325px -88px;
-}
-
-a[href="/mintsad"] {
-    width: 70px;
-    height: 70px;
-    background-position: -645px -88px;
-}
-
-a[href="/mintthink"] {
-    width: 70px;
-    height: 70px;
-    background-position: -5px -168px;
-}
-
-a[href="/nighttimesalute"] {
-    width: 70px;
-    height: 57px;
-    background-position: -165px -168px;
-}
-
-a[href="/nimblefun"] {
-    width: 150px;
-    height: 101px;
-    background-position: -245px -168px;
-}
-
-a[href="/paigehappy"] {
-    width: 70px;
-    height: 83px;
-    background-position: -405px -168px;
-}
-
-a[href="/paigeyell"] {
-    width: 70px;
-    height: 82px;
-    background-position: -485px -168px;
-}
-
-a[href="/rubybendover"] {
-    width: 150px;
-    height: 112px;
-    background-position: -565px -168px;
-}
-
-a[href="/rubyprimp"] {
-    width: 70px;
-    height: 70px;
-    background-position: -5px -290px;
-}
-
-a[href="/rubyreally"] {
-    width: 70px;
-    height: 78px;
-    background-position: -85px -290px;
-}
-
-a[href="/rubysmirk"] {
-    width: 70px;
-    height: 80px;
-    background-position: -165px -290px;
-}
-
-a[href="/sebored"] {
-    width: 70px;
-    height: 56px;
-    background-position: -245px -290px;
-}
-
-a[href="/sehahaha"] {
-    width: 70px;
-    height: 70px;
-    background-position: -325px -290px;
-}
-
-a[href="/sesly"] {
-    width: 70px;
-    height: 70px;
-    background-position: -405px -290px;
-}
-
-a[href="/sscaketopper"] {
-    width: 70px;
-    height: 70px;
-    background-position: -485px -290px;
-}
-
-a[href="/starstrucksuave"] {
-    width: 70px;
-    height: 70px;
-    background-position: -565px -290px;
-}
-
-a[href="/sugarbutt"] {
-    width: 150px;
-    height: 88px;
-    background-position: -245px -370px;
-}
-
-a[href="/sugarfree"] {
-    width: 70px;
-    height: 70px;
-    background-position: -645px -290px;
-}
-
-a[href="/sugarico"] {
-    width: 70px;
-    height: 70px;
-    background-position: -5px -370px;
-}
-
-a[href="/sugarscared"] {
-    width: 70px;
-    height: 70px;
-    background-position: -405px -370px;
-}
-
-a[href="/sugarsmarm"] {
-    width: 70px;
-    height: 70px;
-    background-position: -485px -370px;
-}
-
-a[href="/sugarsmile"] {
-    width: 70px;
-    height: 70px;
-    background-position: -565px -370px;
-}
-
-a[href="/sugarwut"] {
-    width: 70px;
-    height: 82px;
-    background-position: -645px -370px;
-}
-
-a[href="/swordbashful"] {
-    width: 70px;
-    height: 70px;
-    background-position: -5px -462px;
-}
-
-a[href="/swordbee"] {
-    width: 101px;
-    height: 77px;
-    background-position: -85px -462px;
-}
-
-a[href="/swordfacehoof"] {
-    width: 70px;
-    height: 70px;
-    background-position: -405px -462px;
-}
-
-a[href="/swordgrr"] {
-    width: 70px;
-    height: 70px;
-    background-position: -485px -462px;
-}
-
-a[href="/swordguilt"] {
-    width: 70px;
-    height: 70px;
-    background-position: -565px -462px;
-}
-
-a[href="/swordlie"] {
-    width: 70px;
-    height: 65px;
-    background-position: -645px -462px;
-}
-
-a[href="/swordmad"] {
-    width: 70px;
-    height: 70px;
-    background-position: -196px -537px;
-}
-
-a[href="/swordmirror"] {
-    width: 112px;
-    height: 150px;
-    background-position: -276px -537px;
-}
-
-a[href="/swordpride"] {
-    width: 100px;
-    height: 158px;
-    background-position: -645px -537px;
-}
-
-a[href="/swordsad"] {
-    width: 70px;
-    height: 70px;
-    background-position: -725px -5px;
-}
-
-a[href="/swordscowl"] {
-    width: 70px;
-    height: 70px;
-    background-position: -725px -85px;
-}
-
-a[href="/swordseesham"] {
-    width: 150px;
-    height: 149px;
-    background-position: -805px -5px;
-}
-
-a[href="/swordshock"] {
-    width: 70px;
-    height: 70px;
-    background-position: -805px -164px;
-}
-
-a[href="/swordshrug"] {
-    width: 70px;
-    height: 70px;
-    background-position: -885px -164px;
-}
-
-a[href="/swordspear"] {
-    width: 170px;
-    height: 189px;
-    background-position: -725px -244px;
-}
-
-a[href="/swordstare"] {
-    width: 150px;
-    height: 149px;
-    background-position: -755px -443px;
-}
-
-a[href="/swordsuave"] {
-    width: 150px;
-    height: 174px;
-    background-position: -5px -602px;
-}
-
-a[href="/sworduham"] {
-    width: 70px;
-    height: 70px;
-    background-position: -905px -244px;
-}
-
-a[href="/swordulan"] {
-    width: 100px;
-    height: 133px;
-    background-position: -398px -602px;
-}
-
-a[href="/synpoker"] {
-    width: 70px;
-    height: 70px;
-    background-position: -905px -324px;
-}
-
-a[href="/synponder"] {
-    width: 70px;
-    height: 70px;
-    background-position: -915px -404px;
-}
-
-a[href="/synsquint"] {
-    width: 70px;
-    height: 70px;
-    background-position: -915px -484px;
-}
-
-a[href="/syntaxadorkable"] {
-    width: 70px;
-    height: 116px;
-    background-position: -508px -564px;
-}
-
-a[href="/syntaxderp"] {
-    width: 70px;
-    height: 70px;
-    background-position: -915px -564px;
-}
-
-a[href="/thiskillsthegame"] {
-    width: 70px;
-    height: 75px;
-    background-position: -165px -644px;
-}
-
-a[href="/thunderdrink"] {
-    width: 70px;
-    height: 99px;
-    background-position: -755px -644px;
-}
-
-a[href="/thunderwut"] {
-    width: 70px;
-    height: 92px;
-    background-position: -835px -644px;
-}
-
-a[href="/nhpoker"]
-{
-    background-image: url(%%spritesheet2%%); background-repeat: no-repeat; display: block; clear: none; float: left;
-}
-a[href="/nhpoker"] {
-    width: 150px;
-    height: 170px;
-    background-position: -5px -5px;
-}
-
 
 /*USER FLAIRS*/
 
@@ -1168,3 +791,209 @@ background-color:#ffe2ab;}
 border: 2px solid #ff2222; border-radius: 20px; 
 padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
 background-color:#brown;}
+
+/* EMOTE SPRITESHEETS (BY CHARACTER) */
+
+/* GAME CHANGER */
+
+a[href|="/gcadorkable"], a[href|="/gcangry"], a[href|="/gcconfident"], a[href|="/gcfacehoof"], a[href|="/gchmm"], a[href|="/gcsmug"], a[href|="/gcwoo"], a[href|="/thiskillsthegame"], a[href|="/gcrevelation"], a[href|="/gcrock"], a[href|="/gcyummy"]
+{background-image:url(%%game-changer%%);display:block;float:left;}
+
+a[href|="/gcadorkable"] {width:70px;height:91px;background-position: 0 0;}
+a[href|="/gcangry"] {width:66px;height:66px;background-position: -70px 0;}
+a[href|="/gcconfident"] {width:70px;height:66px;background-position: -136px 0;}
+a[href|="/gcfacehoof"] {width:66px;height:70px;background-position: -206px 0;}
+a[href|="/gchmm"] {width:70px;height:70px;background-position: -272px 0;}
+a[href|="/gcsmug"] {width:70px;height:78px;background-position: -342px 0;}
+a[href|="/gcwoo"] {width:70px;height:73px;background-position: -412px 0;}
+a[href|="/thiskillsthegame"] {width:69px;height:75px;background-position: -482px 0;}
+a[href|="/gcrevelation"] {width:70px;height:104px;background-position: 0 -100px;}
+a[href|="/gcrock"] {width:70px;height:112px;background-position: -70px -100px;}
+a[href|="/gcyummy"] {width:70px;height:129px;background-position: -140px -100px;}
+
+/* END OF GAME CHANGER */
+
+/* MINT COPY */
+
+a[href|="/mintcopy"], a[href|="/minthappy"], a[href|="/mintmad"], a[href|="/mintsad"], a[href|="/mintthink"]
+{background-image:url(%%mint-copy%%);display:block;float:left;}
+
+a[href|="/mintcopy"] {width:66px;height:69px;background-position: 0 0;}
+a[href|="/minthappy"] {width:70px;height:70px;background-position: -66px 0;}
+a[href|="/mintmad"] {width:66px;height:67px;background-position: -136px 0;}
+a[href|="/mintsad"] {width:70px;height:63px;background-position: -202px 0;}
+a[href|="/mintthink"] {width:70px;height:64px;background-position: -272px 0;}
+
+/* END OF MINT COPY */
+
+/* NIGHTTIME */
+
+a[href|="/nighttimesalute"]
+{background-image:url(%%nighttime%%);display:block;float:left;}
+
+a[href|="/nighttimesalute"] {width:70px;height:57px;background-position: 0 0;}
+
+/* END OF NIGHTTIME */
+
+/* NIMBLE HOOVES */
+
+a[href|="/nimblefun"], a[href|="/nhpoker"], a[href|="/63nimblesmile"], a[href|="/nhcute"], a[href|="/nimblehuhves"], a[href|="/nhboring"]
+{background-image:url(%%nimble-hooves%%);display:block;float:left;}
+
+a[href|="/nimblefun"] {width:150px;height:100px;background-position: 0 -100px;}
+a[href|="/nhpoker"] {width:97px;height:110px;background-position: -150px -100px;}
+a[href|="/63nimblesmile"] {width:71px;height:70px;background-position: 0 0;}
+a[href|="/nhcute"] {width:66px;height:70px;background-position: -71px 0;}
+a[href|="/nimblehuhves"] {width:66px;height:70px;background-position: -137px 0;}
+a[href|="/nhboring"] {width:59px;height:70px;background-position: -203px 0;}
+
+/* END OF NIMBLE HOOVES */
+
+/* PAIGE */
+
+a[href|="/paigehappy"], a[href|="/paigeyell"]
+{background-image:url(%%paige%%);display:block;float:left;}
+
+a[href|="/paigehappy"] {width:65px;height:81px;background-position: 0 0;}
+a[href|="/paigeyell"] {width:67px;height:78px;background-position: -65px 0;}
+
+/* END OF PAIGE */
+
+/* RUBY */
+
+a[href|="/rubybendover"], a[href|="/rubyprimp"], a[href|="/rubyreally"], a[href|="/rubysmirk"]
+{background-image:url(%%ruby%%);display:block;float:left;}
+
+a[href|="/rubybendover"] {width:150px;height:112px;background-position: 0 0;}
+a[href|="/rubyprimp"] {width:70px;height:70px;background-position: -150px 0;}
+a[href|="/rubyreally"] {width:70px;height:78px;background-position: -220px 0;}
+a[href|="/rubysmirk"] {width:70px;height:80px;background-position: -290px 0;}
+
+/* END OF RUBY */
+
+/* STARSTRUCK SYMPHONY */
+
+a[href|="/sscaketopper"], a[href|="/starstrucksuave"]
+{background-image:url(%%starstruck-symphony%%);display:block;float:left;}
+
+a[href|="/sscaketopper"] {width:63px;height:67px;background-position: 0 0;}
+a[href|="/starstrucksuave"] {width:70px;height:69px;background-position: -63px 0;}
+
+/* END OF STARSTRUCK SYMPHONY */
+
+/* SUGAR FREE */
+
+a[href|="/sugarbutt"], a[href|="/sugarfree"], a[href|="/sugarico"], a[href|="/sugarscared"], a[href|="/sugarsmarm"], a[href|="/sugarsmile"], a[href|="/sugarwut"]
+{background-image:url(%%sugar-free%%);display:block;float:left;}
+
+a[href|="/sugarbutt"] {width:150px;height:88px;background-position: 0 0;}
+a[href|="/sugarfree"] {width:69px;height:68px;background-position: -150px 0;}
+a[href|="/sugarico"] {width:70px;height:70px;background-position: -219px 0;}
+a[href|="/sugarscared"] {width:70px;height:70px;background-position: -289px 0;}
+a[href|="/sugarsmarm"] {width:70px;height:70px;background-position: -359px 0;}
+a[href|="/sugarsmile"] {width:68px;height:68px;background-position: -429px 0;}
+a[href|="/sugarwut"] {width:69px;height:82px;background-position: -497px 0;}
+
+/* END OF SUGAR FREE */
+
+/* SWORDULAN */
+
+a[href|="/swordguilt"], a[href|="/swordbee"], a[href|="/swordhoof"], a[href|="/swordberg"], a[href|="/swordlie"], a[href|="/swordsmug"], a[href|="/swordmad"], a[href|="/swordsad"], a[href|="/swordsquint"], a[href|="/swordshock"], a[href|="/swordshrug"], a[href|="/hamntor"], a[href|="/himntor"], a[href|="/swordulan"], a[href|="/swordseesham"], a[href|="/battlestance"], a[href|="/swordstare"], a[href|="/swordtux"], a[href|="/swordserious"]
+{background-image:url(%%swordulan%%);display:block;float:left;}
+
+a[href|="/swordguilt"] {width:69px;height:69px;background-position: 0 0;}
+a[href|="/swordbee"] {width:101px;height:77px;background-position: -69px 0;}
+a[href|="/swordhoof"] {width:68px;height:69px;background-position: -170px 0;}
+a[href|="/swordberg"] {width:69px;height:66px;background-position: -238px 0;}
+a[href|="/swordlie"] {width:70px;height:67px;background-position: -307px 0;}
+a[href|="/swordsmug"] {width:70px;height:65px;background-position: -377px 0;}
+a[href|="/swordmad"] {width:69px;height:67px;background-position: -447px 0;}
+a[href|="/swordsad"] {width:69px;height:65px;background-position: -516px 0;}
+a[href|="/swordsquint"] {width:70px;height:68px;background-position: -585px 0;}
+a[href|="/swordshock"] {width:70px;height:67px;background-position: -655px 0;}
+a[href|="/swordshrug"] {width:69px;height:69px;background-position: -725px 0;}
+a[href|="/hamntor"] {width:69px;height:70px;background-position: -794px 0;}
+a[href|="/himntor"] {width:104px;height:149px;background-position: 0 -100px;}
+a[href|="/swordulan"] {width:100px;height:158px;background-position: -104px -100px;}
+a[href|="/swordseesham"] {width:150px;height:149px;background-position: -204px -100px;}
+a[href|="/battlestance"] {width:170px;height:189px;background-position: -354px -100px;}
+a[href|="/swordstare"] {width:150px;height:149px;background-position: -524px -100px;}
+a[href|="/swordtux"] {width:141px;height:172px;background-position: -674px -100px;}
+a[href|="/swordserious"] {width:88px;height:132px;background-position: -815px -100px;}
+
+/* END OF SWORDULAN */
+
+/* SYNTAX ERROR */ 
+
+a[href|="/sebored"], a[href|="/sehahaha"], a[href|="/sesly"], a[href|="/synpoker"], a[href|="/synponder"], a[href|="/synsquint"], a[href|="/syntaxderp"], a[href|="/syntaxadorkable"], a[href|="/sehuhhuh"], a[href|="/sejoy"], a[href|="/seohhi"], a[href|="/synsmile"], a[href|="/secute"], a[href|="/squintax"], a[href|="/syntaxmeerkat"], a[href|="/robyxmeerkat"], a[href|="/synkathug"], a[href|="/seboring"]
+{background-image:url(%%syntax-error%%);display:block;float:left;}
+
+a[href|="/sebored"] {width:70px;height:56px;background-position: 0 0;}
+a[href|="/sehahaha"] {width:56px;height:69px;background-position: -70px 0;}
+a[href|="/sesly"] {width:67px;height:69px;background-position: -126px 0;}
+a[href|="/synpoker"] {width:105px;height:110px;background-position: -70px -100px;}
+a[href|="/synponder"] {width:61px;height:68px;background-position: -193px 0;}
+a[href|="/synsquint"] {width:67px;height:70px;background-position: -254px 0;}
+a[href|="/syntaxderp"] {width:70px;height:70px;background-position: -321px 0;}
+a[href|="/syntaxadorkable"] {width:70px;height:116px;background-position: 0 -100px;}
+a[href|="/sehuhhuh"] {width:70px;height:70px;background-position: -391px 0;}
+a[href|="/sejoy"] {width:59px;height:70px;background-position: -461px 0;}
+a[href|="/seohhi"] {width:70px;height:70px;background-position: -520px 0;}
+a[href|="/synsmile"] {width:65px;height:70px;background-position: -590px 0;}
+a[href|="/secute"] {width:73px;height:70px;background-position: -655px 0;}
+a[href|="/squintax"] {width:68px;height:70px;background-position: -728px 0;}
+a[href|="/syntaxmeerkat"], a[href|="/robyxmeerkat"] {width:232px;height:150px;background-position: -175px -100px;}
+a[href|="/synkathug"] {width:195px;height:150px;background-position: -407px -100px;}
+a[href|="/seboring"] {width:64px;height:70px;background-position: -796px 0;}
+
+/* END OF SYNTAX ERROR */
+
+/* THUNDER STRIKE */
+
+a[href|="/thunderdrink"], a[href|="/thunderwut"] 
+{background-image:url(%%thunder-strike%%);display:block;float:left;}
+
+a[href|="/thunderdrink"] {width:70px;height:99px;background-position: 0 0;}
+a[href|="/thunderwut"] {width:70px;height:92px;background-position: -70px 0;}
+
+/* END OF THUNDER STRIKE */
+
+/* CLACKER SPOTLIGHT */
+
+a[href|="/cssly"]
+{background-image:url(%%clacker-spotlight%%);display:block;float:left;}
+
+a[href|="/cssly"] {width:65px;height:70px;background-position: 0 0;}
+
+/* END OF CLACKER SPOTLIGHT */
+
+/* FIELD MARKS */
+
+a[href|="/fmcute"]
+{background-image:url(%%field-marks%%);display:block;float:left;}
+
+a[href|="/fmcute"] {width:69px;height:70px;background-position: 0 0;}
+
+/* END OF FIELD MARKS */
+
+/* DUST */
+
+a[href|="/dustshake"] {
+   float:left;
+   width:200px;
+   height:150px;
+   background-image:url(%%dustshake%%);
+}
+
+/* END OF DUST */
+
+/* TECHNICAL WATERS */
+
+a[href|="/techsuspicious"]
+{background-image:url(%%technical-waters%%);display:block;float:left;}
+
+a[href|="/techsuspicious"] {width:71px;height:70px;background-position: 0 0;}
+
+/* END OF TECHNICAL WATERS */
+
+/* END OF EMOTE SPRITESHEETS */

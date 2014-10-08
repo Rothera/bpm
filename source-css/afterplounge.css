@@ -295,20 +295,20 @@ black or #000000 - for all black stuff, including post titles
     /* Primary Theme Color (dark) */
 
 
-.flairselector h2, .tabmenu li a, #header-bottom-right, #userbarToggle, .NERPageMarker,  .roundfield, #sr-header-area, #RESShortcutsEditContainer,  #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash, .fancy-toggle-button .add:active, .RESshortcut.RESshortcutside:active, .RESDashboardToggle:active, .md thead
-{ background-color: #76B8AF !important;}
+
+{ background-color: #4271CA !important;}
 
 .morelink, .morelink:hover, .sidebox.submit.submit-text .morelink:hover, .fancy-toggle-button .add, .RESshortcut.RESshortcutside, .RESDashboardToggle, .fancy-toggle-button .add:hover, #subButtons-mylittlepony .RESshortcut.RESshortcutside:hover, #subButtons-mylittlepony .RESDashboardToggle:hover
-{ background: #76B8AF !important;}
+{ background: #4271CA !important;}
 
-.tabmenu li.selected a, .RESDropdownList, .RESDropdownList a, #RESSubredditGroupDropdown .RESShortcutsEditButtons .delete, #RESSubredditGroupDropdown .RESShortcutsEditButtons .edit, h2
-{ color: #76B8AF !important;}
+.tabmenu li.selected a, #RESSubredditGroupDropdown .RESShortcutsEditButtons .delete, #RESSubredditGroupDropdown .RESShortcutsEditButtons .edit, h2, .icon-menu a, .icon-menu 
+{ color: #4271CA !important;}
 
-.linkinfo, #RESSubredditGroupDropdown, .RESDropdownList, .md table, .md thead, .md tbody, .md tr, .md blockquote, .help blockquote
-{ border: solid #76B8AF !important;}
+.linkinfo, #RESSubredditGroupDropdown, .md table, .md thead, .md tbody, .md tr, .md blockquote, .help blockquote, .flairselector h2, .tabmenu li a, #header-bottom-right, #userbarToggle, .NERPageMarker,  .roundfield, #sr-header-area, #RESShortcutsEditContainer,  #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash, .fancy-toggle-button .add:active, .RESshortcut.RESshortcutside:active, .RESDashboardToggle:active, .md thead, .md blockquote, .entry, .res-commentBoxes .commentarea .comment, .res-commentBoxes .commentarea .comment .comment .comment, .res-commentBoxes .commentarea .comment .comment .comment .comment .comment, .res-commentBoxes .commentarea .comment .comment .comment .comment .comment .comment .comment, .res-commentBoxes .commentarea .comment .comment .comment .comment .comment .comment .comment .comment .comment
+{ border: solid #4271CA !important;}
 
 .linkinfo, .md table, .md thead, .md tbody, .md tr, .md blockquote, .help blockquote
-{ border-color: #76B8AF !important;}
+{ border-color: #4271CA !important;}
 
 
 
@@ -316,33 +316,54 @@ black or #000000 - for all black stuff, including post titles
 
 
 .linkinfo, .linefield, .infobar, .searchpane, .md table
-{ background-color: #C8E3DF !important;}
+{ background-color: #A0B8E4 !important;}
+
 
 
    /* Tertiary Theme Color (light) */
 
 
-.morelink:hover, .sidebox.submit.submit-text .morelink:hover, ::selection, .md blockquote, .help blockquote, #title-field.roundfield:before, .md table
-{ background-color: #D8EBE8 !important;}
+.morelink:hover, .sidebox.submit.submit-text .morelink:hover, ::selection, .help blockquote, #title-field.roundfield:before, .md table
+{ background-color: #D0DCF2 !important;}
 
 .morelink:hover, .sidebox.submit.submit-text .morelink:hover
-{ border-color: #D8EBE8 !important;}
+{ border-color: #D0DCF2 !important;}
 
 
    /* Quaternary Theme Color (very dark) */
 
 
 body >.content >.sharelink ~ .sitetable:before, a.title:link, .sidebox.submit.submit-text .morelink:hover,  .sidebox.submit.submit-link .morelink:hover a, .sidebox.submit.submit-text .morelink:hover a
-{ color: #6AA69E !important;}
+{ color: #4271CA !important;}
 
 #header, #header.res-nightmode, body >.content >.sharelink ~ .sitetable:before, .side form#search input[name="q"]
-{ border-color: #6AA69E !important;}
+{ border-color: #4271CA !important;}
 
 
    /* Fifthwordthing Theme Color (white) */
 
-#RESSubredditGroupDropdown, .RESDropdownList, #RESMainGearOverlay 
+ #RESMainGearOverlay
 { background-color: white !important;}
+
+a.title:visited, .generic-table, .RESDropdownList, .likes .score.likes, span.score, .RESDropdownList a, .linefield, li
+{color: white !important;}
+
+   /* Hexasomething Theme Color (Black) */
+
+.md, .titlebox form.toggle, .leavemoderator, .flairselector h2, .tabmenu li a, #header-bottom-right, #userbarToggle, .NERPageMarker,  .roundfield, #sr-header-area, #RESShortcutsEditContainer,  #RESShortcutsSort, #RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd, #RESShortcutsTrash, .fancy-toggle-button .add:active, .RESshortcut.RESshortcutside:active, .RESDashboardToggle:active, .md thead, .res-commentBoxes .commentarea .comment, .res-commentBoxes .commentarea .comment .comment .comment, .res-commentBoxes .commentarea .comment .comment .comment .comment .comment, .res-commentBoxes .commentarea .comment .comment .comment .comment .comment .comment .comment, .res-commentBoxes .commentarea .comment .comment .comment .comment .comment .comment .comment .comment .comment, .icon-menu a, .icon-menu, #RESSubredditGroupDropdown, .res .RES-keyNav-activeElement,
+.res .commentarea .RES-keyNav-activeElement .md,
+.res .commentarea .RES-keyNav-activeElement.entry .noncollapsed, .RESDropdownList  
+{background-color:black !important;}
+
+
+   /* Transparent Stuff */
+
+.RES-keyNav-activeElement, .commentarea .RES-keyNav-activeElement .md, .commentarea .RES-keyNav-activeElement.entry .noncollapsed 
+{background:url('%%bk50%%') !important;}
+
+
+
+
                                 /* ############------NIGHT MODE------############ */
 
 
@@ -524,8 +545,20 @@ border: 2px solid #CC9900; border-radius: 20px;
 padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
 background-color: #FFD633 }
 
+.flair-nightmare 
+{ color:black ; 
+border-top: 2px solid #B966D4; border-radius: 20px; 
+border-left: 2px solid #4271CA; border-radius: 20px;
+border-right: 2px solid #4271CA; border-radius: 20px;
+border-bottom: 2px solid #B966D4; border-radius: 20px;
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color: #CCDDFF }
 
-
+.flair-night 
+{ color:#4271CA ; 
+border: 2px solid #4271CA; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color: transparent }
 
 .flairselector h2 {
 color: white !important;
@@ -539,7 +572,7 @@ color: white !important;
 
 #header, #header.res-nightmode{
     border-bottom: 1px solid ;
-    background: url(%%wt50%%) !important;
+    background: url(%%bk50%%) !important;
 }
 
 #header-img {
@@ -562,7 +595,7 @@ width: 300px;}
 
 #header-bottom-left{
 padding-top:20px;
-height: 112px;}
+height: 115px;}
 
 .redditname a{
 text-indent:-9001px;
@@ -604,9 +637,10 @@ left: 30px !important;
 
 /* --------------User header (name color, karma color, preferences)------------- */
 
-#header-bottom-right {
+#header-bottom-right { margin-top: 9px !important; padding-left: 13px !important; min-height: 35px !important;
+line-height: 39px!important; border-bottom-left-radius: 25px !important; border: solid 0px !important;
     }
-#userbarToggle { color: #FFFFFF !important;
+#userbarToggle { position: relative !important; margin-top: 25px !important; color: #FFFFFF !important; min-height: 20px !important; border-bottom-left-radius: 10px !important; padding-right: 2px !important; 
     }
 .user {
     padding-left:5px;
@@ -627,9 +661,10 @@ left: 30px !important;
 /**** ----------------announcement bar----------------- ****/
 
 body >.content >.sharelink ~ .sitetable:before { 
-content: "Remember to give us your opinion on using the Afterplounge's wiki as a memorial!"; 
-background-color: #FFFFFF;
-border: 1px solid ;
+content: "Nightmare Night is near!"; 
+background-color: black;
+border: 1px solid;
+color: #6699FF !important;
 
 font-size: 14px; 
 text-align: center;
@@ -677,13 +712,16 @@ div.titlebox p.users-online span.word { display: none }
 
 /* -----===----$$$$$$$$-----Change the color of link, text, and comment areas-------$$$$$$$$$-----===----- */ 
 
-.noncollapsed {background: url('%%wt50%%') left bottom !important;}
+.noncollapsed {background: url('%%bk50%%') left bottom !important;}
 
 .linkinfo {  color: black !important;  }
 
+.author {color: #A0B8E4 !important}
+
+.entry .buttons li a {color: #CDD7E9 !important}
 
 .entry{
-background: url('%%wt50%%') left bottom !important;
+background: url('%%bk50%%') left bottom !important;
 border-radius: 4px !important;
 padding-left: 5px;
 }
@@ -703,12 +741,10 @@ padding-left: 5px;
  color: black !important; border: solid black;
 }
 
-.md {
-background-color:white !important;
-}
+
 
 ul#image-preview-list li {
-background: url(%%wt50%%) !important;
+background: url(%%bk50%%) !important;
 }
 
 
@@ -746,16 +782,16 @@ border-right: 2px solid black !important; border: 2px solid black !important; bo
 }
 
 .rounded {
-background: url(%%wt50%%) !important;
+background: url(%%bk50%%) !important;
 }
 
 
 
 .md blockquote, .help blockquote {
-border-left: 2px solid black !important;
-border-right: 2px solid black !important;
-border-top: 2px solid black !important;
-border-bottom: 2px solid black !important;
+border-left: 2px solid white !important;
+border-right: 2px solid white !important;
+border-top: 2px solid white !important;
+border-bottom: 2px solid white !important;
 border-radius: 4px;
 display:inline-block; 
 content: "Quote: ";
@@ -769,7 +805,7 @@ margin-right: 15px;
 .content .md blockquote:before{content:" Quote: " !important;}
 
 .link .score {
-text-shadow: white 0 0 10px !important;
+text-shadow: white 0 0 12px !important;
 }
 
 .content .md h1{color:#789922 !important;border-bottom:none;padding-bottom:0px}
@@ -787,10 +823,11 @@ font-size: 130% !important;
 /* --------------Change the color of a link post title----------------- */  
 
  a.title:link {
+color: #6699FF !important;
 }
-a.title:visited {
+/* a.title:visited {
  color: #000000 !important;
-}
+} */
 
 
 
@@ -803,7 +840,7 @@ background-color: white !important;
 }
 
 .side {
-background: url(%%wt50%%) !important;
+background: url(%%bk50%%) !important;
 }
 
 
@@ -935,6 +972,7 @@ color: #FFF !important;
 /**** ----------shortcut subreddits---------- ****/
 
 #sr-header-area {
+    padding-top: 4px !important;
     border-bottom: white
     }
 .sr-bar a, .sr-bar .separator {
@@ -1449,7 +1487,9 @@ END-PONYSCRIPT-IGNORE { color: red; }
 
 /* -------------Change background image-------------- */
 
-body {
+
+.res-nightmode body, body {
+    color: white !important;
     background: url('%%background%%') no-repeat fixed left bottom  !important;
    /* background-position: 50px -10px !important; */
-    background-color:#ffffff !important;
+    background-color:black !important;}

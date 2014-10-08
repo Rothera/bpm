@@ -1,6 +1,6 @@
 /*testest*/
 
-.side .titlebox h6 {position:fixed;z-index:1000;bottom:-270px;right:350px;display:block;width:240px;height:286px;padding:0;background:transparent url(%%dolphin%%) no-repeat top left;font-size:0;text-indent:-9999px;overflow:hidden; transition: bottom 1s;}
+.side .titlebox h6 {position:fixed;z-index:1000;bottom:-270px;right:350px;display:block;width:240px;height:286px;padding:0;background:transparent url(%%spookydolphin%%) no-repeat top left;font-size:0;text-indent:-9999px;overflow:hidden; transition: bottom 1s;}
 .side .titlebox h6:hover {bottom:-75px; transition: bottom 1s;}
 
 /*letestestend*/
@@ -126,7 +126,8 @@ a[href|="/filly"]
 
 .author[href$="/Moon-Phase"]:after {content: ' of all things lasers ';}
 
-.author[href$="/Pres"]:after {content: ' Of Flynt Coal ';}
+.author[href$="/PresidentCelestia"]:after {content: ' Of the Pumpkin Patch ';}
+.author[href$="/PresidentCelestia"]:before {content: ' King ';}
 
 .author:before {content: 'Queen ';}
 
@@ -163,6 +164,16 @@ a[href="/flitterheart"] {
     Width: 124px;
     Height: 201px;
     background-image: url(%%flitterheart%%)
+}
+
+a[href="/spookyskellington"] {
+    background-position: 0px 0px;
+    Display: block;
+    Clear: none;
+    Float: left;
+    Width: 118;
+    Height: 114;
+    background-image: url(%%spookyskellington%%)
 }
 
 a[href="/moist"] {
@@ -322,7 +333,7 @@ display:none;
 content: " Garys"
 }
 .users-online .number:after { 
-content: " Garys here now" 
+content: " Spooky Skeletons here now" 
 } 
 
 /* FOOTER */
@@ -612,7 +623,7 @@ blockquote blockquote blockquote {
 	font-size: 140%;
 	background: #68ADCE;
 }
-
+emo
 .side h4+blockquote {
 	display: block;
 	background-color: #EAEAFF;
