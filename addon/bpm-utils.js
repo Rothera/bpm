@@ -160,10 +160,7 @@ var with_dom = (function() {
  * but not on Chrome. Safari presumably has this as well. Defined to be
  * null on platforms that don't support it.
  */
-// NOTE: As of right now, MutationObserver is badly broken on Chrome.
-// https://code.google.com/p/chromium/issues/detail?id=160985
-// Disabling it until they release a fix.
-var MutationObserver = (find_global("MutationObserver") || /*find_global("WebKitMutationObserver") ||*/ find_global("MozMutationObserver") || null);
+var MutationObserver = (find_global("MutationObserver") || find_global("WebKitMutationObserver") || find_global("MozMutationObserver") || null);
 
 /*
  * Wrapper to monitor the DOM for inserted nodes, using either
