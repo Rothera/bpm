@@ -37,14 +37,14 @@ body {
     content: "";
 }
 
-.unmarknsfw-button a[href="#"]:before { content:"un-spoiler"; }
-
 .unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before {
     font-size: 9px !important;
     display: block;
     letter-spacing: normal;
     content:"spoiler";
 }
+
+.unmarknsfw-button a[href="#"]:before { content:"un-spoiler"; }
 
 .thumbnail:empty { background-image: url(%%thumbnails%%) !important; }
 .thumbnail.self { background-position: -0px -120px !important; }

@@ -909,7 +909,8 @@ font-weight:bolder!important
 .linkflair-Album a.thumbnail {border-left:5px solid #ef753d}
 .linkflair-AlbumNSFW a.thumbnail {border-left:5px solid #ef3d3d}
 .linkflair-Announcements a.thumbnail {border-left:5px solid #ed51d8}
-.linkflair-test a.thumbnail {border-left:5px; background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);}
+.linkflair-NSFWD a.thumbnail {border-left:5px solid #64ab64}
+.linkflair-shitpost a.thumbnail {border-left:5px solid #8F5418}
 
 .link .title .linkflairlabel {
 float:right;
@@ -923,7 +924,7 @@ text-align:center;
 color:#000!important;
 border:none!important;
 border-radius:0!important;
-width:90px;
+width:1200px;
 vertical-align:middle;
 padding:5px
 }
@@ -936,7 +937,8 @@ padding:5px
 .linkflair-Album .linkflairlabel,.flairoptionpane .linkflair-Album .linkflairlabel {color:#fff!important;background:#ffd700}
 .linkflair-AlbumNSFW .linkflairlabel,.flairoptionpane .linkflair-AlbumNSFW .linkflairlabel {color:#fff!important;background:#ef3d3d}
 .linkflair-Announcements .linkflairlabel,.flairoptionpane .linkflair-Announcements .linkflairlabel {color:#fff!important;background:#ed51d8}
-.linkflair-Test .linkflairlabel,.flairoptionpane .linkflair-Test .linkflairlabel {background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);}
+.linkflair-NSFWD .linkflairlabel,.flairoptionpane .linkflair-NSFWD .linkflairlabel {color:#fff!important;background: linear-gradient(to bottom, #64ab64 40%,#64ab64 40%,#ef3d3d 100%);}
+.linkflair-shitpost .linkflairlabel {color:#fff!important;background: linear-gradient(to right, red, yellow, green, purple,blue);}
 
 .side .md a[href="http://www.reddit.com/r/ploungeafterdark/"] {
 display:inline-block;
@@ -1075,11 +1077,16 @@ a.author[href$="Drawlestia"]:after{content:" - Created the Header!"}
     float: left;
     display: block;
     }
+    
+    .entry .buttons li+li .report-thing {
+color:#9b0000!important;
+font-weight:bolder!important
+}
 
 /*byebyedownvotes*/
 /*.link .down { display: none; }*/
 
-/*i was dared to do this*/
+/*i was dared to do this
 .sidecontentbox a.author[href$="AphxTwn666"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 .sidecontentbox a.author[href$="AphxTwn666"]:before {font-size:12px!important; visibility:visible!important; content: "Flutter"!important}
 .sidecontentbox a.author[href$="Captain_Awesomex"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
@@ -1090,3 +1097,5 @@ a.author[href$="Drawlestia"]:after{content:" - Created the Header!"}
 .sidecontentbox a.author[href$="Isaaccclark"]:before {font-size:12px!important; visibility:visible!important; content: "Worst"!important}
 .sidecontentbox a.author[href$="MyNameIsNavy"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 .sidecontentbox a.author[href$="MyNameIsNavy"]:before {font-size:12px!important; visibility:visible!important; content: "Pony"!important}
+
+*/

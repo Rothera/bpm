@@ -1444,7 +1444,7 @@ a[href|='/ravenraven'],a[href|='/sausagefest']{
 a[href|="/ravenraven"] {width:477px; height:389px; background-position: -0px -0px}
 a[href|="/sausagefest"] {width:260px; height:270px; background-position: -478px -0px}
 
-a[href|='/drowningsorrows'],a[href|='/wellfuck'],a[href|='/wellftwi']{
+a[href|='/drowningsorrows'],a[href|='/wellfuck'],a[href|='/wellftwi'],a[href|='/peacheyes']{
 
     display: block;
     clear: none;
@@ -1454,6 +1454,7 @@ a[href|='/drowningsorrows'],a[href|='/wellfuck'],a[href|='/wellftwi']{
 a[href|="/drowningsorrows"] {width:200px; height:171px; background-position: 0px 0px}
 a[href|="/wellfuck"] {width:200px; height:199px; background-position: -200px -0px}
 a[href|="/wellftwi"] {width:171px; height:200px; background-position: -400px -0px}
+a[href|="/peacheyes"] {width:112px; height:89px; background-position: -571px -0px}
 
 
 a[href|='/loligagging'],a[href|='/ponyjpeg']{
@@ -1505,8 +1506,19 @@ a.author[href$="Beatbawx"] {color:#FF9933!important}
 a.author[href$="Parasprite"] {color:#D19FE3!important}
 
 /* PROPER GREENTEXT (stolen from plounge, which stole from /r/4chan) */
-.content .md h1 { color: #789922; border-bottom: none!important; padding-bottom: 0px }
-.content .md h1:before { content: ">" }
+.md blockquote {
+    border: 0;
+    margin: 0;
+    color: #789922;
+    display: block;
+    line-height: 0.8
+    }
+
+.md blockquote p:before {
+    content: ">";
+    float: left;
+    display: block;
+    }
 
 /*Social wanted color*/
 .id-t2_894lr{color:#0b0}.id-t2_894lr:before{content:" > "}

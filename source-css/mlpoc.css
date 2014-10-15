@@ -679,7 +679,7 @@ padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
 background-color:tan;}
 
 .flair-technicalwaters
-{ color:cyan; 
+{ color:white; 
 border: 2px solid #006666; border-radius: 20px; 
 padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
 background-color:olive;}
@@ -796,7 +796,7 @@ background-color:#brown;}
 
 /* GAME CHANGER */
 
-a[href|="/gcadorkable"], a[href|="/gcangry"], a[href|="/gcconfident"], a[href|="/gcfacehoof"], a[href|="/gchmm"], a[href|="/gcsmug"], a[href|="/gcwoo"], a[href|="/thiskillsthegame"], a[href|="/gcrevelation"], a[href|="/gcrock"], a[href|="/gcyummy"]
+a[href|="/gcadorkable"], a[href|="/gcangry"], a[href|="/gcconfident"], a[href|="/gcfacehoof"], a[href|="/gchmm"], a[href|="/gcsmug"], a[href|="/gcwoo"], a[href|="/thiskillsthegame"], a[href|="/gcrevelation"], a[href|="/gcrock"], a[href|="/gcyummy"], a[href|="/gcsmile"], a[href|="/gcsad"], a[href|="/gcshock"]
 {background-image:url(%%game-changer%%);display:block;float:left;}
 
 a[href|="/gcadorkable"] {width:70px;height:91px;background-position: 0 0;}
@@ -810,6 +810,9 @@ a[href|="/thiskillsthegame"] {width:69px;height:75px;background-position: -482px
 a[href|="/gcrevelation"] {width:70px;height:104px;background-position: 0 -100px;}
 a[href|="/gcrock"] {width:70px;height:112px;background-position: -70px -100px;}
 a[href|="/gcyummy"] {width:70px;height:129px;background-position: -140px -100px;}
+a[href|="/gcsmile"] {width:70px;height:70px;background-position: -551px 0;}
+a[href|="/gcsad"] {width:70px;height:70px;background-position: -621px 0;}
+a[href|="/gcshock"] {width:58px;height:70px;background-position: -691px 0;}
 
 /* END OF GAME CHANGER */
 
@@ -925,26 +928,32 @@ a[href|="/swordserious"] {width:88px;height:132px;background-position: -815px -1
 
 /* SYNTAX ERROR */ 
 
-a[href|="/sebored"], a[href|="/sehahaha"], a[href|="/sesly"], a[href|="/synpoker"], a[href|="/synponder"], a[href|="/synsquint"], a[href|="/syntaxderp"], a[href|="/syntaxadorkable"], a[href|="/sehuhhuh"], a[href|="/sejoy"], a[href|="/seohhi"], a[href|="/synsmile"], a[href|="/secute"], a[href|="/squintax"], a[href|="/syntaxmeerkat"], a[href|="/robyxmeerkat"], a[href|="/synkathug"], a[href|="/seboring"]
+a[href|="/sebored"], a[href|="/sehahaha"], a[href|="/sesly"], a[href|="/synpoker"], a[href|="/synponder"], a[href|="/synsquint"], a[href|="/syntaxderp"], a[href|="/syntaxadorkable"], a[href|="/sehuhhuh"], a[href|="/sejoy"], a[href|="/seohhi"], a[href|="/synsmile"], a[href|="/secute"], a[href|="/squintax"], a[href|="/syntaxmeerkat"], a[href|="/robyxmeerkat"], a[href|="/synkathug"], a[href|="/seboring"], a[href|="/sefacehoof"], a[href|="/synwb"], a[href|="/sesup"], a[href|="/synfun"], a[href|="/synangry"], a[href|="/syncutestare"]
 {background-image:url(%%syntax-error%%);display:block;float:left;}
 
-a[href|="/sebored"] {width:70px;height:56px;background-position: 0 0;}
-a[href|="/sehahaha"] {width:56px;height:69px;background-position: -70px 0;}
-a[href|="/sesly"] {width:67px;height:69px;background-position: -126px 0;}
-a[href|="/synpoker"] {width:105px;height:110px;background-position: -70px -100px;}
-a[href|="/synponder"] {width:61px;height:68px;background-position: -193px 0;}
-a[href|="/synsquint"] {width:67px;height:70px;background-position: -254px 0;}
-a[href|="/syntaxderp"] {width:70px;height:70px;background-position: -321px 0;}
-a[href|="/syntaxadorkable"] {width:70px;height:116px;background-position: 0 -100px;}
-a[href|="/sehuhhuh"] {width:70px;height:70px;background-position: -391px 0;}
-a[href|="/sejoy"] {width:59px;height:70px;background-position: -461px 0;}
-a[href|="/seohhi"] {width:70px;height:70px;background-position: -520px 0;}
-a[href|="/synsmile"] {width:65px;height:70px;background-position: -590px 0;}
-a[href|="/secute"] {width:73px;height:70px;background-position: -655px 0;}
-a[href|="/squintax"] {width:68px;height:70px;background-position: -728px 0;}
-a[href|="/syntaxmeerkat"], a[href|="/robyxmeerkat"] {width:232px;height:150px;background-position: -175px -100px;}
-a[href|="/synkathug"] {width:195px;height:150px;background-position: -407px -100px;}
-a[href|="/seboring"] {width:64px;height:70px;background-position: -796px 0;}
+a[href|="/sebored"] {width:88px;height:70px;background-position: 0 0;}
+a[href|="/sehahaha"] {width:55px;height:70px;background-position: -88px 0;}
+a[href|="/sesly"] {width:67px;height:70px;background-position: -143px 0;}
+a[href|="/synpoker"] {width:105px;height:110px;background-position: -70px -70px;}
+a[href|="/synponder"] {width:63px;height:70px;background-position: -210px 0;}
+a[href|="/synsquint"] {width:67px;height:70px;background-position: -273px 0;}
+a[href|="/syntaxderp"] {width:70px;height:70px;background-position: -340px 0;}
+a[href|="/syntaxadorkable"] {width:70px;height:115px;background-position: 0 -70px;}
+a[href|="/sehuhhuh"] {width:70px;height:70px;background-position: -410px 0;}
+a[href|="/sejoy"] {width:59px;height:70px;background-position: -480px 0;}
+a[href|="/seohhi"] {width:70px;height:70px;background-position: -539px 0;}
+a[href|="/synsmile"] {width:65px;height:70px;background-position: -609px 0;}
+a[href|="/secute"] {width:73px;height:70px;background-position: -674px 0;}
+a[href|="/squintax"] {width:68px;height:70px;background-position: -747px 0;}
+a[href|="/syntaxmeerkat"], a[href|="/robyxmeerkat"] {width:232px;height:150px;background-position: -175px -70px;}
+a[href|="/synkathug"] {width:195px;height:150px;background-position: -407px -70px;}
+a[href|="/seboring"] {width:64px;height:70px;background-position: -815px 0;}
+a[href|="/sefacehoof"] {width:71px;height:70px;background-position: -879px 0;}
+a[href|="/synwb"] {width:130px;height:150px;background-position: -602px -70px;}
+a[href|="/sesup"] {width:187px;height:150px;background-position: -732px -70px;}
+a[href|="/synfun"] {width:244px;height:150px;background-position: 0 -220px;}
+a[href|="/synangry"] {width:70px;height:70px;background-position: 0 -370px;}
+a[href|="/syncutestare"] {width:78px;height:100px;background-position: -919px -70px;}
 
 /* END OF SYNTAX ERROR */
 
@@ -995,5 +1004,30 @@ a[href|="/techsuspicious"]
 a[href|="/techsuspicious"] {width:71px;height:70px;background-position: 0 0;}
 
 /* END OF TECHNICAL WATERS */
+
+/* DOC HELIX */
+
+a[href|="/dhfacehoof"], a[href|="/dhhahaha"], a[href|="/dhohhi"], a[href|="/dhsly"], a[href|="/dhsquinty"]
+{background-image:url(%%doc-helix%%);display:block;float:left;}
+
+a[href|="/dhfacehoof"] {width:61px;height:70px;background-position: 0 0;}
+a[href|="/dhhahaha"] {width:62px;height:70px;background-position: -61px 0;}
+a[href|="/dhohhi"] {width:70px;height:70px;background-position: -123px 0;}
+a[href|="/dhsly"] {width:70px;height:70px;background-position: -193px 0;}
+a[href|="/dhsquinty"] {width:68px;height:70px;background-position: -263px 0;}
+
+/* END OF DOC HELIX */
+
+/* Aerohead */
+
+a[href|="/aerowb"], a[href|="/aerosup"], a[href|="/aeroangry"], a[href|="/aerocutestare"]
+{background-image:url(%%aerohead%%);display:block;float:left;}
+
+a[href|="/aerowb"] {width:129px;height:150px;background-position: 0 -70px;}
+a[href|="/aerosup"] {width:182px;height:150px;background-position: -129px -70px;}
+a[href|="/aeroangry"] {width:62px;height:70px;background-position: 0 0;}
+a[href|="/aerocutestare"] {width:80px;height:100px;background-position: -311px -70px;}
+
+/* END OF AEROHEAD */
 
 /* END OF EMOTE SPRITESHEETS */

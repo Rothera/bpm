@@ -8,6 +8,20 @@
     margin-right: 0px;
 }
 
+.linkflair-spoilers .thumbnail img {
+    display: none;
+}
+
+.linkflair-spoilers .thumbnail {
+background-image: url(%%thumbnails%%)!important;
+height: 70px;
+background-position: 0 0;
+}
+
+.linkflair-spoilers .thumbnail.self {
+height: 64px!important;
+}
+
 /*tab menu*/
 
 div#header-bottom-left ul.tabmenu {
@@ -285,10 +299,6 @@ body .disabled .morelink a:hover {
 color: #aaa!important;
 text-shadow: none!important;
 cursor: default!important;
-}
-
-#search input[type] {
-  width: 314px;
 }
 
 #searchexpando {
@@ -801,6 +811,76 @@ display:block;clear:none;float:left;width:96px;height:120px;background-image:url
 background-position:0 0;
 }
 
+START-PONYSCRIPT-IGNORE { color: red; }
+
+a[href|="/sunsetapplauds"],a[href|="/rsunsetapplauds"],a[href|="/ssapplauds"],a[href|="/rssapplauds"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 96px;
+    height: 120px;
+    background-image: url(%%stupid-cloudflare%%) !important;
+    -webkit-animation: applause 320ms steps(4) infinite;
+    -moz-animation: applause 320ms steps(4) infinite;
+    -o-animation: applause 320ms steps(4) infinite;
+    animation: applause 320ms steps(4) infinite;
+}
+
+@-webkit-keyframes applause {
+    from { background-position: -0px; }
+    to { background-position: -384px; }
+}
+@-moz-keyframes applause {
+    from { background-position: -0px; }
+    to { background-position: -384px; }
+}
+@-o-keyframes applause {
+    from { background-position: -0px; }
+    to { background-position: -384px; }
+}
+@keyframes applause {
+    from { background-position: -0px; }
+    to { background-position: -384px; }
+}
+
+a[href|="/sunsetlaugh"],a[href|="/sslaugh"],a[href|="/rsunsetlaugh"],a[href|="/rsslaugh"] {
+  display: block;
+  clear: none;
+  background-image: url(%%sslaughstrip%%) !important;
+  width: 112px;
+  height: 114px;
+  pointer-events: none;
+    -webkit-animation: laughss 3.2s steps(40) infinite;
+       -moz-animation: laughss 3.2s steps(40) infinite;
+        -ms-animation: laughss 3.2s steps(40) infinite;
+         -o-animation: laughss 3.2s steps(40) infinite;
+            animation: laughss 3.2s steps(40) infinite;
+}
+
+@-webkit-keyframes laughss {
+   from { background-position:    -0px; }
+     to { background-position: -4480px; }
+}
+
+@-moz-keyframes laughss {
+   from { background-position:    -0px; }
+     to { background-position: -4480px; }
+}
+
+@-ms-keyframes laughss {
+   from { background-position:    -0px; }
+     to { background-position: -4480px; }
+}
+
+@-o-keyframes laughss {
+   from { background-position:    -0px; }
+     to { background-position: -4480px; }
+}
+
+@keyframes laughss {
+   from { background-position:    -0px; }
+     to { background-position: -4480px; }
+}
 
 @-webkit-keyframes ssclap{
 from{background-position: 0}
@@ -811,6 +891,8 @@ to{background-position: -210px}
 from{background-position: 0}
 to{background-position: -210px}
 }
+
+END-PONYSCRIPT-IGNORE { color: red; }
 
 a[href|="/rajlie"],a[href|="/ra00"],a[href|="/rpriceless"],a[href|="/ra10"],a[href|="/rflutterjerk"],a[href|="/ra20"],a[href|="/rflutterroll"],a[href|="/ra30"],a[href|="/rtwipride"],a[href|="/ra01"],a[href|="/rcelestiamad"],a[href|="/ra11"],a[href|="/rtwicrazy"],a[href|="/ra21"],a[href|="/rspikemeh"],a[href|="/ra31"],a[href|="/rlunateehee"],a[href|="/ra02"],a[href|="/rlunawait"],a[href|="/ra12"],a[href|="/rpaperbagderpy"],a[href|="/rpaperbagwizard"],a[href|="/rderpwizard"],a[href|="/ra22"],a[href|="/rabmeh"],a[href|="/ra32"],a[href|="/rajhappy"],a[href|="/rhapplejack"],a[href|="/ra03"],a[href|="/rppfear"],a[href|="/rpinkiefear"],a[href|="/ra13"],a[href|="/rtwibeam"],a[href|="/ra23"],a[href|="/rscootaderp"],a[href|="/rdidneyworl"],a[href|="/rDIDNEYWORL"],a[href|="/ra33"],a[href|="/rraritydaww"],a[href|="/ra04"],a[href|="/rscootacheer"],a[href|="/rlootascoo"],a[href|="/ra14"],a[href|="/rpinkieawe"],a[href|="/rppawe"],a[href|="/rareyouawizard"],a[href|="/ra34"],a[href|="/rajsup"],a[href|="/rajwhatsgood"],a[href|="/ra05"],a[href|="/rflutterwhoa"],a[href|="/rflutterwoah"],a[href|="/ra15"],a[href|="/rrdcry"],a[href|="/ra25"],a[href|="/rsilverspoon"],a[href|="/rsspout"],a[href|="/ra35"],a[href|="/rohcomeon"],a[href|="/rsbcomeon"],a[href|="/ra06"],a[href|="/rppcute"],a[href|="/rcutiepie"],a[href|="/ra16"],a[href|="/rabbored"],a[href|="/rabmerp"],a[href|="/ra26"],a[href|="/rrarityreally"],a[href|="/ra36"],a[href|="/rraritypaper"],a[href|="/rraritynews"],a[href|="/ra07"],a[href|="/rsbbook"],a[href|="/rsweetiebook"],a[href|="/rsbook"],a[href|="/ra17"],a[href|="/rscootaplease"],a[href|="/rscootappeal"],a[href|="/rscootaplz"],a[href|="/ra27"],a[href|="/rapplegasp"],a[href|="/ra37"],a[href|="/rtwiright"],a[href|="/rsatistwied"],a[href|="/ra08"],a[href|="/rcelestiawut"],a[href|="/rwutlestia"],a[href|="/ra18"],a[href|="/rgrannysmith"],a[href|="/rgranny"],a[href|="/roldmareyellsatcloud"],a[href|="/ra28"],a[href|="/rrarishock"],a[href|="/ra38"],a[href|="/rshiningarmor"],a[href|="/rshiningarmour"],a[href|="/ra09"],a[href|="/rchrysalis"],a[href|="/rqueenchrysalis"],a[href|="/rchangelingqueen"],a[href|="/ra19"],a[href|="/rcadence"],a[href|="/rcadance"],a[href|="/rprincesscadance"],a[href|="/rprincesscadence"],a[href|="/rprincessmiamorecadenza"],a[href|="/ra29"],a[href|="/rapplederp"],a[href|="/ra39"],
 a[href|="/rswagintosh"],
@@ -1140,3 +1222,4 @@ background-position:0px -70px!important
 .thing[data-fullname$="n"] ,.thing[data-fullname$="t"] ,.thing[data-fullname$="a"] {
   background-position:0px -170px!important
 }
+
