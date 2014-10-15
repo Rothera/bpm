@@ -51,21 +51,52 @@ def _strip_comments(text):
     return re.sub(r"/\*[^*]*\*+(?:[^/][^*]*\*+)*/", "", text)
 
 def _parse_all_rules(filename, text):
-    # No more text -> EOF
-    while text.strip():
-        # Search through the next pair of brackets. Mismatched pairs, and ones
-        # embedded into strings will break this. Fortunately it'll probably
-        # recover after a rule or two.
-        try:
-            selector_text, text = text.split("{", 1)
-            properties_text, text = text.split("}", 1)
-        except ValueError:
-            print("ERROR: CSS parse error in %r: %s bytes left" % (filename, len(text)))
-            return # Assume no more rules
-        else:
-            selectors = _parse_selectors(selector_text)
-            properties = _parse_properties(properties_text)
-            yield CssRule(selectors, properties)
+    offset = 0
+    while offset < len(text):
+        # Mismatched pairs and brackets in strings will probably break this
+        # quite badly, though it should recover after a rule or two.
+        # Unfortunately it can do strange things while it does.
+        open = text.find("{", offset)
+        if open < 0:
+            rest = text[offset:].strip()
+            if rest:
+                print("ERROR: Junk at end of file %s" % (filename))
+            return
+
+        # Need to find the } that matches this one. This can get complicated due
+        # to @keyframes and the like, which nest blocks.
+        depth = 1
+        start = open + 1
+        nested = False
+        while depth > 0:
+            next_open = text.find("{", start)
+            next_close = text.find("}", start)
+
+            # Need to have a matching brace
+            if next_close < 0:
+                print("ERROR: Premature end of file %s" % (filename))
+                return
+
+            # Check for nested block
+            if next_open > -1 and next_open < next_close:
+                # We found another { before the next }, probably @keyframes
+                depth += 1
+                nested = True
+                start = next_open + 1
+            else:
+                depth -= 1
+                start = next_close + 1
+
+                close = next_close
+
+        selector_text = text[offset:open]
+        properties_text = text[open+1:close]
+
+        selectors = _parse_selectors(selector_text)
+        properties = _parse_properties(properties_text)
+        yield CssRule(selectors, properties)
+
+        offset = close + 1 # Validated already that close isn't negative
 
 def _parse_selectors(text):
     # Breaks if people put commas in weird places, of course...
