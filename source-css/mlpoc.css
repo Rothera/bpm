@@ -792,6 +792,18 @@ border: 2px solid #ff2222; border-radius: 20px;
 padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
 background-color:#brown;}
 
+.flair-dust
+{ color:yellow; 
+border: 2px solid orange; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:blue;}
+
+.flair-jon
+{ color:brown; 
+border: 2px solid lightblue; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#fafafa;}
+
 /* EMOTE SPRITESHEETS (BY CHARACTER) */
 
 /* GAME CHANGER */
@@ -928,7 +940,7 @@ a[href|="/swordserious"] {width:88px;height:132px;background-position: -815px -1
 
 /* SYNTAX ERROR */ 
 
-a[href|="/sebored"], a[href|="/sehahaha"], a[href|="/sesly"], a[href|="/synpoker"], a[href|="/synponder"], a[href|="/synsquint"], a[href|="/syntaxderp"], a[href|="/syntaxadorkable"], a[href|="/sehuhhuh"], a[href|="/sejoy"], a[href|="/seohhi"], a[href|="/synsmile"], a[href|="/secute"], a[href|="/squintax"], a[href|="/syntaxmeerkat"], a[href|="/robyxmeerkat"], a[href|="/synkathug"], a[href|="/seboring"], a[href|="/sefacehoof"], a[href|="/synwb"], a[href|="/sesup"], a[href|="/synfun"], a[href|="/synangry"], a[href|="/syncutestare"]
+a[href|="/sebored"], a[href|="/sehahaha"], a[href|="/sesly"], a[href|="/synpoker"], a[href|="/synponder"], a[href|="/synsquint"], a[href|="/syntaxderp"], a[href|="/syntaxadorkable"], a[href|="/sehuhhuh"], a[href|="/sejoy"], a[href|="/seohhi"], a[href|="/synsmile"], a[href|="/secute"], a[href|="/squintax"], a[href|="/syntaxmeerkat"], a[href|="/robyxmeerkat"], a[href|="/synkathug"], a[href|="/seboring"], a[href|="/sefacehoof"], a[href|="/synwb"], a[href|="/sesup"], a[href|="/synfun"], a[href|="/synangry"], a[href|="/syncutestare"], a[href|="/sepout"]
 {background-image:url(%%syntax-error%%);display:block;float:left;}
 
 a[href|="/sebored"] {width:88px;height:70px;background-position: 0 0;}
@@ -954,6 +966,7 @@ a[href|="/sesup"] {width:187px;height:150px;background-position: -732px -70px;}
 a[href|="/synfun"] {width:244px;height:150px;background-position: 0 -220px;}
 a[href|="/synangry"] {width:70px;height:70px;background-position: 0 -370px;}
 a[href|="/syncutestare"] {width:78px;height:100px;background-position: -919px -70px;}
+a[href|="/sepout"] {width:83px;height:100px;background-position: -244px -220px;}
 
 /* END OF SYNTAX ERROR */
 
@@ -1020,13 +1033,14 @@ a[href|="/dhsquinty"] {width:68px;height:70px;background-position: -263px 0;}
 
 /* Aerohead */
 
-a[href|="/aerowb"], a[href|="/aerosup"], a[href|="/aeroangry"], a[href|="/aerocutestare"]
+a[href|="/aerowb"], a[href|="/aerosup"], a[href|="/aeroangry"], a[href|="/aerocutestare"], a[href|="/aeropout"] 
 {background-image:url(%%aerohead%%);display:block;float:left;}
 
 a[href|="/aerowb"] {width:129px;height:150px;background-position: 0 -70px;}
 a[href|="/aerosup"] {width:182px;height:150px;background-position: -129px -70px;}
 a[href|="/aeroangry"] {width:62px;height:70px;background-position: 0 0;}
 a[href|="/aerocutestare"] {width:80px;height:100px;background-position: -311px -70px;}
+a[href|="/aeropout"] {width:85px;height:100px;background-position: -391px -70px;}
 
 /* END OF AEROHEAD */
 

@@ -166,6 +166,27 @@ a[href|="/sp"] {
     height:0px
 }
 
+START-PONYSCRIPT-IGNORE { 
+    color: red; 
+}
+
+/* So BPM won't include this certain emote. Something something in jokes 
+
+a[href="/grenlitbobonfireagain"], a[href="/sweetieisonfire"], a[href="/sweetiefire"] a[href="/sweetfire"]{
+    background-position: 0px 0px;
+    Display: block;
+    Clear: none;
+    Float: left;
+    Width: 70px;
+    Height: 69px;
+    background-image: url(%%sweeiteisonfire%%) !important
+}
+*/
+END-PONYSCRIPT-IGNORE { 
+    color: red; 
+}
+
+
 
 /*Making the tabs' corners more rounded (stole from r/mylittlepony)
 .tabmenu li a {
@@ -205,11 +226,11 @@ border:none;
 /*start*/
 
 body {
-  /* background-image: url(%%Alwayswatching%%);
+   background-image: url(%%bg%%);
    background-repeat: no-repeat;
    background-position: center center;
    background-attachment:fixed;
-   margin-top: 5px; */
+   margin-top: 0px; 
    background-color:#F6F9FC;  
    font-family:sans-serif;
    }
@@ -219,7 +240,7 @@ html {
     position: relative;
 }
 
-.titlebox h1 a {      /*Going to be that picture thingy on the sidebar? Why's it nec- never mind.*/
+.titlebox h1 a {
     color:#0077BB;  
     font-size:18px;
 }
@@ -233,19 +254,19 @@ h2 {
     margin: 20px  40px 0;
 }*/ /*Makes the searchthingy too spacey and ugly, at least for me*/
 
-/*h5 {  
+h5 {  
     font-family:sans-serif;  
     font-size:1.3em;  
     margin-top:1em;  
     line-height:1.5;  
-} */ /*Which is <h5>?*/
+}  /*Which is <h5>?*/
 
-/*h6 {  
+h6 {  
     font-family:sans-serif;  
     font-size:1.3em;  
     margin-top:1em;  
     line-height:1.5;  
-} */ /*Same with h5.*/
+}  /*Same with h5.*/
 
 /*Header image*/
 
@@ -303,53 +324,27 @@ h2 {
 #sr-header-area {  
     background: #F6F9FC;  
     border-bottom:2px solid #0088CC;  
-    height:11px;  
-    line-height:10px;  
-    margin-top: 2px;
+    height:13px;  
+    line-height:14px;  
+    margin-top: 0px;
 }  
-
-/*Them pesky RES shortcuts stuff*/
-
-#RESShortcutsEditContainer {
-    background: #F6F9FC !important;
-    height:10px !important;
-}
-
-#RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd {
-    width:11px !important;
-    height:10px !important;
-    background:#F6F9FC !important;
-    margin-top:-3px !important;
-}
-
-#RESShortcutsSort {
-    width:11px !important;
-    height:10px !important;
-    background:#F6F9FC !important;
-    margin-top:-5px !important;
-}
-
-#sort-menu.drop-choices {
-    margin-top:6px !important;
-    
-}
 
 .sr-bar a {  
     color:#000;  
-} /*Subreddit bar's letter to be black*/
+}
 
 #sr-header-area .separator {  
     color:#0088CC;  
 } /*Dashthingy at subreddit's bar/*
 
-/*#sr-more-link { 
+#sr-more-link { 
     background-color: #F6F9FC;  
     color:#000;  
-}*/ /*Dunno what this one is/*
+} /*Dunno what this one is/*
 
-/*#sr-header-area .srdrop .selected {  
+#sr-header-area .srdrop .selected {  
     color: #000;  
-} */ /*This one too/*
+}  /*This one too/*
 
 /*Drop down list (dropdown flairchoose thingy and any dropdowns)*/
 
@@ -362,17 +357,17 @@ h2 {
 
 /*.drop-choices a {  
     color:#999  !important;  
-}  */ /*Turns dropdown letters to be grey, don't think it's good with my choice with bg color*/
+}  */ /*Turns dropdown menu letters to be grey, don't think it's good with the choice of bg color*/
 
-/*#sr-header-area div.srdrop a.choice.bottom-option {  
-    color: #0088CC !important;  
+#sr-header-area div.srdrop a.choice.bottom-option {  
+    color: white !important;  
 }  
 
 #sr-header-area div.drop-choices a.choice:hover {  
     background-color: #333 !important;  
-    color: #0088CC !important;  
+    color: white !important;  
 }  
-*/
+
 /*Tab menu*/
 
 .tabmenu li a {  
@@ -403,12 +398,20 @@ h2 {
     left: -15px;
 }  
 
+ul.tabmenu {
+    margin-top:7px;
+}
+
 #header-bottom-right { 
     position:absolute; 
     top:93px;
     right:41px;
     border-top-right-radius: 7px;
 }  
+
+#header-bottom-right.res-navTop { 
+    border-top-right-radius: 0px;
+}
 
 #header-bottom-right a {  
     color:#808080;  
@@ -423,17 +426,14 @@ h2 {
 .res #header-bottom-right {
     position:absolute; 
     right:0px;
-    top:13px;
+    top:15px;
 }
 
 .res #userbarToggle {
     background-color:#ECF2F5;
     color:#BBCCDD;
     border-color:#BBCCDD;
-    /*top:0px;
-    padding:1.5px;
-    height: 24px;*/ /*Don't think it's ever necessary*/
-} /*Hide/show RES toggle button*/
+}
 
 .res .content {
     margin-top:37px; /*was 20px*/
@@ -450,7 +450,11 @@ h2 {
 .res #RESPrefsDropdown {
     margin-top: 0px;
 }
-
+/*
+.res #userbarToggle, .res #RESMainGearOverlay {
+    height: 24px !important;
+}
+*/
 /**************************************************************************************
 Everything below here hasn't been fathomed fully yet, just copypasted because I'm tired and damn is Living_Dead really a CSS wizard.
 ***************************************************************************************/
@@ -496,8 +500,8 @@ Everything below here hasn't been fathomed fully yet, just copypasted because I'
 
 form#search {  
     border: 2px solid #BED5CE;  
-    background:#33AADD;  
-    font-size:0.812em;  
+    background:#33AADD; 
+    font-size:10px;  
     min-height:40px;  
 }  
 
@@ -528,6 +532,14 @@ form#search {
     border: 1px solid #BBCCDD;  
     border-top:none;  
     border-radius:0; 
+}
+
+#moresearchinfo {
+    margin-left:10px !important;
+}
+
+a.searchpane-toggle-hide {
+    margin-top:-20px;
 }
 
 .titlebox {
@@ -562,9 +574,14 @@ form#search {
     color:black;  
 }  
 
-.sidecontentbox .content {  
+.sidecontentbox .content {  /*Did something here*/
     border:1px solid #BBCCDD;  
+    margin-bottom:14px !important;
 }  
+
+ul.content {
+    margin-top:0px !important;
+}
 
 .sidebox .spacer {  
     background:none;
@@ -679,6 +696,10 @@ a.author {
     background-color:transparent !important;
 }
 
+div.title {
+    margin-top:17px;
+}
+
 /*Page Specific tweaks*/  
 
 /* Comment page */  
@@ -742,8 +763,8 @@ textarea {
 }  
 
 input {
-    background:none;  
-}  
+    background:none;
+}
 
 .roundfield {  /* boxes that surround url/title fields*/
     background:#ECF2F5;  
@@ -786,7 +807,7 @@ Someone should reword it because I suck at writing.*/
 ul.tabmenu.formtab {  
     position:relative;  
     right:550px;
-    top:-25px;
+    top:-27px;
 }  
 
 ul.tabmenu.formtab li a{  
@@ -803,42 +824,65 @@ ul.tabmenu.formtab li.selected a{
 
 .formtabs-content {
     border-top: 4px solid #33AADD;
-    z-index: -1;
+    margin-top: 12px !important;
 }
 
 div.spacer { /*Seriously important spacer*/
-    margin-top:9px;
+    margin-top:11px;
 }
-
 
 .icon-menu a {
-background:#F6F9FC;
+    background:none;
 }
 
-/*.content .tabmenu{  Tabs on the mod's edit flair page 
+.content .tabmenu{  /*Tabs on the mod's edit flair page */
     position:relative;
     right:550px;
     top:0;
 }
-*/
+
 .content .tabmenu li#tab-templates li#tab-link_templates  li #tab-grant a {
     color: #333;
 }
 
 .content .tabmenu li.selected a{
-color:#0088CC !important;
+    color:#0088CC !important;
 }
 
 .content .tabmenu a:hover{
-color:#0088CC !important;
+    color:#0088CC !important;
 }
 
 .menuarea li a { /* change the new|rising links in the new tab on front page*/
-color:#333;
+    color:#333;
 }
 
 .menuarea li.selected a {
-color:#0088CC ;
+    color:#0088CC ;
+}
+
+#RESShortcutsRight, #RESShortcutsLeft, #RESShortcutsAdd {
+    width:11px !important;
+    height:10px !important;
+    background:/*#F6F9FC*/transparent !important;
+    margin-top:-1px !important;
+}
+
+#RESShortcutsEditContainer {
+    background: #F6F9FC !important;
+    height:10px !important;
+}
+
+#RESShortcutsSort {
+    width:11px !important;
+    height:10px !important;
+    background:#F6F9FC !important;
+    margin-top:-3px !important;
+}
+
+#sort-menu.drop-choices {
+    margin-top:7px !important;
+    
 }
 
 /*Something something nightmodes that I don't feel copy pasting about*/
@@ -1023,10 +1067,4 @@ textarea#stylesheet_contents {
 .hover.pagename.redditname {
     font-size:0px;
 }
-/*
-ul.tabmenu.formtab {
-    position: relative;
-    right: 550px;
-    top: -30px;
-}
-*/
+

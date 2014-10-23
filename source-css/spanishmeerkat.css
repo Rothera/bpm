@@ -977,6 +977,15 @@ a[href|="/babsderp"], a[href|="/constibab"] {width:191px;height:200px;background
 
 /* End of Normal Spritesheet 3 */
 
+/* Normal Spritesheet 4 */
+
+a[href|="/lunamarine"]
+{background-image:url(%%normal-spritesheet4%%);display:block;float:left;}
+
+a[href|="/lunamarine"] {width:242px;height:200px;}
+
+/* End of Normal Spritesheet 4 */
+
 /* Ship Spritesheet */
 
 a[href|="/lplove"], a[href|="/deathdudeandoldman"], a[href|="/twidashlove"], a[href|="/spanishragerer"], a[href|="/twijacknuzzle"], a[href|="/dranold"]
@@ -1004,7 +1013,7 @@ a[href|="/ajuberpout"] {width:121px;height:160px;background-position: -242px -16
 
 /* Munch Spritesheet (CMC munches will not go here for order's sake) */
 
-a[href|="/cadmunch"], a[href|="/dashiemunch"], a[href|="/twimunch"], a[href|="/twilymunch"], a[href|="/ajmunch"], a[href|="/rarimunch"], a[href|="/applemunch"], a[href|="/scootamunch"], a[href|="/sweetiemunch"], a[href|="/fluttermunch"]
+a[href|="/cadmunch"], a[href|="/dashiemunch"], a[href|="/twimunch"], a[href|="/twilymunch"], a[href|="/ajmunch"], a[href|="/rarimunch"], a[href|="/applemunch"], a[href|="/scootamunch"], a[href|="/sweetiemunch"], a[href|="/fluttermunch"], a[href|="/pinkiemunch"], a[href|="/maudmunch"], a[href|="/trixiemunch"], a[href|="/greatandpowerfulmunch"], a[href|="/ccmunch"], a[href|="/cloudchasermunch"], a[href|="/flittermunch"]
 {background-image:url(%%munch-spritesheet%%);display:block;float:left;}
 
 a[href|="/cadmunch"] {width:182px;height:235px;}
@@ -1016,6 +1025,12 @@ a[href|="/applemunch"] {width:185px;height:235px;background-position: 0 -235px;}
 a[href|="/scootamunch"] {width:211px;height:235px;background-position: -185px -235px;}
 a[href|="/sweetiemunch"] {width:197px;height:235px;background-position: -396px -235px;}
 a[href|="/fluttermunch"] {width:208px;height:235px;background-position: -593px -235px;}
+a[href|="/pinkiemunch"] {width:265px;height:248px;background-position: 0 -470px;}
+a[href|="/maudmunch"] {width:168px;height:235px;background-position: -801px -235px;}
+a[href|="/trixiemunch"] {width:223px;height:235px;background-position: -265px -483px;}
+a[href|="/greatandpowerfulmunch"] {width:223px;height:255px;background-position: 0 -718px;}
+a[href|="/ccmunch"], a[href|="/cloudchasermunch"] {width:193px;height:235px;background-position: -488px -483px;}
+a[href|="/flittermunch"] {width:195px;height:235px;background-position: -681px -483px;} 
 
 /* End of Munch Spritesheet */
 
