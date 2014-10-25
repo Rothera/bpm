@@ -89,12 +89,13 @@ def _parse_all_rules(filename, text):
 
                 close = next_close
 
-        selector_text = text[offset:open]
-        properties_text = text[open+1:close]
+        if not nested:
+            selector_text = text[offset:open]
+            properties_text = text[open+1:close]
 
-        selectors = _parse_selectors(selector_text)
-        properties = _parse_properties(properties_text)
-        yield CssRule(selectors, properties)
+            selectors = _parse_selectors(selector_text)
+            properties = _parse_properties(properties_text)
+            yield CssRule(selectors, properties)
 
         offset = close + 1 # Validated already that close isn't negative
 
