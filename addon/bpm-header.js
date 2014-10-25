@@ -43,5 +43,6 @@ var DEV_MODE = false;
 var DOMAIN_BLACKLIST = [
     "read.amazon.com", // Reads document.styleSheets and crashes
     "outlook.com", // Reported conflict; cause unknown
-    "panelbase.net" // Reported conflict; cause unknown
+    "panelbase.net", // Reported conflict; cause unknown
+    "fimfiction.net"
 ];
