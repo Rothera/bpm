@@ -152,6 +152,19 @@ def classify_emotes(emote_data):
         emotes[name] = bplib.objects.Emote(name, vardata, {}, ignore)
     return emotes
 
+IGNORED_PROPERTIES = [
+    "transform",
+    "-moz-transform",
+    "-webkit-transform",
+    "-ms-transform",
+    "-o-transform",
+
+    "animation",
+    "-moz-animation",
+    "-webkit-animation",
+    "-o-animation"
+]
+
 def _convert_emote(name, suffix, block):
     css = block.css.copy()
 
@@ -197,7 +210,8 @@ def _convert_emote(name, suffix, block):
             del css[p]
 
     for p in css:
-        print("WARNING: emote %r has unknown extra property %r (%r)" % (bplib.combine_name_pair(name, suffix), p, css[p]))
+        if p not in IGNORED_PROPERTIES:
+            print("WARNING: emote %r has unknown extra property %r (%r)" % (bplib.combine_name_pair(name, suffix), p, css[p]))
 
     return bplib.objects.NormalVariant(name, suffix, image_url, size, offset, css)
 
