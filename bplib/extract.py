@@ -122,10 +122,18 @@ def combine_emote_blocks(emote_blocks):
                 base = variants[block.suffix]
                 for (prop, value) in block.css.items():
                     if prop in base.css and bplib.css.prop(base.css[prop]) != bplib.css.prop(value):
-                        print("WARNING: emote %r redefined property %r from base (from %r to %r)" % (
-                            bplib.combine_name_pair(block.name, block.suffix), prop,
-                            base.css[prop], block.css[prop]))
-                base.css.update(block.css)
+                        base_important = "!important" in base.css[prop]
+                        block_important = "!important" in value
+
+                        if base_important and not block_important:
+                            print("WARNING: emote %r redefined property %r from base value %r to %r, keeping base" % (
+                                bplib.combine_name_pair(block.name, block.suffix), prop, base.css[prop], value))
+                        else:
+                            print("WARNING: emote %r redefined property %r from base value %r to %r, using new value" % (
+                                bplib.combine_name_pair(block.name, block.suffix), prop, base.css[prop], value))
+                            base.css[prop] = value
+                    else:
+                        base.css[prop] = value
 
             # Update ignore
             emotes[block.name] = (ignore, variants)
