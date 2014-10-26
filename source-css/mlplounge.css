@@ -1358,6 +1358,12 @@ a.author[href$="DoctorBoson"]:before {font-size:10px!important; visibility:visib
 a.author[href$="TwoWorldsCoexisting"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="TwoWorldsCoexisting"]:before {font-size:10px!important; visibility:visible!important; content: "TwoDogesCoexisting"}
 
+a.author[href$="Fuzzy_Gauntlets"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Fuzzy_Gauntlets"]:before {font-size:10px!important; visibility:visible!important; content: "Fuzzy_Infinity_Gauntlets"}
+
+a.author[href$="Secretly_a_flamingo"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Secretly_a_flamingo"]:before {font-size:10px!important; visibility:visible!important; content: "Secretly_a_flamingo loves the mods <3"}
+
 a.author[href$="1125a"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="1125a"]:before {font-size:10px!important; visibility:visible!important; content: "1125au"}
 
@@ -1382,3 +1388,10 @@ a.author[href$="1125a"]:before {font-size:10px!important; visibility:visible!imp
  }
 #header {background: #FF9100}
 a#header-img-a {padding-right: 80px}
+
+.usertext-body h3{
+color: #000000;
+font-size: 10px;
+}
+
+a[href|="/big!"]:nth-of-type(n) { color: black !important; font-size: 10px !important; cursor: text !important }

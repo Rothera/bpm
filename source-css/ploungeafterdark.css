@@ -1045,7 +1045,7 @@ font-size: 0 !important;
 }
 
 a.author[href$=Captain_Awesomex]:before {
-    content: "Cappy";
+    content: "Cappaveli";
     font-size: 12px;
 
 }
@@ -1083,6 +1083,14 @@ a.author[href$="Drawlestia"]:after{content:" - Created the Header!"}
 color:#9b0000!important;
 font-weight:bolder!important
 }
+
+a[href$="/spoiler"], a[href$="#spoiler"], a[href$="/s"], a[href$="#s"] {  
+    background: #000 !important;  
+    color: #000 !important  
+}  
+a[href$="/spoiler"]:hover, a[href$="#spoiler"]:hover, a[href$="/s"]:hover, a[href$="#s"]:hover {  
+    color: #FFF !important  
+}  
 
 /*byebyedownvotes*/
 /*.link .down { display: none; }*/

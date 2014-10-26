@@ -1,6 +1,6 @@
 /*testest*/
 
-.side .titlebox h6 {position:fixed;z-index:1000;bottom:-270px;right:350px;display:block;width:240px;height:286px;padding:0;background:transparent url(%%spookydolphin%%) no-repeat top left;font-size:0;text-indent:-9999px;overflow:hidden; transition: bottom 1s;}
+.side .titlebox h6 {position:fixed;z-index:1000;bottom:-270px;right:350px;display:block;width:240px;height:286px;padding:0;background:transparent url(%%spookyscary%%) no-repeat top left;font-size:0;text-indent:-9999px;overflow:hidden; transition: bottom 1s;}
 .side .titlebox h6:hover {bottom:-75px; transition: bottom 1s;}
 
 /*letestestend*/
@@ -210,8 +210,8 @@ a[href|="/best"] {
 .arrow.up { background: url(%%waf%%) 0 0; } 
 .arrow.upmod { background: url(%%up%%) 0 0; } 
 
-.arrow.down { background: url(%%yat%%) 0 0; } 
-.arrow.downmod { background: url(%%ta%%) 0 0; }
+.arrow.down { background: url(%%yarg%%) 0 0; } 
+.arrow.downmod { background: url(%%harg%%) 0 0; }
 
 /* THINGS */
 a[href="YATTAA"] {
@@ -401,7 +401,7 @@ a[href="/carrotshock"] { width: 100px; height: 100px; background-position: -115p
 a[href="/celsit"] {width: 100px; height: 90px; background-position: -225px -5px; }
 a[href="/cheershrug"] { width: 100px; height: 100px; background-position: -225px -105px; }
 a[href="/clickityhack"] { width: 100px; height: 100px; background-position: -5px -215px; }
-a[href="/crystalpinkie"] { width: 100px; height: 100px; background-position: -115px -115px; }
+a[href="/crystalpinkie"] { width: 100px; height: 100px; background-position: -115px -215px; }
 a[href="/ewwstraight"] { width: 100px; height: 100px; background-position: -225px -215px; }
 a[href="/flitterexcite"] { width: 100px; height: 110px; background-position: -335px -5px; }
 a[href="/hwpeekaboo"] { width: 100px; height: 100px; background-position: -335px -125px; }
@@ -413,7 +413,7 @@ a[href="/sunsetplot"] { width: 100px; height: 95px; background-position: -335px 
 a[href="/wmflitter"] {width: 100px; height: 115px; background-position: -445px -5px; }
 
 /* 100 by 130 */
-a[href="/babsseed"], a[href="/carrotexcite"], a[href="/carrotpose"], a[href="/ccflitcheer"], a[href="/dtlaugh"], a[href="/dtmad"], a[href="/dtreally"], a[href="/dtwut"], a[href="/harshwhinny"], a[href="/msawkward"], a[href="/professionalism"], a[href="/smithlaugh"] {
+a[href="/babsseed"], a[href="/carrotexcite"], a[href="/carrotpose"], a[href="/ccflitcheer"], a[href="/crystalflit"], a[href="/dtlaugh"], a[href="/dtmad"], a[href="/dtreally"], a[href="/dtwut"], a[href="/harshwhinny"], a[href="/msawkward"], a[href="/professionalism"], a[href="/smithlaugh"] {
     display: block;
     clear: none;
     float: left;
@@ -421,21 +421,22 @@ a[href="/babsseed"], a[href="/carrotexcite"], a[href="/carrotpose"], a[href="/cc
     height: 130px;
     background-image: url(%%100by130%%) !important
 }
-a[href="/babsseed"] { width: 100px; height: 130px; background-position: -5px -5px; }
-a[href="/carrotexcite"] { width: 100px; height: 130px; background-position: -115px -5px; }
-a[href="/carrotpose"] { width: 100px; height: 140px; background-position: -225px -5px; }
-a[href="/ccflitcheer"] { width: 100px; height: 120px; background-position: -5px -155px; }
-a[href="/dtlaugh"] { width: 100px; height: 120px; background-position: -115px -155px; }
-a[href="/dtmad"] { width: 100px; height: 130px; background-position: -225px -155px; }
-a[href="/dtreally"] { width: 100px; height: 130px; background-position: -335px -5px; }
-a[href="/dtwut"] { width: 100px; height: 120px; background-position: -335px -145px; }
-a[href="/harshwhinny"] { width: 100px; height: 130px; background-position: -335px -275px; }
-a[href="/msawkward"] { width: 100px; height: 130px; background-position: -5px -415px; }
-a[href="/professionalism"] { width: 100px; height: 130px; background-position: -115px -415px; }
-a[href="/smithlaugh"] { width: 100px; height: 120px; background-position: -225px -415px; }
+a[href="/babsseed"] { width: 100px; height: 130px; background-position: -10px -10px; }
+a[href="/carrotexcite"] { width: 100px; height: 130px; background-position: -120px -10px; }
+a[href="/carrotpose"] { width: 92px; height: 111px; background-position: -234px -32px; }
+a[href="/ccflitcheer"] { width: 93px; height: 119px; background-position: -14px -161px; }
+a[href="/crystalflit"] {width: 90px; height: 109px; background-position: -460px -12px; }
+a[href="/dtlaugh"] { width: 100px; height: 120px; background-position: -120px -160px; }
+a[href="/dtmad"] { width: 100px; height: 130px; background-position: -230px -160px; }
+a[href="/dtreally"] { width: 100px; height: 130px; background-position: -340px -10px; }
+a[href="/dtwut"] { width: 81px; height: 120px; background-position: -355px -150px; }
+a[href="/harshwhinny"] { width: 100px; height: 130px; background-position: -340px -280px; }
+a[href="/msawkward"] { width: 100px; height: 130px; background-position: -10px -420px; }
+a[href="/professionalism"] { width: 100px; height: 130px; background-position: -120px -420px; }
+a[href="/smithlaugh"] { width: 93px; height: 120px; background-position: -237px -420px; }
 
 /* 100 by 150 */
-a[href="/cantclop"], a[href="/dtdizzy"], a[href="/flitterblush"], a[href="/flitterfilly"], a[href="/grannygimme"], a[href="/hwnotamused"], a[href="/raindropsconcerned"], a[href="/roseluckheart"], a[href="/rosetease"], a[href="/silverhappy"], a[href="/silverhmm"], a[href="/waffle"], a[href="/winterwat"] {
+a[href="/flitterexplains"], a[href="/cantclop"], a[href="/dtdizzy"], a[href="/flitterblush"], a[href="/flitterfilly"], a[href="/grannygimme"], a[href="/hwnotamused"], a[href="/raindropsconcerned"], a[href="/roseluckheart"], a[href="/rosetease"], a[href="/silverhappy"], a[href="/silverhmm"], a[href="/waffle"], a[href="/winterwat"] {
     display: block;
     clear: none;
     float: left;
@@ -443,19 +444,20 @@ a[href="/cantclop"], a[href="/dtdizzy"], a[href="/flitterblush"], a[href="/flitt
     height: 150px;
     background-image: url(%%100by150%%) !important
 }
-a[href="/cantclop"] { width: 100px; height: 150px; background-position: -5px -5px; }
-a[href="/dtdizzy"] { width: 100px; height: 150px; background-position: -115px -5px; }
-a[href="/flitterblush"] { width: 100px; height: 150px; background-position: -225px -5px; }
-a[href="/flitterfilly"] { width: 100px; height: 140px; background-position: -335px -5px; }
-a[href="/grannygimme"] { width: 100px; height: 140px; background-position: -335px -155px; }
-a[href="/hwnotamused"] { width: 100px; height: 150px; background-position: -5px -305px; }
-a[href="/raindropsconcerned"] { width: 150px; height: 140px; background-position: -115px -305px; }
-a[href="/roseluckheart"] { width: 100px; height: 150px; background-position: -275px -305px; }
-a[href="/rosetease"] { width: 100px; height: 150px; background-position: -445px -5px; }
-a[href="/silverhappy"] { width: 100px; height: 140px; background-position: -445px -165px; }
-a[href="/silverhmm"] { width: 100px; height: 140px; background-position: -385px -315px; }
-a[href="/waffle"] { width: 100px; height: 150px; background-position: -5px -465px; }
-a[href="/winterwat"] {width: 100px; height: 151px; background-position: -115px -465px;}
+a[href="/flitterexplains"] {width: 100px; height: 150px; background-position: -5px -5px;}
+a[href="/cantclop"] { width: 83px; height: 150px; background-position: -128px -10px; }
+a[href="/dtdizzy"] { width: 100px; height: 150px; background-position: -230px -10px; }
+a[href="/flitterblush"] { width: 100px; height: 150px; background-position: -340px -10px; }
+a[href="/flitterfilly"] { width: 100px; height: 140px; background-position: -450px -10px; }
+a[href="/grannygimme"] { width: 95px; height: 122px; background-position: -455px -174px; }
+a[href="/hwnotamused"] { width: 100px; height: 150px; background-position: -120px -310px; }
+a[href="/raindropsconcerned"] { width: 144px; height: 140px; background-position: -232px -310px; }
+a[href="/roseluckheart"] { width: 100px; height: 150px; background-position: -390px -310px; }
+a[href="/rosetease"] { width: 100px; height: 150px; background-position: -560px -10px; }
+a[href="/silverhappy"] { width: 100px; height: 140px; background-position: -560px -170px; }
+a[href="/silverhmm"] { width: 87px; height: 140px; background-position: -513px -320px; }
+a[href="/waffle"] { width: 100px; height: 143px; background-position: -120px -474px; }
+a[href="/winterwat"] {width: 100px; height: 151px; background-position: -230px -470px;}
 
 /* 150 by 100 */
 a[href="/abandbabs"], a[href="/berrypounce"], a[href="/cadblush"], a[href="/ccflittada"], a[href="/celstartled"], a[href="/cheerswoon"], a[href="/ddrdhug"], a[href="/dtsshaha"], a[href="/flitterstretch"], a[href="/flufflesquee"], a[href="/fritteryay"], a[href="/lunabored"], a[href="/nataliapoklonskaya"], a[href="/rosescrunch"], a[href="/wintersleep"]{
@@ -500,7 +502,7 @@ a[href="/forgiveme"] { width: 150px; height: 130px; background-position: -321px 
 a[href="/intensegaming"] { width: 150px; height: 120px; background-position: -481px -5px; }
 
 /* 150 by 150 */
-a[href="/berrysocks"], a[href="/bobross"], a[href="/cakestada"], a[href="/cocowave"], a[href="/culminated"], a[href="/flitterannoyed"], a[href="/flitterhi"], a[href="/flitterwhat"], a[href="/grannyumad"], a[href="/grannyworried"], a[href="/harshwat"], a[href="/poetmaud"], a[href="/tgapflutters"], a[href="/winterbutt"], a[href="/woonaexcited"] {
+a[href="/berrysocks"], a[href="/bobross"], a[href="/cakestada"], a[href="/cocowave"], a[href="/culminated"], a[href="/flitterannoyed"], a[href="/flitterhi"], a[href="/flitterwhat"], a[href="/grannyumad"], a[href="/grannyworried"], a[href="/harshwat"], a[href="/poetmaud"], a[href="/shadowflit"], a[href="/tgapflutters"], a[href="/winterbutt"], a[href="/woonaexcited"] {
     display: block;
     clear: none;
     float: left;
@@ -508,21 +510,22 @@ a[href="/berrysocks"], a[href="/bobross"], a[href="/cakestada"], a[href="/cocowa
     height: 150px;
     background-image: url(%%150by150%%) !important
 }
-a[href="/berrysocks"] { width: 150px; height: 155px; background-position: -5px -5px; }
-a[href="/bobross"] { width: 150px; height: 189px; background-position: -165px -5px; }
-a[href="/cakestada"] { width: 150px; height: 140px; background-position: -325px -5px; }
-a[href="/cocowave"] { width: 150px; height: 150px; background-position: -325px -155px; }
-a[href="/culminated"] { width: 150px; height: 150px; background-position: -5px -315px; }
-a[href="/flitterannoyed"] { width: 150px; height: 140px; background-position: -165px -315px; }
-a[href="/flitterhi"] { width: 150px; height: 150px; background-position: -325px -315px; }
-a[href="/flitterwhat"] { width: 142px; height: 150px; background-position: -485px -5px; }
+a[href="/berrysocks"] { width: 150px; height: 155px; background-position: -10px -10px; }
+a[href="/bobross"] { width: 150px; height: 189px; background-position: -170px -10px; }
+a[href="/cakestada"] { width: 121px; height: 132px; background-position: -342px -16px; }
+a[href="/cocowave"] { width: 150px; height: 150px; background-position: -330px -160px; }
+a[href="/culminated"] { width: 150px; height: 150px; background-position: -10px -320px; }
+a[href="/flitterannoyed"] { width: 111px; height: 127px; background-position: -197px -331px; }
+a[href="/flitterhi"] { width: 150px; height: 150px; background-position: -330px -320px; }
+a[href="/flitterwhat"] { width: 142px; height: 150px; background-position: -490px -10px; }
 a[href="/grannyumad"] { width: 150px; height: 150px; background-position: -485px -165px; }
-a[href="/grannyworried"] { width: 150px; height: 140px; background-position: -485px -325px; }
-a[href="/harshwat"] { width: 150px; height: 140px; background-position: -5px -475px; }
-a[href="/poetmaud"] { width: 150px; height: 186px; background-position: -165px -475px; }
-a[href="/tgapflutters"] { width: 150px; height: 144px; background-position: -325px -475px; }
-a[href="/winterbutt"]{ width: 150 px; height: 159px; background-position: -485px -475px; }
-a[href="/woonaexcited"] { width: 150px; height: 150px; background-position: -637px -5px; }
+a[href="/grannyworried"] { width: 150px; height: 140px; background-position: -490px -330px; }
+a[href="/harshwat"] { width: 148px; height: 138px; background-position: -11px -482px; }
+a[href="/poetmaud"] { width: 150px; height: 186px; background-position: -170px -480px; }
+a[href="/shadowflit"] {width: 139px; height: 150px; background-position: -820px -5px; }
+a[href="/tgapflutters"] { width: 140px; height: 134px; background-position: -335px -485px; }
+a[href="/winterbutt"]{ width: 148 px; height: 126px; background-position: -490px -501px; }
+a[href="/woonaexcited"] { width: 139px; height: 144px; background-position: -649px -16px; }
 
 /*color text*/
 

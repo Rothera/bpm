@@ -1,11 +1,12 @@
 /*Banner*/
 #header {
-  background: url(%%header%%) repeat-x scroll top left!important;border:none!important;height:114px!important
+  background: url(%%header%%) repeat-x scroll top left!important;
+  border:none!important;
+  height:114px!important;
 }
 
 #header-img {
-  margin-top: -1px;
-  margin-right: 0px;
+  margin: -1px 0;
 }
 
 .linkflair-spoilers .thumbnail img {
@@ -13,9 +14,8 @@
 }
 
 .linkflair-spoilers .thumbnail {
-  background-image: url(%%thumbnails%%)!important;
+  background: url(%%thumbnails%%) 0 0 !important;
   height: 70px;
-  background-position: 0 0;
 }
 
 .linkflair-spoilers .thumbnail.self {
@@ -41,16 +41,13 @@ div#header-bottom-left ul.tabmenu {
   background: linear-gradient(#FDFCC7, #E98B97, #DD99D9);
   color: #e1e1e1!important;
   background-repeat:repeat-x;
-  border: 2px solid;
-  border-color: transparent;
+  border: 2px solid transparent;
 }
 
 .tabmenu li.selected a {
   background-color: transparent !important;
   color: #000000 !important;
-  border-color: #aa8e8e !important;
-  border-style: solid;
-  border-width: 2px;
+  border: 2px solid #aa8e8e !important;
 }
 
 .tabmenu li.selected a:hover {
@@ -62,9 +59,7 @@ div#header-bottom-left ul.tabmenu {
 .tabmenu li a:hover {
   background-color: transparent!important;
   color: #fbe9ff !important;
-  border-color: #000000 !important;
-  border-style: solid;
-  border-width: 2px;
+  border-color: 2px solid #000000 !important;
 }
 
 /*end tabmenu*/
@@ -77,13 +72,13 @@ div#header-bottom-left ul.tabmenu {
 }
 
 .pagename a {
-  background:url(%%Sunset-Title-9%%) no-repeat 0 0;
-  width:300px;
-  height:66px;
+  background: url(%%Sunset-Title-9%%) no-repeat 0 0;
+  width: 300px;
+  height: 66px;
   content: " <p> ";
   margin: 0 auto;
   display: block;
-  font-size:0;
+  font-size: 0;
 }
 
 .pagename a:hover {
@@ -141,7 +136,7 @@ div#header-bottom-left ul.tabmenu {
 }
 
 .content {
-  margin: 43px 5px 0px 0px;
+  margin: 43px 5px 0 0;
   border-top:2px solid #aa8e8e;
   padding-top:7px;
 }
@@ -163,21 +158,22 @@ body {
   background: url(%%sunsetbg%%) no-repeat fixed center bottom;
 }
 
-.arrow.up { background-image: url(%%arrows%%); 
-  background-position: 0px 0px;
-  height: 20px; width: 15px; 
+.arrow.up { 
+  background: url(%%arrows%%) 0 0;
+  height: 20px;
+  width: 15px; 
 }
 
 .arrow.upmod { 
-  background-image: url(%%arrows%%); 
-  background-position: 0px -20px;
-  height: 20px; width: 15px;  
+  background: url(%%arrows%%) 0 -20px;
+  height: 20px; 
+  width: 15px;  
 }
 
 .arrow.downmod { 
-  background-image: url(%%arrows%%);
-  background-position: 0px -40px;
-  height: 20px; width: 15px;  
+  background: url(%%arrows%%) 0px -40px;
+  height: 20px; 
+  width: 15px;  
 }
 
 .down {
@@ -197,8 +193,7 @@ body {
   color: black;
   background: #ffffff;
   font-weight: bold;
-  margin-left: 25px;
-  margin-top: 5px;
+  margin: 5px auto auto 25px;
 }
 
 .arrow.down:hover:before {
@@ -214,8 +209,7 @@ body {
   color: white;
   background: #000000;
   font-weight: bold;
-  margin-left: 25px;
-  margin-top: 5px;
+  margin: 5px auto auto 25px;
 }
 
 /* Sidebar Buttons */
@@ -294,9 +288,8 @@ body .disabled .morelink:hover .nub {
 
 body .disabled .morelink,
 body .disabled .morelink:hover {
-  border-color: #f5f5f5!important;
-  background-color: #eee;
-  background-image: none!important;
+  border: #f5f5f5!important;
+  background: #eee none !important;
 }
 
 body .disabled .morelink a,
@@ -321,16 +314,19 @@ body .disabled .morelink a:hover {
     **************/
 .flair {
   padding:0;
-  background:none;
+  background:url(%%flair-table%%);
   color:black;
   border:0;
   border-radius:0;
-  background-image:url(%%flair-table%%);
   display:inline-block;
   width:16px;
   height:16px;
   text-indent:-9999px;
   line-height: 240%;
+}
+
+.res-nightmode .tagline .flair {
+  background-color:transparent!important;
 }
 
 a[href|="/ajlie"],a[href|="/a00"],a[href|="/priceless"],a[href|="/a10"],a[href|="/flutterjerk"],a[href|="/a20"],a[href|="/flutterroll"],a[href|="/a30"],a[href|="/twipride"],a[href|="/a01"],a[href|="/celestiamad"],a[href|="/a11"],a[href|="/twicrazy"],a[href|="/a21"],a[href|="/spikemeh"],a[href|="/a31"],a[href|="/lunateehee"],a[href|="/a02"],a[href|="/lunawait"],a[href|="/a12"],a[href|="/paperbagderpy"],a[href|="/paperbagwizard"],a[href|="/derpwizard"],a[href|="/a22"],a[href|="/abmeh"],a[href|="/a32"],a[href|="/ajhappy"],a[href|="/happlejack"],a[href|="/a03"],a[href|="/ppfear"],a[href|="/pinkiefear"],a[href|="/a13"],a[href|="/twibeam"],a[href|="/a23"],a[href|="/scootaderp"],a[href|="/didneyworl"],a[href|="/DIDNEYWORL"],a[href|="/a33"],a[href|="/raritydaww"],a[href|="/a04"],a[href|="/scootacheer"],a[href|="/lootascoo"],a[href|="/a14"],a[href|="/pinkieawe"],a[href|="/ppawe"],a[href|="/areyouawizard"],a[href|="/a34"],a[href|="/ajsup"],a[href|="/ajwhatsgood"],a[href|="/a05"],a[href|="/flutterwhoa"],a[href|="/flutterwoah"],a[href|="/a15"],a[href|="/rdcry"],a[href|="/a25"],a[href|="/silverspoon"],a[href|="/sspout"],a[href|="/a35"],a[href|="/ohcomeon"],a[href|="/sbcomeon"],a[href|="/a06"],a[href|="/ppcute"],a[href|="/cutiepie"],a[href|="/a16"],a[href|="/abbored"],a[href|="/abmerp"],a[href|="/a26"],a[href|="/rarityreally"],a[href|="/a36"],a[href|="/raritypaper"],a[href|="/raritynews"],a[href|="/a07"],a[href|="/sbbook"],a[href|="/sweetiebook"],a[href|="/sbook"],a[href|="/a17"],a[href|="/scootaplease"],a[href|="/scootappeal"],a[href|="/scootaplz"],a[href|="/a27"],a[href|="/applegasp"],a[href|="/a37"],a[href|="/twiright"],a[href|="/satistwied"],a[href|="/a08"],a[href|="/celestiawut"],a[href|="/wutlestia"],a[href|="/a18"],a[href|="/grannysmith"],a[href|="/granny"],a[href|="/oldmareyellsatcloud"],a[href|="/a28"],a[href|="/rarishock"],a[href|="/a38"],a[href|="/shiningarmor"],a[href|="/shiningarmour"],a[href|="/a09"],a[href|="/chrysalis"],a[href|="/queenchrysalis"],a[href|="/changelingqueen"],a[href|="/a19"],a[href|="/cadence"],a[href|="/cadance"],a[href|="/princesscadance"],a[href|="/princesscadence"],a[href|="/princessmiamorecadenza"],a[href|="/a29"],a[href|="/applederp"],a[href|="/a39"],a[href|="/rajlie"],a[href|="/ra00"],a[href|="/rpriceless"],a[href|="/ra10"],a[href|="/rflutterjerk"],a[href|="/ra20"],a[href|="/rflutterroll"],a[href|="/ra30"],a[href|="/rtwipride"],a[href|="/ra01"],a[href|="/rcelestiamad"],a[href|="/ra11"],a[href|="/rtwicrazy"],a[href|="/ra21"],a[href|="/rspikemeh"],a[href|="/ra31"],a[href|="/rlunateehee"],a[href|="/ra02"],a[href|="/rlunawait"],a[href|="/ra12"],a[href|="/rpaperbagderpy"],a[href|="/rpaperbagwizard"],a[href|="/rderpwizard"],a[href|="/ra22"],a[href|="/rabmeh"],a[href|="/ra32"],a[href|="/rajhappy"],a[href|="/rhapplejack"],a[href|="/ra03"],a[href|="/rppfear"],a[href|="/rpinkiefear"],a[href|="/ra13"],a[href|="/rtwibeam"],a[href|="/ra23"],a[href|="/rscootaderp"],a[href|="/rdidneyworl"],a[href|="/rDIDNEYWORL"],a[href|="/ra33"],a[href|="/rraritydaww"],a[href|="/ra04"],a[href|="/rscootacheer"],a[href|="/rlootascoo"],a[href|="/ra14"],a[href|="/rpinkieawe"],a[href|="/rppawe"],a[href|="/rareyouawizard"],a[href|="/ra34"],a[href|="/rajsup"],a[href|="/rajwhatsgood"],a[href|="/ra05"],a[href|="/rflutterwhoa"],a[href|="/rflutterwoah"],a[href|="/ra15"],a[href|="/rrdcry"],a[href|="/ra25"],a[href|="/rsilverspoon"],a[href|="/rsspout"],a[href|="/ra35"],a[href|="/rohcomeon"],a[href|="/rsbcomeon"],a[href|="/ra06"],a[href|="/rppcute"],a[href|="/rcutiepie"],a[href|="/ra16"],a[href|="/rabbored"],a[href|="/rabmerp"],a[href|="/ra26"],a[href|="/rrarityreally"],a[href|="/ra36"],a[href|="/rraritypaper"],a[href|="/rraritynews"],a[href|="/ra07"],a[href|="/rsbbook"],a[href|="/rsweetiebook"],a[href|="/rsbook"],a[href|="/ra17"],a[href|="/rscootaplease"],a[href|="/rscootappeal"],a[href|="/rscootaplz"],a[href|="/ra27"],a[href|="/rapplegasp"],a[href|="/ra37"],a[href|="/rtwiright"],a[href|="/rsatistwied"],a[href|="/ra08"],a[href|="/rcelestiawut"],a[href|="/rwutlestia"],a[href|="/ra18"],a[href|="/rgrannysmith"],a[href|="/rgranny"],a[href|="/roldmareyellsatcloud"],a[href|="/ra28"],a[href|="/rrarishock"],a[href|="/ra38"],a[href|="/rshiningarmor"],a[href|="/rshiningarmour"],a[href|="/ra09"],a[href|="/rchrysalis"],a[href|="/rqueenchrysalis"],a[href|="/rchangelingqueen"],a[href|="/ra19"],a[href|="/rcadence"],a[href|="/rcadance"],a[href|="/rprincesscadance"],a[href|="/rprincesscadence"],a[href|="/rprincessmiamorecadenza"],a[href|="/ra29"],a[href|="/rapplederp"],a[href|="/ra39"] {
@@ -826,8 +822,7 @@ a[href|="/snailssalute"],a[href|="/rsnailssalute"] {
   float:left;
   width:97px;
   height:175px;
-  background-image:url(%%oddballs%%);
-  background-position: -914px 0
+  background:url(%%oddballs%%) -914px 0 !important
 }
 
 a[href|="/snipssalute"],a[href|="/rsnipssalute"] {
@@ -836,8 +831,7 @@ a[href|="/snipssalute"],a[href|="/rsnipssalute"] {
   float:left;
   width:86px;
   height:175px;
-  background-image:url(%%oddballs%%)!important;
-  background-position: -1011px 0
+  background:url(%%oddballs%%) -1011px 0!important
 }
 
 a[href^="/snailssalute"][href*="-combine"] {
@@ -857,9 +851,8 @@ a[href|="/bossysunset"],a[href|="/bossyss"],a[href|="/bowtome"],a[href|="/rbossy
   float:left;
   width:83px;
   height:175px;
-  background-image:url(%%oddballs%%)!important;
-  margin-right:20px;
-  background-position: -831px 0
+  background:url(%%oddballs%%) -831px 0 !important;
+  margin-right:20px
 }
 
 a[href|="/breeziess"],a[href|="/breeziesunset"],a[href|="/rbreeziess"],a[href|="/rbreeziesunset"] {
@@ -868,8 +861,7 @@ a[href|="/breeziess"],a[href|="/breeziesunset"],a[href|="/rbreeziess"],a[href|="
   float:left;
   width:285px;
   height:224px;
-  background-image:url(%%oddballs%%)!important;
-  background-position: -70px 0
+  background:url(%%oddballs%%) -70px 0 !important
 }
 
 a[href|="/sunsetwhy"],a[href|="/sswhy"],a[href|="/rsunsetwhy"],a[href|="/rsswhy"] {
@@ -926,7 +918,6 @@ a[href|="/sunsetgallop"],a[href|="/ssgallop"],a[href|="/rsunsetgallop"],a[href|=
   width:118px;
   height:82px;
   background-image:url(%%sunsetgallop%%)!important;
-  background-position:0 0
 }
 
 a[href|="/evilsunsetidle"],a[href|="/evilssidle"],a[href|="/revilsunsetidle"],a[href|="/revilssidle"] {
@@ -962,8 +953,7 @@ a[href|="/sunsetstainedglass"],a[href|="/ssstainedglass"],a[href|="/rsunsetstain
   float:left;
   width:224px;
   height:224px;
-  background-image:url(%%oddballs%%)!important;
-  background-position: -355px 0
+  background:url(%%oddballs%%) -355px 0 !important;
 }
 
 a[href|="/sunsetspin"],a[href|="/ssspin"],a[href|="/rsunsetspin"],a[href|="/rssspin"] {
@@ -981,8 +971,7 @@ a[href|="/rsunsetspin"],a[href|="/rssspin"] {
   float:left;
   width:65px;
   height:65px;
-  background-image:url(%%sunsetspin%%)!important;
-  background-position:0 -100%
+  background:url(%%sunsetspin%%) 0 -65px !important
 }
 
 a[href|="/sunsetpokerface"],a[href|="/sspokerface"],a[href|="/rsunsetpokerface"],a[href|="/rsspokerface"] {
@@ -1009,8 +998,7 @@ a[href|="/sunsetchubbie"]:hover,a[href|="/sschubbie"]:hover,a[href|="/rsunsetchu
   float:left;
   width:150px;
   height:126px;
-  background-image:url(%%chubbies%%)!important;
-  background-position:0 -100%
+  background:url(%%chubbies%%) 0 -100%!important
 }
 
 a[href|="/chubbiesunset"],a[href|="/chubbiess"],a[href|="/rchubbiesunset"],a[href|="/rchubbiess"] {
@@ -1019,7 +1007,7 @@ a[href|="/chubbiesunset"],a[href|="/chubbiess"],a[href|="/rchubbiesunset"],a[hre
   float:left;
   width:150px;
   height:126px;
-  background-image:url(%%chubbies%%)!important;background-position:0 -200%
+  background:url(%%chubbies%%) 0 -200% !important
 }
 
 a[href|="/chubbiesunset"]:hover,a[href|="/chubbiess"]:hover,a[href|="/rchubbiesunset"]:hover,a[href|="/rchubbiess"]:hover {
@@ -1028,7 +1016,7 @@ a[href|="/chubbiesunset"]:hover,a[href|="/chubbiess"]:hover,a[href|="/rchubbiesu
   float:left;
   width:150px;
   height:126px;
-  background-image:url(%%chubbies%%)!important;background-position:0 -300%
+  background:url(%%chubbies%%) 0 -300% !important
 }
 
 a[href|="/ssterror"],a[href|="/rssterror"] {
@@ -1037,8 +1025,7 @@ a[href|="/ssterror"],a[href|="/rssterror"] {
   float:left;
   width:70px;
   height:70px;
-  background-image:url(%%oddballs%%)!important;
-  background-position: -579px -140px
+  background:url(%%oddballs%%) -579px -140px !important
 }
 
 a[href|="/sshorror"],a[href|="/rsshorror"] {
@@ -1047,8 +1034,7 @@ a[href|="/sshorror"],a[href|="/rsshorror"] {
   float:left;
   width:70px;
   height:70px;
-  background-image:url(%%oddballs%%)!important;
-  background-position: -649px -140px
+  background:url(%%oddballs%%) -649px -140px !important;
 }
 
 a[href|="/sunsetsoda"],a[href|="/sssoda"],a[href|="/rsunsetsoda"],a[href|="/rsssoda"] {
@@ -1057,8 +1043,7 @@ a[href|="/sunsetsoda"],a[href|="/sssoda"],a[href|="/rsunsetsoda"],a[href|="/rsss
   float:left;
   width:109px;
   height:140px;
-  background-image:url(%%oddballs%%)!important;
-  background-position: -579px 0
+  background:url(%%oddballs%%) -579px 0 !important;
 }
 
 a[href|="/sunsetnya"],a[href|="/ssnya"],a[href|="/rsunsetnya"],a[href|="/rssnya"] {
@@ -1067,8 +1052,7 @@ a[href|="/sunsetnya"],a[href|="/ssnya"],a[href|="/rsunsetnya"],a[href|="/rssnya"
   float:left;
   width:143px;
   height:140px;
-  background-image:url(%%oddballs%%)!important;
-  background-position: -688px 0
+  background: url(%%oddballs%%) -688px 0 !important
 }
 
 a[href|="/sunsetwalk"],a[href|="/rsunsetwalk"],a[href|="/sswalk"],a[href|="/rsswalk"] {
@@ -1077,8 +1061,7 @@ a[href|="/sunsetwalk"],a[href|="/rsunsetwalk"],a[href|="/sswalk"],a[href|="/rssw
   float: left;
   width: 98px;
   height: 176px;
-  background-position: -0px -0px;
-  background-image: url(%%sunsetwalk%%)!important
+  background: url(%%sunsetwalk%%)!important
 }
 
 a[href|="/advicesunsetp"], a[href|="/advicesunseth"], a[href|="/advicessp"], a[href|="/advicessh"] {
@@ -1088,7 +1071,7 @@ a[href|="/advicesunsetp"], a[href|="/advicesunseth"], a[href|="/advicessp"], a[h
   position: relative;
   width: 300px;
   height: 300px;
-  background-image: url(%%ssadvice%%), url(%%bullseye%%) !important;
+  background-image: url(%%ssadvice%%) !important;
   text-align: center;
   color: white;
   font-family: Impact, sans-serif;
@@ -1101,12 +1084,11 @@ a[href|="/advicesunsetp"], a[href|="/advicesunseth"], a[href|="/advicessp"], a[h
 
 a[href|="/advicesunseth"], a[href|="/advicessh"] {
   width: 258px;
-  background-image: url(%%ssadvice%%) !important;
   background-position: -0px -300px
 }
 
 a[href|="/advicesunsetp"] em, a[href|="/advicessp"] em, a[href|="/advicesunsetp"] strong, a[href|="/advicessp"] strong {
-  font-style: normal;
+  font-style: normal !important;
   font-weight: normal;
   position: absolute;
   width: 280px;
@@ -1116,7 +1098,7 @@ a[href|="/advicesunsetp"] em, a[href|="/advicessp"] em, a[href|="/advicesunsetp"
 }
 
 a[href|="/advicesunseth"] em, a[href|="/advicessh"] em, a[href|="/advicesunseth"] strong, a[href|="/advicessh"] strong {
-  font-style: normal;
+  font-style: normal !important;
   font-weight: normal;
   position: absolute;
   width: 238px;
@@ -1137,11 +1119,9 @@ a[href|="/clappingsunset"],a[href|="/rclappingsunset"],a[href|="/clappingss"],a[
   display: block;
   clear: none;
   float:left;
-  background-image: url(%%clappingsunset%%)!important;
+  background: url(%%clappingsunset%%)!important;
   height: 70px;
   width: 70px;
-  -webkit-animation: ssclap 275ms steps(3) infinite;
-  animation: ssclap 275ms steps(3) infinite
 }
 
 a[href|="/sunsetapplauds"],a[href|="/rsunsetapplauds"],a[href|="/ssapplauds"],a[href|="/rssapplauds"] {
@@ -1150,8 +1130,7 @@ a[href|="/sunsetapplauds"],a[href|="/rsunsetapplauds"],a[href|="/ssapplauds"],a[
   float:left;
   width:96px;
   height:120px;
-  background-image:url(%%sunsetapplauds%%);
-  background-position:0 0
+  background:url(%%sunsetapplauds%%)
 }
 
 START-PONYSCRIPT-IGNORE { color: red; }
@@ -1213,7 +1192,22 @@ a[href|="/sunsetlaugh"],a[href|="/sslaugh"],a[href|="/rsunsetlaugh"],a[href|="/r
     to {background-position: -4480px}
 }
 
+a[href|="/clappingsunset"],a[href|="/rclappingsunset"],a[href|="/clappingss"],a[href|="/rclappingss"] {
+  -webkit-animation: ssclap 275ms steps(3) infinite;
+  animation: ssclap 275ms steps(3) infinite;
+}
+
 @-webkit-keyframes ssclap {
+  from {background-position: 0}
+  to {background-position: -210px}
+}
+
+@-moz-keyframes ssclap {
+  from {background-position: 0}
+  to {background-position: -210px}
+}
+
+@-o-keyframes ssclap {
   from {background-position: 0}
   to {background-position: -210px}
 }
@@ -1221,6 +1215,39 @@ a[href|="/sunsetlaugh"],a[href|="/sslaugh"],a[href|="/rsunsetlaugh"],a[href|="/r
 @keyframes ssclap {
   from{background-position: 0}
     to{background-position: -210px}
+}
+
+a[href|="/flyingsunset"],a[href|="/flyingss"],a[href|="/rflyingsunset"],a[href|="/rflyingss"] {
+  display: block;
+  clear: none;
+  float: left;
+  background-image: url(%%flyingss%%) !important;
+  width: 230px;
+  height: 250px;
+  -webkit-animation: flyingss 2.9s steps(58) infinite;
+  -moz-animation: flyingss 2.9s steps(58) infinite;
+  -o-animation: flyingss 2.9s steps(58) infinite;
+  animation: flyingss 2.9s steps(58) infinite;
+}
+
+@-webkit-keyframes flyingss {
+  from {background-position: 0}
+  to {background-position: -13340px}
+}
+
+@-moz-keyframes flyingss {
+  from {background-position: 0}
+  to {background-position: -13340px}
+}
+
+@-o-keyframes flyingss {
+  from {background-position: 0}
+  to {background-position: -13340px}
+}
+
+@keyframes flyingss {
+  from{background-position: 0}
+    to{background-position: -13340px}
 }
 
 END-PONYSCRIPT-IGNORE {color: red}
@@ -1258,7 +1285,8 @@ a[href|="/rsshorror"],
 a[href|="/rsunsetsoda"],a[href|="/rsssoda"],
 a[href|="/rsunsetnya"],a[href|="/rssnya"],
 a[href|="/rsunsetwalk"],a[href|="/rsswalk"],
-a[href|="/rsunsetclap"],a[href|="/rssclap"] {
+a[href|="/rsunsetclap"],a[href|="/rssclap"],
+a[href|="/flyingsunset"],a[href|="/flyingss"] {
   -webkit-transform:scaleX(-1);
   -moz-transform:scaleX(-1);
   -ms-transform:scaleX(-1);
@@ -1279,11 +1307,13 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 }
 
 .side .md table:nth-of-type(1) tr:nth-of-type(odd) td:after {
-  background-image:url(%%sunnyamotes%%);
+  background-image: url(%%sunnyamotes%%);
   height:70px
 }
-
-.side .md table:nth-of-type(2) tr:nth-of-type(odd) td:after {background-image:url(%%sunnybmotes%%);height:70px}
+.side .md table:nth-of-type(2) tr:nth-of-type(odd) td:after {
+  background-image:url(%%sunnybmotes%%);
+  height:70px
+}
 .side .md table:nth-of-type(3) td {text-align:center!important}
 .side .md table:nth-of-type(4) td {text-align:center!important}
 
@@ -1294,10 +1324,7 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 }
 
 .side .md tr,td {
-  border-top-style:none;
-  border-right-style:1px solid #CCC !important;
-  border-bottom-style:1px solid #CCC !important;
-  border-left-style:1px solid #CCC !important;
+  border-style:none 1px solid #CCC 1px solid #CCC !important;
   padding:0px!important
 }
 
@@ -1314,18 +1341,18 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 
 /*Tabs*/
 .side .md h1 {
-  font-family:verdana, arial, helvetica, sans-serif;
-  font-size:12px;
-  border-width:1px 1px medium;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 12px;
+  border-width: 1px 1px medium;
   border-style: solid solid none;
   border-color: #CCC;
-  display:block;
-  cursor:pointer;
-  text-align:center;
-  margin:0;
-  padding:0;
-  width:99.5%;
-  height:16px;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 99.5%;
+  height: 16px;
 }
 
 .side .md table {margin:0;width:99.75%!important}
@@ -1425,93 +1452,6 @@ a.thumbnail.self{margin-right:-14px}
   left:-14px;
   z-index:1000;
   display:inline-block;
-  overflow:hidden
-}
-
-.thing.self h4 {
-  width:100%;
-  font-style:normal;
-  font-size:2em;
-  background: -webkit-linear-gradient(#fdfcc7, #e98b97, #dd99d9);
-  background: -moz-linear-gradient(#fdfcc7, #e98b97, #dd99d9);
-  background: -ms-linear-gradient(#fdfcc7, #e98b97, #dd99d9);
-  background: -o-linear-gradient(#fdfcc7, #e98b97, #dd99d9);
-  background: linear-gradient(#fdfcc7, #e98b97, #dd99d9);
-  color: #4a243c!important;
-  margin-left:-6px;
-  padding-right:11px;
-  display:block;
-  overflow:visible;
-  white-space:nowrap;
-  font-variant:small-caps
-}
-
-.thing.self h4.imgCaptions:before {display:none;}
-
-.thing.self h4.imgCaptions {
-  font-size:1em;
-  background:transparent;
-  color:inherit;
-  margin:0;
-  padding:0;
-  font-variant:normal
-}
-
-input[value="t3_xy2aw"] + div.usertext-body .SuperRedditAltTextDisplay_Text{display:none!important}
-
-.thumbnail:empty {
-  background-image:url(%%thumbnails%%)!important
-}
-
-.thumbnail.self {
-  background-position:0px -120px!important
-}
-
-.thumbnail.default {
-  background-position:0px -70px!important
-}
-
-.thing[data-fullname$="d"] ,.thing[data-fullname$="i"] ,.thing[data-fullname$="s"] ,.thing[data-fullname$="c"] ,.thing[data-fullname$="e"] ,
-.thing[data-fullname$="n"] ,.thing[data-fullname$="t"] ,.thing[data-fullname$="a"] {
-  background-position:0px -170px!important
-}
-
-/* Headers */
-
-.titlebox .usertext-body .md h7 {
-  background-image:none;
-  height:46px;
-  padding:23px 0px 0px 0px;
-  color:white;
-  font-size:14pt;
-  text-align:center;
-  color:black;
-  font-family: Georgia,"Times New Roman",Times,sans-serif;
-}
-
-.titlebox li h4 {padding-top: 4px}
-
-.thing.self .entry{padding-left:14px}
-a.thumbnail.self{margin-right:-14px}
-.thing.self .md{overflow:visible!important}
-
-.thing.self .md>p:last-of-type:after {
-  content:"";
-  display:inline-block;
-  padding-right:100%!important
-}
-
-.thing.self h4:before {
-  content:"";
-  width:100%;
-  background:transparent url(%%fancyheaders%%) no-repeat bottom left;
-  width:14px;
-  height:46px;
-  margin-bottom:-19px;
-  position:relative;
-  left:-14px;
-  z-index:1000;
-  display:inline-block;
   overflow:hidden;
 }
 
@@ -1534,9 +1474,19 @@ a.thumbnail.self{margin-right:-14px}
 }
 
 .thing.self h4.imgCaptions:before {display:none;}
-.thing.self h4.imgCaptions {font-size:1em;background:transparent;color:inherit;margin:0;padding:0;font-variant:normal;}
-input[value="t3_xy2aw"] + div.usertext-body .SuperRedditAltTextDisplay_Text{display:none!important}
 
+.thing.self h4.imgCaptions {
+  font-size:1em;
+  background:transparent;
+  color:inherit;
+  margin:0;
+  padding:0;
+  font-variant:normal;
+}
+
+input[value="t3_xy2aw"] + div.usertext-body .SuperRedditAltTextDisplay_Text {
+  display:none!important
+}
 
 .thumbnail:empty {
   background-image:url(%%thumbnails%%)!important
@@ -1546,15 +1496,14 @@ input[value="t3_xy2aw"] + div.usertext-body .SuperRedditAltTextDisplay_Text{disp
   background-position:0px -120px!important
 }
 
-
-
 .thumbnail.default {
-  background-position:0px -70px!important
+  background-position:0px -70px!important;
+  height:50px!important
 }
 
-.thing[data-fullname$="d"] ,.thing[data-fullname$="i"] ,.thing[data-fullname$="s"] ,.thing[data-fullname$="c"] ,.thing[data-fullname$="e"] ,
-.thing[data-fullname$="n"] ,.thing[data-fullname$="t"] ,.thing[data-fullname$="a"] {
-  background-position:0px -170px!important
+.thing[data-fullname$="d"], .thing[data-fullname$="i"], .thing[data-fullname$="s"], .thing[data-fullname$="c"],
+.thing[data-fullname$="e"], .thing[data-fullname$="n"], .thing[data-fullname$="t"], .thing[data-fullname$="a"] {
+  background:0px -170px!important
 }
 
 .nsfw-stamp acronym {

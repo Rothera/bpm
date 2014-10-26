@@ -1002,18 +1002,18 @@ a[href|="/twijacknuzzle"], a[href|="/dranold"] {width:272px;height:150px;backgro
 a[href|="/ajuberpout"], a[href|="/fsuberpout"], a[href|="/ppuberpout"], a[href|="/raruberpout"], a[href|="/rduberpout"], a[href|="/twiuberpout"]
 {background-image:url(%%pout-spritesheet%%);display:block;float:left;}
 
-a[href|="/twiuberpout"] {width:121px;height:160px;}
-a[href|="/raruberpout"] {width:121px;height:160px;background-position: -121px 0;}
-a[href|="/ppuberpout"] {width:121px;height:160px;background-position: -242px 0;}
-a[href|="/rduberpout"] {width:121px;height:160px;background-position: 0 -160px;}
-a[href|="/fsuberpout"] {width:121px;height:160px;background-position: -121px -160px;}
-a[href|="/ajuberpout"] {width:121px;height:160px;background-position: -242px -160px}
+a[href|="/twiuberpout"] {width:121px;height:158px;}
+a[href|="/raruberpout"] {width:121px;height:158px;background-position: -121px 0;}
+a[href|="/ppuberpout"] {width:121px;height:158px;background-position: -242px 0;}
+a[href|="/rduberpout"] {width:121px;height:158px;background-position: 0 -162px;}
+a[href|="/fsuberpout"] {width:121px;height:158px;background-position: -121px -162px;}
+a[href|="/ajuberpout"] {width:121px;height:158px;background-position: -242px -162px}
 
 /* End of Pout Spritesheet */
 
-/* Munch Spritesheet (CMC munches will not go here for order's sake) */
+/* Munch Spritesheet 1 */
 
-a[href|="/cadmunch"], a[href|="/dashiemunch"], a[href|="/twimunch"], a[href|="/twilymunch"], a[href|="/ajmunch"], a[href|="/rarimunch"], a[href|="/applemunch"], a[href|="/scootamunch"], a[href|="/sweetiemunch"], a[href|="/fluttermunch"], a[href|="/pinkiemunch"], a[href|="/maudmunch"], a[href|="/trixiemunch"], a[href|="/greatandpowerfulmunch"], a[href|="/ccmunch"], a[href|="/cloudchasermunch"], a[href|="/flittermunch"]
+a[href|="/cadmunch"], a[href|="/dashiemunch"], a[href|="/twimunch"], a[href|="/twilymunch"], a[href|="/ajmunch"], a[href|="/rarimunch"], a[href|="/applemunch"], a[href|="/scootamunch"], a[href|="/sweetiemunch"], a[href|="/fluttermunch"], a[href|="/pinkiemunch"], a[href|="/maudmunch"], a[href|="/trixiemunch"], a[href|="/greatandpowerfulmunch"], a[href|="/ccmunch"], a[href|="/cloudchasermunch"], a[href|="/flittermunch"], a[href|="/lyramunch"]
 {background-image:url(%%munch-spritesheet%%);display:block;float:left;}
 
 a[href|="/cadmunch"] {width:182px;height:235px;}
@@ -1028,11 +1028,21 @@ a[href|="/fluttermunch"] {width:208px;height:235px;background-position: -593px -
 a[href|="/pinkiemunch"] {width:265px;height:248px;background-position: 0 -470px;}
 a[href|="/maudmunch"] {width:168px;height:235px;background-position: -801px -235px;}
 a[href|="/trixiemunch"] {width:223px;height:235px;background-position: -265px -483px;}
-a[href|="/greatandpowerfulmunch"] {width:223px;height:255px;background-position: 0 -718px;}
+a[href|="/greatandpowerfulmunch"] {width:222px;height:255px;background-position: 0 -718px;}
 a[href|="/ccmunch"], a[href|="/cloudchasermunch"] {width:193px;height:235px;background-position: -488px -483px;}
 a[href|="/flittermunch"] {width:195px;height:235px;background-position: -681px -483px;} 
+a[href|="/lyramunch"] {width:192px;height:235px;background-position: -222px -738px;} 
 
-/* End of Munch Spritesheet */
+/* End of Munch Spritesheet 1 */
+
+/* Munch Spritesheet 2 */
+
+a[href|="/bonmunch"]
+{background-image:url(%%munch-spritesheet2%%);display:block;float:left;}
+
+a[href|="/bonmunch"] {width:188px;height:235px;}
+
+/* End of Munch Spritesheet 2 */
 
 /* Single Emotes */
 

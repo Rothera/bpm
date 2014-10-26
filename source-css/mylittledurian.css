@@ -55,6 +55,22 @@ a.author.id-t2_a26t0{content:"";font-size:0px!important;display:inline-block;ver
 a.author.id-t2_a26t0:after{font-size:8px!important;display:block;letter-spacing:normal}
 a.author.id-t2_a26t0:after {content:"I had nothing to do with anything in here"}
 
+a.author[href$="/eytosh"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+}
+
+a.author[href$="/eytosh"]:after {
+    content: "toshyba";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+} 
+
 /*Emotes*/
 
 a[href="/spikeurgh"],a[href="/spikehmph"],a[href="/spikeangry"],a[href="/angryspike"] {
@@ -158,6 +174,15 @@ a[href="/coloneye"],a[href="/sweetiemote"] {
     background-image: url(%%coloneye%%) !important
 }
 
+a[href="/pphonk"], a[href="/h0nk"], a[href="/pph0nk"], a[href="/pinkiehonk"], a[href="/pinkieh0nk"] {
+    background-position: 0px 0px;
+    Display: block;
+    Clear: none;
+    Float: left;
+    Width: 177px;
+    Height: 150px;
+    background-image: url(%%h0nk%%) !important
+}
 
 a[href|="/sp"] {
     display:inline-block;
@@ -170,18 +195,18 @@ START-PONYSCRIPT-IGNORE {
     color: red; 
 }
 
-/* So BPM won't include this certain emote. Something something in jokes 
+/* So BPM won't include this certain emote. Something something in jokes */
 
-a[href="/grenlitbobonfireagain"], a[href="/sweetieisonfire"], a[href="/sweetiefire"] a[href="/sweetfire"]{
+a[href="/grenlitbobonfireagain"], a[href="/sweetieisonfire"], a[href="/sweetiefire"] a[href="/sweetfire"], a[href="/bobisonfire"], a[href="/bobdudeisonfire"] {
     background-position: 0px 0px;
     Display: block;
     Clear: none;
     Float: left;
-    Width: 70px;
-    Height: 69px;
-    background-image: url(%%sweeiteisonfire%%) !important
+    Width: 170px;
+    Height: 200px;
+    background-image: url(%%sweetieisonfire%%) !important
 }
-*/
+
 END-PONYSCRIPT-IGNORE { 
     color: red; 
 }
@@ -375,7 +400,7 @@ h6 {
     background: url(%%50tile%%) !important;
     border: none;
     font-size:14px;  
-    margin: 0 14px 0;  
+    margin: 0 10px 0;  /*margin-right was 14px*/
     line-height:1.4;
 }  
 
@@ -426,7 +451,7 @@ ul.tabmenu {
 .res #header-bottom-right {
     position:absolute; 
     right:0px;
-    top:15px;
+    top:88.5px;
 }
 
 .res #userbarToggle {
@@ -1053,6 +1078,34 @@ a[href$="/spoiler"]:hover {
     background: white;
 }
 
+/* Announcement Bar */
+.pagename {
+    font-size: 12pt
+    }
+.titlebox form {
+    position: static
+    }
+.titlebox .usertext-body .md ol {
+    width: auto;
+    background: url(%%mlp%%) no-repeat scroll 100% 5px #EFF7FF;
+    border: 1px solid #5f99cf;
+    position: absolute;
+    top: 15px;
+    left: 37%;
+    z-index:20px 310px 0 0;
+    padding: 8px 45px 8px 8px;
+    list-style: none;
+    display: block;
+    white-space: normal;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 10000000
+    }
+.titlebox .usertext-body .md ol li {
+    margin: 1px;
+    list-style: none
+    }
+
 /*end*/
 /*That's pretty much I could copy paste, now to find some position flaws.*/
 
@@ -1068,3 +1121,10 @@ textarea#stylesheet_contents {
     font-size:0px;
 }
 
+a#sr-more-link {
+    background:#F6F9FC;
+    margin-top:-1px !important;
+}
+div.bottom {
+    margin-bottom:14px;
+}
