@@ -1,3 +1,12 @@
+a[href|="/tddance"] {
+    float:left;
+    width:200px;
+    height:177px;
+    background-repeat:no-repeat;
+    background-image:url(%%tddance%%);
+}
+
+
 a[href|="/tdboop"] {
     float:left;
     width:300px;
@@ -80,8 +89,7 @@ a[href|="/tdwub"] {
 
 
 /* Spritesheet 1 */
-a[href|="/lightshow"], a[href|="/chibitwidash"], a[href|="/tdpassion"], a[href|="/readingismagic"], a[href|="/readingismagic"], a[href|="/tdkiss"], a[href|="/tditllbeok"], a[href|="/tdsleep"]{
-
+a[href|="/lightshow"], a[href|="/chibitwidash"], a[href|="/tdpassion"], a[href|="/readingismagic"], a[href|="/readingismagic"], a[href|="/tdkiss"], a[href|="/tditllbeok"], a[href|="/tdsleep"] {
     display: block;
     clear: none;
     float: left;
@@ -276,4 +284,66 @@ a[href|="/tdsleep2"] {
     width: 250px;
     height: 135px;
     background-position: -215px -150px;
+}
+
+/* Spritesheet 5 */
+a[href|="/tdeyesuphere"], a[href|="/tdfilly"], a[href|="/tdkissagain"], a[href|="/tdmassage"], a[href|="/tdschool"], a[href|="/tdschool2"], a[href|="/tdsnug"], a[href|="/tdwinghug"], a[href|="/tdwonderbolts"] {
+    float: left;
+    background-image: url(%%spritesheet5%%);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+a[href|="/tdeyesuphere"] {
+    width: 250px;
+    height: 169px;
+    background-position: -3px -140px;
+}
+
+a[href|="/tdfilly"] {
+    width: 200px;
+    height: 193px;
+    background-position: -3px -315px;
+}
+
+a[href|="/tdkissagain"] {
+    width: 180px;
+    height: 193px;
+    background-position: -3px -514px;
+}
+
+a[href|="/tdmassage"] {
+    width: 200px;
+    height: 164px;
+    background-position: -3px -713px;
+}
+
+a[href|="/tdschool"] {
+    width: 200px;
+    height: 137px;
+    background-position: -3px -883px;
+}
+
+a[href|="/tdschool2"] {
+    width: 150px;
+    height: 151px;
+    background-position: -3px -1026px;
+}
+
+a[href|="/tdsnug"] {
+    width: 200px;
+    height: 178px;
+    background-position: -3px -1183px;
+}
+
+a[href|="/tdwinghug"] {
+    width: 250px;
+    height: 177px;
+    background-position: -3px -1367px;
+}
+
+a[href|="/tdwonderbolts"] {
+    width: 200px;
+    height: 182px;
+    background-position: -3px -1550px;
 }

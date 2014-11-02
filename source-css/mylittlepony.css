@@ -161,7 +161,7 @@ border-top-right-radius: 5px;
 }
 */
 
-#header-bottom-left{padding-top:28px}
+#header-bottom-left{padding-top:35px}
 .pagename {font-size:12pt}
 .titlebox form{position: static}
 .titlebox .usertext-body .md ol
@@ -174,7 +174,7 @@ border-top-right-radius: 5px;
  top:30px;
  left:180px;
  z-index:50;
- margin:22px 250px 0 0;
+ margin:44px 250px 0 0; /*Usually 22px 250px 0 0*/
  padding:8px 6px;
  padding-right:12px;
  list-style:none;
@@ -205,7 +205,7 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%derpy-hat%%);
+ background:url(%%pinkie-stache-hat%%);
  width:60px;
  height:60px;
  margin-top:-35px;
@@ -825,6 +825,9 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 
 .flair-coco
 {background-position:-300% -1800%}
+
+.flair-cmchaz {background-position: -300% -100%}
+.flair-cmchaz:hover {background-position: -200% -700%}
 
 
 

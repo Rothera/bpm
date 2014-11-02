@@ -209,7 +209,7 @@ div.thing.link:first-child:after {
  height: 70px;
  border: 0;
  content: "";
- background:url(%%nightmarefilly%%)
+ background:url(%%filly-table%%)
 }
 
 div.thing.link:first-child[data-fullname$="0"]:after{background-position: 0 0}
@@ -260,7 +260,7 @@ input[name=uh] ~ a:after {
  height: 70px;
  border: 0;
  content: "";
- background:url(%%nightmarefilly%%)
+ background:url(%%filly-table%%)
 }
 
 input[name=uh][value$="0"] ~ a:after {background-position: 0 0}
@@ -617,7 +617,7 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 
 
 a[href|="/filly"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%nightmarefilly%%)!important}
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%filly-table%%)!important}
 
 /*Rarity*/
 .usertext input[value$="a"] + .usertext-body a[href="/filly"]{background-position: 0 0}
@@ -1165,6 +1165,65 @@ a[href|="/engtavicheer"] {
  background-image: url(%%itscominghome2%%);
 } 
 
+
+/* GIVE EVERY COMMENT THE RANDOM FILLY! */
+.commentarea .usertext{min-height: 140px; margin-top: -70px}
+
+.commentarea .usertext-body{padding-left: 70px}
+
+.commentarea .usertext-body:before{
+ display:block;
+ width: 70px;
+ height: 70px;
+ content: "";
+ position: relative;
+ top: 70px;
+ right: 70px;
+ background:url(%%filly-table%%)
+}
+
+.usertext-edit{padding-top: 70px}
+
+.usertext input[value$="a"] + .usertext-body:before{background-position: 0 0}
+.usertext input[value$="b"] + .usertext-body:before{background-position:0 -100%}
+.usertext input[value$="c"] + .usertext-body:before{background-position:0 -200%}
+.usertext input[value$="d"] + .usertext-body:before{background-position:0 -300%}
+.usertext input[value$="e"] + .usertext-body:before{background-position:0 -400%}
+.usertext input[value$="f"] + .usertext-body:before{background-position:0 -500%}
+.usertext input[value$="g"] + .usertext-body:before{background-position:0 -600%}
+.usertext input[value$="h"] + .usertext-body:before{background-position:0 -700%}
+.usertext input[value$="i"] + .usertext-body:before{background-position:0 -800%}
+.usertext input[value$="j"] + .usertext-body:before{background-position:0 -900%}
+.usertext input[value$="k"] + .usertext-body:before{background-position:0 -1000%}
+.usertext input[value$="l"] + .usertext-body:before{background-position:0 -1100%}
+.usertext input[value$="m"] + .usertext-body:before{background-position:-100% 0}
+.usertext input[value$="n"] + .usertext-body:before{background-position:-100% -100%}
+.usertext input[value$="o"] + .usertext-body:before{background-position:-100% -200%}
+.usertext input[value$="p"] + .usertext-body:before{background-position:-100% -300%}
+.usertext input[value$="q"] + .usertext-body:before{background-position:-100% -400%}
+.usertext input[value$="r"] + .usertext-body:before{background-position:-100% -500%}
+.usertext input[value$="s"] + .usertext-body:before{background-position:-100% -600%}
+.usertext input[value$="t"] + .usertext-body:before{background-position:-100% -700%}
+.usertext input[value$="u"] + .usertext-body:before{background-position:-100% -800%}
+.usertext input[value$="v"] + .usertext-body:before{background-position:-100% -900%}
+.usertext input[value$="w"] + .usertext-body:before{background-position:-100% -1000%}
+.usertext input[value$="x"] + .usertext-body:before{background-position:-100% -1100%}
+.usertext input[value$="y"] + .usertext-body:before{background-position:-200% 0}
+.usertext input[value$="z"] + .usertext-body:before{background-position:-200% -100%}
+.usertext input[value$="1"] + .usertext-body:before{background-position:-200% -200%}
+.usertext input[value$="2"] + .usertext-body:before{background-position:-200% -300%}
+.usertext input[value$="3"] + .usertext-body:before{background-position:-200% -400%}
+.usertext input[value$="4"] + .usertext-body:before{background-position:-200% -500%}
+.usertext input[value$="5"] + .usertext-body:before{background-position:-200% -600%}
+.usertext input[value$="6"] + .usertext-body:before{background-position:-200% -700%}
+.usertext input[value$="7"] + .usertext-body:before{background-position:-200% -800%}
+.usertext input[value$="8"] + .usertext-body:before{background-position:-200% -900%}
+.usertext input[value$="9"] + .usertext-body:before{background-position:-200% -1000%}
+.usertext input[value$="0"] + .usertext-body:before{background-position:-200% -1100%}
+
+
+/*End of every comment random filly*/
+
 /* Begin Flair Code */
 
 /*This block sets the properties for all of the flairs. This requires them to be a uniform size, and come from the same image. !important can be used elsewhere to overwrite for unique flares.*/
@@ -1309,17 +1368,13 @@ a[href|="/engtavicheer"] {
 /*HOVER FLAIRS! Because yay. Follow same formating to make a new one*/
 
 .flair-cmcdarkle {background-position: -300% -100%}
-.flair-cmcdarkle:hover {background-position: 0% -1300%} /*For Darkle; Cadence Hover*/
+.flair-cmcdarkle:hover {background-position: -100% -2100%} /*For Darkle; Sunset Shimmer Hover*/
 .flair-cmclunar {background-position: -300% -100%}
 .flair-cmclunar:hover {background-position: -300% -800%} /*For LunarWolves; NMM Hover*/
 .flair-cmcal {background-position: -300% -100%}
 .flair-cmcal:hover {background-position: -200% -300%} /*For french_guy_al; Tavi Hover*/
 .flair-cmcdc {background-position: -300% -100%}
-.flair-cmcdc:hover {background-position: -100% -200%} /*For DoomedCivilian; Thunderlane Hover*/ 
-
-/*Doomed Civilians to-add list; Feel free to add to this list!
-Emotes! Main sub has more emotes; They have been moved over, they just need to be messed with. Fear the DC, for he is bored. Lunar edit: Let's try to not change things as often.
-*/
+.flair-cmcdc:hover {background-position: -100% -200%} /*For DoomedCivilian; 'tia Hover*/ 
 
 /* End Flair */
 
@@ -1338,13 +1393,7 @@ a.author[href$="HeWho_MustNotBeNamed"] {font-size:0!important; overflow:hidden; 
 a.author[href$="HeWho_MustNotBeNamed"]:before {font-size:10px!important; visibility:visible!important; content: "ErDer_HastNamenNicht"}
 
 a.author[href$="DaylightDarkle"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="DaylightDarkle"]:before {font-size:10px!important; visibility:visible!important; content: "Pylo"}
-
-.sidecontentbox a.author[href$="LunarWolves"], .sidecontentbox a.author[href$="DaylightDarkle"], .sidecontentbox a.author[href$="french_guy_al"], .sidecontentbox a.author[href$="DoomedCivilian"]{font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-.sidecontentbox a.author[href$="LunarWolves"]:before {font-size:12px!important; visibility:visible!important; content: "Batman"!important}
-.sidecontentbox a.author[href$="DaylightDarkle"]:before {font-size:12px!important; visibility:visible!important; content: "Scarecrow"!important}
-.sidecontentbox a.author[href$="french_guy_al"]:before {font-size:12px!important; visibility:visible!important; content: "The Riddler"!important}
-.sidecontentbox a.author[href$="DoomedCivilian"]:before {font-size:12px!important; visibility:visible!important; content: "The Joker"!important}
+a.author[href$="DaylightDarkle"]:before {font-size:10px!important; visibility:visible!important; content: "Spookfeast420"}
 
 a.author[href$="Peacefulzealot"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="Peacefulzealot"]:before {font-size:10px!important; visibility:visible!important; content: "CenturyZellyBelly"}
@@ -1369,29 +1418,3 @@ a.author[href$="1125a"]:before {font-size:10px!important; visibility:visible!imp
 
 .sidecontentbox a.author[href$="Pinkie_Pie"] {font-size:0!important; overflow:hidden; display:none; content: "";}
 
-/*Nightmare Stuff*/
-.arrow.upmod, .res.res-nightmode .arrow.upmod {width: 15px; height: 15px; background: url(%%votes%%); background-position: 0 0}
-.arrow.up, .res.res-nightmode .arrow.up {width: 15px; height: 15px; background: url(%%votes%%); background-position: 0 -15px}
-.arrow.down, .res.res-nightmode .arrow.down {width: 15px; height: 15px; background: url(%%votes%%); background-position: 0 -30px}
-.arrow.downmod, .res.res-nightmode .arrow.downmod {width: 15px; height: 15px; background: url(%%votes%%); background-position: 0 -45px}
-
-.pagename a {
- background: url(%%gothictitle%%);
- background-repeat: no-repeat;
- display: block;
- position: absolute;
- top: -5px;
- left: -120px;
- width: 122px;
- height: 26px;
- text-indent: -9999px;
- }
-#header {background: #FF9100}
-a#header-img-a {padding-right: 80px}
-
-.usertext-body h3{
-color: #000000;
-font-size: 10px;
-}
-
-a[href|="/big!"]:nth-of-type(n) { color: black !important; font-size: 10px !important; cursor: text !important }

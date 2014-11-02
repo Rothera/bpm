@@ -1,3 +1,13 @@
+.stickied {
+    background-color:black;
+}
+.stickied .title {
+    color:orange!important;
+}
+.stickied-tagline {
+    color:white!important;
+}
+
 /*testest*/
 
 .side .titlebox h6 {position:fixed;z-index:1000;bottom:-270px;right:350px;display:block;width:240px;height:286px;padding:0;background:transparent url(%%spookyscary%%) no-repeat top left;font-size:0;text-indent:-9999px;overflow:hidden; transition: bottom 1s;}
@@ -145,7 +155,7 @@ a[href|="/filly"]
 #header { background: url(%%up%%); }
 
 /* BACKGROUND */
-body { background: url(%%4waffleLite%%)
+body { background: url(%%SPOOKS1%%)
 
 repeat fixed center center ; }
 
@@ -338,7 +348,7 @@ content: " Spooky Skeletons here now"
 
 /* FOOTER */
 .footer-parent:after {
-    content: url(%%wafflestare%%);
+    content: url(%%spoopywafflestare%%);
 }
 
 /* [](/sp) */

@@ -979,10 +979,11 @@ a[href|="/babsderp"], a[href|="/constibab"] {width:191px;height:200px;background
 
 /* Normal Spritesheet 4 */
 
-a[href|="/lunamarine"]
+a[href|="/lunamarine"], a[href|="/ssdistraught"], a[href|="/sunsetfear"]
 {background-image:url(%%normal-spritesheet4%%);display:block;float:left;}
 
 a[href|="/lunamarine"] {width:242px;height:200px;}
+a[href|="/ssdistraught"], a[href|="/sunsetfear"] {width:140px;height:150px;background-position: 0 -200px;}
 
 /* End of Normal Spritesheet 4 */
 
@@ -1037,10 +1038,12 @@ a[href|="/lyramunch"] {width:192px;height:235px;background-position: -222px -738
 
 /* Munch Spritesheet 2 */
 
-a[href|="/bonmunch"]
+a[href|="/bonmunch"], a[href|="/woonamunch"], a[href|="/tiamunch"]
 {background-image:url(%%munch-spritesheet2%%);display:block;float:left;}
 
 a[href|="/bonmunch"] {width:188px;height:235px;}
+a[href|="/woonamunch"] {width:187px;height:235px;background-position: -188px 0px;} 
+a[href|="/tiamunch"] {width:196px;height:235px;background-position: -375px 0px;}
 
 /* End of Munch Spritesheet 2 */
 

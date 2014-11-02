@@ -912,6 +912,7 @@ font-weight:bolder!important
 .linkflair-Announcements a.thumbnail {border-left:5px solid #ed51d8}
 .linkflair-NSFWD a.thumbnail {border-left:5px solid #64ab64}
 .linkflair-shitpost a.thumbnail {border-left:5px solid #8F5418}
+.linkflair-halloween a.thumbnail {border-left:5px solid #E08722}
 
 .link .title .linkflairlabel {
 float:right;
@@ -939,7 +940,10 @@ padding:5px
 .linkflair-AlbumNSFW .linkflairlabel,.flairoptionpane .linkflair-AlbumNSFW .linkflairlabel {color:#fff!important;background:#ef3d3d}
 .linkflair-Announcements .linkflairlabel,.flairoptionpane .linkflair-Announcements .linkflairlabel {color:#fff!important;background:#ed51d8}
 .linkflair-NSFWD .linkflairlabel,.flairoptionpane .linkflair-NSFWD .linkflairlabel {color:#fff!important;background: linear-gradient(to bottom, #64ab64 40%,#64ab64 40%,#ef3d3d 100%);}
-.linkflair-shitpost .linkflairlabel {color:#fff!important;background: linear-gradient(to right, red, yellow, green, purple,blue);}
+.linkflair-shitpost .linkflairlabel, .flairoptionpane .linkflair-shitpost .linkflairlabel {color:#fff!important;background: linear-gradient(to right, red, yellow, green, purple,blue);}
+.linkflair-halloween .linkflairlabel,.flairoptionpane .linkflair-Halloween .linkflairlabel {color:#fff!important;background: linear-gradient(to bottom, black, orange, black);}
+
+.flairoptionpane ul:nth-child(2) li:nth-child(6) { display: none !important; }
 
 .side .md a[href="http://www.reddit.com/r/ploungeafterdark/"] {
 display:inline-block;
@@ -1063,7 +1067,8 @@ a.author[href$=MyNameIsNavy]:before {
 }
 
 a.author[href$="Drawlestia"]:after{content:" - Created the Header!"}
-
+a.author[href$="NtmrMoon"]:after{color: #D6B52F; content:" - 1st place Costume Contest Winner!"}
+a.author[href$="willowmvp227"]:after{color: #D6B52F; content:" - 2nd place Costume Contest Winner!"}
 /*greentext*/
 .md blockquote {
     border: 0;
