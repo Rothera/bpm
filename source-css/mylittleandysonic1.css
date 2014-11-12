@@ -6,12 +6,27 @@ body:first-of-type, body.res-nightmode:first-of-type {
 }
 
 /* Banner image and associated height values */
-
  #header #header-bottom-left {
-   background: url(%%joker%%) 50% 0px !important;
+   background: url(%%SecretSanta4%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
+
+
+/* TEMPORARY SPOOPY BANNER
+ #header #header-bottom-left  {
+background: url(%%spook2%%)    !important;
+    -webkit-animation: banimate 3s steps(23) infinite;-moz-animation: banimate 3s steps(23) infinite;-ms-animation: banimate 3s steps(23) infinite;-o-animation: banimate 3s steps(23) infinite;animation: banimate 3s steps(23) infinite; 
+}
+
+
+
+@-webkit-keyframes banimate {from{background-position: 0 0;}to{ background-position: 0px -6048px; }} 
+@-moz-keyframes banimate {from {background-position: 0 0;}to{ background-position: 0px -6048px; } } 
+@-ms-keyframes banimate{from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
+@-o-keyframes banimate {from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
+@keyframes banimate {from { background-position: 0 0; }to{ background-position: 0px -6048px; } } 
+*/
 
 
 .gilded-icon{
@@ -25,8 +40,8 @@ body:first-of-type, body.res-nightmode:first-of-type {
     transform:translate(500px , 0px)
 }
 
-/*
-.side a[href="https://webchat.mlas1.org/?nick=Gummy...&channels=mlas1&prompt=1"]
+
+.side a[href="http://www.elfster.com/exchange/view/12491809/bac071/"]
 {
    display:block;
    width: 512px;
@@ -38,7 +53,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
    z-index: 99 !important;
    margin-left: -256px;
 }
-*/
+
 
 #header-bottom-right
 {
@@ -59,7 +74,7 @@ margin-left: 100px;
 */
 
 /* above text */
-margin-top: 1px;
+margin-top: 123px;
 margin-bottom: 31px;
 
 }

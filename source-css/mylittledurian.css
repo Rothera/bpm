@@ -471,7 +471,10 @@ ul.tabmenu {
     right:41px;
     border-top-right-radius: 7px;
     bottom:0px;
-}  
+}  /*
+span.user, span-seperator, a.pref-lang.choice {
+    margin-top:10px;
+}*/
 #header-bottom-right.res-navTop {                      
     border-top-left-radius: 4px;    
     border-top-right-radius: 0px;  
@@ -1573,3 +1576,8 @@ a.author[href$="/The8BitF0x"]:after {
     display: block;
     letter-spacing: normal
 } 
+
+
+div#main.adzerk-vote {
+    margin-top:50px !important;
+}

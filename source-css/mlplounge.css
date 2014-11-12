@@ -162,9 +162,9 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  padding-bottom: 220px;
  clear:both;
  text-align:center;
- height:525px;
+ height:575px;
  width:100%;
- background-image:url(%%footer525%%);
+ background-image:url(%%footer575%%);
  background-repeat:no-repeat;
  margin-bottom:-25px;
  background-position: bottom center;
@@ -1167,22 +1167,20 @@ a[href|="/engtavicheer"] {
 
 
 /* GIVE EVERY COMMENT THE RANDOM FILLY! */
-.commentarea .usertext{min-height: 140px; margin-top: -70px}
-
-.commentarea .usertext-body{padding-left: 70px}
+.commentarea .usertext{padding-left: 70px; min-height: 140px; margin-top: -70px}
 
 .commentarea .usertext-body:before{
  display:block;
  width: 70px;
  height: 70px;
- content: "";
+ content: " ";
  position: relative;
  top: 70px;
  right: 70px;
  background:url(%%filly-table%%)
 }
 
-.usertext-edit{padding-top: 70px}
+.commentarea .usertext-edit:not(.viewSource){padding-top: 70px; margin-left: -70px}
 
 .usertext input[value$="a"] + .usertext-body:before{background-position: 0 0}
 .usertext input[value$="b"] + .usertext-body:before{background-position:0 -100%}
@@ -1220,6 +1218,8 @@ a[href|="/engtavicheer"] {
 .usertext input[value$="8"] + .usertext-body:before{background-position:-200% -900%}
 .usertext input[value$="9"] + .usertext-body:before{background-position:-200% -1000%}
 .usertext input[value$="0"] + .usertext-body:before{background-position:-200% -1100%}
+
+.usertext input[value$="5r"] + .usertext-body:before{background-position: 0 0!important; background:url(%%hiddenbee%%)!important}
 
 
 /*End of every comment random filly*/
@@ -1375,6 +1375,9 @@ a[href|="/engtavicheer"] {
 .flair-cmcal:hover {background-position: -200% -300%} /*For french_guy_al; Tavi Hover*/
 .flair-cmcdc {background-position: -300% -100%}
 .flair-cmcdc:hover {background-position: -100% -200%} /*For DoomedCivilian; 'tia Hover*/ 
+.flair-pathd {background-position: -100% 0%}
+.flair-pathd:hover {background-position: -100% -2200%} /*Pathogen-David had a old flair like we had; fixed it with RTwi Hover*/
+
 
 /* End Flair */
 
@@ -1401,20 +1404,17 @@ a.author[href$="Peacefulzealot"]:before {font-size:10px!important; visibility:vi
 a.author[href$="ZephyrC"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="ZephyrC"]:before {font-size:10px!important; visibility:visible!important; content: "| ZephyrC |"}
 
-a.author[href$="DoctorBoson"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="DoctorBoson"]:before {font-size:10px!important; visibility:visible!important; content: "DucktorBoson"} 
-
 a.author[href$="TwoWorldsCoexisting"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="TwoWorldsCoexisting"]:before {font-size:10px!important; visibility:visible!important; content: "TwoDogesCoexisting"}
 
 a.author[href$="Fuzzy_Gauntlets"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="Fuzzy_Gauntlets"]:before {font-size:10px!important; visibility:visible!important; content: "Fuzzy_Infinity_Gauntlets"}
 
-a.author[href$="Secretly_a_flamingo"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="Secretly_a_flamingo"]:before {font-size:10px!important; visibility:visible!important; content: "Secretly_a_flamingo loves the mods <3"}
-
 a.author[href$="1125a"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="1125a"]:before {font-size:10px!important; visibility:visible!important; content: "1125au"}
+
+a.author[href$="A_Shitty_MLP_Sketch"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="A_Shitty_MLP_Sketch"]:before {font-size:10px!important; visibility:visible!important; content: "A_Good_MLP_Sketch"}
 
 .sidecontentbox a.author[href$="Pinkie_Pie"] {font-size:0!important; overflow:hidden; display:none; content: "";}
 
