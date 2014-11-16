@@ -2,7 +2,33 @@ body {
   background: url(%%maudbackg%%) no-repeat fixed center bottom;
 }
 
-/*** Spoiler Tags ***/
+/*** Thumbnails ***/
+
+.thumbnail:empty { background-image: url(%%thumbnails%%) !important; }
+.thumbnail.self { background-position: -0px -120px !important; }
+.thumbnail.nsfw { visibility: hidden !important; }
+.thumbnail.default { background-position: -0px -70px !important; }
+
+.linkflair-spoilers .thumbnail img {
+    display: none;
+}
+
+.linkflair-spoilers .thumbnail {
+    background-image: url(%%thumbnails%%)!important;
+    height: 70px;
+    background-position: 0 0 !important;
+}
+
+.linkflair-spoilers[data-fullname$="d"] .thumbnail, .linkflair-spoilers[data-fullname$="i"] .thumbnail,
+.linkflair-spoilers[data-fullname$="s"] .thumbnail, .linkflair-spoilers[data-fullname$="c"] .thumbnail,
+.linkflair-spoilers[data-fullname$="e"] .thumbnail, .linkflair-spoilers[data-fullname$="n"] .thumbnail,
+.linkflair-spoilers[data-fullname$="t"] .thumbnail, .linkflair-spoilers[data-fullname$="a"] .thumbnail { background-position: -0px -170px !important; }
+
+.linkflair-spoilers .thumbnail.self {
+    height: 64px!important;
+}
+
+/*** Rating Tags ***/
 
 .nsfw-stamp acronym {
     border: #5f99cf 1px solid !important;
@@ -17,7 +43,7 @@ body {
 
 .nsfw-stamp acronym:after {
     color: #336699 !important;
-    content: "SPOILER" !important;
+    content: "PG" !important;
     display: block;
     font-size: x-small !important;
     text-decoration: none;
@@ -37,21 +63,10 @@ body {
     font-size: 9px !important;
     display: block;
     letter-spacing: normal;
-    content:"spoiler";
+    content:"tagPG";
 }
 
-.unmarknsfw-button a[href="#"]:before { content:"un-spoiler"; }
-
-.thumbnail:empty { background-image: url(%%thumbnails%%) !important; }
-.thumbnail.self { background-position: -0px -120px !important; }
-.thumbnail.nsfw { background-position: -0px -0px !important; }
-.thumbnail.default { background-position: -0px -70px !important; }
-.thing[data-fullname$="d"] .thumbnail.nsfw, .thing[data-fullname$="i"] .thumbnail.nsfw,
-.thing[data-fullname$="s"] .thumbnail.nsfw, .thing[data-fullname$="c"] .thumbnail.nsfw,
-.thing[data-fullname$="e"] .thumbnail.nsfw, .thing[data-fullname$="n"] .thumbnail.nsfw,
-.thing[data-fullname$="t"] .thumbnail.nsfw, .thing[data-fullname$="a"] .thumbnail.nsfw {
-    background-position: -0px -170px !important;
-}
+.unmarknsfw-button a[href="#"]:before { content:"un-tagPG"; }
 
    /***********************
     *
