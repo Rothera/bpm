@@ -841,6 +841,119 @@ color:white;
 .flair-toaster2{ background-position: -388px 0; width: 46px; height: 30px; } 
 
 
+/*field creator flair*/
+
+/*These are the basic attributes of all images on the sprite sheet, Alt means that the file has no alpha for the background*/
+/*the L, M, and S designations are 100X100 pixels, 40X40 pixels, and 20X20 pixels respectively*/
+.flair-ArtistAltL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 0; width: 100px; height: 100px; } 
+.flair-ArtistAltM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -150px; width: 40px; height: 40px; } 
+.flair-ArtistAltS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -240px; width: 20px; height: 20px; } 
+.flair-ArtistL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -310px; width: 100px; height: 100px; } 
+.flair-ArtistM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -460px; width: 40px; height: 40px; } 
+.flair-ArtistS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -550px; width: 20px; height: 20px; } 
+.flair-ComicL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -620px; width: 100px; height: 100px; } 
+.flair-ComicM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -770px; width: 40px; height: 40px; } 
+.flair-ComicS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -860px; width: 20px; height: 20px; } 
+.flair-MusicianAltL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -930px; width: 100px; height: 100px; } 
+.flair-MusicianAltM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1080px; width: 40px; height: 40px; } 
+.flair-MusicianAltS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1170px; width: 20px; height: 20px; } 
+.flair-MusicianL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1240px; width: 100px; height: 100px; } 
+.flair-MusicianM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1390px; width: 40px; height: 40px; } 
+.flair-MusicianS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1480px; width: 20px; height: 20px; } 
+.flair-VocalAltL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1550px; width: 100px; height: 100px; } 
+.flair-VocalAltM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1700px; width: 40px; height: 40px; } 
+.flair-VocalAltS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1790px; width: 20px; height: 20px; } 
+.flair-VocalL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1860px; width: 100px; height: 100px; } 
+.flair-VocalM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px 0; width: 40px; height: 40px; } 
+.flair-VocalS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px -90px; width: 20px; height: 20px; } 
+.flair-WriterL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px -160px; width: 100px; height: 100px; } 
+.flair-WriterM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px -310px; width: 40px; height: 40px; } 
+.flair-WriterS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px -400px; width: 20px; height: 20px; } 
+
+/*this is where the flair will be defined explicitly for each type*/
+
+.flair-artist{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -240px; width: 20px; height: 20px; }
+.flair-artist:Hover{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -150px; 
+    width: auto; 
+    min-width: 40px; 
+    height: 40px;  
+    background-color:#888;
+    line-height:40px;
+    text-indent: 41px;
+}
+
+.flair-comic{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -860px; width: 20px; height: 20px; }
+.flair-comic:Hover{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -770px; 
+    width: auto; 
+    min-width: 40px; 
+    height: 40px;  
+    background-color:#888;
+    line-height:40px;
+    text-indent: 41px;
+}
+
+.flair-musician{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1170px; width: 20px; height: 20px; }
+.flair-musician:Hover{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1080px; 
+    width: auto; 
+    min-width: 40px; 
+    height: 40px;  
+    background-color:#888;
+    line-height:40px;
+    text-indent: 41px;
+}
+
+.flair-vocal{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1790px; width: 20px; height: 20px; }
+.flair-vocal:Hover{  background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1700px;
+    width: auto; 
+    min-width: 40px; 
+    height: 40px;  
+    background-color:#888;
+    line-height:40px;
+    text-indent: 41px;
+}
+
+.flair-writer{ background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px -400px; width: 20px; height: 20px; }
+.flair-writer:Hover{  background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px -310px;
+    width: auto; 
+    min-width: 40px; 
+    height: 40px;  
+    background-color:#888;
+    line-height:40px;
+    text-indent: 41px;
+}
+
+
+
+/*end creator flair*/
+
+/*automod flair for testing porpoises*/
+
+.flair-automod{
+    /*this refers to the image in question*/
+    background: url(%%AutoModFlair%%) no-repeat;
+    /*This squeezes or stretches the image to the desired dimensions*/
+    background-size: 20px 20px;
+    /*this is the "window" the the image inhabits, be sure it parots the background size on single images*/
+    width: 20px; height: 20px;
+}
+
+/*this is the hover window that "pops out"*/
+.flair-automod:Hover{
+    background: url(%%AutoModFlair%%) no-repeat;
+    height: 40px;
+    background-size: 40px 40px;
+    /*automatically change width to allow full text*/
+    width: auto;
+    /*set min width background-size width, otherwise image will display incorrectly*/
+    min-width: 40px;
+    /*this gives the hover window a plain grey background*/
+    background-color:#888;
+    line-height:40px;
+    /*For debugging porpoises, if text starts getting too comfy with the image set text-indent 1 pixel more than image size*/
+    text-indent: 41px;
+}
+
+/* End testing*/
 
 /* ------------------------- */
 /* BEGIN COPY */

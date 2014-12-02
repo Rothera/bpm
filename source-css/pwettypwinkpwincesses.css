@@ -2,9 +2,8 @@
 /* KEEP THE FORMATTING CONSISTENT, DAMN IT */
 /* Sorry for fucking with it Asc. -SMFD */
 
-/* Don't touch. On a side note, I need to consolidate all 
+/* Don't touch. On a side note, I need to consolidate all of these "don't touches" into one block*/  
 
-of these "don't touches" into one block*/  
 div.titlebox span.word {  
    display: none  
 }
@@ -749,66 +748,37 @@ a[href|="/rdteehee"] {
 /* CSS text box bigger, because it being small annoys me. 
 
 */
-.stylesheet-customize-container textarea { height:500px; 
-
-}
+.stylesheet-customize-container textarea { height:500px; }
 
  /* Silly garbage */
 /*i don't think this works how u think it works */
 /*It works exactly how I thought it worked, fuck you.*/
 
-div[data-fullname$="p"] .usertext-body .md:after
+div[data-fullname$="p"] .usertext-body .md:after{content:" You know what I mean?"; color: #707 !important;}
 
-{content:" You know what I mean?"; color: #707 !
+div[data-fullname$="a"] .usertext-body .md:after{content:" Yunno what I'm saying?"; color: #707 !important;}
 
-important;}
-div[data-fullname$="a"] .usertext-body .md:after
+div[data-fullname$="t"] .usertext-body .md:after{content:" It takes a lot to make a Sault."; color: #707 !important;}
 
-{content:" Yunno what I'm saying?"; color: #707 !
+div[data-fullname$="w"] .usertext-body .md:after{content:" See what I mean?"; color: #707 !important;}
 
-important;}
-div[data-fullname$="t"] .usertext-body .md:after
+div[data-fullname$="o"] .usertext-body .md:after{content:" Now drop the shield."; color: #707 !important;}
 
-{content:" It takes a lot to make a Sault."; color: #707 !important;}
-div[data-fullname$="w"] .usertext-body .md:after
+div[data-fullname$="s"] .usertext-body .md:after{content:" Also, Season 4 is great."; color: #707 !important;}
 
-{content:" See what I mean?"; color: #707 !important;}
-div[data-fullname$="o"] .usertext-body .md:after
+div[data-fullname$="m"] .usertext-body .md:after{content:" A rainbow dash of love to make it nice!"; color: #707 !important;}
 
-{content:" Now drop the shield."; color: #707 !
+div[data-fullname$="f"] .usertext-body .md:after{content:" Also, Season 4 is great."; color: #707 !important;}
 
-important;}
-div[data-fullname$="s"] .usertext-body .md:after
+div[data-fullname$="d"] .usertext-body .md:after{content:" Also, Season 4 is great."; color: #707 !important;}
 
-{content:" Also, Season 4 is great."; color: #707 !
+div[data-fullname$="z"] .usertext-body .md:after{content:" Also, Xandrez sucks."; color: #707 !important;}
 
-important;}
-div[data-fullname$="m"] .usertext-body .md:after
-
-{content:" A rainbow dash of love to make it nice!"; color: #707 !
-
-important;}
-div[data-fullname$="f"] .usertext-body .md:after
-
-{content:" Also, Season 4 is great."; color: #707 !
-
-important;}
-div[data-fullname$="d"] .usertext-body .md:after
-
-{content:" Also, Season 4 is great."; color: #707 !
-
-important;}
-div[data-fullname$="z"] .usertext-body .md:after
-
-{content:" Also, Xandrez sucks."; color: #707 !important;}
+div[data-fullname$="b"] .usertext-body .md:after{content:" Also Smfd desecrated his Maud Plushie."; color:#707 !important;}
 
 
 /* Animated Header */
-/* Vector source: 
-
-http://fc02.deviantart.net/fs71/i/2013/030/c/8/alicorn_tw
-
-ilight_by_designjh-d5t8ga8.png*/
+/* Vector source: http://fc02.deviantart.net/fs71/i/2013/030/c/8/alicorn_twilight_by_designjh-d5t8ga8.png*/
 
 #header {
 animation:heavybreathing 60s ease-in-out infinite;

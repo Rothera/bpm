@@ -7,7 +7,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%SecretSanta4%%) 50% 0px !important;
+   background: url(%%bones%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -40,7 +40,7 @@ background: url(%%spook2%%)    !important;
     transform:translate(500px , 0px)
 }
 
-
+/*
 .side a[href="http://www.elfster.com/exchange/view/12491809/bac071/"]
 {
    display:block;
@@ -53,12 +53,34 @@ background: url(%%spook2%%)    !important;
    z-index: 99 !important;
    margin-left: -256px;
 }
-
+*/
 
 #header-bottom-right
 {
 z-index:110 !important;
 }
+
+
+/*spinning Esplin */
+#header-img { 
+    -webkit-animation:spin 30000s linear infinite;
+    -moz-animation:spin 30000s linear infinite;
+    -ms-animation:spin 30000s linear infinite;
+    -o-animation:spin 30000s linear infinite;
+    animation:spin 30000s linear infinite;
+}
+
+
+
+/* Rotating banner
+#header { 
+    -webkit-animation:spin 3000s linear infinite;
+    -moz-animation:spin 3000s linear infinite;
+    -ms-animation:spin 3000s linear infinite;
+    -o-animation:spin 3000s linear infinite;
+    animation:spin 3000s linear infinite;
+}
+*/
 
 
 
@@ -74,7 +96,7 @@ margin-left: 100px;
 */
 
 /* above text */
-margin-top: 123px;
+margin-top: 145px;
 margin-bottom: 31px;
 
 }
@@ -550,6 +572,7 @@ background-repeat: no-repeat;
 .flair-yesterdaysvoid:after { background-position: 0px -6780px }
 .flair-gameboy17:after { background-position: 0px -6810px }
 .flair-minibug:after { background-position: 0px -6840px }
+.flair-kwulhu:after { background-position: 0px -6870px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: #222!important; }
@@ -1459,7 +1482,7 @@ a[href|='/ravenraven'],a[href|='/sausagefest']{
 a[href|="/ravenraven"] {width:477px; height:389px; background-position: -0px -0px}
 a[href|="/sausagefest"] {width:260px; height:270px; background-position: -478px -0px}
 
-a[href|='/drowningsorrows'],a[href|='/wellfuck'],a[href|='/wellftwi'],a[href|='/peacheyes']{
+a[href|='/drowningsorrows'],a[href|='/wellfuck'],a[href|='/wellftwi'],a[href|='/peacheyes'],a[href|='/izzy']{
 
     display: block;
     clear: none;
@@ -1470,6 +1493,7 @@ a[href|="/drowningsorrows"] {width:200px; height:171px; background-position: 0px
 a[href|="/wellfuck"] {width:200px; height:199px; background-position: -200px -0px}
 a[href|="/wellftwi"] {width:171px; height:200px; background-position: -400px -0px}
 a[href|="/peacheyes"] {width:112px; height:89px; background-position: -571px -0px}
+a[href|="/izzy"] {width:188px; height:198px; background-position: -683px -0px}
 
 
 a[href|='/loligagging'],a[href|='/ponyjpeg']{

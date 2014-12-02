@@ -6,7 +6,12 @@ a[href|="/braescrunch"] {
     height: 144px;
     background-image:url(%%braescrunch%%)
 }
-
+/*a[href|="/flutterbie"] {
+    display:block;
+    clear:none;
+    float:left;
+    width:
+*/
 a[href|="/brian"] {
     display: block;
     clear: none;
@@ -79,14 +84,6 @@ a[href|="/scootaburn"] {
     background-image:url(%%scootaburn%%)
 }
 
-a[href|="/snakeburn"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 160px;
-    height: 149px;
-    background-image:url(%%snakeburn%%)
-}
 
 a[href|="/teenagebraeburn"] {
     display: block;
@@ -472,7 +469,7 @@ a[href|="/chibishimmer"] {
     float: left;
     width: 200px;
     height: 209px;
-    background-position: 0px  -1526px; 
+    background-position: 0px  -1524px; 
     background-image:url(%%spritesheet1%%)
 }
 a[href|="/trixiehat"] {
@@ -1526,6 +1523,96 @@ a[href|="/atleastsomeonelikesme"] {
  background-position: -0px -1990px;
 }
 
+a[href|="/lyradash"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 250px;
+ height: 182px;
+ background-image: url(%%sunsetspritesheet%%);
+ background-position: 0px 0px;
+}
+
+a[href|="/doubledash"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 196px;
+ height: 242px;
+ background-image: url(%%sunsetspritesheet%%);
+ background-position: 0px -180px;
+}
+
+a[href|="/sunsetsing"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 177px;
+ height: 149px;
+ background-image: url(%%sunsetspritesheet%%);
+ background-position: -3px -420px;
+}
+
+a[href|="/sunshy"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 258px;
+ height: 164px;
+ background-image: url(%%sunsetspritesheet%%);
+ background-position: -2px -573px;
+}
+
+a[href|="/octabat"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 190px;
+ height: 228px;
+ background-image: url(%%sunsetspritesheet%%);
+ background-position: -1px -737px;
+}
+
+a[href|="/sparkledress"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 198px;
+ height: 187px;
+ background-image: url(%%sunsetspritesheet%%);
+ background-position: -1px -965px;
+}
+
+a[href|="/octypus"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 180px;
+ height: 185px;
+ background-image: url(%%sunsetspritesheet%%);
+ background-position: 0px -1152px;
+}
+
+a[href|="/chibisunjuice"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 170px;
+ height: 227px;
+ background-image: url(%%sunsetspritesheet%%);
+ background-position: -1px -1340px;
+}
+
+a[href|="/octyisnotamused"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 170px;
+ height: 219px;
+ background-image: url(%%sunsetspritesheet%%);
+ background-position: 0px -1560px;
+}
+
 div.titlebox span.word {display:none; }
 div.titlebox span.number:after {content:" Sexy Beasts";}
 
@@ -1558,11 +1645,7 @@ z-index:100;
 
 
 
-/*Simple Background*/
-body {
-background: url(%%braeburn-by-heart-of-stitches-d4au5xn%%)
-no-repeat fixed center center;
-} 
+
 
 .side { padding-top: 250px; background: url(%%sidebrae3%%) no-repeat 0 10px; } 
 
@@ -1573,5 +1656,4 @@ display: none;
 /*This doesn't do what I want it to, but fuck it. It stays.*/
 #img-preview-braeburn-by-heart-of-stitches-d4au5xn {
 opacity:0.4;
-filter:alpha(opacity=40); /*for IE8 and earlier*/
 }

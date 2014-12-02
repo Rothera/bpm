@@ -1170,3 +1170,14 @@ div[data-fullname$="8"] .usertext-body .md:after{content:" Also, I'm a townie";}
 div[data-fullname$="9"] .usertext-body .md:after{content:" Also, I'm mafia";} */
 
 .id-t1_cgi1p64 .entry .usertext-body .md:after {content:" Also, I'm a butt." !important;}
+
+a.author[href$="storyboard_sc219_p4"]:after
+{
+   background-image:none;
+   background-color:#FFE3E3;
+   padding:5px;
+   font-size:12px;
+   border-radius:5px;
+   color:red;
+   content:"Warning: May break rule 0, add to game at your own risk"
+}

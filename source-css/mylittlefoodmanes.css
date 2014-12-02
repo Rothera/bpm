@@ -49,7 +49,6 @@ position: fixed;
 bottom: 0px;
 left: 50%;
 opacity: 0.01;
-filter: alpha(opacity=5);
 margin-left: -577px;
 /* 0.5 the image width */
 z-index: -100
@@ -73,7 +72,7 @@ z-index: -150
 }
 
 /* Emotes */
-a[href|="/lcheese"], a[href|="/rmallow"], a[href|="/NissanVersa"]
+a[href|="/lcheese"], a[href|="/rmallow"], a[href|="/NissanVersa"], a[href|="/bible"]
 {
     background-image: url(%%Emote1%%);
     clear: none;
@@ -90,6 +89,15 @@ a[href|="/lcheese"], a[href|="/rmallow"], a[href|="/NissanVersa"]
     float: left;
     height: 90px;
     width: 90px;
+}
+ a[href|="/bible"]
+{
+    background-image: url(%%Ngj6Dn8%%);
+    clear: none;
+    display: block;
+    float: left;
+    height: 80px;
+    width: 100px;
 }
 a[href|="/lcheese"]
 {
