@@ -502,6 +502,8 @@ body.res a.author[href$="SGIG"] {color:#FF9EF2!important}
 /* Names */
 
 /* here first */
+a.author[href$='Twilight_Sparkles'],
+a.author[href$='Saltbearer'],
 a.author[href$='Citizen1139'],
 a.author[href$='swishyfeather'],
 a.author[href$='AWESOEM'],
@@ -542,6 +544,8 @@ content: "";
 }
 
 /* here second */
+a.author[href$='Twilight_Sparkles']:before,
+a.author[href$='Saltbearer']:before,
 a.author[href$='Citizen1139']:before,
 a.author[href$='swishyfeather']:before,
 a.author[href$='magicmuffintheft']:before,
@@ -579,6 +583,8 @@ visibility:visible!important;
 }
 
 /*and the replacement*/ 
+a.author[href$='Twilight_Sparkles']:before{content: "Sparks"}
+a.author[href$='Saltbearer']:before{content: "A Mod on Top of a Mod"}
 a.author[href$='Citizen1139']:before{content: "Artemis"}
 a.author[href$='swishyfeather']:before {content: "Syni"}
 a.author[href$='magicmuffintheft']:before {content: "PapayaKing"}
@@ -609,7 +615,6 @@ a.author[href$=CodenameToon]:before {content:"Coggler"}
 a.author[href$=Jeroknite]:before {content:"bees"; font-size:15px !important}
 a.author[href$="0x_"]:before {content:"Just Ox"}
 a.author[href$="Backupusername"]:before {content: "Not anyone special"}
-a.author[href$=EvanMacIan]:after {color:#000; font-size:9px; content:" Prefers dick"}
 a.author[href$="videogamewonder"]:after
 {
 color:#000; 
@@ -623,6 +628,8 @@ a.author[href$="flare561"]:before {content: "Echo"}
 a.author[href$="videogamewonder"]:after {content:" (le)teral fempire shill"}
 
 
+.sidecontentbox a.author[href$='Twilight_Sparkles']
+.sidecontentbox a.author[href$='Saltbearer']:before
 .sidecontentbox a.author[href$='RisenLordM']:before,
 .sidecontentbox a.author[href$="derram_2"]:before,
 .sidecontentbox a.author[href$="flare561"]:before 

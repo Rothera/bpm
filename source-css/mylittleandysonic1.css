@@ -7,7 +7,7 @@ body:first-of-type, body.res-nightmode:first-of-type {
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%bones%%) 50% 0px !important;
+   background: url(%%eaglemercy%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -27,6 +27,29 @@ background: url(%%spook2%%)    !important;
 @-o-keyframes banimate {from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
 @keyframes banimate {from { background-position: 0 0; }to{ background-position: 0px -6048px; } } 
 */
+
+/* LET IT SNOW! Now with extra snow! */
+#header:after {
+content: "";
+background: url(%%Snow2%%);
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+opacity: 0.7;
+z-index: 50;
+pointer-events: none;
+-webkit-animation: snow 1s steps(20) infinite;-moz-animation: snow 1s steps(20) infinite;-ms-animation: snow 1s steps(20) infinite;-o-animation: snow 1s steps(20) infinite;animation: snow 1s steps(20) infinite; 
+}
+
+
+@-webkit-keyframes snow {from{background-position: 0 0;}to{ background-position: 0px -6000px; }} 
+@-moz-keyframes snow {from {background-position: 0 0;}to{ background-position: 0px -6000px; } } 
+@-ms-keyframes snow{from {background-position: 0 0; }to{ background-position: 0px -6000px; } } 
+@-o-keyframes snow {from {background-position: 0 0; }to{ background-position: 0px -6000px; } } 
+@keyframes snow {from { background-position: 0 0; }to{ background-position: 0px -6000px; } } 
+
 
 
 .gilded-icon{
@@ -1482,7 +1505,7 @@ a[href|='/ravenraven'],a[href|='/sausagefest']{
 a[href|="/ravenraven"] {width:477px; height:389px; background-position: -0px -0px}
 a[href|="/sausagefest"] {width:260px; height:270px; background-position: -478px -0px}
 
-a[href|='/drowningsorrows'],a[href|='/wellfuck'],a[href|='/wellftwi'],a[href|='/peacheyes'],a[href|='/izzy']{
+a[href|='/drowningsorrows'],a[href|='/wellfuck'],a[href|='/wellftwi'],a[href|='/peacheyes'],a[href|='/izzy'],a[href|='/pinkieply']{
 
     display: block;
     clear: none;
@@ -1494,6 +1517,7 @@ a[href|="/wellfuck"] {width:200px; height:199px; background-position: -200px -0p
 a[href|="/wellftwi"] {width:171px; height:200px; background-position: -400px -0px}
 a[href|="/peacheyes"] {width:112px; height:89px; background-position: -571px -0px}
 a[href|="/izzy"] {width:188px; height:198px; background-position: -683px -0px}
+a[href|="/pinkieply"] {width:302px; height:300px; background-position: -871px -0px}
 
 
 a[href|='/loligagging'],a[href|='/ponyjpeg']{

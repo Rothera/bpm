@@ -629,331 +629,159 @@ background-repeat: no-repeat;
 background-image: url(%%murky-eyes-v1%%);
 }
 
-/* Flair */
+/*----------------------------------------oooOOOooo----------------------------------------*/
 
 
-.flairselector.drop-choices.active{
-width:490px!important;
-}
-
-.flairselector ul{
-width:230px!important;
-max-width:none!important;
-}
+/*Reddit Icon replacement field begin*/
 
 
-.flair{
-    border: none;  
- background: url(%%spritesheet-v19%%) no-repeat;
-padding:0px;color:#FFF; background-color:transparent;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;
-    top: 20px;
-    display: inline-block;
-    line-height: 30px;
-    overflow: hidden;
-    text-indent: 33px;
-    white-space: nowrap;
-}
+	.thumbnail.nsfw {
+		background: url(%%alt-icons-v01%%);
+		background-repeat: no-repeat;
+		background-position: 0 -110px; width: 60px; height: 60px;;
+	}
+	/*selfpost icon*/
+	.thumbnail.self {
+		background: url(%%alt-icons-v01%%);
+		background-repeat: no-repeat;
+		background-position: 0 -220px; width: 60px; height: 60px; 
+	} 
+	
+	.thumbnail.default{
+		background: url(%%alt-icons-v01%%);
+		background-repeat: no-repeat;
+		background-position: 0 0; width: 60px; height: 60px; 
+	}
 
-.flair-aaa {
-     color:#555;
-    text-indent: 0px;
-    line-height: 100%;
- }
-
-
-.flair-ajrangers:hover {
- background-position: 0 -265px; width: 26px; height: 30px;  
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
+/*Reddit Icon replacement field end*/
 
 
-.flair-alicorn:hover {
-  background-position: 0 -510px; width: 94px; height: 30px; 
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-dashite:hover {
-  background-position: 0 -755px; width: 32px; height: 30px; 
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-littlepip:hover {
-  background-position: 0 -1000px; width: 73px; height: 30px;
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-mas:hover {
- background-position: 0 -1245px; width: 22px; height: 30px;
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-moa:hover {
- background-position: 0 -1490px; width: 44px; height: 30px; 
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-moi:hover {
-  background-position: 0 -1735px; width: 30px; height: 28px;
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-mom:hover {
-background-position: -194px 0; width: 30px; height: 30px;  
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-mop:hover {
- background-position: -194px -245px; width: 30px; height: 30px;
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-pipbuck:hover {
- background-position: -194px -490px; width: 40px; height: 30px;
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-redeye:hover {
- background-position: -194px -735px; width: 48px; height: 30px;
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-security:hover {
- background-position: -194px -980px; width: 74px; height: 30px;
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-stabletec:hover {
- background-position: -194px -1225px; width: 80px; height: 30px;
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-steelrangers:hover {
- background-position: -194px -1470px; width: 31px; height: 30px;
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-stern:hover {
-background-position: -194px -1715px; width: 27px; height: 30px;
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-toaster:hover {
-background-position: -388px 0; width: 46px; height: 30px;
- width: auto;
-min-width:18px;
-background-color:#888;
-padding: 0px 3px;
-color:white;
-}
-
-.flair-aaa{ background-position: 0 0; width: auto; height: auto; } 
-.flair-ajrangers{ background-position: 0 -150px; width: 13px; height: 15px; } 
-.flair-ajrangers2{ background-position: 0 -265px; width: 26px; height: 30px; } 
-.flair-alicorn{ background-position: 0 -395px; width: 47px; height: 15px; text-indent: 95px; } 
-.flair-alicorn2{ background-position: 0 -510px; width: 94px; height: 30px; } 
-.flair-dashite{ background-position: 0 -640px; width: 16px; height: 15px;} 
-.flair-dashite2{ background-position: 0 -755px; width: 32px; height: 30px; } 
-.flair-littlepip{ background-position: 0 -885px; width: 36px; height: 15px; text-indent: 75px;} 
-.flair-littlepip2{ background-position: 0 -1000px; width: 73px; height: 30px; } 
-.flair-mas{ background-position: 0 -1130px; width: 11px; height: 15px; text-indent: 24px;} 
-.flair-mas2{ background-position: 0 -1245px; width: 22px; height: 30px; } 
-.flair-moa{ background-position: 0 -1375px; width: 22px; height: 15px; text-indent: 42px;} 
-.flair-moa2{ background-position: 0 -1490px; width: 44px; height: 30px; } 
-.flair-moi{ background-position: 0 -1620px; width: 16px; height: 15px; } 
-.flair-moi2{ background-position: 0 -1735px; width: 30px; height: 28px; } 
-.flair-mom{ background-position: 0 -1863px; width: 15px; height: 15px; } 
-.flair-mom2{ background-position: -194px 0; width: 30px; height: 30px; } 
-.flair-mop{ background-position: -194px -130px; width: 15px; height: 15px; } 
-.flair-mop2{ background-position: -194px -245px; width: 30px; height: 30px; } 
-.flair-pipbuck{ background-position: -194px -375px; width: 20px; height: 15px; text-indent: 43px;} 
-.flair-pipbuck2{ background-position: -194px -490px; width: 40px; height: 30px; } 
-.flair-redeye{ background-position: -194px -620px; width: 24px; height: 15px; text-indent: 53px;} 
-.flair-redeye2{ background-position: -194px -735px; width: 48px; height: 30px; } 
-.flair-security{ background-position: -194px -865px; width: 37px; height: 15px; text-indent: 75px;} 
-.flair-security2{ background-position: -194px -980px; width: 74px; height: 30px; } 
-.flair-stabletec{ background-position: -194px -1110px; width: 40px; height: 15px; text-indent: 81px;} 
-.flair-stabletec2{ background-position: -194px -1225px; width: 80px; height: 30px; } 
-.flair-steelrangers{ background-position: -194px -1355px; width: 15px; height: 15px; } 
-.flair-steelrangers2{ background-position: -194px -1470px; width: 31px; height: 30px; } 
-.flair-stern{ background-position: -194px -1600px; width: 13px; height: 15px; text-indent: 25px;} 
-.flair-stern2{ background-position: -194px -1715px; width: 27px; height: 30px; } 
-.flair-toaster{ background-position: -194px -1845px; width: 23px; height: 15px; text-indent: 49px;} 
-.flair-toaster2{ background-position: -388px 0; width: 46px; height: 30px; } 
+/*----------------------------------------oooOOOooo----------------------------------------*/
 
 
-/*field creator flair*/
+/* Flair field begin*/
 
-/*These are the basic attributes of all images on the sprite sheet, Alt means that the file has no alpha for the background*/
-/*the L, M, and S designations are 100X100 pixels, 40X40 pixels, and 20X20 pixels respectively*/
-.flair-ArtistAltL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 0; width: 100px; height: 100px; } 
-.flair-ArtistAltM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -150px; width: 40px; height: 40px; } 
-.flair-ArtistAltS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -240px; width: 20px; height: 20px; } 
-.flair-ArtistL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -310px; width: 100px; height: 100px; } 
-.flair-ArtistM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -460px; width: 40px; height: 40px; } 
-.flair-ArtistS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -550px; width: 20px; height: 20px; } 
-.flair-ComicL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -620px; width: 100px; height: 100px; } 
-.flair-ComicM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -770px; width: 40px; height: 40px; } 
-.flair-ComicS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -860px; width: 20px; height: 20px; } 
-.flair-MusicianAltL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -930px; width: 100px; height: 100px; } 
-.flair-MusicianAltM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1080px; width: 40px; height: 40px; } 
-.flair-MusicianAltS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1170px; width: 20px; height: 20px; } 
-.flair-MusicianL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1240px; width: 100px; height: 100px; } 
-.flair-MusicianM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1390px; width: 40px; height: 40px; } 
-.flair-MusicianS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1480px; width: 20px; height: 20px; } 
-.flair-VocalAltL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1550px; width: 100px; height: 100px; } 
-.flair-VocalAltM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1700px; width: 40px; height: 40px; } 
-.flair-VocalAltS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1790px; width: 20px; height: 20px; } 
-.flair-VocalL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1860px; width: 100px; height: 100px; } 
-.flair-VocalM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px 0; width: 40px; height: 40px; } 
-.flair-VocalS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px -90px; width: 20px; height: 20px; } 
-.flair-WriterL{ background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px -160px; width: 100px; height: 100px; } 
-.flair-WriterM{ background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px -310px; width: 40px; height: 40px; } 
-.flair-WriterS{ background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px -400px; width: 20px; height: 20px; } 
+	.flairselector.drop-choices.active{
+	width:490px!important;
+	}
 
-/*this is where the flair will be defined explicitly for each type*/
+	.flairselector ul{
+	width:230px!important;
+	max-width:none!important;
+	}
 
-.flair-artist{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -240px; width: 20px; height: 20px; }
-.flair-artist:Hover{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -150px; 
-    width: auto; 
-    min-width: 40px; 
-    height: 40px;  
-    background-color:#888;
-    line-height:40px;
-    text-indent: 41px;
-}
+	.flair{
+		border: none; background: url(%%flair-v04%%) no-repeat;
+		padding: 0px; color:transparent; background-color:transparent;
+		border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;
+		top: 20px; display: inline-block; line-height: 30px; overflow: hidden;
+		text-indent: 33px; white-space: nowrap;
+	}
+	
+	.flair:hover{padding: 0px 3px; background-color:#888; color:#FFF; width: auto;}
+	
+	.flair-aaa {	color:#555; text-indent: 0px; line-height: 100%;  background-position: 900px 900px; width: auto; height: auto;}
+	
+	.flair-ajrangers{ background-position: 0 0; width: 13px; height: 15px; } 
+	.flair-alicorn{ background-position: 0 -145px; width: 47px; height: 15px; } 
+	.flair-cfartista{ background-position: 0 -380px; width: 20px; height: 20px; } 
+	.flair-cfartistb{ background-position: 0 -540px; width: 20px; height: 20px; } 
+	.flair-cfartistg{ background-position: 0 -700px; width: 20px; height: 20px; } 
+	.flair-cfartistw{ background-position: 0 -860px; width: 20px; height: 20px; } 
+	.flair-cfcomic{ background-position: 0 -1020px; width: 20px; height: 20px; } 
+	.flair-cfmusiciana{ background-position: 0 -1180px; width: 20px; height: 20px; } 
+	.flair-cfmusicianb{ background-position: 0 -1340px; width: 20px; height: 20px; } 
+	.flair-cfmusiciang{ background-position: 0 -1500px; width: 20px; height: 20px; } 
+	.flair-cfmusicianw{ background-position: 0 -1660px; width: 20px; height: 20px; } 
+	.flair-cfvocala{ background-position: 0 -1820px; width: 20px; height: 20px; } 
+	.flair-cfvocalb{ background-position: -294px 0; width: 20px; height: 20px; } 
+	.flair-cfvocalg{ background-position: -294px -160px; width: 20px; height: 20px; } 
+	.flair-cfvocalw{ background-position: -294px -320px; width: 20px; height: 20px; } 
+	.flair-cfwriter{ background-position: -294px -480px; width: 20px; height: 20px; } 
+	.flair-dashite{ background-position: -294px -550px; width: 16px; height: 15px; } 
+	.flair-littlepip{ background-position: -294px -695px; width: 36px; height: 15px; } 
+	.flair-mas{ background-position: -294px -840px; width: 11px; height: 15px; } 
+	.flair-moa{ background-position: -294px -985px; width: 22px; height: 15px; } 
+	.flair-moi{ background-position: -294px -1130px; width: 16px; height: 15px; } 
+	.flair-mom{ background-position: -294px -1273px; width: 15px; height: 15px; } 
+	.flair-mop{ background-position: -294px -1418px; width: 15px; height: 15px; } 
+	.flair-pipbuck{ background-position: -294px -1563px; width: 20px; height: 15px; } 
+	.flair-redeye{ background-position: -294px -1708px; width: 24px; height: 15px; } 
+	.flair-security{ background-position: -294px -1853px; width: 37px; height: 15px; } 
+	.flair-stabletec{ background-position: -588px 0; width: 40px; height: 15px; } 
+	.flair-steelrangers{ background-position: -588px -145px; width: 15px; height: 15px; } 
+	.flair-stern{ background-position: -588px -290px; width: 13px; height: 15px; } 
+	.flair-toaster{ background-position: -588px -435px; width: 23px; height: 15px; } 
+    .flair-cfcomicalt{ background-position: -588px -670px; width: 20px; height: 20px;}
 
-.flair-comic{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -860px; width: 20px; height: 20px; }
-.flair-comic:Hover{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -770px; 
-    width: auto; 
-    min-width: 40px; 
-    height: 40px;  
-    background-color:#888;
-    line-height:40px;
-    text-indent: 41px;
-}
-
-.flair-musician{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1170px; width: 20px; height: 20px; }
-.flair-musician:Hover{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1080px; 
-    width: auto; 
-    min-width: 40px; 
-    height: 40px;  
-    background-color:#888;
-    line-height:40px;
-    text-indent: 41px;
-}
-
-.flair-vocal{ background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1790px; width: 20px; height: 20px; }
-.flair-vocal:Hover{  background: url(%%creatorflair-v02%%) no-repeat; background-position: 0 -1700px;
-    width: auto; 
-    min-width: 40px; 
-    height: 40px;  
-    background-color:#888;
-    line-height:40px;
-    text-indent: 41px;
-}
-
-.flair-writer{ background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px -400px; width: 20px; height: 20px; }
-.flair-writer:Hover{  background: url(%%creatorflair-v02%%) no-repeat; background-position: -150px -310px;
-    width: auto; 
-    min-width: 40px; 
-    height: 40px;  
-    background-color:#888;
-    line-height:40px;
-    text-indent: 41px;
-}
+	
+	.flair-ajrangers:hover  { background-position: 0 -65px;  height: 30px; min-width:26px; text-indent: 27px;}
+	.flair-alicorn:hover    {background-position: 0 -210px;    height: 32px; min-width:94px;	text-indent: 95px;}	
+	.flair-dashite:hover    {background-position: -294px -615px; height: 30px;min-width:32px; text-indent: 33px;}
+	.flair-littlepip:hover  {background-position: -294px -760px; height: 30px; min-width:73px; text-indent: 74px;}
+	.flair-mas:hover        {background-position: -294px -905px;   height: 30px; min-width:22px; text-indent: 23px;}
+	.flair-moa:hover        {background-position: -294px -1050px; height: 30px; min-width:44px; text-indent: 45px;}
+	.flair-moi:hover        { background-position: -294px -1195px; height: 28px; min-width:30px; text-indent: 31px;}
+	.flair-mom:hover        {background-position: -294px -1338px; height: 30px; min-width:30px; text-indent: 31px;}
+	.flair-mop:hover        {background-position: -294px -1483px; height: 30px;	 min-width:30px; text-indent: 31px;}
+	.flair-pipbuck:hover    {background-position: -294px -1628px; height: 30px; min-width:40px; text-indent: 41px;}
+	.flair-redeye:hover     {background-position: -294px -1773px;  height: 30px; min-width:48px; text-indent: 49px;}
+	.flair-security:hover   {background-position: -294px -1918px; height: 30px; min-width:74px; text-indent: 75px;}
+	.flair-stabletec:hover  {background-position: -588px -65px; height: 30px; min-width:80px; text-indent: 81px;}
+	.flair-steelrangers:hover {background-position: -588px -210px; height: 30px; min-width:31px; text-indent: 32px;}
+	.flair-stern:hover {background-position: -588px -355px; height: 30px; min-width:27px; text-indent: 28px;}
+	.flair-toaster:hover {background-position: -588px -500px; height: 30px; min-width:46px; text-indent: 47px;}
+	.flair-cfartista:hover { background-position: 0 -290px; height: 40px; min-width: 40px; text-indent: 41px; line-height:40px;} 
+	.flair-cfartistb:hover { background-position: 0 -450px; height: 40px;  min-width: 40px; text-indent: 41px;line-height:40px;} 
+	.flair-cfartistg:hover { background-position: 0 -610px; height: 40px;  min-width: 40px; text-indent: 41px;line-height:40px;} 
+	.flair-cfartistw:hover { background-position: 0 -770px;  height: 40px;  min-width: 40px; text-indent: 41px;line-height:40px;} 
+	.flair-cfcomic:hover { background-position: 0 -930px; height: 40px; min-width: 40px; text-indent: 41px;line-height:40px;} 
+	.flair-cfmusiciana:hover { background-position: 0 -1090px; height: 40px; min-width: 40px; text-indent: 41px;line-height:40px;} 
+	.flair-cfmusicianb:hover { background-position: 0 -1250px; height: 40px;  min-width: 40px; text-indent: 41px;line-height:40px;} 
+	.flair-cfmusiciang:hover { background-position: 0 -1410px; height: 40px; min-width: 40px; text-indent: 41px;line-height:40px;} 
+	.flair-cfmusicianw:hover { background-position: 0 -1570px; height: 40px; min-width: 40px; text-indent: 41px;line-height:40px;} 
+	.flair-cfvocala:hover { background-position: 0 -1730px; height: 40px; min-width: 40px; text-indent: 41px;line-height:40px;} 
+	.flair-cfvocalb:hover { background-position: 0 -1890px; height: 40px; min-width: 40px; text-indent: 41px;line-height:40px;} 
+	.flair-cfvocalg:hover { background-position: -294px -70px; height: 40px; min-width: 40px; text-indent: 41px;line-height:40px;} 
+	.flair-cfvocalw:hover { background-position: -294px -230px; height: 40px; min-width: 40px; text-indent: 41px;line-height:40px;} 
+	.flair-cfwriter:hover { background-position: -294px -390px; height: 40px; min-width: 40px; text-indent: 41px;line-height:40px;} 
+    .flair-cfcomicalt:hover{ background-position: -588px -580px; height: 40px; min-width: 40px; text-indent: 41px;line-height:40px;}
 
 
+    /*automod flair for testing porpoises*/
+    
+    .flair-automod{
+        /*this refers to the image in question*/
+        background: url(%%AutoModFlair%%) no-repeat;
+        /*This squeezes or stretches the image to the desired dimensions*/
+        background-size: 20px 20px;
+        /*this is the "window" the the image inhabits, be sure it parots the background size on single images*/
+        width: 20px; height: 20px;
+    }
+    
+    /*this is the hover window that "pops out"*/
+    .flair-automod:Hover{
+        background: url(%%AutoModFlair%%) no-repeat;
+        height: 40px;
+        background-size: 40px 40px;
+        /*automatically change width to allow full text*/
+        width: auto;
+        /*set min width background-size width, otherwise image will display incorrectly*/
+        min-width: 40px;
+        /*this gives the hover window a plain grey background*/
+        background-color:#888;
+        line-height:40px;
+        /*For debugging porpoises, if text starts getting too comfy with the image set text-indent 1 pixel more than image size*/
+        text-indent: 41px;
+    }
 
-/*end creator flair*/
+    /* End testing*/
+    
+/*Flair field end*/
 
-/*automod flair for testing porpoises*/
 
-.flair-automod{
-    /*this refers to the image in question*/
-    background: url(%%AutoModFlair%%) no-repeat;
-    /*This squeezes or stretches the image to the desired dimensions*/
-    background-size: 20px 20px;
-    /*this is the "window" the the image inhabits, be sure it parots the background size on single images*/
-    width: 20px; height: 20px;
-}
+/*----------------------------------------oooOOOooo----------------------------------------*/
 
-/*this is the hover window that "pops out"*/
-.flair-automod:Hover{
-    background: url(%%AutoModFlair%%) no-repeat;
-    height: 40px;
-    background-size: 40px 40px;
-    /*automatically change width to allow full text*/
-    width: auto;
-    /*set min width background-size width, otherwise image will display incorrectly*/
-    min-width: 40px;
-    /*this gives the hover window a plain grey background*/
-    background-color:#888;
-    line-height:40px;
-    /*For debugging porpoises, if text starts getting too comfy with the image set text-indent 1 pixel more than image size*/
-    text-indent: 41px;
-}
-
-/* End testing*/
 
 /* ------------------------- */
 /* BEGIN COPY */

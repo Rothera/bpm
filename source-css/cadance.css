@@ -1,7 +1,7 @@
 /* header stuff*/
 
 #header { 
-        background: #8f54b7 url(%%cutie-mark%%) bottom center no-repeat;
+        background: #8f54b7  url(%%cutie-mark%%) bottom center no-repeat;
         height: 120px;
         position: relative;
     }
@@ -447,3 +447,58 @@ a[href|="/cadcheer"] {
 a.author[href$="DaylightDarkle"]{font-size:0px!important;}
 a.author[href$="DaylightDarkle"]:after{content:"Princess Cadance";font-size:10px!important;}
 .sidecontentbox .author[href$="DaylightDarkle"]:after{font-size:12px!important;}
+
+/* GIVE EVERY COMMENT THE RANDOM FILLY! */
+.commentarea .usertext{padding-left: 70px; min-height: 140px; margin-top: -70px}
+
+.commentarea .usertext-body:before{
+ display:block;
+ width: 70px;
+ height: 70px;
+ content: " ";
+ position: relative;
+ top: 70px;
+ right: 70px;
+ background:url(%%fillies%%)
+}
+
+.commentarea .usertext-edit:not(.viewSource){padding-top: 70px; margin-left: -70px}
+
+.usertext input[value$="a"] + .usertext-body:before{background-position: 0 0}
+.usertext input[value$="b"] + .usertext-body:before{background-position:0 -100%}
+.usertext input[value$="c"] + .usertext-body:before{background-position:0 -200%}
+.usertext input[value$="d"] + .usertext-body:before{background-position:0 -300%}
+.usertext input[value$="e"] + .usertext-body:before{background-position:0 -400%}
+.usertext input[value$="f"] + .usertext-body:before{background-position:0 -500%}
+.usertext input[value$="g"] + .usertext-body:before{background-position:0 -600%}
+.usertext input[value$="h"] + .usertext-body:before{background-position:0 -700%}
+.usertext input[value$="i"] + .usertext-body:before{background-position:0 -800%}
+.usertext input[value$="j"] + .usertext-body:before{background-position:0 -900%}
+.usertext input[value$="k"] + .usertext-body:before{background-position:0 -1000%}
+.usertext input[value$="l"] + .usertext-body:before{background-position:0 -1100%}
+.usertext input[value$="m"] + .usertext-body:before{background-position:-100% 0}
+.usertext input[value$="n"] + .usertext-body:before{background-position:-100% -100%}
+.usertext input[value$="o"] + .usertext-body:before{background-position:-100% -200%}
+.usertext input[value$="p"] + .usertext-body:before{background-position:-100% -300%}
+.usertext input[value$="q"] + .usertext-body:before{background-position:-100% -400%}
+.usertext input[value$="r"] + .usertext-body:before{background-position:-100% -500%}
+.usertext input[value$="s"] + .usertext-body:before{background-position:-100% -600%}
+.usertext input[value$="t"] + .usertext-body:before{background-position:-100% -700%}
+.usertext input[value$="u"] + .usertext-body:before{background-position:-100% -800%}
+.usertext input[value$="v"] + .usertext-body:before{background-position:-100% -900%}
+.usertext input[value$="w"] + .usertext-body:before{background-position:-100% -1000%}
+.usertext input[value$="x"] + .usertext-body:before{background-position:-100% -1100%}
+.usertext input[value$="y"] + .usertext-body:before{background-position:-200% 0}
+.usertext input[value$="z"] + .usertext-body:before{background-position:-200% -100%}
+.usertext input[value$="1"] + .usertext-body:before{background-position:-200% -200%}
+.usertext input[value$="2"] + .usertext-body:before{background-position:-200% -300%}
+.usertext input[value$="3"] + .usertext-body:before{background-position:-200% -400%}
+.usertext input[value$="4"] + .usertext-body:before{background-position:-200% -500%}
+.usertext input[value$="5"] + .usertext-body:before{background-position:-200% -600%}
+.usertext input[value$="6"] + .usertext-body:before{background-position:-200% -700%}
+.usertext input[value$="7"] + .usertext-body:before{background-position:-200% -800%}
+.usertext input[value$="8"] + .usertext-body:before{background-position:-200% -900%}
+.usertext input[value$="9"] + .usertext-body:before{background-position:-200% -1000%}
+.usertext input[value$="0"] + .usertext-body:before{background-position:-200% -1100%}
+
+/*End of every comment random filly*/

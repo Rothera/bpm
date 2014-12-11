@@ -176,6 +176,9 @@ html:lang(nv) .side p a[href="http://nv.reddit.com/r/TheBestPony/"] {
 .flair-ils {
     background-position: 0px -160px
     }
+.flair-ar {
+    background-position: 0px -176px
+    }
 /*********
 *usernames*
 *********/
@@ -369,6 +372,21 @@ a.author[href$="/lord_terrene"] {
     }
 a.author[href$="/lord_terrene"]:after {
     content: "greedosux";
+    font-size: 10px !important;
+    visibility: visible !important;
+    display: block;
+    letter-spacing: normal
+    }
+/*AR*/
+a.author[href$="/MobsInBlack"] {
+    font-size: 0px !important;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    letter-spacing: -20px
+    }
+a.author[href$="/MobsInBlack"]:after {
+    content: "Tsukiko";
     font-size: 10px !important;
     visibility: visible !important;
     display: block;
