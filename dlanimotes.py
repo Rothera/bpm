@@ -43,8 +43,9 @@ def find_animotes(emotes):
     return images
 
 def image_path(url):
-    hash = hashlib.sha256(url.encode("ascii")).hexdigest()
-    filename = "animotes/%s.gif" % (hash)
+    clean = bplib.clean_image_url(url)
+    assert clean.endswith(".png")
+    filename = "animotes/" + clean[:-4] + ".gif"
     return filename
 
 def update_cache(images):
