@@ -1,0 +1,58 @@
+/* /r/ponymotesextra2 CSS!
+ * Even more animotes.
+ */
+
+/* Not emote stuff */
+/* Not emotes */
+
+ul#image-preview-list li:nth-child(11):after {
+content: "10th image";
+color: green;
+padding-left: 5px;
+}
+
+ul#image-preview-list li:nth-child(21):after {
+content: "20th image";
+color: green;
+padding-left: 5px;
+}
+
+ul#image-preview-list li:nth-child(31):after {
+content: "30th image";
+color: yellow;
+padding-left: 5px;
+}
+
+ul#image-preview-list li:nth-child(41):after {
+content: "40th image!";
+color: orangered;
+padding-left: 5px;
+}
+
+ul#image-preview-list li:nth-child(46):after {
+content: "45th image!";
+color: red;
+padding-left: 5px;
+}
+
+ul#image-preview-list li:nth-child(50):after {
+content: "49th image!!";
+color: red;
+padding-left: 5px;
+font-weight: bold;
+}
+
+ul#image-preview-list li:nth-child(51):after {
+content: "50th image!!!";
+color: red;
+padding-left: 5px;
+font-weight: bolder;
+font-size: large;
+}
+
+/* Non animated Emotes */
+/* Just kidding. */
+
+/* Animated Emotes */
+a[href|="/cannotcontainrage"] {background:url(%%cannotcontainrage%%) no-repeat;width:150px;height:150px;display:block;float:left;}
+a[href|="/lyraquestion"] {background:url(%%lyraquestion%%) no-repeat;width:300px;height:300px;display:block;float:left;}
