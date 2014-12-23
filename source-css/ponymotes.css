@@ -34,9 +34,27 @@ margin-top: -1px;
 margin-bottom: -3px;
 }
 
-/* Snowflake banner */
+/* Snowflake banner ... and other Christmas malarkey */
 #header { 
 background: url(%%snowflake-banner%%) 0 18px repeat-x #CEE3F8;
+}
+
+div.sidecontentbox a.author[href$="/user/Jibodeah"]::before {
+content: "Jibo-Christmas-Pun-deah";
+visibility: visible !important;
+font-size: 12px !important;
+}
+
+div.sidecontentbox a.author[href$="/user/Two-Tone-"]::before {
+content: "Two-Turtle-Doves-Tone-";
+visibility: visible !important;
+font-size: 12px !important;
+}
+
+div.sidecontentbox a.author[href$="/user/Jibodeah"], div.sidecontentbox a.author[href$="/user/Two-Tone-"] {
+font-size: 0;
+overflow: hidden;
+display: inline-block;
 }
 
 /* Banner stuff.
@@ -89,8 +107,8 @@ Where'd she go?
 */
 
 /* link flairs */
-.linkflairlabel {
-max-width: 20em !important;
+.linkflairlabel:hover {
+max-width: none !important;
 }
 
 .linkflair-closed {
@@ -102,15 +120,15 @@ visibility: hidden;
 }
 
 .linkflair-denied .linkflairlabel {
-color: #AC3939;
-background-color: transparent;
+color: #AC3939 !important;
+background-color: transparent !important;
 border: 1px solid #D27979;
 text-transform: uppercase;
 }
 
 .linkflair-updated .linkflairlabel {
-max-width: 20em;
-background-color: yellow;
+max-width: 13em;
+background-color: yellow !important;
 border-color: olive;
 }
 
@@ -136,21 +154,19 @@ padding-left: 55px;
 
 
 .linkflair-approved .linkflairlabel {
-color: #6ECF5B;
+color: #6ECF5B !important;
 border: 1px solid #8EEF7B;
-background: transparent;
+background: transparent !important;
 }
 
 .listing-page .content[role="main"], .comments-page .content[role="main"] {margin-right: 310px;}
-
-/* .click-gadget .thing {margin-right: 0px;} /* This is the 'Recently viewed links' box in the sidebar */
 
 .linkflair-denied {
 background-image: linear-gradient(90deg, #e7cdcd, #fff, #fff, #fff, #fff, #fff);
 }
 
 .res-nightmode .linkflair-denied {
-background-image: linear-gradient(-90deg, #600303, #222);
+background-image: linear-gradient(-90deg, #600303, #222) !important;
 }
 
 .linkflair-approved {
@@ -158,7 +174,7 @@ background-image: linear-gradient(90deg, #cde7cd, #fff, #fff, #fff, #fff, #fff);
 }
 
 .res-nightmode .linkflair-approved {
-background-image: linear-gradient(-90deg, #036004, #222);
+background-image: linear-gradient(-90deg, #036004, #222) !important;
 }
 
 body.listing-page .linkflair-denied div.RES-keyNav-activeElement, body.listing-page .linkflair-approved div.RES-keyNav-activeElement
@@ -423,7 +439,7 @@ a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[hr
 {background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
 
 /* 70x70b 'motes */
-a[href|="/twithatsnice"], a[href|="/buysomeapples"], a[href|="/cadsoawesome"], a[href|="/cadancehey"], a[href|="/cadencehey"], a[href|="/twifascinating"], a[href|="/sunsetjoy"], a[href|="/karmahappy2"], a[href|="/karmagrin"], a[href|="/apathiablank"], a[href|="/apathiaconcern"], a[href|="/karmalook"], a[href|="/apathiaeyebrow"], a[href|="/discentiaangrysquint"], a[href|="/colgatebraces"], a[href|="/colgatenews"], a[href|="/colgatenotimpressed"]
+a[href|="/twithatsnice"], a[href|="/buysomeapples"], a[href|="/cadsoawesome"], a[href|="/cadancehey"], a[href|="/cadencehey"], a[href|="/twifascinating"], a[href|="/sunsetjoy"], a[href|="/karmahappy2"], a[href|="/karmagrin"], a[href|="/apathiablank"], a[href|="/apathiaconcern"], a[href|="/karmalook"], a[href|="/apathiaeyebrow"], a[href|="/discentiaangrysquint"], a[href|="/colgatebraces"], a[href|="/colgatenews"], a[href|="/colgatenotimpressed"], a[href|="/changelingshrug"]
 {background-image:url(%%70x70b%%);width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
@@ -512,7 +528,7 @@ a[href|="/zecoraspooky"], a[href|="/zecorabored"], a[href|="/zecoramagicdust"], 
 {background-image:url(%%misfitsj%%);display:block;float:left;}
 
 /* Misfits k */
-a[href|="/cadscience"], a[href|="/appul"], a[href|="/sadprincesshorse"], a[href|="/humaud"], a[href|="/cutemena"], a[href|="/hipstercad"], a[href|="/pinkiebreak"], a[href|="/fluttertree"], a[href|="/abbowling"], a[href|="/sword"], a[href|="/lutece"], a[href|="/GLaDOS"], a[href|="/glados"], a[href|="/doublesweets"], a[href|="/colgatecute"], a[href|="/crystalzecora"], a[href|="/scootascoots"], a[href|="/sheetiebelle"]
+a[href|="/cadscience"], a[href|="/appul"], a[href|="/sadprincesshorse"], a[href|="/humaud"], a[href|="/cutemena"], a[href|="/hipstercad"], a[href|="/pinkiebreak"], a[href|="/fluttertree"], a[href|="/abbowling"], a[href|="/sword"], a[href|="/lutece"], a[href|="/GLaDOS"], a[href|="/glados"], a[href|="/doublesweets"], a[href|="/colgatecute"], a[href|="/crystalzecora"], a[href|="/scootascoots"], a[href|="/sheetiebelle"], a[href|="/sillylyra"], a[href|="/seatiebelt"], a[href|="/topgummi"], a[href|="/dewpony"]
 {background-image:url(%%misfitsk%%);display:block;float:left;}
 
 /*
@@ -580,7 +596,7 @@ a[href|="/rarityspy"], a[href|="/discoin"], a[href|="/ajduckface"], a[href|="/ne
 {background-position: -200% -400%;}
 
 /* Grid pos 0,5 'motes */
-a[href|="/twilightyay"], a[href|="/twidoubt"], a[href|="/nerdtrixie"], a[href|="/rarapossessed"], a[href|="/rdscreaminginternally"], a[href|="/twilikethis"], a[href|="/incognitotwi"]
+a[href|="/twilightyay"], a[href|="/twidoubt"], a[href|="/nerdtrixie"], a[href|="/rarapossessed"], a[href|="/rdscreaminginternally"], a[href|="/twilikethis"], a[href|="/incognitotwi"], a[href|="/changelingshrug"]
 {background-position: 0 -500%;}
 
 /* Grid pos 1,5 'motes */
@@ -1185,3 +1201,7 @@ a[href|="/colgatecute"] {width:103px;height:150px;background-position: -583px -2
 a[href|="/crystalzecora"] {width:120px;height:150px;background-position: 0 -469px;}
 a[href|="/scootascoots"] {width:117px;height:150px;background-position: -120px -477px;}
 a[href|="/sheetiebelle"] {width:140px;height:124px;background-position: -237px -467px;}
+a[href|="/sillylyra"] {width:115px;height:149px;background-position: -377px -467px;}
+a[href|="/seatiebelt"] {width:133px;height:150px;background-position: -556px -417px;}
+a[href|="/topgummi"] {width:69px;height:120px;background-position: -614px -146px;}
+a[href|="/dewpony"] {width:137px;height:175px;background-position: -563px -567px;}

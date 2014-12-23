@@ -127,7 +127,7 @@ width: 90px;
 
 /* Colgate Wink */
 a[href^="/colgatewink"] {
-  background-position: 0px 0px;
+  background-position: -0px -0px;
   display: block;
   clear: none;
   float: left;
@@ -288,4 +288,63 @@ a[href^="/colgatesmile"] {
   width: 122px;
   height: 150px;
   background-image: url(%%colgatespreadsheet%%)
+}
+
+/* Colgate Wat */
+a[href^="/colgatewat"] {
+  background-position: -1200px 0px;
+  display: block;
+  clear: none;
+  float: left;
+  width: 118px;
+  height: 150px;
+  background-image: url(%%colgatespreadsheet%%)
+}
+
+/* Colgate Please */
+a[href^="/colgateplease"] {
+  background-position: -1350px 0px;
+  display: block;
+  clear: none;
+  float: left;
+  width: 117px;
+  height: 150px;
+  background-image: url(%%colgatespreadsheet%%)
+}
+
+/* Rose You him now */
+a[href^="/youhimvidnow"] {
+  background-position: -1200px -150px;
+  display: block;
+  clear: none;
+  float: left;
+  width: 147px;
+  height: 150px;
+  background-image: url(%%colgatespreadsheet%%)
+}
+
+
+
+/* Colgate Spread Sheet 2 */
+
+/* Colgate Ayyy */
+a[href^="/colgateayyy"] {
+  background-position: 0px 0px;
+  display: block;
+  clear: none;
+  float: left;
+  width: 150px;
+  height: 150px;
+  background-image: url(%%colgatespreadsheet2%%)
+}
+
+/* colgateohyou */
+a[href^="/colgateohyou"] {
+background-position: -150px -0px;
+display: block;
+clear: none;
+float: left;
+width: 181px;
+height: 150px;
+background-image: url(%%colgatespreadsheet2%%)
 }

@@ -636,25 +636,68 @@ background-image: url(%%murky-eyes-v1%%);
 
 
 	.thumbnail.nsfw {
-		background: url(%%alt-icons-v01%%);
+		background: url(%%alt-icons-v02%%);
 		background-repeat: no-repeat;
-		background-position: 0 -110px; width: 60px; height: 60px;;
+		background-position: -70px 0px; width: 60px; height: 60px;;
 	}
-	/*selfpost icon*/
 	.thumbnail.self {
-		background: url(%%alt-icons-v01%%);
+		background: url(%%alt-icons-v02%%);
 		background-repeat: no-repeat;
-		background-position: 0 -220px; width: 60px; height: 60px; 
+		background-position: -140px 0px; width: 60px; height: 60px; 
 	} 
-	
 	.thumbnail.default{
-		background: url(%%alt-icons-v01%%);
+		background: url(%%alt-icons-v02%%);
 		background-repeat: no-repeat;
-		background-position: 0 0; width: 60px; height: 60px; 
+		background-position: 0px 0px; width: 60px; height: 60px; 
 	}
 
 /*Reddit Icon replacement field end*/
 
+
+/*----------------------------------------oooOOOooo----------------------------------------*/
+
+/*Link flair field begin*/
+    
+    /*spoilerific*/
+    .linkflair-spoil .linkflairlabel {
+        background-color: transparent;
+        font-size: 8px;
+        font-weight: bold;
+        color:#ac3939;
+        border-color: #000000;
+        border-width: 1px;
+        border-radius: 3px;
+    }
+    .linkflair-spoil .thumbnail{
+        background: url(%%alt-icons-v02%%);
+		background-repeat: no-repeat;
+		background-position: -210px 0px; width: 60px; height: 60px; 
+		z-index: 999999;
+    }
+    .linkflair-spoil .nsfw-stamp acronym { display: none; }
+    .linkflair-spoil .nsfw-stamp:after {
+        content: "Spoiler";
+        border: 1px solid;
+        color: #ac3939;
+        padding: 0 2px;
+        border-radius: 3px;
+    } 
+    
+    /*pip version of the icons*/
+    .linkflair-pip .linkflairlabel {
+		background-color: transparent;
+		font-size: 8px;
+		font-weight: bold;
+		color:#8b91a7;
+		border-color: #9c6017;
+		border-width: 1px;
+		border-radius: 3px;
+	}
+	.linkflair-pip .thumbnail.default{background-position: 0 -70px;}
+	.linkflair-pip .thumbnail.self{background-position: -140px -70px;}
+	.linkflair-pip .thumbnail.nsfw{background-position: -70px -70px;}
+    
+/*Link flair field end*/
 
 /*----------------------------------------oooOOOooo----------------------------------------*/
 
