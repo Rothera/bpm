@@ -1,0 +1,103 @@
+#header-bottom-left{
+    background-image:url(%%lola-pizza-1%%);
+}
+
+a[href|="/cheesepizza"],
+a[href|="/pepperonipizza"],
+a[href|="/dinkyexcite"],
+a[href|="/ajpizza"],
+a[href|="/dinkyjump"],
+a[href|="/dinkyhop"],
+a[href|="/dinkyshy"],
+a[href|="/dinkytable"],
+a[href|="/dinkyfall"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:70px;
+    height:70px;
+    background-image: url(%%Pizza-Spritesheet%%) !important;
+}
+
+a[href|="/lunateeheepizza"],
+a[href|="/lunanopizza"],
+a[href|="/scootshandpizza"],
+a[href|="/sbohcomeonpizza"],
+a[href|="/abboredpizza"],
+a[href|="/rarityhairpizza"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:70px;
+    height:70px;
+    background-image: url(%%Pizza-Spritesheet-2%%) !important;
+}
+
+a[href|="/ppshoulder"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:186px;
+    height:128px;
+    background-image: url(%%PPShoulder1%%) !important;
+}
+
+a[href|="/ppshoulder"]{
+    background-position: -0% -0%;
+}
+
+a[href|="/pepperonipizza"]{
+    background-position: -100% -0%;
+}
+
+a[href|="/dinkyexcite"]{
+    background-position: -200% -0%;
+}
+
+a[href|="/ajpizza"]{
+    background-position: -0% -100%;
+}
+
+a[href|="/dinkyjump"]{
+    background-position: -100% -100%;
+}
+
+a[href|="/dinkyhop"]{
+    background-position: -200% -100%;
+}
+
+a[href|="/dinkyshy"]{
+    background-position: -0% -200%;
+}
+
+a[href|="/dinkytable"]{
+    background-position: -100% -200%;
+}
+
+a[href|="/dinkyfall"]{
+    background-position: -200% -200%;
+}
+
+a[href|="/lunateeheepizza"]{
+    background-position: -0% -200%;
+}
+
+a[href|="/lunanopizza"]{
+    background-position: -100% -200%;
+}
+
+a[href|="/scootshandpizza"]{
+    background-position: -100% -400%;
+}
+
+a[href|="/sbohcomeonpizza"]{
+    background-position: -0% -600%;
+}
+
+a[href|="/abboredpizza"]{
+    background-position: -200% -600%;
+}
+
+a[href|="/rarityhairpizza"]{
+    background-position: -300% -600%;
+}
