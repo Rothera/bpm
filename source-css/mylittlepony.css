@@ -199,10 +199,10 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%pinkie-stache-hat-af%%);
+ background:url(%%derpy-hat%%);
  width:60px;
  height:60px;
- margin-top:-35px;
+ margin-top:-36px;
  margin-left:5px;
  margin-bottom:0px;
  margin-right:-40px;
@@ -260,6 +260,34 @@ body a[href="/spoiler"]:hover{color:white!important}
 /*Pinkie Pie NPT Warnings*/
 /*DO _NOT_ PUT ANY COMMENTS IN-BETWEEN THE NPTWARNING TAGS! Do not remove the tags either, they are used by modtool and the bot! The tags must be on their own line!*/
 /*{NPTWARNING}*/
+
+/*.formtabs-content .infobar
+{
+ margin-left:50px;
+ margin-top:137px;
+ font-size:0px;
+ color:#F6E69F;
+ padding:0;
+ content:"";
+}
+
+.formtabs-content .infobar:before
+{
+ display:inline-block;
+ margin:-137px -65px -8px -101px;
+ padding:143px 5px 14px 126px;
+ width:438px;
+ height:30px;
+ background:url(%%pinkiemessage%%) no-repeat;
+ content:"Hey you! It's No Pics Thursday! So no submitting pictures, ok? No need to worry though, you can save your pictures for another day!";
+ font-size:12px;
+ color:black;
+}
+
+.formtabs-content .infobar#text-desc:before
+{
+ background:url(%%pinkiemessage%%) no-repeat;
+}*/
 
 /*{/NPTWARNING}*/
 

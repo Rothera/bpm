@@ -13,42 +13,6 @@ body:first-of-type, body.res-nightmode:first-of-type {
 }
 
 
-/* TEMPORARY SPOOPY BANNER
- #header #header-bottom-left  {
-background: url(%%spook2%%)    !important;
-    -webkit-animation: banimate 3s steps(23) infinite;-moz-animation: banimate 3s steps(23) infinite;-ms-animation: banimate 3s steps(23) infinite;-o-animation: banimate 3s steps(23) infinite;animation: banimate 3s steps(23) infinite; 
-}
-
-
-
-@-webkit-keyframes banimate {from{background-position: 0 0;}to{ background-position: 0px -6048px; }} 
-@-moz-keyframes banimate {from {background-position: 0 0;}to{ background-position: 0px -6048px; } } 
-@-ms-keyframes banimate{from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
-@-o-keyframes banimate {from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
-@keyframes banimate {from { background-position: 0 0; }to{ background-position: 0px -6048px; } } 
-*/
-
-/* LET IT SNOW! Now with extra snow! */
-#header:after {
-content: "";
-background: url(%%Snow2%%);
-position: fixed;
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-opacity: 0.7;
-z-index: 50;
-pointer-events: none;
--webkit-animation: snow 1s steps(20) infinite;-moz-animation: snow 1s steps(20) infinite;-ms-animation: snow 1s steps(20) infinite;-o-animation: snow 1s steps(20) infinite;animation: snow 1s steps(20) infinite; 
-}
-
-
-@-webkit-keyframes snow {from{background-position: 0 0;}to{ background-position: 0px -6000px; }} 
-@-moz-keyframes snow {from {background-position: 0 0;}to{ background-position: 0px -6000px; } } 
-@-ms-keyframes snow{from {background-position: 0 0; }to{ background-position: 0px -6000px; } } 
-@-o-keyframes snow {from {background-position: 0 0; }to{ background-position: 0px -6000px; } } 
-@keyframes snow {from { background-position: 0 0; }to{ background-position: 0px -6000px; } } 
 
 
 
@@ -596,6 +560,7 @@ background-repeat: no-repeat;
 .flair-gameboy17:after { background-position: 0px -6810px }
 .flair-minibug:after { background-position: 0px -6840px }
 .flair-kwulhu:after { background-position: 0px -6870px }
+.flair-chino:after { background-position: 0px -6900px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: #222!important; }
@@ -1612,3 +1577,7 @@ a.author, .res a.author {
     background-repeat: no-repeat;
     margin-bottom: -1px;
     }
+    
+    
+    
+    

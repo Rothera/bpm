@@ -799,3 +799,22 @@ background-image:url(%%2%%),url(%%1%%),url(%%3%%),url(%%4%%),url(%%5%%);
 animation:snow 20s linear infinite
 }
 @-webkit-keyframes snow{0%{background-position:0 0,0 0,0 0}100%{background-position:500px 1000px,400px 400px,300px 300px}}@-moz-keyframes snow{0%{background-position:0 0,0 0,0 0}100%{background-position:500px 1000px,400px 400px,300px 300px}}@-ms-keyframes snow{0%{background-position:0 0,0 0,0 0}100%{background-position:500px 1000px,400px 400px,300px 300px}}@keyframes snow{0%{background-position:0 0,0 0,0 0}100%{background-position:500px 1000px,400px 400px,300px 300px}}
+
+
+
+
+
+
+
+
+
+/*changed the "bacon" for res konami code*/
+
+#baconBit {
+  background-image: url('%%spooky%%') !important;
+  width: 70px !important;
+  height: 70px !important;
+background-position: 0% -800%
+}
+
+/*Bacond End*/

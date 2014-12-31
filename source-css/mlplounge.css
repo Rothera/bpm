@@ -164,7 +164,7 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  text-align:center;
  height:500px;
  width:100%;
- background-image:url(%%xmas-tree-21%%);
+ background-image:url(%%xmas-tree-29%%);
  background-repeat:no-repeat;
  margin-bottom:-25px;
  background-position: bottom center;
@@ -318,6 +318,16 @@ visibility: hidden;
 
 /*Sidebar Filly end*/
 
+/*changed the "bacon" for res konami code*/
+
+#baconBit {
+  background-image: url('%%filly-table%%') !important;
+  width: 70px !important;
+  height: 70px !important;
+background-position: 0% -800%
+}
+
+/*Bacond End*/
 
 body{background: #ffffff url(%%twilightbackground%%) no-repeat fixed center center}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
@@ -1355,7 +1365,8 @@ a[href|="/ripferrbearand20"] {
 .flair-silverstar {background-position: -200% -2000%}
 .flair-peachbottom {background-position: -300% -2000%}
 
-.flair-flash {background-position: 0% -2100%}
+/*.flair-flash {background-position: 0% -2100%}*/
+.flair-flash {background-position: -200% -1900%} /*FLASH GORDON RETURNS!*/
 .flair-sunset {background-position: -100% -2100%}
 .flair-gilda {background-position: -200% -2100%}
 .flair-thunderlane {background-position: -300% -2100%}

@@ -380,7 +380,7 @@ height: 70px;
 background-image: url(%%btlemotetable5%%)
 }
 
-a[href|="/trixdrunk"], a[href|="/itbegins"], a[href|="/thedrinkening"], a[href|="/heavybedroomeyes"] {
+a[href|="/trixdrunk"], a[href|="/itbegins"], a[href|="/thedrinkening"], a[href|="/heavybedroomeyes"], a[href|="/partyrock"], a[href|="/hrprbrdr"], a[href|="/tomparty"]{
 display:block;
 clear: none;
 float: left;
@@ -816,7 +816,8 @@ clear: none;
 float: left;
 width: 139px;
 height: 140px;
-background-image: url(%%duchess%%)
+background-position: -140px -700px;
+background-image: url(%%btlemotetable5%%)
 }
 
 /* Sheet offsets */
@@ -897,7 +898,7 @@ a[href|="/heavybedroomeyes"] {
 background-position: -140px -560px
 }
 
-a[href|="/nomeansno"] {
+a[href|="/nomeansno"], a[href|="/partyrock"], a[href|="/hrprbrdr"], a[href|="/tomparty"] {
 background-position: -0px -700px
 }
 
