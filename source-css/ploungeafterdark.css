@@ -672,11 +672,13 @@ display: none !important;
 }
 
 .flair {
-border: none !important;
-top:20px;
+border: 0px !important;
 padding:0px;
-background: url(%%spritesheetnew%%);
+background: url(%%spritesheetnew%%) no-repeat -9999px -9999px;
 display:inline-block;
+min-width: 50px;
+text-indent: 300px;
+font-style: italic;
 }
 
 
@@ -720,7 +722,7 @@ display:inline-block;
 .flair-surpriseflair{ background-position: -80px -880px; width: 30px; height: 30px; } 
 .flair-trixieflair{ background-position: -80px -960px; width: 30px; height: 30px; } 
 .flair-zecoraflair{ background-position: -80px -1040px; width: 30px; height: 30px; }
-.flair-nimbleflair{ background-position: -80px -1118px; width: 30px; height: 30px; }
+.flair-leftyflair{ background-position: -80px -1118px; width: 30px; height: 30px; }
 .flair-thunderflair{ background-position: -80px -1201px; width: 30px; height: 30px; }
 
 a[href="/jclop"] {
@@ -1136,7 +1138,7 @@ a[href*="Captain_Awesomex"]{background:0;-webkit-animation:rainbow .4s linear in
  position: relative;
  top: 70px;
  right: 70px;
- background:url(%%xmas-filly-table%%)
+ background:url(%%filly-table%%)
 }
 
 .commentarea .usertext-edit:not(.viewSource){padding-top: 70px; margin-left: -70px}

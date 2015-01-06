@@ -164,7 +164,7 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  text-align:center;
  height:500px;
  width:100%;
- background-image:url(%%xmas-tree-29%%);
+ background-image:url(%%newyearsfooter%%);
  background-repeat:no-repeat;
  margin-bottom:-25px;
  background-position: bottom center;
@@ -209,7 +209,7 @@ div.thing.link:first-child:after {
  height: 70px;
  border: 0;
  content: "";
- background:url(%%xmas-filly-table%%)
+ background:url(%%filly-table%%)
 }
 
 div.thing.link:first-child[data-fullname$="0"]:after{background-position: 0 0}
@@ -260,7 +260,7 @@ input[name=uh] ~ a:after {
  height: 70px;
  border: 0;
  content: "";
- background:url(%%xmas-filly-table%%)
+ background:url(%%filly-table%%)
 }
 
 input[name=uh][value$="0"] ~ a:after {background-position: 0 0}
@@ -633,7 +633,7 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 
 
 a[href|="/filly"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%xmas-filly-table%%)!important}
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%filly-table%%)!important}
 
 /*Rarity*/
 .usertext input[value$="a"] + .usertext-body a[href="/filly"]{background-position: 0 0}
@@ -757,7 +757,7 @@ a[href|="/filly"]
 .side .md table:nth-of-type(4) th:nth-of-type(1):after {content:"e";}
 .side .md table:nth-of-type(4) tr:nth-of-type(odd) td + td:after {background-image:url(%%emotes%%);}
 .side .md table:nth-of-type(5) th:nth-of-type(1):after {content:"f";}
-.side .md table:nth-of-type(5) tr:nth-of-type(odd) td + td:after {background-image:url(%%xmas-filly-table%%);}
+.side .md table:nth-of-type(5) tr:nth-of-type(odd) td + td:after {background-image:url(%%filly-table%%);}
 .side .md table:nth-of-type(6) th:nth-of-type(1):after {content:"pl";}
 .side .md table:nth-of-type(6) tr:nth-of-type(odd) td + td:after {background-image:url(%%lounge-emotes%%);}
 .side .md table td {padding:0;}
@@ -1195,7 +1195,7 @@ a[href|="/ripferrbearand20"] {
  position: relative;
  top: 75px;
  right: 70px;
- background:url(%%xmas-filly-table%%)
+ background:url(%%filly-table%%)
 }
 
 .commentarea .usertext-edit:not(.viewSource){padding-top: 70px; margin-left: -70px}
@@ -1409,13 +1409,10 @@ a.author[href$="BlameTheJungler"] {font-size:0!important; overflow:hidden; displ
 a.author[href$="BlameTheJungler"]:before {font-size:10px!important; visibility:visible!important; content: "LeafOnTheWind"}
 
 a.author[href$="HeWho_MustNotBeNamed"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="HeWho_MustNotBeNamed"]:before {font-size:10px!important; visibility:visible!important; content: "ErDer_HastNamenNicht"}
+a.author[href$="HeWho_MustNotBeNamed"]:before {font-size:10px!important; visibility:visible!important; content: "Qui non est Named"}
 
 a.author[href$="DaylightDarkle"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="DaylightDarkle"]:before {font-size:10px!important; visibility:visible!important; content: "Day1ightDark1e"}
-
-a.author[href$="LunarWolves"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="LunarWolves"]:before {font-size:12px!important; visibility:visible!important; content: "Evil Robot SantaWolves"}
 
 a.author[href$="Peacefulzealot"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="Peacefulzealot"]:before {font-size:10px!important; visibility:visible!important; content: "CenturyZellyBelly"}

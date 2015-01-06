@@ -7,14 +7,10 @@ body:first-of-type, body.res-nightmode:first-of-type {
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%christmasskele%%) 50% 0px !important;
+   background: url(%%hateallboys%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
-
-
-
-
 
 .gilded-icon{
     transform-origin:50% 65% 0;
@@ -561,6 +557,7 @@ background-repeat: no-repeat;
 .flair-minibug:after { background-position: 0px -6840px }
 .flair-kwulhu:after { background-position: 0px -6870px }
 .flair-chino:after { background-position: 0px -6900px }
+.flair-xelnaga:after { background-position: 0px -6930px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: #222!important; }
@@ -1086,7 +1083,7 @@ a.author[href$="dylantrevor"]:after {content:" Free stickers! Ask me how!"}
 a.author[href$="Ceolt0ir"]:after {content:" ★★★"}
 a.author[href$="DrinkiePie"]:after {content:" Never got text flair :("}
 a.author[href$="thedarklordkyp"]:after {content:" http://i.imm.io/11QxU.jpeg"}
-a.author[href$="XelNaga"]:after {content:" (Is totally internet famous)"}
+a.author[href$="XelNaga"]:after {content:" (DA BIRFDAY BOY)"}
 a.author[href$="cecinestpasunepony"]:after { content:" writes shitty mlas1 erotic fanfiction"}
 a.author[href$="AttainedAndDestroyed"]:after { content:" saggy tits are swaggy tits"}
 a.author[href$="Scythesickle"]:after { content:" (wants to be a mod)"}
@@ -1554,8 +1551,8 @@ a.author[href$="Parasprite"] {color:#D19FE3!important}
 .error.OUTOFSUB{display:none!important}
 
 /* Username Rainbow */
-/*
-a.author, .res a.author {
+
+/* a.author, .res a.author {
     color:white!important;
     background: -moz-linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
     background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
@@ -1563,7 +1560,7 @@ a.author, .res a.author {
 */
 
 
-/* --------------Footer-------------------------
+/* --------------Footer------------------------- */
 
 .footer-parent {
     height: 420px;
@@ -1577,7 +1574,3 @@ a.author, .res a.author {
     background-repeat: no-repeat;
     margin-bottom: -1px;
     }
-    
-    
-    
-    

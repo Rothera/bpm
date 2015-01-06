@@ -124,8 +124,8 @@ a[href|="/filly"]
 
 .author[href$="/Moon-Phase"]:after {content: ' of all things lasers ';}
 
-.author[href$="/PresidentCelestia"]:after {content: ' Of the Pumpkin Patch ';}
-.author[href$="/PresidentCelestia"]:before {content: ' King ';}
+.author[href$="/pres"]:after {content: ' Of the Pumpkin Patch ';}
+.author[href$="/pres"]:before {content: ' King ';}
 
 .author:before {content: 'Queen ';}
 
@@ -184,15 +184,16 @@ a[href="/moist"] {
     background-image: url(%%moist%%)
 }
 
-a[href="/twikillme"] {
+a[href="/givememoney"] {
     background-position: 0px 0px;
     Display: block;
     Clear: none;
     Float: left;
-    Width: 100px;
-    Height: 139px;
-    background-image: url(%%twikillme%%)
+    Width: 159;
+    Height: 159px;
+    background-image: url(%%givememoney%%)
 }
+
 
 a[href|="/best"] {
     display: block;
@@ -363,9 +364,11 @@ background:url(%%BerryMail%%);
 .author[href$="/KillerRabbit1253"]:before {content: 'King Queen ' ;}
 .author[href$="/KillerRabbit1253"]:after {content: ' is the princess of ice cream, BerryTrain, and Boxy ' ;}
 .author[href$="/CrystalLord"]:after {content: ' of lording crystals' ;}
-.author[href$="aly411"]:before {content: ' ';}
-.author[href$="/aly411"]:after {content: ' the rose queen';}
 .author[href$="HonorInDefeat"]:after {content: ' of Disney Songs' ;}
+
+a.author[href$="aly411"]{font-size:0px!important;}
+a.author[href$="aly411"]:after{content:"Rosebud";font-size:10px!important;}
+.sidecontentbox .author[href$="aly411"]:after{font-size:12px!important;}
 
 /* STYLESHEET EMOTES */
 
@@ -790,7 +793,7 @@ a[href="/intensifies2"]:after {
 
 
 
-#header-bottom-left{
+ #header-bottom-left{
 background-color:transparent;
 background-image:url(%%2%%),url(%%1%%),url(%%3%%),url(%%4%%),url(%%5%%);
 -webkit-animation:snow 20s linear infinite;
@@ -798,7 +801,7 @@ background-image:url(%%2%%),url(%%1%%),url(%%3%%),url(%%4%%),url(%%5%%);
 -ms-animation:snow 20s linear infinite;
 animation:snow 20s linear infinite
 }
-@-webkit-keyframes snow{0%{background-position:0 0,0 0,0 0}100%{background-position:500px 1000px,400px 400px,300px 300px}}@-moz-keyframes snow{0%{background-position:0 0,0 0,0 0}100%{background-position:500px 1000px,400px 400px,300px 300px}}@-ms-keyframes snow{0%{background-position:0 0,0 0,0 0}100%{background-position:500px 1000px,400px 400px,300px 300px}}@keyframes snow{0%{background-position:0 0,0 0,0 0}100%{background-position:500px 1000px,400px 400px,300px 300px}}
+@-webkit-keyframes snow{0%{background-position:0 0,0 0,0 0}100%{background-position:500px 1000px,400px 400px,300px 300px}}@-moz-keyframes snow{0%{background-position:0 0,0 0,0 0}100%{background-position:500px 1000px,400px 400px,300px 300px}}@-ms-keyframes snow{0%{background-position:0 0,0 0,0 0}100%{background-position:500px 1000px,400px 400px,300px 300px}}@keyframes snow{0%{background-position:0 0,0 0,0 0}100%{background-position:500px 1000px,400px 400px,300px 300px}} 
 
 
 
