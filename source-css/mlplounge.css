@@ -1,3 +1,5 @@
+/*Header source: http://amorecadenza.deviantart.com/art/Radiance-470086572 */
+
 div.titlebox span.word {display:none}
 
 div.titlebox .subscribers span.number:after {content:" Sillies and Numpties "}
@@ -249,58 +251,6 @@ div.thing.link:first-child[data-fullname$="x"]:after{background-position: -200% 
 div.thing.link:first-child[data-fullname$="y"]:after{background-position: -200% -1000%}
 div.thing.link:first-child[data-fullname$="z"]:after{background-position: -200% -1100%}
 
-/*Random based on log out id*/
-/*
-input[name=uh] ~ a:after {
- position: fixed;
- top: 240px;
- right: 10px;
- z-index: 0;
- width: 70px;
- height: 70px;
- border: 0;
- content: "";
- background:url(%%filly-table%%)
-}
-
-input[name=uh][value$="0"] ~ a:after {background-position: 0 0}
-input[name=uh][value$="1"] ~ a:after {background-position: 0 -100%}
-input[name=uh][value$="2"] ~ a:after {background-position: 0 -200%}
-input[name=uh][value$="3"] ~ a:after {background-position: 0 -300%}
-input[name=uh][value$="4"] ~ a:after {background-position: 0 -400%}
-input[name=uh][value$="5"] ~ a:after {background-position: 0 -500%}
-input[name=uh][value$="6"] ~ a:after {background-position: 0 -600%}
-input[name=uh][value$="7"] ~ a:after {background-position: 0 -700%}
-input[name=uh][value$="8"] ~ a:after {background-position: 0 -800%}
-input[name=uh][value$="9"] ~ a:after {background-position: 0 -900%}
-input[name=uh][value$="a"] ~ a:after {background-position: 0 -1000%}
-input[name=uh][value$="b"] ~ a:after {background-position: 0 -1100%}
-input[name=uh][value$="c"] ~ a:after {background-position: -100% 0}
-input[name=uh][value$="d"] ~ a:after {background-position: -100% -100%}
-input[name=uh][value$="e"] ~ a:after {background-position: -100% -200%}
-input[name=uh][value$="f"] ~ a:after {background-position: -100% -300%}
-input[name=uh][value$="g"] ~ a:after {background-position: -100% -400%}
-input[name=uh][value$="h"] ~ a:after {background-position: -100% -500%}
-input[name=uh][value$="i"] ~ a:after {background-position: -100% -600%}
-input[name=uh][value$="j"] ~ a:after {background-position: -100% -700%}
-input[name=uh][value$="k"] ~ a:after {background-position: -100% -800%}
-input[name=uh][value$="l"] ~ a:after {background-position: -100% -900%}
-input[name=uh][value$="m"] ~ a:after {background-position: -100% -1000%}
-input[name=uh][value$="n"] ~ a:after {background-position: -100% -1100%}
-input[name=uh][value$="o"] ~ a:after {background-position: -200% 0}
-input[name=uh][value$="p"] ~ a:after {background-position: -200% -100%}
-input[name=uh][value$="q"] ~ a:after {background-position: -200% -200%}
-input[name=uh][value$="r"] ~ a:after {background-position: -200% -300%}
-input[name=uh][value$="s"] ~ a:after {background-position: -200% -400%}
-input[name=uh][value$="t"] ~ a:after {background-position: -200% -500%}
-input[name=uh][value$="u"] ~ a:after {background-position: -200% -600%}
-input[name=uh][value$="v"] ~ a:after {background-position: -200% -700%}
-input[name=uh][value$="w"] ~ a:after {background-position: -200% -800%}
-input[name=uh][value$="x"] ~ a:after {background-position: -200% -900%}
-input[name=uh][value$="y"] ~ a:after {background-position: -200% -1000%}
-input[name=uh][value$="z"] ~ a:after {background-position: -200% -1100%}
-*/
-
 .side a[href="/r/MLPLounge/new/"]
 {
  display:block;
@@ -511,7 +461,6 @@ a[href|="/rfillyrarity"],a[href|="/rtwidurr"],a[href|="/ramazingmagic"],a[href|=
 
 .side .md table tr:nth-of-type(1) td:nth-of-type(2):after {background-position:0 0!important}
 
-
 a[href|="/twipride"],a[href|="/a01"],a[href|="/pl01"],a[href|="/rtwipride"],a[href|="/ra01"],a[href|="/ajcower"],a[href|="/b01"],a[href|="/rajcower"],a[href|="/rb01"],a[href|="/twismug"],a[href|="/c01"],a[href|="/rtwismug"],a[href|="/rc01"],a[href|="/lyra"],a[href|="/l00"],a[href|="/e01"],a[href|="/rlyra"],a[href|="/rl00"],a[href|="/re01"],a[href|="/karmasalute"],a[href|="/rkarmasalute"],.side .md table tr:nth-of-type(3) td:nth-of-type(2):after
 {background-position:0 -100%}
 
@@ -631,116 +580,43 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 
 /*This is all the fill emote code*/
 
-
 a[href|="/filly"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%filly-table%%)!important}
-
-/*Rarity*/
 .usertext input[value$="a"] + .usertext-body a[href="/filly"]{background-position: 0 0}
-
-/*Pinkie Pie*/
 .usertext input[value$="b"] + .usertext-body a[href="/filly"]{background-position:0 -100%}
-
-/*Scootaloo*/
 .usertext input[value$="c"] + .usertext-body a[href="/filly"]{background-position:0 -200%}
-
-/*Lyra*/
 .usertext input[value$="d"] + .usertext-body a[href="/filly"]{background-position:0 -300%}
-
-/*Vinyl Scratch*/
 .usertext input[value$="e"] + .usertext-body a[href="/filly"]{background-position:0 -400%}
-
-/*Roseluck*/
 .usertext input[value$="f"] + .usertext-body a[href="/filly"]{background-position:0 -500%}
-
-/*Princess Celestia*/
 .usertext input[value$="g"] + .usertext-body a[href="/filly"]{background-position:0 -600%}
-
-/*Princess Cadance*/
 .usertext input[value$="h"] + .usertext-body a[href="/filly"]{background-position:0 -700%}
-
-/*Twist*/
 .usertext input[value$="i"] + .usertext-body a[href="/filly"]{background-position:0 -800%}
-
-/*Cloud Chaser*/
 .usertext input[value$="j"] + .usertext-body a[href="/filly"]{background-position:0 -900%}
-
-/*Pipsqueak 0 -1000%*/
 .usertext input[value$="k"] + .usertext-body a[href="/filly"]{background-position:0 -1000%}
-
-/*Big Macintosh 0 -1100%*/
 .usertext input[value$="l"] + .usertext-body a[href="/filly"]{background-position:0 -1100%}
-
-/*Applejack*/
 .usertext input[value$="m"] + .usertext-body a[href="/filly"]{background-position:-100% 0}
-
-/*Rainbow Dash*/
 .usertext input[value$="n"] + .usertext-body a[href="/filly"]{background-position:-100% -100%}
-
-/*Applebloom*/
 .usertext input[value$="o"] + .usertext-body a[href="/filly"]{background-position:-100% -200%}
-
-/*Bon Bon*/
 .usertext input[value$="p"] + .usertext-body a[href="/filly"]{background-position:-100% -300%}
-
-/*Octavia*/
 .usertext input[value$="q"] + .usertext-body a[href="/filly"]{background-position:-100% -400%}
-
-/*Carrot Top*/
 .usertext input[value$="r"] + .usertext-body a[href="/filly"]{background-position:-100% -500%}
-
-/*Luna*/
 .usertext input[value$="s"] + .usertext-body a[href="/filly"]{background-position:-100% -600%}
-
-/*Zecora*/
 .usertext input[value$="t"] + .usertext-body a[href="/filly"]{background-position:-100% -700%}
-
-/*Queen Chrysalis*/
 .usertext input[value$="u"] + .usertext-body a[href="/filly"]{background-position:-100% -800%}
-
-/*Flitter*/
 .usertext input[value$="v"] + .usertext-body a[href="/filly"]{background-position:-100% -900%}
-
-/*Rumble*/
 .usertext input[value$="w"] + .usertext-body a[href="/filly"]{background-position:-100% -1000%}
-
-/*Braeburn*/
 .usertext input[value$="x"] + .usertext-body a[href="/filly"]{background-position:-100% -1100%}
-
-/*Twilight Sparkle*/
 .usertext input[value$="y"] + .usertext-body a[href="/filly"]{background-position:-200% 0}
-
-/*Fluttershy*/
 .usertext input[value$="z"] + .usertext-body a[href="/filly"]{background-position:-200% -100%}
-
-/*Sweetiebelle*/
 .usertext input[value$="1"] + .usertext-body a[href="/filly"]{background-position:-200% -200%}
-
-/*Cheerilee*/
 .usertext input[value$="2"] + .usertext-body a[href="/filly"]{background-position:-200% -300%}
-
-/*Spitfire*/
 .usertext input[value$="3"] + .usertext-body a[href="/filly"]{background-position:-200% -400%}
-
-/*Derpy*/
 .usertext input[value$="4"] + .usertext-body a[href="/filly"]{background-position:-200% -500%}
-
-/*Karma*/
 .usertext input[value$="5"] + .usertext-body a[href="/filly"]{background-position:-200% -600%}
-
-/*Minuette*/
 .usertext input[value$="6"] + .usertext-body a[href="/filly"]{background-position:-200% -700%}
-
-/*The Great and Powerful Trixie*/
 .usertext input[value$="7"] + .usertext-body a[href="/filly"]{background-position:-200% -800%}
-
-/*Maud*/
 .usertext input[value$="8"] + .usertext-body a[href="/filly"]{background-position:-200% -900%}
-
-/*Soarin*/
 .usertext input[value$="9"] + .usertext-body a[href="/filly"]{background-position:-200% -1000%}
-
-/*Bulk Biceps*/
 .usertext input[value$="0"] + .usertext-body a[href="/filly"]{background-position:-200% -1100%}
 
 /*End filly code*/
@@ -756,7 +632,7 @@ a[href|="/filly"]
 .side .md table:nth-of-type(3) tr:nth-of-type(odd) td + td:after {background-image:url(%%cmotes%%);}
 .side .md table:nth-of-type(4) th:nth-of-type(1):after {content:"e";}
 .side .md table:nth-of-type(4) tr:nth-of-type(odd) td + td:after {background-image:url(%%emotes%%);}
-.side .md table:nth-of-type(5) th:nth-of-type(1):after {content:"f";}
+.side .md table:nth-of-type(5) th:nth-of-type(1):after {content:" ";}
 .side .md table:nth-of-type(5) tr:nth-of-type(odd) td + td:after {background-image:url(%%filly-table%%);}
 .side .md table:nth-of-type(6) th:nth-of-type(1):after {content:"pl";}
 .side .md table:nth-of-type(6) tr:nth-of-type(odd) td + td:after {background-image:url(%%lounge-emotes%%);}
@@ -766,9 +642,9 @@ a[href|="/filly"]
 .side .md table th:nth-of-type(3):after {content:"1";}
 .side .md table th:nth-of-type(4):after {content:"2";}
 .side .md table th:nth-of-type(5):after {content:"3";}
-.side .md table:nth-of-type(5) th:nth-of-type(2):after {content:"filly"!important}
-.side .md table:nth-of-type(5) th:nth-of-type(3):after {content:"table"!important}
-.side .md table:nth-of-type(5) th:nth-of-type(4):after {content:"yay!"!important}
+.side .md table:nth-of-type(5) th:nth-of-type(2):after {content:" "}
+.side .md table:nth-of-type(5) th:nth-of-type(3):after {content:" "}
+.side .md table:nth-of-type(5) th:nth-of-type(4):after {content:" "}
 
 .side .md table tbody tr:nth-of-type(1) td:nth-of-type(1):after {content:"0";}
 .side .md table tbody tr:nth-of-type(3) td:nth-of-type(1):after {content:"1";}
@@ -780,18 +656,18 @@ a[href|="/filly"]
 .side .md table tbody tr:nth-of-type(15) td:nth-of-type(1):after {content:"7";}
 .side .md table tbody tr:nth-of-type(17) td:nth-of-type(1):after {content:"8";}
 .side .md table tbody tr:nth-of-type(19) td:nth-of-type(1):after {content:"9";}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(1) td:nth-of-type(1):after {content:"F"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(3) td:nth-of-type(1):after {content:"i"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(5) td:nth-of-type(1):after {content:"l"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(7) td:nth-of-type(1):after {content:"l"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(9) td:nth-of-type(1):after {content:"i"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(11) td:nth-of-type(1):after {content:"e"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(13) td:nth-of-type(1):after {content:"s"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(15) td:nth-of-type(1):after {content:""!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(17) td:nth-of-type(1):after {content:"Y"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(19) td:nth-of-type(1):after {content:"a"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(21) td:nth-of-type(1):after {content:"y"!important}
-.side .md table:nth-of-type(5) tbody tr:nth-of-type(23) td:nth-of-type(1):after {content:"!"!important}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(1) td:nth-of-type(1):after {content:" "}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(3) td:nth-of-type(1):after {content:" "}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(5) td:nth-of-type(1):after {content:" "}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(7) td:nth-of-type(1):after {content:" "}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(9) td:nth-of-type(1):after {content:" "}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(11) td:nth-of-type(1):after {content:" "}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(13) td:nth-of-type(1):after {content:" "}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(15) td:nth-of-type(1):after {content:" "}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(17) td:nth-of-type(1):after {content:" "}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(19) td:nth-of-type(1):after {content:" "}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(21) td:nth-of-type(1):after {content:" "}
+.side .md table:nth-of-type(5) tbody tr:nth-of-type(23) td:nth-of-type(1):after {content:" "}
 
 /*Row/col sizes: (And some undoing for number col*/
 .side .md table th + th
@@ -1072,51 +948,15 @@ a[href|="/filly"]
 .side .md table:nth-of-type(4) tr:nth-of-type(24) td:nth-of-type(2):after{content:"karmasalute"}
 .side .md table:nth-of-type(4) tr:nth-of-type(24) td:nth-of-type(3):after{content:"dishappy"}
 .side .md table:nth-of-type(4) tr:nth-of-type(24) td:nth-of-type(4):after{content:"karmastare"}
-.side .md table:nth-of-type(5) tr:nth-of-type(2) td:nth-of-type(2):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(2) td:nth-of-type(3):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(2) td:nth-of-type(4):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(4) td:nth-of-type(2):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(4) td:nth-of-type(3):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(4) td:nth-of-type(4):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(6) td:nth-of-type(2):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(6) td:nth-of-type(3):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(6) td:nth-of-type(4):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(8) td:nth-of-type(2):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(8) td:nth-of-type(3):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(8) td:nth-of-type(4):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(10) td:nth-of-type(2):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(10) td:nth-of-type(3):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(10) td:nth-of-type(4):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(12) td:nth-of-type(2):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(12) td:nth-of-type(3):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(12) td:nth-of-type(4):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(14) td:nth-of-type(2):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(14) td:nth-of-type(3):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(14) td:nth-of-type(4):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(16) td:nth-of-type(2):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(16) td:nth-of-type(3):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(16) td:nth-of-type(4):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(18) td:nth-of-type(2):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(18) td:nth-of-type(3):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(18) td:nth-of-type(4):after{content:"filly"}
 .side .md table:nth-of-type(5) tr:nth-of-type(19) td:nth-of-type(2):after{background-position: 0 -900%}
 .side .md table:nth-of-type(5) tr:nth-of-type(19) td:nth-of-type(3):after{background-position: -100% -900%}
 .side .md table:nth-of-type(5) tr:nth-of-type(19) td:nth-of-type(4):after{background-position: -200% -900%}
-.side .md table:nth-of-type(5) tr:nth-of-type(20) td:nth-of-type(2):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(20) td:nth-of-type(3):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(20) td:nth-of-type(4):after{content:"filly"}
 .side .md table:nth-of-type(5) tr:nth-of-type(21) td:nth-of-type(2):after{background-position: 0 -1000%}
 .side .md table:nth-of-type(5) tr:nth-of-type(21) td:nth-of-type(3):after{background-position: -100% -1000%}
 .side .md table:nth-of-type(5) tr:nth-of-type(21) td:nth-of-type(4):after{background-position: -200% -1000%}
-.side .md table:nth-of-type(5) tr:nth-of-type(22) td:nth-of-type(2):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(22) td:nth-of-type(3):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(22) td:nth-of-type(4):after{content:"filly"}
 .side .md table:nth-of-type(5) tr:nth-of-type(23) td:nth-of-type(2):after{background-position: 0 -1100%}
 .side .md table:nth-of-type(5) tr:nth-of-type(23) td:nth-of-type(3):after{background-position: -100% -1100%}
 .side .md table:nth-of-type(5) tr:nth-of-type(23) td:nth-of-type(4):after{background-position: -200% -1100%}
-.side .md table:nth-of-type(5) tr:nth-of-type(24) td:nth-of-type(2):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(24) td:nth-of-type(3):after{content:"filly"}
-.side .md table:nth-of-type(5) tr:nth-of-type(24) td:nth-of-type(4):after{content:"filly"}
 .side .md table:nth-of-type(6) tr:nth-of-type(2) td:nth-of-type(2):after{content:"fillyrarity"}
 .side .md table:nth-of-type(6) tr:nth-of-type(2) td:nth-of-type(3):after{content:"twidurr"}
 .side .md table:nth-of-type(6) tr:nth-of-type(2) td:nth-of-type(4):after{content:"amazingmagic"}
@@ -1420,9 +1260,102 @@ a.author[href$="Peacefulzealot"]:before {font-size:10px!important; visibility:vi
 a.author[href$="Fuzzy_Gauntlets"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="Fuzzy_Gauntlets"]:before {font-size:10px!important; visibility:visible!important; content: "Fuzzy_Infinity_Gauntlets"}
 
-a.author[href$="1125a"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="1125a"]:before {font-size:10px!important; visibility:visible!important; content: "1125au"}
-
-
 .sidecontentbox a.author[href$="Pinkie_Pie"] {font-size:0!important; overflow:hidden; display:none; content: "";}
 
+
+/* Random Upvote Text */
+
+
+.midcol{width:30px!important}
+
+.thing .upmod:focus::after{
+content:"";
+font-size:14px;
+margin-left:1px;
+position:relative;
+background: #fff;
+color:#f90;
+bottom:18px;
+opacity:0.0;
+-webkit-animation-name:dcupmod;
+-moz-animation-name:dcupmod;
+-webkit-animation-duration:4.0s;
+-moz-animation-duration:4.0s;
+-webkit-animation-timing-function:ease-out;
+-moz-animation-timing-function:ease-out;
+-webkit-animation-iteration-count:1;
+-moz-animation-iteration-count:1;
+animation-name:dcupmod;
+animation-duration:4.0s;
+animation-timing-function:ease-out;
+animation-iteration-count:1;
+animation-play-state:running;
+z-index:9000}
+
+@-webkit-keyframes dcupmod{
+0%{color:#f90}
+8%{bottom:23px;opacity:1.0}
+15%{bottom:28px}
+30%{color:#f90}
+50%{color:red;bottom:33px}
+60%{color:#f90}
+100%{bottom:38px;opacity:0.0}}
+
+@-moz-keyframes dcupmod{
+0%{color:#f90}8%{bottom:23px;opacity:1.0}
+15%{bottom:28px}30%{color:#f90}
+50%{color:#f90;bottom:33px}
+60%{color:#f90}
+100%{bottom:38px;opacity:0.0}}
+
+@keyframes dcupmod{
+0%{color:#f90}
+8%{bottom:23px;opacity:1.0}
+15%{bottom:28px}
+30%{color:#f90}
+50%{color:#f90;bottom:33px}
+60%{color:#f90}
+100%{bottom:38px;opacity:0.0}}
+
+.thing[data-fullname$="a"] > .midcol > .upmod:focus::after { content: "Don't you know you're all my very best friends? "; }
+.thing[data-fullname$="b"] > .midcol > .upmod:focus::after { content: "Oatmeal? Are you CRAZY? "; }
+.thing[data-fullname$="c"] > .midcol > .upmod:focus::after { content: "It needs to be about 20% cooler "; }
+.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "Yay! "; }
+.thing[data-fullname$="e"] > .midcol > .upmod:focus::after { content: "Eeyup"; }
+.thing[data-fullname$="f"] > .midcol > .upmod:focus::after { content: "Don't you use your fancy mathematics to muddy the issue! "; }
+.thing[data-fullname$="g"] > .midcol > .upmod:focus::after { content: "Whoa ho there, loverboy!"; }
+.thing[data-fullname$="h"] > .midcol > .upmod:focus::after { content: "Okie Dokie Lokie!"; }
+.thing[data-fullname$="i"] > .midcol > .upmod:focus::after { content: "It was under E-ee!"; }
+.thing[data-fullname$="j"] > .midcol > .upmod:focus::after { content: "And thats how Equestria was made"; }
+.thing[data-fullname$="k"] > .midcol > .upmod:focus::after { content: "Does this really deserve an upvote?"; }
+.thing[data-fullname$="l"] > .midcol > .upmod:focus::after { content: "All the ponies in this town are CRAZY"; }
+.thing[data-fullname$="m"] > .midcol > .upmod:focus::after { content: "Prepare your butts!"; }
+.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "Can you upvote twice?"; }
+.thing[data-fullname$="o"] > .midcol > .upmod:focus::after { content: "This thread needs to be condemned "; }
+.thing[data-fullname$="p"] > .midcol > .upmod:focus::after { content: "Muffins!"; }
+.thing[data-fullname$="q"] > .midcol > .upmod:focus::after { content: "I'd like to be a tree "; }
+.thing[data-fullname$="r"] > .midcol > .upmod:focus::after { content: "We'll fund the next season with upvotes"; }
+.thing[data-fullname$="s"] > .midcol > .upmod:focus::after { content: "SQUEEEE"; }
+.thing[data-fullname$="t"] > .midcol > .upmod:focus::after { content: "Scootaloo! Scoot-Scootaloo!"; }
+.thing[data-fullname$="u"] > .midcol > .upmod:focus::after { content: "Are you loco in the coco?"; }
+.thing[data-fullname$="v"] > .midcol > .upmod:focus::after { content: "What in tarnation?"; }
+.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "Smile, smile, smile!"; }
+.thing[data-fullname$="x"] > .midcol > .upmod:focus::after { content: "What the hay?!"; }
+.thing[data-fullname$="y"] > .midcol > .upmod:focus::after { content: "Dear Princess Celestia..."; }
+.thing[data-fullname$="z"] > .midcol > .upmod:focus::after { content: "I'm only doing this because you replied to me"; }
+.thing[data-fullname$="1"] > .midcol > .upmod:focus::after { content: "3 Months of Winter Coolness..."; }
+.thing[data-fullname$="2"] > .midcol > .upmod:focus::after { content: "This post is as popular as popular can be!"; }
+.thing[data-fullname$="3"] > .midcol > .upmod:focus::after { content: "What is this post full of so many wonders?"; }
+.thing[data-fullname$="4"] > .midcol > .upmod:focus::after { content: "It's of utmost importance the post that I get is something that's awesome and cool!"; }
+.thing[data-fullname$="5"] > .midcol > .upmod:focus::after { content: "I upvoted in 10 seconds flat"; }
+.thing[data-fullname$="6"] > .midcol > .upmod:focus::after { content: "The upvotes will last FOREEEVEER!"; }
+.thing[data-fullname$="7"] > .midcol > .upmod:focus::after { content: "What fun is there in making sense?"; }
+.thing[data-fullname$="8"] > .midcol > .upmod:focus::after { content: "YOU'RE GOING TO LOVE ME!"; }
+.thing[data-fullname$="9"] > .midcol > .upmod:focus::after { content: "The Great & Powerful Trixie doesn't trust downvotes"; }
+.thing[data-fullname$="0"] > .midcol > .upmod:focus::after { content: "Arrghhgh rrgh Aaaarhggrhh - King Sombra"; }
+
+.thing .upmod:focus:after{white-space:nowrap}
+
+.midcol,.last-clicked.midcol{overflow:visible!important}
+
+.res-commentBoxes .commentarea .comment{overflow:visible!important}

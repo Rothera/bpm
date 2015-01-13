@@ -199,7 +199,7 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%derpy-hat%%);
+ background:url(%%discentia-hat%%);
  width:60px;
  height:60px;
  margin-top:-35px;
@@ -259,9 +259,9 @@ body a[href="/spoiler"]:hover{color:white!important}
 
 /*Pinkie Pie NPT Warnings*/
 /*DO _NOT_ PUT ANY COMMENTS IN-BETWEEN THE NPTWARNING TAGS! Do not remove the tags either, they are used by modtool and the bot! The tags must be on their own line!*/
-/*{NPTWARNING}*/
+/*{NPTWARNING}
 
-/*.formtabs-content .infobar
+.formtabs-content .infobar
 {
  margin-left:50px;
  margin-top:137px;
@@ -287,9 +287,9 @@ body a[href="/spoiler"]:hover{color:white!important}
 .formtabs-content .infobar#text-desc:before
 {
  background:url(%%pinkiemessage%%) no-repeat;
-}*/
+}
 
-/*{/NPTWARNING}*/
+{/NPTWARNING}*/
 
 /* Spoiler Setter*/
 .marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"]
@@ -1344,6 +1344,8 @@ body:not(.moderator) div.content .flairselectbtn
 
 .linkflair-announcement div p.title span.linkflairlabel{display:none;}
 .linkflair-announcement p.title a.title {color:#A8273D !important;}
+
+.linkflair-livethread p.title a.title {color:#9A7D2E !important;}
 
 /*End Linker's shenanigans*/
 

@@ -34,11 +34,13 @@ margin-top: -1px;
 margin-bottom: -3px;
 }
 
-/* Snowflake banner ... and other Christmas malarkey */
+/* Snowflake banner
 #header { 
 background: url(%%snowflake-banner%%) 0 18px repeat-x #CEE3F8;
 }
+*/
 
+/* Mod Username changer
 div.sidecontentbox a.author[href$="/user/Jibodeah"]::before {
 content: "Jibo-Christmas-Pun-deah";
 visibility: visible !important;
@@ -56,6 +58,7 @@ font-size: 0;
 overflow: hidden;
 display: inline-block;
 }
+*/
 
 /* Banner stuff.
 #header {
@@ -439,7 +442,7 @@ a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[hr
 {background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
 
 /* 70x70b 'motes */
-a[href|="/twithatsnice"], a[href|="/buysomeapples"], a[href|="/cadsoawesome"], a[href|="/cadancehey"], a[href|="/cadencehey"], a[href|="/twifascinating"], a[href|="/sunsetjoy"], a[href|="/karmahappy2"], a[href|="/karmagrin"], a[href|="/apathiablank"], a[href|="/apathiaconcern"], a[href|="/karmalook"], a[href|="/apathiaeyebrow"], a[href|="/discentiaangrysquint"], a[href|="/colgatebraces"], a[href|="/colgatenews"], a[href|="/colgatenotimpressed"], a[href|="/changelingshrug"]
+a[href|="/twithatsnice"], a[href|="/buysomeapples"], a[href|="/cadsoawesome"], a[href|="/cadancehey"], a[href|="/cadencehey"], a[href|="/twifascinating"], a[href|="/sunsetjoy"], a[href|="/karmahappy2"], a[href|="/karmagrin"], a[href|="/apathiablank"], a[href|="/apathiaconcern"], a[href|="/karmalook"], a[href|="/apathiaeyebrow"], a[href|="/discentiaangrysquint"], a[href|="/colgatebraces"], a[href|="/colgatenews"], a[href|="/colgatenotimpressed"], a[href|="/changelingshrug"], a[href|="/sunbreadshimmer"]
 {background-image:url(%%70x70b%%);width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
@@ -532,7 +535,7 @@ a[href|="/cadscience"], a[href|="/appul"], a[href|="/sadprincesshorse"], a[href|
 {background-image:url(%%misfitsk%%);display:block;float:left;}
 
 /* Misfits l */
-a[href|="/eqggaladash"]
+a[href|="/eqggaladash"], a[href|="/shininglick"], a[href|="/sblick"], a[href|="/sombraheart"], a[href|="/teamtaco"], a[href|="/ablick"]
 {background-image:url(%%misfitsl%%);display:block;float:left;}
 
 /*
@@ -604,7 +607,7 @@ a[href|="/twilightyay"], a[href|="/twidoubt"], a[href|="/nerdtrixie"], a[href|="
 {background-position: 0 -500%;}
 
 /* Grid pos 1,5 'motes */
-a[href|="/tiadisapproval"], a[href|="/ppdoubt"], a[href|="/nerdpie"], a[href|="/maudsmile"], a[href|="/twijoy"], a[href|="/celcrazy"], a[href|="/sovietsparkle"]
+a[href|="/tiadisapproval"], a[href|="/ppdoubt"], a[href|="/nerdpie"], a[href|="/maudsmile"], a[href|="/twijoy"], a[href|="/celcrazy"], a[href|="/sovietsparkle"], a[href|="/sunbreadshimmer"]
 {background-position: -100% -500%;}
 
 /* Grid pos 2,5 'motes */
@@ -1213,3 +1216,8 @@ a[href|="/chrysalick"] {width:97px;height:150px;background-position: -466px -599
 a[href|="/queenpoker"] {width:119px;height:150px;background-position: -215px -591px;}
 a[href|="/cutiebelle"] {width:125px;height:120px;background-position: -334px -616px;}
 a[href|="/eqggaladash"] {width:128px;height:250px;}
+a[href|="/shininglick"] {width:77px;height:117px;background-position: -128px 0;}
+a[href|="/sblick"] {width:60px;height:86px;background-position: -205px 0;}
+a[href|="/sombraheart"] {width:119px;height:202px;background-position: 0 -250px;}
+a[href|="/teamtaco"] {width:200px;height:146px;background-position: -128px -117px;}
+a[href|="/ablick"] {width:75px;height:105px;background-position: -265px 0;}

@@ -1833,4 +1833,14 @@ input[value="t3_xy2aw"] + div.usertext-body .SuperRedditAltTextDisplay_Text {
   height: 65px !important;
 }
 
+.bpm-minified.bpm-nsfw {
+    font-size: 0 !important;
+    padding: 0 !important;
+}
+.bpm-minified.bpm-nsfw:before {
+    font-size: 10px;
+    color: white !important;
+    content: "NSFW emote!";
+}
+
 a.author[href$="MillennialDan"]:before{content:"Totally Not "}

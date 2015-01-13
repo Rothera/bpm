@@ -502,6 +502,7 @@ body.res a.author[href$="SGIG"] {color:#FF9EF2!important}
 /* Names */
 
 /* here first */
+a.author[href$='xxxleaguefanxxx'],
 a.author[href$='Twilight_Sparkles'],
 a.author[href$='Saltbearer'],
 a.author[href$='Citizen1139'],
@@ -544,6 +545,7 @@ content: "";
 }
 
 /* here second */
+a.author[href$='xxxleaguefanxxx']:before,
 a.author[href$='Twilight_Sparkles']:before,
 a.author[href$='Saltbearer']:before,
 a.author[href$='Citizen1139']:before,
@@ -582,7 +584,8 @@ font-size:10px!important;
 visibility:visible!important;
 }
 
-/*and the replacement*/ 
+/*and the replacement*/
+a.author[href$='xxxleaguefanxxx']:before{content: "Leo"} 
 a.author[href$='Twilight_Sparkles']:before{content: "Sparks"}
 a.author[href$='Saltbearer']:before{content: "A Mod on Top of a Mod"}
 a.author[href$='Citizen1139']:before{content: "Artemis"}
