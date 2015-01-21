@@ -2,12 +2,12 @@
 
 /* Changes background  */
 body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%screwwinter%%)  no-repeat  fixed 66% 100% !important;
+    background:  url(%%tails%%)  no-repeat  fixed 66% 100% !important;
 }
 
 /* Banner image and associated height values */
  #header #header-bottom-left {
-   background: url(%%hateallboys%%) 50% 0px !important;
+   background: url(%%fig%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -132,6 +132,7 @@ background-color: #c5bbf2;
     color: white !important;
     margin-left: 4px;
     text-shadow: 0px 0px 6px #000;
+    text-decoration: line-through;
 }
 
 /* User stuff (name color, karma color, est.) */
@@ -155,7 +156,7 @@ background-color: #c5bbf2;
 .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
 body.res-nightmode:first-of-type > .content {background-color: #222!important;}
 body.res-nightmode:first-of-type {background-color: #222!important;}
-span[class="hover pagename redditname"] a:first-of-type { font-size: 1.6em !important; text-shadow: 0px 0px 6px #000; color: white; }
+span[class="hover pagename redditname"] a:first-of-type { font-size: 1.6em !important; text-shadow: 0px 0px 6px #000; color: white; text-decoration:line-through;}
 
 body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, body.res-nightmode .NERPageMarker, body.res-nightmode .side .spacer {background-color: #222!important;}
 

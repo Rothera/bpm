@@ -1142,3 +1142,30 @@ a.author[href$="storyboard_sc219_p4"]:after
    color:red;
    content:"Warning: May break rule 0, add to game at your own risk"
 }
+
+a[href|="/theydied"]
+{
+background-image: url(%%theydied%%);
+text-decoration: none!important;
+width: 150px;
+height: 150px;
+display: block;
+float: left;
+background-position: -100% -100%;
+}
+
+a[href|="/gravestone"] em, a[href|="/theydied"] em
+{
+font-family: "Celestia Redux Alternate","Celestia Redux",serif;
+color: #666!important;
+text-align: center!important;
+font-size: 15px;
+font-style: normal!important;
+position: relative;
+top: 63px;
+left: 40px;
+width: 91px!important;
+height: 42px!important;
+display: block;
+overflow: hidden;
+}

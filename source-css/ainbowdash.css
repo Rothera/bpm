@@ -1,101 +1,201 @@
 /* Don't touch the stylesheet unless you know what you are doing! */
+/* SOURCE: purplefairy456 on DA*/
+body {
+  background-image: url(%%rdsleeping%%) !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1 !important;
+  min-height: 100%;
+  background-attachment: fixed;
+}
+body div.content {
+  background-color: white;
+  opacity: 0.85;
+  max-width: 100%;
+  height: 100%;
+  z-index: 1 !important;
+  overflow: hidden;
+}
+
+.footer-parent {
+  background-color: white;
+  opacity: 0.85;
+}
 
 /*** Names and headers ***/
-#sr-header-area a[href$="/r/ainbowdash/"]:before, .redditname a:before, a[href$="ainbowdash"]:before { content: "r"; }
-.pagename a:after {content: " is best pony"; }
+.redditname a:before,
+#sr-header-area a[href$="/r/ainbowdash/"]:before,
+a[href$="ainbowdash"]:before {
+  content: "r" !important;
+}
+
+.pagename a:after {
+  content: " is best pony";
+}
 
 /*** Sidebar ***/
-.side {background-image: url(%%dashloyal%%) !important; background-repeat: no-repeat !important; z-index: 20 !important; }
-.side h4 {font-size: 150%}
-.side .spacer { background-color: white; opacity: 0.84; color:black; z-index: 20; }
-.sidecontentbox .author:after { font-size: small !important;  }
+.side {
+  background-image: url(%%dashloyal%%) !important;
+  background-repeat: no-repeat !important;
+  margin-left: 0px;
+  z-index: 20 !important;
+}
+.side h4 {
+  font-size: 150%;
+}
+.side .spacer {
+  background-color: white;
+  opacity: 0.85;
+  color: black;
+  z-index: 20;
+}
+.side .md {
+  overflow: hidden;
+}
 
-.side .md {overflow: hidden;}
+.sidecontentbox .author:after {
+  font-size: small !important;
+}
 
-.morelink, .morelink:hover, .morelink a:hover { color: black; background-color: transparent; background-image: none !important; }
+.morelink, .morelink:hover, .morelink a:hover {
+  color: black;
+  background-color: transparent;
+  background-image: none !important;
+}
 
 /*** Background stuff ***/
-.content {margin-right: 0px; margin-top: 0px; } 
-.side { margin-left: 0px; } 
-.sitetable { margin-top: 10px !important; }
+.content {
+  margin-right: 0;
+  margin-top: 0;
+}
+
+.sitetable {
+  margin-top: 10px !important;
+}
 
 /* SOURCE: duskbrony on DA */
-#header-bottom-left { background-image: url(%%rdweather%%); background-repeat: no-repeat; background-position: 55% 20%;  }
-
-body div.content{ background-color: white; opacity: 0.84; max-width: 100%; height: 100%; z-index: 1 !important; overflow: hidden; }
-
-.footer-parent { background-color: white; opacity: 0.84;}
-
-/* SOURCE: purplefairy456 on DA*/
-body { background-image: url(%%rdsleeping%%) !important; background-repeat: no-repeat; background-position: center center; z-index: 1 !important; min-height: 100%; background-attachment: fixed; }
+#header-bottom-left {
+  background-image: url(%%rdweather%%);
+  background-repeat: no-repeat;
+  background-position: 55% 20%;
+}
 
 /*** Renaming the readers ***/
-.titlebox .number:after { content: " skittles"; }
-.titlebox .word:not(:first-child) { content: ""; font-size: 0 !important; color: white; }
+.titlebox .word {
+  display: none;
+}
+.titlebox .subscribers .number:after {
+  content: " skittles";
+}
+.titlebox .users-online .number:after {
+  content: " currently skittling";
+}
 
 /*** This garbage ***/
-.tagline em, .age, .nub, .create, .sidebox.submit .spacer, .edited-timestamp { display: none !important; }
+.tagline em, .age, .nub, .create, .sidebox.submit .spacer, .edited-timestamp {
+  display: none !important;
+}
 
 /*** Searchbar ***/
-#search input[type="text"] { background: url(%%searchdash%%) top left no-repeat !important; padding: 13px 2px 15px 70px; height: 22px !important; width: 230px;}
+#search input[type="text"] {
+  background: url(%%searchdash%%) top left no-repeat !important;
+  text-align: right;
+  width: 300px;
+}
 
 /*** Aliases ***/
-.author[href$="/RogueDarkJedi"] {font-size: 0px !important;display: inline-block;letter-spacing: -20px;overflow: hidden;vertical-align: bottom;}
-.author[href$="/RogueDarkJedi"]:after { content: "RainbowDashJedi"; }
-.author:after { font-size: 10px !important; visibility: visible !important; display:block; letter-spacing: normal; }
+.author[href$="/RogueDarkJedi"] {
+  font-size: 0 !important;
+  display: inline-block;
+  letter-spacing: -20px;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.author[href$="/RogueDarkJedi"]:after {
+  content: "RainbowDashJedi";
+}
+.author:after {
+  font-size: 10px !important;
+  visibility: visible !important;
+  display: block;
+  letter-spacing: normal;
+}
 
-/*** the self source text ***/
-.domain a[href$="ainbowdash/"] { letter-spacing: -9999px; text-indent: -900px; font-size: 0px;}
-.domain a[href$="ainbowdash/"]:before 
-{   
-    content: "self.rainbowdash";
-    display: inline-block !important;
-    letter-spacing: 0px;
-    text-indent: 0px;
-    font-size: x-small;
+/*** self source text ***/
+.domain a[href$="ainbowdash/"] {
+  text-indent: -9999px;
+  line-height: 0;
+}
+.domain a[href$="ainbowdash/"]::after {
+  content: "self.rainbowdash";
+  text-indent: 0;
+  display: block;
+  line-height: initial;
 }
 
 /*** Thumbnails ***/
-.thumbnail { background-repeat: no-repeat; }
-.thumbnail.self 
-{
-    background-image: url(%%selfpost%%); /* thx pyrotix */
-    background-position: 0 0;
+.thumbnail {
+  background-repeat: no-repeat;
 }
-.thumbnail.default 
-{
-    background-image: url(%%rainbow-nothumb%%);
-    background-position: 0 0;
+.thumbnail.self {
+  background-image: url(%%selfpost%%);
+  /* thx pyrotix */
+  background-position: 0 0;
+}
+.thumbnail.default {
+  background-image: url(%%rainbow-nothumb%%);
+  background-position: 0 0;
 }
 
 /*** Rainbow tabs ***/
-.tabmenu li a {border-style: solid; border-bottom: none !important; border-width: 2px;}
-.tabmenu li a[href$="ainbowdash/"]{border-color: purple !important;}
-.tabmenu li a[href$="new/"]{border-color: blue !important;}
-.tabmenu li a[href$="controversial/"]{border-color: green !important;}
-.tabmenu li a[href$="top/"]{border-color: yellow !important;}
-.tabmenu li a[href$="saved/"], .tabmenu li a[href$="gilded/"] {border-color: orangered !important;}
-.tabmenu li a[href="javascript:void(0);"] { display: none !important; }
+.tabmenu li a {
+  border-style: solid;
+  border-bottom: none !important;
+  border-width: 2px;
+}
+.tabmenu li a[href$="ainbowdash/"] {
+  border-color: purple !important;
+}
+.tabmenu li a[href$="new/"] {
+  border-color: blue !important;
+}
+.tabmenu li a[href$="controversial/"] {
+  border-color: green !important;
+}
+.tabmenu li a[href$="top/"] {
+  border-color: yellow !important;
+}
+.tabmenu li a[href$="saved/"], .tabmenu li a[href$="gilded/"] {
+  border-color: orangered !important;
+}
+.tabmenu li a[href="javascript:void(0);"] {
+  display: none !important;
+}
 
-/******************************************************************************
-**************                  EMOTICONS                        **************
-******************************************************************************/
-/*****Misc Emotes******/
-a[href="/wat"] { display: block; clear: none; width: 200px; height: 200px; background-repeat: no-repeat; background-image: url(%%dashwat%%);}
+/***** EMOTICONS *****/
+/*** Misc ***/
+a[href="/wat"] {
+  display: block;
+  clear: none;
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-image: url(%%dashwat%%);
+}
 
-/*****RD Block Emotes*******/
+/*** RD Block Emotes ***/
 a[href|="/rd00"], a[href|="/scootacute"], a[href|="/scootabrag"], a[href|="/ovenmitt"],
-a[href|="/rd10"], a[href|="/cooldash"],   a[href|="/dealwithitdash"], 
+a[href|="/rd10"], a[href|="/cooldash"], a[href|="/dealwithitdash"],
 a[href|="/rd20"], a[href|="/dashponder"], a[href|="/dashthinking"],
-a[href|="/rd01"], a[href|="/jedifilly"],  a[href|="/fillyjedi"],
-a[href|="/rd11"], a[href|="/fillydash"],  a[href|="/bounce"],a[href|="/dashjoy"],
-a[href|="/rd21"], a[href|="/dashomg"],    a[href|="/omgomgomg"],
+a[href|="/rd01"], a[href|="/jedifilly"], a[href|="/fillyjedi"],
+a[href|="/rd11"], a[href|="/fillydash"], a[href|="/bounce"], a[href|="/dashjoy"],
+a[href|="/rd21"], a[href|="/dashomg"], a[href|="/omgomgomg"],
 a[href|="/rd02"], a[href|="/dashbadass"], a[href|="/badassdash"],
-a[href|="/rd12"], a[href|="/dashsmile"],  a[href|="/smilingdash"],
-a[href|="/rd22"], a[href|="/dashbook"],   a[href|="/reading"], a[href|="/coolstorybro"],
-a[href|="/rd03"], a[href|="/dashmeh"],    a[href|="/meh"],
-a[href|="/rd13"], a[href|="/dashhappy"],  a[href|="/dashlovesyou"], a[href|="/dashsurprise"],
-a[href|="/rd23"], a[href|="/dashwhat"],   a[href|="/dashwat"],      a[href|="/dashwut"],
+a[href|="/rd12"], a[href|="/dashsmile"], a[href|="/smilingdash"],
+a[href|="/rd22"], a[href|="/dashbook"], a[href|="/reading"], a[href|="/coolstorybro"],
+a[href|="/rd03"], a[href|="/dashmeh"], a[href|="/meh"],
+a[href|="/rd13"], a[href|="/dashhappy"], a[href|="/dashlovesyou"], a[href|="/dashsurprise"],
+a[href|="/rd23"], a[href|="/dashwhat"], a[href|="/dashwat"], a[href|="/dashwut"],
 a[href|="/rd04"], a[href|="/rdbedmane"],
 a[href|="/rd14"], a[href|="/rdtied"],
 a[href|="/rd24"], a[href|="/rddrool"],
@@ -107,27 +207,28 @@ a[href|="/rd16"], a[href|="/shadowdash"],
 a[href|="/rd26"], a[href|="/rdvexed"],
 a[href|="/rd07"], a[href|="/rdchallenge"],
 a[href|="/rd17"], a[href|="/rdtoy"],
-a[href|="/rd27"], a[href|="/naptime"]{
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%emotes%%) !important;
-    background-repeat: no-repeat;
-    width: 70px;
-    height: 70px;
-    }
+a[href|="/rd27"], a[href|="/naptime"] {
+  display: block;
+  clear: none;
+  float: left;
+  background-image: url(%%emotes%%) !important;
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+}
+
 a[href|="/rrd00"], a[href|="/rscootacute"], a[href|="/rscootabrag"], a[href|="/rovenmitt"],
-a[href|="/rrd10"], a[href|="/rcooldash"],   a[href|="/rdealwithitdash"], 
+a[href|="/rrd10"], a[href|="/rcooldash"], a[href|="/rdealwithitdash"],
 a[href|="/rrd20"], a[href|="/rdashponder"], a[href|="/rdashthinking"],
-a[href|="/rrd01"], a[href|="/rjedifilly"],  a[href|="/rfillyjedi"],
-a[href|="/rrd11"], a[href|="/rfillydash"],  a[href|="/rbounce"],  a[href|="/rdashjoy"],
-a[href|="/rrd21"], a[href|="/rdashomg"],    a[href|="/romgomgomg"],
+a[href|="/rrd01"], a[href|="/rjedifilly"], a[href|="/rfillyjedi"],
+a[href|="/rrd11"], a[href|="/rfillydash"], a[href|="/rbounce"], a[href|="/rdashjoy"],
+a[href|="/rrd21"], a[href|="/rdashomg"], a[href|="/romgomgomg"],
 a[href|="/rrd02"], a[href|="/rdashbadass"], a[href|="/rbadassdash"],
-a[href|="/rrd12"], a[href|="/rdashsmile"],  a[href|="/rsmilingdash"],
-a[href|="/rrd22"], a[href|="/rdashbook"],   a[href|="/rreading"], a[href|="/rcoolstorybro"],
-a[href|="/rrd03"], a[href|="/rdashmeh"],    a[href|="/rmeh"],
-a[href|="/rrd13"], a[href|="/rdashhappy"],  a[href|="/rdashlovesyou"], a[href|="/rdashsurprise"],
-a[href|="/rrd23"], a[href|="/rdashwhat"],   a[href|="/rdashwat"],      a[href|="/rdashwut"],
+a[href|="/rrd12"], a[href|="/rdashsmile"], a[href|="/rsmilingdash"],
+a[href|="/rrd22"], a[href|="/rdashbook"], a[href|="/rreading"], a[href|="/rcoolstorybro"],
+a[href|="/rrd03"], a[href|="/rdashmeh"], a[href|="/rmeh"],
+a[href|="/rrd13"], a[href|="/rdashhappy"], a[href|="/rdashlovesyou"], a[href|="/rdashsurprise"],
+a[href|="/rrd23"], a[href|="/rdashwhat"], a[href|="/rdashwat"], a[href|="/rdashwut"],
 a[href|="/rrd04"], a[href|="/rrdbedmane"],
 a[href|="/rrd14"], a[href|="/rrdtied"],
 a[href|="/rrd24"], a[href|="/rrddrool"],
@@ -139,117 +240,247 @@ a[href|="/rrd16"], a[href|="/rshadowdash"],
 a[href|="/rrd26"], a[href|="/rrdvexed"],
 a[href|="/rrd07"], a[href|="/rrdchallenge"],
 a[href|="/rrd17"], a[href|="/rrdtoy"],
-a[href|="/rrd27"], a[href|="/rnaptime"]{
-    display: block;
-    clear: none;
-    float: left;
-    background-image: url(%%emotes-reversed%%) !important;
-    background-repeat: no-repeat;
-    width: 70px;
-    height: 70px;
-    }
-    
-/****Row*0************************************/
+a[href|="/rrd27"], a[href|="/rnaptime"] {
+  display: block;
+  clear: none;
+  float: left;
+  background-image: url(%%emotes-reversed%%) !important;
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+}
+
+/*** Row 0 ***/
 a[href|="/rd00"], a[href|="/scootacute"], a[href|="/scootabrag"], a[href|="/ovenmitt"],
 a[href|="/rrd00"], a[href|="/rscootacute"], a[href|="/rscootabrag"], a[href|="/rovenmitt"] {
-    background-position: -0px -0px;
+  background-position: -0px -0px;
 }
+
 a[href|="/rd10"], a[href|="/cooldash"], a[href|="/dealwithitdash"],
 a[href|="/rrd10"], a[href|="/rcooldash"], a[href|="/rdealwithitdash"] {
-    background-position: 0px -70px;
+  background-position: 0px -70px;
 }
+
 a[href|="/rd20"], a[href|="/dashponder"], a[href|="/dashthinking"],
 a[href|="/rrd20"], a[href|="/rdashponder"], a[href|="/rdashthinking"] {
-    background-position: -0px -140px;
+  background-position: -0px -140px;
 }
-/****Row*1************************************/
-a[href|="/rd01"],  a[href|="/jedifilly"],  a[href|="/fillyjedi"],
+
+/*** Row 1 ***/
+a[href|="/rd01"], a[href|="/jedifilly"], a[href|="/fillyjedi"],
 a[href|="/rrd01"], a[href|="/rjedifilly"], a[href|="/rfillyjedi"] {
-    background-position: -70px 0px;
+  background-position: -70px 0px;
 }
-a[href|="/rd11"],  a[href|="/fillydash"],  a[href|="/bounce"], a[href|="/dashjoy"],
+
+a[href|="/rd11"], a[href|="/fillydash"], a[href|="/bounce"], a[href|="/dashjoy"],
 a[href|="/rrd11"], a[href|="/rfillydash"], a[href|="/rbounce"], a[href|="/rdashjoy"] {
-    background-position: -70px -70px;
+  background-position: -70px -70px;
 }
-a[href|="/rd21"],  a[href|="/dashomg"],  a[href|="/omgomgomg"],
-a[href|="/rrd21"], a[href|="/rdashomg"], a[href|="/romgomgomg"]  {
-    background-position: -70px -140px;
+
+a[href|="/rd21"], a[href|="/dashomg"], a[href|="/omgomgomg"],
+a[href|="/rrd21"], a[href|="/rdashomg"], a[href|="/romgomgomg"] {
+  background-position: -70px -140px;
 }
-/****Row*2************************************/
-a[href|="/rd02"],  a[href|="/dashbadass"],  a[href|="/badassdash"],
+
+/*** Row 2 ***/
+a[href|="/rd02"], a[href|="/dashbadass"], a[href|="/badassdash"],
 a[href|="/rrd02"], a[href|="/rdashbadass"], a[href|="/rbadassdash"] {
-    background-position: -140px 0px;
+  background-position: -140px 0px;
 }
-a[href|="/rd12"],  a[href|="/dashsmile"],  a[href|="/smilingdash"],
+
+a[href|="/rd12"], a[href|="/dashsmile"], a[href|="/smilingdash"],
 a[href|="/rrd12"], a[href|="/rdashsmile"], a[href|="/rsmilingdash"] {
-    background-position: -140px -70px;
+  background-position: -140px -70px;
 }
-a[href|="/rd22"],  a[href|="/dashbook"],  a[href|="/reading"],  a[href|="/coolstorybro"], 
-a[href|="/rrd22"], a[href|="/rdashbook"], a[href|="/rreading"], a[href|="/rcoolstorybro"]{
-    background-position: -140px -140px;
+
+a[href|="/rd22"], a[href|="/dashbook"], a[href|="/reading"], a[href|="/coolstorybro"],
+a[href|="/rrd22"], a[href|="/rdashbook"], a[href|="/rreading"], a[href|="/rcoolstorybro"] {
+  background-position: -140px -140px;
 }
-/****Row*3************************************/
-a[href|="/rd03"],  a[href|="/dashmeh"],  a[href|="/meh"],
+
+/*** Row 3 ***/
+a[href|="/rd03"], a[href|="/dashmeh"], a[href|="/meh"],
 a[href|="/rrd03"], a[href|="/rdashmeh"], a[href|="/rmeh"] {
-    background-position: -0px -210px;
+  background-position: -0px -210px;
 }
-a[href|="/rd13"],  a[href|="/dashhappy"],  a[href|="/dashlovesyou"],  a[href|="/dashsurprise"],
+
+a[href|="/rd13"], a[href|="/dashhappy"], a[href|="/dashlovesyou"], a[href|="/dashsurprise"],
 a[href|="/rrd13"], a[href|="/rdashhappy"], a[href|="/rdashlovesyou"], a[href|="/rdashsurprise"] {
-    background-position: -70px -210px;
+  background-position: -70px -210px;
 }
-a[href|="/rd23"],  a[href|="/dashwhat"],  a[href|="/dashwat"],  a[href|="/dashwut"],
+
+a[href|="/rd23"], a[href|="/dashwhat"], a[href|="/dashwat"], a[href|="/dashwut"],
 a[href|="/rrd23"], a[href|="/rdashwhat"], a[href|="/rdashwat"], a[href|="/rdashwut"] {
-    background-position: -140px -210px;
+  background-position: -140px -210px;
 }
-/****Row*4************************************/
-a[href|="/rd04"],  a[href|="/rdbedmane"],
-a[href|="/rrd04"], a[href|="/rrdbedmane"]{
-    background-position: -0px -280px
+
+/*** Row 4 ***/
+a[href|="/rd04"], a[href|="/rdbedmane"],
+a[href|="/rrd04"], a[href|="/rrdbedmane"] {
+  background-position: 0px -280px;
 }
-a[href|="/rd14"],  a[href|="/rdtied"] ,
-a[href|="/rrd14"], a[href|="/rrdtied"]{
-    background-position: -70px -280px
+
+a[href|="/rd14"], a[href|="/rdtied"],
+a[href|="/rrd14"], a[href|="/rrdtied"] {
+  background-position: -70px -280px;
 }
-a[href|="/rd24"],  a[href|="/rddrool"], 
-a[href|="/rrd24"], a[href|="/rrddrool"]{
-    background-position: -140px -280px
+
+a[href|="/rd24"], a[href|="/rddrool"],
+a[href|="/rrd24"], a[href|="/rrddrool"] {
+  background-position: -140px -280px;
 }
-/****Row*5************************************/
-a[href|="/rd05"],  a[href|="/rdnews"], 
-a[href|="/rrd05"], a[href|="/rrdnews"]{
-    background-position: -0px -350px
+
+/*** Row 5 ***/
+a[href|="/rd05"], a[href|="/rdnews"],
+a[href|="/rrd05"], a[href|="/rrdnews"] {
+  background-position: 0px -350px;
 }
-a[href|="/rd15"],  a[href|="/rdshocked"], 
-a[href|="/rrd15"], a[href|="/rrdshocked"]{
-    background-position: -70px -350px
+
+a[href|="/rd15"], a[href|="/rdshocked"],
+a[href|="/rrd15"], a[href|="/rrdshocked"] {
+  background-position: -70px -350px;
 }
-a[href|="/rd25"],  a[href|="/notfunny"],
-a[href|="/rrd25"], a[href|="/rnotfunny"]{
-    background-position: -140px -350px
+
+a[href|="/rd25"], a[href|="/notfunny"],
+a[href|="/rrd25"], a[href|="/rnotfunny"] {
+  background-position: -140px -350px;
 }
-/****Row*6************************************/
-a[href|="/rd06"],  a[href|="/rdangry"],
-a[href|="/rrd06"], a[href|="/rrdangry"]{
-    background-position: -0px -420px
+
+/*** Row 6 ***/
+a[href|="/rd06"], a[href|="/rdangry"],
+a[href|="/rrd06"], a[href|="/rrdangry"] {
+  background-position: 0px -420px;
 }
-a[href|="/rd16"],  a[href|="/shadowdash"],
-a[href|="/rrd16"], a[href|="/rshadowdash"]{
-    background-position: -70px -420px
+
+a[href|="/rd16"], a[href|="/shadowdash"],
+a[href|="/rrd16"], a[href|="/rshadowdash"] {
+  background-position: -70px -420px;
 }
-a[href|="/rd26"],  a[href|="/rdvexed"],
-a[href|="/rrd26"], a[href|="/rrdvexed"]{
-    background-position: -140px -420px
+
+a[href|="/rd26"], a[href|="/rdvexed"],
+a[href|="/rrd26"], a[href|="/rrdvexed"] {
+  background-position: -140px -420px;
 }
-/****Row*7************************************/
-a[href|="/rd07"],  a[href|="/rdchallenge"],
-a[href|="/rrd07"], a[href|="/rrdchallenge"]{
-    background-position: -0px -490px
+
+/*** Row 7 ***/
+a[href|="/rd07"], a[href|="/rdchallenge"],
+a[href|="/rrd07"], a[href|="/rrdchallenge"] {
+  background-position: 0px -490px;
 }
-a[href|="/rd17"],  a[href|="/rdtoy"],
-a[href|="/rrd17"], a[href|="/rrdtoy"]{
-    background-position: -70px -490px
+
+a[href|="/rd17"], a[href|="/rdtoy"],
+a[href|="/rrd17"], a[href|="/rrdtoy"] {
+  background-position: -70px -490px;
 }
-a[href|="/rd27"],  a[href|="/naptime"],
-a[href|="/rrd27"], a[href|="/rnaptime"]{
-    background-position: -140px -490px
+
+a[href|="/rd27"], a[href|="/naptime"],
+a[href|="/rrd27"], a[href|="/rnaptime"] {
+  background-position: -140px -490px;
+}
+
+#siteTable .thing {
+  padding: 8px;
+  background: white;
+  margin-right: 15px;
+}
+#siteTable .thing .rank, #siteTable .thing .score {
+  color: #646464;
+}
+#siteTable .thing .rank.likes, #siteTable .thing .score.likes {
+  color: #EE5821;
+}
+#siteTable .thing .rank.dislikes, #siteTable .thing .score.dislikes {
+  color: #6F85BF;
+}
+#siteTable .thing .domain, #siteTable .thing .domain a,
+#siteTable .thing .tagline, #siteTable .thing .buttons li a,
+#siteTable .thing .redditSingleClick {
+  color: #464646;
+}
+#siteTable .thing:nth-of-type(12n + 1) {
+  background-color: rgba(254, 164, 165, 0.5);
+  border-bottom: 4px solid #fea4a5;
+}
+#siteTable .thing:nth-of-type(12n + 1) .tagline a {
+  color: #fe0c0f;
+}
+#siteTable .thing:nth-of-type(12n + 1) .RES-keyNav-activeElement {
+  background-color: rgba(254, 164, 165, 0.3) !important;
+}
+#siteTable .thing:nth-of-type(12n + 3) {
+  background-color: rgba(255, 178, 143, 0.5);
+  border-bottom: 4px solid #ffb28f;
+}
+#siteTable .thing:nth-of-type(12n + 3) .tagline a {
+  color: #f54c00;
+}
+#siteTable .thing:nth-of-type(12n + 3) .RES-keyNav-activeElement {
+  background-color: rgba(255, 178, 143, 0.3) !important;
+}
+#siteTable .thing:nth-of-type(12n + 5) {
+  background-color: rgba(242, 229, 118, 0.5);
+  border-bottom: 4px solid #F2E576;
+}
+#siteTable .thing:nth-of-type(12n + 5) .tagline a {
+  color: #bdab12;
+}
+#siteTable .thing:nth-of-type(12n + 5) .RES-keyNav-activeElement {
+  background-color: rgba(242, 229, 118, 0.3) !important;
+}
+#siteTable .thing:nth-of-type(12n + 7) {
+  background-color: rgba(162, 224, 150, 0.5);
+  border-bottom: 4px solid #a2e096;
+}
+#siteTable .thing:nth-of-type(12n + 7) .tagline a {
+  color: #46ab32;
+}
+#siteTable .thing:nth-of-type(12n + 7) .RES-keyNav-activeElement {
+  background-color: rgba(162, 224, 150, 0.3) !important;
+}
+#siteTable .thing:nth-of-type(12n + 9) {
+  background-color: rgba(126, 201, 244, 0.5);
+  border-bottom: 4px solid #7ec9f4;
+}
+#siteTable .thing:nth-of-type(12n + 9) .tagline a {
+  color: #1185c8;
+}
+#siteTable .thing:nth-of-type(12n + 9) .RES-keyNav-activeElement {
+  background-color: rgba(126, 201, 244, 0.3) !important;
+}
+#siteTable .thing:nth-of-type(12n + 11) {
+  background-color: rgba(155, 110, 190, 0.5);
+  border-bottom: 4px solid #9b6ebe;
+}
+#siteTable .thing:nth-of-type(12n + 11) .tagline a {
+  color: #4d2d66;
+}
+#siteTable .thing:nth-of-type(12n + 11) .RES-keyNav-activeElement {
+  background-color: rgba(155, 110, 190, 0.3) !important;
+}
+
+/* RES vote weight */
+.voteWeight {
+  background-color: transparent !important;
+}
+
+/* vote arrows - styling adopted from Naut */
+.arrow {
+  margin: 2px 0 0 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 16px;
+  height: 16px;
+  background-image: url(%%sprites%%) !important;
+}
+.arrow.up {
+  background-position: -32px 0px;
+}
+.arrow.upmod {
+  background-position: -48px 0px;
+}
+.arrow.down {
+  background-position: 0px 0px;
+}
+.arrow.downmod {
+  background-position: -16px 0px;
 }

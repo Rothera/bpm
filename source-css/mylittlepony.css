@@ -1241,6 +1241,8 @@ body:not(.moderator) div.content .flairselectbtn
 .linkflair-fespoiler .linkflairlabel {display:none;}
 .linkflair-fespoiler p.title a.title {opacity:0;}
 .linkflair-fespoiler p.title a.title:hover {opacity:100;}
+.post-linkflair-comicsspoiler .footer-parent {background:url(%%spacing%%) 95% 90% no-repeat}
+.linkflair-comicsspoiler .linkflairlabel {display:none;}
 .linkflair-fespoiler p.title:before
 {
  content:"FUTURE EPISODE SPOILER";
@@ -1580,7 +1582,8 @@ background-position: -300% -400% !important;
     padding-left: 140px;
     background-repeat: no-repeat;
     background-position: -0px 35px;
-}
+} 
+
 .linkflair-monkeywtf div p.title span.linkflairlabel {display:none}
 
 div.bottom span.author {

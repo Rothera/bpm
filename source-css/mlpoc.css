@@ -805,6 +805,35 @@ border: 2px solid lightblue; border-radius: 20px;
 padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
 background-color:#fafafa;}
 
+.flair-meep
+{ color:lightgreen; 
+border: 2px solid grey; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:black;}
+
+.flair-cherry
+{ color:red; 
+border: 2px solid red; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:white;}
+
+.flair-spectra
+{ color:red; 
+border: 2px solid green; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:white;}
+
+.flair-moonlit
+{ color:green; 
+border: 2px solid white; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:grey;}
+
+.flair-karai
+{ color:white; 
+border: 2px solid #B9971B; border-radius: 20px; 
+padding-left:8px; padding-right:8px; padding-bottom:1px; padding-top:1px;
+background-color:#B98A6E;}
 /* EMOTE SPRITESHEETS (BY CHARACTER) */
 
 /* GAME CHANGER */
@@ -1074,5 +1103,23 @@ a[href|="/rcsly"] {width:68px;height:70px;background-position: -409px 0;}
 a[href|="/rcpoker"] {width:145px;height:150px;background-position: 0 -70px;}
 
 /* END OF ROCK CANDY */
+
+/* CYGNUS X */
+
+a[href|="/cygblush"], a[href|="/cygdealwithit"], a[href|="/cyghug"], a[href|="/cygpoker"], a[href|="/cygwondersuit"], a[href|="/cygglee"], a[href|="/cygohhi"], a[href|="/cygderp"], a[href|="/cygshrug"], a[href|="/cygum"]
+{background-image:url(%%cygnus%%);display:block;float:left;}
+
+a[href|="/cygblush"] {width:73px;height:110px;background-position: 0 0;}
+a[href|="/cygdealwithit"] {width:121px;height:110px;background-position: -73px 0;}
+a[href|="/cyghug"] {width:96px;height:110px;background-position: -194px 0;}
+a[href|="/cygpoker"] {width:90px;height:110px;background-position: -290px 0;}
+a[href|="/cygwondersuit"] {width:86px;height:110px;background-position: -380px 0;}
+a[href|="/cygglee"] {width:86px;height:70px;background-position: 0 -110px;}
+a[href|="/cygohhi"] {width:67px;height:70px;background-position: -86px -110px;}
+a[href|="/cygderp"] {width:45px;height:70px;background-position: -153px -110px;}
+a[href|="/cygshrug"] {width:75px;height:70px;background-position: -198px -110px;}
+a[href|="/cygum"] {width:68px;height:70px;background-position: -273px -110px;}
+
+/* END OF CYGNUS X */
 
 /* END OF EMOTE SPRITESHEETS */
