@@ -1,22 +1,14 @@
 .thing[data-fullname="t3_2jutko"] .entry a.title { font-size:0 !important; }
 .thing[data-fullname="t3_2jutko"] .entry a.title::before { font-size: medium !important; content: "Sonata by conbudou "; }
 
-body {
-  background: url(%%background%%) no-repeat center;
-}
+body { background: url(%%background%%) no-repeat center; }
 
+.subscribers .word, .users-online .word { display: none; }
+.subscribers .number:after { content: " admirers"; }
+.users-online .number:after { content: " showing their adoration"; }
 
-.subscribers .word, .users-online .word {
-  display:none;
-}
-
-.subscribers .number:after { 
-  content: " admirers"
-}
-
-.users-online .number:after { 
-  content: " showing their adoration" 
-}
+.sidecontentbox .helplink + .title h1 { font-size: 0 !important; }
+.sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }
 
 #header-img { margin-bottom: -2px; }
 

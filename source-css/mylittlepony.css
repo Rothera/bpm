@@ -87,6 +87,24 @@ div.titlebox .users-online span.number:after {content:" Learning about Friendshi
 
 div.over18 .entry .buttons .first{padding-left: 0px}
 
+#mail {
+position: relative;
+display: inline-block;
+text-indent: -9999px;
+overflow: hidden;
+width: 16px; /*These values for the standard mail icon, customize to your own*/
+height: 16px;
+margin-bottom: -3px;}
+
+#mail.havemail {
+background:url(%%mail-icons%%);
+background-position: 0px -16px;
+}
+
+#mail.nohavemail {
+background:url(%%mail-icons%%);
+}
+
 #searchexpando.infobar 
 {
  background-image:url(%%crackle%%);
@@ -199,7 +217,7 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%discentia-hat%%);
+ background:url(%%derpy-hat%%);
  width:60px;
  height:60px;
  margin-top:-35px;
