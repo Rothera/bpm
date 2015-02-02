@@ -1,0 +1,614 @@
+/* TEMPORARY - BEGIN */
+
+.titlebox h6 {
+  display: none;
+}
+
+/* TEMPORARY - END */
+
+/* General - BEGIN */
+
+body {
+  background-color: #e8f5e9;
+}
+
+iframe {
+  display: block;
+}
+
+input {
+  outline: none;
+}
+
+#header {
+  border: 0;
+  background-color: #1b5e20;
+  box-shadow: 0 0 2px #888;
+}
+
+#header-img {
+  padding: 5px;
+  margin: 0;
+  background-color: #2e7d32;
+  vertical-align: top; /* removes a weird box that appears due to it being in an <a> */
+}
+
+#sr-header-area {
+  border: 0;
+  box-shadow: 0 0 2px #888;
+  background-color: #888;
+  color: #fff;
+  opacity: .25;
+  transition: opacity .25s;
+}
+
+#sr-header-area:hover {
+  opacity: .5;
+}
+
+.sr-bar a {
+  color: rgba(255, 255, 255, .87);
+}
+
+.sr-bar a.gold {
+  color: #eeff41;
+}
+
+.searchpane {
+  margin: 10px 315px 0 5px;
+  border: 0;
+  background-color: #fff;
+  box-shadow: 0 0 2px #888;
+}
+
+.searchpane input[type="text"] {
+  box-shadow: inset 0 0 2px #888;
+}
+
+
+/* General - END */
+
+/* Make all text monospace - BEGIN */
+
+body, button, input, select, textarea,
+.flat-vert.title, .hover, .link > .rank, .linkinfo,
+#search > input[type="text"] {
+  font-family: "courier";
+}
+
+select {
+  font-size: small;
+}
+
+.title > .title {
+  font-size: large;
+}
+
+/* Make all text monospace - END */
+
+/* Pagename hover transition - BEGIN */
+
+.pagename {
+  font-size: 0;
+}
+
+.pagename > a,
+.pagename > a::before, .pagename > a:before,
+.pagename > a::after, .pagename > a:after {
+  content: "";
+  display: inline-block;
+  height: 44px;
+  background-clip: content-box; /* transition relies on increasing padding, and we don't want to see the image there */
+}
+
+.pagename > a {
+  position: relative;
+  width: 252px;
+  padding: 5px 0;
+  margin-right: 5px;
+  overflow: hidden;
+  vertical-align: top; /* removes a weird box that appears underneath the element when font-size = 0*/
+}
+
+.pagename > a::before, .pagename > a:before {
+  background-image: url(%%title-hex%%);
+}
+
+.pagename > a::after, .pagename > a:after {
+  position: absolute; /* otherwise the pseudoelement is displaced by ::before */
+  left: 0;
+  top: 5px;
+  background-image: url(%%title%%);
+}
+
+.pagename > a::before, .pagename > a:before,
+.pagename > a:hover::after, .pagename > a:hover:after {
+  width: inherit;
+  padding-left: 0;
+  border-right: 10px solid #fff;
+  transition: width .5s;
+}
+
+.pagename > a::after, .pagename > a:after,
+.pagename > a:hover::before, .pagename > a:hover:before {
+  width: 0;
+  padding-left: 252px;
+  transition: width .5s, padding-left .5s;
+}
+
+/* Pagename hover transition - END */
+
+/* Tabmenu - BEGIN */
+
+.tabmenu {
+  display: block;
+  height: 22px;
+  margin: 0;
+  overflow: hidden;
+  background-color: #fafafa;
+  box-shadow: inset 0 2px 2px -2px #888; /* simulates a shadow from above */
+}
+
+.tabmenu > li {
+  margin: 0;
+}
+
+.tabmenu > li > a {
+  position: relative;
+  top: 2px; /* so that it does not cover the tabmenu box-shadow */
+  display: inline-block;
+  height: 20px;
+  padding: 0 6px;
+  box-shadow: inset 0 -2px #00c853; /* simulates a border that can be covered by the pseudoelement */
+  background-color: transparent;
+  color: rgba(0, 0, 0, .54);
+  font-size: 16px;
+  text-align: center;
+}
+
+.tabmenu > li > a::after, .tabmenu > li > a:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  height: 20px;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fafafa; /* just covers up the tab text */
+  text-align: left; /* aligning centre doesn't work when the width is small */
+  text-indent: 6px; /* simulates padding */
+  transition: width .5s;
+}
+
+.tabmenu a:hover::after, .tabmenu a:hover:after {
+  left: auto;
+  right: 0;
+  width: 0;
+  direction: rtl; /* overflows to the left so that it disappears from the left */
+}
+
+.tabmenu > li.selected > a {
+  border: 0;
+  background-color: transparent;
+  color: rgba(0, 0, 0, .87);
+}
+
+.tabmenu > li.selected > a::after, .tabmenu > li.selected > a:after {
+  height: 0; /* don't show hex on active tab */
+}
+
+.tabmenu [href$="SweetieBot/"],
+.tabmenu [href$="new/"],
+.tabmenu [href$="top/"] {
+  width: 77px;
+}
+
+.tabmenu [href$="SweetieBot/"]::after, .tabmenu [href$="SweetieBot/"]:after {
+  content: "0x686f74";
+}
+
+.tabmenu [href$="new/"]::after, .tabmenu [href$="new/"]:after {
+  content: "0x6e6577";
+}
+
+.tabmenu [href$="top/"]::after, .tabmenu [href$="top/"]:after {
+  content: "0x746f70";
+}
+
+.tabmenu [href$="rising/"],
+.tabmenu [href$="gilded/"] {
+  width: 134px;
+}
+
+.tabmenu [href$="rising/"]::after, .tabmenu [href$="rising/"]:after {
+  content: "0x726973696e67";
+}
+
+.tabmenu [href$="gilded/"]::after, .tabmenu [href$="gilded/"]:after {
+  content: "0x67696c646564";
+}
+
+.tabmenu [href$="controversial/"] {
+  width: 269px;
+}
+
+.tabmenu [href$="controversial/"]::after, .tabmenu [href$="controversial/"]:after {
+  content: "0x636f6e74726f7665727369616c";
+}
+
+.tabmenu [href$="wiki/"] {
+  width: 96px;
+}
+
+.tabmenu [href$="wiki/"]::after, .tabmenu [href$="wiki/"]:after {
+  content: "0x77696b69";
+}
+
+.tabmenu [href$="ads/"] {
+  width: 173px;
+}
+
+.tabmenu [href$="ads/"]::after, .tabmenu [href$="ads/"]:after {
+  content: "0x70726f6d6f746564";
+}
+
+.tabmenu [href$="#"] {
+  width: 230px;
+}
+
+.tabmenu [href$="#"]::after, .tabmenu [href$="#"]:after {
+  content: "0x7669657720696d61676573";
+}
+
+.tabmenu [href*="SweetieBot/comments"] {
+  width: 173px;
+}
+
+.tabmenu [href*="SweetieBot/comments"]::after, .tabmenu [href*="SweetieBot/comments"]:after {
+  content: "0x636f6d6d656e7473";
+}
+
+.tabmenu [href*="SweetieBot/related"] {
+  width: 154px;
+}
+
+.tabmenu [href*="SweetieBot/related"]::after, .tabmenu [href*="SweetieBot/related"]:after {
+  content: "0x72656c61746564";
+}
+
+/* Tabmenu - END */
+
+/* Sidebar - BEGIN */
+
+.side > .spacer {
+  margin: 10px 0;
+  box-shadow: 0 0 2px #888;
+  background-color: #fff;
+}
+
+.side {
+  margin: 0 10px;
+  background-color: transparent;
+}
+
+#search {
+  position: relative;
+  z-index: 1;
+}
+
+#search > input[type="text"] {
+  border: 0;
+}
+
+#searchexpando {
+  position: absolute;
+  z-index: -1;
+  width: 280px;
+  border: 0;
+  border-radius: 0;
+  margin-top: 0;
+  background-color: #fafafa;
+  box-shadow: 0 0 2px #888, inset 0 2px 2px -2px #888;
+}
+
+#searchexpando [name="t"] {
+  width: 93px;
+}
+
+#searchexpando > p {
+  margin: 10px 0 0;
+}
+
+/* ABANDONED - allow search box to minimise into a circle
+
+#search > input[type="text"] {
+  width: 0;
+  padding: 6px 18px 6px 9px;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 2px #888;
+  cursor: pointer;
+  transition: width .5s, padding .5s, border-radius .5s;
+}
+
+#search > input[type="text"]:focus {
+  width: 300px;
+  padding: 6px 25px 6px 9px;
+  border-radius: 0;
+  cursor: auto;
+}
+
+#search > input[type="text"] + input {
+  pointer-events: none;
+}
+
+#search > input[type="text"]:focus + input {
+  pointer-events: auto;
+}
+
+   ABANDONED - allow search to minimise into circle */
+
+.login-form-side {
+  border: 0;
+}
+
+
+.login-form-side > input[type] { /* [type] is needed for specificity */
+  border: 0;
+  box-shadow: inset 0 0 2px #888;
+}
+
+.linkinfo {
+  width: 280px;
+  padding: 10px;
+  border: 0;
+  border-radius: 0;
+  background-color: #fff;
+}
+
+.linkinfo .date {
+  font-size: 12px;
+}
+
+  /* Submit buttons - BEGIN */
+
+.submit-link {
+  box-shadow: 0 0 2px #888;
+}
+
+.submit-text {
+  margin-top: -10px;
+  box-shadow: 0 2px 2px #888;
+}
+
+
+
+
+
+.morelink {
+  border: 0;
+  background-color: #1b5e20;
+  background-image: none;
+}
+
+.morelink:hover {
+  background-color: none;
+  background-image: none;
+}
+
+.morelink > a {
+  color: #fff;
+}
+
+.nub {
+  display: none;
+}
+
+  /* Submit buttons - END */
+
+.titlebox {
+  position: relative;
+  z-index: 0;
+  padding: 10px 10px 0 10px;
+  background-color: #fafafa;
+}
+
+.leavemoderator,
+.titlebox > form.toggle {
+  background-color: transparent;
+}
+
+.titlebox > .usertext {
+  width: 100%;
+  padding: 10px;
+  margin-left: -10px;
+  background-color: #fff;
+  box-shadow: inset 0 2px 2px -2px #888;
+}
+
+.titlebox > .bottom {
+  width: 100%;
+  padding: 5px 10px 10px;
+  margin-left: -10px;
+  border: 0;
+  box-shadow: inset 0 2px 2px -2px #888;
+  background-color: #eee;
+}
+
+.sidecontentbox > .title {
+  padding: 5px 10px;
+  background-color: #fafafa;
+}
+
+.sidecontentbox > .content {
+  padding: 10px;
+  border: 0;
+  box-shadow: inset 0 2px 2px -2px #888;
+}
+
+.create > .spacer {
+  padding: 10px;
+  margin: 0;
+  box-shadow: inset 0 2px 2px -2px #888;
+}
+
+.create > .spacer > .login-required {
+  position: static;
+  float: left;
+  margin-right: 10px;
+}
+
+.helplink {
+  padding: 2px 10px 0;
+}
+
+.side > .spacer:last-child {
+  position: relative;
+  z-index: -1;
+}
+
+.account-activity-box {
+  padding: 5px 10px;
+  margin-top: -10px;
+  background-color: #eee;
+}
+
+/* Sidebar - END */
+
+/* Thing (comment/submission) - START */
+/*
+.midcol {
+  margin-right: 12px;
+}
+
+.thumbnail {
+  position: relative;
+  left: -5px;
+}
+
+.entry {
+  position: relative;
+  left: -5px;
+  padding: 5px;
+  margin: 2px 0;
+  background-color: #fff;
+  box-shadow: 0 0 2px #888;
+}
+*/
+/* Thing (comment/submission) - END */
+
+/**** EMOTES FOLLOW UNTIL END ****/
+
+/* Ponibots - BEGIN */
+
+a[href|="/ponibotsb"], a[href|="/ponibotsbinquiry"], a[href|="/ponibotsbpowersaving"],
+a[href|="/ponibotfs"], a[href|="/ponibotpp"], a[href|="/ponibotaj"], a[href|="/ponibotrar"],
+a[href|="/ponibotrdpulse"], a[href|="/ponibotrdcombat"], a[href|="/ponibotrdpassive"], a[href|="/ponibotrdinquiry"],
+a[href|="/ponibotderpy"] {
+  float: left;
+  display: block;
+  height: 150px;
+  background-image: url(%%ponibot%%);
+}
+
+a[href|="/ponibotsb"] {
+  width: 180px;
+  background-position: 0 0;
+}
+
+a[href|="/ponibotsbinquiry"] {
+  width: 180px;
+  background-position: -180px 0;
+}
+
+a[href|="/ponibotsbpowersaving"] {
+  width: 180px;
+  background-position: -360px 0;
+}
+
+a[href|="/ponibotfs"] {
+  width: 135px;
+  background-position: 0 -150px;
+}
+
+a[href|="/ponibotpp"] {
+  width: 135px;
+  background-position: -135px -150px;
+}
+
+a[href|="/ponibotaj"] {
+  width: 135px;
+  background-position: -270px -150px;
+}
+
+a[href|="/ponibotrar"] {
+  width: 135px;
+  background-position: -405px -150px;
+}
+
+a[href|="/ponibotrdpulse"] {
+  width: 120px;
+  background-position: 0 -300px;
+}
+
+a[href|="/ponibotrdcombat"] {
+  width: 120px;
+  background-position: -120px -300px;
+}
+
+a[href|="/ponibotrdpassive"] {
+  width: 120px;
+  background-position: -240px -300px;
+}
+
+a[href|="/ponibotrdinquiry"] {
+  width: 120px;
+  background-position: -360px -300px;
+}
+
+a[href|="/ponibotderpy"] {
+  width: 125px;
+  background-position: 0 -450px;
+}
+
+/* Ponibots - END */
+
+/* Sweetie Bot emotes - BEGIN */
+
+a[href|="/sbotdreaming"],
+a[href|="/sbotsleeping"] {
+  float: left;
+  display: block;
+  background-image: url(%%sbot%%);
+}
+
+a[href|="/sbotdreaming"] {
+  height: 150px;
+  width: 275px;
+  background-position: 0 0;
+}
+
+a[href|="/sbotsleeping"] {
+  height: 100px;
+  width: 100px;
+  background-position: 0 -150px;
+}
+
+/* Sweetie Bot emotes - END */
+
+/* Sweetie Belle non-bot emotes - BEGIN */
+
+a[href|="/hiddenbelle"] {
+  float: left;
+  display: block;
+  height: 150px;
+  background-image: url(%%sbnonbot%%);
+}
+
+a[href|="/hiddenbelle"] {
+  width: 185px;
+  background-position: 0 0;
+}
+
+/* Sweetie Belle non-bot emotes - END */
