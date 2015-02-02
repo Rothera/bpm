@@ -300,7 +300,7 @@ css_manager.prototype = {
         var key = "csscache_" + subreddit.toLowerCase();
         // Chrome doesn't permit setting User-Agent (because it sucks), but this
         // should help a little bit
-        var url = "http://reddit.com/r/" + subreddit + "/stylesheet.css?__ua=BetterPonymotes";
+        var url = "https://www.reddit.com/r/" + subreddit + "/stylesheet.css?__ua=BetterPonymotes";
         this.pm.dl_queue.add(url, function(css) {
             var tmp = strip_subreddit_css(css);
             var extracted_emotes = tmp[0];
