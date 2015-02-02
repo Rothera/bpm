@@ -26,8 +26,8 @@ bow stroke:        #d32e1b
 #header-bottom-left{ background-color: #f4ed6f; }
 .pagename a { color: #9e7b38 !important; }
 #header-bottom-right{ background-color: #daf6b7; }
-a { color: #7ac142; }
-a:visited { color: #41a22e; }
+a, .md a { color: #41a22e; }
+a:visited, .md a:visited { color: #7ac142; }
 .message-count { color: white !important; }
 #url-field .title-status { color: #ff6e5d; }
 a#search_showmore { color: #fff; }
@@ -58,13 +58,13 @@ a#search_showmore { color: #fff; }
 .linkinfo .upvotes { color: #246423; }
 .linkinfo .downvotes { color: #41a22e; }
 .morelink { background: #daf6b7; border-color: #bbf189; }
-.morelink a { color: #7ac142; }
-.morelink a:visited { color: #41a22e; }
+.morelink a { color: #41a22e; }
+.morelink a:visited { color: #7ac142; }
 .morelink:hover { background: #e2b65c; border-color: #9e7b38; }
 .morelink:hover a { color: #fff; }
 .morelink .nub { display: none; }
-.flairselector a { color: #7ac142; }
-.flairselector a:visited { color: #41a22e; }
+.flairselector a { color: #41a22e; }
+.flairselector a:visited { color: #7ac142; }
 .flairselector h2 { color: #41a22e; background-color: #bbf189; }
 .flairselector li a { color: #41a22e !important; }
 .flairselector li:hover { background-color: #daf6b7; border: 1px solid #daf6b7; }
@@ -134,7 +134,7 @@ a#search_showmore { color: #fff; }
     margin: 0;
     display: inline-block;
     cursor: pointer;
-/*    font-size: 12px;*/
+    font-size: 11px;
 }
 
 .side .md h2 {
@@ -146,7 +146,7 @@ a#search_showmore { color: #fff; }
     border-top: 0;
     border-bottom: 0;
     padding: 5px 4px;
-    margin: 0px;
+    margin: 0;
 }
 
 .side .md h2:first-of-type {
@@ -172,8 +172,7 @@ a#search_showmore { color: #fff; }
 .side .md h2:last-of-type+p a {
     float: right !important;
     position: relative !important;
-    top: -75px !important;
-/*    top:-86px !important;*/
+    top: -74px !important;
     left: -15px !important;
     margin-bottom: -70px !important;
 }
@@ -281,6 +280,8 @@ a[href|="/sp"] {
 .expando-button.image.gallery.expanded:hover { background-position: -23px -161px !important; }
 
 /*** Emotes ***/
+
+.md { overflow: auto; }
 
 a[href|="/fritapple"], a[href|="/fritsmirk"], a[href|="/fritgrin"], a[href|="/fritshrug"], a[href|="/fritbow"], a[href|="/frithmph"], a[href|="/fritnoway"], a[href|="/fritsmeel"], a[href|="/fritsad"], a[href|="/fritsmile"], a[href|="/frithappy"], a[href|="/fritbbbff"], a[href|="/fritwhat"], a[href|="/frityay"], a[href|="/fritter"], a[href|="/fritlie"], a[href|="/fritmad"], a[href|="/fritderp"], a[href|="/frithoof"], a[href|="/fritspet"], a[href|="/fritbake"], a[href|="/fritblush"], a[href|="/fritjoke"], a[href|="/fritsalute"], a[href|="/frithmmm"] {
     display: block;

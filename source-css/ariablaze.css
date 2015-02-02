@@ -80,6 +80,8 @@ a[href|="/spoiler"]:hover {
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important; }
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }
 
+.md { overflow: auto; }
+
 .flair
 {
  padding:0;
@@ -443,6 +445,12 @@ a[href|="/ariaplz"],a[href|="/abplz"]
 
 a[href|="/rariaplz"],a[href|="/rabplz"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: 0 -300%;}
+
+a[href|="/ariaponyshrug"],a[href|="/abpshrug"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -100% -200%;}
+
+a[href|="/rariaponyshrug"],a[href|="/rabpshrug"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -100% -300%;}
 
 a[href|="/wmaria"],a[href|="/wmab"]
 {display:block;clear:none;float:left;width:174px;height:200px;background-image:url(%%wmaria%%)!important; background-position: 0 0;}

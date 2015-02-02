@@ -246,7 +246,10 @@ a[href|="/sp"] {
 
 /*** Emotes ***/
 
-a[href|="/cheese"], a[href|="/boneless"], a[href|="/cheesesquint"], a[href|="/cheesestare"], a[href|="/imfine"], a[href|="/cheesechill"], a[href|="/cheesemad"], a[href|="/sarcasticcheese"] {
+.md { overflow: auto; }
+
+a[href|="/cheese"], a[href|="/boneless"], a[href|="/cheesesquint"], a[href|="/cheesestare"], a[href|="/imfine"], a[href|="/cheesechill"], a[href|="/cheesemad"], a[href|="/sarcasticcheese"],
+a[href|="/pentiums"], a[href|="/cheeseponders"] {
     display: block;
     clear: none;
     float: left;
@@ -263,6 +266,8 @@ a[href|="/imfine"] { background-position: -100px -100px; }
 a[href|="/cheesechill"] { background-position: -200px -100px; }
 a[href|="/cheesemad"] { background-position: -0px -200px; }
 a[href|="/sarcasticcheese"] { background-position: -100px -200px; }
+a[href|="/pentiums"] { background-position: -200px -200px; }
+a[href|="/cheeseponders"] { background-position: -0px -300px; }
 
 a[href|="/cheeseshock"], a[href|="/cheesethis"], a[href|="/cheesehappy"], a[href|="/cheeseandpinkie"], a[href|="/accordian"], a[href|="/partyhard"], a[href|="/cheesesmile"], a[href|="/cheesehug"], a[href|="/ppcheesehug"], a[href|="/argumentinvalid"], a[href|="/cheeseandtubamouse"], a[href|="/cheesewtf"] {
     display: block;

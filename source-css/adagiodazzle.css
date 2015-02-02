@@ -109,6 +109,8 @@ a[href|="/sp"] {
 
 /*---------------- Standardized Segment ----------------*/
 
+.md { overflow: auto; }
+
 .flair
 {
  padding:0;
@@ -499,7 +501,7 @@ a[href|="/adagiobattle"], a[href|="/radagiobattle"], a[href|="/adbattle"], a[hre
 a[href|="/awkwardadagio"], a[href|="/rawkwardadagio"], a[href|="/awkwardad"], a[href|="/rawkwardad"] { background-position: -70px -140px; }
 a[href|="/adagiofacepalm"], a[href|="/radagiofacepalm"], a[href|="/adfacepalm"], a[href|="/radfacepalm"] { background-position: -140px -140px; }
 
-a[href|="/adagiosmile"], a[href|="/adsmile"], a[href|="/adagiolook"], a[href|="/adlook"], a[href|="/confidentadagio"], a[href|="/confidentad"], a[href|="/adagiorage"], a[href|="/adrage"] {
+a[href|="/adagiosmile"], a[href|="/adsmile"], a[href|="/adagiolook"], a[href|="/adlook"], a[href|="/confidentadagio"], a[href|="/confidentad"], a[href|="/adagiorage"], a[href|="/adrage"], a[href|="/adagioponyshrug"], a[href|="/adpshrug"] {
     display: block;
     clear: none;
     float: left;
@@ -508,7 +510,7 @@ a[href|="/adagiosmile"], a[href|="/adsmile"], a[href|="/adagiolook"], a[href|="/
     background-image: url(%%adagiopmotes%%) !important;
 }
 
-a[href|="/radagiosmile"], a[href|="/radsmile"], a[href|="/radagiolook"], a[href|="/radlook"], a[href|="/rconfidentadagio"], a[href|="/rconfidentad"], a[href|="/radagiorage"], a[href|="/radrage"] {
+a[href|="/radagiosmile"], a[href|="/radsmile"], a[href|="/radagiolook"], a[href|="/radlook"], a[href|="/rconfidentadagio"], a[href|="/rconfidentad"], a[href|="/radagiorage"], a[href|="/radrage"], a[href|="/radagioponyshrug"], a[href|="/radpshrug"] {
     display: block;
     clear: none;
     float: left;
@@ -526,6 +528,7 @@ a[href|="/adagiosmile"], a[href|="/radagiosmile"], a[href|="/adsmile"], a[href|=
 a[href|="/adagiolook"], a[href|="/radagiolook"], a[href|="/adlook"], a[href|="/radlook"] { background-position: -70px -0px; }
 a[href|="/confidentadagio"], a[href|="/rconfidentadagio"], a[href|="/confidentad"], a[href|="/rconfidentad"] { background-position: -140px -0px; }
 a[href|="/adagiorage"], a[href|="/adrage"], a[href|="/radagiorage"], a[href|="/radrage"] { background-position: -210px -0px; }
+a[href|="/adagioponyshrug"], a[href|="/adpshrug"], a[href|="/radagioponyshrug"], a[href|="/radpshrug"] { background-position: -0px -70px; }
 
 a[href|="/adagiostanding"], a[href|="/adstanding"], a[href|="/radagiostanding"], a[href|="/radstanding"] {
     display: block;

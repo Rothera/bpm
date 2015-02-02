@@ -808,3 +808,7 @@ of the page */
   font-size: 18px;
 }
 */
+
+/*** Image in comment boxes because we're cool now ***/
+.commentarea > .usertext textarea { background-image: url(%%twiwarning%%); background-repeat:no-repeat }
+.commentarea > .usertext textarea:focus { background-image: none; }

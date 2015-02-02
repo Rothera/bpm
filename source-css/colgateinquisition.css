@@ -118,7 +118,7 @@ width: 90px;
 /* Change "readers" And "online now" thing */
 
 .titlebox .word { display: none }
-.titlebox .number:after { content: " Minty Fresh Ponies"; }
+.titlebox .number:after { content: " Toothpaste Pones"; }
 .titlebox .users-online span.number:after { content: " are brushing their teeth"; }
 
 
@@ -581,7 +581,27 @@ height: 150px;
 background-image: url(%%colgatespreadsheet3%%)
 }
 
+/* colgate rage */
+a[href^="/colgaterage"] {
+background-position: -889px 0px;
+display: block;
+clear: none;
+float: left;
+width: 161px;
+height: 150px;
+background-image: url(%%colgatespreadsheet3%%)
+}
 
+/* colgate coffee */
+a[href^="/colgatecoffee"] {
+background-position: -1050px 0px;
+display: block;
+clear: none;
+float: left;
+width: 150px;
+height: 150px;
+background-image: url(%%colgatespreadsheet3%%)
+}
 
 
 

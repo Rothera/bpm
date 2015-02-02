@@ -280,7 +280,7 @@ background-position: 0% -800%
 /*Bacond End*/
 
 body{background: #ffffff url(%%twilightbackground%%) no-repeat fixed center center}
-.content .md h1{color:#789922;border-bottom:none;padding-bottom:0px}
+.content .md h1{color:#789922;border-bottom:none;padding-bottom:0px;font-size:1em;margin:0}
 .content .md h1:before{content:">"}
 
 .res-nightmode body {
@@ -670,11 +670,30 @@ a[href|="/filly"]
 .side .md table:nth-of-type(5) tbody tr:nth-of-type(23) td:nth-of-type(1):after {content:" "}
 
 /*Row/col sizes: (And some undoing for number col*/
+.md th
+{
+font-weight: 100;
+}
+.table tr th:first-child
+{
+font-weight: 400;
+}
+
+table tr td:first-child
+{
+ width: 12px;
+}
 .side .md table th + th
 {
  width:70px;
  text-align:center;
  padding:1px 0px;
+}
+
+.side .md table th
+{
+ padding: 1px 0px;
+ text-align: center;
 }
 
 .side .md table tbody tr:nth-of-type(odd) td:nth-of-type(1)
@@ -706,6 +725,7 @@ a[href|="/filly"]
  margin:0;
  display:inline-block;
  cursor:pointer;
+ font-weight: 100;
 }
 
 .side .md h1:after
@@ -719,6 +739,7 @@ a[href|="/filly"]
 .side .md th {border-bottom:none;}
 
 /*Hover a tab to see emotes notice*/
+
 .side .md h2
 {
  width:290px;
@@ -729,11 +750,14 @@ a[href|="/filly"]
  border-top:0;
  border-bottom:0;
  padding:5px 4px;
+ margin: 0;
+}
+
+.side .md {
+  overflow: auto;
 }
 
 .side .md h2:first-of-type {padding-top:19px;border-top:1px solid #CCC;}
-
-/*suck it*/
 
 .side .md h2:first-of-type:before
 {
@@ -1267,6 +1291,7 @@ a.author[href$="1125a"] {font-size:0!important; overflow:hidden; display:inline-
 a.author[href$="1125a"]:before {font-size:10px!important; visibility:visible!important; content: "1125au"}
 
 .sidecontentbox a.author[href$="Pinkie_Pie"] {font-size:0!important; overflow:hidden; display:none; content: "";}
+.sidecontentbox a.author[href$="DoomedCivilian"] {color: #E9B3F9}
 
 
 /* Random Upvote Text */

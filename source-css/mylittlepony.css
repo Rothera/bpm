@@ -73,6 +73,7 @@ div.titlebox .subscribers span.number:after {content:" Faithful Students"}
 div.titlebox .users-online span.number:after {content:" Learning about Friendship"}
 
 .sidecontentbox .flair {display:none}
+.sidebox .spacer {display:none}
 .titlebox strong {font-size: medium;}
 .titlebox .SuperRedditAltTextDisplay_Text{margin:-6px 0!important;font-size:8pt!important}
 .titlebox .expando-button.collapsed.video{display:none!important}
@@ -950,7 +951,7 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 .flair-cmcchinchy {background-position: -300% -100%}
 .flair-cmcchinchy:hover {background-position: -100% -200%}
 
-
+table tr td:first-child {width:14px}
 
 .side .md table th + th:after {font-weight:normal;}
 .side .md table:nth-of-type(1) th:nth-of-type(1):after {content:"a";}
@@ -985,6 +986,12 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
  width:70px;
  text-align:center;
  padding:1px 0px;
+}
+
+.side .md table th
+{
+ padding: 0px 0px;
+ text-align: center;
 }
 
 .side .md table tbody tr:nth-of-type(odd) td:nth-of-type(1)
@@ -1039,6 +1046,7 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
  border-top:0;
  border-bottom:0;
  padding:5px 4px;
+ margin:0;
 }
 
 .side .md h2:first-of-type {padding-top:19px;border-top:1px solid #CCC;}
@@ -1506,8 +1514,12 @@ a.thumbnail.self{margin-right:-14px}
 
 .md .RESUserTag, .md .RESUserTag + a.voteWeight,.md .RESUserTag + a.voteWeight + div.SuperRedditAltTextDisplay_Text{display:none!important;}
 .res-nightmode .tagline .flair{background-color:transparent!important}
-.res-nightmode .side .md h3{color:#DDD!important}
+.res-nightmode .side .md h3{color:#DDD!important;}
 .res-nightmode .side .titlebox .usertext-body .md h3{color:white!important}
+
+.side .md h3{margin-top:0; margin-bottom:0}
+
+.side .md hr{background:#9a9a9a; height:1px}
 
 .bottommenu.serverinfo .icon{color: pink;}
 .bottommenu.serverinfo .icon:before{content:"e";font-size: 9pt;}
