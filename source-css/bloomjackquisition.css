@@ -9,7 +9,7 @@ a.author[href$="Freepizzafor1dollar"]:after {
     color:purple;
 }
 
-a.author[href$="__brony__"] {
+/*a.author[href$="__brony__"] {
     font-size: 0px!important;
 }
 
@@ -17,7 +17,7 @@ a.author[href$="__brony__"]:after {
     content: "Fritterwhore";
     font-size: 10px!important;
     color:purple;
-}
+}*/
 
 #header{
     background-image: url(%%banner%%);
@@ -147,4 +147,57 @@ a[href|="/abready"]{
 
 a[href|="/abtron"]{
     background-position:-100% -100%;
+}
+
+a[href|="/abplsno"],
+a[href|="/abwind"],
+a[href|="/angelbloom"],
+a[href|="/aboh"],
+a[href|="/absurprise"],
+a[href|="/abpride"],
+a[href|="/abcool"],
+a[href|="/dancerbloom"],
+a[href|="/abfrown"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:150px;
+    height:200px;
+    background-image: url(%%sheet4%%) !important;
+}
+
+a[href|="/abplsno"]{
+    background-position:-0% -0%;
+}
+
+a[href|="/abwind"]{
+    background-position:-100% -0%;
+}
+
+a[href|="/angelbloom"]{
+    background-position:-200% -0%;
+}
+
+a[href|="/aboh"]{
+    background-position:-0% -100%;
+}
+
+a[href|="/absurprise"]{
+    background-position:-100% -100%;
+}
+
+a[href|="/abpride"]{
+    background-position:-200% -100%;
+}
+
+a[href|="/abcool"]{
+    background-position:-0% -200%;
+}
+
+a[href|="/dancerbloom"]{
+    background-position:-100% -200%;
+}
+
+a[href|="/abfrown"]{
+    background-position:-200% -200%;
 }

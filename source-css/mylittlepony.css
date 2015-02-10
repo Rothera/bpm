@@ -67,6 +67,16 @@
                                                    .rUuLJYiG8i77777r777;PO7u2L,.                      https://derpibooru.org/414830
 */
 
+/* Fix new Reddit CSS crashing emotes into the comment buttons */
+/* .commentarea .flat-list { clear:both; } */
+.md:after
+{
+    content:"";
+    display:block;
+    width:100%;
+    clear:both;
+}
+
 /* CSS last generated on Sat, 16 Feb 2013 02:05:57 -0600 by UNKNOWN on derpy */
 div.titlebox span.word {display:none}
 div.titlebox .subscribers span.number:after {content:" Faithful Students"}
@@ -218,7 +228,7 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%derpy-hat%%);
+ background:url(%%pinkie-stache-hat%%);
  width:60px;
  height:60px;
  margin-top:-35px;
@@ -679,8 +689,16 @@ a[href|="/rfillytgap"],a[href|="/rt00"],a[href|="/re00"],a[href|="/rrdhuh"],a[hr
     transform: scaleX(-1);
 }
 
-a[href|="/smooze"],a[href|="/rsmooze"]
+a[href|="/smooze"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%smooze-googly%%)!important}
+
+a[href|="/rsmooze"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%smooze-googly%%)!important;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
 
 /*********************
 Both methods for flipping emotes have been deprecated.
@@ -1466,8 +1484,8 @@ a.thumbnail.self{margin-right:-14px}
  font-size:2em;
  background:#CEE3F8;
  color:#5F99CF;
- margin-left:-6px;
- padding-right:11px;
+ margin-left:-10px;
+ padding-right:20px;
  display:block;
  overflow:visible;
  white-space:nowrap;
@@ -1627,3 +1645,5 @@ div.bottom span.author:after {
     color: gray;
     content: "Lauren Faust";
 }
+
+.md sup {line-height: inherit}

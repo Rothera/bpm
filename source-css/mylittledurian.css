@@ -264,3 +264,35 @@ border:none;
     text-align:right;
 }
 */
+/*Submit Buttons, stolen from r/mylittlepony*/
+
+.submit .morelink { 
+    border-radius: 3px;
+    border: 0px !important;
+    background: #AFCF5F;
+}
+
+.morelink a {
+    display: block;
+    text-align: center; 
+    color: white;
+}
+
+.submit .morelink:hover{
+    background:#DEF79E;
+    background-repeat:no-repeat;
+    color: black;
+}
+
+.disabled .morelink a {
+    display: block;
+    text-align: center; 
+    color: white;
+    font-weight: normal;
+    width: 100px;
+    line-height: 28px;
+}
+
+.sidebox.submit.submit-link .morelink:hover a {color:#AFCF5F}
+.sidebox.submit.submit-text .morelink:hover a {color:#AFCF5F}
+.morelink .nub, .morelink .nub:hover { display: none }

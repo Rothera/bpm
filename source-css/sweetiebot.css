@@ -166,7 +166,14 @@ select {
   text-align: center;
 }
 
-.tabmenu > li > a::after, .tabmenu > li > a:after {
+.tabmenu > li.selected > a {
+  border: 0;
+  background-color: transparent;
+  color: rgba(0, 0, 0, .87);
+}
+
+.tabmenu > li > a::after, .tabmenu > li > a:after,
+.tabmenu > .selected > a:hover::after, .tabmenu > .selected > a:hover:after {
   position: absolute;
   left: 0;
   top: 0;
@@ -176,26 +183,22 @@ select {
   padding: 0;
   overflow: hidden;
   background-color: #fafafa; /* just covers up the tab text */
+  direction: ltr;
   text-align: left; /* aligning centre doesn't work when the width is small */
   text-indent: 6px; /* simulates padding */
   transition: width .5s;
 }
 
-.tabmenu a:hover::after, .tabmenu a:hover:after {
+.tabmenu a:hover::after, .tabmenu a:hover:after,
+.tabmenu > .selected > a::after, .tabmenu > .selected > a:after {
   left: auto;
   right: 0;
   width: 0;
   direction: rtl; /* overflows to the left so that it disappears from the left */
 }
 
-.tabmenu > li.selected > a {
-  border: 0;
-  background-color: transparent;
-  color: rgba(0, 0, 0, .87);
-}
-
-.tabmenu > li.selected > a::after, .tabmenu > li.selected > a:after {
-  height: 0; /* don't show hex on active tab */
+.tabmenu > .selected > a.choice::after, .tabmenu > .selected > a.choice:after {
+  height: 18px; /* must be below the above rules since it has the same specificity */
 }
 
 .tabmenu [href$="SweetieBot/"],
