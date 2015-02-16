@@ -41,9 +41,33 @@ a[href|="/trixieoh"]      {background-position:-140px -0px}
 a[href|="/lustystare"]    {background-position:-210px -0px}
 a[href|="/smugsmile"]     {background-position:-280px -0px}
 
+
+/*100px emotes*/
+
+a[href|="/TrixieLovesPlot"], a[href|="/AnimesqueHappy"], a[href|="/SillyTrixe"], a[href|="/VeryUnamusedTrixie"], a[href|="/ScaredBabyTrixie"]
+
+{
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 100px;
+  background-image: url(%%SpritesheetC%%) !important
+}
+
+/*offsets*/
+
+a[href|="/TrixeLovesPlot"]       {background-position: -0px -0px    }
+a[href|="/AnimesqueHappy"]       {background-position: -100px -0px  }
+a[href|="/SillyTrixe"]           {background-position: -200px -0px  }
+a[href|="/VeryUnamusedTrixie"]   {background-position: -300px -0px  }
+a[href|="/ScaredBabyTrixie"]     {background-position: -400px -0px  }
+
 /*200px emotes*/
 
-a[href|="/notamusedtrixie"], a[href|="/wasthereeveranydoubt"], a[href|="/trixiesocks"], a[href|="/Trixiewillreku"], a[href|="/thebestponyishappy"], a[href|="/didntseeyouthere"], a[href|="/trixieisbestnerd"] 
+a[href|="/notamusedtrixie"], a[href|="/wasthereeveranydoubt"], a[href|="/trixiesocks"], a[href|="/Trixiewillreku"], a[href|="/thebestponyishappy"], a[href|="/ATouchSuprised"], a[href|="/didntseeyouthere"], a[href|="/trixieisbestnerd"],
+a[href|="/TrixieAccuse"], a[href|="/TrixieRatherAngry"], a[href|="/ExtremelySuprised"], a[href|="/SuspicousTrixe"] 
+
 {
   display: block;
   clear: none;
@@ -60,8 +84,13 @@ a[href|="/wasthereeveranydoubt"] {background-position: -200px -0px  }
 a[href|="/trixiesocks"]          {background-position: -400px -0px  }
 a[href|="/Trixiewillreku"]       {background-position: -600px -0px  }
 a[href|="/thebestponyishappy"]   {background-position: -0px -200px  }
+a[href|="/ATouchSuprised"]       {background-position: -200px -200px}
 a[href|="/didntseeyouthere"]     {background-position: -400px -200px}   
 a[href|="/trixieisbestnerd"]     {background-position: -600px -200px}
+a[href|="/TrixieAccuse"]         {background-position: -0px -400px }
+a[href|="/TrixieRatherAngry"]    {background-position: -200px -400px}
+a[href|="/ExtremelySuprised"]    {background-position: -400px -400px}
+a[href|="/SuspicousTrixe"]       {background-position: -600px -400px}
 
 /*heterogeneous emotes*/
 

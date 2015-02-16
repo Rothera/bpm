@@ -19,7 +19,7 @@ div.titlebox .subscribers span.number:after {
 }
 
 div.titlebox .users-online span.number:after {
-    content:" Spiking"
+    content:" nomming"
 }
 
 /*Header sticking on the 'ground'*/
@@ -186,6 +186,16 @@ a[href="/pphonk"], a[href="/h0nk"], a[href="/pph0nk"], a[href="/pinkiehonk"], a[
     Width: 177px;
     Height: 150px;
     background-image: url(%%h0nk%%) !important
+}
+
+a[href="/ajlie"] {
+    background-position: 0px 0px;
+    Display: block;
+    Clear: none;
+    Float: left;
+    Width: 70px;
+    Height: 70px;
+    background-image: url(%%ajlie%%) !important
 }
 
 a[href|="/sp"] {

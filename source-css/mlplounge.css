@@ -1,5 +1,3 @@
-/*Header source: http://kenket.deviantart.com/art/Eyyyyyup-484741516 */
-
 div.titlebox span.word {display:none}
 
 div.titlebox .subscribers span.number:after {content:" Sillies and Numpties "}
@@ -269,14 +267,14 @@ visibility: hidden;
 /*Sidebar Filly end*/
 
 /*changed the "bacon" for res konami code*/
-
+/* ??Where did the proper image go?
 #baconBit {
-  background-image: url('%%filly-table%%') !important;
+  background-image: url('%%shipping-spritesheet%%') !important;
   width: 70px !important;
   height: 70px !important;
 background-position: 0% -800%
 }
-
+*/
 /*Bacond End*/
 
 body{background: #ffffff url(%%twilightbackground%%) no-repeat fixed center center}
@@ -1101,9 +1099,12 @@ a[href|="/ripferrbearand20"] {
 .usertext input[value$="9"] + .usertext-body:before{background-position:-200% -1000%}
 .usertext input[value$="0"] + .usertext-body:before{background-position:-200% -1100%}
 
+/*Hiddenbee goes here*/
+
 .usertext input[value$="5r"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -500%}
 .usertext input[value$="5s"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -600%}
 
+.usertext-edit {min-width:505px}
 
 /*End of every comment random filly*/
 
@@ -1275,11 +1276,20 @@ a.author[href$="DaylightDarkle"]:before {font-size:10px!important; visibility:vi
 a.author[href$="Peacefulzealot"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="Peacefulzealot"]:before {font-size:10px!important; visibility:visible!important; content: "CenturyZellyBelly"}
 
+a.author[href$="HeWho_MustNotBeNamed"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="HeWho_MustNotBeNamed"]:before {font-size:10px!important; visibility:visible!important; content: "HeWho_MustNotBeNamedEh?"}
+
 a.author[href$="Fuzzy_Gauntlets"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="Fuzzy_Gauntlets"]:before {font-size:10px!important; visibility:visible!important; content: "Fuzzy_Infinity_Gauntlets"}
 
 a.author[href$="1125a"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="1125a"]:before {font-size:10px!important; visibility:visible!important; content: "1125au"}
+
+a.author[href$="Eevn"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Eevn"]:before {font-size:10px!important; visibility:visible!important; content: "Even"}
+
+a.author[href$="Ootachiful"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Ootachiful"]:before {font-size:10px!important; visibility:visible!important; content: "Ootachoful"}
 
 .sidecontentbox a.author[href$="Pinkie_Pie"] {font-size:0!important; overflow:hidden; display:none; content: "";}
 .sidecontentbox a.author[href$="DoomedCivilian"] {color: #E9B3F9}
