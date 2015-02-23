@@ -1,3 +1,7 @@
+/* temporary spoilers */
+.thing[data-fullname="t3_2werio"] .entry a.title { font-size:0 !important; }
+.thing[data-fullname="t3_2werio"] .entry a.title::before { font-size: medium !important; content: "Sunset shimmer SPOILER friendship games "; }
+
 /*Banner*/
 #header {
   background: url(%%header%%) repeat-x scroll top left!important;

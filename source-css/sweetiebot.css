@@ -508,7 +508,7 @@ select {
 a[href|="/ponibotsb"], a[href|="/ponibotsbinquiry"], a[href|="/ponibotsbpowersaving"],
 a[href|="/ponibotfs"], a[href|="/ponibotpp"], a[href|="/ponibotaj"], a[href|="/ponibotrar"],
 a[href|="/ponibotrdpulse"], a[href|="/ponibotrdcombat"], a[href|="/ponibotrdpassive"], a[href|="/ponibotrdinquiry"],
-a[href|="/ponibotderpy"] {
+a[href|="/ponibotderpy"], a[href|="/ponibottwi"] {
   float: left;
   display: block;
   height: 150px;
@@ -575,6 +575,11 @@ a[href|="/ponibotderpy"] {
   background-position: 0 -450px;
 }
 
+a[href|="/ponibottwi"] {
+  width: 120px;
+  background-position: -125px -450px;
+}
+
 /* Ponibots - END */
 
 /* Sweetie Bot emotes - BEGIN */
@@ -602,7 +607,7 @@ a[href|="/sbotsleeping"] {
 
 /* Sweetie Belle non-bot emotes - BEGIN */
 
-a[href|="/hiddenbelle"] {
+a[href|="/hiddenbelle"], a[href|="/sweetiecardbot"] {
   float: left;
   display: block;
   height: 150px;
@@ -612,6 +617,12 @@ a[href|="/hiddenbelle"] {
 a[href|="/hiddenbelle"] {
   width: 185px;
   background-position: 0 0;
+}
+
+
+a[href|="/sweetiecardbot"] {
+  width: 125px;
+  background-position: -185px 0;
 }
 
 /* Sweetie Belle non-bot emotes - END */
