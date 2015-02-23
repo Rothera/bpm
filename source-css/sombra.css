@@ -1,0 +1,811 @@
+/*Behold the Frankenstein's monster of code!*/
+
+#header {
+    background-image: url(%%king-header%%);
+    background-size: cover ;
+}
+
+#header { height: 275px; }
+#header-bottom-left { position: absolute; bottom: 0; }
+
+#sr-header-area {
+    border-bottom-color : #CF0000;
+    background-color : #FFFFFF;
+}
+
+#header-img-a {
+    display: inline-block;
+    background: url(%%spritesheet%%) 0 0px;
+    vertical-align: bottom;
+    height: 100px;
+    width: 90px;
+}
+#header-img-a:hover {
+    background-position: 0 -90px;
+}
+#header-img {
+    display: none;
+}
+
+/*Subreddit bar fade*/
+
+#sr-header-area {
+    opacity: 0.6;
+    height: 18px;
+    background-color: #747474;
+    border-bottom: 1px solid #747474;
+}
+
+#sr-header-area:hover {
+    opacity: 90;
+}
+
+#sr-header-area a {
+    color: white;
+    font-family: Verdana, Arial, sans-serif;
+}
+		
+    #sr-header-area a:hover {
+    color: #acc7fb; 
+    text-decoration: none;
+    }
+#sr-more-link {
+    position: absolute;
+    background-color: #747474;
+    color: white;
+}
+
+/*Rounded tabs*/
+
+#header .tabmenu li a{
+    border: 1px solid #5F99CF !important;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    position:relative;
+    display:inline-block;
+    background: #F2F2F2 !important;
+}
+#header .tabmenu li.selected a{
+    background:#FFFFFF !important;
+    border-bottom-color: #FFFFFF !important;}
+#header .tabmenu li{
+    margin: 0px -1px;
+    padding-bottom:2px
+}
+#header .tabmenu{
+    padding:3px;
+    padding-bottom:0px;
+    overflow: hidden;
+    position: relative;
+    bottom:-1px;
+}
+#header .tabmenu:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    border-bottom: 1px solid #5F99CF;
+}
+#header .tabmenu li a:before,
+#header .tabmenu li a:after {
+    position: absolute;
+    bottom: -1px;
+    width: 6px;
+    height: 6px;
+    content: " ";
+    border: 1px solid #5F99CF;
+}
+#header .tabmenu li a:before {
+    left: -7px;
+    border-bottom-right-radius: 6px;
+    border-width: 0 1px 1px 0 !important;
+    box-shadow: 2px 2px 0 #F2F2F2;
+}
+#header .tabmenu li a:after {
+    right: -7px;
+    border-bottom-left-radius: 6px;
+    border-width: 0 0 1px 1px !important;
+    box-shadow: -2px 2px 0 #F2F2F2;
+}
+#header .tabmenu li.selected a:before{
+    box-shadow: 2px 2px 0 #FFFFFF;
+}
+#header .tabmenu li.selected a:after{
+    box-shadow: -2px 2px 0 #FFFFFF;
+}
+
+.res #header-bottom-right { bottom: 0 !important; top: auto !important; }
+
+/*Sidebar*/
+
+.subscribers .word {
+display: none;
+}  
+.subscribers .number::after {
+content: " Sombra fans";
+}
+.users-online .word {
+display: none;
+}
+.users-online .number::after {
+content: " Rulers of the Crystal Empire here now";
+}
+/*Change title of subreddit in sidebar*/
+.side .redditname a:after {
+    content: " the unstoppable";
+    font-size: 20px;
+}
+
+.tagline a {
+   Color: #1F3F77;
+}
+
+a.author.may-blank.id-t2_9ruag {
+   Color: #1F3F77;
+}
+
+a {
+   Color: #1F3F77;
+}
+
+.link {
+    overflow:hidden;
+    margin:0px;
+    padding:5px;
+    border:1px solid #crimson;
+    background-color:#D4D4D4;
+}
+
+#siteTable .thing.link { 
+    border: 1px solid #555 !important;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px !important;
+    margin: 10px 5px;
+    padding: 5px
+}
+
+.odd:hover {background: #E8E8E8;
+transition: background-color 0.5s ease;
+}
+.even:hover {background: #E8E8E8;
+transition: background-color 0.5s ease;}
+
+/* Custom Upvotes */
+
+.arrow.up {
+   background-image: url(%%KSCM-Unclicked%%); 
+   background-position: 0px 0px; 
+   height: 25px; width: 20px; 
+}
+
+.arrow.upmod { 
+    background-image: url(%%KSCM-Clicked%%); 
+    background-position: 0px 0px; 
+    height: 25px; width: 20px;  
+}
+
+.arrow.down {
+    background-image: url(%%pccm-unclicked2%%); 
+    background-position: 0px 0px; 
+    height: 25px; width: 20px; 
+}
+
+.arrow.downmod { 
+    background-image: url(%%PCCM-Clicked%%); 
+    background-position: 0px 0px; 
+    height: 25px; width: 20px; 
+}
+
+#siteTable .thing .rank {line-height:35px !important;
+    color: black;}
+
+.score.unvoted { color: grey !important; }
+
+.score.likes { color: crimson !important; }
+
+.score.dislikes { color: #FF8ABD !Important; }
+
+/*body and text colors*/
+
+.midcol, body > .content .midcol  { min-width:25px !important; }
+
+.pagename a { color: #fff; }
+
+body {
+    background-color : #BDBDBD;
+}
+
+.side { background-color: transparent; }
+
+.side .md *, .titlebox, .side .redditname a { color: #000; }
+
+div.side div.spacer:nth-of-type(1){
+    padding:400px 0 0 !important;
+    background:url(%%sombra-sidebar%%) top center no-repeat;
+    margin-top:10px;
+}
+
+.morelink a {
+    color: white;
+    background-color: black;
+}
+
+.morelink:hover a {
+background-color: red !important;
+}
+
+.nub { display: none;}
+
+.morelink:hover {
+    background-color: crimson;
+}
+
+.link .entry * {
+  color: #000!important;
+}
+
+.comment .entry * {
+  color: #000!important;
+}
+
+.titlebox form.flairtoggle {
+  background: #BDBDBD;
+}
+
+.sidebox.create .spacer {
+  background: #BDBDBD;
+}
+
+.link .usertext .md {
+  background-color: #BDBDBD;
+}
+.titlebox .leavemoderator {
+  background: #BDBDBD;
+}
+
+#moderation_tools {
+    background-color: #BDBDBD;
+}
+
+.icon-menu a {
+    background-color: #BDBDBD;
+}
+
+.titlebox form.toggle, .leavemoderator {
+    background-color: #BDBDBD;
+}
+
+.sidecontentbox .content {
+   margin: 0;
+   padding: 5px;
+   border-color: black;
+   border-style: solid;
+   border-width: 1px;
+   list-style: none;
+}
+
+.titlebox form.toggle, .leavemoderator {
+   Color: black;
+}
+
+.titlebox .bottom {
+   Color: black;
+}
+
+.sidecontentbox .title h1 {
+   Color: black;
+}
+
+.sidebox .subtitle {
+   Color: black;
+}
+
+.sidecontentbox .more a {
+   Color: black;
+}
+
+#siteTable div.thing a.title { 
+    color: black !important; 
+    }
+
+#siteTable div.thing a.title:visited {
+     color: #616161 !important;
+     }
+
+/*Color of in comment links*/
+
+.comment .md a {color:#6D6968 !important}
+
+.comment .md a:visited {color:#504A4B}
+
+/*flair hype!*/
+
+.flair {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%flairsheet%%);
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-indent:-9999px;
+    }
+
+.flair-rainbowdash {
+    background-position: 0px 0px
+    }
+.flair-twilight {
+    background-position: -16px 0px
+    }
+.flair-fluttershy {
+    background-position: -32px 0px
+    }
+.flair-applejack {
+    background-position: -48px 0px
+    }
+.flair-pinkiepie {
+    background-position: 0px -16px
+    }
+.flair-rarity {
+    background-position: -16px -16px
+    }
+.flair-trixie {
+    background-position: -32px -16px
+    }
+.flair-cmc {
+    background-position: -48px -16px;
+    text-indent: 23px;
+    }
+.flair-luna {
+    background-position: 0px -32px
+    }
+.flair-celestia {
+    background-position: -16px -32px
+    }
+.flair-derpy {
+    background-position: -32px -32px
+    }
+.flair-vinyl {
+    background-position: -48px -32px
+    }
+.flair-lyra {
+    background-position: 0px -48px
+    }
+.flair-bonbon {
+    background-position: -16px -48px
+    }
+.flair-octavia {
+    background-position: -32px -48px
+    }
+.flair-doctor {
+    background-position: -48px -48px
+    }
+.flair-mac {
+    background-position: 0px -64px
+    }
+.flair-colgate {
+    background-position: -16px -64px
+    }
+.flair-berry {
+    background-position: -32px -64px
+    }
+.flair-pokey {
+    background-position: -48px -64px
+    }
+.flair-roseluck {
+    background-position: 0px -80px
+    }
+.flair-zecora {
+    background-position: -16px -80px
+    }
+.flair-seafoam {
+    background-position: -32px -80px
+    }
+.flair-carrottop {
+    background-position: -48px -80px
+    }
+.flair-screwball {
+    background-position: 0px -96px
+    }
+.flair-redheart {
+    background-position: -16px -96px
+    }
+.flair-caramel {
+    background-position: -32px -96px
+    }
+.flair-braeburn {
+    background-position: -48px -96px
+    }
+.flair-wonderbolts {
+    background-position: 0px -112px
+    }
+.flair-shadowbolts {
+    background-position: -16px -112px
+    }
+.flair-scootaloo {
+    background-position: -32px -112px
+    }
+.flair-applebloom {
+    background-position: -48px -112px
+    }
+.flair-sweetiebelle {
+    background-position: 0px -128px
+    }
+.flair-davenport {
+    background-position: -16px -128px
+    }
+.flair-cheerilee {
+    background-position: -32px -128px
+    }
+.flair-nightmaremoon {
+    background-position: -48px -128px
+    }
+.flair-blueblood {
+    background-position: 0px -144px
+    }
+.flair-daring {
+    background-position: -16px -144px
+    }
+.flair-mrcake {
+    background-position: -32px -144px
+    }
+.flair-mrscake {
+    background-position: -48px -144px
+    }
+.flair-flam {
+    background-position: 0px -160px
+    }
+.flair-flim {
+    background-position: -16px -160px
+    }
+.flair-silverspoon {
+    background-position: -31px -160px
+    }
+.flair-diamondtiara {
+    background-position: -48px -160px
+    }
+.flair-snips {
+    background-position: 0px -176px
+    }
+.flair-snails {
+    background-position: -16px -176px
+    }
+.flair-twist {
+    background-position: -32px -176px
+    }
+.flair-truffle {
+    background-position: -48px -176px
+    }
+.flair-amethyst {
+    background-position: 0px -192px
+    }
+.flair-tipper {
+    background-position: -16px -192px
+    }
+.flair-fancypants {
+    background-position: -32px -192px
+    }
+.flair-fleur {
+    background-position: -48px -192px
+    }
+.flair-worstpony {
+    background-position: 0px -208px
+    }
+.flair-shining {
+    background-position: -16px -208px
+    }
+.flair-rich {
+    background-position: -32px -208px
+    }
+.flair-hoity {
+    background-position: -48px -208px
+    }
+.flair-cloudchaser {
+    background-position: 0px -224px
+    }
+.flair-flitter {
+    background-position: -16px -224px
+    }
+.flair-lily {
+    background-position: -32px -224px
+    }
+.flair-grannysmith {
+    background-position: -48px -224px
+    }
+.flair-daisy {
+    background-position: 0px -240px
+    }
+.flair-chrysalis {
+    background-position: -16px -240px
+    }
+.flair-lotus {
+    background-position: -32px -240px
+    }
+.flair-aloe {
+    background-position: -48px -240px
+    }
+.flair-drstable {
+    background-position: 0px -256px
+    }
+.flair-sew {
+    background-position: -16px -256px
+    }
+.flair-spitfire {
+    background-position: -32px -256px
+    }
+.flair-mayormare {
+    background-position: -48px -256px
+    }
+.flair-surprise {
+    background-position: 0px -272px
+    }
+.flair-maud {
+    background-position: -16px -272px
+    }
+.flair-bulk {
+    background-position: -32px -272px
+    }
+.flair-spike {
+    background-position: -48px -272px
+    }
+.flair-harshwhinny {
+    background-position: 0px -288px
+    }
+.flair-coco {
+    background-position: -16px -288px
+    }
+.flair-discord {
+    background-position: -32px -288px
+    }
+.flair-soarin {
+    background-position: -48px -288px
+    }
+.flair-lightningdust {
+    background-position: 0px -304px
+    }
+.flair-cheese {
+    background-position: -16px -304px
+    }
+.flair-flashahhh {
+    background-position: -32px -304px
+    }
+.flair-apathia {
+    background-position: -48px -304px
+    }
+.flair-disenthia {
+    background-position: 0px -320px
+    }
+.flair-karma {
+    background-position: -16px -320px
+    }
+.flair-silverstar {
+    background-position: -32px -320px
+    }
+.flair-peachbottom {
+    background-position: -48px -320px
+    }
+.flair-flashsentry {
+    background-position: 0px -336px
+    }
+.flair-sunset {
+    background-position: -16px -336px
+    }
+.flair-gilda {
+    background-position: -32px -336px
+    }
+.flair-thunderlane {
+    background-position: -48px -336px
+    }
+.flair-rainbowdashrp {
+    background-position: 0px -352px
+    }
+.flair-twilightrp {
+    background-position: -16px -352px
+    }
+.flair-fluttershyrp {
+    background-position: -32px -352px
+    }
+.flair-applejackrp {
+    background-position: -48px -352px
+    }
+.flair-pinkiepierp {
+    background-position: 0px -368px
+    }
+.flair-rarityrp {
+    background-position: -16px -368px
+    }
+.flair-flutterbat {
+    background-position: -32px -368px
+    }
+.flair-nightmarerarity {
+    background-position: -48px -368px
+    }
+.flair-marine {
+    background-position: 0px -384px
+    }
+.flair-raindrop {
+    background-position: -16px -384px
+    }
+.flair-blankflank {
+    background-image: none;
+    height: 0;
+    width: 0
+    }
+.flair-cmcvictus {
+    background-position: -48px -16px
+    }
+.flair-cmcvictus:hover {
+    background-position: 0px -32px
+    }
+.flair-cmctwoworlds {
+    background-position: -48px -16px
+    }
+.flair-cmctwoworlds:hover {
+    background-position: -32px -368px
+    }
+
+/*Emotes*/
+
+START-PONYSCRIPT-IGNORE { color: red; }
+ a[href|="/oneday"] {
+display: block;
+clear: none;
+float: left;
+width: 154px;
+height: 200px;
+background-image: url(%%king-sombra-joy-vector-by-legat-bf-d6dfx88%%)
+}
+END-PONYSCRIPT-IGNORE { color: red; }
+
+ a[href|="/crystalflutters"] {
+display: block;
+clear: none;
+float: left;
+width: 170px;
+height: 149px;
+background-image: url(%%crystalflutters%%)
+}
+a[href|="/sombraumad"] {
+display: block;
+clear: none;
+float: left;
+width: 250px;
+height: 139px;
+background-image: url(%%sombraumad%%)
+}
+a[href|="/squidra"] {
+display: block;
+clear: none;
+float: left;
+width: 147px;
+height: 156px;
+background-image: url(%%squidra%%)
+}
+a[href|="/sombrasit"] {
+display: block;
+clear: none;
+float: left;
+width: 156px;
+height: 157px;
+background-image: url(%%sombrasit%%)
+}
+
+/*Vic's emotes*/
+
+a[href|="/evilsombra"] {
+display: block;
+clear: none;
+float: left;
+width: 70px;
+height: 70px;
+background-image: url(%%evilsombra%%)
+}
+
+a[href|="/crystalsombra"] {
+display: block;
+clear: none;
+float: left;
+width: 144px;
+height: 200px;
+background-image: url(%%crystalsombra%%)
+}
+
+a[href|="/sombrabubble"] {
+display: block;
+clear: none;
+float: left;
+width: 173px;
+height: 200px;
+background-image: url(%%sombrabubble%%)
+}
+
+a[href|="/sombradisapproval"] {
+display: block;
+clear: none;
+float: left;
+width: 111px;
+height: 200px;
+background-image: url(%%sombradisaproval%%)
+}
+
+a[href|="/sombramagic"] {
+display: block;
+clear: none;
+float: left;
+width: 125px;
+height: 200px;
+background-image: url(%%sombramagic%%)
+}
+
+a[href|="/sombraoh"] {
+display: block;
+clear: none;
+float: left;
+width: 70px;
+height: 70px;
+background-image: url(%%sombraoh%%)
+}
+
+a[href|="/sombrawant"] {
+display: block;
+clear: none;
+float: left;
+width: 200px;
+height: 190px;
+background-image: url(%%sombrawant%%)
+}
+
+a[href|="/sombraconfused"] {
+display: block;
+clear: none;
+float: left;
+width: 162px;
+height: 200px;
+background-image: url(%%sombraconfused%%)
+}
+
+a[href|="/smegusta"] {
+display: block;
+clear: none;
+float: left;
+width: 250px;
+height: 164px;
+background-image: url(%%megusta%%)
+}
+
+a[href|="/darktwi"] {
+display: block;
+clear: none;
+float: left;
+width: 128px;
+height: 150px;
+background-image: url(%%darktwilight%%)
+}
+
+a[href|="/sombrawat"] {
+display: block;
+clear: none;
+float: left;
+width: 126px;
+height: 150px;
+background-image: url(%%sombrawat%%)
+}
+
+a[href|="/zeldasombra"] {
+display: block;
+clear: none;
+float: left;
+width: 149px;
+height: 200px;
+background-image: url(%%zeldasombra%%)
+}
+
+/*Because Gamie is an idiot*/
+
+a.author[href$="little_gamie"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="little_gamie"]:before {font-size:10px!important; visibility:visible!important; content: "Enemy of the crown"}
