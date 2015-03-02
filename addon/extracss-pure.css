@@ -406,6 +406,7 @@
 .bpflag-rrotate, .bpflag-lrrotate {animation:znips 2s infinite linear;image-rendering:-moz-crisp-edges}
 
 .md { overflow-y: hidden !important }
+.usertext-edit .md { overflow-y: inherit !important; }
 .titlebox .md { overflow-y: inherit !important; }
 
 @keyframes intensifies {

@@ -398,6 +398,7 @@
 .bpflag-rrotate, .bpflag-lrrotate {-webkit-animation:znips 2s infinite linear;image-rendering:-webkit-optimize-contrast}
 
 .md { overflow-y: hidden !important }
+.usertext-edit .md { overflow-y: inherit !important; }
 .titlebox .md { overflow-y: inherit !important; }
 
 @-webkit-keyframes intensifies {
