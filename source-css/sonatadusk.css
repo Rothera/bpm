@@ -3,12 +3,17 @@
 
 body { background: url(%%background%%) no-repeat center; }
 
+/*START-TACOS{color:red}
+body { background: url(%%tuesdaybackground%%) no-repeat fixed center bottom; }
+END-TACOS{color:red}*/
+
 .subscribers .word, .users-online .word { display: none; }
 .subscribers .number:after { content: " admirers"; }
 .users-online .number:after { content: " showing their adoration"; }
 
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important; }
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }
+.sidecontentbox .helplink+.title+.content li:nth-of-type(6n) { display: none; }
 
 #header-img { margin-bottom: -2px; }
 

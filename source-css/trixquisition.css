@@ -130,3 +130,7 @@ Width: 160px;
 Height: 222px;
 Background-image: url(%%tired%%) !important }
 
+
+
+a.author[href$="Protosega"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Protosega"]:before {font-size:10px!important; visibility:visible!important; content: "The Great and Powerful Trixie"}
