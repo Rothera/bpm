@@ -1,0 +1,224 @@
+a[href|="/ploungewater"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 95px;
+    height: 93px;
+    background-image: url(%%ploungewater%%);
+    background-size: cover;
+}
+
+a[href|="/cyquine"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 95px;
+    height: 170px;
+    background-image: url(%%cyquinevector%%);
+    background-size: cover;
+}
+
+a[href|="/nmr"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 95px;
+    height: 93px;
+    background-image: url(%%nmrvector%%);
+    background-size: cover;
+}
+
+a[href|="/nmrsays"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 190px;
+    height: 190px;
+    background-image: url(%%nmrbubble%%);
+    background-size: cover;
+}
+
+a[href|="/pimpcess"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 260px;
+    height: 190px;
+    background-image: url(%%pimpin%%);
+    background-size: cover;
+}
+
+a[href|="/scootannoyed"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 120px;
+    height: 190px;
+    background-image: url(%%scootannoyed2%%);
+    background-size: cover;
+}
+
+a[href|="/sbstance"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 150px;
+    height: 190px;
+    background-image: url(%%sbstance%%);
+    background-size: cover;
+}
+
+a[href|="/scootapissed"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 140px;
+    height: 190px;
+    background-image: url(%%scootapissed%%);
+    background-size: cover;
+}
+
+a[href|="/fswhatdidido"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 190px;
+    height: 190px;
+    background-image: url(%%whyudothis%%);
+    background-size: cover;
+}
+
+a[href|="/pplisten"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 95px;
+    height: 90px;
+    background-image: url(%%pplisten%%);
+    background-size: cover;
+}
+
+.searchexpando-submit {
+visibility: hidden;
+}
+
+.infobar {
+background: white;
+border: 0;
+}
+
+.morelink {
+border-radius: 12px;
+border: 0;
+background: none;
+}
+
+.morelink a {
+color: white;
+background: rgb(3, 158, 249);
+}
+
+.morelink a:hover {
+color: lightgray;
+background: rgb(0, 111, 169)
+}
+
+.morelink .nub {
+visibility: hidden;
+}
+
+.morelink:hover {
+background: none;
+}
+
+div.titlebox .subscribers span.number:after {
+    content: " Comic Enthusiasts"
+}
+
+div.titlebox .users-online span.number:after {
+    content: " Fillies Reading"
+}
+
+#header-bottom-left {
+background: rgb(3, 158, 249);
+}
+
+div.titlebox span.word {display:none; }
+
+.error {
+display: none;
+}
+
+#header .tabmenu {
+position: relative;
+}
+
+#header .tabmenu li a {
+border: 0;
+background: none;
+color: white;
+font-size: 14px;
+-webkit-transition: color 0.5s ease;
+-moz-transition: color 0.5s ease;
+}
+
+#header .tabmenu li a:hover {
+color: lightgray;
+-webkit-transition: color 0.5s ease;
+-moz-transition: color 0.5s ease;
+}
+
+.pagename a{
+text-decoration: none;
+border: 0;
+background: none;
+color: white;
+font-size: 14px;
+-webkit-transition: color 0.5s ease;
+-moz-transition: color 0.5s ease;
+position: relative;
+}
+
+.pagename a:hover {
+text-decoration: none;
+color: lightgray;
+-webkit-transition: color 0.5s ease;
+-moz-transition: color 0.5s ease;
+}
+
+.md h2 {
+background: rgb(3, 158, 249);
+border: 2px solid rgb(3, 158, 249);
+color: white;
+}
+
+.titlebox h1 {
+   font-size: 0;
+}
+
+.titlebox h1:after {
+   content: "Comic Squisition";
+   font-size: 19px;
+}
+
+.md a {
+-webkit-transition: color 0.5s ease;
+-moz-transition: color 0.5s ease;
+}
+
+.md a:hover {
+color: rgb(37, 152, 218);
+-webkit-transition: color 0.5s ease;
+-moz-transition: color 0.5s ease;
+}
+
+.footer-parent {
+background: url(%%footer%%);
+background-repeat: no-repeat;
+background-position: bottom center;
+width: 100%;
+height: 700px;
+padding-bottom: 60px;
+    clear: both;
+    text-align: center;
+}
