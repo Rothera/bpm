@@ -338,7 +338,18 @@ a[href="/scootdealwithit"]{
 /*orginal here http://austiniousi.deviantart.com/art/Scootaloo-Deal-With-It-325421434*/
 }
 
+
+
+
+
 /*Start header and body modification*/
+div.titlebox span.word {display:none}
+div.titlebox .subscribers span.number:after {content:" Scootaloo fans "}
+div.titlebox .subscribers span.number:after {font-size:12px!important; }
+div.titlebox p.users-online span.number:after { content: " praising Rainbow Dash!" }
+div.titlebox p.users-online span.word { display: none }
+
+
 .sidecontentbox .flair {display:none}
 .flairselector .customizer {
 display: none !important;
@@ -534,12 +545,18 @@ background: #ffffff url(%%CMCbackground%%) no-repeat fixed center center
 .flair-marinesandwich {background-position: 0 -2400%}
 .flair-raindrops {background-position: -100% -2400%}
 
+
+
 /*HOVER FLAIRS! Because yay. Follow same formating to make a new one*/
 
 .flair-cmcplasma {background-position: -300% -100%}
 .flair-cmcplasma:hover {background-position: -200% -700%} /*For Plasmahawk; Scootaloo Hover*/
 .flair-cmcbrony {background-position: -300% -100%}
 .flair-cmcbrony:hover {background-position: -300% -700%} /*For __Brony__; Apple Bloom Hover*/
+.flair-kiilek {background-position: -200% -2400%}
+.flair-kiilek:hover {background-position: -200% -700%} /*for Kiilek; Scootaloo Hover */
+.flair-cmcseatiebelt {background-position: -300% -100%}
+.flair-cmcseatiebelt:hover {background-position: 0 -800%}
 
 
 
@@ -565,4 +582,14 @@ a.author[href$="__brony__"]:after {
     content: "Apple Bloom";
     font-size: 12px !important;
     color:crimson;
+}
+
+a.author[href$="SeatieBelt"] {
+    font-size: 0px !important;
+}
+
+a.author[href$="SeatieBelt"]:after {
+    content: "Sweetie Belle";
+    font-size: 12px !important;
+    color:thistle;
 }

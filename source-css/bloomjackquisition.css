@@ -43,12 +43,8 @@ a.author[href$="__brony__"]:after {
     text-align:right;
 }
 
-a[href|="/bloomjackstare"],
-a[href|="/bloomjackhoofbump"],
-a[href|="/bloomjacksnooze"],
 a[href|="/bloomjackwall"],
 a[href|="/bloomjackhat"],
-a[href|="/appletini"],
 a[href|="/bloomjackshutup"],
 a[href|="/bloomjackdeadrising"],
 a[href|="/bloomjackreally"],
@@ -66,15 +62,30 @@ a[href|="/bloomjackfrazzled"]{
 }
 
 a[href|="/bloomjackstare"]{
-    background-position:-0% -0%;
+    display:block;
+    clear:none;
+    float:left;
+    width:200px;
+    height:130px;
+    background-image: url(%%bloomjackstare%%) !important;
 }
 
 a[href|="/bloomjackhoofbump"]{
-    background-position:-100% -0%;
+    display:block;
+    clear:none;
+    float:left;
+    width:200px;
+    height:139px;
+    background-image: url(%%bloomjackhoofbump%%) !important;
 }
 
 a[href|="/bloomjacksnooze"]{
-    background-position:-200% -0%;
+    display:block;
+    clear:none;
+    float:left;
+    width:180px;
+    height:105px;
+    background-image: url(%%bloomjacksnooze%%) !important;
 }
 
 a[href|="/bloomjackwall"]{
@@ -86,7 +97,12 @@ a[href|="/bloomjackhat"]{
 }
 
 a[href|="/appletini"]{
-    background-position:-200% -100%;
+    display:block;
+    clear:none;
+    float:left;
+    width:130px;
+    height:200px;
+    background-image: url(%%appletini%%) !important;
 }
 
 a[href|="/bloomjackshutup"]{
@@ -123,8 +139,17 @@ a[href|="/bloomjacksleep"]{
 
 a[href|="/abawkward"],
 a[href|="/abunsure"],
+a[href|="/abwtf"],
 a[href|="/abready"],
-a[href|="/abtron"]{
+a[href|="/abtron"],
+a[href|="/abshy"],
+a[href|="/abcrash"],
+a[href|="/applebroom"],
+a[href|="/abflank"],
+a[href|="/goldenbloom"],
+a[href|="/abwink"],
+a[href|="/abtongue"]
+{
     display:block;
     clear:none;
     float:left;
@@ -136,17 +161,38 @@ a[href|="/abtron"]{
 a[href|="/abawkward"]{
     background-position:-0% -0%;
 }
-
 a[href|="/abunsure"]{
     background-position:-100% -0%;
 }
-
+a[href|="/abwtf"]{
+    background-position:-200% -0%;
+}
 a[href|="/abready"]{
     background-position:-0% -100%;
 }
-
 a[href|="/abtron"]{
     background-position:-100% -100%;
+}
+a[href|="/abshy"]{
+    background-position:-200% -100%;
+}
+a[href|="/abcrash"]{
+    background-position:-0% -200%;
+}
+a[href|="/applebroom"]{
+    background-position:-100% -200%;
+}
+a[href|="/abflank"]{
+    background-position:-200% -200%;
+}
+a[href|="/goldenbloom"]{
+	background-position:-300% -0%
+}
+a[href|="/abwink"]{
+	background-position:-300% -100%
+}
+a[href|="/abtongue"]{
+	background-position:-300% -200%
 }
 
 a[href|="/abplsno"],
@@ -157,7 +203,17 @@ a[href|="/absurprise"],
 a[href|="/abpride"],
 a[href|="/abcool"],
 a[href|="/dancerbloom"],
-a[href|="/abfrown"]{
+a[href|="/abfrown"],
+a[href|="/happybloom"],
+a[href|="/thishypnoticapple"],
+a[href|="/abhappyhop"],
+a[href|="/abdisappoint"],
+a[href|="/abscience"],
+a[href|="/abstoked"],
+a[href|="/abwhoa"],
+a[href|="/absmug"],
+a[href|="/shiftybloom"]
+{
     display:block;
     clear:none;
     float:left;
@@ -178,6 +234,10 @@ a[href|="/angelbloom"]{
     background-position:-200% -0%;
 }
 
+a[href|="/happybloom"]{
+    background-position:-300% 0%;
+}
+
 a[href|="/aboh"]{
     background-position:-0% -100%;
 }
@@ -190,6 +250,10 @@ a[href|="/abpride"]{
     background-position:-200% -100%;
 }
 
+a[href|="/thishypnoticapple"]{
+    background-position:-300% -100%;
+}
+
 a[href|="/abcool"]{
     background-position:-0% -200%;
 }
@@ -200,4 +264,60 @@ a[href|="/dancerbloom"]{
 
 a[href|="/abfrown"]{
     background-position:-200% -200%;
+}
+
+a[href|="/abhappyhop"]{
+    background-position:-300% -200%;
+}
+
+a[href|="/abdisappoint"]{
+    background-position:-400% -0%;
+}
+
+a[href|="/abscience"]{
+    background-position:-400% -100%;
+}
+
+a[href|="/abstoked"]{
+    background-position:-400% -200%;
+}
+
+a[href|="/abwhoa"]{
+    background-position:-500% -0%;
+}
+
+a[href|="/absmug"]{
+    background-position:-500% -100%;
+}
+
+a[href|="/shiftybloom"]{
+    background-position:-500% -200%;
+}
+
+
+a[href|="/abfaceplant"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:200px;
+    height:102px;
+    background-image: url(%%abfaceplant%%) !important;
+}
+
+a[href|="/fruitrollup"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:198px;
+    height:177px;
+    background-image: url(%%fruitrollup%%) !important;
+}
+
+a[href|="/fillystew"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:200px;
+    height:120px;
+    background-image: url(%%fillystew%%) !important;
 }

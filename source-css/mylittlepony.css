@@ -69,7 +69,7 @@
 
 /* Fix new Reddit CSS crashing emotes into the comment buttons */
 /* .commentarea .flat-list { clear:both; } */
-.md:after
+.commentarea .md:after
 {
     content:"";
     display:block;
@@ -226,13 +226,13 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%spacing%%);
+ background:url(%%discentia-portal-head%%);
  width:72px;
  height:42px;
  margin-top:-16px;
  margin-left:5px;
  margin-bottom:0px;
- margin-right:-30px;
+ margin-right:-29px;
 }
 
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important}
@@ -241,8 +241,8 @@ border-top-right-radius: 5px;
 .thumbnail.default{ background-position:0px -70px!important}
 .thing[data-fullname$="d"] .thumbnail.nsfw,.thing[data-fullname$="i"] .thumbnail.nsfw,.thing[data-fullname$="s"] .thumbnail.nsfw,.thing[data-fullname$="c"] .thumbnail.nsfw,.thing[data-fullname$="e"] .thumbnail.nsfw,
 .thing[data-fullname$="n"] .thumbnail.nsfw,.thing[data-fullname$="t"] .thumbnail.nsfw,.thing[data-fullname$="a"] .thumbnail.nsfw{background-position:0px -170px!important}
-.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2,.sidecontentbox a.author.id-t2_6uo3t, .sidecontentbox a.author.id-t2_5dxi7, .sidecontentbox a.author.id-t2_3fvpf, .sidecontentbox a.author.id-t2_5o8ly ,.sidecontentbox a.author.id-t2_6gpcb ,.sidecontentbox ul.content li.more a {content:"";color:white;font-size:0pt;display:block}
-.sidecontentbox a.author.id-t2_3l5j0:before, .sidecontentbox a.author.id-t2_4a7lu:before ,.sidecontentbox a.author.id-t2_4f80o:before ,.sidecontentbox a.author.id-t2_5agom:before ,.sidecontentbox a.author.id-t2_51isb:before ,.sidecontentbox a.author.id-t2_51isb:after ,.sidecontentbox a.author.id-t2_5eqe2:before, .sidecontentbox a.author.id-t2_6uo3t:before, .sidecontentbox a.author.id-t2_5dxi7:before, .sidecontentbox a.author.id-t2_3fvpf:before, .sidecontentbox ul.content li.more a:before, .sidecontentbox a.author.id-t2_5o8ly:before, .sidecontentbox a.author.id-t2_6gpcb:before {font-size:10pt;color:#369;display:inline-block;}
+.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2,.sidecontentbox a.author.id-t2_6uo3t, .sidecontentbox a.author.id-t2_5dxi7, .sidecontentbox a.author.id-t2_3fvpf, .sidecontentbox a.author.id-t2_5o8ly, .sidecontentbox a.author.id-t2_5xxlw, .sidecontentbox a.author.id-t2_6gpcb ,.sidecontentbox ul.content li.more a {content:"";color:white;font-size:0pt;display:block}
+.sidecontentbox a.author.id-t2_3l5j0:before, .sidecontentbox a.author.id-t2_4a7lu:before ,.sidecontentbox a.author.id-t2_4f80o:before ,.sidecontentbox a.author.id-t2_5agom:before ,.sidecontentbox a.author.id-t2_51isb:before ,.sidecontentbox a.author.id-t2_51isb:after ,.sidecontentbox a.author.id-t2_5eqe2:before, .sidecontentbox a.author.id-t2_6uo3t:before, .sidecontentbox a.author.id-t2_5dxi7:before, .sidecontentbox a.author.id-t2_3fvpf:before, .sidecontentbox ul.content li.more a:before, .sidecontentbox a.author.id-t2_5o8ly:before, .sidecontentbox a.author.id-t2_5xxlw:before, .sidecontentbox a.author.id-t2_6gpcb:before {font-size:10pt;color:#369;display:inline-block;}
 .sidecontentbox a.author.id-t2_3l5j0:before {content:"Lebal of the House of Usher"}
 .sidecontentbox a.author.id-t2_4a7lu:before {content:"Orsch"}
 /*.sidecontentbox a.author.id-t2_55ojn:before {content:"Rainbow Brite"}*/
@@ -255,11 +255,12 @@ border-top-right-radius: 5px;
 .sidecontentbox a.author.id-t2_5dxi7:before {content:"TheeLanker"}
 .sidecontentbox a.author.id-t2_6gpcb:before {content:"Linkygit"}
 .sidecontentbox a.author.id-t2_5o8ly:before {content:"xHaZxFaTx"}
+.sidecontentbox a.author.id-t2_5xxlw:before {content:"Raging_Moose"} 
 .sidecontentbox ul.content li.more {display:none}
 .sidecontentbox a.author.id-t2_5fmql {display:none;}
 .sidecontentbox a.author.id-t2_6ua87 {display:none;}
 
-a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,a.author.id-t2_52j0w,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott,a.author.id-t2_dq6ce,a.author.id-t2_5qkuh{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
+a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,a.author.id-t2_52j0w,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott,a.author.id-t2_dq6ce,a.author.id-t2_5qkuh,{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
 a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,a.author.id-t2_52j0w:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after,a.author.id-t2_dq6ce:after,a.author.id-t2_5qkuh:after{font-size:10px!important;display:block;letter-spacing:normal}
 a.author.id-t2_4mwnz:after{content:"DerpyHiccupKittyTail"}
 a.author.id-t2_8kzeb:after{content:"RAINBOW_PONY_JUICEBOX"}
@@ -964,6 +965,8 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 .flair-cmclinker:hover {background-position: -0% -0%}
 .flair-cmclanky {background-position: -300% -100%}
 .flair-cmclanky:hover {background-position: -0% -300%}
+.flair-cmcmouse {background-position: -300% -100%}
+.flair-cmcmouse:hover {background-position: -200% -300%}
 .flair-cmcchinchy {background-position: -300% -100%}
 .flair-cmcchinchy:hover {background-position: -100% -200%}
 
@@ -1296,6 +1299,36 @@ body:not(.moderator) div.content .flairselectbtn
  padding:0px 2px;
  margin-right:2px;
  top:-1px;
+}
+
+/*OC flair*/
+.linkflair-oc .linkflairlabel {display:none;}
+.linkflair-oc p.title:before
+{
+ content:"";
+ position:relative;
+ top:3px;
+ margin-right:2px;
+ display:inline-block;
+ width:16px;
+ height:16px;
+ background-image:url(%%OC-book%%);
+}
+
+/*OC flair and also spoilers in title*/
+.linkflair-ocspoiler .linkflairlabel {display:none;}
+.linkflair-ocspoiler p.title a.title {opacity:0;}
+.linkflair-ocspoiler p.title a.title:hover {opacity:100;}
+.linkflair-ocspoiler p.title:before
+{
+ content:"";
+ position:relative;
+ top:3px;
+ margin-right:2px;
+ display:inline-block;
+ width:16px;
+ height:16px;
+ background-image:url(%%OC-book%%);
 }
 
 /*Equestria Girls Spoiler in title flair*/

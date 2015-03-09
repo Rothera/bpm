@@ -2,8 +2,8 @@
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%x40%%)  no-repeat  fixed 66% 100% !important;
-}
+    background:  url(%%sanicbg%%)  no-repeat  fixed 66% 100% !important;
+}go
 
 
 /* emote overflow fix */
@@ -1080,7 +1080,8 @@ a.author[href$=sympathyfordiscord]:after,
 a.author[href$=rawrcharlierawr]:after,
 a.author[href$=SiliconeLube]:after,
 a.author[href$=YesterdaysVoid]:after,
-a.author[href$=Solidus_Tripsy]:after
+a.author[href$=Solidus_Tripsy]:after,
+a.author[href$=RAINBOW_PONY_SEMEN]:after
 
 {
 color:#000; 
@@ -1169,6 +1170,7 @@ a.author[href$=rawrcharlierawr]:after { content:": a blast from the past" }
 a.author[href$=SiliconeLube]:after { content:" the Sexualizer" }
 a.author[href$=YesterdaysVoid]:after { content:" ~ Drank Celestia's Coughsyrup" }
 a.author[href$=Solidus_Tripsy]:after { content:" touches all the butts"; color:brown }
+a.author[href$=RAINBOW_PONY_SEMEN]:after { content:" GODDESS OF NO FUN"; color:pink }
 
 /* Any pre/post-name flair stuff goes here */ 
 
@@ -1586,7 +1588,7 @@ a.author[href$="Parasprite"] {color:#D19FE3!important}
     background-repeat: no-repeat;
     margin-bottom: -1px;
     }
-
+/*
 html {
 cursor: wait;
 }
@@ -1594,3 +1596,4 @@ cursor: wait;
 textarea, input {
 cursor: vertical-text;
 }
+*/
