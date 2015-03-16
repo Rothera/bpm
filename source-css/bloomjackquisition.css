@@ -148,7 +148,11 @@ a[href|="/applebroom"],
 a[href|="/abflank"],
 a[href|="/goldenbloom"],
 a[href|="/abwink"],
-a[href|="/abtongue"]
+a[href|="/abtongue"],
+a[href|="/abflankcheck"],
+a[href|="/abhello"],
+a[href|="/abderp"],
+a[href|="/abwhoops"]
 {
     display:block;
     clear:none;
@@ -186,13 +190,25 @@ a[href|="/abflank"]{
     background-position:-200% -200%;
 }
 a[href|="/goldenbloom"]{
-	background-position:-300% -0%
+    background-position:-300% -0%
 }
 a[href|="/abwink"]{
-	background-position:-300% -100%
+    background-position:-300% -100%
 }
 a[href|="/abtongue"]{
-	background-position:-300% -200%
+    background-position:-300% -200%
+}
+a[href|="/abflankcheck"]{
+    background-position: -0% -300%
+}
+a[href|="/abhello"]{
+    background-position: -100% -300%
+}
+a[href|="/abderp"]{
+    background-position: -200% -300%
+}
+a[href|="/abwhoops"]{
+    background-position: -300% -300%
 }
 
 a[href|="/abplsno"],
@@ -212,7 +228,13 @@ a[href|="/abscience"],
 a[href|="/abstoked"],
 a[href|="/abwhoa"],
 a[href|="/absmug"],
-a[href|="/shiftybloom"]
+a[href|="/shiftybloom"],
+a[href|="/abthink"],
+a[href|="/abannoyed"],
+a[href|="/abevil"],
+a[href|="/abcrush"],
+a[href|="/abheavybreathing"],
+a[href|="/beatit"]
 {
     display:block;
     clear:none;
@@ -225,74 +247,148 @@ a[href|="/shiftybloom"]
 a[href|="/abplsno"]{
     background-position:-0% -0%;
 }
-
 a[href|="/abwind"]{
     background-position:-100% -0%;
 }
-
 a[href|="/angelbloom"]{
     background-position:-200% -0%;
 }
-
 a[href|="/happybloom"]{
     background-position:-300% 0%;
 }
-
 a[href|="/aboh"]{
     background-position:-0% -100%;
 }
-
 a[href|="/absurprise"]{
     background-position:-100% -100%;
 }
-
 a[href|="/abpride"]{
     background-position:-200% -100%;
 }
-
 a[href|="/thishypnoticapple"]{
     background-position:-300% -100%;
 }
-
 a[href|="/abcool"]{
     background-position:-0% -200%;
 }
-
 a[href|="/dancerbloom"]{
     background-position:-100% -200%;
 }
-
 a[href|="/abfrown"]{
     background-position:-200% -200%;
 }
-
 a[href|="/abhappyhop"]{
     background-position:-300% -200%;
 }
-
 a[href|="/abdisappoint"]{
     background-position:-400% -0%;
 }
-
 a[href|="/abscience"]{
     background-position:-400% -100%;
 }
-
 a[href|="/abstoked"]{
     background-position:-400% -200%;
 }
-
 a[href|="/abwhoa"]{
     background-position:-500% -0%;
 }
-
 a[href|="/absmug"]{
     background-position:-500% -100%;
 }
-
 a[href|="/shiftybloom"]{
     background-position:-500% -200%;
 }
+a[href|="/abthink"]{
+    background-position:-0% -300%;
+}
+a[href|="/abannoyed"]{
+    background-position:-100% -300%;
+}
+a[href|="/abevil"]{
+    background-position:-200% -300%;
+}
+a[href|="/abcrush"]{
+    background-position:-300% -300%;
+}
+a[href|="/abheavybreathing"]{
+    background-position:-400% -300%;
+}
+a[href|="/beatit"]{
+    background-position:-500% -300%;
+}
+
+a[href|="/abwhatsup"],
+a[href|="/abkindasad"],
+a[href|="/abdrunk"],
+a[href|="/abcloak"],
+a[href|="/absuperhappy"],
+a[href|="/abexcited"],
+a[href|="/abdrewanapple"],
+a[href|="/abforme"],
+a[href|="/justlikemahbigsister"],
+a[href|="/abjig"],
+a[href|="/abduckface"],
+a[href|="/abtrot"],
+a[href|="/abplease"],
+a[href|="/rainybloom"],
+a[href|="/abpaper"],
+a[href|="/absing"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:150px;
+    height:200px;
+    background-image: url(%%sheet4-2%%) !important;
+}
+a[href|="/abwhatsup"]{
+    background-position:-0% -0%
+}
+a[href|="/abkindasad"]{
+    background-position:-100% -0%
+}
+a[href|="/abdrunk"]{
+    background-position:-200% -0%
+}
+a[href|="/abcloak"]{
+    background-position:-300% -0%
+}
+a[href|="/absuperhappy"]{
+    background-position:-0% -100%
+}
+a[href|="/abexcited"]{
+    background-position:-100% -100%
+}
+a[href|="/abdrewanapple"]{
+    background-position:-200% -100%
+}
+a[href|="/abforme"]{
+    background-position:-300% -100%
+}
+a[href|="/justlikemahbigsister"]{
+    background-position:-0% -200%
+}
+a[href|="/abjig"]{
+    background-position:-100% -200%
+}
+a[href|="/abduckface"]{
+    background-position:-200% -200%
+}
+a[href|="/abtrot"]{
+    background-position:-300% -200%
+}
+a[href|="/abplease"]{
+    background-position:-0% -300%
+}
+a[href|="/rainybloom"]{
+    background-position:-100% -300%
+}
+a[href|="/abpaper"]{
+    background-position:-200% -300%
+}
+a[href|="/absing"]{
+    background-position:-300% -300%
+}
+
 
 
 a[href|="/abfaceplant"]{
@@ -320,4 +416,22 @@ a[href|="/fillystew"]{
     width:200px;
     height:120px;
     background-image: url(%%fillystew%%) !important;
+}
+
+a[href|="/afillyandherdog"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:200px;
+    height:153px;
+    background-image: url(%%abwinona%%) !important;
+}
+
+a[href|="/applebuck"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:177px;
+    height:200px;
+    background-image: url(%%applebuck%%) !important;
 }
