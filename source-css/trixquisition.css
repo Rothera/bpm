@@ -87,10 +87,56 @@ a[href|="/thebestponyishappy"]   {background-position: -0px -200px  }
 a[href|="/ATouchSuprised"]       {background-position: -200px -200px}
 a[href|="/didntseeyouthere"]     {background-position: -400px -200px}   
 a[href|="/trixieisbestnerd"]     {background-position: -600px -200px}
-a[href|="/TrixieAccuse"]         {background-position: -0px -400px }
+a[href|="/TrixieAccuse"]         {background-position: -0px -400px  }
 a[href|="/TrixieRatherAngry"]    {background-position: -200px -400px}
 a[href|="/ExtremelySuprised"]    {background-position: -400px -400px}
 a[href|="/SuspicousTrixe"]       {background-position: -600px -400px}
+
+/*masqueracoonemotes*/
+
+a[href|="/ExplorerTrixie"], a[href|="/LogoTrixie"], a[href|="/ColdTrixie"], a[href|="/NurseTrixie"], a[href|="/CrystalTrix"], a[href|="/BallroomBeauty"] 
+
+ {
+    background-image: url(%%SpritesheetD%%);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+ a[href|="/ExplorerTrixie"]{
+    width: 187px;
+    height: 200px;
+    background-position: -5px -5px;
+}
+
+a[href|="/LogoTrixie"]{
+    width: 149px;
+    height: 200px;
+    background-position: -202px -5px;
+}
+
+a[href|="/NurseTrixie"]{
+    width: 187px;
+    height: 200px;
+    background-position: -5px -215px;
+}
+
+ a[href|="/CrystalTrix"]{
+    width: 181px;
+    height: 200px;
+    background-position: -202px -215px;
+}
+
+ a[href|="/ColdTrixie"]{
+    width: 163px;
+    height: 200px;
+    background-position: -361px -5px;
+}
+
+ a[href|="/BallroomBeauty"]{
+    width: 196px;
+    height: 200px;
+    background-position: -393px -215px;
+}
 
 /*heterogeneous emotes*/
 
@@ -131,6 +177,8 @@ Height: 222px;
 Background-image: url(%%tired%%) !important }
 
 
-
 a.author[href$="Protosega"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="Protosega"]:before {font-size:10px!important; visibility:visible!important; content: "The Great and Powerful Trixie"}
+a.author[href$="Protosega"]:before {font-size:10px!important; visibility:visible!important; content: "scrub"}
+
+a.author[href$="Lulamoon"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Lulamoon"]:before {font-size:10px!important; visibility:visible!important; content: "The Great and Powerful Trixie!"}
