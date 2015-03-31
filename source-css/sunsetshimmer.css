@@ -1,6 +1,9 @@
 /* temporary spoilers */
 .thing[data-fullname="t3_2werio"] .entry a.title { font-size:0 !important; }
 .thing[data-fullname="t3_2werio"] .entry a.title::before { font-size: medium !important; content: "Sunset shimmer SPOILER friendship games "; }
+.thing[data-fullname="t3_305nam"] .entry a.title { font-size:0 !important; }
+.thing[data-fullname="t3_305nam"] .entry a.title::before { font-size: medium !important; content: "SPOILERer by uotapo "; }
+.thing[data-fullname="t3_30kre7"] .domain { font-size:0 !important; }
 
 /*Banner*/
 #header {
@@ -161,8 +164,8 @@ a[href$="/spoiler"] {
 a[href$="/spoiler"]:hover {
   color: #FFF !important  
 }  
-
-.side h6 a[href$="viewform"] {
+ 
+.side h6 a {
   color: #74010e !important;
 }
 

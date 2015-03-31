@@ -76,10 +76,10 @@ body.res-nightmode #header-bottom-right { background-color: #DEEAF6 !important; 
 
 /* search */
 .side #search {
-    border:1px solid #F2E6F7;
+    border:1px solid #FFF;
     padding:10px;
     margin-top:20px;
-    background-color:#F2E6F7;
+    background-color:#FFF;
 }
 body.res-nightmode #search {
     background-color: #AAA;
@@ -87,7 +87,7 @@ body.res-nightmode #search {
 }
 #search input[type=text] {
     width:265px;
-    border:1px solid #F2E6F7;
+    border:1px solid #FFF;
     -moz-border-radius:2px;
     -webkit-border-radius:2px;
     -o-border-radius:2px;
@@ -100,16 +100,16 @@ body.res-nightmode #search {
 }
 
 /* side */
-.side { margin: 0 20px; background-color: #F2E6F7 }
+.side { margin: 0 20px; background-color: #FFF }
 .side .md { overflow:hidden; }
-.titlebox { padding:0 10px; background-color:#F2E6F7; }
-.titlebox .bottom { display:none; background-color:#F2E6F7; }
-.side .titlebox > h1 { font-size: 20px; letter-spacing: -1px; background-color:#F2E6F7; }
-.linkinfo { padding:15px; border:none; background-color:#F2E6F7; }
+.titlebox { padding:0 10px; background-color:#FFF; }
+.titlebox .bottom { display:none; background-color:#FFF; }
+.side .titlebox > h1 { font-size: 20px; letter-spacing: -1px; background-color:#FFF; }
+.linkinfo { padding:15px; border:none; background-color:#FFF; }
 body.res-nightmode .side .redditname a { color: #DDD !important; }
-.sidebox.submit .spacer, .sidebox.create { display:none; background-color: #F2E6F7 }
+.sidebox.submit .spacer, .sidebox.create { display:none; background-color: #FFF }
 .linkinfo .score .word,.linkinfo .score .number { font-size:15px; }
-.sidecontentbox .content { border:1px solid #F2E6F7; background-color:#F2E6F7; padding:10px; }
+.sidecontentbox .content { border:1px solid #FFF; background-color:#FFF; padding:10px; }
 .icon-menu li { margin:0 0 5px; }
 .side h1, .side h2, .side h3 {color: #222;}
 .side h1 {font-size: 19px;}
@@ -648,7 +648,7 @@ div.over18 .entry .buttons .first{padding-left: 0px}
 
 body {
     background: url('%%twibg%%') no-repeat fixed right bottom !important;
-    background-color: #F2E6F7 !important;
+    background-color: #FFF !important;
 } 
 
 .content #siteTable div[onclick="click_thing(this)"] {background-color: transparent!important;}
@@ -1044,7 +1044,7 @@ padding: 7px 0px 7px 40px;
     left: 0;
     right: 0;
     bottom: 0;
-    background: #F2E6F7 url(%%padheader%%) 50% 0;
+    background: #FFF url(%%padheader%%) 50% 0;
 }
 #header-img,
 #header .tabmenu {

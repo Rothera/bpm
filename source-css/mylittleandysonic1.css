@@ -2,7 +2,7 @@
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%spongebab%%)  no-repeat  fixed 66% 100% !important;
+    background:  url(%%jeebuz%%)  no-repeat fixed 66% 100% !important;
 }go
 
 
@@ -19,7 +19,7 @@
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%clingerrulez%%) 50% 0px !important;
+   background: url(%%RADICAL%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -1597,3 +1597,26 @@ textarea, input {
 cursor: vertical-text;
 }
 */
+
+/* ================ DIDN'T WORK IN NIGHT MODE SO I'M DISABLING IT ALL OOPSIES
+Lower opacity around comments
+.res-commentBoxes .commentarea .comment,
+.res-commentBoxes .commentarea .comment .comment,
+.res-commentBoxes .commentarea .comment .comment .comment,
+.res-commentBoxes .commentarea .comment .comment .comment .comment,
+.res-commentBoxes .commentarea .comment .comment .comment .comment .comment,
+.res-commentBoxes .commentarea .comment .comment .comment .comment .comment .comment,
+.res-commentBoxes .commentarea .comment .comment .comment .comment .comment .comment .comment,
+.res-commentBoxes .commentarea .comment .comment .comment .comment .comment .comment .comment .comment,
+.res-commentBoxes .commentarea .comment .comment .comment .comment .comment .comment .comment .comment .comment,
+.res-commentBoxes .commentarea .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment {
+    background-image: url(%%opacity%%) !important;
+}
+.link .usertext .md { background: url(%%opacity%%); }
+
+RES highlighted comment
+
+.res .RES-keyNav-activeElement, .res .commentarea .RES-keyNav-activeElement .md, .res .commentarea .RES-keyNav-activeElement.entry .noncollapsed {
+    background: url(%%opacity%%) !important;
+}
+================== */

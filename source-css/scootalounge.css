@@ -100,6 +100,7 @@ a[href="/scootasad3"],
 a[href="/scootasad4"],
 a[href="/wiygn"],
 a[href="/chicken"],
+a[href="/plasmahawk"],
 a[href="/scootacrush"],
 a[href="/scootanap"],
 a[href="/scootasnooze"],
@@ -127,7 +128,7 @@ a[href="/scootasad2"]{background-position:-200% 0%;}
 a[href="/scootasad3"]{background-position:-300% 0%;}
 a[href="/scootasad4"]{background-position:-400% 0%;}
 a[href="/wiygn"]{background-position:0% -100%;}
-a[href="/chicken"]{background-position:-100% -100%;}
+a[href="/chicken"],a[href="/plasmahawk"]{background-position:-100% -100%;}
 a[href="/scootacrush"]{background-position:-200% -100%;}
 a[href="/scootanap"]{background-position:-300% -100%;}
 a[href="/scootasnooze"]{background-position:-400% -100%;}
@@ -305,13 +306,21 @@ a[href="/scootayeah"],
 a[href="/scootabloomified"],
 a[href="/scootaplotting"],
 a[href="/scootahail"],
-a[href="/scootawhat"],
+a[href="/scootawhat2"],
 a[href="/creepingloo"],
 a[href="/scootarace"],
 a[href="/scootastare"],
 a[href="/scootabark"],
 a[href="/scaredyscoots"],
-a[href="/scootamit"]
+a[href="/scootamit"],
+a[href="/fuzzygauntlet"],
+a[href="/scootabetes"],
+a[href="/scootadashhug2"],
+a[href="/scaredyscoots2"],
+a[href="/imrainbowdash"],
+a[href="/scootaloospeople"],
+a[href="/rainbowscootafun"],
+a[href="/wonderscoots"]
 {
     display:block;
     clear:none;
@@ -326,17 +335,68 @@ a[href="/scootayeah"]{background-position:-200% 0%;}
 a[href="/scootabloomified"]{background-position:-300% 0%;}
 a[href="/scootaplotting"]{background-position:-400% 0%;}
 a[href="/scootahail"]{background-position:0% -100%;}
-a[href="/scootawhat"]{background-position:-100% -100%;}
+a[href="/scootawhat2"]{background-position:-100% -100%;}
 a[href="/creepingloo"]{background-position:-200% -100%;}
 a[href="/scootarace"]{background-position:-300% -100%;}
 a[href="/scootastare"]{background-position:-400% -100%;}
 a[href="/scootabark"]{background-position:0% -200%;}
 a[href="/scaredyscoots"]{background-position:-100% -200%;}
-a[href="/scootamit"]{background-position:-200% -200%;}
+a[href="/scootamit"],a[href="/fuzzygauntlet"]{background-position:-200% -200%;}
+a[href="/scootabetes"]{background-position:-300% -200%;}
+a[href="/scootadashhug2"]{background-position:-400% -200%;}
+a[href="/scaredyscoots2"]{background-position:0% -300%;}
+a[href="/imrainbowdash"]{background-position:-100% -300%;}
+a[href="/scootaloospeople"]{background-position:-200% -300%;}
+a[href="/rainbowscootafun"]{background-position:-300% -300%;}
+a[href="/wonderscoots"]{background-position:-400% -300%;}
 
 
+
+a[href="/scootatimer"],
+a[href="/scootacookie2"],
+a[href="/scootingscoots"],
+a[href="/scootawhip"],
+a[href="/scootabat2"],
+a[href="/scootabow2"],
+a[href="/bindingofscootaloo"],
+a[href="/scootacool2"],
+a[href="/scootabrag2"],
+a[href="/scootahanging"]
+{
+    display:block;
+    clear:none;
+    float:left;
+    width:200px;
+    height: 200px;
+    background-image: url(%%sheet6%%) !important;
+}
+a[href="/scootatimer"]{background-position:0% 0%;}
+a[href="/scootacookie2"]{background-position:-100% 0%;}
+a[href="/scootingscoots"]{background-position:-200% 0%;}
+a[href="/scootawhip"]{background-position:-300% 0%;}
+a[href="/scootabat2"]{background-position:-400% 0%;}
+a[href="/scootabow2"]{background-position:0% -100%;}
+a[href="/bindingofscootaloo"]{background-position:-100% -100%;}
+a[href="/scootacool2"]{background-position:-200% -100%;}
+a[href="/scootabrag2"]{background-position:-300% -100%;}
+a[href="/scootahanging"]{background-position:-400% -100%;}
+
+/* Template for adding more emote sheets
+a[href="/"],
+{
+    display:block;
+    clear:none;
+    float:left;
+    width:200px;
+    height: 200px;
+    background-image: url(%%sheet#%%) !important;
+}
+a[href="/"]{background-position:0% 0%;}
+*/
 
 /*Emote Source Images in no particular order*/
+/* /scootingscoots here http://mactavish1996.deviantart.com/art/Good-day-for-a-ride-453216491 */
+/*/scootabetes source here http://sofilut.deviantart.com/art/Scootaloo-522152381*/
 /*Image source here http://fc08.deviantart.net/fs70/i/2012/201/b/5/scootaloo_socks_by_sevenfates-d57xktx.png */
 /*Image source here http://th07.deviantart.net/fs70/PRE/f/2013/094/6/9/scootaloo_the_scaredypony_by_kestrelelk-d5njy0z.png */
 /*Image source here http://i0.kym-cdn.com/photos/images/original/000/149/052/b4e.png */
@@ -377,6 +437,21 @@ div.titlebox .subscribers span.number:after {content:" Scootaloo fans "}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
 div.titlebox p.users-online span.number:after { content: " praising Rainbow Dash!" }
 div.titlebox p.users-online span.word { display: none }
+span.hover{font-family: "Comic Sans MS"; color: #CC0099; background: orange;
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-topleft: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;}
+span.hover > a:nth-child(1)
+{font-family: "Comic Sans MS"; color: #CC0099; background: orange;
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-topleft: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;}
 
 
 .sidecontentbox .flair {display:none}
@@ -386,12 +461,14 @@ display: none !important;
 
 #header{
     background-image: url(%%Cloudsdale-header%%);
-    height:195px;
+    height:225px;
 /*original art here http://www.deviantart.com/art/Cloudsdale-319605114*/
 }
+
 body{
-background: #ffffff url(%%CMCbackground%%) no-repeat fixed center center
+background: #ffffff url(%%CMCbackground%%) no-repeat fixed center center;
 /*original art here http://sasukex125.deviantart.com/art/Cutie-Mark-Crusaders-Patch-Vector-343162745*/
+/*font-family: "Comic Sans MS";*/
 }
 .footer-parent
 {
@@ -430,6 +507,16 @@ background: #ffffff url(%%CMCbackground%%) no-repeat fixed center center
  content: "";
  margin-left: 0px;
  font-size: 1px!important
+}
+.tabmenu
+{font-family: "Comic Sans MS";}
+.tabmenu li a {
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-topleft: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
 }
 
 /* Begin Flair Code */

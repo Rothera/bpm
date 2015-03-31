@@ -435,3 +435,53 @@ a[href|="/applebuck"]{
     height:200px;
     background-image: url(%%applebuck%%) !important;
 }
+
+/* Blame /u/kekerino for these */
+
+a[href|="/brick"],
+a[href|="/tsbrick"],
+a[href|="/rrbrick"],
+a[href|="/fsbrick"],
+a[href|="/rdbrick"],
+a[href|="/ppbrick"],
+a[href|="/ajbrick"],
+a[href|="/abbrick"],
+a[href|="/sbbrick"],
+a[href|="/scootabrick"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:90px;
+    height:50px;
+    background-image: url(%%bricks%%) !important;
+}
+a[href|="/brick"]{
+    background-position:-0% -0%
+}
+a[href|="/tsbrick"]{
+    background-position:-0% -100%
+}
+a[href|="/rrbrick"]{
+    background-position:-0% -200%
+}
+a[href|="/fsbrick"]{
+    background-position:-0% -300%
+}
+a[href|="/rdbrick"]{
+    background-position:-0% -400%
+}
+a[href|="/ppbrick"]{
+    background-position:-0% -500%
+}
+a[href|="/ajbrick"]{
+    background-position:-0% -600%
+}
+a[href|="/abbrick"]{
+    background-position:-0% -700%
+}
+a[href|="/sbbrick"]{
+    background-position:-0% -800%
+}
+a[href|="/scootabrick"]{
+    background-position:-0% -900%
+}
