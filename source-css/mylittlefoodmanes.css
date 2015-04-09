@@ -124,6 +124,17 @@ div.titlebox span.number:after {
 content: ",000 People that are literally Hitler plus 1 Ave"
 }  
 
+/* Blame taco */
+
+  a[href|="/coybear"], a[href|="/bearface"]
+{
+    background-image: url(%%bearface%%);
+    clear: none;
+    display: block;
+    float: left;
+    height: 160px;
+    width: 200px;
+}
 
 /* Best Filly Sidebar */
 .side a[href="http://www.reddit.com/r/MyLittleFoodManes/new"] {

@@ -6,8 +6,19 @@
 
 /* Subscriber count + active user text changer */
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Registered Voters"}
-div.titlebox .users-online span.number:after {content:" at the Voting Booth"}
+div.titlebox .subscribers span.number::after {content:" Registered Voters"}
+div.titlebox .users-online span.number::after {content:" at the voting booth"}
+
+/* New page prompter */
+body.hot-page ul.tabmenu li a[href$="/new/"]:before {
+font-size: xx-small;
+content: "Never miss an emote, browse the ";
+}
+
+body.hot-page ul.tabmenu li a[href$="/new/"]:after {
+font-size: xx-small;
+content: " page!";
+}
 
 /* vote diagram */
 .wiki-page a[href="/ponymotesvotediagram"] {
@@ -42,13 +53,13 @@ background: url(%%snowflake-banner%%) 0 18px repeat-x #CEE3F8;
 
 /* Mod Username changer
 div.sidecontentbox a.author[href$="/user/Jibodeah"]::before {
-content: "Jibo-Christmas-Pun-deah";
+content: "Jibo-Coat-Pun-Deah";
 visibility: visible !important;
 font-size: 12px !important;
 }
 
 div.sidecontentbox a.author[href$="/user/Two-Tone-"]::before {
-content: "Two-Turtle-Doves-Tone-";
+content: "Too-Cold";
 visibility: visible !important;
 font-size: 12px !important;
 }
@@ -57,8 +68,7 @@ div.sidecontentbox a.author[href$="/user/Jibodeah"], div.sidecontentbox a.author
 font-size: 0;
 overflow: hidden;
 display: inline-block;
-}
-*/
+} */
 
 /* Banner stuff.
 #header {
@@ -155,11 +165,21 @@ background: url(%%linkflairs%%) 10px -200px no-repeat;
 padding-left: 55px;
 }
 
+.linkflair-aprilfools .entry {
+background: url(%%linkflairs%%) -40px -150px no-repeat;
+padding-left: 65px;
+}
 
 .linkflair-approved .linkflairlabel {
 color: #6ECF5B !important;
 border: 1px solid #8EEF7B;
 background: transparent !important;
+}
+
+.linkflair-aprilfools .linkflairlabel {
+color: #76829e !important;
+border: 1px solid #76829e;
+background: #b9c1d0 !important;
 }
 
 .listing-page .content[role="main"], .comments-page .content[role="main"] {margin-right: 310px;}
@@ -180,19 +200,16 @@ background-image: linear-gradient(90deg, #cde7cd, #fff, #fff, #fff, #fff, #fff);
 background-image: linear-gradient(-90deg, #036004, #222) !important;
 }
 
-body.listing-page .linkflair-denied div.RES-keyNav-activeElement, body.listing-page .linkflair-approved div.RES-keyNav-activeElement
+.linkflair-aprilfools {
+background-image: linear-gradient(90deg, #fdf6ad, #b9c1d0, #fff, #fff, #fff, #fff);
+}
+
+.res-nightmode .linkflair-aprilfools {
+background-image: linear-gradient(-90deg, #ebd66e, #76829e, #222) !important;
+}
+
+body.listing-page .linkflair-denied div.RES-keyNav-activeElement, body.listing-page .linkflair-approved div.RES-keyNav-activeElement, body.listing-page .linkflair-aprilfools div.RES-keyNav-activeElement
 {background-color: transparent !important;}
-
-/* New page prompter */
-body.hot-page ul.tabmenu li a[href$="/new/"]:before {
-font-size: xx-small;
-content: "Never miss an emote, browse the ";
-}
-
-body.hot-page ul.tabmenu li a[href$="/new/"]:after {
-font-size: xx-small;
-content: " page!";
-}
 
 /* Spoiler thumbnail */
 .thumbnail.nsfw {
@@ -443,7 +460,7 @@ a[href|="/apathiasquint"], a[href|="/rdohyeah"], a[href|="/rainbowstache"], a[hr
 {background-image:url(%%70x70a%%);width:70px;height:70px;display:block;float:left;}
 
 /* 70x70b 'motes */
-a[href|="/twithatsnice"], a[href|="/buysomeapples"], a[href|="/cadsoawesome"], a[href|="/cadancehey"], a[href|="/cadencehey"], a[href|="/twifascinating"], a[href|="/sunsetjoy"], a[href|="/karmahappy2"], a[href|="/karmagrin"], a[href|="/apathiablank"], a[href|="/apathiaconcern"], a[href|="/karmalook"], a[href|="/apathiaeyebrow"], a[href|="/discentiaangrysquint"], a[href|="/colgatebraces"], a[href|="/colgatenews"], a[href|="/colgatenotimpressed"], a[href|="/changelingshrug"], a[href|="/sunbreadshimmer"], a[href|="/sbeestare"], a[href|="/karmasquint"], a[href|="/dissquint"], a[href|="/discentiasquint"], a[href|="/trixiedafaq"], a[href|="/queensmeel"], a[href|="/queenglee"], a[href|="/pinkieainthavingthatshit"], a[href|="/ppyay"]
+a[href|="/twithatsnice"], a[href|="/buysomeapples"], a[href|="/cadsoawesome"], a[href|="/cadancehey"], a[href|="/cadencehey"], a[href|="/twifascinating"], a[href|="/sunsetjoy"], a[href|="/karmahappy2"], a[href|="/karmagrin"], a[href|="/apathiablank"], a[href|="/apathiaconcern"], a[href|="/karmalook"], a[href|="/apathiaeyebrow"], a[href|="/discentiaangrysquint"], a[href|="/colgatebraces"], a[href|="/colgatenews"], a[href|="/colgatenotimpressed"], a[href|="/changelingshrug"], a[href|="/sunbreadshimmer"], a[href|="/sbeestare"], a[href|="/karmasquint"], a[href|="/dissquint"], a[href|="/discentiasquint"], a[href|="/trixiedafaq"], a[href|="/queensmeel"], a[href|="/queenglee"], a[href|="/pinkieainthavingthatshit"], a[href|="/ppyay"], a[href|="/snowdropmeh"], a[href|="/flutterheadtilt"]
 {background-image:url(%%70x70b%%);width:70px;height:70px;display:block;float:left;}
 
 /* 100x100a 'motes. */
@@ -455,7 +472,7 @@ a[href|="/rarityparanoid"], a[href|="/rarinoid"], a[href|="/flutterfreaked"], a[
 {background-image:url(%%100x100b%%);width:100px;height:100px;display:block;float:left;}
 
 /* 100x100c 'motes */
-a[href|="/sadbot"], a[href|="/trixiecrazy"], a[href|="/wheredidthemuffingo"], a[href|="/dashthefuck"], a[href|="/cadsad"], a[href|="/sassybloom"], a[href|="/rdhello"], a[href|="/deeplyintriguedcadance"], a[href|="/vinylderp"], a[href|="/angryaj"], a[href|="/pearsteve"], a[href|="/riptreebrary"], a[href|="/ripgoldenoaks"], a[href|="/trixieawkward"], a[href|="/tgaptsundere"], a[href|="/princesslenny"]
+a[href|="/sadbot"], a[href|="/trixiecrazy"], a[href|="/wheredidthemuffingo"], a[href|="/dashthefuck"], a[href|="/cadsad"], a[href|="/sassybloom"], a[href|="/rdhello"], a[href|="/deeplyintriguedcadance"], a[href|="/vinylderp"], a[href|="/angryaj"], a[href|="/pearsteve"], a[href|="/riptreebrary"], a[href|="/ripgoldenoaks"], a[href|="/trixieawkward"], a[href|="/tgaptsundere"], a[href|="/princesslenny"], a[href|="/applebat2"], a[href|="/ididntlisten"]
 {background-image:url(%%100x100c%%);width:100px;height:100px;display:block;float:left;}
 
 /* 150x150a 'motes. */
@@ -540,7 +557,7 @@ a[href|="/cadscience"], a[href|="/appul"], a[href|="/sadprincesshorse"], a[href|
 {background-image:url(%%misfitsk%%);display:block;float:left;}
 
 /* Misfits l */
-a[href|="/eqggaladash"], a[href|="/shininglick"], a[href|="/sblick"], a[href|="/sombraheart"], a[href|="/teamtaco"], a[href|="/ablick"], a[href|="/cmcship"], a[href|="/swappleaww"], a[href|="/flutterbutter"], a[href|="/twilightthebearded"], a[href|="/creepershy"], a[href|="/engineeraj"], a[href|="/youflunk"], a[href|="/bloombatsquee"], a[href|="/bloombow"], a[href|="/sockies"], a[href|="/enormoussnake"], a[href|="/eponawearsitbetter"]
+a[href|="/eqggaladash"], a[href|="/shininglick"], a[href|="/sblick"], a[href|="/sombraheart"], a[href|="/teamtaco"], a[href|="/ablick"], a[href|="/cmcship"], a[href|="/swappleaww"], a[href|="/flutterbutter"], a[href|="/twilightthebearded"], a[href|="/creepershy"], a[href|="/engineeraj"], a[href|="/youflunk"], a[href|="/bloombatsquee"], a[href|="/bloombow"], a[href|="/sockies"], a[href|="/enormoussnake"], a[href|="/eponawearsitbetter"], a[href|="/applebat"]
 {background-image:url(%%misfitsl%%);display:block;float:left;}
 
 /*
@@ -604,11 +621,11 @@ a[href|="/gildaconfused"], a[href|="/ajdoubt"], a[href|="/grimfluff"], a[href|="
 {background-position: -100% -400%;}
 
 /* Grid pos 2,4 'motes */
-a[href|="/rarityspy"], a[href|="/discoin"], a[href|="/ajduckface"], a[href|="/nerdshy"], a[href|="/lunaselfcest"], a[href|="/crazylestia"], a[href|="/cadgiggle"], a[href|="/colgatenews"], a[href|="/colgatenotimpressed"]
+a[href|="/rarityspy"], a[href|="/discoin"], a[href|="/ajduckface"], a[href|="/nerdshy"], a[href|="/lunaselfcest"], a[href|="/crazylestia"], a[href|="/cadgiggle"], a[href|="/colgatenews"], a[href|="/colgatenotimpressed"], a[href|="/applebat2"]
 {background-position: -200% -400%;}
 
 /* Grid pos 0,5 'motes */
-a[href|="/twilightyay"], a[href|="/twidoubt"], a[href|="/nerdtrixie"], a[href|="/rarapossessed"], a[href|="/rdscreaminginternally"], a[href|="/twilikethis"], a[href|="/incognitotwi"], a[href|="/changelingshrug"]
+a[href|="/twilightyay"], a[href|="/twidoubt"], a[href|="/nerdtrixie"], a[href|="/rarapossessed"], a[href|="/rdscreaminginternally"], a[href|="/twilikethis"], a[href|="/incognitotwi"], a[href|="/changelingshrug"], a[href|="/ididntlisten"]
 {background-position: 0 -500%;}
 
 /* Grid pos 1,5 'motes */
@@ -644,11 +661,11 @@ a[href|="/shibetwi"], a[href|="/rdtwicrazy"], a[href|="/apathiaunsure"], a[href|
 {background-position: -200% -700%;}
 
 /* Grid pos 0,8 'motes */
-a[href|="/wowsocane"], a[href|="/rdtwibeam"], a[href|="/apathiashrug"]
+a[href|="/wowsocane"], a[href|="/rdtwibeam"], a[href|="/apathiashrug"], a[href|="/snowdropmeh"]
 {background-position: -0% -800%;}
 
 /* Grid pos 1,8 'motes */
-a[href|="/shibelyra"], a[href|="/rdtwisquint"], a[href|="/chrome"]
+a[href|="/shibelyra"], a[href|="/rdtwisquint"], a[href|="/chrome"], a[href|="/flutterheadtilt"]
 {background-position: -100% -800%;}
 
 /* Grid pos 2,8 'motes */
@@ -1238,3 +1255,4 @@ a[href|="/bloombow"] {width:125px;height:150px;background-position: -519px -255p
 a[href|="/sockies"] {width:200px;height:140px;background-position: -319px -373px;}
 a[href|="/enormoussnake"] {width:125px;height:112px;background-position: -194px -392px;}
 a[href|="/eponawearsitbetter"] {width:165px;height:200px;background-position: -519px -405px;}
+a[href|="/applebat"] {width:150px;height:130px;background-position: 0 -452px;}

@@ -1,4 +1,5 @@
 /***********************************
+* 3/29/15 - Pathogen-David - Fixed spoilers, like holy balls!
 * 2/26/12 - Pathogen-David - Created Stylesheet!
 * 2/29/12 - Pathogen-David - Added NSFW thumbs
 * 2/29/12 - Pathogen-David - Added special NSFW thread CSS and re-enabled spoilers
@@ -210,54 +211,47 @@ END-PONYSCRIPT-IGNORE{color: red}
 
 /*** End NSFW Region ***/
 
-/*** Start Spoiler Region ***/
-.thumbnail.nsfw
-{
- background-position: 0px 0px !important
-}
+/* Spoiler Setter*/
 .marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"]
 {
- font-size: 0px !important;
- display: inline-block;
- vertical-align: bottom;
- overflow: hidden;
- letter-spacing: -20px
+ font-size:0px!important;
+ display:inline-block;
+ vertical-align:top;
+ overflow:hidden;
+ letter-spacing:-20px;
+ content:""
 }
+
 .unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before
 {
- font-size: 10px !important;
- visibility: visible !important;
- display: block;
- letter-spacing: normal
+ font-size:10px!important;
+ display:block;
+ letter-spacing:normal;
+ content:"spoiler"
 }
-.marknsfw-button a[href="#"]:before
-{
- content: "spoiler"
-}
-.unmarknsfw-button a[href="#"]:before
-{
- content: "un-spoiler"
-}
+.unmarknsfw-button a[href="#"]:before{content:"un-spoiler";}
+
 .nsfw-stamp acronym
 {
- border: #5F99CF 1px solid !important;
- display: inline-block;
- font-size: 0px !important;
- letter-spacing: 0px;
- overflow: hidden;
- vertical-align: bottom;
- margin-bottom: -1px
+ border:#5F99CF 1px solid!important;
+ display:inline-block;
+ font-size:0px!important;
+ letter-spacing:0px;
+ overflow:hidden;
+ vertical-align:bottom;
+ margin-bottom:-1px;
+ content:""
 }
+
 .nsfw-stamp acronym:after
-{
- color: #336699 !important;
- content: "SPOILER" !important;
- display: block;
- font-size: x-small !important;
- text-decoration: none;
- visibility: visible !important
+{ 
+ color:#336699!important;
+ content:"SPOILER"!important;
+ display:block;
+ font-size:x-small!important;
+ text-decoration:none;
+ margin: -15px 2px 1px;
 }
-/*** End Spoiler Region ***/
 
 /*** Style for *the* NSFW thread ***/
 a[href*="nsfw"].thumbnail.nsfw
