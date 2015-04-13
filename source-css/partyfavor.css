@@ -1,0 +1,460 @@
+div.side div.spacer:nth-of-type(1){
+    padding:200px 0 0 !important;
+    background:url(%%Partyfavor-sidebar%%) top center no-repeat;
+    margin-top:10px;
+}
+
+#header-bottom-left {
+    background: url(%%Partyfavor-cutie%%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 150px
+    position: absolute; bottom: 0;
+    }
+
+#header-bottom-left: hover{
+    background: url(%%sameville%%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    height: 150px
+    position: absolute; bottom: 0;
+    }
+
+#header-img {
+    margin-top: 110px
+    }
+
+.sitetable { font-family:verdana, arial, helvetica, sans-serif; clear:left;}
+.infobar { overflow:hidden; margin:0 0 10px; }
+.content { margin:20px 0 0 20px; }
+
+.link {
+    overflow:hidden;
+    margin:0px;
+    padding:5px;
+    border:1px solid #EAEAEA;
+    background-color:#FAFAFA;
+}
+body.res-nightmode .sitetable .thing.link, body.res-nightmode div#siteTable div[onclick="click_thing(this)"] {
+    border: 1px solid #4c4c4c !important;
+    background-color: #333 !important;
+}
+body.res-nightmode .sitetable .thing.link .keyHighlight {
+    background-color: #363636 !important;
+    border-color: #666 !important;
+    outline-color: #666 !important;
+}
+body.res-nightmode .midcol {
+    background-color: #222 !important;
+    padding: 4px;
+}
+
+.link .rank { display:none; }
+.link.last-clicked { border:1px dashed #EAEAEA; }
+body.res-nightmode .link.last-clicked { border-color: #666; }
+.linklisting > .clearleft { margin:5px; }
+.entry .buttons li { display:inline; float:left; }
+.link .midcol { margin-right:10px; margin-left:0; }
+
+.flair {
+    padding: 0;
+    background: none;
+    color: black;
+    border: 0;
+    border-radius: 0;
+    background-image: url(%%Flairsheet%%);
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-indent:-9999px;
+    }
+
+.flair-rainbowdash {
+    background-position: 0px 0px
+    }
+.flair-twilight {
+    background-position: -16px 0px
+    }
+.flair-fluttershy {
+    background-position: -32px 0px
+    }
+.flair-applejack {
+    background-position: -48px 0px
+    }
+.flair-pinkiepie {
+    background-position: 0px -16px
+    }
+.flair-rarity {
+    background-position: -16px -16px
+    }
+.flair-trixie {
+    background-position: -32px -16px
+    }
+.flair-cmc {
+    background-position: -48px -16px;
+    text-indent: 23px;
+    }
+.flair-luna {
+    background-position: 0px -32px
+    }
+.flair-celestia {
+    background-position: -16px -32px
+    }
+.flair-derpy {
+    background-position: -32px -32px
+    }
+.flair-vinyl {
+    background-position: -48px -32px
+    }
+.flair-lyra {
+    background-position: 0px -48px
+    }
+.flair-bonbon {
+    background-position: -16px -48px
+    }
+.flair-octavia {
+    background-position: -32px -48px
+    }
+.flair-doctor {
+    background-position: -48px -48px
+    }
+.flair-mac {
+    background-position: 0px -64px
+    }
+.flair-colgate {
+    background-position: -16px -64px
+    }
+.flair-berry {
+    background-position: -32px -64px
+    }
+.flair-pokey {
+    background-position: -48px -64px
+    }
+.flair-roseluck {
+    background-position: 0px -80px
+    }
+.flair-zecora {
+    background-position: -16px -80px
+    }
+.flair-seafoam {
+    background-position: -32px -80px
+    }
+.flair-carrottop {
+    background-position: -48px -80px
+    }
+.flair-screwball {
+    background-position: 0px -96px
+    }
+.flair-redheart {
+    background-position: -16px -96px
+    }
+.flair-caramel {
+    background-position: -32px -96px
+    }
+.flair-braeburn {
+    background-position: -48px -96px
+    }
+.flair-wonderbolts {
+    background-position: 0px -112px
+    }
+.flair-shadowbolts {
+    background-position: -16px -112px
+    }
+.flair-scootaloo {
+    background-position: -32px -112px
+    }
+.flair-applebloom {
+    background-position: -48px -112px
+    }
+.flair-sweetiebelle {
+    background-position: 0px -128px
+    }
+.flair-davenport {
+    background-position: -16px -128px
+    }
+.flair-cheerilee {
+    background-position: -32px -128px
+    }
+.flair-nightmaremoon {
+    background-position: -48px -128px
+    }
+.flair-blueblood {
+    background-position: 0px -144px
+    }
+.flair-daring {
+    background-position: -16px -144px
+    }
+.flair-mrcake {
+    background-position: -32px -144px
+    }
+.flair-mrscake {
+    background-position: -48px -144px
+    }
+.flair-flam {
+    background-position: 0px -160px
+    }
+.flair-flim {
+    background-position: -16px -160px
+    }
+.flair-silverspoon {
+    background-position: -31px -160px
+    }
+.flair-diamondtiara {
+    background-position: -48px -160px
+    }
+.flair-snips {
+    background-position: 0px -176px
+    }
+.flair-snails {
+    background-position: -16px -176px
+    }
+.flair-twist {
+    background-position: -32px -176px
+    }
+.flair-truffle {
+    background-position: -48px -176px
+    }
+.flair-amethyst {
+    background-position: 0px -192px
+    }
+.flair-tipper {
+    background-position: -16px -192px
+    }
+.flair-fancypants {
+    background-position: -32px -192px
+    }
+.flair-fleur {
+    background-position: -48px -192px
+    }
+.flair-worstpony {
+    background-position: 0px -208px
+    }
+.flair-shining {
+    background-position: -16px -208px
+    }
+.flair-rich {
+    background-position: -32px -208px
+    }
+.flair-hoity {
+    background-position: -48px -208px
+    }
+.flair-cloudchaser {
+    background-position: 0px -224px
+    }
+.flair-flitter {
+    background-position: -16px -224px
+    }
+.flair-lily {
+    background-position: -32px -224px
+    }
+.flair-grannysmith {
+    background-position: -48px -224px
+    }
+.flair-daisy {
+    background-position: 0px -240px
+    }
+.flair-chrysalis {
+    background-position: -16px -240px
+    }
+.flair-lotus {
+    background-position: -32px -240px
+    }
+.flair-aloe {
+    background-position: -48px -240px
+    }
+.flair-drstable {
+    background-position: 0px -256px
+    }
+.flair-sew {
+    background-position: -16px -256px
+    }
+.flair-spitfire {
+    background-position: -32px -256px
+    }
+.flair-mayormare {
+    background-position: -48px -256px
+    }
+.flair-surprise {
+    background-position: 0px -272px
+    }
+.flair-maud {
+    background-position: -16px -272px
+    }
+.flair-bulk {
+    background-position: -32px -272px
+    }
+.flair-spike {
+    background-position: -48px -272px
+    }
+.flair-harshwhinny {
+    background-position: 0px -288px
+    }
+.flair-coco {
+    background-position: -16px -288px
+    }
+.flair-discord {
+    background-position: -32px -288px
+    }
+.flair-soarin {
+    background-position: -48px -288px
+    }
+.flair-lightningdust {
+    background-position: 0px -304px
+    }
+.flair-cheese {
+    background-position: -16px -304px
+    }
+.flair-flashahhh {
+    background-position: -32px -304px
+    }
+.flair-apathia {
+    background-position: -48px -304px
+    }
+.flair-disenthia {
+    background-position: 0px -320px
+    }
+.flair-karma {
+    background-position: -16px -320px
+    }
+.flair-silverstar {
+    background-position: -32px -320px
+    }
+.flair-peachbottom {
+    background-position: -48px -320px
+    }
+.flair-flashsentry {
+    background-position: 0px -336px
+    }
+.flair-sunset {
+    background-position: -16px -336px
+    }
+.flair-gilda {
+    background-position: -32px -336px
+    }
+.flair-thunderlane {
+    background-position: -48px -336px
+    }
+.flair-rainbowdashrp {
+    background-position: 0px -352px
+    }
+.flair-twilightrp {
+    background-position: -16px -352px
+    }
+.flair-fluttershyrp {
+    background-position: -32px -352px
+    }
+.flair-applejackrp {
+    background-position: -48px -352px
+    }
+.flair-pinkiepierp {
+    background-position: 0px -368px
+    }
+.flair-rarityrp {
+    background-position: -16px -368px
+    }
+.flair-flutterbat {
+    background-position: -32px -368px
+    }
+.flair-nightmarerarity {
+    background-position: -48px -368px
+    }
+.flair-marine {
+    background-position: 0px -384px
+    }
+.flair-raindrop {
+    background-position: -16px -384px
+    }
+.flair-blankflank {
+    background-image: none;
+    height: 0;
+    width: 0
+    }
+
+.flair[class*="2-"] {
+    background-image: url(%%flairsheetV2%%);
+    }
+
+.flair-2-blossomforth {
+    background-position: -48px -304px
+    }
+.flair-2-starlightglimmer {
+    background-position: -0px -320px
+    }
+.flair-2-doublediamond {
+    background-position: -32px -320px
+    }
+.flair-2-sugarbelle {
+    background-position: -48px -320px
+    }
+.flair-2-nightglider {
+    background-position: -0px -336px
+    }
+.flair-2-partyfavor {
+    background-position: -16px -336px
+    }
+.flair-2-equality {
+    background-position: -16px -320px
+    }
+.flair-2-cmcvictus {
+    background-position: -48px -16px
+    }
+.flair-2-cmcvictus:hover {
+    background-position: -16px -336px
+    }
+
+a[href|="/pfdidntlisten"] {
+display: block;
+clear: none;
+float: left;
+width: 128px;
+height: 150px;
+background-image: url(%%pfdidntlisten%%)
+}
+
+a[href|="/partyfavor"] {
+display: block;
+clear: none;
+float: left;
+width: 73px;
+height: 70px;
+background-image: url(%%partyfavor%%)
+}
+
+a[href|="/pfhappy"] {
+display: block;
+clear: none;
+float: left;
+width: 120px;
+height: 150px;
+background-image: url(%%pfhappy%%)
+}
+
+a[href|="/pfjoy"] {
+display: block;
+clear: none;
+float: left;
+width: 101px;
+height: 150px;
+background-image: url(%%pfjoy%%)
+}
+
+a[href|="/partyfavorscout"] {
+display: block;
+clear: none;
+float: left;
+width: 134px;
+height: 100px;
+background-image: url(%%partyfavorscout%%)
+}
+
+a[href|="/partyfavorsad"] {
+display: block;
+clear: none;
+float: left;
+width: 160px;
+height: 70px;
+background-image: url(%%partyfavorsad%%)
+}
+
+a.author[href$="little_gamie"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="little_gamie"]:before {font-size:10px!important; visibility:visible!important; content: "Party Pooper"}
