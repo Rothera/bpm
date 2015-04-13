@@ -810,5 +810,12 @@ of the page */
 */
 
 /*** Image in comment boxes because we're cool now ***/
-.commentarea > .usertext textarea { background-image: url(%%twiwarning%%); background-repeat:no-repeat }
+.commentarea > .usertext textarea { background-image: url(%%switchycomment%%); background-repeat:no-repeat }
 .commentarea > .usertext textarea:focus { background-image: none; }
+
+/* Thanks to /u/RubyPinch for these 2 bits*/
+#header-img{margin-bottom:-40px}
+
+.flair-switchy {
+    background-image: url(%%switchymark%%);
+    }

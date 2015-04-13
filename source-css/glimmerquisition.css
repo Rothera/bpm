@@ -93,7 +93,8 @@ a.author[href$="Ootachiful"]:before {font-size:10px!important; visibility:visibl
 a[href|="/starlightgrin"], a[href|="/starlightsmug"], a[href|="/starlightyell"], a[href|="/starlightheythere"], a[href|="/starlightlookingup"], a[href|="/starlighthappy"], a[href|="/starlightcute"], a[href|="/starlightglare"], 
 a[href|="/starlightmad"], a[href|="/starlightknowing"], a[href|="/starlightmagic"], a[href|="/starlightangry"], a[href|="/starlightconcerned"], a[href|="/starlightpleased"], a[href|="/starlightwelcome"], a[href|="/starlightmadgic"], 
 a[href|="/starlightstalin"], a[href|="/starlightcheer"], a[href|="/starlightglimmer"], a[href|="/starlightbot"], a[href|="/starlightspy"], a[href|="/starlightproud"], 
-a[href|="/starlightpointy"], a[href|="/starlightcheerful"], a[href|="/starlightsitting"], a[href|="/starlightregal"], a[href|="/starlightcommander"] {
+a[href|="/starlightpointy"], a[href|="/starlightcheerful"], a[href|="/starlightunimpressed"], a[href|="/starlightsitting"], a[href|="/starlightregal"], a[href|="/starlightcommander"],  
+a[href|="/starlightneat"], a[href|="/starlightfrench"] {
   float: left;
   display: block;
   height: 70px;
@@ -227,6 +228,11 @@ a[href|="/starlightcheerful"] {
   background-position: -100px -265px;
 }
 
+a[href|="/starlightunimpressed"] {
+  width: 70px;
+  background-position: -100px -335px;
+}
+
 a[href|="/starlightsitting"] {
   width: 135px;
   height: 125px;
@@ -243,4 +249,14 @@ a[href|="/starlightcommander"] {
   width: 100px;
   height: 100px;
   background-position: -405px -265px;
+}
+
+a[href|="/starlightneat"] {
+  width: 70px;
+  background-position: 0 -405px;
+}
+
+a[href|="/starlightfrench"] {
+  width: 70px;
+  background-position: -70px -405px;
 }

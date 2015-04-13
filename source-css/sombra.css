@@ -809,3 +809,7 @@ background-image: url(%%zeldasombra%%)
 
 a.author[href$="little_gamie"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="little_gamie"]:before {font-size:10px!important; visibility:visible!important; content: "Enemy of the crown"}
+
+.thumbnail.default, .thumbnail.self {
+border: 1px solid black;
+}

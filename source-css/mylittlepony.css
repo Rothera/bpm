@@ -79,8 +79,8 @@
 
 /* CSS last generated on Sat, 16 Feb 2013 02:05:57 -0600 by UNKNOWN on derpy */
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Equal Citizens"}
-div.titlebox .users-online span.number:after {content:" Fighting the Power"}
+div.titlebox .subscribers span.number:after {content:" Sleepy Princesses"}
+div.titlebox .users-online span.number:after {content:" are Pancakes"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -162,6 +162,10 @@ border-top-right-radius: 5px;
  margin-left: -5px;
  font-size: 1px!important
 }
+
+/* .flair:hover {
+   background-image:url(%%flair-table-equal%%)
+} */
 
 .sidecontentbox a.helplink
 {
@@ -551,7 +555,7 @@ Submit and mod message buttons stolen from /r/StevenUniverse
 }
 
 .submit-page .side a[href="/message/compose?to=%2Fr%2Fmylittlepony#sidebar"] {
-    top: 162px
+    top: 132px
 }
 
 /* subscribe / unsubscribe */
@@ -781,6 +785,12 @@ a[href|="/shiningarmor"],a[href|="/shiningarmour"],a[href|="/a09"],a[href|="/rsh
 .flair-thunderlane
 {background-position:0 -1900%}
 
+.flair-starlightglimmer
+{background-position:0 -2000%}
+
+.flair-nightglider
+{background-position:0 -2100%}
+
 a[href|="/priceless"],a[href|="/a10"],a[href|="/rpriceless"],a[href|="/ra10"],a[href|="/ppboring"],a[href|="/b10"],a[href|="/rppboring"],a[href|="/rb10"],a[href|="/rdhappy"],a[href|="/c10"],a[href|="/rrdhappy"],a[href|="/rc10"],a[href|="/rdhuh"],a[href|="/e10"],a[href|="/rrdhuh"],a[href|="/re10"],.flair-twilight,.side .md table tr:nth-of-type(1) td:nth-of-type(3):after
 {background-position:-100% 0}
 
@@ -840,6 +850,12 @@ a[href|="/chrysalis"],a[href|="/queenchrysalis"],a[href|="/changelingqueen"],a[h
 
 .flair-applefritter
 {background-position:-100% -1900%}
+
+.flair-equality
+{background-position:-100% -2000%}
+
+.flair-partyfavor
+{background-position:-100% -2100%}
 
 a[href|="/flutterjerk"],a[href|="/a20"],a[href|="/rflutterjerk"],a[href|="/ra20"],a[href|="/rarityyell"],a[href|="/b20"],a[href|="/rrarityyell"],a[href|="/rb20"],a[href|="/rdannoyed"],a[href|="/c20"],a[href|="/rrdannoyed"],a[href|="/rc20"],a[href|="/snails"],a[href|="/e20"],a[href|="/rsnails"],a[href|="/re20"],.flair-fluttershy,.side .md table tr:nth-of-type(1) td:nth-of-type(4):after
 {background-position:-200% 0}
@@ -901,6 +917,9 @@ a[href|="/squintyjack"],a[href|="/b24"],a[href|="/rsquintyjack"],a[href|="/rb24"
 .flair-flutterbat
 {background-position:-200% -1900%}
 
+.flair-doublediamond
+{background-position:-200% -2000%}
+
 a[href|="/flutterroll"],a[href|="/a30"],a[href|="/rflutterroll"],a[href|="/ra30"],a[href|="/fluttershy"],a[href|="/b30"],a[href|="/rfluttershy"],a[href|="/rb30"],a[href|="/trixiesad"],a[href|="/c30"],a[href|="/rtrixiesad"],a[href|="/rc30"],a[href|="/twisad"],a[href|="/e30"],a[href|="/rtwisad"],a[href|="/re30"],.flair-applejack,.side .md table tr:nth-of-type(1) td:nth-of-type(5):after
 {background-position:-300% 0}
 
@@ -961,7 +980,10 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 .flair-blossomforth
 {background-position:-300% -1900%}
 
-/*.flair-cmchaz {background-position: -300% -100%}
+.flair-sugarbelle
+{background-position:-300% -2000%}
+
+.flair-cmchaz {background-position: -300% -100%}
 .flair-cmchaz:hover {background-position: -200% -700%}
 .flair-cmclinker {background-position: -300% -100%}
 .flair-cmclinker:hover {background-position: -0% -0%}
@@ -972,24 +994,28 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 .flair-cmcchinchy {background-position: -300% -100%}
 .flair-cmcchinchy:hover {background-position: -100% -200%}
 .flair-cmcspokes {background-position: -300% -100%}
-.flair-cmcspokes:hover {background-position: -300% -100%}
+.flair-cmcspokes:hover {background-position: -100% -900%}
 .flair-cmcopti {background-position: -300% -100%}
-.flair-cmcopti:hover {background-position: -300% -100%}*/
+.flair-cmcopti:hover {background-position: -300% -100%}
+.flair-cmcorsch {background-position: -300% -100%}
+.flair-cmcorsch:hover {background-position: -300% -100%}
 
-.flair-cmchaz {background-position: 0 -2000%}
+/*.flair-cmchaz {background-position: 0 -2000%}
 .flair-cmchaz:hover {background-position: 0 -2000%}
 .flair-cmclinker {background-position: 0 -2000%}
 .flair-cmclinker:hover {background-position: 0 -2000%}
 .flair-cmclanky {background-position: 0 -2000%}
 .flair-cmclanky:hover {background-position: 0 -2000%}
-.flair-cmcmouse {background-position: -300% -100%}
+.flair-cmcmouse {background-position: 0 -2000%}
 .flair-cmcmouse:hover {background-position: 0 -2000%}
-.flair-cmcchinchy {background-position: -300% -100%}
+.flair-cmcchinchy {background-position: 0 -2000%}
 .flair-cmcchinchy:hover {background-position: 0 -2000%}
-.flair-cmcspokes {background-position: -300% -100%}
+.flair-cmcspokes {background-position: 0 -2000%}
 .flair-cmcspokes:hover {background-position: 0 -2000%}
 .flair-cmcopti {background-position: 0 -2000%}
 .flair-cmcopti:hover {background-position: 0 -2000%}
+.flair-cmcorsch {background-position: 0 -2000%}
+.flair-cmcorsch:hover {background-position: 0 -2000%}*/
 
 table tr td:first-child {width:14px}
 
