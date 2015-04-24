@@ -590,7 +590,8 @@ a[href|="/ponibotfssteampunk"] {
 /* Sweetie Bot emotes - BEGIN */
 
 a[href|="/sbotdreaming"],
-a[href|="/sbotsleeping"] {
+a[href|="/sbotsleeping"],
+a[href|="/soullessautomation"] {
   float: left;
   display: block;
   background-image: url(%%sbot%%);
@@ -600,6 +601,12 @@ a[href|="/sbotdreaming"] {
   height: 150px;
   width: 275px;
   background-position: 0 0;
+}
+
+a[href|="/soullessautomation"] {
+  height: 150px;
+  width: 160px;
+  background-position: -275px 0; 
 }
 
 a[href|="/sbotsleeping"] {
@@ -615,19 +622,36 @@ a[href|="/sbotsleeping"] {
 a[href|="/hiddenbelle"], a[href|="/sweetiecardbot"] {
   float: left;
   display: block;
-  height: 150px;
   background-image: url(%%sbnonbot%%);
 }
 
 a[href|="/hiddenbelle"] {
+  height: 150px;
   width: 185px;
   background-position: 0 0;
 }
 
 
 a[href|="/sweetiecardbot"] {
+  height: 150px;
   width: 125px;
   background-position: -185px 0;
 }
 
 /* Sweetie Belle non-bot emotes - END */
+
+/* Non-Sweetie Belle bot emotes - START */
+
+a[href|="/octaviabot"] {
+  float: left;
+  display: block;
+  background-image: url(%%nonsbbot%%);
+}
+
+a[href|="/octaviabot"] {
+  height: 150px;
+  width: 100px;
+  background-position: 0 0;
+}
+
+/* Non-Sweetie Belle bot emotes - END */

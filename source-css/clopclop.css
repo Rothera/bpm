@@ -16,12 +16,11 @@ body:not(.res-nightmode) .link, body:not(.res-nightmode) .comment { background-c
     }
 
 /* sidebar */
-div.titlebox span.word {
-    display: none
-    }
-div.titlebox span.number:after {
-    content: " cloppers"
-    }
+
+.titlebox .word { display: none; }
+.subscribers .number:after { content: ' cloppers'; }
+.users-online .number:after { content: ' clopping'; }
+
 .titlebox strong {
     font-size: medium
     }
@@ -819,3 +818,10 @@ of the page */
 .flair-switchy {
     background-image: url(%%switchymark%%);
     }
+
+a[href="/switchywhat"] {
+    display: inline-block;
+    width: 87px;
+    height: 70px;
+    background: url(%%switchywhat%%);
+}

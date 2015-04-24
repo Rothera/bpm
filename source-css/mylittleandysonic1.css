@@ -2,7 +2,7 @@
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%John-Cena%%)  no-repeat fixed 66% 100% !important;
+    background:  url(%%sonicbg%%)  no-repeat fixed 66% 100% !important;
 }go
 
 
@@ -19,9 +19,13 @@
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%cena%%) 50% 0px !important;
+   background: url(%%sonicbanner%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
+}
+
+.tabmenu {
+  margin-top: 160px;
 }
 
 .gilded-icon{
@@ -732,7 +736,8 @@ a.author[href$=agentgamma],
 a.author[href$=lefthandedspatula],
 a.author[href$=gremlinpower],
 a.author[href$=Doktor_Elcaro],
-a.author[href$=The_Assistant]
+a.author[href$=The_Assistant],
+a.author[href$=topkekbestkek]
 
 { 
 font-size:0!important; 
@@ -860,7 +865,8 @@ a.author[href$=agentgamma]:before,
 a.author[href$=lefthandedspatula]:before,
 a.author[href$=gremlinpower]:before,
 a.author[href$=Doktor_Elcaro]:before,
-a.author[href$=The_Assistant]:before
+a.author[href$=The_Assistant]:before,
+a.author[href$=topkekbestkek]:before
 
 {
 font-size:10px!important; 
@@ -972,7 +978,7 @@ a.author[href$=j-brony]:before { content:"J's Brownies" }
 a.author[href$=RisenLordM]:before { content:"Risen" }
 a.author[href$=Princess_Pwny]:before { content:"Princess Pwnyed" }
 a.author[href$=randyrules]:before { content:"Princess " }
-a.author[href$=tuckels]:before { content:"TUCKELS" }
+a.author[href$=tuckels]:before { content:"KING TUCKELS" }
 a.author[href$=ZhilTP9112]:before { content:"Mechafag Zhil" }
 a.author[href$=I_Steal_Subreddits]:before { content:"RowBotnick" }
 a.author[href$=Beatbawx]:before { content:"BeatBonesBawx" }
@@ -985,6 +991,7 @@ a.author[href$=lefthandedspatula]:before { content:"horsfkr" }
 a.author[href$=gremlinpower]:before { content:"Lampasaurus" }
 a.author[href$=Doktor_Elcaro]:before { content:"get pretty coggler pony to change my name on the sub via his hilariously outdated css" }
 a.author[href$=The_Assistant]:before { content:"SuperAtomica" }
+a.author[href$=topkekbestkek]:before { content:"Partypoops McFlaccid" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -1637,3 +1644,12 @@ RES highlighted comment
     background: url(%%opacity%%) !important;
 }
 ================== */
+/* Upvotes */
+.arrow.up { background-image: url(%%upring%%); 
+background-position: -0px -0px; 
+height: 15px; width: 13px; 
+}
+.arrow.upmod { background-image: url(%%upring%%); 
+background-position: -0px -15px; 
+height: 15px; width: 13px; 
+}

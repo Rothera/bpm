@@ -90,7 +90,7 @@ background-position: 0px 0px;
 background-repeat: no-repeat;
 } 
 /*Changes reddit name to image. */
-.redditname a{
+.titlebox .redditname a{
 background:url(%%logo%%) no-repeat;
 height: 86px;
 width: 288px;
@@ -797,7 +797,7 @@ That big yellow box thing
 .titlebox .usertext-body .md table ~ table td {
     padding-top: 5px;
     padding-bottom: 5px;
-    width: 33%;
+    width: 25%;
     border: 1px solid #E1B000;
 }
 

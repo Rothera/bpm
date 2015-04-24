@@ -205,27 +205,15 @@ a[href|="/sp"] {
     height:0px
 }
 
-START-PONYSCRIPT-IGNORE { 
-    color: red; 
-}
-
-/* So BPM won't include this certain emote. Something something in jokes */
-
-a[href="/grenlitbobonfireagain"], a[href="/sweetieisonfire"], a[href="/sweetiefire"] a[href="/sweetfire"], a[href="/bobisonfire"], a[href="/bobdudeisonfire"] {
+a[href="/sbisonfire"], a[href="/roastedmarshmallow"], a[href="/grenlitbobonfireagain"], a[href="/sweetieisonfire"], a[href="/sweetiebelleisonfire"], a[href="/bobdudeisonfire"], a[href="/sweetieonfire"]  {
     background-position: 0px 0px;
     Display: block;
     Clear: none;
     Float: left;
-    Width: 170px;
+    Width: 168px;
     Height: 200px;
-    background-image: url(%%sweetieisonfire%%) !important
+    background-image: url(%%roastedmarshmallow%%) !important
 }
-
-END-PONYSCRIPT-IGNORE { 
-    color: red; 
-}
-
-
 
 /*Making the tabs' corners more rounded (stolen from r/mylittlepony)*/
 .tabmenu li a {

@@ -44,7 +44,7 @@ a[href|="/smugsmile"]     {background-position:-280px -0px}
 
 /*100px emotes*/
 
-a[href|="/TrixieLovesPlot"], a[href|="/AnimesqueHappy"], a[href|="/SillyTrixe"], a[href|="/VeryUnamusedTrixie"], a[href|="/ScaredBabyTrixie"]
+a[href|="/AnimesqueHappy"], a[href|="/TrixieLovesPlot"], a[href|="/ScaredBabyTrixie"], a[href|="/VeryUnamusedTrixie"], a[href|="/NotSureIfSeriousTrixie"], a[href|="/SillyTrixe"]
 
 {
   display: block;
@@ -57,11 +57,12 @@ a[href|="/TrixieLovesPlot"], a[href|="/AnimesqueHappy"], a[href|="/SillyTrixe"],
 
 /*offsets*/
 
-a[href|="/TrixeLovesPlot"]       {background-position: -0px -0px    }
-a[href|="/AnimesqueHappy"]       {background-position: -100px -0px  }
-a[href|="/SillyTrixe"]           {background-position: -200px -0px  }
-a[href|="/VeryUnamusedTrixie"]   {background-position: -300px -0px  }
-a[href|="/ScaredBabyTrixie"]     {background-position: -400px -0px  }
+a[href|="/AnimesqueHappy"]         {background-position: -0px -0px    }
+a[href|="/TrixieLovesPlot"]         {background-position: -100px -0px  }
+a[href|="/ScaredBabyTrixie"]             {background-position: -200px -0px  }
+a[href|="/VeryUnamusedTrixie"]     {background-position: -300px -0px  }
+a[href|="/NotSureIfSeriousTrixie"]       {background-position: -400px -0px  }
+a[href|="/SillyTrixe"] {background-position: -500px -0px  }
 
 /*200px emotes*/
 
@@ -175,6 +176,16 @@ Float: left;
 Width: 160px;
 Height: 222px;
 Background-image: url(%%tired%%) !important }
+
+a[href|="/LeMeme"] {
+Background-position: -0px -0px;
+Display: Block;
+CLear: None;
+Float: left;
+Width: 320px;
+Height: 334px;
+Background-image: url(%%danque%%) !important }
+
 
 
 a.author[href$="Protosega"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}

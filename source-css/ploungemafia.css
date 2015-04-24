@@ -402,6 +402,9 @@ div:lang(g8) .linkflair-gamePink
 }
 
 
+
+
+
 /* Game Filters Menu */
 .titlebox blockquote ul li a[href*='g1.reddit']
 {
@@ -440,9 +443,6 @@ background-image: -ms-linear-gradient( left, pink, gold, yellow, lightgreen, lig
 {
 border-left: 3px solid pink;
 }
-
-
-
 
 
 /* End Game Flairs */
@@ -568,7 +568,7 @@ hr {
     height: auto !important;
 }
 
-.flair {
+.flair:not(.flair-text) {
     padding: 0;
     background: none;
     color: black;
@@ -580,7 +580,7 @@ hr {
 }
 .flair-noimg
 {
-background-image:none;
+background-image:none !important;
 }
 
 .flair-player {
@@ -590,7 +590,7 @@ background-image:none;
 
 .flair-ghost {
    width: 13px;
-   background-position: -26px 0;
+   background-position: -26px 0 !important;
 }
 
 .flair-crown {
@@ -599,7 +599,7 @@ background-image:none;
     color: black;
     border: 0;
     border-radius: 0;
-    background-image: url(%%flaircrown%%);
+    background-image: url(%%flaircrown%%) !important;
     display: inline-block;
     height: 16px;
     width: 16px;
@@ -611,10 +611,10 @@ background-image:none;
     color: black;
     border: 0;
     border-radius: 0;
-    background-image: url(%%deadcrown%%);
+    background-image: url(%%deadcrown%%) !important;
     display: inline-block;
-    height: 27px;
-    width: 18px;
+    height: 27px !important;
+    width: 18px !important;
 }
 
 .flair-taco {
@@ -623,10 +623,10 @@ background-image:none;
     color: black;
     border: 0;
     border-radius: 0;
-    background-image: url(%%taco%%);
+    background-image: url(%%taco%%) !important;
     display: inline-block;
-    height: 26px;
-    width: 32px;
+    height: 26px !important;
+    width: 32px !important;
 }
 
 .flair-submitter {
@@ -635,7 +635,7 @@ background-image:none;
     color: black;
     border: 0;
     border-radius: 0;
-    background-image: url(%%submitter3%%);
+    background-image: url(%%submitter3%%) !important;
     display: inline-block;
     margin-bottom:-2px;
     height: 10px;
@@ -651,6 +651,29 @@ background-image:none;
    border-radius:5px;
    color:red;
 }
+
+.flair-derphat::before {
+float: left;
+left: -10px;
+top: -10px;
+position: relative;
+margin-right: -10px;
+display: inline-block;
+background: url(%%flair%%) -49px -15px transparent no-repeat;
+width: 26px;
+height: 26px;
+content: "";
+}
+
+.flair-derphat {
+height: 12px;
+margin: 9px 5px 9px 0px;
+}
+
+.res-nightmode .flair.flair-derphat.flair-text {
+background-color: #BBB !important;
+}
+
 /* Link flair
 */
 
@@ -754,7 +777,7 @@ a[href|="/sp"] {
 
 /* RES nightmode flair fix */
 
-.res-nightmode .tagline .flair {
+.res-nightmode .flair {
     background-color: transparent !important;
 }
 
@@ -1172,4 +1195,28 @@ width: 91px!important;
 height: 42px!important;
 display: block;
 overflow: hidden;
+}
+
+/* Plounge Mafia 4 */
+
+a[href="/hidden-if-using-sub-style"] {
+    visibility: hidden;
+}
+
+.side .usertext-body table {
+    position: absolute;
+    left: 25%;
+    top: 25px;
+    z-index: 100;
+}
+
+.side .usertext-body th {
+    border: none;
+    padding: 0px 20px 0px 20px;
+}
+
+.side .usertext-body table a {
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
 }
