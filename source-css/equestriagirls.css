@@ -1,3 +1,7 @@
+/* temporary spoilers */
+.thing[data-fullname="t3_341hp2"] .entry a.title { font-size:0 !important; }
+.thing[data-fullname="t3_341hp2"] .entry a.title::before { font-size: medium !important; content: "SPOILER team of SPOILER school "; }
+
 /* Sidebar fixes */
 
 .sidecontentbox .flair {display:none}

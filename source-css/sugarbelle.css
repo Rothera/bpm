@@ -112,6 +112,39 @@ background: #ffb9e4;
 color: #3d0330;
 }
 
+/*---Search style---*/
+
+#searchexpando {
+margin-top:0px;
+background-color:#ecf0ff;
+border-top:0px;
+-webkit-border-radius:0 0 3px 3px;
+-moz-border-radius:0 0 3px 3px;
+border-radius:0 0 3px 3px;
+border-color:gray;
+-webkit-transition:1s background;
+-moz-transition:1s background;
+-o-transition:1s background;
+transition:1s background;
+}
+#searchexpando:hover {
+background-color:#f0e2ff;
+}
+#search input[type="text"] {
+outline-width:0px;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+border-radius:2px;
+}
+#search input[type="text"]:focus {
+-webkit-border-radius:2px 2px 0 0;
+-moz-border-radius:2px 2px 0 0;
+border-radius:2px 2px 0 0;
+}
+#moresearchinfo {
+border-width:0px!important;
+}
+
 /*flairselector fix*/
 .side .flairselector {
 left:-420px!important;
@@ -120,7 +153,7 @@ left:-420px!important;
 
 /*===emotes===*/
 
-a[href|="/esugarbsmile"],a[href|="/sugarbworry"],a[href|="/sugarbhappy"],a[href|="/esugarbwonder"] {
+a[href|="/esugarbsmile"],a[href|="/sugarbworry"],a[href|="/sugarbhappy"],a[href|="/esugarbwonder"],a[href|="/esugarbsad"],a[href|="/sugarbelle"] {
 display: block;
 float: left;
 clear: none;
@@ -148,6 +181,17 @@ width:90px;
 height:100px;
 background-position:0px -100px;
 }
+a[href|="/sugarbelle"] {
+width:123px;
+height:150px;
+background-position:-198px 0px;
+}
+a[href|="/esugarbsad"] {
+width:91px;
+height:100px;
+background-position:-200px -150px;
+}
+
 
 
 /*===flairs===*/

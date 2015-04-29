@@ -164,7 +164,7 @@ div.over18 .entry .buttons .first{padding-left: 0px}
  text-align:center;
  height:500px;
  width:100%;
- background-image:url(%%piggy-belle%%);
+ background-image:url(%%footer%%);
  background-repeat:no-repeat;
  margin-bottom:-25px;
  background-position: bottom center;
@@ -209,7 +209,7 @@ div.thing.link:first-child:after {
  height: 70px;
  border: 0;
  content: "";
- background:url(%%piggies%%)
+ background:url(%%filly-table%%)
 }
 
 div.thing.link:first-child[data-fullname$="0"]:after{background-position: 0 0}
@@ -274,7 +274,7 @@ visibility: hidden;
 }
 /*Bacond End*/
 
-body{background: #ffffff url(%%piggybackground%%) no-repeat fixed center center}
+body{background: #ffffff url(%%twilightbackground%%) no-repeat fixed center center}
 .content .md h1{color:#789922;border-bottom:none;padding-bottom:0px;font-size:1em;margin:0;font-weight:100}
 .content .md h1:before{content:">"}
 
@@ -727,7 +727,7 @@ a[href|="/a39"],a[href|="/applederp"],a[href|="/ra39"],a[href|="/rapplederp"],a[
 /*This is all the fill emote code*/
 
 a[href|="/filly"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%piggies%%)!important}
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%filly-table%%)!important}
 .usertext input[value$="a"] + .usertext-body a[href="/filly"]{background-position: 0 0}
 .usertext input[value$="b"] + .usertext-body a[href="/filly"]{background-position:0 -100%}
 .usertext input[value$="c"] + .usertext-body a[href="/filly"]{background-position:0 -200%}
@@ -991,7 +991,7 @@ a[href|="/ripferrbearand20"] {
  position: relative;
  top: 75px;
  right: 70px;
- background:url(%%piggies%%);
+ background:url(%%filly-table%%);
  background-position: 0 -1200%
 }
 
@@ -1036,8 +1036,8 @@ a[href|="/ripferrbearand20"] {
 
 /*Hiddenbee goes here*/
 
-.usertext input[value$="5r"] + .usertext-body:before{background:url(%%hiddenpig%%); background-position: -100% -500%}
-.usertext input[value$="5s"] + .usertext-body:before{background:url(%%hiddenpig%%); background-position: -100% -600%}
+.usertext input[value$="5r"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -500%}
+.usertext input[value$="5s"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -600%}
 
 .usertext-edit {min-width:505px}
 
@@ -1216,34 +1216,19 @@ a.author[href$="HeWho_MustNotBeNamed"] {font-size:0!important; overflow:hidden; 
 a.author[href$="HeWho_MustNotBeNamed"]:before {font-size:10px!important; visibility:visible!important; content: "HeWho_MustNotBeNamedEh? "}
 
 a.author[href$="Fuzzy_Gauntlets"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="Fuzzy_Gauntlets"]:before {font-size:10px!important; visibility:visible!important; content: "Real_Fake_Fuzzy_Tofubacon "}
+a.author[href$="Fuzzy_Gauntlets"]:before {font-size:10px!important; visibility:visible!important; content: "Real_Fake_Fuzzy_Sweetiebelle "}
 
 a.author[href$="1125a"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="1125a"]:before {font-size:10px!important; visibility:visible!important; content: "1125au "}
 
-a.author[href$="Eevn"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="Eevn"]:before {font-size:10px!important; visibility:visible!important; content: "Evany "}
-
-a.author[href$="Ootachiful"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="Ootachiful"]:before {font-size:10px!important; visibility:visible!important; content: "Ohhitachiful "}
+a.author[href$="shellbullet17"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="shellbullet17"]:before {font-size:10px!important; visibility:visible!important; content: "Delibullet17 "}
 
 a.author[href$="french_guy_al"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="french_guy_al"]:before {font-size:10px!important; visibility:visible!important; content: "pig_pal_al "}
 
-a.author[href$="TheDarkPR101"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="TheDarkPR101"]:before {font-size:10px!important; visibility:visible!important; content: "TsarDarkPR101 "}
-
-a.author[href$="-Plasmahawk-"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="-Plasmahawk-"]:before {font-size:10px!important; visibility:visible!important; content: "Night Glider Boo "}
-
-a.author[href$="DarkLordSnuffles"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="DarkLordSnuffles"]:before {font-size:10px!important; visibility:visible!important; content: "BugPoneCuddles "}
-
 a.author[href$="VerifiablyHazardJess"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="VerifiablyHazardJess"]:before {font-size:10px!important; visibility:visible!important; content: "VerifiablyPiggyJess "}
-
-a.author[href$="Himntor"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="Himntor"]:before {font-size:10px!important; visibility:visible!important; content: "Himnpig "}
 
 .sidecontentbox a.author[href$="Pinkie_Pie"] {font-size:0!important; overflow:hidden; display:none; content: "";}
 .sidecontentbox a.author[href$="DoomedCivilian"] {color: #E9B3F9}
@@ -1303,42 +1288,43 @@ z-index:9000}
 60%{color:#f90}
 100%{bottom:38px;opacity:0.0}}
 
-.thing[data-fullname$="a"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="b"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="c"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="e"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="f"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="g"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="h"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="i"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="j"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="k"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="l"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="m"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="o"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="p"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="q"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="r"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="s"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="t"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="u"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="v"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="x"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="y"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="z"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="1"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="2"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="3"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="4"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="5"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="6"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="7"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="8"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="9"] > .midcol > .upmod:focus::after { content: "Oink "; }
-.thing[data-fullname$="0"] > .midcol > .upmod:focus::after { content: "Oink "; }
+.thing[data-fullname$="a"] > .midcol > .upmod:focus::after { content: "I like me. "; }
+.thing[data-fullname$="b"] > .midcol > .upmod:focus::after { content: "Do you ever wonder why we're here? "; }
+.thing[data-fullname$="c"] > .midcol > .upmod:focus::after { content: "My toes... are getting pruney. "; }
+.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "Nap time comes before pants time, not after. "; }
+.thing[data-fullname$="e"] > .midcol > .upmod:focus::after { content: "I will eat your unhappiness! "; }
+.thing[data-fullname$="f"] > .midcol > .upmod:focus::after { content: "whisper, whisper, whisper. "; }
+.thing[data-fullname$="g"] > .midcol > .upmod:focus::after { content: "Your toast has been BURNT, and no amount of scraping will get rid of the black stuff!  "; }
+.thing[data-fullname$="h"] > .midcol > .upmod:focus::after { content: "Yay! Sneak negotiation! "; }
+.thing[data-fullname$="i"] > .midcol > .upmod:focus::after { content: "I don't want to be dead. I want to be alive. Or a cowboy. "; }
+.thing[data-fullname$="j"] > .midcol > .upmod:focus::after { content: "Come back to me! I made you a muffin! "; }
+.thing[data-fullname$="k"] > .midcol > .upmod:focus::after { content: "Why are there six pedals if there are only four directions? "; }
+.thing[data-fullname$="l"] > .midcol > .upmod:focus::after { content: "Time isn't made of lines! It is made of circles. That is why clocks are round. "; }
+.thing[data-fullname$="m"] > .midcol > .upmod:focus::after { content: "Does talking count as moving? "; }
+.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "I know my name! You can ask me, if you forget. "; }
+.thing[data-fullname$="o"] > .midcol > .upmod:focus::after { content: "They can't see me! I can't see them! "; }
+.thing[data-fullname$="p"] > .midcol > .upmod:focus::after { content: "I think it would be ironic if we were all made of iron! "; }
+.thing[data-fullname$="q"] > .midcol > .upmod:focus::after { content: "Look at what I took credit for finding. "; }
+.thing[data-fullname$="r"] > .midcol > .upmod:focus::after { content: "Goodbye Major Cinnamin bun! I will always remember your buttery goodness! "; }
+.thing[data-fullname$="s"] > .midcol > .upmod:focus::after { content: "I try not to think while I'm sleeping. "; }
+.thing[data-fullname$="t"] > .midcol > .upmod:focus::after { content: "I promise I won't forget whatever it is you just said. "; }
+.thing[data-fullname$="u"] > .midcol > .upmod:focus::after { content: "Her name was Emilia. She would send me letters all the time. "; }
+.thing[data-fullname$="v"] > .midcol > .upmod:focus::after { content: "Uh, I don't see him- oh my God he's invisible. "; }
+.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "In a top ten list, five is better than six. "; }
+.thing[data-fullname$="x"] > .midcol > .upmod:focus::after { content: "Not my fault... someone put a wall in my way. "; }
+.thing[data-fullname$="y"] > .midcol > .upmod:focus::after { content: "Bleep bloop! "; }
+.thing[data-fullname$="z"] > .midcol > .upmod:focus::after { content: "I'm allergic things I don't like to do. "; }
+.thing[data-fullname$="1"] > .midcol > .upmod:focus::after { content: "Now I'm burning, that's much worse than other things burning! "; }
+.thing[data-fullname$="2"] > .midcol > .upmod:focus::after { content: "You melt it! Like evil ice cream! "; }
+.thing[data-fullname$="3"] > .midcol > .upmod:focus::after { content: "I will be very depressed about how AWESOME this will be! "; }
+.thing[data-fullname$="4"] > .midcol > .upmod:focus::after { content: "You have teleportesis? Can you hear what I'm thinking right now? "; }
+.thing[data-fullname$="5"] > .midcol > .upmod:focus::after { content: "Absolutely, Admiral Buttercrust. "; }
+.thing[data-fullname$="6"] > .midcol > .upmod:focus::after { content: "If I die, I want you to have my orange juice. "; }
+.thing[data-fullname$="7"] > .midcol > .upmod:focus::after { content: "Fluffy! The alien that only loves! "; }
+.thing[data-fullname$="8"] > .midcol > .upmod:focus::after { content: "I don't know what that means so I'm just going to nod and say "yes"... "; }
+.thing[data-fullname$="9"] > .midcol > .upmod:focus::after { content: "This isn't your field; it's everybody's field. "; }
+.thing[data-fullname$="0"] > .midcol > .upmod:focus::after { content: "Quiet Commander Pop'n'Fresh! I think they are talking about your gold and flaky crust! "; }
+
 
 .thing .upmod:focus:after{white-space:nowrap}
 
