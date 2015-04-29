@@ -308,7 +308,9 @@ def gen_exports(ctx):
 def update_www(ctx):
     ctx.copy("web/firefox-logo.png", "www")
     ctx.copy("web/chrome-logo.png", "www")
-    ctx.copy("web/redditnews-logo.png", "www")
+    ctx.copy("web/safari-logo.png", "www")
+    ctx.copy("web/relay-logo.png", "www")
+    ctx.copy("web/ponymotes-logo.png", "www")
     ctx.filter("web/index.html", dest="www/index.html")
     if newer(["build/betterponymotes.xpi"],
                  ["www/betterponymotes.xpi"]):
