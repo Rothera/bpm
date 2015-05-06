@@ -112,6 +112,11 @@ background: #ffb9e4;
 color: #3d0330;
 }
 
+/*flairselector fix*/
+.side .flairselector {
+left:-420px!important;
+}
+
 /*---Search style---*/
 
 #searchexpando {
@@ -145,9 +150,52 @@ border-radius:2px 2px 0 0;
 border-width:0px!important;
 }
 
-/*flairselector fix*/
-.side .flairselector {
-left:-420px!important;
+/*---subButtons style---*/
+
+.side .subscribe-button .option.remove {
+background:#c58cc8;
+color:#29162a;
+}
+.side .subscribe-button .option.add {
+background:#a0b7ff;
+color:#000440;
+}
+.res .side .subscribe-button {
+margin-right:0px;
+}
+.res .side .subscribe-button .option {
+-webkit-border-radius:3px 0 0 3px;
+-moz-border-radius:3px 0 0 3px;
+border-radius:3px 0 0 3px;
+width:68px;
+}
+
+#subButtons-SugarBelle .RESshortcut {
+background:#a0b7ff;
+color:#000440;
+margin-right:0px;
+-webkit-border-radius:0;
+-moz-border-radius:0;
+border-radius:0;
+border-width:1px 0 1px 0;
+width:68px;
+}
+#subButtons-SugarBelle .RESshortcut.remove {
+background:#c58cc8;
+color:#29162a;
+}
+
+#subButtons-SugarBelle .RESDashboardToggle {
+background:#a0b7ff;
+color:#000440;
+-webkit-border-radius:0 3px 3px 0;
+-moz-border-radius:0 3px 3px 0;
+border-radius:0 3px 3px 0;
+width:68px;
+}
+#subButtons-SugarBelle .RESDashboardToggle.remove {
+background:#c58cc8;
+color:#29162a;
 }
 
 

@@ -120,14 +120,7 @@ a[href|="/fluttershythis"], a[href|="/shythis"], a[href|="/flutterthis"], a[href
     height: 500px;
     background-image: url(%%this%%)
     }
-a[href|="/rollerconky"], a[href|="/skatingconky"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 150px;
-    height: 200px;
-    background-image: url(%%skatingconky%%)
-    }
+
 a[href|="/flutterapple"], a[href|="/appleshy"], a[href|="/yummyapple"], a[href|="/batapple"], a[href|="/flutterbatapple"], a[href|="/flutterbatlicky"] {
     display: block;
     clear: none;
@@ -202,22 +195,6 @@ a[href|="/flutterwind"], a[href|="/shywind"] {
     }
 
 
-a[href|="/flutterstare"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 70px;
-    height: 70px;
-    background-image: url(%%stare%%)
-    }
-a[href|="/fluttersup"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 225px;
-    height: 150px;
-    background-image: url(%%fluttersup%%)
-    }
 a[href|="/twiflutterhappy"], a[href|="/twishyhappy"] {
     display: block;
     clear: none;
@@ -293,18 +270,33 @@ a[href|="/thisisminenow"], a[href|="/myapple"] { background-position: -0px -150p
 a[href|="/iguessimavampire"], a[href|="/okaaay"] { background-position: -0px -275px; width: 179px; height: 100px; }
 a[href|="/lilbat"], a[href|="/whatarewegonnadoontheapple"] { background-position: -0px -375px; width: 112px; height: 150px; }
 
-a[href|="/bestbutt"], a[href|="/batbutt"], a[href|="/butts"]
-{
 
- background-image: url(%%bestbutt%%);
-    clear: none;
+/* Combined Sheet for more image space */
+ 
+a[href|="/rollerconky"], a[href|="/bestbutt"], a[href|="/batbutt"], a[href|="/butts"], a[href|="/fluttersup"], a[href|="/butts"], a[href|="/skatingconky"], a[href|="/flutterstare"]
+{ display: inline-block; background: url(%%combinedsheet%%) no-repeat; overflow: hidden; text-indent: -9999px; text-align: left; }
+ 
+a[href|="/fluttersup"] { background-position: -1px -0px; width: 225px; height: 150px; }
+a[href|="/bestbutt"], a[href|="/batbutt"], a[href|="/butts"] { background-position: -1px -151px; width: 200px; height: 136px; }
+a[href|="/rollerconky"], a[href|="/skatingconky"] { background-position: -1px -288px; width: 150px; height: 200px; }
+a[href|="/flutterstare"] { background-position: -152px -288px; width: 70px; height: 70px; }
+
+
+/* Buttwiggle */
+
+a[href|="/buttwiggle"], a[href|="/flutterbooty"], a[href|="/buttdance"] {
     display: block;
+    clear: none;
     float: left;
-    height: 136px;
-    width: 200px;
-}
+    width: 150px;
+    height: 129px;
+    background-image: url(%%buttwiggle%%)
+    }
+
 
 /* twish */
+
+
 a[href|="/twishy3"], a[href|="/twishy2"], a[href|="/twishy"], a[href|="/mei"], a[href|="/mei2"], a[href|="/mei3"] { 
     display: block; 
     background: url(%%twishy%%);
@@ -759,7 +751,7 @@ width: 139px;
 background-image: url(%%pretzelsheet%%) !important
 }
 
-/* Space thingy */
+/* Spaaaaaace thingy */
 a[href|="/sp"] {
     display: inline-block;
     padding-right: 100%
