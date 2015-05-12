@@ -21,7 +21,7 @@ content:" bakers";
 display:none;
 }
 .side .users-online .number:after {
-content:" users baking";
+content:" users eating muffins";
 }
 
 /*---list style---*/
@@ -170,7 +170,7 @@ border-radius:3px 0 0 3px;
 width:68px;
 }
 
-#subButtons-SugarBelle .RESshortcut {
+.subButtons .RESshortcut {
 background:#a0b7ff;
 color:#000440;
 margin-right:0px;
@@ -180,12 +180,12 @@ border-radius:0;
 border-width:1px 0 1px 0;
 width:68px;
 }
-#subButtons-SugarBelle .RESshortcut.remove {
+.subButtons .RESshortcut.remove {
 background:#c58cc8;
 color:#29162a;
 }
 
-#subButtons-SugarBelle .RESDashboardToggle {
+.subButtons .RESDashboardToggle {
 background:#a0b7ff;
 color:#000440;
 -webkit-border-radius:0 3px 3px 0;
@@ -193,7 +193,7 @@ color:#000440;
 border-radius:0 3px 3px 0;
 width:68px;
 }
-#subButtons-SugarBelle .RESDashboardToggle.remove {
+.subButtons .RESDashboardToggle.remove {
 background:#c58cc8;
 color:#29162a;
 }

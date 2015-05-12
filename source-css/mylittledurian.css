@@ -44,6 +44,29 @@ div.titlebox .users-online span.number:after {
 }
 */
 
+#header-bottom-left {
+    background: #DBF8CE;
+}
+
+#header-bottom-right {
+    background-color: #F7FFEF;
+}
+
+#userbarToggle {
+    background-color: #F1F9C7 !important;
+}
+
+.roundfield {
+    background-color: #D3F8CE;
+}
+
+.tabmenu.formtab .selected a {
+    background-color: #A5CF5F;
+}
+
+.formtabs-content {
+    border-top: 4px solid rgb(165, 207, 95);
+}
 /*Name substitute*/
 
 
@@ -223,6 +246,7 @@ a[href="/sbisonfire"], a[href="/roastedmarshmallow"], a[href="/grenlitbobonfirea
     -moz-border-radius-topleft: 5px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    background-color: #FFFFEF;
 }
 
 /*Tab test
@@ -298,7 +322,17 @@ border:none;
 .md blockquote {
     border-left: 2px solid #336699;
 }
-
-#ad-frame, #ad_main {
+/* Changes ad box position */
+/*#ad-frame, #ad_main {
     margin-left: -29px;
 }
+
+.sponsorshipbox {
+    margin-left: -29px;
+}*/
+
+/* Kills the community button/nub/spacer */
+  .sidebox.create .morelink {display: none;}
+  .sidebox.submit .spacer a, .sidebox.create .spacer a {display: none;}
+  .morelink .nub, .morelink .nub:hover {display: none;}
+  .sidebox .spacer {display: none;}

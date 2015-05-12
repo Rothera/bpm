@@ -514,7 +514,7 @@ no-repeat fixed center bottom
     /*BPM signs sheet begine*/	
         
 		a[href|="/advicebj"]{		
-			background-image: url(%%foe-bpmsigns-v02%%);
+			background-image: url(%%foe-bpmsigns-v03%%);
             background-position: 0px 0px; width: 300px; height: 300px;
             width: 305px !important;
             height: 300px !important;
@@ -552,7 +552,7 @@ no-repeat fixed center bottom
         }
 		
         a[href|='/lpsign'] {
-			background-image: url(%%foe-bpmsigns-v02%%);
+			background-image: url(%%foe-bpmsigns-v03%%);
 			background-position: 0px -310px; width:262px; height:300px; 
             display: inline-block !important;
             position: relative !important;
@@ -582,9 +582,85 @@ no-repeat fixed center bottom
 		width: 252px;
 		height: 350px;
 		background-repeat: no-repeat;
-		background-image: url(%%foe-bpmsigns-v02%%);
+		background-image: url(%%foe-bpmsigns-v03%%);
 		background-position: 0px -620px;
 		}
+		
+		a[href|="/calamitydidntlisten"]{		
+			background-image: url(%%foe-bpmsigns-v03%%);
+            background-position: 0px -975px; width: 240px; height: 300px;
+            width: 305px !important;
+            height: 300px !important;
+            cursor: default !important;
+            display: block !important;
+            background-repeat: no-repeat !important;
+            text-align: center !important;
+            color: white !important;
+            font-family: Impact, sans-serif !important;
+            font-size: 26px !important;
+            line-height: 24px !important;
+            text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black !important;
+            letter-spacing: 1px !important;
+            overflow: hidden !important;
+            position: relative !important;
+            text-transform: uppercase !important;
+        }
+        a[href|='/calamitydidntlisten'] em{
+            font-style: normal !important;
+            position: absolute !important;
+            top: 12px !important;
+            width: 220px !important;
+            color: white !important;
+            left: 50% !important;
+            margin-left: -140px !important
+        }
+        a[href|='/calamitydidntlisten'] strong{
+            font-weight: normal !important;
+            position: absolute !important;
+            bottom: 13px !important;
+            color: white !important;
+            width: 220px !important;
+            left: 50% !important;
+            margin-left: -140px !important
+        }
+		
+		a[href|="/machdidntlisten"]{		
+			background-image: url(%%foe-bpmsigns-v03%%);
+            background-position: 0px -1285px; width: 240px; height: 300px;
+            width: 305px !important;
+            height: 300px !important;
+            cursor: default !important;
+            display: block !important;
+            background-repeat: no-repeat !important;
+            text-align: center !important;
+            color: white !important;
+            font-family: Impact, sans-serif !important;
+            font-size: 26px !important;
+            line-height: 24px !important;
+            text-shadow: 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black !important;
+            letter-spacing: 1px !important;
+            overflow: hidden !important;
+            position: relative !important;
+            text-transform: uppercase !important;
+        }
+        a[href|='/machdidntlisten'] em{
+            font-style: normal !important;
+            position: absolute !important;
+            top: 12px !important;
+            width: 220px !important;
+            color: white !important;
+            left: 50% !important;
+            margin-left: -140px !important
+        }
+        a[href|='/machdidntlisten'] strong{
+            font-weight: normal !important;
+            position: absolute !important;
+            bottom: 13px !important;
+            color: white !important;
+            width: 220px !important;
+            left: 50% !important;
+            margin-left: -140px !important
+        }
         
     /*BPM signs sheet end*/
 
@@ -659,6 +735,18 @@ no-repeat fixed center bottom
 	.linkflair-pip .thumbnail.self{background-position: -140px -70px;}
 	.linkflair-pip .thumbnail.nsfw{background-position: -70px -70px;}
     
+    /*Default version for changes*/
+    .linkflair-default .linkflairlabel {
+		background-color: transparent;
+		font-size: 8px;
+		font-weight: bold;
+		color:#8b91a7;
+		border-color: #9c6017;
+		border-width: 1px;
+		border-radius: 3px;
+	}
+
+
 /*Link flair field end*/
 
 /*----------------------------------------oooOOOooo----------------------------------------*/
