@@ -2,7 +2,7 @@
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%sonicbg%%)  no-repeat fixed 66% 100% !important;
+    background:  url(%%Explosion%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -19,7 +19,7 @@
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%sonicbanner%%) 50% 0px !important;
+   background: url(%%MLASINATOR%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -229,11 +229,11 @@ div.titlebox span.word {
     display: none
     }
 div.titlebox span.number:after {
-    content: " Sleepy Gammies"
+    content: ",453,950 Sleepy Gammies"
     }
 div.titlebox .users-online span.number:after
 {
-    content:" Wakey Gammies";
+    content:",593 Wakey Gammies";
 }
 a[href="/spoiler"]:nth-of-type(n) {
     background: #000;
@@ -274,11 +274,11 @@ label[for="subRedditStyleCheckbox"] {
 /* Also make the CSS text box bigger, because why not. */
 .stylesheet-customize-container textarea { height:500px; }
 
-/* ಠ_ಠ */
+/* ಠ_ಠ 
 .arrow.down {
 visibility: hidden;
 display: none
-} 
+} */
 
 /*SUBMISSION PAGE INSTRUCTIONS*/
 .titlebox .usertext-body .md ul {
@@ -1645,11 +1645,41 @@ RES highlighted comment
 }
 ================== */
 /* Upvotes */
-.arrow.up { background-image: url(%%upring%%); 
-background-position: -0px -0px; 
-height: 15px; width: 13px; 
+.midcol {
+    width: 35px;
+overflow:visible;
+    }
+.comment .midcol{
+position:relative;
+
+padding:0px 5px 0px 0px;
 }
-.arrow.upmod { background-image: url(%%upring%%); 
-background-position: -0px -15px; 
-height: 15px; width: 13px; 
-}
+
+div.up {
+    width: 30px !important;
+    height: 30px !important;
+    background: url(%%arrows%%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px 0px !important
+    }
+div.down {
+    width: 30px !important;
+    height: 30px !important;
+    background: url(%%arrows%%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px -30px !important
+    }
+div.upmod {
+    width: 30px !important;
+    height: 30px !important;
+    background: url(%%arrows%%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px -60px !important
+    }
+div.downmod {
+    width: 30px !important;
+    height: 30px !important;
+    background: url(%%arrows%%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px -90px !important
+    }
