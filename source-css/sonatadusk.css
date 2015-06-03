@@ -635,6 +635,26 @@ a[href|="/sonataposing"], a[href|="/sdposing"], a[href|="/rsonataposing"], a[hre
   background-image: url(%%sonatapose%%) !important;
 }
 
+a[href|="/sonatapstanding"], a[href|="/sdpstanding"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 90px;
+  height: 90px;
+  background-position: -0px -0px;
+  background-image: url(%%sonatapstanding%%) !important;
+}
+
+a[href|="/sonatatrotting"], a[href|="/sdtrotting"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 88px;
+  height: 94px;
+  background-position: -0px -0px;
+  background-image: url(%%sonatatrotting%%) !important;
+}
+
 a[href|="/rsonatastanding"], a[href|="/rsdstanding"], a[href|="/rsonatawalking"], a[href|="/rsdwalking"], a[href|="/rsdposing"], a[href|="/rsonataposing"] {
   -webkit-transform: scaleX(-1);
   -moz-transform: scaleX(-1);

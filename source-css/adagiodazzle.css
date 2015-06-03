@@ -552,6 +552,26 @@ a[href|="/radagiostanding"], a[href|="/radstanding"], a[href|="/radagiowalking"]
   transform: scaleX(-1);
 }
 
+a[href|="/adagiopstanding"], a[href|="/adpstanding"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 84px;
+  height: 88px;
+  background-position: -0px -0px;
+  background-image: url(%%adagiopstanding%%) !important;
+}
+
+a[href|="/adagiotrotting"], a[href|="/adtrotting"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 84px;
+  height: 92px;
+  background-position: -0px -0px;
+  background-image: url(%%adagiotrotting%%) !important;
+}
+
 START-PONYSCRIPT-IGNORE { color: red; }
 
 a[href|="/mirrorportal"] {

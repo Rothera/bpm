@@ -121,13 +121,18 @@ position:absolute;
 top:-43px;
 left:0px;
 width:50%;
-background: #a0b7ff;
+background-image:url(%%cutie-mark-silhouette%%);
+background-position:center center;
+background-size:0px 0px;
+background-repeat:no-repeat;
 -webkit-border-radius: 3px 0 0 3px;
 -moz-border-radius: 3px 0 0 3px;
 border-radius: 3px 0 0 3px;
+transition-duration:0.75s;
 }
 .submit-link .morelink:hover {
-background: #c58cc8;
+background-size:230px 311px;
+background-color:#a0b7ff;
 }
 .submit-link .morelink:hover a {
 color: #29162a;
@@ -139,15 +144,20 @@ position:absolute;
 top:-43px;
 right:0px;
 width:50%;
-background: #a0b7ff;
+background-image:url(%%sugar-belle-silhouette%%);
+background-position:center center;
+background-size:0px 0px;
+background-repeat:no-repeat;
 border-left:solid 1px;
 border-color:#8097df;
 -webkit-border-radius: 0 3px 3px 0;
 -moz-border-radius: 0 3px 3px 0;
 border-radius: 0 3px 3px 0;
+transition-duration:0.85s;
 }
 .submit-text .morelink:hover {
-background: #ffb9e4;
+background-size:300px 274px;
+background-color:#a0b7ff;
 }
 .submit-text .morelink:hover a {
 color: #3d0330;

@@ -562,14 +562,6 @@ a[href|="/twilipbite"] {
     height: 150px;
     background-image: url(%%twilight-human-face%%) 
     }
-a[href|="/bghuman"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 132px;
-    height: 131px;
-    background-image: url(%%bghuman%%) 
-    }
 a[href|="/ppbraces"] {
     display: block;
     clear: none;
@@ -677,6 +669,26 @@ a[href|="/pinkieface"]:hover {
     float: left;
     width:300px; height:282px; background-position: -0px -0px; 
     background-image: url(%%pinkiefacetemp%%) !important
+    }
+
+a[href|="/neko"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 146px;
+    height: 250px;
+	background-position: -132px -0px;
+    background-image: url(%%Pspritesheet%%) !important
+    }
+
+a[href|="/bghuman"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 132px;
+    height: 131px;
+	background-position: -0px -0px;
+    background-image: url(%%Pspritesheet%%) !important
     }
 
 /*Side Bar*/

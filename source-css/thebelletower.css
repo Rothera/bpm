@@ -500,11 +500,83 @@ a[href="/sbrage"]{
 }
 
 
-a[href="/sbheart"]{
+a[href="/sbheart"],
+a[href="/breakfastbelle"],
+a[href="/sadbelle"],
+a[href="/sbbook2"],
+a[href="/sbwhat"],
+a[href="/sbcry"],
+a[href="/sbyell"],
+a[href="/sbwave"],
+a[href="/sbsadface"],
+a[href="/sbconcerned"],
+a[href="/sbface"],
+a[href="/sbdepressed"],
+a[href="/sbdoesnotapprove"]{
     display:block;
     clear:none;
     float:left;
     width:133px;
     height:202px;
     background-image: url(%%ss04%%) !important;
+}
+a[href="/breakfastbelle"]{
+    width:140px;
+    height:156px;
+    background-position: 0px -210px;
+}
+a[href="/sbyell"]{
+    width:106px;
+    height:140px;
+    background-position: -140px 0px;
+}
+a[href="/sadbelle"]{
+    width:128px;
+    height:108px;
+    background-position: -280px 0px;
+}
+a[href="/sbbook2"]{
+    width:133px;
+    height:140px;
+    background-position: -420px 0px;
+}
+a[href="/sbwhat"]{
+    width:70px;
+    height:70px;
+    background-position: -560px 0px;
+}
+a[href="/sbcry"]{
+    width:70px;
+    height:129px;
+    background-position: -630px 0px;
+}
+a[href="/sbwave"]{
+    width:116px;
+    height:140px;
+    background-position: -140px -140px;
+}
+a[href="/sbsadface"]{
+    width:93px;
+    height:110px;
+    background-position: -280px -140px;
+}
+a[href="/sbconcerned"]{
+    width:125px;
+    height:128px;
+    background-position: -420px -140px;
+}
+a[href="/sbface"]{
+    width:85px;
+    height:100px;
+    background-position: -560px -140px;
+}
+a[href="/sbdepressed"]{
+    width:140px;
+    height:108px;
+    background-position: -140px -280px;
+}
+a[href="/sbdoesnotapprove"]{
+    width:104px;
+    height:110px;
+    background-position: -280px -280px;
 }

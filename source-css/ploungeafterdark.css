@@ -773,6 +773,16 @@ Height: 243px;
 background-image: url(%%lefty%%) !important
 }
 
+a[href="/moonlit"] {
+background-position: 0px 0px;
+Display: block;
+Clear: none;
+Float: left;
+Width: 150px;
+Height: 150px;
+background-image: url(%%moonlit%%) !important
+}
+
 a[href|="/doublebutts"], a[href|="/tavibass"], a[href|="/triumvirateofevil"], a[href|="/queenblush"], a[href|="/flufflechomp"], a[href|="/minisombra"], a[href|="/vinylbutt"], a[href|="/sweetiedaww"], a[href|="/cadancesmirk"], a[href|="/lyrabonfillies"], a[href|="/taviwine"], a[href|="/lyrabutt"], a[href|="/gildasocks"], a[href|="/sistersofthenight"], a[href|="/wubmepls"], a[href|="/sombrashake"], a[href|="/dashwink"], a[href|="/tavishake"], a[href|="/lyrasockscheer"] {
 
  display: block;
@@ -1088,7 +1098,7 @@ a.author[href$="NtmrMoon"]:after{color: #D6B52F; content:" - 1st place Costume C
 a.author[href$="willowmvp227"]:after{color: #D6B52F; content:" - 2nd place Costume Contest Winner!"}
 a.author[href$="SeatieBelt"]:after{content:" + __brony__ best ship"}
 a.author[href$="__brony__"]:after{content:" + SeatieBelt best ship"}
-a.author[href$="VerifiablyHazardJess"]:after{content:" - Verified"}
+a.author[href$="VerifJess"]:after{content:" - Has the best butt"}
 /*greentext*/
 .md blockquote {
     border: 0;
@@ -1134,7 +1144,7 @@ a[href$="/spoiler"]:hover, a[href$="#spoiler"]:hover, a[href$="/s"]:hover, a[hre
 
 */
 
-a[href*="Captain_Awesomex"]{background:0;-webkit-animation:rainbow .4s linear infinite;-moz-animation:rainbow .4s linear infinite;animation:rainbow .4s linear infinite}@keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-moz-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-webkit-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}a[href*="pyrowolf8"]{background:0;-webkit-animation:rainbow .4s linear infinite;-moz-animation:rainbow .4s linear infinite;animation:rainbow .4s linear infinite}@keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-moz-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-webkit-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}
+/*a[href*="Captain_Awesomex"]{background:0;-webkit-animation:rainbow .4s linear infinite;-moz-animation:rainbow .4s linear infinite;animation:rainbow .4s linear infinite}@keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-moz-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-webkit-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}a[href*="pyrowolf8"]{background:0;-webkit-animation:rainbow .4s linear infinite;-moz-animation:rainbow .4s linear infinite;animation:rainbow .4s linear infinite}@keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-moz-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-webkit-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}
 
 /* GIVE EVERY COMMENT THE RANDOM FILLY! */
 .commentarea .usertext{padding-left: 70px; min-height: 140px; margin-top: -70px}
@@ -1192,3 +1202,10 @@ a[href*="Captain_Awesomex"]{background:0;-webkit-animation:rainbow .4s linear in
 
 /*End of every comment random filly*/
 
+#moderator-table tr:first-child, .sidecontentbox .author.id-t2_7b6ai {
+    display: none
+    }
+    
+    #moderator-table tr:first-child, .sidecontentbox .author.id-t2_93g73 {
+    display: none
+    }

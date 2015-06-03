@@ -650,6 +650,26 @@ a[href|="/rariastanding"], a[href|="/rabstanding"], a[href|="/rariawalking"], a[
     transform: scaleX(-1);
 }
 
+a[href|="/ariapstanding"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 88px;
+    height: 86px;
+    background-position: -0px -0px;
+    background-image: url(%%ariapstanding%%) !important;
+}
+
+a[href|="/ariatrotting"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 86px;
+    height: 90px;
+    background-position: -0px -0px;
+    background-image: url(%%ariatrotting%%) !important;
+}
+
 START-PONYSCRIPT-IGNORE { color: red; }
 
 a[href|="/mirrorportal"] {
