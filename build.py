@@ -255,7 +255,7 @@ def fx_package(ctx):
         inject_xpi_key("betterponymotes.xpi", "build/betterponymotes.xpi")
         ctx.remove("betterponymotes.xpi")
 
-KeyFile = "../secret/betterponymotes.pem"
+KeyFile = "betterponymotes.pem"
 
 @target("cr-package", "build/chrome.zip")
 def cr_package(ctx):
