@@ -1249,6 +1249,9 @@ a.author[href$="1125a"]:before {font-size:10px!important; visibility:visible!imp
 a.author[href$="shellbullet17"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="shellbullet17"]:before {font-size:10px!important; visibility:visible!important; content: "Delibullet17 "}
 
+a.author[href$="Not_Actually_French"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="Not_Actually_French"]:before {font-size:10px!important; visibility:visible!important; content: "Is_Actually_French "}
+
 .sidecontentbox a.author[href$="DoomedCivilian"] {color: #E9B3F9}
 .sidecontentbox a.author[href$="Pinkie_Pie"] {Display:none}
 
@@ -1350,3 +1353,9 @@ z-index:9000}
 .midcol,.last-clicked.midcol{overflow:visible!important}
 
 .res-commentBoxes .commentarea .comment{overflow:visible!important}
+
+/* Make CSS editor bigger */
+textarea#stylesheet_contents {height: 600px;}
+
+/* TODO: Delete this */
+div.thing.id-t1_crzolyl > div.midcol > div.arrow.down {visibility: hidden;}

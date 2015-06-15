@@ -655,6 +655,16 @@ a[href|="/sonatatrotting"], a[href|="/sdtrotting"] {
   background-image: url(%%sonatatrotting%%) !important;
 }
 
+a[href|="/solnata"], a[href|="/soldiersd"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 118px;
+  height: 147px;
+  background-position: 0 0;
+  background-image: url(%%solnata%%) !important;
+}
+
 a[href|="/rsonatastanding"], a[href|="/rsdstanding"], a[href|="/rsonatawalking"], a[href|="/rsdwalking"], a[href|="/rsdposing"], a[href|="/rsonataposing"] {
   -webkit-transform: scaleX(-1);
   -moz-transform: scaleX(-1);

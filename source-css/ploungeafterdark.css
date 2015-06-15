@@ -1077,7 +1077,7 @@ font-size: 0 !important;
 
 a.author[href$=Captain_Awesomex]:before {
     content: "Cappaveli";
-    font-size: 12px;
+    font-size: 11px;
 
 }
 
@@ -1088,17 +1088,52 @@ font-size: 0 !important;
     content: ""
 }
 a.author[href$=MyNameIsNavy]:before {
-    content: "Navy";
-    font-size: 12px;
+    content: "Queen Bitch";
+    font-size: 11px;
 
 }
+a.author[href$=MasterT231] {
+font-size: 0 !important;
+    overflow: hidden;
+    display: inline-block;
+    content: ""
+}
+a.author[href$=MasterT231]:before {
+    content: "The Reverse MasterT";
+    font-size: 11px;
+}
 
+.author[href$="/MasterT231"]:hover:after { content: " YOU HAVE FAILED THIS CITY" }
+
+a.author[href$=LunarMist2] {
+font-size: 0 !important;
+    overflow: hidden;
+    display: inline-block;
+    content: ""
+}
+a.author[href$=LunarMist2]:before {
+    content: "Lunar2Butts";
+    font-size: 11px;
+}
+
+a.author[href$=shellbullet17] {
+font-size: 0 !important;
+    overflow: hidden;
+    display: inline-block;
+    content: ""
+}
+a.author[href$=shellbullet17]:before {
+    content: "The Doctor";
+    font-size: 11px;
+}
+    
 a.author[href$="Drawlestia"]:after{content:" - Created the Header!"}
-a.author[href$="NtmrMoon"]:after{color: #D6B52F; content:" - 1st place Costume Contest Winner!"}
-a.author[href$="willowmvp227"]:after{color: #D6B52F; content:" - 2nd place Costume Contest Winner!"}
+a.author[href$="NtmrMoon"]:after{color: #D6B52F; content:" - Costume Contest Winner Halloween 2014"}
+a.author[href$="willowmvp227"]:after{color: #D6B52F; content:" - Costume Contest Winner Halloween 2014"}
 a.author[href$="SeatieBelt"]:after{content:" + __brony__ best ship"}
 a.author[href$="__brony__"]:after{content:" + SeatieBelt best ship"}
 a.author[href$="VerifJess"]:after{content:" - Has the best butt"}
+
 /*greentext*/
 .md blockquote {
     border: 0;
@@ -1144,7 +1179,7 @@ a[href$="/spoiler"]:hover, a[href$="#spoiler"]:hover, a[href$="/s"]:hover, a[hre
 
 */
 
-/*a[href*="Captain_Awesomex"]{background:0;-webkit-animation:rainbow .4s linear infinite;-moz-animation:rainbow .4s linear infinite;animation:rainbow .4s linear infinite}@keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-moz-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-webkit-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}a[href*="pyrowolf8"]{background:0;-webkit-animation:rainbow .4s linear infinite;-moz-animation:rainbow .4s linear infinite;animation:rainbow .4s linear infinite}@keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-moz-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-webkit-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}
+a[href*="Captain_Awesomex"]{background:0;-webkit-animation:rainbow .4s linear infinite;-moz-animation:rainbow .4s linear infinite;animation:rainbow .4s linear infinite}@keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-moz-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-webkit-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}a[href*="pyrowolf8"]{background:0;-webkit-animation:rainbow .4s linear infinite;-moz-animation:rainbow .4s linear infinite;animation:rainbow .4s linear infinite}@keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-moz-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}@-webkit-keyframes rainbow{25%{color:red}50%{color:lightgray}75%{color:blue}}
 
 /* GIVE EVERY COMMENT THE RANDOM FILLY! */
 .commentarea .usertext{padding-left: 70px; min-height: 140px; margin-top: -70px}
@@ -1202,10 +1237,4 @@ a[href$="/spoiler"]:hover, a[href$="#spoiler"]:hover, a[href$="/s"]:hover, a[hre
 
 /*End of every comment random filly*/
 
-#moderator-table tr:first-child, .sidecontentbox .author.id-t2_7b6ai {
-    display: none
-    }
-    
-    #moderator-table tr:first-child, .sidecontentbox .author.id-t2_93g73 {
-    display: none
-    }
+

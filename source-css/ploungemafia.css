@@ -1196,27 +1196,3 @@ height: 42px!important;
 display: block;
 overflow: hidden;
 }
-
-/* Plounge Mafia 4 */
-
-a[href="/hidden-if-using-sub-style"] {
-    visibility: hidden;
-}
-
-.side .usertext-body table {
-    position: absolute;
-    left: 25%;
-    top: 25px;
-    z-index: 100;
-}
-
-.side .usertext-body th {
-    border: none;
-    padding: 0px 20px 0px 20px;
-}
-
-.side .usertext-body table a {
-    font-size: 16px;
-    font-weight: bold;
-    color: green;
-}
