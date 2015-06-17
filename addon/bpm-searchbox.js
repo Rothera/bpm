@@ -86,7 +86,7 @@ function inject_search_box() {
             '<a id="bpm-sb-helplink" href="javascript:void(0)">help</a> | ',
             '<a id="bpm-sb-optionslink" href="javascript:void(0)">bpm options</a>',
             '<span id="bpm-sb-resize"></span>',
-            '<a id="bpm-sb-srlink" href="http://reddit.com/r/betterponymotes">/r/betterponymotes</a>',
+            '<a id="bpm-sb-srlink" href="https://www.reddit.com/r/betterponymotes">/r/betterponymotes</a>',
           '</div>',
         '</div>',
         '<div id="bpm-global-icon" title="Hold Ctrl (Command/Meta) to drag"></div>'
