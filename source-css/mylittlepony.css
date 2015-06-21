@@ -240,10 +240,6 @@ border-top-right-radius: 5px;
  font-size: 1px!important
 }
 
-/* .flair:hover {
-   background-image:url(%%flair-table-equal%%)
-} */
-
 .sidecontentbox a.helplink
 {
  font-size:.9em!important;
@@ -252,16 +248,8 @@ border-top-right-radius: 5px;
 
 #header-img
 { 
- margin:0px 10px -3px 10px;
+ margin:0px 10px -17px 10px;
 }
-
-/*
-#header-img:hover
-{ 
- background: url(%%karma-dis-peek%%);
- background-position: 80px 0px;
-}
-*/
 
 #header-bottom-left{padding-top:10px}
 .pagename {font-size:12pt}
@@ -516,8 +504,6 @@ background-color: white;
  margin-bottom:10px
 }
 
-
-
 /****************
 Submit and mod message buttons stolen from /r/StevenUniverse
 *****************/
@@ -525,7 +511,7 @@ Submit and mod message buttons stolen from /r/StevenUniverse
 /* ===Submit Buttons=== */
 /*Adjust the following to how much room you need for them*/
 .side {
-    margin-top: 98px;
+    margin-top: 115px;
 }
 
 .submit-page .side { margin-top: 65px }
@@ -841,15 +827,6 @@ a[href|="/rsmooze"]
 Both methods for flipping emotes have been deprecated.
 **********************/
 
-/* Old method for flipping emotes */
-/*a[href^="/r"]:not([href|="/raritydaww"]):not([href|="/rdcry"]):not([href|="/rarityreally"]):not([href|="/raritypaper"]):not([href|="/raritynews"]):not([href|="/rarishock"]):not([href|="/rarityyell"]):not([href|="/rdsmile"]):not([href|="/raritydress"]):not([href|="/rdwut"]):not([href|="/raritywut"]):not([href|="/raritywhy"]):not([href|="/rarityannoyed"]):not([href|="/raritywhine"]):not([href|="/rdcool"]):not([href|="/rarityjudge"]):not([href|="/rarityprimp"]):not([href|="/rdsitting"]):not([href|="/rdhappy"]):not([href|="/rdannoyed"]):not([href|="/rdscared"]):not([href|="/raritysad"]):not([href|="/rdhuh"]):not([href|="/rdsalute"]):not([href*="/r/"]) {
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-}*/
-
-
 a[href|="/swagintosh"],a[href|="/a24"],a[href|="/rswagintosh"],a[href|="/ra24"]{background-position:0 0 !important}
 
 a[href|="/twipride"],a[href|="/a01"],a[href|="/rtwipride"],a[href|="/ra01"],a[href|="/ajcower"],a[href|="/b01"],a[href|="/rajcower"],a[href|="/rb01"],a[href|="/twismug"],a[href|="/c01"],a[href|="/rtwismug"],a[href|="/rc01"],a[href|="/lyra"],a[href|="/l00"],a[href|="/e01"],a[href|="/rlyra"],a[href|="/rl00"],a[href|="/re01"],a[href|="/f01"], a[href|="/diamondtiara"], a[href|="/dt"], a[href|="/rf01"], a[href|="/rdiamondtiara"], a[href|="/rdt"], a[href|="/rapathia"],.flair-pinkiepie,.side .md table tr:nth-of-type(3) td:nth-of-type(2):after
@@ -1123,23 +1100,6 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 .flair-cmcopti:hover {background-position: -300% -100%}
 .flair-cmcorsch {background-position: -300% -100%}
 .flair-cmcorsch:hover {background-position: -300% -100%}
-
-/*.flair-cmchaz {background-position: 0 -2000%}
-.flair-cmchaz:hover {background-position: 0 -2000%}
-.flair-cmclinker {background-position: 0 -2000%}
-.flair-cmclinker:hover {background-position: 0 -2000%}
-.flair-cmclanky {background-position: 0 -2000%}
-.flair-cmclanky:hover {background-position: 0 -2000%}
-.flair-cmcmouse {background-position: 0 -2000%}
-.flair-cmcmouse:hover {background-position: 0 -2000%}
-.flair-cmcchinchy {background-position: 0 -2000%}
-.flair-cmcchinchy:hover {background-position: 0 -2000%}
-.flair-cmcspokes {background-position: 0 -2000%}
-.flair-cmcspokes:hover {background-position: 0 -2000%}
-.flair-cmcopti {background-position: 0 -2000%}
-.flair-cmcopti:hover {background-position: 0 -2000%}
-.flair-cmcorsch {background-position: 0 -2000%}
-.flair-cmcorsch:hover {background-position: 0 -2000%}*/
 
 table tr td:first-child {width:14px}
 
@@ -1486,34 +1446,18 @@ body:not(.moderator) div.content .flairselectbtn
  top:-1px;
 }
 
-/*OC flair*/
-.linkflair-oc .linkflairlabel {display:none;}
-.linkflair-oc p.title:before
+.linkflair-fecontent .linkflairlabel {display:none;}
+.linkflair-fecontent p.title:before
 {
- content:"";
+ content:"FUTURE EPISODE CONTENT";
+ font-size:12px;
+ color:#888;
+ border:1px solid #888;
+ border-radius:3px;
  position:relative;
- top:3px;
+ padding:0px 2px;
  margin-right:2px;
- display:inline-block;
- width:16px;
- height:16px;
- background-image:url(%%OC-book%%);
-}
-
-/*OC flair and also spoilers in title*/
-.linkflair-ocspoiler .linkflairlabel {display:none;}
-.linkflair-ocspoiler p.title a.title {opacity:0;}
-.linkflair-ocspoiler p.title a.title:hover {opacity:100;}
-.linkflair-ocspoiler p.title:before
-{
- content:"";
- position:relative;
- top:3px;
- margin-right:2px;
- display:inline-block;
- width:16px;
- height:16px;
- background-image:url(%%OC-book%%);
+ top:-1px;
 }
 
 /*Equestria Girls Spoiler in title flair*/
@@ -1532,7 +1476,6 @@ body:not(.moderator) div.content .flairselectbtn
  margin-right:2px;
  top:-1px;
 }
-
 
 /*Comic Spoilers in the title flair*/
 .linkflair-comictitlespoiler .linkflairlabel {display:none;}
@@ -1599,17 +1542,16 @@ body:not(.moderator) div.content .flairselectbtn
 .md .RESUserTag, .md .RESUserTag + a.voteWeight, .md .RESUserTag + a.voteWeight + div.SuperRedditAltTextDisplay_Text
 {display:none !important;}
 
-/*Linker's attempt at a new link flair*/
-
+/*Meta Discussion Link Flair*/
 .linkflair-metathread div p.title span.linkflairlabel{display:none;}
 .linkflair-metathread p.title a.title {color:#FF4500 !important;} 
 
+/*Announcement Link Flair*/
 .linkflair-announcement div p.title span.linkflairlabel{display:none;}
 .linkflair-announcement p.title a.title {color:#A8273D !important;}
 
+/*Live Thread Link Flair*/
 .linkflair-livethread p.title a.title {color:#9A7D2E !important;}
-
-/*End Linker's shenanigans*/
 
 /*Unverified Link Flair*/
 div.content .linkflair-unverified .title
@@ -1667,6 +1609,61 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
  top:14px;
  left:-6px;
 }
+
+/*Spoiler-tag notification*/
+
+.post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:before {
+    position: absolute;
+    content: "Is this about the new episode?  If so, please spoiler-tag it!";
+    background: orangered;
+    color: #ffffff;
+    margin-top: 1.5em;
+    margin-left: -10em;
+    height: 1.5em;
+    padding: 0 .5em;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 3px;
+}
+.post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 .5em 1em;
+    border-color: transparent transparent orangered;
+    margin-top: 1.6em;
+    margin-left: -2.2em;
+    content: '';
+    position: absolute;
+}
+.post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:hover:before {
+    position: absolute;
+    content: "This notification will disappear after 10 minutes.";
+    background: #c0392b;
+    color: #ffffff;
+    margin-top: 1.5em;
+    margin-left: -10em;
+    height: 1.5em;
+    padding: 0 .5em;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 3px;
+}
+.post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:hover:after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 .5em 1em;
+    border-color: transparent transparent #c0392b;
+    margin-top: 1.6em;
+    margin-left: -2.2em;
+    content: '';
+    position: absolute;
+}
+
+
 .thing.self .entry{padding-left:14px}
 a.thumbnail.self{margin-right:-14px}
 .thing.self .md{overflow:visible!important}
@@ -1811,27 +1808,6 @@ div.content{margin-top:15px}
     opacity: 100 !important;
 }
 
-/*Sidebar image*/
-/*
-.side .usertext a[href="http://goo.gl/UQQ9I5"] {
-    background-image: url(%%join-the-cccc%%);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    display: block;
-    position: absolute;
-    right: 5px;
-    top: 115px;
-    height: 412px;
-    width: 300px;
-    z-index: 900;
-}
-
-
-.side{
-    padding-top: 416px;
-}
-*/
-
 div.thing.id-t1_ckgwu85 a[href|="/nmm"] {
 background-image: url(%%cmotes%%) !important;
 background-position: -300% -400% !important;
@@ -1868,9 +1844,3 @@ div.bottom span.author:after {
 }
 
 .md sup {line-height: inherit}
-
-#header-bottom-left {
-    background-image: url(%%65k-banner%%);
-    background-repeat: no-repeat;
-    background-position: 98% 100%;
-}

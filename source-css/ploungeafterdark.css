@@ -1054,7 +1054,7 @@ padding: 7px 0px 7px 40px;
     left: 0;
     right: 0;
     bottom: 0;
-    background: #FFF url(%%padheader%%) 50% 0;
+    background: #FFF url(%%newheader%%) no-repeat 50% 0;
 }
 #header-img,
 #header .tabmenu {
@@ -1126,13 +1126,62 @@ a.author[href$=shellbullet17]:before {
     content: "The Doctor";
     font-size: 11px;
 }
+
+a.author[href$="Synes7hesia"] {
+font-size:0!important; 
+     overflow:hidden; 
+     display:inline-block; 
+     content: "";
+}
+a.author[href$="Synes7hesia"]:before {
+     font-size:10px!important; 
+     visibility:visible!important; 
+     content: "Syn "
+}
+
+a.author[href$="GoldenNeko"] {
+font-size:0!important; 
+     overflow:hidden; 
+     display:inline-block; 
+     content: "";
+}
+
+a.author[href$="GoldenNeko"]:before {
+     font-size:11px!important; 
+     visibility:visible!important; 
+     content: "Tenth-Gear "
+}
+a.author[href$=NtmrMoon] {
+font-size: 0 !important;
+    overflow: hidden;
+    display: inline-block;
+    content: ""
+}
+
+a.author[href$=NtmrMoon]:before {
+    content: "Woonie";
+    font-size: 11px;
+}
+/*
+a.author[href$="Morichalion"] {
+font-size:0!important; 
+     overflow:hidden; 
+     display:inline-block; 
+     content: "";
+}
+
+a.author[href$="Morichalion"]:before {
+     font-size:10px!important; 
+     visibility:visible!important; 
+     content: "fuckhat "
+}
+*/
     
-a.author[href$="Drawlestia"]:after{content:" - Created the Header!"}
-a.author[href$="NtmrMoon"]:after{color: #D6B52F; content:" - Costume Contest Winner Halloween 2014"}
+a.author[href$="ponytron5000"]:after{content:" - Created the Header!"}
+a.author[href$="Woonie"]:after{color: #D6B52F; content:" - Costume Contest Winner Halloween 2014"}
 a.author[href$="willowmvp227"]:after{color: #D6B52F; content:" - Costume Contest Winner Halloween 2014"}
 a.author[href$="SeatieBelt"]:after{content:" + __brony__ best ship"}
 a.author[href$="__brony__"]:after{content:" + SeatieBelt best ship"}
-a.author[href$="VerifJess"]:after{content:" - Has the best butt"}
 
 /*greentext*/
 .md blockquote {
@@ -1236,5 +1285,3 @@ a[href*="Captain_Awesomex"]{background:0;-webkit-animation:rainbow .4s linear in
 
 
 /*End of every comment random filly*/
-
-

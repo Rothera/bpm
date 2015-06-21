@@ -10,9 +10,6 @@ background-position:0 0;
 }
 #header-img.default-header:hover, #header-img:hover {
 background-position:-1696px 0;
--webkit-transition:background 0.6s steps(16);
--moz-transition:background 0.6s steps(16);
--o-transition:background 0.6s steps(16);
 transition:background 0.6s steps(16);
 }
 
@@ -86,12 +83,7 @@ background: #a0b7ff;
 border: none;
 height:20px;
 padding-top:20px;
--webkit-border-radius: 3px;
--moz-border-radius: 3px;
 border-radius: 3px;
--webkit-transition: background 0.5s;
--moz-transition: background 0.5s;
--o-transition: background 0.5s;
 transition: background 0.5s;
 }
 .morelink:hover {
@@ -101,9 +93,6 @@ background: #484fe4;
 color: #000440;
 height:auto;
 transform:translateY(-50%);
--webkit-transition: color 0.25s;
--moz-transition: color 0.25s;
--o-transition: color 0.25s;
 transition: color 0.25s;
 }
 .morelink:hover a {
@@ -125,8 +114,6 @@ background-image:url(%%cutie-mark-silhouette%%);
 background-position:center center;
 background-size:0px 0px;
 background-repeat:no-repeat;
--webkit-border-radius: 3px 0 0 3px;
--moz-border-radius: 3px 0 0 3px;
 border-radius: 3px 0 0 3px;
 transition-duration:0.75s;
 }
@@ -150,8 +137,6 @@ background-size:0px 0px;
 background-repeat:no-repeat;
 border-left:solid 1px;
 border-color:#8097df;
--webkit-border-radius: 0 3px 3px 0;
--moz-border-radius: 0 3px 3px 0;
 border-radius: 0 3px 3px 0;
 transition-duration:0.85s;
 }
@@ -173,14 +158,9 @@ left:-420px!important;
 #searchexpando {
 margin-top:0px;
 background-color:#ecf0ff;
-border-top:0px;
--webkit-border-radius:0 0 3px 3px;
--moz-border-radius:0 0 3px 3px;
-border-radius:0 0 3px 3px;
+border:0px;
+border-radius:0 0 5px 5px;
 border-color:gray;
--webkit-transition:1s background;
--moz-transition:1s background;
--o-transition:1s background;
 transition:1s background;
 }
 #searchexpando:hover {
@@ -188,17 +168,24 @@ background-color:#f0e2ff;
 }
 #search input[type="text"] {
 outline-width:0px;
--webkit-border-radius:2px;
--moz-border-radius:2px;
-border-radius:2px;
+border-radius:4px;
+border:0px;
+background:#dee5ff;
 }
 #search input[type="text"]:focus {
--webkit-border-radius:2px 2px 0 0;
--moz-border-radius:2px 2px 0 0;
-border-radius:2px 2px 0 0;
+border-radius:4px 4px 0 0;
 }
 #moresearchinfo {
 border-width:0px!important;
+}
+#search input[type="text"]::-moz-placeholder {
+color:rgb(91, 126, 255);
+}
+#search input[type="text"]::-webkit-input-placeholder {
+color:rgb(91, 126, 255);
+}
+#search input[type="text"]::-ms-input-placeholder {
+color:rgb(91, 126, 255);
 }
 
 /*---subButtons style---*/
@@ -215,8 +202,6 @@ color:#000440;
 margin-right:0px;
 }
 .res .side .subscribe-button .option {
--webkit-border-radius:3px 0 0 3px;
--moz-border-radius:3px 0 0 3px;
 border-radius:3px 0 0 3px;
 width:68px;
 }
@@ -225,8 +210,6 @@ width:68px;
 background:#a0b7ff;
 color:#000440;
 margin-right:0px;
--webkit-border-radius:0;
--moz-border-radius:0;
 border-radius:0;
 border-width:1px 0 1px 0;
 width:68px;
@@ -239,14 +222,39 @@ color:#29162a;
 .subButtons .RESDashboardToggle {
 background:#a0b7ff;
 color:#000440;
--webkit-border-radius:0 3px 3px 0;
--moz-border-radius:0 3px 3px 0;
 border-radius:0 3px 3px 0;
 width:68px;
 }
 .subButtons .RESDashboardToggle.remove {
 background:#c58cc8;
 color:#29162a;
+}
+
+
+/*===easter egg===*/
+
+#baconBit {
+height:90px;
+width:84px;
+background:url(%%easteregg%%);
+background-position:0 0;
+left:-84px;
+bottom:0px;
+top:auto;
+-webkit-animation:trot 640ms steps(15) 0s infinite;
+animation:trot 640ms steps(15) 0s infinite;
+transition-duration:6s;
+}
+
+@keyframes trot {
+from {background-position:0 0;}
+to {background-position:-1260px 0;}
+}
+
+div#baconBit.makeitrain {
+top:auto;
+bottom:0px;
+transform:none;
 }
 
 

@@ -731,6 +731,15 @@ a[href|="/snuffles"] {
     background-image: url(%%Pspritesheet%%) !important
     }
 
+a[href|="/randyrules"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 138px;
+	background-position: -0px -643px;
+    background-image: url(%%Pspritesheet%%) !important
+    }
 
 /*Side Bar*/
 
@@ -777,7 +786,7 @@ a[href|="/snuffles"] {
     font-size: 0pt;
     display: block
     }
-.sidecontentbox a.author[href$="/Tenth-Gear"]:before {
+.sidecontentbox a.author[href$="/GoldenNeko"]:before {
     content: "Grand Overpie";
     font-size: 10pt;
     color: #369;
@@ -785,7 +794,7 @@ a[href|="/snuffles"] {
     margin-right: 0.5em;
     overflow: hidden
     }
-.sidecontentbox a.author[href$="/Tenth-Gear"] {
+.sidecontentbox a.author[href$="/GoldenNeko"] {
     content: "";
     color: white;
     font-size: 0pt;
@@ -818,3 +827,24 @@ a[href|="/snuffles"] {
 .sidecontentbox .voteWeight, .sidecontentbox .userTagLink {
     display: none !important
     }
+
+a.author[href$=PM_me_ur_RainbowDash] {
+font-size: 0 !important;
+    overflow: hidden;
+    display: inline-block;
+    content: ""
+}
+a.author[href$=PM_me_ur_RainbowDash]:before {
+    content: "PM_me_ur_PinkiePie";
+    font-size: 11px;
+}
+a.author[href$=NtmrMoon] {
+font-size: 0 !important;
+    overflow: hidden;
+    display: inline-block;
+    content: ""
+}
+a.author[href$=NtmrMoon]:before {
+    content: "Woonie";
+    font-size: 11px;
+}

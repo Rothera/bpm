@@ -285,13 +285,17 @@ a.author[href$="nekoningen"] {
     }
 a.author[href$="nekoningen"]:before {
     content: "Captain Jack Fenderson";
-    font-size: 10px !important;
+    font-size: 12px !important;
     background-color: transparent;
     }
 a.author[href$="nekoningen"]:after {
-    content: ", Saint of the Blasphemous Word";
-    font-size: 10px !important;
+    content: ", Saint of  Incoherent Babbling";
+    font-size: 12px !important;
     background-color: transparent;
+    }
+
+a.author[href$="DinsFire64"]:after {
+    content: " has a pervcam in M.A. Larsons house.";
     }
 
 a.author[href$="Zovistograt"]:after {
