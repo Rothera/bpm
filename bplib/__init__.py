@@ -50,6 +50,10 @@ def image_download_url(url):
         bucket = url[2] + ".thumbs.redditmedia.com"
         filename = url[27:]
         return "https://s3.amazonaws.com/%s/%s" % (bucket, filename)
+    elif re.match(r"https://s3.amazonaws.com/[a-z]\.thumbs\.redditmedia\.com/", url):
+        bucket = url[25] + ".thumbs.redditmedia.com"
+        filename = url[50:]
+        return "https://s3.amazonaws.com/%s/%s" % (bucket, filename)
     else:
         print("Warning: Don't know how to rewrite URL:", url)
         return url
@@ -62,6 +66,10 @@ def clean_image_url(url):
     elif re.match(r"//[a-z]\.thumbs\.redditmedia\.com/", url):
         bucket = url[2]
         filename = url[27:]
+        return "redditmedia-%s-%s" % (bucket, filename)
+    elif re.match(r"https://s3.amazonaws.com/[a-z]\.thumbs\.redditmedia\.com/", url):
+        bucket = url[25]
+        filename = url[50:]
         return "redditmedia-%s-%s" % (bucket, filename)
     else:
         print("Warning: Don't know how to rewrite URL:", url)
