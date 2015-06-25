@@ -128,6 +128,7 @@ Subreddits:
 - ploungeafterdark
 - ploungemafia
 - ponyanarchism
+- ponycountdown
 - ponyloungerts
 - ponymotes
 - ponymotesextra
@@ -200,6 +201,17 @@ Generation:
             CSS: {"color": "white!important"}
             Type: Custom
     - /spoiler: [+drop, +formatting, +hidden]
+
+  # Dynamic, off-reddit image.
+  - - MergeEmotes
+    - r/ponycountdown
+    - /countdown:
+        Emotes:
+          "":
+            Image: "https://ponycountdown.com/countdown-s.png"
+            Offset: [0, 0]
+            Size: [300, 60]
+    - /countdown: [+misc]
 
 Sorting:
 - [r/mylittlepony, "*"] # Not actually used, but a good failsafe
