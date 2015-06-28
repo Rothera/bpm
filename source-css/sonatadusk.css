@@ -27,7 +27,6 @@
 
 /*** Rating Tags ***/
 
-
 .nsfw-stamp { color: #5f99cf }
 
 .nsfw-stamp acronym {
@@ -70,6 +69,10 @@
 /*** Theme ***/
 
 #header-img { margin-bottom: -2px }
+
+.side h6 del { color: inherit }
+.side sup:nth-of-type(1) { padding-left: 40px }
+.side .usertext-body ul a { font-weight: bold }
 
 body { background: url(%%background%%) no-repeat center }
 body.wiki-page { background: none }
@@ -526,6 +529,18 @@ a[href|="/rsonataooh"],a[href|="/rsdooh"]
 
 a[href|="/lostsonata"],a[href|="/lostsd"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponysonata-sheet%%)!important; background-position: -0% -400%;}
+
+a[href|="/sonatateehee"],a[href|="/sdteehee"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponysonata-sheet%%)!important; background-position: -100% -400%;}
+
+a[href|="/nervoussonata"],a[href|="/nervoussd"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponysonata-sheet%%)!important; background-position: -200% -400%;}
+
+a[href|="/sonatahmmm"],a[href|="/sdhmmm"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponysonata-sheet%%)!important; background-position: -300% -400%;}
+
+a[href|="/sonatasad"],a[href|="/sdsad"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponysonata-sheet%%)!important; background-position: -0% -600%;}
 
 a[href|="/wmsonata"],a[href|="/wmsd"]
 {display:block;clear:none;float:left;width:174px;height:200px;background-image:url(%%wmsonata%%)!important; background-position: 0 0;}

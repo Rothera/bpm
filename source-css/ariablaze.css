@@ -29,7 +29,6 @@
 
 /*** Rating Tags ***/
 
-
 .nsfw-stamp { color: #5f99cf }
 
 .nsfw-stamp acronym {
@@ -73,12 +72,17 @@
 
 #header-img { margin-bottom: -2px }
 
+.side h6 del { color: inherit }
+.side sup:nth-of-type(1) { padding-left: 40px }
+.side .usertext-body ul a { font-weight: bold }
+
 .subscribers .word, .users-online .word { display: none }
 .subscribers .number:after { content: " want to win it" }
 .users-online .number:after { content: " going all in it" }
 
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important }
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }
+.sidecontentbox .helplink+.title+.content li:nth-of-type(6n) { display: none }
 
 /*** Comments ***/
 
@@ -483,6 +487,18 @@ a[href|="/rariaponyshrug"],a[href|="/rabpshrug"]
 
 a[href|="/lostaria"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -200% -200%;}
+
+a[href|="/nervousaria"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -300% -200%;}
+
+a[href|="/ariawhat"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: 0 -400%;}
+
+a[href|="/ariague"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -100% -400%;}
+
+a[href|="/ariasad"]
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -200% -400%;}
 
 a[href|="/wmaria"],a[href|="/wmab"]
 {display:block;clear:none;float:left;width:174px;height:200px;background-image:url(%%wmaria%%)!important; background-position: 0 0;}

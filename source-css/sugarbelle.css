@@ -4,9 +4,11 @@
 #header-img.default-header, #header-img {
 height:144px;
 width:106px;
-margin-bottom:-31px;
+margin-bottom:-34px;
 background:url(%%header%%);
 background-position:0 0;
+box-sizing: border-box;
+padding-left:106px;
 }
 #header-img.default-header:hover, #header-img:hover {
 background-position:-1696px 0;
@@ -67,6 +69,7 @@ content:" eating muffins";
 .side .titlebox .usertext-body ul:nth-of-type(1) li {
 position:relative;
 text-align:right;
+list-style-type:none;
 }
 .side .titlebox .usertext-body ul:nth-of-type(1) li a {
 position:absolute;

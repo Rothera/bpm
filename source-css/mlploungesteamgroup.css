@@ -1,22 +1,5 @@
 /* Stylesheet shamelessly and lazily copied from other subs (DC note; Not anymore fuckers) */
 
-/*DoomedCivilian Has made the following changes;
-DC01 - Removed.
-DC02 - Removal of downvote arrow. and addition of Catvotes.
-DC03 - Sidebar fuckery (Search removed, created by removed, creat new subreddit removed, mod names changed)
-10Feb2013 - Formating of code considerably improved. Except for macros.
-20Feb2013 - Catvotes ported to res-nightmode. !important; fixes everything
-20Feb2013 - Considerable changes to the res-nightmode flags. Changes should mostly effect it. Plounge Chat logo is now visible on the sidebar.
-DC04 - Someone requested an increase in Roseluck. Submit buttons are now changed.
-DC05 - Announcement bar created
-24Feb2013 - Name change system changed
-08Mar2013 - Announcement bar updated to allow links
-13Apr2013 - Removed suffix from moderation box
-DC06 - Bannercat hover
-28July2013 - Bannercat hover merged into imgmap
-
-
-*/
 
 /* Sub Name Change*/
 .titlebox .word {
@@ -937,6 +920,15 @@ a[href|="/roseluck3"] {
     }
 
 a[href|="/uplestia"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 125px;
+    height: 98px;
+    background-image: url(%%emotesquare%%) !important;
+    background-position: -300px -350px;
+    }
+a[href|="/doomedcivilian"] {
     display: block;
     clear: none;
     float: left;
