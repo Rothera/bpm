@@ -129,6 +129,8 @@ div#header-bottom-left ul.tabmenu {
   font-size: 10pt !important; content: "Delinquents"
 }
 
+.sidecontentbox .helplink+.title+.content li:nth-of-type(6n) { display: none }
+
 .side {
    padding: 0 10px;
    width: 320px;
@@ -681,6 +683,9 @@ a[href|="/cadence"],a[href|="/cadance"],a[href|="/princesscadance"],a[href|="/pr
 
 .flair-doublediamond
 {background-position:-200% -2000%}
+
+.flair-troubleshoes
+{background-position:-200% -2100%}
 
 .flair-roidrage
 {background-position:-200% -2200%}

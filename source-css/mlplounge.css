@@ -1,8 +1,8 @@
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Background Ploungers "}
+div.titlebox .subscribers span.number:after {content:" Grand Plounge Summit Attendees"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " In the spotlight " }
+div.titlebox p.users-online span.number:after { content: " Giving speeches" }
 div.titlebox p.users-online span.word { display: none }
 
 
@@ -10,23 +10,28 @@ div.titlebox p.users-online span.word { display: none }
 .titlebox strong {font-size: medium;}
 .titlebox .SuperRedditAltTextDisplay_Text{display:none!important}
 .titlebox .expando-button.collapsed.video{display:none!important}
-.sidecontentbox .voteWeight,.sidecontentbox .userTagLink{display:none!important}f
-#search input[type='text']
-/*{
+.sidecontentbox .voteWeight,.sidecontentbox .userTagLink{display:none!important}
+/*#search input[type='text']
+{
  background:url(%%e1tfI%%) top left no-repeat!important;
  padding:13px 2px 13px 50px!important;
  height:22px!important;
  width:110px!important
 }
 */
+
 #searchexpando.infobar 
 {
  background-image:url(%%crackle%%);
  background-repeat:no-repeat;
  background-position:right bottom;
- background-color:transparent;
  border:1px dotted black
 }
+
+#searchexpando.infobar #moresearchinfo {
+    background: url(%%horsewife%%) center center no-repeat transparent;
+}
+
 .sidecontentbox h1{text-align:left}
 
 .sidecontentbox .helplink + .title > h1
@@ -1232,7 +1237,7 @@ a.author[href$="Xeladner"] {font-size:0!important; overflow:hidden; display:inli
 a.author[href$="Xeladner"]:before {font-size:10px!important; visibility:visible!important; content: "WAHAHA~ "}
 
 a.author[href$="theBenger"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
-a.author[href$="theBenger"]:before {font-size:10px!important; visibility:visible!important; content: "theBenger: Bird Vs Camel "}
+a.author[href$="theBenger"]:before {font-size:10px!important; visibility:visible!important; content: "theBeenger: Bird Vs Camel "}
 
 a.author[href$="Peacefulzealot"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="Peacefulzealot"]:before {font-size:10px!important; visibility:visible!important; content: "ZellyBelly "}

@@ -65,12 +65,17 @@
 
 #header-img { margin: 2px 0px -2px 2px }
 
+.side h6 del { color: inherit }
+.side sup:nth-of-type(1) { padding-left: 40px }
+.side .usertext-body ul a { font-weight: bold }
+
 .subscribers .word, .users-online .word { display: none }
 .subscribers .number:after { content: " don't know that they fell" }
 .users-online .number:after { content: " under her spell" }
 
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important }
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }
+.sidecontentbox .helplink+.title+.content li:nth-of-type(6n) { display: none }
 
 /*** Comments ***/
 
@@ -495,7 +500,7 @@ a[href|="/adagiobattle"], a[href|="/radagiobattle"], a[href|="/adbattle"], a[hre
 a[href|="/awkwardadagio"], a[href|="/rawkwardadagio"], a[href|="/awkwardad"], a[href|="/rawkwardad"] { background-position: -70px -140px; }
 a[href|="/adagiofacepalm"], a[href|="/radagiofacepalm"], a[href|="/adfacepalm"], a[href|="/radfacepalm"] { background-position: -140px -140px; }
 
-a[href|="/adagiosmile"], a[href|="/adsmile"], a[href|="/adagiolook"], a[href|="/adlook"], a[href|="/confidentadagio"], a[href|="/confidentad"], a[href|="/adagiorage"], a[href|="/adrage"], a[href|="/adagioponyshrug"], a[href|="/adpshrug"], a[href|="/adagiohmmm"], a[href|="/adhmmm"] {
+a[href|="/adagiosmile"], a[href|="/adsmile"], a[href|="/adagiolook"], a[href|="/adlook"], a[href|="/confidentadagio"], a[href|="/confidentad"], a[href|="/adagiorage"], a[href|="/adrage"], a[href|="/adagioponyshrug"], a[href|="/adpshrug"], a[href|="/adagiohmmm"], a[href|="/adhmmm"], a[href|="/adagiowhat"], a[href|="/adwhat"], a[href|="/adagiolean"], a[href|="/adlean"], a[href|="/adagioright"], a[href|="/adright"], a[href|="/adagiosad"], a[href|="/adsad"] {
   display: block;
   clear: none;
   float: left;
@@ -524,6 +529,10 @@ a[href|="/confidentadagio"], a[href|="/rconfidentadagio"], a[href|="/confidentad
 a[href|="/adagiorage"], a[href|="/adrage"], a[href|="/radagiorage"], a[href|="/radrage"] { background-position: -210px -0px; }
 a[href|="/adagioponyshrug"], a[href|="/adpshrug"], a[href|="/radagioponyshrug"], a[href|="/radpshrug"] { background-position: -0px -70px; }
 a[href|="/adagiohmmm"], a[href|="/adhmmm"] { background-position: -70px -70px; }
+a[href|="/adagiowhat"], a[href|="/adwhat"] { background-position: -140px -70px; }
+a[href|="/adagiolean"], a[href|="/adlean"] { background-position: -210px -70px; }
+a[href|="/adagioright"], a[href|="/adright"] { background-position: -0px -140px; }
+a[href|="/adagiosad"], a[href|="/adsad"] { background-position: -70px -140px; }
 
 a[href|="/adagiostanding"], a[href|="/adstanding"], a[href|="/radagiostanding"], a[href|="/radstanding"] {
   display: block;
