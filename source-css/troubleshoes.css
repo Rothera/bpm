@@ -235,7 +235,7 @@ a[href|="/priceless"],a[href|="/rpriceless"],a[href|="/ppboring"],a[href|="/rppb
   background-position:-100% 0;
 }
 
-a[href|="/celestiamad"],a[href|="/rcelestiamad"],a[href|="/ajsly"],a[href|="/rajsly"],a[href|="/twismile"],a[href|="/rtwismile"],a[href|="/bonbon"],a[href|="/rbonbon"],.flair-rarity,.side .md table tr:nth-of-type(3) td:nth-of-type(2):after {
+a[href|="/celestiamad"],a[href|="/rcelestiamad"],a[href|="/ajsly"],a[href|="/rajsly"],a[href|="/twismile"],a[href|="/rtwismile"],a[href|="/bonbon"],a[href|="/rbonbon"],a[href|="/troublecoltdetermined"],a[href|="/tscdetermined"],.flair-rarity,.side .md table tr:nth-of-type(3) td:nth-of-type(2):after {
   background-position:-100% -100%;
 }
 
@@ -319,7 +319,7 @@ a[href|="/flutterjerk"],a[href|="/rflutterjerk"],a[href|="/rarityyell"],a[href|=
   background-position:-200% 0;
 }
 
-a[href|="/twicrazy"],a[href|="/rtwicrazy"],a[href|="/eeyup"],a[href|="/reeyup"],a[href|="/twistare"],a[href|="/rtwistare"],a[href|="/spitfire"],a[href|="/rspitfire"],.flair-trixie,.side .md table tr:nth-of-type(3) td:nth-of-type(3):after {
+a[href|="/twicrazy"],a[href|="/rtwicrazy"],a[href|="/eeyup"],a[href|="/reeyup"],a[href|="/twistare"],a[href|="/rtwistare"],a[href|="/spitfire"],a[href|="/rspitfire"],a[href|="/troublecoltgasp"],a[href|="/tscgasp"],.flair-trixie,.side .md table tr:nth-of-type(3) td:nth-of-type(3):after {
   background-position:-200% -100%;
 }
 
@@ -408,7 +408,7 @@ a[href|="/flutterroll"],a[href|="/rflutterroll"],a[href|="/fluttershy"],a[href|=
   background-position:-300% 0;
 }
 
-a[href|="/spikemeh"],a[href|="/rspikemeh"],a[href|="/rdsmile"],a[href|="/rrdsmile"],a[href|="/changeling"],a[href|="/rchangeling"],a[href|="/lunamad"],a[href|="/rlunamad"],.flair-cmc,.flair-cmcchinchy,.side .md table tr:nth-of-type(3) td:nth-of-type(4):after {
+a[href|="/spikemeh"],a[href|="/rspikemeh"],a[href|="/rdsmile"],a[href|="/rrdsmile"],a[href|="/changeling"],a[href|="/rchangeling"],a[href|="/lunamad"],a[href|="/rlunamad"],a[href|="/troublecoltmeh"],a[href|="/tscmeh"],.flair-cmc,.flair-cmcchinchy,.side .md table tr:nth-of-type(3) td:nth-of-type(4):after {
   background-position:-300% -100%;
 }
 
@@ -607,7 +607,7 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
   text-align:center;
 }
 
-a[href|="/troubleshoes"],a[href|="/tsc"],a[href|="/hauntedtroubleshoes"],a[href|="/hauntedtsc"],a[href|="/troubleshoessad"],a[href|="/tscsad"],a[href|="/troubleshoesmad"],a[href|="/tscmad"],a[href|="/troublecoltexcited"],a[href|="/tscexcited"] {
+a[href|="/troubleshoes"],a[href|="/tsc"],a[href|="/hauntedtroubleshoes"],a[href|="/hauntedtsc"],a[href|="/troubleshoessad"],a[href|="/tscsad"],a[href|="/troubleshoesmad"],a[href|="/tscmad"],a[href|="/troublecoltexcited"],a[href|="/tscexcited"],a[href|="/troublecoltdetermined"],a[href|="/tscdetermined"],a[href|="/troublecoltgasp"],a[href|="/tscgasp"],a[href|="/troublecoltmeh"],a[href|="/tscmeh"] {
   display:block;
   clear:none;
   float:left;
@@ -623,6 +623,24 @@ a[href|="/troublecoltlasso"],a[href|="/tsclasso"] {
   width:141px;
   height:150px;
   background-image:url(%%TS2%%)!important;
+}
+
+a[href|="/troubleshoestrot"],a[href|="/tsctrot"] {
+  display:block;
+  clear:none;
+  float:left;
+  width:116px;
+  height:128px;
+  background-image:url(%%tstrot%%)!important;
+}
+
+a[href|="/troubleshoesidle"],a[href|="/tscidle"] {
+  display:block;
+  clear:none;
+  float:left;
+  width:98px;
+  height:122px;
+  background-image:url(%%tsidle%%)!important;
 }
 
 .side .md table tbody tr:nth-of-type(odd) td:after {content:"";width:70px;display:block}
