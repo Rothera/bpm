@@ -428,7 +428,7 @@ body a[href="/spoiler"]:hover{color:white!important}
  margin: -15px 2px 1px;
 }
 
-li.rounded.nsfw-stamp.stamp {
+li.rounded.nsfw-stamp.stamp, .nsfw-stamp {
  color: #5F99CF;
 }
 
@@ -436,6 +436,10 @@ li.rounded.nsfw-stamp.stamp {
  border:#5F99CF 1px solid!important;
  padding:0px;
  margin-right: 3px;
+}
+
+.combined-search-page .search-result .search-result-meta .nsfw-stamp {
+ line-height: 2em;
 }
 
 noindex:-o-prefocus, .nsfw-stamp acronym {
@@ -754,12 +758,12 @@ a[href|="/rswagintosh"],a[href|="/ra24"]
 }
 
 a[href|="/flutterfear"],a[href|="/b00"],a[href|="/ppboring"],a[href|="/b10"],a[href|="/rarityyell"],a[href|="/b20"],a[href|="/fluttershy"],a[href|="/b30"],a[href|="/ajcower"],a[href|="/b01"],a[href|="/ajsly"],a[href|="/b11"],a[href|="/eeyup"],a[href|="/bigmac"],a[href|="/b21"],a[href|="/rdsmile"],a[href|="/b31"],a[href|="/fluttersrs"],a[href|="/b02"],a[href|="/raritydress"],a[href|="/b12"],a[href|="/takealetter"],a[href|="/b22"],a[href|="/rdwut"],a[href|="/b32"],a[href|="/ppshrug"],a[href|="/b03"],a[href|="/spikenervous"],a[href|="/newrainbowdash"],a[href|="/b13"],a[href|="/noooo"],a[href|="/b23"],a[href|="/dj"],a[href|="/threedog"],a[href|="/b33"],a[href|="/fluttershh"],a[href|="/b04"],a[href|="/flutteryay"],a[href|="/b14"],a[href|="/squintyjack"],a[href|="/b24"],a[href|="/spikepushy"],a[href|="/b34"],a[href|="/ajugh"],a[href|="/b05"],a[href|="/raritywut"],a[href|="/b15"],a[href|="/dumbfabric"],a[href|="/b25"],a[href|="/raritywhy"],a[href|="/b35"],a[href|="/trixiesmug"],a[href|="/b06"],a[href|="/flutterwink"],a[href|="/b16"],a[href|="/rarityannoyed"],a[href|="/b26"],a[href|="/soawesome"],a[href|="/b36"],a[href|="/ajwut"],a[href|="/b07"],a[href|="/twisquint"],a[href|="/b17"],a[href|="/raritywhine"],a[href|="/b27"],a[href|="/rdcool"],a[href|="/b37"],a[href|="/abwut"],a[href|="/b08"],a[href|="/manspike"],a[href|="/b18"],a[href|="/cockatrice"],a[href|="/b28"],a[href|="/facehoof"],a[href|="/b38"],a[href|="/rarityjudge"],a[href|="/b09"],a[href|="/rarityprimp"],a[href|="/b19"],a[href|="/twirage"],a[href|="/b29"],a[href|="/ppseesyou"],a[href|="/b39"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%bmotes%%)!important;
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%bmotes-bs%%)!important;
     cursor: default;
 }
 
 a[href|="/rflutterfear"],a[href|="/rb00"],a[href|="/rppboring"],a[href|="/rb10"],a[href|="/rrarityyell"],a[href|="/rb20"],a[href|="/rfluttershy"],a[href|="/rb30"],a[href|="/rajcower"],a[href|="/rb01"],a[href|="/rajsly"],a[href|="/rb11"],a[href|="/reeyup"],a[href|="/rbigmac"],a[href|="/rb21"],a[href|="/rrdsmile"],a[href|="/rb31"],a[href|="/rfluttersrs"],a[href|="/rb02"],a[href|="/rraritydress"],a[href|="/rb12"],a[href|="/rtakealetter"],a[href|="/rb22"],a[href|="/rrdwut"],a[href|="/rb32"],a[href|="/rppshrug"],a[href|="/rb03"],a[href|="/rspikenervous"],a[href|="/rnewrainbowdash"],a[href|="/rb13"],a[href|="/rnoooo"],a[href|="/rb23"],a[href|="/rdj"],a[href|="/rthreedog"],a[href|="/rb33"],a[href|="/rfluttershh"],a[href|="/rb04"],a[href|="/rflutteryay"],a[href|="/rb14"],a[href|="/rsquintyjack"],a[href|="/rb24"],a[href|="/rspikepushy"],a[href|="/rb34"],a[href|="/rajugh"],a[href|="/rb05"],a[href|="/rraritywut"],a[href|="/rb15"],a[href|="/rdumbfabric"],a[href|="/rb25"],a[href|="/rraritywhy"],a[href|="/rb35"],a[href|="/rtrixiesmug"],a[href|="/rb06"],a[href|="/rflutterwink"],a[href|="/rb16"],a[href|="/rrarityannoyed"],a[href|="/rb26"],a[href|="/rsoawesome"],a[href|="/rb36"],a[href|="/rajwut"],a[href|="/rb07"],a[href|="/rtwisquint"],a[href|="/rb17"],a[href|="/rraritywhine"],a[href|="/rb27"],a[href|="/rrdcool"],a[href|="/rb37"],a[href|="/rabwut"],a[href|="/rb08"],a[href|="/rmanspike"],a[href|="/rb18"],a[href|="/rcockatrice"],a[href|="/rb28"],a[href|="/rfacehoof"],a[href|="/rb38"],a[href|="/rrarityjudge"],a[href|="/rb09"],a[href|="/rrarityprimp"],a[href|="/rb19"],a[href|="/rtwirage"],a[href|="/rb29"],a[href|="/rppseesyou"],a[href|="/rb39"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%bmotes%%)!important;
+{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%bmotes-bs%%)!important;
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
@@ -1107,7 +1111,7 @@ table tr td:first-child {width:14px}
 .side .md table:nth-of-type(1) th:nth-of-type(1):after {content:"a";}
 .side .md table:nth-of-type(1) tr:nth-of-type(odd) td + td:after {background-image:url(%%amotes%%);}
 .side .md table:nth-of-type(2) th:nth-of-type(1):after {content:"b";}
-.side .md table:nth-of-type(2) tr:nth-of-type(odd) td + td:after {background-image:url(%%bmotes%%);}
+.side .md table:nth-of-type(2) tr:nth-of-type(odd) td + td:after {background-image:url(%%bmotes-bs%%);}
 .side .md table:nth-of-type(3) th:nth-of-type(1):after {content:"c";}
 .side .md table:nth-of-type(3) tr:nth-of-type(odd) td + td:after {background-image:url(%%cmotes%%);}
 .side .md table:nth-of-type(4) th:nth-of-type(1):after {content:"e";}
@@ -1191,7 +1195,6 @@ table tr td:first-child {width:14px}
 .side .md h2
 {
  width:290px;
- color:black;
  font-weight:normal;
  font-size:12px;
  border:1px solid #CCC;
@@ -1428,7 +1431,8 @@ body:not(.moderator) div.content .flairselectbtn
 }
 
 /*Future Spoilers in the title flair*/
-.linkflair-fespoiler .linkflairlabel {display:none;}
+/*
+/*.linkflair-fespoiler .linkflairlabel {display:none;}
 .linkflair-fespoiler p.title a.title {opacity:0;}
 .linkflair-fespoiler p.title a.title:hover {opacity:100;}
 .post-linkflair-comicsspoiler .footer-parent {background:url(%%spacing%%) 95% 90% no-repeat}
@@ -1444,6 +1448,27 @@ body:not(.moderator) div.content .flairselectbtn
  padding:0px 2px;
  margin-right:2px;
  top:-1px;
+}*/
+
+span.linkflairlabel[title="Future episode spoilers"]{display:none;}
+span.linkflairlabel[title="Future episode spoilers"] + a.title {opacity:0;}
+span.linkflairlabel[title="Future episode spoilers"] + a.title:hover {opacity:100;}
+.post-linkflair-comicsspoiler .footer-parent {background:url(%%spacing%%) 95% 90% no-repeat}
+.span.linkflairlabel[title="Comic Spoilers"]{display:none;}
+span.linkflairlabel[title="Future episode spoilers"]
+{
+ font-size: 12px;
+ color:#888;
+ border:1px solid #888;
+ border-radius:3px;
+ position:relative;
+ padding:0px 2px;
+ margin-right:2px;
+ top:-1px;
+ background: #fff;
+ text-transform: uppercase;
+ display: inline;
+ overflow: visible;
 }
 
 .linkflair-fecontent .linkflairlabel {display:none;}
@@ -1610,7 +1635,7 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
  left:-6px;
 }
 
-/*Spoiler-tag notification*/
+Spoiler-tag notification
 
 .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:before {
     position: absolute;
@@ -1662,6 +1687,7 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
     content: '';
     position: absolute;
 }
+
 
 
 .thing.self .entry{padding-left:14px}

@@ -1806,25 +1806,23 @@ input[value="t3_xy2aw"] + div.usertext-body .SuperRedditAltTextDisplay_Text {
   background:0px -170px!important;
 }
 
-.nsfw-stamp { color: #5f99cf }
-
-.nsfw-stamp acronym {
-  display: inline-block;
-  font-size: 0px !important;
-  letter-spacing: 0px;
-  overflow: hidden;
-  vertical-align: bottom;
-  margin-bottom:-1px ;
-  content: "";
+.nsfw-stamp {
+  color: #5f99cf;
+  padding: 0px 3px !important;
 }
 
-.nsfw-stamp acronym:after {
+.nsfw-stamp acronym{
+  display: inline-block;
+  font-size: 0px !important;
+}
+
+.nsfw-stamp acronym:after{
   color: #336699 !important;
   content: "PG" !important;
   display: block;
   font-size: x-small !important;
   text-decoration: none;
-  margin:-14px 2px 1px;
+  margin-top: -14px;
 }
 
 .marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"] {

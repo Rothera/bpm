@@ -1,13 +1,3 @@
-/* temporary spoilers */
-.thing[data-fullname="t3_341hp2"] .entry a.title { font-size:0 !important; }
-.thing[data-fullname="t3_341hp2"] .entry a.title::before { font-size: medium !important; content: "SPOILER team of SPOILER school "; }
-.thing[data-fullname="t3_37lhh4"] .entry a.title { font-size:0 !important; }
-.thing[data-fullname="t3_37lhh4"] .entry a.title::before { font-size: medium !important; content: "SPOILER school's SPOILER team by Uotapo "; }
-.thing[data-fullname="t3_38n7d6"] .entry a.title { font-size:0 !important; }
-.thing[data-fullname="t3_38n7d6"] .entry a.title::before { font-size: medium !important; content: "ACTIVITYing Sunset Shimmer by Yuse-ART "; }
-.thing[data-fullname="t3_3aomqf"] .entry a.title { font-size:0 !important; }
-.thing[data-fullname="t3_3aomqf"] .entry a.title::before { font-size: medium !important; content: "Wondercolt TEAM PRACTICE by Amante "; }
-
 /* Sidebar fixes */
 
 .sidecontentbox .flair {display:none}
@@ -54,14 +44,6 @@
  content: "";
  margin-left: -5px;
  font-size: 1px!important
-}
-
-.sidecontentbox .more:before
-{
- color: #ac1280;
- float: left;
- margin-top: -4px;
- content: "FringePioneer"
 }
 
 /*header*/
@@ -628,12 +610,52 @@ textarea {
     font-family:'lucida grande',Helvetica,Arial,sans-serif;
 }
 
-/*borrowed from /r/mylittlepony*/
-.marknsfw-button a[href="#"],.unmarknsfw-button a[href="#"]{font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px;content:""}.unmarknsfw-button a[href="#"]:before,.marknsfw-button a[href="#"]:before{font-size:10px!important;display:block;letter-spacing:normal;content:"spoiler";}.unmarknsfw-button a[href="#"]:before{content:"un-spoiler";height:15px;}
+/* rating tags */
 
-.nsfw-stamp { color: #5f99cf }
+.nsfw-stamp {
+  color: #5f99cf;
+  padding: 0px 3px !important;
+}
 
-.nsfw-stamp acronym{display:inline-block;font-size:0px!important;letter-spacing:0px;overflow:hidden;vertical-align:bottom;margin-bottom:-1px;content:""}.nsfw-stamp acronym:after{color:#336699!important;content:"SPOILER"!important;display:block;font-size:x-small!important;text-decoration:none;font-family:Helvetica,Arial,sans-serif;margin:-15px 2px 1px;}div.over18 .entry .buttons .first{padding-left:0px}
+.nsfw-stamp acronym{
+  display: inline-block;
+  font-size: 0px !important;
+  border: 0;
+}
+
+.nsfw-stamp acronym:after{
+  color: #336699 !important;
+  content: "SPOILER" !important;
+  display: block;
+  font-size: x-small !important;
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-top: -14px;
+}
+
+.marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"] {
+  font-size: 0px !important;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  letter-spacing: -20px;
+  content: "";
+}
+
+.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before {
+  font-size: 9px !important;
+  display: block;
+  letter-spacing: normal;
+  content:"spoiler";
+}
+
+.unmarknsfw-button a[href="#"]:before { content:"un-spoiler" }
+
+.linkflair-titlespoiler .linkflairlabel { display: none }
+.linkflair-titlespoiler p.title a.title { opacity: 0 }
+.linkflair-titlespoiler p.title a.title:hover { opacity: 1 }
+.linkflair-titlespoiler p.title:before { content: "[SPOILER] " }
+.flairselector .linkflairlabel { display: unset }
 
 /*emote table styling*/
 
