@@ -108,7 +108,7 @@ function init_css(store) {
 function main() {
     log_info("Starting up");
     setup_browser({"prefs": 1, "customcss": 1}, function(store) {
-        if(document.location && document.location.hostname && (ends_with(document.location.hostname, "reddit.com") || ends_with(document.location.hostname, "voat.co"))) {
+        if(document.location && document.location.hostname && (is_reddit || is_voat)) {
             reddit_main(store);
         } else {
             global_main(store);

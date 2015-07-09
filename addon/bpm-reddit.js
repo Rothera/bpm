@@ -128,9 +128,9 @@ function block_click(store, event) {
  */
 function run_reddit(store, expand_emotes) {
     init_search_box(store);
-    if (ends_with(document.location.hostname, "reddit.com")) {
+    if (is_reddit) {
         var usertext_edits = slice(document.getElementsByClassName("usertext-edit"));
-    } else if (ends_with(document.location.hostname, "voat.co")) {
+    } else if (is_voat) {
         var usertext_edits = slice(document.getElementsByClassName("markdownEditor"));
     }
     inject_emotes_button(store, usertext_edits);
@@ -178,9 +178,9 @@ function run_reddit(store, expand_emotes) {
             }
 
             // TODO: move up in case we're inside it?
-            if (ends_with(document.location.hostname, "reddit.com")) {
+            if (is_reddit) {
                 var usertext_edits = slice(root.getElementsByClassName("usertext-edit"));
-            } else if (ends_with(document.location.hostname, "voat.co")) {
+            } else if (is_voat) {
                 var usertext_edits = slice(root.getElementsByClassName("markdownEditor"));
             }
             inject_emotes_button(store, usertext_edits);

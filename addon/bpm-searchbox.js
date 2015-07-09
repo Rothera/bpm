@@ -88,7 +88,7 @@ function inject_search_box() {
             '<a id="bpm-sb-helplink" href="javascript:void(0)">help</a> | ',
             '<a id="bpm-sb-optionslink" href="javascript:void(0)">bpm options</a>',
             '<span id="bpm-sb-resize"></span>',
-            '<a id="bpm-sb-srlink" href="http://reddit.com/r/betterponymotes">/r/betterponymotes</a>',
+            '<a id="bpm-sb-srlink" href="https://www.reddit.com/r/betterponymotes">/r/betterponymotes</a>',
           '</div>',
         '</div>',
         '<div id="bpm-global-icon" title="Hold Ctrl (Command/Meta) to drag"></div>'
@@ -154,7 +154,7 @@ function init_search_ui(store) {
     // Listen for keypresses and adjust search results. Delay 500ms after
     // end of typing to make it more responsive.
     var timeout = null;
-    if (ends_with(document.location.hostname, "voat.co")) {
+    if (is_voat) {
         sb_input.classList.add("form-control");
     }
     sb_input.addEventListener("input", catch_errors(function(event) {
@@ -473,8 +473,8 @@ function inject_emotes_button(store, usertext_edits) {
             if(is_compact) {
                 // Blend in with the other mobile buttons
                 button.classList.add("newbutton");
-            } else if(ends_with(document.location.hostname, "voat.co")) {
-                button.classList.add("voatbutton");
+            } else if(is_voat) {
+                button.classList.add("bpm-search-toggle-voat");
             }
             button.textContent = "emotes";
             // Since we come before the save button in the DOM, we tab first,
@@ -490,7 +490,7 @@ function inject_emotes_button(store, usertext_edits) {
             // this breaks rather badly on .compact display (sort of merging
             // into it), so do something different there.
             // If on voat, do something completely different.
-            if (ends_with(document.location.hostname, "reddit.com")) {
+            if (is_reddit) {
                 if(is_compact) {
                     var button_bar = find_class(usertext_edits[i], "usertext-buttons");
                     button_bar.insertBefore(button, find_class(button_bar, "status"));
@@ -498,7 +498,7 @@ function inject_emotes_button(store, usertext_edits) {
                     var bottom_area = find_class(usertext_edits[i], "bottom-area");
                     bottom_area.insertBefore(button, bottom_area.firstChild);
                 }
-            } else if (ends_with(document.location.hostname, "voat.co")) {
+            } else if (is_voat) {
                 var editbar = find_class(usertext_edits[i], "markdownEditorMainMenu");
                 editbar.appendChild(button);
             }

@@ -57,3 +57,14 @@ var DOMAIN_BLACKLIST = [
     "panelbase.net", // Reported conflict; cause unknown
     "fimfiction.net"
 ];
+
+ 
+// Used to determine which domain BPM is running on.
+// This affects button injection and some css classes.
+var is_reddit = false;
+var is_voat = false;
+if (ends_with(document.location.hostname, "reddit.com")) {
+    is_reddit = true;
+} else if (ends_with(document.location.hostname, "voat.co")) {
+    is_voat = true;
+}
