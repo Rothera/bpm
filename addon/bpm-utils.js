@@ -81,10 +81,15 @@ if(self.on) {
     platform = "firefox-ext";
 } else if(find_global("chrome") && chrome.extension) {
     platform = "chrome-ext";
+} else if(find_global("safari") && window.name === "") {
+    platform = "safari-ext";
 } else {
     log_error("Unknown platform! Your installation is badly broken.");
     platform = "unknown";
     // may as well just die at this point; nothing will actually work
+    // For some reason Safari doesn't behave properly when frames get involved.
+    // I'll continue to investigate, but for now it will just have to keep
+    // spitting out errors for each frame in the document.
 }
 
 log_debug("Platform:", platform);

@@ -2,6 +2,7 @@
 **
 ** This file is part of BetterPonymotes.
 ** Copyright (c) 2012-2015 Typhos.
+** Copyright (c) 2015 TwilightShadow1.
 **
 ** This program is free software: you can redistribute it and/or modify it
 ** under the terms of the GNU Affero General Public License as published by
@@ -41,6 +42,8 @@ var bpm_utils = {
             return "firefox-ext";
         } else if(_bpm_global("chrome") !== undefined && chrome.extension !== undefined) {
             return "chrome-ext";
+        } else if(_bpm_global("safari")) {
+            return "safari-ext";
         } else {
             console.log("BPM: ERROR: Unknown platform!");
             return "unknown";
@@ -137,6 +140,30 @@ case "chrome-ext":
         }
     });
     break;
+        
+    case "safari-ext":
+        bpm_utils.copy_properties(bpm_browser, {
+            _send_message: function(method, data) {
+                if(data === undefined) {
+                    data = {};
+                }
+                data["method"] = method;
+                safari.self.tab.dispatchMessage(data.method, data);
+            },
+            
+            _message_handler: safari.self.addEventListener("message", function(message) {
+                 switch(message.message.method) {
+                     case "prefs":
+                         bpm_prefs.got_prefs(message.message.prefs);
+                         break;
+                     
+                     default:
+                         console.log("BPM: ERROR: Unknown request from Safari background script: '" + message.message.method + "'");
+                         break;
+                 }
+             }, false),
+        });
+        break;
 
 default:
     // Assume running in some context where we'll have a parent extension

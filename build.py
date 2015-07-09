@@ -190,6 +190,7 @@ def target(*names):
 def default(ctx):
     fx_package(ctx)
     cr_package(ctx)
+    sf_package(ctx)
     gen_update_manifests(ctx)
     gen_exports(ctx)
     update_www(ctx)
@@ -287,6 +288,40 @@ def cr_package(ctx):
     if newer(glob.glob("build/chrome/*"), ["build/chrome.zip"]):
         zip = ctx.zip("build/chrome.zip", "build/chrome/", compression=zipfile.ZIP_STORED)
         zip.write(KeyFile, "key.pem")
+
+@target("sf-package", "build/BPM.safariextension") # Have to break naming conventions so that I can upgrade the old users
+def sf_package(ctx):
+    ctx.mkdir("build/BPM.safariextension")
+    build_script(ctx)
+    build_data(ctx)
+
+    with ctx.cd(dest="build/BPM.safariextension"):
+        ctx.filter("addon/sf-Info.plist", dest="Info.plist")
+        ctx.copy("addon/sf-Settings.plist", "Settings.plist")
+        ctx.copy("addon/sf-background.html", "background.html")
+        ctx.copy("addon/sf-background.js", "background.js")
+
+        ctx.copy("build/betterponymotes.js")
+        ctx.copy("build/bpm-resources.js")
+        ctx.copy("build/emote-classes.css")
+        ctx.copy("build/gif-animotes.css")
+
+        ctx.copy("addon/pref-setup.js")
+        ctx.copy("addon/bpmotes.css")
+        ctx.copy("addon/combiners-nsfw.css")
+        ctx.copy("addon/extracss-pure.css")
+        ctx.copy("addon/extracss-webkit.css")
+        ctx.copy("addon/options.html")
+        ctx.copy("addon/options.css")
+        ctx.copy("addon/options.js")
+        ctx.copy("addon/bootstrap.css")
+        ctx.copy("addon/jquery-1.8.2.js")
+    
+        ctx.copy("addon/icons/sf-Icon-64.png", "Icon-64.png")
+        ctx.copy("addon/icons/sf-Icon-128.png", "Icon-128.png")
+
+    if newer(glob.glob("build/BPM.safariextension/*"), ["build/BPM.safariextension.zip"]):
+        ctx.zip("build/BPM.safariextension.zip", "build/BPM.safariextension/", compression=zipfile.ZIP_STORED)
 
 @target("update-manifests", "build/betterponymotes.update.rdf")
 def gen_update_manifests(ctx):

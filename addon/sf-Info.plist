@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>TwilightShadow1</string>
+	<key>Builder Version</key>
+	<string>10600.6.3</string>
+	<key>CFBundleDisplayName</key>
+	<string>BetterPonymotes</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.TwilightShadow1.bpm</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>/*{{version}}*/</string>
+	<key>CFBundleVersion</key>
+	<string>/*{{version}}*/</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Database Quota</key>
+		<real>5242880</real>
+		<key>Global Page</key>
+		<string>background.html</string>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>betterponymotes.js</string>
+			</array>
+			<key>Start</key>
+			<array>
+				<string>jquery-1.8.2.js</string>
+				<string>bpm-resources.js</string>
+			</array>
+		</dict>
+		<key>Stylesheets</key>
+		<array>
+			<string>bpmotes.css</string>
+		</array>
+	</dict>
+	<key>Description</key>
+	<string>BetterPonymotes emote viewer created by Typhos, ported by TwilightShadow1</string>
+	<key>DeveloperIdentifier</key>
+	<string>3RZVGR9PCD</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://carson-shook.github.io/BetterPonymotes-for-Safari/UpdateManifest.plist</string>
+	<key>Website</key>
+	<string>http://carson-shook.github.io/BetterPonymotes-for-Safari</string>
+</dict>
+</plist>
