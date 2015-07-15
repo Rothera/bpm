@@ -176,7 +176,7 @@ def cmd_diff(args):
     parser = argparse.ArgumentParser(description="Run diff program on stylesheets, emotes, and tags", prog="diff")
     args = parser.parse_args(args)
 
-    p1 = subprocess.Popen(["git", "diff", "-U10", "minified-css", "source-css", "emotes", "tags"], stdout=subprocess.PIPE)
+    p1 = subprocess.Popen(["git", "diff", "-U1", "minified-css", "source-css", "emotes", "tags"], stdout=subprocess.PIPE)
     p2 = subprocess.Popen(["kompare", "-"], stdin=p1.stdout, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 def cmd_commit(args):

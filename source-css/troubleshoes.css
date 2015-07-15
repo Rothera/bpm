@@ -23,6 +23,48 @@ div.titlebox .users-online span.number:after {content:" causing trouble..."}
   width: 100%;
 }
 
+/* Vote Buttons */
+
+.arrow.up { 
+  background: url(%%VB%%) -15px  0px;
+  height: 18px;
+  width: 15px; 
+}
+
+.arrow.upmod { 
+  background: url(%%VB%%) 0px 0px;
+  height: 18px; 
+  width: 15px;  
+}
+
+.arrow.downmod { 
+  background: url(%%VB%%) -30px 0px;
+  height: 18px; 
+  width: 15px;  
+}
+
+.arrow.down {
+  background: url(%%VB%%) -45px 0px;
+  height: 18px; 
+  width: 15px;
+}
+
+.arrow.down:hover:before {
+  position: absolute;
+  display: block;
+  z-index: 1000;
+  width: 85px;
+  content: "Just mah lot in life, I s'pose"; 
+  padding: 5px;
+  border: 0px solid #333;
+  text-align: center;
+  font-size: 10px;
+  color: #bcc1af;
+  background: #352225;
+  font-weight: bold;
+  margin: 5px auto auto 25px;
+}
+
 /* Tabs */
 
 div#header-bottom-left ul.tabmenu {
@@ -46,6 +88,82 @@ margin-right: -50%;
 -o-transform: translate(-50%, 0);
 transform: translate(-50%, 0);
 transition: 0.4s ease opacity;
+}
+
+/*Sidebar Buttons*/
+
+body:not(.listing-page) .morelink {
+  border-color: #291919!important;
+  border-radius: 2px!important;
+  background: none transparent;
+  background-color: #FFC46C;
+  background:-webkit-linear-gradient(#b3d58c, #71a970)!important;
+  background:-moz-linear-gradient(#b3d58c, #71a970)!important;
+  background:-ms-linear-gradient(#b3d58c, #71a970)!important;
+  background:-o-linear-gradient(#b3d58c, #71a970)!important;
+  background:linear-gradient(#B3D58C, #71A970)!important;
+  color: #F3DC87;
+}
+
+body:not(.listing-page) .morelink a {
+  color: #F0F0F0!important;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+body .morelink {
+  padding: 4px 10px;
+  border-color: #291919!important;
+  border-radius: 2px!important;
+  background: none transparent;
+  background-color: #FFC46C;
+  background:-webkit-linear-gradient(#b3d58c, #71a970)!important;
+  background:-moz-linear-gradient(#b3d58c, #71a970)!important;
+  background:-ms-linear-gradient(#b3d58c, #71a970)!important;
+  background:-o-linear-gradient(#b3d58c, #71a970)!important;
+  background:linear-gradient(#B3D58C, #71A970)!important;
+  color: #fff;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+body .morelink:hover,
+body:not(.listing-page) .morelink:hover {
+  border-color: #291919!important;
+  background: none transparent;
+  background-color: #FFC46C;
+  background:-webkit-linear-gradient(#bbff79, #3cbb3f)!important;
+  background:-moz-linear-gradient(#bbff79, #3cbb3f)!important;
+  background:-ms-linear-gradient(#bbff79, #3cbb3f)!important;
+  background:-o-linear-gradient(#bbff79, #3cbb3f)!important;
+  background:linear-gradient(#BBFF79, #3CBB3F)!important;
+  color: #fff;
+}
+
+body .morelink a {
+  color: #F0F0F0!important;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 2px #0f0f0f;
+}
+
+body .morelink .nub,
+body .morelink:hover .nub,
+body .disabled .morelink .nub,
+body .disabled .morelink:hover .nub {
+  background: none transparent!important;
+}
+
+body .disabled .morelink,
+body .disabled .morelink:hover {
+  border: #F0F0F0!important;
+  background: #eee none !important;
+}
+
+body .disabled .morelink a,
+body .disabled .morelink a:hover {
+  color: #aaa!important;
+  text-shadow: none!important;
+  cursor: default!important;
 }
 
 /* Flair Settings */

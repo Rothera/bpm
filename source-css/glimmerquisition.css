@@ -260,3 +260,25 @@ a[href|="/starlightfrench"] {
   width: 70px;
   background-position: -70px -405px;
 }
+
+a[href|="/moondancersaywhat"], a[href|="/moondancersmile"], a[href|="/moondancerfrown"] {
+  float: left;
+  display: block;
+  height: 70px;
+  background-image: url(%%md1%%);
+}
+
+a[href|="/moondancersaywhat"] {
+  width: 70px;
+  background-position: 0 0;
+}
+
+a[href|="/moondancersmile"] {
+  width: 70px;
+  background-position: -70px 0;
+}
+
+a[href|="/moondancerfrown"] {
+  width: 70px;
+  background-position: -140px 0;
+}

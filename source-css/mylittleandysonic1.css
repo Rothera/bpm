@@ -20,7 +20,7 @@
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%MLASINATOR%%) 50% 0px !important;
+   background: url(%%bannercontest55%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -335,7 +335,7 @@ font-weight: 700;
 }
 .flair:after
 {
-background-image: url(%%flairsheet%%);
+background-image: url(%%flairsheetn%%);
 background-position: 0px 0px;
 content: "";
 display: inline-block;
@@ -576,6 +576,7 @@ background-repeat: no-repeat;
 .flair-chino:after { background-position: 0px -6900px }
 .flair-xelnaga:after { background-position: 0px -6930px }
 .flair-Alvin086:after { background-position: 0px -6960px }
+.flair-DoomKey:after { background-position: 0px -6990px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: #222!important; }
@@ -602,7 +603,7 @@ a[href|='/bigmad'] {width:120px; height:152px; background-position: -0px -0px}
     color: black;
     border: 0;
     border-radius: 0;
-    background-image: url(%%flairsheet%%);
+    background-image: url(%%flairsheetn%%);
     background-repeat: no-repeat;
     display: inline-block;
     width: 30px;
@@ -738,7 +739,8 @@ a.author[href$=lefthandedspatula],
 a.author[href$=gremlinpower],
 a.author[href$=Doktor_Elcaro],
 a.author[href$=The_Assistant],
-a.author[href$=topkekbestkek]
+a.author[href$=topkekbestkek],
+a.author[href$=DoomKey]
 
 { 
 font-size:0!important; 
@@ -867,7 +869,8 @@ a.author[href$=lefthandedspatula]:before,
 a.author[href$=gremlinpower]:before,
 a.author[href$=Doktor_Elcaro]:before,
 a.author[href$=The_Assistant]:before,
-a.author[href$=topkekbestkek]:before
+a.author[href$=topkekbestkek]:before,
+a.author[href$=DoomKey]:before
 
 {
 font-size:10px!important; 
@@ -993,6 +996,7 @@ a.author[href$=gremlinpower]:before { content:"Lampasaurus" }
 a.author[href$=Doktor_Elcaro]:before { content:"get pretty coggler pony to change my name on the sub via his hilariously outdated css" }
 a.author[href$=The_Assistant]:before { content:"SuperAtomica" }
 a.author[href$=topkekbestkek]:before { content:"Partypoops McFlaccid" }
+a.author[href$=DoomKey]:before { content:"Scarfsickle" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -1002,7 +1006,7 @@ background:none;
 color:#000; 
 border:0; 
 border-radius:0; 
-background-image:url(%%flairsheet%%); 
+background-image:url(%%flairsheetn%%); 
 background-position:0 -630px; 
 background-repeat:no-repeat; 
 display:inline-block; 
@@ -1090,7 +1094,8 @@ a.author[href$=rawrcharlierawr]:after,
 a.author[href$=SiliconeLube]:after,
 a.author[href$=YesterdaysVoid]:after,
 a.author[href$=Solidus_Tripsy]:after,
-a.author[href$=RAINBOW_PONY_SEMEN]:after
+a.author[href$=RAINBOW_PONY_SEMEN]:after,
+a.author[href$=DoomKey]:after
 
 {
 color:#000; 
@@ -1180,6 +1185,7 @@ a.author[href$=SiliconeLube]:after { content:" the Sexualizer" }
 a.author[href$=YesterdaysVoid]:after { content:" ~ Drank Celestia's Coughsyrup" }
 a.author[href$=Solidus_Tripsy]:after { content:" touches all the butts"; color:brown }
 a.author[href$=RAINBOW_PONY_SEMEN]:after { content:" GODDESS OF NO FUN"; color:pink }
+a.author[href$=DoomKey]:after { content:" Paid for these changes with furry art" }
 
 /* Any pre/post-name flair stuff goes here */ 
 
@@ -1199,7 +1205,7 @@ a.author[href$=RAINBOW_PONY_SEMEN]:after { content:" GODDESS OF NO FUN"; color:p
     color: black;
     border: 0;
     border-radius: 0;
-    background-image: url(%%flairsheet%%);
+    background-image: url(%%flairsheetn%%);
     background-repeat: no-repeat;
     display: inline-block;
     width: 30px;

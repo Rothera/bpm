@@ -1,96 +1,161 @@
-/*** In Memoriam ***/
+/*** Thumbnails ***/
 
-.bottom .author { font-size: 0; }
-.bottom .author:after {
-    font-size: x-small !important;
-    content: "therosebudpony";
-    color: #369;
+.thumbnail:empty { background-image: url(%%thumbnails%%) !important }
+.thumbnail.self { background-position: -0px -120px !important }
+.thumbnail.nsfw { visibility: hidden !important }
+.thumbnail.default { background-position: -0px -70px !important }
+
+.linkflair-spoilers .thumbnail img { display: none }
+
+.linkflair-spoilers .thumbnail {
+  background-image: url(%%thumbnails%%) !important;
+  height: 70px;
+  background-position: 0 0 !important;
 }
+
+.linkflair-spoilers[data-fullname$="d"] .thumbnail, .linkflair-spoilers[data-fullname$="i"] .thumbnail,
+.linkflair-spoilers[data-fullname$="s"] .thumbnail, .linkflair-spoilers[data-fullname$="c"] .thumbnail,
+.linkflair-spoilers[data-fullname$="e"] .thumbnail, .linkflair-spoilers[data-fullname$="n"] .thumbnail,
+.linkflair-spoilers[data-fullname$="t"] .thumbnail, .linkflair-spoilers[data-fullname$="a"] .thumbnail { background-position: -0px -170px !important }
+
+.linkflair-spoilers .thumbnail.self { height: 64px !important }
+
+
+/*** Rating Tags ***/
+
+.nsfw-stamp {
+  color: #5f99cf;
+  padding: 0px 3px !important;
+}
+
+.nsfw-stamp acronym{
+  display: inline-block;
+  font-size: 0px !important;
+}
+
+.nsfw-stamp acronym:after{
+  color: #336699 !important;
+  content: "PG" !important;
+  display: block;
+  font-size: x-small !important;
+  text-decoration: none;
+  margin-top: -14px;
+}
+
+.marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"] {
+  font-size: 0px !important;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  letter-spacing: -20px;
+  content: "";
+}
+
+.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before {
+  font-size: 9px !important;
+  display: block;
+  letter-spacing: normal;
+  content:"tag PG";
+}
+
+.unmarknsfw-button a[href="#"]:before { content:"un-tag PG" }
 
 /*** Theme ***/
 
+.bottom .author { font-size: 0; }
+.bottom .author:after {
+  font-size: x-small !important;
+  content: "therosebudpony";
+  color: #369;
+}
+
 #header-bottom-left { background-color: #fff798; }
 
-body { 
-    background: url(%%colt%%) 
-    no-repeat fixed center center;
-}
+body { background: url(%%colt%%) no-repeat fixed center center }
 
 .side { width: 304px !important; }
 
-.subscribers .word, .users-online .word { display:none; }
-.subscribers .number:after { content: " party planners"; }
-.users-online .number:after { content: " having a party"; }
+.side h6 del { color: inherit }
+.side sup:nth-of-type(1) { padding-left: 40px }
+.side .usertext-body ul a { font-weight: bold }
 
-.footer-parent:after { content: url(%%cutiemark%%); }
+.subscribers .word, .users-online .word { display: none }
+.subscribers .number:after { content: " party planners" }
+.users-online .number:after { content: " having a party" }
+
+.footer-parent:after { content: url(%%cutiemark%%) }
+
+.sidecontentbox .helplink + .title h1 { font-size: 0 !important }
+.sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "MODERATORS" }
+.sidecontentbox .helplink+.title+.content li:nth-of-type(4n) { display: none }
 
 /*** Style Buttons ***/
 
 .titlebox .fancy-toggle-button a, span.RESshortcutside,
 span.RESshortcutside:hover, span.RESDashboardToggle {
-   color:#663300;
-   background:#FFFF66;
-   border:1px solid #FFFFFF;
+ color:#663300;
+ background:#FFFF66;
+ border:1px solid #FFFFFF;
 }
 
 .fancy-toggle-button a.remove, .subButtons span.remove { background: #FF9933; }
 
 .morelink {
-    font-family: Verdana, Arial, sans-serif; 
-    font-size: 16px; 
-    font-weight: normal;
-    letter-spacing: 0;
-    background: #FFCC99;
-    border: none;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -o-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -khtml-border-radius: 2px;
-    border-radius: 2px;
-    height: 30px;
-    width: 145px;
-    line-height: 30px;
-    overflow: hidden;
-    color: #000000;
+  font-family: Verdana, Arial, sans-serif; 
+  font-size: 16px; 
+  font-weight: normal;
+  letter-spacing: 0;
+  background: #FFCC99;
+  border: none;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
+  height: 30px;
+  width: 145px;
+  line-height: 30px;
+  overflow: hidden;
+  color: #000000;
 }
 
 .morelink:hover {
-    background: #FFFFFF;
-    background-color: #FFFFCC;
-    border-color: #FFFFFF;
+  background: #FFFFFF;
+  background-color: #FFFFCC;
+  border-color: #FFFFFF;
 }
 
 .morelink .nub { display: none; }
 
 .sidebox.submit-link .morelink::before {
-    display: block;
-    clear: none;
-    content: "Submit a Link";
-    font-size: 100%;
+  display: block;
+  clear: none;
+  content: "Submit a Link";
+  font-size: 100%;
 }
 
 .sidebox.submit-text .morelink::before {
-    display: block;
-    clear: none;
-    content: "Submit a Self Post";
-    font-size: 100%;
+  display: block;
+  clear: none;
+  content: "Submit a Self Post";
+  font-size: 100%;
 }
 
 .sidebox.submit .morelink a {
-    position: absolute;
-    top: 0;
-    padding-left: 1000px;
-    font-size: 0px;
-    text-align: right;
-    color: #FFFFFF;
+  position: absolute;
+  top: 0;
+  padding-left: 1000px;
+  font-size: 0px;
+  text-align: right;
+  color: #FFFFFF;
 }
 
 .sidebox.submit.submit-link { width: 150px; }
 
 .sidebox.submit.submit-text {
-    margin-top: -42px;
-    margin-left: 153px;
+  margin-top: -42px;
+  margin-left: 153px;
 }
 
 .sidebox.create { display: none; }
@@ -98,92 +163,90 @@ span.RESshortcutside:hover, span.RESDashboardToggle {
 .sidebox.submit.disabled { display: none; }
 
 .res-nightmode .sidebox.submit.submit-text {
-    background: none !important;
-    margin-top: -45px;
-    margin-left: 153px;
+  background: none !important;
+  margin-top: -45px;
+  margin-left: 153px;
 }
 
 .res-nightmode .sidebox {
-    padding-left: 0px !important;
-    border: 2px solid #151515 !important;
+  padding-left: 0px !important;
+  border: 2px solid #151515 !important;
 }
 
 .res-nightmode .morelink {
-    height: 29px !important;
-    background: #606060 !important;
+  height: 29px !important;
+  background: #606060 !important;
 }
 
-/*** Spoiler Tags ***/
+/*** Comments ***/
 
-.nsfw-stamp { color: #5f99cf }
-
-.nsfw-stamp acronym {
-    display: inline-block;
-    font-size: 0px !important;
-    letter-spacing: 0px;
-    overflow: hidden;
-    vertical-align: bottom;
-    margin-bottom:-1px ;
-    content: "";
+a[href|="/sp"] {
+  display: inline-block;
+  padding-right: 100%;
+  width: 0px;
+  height: 0px;
 }
 
-.nsfw-stamp acronym:after {
-    color: #336699 !important;
-    content: "SPOILER" !important;
-    display: block;
-    font-size: x-small !important;
-    text-decoration: none;
-    margin:-14px 2px 1px
+a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
+  float: none !important;
+  display: inline-block !important;
 }
 
-.marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"] {
-    font-size: 0px !important;
-    display: inline-block;
-    vertical-align: top;
-    overflow: hidden;
-    letter-spacing: -20px;
-    content: "";
+a[href|="/spoiler"] {
+  background: #000 !important;
+  color: #000 !important;
 }
 
-.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before {
-    font-size: 9px !important;
-    display: block;
-    letter-spacing: normal;
-    content:"spoiler";
+a[href|="/spoiler"]:hover {
+  color: #fff !important;
 }
 
-.unmarknsfw-button a[href="#"]:before { content:"un-spoiler"; }
+a[href="/s"] {
+  color: #222222; 
+  background: #CCCCCC;
+  cursor: default;
+} 
 
-.thumbnail.nsfw {
-    background-image: url(%%thumbnails%%) !important;
-    background-position: 0px 0px !important;
+a[href="/s"]:hover {
+  color: #8F8F8F 
+} 
+
+a[href="/s"]::after { 
+  content: attr(title);
+  background: #CCCCCC;
+  color: #CCCCCC;
+  padding: 0px 10px 0px 10px;
+}
+
+a[href="/s"]:hover::after {
+  color: black;
 }
 
 /*** Sidebar Emote Tables ***/
 
 .side .md h3 {
-    border: 1px solid #ccc;
-    border-bottom: none;
-    color: #000;
-    background-color: #fff798;
-    padding: 4px;
-    margin: 0;
-    display: inline-block;
-    cursor: pointer;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  color: #000;
+  background-color: #fff798;
+  padding: 4px;
+  margin: 0;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .side .md table {
-    border: 1px solid #ccc !important;
-    margin: 0;
-    padding-bottom: 19px;
-    display: none;
+  border: 1px solid #ccc !important;
+  margin: 0;
+  padding-bottom: 19px;
+  display: none;
 }
 
 .side .md th { display: none; }
 
 .side .md tr,td {
-    border: 1px solid #ccc !important;
-    padding: 0px !important;
+  border: 1px solid #ccc !important;
+  padding: 0px !important;
 }
 
 .side .md h3:nth-of-type(1):hover ~ table:nth-of-type(1),
@@ -198,51 +261,36 @@ span.RESshortcutside:hover, span.RESDashboardToggle {
 .side .md h3:nth-of-type(4):hover ~ table:nth-of-type(4),
 .side .md table:nth-of-type(4):hover { display :table; }
 
-/*** Comments ***/
-
-a[href|="/spoiler"] {
-    background: #000 !important;
-    color: #000 !important;
-}
-
-a[href|="/spoiler"]:hover {
-    color: #fff !important;
-}
-
-a[href|="/sp"] {
-    display: inline-block;
-    padding-right: 100%;
-    width: 0px;
-    height: 0px;
-}
-
 /*** Arrows ***/
 
 .link .arrow.down { visibility: hidden; display: none; }
 
 .arrow.upmod {
-    background-image: url(%%csarrows%%);
-    background-position: -0px -0px;
-    height: 15px;
-    width: 15px;
+  background-image: url(%%csarrows%%);
+  background-position: -0px -0px;
+  height: 15px;
+  width: 15px;
 }
+
 .arrow.downmod {
-    background-image: url(%%csarrows%%);
-    background-position: -0px -15px;
-    height: 15px;
-    width: 15px;
+  background-image: url(%%csarrows%%);
+  background-position: -0px -15px;
+  height: 15px;
+  width: 15px;
 }
+
 .arrow.up {
-    background-image: url(%%csarrows%%);
-    background-position: -0px -30px;
-    height: 15px;
-    width: 15px;
+  background-image: url(%%csarrows%%);
+  background-position: -0px -30px;
+  height: 15px;
+  width: 15px;
 }
+
 .arrow.down {
-    background-image: url(%%csarrows%%);
-    background-position: -0px -45px;
-    height: 15px;
-    width: 15px;
+  background-image: url(%%csarrows%%);
+  background-position: -0px -45px;
+  height: 15px;
+  width: 15px;
 }
 
 /*** Emotes ***/
@@ -252,12 +300,12 @@ a[href|="/sp"] {
 
 a[href|="/cheese"], a[href|="/boneless"], a[href|="/cheesesquint"], a[href|="/cheesestare"], a[href|="/imfine"], a[href|="/cheesechill"], a[href|="/cheesemad"], a[href|="/sarcasticcheese"],
 a[href|="/pentiums"], a[href|="/cheeseponders"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 100px;
-    height: 100px;
-    background-image: url(%%csemotes100a%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 100px;
+  background-image: url(%%csemotes100a%%) !important;
 }
 
 a[href|="/cheese"] { background-position: -0px -0px; }
@@ -272,12 +320,12 @@ a[href|="/pentiums"] { background-position: -200px -200px; }
 a[href|="/cheeseponders"] { background-position: -0px -300px; }
 
 a[href|="/cheeseshock"], a[href|="/cheesethis"], a[href|="/cheesehappy"], a[href|="/cheeseandpinkie"], a[href|="/accordian"], a[href|="/partyhard"], a[href|="/cheesesmile"], a[href|="/cheesehug"], a[href|="/ppcheesehug"], a[href|="/argumentinvalid"], a[href|="/cheeseandtubamouse"], a[href|="/cheesewtf"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 150px;
-    height: 150px;
-    background-image: url(%%csemotes150a%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 150px;
+  height: 150px;
+  background-image: url(%%csemotes150a%%) !important;
 }
 
 a[href|="/cheeseshock"] { background-position:-0px -0px; }
@@ -293,48 +341,43 @@ a[href|="/argumentinvalid"], a[href|="/cheeseandtubamouse"] { background-positio
 a[href|="/cheesewtf"] { background-position: -150px -450px; }
 
 a[href|="/rubberchickendance"] { 
-     background-position: 0px 0px; 
-     display: block; 
-     clear: none; 
-     float: left; 
-     width: 200px; 
-     height: 70px; 
-     background-image: url(%%rubberchickendance%%) !important;
+  background-position: 0px 0px; 
+  display: block; 
+  clear: none; 
+  float: left; 
+  width: 200px; 
+  height: 70px; 
+  background-image: url(%%rubberchickendance%%) !important;
 }
 
 a[href|="/cheeseplay"] { 
-     background-position: 0px 0px; 
-     display: block; 
-     clear: none; 
-     float: left; 
-     width: 84px; 
-     height: 122px; 
-     background-image: url(%%cheeseplay%%) !important;
+  background-position: 0px 0px; 
+  display: block; 
+  clear: none; 
+  float: left; 
+  width: 84px; 
+  height: 122px; 
+  background-image: url(%%cheeseplay%%) !important;
 }
 
 a[href|="/cheeseidle"] { 
-     background-position: 0px 0px; 
-     display: block; 
-     clear: none; 
-     float: left; 
-     width: 106px; 
-     height: 104px; 
-     background-image: url(%%cheeseidle%%) !important;
+  background-position: 0px 0px; 
+  display: block; 
+  clear: none; 
+  float: left; 
+  width: 106px; 
+  height: 104px; 
+  background-image: url(%%cheeseidle%%) !important;
 }
 
 a[href|="/cheesetrot"] { 
-     background-position: 0px 0px; 
-     display: block; 
-     clear: none; 
-     float: left; 
-     width: 110px; 
-     height: 108px; 
-     background-image: url(%%cheesetrot%%) !important;
-}
-
-a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
-    float: none !important;
-    display: inline-block !important;
+  background-position: 0px 0px; 
+  display: block; 
+  clear: none; 
+  float: left; 
+  width: 110px; 
+  height: 108px; 
+  background-image: url(%%cheesetrot%%) !important;
 }
 
 /*** Flairs ***/
@@ -447,3 +490,33 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 .flair-adagiodazzle { background-position: -300% -2300%; }
 .flair-ariablaze { background-position: 0 -2400%; }
 .flair-sonatadusk { background-position: -100% -2400%; }
+
+START-PONYSCRIPT-IGNORE { color: red; }
+
+a[href|="/mirrorportal"] {
+  display: block;
+  clear: none;
+  float:left;
+  width: 59px;
+  height: 112px;
+  background-position: 0 0;
+  background-image: url(%%portal%%) !important;
+}
+
+a[href^="/"][href*="-r-"], a[href^="/"][href$="-r"] { 
+  -webkit-transform:scaleX(-1);
+  -moz-transform:scaleX(-1);
+  -ms-transform:scaleX(-1);
+  -o-transform:scaleX(-1);
+  transform:scaleX(-1);
+}
+
+a[href^="/domain"] {
+  -webkit-transform: unset !important;
+  -moz-transform: unset !important;
+  -ms-transform: unset !important;
+  -o-transform: unset !important;
+  transform: unset !important;
+}
+
+END-PONYSCRIPT-IGNORE { color: red; }
