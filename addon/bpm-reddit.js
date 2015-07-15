@@ -124,11 +124,15 @@ function block_click(store, event) {
 }
 
 /*
- * Main function when running on Reddit.
+ * Main function when running on Reddit or Voat.
  */
 function run_reddit(store, expand_emotes) {
     init_search_box(store);
-    var usertext_edits = slice(document.getElementsByClassName("usertext-edit"));
+    if (is_reddit) {
+        var usertext_edits = slice(document.getElementsByClassName("usertext-edit"));
+    } else if (is_voat) {
+        var usertext_edits = slice(document.getElementsByClassName("markdownEditor"));
+    }
     inject_emotes_button(store, usertext_edits);
 
     // Initial pass- show all emotes currently on the page.
@@ -174,7 +178,11 @@ function run_reddit(store, expand_emotes) {
             }
 
             // TODO: move up in case we're inside it?
-            var usertext_edits = slice(root.getElementsByClassName("usertext-edit"));
+            if (is_reddit) {
+                var usertext_edits = slice(root.getElementsByClassName("usertext-edit"));
+            } else if (is_voat) {
+                var usertext_edits = slice(root.getElementsByClassName("markdownEditor"));
+            }
             inject_emotes_button(store, usertext_edits);
         }
     });

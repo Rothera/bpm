@@ -10,6 +10,7 @@ var is_compact = ends_with(document.location.pathname, ".compact") ||
 // Search box elements
 var sb_container = null;
 var sb_dragbox = null;
+var sb_tagdropdown = null;
 var sb_input = null;
 var sb_resultinfo = null;
 var sb_close = null;
@@ -55,6 +56,7 @@ function inject_search_box() {
         '<div id="bpm-sb-container" tabindex="100">',
           '<div id="bpm-sb-toprow">',
             '<span id="bpm-sb-dragbox"></span>',
+            '<select id="bpm-sb-tagdropdown" onchange="">',
             '<input id="bpm-sb-input" type="search" placeholder="Search"/>',
             '<span id="bpm-sb-resultinfo"></span>',
             '<span id="bpm-sb-close"></span>',
@@ -98,6 +100,7 @@ function inject_search_box() {
     sb_container = document.getElementById("bpm-sb-container");
     sb_dragbox = document.getElementById("bpm-sb-dragbox");
     sb_input = document.getElementById("bpm-sb-input");
+    sb_tagdropdown = document.getElementById("bpm-sb-tagdropdown");
     sb_resultinfo = document.getElementById("bpm-sb-resultinfo");
     sb_close = document.getElementById("bpm-sb-close");
     sb_tabframe = document.getElementById("bpm-sb-tabframe");
@@ -151,6 +154,9 @@ function init_search_ui(store) {
     // Listen for keypresses and adjust search results. Delay 500ms after
     // end of typing to make it more responsive.
     var timeout = null;
+    if (is_voat) {
+        sb_input.classList.add("form-control");
+    }
     sb_input.addEventListener("input", catch_errors(function(event) {
         if(timeout !== null) {
             clearTimeout(timeout);
@@ -232,6 +238,24 @@ function init_search_ui(store) {
         store.prefs.searchBoxInfo[3] = sb_height;
         store.sync_key("searchBoxInfo");
     });
+ 
+    // Set up the tag dropdown menu
+    var option = document.createElement("option");
+    option.value = "";
+    option.text = "Tags";
+    option.setAttribute("selected", null);
+    sb_tagdropdown.add(option);
+    for (var id in store._tag_array) {
+        var option = document.createElement("option");
+        option.value = store._tag_array[id];
+        option.text = option.value.substring(1);
+        sb_tagdropdown.add(option);
+    }
+    sb_tagdropdown.onchange = function(){
+        sb_input.value = sb_input.value + " " + sb_tagdropdown.value;
+        sb_tagdropdown.selectedIndex = "0"
+        update_search_results(store);
+    };
 }
 
 function set_sb_position(left, top) {
@@ -449,6 +473,8 @@ function inject_emotes_button(store, usertext_edits) {
             if(is_compact) {
                 // Blend in with the other mobile buttons
                 button.classList.add("newbutton");
+            } else if(is_voat) {
+                button.classList.add("bpm-search-toggle-voat");
             }
             button.textContent = "emotes";
             // Since we come before the save button in the DOM, we tab first,
@@ -463,12 +489,18 @@ function inject_emotes_button(store, usertext_edits) {
             // way to the right, next to the "formatting help" link. However,
             // this breaks rather badly on .compact display (sort of merging
             // into it), so do something different there.
-            if(is_compact) {
-                var button_bar = find_class(usertext_edits[i], "usertext-buttons");
-                button_bar.insertBefore(button, find_class(button_bar, "status"));
-            } else {
-                var bottom_area = find_class(usertext_edits[i], "bottom-area");
-                bottom_area.insertBefore(button, bottom_area.firstChild);
+            // If on voat, do something completely different.
+            if (is_reddit) {
+                if(is_compact) {
+                    var button_bar = find_class(usertext_edits[i], "usertext-buttons");
+                    button_bar.insertBefore(button, find_class(button_bar, "status"));
+                } else {
+                    var bottom_area = find_class(usertext_edits[i], "bottom-area");
+                    bottom_area.insertBefore(button, bottom_area.firstChild);
+                }
+            } else if (is_voat) {
+                var editbar = find_class(usertext_edits[i], "markdownEditorMainMenu");
+                editbar.appendChild(button);
             }
         }
     }

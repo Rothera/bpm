@@ -4,6 +4,7 @@ function Store() {
     this.custom_css = null; // Accessed by init_css() so not really private
 
     this._sr_array = null;
+    this._tag_array = null;
     this._de_map = null;
     this._we_map = null;
 
@@ -19,6 +20,7 @@ Store.prototype = {
         log_debug("Got prefs");
         this.prefs = prefs;
         this._make_sr_array();
+        this._make_tag_array();
         this._de_map = this._make_emote_map(prefs.disabledEmotes);
         this._we_map = this._make_emote_map(prefs.whitelistedEmotes);
 
@@ -180,6 +182,16 @@ Store.prototype = {
         }
     },
 
+    _make_tag_array: function() {
+        this._tag_array = [];
+        for(var id in tag_id2name) {
+            this._tag_array[id] = tag_id2name[id];
+        }
+        if(this._tag_array.indexOf(undefined) > -1) {
+            log_error("tag_array has holes; installation or prefs are broken!");
+        }
+    },
+ 
     _make_emote_map: function(list) {
         var map = {};
         for(var i = 0; i < list.length; i++) {
