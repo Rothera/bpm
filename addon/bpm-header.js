@@ -55,10 +55,11 @@ var DOMAIN_BLACKLIST = [
     "read.amazon.com", // Reads document.styleSheets and crashes
     "outlook.com", // Reported conflict; cause unknown
     "panelbase.net", // Reported conflict; cause unknown
-    "fimfiction.net"
+    "fimfiction.net",
+    "starnetb.lcc.edu" // Reported conflict
 ];
 
- 
+
 // Used to determine which domain BPM is running on.
 // This affects button injection and some css classes.
 var is_reddit = false;

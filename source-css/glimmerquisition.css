@@ -261,7 +261,7 @@ a[href|="/starlightfrench"] {
   background-position: -70px -405px;
 }
 
-a[href|="/moondancersaywhat"], a[href|="/moondancersmile"], a[href|="/moondancerfrown"] {
+a[href|="/moondancersaywhat"], a[href|="/moondancersmile"], a[href|="/moondancerfrown"], a[href|="/moondancerbeam"], a[href|="/moondancerhappycry"], a[href|="/moondanceradorkable"], a[href|="/moondancerdisappoint"] {
   float: left;
   display: block;
   height: 70px;
@@ -281,4 +281,24 @@ a[href|="/moondancersmile"] {
 a[href|="/moondancerfrown"] {
   width: 70px;
   background-position: -140px 0;
+}
+
+a[href|="/moondancerbeam"] {
+  width: 70px;
+  background-position: -210px 0;
+}
+
+a[href|="/moondancerhappycry"] {
+  width: 70px;
+  background-position: -280px 0;
+}
+
+a[href|="/moondanceradorkable"] {
+  width: 70px;
+  background-position: -350px 0;
+}
+
+a[href|="/moondancerdisappoint"] {
+  width: 70px;
+  background-position: -420px 0;
 }

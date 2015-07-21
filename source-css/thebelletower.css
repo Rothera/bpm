@@ -1,3 +1,29 @@
+/*Subscriber Name Replace*/
+div.titlebox span.word {display:none}
+div.titlebox .subscribers span.number:after {content:" Emote Lovers"}
+div.titlebox .subscribers span.number:after {font-size:12px!important;}
+div.titlebox p.users-online span.number:after {content: " Numpties Browsing"}
+div.titlebox p.users-online span.word {display: none}
+
+.content .md h1{color:#789922;border-bottom:none;padding-bottom:0px;font-size:1em;margin:0;font-weight:100}
+.content .md h1:before{content:">"}
+
+.content h3 {font-size: 30pt; font-weight: bolder; color: red;}
+h3.imgTitle{font-size: 13px; padding: 2px; color: #000;}
+
+.RESDialogSmall.livePreview > h3 {font-weight: 100; font-size: 1em; color: black}
+
+/*Sidebar font modification*/
+.side .md h3{margin: 0; font-size: 1.25em}
+
+/*a.author[href$="__brony__"],a.author[href$="hawke252"],a.author[href$="SeatieBelt"]
+{font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+
+a.author[href$="__brony__"]::before {font-size:12px!important; visibility:visible!important; content: "TheMasterMind"}
+a.author[href$="hawke252"]::before {font-size:12px!important; visibility:visible!important; content: "TheEmoteWhore"}
+a.author[href$="SeatieBelt"]::before {font-size:12px!important; visibility:visible!important; content: "TheResidentSweetieBelle"}*/
+
+/*Emotes*/
 a[href="/sbbored"],
 a[href="/skydiverbelle"],
 a[href="/sbsorry"],
@@ -849,4 +875,249 @@ a[href="/scootuhwhat"]{
 }
 a[href="/scootagrin"]{
     background-position: -630px -630px;
+}
+
+a[href="/rdeathoof"],
+a[href="/rdyell"],
+a[href="/rdcoach"],
+a[href="/rdnostahp"],
+a[href="/dashiereally"],
+a[href="/rdseriously"],
+a[href="/rdcheer"],
+a[href="/rockingdash"],
+a[href="/readytojoust"],
+a[href="/dashieincoming"],
+a[href="/rdhammertime"],
+a[href="/sniperdash"],
+a[href="/rdlounge"],
+a[href="/rdheythere"],
+a[href="/rdhehhehe"],
+a[href="/applejack"],
+a[href="/rdholdup"],
+a[href="/rdderped"],
+a[href="/rdscrunch"],
+a[href="/partydash"],
+a[href="/rdplotting"],
+a[href="/rdmad"],
+a[href="/rdouch"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:70px;
+    height:70px;
+    background-image: url(%%rd-ss01%%) !important;
+}
+a[href="/rdeathoof"]{
+    width:126px;
+    height:140px;
+    background-position: 0px 0px;
+}
+a[href="/rdyell"]{
+    width:128px;
+    height:140px;
+    background-position: -140px 0px;
+}
+a[href="/rdcoach"]{
+    width:102px;
+    height:140px;
+    background-position: -280px 0px;
+}
+a[href="/rdnostahp"]{
+    width:112px;
+    height:140px;
+    background-position: -420px 0px;
+}
+a[href="/dashiereally"]{
+    width:140px;
+    height:110px;
+    background-position: -560px 0px;
+}
+a[href="/rdseriously"]{
+    width:90px;
+    height:100px;
+    background-position: 0px -140px;
+}
+a[href="/rdcheer"]{
+    width:117px;
+    height:140px;
+    background-position: -140px -140px;
+}
+a[href="/rockingdash"]{
+    width:108px;
+    height:140px;
+    background-position: -280px -140px;
+}
+a[href="/readytojoust"]{
+    width:261px;
+    height:140px;
+    background-position: -420px -140px;
+}
+a[href="/dashieincoming"]{
+    width:172px;
+    height:128px;
+    background-position: 0px -280px;
+}
+a[href="/rdhammertime"]{
+    width:264px;
+    height:128px;
+    background-position: -210px -280px;
+}
+a[href="/sniperdash"]{
+    width:210px;
+    height:140px;
+    background-position: -490px -280px;
+}
+a[href="/rdlounge"]{
+    width:140px;
+    height:126px;
+    background-position: 0px -420px;
+}
+a[href="/rdheythere"]{
+    width:140px;
+    height:115px;
+    background-position: -140px -420px;
+}
+a[href="/rdhehhehe"]{
+    width:140px;
+    height:133px;
+    background-position: -280px -420px;
+}
+a[href="/applejack"]{
+    width:140px;
+    height:101px;
+    background-position: -420px -420px;
+}
+a[href="/rdholdup"]{
+    width:140px;
+    height:95px;
+    background-position: -560px -420px;
+}
+a[href="/rdderped"]{
+    width:96px;
+    height:140px;
+    background-position: 0px -560px;
+}
+a[href="/rdscrunch"]{
+    width:113px;
+    height:140px;
+    background-position: -140px -560px;
+}
+a[href="/partydash"]{
+    width:124px;
+    height:140px;
+    background-position: -280px -560px;
+}
+a[href="/rdplotting"]{
+    width:175px;
+    height:140px;
+    background-position: -420px -560px;
+}
+a[href="/rdmad"]{
+    background-position: -630px -560px;
+}
+a[href="/rdouch"]{
+    background-position: -630px -630px;
+}
+
+
+a[href="/goingtothegym"],
+a[href="/dashiesocks"],
+a[href="/fighterdash"],
+a[href="/assaultdash"],
+a[href="/rdhipster"],
+a[href="/rdhatandcuffs"],
+a[href="/dashiescientist"],
+a[href="/swatdash"],
+a[href="/truefan"],
+a[href="/rdscarf"],
+a[href="/rdgaladress"],
+a[href="/rdderphat"],
+a[href="/rdwearingsomething"],
+a[href="/armydash"],
+a[href="/rdgaladress2"],
+a[href="/rdtie"],
+a[href="/rdblushsocks"],
+a[href="/dashiesnowboarding"]{
+    display:block;
+    clear:none;
+    float:left;
+    width:140px;
+    height:140px;
+    background-image: url(%%rd-ss02%%) !important;
+}
+a[href="/goingtothegym"]{
+    width:168px;
+    height:180px;
+    background-position: 0px 0px;
+}
+a[href="/dashiesocks"]{
+    width:170px;
+    background-position: -210px 0px;
+}
+a[href="/fighterdash"]{
+    width:113px;
+    background-position: -420px 0px;
+}
+a[href="/assaultdash"]{
+    height:134px;
+    background-position: -560px 0px;
+}
+a[href="/swatdash"]{
+    width:180px;
+    height:177px;
+    background-position: 0px -210px;
+}
+a[href="/rdhipster"]{
+    width:108px;
+    background-position: -210px -140px;
+}
+a[href="/rdhatandcuffs"]{
+    width:117px;
+    background-position: -350px -140px;
+}
+a[href="/dashiescientist"]{
+    width:125px;
+    background-position: -490px -140px;
+}
+a[href="/truefan"]{
+    width:137px;
+    background-position: -210px -280px;
+}
+a[href="/rdscarf"]{
+    width:117px;
+    background-position: -350px -280px;
+}
+a[href="/rdgaladress"]{
+    width:131px;
+    background-position: -490px -280px;
+}
+a[href="/rdderphat"]{
+    width:176px;
+    height:200px;
+    background-position: 0px -420px;
+}
+a[href="/rdwearingsomething"]{
+    width:90px;
+    background-position: -210px -420px;
+}
+a[href="/armydash"]{
+    width:137px;
+    background-position: -350px -420px;
+}
+a[href="/rdgaladress2"]{
+    width:126px;
+    height:140px;
+    background-position: -490px -420px;
+}
+a[href="/rdtie"]{
+    width:94px;
+    background-position: -210px -560px;
+}
+a[href="/rdblushsocks"]{
+    width:99px;
+    background-position: -350px -560px;
+}
+a[href="/dashiesnowboarding"]{
+    width:96px;
+    background-position: -490px -560px;
 }
