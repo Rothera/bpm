@@ -4,6 +4,16 @@ div.titlebox span.word {display:none}
 div.titlebox .subscribers span.number:after {content:" unfortunate ponies"}
 div.titlebox .users-online span.number:after {content:" causing trouble..."}
 
+/*Moderators title*/
+
+.sidecontentbox .helplink + .title h1 {
+  font-size: 0 !important
+}
+
+.sidecontentbox .helplink + .title h1:before {
+  font-size: 10pt !important; content: "Rodeo clowns"
+}
+
 /* Banner */
 
 #header {
