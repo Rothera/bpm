@@ -36,6 +36,8 @@ body{background: #ffffff url(%%twilightbackground%%) no-repeat fixed center cent
 body.res-nightmode {background-image: url(%%twilightbackground%%) !important;}
 body.res-nightmode div.content {background-color: transparent;}
 
+#baconBit {background-image: url(%%baconbit%%)!important;width:45px;height:100px;}
+
 /*Approval Check-mark*/
 .approval-checkmark {background:url(%%checkmark%%); padding: 7.5px; height: 0 !important;}
 .approval-checkmark:hover {height:0px;padding:35px 44px;background:url(%%checkmark-big%%) no-repeat}
@@ -80,6 +82,33 @@ div.titlebox p.users-online span.word { display: none }
 .side .md h3{margin: 0; font-size: 1.25em}
 
 .sidebox.create{display:none}
+
+/* Mods are super cool. */
+.sidecontentbox a.helplink ~ div.title h1 {display: none;}
+.sidecontentbox a.helplink ~ div.title::before {
+    content: "CUTIE MOD CRUSADERS";
+    font-size: 130%;
+}
+.sidecontentbox a.helplink ~ div.title::after {
+    content: "";
+    display: inline-block;
+    background: url(%%flair%%) -300% -100% transparent;
+    width: 16px;
+    height: 16px;
+
+}
+.sidecontentbox a.helplink ~ div.title:hover::after {
+    animation: modsaresupercool 3.5s steps(1, end) infinite;  
+}
+
+@keyframes modsaresupercool  {
+    14% {background-position: -300% -800%;}
+    28% {background-position: -300% -2400%;}
+    42% {background-position: -100% -200%;}
+    57% {background-position: -300% -1900%;}
+    71% {background-position: 0 -200%;}
+    85% {background-position: -100% -2100%}
+}
 
 /*Footer code*/
 .footer-parent
@@ -921,6 +950,7 @@ table tr td:first-child
 .flair-bergeron {background-position: 0 -2700%}
 .flair-maclove {background-position: -100% -2700%}
 .flair-snack {background-position: -200% -2700%}
+.flair-seerarity {background-position: -300% -2700%}
 
 /*HOVER FLAIRS! Because yay. Follow same formating to make a new one*/
 
@@ -950,10 +980,10 @@ a.author[href$="BlameTheJungler"], a.author[href$="DaylightDarkle"], a.author[hr
 a.author[href$="BlameTheJungler"]::before {font-size:10px!important; visibility:visible!important; content: "LeafOnTheWind "}
 a.author[href$="DaylightDarkle"]::before {font-size:10px!important; visibility:visible!important; content: "Day1ightDirk1e "}
 a.author[href$="Xeladner"]::before {font-size:10px!important; visibility:visible!important; content: "WAHAHA~ "}
-a.author[href$="theBenger"]::before {font-size:10px!important; visibility:visible!important; content: "The Zesty Beenger "}
+a.author[href$="theBenger"]::before {font-size:10px!important; visibility:visible!important; content: "Lil Listless Beenger "}
 a.author[href$="Peacefulzealot"]::before {font-size:10px!important; visibility:visible!important; content: "ZellyBelly "}
 a.author[href$="HeWho_MustNotBeNamed"]::before {font-size:10px!important; visibility:visible!important; content: "HeWho_MustNotBeNamedEh? "}
-a.author[href$="Fuzzy_Gauntlets"]::before {font-size:10px!important; visibility:visible!important; content: "Real_Fake_Fuzzy_Maudaboose "}
+a.author[href$="Fuzzy_Gauntlets"]::before {font-size:10px!important; visibility:visible!important; content: "Lucky_Gauntlet Charms "}
 a.author[href$="1125a"]::before {font-size:10px!important; visibility:visible!important; content: "1125au "}
 a.author[href$="shellbullet17"]::before {font-size:10px!important; visibility:visible!important; content: "Delibullet17 "}
 a.author[href$="Not_Actually_French"]::before {font-size:10px!important; visibility:visible!important; content: "Is_Actually_French "}
