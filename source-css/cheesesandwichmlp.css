@@ -224,6 +224,8 @@ a[href="/s"]:hover::after {
 
 /*** Sidebar Emote Tables ***/
 
+.side .md { padding-bottom: 12px; }
+
 .side .md h3 {
   border: 1px solid #ccc;
   border-bottom: none;
@@ -235,6 +237,48 @@ a[href="/s"]:hover::after {
   cursor: pointer;
 }
 
+.side .md h2 {
+    width: 275px;
+    color: black;
+    font-weight: normal;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-top: 0;
+    border-bottom: 0;
+    padding: 5px 4px;
+    margin: 0;
+}
+
+.side .md h2:first-of-type {
+    padding-top: 19px;
+    border-top: 1px solid #ccc;
+}
+
+.side .md h2:first-of-type:before {
+    text-align: center;
+    content:"Hover a tab to expand our emotes list!";
+    display: block;
+    padding-bottom: 19px;
+    font-weight: bold;
+}
+
+.side .md h2:last-of-type {
+    width: 215px;
+    padding-bottom: 19px;
+    padding-right: 64px;
+    border-bottom: 1px solid #ccc;
+}
+
+.side .md h2:last-of-type+p a {
+    float: right !important;
+    position: relative !important;
+    top: -74px !important;
+    left: -19px !important;
+    height: 70px !important;
+    width: 86px !important;
+    margin-bottom: -70px !important;
+}
+
 .side .md table {
   border: 1px solid #ccc !important;
   margin: 0;
@@ -244,7 +288,7 @@ a[href="/s"]:hover::after {
 
 .side .md th { display: none; }
 
-.side .md tr,td {
+.side .md tr, .side .md td {
   border: 1px solid #ccc !important;
   padding: 0px !important;
 }
@@ -260,6 +304,11 @@ a[href="/s"]:hover::after {
 
 .side .md h3:nth-of-type(4):hover ~ table:nth-of-type(4),
 .side .md table:nth-of-type(4):hover { display :table; }
+
+.side .md h3:hover ~ h2, .side .md table:hover ~ h2 { display: none; }
+.side .md h3:hover ~ h2:last-of-type+p a, .side .md table:hover ~ h2:last-of-type+p a { display: none; }
+
+.side .md h2:last-of-type+p a+.SuperRedditAltTextDisplay_Text{ display: none; }
 
 /*** Arrows ***/
 

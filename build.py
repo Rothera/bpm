@@ -202,7 +202,30 @@ PGm6yzGLSn8/cG7tG9XvpnyxGAX8TfQyV602NhAucqJXYGvCNePalZGU7FJbeJc1
 5JjoU+fv8mFBK/QTAwIDAQAB
 """
 
-def inject_xpi_key(ifn, ofn):
+def make_rdf_element(tag, text=None):
+    e = lxml.etree.Element("{http://www.mozilla.org/2004/em-rdf#}" + tag)
+    if text:
+        e.text = text
+    return e
+
+def inject_update_key(manifest):
+    manifest[0].append(make_rdf_element("updateKey", XpiKey))
+
+def inject_seamonkey_target(manifest):
+    target_app_tag = make_rdf_element("targetApplication")
+    description_tag = lxml.etree.Element("Description")
+    id_tag = make_rdf_element("id", "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}")
+    min_version_tag = make_rdf_element("minVersion", "2.0")
+    max_version_tag = make_rdf_element("maxVersion", "2.*")
+
+    description_tag.append(id_tag)
+    description_tag.append(min_version_tag)
+    description_tag.append(max_version_tag)
+
+    target_app_tag.append(description_tag)
+    manifest[0].append(target_app_tag)
+
+def munge_install_rdf(ifn, ofn):
     print("xpi: injecting key into", ofn)
     xpi_in = zipfile.ZipFile(ifn, "r")
     xpi_out = zipfile.ZipFile(ofn, "w", compression=zipfile.ZIP_DEFLATED)
@@ -214,9 +237,8 @@ def inject_xpi_key(ifn, ofn):
             item = "install.rdf"
 
             manifest = lxml.etree.fromstring(data)
-            update_key = lxml.etree.Element("{http://www.mozilla.org/2004/em-rdf#}updateKey")
-            update_key.text = XpiKey
-            manifest[0].append(update_key)
+            inject_update_key(manifest)
+            inject_seamonkey_target(manifest)
             data = lxml.etree.tostring(manifest, encoding=str, pretty_print=True)
 
         xpi_out.writestr(item, data)
@@ -253,7 +275,7 @@ def fx_package(ctx):
                  ["build/betterponymotes.xpi"]):
         ctx.remove("build/*.xpi")
         ctx.run("cfx", "xpi", "--update-url=https://ponymotes.net/bpm/betterponymotes.update.rdf", "--pkgdir=build/firefox", "--force-mobile")
-        inject_xpi_key("betterponymotes.xpi", "build/betterponymotes.xpi")
+        munge_install_rdf("betterponymotes.xpi", "build/betterponymotes.xpi")
         ctx.remove("betterponymotes.xpi")
 
 KeyFile = "betterponymotes.pem"
@@ -316,7 +338,7 @@ def sf_package(ctx):
         ctx.copy("addon/options.js")
         ctx.copy("addon/bootstrap.css")
         ctx.copy("addon/jquery-1.8.2.js")
-    
+
         ctx.copy("addon/icons/sf-Icon-64.png", "Icon-64.png")
         ctx.copy("addon/icons/sf-Icon-128.png", "Icon-128.png")
 
