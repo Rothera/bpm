@@ -216,7 +216,7 @@ def inject_seamonkey_target(manifest):
     description_tag = lxml.etree.Element("Description")
     id_tag = make_rdf_element("id", "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}")
     min_version_tag = make_rdf_element("minVersion", "2.0")
-    max_version_tag = make_rdf_element("maxVersion", "2.*")
+    max_version_tag = make_rdf_element("maxVersion", "2.39")
 
     description_tag.append(id_tag)
     description_tag.append(min_version_tag)
