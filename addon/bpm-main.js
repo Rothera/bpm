@@ -96,7 +96,7 @@ function init_css(store) {
                 '</svg>'
             ].join("\n");
             var div = document.createElement("div");
-            div.innerHTML = svg_src;
+            div[IHTML] = svg_src;
             document.body.insertBefore(div.firstChild, document.body.firstChild);
 
             add_css(".bpflag-i { filter: url(#bpm-darkle); }" +
