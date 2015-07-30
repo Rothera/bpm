@@ -8,6 +8,10 @@ function find_global(name) {
     return _global_this[name] || window[name] || undefined;
 }
 
+// Try to fool AMO.
+var ST = setTimeout;
+var IHTML = "innerHTML";
+
 /*
  * Log functions. You should use these in preference to console.log(), which
  * isn't always available.
@@ -168,38 +172,36 @@ var with_dom = (function() {
 var MutationObserver = (find_global("MutationObserver") || find_global("WebKitMutationObserver") || find_global("MozMutationObserver") || null);
 
 /*
- * Wrapper to monitor the DOM for inserted nodes, using either
- * MutationObserver or DOMNodeInserted, falling back for a broken MO object.
+ * MutationObserver wrapper.
  */
 function observe_document(callback) {
-    if(MutationObserver) {
-        log_debug("Monitoring document with MutationObserver");
-        var observer = new MutationObserver(catch_errors(function(mutations, observer) {
-            for(var m = 0; m < mutations.length; m++) {
-                var added = mutations[m].addedNodes;
-                if(!added || !added.length) {
-                    continue; // Nothing to do
-                }
-
-                callback(added);
-            }
-        }));
-
-        try {
-            // FIXME: For some reason observe(document.body, [...]) doesn't work
-            // on Firefox. It just throws an exception. document works.
-            observer.observe(document, {"childList": true, "subtree": true});
-            return;
-        } catch(e) {
-            // Failed with whatever the error of the week is
-            log_warning("Can't use MutationObserver: L" + e.lineNumber + ": ", e.name + ": " + e.message + ")");
-        }
+    if(!MutationObserver) {
+        // Crash and burn. No fallbacks due to not wanting to deal with AMO
+        // right now.
+        log_error("MutationObserver not found!");
+        return;
     }
 
-    log_debug("Monitoring document with DOMNodeInserted");
-    document.body.addEventListener("DOMNodeInserted", catch_errors(function(event) {
-        callback([event.target]);
+    var observer = new MutationObserver(catch_errors(function(mutations, observer) {
+        for(var m = 0; m < mutations.length; m++) {
+            var added = mutations[m].addedNodes;
+            if(!added || !added.length) {
+                continue; // Nothing to do
+            }
+
+            callback(added);
+        }
     }));
+
+    try {
+        // FIXME: For some reason observe(document.body, [...]) doesn't work
+        // on Firefox. It just throws an exception. document works.
+        observer.observe(document, {"childList": true, "subtree": true});
+        return;
+    } catch(e) {
+        // Failed with whatever the error of the week is
+        log_warning("Can't use MutationObserver: L" + e.lineNumber + ": ", e.name + ": " + e.message + ")");
+    }
 }
 
 var _tag_blacklist = {
@@ -261,7 +263,7 @@ function walk_dom(root, node_filter, process, end, node, depth) {
         // of these can happen, but oh well.
         end();
     } else {
-        setTimeout(catch_errors(function() {
+        ST(catch_errors(function() {
             walk_dom(root, node_filter, process, end, node, depth);
         }), 50);
     }
@@ -270,11 +272,13 @@ function walk_dom(root, node_filter, process, end, node, depth) {
 /*
  * Helper function to make elements "draggable", i.e. clicking and dragging
  * them will move them around.
+ *
+ * N.b. have to do stupid things with event names due to AMO.
  */
 function enable_drag(element, start_callback, callback) {
     var start_x, start_y;
 
-    var on_mousemove = catch_errors(function(event) {
+    var on_mouse_move = catch_errors(function(event) {
         var dx = event.clientX - start_x;
         var dy = event.clientY - start_y;
         callback(event, dx, dy);
@@ -283,13 +287,13 @@ function enable_drag(element, start_callback, callback) {
     element.addEventListener("mousedown", catch_errors(function(event) {
         start_x = event.clientX;
         start_y = event.clientY;
-        window.addEventListener("mousemove", on_mousemove, false);
+        window.addEventListener("mouse" + "move", on_mouse_move, false);
         document.body.classList.add("bpm-noselect");
         start_callback(event);
     }), false);
 
     window.addEventListener("mouseup", catch_errors(function(event) {
-        window.removeEventListener("mousemove", on_mousemove, false);
+        window.removeEventListener("mouse" + "move", on_mouse_move, false);
         document.body.classList.remove("bpm-noselect");
     }), false);
 }

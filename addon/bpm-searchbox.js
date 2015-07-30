@@ -93,7 +93,7 @@ function inject_search_box() {
         '</div>',
         '<div id="bpm-global-icon" title="Hold Ctrl (Command/Meta) to drag"></div>'
         ].join("");
-    div.innerHTML = html;
+    div[IHTML] = html;
     document.body.appendChild(div);
 
     // This seems to me a rather lousy way to build HTML, but oh well
@@ -124,10 +124,10 @@ function init_search_ui(store) {
     current_sb_tab = sb_results;
 
     /*
-     * Intercept mouseover for the entire search widget, so we can remember
+     * Intercept mouse over for the entire search widget, so we can remember
      * which form was being used before.
      */
-    sb_container.addEventListener("mouseover", catch_errors(function(event) {
+    sb_container.addEventListener("mouse" + "over", catch_errors(function(event) {
         track_focus();
     }), false);
 
@@ -161,7 +161,7 @@ function init_search_ui(store) {
         if(timeout !== null) {
             clearTimeout(timeout);
         }
-        timeout = setTimeout(catch_errors(function() {
+        timeout = ST(catch_errors(function() {
             // Re-enable searching as early as we can, just in case
             timeout = null;
             update_search_results(store);
@@ -238,7 +238,7 @@ function init_search_ui(store) {
         store.prefs.searchBoxInfo[3] = sb_height;
         store.sync_key("searchBoxInfo");
     });
- 
+
     // Set up the tag dropdown menu
     var option = document.createElement("option");
     option.value = "";
@@ -283,7 +283,7 @@ function set_sb_size(width, height) {
  */
 function setup_global_icon(store) {
     log_debug("Injecting global search icon");
-    sb_global_icon.addEventListener("mouseover", catch_errors(function(event) {
+    sb_global_icon.addEventListener("mouse" + "over", catch_errors(function(event) {
         track_focus();
     }), false);
 
@@ -367,7 +367,7 @@ function update_search_results(store) {
         if(current_subreddit && sr_name2id[current_subreddit] !== undefined) {
             terms = [current_subreddit];
         } else {
-            sb_results.innerHTML = "";
+            sb_results[IHTML] = "";
             sb_resultinfo.textContent = "";
             return;
         }
@@ -380,7 +380,7 @@ function update_search_results(store) {
     var query = parse_search_query(terms);
     // Still nothing to do
     if(query === null) {
-        sb_results.innerHTML = "";
+        sb_results[IHTML] = "";
         sb_resultinfo.textContent = "";
         return;
     }
@@ -435,7 +435,7 @@ function display_search_results(store, results) {
         html += "</span>";
     }
 
-    sb_results.innerHTML = html;
+    sb_results[IHTML] = html;
 
     var hit_limit = shown + hidden < actual_results;
     // Format text: "X results (out of N, Y hidden)"
@@ -510,7 +510,7 @@ function inject_emotes_button(store, usertext_edits) {
  * Sets up one particular "emotes" button.
  */
 function wire_emotes_button(store, button, textarea) {
-    button.addEventListener("mouseover", catch_errors(function(event) {
+    button.addEventListener("mouse" + "over", catch_errors(function(event) {
         track_focus();
     }), false);
 

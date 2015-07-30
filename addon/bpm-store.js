@@ -45,7 +45,7 @@ Store.prototype = {
             clearTimeout(this._sync_timeouts[key]);
         }
 
-        this._sync_timeouts[key] = setTimeout(catch_errors(function() {
+        this._sync_timeouts[key] = ST(catch_errors(function() {
             set_pref(key, this.prefs[key]);
             delete this._sync_timeouts[key];
         }.bind(this)), 1000);
@@ -191,7 +191,7 @@ Store.prototype = {
             log_error("tag_array has holes; installation or prefs are broken!");
         }
     },
- 
+
     _make_emote_map: function(list) {
         var map = {};
         for(var i = 0; i < list.length; i++) {

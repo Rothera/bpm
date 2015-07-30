@@ -19,13 +19,6 @@
 **
 *******************************************************************************/
 
-// For linting- every global we access, more or less
-/*
-var self, chrome, GM_getValue, GM_setValue; // Platform
-var window, document, setTimeout, clearTimeout, FileReader; // Standard
-var emote_map, sr_name2id, sr_id2name, tag_name2id, tag_id2name, manage_prefs; // Data
-*/
-
 (function(_global_this) {
 "use strict";
 
