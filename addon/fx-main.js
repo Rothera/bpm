@@ -165,7 +165,6 @@ var prefs_mod = page_mod.PageMod({
     contentScriptWhen: "start",
     contentScriptFile: [
         self.data.url("bpm-resources.js"),
-        self.data.url("jquery-1.8.2.js"),
         self.data.url("options.js")
         ],
     onAttach: on_cs_attach

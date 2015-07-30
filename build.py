@@ -269,7 +269,6 @@ def fx_package(ctx):
         ctx.copy("addon/options.css", "data")
         ctx.copy("addon/options.js", "data")
         ctx.copy("addon/bootstrap.css", "data")
-        ctx.copy("addon/jquery-1.8.2.js", "data")
 
     if newer(glob_all(["build/firefox/*", "build/firefox/data/*", "build/firefox/lib/*"]),
                  ["build/betterponymotes.xpi"]):
@@ -305,7 +304,6 @@ def cr_package(ctx):
         ctx.copy("addon/options.css")
         ctx.copy("addon/options.js")
         ctx.copy("addon/bootstrap.css")
-        ctx.copy("addon/jquery-1.8.2.js")
 
     if newer(glob.glob("build/chrome/*"), ["build/chrome.zip"]):
         zip = ctx.zip("build/chrome.zip", "build/chrome/", compression=zipfile.ZIP_STORED)
@@ -337,7 +335,6 @@ def sf_package(ctx):
         ctx.copy("addon/options.css")
         ctx.copy("addon/options.js")
         ctx.copy("addon/bootstrap.css")
-        ctx.copy("addon/jquery-1.8.2.js")
 
         ctx.copy("addon/icons/sf-Icon-64.png", "Icon-64.png")
         ctx.copy("addon/icons/sf-Icon-128.png", "Icon-128.png")
