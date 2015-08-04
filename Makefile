@@ -18,7 +18,7 @@
 ##
 ################################################################################
 
-VERSION = 65.222
+VERSION = 65.223
 
 CONTENT_SCRIPT := \
     addon/bpm-header.js addon/bpm-utils.js addon/bpm-browser.js \
