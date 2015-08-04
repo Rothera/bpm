@@ -34,12 +34,12 @@ ADDON_DATA = \
     addon/bootstrap.css addon/options.html addon/options.css addon/options.js \
     addon/pref-setup.js
 
-default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension build/betterponymotes.update.rdf build/export.json.bz2
+default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension build/export.json.bz2
 
 clean:
 	rm -fr build
 
-www: web/* build/betterponymotes.xpi
+www: web/* build/betterponymotes-*.mozsucks-*.xpi build/betterponymotes.update.rdf
 	cp web/firefox-logo.png www
 	cp web/chrome-logo.png www
 	cp web/safari-logo.png www
@@ -47,13 +47,13 @@ www: web/* build/betterponymotes.xpi
 	cp web/ponymotes-logo.png www
 	replace '/*{{version}}*/' "$(VERSION)" < web/index.html > www/index.html
 
-	rm www/*.xpi
-	cp build/betterponymotes.xpi www
-	cp build/betterponymotes.xpi www/betterponymotes_$(VERSION).xpi
+	rm -f www/*.xpi
+	cp build/betterponymotes-*.mozsucks-*.xpi www/betterponymotes.xpi
+	cp build/betterponymotes-*.mozsucks-*.xpi www/betterponymotes_$(VERSION).xpi
 
 sync:
-	rsync -e ssh -p 40719 -zvLr --delete animotes/ lyra@ponymotes.net:/var/www/ponymotes.net/animotes")
-	rsync -e ssh -p 40719 -zvLr --delete www/ lyra@ponymotes.net:/var/www/ponymotes.net/bpm")
+	rsync -e "ssh -p 40719" -zvLr --delete animotes/ lyra@ponymotes.net:/var/www/ponymotes.net/animotes
+	rsync -e "ssh -p 40719" -zvLr --delete www/ lyra@ponymotes.net:/var/www/ponymotes.net/bpm
 
 build/betterponymotes.js: $(CONTENT_SCRIPT)
 	mkdir -p build
@@ -98,8 +98,8 @@ build/betterponymotes.xpi: $(ADDON_DATA) addon/fx-main.js
 	./mungexpi.py betterponymotes.xpi build/betterponymotes.xpi
 	rm betterponymotes.xpi
 
-build/betterponymotes.update.rdf: build/betterponymotes.xpi
-	uhura -k betterponymotes.pem build/betterponymotes.xpi https://ponymotes.net/bpm/betterponymotes_$(VERSION).xpi > build/betterponymotes.update.rdf
+build/betterponymotes.update.rdf: build/betterponymotes-*.mozsucks-*.xpi
+	uhura -k betterponymotes.pem build/betterponymotes-*.mozsucks-*.xpi https://ponymotes.net/bpm/betterponymotes_$(VERSION).xpi > build/betterponymotes.update.rdf
 
 build/chrome.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js
 	mkdir -p build/chrome
