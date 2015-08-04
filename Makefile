@@ -45,7 +45,7 @@ www: web/* build/betterponymotes-*.mozsucks-*.xpi build/betterponymotes.update.r
 	cp web/safari-logo.png www
 	cp web/relay-logo.png www
 	cp web/ponymotes-logo.png www
-	replace '/*{{version}}*/' "$(VERSION)" < web/index.html > www/index.html
+	sed "s/\/\*{{version}}\*\//$(VERSION)/" < web/index.html > www/index.html
 
 	rm -f www/*.xpi
 	cp build/betterponymotes-*.mozsucks-*.xpi www/betterponymotes.xpi
@@ -76,7 +76,7 @@ build/export.json: $(EMOTE_DATA)
 build/betterponymotes.xpi: $(ADDON_DATA) addon/fx-main.js
 	mkdir -p build/firefox/lib build/firefox/data
 
-	replace '/*{{version}}*/' "$(VERSION)" < addon/fx-package.json > build/firefox/package.json
+	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/fx-package.json > build/firefox/package.json
 
 	cp addon/fx-main.js build/firefox/lib/main.js
 
@@ -104,7 +104,7 @@ build/betterponymotes.update.rdf: build/betterponymotes-*.mozsucks-*.xpi
 build/chrome.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js
 	mkdir -p build/chrome
 
-	replace '/*{{version}}*/' "$(VERSION)" < addon/cr-manifest.json > build/chrome/manifest.json
+	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/cr-manifest.json > build/chrome/manifest.json
 
 	cp addon/cr-background.html build/chrome/background.html
 	cp addon/cr-background.js build/chrome/background.js
@@ -130,7 +130,7 @@ build/chrome.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js
 build/BPM.safariextension: $(ADDON_DATA) addon/sf-Settings.plist addon/sf-background.html addon/sf-background.js
 	mkdir -p build/BPM.safariextension
 
-	replace '/*{{version}}*/' "$(VERSION)" < addon/sf-Info.plist > build/BPM.safariextension/Info.plist
+	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/sf-Info.plist > build/BPM.safariextension/Info.plist
 
 	cp addon/icons/sf-Icon-128.png build/BPM.safariextension/Icon-128.png
 	cp addon/icons/sf-Icon-64.png build/BPM.safariextension/Icon-64.png
