@@ -121,6 +121,11 @@ div#header-bottom-left ul.tabmenu {
   content: " becoming better friends" 
 }
 
+.side .sidebox .spacer {
+  visibility: hidden; 
+  display: none
+}
+
 .sidecontentbox .helplink + .title h1 {
   font-size: 0 !important
 }
@@ -308,6 +313,12 @@ body .disabled .morelink:hover .nub {
   background: none transparent!important;
 }
 
+.morelink .nub {
+display:none
+}
+
+
+
 body .disabled .morelink,
 body .disabled .morelink:hover {
   border: #f5f5f5!important;
@@ -324,6 +335,7 @@ body .disabled .morelink a:hover {
 #searchexpando {
   width: 299px;
 }
+
 
 
     /***********************

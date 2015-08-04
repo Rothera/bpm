@@ -633,7 +633,19 @@ table tr td:first-child
  overflow:hidden;
  max-width:70px;
 }
-
+.md.wiki table tr:nth-of-type(even) td + td
+{
+ text-align:center;
+ font-size:9px;
+ overflow:hidden;
+ max-width:70px;
+}
+.md.wiki table {
+display:inline-table
+}
+.md.wiki tr {
+padding: 0
+}
 /*Constructing the Emote Help*/
 .side .md h1
 {
