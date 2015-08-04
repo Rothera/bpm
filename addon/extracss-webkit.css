@@ -421,3 +421,42 @@
     margin: 2px !important;
     -webkit-animation: intensifies .2s linear 0s infinite alternate !important;
 }
+
+
+/*
+ * -m flag by /u/Phei
+ * https://www.reddit.com/r/betterponymotes/comments/3dwbxn/
+ */
+
+@-webkit-keyframes bpm-aura {
+   from { background-position:  0px; }
+     to { background-position: 500px; }
+}
+
+.bpflag-m::after {
+    content: " ";
+    width: 50px;
+    height: 50px;
+    display: block;
+    z-index: 2;
+    position: relative;
+    visibility: collapse;
+    background-image: url(https://b.thumbs.redditmedia.com/tAK6nmFTMRPip8Dv0ZFLKIqrnrXuZXC7WAA3-v1kO1M.png) !important;
+    -webkit-animation: aura 1s steps(10) infinite reverse;
+}
+
+.bpmote-facehoof.bpflag-m::after,
+.bpmote-b38.bpflag-m::after,
+.bpmote-rfacehoof.bpflag-m::after,
+.bpmote-rb38.bpflag-m::after {
+    -webkit-transform: scale(0.8) translate(37px, -8px) rotate(-297deg);
+    visibility: visible;
+}
+
+.bpmote-twibeam.bpflag-m::after,
+.bpmote-a23.bpflag-m::after,
+.bpmote-rtwibeam.bpflag-m::after,
+.bpmote-ra23.bpflag-m::after {
+    -webkit-transform: scale(0.9) translate(13px,-16px) rotate(0deg);
+    visibility: visible;
+}

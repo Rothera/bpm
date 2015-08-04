@@ -36,23 +36,6 @@ import lxml.html
 
 UA = "BetterPonymotes stylesheet update checker (1req/2.5secs; pm Typhos)"
 
-def cmd_help(args):
-    parser = argparse.ArgumentParser(description="Print help text", prog="help")
-    args = parser.parse_args(args)
-
-    print(" ".join(sorted(Commands)))
-
-def cmd_list(args):
-    parser = argparse.ArgumentParser(description="List updated files", prog="list")
-    args = parser.parse_args(args)
-
-    print("Stylesheet updates:")
-    subprocess.call(["git", "status", "-s", "minified-css", "source-css"])
-    print("Emote updates:")
-    subprocess.call(["git", "status", "-s", "emotes"])
-    print("Tag updates:")
-    subprocess.call(["git", "status", "-s", "tags"])
-
 def download_url(num, total, url):
     print("[%s/%s]: %s" % (num+1, total, url))
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Cookie": "over18=1"})
@@ -186,8 +169,6 @@ def cmd_commit(args):
     subprocess.call(["git", "commit", "-v", "emotes", "source-css", "minified-css", "tags", "-m", time.strftime("Stylesheet/emote/tag updates %Y-%m-%d")])
 
 Commands = {
-    "help": cmd_help,
-    "list": cmd_list,
     "update": cmd_update,
     "extract": cmd_extract,
     "extractall": cmd_extractall,
