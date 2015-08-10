@@ -3,7 +3,7 @@
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%stop%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%ponybackground%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -20,7 +20,7 @@
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%wooayy%%) 50% 0px !important;
+   background: url(%%coggleboggle%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -638,6 +638,7 @@ a.author[href$="Rudicorn"],
 a.author[href$="jimmpony"],
 a.author[href$="DiscordDraconequus"],
 a.author[href$="clonger"],
+a.author[href$="spearstuff"],
 a.author[href$="Juz16"],
 a.author[href$="EvanMacIan"],
 a.author[href$="kcirvam"],
@@ -767,6 +768,7 @@ a.author[href$="Rudicorn"]:before,
 a.author[href$="jimmpony"]:before,
 a.author[href$="DiscordDraconequus"]:before,
 a.author[href$="clonger"]:before,
+a.author[href$="spearstuff"]:before,
 a.author[href$="Juz16"]:before,
 a.author[href$="EvanMacIan"]:before,
 a.author[href$="kcirvam"]:before,
@@ -997,6 +999,7 @@ a.author[href$=Doktor_Elcaro]:before { content:"get pretty coggler pony to chang
 a.author[href$=The_Assistant]:before { content:"SuperAtomica" }
 a.author[href$=topkekbestkek]:before { content:"Partypoops McFlaccid" }
 a.author[href$=DoomKey]:before { content:"Scarfsickle" }
+a.author[href$=spearstuff]:before { content:"Spearstuffed" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -1078,6 +1081,7 @@ a.author[href$=Backupusername]:after,
 a.author[href$= Nagashizuri]:after,
 a.author[href$="Conky_"]:after,
 a.author[href$="clonger"]:after,
+a.author[href$="spearstuff"]:after,
 a.author[href$="andysonic3"]:after,
 a.author[href$="andysonic0"]:after,
 a.author[href$="Andysonic-1"]:after,
@@ -1167,6 +1171,7 @@ a.author[href$=JIVEprinting]:after { content:" Christfag" }
 a.author[href$="Conky_"]:after { content:" In a Lot of Trouble, Mr." }
 a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 a.author[href$="clonger"]:after { content:" please leave a message after the beep"; color:green}
+a.author[href$="spearstuff"]:after { content:" help what's going on?"}
 a.author[href$="andysonic3"]:after { content:" THE NO FUN DEPUTY" }
 a.author[href$="andysonic0"]:after { content:" THE NO FUN CHIEF" }
 a.author[href$="Andysonic-1"]:after { content:" THE NO FUN ROOKIE" }

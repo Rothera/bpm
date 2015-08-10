@@ -50,7 +50,7 @@ a {
 color: #4168b3;
 }
 a:hover {
-text-decoration: underline;
+text-decoration: none;
 }
 .error {
 color: #ff4444;
@@ -658,11 +658,11 @@ margin-left: 10px;
 /* Fixed Scroll Banner */
 .titlebox h6 {
 position: fixed;
-top:0px;
+top:-12px;
 right: 0px;
 left: 0px;
 z-index: 97;
-height: 35px;
+height: 33px;
 background-color: #fff;
 -webkit-box-shadow: 0 2px 4px 0 #d3d3d3;
 box-shadow: 0 2px 4px 0 #d3d3d3;
@@ -680,6 +680,7 @@ color: #999;
 font-weight: normal;
 font-size: 22px;
 font-family: Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+text-decoration: none;
 }
 .titlebox h6 a:hover {
 border-bottom-color: #4168b3!important;
