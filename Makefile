@@ -18,6 +18,14 @@
 ##
 ################################################################################
 
+# Release process:
+# - Bump version
+# $ make
+# - Upload Chrome addon
+# - Sign XPI
+# $ make www
+# $ make sync
+
 VERSION = 65.225
 
 CONTENT_SCRIPT := \
