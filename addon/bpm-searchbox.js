@@ -154,6 +154,9 @@ function init_search_ui(store) {
     // Listen for keypresses and adjust search results. Delay 500ms after
     // end of typing to make it more responsive.
     var timeout = null;
+    if (is_voat) {
+        sb_input.classList.add("form-control");
+    }
     sb_input.addEventListener("input", catch_errors(function(event) {
         if(timeout !== null) {
             clearTimeout(timeout);
@@ -253,16 +256,6 @@ function init_search_ui(store) {
         sb_tagdropdown.selectedIndex = "0"
         update_search_results(store);
     };
-
-    // If used on Voat, add the CSS classes for either Light or Dark mode,
-    // making use of the bootstrap classes where apropriate.
-    if (is_voat) {
-        sb_input.classList.add("form-control");
-        if (document.body.classList.contains("dark")) {
-            sb_container.classList.add("dark");
-            sb_tabframe.classList.add("dark");
-        }
-    }
 }
 
 function set_sb_position(left, top) {
@@ -481,8 +474,7 @@ function inject_emotes_button(store, usertext_edits) {
                 // Blend in with the other mobile buttons
                 button.classList.add("newbutton");
             } else if(is_voat) {
-                button.classList.add("markdownEditorImgButton");
-                button.classList.add("voat");
+                button.classList.add("bpm-search-toggle-voat");
             }
             button.textContent = "emotes";
             // Since we come before the save button in the DOM, we tab first,
