@@ -64,16 +64,13 @@ display:none;
 content:" eating muffins";
 }
 
-/*---list style---*/
+/*---table style---*/
 
-.side .titlebox .usertext-body ul:nth-of-type(1) li {
-position:relative;
-text-align:right;
-list-style-type:none;
+.side .titlebox .usertext-body table:nth-of-type(1) th {
+display:none;
 }
-.side .titlebox .usertext-body ul:nth-of-type(1) li a {
-position:absolute;
-left:0px;
+.side .titlebox .usertext-body table:nth-of-type(1) td {
+border-width:0px;
 }
 
 /*---morelink style---*/
