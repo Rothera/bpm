@@ -18,7 +18,19 @@
 ##
 ################################################################################
 
+<<<<<<< HEAD
 VERSION = 66.224
+=======
+# Release process:
+# - Bump version
+# $ make
+# - Upload Chrome addon
+# - Sign XPI
+# $ make www
+# $ make sync
+
+VERSION = 65.225
+>>>>>>> Rothera/master
 
 CONTENT_SCRIPT := \
     addon/bpm-header.js addon/bpm-utils.js addon/bpm-browser.js \

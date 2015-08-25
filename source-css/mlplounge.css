@@ -59,9 +59,9 @@ background: url(%%horsewife%%) center center no-repeat transparent;
 /*Subscriber Name Replace*/
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Dreaming Ponies"}
+div.titlebox .subscribers span.number:after {content:" Doomed Ponies"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " Having a Hiatus-induced Nightmare" }
+div.titlebox p.users-online span.number:after { content: " Waiting for the end of mod abuse" }
 div.titlebox p.users-online span.word { display: none }
 
 /*Flair modifications*/
@@ -978,6 +978,8 @@ padding: 0
 .flair-cmcsyn:hover {background-position: -100% -2100%} /*For Synes7hesia; Sunset Shimmer Hover*/
 .flair-cmcdc {background-position: -300% -100%}
 .flair-cmcdc:hover {background-position: -100% -200%} /*For DoomedCivilian; 'tia Hover*/
+.flair-cmcpinkie {background-position: -300% -100%} /* /u/Pinkie_Pie */
+.flair-cmcpinkie:hover {background-position: 0% -100%}
 .flair-pathd {background-position: -100% 0%}
 .flair-pathd:hover {background-position: -100% -2200%} /*Pathogen-David had a old flair like we had; fixed it with RTwi Hover*/
 
@@ -986,22 +988,16 @@ padding: 0
 
 /*Name Changes are Below*/
 
-a.author[href$="BlameTheJungler"], a.author[href$="DaylightDarkle"], a.author[href$="Xeladner"], a.author[href$="theBenger"], a.author[href$="Peacefulzealot"], a.author[href$="HeWho_MustNotBeNamed"], a.author[href$="Fuzzy_Gauntlets"], a.author[href$="1125a"], a.author[href$="shellbullet17"], a.author[href$="Not_Actually_French"], a.author[href$="Cinderheart"]
-{font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author:before {content: "Doomed"}
+a.author[href$="DaylightDarkle"]:before {content: "Funless"}
+a.author[href$="DoomedCivilian"]:before {content: "Double"}
 
-a.author[href$="BlameTheJungler"]::before {font-size:10px!important; visibility:visible!important; content: "LeafOnTheWind "}
-a.author[href$="DaylightDarkle"]::before {font-size:10px!important; visibility:visible!important; content: "Day1ightDirk1e "}
-a.author[href$="Xeladner"]::before {font-size:10px!important; visibility:visible!important; content: "WAHAHA~ "}
-a.author[href$="theBenger"]::before {font-size:10px!important; visibility:visible!important; content: "Lil Cricket Beenger "}
-a.author[href$="Peacefulzealot"]::before {font-size:10px!important; visibility:visible!important; content: "ZellyBelly "}
-a.author[href$="HeWho_MustNotBeNamed"]::before {font-size:10px!important; visibility:visible!important; content: "HeWho_MustNotBeNamedEh? "}
-a.author[href$="Fuzzy_Gauntlets"]::before {font-size:10px!important; visibility:visible!important; content: "Lucky_Gauntlet Charms "}
-a.author[href$="1125a"]::before {font-size:10px!important; visibility:visible!important; content: "1125au "}
-a.author[href$="shellbullet17"]::before {font-size:10px!important; visibility:visible!important; content: "Delibullet17 "}
-a.author[href$="Not_Actually_French"]::before {font-size:10px!important; visibility:visible!important; content: "Is_Actually_French "}
-a.author[href$="Cinderheart"]::before {font-size:10px!important; visibility:visible!important; content: "Cinderpelt "}
+.pagename:before {
+    content: "Doomed";
+    color: #FFE591;
+    Font-size: 16px;
+}
 
-.sidecontentbox a.author[href$="DoomedCivilian"] {color: #E9B3F9}
 .sidecontentbox a.author[href$="Pinkie_Pie"] {Display:none}
 
 /*Subreddit Styling*/
