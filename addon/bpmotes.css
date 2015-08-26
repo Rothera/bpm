@@ -140,27 +140,28 @@
     margin: 2px !important;
 }
 
-/*
- * Emotes button on Voat.
- */
-.bpm-search-toggle-voat {
-    display: inline-block;
-    margin-top: 2px;
-    margin-bottom: 2px;
+/* Emotes button on Voat. */
+.bpm-search-toggle.bpm-voat {
     margin-left: 1px;
     margin-right: 1px;
-    height: 16px;
     width: 50px;
-    background-color: #f5f5f5;
-    border: 1px solid grey;
+    background-image: none;
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
     box-sizing: content-box !important;
     padding: 0px !important;
     float: none !important;
+    vertical-align: inherit !important;
 }
 
 /* Container */
 #bpm-sb-container {
     position: fixed;
+
+    /* Fixes the container sizing on Voat and some sites using Bootstrap */
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
 
     /* These four values are reset in JS immediately, so effectively ignored */
     width: 620px;
@@ -200,6 +201,11 @@
     display: none;
 }
 
+/* For use in Voat's dark theme */
+#bpm-sb-container.bpm-dark {
+    background-color: #444;
+}
+
 /* Top row widget container */
 #bpm-sb-toprow {
     height: 30px;
@@ -227,7 +233,7 @@
     float: left;
     width: 60px;
     margin: 6px;
-    
+
     visibility: inherit;
 }
 
@@ -275,6 +281,11 @@
 #bpm-sb-tabframe {
     height: 388px; /* #bpm-search-box - 62 */
 
+    /* Fixes the tabframe sizing on Voat and some sites using Bootstrap */
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+
     padding: 4px !important;
     margin: 0px !important;
     border-radius: 0px !important;
@@ -283,6 +294,11 @@
     background-color: white;
 
     visibility: inherit;
+}
+
+/* For use in Voat's dark theme */
+#bpm-sb-tabframe.bpm-dark {
+    background-color: #292929;
 }
 
 /* Search result container */
