@@ -255,12 +255,12 @@ function init_search_ui(store) {
     };
 
     // If used on Voat, add the CSS classes for either Light or Dark mode,
-    // making use of the bootstrap classes where apropriate.
+    // making use of the native bootstrap classes where apropriate.
     if (is_voat) {
         sb_input.classList.add("form-control");
         if (document.body.classList.contains("dark")) {
-            sb_container.classList.add("dark");
-            sb_tabframe.classList.add("dark");
+            sb_container.classList.add("bpm-dark");
+            sb_tabframe.classList.add("bpm-dark");
         }
     }
 }
@@ -482,7 +482,7 @@ function inject_emotes_button(store, usertext_edits) {
                 button.classList.add("newbutton");
             } else if(is_voat) {
                 button.classList.add("markdownEditorImgButton");
-                button.classList.add("voat");
+                button.classList.add("bpm-voat");
             }
             button.textContent = "emotes";
             // Since we come before the save button in the DOM, we tab first,
