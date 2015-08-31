@@ -21,6 +21,24 @@ div.titlebox .users-online span.number:after {content:" causing trouble..."}
   border:none!important;
   height:157px!important;
 }
+.tabmenu li a { color: Green; background-color: #b3d58c; border-color: #b3d58c; }
+.tabmenu li.selected a { color: #3cbb3f; background-color: #fff; border-color: #3cbb3f; border-bottom-color: #fff;
+}
+
+#header-bottom-right { background-color: #fdffdc;
+}
+
+/* URL Link Colors */
+
+#header-img { margin-bottom: -7px; }
+a, .md a { color: #352225; }
+a:visited, .md a:visited { color: #5d2928; }
+.message-count { color: white !important; }
+
+.title:link { color: brown !important; }
+.title.click, .title:visited { color: green !important; }
+
+.flairselectbtn { color: #5d2928 !important; }
 
 /* "Snoo" */
 
@@ -193,6 +211,15 @@ body .disabled .morelink a:hover {
 
 .side .sidebox .spacer { visibility: hidden; display: none; }
 
+/* Special Reddit Image Replacement Emotes */
+
+.thumbnail.default {
+    height:70px;
+    width:70px;
+    background-image:url(%%TS3%%);
+    background-position:0px 0px;
+}
+
 /* Flair Settings */
 
 .flair {
@@ -295,7 +322,7 @@ a[href|="/lunateehee"],a[href|="/fluttersrs"],a[href|="/ohhi"],a[href|="/cutealo
   background-position:0 -200%;
 }
 
-a[href|="/ajhappy"],a[href|="/happlejack"],a[href|="/ppshrug"],a[href|="/flutterblush"],a[href|="/wahaha"],a[href|="/sbshocked"],.flair-lyra,.side .md table tr:nth-of-type(7) td:nth-of-type(1):after {
+a[href|="/ajhappy"],a[href|="/happlejack"],a[href|="/ppshrug"],a[href|="/flutterblush"],a[href|="/wahaha"],a[href|="/sbshocked"],a[href|="/troublecoltsearch"],a[href|="/tscsearch"],.flair-lyra,.side .md table tr:nth-of-type(7) td:nth-of-type(1):after {
   background-position:0 -300%;
 }
 
@@ -388,7 +415,7 @@ a[href|="/lunawait"],a[href|="/raritydress"],a[href|="/party"],a[href|="/happylu
   background-position:-100% -200%;
 }
 
-a[href|="/ppfear"],a[href|="/pinkiefear"],a[href|="/spikenervous"],a[href|="/newrainbowdash"],a[href|="/gross"],a[href|="/sbstare"],a[href|="/discordgrump"],.flair-bonbon,.side .md table tr:nth-of-type(7) td:nth-of-type(2):after {
+a[href|="/ppfear"],a[href|="/pinkiefear"],a[href|="/spikenervous"],a[href|="/newrainbowdash"],a[href|="/gross"],a[href|="/sbstare"],a[href|="/discordgrump"],a[href|="/troublecoltcute"],a[href|="/tsccute"],.flair-bonbon,.side .md table tr:nth-of-type(7) td:nth-of-type(2):after {
   background-position:-100% -300%;
 }
 
@@ -752,7 +779,7 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
   text-align:center;
 }
 
-a[href|="/troubleshoeshappy"],a[href|="/tschappy"],a[href|="/hauntedtroubleshoes"],a[href|="/hauntedtsc"],a[href|="/troubleshoessad"],a[href|="/tscsad"],a[href|="/troubleshoesmad"],a[href|="/tscmad"],a[href|="/troublecoltexcited"],a[href|="/tscexcited"],a[href|="/troublecoltdetermined"],a[href|="/tscdetermined"],a[href|="/troublecoltgasp"],a[href|="/tscgasp"],a[href|="/troublecoltmeh"],a[href|="/tscmeh"],a[href|="/troubleshoeseager"],a[href|="/tsceager"],a[href|="/troubleshoeseyeroll"],a[href|="/tsceyeroll"],a[href|="/troubleshoescheer"],a[href|="/tsccheer"] {
+a[href|="/troubleshoeshappy"],a[href|="/tschappy"],a[href|="/hauntedtroubleshoes"],a[href|="/hauntedtsc"],a[href|="/troubleshoessad"],a[href|="/tscsad"],a[href|="/troubleshoesmad"],a[href|="/tscmad"],a[href|="/troublecoltexcited"],a[href|="/tscexcited"],a[href|="/troublecoltdetermined"],a[href|="/tscdetermined"],a[href|="/troublecoltgasp"],a[href|="/tscgasp"],a[href|="/troublecoltmeh"],a[href|="/tscmeh"],a[href|="/troubleshoeseager"],a[href|="/tsceager"],a[href|="/troubleshoeseyeroll"],a[href|="/tsceyeroll"],a[href|="/troubleshoescheer"],a[href|="/tsccheer"],a[href|="/troublecoltsearch"],a[href|="/tscsearch"],a[href|="/troublecoltcute"],a[href|="/tsccute"] {
   display:block;
   clear:none;
   float:left;

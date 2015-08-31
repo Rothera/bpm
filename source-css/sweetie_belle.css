@@ -18,13 +18,13 @@ div.titlebox span.number:after {
 #siteTable div.thing a.title:visited { color: #EAA9CA }
 .comment .flat-list.buttons li a {
     color:  #A6D397;
-}
+    }
 
 /*BACKGROUND*/ 
 body {
-background: url(%%sbstare%%)  
-no-repeat fixed center center
-}
+    background: url(%%sbstare%%)  
+    no-repeat fixed center center
+    }
 
 /*SUBMISSIONS*/
 
@@ -104,8 +104,8 @@ no-repeat fixed center center
 
 /* FLAIR */
 .flairselector .customizer {
-display: none !important;
-}
+    display: none !important;
+    }
 
 .flair {
     padding: 0;
@@ -113,7 +113,7 @@ display: none !important;
     color: black;
     border: 0;
     border-radius: 0;
-    background-image: url(%%flair%%);
+    background-image: url(%%flair-transparentbg%%);
     display: inline-block;
     width: 16px;
     height: 16px
@@ -135,9 +135,7 @@ display: none !important;
 /* Dictionary */
 #search input[type="text"] {
     background: url(%%searchbarsweets%%) top left no-repeat !important;
-    padding: 17px 7px 18px 57px !important;
-    height: 22px !important;
-    width: 245px !important
+    padding: 17px 7px 18px 69px !important;
     }
 
 
@@ -275,6 +273,9 @@ a[href|="/sp"] {
     color: red;
     text-decoration: none
     }
+#header-img {
+    margin: 7px -10px -4px 6px;
+    }
 /* curved borders for tabs */
 .tabmenu li a, .pagename a {
     /*   border-top-left-radius: 5px;
@@ -291,7 +292,7 @@ a[href|="/sp"] {
 /* ---------- Announcement box at the top. ---------- */
 /* Uncomment to activate. To edit the text, put the following at the bottom of the sidebar: "1. TEXT HERE" */
 .content {
-    margin-top: 55px
+    margin-top: 15px /*Was 55px, because I assume the announcement box is barely used anymore ~aemantaslim*/
     }
 .pagename {
     font-size: 12pt
@@ -317,4 +318,7 @@ a[href|="/sp"] {
     }
 .titlebox .usertext-body .md ol li {
     margin: 3px
+    }
+.titlebox .bottom {
+    margin-top: 30px;
     }

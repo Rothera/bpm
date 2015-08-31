@@ -59,9 +59,9 @@ background: url(%%horsewife%%) center center no-repeat transparent;
 /*Subscriber Name Replace*/
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Doomed Ponies"}
+div.titlebox .subscribers span.number:after {content:" Proper Ponies"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " Waiting for the end of mod abuse" }
+div.titlebox p.users-online span.number:after { content: " Posting quality content" }
 div.titlebox p.users-online span.word { display: none }
 
 /*Flair modifications*/
@@ -987,16 +987,9 @@ padding: 0
 /* End Flair */
 
 /*Name Changes are Below*/
+a.author[href$="theBenger"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 
-a.author:before {content: "Doomed"}
-a.author[href$="DaylightDarkle"]:before {content: "Funless"}
-a.author[href$="DoomedCivilian"]:before {content: "Double"}
-
-.pagename:before {
-    content: "Doomed";
-    color: #FFE591;
-    Font-size: 16px;
-}
+a.author[href$="theBenger"]::before {font-size:10px!important; visibility:visible!important; content: "The Ashes Benger "}
 
 .sidecontentbox a.author[href$="Pinkie_Pie"] {Display:none}
 
@@ -1199,7 +1192,7 @@ z-index:9000}
 .thing[data-fullname$="a"] > .midcol > .upmod:focus::after { content: "Five more minutes of this and I'm gonna get mad. "; }
 .thing[data-fullname$="b"] > .midcol > .upmod:focus::after { content: "They're robots, Morty! It's okay to shoot them! "; }
 .thing[data-fullname$="c"] > .midcol > .upmod:focus::after { content: "They're bureaucrats! I don't respect them! "; }
-.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "Rick and Morty forever and forever. "; }
+.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "DISQUALIFIED "; }
 .thing[data-fullname$="e"] > .midcol > .upmod:focus::after { content: "It's about to get a whole lot weirder Morty. "; }
 .thing[data-fullname$="f"] > .midcol > .upmod:focus::after { content: "Welcome to your nightmare, bitch! "; }
 .thing[data-fullname$="g"] > .midcol > .upmod:focus::after { content: "Why would a Poptart want to live inside a toaster, Rick? "; }
@@ -1209,7 +1202,7 @@ z-index:9000}
 .thing[data-fullname$="k"] > .midcol > .upmod:focus::after { content: "I'm Mr. Meeseeks! Look at me!"; }
 .thing[data-fullname$="l"] > .midcol > .upmod:focus::after { content: "Oooh yeah! Can do! "; }
 .thing[data-fullname$="m"] > .midcol > .upmod:focus::after { content: "Wubba lubba dub dub! "; }
-.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "This isn't Game of Thrones, Morty. "; }
+.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "I LIKE WHAT YOU GOT. "; }
 .thing[data-fullname$="o"] > .midcol > .upmod:focus::after { content: "I'm not paying 70 smidgens for a broken defraculator. "; }
 .thing[data-fullname$="p"] > .midcol > .upmod:focus::after { content: "It might eat brains and exhale space AIDS. "; }
 .thing[data-fullname$="q"] > .midcol > .upmod:focus::after { content: "2003 just called and wants its easy target back. "; }
@@ -1218,7 +1211,7 @@ z-index:9000}
 .thing[data-fullname$="t"] > .midcol > .upmod:focus::after { content: "There are so many ants in my eyes! "; }
 .thing[data-fullname$="u"] > .midcol > .upmod:focus::after { content: "It's just called Two Brothers. "; }
 .thing[data-fullname$="v"] > .midcol > .upmod:focus::after { content: "You guys clearly backed the wrong conceptual horse. "; }
-.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "Real fake doors. "; }
+.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "Get schwifty "; }
 .thing[data-fullname$="x"] > .midcol > .upmod:focus::after { content: "With an arm of fake doors in your arm. "; }
 .thing[data-fullname$="y"] > .midcol > .upmod:focus::after { content: "Gimme my darn enchiladas! "; }
 .thing[data-fullname$="z"] > .midcol > .upmod:focus::after { content: "Paid for by…Trunk People. "; }
