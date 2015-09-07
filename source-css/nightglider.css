@@ -1,0 +1,17 @@
+/*Emotes!!!!*/
+a[href="/ngproud"],
+a[href="/ngsmile"],
+a[href="/ngglide1"],
+a[href="/ngglide2"]
+{
+    display:block;
+    clear:none;
+    float:left;
+    width:200px;
+    height: 200px;
+    background-image: url(%%NGsheet1%%) !important;
+}
+a[href="/ngproud"]{background-position:0% 0%;}
+a[href="/ngsmile"]{background-position:-100% 0%;}
+a[href="/ngglide1"]{background-position:-200% 0%;}
+a[href="/ngglide2"]{background-position:-300% 0%;}
