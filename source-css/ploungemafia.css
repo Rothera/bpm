@@ -1196,3 +1196,17 @@ height: 42px!important;
 display: block;
 overflow: hidden;
 }
+
+/* Footer, stolen from Plounge */
+.footer-parent
+{
+ padding-bottom: 240px;
+ clear:both;
+ text-align:center;
+ height:500px;
+ width:100%;
+ background-image:url(%%footer%%);
+ background-repeat:no-repeat;
+ margin-bottom:-25px;
+ background-position: bottom center;
+}

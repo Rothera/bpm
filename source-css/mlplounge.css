@@ -61,7 +61,7 @@ div.titlebox span.word {display:none}
 
 div.titlebox .subscribers span.number:after {content:" Proper Ponies"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " Posting quality content" }
+div.titlebox p.users-online span.number:after { content: " Posting 'quality' content" }
 div.titlebox p.users-online span.word { display: none }
 
 /*Flair modifications*/
@@ -801,6 +801,7 @@ padding: 0
 
 /*Hiddenbee goes here*/
 
+.usertext input[value$="5q"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -400%}
 .usertext input[value$="5r"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -500%}
 .usertext input[value$="5s"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -600%}
 .usertext input[value$="555"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -700%}
@@ -987,9 +988,11 @@ padding: 0
 /* End Flair */
 
 /*Name Changes are Below*/
-a.author[href$="theBenger"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+/*
+a.author[href$="UserNameHere."] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 
-a.author[href$="theBenger"]::before {font-size:10px!important; visibility:visible!important; content: "The Ashes Benger "}
+a.author[href$="UserNameHere"]::before {font-size:10px!important; visibility:visible!important; content: "New Name Here"}
+*/
 
 .sidecontentbox a.author[href$="Pinkie_Pie"] {Display:none}
 

@@ -47,6 +47,13 @@
             background-repeat: no-repeat}
         .commentarea > .usertext textarea:focus {
             background-image: none}
+    /* Fix to stop the comments exiting .md */
+    /* Taken from r/mlp */
+        .commentarea .md:after, .thing .md:after{
+            content:"";
+            display:block;
+            width:100%;
+            clear:left} 
 
 /* RES fixes */
     .res-nightmode .side .md h3 {
@@ -161,4 +168,13 @@
                 width: 87px;
                 height: 70px;
                 background: url(%%switchywhat%%)}
+        /* Switchywave */
+            a[href|="/switchywave"] {
+                display: block;
+                clear: none;
+                float: left;
+                width: 100px;
+                height: 100px;
+                background: url(%%switchycomment%%);
+                background-position:-330px 0}
 /* Do not add anything below the emote block pls other than custom emotes ;-; */

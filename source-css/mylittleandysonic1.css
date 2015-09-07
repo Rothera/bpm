@@ -3,7 +3,7 @@
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%Best-Pony%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%tinybee%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -20,7 +20,7 @@
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%m8banner%%) 50% 0px !important;
+   background: url(%%spellingnatzi%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -1668,30 +1668,30 @@ padding:0px 5px 0px 0px;
 }
 
 div.up {
-    width: 30px !important;
-    height: 30px !important;
-    background: url(%%arrows%%) !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: url(%%beevotes%%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px -64px !important
+    }
+div.down {
+    width: 32px !important;
+    height: 32px !important;
+    background: url(%%beevotes%%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px -96px !important
+    }
+div.upmod {
+    width: 32px !important;
+    height: 32px !important;
+    background: url(%%beevotes%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px 0px !important
     }
-div.down {
-    width: 30px !important;
-    height: 30px !important;
-    background: url(%%arrows%%) !important;
-    background-repeat: no-repeat !important;
-    background-position: 0px -30px !important
-    }
-div.upmod {
-    width: 30px !important;
-    height: 30px !important;
-    background: url(%%arrows%%) !important;
-    background-repeat: no-repeat !important;
-    background-position: 0px -60px !important
-    }
 div.downmod {
-    width: 30px !important;
-    height: 30px !important;
-    background: url(%%arrows%%) !important;
+    width: 32px !important;
+    height: 32px !important;
+    background: url(%%beevotes%%) !important;
     background-repeat: no-repeat !important;
-    background-position: 0px -90px !important
+    background-position: 0px -32px !important
     }

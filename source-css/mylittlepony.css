@@ -8,7 +8,7 @@
       Bj         BB             ;qBBBB0L,           .qBB:       LB2,uEBBBBB0v:                              Bi
       8B          Bi          BBBkr:ir1BBBBJ       .   LBB,      :B:     ,:7BBBBBBOJ:                        B.
        Bi          B.       7BB           iBBB.      ..  vBB      YB   .  :B8BUBi :kBBBBPi                    B
-       LB          .F      vBi               MBB       ..  1Bj     BB    rB   PBB      .YBBBB2:               .B
+       LB          .F      vBi               MBB       ..  1Bj     BB    rB   PBB      .YBBBB2:               .Bnp
        YBB           :     B5                  BBL       ..  BB    iB    B     rB           .jBBBq:            J7
        B BB               BB                    ,BB       ..  7B,   B,  Bq      MB               LBBBF:         M 
       BM  BB              BB                      BB.      ... .B;  B:  B        B                   78BZr       U
@@ -273,10 +273,10 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%kilroywashere%%);
- width:70px;
- height:46px;
- margin-top:-21px;
+ background:url(%%discentia-hat%%);
+ width:60px;
+ height:60px;
+ margin-top:-35px;
  margin-left:5px;
  margin-bottom:0px;
  margin-right:-40px;
@@ -288,7 +288,7 @@ border-top-right-radius: 5px;
 .thumbnail.default{ background-position:0px -70px!important}
 .thing[data-fullname$="d"] .thumbnail.nsfw,.thing[data-fullname$="i"] .thumbnail.nsfw,.thing[data-fullname$="s"] .thumbnail.nsfw,.thing[data-fullname$="c"] .thumbnail.nsfw,.thing[data-fullname$="e"] .thumbnail.nsfw,
 .thing[data-fullname$="n"] .thumbnail.nsfw,.thing[data-fullname$="t"] .thumbnail.nsfw,.thing[data-fullname$="a"] .thumbnail.nsfw{background-position:0px -170px!important}
-.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2,.sidecontentbox a.author.id-t2_6uo3t, .sidecontentbox a.author.id-t2_5dxi7, .sidecontentbox a.author.id-t2_3fvpf, .sidecontentbox a.author.id-t2_5o8ly, .sidecontentbox a.author.id-t2_5xxlw, .sidecontentbox a.author.id-t2_6gpcb ,.sidecontentbox ul.content li.more a {content:"";color:white;font-size:0pt;display:block}
+.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2,.sidecontentbox a.author.id-t2_6uo3t, .sidecontentbox a.author.id-t2_5dxi7, .sidecontentbox a.author.id-t2_3fvpf, .sidecontentbox a.author.id-t2_5o8ly, .sidecontentbox a.author.id-t2_5xxlw, .sidecontentbox a.author.id-t2_6gpcb  a {content:"";color:white;font-size:0pt;display:block}
 .sidecontentbox a.author.id-t2_3l5j0:before, .sidecontentbox a.author.id-t2_4a7lu:before ,.sidecontentbox a.author.id-t2_4f80o:before ,.sidecontentbox a.author.id-t2_5agom:before ,.sidecontentbox a.author.id-t2_51isb:before ,.sidecontentbox a.author.id-t2_51isb:after ,.sidecontentbox a.author.id-t2_5eqe2:before, .sidecontentbox a.author.id-t2_6uo3t:before, .sidecontentbox a.author.id-t2_5dxi7:before, .sidecontentbox a.author.id-t2_3fvpf:before, .sidecontentbox ul.content li.more a:before, .sidecontentbox a.author.id-t2_5o8ly:before, .sidecontentbox a.author.id-t2_5xxlw:before, .sidecontentbox a.author.id-t2_6gpcb:before {font-size:10pt;color:#369;display:inline-block;}
 .sidecontentbox a.author.id-t2_3l5j0:before {content:"Lebal of the House of Usher"}
 .sidecontentbox a.author.id-t2_4a7lu:before {content:"Porsch"}
@@ -303,7 +303,7 @@ border-top-right-radius: 5px;
 .sidecontentbox a.author.id-t2_6gpcb:before {content:"Linkygit"}
 .sidecontentbox a.author.id-t2_5o8ly:before {content:"xHaZxFaTx"}
 .sidecontentbox a.author.id-t2_5xxlw:before {content:"Raging_Moose"} 
-.sidecontentbox ul.content li.more {display:none}
+/*.sidecontentbox ul.content li.more {display:none}*/
 .sidecontentbox a.author.id-t2_5fmql {display:none;}
 .sidecontentbox a.author.id-t2_6ua87 {display:none;}
 
@@ -332,9 +332,8 @@ body a[href="/spoiler"]{background:black!important;color:black!important}
 body a[href="/spoiler"]:hover{color:white!important}
 
 /*Pinkie Pie NPT Warnings*/
-/*DO _NOT_ PUT ANY COMMENTS IN-BETWEEN THE NPTWARNING TAGS! Do not remove the tags either, they are used by modtool and the bot! The tags must be on their own line!*/
+/*DO NOT PUT _ANY_ COMMENTS IN-BETWEEN THE NPTWARNING TAGS! Do not remove the tags either, they are used by modtool and the bot! The tags must be on their own line!*/
 /*{NPTWARNING}
-
 .formtabs-content .infobar
 {
  margin-left:50px;
@@ -362,7 +361,6 @@ body a[href="/spoiler"]:hover{color:white!important}
 {
  background:url(%%pinkiemessage%%) no-repeat;
 }
-
 {/NPTWARNING}*/
 
 /* Spoiler Setter*/
