@@ -26,7 +26,7 @@
 # $ make www
 # $ make sync
 
-VERSION = 66.227
+VERSION = 66.228
 
 CONTENT_SCRIPT := \
     addon/bpm-header.js addon/bpm-utils.js addon/bpm-browser.js \
