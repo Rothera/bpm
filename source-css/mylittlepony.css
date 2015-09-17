@@ -133,8 +133,8 @@ transition: all 3s linear;
 
 /* CSS last generated on Sat, 16 Feb 2013 02:05:57 -0600 by UNKNOWN on derpy */
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Something Funny"}
-div.titlebox .users-online span.number:after {content:" Something Else Funny"}
+div.titlebox .subscribers span.number:after {content:" Mass-produced Princess Dresses"}
+div.titlebox .users-online span.number:after {content:" Original Rarities"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -226,7 +226,7 @@ border-top-right-radius: 5px;
 
 #header-img
 { 
- margin:0px 10px -16px 10px;
+ margin:0px 20px -3px 10px;
 }
 
 #header-bottom-left{padding-top:10px}
@@ -240,7 +240,7 @@ border-top-right-radius: 5px;
  border-right:0;
  position:absolute;
  top:10px;
- left:145px;
+ left:225px;
  z-index:50;
  margin:44px 250px 0 0; /*Usually 22px 250px 0 0*/
  padding:8px 6px;
@@ -273,10 +273,10 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%discentia-hat%%);
- width:60px;
- height:60px;
- margin-top:-35px;
+ background:url(%%twilight-hat%%);
+ width:65px;
+ height:54px;
+ margin-top:-29px;
  margin-left:5px;
  margin-bottom:0px;
  margin-right:-40px;
@@ -1642,9 +1642,9 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
  left:-6px;
 }
 
-/*Spoiler-tag notification
+/*Spoiler-tag notification*/
 
-.post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:before {
+/*.post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:before {
     position: absolute;
     content: "Is this about the new episode?  If so, please spoiler-tag it!";
     background: orangered;

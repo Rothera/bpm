@@ -59,9 +59,9 @@ background: url(%%horsewife%%) center center no-repeat transparent;
 /*Subscriber Name Replace*/
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Proper Ponies"}
+div.titlebox .subscribers span.number:after {content:" Factory Standard Ploungers"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " Posting 'quality' content" }
+div.titlebox p.users-online span.number:after { content: " Rare Ploungers" }
 div.titlebox p.users-online span.word { display: none }
 
 /*Flair modifications*/
@@ -801,6 +801,7 @@ padding: 0
 
 /*Hiddenbee goes here*/
 
+.usertext input[value$="5p"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -300%}
 .usertext input[value$="5q"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -400%}
 .usertext input[value$="5r"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -500%}
 .usertext input[value$="5s"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -600%}
@@ -971,6 +972,8 @@ padding: 0
 .flair-cmcdarkle:hover {background-position: -300% -2400%} /*For Darkle; Sunset Shimmer Hover*/
 .flair-cmclunar {background-position: -300% -100%}
 .flair-cmclunar:hover {background-position: -300% -800%} /*For LunarWolves; NMM Hover*/
+.flair-excmcal {background-position: -400% -100%}
+.flair-excmcal:hover {background-position: -200% -300%} /*For Frenchie; Tavi Hover*/
 .flair-cmcsh {background-position: -300% -100%}
 .flair-cmcsh:hover {background-position: 0 -200%} /*For Shercock_Holmes; Luna Hover*/
 .flair-cmcjib {background-position: -300% -100%}
@@ -993,6 +996,10 @@ a.author[href$="UserNameHere."] {font-size:0!important; overflow:hidden; display
 
 a.author[href$="UserNameHere"]::before {font-size:10px!important; visibility:visible!important; content: "New Name Here"}
 */
+
+a.author[href$="Shercock_Holmes"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+
+a.author[href$="Shercock_Holmes"]::before {font-size:10px!important; visibility:visible!important; content: "Shercock_Holmes"}
 
 .sidecontentbox a.author[href$="Pinkie_Pie"] {Display:none}
 

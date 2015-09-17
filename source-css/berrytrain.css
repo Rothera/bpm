@@ -126,7 +126,7 @@ a[href|="/filly"]
 
 .author[href$="/presidentcelestia"]:after {content: ' Of the Pumpkin Patch ';}
 .author[href$="/presidentcelestia"]:before {content: ' King ';}
-
+.author[href$="/AnotherSmegHead"]:before {content: ' Scourge of /r/WorldPowers ';}
 .author:before {content: 'Queen ';}
 
 /*Start of [REDACTED]*/
@@ -496,6 +496,26 @@ a[href="/lunabored"] { width: 150px; height: 90px; background-position: -5px -35
 a[href="/nataliapoklonskaya"] { width: 195px; height: 100px; background-position: -485px -355px; }
 a[href="/rosescrunch"] { width: 158px; height: 100px; background-position: -5px -465px; }
 a[href="/wintersleep"] {width: 150px; height: 118px; background-position: -173px -465px; }
+
+/*Smeg's stuff */
+
+a[href="/drwhoovesroseotp"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 200px;
+    height: 148px;
+    background-image: url(%%drwhoovesroseotp%%)
+} 
+
+a[href="/shadowheartroll"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 189px;
+    height: 200px;
+    background-image: url(%%shroll%%)
+} 
 
 /* 150 by 130 */
 a[href="/arousing"], a[href="/babsmean"], a[href="/carrotannoyed"], a[href="/flitterlook"], a[href="/flitternotbad"], a[href="/forgiveme"], a[href="/intensegaming"] {

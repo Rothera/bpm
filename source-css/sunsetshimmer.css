@@ -1,18 +1,115 @@
 /*Banner*/
-#header {
-  background: url(%%header%%) repeat-x scroll top left!important;
-  border:none!important;
-  height:114px!important;
+
+#header-img {
+  z-index: 9998;
+  position: absolute;
+  top: 23px;
 }
 
-#header-img { margin: -1px 0 -54px 0 }
+.pagename a {
+  display: block;
+  background: url(%%Sunset-Title%%) no-repeat;
+  width: 300px;
+  height: 94px;
+  content: " <p> ";
+  font-size: 0;
+  left:143 px;
+  margin: 60px auto auto;
+}
+
+.pagename {
+  display: block; 
+  position: relative; 
+  overflow: hidden; 
+  height: 175px; 
+  margin-top: -34px;
+  margin-right:-10px; 
+  border-bottom: 0 solid #e2d8ca;
+  box-shadow: 0 0 6px #555;
+}
+    
+.pagename:after {
+  background: transparent url(%%ScrollingBanner%%) repeat;
+  content: "";
+  z-index: -200;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  width: 4644px;
+  height: 175px;
+  display: block;
+  -webkit-animation: sidescroll 120s linear infinite;
+  -moz-animation: sidescroll 120s linear infinite;
+  animation: sidescroll 120s linear infinite;
+  overflow: hidden;
+}
+    
+#header {
+  border-bottom: 0 solid #e2d8ca;
+  box-shadow: 0 0 6px #555;
+  z-index:99;
+  background-color:#5E5E5E!important;
+}
+
+#header-bottom-left{
+  overflow:hidden;
+}
+
+@-webkit-keyframes sidescroll {
+  from {
+    -webkit-transform: translateX(0px);
+}
+  to {
+    -webkit-transform: translateX(-1161px);
+  }
+}
+@-moz-keyframes sidescroll {
+  from {
+    -moz-transform: translateX(0px);
+  }
+  to {
+    -moz-transform: translateX(-1161px);
+  }
+}
+@keyframes sidescroll {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-1161px);
+  }
+}
+
+body>.content {
+  overflow: hidden;
+}
+
+#header-bottom-right {
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.3)!important;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px!important;
+  top: 19px!important;
+  bottom: auto;
+  padding: 8px;
+  height:17px;
+}
+
+.titlebox .redditname a {
+  font-size: 0;
+}
 
 /*tab menu*/
 
 div#header-bottom-left ul.tabmenu {
   position: absolute;
-  bottom: 0px;
-  left: 230px;
+  top: 94.5%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
   font-family: "Lucida Sans Unicode", "Trebuchet MS", Verdana, serif;
   text-transform: uppercase;
   font-size: 12px;
@@ -50,30 +147,7 @@ div#header-bottom-left ul.tabmenu {
 
 /*end tabmenu*/
 
-.pagename {
-  position:absolute;
-  top:32px;
-  left:203px;
-  right:203px;
-}
 
-.pagename a {
-  background: url(%%Sunset-Title%%) no-repeat 0 0;
-  width: 315px;
-  height: 66px;
-  content: " <p> ";
-  margin: 0 auto;
-  display: block;
-  font-size: 0;
-}
-
-.pagename a:hover {
-  text-decoration:none;
-}
-
-.titlebox .redditname a {
-  font-size: 0;
-}
 
 .titlebox .redditname a:after {
   content: "SunsetShimmer";
@@ -1676,7 +1750,7 @@ a.thumbnail.self{margin-right:-14px}
 .side .md table:last-of-type {
   display: table;
   position: absolute;
-  top: 120px;
+  top: 185px;
   left: 6px;
   width: calc(100% - 356px) !important;
   margin: 0;
@@ -1721,7 +1795,7 @@ a.thumbnail.self{margin-right:-14px}
 
 .side .md table:last-of-type td a:last-of-type { color: #0079D3 !important }
 
-.content { margin-top: 51px }
+.content { margin-top: 58px }
 
 /*** Tricks ***/
 
@@ -1743,3 +1817,5 @@ a.thumbnail.self{margin-right:-14px}
   color: white !important;
   content: "NSFW emote!";
 }
+
+.panestack-title, .commentarea .menuarea, .sheets { margin: 5px }

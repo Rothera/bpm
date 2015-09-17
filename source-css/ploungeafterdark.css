@@ -1134,9 +1134,9 @@ font-size:0!important;
      content: "";
 }
 a.author[href$="Synes7hesia"]:before {
-     font-size:10px!important; 
+     font-size:11px!important; 
      visibility:visible!important; 
-     content: "Syn "
+     content: "Synistar"
 }
 
 a.author[href$="GoldenNeko"] {
@@ -1162,6 +1162,19 @@ a.author[href$=NtmrMoon]:before {
     content: "Woonie";
     font-size: 11px;
 }
+
+a.author[href$="DonnyGreene"] {
+font-size:0!important; 
+     overflow:hidden; 
+     display:inline-block; 
+     content: "";
+}
+a.author[href$="DonnyGreene"]:before {
+     font-size:11px!important; 
+     visibility:visible!important; 
+     content: "Donny 'Right Hand' Greene"
+}
+
 /*
 a.author[href$="Morichalion"] {
 font-size:0!important; 
