@@ -133,8 +133,8 @@ transition: all 3s linear;
 
 /* CSS last generated on Sat, 16 Feb 2013 02:05:57 -0600 by UNKNOWN on derpy */
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Mass-produced Princess Dresses"}
-div.titlebox .users-online span.number:after {content:" Original Rarities"}
+div.titlebox .subscribers span.number:after {content:" Internal Monologues"}
+div.titlebox .users-online span.number:after {content:" Did I Just Say That Out Loud?"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -240,9 +240,9 @@ border-top-right-radius: 5px;
  border-right:0;
  position:absolute;
  top:10px;
- left:225px;
+ left:208px;
  z-index:50;
- margin:44px 250px 0 0; /*Usually 22px 250px 0 0*/
+ margin:54px 250px 0 0; /*Usually 22px 250px 0 0*/
  padding:8px 6px;
  padding-right:12px;
  list-style:none;
@@ -273,10 +273,10 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%twilight-hat%%);
- width:65px;
- height:54px;
- margin-top:-29px;
+ background:url(%%derpy-hat%%);
+ width:60px;
+ height:60px;
+ margin-top:-35px;
  margin-left:5px;
  margin-bottom:0px;
  margin-right:-40px;
@@ -286,8 +286,12 @@ border-top-right-radius: 5px;
 .thumbnail.self{background-position:0px -120px!important}
 .thumbnail.nsfw{background-position:0px 0px!important}
 .thumbnail.default{ background-position:0px -70px!important}
+.thumbnail.default{ background-position:0px -70px!important}
+.linkflair-eqg3 > .thumbnail.nsfw { background-position:0px -240px!important}
+.linkflair-leak > .thumbnail.nsfw { background-position:0px -310px!important}
+
 .thing[data-fullname$="d"] .thumbnail.nsfw,.thing[data-fullname$="i"] .thumbnail.nsfw,.thing[data-fullname$="s"] .thumbnail.nsfw,.thing[data-fullname$="c"] .thumbnail.nsfw,.thing[data-fullname$="e"] .thumbnail.nsfw,
-.thing[data-fullname$="n"] .thumbnail.nsfw,.thing[data-fullname$="t"] .thumbnail.nsfw,.thing[data-fullname$="a"] .thumbnail.nsfw{background-position:0px -170px!important}
+.thing[data-fullname$="n"] .thumbnail.nsfw,.thing[data-fullname$="t"] .thumbnail.nsfw,.thing[data-fullname$="a"] .thumbnail.nsfw{background-position:0px -170px}
 .sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2,.sidecontentbox a.author.id-t2_6uo3t, .sidecontentbox a.author.id-t2_5dxi7, .sidecontentbox a.author.id-t2_3fvpf, .sidecontentbox a.author.id-t2_5o8ly, .sidecontentbox a.author.id-t2_5xxlw, .sidecontentbox a.author.id-t2_6gpcb  a {content:"";color:white;font-size:0pt;display:block}
 .sidecontentbox a.author.id-t2_3l5j0:before, .sidecontentbox a.author.id-t2_4a7lu:before ,.sidecontentbox a.author.id-t2_4f80o:before ,.sidecontentbox a.author.id-t2_5agom:before ,.sidecontentbox a.author.id-t2_51isb:before ,.sidecontentbox a.author.id-t2_51isb:after ,.sidecontentbox a.author.id-t2_5eqe2:before, .sidecontentbox a.author.id-t2_6uo3t:before, .sidecontentbox a.author.id-t2_5dxi7:before, .sidecontentbox a.author.id-t2_3fvpf:before, .sidecontentbox ul.content li.more a:before, .sidecontentbox a.author.id-t2_5o8ly:before, .sidecontentbox a.author.id-t2_5xxlw:before, .sidecontentbox a.author.id-t2_6gpcb:before {font-size:10pt;color:#369;display:inline-block;}
 .sidecontentbox a.author.id-t2_3l5j0:before {content:"Lebal of the House of Usher"}
@@ -1484,6 +1488,34 @@ span.linkflairlabel[title="Future episode spoilers"]
  content:"FUTURE EPISODE CONTENT";
  font-size:12px;
  color:#888;
+ border:1px solid #888;
+ border-radius:3px;
+ position:relative;
+ padding:0px 2px;
+ margin-right:2px;
+ top:-1px;
+}
+
+.linkflair-eqg3 .linkflairlabel {display:none;}
+.linkflair-eqg3 p.title:before
+{
+ content:"Friendship Games";
+ font-size:12px;
+ color:#888;
+ border:1px solid #888;
+ border-radius:3px;
+ position:relative;
+ padding:0px 2px;
+ margin-right:2px;
+ top:-1px;
+}
+
+.linkflair-leak .linkflairlabel {display:none;}
+.linkflair-leak p.title:before
+{
+ content:"'Scare Master' leak";
+ font-size:12px;
+ color:#A88;
  border:1px solid #888;
  border-radius:3px;
  position:relative;
