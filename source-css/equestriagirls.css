@@ -932,7 +932,7 @@ textarea {
   font-weight: bold;
 }
 
-.side .md table:last-of-type td a:last-of-type { color: #AC1280 !important }
+.side .md table:last-of-type td a { color: #AC1280 !important }
 
 .content { margin-top: 46px }
 
@@ -943,7 +943,7 @@ textarea {
 .md { overflow: auto }
 .usertext-edit .md { overflow: inherit }
 
-.flair {
+.flair, .moderator ~ .userattrs:before {
   padding:0;
   background:url(%%flair-table%%);
   color:black;
@@ -954,6 +954,12 @@ textarea {
   height:16px;
   text-indent:-9999px;
   line-height:240%;
+}
+
+.tagline .moderator ~ .flair { display: none }
+.moderator ~ .userattrs:before {
+  margin: 0 0.5em -0.25em 0;
+  content: '';
 }
 
 .res-nightmode .tagline .flair { background-color: transparent !important }
@@ -1217,7 +1223,7 @@ a[href|="/cadence"],a[href|="/cadance"],a[href|="/princesscadance"],a[href|="/pr
 a[href|="/flutterroll"],a[href|="/rflutterroll"],a[href|="/fluttershy"],a[href|="/rfluttershy"],a[href|="/trixiesad"],a[href|="/rtrixiesad"],a[href|="/twisad"],a[href|="/rtwisad"],.flair-applejack
 {background-position:-300% 0}
 
-a[href|="/spikemeh"],a[href|="/rspikemeh"],a[href|="/rdsmile"],a[href|="/rrdsmile"],a[href|="/changeling"],a[href|="/rchangeling"],a[href|="/lunamad"],a[href|="/rlunamad"],.flair-cmc
+a[href|="/spikemeh"],a[href|="/rspikemeh"],a[href|="/rdsmile"],a[href|="/rrdsmile"],a[href|="/changeling"],a[href|="/rchangeling"],a[href|="/lunamad"],a[href|="/rlunamad"],.flair-cmc,.moderator~.userattrs:before
 {background-position:-300% -100%}
 
 a[href|="/abmeh"],a[href|="/rabmeh"],a[href|="/rdwut"],a[href|="/rrdwut"],a[href|="/rdscared"],a[href|="/rrdscared"],a[href|="/discordsad"],a[href|="/rdiscordsad"],.flair-vinyl

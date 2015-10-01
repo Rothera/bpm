@@ -2201,3 +2201,19 @@ background-image: url(%%drama%%)
 a[href="/drama"] {
 background-position: -0px -0px !important;
     }
+
+/* MLAS1 April Fools 2015 Emotes */
+a[href|='/gbeck'], a[href|='/billyo'], a[href|='/hannity'], a[href|='/limbaugh'], a[href|='/palin'], a[href|='/romney'], a[href|='/drudgeconfused']{
+
+    display: block;
+    clear: none;
+    float: left;
+    background-image: url(%%ss2%%) }
+
+a[href|="/gbeck"] {width:100px; height:138px; background-position: -2px -146px}
+a[href|="/billyo"] {width:100px; height:107px; background-position: -2px -810px}
+a[href|="/hannity"] {width:100px; height:135px; background-position: -2px -286px}
+a[href|="/limbaugh"] {width:100px; height:142px; background-position: -2px -2px}
+a[href|="/palin"] {width:100px; height:129px; background-position: -2px -423px}
+a[href|="/romney"] {width:100px; height:128px; background-position: -2px -554px}
+a[href|="/drudgeconfused"] {width:100px; height:124px; background-position: -2px -684px}
