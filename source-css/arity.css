@@ -1,0 +1,255 @@
+/**puts R before arity and changes color to white**/
+.redditname a:before {
+    content: "R";
+}
+.pagename a {
+ color: #000000;
+ margin-right: 7px;
+}
+
+
+
+/******************/
+/*Sidebar stuff*/
+/******************/
+/* Precious Gems*/
+.titlebox strong {
+    font-size: medium
+}
+div.titlebox span.word {
+display: none
+}
+div.titlebox span.number:after {
+content: " Precious Gems"
+}
+div.titlebox .users-online span.number:after {
+    content: " Gems"
+    }
+.sidecontentbox h1:not(:first-child) {
+color: #FFFFFF !important;
+font-size: .0px !important;
+overflow: hidden;
+}
+#headdit-box {display:none;}
+.sidebox .spacer {visibility:hidden}
+.side .create *{display:none!important;}
+.flair { background: transparent ; border: 0px ; }
+
+
+/*********************/
+/******Main CSS*******/
+/********************/
+/***Banner, background, bottom image***/
+#header {
+        background: url(%%literalbanner%%) repeat bottom left;
+    border-bottom: 0px solid white
+    }
+.side {background-color:#ebeff1;opacity:0.9;}
+.side * {color:black;}
+.side .subtitle, .flairtoggle {color:black;}
+body {
+background-color: #ebeff1 !important;
+    background: url(%%raritywalk%%) no-repeat fixed center center
+    }
+div.footer-parent:after {
+    width: 960px;
+    content: url(%%raruuhh%%);
+    height: 370px;
+    margin-bottom: -35px
+    }
+.stylesheet-customize-container textarea {
+    height: 600px
+    }
+
+/**changes upvote/downvote number colors**/
+.likes .score.likes {color:black}
+.dislikes .score.dislikes {color:black}
+.likes div.score.likes {color:purple}
+.dislikes div.score.dislikes {color:red}
+span.rank {
+    color:green !important;
+    }
+.midcol .score.unvoted {
+color: black;
+}
+
+/*Change vote arrows*/  
+.arrow.up { background-image: url(%%updiamond2%%); 
+background-position: 0px 0px; 
+height: 20px; width: 20px; 
+}
+.arrow.upmod { 
+background-image: url(%%updiamond%%); 
+background-position: 0px 0px; 
+height: 20px; width: 20px;  
+}
+.arrow.down { background-image: url(%%downdiamond2%%); 
+background-position: 0px 0px; 
+height: 20px; width: 20px; 
+}
+.arrow.downmod { 
+background-image: url(%%downdiamond%%); 
+background-position: 0px 0px; 
+height: 20px; width: 20px; 
+}
+
+/* This is important to allow oversized updown arrows all over! */
+ /* OVERRIDES INLINE CSS */    
+.midcol[style] {
+     width: 50px !important
+     }
+  .comment .midcol {
+     width: 32px
+     }
+  .gadget .midcol {
+     width: 32px;
+     margin: 0
+     }
+
+.keyHighlight {
+    background-color: transparent !important
+    }
+
+/* make H4s POP */
+.expando h4 {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background: purple;
+    text-align: center;
+    padding: 3px;
+    border-radius: 19px;
+    box-shadow: 2px 2px 5px #9999ff;
+    text-shadow: 1px 1px #ffffff
+}
+
+/* Replace the self-post image with AJ */
+.thumbnail.self {
+    background-image: url(%%rariself%%);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+background-position: 0 -0px;
+        }
+
+/* Replace the no-thumb image with AJ */
+.thumbnail.default {
+    background-image: url(%%rarimage%%);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+background-position: 0 -0px;
+        }
+/* Replace the spoiler image with AJ */
+.thumbnail.nsfw {
+    background-image: url(%%camping%%);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+background-position: 0 -0px;
+        }
+
+
+/***********************************
+//Custom Emoticons//
+***********************************/
+a[href|="/rar00"], a[href|="/rar01"], a[href|="/rar02"], a[href|="/rar03"], a[href|="/rar04"], a[href|="/rar05"], a[href|="/rar06"], a[href|="/rar07"], a[href|="/rar08"], a[href|="/rar09"], a[href|="/rar10"], a[href|="/rar11"], a[href|="/rar12"], a[href|="/rar13"], a[href|="/rar14"], a[href|="/rar15"], a[href|="/rar16"], a[href|="/rar17"], a[href|="/rar18"], a[href|="/rar19"], a[href|="/rar20"], a[href|="/rar21"], a[href|="/rar22"], a[href|="/rar23"], a[href|="/rar24"], a[href|="/rar25"], a[href|="/rar26"], a[href|="/rar27"], a[href|="/rar28"], a[href|="/rar29"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%raremote%%) !important
+    }
+a[href|="/rar00"] {
+    background-position: -0px -0px
+    }
+a[href|="/rar01"] {
+    background-position: -0px -70px
+    }
+a[href|="/rar02"] {
+    background-position: -0px -140px
+    }
+a[href|="/rar03"] {
+    background-position: -0px -210px
+    }
+a[href|="/rar04"] {
+    background-position: -0px -280px
+    }
+a[href|="/rar05"] {
+    background-position: -0px -350px
+    }
+a[href|="/rar06"] {
+    background-position: -0px -420px
+    }
+a[href|="/rar07"] {
+    background-position: -0px -490px
+    }
+a[href|="/rar08"] {
+    background-position: -0px -560px
+    }
+a[href|="/rar09"] {
+    background-position: -0px -630px
+    }
+a[href|="/rar10"] {
+    background-position: -70px -0px
+    }
+a[href|="/rar11"] {
+    background-position: -70px -70px
+    }
+a[href|="/rar12"] {
+    background-position: -70px -140px
+    }
+a[href|="/rar13"] {
+    background-position: -70px -210px
+    }
+a[href|="/rar14"] {
+    background-position: -70px -280px
+    }
+a[href|="/rar15"] {
+    background-position: -70px -350px
+    }
+a[href|="/rar16"] {
+    background-position: -70px -420px
+    }
+a[href|="/rar17"] {
+    background-position: -70px -490px
+    }
+a[href|="/rar18"] {
+    background-position: -70px -560px
+    }
+a[href|="/rar19"] {
+    background-position: -70px -630px
+    }
+a[href|="/rar20"] {
+    background-position: -140px -0px
+    }
+a[href|="/rar21"] {
+    background-position: -140px -70px
+    }
+a[href|="/rar22"] {
+    background-position: -140px -140px
+    }
+a[href|="/rar23"] {
+    background-position: -140px -210px
+    }
+a[href|="/rar24"] {
+    background-position: -140px -280px
+    }
+a[href|="/rar25"] {
+    background-position: -140px -350px
+    }
+a[href|="/rar26"] {
+    background-position: -140px -420px
+    }
+a[href|="/rar27"] {
+    background-position: -140px -490px
+    }
+a[href|="/rar28"] {
+    background-position: -140px -560px
+    }
+a[href|="/rar29"] {
+    background-position: -140px -630px
+    }
+
+/*Hide mod bot from sidebar*/.side .id-t2_5fmql, .side .id-t2_5fmql + * {display:none;}
