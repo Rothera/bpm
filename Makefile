@@ -30,7 +30,7 @@
 # - Test
 # - Make thread
 
-VERSION = 66.230
+VERSION = 66.231
 
 CONTENT_SCRIPT := \
     addon/bpm-header.js addon/bpm-utils.js addon/bpm-browser.js \
