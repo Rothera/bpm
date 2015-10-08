@@ -116,45 +116,38 @@ function track_focus() {
  */
 function inject_emote_into_form(store, target_form, emote_name) {
     log_debug("Injecting ", emote_name, "into", target_form);
-    var emote_info = store.lookup_core_emote(emote_name, true);
 
-    var start = target_form.selectionStart;
-    var end = target_form.selectionEnd;
-    if(start !== undefined && end !== undefined) {
-        var emote_len;
-        var before = target_form.value.slice(0, start);
-        var inside = target_form.value.slice(start, end);
-        var after = target_form.value.slice(end);
-        if(inside) {
-            var extra_len, emote;
+    var move_cursor = function(position) {
+        target_form.selectionStart = position;
+        target_form.selectionEnd = position;
+    };
+
+    if(target_form.selectionStart !== undefined && target_form.selectionEnd !== undefined) {
+        var emote_info = store.lookup_core_emote(emote_name, true);
+
+        var before_text = target_form.value.slice(0, target_form.selectionStart);
+        var text = target_form.value.slice(target_form.selectionStart, target_form.selectionEnd);
+        var after_text = target_form.value.slice(target_form.selectionEnd);
+
+        if(text) {
             // Make selections into text/alt-text
             if(emote_info.tags.indexOf(store.formatting_tag_id) > -1) {
-                extra_len = 4; // '[]('' and ')'
-                emote = "[" + inside + "](" + emote_name + ")";
+                var emote = "[" + text + "](" + emote_name + ")";
+                target_form.value = (before_text + emote + after_text);
+                move_cursor(before_text.length + 1 + text.length + 2 + emote_name.length + 1);
             } else {
-                extra_len = 4; // '[](' and ' "' and '")'
-                emote = "[](" + emote_name + " \"" + inside + "\")";
+                var emote = "[](" + emote_name + " \"" + text + "\")";
+                target_form.value = (before_text + emote + after_text);
+                move_cursor(before_text.length + 3 + emote_name.length + 2 + text.length + 2);
             }
-            emote_len = extra_len + emote_name.length + (end - start);
-            target_form.value = (before + emote + after);
         } else {
-            // "[](" + ")"
-            emote_len = 4 + emote_name.length;
-            target_form.value = (
-                before +
-                "[](" + emote_name + ")" +
-                after);
+            target_form.value = (before_text + "[](" + emote_name + ")" + after_text);
+            move_cursor(before_text.length + 3 + emote_name.length + 1);
         }
-        target_form.selectionStart = end + emote_len;
-        target_form.selectionEnd = end + emote_len;
+
         target_form.focus();
 
-        // Previous RES versions listen for keyup, but as of the time of
-        // writing this, the development version listens for input. For now
-        // we'll just send both, and remove the keyup one at a later date.
-        var event = document.createEvent("Event");
-        event.initEvent("keyup", true, true);
-        target_form.dispatchEvent(event);
+        // RES listens for the "input" event. Trigger it so it rerenders.
         event = document.createEvent("HTMLEvents");
         event.initEvent("input", true, true);
         target_form.dispatchEvent(event);
