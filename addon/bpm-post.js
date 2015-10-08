@@ -35,6 +35,7 @@ function convert_emote_element(store, element, parts, name, info) {
     // Attributes used in alt-text, to avoid extra lookups.
     element.setAttribute("data-bpm_emotename", name);
     element.setAttribute("data-bpm_srname", info.source_name);
+    element.setAttribute("data-bpm_class", info.css_class)
 
     // Leave existing text alone. This is also relevant to the click toggle
     // and the alt-text converter, so record this fact for later use
@@ -124,6 +125,7 @@ function convert_broken_emote(element, name) {
     // Unknown emote? Good enough
     element.setAttribute("data-bpm_state", "u");
     element.setAttribute("data-bpm_emotename", name);
+    element.setAttribute("data-bpm_class", "");
     element.classList.add("bpm-minified");
     element.classList.add("bpm-unknown");
 
@@ -149,20 +151,22 @@ function process_element(store, element, convert_unknown) {
     var href = element.getAttribute("href");
 
     if(href && href[0] === "/") {
-        // Don't normalize case for emote lookup- they are case sensitive
-        var parts = href.split("-");
-        var name = parts[0];
-        var info = store.lookup_emote(name, true);
+        store.data(function(bpm_data) {
+            // Don't normalize case for emote lookup- they are case sensitive
+            var parts = href.split("-");
+            var name = parts[0];
+            var info = store.lookup_emote(bpm_data, name, true);
 
-        if(info) {
-            // Found an emote
-            convert_emote_element(store, element, parts, name, info);
-        } else if(convert_unknown && store.prefs.showUnknownEmotes) {
-            // Does it look like something meant to be an emote?
-            if(is_broken_emote(element, name)) {
-                convert_broken_emote(element, name);
+            if(info) {
+                // Found an emote
+                convert_emote_element(store, element, parts, name, info);
+            } else if(convert_unknown && store.prefs.showUnknownEmotes) {
+                // Does it look like something meant to be an emote?
+                if(is_broken_emote(element, name)) {
+                    convert_broken_emote(element, name);
+                }
             }
-        }
+        });
     }
 }
 

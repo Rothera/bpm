@@ -153,10 +153,12 @@ function subreddits_changed(old, n) {
     return common.length;
 }
 
-function manage_prefs(sr_name2id, hooks) {
+function manage_prefs(bpm_data, hooks) {
     var prefs = hooks.read_json("prefs");
 
     var manager = {
+        bpm_data: bpm_data,
+
         get: function() {
             return prefs;
         },
@@ -184,7 +186,7 @@ function manage_prefs(sr_name2id, hooks) {
         }
     };
 
-    initialize_prefs(prefs, sr_name2id);
+    initialize_prefs(prefs, bpm_data.sr_name2id);
     manager._sync();
     manager.cm = new css_manager(manager);
     manager.cm.after_pref_write();

@@ -1,26 +1,42 @@
+
+var CACHE_TIME = 1000 * 60 * 5; // Five minutes
+
+if(DEV_MODE) {
+    CACHE_TIME = 1000 * 30; // 30 seconds
+}
+
 function Store() {
     this.prefs = null;
     this._custom_emotes = null;
     this.custom_css = null; // Accessed by init_css() so not really private
+    this._last_access = null;
+    this._bpm_data = null;
+    this._data_callbacks = [];
 
     this._sr_array = null;
     this._tag_array = null;
     this._de_map = null;
     this._we_map = null;
+    this.formatting_tag_id = null;
 
     this._sync_timeouts = {};
-
-    // Can't make this a global because, on Opera, bpm-resources.js doesn't
-    // seem to actually exist early on.
-    this.formatting_tag_id = bpm_data.tag_name2id["+formatting"];
 }
 
 Store.prototype = {
+    data: function(f) {
+        this._last_access = Date.now();
+        if(this._bpm_data) {
+            f(this._bpm_data);
+        } else {
+            log_debug("Fetching emote data");
+            this._data_callbacks.push(f);
+            this._reload_cache();
+        }
+    },
+
     setup_prefs: function(prefs) {
         log_debug("Got prefs");
         this.prefs = prefs;
-        this._make_sr_array();
-        this._make_tag_array();
         this._de_map = this._make_emote_map(prefs.disabledEmotes);
         this._we_map = this._make_emote_map(prefs.whitelistedEmotes);
 
@@ -30,6 +46,47 @@ Store.prototype = {
         log_debug("Got customcss");
         this._custom_emotes = emotes;
         this.custom_css = css;
+    },
+
+    setup_data: function(bpm_data) {
+        log_debug("Got emote data");
+
+        this._last_access = Date.now();
+        this._bpm_data = bpm_data;
+
+        this.formatting_tag_id = bpm_data.tag_name2id["+formatting"];
+        this._make_sr_array(bpm_data);
+        this._make_tag_array(bpm_data);
+
+        setTimeout(this._clear_cache.bind(this), CACHE_TIME);
+    },
+
+    _clear_cache: function() {
+        var age = Date.now() - this._last_access;
+
+        if(age > CACHE_TIME - 1000) {
+            log_debug("Clearing emote data cache");
+
+            this._bpm_data = null;
+            this.formatting_tag_id = null;
+            this._sr_array = null;
+            this._tag_array = null;
+        } else {
+            // Wait some more
+            setTimeout(this._clear_cache.bind(this), CACHE_TIME - age);
+        }
+    },
+
+    _reload_cache: function() {
+        refresh_cache(function(bpm_data) {
+            this.setup_data(bpm_data);
+
+            for(var i = 0; i < this._data_callbacks.length; i++) {
+                this._data_callbacks[i](bpm_data);
+            }
+
+            this._data_callbacks = [];
+        }.bind(this));
     },
 
     /*
@@ -85,15 +142,15 @@ Store.prototype = {
     /*
      * Tries to locate an emote, either builtin or global.
      */
-    lookup_emote: function(name, want_tags) {
-        return this.lookup_core_emote(name, want_tags) || this.lookup_custom_emote(name) || null;
+    lookup_emote: function(bpm_data, name, want_tags) {
+        return this.lookup_core_emote(bpm_data, name, want_tags) || this.lookup_custom_emote(name) || null;
     },
 
     /*
      * Looks up a builtin emote's information. Returns an object with a couple
      * of properties, or null if the emote doesn't exist.
      */
-    lookup_core_emote: function(name, want_tags) {
+    lookup_core_emote: function(bpm_data, name, want_tags) {
         // Refer to bpgen.py:encode() for the details of this encoding
         var data = bpm_data.emote_map[name];
         if(!data) {
@@ -167,7 +224,7 @@ Store.prototype = {
         };
     },
 
-    _make_sr_array: function() {
+    _make_sr_array: function(bpm_data) {
         this._sr_array = [];
         for(var id in bpm_data.sr_id2name) {
             this._sr_array[id] = this.prefs.enabledSubreddits2[bpm_data.sr_id2name[id]];
@@ -182,7 +239,7 @@ Store.prototype = {
         }
     },
 
-    _make_tag_array: function() {
+    _make_tag_array: function(bpm_data) {
         this._tag_array = [];
         for(var id in bpm_data.tag_id2name) {
             this._tag_array[id] = bpm_data.tag_id2name[id];

@@ -24,7 +24,7 @@ if(localStorage.prefs === undefined) {
     localStorage.prefs = "{}";
 }
 
-var pref_manager = manage_prefs(bpm_data.sr_name2id, {
+var pref_manager = manage_prefs(bpm_data, {
     read_value: function(key) { return localStorage[key]; },
     write_value: function(key, data) { localStorage[key] = data; },
     read_json: function(key) { return localStorage[key] === undefined ? undefined : JSON.parse(localStorage[key]); },
@@ -65,6 +65,9 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
                 reply.emotes = pref_manager.cm.emote_cache;
                 reply.css = pref_manager.cm.css_cache;
             }
+            if(message.want["emotes"]) {
+                reply.data = pref_manager.bpm_data;
+            }
             sendResponse(reply);
             break;
 
@@ -77,6 +80,13 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
                 "method": "custom_css",
                 "css": pref_manager.cm.css_cache,
                 "emotes": pref_manager.cm.emote_cache
+            });
+            break;
+
+        case "get_emotes":
+            sendResponse({
+                "method": "emotes",
+                "data": pref_manager.bpm_data
             });
             break;
 

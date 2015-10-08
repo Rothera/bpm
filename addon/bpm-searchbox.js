@@ -361,40 +361,42 @@ function switch_to_sb_tab(tab) {
  * Updates the search results window according to the current query.
  */
 function update_search_results(store) {
-    // Split search query on spaces, remove empty strings, and lowercase terms
-    var terms = sb_input.value.split(" ").map(function(v) { return v.toLowerCase(); });
-    terms = terms.filter(function(v) { return v; });
-    store.prefs.lastSearchQuery = terms.join(" ");
-    store.sync_key("lastSearchQuery");
+    store.data(function(bpm_data) {
+        // Split search query on spaces, remove empty strings, and lowercase terms
+        var terms = sb_input.value.split(" ").map(function(v) { return v.toLowerCase(); });
+        terms = terms.filter(function(v) { return v; });
+        store.prefs.lastSearchQuery = terms.join(" ");
+        store.sync_key("lastSearchQuery");
 
-    // Check this before we append the default search terms.
-    if(!terms.length) {
-        // If we're on a subreddit that has some of its own emotes, show those
-        // instead of nothing.
-        if(current_subreddit && bpm_data.sr_name2id[current_subreddit] !== undefined) {
-            terms = [current_subreddit];
-        } else {
+        // Check this before we append the default search terms.
+        if(!terms.length) {
+            // If we're on a subreddit that has some of its own emotes, show those
+            // instead of nothing.
+            if(current_subreddit && bpm_data.sr_name2id[current_subreddit] !== undefined) {
+                terms = [current_subreddit];
+            } else {
+                sb_results[IHTML] = "";
+                sb_resultinfo.textContent = "";
+                return;
+            }
+        }
+
+        // This doesn't work quite perfectly- searching for "+hidden" should
+        // theoretically just show all hidden emotes, but it just ends up
+        // cancelling into "-nonpony", searching for everything.
+        terms.unshift("-hidden", "-nonpony");
+        var query = parse_search_query(bpm_data, terms);
+        // Still nothing to do
+        if(query === null) {
             sb_results[IHTML] = "";
             sb_resultinfo.textContent = "";
             return;
         }
-    }
 
-    // This doesn't work quite perfectly- searching for "+hidden" should
-    // theoretically just show all hidden emotes, but it just ends up
-    // cancelling into "-nonpony", searching for everything.
-    terms.unshift("-hidden", "-nonpony");
-    var query = parse_search_query(terms);
-    // Still nothing to do
-    if(query === null) {
-        sb_results[IHTML] = "";
-        sb_resultinfo.textContent = "";
-        return;
-    }
-
-    var results = execute_search(store, query);
-    log_debug("Search found", results.length, "results on query", query);
-    display_search_results(store, results);
+        var results = execute_search(bpm_data, store, query);
+        log_debug("Search found", results.length, "results on query", query);
+        display_search_results(store, results);
+    });
 }
 
 /*

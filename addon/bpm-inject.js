@@ -114,7 +114,7 @@ function track_focus() {
 /*
  * Injects an emote into the given form.
  */
-function inject_emote_into_form(store, target_form, emote_name) {
+function inject_emote_into_form(store, bpm_data, target_form, emote_name) {
     log_debug("Injecting ", emote_name, "into", target_form);
 
     var move_cursor = function(position) {
@@ -123,7 +123,7 @@ function inject_emote_into_form(store, target_form, emote_name) {
     };
 
     if(target_form.selectionStart !== undefined && target_form.selectionEnd !== undefined) {
-        var emote_info = store.lookup_core_emote(emote_name, true);
+        var emote_info = store.lookup_core_emote(bpm_data, emote_name, true);
 
         var before_text = target_form.value.slice(0, target_form.selectionStart);
         var text = target_form.value.slice(target_form.selectionStart, target_form.selectionEnd);
@@ -165,6 +165,8 @@ function inject_emote(store, emote_name) {
             "__betterponymotes_emote": emote_name
         });
     } else if(target_form !== null) {
-        inject_emote_into_form(store, target_form, emote_name);
+        store.data(function(bpm_data) {
+            inject_emote_into_form(store, bpm_data, target_form, emote_name);
+        });
     }
 }

@@ -107,7 +107,7 @@ function init_css(store) {
 
 function main() {
     log_info("Starting up");
-    setup_browser({"prefs": 1, "customcss": 1}, function(store) {
+    setup_browser({"prefs": 1, "customcss": 1, "emotes": 1}, function(store) {
         if(document.location && document.location.hostname && (is_reddit || is_voat)) {
             reddit_main(store);
         } else {

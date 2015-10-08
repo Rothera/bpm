@@ -44,7 +44,7 @@ try {
 }
 
 var manage_prefs = require("pref-setup").manage_prefs;
-var bpm_data = require("bpm-resources");
+var bpm_data = require("bpm-resources").bpm_data;
 
 var storage = simple_storage.storage;
 
@@ -58,7 +58,7 @@ if(!storage.prefs) {
     }
 }
 
-var pref_manager = manage_prefs(bpm_data.sr_name2id, {
+var pref_manager = manage_prefs(bpm_data, {
     read_value: function(key) { return storage[key]; },
     write_value: function(key, data) { storage[key] = data; },
     read_json: function(key) { return storage[key]; },
@@ -112,6 +112,9 @@ function on_cs_attach(worker) {
                     reply.emotes = pref_manager.cm.emote_cache;
                     reply.css = pref_manager.cm.css_cache;
                 }
+                if(message.want["emotes"]) {
+                    reply.data = pref_manager.bpm_data;
+                }
                 worker.postMessage(reply);
                 break;
 
@@ -127,6 +130,13 @@ function on_cs_attach(worker) {
                     "method": "custom_css",
                     "css": pref_manager.cm.css_cache,
                     "emotes": pref_manager.cm.emote_cache
+                });
+                break;
+
+            case "get_emotes":
+                worker.postMessage({
+                    "method": "emotes",
+                    "data": pref_manager.bpm_data
                 });
                 break;
 
@@ -153,7 +163,6 @@ var main_mod = page_mod.PageMod({
     include: ["*"],
     contentScriptWhen: "start",
     contentScriptFile: [
-        self.data.url("bpm-resources.js"),
         self.data.url("betterponymotes.js")
         ],
     onAttach: on_cs_attach

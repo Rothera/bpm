@@ -5,7 +5,7 @@
  *    .name_terms: list of emote name terms to match.
  * or null, if there was no query.
  */
-function parse_search_query(terms) {
+function parse_search_query(bpm_data, terms) {
     var query = {sr_term_sets: [], tag_term_sets: [], name_terms: []};
 
     /*
@@ -178,11 +178,11 @@ function emote_matches_query(query, emote_info, lc_emote_name) {
  * Executes a search query. Returns an object with two properties:
  *    .results: a sorted list of emotes
  */
-function execute_search(store, query) {
+function execute_search(bpm_data, store, query) {
     var results = [];
 
     for(var emote_name in bpm_data.emote_map) {
-        var emote_info = store.lookup_core_emote(emote_name, true);
+        var emote_info = store.lookup_core_emote(bpm_data, emote_name, true);
         var lc_emote_name = emote_name.toLowerCase();
 
         if(!emote_matches_query(query, emote_info, lc_emote_name)) {
@@ -192,7 +192,7 @@ function execute_search(store, query) {
         // At this point we have a match, so follow back to its base
         if(emote_name !== emote_info.base) {
             // Hunt down the non-variant version
-            emote_info = store.lookup_core_emote(emote_info.base, true);
+            emote_info = store.lookup_core_emote(bpm_data, emote_info.base, true);
             if(emote_info.name !== emote_info.base) {
                 log_warning("Followed +v from " + emote_name + " to " + emote_info.name + "; no root emote found");
             }

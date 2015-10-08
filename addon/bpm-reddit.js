@@ -74,13 +74,13 @@ function toggle_emote(store, element) {
     if(store.prefs.clickToggleSFW && is_nsfw_disabled) {
         return;
     }
-    var info = store.lookup_emote(element.getAttribute("data-bpm_emotename"), false);
+
     if(element.classList.contains("bpm-minified")) {
         // Show: unminify, enable, give it its CSS, remove the bit of text we
         // added, enable flags.
         element.classList.remove("bpm-minified");
         element.classList.remove("bpm-nsfw");
-        element.classList.add(info.css_class);
+        element.classList.add(element.getAttribute("data-bpm_class"));
         if(state.indexOf("T") > -1) {
             element.textContent = "";
         }
@@ -89,7 +89,7 @@ function toggle_emote(store, element) {
     } else {
         // Hide: remove its CSS, minify, optionally disable, put our bit of
         // text back, and kill flags.
-        element.classList.remove(info.css_class);
+        element.classList.remove(element.getAttribute("data-bpm_class"));
         element.classList.add("bpm-minified");
         if(is_nsfw_disabled) {
             element.classList.add("bpm-nsfw");

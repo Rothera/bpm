@@ -29,7 +29,7 @@ if(!storage.prefs) {
     storage.prefs = JSON.stringify({});
 }
 
-var pref_manager = manage_prefs(bpm_data.sr_name2id, {
+var pref_manager = manage_prefs(bpm_data, {
     read_value: function(key) { return storage[key]; },
     write_value: function(key, data) { storage[key] = data; },
     read_json: function(key) { return storage[key] === undefined ? undefined : JSON.parse(storage[key]); },
@@ -84,6 +84,9 @@ safari.application.addEventListener("message", function(message) {
                 reply.emotes = pref_manager.cm.emote_cache;
                 reply.css = pref_manager.cm.css_cache;
             }
+            if(message.want["emotes"]) {
+                reply.data = pref_manager.bpm_data;
+            }
             message.target.page.dispatchMessage("initdata", reply);
             break;
 
@@ -95,10 +98,17 @@ safari.application.addEventListener("message", function(message) {
             break;
 
         case "get_custom_css":
-            message.target.page.dispatchMessage("custom_css",{
+            message.target.page.dispatchMessage("custom_css", {
                 "method": "custom_css",
                 "css": pref_manager.cm.css_cache,
                 "emotes": pref_manager.cm.emote_cache
+            });
+            break;
+
+        case "get_emotes":
+            message.target.page.dispatchMessage("emotes", {
+                "method": "emotes",
+                "data": pref_manager.bpm_data
             });
             break;
 
