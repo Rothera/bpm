@@ -28,9 +28,12 @@ Store.prototype = {
         if(this._bpm_data) {
             f(this._bpm_data);
         } else {
-            log_debug("Fetching emote data");
             this._data_callbacks.push(f);
-            this._reload_cache();
+
+            if(this._data_callbacks.length === 1) {
+                log_debug("Fetching emote data");
+                this._reload_cache();
+            }
         }
     },
 
