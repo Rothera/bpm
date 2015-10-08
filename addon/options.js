@@ -256,8 +256,8 @@ var bpm_prefs = {
 
     _make_sr_array: function() {
         this.sr_array = [];
-        for(var id in sr_id2name) {
-            this.sr_array[id] = this.prefs.enabledSubreddits2[sr_id2name[id]];
+        for(var id in bpm_data.sr_id2name) {
+            this.sr_array[id] = this.prefs.enabledSubreddits2[bpm_data.sr_id2name[id]];
         }
         if(this.sr_array.indexOf(undefined) > -1) {
             // Holes in the array mean holes in sr_id2name, which can't possibly
@@ -329,7 +329,7 @@ function manage_enabled_subreddits(prefs) {
 
     var checkboxes = [];
     // Generate a page from the builtin list of subreddits
-    for(var subreddit in sr_name2id) {
+    for(var subreddit in bpm_data.sr_name2id) {
         var input = document.createElement("input");
         input.type = "checkbox";
 
@@ -359,7 +359,7 @@ function manage_enabled_subreddits(prefs) {
             checkboxes[i].checked = value;
         }
 
-        for(var subreddit in sr_name2id) {
+        for(var subreddit in bpm_data.sr_name2id) {
             prefs.enabledSubreddits2[subreddit] = value;
         }
 
@@ -425,7 +425,7 @@ function manage_emote_list(prefs, name) {
             if(list.indexOf(emotes[i]) > -1) {
                 continue; // Already in the list
             }
-            if(!emote_map[emotes[i]]) {
+            if(!bpm_data.emote_map[emotes[i]]) {
                 continue; // Not an emote (NOTE: what about global emotes?)
             }
 

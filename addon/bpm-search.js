@@ -87,17 +87,17 @@ function parse_search_query(terms) {
         if(term.slice(0, 3) === "sr:") {
             if(term.length > 3) {
                 // Chop off sr:
-                add_id_set(query.sr_term_sets, sr_name2id, positive, term.slice(3), term.slice(3));
+                add_id_set(query.sr_term_sets, bpm_data.sr_name2id, positive, term.slice(3), term.slice(3));
             }
         } else if(term.slice(0, 2) === "r/") {
             if(term.length > 2) {
                 // Leave the r/ on
-                add_id_set(query.sr_term_sets, sr_name2id, positive, term, term);
+                add_id_set(query.sr_term_sets, bpm_data.sr_name2id, positive, term, term);
             }
         } else if(is_tag) {
             if(term.length > 1) {
                 // A tag-like thing that isn't a subreddit = tag term
-                add_id_set(query.tag_term_sets, tag_name2id, positive, "+" + term, term);
+                add_id_set(query.tag_term_sets, bpm_data.tag_name2id, positive, "+" + term, term);
             }
         } else {
             query.name_terms.push(term); // Anything else
@@ -181,7 +181,7 @@ function emote_matches_query(query, emote_info, lc_emote_name) {
 function execute_search(store, query) {
     var results = [];
 
-    for(var emote_name in emote_map) {
+    for(var emote_name in bpm_data.emote_map) {
         var emote_info = store.lookup_core_emote(emote_name, true);
         var lc_emote_name = emote_name.toLowerCase();
 
@@ -203,7 +203,7 @@ function execute_search(store, query) {
     }
 
     for(var emote_name in store.custom_emotes()) {
-        if(emote_map[emote_name] !== undefined) {
+        if(bpm_data.emote_map[emote_name] !== undefined) {
             // Quick hack: force custom emotes to lose precedence vs. core ones.
             // This is partially for consistency (this happens when converting
             // as well and would be confusing), but also to conveniently drop

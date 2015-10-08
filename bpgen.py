@@ -101,22 +101,23 @@ def dump_css(file, rules):
         file.write(s)
 
 def dump_js_data(file, js_map, sr_id2name, sr_name2id, tag_id2name, tag_name2id):
+    bpm_data = {
+        "sr_id2name": sr_id2name,
+        "sr_name2id": sr_name2id,
+        "tag_id2name": tag_id2name,
+        "tag_name2id": tag_name2id,
+        "emote_map": js_map
+    }
+
     file.write(AutogenHeader)
-    _dump_js_obj(file, "sr_id2name", sr_id2name)
-    _dump_js_obj(file, "sr_name2id", sr_name2id)
+    file.write("var bpm_data = ");
+    json.dump(bpm_data, file, indent=0, separators=(",", ":"), sort_keys=True)
+    file.write("\n")
+
     # exports is used in Firefox main.js, but doesn't exist elsewhere
     file.write("if(typeof(exports) !== 'undefined') {\n")
-    file.write("    exports.sr_id2name = sr_id2name;\n")
-    file.write("    exports.sr_name2id = sr_name2id;\n")
+    file.write("    exports.bpm_data = bpm_data;\n")
     file.write("}\n")
-    _dump_js_obj(file, "tag_id2name", tag_id2name)
-    _dump_js_obj(file, "tag_name2id", tag_name2id)
-    _dump_js_obj(file, "emote_map", js_map)
-
-def _dump_js_obj(file, var_name, obj):
-    file.write("var %s = " % (var_name))
-    json.dump(obj, file, indent=0, separators=(",", ":"), sort_keys=True)
-    file.write(";\n")
 
 def main():
     parser = argparse.ArgumentParser(description="Generate addon data files from emotes")

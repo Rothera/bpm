@@ -371,7 +371,7 @@ function update_search_results(store) {
     if(!terms.length) {
         // If we're on a subreddit that has some of its own emotes, show those
         // instead of nothing.
-        if(current_subreddit && sr_name2id[current_subreddit] !== undefined) {
+        if(current_subreddit && bpm_data.sr_name2id[current_subreddit] !== undefined) {
             terms = [current_subreddit];
         } else {
             sb_results[IHTML] = "";

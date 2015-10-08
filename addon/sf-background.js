@@ -29,12 +29,12 @@ if(!storage.prefs) {
     storage.prefs = JSON.stringify({});
 }
 
-var pref_manager = manage_prefs(sr_name2id, {
+var pref_manager = manage_prefs(bpm_data.sr_name2id, {
     read_value: function(key) { return storage[key]; },
     write_value: function(key, data) { storage[key] = data; },
     read_json: function(key) { return storage[key] === undefined ? undefined : JSON.parse(storage[key]); },
     write_json: function(key, data) { storage[key] = JSON.stringify(data); },
-    
+
     download_file: function(done, url, callback) {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function() {
@@ -53,7 +53,7 @@ var pref_manager = manage_prefs(sr_name2id, {
         //request.setRequestHeader("User-Agent", "BetterPonymotes Client CSS Updater (/u/Typhos)");
         request.send();
     },
-    
+
     set_timeout: (timers ? timers.setTimeout : function() {
         console.warn("BPM: WARNING: Unable to start timer due to broken installation");
     })
@@ -64,7 +64,7 @@ function open_options_page() {
 }
 
 function prefListener(event) {
-    
+
     if (event.key == "open_options") {
         open_options_page();
     }
@@ -86,14 +86,14 @@ safari.application.addEventListener("message", function(message) {
             }
             message.target.page.dispatchMessage("initdata", reply);
             break;
-    
+
         case "get_prefs":
             message.target.page.dispatchMessage("prefs", {
                 "method": "prefs",
                 "prefs": pref_manager.get()
             });
             break;
-    
+
         case "get_custom_css":
             message.target.page.dispatchMessage("custom_css",{
                 "method": "custom_css",
@@ -101,19 +101,19 @@ safari.application.addEventListener("message", function(message) {
                 "emotes": pref_manager.cm.emote_cache
             });
             break;
-    
+
         case "set_pref":
             pref_manager.set_pref(message.message.pref, message.message.value);
             break;
-    
+
         case "force_update":
             pref_manager.cm.force_update(message.message.subreddit);
             break;
-    
+
         case "open_options":
             open_options_page();
             break;
-    
+
         default:
             console.log("BPM: ERROR: Unknown request from content script: '" + message.request + "'");
             break;

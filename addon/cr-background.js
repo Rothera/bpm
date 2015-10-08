@@ -24,7 +24,7 @@ if(localStorage.prefs === undefined) {
     localStorage.prefs = "{}";
 }
 
-var pref_manager = manage_prefs(sr_name2id, {
+var pref_manager = manage_prefs(bpm_data.sr_name2id, {
     read_value: function(key) { return localStorage[key]; },
     write_value: function(key, data) { localStorage[key] = data; },
     read_json: function(key) { return localStorage[key] === undefined ? undefined : JSON.parse(localStorage[key]); },

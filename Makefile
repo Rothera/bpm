@@ -75,7 +75,7 @@ build/gif-animotes.css: $(EMOTE_DATA)
 	mkdir -p build
 	./dlanimotes.py
 
-build/bpm-resources.js build/emote-classes.css: $(EMOTE_DATA)
+build/bpm-resources.js build/emote-classes.css: $(EMOTE_DATA) bpgen.py
 	mkdir -p build
 	./bpgen.py
 

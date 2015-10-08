@@ -12,7 +12,7 @@ function Store() {
 
     // Can't make this a global because, on Opera, bpm-resources.js doesn't
     // seem to actually exist early on.
-    this.formatting_tag_id = tag_name2id["+formatting"];
+    this.formatting_tag_id = bpm_data.tag_name2id["+formatting"];
 }
 
 Store.prototype = {
@@ -95,7 +95,7 @@ Store.prototype = {
      */
     lookup_core_emote: function(name, want_tags) {
         // Refer to bpgen.py:encode() for the details of this encoding
-        var data = emote_map[name];
+        var data = bpm_data.emote_map[name];
         if(!data) {
             return null;
         }
@@ -132,7 +132,7 @@ Store.prototype = {
             name: name,
             is_nsfw: Boolean(is_nsfw),
             source_id: source_id,
-            source_name: sr_id2name[source_id],
+            source_name: bpm_data.sr_id2name[source_id],
             max_size: size,
 
             tags: tags,
@@ -169,8 +169,8 @@ Store.prototype = {
 
     _make_sr_array: function() {
         this._sr_array = [];
-        for(var id in sr_id2name) {
-            this._sr_array[id] = this.prefs.enabledSubreddits2[sr_id2name[id]];
+        for(var id in bpm_data.sr_id2name) {
+            this._sr_array[id] = this.prefs.enabledSubreddits2[bpm_data.sr_id2name[id]];
         }
         if(this._sr_array.indexOf(undefined) > -1) {
             // Holes in the array mean holes in sr_id2name, which can't possibly
@@ -184,8 +184,8 @@ Store.prototype = {
 
     _make_tag_array: function() {
         this._tag_array = [];
-        for(var id in tag_id2name) {
-            this._tag_array[id] = tag_id2name[id];
+        for(var id in bpm_data.tag_id2name) {
+            this._tag_array[id] = bpm_data.tag_id2name[id];
         }
         if(this._tag_array.indexOf(undefined) > -1) {
             log_error("tag_array has holes; installation or prefs are broken!");
