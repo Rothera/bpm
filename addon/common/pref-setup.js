@@ -156,11 +156,47 @@ function subreddits_changed(old, n) {
 function manage_prefs(bpm_data, hooks) {
     var prefs = hooks.read_json("prefs");
 
+    var resources = {
+        "bpmotes.css": null,
+        "combiners-nsfw.css": null,
+        "emote-classes.css": null,
+        "extracss-pure.css": null,
+        "gif-animotes.css": null
+    };
+    var waiting = 5;
+    var css_callbacks = [];
+
+    for(var name in resources) {
+        hooks.fetch_resource(name, function(name, css) {
+            resources[name] = css;
+            waiting--;
+
+            if(waiting === 0) {
+                for(var i = 0; i < css_callbacks.length; i++) {
+                    css_callbacks[i]();
+                }
+                css_callbacks = null;
+            }
+        });
+    }
+
     var manager = {
         bpm_data: bpm_data,
 
+        resources: resources,
+
         get: function() {
             return prefs;
+        },
+
+        get_css: function(callback) {
+            if(!waiting) {
+                callback(resources);
+            } else {
+                css_callbacks.push(function() {
+                    callback(resources);
+                });
+            }
         },
 
         db_json: hooks.read_json,

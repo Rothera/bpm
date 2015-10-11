@@ -26,21 +26,19 @@ function with_css_parent(callback) {
 /*
  * Appends a <style> tag for the given CSS.
  */
-function add_css(css) {
+function add_css(css, append) {
     if(css) {
         var tag = style_tag(css);
-        _css_parent().insertBefore(tag, _css_parent().firstChild);
+        if(append) {
+            document.head.appendChild(tag);
+        } else {
+            _css_parent().insertBefore(tag, _css_parent().firstChild);
+        }
     }
 }
 
-/*
- * Adds a CSS resource to the page.
- */
-function link_css(filename) {
-    make_css_link(filename, function(tag) {
-        var parent = _css_parent();
-        parent.insertBefore(tag, parent.firstChild);
-    });
+function link_css(store, name, append) {
+    add_css(store.css[name], append);
 }
 
 /*
@@ -90,6 +88,14 @@ function _complete_setup(initdata) {
             store.setup_data(initdata.data);
         } else {
             log_error("Backend sent wrong initdata: no emote data");
+            return;
+        }
+    }
+    if(_initdata_want.css) {
+        if(initdata.resources !== undefined) {
+            store.setup_css(initdata.resources);
+        } else {
+            log_error("Backend sent wrong initdata: no css");
             return;
         }
     }

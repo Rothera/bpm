@@ -7,8 +7,8 @@ function init_css(store) {
     // does not- there's no clear way to manipulate the partial DOM, so we delay.
     with_css_parent(function() {
         log_info("Setting up css");
-        link_css("/bpmotes.css");
-        link_css("/emote-classes.css");
+        link_css(store, "bpmotes.css");
+        link_css(store, "emote-classes.css");
 
         if(store.prefs.enableExtraCSS) {
             // Inspect style properties to determine what extracss variant to
@@ -18,17 +18,17 @@ function init_css(store) {
             var style = document.createElement("span").style;
 
             if(style.webkitTransform !== undefined) {
-                link_css("/extracss-webkit.css");
+                link_css(store, "extracss-webkit.css");
             } else if(style.transform !== undefined) {
-                link_css("/extracss-pure.css");
+                link_css(store, "extracss-pure.css");
             } else {
                 log_warning("Cannot inspect vendor prefix needed for extracss.");
                 // You never know, maybe it'll work
-                link_css("/extracss-pure.css");
+                link_css(store, "extracss-pure.css");
             }
 
             if(store.prefs.enableNSFW) {
-                link_css("/combiners-nsfw.css");
+                link_css(store, "combiners-nsfw.css");
             }
         }
 
@@ -52,16 +52,10 @@ function init_css(store) {
         // This needs to come after subreddit CSS to override their !important,
         // so just use document.head directly.
         if(platform === "chrome-ext") {
-            make_css_link("/gif-animotes.css", function(tag) {
-                if(document.head) {
-                    document.head.appendChild(tag);
-                } else {
-                    with_dom(function() { // Chrome, at least
-                        document.head.appendChild(tag);
-                    });
-                }
-            });
+            link_css(store, "gif-animotes.css", true);
         }
+
+        store.css = null; // Clear out cache
     });
 
     with_dom(function() {
@@ -107,7 +101,7 @@ function init_css(store) {
 
 function main() {
     log_info("Starting up");
-    setup_browser({"prefs": 1, "customcss": 1, "emotes": 1}, function(store) {
+    setup_browser({"prefs": 1, "customcss": 1, "emotes": 1, "css": 1}, function(store) {
         if(document.location && document.location.hostname && (is_reddit || is_voat)) {
             reddit_main(store);
         } else {

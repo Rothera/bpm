@@ -12,6 +12,7 @@ function Store() {
     this._last_access = null;
     this._bpm_data = null;
     this._data_callbacks = [];
+    this.css = null;
 
     this._sr_array = null;
     this._tag_array = null;
@@ -62,6 +63,10 @@ Store.prototype = {
         this._make_tag_array(bpm_data);
 
         setTimeout(this._clear_cache.bind(this), CACHE_TIME);
+    },
+
+    setup_css: function(css) {
+        this.css = css;
     },
 
     _clear_cache: function() {

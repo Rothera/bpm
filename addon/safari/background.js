@@ -35,6 +35,19 @@ var pref_manager = manage_prefs(bpm_data, {
     read_json: function(key) { return storage[key] === undefined ? undefined : JSON.parse(storage[key]); },
     write_json: function(key, data) { storage[key] = JSON.stringify(data); },
 
+    fetch_resource: function(name, callback) {
+        console.log("BPM: Loading:", name);
+        var req = new XMLHttpRequest();
+        req.addEventListener("load", function(event) {
+            callback(name, req.response);
+        });
+        req.addEventListener("error", function(event) {
+            console.log("BPM: ERROR: Failed to load resource:", event);
+        });
+        req.open("GET", "/" + name);
+        req.send();
+    },
+
     download_file: function(done, url, callback) {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function() {
@@ -87,7 +100,15 @@ safari.application.addEventListener("message", function(message) {
             if(message.want["emotes"]) {
                 reply.data = pref_manager.bpm_data;
             }
-            message.target.page.dispatchMessage("initdata", reply);
+            // Must come last due to sendResponse() screwery
+            if(message.want["css"]) {
+                pref_manager.get_css(function(css) {
+                    reply.resources = css;
+                    message.target.page.dispatchMessage("initdata", reply);
+                });
+            } else {
+                message.target.page.dispatchMessage("initdata", reply);
+            }
             break;
 
         case "get_prefs":

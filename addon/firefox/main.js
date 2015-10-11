@@ -64,6 +64,12 @@ var pref_manager = manage_prefs(bpm_data, {
     read_json: function(key) { return storage[key]; },
     write_json: function(key, data) { storage[key] = data; },
 
+    fetch_resource: function(name, callback) {
+        console.log("BPM: Loading:", name);
+        var d = self.data.load(name);
+        callback(d);
+    },
+
     download_file: function(done, url, callback) {
         if(!request) {
             console.warn("BPM: WARNING: Unable to download file due to broken installation");
@@ -115,7 +121,15 @@ function on_cs_attach(worker) {
                 if(message.want["emotes"]) {
                     reply.data = pref_manager.bpm_data;
                 }
-                worker.postMessage(reply);
+                // Must come last due to postMessage() screwery
+                if(message.want["css"]) {
+                    pref_manager.get_css(function(css) {
+                        reply.resources = css;
+                        worker.postMessage(reply);
+                    });
+                } else {
+                    worker.postMessage(reply);
+                }
                 break;
 
             case "get_prefs":

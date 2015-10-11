@@ -30,6 +30,19 @@ var pref_manager = manage_prefs(bpm_data, {
     read_json: function(key) { return localStorage[key] === undefined ? undefined : JSON.parse(localStorage[key]); },
     write_json: function(key, data) { localStorage[key] = JSON.stringify(data); },
 
+    fetch_resource: function(name, callback) {
+        console.log("BPM: Loading:", name);
+        var req = new XMLHttpRequest();
+        req.addEventListener("load", function(event) {
+            callback(name, req.response);
+        });
+        req.addEventListener("error", function(event) {
+            console.log("BPM: ERROR: Failed to load resource:", event);
+        });
+        req.open("GET", "/" + name);
+        req.send();
+    },
+
     download_file: function(done, url, callback) {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function() {
@@ -68,7 +81,15 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
             if(message.want["emotes"]) {
                 reply.data = pref_manager.bpm_data;
             }
-            sendResponse(reply);
+            // Must come last due to sendResponse() screwery
+            if(message.want["css"]) {
+                pref_manager.get_css(function(css) {
+                    reply.resources = css;
+                    sendResponse(reply);
+                });
+            } else {
+                sendResponse(reply);
+            }
             break;
 
         case "get_prefs":
