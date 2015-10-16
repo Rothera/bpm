@@ -1,0 +1,78 @@
+/*******************************************************************************
+**
+** This file is part of BetterPonymotes.
+** Copyright (c) 2012-2015 Typhos.
+**
+** This program is free software: you can redistribute it and/or modify it
+** under the terms of the GNU Affero General Public License as published by
+** the Free Software Foundation, either version 3 of the License, or (at your
+** option) any later version.
+**
+** This program is distributed in the hope that it will be useful, but WITHOUT
+** ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+** FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License
+** for more details.
+**
+** You should have received a copy of the GNU Affero General Public License
+** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+**
+*******************************************************************************/
+
+body {
+    padding-bottom: 80px;
+}
+label {
+    font-family: monospace;
+}
+/* Annoying misalignment. Magically affects only one browser at a time. Fuck the web. */
+@-moz-document url-prefix() {
+    input[type="checkbox"] {
+        margin-top: 0px;
+    }
+}
+#enabledSubreddits > label {
+    width: 230px;
+}
+
+/* Emote disabler stuff */
+.emote-list-container {
+    height: 300px;
+    border-style: solid;
+    border-color: red;
+    padding: 5px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin-bottom: 5px;
+    overflow-y: auto;
+}
+.emote-list-input {
+    /* Hide it as best we can */
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 0px;
+    border-style: none;
+    outline-color: transparent;
+    color: black;
+    width: 150px;
+    font-family: monospace;
+}
+/* Styled after Derpibooru's tag list thing, with colors from Bootstrap */
+.listed-emote {
+    padding: 5px;
+    background-color: #5BC0DE;
+    color: white;
+    border-width: 1px;
+    border-color: #2F96B4;
+    border-style: solid;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    float: left;
+    border-radius: 2px;
+}
+.listed-emote > a {
+    font-weight: bold;
+}
+.custom-subreddit {
+    margin-bottom: 5px;
+}

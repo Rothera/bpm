@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "BetterPonymotes",
+    "version": "/*{{version}}*/",
+
+    "description": "View Reddit ponymotes across the site",
+    "homepage_url": "https://ponymotes.net/bpm/",
+
+    "background": {
+        "scripts": ["bpm-resources.js", "data.js", "prefs.js", "background.js"]
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://*.reddit.com/*"],
+            "run_at": "document_start",
+            "js": [
+                "utils.js", "searchbox.js", "reddit.js", "reddit-main.js"
+            ]
+        }
+    ],
+
+    "permissions": [
+        "storage",
+
+        "*://*.reddit.com/",
+        "*://*.redditstatic.com/",
+        "*://*.redditmedia.com/"
+    ],
+
+    "web_accessible_resources": [
+        "bpmotes.css",
+        "combiners-nsfw.css",
+        "emote-classes.css",
+        "extracss.css",
+        "gif-animotes.css"
+    ]
+}

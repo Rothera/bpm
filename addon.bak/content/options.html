@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>BetterPonymotes Preferences</title>
+  <link href="bootstrap.css" rel="stylesheet">
+  <link href="options.css" rel="stylesheet">
+  <script src="bpm-resources.js" type="text/javascript"></script>
+  <script src="options.js" type="text/javascript"></script>
+</head>
+<body>
+  <!-- communication with extension, where applicable -->
+  <div id="ready" style="display: none">false</div>
+
+  <div class="container">
+  <div class="row">
+  <div class="span8 offset2">
+
+  <form>
+  <fieldset>
+    <legend>Options</legend>
+    <p class="desc">
+    <label class="checkbox"><input id="enableNSFW" type="checkbox"> Enable NSFW emotes</label>
+    Several emotes in BetterPonymotes are strongly NSFW in nature, going as
+    far as to be explicitly pornographic. This option does not cover every
+    emote that you might consider questionable- with a handful of difficult
+    exceptions, the emotes it blocks all contain actual genitalia.</p>
+
+    <p class="desc">
+    <label class="checkbox"><input id="enableExtraCSS" type="checkbox"> Enable extra emote modifiers</label>
+    BetterPonymotes includes a copy of the Chaos script, a collection of
+    flags and modifiers on emotes. These do things like make emotes spin
+    in multiple dimensions. These can be problematic on some computers.</p>
+
+    <p class="desc">
+    <label class="checkbox"><input id="showUnknownEmotes" type="checkbox"> Show placeholders for unknown emotes (may conflict with other emote scripts)</label>
+    When BetterPonymotes encounters a link that appears to be an emote, but
+    it doesn't know about it, it generates a small placeholder to show you.
+    This can conflict if you have other emote scripts that are converting
+    the emotes, as BPM doesn't know about these. Turn this off if you are
+    having conflict problems.</p>
+
+    <p class="desc">
+    <label class="checkbox"><input id="hideDisabledEmotes" type="checkbox"> Hide disabled emotes completely (no placeholders)</label>
+    When BPM encounters an emote you have disabled through any means, it
+    generates a small placeholder. This option turns them off, trying to
+    make them seem to be nonexistent.</p>
+
+    <p class="desc">
+    <label class="checkbox"><input id="stealthMode" type="checkbox"> Stealth mode: Minify all emotes by default</label>
+    If this option is enabled, BPM will hide all emotes by default by
+    minifying them, as if they were disabled.</p>
+    <p class="desc">As the click toggle isn't available globally, this
+    option only works on Reddit.</p>
+
+    <p class="desc">
+    <label class="checkbox"><input id="showAltText" type="checkbox"> Reveal hidden alt-text</label>
+    This option controls the alt-text expander, which displays alt-text on
+    emotes next to the image. When BPM does this, it also replaces the
+    actual alt-text with emote information, including its name and where it
+    comes from.</p>
+
+    <p class="desc">
+    <label class="checkbox"><input id="enableGlobalEmotes" type="checkbox"> Convert emotes outside of Reddit</label>
+    Enables the global emote converter. BPM will scan every page you visit
+    for text that looks like <code>[]<!---->(/emote)</code> and attempt to
+    convert it into real emotes.</p>
+
+    <p class="desc">
+    <label class="checkbox"><input id="enableGlobalSearch" type="checkbox"> Show the emote search globally</label>
+    Shows a small box on every page to bring up the emote search, for use
+    with global emote conversion. You can hold Ctrl down to drag the box
+    around.</p>
+
+    <p class="desc">
+    <label class="checkbox"><input id="clickToggleSFW" type="checkbox"> When I click a disabled emote, only show SFW emotes</label>
+    When BPM disables an emote and leaves a placeholder, you can click on
+    it to expand it in order to see what it is. Ordinarily, BPM will refuse
+    to do this for NSFW emotes. This option disables that check.</p>
+
+    <p class="desc">
+    <label>Search result limit: <input id="searchLimit" type="text"> (high values can slow down search)</label>
+    BPM has over 8000 emotes, and some search queries return massive amounts of
+    them, which can freeze your browser. This option imposes a maximum on the
+    number of results you can get. A few hundred is safe and recommended.</p>
+
+    <p class="desc">
+    <!--
+      Would be nice to use Bootstrap's input-append/add-on "px", but this
+      screws up alignment somehow.
+    -->
+    <label>Maximum emote size: <input id="maxEmoteSize" type="text"> (zero is no limit)</label>
+    Emotes larger than this size will be disabled. This can help if you
+    find some of the more massive emotes in BPM annoying.</p>
+  </fieldset>
+  </form>
+
+  <form class="form-inline">
+  <fieldset>
+    <legend>Enabled Subreddits</legend>
+    <p class="desc">BPM includes emotes from many different subreddits.
+    You may enable or disable them individually to your preference.</p>
+    <div id="enabledSubreddits"></div>
+    <br>
+    <button type="button" id="enable-all-subreddits" class="btn">Enable all</button>
+    <button type="button" id="disable-all-subreddits" class="btn">Disable all</button>
+  </fieldset>
+  </form>
+
+  <form class="form-inline">
+  <fieldset>
+    <legend>Disabled Emotes</legend>
+    <p class="desc">Emotes listed here will be blocked.</p>
+    <div id="disabledEmotes" class="emote-list-container">
+      <input id="disabledEmotes-input" class="emote-list-input">
+    </div>
+    <button type="button" id="disabledEmotes-clear" class="btn">Clear</button>
+  </fieldset>
+  </form>
+
+  <form class="form-inline">
+  <fieldset>
+    <legend>Whitelisted Emotes</legend>
+    <p class="desc">Emotes listed here will be shown, even if they would
+    otherwise not be. This overrides every other option.</p>
+    <div id="whitelistedEmotes" class="emote-list-container">
+      <input id="whitelistedEmotes-input" class="emote-list-input">
+    </div>
+    <button type="button" id="whitelistedEmotes-clear" class="btn">Clear</button>
+  </fieldset>
+  </form>
+
+  <form class="form-inline">
+  <fieldset>
+    <legend>Custom Subreddits</legend>
+    <p class="desc">BPM can download and apply CSS from specific subreddits.
+    Emotes from them will be handled as if they were built in.</p>
+    <p><strong>Caveats:</strong> BPM tries to remove all non-emote CSS, but
+    its method is not perfect. Any unwanted side-effects are your own
+    responsibility.</p>
+    <p>The CSS cache is updated on a weekly basis.</p>
+    <p><strong>Warning: The custom CSS feature is still in progress, and
+    should not be used extensively. There are a number of known bugs.</strong></p>
+
+    <div id="custom-subreddits">
+    </div>
+
+    <div class="row">
+      <div class="span6">
+        <label>Add a subreddit:
+          <span class="input-prepend input-append">
+            <span class="add-on">/r/</span>
+            <input id="add-custom-subreddit" type="text" onsubmit="return false;">
+            <!-- Weird bootstrap bug -->
+            <button type="button" id="add-subreddit" class="btn add-on" style="height: inherit" onsubmit="return false;">Add</button>
+          </span>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+  </form>
+
+  </div>
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+################################################################################
+##
+## This file is part of BetterPonymotes.
+## Copyright (c) 2015 Typhos.
+##
+## This program is free software: you can redistribute it and/or modify it
+## under the terms of the GNU Affero General Public License as published by
+## the Free Software Foundation, either version 3 of the License, or (at your
+## option) any later version.
+##
+## This program is distributed in the hope that it will be useful, but WITHOUT
+## ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+## FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License
+## for more details.
+##
+## You should have received a copy of the GNU Affero General Public License
+## along with this program.  If not, see <http://www.gnu.org/licenses/>.
+##
+################################################################################
+
+# Release process:
+# - Bump version
+# $ make
+# - Upload Chrome addon
+# - Sign XPI
+# $ make www
+# $ make sync
+# $ git ci -m "Bump version to x.y"
+# $ git push github master
+# - Test
+# - Make thread
+
+VERSION = 201.0.0
+
+EMOTE_DATA = emotes/*.json tags/*.json data/rules.yaml data/tags.yaml
+
+ADDON_DATA = build2/bpm-resources.js build2/emote-classes.css build2/gif-animotes.css
+
+default: build2/chrome.zip
+
+clean:
+	rm -fr build2
+
+build2/bpm-resources.js build2/emote-classes.css: $(EMOTE_DATA) bpgen.py
+	mkdir -p build2
+	./bpgen.py -j build2/bpm-resources.js -c build2/emote-classes.css
+
+build2/gif-animotes.css: $(EMOTE_DATA) dlanimotes.py
+	mkdir -p build2
+	./dlanimotes.py -c build2/gif-animotes.css
+
+build2/chrome.zip: addon2/* addon2/chrome/* $(ADDON_DATA)
+	mkdir -p build2/chrome
+
+	# Package metadata
+	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon2/chrome/manifest.json > build2/chrome/manifest.json
+	cp betterponymotes.pem build2/chrome/key.pem
+
+	# Static resources
+	cp addon2/bpmotes.css build2/chrome
+	cp addon2/extracss-webkit.css build2/chrome/extracss.css
+	cp addon2/combiners-nsfw.css build2/chrome
+	cp build2/emote-classes.css build2/chrome
+	cp build2/gif-animotes.css build2/chrome
+	cp build2/bpm-resources.js build2/chrome
+
+	# Backend
+	cp addon2/data.js build2/chrome
+	cp addon2/chrome/background.js build2/chrome
+
+	# Content script
+	cp addon2/utils.js build2/chrome
+	cp addon2/searchbox.js build2/chrome
+	cp addon2/reddit.js build2/chrome
+	cp addon2/chrome/reddit-main.js build2/chrome
+
+	# Options page
+	cp addon2/options.js build2/chrome
+	cp addon2/chrome/options.html build2/chrome
+	cp addon2/chrome/options-main.js build2/chrome
+
+	# Package
+	cd build2/chrome && zip -0 ../chrome.zip *

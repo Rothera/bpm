@@ -1,0 +1,515 @@
+/*******************************************************************************
+**
+** This file is part of BetterPonymotes.
+** Copyright (c) 2012-2015 Typhos.
+**
+** This program is free software: you can redistribute it and/or modify it
+** under the terms of the GNU Affero General Public License as published by
+** the Free Software Foundation, either version 3 of the License, or (at your
+** option) any later version.
+**
+** This program is distributed in the hope that it will be useful, but WITHOUT
+** ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+** FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License
+** for more details.
+**
+** You should have received a copy of the GNU Affero General Public License
+** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+**
+*******************************************************************************/
+
+/*
+ * CSS for the addon itself.
+ */
+
+/* Placeholders */
+
+.bpm-minified, .bpm-minified:before, .bpm-minified:after, .bpm-minified:hover, .bpm-minified:active {
+    /* Behave like normal emotes do */
+    display: block !important;
+    float: left;
+    /* Need !important tags to override Reddit and emote CSS. */
+    color: black !important;
+    border: solid thin black;
+    font-family: monospace;
+    padding: 3px !important;
+    margin: 1px !important; /* Don't run lines of them together */
+    border-radius: 4px;
+    height: auto !important;
+    width: auto !important;
+    /*
+     * This class used to shut emotes down, so in the interests of working even
+     * in the emote's native subreddit, we try to override anything else.
+     *
+     * Unfortunately, due to the placement of this CSS, !important flags in the
+     * subreddit's CSS can override us. The background-size bit is a extra
+     * trick to try to stop that.
+     */
+    background-image: none !important;
+    background-size: 0% !important;
+
+    /* Kill animations */
+    transform: none !important;
+    -webkit-transform: none !important;
+    animation: none;
+    -webkit-animation: none;
+}
+
+.bpm-hidden, .bpm-hidden:before, .bpm-hidden:after, .bpm-hidden:hover, .bpm-hidden:active {
+    /*
+     * Similar- but we don't even show the placeholder.
+     */
+    width: 0px !important;
+    height: 0px !important;
+    display: none !important;
+
+    background-image: none !important;
+    background-size: 0% !important;
+
+    /* Kill animations */
+    transform: none !important;
+    -webkit-transform: none !important;
+    animation: none !important;
+    -webkit-animation: none !important;
+}
+
+/* Unknown emote placeholder. Transparent red background */
+.bpm-unknown {
+    background-color: hsla(0, 100%, 50%, 0.3);
+}
+
+/* NSFW emote placeholder. Doesn't look too great in night mode, unfortunately. */
+.bpm-nsfw, .bpm-nsfw:hover {
+    color: white !important;
+    background-color: black !important;
+}
+
+/* Alt-text display. */
+.bpm-alttext {
+    color: grey;
+}
+
+/* Click blocker */
+.bpm-emote, .bpm-unknown {
+    cursor: default;
+}
+
+/*
+ * Added to <body> when dragging things around. This works pretty well in
+ * Firefox and Chrome, and the ::selection bit makes it work a little better
+ * in Opera.
+ */
+.bpm-noselect {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none; /* Doesn't exist */
+}
+.bpm-noselect::selection {
+    background-color: transparent;
+}
+.bpm-noselect::-moz-selection {
+    background-color: transparent;
+}
+
+/*
+ * Emote search CSS
+ *
+ * WARNING: due to my lack of CSS skills, there are many width/height values
+ * here that cannot be changed without editing corresponding JS. See, primarily,
+ * the resizing code in bpm.js that hardcodes minimum values and offsets.
+ */
+
+/*
+ * Emotes button on the standard display requires some special margins.
+ */
+.bpm-search-toggle {
+    margin: 5px 0px 0 5px !important;
+    float: right;
+}
+
+/*
+ * Emotes button on .compact display, for mobile niceness. Reset margins back
+ * to their default, and replicate the padding that the help button has.
+ *
+ * (Not that it matters, since as of right now, the "help" link is weird and
+ * ugly on Firefox for some reason.)
+ */
+.bpm-search-toggle.newbutton {
+    padding: 0px 5px;
+    margin: 2px !important;
+}
+
+/* Emotes button on Voat. */
+.bpm-search-toggle.bpm-voat {
+    margin-left: 1px;
+    margin-right: 1px;
+    width: 50px;
+    background-image: none;
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+    padding: 0px !important;
+    float: none !important;
+    vertical-align: inherit !important;
+}
+
+/* Container */
+#bpm-sb-container {
+    position: fixed;
+
+    /* Fixes the container sizing on Voat and some sites using Bootstrap */
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+
+    /* These four values are reset in JS immediately, so effectively ignored */
+    width: 620px;
+    height: 450px;
+    top: 25px;
+    left: 600px;
+    padding: 5px 5px 0px 5px;
+    margin: 0px !important;
+
+    background-color: #E8E8E8;
+    border: thin solid black !important;
+    border-radius: 0px !important;
+    /*
+     * It'd be nice to hide under RES's console dropdown, but there's too many
+     * things we need to override to be nice like that.
+     */
+    z-index: 43112609; /* P sub 47 */
+    visibility: hidden;
+}
+
+/*
+ * Note: attach visibility: inherit; to EVERY sub-element of #bpm-sb-container.
+ * Failure to do so makes certain sites who like to screw around with the
+ * visibility setting look wrong.
+ *
+ * This is in preference to a "#bpm-sb-container *" universal rule.
+ */
+
+/*
+ * Compact display changes: kill the drag/resize boxes (useless), the results
+ * count (uses valuable space), and let the inpux box take up as much room as
+ * possible
+ */
+#bpm-sb-container.bpm-compact #bpm-sb-dragbox,
+#bpm-sb-container.bpm-compact #bpm-sb-resize,
+#bpm-sb-container.bpm-compact #bpm-sb-resultinfo {
+    display: none;
+}
+
+/* For use in Voat's dark theme */
+#bpm-sb-container.bpm-dark {
+    background-color: #444;
+}
+
+/* Top row widget container */
+#bpm-sb-toprow {
+    height: 30px;
+    margin: 0px 0px 5px 0px !important;
+    padding: 0px !important;
+    width: 100% !important;
+
+    visibility: inherit;
+}
+
+/* Top-left drag box */
+#bpm-sb-dragbox {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    float: left;
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC9SURBVEjHY2BgYPg/QHiALQYCBnrgoWsxEHiCMF0tBgJWIL4Oxaz0tLgAyYB8ulgMBCJA/B7JABBbhB4WT8OSNabRM3FRpG/UYnRF4kA8l1SLQXpAekm2GJpPS4D4Ix7D/xOQA+ktRs/nOC0GAi8gvknFygBklhcxFntCSyRqWXwduWglJqjzYQUFmUH9HlrCsZKTuERwFQ4E9E3DVZqN5uPBb/GAVRIDVi0OWENgQJs+A9bYGx7t6hHTdwIA/NWecKA2C2UAAAAASUVORK5CYII=");
+
+    visibility: inherit;
+}
+
+/* Tag dropdown */
+#bpm-sb-tagdropdown {
+    float: left;
+    width: 60px;
+    margin: 6px;
+
+    visibility: inherit;
+}
+
+/* Search input */
+#bpm-sb-input {
+    border-width: 2px !important;
+    height: 18px !important;
+    width: 240px !important;
+    padding: 5px !important;
+    float: left;
+    /* Fix for Chrome, which get the size wrong. Also a fix to make this
+       somewhat saner in quirks mode documents */
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+
+    margin-right: 5px !important;
+
+    visibility: inherit;
+}
+
+/* Result count element */
+#bpm-sb-resultinfo {
+    height: 30px;
+    float: left;
+
+    color: gray;
+    font-style: italic;
+    font-weight: lighter;
+    line-height: 30px; /* Ugly way to vertically center text */
+
+    visibility: inherit;
+}
+
+/* Close button */
+#bpm-sb-close {
+    width: 30px;
+    height: 30px;
+    float: right;
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACWSURBVEjH7dcxDoAgDAXQDhyROzJwREiQ4bsQLAjGH2NJ/tb4DFBQEZFCChmuQ96IwQa3xa4m1HilxqPGPQIDjahLPRxoQk3U8Cm4QUsPb9AywmfhcNH8CWAPPRN2YO3BGbl8sd011vBb6MqunsVVdKmPgWcFzSP0OzBlqimbi9ZOzAOEc2TSLgnqtWifPgZvw7/5dzoAyDAWKt02AB4AAAAASUVORK5CYII=");
+
+    visibility: inherit;
+}
+
+#bpm-sb-tabframe {
+    height: 388px; /* #bpm-search-box - 62 */
+
+    /* Fixes the tabframe sizing on Voat and some sites using Bootstrap */
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+
+    padding: 4px !important;
+    margin: 0px !important;
+    border-radius: 0px !important;
+    width: auto !important;
+
+    background-color: white;
+
+    visibility: inherit;
+}
+
+/* For use in Voat's dark theme */
+#bpm-sb-tabframe.bpm-dark {
+    background-color: #292929;
+}
+
+/* Search result container */
+#bpm-sb-results {
+    height: inherit;
+    overflow-y: auto;
+    padding: 0px !important;
+    margin: 0px !important;
+    border-radius: 0px !important;
+    width: 100% !important;
+
+    font-size: xx-small;
+    font-family: monospace;
+    word-wrap: break-word; /* Makes emote names a bit nicer */
+
+    visibility: inherit;
+}
+
+/* Help tab */
+#bpm-sb-helptab {
+    height: inherit;
+    display: none; /* default for this tab */
+
+    padding: 5px;
+
+    visibility: inherit;
+}
+.bpm-sb-help {
+    margin-bottom: 8px;
+    font-size: small;
+    text-align: justify;
+
+    visibility: inherit;
+}
+
+#bpm-sb-bottomrow {
+    height: 20px; /* Fit in the margins */
+    padding: 0px !important;
+    margin: 0px !important;
+    border-radius: 0px !important;
+    float: left;
+    width: 100%;
+
+    visibility: inherit;
+}
+
+/* Help and options links */
+#bpm-sb-helplink, #bpm-sb-optionslink, #bpm-sb-srlink {
+    height: 20px;
+    line-height: 20px;
+    text-decoration: none;
+    font-size: x-small;
+
+    visibility: inherit;
+}
+#bpm-sb-helplink {
+    margin-left: 4px;
+}
+#bpm-sb-srlink {
+    float: right;
+    margin-right: 4px;
+}
+
+/* Bottom-right resize box */
+#bpm-sb-resize {
+    width: 20px;
+    height: 20px;
+    margin-right: -6px;
+    float: right;
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACcSURBVDjLzdQxCoAwDAXQjOJmF1GvpSdzUU8iiHdSd9EvROhQMGkUDPzF0EehMUREx8v5CESRJUEQNSE90iDuDbDzGvuFW8Haa2xIaQUzvtnC32ckjQa50SI5MmrQx1dGJRpUNDYaVDyHUlQ12BJU/acE0AoZosEAuvGIuWiQDxbI6gGNFRz4ZjfQm0A+7HiBXItkMoOisfntxj4BkxXf5wPylQcAAAAASUVORK5CYII=");
+
+    visibility: inherit;
+}
+
+/* Emote search result */
+.bpm-search-result {
+    margin: 1px;
+    display: inline-block;
+
+    border: solid black thin;
+
+    visibility: inherit;
+}
+
+/* Global << icon thingy */
+#bpm-global-icon {
+    width: 40px !important;
+    height: 24px !important;
+
+    /* Fix for screwy sites */
+    padding: 0px !important;
+    border: none !important;
+    border-radius: 0px !important;
+
+    /* Hide at the bottom */
+    position: fixed;
+    left: 16px;
+    top: 15px;
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAK9SURBVEjHzdc/SGpRHAdw+0OmFrg0hCJKixAhEg7R0GJLCCpJRPRnSkKC0ECcmoqWBolARQgaBBFRJNAlCFpqeA0lvaIl0KIIGhyiUvH7/N26l3vfI5736uP5gwNH5Z7z8Z7zO/yODICsHu56y9cb2qSRxf1lk3naCPZ7I5vsJ33Y2dlBpVLB/w4ykOULSLZPbblcRrsEWXhv8bPDxtLSEm5vb5ueZHNzE9lsVvLz3wKp39XVhYWFBdzc3EiewOFwMGNZLBYcHh62DtjX18f92NnZibm5OVxfX4uegP4gf8OPjo4ik8k0D3x5ecHGxgbUarUAOjs7i6urq4YnqFariMViGB4eFkDNZjPS6TRqtZo0IBulUgnb29sYGBgQQGdmZpDP5xuGEiSVSjFvkA81mUxIJpPfQv8KZOP19RXBYBAajYZ7qKOjA9PT07i4uBC17LlcDuPj4wLoyMgIEonEH9CGgWx8fHwgHA7DYDAIoE6nUzT0+PgYVqtVAKWtEI/HpQP5B+nBwQGMRiM3iN1ul5TpZ2dnsNlsAmjTQIrLy0u4XK6mgWxCqlSq1gDPz8+Z842Wln1ucHCQyVYx8fz8jEAggP7+fm6cnp4erKysSAOenp5iampKsBSUNLu7u3h7e2sY9vj4CJ/PB6VSyY0jl8vh8XhQKBTEJ8nJyQkmJycFMK1Wi729Pby/vzcMKxaLWF1dRW9vLzcO9em7+/t78cfM0dERJiYmBDCdTodQKMRkc6Nxd3cHt9vNLB8ftra2hoeHB2kH9djYmACm1+sRiUREwSi2trbQ3d3NjaNQKOD1epllbrpYoEbnXTQalVyGscUC7bf19XU8PT21plgYGhrC/v5+08Xr/Pw8/H4/k7EtKbfELuG/DLLwgcxlifZMOyDJQBbe5Um23MaXpmXZ19Vusd5+tBGMLItk+wX8pY1lHbB+/AAAAABJRU5ErkJggg==");
+
+    /* On top of most things */
+    z-index: 524287;
+}
+
+/* Misc emote flags, stolen from various subreddits. */
+
+/* Don't remove this from here, as global emotes depends on it */
+.bpflag-in, .bpflag-inp {
+    float: none !important;
+    display: inline-block !important
+}
+
+.bpflag-ar {
+    float: right !important
+}
+
+.bpflag-blink_excl_ {
+    text-decoration: blink !important
+}
+
+.bpflag-comicsans_excl_ {
+    font-family: "Comic-Sans MS", cursive
+}
+
+.bpflag-impact_excl_ {
+    font-family: Impact, Charcoal, sans-serif
+}
+
+.bpflag-tahoma_excl_ {
+    font-family: Tahoma, Geneva, sans-serif
+}
+
+/*
+ * Basic filters: Chrome supports filter(), Firefox uses an SVG hack in bpm.js,
+ * and Opera seems to support neither of these.
+ */
+.bpflag-i {
+    -webkit-filter: hue-rotate(180deg);
+}
+.bpflag-invert {
+    -webkit-filter: invert(100%);
+}
+
+/* Some basic flags extracted from extracss, since they're nice to have generally */
+.bpflag-r.bpflag-d:hover {
+    transform:         none;
+    -webkit-transform: none;
+}
+.bpflag-r, .bpflag-d:hover {
+    transform:         scaleX(-1);
+    -webkit-transform: scaleX(-1);
+}
+.bpflag-f, .bpflag-r.bpflag-f.bpflag-d:hover {
+    transform:         scaleY(-1);
+    -webkit-transform: scaleY(-1);
+}
+.bpflag-r.bpflag-f, .bpflag-f.bpflag-d:hover {
+    transform:         scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+}
+
+/* BPM doesn't have any idea what to do with this kind of selector */
+.bpm-emote.bpmote-spoiler {
+    color: black !important;
+    background: black !important;
+}
+.bpm-emote.bpmote-spoiler:hover {
+    color: white !important;
+}
+
+/* More hacks because RES night mode is fucking garbage */
+.bpm-emote:hover {
+    opacity: 1.0 !important;
+}
+
+/*
+ * Some SFW portions of combiners. They are included here so that
+ * combiners-nsfw.css can be disabled with the NSFW option.
+ */
+
+/* lickiepie */
+.bpmote-lickiepie.bpflag-combine + a {
+    position: relative;
+    left: -220px;
+    top: 127px;
+    margin-right: -220px
+    }
+/* tableflip */
+.bpmote-emptytable.bpflag-combine {
+    z-index: 2;
+    position: relative
+    }
+.bpmote-emptytable.bpflag-combine + a {
+    z-index: 1;
+    position: relative;
+    margin-right: -999px;
+    margin-bottom: -999px;
+    left: -120px;
+    top: 20px;
+    max-height: 119px
+    }
+/* fixes */
+/*
+ * BPM NOTE: The /pp* refers to the pinkiepipes stuff from r/mlbannertest. I
+ * can't do much to make this nicer.
+ */
+.bpmote-emptytable.bpflag-combine + a[href^="/pp"].bpflag-combine + a {
+    width: 150px;
+    position: relative;
+    left: 14px;
+    top: 5px
+    }
