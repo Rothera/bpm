@@ -160,7 +160,8 @@ START-PONYSCRIPT-IGNORE{color: red}
 
 .thumbnail.self, .thumbnail.nsfw, .thumbnail.default, .expando table a[href|="/tsselfposticon"], .expando table a[href="/tsspoilericon"], .expando table a[href="/tsnsfwicon"], .expando table a[href="/tsnothumbicon"]
 {
- background-image: url(%%thumbs%%) !important
+ background-image: url(%%thumbs%%) !important;
+ background-position:0px 0px !important
 }
 .thumbnail.self, .expando table a[href|="/tsselfposticon"]
 {
@@ -201,15 +202,7 @@ START-PONYSCRIPT-IGNORE{color: red}
 }
 END-PONYSCRIPT-IGNORE{color: red}
 
-/**** NSFW or Spoiler Modes ****/
-
-/*** Start NSFW Region ***/
-.thumbnail.nsfw
-{
- background-position: 0px -170px !important
-}
-
-/*** End NSFW Region ***/
+/**** Spoiler Modes ****/
 
 /* Spoiler Setter*/
 .marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"]

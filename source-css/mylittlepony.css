@@ -1,22 +1,4 @@
-/* 
-
-      i0BB7                 LB          ,JBBBNr.           FBN:.,LL.:::7U5j:   :BBN
-         BB                  BB             iPBBBBMUi.,.  ;B::i.....rL:      iL: .B:
-         :B                   B:          ..    .rkMBB2BBOBM :77.      ..:;77L7  .BY
-          BE                  BB            ...      B    GB :;i ,vFOBBBBBBBBBBBBBB
-          BB                  .B.             .....  OM    BG:,YBBBBBEJqLYk;LUNB
-          ;B                   B1              ..... .B     1BBBMUYP5EYNuY87FUB7
-           B7                  BB               ..... B:      B8LE2PqSP2Xv87PuB,
-           BB                  BB                .... 5B      PBLqqUZUE2E7ELUJB
-           BB                  BB                .... :B      .Bq205q5SPFuEZBBB
-           BB                  BB                ....  B       NBBBBBBBBBBBBBr
-. ..       BB          i       BP                .,..  B
-.          BB          Li      B.                      B                                   Source: http://fav.me/d8nzcul
-*/
-
-
 /* Fix new Reddit CSS crashing emotes into the comment buttons */
-/* .commentarea .flat-list { clear:both; } */
 .commentarea .md:after
 {
     content:"";
@@ -26,85 +8,35 @@
 } 
 
 /* Replace RES bacon */
-
-#baconBit {
-background-image: url(%%twibacon%%) !important;
-background-size: 256px 154px !important;
-width: 256px !important;
-height: 154px !important;
--webkit-transition: all 3s linear;
-transition: all 3s linear;
-  animation: animationFrames linear 4s;
-  animation-iteration-count: 1;
-  transform-origin: 50% 50%;
-  -webkit-animation: animationFrames linear 4s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-transform-origin: 50% 50%;
-  -moz-animation: animationFrames linear 4s;
-  -moz-animation-iteration-count: 1;
-  -moz-transform-origin: 50% 50%;
-  -o-animation: animationFrames linear 4s;
-  -o-animation-iteration-count: 1;
-  -o-transform-origin: 50% 50%;
-  -ms-animation: animationFrames linear 4s;
-  -ms-animation-iteration-count: 1;
-  -ms-transform-origin: 50% 50%;
-}
+#baconBit{background-image:url(%%twibacon%%) !important;background-size:256px 154px !important;width:256px !important;height:154px !important;-webkit-transition:all 3s linear;transition:all 3s linear;animation:animationFrames linear 4s;animation-iteration-count:1;transform-origin:50% 50%;-webkit-animation:animationFrames linear 4s;-webkit-animation-iteration-count:1;-webkit-transform-origin:50% 50%;-moz-animation:animationFrames linear 4s;-moz-animation-iteration-count:1;-moz-transform-origin:50% 50%;-o-animation:animationFrames linear 4s;-o-animation-iteration-count:1;-o-transform-origin:50% 50%;-ms-animation:animationFrames linear 4s;-ms-animation-iteration-count:1;-ms-transform-origin:50% 50%}
 
 @keyframes animationFrames{
-  0% {
-    transform:  translate(0px,0px)  ;
-  }
-  100% {
-    transform:  translate(231px,137px)  ;
-  }
+  0% {transform:  translate(0px,0px);}
+  100% {transform:  translate(231px,137px);}
 }
-
 @-moz-keyframes animationFrames{
-  0% {
-    -moz-transform:  translate(0px,0px)  ;
-  }
-  100% {
-    -moz-transform:  translate(231px,137px)  ;
-  }
+  0% {-moz-transform:  translate(0px,0px);}
+  100% {-moz-transform:  translate(231px,137px);}
 }
-
 @-webkit-keyframes animationFrames {
-  0% {
-    -webkit-transform:  translate(0px,0px)  ;
-  }
-  100% {
-    -webkit-transform:  translate(231px,137px)  ;
-  }
+  0% {-webkit-transform:  translate(0px,0px);}
+  100% {-webkit-transform:  translate(231px,137px);}
 }
-
 @-o-keyframes animationFrames {
-  0% {
-    -o-transform:  translate(0px,0px)  ;
-  }
-  100% {
-    -o-transform:  translate(231px,137px)  ;
-  }
+  0% {-o-transform:  translate(0px,0px);}
+  100% {-o-transform:  translate(231px,137px);}
 }
-
 @-ms-keyframes animationFrames {
-  0% {
-    -ms-transform:  translate(0px,0px)  ;
-  }
-  100% {
-    -ms-transform:  translate(231px,137px)  ;
-  }
+  0% {-ms-transform:  translate(0px,0px);}
+  100% {-ms-transform:  translate(231px,137px);}
 }
 
-
-/* CSS last generated on Sat, 16 Feb 2013 02:05:57 -0600 by UNKNOWN on derpy */
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Sisters"}
-div.titlebox .users-online span.number:after {content:" 'Sisters' "}
+div.titlebox .subscribers span.number:after {content:" Rocks"}
+div.titlebox .users-online span.number:after {content:" Rocks"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
-/*.titlebox strong {font-size: medium;}*/
 .titlebox .SuperRedditAltTextDisplay_Text{margin:-6px 0!important;font-size:8pt!important}
 .titlebox .expando-button.collapsed.video{display:none!important}
 .sidecontentbox .voteWeight,.sidecontentbox .userTagLink{display:none!important}
@@ -112,8 +44,6 @@ div.titlebox .users-online span.number:after {content:" 'Sisters' "}
 {
  background:url(%%searchbar-spike%%) top left no-repeat!important;
  padding:13px 2px 13px 50px!important;
- /*height:50px!important;
- width:300px!important*/
 }
 
 div.over18 .entry .buttons .first{padding-left: 0px}
@@ -142,8 +72,7 @@ background:url(%%mail-icons%%);
  background-repeat:no-repeat;
  background-position:right bottom;
  background-color:transparent;
- border:1px dotted black;
- /*height:120px!important*/
+ border:1px dotted black; 
  padding-bottom: 60px;
 }
 .sidecontentbox h1{text-align:left}
@@ -234,7 +163,6 @@ border-top-right-radius: 5px;
 }
 
 /*Hat Settings*/
-
 .titlebox .usertext-body .md ol li strong{font-size:12px;color:#EF4F91}
 
 .titlebox .usertext-body .md ol li + li
@@ -258,15 +186,20 @@ border-top-right-radius: 5px;
 .thumbnail.default{ background-position:0px -70px!important}
 .thumbnail.default{ background-position:0px -70px!important}
 .linkflair-eqg3 > .thumbnail.nsfw { background-position:0px -240px!important}
+.linkflair-eqg4 > .thumbnail.nsfw { background-position:0px -240px!important}
 .linkflair-leak > .thumbnail.nsfw { background-position:0px -310px!important}
+.linkflair-fecontent > .thumbnail.nsfw { background-position:0px -380px!important}
+.linkflair-fespoiler > .thumbnail.nsfw { background-position:0px -380px!important}
+.linkflair-rafcontent > .thumbnail.nsfw { background-position:0px -380px!important}
+.linkflair-2017movie > .thumbnail.nsfw { background-position:0px -380px!important}
+.linkflair-comicspoiler > .thumbnail.nsfw { background-position:0px -450px!important}
+.linkflair-comictitlespoiler > .thumbnail.nsfw { background-position:0px -450px!important}
 
 .thing[data-fullname$="d"] .thumbnail.nsfw,.thing[data-fullname$="i"] .thumbnail.nsfw,.thing[data-fullname$="s"] .thumbnail.nsfw,.thing[data-fullname$="c"] .thumbnail.nsfw,.thing[data-fullname$="e"] .thumbnail.nsfw,
 .thing[data-fullname$="n"] .thumbnail.nsfw,.thing[data-fullname$="t"] .thumbnail.nsfw,.thing[data-fullname$="a"] .thumbnail.nsfw{background-position:0px -170px}
-.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2,.sidecontentbox a.author.id-t2_6uo3t, .sidecontentbox a.author.id-t2_5dxi7, .sidecontentbox a.author.id-t2_3fvpf, .sidecontentbox a.author.id-t2_5o8ly, .sidecontentbox a.author.id-t2_5xxlw, .sidecontentbox a.author.id-t2_6gpcb  a {content:"";color:white;font-size:0pt;display:block}
+.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2,.sidecontentbox a.author.id-t2_6uo3t, .sidecontentbox a.author.id-t2_5dxi7, .sidecontentbox a.author.id-t2_3fvpf, .sidecontentbox a.author.id-t2_5o8ly, .sidecontentbox a.author.id-t2_5xxlw, .sidecontentbox a.author.id-t2_6gpcb {content:"";color:white;font-size:0pt;display:block}
 .sidecontentbox a.author.id-t2_3l5j0:before, .sidecontentbox a.author.id-t2_4a7lu:before ,.sidecontentbox a.author.id-t2_4f80o:before ,.sidecontentbox a.author.id-t2_5agom:before ,.sidecontentbox a.author.id-t2_51isb:before ,.sidecontentbox a.author.id-t2_51isb:after ,.sidecontentbox a.author.id-t2_5eqe2:before, .sidecontentbox a.author.id-t2_6uo3t:before, .sidecontentbox a.author.id-t2_5dxi7:before, .sidecontentbox a.author.id-t2_3fvpf:before, .sidecontentbox ul.content li.more a:before, .sidecontentbox a.author.id-t2_5o8ly:before, .sidecontentbox a.author.id-t2_5xxlw:before, .sidecontentbox a.author.id-t2_6gpcb:before {font-size:10pt;color:#369;display:inline-block;}
-.sidecontentbox a.author.id-t2_3l5j0:before {content:"Lebal of the House of Usher"}
-.sidecontentbox a.author.id-t2_4a7lu:before {content:"Porsch"}
-/*.sidecontentbox a.author.id-t2_55ojn:before {content:"Rainbow Brite"}*/
+.sidecontentbox a.author.id-t2_4a7lu:before {content:"Orschmann"}
 .sidecontentbox a.author.id-t2_4f80o:before {content:"Opti"}
 .sidecontentbox a.author.id-t2_5agom:before {content:"Chinchy-bon"}
 .sidecontentbox a.author.id-t2_51isb:before {content:"TrixieOf_Trixtegtrixie"}
@@ -277,17 +210,13 @@ border-top-right-radius: 5px;
 .sidecontentbox a.author.id-t2_6gpcb:before {content:"Linkygit"}
 .sidecontentbox a.author.id-t2_5o8ly:before {content:"xHaZxFaTx"}
 .sidecontentbox a.author.id-t2_5xxlw:before {content:"Raging_Moose"} 
-/*.sidecontentbox ul.content li.more {display:none}*/
 .sidecontentbox a.author.id-t2_5fmql {display:none;}
 .sidecontentbox a.author.id-t2_6ua87 {display:none;}
 
 a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott,a.author.id-t2_dq6ce,a.author.id-t2_5qkuh{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
 a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after,a.author.id-t2_dq6ce:after,a.author.id-t2_5qkuh:after{font-size:10px!important;display:block;letter-spacing:normal}
-a.author.id-t2_4mwnz:after{content:"DerpyHiccupKittyTail"}
-a.author.id-t2_8kzeb:after{content:"RAINBOW_PONY_JUICEBOX"}
 div.content a.author.id-t2_5agom:after{content:"Chinchy"}
 a.author.id-t2_5o2lh:after{content:"Luna_in_Equestria"}
-a.author.id-t2_4uott:after{content:"3cakes2pies1fork"}
 a.author.id-t2_3klgq:after {content:" is an artist";}
 a.author.id-t2_dq6ce:after{content:"GOOUTSIDERAINBOWDAS"}
 a.author.id-t2_5qkuh:after{content:"I_SNUGGLE_PONIES"}
@@ -462,8 +391,8 @@ background-color: white;
 Submit and mod message buttons stolen from /r/StevenUniverse
 *****************/
 
-/* ===Submit Buttons=== */
-/*Adjust the following to how much room you need for them*/
+/*Submit Buttons*/
+
 .side {
     margin-top: 115px;
 }
@@ -473,7 +402,7 @@ Submit and mod message buttons stolen from /r/StevenUniverse
 .sidebox.submit { 
     position: absolute; 
     width: 148px; 
-    top: 137px; /*Change this to position it*/
+    top: 137px;
 }
 .sidebox.submit.submit-link { right: auto; }
 .sidebox.submit.submit-text { left: auto; right: 0; padding-right: 5px; }
@@ -484,7 +413,7 @@ Submit and mod message buttons stolen from /r/StevenUniverse
     height: 42px; 
     border-radius: 3px;
     border: 0px !important;
-    background: #5f99cf; /*Change to whatever color you like*/
+    background: #5f99cf;
 }
 
 .morelink a {
@@ -504,7 +433,6 @@ Submit and mod message buttons stolen from /r/StevenUniverse
     color: #fff
 }
 
-
 .submit .morelink:hover{
     background:#9edbf8;
     background-image:url(%%rainbow%%);
@@ -516,7 +444,7 @@ Submit and mod message buttons stolen from /r/StevenUniverse
     height: 42px; 
     border-radius: 10px;
     border: 0px !important;
-    background: #fd616f; /*Change to whatever color you like*/
+    background: #fd616f;
 }
 
 .disabled .morelink a {
@@ -547,7 +475,6 @@ Submit and mod message buttons stolen from /r/StevenUniverse
 
 
 /*Message the mods*/
-
 .side a[href="/message/compose?to=%2Fr%2Fmylittlepony#sidebar"] {
     margin-top: 8px;
 }
@@ -594,7 +521,6 @@ Submit and mod message buttons stolen from /r/StevenUniverse
 }
 
 /* subscribe / unsubscribe */
-
 .fancy-toggle-button .add, .RESshortcut.RESshortcutside, .RESDashboardToggle
 {
     background-image: url(%%sub%%);
@@ -632,8 +558,6 @@ Submit and mod message buttons stolen from /r/StevenUniverse
 {
    background: rgb(255, 94, 99); 
 }
-
-
  
 .fancy-toggle-button .active
 {
@@ -643,6 +567,7 @@ Submit and mod message buttons stolen from /r/StevenUniverse
     padding: 3px 5px;
     outline: none;
 }
+
 #subButtons-mylittlepony
 {
     padding-top: 7px !important;
@@ -656,9 +581,7 @@ Submit and mod message buttons stolen from /r/StevenUniverse
 }
  
 /* end subscribe buttons */
-
 /* Make nuked comment trees easier to navigate, thanks /u/gavin19 */
-
 .deleted .grayed, .deleted > .entry em {
     display: none; 
 }
@@ -790,10 +713,6 @@ a[href|="/rsmooze"], a[href|="/rflam"]
     transform: scaleX(-1);
     cursor: default;
 }
-
-/*********************
-Both methods for flipping emotes have been deprecated.
-**********************/
 
 a[href|="/swagintosh"],a[href|="/a24"],a[href|="/rswagintosh"],a[href|="/ra24"],a[href|="/f23"], a[href|="/twipbbt"],a[href|="/rf23"],a[href|="/rtwipbbt"]{background-position:0 0 !important}
 
@@ -1091,7 +1010,7 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 .flair-cmcsparroew {background-position: -300% -100%}
 .flair-cmcsparroew:hover {background-position: -0% -200%}
 .flair-cmcaroelen {background-position: -300% -100%}
-.flair-cmcaroelen:hover {background-position: -100% -100%}
+.flair-cmcaroelen:hover {background-position: -300% -1000%}
 
 table tr td:first-child {width:14px}
 
@@ -1474,10 +1393,12 @@ span.linkflairlabel[title="Future episode spoilers"]
  overflow: visible;
 }
 
-.linkflair-fecontent .linkflairlabel {display:none;}
-.linkflair-fecontent p.title:before
+/*Title spoilers styling*/
+.linkflair-egspoiler .linkflairlabel, .linkflair-comictitlespoiler .linkflairlabel, .linkflair-spoiler .linkflairlabel, .linkflair-comicspoiler .linkflairlabel, .linkflair-fecontent .linkflairlabel, .linkflair-2017movie .linkflairlabel, .linkflair-eqg3 .linkflairlabel, .linkflair-eqg4 .linkflairlabel, .linkflair-leak .linkflairlabel, .linkflair-rafcontent .linkflairlabel {display:none;}
+.linkflair-egspoiler p.title a.title, .linkflair-comictitlespoiler p.title a.title, .linkflair-spoiler p.title a.title {opacity:0;}
+.linkflair-egspoiler p.title a.title:hover, .linkflair-comictitlespoiler p.title a.title:hover, .linkflair-spoiler p.title a.title:hover {opacity:100;}
+.linkflair-egspoiler p.title:before, .linkflair-comictitlespoiler p.title:before, .linkflair-spoiler p.title:before, .linkflair-comicspoiler p.title:before, .linkflair-fecontent p.title:before, .linkflair-2017movie p.title:before, .linkflair-eqg3 p.title:before, .linkflair-eqg4 p.title:before, .linkflair-leak p.title:before, .linkflair-rafcontent p.title:before
 {
- content:"FUTURE EPISODE CONTENT";
  font-size:12px;
  color:#888;
  border:1px solid #888;
@@ -1488,99 +1409,30 @@ span.linkflairlabel[title="Future episode spoilers"]
  top:-1px;
 }
 
-.linkflair-eqg3 .linkflairlabel {display:none;}
-.linkflair-eqg3 p.title:before
-{
- content:"Friendship Games";
- font-size:12px;
- color:#888;
- border:1px solid #888;
- border-radius:3px;
- position:relative;
- padding:0px 2px;
- margin-right:2px;
- top:-1px;
-}
+.linkflair-fecontent p.title:before{content:"FUTURE EPISODE CONTENT";}
 
-.linkflair-leak .linkflairlabel {display:none;}
-.linkflair-leak p.title:before
-{
- content:"'Scare Master' leak";
- font-size:12px;
- color:#A88;
- border:1px solid #888;
- border-radius:3px;
- position:relative;
- padding:0px 2px;
- margin-right:2px;
- top:-1px;
-}
+.linkflair-rafcontent p.title:before{content:"RECENT & FUTURE CONTENT";}
+
+.linkflair-2017movie p.title:before{content:"2017 Movie";}
+
+.linkflair-eqg3 p.title:before{content:"Friendship Games";}
+
+.linkflair-eqg4 p.title:before{content:"Equestria Girls 4";}
+
+.linkflair-leak p.title:before{content:"'Scare Master' leak";}
 
 /*Equestria Girls Spoiler in title flair*/
-.linkflair-egspoiler .linkflairlabel {display:none;}
-.linkflair-egspoiler p.title a.title {opacity:0;}
-.linkflair-egspoiler p.title a.title:hover {opacity:100;}
-.linkflair-egspoiler p.title:before
-{
- content:"EG2 SPOILER";
- font-size:12px;
- color:#888;
- border:1px solid #888;
- border-radius:3px;
- position:relative;
- padding:0px 2px;
- margin-right:2px;
- top:-1px;
-}
+.linkflair-egspoiler p.title:before{content:"EG2 SPOILER";}
 
 /*Comic Spoilers in the title flair*/
-.linkflair-comictitlespoiler .linkflairlabel {display:none;}
-.linkflair-comictitlespoiler p.title a.title {opacity:0;}
-.linkflair-comictitlespoiler p.title a.title:hover {opacity:100;}
-.linkflair-comictitlespoiler p.title:before
-{
- content:"COMIC TITLE SPOILER";
- font-size:12px;
- color:#888;
- border:1px solid #888;
- border-radius:3px;
- position:relative;
- padding:0px 2px;
- margin-right:2px;
- top:-1px;
-}
+.linkflair-comictitlespoiler p.title:before{content:"COMIC TITLE SPOILER";}
 
 /*Spoilers in the title flair*/
-.linkflair-spoiler .linkflairlabel {display:none;}
-.linkflair-spoiler p.title a.title {opacity:0;}
-.linkflair-spoiler p.title a.title:hover {opacity:100;}
-.linkflair-spoiler p.title:before
-{
- content:"SPOILER";
- font-size:12px;
- color:#888;
- border:1px solid #888;
- border-radius:3px;
- position:relative;
- padding:0px 2px;
- margin-right:2px;
- top:-1px;
-}
+.linkflair-spoiler p.title:before{content:"SPOILER";}
 
 /*Comic Spoilers*/
-.linkflair-comicspoiler .linkflairlabel {display:none;}
-.linkflair-comicspoiler p.title:before
-{
- content:"COMIC SPOILER";
- font-size:12px;
- color:#888;
- border:1px solid #888;
- border-radius:3px;
- position:relative;
- padding:0px 2px;
- margin-right:2px;
- top:-1px;
-}
+.linkflair-comicspoiler p.title:before{content:"COMIC SPOILER";}
+
 .flairselector .linkflairlabel {display:inline;}
 /*End spoilers in the title flair*/
 
@@ -1670,7 +1522,7 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
 
 .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:before {
     position: absolute;
-    content: "Is this about Friendship Games or Scare Master?  If so, please spoiler-tag it!";
+    content: "Is this about Scare Master?  If so, please spoiler-tag it!";
     background: #8F02DA; /* 'orangered' normally; #8F02DA for Friendship Games + leak */
     color: #ffffff;
     margin-top: 1.5em;
@@ -1718,8 +1570,6 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
     content: '';
     position: absolute;
 }
-
-
 
 .thing.self .entry{padding-left:14px}
 a.thumbnail.self{margin-right:-14px}
@@ -1863,16 +1713,6 @@ div.content{margin-top:15px}
     height: 28px;
     padding-bottom: 6px;
     opacity: 100 !important;
-}
-
-div.thing.id-t1_ckgwu85 a[href|="/nmm"] {
-background-image: url(%%cmotes%%) !important;
-background-position: -300% -400% !important;
-}
-
-div.thing.id-t1_crpki1o a[href|="/nmm"] {
-background-image: url(%%cmotes%%) !important;
-background-position: 0 -400% !important;
 }
 
 /*Glorious Monkey Overlord*/

@@ -3,7 +3,7 @@
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%buzz%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%spookyc%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -19,15 +19,34 @@
  
 /* Banner image and associated height values */
 
+/* BEGIN SPOOKY BANNER MODS*/
+/*
  #header #header-bottom-left {
    background: url(%%homerbanner%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
 
+
+
+*/
+
+ #header #header-bottom-left  {
+background: url(%%spook%%) !important;
+    -webkit-animation: banimate 3s steps(23) infinite;-moz-animation: banimate 3s steps(23) infinite;-ms-animation: banimate 3s steps(23) infinite;-o-animation: banimate 3s steps(23) infinite;animation: banimate 3s steps(23) infinite; 
+}
+
+
+@-webkit-keyframes banimate {from{background-position: 0 0;}to{ background-position: 0px -6048px; }} 
+@-moz-keyframes banimate {from {background-position: 0 0;}to{ background-position: 0px -6048px; } } 
+@-ms-keyframes banimate{from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
+@-o-keyframes banimate {from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
+@keyframes banimate {from { background-position: 0 0; }to{ background-position: 0px -6048px; } } 
+
 .tabmenu {
   margin-top: 160px;
 }
+
 
 .gilded-icon{
     transform-origin:50% 65% 0;
@@ -96,7 +115,7 @@ margin-left: 100px;
 */
 
 /* above text */
-margin-top: 145px;
+margin-top: 115px;
 margin-bottom: 31px;
 
 }
@@ -724,6 +743,7 @@ a.author[href$=JustAnotherGDB],
 a.author[href$=Lord_Ninka],
 a.author[href$=LlamaInDrag],
 a.author[href$=thezooman123],
+a.author[href$=BeFlatXIII],
 a.author[href$=Nagashizuri],
 a.author[href$=andresonic1],
 a.author[href$=Bflat13],
@@ -764,6 +784,7 @@ content: "";
 
 /* Replacing somebody's name? Add it to the list here too. */
 a.author[href$="doxlol"]:before,
+a.author[href$="BeFlatXIII"]:before,
 a.author[href$="AttackTheMoon"]:before,
 a.author[href$="PUBLIQclopAccountant"]:before,
 a.author[href$="bryvood"]:before,
@@ -894,17 +915,18 @@ visibility:visible!important;
 }
 
 /* Replacing somebody's name? Put the replacement here. */
-/* a.author:before{
-    content:"Sailor " 
-    } */
+ a.author:before{
+    content:"Spooky " 
+    } 
 a.author[href$="AttackTheMoon"]:before {content:"ATMachine"}
+a.author[href$="BeFlatXIII"]:before {content:"Spooky Jizz Lord"}
 a.author[href$="PUBLIQclopAccountant"]:before {content:"The Public Clop Accounting Firm, Sailor LLC"}
 a.author[href$="bryvood"]:before,a.author[href$="Ezreal"]:before {content:"Ezreal"}
 a.author[href$="pr0n0tr0n"]:before,a.author[href$="theodorejhooker"]:before {content:"theodoreajhooker"}
 a.author[href$="CarlosAmuroRay"]:before {content:"ChuckAmuroRay"}
 a.author[href$="0x_"]:before {content:"ox"}
 a.author[href$="CogglerSenpai"]:before {content:"Pretty Sailor Soldier Coggler"}
-a.author[href$="thezooman123"]:before {content:" Fslurt"}
+a.author[href$="thezooman123"]:before {content: "Calls Everything Transphobia!"}
 a.author[href$="numberlock"]:before {content:"BeerPony"}
 a.author[href$="thedarklordkyp"]:before {content:"A_Drunk_Changeling"}
 a.author[href$="fwinest_JediThug"]:before {content:"Wincest_JediThug"}
@@ -1035,6 +1057,7 @@ height:30px
 
 /* Adding after-text to somebody's name? Add them here. */
 a.author[href$="AphxTwn666"]:after,
+a.author[href$="BeFlatXIII"]:after,
 a.author[href$="dylantrevor"]:after,
 a.author[href$="Ceolt0ir"]:after,
 a.author[href$="DrinkiePie"]:after,
@@ -1675,7 +1698,7 @@ RES highlighted comment
 ================== */
 /* Upvotes */
 .midcol {
-    width: 35px;
+    width: 30px;
 overflow:visible;
     }
 .comment .midcol{
@@ -1685,30 +1708,30 @@ padding:0px 5px 0px 0px;
 }
 
 div.up {
-    width: 32px !important;
-    height: 32px !important;
-    background: url(%%beevotes%%) !important;
+    width: 30px !important;
+    height: 30px !important;
+    background: url(%%spooopy%%) !important;
     background-repeat: no-repeat !important;
-    background-position: 0px -64px !important
+    background-position: 0px -60px !important
     }
 div.down {
-    width: 32px !important;
-    height: 32px !important;
-    background: url(%%beevotes%%) !important;
+    width: 30px !important;
+    height: 30px !important;
+    background: url(%%spooopy%%) !important;
     background-repeat: no-repeat !important;
-    background-position: 0px -96px !important
+    background-position: 0px -90px !important
     }
 div.upmod {
-    width: 32px !important;
-    height: 32px !important;
-    background: url(%%beevotes%%) !important;
+    width: 30px !important;
+    height: 30px !important;
+    background: url(%%spooopy%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px 0px !important
     }
 div.downmod {
-    width: 32px !important;
-    height: 32px !important;
-    background: url(%%beevotes%%) !important;
+    width: 30px !important;
+    height: 30px !important;
+    background: url(%%spooopy%%) !important;
     background-repeat: no-repeat !important;
-    background-position: 0px -32px !important
+    background-position: 0px -30px !important
     }
