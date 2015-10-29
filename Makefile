@@ -30,7 +30,7 @@
 # - Test
 # - Make thread
 
-VERSION = 66.231
+VERSION = 66.232
 
 CONTENT_SCRIPT := \
     addon/header.js addon/utils.js addon/browser.js \
