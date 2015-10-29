@@ -62,7 +62,7 @@ Store.prototype = {
         this._make_sr_array(bpm_data);
         this._make_tag_array(bpm_data);
 
-        setTimeout(this._clear_cache.bind(this), CACHE_TIME);
+        ST(this._clear_cache.bind(this), CACHE_TIME);
     },
 
     setup_css: function(css) {
@@ -81,7 +81,7 @@ Store.prototype = {
             this._tag_array = null;
         } else {
             // Wait some more
-            setTimeout(this._clear_cache.bind(this), CACHE_TIME - age);
+            ST(this._clear_cache.bind(this), CACHE_TIME - age);
         }
     },
 
