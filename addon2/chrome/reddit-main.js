@@ -50,6 +50,11 @@ var browser = {
     fetch_custom_css: function() {
         console.log(lp, "STUB: browser.fetch_custom_css");
         return Promise.resolve("/*stub*/");
+    },
+
+    fetch_emotes: function(emote_names) {
+        // emote_names: {"/emotename": arbitrary data}
+
     }
 };
 

@@ -31,6 +31,8 @@ var current_subreddit = (function() {
     return match ? match[1].toLowerCase() : null;
 })();
 
+var sidebar = null; // Cached, see below
+
 /*
  * Early reddit setup. Runs before DOM is ready.
  */
@@ -98,18 +100,103 @@ function reddit_preload() {
  */
 function reddit_main() {
     console.log(lp, "[STARTUP]", "Running on reddit");
+
+    find_sidebar();
+
     browser.prefs().then(function(prefs) {
         console.log(lp, "[STARTUP]", "Got preferences");
 
         var blacklisted = !!prefs.blacklisted_subreddits[current_subreddit];
+        var expand_emotes = !blacklisted;
+
         if(blacklisted) {
             console.log(lp, "[STARTUP]", "Blacklisted subreddit. Disabling emote expansion");
         }
 
-        // TODO: Show current emotes
+        // Initial conversion pass: convert all emotes currently on the page
+        var posts = slice(document.getElementsByClassName("md"));
+        console.log(lp, "[REDDIT]", "Processing", posts.length, "initial posts");
+
+        // Find all interesting-looking links
+        var pending_emotes = {}; // {"/emotename" -> [a, ...], ...}
+        var count = 0;
+        for(var i = 0; i < posts.length; i++) {
+            count += analyze_post(posts[i], pending_emotes);
+        }
+
+        console.log(lp, "[REDDIT]", "Found", count, "links");
+        //console.log(lp, "[DEBUG]", "Pending:", pending_emotes);
+
+        browser.fetch_emotes(pending_emotes).then(function(emotes) {
+            // emotes: {"/emotename" -> data}
+
+            // TODO: Convert these emotes
+        });
+
+        // TODO: DOM observation. Note race condition
+
         // TODO: Setup click blocker
         // TODO: Inject search box
         // TODO: Inject "emotes" buttons
-        // TODO: DOM observation
     });
+}
+
+function find_sidebar() {
+    // Should only be one of these elements
+    var titlebox = document.getElementsByClassName("titlebox")[0];
+
+    // Should only be one of these, too
+    var md = titlebox.getElementsByClassName("md")[0];
+
+    sidebar = md;
+}
+
+function is_sidebar(md) {
+    return md === sidebar;
+}
+
+function analyze_post(md, pending_emotes) {
+    var links = slice(md.getElementsByTagName("a"));
+    var count = 0;
+
+    for(var i = 0; i < links.length; i++) {
+        var a = links[i];
+
+        // Not the same as a.href, which has been mangled
+        var href = a.getAttribute("href");
+
+        // See if this looks like an emote, and filter out some common false
+        // positives
+        if(href && href[0] === "/" && !href.startsWith("/r/") && !href.startsWith("/u/")) {
+            var parts = href.split("-");
+            var name = parts[0];
+
+            if(!pending_emotes[name]) {
+                pending_emotes[name] = [];
+            }
+            pending_emotes[name].push(a);
+
+            count++;
+        }
+    }
+
+    return count;
+}
+
+function process_post(prefs, md, expand_emotes) {
+    var expand_unknown = !is_sidebar(md);
+    var expand_alt_text = prefs.show_alt_text && !is_sidebar(md);
+
+    var links = slice(md.getElementsByTagName("a"));
+    for(var i = 0; i < links.length; i++) {
+        var a = links[i];
+
+        if(expand_emotes) {
+            // TODO
+        }
+
+        if(expand_alt_text) {
+            // TODO
+        }
+    }
 }

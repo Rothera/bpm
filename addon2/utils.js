@@ -73,3 +73,5 @@ function ajax(url) {
         xhr.send();
     });
 }
+
+var slice = Array.prototype.slice.call.bind(Array.prototype.slice);

@@ -44,7 +44,8 @@ if(localStorage["prefs"]) {
     });
 } else {
     chrome.storage.local.get("bpm.prefs", function(items) {
-        var prefs = items["bpm.prefs"];
+        var prefs = items["bpm.prefs"] || {};
+
         // Upgrade
         if(setup_preferences(prefs)) {
             chrome.storage.local.set({"bpm.prefs": prefs}, function() {

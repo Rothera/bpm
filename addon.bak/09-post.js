@@ -170,18 +170,6 @@ function process_element(store, element, convert_unknown) {
     }
 }
 
-var _sidebar_cache = null;
-function is_sidebar(md) {
-    if(_sidebar_cache) {
-        return _sidebar_cache === md;
-    }
-    var is = class_above(md, "titlebox");
-    if(is) {
-        _sidebar_cache = md;
-    }
-    return Boolean(is);
-}
-
 /*
  * Processes emotes and alt-text under an element, given the containing .md.
  */
@@ -190,6 +178,7 @@ function process_post(store, post, md, expand_emotes) {
     // is an extremely fast test.
     var sidebar = is_sidebar(md);
     var links = slice(post.getElementsByTagName("a"));
+
     for(var i = 0; i < links.length; i++) {
         var element = links[i];
         if(expand_emotes) {

@@ -122,13 +122,6 @@ function run_reddit(store, expand_emotes) {
     }
     inject_emotes_button(store, usertext_edits);
 
-    // Initial pass- show all emotes currently on the page.
-    var posts = slice(document.getElementsByClassName("md"));
-    log_debug("Processing", posts.length, "initial posts");
-    for(var i = 0; i < posts.length; i++) {
-        process_post(store, posts[i], posts[i], expand_emotes);
-    }
-
     // Add emote click blocker
     document.body.addEventListener("click", catch_errors(function(event) {
         block_click(store, event);
