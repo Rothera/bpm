@@ -1,42 +1,130 @@
+/*
+                            ```                                                           
+                    .;;;;;;;;;;;;;;;;;:                                                   
+                 .;;;;;;,`........`,;;;;;;;                                               
+               :;;;;.....................;;;;;`                                           
+              ;;;:..........................,;;;;                                         
+             ;;;...............................,;;;`                                      
+            ;;:..................................`;;;.                                    
+           ;;;...............................,,,,,,.;;;`                                  
+          ,;;...........................,,,,,,,,,,,,,,;;;                                 
+          ;;..........................,,,,,,,,,,,,,,,,,,;;;                               
+          ;;........................,,,,,,,,,,,,,,,,,,,,,:;;                              
+          ;;......................,,,,,,,,,,,,,,,,,,,,,,,,,;;;                            
+          ;;.....................,,,,,,,,,,,,,,,,,,,,,,,,,,,:;;                           
+          ;;..........`.........,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,;;                          
+          ;;.........```.......,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,;;`                        
+          ;;.........````.....,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,;;.                       
+          ;;.........`````...,,,,,,,,,,:,,,,,,,,,,,,,,,,,,,,,,,,,;;,                      
+           ;,........``````..,,,,,,,,:;,,,,,,,,,,,,,,,,,,,,,,,,,,,;;.                     
+           ;;........```````..,,,,,,;;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,;;`                    
+           `;........`````.`...,,,:;;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,;;                    
+         ;;;;;.......````````..,,:;;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,;;     .`            
+      ;;,....`;,......````````..,;;,,,,,,:;;;;;,,,,,,,,,,,,,,,,,,,,,,,;;  .....           
+    `;;........;......`.```````.;;:,,,,,;;:,,,;;,,,,,,,,,,,,,,,,,,,,,,,;:.......          
+   :;,.........,;.....`````````:;;,,,,,;;,,,,,,;;,,,,,,,,,,,,,,,,,,,,,,;...````..         
+   ;:.....;;....;.....`````````;;;,,,,;;,,,,,,,,;;,,,,,,,,,,,,,,,,,,,,,...`````..`        
+  ;;....;;..;..;;......````````;;,,,,,;,,,,,,,,,;;,,,,,,,,,,,,,,,,,,,,,..```````..        
+  ;:...,;......;:......````````;;,,,,,;,,,;;,,,,;;:,,,,,,,,,,,,,,,,,,,..`````````.`       
+ ;;....;;.....;;.......````````;;,,,,,;,,,::,,,,;;;,,,,,,,,,,,,,,,,,,,.``````````..       
+ ;;....;;;...;;........````````;;,,,,,;,,,,;,,,,;;;,,,,,,,,,,,,,,,,,,..``````````..       
+ ;;.....;;;:;:..........```````;;,,,,,,;,,,;,,,,;;;,,,,,,,,,,,,,,,,,,.````````````.`      
+ ;;......;;,............```````;;;,,,,,;;;;,,,,,;;,,,,,,,,,,,,,,,,,,,.````````````..      
+  ;..................,,.``.````.;;,,,,,,,,,,,,,;;;,,,,,,,,,,,,,,,,,,.`````````````..      
+  ;;.................;;.````````;;;,,,,,,,,,,,:;;:,,,,,,,,,,,,,,,,,,.`````````````..      
+   ;;.............`;;;;`.````````;;;,,,,,,,,,,;;;,,,,,,,,,,,,,,,,,,;```````````.``..      
+   ,;;...........;;;;```.````````,;;;,,,,,,,;;;;,,,,,,,,,,,,,,,,,,;,```````````.```.      
+    .;;;,```.:;;;;;:``````````````,;;;;:,,,;;;;,,,,,,,,,,,,,,,,,,;;.```````````.```.      
+      ;;;;;;;;;;;,```````.``````````;;;;;;;;;;;;,,,,,,,,,,,,,,,;;;````````````.````.      
+        `;;;;;.@``````````````````````;;;;:```:;;;;,,,,,,,,,,;;;.`````````````.```..      
+             ..@@ @@@````````````````````````````,;;;;;;:;;;;;:``````````````..```..      
+           . .. @@` #@````````````````````````````````,;;;;.`````````````````.````..      
+           @ ..`@     @```````````````````````````````````@`````````````````..````..      
+            @@,`:     .@```````````````````````..`````````@`````````````````.`````..      
+            .#@@    :::@```````````````````;@@@@@@@@@ ```#,````````````````..`````.`      
+            ..`;   ::::'@````````````````;@@@.     ;@@@`'@````````````````.``````..       
+            ..`   ,:::  @```````````````@@`           @@@,```````````````.```````..       
+          @ `'@   :::#  @``````````````@'              '@.````@``````````````````.`       
+            @@@  :::@@  @ ````````````@        ;;;;;    :@```@.`````````````````..        
+            .``  ::@@@  @ ```````````@      ,;;;;;;;;;   @@@@@``````````````````..        
+           `.`   :;@@@  @ ``````````@      ;;;;;;;   :;   @@'``````````````````..;,       
+           `.`  ::@@  : @ `````````+      ;;;;;;;     `,  .;```````````````````..;;       
+           `.`  ::@@@#'+@``````````#     :::;'@@@      ;   @``````````````````...`;       
+           `.`  ::@@@@.@@`````````@     ::::@@@@@          @`````````````````.....;;      
+           `.`  ::@@@@@@@`````````'    ::::@@@@@@       :  .@# ` ```;;;;;; `......,;      
+            .`  ::@@@@@@.````````#     :::@@@@@@@       ;   @@@@ `,;;,..,;;:.......;`     
+            .`  ..@@@@@@`````````@    ::::@@@@@@@       ;   ``````;:......;;.......;;     
+            .`  ..@@@@@@```````` .    :::@@@@@@@@;      ;   `````;;........;;......;;     
+            .`  ..@@@@@;````````:    `,::@@@@@ @@@      ;   ````,;..........;.......;     
+            .`    @@@@@`````````#    ,,,:@@@@   @@@'   ;:   ````;;..........;:......;     
+            ..    `@@@'`````````@    ,,,@@@@@: .@@@@@:::    ````;...........;:......;:    
+            `.`   ::;:``````````@    ,,,@@@@@@#@@ @@#:::    ````;...........;:......;;    
+             .`  .::::``````````@    ,,,@@@@@@@@@@@@::::   `````;.....,.....;`......;;    
+             .`   `::```````````@    ,,,@@@@@@@@@@@@...    `````;.....;....;;.......:;    
+             `.     `.``````````;    ,,,@@@@@@@@@@@,..`    `````;.....;;..:;........:;    
+              ......`````````````    ,,,,@@@@@@@@@@...    ``````;......;;;;,........,;    
+             ...`````````````````    ,,,,@@@@@@@@@...     ``````;,..................:;    
+            `.```````````````````    `,,,,@@@@@@@  .     ```````;;..................:;    
+            `.````````````````````    ,,,,,#@@@,,        ````````;.................,:;    
+             .````````````````````     ,,,,,,,,,,,      `````````;:................,;;    
+             ..````..`````````````      ,,,,,,,,,      ``````````.;...............,,;;    
+             ..````````````````````      .,,,,,        ```````````;;.............,,,;;    
+             ...````````````````````                  ````````````;;;...........,,,,;:    
+              ..`````````````````````               `````````````;;.;;;........,,,,,;`    
+              ...`````````````````````             `````````````;;....;;;;....,,,,,,;     
+               .........````````````````         ``````````````;;...........,,,,,,,:;     
+                ..`````````````````````````````````````````````;;..........,,,,,,,,;;     
+                 ..```````````````````````````````````````````;;..........,,,,,,,,,;:     
+                  ...````````````````````````````````````````.;..........,,,,:;;;,,;      
+                   ...```````````````````````````````````````;;.........,,,:;;;;;;;;`     
+                    ....`````````````````````````````````````;,........,,,:;;,,,,,,;;;    
+                      ....``````````````````````````````````,;........,,,,;;,,,,,,,,;;;   
+                        .....```````````````````````````````;;.......,,,,:;,,,,,,,,,,;;`  
+                          `......```````````````````````````;;......,,,,,;;,,,,,,,,,,,;;  
+                              .............```...```````````;;......,,,,,;;,,,,,,,,,,,,;, 
+                                    `.........``````````````;:.....,,,,,,;;,,,,,,,,,,,,;; 
+                                            `.``````````````;;....,,,,,,,;;,,,,,,,;,,,,,; 
+*/
+
 /*Header Changes*/
 #header, .res-nightmode #header{
 border: none;
 
 }
 #header, .res-nightmode #header {
-background: #FC6F3F
+background: #5f99cf
+}
+#header-img:hover{
+transform: scalex(-1);
 }
 .res-nightmode ul.tabmenu li.selected a {
 background: none!important
 }
 .pagename a, .res-nightmode .pagename a{
-color: #0D0D0D;
+color: #FFE591;
 margin-bottom: 3px;
 font-size: 16px;
-position: relative;
-right: 40px;
-margin-right: -40px;
 }
 .tabmenu li a, .res-nightmode .tabmenu li a {
 background: transparent;
 font-size: 16px;
-color: #0D0D0D;
+color: #FFE591;
 font-variant: small-caps;
 padding: 2px 3px 0 0;
 }
 .tabmenu li.selected a, .res-nightmode .tabmenu li.selected a{
 background: transparent;
 border: none;
-color: white;
+color: #FFB391;
 }
 .tabmenu.formtab a {
 border:none;
-background: #FC6F3F
+background: #5f99cf;
 }
 
 /*Background*/
-body{background: #ffffff url(%%spoopbackground%%) no-repeat fixed center center}
-body.res-nightmode {background-image: url(%%spoopbackground%%) !important;}
+body{background: #ffffff url(%%twilightbackground%%) no-repeat fixed center center}
+body.res-nightmode {background-image: url(%%twilightbackground%%) !important;}
 body.res-nightmode div.content {background-color: transparent;}
 
 #baconBit {background-image: url(%%baconbit%%)!important;width:45px;height:100px;}
@@ -62,9 +150,9 @@ background: url(%%horsewife%%) center center no-repeat transparent;
 /*Subscriber Name Replace*/
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Rocks"}
+div.titlebox .subscribers span.number:after {content:" Plizards"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " Poems about Rocks" }
+div.titlebox p.users-online span.number:after { content: " eating Cake" }
 div.titlebox p.users-online span.word { display: none }
 
 /*Flair modifications*/
@@ -116,10 +204,10 @@ submitted
 /*Footer code*/
 .footer-parent
 {
- padding-bottom: 240px;
+ padding-bottom: 0px;
  clear:both;
  text-align:center;
- height:500px;
+ height:1000px;
  width:100%;
  background-image:url(%%footer%%);
  background-repeat:no-repeat;
@@ -746,6 +834,8 @@ padding: 0
 
 /*End sidebar emote code*/
 
+/* SECTION REMOVED DUE TO USER SPOOPING 2015-10-31 */
+
 /* GIVE EVERY COMMENT THE RANDOM FILLY! */
 .commentarea .usertext{padding-left: 70px; min-height: 140px; margin-top: -70px}
 
@@ -985,7 +1075,7 @@ padding: 0
 .flair-excmcal {background-position: -400% -100%}
 .flair-excmcal:hover {background-position: -200% -300%} /*For Frenchie; Tavi Hover*/
 .flair-cmcsh {background-position: -300% -100%}
-.flair-cmcsh:hover {background-position: 0 -200%} /*For Shercock_Holmes; Luna Hover*/
+.flair-cmcsh:hover {background-position: -200% -2400%} /*For Shercock_Holmes; Luna Hover*/
 .flair-cmcjib {background-position: -300% -100%}
 .flair-cmcjib:hover {background-position: -300% -1900%} /*For Jibodeah; Apathia Hover*/
 .flair-cmcsyn {background-position: -300% -100%}
@@ -1004,72 +1094,9 @@ padding: 0
 /*
 a.author[href$="UserNameHere."] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 
-a.author[href$="UserNameHere"]::before {font-size:10px!important; visibility:visible!important; content: "New Name Here"}
+a.author[href$="UserNameHere"]:before {font-size:10px!important; visibility:visible!important; content: "New Name Here"}
 */
-a.author:after {content: " The Robot"}
-a.author[href$="a"]:after {content: " The Scientist"}
-a.author[href$="A"]:after {content: " The Battery"}
-a.author[href$="b"]:after {content: " The Nurse"}
-a.author[href$="B"]:after {content: " In Pajamas"}
-a.author[href$="c"]:after {content: " The Doctor"}
-a.author[href$="C"]:after {content: " The Surgeon"}
-a.author[href$="d"]:after {content: " The Zombie"}
-a.author[href$="D"]:after {content: " The Half-Zombie"}
-a.author[href$="e"]:after {content: " The Ghost"}
-a.author[href$="E"]:after {content: " The Ghost Pirate"}
-a.author[href$="f"]:after {content: " The Pirate"}
-a.author[href$="F"]:after {content: " The Pirate Ghost"}
-a.author[href$="g"]:after {content: " The Police Officer"}
-a.author[href$="G"]:after {content: " The Sheriff"}
-a.author[href$="h"]:after {content: " The President"}
-a.author[href$="H"]:after {content: " El Presidente"}
-a.author[href$="i"]:after {content: " The Lion"}
-a.author[href$="I"]:after {content: " The Tiger"}
-a.author[href$="j"]:after {content: " The Superhero"}
-a.author[href$="J"]:after {content: " The Supervillain"}
-a.author[href$="k"]:after {content: " The Moth"}
-a.author[href$="K"]:after {content: " The Silly Putty"}
-a.author[href$="l"]:after {content: " The Jedi"}
-a.author[href$="L"]:after {content: " The Sith"}
-a.author[href$="m"]:after {content: " The Prisoner"}
-a.author[href$="M"]:after {content: " The Escaped Convict"}
-a.author[href$="n"]:after {content: " The Princess"}
-a.author[href$="N"]:after {content: " The Baroness"}
-a.author[href$="o"]:after {content: " The Devil"}
-a.author[href$="O"]:after {content: " The Demon"}
-a.author[href$="p"]:after {content: " The Skeleton"}
-a.author[href$="P"]:after {content: " The Skelingeton"}
-a.author[href$="q"]:after {content: " The Knight"}
-a.author[href$="Q"]:after {content: " The Squire"}
-a.author[href$="r"]:after {content: " The Bee"}
-a.author[href$="R"]:after {content: " The Honey Bee"}
-a.author[href$="s"]:after {content: " The Vampire"}
-a.author[href$="S"]:after {content: " The Twilight Vampire"}
-a.author[href$="t"]:after {content: " The Dinosaur"}
-a.author[href$="T"]:after {content: " The Caveman"}
-a.author[href$="u"]:after {content: " The Soldier"}
-a.author[href$="U"]:after {content: " The Roman"}
-a.author[href$="v"]:after {content: " The Fairy"}
-a.author[href$="V"]:after {content: " The Elf"}
-a.author[href$="w"]:after {content: " The Cowboy"}
-a.author[href$="W"]:after {content: " The Cow"}
-a.author[href$="x"]:after {content: " The Prime Minister"}
-a.author[href$="X"]:after {content: " The Pig"}
-a.author[href$="y"]:after {content: " The Rabbit"}
-a.author[href$="Y"]:after {content: " The Wabbit"}
-a.author[href$="z"]:after {content: " The Hacker"}
-a.author[href$="Z"]:after {content: " The H4x0r"}
-a.author[href$="_"]:after {content: " The Almost Robot"}
-a.author[href$="1"]:after {content: " The Nurse Robot"}
-a.author[href$="2"]:after {content: " The Party Robot"}
-a.author[href$="3"]:after {content: " The Doctor Robot"}
-a.author[href$="4"]:after {content: " The Dancing Robot"}
-a.author[href$="5"]:after {content: " The Robot?"}
-a.author[href$="6"]:after {content: " The Cardboard Robot"}
-a.author[href$="7"]:after {content: " The Not Quite a Robot"}
-a.author[href$="8"]:after {content: " The Robit"}
-a.author[href$="9"]:after {content: " The Dancer"}
-a.author[href$="0"]:after {content: " The Clown"}
+
 
 .sidecontentbox a.author[href$="Pinkie_Pie"] {Display:none}
 .sidecontentbox a.author:after {display: none}
@@ -1165,16 +1192,17 @@ div.over18 .entry .buttons .first{padding-left: 0px}
 .side {margin-top: 70px}
 .nub {display: none}
 .sidebox.submit .morelink {width: 145px; overflow: hidden}
-.sidebox.submit {position: absolute; top: 150px;}
+.sidebox.submit {position: absolute; top: 130px;}
 .sidebox.submit.submit-link {right: auto;}
 .sidebox.submit.submit-text {left: auto; right: 0; padding-right: 5px;}
 .morelink, .res-nightmode .morelink{
-background: #FC6F3F;
+background: #5f99cf;
 background-image: none;
 border: none;
+color:white;
 }
 .morelink a, .res-nightmode .morelink a {
-color:#0D0D0D
+color:white;
 }
 .sidebox.submit-text .morelink:hover, .res-nightmode .sidebox.submit-text .morelink:hover{
 background: #3E46A7;
@@ -1194,12 +1222,12 @@ color: #D59D02;
 }
 .helplink, .res-nightmode .helplink {
 position: absolute;
-top: 180px;
+top: 160px;
 width: 300px;
 height: 29px;
-background: #FC6F3F;
+background: #5f99cf;
 border: none;
-color: #0D0D0D!important;
+color: white!important;
 text-align: center;
 font-size: 150%;
 font-weight: bold;
@@ -1272,42 +1300,42 @@ z-index:9000}
 60%{color:#f90}
 100%{bottom:38px;opacity:0.0}}
 
-.thing[data-fullname$="a"] > .midcol > .upmod:focus::after { content: "Five more minutes of this and I'm gonna get mad. "; }
-.thing[data-fullname$="b"] > .midcol > .upmod:focus::after { content: "They're robots, Morty! It's okay to shoot them! "; }
-.thing[data-fullname$="c"] > .midcol > .upmod:focus::after { content: "They're bureaucrats! I don't respect them! "; }
-.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "DISQUALIFIED "; }
-.thing[data-fullname$="e"] > .midcol > .upmod:focus::after { content: "It's about to get a whole lot weirder Morty. "; }
-.thing[data-fullname$="f"] > .midcol > .upmod:focus::after { content: "Welcome to your nightmare, bitch! "; }
-.thing[data-fullname$="g"] > .midcol > .upmod:focus::after { content: "Why would a Poptart want to live inside a toaster, Rick? "; }
-.thing[data-fullname$="h"] > .midcol > .upmod:focus::after { content: "Hungry for apples? "; }
-.thing[data-fullname$="i"] > .midcol > .upmod:focus::after { content: "My man! "; }
-.thing[data-fullname$="j"] > .midcol > .upmod:focus::after { content: "*snap* Yes! "; }
-.thing[data-fullname$="k"] > .midcol > .upmod:focus::after { content: "I'm Mr. Meeseeks! Look at me!"; }
-.thing[data-fullname$="l"] > .midcol > .upmod:focus::after { content: "Oooh yeah! Can do! "; }
-.thing[data-fullname$="m"] > .midcol > .upmod:focus::after { content: "Wubba lubba dub dub! "; }
-.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "I LIKE WHAT YOU GOT. "; }
-.thing[data-fullname$="o"] > .midcol > .upmod:focus::after { content: "I'm not paying 70 smidgens for a broken defraculator. "; }
-.thing[data-fullname$="p"] > .midcol > .upmod:focus::after { content: "It might eat brains and exhale space AIDS. "; }
-.thing[data-fullname$="q"] > .midcol > .upmod:focus::after { content: "2003 just called and wants its easy target back. "; }
-.thing[data-fullname$="r"] > .midcol > .upmod:focus::after { content: "We're not so different. We're both corn of action. "; }
-.thing[data-fullname$="s"] > .midcol > .upmod:focus::after { content: "Let's watch some crazy stuff yo. "; }
-.thing[data-fullname$="t"] > .midcol > .upmod:focus::after { content: "There are so many ants in my eyes! "; }
-.thing[data-fullname$="u"] > .midcol > .upmod:focus::after { content: "It's just called Two Brothers. "; }
-.thing[data-fullname$="v"] > .midcol > .upmod:focus::after { content: "You guys clearly backed the wrong conceptual horse. "; }
-.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "Get schwifty "; }
-.thing[data-fullname$="x"] > .midcol > .upmod:focus::after { content: "With an arm of fake doors in your arm. "; }
-.thing[data-fullname$="y"] > .midcol > .upmod:focus::after { content: "Gimme my darn enchiladas! "; }
-.thing[data-fullname$="z"] > .midcol > .upmod:focus::after { content: "Paid for by…Trunk People. "; }
-.thing[data-fullname$="1"] > .midcol > .upmod:focus::after { content: "Now I'm burning, that's much worse than other things burning! "; }
-.thing[data-fullname$="2"] > .midcol > .upmod:focus::after { content: "Oh I love me Strawberry Smiggles. "; }
-.thing[data-fullname$="3"] > .midcol > .upmod:focus::after { content: "Real Turbulent Juice. "; }
-.thing[data-fullname$="4"] > .midcol > .upmod:focus::after { content: "Grandpa! Go home and drink. "; }
-.thing[data-fullname$="5"] > .midcol > .upmod:focus::after { content: "I haven't learned a thing! "; }
-.thing[data-fullname$="6"] > .midcol > .upmod:focus::after { content: "I am not programmed for friendship. "; }
-.thing[data-fullname$="7"] > .midcol > .upmod:focus::after { content: "You're Zuckerberging me? "; }
-.thing[data-fullname$="8"] > .midcol > .upmod:focus::after { content: "That's Rick-diculous. "; }
-.thing[data-fullname$="9"] > .midcol > .upmod:focus::after { content: "Get riggidy riggidy wrecked son! "; }
-.thing[data-fullname$="0"] > .midcol > .upmod:focus::after { content: "What is my purpose? "; }
+.thing[data-fullname$="a"] > .midcol > .upmod:focus::after { content: "Lesbian horses are bringing down this country."; }
+.thing[data-fullname$="b"] > .midcol > .upmod:focus::after { content: "I spend more time flirting with guys on this sub than I do girls in real life."; }
+.thing[data-fullname$="c"] > .midcol > .upmod:focus::after { content: "I literally cannot stop injecting marijuanas."; }
+.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "OP is a uniqueer."; }
+.thing[data-fullname$="e"] > .midcol > .upmod:focus::after { content: "Giant hats - bringing people together."; }
+.thing[data-fullname$="f"] > .midcol > .upmod:focus::after { content: "Night mode is literally crack cocaine."; }
+.thing[data-fullname$="g"] > .midcol > .upmod:focus::after { content: "Here at the Plounge we beat dead jokes into the dirt until there's nothing left but powder."; }
+.thing[data-fullname$="h"] > .midcol > .upmod:focus::after { content: "Half fags are the best kinds of people."; }
+.thing[data-fullname$="i"] > .midcol > .upmod:focus::after { content: "IF YOUR CHILDREN POO A BOSE-EINSTEIN CONDENSATE, CONSULT A PHYSICIST."; }
+.thing[data-fullname$="j"] > .midcol > .upmod:focus::after { content: "MY FACE IS ADOPTED."; }
+.thing[data-fullname$="k"] > .midcol > .upmod:focus::after { content: "I suggest you become very flexible and kiss your ass good bye."; }
+.thing[data-fullname$="l"] > .midcol > .upmod:focus::after { content: "A little bit of iron fist dictatorship is exactly what we need to liven this place up a bit."; }
+.thing[data-fullname$="m"] > .midcol > .upmod:focus::after { content: "3 die in shitpost."; }
+.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "You tap the plastic butt. It sounds like a plastic butt being tapped."; }
+.thing[data-fullname$="o"] > .midcol > .upmod:focus::after { content: "I'm only gay for my wife."; }
+.thing[data-fullname$="p"] > .midcol > .upmod:focus::after { content: "I'm not racist but there needs to be like a holocaust or something."; }
+.thing[data-fullname$="q"] > .midcol > .upmod:focus::after { content: "I NOTICE AND BEHOLD YOUR ASTONISHING ARM. MAY I TOUCH IT?"; }
+.thing[data-fullname$="r"] > .midcol > .upmod:focus::after { content: "Help, my off-topic and incredibly sexual pony discussion board is being overly dramatic today!"; }
+.thing[data-fullname$="s"] > .midcol > .upmod:focus::after { content: "Sadly, small horse has become my life."; }
+.thing[data-fullname$="t"] > .midcol > .upmod:focus::after { content: "...So now everyone knows I’m a brony and they keep asking me what the hell a plounge is."; }
+.thing[data-fullname$="u"] > .midcol > .upmod:focus::after { content: "Don't be so rude. Go open the gate so your demonic baby can go make itself a sandwich."; }
+.thing[data-fullname$="v"] > .midcol > .upmod:focus::after { content: "THEY DON’T MAKE MENSTRUAL PRODUCTS FOR HORSES!"; }
+.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "Who the hell gets turned on by Ploungers?"; }
+.thing[data-fullname$="x"] > .midcol > .upmod:focus::after { content: "Does the Plounge count as a shipfic?"; }
+.thing[data-fullname$="y"] > .midcol > .upmod:focus::after { content: "I tried huffing the plounge once. Didn’t work out. I’m still finding Internet in my nose."; }
+.thing[data-fullname$="z"] > .midcol > .upmod:focus::after { content: "I’ve been sexually propositioned on the Plounge so many times that I’m running out of repartees."; }
+.thing[data-fullname$="1"] > .midcol > .upmod:focus::after { content: "That appears to have no logic."; }
+.thing[data-fullname$="2"] > .midcol > .upmod:focus::after { content: "I just felt that if you were leaving, you should do it on an ambiguously gay note."; }
+.thing[data-fullname$="3"] > .midcol > .upmod:focus::after { content: "You are a menace to society; also you stink up the place."; }
+.thing[data-fullname$="4"] > .midcol > .upmod:focus::after { content: "Well you are travelling through time at a rate of one second per second."; }
+.thing[data-fullname$="5"] > .midcol > .upmod:focus::after { content: "You now realise the average plounge butt is underage."; }
+.thing[data-fullname$="6"] > .midcol > .upmod:focus::after { content: "Wait, how do societal norms work again?"; }
+.thing[data-fullname$="7"] > .midcol > .upmod:focus::after { content: "I'll lick whatever I damn well please."; }
+.thing[data-fullname$="8"] > .midcol > .upmod:focus::after { content: "Crimes against nature are easy. Crimes against humanity take effort."; }
+.thing[data-fullname$="9"] > .midcol > .upmod:focus::after { content: "He wished so much that he had a giant Obscene Lyra Plushie to smother himself from embarrassment."; }
+.thing[data-fullname$="0"] > .midcol > .upmod:focus::after { content: "I'm feeling an odd sense of confusion, hate and arousal."; }
 .thing .upmod:focus:after{white-space:nowrap}
 .midcol,.last-clicked.midcol{overflow:visible!important}
 .res-commentBoxes .commentarea .comment{overflow:visible!important}

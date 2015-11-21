@@ -152,6 +152,17 @@ background-color: #212121; /* Color behind caption */
 
 /* END ADDON */
 
+/* ADDON: RESTORE SUBSCRIBE BUTTON */
+
+.titlebox .fancy-toggle-button .add {text-indent: 0;height: initial;width: initial;border-radius: 3px;background-image: none;text-transform: uppercase;}
+.fancy-toggle-button .remove {text-indent: 0 !important;height: initial !important;width: initial !important;border-radius: 3px !important;background-image: none !important;text-transform: uppercase !important;}
+.titlebox .fancy-toggle-button .add:after, .fancy-toggle-button .remove:after {display: none;}
+.titlebox .fancy-toggle-button .add {color: #fff;}
+.fancy-toggle-button .remove {color: #212121;}
+.hover-bubble.multi-selector {margin-top: -82px;margin-right: -190px;}
+
+/* End Addon */    
+
 .link .title:visited { color: #BA3939 !important; }
 
 .md a:visited {color:#BA3939 !important}
@@ -759,8 +770,8 @@ content: " here now" !important;
 }
 /*Change title of subreddit in sidebar*/
 
-.side .redditname a:after {
-    content: " the Eternal";
+.side .redditname a:before {
+    content: "King ";
     font-size: 20px;
 
 }

@@ -8,6 +8,7 @@
 } 
 
 /* Replace RES bacon */
+
 #baconBit{background-image:url(%%twibacon%%) !important;background-size:256px 154px !important;width:256px !important;height:154px !important;-webkit-transition:all 3s linear;transition:all 3s linear;animation:animationFrames linear 4s;animation-iteration-count:1;transform-origin:50% 50%;-webkit-animation:animationFrames linear 4s;-webkit-animation-iteration-count:1;-webkit-transform-origin:50% 50%;-moz-animation:animationFrames linear 4s;-moz-animation-iteration-count:1;-moz-transform-origin:50% 50%;-o-animation:animationFrames linear 4s;-o-animation-iteration-count:1;-o-transform-origin:50% 50%;-ms-animation:animationFrames linear 4s;-ms-animation-iteration-count:1;-ms-transform-origin:50% 50%}
 
 @keyframes animationFrames{
@@ -31,9 +32,10 @@
   100% {-ms-transform:  translate(231px,137px);}
 }
 
+
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Rocks"}
-div.titlebox .users-online span.number:after {content:" Rocks"}
+div.titlebox .subscribers span.number:after {content:" Punkins Lawnched In"}
+div.titlebox .users-online span.number:after {content:" Yurs Of Fightin'"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -169,15 +171,15 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%discentia-hat%%);
+ background:url(%%twipbbt%%);
  width:70px;
  height:70px;
  margin-top:-45px;
  margin-left:5px;
  margin-bottom:0px;
  margin-right:-45px;
- background-position:-0% -0%; /*To select emote table position. Increments of -100%.*/
- transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
+ background-position:-200% -500%; /*To select emote table position. Increments of -100%.*/
+ transform:scaleX(-1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important}
@@ -194,24 +196,6 @@ border-top-right-radius: 5px;
 .linkflair-2017movie > .thumbnail.nsfw { background-position:0px -380px!important}
 .linkflair-comicspoiler > .thumbnail.nsfw { background-position:0px -450px!important}
 .linkflair-comictitlespoiler > .thumbnail.nsfw { background-position:0px -450px!important}
-
-.thing[data-fullname$="d"] .thumbnail.nsfw,.thing[data-fullname$="i"] .thumbnail.nsfw,.thing[data-fullname$="s"] .thumbnail.nsfw,.thing[data-fullname$="c"] .thumbnail.nsfw,.thing[data-fullname$="e"] .thumbnail.nsfw,
-.thing[data-fullname$="n"] .thumbnail.nsfw,.thing[data-fullname$="t"] .thumbnail.nsfw,.thing[data-fullname$="a"] .thumbnail.nsfw{background-position:0px -170px}
-.sidecontentbox a.author.id-t2_3l5j0 ,.sidecontentbox a.author.id-t2_4a7lu ,.sidecontentbox a.author.id-t2_4f80o ,.sidecontentbox a.author.id-t2_5agom ,.sidecontentbox a.author.id-t2_51isb ,.sidecontentbox a.author.id-t2_5eqe2,.sidecontentbox a.author.id-t2_6uo3t, .sidecontentbox a.author.id-t2_5dxi7, .sidecontentbox a.author.id-t2_3fvpf, .sidecontentbox a.author.id-t2_5o8ly, .sidecontentbox a.author.id-t2_5xxlw, .sidecontentbox a.author.id-t2_6gpcb {content:"";color:white;font-size:0pt;display:block}
-.sidecontentbox a.author.id-t2_3l5j0:before, .sidecontentbox a.author.id-t2_4a7lu:before ,.sidecontentbox a.author.id-t2_4f80o:before ,.sidecontentbox a.author.id-t2_5agom:before ,.sidecontentbox a.author.id-t2_51isb:before ,.sidecontentbox a.author.id-t2_51isb:after ,.sidecontentbox a.author.id-t2_5eqe2:before, .sidecontentbox a.author.id-t2_6uo3t:before, .sidecontentbox a.author.id-t2_5dxi7:before, .sidecontentbox a.author.id-t2_3fvpf:before, .sidecontentbox ul.content li.more a:before, .sidecontentbox a.author.id-t2_5o8ly:before, .sidecontentbox a.author.id-t2_5xxlw:before, .sidecontentbox a.author.id-t2_6gpcb:before {font-size:10pt;color:#369;display:inline-block;}
-.sidecontentbox a.author.id-t2_4a7lu:before {content:"Orschmann"}
-.sidecontentbox a.author.id-t2_4f80o:before {content:"Opti"}
-.sidecontentbox a.author.id-t2_5agom:before {content:"Chinchy-bon"}
-.sidecontentbox a.author.id-t2_51isb:before {content:"TrixieOf_Trixtegtrixie"}
-.sidecontentbox a.author.id-t2_5eqe2:before {content:"Pathogen-David Hasselhoff"}
-.sidecontentbox a.author.id-t2_3fvpf:before {content:"The Velour Frog"}
-.sidecontentbox a.author.id-t2_6uo3t:before {content:"spokesthephony"}
-.sidecontentbox a.author.id-t2_5dxi7:before {content:"TheeLanker"}
-.sidecontentbox a.author.id-t2_6gpcb:before {content:"Linkygit"}
-.sidecontentbox a.author.id-t2_5o8ly:before {content:"xHaZxFaTx"}
-.sidecontentbox a.author.id-t2_5xxlw:before {content:"Raging_Moose"} 
-.sidecontentbox a.author.id-t2_5fmql {display:none;}
-.sidecontentbox a.author.id-t2_6ua87 {display:none;}
 
 a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott,a.author.id-t2_dq6ce,a.author.id-t2_5qkuh{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
 a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after,a.author.id-t2_dq6ce:after,a.author.id-t2_5qkuh:after{font-size:10px!important;display:block;letter-spacing:normal}
@@ -686,12 +670,12 @@ a[href|="/rfillytgap"],a[href|="/rt00"],a[href|="/re00"],a[href|="/rrdhuh"],a[hr
     cursor: default;
 }
 
-a[href|="/f00"], a[href|="/pinkiesad"], a[href|="/ppsad"], a[href|="/f01"], a[href|="/diamondtiara"], a[href|="/dt"], a[href|="/f02"], a[href|="/sombra"], a[href|="/f03"], a[href|="/sbshocked"], a[href|="/f04"], a[href|="/guard"], a[href|="/f05"], a[href|="/abstern"], a[href|="/f06"], a[href|="/apathia"], a[href|="/f07"], a[href|="/ajcry"], a[href|="/f08"], a[href|="/rarityeww"], a[href|="/f09"], a[href|="/flutterkay"], a[href|="/flutter:I"], a[href|="/pokershy"], a[href|="/f10"], a[href|="/starlightrage"], a[href|="/f11"], a[href|="/bulkbiceps"], a[href|="/yeah"], a[href|="/f12"], a[href|="/scootaeww"], a[href|="/f13"], a[href|="/discordgrump"], a[href|="/f14"], a[href|="/troubleshoes"], a[href|="/f15"], a[href|="/rdsnrk"], a[href|="/f16"], a[href|="/thcalm"], a[href|="/thc"], a[href|="/f17"], a[href|="/ooh"], a[href|="/pinkieooh"], a[href|="/f18"], a[href|="/raritytired"], a[href|="/f19"], a[href|="/notangry"], a[href|="/f20"], a[href|="/ajdoubt"], a[href|="/f21"], a[href|="/spikewhoa"], a[href|="/spikewoah"], a[href|="/justaprankbro"], a[href|="/f22"], a[href|="/wasntme"],a[href|="/seaswirl"], a[href|="/seafoam"], a[href|="/f24"], a[href|="/flimflam"], a[href|="/flim"], a[href|="/f25"], a[href|="/cocosmile"]
+a[href|="/f00"], a[href|="/pinkiesad"], a[href|="/ppsad"], a[href|="/f01"], a[href|="/diamondtiara"], a[href|="/dt"], a[href|="/f02"], a[href|="/sombra"], a[href|="/f03"], a[href|="/sbshocked"], a[href|="/f04"], a[href|="/guard"], a[href|="/f05"], a[href|="/abstern"], a[href|="/f06"], a[href|="/apathia"], a[href|="/f07"], a[href|="/ajcry"], a[href|="/f08"], a[href|="/rarityeww"], a[href|="/f09"], a[href|="/flutterkay"], a[href|="/flutter:I"], a[href|="/pokershy"], a[href|="/f10"], a[href|="/starlightrage"], a[href|="/f11"], a[href|="/bulkbiceps"], a[href|="/yeah"], a[href|="/f12"], a[href|="/scootaeww"], a[href|="/f13"], a[href|="/discordgrump"], a[href|="/f14"], a[href|="/troubleshoes"], a[href|="/f15"], a[href|="/rdsnrk"], a[href|="/f16"], a[href|="/thcalm"], a[href|="/thc"], a[href|="/f17"], a[href|="/ooh"], a[href|="/pinkieooh"], a[href|="/f18"], a[href|="/raritytired"], a[href|="/f19"], a[href|="/notangry"], a[href|="/f20"], a[href|="/ajdoubt"], a[href|="/f21"], a[href|="/spikewhoa"], a[href|="/spikewoah"], a[href|="/justaprankbro"], a[href|="/f22"], a[href|="/wasntme"],a[href|="/seaswirl"], a[href|="/seafoam"], a[href|="/f24"], a[href|="/flimflam"], a[href|="/flim"], a[href|="/f25"], a[href|="/cocosmile"], a[href|="/f26"], a[href|="/skeptiloo"], a[href|="/f27"], a[href|="/limestonegrin"], a[href|="/f28"], a[href|="/raritygrump"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%fmotes%%)!important;
     cursor: default;
 }
 
-a[href|="/rf00"], a[href|="/rpinkiesad"], a[href|="/rppsad"], a[href|="/rf01"], a[href|="/rdiamondtiara"], a[href|="/rdt"], a[href|="/rf02"], a[href|="/rsombra"], a[href|="/rf03"], a[href|="/rsbshocked"], a[href|="/rf04"], a[href|="/rguard"], a[href|="/rf05"], a[href|="/rabstern"], a[href|="/rf06"], a[href|="/rf07"], a[href|="/rajcry"], a[href|="/rf08"], a[href|="/rrarityeww"], a[href|="/rf09"], a[href|="/rflutterkay"], a[href|="/rflutter:I"], a[href|="/rpokershy"], a[href|="/rf10"], a[href|="/rstarlightrage"], a[href|="/rf11"], a[href|="/rbulkbiceps"], a[href|="/ryeah"], a[href|="/rf12"], a[href|="/rscootaeww"], a[href|="/rf13"], a[href|="/rdiscordgrump"], a[href|="/rf14"], a[href|="/rtroubleshoes"], a[href|="/rf15"], a[href|="/rrdsnrk"], a[href|="/rf16"], a[href|="/rthcalm"], a[href|="/rthc"], a[href|="/rf17"], a[href|="/rooh"], a[href|="/rpinkieooh"], a[href|="/rf18"], a[href|="/rraritytired"], a[href|="/rf19"], a[href|="/rnotangry"], a[href|="/rf20"], a[href|="/rajdoubt"], a[href|="/rf21"], a[href|="/rspikewhoa"],a[href|="/rspikewoah"], a[href|="/rjustaprankbro"], a[href|="/rf22"], a[href|="/rwasntme"],a[href|="/rseaswirl"],a[href|="/rseafoam"],a[href|="/rflim"], a[href|="/rf25"], a[href|="/rcocosmile"]
+a[href|="/rf00"], a[href|="/rpinkiesad"], a[href|="/rppsad"], a[href|="/rf01"], a[href|="/rdiamondtiara"], a[href|="/rdt"], a[href|="/rf02"], a[href|="/rsombra"], a[href|="/rf03"], a[href|="/rsbshocked"], a[href|="/rf04"], a[href|="/rguard"], a[href|="/rf05"], a[href|="/rabstern"], a[href|="/rf06"], a[href|="/rf07"], a[href|="/rajcry"], a[href|="/rf08"], a[href|="/rrarityeww"], a[href|="/rf09"], a[href|="/rflutterkay"], a[href|="/rflutter:I"], a[href|="/rpokershy"], a[href|="/rf10"], a[href|="/rstarlightrage"], a[href|="/rf11"], a[href|="/rbulkbiceps"], a[href|="/ryeah"], a[href|="/rf12"], a[href|="/rscootaeww"], a[href|="/rf13"], a[href|="/rdiscordgrump"], a[href|="/rf14"], a[href|="/rtroubleshoes"], a[href|="/rf15"], a[href|="/rrdsnrk"], a[href|="/rf16"], a[href|="/rthcalm"], a[href|="/rthc"], a[href|="/rf17"], a[href|="/rooh"], a[href|="/rpinkieooh"], a[href|="/rf18"], a[href|="/rraritytired"], a[href|="/rf19"], a[href|="/rnotangry"], a[href|="/rf20"], a[href|="/rajdoubt"], a[href|="/rf21"], a[href|="/rspikewhoa"],a[href|="/rspikewoah"], a[href|="/rjustaprankbro"], a[href|="/rf22"], a[href|="/rwasntme"],a[href|="/rseaswirl"],a[href|="/rseafoam"],a[href|="/rflim"], a[href|="/rf25"], a[href|="/rcocosmile"], a[href|="/rf26"], a[href|="/rskeptiloo"], a[href|="/rf27"], a[href|="/rlimestonegrin"], a[href|="/rf28"], a[href|="/rraritygrump"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%fmotes%%)!important;
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -863,23 +847,23 @@ a[href|="/paperbagderpy"],a[href|="/paperbagmuffins"],a[href|="/paperbagwizard"]
 a[href|="/twibeam"],a[href|="/a23"],a[href|="/rtwibeam"],a[href|="/ra23"],a[href|="/noooo"],a[href|="/b23"],a[href|="/rnoooo"],a[href|="/rb23"],a[href|="/derpyhappy"],a[href|="/muffinshappy"],a[href|="/c23"],a[href|="/rderpyhappy"],a[href|="/rmuffinshappy"],a[href|="/rc23"],a[href|="/berry"],a[href|="/punchdrunk"],a[href|="/e23"],a[href|="/rberry"],a[href|="/rpunchdrunk"],a[href|="/re23"],.flair-octavia,.side .md table tr:nth-of-type(7) td:nth-of-type(4):after
 {background-position:-200% -300%}
 
-a[href|="/rdcry"],a[href|="/a25"],a[href|="/rrdcry"],a[href|="/ra25"],a[href|="/dumbfabric"],a[href|="/b25"],a[href|="/rdumbfabric"],a[href|="/rb25"],a[href|="/derp"],a[href|="/c25"],a[href|="/rderp"],a[href|="/rc25"],a[href|="/rdsalute"],a[href|="/e25"],a[href|="/rrdsalute"],a[href|="/re25"],a[href|="/f25"], a[href|="/cocosmile"],a[href|="/rf25"], a[href|="/rcocosmile"],.flair-seafoam,.side .md table tr:nth-of-type(11) td:nth-of-type(4):after
+a[href|="/squintyjack"],a[href|="/b24"],a[href|="/rsquintyjack"],a[href|="/rb24"],a[href|="/joy"],a[href|="/c24"],a[href|="/rjoy"],a[href|="/rc24"],a[href|="/dealwithit"],a[href|="/e24"],a[href|="/rdealwithit"],a[href|="/re24"],a[href|="/f24"], a[href|="/flimflam"], a[href|="/flim"], a[href|="/rflim"],.flair-berry,.side .md table tr:nth-of-type(9) td:nth-of-type(4):after
+{background-position:-200% -400%}
+
+a[href|="/rdcry"],a[href|="/a25"],a[href|="/rrdcry"],a[href|="/ra25"],a[href|="/dumbfabric"],a[href|="/b25"],a[href|="/rdumbfabric"],a[href|="/rb25"],a[href|="/derp"],a[href|="/c25"],a[href|="/rderp"],a[href|="/rc25"],a[href|="/rdsalute"],a[href|="/e25"],a[href|="/rrdsalute"],a[href|="/re25"], a[href|="/f25"], a[href|="/cocosmile"], a[href|="/rf25"], a[href|="/rcocosmile"],.flair-seafoam,.side .md table tr:nth-of-type(11) td:nth-of-type(4):after
 {background-position:-200% -500%}
 
-a[href|="/abbored"],a[href|="/abmerp"],a[href|="/a26"],a[href|="/rabbored"],a[href|="/rabmerp"],a[href|="/ra26"],a[href|="/rarityannoyed"],a[href|="/b26"],a[href|="/rrarityannoyed"],a[href|="/rb26"],a[href|="/derpyshock"],a[href|="/muffinsshock"],a[href|="/c26"],a[href|="/rderpyshock"],a[href|="/rmuffinsshock"],a[href|="/rc26"],a[href|="/cheerilee"],a[href|="/e26"],a[href|="/rcheerilee"],a[href|="/re26"],.flair-caramel,.side .md table tr:nth-of-type(13) td:nth-of-type(4):after
+a[href|="/abbored"],a[href|="/abmerp"],a[href|="/a26"],a[href|="/rabbored"],a[href|="/rabmerp"],a[href|="/ra26"],a[href|="/rarityannoyed"],a[href|="/b26"],a[href|="/rrarityannoyed"],a[href|="/rb26"],a[href|="/derpyshock"],a[href|="/muffinsshock"],a[href|="/c26"],a[href|="/rderpyshock"],a[href|="/rmuffinsshock"],a[href|="/rc26"],a[href|="/cheerilee"],a[href|="/e26"],a[href|="/rcheerilee"],a[href|="/re26"],a[href|="/f26"],a[href|="/skeptiloo"],a[href|="/rf26"],a[href|="/rskeptiloo"],.flair-caramel,.side .md table tr:nth-of-type(13) td:nth-of-type(4):after
 {background-position:-200% -600%}
 
-a[href|="/scootaplease"],a[href|="/scootappeal"],a[href|="/scootaplz"],a[href|="/a27"],a[href|="/rscootaplease"],a[href|="/rscootappeal"],a[href|="/rscootaplz"],a[href|="/ra27"],a[href|="/raritywhine"],a[href|="/b27"],a[href|="/rraritywhine"],a[href|="/rb27"],a[href|="/lunagasp"],a[href|="/c27"],a[href|="/rlunagasp"],a[href|="/rc27"],a[href|="/lily"],a[href|="/thehorror"],a[href|="/e27"],a[href|="/rlily"],a[href|="/rthehorror"],a[href|="/re27"],.flair-scootaloo,.side .md table tr:nth-of-type(15) td:nth-of-type(4):after
+a[href|="/scootaplease"],a[href|="/scootappeal"],a[href|="/scootaplz"],a[href|="/a27"],a[href|="/rscootaplease"],a[href|="/rscootappeal"],a[href|="/rscootaplz"],a[href|="/ra27"],a[href|="/raritywhine"],a[href|="/b27"],a[href|="/rraritywhine"],a[href|="/rb27"],a[href|="/lunagasp"],a[href|="/c27"],a[href|="/rlunagasp"],a[href|="/rc27"],a[href|="/lily"],a[href|="/thehorror"],a[href|="/e27"],a[href|="/rlily"],a[href|="/rthehorror"],a[href|="/re27"],a[href|="/f27"],a[href|="/limestonegrin"],a[href|="/rf27"],a[href|="/rlimestonegrin"],.flair-scootaloo,.side .md table tr:nth-of-type(15) td:nth-of-type(4):after
 {background-position:-200% -700%}
 
-a[href|="/grannysmith"],a[href|="/granny"],a[href|="/oldmareyellsatcloud"],a[href|="/a28"],a[href|="/rgrannysmith"],a[href|="/rgranny"],a[href|="/roldmareyellsatcloud"],a[href|="/ra28"],a[href|="/cockatrice"],a[href|="/b28"],a[href|="/rcockatrice"],a[href|="/rb28"],a[href|="/angel"],a[href|="/c28"],a[href|="/rangel"],a[href|="/rc28"],a[href|="/awwyeah"],a[href|="/e28"],a[href|="/rawwyeah"],a[href|="/re28"],.flair-cheerilee,.side .md table tr:nth-of-type(17) td:nth-of-type(4):after
+a[href|="/grannysmith"],a[href|="/granny"],a[href|="/oldmareyellsatcloud"],a[href|="/a28"],a[href|="/rgrannysmith"],a[href|="/rgranny"],a[href|="/roldmareyellsatcloud"],a[href|="/ra28"],a[href|="/cockatrice"],a[href|="/b28"],a[href|="/rcockatrice"],a[href|="/rb28"],a[href|="/angel"],a[href|="/c28"],a[href|="/rangel"],a[href|="/rc28"],a[href|="/awwyeah"],a[href|="/e28"],a[href|="/rawwyeah"],a[href|="/re28"],a[href|="/f28"],a[href|="/raritygrump"],a[href|="/rf28"],a[href|="/rraritygrump"],.flair-cheerilee,.side .md table tr:nth-of-type(17) td:nth-of-type(4):after
 {background-position:-200% -800%}
 
 a[href|="/cadence"],a[href|="/cadance"],a[href|="/princesscadance"],a[href|="/princesscadence"],a[href|="/princessmiamorecadenza"],a[href|="/a29"],a[href|="/rcadence"],a[href|="/rcadance"],a[href|="/rprincesscadance"],a[href|="/rprincesscadence"],a[href|="/rprincessmiamorecadenza"],a[href|="/ra29"],a[href|="/twirage"],a[href|="/b29"],a[href|="/rtwirage"],a[href|="/rb29"],a[href|="/photofinish"],a[href|="/c29"],a[href|="/rphotofinish"],a[href|="/rc29"],a[href|="/macintears"],a[href|="/bigmactears"],a[href|="/e29"],a[href|="/rmacintears"],a[href|="/rbigmactears"],a[href|="/re29"],.flair-mrcake,.side .md table tr:nth-of-type(19) td:nth-of-type(4):after
 {background-position:-200% -900%}
-
-a[href|="/squintyjack"],a[href|="/b24"],a[href|="/rsquintyjack"],a[href|="/rb24"],a[href|="/joy"],a[href|="/c24"],a[href|="/rjoy"],a[href|="/rc24"],a[href|="/dealwithit"],a[href|="/e24"],a[href|="/rdealwithit"],a[href|="/re24"],a[href|="/f24"], a[href|="/flimflam"], a[href|="/flim"], a[href|="/rflim"],.flair-berry,.side .md table tr:nth-of-type(9) td:nth-of-type(4):after
-{background-position:-200% -400%}
 
 .flair-silverspoon
 {background-position:-200% -1000%}
@@ -1344,6 +1328,9 @@ table tr td:first-child {width:14px}
 .side .md table:nth-of-type(5) tr:nth-of-type(8) td:nth-of-type(4):after{content:"twipbbt"}
 .side .md table:nth-of-type(5) tr:nth-of-type(10) td:nth-of-type(4):after{content:"flimflam"}
 .side .md table:nth-of-type(5) tr:nth-of-type(12) td:nth-of-type(4):after{content:"cocosmile"}
+.side .md table:nth-of-type(5) tr:nth-of-type(14) td:nth-of-type(4):after{content:"skeptiloo"}
+.side .md table:nth-of-type(5) tr:nth-of-type(16) td:nth-of-type(4):after{content:"limestonegrin"}
+.side .md table:nth-of-type(5) tr:nth-of-type(18) td:nth-of-type(4):after{content:"raritygrump"}
 body:not(.moderator) div.content .flairselectbtn
 {
  content:""!important;
@@ -1351,26 +1338,6 @@ body:not(.moderator) div.content .flairselectbtn
  font-size:0pt!important;
  margin-left:-8px!important;
 }
-
-/*Future Spoilers in the title flair*/
-/*
-/*.linkflair-fespoiler .linkflairlabel {display:none;}
-.linkflair-fespoiler p.title a.title {opacity:0;}
-.linkflair-fespoiler p.title a.title:hover {opacity:100;}
-.post-linkflair-comicsspoiler .footer-parent {background:url(%%spacing%%) 95% 90% no-repeat}
-.linkflair-comicsspoiler .linkflairlabel {display:none;}
-.linkflair-fespoiler p.title:before
-{
- content:"FUTURE EPISODE SPOILER";
- font-size:12px;
- color:#888;
- border:1px solid #888;
- border-radius:3px;
- position:relative;
- padding:0px 2px;
- margin-right:2px;
- top:-1px;
-}*/
 
 span.linkflairlabel[title="Future episode spoilers"]{display:none;}
 span.linkflairlabel[title="Future episode spoilers"] + a.title {opacity:0;}
@@ -1394,10 +1361,10 @@ span.linkflairlabel[title="Future episode spoilers"]
 }
 
 /*Title spoilers styling*/
-.linkflair-egspoiler .linkflairlabel, .linkflair-comictitlespoiler .linkflairlabel, .linkflair-spoiler .linkflairlabel, .linkflair-comicspoiler .linkflairlabel, .linkflair-fecontent .linkflairlabel, .linkflair-2017movie .linkflairlabel, .linkflair-eqg3 .linkflairlabel, .linkflair-eqg4 .linkflairlabel, .linkflair-leak .linkflairlabel, .linkflair-rafcontent .linkflairlabel {display:none;}
+.linkflair-egspoiler .linkflairlabel, .linkflair-comictitlespoiler .linkflairlabel, .linkflair-spoiler .linkflairlabel, .linkflair-comicspoiler .linkflairlabel, .linkflair-fecontent .linkflairlabel, .linkflair-2017movie .linkflairlabel, .linkflair-eqg3 .linkflairlabel, .linkflair-eqg4 .linkflairlabel, .linkflair-leak .linkflairlabel, .linkflair-rafcontent .linkflairlabel, .linkflair-graphic .linkflairlabel {display:none;}
 .linkflair-egspoiler p.title a.title, .linkflair-comictitlespoiler p.title a.title, .linkflair-spoiler p.title a.title {opacity:0;}
 .linkflair-egspoiler p.title a.title:hover, .linkflair-comictitlespoiler p.title a.title:hover, .linkflair-spoiler p.title a.title:hover {opacity:100;}
-.linkflair-egspoiler p.title:before, .linkflair-comictitlespoiler p.title:before, .linkflair-spoiler p.title:before, .linkflair-comicspoiler p.title:before, .linkflair-fecontent p.title:before, .linkflair-2017movie p.title:before, .linkflair-eqg3 p.title:before, .linkflair-eqg4 p.title:before, .linkflair-leak p.title:before, .linkflair-rafcontent p.title:before
+.linkflair-egspoiler p.title:before, .linkflair-comictitlespoiler p.title:before, .linkflair-spoiler p.title:before, .linkflair-comicspoiler p.title:before, .linkflair-fecontent p.title:before, .linkflair-2017movie p.title:before, .linkflair-eqg3 p.title:before, .linkflair-eqg4 p.title:before, .linkflair-leak p.title:before, .linkflair-rafcontent p.title:before, .linkflair-graphic p.title:before
 {
  font-size:12px;
  color:#888;
@@ -1412,6 +1379,8 @@ span.linkflairlabel[title="Future episode spoilers"]
 .linkflair-fecontent p.title:before{content:"FUTURE EPISODE CONTENT";}
 
 .linkflair-rafcontent p.title:before{content:"RECENT & FUTURE CONTENT";}
+
+.linkflair-graphic p.title:before{content:"Graphic";}
 
 .linkflair-2017movie p.title:before{content:"2017 Movie";}
 
@@ -1438,8 +1407,8 @@ span.linkflairlabel[title="Future episode spoilers"]
 
 /*Thumbnail Disabler*/
 .flairselector .linkflair-disable-thumb .linkflairlabel:before {content:"Disable Thumbnail";}
-.thing.linkflair-disable-thumb a.thumbnail img {display:none;}
-.thing.linkflair-disable-thumb a.thumbnail
+.thing.linkflair-disable-thumb a.thumbnail img, .thing.linkflair-graphic a.thumbnail img {display:none;}
+.thing.linkflair-disable-thumb a.thumbnail, .thing.linkflair-graphic a.thumbnail
 {
  width:70px;
  height:50px;
@@ -1519,11 +1488,11 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
 }
 
 /*Spoiler-tag notification*/
-
+/*
 .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:before {
     position: absolute;
-    content: "Is this about Scare Master?  If so, please spoiler-tag it!";
-    background: #8F02DA; /* 'orangered' normally; #8F02DA for Friendship Games + leak */
+    content: "Is this about the most recent episode?  If so, please spoiler-tag it!";
+    background: orangered; 
     color: #ffffff;
     margin-top: 1.5em;
     margin-left: -10em;
@@ -1539,7 +1508,7 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
     height: 0;
     border-style: solid;
     border-width: 0 .5em 1em;
-    border-color: transparent transparent #8F02DA; /* 'orangered' normally; #8F02DA for Friendship Games + leak */
+    border-color: transparent transparent orangered; 
     margin-top: 1.6em;
     margin-left: -2.2em;
     content: '';
@@ -1548,7 +1517,7 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
 .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:hover:before {
     position: absolute;
     content: "This notification will disappear after 10 minutes.";
-    background: #6F00AB; /* #c0392b normally; #6F00AB for Friendship Games + leak */
+    background: #c0392b; 
     color: #ffffff;
     margin-top: 1.5em;
     margin-left: -10em;
@@ -1564,12 +1533,14 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
     height: 0;
     border-style: solid;
     border-width: 0 .5em 1em;
-    border-color: transparent transparent #6F00AB; /* #c0392b normally; #6F00AB for Friendship Games + leak */
+    border-color: transparent transparent #c0392b; 
     margin-top: 1.6em;
     margin-left: -2.2em;
     content: '';
     position: absolute;
-}
+} 
+*/
+/*End spoiler-tag notification*/
 
 .thing.self .entry{padding-left:14px}
 a.thumbnail.self{margin-right:-14px}

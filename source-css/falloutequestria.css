@@ -8,189 +8,364 @@
         
     }*/
 
+/* Re-design and related assets by /u/0megaRidley */
+/* https://redd.it/3rtuqw */
+
+/*Stylesheet tweaks*/
+.stylesheet-customize-container { width: 100%; }
+
+#subreddit_stylesheet { display: block; overflow: hidden; }
+.sheets { margin: 0;}
+
+#stylesheet_contents {
+  padding-left: 5px;
+  padding-top: 5px;
+  background-color: white;
+  color: #042eae;
+  height: 500px;
+}
+
+/* Easter eggs! Change it to whatever when you get bored with PinkE, width and height can be changed to fit the new image. */
+#baconBit {     
+  position: fixed;
+  width: 150px;
+  height: 122px;
+  background-image: url(%%pinke-v2%%);
+}
+
+/* wiki page edit width fix */
+.wiki-page .wiki-page-content{
+  margin-right: 380px;
+}
 
 /*subreddit Header field begin*/
-    
-    #header #header-bottom-left{
-        background:none;
+
+/*-----------------|
+|                  |
+|  Random Headers  |
+|  from /r/stunts  |
+|     thanks!      |
+|                  |
+|-----------------*/
+
+/* Random image container */
+input[name=uh] ~ a:after {
+    position: absolute;
+    top: -90px;
+    right: 0px;
+    z-index: -10;
+    width: 1920px;
+    height: 120px;
+    content:" ";
+    opacity: 1!important;
+  background-repeat: repeat-x;
     }
-    
-	#header  #header-bottom-left /*Fore Cloud Layer*/ {
-		background: url(%%clouds-large-v02%%) repeat-x;
-		background-position: 0 0;
-		width: 100%;
-		height: 160px;
-		top: 20px;
-		z-index:50;
-		-webkit-animation: slidel 60s linear infinite;
-        animation: slidel 60s linear infinite;
-	} 
-	
-    #header:after /*Mid Cloud Layer*/{
-        background: url(%%clouds-med-v02%%);
-        background-position: 0 0;
-        content: "";
-        background-repeat: repeat-x;
-        position: absolute;
-        top: 82px;
-        width: 100%;
-        height: 75px;
-        z-index: -1;
-        -webkit-animation: slidem 120s linear infinite;
-        animation: slidem 120s linear infinite;
-    }
-    
-    #header:before /*Aft Cloud Layer*/{
-        background: url(%%clouds-small-v02%%);
-        background-position: 0 0;
-        /*background-color:#939683;*/
-        background-color: white;
-        content: "";
-        background-repeat: repeat-x;
-        position: absolute;
-        top: 129px;
-        width: 100%;
-        height:55px;
-        z-index: -2;
-        -webkit-animation: slides 240s linear infinite;
-        animation: slides 240s linear infinite;
-        
-    }
-    
-    #header-img{margin-top: 60px;z-index:100;} /*image for reddit link*/
-    
-    /*Cloud Animations begin*/
-    
-    @-webkit-keyframes slidel { from {background-position: 800px 0px;} to {background-position: 0px 0px;} }
-    @keyframes slidel { from {background-position: 800px 0px;} to {background-position: 0px 0px;} }
-    
-    @-webkit-keyframes slidem { from {background-position: 600px 0px;} to {background-position: 0px 0px;} }
-    @keyframes slidem { from {background-position: 600px 0px;} to {background-position: 0px 0px;} }
-    
-    @-webkit-keyframes slides { from {background-position: 400px 0px;} to {background-position: 0px 0px;} }
-    @keyframes slides { from {background-position: 400px 0px;} to {background-position: 0px 0px;} }
-    
-    /*Cloud Animations begin*/
-    
+/* Un-clickable thanks to header-bottom-left covering it. */
+
+/* Place the subreddit header on top of the banner */
+/*
+  #sr-header-area {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3
+}
+*/
+
+/* Up to 36 random images */
+input[name=uh][value$="0"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%) }
+input[name=uh][value$="1"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -150px; }
+input[name=uh][value$="2"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -300px; }
+input[name=uh][value$="3"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -450px; }
+input[name=uh][value$="4"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -600px; }
+input[name=uh][value$="5"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -721px; }
+input[name=uh][value$="6"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%) }
+input[name=uh][value$="7"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -150px; }
+input[name=uh][value$="8"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -300px; }
+input[name=uh][value$="9"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -450px; }
+input[name=uh][value$="a"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -600px; }
+input[name=uh][value$="b"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -721px; }
+input[name=uh][value$="c"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%) }
+input[name=uh][value$="d"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -150px; }
+input[name=uh][value$="e"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -300px; }
+input[name=uh][value$="f"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -450px; }
+input[name=uh][value$="g"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -600px; }
+input[name=uh][value$="h"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -721px; }
+input[name=uh][value$="i"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%) }
+input[name=uh][value$="j"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -150px; }
+input[name=uh][value$="k"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -300px; }
+input[name=uh][value$="l"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -450px; }
+input[name=uh][value$="m"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -600px; }
+input[name=uh][value$="n"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -721px; }
+input[name=uh][value$="o"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%) }
+input[name=uh][value$="p"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -150px; }
+input[name=uh][value$="q"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -300px; }
+input[name=uh][value$="r"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -450px; }
+input[name=uh][value$="s"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -600px; }
+input[name=uh][value$="t"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -721px; }
+input[name=uh][value$="u"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%) }
+input[name=uh][value$="v"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -150px; }
+input[name=uh][value$="w"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -300px; }
+input[name=uh][value$="x"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -450px; }
+input[name=uh][value$="y"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -600px; }
+input[name=uh][value$="z"] ~ a:after { background-image: url(%%HeaderSheet-01-v2%%); background-position: 0 -721px; }
 
 
-	/*subreddit title text begin*/
-	    .pagename a:before {
-	        font-size: 14px;
-	        font-family: Arial;
-	        color:white;
-	        text-align:center;
-	        position:absolute;
-	        top:25px;
-	        right:550px;
-    		width: 460px!important;
-    		height: 40px!important;
-    		border-radius: 8px!important;
-    		background-repeat: no-repeat;
-    		background-position: 0px 0px!important;
-    		background-size: 40px 40px;
-    		-moz-border-radius: 8px!important;
-    		-webkit-border-radius: 8px!important;
-    		padding-bottom: 0px!important;                                          
-    		padding-left: 40px!important;
-    		padding-right: 0px!important;
-    		padding-top: 0px!important;
-    		margin: 15px!important;
-	    }
-		.pagename a {font-size: 0px;}
-		.pagename a:after{
-		    content:"Fallout Equestria";
-			color: white;
-			font-size:28px;
-			font-family: Arial;
-			font-style:italic;
-			text-shadow: 1px 1px 4px black, 0px 0px 3px black, 0px 0px 2px black;
-		}
+/* RES workarounds for random images */
+/* User menu toggle */
+.res #userbarToggle.userbarShow {
+  width: 39px;
+  padding: 0;
+  left: 0px;
+  background: #2c2c2c;
+  text-align: right;
+}
+.res:not(.loggedin) #userbarToggle.userbarShow {
+  top: auto;
+  right: 1px;
+  bottom: 0;
+  left: auto;
+  padding-right: 10px;
+}
+.res #header-bottom-right.res-navTop {
+  top: auto;
+  bottom: 0;
+}
+.res:not([class*="user"]) .logout {
+  display: inline!important;
+}
 
-	/*subreddit title text end*/
-	
-	/*Tabs begin*/
-		#header .tabmenu{top:135px; position:absolute;}
-		#header .tabmenu li a {
-		    background: url(%%tabs-v08%%);
-		    background-repeat: no-repeat;
-            background-color: transparent;
-            border: none;
-            margin: 2;
-            padding: 11px 23px;
-            font-size: 0px;
-        }
-        #header .tabmenu {background-position:0 0;}
-        #header .tabmenu li a:hover{background-position:0 -23px;}     
-        #header .tabmenu li:active{background-position:0 -46px;}        
-        #header .tabmenu .selected a {background-position:0 -46px!important;}
-        
-		#header .tabmenu [href$="new/"] {background-position: -48px 0;}
-        #header .tabmenu li [href$="new/"]:hover{background-position:-48px -23px;}  
-        #header .tabmenu li [href$="new/"]:active{background-position:-48px -46px;}        
-        #header .tabmenu .selected [href$="new/"]{background-position:-48px -46px!important;}
-        
-		#header .tabmenu [href$="rising/"] {background-position: -96px 0;}
-        #header .tabmenu li [href$="rising/"]:hover{background-position:-96px -23px;} 
-        #header .tabmenu li [href$="rising/"]:active{background-position:-96px -46px;}        
-        #header .tabmenu .selected [href$="rising/"]{background-position:-96px -46px!important;}
-        
-		#header .tabmenu [href$="controversial/"] {background-position: -144px 0; }
-        #header .tabmenu li [href$="controversial/"]:hover{background-position:-144px -23px;}  
-        #header .tabmenu li [href$="controversial/"]:active{background-position:-144px -46px;}        
-        #header .tabmenu .selected [href$="controversial/"]{background-position:-144px -46px!important;}
-        
-		#header .tabmenu [href$="top/"] { background-position: -0px -69px; }
-        #header .tabmenu li [href$="top/"]:hover{background-position:0 -92px;}
-        #header .tabmenu li [href$="top/"]:active{background-position:0 -115px;}        
-        #header .tabmenu .selected [href$="top/"]{background-position:0 -115px!important;}
-        
-		#header .tabmenu [href$="gilded/"] { background-position: -48px -69px;}
-        #header .tabmenu li [href$="gilded/"]:hover{background-position:-48px -92px;} 
-        #header .tabmenu li [href$="gilded/"]:active{background-position:-48px -115px;}        
-        #header .tabmenu .selected  [href$="gilded/"]{background-position:-48px -115px!important;}
-        
-		#header .tabmenu [href$="wiki/"] { background-position: -96px -69px;}
-        #header .tabmenu li [href$="wiki/"]:hover{background-position:-96px -92px;}  
-        #header .tabmenu li [href$="wiki/"]:active{background-position:-96px -115px;}        
-        #header .tabmenu .selected [href$="wiki/"]{background-position:-96px -115px!important;}
-        
-	    #header .tabmenu [href$="ads/"] { background-position: -144px -69px;}
-        #header .tabmenu li [href$="ads/"]:hover{background-position:-144px -92px;}    
-        #header .tabmenu li [href$="ads/"]:active{background-position:-144px -115px;}        
-        #header .tabmenu .selected [href$="ads/"]{background-position:-144px -115px!important;}
-        
-        
-	    #header .tabmenu [href*="/related/"] { background-position: -288px -69px;}
-        #header .tabmenu [href*="/related/"]:hover {background-position:-288px -92px;}    
-        #header .tabmenu [href*="/related/"]:active {background-position:-288px -115px;}        
-        #header .tabmenu .selected [href*="/related/"]{background-position:-288px -115px!important;}
-        
-        #header .tabmenu [href*="/duplicates/"] { background-position: -288px -69px;}
-        #header .tabmenu [href*="/duplicates/"]:hover {background-position:-288px -92px;}    
-        #header .tabmenu [href*="/duplicates/"]:active {background-position:-288px -115px;}        
-        #header .tabmenu .selected [href*="/duplicates/"]{background-position:-288px -115px!important;}
 
-	    #viewImagesButton { background-position: -192px 0!important;}
-        #viewImagesButton:hover{background-position:-192px -23px!important;}    
-        #viewImagesButton:active{background-position:-192px -46px!important;}        
-        #viewImagesButton.selected {background-position:-192px -46px!important;}
-        
-        #header-bottom-left ul.tabmenu li.tb-metrics a[href$="javascript:;"]{background-position: -240px 0;}
-        #header-bottom-left ul.tabmenu li.tb-metrics a[href$="javascript:;"]:hover {background-position: -240px -23px;}
-        #header-bottom-left ul.tabmenu li.tb-metrics a[href$="javascript:;"]:active {background-position: -240px -46px;}
-        #header-bottom-left ul.tabmenu li.tb-metrics a[href$="javascript:;"].selected {background-position: -240px -46px!important;}
-        
-        #header .tabmenu li a[href$="javascript:;"]{background-position: -192px -69px;}
-        #header .tabmenu li a[href$="javascript:;"]:hover{background-position: -192px -92px;}
-        #header .tabmenu li a[href$="javascript:;"]:active{background-position: -192px -115px;}
-        #header .tabmenu li a[href$="javascript:;"].selected{background-position: -192px -115px!important;}
-	
-	
-	/*Tabs end*/
+.listing-page #viewImagesButton {
+  display: none
+}
+
+/* End of RES workarounds */
+
+/*********** END OF RANDOM HEADER IMAGES ********/
+
+/* subreddit logo image */
+#header-img { background-image: url(%%subreddit-icon%%); width: 86px; height: 110px;position: relative; z-index: 3; left: 15px; top: 28px;}
+#header-img:hover { background-position: -87px 0; }
+
+#header-bottom-left {
+  background-image: url(%%topbar1%%);
+  background-position: bottom;
+  background-repeat: repeat-x;
+  height: 150px;
+  /*margin-top: 30px;*/
+}
+
+#header {
+  background-image: url(%%HeaderSheet-01-v2%%); /* Default banner for logged out users */
+  border: none;
+}
+
+/* subreddit name to image, /r/elitetorval version */
+.pagename a {
+  background-image: url(%%logo%%);
+  position: absolute;
+  left: 120px;
+  bottom: -8px;
+  text-indent: -9999em;
+  text-align: center;
+  width: 299px;
+  height: 69px;
+  z-index: 3;
+}
+/* Hide ":submit", ":stylesheet", etc. text */
+span.hover.pagename.redditname {
+  display: block;
+  text-indent: -9999em;
+}
+
+/* shortcut bar at top of screen */
+#header #sr-header-area {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  position: relative;
+  z-index: 3;
+}
+
+/* RES */
+#RESShortcutsEditContainer div, #RESShortcutsEditContainer {
+  background: transparent!important;
+}
+
+#sr-header-area div#RESShortcutsViewport div#RESShortcuts.sr-bar a.subbarlink.RESShortcutsCurrentSub {
+  color: #47C838!important; /* ye seriously a selector this long is required for this to work */
+}
+
+#header #sr-header-area:hover {
+  background-color: rgba(0, 0, 0, 1);
+  transition: 0.3s background-color;
+}
+
+.sr-bar a {
+  color: rgba(200, 200, 200, 0.7);
+}
+
+.sr-bar, .sr-bar a:hover{
+  color: rgba(200, 200, 200, 1);
+}
+
+body .content {
+  margin-top: 20px;
+}
+
+/* rounded corner */
+#header:before {
+  content: "";
+  background-image: url(%%topbarright%%);
+  height: 72px;
+  width: 365px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+}
 	
 /*subreddit Header field end*/
 
+/* userbar */
+#header-bottom-right {
+  top: 88px!important;
+  bottom: 52px!important;
+  /*opacity: 0.3;*/
+  background-color: #000;
+}
+
+#header-bottom-right a {
+  color: #ccc;
+}
+
+#header-bottom-right:hover {
+  opacity: 1;
+  transition: 0.3s opacity;
+}
+
+#userbarToggle {
+  background-color: rgba(0, 0, 0, 1)!important;
+  border-color: #ccc!important;
+}
+
+/*****************/
+/* tabmenu stuff */
+.tabmenu {
+  position: absolute;
+  bottom: 12px;
+  left: 419px;
+}
+
+/* common properties for all tabmenu elements, removal of borders, colored background, text, and setting height */
+#header .tabmenu li a {
+  display: inline-block;
+  height: 33px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  text-indent: -9999em;
+}
+
+#header .tabmenu [href$="/"] {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: 0 -39px;
+  width: 114px;
+}
+#header .tabmenu .selected [href$="/"] { background-position: -111px -270px; }
+#header .tabmenu [href$="/"]:hover { background-position: -111px -270px; }
+#header .tabmenu [href$="/"]:active { background-position: 0 -204px; }
+
+#header .tabmenu [href$="/new/"] {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: -114px -39px;
+  width: 69px;
+}
+#header .tabmenu .selected [href$="new/"] { background-position: -114px -204px; }
+#header .tabmenu [href$="new/"]:hover { background-position: -114px -204px; }
+#header .tabmenu [href$="new/"]:active { background-position: -114px -204px; }
+
+#header .tabmenu [href$="/rising/"] {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: -183px -39px;
+  width: 89px;
+}
+#header .tabmenu .selected [href$="rising/"] { background-position: -183px -204px; }
+#header .tabmenu [href$="rising/"]:hover { background-position: -183px -204px; }
+#header .tabmenu [href$="rising/"]:active { background-position: -183px -204px; }
+
+#header .tabmenu [href$="/controversial/"] {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: 0 -72px;
+  width: 147px;
+}
+#header .tabmenu .selected [href$="controversial/"] { background-position: 0 -237px; }
+#header .tabmenu [href$="controversial/"]:hover { background-position: 0 -237px; }
+#header .tabmenu [href$="controversial/"]:active { background-position: 0 -237px; }
+
+#header .tabmenu [href$="/top/"] {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: -147px -72px;
+  width: 69px;
+}
+#header .tabmenu .selected [href$="top/"] { background-position: -211px -171px; }
+#header .tabmenu [href$="top/"]:hover { background-position: -211px -171px; }
+#header .tabmenu [href$="top/"]:active { background-position: -211px -171px; }
+
+#header .tabmenu [href$="/gilded/"] {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: 0 -105px;
+  width: 88px;
+}
+#header .tabmenu .selected [href$="gilded/"] { background-position: -123px -171px; }
+#header .tabmenu [href$="gilded/"]:hover { background-position: -123px -171px; }
+#header .tabmenu [href$="gilded/"]:active { background-position: -123px -171px; }
+
+#header .tabmenu [href$="/wiki/"] {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: -88px -105px;
+  width: 76px;
+}
+#header .tabmenu .selected [href$="wiki/"] { background-position: -216px -72px; }
+#header .tabmenu [href$="wiki/"]:hover { background-position: -216px -72px; }
+#header .tabmenu [href$="wiki/"]:active { background-position: -216px -72px; }
+
+#header .tabmenu [href$="/ads/"] {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: -164px -105px;
+  width: 114px;
+}
+#header .tabmenu .selected [href$="ads/"] { background-position: 0 -303px; }
+#header .tabmenu [href$="ads/"]:hover { background-position: 0 -303px; }
+#header .tabmenu [href$="ads/"]:active { background-position: 0 -303px; }
+
+/*#header .tabmenu [href$="javascript:;"] {*/
+#header .tabmenu #viewImagesButton {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: 0 -138px;
+  width: 140px;
+}
+#header .tabmenu .selected #viewImagesButton { background-position: -114px -303px; }
+#header .tabmenu #viewImagesButton:hover { background-position: -114px -303px; }
+#header .tabmenu #viewImagesButton:active { background-position: -114px -303px; }
+
+#header .tabmenu [href*="/related/"] {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: -140px -138px;
+  width: 111px;
+}
+#header .tabmenu .selected [href*="related/"] { background-position: 0 -270px!important; }
+#header .tabmenu [href*="related/"]:hover { background-position: 0 -270px!important; }
+#header .tabmenu [href*="related/"]:active { background-position: 0 -270px!important; }
+
+#header .tabmenu [href*="comments/"] {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: 0 -171px;
+  width: 123px;
+}
+#header .tabmenu .selected [href*="comments/"] { background-position: -147px -237px; }
+#header .tabmenu [href*="comments/"]:hover { background-position: -147px -237px; }
+#header .tabmenu [href*="comments/"]:active { background-position: -147px -237px; }
 
 /*----------------------------------------oooOOOooo----------------------------------------*/
 
@@ -219,9 +394,10 @@
 		width: 485px!important;
 		height: 40px!important;
 		border-radius: 8px!important;
-		background-image: url(%%littlepip-point-27%%)!important;
+		/* background-image: url(%%littlepip-point-27%%)!important; */
+                background-image: url(%%meta%%)!important;
 		background-repeat: no-repeat!important;
-		background-position: 0px 0px!important;
+		background-position: center left!important;
 		-moz-border-radius: 8px!important;
 		-webkit-border-radius: 8px!important;
 		z-index:100!important;
@@ -246,34 +422,31 @@
 
 
 /*Submission box field begin*/
-    
-    .morelink .nub {display:none!important;}
-    .morelink{width:250px;}
-	.morelink a{ 
-		content:"";
-		float:left;
-		width:310px;
-		height:39px;
-		margin-top:-5px;
-		margin-left:-10px;
-		background-image: url(%%submitboxes-v02%%);
-		background-repeat: no-repeat;
-	}
-	.submit-link .morelink a{
-		color:transparent;
-		background-position: 0 0;
-	}
-	.submit-link .morelink a:hover{background-position: 0 0px;}
-	.submit-link .morelink a:active{background-position: 0 -50px;}
+.morelink .nub {display:none!important;}
+.morelink{width:250px;}
+.morelink a{ 
+  content:"";
+  float:left;
+  width:310px;
+  height:39px;
+  margin-top:-5px;
+  margin-left:-10px;
+  background-image: url(%%submitboxes-v02%%);
+  background-repeat: no-repeat;
+}
 
-	.submit-text .morelink a{
-		color:transparent;
-	    background-position: 0 -100px;
-	}
-	.submit-text .morelink a:hover{background-position: 0 -100px;}
-	.submit-text .morelink a:active{background-position: 0 -150px;}
-	
-	
+.submit-link .morelink a{
+  color:transparent;
+  background-position: 0 0;
+}
+.submit-link .morelink a:hover{background-position: 0 0px;}
+.submit-link .morelink a:active{background-position: 0 -50px;}
+.submit-text .morelink a{
+  color:transparent;
+  background-position: 0 -100px;
+}
+.submit-text .morelink a:hover{background-position: 0 -100px;}
+.submit-text .morelink a:active{background-position: 0 -150px;}
 /*Submission box field end*/
 
 
@@ -281,44 +454,288 @@
 
 
 /*Sidebar field begin*/
-	.sidebox.create .morelink{display: none;} /*removes "create your own subreddit" link*/ 
-	.sidebox .spacer{display: none !important;} /*removes the second "create your own subreddit" link*/
+.sidebox.create .morelink{display: none;} /*removes "create your own subreddit" link*/ 
+.sidebox .spacer{display: none !important;} /*removes the second "create your own subreddit" link*/
 
-	body.res-nightmode .submit .morelink a:before{margin-left:0px;}
-	.side div.usertext-body table {	display: none;}
-	.side div.usertext-body:hover table {display: block; clear: both}
+body.res-nightmode .submit .morelink a:before{margin-left:0px;}
+.side div.usertext-body table {	display: none;}
+.side div.usertext-body:hover table {display: block; clear: both}
+	
+.side a[href="/foedescription"]{
+  display:block;
+  position:static;
+  background-image: url(%%description-v04%%);
+  width:300px;
+  height:180px;
+}
 
-	/*sidebar image*/
-	.side .titlebox h1 a, .side .titlebox h1 a:link .side .titlebox h1 a:visited {
-		color: transparent;
-		background: url(%%titlecard-v04%%) no-repeat;
-		height: 144px;
-		width: 300px;
-		display: block;
-		overflow: hidden;
-		position: relative;
-		top: 00px
-	}
-	.res-nightmode .titlebox span.word, .titlebox span.word {	display: none;}
+.side {
+  background-image: url(%%border%%);
+  margin: 10px 0 -20px 0;
+  padding: 0 15px 25px 25px;
+  width: 310px;
+  border-width: 0 0 20px 0;
+  -webkit-border-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), #fff) 100% 1;
+  -moz-border-image: -moz-linear-gradient(rgba(0, 0, 0, 0), #fff) 100% 1;
+  border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #fff) 100% 1;
+}
 
-	/*displayed users*/
-	div.titlebox .subscribers span.number:after {content: " wasteland fillies"!important; font-style: bold!important;}
-	div.titlebox .users-online span.number:after {content: " fighting the good fight"!important;}
-    
-    .side, .side .leavemoderator {background-color:transparent;}
-    .side a[href="/foedescription"]{
-        display:block;
-        position:static;
-        background-image: url(%%description-v04%%);
-        width:300px;
-        height:180px;
-    }
+/* doesn't work at all
+.side:after {
+  content: "";
+  position: absolute;
+  min-height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 310px;
+  background-image: url(%%border%%);
+}
+*/
+
+
+/* made problems on smaller displays
+#search {
+    position: absolute;
+    z-index: 999;
+    top: 140px;
+    right: 25px;
+}
+*/
+
+.side .spacer form input:first-child {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+/*sidebar image*/
+.side .titlebox h1 a, .side .titlebox h1 a:link .side .titlebox h1 a:visited {
+  color: transparent;
+  background: url(%%titlecard-v04%%) no-repeat;
+  height: 144px;
+  width: 300px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.res-nightmode .titlebox span.word, .titlebox span.word {display: none;}
+
+
+/*displayed users*/
+div.titlebox .subscribers span.number:after {content: " wasteland fillies"!important; font-style: bold!important;}
+div.titlebox .users-online span.number:after {content: " fighting the good fight"!important;}
+
+/* background removal */
+.side .spacer .titlebox form, .side .spacer .titlebox .leavemoderator, .icon-menu a {
+  background: none;
+}
+
+/* sidebar text color adjustment */
+.side .md, .side, .spacer .leavemoderator, .spacer .option, .spacer .flairtoggle label, .spacer .sidecontentbox .title h1 {
+  color: white;
+}
+.side .md {
+  text-shadow: 0px 0px 2px black;
+}
+#searchexpando label {
+  color: #000;
+}
+#searchexpando a {
+  color: #0645AD;
+}
+
+.linkinfo {
+  color: #2b2b2b;
+  background-image: url(%%backgroundtexture%%);
+  border: none;
+}
+
+/* link color adjustment */
+.side a {
+  color: #3d3; /* high contrast on dark background */
+}
+
+/* code tag color adjustment */
+code {
+  color: #000;
+  text-shadow: none;
+}
+
+.bottommenu, .bottommenu a{
+  color: #000;
+  text-shadow: 0 0 1px rgba(255,255,255,0.5);
+}
+
+/* mod tools background + RES active background */
+.spacer .content, .RES-keyNav-activeElement {
+  background-image: url(%%backgroundtexture%%);
+}
+
+.spacer .content a {
+  color: #2b2b2b; /* links are light color, so this reverts them to a dark one so they contrast on our background texture */
+}
+
+/* Sidebar horizontal rule (***) */
+.side hr {
+  height: 39px;
+  background-color: transparent;
+}
+.side hr:before {
+  content: "";
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: 0 0;
+  height: 39px;
+  width: 296px;
+  display: block;
+}
     
 /*Sidebar field end*/
+
+/* Content link colors */
+.thing .title, .thing .title { color: #000;}
+.thing .title:visited, .thing.visited .title {color: #888;}
 
 
 /*----------------------------------------oooOOOooo----------------------------------------*/
 
+/*************************/
+/* Upvotes and Downvotes */
+.arrow.up {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: -251px -138px;
+  opacity: 0.5;
+  height: 9px; width: 16px;
+}
+.arrow.upmod {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: -251px -138px;
+  height: 9px; width: 16px;
+}
+.arrow.down {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: -251px -147px;
+  opacity: 0.5;
+  height: 9px; width: 16px;
+}
+.arrow.downmod {
+  background-image: url(%%omega-sprites-v04%%);
+  background-position: -251px -147px;
+  height: 9px; width: 16px;
+}
+/* End of upvotes and downvotes */
+/********************************/
+
+
+/*******************/
+/* Submission page */
+.roundfield {
+  background-image: url(%%backgroundtexture%%);
+}
+
+.submit .formtabs-content {
+  border-top: none;
+}
+
+ul.tabmenu.formtab {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 520px;
+}
+
+.tabmenu.formtab a {
+  text-transform: uppercase;
+  border: 1px solid #000;
+  display: inline-block;
+  height: 35px;
+  width: 191px;
+  padding: 0;
+  text-indent: -9999em;
+  margin: 5px;
+}
+
+.submit-page .selected a { border: 1px solid #000!important; }
+
+.tabmenu.formtab li:first-of-type a {
+  background-image: url(%%submission-tabs-v01%%);
+  background-position: 0 -37px;
+}
+.tabmenu.formtab .selected:first-of-type a, .tabmenu.formtab li:first-of-type a:hover {
+  background-image: url(%%submission-tabs-v01%%);
+  background-position: -386px -37px;
+}
+.tabmenu.formtab li:first-of-type a:active {
+  background-image: url(%%submission-tabs-v01%%);
+  background-position: -193px -37px;
+}
+
+.tabmenu.formtab li a {
+  background-image: url(%%submission-tabs-v01%%);
+  background-position: 0 0;
+}
+.tabmenu.formtab .selected a, .tabmenu.formtab li a:hover {
+  background-image: url(%%submission-tabs-v01%%);
+  background-position: -386px 0;
+}
+.tabmenu.formtab li a:active {
+  background-image: url(%%submission-tabs-v01%%);
+  background-position: -193px 0;
+}
+
+.submit-page .content h1 {
+  display: none;
+}
+
+/* End of submission page */
+
+/* Footer */
+/*places a persistent image for the footer*/ 
+.footer-parent {
+  background-image: url(%%bottombar%%);
+  background-repeat: repeat-x;
+  background-position: bottom;
+  padding-top: 35px;
+  position: relative;
+  z-index: 0;
+}
+
+.footer.rounded {
+  background-image: url(%%footerscreen%%);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  border: none;
+  width: 668px;
+  height: 191px;
+  padding: 40px 40px 40px 80px;
+}
+
+.footer.rounded a {
+  color: #47C838;
+}
+
+.footer-parent .flat-vert.title {
+  color: #080;
+}
+
+.footer-parent::after{
+  content: "";
+  background-image: url(%%bottomrightcorner%%);
+  width: 406px;
+  height: 372px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+/* End of footer */
 
 a[href|="/sp"] {
 	display: inline-block;
@@ -346,13 +763,6 @@ a[href="/s"]::after { content: attr(title); background: #CCCCCC; color: #CCCCCC;
 
 a[href="/s"]:hover::after { color: black }
 
-
-/*places a persistent image for the footer*/ 
-.footer-parent {
-	background-image: url(%%brisfooter-v02%%);
-	background-repeat: no-repeat; 
-	background-position: center bottom; 
-}
 
 
 /*----------------------------------------oooOOOooo----------------------------------------*/
@@ -610,6 +1020,9 @@ a[href="/s"]:hover::after { color: black }
 		}
 		a[href|="/murkylook"]{display: block; clear: none; float: left; width: 205px; height: 150px;
 			background-repeat: no-repeat; background-image: url(%%murky-eyes-v1%%);
+		}	
+		a[href|="/lppbbt"]{display: block; clear: none; float: left; width: 141px; height: 200px;
+			background-repeat: no-repeat; background-image: url(%%lppbbt-v02%%);
 		}
 
 	/*BPM animated sheet end*/
@@ -832,12 +1245,12 @@ a[href="/s"]:hover::after { color: black }
 		background-image: url(%%foe-bpm3x3-pg2-v01%%);}
 		a[href|="/lpeep"], a[href|="/bjbook"], a[href|="/bjattracted"], a[href|="/bjdown"], 
 		a[href|="/bjpointy"], a[href|="/bjsick"], a[href|="/lpscruffy"], a[href|="/lpcute"], a[href|="/scotchtape"], 
-		a[href|="/bjhmm"], a[href|="/bjspoilers"], a[href|="/lpbarndoor"]{
+		a[href|="/bjhmm"], a[href|="/bjspoilers"], a[href|="/lpbarndoor"], a[href|="/lpwellexcuseme"], a[href|="/lpclose"]{
 		display: block;
 		width: 140px;
 		height: 140px;
 		background-repeat: no-repeat;
-		background-image: url(%%foe-bpm3x3-pg3-v03%%);}
+		background-image: url(%%foe-bpm3x3-pg3-v04%%);}
 		a[href|="/bjseriously"]{ background-position: 0px 0px;}
 		a[href|="/calamitytale"]{ background-position: 0px -145px;}
 		a[href|="/grumpypip"]{ background-position: 0px -290px;}
@@ -888,6 +1301,8 @@ a[href="/s"]:hover::after { color: black }
 		a[href|="/bjhmm"]{ background-position: 0px -1305px}
 		a[href|="/bjspoilers"]{ background-position: 0px -1450px}
 		a[href|="/lpbarndoor"]{ background-position: 0px -1595px}
+		a[href|="/lpwellexcuseme"]{ background-position: 0px -1740px}
+		a[href|="/lpclose"]{ background-position: 0px -1885px}
 
 
 

@@ -3,7 +3,7 @@
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%spookyc%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%MarblePid%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -15,38 +15,16 @@
     width:100%;
     clear:both;
 }
- 
- 
-/* Banner image and associated height values */
 
-/* BEGIN SPOOKY BANNER MODS*/
-/*
  #header #header-bottom-left {
-   background: url(%%homerbanner%%) 50% 0px !important;
+   background: url(%%Shitpostfornudez%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
 
-
-
-*/
-
- #header #header-bottom-left  {
-background: url(%%spook%%) !important;
-    -webkit-animation: banimate 3s steps(23) infinite;-moz-animation: banimate 3s steps(23) infinite;-ms-animation: banimate 3s steps(23) infinite;-o-animation: banimate 3s steps(23) infinite;animation: banimate 3s steps(23) infinite; 
-}
-
-
-@-webkit-keyframes banimate {from{background-position: 0 0;}to{ background-position: 0px -6048px; }} 
-@-moz-keyframes banimate {from {background-position: 0 0;}to{ background-position: 0px -6048px; } } 
-@-ms-keyframes banimate{from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
-@-o-keyframes banimate {from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
-@keyframes banimate {from { background-position: 0 0; }to{ background-position: 0px -6048px; } } 
-
 .tabmenu {
   margin-top: 160px;
 }
-
 
 .gilded-icon{
     transform-origin:50% 65% 0;
@@ -58,7 +36,6 @@ background: url(%%spook%%) !important;
     -webkit-transform:rotate(-1360deg);
     transform:translate(500px , 0px)
 }
-
 
 .side a[href="http://webchat.dmzirc.net/?nick=Gummy...&channels=horseplay&prompt=1"]
 {
@@ -73,12 +50,10 @@ background: url(%%spook%%) !important;
    margin-left: -256px;
 }
 
-
 #header-bottom-right
 {
 z-index:110 !important;
 }
-
 
 /*spinning Esplin */
 #header-img { 
@@ -88,8 +63,6 @@ z-index:110 !important;
     -o-animation:spin 30000s linear infinite;
     animation:spin 30000s linear infinite;
 }
-
-
 
 /* Rotating banner
 #header { 
@@ -115,7 +88,7 @@ margin-left: 100px;
 */
 
 /* above text */
-margin-top: 115px;
+margin-top: 150px;
 margin-bottom: 31px;
 
 }
@@ -915,9 +888,11 @@ visibility:visible!important;
 }
 
 /* Replacing somebody's name? Put the replacement here. */
+/*
  a.author:before{
     content:"Spooky " 
     } 
+    */
 a.author[href$="AttackTheMoon"]:before {content:"ATMachine"}
 a.author[href$="BeFlatXIII"]:before {content:"Spooky Jizz Lord"}
 a.author[href$="PUBLIQclopAccountant"]:before {content:"The Public Clop Accounting Firm, Sailor LLC"}
@@ -1710,28 +1685,28 @@ padding:0px 5px 0px 0px;
 div.up {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%spooopy%%) !important;
+    background: url(%%testtube%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px -60px !important
     }
 div.down {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%spooopy%%) !important;
+    background: url(%%testtube%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px -90px !important
     }
 div.upmod {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%spooopy%%) !important;
+    background: url(%%testtube%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px 0px !important
     }
 div.downmod {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%spooopy%%) !important;
+    background: url(%%testtube%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px -30px !important
     }
