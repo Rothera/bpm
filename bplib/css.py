@@ -148,7 +148,10 @@ def as_size(text):
     return _parse_size(prop(text))
 
 def as_position(text, width, height):
-    x_text, y_text = prop(text).split()
+    parts = prop(text).split()
+    # This probably isn't how it works, but oh well
+    x_text = parts[0] if len(parts) else "0px"
+    y_text = parts[1] if len(parts) > 1 else "0px"
     return (_parse_pos(x_text, width), _parse_pos(y_text, height))
 
 def as_url(text):
