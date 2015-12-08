@@ -3,7 +3,7 @@
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%MarblePid%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%toriel%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -17,7 +17,7 @@
 }
 
  #header #header-bottom-left {
-   background: url(%%Shitpostfornudez%%) 50% 0px !important;
+   background: url(%%torielbanner2%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -180,7 +180,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 
 /* Replace the nsfw image with screwball */
 .thumbnail.nsfw {
-    background-image: url(%%thumbnails%%);
+    background-image: url(%%torthumbnails%%);
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -189,7 +189,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 
 /* Replace the self-post image with screwball */
 .thumbnail.self {
-    background-image: url(%%thumbnails%%);
+    background-image: url(%%torthumbnails%%);
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -198,7 +198,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 
 /* Replace the no-thumb image with screwball */
 .thumbnail.default {
-    background-image: url(%%thumbnails%%);
+    background-image: url(%%torthumbnails%%);
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -207,7 +207,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 
 /* Replace the no-thumb image with screwball */
 .thumbnail.spoiler {
-    background-image: url(%%thumbnails%%);
+    background-image: url(%%torthumbnails%%);
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -957,7 +957,7 @@ a.author[href$=Generic_Builder]:before { content:"Genewic Bwuilda" }
 a.author[href$=volcano_bakemeats]:before { content:"Madam Le Bake" }
 a.author[href$=DaylightDarkle]:before { content:"Twilight Sparkle" }
 a.author[href$=Chillusion]:before { content:"Cchhiilllluussiioonn" }
-a.author[href$=Edriss562]:before {content:"SKELESPLIN"}
+a.author[href$=Edriss562]:before {content:"Espy" }
 a.author[href$=Jeroknite]:before {content:"JokerBee"; font-size:15px !important}
 a.author[href$=DarqWolff]:before { content:"[](/DarqWolff)" }
 a.author[href$=cheesemoo]:before { content:"Cheesemeow" }
@@ -1113,7 +1113,8 @@ a.author[href$=SiliconeLube]:after,
 a.author[href$=YesterdaysVoid]:after,
 a.author[href$=Solidus_Tripsy]:after,
 a.author[href$=RAINBOW_PONY_SEMEN]:after,
-a.author[href$=DoomKey]:after
+a.author[href$=DoomKey]:after,
+a.author[href$=mrwoo6]:after
 
 
 {
@@ -1206,6 +1207,7 @@ a.author[href$=YesterdaysVoid]:after { content:" ~ Drank Celestia's Coughsyrup" 
 a.author[href$=Solidus_Tripsy]:after { content:" touches all the butts"; color:brown }
 a.author[href$=RAINBOW_PONY_SEMEN]:after { content:" GODDESS OF NO FUN"; color:pink }
 a.author[href$=DoomKey]:after { content:" Paid for these changes with furry art" }
+a.author[href$=mrwoo6]:after { content:" the Coggler cheerer-upper" }
 
 /* Any pre/post-name flair stuff goes here */ 
 
@@ -1685,28 +1687,28 @@ padding:0px 5px 0px 0px;
 div.up {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%testtube%%) !important;
+    background: url(%%torvotes%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px -60px !important
     }
 div.down {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%testtube%%) !important;
+    background: url(%%torvotes%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px -90px !important
     }
 div.upmod {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%testtube%%) !important;
+    background: url(%%torvotes%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px 0px !important
     }
 div.downmod {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%testtube%%) !important;
+    background: url(%%torvotes%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px -30px !important
     }

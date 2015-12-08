@@ -94,9 +94,6 @@ border: none;
 #header, .res-nightmode #header {
 background: #5f99cf
 }
-#header-img:hover{
-transform: scalex(-1);
-}
 .res-nightmode ul.tabmenu li.selected a {
 background: none!important
 }
@@ -150,9 +147,9 @@ background: url(%%horsewife%%) center center no-repeat transparent;
 /*Subscriber Name Replace*/
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Plizards"}
+div.titlebox .subscribers span.number:after {content:" Ploungers"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " eating Cake" }
+div.titlebox p.users-online span.number:after { content: " Preparing for Christmas" }
 div.titlebox p.users-online span.word { display: none }
 
 /*Flair modifications*/
@@ -204,10 +201,10 @@ submitted
 /*Footer code*/
 .footer-parent
 {
- padding-bottom: 0px;
+ padding-bottom: 200px;
  clear:both;
  text-align:center;
- height:1000px;
+ height:500px;
  width:100%;
  background-image:url(%%footer%%);
  background-repeat:no-repeat;
@@ -924,8 +921,6 @@ padding: 0
 .flair-applejack {background-position: -300% 0%}
 
 .flair-pinkiepie {background-position: 0% -100%}
-.flair-pinkiezim {background-position: 0% -100%}
-.flair-pinkiezim:hover {background-position: 0% 0%} /*Blame /u/Master_Zimmermanned */
 .flair-rarity {background-position: -100% -100%}
 .flair-trixie {background-position: -200% -100%}
 .flair-cmc {background-position: -300% -100%} /*Not user selectable. Modflair*/
@@ -976,6 +971,7 @@ padding: 0
 .flair-daring {background-position: -100% -900%}
 .flair-mrcake {background-position: -200% -900%}
 .flair-mrscake {background-position: -300% -900%}
+.flair-rara {background-position: -400% -900%}
 
 .flair-flam {background-position: 0% -1000%} /*This is flims cutiemark... */
 .flair-flim {background-position: -100% -1000%} /*And this is flams*/
@@ -1189,10 +1185,10 @@ body a[href="/spoiler"]:hover{color:white!important}
 div.over18 .entry .buttons .first{padding-left: 0px}
 
 /*Submit Link Styling*/
-.side {margin-top: 70px}
+.side {margin-top: 70px} 
 .nub {display: none}
 .sidebox.submit .morelink {width: 145px; overflow: hidden}
-.sidebox.submit {position: absolute; top: 130px;}
+.sidebox.submit {position: absolute; top: 130px;} /* This needs changing if the header height changes. */
 .sidebox.submit.submit-link {right: auto;}
 .sidebox.submit.submit-text {left: auto; right: 0; padding-right: 5px;}
 .morelink, .res-nightmode .morelink{
@@ -1222,7 +1218,7 @@ color: #D59D02;
 }
 .helplink, .res-nightmode .helplink {
 position: absolute;
-top: 160px;
+top: 160px; /* This value needs changing if the height of the header changes */
 width: 300px;
 height: 29px;
 background: #5f99cf;
