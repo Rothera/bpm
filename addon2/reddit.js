@@ -88,6 +88,8 @@ function reddit_preload() {
         tag.id = "bpm-styles";
         tag.textContent = css;
 
+        // Note: We want to append CSS to the end of <head> in order to take
+        // precedence over local subreddit stylesheets.
         dom.then(function() {
             console.log(lp, "[CSS]", "Attaching stylesheets");
             document.head.appendChild(tag);
