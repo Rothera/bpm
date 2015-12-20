@@ -13,19 +13,19 @@
             content: ' cloppers'}
         .users-online .number:after {
             content: ' clopping'}
-    /* Style tweaks */  /* TODO: check if need removing */
-        .titlebox strong {
-            font-size: medium}
-        .titlebox del {
-            color: white}
-        .titlebox em {
-            font-size: 9px;
-            text-decoration: none;
-            font-style: normal}
-        .titlebox strong em {
-            font-size: 8px;
-            font-style: normal;
-            font-weight: normal}
+    /* Styles for the sidebar md itself */
+        .side .md > h2 {
+            text-align: center;
+            border-top: 1px dotted #999;
+            border-bottom: 1px dotted #999}
+        .side .md > h2:first-of-type {
+            display: flex}
+        .side .md > h2:first-of-type > * {
+            flex: 1 0 0}
+        .side .md > h2:first-of-type > *+* {
+            border-left: 1px dotted #999}
+        .side .md > h3{
+            text-align: center}
 
 /* Submission page */
     /* Help text 1 */

@@ -1028,3 +1028,122 @@ body.res-nightmode:first-of-type .flair { background-color: transparent!importan
 .flair-badcard {width:18px; height:20px; background-position: -50px 0px}
 .flair-nonet {width:25px; height:25px; background-position: -50px -50px}
 .flair-clock {width:30px; height:30px; background-position: -50px -75px}
+
+/*Ticker*/
+.titlebox form {
+    position:static
+}
+
+.titlebox .usertext-body .md h6 {
+    z-index:2147483647!important;
+    position:fixed;
+    display:inline-block;
+    background-color:black;
+    color:white;
+    overflow:hidden;
+    font-family:'Courier New';
+    font-size:12px;
+    z-index:1;
+    text-decoration:none;
+    border: 1px solid #e1e1e1;
+    width:100%;
+    left:0;
+    right:0;
+    height:25px;
+    line-height:25px;
+    bottom:0;
+    margin-bottom:0;
+    border-left:none;
+    border-bottom:none;
+}
+
+.md h6 a {
+    color:#8DC8E8
+}
+
+.md h6 a::before {
+    color:#FFF;
+    padding-right:.3em;
+    margin-right:.3em
+}
+
+.md h6 em {
+    padding:0 .6em;
+    font-style:normal;
+    word-spacing:4px
+}
+
+/*--------------------NEWS TICKER--------------------*/
+.titlebox .usertext-body .md h6 strong {
+    display:block;
+    text-indent:100%;
+    -webkit-animation:ticker 1s linear infinite;
+/*Change transition speed*/
+    animation:ticker 30s linear infinite;
+/*Change transition speed*/
+    white-space:nowrap
+}
+
+@-webkit-keyframes ticker {
+0% {
+    opacity:1
+}
+
+98% {
+    opacity:1;
+    text-indent:-2500px
+}
+
+/*change according to message length*/
+99% {
+    opacity:0;
+    text-indent:-2500px
+}
+
+/*change according to message length*/
+100% {
+    text-indent:2500px;
+    opacity:0
+}
+}
+
+@keyframes ticker {
+0% {
+    text-indent:100%
+}
+
+95% {
+    opacity:1;
+    text-indent:-2500px
+}
+
+96% {
+    opacity:0;
+    text-indent:-2500px
+}
+
+97% {
+    opacity:0
+}
+
+98% {
+    text-indent:100%
+}
+
+99% {
+    opacity:0
+}
+
+100% {
+    opacity:1
+}
+}
+
+/*--------------------PAUSE ON HOVER--------------------*/
+.titlebox .usertext-body .md h6 strong:hover {
+    display:block;
+    text-indent:0;
+    -webkit-animation-play-state:paused;
+/* Safari and Chrome */
+    animation-play-state:paused
+}

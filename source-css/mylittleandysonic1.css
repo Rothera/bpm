@@ -1,10 +1,50 @@
 .id-t3_145m8r.link .title{font-size:large}
 
 
+
+
+
+ 
+/*SNOW BEGINS */
+
+#header:after {
+content: "";
+background: url(%%Snow2%%);
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+opacity: 0.7;
+z-index: 999;
+pointer-events: none;
+-webkit-animation: snow 1s steps(20) infinite;
+-moz-animation: snow 1s steps(20) infinite;
+-ms-animation: snow 1s steps(20) infinite;
+-o-animation: snow 1s steps(20) infinite;
+animation: snow 1s steps(20) infinite; 
+}
+
+@-webkit-keyframes snow {from{background-position: 0 0;}to{ background-position: 0px -6000px; }} 
+@-moz-keyframes snow {from {background-position: 0 0;}to{ background-position: 0px -6000px; } } 
+@-ms-keyframes snow{from {background-position: 0 0; }to{ background-position: 0px -6000px; } } 
+@-o-keyframes snow {from {background-position: 0 0; }to{ background-position: 0px -6000px; } } 
+@keyframes snow {from { background-position: 0 0; }to{ background-position: 0px -6000px; } } 
+ 
+/* Replace Cursors */
+/*<%jeroknite> mfw Pwny is slowly turning the sub into a geocities site*/
+body {
+cursor: url(%%Cursor%%), default !important;
+}
+a { cursor: url(%%CursorHover%%), pointer; }
+
+
 /* Changes background  */
+
  body:first-of-type, body.res-nightmode:first-of-type {
     background:  url(%%toriel%%) fixed no-repeat 66% 100% !important;
 }go
+
 
 
 /* emote overflow fix */
@@ -37,6 +77,8 @@
     transform:translate(500px , 0px)
 }
 
+
+
 .side a[href="http://webchat.dmzirc.net/?nick=Gummy...&channels=horseplay&prompt=1"]
 {
    display:block;
@@ -56,6 +98,7 @@ z-index:110 !important;
 }
 
 /*spinning Esplin */
+/*
 #header-img { 
     -webkit-animation:spin 30000s linear infinite;
     -moz-animation:spin 30000s linear infinite;
@@ -63,7 +106,7 @@ z-index:110 !important;
     -o-animation:spin 30000s linear infinite;
     animation:spin 30000s linear infinite;
 }
-
+*/
 /* Rotating banner
 #header { 
     -webkit-animation:spin 3000s linear infinite;
