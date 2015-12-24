@@ -1,5 +1,4 @@
-SUMMARY OF ADDON
-================
+# BetterPonymotes
 
 BetterPonymotes is an emote addon to serve the pony subreddits. It supports
 three browsers natively, and has a userscript variant for Safari and potentially
@@ -7,11 +6,11 @@ others.
 
 Its data is maintained as a set of files by the addon maintainer, and compiled
 into compact representations for use by the addon at build time in the form of
-a large, executable JS file. Its code is split between maintainance tools on
+a large, executable JS file. Its code is split between maintenance tools on
 the backend (mostly Python) and JS that runs in the browser.
 
-PREREQUISITES
-=============
+
+## Prerequisites
 
 First off, there are some files and directories that aren't in the git repo but
 need to exist.
@@ -25,24 +24,25 @@ The PEM file is a private, unencrypted RSA key. It looks like this:
     [lots of base64 stuff]
     -----END PRIVATE KEY-----
 
-The Makefile expects it to be available from ../secret (relative to the project
-directory), but you can edit it if you like. The only thing that matters is that
-you **NEVER** expose it and **NEVER** lose it. Update security depends on it.
+The Makefile expects it to be available from `../secret` (relative to the
+project directory), but you can edit it if you like. The only thing that matters
+is that you **NEVER** expose it and **NEVER** lose it. Update security depends
+on it.
 
 You'll need some tools:
 
-    The Firefox Addon SDK. It comes in a zip file with a bin/activate shell
-    script. Source it to add its bin/ to your $PATH, because you need the cfx
-    tool.
+- The Firefox Addon SDK. It comes in a zip file with a `bin/activate` shell
+  script. Source it to add its `bin/` to your `$PATH`, because you need the
+  `cfx` tool.
 
-    uhura. It's a little perl script used to sign the Firefox XPI's. It needs
-    to be on $PATH. I'm not sure exactly where I got it, and installing it is
-    a pain, since it depends on some CPAN modules. I forget which.
+- `uhura`. It's a little perl script used to sign the Firefox XPI's. It needs
+  to be on $PATH. I'm not sure exactly where I got it, and installing it is
+  a pain, since it depends on some CPAN modules. I forget which.
 
-    apng2gif
+- `apng2gif`
 
-REPOSITORY STRUCTURE
-====================
+
+## Repository Structure
 
     # Animote support
     animotes/               Converted GIF cache (not kept in repo due to size)
@@ -149,157 +149,160 @@ REPOSITORY STRUCTURE
 
 All of this will be explained in detail further on.
 
-BROWSER ADDON STRUCTURE
-=======================
+
+## Browser Addon Structure
 
 Most addon API's have the same basic structure- there's a background script that
 runs on its own, and content scripts that run in the pages. The former must
 obviously be written to the specific browser, but the latter is largely
 independent except where it has to communicate with the backend.
 
-Firefox's background script is addon/firefox/lib/main.js. Chrome has
-addon/chrome/background.html and opera has addon/opera/index.html. As these
+Firefox's background script is `addon/firefox/lib/main.js`. Chrome has
+`addon/chrome/background.html` and Opera has `addon/opera/index.html`. As these
 scripts share a large amount of functionality, most of that is now held in
-data/pref-setup.js.
+`data/pref-setup.js`.
 
 The backend is chiefly responsible for storing and managing preferences,
 applying the necessary files to pages (JS and CSS), and maintaining the custom
 CSS cache. Custom CSS is easily the most complex thing it does.
 
-About 250 lines of betterponymotes.js is dedicated to abstracting over the
-differences between browser API's and communication, under the bpm_browser
+About 250 lines of `betterponymotes.js` is dedicated to abstracting over the
+differences between browser API's and communication, under the `bpm_browser`
 object.
 
 UserScripts are significantly different as they are essentially a lone content
 script. The options page and all associated data files (CSS and JS) must be
 hosted externally.
 
-DEVELOPMENT PROCESS
-===================
+
+## Development Process
 
 Most of the addon proper in the content script split up between the
-addon/common/bpm-*.js files. Most new features can be implemented here without
+`addon/common/bpm-*.js` files. Most new features can be implemented here without
 touching anything else.
 
-Changing BPM_DEV_MODE at the top enables a bunch of extra logging, which may
+Changing `BPM_DEV_MODE` at the top enables a bunch of extra logging, which may
 help if you're getting crashes or strange behavior. Remember to disable it
 before release.
 
-Changes to preferences require editing addon/common/pref-setup.js and the
+Changes to preferences require editing `addon/common/pref-setup.js` and the
 options page.
 
 Changes involving the data backend are too complicated to go over here.
 
-STYLESHEETS, EMOTE DATA, AND COMPILATION
-========================================
 
-Stylesheets are stored and cached in two forms- source and minified. The reason
+## Stylesheets, Emote Data, and Compilation
+
+Stylesheets are stored and cached in two forms - source and minified. The reason
 is that Reddit, by default, serves up only the minified form, and while this is
 enough to extract emote data, it's very difficult to read, which is very often
 necessary when maintaining the emote cache. The source CSS, however, has no
 image URLs. Since those can change freely, the only way to reliably know when
 emotes change is to reparse the minified CSS.
 
-The bin/shell.py tool is responsible for updating stylesheet files. Its chief
+The `bin/shell.py` tool is responsible for updating stylesheet files. Its chief
 commands are:
 
-    - update: redownloads all stylesheets
-    - extract/extractall: runs the emote extraction tool on particular subreddits
-    - diff: runs "git diff | kompare" for convenient visual browsing.
-    - commit: runs "git commit -m [...]" with a standard message.
+- `update`: redownloads all stylesheets
+- `extract/extractall`: runs the emote extraction tool on particular subreddits
+- `diff`: runs `git diff | kompare` for convenient visual browsing.
+- `commit`: runs `git commit -m [...]` with a standard message.
 
-Emote data is stored in JSON form under emotes/, one line per emote. This makes
-it quite conveniently diffable and greppable.
+Emote data is stored in JSON form under `emotes/`, one line per emote. This
+makes it quite conveniently diffable and greppable.
 
-The bpgen.py tool (run by make automatically) reads the data/rules.yaml file
-for instructions, loads all emote and tag data, and compiles it into a set of
-JS data files (build/bpm-resources.js) and CSS (build/emote-classes.css). These
-are used by the addon directly.
+The `bpgen.py` tool (run by `make` automatically) reads the `data/rules.yaml`
+file for instructions, loads all emote and tag data, and compiles it into a set
+of JS data files (`build/bpm-resources.js`) and CSS (`build/emote-classes.css`).
+These are used by the addon directly.
 
-TAGGING EMOTES
-==============
+
+## Tagging Emotes
 
 After updating the emote cache, any new or changed emotes need to be tagged
-appropriately. The ./tagapp.py script starts a web server on localhost:5000,
+appropriately. The `./tagapp.py` script starts a web server on `localhost:5000`,
 running a webapp for this purpose. It's not too difficult to figure out how to
 use, but tag data has a specific structure that should be respected.
 
 [Small warning: the tagapp is one of the few Python scripts in the project that
-runs under Python 2 (the rest is Python 3). It uses bplib/ code, however, and
-there are some lingering unicode/json incompatibilities and bugs as a result.
+runs under Python 2 (the rest is Python 3). It uses `bplib/` code, however, and
+there are some lingering `unicode/json` incompatibilities and bugs as a result.
 In a nutshell, running the script seems to work fine on its own, but not from a
 shell that has been "activated" with the Addon SDK. It seems to change the
 Python environment.]
 
-Generally, most tags fall under others in a loose, informal heirarchy. These can
-be reviewed in data/tags.yaml.
+Generally, most tags fall under others in a loose, informal hierarchy. These can
+be reviewed in [`data/tags.yaml`](data/tags.html).
 
-Every emote must fall under at least one RootTag. ExclusiveTags can never be
-used with any other tags (except as mentioned). HiddenTags are removed from
-the data set before building the addon files. TagAliases generate additional
+Every emote must fall under at least one `RootTag`. `ExclusiveTags` can never be
+used with any other tags (except as mentioned). `HiddenTags` are removed from
+the data set before building the addon files. `TagAliases` generate additional
 records in the data files, so that searching on those tags will work properly.
-TagImplications essentially makes a given tag also apply several others- this
+`TagImplications` essentially makes a given tag also apply several others - this
 is how the hierarchy is built. Note that this is *not* recursive.
 
 Every emote has exactly one primary name with all of its tags. Other names for
-the same emote must be tagged as +v (for "variant"). bpgen.py will match them
-up automatically, copy tags around, and the tag search code in the addon uses
-this information to hide variants (in actuality, replacing them with their base
-name).
+the same emote must be tagged as `+v` (for "variant"). `bpgen.py` will match
+them up automatically, copy tags around, and the tag search code in the addon
+uses this information to hide variants (in actuality, replacing them with their
+base name).
 
-The formatting (colors and fonts) psuedo-emotes are tagged +formatting. Emotes
-that don't work right are tagged +broken, any emotes that should be removed from
-the final product are tagged +remove. +nsfw is obvious and +q (short for
-+questionable) is slightly less so.
+The formatting (colors and fonts) psuedo-emotes are tagged `+formatting`. Emotes
+that don't work right are tagged `+broken`, any emotes that should be removed
+from the final product are tagged `+remove`. `+nsfw` is obvious and `+q` (short
+for `+questionable`) is slightly less so.
 
-Run ./checktags.py after editing tags to guard against typos and certain classes
-of mistakes. Some warnings are known oddities that the script isn't capable of
-recognizing; ignore those.
+Run `./checktags.py` after editing tags to guard against typos and certain
+classes of mistakes. Some warnings are known oddities that the script isn't
+capable of recognizing; ignore those.
 
-APNG -> GIF CONVERSION
-======================
 
-Assuming all animotes are tagged with +animote, run ./dlanimotes.py to download
-and convert all of them. This process requires apng2gif to be on $PATH, and it
-will spit out GIFs to animotes/, which must be uploaded to the host site. It
-also generates build/gif-animotes.css, which is the override sheet used by
-Chrome. make doesn't currently call dlanimotes.py, despite depending on this
-file to be present, so make sure to run it before building packages.
+## APNG -> GIF Conversion
 
-UPDATES AND VERSION NUMBERS
-===========================
+Assuming all animotes are tagged with +animote, run `./dlanimotes.py` to
+download and convert all of them. This process requires `apng2gif` to be on
+`$PATH`, and it will spit out GIFs to `animotes/`, which must be uploaded to the
+host site. It also generates `build/gif-animotes.css`, which is the override
+sheet used by Chrome. make doesn't currently call `dlanimotes.py`, despite
+depending on this file to be present, so make sure to run it before building
+packages.
 
-After updating the CSS and tags, run "bin/shell.py commit" to record it all,
-and either run bpgen.py manually or "make" to regenerate the emote data files.
-This process is heavily controlled by data/rules.yaml, which lists:
 
-    - The subreddits currently in the addon (note that shell.py update doesn't
-      actually respect this)
-    - Subreddits to disregard PONYSCRIPT-IGNORE on (needed when they incorrectly
-      put custom emotes in this block)
-    - Custom tweaks to the emote set (as emotes/ is never modified directly)
-    - Conflict resolution rules, by subreddit (e.g. r/aaaa > r/bbbb) and by
-      individual emote.
-    - Explicit matchups for +v emotes that the code can't autodetect.
+## Updates and Version Numbers
 
-The version number is encoded in config.json, which is used by the Makefile to
+After updating the CSS and tags, run `bin/shell.py commit` to record it all,
+and either run `bpgen.py` manually or `make` to regenerate the emote data files.
+This process is heavily controlled by `data/rules.yaml`, which lists:
+
+- The subreddits currently in the addon (note that `shell.py` update doesn't
+  actually respect this)
+- Subreddits to disregard `PONYSCRIPT-IGNORE` on (needed when they incorrectly
+  put custom emotes in this block)
+- Custom tweaks to the emote set (as `emotes/` is never modified directly)
+- Conflict resolution rules, by subreddit (e.g. r/aaaa > r/bbbb) and by
+  individual emote.
+- Explicit matchups for +v emotes that the code can't autodetect.
+
+The version number is encoded in `config.json`, which is used by the Makefile to
 regenerate every file that embeds it.
 
-When everything is updated, running "make" is sufficient to rebuild all packages.
+When everything is updated, running `make` is sufficient to rebuild all packages.
 
-A note on Chrome: though the .zip to be uploaded to the webstore must contain
-a copy of the private key.pem file, Chrome will not permit you to load the
+A note on Chrome: though the .zip to be uploaded to the webstore must contain a
+copy of the private `key.pem` file, Chrome will not permit you to load the
 extension directory in development mode. It also refuses to load it if it
-contains symlinks. To get around this, build/chrome/ is updated with make to be
-a copy of chrome/ sans links and key file. build/chrome.zip is what gets
+contains symlinks. To get around this, `build/chrome/` is updated with make to
+be a copy of `chrome/` sans links and key file. `build/chrome.zip` is what gets
 uploaded. It's completely uncompressed due to prior difficulties with the
 webstore.
 
-RELEASE PROCESS
-===============
 
-In a nutshell: $ make sync
+## Release Process
+
+In a nutshell:
+
+    make sync
 
 Rebuild all packages and upload the XPI, OEX, animotes, userscript files, etc.
-to the site. The chrome.zip file must be uploaded to the Chrome webstore
+to the site. The `chrome.zip` file must be uploaded to the Chrome webstore
 manually.
