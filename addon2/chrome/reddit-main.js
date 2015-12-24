@@ -54,7 +54,10 @@ var browser = {
 
     fetch_emotes: function(emote_names) {
         // emote_names: {"/emotename": arbitrary data}
-
+        return new Pronise(function(resolve, reject) {
+            // TODO: Fetch all this stuff from backend. First need to be able
+            // to receive messages on the backend...
+        });
     }
 };
 

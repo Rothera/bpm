@@ -127,12 +127,12 @@ function reddit_main() {
         }
 
         console.log(lp, "[REDDIT]", "Found", count, "links");
-        //console.log(lp, "[DEBUG]", "Pending:", pending_emotes);
 
         browser.fetch_emotes(pending_emotes).then(function(emotes) {
             // emotes: {"/emotename" -> data}
 
-            // TODO: Convert these emotes
+            // TODO: Convert these emotes. pending_emotes maps names to lists
+            // of <a> tags we have to work on, and emotes contains the data
         });
 
         // TODO: DOM observation. Note race condition
