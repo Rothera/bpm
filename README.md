@@ -1,4 +1,3 @@
-================
 SUMMARY OF ADDON
 ================
 
@@ -11,7 +10,6 @@ into compact representations for use by the addon at build time in the form of
 a large, executable JS file. Its code is split between maintainance tools on
 the backend (mostly Python) and JS that runs in the browser.
 
-=============
 PREREQUISITES
 =============
 
@@ -43,7 +41,6 @@ You'll need some tools:
 
     apng2gif
 
-====================
 REPOSITORY STRUCTURE
 ====================
 
@@ -152,7 +149,6 @@ REPOSITORY STRUCTURE
 
 All of this will be explained in detail further on.
 
-=======================
 BROWSER ADDON STRUCTURE
 =======================
 
@@ -178,7 +174,6 @@ UserScripts are significantly different as they are essentially a lone content
 script. The options page and all associated data files (CSS and JS) must be
 hosted externally.
 
-===================
 DEVELOPMENT PROCESS
 ===================
 
@@ -195,7 +190,6 @@ options page.
 
 Changes involving the data backend are too complicated to go over here.
 
-========================================
 STYLESHEETS, EMOTE DATA, AND COMPILATION
 ========================================
 
@@ -222,7 +216,6 @@ for instructions, loads all emote and tag data, and compiles it into a set of
 JS data files (build/bpm-resources.js) and CSS (build/emote-classes.css). These
 are used by the addon directly.
 
-==============
 TAGGING EMOTES
 ==============
 
@@ -263,7 +256,6 @@ Run ./checktags.py after editing tags to guard against typos and certain classes
 of mistakes. Some warnings are known oddities that the script isn't capable of
 recognizing; ignore those.
 
-======================
 APNG -> GIF CONVERSION
 ======================
 
@@ -274,7 +266,6 @@ also generates build/gif-animotes.css, which is the override sheet used by
 Chrome. make doesn't currently call dlanimotes.py, despite depending on this
 file to be present, so make sure to run it before building packages.
 
-===========================
 UPDATES AND VERSION NUMBERS
 ===========================
 
@@ -304,7 +295,6 @@ a copy of chrome/ sans links and key file. build/chrome.zip is what gets
 uploaded. It's completely uncompressed due to prior difficulties with the
 webstore.
 
-===============
 RELEASE PROCESS
 ===============
 
