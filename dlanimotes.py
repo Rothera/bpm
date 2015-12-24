@@ -83,7 +83,7 @@ def dump_css(file, images):
         for emote in emotes:
             for variant in emote.variants.values():
                 if hasattr(variant, "image_url") and variant.image_url == url:
-                    selectors.append(variant.selector())
+                    selectors.append(".bpm-emote" + variant.selector())
         selector = ",".join(selectors)
         new_url = AnimoteUrlPrefix + image_path(url)
         s = "%s{background-image:url(%s)!important}\n" % (selector, new_url)
