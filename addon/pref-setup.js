@@ -32,7 +32,7 @@ var default_prefs = {
     "hideDisabledEmotes": false,
     "stealthMode": false,
     "showAltText": true,
-    "enableGlobalEmotes": false,
+    "enableGlobalEmotes": true,
     "enableGlobalSearch": false,
     "clickToggleSFW": true,
     "searchLimit": 200,

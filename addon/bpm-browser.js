@@ -207,4 +207,60 @@ case "safari-ext":
         element.href = safari.extension.baseURI + 'options.html';
         element.target = "_blank";
     };
+    break;
+case "discord-ext":
+    _send_message = function(method, data) {
+        if(data === undefined) {
+            data = {};
+        }
+        data.method = method;
+        log_debug("_send_message:", data);
+        var event = new CustomEvent("bpm_message");
+        event.data = data;
+        window.dispatchEvent(event);
+    };
+    //TODO:  If this PR goes through, ensure that the BPM maintainers have
+    //push access to this Repo
+    var _data_url = function(filename) {
+        return "https://byzantinefailure.github.io/bpm-built-css/" + filename;
+    }
+    make_css_link = function(filename, callback) {
+        var tag = stylesheet_link(_data_url(filename));
+        callback(tag);
+    };
+
+    linkify_options = function(element) {
+        // Firefox doesn't permit linking to resource:// links or something
+        // equivalent.
+        element.addEventListener("click", catch_errors(function(event) {
+            _send_message("open_options");
+        }), false);
+    };
+
+    window.addEventListener("bpm_message", catch_errors(function(event) {
+        var message = event.data;
+        switch(message.method) {
+        case "initdata":
+            _complete_setup(message);
+            break;
+        
+        //TODO: Ugly as sin.  Fix.
+        case "get_initdata":
+        case "get_prefs":
+        case "get_custom_css":
+        case "set_pref":
+        case "force_update":
+        case "initdata":
+        case "prefs":
+        case "custom_css":
+            break;
+
+        default:
+            log_error("Unknown request from Firefox background script: '" + message.method + "'");
+            break;
+        }
+    }));
+    break;
+
 }
+

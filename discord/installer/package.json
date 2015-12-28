@@ -1,0 +1,30 @@
+{
+  "name": "dc-bpm-install",
+  "description": "BPM for Discord installer",
+  "version": "0.0.1",
+  "license": "AGPL-3.0",
+  "readme": "README",
+  "repository": "https://github.com/ByzantineFailure/bpm",
+  "scripts": {
+    "lint": "jshint **.js"
+  },
+  "dependencies": {
+    "asar": "~0.9.0",
+    "fs-extra": "~0.26.3",
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {
+    "jshint": "latest"
+  },
+  "jshintConfig": {
+    "esnext": true,
+    "strict": "global",
+    "globals": { 
+        "console": false,
+        "require": false,
+        "module": false,
+        "process": false
+    }
+  }
+}
+

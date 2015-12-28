@@ -46,7 +46,20 @@ ADDON_DATA = \
     addon/bootstrap.css addon/options.html addon/options.css addon/options.js \
     addon/pref-setup.js
 
-default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension build/export.json.bz2
+DISCORD_INSTALLER := \
+    discord/installer/constants.js discord/installer/index.js discord/installer/package.json
+
+DISCORD_INTEGRATION := \
+	discord/integration/package.json discord/integration/bpm.js
+
+GENERATED_CSS := \
+    build/gif-animotes.css build/emote-classes.css addon/bpmotes.css addon/combiners-nsfw.css \
+    addon/bootstrap.css addon/options.css
+
+BPM_CSS_REPO ?= ../bpm-built-css
+
+default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension build/export.json.bz2 build/discord
+
 
 clean:
 	rm -fr build
@@ -167,3 +180,56 @@ build/BPM.safariextension: $(ADDON_DATA) addon/sf-Settings.plist addon/sf-backgr
 	cp addon/pref-setup.js build/BPM.safariextension
 
 	cd build/BPM.safariextension && zip ../BPM.safariextension.zip *
+
+# Note, requires node, globally installed asar (npm install asar -g)
+build/discord/installer: $(DISCORD_INSTALLER)
+	mkdir -p build/discord
+		
+	cp discord/installer/index.js build/discord/index.js
+	cp discord/installer/package.json build/discord/package.json
+	cp discord/installer/constants.js build/discord/constants.js
+	
+	cd build/discord && npm install
+
+build/discord/integration.asar: $(DISCORD_INTEGRATION)
+	mkdir -p build/discord
+	asar pack discord/integration/ build/discord/integration.asar
+
+build/discord/bpm.asar: $(ADDON_DATA) addon/dc-background.js
+	mkdir -p build/discord
+	mkdir -p build/discord/addon
+	
+	cp addon/dc-background.js build/discord/addon/background.js
+	
+	cp build/betterponymotes.js build/discord/addon
+	cp build/bpm-resources.js build/discord/addon
+	cp build/emote-classes.css build/discord/addon
+	cp build/gif-animotes.css build/discord/addon
+	
+	cp addon/bootstrap.css build/discord/addon
+	cp addon/bpmotes.css build/discord/addon
+	cp addon/combiners-nsfw.css build/discord/addon
+	cp addon/extracss-pure.css build/discord/addon
+	cp addon/extracss-webkit.css build/discord/addon
+	cp addon/options.css build/discord/addon
+	cp addon/options.html build/discord/addon
+	cp addon/options.js build/discord/addon
+	cp addon/pref-setup.js build/discord/addon
+	
+	asar pack build/discord/addon/ build/discord/bpm.asar
+	rm -rf build/discord/addon
+
+build/discord/styles: $(GENERATED_CSS)
+	cp build/emote-classes.css $(BPM_CSS_REPO)
+	cp build/gif-animotes.css $(BPM_CSS_REPO)
+	
+	cp addon/bootstrap.css $(BPM_CSS_REPO)
+	cp addon/bpmotes.css $(BPM_CSS_REPO)
+	cp addon/combiners-nsfw.css $(BPM_CSS_REPO)
+	cp addon/extracss-pure.css $(BPM_CSS_REPO)
+	cp addon/extracss-webkit.css $(BPM_CSS_REPO)
+	
+	cd $(BPM_CSS_REPO) && git add * && git commit --allow-empty -m "Styles update" && git push
+
+build/discord: build/discord/installer build/discord/bpm.asar build/discord/integration.asar build/discord/styles
+    
