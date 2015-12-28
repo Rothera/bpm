@@ -155,59 +155,6 @@ Store.prototype = {
     },
 
     /*
-     * Looks up a builtin emote's information. Returns an object with a couple
-     * of properties, or null if the emote doesn't exist.
-     */
-    lookup_core_emote: function(bpm_data, name, want_tags) {
-        // Refer to bpgen.py:encode() for the details of this encoding
-        var data = bpm_data.emote_map[name];
-        if(!data) {
-            return null;
-        }
-
-        var parts = data.split(",");
-        var flag_data = parts[0];
-        var tag_data = parts[1];
-
-        var flags = parseInt(flag_data.slice(0, 1), 16);     // Hexadecimal
-        var source_id = parseInt(flag_data.slice(1, 3), 16); // Hexadecimal
-        var size = parseInt(flag_data.slice(3, 7), 16);      // Hexadecimal
-        var is_nsfw = (flags & _FLAG_NSFW);
-        var is_redirect = (flags & _FLAG_REDIRECT);
-
-        var tags = null, base = null;
-        if(want_tags) {
-            var start, str;
-
-            tags = [];
-            start = 0;
-            while((str = tag_data.slice(start, start+2)) !== "") {
-                tags.push(parseInt(str, 16)); // Hexadecimal
-                start += 2;
-            }
-
-            if(is_redirect) {
-                base = parts[2];
-            } else {
-                base = name;
-            }
-        }
-
-        return {
-            name: name,
-            is_nsfw: Boolean(is_nsfw),
-            source_id: source_id,
-            source_name: bpm_data.sr_id2name[source_id],
-            max_size: size,
-
-            tags: tags,
-
-            css_class: "bpmote-" + sanitize_emote(name.slice(1)),
-            base: base
-        };
-    },
-
-    /*
      * Looks up a custom emote's information. The returned object is rather
      * sparse, but roughly compatible with core emote's properties.
      */
@@ -265,10 +212,6 @@ Store.prototype = {
         return map;
     }
 };
-
-// Keep in sync with bpgen.
-var _FLAG_NSFW = 1;
-var _FLAG_REDIRECT = 1 << 1;
 
 /*
  * Escapes an emote name (or similar) to match the CSS classes.

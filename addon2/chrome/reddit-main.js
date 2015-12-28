@@ -48,15 +48,23 @@ var browser = {
     },
 
     fetch_custom_css: function() {
-        console.log(lp, "STUB: browser.fetch_custom_css");
+        console.log(lp, "[BROWSER]", "STUB: browser.fetch_custom_css");
         return Promise.resolve("/*stub*/");
     },
 
-    fetch_emotes: function(emote_names) {
-        // emote_names: {"/emotename": arbitrary data}
-        return new Pronise(function(resolve, reject) {
-            // TODO: Fetch all this stuff from backend. First need to be able
-            // to receive messages on the backend...
+    fetch_emotes: function(required_emotes) {
+        // required_emotes: {"/emotename": arbitrary data}
+        console.log(lp, "[BROWSER]", "Requesting emotes", required_emotes);
+
+        // TODO: Local caching + expiry
+
+        return new Promise(function(resolve, reject) {
+            var msg = {request: "emotes", emotes: required_emotes};
+
+            chrome.runtime.sendMessage(msg, function(response) {
+                console.log(lp, "[BROWSER]", "Received emote response", response);
+                resolve(response);
+            });
         });
     }
 };

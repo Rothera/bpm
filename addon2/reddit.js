@@ -108,32 +108,35 @@ function reddit_main() {
     browser.prefs().then(function(prefs) {
         console.log(lp, "[STARTUP]", "Got preferences");
 
-        var blacklisted = !!prefs.blacklisted_subreddits[current_subreddit];
-        var expand_emotes = !blacklisted;
-
-        if(blacklisted) {
-            console.log(lp, "[STARTUP]", "Blacklisted subreddit. Disabling emote expansion");
-        }
-
         // Initial conversion pass: convert all emotes currently on the page
         var posts = slice(document.getElementsByClassName("md"));
         console.log(lp, "[REDDIT]", "Processing", posts.length, "initial posts");
 
-        // Find all interesting-looking links
-        var pending_emotes = {}; // {"/emotename" -> [a, ...], ...}
-        var count = 0;
-        for(var i = 0; i < posts.length; i++) {
-            count += analyze_post(posts[i], pending_emotes);
+        var blacklisted = !!prefs.blacklisted_subreddits[current_subreddit];
+
+        if(blacklisted) {
+            console.log(lp, "[STARTUP]", "Blacklisted subreddit. Disabling emote expansion");
+            for(var i = 0; i < posts.length; i++) {
+                process_post(prefs, posts[i], false, null);
+            }
+        } else {
+            // Find all interesting-looking links
+            var required_emotes = {}; // {"/emotename" -> 1, ...}
+            for(var i = 0; i < posts.length; i++) {
+                analyze_post(posts[i], required_emotes);
+            }
+
+            console.log(lp, "[REDDIT]", "Found", count, "links");
+
+            browser.fetch_emotes(required_emotes).then(function(emotes) {
+                // emotes: {"/emotename" -> data}
+                console.log(lp, "[REDDIT]", "Received emote data");
+
+                for(var i = 0; i < posts.length; i++) {
+                    process_post(prefs, posts[i], true, emotes);
+                }
+            });
         }
-
-        console.log(lp, "[REDDIT]", "Found", count, "links");
-
-        browser.fetch_emotes(pending_emotes).then(function(emotes) {
-            // emotes: {"/emotename" -> data}
-
-            // TODO: Convert these emotes. pending_emotes maps names to lists
-            // of <a> tags we have to work on, and emotes contains the data
-        });
 
         // TODO: DOM observation. Note race condition
 
@@ -150,55 +153,68 @@ function find_sidebar() {
     // Should only be one of these, too
     var md = titlebox.getElementsByClassName("md")[0];
 
-    sidebar = md;
+    sidebar = md; // Global
 }
 
 function is_sidebar(md) {
     return md === sidebar;
 }
 
-function analyze_post(md, pending_emotes) {
+function extract_emote_name(a) {
+    // Not the same as a.href, which has been mangled
+    var href = a.getAttribute("href");
+
+    // See if this looks like an emote, and filter out some common false
+    // positives
+    if(href && href[0] === "/" && !href.startsWith("/r/") && !href.startsWith("/u/")) {
+        var parts = href.split("-");
+        return parts;
+    } else {
+        return null;
+    }
+}
+
+function analyze_post(md, required_emotes) {
     var links = slice(md.getElementsByTagName("a"));
-    var count = 0;
 
     for(var i = 0; i < links.length; i++) {
         var a = links[i];
-
-        // Not the same as a.href, which has been mangled
-        var href = a.getAttribute("href");
-
-        // See if this looks like an emote, and filter out some common false
-        // positives
-        if(href && href[0] === "/" && !href.startsWith("/r/") && !href.startsWith("/u/")) {
-            var parts = href.split("-");
+        var parts = extract_emote_name(a);
+        if(parts) {
             var name = parts[0];
-
-            if(!pending_emotes[name]) {
-                pending_emotes[name] = [];
-            }
-            pending_emotes[name].push(a);
-
-            count++;
+            required_emotes[name] = 1;
         }
     }
-
-    return count;
 }
 
-function process_post(prefs, md, expand_emotes) {
-    var expand_unknown = !is_sidebar(md);
-    var expand_alt_text = prefs.show_alt_text && !is_sidebar(md);
+function process_post(prefs, md, expand_emotes, emotes) {
+    var expand_alt_text = !is_sidebar(md) && prefs.show_alt_text;
+    var expand_unknown = !is_sidebar(md) && prefs.show_unknown_emotes;
 
     var links = slice(md.getElementsByTagName("a"));
+
     for(var i = 0; i < links.length; i++) {
         var a = links[i];
 
         if(expand_emotes) {
-            // TODO
+            var parts = extract_emote_name(a);
+            if(parts) {
+                var name = parts[0];
+                var info = emotes[name];
+                if(info) {
+                    process_emote(prefs, a, parts, info);
+                } else if(show_unknown_emotes && is_broken_emote(a, name)) {
+                    process_broken_emote(prefs, a, name);
+                }
+            }
         }
 
         if(expand_alt_text) {
             // TODO
         }
     }
+}
+
+function process_emote(prefs, a, parts, info) {
+    // ...
 }

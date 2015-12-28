@@ -23,6 +23,14 @@
 
 function main() {
     console.log("Starting up");
+
+    chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+        console.log("Received message:", message);
+        if(message.request === "emotes") {
+            sendResponse(lookup_emotes(message.emotes));
+        }
+        sendResponse("go away");
+    });
 }
 
 if(localStorage["prefs"]) {

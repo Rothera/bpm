@@ -34,7 +34,7 @@ VERSION = 201.0.0
 
 EMOTE_DATA = emotes/*.json tags/*.json data/rules.yaml data/tags.yaml
 COMPILED_ADDON_DATA = build2/bpm-resources.js build2/emote-classes.css build2/gif-animotes.css
-COMMON_ADDON_FILES = addon2/*
+COMMON_ADDON_FILES = addon2/* addon2/common/*
 
 default: build2/chrome.zip
 
