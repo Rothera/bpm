@@ -1,8 +1,8 @@
 # BetterPonymotes
 
-BetterPonymotes is an emote addon to serve the pony subreddits. It supports
-three browsers natively, and has a userscript variant for Safari and potentially
-others.
+BetterPonymotes is an emote addon to serve the pony subreddits. It currently
+supports Chrome (including other browsers that support Chrome extensions, like
+Opera, Chromium, and Vivaldi), Firefox, Firefox Mobile, and Safari.
 
 Its data is maintained as a set of files by the addon maintainer, and compiled
 into compact representations for use by the addon at build time in the form of
