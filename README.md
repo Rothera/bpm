@@ -48,23 +48,8 @@ You'll need some tools:
     dlanimotes.py           Script to maintain animotes/ and build/gif-animotes.css
 
     # Scripts and code
-    bin/                    Support scripts and tools
-        encodeicon.py       Random little tool to encode a PNG file to a data: URI.
-        filter.py           Makes variable substitions in various source files.
-        gen_update_files.py Regenerates the Opera and Firefox update manifests.
-                            Part of this is invoking Uhura to generate the
-                            signature in the update file.
-        inject_xpi_key.py   Part of signing the XPI. Pokes the public key part of
-                            the PEM file into the XPI, which Firefox uses to
-                            verify updates.
-        make_userscript.py  Generates the userscript file, by editing the
-                            @require headers at the top of the script. They
-                            can't point to rainbow.mlas1.us directly because
-                            Opera also uses them, and expects relative paths.
-        rewrite-chaos.py    Some random script. I forget.
-        shell.py            All-around emote update tool. Handles downloading
+    shell.py                All-around emote update tool. Handles downloading
                             new stylesheets.
-        sync.sh             Updates www/ from build/ and uploads it.
     bplib/                  Python support library
         condense.py         CSS compressor
         css.py              CSS parsing
@@ -87,15 +72,10 @@ You'll need some tools:
                             rebuilds all data files and addons.
     web/                    Most actual site files.
         index.html          Main page.
-        changelog.html      Changelog.
-        chrome-update.html  Useless page from when the Chrome addon relocated.
-        chrome-updates.xml  Also useless.
-    www/                    A complete copy of the site. Synced to rainbow.mlas1.us.
+    www/                    A complete copy of the site. Synced to ponymotes.net
         betterponymotes.update.rdf
                             Firefox update manifest file.
-        opera-updates.xml   Opera update manifest file.
-
-        *.xpi, *.oex        Hosted addon files.
+        *.xpi               Hosted addon files.
 
     # Addon directories
     addon/                  All common code and static data files (CSS).
@@ -105,24 +85,18 @@ You'll need some tools:
         bpmotes.css         Misc CSS used by the addon, and some things that can't
                             be put anywhere else.
         combiners-nsfw.css  NSFW components of r/mylittlecombiners that aren't emotes.
-        extracss-moz.css        <
-        extracss-o.css          < Chaos script. Most fancy emote flags are here.
-        extracss-pure.css       < This CSS is not compatible between browsers
-        extracss-pure-opera.css < and so comes in a few different forms.
-        extracss-webkit.css     <
+        extracss-pure.css   Chaos script. Most fancy emote flags are here.
+        extracss-webkit.css This CSS is specific to WebKit/Blink and not
+                            compatible between browsers.
         options.html        Options page.
         options.js          Options page code.
         options.css         Options page CSS.
         bootstrap.css       Bootstrap. Used on the options page.
-        jquery-1.8.2.js     JQuery, for the options page.
         cr-background.html  Chrome background page. Holds prefs and things for the addon.
         cr-background.js    Chrome background code.
         cr-manifest.json    Chrome addon manifest.
         fx-main.js          Firefox backend script.
         fx-package.json     Firefox addon manifest.
-        o-background.js     Opera backend script.
-        o-config.xml        Opera addon manifest.
-        o-index.html        Opera backend page.
 
     # Data files
     data/                   Misc data files you need to maintain.
