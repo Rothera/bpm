@@ -16,7 +16,7 @@ First off, there are some files and directories that aren't in the git repo but
 need to exist.
 
     animotes/
-    ../secret/betterponymotes.pem
+    betterponymotes.pem
 
 The PEM file is a private, unencrypted RSA key. It looks like this:
 
@@ -24,10 +24,9 @@ The PEM file is a private, unencrypted RSA key. It looks like this:
     [lots of base64 stuff]
     -----END PRIVATE KEY-----
 
-The Makefile expects it to be available from `../secret` (relative to the
-project directory), but you can edit it if you like. The only thing that matters
-is that you **NEVER** expose it and **NEVER** lose it. Update security depends
-on it.
+The Makefile expects it to be available in the root of the project directory,
+but you can edit it if you like. The only thing that matters is that you
+**NEVER** expose it and **NEVER** lose it. Update security depends on it.
 
 You'll need some tools:
 
