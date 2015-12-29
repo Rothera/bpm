@@ -130,22 +130,17 @@ runs on its own, and content scripts that run in the pages. The former must
 obviously be written to the specific browser, but the latter is largely
 independent except where it has to communicate with the backend.
 
-Firefox's background script is `addon/firefox/lib/main.js`. Chrome has
-`addon/chrome/background.html` and Opera has `addon/opera/index.html`. As these
+Firefox's background script is `addon/fx-main.js`. Chrome has
+`addon/cr-background.html`, and Safari has `addon/sf-background.html`. As these
 scripts share a large amount of functionality, most of that is now held in
-`data/pref-setup.js`.
+`addon/pref-setup.js`.
 
 The backend is chiefly responsible for storing and managing preferences,
 applying the necessary files to pages (JS and CSS), and maintaining the custom
 CSS cache. Custom CSS is easily the most complex thing it does.
 
-About 250 lines of `betterponymotes.js` is dedicated to abstracting over the
-differences between browser API's and communication, under the `bpm_browser`
-object.
-
-UserScripts are significantly different as they are essentially a lone content
-script. The options page and all associated data files (CSS and JS) must be
-hosted externally.
+`bpm-browser.js` is dedicated to abstracting over the differences between
+browser API's and communication.
 
 
 ## Development Process
