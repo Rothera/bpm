@@ -146,15 +146,15 @@ browser API's and communication.
 ## Development Process
 
 Most of the addon proper in the content script split up between the
-`addon/common/bpm-*.js` files. Most new features can be implemented here without
+`addon/bpm-*.js` files. Most new features can be implemented here without
 touching anything else.
 
-Changing `BPM_DEV_MODE` at the top enables a bunch of extra logging, which may
-help if you're getting crashes or strange behavior. Remember to disable it
+Changing `DEV_MODE` in `bpm-header.js` enables a bunch of extra logging, which
+may help if you're getting crashes or strange behavior. Remember to disable it
 before release.
 
-Changes to preferences require editing `addon/common/pref-setup.js` and the
-options page.
+Changes to preferences require editing `addon/pref-setup.js` and the options
+page.
 
 Changes involving the data backend are too complicated to go over here.
 
