@@ -168,7 +168,7 @@ necessary when maintaining the emote cache. The source CSS, however, has no
 image URLs. Since those can change freely, the only way to reliably know when
 emotes change is to reparse the minified CSS.
 
-The `bin/shell.py` tool is responsible for updating stylesheet files. Its chief
+The `shell.py` tool is responsible for updating stylesheet files. Its chief
 commands are:
 
 - `update`: redownloads all stylesheets
