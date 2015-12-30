@@ -257,10 +257,12 @@ When everything is updated, running `make` is sufficient to rebuild all packages
 
 ## Release Process
 
-In a nutshell:
+To release BPM:
 
-    make sync
-
-Rebuild all packages and upload the XPI, OEX, animotes, userscript files, etc.
-to the site. The `chrome.zip` file must be uploaded to the Chrome webstore
-manually.
+1. Run `make` to rebuild all packages
+2. Run `make www` to rebuild the website
+3. Run `make sync` to sync changes to the website (including the updated version
+   of the Firefox extension)
+4. Upload `build/chrome.zip` to the Chrome webstore (manual step)
+5. Message [/u/TwilightShadow1](https://www.reddit.com/u/TwilightShadow1) on Reddit
+  and tell him to update the Safari version of the plugin.
