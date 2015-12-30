@@ -231,9 +231,7 @@ Assuming all animotes are tagged with +animote, run `./dlanimotes.py` to
 download and convert all of them. This process requires `apng2gif` to be on
 `$PATH`, and it will spit out GIFs to `animotes/`, which must be uploaded to the
 host site. It also generates `build/gif-animotes.css`, which is the override
-sheet used by Chrome. make doesn't currently call `dlanimotes.py`, despite
-depending on this file to be present, so make sure to run it before building
-packages.
+sheet used by Chrome.
 
 
 ## Updates and Version Numbers
