@@ -10,6 +10,7 @@ module.exports = BPM;
 
 var path = require('path');
 var fs = require('fs');
+var settings = require('./bpm-settings');
 
 var self;
 var bpmDir = getDataDir();
@@ -32,33 +33,25 @@ function BPM(mainWindow) {
 
 BPM.prototype.init = function() {
     self.mainWindow.webContents.openDevTools();
-    //addCss(self.mainWindow);
+    settings.addSettingsListener(self.mainWindow);
     addScripts(self.mainWindow);
 };
 
 function readContent(name) {
     return fs.readFileSync(path.join(bpmDir, name), 'utf-8');
 }
-/*
-function addCss(mainWindow) {
-    var webkitExtras = readContent('extracss-webkit.css');
-    var emoteClasses = readContent('emote-classes.css');
-    var bpmotes = readContent('bpmotes.css');
-    
-    addCss(mainWindow, webkitExtras);
-    addCss(mainWindow, emoteClasses);
-    addCss(mainWindow, bpmotes);
-}
-*/
+
 function addScripts(mainWindow) {
     var resourceScript = readContent('bpm-resources.js');
     var prefsScript = readContent('pref-setup.js'); 
     var backgroundScript = readContent('background.js');
     var bpmScript = readContent('betterponymotes.js');
+    var settingsScript = readContent('settings.js');
 
     mainWindow.webContents.executeJavaScript(resourceScript);
     mainWindow.webContents.executeJavaScript(prefsScript);
     mainWindow.webContents.executeJavaScript(backgroundScript);
     mainWindow.webContents.executeJavaScript(bpmScript);
+    mainWindow.webContents.executeJavaScript(settingsScript);
 }
 

@@ -50,7 +50,7 @@ DISCORD_INSTALLER := \
     discord/installer/constants.js discord/installer/index.js discord/installer/package.json
 
 DISCORD_INTEGRATION := \
-	discord/integration/package.json discord/integration/bpm.js
+	discord/integration/package.json discord/integration/bpm.js discord/integration/bpm-settings.js
 
 GENERATED_CSS := \
     build/gif-animotes.css build/emote-classes.css addon/bpmotes.css addon/combiners-nsfw.css \
@@ -195,11 +195,12 @@ build/discord/integration.asar: $(DISCORD_INTEGRATION)
 	mkdir -p build/discord
 	asar pack discord/integration/ build/discord/integration.asar
 
-build/discord/bpm.asar: $(ADDON_DATA) addon/dc-background.js
+build/discord/bpm.asar: $(ADDON_DATA) addon/dc-background.js addon/dc-settings.js
 	mkdir -p build/discord
 	mkdir -p build/discord/addon
 	
 	cp addon/dc-background.js build/discord/addon/background.js
+	cp addon/dc-settings.js build/discord/addon/settings.js
 	
 	cp build/betterponymotes.js build/discord/addon
 	cp build/bpm-resources.js build/discord/addon
@@ -232,4 +233,5 @@ build/discord/styles: $(GENERATED_CSS)
 	cd $(BPM_CSS_REPO) && git add * && git commit --allow-empty -m "Styles update" && git push
 
 build/discord: build/discord/installer build/discord/bpm.asar build/discord/integration.asar build/discord/styles
+#build/discord: build/discord/installer build/discord/bpm.asar build/discord/integration.asar
     
