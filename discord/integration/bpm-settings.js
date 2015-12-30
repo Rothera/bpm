@@ -5,34 +5,38 @@
  * Injects onclick handlers to settings button, panel, adds
  * injected settings pane to settings
  **/
-module.exports = {
-    addSettingsListener: addSettingsListener
-};
+var path = require('path');
+var fs = require('fs');
 
-var insertedItem = 
-'<div class="scroller settings-wrapper settings-panel">' + 
-    '<div>INJECTION SUCCESS</div>' + 
-'</div>';
+module.exports = {
+    addSettings: addSettings
+};
 
 //Removing the old panel and replacing it with our own causes
 //react to do some funny things, so we simply inject our own
 //hidden panel and let the addon code display it for us.
-var injectSettingsPanelCode = 
-"window.addEventListener('bpm_backend_message', function(event) {" + 
-"    switch(event.data.method) { " +
-"       case 'insert_settings': " +
-"           var panel = event.data.injectInto;" +
-"           var toInject = document.createElement('div');" +
-"           toInject.className = 'scroller-wrap';" +
-"           toInject.id = 'bpm_settings_panel';" +
-"           toInject.style.display = 'none';" +
-"           toInject.innerHTML = '" + insertedItem +"';" +
-"           panel.appendChild(toInject);" +
-"           break;" +
-"    }" +
-"}, false);";
+function getInjectedPanelCode(panelHtml) {
+    var injectSettingsPanelCode = 
+    "window.addEventListener('bpm_backend_message', function(event) {" + 
+    "    switch(event.data.method) { " +
+    "       case 'insert_settings': " +
+    "           var panel = event.data.injectInto;" +
+    "           var toInject = document.createElement('div');" +
+    "           toInject.className = 'scroller-wrap';" +
+    "           toInject.id = 'bpm_settings_panel';" +
+    "           toInject.style.display = 'none';" +
+    "           toInject.innerHTML = '" + panelHtml + "';" +
+    "           panel.appendChild(toInject);" +
+    "           break;" +
+    "    }" +
+    "}, false);";
+    return injectSettingsPanelCode;
+}
 
-function addSettingsListener(mainWindow) {
+function addSettings(mainWindow, contentLocation) {
+    var panelHtml = fs.readFileSync(path.join(contentLocation,  'settings.html'), 'utf8');
+    panelHtml = panelHtml.replace(/\n/g, '');
     var webContents = mainWindow.webContents;
-    webContents.executeJavaScript(injectSettingsPanelCode);
+    var panelCode = getInjectedPanelCode(panelHtml);
+    webContents.executeJavaScript(panelCode);
 }

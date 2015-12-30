@@ -33,7 +33,7 @@ function BPM(mainWindow) {
 
 BPM.prototype.init = function() {
     self.mainWindow.webContents.openDevTools();
-    settings.addSettingsListener(self.mainWindow);
+    settings.addSettings(self.mainWindow, getDataDir());
     addScripts(self.mainWindow);
 };
 

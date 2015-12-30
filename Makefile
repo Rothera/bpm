@@ -195,12 +195,13 @@ build/discord/integration.asar: $(DISCORD_INTEGRATION)
 	mkdir -p build/discord
 	asar pack discord/integration/ build/discord/integration.asar
 
-build/discord/bpm.asar: $(ADDON_DATA) addon/dc-background.js addon/dc-settings.js
+build/discord/bpm.asar: $(ADDON_DATA) addon/dc-background.js addon/dc-settings.js addon/dc-settings.html
 	mkdir -p build/discord
 	mkdir -p build/discord/addon
 	
 	cp addon/dc-background.js build/discord/addon/background.js
 	cp addon/dc-settings.js build/discord/addon/settings.js
+	cp addon/dc-settings.html build/discord/addon/settings.html
 	
 	cp build/betterponymotes.js build/discord/addon
 	cp build/bpm-resources.js build/discord/addon
