@@ -236,8 +236,8 @@ sheet used by Chrome.
 
 ## Updates and Version Numbers
 
-After updating the CSS and tags, run `bin/shell.py commit` to record it all,
-and either run `bpgen.py` manually or `make` to regenerate the emote data files.
+After updating the CSS and tags, run `shell.py commit` to record it all, and
+either run `bpgen.py` manually or `make` to regenerate the emote data files.
 This process is heavily controlled by `data/rules.yaml`, which lists:
 
 - The subreddits currently in the addon (note that `shell.py` update doesn't
@@ -249,18 +249,10 @@ This process is heavily controlled by `data/rules.yaml`, which lists:
   individual emote.
 - Explicit matchups for +v emotes that the code can't autodetect.
 
-The version number is encoded in `config.json`, which is used by the Makefile to
-regenerate every file that embeds it.
+The version number is at the top of the Makefile, and is used by `make` to
+automatically update the version numbers every browser addon that BPM supports.
 
 When everything is updated, running `make` is sufficient to rebuild all packages.
-
-A note on Chrome: though the .zip to be uploaded to the webstore must contain a
-copy of the private `key.pem` file, Chrome will not permit you to load the
-extension directory in development mode. It also refuses to load it if it
-contains symlinks. To get around this, `build/chrome/` is updated with make to
-be a copy of `chrome/` sans links and key file. `build/chrome.zip` is what gets
-uploaded. It's completely uncompressed due to prior difficulties with the
-webstore.
 
 
 ## Release Process
