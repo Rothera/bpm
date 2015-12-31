@@ -47,7 +47,20 @@ function getDiscordPath() {
             //Consider this carefully, we may want to fail on a new version
             var folder = _(contents)
                 .filter(file => file.indexOf('app-') > -1)
-                .first();
+                //Sort by version number, multiple app version folders can exist
+                .map(dir => {
+                    var version = dir.split('-')[1];
+                    var splitVersion = version.split('.');
+                    return {
+                        name: dir,
+                        major: splitVersion[0],
+                        minor: splitVersion[1],
+                        bugfix: splitVersion[2]
+                    };
+                })
+                .sortBy(["major", "minor", "bugfix"])
+                .reverse()    
+                .first().name;
             return path.join(discordFolder, folder, 'resources'); 
         case 'darwin':
             return '/Applications/Discord.app/Contents/Resources';
@@ -68,16 +81,20 @@ function getBpmDataPath() {
 }
 
 function extractApp() {
-    console.log('Backing up old app.asar...');
-    var backupPath = packPath + (new Date()).valueOf();
-    fs.copySync(packPath, backupPath);
-    console.log('Old app.asar backed up to ' + backupPath);
-    console.log('Extracting app.asar from ' + packPath + ' ...');
+    var backupPath = packPath + '.clean';
+    if(fs.existsSync(backupPath)) {
+        console.log('Pre-existing app.asar.clean found, using that...');
+    } else {
+        console.log('Backing up old app.asar...');
+        fs.copySync(packPath, backupPath);
+        console.log('Old app.asar backed up to ' + backupPath);
+    }
+    console.log('Extracting app.asar from ' + backupPath + ' ...');
     if(fs.existsSync(extractPath)) {
         fs.removeSync(extractPath);
         console.log('Removed pre-existing app extraction');
     }
-    asar.extractAll(packPath, extractPath);
+    asar.extractAll(backupPath, extractPath);
     console.log('App extraction complete!');
 }
 
@@ -96,10 +113,7 @@ function packApp(path) {
 }
 
 function addPackageDependency(apppath) {
-    console.log('Backing up old package.json...'); 
     var pkgpath = path.join(apppath, 'package.json');
-    backupFile(pkgpath);
-
     console.log('Injecting package dependency...');
     var packageData = fs.readJsonSync(pkgpath);
     packageData.dependencies['dc-bpm'] = constants.bpmVersion;
