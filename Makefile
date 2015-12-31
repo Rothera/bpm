@@ -47,7 +47,7 @@ ADDON_DATA = \
     addon/bootstrap.css addon/options.html addon/options.css addon/options.js \
     addon/pref-setup.js
 
-default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension build/export.json.bz2
+default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension.zip build/export.json.bz2
 
 clean:
 	rm -fr build
@@ -141,7 +141,7 @@ build/chrome.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js
 	# Uncompressed due to prior difficulties with the webstore
 	cd build/chrome && zip -0 ../chrome.zip *
 
-build/BPM.safariextension: $(ADDON_DATA) addon/sf-Settings.plist addon/sf-background.html addon/sf-background.js
+build/BPM.safariextension.zip: $(ADDON_DATA) addon/sf-Settings.plist addon/sf-background.html addon/sf-background.js
 	mkdir -p build/BPM.safariextension
 
 	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/sf-Info.plist > build/BPM.safariextension/Info.plist
