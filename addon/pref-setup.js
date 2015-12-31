@@ -32,7 +32,7 @@ var default_prefs = {
     "hideDisabledEmotes": false,
     "stealthMode": false,
     "showAltText": true,
-    "enableGlobalEmotes": true,
+    "enableGlobalEmotes": false,
     "enableGlobalSearch": false,
     "clickToggleSFW": true,
     "searchLimit": 200,
@@ -47,6 +47,14 @@ var default_prefs = {
     "lastSearchQuery": "sr:mylittlepony",
     "globalIconPos": [16, 16]
     };
+
+//We are always global in discord, so these prefs actually
+//function as enable/disable functionality.  Platform is not
+//defined here so we duplicate our 'is this discord' logic.
+if(window.process) {
+    default_prefs.enableGlobalEmotes = true;
+    default_prefs.enableGlobalSearch = true;
+}
 
 function initialize_prefs(prefs, sr_name2id) {
     for(var key in default_prefs) {
