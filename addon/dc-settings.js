@@ -131,9 +131,7 @@ function BPM_initOptions(optionsPanel) {
 
 
 function BPM_setOption(option, value) {
-    console.log('clicked option button for: ' + option);
     var bpmEvent = new CustomEvent('bpm_message')
     bpmEvent.data = { method: 'set_pref', pref: option, value: value };
-    console.log('sending event: ' + JSON.stringify(bpmEvent.data));
     window.dispatchEvent(bpmEvent);
 }

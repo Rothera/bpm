@@ -5,6 +5,9 @@
  * Many much thanks to BetterDiscord, from which a lot of ideas
  * are cribbed.
  * https://github.com/Jiiks/BetterDiscordApp
+ *
+ * Injects our scripts and styles then triggers any submodule code
+ * (e.g. settings)
  **/
 module.exports = BPM;
 

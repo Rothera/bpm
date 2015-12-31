@@ -2,8 +2,7 @@
  * Settings integration for Typhos' BetterPonymotes for Discord
  * (c) 2015 ByzantineFailure
  *
- * Injects onclick handlers to settings button, panel, adds
- * injected settings pane to settings
+ * Sets up our injected HTML and triggers its init.
  **/
 var path = require('path');
 var fs = require('fs');
@@ -15,6 +14,7 @@ module.exports = {
 //Removing the old panel and replacing it with our own causes
 //react to do some funny things, so we simply inject our own
 //hidden panel and let the addon code display it for us.
+//BPM_initOptions is found in addon/dc-settings.js
 function getInjectedPanelCode(panelHtml) {
     var injectSettingsPanelCode = 
     "window.addEventListener('bpm_backend_message', function(event) {\n" + 
