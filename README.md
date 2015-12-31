@@ -28,7 +28,21 @@ The Makefile expects it to be available in the root of the project directory,
 but you can edit it if you like. The only thing that matters is that you
 **NEVER** expose it and **NEVER** lose it. Update security depends on it.
 
-You'll need some tools:
+BPM assumes a POSIX environment, with standard utilities like `cp`, `rm`,
+`make`, `sed`, etc. available on your PATH. This means that developing on Windows
+is not currently supported. (But feel free to try to get the build working on
+Windows if you want.)
+
+You'll also need the following tools:
+
+- Python 3. Most of the scripts used for building and maintaining BPM are
+  written in python. You'll need python installed and on your PATH with the name
+  `python3` in order to build BPM. (Many Linux distributions already have this
+  by default.)
+
+- Python 2. The script BPM uses to tag emotes still requires Python 2, so you'll
+  need Python 2 installed and on your PATH with the name `python2` in order to
+  tag emotes in BPM. (Many Linux distributions already have this by default.)
 
 - The Firefox Addon SDK. It comes in a zip file with a `bin/activate` shell
   script. Source it to add its `bin/` to your `$PATH`, because you need the
