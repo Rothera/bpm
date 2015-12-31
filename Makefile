@@ -56,10 +56,7 @@ GENERATED_CSS := \
     build/gif-animotes.css build/emote-classes.css addon/bpmotes.css addon/combiners-nsfw.css \
     addon/bootstrap.css addon/options.css
 
-BPM_CSS_REPO ?= ../bpm-built-css
-
 default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension build/export.json.bz2 build/discord
-
 
 clean:
 	rm -fr build
