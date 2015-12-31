@@ -35,7 +35,7 @@ function BPM(mainWindow) {
 }
 
 BPM.prototype.init = function() {
-    //self.mainWindow.webContents.openDevTools();
+    self.mainWindow.webContents.openDevTools();
     settings.addSettings(self.mainWindow, getDataDir());
     addStyleListener(self.mainWindow);
     addScripts(self.mainWindow);

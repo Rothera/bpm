@@ -46,6 +46,11 @@ ADDON_DATA = \
     addon/bootstrap.css addon/options.html addon/options.css addon/options.js \
     addon/pref-setup.js
 
+DISCORD_ADDITONAL_DATA := \
+	addon/discord/background.js addon/discord/settings.js addon/discord/settings.css \
+	addon/discord/emote-settings.html addon/discord/general-settings.html addon/discord/search-settings.html \
+	addon/discord/settings-wrapper.html addon/discord/subreddit-settings.html
+
 DISCORD_INSTALLER := \
     discord/installer/constants.js discord/installer/index.js discord/installer/package.json
 
@@ -192,13 +197,18 @@ build/discord/integration.asar: $(DISCORD_INTEGRATION)
 	mkdir -p build/discord
 	asar pack discord/integration/ build/discord/integration.asar
 
-build/discord/bpm.asar: $(ADDON_DATA) addon/dc-background.js addon/dc-settings.js addon/dc-settings.html
+build/discord/bpm.asar: $(ADDON_DATA) $(DISCORD_ADDITONAL_DATA)
 	mkdir -p build/discord
 	mkdir -p build/discord/addon
 	
-	cp addon/dc-background.js build/discord/addon/background.js
-	cp addon/dc-settings.js build/discord/addon/settings.js
-	cp addon/dc-settings.html build/discord/addon/settings.html
+	cp addon/discord/background.js build/discord/addon/background.js
+	cp addon/discord/settings.js build/discord/addon/settings.js
+	cp addon/discord/settings-wrapper.html build/discord/addon/settings-wrapper.html
+	cp addon/discord/general-settings.html build/discord/addon/general-settings.html
+	cp addon/discord/emote-settings.html build/discord/addon/emote-settings.html
+	cp addon/discord/subreddit-settings.html build/discord/addon/subreddit-settings.html
+	cp addon/discord/search-settings.html build/discord/addon/search-settings.html
+	cp addon/discord/settings.css build/discord/addon/settings.css
 	
 	cp build/betterponymotes.js build/discord/addon
 	cp build/bpm-resources.js build/discord/addon
