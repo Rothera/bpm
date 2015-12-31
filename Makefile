@@ -221,18 +221,5 @@ build/discord/bpm.asar: $(ADDON_DATA) addon/dc-background.js addon/dc-settings.j
 	asar pack build/discord/addon/ build/discord/bpm.asar
 	rm -rf build/discord/addon
 
-build/discord/styles: $(GENERATED_CSS)
-	cp build/emote-classes.css $(BPM_CSS_REPO)
-	cp build/gif-animotes.css $(BPM_CSS_REPO)
-	
-	cp addon/bootstrap.css $(BPM_CSS_REPO)
-	cp addon/bpmotes.css $(BPM_CSS_REPO)
-	cp addon/combiners-nsfw.css $(BPM_CSS_REPO)
-	cp addon/extracss-pure.css $(BPM_CSS_REPO)
-	cp addon/extracss-webkit.css $(BPM_CSS_REPO)
-	
-	cd $(BPM_CSS_REPO) && git add * && git commit --allow-empty -m "Styles update" && git push
-
-build/discord: build/discord/installer build/discord/bpm.asar build/discord/integration.asar build/discord/styles
-#build/discord: build/discord/installer build/discord/bpm.asar build/discord/integration.asar
+build/discord: build/discord/installer build/discord/bpm.asar build/discord/integration.asar
     

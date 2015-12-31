@@ -219,21 +219,29 @@ case "discord-ext":
         event.data = data;
         window.dispatchEvent(event);
     };
+
     //TODO:  If this PR goes through, ensure that the BPM maintainers have
     //push access to this Repo
     var _data_url = function(filename) {
         return "https://byzantinefailure.github.io/bpm-built-css/" + filename;
     }
     make_css_link = function(filename, callback) {
-        var tag = stylesheet_link(_data_url(filename));
-        callback(tag);
+        var event = new CustomEvent("bpm_backend_message");
+        event.data = { method: 'insert_css', file: filename };
+        function invokeCallback(tag) {
+           window.removeEventListener("bpm_backend_message", invokeCallback);
+           callback(tag);
+        }
+        window.addEventListener("bpm_backend_message", function() {
+            if(event.data.method != 'css_tag_response') return;
+            invokeCallback(event.data.tag);
+        }, false);
+        window.dispatchEvent(event);
     };
 
     linkify_options = function(element) {
-        // Firefox doesn't permit linking to resource:// links or something
-        // equivalent.
         element.addEventListener("click", catch_errors(function(event) {
-            _send_message("open_options");
+            console.log("Use the BPM tab under the settings menu!");
         }), false);
     };
 
