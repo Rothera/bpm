@@ -98,3 +98,42 @@ function showSettings(display) {
 
 waitForElement('btn btn-settings', injectBpmSettingsPanel);
 })();
+
+function BPM_initOptions(optionsPanel) {
+    var inputs = [].slice.call(optionsPanel.getElementsByTagName('input'));
+    var checkboxes = inputs.filter(function(input) { return input.type == 'checkbox'; });
+    checkboxes.forEach(function(checkbox) {
+        checkbox.nextElementSibling.addEventListener('click', function() {
+            var option = checkbox.getAttribute('data-bpmoption');
+            BPM_setOption(option, !checkbox.checked);
+            checkbox.checked = !checkbox.checked;
+        });
+    });
+
+    var initListener = function(event) {
+        var message = event.data;
+        switch(message.method) {
+            case 'prefs':
+                var prefs = message.prefs; 
+                checkboxes.forEach(function(checkbox) {
+                    checkbox.checked = prefs[checkbox.getAttribute('data-bpmoption')];  
+                });
+                window.removeEventListener('bpm_message', initListener);
+                break;
+        }
+    }
+    window.addEventListener('bpm_message', initListener, false);
+    
+    var getPrefs = new CustomEvent('bpm_message');    
+    getPrefs.data = { method: 'get_prefs' };
+    window.dispatchEvent(getPrefs);
+}
+
+
+function BPM_setOption(option, value) {
+    console.log('clicked option button for: ' + option);
+    var bpmEvent = new CustomEvent('bpm_message')
+    bpmEvent.data = { method: 'set_pref', pref: option, value: value };
+    console.log('sending event: ' + JSON.stringify(bpmEvent.data));
+    window.dispatchEvent(bpmEvent);
+}

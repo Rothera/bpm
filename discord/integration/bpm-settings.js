@@ -17,19 +17,20 @@ module.exports = {
 //hidden panel and let the addon code display it for us.
 function getInjectedPanelCode(panelHtml) {
     var injectSettingsPanelCode = 
-    "window.addEventListener('bpm_backend_message', function(event) {" + 
-    "    switch(event.data.method) { " +
-    "       case 'insert_settings': " +
-    "           var panel = event.data.injectInto;" +
-    "           var toInject = document.createElement('div');" +
-    "           toInject.className = 'scroller-wrap';" +
-    "           toInject.id = 'bpm_settings_panel';" +
-    "           toInject.style.display = 'none';" +
-    "           toInject.innerHTML = '" + panelHtml + "';" +
-    "           panel.appendChild(toInject);" +
-    "           break;" +
-    "    }" +
-    "}, false);";
+    "window.addEventListener('bpm_backend_message', function(event) {\n" + 
+    "    switch(event.data.method) { \n" +
+    "       case 'insert_settings': \n" +
+    "           var panel = event.data.injectInto;\n" +
+    "           var toInject = document.createElement('div');\n" +
+    "           toInject.className = 'scroller-wrap';\n" +
+    "           toInject.id = 'bpm_settings_panel';\n" +
+    "           toInject.style.display = 'none';\n" +
+    "           toInject.innerHTML = '" + panelHtml + "';\n" + 
+    "           BPM_initOptions(toInject);\n" +
+    "           panel.appendChild(toInject);\n" +
+    "           break;\n" +
+    "    }\n" +
+    "}, false);\n";
     return injectSettingsPanelCode;
 }
 
