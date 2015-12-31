@@ -52,7 +52,8 @@ You'll also need the following tools:
   to be on $PATH. I'm not sure exactly where I got it, and installing it is
   a pain, since it depends on some CPAN modules. I forget which.
 
-- `apng2gif`
+- `apng2gif`. A tool to convert APNG files to GIF format. Needs to be on your
+  PATH in order to build BPM.
 
 
 ## Repository Structure
