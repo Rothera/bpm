@@ -44,6 +44,10 @@ You'll also need the following tools:
   need Python 2 installed and on your PATH with the name `python2` in order to
   tag emotes in BPM. (Many Linux distributions already have this by default.)
 
+- `zip`, a command line utility for creating zip-formatted archives. Needs to be
+  on your PATH. If you don't already have it, it can probably be installed using
+  your system's package manager. (E.g. `sudo apt-get install zip` on Ubuntu)
+
 - The Firefox Addon SDK. It comes in a zip file with a `bin/activate` shell
   script. Source it to add its `bin/` to your `$PATH`, because you need the
   `cfx` tool.
