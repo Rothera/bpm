@@ -25,21 +25,11 @@ import zipfile
 
 import lxml.etree
 
-XpiKey = """
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCZnk8XNNC6+pmDqxY/5CzREJXj
-BUY2JzvtcIMBH9gvyq7ZoOdCHIxm2rew7jZ76zdJfKlsUXI2tEdvR5C5PI4NBCw7
-PGm6yzGLSn8/cG7tG9XvpnyxGAX8TfQyV602NhAucqJXYGvCNePalZGU7FJbeJc1
-5JjoU+fv8mFBK/QTAwIDAQAB
-"""
-
 def make_rdf_element(tag, text=None):
     e = lxml.etree.Element("{http://www.mozilla.org/2004/em-rdf#}" + tag)
     if text:
         e.text = text
     return e
-
-def inject_update_key(manifest):
-    manifest[0].append(make_rdf_element("updateKey", XpiKey))
 
 def inject_seamonkey_target(manifest):
     target_app_tag = make_rdf_element("targetApplication")
@@ -66,7 +56,6 @@ def munge_install_rdf(input_filename, output_filename):
             item = "install.rdf"
 
             manifest = lxml.etree.fromstring(data)
-            inject_update_key(manifest)
             inject_seamonkey_target(manifest)
             data = lxml.etree.tostring(manifest, encoding=str, pretty_print=True)
 
