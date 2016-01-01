@@ -4,9 +4,10 @@
  *
  * Init, teardown for emote settings subpanel
  *
- * NOTE: For some reason a keyup listener on an input
- * causes discord to crash when enter is pressed.  No idea
- * why, but the button is our workaround for now (try a form?)
+ * NOTE: If you do not prevent the default handler
+ * from firing on button elements and for enter on input 
+ * elements, Discord's bugswat code will detect it and 
+ * force a hard refresh of its window.
  **/
 var BPM_emoteSettingsSubpanel = {
     init: null,
@@ -31,8 +32,6 @@ function BPM_initEmoteSettings(subpanel) {
         var blacklistInput = document.getElementById('bpm-emote-blacklist-input');
         var whitelistInput = document.getElementById('bpm-emote-whitelist-input');
         
-        //Discord will autosubmit this as a form and crash if we 
-        //don't prevent it from doing so
         blacklistInput.addEventListener('keydown', function(e) {
             if(e.keyCode == 13) {
                 e.preventDefault();
