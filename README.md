@@ -278,10 +278,14 @@ When everything is updated, running `make` is sufficient to rebuild all packages
 
 To release BPM:
 
-1. Run `make` to rebuild all packages
-2. Run `make www` to rebuild the website
-3. Run `make sync` to sync changes to the website (including the updated version
-   of the Firefox extension)
-4. Upload `build/chrome.zip` to the Chrome webstore (manual step)
-5. Message [/u/TwilightShadow1](https://www.reddit.com/u/TwilightShadow1) on Reddit
-  and tell him to update the Safari version of the plugin.
+1. Run `make` to rebuild all packages.
+2. Upload `build/chrome.zip` to the Chrome webstore.
+3. Upload `build/betterponymotes.xpi` to addons.mozilla.org for package signing.
+   Download the output file to `build/`.
+4. Run `make www` to rebuild the website.
+5. Run `make sync` to synchronize with `ponymotes.net`, including the Firefox
+   package.
+6. Make update threads, message
+   [/u/TwilightShadow1](https://www.reddit.com/u/TwilightShadow1),
+   [/u/DinsFire64](https://www.reddit.com/u/DinsFire64) and other interested
+   third parties.
