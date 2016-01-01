@@ -29,8 +29,11 @@ var BPM_generalSettingsSubpanel = {
     }
 
     function BPM_teardownGeneral(optionsPanel) {
-        //TODO:  Teardown
-        console.log('Received teardown general call!');
+        var inputs = htmlCollectionToArray(optionsPanel.getElementsByTagName('input'));
+        var checkboxes = inputs.filter(function(input) { return input.type == 'checkbox'; });
+        checkboxes.forEach(function(checkbox) {
+            checkbox.removeEventListener('click');
+        });
     }
 
     BPM_generalSettingsSubpanel.init = BPM_initGeneral;
