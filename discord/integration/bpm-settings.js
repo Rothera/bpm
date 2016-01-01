@@ -29,10 +29,12 @@ function getInjectedSubpanelCode(contentLocation, filename, message) {
     "       case '" + message + "':\n" +
     "           var panel = event.data.injectInto;\n" +
     "           var toInject = document.createElement('div');\n" +
-    "           toInject.id = 'bpm_settings_subpanel';\n" +
+    "           toInject.id = 'bpm-settings-subpanel';\n" +
     "           toInject.innerHTML = '" + html + "';\n" + 
-    "           BPM_initOptions(toInject);\n" +
     "           panel.appendChild(toInject);\n" +
+    "           var doneEvent = new CustomEvent('bpm_backend_message');\n" +
+    "           doneEvent.data = { method: 'subpanel_inject_complete', subpanel: toInject };\n" +
+    "           window.dispatchEvent(doneEvent);\n" +
     "           break;\n";
     return code;
 }
@@ -51,7 +53,7 @@ function createSettingsInjectionListener(contentLocation) {
     "           var panel = event.data.injectInto;\n" +
     "           var toInject = document.createElement('div');\n" +
     "           toInject.className = 'scroller-wrap';\n" +
-    "           toInject.id = 'bpm_settings_panel';\n" +
+    "           toInject.id = 'bpm-settings-panel';\n" +
     "           toInject.style.display = 'none';\n" +
     "           toInject.innerHTML = '" + settingsWrapperHtml + "';\n" + 
     "           panel.appendChild(toInject);\n" +
@@ -62,6 +64,7 @@ function createSettingsInjectionListener(contentLocation) {
             getInjectedSubpanelCode(contentLocation, 'search-settings.html', 'insert_search_settings') +
     "       case 'insert_css':\n" +
     "       case 'css_tag_response':\n" +
+    "       case 'subpanel_inject_complete':\n" +
     "           break;\n" +
     "       default: \n" +
     "           console.log('Received unrecognized backend message: ' + event.data.method);\n" +
@@ -73,8 +76,10 @@ function createSettingsInjectionListener(contentLocation) {
 
 function addSettings(mainWindow, contentLocation) {
     var webContents = mainWindow.webContents;
+    var settingsScript = fs.readFileSync(path.join(contentLocation, 'settings.js'), 'utf-8');
     var panelCode = createSettingsInjectionListener(contentLocation);
     var styleCode = getInjectSettingsCSSCode(contentLocation);
     webContents.executeJavaScript(styleCode);
     webContents.executeJavaScript(panelCode);
+    webContents.executeJavaScript(settingsScript);
 }

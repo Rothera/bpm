@@ -90,12 +90,10 @@ function addScripts(mainWindow) {
     var prefsScript = readContent('pref-setup.js'); 
     var backgroundScript = readContent('background.js');
     var bpmScript = readContent('betterponymotes.js');
-    var settingsScript = readContent('settings.js');
 
     mainWindow.webContents.executeJavaScript(resourceScript);
     mainWindow.webContents.executeJavaScript(prefsScript);
     mainWindow.webContents.executeJavaScript(backgroundScript);
     mainWindow.webContents.executeJavaScript(bpmScript);
-    mainWindow.webContents.executeJavaScript(settingsScript);
 }
 

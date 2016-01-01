@@ -5,11 +5,22 @@
  * Injects BPM settings panel into Discord
  * Backend inserts HTML so we can maintain
  * that cleanly without hardcoding the HTML here.
+ *
+ * Creates and handles subpanel switching
  **/
-function htmlCollectionToArray(coll) {
-    return [].slice.call(coll);
-}
 (function() {
+var unimplementedSubpanel = { 
+    init: function() { console.log('init unimplemented'); }, 
+    teardown: function() { console.log('teardown unimplemented'); } 
+};
+//Maps subpanel requests to their corresponding init/teardown objects
+var subpanelMap = {
+    insert_general_settings: BPM_generalSettingsSubpanel,
+    insert_emote_settings: BPM_emoteSettingsSubpanel,
+    insert_subreddit_settings: unimplementedSubpanel,
+    insert_search_settings: unimplementedSubpanel
+}
+
 function waitForElement(elementClass, callback) {
     var element = document.getElementsByClassName(elementClass);
     if(element.length == 0) {
@@ -61,29 +72,26 @@ function injectBpmSettingsPanel(settingsButton) {
     });
 }
 
-function cleanBpmSettingsListeners() {
-    console.log('Called clean settings listeners!');
-}
-
 //Leaks memory:  When Done is detached remove this listener
 function addDoneClickListener(doneButton) {
     function onDoneClick() {
-        var settingElement = document.getElementById('bpm_settings_panel');
+        var settingElement = document.getElementById('bpm-settings-panel');
         if(settingElement) {
             settingElement.parent.removeChild(settingElement);
         }
+        cleanSubpanel();
     }
     doneButton.addEventListener('click', onDoneClick);
 }
 
 function sendInjectSettingsPageMessage(injectInto) {
-    if(document.getElementById('bpm_settings_panel')) return;
+    if(document.getElementById('bpm-settings-panel')) return;
      
     var backendEvent = new CustomEvent('bpm_backend_message');
     backendEvent.data = { method: 'insert_settings_wrapper', injectInto: injectInto };
     window.dispatchEvent(backendEvent);
     //TODO: Do this with an event listener
-    waitForElementById('bpm_settings_panel', addSubpanelSelectListeners);
+    waitForElementById('bpm-settings-panel', addSubpanelSelectListeners);
 }
 
 //Initial setup for subpanels and their listeners
@@ -94,10 +102,10 @@ function addSubpanelSelectListeners() {
             var selected = subpanelSelectors.filter(function(li) { return li.className.indexOf('selected') > -1; })[0];
             if(!selected) selected = subpanelSelectors[0];
             
-            selectSubpanel(selected);
+            selectSubpanel(selected, false);
 
             subpanelSelectors.forEach(function(selector) {
-                selector.addEventListener('click', function() { selectSubpanel(selector); }); 
+                selector.addEventListener('click', function() { selectSubpanel(selector, true); }); 
             });
         }
         waitForElementById('bpm-options-tab-list', addListeners);
@@ -107,26 +115,54 @@ function addSubpanelSelectListeners() {
 
 //Clean listeners off of a subpanel
 function cleanSubpanel() {
-    var injectTarget = document.getElementById('bpm-options-inject-target');
-    if(!injectTarget) {
-        console.log('BPM: Called cleanSubpanel without inject target present!');
+    var topTabs = document.getElementById('bpm-options-tab-list');
+    var subpanelSelectors = htmlCollectionToArray(topTabs.getElementsByTagName('div'));
+    var selected = subpanelSelectors.filter(function(element) { return element.className.indexOf('selected') > -1; })[0];
+    if(!selected) {
+        console.log('BPM: called cleanSubpanel but could not find selected subpanel');
         return;
     }
-    console.log('called clean subpanel!');
+    
+    var subpanel = document.getElementById('bpm-settings-subpanel');
+    if(!subpanel) {
+        console.log('BPM: called cleanSubpanel without a subpanel present!');
+            return;
+    }
+    var subpanelFunctions = getSubpanelFunctions(selected);
+    subpanelFunctions.teardown(subpanel);
 }
 
-//Cleans up old subpanel contents, sends message to
-//inject new subpanel contents
-function selectSubpanel(selector) {
+function getSubpanelFunctions(selector) {
+    return subpanelMap[selector.getAttribute('data-bpmSubpanelMessage')];
+}
+
+//Calls old subpanel's teardown, sends message to
+//inject new subpanel contents and sets up response listener
+//for init
+function selectSubpanel(selector, performTeardown) {
     var subpanelSelectors = htmlCollectionToArray(selector.parentElement.getElementsByTagName('div'));
-    cleanSubpanel();
-    focusTabElement(selector);
     var injectTarget = document.getElementById('bpm-options-inject-target');
+    if(performTeardown) {
+        cleanSubpanel();
+    }
+    focusTabElement(selector);
     var injectEvent = new CustomEvent('bpm_backend_message');
     injectEvent.data = { method: selector.getAttribute('data-bpmSubpanelMessage'), injectInto: injectTarget};
     while(injectTarget.lastChild) {
         injectTarget.removeChild(injectTarget.lastChild);
     }
+    var subpanelFunctions = getSubpanelFunctions(selector);
+    function afterSubpanelInject(e) {
+        var message = e.data;
+        switch(message.method) {
+            case 'subpanel_inject_complete':
+                var subpanel = message.subpanel;
+                subpanelFunctions.init(subpanel);
+                window.removeEventListener('bpm_backend_message', afterSubpanelInject);
+                break;
+        }
+    }
+    window.addEventListener('bpm_backend_message', afterSubpanelInject, false);
     window.dispatchEvent(injectEvent);
 }
 
@@ -144,7 +180,7 @@ function showSettings(display) {
         console.log('BPM: Called showSettings when settingsInner does not exist!');
         return;
     }
-    waitForElementById('bpm_settings_panel', toggleSettingsDisplay);
+    waitForElementById('bpm-settings-panel', toggleSettingsDisplay);
     function toggleSettingsDisplay(settings) {
         if(display) {
             settingsInner.firstChild.style.display = 'none';
@@ -159,39 +195,3 @@ function showSettings(display) {
 waitForElement('btn btn-settings', injectBpmSettingsPanel);
 })();
 
-function BPM_initOptions(optionsPanel) {
-    var inputs = htmlCollectionToArray(optionsPanel.getElementsByTagName('input'));
-    var checkboxes = inputs.filter(function(input) { return input.type == 'checkbox'; });
-    checkboxes.forEach(function(checkbox) {
-        checkbox.nextElementSibling.addEventListener('click', function() {
-            var option = checkbox.getAttribute('data-bpmoption');
-            BPM_setOption(option, !checkbox.checked);
-            checkbox.checked = !checkbox.checked;
-        });
-    });
-
-    var initListener = function(event) {
-        var message = event.data;
-        switch(message.method) {
-            case 'prefs':
-                var prefs = message.prefs; 
-                checkboxes.forEach(function(checkbox) {
-                    checkbox.checked = prefs[checkbox.getAttribute('data-bpmoption')];  
-                });
-                window.removeEventListener('bpm_message', initListener);
-                break;
-        }
-    }
-    window.addEventListener('bpm_message', initListener, false);
-    
-    var getPrefs = new CustomEvent('bpm_message');    
-    getPrefs.data = { method: 'get_prefs' };
-    window.dispatchEvent(getPrefs);
-}
-
-
-function BPM_setOption(option, value) {
-    var bpmEvent = new CustomEvent('bpm_message')
-    bpmEvent.data = { method: 'set_pref', pref: option, value: value };
-    window.dispatchEvent(bpmEvent);
-}
