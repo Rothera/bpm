@@ -1,6 +1,6 @@
 /**
  * Settings integration for Typhos' BetterPonymotes for Discord
- * (c) 2015 ByzantineFailure
+ * (c) 2015-2016 ByzantineFailure
  *
  * Sets up our injected HTML and triggers its init.
  **/

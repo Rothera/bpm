@@ -55,18 +55,20 @@ DISCORD_ADDITONAL_DATA := \
 	addon/discord/background.js addon/discord/settings.js addon/discord/settings.css \
 	addon/discord/emote-settings.html addon/discord/general-settings.html addon/discord/search-settings.html \
 	addon/discord/settings-wrapper.html addon/discord/subreddit-settings.html addon/discord/about.html \
-	addon/discord/updates.html
+	addon/discord/updates.html addon/discord/search.css addon/discord/search-button.js
 
 DISCORD_SETTINGS_SCRIPT := \
 	addon/discord/utils.js addon/discord/emote-settings.js addon/discord/general-settings.js \
-	addon/discord/subreddit-settings.js addon/discord/updates.js addon/discord/settings.js
+	addon/discord/subreddit-settings.js addon/discord/search-settings.js addon/discord/updates.js \
+    addon/discord/settings.js
 
 DISCORD_INSTALLER := \
     discord/installer/constants.js discord/installer/index.js discord/installer/package.json \
     discord/installer/install_mac.sh discord/installer/install_windows.bat
 
 DISCORD_INTEGRATION := \
-	discord/integration/package.json discord/integration/bpm.js discord/integration/bpm-settings.js
+	discord/integration/package.json discord/integration/bpm.js discord/integration/bpm-settings.js \
+    discord/integration/bpm-search.js
 
 GENERATED_CSS := \
     build/gif-animotes.css build/emote-classes.css addon/bpmotes.css addon/combiners-nsfw.css \
@@ -214,6 +216,7 @@ build/discord/bpm.asar: $(ADDON_DATA) $(DISCORD_ADDITONAL_DATA) $(DISCORD_SETTIN
 	
 	cat $(DISCORD_SETTINGS_SCRIPT) > build/discord/addon/settings.js
 	cp addon/discord/background.js build/discord/addon/background.js
+	cp addon/discord/search-button.js build/discord/addon/search-button.js
 	cp addon/discord/settings-wrapper.html build/discord/addon/settings-wrapper.html
 	cp addon/discord/general-settings.html build/discord/addon/general-settings.html
 	cp addon/discord/emote-settings.html build/discord/addon/emote-settings.html
@@ -223,6 +226,7 @@ build/discord/bpm.asar: $(ADDON_DATA) $(DISCORD_ADDITONAL_DATA) $(DISCORD_SETTIN
 	cp addon/discord/updates.html build/discord/addon/updates.html
 	
 	cp addon/discord/settings.css build/discord/addon/settings.css
+	cp addon/discord/search.css build/discord/addon/search.css
 	
 	sed -i "s/<\!-- REPLACE-WITH-DC-VERSION -->/$(DISCORD_VERSION)/g" build/discord/addon/about.html
 	sed -i "s/<\!-- REPLACE-WITH-BPM-VERSION -->/$(VERSION)/g" build/discord/addon/about.html

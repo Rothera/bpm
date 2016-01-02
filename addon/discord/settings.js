@@ -18,11 +18,11 @@ var subpanelMap = {
     insert_general_settings: BPM_generalSettingsSubpanel,
     insert_emote_settings: BPM_emoteSettingsSubpanel,
     insert_subreddit_settings: BPM_subredditSettingsSubpanel,
-    insert_search_settings: unimplementedSubpanel,
+    insert_search_settings: BPM_searchSubpanel,
     insert_updates: BPM_updatesSubpanel,
     insert_about: unimplementedSubpanel
 }
-
+//TODO:  Move these to utils
 function waitForElement(elementClass, callback) {
     var element = document.getElementsByClassName(elementClass);
     if(element.length == 0) {

@@ -3,6 +3,12 @@
     margin-bottom: 5px;
 }
 
+#bpm-settings-subpanel > .control-group > input[type=number]::-webkit-inner-spin-button,
+#bpm-settings-subpanel > .control-group > input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .bpm-info-span {
     display: block;
     margin-bottom: 10px;

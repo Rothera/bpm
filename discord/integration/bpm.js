@@ -14,6 +14,7 @@ module.exports = BPM;
 var path = require('path');
 var fs = require('fs');
 var settings = require('./bpm-settings');
+var search = require('./bpm-search');
 
 var self;
 var bpmDir = getDataDir();
@@ -35,7 +36,8 @@ function BPM(mainWindow) {
 }
 
 BPM.prototype.init = function() {
-    //self.mainWindow.webContents.openDevTools();
+    self.mainWindow.webContents.openDevTools();
+    search.addSearch(self.mainWindow, getDataDir());
     settings.addSettings(self.mainWindow, getDataDir());
     addStyleListener(self.mainWindow);
     addScripts(self.mainWindow);

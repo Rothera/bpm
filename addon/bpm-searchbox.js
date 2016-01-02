@@ -50,7 +50,7 @@ function inject_search_box() {
     // not they need to have "visibility: inherit;" in bpmotes.css. It probably
     // does. See the note there.
 
-    var html = [
+    var htmlArray = [
         // tabindex is a hack to make Esc work. Reddit uses this index in a
         // couple of places, so it's probably safe.
         '<div id="bpm-sb-container" tabindex="100">',
@@ -90,9 +90,13 @@ function inject_search_box() {
             '<span id="bpm-sb-resize"></span>',
             '<a id="bpm-sb-srlink" href="https://www.reddit.com/r/betterponymotes">/r/betterponymotes</a>',
           '</div>',
-        '</div>',
-        '<div id="bpm-global-icon" title="Hold Ctrl (Command/Meta) to drag"></div>'
-        ].join("");
+        '</div>'
+        ];
+    if(platform != "discord-ext") {
+        htmlArray.push('<div id="bpm-global-icon" title="Hold Ctrl (Command/Meta) to drag"></div>');
+    }
+
+    var html = htmlArray.join("");
     div[IHTML] = html;
     document.body.appendChild(div);
 
@@ -206,8 +210,10 @@ function init_search_ui(store) {
         set_sb_position(sizeinfo[0], sizeinfo[1]);
         set_sb_size(sizeinfo[2], sizeinfo[3]);
     }
-    sb_global_icon.style.left = store.prefs.globalIconPos[0] + "px";
-    sb_global_icon.style.top = store.prefs.globalIconPos[1] + "px";
+    if(platform != "discord-ext") {
+        sb_global_icon.style.left = store.prefs.globalIconPos[0] + "px";
+        sb_global_icon.style.top = store.prefs.globalIconPos[1] + "px";
+    }
 
     // Enable dragging the window around
     make_movable(sb_dragbox, sb_container, function(event, left, top, move) {
@@ -289,6 +295,11 @@ function set_sb_size(width, height) {
  * Initializes the global ">>" emotes icon.
  */
 function setup_global_icon(store) {
+    if(platform == "discord-ext") {
+        setup_discord_search(store);    
+        return;
+    }
+
     log_debug("Injecting global search icon");
     sb_global_icon.addEventListener("mouse" + "over", catch_errors(function(event) {
         track_focus();
@@ -314,6 +325,26 @@ function setup_global_icon(store) {
             show_search_box(store);
         }
     }), false);
+}
+/**
+ * Discord-specific search setup
+ **/
+function setup_discord_search(store) {
+    function setup_button(button) {
+        button.addEventListener("click", function(e) {
+            e.preventDefault();
+            show_search_box(store);
+        });
+    }
+    function wait_for_button(callback) {
+        var bpmButton = document.getElementsByClassName("bpm-emote-search-button");
+        if(bpmButton.length < 1) {
+            window.setTimeout(function() { wait_for_button(callback); }, 100);
+        } else {
+            callback(bpmButton[0]);
+        }
+    }
+    wait_for_button(setup_button);
 }
 
 /*
