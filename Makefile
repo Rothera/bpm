@@ -51,9 +51,9 @@ DISCORD_ADDITONAL_DATA := \
 	addon/discord/emote-settings.html addon/discord/general-settings.html addon/discord/search-settings.html \
 	addon/discord/settings-wrapper.html addon/discord/subreddit-settings.html
 
-DISCORD_CONTENT_SCRIPT := \
+DISCORD_SETTINGS_SCRIPT := \
 	addon/discord/utils.js addon/discord/emote-settings.js addon/discord/general-settings.js \
-	addon/discord/settings.js
+	addon/discord/subreddit-settings.js addon/discord/settings.js
 
 DISCORD_INSTALLER := \
     discord/installer/constants.js discord/installer/index.js discord/installer/package.json
@@ -201,11 +201,11 @@ build/discord/integration.asar: $(DISCORD_INTEGRATION)
 	mkdir -p build/discord
 	asar pack discord/integration/ build/discord/integration.asar
 
-build/discord/bpm.asar: $(ADDON_DATA) $(DISCORD_ADDITONAL_DATA) $(DISCORD_CONTENT_SCRIPT)
+build/discord/bpm.asar: $(ADDON_DATA) $(DISCORD_ADDITONAL_DATA) $(DISCORD_SETTINGS_SCRIPT)
 	mkdir -p build/discord
 	mkdir -p build/discord/addon
 	
-	cat $(DISCORD_CONTENT_SCRIPT) > build/discord/addon/settings.js
+	cat $(DISCORD_SETTINGS_SCRIPT) > build/discord/addon/settings.js
 	cp addon/discord/background.js build/discord/addon/background.js
 	cp addon/discord/settings-wrapper.html build/discord/addon/settings-wrapper.html
 	cp addon/discord/general-settings.html build/discord/addon/general-settings.html

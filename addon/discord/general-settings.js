@@ -32,7 +32,7 @@ var BPM_generalSettingsSubpanel = {
         var inputs = htmlCollectionToArray(optionsPanel.getElementsByTagName('input'));
         var checkboxes = inputs.filter(function(input) { return input.type == 'checkbox'; });
         checkboxes.forEach(function(checkbox) {
-            checkbox.removeEventListener('click');
+            checkbox.nextElementSibling.removeEventListener('click');
         });
     }
 

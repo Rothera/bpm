@@ -17,7 +17,7 @@ var unimplementedSubpanel = {
 var subpanelMap = {
     insert_general_settings: BPM_generalSettingsSubpanel,
     insert_emote_settings: BPM_emoteSettingsSubpanel,
-    insert_subreddit_settings: unimplementedSubpanel,
+    insert_subreddit_settings: BPM_subredditSettingsSubpanel,
     insert_search_settings: unimplementedSubpanel
 }
 
