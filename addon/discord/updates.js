@@ -2,7 +2,8 @@
  * BPM for Discord
  * (c) 2015-2016 ByzantineFailure
  * 
- * Updates panel handlers
+ * Updates panel handlers.  Version number inserted
+ * during the build process (see Makefile)
  **/
 
 var codeVersion = /* REPLACE-WITH-DC-VERSION */;
@@ -16,14 +17,14 @@ function BPM_checkForUpdates(silenceIfNone) {
     xhr.onreadystatechange = function() {
         if(xhr.readyState != 4) return;
         if(xhr.status !== 200 && xhr.status !== 304) {
-           alert('Error checking for updates, HTTP status: ' + xhr.status); 
+           alert('Error checking for updates, HTTP status: ' + xhr.status'.  Is Github down?'); 
            return;
         }
         var response = JSON.parse(xhr.responseText);
         var tags = response.map(function(tag) { return tag.name });
         if(tags[0] !== codeVersion) {
             alert('Current BPM for Discord version is ' + codeVersion + ', found version ' + tags[0] + '\n' +
-                    'Updates available at https://github.com/ByzantineFailure/bpm/releases/');
+                    'Link to updates can be found in the Updates panel of BPM settings.');
         } else if(!silenceIfNone) {
             alert('BPM up to date!');
         }

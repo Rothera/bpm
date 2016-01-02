@@ -64,7 +64,6 @@ function BPM_teardownSubreddits(subpanel) {
     inputs.forEach(function(input) {
         input.nextElementSibling.removeEventListener('click');
     });
-    console.log('Called subreddit teardown.');
 }
 
 BPM_subredditSettingsSubpanel.init = BPM_initSubreddits;

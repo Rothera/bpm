@@ -10,8 +10,8 @@
  **/
 (function() {
 var unimplementedSubpanel = { 
-    init: function() { console.log('init unimplemented'); }, 
-    teardown: function() { console.log('teardown unimplemented'); } 
+    init: function() { /* Noop */ }, 
+    teardown: function() { /* Noop */ } 
 };
 //Maps subpanel requests to their corresponding init/teardown objects
 var subpanelMap = {
@@ -41,8 +41,6 @@ function waitForElementById(id, callback) {
 
 }
 
-//Leaks memory:  Detached event needs to be watched so 
-//we can remove listeners
 function injectBpmSettingsPanel(settingsButton) {
     function addTabElement(tabBar) {
         var tabElement = document.createElement('div');
@@ -57,11 +55,6 @@ function injectBpmSettingsPanel(settingsButton) {
         var items = document.getElementsByClassName('tab-bar-item');
         Array.prototype.forEach.call(items, function(item) {
             item.addEventListener('click', function() { 
-                var bpmTab = document.getElementById('bpm-settings-tab-item');
-                if(bpmTab && bpmTab.className.indexOf('selected') > -1 && 
-                    item.id != 'bpm-settings-tab-item') {
-                    cleanBpmSettingsListeners();
-                }
                 focusTabElement(item); 
                 showSettings(item.id == 'bpm-settings-tab-item');
             }, false);
@@ -74,14 +67,21 @@ function injectBpmSettingsPanel(settingsButton) {
     });
 }
 
-//Leaks memory:  When Done is detached remove this listener
+//When we click done we should release all our listeners to avoid a memory leak
 function addDoneClickListener(doneButton) {
     function onDoneClick() {
         var settingElement = document.getElementById('bpm-settings-panel');
         if(settingElement) {
             settingElement.parent.removeChild(settingElement);
+            var bpmTabs = htmlCollectionToArray(document.getElementById('bpm-options-tab-list')
+                                                .getElementsByClassName('tab-bar-item'));
+            bpmTabs.forEach(function(tab) { tab.removeEventListener('click'); });
+            var sidebarTabs = htmlCollectionToArray(document.getElementsByClassName('tab-bar SIDE')[0]
+                                                            .getElementsByClassName('tab-bar-item'));
+            sidebarTabs.forEach(function(tab) { tab.removeEventListener('click'); });
+            cleanSubpanel();
         }
-        cleanSubpanel();
+        doneButton.removeEventListener('click', onDoneClick);
     }
     doneButton.addEventListener('click', onDoneClick);
 }
