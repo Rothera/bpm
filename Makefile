@@ -32,7 +32,7 @@
 
 VERSION = 66.236
 
-DISCORD_VERSION = v0.4.0
+DISCORD_VERSION = v0.4.0-alpha
 
 #Set via environment variable
 #DC_BPM_ARCHIVE_PASSWORD= 
