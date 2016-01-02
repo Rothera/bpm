@@ -62,7 +62,8 @@ DISCORD_SETTINGS_SCRIPT := \
 	addon/discord/subreddit-settings.js addon/discord/updates.js addon/discord/settings.js
 
 DISCORD_INSTALLER := \
-    discord/installer/constants.js discord/installer/index.js discord/installer/package.json
+    discord/installer/constants.js discord/installer/index.js discord/installer/package.json \
+    discord/installer/install_mac.sh discord/installer/install_windows.bat
 
 DISCORD_INTEGRATION := \
 	discord/integration/package.json discord/integration/bpm.js discord/integration/bpm-settings.js
@@ -257,6 +258,13 @@ release/discord: build/discord
 	fi
 	#git tag -a "$(DISCORD_VERSION)" -m "Release of discord version $(DISCORD_VERSION)" 
 	#git push origin $(DISCORD_VERSION) 
-	rm -rf ./build/BPM\ for\ Discord\ $(DISCORD_VERSION).7z
-	7z a ./build/BPM\ for\ Discord\ $(DISCORD_VERSION).7z -r ./build/discord/* -p$(DC_BPM_ARCHIVE_PASSWORD) -mhe 
+	
+	#Mac doesn't have a good 7z client that handles password protected so we create a zip.
+	rm -rf ./build/BPM\ for\ Discord\ $(DISCORD_VERSION)\ MAC.zip
+	cd ./build/discord && zip -r --password $(DC_BPM_ARCHIVE_PASSWORD) ../BPM\ for\ Discord\ $(DISCORD_VERSION)\ MAC.zip . 
+	
+	#Windows actually can't extract a zipped version because the built in tools don't support the long directory paths
+	#that node's module tree creates.  So, we use 7z for Windows.  In other news, what the fuck, MS.
+	rm -rf ./build/BPM\ for\ Discord\ $(DISCORD_VERSION)\ WINDOWS.7z
+	7z a ./build/BPM\ for\ Discord\ $(DISCORD_VERSION)\ WINDOWS.7z -r ./build/discord/* -p$(DC_BPM_ARCHIVE_PASSWORD) -mhe 
 
