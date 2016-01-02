@@ -257,6 +257,6 @@ release/discord: build/discord
 	fi
 	#git tag -a "$(DISCORD_VERSION)" -m "Release of discord version $(DISCORD_VERSION)" 
 	#git push origin $(DISCORD_VERSION) 
-	rm -rf ./build/BPM\ for\ Discord\ v0.4.0.7z
+	rm -rf ./build/BPM\ for\ Discord\ $(DISCORD_VERSION).7z
 	7z a ./build/BPM\ for\ Discord\ $(DISCORD_VERSION).7z -r ./build/discord/* -p$(DC_BPM_ARCHIVE_PASSWORD) -mhe 
 
