@@ -1,0 +1,43 @@
+.bpm-label-container > label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#bpm-settings-subpanel > .control-group > input[type=number]::-webkit-inner-spin-button,
+#bpm-settings-subpanel > .control-group > input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.bpm-info-span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.bpm-emote-list {
+    overflow: auto;
+    padding-top: 5px;
+}
+
+.bpm-listed-emote {
+    padding: 5px;
+    background-color: #738bd7;
+    color: white;
+    border-width: 1px;
+    border-color: #5E70A9;
+    border-style: solid;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    float: left;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.bpm-emote-clear-button {
+    margin-bottom: 5px;
+}
+
+.bpm-emote-input {
+    margin-right: 15px;
+    border-bottom 1px solid #f0f0f0;
+}
