@@ -32,7 +32,10 @@
 
 VERSION = 66.236
 
-DISCORD_VERSION = v0.3.0
+DISCORD_VERSION = v0.4.0
+
+#Set via environment variable
+#DC_BPM_ARCHIVE_PASSWORD= 
 
 CONTENT_SCRIPT := \
     addon/bpm-header.js addon/bpm-utils.js addon/bpm-browser.js \
@@ -244,7 +247,16 @@ build/discord/bpm.asar: $(ADDON_DATA) $(DISCORD_ADDITONAL_DATA) $(DISCORD_SETTIN
 
 build/discord: build/discord/installer build/discord/bpm.asar build/discord/integration.asar
 
-release/discord:
-	git tag -a "$(DISCORD_VERSION)" -m "Release of discord version $(DISCORD_VERSION)"
-	git push origin $(DISCORD_VERSION)
+#Ideally we'd also upload the 7z to the release, but that's notably more difficult than it would seem 
+release/discord: build/discord
+	git status 
+	git log -1 
+	read -r -p "Tag with above commit as $(DISCORD_VERSION) (y/n)? " DC_RELEASE_CONFIRM;\
+	if [ "$$DC_RELEASE_CONFIRM" != "y" ] && [ "$$DC_RELEASE_CONFIRM" != "Y" ]; then \
+		exit 1; \
+	fi
+	#git tag -a "$(DISCORD_VERSION)" -m "Release of discord version $(DISCORD_VERSION)" 
+	#git push origin $(DISCORD_VERSION) 
+	rm -rf ./build/BPM\ for\ Discord\ v0.4.0.7z
+	7z a ./build/BPM\ for\ Discord\ $(DISCORD_VERSION).7z -r ./build/discord/* -p$(DC_BPM_ARCHIVE_PASSWORD) -mhe 
 
