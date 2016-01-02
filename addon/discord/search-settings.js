@@ -26,23 +26,12 @@ function initSearchSubpanel(subpanel) {
             prefs.searchLimit = newValue;
             BPM_setOption('searchLimit', newValue);
         });
-
-        var searchEnable = document.getElementById('bpm-option-enable-search');
-        searchEnable.checked = prefs.enableGlobalSearch;
-        searchEnable.nextElementSibling.addEventListener('click', function(e) {
-            searchEnable.checked = !searchEnable.checked;
-            prefs.enableGlobalEmoteSearch = searchEnable.checked;
-            BPM_setOption('enableGlobalSearch', searchEnable.checked);
-        });
     }
     BPM_retreivePrefs(initSearchPrefs);
 }
 function teardownSearchSubpanel(subpanel) {
     var limitInput = document.getElementById('bpm-option-search-limit');
     limitInput.removeEventListener('keydown'); 
-        
-    var searchEnable = document.getElementById('bpm-option-enable-search');
-    searchEnable.nextElementSibling.removeEventListener('click');
 }
 
 BPM_searchSubpanel.init = initSearchSubpanel;

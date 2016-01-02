@@ -241,7 +241,8 @@ case "discord-ext":
 
     linkify_options = function(element) {
         element.addEventListener("click", catch_errors(function(event) {
-            console.log("Use the BPM tab under the settings menu!");
+            //TODO:  Automatically open the BPM settings
+            alert('Use the BPM tab under the settings panel');
         }), false);
     };
 
