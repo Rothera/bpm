@@ -203,6 +203,8 @@ build/discord/installer: $(DISCORD_INSTALLER)
 	cp discord/installer/index.js build/discord/index.js
 	cp discord/installer/package.json build/discord/package.json
 	cp discord/installer/constants.js build/discord/constants.js
+	cp discord/installer/install_windows.bat build/discord/install_windows.bat
+	cp discord/installer/install_mac.sh build/discord/install_mac.sh
 	
 	cd build/discord && npm install
 
