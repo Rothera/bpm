@@ -18,7 +18,9 @@ var subpanelMap = {
     insert_general_settings: BPM_generalSettingsSubpanel,
     insert_emote_settings: BPM_emoteSettingsSubpanel,
     insert_subreddit_settings: BPM_subredditSettingsSubpanel,
-    insert_search_settings: unimplementedSubpanel
+    insert_search_settings: unimplementedSubpanel,
+    insert_updates: BPM_updatesSubpanel,
+    insert_about: unimplementedSubpanel
 }
 
 function waitForElement(elementClass, callback) {

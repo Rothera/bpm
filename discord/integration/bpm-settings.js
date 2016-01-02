@@ -25,6 +25,7 @@ function getInjectSettingsCSSCode(contentLocation) {
 function getInjectedSubpanelCode(contentLocation, filename, message) {
     var html = fs.readFileSync(path.join(contentLocation, filename), 'utf-8');
     html = html.replace(/\n/g, '');
+    html = html.replace(/\'/g, '\\\'');
     var code = 
     "       case '" + message + "':\n" +
     "           var panel = event.data.injectInto;\n" +
@@ -62,6 +63,8 @@ function createSettingsInjectionListener(contentLocation) {
             getInjectedSubpanelCode(contentLocation, 'emote-settings.html', 'insert_emote_settings') +
             getInjectedSubpanelCode(contentLocation, 'subreddit-settings.html', 'insert_subreddit_settings') +
             getInjectedSubpanelCode(contentLocation, 'search-settings.html', 'insert_search_settings') +
+            getInjectedSubpanelCode(contentLocation, 'updates.html', 'insert_updates') +
+            getInjectedSubpanelCode(contentLocation, 'about.html', 'insert_about') +
     "       case 'insert_css':\n" +
     "       case 'css_tag_response':\n" +
     "       case 'subpanel_inject_complete':\n" +

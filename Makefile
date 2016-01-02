@@ -32,6 +32,8 @@
 
 VERSION = 66.236
 
+DISCORD_VERSION = v0.3.0
+
 CONTENT_SCRIPT := \
     addon/bpm-header.js addon/bpm-utils.js addon/bpm-browser.js \
     addon/bpm-store.js addon/bpm-search.js addon/bpm-inject.js \
@@ -49,11 +51,12 @@ ADDON_DATA = \
 DISCORD_ADDITONAL_DATA := \
 	addon/discord/background.js addon/discord/settings.js addon/discord/settings.css \
 	addon/discord/emote-settings.html addon/discord/general-settings.html addon/discord/search-settings.html \
-	addon/discord/settings-wrapper.html addon/discord/subreddit-settings.html
+	addon/discord/settings-wrapper.html addon/discord/subreddit-settings.html addon/discord/about.html \
+	addon/discord/updates.html
 
 DISCORD_SETTINGS_SCRIPT := \
 	addon/discord/utils.js addon/discord/emote-settings.js addon/discord/general-settings.js \
-	addon/discord/subreddit-settings.js addon/discord/settings.js
+	addon/discord/subreddit-settings.js addon/discord/updates.js addon/discord/settings.js
 
 DISCORD_INSTALLER := \
     discord/installer/constants.js discord/installer/index.js discord/installer/package.json
@@ -212,8 +215,15 @@ build/discord/bpm.asar: $(ADDON_DATA) $(DISCORD_ADDITONAL_DATA) $(DISCORD_SETTIN
 	cp addon/discord/emote-settings.html build/discord/addon/emote-settings.html
 	cp addon/discord/subreddit-settings.html build/discord/addon/subreddit-settings.html
 	cp addon/discord/search-settings.html build/discord/addon/search-settings.html
+	cp addon/discord/about.html build/discord/addon/about.html
+	cp addon/discord/updates.html build/discord/addon/updates.html
+	
 	cp addon/discord/settings.css build/discord/addon/settings.css
 	
+	sed -i "s/<\!-- REPLACE-WITH-DC-VERSION -->/$(DISCORD_VERSION)/g" build/discord/addon/about.html
+	sed -i "s/<\!-- REPLACE-WITH-BPM-VERSION -->/$(VERSION)/g" build/discord/addon/about.html
+	sed -i "s/\/\* REPLACE-WITH-DC-VERSION \*\//'$(DISCORD_VERSION)'/g" build/discord/addon/settings.js
+
 	cp build/betterponymotes.js build/discord/addon
 	cp build/bpm-resources.js build/discord/addon
 	cp build/emote-classes.css build/discord/addon
@@ -233,4 +243,8 @@ build/discord/bpm.asar: $(ADDON_DATA) $(DISCORD_ADDITONAL_DATA) $(DISCORD_SETTIN
 	rm -rf build/discord/addon
 
 build/discord: build/discord/installer build/discord/bpm.asar build/discord/integration.asar
-    
+
+release/discord:
+	git tag -a "$(DISCORD_VERSION)" -m "Release of discord version $(DISCORD_VERSION)"
+	git push origin $(DISCORD_VERSION)
+
