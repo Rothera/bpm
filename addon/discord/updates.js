@@ -17,7 +17,7 @@ function BPM_checkForUpdates(silenceIfNone) {
     xhr.onreadystatechange = function() {
         if(xhr.readyState != 4) return;
         if(xhr.status !== 200 && xhr.status !== 304) {
-           alert('Error checking for updates, HTTP status: ' + xhr.status'.  Is Github down?'); 
+           alert('Error checking for updates, HTTP status: ' + xhr.status + '.  Is Github down?'); 
            return;
         }
         var response = JSON.parse(xhr.responseText);
