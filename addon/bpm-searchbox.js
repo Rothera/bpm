@@ -217,11 +217,14 @@ function init_search_ui(store) {
         store.sync_key("searchBoxInfo");
     });
 
+    //Keep the searchbox on the window
+    keep_on_window(sb_container);
+
     // Enable dragging the resize element around (i.e. resizing it)
     var search_box_width, search_box_height;
     enable_drag(sb_resize, function(event) {
-        search_box_width = parseInt(sb_container.style.width, 10);
-        search_box_height = parseInt(sb_container.style.height, 10);
+        search_box_width = parseInt(sb_container.style.width ? sb_container.style.width : 620, 10);
+        search_box_height = parseInt(sb_container.style.height ? sb_container.style.height : 450, 10);
     }, function(event, dx, dy) {
         // 420px wide prevents the search box from collapsing too much, and
         // the extra 5px is to prevent the results div from vanishing (which
