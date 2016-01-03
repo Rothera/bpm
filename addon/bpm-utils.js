@@ -89,6 +89,8 @@ if(self.on) {
     platform = "chrome-ext";
 } else if(find_global("safari") && window.name === "") {
     platform = "safari-ext";
+} else if (window.process) {
+    platform = "discord-ext";
 } else {
     log_error("Unknown platform! Your installation is badly broken.");
     platform = "unknown";

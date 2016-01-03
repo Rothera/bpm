@@ -177,7 +177,8 @@ function process_text(store, root) {
  * Main function when running globally.
  */
 function run_global(store) {
-    if(store.prefs.enableGlobalSearch) {
+    //Discord should always have emote search enabled
+    if(store.prefs.enableGlobalSearch || platform == "discord-ext") {
         // Never inject the search box into frames. Too many sites fuck up
         // entirely if we do. Instead, we do some cross-frame communication.
         if(running_in_frame) {
