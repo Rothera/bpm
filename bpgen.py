@@ -104,14 +104,18 @@ def dump_js_data(file, js_map, sr_id2name, sr_name2id, tag_id2name, tag_name2id)
     file.write(AutogenHeader)
     _dump_js_obj(file, "sr_id2name", sr_id2name)
     _dump_js_obj(file, "sr_name2id", sr_name2id)
-    # exports is used in Firefox main.js, but doesn't exist elsewhere
-    file.write("if(typeof(exports) !== 'undefined') {\n")
-    file.write("    exports.sr_id2name = sr_id2name;\n")
-    file.write("    exports.sr_name2id = sr_name2id;\n")
-    file.write("}\n")
     _dump_js_obj(file, "tag_id2name", tag_id2name)
     _dump_js_obj(file, "tag_name2id", tag_name2id)
     _dump_js_obj(file, "emote_map", js_map)
+    # exports is used in Firefox main.js, but doesn't exist elsewhere
+    # NOTE: This also exists in Discord
+    file.write("if(typeof(exports) !== 'undefined') {\n")
+    file.write("    exports.tag_name2id = tag_name2id;\n")
+    file.write("    exports.sr_id2name = sr_id2name;\n")
+    file.write("    exports.sr_name2id = sr_name2id;\n")
+    file.write("    exports.tag_id2name = tag_id2name;\n")
+    file.write("    exports.emote_map = emote_map;\n")
+    file.write("}\n")
 
 def _dump_js_obj(file, var_name, obj):
     file.write("var %s = " % (var_name))
