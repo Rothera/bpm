@@ -144,8 +144,8 @@ body .content .sitetable .link .title a:hover, .link .domain a:hover, .link .ent
 
 /* ADDON: SIDEBAR IMAGE */
 
-.side:before {display:block;position:relative;width:300px;margin:-6px -16px 18px;border-radius:4px 4px 0 0;vertical-align:bottom;text-align:center;font-size:14px;line-height:0px;color:#fff;background: url(%%sombra-claus%%) no-repeat; /* Your image */
-padding-top:250px; /* Height of image */
+.side:before {display:block;position:relative;width:300px;margin:-6px -16px 18px;border-radius:4px 4px 0 0;vertical-align:bottom;text-align:center;font-size:14px;line-height:0px;color:#fff;background: url(%%sombra-sidebar%%) no-repeat; /* Your image */
+padding-top:400px; /* Height of image */
 content:""; /* Caption */
 background-color: #212121; /* Color behind caption */
 }
@@ -839,25 +839,4 @@ content: " here now" !important;
 
 .message.message-parent>.entry .md, .message.message-reply>.entry .md, .message.message-parent>.entry blockquote, .message.message-reply>.entry blockquote, .message.message-parent>.entry del, .message.message-reply>.entry del {
   color: white;
-}
-
-body {
-  background: url(%%Sombra-header%%) no-repeat center top black;
-}
-
-body::before {
-  content: "";
-  background: url(%%snowfall%%) 0 -600px repeat;
-  height: 417px;
-  animation: snowfall 18s linear infinite;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-@keyframes snowfall {
-  to {
-    background-position: 0 0;
-  }
 }

@@ -120,8 +120,8 @@ background: #5f99cf;
 }
 
 /*Background*/
-body{background: #ffffff url(%%twilightbackground%%) no-repeat fixed center center}
-body.res-nightmode {background-image: url(%%twilightbackground%%) !important;}
+body{background: #ffffff url(%%background%%) no-repeat fixed center center}
+body.res-nightmode {background-image: url(%%background%%) !important;}
 body.res-nightmode div.content {background-color: transparent;}
 
 #baconBit {background-image: url(%%baconbit%%)!important;width:45px;height:100px;}
@@ -149,7 +149,7 @@ div.titlebox span.word {display:none}
 
 div.titlebox .subscribers span.number:after {content:" Ploungers"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " Preparing for Christmas" }
+div.titlebox p.users-online span.number:after { content: " Forgetting about their new years resolutions" }
 div.titlebox p.users-online span.word { display: none }
 
 /*Flair modifications*/
@@ -204,14 +204,13 @@ submitted
  padding-bottom: 200px;
  clear:both;
  text-align:center;
- height:400px;
+ height:800px;
  width:100%;
- background-image:url(%%footerxmas%%);
+ background-image:url(%%footxmas%%);
  background-repeat:no-repeat;
  margin-bottom:-25px;
- background-position: bottom center;
+ background-position: center bottom;
 }
-
 
 /*Sidebar Filly Start*/
 
@@ -1296,42 +1295,42 @@ z-index:9000}
 60%{color:#f90}
 100%{bottom:38px;opacity:0.0}}
 
-.thing[data-fullname$="a"] > .midcol > .upmod:focus::after { content: "Lesbian horses are bringing down this country."; }
-.thing[data-fullname$="b"] > .midcol > .upmod:focus::after { content: "I spend more time flirting with guys on this sub than I do girls in real life."; }
-.thing[data-fullname$="c"] > .midcol > .upmod:focus::after { content: "I literally cannot stop injecting marijuanas."; }
-.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "OP is a uniqueer."; }
-.thing[data-fullname$="e"] > .midcol > .upmod:focus::after { content: "Giant hats - bringing people together."; }
-.thing[data-fullname$="f"] > .midcol > .upmod:focus::after { content: "Night mode is literally crack cocaine."; }
-.thing[data-fullname$="g"] > .midcol > .upmod:focus::after { content: "Here at the Plounge we beat dead jokes into the dirt until there's nothing left but powder."; }
-.thing[data-fullname$="h"] > .midcol > .upmod:focus::after { content: "Half fags are the best kinds of people."; }
-.thing[data-fullname$="i"] > .midcol > .upmod:focus::after { content: "IF YOUR CHILDREN POO A BOSE-EINSTEIN CONDENSATE, CONSULT A PHYSICIST."; }
-.thing[data-fullname$="j"] > .midcol > .upmod:focus::after { content: "MY FACE IS ADOPTED."; }
-.thing[data-fullname$="k"] > .midcol > .upmod:focus::after { content: "I suggest you become very flexible and kiss your ass good bye."; }
-.thing[data-fullname$="l"] > .midcol > .upmod:focus::after { content: "A little bit of iron fist dictatorship is exactly what we need to liven this place up a bit."; }
-.thing[data-fullname$="m"] > .midcol > .upmod:focus::after { content: "3 die in shitpost."; }
-.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "You tap the plastic butt. It sounds like a plastic butt being tapped."; }
-.thing[data-fullname$="o"] > .midcol > .upmod:focus::after { content: "I'm only gay for my wife."; }
-.thing[data-fullname$="p"] > .midcol > .upmod:focus::after { content: "I'm not racist but there needs to be like a holocaust or something."; }
-.thing[data-fullname$="q"] > .midcol > .upmod:focus::after { content: "I NOTICE AND BEHOLD YOUR ASTONISHING ARM. MAY I TOUCH IT?"; }
-.thing[data-fullname$="r"] > .midcol > .upmod:focus::after { content: "Help, my off-topic and incredibly sexual pony discussion board is being overly dramatic today!"; }
-.thing[data-fullname$="s"] > .midcol > .upmod:focus::after { content: "Sadly, small horse has become my life."; }
-.thing[data-fullname$="t"] > .midcol > .upmod:focus::after { content: "...So now everyone knows I’m a brony and they keep asking me what the hell a plounge is."; }
-.thing[data-fullname$="u"] > .midcol > .upmod:focus::after { content: "Don't be so rude. Go open the gate so your demonic baby can go make itself a sandwich."; }
-.thing[data-fullname$="v"] > .midcol > .upmod:focus::after { content: "THEY DON’T MAKE MENSTRUAL PRODUCTS FOR HORSES!"; }
-.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "Who the hell gets turned on by Ploungers?"; }
-.thing[data-fullname$="x"] > .midcol > .upmod:focus::after { content: "Does the Plounge count as a shipfic?"; }
-.thing[data-fullname$="y"] > .midcol > .upmod:focus::after { content: "I tried huffing the plounge once. Didn’t work out. I’m still finding Internet in my nose."; }
-.thing[data-fullname$="z"] > .midcol > .upmod:focus::after { content: "I’ve been sexually propositioned on the Plounge so many times that I’m running out of repartees."; }
-.thing[data-fullname$="1"] > .midcol > .upmod:focus::after { content: "That appears to have no logic."; }
-.thing[data-fullname$="2"] > .midcol > .upmod:focus::after { content: "I just felt that if you were leaving, you should do it on an ambiguously gay note."; }
-.thing[data-fullname$="3"] > .midcol > .upmod:focus::after { content: "You are a menace to society; also you stink up the place."; }
-.thing[data-fullname$="4"] > .midcol > .upmod:focus::after { content: "Well you are travelling through time at a rate of one second per second."; }
-.thing[data-fullname$="5"] > .midcol > .upmod:focus::after { content: "You now realise the average plounge butt is underage."; }
-.thing[data-fullname$="6"] > .midcol > .upmod:focus::after { content: "Wait, how do societal norms work again?"; }
-.thing[data-fullname$="7"] > .midcol > .upmod:focus::after { content: "I'll lick whatever I damn well please."; }
-.thing[data-fullname$="8"] > .midcol > .upmod:focus::after { content: "Crimes against nature are easy. Crimes against humanity take effort."; }
-.thing[data-fullname$="9"] > .midcol > .upmod:focus::after { content: "He wished so much that he had a giant Obscene Lyra Plushie to smother himself from embarrassment."; }
-.thing[data-fullname$="0"] > .midcol > .upmod:focus::after { content: "I'm feeling an odd sense of confusion, hate and arousal."; }
+.thing[data-fullname$="a"] > .midcol > .upmod:focus::after { content: "hOI!!!!!! i'm tEMMIE!!"; }
+.thing[data-fullname$="b"] > .midcol > .upmod:focus::after { content: "NO!!!!! muscles r... NOT CUTE"; }
+.thing[data-fullname$="c"] > .midcol > .upmod:focus::after { content: "if you're so scared, why do you keep winking?"; }
+.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "THESE ARE WINKS OF FEAR ; )"; }
+.thing[data-fullname$="e"] > .midcol > .upmod:focus::after { content: "Be good, alright?"; }
+.thing[data-fullname$="f"] > .midcol > .upmod:focus::after { content: "I AM A SKELETON WITH HIGH STANDARDS!!"; }
+.thing[data-fullname$="g"] > .midcol > .upmod:focus::after { content: "You and the other monsters ditched Jerry."; }
+.thing[data-fullname$="h"] > .midcol > .upmod:focus::after { content: "Undyne suplexes a huge boulder, just because she can."; }
+.thing[data-fullname$="i"] > .midcol > .upmod:focus::after { content: "geeettttttt dunked on!!!"; }
+.thing[data-fullname$="j"] > .midcol > .upmod:focus::after { content: "Papyrus remembered a bad joke Sans told and is frowning."; }
+.thing[data-fullname$="k"] > .midcol > .upmod:focus::after { content: "Papyrus prepares a non-bone attack then spends a minute fixing his mistake."; }
+.thing[data-fullname$="l"] > .midcol > .upmod:focus::after { content: "He's also wearing sunglasses on both biceps"; }
+.thing[data-fullname$="m"] > .midcol > .upmod:focus::after { content: "Critical pet! Dog excitement increased."; }
+.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "Greater Dog's excitement is creating a power field that prevents petting."; }
+.thing[data-fullname$="o"] > .midcol > .upmod:focus::after { content: "You can't get a word in edgewise. Its words dizzy you..."; }
+.thing[data-fullname$="p"] > .midcol > .upmod:focus::after { content: "IT SEEMS EVERYTHING IN THIS AREA IS ACTUALLY A BOMB!"; }
+.thing[data-fullname$="q"] > .midcol > .upmod:focus::after { content: "D-d-don't give up, okay!?"; }
+.thing[data-fullname$="r"] > .midcol > .upmod:focus::after { content: "Lights! Camera! Action!"; }
+.thing[data-fullname$="s"] > .midcol > .upmod:focus::after { content: "You took more candy. How disgusting..."; }
+.thing[data-fullname$="t"] > .midcol > .upmod:focus::after { content: "OH MY GOD! ANIME IS REAL, RIGHT!?"; }
+.thing[data-fullname$="u"] > .midcol > .upmod:focus::after { content: "OH...NO... YOU'RE MEETING ALL MY STANDARDS."; }
+.thing[data-fullname$="v"] > .midcol > .upmod:focus::after { content: "after a great meal i like to lie on the ground and feel like garbage..."; }
+.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "...you really like hot animals, don't you?"; }
+.thing[data-fullname$="x"] > .midcol > .upmod:focus::after { content: "Yeah, you gotta save your money. For college and spiders."; }
+.thing[data-fullname$="y"] > .midcol > .upmod:focus::after { content: "Proud that you're going to make a delicious cake~ Ahuhuhu~"; }
+.thing[data-fullname$="z"] > .midcol > .upmod:focus::after { content: "But enough of that... It's time for dinner, isn't it? Ahuhuhu~"; }
+.thing[data-fullname$="1"] > .midcol > .upmod:focus::after { content: "Feeling comfortable trapped in that web?"; }
+.thing[data-fullname$="2"] > .midcol > .upmod:focus::after { content: "Let us erase this pointless world, and move on to the next."; }
+.thing[data-fullname$="3"] > .midcol > .upmod:focus::after { content: "Huh? Did you just call me... "Mom"?"; }
+.thing[data-fullname$="4"] > .midcol > .upmod:focus::after { content: "maybe looking at this nice lamp will help you."; }
+.thing[data-fullname$="5"] > .midcol > .upmod:focus::after { content: "WOWIE!! YOU DID IT!!! YOU DIDN'T DO A VIOLENCE!!!"; }
+.thing[data-fullname$="6"] > .midcol > .upmod:focus::after { content: "You're filled with Determination."; }
+.thing[data-fullname$="7"] > .midcol > .upmod:focus::after { content: "You felt your sins crawling on your back."; }
+.thing[data-fullname$="8"] > .midcol > .upmod:focus::after { content: "Despite everything, it's still you."; }
+.thing[data-fullname$="9"] > .midcol > .upmod:focus::after { content: "What happens when something without a soul gains the will to live?"; }
+.thing[data-fullname$="0"] > .midcol > .upmod:focus::after { content: "This is Sans. Did you know that I love to "get owned?" I also think Toriel is very good and fhfkehfeaufsisf"; }
 .thing .upmod:focus:after{white-space:nowrap}
 .midcol,.last-clicked.midcol{overflow:visible!important}
 .res-commentBoxes .commentarea .comment{overflow:visible!important}

@@ -277,22 +277,29 @@ background-color:white;
     height:50px;
     width:70px;
     background-image:url(%%thumbsprites%%);
-    background-position:0px 0px;
+    background-position:0 0;
 }
 
 .thumbnail.default {
     height:50px;
     width:70px;
     background-image:url(%%thumbsprites%%);
-    background-position:0px -50px;
+    background-position:0 -50px;
 }
 
 .thumbnail.nsfw {
     height:50px;
     width:70px;
     background-image:url(%%thumbsprites%%);
-    background-position:0px -100px;
+    background-position:0 -100px;
 }
+
+.linkflair-fimspoiler > .thumbnail.nsfw, .linkflair-fimtitlespoiler > .thumbnail.nsfw
+{ background-position: 0 -250px }
+.linkflair-futurecontent > .thumbnail.nsfw, .linkflair-fctitlespoiler > .thumbnail.nsfw
+{ background-position: 0 -200px }
+.linkflair-comicspoiler > .thumbnail.nsfw, .linkflair-comictitlespoiler > .thumbnail.nsfw
+{ background-position: 0 -150px }
 
 h2 {
     color:#2e1364;
@@ -651,10 +658,17 @@ textarea {
 
 .unmarknsfw-button a[href="#"]:before { content:"un-spoiler" }
 
-.linkflair-titlespoiler .linkflairlabel { display: none }
-.linkflair-titlespoiler p.title a.title { opacity: 0 }
-.linkflair-titlespoiler p.title a.title:hover { opacity: 1 }
+.linkflair .linkflairlabel { display: none }
+.linkflair-titlespoiler p.title a.title, .linkflair-fimtitlespoiler p.title a.title,
+.linkflair-fctitlespoiler p.title a.title, .linkflair-comictitlespoiler p.title a.title
+{ opacity: 0 }
+.linkflair-titlespoiler p.title a.title:hover, .linkflair-fimtitlespoiler p.title a.title:hover,
+.linkflair-fctitlespoiler p.title a.title:hover, .linkflair-comictitlespoiler p.title a.title:hover
+{ opacity: 1 }
 .linkflair-titlespoiler p.title:before { content: "[SPOILER] " }
+.linkflair-fimtitlespoiler p.title:before { content: "[FIM SPOILER] "}
+.linkflair-fctitlespoiler p.title:before { content: "[UPCOMING SPOILER] "}
+.linkflair-comictitlespoiler p.title:before { content: "[COMIC SPOILER] "}
 .flairselector .linkflairlabel { display: unset }
 
 /*emote table styling*/

@@ -430,3 +430,32 @@ display:block;
 float:left;
 background-image: url(%%twilightsmile%%);
 }
+
+
+/*PHEI DON'T LOOK I'M TESTING STUFF HERE CUZ I FOUND SOMETHING BROKE ON ANOTHER SUB AND YOU'RE GONNA LAUGH AT MY REALLY BAD CSS*/
+/*This doesn't work on firefox*/
+
+.res #baconBit{-webkit-transition:all 4s ease-in;transition:all 3s ease-in;background:url(%%yang%%) no-repeat center #000;background-size:cover;position:fixed;top:0;left:0;width:315px;height:452px}
+.res #baconBit.makeitrain {
+  top:0%;
+  left:100%;
+  -webkit-transform:rotate(0deg);
+  transform:rotate(0deg);
+}
+/*This should..*/
+/*
+.res #baconBit {
+  -webkit-transition:all 4s linear;
+  transition:all 4s linear;
+  background-image:url(%%yang%%)!important;
+  position:fixed!important;
+  width:315px!important;
+  height:452px!important;
+}
+.res #baconBit.makeitrain {
+  top:0%;
+  left:100%;
+  -webkit-transform:rotate(0deg);
+  transform:rotate(0deg);
+}
+*/

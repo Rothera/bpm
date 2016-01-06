@@ -2,34 +2,35 @@
 
 
 
-
-
  
 /*SNOW BEGINS */
-
+/*
 #header:after {
 content: "";
-background: url(%%Snow2%%);
+background: url(%%hertsback%%);
 position: fixed;
 width: 100%;
 height: 100%;
 top: 0;
 left: 0;
-opacity: 0.7;
+opacity: .5;
 z-index: 999;
 pointer-events: none;
--webkit-animation: snow 1s steps(20) infinite;
--moz-animation: snow 1s steps(20) infinite;
--ms-animation: snow 1s steps(20) infinite;
--o-animation: snow 1s steps(20) infinite;
-animation: snow 1s steps(20) infinite; 
+-webkit-animation: snow 2s steps(10) infinite;
+-moz-animation: snow 2s steps(10) infinite;
+-ms-animation: snow 2s steps(10) infinite;
+-o-animation: snow 2s steps(10) infinite;
+animation: snow 2s steps(10) infinite; 
 }
+
 
 @-webkit-keyframes snow {from{background-position: 0 0;}to{ background-position: 0px -6000px; }} 
 @-moz-keyframes snow {from {background-position: 0 0;}to{ background-position: 0px -6000px; } } 
 @-ms-keyframes snow{from {background-position: 0 0; }to{ background-position: 0px -6000px; } } 
 @-o-keyframes snow {from {background-position: 0 0; }to{ background-position: 0px -6000px; } } 
 @keyframes snow {from { background-position: 0 0; }to{ background-position: 0px -6000px; } } 
+
+*/
  
 /* Replace Cursors */
 /*<%jeroknite> mfw Pwny is slowly turning the sub into a geocities site*/
@@ -57,7 +58,7 @@ a { cursor: url(%%CursorHover%%), pointer; }
 }
 
  #header #header-bottom-left {
-   background: url(%%torielbanner2%%) 50% 0px !important;
+   background: url(%%undertale%%) 50% 0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -623,6 +624,9 @@ background-repeat: no-repeat;
 .flair-DoomKey:after { background-position: 0px -6990px }
 .flair-IcyNudibranch:after { background-position: 0px -7020px }
 .flair-techiesbesthero:after { background-position: 0px -7050px }
+.flair-llamma:after { background-position: 0px -7080px }
+.flair-FrancisVace:after { background-position: 0px -7110px }
+.flair-Memekip:after { background-position: 0px -7140px }
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: #222!important; }
@@ -1157,9 +1161,8 @@ a.author[href$=YesterdaysVoid]:after,
 a.author[href$=Solidus_Tripsy]:after,
 a.author[href$=RAINBOW_PONY_SEMEN]:after,
 a.author[href$=DoomKey]:after,
-a.author[href$=mrwoo6]:after
-
-
+a.author[href$=mrwoo6]:after,
+a.author[href$=ZZW30]:after
 {
 color:#000; 
 font-size:10px!important; 
@@ -1251,6 +1254,7 @@ a.author[href$=Solidus_Tripsy]:after { content:" touches all the butts"; color:b
 a.author[href$=RAINBOW_PONY_SEMEN]:after { content:" GODDESS OF NO FUN"; color:pink }
 a.author[href$=DoomKey]:after { content:" Paid for these changes with furry art" }
 a.author[href$=mrwoo6]:after { content:" the Coggler cheerer-upper" }
+a.author[href$=ZZW30]:after { content:"  hands killed my first mate" }
 
 /* Any pre/post-name flair stuff goes here */ 
 

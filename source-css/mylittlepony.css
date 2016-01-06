@@ -171,15 +171,15 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%twipbbt%%);
+ background:url(%%emotes%%);
  width:70px;
  height:70px;
  margin-top:-45px;
  margin-left:5px;
  margin-bottom:0px;
- margin-right:-50px;
- background-position:-200% -300%; /*To select emote table position. Increments of -100%.*/
- transform:scaleX(-1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
+ margin-right:-30px;
+ background-position:-200% -400%; /*To select emote table position. Increments of -100%.*/
+ transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important}
@@ -1038,7 +1038,7 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 .flair-cmcsparroew {background-position: -300% -100%}
 .flair-cmcsparroew:hover {background-position: -0% -200%}
 .flair-cmcaroelen {background-position: -300% -100%}
-.flair-cmcaroelen:hover {background-position: -0% -2000%}
+.flair-cmcaroelen:hover {background-position: -100% -100%}
 
 table tr td:first-child {width:14px}
 

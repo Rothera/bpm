@@ -260,6 +260,13 @@ transform:none;
 
 /*===emotes===*/
 
+.md a[href]:not([href*=":"]):not([href="#"]):not([href^="/r/"]):not([href^="/u/"]):not([href^="/user/"]){
+    cursor:default;
+}
+.md a[href]:not([href*=":"]):not([href="#"]):not([href^="/r/"]):not([href^="/u/"]):not([href^="/user/"]):active{
+    pointer-events:none;
+}
+
 a[href|="/esugarbsmile"],a[href|="/sugarbworry"],a[href|="/sugarbhappy"],a[href|="/esugarbwonder"],a[href|="/esugarbsad"],a[href|="/sugarbelle"] {
 display: block;
 float: left;
