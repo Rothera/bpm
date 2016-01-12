@@ -25,6 +25,7 @@
 # - Sign XPI
 # $ make www
 # $ make sync
+# - chmod 644
 # $ git ci -m "Bump version to x.y"
 # $ git push github master
 # - Test
