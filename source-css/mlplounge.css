@@ -124,7 +124,32 @@ body{background: #ffffff url(%%background%%) no-repeat fixed center center}
 body.res-nightmode {background-image: url(%%background%%) !important;}
 body.res-nightmode div.content {background-color: transparent;}
 
-#baconBit {background-image: url(%%baconbit%%)!important;width:45px;height:100px;}
+#baconBit {
+position: fixed  !important;
+background-image: url(%%head%%)!important;
+top: 100% !important;
+left: 50% !important;
+width:76px;height:2000px;
+z-index: 999999 !important;
+-webkit-transform: scale(3,3), rotate(0deg) !important;
+-moz-transform: scale(3,3) rotate(0deg) !important;     
+    transform: scale(3,3), rotate(0deg) !important;
+
+}
+
+#baconBit.makeitrain {
+ top: -100% !important;
+  -webkit-transform:rotate(0deg);
+  transform:rotate(0deg);
+}
+
+#baconBit {
+
+  -webkit-transition: all 500s linear !important;
+  -moz-transition: all 500s linear !important;
+  -o-transition: all 500s linear !important;
+  -ms-transition: all 500s linear !important; 
+}
 
 /*Approval Check-mark*/
 .approval-checkmark {background:url(%%checkmark%%); padding: 7.5px; height: 0 !important;}
@@ -833,7 +858,7 @@ padding: 0
 /* SECTION REMOVED DUE TO USER SPOOPING 2015-10-31 */
 
 /* GIVE EVERY COMMENT THE RANDOM FILLY! */
-.commentarea .usertext{padding-left: 70px; min-height: 140px; margin-top: -70px}
+.commentarea .usertext{padding-left: 70px; min-height: 145px; margin-top: -70px}
 
 .commentarea .usertext-body:before{
  display:block;
@@ -1187,7 +1212,7 @@ div.over18 .entry .buttons .first{padding-left: 0px}
 .side {margin-top: 70px} 
 .nub {display: none}
 .sidebox.submit .morelink {width: 145px; overflow: hidden}
-.sidebox.submit {position: absolute; top: 130px;} /* This needs changing if the header height changes. */
+.sidebox.submit {position: absolute; top: 150px;} /* This needs changing if the header height changes. */
 .sidebox.submit.submit-link {right: auto;}
 .sidebox.submit.submit-text {left: auto; right: 0; padding-right: 5px;}
 .morelink, .res-nightmode .morelink{
@@ -1217,7 +1242,7 @@ color: #D59D02;
 }
 .helplink, .res-nightmode .helplink {
 position: absolute;
-top: 160px; /* This value needs changing if the height of the header changes */
+top: 180px; /* This value needs changing if the height of the header changes */
 width: 300px;
 height: 29px;
 background: #5f99cf;

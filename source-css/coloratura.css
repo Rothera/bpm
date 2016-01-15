@@ -544,7 +544,7 @@ a[href|="/sadrara"] { background-position: -70px -70px }
 a[href|="/svengallop"] { background-position: -140px -70px }
 a[href|="/fillyrarasing"] { background-position: -210px -70px }
 
-a[href|="/rarajackhug"] {
+a[href|="/rarajackhug"], a[href|="/hoovsies"] {
   display: block;
   clear: none;
   float: left;
@@ -554,6 +554,9 @@ a[href|="/rarajackhug"] {
   background-image: url(%%raramotes100%%) !important;
 }
 
+a[href|="/rarajackhug"] { background-position: 0 0 }
+a[href|="/hoovsies"] { background-position: -100px 0 }
+
 a[href|="/raratrotting"] {
   display: block;
   clear: none;
@@ -562,6 +565,16 @@ a[href|="/raratrotting"] {
   height: 100px;
   cursor: default;
   background-image: url(%%raratrotting%%) !important;
+}
+
+a[href|="/rarastanding"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 110px;
+  height: 100px;
+  cursor: default;
+  background-image: url(%%rarastanding%%) !important;
 }
 
 START-PONYSCRIPT-IGNORE { color: red; }
