@@ -434,7 +434,7 @@ function display_search_results(store, results) {
 
         // Use <span> so there's no chance of emote parse code finding
         // this.
-        html += "<span data-emote=\"" + result.name + "\" class=\"bpm-search-result " +
+        html += "<span data-emote=\"" + result.name + "\" class=\"bpm-search-result bpm-emote " +
                 result.css_class + "\" title=\"" + result.name + " from " + result.source_name + "\">";
         if(result.tags.indexOf(store.formatting_tag_id) > -1) {
             html += "Example Text";
