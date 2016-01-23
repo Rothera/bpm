@@ -6,6 +6,7 @@
 // references is unreliable. frameElement is the only test I've found so
 // far that works consistently.
 var running_in_frame = (window !== window.top || window.frameElement);
+var discordDisruptiveClasses = ['member-username', 'channel-name', 'user-name', 'username', 'channel-voice-states'];
 
 // As a note, this regexp is a little forgiving in some respects and strict in
 // others. It will not permit text in the [] portion, but alt-text quotes don't
@@ -71,6 +72,13 @@ function make_emote(match, parts, name, info) {
     return element;
 }
 
+function classInDisruptiveEmotes(node) {
+    return discordDisruptiveClasses.filter(function(className) {
+        return node.className.indexOf(className) >= 0;
+    }).length > 0;
+}
+
+
 /*
  * Searches elements recursively for [](/emotes), and converts them.
  */
@@ -86,6 +94,10 @@ function process_text(store, root) {
         nodes_processed++;
 
         var parent = node.parentNode;
+        //If we're replacing a text node in a disruptive element
+        //and we're set not to, return
+        if(store.prefs.disableDisruptiveEmotes && 
+            locate_matching_ancestor(parent, classInDisruptiveEmotes, false)) return;
         // <span> elements to apply alt-text to
         var emote_elements = [];
         emote_regexp.lastIndex = 0;
@@ -107,7 +119,6 @@ function process_text(store, root) {
             if(info === null) {
                 continue;
             }
-
             if(store.is_disabled(info)) {
                 continue;
             }
