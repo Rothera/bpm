@@ -256,7 +256,12 @@ function init_search_ui(store) {
         if(event.target.classList.contains("bpm-search-result")) {
             // .dataset would probably be nicer, but just in case...
             var emote_name = event.target.getAttribute("data-emote");
-            inject_emote(store, emote_name);
+            //In discord we'd like to handle this case specially
+            if(platform == "discord-ext") {
+               _send_discord_message("insert_emote", { emote: emote_name }); 
+            } else {
+                inject_emote(store, emote_name);
+            }
             // On compact display, we want to get out of the way as soon as
             // possible. (Might want to default to this on standard display too,
             // but we're not so offensively invasive there.)
