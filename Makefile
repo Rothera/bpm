@@ -31,7 +31,8 @@
 # - Test
 # - Make thread
 
-VERSION = 66.238
+# Read version from package.json
+VERSION = $(shell npm ls --depth=-1 | grep betterponymotes | cut -d' ' -f1 | cut -d'@' -f2)
 
 CONTENT_SCRIPT := \
     addon/bpm-header.js addon/bpm-utils.js addon/bpm-browser.js \
@@ -47,12 +48,15 @@ ADDON_DATA = \
     addon/bootstrap.css addon/options.html addon/options.css addon/options.js \
     addon/pref-setup.js
 
-default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension build/export.json.bz2
+.PHONY: default
+default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension.zip build/export.json.bz2
 
+.PHONY: clean
 clean:
 	rm -fr build
 
-www: web/* build/betterponymotes-*.mozsucks-*.xpi build/betterponymotes.update.rdf
+.PHONY: www
+www: web/* build/betterponymotes.xpi build/betterponymotes.update.rdf
 	cp web/firefox-logo.png www
 	cp web/chrome-logo.png www
 	cp web/safari-logo.png www
@@ -61,12 +65,17 @@ www: web/* build/betterponymotes-*.mozsucks-*.xpi build/betterponymotes.update.r
 	sed "s/\/\*{{version}}\*\//$(VERSION)/" < web/index.html > www/index.html
 
 	rm -f www/*.xpi
-	cp build/betterponymotes-*.mozsucks-*.xpi www/betterponymotes.xpi
-	cp build/betterponymotes-*.mozsucks-*.xpi www/betterponymotes_$(VERSION).xpi
+	cp build/betterponymotes.xpi www/betterponymotes.xpi
+	cp build/betterponymotes.xpi www/betterponymotes_$(VERSION).xpi
 
+.PHONY: sync
 sync:
 	rsync -e "ssh -p 40719" -zvLr --delete animotes/ lyra@ponymotes.net:/var/www/ponymotes.net/animotes
 	rsync -e "ssh -p 40719" -zvLr --delete www/ lyra@ponymotes.net:/var/www/ponymotes.net/bpm
+
+node_modules/jpm/bin/jpm: package.json
+	npm install
+	touch node_modules/jpm/bin/jpm
 
 build/betterponymotes.js: $(CONTENT_SCRIPT)
 	mkdir -p build
@@ -86,12 +95,19 @@ build/export.json.bz2: build/export.json
 build/export.json: $(EMOTE_DATA)
 	./bpexport.py --json build/export.json
 
-build/betterponymotes.xpi: $(ADDON_DATA) addon/fx-main.js
+GENERATED_XPI = build/firefox/jid1-tHrhDJXsKvsiCw@jetpack-$(VERSION).xpi
+GENERATED_UPDATE_MANIFEST = build/firefox/jid1-tHrhDJXsKvsiCw@jetpack-$(VERSION).update.rdf
+FIREFOX_UPDATE_FILES = $(GENERATED_XPI) $(GENERATED_UPDATE_MANIFEST)
+
+FIREFOX_ADDON_FILES = addon/fx-main.js addon/fx-package.json addon/fx-jpmignore
+
+$(FIREFOX_UPDATE_FILES): $(ADDON_DATA) $(FIREFOX_ADDON_FILES) node_modules/jpm/bin/jpm
 	mkdir -p build/firefox/lib build/firefox/data
 
 	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/fx-package.json > build/firefox/package.json
 
 	cp addon/fx-main.js build/firefox/lib/main.js
+	cp addon/fx-jpmignore build/firefox/lib/.jpmignore
 
 	cp build/betterponymotes.js build/firefox/data
 	cp build/bpm-resources.js build/firefox/data
@@ -107,12 +123,13 @@ build/betterponymotes.xpi: $(ADDON_DATA) addon/fx-main.js
 	cp addon/options.js build/firefox/data
 	cp addon/pref-setup.js build/firefox/lib
 
-	cfx xpi --update-url=https://ponymotes.net/bpm/betterponymotes.update.rdf --pkgdir=build/firefox --force-mobile
-	./mungexpi.py betterponymotes.xpi build/betterponymotes.xpi
-	rm betterponymotes.xpi
+	cd build/firefox && ../../node_modules/jpm/bin/jpm xpi
 
-build/betterponymotes.update.rdf: build/betterponymotes-*.mozsucks-*.xpi
-	uhura -k betterponymotes.pem build/betterponymotes-*.mozsucks-*.xpi https://ponymotes.net/bpm/betterponymotes_$(VERSION).xpi > build/betterponymotes.update.rdf
+build/betterponymotes.xpi: $(GENERATED_XPI)
+	venv/bin/python ./mungexpi.py $(GENERATED_XPI) build/betterponymotes.xpi
+
+build/betterponymotes.update.rdf: $(GENERATED_UPDATE_MANIFEST)
+	cp $(GENERATED_UPDATE_MANIFEST) build/betterponymotes.update.rdf
 
 build/chrome.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js
 	mkdir -p build/chrome
@@ -141,7 +158,7 @@ build/chrome.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js
 	# Uncompressed due to prior difficulties with the webstore
 	cd build/chrome && zip -0 ../chrome.zip *
 
-build/BPM.safariextension: $(ADDON_DATA) addon/sf-Settings.plist addon/sf-background.html addon/sf-background.js
+build/BPM.safariextension.zip: $(ADDON_DATA) addon/sf-Settings.plist addon/sf-background.html addon/sf-background.js
 	mkdir -p build/BPM.safariextension
 
 	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/sf-Info.plist > build/BPM.safariextension/Info.plist

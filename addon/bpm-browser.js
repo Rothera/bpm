@@ -113,7 +113,7 @@ case "firefox-ext":
         // backend for the prefix (not wanting to do that is the reason for
         // hardcoding it). Ideally self.data.url() would be accessible to
         // content scripts, but it's not...
-        return "resource://jid1-thrhdjxskvsicw-at-jetpack/betterponymotes/data" + filename;
+        return "resource://jid1-thrhdjxskvsicw-at-jetpack/data" + filename;
     };
 
     make_css_link = function(filename, callback) {

@@ -43,8 +43,8 @@ try {
     console.error(e.trace);
 }
 
-var manage_prefs = require("pref-setup").manage_prefs;
-var bpm_data = require("bpm-resources");
+var manage_prefs = require("./pref-setup").manage_prefs;
+var bpm_data = require("./bpm-resources");
 
 var storage = simple_storage.storage;
 
