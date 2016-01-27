@@ -34,8 +34,8 @@
 
 
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Fanfics Confirmed"}
-div.titlebox .users-online span.number:after {content:" Survivors Of The Epic Pony War"}
+div.titlebox .subscribers span.number:after {content:" Victims"}
+div.titlebox .users-online span.number:after {content:" Arsonists"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -123,7 +123,7 @@ border-top-right-radius: 5px;
 
 #header-img
 { 
- margin:0px 20px -3px 10px;
+ margin:0px 20px -3px 0px;
 }
 
 #header-bottom-left{padding-top:10px}
@@ -164,6 +164,12 @@ border-top-right-radius: 5px;
  margin-top: 0px
 }
 
+/*Disables report button hover*/
+.report-button:hover:before
+{
+ display: none!important
+}
+
 /*Hat Settings*/
 .titlebox .usertext-body .md ol li strong{font-size:12px;color:#EF4F91}
 
@@ -171,13 +177,13 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%emotes%%);
+ background:url(%%discentia-hat%%);
  width:70px;
  height:70px;
  margin-top:-45px;
  margin-left:5px;
  margin-bottom:0px;
- margin-right:-30px;
+ margin-right:-45px;
  background-position:-200% -400%; /*To select emote table position. Increments of -100%.*/
  transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
