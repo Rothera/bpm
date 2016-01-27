@@ -348,17 +348,17 @@
 @-webkit-keyframes slide{0%{left:0%;-webkit-transform:scaleX(1)}46%{left:60%;-webkit-transform:scaleX(1)}50%{left:60%;-webkit-transform:scaleX(-1)}96%{left:0%;-webkit-transform:scaleX(-1)}100%{left:0%;-webkit-transform:scaleX(1)}}
 @-webkit-keyframes slide-r{0%{left:0%;-webkit-transform:scaleX(-1)}46%{left:60%;-webkit-transform:scaleX(-1)}50%{left:60%;-webkit-transform:scaleX(1)}96%{left:0%;-webkit-transform:scaleX(1)}100%{left:0%;-webkit-transform:scaleX(-1)}}
 .bpflag-slide {position:relative;-webkit-animation:slide 8s infinite ease}
-.bpflag-r.bpflag-slide {position:relative;-webkit-animation:slide-r 8s infinite ease}
+.bpflag-r.bpflag-slide {position:relative;-webkit-animation-name:slide-r}
 .bpflag-shift {position:relative;-webkit-animation:slide 8s infinite linear}
-.bpflag-r.bpflag-shift {position:relative;-webkit-animation:slide-r 8s infinite linear}
+.bpflag-r.bpflag-shift {position:relative;-webkit-animation-name:slide-r}
 
 /*== -!shift/-!slide ==*/
 @-webkit-keyframes _excl_slide{0%{left:60%;-webkit-transform:scaleX(-1)}46%{left:0%;-webkit-transform:scaleX(-1)}50%{left:0%;-webkit-transform:scaleX(1)}96%{left:60%;-webkit-transform:scaleX(1)}100%{left:60%;-webkit-transform:scaleX(-1)}}
 @-webkit-keyframes _excl_slide-r{0%{left:60%;-webkit-transform:scaleX(1)}46%{left:0%;-webkit-transform:scaleX(1)}50%{left:0%;-webkit-transform:scaleX(-1)}96%{left:60%;-webkit-transform:scaleX(-1)}100%{left:60%;-webkit-transform:scaleX(1)}}
 .bpflag-_excl_slide {position:relative;-webkit-animation:_excl_slide 8s infinite ease}
-.bpflag-r.bpflag-_excl_slide {position:relative;-webkit-animation:_excl_slide-r 8s infinite ease}
+.bpflag-r.bpflag-_excl_slide {position:relative;-webkit-animation-name:_excl_slide-r}
 .bpflag-_excl_shift {position:relative;-webkit-animation:_excl_slide 8s infinite linear}
-.bpflag-r.bpflag-_excl_shift {position:relative;-webkit-animation:_excl_slide-r 8s infinite linear}
+.bpflag-r.bpflag-_excl_shift {position:relative;-webkit-animation-name:_excl_slide-r}
 
 /*== speed ==*/
 .bpflag-s1 {-webkit-animation-duration:1s}
