@@ -1694,6 +1694,25 @@ a[href|="/platonicfriends"] {
  background-image: url(%%platonicfriends%%);
  
 }
+
+a[href|="/vinylwai"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 190px;
+ height: 176px;
+ background-image: url(%%spritesheetsmall%%);
+ background-position: 0px 0px;
+}
+a[href|="/stiltmanisalsfavorite"] {  
+ display: block;
+ clear: none;
+ float: left; 
+ width: 77px;
+ height: 195px;
+ background-image: url(%%spritesheetsmall%%);
+ background-position: 0px -177px;
+}
 div.titlebox span.word {display:none; }
 div.titlebox span.number:after {content:" Sexy Beasts";}
 

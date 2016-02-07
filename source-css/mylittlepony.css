@@ -34,8 +34,8 @@
 
 
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Victims"}
-div.titlebox .users-online span.number:after {content:" Arsonists"}
+div.titlebox .subscribers span.number:after {content:" Parts In An Ikea Couch"}
+div.titlebox .users-online span.number:after {content:" Injuries Sustained While Building It"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -177,20 +177,20 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%discentia-hat%%);
+ background:url(%%trixie-hat%%);
  width:70px;
  height:70px;
  margin-top:-45px;
  margin-left:5px;
  margin-bottom:0px;
  margin-right:-45px;
- background-position:-200% -400%; /*To select emote table position. Increments of -100%.*/
+ background-position:-000% -000%; /*To select emote table position. Increments of -100%.*/
  transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important}
 .thumbnail.self{background-position:0px -120px!important}
-.thumbnail.nsfw{background-position:0px 0px!important}
+.thumbnail.nsfw{background-position:0px -380px!important}
 .thumbnail.default{ background-position:0px -70px!important}
 .thumbnail.default{ background-position:0px -70px!important}
 .linkflair-eqg3 > .thumbnail.nsfw { background-position:0px -240px!important}
