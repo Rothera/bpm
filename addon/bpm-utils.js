@@ -283,23 +283,6 @@ function enable_drag(element, start_callback, callback) {
     var on_mouse_move = catch_errors(function(event) {
         var dx = event.clientX - start_x;
         var dy = event.clientY - start_y;
-        var minX = CONTAINER_PADDING;
-        var minY = CONTAINER_PADDING;
-        var maxX = window.innerWidth - CONTAINER_PADDING;
-        var maxY = window.innerHeight - CONTAINER_PADDING;
-
-        if(event.clientX <= minX) {
-            dx = minX - start_x;
-        } else if (event.clientX >= maxX) {
-            dx = maxX - start_x;
-        }
-
-        if(event.clientY <= minY) {
-            dy = minY - start_y;
-        } else if (event.clientY >= maxY) {
-            dy = maxY - start_y;
-        }
-
         callback(event, dx, dy);
     });
 
@@ -322,13 +305,22 @@ function enable_drag(element, start_callback, callback) {
  */
 function make_movable(element, container, callback) {
     var start_x, start_y;
+
     enable_drag(element, function(event) {
         start_x = parseInt(container.style.left, 10);
         start_y = parseInt(container.style.top, 10);
-
     }, function(event, dx, dy) {
-        var left = Math.max(start_x + dx, 0);
-        var top = Math.max(start_y + dy, 0);
+        var container_width = parseInt(container.style.width, 10) || 0;
+        var container_height = parseInt(container.style.height, 10) || 0;
+
+        var minX = CONTAINER_PADDING;
+        var minY = CONTAINER_PADDING;
+
+        var maxX = window.innerWidth - container_width - CONTAINER_PADDING;
+        var maxY = window.innerHeight - container_height - CONTAINER_PADDING;
+
+        var left = Math.max(Math.min(start_x + dx, maxX), minX);
+        var top = Math.max(Math.min(start_y + dy, maxY), minY);
 
         function move() {
             container.style.left = left + "px";
@@ -341,6 +333,26 @@ function make_movable(element, container, callback) {
             move();
         }
     });
+}
+
+function keep_on_window(container) {
+    var start_x = parseInt(container.style.left, 10);
+    var start_y = parseInt(container.style.top, 10);
+
+    var container_width = parseInt(container.style.width, 10);
+    var container_height = parseInt(container.style.height, 10);
+
+    var minX = CONTAINER_PADDING;
+    var minY = CONTAINER_PADDING;
+
+    var maxX = window.innerWidth - container_width - CONTAINER_PADDING;
+    var maxY = window.innerHeight - container_height - CONTAINER_PADDING;
+
+    var left = Math.max(Math.min(start_x, maxX), minX);
+    var top = Math.max(Math.min(start_y, maxY), minY);
+
+    container.style.left = left + "px";
+    container.style.top = top + "px";
 }
 
 /*
@@ -434,37 +446,6 @@ function starts_with(text, s) {
 
 function ends_with(text, s) {
     return text.slice(-s.length) === s;
-}
-function keep_on_window(element) {
-    window.addEventListener("resize", catch_errors(function(event) {
-        var dx = 0;
-        var dy = 0;
-        var minX = CONTAINER_PADDING;
-        var minY = CONTAINER_PADDING;
-        var maxX = window.innerWidth - CONTAINER_PADDING;
-        var maxY = window.innerHeight - CONTAINER_PADDING;
-        var position = element.getBoundingClientRect();
-        var start_x = parseInt(element.style.left, 10);
-        var start_y = parseInt(element.style.top, 10);
-
-        if(position.left <= minX) {
-            dx = minX - position.left;
-        } else if (position.left >= maxX) {
-            dx = maxX - position.left;
-        }
-
-        if(position.top <= minY) {
-            dy = minY - position.top
-        } else if (position.top >= maxY) {
-            dy = maxY - position.top;
-        }
-
-        var left = Math.max(start_x + dx, 0);
-        var top = Math.max(start_y + dy, 0);
-
-        element.style.left = left + "px";
-        element.style.top = top + "px";
-    }));
 }
 
 /*
