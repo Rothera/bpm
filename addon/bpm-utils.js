@@ -278,26 +278,28 @@ function walk_dom(root, node_filter, process, end, node, depth) {
  * N.b. have to do stupid things with event names due to AMO.
  */
 function enable_drag(element, start_callback, callback) {
-    var start_x, 
-        start_y;
+    var start_x, start_y;
 
     var on_mouse_move = catch_errors(function(event) {
-        var dx = event.clientX - start_x,
-            dy = event.clientY - start_y,
-            minX = CONTAINER_PADDING,
-            minY = CONTAINER_PADDING,
-            maxX = window.innerWidth - CONTAINER_PADDING,
-            maxY = window.innerHeight - CONTAINER_PADDING;
+        var dx = event.clientX - start_x;
+        var dy = event.clientY - start_y;
+        var minX = CONTAINER_PADDING;
+        var minY = CONTAINER_PADDING;
+        var maxX = window.innerWidth - CONTAINER_PADDING;
+        var maxY = window.innerHeight - CONTAINER_PADDING;
+
         if(event.clientX <= minX) {
             dx = minX - start_x;
         } else if (event.clientX >= maxX) {
             dx = maxX - start_x;
         }
+
         if(event.clientY <= minY) {
             dy = minY - start_y;
         } else if (event.clientY >= maxY) {
             dy = maxY - start_y;
         }
+
         callback(event, dx, dy);
     });
 
@@ -434,34 +436,35 @@ function ends_with(text, s) {
     return text.slice(-s.length) === s;
 }
 function keep_on_window(element) {
-    var onWindowResize = catch_errors(function(event) {
-        var dx = 0,
-            dy = 0,
-            minX = CONTAINER_PADDING,
-            minY = CONTAINER_PADDING,
-            maxX = window.innerWidth - CONTAINER_PADDING,
-            maxY = window.innerHeight - CONTAINER_PADDING,
-            position = element.getBoundingClientRect(),
-            start_x = parseInt(element.style.left, 10),
-            start_y = parseInt(element.style.top, 10);
-        
+    window.addEventListener("resize", catch_errors(function(event) {
+        var dx = 0;
+        var dy = 0;
+        var minX = CONTAINER_PADDING;
+        var minY = CONTAINER_PADDING;
+        var maxX = window.innerWidth - CONTAINER_PADDING;
+        var maxY = window.innerHeight - CONTAINER_PADDING;
+        var position = element.getBoundingClientRect();
+        var start_x = parseInt(element.style.left, 10);
+        var start_y = parseInt(element.style.top, 10);
+
         if(position.left <= minX) {
             dx = minX - position.left;
         } else if (position.left >= maxX) {
             dx = maxX - position.left;
         }
+
         if(position.top <= minY) {
             dy = minY - position.top
         } else if (position.top >= maxY) {
             dy = maxY - position.top;
         }
 
-        var left = Math.max(start_x + dx, 0),
-            top = Math.max(start_y + dy, 0);
+        var left = Math.max(start_x + dx, 0);
+        var top = Math.max(start_y + dy, 0);
+
         element.style.left = left + "px";
         element.style.top = top + "px";
-    });
-    window.addEventListener("resize", onWindowResize);
+    }));
 }
 
 /*
