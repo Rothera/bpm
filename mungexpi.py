@@ -23,39 +23,7 @@
 import argparse
 import zipfile
 
-import lxml.etree
-
-XpiKey = """
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCZnk8XNNC6+pmDqxY/5CzREJXj
-BUY2JzvtcIMBH9gvyq7ZoOdCHIxm2rew7jZ76zdJfKlsUXI2tEdvR5C5PI4NBCw7
-PGm6yzGLSn8/cG7tG9XvpnyxGAX8TfQyV602NhAucqJXYGvCNePalZGU7FJbeJc1
-5JjoU+fv8mFBK/QTAwIDAQAB
-"""
-
-def make_rdf_element(tag, text=None):
-    e = lxml.etree.Element("{http://www.mozilla.org/2004/em-rdf#}" + tag)
-    if text:
-        e.text = text
-    return e
-
-def inject_update_key(manifest):
-    manifest[0].append(make_rdf_element("updateKey", XpiKey))
-
-def inject_seamonkey_target(manifest):
-    target_app_tag = make_rdf_element("targetApplication")
-    description_tag = lxml.etree.Element("Description")
-    id_tag = make_rdf_element("id", "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}")
-    min_version_tag = make_rdf_element("minVersion", "2.0")
-    max_version_tag = make_rdf_element("maxVersion", "2.39")
-
-    description_tag.append(id_tag)
-    description_tag.append(min_version_tag)
-    description_tag.append(max_version_tag)
-
-    target_app_tag.append(description_tag)
-    manifest[0].append(target_app_tag)
-
-def munge_install_rdf(input_filename, output_filename):
+def munge_install_rdf(rdf, input_filename, output_filename):
     xpi_in = zipfile.ZipFile(input_filename, "r")
     xpi_out = zipfile.ZipFile(output_filename, "w", compression=zipfile.ZIP_DEFLATED)
 
@@ -64,11 +32,7 @@ def munge_install_rdf(input_filename, output_filename):
 
         if item.filename == "install.rdf":
             item = "install.rdf"
-
-            manifest = lxml.etree.fromstring(data)
-            inject_update_key(manifest)
-            inject_seamonkey_target(manifest)
-            data = lxml.etree.tostring(manifest, encoding=str, pretty_print=True)
+            data = rdf
 
         xpi_out.writestr(item, data)
 
@@ -77,11 +41,17 @@ def munge_install_rdf(input_filename, output_filename):
 
 def main():
     parser = argparse.ArgumentParser(description="Munge XPI")
+    parser.add_argument("version")
+    parser.add_argument("xml")
     parser.add_argument("input")
     parser.add_argument("output")
     args = parser.parse_args()
 
-    munge_install_rdf(args.input, args.output)
+    with open(args.xml) as file:
+        rdf = file.read()
+    rdf = rdf.replace("/*{{version}}*/", args.version)
+
+    munge_install_rdf(rdf, args.input, args.output)
 
 if __name__ == "__main__":
     main()

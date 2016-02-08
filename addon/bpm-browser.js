@@ -113,7 +113,7 @@ case "firefox-ext":
         // backend for the prefix (not wanting to do that is the reason for
         // hardcoding it). Ideally self.data.url() would be accessible to
         // content scripts, but it's not...
-        return "resource://jid1-thrhdjxskvsicw-at-jetpack/betterponymotes/data" + filename;
+        return "resource://jid1-thrhdjxskvsicw-at-jetpack/data" + filename;
     };
 
     make_css_link = function(filename, callback) {
@@ -174,7 +174,7 @@ case "chrome-ext":
         element.target = "_blank";
     };
     break;
-    
+
 case "safari-ext":
     _send_message = function(method, data) {
         if(data === undefined) {
@@ -184,25 +184,25 @@ case "safari-ext":
         log_debug("_send_message:", data);
         safari.self.tab.dispatchMessage(data.method, data);
     };
-    
+
     // Safari does message handling kind of weirdly since it has a message argument built in.
     safari.self.addEventListener("message", catch_errors(function(message) {
         switch(message.message.method) {
             case "initdata":
                 _complete_setup(message.message);
                 break;
-                
+
             default:
                 log_error("Unknown request from Safari background script: '" + message.message.method + "'");
                 break;
         }
     }), false);
-        
+
     make_css_link = function(filename, callback) {
         var tag = stylesheet_link(safari.extension.baseURI + filename.substr(1));
         callback(tag);
     };
-        
+
     linkify_options = function(element) {
         element.href = safari.extension.baseURI + 'options.html';
         element.target = "_blank";

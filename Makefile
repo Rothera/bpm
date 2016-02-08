@@ -86,16 +86,16 @@ build/export.json.bz2: build/export.json
 build/export.json: $(EMOTE_DATA)
 	./bpexport.py --json build/export.json
 
-build/betterponymotes.xpi: $(ADDON_DATA) addon/fx-main.js
-	mkdir -p build/firefox/lib build/firefox/data
+build/betterponymotes.xpi: $(ADDON_DATA) addon/fx-main.js addon/fx-install.rdf
+	mkdir -p build/firefox/data
 
 	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/fx-package.json > build/firefox/package.json
 
-	cp addon/fx-main.js build/firefox/lib/main.js
+	cp addon/fx-main.js build/firefox/index.js
 
 	cp build/betterponymotes.js build/firefox/data
 	cp build/bpm-resources.js build/firefox/data
-	cp build/bpm-resources.js build/firefox/lib
+	cp build/bpm-resources.js build/firefox
 	cp build/emote-classes.css build/firefox/data
 
 	cp addon/bootstrap.css build/firefox/data
@@ -105,11 +105,10 @@ build/betterponymotes.xpi: $(ADDON_DATA) addon/fx-main.js
 	cp addon/options.css build/firefox/data
 	cp addon/options.html build/firefox/data
 	cp addon/options.js build/firefox/data
-	cp addon/pref-setup.js build/firefox/lib
+	cp addon/pref-setup.js build/firefox
 
-	cfx xpi --update-url=https://ponymotes.net/bpm/betterponymotes.update.rdf --pkgdir=build/firefox --force-mobile
-	./mungexpi.py betterponymotes.xpi build/betterponymotes.xpi
-	rm betterponymotes.xpi
+	cd build/firefox && ../../node_modules/.bin/jpm xpi
+	./mungexpi.py $(VERSION) addon/fx-install.rdf build/firefox/*.xpi build/betterponymotes.xpi
 
 build/betterponymotes.update.rdf: build/betterponymotes-*.mozsucks-*.xpi
 	uhura -k betterponymotes.pem build/betterponymotes-*.mozsucks-*.xpi https://ponymotes.net/bpm/betterponymotes_$(VERSION).xpi > build/betterponymotes.update.rdf
