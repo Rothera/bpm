@@ -35,7 +35,7 @@ body { background: url(%%maudbackg%%) no-repeat fixed center bottom }
 .linkflair-spoilers[data-fullname$="e"] .thumbnail, .linkflair-spoilers[data-fullname$="n"] .thumbnail,
 .linkflair-spoilers[data-fullname$="t"] .thumbnail, .linkflair-spoilers[data-fullname$="a"] .thumbnail { background-position: -0px -170px !important }
 
-.linkflair-spoilers .thumbnail.self { height: 64px !important }
+.linkflair-spoilers .thumbnail.self { height: 64px !important; background-position: 0 -120px !important }
 
 /*** Rating Tags ***/
 
@@ -830,6 +830,17 @@ a[href|="/pinkigi"] {
     width: 200px !important;
     background-position: -200px -0px !important;
 }
+
+a[href|="/maudhi"], a:hover[href|="/maudhi"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 75px;
+  height: 70px;
+  background-image: url(%%maudhi%%) !important;
+}
+
+a:hover[href|="/maudhi"] { background-position: 0 -70px }
 
 a[href|="/maudsign"], a[href|="/mpsign"]{
     background-image: url(%%maudsign%%) !important;

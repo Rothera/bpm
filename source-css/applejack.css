@@ -1,6 +1,14 @@
 /******************/
 /*Sidebar stuff*/
 /******************/
+/*Button edit*/
+.morelink a {
+    color: Red;
+  }
+.nub { display: none;}
+
+.morelink:hover a { color:Orange; }
+
 /*Hayseeds*/
 .titlebox strong {
     font-size: medium
@@ -23,7 +31,14 @@ div.titlebox .users-online span.number:after {
     clear: both
     }
 #headdit-box {display:none;}
-
+/*Add Image to Sidebar*/
+div.side div.spacer:nth-of-type(1){
+    padding-top: 288px; /*Change "300px" to the height to the height of your image*/
+    background:url(%%happyjack%%) top center no-repeat;
+}
+#search input[type="text"] {
+  background:transparent;
+}
 /***Apple Barons aka mods***/
 .sidecontentbox h1:not(:first-child)::before {
 color: gray !important;
@@ -585,3 +600,19 @@ a[href|="/29"] {
     background-position: -140px -630px
     }
 END-PONYSCRIPT-IGNORE{color: red}
+
+
+/*downvote warning*/
+.arrow.down:hover:before {
+     position: absolute;
+     z-index: 1000;
+     padding: 5px;
+     border: 0;
+     background: orange;
+     content: "Sour apples.";
+     text-align: center;
+     font-size: 10px;
+     color: red;
+     margin-left: 25px;
+     margin-top: 5px;
+}

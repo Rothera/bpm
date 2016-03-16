@@ -5,6 +5,18 @@
   position: absolute;
   top: 23px;
 }
+#header-img:hover {
+  -webkit-animation: kuribo 2s infinite;
+  animation: kuribo 2s infinite;
+}
+@-webkit-keyframes kuribo {
+  0%, 20%, 50%, 80%, 100% { -webkit-transform: translateY(0) }
+  40%, 60% { -webkit-transform: translateY(-30px) }
+}
+@keyframes kuribo {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0) }
+  40%, 60% { transform: translateY(-30px) }
+}
 
 .pagename a {
   display: block;
@@ -1743,7 +1755,7 @@ a.thumbnail.self{margin-right:-14px}
 .linkflair-spoilers[data-fullname$="t"] .thumbnail, .linkflair-spoilers[data-fullname$="a"] .thumbnail { background-position: 0 -170px !important }
 
 .linkflair-spoilers .thumbnail.self,
-.linkflair-titlespoiler .thumbnail.self { height: 64px !important }
+.linkflair-titlespoiler .thumbnail.self { height: 64px !important; background-position: 0 -120px !important }
 
 .linkflair-titlespoiler p.title a.title { opacity: 0 }
 .linkflair-titlespoiler p.title a.title:hover { opacity: 1 }

@@ -1,3 +1,22 @@
+/* Report form */
+.reportform.active:before {
+    content: "Notice: Please only report actual rule infractions, DO NOT use the report function as a way of suggesting rules or telling the moderators about your opinions.";
+    display: block;
+    font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+    border: 1px solid #e2e2e2;
+    border-radius: 0;
+    color: #222222;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: -6px;
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 20px;
+    position: relative;
+    background: hsl(0, 100%, 85%);
+}
+
+
 /* Header */
     /* Tail overhang in header */
         #header-img{

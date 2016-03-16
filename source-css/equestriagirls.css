@@ -794,23 +794,15 @@ textarea {
 
 /*emote table contents*/
 
+.side .md table:not(:last-of-type) th:first-of-type { counter-reset: x -1 }
+.side .md table:not(:last-of-type) th:not(:first-of-type):after
+{ counter-increment: x; content: counter(x) }
+.side .md table:not(:last-of-type) tr:first-of-type { counter-reset: y -1 }
+.side .md table:not(:last-of-type) tr:nth-child(odd) td:first-of-type:after
+{ counter-increment: y; content: counter(y) }
 .side .md table:nth-of-type(1) th:nth-of-type(1):after{content:"eg"}
 .side .md table:nth-of-type(2) th:nth-of-type(1):after{content:"egb"}
 .side .md table:nth-of-type(3) th:nth-of-type(1):after{content:"egc"}
-.side .md th:nth-of-type(2):after{content:"0"}
-.side .md th:nth-of-type(3):after{content:"1"}
-.side .md th:nth-of-type(4):after{content:"2"}
-.side .md th:nth-of-type(5):after{content:"3"}
-.side .md tr:nth-of-type(1) td:nth-of-type(1):after{content:"0"}
-.side .md tr:nth-of-type(3) td:nth-of-type(1):after{content:"1"}
-.side .md tr:nth-of-type(5) td:nth-of-type(1):after{content:"2"}
-.side .md tr:nth-of-type(7) td:nth-of-type(1):after{content:"3"}
-.side .md tr:nth-of-type(9) td:nth-of-type(1):after{content:"4"}
-.side .md tr:nth-of-type(11) td:nth-of-type(1):after{content:"5"}
-.side .md tr:nth-of-type(13) td:nth-of-type(1):after{content:"6"}
-.side .md tr:nth-of-type(15) td:nth-of-type(1):after{content:"7"}
-.side .md tr:nth-of-type(17) td:nth-of-type(1):after{content:"8"}
-.side .md tr:nth-of-type(19) td:nth-of-type(1):after{content:"9"}
 .side .md table:nth-of-type(1) tr:nth-of-type(odd) td+td:after{background-image:url(%%hamote%%)}
 .side .md table:nth-of-type(2) tr:nth-of-type(odd) td+td:after{background-image:url(%%hbmote%%)}
 .side .md table:nth-of-type(3) tr:nth-of-type(odd) td+td:after{background-image:url(%%hcmote%%)}

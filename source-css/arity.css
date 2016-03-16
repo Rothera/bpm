@@ -12,6 +12,12 @@
 /******************/
 /*Sidebar stuff*/
 /******************/
+/*Add Image to Sidebar*/
+div.side div.spacer:nth-of-type(1){
+    padding-top: 170px; /*Change "300px" to the height to the height of your image*/
+    background:url(%%rarcheer%%) top center no-repeat;
+}
+
 /* Precious Gems*/
 .titlebox strong {
     font-size: medium
@@ -34,8 +40,16 @@ overflow: hidden;
 .sidebox .spacer {visibility:hidden}
 .side .create *{display:none!important;}
 .flair { background: transparent ; border: 0px ; }
+/*Button edit*/
+.morelink a {
+    color: #686DAD;
+  }
+.nub { display: none;}
 
-
+.morelink:hover a { color:blue; }
+/*Done*/
+.infobar{
+background:transparent;}
 /*********************/
 /******Main CSS*******/
 /********************/
@@ -253,3 +267,22 @@ a[href|="/rar29"] {
     }
 
 /*Hide mod bot from sidebar*/.side .id-t2_5fmql, .side .id-t2_5fmql + * {display:none;}
+/* Search Image stolen from r/awwanime*/
+#search input[type="text"] {
+  background:transparent;
+}
+
+/*downvote warning*/
+.arrow.up:hover:before {
+     position: absolute;
+     z-index: 1000;
+     padding: 5px;
+     border: 0;
+     background: white;
+     content: "Darling, don't downvote simply because you don't agree";
+     text-align: center;
+     font-size: 10px;
+     color: purple;
+     margin-left: 25px;
+     margin-top: 5px;
+}
