@@ -93,7 +93,7 @@ function createDisablePredicate(store) {
     function disabledEmotesPredicate(node) {
         var i = 0;
         while(i < predicates.length) {
-            if(predicates[0](node)) return true;
+            if(predicates[i](node)) return true;
             i++;
         }
         return false;
