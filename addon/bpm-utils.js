@@ -214,10 +214,6 @@ var _tag_blacklist = {
     // Things I'm worried about
     "IFRAME": 1, "OBJECT": 1, "CANVAS": 1, "SVG": 1, "MATH": 1, "TEXTAREA": 1
 };
-//We disable emotes in code blocks for discord given that they break scroll
-if(platform == "discord-ext") {
-    _tag_blacklist['CODE'] = 1;
-}
 
 /*
  * Walks the DOM tree from the given root, running a callback on each node
