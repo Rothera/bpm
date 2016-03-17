@@ -71,7 +71,7 @@ function make_emote(match, parts, name, info) {
     return element;
 }
 
-var discordDisruptiveClasses = ['member-username', 'channel-name', 'user-name', 'username', 'channel-voice-states'];
+var discordDisruptiveClasses = ['member-username', 'channel-name', 'user-name', 'username', 'channel-voice-states', 'typing'];
 function discordClassInDisruptiveEmotes(node) {
     return discordDisruptiveClasses.filter(function(className) {
         return node.className.indexOf(className) >= 0;
