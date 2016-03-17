@@ -55,6 +55,7 @@ if(window.process) {
     default_prefs.enableGlobalSearch = true;
 //Discord-specific preferences    
     default_prefs.disableDisruptiveEmotes = true;
+    default_prefs.disableEmotesInCodeBlocks = false;
 }
 
 function initialize_prefs(prefs, sr_name2id) {

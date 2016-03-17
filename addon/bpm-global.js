@@ -6,7 +6,6 @@
 // references is unreliable. frameElement is the only test I've found so
 // far that works consistently.
 var running_in_frame = (window !== window.top || window.frameElement);
-var discordDisruptiveClasses = ['member-username', 'channel-name', 'user-name', 'username', 'channel-voice-states'];
 
 // As a note, this regexp is a little forgiving in some respects and strict in
 // others. It will not permit text in the [] portion, but alt-text quotes don't
@@ -72,12 +71,38 @@ function make_emote(match, parts, name, info) {
     return element;
 }
 
-function classInDisruptiveEmotes(node) {
+var discordDisruptiveClasses = ['member-username', 'channel-name', 'user-name', 'username', 'channel-voice-states'];
+function discordClassInDisruptiveEmotes(node) {
     return discordDisruptiveClasses.filter(function(className) {
         return node.className.indexOf(className) >= 0;
     }).length > 0;
 }
+function disableCodeBlocks(node) {
+    return node.tagName === 'CODE';
+}
 
+function createDisablePredicate(store) {
+    var predicates = [];
+    if(store.prefs.disableDisruptiveEmotes) {
+        predicates.push(discordClassInDisruptiveEmotes);
+    }
+    if(store.prefs.disableEmotesInCodeBlocks) {
+        predicates.push(disableCodeBlocks);
+    }
+    
+    function disabledEmotesPredicate(node) {
+        var i = 0;
+        while(i < predicates.length) {
+            if(predicates[0](node)) return true;
+            i++;
+        }
+        return false;
+    }
+    //We prefer to return null here as passing a no-op will require us to 
+    //unnecessarily percolate the check up the entire DOM tree
+    //This requires a check but I consider the tradeoff worth it.
+    return predicates.length > 0 ? disabledEmotesPredicate : null;
+}
 
 /*
  * Searches elements recursively for [](/emotes), and converts them.
@@ -89,15 +114,18 @@ function process_text(store, root) {
 
     var nodes_processed = 0;
     var emotes_matched = 0;
+    
+    //May be null if we have no disabled predicates.  Check this below
+    var disabledPredicate = createDisablePredicate(store);
 
     walk_dom(root, Node.TEXT_NODE, function(node) {
         nodes_processed++;
 
         var parent = node.parentNode;
-        //If we're replacing a text node in a disruptive element
-        //and we're set not to, return
-        if(store.prefs.disableDisruptiveEmotes && 
-            locate_matching_ancestor(parent, classInDisruptiveEmotes, false)) return;
+        //If we're replacing a text node in an element that is disabled
+        //via our preferences, return
+        if(disabledPredicate !== null &&
+            locate_matching_ancestor(parent, disabledPredicate, false)) return;
         // <span> elements to apply alt-text to
         var emote_elements = [];
         emote_regexp.lastIndex = 0;
