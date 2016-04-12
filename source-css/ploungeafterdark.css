@@ -1189,13 +1189,7 @@ a.author[href$="Morichalion"]:before {
      visibility:visible!important; 
      content: "fuckhat "
 }
-*/
-    
-a.author[href$="ponytron5000"]:after{content:" - Created the Header!"}
-a.author[href$="NtmrMoon"]:after{color: #D6B52F; content:" - Costume Contest Winner Halloween 2014"}
-a.author[href$="willowmvp227"]:after{color: #D6B52F; content:" - Costume Contest Winner Halloween 2014"}
-a.author[href$="SeatieBelt"]:after{content:" + __brony__ best ship"}
-a.author[href$="__brony__"]:after{content:" + SeatieBelt best ship"}
+
 
 /*greentext*/
 .md blockquote {
@@ -1223,6 +1217,14 @@ a[href$="/spoiler"], a[href$="#spoiler"], a[href$="/s"], a[href$="#s"] {
 }  
 a[href$="/spoiler"]:hover, a[href$="#spoiler"]:hover, a[href$="/s"]:hover, a[href$="#s"]:hover {  
     color: #FFF !important  
+}  
+
+a[href$="/nsfw"], a[href$="#nsfw"], a[href$="/n"], a[href$="#n"] {  
+    background: #A22 !important;  
+    color: #A22 !important  
+}  
+a[href$="/nsfw"]:hover, a[href$="#nsfw"]:hover, a[href$="/n"]:hover, a[href$="#n"]:hover {  
+    color: #000 !important  
 }  
 
 /*byebyedownvotes*/

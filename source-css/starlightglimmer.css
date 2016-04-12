@@ -5,9 +5,11 @@
 .thumbnail.nsfw { visibility: hidden !important }
 .thumbnail.default { background-position: -0px -70px !important }
 
-.linkflair-spoilers .thumbnail img { display: none }
+.linkflair-spoilers .thumbnail img,
+.linkflair-titlespoiler .thumbnail img { display: none !important }
 
-.linkflair-spoilers .thumbnail {
+.linkflair-spoilers .thumbnail,
+.linkflair-titlespoiler .thumbnail {
   background-image: url(%%thumbnails%%) !important;
   height: 70px;
   background-position: 0 0 !important;
@@ -18,7 +20,11 @@
 .linkflair-spoilers[data-fullname$="e"] .thumbnail, .linkflair-spoilers[data-fullname$="n"] .thumbnail,
 .linkflair-spoilers[data-fullname$="t"] .thumbnail, .linkflair-spoilers[data-fullname$="a"] .thumbnail { background-position: -0px -170px !important }
 
-.linkflair-spoilers .thumbnail.self { height: 64px !important; background-position: 0 -120px !important }
+.linkflair-spoilers .thumbnail.self,
+.linkflair-titlespoiler .thumbnail.self { height: 64px !important; background-position: 0 -120px !important }
+
+.linkflair-titlespoiler p.title a.title { opacity: 0 }
+.linkflair-titlespoiler p.title a.title:hover { opacity: 1 }
 
 /*** Rating Tags ***/
 
@@ -61,20 +67,26 @@
 
 /*** Theme ***/
 
-#header-img { margin: 0px 0px -2px 0px }
+#header-img { margin: 0px 0px -16px 2px }
+.content { margin-top: 11px; }
+
+#header {
+  background: url(%%castle%%) repeat-x scroll center;
+  height: 180px;
+}
+
+.pagename a { color: white; }
 
 .side h6 del { color: inherit }
 .side sup:nth-of-type(1) { padding-left: 40px }
 .side .usertext-body ul a { font-weight: bold }
 
-/*
 .subscribers .word, .users-online .word { display: none }
-.subscribers .number:after { content: " don't know that they fell" }
-.users-online .number:after { content: " under her spell" }
-*/
+.subscribers .number:after { content: " pupils" }
+.users-online .number:after { content: " studying friendship" }
 
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important }
-.sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "EQUALIZERS" }
+.sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "FACULTY ADVISORS" }
 .sidecontentbox .helplink+.title+.content li:nth-of-type(6n) { display: none }
 
 /*** Comments ***/
@@ -102,11 +114,11 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 
 /*** Arrows ***/
 
-.arrow.upmod, .arrow.downmod, .arrow.up, .arrow.down { background-image: url(%%equal-arrows%%) }
+/* .arrow.upmod, .arrow.downmod, .arrow.up, .arrow.down { background-image: url(%%equal-arrows%%) }
 .arrow.upmod { background-position: 0 0 }
 .arrow.downmod { background-position: 0 -14px }
 .arrow.up { background-position: 0 -28px }
-.arrow.down { background-position: 0 -42px }
+.arrow.down { background-position: 0 -42px } */
 
 /*** Sidebar Emote Tables ***/
 
@@ -192,7 +204,7 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 
 /*** Emotes & Flair ***/
 
-/*---------------- Standardized Segment (+equal-table)----------------*/
+/*---------------- Standardized Segment ----------------*/
 
 .md { overflow: auto }
 .usertext-edit .md { overflow: inherit }
@@ -200,7 +212,7 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 
 .flair {
   padding:0;
-  background:url(%%equal-table%%);
+  background:url(%%flair-table%%);
   color:black;
   border:0;
   border-radius:0;
@@ -211,7 +223,6 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
   line-height:240%;
 }
 
-.flair:hover { background-image: url(%%flair-table%%) }
 .res-nightmode .tagline .flair { background-color: transparent !important }
 
 a[href|="/ajlie"],a[href|="/priceless"],a[href|="/flutterjerk"],a[href|="/flutterroll"],a[href|="/twipride"],a[href|="/celestiamad"],a[href|="/twicrazy"],a[href|="/spikemeh"],a[href|="/lunateehee"],a[href|="/lunawait"],a[href|="/paperbagderpy"],a[href|="/paperbagwizard"],a[href|="/derpwizard"],a[href|="/abmeh"],a[href|="/ajhappy"],a[href|="/happlejack"],a[href|="/ppfear"],a[href|="/pinkiefear"],a[href|="/twibeam"],a[href|="/scootaderp"],a[href|="/didneyworl"],a[href|="/DIDNEYWORL"],a[href|="/raritydaww"],a[href|="/scootacheer"],a[href|="/lootascoo"],a[href|="/pinkieawe"],a[href|="/ppawe"],a[href|="/areyouawizard"],a[href|="/ajsup"],a[href|="/ajwhatsgood"],a[href|="/flutterwhoa"],a[href|="/flutterwoah"],a[href|="/rdcry"],a[href|="/silverspoon"],a[href|="/sspout"],a[href|="/ohcomeon"],a[href|="/sbcomeon"],a[href|="/ppcute"],a[href|="/cutiepie"],a[href|="/abbored"],a[href|="/abmerp"],a[href|="/rarityreally"],a[href|="/raritypaper"],a[href|="/raritynews"],a[href|="/sbbook"],a[href|="/sweetiebook"],a[href|="/sbook"],a[href|="/scootaplease"],a[href|="/scootappeal"],a[href|="/scootaplz"],a[href|="/applegasp"],a[href|="/twiright"],a[href|="/satistwied"],a[href|="/celestiawut"],a[href|="/wutlestia"],a[href|="/grannysmith"],a[href|="/granny"],a[href|="/oldmareyellsatcloud"],a[href|="/rarishock"],a[href|="/shiningarmor"],a[href|="/shiningarmour"],a[href|="/chrysalis"],a[href|="/queenchrysalis"],a[href|="/changelingqueen"],a[href|="/cadence"],a[href|="/cadance"],a[href|="/princesscadance"],a[href|="/princesscadence"],a[href|="/princessmiamorecadenza"],a[href|="/applederp"],a[href|="/rajlie"],a[href|="/rpriceless"],a[href|="/rflutterjerk"],a[href|="/rflutterroll"],a[href|="/rtwipride"],a[href|="/rcelestiamad"],a[href|="/rtwicrazy"],a[href|="/rspikemeh"],a[href|="/rlunateehee"],a[href|="/rlunawait"],a[href|="/rpaperbagderpy"],a[href|="/rpaperbagwizard"],a[href|="/rderpwizard"],a[href|="/rabmeh"],a[href|="/rajhappy"],a[href|="/rhapplejack"],a[href|="/rppfear"],a[href|="/rpinkiefear"],a[href|="/rtwibeam"],a[href|="/rscootaderp"],a[href|="/rdidneyworl"],a[href|="/rDIDNEYWORL"],a[href|="/rraritydaww"],a[href|="/rscootacheer"],a[href|="/rlootascoo"],a[href|="/rpinkieawe"],a[href|="/rppawe"],a[href|="/rareyouawizard"],a[href|="/rajsup"],a[href|="/rajwhatsgood"],a[href|="/rflutterwhoa"],a[href|="/rflutterwoah"],a[href|="/rrdcry"],a[href|="/rsilverspoon"],a[href|="/rsspout"],a[href|="/rohcomeon"],a[href|="/rsbcomeon"],a[href|="/rppcute"],a[href|="/rcutiepie"],a[href|="/rabbored"],a[href|="/rabmerp"],a[href|="/rrarityreally"],a[href|="/rraritypaper"],a[href|="/rraritynews"],a[href|="/rsbbook"],a[href|="/rsweetiebook"],a[href|="/rsbook"],a[href|="/rscootaplease"],a[href|="/rscootappeal"],a[href|="/rscootaplz"],a[href|="/rapplegasp"],a[href|="/rtwiright"],a[href|="/rsatistwied"],a[href|="/rcelestiawut"],a[href|="/rwutlestia"],a[href|="/rgrannysmith"],a[href|="/rgranny"],a[href|="/roldmareyellsatcloud"],a[href|="/rrarishock"],a[href|="/rshiningarmor"],a[href|="/rshiningarmour"],a[href|="/rchrysalis"],a[href|="/rqueenchrysalis"],a[href|="/rchangelingqueen"],a[href|="/rcadence"],a[href|="/rcadance"],a[href|="/rprincesscadance"],a[href|="/rprincesscadence"],a[href|="/rprincessmiamorecadenza"],a[href|="/rapplederp"]

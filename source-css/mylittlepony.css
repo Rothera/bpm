@@ -34,8 +34,8 @@
 
 
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Parts In An Ikea Couch"}
-div.titlebox .users-online span.number:after {content:" Injuries Sustained While Building It"}
+div.titlebox .subscribers span.number:after {content:" Tourists"}
+div.titlebox .users-online span.number:after {content:" Looking At Cracks In The Road"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -177,20 +177,20 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%twipbbt%%);
+ background:url(%%fmotes%%);
  width:70px;
  height:70px;
- margin-top:-45px;
+ margin-top:-40px;
  margin-left:5px;
  margin-bottom:0px;
- margin-right:-45px;
- background-position:-000% -300%; /*To select emote table position. Increments of -100%.*/
- transform:scaleX(-1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
+ margin-right:-40px;
+ background-position:-300% -300%; /*To select emote table position. Increments of -100%.*/
+ transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important}
 .thumbnail.self{background-position:0px -120px!important}
-.thumbnail.nsfw{background-position:0px -380px!important}
+.thumbnail.nsfw{background-position:0px 0px!important}
 .thumbnail.default{ background-position:0px -70px!important}
 .thumbnail.default{ background-position:0px -70px!important}
 .linkflair-eqg3 > .thumbnail.nsfw { background-position:0px -240px!important}
@@ -203,13 +203,14 @@ border-top-right-radius: 5px;
 .linkflair-comicspoiler > .thumbnail.nsfw { background-position:0px -450px!important}
 .linkflair-comictitlespoiler > .thumbnail.nsfw { background-position:0px -450px!important}
 
-a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott,a.author.id-t2_dq6ce,a.author.id-t2_5qkuh{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
-a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after,a.author.id-t2_dq6ce:after,a.author.id-t2_5qkuh:after{font-size:10px!important;display:block;letter-spacing:normal}
+a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott,a.author.id-t2_dq6ce,a.author.id-t2_5qkuh,a.author.id-t2_wptze{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
+a.author.id-t2_4mwnz:after,a.author.id-t2_8kzeb:after,div.content a.author.id-t2_5agom:after,a.author.id-t2_5o2lh:after,a.author.id-t2_4uott:after,a.author.id-t2_dq6ce:after,a.author.id-t2_5qkuh:after,a.author.id-t2_wptze:after{font-size:10px!important;display:block;letter-spacing:normal}
 div.content a.author.id-t2_5agom:after{content:"Chinchy"}
 a.author.id-t2_5o2lh:after{content:"Luna_in_Equestria"}
 a.author.id-t2_3klgq:after{content:" is an artist";}
 a.author.id-t2_dq6ce:after{content:"GOOUTSIDERAINBOWDAS"}
 a.author.id-t2_5qkuh:after{content:"I_SNUGGLE_PONIES"}
+a.author.id-t2_wptze:after{content:"FlashyOak"}
 a[href|="/sp"]
 {
  display:inline-block;
@@ -315,6 +316,16 @@ noindex:-o-prefocus, .nsfw-stamp acronym {
   display:none!important
 }
 
+.expando-nsfw-gate-controls button.expando-nsfw-gate-show-once {
+    font-size: 0;
+    content: "";
+}
+
+.expando-nsfw-gate-controls button.expando-nsfw-gate-show-once::before {
+    font-size: 13.33333px;
+    content: "Click to see spoiler";
+}
+
 div.over18 .entry .buttons .first{padding-left: 0px}
 
 /*Subreddit Wiki CSS*/
@@ -392,7 +403,7 @@ Submit and mod message buttons stolen from /r/StevenUniverse
 .sidebox.submit { 
     position: absolute; 
     width: 148px; 
-    top: 137px;
+    top: 167px;
 }
 .sidebox.submit.submit-link { right: auto; }
 .sidebox.submit.submit-text { left: auto; right: 0; padding-right: 5px; }
@@ -482,7 +493,7 @@ Submit and mod message buttons stolen from /r/StevenUniverse
     height: 42px;
     text-align: center;
     position: absolute;
-    top: 177px;
+    top: 207px;
     right: 5px;
     z-index: 3;
     text-decoration: none!important;
@@ -1044,7 +1055,7 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 .flair-cmcsparroew {background-position: -300% -100%}
 .flair-cmcsparroew:hover {background-position: -0% -200%}
 .flair-cmcaroelen {background-position: -300% -100%}
-.flair-cmcaroelen:hover {background-position: -100% -100%}
+.flair-cmcaroelen:hover {background-position: -0% -2000%}
 
 table tr td:first-child {width:14px}
 
@@ -1340,8 +1351,8 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
 }
 
 /*Spoiler-tag notification*/
-/*
-.post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:before {
+
+/*.post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:before {
     position: absolute;
     content: "Is this about the most recent episode?  If so, please spoiler-tag it!";
     background: orangered; 
@@ -1390,8 +1401,8 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
     margin-left: -2.2em;
     content: '';
     position: absolute;
-} 
-*/
+} */
+
 /*End spoiler-tag notification*/
 
 .thing.self .entry{padding-left:14px}
