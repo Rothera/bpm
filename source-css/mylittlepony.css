@@ -34,8 +34,8 @@
 
 
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Tourists"}
-div.titlebox .users-online span.number:after {content:" Looking At Cracks In The Road"}
+div.titlebox .subscribers span.number:after {content:" Dragons"}
+div.titlebox .users-online span.number:after {content:" Dragons Hugging Other Dragons"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -177,14 +177,14 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%fmotes%%);
+ background:url(%%discentia-hat%%);
  width:70px;
  height:70px;
- margin-top:-40px;
+ margin-top:-45px;
  margin-left:5px;
  margin-bottom:0px;
  margin-right:-40px;
- background-position:-300% -300%; /*To select emote table position. Increments of -100%.*/
+ background-position:-0% -0%; /*To select emote table position. Increments of -100%.*/
  transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 
@@ -953,6 +953,9 @@ a[href|="/cadence"],a[href|="/cadance"],a[href|="/princesscadance"],a[href|="/pr
 .flair-lemonzest
 {background-position:-200% -2600%}
 
+.flair-sunburst
+{background-position:-200% -2700%}
+
 a[href|="/flutterroll"],a[href|="/a30"],a[href|="/rflutterroll"],a[href|="/ra30"],a[href|="/fluttershy"],a[href|="/b30"],a[href|="/rfluttershy"],a[href|="/rb30"],a[href|="/trixiesad"],a[href|="/c30"],a[href|="/rtrixiesad"],a[href|="/rc30"],a[href|="/twisad"],a[href|="/e30"],a[href|="/rtwisad"],a[href|="/re30"],a[href|="/f30"],a[href|="/flutterhay"],a[href|="/rf30"],a[href|="/rflutterhay"],.flair-applejack,.side .md table tr:nth-of-type(1) td:nth-of-type(5):after
 {background-position:-300% 0}
 
@@ -1034,6 +1037,9 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 .flair-soursweet
 {background-position:-300% -2600%}
 
+.flair-gilda
+{background-position:-300% -2700%}
+
 .flair-cmchaz {background-position: -300% -100%}
 .flair-cmchaz:hover {background-position: -200% -700%}
 .flair-cmclinker {background-position: -300% -100%}
@@ -1055,7 +1061,7 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 .flair-cmcsparroew {background-position: -300% -100%}
 .flair-cmcsparroew:hover {background-position: -0% -200%}
 .flair-cmcaroelen {background-position: -300% -100%}
-.flair-cmcaroelen:hover {background-position: -0% -2000%}
+.flair-cmcaroelen:hover {background-position: -100% -100%}
 
 table tr td:first-child {width:14px}
 

@@ -428,7 +428,7 @@ p.users-online.fuzzed {
 }
 
 .users-online span.number:after {
-    content:" helping Twilight win the crown";
+    content:" competing in the Friendship Games";
     cursor:help;
 }
 
@@ -894,7 +894,10 @@ textarea {
 .side .md table:nth-of-type(3) tr:nth-of-type(4) td:nth-of-type(4):after{content:"imontoyou"}
 .side .md table:nth-of-type(3) tr:nth-of-type(6) td:nth-of-type(2):after{content:"sugarright"}
 .side .md table:nth-of-type(3) tr:nth-of-type(6) td:nth-of-type(3):after{content:"toolatenow"}
-.side .md table:nth-of-type(3) tr:nth-of-type(6) td:nth-of-type(4):after{content:" "}
+.side .md table:nth-of-type(3) tr:nth-of-type(6) td:nth-of-type(4):after{content:"adagiogirl"}
+.side .md table:nth-of-type(3) tr:nth-of-type(8) td:nth-of-type(2):after{content:"ariagirl"}
+.side .md table:nth-of-type(3) tr:nth-of-type(8) td:nth-of-type(3):after{content:"sonatagirl"}
+.side .md table:nth-of-type(3) tr:nth-of-type(8) td:nth-of-type(4):after{content:" "}
 
 /*announcement bar*/
 
@@ -950,10 +953,11 @@ textarea {
 
 /*emotes and flair*/
 
-/*---------------- Standardized Segment (plus tables) ----------------*/
+/*---------------- Not so Standardized Segment (plus tables) ----------------*/
 
 .md { overflow: auto }
 .usertext-edit .md { overflow: inherit }
+.linkflairlabel { max-width: none }
 
 .flair, .moderator ~ .userattrs:before {
   padding:0;
@@ -1259,6 +1263,9 @@ a[href|="/cadence"],a[href|="/cadance"],a[href|="/princesscadance"],a[href|="/pr
 .flair-lemonzest
 {background-position:-200% -2600%}
 
+.flair-sunburst
+{background-position:-200% -2700%}
+
 .flair-peachbottom
 {background-position:-200% -2800%}
 
@@ -1342,6 +1349,9 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 
 .flair-soursweet
 {background-position:-300% -2600%}
+
+.flair-gilda
+{background-position:-300% -2700%}
 
 .flair-harshwhinny
 {background-position:-300% -2800%}
@@ -1429,7 +1439,7 @@ a[href|="/egb28"],a[href|="/celestiasmug"] {background-position: -140px -560px}
 a[href|="/egb09"],a[href|="/pinkiederp"] {background-position: 0 -630px}
 a[href|="/egb19"],a[href|="/shutupanddance"] {background-position: -70px -630px}
 
-a[href|="/egc00"],a[href|="/twilightrocks"],a[href|="/egc10"],a[href|="/rainbowrocks"],a[href|="/egc20"],a[href|="/pinkierocks"],a[href|="/regc00"],a[href|="/rtwilightrocks"],a[href|="/regc10"],a[href|="/rrainbowrocks"],a[href|="/regc20"],a[href|="/rpinkierocks"],a[href|="/egc01"],a[href|="/zapreally"],a[href|="/egc11"],a[href|="/airguitar"],a[href|="/egc21"],a[href|="/imontoyou"],a[href|="/egc02"],a[href|="/sugarright"],a[href|="/egc12"],a[href|="/toolatenow"] {
+a[href|="/egc00"],a[href|="/twilightrocks"],a[href|="/egc10"],a[href|="/rainbowrocks"],a[href|="/egc20"],a[href|="/pinkierocks"],a[href|="/regc00"],a[href|="/rtwilightrocks"],a[href|="/regc10"],a[href|="/rrainbowrocks"],a[href|="/regc20"],a[href|="/rpinkierocks"],a[href|="/egc01"],a[href|="/zapreally"],a[href|="/egc11"],a[href|="/airguitar"],a[href|="/egc21"],a[href|="/imontoyou"],a[href|="/egc02"],a[href|="/sugarright"],a[href|="/egc12"],a[href|="/toolatenow"],a[href|="/egc22"],a[href|="/adagiogirl"],a[href|="/egc03"],a[href|="/ariagirl"],a[href|="/egc13"],a[href|="/sonatagirl"] {
   display: block;
   clear: none;
   float: left;
@@ -1446,6 +1456,9 @@ a[href|="/egc11"],a[href|="/airguitar"] {background-position: -70px -70px}
 a[href|="/egc21"],a[href|="/imontoyou"] {background-position: -140px -70px}
 a[href|="/egc02"],a[href|="/sugarright"] {background-position: 0 -140px}
 a[href|="/egc12"],a[href|="/toolatenow"] {background-position: -70px -140px}
+a[href|="/egc22"],a[href|="/adagiogirl"] {background-position: -140px -140px}
+a[href|="/egc03"],a[href|="/ariagirl"] {background-position: 0 -210px}
+a[href|="/egc13"],a[href|="/sonatagirl"] {background-position: -70px -210px}
 
 /*deprecated reverse emotes*/
 
