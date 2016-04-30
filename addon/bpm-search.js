@@ -126,8 +126,11 @@ function emote_matches_query(query, emote_info, lc_emote_name) {
     // of the negative ones.
     if(query.sr_term_sets.length) {
         var is_match = true; // Match by default, unless there are positive terms
+
+        // Check each pile of terms
         for(var sr_set_i = 0; sr_set_i < query.sr_term_sets.length; sr_set_i++) {
             var sr_set = query.sr_term_sets[sr_set_i];
+
             if(sr_set[0]) {
                 // If there are any positive terms, then we're wrong
                 // by default. We have to match one of them (just not
@@ -137,16 +140,24 @@ function emote_matches_query(query, emote_info, lc_emote_name) {
                 // actually match by default.
                 is_match = false;
             }
+
             // sr_set[0] is true/false and so can't interfere
-            if(sr_set.indexOf(emote_info.source_id) > -1 || sr_set.indexOf(emote_info.source_name) > -1) {
-                if(sr_set[0]) {
-                    is_match = true; // Matched positive term
-                    break;
-                } else {
-                    return false; // Matched negative term
+            for(var i = 1; i < sr_set.length; i++) {
+                if(sr_set[i] === emote_info.source_id || (typeof sr_set[i] === "string" && emote_info.source_name.indexOf(sr_set[i]) > -1)) {
+                    if(sr_set[0]) {
+                        is_match = true; // Matched positive term
+                        break;
+                    } else {
+                        return false; // Matched negative term
+                    }
                 }
             }
+
+            if(is_match) {
+                break;
+            }
         }
+
         if(!is_match) {
             return false;
         }
