@@ -334,6 +334,23 @@
     visibility: inherit;
 }
 
+/* Flags tab */
+#bpm-sb-flagtab {
+    height: inherit;
+    display: none; /* default for this tab */
+
+    padding: 5px;
+
+    visibility: inherit;
+}
+.bpm-sb-flag {
+    margin-bottom: 8px;
+    font-size: small;
+    text-align: justify;
+
+    visibility: inherit;
+}
+
 #bpm-sb-bottomrow {
     height: 20px; /* Fit in the margins */
     padding: 0px !important;

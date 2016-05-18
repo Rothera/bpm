@@ -18,6 +18,8 @@ var sb_tabframe = null;
 var sb_results = null;
 var sb_helptab = null;
 var sb_helplink = null;
+var sb_flagtab = null;
+var sb_flaglink = null;
 var sb_optionslink = null;
 var sb_resize = null;
 var sb_global_icon = null; // Global << thing
@@ -83,9 +85,15 @@ function inject_search_box() {
               '<p class="bpm-sb-help">Some emotes are hidden by default. ',
                 'Use <code>"+nonpony"</code> to see them.</p>',
             '</div>',
+            '<div id="bpm-sb-flagtab">',
+              '<p class="bpm-sb-flag">You can add flags onto emotes to change ',
+                'their appearance. For instance, <code>[](/aj-r)</code> will ',
+                'reverse the emote horizontally.</p>',
+            '</div>',
           '</div>',
           '<div id="bpm-sb-bottomrow">',
-            '<a id="bpm-sb-helplink" href="javascript:void(0)">help</a> | ',
+            '<a id="bpm-sb-helplink" href="javascript:void(0)">search help</a> | ',
+            '<a id="bpm-sb-flaglink" href="javascript:void(0)">flags help</a> | ',
             '<a id="bpm-sb-optionslink" href="javascript:void(0)">bpm options</a>',
             '<span id="bpm-sb-resize"></span>',
             '<a id="bpm-sb-srlink" href="https://www.reddit.com/r/betterponymotes">/r/betterponymotes</a>',
@@ -107,6 +115,8 @@ function inject_search_box() {
     sb_results = document.getElementById("bpm-sb-results");
     sb_helptab = document.getElementById("bpm-sb-helptab");
     sb_helplink = document.getElementById("bpm-sb-helplink");
+    sb_flagtab = document.getElementById("bpm-sb-flagtab");
+    sb_flaglink = document.getElementById("bpm-sb-flaglink");
     sb_optionslink = document.getElementById("bpm-sb-optionslink");
     sb_resize = document.getElementById("bpm-sb-resize");
 
@@ -184,6 +194,15 @@ function init_search_ui(store) {
     sb_helplink.addEventListener("click", catch_errors(function(event) {
         if(current_sb_tab !== sb_helptab) {
             switch_to_sb_tab(sb_helptab);
+        } else {
+            switch_to_sb_tab(sb_results);
+        }
+    }), false);
+
+    // Listen for the "flag" tab link
+    sb_flaglink.addEventListener("click", catch_errors(function(event) {
+        if(current_sb_tab !== sb_flagtab) {
+            switch_to_sb_tab(sb_flagtab);
         } else {
             switch_to_sb_tab(sb_results);
         }
@@ -356,7 +375,7 @@ function hide_search_box() {
 }
 
 function switch_to_sb_tab(tab) {
-    var tabs = [sb_results, sb_helptab];
+    var tabs = [sb_results, sb_helptab, sb_flagtab];
     for(var i = 0; i < tabs.length; i++) {
         tabs[i].style.display = "none";
     }
