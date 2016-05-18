@@ -570,3 +570,54 @@ a[href|="/rc21"][href*="-m"]::after {
     -webkit-transform: scale(0.85) translate(-1px, -12px) rotate(-47deg);
     visibility: visible;
 }
+
+/*
+ * Various flags by HeyItsShuga.
+ */
+
+/*==blur==*/
+
+.bpflag-blur {
+   -webkit-filter: blur(5px)!important;
+}
+
+/*==wobble==*/
+
+@-webkit-keyframes bpm-wobble {
+    0% { -webkit-transform:rotate(32deg)scaleX(1) }
+    33% { -webkit-transform:rotate(-32deg)scaleX(1) }
+    66% { -webkit-transform:rotate(32deg)scaleX(1) }
+    100% { -webkit-transform:rotate(-32deg)scaleX(1) }
+}
+
+.bpflag-w {
+   -webkit-animation: bpm-wobble 2s infinite alternate linear;
+}
+
+.bpflag-wobble {
+   -webkit-animation: bpm-wobble 2s infinite alternate linear;
+}
+
+.bpflag-rock {
+   -webkit-animation: bpm-wobble 2s infinite alternate linear;
+}
+
+/*==sepia==*/
+
+.bpflag-sepia {
+   -webkit-filter: sepia(1)!important; 
+}
+
+.bpflag-s {
+   -webkit-filter: sepia(1)!important; 
+}
+
+/*==monochrome==*/
+
+.bpflag-bw {
+   -webkit-filter: grayscale(1)!important;
+}
+
+.bpflag-mono {
+   -webkit-filter: grayscale(1)!important;
+}
