@@ -581,39 +581,25 @@ a[href|="/rc21"][href*="-m"]::after {
    -webkit-filter: blur(1.5px)!important;
 }
 
-.bpflag-b {
-   -webkit-filter: blur(1.5px)!important;
-}
-
 /*==wobble==*/
 
 @-webkit-keyframes bpm-wobble {
-    0% { -webkit-transform:rotate(32deg)scaleX(1) }
-    33% { -webkit-transform:rotate(-32deg)scaleX(1) }
-    66% { -webkit-transform:rotate(32deg)scaleX(1) }
-    100% { -webkit-transform:rotate(-32deg)scaleX(1) }
-}
-
-.bpflag-w {
-   -webkit-animation: bpm-wobble 2s infinite alternate linear;
+    to { -webkit-transform:rotate(32deg)scaleX(1) }
+    from { -webkit-transform:rotate(-32deg)scaleX(1) }
 }
 
 .bpflag-wobble {
-   -webkit-animation: bpm-wobble 2s infinite alternate linear;
+   -webkit-animation: bpm-wobble 0.75s infinite alternate linear;
 }
 
 .bpflag-rock {
-   -webkit-animation: bpm-wobble 2s infinite alternate linear;
+   -webkit-animation: bpm-wobble 0.75s infinite alternate linear;
 }
 
 /*==sepia==*/
 
 .bpflag-sepia {
-   -webkit-filter: sepia(1)!important; 
-}
-
-.bpflag-s {
-   -webkit-filter: sepia(1)!important; 
+   -webkit-filter: sepia(1)!important;
 }
 
 /*==monochrome==*/

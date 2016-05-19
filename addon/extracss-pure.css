@@ -588,39 +588,25 @@ a[href|="/rc21"][href*="-m"]::after {
    filter: blur(1.5px)!important;
 }
 
-.bpflag-b {
-   filter: blur(1.5px)!important;
-}
-
 /*==wobble==*/
 
 @keyframes bpm-wobble {
-    0% { transform:rotate(32deg)scaleX(1) }
-    33% { transform:rotate(-32deg)scaleX(1) }
-    66% { transform:rotate(32deg)scaleX(1) }
-    100% { transform:rotate(-32deg)scaleX(1) }
-}
-
-.bpflag-w {
-   animation: bpm-wobble 2s infinite alternate linear;
+    to { transform:rotate(32deg)scaleX(1) }
+    from { transform:rotate(-32deg)scaleX(1) }
 }
 
 .bpflag-wobble {
-   animation: bpm-wobble 2s infinite alternate linear;
+   animation: bpm-wobble 0.75s infinite alternate linear;
 }
 
 .bpflag-rock {
-   animation: bpm-wobble 2s infinite alternate linear;
+   animation: bpm-wobble 0.75s infinite alternate linear;
 }
 
 /*==sepia==*/
 
 .bpflag-sepia {
-   filter: sepia(1)!important; 
-}
-
-.bpflag-s {
-   filter: sepia(1)!important; 
+   filter: sepia(1)!important;
 }
 
 /*==monochrome==*/
