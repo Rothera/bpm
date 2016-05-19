@@ -321,7 +321,7 @@
 #bpm-sb-helptab {
     height: inherit;
     display: none; /* default for this tab */
-
+    overflow-y: scroll;
     padding: 5px;
 
     visibility: inherit;
@@ -338,7 +338,7 @@
 #bpm-sb-flagtab {
     height: inherit;
     display: none; /* default for this tab */
-
+    overflow-y: scroll;
     padding: 5px;
 
     visibility: inherit;
@@ -349,6 +349,36 @@
     text-align: justify;
 
     visibility: inherit;
+}
+.bpflagtable {border-collapse:collapse;border-spacing:0;}
+.bpflagtable td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;
+border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.bpflagtable th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;
+padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;
+word-break:normal;}
+.bpflagtable .bpflagtable-yw4l{vertical-align:top}
+@keyframes bpm-aura {
+    from { background-position:  0px; }
+    to { background-position: 500px; }
+}
+.bpflag-m-demo::after{
+    content: " ";
+    width: 50px;
+    height: 50px;
+    display: block;
+    z-index: 2;
+    position: relative;
+    visibility: collapse;
+    background-image: url(https://b.thumbs.redditmedia.com/tAK6nmFTMRPip8Dv0ZFLKIqrnrXuZXC7WAA3-v1kO1M.png) !important;
+    animation: bpm-aura 1s steps(10) infinite reverse;
+    transform: scale(0.9) translate(13px, -16px) rotate(0deg);
+    -webkit-animation: bpm-aura 1s steps(10) infinite reverse;
+    -webkit-transform: scale(0.9) translate(13px, -16px) rotate(0deg);
+    visibility: visible;
+}
+.bpflag-m-demo {
+    z-index: 1;
+    position: relative;
 }
 
 #bpm-sb-bottomrow {
