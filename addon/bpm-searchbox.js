@@ -101,7 +101,7 @@ function inject_search_box() {
                    '<th class="bpflagtable-031e"><a class="bpm-emote bpflag-in bpflag-d bpmote-twibeam"></a><br><center><code>-d</code></center></th>',
                    '<th class="bpflagtable-031e"><a class="bpm-emote bpflag-in bpflag-f bpmote-twibeam"></a><br><center><code>-f</code></center></th>',
                    '<th class="bpflagtable-031e"><a class="bpm-emote bpflag-in bpflag-45 bpmote-twibeam"></a><br><center><code>-45</code></center></th>',
-                   '<th class="bpflagtable-031e"><a href="/twibeam-m" class="bpm-emote bpflag-in bpflag-m bpmote-twibeam"></a><br><center><code>-m</code></center></th>', //Known bug: Magic aura doesn't go away after closing emote box.
+                   '<th class="bpflagtable-031e"><img src="http://b.thumbs.redditmedia.com/koK9qvNwkUOL8tajQjjYJ3o91ATwBKnDQIROLOwxwWs.png" class="bpm-emote bpflag-in"></img><br><center><code>-m</code></center></th>',
                  '</tr>',
                '</table></center><br>',
                '<center>Colouring:</center>',
