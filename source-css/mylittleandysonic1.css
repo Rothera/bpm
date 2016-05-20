@@ -1,7 +1,7 @@
 .id-t3_145m8r.link .title{font-size:large}
 
 /* comment box image */
-.commentarea textarea:not(:focus) { background-image: url(%%darkc%%); }
+.commentarea textarea:not(:focus) { background-image: url(%%snap%%); }
  
 /*SNOW BEGINS */
 /*
@@ -35,15 +35,15 @@ animation: snow 2s steps(10) infinite;
 /* Replace Cursors */
 /*<%jeroknite> mfw Pwny is slowly turning the sub into a geocities site*/
 body {
-cursor: url(%%Cursor%%), default !important;
+cursor: url(%%cursor2%%), default !important;
 }
-a { cursor: url(%%CursorHover%%), pointer; }
+a { cursor: url(%%cursor1%%), pointer; }
 
 
 /* Changes background  */
 
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%screwlick%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%food%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -58,13 +58,13 @@ a { cursor: url(%%CursorHover%%), pointer; }
 }
 
  #header #header-bottom-left {
-   background: url(%%darksouls%%) 50% 0px !important;
+   background: url(%%meme%%) 50% 15px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
 
 .tabmenu {
-  margin-top: 160px;
+  margin-top: 3px;
 }
 
 .gilded-icon{
@@ -628,6 +628,11 @@ background-repeat: no-repeat;
 .flair-FrancisVace:after { background-position: 0px -7110px }
 .flair-Memekip:after { background-position: 0px -7140px }
 .flair-throwawayaccount997:after { background-position: 0px -7170px }
+.flair-panda:after { background-position: 0px -7200px }
+.flair-yiffers:after { background-position: 0px -7230px }
+
+
+
 
 /* Nightmode fix for flair */
 body.res-nightmode:first-of-type .flair { background-color: #222!important; }
@@ -1647,6 +1652,7 @@ a.author[href$="RAINBOW_PONY_SEMEN"]{ color:white!important; background: -moz-li
 a.author[href$="V17Ds"] {color:#FF9EF2!important}
 a.author[href$="Beatbawx"] {color:#FF9933!important}
 a.author[href$="Parasprite"] {color:#D19FE3!important}
+a.author[href$="Pseudo-ku"] {color:#b70aff!important}
 
 /* PROPER GREENTEXT (stolen from plounge, which stole from /r/4chan) */
 .md blockquote {
