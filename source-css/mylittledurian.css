@@ -288,6 +288,16 @@ a[href="/turnupfam"], a[href="/flutterfam"], a[href="/famshy"] {
     background-image: url(%%turnupfam%%) !important
 }
 
+a[href="/soarinnom"], a[href="/soarnom"], a[href="/pienom"] {
+    background-position: 0px 0px;
+    Display: block;
+    Clear: none;
+    Float: left;
+    Width: 148px;
+    Height: 160px;
+    background-image: url(%%soarinnom%%) !important
+}
+
 /*Making the tabs' corners more rounded (stolen from r/mylittlepony)*/
 .tabmenu li a {
     -webkit-border-top-left-radius: 5px;
