@@ -153,6 +153,11 @@ case "chrome-ext":
     };
 
     var _message_handler = catch_errors(function(message) {
+        if(!message || !message.method) {
+            log_error("Unknown request from Chrome background script: '" + message + "'");
+            return;
+        }
+
         switch(message.method) {
         case "initdata":
             _complete_setup(message);
