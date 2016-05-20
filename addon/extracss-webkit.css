@@ -572,16 +572,9 @@ a[href|="/rc21"][href*="-m"]::after {
 }
 
 /*
- * Various flags by HeyItsShuga.
+ * -wobble flag by HeyItsShuga.
  */
 
-/*==blur==*/
-
-.bpflag-blur {
-   -webkit-filter: blur(1.5px)!important;
-}
-
-/*==wobble==*/
 
 @-webkit-keyframes bpm-wobble {
     to { -webkit-transform:rotate(32deg)scaleX(1) }
@@ -594,20 +587,4 @@ a[href|="/rc21"][href*="-m"]::after {
 
 .bpflag-rock {
    -webkit-animation: bpm-wobble 0.75s infinite alternate linear;
-}
-
-/*==sepia==*/
-
-.bpflag-sepia {
-   -webkit-filter: sepia(1)!important;
-}
-
-/*==monochrome==*/
-
-.bpflag-bw {
-   -webkit-filter: grayscale(1)!important;
-}
-
-.bpflag-mono {
-   -webkit-filter: grayscale(1)!important;
 }

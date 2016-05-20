@@ -541,3 +541,34 @@ word-break:normal;}
     left: 14px;
     top: 5px
     }
+
+
+/*
+* Various flags by HeyItsShuga.
+*/
+
+/*==blur==*/
+
+.bpflag-blur {
+   filter: blur(1.5px)!important;
+   -webkit-filter: blur(1.5px)!important;
+}
+
+/*==sepia==*/
+
+.bpflag-sepia {
+   filter: sepia(1)!important;
+   -webkit-filter: sepia(1)!important;
+}
+
+/*==monochrome==*/
+
+.bpflag-bw {
+   filter: grayscale(1)!important;
+   -webkit-filter: grayscale(1)!important;
+}
+
+.bpflag-mono {
+   filter: grayscale(1)!important;
+   -webkit-filter: grayscale(1)!important;
+}
