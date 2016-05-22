@@ -602,7 +602,7 @@ function run(prefs) {
     manage_option(prefs, "enableGlobalSearch");
     manage_option(prefs, "clickToggleSFW");
 
-    manage_number(prefs, "searchLimit", 200);
+    manage_number(prefs, "searchLimit", 250);
     manage_number(prefs, "maxEmoteSize", 0);
 
     manage_enabled_subreddits(prefs);
