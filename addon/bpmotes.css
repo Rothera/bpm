@@ -370,7 +370,7 @@ word-break:normal;}
 }
 
 /* Help and options links */
-#bpm-sb-helplink, #bpm-sb-optionslink, #bpm-sb-srlink {
+#bpm-sb-helplink, #bpm-sb-flaglink, #bpm-sb-optionslink, #bpm-sb-srlink {
     height: 20px;
     line-height: 20px;
     text-decoration: none;
@@ -550,15 +550,15 @@ word-break:normal;}
 /*==blur==*/
 
 .bpflag-blur {
-   filter: blur(1.5px)!important;
-   -webkit-filter: blur(1.5px)!important;
+   filter: blur(2.0px)!important;
+   -webkit-filter: blur(2.0px)!important;
 }
 
 /*==-blur intensity modifications==*/
 
 .bpflag-blur1 {
-   filter: blur(0.5px)!important;
-   -webkit-filter: blur(0.5px)!important;
+   filter: blur(0.8px)!important;
+   -webkit-filter: blur(0.8px)!important;
 }
 
 .bpflag-blur2 {
