@@ -369,6 +369,14 @@ word-break:normal;}
     visibility: inherit;
 }
 
+.bpm-sb-noconvert-flutterwink::after {
+content: "[](/flutterwink-invert-in)"
+}
+
+.bpm-sb-noconvert-zecora::after {
+content: "[](/zecora-spin-s1)"
+}
+
 /* Help and options links */
 #bpm-sb-helplink, #bpm-sb-flaglink, #bpm-sb-optionslink, #bpm-sb-srlink {
     height: 20px;
