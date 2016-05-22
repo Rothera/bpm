@@ -144,9 +144,17 @@ function inject_search_box() {
                        '<th class="bpflagtable-031e"><center><a class="bpm-emote bpmote-txt_excl bpflag-impact_excl_">yay.</a></center><br><center><code>-impact!</code></center></th>',
                        '<th class="bpflagtable-031e"><center><a class="bpm-emote bpmote-txt_excl bpflag-tahoma_excl_">yay.</a></center><br><center><code>-tahoma!</code></center></th>',
                        '<th class="bpflagtable-031e"><center><a class="bpm-emote bpmote-txt_excl bpflag-papyrus_excl_">yay.</a></center><br><center><code>-papyrus!</code></center></th>',
-
                        '</tr>',
                    '</table></center><br>',
+                   '<br><a class="bpm-emote bpflag-spin bpflag-s1 bpmote-zecora"></a><p class="bpm-sb-flag">Intensity and speed modifiers allow you to modify how flags work and appear. For example, <code>[](/zecora-spin-s1)</code> would make the emote spin very fast (see left).<br>The examples below demonstrate the least and most intense of the modification flags.</p>',
+                   '<center>Intensity/Speed Modifiers:</center>',
+                    '<center><table class="bpflagtable">',
+                        '<tr><th style="table-layout:fixed;width:350px;" class="bpflagtable-031e"><a class="bpm-emote bpflag-in bpflag-s1 bpflag-slide bpmote-gummystare"></a><br><center><code>-s1 and -slide</code></center></th></tr>',
+                        '<tr><th style="table-layout:fixed;width:350px;" class="bpflagtable-031e"><a class="bpm-emote bpflag-in bpflag-s15 bpflag-_excl_slide bpmote-gummystare"></a><br><center><code>-s15 and -slide</code></center></th></tr>',
+                        '</table><table class="bpflagtable"><tr><th style="table-layout:fixed;width:170px;" class="bpflagtable-031e"><center><a class="bpm-emote bpflag-in bpflag-blur1 bpmote-gummystare"></a></center><br><center><code>-blur1</code></center></th>',
+                        '<th style="table-layout:fixed;width:170px;" class="bpflagtable-031e"><center><a class="bpm-emote bpflag-in bpflag-blur8 bpmote-gummystare"></a></center><br><center><code>-blur8</code></center></th></tr>',
+                    '</table></center><br>',
+
                   '<p class="bpm-sb-flag">If you need to type an emote in the middle of the sentence, like -> <a class="bpm-emote bpflag-in bpmote-pinkieooh"></a> <- this, use the <code>-in</code> flag.</p>',
                   '<p class="bpm-sb-flag">If you need to have an emote torwards the right side of your comment, use the modifier <code>-ar</code>.<a class="bpm-emote bpflag-ar bpmote-smooze"></a></p>',
             '</div>',
