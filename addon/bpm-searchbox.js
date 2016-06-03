@@ -93,7 +93,7 @@ function inject_search_box() {
               '</code> generates <a class="bpm-emote bpflag-invert bpflag-in ',
               'bpmote-flutterwink"></a>.</p>',
               '<p class="bpm-sb-flag">If you need to type an emote in the middle of the sentence, like -> <a class="bpm-emote bpflag-in bpmote-pinkieooh"></a> <- this, use the <code>-in</code> flag.</p>',
-              '<p class="bpm-sb-flag">If you need to have an emote torwards the right side of your comment, use the flag <code>-ar</code>.<a class="bpm-emote bpflag-ar bpflag-in bpmote-smooze"></a></p>',
+              '<p class="bpm-sb-flag">If you need to have an emote towards the right side of your comment, use the flag <code>-ar</code>.<a class="bpm-emote bpflag-ar bpflag-in bpmote-smooze"></a></p>',
               '<p class="bpm-sb-flag">Most of the other flags that can be used are listed',
               ' below:</p><br><br><br><br>',
               '<center>Basics:</center>',
