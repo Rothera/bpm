@@ -321,7 +321,7 @@
 #bpm-sb-helptab {
     height: inherit;
     display: none; /* default for this tab */
-
+    overflow-y: scroll;
     padding: 5px;
 
     visibility: inherit;
@@ -334,6 +334,30 @@
     visibility: inherit;
 }
 
+/* Flags tab */
+#bpm-sb-flagtab {
+    height: inherit;
+    display: none; /* default for this tab */
+    overflow-y: scroll;
+    padding: 5px;
+
+    visibility: inherit;
+}
+.bpm-sb-flag {
+    margin-bottom: 8px;
+    font-size: small;
+    text-align: justify;
+
+    visibility: inherit;
+}
+.bpflagtable {border-collapse:collapse;border-spacing:0;}
+.bpflagtable td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;
+border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.bpflagtable th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;
+padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;
+word-break:normal;}
+.bpflagtable .bpflagtable-yw4l{vertical-align:top}
+
 #bpm-sb-bottomrow {
     height: 20px; /* Fit in the margins */
     padding: 0px !important;
@@ -345,8 +369,16 @@
     visibility: inherit;
 }
 
+.bpm-sb-noconvert-flutterwink::after {
+content: "[](/flutterwink-invert-in)"
+}
+
+.bpm-sb-noconvert-zecora::after {
+content: "[](/zecora-spin-s1)"
+}
+
 /* Help and options links */
-#bpm-sb-helplink, #bpm-sb-optionslink, #bpm-sb-srlink {
+#bpm-sb-helplink, #bpm-sb-flaglink, #bpm-sb-optionslink, #bpm-sb-srlink {
     height: 20px;
     line-height: 20px;
     text-decoration: none;
@@ -422,7 +454,7 @@
 }
 
 .bpflag-comicsans_excl_ {
-    font-family: "Comic-Sans MS", cursive
+    font-family: "Comic-Sans MS", "Comic Sans MS", "Marker Felt", cursive
 }
 
 .bpflag-impact_excl_ {
@@ -431,6 +463,10 @@
 
 .bpflag-tahoma_excl_ {
     font-family: Tahoma, Geneva, sans-serif
+}
+
+.bpflag-papyrus_excl_ {
+    font-family: Papyrus, fantasy, cursive
 }
 
 /*
@@ -513,3 +549,76 @@
     left: 14px;
     top: 5px
     }
+
+
+/*
+* Various flags by HeyItsShuga.
+*/
+
+/*==blur==*/
+
+.bpflag-blur {
+   filter: blur(2.0px)!important;
+   -webkit-filter: blur(2.0px)!important;
+}
+
+/*==-blur intensity modifications==*/
+
+.bpflag-blur1 {
+   filter: blur(0.8px)!important;
+   -webkit-filter: blur(0.8px)!important;
+}
+
+.bpflag-blur2 {
+   filter: blur(2.0px)!important;
+   -webkit-filter: blur(2.0px)!important;
+}
+
+.bpflag-blur3 {
+   filter: blur(3.5px)!important;
+   -webkit-filter: blur(3.5px)!important;
+}
+
+.bpflag-blur4 {
+   filter: blur(5.0px)!important;
+   -webkit-filter: blur(5.0px)!important;
+}
+
+.bpflag-blur5 {
+   filter: blur(6.5px)!important;
+   -webkit-filter: blur(6.5px)!important;
+}
+
+.bpflag-blur6 {
+   filter: blur(8.0px)!important;
+   -webkit-filter: blur(8.0px)!important;
+}
+
+.bpflag-blur7 {
+   filter: blur(9.5px)!important;
+   -webkit-filter: blur(9.5px)!important;
+}
+
+.bpflag-blur8 {
+   filter: blur(11.0px)!important;
+   -webkit-filter: blur(11.0px)!important;
+}
+
+/*==sepia==*/
+
+.bpflag-sepia {
+   filter: sepia(1)!important;
+   -webkit-filter: sepia(1)!important;
+}
+
+/*==monochrome==*/
+
+.bpflag-bw {
+   filter: grayscale(1)!important;
+   -webkit-filter: grayscale(1)!important;
+}
+
+.bpflag-mono {
+   filter: grayscale(1)!important;
+   -webkit-filter: grayscale(1)!important;
+}

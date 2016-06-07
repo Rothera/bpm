@@ -570,3 +570,17 @@
     -webkit-transform: scale(0.85) translate(-1px, -12px) rotate(-47deg);
     visibility: visible;
 }
+
+/*
+ * -wobble flag by HeyItsShuga.
+ */
+
+
+@-webkit-keyframes bpm-wobble {
+    to { -webkit-transform:rotate(32deg)scaleX(1) }
+    from { -webkit-transform:rotate(-32deg)scaleX(1) }
+}
+
+.bpflag-wobble {
+   -webkit-animation: bpm-wobble 0.75s infinite alternate linear;
+}

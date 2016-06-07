@@ -363,6 +363,14 @@
 /*== -!shift/-!slide ==*/
 @keyframes _excl_slide{0%{left:60%;transform:scaleX(-1)}46%{left:0%;transform:scaleX(-1)}50%{left:0%;transform:scaleX(1)}96%{left:60%;transform:scaleX(1)}100%{left:60%;transform:scaleX(-1)}}
 @keyframes _excl_slide-r{0%{left:60%;transform:scaleX(1)}46%{left:0%;transform:scaleX(1)}50%{left:0%;transform:scaleX(-1)}96%{left:60%;transform:scaleX(-1)}100%{left:60%;transform:scaleX(1)}}
+.bpflag-_excl_slide {position:relative;animation:_excl_slide 8s infinite ease}
+.bpflag-r.bpflag-_excl_slide {position:relative;animation-name:_excl_slide-r}
+.bpflag-_excl_shift {position:relative;animation:_excl_slide 8s infinite linear}
+.bpflag-r.bpflag-_excl_shift {position:relative;animation-name:_excl_slide-r}
+
+/*== -!shift/-!slide (legacy) ==*/
+@keyframes _excl_slide{0%{left:60%;transform:scaleX(-1)}46%{left:0%;transform:scaleX(-1)}50%{left:0%;transform:scaleX(1)}96%{left:60%;transform:scaleX(1)}100%{left:60%;transform:scaleX(-1)}}
+@keyframes _excl_slide-r{0%{left:60%;transform:scaleX(1)}46%{left:0%;transform:scaleX(1)}50%{left:0%;transform:scaleX(-1)}96%{left:60%;transform:scaleX(-1)}100%{left:60%;transform:scaleX(1)}}
 .bpflag-_excl_slide {position:relative;animation-name:_excl_slide 8s infinite ease}
 .bpflag-r.bpflag-_excl_slide {position:relative;animation-name:_excl_slide-r}
 .bpflag-_excl_shift {position:relative;animation-name:_excl_slide 8s infinite linear}
@@ -576,4 +584,18 @@
 .bpmote-rc21.bpflag-m::after {
     transform: scale(0.85) translate(-1px, -12px) rotate(-47deg);
     visibility: visible;
+}
+
+/*
+ * -wobble flag by HeyItsShuga.
+ */
+
+
+@keyframes bpm-wobble {
+    to { transform:rotate(32deg)scaleX(1) }
+    from { transform:rotate(-32deg)scaleX(1) }
+}
+
+.bpflag-wobble {
+   animation: bpm-wobble 0.75s infinite alternate linear;
 }
