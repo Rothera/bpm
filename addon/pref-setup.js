@@ -35,7 +35,7 @@ var default_prefs = {
     "enableGlobalEmotes": false,
     "enableGlobalSearch": false,
     "clickToggleSFW": true,
-    "searchLimit": 200,
+    "searchLimit": 250,
     "maxEmoteSize": 0,
     "enabledSubreddits2": {}, // subreddit name -> 0/1 enabled
     "disabledEmotes": [],
