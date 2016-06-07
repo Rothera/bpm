@@ -172,9 +172,9 @@ background: url(%%horsewife%%) center center no-repeat transparent;
 /*Subscriber Name Replace*/
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Bah Humbugs"}
+div.titlebox .subscribers span.number:after {content:" Solutions"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " ignoring warnings" }
+div.titlebox p.users-online span.number:after { content: " Problems" }
 div.titlebox p.users-online span.word { display: none }
 
 /*Flair modifications*/
@@ -935,6 +935,8 @@ padding: 0
 .usertext input[value$="5r"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -500%}
 .usertext input[value$="5s"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -600%}
 .usertext input[value$="555"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -700%}
+.usertext input[value$="hoi"] + .usertext-body::before,
+.usertext input[value$="h0i"] + .usertext-body::before {background:url(%%hiddentem%%) no-repeat; background-position: 9px 9px;}
 
 /*End of every comment random filly*/
 
@@ -958,6 +960,7 @@ padding: 0
 .flair-twilight {background-position: -100% 0%}
 .flair-fluttershy {background-position: -200% 0%}
 .flair-applejack {background-position: -300% 0%}
+.flair-dashwaifu {background-position: -400% 0%}
 
 .flair-pinkiepie {background-position: 0% -100%}
 .flair-rarity {background-position: -100% -100%}
@@ -1016,11 +1019,13 @@ padding: 0
 .flair-flim {background-position: -100% -1000%} /*And this is flams*/
 .flair-silverspoon {background-position: -200% -1000%}
 .flair-diamondtiara {background-position: -300% -1000%}
+.flair-zelda {background-position: -400% -1000%}
 
 .flair-snips {background-position: 0% -1100%}
 .flair-snails {background-position: -100% -1100%}
 .flair-twist {background-position: -200% -1100%}
 .flair-gaben {background-position: -300% -1100%} /*Truffle Shuffle in the gameloft code, nameless elsewhere */
+.flair-sherbee {background-position: -400% -1100%}
 
 .flair-sparkler {background-position: 0% -1200%}
 .flair-disco {background-position: -100% -1200%} /*Is actually nameless, but Hairy Tipper elsewhere*/
@@ -1354,42 +1359,42 @@ z-index:9000}
 60%{color:#f90}
 100%{bottom:38px;opacity:0.0}}
 
-.thing[data-fullname$="a"] > .midcol > .upmod:focus::after { content: "hOI!!!!!! i'm tEMMIE!!"; }
-.thing[data-fullname$="b"] > .midcol > .upmod:focus::after { content: "NO!!!!! muscles r... NOT CUTE"; }
-.thing[data-fullname$="c"] > .midcol > .upmod:focus::after { content: "if you're so scared, why do you keep winking?"; }
-.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "THESE ARE WINKS OF FEAR ; )"; }
-.thing[data-fullname$="e"] > .midcol > .upmod:focus::after { content: "Be good, alright?"; }
-.thing[data-fullname$="f"] > .midcol > .upmod:focus::after { content: "I AM A SKELETON WITH HIGH STANDARDS!!"; }
-.thing[data-fullname$="g"] > .midcol > .upmod:focus::after { content: "You and the other monsters ditched Jerry."; }
-.thing[data-fullname$="h"] > .midcol > .upmod:focus::after { content: "Undyne suplexes a huge boulder, just because she can."; }
-.thing[data-fullname$="i"] > .midcol > .upmod:focus::after { content: "geeettttttt dunked on!!!"; }
-.thing[data-fullname$="j"] > .midcol > .upmod:focus::after { content: "Papyrus remembered a bad joke Sans told and is frowning."; }
-.thing[data-fullname$="k"] > .midcol > .upmod:focus::after { content: "Papyrus prepares a non-bone attack then spends a minute fixing his mistake."; }
-.thing[data-fullname$="l"] > .midcol > .upmod:focus::after { content: "He's also wearing sunglasses on both biceps"; }
-.thing[data-fullname$="m"] > .midcol > .upmod:focus::after { content: "Critical pet! Dog excitement increased."; }
-.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "Greater Dog's excitement is creating a power field that prevents petting."; }
-.thing[data-fullname$="o"] > .midcol > .upmod:focus::after { content: "You can't get a word in edgewise. Its words dizzy you..."; }
-.thing[data-fullname$="p"] > .midcol > .upmod:focus::after { content: "IT SEEMS EVERYTHING IN THIS AREA IS ACTUALLY A BOMB!"; }
-.thing[data-fullname$="q"] > .midcol > .upmod:focus::after { content: "D-d-don't give up, okay!?"; }
-.thing[data-fullname$="r"] > .midcol > .upmod:focus::after { content: "Lights! Camera! Action!"; }
-.thing[data-fullname$="s"] > .midcol > .upmod:focus::after { content: "You took more candy. How disgusting..."; }
-.thing[data-fullname$="t"] > .midcol > .upmod:focus::after { content: "OH MY GOD! ANIME IS REAL, RIGHT!?"; }
-.thing[data-fullname$="u"] > .midcol > .upmod:focus::after { content: "OH...NO... YOU'RE MEETING ALL MY STANDARDS."; }
-.thing[data-fullname$="v"] > .midcol > .upmod:focus::after { content: "after a great meal i like to lie on the ground and feel like garbage..."; }
-.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "...you really like hot animals, don't you?"; }
-.thing[data-fullname$="x"] > .midcol > .upmod:focus::after { content: "Yeah, you gotta save your money. For college and spiders."; }
-.thing[data-fullname$="y"] > .midcol > .upmod:focus::after { content: "Proud that you're going to make a delicious cake~ Ahuhuhu~"; }
-.thing[data-fullname$="z"] > .midcol > .upmod:focus::after { content: "But enough of that... It's time for dinner, isn't it? Ahuhuhu~"; }
-.thing[data-fullname$="1"] > .midcol > .upmod:focus::after { content: "Feeling comfortable trapped in that web?"; }
-.thing[data-fullname$="2"] > .midcol > .upmod:focus::after { content: "Let us erase this pointless world, and move on to the next."; }
-.thing[data-fullname$="3"] > .midcol > .upmod:focus::after { content: "Huh? Did you just call me... "Mom"?"; }
-.thing[data-fullname$="4"] > .midcol > .upmod:focus::after { content: "maybe looking at this nice lamp will help you."; }
-.thing[data-fullname$="5"] > .midcol > .upmod:focus::after { content: "WOWIE!! YOU DID IT!!! YOU DIDN'T DO A VIOLENCE!!!"; }
-.thing[data-fullname$="6"] > .midcol > .upmod:focus::after { content: "The Konami Code fills you with Determination."; }
-.thing[data-fullname$="7"] > .midcol > .upmod:focus::after { content: "You felt your sins crawling on your back."; }
-.thing[data-fullname$="8"] > .midcol > .upmod:focus::after { content: "Despite everything, it's still you."; }
-.thing[data-fullname$="9"] > .midcol > .upmod:focus::after { content: "What happens when something without a soul gains the will to live?"; }
-.thing[data-fullname$="0"] > .midcol > .upmod:focus::after { content: "This is Sans. Did you know that I love to "get owned?" I also think Toriel is very good and fhfkehfeaufsisf"; }
+.thing[data-fullname$="a"] > .midcol > .upmod:focus::after { content: "Bulbasaur"; }
+.thing[data-fullname$="b"] > .midcol > .upmod:focus::after { content: "Charmander"; }
+.thing[data-fullname$="c"] > .midcol > .upmod:focus::after { content: "Squirtle"; }
+.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "Pikachu"; }
+.thing[data-fullname$="e"] > .midcol > .upmod:focus::after { content: "Chikorita"; }
+.thing[data-fullname$="f"] > .midcol > .upmod:focus::after { content: "Cyndaquil"; }
+.thing[data-fullname$="g"] > .midcol > .upmod:focus::after { content: "Totodile"; }
+.thing[data-fullname$="h"] > .midcol > .upmod:focus::after { content: "Treecko"; }
+.thing[data-fullname$="i"] > .midcol > .upmod:focus::after { content: "Torchic"; }
+.thing[data-fullname$="j"] > .midcol > .upmod:focus::after { content: "Mudkip"; }
+.thing[data-fullname$="k"] > .midcol > .upmod:focus::after { content: "Turtwig"; }
+.thing[data-fullname$="l"] > .midcol > .upmod:focus::after { content: "Chimchar"; }
+.thing[data-fullname$="m"] > .midcol > .upmod:focus::after { content: "Piplup"; }
+.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "Snivy"; }
+.thing[data-fullname$="o"] > .midcol > .upmod:focus::after { content: "Tepig"; }
+.thing[data-fullname$="p"] > .midcol > .upmod:focus::after { content: "Oshawott"; }
+.thing[data-fullname$="q"] > .midcol > .upmod:focus::after { content: "Chespin"; }
+.thing[data-fullname$="r"] > .midcol > .upmod:focus::after { content: "Fennekin"; }
+.thing[data-fullname$="s"] > .midcol > .upmod:focus::after { content: "Froakie"; }
+.thing[data-fullname$="t"] > .midcol > .upmod:focus::after { content: "Rowlet"; }
+.thing[data-fullname$="u"] > .midcol > .upmod:focus::after { content: "Litten"; }
+.thing[data-fullname$="v"] > .midcol > .upmod:focus::after { content: "Popplio"; }
+.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "Eevee"; }
+.thing[data-fullname$="x"] > .midcol > .upmod:focus::after { content: "Jolteon"; }
+.thing[data-fullname$="y"] > .midcol > .upmod:focus::after { content: "Flareon"; }
+.thing[data-fullname$="z"] > .midcol > .upmod:focus::after { content: "Vaporeon"; }
+.thing[data-fullname$="1"] > .midcol > .upmod:focus::after { content: "Espeon"; }
+.thing[data-fullname$="2"] > .midcol > .upmod:focus::after { content: "Umbreon"; }
+.thing[data-fullname$="3"] > .midcol > .upmod:focus::after { content: "Leafeon"; }
+.thing[data-fullname$="4"] > .midcol > .upmod:focus::after { content: "Glaceon"; }
+.thing[data-fullname$="5"] > .midcol > .upmod:focus::after { content: "Sylveon"; }
+.thing[data-fullname$="6"] > .midcol > .upmod:focus::after { content: "Ditto"; }
+.thing[data-fullname$="7"] > .midcol > .upmod:focus::after { content: "Mew"; }
+.thing[data-fullname$="8"] > .midcol > .upmod:focus::after { content: "Mewtwo"; }
+.thing[data-fullname$="9"] > .midcol > .upmod:focus::after { content: "Lucario"; }
+.thing[data-fullname$="0"] > .midcol > .upmod:focus::after { content: "Zoroark"; }
 .thing .upmod:focus:after{white-space:nowrap}
 .midcol,.last-clicked.midcol{overflow:visible!important}
 .res-commentBoxes .commentarea .comment{overflow:visible!important}
