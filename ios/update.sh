@@ -1,4 +1,5 @@
 # Note: This *must* be ran twice on first run.
+find . -name .DS_Store -print0 | xargs -0 git rm --ignore-unmatch # Clear cache
 mkdir ~/.ios_ponymotes/tags # Makes tags folder so ponymote script doesn't complain.
 cp .config.ini ~/.ios_ponymotes/config.ini # Updates config file.
 python .fetch_ponymotes.py # Uses Jibodeah's Desktop Ponymotes to get ponymotes.
