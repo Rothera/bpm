@@ -377,6 +377,10 @@ content: "[](/flutterwink-invert-in)"
 content: "[](/zecora-spin-s1)"
 }
 
+.bpm-sb-noconvert-txt::after {
+content: "[](txt!)"
+}
+
 /* Help and options links */
 #bpm-sb-helplink, #bpm-sb-flaglink, #bpm-sb-optionslink, #bpm-sb-srlink {
     height: 20px;
