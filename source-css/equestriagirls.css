@@ -671,6 +671,50 @@ textarea {
 .linkflair-comictitlespoiler p.title:before { content: "[COMIC SPOILER] "}
 .flairselector .linkflairlabel { display: unset }
 
+/*comments*/
+
+a[href|="/sp"] {
+  display: inline-block;
+  padding-right: 100%;
+  width: 0px;
+  height: 0px;
+}
+
+a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
+  float: none !important;
+  display: inline-block !important;
+}
+
+a[href|="/spoiler"] {
+  background: #000 !important;
+  color: #000 !important;
+}
+
+a[href|="/spoiler"]:hover {
+  color: #fff !important;
+}
+
+a[href="/s"] {
+  color: #222222; 
+  background: #CCCCCC;
+  cursor: default;
+} 
+
+a[href="/s"]:hover {
+  color: #8F8F8F 
+} 
+
+a[href="/s"]::after { 
+  content: attr(title);
+  background: #CCCCCC;
+  color: #CCCCCC;
+  padding: 0px 10px 0px 10px;
+}
+
+a[href="/s"]:hover::after {
+  color: black;
+}
+
 /*emote table styling*/
 
 .side .md { padding-bottom: 20px }
@@ -1359,6 +1403,9 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 .flair-harshwhinny
 {background-position:-300% -2800%}
 
+.flair-zephyrbreeze
+{background-position:-300% -2900%}
+
 /*---------------- END COPY ----------------*/
 
 /*humanmotes*/
@@ -1493,7 +1540,7 @@ a[href|="/mirrorportal"] {
   float:left;
   width: 59px;
   height: 112px;
-  background-position: 0 0;
+  cursor: default;
   background-image: url(%%portal%%) !important;
 }
 
@@ -1513,4 +1560,5 @@ a[href^="/domain"] {
   transform: unset !important;
 }
 
+a[href|="/mirrorportal"]{background-position:0 0}
 END-PONYSCRIPT-IGNORE { color: red; }
