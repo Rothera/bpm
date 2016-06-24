@@ -1,4 +1,3 @@
-
 /* Re-design and related assets by /u/0megaRidley */
 /* https://redd.it/3rtuqw */
 
@@ -1055,6 +1054,8 @@ a[href="/s"]:hover::after { color: black }
 	/*BPM 1x sheet begin*/
 	    
 	    /*1x1*/
+	    
+	    /*1x1*/
 		 
 	    a[href|="/anteup"], a[href|="/bjboom"], a[href|="/bjbored"], a[href|="/bjclassy"], 
         a[href|="/bjhate"], a[href|="/bjinabowl"], a[href|="/bjmanic"], a[href|="/bjscared"], 
@@ -1066,12 +1067,13 @@ a[href="/s"]:hover::after { color: black }
         a[href|="/p21fun"], a[href|="/qnwhiskey"], a[href|="/rampage"], a[href|="/spiderjerusalem"], 
         a[href|="/velvetlook"], a[href|="/vrcrazy"], a[href|="/rampagesmug"], a[href|="/lpconfident"],
         a[href|="/bjshrug"], a[href|="/velvetshrug"], a[href|="/bjlongface"], a[href|="/lpgiddy"], a[href|="/bjpanic"], 
-        a[href|="/bjsquee"], a[href|="/bjcool"], a[href|="/lpcrying"], a[href|="/p21notamused"]{
+        a[href|="/bjsquee"], a[href|="/bjcool"], a[href|="/lpcrying"], a[href|="/p21notamused"], a[href|="/astral"], 
+		a[href|="/greaser"], a[href|="/hgbobble"], a[href|="/lpbsod"]{
         display: block;
         width: 70px;
         height: 70px;
         background-repeat: no-repeat;
-        background-image: url(%%foe-bpm1x1-v01%%);}
+        background-image: url(%%foe-bpm1x1-v02%%);}
         a[href|="/anteup"]{ background-position: 0px 0px;}
         a[href|="/bjboom"]{ background-position: 0px -75px;}
         a[href|="/bjbored"]{ background-position: 0px -150px;}
@@ -1116,18 +1118,23 @@ a[href="/s"]:hover::after { color: black }
         a[href|="/bjsquee"]{ background-position: -75px -900px;}
         a[href|="/bjcool"]{ background-position: -75px -975px;}
         a[href|="/lpcrying"]{ background-position: -75px -1050px;}
+		a[href|="/astral"]{ background-position: -75px -1125px;}
+		a[href|="/greaser"]{ background-position: -75px -1200px;}
+		a[href|="/hgbobble"]{ background-position: -75px -1275px;}
+		a[href|="/lpbsod"]{ background-position: -75px -1350px;}
 	    
 	    /*1x2 & 1x3*/
-	   	a[href|="/calamitywtf"], a[href|="/lpblush"], a[href|="/lpfillyrear"], a[href|="/lpfrown"], 
+		a[href|="/calamitywtf"], a[href|="/lpblush"], a[href|="/lpfillyrear"], a[href|="/lpfrown"], 
 		a[href|="/lpmintals"], a[href|="/murkybsod"], a[href|="/murkyhappy"], a[href|="/glimmerwink"],
 		a[href|="/bjwat"], a[href|="/lpsmirk"], a[href|="/bjsmirk"], a[href|="/bjsilly"], 
 		a[href|="/pinkeyes"], a[href|="/redeye"], a[href|="/glimmerplotting"], a[href|="/glimmergrin"],
-		a[href|="/lpsmug"], a[href|="/mmdash"]{
+		a[href|="/lpsmug"], a[href|="/mmdash"], a[href|="/alloysword"], a[href|="/lpfrustrated"], 
+		a[href|="/lpbunny"], a[href|="/lpcrazy"], a[href|="/lpkk"]{
 		display: block;
 		width: 70px;
 		height: 105px;
 		background-repeat: no-repeat;
-		background-image: url(%%foe-bpm1x2-v01%%);}
+		background-image: url(%%foe-bpm1x2-v02%%);}
 		a[href|="/calamitywtf"]{ background-position: 0px 0px;}
 		a[href|="/lpblush"]{ background-position: 0px -110px;}
 		a[href|="/lpfillyrear"]{ background-position: 0px -220px;}
@@ -1146,6 +1153,11 @@ a[href="/s"]:hover::after { color: black }
 		a[href|="/glimmergrin"]{ background-position: 0px -1650px; height: 140px;}
 		a[href|="/lpsmug"]{ background-position: 0px -1795px; height: 140px;}
 		a[href|="/mmdash"]{ background-position: 0px -1940px; height: 140px;}
+		a[href|="/alloysword"]{ background-position: -75px 0px;}
+		a[href|="/lpfrustrated"]{ background-position: -75px -110px;}
+		a[href|="/lpbunny"]{ background-position: -150px 0px; height: 140px;}
+		a[href|="/lpcrazy"]{ background-position: -150px -145px; height: 140px;}
+		a[href|="/lpkk"]{ background-position: -150px -290px; height: 140px;}
 	    
 	/*BPM 1x sheet end*/
 	/*BPM 2x sheet begin*/
@@ -1156,12 +1168,13 @@ a[href="/s"]:hover::after { color: black }
 		a[href|="/bjfillygrumpy"], a[href|="/sierrahug"], a[href|="/murkyinsecure"], a[href|="/stygius"],
 		a[href|="/bjsmile"], a[href|="/bjunimpressed"], a[href|="/bjwhiskey"], a[href|="/velvetfilly"], 
 		a[href|="/bjfilly"], a[href|="/bjdisgusted"], a[href|="/velvetbedroomeyes"], a[href|="/stablebuck"],
-		a[href|="/bjwhy"], a[href|="/lpdatplot"], a[href|="/sierrascorch"]{
+		a[href|="/bjwhy"], a[href|="/lpdatplot"], a[href|="/sierrascorch"], a[href|="/twokick"], 
+		a[href|="/lpseriously"], a[href|="/lpsit"]{
 		display: block;
 		width: 105px;
 		height: 105px;
 		background-repeat: no-repeat;
-		background-image: url(%%foe-bpm2x1-v01%%);}
+		background-image: url(%%foe-bpm2x1-v02%%);}
 		a[href|="/bjdrunk"]{ background-position: 0px 0px; height: 70px;}
 		a[href|="/bjsurprise"]{ background-position: 0px -75px; height: 70px;}
 		a[href|="/lpraep"]{ background-position: 0px -150px; height: 70px;}
@@ -1185,17 +1198,22 @@ a[href="/s"]:hover::after { color: black }
 		a[href|="/bjwhy"]{ background-position: -110px -145px; height: 140px;}
 		a[href|="/lpdatplot"]{ background-position: -110px -290px; height: 140px;}
 		a[href|="/sierrascorch"]{ background-position: -110px -435px; height: 140px;}
+		a[href|="/twokick"] { background-position: -110px -580px; height: 140px;}
+		a[href|="/lpseriously"]{ background-position: -110px -725px;}
+		a[href|="/lpsit"]{ background-position: -110px -835px;}
         
         /*2x3*/
        	a[href|="/gawd"], a[href|="/grifanywhere"], a[href|="/hiredgun"], a[href|="/lpinspire"],
 		a[href|="/lpwet"], a[href|="/mmppwatching"], a[href|="/mop"], a[href|="/murk"],
 		a[href|="/protoge"], a[href|="/psychoshy"], a[href|="/wickedslit"], a[href|="/steelhoovesrearing"], 
-		a[href|="/bjhappy"]{
+		a[href|="/bjhappy"], a[href|="/greaserwrench"], a[href|="/hiddenfortune"], a[href|="/lostart"], 
+		a[href|="/lpdiabeetus"], a[href|="/lpscrunch"], a[href|="/lptired"], a[href|="/rita"], 
+		a[href|="/silverstorm"]{
 		display: block;
 		width: 105px;
 		height: 140px;
 		background-repeat: no-repeat;
-		background-image: url(%%foe-bpm2x3-v02%%);}
+		background-image: url(%%foe-bpm2x3-v03%%);}
 		a[href|="/gawd"]{ background-position: 0px 0px;}
 		a[href|="/grifanywhere"]{ background-position: 0px -145px;}
 		a[href|="/hiredgun"]{ background-position: 0px -290px;}
@@ -1210,6 +1228,14 @@ a[href="/s"]:hover::after { color: black }
 		a[href|="/wickedslit"]{ background-position: 0px -1595px;}
 		a[href|="/steelhoovesrearing"]{ background-position: 0px -1740px;}
 		a[href|="/bjhappy"]{ background-position: 0px -1885px;}
+		a[href|="/greaserwrench"]{ background-position: 0px -2030px;}
+		a[href|="/hiddenfortune"]{ background-position: -110px 0px;}
+		a[href|="/lostart"]{ background-position: -110px -145px;}
+		a[href|="/lpdiabeetus"]{ background-position: -110px -290px;}
+		a[href|="/lpscrunch"]{ background-position: -110px -435px;}
+		a[href|="/lptired"]{ background-position: -110px -580px;}
+		a[href|="/rita"]{ background-position: -110px -725px;}
+		a[href|="/silverstorm"]{ background-position: -110px -870px;}
 	    
 	/*BPM 2x sheet end*/
 	/*BPM 3x sheet begin*/
@@ -1219,12 +1245,13 @@ a[href="/s"]:hover::after { color: black }
 		a[href|="/murky"], a[href|="/bjsearch"], a[href|="/calamityspooky"], a[href|="/crazyrampage"],
 		a[href|="/lpfun"], a[href|="/bjsalute"], a[href|="/glorystretch"], a[href|="/lpsup"],
 		a[href|="/pyrelight"], a[href|="/velvetparty"], a[href|="/velvetsocks"], a[href|="/velvetfrown"],
-		a[href|="/velvetskip"], a[href|="/griffonmerc"], a[href|="/murkyfaint"], a[href|="/deusmachina"]{
+		a[href|="/velvetskip"], a[href|="/griffonmerc"], a[href|="/murkyfaint"], a[href|="/deusmachina"], 
+		a[href|="/lpdrawme"], a[href|="/lpmoarscrews"]{
 		display: block;
 		width: 140px;
 		height: 105px;
 		background-repeat: no-repeat;
-		background-image: url(%%foe-bpm3x1-v01%%);}
+		background-image: url(%%foe-bpm3x1-v02%%);}
 		a[href|="/bjpounce"]{ background-position: 0px 0px; height: 70px;}
 		a[href|="/lpsurprise"]{ background-position: 0px -75px; height: 70px;}
 		a[href|="/lptable"]{ background-position: 0px -150px; height: 70px;}
@@ -1245,14 +1272,16 @@ a[href="/s"]:hover::after { color: black }
 		a[href|="/griffonmerc"]{ background-position: 0px -1695px;}
 		a[href|="/murkyfaint"]{ background-position: 0px -1805px;}
 		a[href|="/deusmachina"]{ background-position: 0px -1915px; height: 140px;}
+		a[href|="/lpdrawme"]{ background-position: -145px 0px;}
+		a[href|="/lpmoarscrews"]{ background-position: -145px -110px;}
 	    
 	    /*3x3*/
 		a[href|="/bjseriously"], a[href|="/calamitytale"], a[href|="/grumpypip"], a[href|="/homagehug"],
 		a[href|="/lacunae"], a[href|="/lparmed"], a[href|="/lpnotsure"], a[href|="/lpspittake"],
-		a[href|="/lpwtf"], a[href|="/omnomnom"], a[href|="/givemeec1101"], a[href|="/plotseverywhere"], a[href|="/princessbj"],
-		a[href|="/tapdancingbj"], a[href|="/murkyplease"], a[href|="/glimmersqueeze"], a[href|="/lpstretch"], 
-		a[href|="/lpdisgust"], a[href|="/lpheroic"], a[href|="/lpdowncast"], a[href|="/calamityangry"],
-		a[href|="/calamityhandsome"]{
+		a[href|="/lpwtf"], a[href|="/omnomnom"], a[href|="/givemeec1101"], a[href|="/plotseverywhere"], 
+		a[href|="/princessbj"], a[href|="/tapdancingbj"], a[href|="/murkyplease"], a[href|="/glimmersqueeze"], 
+		a[href|="/lpstretch"], a[href|="/lpdisgust"], a[href|="/lpheroic"], a[href|="/lpdowncast"], 
+		a[href|="/calamityangry"], a[href|="/calamityhandsome"]{
 		display: block;
 		width: 140px;
 		height: 140px;
@@ -1270,12 +1299,14 @@ a[href="/s"]:hover::after { color: black }
 		background-image: url(%%foe-bpm3x3-pg2-v01%%);}
 		a[href|="/lpeep"], a[href|="/bjbook"], a[href|="/bjattracted"], a[href|="/bjdown"], 
 		a[href|="/bjpointy"], a[href|="/bjsick"], a[href|="/lpscruffy"], a[href|="/lpcute"], a[href|="/scotchtape"], 
-		a[href|="/bjhmm"], a[href|="/bjspoilers"], a[href|="/lpbarndoor"], a[href|="/lpwellexcuseme"], a[href|="/lpclose"]{
+		a[href|="/bjhmm"], a[href|="/bjspoilers"], a[href|="/lpbarndoor"], a[href|="/lpwellexcuseme"], a[href|="/lpclose"], 
+		a[href|="/alloy"], a[href|="/hiddenshock"], a[href|="/howdoeshammer"], a[href|="/lplevipip"], a[href|="/lpmurder"], 
+		a[href|="/lpno1"], a[href|="/lpnotnice"]{
 		display: block;
 		width: 140px;
 		height: 140px;
 		background-repeat: no-repeat;
-		background-image: url(%%foe-bpm3x3-pg3-v04%%);}
+		background-image: url(%%foe-bpm3x3-pg3-v05%%);}
 		a[href|="/bjseriously"]{ background-position: 0px 0px;}
 		a[href|="/calamitytale"]{ background-position: 0px -145px;}
 		a[href|="/grumpypip"]{ background-position: 0px -290px;}
@@ -1326,8 +1357,16 @@ a[href="/s"]:hover::after { color: black }
 		a[href|="/bjhmm"]{ background-position: 0px -1305px}
 		a[href|="/bjspoilers"]{ background-position: 0px -1450px}
 		a[href|="/lpbarndoor"]{ background-position: 0px -1595px}
-		a[href|="/lpwellexcuseme"]{ background-position: 0px -1740px}
+		a[href|="/lpwellexcuseme"]{ background-position: 0px -1740px; width:70px; height:70px; background-size: 70px 70px;}
 		a[href|="/lpclose"]{ background-position: 0px -1885px}
+		a[href|="/alloy"]{ background-position: 0px -2030px}
+		a[href|="/hiddenshock"]{ background-position: -145px 0px}
+		a[href|="/howdoeshammer"]{ background-position: -145px -145px}
+		a[href|="/lplevipip"]{ background-position: -145px -290px}
+		a[href|="/lpmurder"]{ background-position: -145px -435px}
+		a[href|="/lpno1"]{ background-position: -145px -580px}
+		a[href|="/lpnotnice"]{ background-position: -145px -725px}
+
 
 
 
