@@ -297,6 +297,16 @@ a[href="/soarinnom"], a[href="/soarnom"], a[href="/pienom"] {
     background-image: url(%%soarinnom%%) !important
 }
 
+a[href="/sbtrill"], a[href="/sbfam"], a[href="/sbchill"], a[href="/sbhip"] {
+    background-position: 0px 0px;
+    Display: block;
+    Clear: none;
+    Float: left;
+    Width: 175px;
+    Height: 175px;
+    background-image: url(%%sbtrill%%) !important
+}
+
 /*Making the tabs' corners more rounded (stolen from r/mylittlepony)*//*
 .tabmenu li a {
     -webkit-border-top-left-radius: 5px;
@@ -1265,7 +1275,7 @@ a.author[href$="/The8BitF0x"]:after {
     display: block;
     letter-spacing: normal
 } 
-/* remove the comment thingy after you're done, aeman
+/* remove this comment thingy after you're done, aeman
 a[href|='/flutterhelp'], a[href|='/cookie'], a[href|='/cheerteach'], a[href|='/lyrahoof'], a[href|='/bonhoof'], a[href|='/applegrump'], a[href|='/applebamm'], a[href|='/adorabelle'], a[href|='/abwhat'], a[href|='/yourock'], a[href|='/vinylwhat'], a[href|='/twistudy'], a[href|='/twibreak'], a[href|='/rargasp'], a[href|='/trixihappy'], a[href|='/thankyakindly'], a[href|='/snipsmote'], a[href|='/scootbrag'], a[href|='/sbsmile'], a[href|='/roseluck'], a[href|='/ppreference'], a[href|='/ppheh'], a[href|='/pinkiehi'], a[href|='/twiquery'], a[href|='/notagain'], a[href|='/lunaread'], a[href|='/lunablush'], a[href|='/cadancehappy'], a[href|='/forgotshy'], a[href|='/flutterpaint'] {
     display: block;
     clear: none;

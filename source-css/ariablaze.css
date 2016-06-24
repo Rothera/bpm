@@ -80,7 +80,7 @@
 
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important }
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }
-.sidecontentbox .helplink+.title+.content li:nth-of-type(6n) { display: none }
+.sidecontentbox .helplink+.title+.content li:nth-of-type(5n) { display: none }
 
 /*** Comments ***/
 
@@ -518,246 +518,190 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 .flair-harshwhinny
 {background-position:-300% -2800%}
 
+.flair-zephyrbreeze
+{background-position:-300% -2900%}
+
 /*---------------- END COPY ----------------*/
 
-a[href|="/arialook"],a[href|="/ablook"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: 0 0;}
+a[href|="/arialook"], a[href|="/ablook"], a[href|="/ariareally"], a[href|="/abreally"], a[href|="/ariajoke"], a[href|="/abjoke"], a[href|="/ariarage"], a[href|="/abrage"], a[href|="/ariaplz"], a[href|="/abplz"], a[href|="/ariaponyshrug"], a[href|="/abpshrug"], a[href|="/lostaria"], a[href|="/nervousaria"], a[href|="/ariawhat"], a[href|="/ariague"], a[href|="/ariasad"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 70px;
+  cursor: default;
+  background-image: url(%%ponyaria-sheet%%) !important;
+}
 
-a[href|="/rarialook"],a[href|="/rablook"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: 0 -100%;}
+a[href|="/rarialook"], a[href|="/rablook"], a[href|="/rariareally"],a[href|="/rabreally"], a[href|="/rariajoke"],a[href|="/rabjoke"], a[href|="/rariarage"], a[href|="/rabrage"], a[href|="/rariaplz"], a[href|="/rabplz"], a[href|="/rariaponyshrug"], a[href|="/rabpshrug"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 70px;
+  cursor: default;
+  background-image: url(%%ponyaria-sheet%%) !important;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 
-a[href|="/ariareally"],a[href|="/abreally"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -100% 0;}
+a[href|="/arialook"], a[href|="/ablook"], a[href|="/rarialook"], a[href|="/rablook"] { background-position: 0 0; }
+a[href|="/ariareally"], a[href|="/abreally"], a[href|="/rariareally"],a[href|="/rabreally"] { background-position: -100% 0; }
+a[href|="/ariajoke"], a[href|="/abjoke"], a[href|="/rariajoke"],a[href|="/rabjoke"] { background-position: -200% 0; }
+a[href|="/ariarage"], a[href|="/abrage"], a[href|="/rariarage"], a[href|="/rabrage"] { background-position: -300% 0; }
+a[href|="/ariaplz"], a[href|="/abplz"], a[href|="/rariaplz"], a[href|="/rabplz"] { background-position: 0 -100%; }
+a[href|="/ariaponyshrug"], a[href|="/abpshrug"], a[href|="/rariaponyshrug"], a[href|="/rabpshrug"] { background-position: -100% -100%; }
+a[href|="/lostaria"] { background-position: -200% -100%; }
+a[href|="/nervousaria"] { background-position: -300% -100%; }
+a[href|="/ariawhat"] { background-position: 0 -200%; }
+a[href|="/ariague"] { background-position: -100% -200%; }
+a[href|="/ariasad"] { background-position: -200% -200%;}
 
-a[href|="/rariareally"],a[href|="/rabreally"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -100% -100%;}
+a[href|="/wmaria"], a[href|="/wmab"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 174px;
+  height: 200px;
+  cursor: default;
+  background-image: url(%%wmaria%%) !important;
+}
 
-a[href|="/ariajoke"],a[href|="/abjoke"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -200% 0;}
+a[href|="/ariabattle"], a[href|="/abbattle"], a[href|="/confidentaria"], a[href|="/confidentab"], a[href|="/ariasiren"], a[href|="/absiren"], a[href|="/ariadoubt"], a[href|="/abdoubt"], a[href|="/peevedaria"], a[href|="/peevedab"], a[href|="/concernedaria"], a[href|="/concernedab"], a[href|="/ariahuh"], a[href|="/ariasmirk"], a[href|="/ariaglare"], a[href|="/abglare"], a[href|="/ariagrin"], a[href|="/ariafacepalm"], a[href|="/abfacepalm"], a[href|="/ariaplan"], a[href|="/abplan"], a[href|="/ariaglee"], a[href|="/abglee"], a[href|="/ariasing"], a[href|="/absing"], a[href|="/ariaevilgrin"], a[href|="/abevilgrin"], a[href|="/ariasure"], a[href|="/absure"], a[href|="/tickedaria"], a[href|="/tickedab"], a[href|="/coolaria"], a[href|="/coolab"], a[href|="/chariagraphy"], a[href|="/smugaria"], a[href|="/smugab"], a[href|="/raisetheroof"], a[href|="/noautotunearia"], a[href|="/noautotuneab"], a[href|="/ariasmile"], a[href|="/ariabetes"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 70px;
+  cursor: default;
+  background-image: url(%%aria-sheet%%) !important;
+}
 
-a[href|="/rariajoke"],a[href|="/rabjoke"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -200% -100%;}
+a[href|="/rariabattle"], a[href|="/rabbattle"], a[href|="/rconfidentaria"], a[href|="/rconfidentab"], a[href|="/rariasiren"], a[href|="/rabsiren"], a[href|="/rariadoubt"], a[href|="/rabdoubt"], a[href|="/rpeevedaria"], a[href|="/rpeevedab"], a[href|="/rconcernedaria"], a[href|="/rconcernedab"], a[href|="/rariahuh"], a[href|="/rariasmirk"], a[href|="/rariaglare"], a[href|="/rabglare"], a[href|="/rariagrin"], a[href|="/rariafacepalm"], a[href|="/rabfacepalm"], a[href|="/rariaplan"], a[href|="/rabplan"], a[href|="/rariaglee"], a[href|="/rabglee"], a[href|="/rariasing"], a[href|="/rabsing"], a[href|="/rariaevilgrin"], a[href|="/rabevilgrin"], a[href|="/rariasure"], a[href|="/rabsure"], a[href|="/rtickedaria"], a[href|="/rtickedab"], a[href|="/rcoolaria"], a[href|="/rcoolab"], a[href|="/rchariagraphy"], a[href|="/rsmugaria"], a[href|="/rsmugab"], a[href|="/rraisetheroof"], a[href|="/rnoautotunearia"], a[href|="/rnoautotuneab"], a[href|="/rariasmile"], a[href|="/rariabetes"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 70px;
+  cursor: default;
+  background-image: url(%%aria-sheet%%) !important;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 
-a[href|="/ariarage"],a[href|="/abrage"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -300% 0;}
+a[href|="/ariabattle"], a[href|="/abbattle"], a[href|="/rariabattle"], a[href|="/rabbattle"] { background-position: 0 0; }
+a[href|="/confidentaria"], a[href|="/confidentab"], a[href|="/rconfidentaria"], a[href|="/rconfidentab"] { background-position: -100% 0; }
+a[href|="/ariasiren"], a[href|="/absiren"], a[href|="/rariasiren"], a[href|="/rabsiren"] { background-position: -200% 0; }
+a[href|="/ariadoubt"], a[href|="/abdoubt"], a[href|="/rariadoubt"], a[href|="/rabdoubt"] { background-position: -300% 0; }
+a[href|="/peevedaria"], a[href|="/peevedab"], a[href|="/rpeevedaria"], a[href|="/rpeevedab"] { background-position: 0 -100%; }
+a[href|="/concernedaria"], a[href|="/concernedab"], a[href|="/ariahuh"], a[href|="/rconcernedaria"], a[href|="/rconcernedab"], a[href|="/rariahuh"] { background-position: -100% -100%; }
+a[href|="/ariasmirk"], a[href|="/rariasmirk"] { background-position: -200% -100%; }
+a[href|="/ariaglare"], a[href|="/abglare"], a[href|="/rariaglare"], a[href|="/rabglare"] { background-position: -300% -100%; }
+a[href|="/ariagrin"], a[href|="/rariagrin"] { background-position: 0 -200%; }
+a[href|="/ariafacepalm"], a[href|="/abfacepalm"], a[href|="/rariafacepalm"], a[href|="/rabfacepalm"] { background-position: -100% -200%; }
+a[href|="/ariaplan"], a[href|="/abplan"], a[href|="/rariaplan"], a[href|="/rabplan"] { background-position: -200% -200%; }
+a[href|="/ariaglee"], a[href|="/abglee"], a[href|="/rariaglee"], a[href|="/rabglee"] { background-position: -300% -200%; }
+a[href|="/ariasing"], a[href|="/absing"], a[href|="/rariasing"], a[href|="/rabsing"] { background-position: 0 -300%; }
+a[href|="/ariaevilgrin"], a[href|="/abevilgrin"], a[href|="/rariaevilgrin"], a[href|="/rabevilgrin"] { background-position: -100% -300%; }
+a[href|="/ariasure"], a[href|="/absure"], a[href|="/rariasure"], a[href|="/rabsure"] { background-position: -200% -300%; }
+a[href|="/tickedaria"], a[href|="/tickedab"], a[href|="/rtickedaria"], a[href|="/rtickedab"] { background-position: -300% -300%; }
+a[href|="/coolaria"], a[href|="/coolab"], a[href|="/rcoolaria"], a[href|="/rcoolab"] { background-position: 0 -400%; }
+a[href|="/chariagraphy"], a[href|="/rchariagraphy"] { background-position: -100% -400%; }
+a[href|="/smugaria"], a[href|="/smugab"], a[href|="/rsmugaria"], a[href|="/rsmugab"] { background-position: -200% -400%; }
+a[href|="/raisetheroof"], a[href|="/rraisetheroof"] { background-position: -300% -400%; }
+a[href|="/noautotunearia"], a[href|="/noautotuneab"], a[href|="/rnoautotunearia"], a[href|="/rnoautotuneab"] { background-position: 0 -500%; }
+a[href|="/ariasmile"], a[href|="/ariabetes"], a[href|="/rariasmile"], a[href|="/rariabetes"] { background-position: -100% -500%; }
 
-a[href|="/rariarage"],a[href|="/rabrage"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -300% -100%;}
-
-a[href|="/ariaplz"],a[href|="/abplz"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: 0 -200%;}
-
-a[href|="/rariaplz"],a[href|="/rabplz"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: 0 -300%;}
-
-a[href|="/ariaponyshrug"],a[href|="/abpshrug"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -100% -200%;}
-
-a[href|="/rariaponyshrug"],a[href|="/rabpshrug"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -100% -300%;}
-
-a[href|="/lostaria"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -200% -200%;}
-
-a[href|="/nervousaria"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -300% -200%;}
-
-a[href|="/ariawhat"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: 0 -400%;}
-
-a[href|="/ariague"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -100% -400%;}
-
-a[href|="/ariasad"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%ponyaria-sheet%%)!important; background-position: -200% -400%;}
-
-a[href|="/wmaria"],a[href|="/wmab"]
-{display:block;clear:none;float:left;width:174px;height:200px;background-image:url(%%wmaria%%)!important; background-position: 0 0;}
-
-a[href|="/ariabattle"],a[href|="/abbattle"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: 0 0;}
-
-a[href|="/rariabattle"],a[href|="/rabbattle"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: 0 -100%;}
-
-a[href|="/confidentaria"],a[href|="/confidentab"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -100% 0;}
-
-a[href|="/rconfidentaria"],a[href|="/rconfidentab"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -100% -100%;}
-
-a[href|="/ariasiren"],a[href|="/absiren"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -200% 0;}
-
-a[href|="/rariasiren"],a[href|="/rabsiren"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -200% -100%;}
-
-a[href|="/ariadoubt"],a[href|="/abdoubt"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -300% 0;}
-
-a[href|="/rariadoubt"],a[href|="/rabdoubt"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -300% -100%;}
-
-a[href|="/peevedaria"],a[href|="/peevedab"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: 0 -200%;}
-
-a[href|="/rpeevedaria"],a[href|="/rpeevedab"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: 0 -300%;}
-
-a[href|="/rconcernedaria"],a[href|="/rconcernedab"],a[href|="/rariahuh"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -100% -200%;}
-
-a[href|="/concernedaria"],a[href|="/concernedab"],a[href|="/ariahuh"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -100% -300%;}
-
-a[href|="/ariasmirk"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -200% -200%;}
-
-a[href|="/rariasmirk"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -200% -300%;}
-
-a[href|="/ariaglare"],a[href|="/abglare"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -300% -200%;}
-
-a[href|="/rariaglare"],a[href|="/rabglare"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -300% -300%;}
-
-a[href|="/ariagrin"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: 0 -400%;}
-
-a[href|="/rariagrin"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: 0 -500%;}
-
-a[href|="/ariafacepalm"], a[href|="/abfacepalm"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -100% -400%;}
-
-a:hover[href|="/ariafacepalm"], a:hover[href|="/abfacepalm"]
-{ background-position: -100% -500%; }
-
-a[href|="/rariafacepalm"], a[href|="/rabfacepalm"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -100% -500%;}
-
-a:hover[href|="/rariafacepalm"], a:hover[href|="/rabfacepalm"]
-{ background-position: -100% -400%; }
-
-a[href|="/ariaplan"], a[href|="/abplan"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -200% -400%;}
-
-a[href|="/rariaplan"], a[href|="/rabplan"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -200% -500%;}
-
-a[href|="/ariaglee"], a[href|="/abglee"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -300% -400%;}
-
-a[href|="/rariaglee"], a[href|="/rabglee"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -300% -500%;}
-
-a[href|="/ariasing"], a[href|="/absing"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: 0 -600%;}
-
-a[href|="/rariasing"], a[href|="/rabsing"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: 0 -700%;}
-
-a[href|="/ariaevilgrin"], a[href|="/abevilgrin"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -100% -600%;}
-
-a[href|="/rariaevilgrin"], a[href|="/rabevilgrin"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -100% -700%;}
-
-a[href|="/ariasure"], a[href|="/absure"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -200% -600%;}
-
-a[href|="/rariasure"], a[href|="/rabsure"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -200% -700%;}
-
-a[href|="/tickedaria"], a[href|="/tickedab"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -300% -600%;}
-
-a[href|="/rtickedaria"], a[href|="/rtickedab"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -300% -700%;}
-
-a[href|="/coolaria"], a[href|="/coolab"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: 0 -800%;}
-
-a[href|="/rcoolaria"], a[href|="/rcoolab"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: 0 -900%;}
-
-a[href|="/chariagraphy"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -100% -800%;}
-
-a[href|="/rchariagraphy"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -100% -900%;}
-
-a[href|="/smugaria"], a[href|="/smugab"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -200% -800%;}
-
-a[href|="/rsmugaria"], a[href|="/rsmugab"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -200% -900%;}
-
-a[href|="/raisetheroof"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -300% -800%;}
-
-a[href|="/rraisetheroof"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -300% -900%;}
-
-a[href|="/noautotunearia"], a[href|="/noautotuneab"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: 0 -1000%;}
-
-a[href|="/rnoautotunearia"], a[href|="/rnoautotuneab"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: 0 -1100%;}
-
-a[href|="/ariasmile"], a[href|="/ariabetes"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -100% -1000%;}
-
-a[href|="/rariasmile"], a[href|="/rariabetes"]
-{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%aria-sheet%%)!important; background-position: -100% -1100%;}
+a:hover[href|="/ariafacepalm"], a:hover[href|="/abfacepalm"], a:hover[href|="/rariafacepalm"], a:hover[href|="/rabfacepalm"] {
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 
 a[href|="/ariastanding"], a[href|="/abstanding"], a[href|="/rariastanding"], a[href|="/rabstanding"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 35px;
-    height: 90px;
-    background-position: -0px -0px;
-    background-image: url(%%ariastanding%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 35px;
+  height: 90px;
+  cursor: default;
+  background-image: url(%%ariastanding%%) !important;
 }
 
 a[href|="/ariawalking"], a[href|="/abwalking"], a[href|="/rariawalking"], a[href|="/rabwalking"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 51px;
-    height: 90px;
-    background-position: -0px -0px;
-    background-image: url(%%ariawalking%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 51px;
+  height: 90px;
+  cursor: default;
+  background-image: url(%%ariawalking%%) !important;
 }
 
 a[href|="/rariastanding"], a[href|="/rabstanding"], a[href|="/rariawalking"], a[href|="/rabwalking"] {
-    -webkit-transform: scaleX(-1);
-    -moz-transform: scaleX(-1);
-    -ms-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 a[href|="/ariapstanding"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 88px;
-    height: 86px;
-    background-position: -0px -0px;
-    background-image: url(%%ariapstanding%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 88px;
+  height: 86px;
+  cursor: default;
+  background-image: url(%%ariapstanding%%) !important;
 }
 
 a[href|="/ariatrotting"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 86px;
-    height: 90px;
-    background-position: -0px -0px;
-    background-image: url(%%ariatrotting%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 86px;
+  height: 90px;
+  cursor: default;
+  background-image: url(%%ariatrotting%%) !important;
+}
+
+a[href|="/ariagrumpy"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 36px;
+  height: 90px;
+  cursor: default;
+  background-image: url(%%abgrumpy%%) !important;
+}
+
+a[href|="/sirenaria"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 125px;
+  cursor: default;
+  background-image: url(%%absiren%%) !important;
+}
+
+a[href|="/ariapoweredup"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 86px;
+  height: 91px;
+  cursor: default;
+  background-image: url(%%abpoweredup%%) !important;
 }
 
 START-PONYSCRIPT-IGNORE { color: red; }
@@ -768,7 +712,7 @@ a[href|="/mirrorportal"] {
   float:left;
   width: 59px;
   height: 112px;
-  background-position: 0 0;
+  cursor: default;
   background-image: url(%%portal%%) !important;
 }
 
@@ -788,4 +732,5 @@ a[href^="/domain"] {
   transform: unset !important;
 }
 
+a[href|="/mirrorportal"]{background-position:0 0}
 END-PONYSCRIPT-IGNORE { color: red; }
