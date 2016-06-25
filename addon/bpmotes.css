@@ -370,11 +370,15 @@ word-break:normal;}
 }
 
 .bpm-sb-noconvert-flutterwink::after {
-content: "[](/flutterwink-invert-in)"
+    content: "[](/flutterwink-invert-in)";
 }
 
 .bpm-sb-noconvert-zecora::after {
-content: "[](/zecora-spin-s1)"
+    content: "[](/zecora-spin-s1)";
+}
+
+.bpm-sb-noconvert-txt::after {
+    content: "[](/txt!)";
 }
 
 /* Help and options links */
