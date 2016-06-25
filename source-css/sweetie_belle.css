@@ -171,7 +171,7 @@ body {
 /* sidebar */
 
 .titlebox strong {
-    font-size: medium
+    font-size: small
     }
 
 .titlebox del {
@@ -199,6 +199,10 @@ body {
     display: block;
     clear: both
     }
+
+.md td {
+    padding: 4px 3px;
+}
 
 /* mainpage hover selections */
 
@@ -244,7 +248,7 @@ a[href|="/sbwow"], a[href|="/sb12"] {
     background-image: url(%%emotes%%) !important
     }
 
-a[href|="/sbderelle"], a[href|="/sb01"] {
+a[href|="/sbderelle"], a[href|="/sb01"], .side .md table tr:nth-of-type(3) td:nth-of-type(2):after {
     display: block;
     clear: none;
     float: left;
@@ -317,6 +321,119 @@ a[href|="/sb12"], a[href|="/sbwow"] {
 
 a[href|="/sb13"], a[href|="/sbwut"] {
     background-position: -0px -1884px
+    }
+
+/***********
+BobSB emoticons
+***********/
+
+a[href|="/bobsb00"], a[href|="/bobsb01"], a[href|="/bobsb02"], a[href|="/bobsb03"], a[href|="/bobsb04"], a[href|="/bobsb05"], a[href|="/bobsb06"], a[href|="/bobsb07"], a[href|="/bobsb08"], a[href|="/bobsb09"], a[href|="/bobsb010"], a[href|="/bobsb011"], a[href|="/bobsb012"], a[href|="/bobsb10"], a[href|="/bobsb11"], a[href|="/bobsb12"], a[href|="/bobsb13"], a[href|="/bobsb14"], a[href|="/bobsb15"], a[href|="/bobsb16"], a[href|="/bobsb17"], a[href|="/bobsb18"], a[href|="/bobsb19"], a[href|="/bobsb110"], a[href|="/bobsb111"], a[href|="/bobsbangry"], a[href|="/bobsbblank"], a[href|="/bobsbidea"], a[href|="/bobsbwhy"], a[href|="/bobsbdisgusted"], a[href|="/bobsbdrunk"], a[href|="/bobsbfear"], a[href|="/bobsbfierce"], a[href|="/bobsbflirty"], a[href|="/bobsbhappy"], a[href|="/bobsbwhat"], a[href|="/bobsbirritated"], a[href|="/bobsbsick"], a[href|="/bobsbpleased"], a[href|="/bobsbpouty"], a[href|="/bobsbrage"], a[href|="/bobsbsad"], a[href|="/bobsbsarcastic"], a[href|="/bobsbserious"], a[href|="/bobsbshocked"], a[href|="/bobsbsilly"], a[href|="/bobsbtired"], a[href|="/bobsbtrill"], a[href|="/bobsbtriumph"], a[href|="/bobsbwtf"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url(%%Sweetiemotes%%) !important
+    }
+
+a[href|="/bobsb00"], a[href|="/bobsbangry"] {
+    background-position: -0px -0px
+    }
+
+a[href|="/bobsb01"], a[href|="/bobsbblank"], .side .md table tr:nth-of-type(3) td:nth-of-type(2):after {
+    background-position: -100px -0px
+    }
+
+a[href|="/bobsb02"], a[href|="/bobsbidea"] {
+    background-position: -200px -0px
+    }
+
+a[href|="/bobsb03"], a[href|="/bobsbwhy"] {
+    background-position: -300px -0px
+    }
+
+a[href|="/bobsb04"], a[href|="/bobsbdisgusted"] {
+    background-position: -400px -0px
+    }
+
+a[href|="/bobsb05"], a[href|="/bobsbdrunk"] {
+    background-position: -0px -100px
+    }
+
+a[href|="/bobsb06"], a[href|="/bobsbfear"] {
+    background-position: -100px -100px
+    }
+
+a[href|="/bobsb07"], a[href|="/bobsbfierce"] {
+    background-position: -200px -100px
+    }
+
+a[href|="/bobsb08"], a[href|="/bobsbflirty"] {
+    background-position: -300px -100px
+    }
+
+a[href|="/bobsb09"], a[href|="/bobsbhappy"] {
+    background-position: -400px -100px
+    }
+
+a[href|="/bobsb010"], a[href|="/bobsbwhat"] {
+    background-position: -0px -200px
+    }
+
+a[href|="/bobsb011"], a[href|="/bobsbirritated"] {
+    background-position: -100px -200px
+    }
+
+a[href|="/bobsb012"], a[href|="/bobsbsick"] {
+    background-position: -200px -200px
+    }
+
+a[href|="/bobsb10"], a[href|="/bobsbpleased"] {
+    background-position: -300px -200px
+    }
+
+a[href|="/bobsb11"], a[href|="/bobsbpouty"] {
+    background-position: -400px -200px
+    }
+
+a[href|="/bobsb12"], a[href|="/bobsbrage"] {
+    background-position: -0px -300px
+    }
+
+a[href|="/bobsb13"], a[href|="/bobsbsad"] {
+    background-position: -100px -300px
+    }
+
+a[href|="/bobsb14"], a[href|="/bobsbsarcastic"] {
+    background-position: -200px -300px
+    }
+
+a[href|="/bobsb15"], a[href|="/bobsbserious"] {
+    background-position: -300px -300px
+    }
+
+a[href|="/bobsb16"], a[href|="/bobsbshocked"] {
+    background-position: -400px -300px
+    }
+
+a[href|="/bobsb17"], a[href|="/bobsbsilly"] {
+    background-position: -0px -400px
+    }
+
+a[href|="/bobsb18"], a[href|="/bobsbtired"] {
+    background-position: -100px -400px
+    }
+
+a[href|="/bobsb19"], a[href|="/bobsbtrill"] {
+    background-position: -200px -400px
+    }
+
+a[href|="/bobsb110"], a[href|="/bobsbtriumph"] {
+    background-position: -300px -400px
+    }
+
+a[href|="/bobsb111"], a[href|="/bobsbwtf"] {
+    background-position: -400px -400px
     }
 
 a[href|="/sp"] {
@@ -430,5 +547,5 @@ a[href|="/sp"] {
     }
 
 .titlebox .bottom {
-    margin-top: 30px;
+    margin-top: 10px;
     }

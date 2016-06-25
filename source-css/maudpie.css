@@ -498,6 +498,9 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 .flair-harshwhinny
 {background-position:-300% -2800%}
 
+.flair-zephyrbreeze
+{background-position:-300% -2900%}
+
 /*---------------- END COPY ----------------*/
 
 a[href|="/maudpie"],a[href|="/maud"],a[href|="/mp"]
@@ -878,3 +881,34 @@ a[href|="/maudsign"] em, a[href|="/mpsign"] em{
     }   
 
 a[href|="/maudsign"], a[href|="/mpsign"] {width:117px; height:200px; background-position: 0px 0px}
+
+START-PONYSCRIPT-IGNORE { color: red; }
+
+a[href|="/mirrorportal"] {
+  display: block;
+  clear: none;
+  float:left;
+  width: 59px;
+  height: 112px;
+  cursor: default;
+  background-image: url(%%portal%%) !important;
+}
+
+a[href^="/"][href*="-r-"], a[href^="/"][href$="-r"] { 
+  -webkit-transform:scaleX(-1);
+  -moz-transform:scaleX(-1);
+  -ms-transform:scaleX(-1);
+  -o-transform:scaleX(-1);
+  transform:scaleX(-1);
+}
+
+a[href^="/domain"] {
+  -webkit-transform: unset !important;
+  -moz-transform: unset !important;
+  -ms-transform: unset !important;
+  -o-transform: unset !important;
+  transform: unset !important;
+}
+
+a[href|="/mirrorportal"]{background-position:0 0}
+END-PONYSCRIPT-IGNORE { color: red; }

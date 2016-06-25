@@ -73,7 +73,7 @@
 
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important }
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }
-.sidecontentbox .helplink+.title+.content li:nth-of-type(6n) { display: none }
+.sidecontentbox .helplink+.title+.content li:nth-of-type(5n) { display: none }
 
 /*** Comments ***/
 
@@ -511,32 +511,28 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 .flair-harshwhinny
 {background-position:-300% -2800%}
 
+.flair-zephyrbreeze
+{background-position:-300% -2900%}
+
 /*---------------- END COPY ----------------*/
 
-a[href|="/adagiosmirk"], a[href|="/adsmirk"], a[href|="/adagiodownvote"], a[href|="/addownvote"], a[href|="/failedaudition"], a[href|="/adagioreally"], a[href|="/adreally"], a[href|="/tickedadagio"], a[href|="/tickedad"], a[href|="/cooladagio"], a[href|="/coolad.png"], a[href|="/adagiowow"], a[href|="/adwow"], a[href|="/equestrianmagic"], a[href|="/adagiosings"], a[href|="/adsings"], a[href|="/adagiobattle"], a[href|="/adbattle"], a[href|="/awkwardadagio"], a[href|="/awkwardad"], a[href|="/adagiofacepalm"], a[href|="/adfacepalm"], a[href|="/adagiogrin"], a[href|="/adgrin"], a[href|="/adagioplease"], a[href|="/adplease"] {
+a[href|="/adagiosmirk"], a[href|="/adsmirk"], a[href|="/adagiodownvote"], a[href|="/addownvote"], a[href|="/failedaudition"], a[href|="/adagioreally"], a[href|="/adreally"], a[href|="/tickedadagio"], a[href|="/tickedad"], a[href|="/cooladagio"], a[href|="/coolad.png"], a[href|="/adagiowow"], a[href|="/adwow"], a[href|="/equestrianmagic"], a[href|="/adagiosings"], a[href|="/adsings"], a[href|="/adagiobattle"], a[href|="/adbattle"], a[href|="/awkwardadagio"], a[href|="/awkwardad"], a[href|="/adagiofacepalm"], a[href|="/adfacepalm"], a[href|="/adagiogrin"], a[href|="/adgrin"], a[href|="/adagioplease"], a[href|="/adplease"], a[href|="/adagiowelcome"], a[href|="/adwelcome"], a[href|="/welcometotheshow"] {
   display: block;
   clear: none;
   float: left;
   width: 70px;
   height: 70px;
+  cursor: default;
   background-image: url(%%adagiohmotes%%) !important;
 }
 
-a[href|="/adagiowelcome"], a[href|="/adwelcome"], a[href|="/welcometotheshow"] {
-  display: block;
-  clear: none;
-  float: left;
-  width: 93px;
-  height: 70px;
-  background-image: url(%%adagiohmotes%%) !important;
-}
-
-a[href|="/radagiosmirk"], a[href|="/radsmirk"], a[href|="/radagiodownvote"], a[href|="/raddownvote"], a[href|="/rfailedaudition"], a[href|="/radagioreally"], a[href|="/radreally"], a[href|="/rtickedadagio"], a[href|="/rtickedad"], a[href|="/rcooladagio"], a[href|="/rcoolad.png"], a[href|="/radagiowow"], a[href|="/radwow"], a[href|="/requestrianmagic"], a[href|="/radagiosings"], a[href|="/radsings"], a[href|="/radagiobattle"], a[href|="/radbattle"], a[href|="/rawkwardadagio"], a[href|="/rawkwardad"], a[href|="/radagiofacepalm"], a[href|="/radfacepalm"], a[href|="/radplease"], a[href|="/radagioplease"] {
+a[href|="/radagiosmirk"], a[href|="/radsmirk"], a[href|="/radagiodownvote"], a[href|="/raddownvote"], a[href|="/rfailedaudition"], a[href|="/radagioreally"], a[href|="/radreally"], a[href|="/rtickedadagio"], a[href|="/rtickedad"], a[href|="/rcooladagio"], a[href|="/rcoolad.png"], a[href|="/radagiowow"], a[href|="/radwow"], a[href|="/requestrianmagic"], a[href|="/radagiosings"], a[href|="/radsings"], a[href|="/radagiobattle"], a[href|="/radbattle"], a[href|="/rawkwardadagio"], a[href|="/rawkwardad"], a[href|="/radagiofacepalm"], a[href|="/radfacepalm"], a[href|="/radplease"], a[href|="/radagioplease"], a[href|="/radagiowelcome"], a[href|="/radwelcome"], a[href|="/rwelcometotheshow"] {
   display: block;
   clear: none;
   float: left;
   width: 70px;
   height: 70px;
+  cursor: default;
   background-image: url(%%adagiohmotes%%) !important;
   -webkit-transform: scaleX(-1);
   -moz-transform: scaleX(-1);
@@ -545,18 +541,8 @@ a[href|="/radagiosmirk"], a[href|="/radsmirk"], a[href|="/radagiodownvote"], a[h
   transform: scaleX(-1);
 }
 
-a[href|="/radagiowelcome"], a[href|="/radwelcome"], a[href|="/rwelcometotheshow"] {
-  display: block;
-  clear: none;
-  float: left;
+a[href|="/adagiowelcome"], a[href|="/adwelcome"], a[href|="/welcometotheshow"], a[href|="/radagiowelcome"], a[href|="/radwelcome"], a[href|="/rwelcometotheshow"] {
   width: 93px;
-  height: 70px;
-  background-image: url(%%adagiohmotes%%) !important;
-  -webkit-transform: scaleX(-1);
-  -moz-transform: scaleX(-1);
-  -ms-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  transform: scaleX(-1);
 }
 
 a[href|="/adagiosmirk"], a[href|="/radagiosmirk"], a[href|="/adsmirk"], a[href|="/radsmirk"] { background-position: -0px -0px; }
@@ -579,6 +565,7 @@ a[href|="/adagiosmile"], a[href|="/adsmile"], a[href|="/adagiolook"], a[href|="/
   float: left;
   width: 70px;
   height: 70px;
+  cursor: default;
   background-image: url(%%adagiopmotes%%) !important;
 }
 
@@ -613,6 +600,7 @@ a[href|="/adagiopoof"], a[href|="/adpoof"] {
   float: left;
   width: 136px;
   height: 120px;
+  cursor: default;
   background-image: url(%%poof%%) !important;
 }
 
@@ -622,7 +610,7 @@ a[href|="/adagiostanding"], a[href|="/adstanding"], a[href|="/radagiostanding"],
   float: left;
   width: 38px;
   height: 90px;
-  background-position: -0px -0px;
+  cursor: default;
   background-image: url(%%adagiostanding%%) !important;
 }
 
@@ -632,7 +620,7 @@ a[href|="/adagiowalking"], a[href|="/adwalking"], a[href|="/radagiowalking"], a[
   float: left;
   width: 50px;
   height: 90px;
-  background-position: -0px -0px;
+  cursor: default;
   background-image: url(%%adagiowalking%%) !important;
 }
 
@@ -650,7 +638,7 @@ a[href|="/adagiopstanding"], a[href|="/adpstanding"] {
   float: left;
   width: 84px;
   height: 88px;
-  background-position: -0px -0px;
+  cursor: default;
   background-image: url(%%adagiopstanding%%) !important;
 }
 
@@ -660,8 +648,38 @@ a[href|="/adagiotrotting"], a[href|="/adtrotting"] {
   float: left;
   width: 84px;
   height: 92px;
-  background-position: -0px -0px;
+  cursor: default;
   background-image: url(%%adagiotrotting%%) !important;
+}
+
+a[href|="/adagiosmug"], a[href|="/adsmug"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 40px;
+  height: 91px;
+  cursor: default;
+  background-image: url(%%adsmug%%) !important
+}
+
+a[href|="/sirenadagio"], a[href|="/sirenad"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 125px;
+  cursor: default;
+  background-image: url(%%adsiren%%) !important
+}
+
+a[href|="/adagiopoweredup"], a[href|="/adpoweredup"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 82px;
+  height: 95px;
+  cursor: default;
+  background-image: url(%%adpoweredup%%) !important
 }
 
 START-PONYSCRIPT-IGNORE { color: red; }
@@ -672,7 +690,7 @@ a[href|="/mirrorportal"] {
   float:left;
   width: 59px;
   height: 112px;
-  background-position: 0 0;
+  cursor: default;
   background-image: url(%%portal%%) !important;
 }
 
@@ -692,4 +710,5 @@ a[href^="/domain"] {
   transform: unset !important;
 }
 
+a[href|="/mirrorportal"]{background-position:0 0}
 END-PONYSCRIPT-IGNORE { color: red; }

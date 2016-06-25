@@ -798,6 +798,16 @@ a[href|="/flashexplains"],a[href|="/fsexplains"],a[href|="/flashsentryexplains"]
   background-image:url(%%FS2%%)!important;
 }
 
+a[href|="/flashdance"],a[href|="/fsdance"],a[href|="/flashsentrydance"] {
+  display:block;
+  clear:none;
+  float:left;
+  width:110px;
+  height:150px;
+  background-image:url(%%FS2%%)!important;
+  background-position:-115px 0;
+}
+
 .side .md table tbody tr:nth-of-type(odd) td:after {content:"";width:70px;display:block}
 .side .md table:nth-of-type(3) tr:nth-of-type(odd) {line-height:50%!important}
 .side .md table:nth-of-type(4) tr:nth-of-type(odd) {line-height:50%!important}

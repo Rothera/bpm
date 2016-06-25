@@ -34,8 +34,8 @@
 
 
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Finding A Job"}
-div.titlebox .users-online span.number:after {content:" Made Spike Do It"}
+div.titlebox .subscribers span.number:after {content:" Chef Cameos"}
+div.titlebox .users-online span.number:after {content:" Shouting At The Food"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -177,14 +177,14 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%twilight-hat%%);
+ background:url(%%amotes%%);
  width:70px;
  height:70px;
  margin-top:-45px;
  margin-left:5px;
  margin-bottom:0px;
  margin-right:-45px;
- background-position:-0% -0%; /*To select emote table position. Increments of -100%.*/
+ background-position:-100% -800%; /*To select emote table position. Increments of -100%.*/
  transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 
@@ -1334,7 +1334,7 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
 }
 
 /*Spoiler-tag notification*/
-
+/*
 .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:before, .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:hover:before {
     position: absolute;
     content: "Is this about the most recent episode?  If so, please spoiler-tag it!";
