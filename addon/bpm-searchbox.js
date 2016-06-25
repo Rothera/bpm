@@ -356,6 +356,15 @@ function init_search_ui(store) {
             sb_tabframe.classList.add("bpm-dark");
         }
     }
+
+    // If used on Reddit, and RES enables nightmode, change the theme
+    // of BPM accordingly, similarly to how it is with Voat.
+    if (is_reddit) {
+        if (document.body.classList.contains("res-nightmode")) {
+            sb_container.classList.add("bpm-dark");
+            sb_tabframe.classList.add("bpm-dark");
+        }
+    }
 }
 
 function set_sb_position(left, top) {
