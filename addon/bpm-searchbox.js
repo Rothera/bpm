@@ -146,6 +146,7 @@ function inject_search_box() {
                        '<th class="bpflagtable-031e"><center><a style="color:black" class="bpm-emote bpmote-txt_excl bpflag-impact_excl_">yay.</a></center><br><center><code>-impact!</code></center></th>',
                        '<th class="bpflagtable-031e"><center><a style="color:black" class="bpm-emote bpmote-txt_excl bpflag-tahoma_excl_">yay.</a></center><br><center><code>-tahoma!</code></center></th>',
                        '<th class="bpflagtable-031e"><center><a style="color:black" class="bpm-emote bpmote-txt_excl bpflag-papyrus_excl_">yay.</a></center><br><center><code>-papyrus!</code></center></th>',
+                       '<th class="bpflagtable-031e"><center><a style="color:black" class="bpm-emote bpmote-txt_excl bpflag-center">yay.</a></center><br><center><code>-center</code></center></th>',
                        '</tr>',
                    '</table></center><br>',
                    '<br><a class="bpm-emote bpflag-spin bpflag-s1 bpmote-zecora"></a><p class="bpm-sb-flag">Intensity and speed modifiers allow you to modify how flags work and appear. For example, <code class="bpm-sb-noconvert-zecora"></code> would make the emote spin very fast (see left).<br>The examples below demonstrate the least and most intense of the modification flags.</p>',
