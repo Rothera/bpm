@@ -173,7 +173,7 @@ div#header-bottom-left ul.tabmenu {
 
 .sidecontentbox .helplink+.title h1 { font-size: 0 !important }
 .sidecontentbox .helplink+.title h1:before { font-size: 10pt !important; content: "Delinquents" }
-.sidecontentbox .helplink+.title+.content li:nth-of-type(6n) { display: none }
+.sidecontentbox .helplink+.title+.content li:nth-of-type(6) { display: none }
 
 .side {
   padding: 0 10px;
@@ -1266,30 +1266,6 @@ START-PONYSCRIPT-IGNORE { color: red; }
 
 .side a[href|="/sssenpai"] {margin-bottom: -13px;}
 
-a[href|="/sunsetapplauds"],a[href|="/rsunsetapplauds"],a[href|="/ssapplauds"],a[href|="/rssapplauds"] {
-  -webkit-animation: applause 320ms steps(4) infinite;
-  -moz-animation: applause 320ms steps(4) infinite;
-  -o-animation: applause 320ms steps(4) infinite;
-  animation: applause 320ms steps(4) infinite;
-}
-
-@-webkit-keyframes applause {
-  from { background-position: -96px; }
-  to { background-position: -480px; }
-}
-@-moz-keyframes applause {
-  from { background-position: -96px; }
-  to { background-position: -480px; }
-}
-@-o-keyframes applause {
-  from { background-position: -96px; }
-  to { background-position: -480px; }
-}
-@keyframes applause {
-  from { background-position: -96px; }
-  to { background-position: -480px; }
-}
-
 a[href|="/sunsetlaugh"],a[href|="/sslaugh"],a[href|="/rsunsetlaugh"],a[href|="/rsslaugh"] {
   display: block;
   clear: none;
@@ -1375,33 +1351,6 @@ a[href|="/standingsunset"],a[href|="/standingss"] {
 @keyframes standingss {
   from {background-position: -66px}
     to {background-position: -14124px}
-}
-
-a[href|="/sunsetclop"],a[href|="/ssclop"],a[href|="/clappingsunset"],a[href|="/rclappingsunset"],a[href|="/clappingss"],a[href|="/rclappingss"] {
-  -webkit-animation: ssclap 276ms steps(3) infinite;
-  -moz-animation: ssclap 276ms steps(3) infinite;
-  -o-animation: ssclap 276ms steps(3) infinite;
-  animation: ssclap 276ms steps(3) infinite;
-}
-
-@-webkit-keyframes ssclap {
-  from {background-position: -70px}
-  to {background-position: -280px}
-}
-
-@-moz-keyframes ssclap {
-  from {background-position: -70px}
-  to {background-position: -280px}
-}
-
-@-o-keyframes ssclap {
-  from {background-position: -70px}
-  to {background-position: -280px}
-}
-
-@keyframes ssclap {
-  from{background-position: -70px}
-    to{background-position: -280px}
 }
 
 a[href|="/sunsetgroovin"],a[href|="/ssgroovin"] {
@@ -1493,7 +1442,6 @@ a[href^="/domain"] {
   transform: unset !important;
 }
 
-a[href|="/mirrorportal"]{background-position:0 0}
 END-PONYSCRIPT-IGNORE {color: red}
 
 a[href|="/rajlie"],a[href|="/rpriceless"],a[href|="/rflutterjerk"],a[href|="/rflutterroll"],a[href|="/rtwipride"],a[href|="/rcelestiamad"],a[href|="/rtwicrazy"],a[href|="/rspikemeh"],a[href|="/rlunateehee"],a[href|="/rlunawait"],a[href|="/rpaperbagderpy"],a[href|="/rpaperbagwizard"],a[href|="/rderpwizard"],a[href|="/rabmeh"],a[href|="/rajhappy"],a[href|="/rhapplejack"],a[href|="/rppfear"],a[href|="/rpinkiefear"],a[href|="/rtwibeam"],a[href|="/rscootaderp"],a[href|="/rdidneyworl"],a[href|="/rDIDNEYWORL"],a[href|="/rraritydaww"],a[href|="/rscootacheer"],a[href|="/rlootascoo"],a[href|="/rpinkieawe"],a[href|="/rppawe"],a[href|="/rareyouawizard"],a[href|="/rajsup"],a[href|="/rajwhatsgood"],a[href|="/rflutterwhoa"],a[href|="/rflutterwoah"],a[href|="/rrdcry"],a[href|="/rsilverspoon"],a[href|="/rsspout"],a[href|="/rohcomeon"],a[href|="/rsbcomeon"],a[href|="/rppcute"],a[href|="/rcutiepie"],a[href|="/rabbored"],a[href|="/rabmerp"],a[href|="/rrarityreally"],a[href|="/rraritypaper"],a[href|="/rraritynews"],a[href|="/rsbbook"],a[href|="/rsweetiebook"],a[href|="/rsbook"],a[href|="/rscootaplease"],a[href|="/rscootappeal"],a[href|="/rscootaplz"],a[href|="/rapplegasp"],a[href|="/rtwiright"],a[href|="/rsatistwied"],a[href|="/rcelestiawut"],a[href|="/rwutlestia"],a[href|="/rgrannysmith"],a[href|="/rgranny"],a[href|="/roldmareyellsatcloud"],a[href|="/rrarishock"],a[href|="/rshiningarmor"],a[href|="/rshiningarmour"],a[href|="/rchrysalis"],a[href|="/rqueenchrysalis"],a[href|="/rchangelingqueen"],a[href|="/rcadence"],a[href|="/rcadance"],a[href|="/rprincesscadance"],a[href|="/rprincesscadence"],a[href|="/rprincessmiamorecadenza"],a[href|="/rapplederp"],
@@ -1875,3 +1823,7 @@ a.thumbnail.self{margin-right:-14px}
   color: white !important;
   content: "NSFW emote!";
 }
+
+.stylesheet-customize-container textarea { height: 600px }
+
+.side sup:nth-of-type(1) { padding-left: 40px }

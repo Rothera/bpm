@@ -610,75 +610,49 @@ a[href|="/fsm50"]{
 
 
 
-@-webkit-keyframes pattycake {
+a[href="/fsnom"]{
 
-	from { background-position: 0 0; }
+  display:block;
 
-	to { background-position: -2040px 0; }
+  clear:none;
 
- }
+  float:left;
 
-a[href|="/pattycake"] {
-
-	width:255px;
-
-	height:150px;
-
-	display:block; float: left; cursor:default;
-
-	overflow:hidden;
-
-	background-repeat:no-repeat;
-
-	background-image:url(%%pattycake%%);
-
-	-webkit-animation: pattycake 0.7s steps(8, end) infinite;
-
-	animation: pattycake 0.7s steps(8, end) infinite;
+  background-image:url(%%fsnom%%);
 
 }
 
-@keyframes pattycake {
+a[href|="/fsnom"]{
 
-    from { background-position: 0 0; }
+  background-position:-0px -0px;
 
-    to { background-position: -2040px 0; }
+  width:170px;
 
- }
-
-
-@-webkit-keyframes fsnom {
-
-	from { background-position: 0 0; }
-
-	to { background-position: -1020px 0; }
-
- }
-
-a[href|="/fsnom"] {
-
-	width:170px;
-
-	height:180px;
-
-	display:block; float: left; cursor:default;
-
-	overflow:hidden;
-
-	background-repeat:no-repeat;
-
-	background-image:url(%%fsnom%%);
-
-	-webkit-animation: fsnom 0.2s steps(6, end) infinite;
-
-	animation: fsnom 0.2s steps(6, end) infinite;
+  height:180px;
 
 }
 
-@keyframes fsnom {
 
-    from { background-position: 0 0; }
 
-    to { background-position: -1020px 0; }
 
- }
+a[href="/pattycake"]{
+
+  display:block;
+
+  clear:none;
+
+  float:left;
+
+  background-image:url(%%pattycake%%);
+
+}
+
+a[href|="/pattycake"]{
+
+  background-position:-0px -0px;
+
+  width:255px;
+
+  height:150px;
+
+}
