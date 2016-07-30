@@ -138,7 +138,7 @@ function inject_search_box() {
                       '<tr><th style="table-layout:fixed;width:350px;" class="bpflagtable-031e"><a class="bpm-emote bpflag-in bpflag-shift bpmote-rdwut"></a><br><center><code>-shift</code></center></th></tr>',
                       '<tr><th style="table-layout:fixed;width:350px;" class="bpflagtable-031e"><a class="bpm-emote bpflag-in bpflag-_excl_shift bpmote-rdwut"></a><br><center><code>-!shift</code></center></th></tr>',
                   '</table></center><br>',
-                  '<center>Text (use with <code>[](/txt!)</code>):</center>',
+                  '<center>Text (use with <code class="bpm-sb-noconvert-txt"></code>):</center>',
                    '<center><table class="bpflagtable">',
                      '<tr>',
                        '<th class="bpflagtable-031e"><center><a style="color:black" class="bpm-emote bpmote-txt_excl bpflag-blink_excl_">yay.</a></center><br><center><code>-blink!</code></center></th>',
