@@ -15,6 +15,8 @@ var spoiler_links = [
     "/a",       // r/ShingekiNoKyojin
     "/m",       // r/ShingekiNoKyojin
     "/t",       // r/ShingekiNoKyojin
+    "#spoiler", // r/gravityfalls
+    "#fg",      // r/LearnJapanese
     ];
 
 /*
