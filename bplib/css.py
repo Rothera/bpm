@@ -149,6 +149,13 @@ def as_size(text):
 
 def as_position(text, width, height):
     parts = prop(text).split()
+
+    # Funky hack to make stupid things like "0px, 0px" work. I'm not sure if
+    # this is actually allowed but we'll pretend it is
+    if len(parts) == 1:
+        parts = parts[0].split(",")
+        parts = [p.strip() for p in parts]
+
     # This probably isn't how it works, but oh well
     x_text = parts[0] if len(parts) else "0px"
     y_text = parts[1] if len(parts) > 1 else "0px"
