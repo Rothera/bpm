@@ -79,7 +79,7 @@ a[href="/discordsterror"]{        background-position: -500px    0px; width: 165
 
 /*Sheet 2*/
 
-a[href|="/rariball"],a[href|="/rdfillies"],a[href|="/sblook"],a[href|="/sweetiedash"],a[href|="/woonabelle"],a[href="/timidashie"],a[href="/ssanime"],a[href="/giantbelle"]{
+a[href|="/rariball"],a[href|="/rdfillies"],a[href|="/sblook"],a[href|="/sweetiedash"],a[href|="/woonabelle"],a[href="/timidashie"],a[href="/ssanime"],a[href="/giantbelle"],a[href="/sbmic"]{
 
    display: block;
    clear: none;
@@ -94,6 +94,24 @@ a[href="/woonabelle"]{       background-position:    -300px   0px;    width: 200
 a[href="/timidashie"]{       background-position:    0px   -400px;    width: 180px; height: 200px}
 a[href="/ssanime"]{          background-position:    0px   -600px;    width: 100px; height: 200px}
 a[href="/giantbelle"]{       background-position:    -400px   -200px; width: 200px; height: 200px}
+a[href="/sbmic"]{            background-position:    -500px      0px; width: 147px; height: 200px}
+
+/* Fritters Table <3 */
+
+a[href|="/fritballoon"],a[href|="/fritcharm"],a[href|="/frithairdown"],a[href|="/fritkirby"],a[href|="/fritlunch"],a[href|="/fritmunch"],a[href|="/fritsmoothie"]{
+
+display: block;
+   clear: none;
+   float: left;
+   background-image: url(%%fritterTable%%) }
+
+a[href="/fritballoon"]{ background-position:    0px    0px; width: 150px; height: 300px}
+a[href="/fritcharm"]{   background-position: -225px    0px; width: 70px;  height: 70px}
+a[href="/frithairdown"]{background-position: -150px    0px; width: 75px;  height: 150px}
+a[href="/fritkirby"]{   background-position: -225px  -75px; width: 70px;  height: 70px}
+a[href="/fritlunch"]{   background-position: -150px -150px; width: 150px; height: 150px}
+a[href="/fritmunch"]{   background-position: -300px -150px; width: 130px; height: 150px}
+a[href="/fritsmoothie"]{background-position: -300px    0px; width: 130px; height: 150px}
 
 /**********************************************************************************************/
 /* Colorful names! */

@@ -34,8 +34,8 @@
 
 
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" Staring into the Hiatus"}
-div.titlebox .users-online span.number:after {content:" Have the Hiatus stare back."}
+div.titlebox .subscribers span.number:after {content:" staring into the Hiatus"}
+div.titlebox .users-online span.number:after {content:" have the Hiatus stare back."}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -177,7 +177,7 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%trixie-hat%%);
+ background:url(%%discentia-hat%%);
  width:70px;
  height:70px;
  margin-top:-45px;
@@ -1334,7 +1334,7 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
 }
 
 /*Spoiler-tag notification*/
-/*
+
 .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:before, .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:hover:before {
     position: absolute;
     content: "Is this about the most recent episode?  If so, please spoiler-tag it!";
