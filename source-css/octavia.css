@@ -154,6 +154,88 @@ a[href="/s"]:hover::after {
 
 .midcol .score { margin-right: 2px }
 
+/*** Sidebar Emote Tables ***/
+
+.side .md { padding-bottom: 12px; }
+
+.side .md h3 {
+  border: 1px solid #ccc;
+  border-bottom: none;
+  padding: 4px;
+  margin: 0;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.side .md h2 {
+  width: 275px;
+  color: black;
+  font-weight: normal;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-top: 0;
+  border-bottom: 0;
+  padding: 5px 4px;
+  margin: 0;
+}
+
+.side .md h2:first-of-type {
+  padding-top: 19px;
+  border-top: 1px solid #ccc;
+}
+
+.side .md h2:first-of-type:before {
+  text-align: center;
+  content:"Hover a tab to expand our emotes list!";
+  display: block;
+  padding-bottom: 19px;
+  font-weight: bold;
+}
+
+.side .md h2:last-of-type {
+  width: 215px;
+  padding-bottom: 19px;
+  padding-right: 64px;
+  border-bottom: 1px solid #ccc;
+}
+
+.side .md h2:last-of-type+p a {
+  float: right !important;
+  position: relative !important;
+  top: -74px !important;
+  left: -15px !important;
+  margin-bottom: -70px !important;
+}
+
+.side .md table {
+  border: 1px solid #ccc !important;
+  margin: 0;
+  padding-bottom: 19px;
+  display: none;
+}
+
+.side .md th { display: none; }
+
+.side .md tr, .side .md td {
+  border: 1px solid #ccc !important;
+  padding: 0px !important;
+}
+
+.side .md h3:nth-of-type(1):hover ~ table:nth-of-type(1),
+.side .md table:nth-of-type(1):hover { display: table; }
+
+.side .md h3:nth-of-type(2):hover ~ table:nth-of-type(2),
+.side .md table:nth-of-type(2):hover { display: table; }
+
+.side .md h3:nth-of-type(3):hover ~ table:nth-of-type(3),
+.side .md table:nth-of-type(3):hover { display: table; }
+
+.side .md h3:hover ~ h2, .side .md table:hover ~ h2 { display: none; }
+.side .md h3:hover ~ h2:last-of-type+p a, .side .md table:hover ~ h2:last-of-type+p a { display: none; }
+
+.side .md h2:last-of-type+p a+.SuperRedditAltTextDisplay_Text{ display: none; }
+
 /*---------------- Standardized Segment ----------------*/
 
 .md { overflow: auto }
@@ -558,17 +640,27 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 
 /*---------------- END COPY ----------------*/
 
-a[href|="/omsmirk"], a[href|="/omlate"], a[href|="/omshocked"], a[href|="/omunsure"], a[href|="/omnervous"], a[href|="/omexcited"], a[href|="/omconfident"], a[href|="/omsing"], a[href|="/omknows"], a[href|="/omsalute"], a[href|="/omdistracted"], a[href|="/omsmug"], a[href|="/omannoyed"], a[href|="/omright"], a[href|="/omhappy"], a[href|="/omreally"], a[href|="/omeww"], a[href|="/omwant"], a[href|="/omdj"], a[href|="/omparty"], a[href|="/omblush"], a[href|="/omrough"], a[href|="/omchill"], a[href|="/omjoy"], a[href|="/ommad"], a[href|="/ompout"], a[href|="/omwhat"], a[href|="/omaside"], a[href|="/omlook"], a[href|="/omfrustrated"], a[href|="/omdisappointed"], a[href|="/omgasp"], a[href|="/omfiddle"], a[href|="/ominthezone"], a[href|="/omconcert"], a[href|="/ombow"], a[href|="/omconfused"], a[href|="/omshrug"] {
+a[href|="/omsmirk"], a[href|="/omlate"], a[href|="/omshocked"], a[href|="/omunsure"], a[href|="/omnervous"], a[href|="/omexcited"], a[href|="/omconfident"], a[href|="/omsing"], a[href|="/omknows"], a[href|="/omsalute"], a[href|="/omdistracted"], a[href|="/omsmug"], a[href|="/omannoyed"], a[href|="/omright"], a[href|="/omhappy"], a[href|="/omreally"], a[href|="/omeww"], a[href|="/omwant"], a[href|="/omdj"], a[href|="/omparty"], a[href|="/omblush"], a[href|="/omrough"], a[href|="/omchill"], a[href|="/omjoy"], a[href|="/ommad"], a[href|="/ompout"], a[href|="/omwhat"], a[href|="/omaside"], a[href|="/omlook"], a[href|="/omfrustrated"], a[href|="/omdisappointed"], a[href|="/omgasp"], a[href|="/omfiddle"], a[href|="/ominthezone"], a[href|="/omconcert"], a[href|="/ombow"], a[href|="/omconfused"], a[href|="/omshrug"], a[href|="/omextrasmug"], a[href|="/omhat"] {
   display: block;
   clear: none;
   float: left;
   width: 70px;
   height: 70px;
   cursor: default;
-  background-image: url(%%tavimotes%%) !important;
+  background-image: url(%%taviamotes%%) !important;
 }
 
-a[href|="/omsmirk"] { background-position: 0 0; }
+a[href|="/ombat"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 70px;
+  cursor: default;
+  background-image: url(%%tavibmotes%%) !important;
+}
+
+a[href|="/omsmirk"], a[href|="/ombat"] { background-position: 0 0; }
 a[href|="/omlate"] { background-position: -70px 0; }
 a[href|="/omshocked"] { background-position: -140px 0; }
 a[href|="/omunsure"] { background-position: -210px 0; }
@@ -606,6 +698,38 @@ a[href|="/omconcert"] { background-position: -140px -560px; }
 a[href|="/ombow"] { background-position: -210px -560px; }
 a[href|="/omconfused"] { background-position: 0 -630px; }
 a[href|="/omshrug"] { background-position: -70px -630px; }
+a[href|="/omextrasmug"] { background-position: -140px -630px; }
+a[href|="/omhat"] { background-position: -210px -630px; }
+
+a[href|="/omstanding"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 84px;
+  cursor: default;
+  background-image: url(%%omstanding%%) !important;
+}
+
+a[href|="/omtrotting"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 90px;
+  cursor: default;
+  background-image: url(%%omtrotting%%) !important;
+}
+
+a[href|="/omplaying"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 106px;
+  height: 116px;
+  cursor: default;
+  background-image: url(%%omplaying%%) !important;
+}
 
 START-PONYSCRIPT-IGNORE { color: red; }
 

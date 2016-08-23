@@ -200,6 +200,9 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 .side .md h3:nth-of-type(4):hover ~ table:nth-of-type(4),
 .side .md table:nth-of-type(4):hover { display: table; }
 
+.side .md h3:nth-of-type(5):hover ~ table:nth-of-type(5),
+.side .md table:nth-of-type(5):hover { display: table; }
+
 .side .md h3:hover ~ h2, .side .md table:hover ~ h2 { display: none; }
 .side .md h3:hover ~ h2:last-of-type+p a, .side .md table:hover ~ h2:last-of-type+p a { display: none; }
 
@@ -611,19 +614,29 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 
 /*---------------- END COPY ----------------*/
 
-a[href|="/starlightsmirk"], a[href|="/sgsmirk"], a[href|="/starlightwhat"], a[href|="/sgwhat"], a[href|="/starlighthappy"], a[href|="/sghappy"], a[href|="/starlighthuman"], a[href|="/sghuman"], a[href|="/fillystarlight"], a[href|="/fillysg"], a[href|="/cutestarlight"], a[href|="/cutesg"], a[href|="/snowfallfrost"], a[href|="/sffrost"], a[href|="/snowfallfrosty"], a[href|="/sffrosty"], a[href|="/starlightsurprised"], a[href|="/sgsurprised"], a[href|="/starlightreally"], a[href|="/sgreally"], a[href|="/confidentstarlight"], a[href|="/confidentsg"], a[href|="/starlightcry"], a[href|="/sgcry"], a[href|="/starlightwtf"], a[href|="/sgwtf"], a[href|="/slystarlight"], a[href|="/slysg"], a[href|="/downcaststarlight"], a[href|="/downcastsg"], a[href|="/embarrassedstarlight"], a[href|="/embarrassedsg"], a[href|="/starlightright"], a[href|="/sgright"], a[href|="/starlightfacehoof"], a[href|="/sgfacehoof"], a[href|="/starlightsalute"], a[href|="/sgsalute"], a[href|="/starlightshrug"], a[href|="/sgshrug"], a[href|="/starlightscrunch"], a[href|="/sgscrunch"], a[href|="/nervousstarlight"], a[href|="/nervoussg"], a[href|="/starlightunsure"], a[href|="/sgunsure"], a[href|="/starlightblush"], a[href|="/sgblush"], a[href|="/starlightgrimmer"], a[href|="/sggrimmer"], a[href|="/undercoverstarlight"], a[href|="/undercoversg"], a[href|="/starlightmenu"], a[href|="/sgmenu"], a[href|="/starlightworry"], a[href|="/sgworry"], a[href|="/starlightregret"], a[href|="/sgregret"], a[href|="/evilstarlight"], a[href|="/evilsg"], a[href|="/cutiemarksforcutiemarks"], a[href|="/starlighttriumph"], a[href|="/sgtriumph"], a[href|="/thrilledstarlight"], a[href|="/thrilledsg"], a[href|="/heresglimmy"] {
+a[href|="/starlightsmirk"], a[href|="/sgsmirk"], a[href|="/starlightwhat"], a[href|="/sgwhat"], a[href|="/happystarlight"], a[href|="/happysg"], a[href|="/sghappy"], a[href|="/starlighthuman"], a[href|="/sghuman"], a[href|="/fillystarlight"], a[href|="/fillysg"], a[href|="/cutestarlight"], a[href|="/cutesg"], a[href|="/snowfallfrost"], a[href|="/sffrost"], a[href|="/snowfallfrosty"], a[href|="/sffrosty"], a[href|="/starlightsurprised"], a[href|="/sgsurprised"], a[href|="/starlightreally"], a[href|="/sgreally"], a[href|="/confidentstarlight"], a[href|="/confidentsg"], a[href|="/starlightcry"], a[href|="/sgcry"], a[href|="/starlightwtf"], a[href|="/sgwtf"], a[href|="/slystarlight"], a[href|="/slysg"], a[href|="/downcaststarlight"], a[href|="/downcastsg"], a[href|="/embarrassedstarlight"], a[href|="/embarrassedsg"], a[href|="/starlightright"], a[href|="/sgright"], a[href|="/starlightfacehoof"], a[href|="/sgfacehoof"], a[href|="/starlightsalute"], a[href|="/sgsalute"], a[href|="/starlightshrug"], a[href|="/sgshrug"], a[href|="/starlightscrunch"], a[href|="/sgscrunch"], a[href|="/nervousstarlight"], a[href|="/nervoussg"], a[href|="/starlightunsure"], a[href|="/sgunsure"], a[href|="/starlightblush"], a[href|="/sgblush"], a[href|="/starlightgrimmer"], a[href|="/sggrimmer"], a[href|="/undercoverstarlight"], a[href|="/undercoversg"], a[href|="/starlightmenu"], a[href|="/sgmenu"], a[href|="/starlightworry"], a[href|="/sgworry"], a[href|="/starlightregret"], a[href|="/sgregret"], a[href|="/evilstarlight"], a[href|="/evilsg"], a[href|="/cutiemarksforcutiemarks"], a[href|="/starlighttriumph"], a[href|="/sgtriumph"], a[href|="/thrilledstarlight"], a[href|="/thrilledsg"], a[href|="/heresglimmy"], a[href|="/sneakystarlight"], a[href|="/sneakysg"], a[href|="/concernedstarlight"], a[href|="/concernedsg"], a[href|="/terrifiedstarlight"], a[href|="/terrifiedsg"], a[href|="/despondentstarlight"], a[href|="/despondentsg"], a[href|="/preparedstarlight"], a[href|="/preparedsg"], a[href|="/snowfallwreathed"], a[href|="/sfwreathed"], a[href|="/starlightbrag"], a[href|="/sgbrag"], a[href|="/starlightconsider"], a[href|="/sgconsider"], a[href|="/starlightbetrayed"], a[href|="/sgbetrayed"] {
   display: block;
   clear: none;
   float: left;
   width: 70px;
   height: 70px;
   cursor: default;
-  background-image: url(%%sgmotes%%) !important;
+  background-image: url(%%sgamotes%%) !important;
 }
 
-a[href|="/starlightsmirk"], a[href|="/sgsmirk"] { background-position: 0 0; }
+a[href|="/skepticalstarlight"], a[href|="/skepticalsg"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 70px;
+  cursor: default;
+  background-image: url(%%sgbmotes%%) !important;
+}
+
+a[href|="/starlightsmirk"], a[href|="/sgsmirk"], a[href|="/skepticalstarlight"], a[href|="/skepticalsg"] { background-position: 0 0; }
 a[href|="/starlightwhat"], a[href|="/sgwhat"] { background-position: -70px 0; }
-a[href|="/starlighthappy"], a[href|="/sghappy"] { background-position: -140px 0; }
+a[href|="/happystarlight"], a[href|="/happysg"], a[href|="/sghappy"] { background-position: -140px 0; }
 a[href|="/starlighthuman"], a[href|="/sghuman"] { background-position: -210px 0; }
 a[href|="/fillystarlight"], a[href|="/fillysg"] { background-position: 0 -70px; }
 a[href|="/cutestarlight"], a[href|="/cutesg"] { background-position: -70px -70px; }
@@ -652,6 +665,15 @@ a[href|="/starlightregret"], a[href|="/sgregret"] { background-position: -210px 
 a[href|="/evilstarlight"], a[href|="/evilsg"] { background-position: 0 -490px; }
 a[href|="/cutiemarksforcutiemarks"], a[href|="/starlighttriumph"], a[href|="/sgtriumph"] { background-position: -70px -490px; }
 a[href|="/thrilledstarlight"], a[href|="/thrilledsg"], a[href|="/heresglimmy"] { background-position: -140px -490px; }
+a[href|="/sneakystarlight"], a[href|="/sneakysg"] { background-position: -210px -490px; }
+a[href|="/concernedstarlight"], a[href|="/concernedsg"] { background-position: 0 -560px; }
+a[href|="/terrifiedstarlight"], a[href|="/terrifiedsg"] { background-position: -70px -560px; }
+a[href|="/despondentstarlight"], a[href|="/despondentsg"] { background-position: -140px -560px; }
+a[href|="/preparedstarlight"], a[href|="/preparedsg"] { background-position: -210px -560px; }
+a[href|="/snowfallwreathed"], a[href|="/sfwreathed"] { background-position: 0 -630px; }
+a[href|="/starlightbrag"], a[href|="/sgbrag"] { background-position: -70px -630px; }
+a[href|="/starlightconsider"], a[href|="/sgconsider"] { background-position: -140px -630px; }
+a[href|="/starlightbetrayed"], a[href|="/sgbetrayed"] { background-position: -210px -630px; }
 
 a[href|="/starlightpoker"], a[href|="/sgpoker"], a[href|="/starlightpetme"], a[href|="/sgpetme"], a[href|="/starlightrecoil"], a[href|="/sgrecoil"], a[href|="/starlightflight"], a[href|="/sgflight"] {
   display: block;
@@ -702,20 +724,40 @@ a[href|="/starlightstanding"], a[href|="/sgstanding"] {
   display: block;
   clear: none;
   float: left;
+  width: 78px;
+  height: 90px;
+  cursor: default;
+  background-image: url(%%sgstanding%%) !important;
+}
+
+a[href|="/estarlightstanding"], a[href|="/esgstanding"] {
+  display: block;
+  clear: none;
+  float: left;
   width: 80px;
   height: 90px;
   cursor: default;
-  background-image: url(%%starlightstanding%%) !important;
+  background-image: url(%%esgstanding%%) !important;
 }
 
 a[href|="/starlighttrotting"], a[href|="/sgtrotting"] {
   display: block;
   clear: none;
   float: left;
+  width: 78px;
+  height: 94px;
+  cursor: default;
+  background-image: url(%%sgtrotting%%) !important;
+}
+
+a[href|="/estarlighttrotting"], a[href|="/esgtrotting"] {
+  display: block;
+  clear: none;
+  float: left;
   width: 80px;
   height: 94px;
   cursor: default;
-  background-image: url(%%starlighttrotting%%) !important;
+  background-image: url(%%esgtrotting%%) !important;
 }
 
 a[href|="/starlightpopcorna"], a[href|="/sgpopcorna"] {

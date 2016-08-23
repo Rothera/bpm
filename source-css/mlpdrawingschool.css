@@ -1,3 +1,4 @@
+
 /*Background upload a new file with the filename bg at 500kb or less to allow it to upload and replace the background file. You have to hit save when you are done or it will not show the image globally. Normally I will do the opacity around 15% or less to make sure it does not disrupt the text. For ones that work like the present one I will add 300px to the side so they pass the sidebar.
 
 To move it from the side to the middle change Background-position: bottom right; to Background-position: center center;*/
@@ -97,12 +98,23 @@ width: 288px;
 margin-top:1px !important;
 }
 
-#header-bottom-left{
-   background-image: url(%%header%%);
-   background-color: #FFFFFF;
-   background-repeat: no-repeat; 
-   height: 100px;
+#header {
+    background: url(%%header%%);
+    height: 115px;
+    -webkit-animation: scroll 120s linear infinite;
+    animation: scroll 120s linear infinite;
 }
+
+@-webkit-keyframes scroll {
+    from { background-position: 0 15px; }
+    to   { background-position: -2000px 15px; }
+}
+@keyframes scroll {
+    from { background-position: 0 15px; }
+    to   { background-position: -2000px 15px; }
+}
+
+
 span.hover.pagename.redditname{
     font-size:0px
 }
@@ -1034,3 +1046,4 @@ a[href|="/shyhug"] {
 a[href|="/shyhug"] { 
     background-position: -0px -0px;
     }
+

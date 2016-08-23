@@ -1,6 +1,36 @@
+/* UI (not emotes) */
+
+html,.number,.remove,.debuginfo {visibility:hidden;background-color:lightgray;background-image:none!important}
+
+.titlebox .fancy-toggle-button {visibility:visible;display:fixed!important}
+
+p {color:black;top: 70%;left: 50%;transform: translate(-00%, -15%);visibility:visible;display: block!important}
+
+#noresults,.account-activity-box,.word,.bottommenu,.fuzzed {display:none!important}
+
+.option {font-size:0px!important;color:transparent!important;background-color:transparent;border-color:transparent!important;
+position: absolute;top: 30%;left: 50%;transform: translate(-50%, -30%);}
+
+.side {margin: auto;
+    width: 60%;
+    padding: 10px;}
+
+
+.fancy-toggle-button,.remove,.active {background-color:transparent!important;background-image:none!important;padding:0px!important;visibility:none!important}
+
+
+.multi-selector {transform: translate(80%,300%)!important}
+.multi-list {display:none}
+.title:after {font-size:15px;color:black;content:"Voting subscribes you to this subreddit, but you won't see any posts from us."}
+.title {color:transparent;font-size:0px}
+
+.hover-bubble:after,.hover-bubble:before {display:none}
+
+/* End UI */
+
 /* a-table */
 
-a[href|="/alphyshy"],a[href|="/applesans"],a[href|="/judyshy"],a[href|="/pinkpyrus"],a[href|="/raindyne"],a[href|="/rariton"],a[href|="/temmie"],a[href|="/toriel"],a[href|="/toritwi"],a[href|="/twipines"] {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(%%a%%);}
+a[href|="/alphyshy"],a[href|="/applesans"],a[href|="/judyshy"],a[href|="/pinkpyrus"],a[href|="/raindyne"],a[href|="/rariton"],a[href|="/temmie"],a[href|="/toriel"],a[href|="/toritwi"],a[href|="/twipines"] {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(%%a%%)}
 
 a[href|="/alphyshy"] {width:258px; height:200px; background-position: -600px -0px}
 a[href|="/applesans"] {width:196px; height:200px; background-position: -0px -200px}
@@ -17,10 +47,20 @@ a[href|="/nothingness"] {display: none;background-image: url(%%a%%);width:1px;he
 
 /* b-table */
 
-a[href|="/bill"],a[href|="/dipper"],a[href|="/fluttershoot"],a[href|="/mabel"],a[href|="/ponkpines"] {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(%%b%%);}
+a[href|="/bill"],a[href|="/dipper"],a[href|="/fluttershoot"],a[href|="/mabel"],a[href|="/ponkpines"] {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(%%b%%)}
 
 a[href|="/bill"] {width:88px; height:150px; background-position: -0px -0px}
 a[href|="/dipper"] {width:80px; height:102px; background-position: -88px -0px}
 a[href|="/fluttershoot"] {width:130px; height:200px; background-position: -168px -0px}
 a[href|="/mabel"] {width:71px; height:62px; background-position: -298px -0px}
 a[href|="/ponkpines"] {width:100px; height:100px; background-position: -369px -0px}
+
+/* c-table */
+
+a[href|="/lapis"],a[href|="/lapiswings"],a[href|="/pinkiepyro"],a[href|="/scpony"],a[href|="/vulcan"] {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(%%c%%)}
+
+a[href|="/lapis"] {width:118px; height:150px; background-position: -0px -0px}
+a[href|="/lapiswings"] {width:206px; height:150px; background-position: -118px -0px}
+a[href|="/pinkiepyro"] {width:233px; height:200px; background-position: -324px -0px}
+a[href|="/scpony"] {width:150px; height:180px; background-position: -557px -0px}
+a[href|="/vulcan"] {width:116px; height:150px; background-position: -707px -0px}

@@ -14,14 +14,6 @@
     font-size: medium
 }
 
-.titlebox table {
-    display: none;
-    clear: both
-    }
-.side div.usertext-body:hover table {
-    display: block;
-    clear: both
-    }
 #headdit-box {display:none;}
 /*Add Image to Sidebar*/
 div.side div.spacer:nth-of-type(1){
@@ -124,8 +116,14 @@ div.footer-parent:after {
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important }
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "APPLE BARONS" }
 
+.bottom .author { font-size: 0 }
+.bottom .author:after { font-size: x-small !important; content: "apples" }
+
 .thing .rank { margin-top: 21px; }
 .thing .rank { color: saddlebrown !important; }
+
+#moderation_tools a, #wikiactions a,
+.leavemoderator, .flairtoggle { background-color: transparent !important }
 
 div.RES-keyNav-activeElement { background-color: rgba(255, 255, 255, 0.3) !important; }
 
@@ -192,6 +190,102 @@ a[href="/s"]:hover::after {
 .midcol .score.likes { color: green; }
 .midcol .score.dislikes { color: red; }
 .midcol .score.unvoted { color: black; }
+
+/*** Sidebar Emote Tables ***/
+
+.side .md { padding-bottom: 12px; }
+
+.side .md h3 {
+  border: 1px solid saddlebrown;
+  border-bottom: none;
+  padding: 4px;
+  margin: 0;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 11px;
+  background-color: white;
+}
+
+.side .md h3:last-of-type  {
+  color: #e3c19c;
+  background-color: #e3c19c;
+  border: none;
+}
+
+.side .md h2 {
+  width: 275px;
+  color: black;
+  font-weight: normal;
+  font-size: 12px;
+  border: 1px solid saddlebrown;
+  border-top: 0;
+  border-bottom: 0;
+  padding: 5px 4px;
+  margin: 0;
+  background-color: white;
+}
+
+.side .md h2:first-of-type {
+  padding-top: 19px;
+  border-top: 1px solid saddlebrown;
+}
+
+.side .md h2:first-of-type:before {
+  text-align: center;
+  content:"Hover a tab to expand our emotes list!";
+  display: block;
+  padding-bottom: 19px;
+  font-weight: bold;
+}
+
+.side .md h2:last-of-type {
+  width: 215px;
+  padding-bottom: 19px;
+  padding-right: 64px;
+  border-bottom: 1px solid saddlebrown;
+}
+
+.side .md h2:last-of-type+p a {
+  float: right !important;
+  position: relative !important;
+  top: -75px !important;
+  left: -14px !important;
+  margin-bottom: -70px !important;
+}
+
+.side .md table {
+  border: 1px solid saddlebrown !important;
+  margin: 0;
+  padding-bottom: 19px;
+  display: none;
+  background-color: white;
+}
+
+.side .md th { display: none; }
+
+.side .md tr, .side .md td {
+  border: 1px solid saddlebrown !important;
+  padding: 0px !important;
+}
+
+.side .md h3:nth-of-type(1):hover ~ table:nth-of-type(1),
+.side .md table:nth-of-type(1):hover { display: table; }
+
+.side .md h3:nth-of-type(2):hover ~ table:nth-of-type(2),
+.side .md table:nth-of-type(2):hover { display: table; }
+
+.side .md h3:nth-of-type(3):hover ~ table:nth-of-type(3),
+.side .md table:nth-of-type(3):hover { display: table; }
+
+.side .md h3:hover ~ h2, .side .md table:hover ~ h2 { display: none; }
+.side .md h3:hover ~ h2:last-of-type+p a, .side .md table:hover ~ h2:last-of-type+p a { display: none; }
+
+.side .md h2:last-of-type+p a+.SuperRedditAltTextDisplay_Text{ display: none; }
+
+.side .md table tr:first-of-type td:first-of-type { counter-reset: x -1 }
+.side .md table tr:first-of-type td:not(:first-of-type):after { counter-increment: x; content: counter(x) }
+.side .md table tr:first-of-type { counter-reset: y -1 }
+.side .md table tr:nth-of-type(n+2) td:first-of-type:after { counter-increment: y; content: counter(y) }
 
 /*** Emotes & Flair ***/
 
@@ -599,7 +693,7 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 
 /*---------------- END COPY ----------------*/
 
-a[href|="/aj00"], a[href|="/aj01"], a[href|="/aj02"], a[href|="/aj03"], a[href|="/aj04"], a[href|="/aj05"], a[href|="/aj06"], a[href|="/aj07"], a[href|="/aj08"], a[href|="/aj10"], a[href|="/aj11"], a[href|="/aj12"], a[href|="/aj13"], a[href|="/aj14"], a[href|="/aj15"], a[href|="/aj16"], a[href|="/aj17"], a[href|="/aj18"], a[href|="/aj20"], a[href|="/aj21"], a[href|="/aj22"], a[href|="/aj23"], a[href|="/aj24"], a[href|="/aj25"], a[href|="/aj26"], a[href|="/aj27"], a[href|="/aj28"] {
+a[href|="/aj00"], a[href|="/aj01"], a[href|="/aj02"], a[href|="/aj03"], a[href|="/aj04"], a[href|="/aj05"], a[href|="/aj06"], a[href|="/aj07"], a[href|="/aj08"], a[href|="/aj09"], a[href|="/aj10"], a[href|="/aj11"], a[href|="/aj12"], a[href|="/aj13"], a[href|="/aj14"], a[href|="/aj15"], a[href|="/aj16"], a[href|="/aj17"], a[href|="/aj18"], a[href|="/aj19"], a[href|="/aj20"], a[href|="/aj21"], a[href|="/aj22"], a[href|="/aj23"], a[href|="/aj24"], a[href|="/aj25"], a[href|="/aj26"], a[href|="/aj27"], a[href|="/aj28"], a[href|="/aj29"] {
   display: block;
   clear: none;
   float: left;
@@ -609,7 +703,7 @@ a[href|="/aj00"], a[href|="/aj01"], a[href|="/aj02"], a[href|="/aj03"], a[href|=
   background-image: url(%%ajmotes%%) !important;
 }
 
-a[href|="/apj00"], a[href|="/apj01"], a[href|="/apj10"], a[href|="/apj11"], a[href|="/apj20"], a[href|="/apj21"] {
+a[href|="/apj00"], a[href|="/apj01"], a[href|="/apj02"], a[href|="/apj03"], a[href|="/apj04"], a[href|="/apj05"], a[href|="/apj06"], a[href|="/apj07"], a[href|="/apj08"], a[href|="/apj09"], a[href|="/apj10"], a[href|="/apj11"], a[href|="/apj12"], a[href|="/apj13"], a[href|="/apj14"], a[href|="/apj15"], a[href|="/apj16"], a[href|="/apj17"], a[href|="/apj18"], a[href|="/apj19"], a[href|="/apj20"], a[href|="/apj21"], a[href|="/apj22"], a[href|="/apj23"], a[href|="/apj24"], a[href|="/apj25"], a[href|="/apj26"], a[href|="/apj27"], a[href|="/apj28"], a[href|="/apj29"] {
   display: block;
   clear: none;
   float: left;
@@ -631,31 +725,34 @@ a[href|="/ja00"], a[href|="/ja01"], a[href|="/ja02"], a[href|="/ja03"], a[href|=
 
 a[href|="/aj00"], a[href|="/apj00"], a[href|="/ja00"] { background-position: 0 0; }
 a[href|="/aj01"], a[href|="/apj01"], a[href|="/ja01"] { background-position: 0 -70px; }
-a[href|="/aj02"], a[href|="/ja02"] { background-position: 0 -140px; }
-a[href|="/aj03"], a[href|="/ja03"] { background-position: 0 -210px; }
-a[href|="/aj04"], a[href|="/ja04"] { background-position: 0 -280px; }
-a[href|="/aj05"] { background-position: 0 -350px; }
-a[href|="/aj06"] { background-position: 0 -420px; }
-a[href|="/aj07"] { background-position: 0 -490px; }
-a[href|="/aj08"] { background-position: 0 -560px; }
+a[href|="/aj02"], a[href|="/apj02"], a[href|="/ja02"] { background-position: 0 -140px; }
+a[href|="/aj03"], a[href|="/apj03"], a[href|="/ja03"] { background-position: 0 -210px; }
+a[href|="/aj04"], a[href|="/apj04"], a[href|="/ja04"] { background-position: 0 -280px; }
+a[href|="/aj05"], a[href|="/apj05"] { background-position: 0 -350px; }
+a[href|="/aj06"], a[href|="/apj06"] { background-position: 0 -420px; }
+a[href|="/aj07"], a[href|="/apj07"] { background-position: 0 -490px; }
+a[href|="/aj08"], a[href|="/apj08"] { background-position: 0 -560px; }
+a[href|="/aj09"], a[href|="/apj09"] { background-position: 0 -630px; }
 a[href|="/aj10"], a[href|="/apj10"], a[href|="/ja10"] { background-position: -70px 0; }
 a[href|="/aj11"], a[href|="/apj11"], a[href|="/ja11"] { background-position: -70px -70px; }
-a[href|="/aj12"], a[href|="/ja12"] { background-position: -70px -140px; }
-a[href|="/aj13"], a[href|="/ja13"] { background-position: -70px -210px; }
-a[href|="/aj14"], a[href|="/ja14"] { background-position: -70px -280px; }
-a[href|="/aj15"] { background-position: -70px -350px; }
-a[href|="/aj16"] { background-position: -70px -420px; }
-a[href|="/aj17"] { background-position: -70px -490px; }
-a[href|="/aj18"] { background-position: -70px -560px; }
+a[href|="/aj12"], a[href|="/apj12"], a[href|="/ja12"] { background-position: -70px -140px; }
+a[href|="/aj13"], a[href|="/apj13"], a[href|="/ja13"] { background-position: -70px -210px; }
+a[href|="/aj14"], a[href|="/apj14"], a[href|="/ja14"] { background-position: -70px -280px; }
+a[href|="/aj15"], a[href|="/apj15"] { background-position: -70px -350px; }
+a[href|="/aj16"], a[href|="/apj16"] { background-position: -70px -420px; }
+a[href|="/aj17"], a[href|="/apj17"] { background-position: -70px -490px; }
+a[href|="/aj18"], a[href|="/apj18"] { background-position: -70px -560px; }
+a[href|="/aj19"], a[href|="/apj19"] { background-position: -70px -630px; }
 a[href|="/aj20"], a[href|="/apj20"], a[href|="/ja20"] { background-position: -140px 0; }
 a[href|="/aj21"], a[href|="/apj21"], a[href|="/ja21"] { background-position: -140px -70px; }
-a[href|="/aj22"], a[href|="/ja22"] { background-position: -140px -140px; }
-a[href|="/aj23"], a[href|="/ja23"] { background-position: -140px -210px; }
-a[href|="/aj24"], a[href|="/ja24"] { background-position: -140px -280px; }
-a[href|="/aj25"] { background-position: -140px -350px; }
-a[href|="/aj26"] { background-position: -140px -420px; }
-a[href|="/aj27"] { background-position: -140px -490px; }
-a[href|="/aj28"] { background-position: -140px -560px; }
+a[href|="/aj22"], a[href|="/apj22"], a[href|="/ja22"] { background-position: -140px -140px; }
+a[href|="/aj23"], a[href|="/apj23"], a[href|="/ja23"] { background-position: -140px -210px; }
+a[href|="/aj24"], a[href|="/apj24"], a[href|="/ja24"] { background-position: -140px -280px; }
+a[href|="/aj25"], a[href|="/apj25"] { background-position: -140px -350px; }
+a[href|="/aj26"], a[href|="/apj26"] { background-position: -140px -420px; }
+a[href|="/aj27"], a[href|="/apj27"] { background-position: -140px -490px; }
+a[href|="/aj28"], a[href|="/apj28"] { background-position: -140px -560px; }
+a[href|="/aj29"], a[href|="/apj29"] { background-position: -140px -630px; }
 
 /*** BPM Ignore ***/
 
