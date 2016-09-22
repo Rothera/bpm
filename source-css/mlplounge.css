@@ -172,9 +172,9 @@ background: url(%%horsewife%%) center center no-repeat transparent;
 /*Subscriber Name Replace*/
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Changlings"}
+div.titlebox .subscribers span.number:after {content:" Strong independent Ploungers"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " Radio Free Zerging" }
+div.titlebox p.users-online span.number:after { content: " who don't need no cutie mark" }
 div.titlebox p.users-online span.word { display: none }
 
 /*Flair modifications*/
@@ -224,6 +224,7 @@ submitted
 }
 
 /*Footer code*/
+/*
 .footer-parent
 {
  padding-bottom: 220px;
@@ -235,6 +236,53 @@ submitted
  background-repeat:no-repeat;
  margin-bottom:-25px;
  background-position: center bottom;
+}
+*/
+
+/* Thanks nano! ...but if you're (not nano, but you, yes you) reading this, you're still doing it wrong. Learn from the past bucko. */
+.footer-parent {
+  position: relative;
+  width: 100%;
+  height: 660px;
+  margin-bottom: -25px;
+}
+
+.footer-parent::before, .footer-parent::after {
+  content: "";
+  position: absolute;
+  width: 431px;
+  height: 400px;
+  bottom: 0;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.footer-parent::before {
+  left: calc(50% - 431px);
+  background-image: url(%%footer-left%%);
+}
+
+.footer-parent::after {
+  right: calc(50% - 431px);
+  background-image: url(%%footer-right%%);
+}
+
+.footer-parent:hover::before, .footer-parent:hover::after {
+  animation: footer 30.65s infinite;
+}
+
+@keyframes footer {
+  0%, 100% { background-position: 0; animation-timing-function: steps(1) }
+  97.879%, 99.837% { background-position: -431px; animation-timing-function: steps(1) }
+  98.042%, 99.674% { background-position: -862px; animation-timing-function: steps(1) }
+  98.206%, 99.511% { background-position: -1293px; animation-timing-function: steps(1) }
+  98.369% { background-position: -1724px; animation-timing-function: steps(1) }
+  98.532% { background-position: -2155px; animation-timing-function: steps(1) }
+  98.695% { background-position: -2586px; animation-timing-function: steps(1) }
+  98.858% { background-position: -3017px; animation-timing-function: steps(1) }
+  99.021% { background-position: -3448px; animation-timing-function: steps(1) }
+  99.184% { background-position: -3879px; animation-timing-function: steps(1) }
+  99.347% { background-position: -4310px; animation-timing-function: steps(1) }
 }
 
 /*Sidebar Filly Start*/
@@ -498,14 +546,29 @@ a[href|="/rf09"],a[href|="/rflutterkay"],a[href|="/rf19"],a[href|="/rnotangry"],
 a[href|="/g00"],a[href|="/karma"],
 a[href|="/g01"],a[href|="/discentiajudge"],
 a[href|="/g02"],a[href|="/twisnide"],
+a[href|="/g03"],a[href|="/pinkie"], a[href|="/pp"],
+a[href|="/g04"],a[href|="/cococold"],
+a[href|="/g05"],a[href|="/quibble"],
+a[href|="/g06"],a[href|="/rdthis"],
+a[href|="/g07"],a[href|="/flutterbrow"],
 a[href|="/rg00"],a[href|="/rkarma"],
 a[href|="/rg01"],a[href|="/rdiscentiajudge"],
-a[href|="/rg02"],a[href|="/rtwisnide"]
+a[href|="/rg02"],a[href|="/rtwisnide"],
+a[href|="/rg03"],a[href|="/rpinkie"], a[href|="/rpp"],
+a[href|="/rg04"],a[href|="/rcococold"],
+a[href|="/rg05"],a[href|="/rquibble"],
+a[href|="/rg06"],a[href|="/rrdthis"],
+a[href|="/rg07"],a[href|="/rflutterbrow"]
 {display:block; clear:none; float:left; width:70px; height:70px; background-image:url(%%gmotes%%)!important}
 
 a[href|="/rg00"],a[href|="/rkarma"],
 a[href|="/rg01"],a[href|="/rdiscentiajudge"],
 a[href|="/rg02"],a[href|="/rtwisnide"]
+a[href|="/rg03"],a[href|="/rpinkie"], a[href|="/rpp"],
+a[href|="/rg04"],a[href|="/rcococold"],
+a[href|="/rg05"],a[href|="/rquibble"],
+a[href|="/rg06"],a[href|="/rrdthis"],
+a[href|="/rg07"],a[href|="/rflutterbrow"]
 {-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1);}
 
 
@@ -576,7 +639,7 @@ a[href|="/a22"],a[href|="/paperbagderpy"],a[href|="/ra22"],a[href|="/rpaperbagde
 a[href|="/a32"],a[href|="/abmeh"],a[href|="/ra32"],a[href|="/rabmeh"],a[href|="/b32"],a[href|="/rdwut"],a[href|="/rb32"],a[href|="/rrdwut"],a[href|="/c32"],a[href|="/rdscared"],a[href|="/rc32"],a[href|="/rrdscared"],a[href|="/e32"],a[href|="/discordsad"],a[href|="/re32"],a[href|="/rdiscordsad"],a[href|="/f32"],a[href|="/nightmaregrin"],a[href|="/rf32"],a[href|="/rnightmaregrin"],.side .md table tr:nth-of-type(5) td:nth-of-type(5):after
 {background-position: -300% -200%}
 
-a[href|="/a03"],a[href|="/ajhappy"],a[href|="/ra03"],a[href|="/rajhappy"],a[href|="/b03"],a[href|="/ppshrug"],a[href|="/rb03"],a[href|="/rppshrug"],a[href|="/c03"],a[href|="/flutterblush"],a[href|="/rc03"],a[href|="/rflutterblush"],a[href|="/e03"],a[href|="/wahaha"],a[href|="/re03"],a[href|="/rwahaha"],a[href|="/f03"],a[href|="/sbshocked"],a[href|="/rf03"],a[href|="/rsbshocked"],.side .md table tr:nth-of-type(7) td:nth-of-type(2):after
+a[href|="/a03"],a[href|="/ajhappy"],a[href|="/ra03"],a[href|="/rajhappy"],a[href|="/b03"],a[href|="/ppshrug"],a[href|="/rb03"],a[href|="/rppshrug"],a[href|="/c03"],a[href|="/flutterblush"],a[href|="/rc03"],a[href|="/rflutterblush"],a[href|="/e03"],a[href|="/wahaha"],a[href|="/re03"],a[href|="/rwahaha"],a[href|="/f03"],a[href|="/sbshocked"],a[href|="/rf03"],a[href|="/rsbshocked"],a[href|="/g03"],a[href|="/pinkie"],a[href|="/pp"],a[href|="/rg03"],a[href|="/rpinkie"],a[href|="/rpp"],.side .md table tr:nth-of-type(7) td:nth-of-type(2):after
 {background-position: 0 -300%}
 
 a[href|="/a13"],a[href|="/ppfear"],a[href|="/ra13"],a[href|="/rppfear"],a[href|="/b13"],a[href|="/spikenervous"],a[href|="/rb13"],a[href|="/rspikenervous"],a[href|="/c13"],a[href|="/gross"],a[href|="/rc13"],a[href|="/rgross"],a[href|="/e13"],a[href|="/sbstare"],a[href|="/re13"],a[href|="/f13"],a[href|="/discordgrump"],a[href|="/rf13"],a[href|="/rdiscordgrump"],a[href|="/rsbstare"],.side .md table tr:nth-of-type(7) td:nth-of-type(3):after
@@ -588,7 +651,7 @@ a[href|="/a23"],a[href|="/twibeam"],a[href|="/ra23"],a[href|="/rtwibeam"],a[href
 a[href|="/a33"],a[href|="/scootaderp"],a[href|="/ra33"],a[href|="/rscootaderp"],a[href|="/b33"],a[href|="/dj"],a[href|="/rb33"],a[href|="/rdj"],a[href|="/c33"],a[href|="/twidaw"],a[href|="/rc33"],a[href|="/rtwidaw"],a[href|="/e33"],a[href|="/maud"],a[href|="/re33"],a[href|="/rmaud"],a[href|="/f33"],a[href|="/spikeapproves"],a[href|="/rf33"],a[href|="/rspikeapproves"],.side .md table tr:nth-of-type(7) td:nth-of-type(5):after
 {background-position: -300% -300%}
 
-a[href|="/a04"],a[href|="/raritydaww"],a[href|="/ra04"],a[href|="/rraritydaww"],a[href|="/b04"],a[href|="/fluttershh"],a[href|="/rb04"],a[href|="/rfluttershh"],a[href|="/c04"],a[href|="/ajfrown"],a[href|="/rc04"],a[href|="/rajfrown"],a[href|="/e04"],a[href|="/huhhuh"],a[href|="/re04"],a[href|="/rhuhhuh"],a[href|="/f04"],a[href|="/guard"],a[href|="/rf04"],a[href|="/rguard"],.side .md table tr:nth-of-type(9) td:nth-of-type(2):after
+a[href|="/a04"],a[href|="/raritydaww"],a[href|="/ra04"],a[href|="/rraritydaww"],a[href|="/b04"],a[href|="/fluttershh"],a[href|="/rb04"],a[href|="/rfluttershh"],a[href|="/c04"],a[href|="/ajfrown"],a[href|="/rc04"],a[href|="/rajfrown"],a[href|="/e04"],a[href|="/huhhuh"],a[href|="/re04"],a[href|="/rhuhhuh"],a[href|="/f04"],a[href|="/guard"],a[href|="/rf04"],a[href|="/rguard"],a[href|="/g04"],a[href|="/cococold"],a[href|="/rg04"],a[href|="/rcococold"],.side .md table tr:nth-of-type(9) td:nth-of-type(2):after
 {background-position: 0 -400%}
 
 a[href|="/a14"],a[href|="/scootacheer"],a[href|="/ra14"],a[href|="/rscootacheer"],a[href|="/b14"],a[href|="/flutteryay"],a[href|="/rb14"],a[href|="/rflutteryay"],a[href|="/c14"],a[href|="/hmmm"],a[href|="/rc14"],a[href|="/rhmmm"],a[href|="/e14"],a[href|="/absmile"],a[href|="/re14"],a[href|="/rabsmile"],a[href|="/rf14"],a[href|="/rtroubleshoes"],a[href|="/f14"],a[href|="/troubleshoes"],.side .md table tr:nth-of-type(9) td:nth-of-type(3):after
@@ -600,7 +663,7 @@ a[href|="/a24"],a[href|="/swagintosh"],a[href|="/ra24"],a[href|="/rswagintosh"],
 a[href|="/a34"],a[href|="/pinkieawe"],a[href|="/ra34"],a[href|="/rpinkieawe"],a[href|="/b34"],a[href|="/spikepushy"],a[href|="/rb34"],a[href|="/rspikepushy"],a[href|="/c34"],a[href|="/whattheflut"],a[href|="/rc34"],a[href|="/rwhattheflut"],a[href|="/e34"],a[href|="/pinkiepout"],a[href|="/re34"],a[href|="/f34"],a[href|="/flutternice"],a[href|="/rf34"],a[href|="/rflutternice"],a[href|="/rpinkiepout"],.side .md table tr:nth-of-type(9) td:nth-of-type(5):after
 {background-position: -300% -400%}
 
-a[href|="/a05"],a[href|="/ajsup"],a[href|="/ra05"],a[href|="/rajsup"],a[href|="/b05"],a[href|="/ajugh"],a[href|="/rb05"],a[href|="/rajugh"],a[href|="/c05"],a[href|="/raritysad"],a[href|="/rc05"],a[href|="/rraritysad"],a[href|="/e05"],a[href|="/nmm"],a[href|="/re05"],a[href|="/rnmm"],a[href|="/f05"],a[href|="/abstern"],a[href|="/rf05"],a[href|="/rabstern"],.side .md table tr:nth-of-type(11) td:nth-of-type(2):after
+a[href|="/a05"],a[href|="/ajsup"],a[href|="/ra05"],a[href|="/rajsup"],a[href|="/b05"],a[href|="/ajugh"],a[href|="/rb05"],a[href|="/rajugh"],a[href|="/c05"],a[href|="/raritysad"],a[href|="/rc05"],a[href|="/rraritysad"],a[href|="/e05"],a[href|="/nmm"],a[href|="/re05"],a[href|="/rnmm"],a[href|="/f05"],a[href|="/abstern"],a[href|="/rf05"],a[href|="/rabstern"],a[href|="/g05"],a[href|="/quibble"],a[href|="/rg05"],a[href|="/rquibble"],.side .md table tr:nth-of-type(11) td:nth-of-type(2):after
 {background-position: 0 -500%}
 
 a[href|="/a15"],a[href|="/flutterwhoa"],a[href|="/ra15"],a[href|="/rflutterwhoa"],a[href|="/b15"],a[href|="/raritywut"],a[href|="/rb15"],a[href|="/rraritywut"],a[href|="/c15"],a[href|="/fabulous"],a[href|="/rc15"],a[href|="/rfabulous"],a[href|="/e15"],a[href|="/whooves"],a[href|="/re15"],a[href|="/rwhooves"],a[href|="/f15"],a[href|="/rdsnrk"],a[href|="/rf15"],a[href|="/rrdsnrk"],.side .md table tr:nth-of-type(11) td:nth-of-type(3):after
@@ -612,7 +675,7 @@ a[href|="/a25"],a[href|="/rdcry"],a[href|="/ra25"],a[href|="/rrdcry"],a[href|="/
 a[href|="/a35"],a[href|="/silverspoon"],a[href|="/ra35"],a[href|="/rsilverspoon"],a[href|="/b35"],a[href|="/raritywhy"],a[href|="/rb35"],a[href|="/rraritywhy"],a[href|="/c35"],a[href|="/cadancesmile"],a[href|="/rc35"],a[href|="/rcadancesmile"],a[href|="/e35"],a[href|="/twisecret"],a[href|="/re35"],a[href|="/rtwisecret"],a[href|="/f35"],a[href|="/ppdont"],a[href|="/rf35"],a[href|="/rppdont"],.side .md table tr:nth-of-type(11) td:nth-of-type(5):after
 {background-position: -300% -500%}
 
-a[href|="/a06"],a[href|="/ohcomeon"],a[href|="/ra06"],a[href|="/rohcomeon"],a[href|="/b06"],a[href|="/trixiesmug"],a[href|="/rb06"],a[href|="/rtrixiesmug"],a[href|="/c06"],a[href|="/louder"],a[href|="/rc06"],a[href|="/rlouder"],a[href|="/e06"],a[href|="/octavia"],a[href|="/re06"],a[href|="/roctavia"],a[href|="/f06"],a[href|="/apathia"],a[href|="/rf06"],a[href|="/rapathia"],.side .md table tr:nth-of-type(13) td:nth-of-type(2):after
+a[href|="/a06"],a[href|="/ohcomeon"],a[href|="/ra06"],a[href|="/rohcomeon"],a[href|="/b06"],a[href|="/trixiesmug"],a[href|="/rb06"],a[href|="/rtrixiesmug"],a[href|="/c06"],a[href|="/louder"],a[href|="/rc06"],a[href|="/rlouder"],a[href|="/e06"],a[href|="/octavia"],a[href|="/re06"],a[href|="/roctavia"],a[href|="/f06"],a[href|="/apathia"],a[href|="/rf06"],a[href|="/rapathia"],a[href|="/g06"],a[href|="/rdthis"],a[href|="/rg06"],a[href|="/rrdthis"],.side .md table tr:nth-of-type(13) td:nth-of-type(2):after
 {background-position: 0 -600%}
 
 a[href|="/a16"],a[href|="/ppcute"],a[href|="/ra16"],a[href|="/rppcute"],a[href|="/b16"],a[href|="/flutterwink"],a[href|="/rb16"],a[href|="/rflutterwink"],a[href|="/c16"],a[href|="/lunasad"],a[href|="/rc16"],a[href|="/rlunasad"],a[href|="/e16"],a[href|="/minuette"],a[href|="/re16"],a[href|="/rminuette"],a[href|="/f16"],a[href|="/thcalm"],a[href|="/rf16"],a[href|="/rthcalm"],.side .md table tr:nth-of-type(13) td:nth-of-type(3):after
@@ -624,7 +687,7 @@ a[href|="/a26"],a[href|="/abbored"],a[href|="/ra26"],a[href|="/rabbored"],a[href
 a[href|="/a36"],a[href|="/rarityreally"],a[href|="/ra36"],a[href|="/rrarityreally"],a[href|="/b36"],a[href|="/soawesome"],a[href|="/rb36"],a[href|="/rsoawesome"],a[href|="/c36"],a[href|="/shiningpride"],a[href|="/rc36"],a[href|="/rshiningpride"],a[href|="/e36"],a[href|="/sunsetshimmer"],a[href|="/re36"],a[href|="/rsunsetshimmer"],a[href|="/f36"],a[href|="/ajgrump"],a[href|="/rf36"],a[href|="/rajgrump"],.side .md table tr:nth-of-type(13) td:nth-of-type(5):after
 {background-position: -300% -600%}
 
-a[href|="/a07"],a[href|="/raritypaper"],a[href|="/ra07"],a[href|="/rraritypaper"],a[href|="/b07"],a[href|="/ajwut"],a[href|="/rb07"],a[href|="/rajwut"],a[href|="/c07"],a[href|="/pinkamina"],a[href|="/rc07"],a[href|="/rpinkamina"],a[href|="/e07"],a[href|="/ajconfused"],a[href|="/re07"],a[href|="/rajconfused"],a[href|="/f07"],a[href|="/ajcry"],a[href|="/rf07"],a[href|="/rajcry"],.side .md table tr:nth-of-type(15) td:nth-of-type(2):after
+a[href|="/a07"],a[href|="/raritypaper"],a[href|="/ra07"],a[href|="/rraritypaper"],a[href|="/b07"],a[href|="/ajwut"],a[href|="/rb07"],a[href|="/rajwut"],a[href|="/c07"],a[href|="/pinkamina"],a[href|="/rc07"],a[href|="/rpinkamina"],a[href|="/e07"],a[href|="/ajconfused"],a[href|="/re07"],a[href|="/rajconfused"],a[href|="/f07"],a[href|="/ajcry"],a[href|="/rf07"],a[href|="/rajcry"],a[href|="/g07"],a[href|="/flutterbrow"],a[href|="/rg07"],a[href|="/rflutterbrow"],.side .md table tr:nth-of-type(15) td:nth-of-type(2):after
 {background-position: 0 -700%}
 
 a[href|="/a17"],a[href|="/sbbook"],a[href|="/ra17"],a[href|="/rsbbook"],a[href|="/b17"],a[href|="/twisquint"],a[href|="/rb17"],a[href|="/rtwisquint"],a[href|="/c17"],a[href|="/loveme"],a[href|="/rc17"],a[href|="/rloveme"],a[href|="/e17"],a[href|="/abhuh"],a[href|="/re17"],a[href|="/rabhuh"],a[href|="/f17"],a[href|="/pinkieooh"],a[href|="/rf17"],a[href|="/rpinkieooh"],.side .md table tr:nth-of-type(15) td:nth-of-type(3):after
@@ -651,7 +714,7 @@ a[href|="/a38"],a[href|="/rarishock"],a[href|="/ra38"],a[href|="/rrarishock"],a[
 a[href|="/a09"],a[href|="/shiningarmor"],a[href|="/ra09"],a[href|="/rshiningarmor"],a[href|="/b09"],a[href|="/rarityjudge"],a[href|="/rb09"],a[href|="/rrarityjudge"],a[href|="/c09"],a[href|="/allmybits"],a[href|="/rc09"],a[href|="/rallmybits"],a[href|="/e09"],a[href|="/gilda"],a[href|="/re09"],a[href|="/rgilda"],a[href|="/f09"],a[href|="/flutterkay"],a[href|="/rf09"],a[href|="/rflutterkay"],a[href|="/f19"],.side .md table tr:nth-of-type(19) td:nth-of-type(2):after
 {background-position: 0 -900%}
 
-a[href|="/a19"],a[href|="/chrysalis"],a[href|="/ra19"],a[href|="/rchrysalis"],a[href|="/b19"],a[href|="/rarityprimp"],a[href|="/rb19"],a[href|="/rrarityprimp"],a[href|="/c19"],a[href|="/zecora"],a[href|="/rc19"],a[href|="/rzecora"],a[href|="/e19"],a[href|="/discentia"],a[href|="/notangry"],a[href|="/rf19"],a[href|="/rnotangry"],a[href|="/re19"],a[href|="/rdiscentia"],.side .md table tr:nth-of-type(19) td:nth-of-type(3):after
+a[href|="/a19"],a[href|="/chrysalis"],a[href|="/ra19"],a[href|="/rchrysalis"],a[href|="/b19"],a[href|="/rarityprimp"],a[href|="/rb19"],a[href|="/rrarityprimp"],a[href|="/c19"],a[href|="/zecora"],a[href|="/rc19"],a[href|="/rzecora"],a[href|="/e19"],a[href|="/discentia"],a[href|="/f19"],a[href|="/notangry"],a[href|="/rf19"],a[href|="/rnotangry"],a[href|="/re19"],a[href|="/rdiscentia"],.side .md table tr:nth-of-type(19) td:nth-of-type(3):after
 {background-position: -100% -900%}
 
 a[href|="/a29"],a[href|="/cadance"],a[href|="/ra29"],a[href|="/rcadance"],a[href|="/b29"],a[href|="/twirage"],a[href|="/rb29"],a[href|="/rtwirage"],a[href|="/c29"],a[href|="/photofinish"],a[href|="/rc29"],a[href|="/rphotofinish"],a[href|="/e29"],a[href|="/macintears"],a[href|="/re29"],a[href|="/rmacintears"],a[href|="/f29"],a[href|="/goodjob"],a[href|="/rf29"],a[href|="/rgoodjob"],.side .md table tr:nth-of-type(19) td:nth-of-type(4):after
@@ -1173,9 +1236,9 @@ max-width: 50em;
 
 /*Thumbnail Styling*/
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important}
-.thumbnail.self{background-position:0px -120px!important}
-.thumbnail.nsfw{background-position:0px 0px!important}
-.thumbnail.default{ background-position:0px -70px!important}
+.thumbnail.self{background-position:0px -120px!important;height:50px;}
+.thumbnail.nsfw{background-position:0px 0px!important;height:70px;}
+.thumbnail.default{ background-position:0px -70px!important;height:50px;}
 
 /*Spoiler text blackout*/
 body a[href="/spoiler"]{background:black!important;color:black!important}

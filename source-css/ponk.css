@@ -86,4 +86,10 @@ a[href|="/theBenger"] {width:150px; height:112px; background-position: -0px -0px
 
 /* End Emote CSS */
 
+/* Background image */
 
+body{background: #FFFFFF url(%%Background%%) no-repeat fixed center center;}
+body.res-nightmode {background-image: url(%%Background%%) !important;}
+body.res-nightmode div.content {background-color: transparent;}
+
+/* End Background image */

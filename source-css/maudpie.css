@@ -17,7 +17,7 @@ body { background: url(%%foolsbg%%) no-repeat fixed center bottom }
 
 /*** Thumbnails ***/
 
-.thumbnail:empty { background-image: url(%%thumbnails%%) !important }
+.thumbnail:empty { background-image: url(%%thumbnails%%) !important; height: 50px }
 .thumbnail.self { background-position: -0px -120px !important }
 .thumbnail.nsfw { visibility: hidden !important }
 .thumbnail.default { background-position: -0px -70px !important }

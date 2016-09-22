@@ -1487,12 +1487,12 @@ a[href|="/flyingsunset"],a[href|="/flyingss"] {
   transform:scaleX(-1);
 }
 
-a[href^="/"][href*="-r-"], a[href^="/"][href$="-r"]{ 
-  -webkit-transform:rotateY(180deg);
-  -moz-transform:rotateY(180deg);
-  -ms-transform:rotateY(180deg);
-  -o-transform:rotateY(180deg);
-  transform:rotateY(180deg);
+a[href^="/"][href*="-r-"]:not(.bpm-emote), a[href^="/"][href$="-r"]:not(.bpm-emote){ 
+  -webkit-transform:scaleX(-1);
+  -moz-transform:scaleX(-1);
+  -ms-transform:scaleX(-1);
+  -o-transform:scaleX(-1);
+  transform:scaleX(-1);
 }
 
 a[href|="/sp"] {
@@ -1679,7 +1679,7 @@ a.thumbnail.self{margin-right:-14px}
 
 /*** Thumbnails ***/
 
-.thumbnail:empty { background-image: url(%%thumbnails%%) !important }
+.thumbnail:empty { background-image: url(%%thumbnails%%) !important; height: 50px }
 .thumbnail.self { background-position: 0 -120px !important }
 .thumbnail.nsfw { visibility: hidden !important }
 .thumbnail.default { background-position: 0 -70px !important }

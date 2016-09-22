@@ -115,6 +115,34 @@ a[href="/fritlunch"]{   background-position: -150px -150px; width: 150px; height
 a[href="/fritmunch"]{   background-position: -300px -150px; width: 130px; height: 150px}
 a[href="/fritsmoothie"]{background-position: -300px    0px; width: 130px; height: 150px}
 
+/* Sheet 3 */
+a[href|="/chcutiemark"],a[href|="/crystalhoof"],a[href|="/flooferponker"],a[href|="/girlscoutcookies"],a[href|="/goldybelle"],a[href|="/kirlybelle"],a[href|="/pokesisters"],a[href|="/cutesockponk"],a[href|="/rdamazed"],a[href|="/sbbackpack"],a[href|="/sbkat"],a[href|="/sbmessymunch"],a[href|="/sweetiebat2"],a[href|="/skittledash"],a[href|="/twilydashiehug"]{
+
+   display: block;
+   clear: none;
+   float: left;
+   background-image: url(%%table3%%) }
+
+a[href="/chcutiemark"]{     background-position:   -5px      -150px; width: 140px; height: 150px}
+a[href="/crystalhoof"]{     background-position:   -5px         0px; width: 140px; height: 150px}
+a[href="/flooferponker"]{   background-position: -150px         0px; width: 150px; height: 150px}
+a[href="/girlscoutcookies"]{background-position:    0px      -300px; width: 250px; height: 150px}
+a[href="/goldybelle"]{      background-position: -150px      -150px; width: 150px; height: 150px}
+a[href="/kirlybelle"]{      background-position: -300px         0px; width:  75px; height: 150px}
+a[href="/pokesisters"]{     background-position: -300px      -150px; width: 150px; height: 150px}
+a[href="/cutesockponk"]{    background-position: -300px      -300px; width: 126px; height: 150px}
+a[href="/rdamazed"]{        background-position: -450px      -300px; width: 274px; height: 150px}
+a[href="/sbbackpack"]{      background-position: -450px      -150px; width: 150px; height: 150px}
+a[href="/sbkat"]{           background-position: -600px      -198px; width: 150px; height: 102px}
+a[href="/sbmessymunch"]{    background-position: -450px         0px; width: 150px; height: 150px}
+a[href="/sweetiebat2"]{      background-position: -600px       -15px; width: 150px; height: 135px}
+a[href="/skittledash"]{     background-position:    0px      -450px; width: 300px; height: 150px}
+a[href="/twilydashiehug"]{  background-position: -300px      -450px; width: 150px; height: 150px}
+
+
+
+
+
 /**********************************************************************************************/
 /* Colorful names! */
 .tagline .author[href*="user/a"] {color: rgb(18,41,114);}

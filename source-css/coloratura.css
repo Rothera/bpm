@@ -1,6 +1,6 @@
 /*** Thumbnails ***/
 
-.thumbnail:empty { background-image: url(%%thumbnails%%) !important }
+.thumbnail:empty { background-image: url(%%thumbnails%%) !important; height: 50px }
 .thumbnail.self { background-position: 0 -120px !important }
 .thumbnail.nsfw { visibility: hidden !important }
 .thumbnail.default { background-position: 0 -70px !important }

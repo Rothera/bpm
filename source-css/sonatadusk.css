@@ -5,7 +5,7 @@
 
 /*** Thumbnails ***/
 
-.thumbnail:empty { background-image: url(%%thumbnails%%) !important }
+.thumbnail:empty { background-image: url(%%thumbnails%%) !important; height: 50px }
 .thumbnail.self { background-position: -0px -120px !important }
 .thumbnail.nsfw { visibility: hidden !important }
 .thumbnail.default { background-position: -0px -70px !important }
@@ -75,9 +75,9 @@
 body { background: url(%%background%%) no-repeat center }
 body.wiki-page { background: none }
 
-/*START-TACOS{color:red}
-body { background: url(%%flyingtuesday%%) no-repeat fixed center bottom }
-END-TACOS{color:red}*/
+START-TACOS{color:red}
+body { background: url(%%humantuesday%%) no-repeat fixed center bottom }
+END-TACOS{color:red}
 
 .subscribers .word, .users-online .word { display: none }
 .subscribers .number:after { content: " admirers" }

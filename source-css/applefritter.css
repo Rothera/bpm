@@ -117,10 +117,12 @@ a#search_showmore { color: #fff; }
 
 .unmarknsfw-button a[href="#"]:before { content:"un-spoiler"; }
 
-.thumbnail.nsfw {
-    background-image: url(%%spoilersthumb%%) !important;
-    background-position: -0px -0px;
-}
+/*** Thumbnails ***/
+
+.thumbnail:empty { background-image: url(%%thumbnails%%) !important; height: 50px }
+.thumbnail.self { background-position: 0 -120px !important }
+.thumbnail.nsfw { background-position: 0 0 !important; height: 70px }
+.thumbnail.default { background-position: 0 -70px !important }
 
 /*** Sidebar Emote Tables ***/
 

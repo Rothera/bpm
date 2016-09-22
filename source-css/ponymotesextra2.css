@@ -5,44 +5,44 @@
 /* Not emote stuff */
 /* Not emotes */
 
-ul#image-preview-list li:nth-child(11):after {
+ul.image-preview-list li:nth-child(11):after {
 content: "10th image";
 color: green;
 padding-left: 5px;
 }
 
-ul#image-preview-list li:nth-child(21):after {
+ul.image-preview-list li:nth-child(21):after {
 content: "20th image";
 color: green;
 padding-left: 5px;
 }
 
-ul#image-preview-list li:nth-child(31):after {
+ul.image-preview-list li:nth-child(31):after {
 content: "30th image";
 color: yellow;
 padding-left: 5px;
 }
 
-ul#image-preview-list li:nth-child(41):after {
+ul.image-preview-list li:nth-child(41):after {
 content: "40th image!";
 color: orangered;
 padding-left: 5px;
 }
 
-ul#image-preview-list li:nth-child(46):after {
+ul.image-preview-list li:nth-child(46):after {
 content: "45th image!";
 color: red;
 padding-left: 5px;
 }
 
-ul#image-preview-list li:nth-child(50):after {
+ul.image-preview-list li:nth-child(50):after {
 content: "49th image!!";
 color: red;
 padding-left: 5px;
 font-weight: bold;
 }
 
-ul#image-preview-list li:nth-child(51):after {
+ul.image-preview-list li:nth-child(51):after {
 content: "50th image!!!";
 color: red;
 padding-left: 5px;
@@ -63,3 +63,4 @@ a[href|="/bownom"] {background:url(%%bownom%%) no-repeat;width:100px;height:90px
 a[href|="/sillywater"] {background:url(%%sillywater%%) no-repeat;width:150px;height:86px;display:block;float:left;}
 a[href|="/sonatapopcorn"] {background:url(%%sonatapopcorn%%) no-repeat;width:108px;height:150px;display:block;float:left;}
 a[href|="/ponkblep"] {background:url(%%ponkblep%%) no-repeat;width:100px;height:96px;display:block;float:left;}
+a[href|="/imready"] {background:url(%%imready%%) no-repeat;width:100px;height:96px;display:block;float:left;}

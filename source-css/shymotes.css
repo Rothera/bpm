@@ -1774,7 +1774,9 @@ a[href="/flutterreally"],
 
 a[href="/flutterdashtummy"],
 
-a[href="/flutterdashlick"]{
+a[href="/flutterdashlick"],
+
+a[href="/flutterpinkboop"]{
 
   display:block;
 
@@ -1896,6 +1898,16 @@ a[href|="/flutterdashlick"]{
 
 }
 
+a[href|="/flutterpinkboop"]{
+
+  background-position:-0px -1650px;
+
+  width:215px;
+
+  height:150px;
+
+}
+
 
 
 
@@ -1989,6 +2001,52 @@ a[href|="/flutterscratch"]{
   background-position:-0px -0px;
 
   width:150px;
+
+  height:150px;
+
+}
+
+
+a[href="/alltheboops"]{
+
+  display:block;
+
+  clear:none;
+
+  float:left;
+
+  background-image:url(%%alltheboops%%);
+
+}
+
+a[href|="/alltheboops"]{
+
+  background-position:-0px -0px;
+
+  width:200px;
+
+  height:200px;
+
+}
+
+
+a[href="/rdboop"]{
+
+  display:block;
+
+  clear:none;
+
+  float:left;
+
+  background-image:url(%%rdboop%%);
+
+}
+
+a[href|="/rdboop"]{
+
+  background-position:-0px -0px;
+
+  width:200px;
 
   height:150px;
 
