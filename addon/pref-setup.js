@@ -56,6 +56,7 @@ if(window.process) {
 //Discord-specific preferences    
     default_prefs.disableDisruptiveEmotes = true;
     default_prefs.disableEmotesInCodeBlocks = false;
+    default_prefs.searchButtonTopRight = false;
 }
 
 function initialize_prefs(prefs, sr_name2id) {
