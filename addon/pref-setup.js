@@ -92,8 +92,8 @@ function sanitize_emote(s) {
 }
 
 //                  a    :suffix          [href |   ="( /emote name )"] :suffix         (through '}')
-var block_regexp = /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="(\/[\w:!#\/]+)"\](:[a-zA-Z\-()]+)?[^}]*}/g;
-var emote_regexp = /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="(\/[\w:!#\/]+)"\](:[a-zA-Z\-()]+)?/;
+var block_regexp = /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="(((\#)|(\/))[\w:!#\/]+)"\](:[a-zA-Z\-()]+)?[^}]*}/g; // CSS stylesheet?
+var emote_regexp = /a\s*(:[a-zA-Z\-()]+)?\[href[|^]?="([\w:!#\/]+)"\](:[a-zA-Z\-()]+)?/; // Emote strucutre?
 
 function strip_subreddit_css(data) {
     // Strip comments
