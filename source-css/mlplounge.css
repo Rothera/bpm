@@ -172,9 +172,9 @@ background: url(%%horsewife%%) center center no-repeat transparent;
 /*Subscriber Name Replace*/
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Strong independent Ploungers"}
+div.titlebox .subscribers span.number:after {content:" Reformed Ploungers"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " who don't need no cutie mark" }
+div.titlebox p.users-online span.number:after { content: " Unreformed" }
 div.titlebox p.users-online span.word { display: none }
 
 /*Flair modifications*/
@@ -224,22 +224,23 @@ submitted
 }
 
 /*Footer code*/
-/*
+
 .footer-parent
 {
  padding-bottom: 220px;
  clear:both;
  text-align:center;
- height:441px;
+ height:500px;
  width:100%;
- background-image:url(%%footer%%);
+ background-image:url(%%hfooter%%);
  background-repeat:no-repeat;
  margin-bottom:-25px;
  background-position: center bottom;
 }
-*/
+
 
 /* Thanks nano! ...but if you're (not nano, but you, yes you) reading this, you're still doing it wrong. Learn from the past bucko. */
+/*
 .footer-parent {
   position: relative;
   width: 100%;
@@ -284,7 +285,7 @@ submitted
   99.184% { background-position: -3879px; animation-timing-function: steps(1) }
   99.347% { background-position: -4310px; animation-timing-function: steps(1) }
 }
-
+*/
 /*Sidebar Filly Start*/
 
 /*Random based on first link on page*/
@@ -573,17 +574,33 @@ a[href|="/rg07"],a[href|="/rflutterbrow"]
 
 
 /*pl table*/
-a[href|="/pl00"],a[href|="/fillyrarity"],a[href|="/pl10"],a[href|="/twidur"],a[href|="/twidurr"],a[href|="/pl20"],a[href|="/amzingmagic"],a[href|="/amazingmagic"],
-a[href|="/pl01"],a[href|="/karmasalute"],a[href|="/pl11"],a[href|="/dishappy"],a[href|="/pl21"],a[href|="/karmastare"],
+a[href|="/pl00"],a[href|="/fillyrarity"],
+a[href|="/pl10"],a[href|="/twidur"],a[href|="/twidurr"],
+a[href|="/pl20"],a[href|="/amzingmagic"],a[href|="/amazingmagic"],
+a[href|="/pl01"],a[href|="/karmasalute"],
+a[href|="/pl11"],a[href|="/dishappy"],
+a[href|="/pl21"],a[href|="/karmastare"],
 a[href|="/pl02"],a[href|="/ohnoes"],
-a[href|="/rpl00"],a[href|="/rfillyrarity"],a[href|="/rpl10"],a[href|="/rtwidur"],a[href|="/rtwidurr"],a[href|="/rpl20"],a[href|="/ramzingmagic"],a[href|="/ramazingmagic"],
-a[href|="/rpl01"],a[href|="/rkarmasalute"],a[href|="/rpl11"],a[href|="/rdishappy"],a[href|="/rpl21"],a[href|="/rkarmastare"],
-a[href|="/rpl02"],a[href|="/rohnoes"]
+a[href|="/pl03"],a[href|="/sadbee"],
+/* r-codes */
+a[href|="/rpl00"],a[href|="/rfillyrarity"],
+a[href|="/rpl10"],a[href|="/rtwidur"],a[href|="/rtwidurr"],
+a[href|="/rpl20"],a[href|="/ramzingmagic"],a[href|="/ramazingmagic"],
+a[href|="/rpl01"],a[href|="/rkarmasalute"],
+a[href|="/rpl11"],a[href|="/rdishappy"],
+a[href|="/rpl21"],a[href|="/rkarmastare"],
+a[href|="/rpl02"],a[href|="/rohnoes"],
+a[href|="/rpl03"],a[href|="/rsadbee"]
 {display:block; clear:none; float:left; width:70px; height:70px; background-image:url(%%lounge-emotes%%)!important}
 
-a[href|="/rpl00"],a[href|="/rfillyrarity"],a[href|="/rpl10"],a[href|="/rtwidur"],a[href|="/rtwidurr"],a[href|="/rpl20"],a[href|="/ramzingmagic"],a[href|="/ramazingmagic"]
-a[href|="/rpl01"],a[href|="/rkarmasalute"],a[href|="/rpl11"],a[href|="/rdishappy"],a[href|="/rpl21"],a[href|="/rkarmastare"],
-a[href|="/rpl02"],a[href|="/rohnoes"]
+a[href|="/rpl00"],a[href|="/rfillyrarity"],
+a[href|="/rpl10"],a[href|="/rtwidur"],a[href|="/rtwidurr"],
+a[href|="/rpl20"],a[href|="/ramzingmagic"],a[href|="/ramazingmagic"],
+a[href|="/rpl01"],a[href|="/rkarmasalute"],
+a[href|="/rpl11"],a[href|="/rdishappy"],
+a[href|="/rpl21"],a[href|="/rkarmastare"],
+a[href|="/rpl02"],a[href|="/rohnoes"],
+a[href|="/rpl03"],a[href|="/rsadbee"]
 {-moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1);}
 
 /*Animated replacements*/
@@ -639,7 +656,7 @@ a[href|="/a22"],a[href|="/paperbagderpy"],a[href|="/ra22"],a[href|="/rpaperbagde
 a[href|="/a32"],a[href|="/abmeh"],a[href|="/ra32"],a[href|="/rabmeh"],a[href|="/b32"],a[href|="/rdwut"],a[href|="/rb32"],a[href|="/rrdwut"],a[href|="/c32"],a[href|="/rdscared"],a[href|="/rc32"],a[href|="/rrdscared"],a[href|="/e32"],a[href|="/discordsad"],a[href|="/re32"],a[href|="/rdiscordsad"],a[href|="/f32"],a[href|="/nightmaregrin"],a[href|="/rf32"],a[href|="/rnightmaregrin"],.side .md table tr:nth-of-type(5) td:nth-of-type(5):after
 {background-position: -300% -200%}
 
-a[href|="/a03"],a[href|="/ajhappy"],a[href|="/ra03"],a[href|="/rajhappy"],a[href|="/b03"],a[href|="/ppshrug"],a[href|="/rb03"],a[href|="/rppshrug"],a[href|="/c03"],a[href|="/flutterblush"],a[href|="/rc03"],a[href|="/rflutterblush"],a[href|="/e03"],a[href|="/wahaha"],a[href|="/re03"],a[href|="/rwahaha"],a[href|="/f03"],a[href|="/sbshocked"],a[href|="/rf03"],a[href|="/rsbshocked"],a[href|="/g03"],a[href|="/pinkie"],a[href|="/pp"],a[href|="/rg03"],a[href|="/rpinkie"],a[href|="/rpp"],.side .md table tr:nth-of-type(7) td:nth-of-type(2):after
+a[href|="/a03"],a[href|="/ajhappy"],a[href|="/ra03"],a[href|="/rajhappy"],a[href|="/b03"],a[href|="/ppshrug"],a[href|="/rb03"],a[href|="/rppshrug"],a[href|="/c03"],a[href|="/flutterblush"],a[href|="/rc03"],a[href|="/rflutterblush"],a[href|="/e03"],a[href|="/wahaha"],a[href|="/re03"],a[href|="/rwahaha"],a[href|="/f03"],a[href|="/sbshocked"],a[href|="/rf03"],a[href|="/rsbshocked"],a[href|="/g03"],a[href|="/pinkie"],a[href|="/pp"],a[href|="/rg03"],a[href|="/rpinkie"],a[href|="/rpp"],a[href|="/pl03"],a[href|="/sadbee"],a[href|="/rpl03"],a[href|="/rsadbee"],.side .md table tr:nth-of-type(7) td:nth-of-type(2):after
 {background-position: 0 -300%}
 
 a[href|="/a13"],a[href|="/ppfear"],a[href|="/ra13"],a[href|="/rppfear"],a[href|="/b13"],a[href|="/spikenervous"],a[href|="/rb13"],a[href|="/rspikenervous"],a[href|="/c13"],a[href|="/gross"],a[href|="/rc13"],a[href|="/rgross"],a[href|="/e13"],a[href|="/sbstare"],a[href|="/re13"],a[href|="/f13"],a[href|="/discordgrump"],a[href|="/rf13"],a[href|="/rdiscordgrump"],a[href|="/rsbstare"],.side .md table tr:nth-of-type(7) td:nth-of-type(3):after
@@ -723,6 +740,14 @@ a[href|="/a29"],a[href|="/cadance"],a[href|="/ra29"],a[href|="/rcadance"],a[href
 a[href|="/a39"],a[href|="/applederp"],a[href|="/ra39"],a[href|="/rapplederp"],a[href|="/b39"],a[href|="/ppseesyou"],a[href|="/rb39"],a[href|="/rppseesyou"],a[href|="/c39"],a[href|="/ppreally"],a[href|="/rc39"],a[href|="/rppreally"],a[href|="/e39"],a[href|="/spikehappy"],a[href|="/re39"],a[href|="/rspikehappy"],a[href|="/f39"],a[href|="/gummystare"],a[href|="/rf39"],a[href|="/rgummystare"],.side .md table tr:nth-of-type(19) td:nth-of-type(5):after
 {background-position: -300% -900%}
 
+/* (stolen from manesub with love) Fix new Reddit CSS crashing emotes into the comment buttons */
+.commentarea .md::after, .entry .md::after, .livePreview .md::after
+{
+  content:"";
+  display:block;
+  width:100%;
+  clear:left;
+}
 
 /*This is all the filly emote code*/
 
@@ -993,11 +1018,11 @@ padding: 0
 
 /*Hiddenbee goes here*/
 
-.usertext input[value$="5p"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -300%}
-.usertext input[value$="5q"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -400%}
-.usertext input[value$="5r"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -500%}
-.usertext input[value$="5s"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -600%}
-.usertext input[value$="555"] + .usertext-body:before{background:url(%%hiddenbee%%); background-position: -100% -700%}
+.usertext input[value$="5p"] + .usertext-body:before{background:url(%%hiddenpig%%); background-position: -100% -300%}
+.usertext input[value$="5q"] + .usertext-body:before{background:url(%%hiddenpig%%); background-position: -100% -400%}
+.usertext input[value$="5r"] + .usertext-body:before{background:url(%%hiddenpig%%); background-position: -100% -500%}
+.usertext input[value$="5s"] + .usertext-body:before{background:url(%%hiddenpig%%); background-position: -100% -600%}
+.usertext input[value$="555"] + .usertext-body:before{background:url(%%hiddenpig%%); background-position: -100% -700%}
 .usertext input[value$="hoi"] + .usertext-body::before,
 .usertext input[value$="h0i"] + .usertext-body::before {background:url(%%hiddentem%%) no-repeat; background-position: 9px 9px;}
 

@@ -116,7 +116,7 @@ a[href="/fritmunch"]{   background-position: -300px -150px; width: 130px; height
 a[href="/fritsmoothie"]{background-position: -300px    0px; width: 130px; height: 150px}
 
 /* Sheet 3 */
-a[href|="/chcutiemark"],a[href|="/crystalhoof"],a[href|="/flooferponker"],a[href|="/girlscoutcookies"],a[href|="/goldybelle"],a[href|="/kirlybelle"],a[href|="/pokesisters"],a[href|="/cutesockponk"],a[href|="/rdamazed"],a[href|="/sbbackpack"],a[href|="/sbkat"],a[href|="/sbmessymunch"],a[href|="/sweetiebat2"],a[href|="/skittledash"],a[href|="/twilydashiehug"]{
+a[href|="/chcutiemark"],a[href|="/crystalhoof"],a[href|="/flooferponker"],a[href|="/girlscoutcookies"],a[href|="/goldybelle"],a[href|="/kirlybelle"],a[href|="/pokesisters"],a[href|="/cutesockponk"],a[href|="/rdamazed"],a[href|="/sbbackpack"],a[href|="/sbkat"],a[href|="/sbmessymunch"],a[href|="/sweetiebat2"],a[href|="/skittledash"],a[href|="/twilydashiehug"],a[href|="/roblightsparkten"],a[href|="/hoodiefrits"]{
 
    display: block;
    clear: none;
@@ -130,17 +130,28 @@ a[href="/girlscoutcookies"]{background-position:    0px      -300px; width: 250p
 a[href="/goldybelle"]{      background-position: -150px      -150px; width: 150px; height: 150px}
 a[href="/kirlybelle"]{      background-position: -300px         0px; width:  75px; height: 150px}
 a[href="/pokesisters"]{     background-position: -300px      -150px; width: 150px; height: 150px}
-a[href="/cutesockponk"]{    background-position: -300px      -300px; width: 126px; height: 150px}
 a[href="/rdamazed"]{        background-position: -450px      -300px; width: 274px; height: 150px}
 a[href="/sbbackpack"]{      background-position: -450px      -150px; width: 150px; height: 150px}
 a[href="/sbkat"]{           background-position: -600px      -198px; width: 150px; height: 102px}
 a[href="/sbmessymunch"]{    background-position: -450px         0px; width: 150px; height: 150px}
-a[href="/sweetiebat2"]{      background-position: -600px       -15px; width: 150px; height: 135px}
+a[href="/sweetiebat2"]{     background-position: -600px       -15px; width: 150px; height: 135px}
 a[href="/skittledash"]{     background-position:    0px      -450px; width: 300px; height: 150px}
 a[href="/twilydashiehug"]{  background-position: -300px      -450px; width: 150px; height: 150px}
+a[href="/roblightsparkten"]{background-position:    0px      -600px; width: 150px; height: 188px}
+a[href="/hoodiefrits"]{     background-position: -150px      -600px; width: 150px; height: 219px}
 
 
 
+/*the benger!*/
+a[href|="/cutesockponk"], a[href|="/theBengersFavoritestPonyEver"]
+{
+    background-image:url(%%table3%%);
+    width:126px;
+    height:150px;
+    display:block;
+    float:left;
+    background-position: 34% 35%;
+}
 
 
 /**********************************************************************************************/

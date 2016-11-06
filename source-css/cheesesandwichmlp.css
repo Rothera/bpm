@@ -433,17 +433,17 @@ a[href|="/cheesetrot"] {
 /*** Flairs ***/
 
 .flair {
-    padding: 0;
-    background: none;
-    color: black;
-    border: 0;
-    border-radius: 0;
-    background-image: url(%%flairs%%);
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    text-indent: -9999px;
-    line-height: 240%;
+  padding: 0;
+  background: none;
+  color: black;
+  border: 0;
+  border-radius: 0;
+  background-image: url(%%flair-table%%);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  text-indent: -9999px;
+  line-height: 240%;
 }
 
 .flair-rainbowdash { background-position: 0 0; }
@@ -555,14 +555,15 @@ a[href|="/cheesetrot"] {
 .flair-sunnyflare { background-position: -100% -2700%; }
 .flair-sunburst { background-position: -200% -2700%; }
 .flair-gilda { background-position: -300% -2700%; }
-.flair-surprise { background-position: 0 -2800%; }
-.flair-snowdrop { background-position: -100% -2800%; }
-.flair-peachbottom { background-position: -200% -2800%; }
-.flair-harshwhinny { background-position: -300% -2800%; }
-.flair-raindrops { background-position: 0 -2900%; }
-.flair-fleetfoot { background-position: -100% -2900%; }
-.flair-beautybrass { background-position: -200% -2900%; }
-.flair-zephyrbreeze { background-position: -300% -2900%; }
+.flair-zephyrbreeze { background-position: 0 -2800%; }
+.flair-quibblepants { background-position: -100% -2800%; }
+.flair-surprise { background-position: 0 -2900%; }
+.flair-snowdrop { background-position: -100% -2900%; }
+.flair-peachbottom { background-position: -200% -2900%; }
+.flair-harshwhinny { background-position: -300% -2900%; }
+.flair-raindrops { background-position: 0 -3000%; }
+.flair-fleetfoot { background-position: -100% -3000%; }
+.flair-beautybrass { background-position: -200% -3000%; }
 
 START-PONYSCRIPT-IGNORE { color: red; }
 

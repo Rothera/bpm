@@ -81,38 +81,38 @@ a#search_showmore { color: #fff; }
 .nsfw-stamp { color: #bbf189 }
 
 .nsfw-stamp acronym {
-    display: inline-block;
-    font-size: 0px !important;
-    letter-spacing: 0px;
-    overflow: hidden;
-    vertical-align: bottom;
-    margin-bottom:-1px ;
-    content: "";
+  display: inline-block;
+  font-size: 0px !important;
+  letter-spacing: 0px;
+  overflow: hidden;
+  vertical-align: bottom;
+  margin-bottom:-1px ;
+  content: "";
 }
 
 .nsfw-stamp acronym:after {
-    color: #41a22e !important;
-    content: "SPOILER" !important;
-    display: block;
-    font-size: x-small !important;
-    text-decoration: none;
-    margin:-14px 2px 1px
+  color: #41a22e !important;
+  content: "SPOILER" !important;
+  display: block;
+  font-size: x-small !important;
+  text-decoration: none;
+  margin:-14px 2px 1px
 }
 
 .marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"] {
-    font-size: 0px !important;
-    display: inline-block;
-    vertical-align: top;
-    overflow: hidden;
-    letter-spacing: -20px;
-    content: "";
+  font-size: 0px !important;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  letter-spacing: -20px;
+  content: "";
 }
 
 .unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before {
-    font-size: 9px !important;
-    display: block;
-    letter-spacing: normal;
-    content:"spoiler";
+  font-size: 9px !important;
+  display: block;
+  letter-spacing: normal;
+  content:"spoiler";
 }
 
 .unmarknsfw-button a[href="#"]:before { content:"un-spoiler"; }
@@ -129,69 +129,69 @@ a#search_showmore { color: #fff; }
 .side .md { padding-bottom: 12px; }
 
 .side .md h3 {
-    border: 1px solid #bbf189;
-    border-bottom: none;
-    color: #41a22e;
-    background-color: #daf6b7;
-    padding: 4px;
-    margin: 0;
-    display: inline-block;
-    cursor: pointer;
-    font-size: 11px;
+  border: 1px solid #bbf189;
+  border-bottom: none;
+  color: #41a22e;
+  background-color: #daf6b7;
+  padding: 4px;
+  margin: 0;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 11px;
 }
 
 .side .md h2 {
-    width: 275px;
-    color: black;
-    font-weight: normal;
-    font-size: 12px;
-    border: 1px solid #bbf189;
-    border-top: 0;
-    border-bottom: 0;
-    padding: 5px 4px;
-    margin: 0;
+  width: 275px;
+  color: black;
+  font-weight: normal;
+  font-size: 12px;
+  border: 1px solid #bbf189;
+  border-top: 0;
+  border-bottom: 0;
+  padding: 5px 4px;
+  margin: 0;
 }
 
 .side .md h2:first-of-type {
-    padding-top: 19px;
-    border-top: 1px solid #bbf189;
+  padding-top: 19px;
+  border-top: 1px solid #bbf189;
 }
 
 .side .md h2:first-of-type:before {
-    text-align: center;
-    content:"Hover a tab to expand our emotes list!";
-    display: block;
-    padding-bottom: 19px;
-    font-weight: bold;
+  text-align: center;
+  content:"Hover a tab to expand our emotes list!";
+  display: block;
+  padding-bottom: 19px;
+  font-weight: bold;
 }
 
 .side .md h2:last-of-type {
-    width: 215px;
-    padding-bottom: 19px;
-    padding-right: 64px;
-    border-bottom: 1px solid #bbf189;
+  width: 215px;
+  padding-bottom: 19px;
+  padding-right: 64px;
+  border-bottom: 1px solid #bbf189;
 }
 
 .side .md h2:last-of-type+p a {
-    float: right !important;
-    position: relative !important;
-    top: -74px !important;
-    left: -15px !important;
-    margin-bottom: -70px !important;
+  float: right !important;
+  position: relative !important;
+  top: -74px !important;
+  left: -15px !important;
+  margin-bottom: -70px !important;
 }
 
 .side .md table {
-    border: 1px solid #bbf189 !important;
-    margin: 0;
-    padding-bottom: 19px;
-    display: none;
+  border: 1px solid #bbf189 !important;
+  margin: 0;
+  padding-bottom: 19px;
+  display: none;
 }
 
 .side .md th { display: none; }
 
 .side .md tr, .side .md td {
-    border: 1px solid #bbf189 !important;
-    padding: 0px !important;
+  border: 1px solid #bbf189 !important;
+  padding: 0px !important;
 }
 
 .side .md h3:nth-of-type(1):hover ~ table:nth-of-type(1),
@@ -211,19 +211,19 @@ a#search_showmore { color: #fff; }
 /*** Comments ***/
 
 a[href|="/spoiler"] {
-    background: #000 !important;
-    color: #000 !important;
+  background: #000 !important;
+  color: #000 !important;
 }
 
 a[href|="/spoiler"]:hover {
-    color: #fff !important;
+  color: #fff !important;
 }
 
 a[href|="/sp"] {
-    display: inline-block;
-    padding-right: 100%;
-    width: 0px;
-    height: 0px;
+  display: inline-block;
+  padding-right: 100%;
+  width: 0px;
+  height: 0px;
 }
 
 /*** Arrows ***/
@@ -231,31 +231,31 @@ a[href|="/sp"] {
 .link .arrow.down { visibility: hidden; display: none; }
 
 .arrow.upmod {
-    background-image: url(%%fritarrows%%);
-    background-position: -0px -0px;
-    height: 14px;
-    width: 15px;
+  background-image: url(%%fritarrows%%);
+  background-position: -0px -0px;
+  height: 14px;
+  width: 15px;
 }
 
 .arrow.downmod {
-    background-image: url(%%fritarrows%%);
-    background-position: -0px -14px;
-    height: 14px;
-    width: 15px;
+  background-image: url(%%fritarrows%%);
+  background-position: -0px -14px;
+  height: 14px;
+  width: 15px;
 }
 
 .arrow.up {
-    background-image: url(%%fritarrows%%);
-    background-position: -0px -28px;
-    height: 14px;
-    width: 15px;
+  background-image: url(%%fritarrows%%);
+  background-position: -0px -28px;
+  height: 14px;
+  width: 15px;
 }
 
 .arrow.down {
-    background-image: url(%%fritarrows%%);
-    background-position: -0px -42px;
-    height: 14px;
-    width: 15px;
+  background-image: url(%%fritarrows%%);
+  background-position: -0px -42px;
+  height: 14px;
+  width: 15px;
 }
 
 /*** Expando Buttons ***/
@@ -285,29 +285,31 @@ a[href|="/sp"] {
 /*** Emotes ***/
 
 .md { overflow: auto; }
-.usertext-edit .md { overflow: inherit; }
+.usertext-edit > .md { overflow: inherit; }
 
-a[href|="/fritapple"], a[href|="/fritsmirk"], a[href|="/fritgrin"], a[href|="/fritshrug"], a[href|="/fritbow"], a[href|="/frithmph"], a[href|="/fritnoway"], a[href|="/fritsmeel"], a[href|="/fritsad"], a[href|="/fritsmile"], a[href|="/frithappy"], a[href|="/fritbbbff"], a[href|="/fritwhat"], a[href|="/frityay"], a[href|="/fritter"], a[href|="/fritlie"], a[href|="/fritmad"], a[href|="/fritderp"], a[href|="/frithoof"], a[href|="/fritspet"], a[href|="/fritbake"], a[href|="/fritblush"], a[href|="/fritjoke"], a[href|="/fritsalute"], a[href|="/frithmmm"], a[href|="/fritcute"], a[href|="/fritmeh"], a[href|="/fritshock"], a[href|="/fritstare"], a[href|="/fritwink"], a[href|="/fritreally"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 70px;
-    height: 70px;
-    background-image: url(%%fritemotes%%) !important;
+a[href|="/fritapple"], a[href|="/fritsmirk"], a[href|="/fritgrin"], a[href|="/fritshrug"], a[href|="/fritbow"], a[href|="/frithmph"], a[href|="/fritnoway"], a[href|="/fritsmeel"], a[href|="/fritsad"], a[href|="/fritsmile"], a[href|="/frithappy"], a[href|="/fritbbbff"], a[href|="/fritwhat"], a[href|="/frityay"], a[href|="/fritter"], a[href|="/fritlie"], a[href|="/fritmad"], a[href|="/fritderp"], a[href|="/frithoof"], a[href|="/fritspet"], a[href|="/fritbake"], a[href|="/fritblush"], a[href|="/fritjoke"], a[href|="/fritsalute"], a[href|="/frithmmm"], a[href|="/fritcute"], a[href|="/fritmeh"], a[href|="/fritshock"], a[href|="/fritstare"], a[href|="/fritwink"], a[href|="/fritreally"], a[href|="/fritface"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 70px;
+  cursor: default;
+  background-image: url(%%fritemotes%%) !important;
 }
 
-a[href|="/rfritapple"], a[href|="/rfritsmirk"], a[href|="/rfritgrin"], a[href|="/rfritshrug"], a[href|="/rfritbow"], a[href|="/rfrithmph"], a[href|="/rfritnoway"], a[href|="/rfritsmeel"], a[href|="/rfritsad"], a[href|="/rfritsmile"], a[href|="/rfrithappy"], a[href|="/rfritbbbff"], a[href|="/rfritwhat"], a[href|="/rfrityay"], a[href|="/rfritter"], a[href|="/rfritlie"], a[href|="/rfritmad"], a[href|="/rfritderp"], a[href|="/rfrithoof"], a[href|="/rfritspet"], a[href|="/rfritbake"], a[href|="/rfritblush"], a[href|="/rfritjoke"], a[href|="/rfritsalute"], a[href|="/rfrithmmm"], a[href|="/rfritcute"], a[href|="/rfritmeh"], a[href|="/rfritshock"], a[href|="/rfritstare"], a[href|="/rfritwink"], a[href|="/rfritreally"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 70px;
-    height: 70px;
-    background-image: url(%%fritemotes%%) !important;
-    -webkit-transform: scaleX(-1);
-    -moz-transform: scaleX(-1);
-    -ms-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    transform: scaleX(-1);
+a[href|="/rfritapple"], a[href|="/rfritsmirk"], a[href|="/rfritgrin"], a[href|="/rfritshrug"], a[href|="/rfritbow"], a[href|="/rfrithmph"], a[href|="/rfritnoway"], a[href|="/rfritsmeel"], a[href|="/rfritsad"], a[href|="/rfritsmile"], a[href|="/rfrithappy"], a[href|="/rfritbbbff"], a[href|="/rfritwhat"], a[href|="/rfrityay"], a[href|="/rfritter"], a[href|="/rfritlie"], a[href|="/rfritmad"], a[href|="/rfritderp"], a[href|="/rfrithoof"], a[href|="/rfritspet"], a[href|="/rfritbake"], a[href|="/rfritblush"], a[href|="/rfritjoke"], a[href|="/rfritsalute"], a[href|="/rfrithmmm"], a[href|="/rfritcute"], a[href|="/rfritmeh"], a[href|="/rfritshock"], a[href|="/rfritstare"], a[href|="/rfritwink"], a[href|="/rfritreally"], a[href|="/rfritface"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 70px;
+  cursor: default;
+  background-image: url(%%fritemotes%%) !important;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 a[href|="/fritapple"], a[href|="/rfritapple"] { background-position: -0px -0px; }
@@ -341,28 +343,31 @@ a[href|="/fritshock"], a[href|="/rfritshock"] { background-position: -210px -420
 a[href|="/fritstare"], a[href|="/rfritstare"] { background-position: -0px -490px; }
 a[href|="/fritwink"], a[href|="/rfritwink"] { background-position: -70px -490px; }
 a[href|="/fritreally"], a[href|="/rfritreally"] { background-position: -140px -490px; }
+a[href|="/fritface"], a[href|="/rfritface"] { background-position: -210px -490px; }
 
 a[href|="/fritnya"], a[href|="/fritteehee"], a[href|="/hardhatfrits"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 100px;
-    height: 100px;
-    background-image: url(%%fritemotes100%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 100px;
+  cursor: default;
+  background-image: url(%%fritemotes100%%) !important;
 }
 
 a[href|="/rfritnya"], a[href|="/rfritteehee"], a[href|="/rhardhatfrits"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 100px;
-    height: 100px;
-    background-image: url(%%fritemotes100%%) !important;
-    -webkit-transform: scaleX(-1);
-    -moz-transform: scaleX(-1);
-    -ms-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    transform: scaleX(-1);
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 100px;
+  cursor: default;
+  background-image: url(%%fritemotes100%%) !important;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 a[href|="/fritnya"], a[href|="/rfritnya"] { background-position: -0px -0px; }
@@ -370,104 +375,111 @@ a[href|="/fritteehee"], a[href|="/rfritteehee"] { background-position: -100px -0
 a[href|="/hardhatfrits"], a[href|="/rhardhatfrits"] { background-position: -200px -0px; }
 
 a[href|="/fritsitting"], a[href|="/rfritsitting"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 100px;
-    height: 100px;
-    background-position: -0px -0px;
-    background-image: url(%%fritsitting%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 100px;
+  cursor: default;
+  background-position: -0px -0px;
+  background-image: url(%%fritsitting%%) !important;
 }
 
 a[href|="/fritsleeping"], a[href|="/rfritsleeping"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 100px;
-    height: 100px;
-    background-position: -0px -0px;
-    background-image: url(%%fritsleeping%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 100px;
+  cursor: default;
+  background-position: -0px -0px;
+  background-image: url(%%fritsleeping%%) !important;
 }
 
 a[href|="/fritstanding"], a[href|="/rfritstanding"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 100px;
-    height: 100px;
-    background-position: -0px -0px;
-    background-image: url(%%fritstanding%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 100px;
+  cursor: default;
+  background-position: -0px -0px;
+  background-image: url(%%fritstanding%%) !important;
 }
 
 a[href|="/frittrotting"], a[href|="/rfrittrotting"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 100px;
-    height: 100px;
-    background-position: -0px -0px;
-    background-image: url(%%frittrotting%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 100px;
+  cursor: default;
+  background-position: -0px -0px;
+  background-image: url(%%frittrotting%%) !important;
 }
 
 a[href|="/fritclapping"], a[href|="/rfritclapping"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 70px;
-    height: 70px;
-    background-position: -0px -0px;
-    background-image: url(%%fritclapping%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 70px;
+  cursor: default;
+  background-position: -0px -0px;
+  background-image: url(%%fritclapping%%) !important;
 }
 
 a[href|="/fritdancing"], a[href|="/rfritdancing"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 100px;
-    height: 100px;
-    background-position: -0px -0px;
-    background-image: url(%%fritdancing%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 100px;
+  cursor: default;
+  background-position: -0px -0px;
+  background-image: url(%%fritdancing%%) !important;
 }
 
 a[href|="/fritchubbie"], a[href|="/rfritchubbie"] {
-    display: block;
-    clear: none;
-    float: left;
-    width: 150px;
-    height: 95px;
-    background-position: -0px -0px;
-    background-image: url(%%fritchubbies%%) !important;
+  display: block;
+  clear: none;
+  float: left;
+  width: 150px;
+  height: 95px;
+  cursor: default;
+  background-position: -0px -0px;
+  background-image: url(%%fritchubbies%%) !important;
 }
 
 a:hover[href|="/fritchubbie"], a:hover[href|="/rfritchubbie"] { background-position: -0px -95px; }
 
 a[href|="/rfritclapping"], a[href|="/rfritdancing"], a[href|="/rfritsitting"], a[href|="/rfritsleeping"], a[href|="/rfritstanding"], a[href|="/rfrittrotting"], a[href|="/rfritchubbie"] {
-    -webkit-transform: scaleX(-1);
-    -moz-transform: scaleX(-1);
-    -ms-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
-    float: none !important;
-    display: inline-block !important;
+  float: none !important;
+  display: inline-block !important;
 }
 
 /*** Flairs ***/
 
 .flair {
-    padding: 0;
-    background: none;
-    color: black;
-    border: 0;
-    border-radius: 0;
-    background-image: url(%%flairs%%);
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    text-indent: -9999px;
-    line-height: 240%;
+  padding: 0;
+  background: none;
+  color: black;
+  border: 0;
+  border-radius: 0;
+  background-image: url(%%flair-table%%);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  text-indent: -9999px;
+  line-height: 240%;
 }
 
 .flair-rainbowdash { background-position: 0 0; }
@@ -579,14 +591,15 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 .flair-sunnyflare { background-position: -100% -2700%; }
 .flair-sunburst { background-position: -200% -2700%; }
 .flair-gilda { background-position: -300% -2700%; }
-.flair-surprise { background-position: 0 -2800%; }
-.flair-snowdrop { background-position: -100% -2800%; }
-.flair-peachbottom { background-position: -200% -2800%; }
-.flair-harshwhinny { background-position: -300% -2800%; }
-.flair-raindrops { background-position: 0 -2900%; }
-.flair-fleetfoot { background-position: -100% -2900%; }
-.flair-beautybrass { background-position: -200% -2900%; }
-.flair-zephyrbreeze { background-position: -300% -2900%; }
+.flair-zephyrbreeze { background-position: 0 -2800%; }
+.flair-quibblepants { background-position: -100% -2800%; }
+.flair-surprise { background-position: 0 -2900%; }
+.flair-snowdrop { background-position: -100% -2900%; }
+.flair-peachbottom { background-position: -200% -2900%; }
+.flair-harshwhinny { background-position: -300% -2900%; }
+.flair-raindrops { background-position: 0 -3000%; }
+.flair-fleetfoot { background-position: -100% -3000%; }
+.flair-beautybrass { background-position: -200% -3000%; }
 
 .flair-strudel {
   width: 32px;

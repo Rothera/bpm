@@ -1,7 +1,7 @@
 .id-t3_145m8r.link .title{font-size:large}
 
 /* comment box image */
-.commentarea textarea:not(:focus) { background-image: url(%%snap%%); }
+.commentarea textarea:not(:focus) { background-image: url(%%snap1%%); }
  
 /*SNOW BEGINS */
 /*
@@ -35,15 +35,15 @@ animation: snow 2s steps(10) infinite;
 /* Replace Cursors */
 /*<%jeroknite> mfw Pwny is slowly turning the sub into a geocities site*/
 body {
-cursor: url(%%cursor2%%), default !important;
+cursor: url(%%spoop%%), default !important;
 }
-a { cursor: url(%%cursor1%%), pointer; }
+a { cursor: url(%%spoop4%%), pointer; }
 
 
 /* Changes background  */
 
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%food%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%Blip-Toys-Fluttershy-Pencil-Topper%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -56,12 +56,30 @@ a { cursor: url(%%cursor1%%), pointer; }
     width:100%;
     clear:both;
 }
+/*COMMENTING OUT FOR SPOOKS */
 
+/*
  #header #header-bottom-left {
-   background: url(%%meme%%) 50% 15px !important;
+   background: url(%%nightmare%%) 50% 15px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
+*/
+
+/* DANCING SPOOK ANIMATION STUFF */
+
+ #header #header-bottom-left  {
+background: url(%%SecretSanta2%%) !important;
+    -webkit-animation: banimate 3s steps(23) infinite;-moz-animation: banimate 3s steps(23) infinite;-ms-animation: banimate 3s steps(23) infinite;-o-animation: banimate 3s steps(23) infinite;animation: banimate 3s steps(23) infinite; 
+}
+
+
+@-webkit-keyframes banimate {from{background-position: 0 0;}to{ background-position: 0px -6048px; }} 
+@-moz-keyframes banimate {from {background-position: 0 0;}to{ background-position: 0px -6048px; } } 
+@-ms-keyframes banimate{from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
+@-o-keyframes banimate {from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
+@keyframes banimate {from { background-position: 0 0; }to{ background-position: 0px -6048px; } } 
+
 
 .tabmenu {
   margin-top: 3px;
@@ -99,7 +117,7 @@ z-index:110 !important;
 }
 
 /*spinning Esplin */
-/*
+
 #header-img { 
     -webkit-animation:spin 30000s linear infinite;
     -moz-animation:spin 30000s linear infinite;
@@ -107,16 +125,16 @@ z-index:110 !important;
     -o-animation:spin 30000s linear infinite;
     animation:spin 30000s linear infinite;
 }
-*/
-/* Rotating banner
+
+/* Rotating banner */
 #header { 
-    -webkit-animation:spin 3000s linear infinite;
-    -moz-animation:spin 3000s linear infinite;
-    -ms-animation:spin 3000s linear infinite;
-    -o-animation:spin 3000s linear infinite;
-    animation:spin 3000s linear infinite;
+    -webkit-animation:spin 8000s linear infinite;
+    -moz-animation:spin 8000s linear infinite;
+    -ms-animation:spin 8000s linear infinite;
+    -o-animation:spin 8000s linear infinite;
+    animation:spin 8000s linear infinite;
 }
-*/
+
 
 
 
@@ -132,7 +150,7 @@ margin-left: 100px;
 */
 
 /* above text */
-margin-top: 150px;
+margin-top: 110px;
 margin-bottom: 31px;
 
 }
@@ -631,6 +649,13 @@ background-repeat: no-repeat;
 .flair-panda:after { background-position: 0px -7200px }
 .flair-yiffers:after { background-position: 0px -7230px }
 .flair-voretastic:after { background-position: 0px -7260px }
+.flair-HailTrixie:after { background-position: 0px -7290px }
+.flair-nanerpus:after { background-position : 0px -7320px }
+.flair-Admos123:after { background-position : 0px -7350px }
+.flair-ChickenOfDoom:after { background-position: 0px -7380px }
+.flair-mocha2007:after { background-position: 0px -7410px }
+.flair-memekip:after { background-position: 0px -7440px }
+.flair-davideberjerack:after { background-position: 0px -7470px }
 
 
 
@@ -1067,6 +1092,7 @@ a.author[href$=spearstuff]:before { content:"spearstuff" }
 a.author[href$=DRANKLE]:before { content:"T-Light aka NOT-DRANKLE" }
 a.author[href$=thisisgenny]:before { content:"genny" }
 a.author[href$=throwawayaccount997]:before { content:"Fritters" }
+a.author[href$=Admos123] : before { content:"Fun with Atoms" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 
@@ -1169,7 +1195,8 @@ a.author[href$=Solidus_Tripsy]:after,
 a.author[href$=RAINBOW_PONY_SEMEN]:after,
 a.author[href$=DoomKey]:after,
 a.author[href$=mrwoo6]:after,
-a.author[href$=ZZW30]:after
+a.author[href$=ZZW30]:after,
+a.author[href$=kontan]:after
 {
 color:#000; 
 font-size:10px!important; 
@@ -1262,6 +1289,7 @@ a.author[href$=RAINBOW_PONY_SEMEN]:after { content:" GODDESS OF NO FUN"; color:p
 a.author[href$=DoomKey]:after { content:" Paid for these changes with furry art" }
 a.author[href$=mrwoo6]:after { content:" the Coggler cheerer-upper" }
 a.author[href$=ZZW30]:after { content:"  hands killed my first mate" }
+a.author[href$=kontan]:after { content:" the man, the myth, the lurker" }
 
 /* Any pre/post-name flair stuff goes here */ 
 
@@ -1728,3 +1756,46 @@ RES highlighted comment
     background: url(%%opacity%%) !important;
 }
 ================== */
+
+
+
+================== */
+/* Upvotes */
+.midcol {
+    width: 30px;
+overflow:visible;
+    }
+.comment .midcol{
+position:relative;
+
+padding:0px 5px 0px 0px;
+}
+
+div.up {
+    width: 30px !important;
+    height: 30px !important;
+    background: url(%%spoopy%%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px -60px !important
+    }
+div.down {
+    width: 30px !important;
+    height: 30px !important;
+    background: url(%%spoopy%%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px -90px !important
+    }
+div.upmod {
+    width: 30px !important;
+    height: 30px !important;
+    background: url(%%spoopy%%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px 0px !important
+    }
+div.downmod {
+    width: 30px !important;
+    height: 30px !important;
+    background: url(%%spoopy%%) !important;
+    background-repeat: no-repeat !important;
+    background-position: 0px -30px !important
+    }

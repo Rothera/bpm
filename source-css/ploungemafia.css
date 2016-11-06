@@ -1,8 +1,10 @@
-/* Menu */
-
-
-div.content {
-
+/* (stolen from manesub with love) Fix new Reddit CSS crashing emotes into the comment buttons */
+.commentarea .md::after, .entry .md::after, .livePreview .md::after
+{
+  content:"";
+  display:block;
+  width:100%;
+  clear:left;
 }
 
 .titlebox form {
@@ -396,6 +398,11 @@ div:lang(g8) .linkflair-gamePink
 {
     display: block !important;
 }
+
+.linkflair-text .linkflairlabel {
+    display: inline-block !important;
+}
+
 .linkflairlabel
 {
     display: none;

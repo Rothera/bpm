@@ -219,7 +219,7 @@ body {
 SB Emoticons
 ***********/
 
-a[href|="/sb00"], a[href|="/sb02"], a[href|="/sb03"], a[href|="/sb04"], a[href|="/sb15"], a[href|="/sb06"], a[href|="/sb14"], a[href|="/sb10"], a[href|="/sb11"], a[href|="/sb12"], a[href|="/sb13"], a[href|="/sbaww"], a[href|="/sbderelle"], a[href|="/sbderp"], a[href|="/sbhaithar"], a[href|="/sbhappy"], a[href|="/sbhushnow"], a[href|="/sbmad"], a[href|="/sbsad"], a[href|="/sbsly"], a[href|="/sbstare"], a[href|="/sbwawity"], a[href|="/sbwut"] {
+a[href|="/sb00"], a[href|="/sb02"], a[href|="/sb04"], a[href|="/sb15"], a[href|="/sb06"], a[href|="/sb14"], a[href|="/sb11"], a[href|="/sb12"], a[href|="/sb13"], a[href|="/sbaww"], a[href|="/sbderelle"], a[href|="/sbderp"], a[href|="/sbhappy"], a[href|="/sbhushnow"], a[href|="/sbmad"], a[href|="/sbsad"], a[href|="/sbsly"], a[href|="/sbwawity"] {
     display: block;
     clear: none;
     float: left;
@@ -229,6 +229,33 @@ a[href|="/sb00"], a[href|="/sb02"], a[href|="/sb03"], a[href|="/sb04"], a[href|=
     }
 
 /*Oddly sized emotes*/
+
+a[href|="/sbstare"], a[href|="/sb10"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 96px;
+    background-image: url(%%emotes%%) !important
+    }
+
+a[href|="/sbhaithar"], a[href|="/sb03"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 100px;
+    height: 88px;
+    background-image: url(%%emotes%%) !important
+    }
+
+a[href|="/sbwut"], a[href|="/sb13"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 90px;
+    height: 90px;
+    background-image: url(%%emotes%%) !important
+    }
 
 a[href|="/sbscootabelle"], a[href|="/scootabelle"], a[href|="/sb16"] {
     display: block;
@@ -248,7 +275,7 @@ a[href|="/sbwow"], a[href|="/sb12"] {
     background-image: url(%%emotes%%) !important
     }
 
-a[href|="/sbderelle"], a[href|="/sb01"], .side .md table tr:nth-of-type(3) td:nth-of-type(2):after {
+a[href|="/sbderelle"], a[href|="/sb01"] {
     display: block;
     clear: none;
     float: left;
@@ -320,7 +347,7 @@ a[href|="/sb12"], a[href|="/sbwow"] {
     }
 
 a[href|="/sb13"], a[href|="/sbwut"] {
-    background-position: -0px -1884px
+    background-position: -6px -1889px
     }
 
 /***********

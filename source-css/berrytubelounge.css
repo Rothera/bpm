@@ -25,7 +25,14 @@ div.sitetable.linklisting{
 display: table;
 }
 
-
+/* (stolen from manesub with love) Fix new Reddit CSS crashing emotes into the comment buttons */
+.commentarea .md::after, .entry .md::after, .livePreview .md::after
+{
+    content:"";
+    display:block;
+    width:100%;
+    clear:left;
+}
 
 /*Fancy h4s from /r/mlp*/
 .titlebox li h4 { padding-top: 4px; }
@@ -161,7 +168,7 @@ visibility:visible!important;
 /* Replacement goes here */
 a.author[href$="31eipekili"]:before { content:"BATMAN" }
 a.author[href$="GreyMage"]:before { content:"Cades" }
-a.author[href$="Quakerlock"]:before { content:"Ataris" }
+a.author[href$="Quakerlock"]:before { content:"PobodysNerfect" }
 a.author[href$="_Blueshift"]:before { content:"blueshift" }
 a.author[href$="LavenderExtract"]:before { content:"Lavender" }
 a.author[href$="di_zz"]:before { content:"dizz" }
