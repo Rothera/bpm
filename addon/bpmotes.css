@@ -381,6 +381,16 @@ word-break:normal;}
     content: "[](/txt!)";
 }
 
+/* Bugfix: Allow clicking of emotes if a subreddit has their own anti-click */
+.bpm-emote {pointer-events:auto!important}
+
+/* Bugfix: Some subreddits display circles around minmized emote objects */
+.bpm-emote:before {display:none!important}
+.bpm-emote:after {display:none!important}
+
+/* Bugfix: Wikipedia expandos show hidden text by links (RES) */
+.res-media-host-wikipedia .bpm-alttext {display:none}
+
 /* Help and options links */
 #bpm-sb-helplink, #bpm-sb-flaglink, #bpm-sb-optionslink, #bpm-sb-srlink {
     height: 20px;
