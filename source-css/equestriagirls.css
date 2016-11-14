@@ -273,6 +273,8 @@ background-color:white;
     color:rgb(139, 0, 100)!important;
 }
 
+.thumbnail:empty { background-size: auto; }
+
 .thumbnail.self {
     height:50px;
     width:70px;
@@ -1000,8 +1002,10 @@ a[href="/s"]:hover::after {
 /*---------------- Not so Standardized Segment (plus tables) ----------------*/
 
 .md { overflow: auto }
-.usertext-edit .md { overflow: inherit }
+.usertext-edit > .md { overflow: inherit }
 .linkflairlabel { max-width: none }
+#sr-form textarea[name="description"],
+.stylesheet-customize-container textarea { height: 600px; }
 
 .flair, .moderator ~ .userattrs:before {
   padding:0;

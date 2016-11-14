@@ -241,6 +241,8 @@ a[href="/s"]:hover::after {
 .md { overflow: auto }
 .usertext-edit > .md { overflow: inherit }
 .linkflairlabel { max-width: none }
+#sr-form textarea[name="description"],
+.stylesheet-customize-container textarea { height: 600px; }
 
 .flair {
   padding:0;

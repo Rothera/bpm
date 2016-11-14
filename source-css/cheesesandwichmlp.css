@@ -1,6 +1,6 @@
 /*** Thumbnails ***/
 
-.thumbnail:empty { background-image: url(%%thumbnails%%) !important; height: 50px }
+.thumbnail:empty { background-image: url(%%thumbnails%%) !important; background-size: auto; height: 50px }
 .thumbnail.self { background-position: -0px -120px !important }
 .thumbnail.nsfw { visibility: hidden !important }
 .thumbnail.default { background-position: -0px -70px !important }
@@ -345,8 +345,11 @@ a[href="/s"]:hover::after {
 
 /*** Emotes ***/
 
-.md { overflow: auto; }
-.usertext-edit .md { overflow: inherit; }
+.md { overflow: auto }
+.usertext-edit > .md { overflow: inherit }
+.linkflairlabel { max-width: none }
+#sr-form textarea[name="description"],
+.stylesheet-customize-container textarea { height: 600px; }
 
 a[href|="/cheese"], a[href|="/boneless"], a[href|="/cheesesquint"], a[href|="/cheesestare"], a[href|="/imfine"], a[href|="/cheesechill"], a[href|="/cheesemad"], a[href|="/sarcasticcheese"],
 a[href|="/pentiums"], a[href|="/cheeseponders"] {

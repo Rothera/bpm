@@ -31,6 +31,8 @@ div.side div.spacer:nth-of-type(1){
 /*Main CSS*/
 /*************/
 
+.thumbnail:empty { background-size: auto; }
+
 /* Replace the self-post image with AJ */
 .thumbnail.self {
     background-image: url(%%self%%);
@@ -74,9 +76,6 @@ div.footer-parent:after {
     content: url(%%appletank%%);
     height: 370px;
     margin-bottom: -35px
-    }
-.stylesheet-customize-container textarea {
-    height: 600px
     }
 
 /* make H4s POP */
@@ -294,6 +293,8 @@ a[href="/s"]:hover::after {
 .md { overflow: auto }
 .usertext-edit > .md { overflow: inherit }
 .linkflairlabel { max-width: none }
+#sr-form textarea[name="description"],
+.stylesheet-customize-container textarea { height: 600px; }
 
 .flair {
   padding:0;

@@ -17,7 +17,7 @@ body { background: url(%%foolsbg%%) no-repeat fixed center bottom }
 
 /*** Thumbnails ***/
 
-.thumbnail:empty { background-image: url(%%thumbnails%%) !important; height: 50px }
+.thumbnail:empty { background-image: url(%%thumbnails%%) !important; background-size: auto; height: 50px }
 .thumbnail.self { background-position: -0px -120px !important }
 .thumbnail.nsfw { visibility: hidden !important }
 .thumbnail.default { background-position: -0px -70px !important }
@@ -101,9 +101,11 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 
 /*---------------- Standardized Segment ----------------*/
 
-.md { overflow: auto }
+md { overflow: auto }
 .usertext-edit > .md { overflow: inherit }
 .linkflairlabel { max-width: none }
+#sr-form textarea[name="description"],
+.stylesheet-customize-container textarea { height: 600px; }
 
 .flair {
   padding:0;

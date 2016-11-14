@@ -58,30 +58,16 @@ a { cursor: url(%%spoop4%%), pointer; }
 }
 /*COMMENTING OUT FOR SPOOKS */
 
-/*
  #header #header-bottom-left {
-   background: url(%%nightmare%%) 50% 15px !important;
+   background: url(%%SecretSanta6%%) 50% 15px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
-*/
-
-/* DANCING SPOOK ANIMATION STUFF */
-
- #header #header-bottom-left  {
-background: url(%%SecretSanta2%%) !important;
-    -webkit-animation: banimate 3s steps(23) infinite;-moz-animation: banimate 3s steps(23) infinite;-ms-animation: banimate 3s steps(23) infinite;-o-animation: banimate 3s steps(23) infinite;animation: banimate 3s steps(23) infinite; 
-}
 
 
-@-webkit-keyframes banimate {from{background-position: 0 0;}to{ background-position: 0px -6048px; }} 
-@-moz-keyframes banimate {from {background-position: 0 0;}to{ background-position: 0px -6048px; } } 
-@-ms-keyframes banimate{from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
-@-o-keyframes banimate {from {background-position: 0 0; }to{ background-position: 0px -6048px; } } 
-@keyframes banimate {from { background-position: 0 0; }to{ background-position: 0px -6048px; } } 
+    
 
-
-.tabmenu {
+.tabmenu{
   margin-top: 3px;
 }
 
@@ -127,6 +113,7 @@ z-index:110 !important;
 }
 
 /* Rotating banner */
+/*
 #header { 
     -webkit-animation:spin 8000s linear infinite;
     -moz-animation:spin 8000s linear infinite;
@@ -134,7 +121,7 @@ z-index:110 !important;
     -o-animation:spin 8000s linear infinite;
     animation:spin 8000s linear infinite;
 }
-
+*/
 
 
 
@@ -1175,6 +1162,7 @@ a.author[href$=Backupusername]:after,
 a.author[href$= Nagashizuri]:after,
 a.author[href$="Conky_"]:after,
 a.author[href$="clonger"]:after,
+a.author[href$="Masturb_Chyiff"]:after,
 a.author[href$="spearstuff"]:after,
 a.author[href$="andysonic3"]:after,
 a.author[href$="andysonic0"]:after,
@@ -1268,6 +1256,7 @@ a.author[href$="Conky_"]:after { content:" In a Lot of Trouble, Mr." }
 a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 a.author[href$="clonger"]:after { content:" the css wizard"; color:green}
 a.author[href$="spearstuff"]:after { content:" i figured it out :D"}
+a.author[href$="Masturb_Chyiff"]:after { content:" MAGA";color:orange }
 a.author[href$="andysonic3"]:after { content:" THE NO FUN DEPUTY" }
 a.author[href$="andysonic0"]:after { content:" THE NO FUN CHIEF" }
 a.author[href$="Andysonic-1"]:after { content:" THE NO FUN ROOKIE" }

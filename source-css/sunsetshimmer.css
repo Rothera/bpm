@@ -158,26 +158,25 @@ body {
 }
 
 .arrow.up { 
-  background: url(%%oddballs%%) -604px  -210px;
+  background: url(%%rss-elements%%) -79px  -70px;
   height: 20px;
   width: 15px; 
 }
 
 .arrow.upmod { 
-  background: url(%%oddballs%%) -619px -210px;
+  background: url(%%rss-elements%%) -94px -70px;
   height: 20px; 
   width: 15px;  
 }
 
-
 .arrow.down { 
-  background: url(%%oddballs%%) -589px -210px;
+  background: url(%%rss-elements%%) -64px -70px;
   height: 20px; 
   width: 15px;  
 }
 
 .arrow.downmod { 
-  background: url(%%oddballs%%) -634px -210px;
+  background: url(%%rss-elements%%) -109px -70px;
   height: 20px; 
   width: 15px;  
 }
@@ -213,8 +212,6 @@ body {
   font-weight: bold;
   margin: 5px auto auto 25px;
 }
-
-.linkflairlabel { max-width: none }
 
 /* Sidebar Buttons */
 
@@ -315,6 +312,9 @@ body .disabled .morelink a:hover {
 
 .md { overflow: auto; }
 .usertext-edit > .md { overflow: inherit; }
+.linkflairlabel { max-width: none }
+#sr-form textarea[name="description"],
+.stylesheet-customize-container textarea { height: 600px; }
 
 .flair {
   padding:0;
@@ -716,12 +716,12 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 {background-position:-300% -2900%}
 
 .flair-100-emblem,.flair-100-sunset,.flair-200-emblem,.flair-200-sunset
-{height:42px;width:32px;background-image:url(%%oddballs%%)!important}
+{height:42px;width:32px;background-image:url(%%rss-elements%%)!important}
 
-.flair-100-emblem { background-position: -856px -175px }
-.flair-100-sunset { background-position: -888px -175px }
-.flair-200-emblem { background-position: -856px -217px }
-.flair-200-sunset { background-position: -888px -217px }
+.flair-100-emblem { background-position: 0 0 }
+.flair-100-sunset { background-position: -32px 0 }
+.flair-200-emblem { background-position: 0 -42px }
+.flair-200-sunset { background-position: -32px -42px }
 
 a[href|="/sunsetshocked"],a[href|="/ssshocked"],a[href|="/disgustedsunset"],a[href|="/disgustedss"],a[href|="/sunsetstare"],a[href|="/ssstare"],a[href|="/sunsetbored"],a[href|="/ssbored"],a[href|="/sunsetpuppyeyes"],a[href|="/sspuppyeyes"],a[href|="/sunsetderp"],a[href|="/ssderp"],a[href|="/sunsethappy"],a[href|="/sshappy"],a[href|="/sunsetsosorry"],a[href|="/sssosorry"],a[href|="/sleepysunset"],a[href|="/sleepyss"],a[href|="/sunsetohyou"],a[href|="/ssohyou"],a[href|="/sunsetsneer"],a[href|="/sssneer"],a[href|="/sunsetyay"],a[href|="/ssyay"],a[href|="/searchingsunset"],a[href|="/searchingss"],a[href|="/sunsetshiver"],a[href|="/ssshiver"],a[href|="/sunsetshrug"],a[href|="/ssshrug"],a[href|="/sunsetfacehoof"],a[href|="/ssfacehoof"],a[href|="/sunsetindeed"],a[href|="/ssindeed"],a[href|="/ifyouknowwhatimean"],a[href|="/sunsetwait"],a[href|="/sswait"],a[href|="/rsunsetshocked"],a[href|="/rssshocked"],a[href|="/rdisgustedsunset"],a[href|="/rdisgustedss"],a[href|="/rsunsetstare"],a[href|="/rssstare"],a[href|="/rsunsetbored"],a[href|="/rssbored"],a[href|="/rsunsetbored"],a[href|="/rssbored"],a[href|="/rsunsetpuppyeyes"],a[href|="/rsspuppyeyes"],a[href|="/rsunsetderp"],a[href|="/rssderp"],a[href|="/rsunsethappy"],a[href|="/rsshappy"],a[href|="/rsunsetsosorry"],a[href|="/rsssosorry"],a[href|="/rsleepysunset"],a[href|="/rsleepyss"],a[href|="/rsunsetohyou"],a[href|="/rssohyou"],a[href|="/rsunsetsneer"],a[href|="/rsssneer"],a[href|="/rsunsetyay"],a[href|="/rssyay"],a[href|="/rsearchingsunset"],a[href|="/rsearchingss"],a[href|="/rsunsetshiver"],a[href|="/rssshiver"],a[href|="/rsunsetshrug"],a[href|="/rssshrug"],a[href|="/rsunsetfacehoof"],a[href|="/rssfacehoof"],a[href|="/rsunsetindeed"],a[href|="/rssindeed"],a[href|="/rifyouknowwhatimean"],a[href|="/rsunsetwait"],a[href|="/rsswait"],a[href|="/sunsetuhuh"],a[href|="/ssuhuh"],a[href|="/sunsetwow"],a[href|="/sswow"],a[href|="/sunsetsalute"],a[href|="/sssalute"],a[href|="/sunsetpokerstatic"],a[href|="/sspokerstatic"],a[href|="/sunsetdress"],a[href|="/ssdress"],a[href|="/sunsetquietgame"],a[href|="/ssquietgame"],a[href|="/sunsetupvote"],a[href|="/ssupvote"],a[href|="/sunsetwrongneighborhood"],a[href|="/sswrongneighborhood"],a[href|="/sunface"],a[href|="/sunsetcry"],a[href|="/sscry"],a[href|="/stiffupperlip"],a[href|="/sunsetpsmirk"],a[href|="/sspsmirk"],a[href|="/sunsetwink"],a[href|="/sswink"]
 {display:block;clear:none;float:left;width:70px;height:70px;cursor:default;background-image:url(%%sunnyamotes%%)!important}
@@ -866,6 +866,15 @@ a[href|="/evilsunsetidle"],a[href|="/evilssidle"],a[href|="/revilsunsetidle"],a[
   width:230px;
   height:256px;
   background-image:url(%%evilsunsetidle%%)!important;
+}
+
+a[href|="/flyingsunset"],a[href|="/flyingss"],a[href|="/rflyingsunset"],a[href|="/rflyingss"] {
+  display:block;
+  clear:none;
+  float:left;
+  width:230px;
+  height:250px;
+  background-image:url(%%flyingsunset%%)!important;
 }
 
 a[href|="/sunsetlaugh"],a[href|="/sslaugh"],a[href|="/rsunsetlaugh"],a[href|="/rsslaugh"] {
@@ -1239,157 +1248,7 @@ a[href|="/sunsetcheering"], a[href|="/sscheering"] { background-image: url(%%ssc
 
 START-PONYSCRIPT-IGNORE { color: red; }
 
-.side a[href|="/ssexcited"] {margin-bottom: -13px;}
-
-.side a[href|="/sssenpai"] {margin-bottom: -13px;}
-
-a[href|="/sunsetlaugh"],a[href|="/sslaugh"],a[href|="/rsunsetlaugh"],a[href|="/rsslaugh"] {
-  display: block;
-  clear: none;
-  background-image: url(%%sslaughstrip%%) !important;
-  width: 112px;
-  height: 114px;
-  -webkit-animation: laughss 3.2s steps(40) infinite;
-  -moz-animation: laughss 3.2s steps(40) infinite;
-  -o-animation: laughss 3.2s steps(40) infinite;
-  animation: laughss 3.2s steps(40) infinite;
-}
-
-@-webkit-keyframes laughss {
-  from {background-position: 0px}
-  to {background-position: -4480px}
-}
-
-@-moz-keyframes laughss {
-  from {background-position: 0px}
-    to {background-position: -4480px}
-}
-
-@-o-keyframes laughss {
-  from {background-position: 0px}
-  to {background-position: -4480px}
-}
-
-@keyframes laughss {
-  from {background-position: 0px}
-    to {background-position: -4480px}
-}
-
-a[href|="/unbreakablesunset"],a[href|="/unbreakabless"] {
-  -webkit-animation: unbreakabless 3.9s steps(78) infinite;
-  -moz-animation: unbreakabless 3.9s steps(78) infinite;
-  -o-animation: unbreakabless 3.9s steps(78) infinite;
-  animation: unbreakabless 3.9s steps(78) infinite;
-}
-
-@-webkit-keyframes unbreakabless {
-  from {background-position: -88px}
-  to {background-position: -6952px}
-}
-
-@-moz-keyframes unbreakabless {
-  from {background-position: -88px}
-    to {background-position: -6952px}
-}
-
-@-o-keyframes unbreakabless {
-  from {background-position: -88px}
-  to {background-position: -6952px}
-}
-
-@keyframes unbreakabless {
-  from {background-position: -88px}
-    to {background-position: -6952px}
-}
-
-a[href|="/standingsunset"],a[href|="/standingss"] {
-  -webkit-animation: standingss 8.52s steps(213) infinite;
-  -moz-animation: standingss 8.52s steps(213) infinite;
-  -o-animation: standingss 8.52s steps(213) infinite;
-  animation: standingss 8.52s steps(213) infinite;
-}
-
-
-@-webkit-keyframes standingss {
-  from {background-position: -66px}
-  to {background-position: -14124px}
-}
-
-@-moz-keyframes standingss {
-  from {background-position: -66px}
-    to {background-position: -14124px}
-}
-
-@-o-keyframes standingss {
-  from {background-position: -66px}
-  to {background-position: -14124px}
-}
-
-@keyframes standingss {
-  from {background-position: -66px}
-    to {background-position: -14124px}
-}
-
-a[href|="/sunsetgroovin"],a[href|="/ssgroovin"] {
-  background-image: url(%%sunsetgroovinstrip%%) !important;
-  -webkit-animation: ssgroove .96s steps(24) infinite;
-  -moz-animation: ssgroove .96s steps(24) infinite;
-  -o-animation: ssgroove .96s steps(24) infinite;
-  animation: ssgroove .96s steps(24) infinite;
-}
-
-@-webkit-keyframes ssgroove {
-  from {background-position: 0}
-  to {background-position: -1896px}
-}
-
-@-moz-keyframes ssgroove {
-  from {background-position: 0}
-  to {background-position: -1896px}
-}
-
-@-o-keyframes ssgroove {
-  from {background-position: 0}
-  to {background-position: -1896px}
-}
-
-@keyframes ssgroove {
-  from{background-position: 0}
-    to{background-position: -1896px}
-}
-
-a[href|="/flyingsunset"],a[href|="/flyingss"],a[href|="/rflyingsunset"],a[href|="/rflyingss"] {
-  display: block;
-  clear: none;
-  float: left;
-  background-image: url(%%flyingss%%) !important;
-  width: 230px;
-  height: 250px;
-  -webkit-animation: flyingss 2.9s steps(58) infinite;
-  -moz-animation: flyingss 2.9s steps(58) infinite;
-  -o-animation: flyingss 2.9s steps(58) infinite;
-  animation: flyingss 2.9s steps(58) infinite;
-}
-
-@-webkit-keyframes flyingss {
-  from {background-position: 0}
-  to {background-position: -13340px}
-}
-
-@-moz-keyframes flyingss {
-  from {background-position: 0}
-  to {background-position: -13340px}
-}
-
-@-o-keyframes flyingss {
-  from {background-position: 0}
-  to {background-position: -13340px}
-}
-
-@keyframes flyingss {
-  from{background-position: 0}
-    to{background-position: -13340px}
-}
+.side a[href|="/ssexcited"], .side a[href|="/sssenpai"] {margin-bottom: -13px;}
 
 a[href="/s"] {
   color: #222222; 
@@ -1614,7 +1473,8 @@ a.thumbnail.self{margin-right:-14px}
 .thing.self h4:before {
   content:"";
   width:100%;
-  background:transparent url(%%fancyheaders%%) no-repeat bottom left;
+  background:transparent url(%%rss-elements%%) no-repeat bottom left;
+  background-position:-170px 0;
   width:14px;
   height:46px;
   margin-bottom:-19px;
@@ -1656,7 +1516,7 @@ a.thumbnail.self{margin-right:-14px}
 
 /*** Thumbnails ***/
 
-.thumbnail:empty { background-image: url(%%thumbnails%%) !important; height: 50px }
+.thumbnail:empty { background-image: url(%%thumbnails%%) !important; background-size: auto; height: 50px }
 .thumbnail.self { background-position: 0 -120px !important }
 .thumbnail.nsfw { visibility: hidden !important }
 .thumbnail.default { background-position: 0 -70px !important }
@@ -1683,7 +1543,7 @@ a.thumbnail.self{margin-right:-14px}
 
 .linkflair-discussion.stickied .thumbnail { 
   height: 70px;
-  background: url(%%ssbook%%) 0 0 !important;
+  background: url(%%rss-elements%%) -100px 0 !important;
 }
 
 /*** Rating Tags ***/
@@ -1765,7 +1625,8 @@ a.thumbnail.self{margin-right:-14px}
   height: 30px;
   cursor: default;
   pointer-events: none;
-  background-image: url(%%Crown-Bullet%%) !important;
+  background-position: -64px 0;
+  background-image: url(%%rss-elements%%) !important;
 }
 
 .side .md table:last-of-type td a {
@@ -1797,7 +1658,5 @@ a.thumbnail.self{margin-right:-14px}
   color: white !important;
   content: "NSFW emote!";
 }
-
-.stylesheet-customize-container textarea { height: 600px }
 
 .side sup:nth-of-type(1) { padding-left: 40px }

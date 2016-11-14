@@ -119,7 +119,7 @@ a#search_showmore { color: #fff; }
 
 /*** Thumbnails ***/
 
-.thumbnail:empty { background-image: url(%%thumbnails%%) !important; height: 50px }
+.thumbnail:empty { background-image: url(%%thumbnails%%) !important; background-size: auto; height: 50px }
 .thumbnail.self { background-position: 0 -120px !important }
 .thumbnail.nsfw { background-position: 0 0 !important; height: 70px }
 .thumbnail.default { background-position: 0 -70px !important }
@@ -286,6 +286,9 @@ a[href|="/sp"] {
 
 .md { overflow: auto; }
 .usertext-edit > .md { overflow: inherit; }
+.linkflairlabel { max-width: none }
+#sr-form textarea[name="description"],
+.stylesheet-customize-container textarea { height: 600px; }
 
 a[href|="/fritapple"], a[href|="/fritsmirk"], a[href|="/fritgrin"], a[href|="/fritshrug"], a[href|="/fritbow"], a[href|="/frithmph"], a[href|="/fritnoway"], a[href|="/fritsmeel"], a[href|="/fritsad"], a[href|="/fritsmile"], a[href|="/frithappy"], a[href|="/fritbbbff"], a[href|="/fritwhat"], a[href|="/frityay"], a[href|="/fritter"], a[href|="/fritlie"], a[href|="/fritmad"], a[href|="/fritderp"], a[href|="/frithoof"], a[href|="/fritspet"], a[href|="/fritbake"], a[href|="/fritblush"], a[href|="/fritjoke"], a[href|="/fritsalute"], a[href|="/frithmmm"], a[href|="/fritcute"], a[href|="/fritmeh"], a[href|="/fritshock"], a[href|="/fritstare"], a[href|="/fritwink"], a[href|="/fritreally"], a[href|="/fritface"] {
   display: block;

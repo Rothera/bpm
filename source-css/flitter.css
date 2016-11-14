@@ -90,6 +90,12 @@ a[href|="/fillyflitter"]
   line-height: 240%;
 }
 
+.md { overflow: auto }
+.usertext-edit > .md { overflow: inherit }
+.linkflairlabel { max-width: none }
+#sr-form textarea[name="description"],
+.stylesheet-customize-container textarea { height: 600px; }
+
 .flair-rainbowdash { background-position: 0 0; }
 .flair-twilight { background-position: -100% 0; }
 .flair-fluttershy { background-position: -200% 0; }
