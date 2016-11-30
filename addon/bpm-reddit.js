@@ -130,6 +130,8 @@ function run_reddit(store, expand_emotes) {
     init_search_box(store);
     if (is_reddit) {
         var usertext_edits = slice(document.getElementsByClassName("usertext-edit"));
+    } else if (is_modreddit) {
+        var usertext_edits = slice(document.getElementsByClassName("ThreadViewer__replyContainer"));
     } else if (is_voat) {
         var usertext_edits = slice(document.getElementsByClassName("markdownEditor"));
     }
@@ -180,6 +182,8 @@ function run_reddit(store, expand_emotes) {
             // TODO: move up in case we're inside it?
             if (is_reddit) {
                 var usertext_edits = slice(root.getElementsByClassName("usertext-edit"));
+            } else if (is_modreddit) {
+                var usertext_edits = slice(root.getElementsByClassName("ThreadViewer__replyContainer"));
             } else if (is_voat) {
                 var usertext_edits = slice(root.getElementsByClassName("markdownEditor"));
             }
