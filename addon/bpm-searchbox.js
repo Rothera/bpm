@@ -615,8 +615,13 @@ function inject_emotes_button(store, usertext_edits) {
                     bottom_area.insertBefore(button, bottom_area.firstChild);
                 }
             } else if (is_modreddit) {
-                var button_bar = find_class(usertext_edits[i], "ThreadViewerReplyForm__replyFooter");
-                button_bar.insertBefore(button, find_class(button_bar, "ThreadViewerReplyForm__formattingHelp"));
+                if (ends_with(document.location.pathname, "create")) {
+                    var button_bar = find_class(usertext_edits[i], "NewThread__submitRow");
+                    button_bar.insertBefore(button, find_class(button_bar, "NewThread__formattingHelp"));
+                } else {
+                    var button_bar = find_class(usertext_edits[i], "ThreadViewerReplyForm__replyFooter");
+                    button_bar.insertBefore(button, find_class(button_bar, "ThreadViewerReplyForm__formattingHelp"));
+                }
             } else if (is_voat) {
                 var editbar = find_class(usertext_edits[i], "markdownEditorMainMenu");
                 editbar.appendChild(button);

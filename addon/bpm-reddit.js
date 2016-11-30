@@ -131,7 +131,11 @@ function run_reddit(store, expand_emotes) {
     if (is_reddit) {
         var usertext_edits = slice(document.getElementsByClassName("usertext-edit"));
     } else if (is_modreddit) {
-        var usertext_edits = slice(document.getElementsByClassName("ThreadViewer__replyContainer"));
+        if (ends_with(document.location.pathname, "create")) {
+            var usertext_edits = slice(document.getElementsByClassName("NewThread__form"));
+        } else {
+            var usertext_edits = slice(document.getElementsByClassName("ThreadViewer__replyContainer"));
+        }
     } else if (is_voat) {
         var usertext_edits = slice(document.getElementsByClassName("markdownEditor"));
     }
@@ -183,7 +187,11 @@ function run_reddit(store, expand_emotes) {
             if (is_reddit) {
                 var usertext_edits = slice(root.getElementsByClassName("usertext-edit"));
             } else if (is_modreddit) {
-                var usertext_edits = slice(root.getElementsByClassName("ThreadViewer__replyContainer"));
+                if (ends_with(document.location.pathname, "create")) {
+                    var usertext_edits = slice(root.getElementsByClassName("NewThread__form"));
+                } else {
+                    var usertext_edits = slice(root.getElementsByClassName("ThreadViewer__replyContainer"));
+                }
             } else if (is_voat) {
                 var usertext_edits = slice(root.getElementsByClassName("markdownEditor"));
             }
