@@ -4,40 +4,39 @@
 .commentarea textarea:not(:focus) { background-image: url(%%snap1%%); }
  
 /*SNOW BEGINS */
-/*
+
 #header:after {
 content: "";
-background: url(%%hertsback%%);
-position: fixed;
+background: url(%%Snow2%%);
+position: absolute;
 width: 100%;
 height: 100%;
-top: 0;d
+top: 0;
 left: 0;
-opacity: .5;
 z-index: 999;
 pointer-events: none;
--webkit-animation: snow 2s steps(10) infinite;
--moz-animation: snow 2s steps(10) infinite;
--ms-animation: snow 2s steps(10) infinite;
--o-animation: snow 2s steps(10) infinite;
-animation: snow 2s steps(10) infinite; 
+-webkit-animation: snow 1.3s steps(19) infinite;
+-moz-animation: snow 1.3s steps(19) infinite;
+-ms-animation: snow 1.3s steps(19) infinite;
+-o-animation: snow 1.3s steps(19) infinite;
+animation: snow 1.3s steps(19) infinite; 
 }
 
 
-@-webkit-keyframes snow {from{background-position: 0 0;}to{ background-position: 0px -6000px; }} 
-@-moz-keyframes snow {from {background-position: 0 0;}to{ background-position: 0px -6000px; } } 
-@-ms-keyframes snow{from {background-position: 0 0; }to{ background-position: 0px -6000px; } } 
-@-o-keyframes snow {from {background-position: 0 0; }to{ background-position: 0px -6000px; } } 
-@keyframes snow {from { background-position: 0 0; }to{ background-position: 0px -6000px; } } 
+@-webkit-keyframes snow {from{background-position: 0 0;}to{ background-position: 0px -5700px; }} 
+@-moz-keyframes snow {from {background-position: 0 0;}to{ background-position: 0px -5700px; } } 
+@-ms-keyframes snow{from {background-position: 0 0; }to{ background-position: 0px -5700px; } } 
+@-o-keyframes snow {from {background-position: 0 0; }to{ background-position: 0px -5700px; } } 
+@keyframes snow {from { background-position: 0 0; }to{ background-position: 0px -5700px; } } 
 
-*/
+
  
 /* Replace Cursors */
 /*<%jeroknite> mfw Pwny is slowly turning the sub into a geocities site*/
 body {
-cursor: url(%%spoop%%), default !important;
+cursor: url(%%Cursor%%), default !important;
 }
-a { cursor: url(%%spoop4%%), pointer; }
+a { cursor: url(%%CursorHover%%), pointer; }
 
 
 /* Changes background  */

@@ -9,11 +9,34 @@
     border: none;
     padding: 1px 4px;
 }
+
+
 .flair-creator-rubypinch{
-    color: #f33;
-    background: #333;
-    border: none;
-    padding: 1px 4px;
+    color: #000;
+    border: 1px solid #000;
+    font-size:xx-small;
+    padding: 0 1em 0.15em 1em;
+    position:relative;
+}
+.flair-creator-rubypinch:before, .flair-creator-rubypinch:after{
+position:absolute;
+top:0;
+display:block;
+content:"";
+width:calc(1em - 1px - 0.2em);
+height:100%;
+}
+@keyframes POLICEL {0%,49%{background:#f00} 50%,100%{background:#44f}}
+.flair-creator-rubypinch:before{
+left:0;
+border-right: 1px solid #000;
+animation: POLICEL 2s infinite;
+}
+@keyframes POLICER {0%,49%{background:#44f} 50%,100%{background:#f00}}
+.flair-creator-rubypinch:after{
+right:0;
+border-left: 1px solid #000;
+animation: POLICER 2s infinite;
 }
 
 

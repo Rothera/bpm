@@ -55,7 +55,7 @@ background: url(%%Sweetie-dash%%) no-repeat fixed 50% 50%;
 a[href="/humanbelleface"]{background-position: 0px 0px; display: block; clear: none; float: left; width: 150px; height: 150px; background-image: url(%%testmeme%%)}
 
 
-a[href|="/godhatesdweebs"],a[href|="/toofabulous"],a[href|="/spikesaw"],a[href|="/discordshocked"],a[href|="/mayo"],a[href|="/pinkabomination"],a[href|="/pinkiedash"],a[href|="/wetbelle"],a[href|="/crystalbelle"],a[href|="/noanduzone"],a[href|="/fritters"],a[href|="/buttpose"],a[href="/datburd"],a[href="/bossybelle"],a[href="/discordsterror"]{
+a[href|="/godhatesdweebs"],a[href|="/toofabulous"],a[href|="/spikesaw"],a[href|="/discordshocked"],a[href|="/mayo"],a[href|="/pinkabomination"],a[href|="/pinkiedash"],a[href|="/wetbelle"],a[href|="/crystalbelle"],a[href|="/noanduzone"],a[href|="/fritters"],a[href="/datburd"],a[href="/bossybelle"],a[href="/discordsterror"]{
    
    display: block;
    clear: none;
@@ -143,7 +143,7 @@ a[href="/hoodiefrits"]{     background-position: -150px      -600px; width: 150p
 
 
 /*the benger!*/
-a[href|="/cutesockponk"], a[href|="/theBengersFavoritestPonyEver"]
+a[href|="/cutesockponk"]
 {
     background-image:url(%%table3%%);
     width:126px;
@@ -152,6 +152,28 @@ a[href|="/cutesockponk"], a[href|="/theBengersFavoritestPonyEver"]
     float:left;
     background-position: 34% 35%;
 }
+
+a[href|="/theBengersFavoritestPonyEver"]
+{
+    background-image:url(%%BengerEmote%%);
+    width:122px;
+    height:147px;
+    display:block;
+    float:left;
+    background-position: 50% 50%;
+}
+
+/* Big Table */
+a[href|="/sbdissapointed"],a[href|="/sbperplex"]
+{
+
+   display: block;
+   clear: none;
+   float: left;
+   background-image: url(%%BigTable%%) }
+
+a[href="/sbdissapointed"]{  background-position:   0px      0px; width: 150px; height: 378px}
+a[href="/sbperplex"]{       background-position:   -150px   0px; width: 150px; height: 200px}
 
 
 /**********************************************************************************************/
