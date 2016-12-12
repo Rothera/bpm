@@ -584,6 +584,9 @@ function inject_emotes_button(store, usertext_edits) {
             if(is_compact) {
                 // Blend in with the other mobile buttons
                 button.classList.add("newbutton");
+            } else if(is_modreddit) {
+                // Blend in with the other modmail buttons
+                button.classList.add("Button");
             } else if(is_voat) {
                 button.classList.add("markdownEditorImgButton");
                 button.classList.add("bpm-voat");
@@ -601,6 +604,7 @@ function inject_emotes_button(store, usertext_edits) {
             // way to the right, next to the "formatting help" link. However,
             // this breaks rather badly on .compact display (sort of merging
             // into it), so do something different there.
+            // If in modmail, have it on the left instead.
             // If on voat, do something completely different.
             if (is_reddit) {
                 if(is_compact) {
@@ -609,6 +613,14 @@ function inject_emotes_button(store, usertext_edits) {
                 } else {
                     var bottom_area = find_class(usertext_edits[i], "bottom-area");
                     bottom_area.insertBefore(button, bottom_area.firstChild);
+                }
+            } else if (is_modreddit) {
+                if (ends_with(document.location.pathname, "create")) {
+                    var button_bar = find_class(usertext_edits[i], "NewThread__submitRow");
+                    button_bar.insertBefore(button, find_class(button_bar, "NewThread__formattingHelp"));
+                } else {
+                    var button_bar = find_class(usertext_edits[i], "ThreadViewerReplyForm__replyFooter");
+                    button_bar.insertBefore(button, find_class(button_bar, "ThreadViewerReplyForm__formattingHelp"));
                 }
             } else if (is_voat) {
                 var editbar = find_class(usertext_edits[i], "markdownEditorMainMenu");

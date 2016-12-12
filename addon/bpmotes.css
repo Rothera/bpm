@@ -140,6 +140,15 @@
     margin: 2px !important;
 }
 
+/*
+ * Emotes button on mod.reddit.com. Float left because new modmail
+ * has the button on the other side of the textfield.
+ */
+.bpm-search-toggle.Button {
+    margin: 0 12px 0 0 !important;
+    float: left;
+}
+
 /* Emotes button on Voat. */
 .bpm-search-toggle.bpm-voat {
     margin-left: 1px;
