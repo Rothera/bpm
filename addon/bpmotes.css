@@ -394,8 +394,8 @@ word-break:normal;}
 .bpm-emote {pointer-events:auto!important}
 
 /* Bugfix: Some subreddits display circles around minmized emote objects */
-.bpm-emote:before {display:none!important}
-.bpm-emote:after {display:none!important}
+.bpm-emote:before {border-style:none!important}
+.bpm-emote:after {border-style:none!important}
 
 /* Bugfix: Wikipedia expandos show hidden text by links (RES) */
 .res-media-host-wikipedia .bpm-alttext {display:none}
