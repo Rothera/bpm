@@ -1,0 +1,229 @@
+/* Base emote CSS and link to Sunset spritesheet */
+
+/*Sunset*/
+a[href|="/sshappentome"],a[href|="/ssplan"],a[href|="/ssunsure"],a[href|="/ssyoudoin"],a[href|="/ssproud"],a[href|="/sstearylaugh"],a[href|="/supasunset"],a[href|="/ssdidwhatlastnight"],a[href|="/ssangry"],
+
+/*Twilight*/
+a[href|="/scitermined"],a[href|="/scilightsparkle"],a[href|="/supatwi"],a[href|="/scidork"],a[href|="/scidontthinkso"],a[href|="/scilarious"],a[href|="/scidorksmile"],a[href|="/midnight"],a[href|="/twistrange"],a[href|="/twiwhaa"],a[href|="/scicry"],a[href|="/midnightsmile"],a[href|="/midnightinme"],a[href|="/midnightcry"],a[href|="/twiforgiveme"],a[href|="/mangasparkle"],a[href|="/kamehameha"],
+
+/*Pinkie Pie*/
+a[href|="/ppzombie"],a[href|="/whatarehands"],
+
+/*Rarity*/
+a[href|="/rarisaywhat"],
+
+/*Rainbow Dash*/
+a[href|="/slightlyupsetdash"],
+
+/*Sirens*/
+a[href|="/secretlysad"],
+
+/*Side Characters*/
+a[href|="/celbarassed"],a[href|="/celgasp"],a[href|="/celfunny"],a[href|="/lunaatthedentist"],a[href|="/taviunsure"],
+
+/*Long Emotes*/
+a[href|="/rdbrush"],a[href|="/scidontknow"],a[href|="/ssdisgusted"],a[href|="/didyoukickthepuppy"],
+
+/*Big Emotes*/
+a[href|="/sunlightscream"],a[href|="/midnightsparkle"],a[href|="/midnightredeemed"],a[href|="/twitwi"],a[href|="/pinkiesip"],
+
+/*Animated Emotes*/
+a[href|="/sciwave"]
+
+{
+    display: block;
+    clear: none;
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-image: url(%%semotes%%);
+}
+
+
+
+/* Base bigemote CSS and link to bigemote spritesheet*/
+
+a[href|="/sunlightscream"],a[href|="/runningfromyouroc"],a[href|="/midnightsparkle"],a[href|="/midnightredeemed"],a[href|="/twitwi"],a[href|="/pinkiesip"]{
+    width: 200px;
+    height: 140px;
+    background-image: url(%%bigemotes%%) !important
+}
+
+/* Base longemote CSS and link to longemote spritesheet*/
+
+a[href|="/rdbrush"],a[href|="/scidontknow"],a[href|="/ssdisgusted"],a[href|="/didyoukickthepuppy"]{
+    width: 70px;
+    height: 100px;
+    background-image: url(%%longemotes%%) !important
+}
+
+/* Base animated CSS and link to animated spritesheet*/
+
+a[href|="/sciwave"]{
+    width: 70px;
+    height: 100px;
+    background-image: url(%%animotes%%) !important
+}
+
+
+/* Link to Twilight spritesheet */
+
+a[href|="/scitermined"],a[href|="/scilightsparkle"],a[href|="/supatwi"],a[href|="/scidork"],a[href|="/scidontthinkso"],a[href|="/scilarious"],a[href|="/scidorksmile"],a[href|="/midnight"],a[href|="/twistrange"],a[href|="/twiwhaa"],a[href|="/scicry"],a[href|="/midnightsmile"],a[href|="/midnightinme"],a[href|="/midnightcry"],a[href|="/twiforgiveme"],a[href|="/mangasparkle"],a[href|="/kamehameha"] {
+    background-image: url(%%twimotes%%) !important
+}
+
+/* Link to Pinkie spritesheet */
+
+a[href|="/ppzombie"],a[href|="/whatarehands"]{
+    background-image: url(%%pemotes%%) !important
+}
+
+/* Link to Rarity spritesheet */
+
+a[href|="/rarisaywhat"]{
+    background-image: url(%%rarimotes%%) !important
+}
+
+/* Link to Rainbow Dash spritesheet */
+
+a[href|="/slightlyupsetdash"]{
+    background-image: url(%%dashmotes%%) !important
+}
+
+/* Link to Siren spritesheet */
+
+a[href|="/secretlysad"]{
+    background-image: url(%%sirens%%) !important
+}
+
+/* Link to Celestia spritesheet */
+
+a[href|="/celbarassed"],a[href|="/celgasp"],a[href|="/celfunny"]{
+    background-image: url(%%cemotes%%) !important
+}
+
+/* Link to Luna spritesheet */
+
+a[href|="/lunaatthedentist"]{
+    background-image: url(%%lemotes%%) !important
+}
+
+/* Link to Octavia spritesheet */
+
+a[href|="/taviunsure"]{
+    background-image: url(%%oemotes%%) !important
+}
+
+/* Positions of emotes, no matter which spritesheet: ROW-COLUMN */
+
+/* Bigemote 1-2 */
+
+a[href|="/midnightsparkle"]{
+    background-position: -200px 0;
+}
+
+/* Bigemote 1-3 */
+
+a[href|="/twitwi"]{
+    background-position: -400px 0;
+}
+
+/* Bigemote 2-1 */
+
+a[href|="/pinkiesip"]{
+    background-position: 0 140px;
+}
+
+/* Bigemote 2-1 */
+
+a[href|="/midnightredeemed"]{
+    background-position: -200px 140px;
+}
+
+/* 1-2 */
+
+a[href|="/ssplan"],a[href|="/scilightsparkle"],a[href|="/whatarehands"],a[href|="/scidontknow"],a[href|="/celgasp"]{
+    background-position: -70px 0;
+}
+
+/* 1-3 */
+
+a[href|="/ssunsure"],a[href|="/supatwi"],a[href|="/ssdisgusted"],a[href|="/didyoukickthepuppy"],a[href|="/celfunny"]{
+    background-position: -140px 0;
+}
+
+/* 2-1 */
+
+a[href|="/scidork"],a[href|="/ssyoudoin"]{
+    background-position: 0 -70px;
+}
+
+/* 2-2 */
+
+a[href|="/ssproud"],a[href|="/scidontthinkso"]{
+    background-position: -70px -70px;
+}
+
+/* 2-3 */
+
+a[href|="/sstearylaugh"],a[href|="/scilarious"]{
+    background-position: -140px -70px;
+}
+
+/* 3-1 */
+
+a[href|="/supasunset"],a[href|="/scidorksmile"]{
+    background-position: 0 -140px;
+}
+
+/* 3-2 */
+
+a[href|="/ssdidwhatlastnight"],a[href|="/midnight"]{
+    background-position: -70px -140px;
+}
+
+/* 3-3 */
+
+a[href|="/twistrange"],a[href|="/ssangry"]{
+    background-position: -140px -140px;
+}
+
+/* 4-1 */
+
+a[href|="/twiwhaa"]{
+    background-position: 0 -210px;
+}
+
+/* 4-2 */
+
+a[href|="/scicry"]{
+    background-position: -70px -210px;
+}
+
+/* 4-3 */
+
+a[href|="/midnightsmile"]{
+    background-position: -140px -210px;
+}
+
+/* 5-1 */
+
+a[href|="/midnightinme"]{
+    background-position: 0 -280px;
+}
+
+/* 5-2 */
+a[href|="/midnightcry"]{
+    background-position: -70px -280px;
+}
+
+/* 5-3 */
+a[href|="/twiforgiveme"]{
+    background-position: -140px -280px;
+}
+
+/* 6-1 */
+
+a[href|="/mangasparkle"],a[href|="/kamehameha"]{
+    background-position: 0px -350px;
+}
