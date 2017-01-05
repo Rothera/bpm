@@ -31,7 +31,16 @@ var _raw_log;
 
 var CONTAINER_PADDING = 10;
 
-if(_console && _console.log) {
+// We define this up here becuase we have some restrictions on how/when
+// we set up our logger, which happens _before_ we define our browser
+function isEdge() {
+    return !!window.StyleMedia;
+}
+
+/* Edge doesn't allow you to bind _.console.log */
+if(isEdge()) {
+    _raw_log = _console.log;
+} else if(_console && _console.log) {
     _raw_log = _console.log.bind(_console);
 } else if(_gm_log) {
     _raw_log = function() {
@@ -46,7 +55,7 @@ if(_console && _console.log) {
 
 function _wrap_logger(cname, prefix, level) {
     var cfunc;
-    if(_console && _console[cname]) {
+    if(_console && _console[cname] && !isEdge()) {
         cfunc = _console[cname].bind(_console);
     } else {
         cfunc = _raw_log;
@@ -70,7 +79,7 @@ var log_info = _wrap_logger("log", "INFO:", _LOG_INFO);
 var log_warning = _wrap_logger("warn", "WARNING:", _LOG_WARNING);
 var log_error = _wrap_logger("error", "ERROR:", _LOG_ERROR);
 var log_trace = function() {};
-if(_console && _console.trace) {
+if(_console && _console.trace && !isEdge()) {
     log_trace = _console.trace.bind(_console);
 }
 
@@ -89,6 +98,9 @@ if(self.on) {
     platform = "chrome-ext";
 } else if(find_global("safari") && window.name === "") {
     platform = "safari-ext";
+// Edge works via an MS-provided compatibility layer that emulates Chrome's API.
+} else if(isEdge()) {
+    platform = "chrome-ext";
 } else {
     log_error("Unknown platform! Your installation is badly broken.");
     platform = "unknown";
@@ -111,9 +123,10 @@ function catch_errors(f) {
             return f.apply(this, arguments);
         } catch(e) {
             log_error("Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
-            if(e.trace) {
+            if(e.trace || e.stack) {
                 log_error("Stack trace:");
-                log_error(e.trace);
+                // This is apparently `e.stack` in Edge
+                log_error(e.trace || e.stack);
             } else {
                 log_error("Current stack:");
                 // This probably isn't very useful...

@@ -143,6 +143,35 @@ build/chrome.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js
 	# Uncompressed due to prior difficulties with the webstore
 	cd build/chrome && zip -0 ../chrome.zip *
 
+build/edge.zip: $(ADDON_DATA) addon/edge-background.html addon/edge-background.js addon/vendor/backgroundScriptsAPIBridge.js addon/vendor/contentScriptsAPIBridge.js
+	mkdir -p build/edge
+	
+	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/edge-manifest.json > build/edge/manifest.json
+	
+	cp addon/edge-background.html build/edge/background.html
+	cp addon/edge-background.js build/edge/background.js
+	
+	cp build/betterponymotes.js build/edge
+	cp build/bpm-resources.js build/edge
+	cp build/emote-classes.css build/edge
+	cp build/gif-animotes.css build/edge
+	
+	cp addon/bootstrap.css build/edge
+	cp addon/bpmotes.css build/edge
+	cp addon/combiners-nsfw.css build/edge
+	cp addon/extracss-pure.css build/edge
+	cp addon/extracss-webkit.css build/edge
+	cp addon/options.css build/edge
+	cp addon/options.html build/edge
+	cp addon/options.js build/edge
+	cp addon/pref-setup.js build/edge
+	cp addon/vendor/backgroundScriptsAPIBridge.js build/edge
+	cp addon/vendor/contentScriptsAPIBridge.js build/edge
+	
+	cp betterponymotes.pem build/edge/key.pem
+	# Uncompressed due to prior difficulties with the webstore
+	cd build/edge && zip -0 ../edge.zip *
+
 build/BPM.safariextension: $(ADDON_DATA) addon/sf-Settings.plist addon/sf-background.html addon/sf-background.js
 	mkdir -p build/BPM.safariextension
 
