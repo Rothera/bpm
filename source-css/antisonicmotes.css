@@ -100,20 +100,26 @@ a[href="/kingsombrero"]{      background-position:   -600px   -200px; width: 170
 
 /* Fritters Table <3 */
 
-a[href|="/fritballoon"],a[href|="/fritcharm"],a[href|="/frithairdown"],a[href|="/fritkirby"],a[href|="/fritlunch"],a[href|="/fritmunch"],a[href|="/fritsmoothie"]{
+a[href|="/fritballoon"],a[href|="/fritcharm"],a[href|="/frithairdown"],a[href|="/fritkirby"],a[href|="/fritlunch"],a[href|="/fritmunch"],a[href|="/fritsmoothie"],a[href|="/fillyfrits"],a[href|="/fritterstretch"],a[href|="/fritglee"]{
 
 display: block;
    clear: none;
    float: left;
    background-image: url(%%fritterTable%%) }
 
-a[href="/fritballoon"]{ background-position:    0px    0px; width: 150px; height: 300px}
-a[href="/fritcharm"]{   background-position: -225px    0px; width: 70px;  height: 70px}
-a[href="/frithairdown"]{background-position: -150px    0px; width: 75px;  height: 150px}
-a[href="/fritkirby"]{   background-position: -225px  -75px; width: 70px;  height: 70px}
-a[href="/fritlunch"]{   background-position: -150px -150px; width: 150px; height: 150px}
-a[href="/fritmunch"]{   background-position: -300px -150px; width: 130px; height: 150px}
-a[href="/fritsmoothie"]{background-position: -300px    0px; width: 130px; height: 150px}
+a[href="/fritballoon"]{   background-position:    0px    0px; width: 150px; height: 300px}
+a[href="/fritcharm"]{     background-position: -225px    0px; width: 70px;  height: 70px}
+a[href="/frithairdown"]{  background-position: -150px    0px; width: 75px;  height: 150px}
+a[href="/fritkirby"]{     background-position: -225px  -75px; width: 70px;  height: 70px}
+a[href="/fritlunch"]{     background-position: -150px -150px; width: 150px; height: 150px}
+a[href="/fritmunch"]{     background-position: -300px -150px; width: 130px; height: 150px}
+a[href="/fritsmoothie"]{  background-position: -300px    0px; width: 130px; height: 150px}
+a[href="/fillyfrits"]{    background-position:    0px -300px; width: 150px; height: 150px}
+a[href="/fritterstretch"]{background-position: -150px -300px; width: 150px; height: 121px}
+a[href="/fritglee"]{      background-position: -300px -300px; width: 118px; height: 150px}
+
+
+
 
 /* Sheet 3 */
 a[href|="/chcutiemark"],a[href|="/crystalhoof"],a[href|="/flooferponker"],a[href|="/girlscoutcookies"],a[href|="/goldybelle"],a[href|="/kirlybelle"],a[href|="/pokesisters"],a[href|="/cutesockponk"],a[href|="/rdamazed"],a[href|="/sbbackpack"],a[href|="/sbkat"],a[href|="/sbmessymunch"],a[href|="/sweetiebat2"],a[href|="/skittledash"],a[href|="/twilydashiehug"],a[href|="/roblightsparkten"],a[href|="/hoodiefrits"]{
@@ -164,7 +170,7 @@ a[href|="/theBengersFavoritestPonyEver"]
 }
 
 /* Big Table */
-a[href|="/sbdissapointed"],a[href|="/sbperplex"]
+a[href|="/sbstern"],a[href|="/sbperplex"]
 {
 
    display: block;
@@ -172,7 +178,7 @@ a[href|="/sbdissapointed"],a[href|="/sbperplex"]
    float: left;
    background-image: url(%%BigTable%%) }
 
-a[href="/sbdissapointed"]{  background-position:   0px      0px; width: 150px; height: 378px}
+a[href="/sbstern"]{  background-position:   0px      0px; width: 150px; height: 378px}
 a[href="/sbperplex"]{       background-position:   -150px   0px; width: 150px; height: 200px}
 
 

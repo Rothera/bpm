@@ -34,8 +34,8 @@
 
 
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" t̯̞͍̟̼̝h̭̙̣̣̞͉e̬̘ͅ ̙̦ͅh̻͔̠̭͔i̗̱a̯͖̖̬ͅt̩̮̰̤̱u̙͈̺̖s͈͇̗"}
-div.titlebox .users-online span.number:after {content:" ̖̹̟͈͇͎͖͓ͧͣͩ̌̿i̳͕̞̻̼t̹͔͕̘͈̭ͅ ̲̫̺c̘̘̭̜o̫͇m̫̭͓̖͔͈ẹ̗̥̝̝̦̟s̳̰̺̩̳"}
+div.titlebox .subscribers span.number:after {content:" New Years Resolutions"}
+div.titlebox .users-online span.number:after {content:" Actually Kept"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -123,7 +123,7 @@ border-top-right-radius: 5px;
 
 #header-img
 { 
- margin:-6px 23px -20px 15px;
+ margin:-6px 23px -3px 15px;
 }
 
 #header-bottom-left{padding-top:10px}
@@ -177,14 +177,14 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%burnt-hat%%);
+ background:url(%%pinkie-alarm-hat%%);
  width:70px;
  height:70px;
  margin-top:-45px;
  margin-left:5px;
  margin-bottom:0px;
  margin-right:-45px;
- background-position:-300% -700%; /*To select emote table position. Increments of -100%.*/
+ background-position:-0% -0%; /*To select emote table position. Increments of -100%.*/
  transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 .thumbnail {background-size: 70px 730px !important}
@@ -229,30 +229,28 @@ a[href="/spoiler"]:hover,a[href="/s"]:hover{color:white!important}
 /*Pinkie Pie NPT Warnings*/
 /*DO NOT PUT _ANY_ COMMENTS IN-BETWEEN THE NPTWARNING TAGS! Do not remove the tags either, they are used by modtool and the bot! The tags must be on their own line!*/
 /*{NPTWARNING}
-.formtabs-content .infobar
+.formtabs-content
 {
- margin-left:50px;
- margin-top:137px;
+ width:390px;
+ border-top-width:4px;
  font-size:0px;
- color:#F6E69F;
- padding:0;
  content:"";
 }
 
-.formtabs-content .infobar:before
+.formtabs-content:before
 {
  display:inline-block;
- margin:-137px -65px -8px -101px;
- padding:143px 5px 14px 126px;
- width:438px;
+ margin:0px 0px -8px 0px;
+ padding:143px 5px 25px 126px;
+ width:389px;
  height:30px;
  background:url(%%pinkiemessage%%) no-repeat;
  content:"Hey you! It's No Pics Thursday! So no submitting pictures, ok? No need to worry though, you can save your pictures for another day!";
- font-size:12px;
+ font-size:11px;
  color:black;
 }
 
-.formtabs-content .infobar#text-desc:before
+.formtabs-content#text-desc:before
 {
  background:url(%%pinkiemessage%%) no-repeat;
 }

@@ -1,48 +1,21 @@
 .id-t3_145m8r.link .title{font-size:large}
 
 /* comment box image */
-.commentarea textarea:not(:focus) { background-image: url(%%snap1%%); }
- 
-/*SNOW BEGINS */
-
-#header:after {
-content: "";
-background: url(%%Snow2%%);
-position: absolute;
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-z-index: 999;
-pointer-events: none;
--webkit-animation: snow 1.3s steps(19) infinite;
--moz-animation: snow 1.3s steps(19) infinite;
--ms-animation: snow 1.3s steps(19) infinite;
--o-animation: snow 1.3s steps(19) infinite;
-animation: snow 1.3s steps(19) infinite; 
-}
+.commentarea textarea:not(:focus) { background-image: url(%%snap%%); }
 
 
-@-webkit-keyframes snow {from{background-position: 0 0;}to{ background-position: 0px -5700px; }} 
-@-moz-keyframes snow {from {background-position: 0 0;}to{ background-position: 0px -5700px; } } 
-@-ms-keyframes snow{from {background-position: 0 0; }to{ background-position: 0px -5700px; } } 
-@-o-keyframes snow {from {background-position: 0 0; }to{ background-position: 0px -5700px; } } 
-@keyframes snow {from { background-position: 0 0; }to{ background-position: 0px -5700px; } } 
-
-
- 
 /* Replace Cursors */
 /*<%jeroknite> mfw Pwny is slowly turning the sub into a geocities site*/
 body {
-cursor: url(%%Cursor%%), default !important;
+cursor: url(%%cursor2%%), default !important;
 }
-a { cursor: url(%%CursorHover%%), pointer; }
+a { cursor: url(%%cursor1%%), pointer; }
 
 
 /* Changes background  */
 
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%Blip-Toys-Fluttershy-Pencil-Topper%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%watching%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -55,10 +28,10 @@ a { cursor: url(%%CursorHover%%), pointer; }
     width:100%;
     clear:both;
 }
-/*COMMENTING OUT FOR SPOOKS */
+
 
  #header #header-bottom-left {
-   background: url(%%SecretSanta6%%) 50% 15px !important;
+   background: url(%%ZEjC7X5%%) 50% 15px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -705,7 +678,9 @@ a.author[href$="V17Ds"],
 a.author[href$="Rudicorn"],
 a.author[href$="DiscordDraconequus"],
 a.author[href$="clonger"],
+a.author[href$="GhostOfStabbyPast"],
 a.author[href$="spearstuff"],
+a.author[href$="IndigoMichigan"],
 a.author[href$="Juz16"],
 a.author[href$="EvanMacIan"],
 a.author[href$="kcirvam"],
@@ -839,6 +814,8 @@ a.author[href$="thezooman123"]:before,
 a.author[href$="Rudicorn"]:before,
 a.author[href$="DiscordDraconequus"]:before,
 a.author[href$="clonger"]:before,
+a.author[href$="GhostOfStabbyPast"]:before,
+a.author[href$="IndigoMichigan"]:before,
 a.author[href$="spearstuff"]:before,
 a.author[href$="Juz16"]:before,
 a.author[href$="EvanMacIan"]:before,
@@ -1048,6 +1025,7 @@ a.author[href$=Nagashizuri]:before { content:"Maga" }
 a.author[href$=andresonic1]:before { content:"Fake" }
 a.author[href$=Bflat13]:before { content:"MOTHER FUCKING SUGAR!" }
 a.author[href$=clonger]:before { content:"Clinger" }
+a.author[href$=GhostOfStabbyPast]:before { content:"GhostOfStabbyPast" }
 a.author[href$=FUCKING_HATE_REDDIT]:before { content:"Freakin' Dislike Webplace" }
 a.author[href$=andysonic3]:before { content:"Chibi Sailor Andy" }
 a.author[href$=andysonic0]:before { content:"Mini Andy" }
@@ -1075,6 +1053,7 @@ a.author[href$=The_Assistant]:before { content:"SuperAtomica" }
 a.author[href$=topkekbestkek]:before { content:"Partypoops McFlaccid" }
 a.author[href$=DoomKey]:before { content:"Scarfsickle" }
 a.author[href$=spearstuff]:before { content:"spearstuff" }
+a.author[href$=IndigoMichigan]:before { content:"Indi" }
 a.author[href$=DRANKLE]:before { content:"T-Light aka NOT-DRANKLE" }
 a.author[href$=thisisgenny]:before { content:"genny" }
 a.author[href$=throwawayaccount997]:before { content:"Fritters" }
@@ -1752,38 +1731,47 @@ RES highlighted comment
 .midcol {
     width: 30px;
 overflow:visible;
+
     }
 .comment .midcol{
 position:relative;
 
-padding:0px 5px 0px 0px;
+
+padding:0px 15px 0px 0px;
+}
+
+.link .midcol{
+position:relative;
+
+
+padding:0px 14px 0px 0px;
 }
 
 div.up {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%spoopy%%) !important;
+    background: url(%%arrows%%) !important;
     background-repeat: no-repeat !important;
-    background-position: 0px -60px !important
+    background-position: 0px 0px !important
     }
 div.down {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%spoopy%%) !important;
+    background: url(%%arrows%%) !important;
     background-repeat: no-repeat !important;
-    background-position: 0px -90px !important
+    background-position: 0px -30px !important
     }
 div.upmod {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%spoopy%%) !important;
+    background: url(%%arrows%%) !important;
     background-repeat: no-repeat !important;
-    background-position: 0px 0px !important
+    background-position: 0px -60px !important
     }
 div.downmod {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%spoopy%%) !important;
+    background: url(%%arrows%%) !important;
     background-repeat: no-repeat !important;
-    background-position: 0px -30px !important
+    background-position: 0px -90px !important
     }
