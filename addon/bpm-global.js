@@ -81,6 +81,10 @@ function disableCodeBlocks(node) {
     return node.tagName === 'CODE';
 }
 
+function disableEmotesInSearch(node) {
+    return node.classList.contains('search');
+}
+
 function createDisablePredicate(store) {
     var predicates = [];
     if(store.prefs.disableDisruptiveEmotes) {
@@ -90,6 +94,8 @@ function createDisablePredicate(store) {
         predicates.push(disableCodeBlocks);
     }
     
+    prediactes.push(disableEmotesInSearch);
+
     function disabledEmotesPredicate(node) {
         var i = 0;
         while(i < predicates.length) {
