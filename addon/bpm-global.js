@@ -94,7 +94,7 @@ function createDisablePredicate(store) {
         predicates.push(disableCodeBlocks);
     }
     
-    prediactes.push(disableEmotesInSearch);
+    predicates.push(disableEmotesInSearch);
 
     function disabledEmotesPredicate(node) {
         var i = 0;
