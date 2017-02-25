@@ -15,7 +15,7 @@ a { cursor: url(%%cursor1%%), pointer; }
 /* Changes background  */
 
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%watching%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%cheerilove%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -31,7 +31,7 @@ a { cursor: url(%%cursor1%%), pointer; }
 
 
  #header #header-bottom-left {
-   background: url(%%ZEjC7X5%%) 50% 15px !important;
+   background: url(%%lovebanner%%) 50% 28px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -74,29 +74,39 @@ a { cursor: url(%%cursor1%%), pointer; }
 z-index:110 !important;
 }
 
+/*
 /*spinning Esplin */
-
+/*
 #header-img { 
-    -webkit-animation:spin 30000s linear infinite;
-    -moz-animation:spin 30000s linear infinite;
-    -ms-animation:spin 30000s linear infinite;
-    -o-animation:spin 30000s linear infinite;
-    animation:spin 30000s linear infinite;
+    -webkit-animation:spin .5s linear infinite;
+    -moz-animation:spin .5s linear infinite;
+    -ms-animation:spin .5s linear infinite;
+    -o-animation:spin .5s linear infinite;
+    animation:spin .5s linear infinite;
 }
-
+*/
 /* Rotating banner */
 /*
 #header { 
-    -webkit-animation:spin 8000s linear infinite;
-    -moz-animation:spin 8000s linear infinite;
-    -ms-animation:spin 8000s linear infinite;
-    -o-animation:spin 8000s linear infinite;
-    animation:spin 8000s linear infinite;
+    -webkit-animation:spin 8s linear infinite;
+    -moz-animation:spin 8s linear infinite;
+    -ms-animation:spin 8s linear infinite;
+    -o-animation:spin 8s linear infinite;
+    animation:spin 8s linear infinite;
 }
+*/*
+/* just fuck my shit up */
+/*
+.flair:after { 
+    -webkit-animation:spin 1s linear infinite;
+    -moz-animation:spin 1s linear infinite;
+    -ms-animation:spin 1s linear infinite;
+    -o-animation:spin 1s linear infinite;
+    animation:spin 1s linear infinite;
+}
+
+
 */
-
-
-
 
 #header-img-a {
 /* with logo
@@ -615,7 +625,7 @@ background-repeat: no-repeat;
 .flair-mocha2007:after { background-position: 0px -7410px }
 .flair-memekip:after { background-position: 0px -7440px }
 .flair-davideberjerack:after { background-position: 0px -7470px }
-
+.flair-iojack:after { background-position: 0px -7500px }
 
 
 
@@ -1750,28 +1760,28 @@ padding:0px 14px 0px 0px;
 div.up {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%arrows%%) !important;
+    background: url(%%valenvote%%) !important;
     background-repeat: no-repeat !important;
-    background-position: 0px 0px !important
+    background-position: 0px -60px !important
     }
 div.down {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%arrows%%) !important;
+    background: url(%%valenvote%%) !important;
     background-repeat: no-repeat !important;
-    background-position: 0px -30px !important
+    background-position: 0px -90px !important
     }
 div.upmod {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%arrows%%) !important;
+    background: url(%%valenvote%%) !important;
     background-repeat: no-repeat !important;
-    background-position: 0px -60px !important
+    background-position: 0px 0px !important
     }
 div.downmod {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%arrows%%) !important;
+    background: url(%%valenvote%%) !important;
     background-repeat: no-repeat !important;
-    background-position: 0px -90px !important
+    background-position: 0px -30px !important
     }

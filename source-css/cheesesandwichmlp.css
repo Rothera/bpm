@@ -1,63 +1,36 @@
 /*** Thumbnails ***/
 
 .thumbnail:empty { background-image: url(%%thumbnails%%) !important; background-size: auto; height: 50px }
-.thumbnail.self { background-position: -0px -120px !important }
+.thumbnail.self { background-position: 0 -120px }
 .thumbnail.nsfw { visibility: hidden !important }
-.thumbnail.default { background-position: -0px -70px !important }
+.thumbnail.default { background-position: 0 -70px }
+.thumbnail.spoiler { background-position: 0 0; height: 70px }
+.self .thumbnail.spoiler { height: 64px; background-position: 0 -120px }
 
-.linkflair-spoilers .thumbnail img { display: none }
+.spoiler[data-fullname$="d"] .thumbnail, .spoiler[data-fullname$="i"] .thumbnail,
+.spoiler[data-fullname$="s"] .thumbnail, .spoiler[data-fullname$="c"] .thumbnail,
+.spoiler[data-fullname$="e"] .thumbnail, .spoiler[data-fullname$="n"] .thumbnail,
+.spoiler[data-fullname$="t"] .thumbnail, .spoiler[data-fullname$="a"] .thumbnail
+{ background-position: 0 -170px }
 
-.linkflair-spoilers .thumbnail {
-  background-image: url(%%thumbnails%%) !important;
-  height: 70px;
-  background-position: 0 0 !important;
-}
-
-.linkflair-spoilers[data-fullname$="d"] .thumbnail, .linkflair-spoilers[data-fullname$="i"] .thumbnail,
-.linkflair-spoilers[data-fullname$="s"] .thumbnail, .linkflair-spoilers[data-fullname$="c"] .thumbnail,
-.linkflair-spoilers[data-fullname$="e"] .thumbnail, .linkflair-spoilers[data-fullname$="n"] .thumbnail,
-.linkflair-spoilers[data-fullname$="t"] .thumbnail, .linkflair-spoilers[data-fullname$="a"] .thumbnail { background-position: -0px -170px !important }
-
-.linkflair-spoilers .thumbnail.self { height: 64px !important; background-position: 0 -120px !important }
+.linkflair-titlespoiler .linkflairlabel { display: none }
+.linkflair-titlespoiler p.title a.title { opacity: 0 }
+.linkflair-titlespoiler p.title a.title:hover { opacity: 1 }
+.linkflair-titlespoiler p.title:before { content: "[SPOILER] " }
+.flairselector .linkflairlabel { display: unset }
 
 /*** Rating Tags ***/
 
-.nsfw-stamp {
-  color: #5f99cf;
-  padding: 0px 3px !important;
-}
+.stamp { border: 1px solid #5f99cf; }
+.stamp acronym { font-size: 0; line-height: 0; }
+.stamp acronym::after, .stamp span { color: #336699; }
+.stamp acronym::after { font-size: 10px; line-height: 14px; content: "PG"; }
 
-.nsfw-stamp acronym{
-  display: inline-block;
-  font-size: 0px !important;
-}
-
-.nsfw-stamp acronym:after{
-  color: #336699 !important;
-  content: "PG" !important;
-  display: block;
-  font-size: x-small !important;
-  text-decoration: none;
-  margin-top: -14px;
-}
-
-.marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"] {
-  font-size: 0px !important;
-  display: inline-block;
-  vertical-align: top;
-  overflow: hidden;
-  letter-spacing: -20px;
-  content: "";
-}
-
-.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before {
-  font-size: 9px !important;
-  display: block;
-  letter-spacing: normal;
-  content:"tag PG";
-}
-
-.unmarknsfw-button a[href="#"]:before { content:"un-tag PG" }
+.marknsfw-button .togglebutton,
+.unmarknsfw-button .togglebutton { font-size: 0; line-height: 0; }
+.unmarknsfw-button .togglebutton::after,
+.marknsfw-button .togglebutton::after { font-size: x-small; line-height: 1.6em; content: "tag PG"; }
+.unmarknsfw-button .togglebutton::after { content:"untag PG"; }
 
 /*** Theme ***/
 
@@ -436,17 +409,14 @@ a[href|="/cheesetrot"] {
 /*** Flairs ***/
 
 .flair {
-  padding: 0;
-  background: none;
-  color: black;
   border: 0;
-  border-radius: 0;
-  background-image: url(%%flair-table%%);
-  display: inline-block;
+  padding: 0;
   width: 16px;
   height: 16px;
-  text-indent: -9999px;
-  line-height: 240%;
+  text-indent: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  background: url(%%flair-table%%);
 }
 
 .flair-rainbowdash { background-position: 0 0; }

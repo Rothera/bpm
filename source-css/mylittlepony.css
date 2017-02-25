@@ -177,7 +177,7 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%pinkie-alarm-hat%%);
+ background:url(%%trixie-hat%%);
  width:70px;
  height:70px;
  margin-top:-45px;
@@ -187,18 +187,19 @@ border-top-right-radius: 5px;
  background-position:-0% -0%; /*To select emote table position. Increments of -100%.*/
  transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
-.thumbnail {background-size: 70px 730px !important}
+.thumbnail {background-size: 70px 800px !important}
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important;height:70px;}
 .thumbnail.self{background-position:0px -120px!important}
-.thumbnail.nsfw{background-position:0px 0px!important}
+.thumbnail.spoiler{background-position:0px 0px!important}
 .thumbnail.default{ background-position:0px -70px;height:50px!important}
-.linkflair-eqg3 > .thumbnail.nsfw, .linkflair-eqg4 > .thumbnail.nsfw { background-position:0px -240px!important}
-.linkflair-leak > .thumbnail.nsfw { background-position:0px -310px!important}
-.linkflair-tfiocmleak > .thumbnail.nsfw, .linkflair-mirrorpolandleak > .thumbnail.nsfw { background-position:0px -520px!important}
-.linkflair-fecontent > .thumbnail.nsfw, .linkflair-ep8 > .thumbnail.nsfw, .linkflair-fespoiler > .thumbnail.nsfw, .linkflair-rafcontent > .thumbnail.nsfw, .linkflair-2017movie > .thumbnail.nsfw { background-position:0px -380px!important}
-.linkflair-comicspoiler > .thumbnail.nsfw, .linkflair-comictitlespoiler > .thumbnail.nsfw { background-position:0px -450px!important}
-.linkflair-loebrleak > .thumbnail.nsfw { background-position:0px -590px!important}
-.linkflair-s6e24 > .thumbnail.nsfw, .linkflair-s6e25 > .thumbnail.nsfw, .linkflair-s6e26 > .thumbnail.nsfw { background-position:0px -660px!important}
+.linkflair-eqg3 > .thumbnail.spoiler, .linkflair-eqg4 > .thumbnail.spoiler { background-position:0px -240px!important}
+.linkflair-leak > .thumbnail.spoiler { background-position:0px -310px!important}
+.linkflair-tfiocmleak > .thumbnail.spoiler, .linkflair-mirrorpolandleak > .thumbnail.spoiler { background-position:0px -520px!important}
+.linkflair-fecontent > .thumbnail.spoiler, .linkflair-ep8 > .thumbnail.spoiler, .linkflair-fespoiler > .thumbnail.spoiler, .linkflair-rafcontent > .thumbnail.spoiler{ background-position:0px -380px!important}
+.linkflair-comicspoiler > .thumbnail.spoiler, .linkflair-comictitlespoiler > .thumbnail.spoiler { background-position:0px -450px!important}
+.linkflair-loebrleak > .thumbnail.spoiler { background-position:0px -590px!important}
+.linkflair-s6e24 > .thumbnail.spoiler, .linkflair-s6e25 > .thumbnail.spoiler, .linkflair-s6e26 > .thumbnail.spoiler { background-position:0px -660px!important}
+.linkflair-2017movie > .thumbnail.spoiler { background-position:0px -730px!important}
 
 
 a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott,a.author.id-t2_dq6ce,a.author.id-t2_5qkuh,a.author.id-t2_wptze,a.author.id-t2_y83l6,a.author.id-t2_mrnbd{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
@@ -267,16 +268,16 @@ a[href="/spoiler"]:hover,a[href="/s"]:hover{color:white!important}
  content:""
 }
 
-.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before
+/*.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before
 {
  font-size:10px!important;
  display:block;
  letter-spacing:normal;
  content:"spoiler"
-}
-.unmarknsfw-button a[href="#"]:before{content:"un-spoiler";}
+}*/
+/*.unmarknsfw-button a[href="#"]:before{content:"un-spoiler";}*/
 
-.nsfw-stamp acronym
+/*.nsfw-stamp acronym
 {
  display:inline-block;
  font-size:0px!important;
@@ -325,7 +326,7 @@ noindex:-o-prefocus, .nsfw-stamp acronym {
     content: "Click to see spoiler";
 }
 
-div.over18 .entry .buttons .first{padding-left: 0px}
+div.over18 .entry .buttons .first{padding-left: 0px}*/
 
 /*Subreddit Wiki CSS*/
 .wiki-page h5

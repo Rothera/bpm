@@ -1,4 +1,3 @@
-
 /*Background upload a new file with the filename bg at 500kb or less to allow it to upload and replace the background file. You have to hit save when you are done or it will not show the image globally. Normally I will do the opacity around 15% or less to make sure it does not disrupt the text. For ones that work like the present one I will add 300px to the side so they pass the sidebar.
 
 To move it from the side to the middle change Background-position: bottom right; to Background-position: center center;*/
@@ -31,7 +30,7 @@ h2 {
     font-weight:bold;  
     font-size:14px;  
     margin:15px 0px;
-    padding:5px 89px;
+    padding:0px 89px;
     background-color:#33AADD;
     border:1px solid #0088BB;
     text-align:center;
@@ -199,6 +198,8 @@ margin-right:0px;
     font-size:14px;  
     margin: 0 11px 0;  
     line-height:1.4;
+    border-top-left-radius: 1em 1.5em;
+    border-top-right-radius:1em 1.5em;
 }  
 .tabmenu li.selected a {  
     color:red;  
@@ -224,8 +225,7 @@ ul.tabmenu {
  
     position:absolute; 
     top:90px;
-    right:41px;
-    border-top-right-radius: 7px;
+    right:0px;
     bottom:0px;
 }  
 #header-bottom-right.res-navTop {                      
@@ -287,8 +287,7 @@ ul.tabmenu {
     top: 0px;  
     line-height:1.4;
     right:  20px;  
-    margin: 28px 5px 5px 15px;    
-    background-color: transparent !important;  
+    margin: 28px 5px 5px 15px;      
     font-size:0px;
     border-left:none;
     float:right;
@@ -314,7 +313,8 @@ ul.tabmenu {
 */  
 
 .side {  
-    padding: 33px 0px 0px 25px;  
+    padding: 27px 0px 0px 5px;
+    margin: 0px 0px 0px 0px;
     background:none;  
 }  
 form#search {  
@@ -420,7 +420,6 @@ a.author {
 .side .usertext-body .md {
   padding: 5px 5px 10px;
   margin-top:1px;
-  background-color:#F6F9FC !important;
   width: 288px;
  
 
@@ -761,7 +760,7 @@ a[href$="/spoiler"]:hover {
     color: #FFF !important
     }
 
-/* Add the blue backdrop to the odd links */
+/* Add the blue backdrop to the odd links 
 
 .sitetable > .link:first-child, .link ~ .odd {
 -moz-border-radius: 10px;
@@ -769,7 +768,7 @@ a[href$="/spoiler"]:hover {
 background: url(%%20tile%%) ;
 border-radius: 10px;
 margin-right: 320px;
-}
+}*/
 
 
 /* Linkable notification at the top 
@@ -786,7 +785,7 @@ That big yellow box thing
  */
 .titlebox .usertext-body .md table ~ table {
     width: 100%;
-    background-color: #FFFEE6;
+    background-color: #96FF96;
     position: absolute;
     font-size: 13px;
     top: 116px;
@@ -810,7 +809,7 @@ That big yellow box thing
     padding-top: 5px;
     padding-bottom: 5px;
     width: 25%;
-    border: 1px solid #E1B000;
+    border: 1px solid #50FC50;
 }
 
 .wiki-page .md {

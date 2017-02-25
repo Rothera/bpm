@@ -51,7 +51,7 @@ background-position: 0 -40px;
 background-position: 0 -40px;
         }
 /* Replace the spoiler image with AJ */
-.thumbnail.nsfw {
+.thumbnail.spoiler {
     background-image: url(%%spoiler%%);
     background-repeat: no-repeat;
     width: 70px;
@@ -297,16 +297,14 @@ a[href="/s"]:hover::after {
 .stylesheet-customize-container textarea { height: 600px; }
 
 .flair {
-  padding:0;
-  background:url(%%flair-table%%);
-  color:black;
-  border:0;
-  border-radius:0;
-  display:inline-block;
-  width:16px;
-  height:16px;
-  text-indent:-9999px;
-  line-height:240%;
+  border: 0;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  text-indent: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  background: url(%%flair-table%%);
 }
 
 .res-nightmode .tagline .flair { background-color: transparent !important }

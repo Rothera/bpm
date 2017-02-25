@@ -273,34 +273,24 @@ background-color:white;
     color:rgb(139, 0, 100)!important;
 }
 
-.thumbnail:empty { background-size: auto; }
+/* thumbnails */
 
-.thumbnail.self {
-    height:50px;
-    width:70px;
-    background-image:url(%%thumbsprites%%);
-    background-position:0 0;
+.thumbnail:empty {
+  width: 70px;
+  height: 50px;
+  background-image: url(%%thumbsprites%%) !important;
+  background-size: auto;
 }
+.thumbnail.self { background-position: 0 0 }
+.thumbnail.nsfw { visibility: hidden !important }
+.thumbnail.default { background-position: 0 -50px }
+.thumbnail.spoiler { background-position: 0 -100px }
 
-.thumbnail.default {
-    height:50px;
-    width:70px;
-    background-image:url(%%thumbsprites%%);
-    background-position:0 -50px;
-}
-
-.thumbnail.nsfw {
-    height:50px;
-    width:70px;
-    background-image:url(%%thumbsprites%%);
-    background-position:0 -100px;
-}
-
-.linkflair-fimspoiler > .thumbnail.nsfw, .linkflair-fimtitlespoiler > .thumbnail.nsfw
+.linkflair-fimspoiler > .thumbnail.spoiler, .linkflair-fimtitlespoiler > .thumbnail.spoiler
 { background-position: 0 -250px }
-.linkflair-futurecontent > .thumbnail.nsfw, .linkflair-fctitlespoiler > .thumbnail.nsfw
+.linkflair-futurecontent > .thumbnail.spoiler, .linkflair-fctitlespoiler > .thumbnail.spoiler
 { background-position: 0 -200px }
-.linkflair-comicspoiler > .thumbnail.nsfw, .linkflair-comictitlespoiler > .thumbnail.nsfw
+.linkflair-comicspoiler > .thumbnail.spoiler, .linkflair-comictitlespoiler > .thumbnail.spoiler
 { background-position: 0 -150px }
 
 h2 {
@@ -620,45 +610,6 @@ textarea {
 }
 
 /* rating tags */
-
-.nsfw-stamp {
-  color: #5f99cf;
-  padding: 0px 3px !important;
-}
-
-.nsfw-stamp acronym{
-  display: inline-block;
-  font-size: 0px !important;
-  border: 0;
-}
-
-.nsfw-stamp acronym:after{
-  color: #336699 !important;
-  content: "SPOILER" !important;
-  display: block;
-  font-size: x-small !important;
-  text-decoration: none;
-  font-family: Helvetica, Arial, sans-serif;
-  margin-top: -14px;
-}
-
-.marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"] {
-  font-size: 0px !important;
-  display: inline-block;
-  vertical-align: top;
-  overflow: hidden;
-  letter-spacing: -20px;
-  content: "";
-}
-
-.unmarknsfw-button a[href="#"]:before, .marknsfw-button a[href="#"]:before {
-  font-size: 9px !important;
-  display: block;
-  letter-spacing: normal;
-  content:"spoiler";
-}
-
-.unmarknsfw-button a[href="#"]:before { content:"un-spoiler" }
 
 .linkflair .linkflairlabel { display: none }
 .linkflair-titlespoiler p.title a.title, .linkflair-fimtitlespoiler p.title a.title,
@@ -1009,24 +960,18 @@ a[href="/s"]:hover::after {
 #sr-form textarea[name="description"],
 .stylesheet-customize-container textarea { height: 600px; }
 
-.flair, .moderator ~ .userattrs:before {
-  padding:0;
-  background:url(%%flair-table%%);
-  color:black;
-  border:0;
-  border-radius:0;
-  display:inline-block;
-  width:16px;
-  height:16px;
-  text-indent:-9999px;
-  line-height:240%;
+.flair {
+  border: 0;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  text-indent: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  background: url(%%flair-table%%);
 }
 
-.tagline .moderator ~ .flair { display: none }
-.moderator ~ .userattrs:before {
-  margin: 0 0.5em -0.25em 0;
-  content: '';
-}
+.moderator ~ .flair { background-position: -300% -100% !important }
 
 .res-nightmode .tagline .flair { background-color: transparent !important }
 
@@ -1334,7 +1279,7 @@ a[href|="/cadence"],a[href|="/cadance"],a[href|="/princesscadance"],a[href|="/pr
 a[href|="/flutterroll"],a[href|="/rflutterroll"],a[href|="/fluttershy"],a[href|="/rfluttershy"],a[href|="/trixiesad"],a[href|="/rtrixiesad"],a[href|="/twisad"],a[href|="/rtwisad"],a[href|="/flutterhay"],a[href|="/rflutterhay"],.flair-applejack
 {background-position:-300% 0}
 
-a[href|="/spikemeh"],a[href|="/rspikemeh"],a[href|="/rdsmile"],a[href|="/rrdsmile"],a[href|="/changeling"],a[href|="/rchangeling"],a[href|="/lunamad"],a[href|="/rlunamad"],a[href|="/sbwtf"],a[href|="/rsbwtf"],.flair-cmc,.moderator~.userattrs:before
+a[href|="/spikemeh"],a[href|="/rspikemeh"],a[href|="/rdsmile"],a[href|="/rrdsmile"],a[href|="/changeling"],a[href|="/rchangeling"],a[href|="/lunamad"],a[href|="/rlunamad"],a[href|="/sbwtf"],a[href|="/rsbwtf"],.flair-cmc
 {background-position:-300% -100%}
 
 a[href|="/abmeh"],a[href|="/rabmeh"],a[href|="/rdwut"],a[href|="/rrdwut"],a[href|="/rdscared"],a[href|="/rrdscared"],a[href|="/discordsad"],a[href|="/rdiscordsad"],a[href|="/nightmaregrin"],a[href|="/rnightmaregrin"],.flair-vinyl

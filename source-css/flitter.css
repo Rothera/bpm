@@ -77,17 +77,14 @@ a[href|="/fillyflitter"]
 }
 
 .flair {
-  padding: 0;
-  background: none;
-  color: black;
   border: 0;
-  border-radius: 0;
-  background-image: url(%%flair-table%%);
-  display: inline-block;
+  padding: 0;
   width: 16px;
   height: 16px;
-  text-indent: -9999px;
-  line-height: 240%;
+  text-indent: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  background: url(%%flair-table%%);
 }
 
 .md { overflow: auto }
