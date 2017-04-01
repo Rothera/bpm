@@ -392,3 +392,24 @@ a[href|='/juice']{
     }
 
 a[href|='/juice']{ background-position: -0px -0px; width: 962px; height: 985px; }
+
+a[href|='/erisfrench'], 
+a[href|='/eriswave'], 
+a[href|='/erislounge'], 
+a[href|='/erispixel'], 
+a[href|='/erispls'], 
+a[href|='/erisshrug'], 
+a[href|='/erissultry']{
+	display: block;
+	clear: none;
+	float: left;
+	background-image: url(%%eris1%%)
+	}
+	
+a[href|='/erisfrench']{background-position: -4px -0px; width: 146px; height: 202px; }
+a[href|='/eriswave']{background-position: -15px -202px; width: 128px; height: 150px; }
+a[href|='/erislounge']{background-position: -4px -352px; width: 150px; height: 140px; }
+a[href|='/erispixel']{background-position: -0px -492px; width: 150px; height: 127px; }
+a[href|='/erispls']{background-position: -2px -619px; width: 150px; height: 284px; }
+a[href|='/erisshrug']{background-position: -2px -903px; width: 150px; height: 167px; }
+a[href|='/erissultry']{background-position: -2px -1070px; width: 150px; height: 240px; }

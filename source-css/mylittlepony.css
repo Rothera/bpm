@@ -34,8 +34,8 @@
 
 
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" New Years Resolutions"}
-div.titlebox .users-online span.number:after {content:" Actually Kept"}
+div.titlebox .subscribers span.number:after {content:" New Comics"}
+div.titlebox .users-online span.number:after {content:" People Who Need To Read Them"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -195,7 +195,7 @@ border-top-right-radius: 5px;
 .linkflair-eqg3 > .thumbnail.spoiler, .linkflair-eqg4 > .thumbnail.spoiler { background-position:0px -240px!important}
 .linkflair-leak > .thumbnail.spoiler { background-position:0px -310px!important}
 .linkflair-tfiocmleak > .thumbnail.spoiler, .linkflair-mirrorpolandleak > .thumbnail.spoiler { background-position:0px -520px!important}
-.linkflair-fecontent > .thumbnail.spoiler, .linkflair-ep8 > .thumbnail.spoiler, .linkflair-fespoiler > .thumbnail.spoiler, .linkflair-rafcontent > .thumbnail.spoiler{ background-position:0px -380px!important}
+.linkflair-fecontent > .thumbnail.spoiler, .linkflair-ep8 > .thumbnail.spoiler, .linkflair-fespoiler > .thumbnail.spoiler, .linkflair-rafcontent > .thumbnail.spoiler, .linkflair-fecomic > .thumbnail.spoiler{ background-position:0px -380px!important}
 .linkflair-comicspoiler > .thumbnail.spoiler, .linkflair-comictitlespoiler > .thumbnail.spoiler { background-position:0px -450px!important}
 .linkflair-loebrleak > .thumbnail.spoiler { background-position:0px -590px!important}
 .linkflair-s6e24 > .thumbnail.spoiler, .linkflair-s6e25 > .thumbnail.spoiler, .linkflair-s6e26 > .thumbnail.spoiler { background-position:0px -660px!important}
@@ -254,8 +254,8 @@ a[href="/spoiler"]:hover,a[href="/s"]:hover{color:white!important}
 .formtabs-content#text-desc:before
 {
  background:url(%%pinkiemessage%%) no-repeat;
-}
-{/NPTWARNING}*/
+}*/
+/*{/NPTWARNING}*/
 
 /* Spoiler Setter*/
 .marknsfw-button a[href="#"], .unmarknsfw-button a[href="#"]
@@ -1223,10 +1223,10 @@ span.linkflairlabel[title="Future episode spoilers"]
 }
 
 /*Title spoilers styling*/
-.linkflair-egspoiler .linkflairlabel, .linkflair-comictitlespoiler .linkflairlabel, .linkflair-spoiler .linkflairlabel, .linkflair-comicspoiler .linkflairlabel, .linkflair-fecontent .linkflairlabel, .linkflair-2017movie .linkflairlabel, .linkflair-eqg3 .linkflairlabel, .linkflair-eqg4 .linkflairlabel, .linkflair-leak .linkflairlabel, .linkflair-tfiocmleak .linkflairlabel, .linkflair-rafcontent .linkflairlabel, .linkflair-graphic .linkflairlabel, .linkflair-loebrleak .linkflairlabel, .linkflair-s6e23 .linkflairlabel, .linkflair-s6e24 .linkflairlabel, .linkflair-s6e25 .linkflairlabel, .linkflair-s6e26 .linkflairlabel {display:none;}
+.linkflair-egspoiler .linkflairlabel, .linkflair-comictitlespoiler .linkflairlabel, .linkflair-spoiler .linkflairlabel, .linkflair-comicspoiler .linkflairlabel, .linkflair-fecontent .linkflairlabel, .linkflair-2017movie .linkflairlabel, .linkflair-eqg3 .linkflairlabel, .linkflair-eqg4 .linkflairlabel, .linkflair-leak .linkflairlabel, .linkflair-tfiocmleak .linkflairlabel, .linkflair-rafcontent .linkflairlabel, .linkflair-graphic .linkflairlabel, .linkflair-loebrleak .linkflairlabel, .linkflair-s6e23 .linkflairlabel, .linkflair-s6e24 .linkflairlabel, .linkflair-s6e25 .linkflairlabel, .linkflair-s6e26 .linkflairlabel, .linkflair-fecomic .linkflairlabel {display:none;}
 .linkflair-egspoiler p.title a.title, .linkflair-comictitlespoiler p.title a.title, .linkflair-spoiler p.title a.title {opacity:0;}
 .linkflair-egspoiler p.title a.title:hover, .linkflair-comictitlespoiler p.title a.title:hover, .linkflair-spoiler p.title a.title:hover {opacity:100;}
-.linkflair-egspoiler p.title:before, .linkflair-comictitlespoiler p.title:before, .linkflair-spoiler p.title:before, .linkflair-comicspoiler p.title:before, .linkflair-fecontent p.title:before, .linkflair-2017movie p.title:before, .linkflair-eqg3 p.title:before, .linkflair-eqg4 p.title:before, .linkflair-leak p.title:before, .linkflair-tfiocmleak p.title:before, .linkflair-rafcontent p.title:before, .linkflair-graphic p.title:before, .linkflair-loebrleak p.title:before, .linkflair-s6e23 p.title:before, .linkflair-s6e24 p.title:before, .linkflair-s6e25 p.title:before, .linkflair-s6e26 p.title:before
+.linkflair-egspoiler p.title:before, .linkflair-comictitlespoiler p.title:before, .linkflair-spoiler p.title:before, .linkflair-comicspoiler p.title:before, .linkflair-fecontent p.title:before, .linkflair-2017movie p.title:before, .linkflair-eqg3 p.title:before, .linkflair-eqg4 p.title:before, .linkflair-leak p.title:before, .linkflair-tfiocmleak p.title:before, .linkflair-rafcontent p.title:before, .linkflair-graphic p.title:before, .linkflair-loebrleak p.title:before, .linkflair-s6e23 p.title:before, .linkflair-s6e24 p.title:before, .linkflair-s6e25 p.title:before, .linkflair-s6e26 p.title:before, .linkflair-fecomic p.title:before
 {
  font-size:12px;
  color:#888;
@@ -1240,13 +1240,15 @@ span.linkflairlabel[title="Future episode spoilers"]
 
 .linkflair-fecontent p.title:before{content:"FUTURE EPISODE CONTENT";}
 
+.linkflair-fecomic p.title:before{content:"FUTURE EPISODE & COMIC CONTENT";}
+
 .linkflair-rafcontent p.title:before{content:"RECENT & FUTURE CONTENT";}
 
 .linkflair-graphic p.title:before{content:"Graphic";}
 
 .linkflair-2017movie p.title:before{content:"2017 Movie";}
 
-.linkflair-eqg3 p.title:before{content:"Friendship Games";}
+.linkflair-eqg3 p.title:before{content:"Equestria Girls";}
 
 .linkflair-eqg4 p.title:before{content:"Equestria Girls 4";}
 

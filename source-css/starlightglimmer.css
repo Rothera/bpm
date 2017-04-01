@@ -40,9 +40,14 @@
 #header {
   background: url(%%castle%%) repeat-x scroll center;
   height: 180px;
+  border-bottom: 0 solid #e2d8ca;
+  box-shadow: 0 0 6px #555;
 }
 
 .pagename a { color: white; }
+
+.tabmenu { margin-bottom: 1px; }
+.tabmenu li.selected a { border-bottom: 1px solid #5f99cf; }
 
 .side h6 del { color: inherit }
 .side sup:nth-of-type(1) { padding-left: 40px }
@@ -190,6 +195,52 @@ a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-
 .side .md table:hover ~ h2:last-of-type+p a { display: none; }
 
 .side .md h2:last-of-type+p a+.SuperRedditAltTextDisplay_Text { display: none; }
+
+/*** Announcement Bar ***/
+
+.side .md table:last-of-type {
+  display: table;
+  position: absolute;
+  top: 186px;
+  left: 5px;
+  width: calc(100% - 315px);
+  margin: 0;
+  border-style: none;
+}
+
+.side .md table:last-of-type th { display:none }
+
+.side .md table:last-of-type td {
+  height: 0 !important;
+  border: 1px solid #bf81cc !important;
+  background-color: #f8f3ff !important;
+}
+
+.side .md table:last-of-type td:after { content: none !important }
+
+.side .md table:last-of-type td:first-of-type {
+  width: 0;
+  padding: 2px 6px 2px 2px !important;
+  border-right-style: none !important;
+}
+
+.side .md table:last-of-type td:last-of-type {
+  padding: 1px 0px;
+  border-left-style: none !important;
+}
+
+.side .md table:last-of-type td:first-of-type a {
+  display: block;
+  width: 41px;
+  height: 32px;
+  cursor: default;
+  pointer-events: none;
+  background-image: url(%%noequality%%) !important;
+}
+
+.side .md table:last-of-type td a { font-weight: bold; }
+
+.content { margin-top: 55px }
 
 /*** Emotes & Flair ***/
 
@@ -610,7 +661,7 @@ a[href|="/starlightsmirk"], a[href|="/sgsmirk"], a[href|="/starlightwhat"], a[hr
   background-image: url(%%sgamotes%%) !important;
 }
 
-a[href|="/skepticalstarlight"], a[href|="/skepticalsg"], a[href|="/starlightepiphany"], a[href|="/sgepiphany"], a[href|="/starlightyawn"], a[href|="/sgyawn"], a[href|="/starlightcringe"], a[href|="/sgcringe"], a[href|="/cheekystarlight"], a[href|="/cheekysg"], a[href|="/stargue"], a[href|="/sgargue"], a[href|="/starlightsnicker"], a[href|="/sgsnicker"], a[href|="/starlightfailure"], a[href|="/sgfailure"], a[href|="/starlightgroan"], a[href|="/sggroan"], a[href|="/starlightbored"], a[href|="/sgbored"], a[href|="/starlightlaugh"], a[href|="/sglaugh"], a[href|="/starlightsquint"], a[href|="/sgsquint"], a[href|="/starlightlol"], a[href|="/sglol"], a[href|="/starlightlistenin"], a[href|="/sglistenin"], a[href|="/starlightcaught"], a[href|="/sgcaught"], a[href|="/starlightponder"], a[href|="/sgponder"], a[href|="/starlightjoy"], a[href|="/sgjoy"], a[href|="/starlightgotthis"], a[href|="/sggotthis"], a[href|="/starlighthorror"], a[href|="/sghorror"], a[href|="/starlightbloops"], a[href|="/sgbloops"], a[href|="/starlightmeh"], a[href|="/sgmeh"], a[href|="/starlightunfair"], a[href|="/sgunfair"], a[href|="/starlightdaww"], a[href|="/sgdaww"], a[href|="/focusedstarlight"], a[href|="/focusedsg"], a[href|="/starlightohyou"], a[href|="/sgohyou"], a[href|="/starlightwant"], a[href|="/sgwant"], a[href|="/fillystarlightclap"], a[href|="/fillysgclap"], a[href|="/searchingstarlight"], a[href|="/searchingsg"] {
+a[href|="/skepticalstarlight"], a[href|="/skepticalsg"], a[href|="/starlightepiphany"], a[href|="/sgepiphany"], a[href|="/starlightyawn"], a[href|="/sgyawn"], a[href|="/starlightcringe"], a[href|="/sgcringe"], a[href|="/cheekystarlight"], a[href|="/cheekysg"], a[href|="/stargue"], a[href|="/sgargue"], a[href|="/starlightsnicker"], a[href|="/sgsnicker"], a[href|="/starlightfailure"], a[href|="/sgfailure"], a[href|="/starlightgroan"], a[href|="/sggroan"], a[href|="/starlightbored"], a[href|="/sgbored"], a[href|="/starlightlaugh"], a[href|="/sglaugh"], a[href|="/starlightsquint"], a[href|="/sgsquint"], a[href|="/starlightlol"], a[href|="/sglol"], a[href|="/starlightlistenin"], a[href|="/sglistenin"], a[href|="/starlightcaught"], a[href|="/sgcaught"], a[href|="/starlightponder"], a[href|="/sgponder"], a[href|="/starlightjoy"], a[href|="/sgjoy"], a[href|="/starlightgotthis"], a[href|="/sggotthis"], a[href|="/starlighthorror"], a[href|="/sghorror"], a[href|="/starlightbloops"], a[href|="/sgbloops"], a[href|="/starlightmeh"], a[href|="/sgmeh"], a[href|="/starlightunfair"], a[href|="/sgunfair"], a[href|="/starlightdaww"], a[href|="/sgdaww"], a[href|="/focusedstarlight"], a[href|="/focusedsg"], a[href|="/starlightohyou"], a[href|="/sgohyou"], a[href|="/starlightwant"], a[href|="/sgwant"], a[href|="/fillystarlightclap"], a[href|="/fillysgclap"], a[href|="/searchingstarlight"], a[href|="/searchingsg"], a[href|="/starlightdisbelief"], a[href|="/sgdisbelief"] {
   display: block;
   clear: none;
   float: left;
@@ -648,7 +699,7 @@ a[href|="/starlightgrimmer"], a[href|="/sggrimmer"], a[href|="/starlightohyou"],
 a[href|="/undercoverstarlight"], a[href|="/undercoversg"], a[href|="/starlightmenu"], a[href|="/sgmenu"], a[href|="/starlightwant"], a[href|="/sgwant"] { background-position: -70px -420px; }
 a[href|="/starlightworry"], a[href|="/sgworry"], a[href|="/fillystarlightclap"], a[href|="/fillysgclap"] { background-position: -140px -420px; }
 a[href|="/starlightregret"], a[href|="/sgregret"], a[href|="/searchingstarlight"], a[href|="/searchingsg"] { background-position: -210px -420px; }
-a[href|="/evilstarlight"], a[href|="/evilsg"] { background-position: 0 -490px; }
+a[href|="/evilstarlight"], a[href|="/evilsg"], a[href|="/starlightdisbelief"], a[href|="/sgdisbelief"] { background-position: 0 -490px; }
 a[href|="/cutiemarksforcutiemarks"], a[href|="/starlighttriumph"], a[href|="/sgtriumph"] { background-position: -70px -490px; }
 a[href|="/thrilledstarlight"], a[href|="/thrilledsg"], a[href|="/heresglimmy"] { background-position: -140px -490px; }
 a[href|="/sneakystarlight"], a[href|="/sneakysg"] { background-position: -210px -490px; }
@@ -661,7 +712,7 @@ a[href|="/starlightbrag"], a[href|="/sgbrag"] { background-position: -70px -630p
 a[href|="/starlightconsider"], a[href|="/sgconsider"] { background-position: -140px -630px; }
 a[href|="/starlightbetrayed"], a[href|="/sgbetrayed"] { background-position: -210px -630px; }
 
-a[href|="/starlightpoker"], a[href|="/sgpoker"], a[href|="/starlightpetme"], a[href|="/sgpetme"], a[href|="/starlightrecoil"], a[href|="/sgrecoil"], a[href|="/starlightflight"], a[href|="/sgflight"], a[href|="/starlightoops"], a[href|="/sgoops"], a[href|="/mayorstarlight"], a[href|="/mayorsg"] {
+a[href|="/starlightpoker"], a[href|="/sgpoker"], a[href|="/starlightpetme"], a[href|="/sgpetme"], a[href|="/starlightrecoil"], a[href|="/sgrecoil"], a[href|="/starlightflight"], a[href|="/sgflight"], a[href|="/starlightoops"], a[href|="/sgoops"], a[href|="/mayorstarlight"], a[href|="/mayorsg"], a[href|="/starlightspotlight"], a[href|="/sgspotlight"], a[href|="/nosegoes"], a[href|="/sgnosegoes"], a[href|="/covertstarlight"], a[href|="/covertsg"] {
   display: block;
   clear: none;
   float: left;
@@ -677,6 +728,9 @@ a[href|="/starlightrecoil"], a[href|="/sgrecoil"] { background-position: -200px 
 a[href|="/starlightflight"], a[href|="/sgflight"] { background-position: 0 -100px; width: 200px; }
 a[href|="/starlightoops"], a[href|="/sgoops"] { background-position: -200px -100px; }
 a[href|="/mayorstarlight"], a[href|="/mayorsg"] { background-position: 0 -200px; }
+a[href|="/starlightspotlight"], a[href|="/sgspotlight"] { background-position: -100px -200px; }
+a[href|="/nosegoes"], a[href|="/sgnosegoes"] { background-position: -200px -200px; }
+a[href|="/covertstarlight"], a[href|="/covertsg"] { background-position: 0 -300px; }
 
 a[href|="/sugarbellesg"], a[href|="/sbsg"], a[href|="/equalsugarbellesg"], a[href|="/equalsbsg"], a[href|="/equalstaff"], a[href|="/nightglidersg"], a[href|="/ngsg"], a[href|="/equalnightglidersg"], a[href|="/equalngsg"], a[href|="/binoculars"], a[href|="/equalpartyfavorsg"], a[href|="/equalpfsg"], a[href|="/doublediamondsg"], a[href|="/ddsg"], a[href|="/partyfavorsg"], a[href|="/pfsg"] {
   display: block;

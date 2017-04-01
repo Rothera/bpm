@@ -1,7 +1,7 @@
 /*Banner*/
 
 #header {
-  height: 175px;
+  height: 185px;
   border-bottom: 0 solid #e2d8ca;
   box-shadow: 0 0 6px #555;
 }
@@ -12,16 +12,16 @@
   display: block;
   position: absolute;
   width: 100%;
-  height: 175px;
+  height: 185px;
   top: 0;
   left: 0;
   overflow: hidden;
   z-index: -1;
   content: "";
-  background: url(%%winterbanner%%);
-  -webkit-animation: sidescroll 240s linear infinite;
-  -moz-animation: sidescroll 240s linear infinite;
-  animation: sidescroll 240s linear infinite;
+  background: url(%%canterlotbanner%%);
+  -webkit-animation: sidescroll 180s linear infinite;
+  -moz-animation: sidescroll 180s linear infinite;
+  animation: sidescroll 180s linear infinite;
 }
 
 .pagename a {
@@ -29,21 +29,21 @@
   position: absolute;
   width: 315px;
   height: 60px;
-  top: 42px;
+  top: 52px;
   left: calc(50% - 157px) !important;
   background: url(%%Sunset-Title%%) no-repeat;
 }
 
-#header-img { margin: 6px 0px 0px 0px }
+#header-img { margin: 0 0 0 12px }
 
 @-webkit-keyframes sidescroll {
-  100% { background-position: -2097px 0; }
+  100% { background-position: -1201px 0; }
 }
 @-moz-keyframes sidescroll {
-  100% { background-position: -2097px 0; }
+  100% { background-position: -1201px 0; }
 }
 @keyframes sidescroll {
-  100% { background-position: -2097px 0; }
+  100% { background-position: -1201px 0; }
 }
 
 div.content { overflow: hidden; }
@@ -1556,7 +1556,7 @@ a.thumbnail.self{margin-right:-14px}
 .side .md table:last-of-type {
   display: table;
   position: absolute;
-  top: 181px;
+  top: 202px;
   left: 6px;
   width: calc(100% - 356px) !important;
   margin: 0;
@@ -1602,7 +1602,7 @@ a.thumbnail.self{margin-right:-14px}
 
 /*.side .md table:last-of-type td a:nth-of-type(n+3) { color: #0079D3 !important }*/
 
-.content { margin-top: 48px }
+.content { margin-top: 68px }
 
 /*** Tricks ***/
 

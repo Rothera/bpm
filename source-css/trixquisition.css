@@ -41,6 +41,29 @@ a[href|="/trixieoh"]      {background-position:-140px -0px}
 a[href|="/lustystare"]    {background-position:-210px -0px}
 a[href|="/smugsmile"]     {background-position:-280px -0px}
 
+/* Hithroc's 70px emotes */
+
+a[href|='/TrixieTip'], a[href|='/trixietip'], a[href|='/trixieright'], a[href|='/silverwaretrixie'], a[href|='/trixieshrug'], a[href|='/trixiesaw'], a[href|='/trustissues'] {
+  width:70px; height:70px;
+  background-image: url(%%hithroc-spritesheet%%);
+  display: block; clear: none; float: left;
+}
+a[href|='/trixietip'], a[href|='/TrixieTip']   { background-position:   0px 0px }
+a[href|='/trixieright']                        { background-position: -70px 0px }
+a[href|='/silverwaretrixie']                   { background-position:-140px 0px }
+
+/* I know that there's [](/x23) but it's badly cropped and looks just awful on a dark background */
+a[href|='/trixieshrug']                        { background-position:-210px 0px }
+a[href|='/trixiesaw'], a[href|='/trustissues'] { background-position:-280px 0px }
+
+a[href|="/animtrixiethankyou"] {
+width:70px; 
+height:70px;
+background-image: url(%%trixie-thankyou-anim-70%%);
+display: block; 
+clear: none; 
+float: left
+}
 
 /*100px emotes*/
 
@@ -139,7 +162,7 @@ a[href|="/NurseTrixie"]{
     background-position: -393px -215px;
 }
 
-/*heterogeneous emotes*/
+/*Miscellaneous emotes*/
 
 a[href|="/EGtrixieisbesthuman"] {
 background-position: -0px -0px;
@@ -193,3 +216,6 @@ a.author[href$="Protosega"]:before {font-size:10px!important; visibility:visible
 
 a.author[href$="Lulamoon"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
 a.author[href$="Lulamoon"]:before {font-size:10px!important; visibility:visible!important; content: "The Great and Powerful Trixie!"}
+
+a.author[href$="hithroc"] {font-size:0!important; overflow:hidden; display:inline-block; content: "";}
+a.author[href$="hithroc"]:before {font-size:10px!important; visibility:visible!important; content: "The Peat and Growerful Triskie..."}
