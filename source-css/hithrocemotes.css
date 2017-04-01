@@ -1,0 +1,18 @@
+/* 70px emotes */
+a[href|='/lyrarelax'], a[href|='/lyrabedroomeyes'] {
+  width:70px; height:70px;
+  background-image: url(%%70-spritesheet%%);
+  display: block; clear: none; float: left;
+}
+a[href|='/lyrarelax'], a[href|='/lyrabedroomeyes']       { background-position:   0px 0px }
+
+/* 100px emotes */
+
+a[href|='/wondercolt'], a[href|='/wonderpoint'], a[href|='/twifruitbowl'], a[href|='/thisisntapuppy'] {
+  width:100px; height:100px;
+  background-image: url(%%100-spritesheet%%);
+  display: block; clear: none; float: left;
+}
+a[href|='/wondercolt']         { background-position:   0px 0px }
+a[href|='/wonderpoint']        { background-position:-100px 0px }
+a[href|='/twifruitbowl'], a[href|='/thisisntapuppy']       { background-position:-200px 0px }
