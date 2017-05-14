@@ -180,7 +180,9 @@ IGNORED_PROPERTIES = [
     "animation",
     "-moz-animation",
     "-webkit-animation",
-    "-o-animation"
+    "-o-animation",
+
+    "cursor"
 ]
 
 def _convert_emote(name, suffix, block):
