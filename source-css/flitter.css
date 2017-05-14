@@ -1,80 +1,90 @@
-body {
-    background-image: url(%%back%%) !important;
-    background-repeat: no-repeat;
-    background-position: center center;
-    z-index: 1 !important;
-    min-height: 75%;
-    background-attachment: fixed
-    }
-.side a[href="http://www.reddit.com/r/flitter/new"] {
-    display: block;
-    height: 110px;
-    width: 100px;
-    background: url(%%fillyflitter%%);
-    position: fixed;
-    top: 240px;
-    right: -30px;
-    z-index: 999
-    }
-.pagename a:after {
-    content: " is best pony"
-    }
-div.titlebox span.number:after {
-    content: " glute stretchers."
-    }
-div.titlebox span.word {
-    display: none
-    }
+/*** Theme ***/
 
-a[href|="/flitterwat"]
-{
- background-image: url(%%flitterwat%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 103px;
-    width: 100px;
+body { background: url(%%back%%) no-repeat fixed center bottom }
+.pagename a:after { content: " is best pony" }
+.subscribers .word, .users-online .word { display: none }
+.subscribers .number:after, .users-online .number:after { content: " glute stretchers" }
+
+.side a[href="/r/flitter/new"] {
+  display: block;
+  width: 100px;
+  height: 110px;
+  position: fixed;
+  top: 250px;
+  right: -30px;
+  z-index: 999;
+  background: url(%%fillyflitter%%);
 }
 
-a[href|="/stretchthoseglutes"]
-{
- background-image: url(%%stretchthoseglutes%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 100px;
-    width: 142px;
+.md { overflow: auto }
+.usertext-edit > .md { overflow: inherit }
+.linkflairlabel { max-width: none }
+#sr-form textarea[name="description"],
+.stylesheet-customize-container textarea { height: 600px; }
+
+/*** Comments ***/
+
+a[href|="/sp"] {
+  display: inline-block;
+  padding-right: 100%;
+  width: 0px;
+  height: 0px;
 }
 
-a[href|="/flitterunamused"]
-{
- background-image: url(%%flitterunamused%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 145px;
-    width: 100px;
+a[href^="/"][href*="-in-"], a[href^="/"][href$="-in"], a[href^="/"][href*="-inp-"], a[href^="/"][href$="-inp"] {
+  float: none !important;
+  display: inline-block !important;
 }
 
-a[href|="/flitterjoy"]
-{
- background-image: url(%%flitterjoy%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 140px;
-    width: 100px;
+a[href|="/spoiler"] {
+  background: #000 !important;
+  color: #000 !important;
 }
 
-a[href|="/fillyflitter"]
-{
- background-image: url(%%fillyflitter%%) !important;
-    clear: none;
-    display: block;
-    float: left;
-    height: 110px;
-    width: 100px;
+a[href|="/spoiler"]:hover {
+  color: #fff !important;
 }
+
+a[href="/s"] {
+  color: #222222; 
+  background: #CCCCCC;
+  cursor: default;
+} 
+
+a[href="/s"]:hover {
+  color: #8F8F8F 
+} 
+
+a[href="/s"]::after { 
+  content: attr(title);
+  background: #CCCCCC;
+  color: #CCCCCC;
+  padding: 0px 10px 0px 10px;
+}
+
+a[href="/s"]:hover::after {
+  color: black;
+}
+
+/*** Emotes ***/
+
+a[href|="/fillyflitter"], a[href|="/flitterjoy"], a[href|="/flitterunamused"], a[href|="/flitterwat"], a[href|="/stretchthoseglutes"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 100px;
+  cursor: default;
+  background-image: url(%%flittermotes%%) !important;
+}
+
+a[href|="/fillyflitter"] { height: 109px; background-position: 0 0; }
+a[href|="/flitterjoy"] { height: 140px; background-position: 0 -109px; }
+a[href|="/flitterunamused"] { height: 145px; background-position: 0 -249px; }
+a[href|="/flitterwat"] { height: 103px; background-position: 0 -394px; }
+a[href|="/stretchthoseglutes"] { width: 142px; background-position: -100px 0; }
+
+/*** Flair ***/
 
 .flair {
   border: 0;
@@ -86,12 +96,6 @@ a[href|="/fillyflitter"]
   white-space: nowrap;
   background: url(%%flair-table%%);
 }
-
-.md { overflow: auto }
-.usertext-edit > .md { overflow: inherit }
-.linkflairlabel { max-width: none }
-#sr-form textarea[name="description"],
-.stylesheet-customize-container textarea { height: 600px; }
 
 .flair-rainbowdash { background-position: 0 0; }
 .flair-twilight { background-position: -100% 0; }

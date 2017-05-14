@@ -14,6 +14,7 @@ body { background: url(%%foolsbg%%) no-repeat fixed center bottom }
 
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important }
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "MAUDERATORS" }
+.sidecontentbox .helplink+.title+.content li:nth-of-type(4) { display: none }
 
 /*** Thumbnails ***/
 

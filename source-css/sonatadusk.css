@@ -48,9 +48,9 @@
 body { background: url(%%background%%) no-repeat center }
 body.wiki-page { background: none }
 
-START-TACOS{color:red}
+/*START-TACOS{color:red}
 body { background: url(%%humantuesday%%) no-repeat fixed center bottom }
-END-TACOS{color:red}
+END-TACOS{color:red}*/
 
 .subscribers .word, .users-online .word { display: none }
 .subscribers .number:after { content: " admirers" }
@@ -58,7 +58,7 @@ END-TACOS{color:red}
 
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important }
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }
-.sidecontentbox .helplink+.title+.content li:nth-of-type(5n) { display: none }
+.sidecontentbox .helplink+.title+.content li:nth-of-type(5) { display: none }
 
 
 .link .arrow.down:hover:before, .link .arrow.downmod:hover:before {

@@ -43,18 +43,35 @@ a[href|="/smugsmile"]     {background-position:-280px -0px}
 
 /* Hithroc's 70px emotes */
 
-a[href|='/TrixieTip'], a[href|='/trixietip'], a[href|='/trixieright'], a[href|='/silverwaretrixie'], a[href|='/trixieshrug'], a[href|='/trixiesaw'], a[href|='/trustissues'] {
+a[href|='/TrixieTip'], a[href|='/trixietip'], a[href|='/trixieright'], a[href|='/silverwaretrixie'], a[href|='/trixieshrug'], a[href|='/trixiesaw'], a[href|='/trustissues'], a[href|='/teacup'], a[href|='/trixiewhatever'], a[href|='/trixiewoohoo'], a[href|='/trixieheh'] {
   width:70px; height:70px;
   background-image: url(%%hithroc-spritesheet%%);
   display: block; clear: none; float: left;
 }
-a[href|='/trixietip'], a[href|='/TrixieTip']   { background-position:   0px 0px }
-a[href|='/trixieright']                        { background-position: -70px 0px }
-a[href|='/silverwaretrixie']                   { background-position:-140px 0px }
+a[href|='/trixsqueeze'], a[href|='/deathgrip'], a[href|='/teapot'], a[href|='/trixiecute'], a[href|='/trixdorkable'], a[href|='/incomingteacups'] {
+  width:140px; height:140px;
+  background-image: url(%%hithroc-spritesheet%%);
+  display: block; clear: none; float: left;
+}
+a[href|='/trixietip'], a[href|='/TrixieTip']   { background-position:   0px    0px }
+a[href|='/trixieright']                        { background-position: -70px    0px }
+a[href|='/silverwaretrixie']                   { background-position:-140px    0px }
 
 /* I know that there's [](/x23) but it's badly cropped and looks just awful on a dark background */
-a[href|='/trixieshrug']                        { background-position:-210px 0px }
-a[href|='/trixiesaw'], a[href|='/trustissues'] { background-position:-280px 0px }
+a[href|='/trixieshrug']                        { background-position:-210px    0px }
+a[href|='/trixiesaw'], a[href|='/trustissues'] { background-position:-280px    0px }
+a[href|='/teacup']                             { background-position:-350px    0px }
+a[href|='/trixiewhatever']                     { background-position:-420px    0px }
+a[href|='/trixiewoohoo']                       { background-position:-490px    0px }
+a[href|='/trixieheh']                          { background-position:-560px    0px }
+
+a[href|='/trixsqueeze'], a[href|='/deathgrip'] { background-position:   0px  -70px }
+
+a[href|='/teapot']                             { background-position:-280px  -70px }
+a[href|='/teapot']:hover                       { background-position:-140px  -70px }
+a[href|='/teapot']:hover + .bpm-emote          { width:70px!important; height:70px!important; background-image: url(%%hithroc-spritesheet%%)!important; display: block; clear: none; float: left; background-position:-350px -0px!important }
+
+a[href|='/trixiecute'], a[href|='/trixdorkable'], a[href|='/incomingteacups'] { background-position:-560px -70px; width:102px; margin-bottom: -10px; position:relative; z-index: 9999999999999999999 }
 
 a[href|="/animtrixiethankyou"] {
 width:70px; 

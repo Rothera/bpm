@@ -47,7 +47,7 @@
 
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important }
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }
-.sidecontentbox .helplink+.title+.content li:nth-of-type(2n) { display: none }
+.sidecontentbox .helplink+.title+.content li:nth-of-type(2) { display: none }
 
 /*** Comments ***/
 
@@ -508,7 +508,7 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 
 /*---------------- END COPY ----------------*/
 
-a[href|="/countesssing"], a[href|="/raramagic"], a[href|="/thecountess"], a[href|="/happyrara"], a[href|="/rarasing"], a[href|="/sadrara"], a[href|="/svengallop"], a[href|="/fillyrarasing"], a[href|="/rarashock"], a[href|="/countempt"], a[href|="/countesslook"], a[href|="/raraglad"], a[href|="/sadcountess"], a[href|="/rarasmile"] {
+a[href|="/countesssing"], a[href|="/raramagic"], a[href|="/thecountess"], a[href|="/happyrara"], a[href|="/rarasing"], a[href|="/sadrara"], a[href|="/svengallop"], a[href|="/fillyrarasing"], a[href|="/rarashock"], a[href|="/countempt"], a[href|="/countesslook"], a[href|="/raraglad"], a[href|="/sadcountess"], a[href|="/rarasmile"], a[href|="/rarastare"], a[href|="/singitrara"], a[href|="/raraplease"], a[href|="/raralaugh"], a[href|="/shyrara"], a[href|="/raralook"], a[href|="/excitedrara"], a[href|="/sorryrara"], a[href|="/gratefulrara"], a[href|="/interestedrara"] {
   display: block;
   clear: none;
   float: left;
@@ -532,8 +532,18 @@ a[href|="/countesslook"] { background-position: -140px -140px }
 a[href|="/raraglad"] { background-position: -210px -140px }
 a[href|="/sadcountess"] { background-position: 0 -210px }
 a[href|="/rarasmile"] { background-position: -70px -210px }
+a[href|="/rarastare"] { background-position: -140px -210px }
+a[href|="/singitrara"] { background-position: -210px -210px }
+a[href|="/raraplease"] { background-position: 0 -280px }
+a[href|="/raralaugh"] { background-position: -70px -280px }
+a[href|="/shyrara"] { background-position: -140px -280px }
+a[href|="/raralook"] { background-position: -210px -280px }
+a[href|="/excitedrara"] { background-position: 0 -350px }
+a[href|="/sorryrara"] { background-position: -70px -350px }
+a[href|="/gratefulrara"] { background-position: -140px -350px }
+a[href|="/interestedrara"] { background-position: -210px -350px }
 
-a[href|="/rarajackhug"], a[href|="/hoovsies"] {
+a[href|="/rarajackhug"], a[href|="/hoovsies"], a[href|="/raraselfie"] {
   display: block;
   clear: none;
   float: left;
@@ -545,6 +555,7 @@ a[href|="/rarajackhug"], a[href|="/hoovsies"] {
 
 a[href|="/rarajackhug"] { background-position: 0 0 }
 a[href|="/hoovsies"] { background-position: -100px 0 }
+a[href|="/raraselfie"] { background-position: -200px 0 }
 
 a[href|="/raratrotting"] {
   display: block;

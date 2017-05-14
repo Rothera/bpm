@@ -15,7 +15,7 @@ a { cursor: url(%%cursor1%%), pointer; }
 /* Changes background  */
 
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%amazingart%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%cats%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -31,7 +31,7 @@ a { cursor: url(%%cursor1%%), pointer; }
 
 
  #header #header-bottom-left {
-   background: url(%%LOLIALTRIGHT%%) 50% 28px !important;
+   background: url(%%cat%%) 50% 28px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -94,7 +94,7 @@ z-index:110 !important;
     -o-animation:spin 8s linear infinite;
     animation:spin 8s linear infinite;
 }
-*/*
+*/
 /* just fuck my shit up */
 /*
 .flair:after { 
@@ -107,6 +107,7 @@ z-index:110 !important;
 
 
 */
+
 
 #header-img-a {
 /* with logo
@@ -626,7 +627,7 @@ background-repeat: no-repeat;
 .flair-memekip:after { background-position: 0px -7440px }
 .flair-davideberjerack:after { background-position: 0px -7470px }
 .flair-iojack:after { background-position: 0px -7500px }
-
+.flair-Halt-CatchFire:after { background-position: 0px -7530px }
 
 
 /* Nightmode fix for flair */
@@ -798,8 +799,8 @@ a.author[href$=DoomKey],
 a.author[href$=thisisgenny],
 a.author[href$=DRANKLE],
 a.author[href$=HailTrixie],
-a.author[href$=throwawayaccount997]
-
+a.author[href$=throwawayaccount997],
+a.author[href$=Halt-CatchFire]
 
 { 
 font-size:0!important; 
@@ -936,8 +937,8 @@ a.author[href$=DoomKey]:before,
 a.author[href$=DRANKLE]:before,
 a.author[href$=thisisgenny]:before,
 a.author[href$=HailTrixie]:before,
-a.author[href$=throwawayaccount997]:before
-
+a.author[href$=throwawayaccount997]:before,
+a.author[href$=Halt-CatchFire]:before
 
 
 {
@@ -1075,6 +1076,7 @@ a.author[href$=thisisgenny]:before { content:"genny" }
 a.author[href$=throwawayaccount997]:before { content:"Fritters" }
 a.author[href$=Admos123]: before { content:"Fun with Atoms" }
 a.author[href$=HailTrixie]: before { content:"Traxle" }
+a.author[href$=Halt-CatchFire]: before { content:"ScootalooTheConquero" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 

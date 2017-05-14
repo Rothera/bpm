@@ -3,7 +3,7 @@ a[href|="/sillysquint"], a[href|="/sillychew"], a[href|="/sillysalute"], a[href|
 {background-image:url(%%70x70%%);width:70px;height:70px;display:block;float:left;pointer-events:none;cursor:default;}
 
 /* 100x100 */
-a[href|="/sillyclose"], a[href|="/sillyheart"], a[href|="/sillylurk"], a[href|="/sillytears"], a[href|="/sillygrump"], a[href|="/sillypout"], a[href|="/sillyshrug"], a[href|="/sillylewd"], a[href|="/sillydramacry"], a[href|="/sillynice"], a[href|="/sillynope"], a[href|="/sillybraindead"], a[href|="/sillymad"], a[href|="/sillypromise"], a[href|="/sillyannoyed"], a[href|="/sillycough"], a[href|="/sillycoffee"], a[href|="/sillynervous"], a[href|="/sillydramatic"]
+a[href|="/sillyclose"], a[href|="/sillyheart"], a[href|="/sillylurk"], a[href|="/sillytears"], a[href|="/sillygrump"], a[href|="/sillypout"], a[href|="/sillyshrug"], a[href|="/sillylewd"], a[href|="/sillydramacry"], a[href|="/sillynice"], a[href|="/sillynope"], a[href|="/sillybraindead"], a[href|="/sillymad"], a[href|="/sillypromise"], a[href|="/sillyannoyed"], a[href|="/sillycough"], a[href|="/sillycoffee"], a[href|="/sillynervous"], a[href|="/sillydramatic"], a[href|="/yaranumptie1"], a[href|="/yaranumptie2"], a[href|="/yaranumptie3"]
 {background-image:url(%%100x100%%);width:100px;height:100px;display:block;float:left;pointer-events:none;cursor:default;}
 
 /* Misfits */
@@ -89,6 +89,18 @@ a[href|="/sillynervous"]
 /* Grid pos 0,6 */
 a[href|="/sillydramatic"]
 {background-position: 0 -600%}
+
+/* Grid pos 1,6 */
+a[href|="/yaranumptie1"]
+{background-position: -100% -600%}
+
+/* Grid pos 2,6 */
+a[href|="/yaranumptie2"]
+{background-position: -200% -600%}
+
+/* Grid pos 0,7 */
+a[href|="/yaranumptie3"]
+{background-position: 0 -700%}
 
 /* Misfits */
 a[href|="/sillycookie"] {width:88px;height:100px;background-position: -0px -0px;}

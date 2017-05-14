@@ -75,6 +75,7 @@ a#search_showmore { color: #fff; }
 .titlebox h2 a { color: #7ac142; }
 .link .usertext .md { background-color: #fafae1; border: 1px solid #9e7b38; }
 .res-nightmode .tagline .flair { background-color: transparent !important; }
+.sidecontentbox .helplink+.title+.content li:nth-of-type(2) { display: none }
 
 /*** Rating Tags ***/
 
@@ -323,7 +324,7 @@ a[href|="/fritreally"], a[href|="/rfritreally"] { background-position: -140px -4
 a[href|="/fritface"], a[href|="/rfritface"] { background-position: -210px -490px; }
 a[href|="/fritaside"], a[href|="/rfritaside"] { background-position: -0px -560px; }
 
-a[href|="/fritnya"], a[href|="/fritteehee"], a[href|="/hardhatfrits"] {
+a[href|="/fritnya"], a[href|="/fritteehee"], a[href|="/hardhatfrits"], a[href|="/frithuman"] {
   display: block;
   clear: none;
   float: left;
@@ -333,7 +334,7 @@ a[href|="/fritnya"], a[href|="/fritteehee"], a[href|="/hardhatfrits"] {
   background-image: url(%%fritemotes100%%) !important;
 }
 
-a[href|="/rfritnya"], a[href|="/rfritteehee"], a[href|="/rhardhatfrits"] {
+a[href|="/rfritnya"], a[href|="/rfritteehee"], a[href|="/rhardhatfrits"], a[href|="/rfrithuman"] {
   display: block;
   clear: none;
   float: left;
@@ -351,6 +352,7 @@ a[href|="/rfritnya"], a[href|="/rfritteehee"], a[href|="/rhardhatfrits"] {
 a[href|="/fritnya"], a[href|="/rfritnya"] { background-position: -0px -0px; }
 a[href|="/fritteehee"], a[href|="/rfritteehee"] { background-position: -100px -0px; }
 a[href|="/hardhatfrits"], a[href|="/rhardhatfrits"] { background-position: -200px -0px; }
+a[href|="/frithuman"], a[href|="/rfrithuman"] { background-position: 0 -100px; }
 
 a[href|="/fritsitting"], a[href|="/rfritsitting"] {
   display: block;

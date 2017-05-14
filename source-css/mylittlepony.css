@@ -34,8 +34,8 @@
 
 
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" New Comics"}
-div.titlebox .users-online span.number:after {content:" People Who Need To Read Them"}
+div.titlebox .subscribers span.number:after {content:" Kiddie Ice Creams"}
+div.titlebox .users-online span.number:after {content:" Fancy Dress Outfits"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -123,7 +123,7 @@ border-top-right-radius: 5px;
 
 #header-img
 { 
- margin:-6px 23px -3px 15px;
+ margin:-6px 23px -24px 15px;
 }
 
 #header-bottom-left{padding-top:10px}
@@ -137,7 +137,7 @@ border-top-right-radius: 5px;
  border-right:0;
  position:absolute;
  top:10px;
- left:208px;
+ left:270px;
  z-index:50;
  margin:54px 250px 0 0; /*Usually 22px 250px 0 0*/
  padding:8px 6px;
@@ -161,7 +161,7 @@ border-top-right-radius: 5px;
  display:inline-block;
  float:left;
  overflow:auto;
- margin-top: 0px
+ margin-top: 0px;
 }
 
 /*Disables report button hover*/
@@ -187,19 +187,20 @@ border-top-right-radius: 5px;
  background-position:-0% -0%; /*To select emote table position. Increments of -100%.*/
  transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
-.thumbnail {background-size: 70px 800px !important}
+.thumbnail {background-size: 70px 870px !important}
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important;height:70px;}
 .thumbnail.self{background-position:0px -120px!important}
 .thumbnail.spoiler{background-position:0px 0px!important}
 .thumbnail.default{ background-position:0px -70px;height:50px!important}
-.linkflair-eqg3 > .thumbnail.spoiler, .linkflair-eqg4 > .thumbnail.spoiler { background-position:0px -240px!important}
+.linkflair-eqg3 > .thumbnail.spoiler, .linkflair-eqg4 > .thumbnail.spoiler, .linkflair-eqgtitle > .thumbnail.spoiler { background-position:0px -240px!important}
 .linkflair-leak > .thumbnail.spoiler { background-position:0px -310px!important}
 .linkflair-tfiocmleak > .thumbnail.spoiler, .linkflair-mirrorpolandleak > .thumbnail.spoiler { background-position:0px -520px!important}
 .linkflair-fecontent > .thumbnail.spoiler, .linkflair-ep8 > .thumbnail.spoiler, .linkflair-fespoiler > .thumbnail.spoiler, .linkflair-rafcontent > .thumbnail.spoiler, .linkflair-fecomic > .thumbnail.spoiler{ background-position:0px -380px!important}
 .linkflair-comicspoiler > .thumbnail.spoiler, .linkflair-comictitlespoiler > .thumbnail.spoiler { background-position:0px -450px!important}
 .linkflair-loebrleak > .thumbnail.spoiler { background-position:0px -590px!important}
 .linkflair-s6e24 > .thumbnail.spoiler, .linkflair-s6e25 > .thumbnail.spoiler, .linkflair-s6e26 > .thumbnail.spoiler { background-position:0px -660px!important}
-.linkflair-2017movie > .thumbnail.spoiler { background-position:0px -730px!important}
+.linkflair-2017movie > .thumbnail.spoiler, .linkflair-movietitle > .thumbnail.spoiler { background-position:0px -730px!important}
+.linkflair-s7e06 > .thumbnail.spoiler, .linkflair-s7e07 > .thumbnail.spoiler, .linkflair-s7e08 > .thumbnail.spoiler, .linkflair-s7e09 > .thumbnail.spoiler { background-position:0px -800px!important}
 
 
 a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott,a.author.id-t2_dq6ce,a.author.id-t2_5qkuh,a.author.id-t2_wptze,a.author.id-t2_y83l6,a.author.id-t2_mrnbd{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
@@ -254,7 +255,7 @@ a[href="/spoiler"]:hover,a[href="/s"]:hover{color:white!important}
 .formtabs-content#text-desc:before
 {
  background:url(%%pinkiemessage%%) no-repeat;
-}*/
+}
 /*{/NPTWARNING}*/
 
 /* Spoiler Setter*/
@@ -403,7 +404,7 @@ Submit and mod message buttons stolen from /r/StevenUniverse
 .sidebox.submit { 
     position: absolute; 
     width: 148px; 
-    top: 167px;
+    top: 182px;
 }
 .sidebox.submit.submit-link { right: auto; }
 .sidebox.submit.submit-text { left: auto; right: 0; padding-right: 5px; }
@@ -473,11 +474,9 @@ Submit and mod message buttons stolen from /r/StevenUniverse
   .sidebox.create .morelink, .sidebox.submit .spacer a, .sidebox.create .spacer a, .morelink .nub, .morelink .nub:hover {display: none; }
 
 /*Message the mods*/
-.side a[href="/message/compose?to=%2Fr%2Fmylittlepony#sidebar"] {
-    margin-top: 8px;
-}
 
 .side a[href="/message/compose?to=%2Fr%2Fmylittlepony#sidebar"] {
+    margin-top: 23px;
     display: block;
     font-weight: normal;
     letter-spacing: 0;
@@ -680,12 +679,12 @@ a[href|="/g00"],a[href|="/karma"],a[href|="/g01"],a[href|="/discentiajudge"],a[h
 
 a[href|="/rg00"],a[href|="/rkarma"],a[href|="/rg01"],a[href|="/rdiscentiajudge"],a[href|="/rg02"],a[href|="/rtwisnide"],a[href|="/rg03"],a[href|="/rpinkie"],a[href|="/rpp"],a[href|="/rg04"],a[href|="/rcococold"],a[href|="/rg05"],a[href|="/rquibble"],a[href|="/rg06"],a[href|="/rrdthis"],a[href|="/rg07"],a[href|="/rflutterbrow"]{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%gmotes%%) !important;-moz-transform:scaleX(-1);-o-transform:scaleX(-1);-webkit-transform:scaleX(-1);transform:scaleX(-1);cursor:default}
 
-a[href|="/smooze"],a[href|="/rapathia"],a[href|="/rf24"],a[href|="/rflimflam"],a[href|="/flam"]
+a[href|="/smooze"],a[href|="/rapathia"],a[href|="/rf24"],a[href|="/rflimflam"],a[href|="/flam"],a[href|="/canuckarma"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%smooze%%)!important;
     cursor:default
 }
 
-a[href|="/rsmooze"],a[href|="/rflam"]
+a[href|="/rsmooze"],a[href|="/rflam"],a[href|="/rcanuckarma"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%smooze%%)!important;
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -700,7 +699,7 @@ a[href|="/twipride"],a[href|="/a01"],a[href|="/rtwipride"],a[href|="/ra01"],a[hr
 a[href|="/lunateehee"],a[href|="/a02"],a[href|="/rlunateehee"],a[href|="/ra02"],a[href|="/fluttersrs"],a[href|="/b02"],a[href|="/rfluttersrs"],a[href|="/rb02"],a[href|="/ohhi"],a[href|="/c02"],a[href|="/rohhi"],a[href|="/rc02"],a[href|="/cutealoo"],a[href|="/e02"],a[href|="/rcutealoo"],a[href|="/re02"],a[href|="/f02"],a[href|="/sombra"],a[href|="/rf02"],a[href|="/rsombra"],a[href|="/rflimflam"],a[href|="/flam"],a[href|="/rflam"],a[href|="/rf24"],a[href|="/g02"],a[href|="/twisnide"],a[href|="/rg02"],a[href|="/rtwisnide"],.flair-luna,.side .md table tr:nth-of-type(5) td:nth-of-type(2):after
 {background-position:0 -200%}
 
-a[href|="/ajhappy"],a[href|="/happlejack"],a[href|="/a03"],a[href|="/rajhappy"],a[href|="/rhapplejack"],a[href|="/ra03"],a[href|="/ppshrug"],a[href|="/b03"],a[href|="/rppshrug"],a[href|="/rb03"],a[href|="/flutterblush"],a[href|="/c03"],a[href|="/rflutterblush"],a[href|="/rc03"],a[href|="/wahaha"],a[href|="/e03"],a[href|="/rwahaha"],a[href|="/re03"],a[href|="/f03"],a[href|="/sbshocked"],a[href|="/rf03"],a[href|="/rsbshocked"],a[href|="/g03"],a[href|="/pinkie"],a[href|="/pp"],a[href|="/rg03"],a[href|="/rpinkie"],a[href|="/rpp"],.flair-lyra,.side .md table tr:nth-of-type(7) td:nth-of-type(2):after
+a[href|="/ajhappy"],a[href|="/happlejack"],a[href|="/a03"],a[href|="/rajhappy"],a[href|="/rhapplejack"],a[href|="/ra03"],a[href|="/ppshrug"],a[href|="/b03"],a[href|="/rppshrug"],a[href|="/rb03"],a[href|="/flutterblush"],a[href|="/c03"],a[href|="/rflutterblush"],a[href|="/rc03"],a[href|="/wahaha"],a[href|="/e03"],a[href|="/rwahaha"],a[href|="/re03"],a[href|="/f03"],a[href|="/sbshocked"],a[href|="/rf03"],a[href|="/rsbshocked"],a[href|="/g03"],a[href|="/pinkie"],a[href|="/pp"],a[href|="/rg03"],a[href|="/rpinkie"],a[href|="/rpp"],a[href|="/canuckarma"],a[href|="/rcanuckarma"],.flair-lyra,.side .md table tr:nth-of-type(7) td:nth-of-type(2):after
 {background-position:0 -300%}
 
 a[href|="/raritydaww"],a[href|="/a04"],a[href|="/rraritydaww"],a[href|="/raritydaw"],a[href|="/rraritydaw"],a[href|="/ra04"],a[href|="/fluttershh"],a[href|="/b04"],a[href|="/rfluttershh"],a[href|="/rb04"],a[href|="/ajfrown"],a[href|="/c04"],a[href|="/rajfrown"],a[href|="/rc04"],a[href|="/huhhuh"],a[href|="/e04"],a[href|="/rhuhhuh"],a[href|="/re04"],a[href|="/f04"],a[href|="/guard"],a[href|="/rf04"],a[href|="/rguard"],a[href|="/cococold"],a[href|="/g04"],a[href|="/rcococold"],a[href|="/rg04"],.flair-mac,.side .md table tr:nth-of-type(9) td:nth-of-type(2):after
@@ -1223,10 +1222,10 @@ span.linkflairlabel[title="Future episode spoilers"]
 }
 
 /*Title spoilers styling*/
-.linkflair-egspoiler .linkflairlabel, .linkflair-comictitlespoiler .linkflairlabel, .linkflair-spoiler .linkflairlabel, .linkflair-comicspoiler .linkflairlabel, .linkflair-fecontent .linkflairlabel, .linkflair-2017movie .linkflairlabel, .linkflair-eqg3 .linkflairlabel, .linkflair-eqg4 .linkflairlabel, .linkflair-leak .linkflairlabel, .linkflair-tfiocmleak .linkflairlabel, .linkflair-rafcontent .linkflairlabel, .linkflair-graphic .linkflairlabel, .linkflair-loebrleak .linkflairlabel, .linkflair-s6e23 .linkflairlabel, .linkflair-s6e24 .linkflairlabel, .linkflair-s6e25 .linkflairlabel, .linkflair-s6e26 .linkflairlabel, .linkflair-fecomic .linkflairlabel {display:none;}
-.linkflair-egspoiler p.title a.title, .linkflair-comictitlespoiler p.title a.title, .linkflair-spoiler p.title a.title {opacity:0;}
-.linkflair-egspoiler p.title a.title:hover, .linkflair-comictitlespoiler p.title a.title:hover, .linkflair-spoiler p.title a.title:hover {opacity:100;}
-.linkflair-egspoiler p.title:before, .linkflair-comictitlespoiler p.title:before, .linkflair-spoiler p.title:before, .linkflair-comicspoiler p.title:before, .linkflair-fecontent p.title:before, .linkflair-2017movie p.title:before, .linkflair-eqg3 p.title:before, .linkflair-eqg4 p.title:before, .linkflair-leak p.title:before, .linkflair-tfiocmleak p.title:before, .linkflair-rafcontent p.title:before, .linkflair-graphic p.title:before, .linkflair-loebrleak p.title:before, .linkflair-s6e23 p.title:before, .linkflair-s6e24 p.title:before, .linkflair-s6e25 p.title:before, .linkflair-s6e26 p.title:before, .linkflair-fecomic p.title:before
+.linkflair-egspoiler .linkflairlabel, .linkflair-comictitlespoiler .linkflairlabel, .linkflair-spoiler .linkflairlabel, .linkflair-comicspoiler .linkflairlabel, .linkflair-fecontent .linkflairlabel, .linkflair-2017movie .linkflairlabel, .linkflair-eqg3 .linkflairlabel, .linkflair-eqgtitle .linkflairlabel, .linkflair-movietitle .linkflairlabel, .linkflair-eqg4 .linkflairlabel, .linkflair-leak .linkflairlabel, .linkflair-tfiocmleak .linkflairlabel, .linkflair-rafcontent .linkflairlabel, .linkflair-graphic .linkflairlabel, .linkflair-loebrleak .linkflairlabel, .linkflair-s6e23 .linkflairlabel, .linkflair-s6e24 .linkflairlabel, .linkflair-s7e05 .linkflairlabel, .linkflair-s7e06 .linkflairlabel, .linkflair-s7e07 .linkflairlabel, .linkflair-s7e08 .linkflairlabel, .linkflair-s7e09 .linkflairlabel, .linkflair-s6e25 .linkflairlabel, .linkflair-s6e26 .linkflairlabel, .linkflair-fecomic .linkflairlabel {display:none;}
+.linkflair-egspoiler p.title a.title, .linkflair-comictitlespoiler p.title a.title, .linkflair-spoiler p.title a.title, .linkflair-eqgtitle p.title a.title, .linkflair-movietitle p.title a.title {opacity:0;}
+.linkflair-egspoiler p.title a.title:hover, .linkflair-comictitlespoiler p.title a.title:hover, .linkflair-spoiler p.title a.title:hover, .linkflair-eqgtitle p.title a.title:hover, .linkflair-movietitle p.title a.title:hover {opacity:100;}
+.linkflair-egspoiler p.title:before, .linkflair-comictitlespoiler p.title:before, .linkflair-spoiler p.title:before, .linkflair-comicspoiler p.title:before, .linkflair-fecontent p.title:before, .linkflair-2017movie p.title:before, .linkflair-eqg3 p.title:before, .linkflair-eqgtitle p.title:before, .linkflair-movietitle p.title:before, .linkflair-eqg4 p.title:before, .linkflair-leak p.title:before, .linkflair-tfiocmleak p.title:before, .linkflair-rafcontent p.title:before, .linkflair-graphic p.title:before, .linkflair-loebrleak p.title:before, .linkflair-s6e23 p.title:before, .linkflair-s6e24 p.title:before, .linkflair-s7e05 p.title:before, .linkflair-s7e06 p.title:before, .linkflair-s7e07 p.title:before, .linkflair-s7e08 p.title:before, .linkflair-s7e09 p.title:before, .linkflair-s6e25 p.title:before, .linkflair-s6e26 p.title:before, .linkflair-fecomic p.title:before
 {
  font-size:12px;
  color:#888;
@@ -1248,7 +1247,11 @@ span.linkflairlabel[title="Future episode spoilers"]
 
 .linkflair-2017movie p.title:before{content:"2017 Movie";}
 
+.linkflair-movietitle p.title:before{content:"2017 Movie - Title Spoiler";}
+
 .linkflair-eqg3 p.title:before{content:"Equestria Girls";}
+
+.linkflair-eqgtitle p.title:before{content:"Equestria Girls — Title Spoiler";}
 
 .linkflair-eqg4 p.title:before{content:"Equestria Girls 4";}
 
@@ -1265,6 +1268,16 @@ span.linkflairlabel[title="Future episode spoilers"]
 .linkflair-s6e25 p.title:before{content:"S6E25: British Release";}
 
 .linkflair-s6e26 p.title:before{content:"S6E26: British Release";}
+
+.linkflair-s7e05 p.title:before{content:"S7E05: Canadian Release";}
+
+.linkflair-s7e06 p.title:before{content:"S7E06: Canadian Release";}
+
+.linkflair-s7e07 p.title:before{content:"S7E07: Canadian Release";}
+
+.linkflair-s7e08 p.title:before{content:"S7E08: Canadian Release";}
+
+.linkflair-s7e09 p.title:before{content:"S7E09: Canadian Release";}
 
 /*Equestria Girls Spoiler in title flair*/
 .linkflair-egspoiler p.title:before{content:"EG2 SPOILER";}
@@ -1364,10 +1377,11 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
 }
 
 /*Spoiler-tag notification*/
-/*
- .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:before, .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:hover:before {
+
+
+ .post-submitter.post-under-10m-old .link:not(.over18) .spoiler-button:before, .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:hover:before {
     position: absolute;
-    content: "Is this about the most recent episode?  If so, please spoiler-tag it!";
+    content: "Is this about episodes 6 or later?  If so, please spoiler-tag it!";
     background: orangered; 
     color: #ffffff;
     margin-top: 1.5em;
@@ -1379,7 +1393,7 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
     font-size: 17px;
     border-radius: 3px;
 }
-.post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:after, .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:hover:after {
+.post-submitter.post-under-10m-old .link:not(.over18) .spoiler-button:after, .post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:hover:after {
     width: 0;
     height: 0;
     border-style: solid;
@@ -1390,11 +1404,11 @@ div.content .linkflair-unverified .linkflairlabel:hover::after
     content: '';
     position: absolute;
 }
-.post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:hover:before {
+.post-submitter.post-under-10m-old .link:not(.over18) .spoiler-button:hover:before {
     content: "This notification will disappear after 10 minutes.";
     background: #c0392b;
 }
-.post-submitter.post-under-10m-old .link:not(.over18) .marknsfw-button:hover:after {
+.post-submitter.post-under-10m-old .link:not(.over18) .spoiler-button:hover:after {
     border-color: transparent transparent #c0392b; 
 }  
 

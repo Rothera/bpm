@@ -114,18 +114,11 @@ border:none;
 background: #5f99cf;
 }
 
-/* since the current header is pretty wide, shove the tabmenu over it on narrow screens (listing pages only as they have the most buttons) */
-/*
-@media (max-width: 1180px) {
-    body.listing-page #header .redditname {
-        margin-left: -230px;
-    }
-
-    body.listing-page .tabmenu li {
-        background-color: rgba(0, 0, 0, 0.44);
-    }
+/* Force max height 'cos otherwise submit buttons break */
+#header-bottom-left {
+height: 126px; /* HEADER HEIGHT +6px */
+overflow: auto;
 }
-*/
 
 /*Background*/
 body{background: #ffffff url(%%background%%) no-repeat fixed center center}
@@ -142,7 +135,6 @@ z-index: 999999 !important;
 -webkit-transform: scale(3,3), rotate(0deg) !important;
 -moz-transform: scale(3,3) rotate(0deg) !important;
     transform: scale(3,3), rotate(0deg) !important;
-
 }
 
 #baconBit.makeitrain {
@@ -152,7 +144,6 @@ z-index: 999999 !important;
 }
 
 #baconBit {
-
   -webkit-transition: all 500s linear !important;
   -moz-transition: all 500s linear !important;
   -o-transition: all 500s linear !important;
@@ -180,9 +171,9 @@ background: url(%%horsewife%%) center center no-repeat transparent;
 /*Subscriber Name Replace*/
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Bumblebutts"}
+div.titlebox .subscribers span.number:after {content:" Contractors"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " Bumbling about" }
+div.titlebox p.users-online span.number:after { content: " Ignoring the customer" }
 div.titlebox p.users-online span.word { display: none }
 
 /*Flair modifications*/
@@ -230,7 +221,6 @@ div.titlebox p.users-online span.word { display: none }
     list-style: none;
     display:inline-block;
     float:left;
-    overflow:auto;
     margin-top: 0px
 }
 .titlebox .usertext-body .md blockquote ol li strong {font-size:12px;color:#EF4F91}
@@ -238,15 +228,42 @@ div.titlebox p.users-online span.word { display: none }
 {
     display:inline-block;
     float:right;
-    background:url(%%fmotes%%);
+    background:url(%%bmotes%%);
     width:70px;
     height:70px;
     margin-top:-45px;
     margin-left:5px;
     margin-bottom:0px;
     margin-right:-45px;
-    background-position: -300% -000%; /*To select emote table position. Increments of -100%.*/
-    transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
+    background-position: -200% -800%; /*To select emote table position. Increments of -100%.*/
+    transform:scaleX(-1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
+}
+
+/* Fancy warning sign */
+.titlebox a[href|="/warningsign"] {
+display: block;
+float: left;
+height: 25px;
+width: 28px;
+margin-top: -5px;
+background: url(%%warningsign%%) no-repeat center/100%;
+position: relative;
+pointer-events: none;
+}
+.titlebox a[href|="/warningsign"]::after {
+content: "";
+height: 25px;
+width: 28px;
+position: absolute;
+top: 0;
+left: 0;
+z-index: -1;
+background: url(%%warningsign-silhouette%%) no-repeat center/100%;
+animation: 2s pulse infinite;
+}
+@keyframes pulse {
+    0% {opacity: 1}
+    50%, 100% {opacity: 0; transform: scale(2)}
 }
 
 /* Mods are super cool. */
@@ -282,14 +299,69 @@ div.titlebox p.users-online span.word { display: none }
 .footer-parent
 {
  padding-bottom: 220px;
- clear:both;
- text-align:center;
- height:600px;
- width:100%;
- background-image:url(%%footer%%);
- background-repeat:no-repeat;
- margin-bottom:-25px;
+ clear: both;
+ text-align: center;
+ height: 500px;
+ width: 100%;
+ position: relative;
+ background-image: url(%%footer-hollow%%);
+ background-repeat: no-repeat;
+ margin-bottom: -25px;
  background-position: center bottom;
+}
+
+.footer-parent::before
+{
+ content: "";
+ display: block;
+ width: 60px;
+ height: 120px;
+ position: absolute;
+ z-index: -1;
+ bottom: 140px;
+ left: 50%;
+ margin-left: -145px;
+ background: url(%%footer-left%%) transparent center center no-repeat;
+ animation: derpspin-l 1.8s linear infinite;
+}
+
+.footer-parent::after
+{
+ content: "";
+ display: block;
+ width: 118px;
+ height: 150px;
+ position: absolute;
+ z-index: -1;
+ bottom: 65px;
+ left: 50%;
+ margin-left: -15px;
+ background: url(%%footer-right%%) transparent center center no-repeat;
+ animation: derpspin-r 2s linear infinite reverse;
+}
+
+@keyframes derpspin-l
+{
+ from {transform: rotate(0deg) translate(18px) rotate(0deg);}
+ to {transform: rotate(360deg) translate(18px) rotate(-360deg);}
+}
+@keyframes derpspin-r
+{
+ from {transform: rotate(0deg) translate(36px) rotate(0deg);}
+ to {transform: rotate(360deg) translate(36px) rotate(-360deg);}
+}
+
+.footer-parent .footer::after
+{
+ content: "";
+ background: url(%%footer-whites%%) transparent center bottom no-repeat;
+ width: 546px;
+ height: 500px;
+ position: absolute;
+ bottom: 0px;
+ left: 50%;
+ margin-left: -273px;
+ z-index: -2;
 }
 
 /*Sidebar Filly Start*/
@@ -814,6 +886,17 @@ padding: 0
 
 /*End sidebar emote code*/
 
+/* admins plz */
+.titlebox a[href$="/r/ProCSS/"] {
+    display: inline-block;
+    background: url(%%procss%%) no-repeat;
+    width: 235px !important;
+    height: 83px !important;
+    background-size: 235px 83px;
+    margin: 10px 0 -1em 30px;
+    /* An idea by u/reseph & u/titleproblems */
+}
+
 /* SECTION REMOVED DUE TO USER SPOOPING 2015-10-31 */
 
 /* GIVE EVERY COMMENT THE RANDOM FILLY! */
@@ -1200,7 +1283,7 @@ div.over18 .entry .buttons .first{padding-left: 0px}
 .side {margin-top: 70px}
 .nub {display: none}
 .sidebox.submit .morelink {width: 145px; overflow: hidden}
-.sidebox.submit {position: absolute; top: 130px;} /* This needs changing if the header height changes. (height + 30) */
+.sidebox.submit {position: absolute; top: 150px;} /* HEADER HEIGHT + 30 */
 .sidebox.submit.submit-link {right: auto;}
 .sidebox.submit.submit-text {left: auto; right: 0; padding-right: 5px;}
 .morelink, .res-nightmode .morelink{
@@ -1230,7 +1313,7 @@ color: #D59D02;
 }
 .helplink, .res-nightmode .helplink {
 position: absolute;
-top: 160px; /* This value needs changing if the height of the header changes (height + 60) */
+top: 180px; /* HEADER HEIGHT + 60 */
 width: 300px;
 height: 29px;
 background: #5f99cf;
@@ -1308,42 +1391,42 @@ z-index:9000}
 60%{color:#f90}
 100%{bottom:38px;opacity:0.0}}
 
-.thing[data-fullname$="a"] > .midcol > .upmod:focus::after { content: "It was me, Dio!"; }
-.thing[data-fullname$="b"] > .midcol > .upmod:focus::after { content: "WRYYYYYYYYYY"; }
-.thing[data-fullname$="c"] > .midcol > .upmod:focus::after { content: "MUDA MUDA MUDA MUDA"; }
-.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "ORA ORA ORA ORA!"; }
-.thing[data-fullname$="e"] > .midcol > .upmod:focus::after { content: "Yare yare daze..."; }
-.thing[data-fullname$="f"] > .midcol > .upmod:focus::after { content: "To Be Continued"; }
-.thing[data-fullname$="g"] > .midcol > .upmod:focus::after { content: "Kars being unable to die, eventually stopped thinking"; }
-.thing[data-fullname$="h"] > .midcol > .upmod:focus::after { content: "Your next line will be: “What will my upvote quote be?”"; }
-.thing[data-fullname$="i"] > .midcol > .upmod:focus::after { content: "Speedwagon withdraws coolly."; }
-.thing[data-fullname$="j"] > .midcol > .upmod:focus::after { content: "Even Speedwagon is afraid!"; }
-.thing[data-fullname$="k"] > .midcol > .upmod:focus::after { content: "I reject my humanity, Jojo!"; }
-.thing[data-fullname$="l"] > .midcol > .upmod:focus::after { content: "Rerorerorerorerorero"; }
-.thing[data-fullname$="m"] > .midcol > .upmod:focus::after { content: "Do you remember how many breads you have eaten in your life?"; }
-.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "Goodbye Jojo!"; }
-.thing[data-fullname$="o"] > .midcol > .upmod:focus::after { content: "Killer Queen has already touched the upvote."; }
-.thing[data-fullname$="p"] > .midcol > .upmod:focus::after { content: "Sheer Heart Attack has no weaknesses."; }
-.thing[data-fullname$="q"] > .midcol > .upmod:focus::after { content: "What a beautiful Duwang."; }
-.thing[data-fullname$="r"] > .midcol > .upmod:focus::after { content: "Oh! That’s a Baseball!"; }
-.thing[data-fullname$="s"] > .midcol > .upmod:focus::after { content: "Jonathan Joestar"; }
-.thing[data-fullname$="t"] > .midcol > .upmod:focus::after { content: "Joseph Joestar"; }
-.thing[data-fullname$="u"] > .midcol > .upmod:focus::after { content: "Jotaro Kujo"; }
-.thing[data-fullname$="v"] > .midcol > .upmod:focus::after { content: "Josuke Higashikata"; }
-.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "Jean Pierre Polnareff"; }
-.thing[data-fullname$="x"] > .midcol > .upmod:focus::after { content: "Hierophant Green"; }
-.thing[data-fullname$="y"] > .midcol > .upmod:focus::after { content: "Star Platinum"; }
-.thing[data-fullname$="z"] > .midcol > .upmod:focus::after { content: "Magician's Red"; }
-.thing[data-fullname$="1"] > .midcol > .upmod:focus::after { content: "Robert E.O. Speedwagon"; }
-.thing[data-fullname$="2"] > .midcol > .upmod:focus::after { content: "Muhammad Avdol"; }
-.thing[data-fullname$="3"] > .midcol > .upmod:focus::after { content: "William Anthonio Zeppeli"; }
-.thing[data-fullname$="4"] > .midcol > .upmod:focus::after { content: "Dio Brando"; }
-.thing[data-fullname$="5"] > .midcol > .upmod:focus::after { content: "Crazy Diamond"; }
-.thing[data-fullname$="6"] > .midcol > .upmod:focus::after { content: "Jean Pierre Polnareff"; }
-.thing[data-fullname$="7"] > .midcol > .upmod:focus::after { content: "Yellow Temperance"; }
-.thing[data-fullname$="8"] > .midcol > .upmod:focus::after { content: "Wheel of Fortune"; }
-.thing[data-fullname$="9"] > .midcol > .upmod:focus::after { content: "Earth Wind and Fire"; }
-.thing[data-fullname$="0"] > .midcol > .upmod:focus::after { content: "Bites the Dust"; }
+.thing[data-fullname$="a"] > .midcol > .upmod:focus::after { content: "Frankly my Pony, I don't give a damn."; }
+.thing[data-fullname$="b"] > .midcol > .upmod:focus::after { content: "Here's looking at you, filly."; }
+.thing[data-fullname$="c"] > .midcol > .upmod:focus::after { content: "You're gonna need a bigger Subreddit."; }
+.thing[data-fullname$="d"] > .midcol > .upmod:focus::after { content: "May the Friendship be with you."; }
+.thing[data-fullname$="e"] > .midcol > .upmod:focus::after { content: "Spike, I've a feeling we're not in Equestria anymore."; }
+.thing[data-fullname$="f"] > .midcol > .upmod:focus::after { content: "I'm going to make him a muffin he can't refuse."; }
+.thing[data-fullname$="g"] > .midcol > .upmod:focus::after { content: "There's no place like The Friendship Castle Playset™."; }
+.thing[data-fullname$="h"] > .midcol > .upmod:focus::after { content: "The first rule of Friendship Club is: You do not talk about Friendship Club."; }
+.thing[data-fullname$="i"] > .midcol > .upmod:focus::after { content: "Hello. My name is Derpy Hooves. You ate my muffin. Prepare to die.."; }
+.thing[data-fullname$="j"] > .midcol > .upmod:focus::after { content: "Why so huggable?"; }
+.thing[data-fullname$="k"] > .midcol > .upmod:focus::after { content: "This is the beginning of a beautiful friendship."; }
+.thing[data-fullname$="l"] > .midcol > .upmod:focus::after { content: "We'll always have Prance."; }
+.thing[data-fullname$="m"] > .midcol > .upmod:focus::after { content: "Sparkle. Twilight Sparkle."; }
+.thing[data-fullname$="n"] > .midcol > .upmod:focus::after { content: "You can't handle the harmony!"; }
+.thing[data-fullname$="o"] > .midcol > .upmod:focus::after { content: "Yippie-ki-yay, motherbucker."; }
+.thing[data-fullname$="p"] > .midcol > .upmod:focus::after { content: "Canterlot, we have a problem."; }
+.thing[data-fullname$="q"] > .midcol > .upmod:focus::after { content: "There's no crying in Hoofball!"; }
+.thing[data-fullname$="r"] > .midcol > .upmod:focus::after { content: "Here's Pinkie!"; }
+.thing[data-fullname$="s"] > .midcol > .upmod:focus::after { content: "Carpe diem. Seize the day, mares."; }
+.thing[data-fullname$="t"] > .midcol > .upmod:focus::after { content: "Show me the bits!"; }
+.thing[data-fullname$="u"] > .midcol > .upmod:focus::after { content: "Say hello to my little friend!"; }
+.thing[data-fullname$="v"] > .midcol > .upmod:focus::after { content: "I love the smell of cupcakes in the morning."; }
+.thing[data-fullname$="w"] > .midcol > .upmod:focus::after { content: "The greatest trick Chrysalis ever pulled was convincing the world she didn't exist."; }
+.thing[data-fullname$="x"] > .midcol > .upmod:focus::after { content: "Every time a bell rings, M.A. Larson grants another pair of wings."; }
+.thing[data-fullname$="y"] > .midcol > .upmod:focus::after { content: "I'm not bad, I'm just drawn that way."; }
+.thing[data-fullname$="z"] > .midcol > .upmod:focus::after { content: "I'll get you my pretty, and your little dragon, too!"; }
+.thing[data-fullname$="1"] > .midcol > .upmod:focus::after { content: "That'll do, Pinkie. That'll do."; }
+.thing[data-fullname$="2"] > .midcol > .upmod:focus::after { content: "Elementary, my dear Rarity."; }
+.thing[data-fullname$="3"] > .midcol > .upmod:focus::after { content: "Mares, you can't hug here! This is the friendship room!"; }
+.thing[data-fullname$="4"] > .midcol > .upmod:focus::after { content: "Magic Mirror on the wall, who is the friendliest of them all?"; }
+.thing[data-fullname$="5"] > .midcol > .upmod:focus::after { content: "They call it a Royale with friendship."; }
+.thing[data-fullname$="6"] > .midcol > .upmod:focus::after { content: "Forget it Applejack. It's Manehattan."; }
+.thing[data-fullname$="7"] > .midcol > .upmod:focus::after { content: "Get your stinking paws off me, you damned dirty diamond dog!"; }
+.thing[data-fullname$="8"] > .midcol > .upmod:focus::after { content: "I drink your milkshake!"; }
+.thing[data-fullname$="9"] > .midcol > .upmod:focus::after { content: "Keep your friends close, but your easily redeemable villains closer."; }
+.thing[data-fullname$="0"] > .midcol > .upmod:focus::after { content: "What we've got here is a failure to harmonize."; }
 .thing .upmod:focus:after{white-space:nowrap}
 .midcol,.last-clicked.midcol{overflow:visible!important}
 .res-commentBoxes .commentarea .comment{overflow:visible!important}

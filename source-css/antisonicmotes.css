@@ -170,7 +170,7 @@ a[href|="/theBengersFavoritestPonyEver"]
 }
 
 /* Big Table */
-a[href|="/sbstern"],a[href|="/sbperplex"]
+a[href|="/sbstern"],a[href|="/sbperplex"],a[href|="/timetostop"],a[href|="/besthuman"]
 {
 
    display: block;
@@ -178,9 +178,10 @@ a[href|="/sbstern"],a[href|="/sbperplex"]
    float: left;
    background-image: url(%%BigTable%%) }
 
-a[href="/sbstern"]{  background-position:   0px      0px; width: 150px; height: 378px}
-a[href="/sbperplex"]{       background-position:   -150px   0px; width: 150px; height: 200px}
-
+a[href="/sbstern"]{     background-position:   0px      0px; width: 150px; height: 378px}
+a[href="/sbperplex"]{   background-position:   -150px   0px; width: 150px; height: 200px}
+a[href="/besthuman"]{   background-position:   0px      -450px; width: 300px; height: 450px}
+a[href="/timetostop"]{  background-position:   -300px   -450px; width: 151px; height: 198px}
 
 /**********************************************************************************************/
 /* Colorful names! */
