@@ -71,6 +71,45 @@ function make_emote(match, parts, name, info) {
     return element;
 }
 
+var discordDisruptiveClasses = ['member-username', 'channel-name', 'user-name', 'username', 'channel-voice-states', 'typing'];
+function discordClassInDisruptiveEmotes(node) {
+    return discordDisruptiveClasses.filter(function(className) {
+        return node.className.indexOf(className) >= 0;
+    }).length > 0;
+}
+function disableCodeBlocks(node) {
+    return node.tagName === 'CODE';
+}
+
+function disableEmotesInSearch(node) {
+    return node.classList.contains('search');
+}
+
+function createDisablePredicate(store) {
+    var predicates = [];
+    if(store.prefs.disableDisruptiveEmotes) {
+        predicates.push(discordClassInDisruptiveEmotes);
+    }
+    if(store.prefs.disableEmotesInCodeBlocks) {
+        predicates.push(disableCodeBlocks);
+    }
+    
+    predicates.push(disableEmotesInSearch);
+
+    function disabledEmotesPredicate(node) {
+        var i = 0;
+        while(i < predicates.length) {
+            if(predicates[i](node)) return true;
+            i++;
+        }
+        return false;
+    }
+    //We prefer to return null here as passing a no-op will require us to 
+    //unnecessarily percolate the check up the entire DOM tree
+    //This requires a check but I consider the tradeoff worth it.
+    return predicates.length > 0 ? disabledEmotesPredicate : null;
+}
+
 /*
  * Searches elements recursively for [](/emotes), and converts them.
  */
@@ -81,11 +120,18 @@ function process_text(store, root) {
 
     var nodes_processed = 0;
     var emotes_matched = 0;
+    
+    //May be null if we have no disabled predicates.  Check this below
+    var disabledPredicate = createDisablePredicate(store);
 
     walk_dom(root, Node.TEXT_NODE, function(node) {
         nodes_processed++;
 
         var parent = node.parentNode;
+        //If we're replacing a text node in an element that is disabled
+        //via our preferences, return
+        if(disabledPredicate !== null &&
+            locate_matching_ancestor(parent, disabledPredicate, false)) return;
         // <span> elements to apply alt-text to
         var emote_elements = [];
         emote_regexp.lastIndex = 0;
@@ -107,7 +153,6 @@ function process_text(store, root) {
             if(info === null) {
                 continue;
             }
-
             if(store.is_disabled(info)) {
                 continue;
             }
@@ -177,7 +222,8 @@ function process_text(store, root) {
  * Main function when running globally.
  */
 function run_global(store) {
-    if(store.prefs.enableGlobalSearch) {
+    //Discord should always have emote search enabled
+    if(store.prefs.enableGlobalSearch || platform == "discord-ext") {
         // Never inject the search box into frames. Too many sites fuck up
         // entirely if we do. Instead, we do some cross-frame communication.
         if(running_in_frame) {

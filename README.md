@@ -287,5 +287,7 @@ To release BPM:
    package.
 6. Make update threads, message
    [/u/TwilightShadow1](https://www.reddit.com/u/TwilightShadow1),
-   [/u/DinsFire64](https://www.reddit.com/u/DinsFire64) and other interested
+   [/u/DinsFire64](https://www.reddit.com/u/DinsFire64),
+   [/u/Chalcedon](https://www.reddit.com/user/Chalcedon/), 
+   and other interested
    third parties.

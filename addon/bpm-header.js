@@ -3,6 +3,7 @@
 ** This file is part of BetterPonymotes.
 ** Copyright (c) 2012-2015 Typhos.
 ** Copyright (c) 2015 TwilightShadow1.
+** Copyright (c) 2016 ByzantineFailure
 **
 ** This program is free software: you can redistribute it and/or modify it
 ** under the terms of the GNU Affero General Public License as published by
@@ -21,6 +22,17 @@
 
 (function(_global_this) {
 "use strict";
+
+//Discord requires that we require in our resources
+//This will be processed by webpack at build time
+if(window.process) {
+    var resources = require('./bpm-resources');
+    var tag_name2id = resources.tag_name2id;
+    var sr_id2name = resources.sr_id2name;
+    var sr_name2id = resources.sr_name2id;
+    var tag_id2name = resources.tag_id2name;
+    var emote_map = resources.emote_map;
+}
 
 var _checkpoint = (function() {
     var _start_time = Date.now(); // Grab this value before we do ANYTHING else
