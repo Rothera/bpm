@@ -133,6 +133,20 @@ function convert_broken_emote(element, name) {
     }
 }
 
+function find_second_emote(inArray) {
+	var index = 0;
+	var hrefArray = inArray.slice();
+	while(index < hrefArray.length) {
+		if(hrefArray[index].charAt(0) === '/' && index > 0 && hrefArray[index].charAt(1) !== null && hrefArray[index].length > 1 && hrefArray[index].charAt(1) !== " " && hrefArray[index] !=("/sp")) {
+			var spliced = hrefArray.splice(index, 1);
+			hrefArray.splice(1, 0, spliced[0]);
+			return hrefArray;
+		}
+		index++;
+	}
+	return false;
+}
+
 /*
  * Does any relevant processing on an <a> element, converting emotes where
  * possible.
@@ -150,8 +164,20 @@ function process_element(store, element, convert_unknown) {
 
     if(href && href[0] === "/") {
         // Don't normalize case for emote lookup- they are case sensitive
-        var parts = href.split("-");
-        var name = parts[0];
+		var parts = href.split("-");
+		var name = null;
+		// Adds functionality for alternate emotes.
+		var full_emote = find_second_emote(parts);
+		if(full_emote !== false) {
+			log_debug("Found alternate emote.");
+			name = full_emote[1];
+			element.setAttribute("bpm_fulltext", full_emote.join("-"));
+			element.setAttribute("href", full_emote.slice(1).join("-"));
+			element.setAttribute("data-bpm_tstate", 0);
+		} else {
+			name = parts[0];
+		}
+
         var info = store.lookup_emote(name, true);
 
         if(info) {
