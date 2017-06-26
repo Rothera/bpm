@@ -1,32 +1,3 @@
-/******************/
-/*Sidebar stuff*/
-/******************/
-/*Button edit*/
-.morelink a {
-    color: Red;
-  }
-.nub { display: none;}
-
-.morelink:hover a { color:Orange; }
-
-/*Hayseeds*/
-.titlebox strong {
-    font-size: medium
-}
-
-#headdit-box {display:none;}
-/*Add Image to Sidebar*/
-div.side div.spacer:nth-of-type(1){
-    padding-top: 288px; /*Change "300px" to the height to the height of your image*/
-    background:url(%%happyjack%%) top center no-repeat;
-}
-#search input[type="text"] {
-  background:transparent;
-}
-
-.sidebox .spacer {visibility:hidden}
-.side .create *{display:none!important;}
-
 /*************/
 /*Main CSS*/
 /*************/
@@ -108,6 +79,10 @@ div.footer-parent:after {
 
 /*** Theme ***/
 
+.morelink a { color: red }
+.morelink:hover a { color: orange }
+.morelink .nub { display: none }
+
 .subscribers .word, .users-online .word { display: none }
 .subscribers .number:after { content: " hayseeds" }
 .users-online .number:after { content: " AJ fans" }
@@ -121,7 +96,7 @@ div.footer-parent:after {
 .thing .rank { margin-top: 21px; }
 .thing .rank { color: saddlebrown !important; }
 
-#moderation_tools a, #wikiactions a,
+#moderation_tools a, #wikiactions a, .sidebox .spacer,
 .leavemoderator, .flairtoggle { background-color: transparent !important }
 
 div.RES-keyNav-activeElement { background-color: rgba(255, 255, 255, 0.3) !important; }

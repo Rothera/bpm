@@ -826,6 +826,17 @@ a[href|="/starlightcheering"], a[href|="/sgcheering"] { background-image: url(%%
 
 START-PONYSCRIPT-IGNORE { color: red; }
 
+/* This is a spoiler until 7-10! */
+a[href|="/starlightglitter"], a[href|="/sgglitter"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 210px;
+  height: 150px;
+  cursor: default;
+  background-image: url(%%starlightglitter%%) !important;
+}
+
 a[href|="/mirrorportal"] {
   display: block;
   clear: none;

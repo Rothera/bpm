@@ -1,6 +1,6 @@
 /*========== 70px SPRITESHEET ========== */
 /* 70px emotes */
-a[href|='/lyrarelax'], a[href|='/lyrabedroomeyes'], a[href|='/lunadoesntfit'], a[href|='/rdsquee'], a[href|='/egright'], a[href|='/sadstamp'], a[href|='/starlightgrinner'], a[href|='/cuteprincess'], a[href|='/brownieyes'] {
+a[href|='/lyrarelax'], a[href|='/lyrabedroomeyes'], a[href|='/lunadoesntfit'], a[href|='/rdsquee'], a[href|='/egright'], a[href|='/sadstamp'], a[href|='/starlightgrinner'], a[href|='/cuteprincess'], a[href|='/brownieyes'], a[href|='/egbeam'] {
   width:70px; height:70px;
   background-image: url(%%70-spritesheet%%);
   display: block; clear: none; float: left;
@@ -20,6 +20,7 @@ a[href|='/sadstamp']                                     { background-position:-
 a[href|='/starlightgrinner']                             { background-position:-280px    0px }
 a[href|='/cuteprincess']                                 { background-position:-350px    0px }
 a[href|='/brownieyes']                                   { background-position:-420px    0px }
+a[href|='/egbeam']                                       { background-position:-490px    0px }
 
 a[href|='/egright']                                      { background-position:   0px  -70px; height:95px }
 a[href|='/twiadventuretime']                             { background-position: -70px  -70px }
@@ -27,7 +28,7 @@ a[href|='/twiadventuretime']                             { background-position: 
 /*========== 100px SPRITESHEET ========== */
 /* 100px emotes */
 
-a[href|='/wondercolt'], a[href|='/wonderpoint'], a[href|='/twifruitbowl'], a[href|='/thisisntapuppy'], a[href|='/stamp'], a[href|='/puppykickerstamp'] {
+a[href|='/wondercolt'], a[href|='/wonderpoint'], a[href|='/twifruitbowl'], a[href|='/thisisntapuppy'], a[href|='/stamp'], a[href|='/puppykickerstamp'], a[href|='/pinkitty'] {
   width:100px; height:100px;
   background-image: url(%%100-spritesheet%%);
   display: block; clear: none; float: left;
@@ -36,3 +37,4 @@ a[href|='/wondercolt']         { background-position:   0px 0px }
 a[href|='/wonderpoint']        { background-position:-100px 0px }
 a[href|='/twifruitbowl'], a[href|='/thisisntapuppy']       { background-position:-200px 0px }
 a[href|='/stamp'], a[href|='/puppykickerstamp']            { background-position:-300px 0px }
+a[href|='/pinkitty']           { background-position:-400px 0px; width:200px }

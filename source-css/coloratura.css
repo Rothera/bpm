@@ -101,6 +101,108 @@ a[href="/s"]:hover::after {
 .arrow.up { background-position: 0 -28px }
 .arrow.down { background-position: 0 -42px }
 
+/*** Sidebar Emote Tables ***/
+
+.side .md { padding-bottom: 12px; }
+
+.side .md h1 {
+  border: 1px solid #ccc;
+  border-bottom: none;
+  padding: 4px;
+  margin: 0;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.side .md h2 {
+  width: 275px;
+  color: black;
+  font-weight: normal;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-top: 0;
+  border-bottom: 0;
+  padding: 5px 4px;
+  margin: 0;
+}
+
+.side .md h2:first-of-type {
+  padding-top: 19px;
+  border-top: 1px solid #ccc;
+}
+
+.side .md h2:first-of-type:before {
+  text-align: center;
+  content:"Select a tab to expand our emotes list!";
+  display: block;
+  padding-bottom: 19px;
+  font-weight: bold;
+}
+
+.side .md h2:last-of-type {
+  width: 215px;
+  padding-bottom: 19px;
+  padding-right: 64px;
+  border-bottom: 1px solid #ccc;
+}
+
+.side .md h2:last-of-type+p a {
+  float: right !important;
+  position: relative !important;
+  top: -74px !important;
+  left: -15px !important;
+  margin-bottom: -70px !important;
+}
+
+.side .md table {
+  padding-bottom: 19px;
+  display: none;
+  position: relative;
+}
+
+.side .md th {
+  color: white;
+  background: black;
+  border: 0;
+  height: 15px;
+  font-size: 11px;
+  text-align: left !important;
+}
+
+.side .md tr, .side .md td {
+  border: 1px solid #ccc;
+  padding: 0px !important;
+}
+
+.side .md h1:nth-of-type(1):hover ~ table:nth-of-type(1),
+.side .md h1:nth-of-type(2):hover ~ table:nth-of-type(2),
+.side .md h1:nth-of-type(3):hover ~ table:nth-of-type(3),
+.side .md h1:nth-of-type(4):hover ~ table:nth-of-type(4),
+.side .md h1:nth-of-type(5):hover ~ table:nth-of-type(5) { display: table; margin: 0; }
+.side .md h1:nth-of-type(1):hover ~ table:nth-of-type(1) th,
+.side .md h1:nth-of-type(2):hover ~ table:nth-of-type(2) th,
+.side .md h1:nth-of-type(3):hover ~ table:nth-of-type(3) th,
+.side .md h1:nth-of-type(4):hover ~ table:nth-of-type(4) th,
+.side .md h1:nth-of-type(5):hover ~ table:nth-of-type(5) th { display: none; }
+
+.side .md h1:nth-of-type(1):active ~ table:nth-of-type(1),
+.side .md h1:nth-of-type(2):active ~ table:nth-of-type(2),
+.side .md h1:nth-of-type(3):active ~ table:nth-of-type(3),
+.side .md h1:nth-of-type(4):active ~ table:nth-of-type(4),
+.side .md h1:nth-of-type(5):active ~ table:nth-of-type(5),
+.side .md table:nth-of-type(1):hover,
+.side .md table:nth-of-type(2):hover,
+.side .md table:nth-of-type(3):hover,
+.side .md table:nth-of-type(4):hover,
+.side .md table:nth-of-type(5):hover { display: table; margin: -24px 0 0 0; }
+
+.side .md h1:hover ~ h2, .side .md h1:active ~ h2, .side .md table:hover ~ h2, .side .md table:hover ~ h1,
+.side .md h1:hover ~ h2:last-of-type+p a, .side .md h1:active ~ h2:last-of-type+p a,
+.side .md table:hover ~ h2:last-of-type+p a { display: none; }
+
+.side .md h2:last-of-type+p a+.SuperRedditAltTextDisplay_Text { display: none; }
+
 /*---------------- Standardized Segment ----------------*/
 
 .md { overflow: auto }
@@ -508,7 +610,7 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 
 /*---------------- END COPY ----------------*/
 
-a[href|="/countesssing"], a[href|="/raramagic"], a[href|="/thecountess"], a[href|="/happyrara"], a[href|="/rarasing"], a[href|="/sadrara"], a[href|="/svengallop"], a[href|="/fillyrarasing"], a[href|="/rarashock"], a[href|="/countempt"], a[href|="/countesslook"], a[href|="/raraglad"], a[href|="/sadcountess"], a[href|="/rarasmile"], a[href|="/rarastare"], a[href|="/singitrara"], a[href|="/raraplease"], a[href|="/raralaugh"], a[href|="/shyrara"], a[href|="/raralook"], a[href|="/excitedrara"], a[href|="/sorryrara"], a[href|="/gratefulrara"], a[href|="/interestedrara"] {
+a[href|="/countesssing"], a[href|="/raramagic"], a[href|="/thecountess"], a[href|="/happyrara"], a[href|="/rarasing"], a[href|="/sadrara"], a[href|="/svengallop"], a[href|="/fillyrarasing"], a[href|="/rarashock"], a[href|="/countempt"], a[href|="/countesslook"], a[href|="/raraglad"], a[href|="/sadcountess"], a[href|="/rarasmile"], a[href|="/rarastare"], a[href|="/singitrara"], a[href|="/raraplease"], a[href|="/raralaugh"], a[href|="/shyrara"], a[href|="/raralook"], a[href|="/excitedrara"], a[href|="/sorryrara"], a[href|="/gratefulrara"], a[href|="/interestedrara"], a[href|="/rarawink"], a[href|="/pleasantrara"] {
   display: block;
   clear: none;
   float: left;
@@ -542,20 +644,24 @@ a[href|="/excitedrara"] { background-position: 0 -350px }
 a[href|="/sorryrara"] { background-position: -70px -350px }
 a[href|="/gratefulrara"] { background-position: -140px -350px }
 a[href|="/interestedrara"] { background-position: -210px -350px }
+a[href|="/rarawink"] { background-position: 0 -420px }
+a[href|="/pleasantrara"] { background-position: -70px -420px }
 
-a[href|="/rarajackhug"], a[href|="/hoovsies"], a[href|="/raraselfie"] {
+a[href|="/rarajackhug"], a[href|="/hoovsies"], a[href|="/raraselfie"], a[href|="/rarastrum"], a[href|="/rarashred"] {
   display: block;
   clear: none;
   float: left;
   width: 100px;
   height: 100px;
   cursor: default;
-  background-image: url(%%raramotes100%%) !important;
+  background-image: url(%%raraspecial%%) !important;
 }
 
 a[href|="/rarajackhug"] { background-position: 0 0 }
 a[href|="/hoovsies"] { background-position: -100px 0 }
 a[href|="/raraselfie"] { background-position: -200px 0 }
+a[href|="/rarastrum"] { background-position: 0 -100px; height: 150px }
+a[href|="/rarashred"] { background-position: -100px -100px; width: 150px; height: 120px }
 
 a[href|="/raratrotting"] {
   display: block;

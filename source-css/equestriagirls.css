@@ -624,7 +624,7 @@ textarea {
 .linkflair-fimtitlespoiler p.title:before { content: "[FIM SPOILER] "}
 .linkflair-fctitlespoiler p.title:before { content: "[UPCOMING SPOILER] "}
 .linkflair-comictitlespoiler p.title:before { content: "[COMIC SPOILER] "}
-.flairselector .linkflairlabel { display: unset }
+.flairselector .linkflairlabel, .linkflair-note .linkflairlabel { display: unset }
 
 /*comments*/
 

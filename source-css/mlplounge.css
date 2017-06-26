@@ -171,12 +171,12 @@ background: url(%%horsewife%%) center center no-repeat transparent;
 /*Subscriber Name Replace*/
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Contractors"}
+div.titlebox .subscribers span.number:after {content:" Not asking for help"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " Ignoring the customer" }
+div.titlebox p.users-online span.number:after { content: " Helping anyway" }
 div.titlebox p.users-online span.word { display: none }
 
-/*Flair modifications*/
+/*modifications*/
 .sidecontentbox .flair {display:none}
 .titlebox strong {font-size: medium;}
 .titlebox .SuperRedditAltTextDisplay_Text{display:none!important}
@@ -228,15 +228,15 @@ div.titlebox p.users-online span.word { display: none }
 {
     display:inline-block;
     float:right;
-    background:url(%%bmotes%%);
+    background:url(%%emotes%%);
     width:70px;
     height:70px;
     margin-top:-45px;
     margin-left:5px;
     margin-bottom:0px;
     margin-right:-45px;
-    background-position: -200% -800%; /*To select emote table position. Increments of -100%.*/
-    transform:scaleX(-1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
+    background-position: -200% -000%; /*To select emote table position. Increments of -100%.*/
+    transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 
 /* Fancy warning sign */
@@ -1058,6 +1058,7 @@ padding: 0
 .flair-disco {background-position: -100% -1200%} /*Is actually nameless, but Hairy Tipper elsewhere*/
 .flair-fancypants {background-position: -200% -1200%}
 .flair-fleur {background-position: -300% -1200%}
+.flair-hotteacher {background-position: -400% -1200%}
 
 .flair-cadence {background-position: 0% -1300%}
 .flair-shiningarmor {background-position: -100% -1300%}
@@ -1150,7 +1151,7 @@ padding: 0
 .flair-cmcsyn {background-position: -300% -100%}
 .flair-cmcsyn:hover {background-position: -100% -2100%} /*For Synes7hesia; Sunset Shimmer Hover*/
 .flair-cmcdc {background-position: -300% -100%}
-.flair-cmcdc:hover {background-position: -100% -200%} /*For DoomedCivilian; 'tia Hover*/
+.flair-cmcdc:hover {background-position: -400% -1200%} /*For DoomedCivilian; 'tia Hover*/
 .flair-cmcpinkie {background-position: -300% -100%} /* /u/Pinkie_Pie */
 .flair-cmcpinkie:hover {background-position: 0% -100%}
 .flair-pathd {background-position: -100% 0%}
@@ -1165,7 +1166,6 @@ a.author[href$="UserNameHere."] {font-size:0!important; overflow:hidden; display
 
 a.author[href$="UserNameHere"]:before {font-size:10px!important; visibility:visible!important; content: "New Name Here"}
 */
-
 
 .sidecontentbox a.author[href$="Pinkie_Pie"] {Display:none}
 .sidecontentbox a.author:after {display: none}
