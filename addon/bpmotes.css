@@ -397,6 +397,11 @@ word-break:normal;}
 .bpm-emote:before {border-style:none!important}
 .bpm-emote:after {border-style:none!important}
 
+/* Bugfix: Ugly new profile pages are trying to be "helpful" and show title text.
+   This is annoying in general. -m requires something here, however. */
+.StyledHtml .bpm-emote::after { content: unset !important }
+.StyledHtml .bpflag-m::after { content: " " !important; }
+
 /* Bugfix: Wikipedia expandos show hidden text by links (RES) */
 .res-media-host-wikipedia .bpm-alttext {display:none}
 
@@ -652,4 +657,14 @@ word-break:normal;}
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+a[href|="/teapot"]:hover + .bpm-emote {
+    width: 70px !important;
+    height: 70px !important;
+    background-image: url("//b.thumbs.redditmedia.com/xPK94sOv-Nd3SG_qc6ef2juI6-xYnhlPi8nhDDXCzwo.png") !important;
+    display: block;
+    clear: none;
+    float: left;
+    background-position: -350px -0px !important;
 }
