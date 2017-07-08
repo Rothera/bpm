@@ -42,7 +42,7 @@ CONTENT_SCRIPT := \
 EMOTE_DATA = emotes/*.json tags/*.json data/rules.yaml data/tags.yaml
 
 ADDON_DATA = \
-    build/gif-animotes.css build/bpm-resources.js build/emote-classes.css build/betterponymotes.js \
+    build/bpm-resources.js build/emote-classes.css build/betterponymotes.js \
     addon/bpmotes.css addon/combiners-nsfw.css addon/extracss-pure.css addon/extracss-webkit.css \
     addon/bootstrap.css addon/options.html addon/options.css addon/options.js \
     addon/pref-setup.js
@@ -73,10 +73,6 @@ sync:
 build/betterponymotes.js: $(CONTENT_SCRIPT)
 	mkdir -p build
 	cat $(CONTENT_SCRIPT) > build/betterponymotes.js
-
-build/gif-animotes.css: $(EMOTE_DATA)
-	mkdir -p build
-	./dlanimotes.py
 
 build/bpm-resources.js build/emote-classes.css: $(EMOTE_DATA)
 	mkdir -p build
@@ -127,7 +123,6 @@ build/chrome.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js
 	cp build/betterponymotes.js build/chrome
 	cp build/bpm-resources.js build/chrome
 	cp build/emote-classes.css build/chrome
-	cp build/gif-animotes.css build/chrome
 
 	cp addon/bootstrap.css build/chrome
 	cp addon/bpmotes.css build/chrome
@@ -157,7 +152,6 @@ build/BPM.safariextension: $(ADDON_DATA) addon/sf-Settings.plist addon/sf-backgr
 	cp build/betterponymotes.js build/BPM.safariextension
 	cp build/bpm-resources.js build/BPM.safariextension
 	cp build/emote-classes.css build/BPM.safariextension
-	cp build/gif-animotes.css build/BPM.safariextension
 
 	cp addon/bootstrap.css build/BPM.safariextension
 	cp addon/bpmotes.css build/BPM.safariextension

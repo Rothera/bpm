@@ -48,20 +48,6 @@ function init_css(store) {
         }
 
         add_css(store.custom_css);
-
-        // This needs to come after subreddit CSS to override their !important,
-        // so just use document.head directly.
-        if(platform === "chrome-ext") {
-            make_css_link("/gif-animotes.css", function(tag) {
-                if(document.head) {
-                    document.head.appendChild(tag);
-                } else {
-                    with_dom(function() { // Chrome, at least
-                        document.head.appendChild(tag);
-                    });
-                }
-            });
-        }
     });
 
     with_dom(function() {
