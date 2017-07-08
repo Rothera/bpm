@@ -48,7 +48,7 @@ a[href|='/TrixieTip'], a[href|='/trixietip'], a[href|='/trixieright'], a[href|='
   background-image: url(%%hithroc-spritesheet%%);
   display: block; clear: none; float: left;
 }
-a[href|='/trixsqueeze'], a[href|='/deathgrip'], a[href|='/teapot'], a[href|='/trixiecute'], a[href|='/trixdorkable'], a[href|='/incomingteacups'] {
+a[href|='/trixsqueeze'], a[href|='/deathgrip'], a[href|='/teapot'], a[href|='/trixiecute'], a[href|='/trixdorkable'], a[href|='/incomingteacups'], a[href|='/trixiehello'], a[href|='/trixieohhi'] {
   width:140px; height:140px;
   background-image: url(%%hithroc-spritesheet%%);
   display: block; clear: none; float: left;
@@ -70,6 +70,10 @@ a[href|='/trixsqueeze'], a[href|='/deathgrip'] { background-position:   0px  -70
 a[href|='/teapot']                             { background-position:-280px  -70px }
 a[href|='/teapot']:hover                       { background-position:-140px  -70px }
 a[href|='/teapot']:hover + .bpm-emote          { width:70px!important; height:70px!important; background-image: url(%%hithroc-spritesheet%%)!important; display: block; clear: none; float: left; background-position:-350px -0px!important }
+a[href|='/trixieohhi']                         { background-position:-420px  -70px }
+a[href|='/trixieohhi']:hover                   { background-position:   0px -210px }
+a[href|='/trixiehello']                        { background-position:   0px -210px }
+a[href|='/teapot']:hover                       { background-position:-140px  -70px }
 
 a[href|='/trixiecute'], a[href|='/trixdorkable'], a[href|='/incomingteacups'] { background-position:-560px -70px; width:102px; margin-bottom: -10px; position:relative; z-index: 9999999999999999999 }
 
