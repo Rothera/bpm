@@ -65,9 +65,7 @@ www: web/* build/betterponymotes-*.mozsucks-*.xpi build/betterponymotes.update.r
 	cp build/betterponymotes-*.mozsucks-*.xpi www/betterponymotes_$(VERSION).xpi
 
 sync:
-	chmod 644 animotes/*
 	chmod 644 www/*
-	rsync -e "ssh -p 40719" -zvLr --delete animotes/ lyra@ponymotes.net:/var/www/ponymotes.net/animotes
 	rsync -e "ssh -p 40719" -zvLr --delete www/ lyra@ponymotes.net:/var/www/ponymotes.net/bpm
 
 build/betterponymotes.js: $(CONTENT_SCRIPT)
