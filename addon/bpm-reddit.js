@@ -76,7 +76,7 @@ function toggle_emote(store, element) {
     }
     //If this attribute is set, then the emote has a fallback.
     if(element.hasAttribute("data-bpm_tstate")) {
-        var parts = element.getAttribute("bpm_fulltext").split("-");
+        var parts = element.getAttribute("data-bpm_fulltext").split("-");
 	switch(element.getAttribute("data-bpm_tstate")) {
 	    case "0": //The emote is normal and should be changed to the fallback emote.
 	        var info = store.lookup_emote(parts[1], false);
@@ -98,7 +98,7 @@ function toggle_emote(store, element) {
 		    element.classList.add("bpm-nsfw");
 		}
 		if(state.indexOf("T") > -1) {
-		    element.textContent = element.getAttribute("bpm_fulltext");
+		    element.textContent = element.getAttribute("data-bpm_fulltext");
 		}
 		parts.splice(0, 1);
 		element.setAttribute("href", parts.join("-"));
