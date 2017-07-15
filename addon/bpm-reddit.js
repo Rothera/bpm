@@ -74,7 +74,7 @@ function toggle_emote(store, element) {
     if(store.prefs.clickToggleSFW && is_nsfw_disabled) {
         return;
     }
-	//If this attribute is set, then the emote has a fallback.
+    //If this attribute is set, then the emote has a fallback.
 	if(element.hasAttribute("data-bpm_tstate")) {
 		var parts = element.getAttribute("bpm_fulltext").split("-");
 		switch(element.getAttribute("data-bpm_tstate")) {
@@ -93,7 +93,8 @@ function toggle_emote(store, element) {
 				element.setAttribute("data-bpm_tstate", "1");
 				break;
 			case "1": //The emote is set to the fallback and should be minified.
-				element.classList.add("bpm-minified");				if(is_nsfw_disabled) {
+				element.classList.add("bpm-minified");				
+				if(is_nsfw_disabled) {
 					element.classList.add("bpm-nsfw");
 				}
 				if(state.indexOf("T") > -1) {
