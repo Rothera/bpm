@@ -171,7 +171,7 @@ function process_element(store, element, convert_unknown) {
 	if(full_emote !== null) {
 	    log_debug("Found alternate emote.");
 	    name = full_emote[1];
-	    element.setAttribute("bpm_fulltext", full_emote.join("-"));
+	    element.setAttribute("data-bpm_fulltext", full_emote.join("-"));
 	    element.setAttribute("href", full_emote.slice(1).join("-"));
 	    element.setAttribute("data-bpm_tstate", 0);
 	} else {
