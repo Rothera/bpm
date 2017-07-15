@@ -93,7 +93,7 @@ function toggle_emote(store, element) {
 		element.setAttribute("data-bpm_tstate", "1");
 		break;
 	    case "1": //The emote is set to the fallback and should be minified.
-		element.classList.add("bpm-minified");				
+		element.classList.add("bpm-minified");
 		if(is_nsfw_disabled) {
 		    element.classList.add("bpm-nsfw");
 		}
