@@ -44,6 +44,14 @@ You'll also need the following tools:
   need Python 2 installed and on your PATH with the name `python2` in order to
   tag emotes in BPM. (Many Linux distributions already have this by default.)
 
+- `pip`, the package manager that comes bundled with newer versions of Python.
+  Needed to install `virtualenv` and several Python packages for BPM's build
+  tools. Once `virtualenv` is installed and activated, the version of `pip`
+  created by `virtualenv` will be used, not the globally installed one.
+
+- `virtualenv`, a tool to create isolated Python environments. Used to create an
+  isolated environment for `pip` to install dependencies into
+
 - `zip`, a command line utility for creating zip-formatted archives. Needs to be
   on your PATH. If you don't already have it, it can probably be installed using
   your system's package manager. (E.g. `sudo apt-get install zip` on Ubuntu)
