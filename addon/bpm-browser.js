@@ -149,7 +149,7 @@ case "chrome-ext":
         }
         data.method = method;
         log_debug("_send_message:", data);
-        chrome.extension.sendMessage(data, _message_handler);
+        chrome.runtime.sendMessage(data, _message_handler);
     };
 
     var _message_handler = catch_errors(function(message) {
@@ -175,7 +175,7 @@ case "chrome-ext":
     };
 
     linkify_options = function(element) {
-        element.href = chrome.extension.getURL("/options.html");
+        element.href = chrome.runtime.getURL("/options.html");
         element.target = "_blank";
     };
     break;
