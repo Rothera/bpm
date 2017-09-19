@@ -47,7 +47,7 @@ ADDON_DATA = \
     addon/bootstrap.css addon/options.html addon/options.css addon/options.js \
     addon/pref-setup.js
 
-default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension build/export.json.bz2
+default: build/betterponymotes.xpi build/chrome.zip build/firefox.zip build/BPM.safariextension build/export.json.bz2
 
 clean:
 	rm -fr build
@@ -135,6 +135,32 @@ build/chrome.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js
 	cp betterponymotes.pem build/chrome/key.pem
 	# Uncompressed due to prior difficulties with the webstore
 	cd build/chrome && zip -0 ../chrome.zip *
+
+build/firefox.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js
+	mkdir -p build/firefox_webextension
+
+	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/fx-manifest.json > build/firefox_webextension/manifest.json
+
+	cp addon/cr-background.html build/firefox_webextension/background.html
+	cp addon/cr-background.js build/firefox_webextension/background.js
+
+	cp build/betterponymotes.js build/firefox_webextension
+	cp build/bpm-resources.js build/firefox_webextension
+	cp build/emote-classes.css build/firefox_webextension
+
+	cp addon/bootstrap.css build/firefox_webextension
+	cp addon/bpmotes.css build/firefox_webextension
+	cp addon/combiners-nsfw.css build/firefox_webextension
+	cp addon/extracss-pure.css build/firefox_webextension
+	cp addon/extracss-webkit.css build/firefox_webextension
+	cp addon/options.css build/firefox_webextension
+	cp addon/options.html build/firefox_webextension
+	cp addon/options.js build/firefox_webextension
+	cp addon/pref-setup.js build/firefox_webextension
+
+	cp betterponymotes.pem build/firefox_webextension/key.pem
+	# Uncompressed due to prior difficulties with the webstore
+	cd build/firefox_webextension && zip -0 ../firefox_webextension.xpi *
 
 build/BPM.safariextension: $(ADDON_DATA) addon/sf-Settings.plist addon/sf-background.html addon/sf-background.js
 	mkdir -p build/BPM.safariextension

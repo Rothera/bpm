@@ -46,7 +46,7 @@ var bpm_utils = {
     platform: (function() {
         if(self.on !== undefined) {
             return "firefox-ext";
-        } else if(_bpm_global("chrome") !== undefined && chrome.extension !== undefined) {
+        } else if(_bpm_global("chrome") !== undefined && chrome.runtime !== undefined) {
             return "chrome-ext";
         } else if(_bpm_global("safari")) {
             return "safari-ext";
@@ -130,7 +130,7 @@ case "chrome-ext":
                 data = {};
             }
             data["method"] = method;
-            chrome.extension.sendMessage(data, this._message_handler.bind(this));
+            chrome.runtime.sendMessage(data, this._message_handler.bind(this));
         },
 
         _message_handler: function(message) {
