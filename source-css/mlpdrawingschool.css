@@ -312,11 +312,8 @@ ul.tabmenu {
 *********************  
 */  
 
-.side {  
-    padding: 27px 0px 0px 5px;
-    margin: 0px 0px 0px 0px;
-    background:none;  
-}  
+
+
 form#search {  
     border: 2px solid #BED5CE;  
     background:#33AADD;  
@@ -1046,3 +1043,9 @@ a[href|="/shyhug"] {
     background-position: -0px -0px;
     }
 
+.side {
+    margin-top: 20px;
+    padding-top: 401px;
+    
+    background-image: url(%%flagged3%%);
+    background-repeat: no-repeat

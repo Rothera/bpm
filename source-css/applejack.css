@@ -89,6 +89,7 @@ div.footer-parent:after {
 
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important }
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "APPLE BARONS" }
+.sidecontentbox .helplink+.title+.content li:nth-of-type(4) { display: none }
 
 .bottom .author { font-size: 0 }
 .bottom .author:after { font-size: x-small !important; content: "apples" }

@@ -135,7 +135,7 @@ input[name=uh][value$="z"] ~ a:after { background-image: url(%%HeaderSheet-01-v2
 /*********** END OF RANDOM HEADER IMAGES ********/
 
 /* subreddit logo image */
-#header-img { background-image: url(%%subreddit-icon%%); width: 86px; height: 110px;position: relative; z-index: 3; left: 15px; top: 28px;}
+#header-img { background-image: url(%%subreddit-icon%%); width: 86px; height: 110px;position: relative; z-index: 2; left: 15px; top: 28px;}
 #header-img:hover { background-position: -87px 0; }
 
 #header-bottom-left {
@@ -161,7 +161,7 @@ input[name=uh][value$="z"] ~ a:after { background-image: url(%%HeaderSheet-01-v2
   text-align: center;
   width: 299px;
   height: 69px;
-  z-index: 3;
+  z-index: 2;
 }
 /* Hide ":submit", ":stylesheet", etc. text */
 span.hover.pagename.redditname {
