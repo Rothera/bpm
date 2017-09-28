@@ -47,7 +47,7 @@ ADDON_DATA = \
     addon/bootstrap.css addon/options.html addon/options.css addon/options.js \
     addon/pref-setup.js
 
-default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension build/export.json.bz2
+default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension build/export.json.bz2 build/gif-animotes.css
 
 clean:
 	rm -fr build
@@ -66,7 +66,9 @@ www: web/* build/betterponymotes-*.mozsucks-*.xpi build/betterponymotes.update.r
 
 sync:
 	chmod 644 www/*
+	chmod 644 animotes/*
 	rsync -e "ssh -p 40719" -zvLr --delete www/ lyra@ponymotes.net:/var/www/ponymotes.net/bpm
+	rsync -e "ssh -p 40719" -zvLr --delete animotes/ lyra@ponymotes.net:/var/www/ponymotes.net/animotes
 
 build/betterponymotes.js: $(CONTENT_SCRIPT)
 	mkdir -p build
@@ -81,6 +83,10 @@ build/export.json.bz2: build/export.json
 
 build/export.json: $(EMOTE_DATA)
 	./bpexport.py --json build/export.json
+
+build/gif-animotes.css: $(EMOTE_DATA)
+	mkdir -p build
+	./dlanimotes.py
 
 build/betterponymotes.xpi: $(ADDON_DATA) addon/fx-main.js addon/fx-install.rdf
 	mkdir -p build/firefox/data
