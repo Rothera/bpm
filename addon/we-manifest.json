@@ -1,4 +1,10 @@
 {
+    "applications": {
+        "gecko": {
+            "id": "jid1-tHrhDJXsKvsiCw@jetpack",
+            "strict_min_version": "42.0"
+        }
+    },
     "background": {
         "page": "background.html"
     },
@@ -10,7 +16,7 @@
                 "betterponymotes.js"
             ],
             "matches": [
-                "*://*/*"
+                "<all_urls>"
             ],
             "run_at": "document_start"
         }
@@ -18,9 +24,12 @@
     "description": "View Reddit ponymotes across the site",
     "homepage_url": "https://ponymotes.net/bpm/",
     "manifest_version": 2,
-    "minimum_chrome_version": "20",
+    "minimum_chrome_version": "47",
     "name": "BetterPonymotes",
-    "options_page": "options.html",
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
     "permissions": [
         "http://*.reddit.com/",
         "https://*.reddit.com/",

@@ -108,7 +108,7 @@ function is_broken_emote(element, name) {
     var pseudos = [null, ":after", ":before"];
     for(var pi = 0; pi < pseudos.length; pi++) {
         var bg_image = window.getComputedStyle(element, pseudos[pi]).backgroundImage;
-        // This value is "" in Opera, but "none" in Firefox and Chrome.
+        // This value is "" in Opera, but "none" in WebExt.
         if(bg_image && bg_image !== "none") {
             return false;
         }

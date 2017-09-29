@@ -26,19 +26,12 @@ var _LOG_ERROR = 3;
 var _LOG_LEVEL = DEV_MODE ? _LOG_DEBUG : _LOG_WARNING;
 
 var _console = find_global("console");
-var _gm_log = find_global("GM_log");
 var _raw_log;
 
 var CONTAINER_PADDING = 10;
 
 if(_console && _console.log) {
     _raw_log = _console.log.bind(_console);
-} else if(_gm_log) {
-    _raw_log = function() {
-        var args = Array.prototype.slice.call(arguments);
-        var msg = args.join(" ");
-        _gm_log(msg);
-    };
 } else {
     // ?!?
     _raw_log = function() {};
@@ -51,8 +44,7 @@ function _wrap_logger(cname, prefix, level) {
     } else {
         cfunc = _raw_log;
     }
-    return function() {
-        var args = Array.prototype.slice.call(arguments);
+    return function(...args) {
         args.unshift(prefix);
         if(window.name) {
             args.unshift("[" + window.name + "]:");
@@ -60,7 +52,7 @@ function _wrap_logger(cname, prefix, level) {
         _log_buffer.push(args.join(" "));
         args.unshift("BPM:");
         if(_LOG_LEVEL <= level) {
-            cfunc.apply(null, args);
+            cfunc.bind(null)(...args);
         }
     };
 }
@@ -80,13 +72,8 @@ if(_console && _console.trace) {
  * script runs unmodified on all supported platforms.
  */
 var platform;
-// FIXME: "self" is a standard object, though self.on is specific to
-// Firefox content scripts. I'd prefer something a little more clearly
-// affiliated, though.
-if(self.on) {
-    platform = "firefox-ext";
-} else if(find_global("chrome") && chrome.extension) {
-    platform = "chrome-ext";
+if(find_global("chrome") && chrome.runtime) {
+    platform = "webext";
 } else if(find_global("safari") && window.name === "") {
     platform = "safari-ext";
 } else {
@@ -106,9 +93,9 @@ log_debug("Platform:", platform);
  * exceptions.
  */
 function catch_errors(f) {
-    return function() {
+    return function(...args) {
         try {
-            return f.apply(this, arguments);
+            return f(...args);
         } catch(e) {
             log_error("Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
             if(e.trace) {

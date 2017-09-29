@@ -22,7 +22,7 @@
 # - Bump version
 # $ make
 # - Upload Chrome addon
-# - Sign XPI
+# - Upload Firefox addon
 # $ make www
 # $ make sync
 # - chmod 644
@@ -45,24 +45,20 @@ ADDON_DATA = \
     build/bpm-resources.js build/emote-classes.css build/betterponymotes.js \
     addon/bpmotes.css addon/combiners-nsfw.css addon/extracss-pure.css addon/extracss-webkit.css \
     addon/bootstrap.css addon/options.html addon/options.css addon/options.js \
-    addon/pref-setup.js
+    addon/pref-setup.js addon/we-manifest.json
 
-default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension build/export.json.bz2 build/gif-animotes.css
+default: build/webext.zip build/BPM.safariextension build/export.json.bz2 build/gif-animotes.css
 
 clean:
 	rm -fr build
 
-www: web/* build/betterponymotes-*.mozsucks-*.xpi build/betterponymotes.update.rdf
+www: web/*
 	cp web/firefox-logo.png www
 	cp web/chrome-logo.png www
 	cp web/safari-logo.png www
 	cp web/relay-logo.png www
 	cp web/ponymotes-logo.png www
 	sed "s/\/\*{{version}}\*\//$(VERSION)/" < web/index.html > www/index.html
-
-	rm -f www/*.xpi
-	cp build/betterponymotes-*.mozsucks-*.xpi www/betterponymotes.xpi
-	cp build/betterponymotes-*.mozsucks-*.xpi www/betterponymotes_$(VERSION).xpi
 
 sync:
 	chmod 644 www/*
@@ -88,59 +84,31 @@ build/gif-animotes.css: $(EMOTE_DATA)
 	mkdir -p build
 	./dlanimotes.py
 
-build/betterponymotes.xpi: $(ADDON_DATA) addon/fx-main.js addon/fx-install.rdf
-	mkdir -p build/firefox/data
+build/webext.zip: $(ADDON_DATA) addon/we-background.html addon/we-background.js
+	mkdir -p build/webext
 
-	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/fx-package.json > build/firefox/package.json
+	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/we-manifest.json > build/webext/manifest.json
 
-	cp addon/fx-main.js build/firefox/index.js
+	cp addon/we-background.html build/webext/background.html
+	cp addon/we-background.js build/webext/background.js
 
-	cp build/betterponymotes.js build/firefox/data
-	cp build/bpm-resources.js build/firefox/data
-	cp build/bpm-resources.js build/firefox
-	cp build/emote-classes.css build/firefox/data
+	cp build/betterponymotes.js build/webext
+	cp build/bpm-resources.js build/webext
+	cp build/emote-classes.css build/webext
 
-	cp addon/bootstrap.css build/firefox/data
-	cp addon/bpmotes.css build/firefox/data
-	cp addon/combiners-nsfw.css build/firefox/data
-	cp addon/extracss-pure.css build/firefox/data
-	cp addon/extracss-webkit.css build/firefox/data
-	cp addon/options.css build/firefox/data
-	cp addon/options.html build/firefox/data
-	cp addon/options.js build/firefox/data
-	cp addon/pref-setup.js build/firefox
+	cp addon/bootstrap.css build/webext
+	cp addon/bpmotes.css build/webext
+	cp addon/combiners-nsfw.css build/webext
+	cp addon/extracss-pure.css build/webext
+	cp addon/extracss-webkit.css build/webext
+	cp addon/options.css build/webext
+	cp addon/options.html build/webext
+	cp addon/options.js build/webext
+	cp addon/pref-setup.js build/webext
 
-	cd build/firefox && ../../node_modules/.bin/jpm xpi
-	./mungexpi.py $(VERSION) addon/fx-install.rdf build/firefox/*.xpi build/betterponymotes.xpi
-
-build/betterponymotes.update.rdf: build/betterponymotes-*.mozsucks-*.xpi
-	uhura -k betterponymotes.pem build/betterponymotes-*.mozsucks-*.xpi https://ponymotes.net/bpm/betterponymotes_$(VERSION).xpi > build/betterponymotes.update.rdf
-
-build/chrome.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js
-	mkdir -p build/chrome
-
-	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/cr-manifest.json > build/chrome/manifest.json
-
-	cp addon/cr-background.html build/chrome/background.html
-	cp addon/cr-background.js build/chrome/background.js
-
-	cp build/betterponymotes.js build/chrome
-	cp build/bpm-resources.js build/chrome
-	cp build/emote-classes.css build/chrome
-
-	cp addon/bootstrap.css build/chrome
-	cp addon/bpmotes.css build/chrome
-	cp addon/combiners-nsfw.css build/chrome
-	cp addon/extracss-pure.css build/chrome
-	cp addon/extracss-webkit.css build/chrome
-	cp addon/options.css build/chrome
-	cp addon/options.html build/chrome
-	cp addon/options.js build/chrome
-	cp addon/pref-setup.js build/chrome
-
-	cp betterponymotes.pem build/chrome/key.pem
+	cp betterponymotes.pem build/webext/key.pem
 	# Uncompressed due to prior difficulties with the webstore
-	cd build/chrome && zip -0 ../chrome.zip *
+	cd build/webext && zip -0 ../webext.zip *
 
 build/BPM.safariextension: $(ADDON_DATA) addon/sf-Settings.plist addon/sf-background.html addon/sf-background.js
 	mkdir -p build/BPM.safariextension

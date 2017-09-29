@@ -3,8 +3,9 @@
  */
 function init_css(store) {
     // Most environments permit us to create <link> tags before DOMContentLoaded
-    // (though Chrome forces us to use documentElement). Scriptish is one that
+    // (though WebExt forces us to use documentElement). Scriptish is one that
     // does not- there's no clear way to manipulate the partial DOM, so we delay.
+    // TODO We don't support Scriptish anymore.
     with_css_parent(function() {
         log_info("Setting up css");
         link_css("/bpmotes.css");
@@ -32,7 +33,7 @@ function init_css(store) {
             }
         }
 
-        if(platform === "chrome-ext") {
+        if(platform === "webext") {
             // Fix for Chrome, which sometimes doesn't rerender unknown emote
             // elements. The result is that until the element is "nudged" in
             // some way- merely viewing it in the Console/platform Elements
@@ -48,46 +49,6 @@ function init_css(store) {
         }
 
         add_css(store.custom_css);
-    });
-
-    with_dom(function() {
-        // Inject our filter SVG for Firefox. Chrome renders this thing as a
-        // massive box, but "display: none" (or putting it in <head>) makes
-        // Firefox hide all of the emotes we apply the filter to- as if *they*
-        // had display:none. Furthermore, "height:0;width:0" isn't quite enough
-        // either, as margins or something make the body move down a fair bit
-        // (leaving a white gap). "position:fixed" is a workaround for that.
-        //
-        // We also can't include either the SVG or the CSS as a normal resource
-        // because Firefox throws security errors. No idea why.
-        //
-        // Can't do this before the DOM is built, because we use document.body
-        // by necessity.
-        //
-        // Christ. I hope people use the fuck out of -i after this nonsense.
-        if(platform === "firefox-ext") {
-            var svg_src = [
-                '<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg"',
-                ' style="height: 0; width: 0; position: fixed">',
-                '  <filter id="bpm-darkle">',
-                '    <feColorMatrix in="SourceGraphic" type="hueRotate" values="180"/>',
-                '  </filter>',
-                '  <filter id="bpm-invert">',
-                '    <feColorMatrix in="SourceGraphic" type="matrix" values="',
-                '                   -1  0  0 0 1',
-                '                    0 -1  0 0 1',
-                '                    0  0 -1 0 1',
-                '                    0  0  0 1 0"/>',
-                '  </filter>',
-                '</svg>'
-            ].join("\n");
-            var div = document.createElement("div");
-            div[IHTML] = svg_src;
-            document.body.insertBefore(div.firstChild, document.body.firstChild);
-
-            add_css(".bpflag-i { filter: url(#bpm-darkle); }" +
-                    ".bpflag-invert { filter: url(#bpm-invert); }");
-        }
     });
 }
 
