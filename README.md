@@ -15,7 +15,6 @@ the backend (mostly Python) and JS that runs in the browser.
 First off, there are some files and directories that aren't in the git repo but
 need to exist.
 
-    animotes/
     betterponymotes.pem
 
 The PEM file is a private, unencrypted RSA key. It looks like this:
@@ -48,23 +47,7 @@ You'll also need the following tools:
   on your PATH. If you don't already have it, it can probably be installed using
   your system's package manager. (E.g. `sudo apt-get install zip` on Ubuntu)
 
-- The Firefox Addon SDK. It comes in a zip file with a `bin/activate` shell
-  script. Source it to add its `bin/` to your `$PATH`, because you need the
-  `cfx` tool.
-
-- `uhura`. It's a little perl script used to sign the Firefox XPI's. It needs
-  to be on $PATH. I'm not sure exactly where I got it, and installing it is
-  a pain, since it depends on some CPAN modules. I forget which.
-
-- `apng2gif`. A tool to convert APNG files to GIF format. Needs to be on your
-  PATH in order to build BPM.
-
-
 ## Repository Structure
-
-    # Animote support
-    animotes/               Converted GIF cache (not kept in repo due to size)
-    dlanimotes.py           Script to maintain animotes/ and build/gif-animotes.css
 
     # Scripts and code
     shell.py                All-around emote update tool. Handles downloading
@@ -92,9 +75,6 @@ You'll also need the following tools:
     web/                    Most actual site files.
         index.html          Main page.
     www/                    A complete copy of the site. Synced to ponymotes.net
-        betterponymotes.update.rdf
-                            Firefox update manifest file.
-        *.xpi               Hosted addon files.
 
     # Addon directories
     addon/                  All common code and static data files (CSS).
@@ -111,11 +91,9 @@ You'll also need the following tools:
         options.js          Options page code.
         options.css         Options page CSS.
         bootstrap.css       Bootstrap. Used on the options page.
-        cr-background.html  Chrome background page. Holds prefs and things for the addon.
-        cr-background.js    Chrome background code.
-        cr-manifest.json    Chrome addon manifest.
-        fx-main.js          Firefox backend script.
-        fx-package.json     Firefox addon manifest.
+        we-background.html  WebExtension background page. Holds prefs and things for the addon.
+        we-background.js    WebExtension background code.
+        we-manifest.json    WebExtension addon manifest.
 
     # Data files
     data/                   Misc data files you need to maintain.
@@ -149,10 +127,9 @@ runs on its own, and content scripts that run in the pages. The former must
 obviously be written to the specific browser, but the latter is largely
 independent except where it has to communicate with the backend.
 
-Firefox's background script is `addon/fx-main.js`. Chrome has
-`addon/cr-background.html`, and Safari has `addon/sf-background.html`. As these
-scripts share a large amount of functionality, most of that is now held in
-`addon/pref-setup.js`.
+Firefox & Chrome's background script is `addon/we-main.js`. Safari has
+`addon/sf-background.html`. As these scripts share a large amount of
+functionality, most of that is now held in `addon/pref-setup.js`.
 
 The backend is chiefly responsible for storing and managing preferences,
 applying the necessary files to pages (JS and CSS), and maintaining the custom
@@ -244,15 +221,6 @@ classes of mistakes. Some warnings are known oddities that the script isn't
 capable of recognizing; ignore those.
 
 
-## APNG -> GIF Conversion
-
-Assuming all animotes are tagged with +animote, run `./dlanimotes.py` to
-download and convert all of them. This process requires `apng2gif` to be on
-`$PATH`, and it will spit out GIFs to `animotes/`, which must be uploaded to the
-host site. It also generates `build/gif-animotes.css`, which is the override
-sheet used by Chrome.
-
-
 ## Updates and Version Numbers
 
 After updating the CSS and tags, run `shell.py commit` to record it all, and
@@ -279,8 +247,8 @@ When everything is updated, running `make` is sufficient to rebuild all packages
 To release BPM:
 
 1. Run `make` to rebuild all packages.
-2. Upload `build/chrome.zip` to the Chrome webstore.
-3. Upload `build/betterponymotes.xpi` to addons.mozilla.org for package signing.
+2. Upload `build/webext.zip` to the Chrome webstore.
+3. Upload `build/webext.zip` to addons.mozilla.org for package signing.
    Download the output file to `build/`.
 4. Run `make www` to rebuild the website.
 5. Run `make sync` to synchronize with `ponymotes.net`, including the Firefox

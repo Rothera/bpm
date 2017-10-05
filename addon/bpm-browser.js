@@ -97,64 +97,20 @@ var make_css_link = null;
 var linkify_options = null;
 
 switch(platform) {
-case "firefox-ext":
+case "webext":
     _send_message = function(method, data) {
         if(data === undefined) {
             data = {};
         }
         data.method = method;
-        log_debug("_send_message:", data);
-        self.postMessage(data);
-    };
-
-    var _data_url = function(filename) {
-        // FIXME: Hardcoding this sucks. It's likely to continue working for
-        // a good long while, but we should prefer make a request to the
-        // backend for the prefix (not wanting to do that is the reason for
-        // hardcoding it). Ideally self.data.url() would be accessible to
-        // content scripts, but it's not...
-        return "resource://jid1-thrhdjxskvsicw-at-jetpack/data" + filename;
-    };
-
-    make_css_link = function(filename, callback) {
-        var tag = stylesheet_link(_data_url(filename));
-        callback(tag);
-    };
-
-    linkify_options = function(element) {
-        // Firefox doesn't permit linking to resource:// links or something
-        // equivalent.
-        element.addEventListener("click", catch_errors(function(event) {
-            _send_message("open_options");
-        }), false);
-    };
-
-    self.on("message", catch_errors(function(message) {
-        switch(message.method) {
-        case "initdata":
-            _complete_setup(message);
-            break;
-
-        default:
-            log_error("Unknown request from Firefox background script: '" + message.method + "'");
-            break;
-        }
-    }));
-    break;
-
-case "chrome-ext":
-    _send_message = function(method, data) {
-        if(data === undefined) {
-            data = {};
-        }
-        data.method = method;
-        log_debug("_send_message:", data);
-        chrome.extension.sendMessage(data, _message_handler);
+        log_debug("_send_message:", JSON.stringify(data));
+        chrome.runtime.sendMessage(data, _message_handler);
     };
 
     var _message_handler = catch_errors(function(message) {
+        log_debug("_message_handler:", JSON.stringify(message));
         if(!message || !message.method) {
-            log_error("Unknown request from Chrome background script: '" + message + "'");
+            log_error("Unknown request from WebExt background script: '" + message + "'");
             return;
         }
 
@@ -164,18 +120,18 @@ case "chrome-ext":
             break;
 
         default:
-            log_error("Unknown request from Chrome background script: '" + message.method + "'");
+            log_error("Unknown request method from WebExt background script: '" + message.method + "'");
             break;
         }
     });
 
     make_css_link = function(filename, callback) {
-        var tag = stylesheet_link(chrome.extension.getURL(filename));
+        var tag = stylesheet_link(chrome.runtime.getURL(filename));
         callback(tag);
     };
 
     linkify_options = function(element) {
-        element.href = chrome.extension.getURL("/options.html");
+        element.href = chrome.runtime.getURL("/options.html");
         element.target = "_blank";
     };
     break;

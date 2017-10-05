@@ -44,10 +44,8 @@ var ST = window[n.replace(c, d)];
 
 var bpm_utils = {
     platform: (function() {
-        if(self.on !== undefined) {
-            return "firefox-ext";
-        } else if(_bpm_global("chrome") !== undefined && chrome.extension !== undefined) {
-            return "chrome-ext";
+        if(_bpm_global("chrome") !== undefined && chrome.runtime !== undefined) {
+            return "webext";
         } else if(_bpm_global("safari")) {
             return "safari-ext";
         } else {
@@ -63,9 +61,9 @@ var bpm_utils = {
     },
 
     catch_errors: function(f) {
-        return function() {
+        return function(...args) {
             try {
-                return f.apply(this, arguments);
+                return f(...args);
             } catch(e) {
                 console.log("BPM: ERROR: Exception on line " + e.lineNumber + ": ", e.name + ": " + e.message);
                 throw e;
@@ -99,38 +97,14 @@ var bpm_browser = {
 };
 
 switch(bpm_utils.platform) {
-case "firefox-ext":
+case "webext":
     bpm_utils.copy_properties(bpm_browser, {
         _send_message: function(method, data) {
             if(data === undefined) {
                 data = {};
             }
-            data["method"] = method;
-            self.postMessage(data);
-        }
-    });
-
-    self.on("message", bpm_utils.catch_errors(function(message) {
-        switch(message.method) {
-        case "prefs":
-            bpm_prefs.got_prefs(message.prefs);
-            break;
-
-        default:
-            console.log("BPM: ERROR: Unknown request from Firefox background script: '" + message.method + "'");
-            break;
-        }
-    }));
-    break;
-
-case "chrome-ext":
-    bpm_utils.copy_properties(bpm_browser, {
-        _send_message: function(method, data) {
-            if(data === undefined) {
-                data = {};
-            }
-            data["method"] = method;
-            chrome.extension.sendMessage(data, this._message_handler.bind(this));
+            data.method = method;
+            chrome.runtime.sendMessage(data, this._message_handler.bind(this));
         },
 
         _message_handler: function(message) {
@@ -140,7 +114,7 @@ case "chrome-ext":
                 break;
 
             default:
-                console.log("BPM: ERROR: Unknown request from Chrome background script: '" + message.method + "'");
+                console.log("BPM: ERROR: (options) Unknown request method from WebExt background script: '" + message.method + "'");
                 break;
             }
         }

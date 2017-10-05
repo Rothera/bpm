@@ -235,7 +235,7 @@ TaskQueue.prototype = {
         }.bind(this));
 
         // Run task
-        this.callback.apply(undefined, args);
+        this.callback.bind(undefined)(...args);
     }
 };
 
@@ -308,7 +308,7 @@ css_manager.prototype = {
         var prefs = this.pm.get();
         console.log("BPM: Downloading updated CSS file for r/" + subreddit);
         var key = "csscache_" + subreddit.toLowerCase();
-        // Chrome doesn't permit setting User-Agent (because it sucks), but this
+        // WebExt doesn't permit setting User-Agent (because it sucks), but this
         // should help a little bit
         var url = "https://www.reddit.com/r/" + subreddit + "/stylesheet.css?__ua=BetterPonymotes";
         this.pm.dl_queue.add(url, function(css) {

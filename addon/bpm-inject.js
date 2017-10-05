@@ -42,7 +42,7 @@ function message_iframe(frame, message) {
         // Right now, only Firefox and Opera let us access this API.
         frame.contentWindow.postMessage(message, "*");
     } else {
-        // Chrome and Opera don't permit *any* access to these variables for
+        // WebExt and Opera don't permit *any* access to these variables for
         // some stupid reason, despite them being available on the page.
         // Inject a <script> tag that does the dirty work for us.
         var id = "__betterponymotes_esh_" + random_id();
@@ -78,7 +78,7 @@ function track_focus() {
         // Focus is within the frame. Find the real element (recursing just
         // in case).
         if(active.contentWindow === null || active.contentWindow === undefined) {
-            // Chrome is broken and does not permit us to access these
+            // WebExt is broken and does not permit us to access these
             // from content scripts.
             message_iframe(active, {
                 "__betterponymotes_method": "__bpm_track_focus"

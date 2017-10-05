@@ -44,17 +44,17 @@ var pref_manager = manage_prefs(sr_name2id, {
             }
         };
         request.open("GET", url, true);
-        // Not permitted because Chrome sucks
+        // Not permitted because WebExt sucks
         //request.setRequestHeader("User-Agent", "BetterPonymotes Client CSS Updater (/u/Typhos)");
         request.send();
     },
 
-    // Chrome's setTimeout() does not appreciate a this parameter
+    // WebExt's setTimeout() does not appreciate a this parameter
     set_timeout: setTimeout.bind(undefined)
 });
 
 // Content script requests
-chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     switch(message.method) {
         case "get_initdata":
             var reply = {"method": "initdata"};
