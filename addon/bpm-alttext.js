@@ -75,7 +75,8 @@ function should_convert_alt_text(element, state, is_emote) {
     // Work around RES putting tag links and other things with alt-text on
     // them in the middle of posts- we don't want to expand those.
     if(element.classList.contains("userTagLink") ||
-       element.classList.contains("voteWeight")) {
+       element.classList.contains("voteWeight") ||
+       element.classList.contains("expando-button")) {
         return false;
     }
 
