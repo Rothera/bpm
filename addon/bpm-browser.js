@@ -149,7 +149,7 @@ case "chrome-ext":
         }
         data.method = method;
         log_debug("_send_message:", data);
-        chrome.extension.sendMessage(data, _message_handler);
+        chrome.runtime.sendMessage(data, _message_handler);
     };
 
     var _message_handler = catch_errors(function(message) {
@@ -170,12 +170,12 @@ case "chrome-ext":
     });
 
     make_css_link = function(filename, callback) {
-        var tag = stylesheet_link(chrome.extension.getURL(filename));
+        var tag = stylesheet_link(chrome.runtime.getURL(filename));
         callback(tag);
     };
 
     linkify_options = function(element) {
-        element.href = chrome.extension.getURL("/options.html");
+        element.href = chrome.runtime.getURL("/options.html");
         element.target = "_blank";
     };
     break;

@@ -46,8 +46,8 @@ var bpm_utils = {
     platform: (function() {
         if(self.on !== undefined) {
             return "firefox-ext";
-        } else if(_bpm_global("chrome") !== undefined && chrome.extension !== undefined) {
-            return "chrome-ext";
+        } else if(_bpm_global("chrome") !== undefined && chrome.runtime !== undefined) {
+            return "chrome-ext"; // AKA webext
         } else if(_bpm_global("safari")) {
             return "safari-ext";
         } else {
@@ -130,7 +130,7 @@ case "chrome-ext":
                 data = {};
             }
             data["method"] = method;
-            chrome.extension.sendMessage(data, this._message_handler.bind(this));
+            chrome.runtime.sendMessage(data, this._message_handler.bind(this));
         },
 
         _message_handler: function(message) {
@@ -147,29 +147,29 @@ case "chrome-ext":
     });
     break;
 
-    case "safari-ext":
-        bpm_utils.copy_properties(bpm_browser, {
-            _send_message: function(method, data) {
-                if(data === undefined) {
-                    data = {};
-                }
-                data["method"] = method;
-                safari.self.tab.dispatchMessage(data.method, data);
-            },
+case "safari-ext":
+    bpm_utils.copy_properties(bpm_browser, {
+        _send_message: function(method, data) {
+            if(data === undefined) {
+                data = {};
+            }
+            data["method"] = method;
+            safari.self.tab.dispatchMessage(data.method, data);
+        },
 
-            _message_handler: safari.self.addEventListener("message", function(message) {
-                 switch(message.message.method) {
-                     case "prefs":
-                         bpm_prefs.got_prefs(message.message.prefs);
-                         break;
+        _message_handler: safari.self.addEventListener("message", function(message) {
+             switch(message.message.method) {
+                 case "prefs":
+                     bpm_prefs.got_prefs(message.message.prefs);
+                     break;
 
-                     default:
-                         console.log("BPM: ERROR: Unknown request from Safari background script: '" + message.message.method + "'");
-                         break;
-                 }
-             }, false),
-        });
-        break;
+                 default:
+                     console.log("BPM: ERROR: Unknown request from Safari background script: '" + message.message.method + "'");
+                     break;
+             }
+         }, false),
+    });
+    break;
 
 default:
     // Assume running in some context where we'll have a parent extension

@@ -19,10 +19,10 @@
 ################################################################################
 
 # Release process:
-# - Bump version
+# - Bump version, update we-updates.json
 # $ make
 # - Upload Chrome addon
-# - Sign XPI
+# - Upload webext
 # $ make www
 # $ make sync
 # - chmod 644
@@ -31,7 +31,7 @@
 # - Test
 # - Make thread
 
-VERSION = 66.261
+VERSION = 66.262.2
 
 CONTENT_SCRIPT := \
     addon/bpm-header.js addon/bpm-utils.js addon/bpm-browser.js \
@@ -47,12 +47,12 @@ ADDON_DATA = \
     addon/bootstrap.css addon/options.html addon/options.css addon/options.js \
     addon/pref-setup.js
 
-default: build/betterponymotes.xpi build/chrome.zip build/BPM.safariextension build/export.json.bz2 build/gif-animotes.css
+default: build/betterponymotes-$(VERSION).xpi build/webext-$(VERSION).zip build/chrome.zip build/BPM.safariextension build/export.json.bz2 build/gif-animotes.css
 
 clean:
 	rm -fr build
 
-www: web/* build/betterponymotes-*.mozsucks-*.xpi build/betterponymotes.update.rdf
+www: web/* build/betterponymotes-$(VERSION).xpi build/betterponymotes.update.rdf build/betterponymotes-$(VERSION)-an+fx.xpi addon/we-updates.json
 	cp web/firefox-logo.png www
 	cp web/chrome-logo.png www
 	cp web/safari-logo.png www
@@ -61,11 +61,16 @@ www: web/* build/betterponymotes-*.mozsucks-*.xpi build/betterponymotes.update.r
 	sed "s/\/\*{{version}}\*\//$(VERSION)/" < web/index.html > www/index.html
 
 	rm -f www/*.xpi
-	cp build/betterponymotes-*.mozsucks-*.xpi www/betterponymotes.xpi
-	cp build/betterponymotes-*.mozsucks-*.xpi www/betterponymotes_$(VERSION).xpi
+
+	cp build/betterponymotes-$(VERSION).xpi www/xul/betterponymotes.xpi
+	cp build/betterponymotes-$(VERSION).xpi www/xul/betterponymotes-$(VERSION).xpi
+
+	cp build/betterponymotes-$(VERSION)-an+fx.xpi www/we/betterponymotes.xpi
+	cp build/betterponymotes-$(VERSION)-an+fx.xpi www/we/betterponymotes-$(VERSION)-an+fx.xpi
 
 sync:
 	chmod 644 www/*
+	chmod 755 www/we www/xul
 	chmod 644 animotes/*
 	rsync -e "ssh -p 40719" -zvLr --delete www/ lyra@ponymotes.net:/var/www/ponymotes.net/bpm
 	rsync -e "ssh -p 40719" -zvLr --delete animotes/ lyra@ponymotes.net:/var/www/ponymotes.net/animotes
@@ -88,7 +93,7 @@ build/gif-animotes.css: $(EMOTE_DATA)
 	mkdir -p build
 	./dlanimotes.py
 
-build/betterponymotes.xpi: $(ADDON_DATA) addon/fx-main.js addon/fx-install.rdf
+build/betterponymotes-$(VERSION).xpi: $(ADDON_DATA) addon/fx-main.js addon/fx-install.rdf addon/fx-package.json
 	mkdir -p build/firefox/data
 
 	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/fx-package.json > build/firefox/package.json
@@ -111,12 +116,36 @@ build/betterponymotes.xpi: $(ADDON_DATA) addon/fx-main.js addon/fx-install.rdf
 	cp addon/pref-setup.js build/firefox
 
 	cd build/firefox && ../../node_modules/.bin/jpm xpi
-	./mungexpi.py $(VERSION) addon/fx-install.rdf build/firefox/*.xpi build/betterponymotes.xpi
+	./mungexpi.py $(VERSION) addon/fx-install.rdf build/firefox/*.xpi build/betterponymotes-$(VERSION).xpi
 
-build/betterponymotes.update.rdf: build/betterponymotes-*.mozsucks-*.xpi
-	uhura -k betterponymotes.pem build/betterponymotes-*.mozsucks-*.xpi https://ponymotes.net/bpm/betterponymotes_$(VERSION).xpi > build/betterponymotes.update.rdf
+build/betterponymotes.update.rdf: build/betterponymotes-$(VERSION).xpi
+	uhura -k betterponymotes.pem build/betterponymotes-$(VERSION).xpi https://ponymotes.net/bpm/xul/betterponymotes-$(VERSION).xpi > build/betterponymotes.update.rdf
 
-build/chrome.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js
+build/webext-$(VERSION).zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js addon/we-manifest.json
+	mkdir -p build/webext
+
+	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/we-manifest.json > build/webext/manifest.json
+
+	cp addon/cr-background.html build/webext/background.html
+	cp addon/cr-background.js build/webext/background.js
+
+	cp build/betterponymotes.js build/webext
+	cp build/bpm-resources.js build/webext
+	cp build/emote-classes.css build/webext
+
+	cp addon/bootstrap.css build/webext
+	cp addon/bpmotes.css build/webext
+	cp addon/combiners-nsfw.css build/webext
+	cp addon/extracss-pure.css build/webext
+	cp addon/extracss-webkit.css build/webext
+	cp addon/options.css build/webext
+	cp addon/options.html build/webext
+	cp addon/options.js build/webext
+	cp addon/pref-setup.js build/webext
+
+	cd build/webext && zip ../webext-$(VERSION).zip *
+
+build/chrome.zip: $(ADDON_DATA) addon/cr-background.html addon/cr-background.js addon/cr-manifest.json
 	mkdir -p build/chrome
 
 	sed "s/\/\*{{version}}\*\//$(VERSION)/" < addon/cr-manifest.json > build/chrome/manifest.json

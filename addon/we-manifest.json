@@ -15,12 +15,21 @@
             "run_at": "document_start"
         }
     ],
+    "applications": {
+        "gecko": {
+            "id": "jid1-tHrhDJXsKvsiCw@jetpack",
+            "update_url": "https://ponymotes.net/bpm/we-updates.json"
+        }
+    },
     "description": "View Reddit ponymotes across the site",
     "homepage_url": "https://ponymotes.net/bpm/",
     "manifest_version": 2,
     "minimum_chrome_version": "26",
     "name": "BetterPonymotes",
-    "options_page": "options.html",
+    "options_ui": {
+        "page": "options.html",
+        "browser_style": true
+    },
     "permissions": [
         "http://*.reddit.com/",
         "https://*.reddit.com/",

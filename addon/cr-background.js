@@ -54,7 +54,7 @@ var pref_manager = manage_prefs(sr_name2id, {
 });
 
 // Content script requests
-chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     switch(message.method) {
         case "get_initdata":
             var reply = {"method": "initdata"};

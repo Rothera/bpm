@@ -85,8 +85,8 @@ var platform;
 // affiliated, though.
 if(self.on) {
     platform = "firefox-ext";
-} else if(find_global("chrome") && chrome.extension) {
-    platform = "chrome-ext";
+} else if(find_global("chrome") && chrome.runtime) {
+    platform = "chrome-ext"; // AKA webext
 } else if(find_global("safari") && window.name === "") {
     platform = "safari-ext";
 } else {
