@@ -42,9 +42,12 @@ div.titlebox .users-online span.number:after {
     padding:0px 5px
 }
 */
-/*
+#header {
+    background: transparent !important;
+}
+
 #header-bottom-left {
-    background: #DBF8CE;
+    background-color: #DBF8CE !important;
 }
 
 #header-bottom-right {
@@ -65,10 +68,10 @@ div.titlebox .users-online span.number:after {
 
 .formtabs-content {
     border-top: 4px solid rgb(165, 207, 95);
-}*/
+}
 /*Name substitute*/
 
-
+/*
 a.author.id-t2_8gh9f {content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
 a.author.id-t2_8gh9f:after{font-size:10px!important;display:block;letter-spacing:normal}
 a.author.id-t2_8gh9f:after {content:" a horse"}
@@ -96,7 +99,7 @@ a.author[href$="/eytosh"]:after {
     display: block;
     letter-spacing: normal
 } 
-
+*/
 /*Emotes*/
 
 a[href="/spikeurgh"],a[href="/spikehmph"],a[href="/spikeangry"],a[href="/angryspike"] {
@@ -317,7 +320,7 @@ a[href="/cloudsmash"], a[href="/justcloudhopthings"] {
     background-image: url(%%cloudsmash%%) !important
 }
 
-/*Making the tabs' corners more rounded (stolen from r/mylittlepony)*//*
+/*Making the tabs' corners more rounded (stolen from r/mylittlepony)*/
 .tabmenu li a {
     -webkit-border-top-left-radius: 5px;
     -webkit-border-top-right-radius: 5px;
@@ -327,7 +330,7 @@ a[href="/cloudsmash"], a[href="/justcloudhopthings"] {
     border-top-right-radius: 5px;
     background-color: #FFFFEF;
 }
-*/
+
 /*Tab test
 .tabmenu li a {  
 border: none;  
@@ -365,8 +368,8 @@ border:none;
     text-align:right;
 }
 */
-/*Submit Buttons, stolen from r/mylittlepony*/
-/*
+/*Modified submit buttons, stolen from r/mylittlepony*/
+
 .submit .morelink { 
     border-radius: 3px;
     border: 0px !important;
@@ -400,21 +403,10 @@ border:none;
 
 .md blockquote {
     border-left: 2px solid #336699;
-}*/
-/* Changes ad box position */
-/*#ad-frame, #ad_main {
-    margin-left: -29px;
 }
 
-.sponsorshipbox {
-    margin-left: -29px;
-}*/
-
-/* Kills the community button/nub/spacer */ /*
-  .sidebox.create .morelink {display: none;}
-  .sidebox.submit .spacer a, .sidebox.create .spacer a {display: none;}
-  .morelink .nub, .morelink .nub:hover {display: none;}
-  .sidebox .spacer {display: none;}
-*/
-/*****************************************************Here begins MLPDS's CSS************************************************/
-
+.thumbnail.self {
+    background-image: url(%%dumbmoustache%%);
+    background-position: 0px -13px;
+    background-repeat: no-repeat;
+    height: 50px;

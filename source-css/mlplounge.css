@@ -228,14 +228,14 @@ div.titlebox p.users-online span.word { display: none }
 {
     display:inline-block;
     float:right;
-    background:url(%%emotes%%);
+    background:url(%%lounge-emotes%%);
     width:70px;
     height:70px;
     margin-top:-45px;
     margin-left:5px;
     margin-bottom:0px;
     margin-right:-45px;
-    background-position: -200% -000%; /*To select emote table position. Increments of -100%.*/
+    background-position: -100% -000%; /*To select emote table position. Increments of -100%.*/
     transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 
@@ -304,64 +304,10 @@ animation: 2s pulse infinite;
  height: 500px;
  width: 100%;
  position: relative;
- background-image: url(%%footer-hollow%%);
+ background-image: url(%%footer%%);
  background-repeat: no-repeat;
  margin-bottom: -25px;
  background-position: center bottom;
-}
-
-.footer-parent::before
-{
- content: "";
- display: block;
- width: 60px;
- height: 120px;
- position: absolute;
- z-index: -1;
- bottom: 140px;
- left: 50%;
- margin-left: -145px;
- background: url(%%footer-left%%) transparent center center no-repeat;
- animation: derpspin-l 1.8s linear infinite;
-}
-
-.footer-parent::after
-{
- content: "";
- display: block;
- width: 118px;
- height: 150px;
- position: absolute;
- z-index: -1;
- bottom: 65px;
- left: 50%;
- margin-left: -15px;
- background: url(%%footer-right%%) transparent center center no-repeat;
- animation: derpspin-r 2s linear infinite reverse;
-}
-
-@keyframes derpspin-l
-{
- from {transform: rotate(0deg) translate(18px) rotate(0deg);}
- to {transform: rotate(360deg) translate(18px) rotate(-360deg);}
-}
-@keyframes derpspin-r
-{
- from {transform: rotate(0deg) translate(36px) rotate(0deg);}
- to {transform: rotate(360deg) translate(36px) rotate(-360deg);}
-}
-
-.footer-parent .footer::after
-{
- content: "";
- background: url(%%footer-whites%%) transparent center bottom no-repeat;
- width: 546px;
- height: 500px;
- position: absolute;
- bottom: 0px;
- left: 50%;
- margin-left: -273px;
- z-index: -2;
 }
 
 /*Sidebar Filly Start*/
@@ -885,17 +831,6 @@ padding: 0
 .side .md table:nth-of-type(6) tr:nth-of-type(23) td:nth-of-type(4):after{background-position: -200% -1100%}
 
 /*End sidebar emote code*/
-
-/* admins plz */
-.titlebox a[href$="/r/ProCSS/"] {
-    display: inline-block;
-    background: url(%%procss%%) no-repeat;
-    width: 235px !important;
-    height: 83px !important;
-    background-size: 235px 83px;
-    margin: 10px 0 -1em 30px;
-    /* An idea by u/reseph & u/titleproblems */
-}
 
 /* SECTION REMOVED DUE TO USER SPOOPING 2015-10-31 */
 

@@ -1247,9 +1247,11 @@ a[href|="/sunsetstrumming"], a[href|="/ssstrumming"], a[href|="/sunsetcheering"]
 a[href|="/sunsetstrumming"], a[href|="/ssstrumming"] { background-image: url(%%ssstrumming%%) !important; }
 a[href|="/sunsetcheering"], a[href|="/sscheering"] { background-image: url(%%sscheering%%) !important; }
 
-a[href|="/takemyhand"],a[href|="/daydreamplead"],a[href|="/ssplead"]
-{display:block;clear:none;float:left;width:300px;height:250px;cursor:default;
-background-image:url(%%evenballs%%)!important}
+a[href|="/takemyhand"],a[href|="/daydreamplead"],a[href|="/ssplead"],a[href|="/sunsetsushi"],a[href|="/sssushi"]
+{display:block;clear:none;float:left;cursor:default;background-image:url(%%evenballs%%)!important}
+
+a[href|="/takemyhand"],a[href|="/daydreamplead"],a[href|="/ssplead"] {width:300px;height:250px}
+a[href|="/sunsetsushi"],a[href|="/sssushi"] {width:100px;height:100px;background-position:-300px 0}
 
 START-PONYSCRIPT-IGNORE { color: red; }
 

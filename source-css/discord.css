@@ -28,8 +28,382 @@ div.titlebox .users-online span.number:after {
 
 /*Emotes*/
 
-/* Emote Sheet sprites */ a[href|='/discfear']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 0}a[href|='/discimply']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px 0}a[href|='/discjustsayin']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px 0}a[href|='/discponder']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px 0}a[href|='/discponymad']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 -70px}a[href|='/discponyreally']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px -70px}a[href|='/discponysmile']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px -70px}a[href|='/discponyunsure']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px -70px}a[href|='/discponywhat']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 -140px}a[href|='/discreally']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px -140px}a[href|='/discsmile']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px -140px}a[href|='/discsmug']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px -140px}a[href|='/discsquint']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 -210px}a[href|='/discthatsnice']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px -210px}a[href|='/discwhat']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px -210px}a[href|='/discwtf']{background-image:url(%%sprites%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px -210px}
+/* Emotes01 */
+a[href|="/discafraid"], a[href|="/discannoyed"], a[href|="/discapprove"], a[href|="/discawesome"], a[href|="/discbeam"], a[href|="/discbroken"], a[href|="/disccheer"], a[href|="/disccute"], a[href|="/disceating"], a[href|="/discentertained"], a[href|="/discevil"], a[href|="/discexcited"], a[href|="/discfear"], a[href|="/discfrown"], a[href|="/discfrustrated"], a[href|="/discfurious"], a[href|="/discgeneral"], a[href|="/discglasses"], a[href|="/discguard"], a[href|="/discidea"], a[href|="/discimply"], a[href|="/disciwonder"], a[href|="/discjustsayin"], a[href|="/disckisses"], a[href|="/disclestia"], a[href|="/discmad"], a[href|="/discmadscientist"], a[href|="/discmaniacal"], a[href|="/discofficer"], a[href|="/discohno"], a[href|="/discoops"], a[href|="/discponder"], a[href|="/discponycheer"], a[href|="/discponymad"], a[href|="/discponyohheythere"], a[href|="/discponypleased"], a[href|="/discponyreally"], a[href|="/discponysad"], a[href|="/discponyscowl"], a[href|="/discponyscrunch"], a[href|="/discponysmile"], a[href|="/discponyunsure"], a[href|="/discponywhat"], a[href|="/discrage"], a[href|="/discreally"], a[href|="/discregret"], a[href|="/discsad"], a[href|="/discsheddingatearofjoy"], a[href|="/discshock"], a[href|="/discsinister"], a[href|="/discsmile"], a[href|="/discsmirk"], a[href|="/discsmug"], a[href|="/discsquint"], a[href|="/discstare"], a[href|="/discswag"], a[href|="/disctea"], a[href|="/discthatsnice"], a[href|="/disctwi"], a[href|="/discupset"]
+{
+    background-image: url(%%Emotes01%%);
+    width: 70px;
+    height: 70px;
+    display: block;
+    float: left;
+}
 
-/* Emote Sheet sprites2 */ a[href|='/discannoyed']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 0}a[href|='/discawesome']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px 0}a[href|='/discbeam']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px 0}a[href|='/disccute']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px 0}a[href|='/discevil']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 -70px}a[href|='/discfrustrated']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px -70px}a[href|='/discfurious']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px -70px}a[href|='/discgeneral']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px -70px}a[href|='/discglasses']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 -140px}a[href|='/disckisses']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px -140px}a[href|='/disclestia']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px -140px}a[href|='/discofficer']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px -140px}a[href|='/discponysad']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 -210px}a[href|='/discponyscowl']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px -210px}a[href|='/discponyscrunch']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px -210px}a[href|='/discrage']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px -210px}a[href|='/discshock']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-280px 0}a[href|='/discsinister']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-280px -70px}a[href|='/discsmirk']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-280px -140px}a[href|='/discstare']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-280px -210px}a[href|='/discswag']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 -280px}a[href|='/disctea']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px -280px}a[href|='/discwhyyouarewrong']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px -280px}a[href|='/discyousee']{background-image:url(%%sprites2%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px -280px}
+/* Emotes02 */
+a[href|="/discwhat"], a[href|="/discwhatsthematter"], a[href|="/discwhyyouarewrong"], a[href|="/discwtf"], a[href|="/discyousee"], a[href|="/delancieandtheclopping"], a[href|="/delanciebestpony"], a[href|="/delanciediscord"], a[href|="/delanciestillbestpony"], a[href|="/disc2cool4u"], a[href|="/discaside"], a[href|="/discballoon"], a[href|="/discblueflu"], a[href|="/discbride"], a[href|="/discbutterfly"], a[href|="/discdapper"], a[href|="/discdaww"], a[href|="/discdelicious"], a[href|="/discdevious"], a[href|="/discexcuseme"], a[href|="/disceyetwitch"], a[href|="/discflutters"], a[href|="/discgusted"], a[href|="/dischowcurious"], a[href|="/discjack"], a[href|="/disclightscameraaction"], a[href|="/disclol"], a[href|="/disclookingdownonyou"], a[href|="/discoshy"], a[href|="/discponymagic"], a[href|="/discsanta"], a[href|="/discsantaaccidentallyputmeonthenaughtylist"], a[href|="/discseesyou"], a[href|="/discsneer"], a[href|="/discsneeze"], a[href|="/discspeechless"], a[href|="/discstretch"], a[href|="/discvaguelyamused"], a[href|="/screwball"], a[href|="/screwballcrazy"], a[href|="/screwballcute"], a[href|="/screwballderp"], a[href|="/screwballjoy"], a[href|="/screwballlook"], a[href|="/screwballmad"], a[href|="/screwballrightsideup"], a[href|="/screwballsad"], a[href|="/screwballscrewy"], a[href|="/screwballsilly"], a[href|="/screwballwhoa"], a[href|="/screwballwhoyoucallingscrewy"], a[href|="/screwballyoumustbenewhere"], a[href|="/erisbeam"], a[href|="/erisdevious"], a[href|="/erishellothere"], a[href|="/erismad"], a[href|="/erisnice"], a[href|="/erissly"], a[href|="/erissmile"], a[href|="/erisugh"]
+{
+    background-image: url(%%Emotes02%%);
+    width: 70px;
+    height: 70px;
+    display: block;
+    float: left;
+}
 
-/* Emote Sheet sprites3 */ a[href|='/discafraid']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 0}a[href|='/discapprove']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px 0}a[href|='/discbroken']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px 0}a[href|='/disceating']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px 0}a[href|='/discentertained']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-280px 0}a[href|='/discexcited']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 -70px}a[href|='/discfrown']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px -70px}a[href|='/discguard']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px -70px}a[href|='/discidea']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px -70px}a[href|='/disciwonder']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-280px -70px}a[href|='/discmad']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 -140px}a[href|='/discmadscientist']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px -140px}a[href|='/discmaniacal']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px -140px}a[href|='/discohno']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px -140px}a[href|='/discoops']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-280px -140px}a[href|='/discponycheer']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 -210px}a[href|='/discponyohheythere']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px -210px}a[href|='/discponypleased']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px -210px}a[href|='/discregret']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px -210px}a[href|='/discsad']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-280px -210px}a[href|='/discsheddingatearofjoy']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:0 -280px}a[href|='/disccheer']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-70px -280px}a[href|='/disctwi']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-140px -280px}a[href|='/discupset']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-210px -280px}a[href|='/discwhatsthematter']{background-image:url(%%sprites3%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:70px;height:70px;background-position:-280px -280px}
+/* Grid pos 0,0 */
+a[href|="/discafraid"], a[href|="/discwhat"]
+{
+    background-position: 0 0;
+}
+
+/* Grid pos 1,0 */
+a[href|="/discannoyed"], a[href|="/discwhatsthematter"]
+{
+    background-position: -100% 0;
+}
+
+/* Grid pos 2,0 */
+a[href|="/discapprove"], a[href|="/discwhyyouarewrong"]
+{
+    background-position: -200% 0;
+}
+
+/* Grid pos 0,1 */
+a[href|="/discawesome"], a[href|="/discwtf"]
+{
+    background-position: 0 -100%;
+}
+
+/* Grid pos 1,1 */
+a[href|="/discbeam"], a[href|="/discyousee"]
+{
+    background-position: -100% -100%;
+}
+
+/* Grid pos 2,1 */
+a[href|="/discbroken"], a[href|="/delancieandtheclopping"]
+{
+    background-position: -200% -100%;
+}
+
+/* Grid pos 0,2 */
+a[href|="/disccheer"], a[href|="/delanciebestpony"]
+{
+    background-position: 0 -200%;
+}
+
+/* Grid pos 1,2 */
+a[href|="/disccute"], a[href|="/delanciediscord"]
+{
+    background-position: -100% -200%;
+}
+
+/* Grid pos 2,2 */
+a[href|="/disceating"], a[href|="/delanciestillbestpony"]
+{
+    background-position: -200% -200%;
+}
+
+/* Grid pos 0,3 */
+a[href|="/discentertained"], a[href|="/disc2cool4u"]
+{
+    background-position: 0 -300%;
+}
+
+/* Grid pos 1,3 */
+a[href|="/discevil"], a[href|="/discaside"]
+{
+    background-position: -100% -300%;
+}
+
+/* Grid pos 2,3 */
+a[href|="/discexcited"], a[href|="/discballoon"]
+{
+    background-position: -200% -300%;
+}
+
+/* Grid pos 0,4 */
+a[href|="/discfear"], a[href|="/discblueflu"]
+{
+    background-position: 0 -400%;
+}
+
+/* Grid pos 1,4 */
+a[href|="/discfrown"], a[href|="/discbride"]
+{
+    background-position: -100% -400%;
+}
+
+/* Grid pos 2,4 */
+a[href|="/discfrustrated"], a[href|="/discbutterfly"]
+{
+    background-position: -200% -400%;
+}
+
+/* Grid pos 0,5 */
+a[href|="/discfurious"], a[href|="/discdapper"]
+{
+    background-position: 0 -500%;
+}
+
+/* Grid pos 1,5 */
+a[href|="/discgeneral"], a[href|="/discdaww"]
+{
+    background-position: -100% -500%;
+}
+
+/* Grid pos 2,5 */
+a[href|="/discglasses"], a[href|="/discdelicious"]
+{
+    background-position: -200% -500%;
+}
+
+/* Grid pos 0,6 */
+a[href|="/discguard"], a[href|="/discdevious"]
+{
+    background-position: 0 -600%;
+}
+
+/* Grid pos 1,6 */
+a[href|="/discidea"], a[href|="/discexcuseme"]
+{
+    background-position: -100% -600%;
+}
+
+/* Grid pos 2,6 */
+a[href|="/discimply"], a[href|="/disceyetwitch"]
+{
+    background-position: -200% -600%;
+}
+
+/* Grid pos 0,7 */
+a[href|="/disciwonder"], a[href|="/discflutters"]
+{
+    background-position: 0 -700%;
+}
+
+/* Grid pos 1,7 */
+a[href|="/discjustsayin"], a[href|="/discgusted"]
+{
+    background-position: -100% -700%;
+}
+
+/* Grid pos 2,7 */
+a[href|="/disckisses"], a[href|="/dischowcurious"]
+{
+    background-position: -200% -700%;
+}
+
+/* Grid pos 0,8 */
+a[href|="/disclestia"], a[href|="/discjack"]
+{
+    background-position: 0 -800%;
+}
+
+/* Grid pos 1,8 */
+a[href|="/discmad"], a[href|="/disclightscameraaction"]
+{
+    background-position: -100% -800%;
+}
+
+/* Grid pos 2,8 */
+a[href|="/discmadscientist"], a[href|="/disclol"]
+{
+    background-position: -200% -800%;
+}
+
+/* Grid pos 0,9 */
+a[href|="/discmaniacal"], a[href|="/disclookingdownonyou"]
+{
+    background-position: 0 -900%;
+}
+
+/* Grid pos 1,9 */
+a[href|="/discofficer"], a[href|="/discoshy"]
+{
+    background-position: -100% -900%;
+}
+
+/* Grid pos 2,9 */
+a[href|="/discohno"], a[href|="/discponymagic"]
+{
+    background-position: -200% -900%;
+}
+
+/* Grid pos 0,10 */
+a[href|="/discoops"], a[href|="/discsanta"]
+{
+    background-position: 0 -1000%;
+}
+
+/* Grid pos 1,10 */
+a[href|="/discponder"], a[href|="/discsantaaccidentallyputmeonthenaughtylist"]
+{
+    background-position: -100% -1000%;
+}
+
+/* Grid pos 2,10 */
+a[href|="/discponycheer"], a[href|="/discseesyou"]
+{
+    background-position: -200% -1000%;
+}
+
+/* Grid pos 0,11 */
+a[href|="/discponymad"], a[href|="/discsneer"]
+{
+    background-position: 0 -1100%;
+}
+
+/* Grid pos 1,11 */
+a[href|="/discponyohheythere"], a[href|="/discsneeze"]
+{
+    background-position: -100% -1100%;
+}
+
+/* Grid pos 2,11 */
+a[href|="/discponypleased"], a[href|="/discspeechless"]
+{
+    background-position: -200% -1100%;
+}
+
+/* Grid pos 0,12 */
+a[href|="/discponyreally"], a[href|="/discstretch"]
+{
+    background-position: 0 -1200%;
+}
+
+/* Grid pos 1,12 */
+a[href|="/discponysad"], a[href|="/discvaguelyamused"]
+{
+    background-position: -100% -1200%;
+}
+
+/* Grid pos 2,12 */
+a[href|="/discponyscowl"], a[href|="/screwball"]
+{
+    background-position: -200% -1200%;
+}
+
+/* Grid pos 0,13 */
+a[href|="/discponyscrunch"], a[href|="/screwballcrazy"]
+{
+    background-position: 0 -1300%;
+}
+
+/* Grid pos 1,13 */
+a[href|="/discponysmile"], a[href|="/screwballcute"]
+{
+    background-position: -100% -1300%;
+}
+
+/* Grid pos 2,13 */
+a[href|="/discponyunsure"], a[href|="/screwballderp"]
+{
+    background-position: -200% -1300%;
+}
+
+/* Grid pos 0,14 */
+a[href|="/discponywhat"], a[href|="/screwballjoy"]
+{
+    background-position: 0 -1400%;
+}
+
+/* Grid pos 1,14 */
+a[href|="/discrage"], a[href|="/screwballlook"]
+{
+    background-position: -100% -1400%;
+}
+
+/* Grid pos 2,14 */
+a[href|="/discreally"], a[href|="/screwballmad"]
+{
+    background-position: -200% -1400%;
+}
+
+/* Grid pos 0,15 */
+a[href|="/discregret"], a[href|="/screwballrightsideup"]
+{
+    background-position: 0 -1500%;
+}
+
+/* Grid pos 1,15 */
+a[href|="/discsad"], a[href|="/screwballsad"]
+{
+    background-position: -100% -1500%;
+}
+
+/* Grid pos 2,15 */
+a[href|="/discsheddingatearofjoy"], a[href|="/screwballscrewy"]
+{
+    background-position: -200% -1500%;
+}
+
+/* Grid pos 0,16 */
+a[href|="/discshock"], a[href|="/screwballsilly"]
+{
+    background-position: 0 -1600%;
+}
+
+/* Grid pos 1,16 */
+a[href|="/discsinister"], a[href|="/screwballwhoa"]
+{
+    background-position: -100% -1600%;
+}
+
+/* Grid pos 2,16 */
+a[href|="/discsmile"], a[href|="/screwballwhoyoucallingscrewy"]
+{
+    background-position: -200% -1600%;
+}
+
+/* Grid pos 0,17 */
+a[href|="/discsmirk"], a[href|="/screwballyoumustbenewhere"]
+{
+    background-position: 0 -1700%;
+}
+
+/* Grid pos 1,17 */
+a[href|="/discsmug"], a[href|="/erisbeam"]
+{
+    background-position: -100% -1700%;
+}
+
+/* Grid pos 2,17 */
+a[href|="/discsquint"], a[href|="/erisdevious"]
+{
+    background-position: -200% -1700%;
+}
+
+/* Grid pos 0,18 */
+a[href|="/discstare"], a[href|="/erishellothere"]
+{
+    background-position: 0 -1800%;
+}
+
+/* Grid pos 1,18 */
+a[href|="/discswag"], a[href|="/erismad"]
+{
+    background-position: -100% -1800%;
+}
+
+/* Grid pos 2,18 */
+a[href|="/disctea"], a[href|="/erisnice"]
+{
+    background-position: -200% -1800%;
+}
+
+/* Grid pos 0,19 */
+a[href|="/discthatsnice"], a[href|="/erissly"]
+{
+    background-position: 0 -1900%;
+}
+
+/* Grid pos 1,19 */
+a[href|="/disctwi"], a[href|="/erissmile"]
+{
+    background-position: -100% -1900%;
+}
+
+/* Grid pos 2,19 */
+a[href|="/discupset"], a[href|="/erisugh"]
+{
+    background-position: -200% -1900%;
+}

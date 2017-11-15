@@ -1,7 +1,7 @@
 .id-t3_145m8r.link .title{font-size:large}
 
 /* comment box image */
-.commentarea textarea:not(:focus) { background-image: url(%%snap%%); }
+.commentarea textarea:not(:focus) { background-image: url(%%turkpinkie%%); }
 
 
 /* Replace Cursors */
@@ -12,12 +12,9 @@ cursor: url(%%cursor2%%), default !important;
 a { cursor: url(%%cursor1%%), pointer; }
 
 
-
-
 /* Changes background  */
-
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%cats%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%Turky%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -32,17 +29,21 @@ a { cursor: url(%%cursor1%%), pointer; }
 }
 
 
+
+
+
+
+/* Banner image and associated height values */
+
  #header #header-bottom-left {
-   background: url(%%sleeptimegammy%%) 50% 0px !important;
+   background: url(%%Turky-Day%%) 50% -10px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
 
 
-    
-
-.tabmenu{
-  margin-top: 3px;
+.tabmenu {
+  margin-top: 250px;
 }
 
 .gilded-icon{
@@ -55,7 +56,6 @@ a { cursor: url(%%cursor1%%), pointer; }
     -webkit-transform:rotate(-1360deg);
     transform:translate(500px , 0px)
 }
-
 
 
 .side a[href="http://webchat.dmzirc.net/?nick=Gummy...&channels=horseplay&prompt=1"]
@@ -71,22 +71,30 @@ a { cursor: url(%%cursor1%%), pointer; }
    margin-left: -256px;
 }
 
+
 #header-bottom-right
 {
 z-index:110 !important;
 }
 
+
+
+
+
+
+
+
 /*
 /*spinning Esplin */
 /*
 #header-img { 
-    -webkit-animation:spin .5s linear infinite;
-    -moz-animation:spin .5s linear infinite;
-    -ms-animation:spin .5s linear infinite;
-    -o-animation:spin .5s linear infinite;
-    animation:spin .5s linear infinite;
+    -webkit-animation:spin .1s linear infinite;
+    -moz-animation:spin .1s linear infinite;
+    -ms-animation:spin .1s linear infinite;
+    -o-animation:spin .1s linear infinite;
+    animation:spin .1s linear infinite;
 }
-*/
+ */
 /* Rotating banner */
 /*
 #header { 
@@ -98,7 +106,7 @@ z-index:110 !important;
 }
 */
 /* just fuck my shit up */
-/*
+*/
 .flair:after { 
     -webkit-animation:spin 1s linear infinite;
     -moz-animation:spin 1s linear infinite;
@@ -106,9 +114,9 @@ z-index:110 !important;
     -o-animation:spin 1s linear infinite;
     animation:spin 1s linear infinite;
 }
-
-
 */
+
+
 
 
 #header-img-a {

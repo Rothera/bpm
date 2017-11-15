@@ -15,14 +15,14 @@ span.redditname, span.pagename {
 /* Hide the machine name of the reddit */
 span.hover.pagename.redditname a {
     color: #fff !important;
-    content: "Colgate";
+    content: "Minuette";
     text-shadow: none;
     visibility: hidden
     }
 /* Display a human-readable one instead */
 span.hover.pagename.redditname a:before {
     color: #2255cc;
-    content: "Colgate";
+    content: "Minuette";
     text-shadow: 1px 1px 2px #888;
     visibility: visible
     }
@@ -46,14 +46,14 @@ span.hover.pagename.redditname a:before {
     }
  .titlebox h1 a {
     color: #fff !important;
-    content: "Colgate";
+    content: "Minuette";
     text-shadow: none;
     visibility: hidden
     }
 
 .titlebox h1 a:before {
     color: #2255cc;
-    content: "Colgate";
+    content: "Minuette";
     visibility: visible
     }
 
@@ -62,7 +62,7 @@ div.titlebox span.word {
     }
 div.titlebox span.number:after
 {
-    content: " Colgates"
+    content: " Minuettes"
 }
 
 /*Hide Table*/
