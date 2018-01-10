@@ -90,7 +90,7 @@ build/export.json: $(EMOTE_DATA)
 	./bpexport.py --json build/export.json
 
 build/gif-animotes.css: $(EMOTE_DATA)
-	mkdir -p build
+	mkdir -p build animotes
 	./dlanimotes.py
 
 build/betterponymotes-$(VERSION).xpi: $(ADDON_DATA) addon/fx-main.js addon/fx-install.rdf addon/fx-package.json
@@ -115,7 +115,7 @@ build/betterponymotes-$(VERSION).xpi: $(ADDON_DATA) addon/fx-main.js addon/fx-in
 	cp addon/options.js build/firefox/data
 	cp addon/pref-setup.js build/firefox
 
-	cd build/firefox && ../../node_modules/.bin/jpm xpi
+	cd build/firefox && jpm xpi
 	./mungexpi.py $(VERSION) addon/fx-install.rdf build/firefox/*.xpi build/betterponymotes-$(VERSION).xpi
 
 build/betterponymotes.update.rdf: build/betterponymotes-$(VERSION).xpi
