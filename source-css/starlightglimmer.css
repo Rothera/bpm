@@ -824,9 +824,6 @@ a[href|="/starlightdecanting"], a[href|="/sgdecanting"], a[href|="/starlightchee
 a[href|="/starlightdecanting"], a[href|="/sgdecanting"] { background-image: url(%%sgdecanting%%) !important; }
 a[href|="/starlightcheering"], a[href|="/sgcheering"] { background-image: url(%%sgcheering%%) !important; }
 
-START-PONYSCRIPT-IGNORE { color: red; }
-
-/* This is a spoiler until 7-10! */
 a[href|="/starlightglitter"], a[href|="/sgglitter"] {
   display: block;
   clear: none;
@@ -836,6 +833,8 @@ a[href|="/starlightglitter"], a[href|="/sgglitter"] {
   cursor: default;
   background-image: url(%%starlightglitter%%) !important;
 }
+
+START-PONYSCRIPT-IGNORE { color: red; }
 
 a[href|="/mirrorportal"] {
   display: block;

@@ -43,7 +43,7 @@ a[href|="/smugsmile"]     {background-position:-280px -0px}
 
 /* Hithroc's 70px emotes */
 
-a[href|='/TrixieTip'], a[href|='/trixietip'], a[href|='/trixieright'], a[href|='/silverwaretrixie'], a[href|='/trixieshrug'], a[href|='/trixiesaw'], a[href|='/trustissues'], a[href|='/teacup'], a[href|='/trixiewhatever'], a[href|='/trixiewoohoo'], a[href|='/trixieheh'] {
+a[href|='/TrixieTip'], a[href|='/trixietip'], a[href|='/trixieright'], a[href|='/silverwaretrixie'], a[href|='/trixieshrug'], a[href|='/trixiesaw'], a[href|='/trustissues'], a[href|='/teacup'], a[href|='/trixiewhatever'], a[href|='/trixiewoohoo'], a[href|='/trixieheh'], a[href|='/trixiewink'] {
   width:70px; height:70px;
   background-image: url(%%hithroc-spritesheet%%);
   display: block; clear: none; float: left;
@@ -64,6 +64,7 @@ a[href|='/teacup']                             { background-position:-350px    0
 a[href|='/trixiewhatever']                     { background-position:-420px    0px }
 a[href|='/trixiewoohoo']                       { background-position:-490px    0px }
 a[href|='/trixieheh']                          { background-position:-560px    0px }
+a[href|='/trixiewink']                         { background-position:-630px    0px }
 
 a[href|='/trixsqueeze'], a[href|='/deathgrip'] { background-position:   0px  -70px }
 
@@ -85,6 +86,23 @@ display: block;
 clear: none; 
 float: left
 }
+
+a[href|="/trixiemmmno"] {
+width:100px; 
+height:100px;
+background-image: url(%%trixiemmmno%%);
+display: block; 
+clear: none; 
+float: left
+}
+
+/* Hithroc's 100px emotes */
+a[href|='/amazingbooks']{
+  width:100px; height:100px;
+  background-image: url(%%hithroc-100-spritesheet%%);
+  display: block; clear: none; float: left;
+}
+a[href|='/amazingbooks']                       { background-position:-0px  -0px }
 
 /*100px emotes*/
 

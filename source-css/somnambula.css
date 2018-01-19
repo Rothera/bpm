@@ -34,6 +34,30 @@
 
 /*** Theme ***/
 
+#header-img { margin: 2px 5px -4px 4px }
+
+#header {
+  background: url(%%snbanner%%) repeat-x;
+  height: 196px;
+  border-bottom: 0 solid #e2d8ca;
+  box-shadow: 0 0 6px #555;
+}
+
+.pagename { font-size: 0; }
+
+.pagename a {
+  display: block;
+  position: absolute;
+  width: 504px;
+  height: 85px;
+  top: 55px;
+  left: calc(50% - 227px) !important;
+  background: url(%%sntitle%%) no-repeat;
+}
+
+.tabmenu { margin-bottom: -1px; }
+.tabmenu li.selected a { border-bottom: 1px solid #5f99cf; }
+
 .side h6 del { color: inherit }
 .side sup:nth-of-type(1) { padding-left: 40px }
 .side .usertext-body ul a { font-weight: bold }
@@ -166,14 +190,22 @@ a[href="/s"]:hover::after {
 .side .md h1:nth-of-type(2):hover ~ table:nth-of-type(2),
 .side .md table:nth-of-type(2):hover { display: table; }
 
+.side .md h1:nth-of-type(3):hover ~ table:nth-of-type(3),
+.side .md table:nth-of-type(3):hover { display: table; }
+
 .side .md h1:hover ~ h2, .side .md h1:active ~ h2, .side .md table:hover ~ h2, .side .md table:hover ~ h1,
 .side .md h1:hover ~ h2:last-of-type+p a, .side .md h1:active ~ h2:last-of-type+p a,
 .side .md table:hover ~ h2:last-of-type+p a { display: none; }
 
-.side .md table tr:first-of-type td:first-of-type { counter-reset: x -1 }
-.side .md table tr:first-of-type td:not(:first-of-type):after { counter-increment: x; content: counter(x) }
-.side .md table tr:first-of-type { counter-reset: y -1 }
-.side .md table tr:nth-of-type(n+2) td:first-of-type:after { counter-increment: y; content: counter(y) }
+.side .md table:nth-of-type(1) tr:first-of-type td:first-of-type { counter-reset: x -1 }
+.side .md table:nth-of-type(1) tr:first-of-type td:not(:first-of-type):after { counter-increment: x; content: counter(x) }
+.side .md table:nth-of-type(1) tr:first-of-type { counter-reset: y -1 }
+.side .md table:nth-of-type(1) tr:nth-of-type(n+2) td:first-of-type:after { counter-increment: y; content: counter(y) }
+
+.side .md table:nth-of-type(2) tr:first-of-type td:first-of-type { counter-reset: x -1 }
+.side .md table:nth-of-type(2) tr:first-of-type td:not(:first-of-type):after { counter-increment: x; content: counter(x) }
+.side .md table:nth-of-type(2) tr:first-of-type { counter-reset: y -1 }
+.side .md table:nth-of-type(2) tr:nth-of-type(n+2) td:first-of-type:after { counter-increment: y; content: counter(y) }
 
 .side .md h2:last-of-type+p a+.SuperRedditAltTextDisplay_Text { display: none; }
 
@@ -601,7 +633,8 @@ a[href|="/sna06"], a[href|="/sna16"], a[href|="/sna26"], a[href|="/sna36"], a[hr
   background-image: url(%%sna%%) !important;
 }
 
-a[href|="/snb00"], a[href|="/snb10"], a[href|="/snb20"], a[href|="/snb30"], a[href|="/snb01"], a[href|="/snb11"], a[href|="/snb21"], a[href|="/snb31"], a[href|="/snb02"], a[href|="/snb12"], a[href|="/snb22"], a[href|="/snb32"], a[href|="/snb03"], a[href|="/snb13"], a[href|="/snb23"], a[href|="/snb33"], a[href|="/snb04"], a[href|="/snb14"], a[href|="/snb24"], a[href|="/snb34"], a[href|="/snb05"], a[href|="/snb15"], a[href|="/snb25"] {
+a[href|="/snb00"], a[href|="/snb10"], a[href|="/snb20"], a[href|="/snb30"], a[href|="/snb01"], a[href|="/snb11"], a[href|="/snb21"], a[href|="/snb31"], a[href|="/snb02"], a[href|="/snb12"], a[href|="/snb22"], a[href|="/snb32"], a[href|="/snb03"], a[href|="/snb13"], a[href|="/snb23"], a[href|="/snb33"], a[href|="/snb04"], a[href|="/snb14"], a[href|="/snb24"], a[href|="/snb34"], a[href|="/snb05"], a[href|="/snb15"], a[href|="/snb25"], a[href|="/snb35"], a[href|="/snb06"], a[href|="/snb16"], a[href|="/snb26"], a[href|="/snb36"], a[href|="/snb07"], a[href|="/snb17"], a[href|="/snb27"], a[href|="/snb37"], a[href|="/snb08"], a[href|="/snb18"],
+a[href|="/sphinx"] {
   display: block;
   clear: none;
   float: left;
@@ -609,6 +642,16 @@ a[href|="/snb00"], a[href|="/snb10"], a[href|="/snb20"], a[href|="/snb30"], a[hr
   height: 70px;
   cursor: default;
   background-image: url(%%snb%%) !important;
+}
+
+a[href|="/walklikeanegyptian"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 100px;
+  height: 141px;
+  cursor: default;
+  background-image: url(%%snspecial%%) !important;
 }
 
 a[href|="/sna10"], a[href|="/snb10"] { background-position: -100% 0 }
@@ -632,18 +675,18 @@ a[href|="/sna24"], a[href|="/snb24"] { background-position: -200% -400% }
 a[href|="/sna34"], a[href|="/snb34"] { background-position: -300% -400% }
 a[href|="/sna05"], a[href|="/snb05"] { background-position: 0 -500% }
 a[href|="/sna15"], a[href|="/snb15"] { background-position: -100% -500% }
-a[href|="/sna25"], a[href|="/snb25"] { background-position: -200% -500% }
-a[href|="/sna35"] { background-position: -300% -500% }
-a[href|="/sna06"] { background-position: 0 -600% }
-a[href|="/sna16"] { background-position: -100% -600% }
-a[href|="/sna26"] { background-position: -200% -600% }
-a[href|="/sna36"] { background-position: -300% -600% }
-a[href|="/sna07"] { background-position: 0 -700% }
-a[href|="/sna17"] { background-position: -100% -700% }
-a[href|="/sna27"] { background-position: -200% -700% }
-a[href|="/sna37"] { background-position: -300% -700% }
-a[href|="/sna08"] { background-position: 0 -800% }
-a[href|="/sna18"] { background-position: -100% -800% }
+a[href|="/sna25"], a[href|="/snb25"], a[href|="/sphinx"] { background-position: -200% -500% }
+a[href|="/sna35"], a[href|="/snb35"] { background-position: -300% -500% }
+a[href|="/sna06"], a[href|="/snb06"] { background-position: 0 -600% }
+a[href|="/sna16"], a[href|="/snb16"] { background-position: -100% -600% }
+a[href|="/sna26"], a[href|="/snb26"] { background-position: -200% -600% }
+a[href|="/sna36"], a[href|="/snb36"] { background-position: -300% -600% }
+a[href|="/sna07"], a[href|="/snb07"] { background-position: 0 -700% }
+a[href|="/sna17"], a[href|="/snb17"] { background-position: -100% -700% }
+a[href|="/sna27"], a[href|="/snb27"] { background-position: -200% -700% }
+a[href|="/sna37"], a[href|="/snb37"] { background-position: -300% -700% }
+a[href|="/sna08"], a[href|="/snb08"] { background-position: 0 -800% }
+a[href|="/sna18"], a[href|="/snb18"] { background-position: -100% -800% }
 a[href|="/sna28"] { background-position: -200% -800% }
 a[href|="/sna38"] { background-position: -300% -800% }
 a[href|="/sna09"] { background-position: 0 -900% }

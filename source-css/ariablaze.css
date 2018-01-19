@@ -48,6 +48,8 @@
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }
 .sidecontentbox .helplink+.title+.content li:nth-of-type(5) { display: none }
 
+.wiki table a:nth-child(n+2) { display: block }
+
 /*** Comments ***/
 
 a[href|="/spoiler"] {
@@ -492,7 +494,7 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 
 /*---------------- END COPY ----------------*/
 
-a[href|="/arialook"], a[href|="/ablook"], a[href|="/ariareally"], a[href|="/abreally"], a[href|="/ariajoke"], a[href|="/abjoke"], a[href|="/ariarage"], a[href|="/abrage"], a[href|="/ariaplz"], a[href|="/abplz"], a[href|="/ariaponyshrug"], a[href|="/abpshrug"], a[href|="/lostaria"], a[href|="/nervousaria"], a[href|="/ariawhat"], a[href|="/ariague"], a[href|="/ariasad"] {
+a[href|="/arialook"], a[href|="/ablook"], a[href|="/ariareally"], a[href|="/abreally"], a[href|="/ariajoke"], a[href|="/abjoke"], a[href|="/ariarage"], a[href|="/abrage"], a[href|="/ariaplz"], a[href|="/abplz"], a[href|="/ariaponyshrug"], a[href|="/abpshrug"], a[href|="/lostaria"], a[href|="/nervousaria"], a[href|="/ariawhat"], a[href|="/ariague"], a[href|="/ariasad"], a[href|="/fabulousaria"], a[href|="/pleasantaria"] {
   display: block;
   clear: none;
   float: left;
@@ -528,6 +530,8 @@ a[href|="/nervousaria"] { background-position: -300% -100%; }
 a[href|="/ariawhat"] { background-position: 0 -200%; }
 a[href|="/ariague"] { background-position: -100% -200%; }
 a[href|="/ariasad"] { background-position: -200% -200%;}
+a[href|="/fabulousaria"] { background-position: -300% -200%; }
+a[href|="/pleasantaria"] { background-position: 0 -300%; }
 
 a[href|="/wmaria"], a[href|="/wmab"] {
   display: block;
@@ -539,7 +543,7 @@ a[href|="/wmaria"], a[href|="/wmab"] {
   background-image: url(%%wmaria%%) !important;
 }
 
-a[href|="/ariabattle"], a[href|="/abbattle"], a[href|="/confidentaria"], a[href|="/confidentab"], a[href|="/ariasiren"], a[href|="/absiren"], a[href|="/ariadoubt"], a[href|="/abdoubt"], a[href|="/peevedaria"], a[href|="/peevedab"], a[href|="/concernedaria"], a[href|="/concernedab"], a[href|="/ariahuh"], a[href|="/ariasmirk"], a[href|="/ariaglare"], a[href|="/abglare"], a[href|="/ariagrin"], a[href|="/ariafacepalm"], a[href|="/abfacepalm"], a[href|="/ariaplan"], a[href|="/abplan"], a[href|="/ariaglee"], a[href|="/abglee"], a[href|="/ariasing"], a[href|="/absing"], a[href|="/ariaevilgrin"], a[href|="/abevilgrin"], a[href|="/ariasure"], a[href|="/absure"], a[href|="/tickedaria"], a[href|="/tickedab"], a[href|="/coolaria"], a[href|="/coolab"], a[href|="/chariagraphy"], a[href|="/smugaria"], a[href|="/smugab"], a[href|="/raisetheroof"], a[href|="/noautotunearia"], a[href|="/noautotuneab"], a[href|="/ariasmile"], a[href|="/ariabetes"] {
+a[href|="/ariabattle"], a[href|="/abbattle"], a[href|="/confidentaria"], a[href|="/confidentab"], a[href|="/ariasiren"], a[href|="/absiren"], a[href|="/ariadoubt"], a[href|="/abdoubt"], a[href|="/peevedaria"], a[href|="/peevedab"], a[href|="/concernedaria"], a[href|="/concernedab"], a[href|="/ariahuh"], a[href|="/ariasmirk"], a[href|="/ariaglare"], a[href|="/abglare"], a[href|="/ariagrin"], a[href|="/ariafacepalm"], a[href|="/abfacepalm"], a[href|="/ariaplan"], a[href|="/abplan"], a[href|="/ariaglee"], a[href|="/abglee"], a[href|="/ariasing"], a[href|="/absing"], a[href|="/ariaevilgrin"], a[href|="/abevilgrin"], a[href|="/ariasure"], a[href|="/absure"], a[href|="/tickedaria"], a[href|="/tickedab"], a[href|="/coolaria"], a[href|="/coolab"], a[href|="/chariagraphy"], a[href|="/smugaria"], a[href|="/smugab"], a[href|="/raisetheroof"], a[href|="/noautotunearia"], a[href|="/noautotuneab"], a[href|="/ariasmile"], a[href|="/ariabetes"], a[href|="/powerfularia"] {
   display: block;
   clear: none;
   float: left;
@@ -586,6 +590,7 @@ a[href|="/smugaria"], a[href|="/smugab"], a[href|="/rsmugaria"], a[href|="/rsmug
 a[href|="/raisetheroof"], a[href|="/rraisetheroof"] { background-position: -300% -400%; }
 a[href|="/noautotunearia"], a[href|="/noautotuneab"], a[href|="/rnoautotunearia"], a[href|="/rnoautotuneab"] { background-position: 0 -500%; }
 a[href|="/ariasmile"], a[href|="/ariabetes"], a[href|="/rariasmile"], a[href|="/rariabetes"] { background-position: -100% -500%; }
+a[href|="/powerfularia"] { background-position: -200% -500%; }
 
 a:hover[href|="/ariafacepalm"], a:hover[href|="/abfacepalm"], a:hover[href|="/rariafacepalm"], a:hover[href|="/rabfacepalm"] {
   -webkit-transform: scaleX(-1);

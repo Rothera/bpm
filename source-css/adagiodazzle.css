@@ -48,6 +48,8 @@
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }
 .sidecontentbox .helplink+.title+.content li:nth-of-type(5) { display: none }
 
+.wiki table a:nth-child(n+2) { display: block }
+
 /*** Comments ***/
 
 a[href|="/spoiler"] {
@@ -540,7 +542,7 @@ a[href|="/slyadagio"], a[href|="/slyad"] { background-position: -210px -210px; }
 a[href|="/noautotuneadagio"], a[href|="/noautotunead"] { background-position: 0 -280px; }
 a[href|="/adagiosirensong"], a[href|="/adsirensong"] { background-position: -70px -280px; }
 
-a[href|="/adagiosmile"], a[href|="/adsmile"], a[href|="/adagiolook"], a[href|="/adlook"], a[href|="/confidentadagio"], a[href|="/confidentad"], a[href|="/adagiorage"], a[href|="/adrage"], a[href|="/adagioponyshrug"], a[href|="/adpshrug"], a[href|="/adagiohmmm"], a[href|="/adhmmm"], a[href|="/adagiowhat"], a[href|="/adwhat"], a[href|="/adagiolean"], a[href|="/adlean"], a[href|="/adagioright"], a[href|="/adright"], a[href|="/adagiosad"], a[href|="/adsad"] {
+a[href|="/adagiosmile"], a[href|="/adsmile"], a[href|="/adagiolook"], a[href|="/adlook"], a[href|="/confidentadagio"], a[href|="/confidentad"], a[href|="/adagiorage"], a[href|="/adrage"], a[href|="/adagioponyshrug"], a[href|="/adpshrug"], a[href|="/adagiohmmm"], a[href|="/adhmmm"], a[href|="/adagiowhat"], a[href|="/adwhat"], a[href|="/adagiolean"], a[href|="/adlean"], a[href|="/adagioright"], a[href|="/adright"], a[href|="/adagiosad"], a[href|="/adsad"], a[href|="/adagioponysmirk"], a[href|="/adponysmirk"], a[href|="/adagioponygrin"], a[href|="/adponygrin"] {
   display: block;
   clear: none;
   float: left;
@@ -574,6 +576,8 @@ a[href|="/adagiowhat"], a[href|="/adwhat"] { background-position: -140px -70px; 
 a[href|="/adagiolean"], a[href|="/adlean"] { background-position: -210px -70px; }
 a[href|="/adagioright"], a[href|="/adright"] { background-position: -0px -140px; }
 a[href|="/adagiosad"], a[href|="/adsad"] { background-position: -70px -140px; }
+a[href|="/adagioponysmirk"], a[href|="/adponysmirk"] { background-position: -140px -140px; }
+a[href|="/adagioponygrin"], a[href|="/adponygrin"] { background-position: -210px -140px; }
 
 a[href|="/adagiopoof"], a[href|="/adpoof"] {
   display: block;

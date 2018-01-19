@@ -1,7 +1,34 @@
 .id-t3_145m8r.link .title{font-size:large}
 
+/*LET IT SNOW BITCHES */
+/*
+#header:after {
+content: "";
+background: url(%%Snow2%%);
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+z-index: 999;
+pointer-events: none;
+-webkit-animation: snow 0.05s steps(19) infinite;
+-moz-animation: snow 0.05s steps(19) infinite;
+-ms-animation: snow 0.05s steps(19) infinite;
+-o-animation: snow 0.05s steps(19) infinite;
+animation: snow 0.05s steps(19) infinite; 
+}
+*/
+
+@-webkit-keyframes snow {from{background-position: 0 0;}to{ background-position: 0px -5700px; }} 
+@-moz-keyframes snow {from {background-position: 0 0;}to{ background-position: 0px -5700px; } } 
+@-ms-keyframes snow{from {background-position: 0 0; }to{ background-position: 0px -5700px; } } 
+@-o-keyframes snow {from {background-position: 0 0; }to{ background-position: 0px -5700px; } } 
+@keyframes snow {from { background-position: 0 0; }to{ background-position: 0px -5700px; } } 
+
+
 /* comment box image */
-.commentarea textarea:not(:focus) { background-image: url(%%turkpinkie%%); }
+.commentarea textarea:not(:focus) { background-image: url(%%crusaderthumb%%); }
 
 
 /* Replace Cursors */
@@ -14,7 +41,7 @@ a { cursor: url(%%cursor1%%), pointer; }
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%Turky%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%Crusaders%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -36,7 +63,7 @@ a { cursor: url(%%cursor1%%), pointer; }
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%Turky-Day%%) 50% -10px !important;
+   background: url(%%das-vult-banner%%) 50% -10px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }

@@ -49,6 +49,8 @@
 .sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }
 .sidecontentbox .helplink+.title+.content li:nth-of-type(2) { display: none }
 
+.wiki table a:nth-child(n+2) { display: block }
+
 /*** Comments ***/
 
 a[href|="/sp"] {
@@ -610,58 +612,93 @@ a[href|="/applederp"],a[href|="/rapplederp"],a[href|="/ppseesyou"],a[href|="/rpp
 
 /*---------------- END COPY ----------------*/
 
-a[href|="/countesssing"], a[href|="/raramagic"], a[href|="/thecountess"], a[href|="/happyrara"], a[href|="/rarasing"], a[href|="/sadrara"], a[href|="/svengallop"], a[href|="/fillyrarasing"], a[href|="/rarashock"], a[href|="/countempt"], a[href|="/countesslook"], a[href|="/raraglad"], a[href|="/sadcountess"], a[href|="/rarasmile"], a[href|="/rarastare"], a[href|="/singitrara"], a[href|="/raraplease"], a[href|="/raralaugh"], a[href|="/shyrara"], a[href|="/raralook"], a[href|="/excitedrara"], a[href|="/sorryrara"], a[href|="/gratefulrara"], a[href|="/interestedrara"], a[href|="/rarawink"], a[href|="/pleasantrara"] {
+a[href|="/countesssing"], a[href|="/raramagic"], a[href|="/thecountess"], a[href|="/happyrara"], a[href|="/rarasing"], a[href|="/sadrara"], a[href|="/svengallop"], a[href|="/fillyrarasing"], a[href|="/rarashock"], a[href|="/countempt"], a[href|="/countesslook"], a[href|="/raraglad"], a[href|="/sadcountess"], a[href|="/rarasmile"], a[href|="/rarastare"], a[href|="/singitrara"], a[href|="/raraplease"], a[href|="/raralaugh"], a[href|="/shyrara"], a[href|="/raralook"], a[href|="/excitedrara"], a[href|="/sorryrara"], a[href|="/gratefulrara"], a[href|="/interestedrara"], a[href|="/rarawink"], a[href|="/pleasantrara"], a[href|="/intentrara"], a[href|="/raraforte"], a[href|="/rarabraid"], a[href|="/fillyraranod"], a[href|="/countesssmile"], a[href|="/eagercountess"], a[href|="/countesslaugh"], a[href|="/countesslean"], a[href|="/countesssee"], a[href|="/raraduckface"], a[href|="/raralean"], a[href|="/chillcountess"], a[href|="/nervousrara"], a[href|="/gothrara"] {
   display: block;
   clear: none;
   float: left;
   width: 70px;
   height: 70px;
   cursor: default;
-  background-image: url(%%raramotes%%) !important;
+  background-image: url(%%arara%%) !important;
 }
 
-a[href|="/countesssing"] { background-position: 0 0 }
-a[href|="/raramagic"] { background-position: -70px 0 }
-a[href|="/thecountess"] { background-position: -140px 0 }
-a[href|="/happyrara"] { background-position: -210px 0 }
-a[href|="/rarasing"] { background-position: 0 -70px }
-a[href|="/sadrara"] { background-position: -70px -70px }
-a[href|="/svengallop"] { background-position: -140px -70px }
-a[href|="/fillyrarasing"] { background-position: -210px -70px }
-a[href|="/rarashock"] { background-position: 0 -140px }
-a[href|="/countempt"] { background-position: -70px -140px }
-a[href|="/countesslook"] { background-position: -140px -140px }
-a[href|="/raraglad"] { background-position: -210px -140px }
-a[href|="/sadcountess"] { background-position: 0 -210px }
-a[href|="/rarasmile"] { background-position: -70px -210px }
-a[href|="/rarastare"] { background-position: -140px -210px }
-a[href|="/singitrara"] { background-position: -210px -210px }
-a[href|="/raraplease"] { background-position: 0 -280px }
-a[href|="/raralaugh"] { background-position: -70px -280px }
-a[href|="/shyrara"] { background-position: -140px -280px }
-a[href|="/raralook"] { background-position: -210px -280px }
-a[href|="/excitedrara"] { background-position: 0 -350px }
-a[href|="/sorryrara"] { background-position: -70px -350px }
-a[href|="/gratefulrara"] { background-position: -140px -350px }
-a[href|="/interestedrara"] { background-position: -210px -350px }
-a[href|="/rarawink"] { background-position: 0 -420px }
-a[href|="/pleasantrara"] { background-position: -70px -420px }
-
-a[href|="/rarajackhug"], a[href|="/hoovsies"], a[href|="/raraselfie"], a[href|="/rarastrum"], a[href|="/rarashred"] {
+a[href|="/rarahint"], a[href|="/raradance"], a[href|="/lazyfillyrara"], a[href|="/sparara"], a[href|="/raracarol"], a[href|="/asleeprara"], a[href|="/countesspose"], a[href|="/winrara"], a[href|="/countesswink"], a[href|="/countesstoss"], a[href|="/countessgrin"], a[href|="/fillycountess"], a[href|="/rarabeam"], a[href|="/raraderp"], a[href|="/punkrara"], a[href|="/rararecord"], a[href|="/inspiredrara"], a[href|="/raracry"], a[href|="/movierara"], a[href|="/raraweep"], a[href|="/fillyraracry"], a[href|="/raranod"], a[href|="/festiverara"], a[href|="/humanrara"], a[href|="/rarasmirk"], a[href|="/knowingrara"], a[href|="/rararock"], a[href|="/rarawatch"], a[href|="/coyrara"], a[href|="/seaponyrara"], a[href|="/rarafloat"], a[href|="/smugrara"], a[href|="/countryrara"], a[href|="/crarablush"], a[href|="/crarahoof"], a[href|="/tiredrara"], a[href|="/rarakiss"], a[href|="/rarainnerfilly"], a[href|="/camprara"], a[href|="/raranudge"] {
   display: block;
   clear: none;
   float: left;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   cursor: default;
-  background-image: url(%%raraspecial%%) !important;
+  background-image: url(%%brara%%) !important;
 }
 
-a[href|="/rarajackhug"] { background-position: 0 0 }
-a[href|="/hoovsies"] { background-position: -100px 0 }
-a[href|="/raraselfie"] { background-position: -200px 0 }
-a[href|="/rarastrum"] { background-position: 0 -100px; height: 150px }
-a[href|="/rarashred"] { background-position: -100px -100px; width: 150px; height: 120px }
+a[href|="/fillyraraforte"], a[href|="/fillyraraooh"], a[href|="/humancountess"], a[href|="/fillyrara"], a[href|="/raraooh"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 70px;
+  cursor: default;
+  background-image: url(%%crara%%) !important;
+}
+
+a[href|="/rarajackhug"], a[href|="/hoovsies"], a[href|="/raraselfie"], a[href|="/rarastrum"], a[href|="/rarashred"], a[href|="/crystalrara"], a[href|="/indierockrara"], a[href|="/hiphoprara"], a[href|="/rarasit"], a[href|="/rarapiano"], a[href|="/rarapiehug"], a[href|="/rarajacktackle"], a[href|="/rarajack"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 150px;
+  height: 150px;
+  cursor: default;
+  background-image: url(%%srara%%) !important;
+}
+
+a[href|="/countesssing"], a[href|="/rarahint"], a[href|="/fillyraraforte"], a[href|="/rarajackhug"] { background-position: 0 0 }
+a[href|="/raramagic"], a[href|="/raradance"], a[href|="/fillyraraooh"], a[href|="/hoovsies"] { background-position: -100% 0 }
+a[href|="/thecountess"], a[href|="/lazyfillyrara"], a[href|="/humancountess"], a[href|="/raraselfie"] { background-position: -200% 0 }
+a[href|="/happyrara"], a[href|="/sparara"], a[href|="/fillyrara"], a[href|="/rarastrum"] { background-position: -300% 0 }
+a[href|="/rarasing"], a[href|="/raracarol"], a[href|="/raraooh"], a[href|="/rarashred"] { background-position: 0 -100% }
+a[href|="/sadrara"], a[href|="/asleeprara"], a[href|="/crystalrara"] { background-position: -100% -100% }
+a[href|="/svengallop"], a[href|="/countesspose"], a[href|="/indierockrara"] { background-position: -200% -100% }
+a[href|="/fillyrarasing"], a[href|="/winrara"], a[href|="/hiphoprara"] { background-position: -300% -100% }
+a[href|="/rarashock"], a[href|="/countesswink"], a[href|="/rarasit"] { background-position: 0 -200% }
+a[href|="/countempt"], a[href|="/countesstoss"], a[href|="/rarapiano"] { background-position: -100% -200% }
+a[href|="/countesslook"], a[href|="/countessgrin"], a[href|="/rarapiehug"] { background-position: -200% -200% }
+a[href|="/raraglad"], a[href|="/fillycountess"], a[href|="/rarajacktackle"] { background-position: -300% -200% }
+a[href|="/sadcountess"], a[href|="/rarabeam"], a[href|="/rarajack"] { background-position: 0 -300% }
+a[href|="/rarasmile"], a[href|="/raraderp"] { background-position: -100% -300% }
+a[href|="/rarastare"], a[href|="/punkrara"] { background-position: -200% -300% }
+a[href|="/singitrara"], a[href|="/rararecord"] { background-position: -300% -300% }
+a[href|="/raraplease"], a[href|="/inspiredrara"] { background-position: 0 -400% }
+a[href|="/raralaugh"], a[href|="/raracry"] { background-position: -100% -400% }
+a[href|="/shyrara"], a[href|="/movierara"] { background-position: -200% -400% }
+a[href|="/raralook"], a[href|="/raraweep"] { background-position: -300% -400% }
+a[href|="/excitedrara"], a[href|="/fillyraracry"] { background-position: 0 -500% }
+a[href|="/sorryrara"], a[href|="/raranod"] { background-position: -100% -500% }
+a[href|="/gratefulrara"], a[href|="/festiverara"] { background-position: -200% -500% }
+a[href|="/interestedrara"], a[href|="/humanrara"] { background-position: -300% -500% }
+a[href|="/rarawink"], a[href|="/rarasmirk"] { background-position: 0 -600% }
+a[href|="/pleasantrara"], a[href|="/knowingrara"] { background-position: -100% -600% }
+a[href|="/intentrara"], a[href|="/rararock"] { background-position: -200% -600% }
+a[href|="/raraforte"], a[href|="/rarawatch"] { background-position: -300% -600% }
+a[href|="/rarabraid"], a[href|="/coyrara"] { background-position: 0 -700% }
+a[href|="/fillyraranod"], a[href|="/seaponyrara"] { background-position: -100% -700% }
+a[href|="/countesssmile"], a[href|="/rarafloat"] { background-position: -200% -700% }
+a[href|="/eagercountess"], a[href|="/smugrara"] { background-position: -300% -700% }
+a[href|="/countesslaugh"], a[href|="/countryrara"] { background-position: 0 -800% }
+a[href|="/countesslean"], a[href|="/crarablush"] { background-position: -100% -800% }
+a[href|="/countesssee"], a[href|="/crarahoof"] { background-position: -200% -800% }
+a[href|="/raraduckface"], a[href|="/tiredrara"] { background-position: -300% -800% }
+a[href|="/raralean"], a[href|="/rarakiss"] { background-position: 0 -900% }
+a[href|="/chillcountess"], a[href|="/rarainnerfilly"] { background-position: -100% -900% }
+a[href|="/nervousrara"], a[href|="/camprara"] { background-position: -200% -900% }
+a[href|="/gothrara"], a[href|="/raranudge"] { background-position: -300% -900% }
+
+a[href|="/hoovsies"] { background-position: -150px 0; height: 130px }
+a[href|="/rarastrum"] { background-position: -450px 0; width: 100px }
+a[href|="/rarashred"] { background-position: 0 -150px; height: 120px }
+a[href|="/indierockrara"] { background-position: -300px -150px; width: 140px }
+a[href|="/rarasit"] { background-position: 0 -300px; width: 130px }
+a[href|="/rarapiehug"] { background-position: -300px -300px; width: 110px }
 
 a[href|="/raratrotting"] {
   display: block;
@@ -681,6 +718,16 @@ a[href|="/rarastanding"] {
   height: 100px;
   cursor: default;
   background-image: url(%%rarastanding%%) !important;
+}
+
+a[href|="/rarajackjamming"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 88px;
+  height: 44px;
+  cursor: default;
+  background-image: url(%%rarajackjamming%%) !important;
 }
 
 START-PONYSCRIPT-IGNORE { color: red; }

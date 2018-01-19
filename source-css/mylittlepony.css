@@ -34,8 +34,8 @@
 
 
 div.titlebox span.word {display:none}
-div.titlebox .subscribers span.number:after {content:" EQG Shorts"}
-div.titlebox .users-online span.number:after {content:" New ones this week"}
+div.titlebox .subscribers span.number:after {content:" Episodes leaked"}
+div.titlebox .users-online span.number:after {content:" Users spoiled forever"}
 
 .sidecontentbox .flair {display:none}
 .sidebox .spacer {display:none}
@@ -186,7 +186,7 @@ border-top-right-radius: 5px;
  margin-left:5px;
  margin-bottom:0px;
  margin-right:-45px;
- background-position:-100% -400%; /*To select emote table position. Increments of -100%.*/
+ background-position:-100% -300%; /*To select emote table position. Increments of -100%.*/
  transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 .thumbnail {background-size: 70px 1010px !important}
@@ -204,7 +204,7 @@ border-top-right-radius: 5px;
 .linkflair-2017movie > .thumbnail.spoiler, .linkflair-movietitle > .thumbnail.spoiler { background-position:0px -730px!important}
 .linkflair-s7e06 > .thumbnail.spoiler, .linkflair-s7e07 > .thumbnail.spoiler, .linkflair-s7e08 > .thumbnail.spoiler, .linkflair-s7e09 > .thumbnail.spoiler, .linkflair-s7e10 > .thumbnail.spoiler, .linkflair-s7e11 > .thumbnail.spoiler{ background-position:0px -800px!important}
 .linkflair-s7e12 > .thumbnail.spoiler, .linkflair-s7e13 > .thumbnail.spoiler{ background-position:0px -870px!important}
-.linkflair-s7e23 > .thumbnail.spoiler, .linkflair-s7e24 > .thumbnail.spoiler, .linkflair-s7e2526 > .thumbnail.spoiler{ background-position:0px -940px!important}
+.linkflair-s7e23 > .thumbnail.spoiler, .linkflair-s7e24 > .thumbnail.spoiler, .linkflair-s7e2526 > .thumbnail.spoiler, .linkflair-leak > .thumbnail.spoiler { background-position:0px -940px!important}
 
 
 a.author.id-t2_4mwnz,a.author.id-t2_8kzeb,div.content a.author.id-t2_5agom,a.author.id-t2_5o2lh,a.author.id-t2_4uott,a.author.id-t2_dq6ce,a.author.id-t2_5qkuh,a.author.id-t2_wptze,a.author.id-t2_y83l6,a.author.id-t2_mrnbd{content:"";font-size:0px!important;display:inline-block;vertical-align:bottom;overflow:hidden;letter-spacing:-20px}
@@ -679,9 +679,9 @@ a[href|="/f00"],a[href|="/pinkiesad"],a[href|="/ppsad"],a[href|="/f01"],a[href|=
 
 a[href|="/rf00"],a[href|="/rpinkiesad"],a[href|="/rppsad"],a[href|="/rf01"],a[href|="/rdiamondtiara"],a[href|="/rdt"],a[href|="/rf02"],a[href|="/rsombra"],a[href|="/rf03"],a[href|="/rsbshocked"],a[href|="/rf04"],a[href|="/rguard"],a[href|="/rf05"],a[href|="/rabstern"],a[href|="/rf06"],a[href|="/rf07"],a[href|="/rajcry"],a[href|="/rf08"],a[href|="/rrarityeww"],a[href|="/rf09"],a[href|="/rflutterkay"],a[href|="/rflutter:I"],a[href|="/rpokershy"],a[href|="/rf10"],a[href|="/rstarlightrage"],a[href|="/rf11"],a[href|="/rbulkbiceps"],a[href|="/ryeah"],a[href|="/rf12"],a[href|="/rscootaeww"],a[href|="/rf13"],a[href|="/rdiscordgrump"],a[href|="/rf14"],a[href|="/rtroubleshoes"],a[href|="/rf15"],a[href|="/rrdsnrk"],a[href|="/rf16"],a[href|="/rthcalm"],a[href|="/rthc"],a[href|="/rf17"],a[href|="/rooh"],a[href|="/rpinkieooh"],a[href|="/rf18"],a[href|="/rraritytired"],a[href|="/rf19"],a[href|="/rnotangry"],a[href|="/rf20"],a[href|="/rajdoubt"],a[href|="/rf21"],a[href|="/rspikewhoa"],a[href|="/rspikewoah"],a[href|="/rjustaprankbro"],a[href|="/rf22"],a[href|="/rwasntme"],a[href|="/rseaswirl"],a[href|="/rseafoam"],a[href|="/rflim"],a[href|="/rf25"],a[href|="/rcocosmile"],a[href|="/rf26"],a[href|="/rskeptiloo"],a[href|="/rf27"],a[href|="/rlimestonegrin"],a[href|="/rf28"],a[href|="/rraritygrump"],a[href|="/rf29"],a[href|="/rgoodjob"],a[href|="/rstarlightgoodjob"],a[href|="/rstarlightgj"],a[href|="/rf30"],a[href|="/rflutterhay"],a[href|="/rf31"],a[href|="/rsbwtf"],a[href|="/rf32"],a[href|="/rnightmaregrin"],a[href|="/rf33"],a[href|="/rspikeapproves"],a[href|="/rf34"],a[href|="/rflutternice"],a[href|="/rflutterheadtilt"],a[href|="/rf35"],a[href|="/rppdont"],a[href|="/rpinkiedont"],a[href|="/rf36"],a[href|="/rajgrump"],a[href|="/rf37"],a[href|="/rsgpopcorn"],a[href|="/rpopstar"],a[href|="/rf38"],a[href|="/rraritysquee"],a[href|="/rf39"],a[href|="/rgummystare"]{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%fmotes%%) !important;-moz-transform:scaleX(-1);-o-transform:scaleX(-1);-webkit-transform:scaleX(-1);transform:scaleX(-1);cursor:default}
 
-a[href|="/g00"],a[href|="/karma"],a[href|="/g01"],a[href|="/discentiajudge"],a[href|="/g02"],a[href|="/twisnide"],a[href|="/g03"],a[href|="/pinkie"],a[href|="/pp"],a[href|="/g04"],a[href|="/cococold"],a[href|="/g05"],a[href|="/quibble"],a[href|="/g06"],a[href|="/rdthis"],a[href|="/g07"],a[href|="/flutterbrow"],a[href|="/celestiahurt"],a[href|="/g08"],a[href|="/sgconcern"],a[href|="/starlightconcern"],a[href|="/g09"],a[href|="/sbfocus"],a[href|="/g10"],a[href|="/sgsneaky"],a[href|="/starlightsneaky"],a[href|="/g11"],a[href|="/trixieww"],a[href|="/trixieeww"],a[href|="/g12"],a[href|="/flutterplz"],a[href|="/g13"],a[href|="/emberwtf"],a[href|="/g14"],a[href|="/sunsetwhyme"],a[href|="/g15"],a[href|="/abteehee"],a[href|="/g16"],a[href|="/squintyglam"],a[href|="/g17"],a[href|="/rdsup"],a[href|="/g18"],a[href|="/celestiahappy"],a[href|="/g19"],a[href|="/lunagrump"],a[href|="/g20"],a[href|="/sgeesh"],a[href|="/starlighteesh"],a[href|="/g21"],a[href|="/twieek"],a[href|="/g22"],a[href|="/tempest"],a[href|="/fizzlepopberrytwist"],a[href|="/g23"],a[href|="/tempestsmile"],a[href|="/fizzysmile"],a[href|="/g24"]{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%gmotes%%) !important;cursor:default}
+a[href|="/g00"],a[href|="/karma"],a[href|="/g01"],a[href|="/discentiajudge"],a[href|="/g02"],a[href|="/twisnide"],a[href|="/g03"],a[href|="/pinkie"],a[href|="/pp"],a[href|="/g04"],a[href|="/cococold"],a[href|="/g05"],a[href|="/quibble"],a[href|="/g06"],a[href|="/rdthis"],a[href|="/g07"],a[href|="/flutterbrow"],a[href|="/celestiahurt"],a[href|="/g08"],a[href|="/sgconcern"],a[href|="/starlightconcern"],a[href|="/g09"],a[href|="/sbfocus"],a[href|="/g10"],a[href|="/sgsneaky"],a[href|="/starlightsneaky"],a[href|="/g11"],a[href|="/trixieww"],a[href|="/trixieeww"],a[href|="/g12"],a[href|="/flutterplz"],a[href|="/g13"],a[href|="/emberwtf"],a[href|="/g14"],a[href|="/sunsetwhyme"],a[href|="/g15"],a[href|="/abteehee"],a[href|="/g16"],a[href|="/squintyglam"],a[href|="/g17"],a[href|="/rdsup"],a[href|="/g18"],a[href|="/celestiahappy"],a[href|="/g19"],a[href|="/lunagrump"],a[href|="/g20"],a[href|="/sgeesh"],a[href|="/starlighteesh"],a[href|="/g21"],a[href|="/twieek"],a[href|="/g22"],a[href|="/tempest"],a[href|="/fizzlepopberrytwist"],a[href|="/g23"],a[href|="/tempestsmile"],a[href|="/fizzysmile"],a[href|="/g24"],a[href|="/squeestar"],a[href|="/g25"],a[href|="/appleroll"],a[href|="/ajroll"],a[href|="/g26"],a[href|="/spikeholdup"],a[href|="/g27"],a[href|="/tempestgaze"],a[href|="/fizzygaze"],a[href|="/contempest"],a[href|="/g28"],a[href|="/squeekiepie"],a[href|="/g29"],a[href|="/twisheepish"],a[href|="/g30"],a[href|="/skystarfine"],a[href|="/g31"],a[href|="/ajeesh"],a[href|="/g32"],a[href|="/pinkiesugar"],a[href|="/ppsugar"],a[href|="/g33"]{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%gmotes%%) !important;cursor:default}
 
-a[href|="/rg00"],a[href|="/rkarma"],a[href|="/rg01"],a[href|="/rdiscentiajudge"],a[href|="/rg02"],a[href|="/rtwisnide"],a[href|="/rg03"],a[href|="/rpinkie"],a[href|="/rpp"],a[href|="/rg04"],a[href|="/rcococold"],a[href|="/rg05"],a[href|="/rquibble"],a[href|="/rg06"],a[href|="/rrdthis"],a[href|="/rg07"],a[href|="/rflutterbrow"],a[href|="/rcelestiahurt"],a[href|="/rg08"],a[href|="/rsgconcern"],a[href|="/rstarlightconcern"],a[href|="/rg09"],a[href|="/rsbfocus"],a[href|="/rg10"],a[href|="/rsgsneaky"],a[href|="/rstarlightsneaky"],a[href|="/rg11"],a[href|="/rtrixieww"],a[href|="/rtrixieeww"],a[href|="/rg12"],a[href|="/rflutterplz"],a[href|="/rg13"],a[href|="/remberwtf"],a[href|="/rg14"],a[href|="/rsunsetwhyme"],a[href|="/rg15"],a[href|="/rabteehee"],a[href|="/rg16"],a[href|="/rsquintyglam"],a[href|="/rg17"],a[href|="/rrdsup"],a[href|="/rg18"],a[href|="/rcelestiahappy"],a[href|="/rg19"],a[href|="/rlunagrump"],a[href|="/rg20"],a[href|="/rsgeesh"],a[href|="/rstarlighteesh"],a[href|="/rg21"],a[href|="/rtwieek"],a[href|="/rg22"],a[href|="/rtempest"],a[href|="/rfizzlepopberrytwist"],a[href|="/rg23"],a[href|="/rtempestsmile"],a[href|="/rfizzysmile"],a[href|="/rg24"]{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%gmotes%%) !important;-moz-transform:scaleX(-1);-o-transform:scaleX(-1);-webkit-transform:scaleX(-1);transform:scaleX(-1);cursor:default}
+a[href|="/rg00"],a[href|="/rkarma"],a[href|="/rg01"],a[href|="/rdiscentiajudge"],a[href|="/rg02"],a[href|="/rtwisnide"],a[href|="/rg03"],a[href|="/rpinkie"],a[href|="/rpp"],a[href|="/rg04"],a[href|="/rcococold"],a[href|="/rg05"],a[href|="/rquibble"],a[href|="/rg06"],a[href|="/rrdthis"],a[href|="/rg07"],a[href|="/rflutterbrow"],a[href|="/rcelestiahurt"],a[href|="/rg08"],a[href|="/rsgconcern"],a[href|="/rstarlightconcern"],a[href|="/rg09"],a[href|="/rsbfocus"],a[href|="/rg10"],a[href|="/rsgsneaky"],a[href|="/rstarlightsneaky"],a[href|="/rg11"],a[href|="/rtrixieww"],a[href|="/rtrixieeww"],a[href|="/rg12"],a[href|="/rflutterplz"],a[href|="/rg13"],a[href|="/remberwtf"],a[href|="/rg14"],a[href|="/rsunsetwhyme"],a[href|="/rg15"],a[href|="/rabteehee"],a[href|="/rg16"],a[href|="/rsquintyglam"],a[href|="/rg17"],a[href|="/rrdsup"],a[href|="/rg18"],a[href|="/rcelestiahappy"],a[href|="/rg19"],a[href|="/rlunagrump"],a[href|="/rg20"],a[href|="/rsgeesh"],a[href|="/rstarlighteesh"],a[href|="/rg21"],a[href|="/rtwieek"],a[href|="/rg22"],a[href|="/rtempest"],a[href|="/rfizzlepopberrytwist"],a[href|="/rg23"],a[href|="/rtempestsmile"],a[href|="/rfizzysmile"],a[href|="/rg24"],a[href|="/rsqueestar"],a[href|="/rg25"],a[href|="/rappleroll"],a[href|="/rajroll"],a[href|="/rg26"],a[href|="/rspikeholdup"],a[href|="/rg27"],a[href|="/rtempestgaze"],a[href|="/rfizzygaze"],a[href|="/rcontempest"],a[href|="/rg28"],a[href|="/rsqueekiepie"],a[href|="/rg29"],a[href|="/rtwisheepish"],a[href|="/rg30"],a[href|="/rskystarfine"],a[href|="/rg31"],a[href|="/rajeesh"],a[href|="/rg32"],a[href|="/rpinkiesugar"],a[href|="/rppsugar"],a[href|="/rg33"]{display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%gmotes%%) !important;-moz-transform:scaleX(-1);-o-transform:scaleX(-1);-webkit-transform:scaleX(-1);transform:scaleX(-1);cursor:default}
 
 a[href|="/smooze"],a[href|="/rapathia"],a[href|="/rf24"],a[href|="/rflimflam"],a[href|="/flam"],a[href|="/canuckarma"],a[href|="/amrak"],a[href|="/changedling"]
 {display:block;clear:none;float:left;width:70px;height:70px;background-image:url(%%smooze%%)!important;
@@ -781,6 +781,15 @@ a[href|="/shiningarmor"],a[href|="/shiningarmour"],a[href|="/a09"],a[href|="/rsh
 .flair-zephyrbreeze
 {background-position:0 -2800%}
 
+.flair-brightmac
+{background-position:0 -2900%}
+
+.flair-rockhoof
+{background-position:0 -3000%}
+
+.flair-sapphireshores
+{background-position:0 -3100%}
+
 a[href|="/priceless"],a[href|="/a10"],a[href|="/rpriceless"],a[href|="/ra10"],a[href|="/ppboring"],a[href|="/b10"],a[href|="/rppboring"],a[href|="/rb10"],a[href|="/rdhappy"],a[href|="/c10"],a[href|="/rrdhappy"],a[href|="/rc10"],a[href|="/rdhuh"],a[href|="/e10"],a[href|="/rrdhuh"],a[href|="/re10"],a[href|="/f10"], a[href|="/starlightrage"],a[href|="/rf10"], a[href|="/rstarlightrage"],a[href|="/sbfocus"],a[href|="/g10"],a[href|="/rsbfocus"],a[href|="/rg10"],.flair-twilight,.side .md table tr:nth-of-type(1) td:nth-of-type(3):after
 {background-position:-100% 0}
 
@@ -868,6 +877,15 @@ a[href|="/chrysalis"],a[href|="/queenchrysalis"],a[href|="/changelingqueen"],a[h
 .flair-quibblepants
 {background-position:-100% -2800%}
 
+.flair-pearbutter
+{background-position:-100% -2900%}
+
+.flair-mistmane
+{background-position:-100% -3000%}
+
+.flair-toolaroola
+{background-position:-100% -3100%}
+
 a[href|="/flutterjerk"],a[href|="/a20"],a[href|="/rflutterjerk"],a[href|="/ra20"],a[href|="/rarityyell"],a[href|="/b20"],a[href|="/rrarityyell"],a[href|="/rb20"],a[href|="/rdannoyed"],a[href|="/c20"],a[href|="/rrdannoyed"],a[href|="/rc20"],a[href|="/snails"],a[href|="/e20"],a[href|="/rsnails"],a[href|="/re20"],a[href|="/f20"], a[href|="/ajdoubt"],a[href|="/rf20"], a[href|="/rajdoubt"],a[href|="/lunagrump"],a[href|="/g20"],a[href|="/rlunagrump"],a[href|="/rg20"],.flair-fluttershy,.side .md table tr:nth-of-type(1) td:nth-of-type(4):after
 {background-position:-200% 0}
 
@@ -883,19 +901,19 @@ a[href|="/twibeam"],a[href|="/a23"],a[href|="/rtwibeam"],a[href|="/ra23"],a[href
 a[href|="/squintyjack"],a[href|="/ajsquint"],a[href|="/b24"],a[href|="/rsquintyjack"],a[href|="/rajsquint"],a[href|="/rb24"],a[href|="/joy"],a[href|="/c24"],a[href|="/rjoy"],a[href|="/rc24"],a[href|="/dealwithit"],a[href|="/e24"],a[href|="/rdealwithit"],a[href|="/re24"],a[href|="/f24"], a[href|="/flimflam"], a[href|="/flim"], a[href|="/rflim"],a[href|="/tempestsmile"],a[href|="/fizzysmile"],a[href|="/g24"],a[href|="/rtempestsmile"],a[href|="/rfizzysmile"],a[href|="/rg24"],.flair-berry,.side .md table tr:nth-of-type(9) td:nth-of-type(4):after
 {background-position:-200% -400%}
 
-a[href|="/rdcry"],a[href|="/a25"],a[href|="/rrdcry"],a[href|="/ra25"],a[href|="/dumbfabric"],a[href|="/b25"],a[href|="/rdumbfabric"],a[href|="/rb25"],a[href|="/derp"],a[href|="/c25"],a[href|="/rderp"],a[href|="/rc25"],a[href|="/rdsalute"],a[href|="/e25"],a[href|="/rrdsalute"],a[href|="/re25"], a[href|="/f25"], a[href|="/cocosmile"], a[href|="/rf25"], a[href|="/rcocosmile"],.flair-seafoam,.side .md table tr:nth-of-type(11) td:nth-of-type(4):after
+a[href|="/rdcry"],a[href|="/a25"],a[href|="/rrdcry"],a[href|="/ra25"],a[href|="/dumbfabric"],a[href|="/b25"],a[href|="/rdumbfabric"],a[href|="/rb25"],a[href|="/derp"],a[href|="/c25"],a[href|="/rderp"],a[href|="/rc25"],a[href|="/rdsalute"],a[href|="/e25"],a[href|="/rrdsalute"],a[href|="/re25"], a[href|="/f25"], a[href|="/cocosmile"], a[href|="/rf25"], a[href|="/rcocosmile"],a[href|="/g25"],a[href|="/squeestar"],a[href|="/rg25"],a[href|="/rsqueestar"],.flair-seafoam,.side .md table tr:nth-of-type(11) td:nth-of-type(4):after
 {background-position:-200% -500%}
 
-a[href|="/abbored"],a[href|="/abmerp"],a[href|="/a26"],a[href|="/rabbored"],a[href|="/rabmerp"],a[href|="/ra26"],a[href|="/rarityannoyed"],a[href|="/b26"],a[href|="/rrarityannoyed"],a[href|="/rb26"],a[href|="/derpyshock"],a[href|="/muffinsshock"],a[href|="/c26"],a[href|="/rderpyshock"],a[href|="/rmuffinsshock"],a[href|="/rc26"],a[href|="/cheerilee"],a[href|="/e26"],a[href|="/rcheerilee"],a[href|="/re26"],a[href|="/f26"],a[href|="/skeptiloo"],a[href|="/rf26"],a[href|="/rskeptiloo"],.flair-caramel,.side .md table tr:nth-of-type(13) td:nth-of-type(4):after
+a[href|="/abbored"],a[href|="/abmerp"],a[href|="/a26"],a[href|="/rabbored"],a[href|="/rabmerp"],a[href|="/ra26"],a[href|="/rarityannoyed"],a[href|="/b26"],a[href|="/rrarityannoyed"],a[href|="/rb26"],a[href|="/derpyshock"],a[href|="/muffinsshock"],a[href|="/c26"],a[href|="/rderpyshock"],a[href|="/rmuffinsshock"],a[href|="/rc26"],a[href|="/cheerilee"],a[href|="/e26"],a[href|="/rcheerilee"],a[href|="/re26"],a[href|="/f26"],a[href|="/skeptiloo"],a[href|="/rf26"],a[href|="/rskeptiloo"],a[href|="/g26"],a[href|="/appleroll"],a[href|="/rg26"],a[href|="/rappleroll"],.flair-caramel,.side .md table tr:nth-of-type(13) td:nth-of-type(4):after
 {background-position:-200% -600%}
 
-a[href|="/scootaplease"],a[href|="/scootappeal"],a[href|="/scootaplz"],a[href|="/a27"],a[href|="/rscootaplease"],a[href|="/rscootappeal"],a[href|="/rscootaplz"],a[href|="/ra27"],a[href|="/raritywhine"],a[href|="/b27"],a[href|="/rraritywhine"],a[href|="/rb27"],a[href|="/lunagasp"],a[href|="/c27"],a[href|="/rlunagasp"],a[href|="/rc27"],a[href|="/lily"],a[href|="/thehorror"],a[href|="/e27"],a[href|="/rlily"],a[href|="/rthehorror"],a[href|="/re27"],a[href|="/f27"],a[href|="/limestonegrin"],a[href|="/rf27"],a[href|="/rlimestonegrin"],.flair-scootaloo,.side .md table tr:nth-of-type(15) td:nth-of-type(4):after
+a[href|="/scootaplease"],a[href|="/scootappeal"],a[href|="/scootaplz"],a[href|="/a27"],a[href|="/rscootaplease"],a[href|="/rscootappeal"],a[href|="/rscootaplz"],a[href|="/ra27"],a[href|="/raritywhine"],a[href|="/b27"],a[href|="/rraritywhine"],a[href|="/rb27"],a[href|="/lunagasp"],a[href|="/c27"],a[href|="/rlunagasp"],a[href|="/rc27"],a[href|="/lily"],a[href|="/thehorror"],a[href|="/e27"],a[href|="/rlily"],a[href|="/rthehorror"],a[href|="/re27"],a[href|="/f27"],a[href|="/limestonegrin"],a[href|="/rf27"],a[href|="/rlimestonegrin"],a[href|="/g27"],a[href|="/spikeholdup"],a[href|="/rg27"],a[href|="/rspikeholdup"],.flair-scootaloo,.side .md table tr:nth-of-type(15) td:nth-of-type(4):after
 {background-position:-200% -700%}
 
-a[href|="/grannysmith"],a[href|="/granny"],a[href|="/oldmareyellsatcloud"],a[href|="/a28"],a[href|="/rgrannysmith"],a[href|="/rgranny"],a[href|="/roldmareyellsatcloud"],a[href|="/ra28"],a[href|="/cockatrice"],a[href|="/b28"],a[href|="/rcockatrice"],a[href|="/rb28"],a[href|="/angel"],a[href|="/c28"],a[href|="/rangel"],a[href|="/rc28"],a[href|="/awwyeah"],a[href|="/e28"],a[href|="/rawwyeah"],a[href|="/re28"],a[href|="/f28"],a[href|="/raritygrump"],a[href|="/rf28"],a[href|="/rraritygrump"],.flair-cheerilee,.side .md table tr:nth-of-type(17) td:nth-of-type(4):after
+a[href|="/grannysmith"],a[href|="/granny"],a[href|="/oldmareyellsatcloud"],a[href|="/a28"],a[href|="/rgrannysmith"],a[href|="/rgranny"],a[href|="/roldmareyellsatcloud"],a[href|="/ra28"],a[href|="/cockatrice"],a[href|="/b28"],a[href|="/rcockatrice"],a[href|="/rb28"],a[href|="/angel"],a[href|="/c28"],a[href|="/rangel"],a[href|="/rc28"],a[href|="/awwyeah"],a[href|="/e28"],a[href|="/rawwyeah"],a[href|="/re28"],a[href|="/f28"],a[href|="/raritygrump"],a[href|="/rf28"],a[href|="/rraritygrump"],a[href|="/g28"],a[href|="/tempestgaze"],a[href|="/fizzygaze"],a[href|="/contempest"],a[href|="/rg28"],a[href|="/rtempestgaze"],a[href|="/rfizzygaze"],a[href|="/rcontempest"],.flair-cheerilee,.side .md table tr:nth-of-type(17) td:nth-of-type(4):after
 {background-position:-200% -800%}
 
-a[href|="/cadence"],a[href|="/cadance"],a[href|="/princesscadance"],a[href|="/princesscadence"],a[href|="/princessmiamorecadenza"],a[href|="/a29"],a[href|="/rcadence"],a[href|="/rcadance"],a[href|="/rprincesscadance"],a[href|="/rprincesscadence"],a[href|="/rprincessmiamorecadenza"],a[href|="/ra29"],a[href|="/twirage"],a[href|="/b29"],a[href|="/rtwirage"],a[href|="/rb29"],a[href|="/photofinish"],a[href|="/c29"],a[href|="/rphotofinish"],a[href|="/rc29"],a[href|="/macintears"],a[href|="/bigmactears"],a[href|="/e29"],a[href|="/rmacintears"],a[href|="/rbigmactears"],a[href|="/re29"],a[href|="/f29"],a[href|="/goodjob"],a[href|="/starlightgoodjob"],a[href|="/starlightgj"],a[href|="/rf29"],a[href|="/rgoodjob"],a[href|="/rstarlightgoodjob"],a[href|="/rstarlightgj"],.flair-mrcake,.side .md table tr:nth-of-type(19) td:nth-of-type(4):after
+a[href|="/cadence"],a[href|="/cadance"],a[href|="/princesscadance"],a[href|="/princesscadence"],a[href|="/princessmiamorecadenza"],a[href|="/a29"],a[href|="/rcadence"],a[href|="/rcadance"],a[href|="/rprincesscadance"],a[href|="/rprincesscadence"],a[href|="/rprincessmiamorecadenza"],a[href|="/ra29"],a[href|="/twirage"],a[href|="/b29"],a[href|="/rtwirage"],a[href|="/rb29"],a[href|="/photofinish"],a[href|="/c29"],a[href|="/rphotofinish"],a[href|="/rc29"],a[href|="/macintears"],a[href|="/bigmactears"],a[href|="/e29"],a[href|="/rmacintears"],a[href|="/rbigmactears"],a[href|="/re29"],a[href|="/f29"],a[href|="/goodjob"],a[href|="/starlightgoodjob"],a[href|="/starlightgj"],a[href|="/rf29"],a[href|="/rgoodjob"],a[href|="/rstarlightgoodjob"],a[href|="/rstarlightgj"],a[href|="/g29"],a[href|="/squeekiepie"],a[href|="/rg29"],a[href|="/rsqueekiepie"],.flair-mrcake,.side .md table tr:nth-of-type(19) td:nth-of-type(4):after
 {background-position:-200% -900%}
 
 .flair-silverspoon
@@ -955,16 +973,22 @@ a[href|="/cadence"],a[href|="/cadance"],a[href|="/princesscadance"],a[href|="/pr
 .flair-sweaters
 {background-position:-200% -2800%}
 
-a[href|="/flutterroll"],a[href|="/a30"],a[href|="/rflutterroll"],a[href|="/ra30"],a[href|="/fluttershy"],a[href|="/b30"],a[href|="/rfluttershy"],a[href|="/rb30"],a[href|="/trixiesad"],a[href|="/c30"],a[href|="/rtrixiesad"],a[href|="/rc30"],a[href|="/twisad"],a[href|="/e30"],a[href|="/rtwisad"],a[href|="/re30"],a[href|="/f30"],a[href|="/flutterhay"],a[href|="/rf30"],a[href|="/rflutterhay"],.flair-applejack,.side .md table tr:nth-of-type(1) td:nth-of-type(5):after
+.flair-bowhothoof
+{background-position:-200% -2900%}
+
+.flair-maudsquad
+{background-position:-200% -3000%}
+
+a[href|="/flutterroll"],a[href|="/a30"],a[href|="/rflutterroll"],a[href|="/ra30"],a[href|="/fluttershy"],a[href|="/b30"],a[href|="/rfluttershy"],a[href|="/rb30"],a[href|="/trixiesad"],a[href|="/c30"],a[href|="/rtrixiesad"],a[href|="/rc30"],a[href|="/twisad"],a[href|="/e30"],a[href|="/rtwisad"],a[href|="/re30"],a[href|="/f30"],a[href|="/flutterhay"],a[href|="/rf30"],a[href|="/rflutterhay"],a[href|="/g30"],a[href|="/twisheepish"],a[href|="/rg30"],a[href|="/rtwisheepish"],.flair-applejack,.side .md table tr:nth-of-type(1) td:nth-of-type(5):after
 {background-position:-300% 0}
 
-a[href|="/spikemeh"],a[href|="/a31"],a[href|="/rspikemeh"],a[href|="/ra31"],a[href|="/rdsmile"],a[href|="/b31"],a[href|="/rrdsmile"],a[href|="/rb31"],a[href|="/changeling"],a[href|="/c31"],a[href|="/rchangeling"],a[href|="/rc31"],a[href|="/e31"],a[href|="/lunamad"],a[href|="/re31"],a[href|="/rlunamad"],a[href|="/f31"],a[href|="/sbwtf"],a[href|="/rf31"],a[href|="/rsbwtf"],.flair-cmc,.flair-cmcchinchy,.side .md table tr:nth-of-type(3) td:nth-of-type(5):after
+a[href|="/spikemeh"],a[href|="/a31"],a[href|="/rspikemeh"],a[href|="/ra31"],a[href|="/rdsmile"],a[href|="/b31"],a[href|="/rrdsmile"],a[href|="/rb31"],a[href|="/changeling"],a[href|="/c31"],a[href|="/rchangeling"],a[href|="/rc31"],a[href|="/e31"],a[href|="/lunamad"],a[href|="/re31"],a[href|="/rlunamad"],a[href|="/f31"],a[href|="/sbwtf"],a[href|="/rf31"],a[href|="/rsbwtf"],a[href|="/g31"],a[href|="/skystarfine"],a[href|="/rg31"],a[href|="/rskystarfine"],.flair-cmc,.flair-cmcchinchy,.side .md table tr:nth-of-type(3) td:nth-of-type(5):after
 {background-position:-300% -100%}
 
-a[href|="/abmeh"],a[href|="/a32"],a[href|="/rabmeh"],a[href|="/ra32"],a[href|="/rdwut"],a[href|="/b32"],a[href|="/rrdwut"],a[href|="/rb32"],a[href|="/rdscared"],a[href|="/c32"],a[href|="/rrdscared"],a[href|="/rc32"],a[href|="/e32"], a[href|="/discordsad"],a[href|="/re32"], a[href|="/rdiscordsad"],a[href|="/f32"],a[href|="/nightmaregrin"],a[href|="/rf32"],a[href|="/rnightmaregrin"],.flair-vinyl,.side .md table tr:nth-of-type(5) td:nth-of-type(5):after
+a[href|="/abmeh"],a[href|="/a32"],a[href|="/rabmeh"],a[href|="/ra32"],a[href|="/rdwut"],a[href|="/b32"],a[href|="/rrdwut"],a[href|="/rb32"],a[href|="/rdscared"],a[href|="/c32"],a[href|="/rrdscared"],a[href|="/rc32"],a[href|="/e32"], a[href|="/discordsad"],a[href|="/re32"], a[href|="/rdiscordsad"],a[href|="/f32"],a[href|="/nightmaregrin"],a[href|="/rf32"],a[href|="/rnightmaregrin"],a[href|="/g32"],a[href|="/ajeesh"],a[href|="/rg32"],a[href|="/rajeesh"],.flair-vinyl,.side .md table tr:nth-of-type(5) td:nth-of-type(5):after
 {background-position:-300% -200%}
 
-a[href|="/scootaderp"],a[href|="/didneyworl"],a[href|="/DIDNEYWORL"],a[href|="/a33"],a[href|="/rscootaderp"],a[href|="/rdidneyworl"],a[href|="/rDIDNEYWORL"],a[href|="/ra33"],a[href|="/twidaw"],a[href|="/c33"],a[href|="/rtwidaw"],a[href|="/twidaww"],a[href|="/rtwidaww"],a[href|="/rc33"],a[href|="/dj"],a[href|="/threedog"],a[href|="/b33"],a[href|="/rdj"],a[href|="/rthreedog"],a[href|="/rb33"],a[href|="/e33"], a[href|="/maud"],a[href|="/re33"], a[href|="/rmaud"],a[href|="/f33"],a[href|="/spikeapproves"],a[href|="/rf33"],a[href|="/rspikeapproves"],.flair-doctor,.side .md table tr:nth-of-type(7) td:nth-of-type(5):after
+a[href|="/scootaderp"],a[href|="/didneyworl"],a[href|="/DIDNEYWORL"],a[href|="/a33"],a[href|="/rscootaderp"],a[href|="/rdidneyworl"],a[href|="/rDIDNEYWORL"],a[href|="/ra33"],a[href|="/twidaw"],a[href|="/c33"],a[href|="/rtwidaw"],a[href|="/twidaww"],a[href|="/rtwidaww"],a[href|="/rc33"],a[href|="/dj"],a[href|="/threedog"],a[href|="/b33"],a[href|="/rdj"],a[href|="/rthreedog"],a[href|="/rb33"],a[href|="/e33"], a[href|="/maud"],a[href|="/re33"], a[href|="/rmaud"],a[href|="/f33"],a[href|="/spikeapproves"],a[href|="/rf33"],a[href|="/rspikeapproves"],a[href|="/g33"],a[href|="/pinkiesugar"],a[href|="/ppsugar"],a[href|="/rg33"],a[href|="/rpinkiesugar"],a[href|="/rppsugar"],.flair-doctor,.side .md table tr:nth-of-type(7) td:nth-of-type(5):after
 {background-position:-300% -300%}
 
 a[href|="/pinkieawe"],a[href|="/ppawe"],a[href|="/areyouawizard"],a[href|="/a34"],a[href|="/rpinkieawe"],a[href|="/rppawe"],a[href|="/rareyouawizard"],a[href|="/ra34"],a[href|="/spikepushy"],a[href|="/b34"],a[href|="/rspikepushy"],a[href|="/rb34"],a[href|="/whattheflut"],a[href|="/c34"],a[href|="/rwhattheflut"],a[href|="/rc34"],a[href|="/e34"], a[href|="/pinkiepout"],a[href|="/re34"], a[href|="/rpinkiepout"],a[href|="/f34"],a[href|="/flutternice"],a[href|="/flutterheadtilt"],a[href|="/rf34"],a[href|="/rflutternice"],a[href|="/rflutterheadtilt"],.flair-pokey,.side .md table tr:nth-of-type(9) td:nth-of-type(5):after
@@ -1041,6 +1065,12 @@ a[href|="/applederp"],a[href|="/a39"],a[href|="/rapplederp"],a[href|="/ra39"],a[
 
 .flair-socks
 {background-position:-300% -2800%}
+
+.flair-windywhistles
+{background-position:-300% -2900%}
+
+.flair-lilylongsocks
+{background-position:-300% -3000%}
 
 .flair-cmchaz, .flair-cmclinker, .flair-cmclanky, .flair-cmcmouse, .flair-cmcchinchy, .flair-cmcspokes, .flair-cmcopti, .flair-cmcorsch, .flair-cmcgb, .flair-cmcsparroew, .flair-cmcaroelen {background-position: -300% -100%}
 .flair-cmchaz:hover {background-position: -200% -700%}
@@ -1226,10 +1256,10 @@ span.linkflairlabel[title="Future episode spoilers"]
 }
 
 /*Title spoilers styling*/
-.linkflair-egspoiler .linkflairlabel, .linkflair-comictitlespoiler .linkflairlabel, .linkflair-spoiler .linkflairlabel, .linkflair-comicspoiler .linkflairlabel, .linkflair-fecontent .linkflairlabel, .linkflair-2017movie .linkflairlabel, .linkflair-eqg3 .linkflairlabel, .linkflair-eqgtitle .linkflairlabel, .linkflair-movietitle .linkflairlabel, .linkflair-eqg4 .linkflairlabel, .linkflair-leak .linkflairlabel, .linkflair-tfiocmleak .linkflairlabel, .linkflair-rafcontent .linkflairlabel, .linkflair-graphic .linkflairlabel, .linkflair-loebrleak .linkflairlabel, .linkflair-s6e23 .linkflairlabel, .linkflair-s6e24 .linkflairlabel, .linkflair-s7e05 .linkflairlabel, .linkflair-s7e06 .linkflairlabel, .linkflair-s7e07 .linkflairlabel, .linkflair-s7e08 .linkflairlabel, .linkflair-s7e09 .linkflairlabel, .linkflair-s7e10 .linkflairlabel, .linkflair-s7e11 .linkflairlabel, .linkflair-s7e12 .linkflairlabel, .linkflair-s7e13 .linkflairlabel, .linkflair-s7e23 .linkflairlabel, .linkflair-s7e24 .linkflairlabel, .linkflair-s7e2526 .linkflairlabel, .linkflair-s6e25 .linkflairlabel, .linkflair-s6e26 .linkflairlabel, .linkflair-fecomic .linkflairlabel, .linkflair-eqgmovie .linkflairlabel {display:none;}
+.linkflair-egspoiler .linkflairlabel, .linkflair-comictitlespoiler .linkflairlabel, .linkflair-spoiler .linkflairlabel, .linkflair-comicspoiler .linkflairlabel, .linkflair-fecontent .linkflairlabel, .linkflair-2017movie .linkflairlabel, .linkflair-eqg3 .linkflairlabel, .linkflair-eqgtitle .linkflairlabel, .linkflair-movietitle .linkflairlabel, .linkflair-eqg4 .linkflairlabel, .linkflair-leak .linkflairlabel, .linkflair-tfiocmleak .linkflairlabel, .linkflair-rafcontent .linkflairlabel, .linkflair-graphic .linkflairlabel, .linkflair-loebrleak .linkflairlabel, .linkflair-s6e23 .linkflairlabel, .linkflair-s6e24 .linkflairlabel, .linkflair-s7e05 .linkflairlabel, .linkflair-s7e06 .linkflairlabel, .linkflair-s7e07 .linkflairlabel, .linkflair-s7e08 .linkflairlabel, .linkflair-s7e09 .linkflairlabel, .linkflair-s7e10 .linkflairlabel, .linkflair-s7e11 .linkflairlabel, .linkflair-s7e12 .linkflairlabel, .linkflair-s7e13 .linkflairlabel, .linkflair-s7e23 .linkflairlabel, .linkflair-s7e24 .linkflairlabel, .linkflair-s7e2526 .linkflairlabel, .linkflair-leak6 .linkflairlabel, .linkflair-s6e25 .linkflairlabel, .linkflair-s6e26 .linkflairlabel, .linkflair-fecomic .linkflairlabel, .linkflair-eqgmovie .linkflairlabel {display:none;}
 .linkflair-egspoiler p.title a.title, .linkflair-comictitlespoiler p.title a.title, .linkflair-spoiler p.title a.title, .linkflair-eqgtitle p.title a.title, .linkflair-movietitle p.title a.title {opacity:0;}
 .linkflair-egspoiler p.title a.title:hover, .linkflair-comictitlespoiler p.title a.title:hover, .linkflair-spoiler p.title a.title:hover, .linkflair-eqgtitle p.title a.title:hover, .linkflair-movietitle p.title a.title:hover {opacity:100;}
-.linkflair-egspoiler p.title:before, .linkflair-comictitlespoiler p.title:before, .linkflair-spoiler p.title:before, .linkflair-comicspoiler p.title:before, .linkflair-fecontent p.title:before, .linkflair-2017movie p.title:before, .linkflair-eqg3 p.title:before, .linkflair-eqgtitle p.title:before, .linkflair-movietitle p.title:before, .linkflair-eqg4 p.title:before, .linkflair-leak p.title:before, .linkflair-tfiocmleak p.title:before, .linkflair-rafcontent p.title:before, .linkflair-graphic p.title:before, .linkflair-loebrleak p.title:before, .linkflair-s6e23 p.title:before, .linkflair-s6e24 p.title:before, .linkflair-s7e05 p.title:before, .linkflair-s7e06 p.title:before, .linkflair-s7e07 p.title:before, .linkflair-s7e08 p.title:before, .linkflair-s7e09 p.title:before, .linkflair-s7e10 p.title:before, .linkflair-s7e11 p.title:before, .linkflair-s7e12 p.title:before, .linkflair-s7e13 p.title:before, .linkflair-s7e23 p.title:before, .linkflair-s7e24 p.title:before, .linkflair-s7e2526 p.title:before, .linkflair-s6e25 p.title:before, .linkflair-s6e26 p.title:before, .linkflair-fecomic p.title:before, .linkflair-eqgmovie p.title:before
+.linkflair-egspoiler p.title:before, .linkflair-comictitlespoiler p.title:before, .linkflair-spoiler p.title:before, .linkflair-comicspoiler p.title:before, .linkflair-fecontent p.title:before, .linkflair-2017movie p.title:before, .linkflair-eqg3 p.title:before, .linkflair-eqgtitle p.title:before, .linkflair-movietitle p.title:before, .linkflair-eqg4 p.title:before, .linkflair-leak p.title:before, .linkflair-tfiocmleak p.title:before, .linkflair-rafcontent p.title:before, .linkflair-graphic p.title:before, .linkflair-loebrleak p.title:before, .linkflair-s6e23 p.title:before, .linkflair-s6e24 p.title:before, .linkflair-s7e05 p.title:before, .linkflair-s7e06 p.title:before, .linkflair-s7e07 p.title:before, .linkflair-s7e08 p.title:before, .linkflair-s7e09 p.title:before, .linkflair-s7e10 p.title:before, .linkflair-s7e11 p.title:before, .linkflair-s7e12 p.title:before, .linkflair-s7e13 p.title:before, .linkflair-s7e23 p.title:before, .linkflair-s7e24 p.title:before, .linkflair-s7e2526 p.title:before, .linkflair-s6e25 p.title:before, .linkflair-s6e26 p.title:before, .linkflair-fecomic p.title:before, .linkflair-eqgmovie p.title:before, .linkflair-leak p.title:before  
 {
  font-size:12px;
  color:#888;
@@ -1298,6 +1328,8 @@ span.linkflairlabel[title="Future episode spoilers"]
 .linkflair-s7e24 p.title:before{content:"S7E24: Leak";}
 
 .linkflair-s7e2526 p.title:before{content:"Season 7 Finale: Leak";}
+
+.linkflair-leak p.title:before{content:"Leaked Content";}
 
 /*Equestria Girls Spoiler in title flair*/
 .linkflair-egspoiler p.title:before{content:"EG2 SPOILER";}
