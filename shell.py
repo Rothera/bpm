@@ -57,8 +57,8 @@ def update_css(num, total, subreddit):
     # subreddits (it's not html), but there's nothing we can do about private
     # subreddits- and there's also nothing we can do to get around over18
     # restrictions on /about/stylesheet.
-    minified_url = "https://www.reddit.com/r/%s/stylesheet.css?nocache=%s" % (subreddit, random.randrange(10000))
-    source_url = "https://www.reddit.com/r/%s/about/stylesheet?nocache=%s" % (subreddit, random.randrange(10000))
+    minified_url = "https://old.reddit.com/r/%s/stylesheet.css?nocache=%s" % (subreddit, random.randrange(10000))
+    source_url = "https://old.reddit.com/r/%s/about/stylesheet?nocache=%s" % (subreddit, random.randrange(10000))
 
     try:
         old_minified_css = open("minified-css/%s.css" % (subreddit), "r").read()
