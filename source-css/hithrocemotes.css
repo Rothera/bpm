@@ -69,3 +69,17 @@ display: block;
 clear: none; 
 float: left
 }
+a[href|="/demod"] {
+color: green !important;
+font-size: 0px !important;
+font-weight: bold;
+cursor: text !important
+}
+a[href|="/demod"]:before {
+content: "(USER WAS DEMODDED FOR THIS POST)";
+font-size: 10pt !important;
+font-weight: bold !important;
+font-family: arial,helvetica,sans-serif;
+color: #50CB70;
+visibility: visible 
+}

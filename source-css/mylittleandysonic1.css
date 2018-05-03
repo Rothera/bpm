@@ -63,7 +63,7 @@ a { cursor: url(%%cursor1%%), pointer; }
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%das-vult-banner%%) 50% -10px !important;
+   background: url(%%XvHjDfN%%) 50% 10px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -286,7 +286,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 .linkflair-spoiler .thumbnail img {display:none}
 
 .linkflair-spoiler .thumbnail {  
-    background: url(%%thumbnails%%)!important;
+    background: url(%%torthumbnails%%)!important;
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -837,7 +837,8 @@ a.author[href$=thisisgenny],
 a.author[href$=DRANKLE],
 a.author[href$=HailTrixie],
 a.author[href$=throwawayaccount997],
-a.author[href$=Halt-CatchFire]
+a.author[href$=Halt-CatchFire],
+a.author[href$=flare561]
 
 { 
 font-size:0!important; 
@@ -975,7 +976,8 @@ a.author[href$=DRANKLE]:before,
 a.author[href$=thisisgenny]:before,
 a.author[href$=HailTrixie]:before,
 a.author[href$=throwawayaccount997]:before,
-a.author[href$=Halt-CatchFire]:before
+a.author[href$=Halt-CatchFire]:before,
+a.author[href$=flare561]:before
 
 
 {
@@ -1114,6 +1116,7 @@ a.author[href$=throwawayaccount997]:before { content:"Fritters" }
 a.author[href$=Admos123]: before { content:"Fun with Atoms" }
 a.author[href$=HailTrixie]: before { content:"Traxle" }
 a.author[href$=Halt-CatchFire]: before { content:"ScootalooTheConquero" }
+a.author[href$=flare561]: before { content:"Echo" }
 
 /* Replacing puppy's name with a picture of derpy */
 a.author[href$=iiRockpuppy]:before 

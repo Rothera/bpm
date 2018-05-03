@@ -81,19 +81,18 @@ content: " jumbo marshmallows"
 /**************************************************/
 /* Emotes! */
 
-/*Initializes the A table! It's layed out on a grid of 150x150 squares to make it easy to manage */
-
-a[href|="/rarimallow"],a[href|= "/rarismore"],a[href|= "/raricatmallow"],a[href|= "/swapplehug"]{
+a[href|="/rarimarshmallow"],a[href|= "/rarismore"],a[href|= "/raricatmallow"],a[href|= "/swapplehug"],a[href|= "/actualcannibalrarilabeouf"]{
 
    display: block;
    clear: none;
    float: left;
    background-image: url(%%aTable%%) }
 
-a[href="/rarimarshmallow"]{    background-position:    0px      0px; width: 150px; height: 150px}
-a[href="/rarismore"]{     background-position:    0px   -150px; width: 300px; height: 150px}
-a[href="/raricatmallow"]{ background-position: -150px      0px; width: 150px; height: 150px}
-a[href="/swapplehug"]{    background-position: -300px      0px; width: 150px; height: 150px}
+a[href|="/rarimarshmallow"] { background-position: 0px 0px; width: 180px; height: 188px}
+a[href|="/rarismore"] { background-position: -20px -188px; width: 330px; height: 220px}
+a[href|="/raricatmallow"] { background-position: -180px 0px; width: 200px; height: 188px}
+a[href|="/swapplehug"] { background-position: -380px 0px; width: 180px; height: 190px}
+a[href|="/actualcannibalrarilabeouf"] { background-position: -351px -200px; width: 248px; height: 282px}
 
 
 

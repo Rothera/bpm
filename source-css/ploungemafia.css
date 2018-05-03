@@ -980,22 +980,6 @@ body:not(.moderator) input[value="t3_10vuz8"] + .usertext-edit
  display:none;
 }
 
-a.author[href$="tortillatime"] {
-    font-size: 0px !important;
-    display: inline-block;
-    vertical-align: bottom;
-    overflow: hidden;
-    letter-spacing: -20px
-    }
-a.author[href$="tortillatime"]:after {
-    content: "taco";
-    font-size: 12px !important;
-    visibility: visible !important;
-    display: block;
-    letter-spacing: normal
-    }
-
-
 body.res a.author[href$="CupcakeDraconequus"], body.res a.author[href$="PretzelDraconequus"], body.res a.author[href$="______Draconequus"] {
      font-weight: bold; color: white !important; padding: 0 2px; border-radius: 3px } 
 body.res a.author[href$="______Draconequus"] {color: white; background-color: #0055DF }
@@ -1216,4 +1200,16 @@ overflow: hidden;
  background-repeat:no-repeat;
  margin-bottom:-25px;
  background-position: bottom center;
+}
+
+/* 2018 April Fools (GDPR enforcement), preserved in thread
+   /r/PloungeMafia/comments/88nbd8/please_read_privacy_policy_update/ for posterity  */
+#siteTable_t3_88nbd8 a.author {
+    font-size: 0;
+}
+
+#siteTable_t3_88nbd8 a.author::after {
+    font-size: 10px !important;
+    content: "[redacted]";
+    pointer-events: none;
 }

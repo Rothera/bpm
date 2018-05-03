@@ -62,12 +62,12 @@
 .side sup:nth-of-type(1) { padding-left: 40px }
 .side .usertext-body ul a { font-weight: bold }
 
-/*.subscribers .word, .users-online .word { display: none }
-.subscribers .number:after { content: " with tickets" }
-.users-online .number:after { content: " at the show" }
+.subscribers .word, .users-online .word { display: none }
+.subscribers .number:after { content: " with hope" }
+.users-online .number:after { content: " in limbo" }
 
 .sidecontentbox .helplink + .title h1 { font-size: 0 !important }
-.sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "ROADIES" }*/
+.sidecontentbox .helplink + .title h1:before { font-size: 10pt !important; content: "SPHINXES" }
 .sidecontentbox .helplink+.title+.content li:nth-of-type(2) { display: none }
 
 .wiki table a:nth-child(n+2) { display: block }
@@ -193,6 +193,9 @@ a[href="/s"]:hover::after {
 .side .md h1:nth-of-type(3):hover ~ table:nth-of-type(3),
 .side .md table:nth-of-type(3):hover { display: table; }
 
+.side .md h1:nth-of-type(4):hover ~ table:nth-of-type(4),
+.side .md table:nth-of-type(4):hover { display: table; }
+
 .side .md h1:hover ~ h2, .side .md h1:active ~ h2, .side .md table:hover ~ h2, .side .md table:hover ~ h1,
 .side .md h1:hover ~ h2:last-of-type+p a, .side .md h1:active ~ h2:last-of-type+p a,
 .side .md table:hover ~ h2:last-of-type+p a { display: none; }
@@ -206,6 +209,11 @@ a[href="/s"]:hover::after {
 .side .md table:nth-of-type(2) tr:first-of-type td:not(:first-of-type):after { counter-increment: x; content: counter(x) }
 .side .md table:nth-of-type(2) tr:first-of-type { counter-reset: y -1 }
 .side .md table:nth-of-type(2) tr:nth-of-type(n+2) td:first-of-type:after { counter-increment: y; content: counter(y) }
+
+.side .md table:nth-of-type(3) tr:first-of-type td:first-of-type { counter-reset: x -1 }
+.side .md table:nth-of-type(3) tr:first-of-type td:not(:first-of-type):after { counter-increment: x; content: counter(x) }
+.side .md table:nth-of-type(3) tr:first-of-type { counter-reset: y -1 }
+.side .md table:nth-of-type(3) tr:nth-of-type(n+2) td:first-of-type:after { counter-increment: y; content: counter(y) }
 
 .side .md h2:last-of-type+p a+.SuperRedditAltTextDisplay_Text { display: none; }
 
@@ -633,8 +641,7 @@ a[href|="/sna06"], a[href|="/sna16"], a[href|="/sna26"], a[href|="/sna36"], a[hr
   background-image: url(%%sna%%) !important;
 }
 
-a[href|="/snb00"], a[href|="/snb10"], a[href|="/snb20"], a[href|="/snb30"], a[href|="/snb01"], a[href|="/snb11"], a[href|="/snb21"], a[href|="/snb31"], a[href|="/snb02"], a[href|="/snb12"], a[href|="/snb22"], a[href|="/snb32"], a[href|="/snb03"], a[href|="/snb13"], a[href|="/snb23"], a[href|="/snb33"], a[href|="/snb04"], a[href|="/snb14"], a[href|="/snb24"], a[href|="/snb34"], a[href|="/snb05"], a[href|="/snb15"], a[href|="/snb25"], a[href|="/snb35"], a[href|="/snb06"], a[href|="/snb16"], a[href|="/snb26"], a[href|="/snb36"], a[href|="/snb07"], a[href|="/snb17"], a[href|="/snb27"], a[href|="/snb37"], a[href|="/snb08"], a[href|="/snb18"],
-a[href|="/sphinx"] {
+a[href|="/snb00"], a[href|="/snb10"], a[href|="/snb20"], a[href|="/snb30"], a[href|="/snb01"], a[href|="/snb11"], a[href|="/snb21"], a[href|="/snb31"], a[href|="/snb02"], a[href|="/snb12"], a[href|="/snb22"], a[href|="/snb32"], a[href|="/snb03"], a[href|="/snb13"], a[href|="/snb23"], a[href|="/snb33"], a[href|="/snb04"], a[href|="/snb14"], a[href|="/snb24"], a[href|="/snb34"], a[href|="/snb05"], a[href|="/snb15"], a[href|="/snb25"], a[href|="/snb35"], a[href|="/snb06"], a[href|="/snb16"], a[href|="/snb26"], a[href|="/snb36"], a[href|="/snb07"], a[href|="/snb17"], a[href|="/snb27"], a[href|="/snb37"], a[href|="/snb08"], a[href|="/snb18"], a[href|="/snb28"], a[href|="/snb38"], a[href|="/snb09"], a[href|="/snb19"], a[href|="/snb29"], a[href|="/snb39"], a[href|="/sphinx"] {
   display: block;
   clear: none;
   float: left;
@@ -644,6 +651,16 @@ a[href|="/sphinx"] {
   background-image: url(%%snb%%) !important;
 }
 
+a[href|="/snc00"], a[href|="/snc10"], a[href|="/snc20"], a[href|="/snc30"], a[href|="/snc01"], a[href|="/snc11"], a[href|="/snc21"], a[href|="/snc31"], a[href|="/snc02"], a[href|="/snc12"], a[href|="/snc22"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 70px;
+  height: 70px;
+  cursor: default;
+  background-image: url(%%snc%%) !important;
+}
+
 a[href|="/walklikeanegyptian"] {
   display: block;
   clear: none;
@@ -651,19 +668,41 @@ a[href|="/walklikeanegyptian"] {
   width: 100px;
   height: 141px;
   cursor: default;
-  background-image: url(%%snspecial%%) !important;
+  background-image: url(%%sns%%) !important;
 }
 
-a[href|="/sna10"], a[href|="/snb10"] { background-position: -100% 0 }
-a[href|="/sna20"], a[href|="/snb20"] { background-position: -200% 0 }
-a[href|="/sna30"], a[href|="/snb30"] { background-position: -300% 0 }
-a[href|="/sna01"], a[href|="/snb01"] { background-position: 0 -100% }
-a[href|="/sna11"], a[href|="/snb11"] { background-position: -100% -100% }
-a[href|="/sna21"], a[href|="/snb21"] { background-position: -200% -100% }
-a[href|="/sna31"], a[href|="/snb31"] { background-position: -300% -100% }
-a[href|="/sna02"], a[href|="/snb02"] { background-position: 0 -200% }
-a[href|="/sna12"], a[href|="/snb12"] { background-position: -100% -200% }
-a[href|="/sna22"], a[href|="/snb22"] { background-position: -200% -200% }
+a[href|="/attackrun"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 225px;
+  height: 150px;
+  cursor: default;
+  background-position: -100px 0;
+  background-image: url(%%sns%%) !important;
+}
+
+a[href|="/youredoinggreat"] {
+  display: block;
+  clear: none;
+  float: left;
+  width: 140px;
+  height: 150px;
+  cursor: default;
+  background-position: 0 -150px;
+  background-image: url(%%sns%%) !important;
+}
+
+a[href|="/sna10"], a[href|="/snb10"], a[href|="/snc10"] { background-position: -100% 0 }
+a[href|="/sna20"], a[href|="/snb20"], a[href|="/snc20"] { background-position: -200% 0 }
+a[href|="/sna30"], a[href|="/snb30"], a[href|="/snc30"] { background-position: -300% 0 }
+a[href|="/sna01"], a[href|="/snb01"], a[href|="/snc01"] { background-position: 0 -100% }
+a[href|="/sna11"], a[href|="/snb11"], a[href|="/snc11"] { background-position: -100% -100% }
+a[href|="/sna21"], a[href|="/snb21"], a[href|="/snc21"] { background-position: -200% -100% }
+a[href|="/sna31"], a[href|="/snb31"], a[href|="/snc31"] { background-position: -300% -100% }
+a[href|="/sna02"], a[href|="/snb02"], a[href|="/snc02"] { background-position: 0 -200% }
+a[href|="/sna12"], a[href|="/snb12"], a[href|="/snc12"] { background-position: -100% -200% }
+a[href|="/sna22"], a[href|="/snb22"], a[href|="/snc22"] { background-position: -200% -200% }
 a[href|="/sna32"], a[href|="/snb32"] { background-position: -300% -200% }
 a[href|="/sna03"], a[href|="/snb03"] { background-position: 0 -300% }
 a[href|="/sna13"], a[href|="/snb13"] { background-position: -100% -300% }
@@ -687,12 +726,12 @@ a[href|="/sna27"], a[href|="/snb27"] { background-position: -200% -700% }
 a[href|="/sna37"], a[href|="/snb37"] { background-position: -300% -700% }
 a[href|="/sna08"], a[href|="/snb08"] { background-position: 0 -800% }
 a[href|="/sna18"], a[href|="/snb18"] { background-position: -100% -800% }
-a[href|="/sna28"] { background-position: -200% -800% }
-a[href|="/sna38"] { background-position: -300% -800% }
-a[href|="/sna09"] { background-position: 0 -900% }
-a[href|="/sna19"] { background-position: -100% -900% }
-a[href|="/sna29"] { background-position: -200% -900% }
-a[href|="/sna39"] { background-position: -300% -900% }
+a[href|="/sna28"], a[href|="/snb28"] { background-position: -200% -800% }
+a[href|="/sna38"], a[href|="/snb38"] { background-position: -300% -800% }
+a[href|="/sna09"], a[href|="/snb09"] { background-position: 0 -900% }
+a[href|="/sna19"], a[href|="/snb19"] { background-position: -100% -900% }
+a[href|="/sna29"], a[href|="/snb29"] { background-position: -200% -900% }
+a[href|="/sna39"], a[href|="/snb39"] { background-position: -300% -900% }
 
 START-PONYSCRIPT-IGNORE { color: red; }
 
