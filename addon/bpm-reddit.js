@@ -174,7 +174,7 @@ function run_reddit(store, expand_emotes) {
                 process_post(store, root, md, expand_emotes);
             } else {
                 // Are there any posts below us?
-                var posts = slice(document.querySelectorAll(".md, .Post, .Comment"));
+                var posts = slice(root.querySelectorAll(".md, .Post, .Comment"));
                 if(posts.length) {
                     log_debug("Processing", posts.length, "new posts");
                     for(var p = 0; p < posts.length; p++) {
