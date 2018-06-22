@@ -142,7 +142,7 @@ function run_reddit(store, expand_emotes) {
     inject_emotes_button(store, usertext_edits);
 
     // Initial pass- show all emotes currently on the page.
-    var posts = slice(document.getElementsByClassName("md"));
+    var posts = slice(document.querySelectorAll(".md, .Post, .Comment"));
     log_debug("Processing", posts.length, "initial posts");
     for(var i = 0; i < posts.length; i++) {
         process_post(store, posts[i], posts[i], expand_emotes);
@@ -174,7 +174,7 @@ function run_reddit(store, expand_emotes) {
                 process_post(store, root, md, expand_emotes);
             } else {
                 // Are there any posts below us?
-                var posts = slice(root.getElementsByClassName("md"));
+                var posts = slice(root.querySelectorAll(".md, .Post, .Comment"));
                 if(posts.length) {
                     log_debug("Processing", posts.length, "new posts");
                     for(var p = 0; p < posts.length; p++) {
