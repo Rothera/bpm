@@ -46,6 +46,7 @@ SeriouslyConky:
         > Added 5 more emotes
         > Added Search bar Luna
 SeriouslyMaku: 
+        > Plank emote
         > Added ohgodsheet and an emote
         > Changed Subscriber's stuff
         > Added new emotes on 250Sheet1a
@@ -1234,3 +1235,12 @@ body.res-nightmode:first-of-type {
 .commentarea>.usertext textarea:focus {
 	background-position: -504px -104px;
 }
+
+a[href|="/plank"] {
+    display: block;
+    clear: none;
+    float: left;
+    width: 300px;
+    height: 170px;
+    background-image:url(%%plank%%)
+    }

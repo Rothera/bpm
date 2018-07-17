@@ -171,9 +171,9 @@ background: url(%%horsewife%%) center center no-repeat transparent;
 /*Subscriber Name Replace*/
 div.titlebox span.word {display:none}
 
-div.titlebox .subscribers span.number:after {content:" Students"}
+div.titlebox .subscribers span.number:after {content:" Plushies"}
 div.titlebox .subscribers span.number:after {font-size:12px!important; }
-div.titlebox p.users-online span.number:after { content: " Studying" }
+div.titlebox p.users-online span.number:after { content: " wearing hats" }
 div.titlebox p.users-online span.word { display: none }
 
 /*modifications*/
@@ -228,14 +228,14 @@ div.titlebox p.users-online span.word { display: none }
 {
     display:inline-block;
     float:right;
-    background:url(%%emotes%%);
+    background:url(%%lounge-emotes%%);
     width:70px;
     height:70px;
     margin-top:-45px;
     margin-left:5px;
     margin-bottom:0px;
     margin-right:-45px;
-    background-position: -200% -600%; /*To select emote table position. Increments of -100%.*/
+    background-position: 0 -200%; /*To select emote table position. Increments of -100%.*/
     transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 
