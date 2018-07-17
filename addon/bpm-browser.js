@@ -7,7 +7,7 @@
  * is built. May be undefined or null if there is no such object.
  */
 function _css_parent() {
-    return document.head || document.documentElement || null;
+    return document.head || null;
 }
 
 /*
@@ -15,10 +15,10 @@ function _css_parent() {
  */
 function with_css_parent(callback) {
     if(_css_parent()) {
-        callback(_css_parent());
+        callback();
     } else {
         with_dom(function() {
-            callback(_css_parent());
+            callback();
         });
     }
 }
