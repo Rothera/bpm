@@ -179,15 +179,15 @@ border-top-right-radius: 5px;
 {
  display:inline-block;
  float:right;
- background:url(%%fmotes%%);
+ background:url(%%gmotes%%);
  width:70px;
  height:70px;
  margin-top:-45px;
  margin-left:5px;
  margin-bottom:0px;
  margin-right:-55px;
- background-position: -300% -300%; /*To select emote table position. Increments of -100%.*/
- transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
+ background-position: -200% -500%; /*To select emote table position. Increments of -100%.*/
+ transform:scaleX(-1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 .thumbnail {background-size: 70px 1010px !important}
 .thumbnail:empty{background-image:url(%%thumbnails%%)!important;height:70px;}

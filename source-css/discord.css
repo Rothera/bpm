@@ -407,3 +407,7 @@ a[href|="/discupset"], a[href|="/erisugh"]
 {
     background-position: -200% -1900%;
 }
+
+a[href|='/animateddiscord'] { width:106px; height:111px; background-image: url(%%animateddiscord%%); background-position: 0px 0px; display: block; clear: none; float: left}
+
+/* Emote Sheet Statuecord*/ a[href|='/statuecord1']{background-image:url(%%statuecord%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:100px;height:250px;background-position:0 0}a[href|='/statuecord2']{background-image:url(%%statuecord%%);background-repeat:no-repeat;clear:none;float:left;display:block;width:130px;height:250px;background-position:-100px 0}
