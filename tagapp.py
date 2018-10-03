@@ -177,7 +177,7 @@ def main():
 
     app.debug = args.debug
 
-    app.run()
+    app.run(port=5001)
 
 if __name__ == "__main__":
     main()
