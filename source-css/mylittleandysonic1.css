@@ -28,20 +28,20 @@ animation: snow 0.05s steps(19) infinite;
 
 
 /* comment box image */
-.commentarea textarea:not(:focus) { background-image: url(%%crusaderthumb%%); }
+.commentarea textarea:not(:focus) { background-image: url(%%bowminithumb%%); }
 
 
 /* Replace Cursors */
 /*<%jeroknite> mfw Pwny is slowly turning the sub into a geocities site*/
 body {
-cursor: url(%%cursor2%%), default !important;
+cursor: url(%%bowcursor2%%), default !important;
 }
-a { cursor: url(%%cursor1%%), pointer; }
+a { cursor: url(%%bowcursor1%%), pointer; }
 
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%Crusaders%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%bowback%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -249,7 +249,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 
 /* Replace the nsfw image with screwball */
 .thumbnail.nsfw {
-    background-image: url(%%torthumbnails%%);
+    background-image: url(%%bowthumbs%%);
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -258,7 +258,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 
 /* Replace the self-post image with screwball */
 .thumbnail.self {
-    background-image: url(%%torthumbnails%%);
+    background-image: url(%%bowthumbs%%);
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -267,7 +267,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 
 /* Replace the no-thumb image with screwball */
 .thumbnail.default {
-    background-image: url(%%torthumbnails%%);
+    background-image: url(%%bowthumbs%%);
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -276,7 +276,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 
 /* Replace the no-thumb image with screwball */
 .thumbnail.spoiler {
-    background-image: url(%%torthumbnails%%);
+    background-image: url(%%bowthumbs%%);
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -286,7 +286,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 .linkflair-spoiler .thumbnail img {display:none}
 
 .linkflair-spoiler .thumbnail {  
-    background: url(%%torthumbnails%%)!important;
+    background: url(%%bowthumbs%%)!important;
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
