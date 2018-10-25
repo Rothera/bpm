@@ -584,3 +584,15 @@
 .bpflag-wobble {
    -webkit-animation: bpm-wobble 0.75s infinite alternate linear;
 }
+
+/*== -rainbow flag by /u/rebane2001 ==*/
+
+@keyframes rainbow{
+    from{ -webkit-filter: hue-rotate(0deg) }
+    to{ -webkit-filter: hue-rotate(360deg) }
+}
+
+.bpflag-rainbow {
+    animation:rainbow 5s infinite linear
+}
+ 
