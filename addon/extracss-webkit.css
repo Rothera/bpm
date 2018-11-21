@@ -397,11 +397,6 @@
 .bpflag-rotate, .bpflag-lrotate {-webkit-animation:zspin 2s infinite linear;image-rendering:-webkit-optimize-contrast}
 .bpflag-rrotate, .bpflag-lrrotate {-webkit-animation:znips 2s infinite linear;image-rendering:-webkit-optimize-contrast}
 
-.md { overflow-y: hidden !important }
-.usertext-edit .md { overflow-y: inherit !important; }
-.usertext-edit .md.RESDialogContents { overflow-y: hidden !important; }
-.titlebox .md { overflow-y: inherit !important; }
-
 @-webkit-keyframes intensifies {
     0% { left: 0px; top: 0px; }
     10% { left: 1px; top: 0px; }
