@@ -18,10 +18,10 @@
   overflow: hidden;
   z-index: -1;
   content: "";
-  background: url(%%beachbanner%%);
-  -webkit-animation: sidescroll 80s linear infinite;
-  -moz-animation: sidescroll 80s linear infinite;
-  animation: sidescroll 80s linear infinite;
+  background: url(%%winterbanner%%);
+  -webkit-animation: sidescroll 120s linear infinite;
+  -moz-animation: sidescroll 120s linear infinite;
+  animation: sidescroll 120s linear infinite;
 }
 
 .pagename a {
@@ -37,13 +37,13 @@
 #header-img { margin: 6px 0 0 0 }
 
 @-webkit-keyframes sidescroll {
-  100% { background-position: -849px 0; }
+  100% { background-position: -2097px 0; }
 }
 @-moz-keyframes sidescroll {
-  100% { background-position: -849px 0; }
+  100% { background-position: -2097px 0; }
 }
 @keyframes sidescroll {
-  100% { background-position: -849px 0; }
+  100% { background-position: -2097px 0; }
 }
 
 div.content { overflow: hidden; }

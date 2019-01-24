@@ -228,14 +228,14 @@ div.titlebox p.users-online span.word { display: none }
 {
     display:inline-block;
     float:right;
-    background:url(%%lounge-emotes%%);
+    background:url(%%bmotes%%);
     width:70px;
     height:70px;
     margin-top:-45px;
     margin-left:5px;
     margin-bottom:0px;
     margin-right:-45px;
-    background-position: 0 -200%; /*To select emote table position. Increments of -100%.*/
+    background-position: -200% -200%; /*To select emote table position. Increments of -100%.*/
     transform:scaleX(1); /*To reverse the hat. '1' is normal, '-1' is reversed.*/
 }
 

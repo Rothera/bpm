@@ -1,29 +1,67 @@
 #header-bottom-left {
     height: 182px;
     padding-top: 0px;
-    background: url(%%header-image%%) no-repeat;
+    background: url(%%header-image-2%%) no-repeat;
 }
 
-#header-img.default-header {
-position: absolute;
-left: 5px;
-bottom: 0;
-width: 30px;
-}
+
+/*HOT NEW TABS*/
+#header .tabmenu li a {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 10px 3px;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 18px;
+    color: #f8d7c3;
+    text-shadow: 1px 1px 0 #6f201c;
+    font-family: "Verdana", Geneva, sans-serif;
+    }
+#header .tabmenu li a:hover, #header .tabmenu .selected a {
+    background: url(%%tabsimg%%) repeat-x 0 10px;
+    color: #ed8e78;
+    text-shadow: 1px 1px 8 #381513;
+    text-decoration: underline;
+    }
+
+
+
 
 .pagename a {
 color: yellow;
 position: absolute;
-left: 50px;
+left: 46px;
 bottom: 0;
-width: 
+width: 100;
 }
 
 .tabmenu {
 position: absolute;
-left: 130px;
+left: 245px;
 bottom: 0;
 }
+
+.pagename{
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    display: block;
+    top: 0px
+}#header .pagename a{
+    height: 29px;
+    width: 105px;
+    background-image: url(%%logo2%%);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 170px;
+    left: 135px;
+    display: block;
+    text-indent: -9999px;
+}
+
 
 
 
@@ -34,7 +72,7 @@ bottom: 0;
 }
 
 .flair-alone {
-    line-height: 43px; min-width: 43px; text-indent: 46px;
+    line-height: 43px; min-width: 29px; text-indent: 46px;
     height: 43px;
     background-position: 0 0;
 }
@@ -46,9 +84,9 @@ bottom: 0;
 }
 
 .flair-dude {
-    line-height: 43px; min-width: 43px; text-indent: 46px;
+    line-height: 40px; min-width: 43px; text-indent: 46px;
     height: 43px;
-    background-position: 0 -86px;
+    background-position: 0 -88px;
 }
 
 .flair-hmmm {
@@ -92,6 +130,17 @@ bottom: 0;
     height: 43px;
     background-position: 0 -387px;
 }
+
+.flair-darius {
+    line-height: 43px; min-width: 34px; text-indent: 46px;
+    height: 43px;
+    background-position: 0 -430px;
+}
+
+
+
+
+
 
 a[href="https://www.reddit.com/user/1488RARITY"] {
     font-size: 0px;
@@ -143,64 +192,80 @@ a[href|="/sadexplorer"], a[href|="/starlaugh"], a[href|="/fluttersad"], a[href|=
 /* Grid pos 0,0 */
 a[href|="/sadexplorer"]
 {
-    background-position: 0 0;
-}
+    background-position: 0 0; }
 
 /* Grid pos 1,0 */
 a[href|="/starlaugh"]
 {
-    background-position: -100% 0;
-}
+    background-position: -100% 0; }
 
 /* Grid pos 2,0 */
 a[href|="/fluttersad"]
 {
-    background-position: -200% 0;
-}
+    background-position: -200% 0; }
 
 /* Grid pos 0,1 */
 a[href|="/strawtwi"]
 {
-    background-position: 0 -100%;
-}
+    background-position: 0 -100%; }
 
 /* Grid pos 1,1 */
 a[href|="/twisad2"]
 {
-    background-position: -100% -100%;
-}
+    background-position: -100% -100%; }
 
 /* Grid pos 2,1 */
 a[href|="/celestiablink"]
 {
-    background-position: -200% -100%;
-}
+    background-position: -200% -100%; }
 
 /* Grid pos 0,2 */
 a[href|="/spikealone"]
 {
-    background-position: 0% -200%;
-}
+    background-position: 0% -200%; }
 
 /* Grid pos 2,2 */
 a[href|="/rdwut2"]
 {
-    background-position: -200% -200%;
-}
+    background-position: -200% -200%; }
 
 /* Grid pos 0,3 */
 a[href|="/twistarwhat"]
 {
-    background-position: 0% -300%;
-}
+    background-position: 0% -300%; }
 
 /* Grid pos 1,3 */
 a[href|="/wendy"]
 {
-    background-position: -100% -300%;
-}
+    background-position: -100% -300%; }
+
 /* Grid pos 2,3 */
 a[href|="/birb"]
 {
-    background-position: -200% -300%;
+    background-position: -200% -300%; }
+
+
+/*NEW CELESTIA HEADER*/
+#header-img.default-header,#header-img{
+    background: url(%%snoo%%) no-repeat 0px 0px;
+    background-size: contain;
+    height: 172px;
+    width: 120px;
+    display: block;
+    margin-top: 0px;
+    margin-left: 12px;
+}#header-img.default-header:hover,#header-img:hover{
+    background: url(%%snoo2%%) no-repeat 0px 0px;
+    background-position: 0px 0px;
+    background-size: contain;
+    display: block;
+    width: 120px;
+    height: 172px;
 }
+
+
+
+/*Background Autumn*/
+body{background: #ffffff url(%%background%%) no-repeat fixed center center}
+body.res-nightmode {background-image: url(%%background%%) !important;}
+body.res-nightmode div.content {background-color: transparent;}

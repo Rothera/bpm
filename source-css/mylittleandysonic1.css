@@ -1,7 +1,7 @@
 .id-t3_145m8r.link .title{font-size:large}
 
 /*LET IT SNOW BITCHES */
-/*
+
 #header:after {
 content: "";
 background: url(%%Snow2%%);
@@ -12,13 +12,13 @@ top: 0;
 left: 0;
 z-index: 999;
 pointer-events: none;
--webkit-animation: snow 0.05s steps(19) infinite;
--moz-animation: snow 0.05s steps(19) infinite;
--ms-animation: snow 0.05s steps(19) infinite;
--o-animation: snow 0.05s steps(19) infinite;
-animation: snow 0.05s steps(19) infinite; 
+-webkit-animation: snow 0.5s steps(19) infinite;
+-moz-animation: snow 0.5s steps(19) infinite;
+-ms-animation: snow 0.5s steps(19) infinite;
+-o-animation: snow 0.5s steps(19) infinite;
+animation: snow 0.5s steps(19) infinite; 
 }
-*/
+
 
 @-webkit-keyframes snow {from{background-position: 0 0;}to{ background-position: 0px -5700px; }} 
 @-moz-keyframes snow {from {background-position: 0 0;}to{ background-position: 0px -5700px; } } 
@@ -28,7 +28,7 @@ animation: snow 0.05s steps(19) infinite;
 
 
 /* comment box image */
-.commentarea textarea:not(:focus) { background-image: url(%%bowminithumb%%); }
+.commentarea textarea:not(:focus) { background-image: url(%%minithunbhose%%); }
 
 
 /* Replace Cursors */
@@ -41,7 +41,7 @@ a { cursor: url(%%bowcursor1%%), pointer; }
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%bowback%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%backgroundh%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -63,7 +63,7 @@ a { cursor: url(%%bowcursor1%%), pointer; }
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%XvHjDfN%%) 50% 10px !important;
+   background: url(%%allbanner%%) 50% 10px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -85,7 +85,7 @@ a { cursor: url(%%bowcursor1%%), pointer; }
 }
 
 
-.side a[href="http://webchat.dmzirc.net/?nick=Gummy...&channels=horseplay&prompt=1"]
+.side a[href="https://i2.kym-cdn.com/photos/images/original/000/618/494/6b4.png"]
 {
    display:block;
    width: 512px;
@@ -249,7 +249,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 
 /* Replace the nsfw image with screwball */
 .thumbnail.nsfw {
-    background-image: url(%%bowthumbs%%);
+    background-image: url(%%thumbyshorsie%%);
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -258,7 +258,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 
 /* Replace the self-post image with screwball */
 .thumbnail.self {
-    background-image: url(%%bowthumbs%%);
+    background-image: url(%%thumbyshorsie%%);
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -267,7 +267,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 
 /* Replace the no-thumb image with screwball */
 .thumbnail.default {
-    background-image: url(%%bowthumbs%%);
+    background-image: url(%%thumbyshorsie%%);
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -276,7 +276,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 
 /* Replace the no-thumb image with screwball */
 .thumbnail.spoiler {
-    background-image: url(%%bowthumbs%%);
+    background-image: url(%%thumbyshorsie%%);
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
@@ -286,7 +286,7 @@ body.res-nightmode form.flairtoggle, body.res-nightmode .trophy-area .content, b
 .linkflair-spoiler .thumbnail img {display:none}
 
 .linkflair-spoiler .thumbnail {  
-    background: url(%%bowthumbs%%)!important;
+    background: url(%%thumbyshorsie%%)!important;
     background-repeat: no-repeat;
     width: 70px;
     height: 70px;
