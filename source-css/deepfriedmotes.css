@@ -1,0 +1,133 @@
+/* 70x motes begin */
+a[href|="/df_imeanisee"],
+a[href|="/df_kcadancemaniacal"],
+a[href|="/df_kcozyglowevil"],
+a[href|="/df_klyraevil"],
+a[href|="/df_ktrixieevil"],
+a[href|="/df_tiam05"],
+a[href|="/df_tiam13"],
+a[href|="/df_rose12"] {
+	background-image: url(%%70x%%);
+	width: 70px;
+	height: 70px;
+	display: block;
+	float: left
+}
+
+a[href|="/df_imeanisee"] {
+	background-position: 0 0
+}
+a[href|="/df_kcadancemaniacal"] {
+	background-position: -100% 0
+}
+a[href|="/df_kcozyglowevil"] {
+	background-position: -200% 0
+}
+a[href|="/df_klyraevil"] {
+	background-position: -300% 0
+}
+a[href|="/df_ktrixieevil"] {
+	background-position: -400% 0
+}
+a[href|="/df_tiam05"] {
+	background-position: 0 -100%
+}
+a[href|="/df_tiam13"] {
+	background-position: -100% -100%
+}
+a[href|="/df_rose12"] {
+	background-position: -200% -100%
+}
+/* 70x motes end */
+
+/* varying motes begin */
+a[href|="/df_fhseesyou"],
+a[href|="/df_rddab"],
+a[href|="/df_beelieve"],
+a[href|="/df_canttouchthis"],
+a[href|="/df_illumineighti"],
+a[href|="/rddab"] {
+	background-image: url(%%varying%%);
+	display: block;
+	float: left
+}
+a[href|="/df_fhseesyou"] {
+	width: 200px;
+	height: 200px;
+	background-position: 0 0
+}
+a[href|="/df_rddab"] {
+	width: 96px;
+	height: 76px;
+	background-position: -200px -100%
+}
+a[href|="/df_beelieve"] {
+	width: 154px;
+	height: 120px;
+	background-position: 0 -300px
+}
+a[href|="/df_canttouchthis"] {
+	width: 130px;
+	height: 100px;
+	background-position: 0 -200px
+}
+a[href|="/df_illumineighti"] {
+	width: 148px;
+	height: 100px;
+	background-position: -130px -200px
+}
+a[href|="/rddab"] {
+	width: 96px;
+	height: 76px;
+	background-position: -200px 0
+}
+/* varying motes end */
+
+/* animated motes begin */
+a[href|="/df_evilcadance"] {
+	background-image: url(%%df-evilcadance%%);
+	width: 163px;
+	height: 130px;
+	display: block;
+	float: left
+}
+a[href|="/df_pomf"] {
+	background-image: url(%%df-pomf%%);
+	width: 400px;
+	height: 300px;
+	display: block;
+	float: left
+}
+a[href|="/df_rapidfire"] {
+	background-image: url(%%df-rapidfire%%);
+	width: 529px;
+	height: 293px;
+	display: block;
+	float: left
+}
+a[href|="/df_maudcombo"] {
+	background-image: url(%%df-maudcombo%%);
+	width: 201px;
+	height: 170px;
+	display: block;
+	float: left
+}
+/* animated motes end */
+
+/* special stuff begin */
+
+a[href|= "/df_text!"] { 
+	text-shadow: 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red, 0px 0px 0px red;
+	font-family: "Comic Sans MS";
+	font-weight: bold;
+	color: rgba(69, 69, 69, 0)!important;
+	background-repeat: no-repeat;
+	background-image: url(%%b%%);
+	padding: 0 0 0 5px;
+	cursor: vertical-text!important;
+}
+a[href|= "/df_text!"]::first-letter { 
+    text-shadow: none!important;
+}
+
+/* special stuff end */
