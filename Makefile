@@ -31,7 +31,7 @@
 # - Test
 # - Make thread
 
-VERSION = 66.267
+VERSION = 66.268
 
 CONTENT_SCRIPT := \
     addon/bpm-header.js addon/bpm-utils.js addon/bpm-browser.js \
@@ -52,7 +52,7 @@ default: build/betterponymotes-$(VERSION).xpi build/webext-$(VERSION).zip build/
 clean:
 	rm -fr build
 
-www: web/* build/betterponymotes-$(VERSION).xpi build/betterponymotes.update.rdf build/betterponymotes-$(VERSION)-an+fx.xpi addon/we-updates.json
+www: web/* build/betterponymotes-$(VERSION).xpi build/betterponymotes.update.rdf build/betterponymotes-$(VERSION)-fx.xpi addon/we-updates.json
 	cp web/firefox-logo.png www
 	cp web/chrome-logo.png www
 	cp web/safari-logo.png www
@@ -65,8 +65,8 @@ www: web/* build/betterponymotes-$(VERSION).xpi build/betterponymotes.update.rdf
 	cp build/betterponymotes-$(VERSION).xpi www/xul/betterponymotes.xpi
 	cp build/betterponymotes-$(VERSION).xpi www/xul/betterponymotes-$(VERSION).xpi
 
-	cp build/betterponymotes-$(VERSION)-an+fx.xpi www/we/betterponymotes.xpi
-	cp build/betterponymotes-$(VERSION)-an+fx.xpi www/we/betterponymotes-$(VERSION)-an+fx.xpi
+	cp build/betterponymotes-$(VERSION)-fx.xpi www/we/betterponymotes.xpi
+	cp build/betterponymotes-$(VERSION)-fx.xpi www/we/betterponymotes-$(VERSION)-fx.xpi
 
 sync:
 	chmod 644 www/*
