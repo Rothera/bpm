@@ -114,6 +114,7 @@ function inject_search_box() {
                     '<th class="bpflagtable-031e"><a class="bpm-emote bpflag-in bpflag-mono bpmote-derpyshock"></a><br><center><code>-mono</code></center></th>',
                     '<th class="bpflagtable-031e"><a class="bpm-emote bpflag-in bpflag-sepia bpmote-derpyshock"></a><br><center><code>-sepia</code></center></th>',
                     '<th class="bpflagtable-031e"><a class="bpm-emote bpflag-in bpflag-blur bpmote-derpyshock"></a><br><center><code>-blur</code></center></th>',
+                    '<th class="bpflagtable-031e"><a class="bpm-emote bpflag-in bpflag-rainbow bpmote-derpyshock"></a><br><center><code>-rainbow</code></center></th>',
                   '</tr>',
                 '</table></center><br>',
                 '<center>Animated:</center>',
