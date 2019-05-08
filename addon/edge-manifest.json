@@ -1,0 +1,49 @@
+{
+    "author": "Typhos",
+    "background": {
+        "page": "background.html",
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "js": [
+                "bpm-resources.js",
+                "betterponymotes.js"
+            ],
+            "matches": [
+                "*://*/*"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "description": "View Reddit ponymotes across the site",
+    "homepage_url": "https://ponymotes.net/bpm/",
+    "manifest_version": 2,
+	"minimum_edge_version": "33.14281.1000.0",
+    "minimum_chrome_version": "20",
+    "-ms-preload": {
+        "backgroundScript": "backgroundScriptsAPIBridge.js",
+        "contentScript": "contentScriptsAPIBridge.js"
+    },
+    "name": "BetterPonymotes",
+    "options_page": "options.html",
+    "permissions": [
+        "http://*.reddit.com/",
+        "https://*.reddit.com/",
+        "http://*.redditstatic.com/",
+        "https://*.redditstatic.com/",
+        "http://*.redditmedia.com/",
+        "https://*.redditmedia.com/"
+    ],
+    "version": "/*{{version}}*/",
+    "web_accessible_resources": [
+        "bpmotes.css",
+        "emote-classes.css",
+        "combiners-nsfw.css",
+        "extracss-pure.css",
+        "extracss-webkit.css",
+        "gif-animotes.css",
+        "options.html"
+    ]
+}
