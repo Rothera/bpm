@@ -17,6 +17,8 @@ body div.content {
   overflow: hidden;
 }
 
+.bottom .author{display:none;}
+
 .footer-parent {
   background-color: white;
   opacity: 0.85;
@@ -101,24 +103,6 @@ a[href$="ainbowdash"]:before {
   background: url(%%searchdash%%) top left no-repeat !important;
   text-align: right;
   width: 300px;
-}
-
-/*** Aliases ***/
-.author[href$="/RogueDarkJedi"] {
-  font-size: 0 !important;
-  display: inline-block;
-  letter-spacing: -20px;
-  overflow: hidden;
-  vertical-align: bottom;
-}
-.author[href$="/RogueDarkJedi"]:after {
-  content: "RainbowDashJedi";
-}
-.author:after {
-  font-size: 10px !important;
-  visibility: visible !important;
-  display: block;
-  letter-spacing: normal;
 }
 
 /*** self source text ***/

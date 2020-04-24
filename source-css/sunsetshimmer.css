@@ -1,40 +1,62 @@
 /*Banner*/
 
 #header {
-  height: 175px;
+  position: relative;
+  width: 100%;
+  height: 191px;
   border-bottom: 0 solid #e2d8ca;
   box-shadow: 0 0 6px #555;
+  z-index: 99;
 }
 
-.pagename { font-size: 0; }
-
-.pagename:after {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 175px;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: -1;
+#header::before, #header::after {
   content: "";
-  background: url(%%winterbanner%%);
-  -webkit-animation: sidescroll 120s linear infinite;
-  -moz-animation: sidescroll 120s linear infinite;
-  animation: sidescroll 120s linear infinite;
+  position: absolute;
+  width: 50%;
+  height: 191px;
+  top: 0;
+  background-repeat: repeat-x;
+  z-index: -2;
 }
-
+ 
+#header::before {
+  left: 0;
+  background-image: url(%%chsleft%%);
+  background-position: left;
+}
+ 
+#header::after {
+  right: 0;
+  background-image: url(%%chsright%%);
+  background-position: right;
+}
+ 
+.pagename { font-size: 0; }
+ 
 .pagename a {
   display: block;
   position: absolute;
-  width: 315px;
-  height: 60px;
-  top: 52px;
-  left: calc(50% - 157px) !important;
-  background: url(%%Sunset-Title%%) no-repeat;
+  width: 409px;
+  height: 191px;
+  top: 0;
+  left: calc(50% - 204px) !important;
+  background: url(%%chscenter%%) no-repeat;
+  z-index: -1;
 }
-
-#header-img { margin: 6px 0 0 0 }
+ 
+#header-bottom-left {
+  width: 300px;
+  height: 168px;
+  overflow: hidden;
+}
+ 
+#header-img { margin: 0px 0px -18px 12px }
+ 
+#header-img-a {
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
 
 @-webkit-keyframes sidescroll {
   100% { background-position: -2097px 0; }
@@ -1565,7 +1587,7 @@ a.thumbnail.self{margin-right:-14px}
 .side .md table:last-of-type {
   display: table;
   position: absolute;
-  top: 181px;
+  top: 208px;
   left: 6px;
   width: calc(100% - 356px) !important;
   margin: 0;
@@ -1611,7 +1633,7 @@ a.thumbnail.self{margin-right:-14px}
 
 .side .md table:last-of-type td a:last-of-type { color: #0079D3 !important }
 
-.content { margin-top: 48px }
+.content { margin-top: 65px }
 
 /*** Tricks ***/
 

@@ -1,47 +1,35 @@
 .id-t3_145m8r.link .title{font-size:large}
 
-/*LET IT SNOW BITCHES */
-
-#header:after {
-content: "";
-background: url(%%Snow2%%);
-position: absolute;
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-z-index: 999;
-pointer-events: none;
--webkit-animation: snow 0.5s steps(19) infinite;
--moz-animation: snow 0.5s steps(19) infinite;
--ms-animation: snow 0.5s steps(19) infinite;
--o-animation: snow 0.5s steps(19) infinite;
-animation: snow 0.5s steps(19) infinite; 
-}
 
 
-@-webkit-keyframes snow {from{background-position: 0 0;}to{ background-position: 0px -5700px; }} 
-@-moz-keyframes snow {from {background-position: 0 0;}to{ background-position: 0px -5700px; } } 
-@-ms-keyframes snow{from {background-position: 0 0; }to{ background-position: 0px -5700px; } } 
-@-o-keyframes snow {from {background-position: 0 0; }to{ background-position: 0px -5700px; } } 
-@keyframes snow {from { background-position: 0 0; }to{ background-position: 0px -5700px; } } 
+
+/*LET IT SNOW BITCHES https://docs.google.com/document/d/1saHkK3QSp9dEyrrOYFxq-C9X_vGWMwF55DxzgRzcOrs/edit?usp=sharing */
+
+
+
 
 
 /* comment box image */
-.commentarea textarea:not(:focus) { background-image: url(%%minithunbhose%%); }
+.commentarea textarea:not(:focus) { background-image: url(%%ponkponk%%); }
+
+
+
+
+
+
 
 
 /* Replace Cursors */
 /*<%jeroknite> mfw Pwny is slowly turning the sub into a geocities site*/
 body {
-cursor: url(%%bowcursor2%%), default !important;
+cursor: url(%%starlight1%%), default !important;
 }
-a { cursor: url(%%bowcursor1%%), pointer; }
+a { cursor: url(%%starlight2%%), pointer; }
 
 
 /* Changes background  */
  body:first-of-type, body.res-nightmode:first-of-type {
-    background:  url(%%backgroundh%%) fixed no-repeat 66% 100% !important;
+    background:  url(%%snowdash%%) fixed no-repeat 66% 100% !important;
 }go
 
 
@@ -60,10 +48,16 @@ a { cursor: url(%%bowcursor1%%), pointer; }
 
 
 
+
+
+
+
+
+
 /* Banner image and associated height values */
 
  #header #header-bottom-left {
-   background: url(%%allbanner%%) 50% 10px !important;
+   background: url(%%Zxwzhw6%%) 40% -0px !important;
    background-repeat: no-repeat!important;
    background-position: 35% 0px;
 }
@@ -652,7 +646,7 @@ background-repeat: no-repeat;
 .flair-llamma:after { background-position: 0px -7080px }
 .flair-FrancisVace:after { background-position: 0px -7110px }
 .flair-Memekip:after { background-position: 0px -7140px }
-.flair-throwawayaccount997:after { background-position: 0px -7170px }
+.flair-Phluffphy:after { background-position: 0px -7170px }
 .flair-panda:after { background-position: 0px -7200px }
 .flair-yiffers:after { background-position: 0px -7230px }
 .flair-voretastic:after { background-position: 0px -7260px }
@@ -838,6 +832,7 @@ a.author[href$=DRANKLE],
 a.author[href$=HailTrixie],
 a.author[href$=throwawayaccount997],
 a.author[href$=Halt-CatchFire],
+a.author[href$=Phluffphy],
 a.author[href$=flare561]
 
 { 
@@ -977,6 +972,7 @@ a.author[href$=thisisgenny]:before,
 a.author[href$=HailTrixie]:before,
 a.author[href$=throwawayaccount997]:before,
 a.author[href$=Halt-CatchFire]:before,
+a.author[href$=Phluffphy]:before,
 a.author[href$=flare561]:before
 
 
@@ -1108,7 +1104,7 @@ a.author[href$=Doktor_Elcaro]:before { content:"get pretty coggler pony to chang
 a.author[href$=The_Assistant]:before { content:"SuperAtomica" }
 a.author[href$=topkekbestkek]:before { content:"Partypoops McFlaccid" }
 a.author[href$=DoomKey]:before { content:"Scarfsickle" }
-a.author[href$=spearstuff]:before { content:"spearstuff" }
+a.author[href$=spearstuff]:before { content:"sailorstuff" }
 a.author[href$=IndigoMichigan]:before { content:"Indi" }
 a.author[href$=DRANKLE]:before { content:"T-Light aka NOT-DRANKLE" }
 a.author[href$=thisisgenny]:before { content:"genny" }
@@ -1116,6 +1112,7 @@ a.author[href$=throwawayaccount997]:before { content:"Fritters" }
 a.author[href$=Admos123]: before { content:"Fun with Atoms" }
 a.author[href$=HailTrixie]: before { content:"Traxle" }
 a.author[href$=Halt-CatchFire]: before { content:"ScootalooTheConquero" }
+a.author[href$=Phluffphy]: before { content:"Apple-Fritters" }
 a.author[href$=flare561]: before { content:"Echo" }
 
 /* Replacing puppy's name with a picture of derpy */
@@ -1292,7 +1289,7 @@ a.author[href$=JIVEprinting]:after { content:" Christfag" }
 a.author[href$="Conky_"]:after { content:" In a Lot of Trouble, Mr." }
 a.author[href$="Swiftskii"]:after { content:" Be careful what you wish for" }
 a.author[href$="clonger"]:after { content:" the css wizard"; color:green}
-a.author[href$="spearstuff"]:after { content:" i figured it out :D"}
+a.author[href$="spearstuff"]:after { content:" I'm off to the navy :D"}
 a.author[href$="Masturb_Chyiff"]:after { content:" MAGA";color:orange }
 a.author[href$="andysonic3"]:after { content:" THE NO FUN DEPUTY" }
 a.author[href$="andysonic0"]:after { content:" THE NO FUN CHIEF" }
@@ -1809,28 +1806,28 @@ padding:0px 14px 0px 0px;
 div.up {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%valenvote%%) !important;
+    background: url(%%spoopy%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px -60px !important
     }
 div.down {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%valenvote%%) !important;
+    background: url(%%spoopy%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px -90px !important
     }
 div.upmod {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%valenvote%%) !important;
+    background: url(%%spoopy%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px 0px !important
     }
 div.downmod {
     width: 30px !important;
     height: 30px !important;
-    background: url(%%valenvote%%) !important;
+    background: url(%%spoopy%%) !important;
     background-repeat: no-repeat !important;
     background-position: 0px -30px !important
     }

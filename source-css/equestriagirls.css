@@ -367,10 +367,6 @@ a {
     background-color:#fff7fd;
 }
 
-.titlebox {
-    margin-top:54px;
-}
-
 .side {
     font-family: Georgia,"Times New Roman",Times,sans-serif;
     padding-left: 5px;
@@ -434,40 +430,15 @@ p.users-online.fuzzed {
     display:none;
 }
 
-div.sidebox.submit.submit-link div.morelink{
+div.sidebox.submit.submit-link div.morelink,
+div.sidebox.submit.submit-text div.morelink {
     background-image: none;
     background-color: white;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top: 3px solid #2e1364;
-    border-left: 3px solid #2e1364;
-    border-right: 1px dashed #2e1364;
-    border-bottom: 3px solid #2e1364;
-    right:161px;
-    display:inline;
-    text-align:center;
+    border-radius: 10px;
+    border: 3px solid #2e1364;
 }
 
-div.sidebox.submit.submit-link div.morelink:hover {
-    background-image: none;
-    background-color: #ac1280!important;
-}
-
-div.sidebox.submit.submit-text div.morelink {
-    background-image:none;
-    background-color:white;
-    border-top-right-radius:10px;
-    border-bottom-right-radius:10px;
-    border-bottom:3px solid #2e1364;
-    border-left:1px dashed #2e1364;
-    border-right:3px solid #2e1364;
-    border-top: 3px solid #2e1364;
-    width:150px;
-    display:inline;
-    text-align:center;
-    right:8px;
-}
-
+div.sidebox.submit.submit-link div.morelink:hover,
 div.sidebox.submit.submit-text div.morelink:hover {
     background-image:none;
     background-color:#ac1280!important;
@@ -477,9 +448,6 @@ div.sidebox.submit.submit-text div.morelink:hover {
     background-image:none;
     border:none;
     background-color:transparent;
-    display:block;
-    position:absolute;
-    width:145px;
 }
 
 .morelink a {

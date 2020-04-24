@@ -21,6 +21,7 @@
     }
 #header .tabmenu li a:hover, #header .tabmenu .selected a {
     background: url(%%tabsimg%%) repeat-x 0 10px;
+    background-size: contain;
     color: #ed8e78;
     text-shadow: 1px 1px 8 #381513;
     text-decoration: underline;
@@ -257,7 +258,7 @@ a[href|="/birb"]
 }#header-img.default-header:hover,#header-img:hover{
     background: url(%%snoo2%%) no-repeat 0px 0px;
     background-position: 0px 0px;
-    background-size: contain;
+
     display: block;
     width: 120px;
     height: 172px;

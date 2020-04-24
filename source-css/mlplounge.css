@@ -451,7 +451,8 @@ a[href|="/pl11"],a[href|="/dishappy"],
 a[href|="/pl21"],a[href|="/karmastare"],
 a[href|="/pl02"],a[href|="/ohnoes"],
 a[href|="/pl03"],a[href|="/sadbee"],
-a[href|="/pl04"],a[href|="/gayagenda"]
+a[href|="/pl04"],a[href|="/gayagenda"],
+a[href|="/pl05"],a[href|="/happybee"]
 {display:block; clear:none; float:left; width:70px; height:70px; background-image:url(%%lounge-emotes%%)!important;cursor:default}
 
 a[href|="/rpl00"],a[href|="/rfillyrarity"],
@@ -462,7 +463,8 @@ a[href|="/rpl11"],a[href|="/rdishappy"],
 a[href|="/rpl21"],a[href|="/rkarmastare"],
 a[href|="/rpl02"],a[href|="/rohnoes"],
 a[href|="/rpl03"],a[href|="/rsadbee"],
-a[href|="/rpl04"],a[href|="/rgayagenda"]
+a[href|="/rpl04"],a[href|="/rgayagenda"],
+a[href|="/rpl05"],a[href|="/rhappybee"]
 {display:block; clear:none; float:left; width:70px; height:70px; background-image:url(%%lounge-emotes%%)!important;
     -moz-transform: scaleX(-1); -o-transform: scaleX(-1); -webkit-transform: scaleX(-1); transform: scaleX(-1);
     cursor:default
@@ -510,7 +512,7 @@ a[href|="/ajhappy"],a[href|="/happlejack"],a[href|="/a03"],a[href|="/rajhappy"],
 a[href|="/raritydaww"],a[href|="/a04"],a[href|="/rraritydaww"],a[href|="/raritydaw"],a[href|="/rraritydaw"],a[href|="/ra04"],a[href|="/fluttershh"],a[href|="/b04"],a[href|="/rfluttershh"],a[href|="/rb04"],a[href|="/ajfrown"],a[href|="/c04"],a[href|="/rajfrown"],a[href|="/rc04"],a[href|="/huhhuh"],a[href|="/e04"],a[href|="/rhuhhuh"],a[href|="/re04"],a[href|="/f04"],a[href|="/guard"],a[href|="/rf04"],a[href|="/rguard"],a[href|="/cococold"],a[href|="/g04"],a[href|="/rcococold"],a[href|="/rg04"],a[href|="/pl04"],a[href|="/gayagenda"],a[href|="/rpl04"],a[href|="/rgayagenda"],.side .md table tr:nth-of-type(9) td:nth-of-type(2):after
 {background-position:0 -400%}
 
-a[href|="/ajsup"],a[href|="/ajwhatsgood"],a[href|="/a05"],a[href|="/rajsup"],a[href|="/rajwhatsgood"],a[href|="/ra05"],a[href|="/ajugh"],a[href|="/b05"],a[href|="/rajugh"],a[href|="/rb05"],a[href|="/raritysad"],a[href|="/c05"],a[href|="/rraritysad"],a[href|="/rc05"],a[href|="/nmm"],a[href|="/blacksnooty"],a[href|="/queenmeanie"],a[href|="/hokeysmokes"],a[href|="/e05"],a[href|="/rnmm"],a[href|="/rblacksnooty"],a[href|="/rqueenmeanie"],a[href|="/rhokeysmokes"],a[href|="/re05"],a[href|="/f05"],a[href|="/abstern"],a[href|="/rf05"],a[href|="/rabstern"],a[href|="/quibble"],a[href|="/g05"],a[href|="/rquibble"],a[href|="/rg05"],.side .md table tr:nth-of-type(11) td:nth-of-type(2):after
+a[href|="/ajsup"],a[href|="/ajwhatsgood"],a[href|="/a05"],a[href|="/rajsup"],a[href|="/rajwhatsgood"],a[href|="/ra05"],a[href|="/ajugh"],a[href|="/b05"],a[href|="/rajugh"],a[href|="/rb05"],a[href|="/raritysad"],a[href|="/c05"],a[href|="/rraritysad"],a[href|="/rc05"],a[href|="/nmm"],a[href|="/blacksnooty"],a[href|="/queenmeanie"],a[href|="/hokeysmokes"],a[href|="/e05"],a[href|="/rnmm"],a[href|="/rblacksnooty"],a[href|="/rqueenmeanie"],a[href|="/rhokeysmokes"],a[href|="/re05"],a[href|="/f05"],a[href|="/abstern"],a[href|="/rf05"],a[href|="/rabstern"],a[href|="/quibble"],a[href|="/g05"],a[href|="/rquibble"],a[href|="/rg05"],a[href|="/pl05"],a[href|="/happybee"],a[href|="/rpl05"],a[href|="/rhappybee"],.side .md table tr:nth-of-type(11) td:nth-of-type(2):after
 {background-position:0 -500%}
 
 a[href|="/ohcomeon"],a[href|="/sbcomeon"],a[href|="/a06"],a[href|="/rohcomeon"],a[href|="/rsbcomeon"],a[href|="/ra06"],a[href|="/trixiesmug"],a[href|="/b06"],a[href|="/rtrixiesmug"],a[href|="/rb06"],a[href|="/louder"],a[href|="/c06"],a[href|="/rlouder"],a[href|="/rc06"],a[href|="/octavia"],a[href|="/whomeverthisis"],a[href|="/e06"],a[href|="/roctavia"],a[href|="/rwhomeverthisis"],a[href|="/re06"],a[href|="/f06"],a[href|="/apathia"],a[href|="/rf06"],a[href|="/rdthis"],a[href|="/g06"],a[href|="/rrdthis"],a[href|="/rg06"],.side .md table tr:nth-of-type(13) td:nth-of-type(2):after
@@ -1099,6 +1101,10 @@ padding: 0
 .flair-cmcsyn:hover {background-position: -100% -2100%} /*For Synes7hesia; Sunset Shimmer Hover*/
 .flair-cmcdc {background-position: -300% -100%}
 .flair-cmcdc:hover {background-position: -400% -1200%} /*For DoomedCivilian; 'tia Hover*/
+.flair-cmcoots {background-position: -300% -100%}
+.flair-cmcoots:hover {background-position: -100% -300%} /*For Ootachiful; Bon Bon Hover*/
+.flair-cmccrystal {background-position: -300% -100%}
+.flair-cmccrystal:hover {background-position: 0% -300%} /*For CrystalLord; Lyra Hover*/
 .flair-cmcpinkie {background-position: -300% -100%} /* /u/Pinkie_Pie */
 .flair-cmcpinkie:hover {background-position: 0% -100%}
 .flair-pathd {background-position: -100% 0%}
