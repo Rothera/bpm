@@ -74,30 +74,77 @@ function toggle_emote(store, element) {
     if(store.prefs.clickToggleSFW && is_nsfw_disabled) {
         return;
     }
-    var info = store.lookup_emote(element.getAttribute("data-bpm_emotename"), false);
-    if(element.classList.contains("bpm-minified")) {
-        // Show: unminify, enable, give it its CSS, remove the bit of text we
-        // added, enable flags.
-        element.classList.remove("bpm-minified");
-        element.classList.remove("bpm-nsfw");
-        element.classList.add(info.css_class);
-        if(state.indexOf("T") > -1) {
-            element.textContent = "";
-        }
-        var parts = element.getAttribute("href").split("-");
-        add_flags(element, parts);
-    } else {
-        // Hide: remove its CSS, minify, optionally disable, put our bit of
-        // text back, and kill flags.
-        element.classList.remove(info.css_class);
-        element.classList.add("bpm-minified");
-        if(is_nsfw_disabled) {
-            element.classList.add("bpm-nsfw");
-        }
-        if(state.indexOf("T") > -1) {
-            element.textContent = element.getAttribute("href");
-        }
-        strip_flags(element);
+    //If this attribute is set, then the emote has a fallback.
+    if(element.hasAttribute("data-bpm_tstate")) {
+        var parts = element.getAttribute("data-bpm_fulltext").split("-");
+	switch(element.getAttribute("data-bpm_tstate")) {
+	    case "0": //The emote is normal and should be changed to the fallback emote.
+	        var info = store.lookup_emote(parts[1], false);
+		log_debug(element.classList.contains("bpflag-in"));
+		var flag_in = element.classList.contains("bpflag-in");
+		element.classList.remove(info.css_class);
+		//Remove the BPM emote from parts for strip_flags()
+		parts.splice(1, 1);
+		strip_flags(element, parts);
+		if(flag_in) {
+		    element.classList.add("bpflag-in");
+		}
+		element.setAttribute("href", parts[0]);
+		element.setAttribute("data-bpm_tstate", "1");
+		break;
+	    case "1": //The emote is set to the fallback and should be minified.
+		element.classList.add("bpm-minified");
+		if(is_nsfw_disabled) {
+		    element.classList.add("bpm-nsfw");
+		}
+		if(state.indexOf("T") > -1) {
+		    element.textContent = element.getAttribute("data-bpm_fulltext");
+		}
+		parts.splice(0, 1);
+		element.setAttribute("href", parts.join("-"));
+		element.setAttribute("data-bpm_tstate", "2");
+		break;
+	    case "2": //The emote is minified and should be changed to its default BPM emote.
+		parts.splice(0, 1);
+		var info = store.lookup_emote(parts[0], false);
+		element.classList.remove("bpm-minified");
+		element.classList.remove("bpm-nsfw");
+		element.classList.add(info.css_class);
+		if(state.indexOf("T") > -1) {
+		    element.textContent = "";
+		}
+		element.setAttribute("href", parts.join("-"));
+		add_flags(element, parts);
+		element.setAttribute("data-bpm_tstate", "0");
+		break;
+	    }
+	} else {
+	//If the emote has no fallback, just use the regular logic for toggling emotes.
+	var info = store.lookup_emote(element.getAttribute("data-bpm_emotename"), false);
+	if(element.classList.contains("bpm-minified")) {
+	    // Show: unminify, enable, give it its CSS, remove the bit of text we
+	    // added, enable flags.
+	    element.classList.remove("bpm-minified");
+	    element.classList.remove("bpm-nsfw");
+	    element.classList.add(info.css_class);
+	    if(state.indexOf("T") > -1) {
+		element.textContent = "";
+	    }
+	    var parts = element.getAttribute("href").split("-");
+	    add_flags(element, parts);
+	} else {
+	    // Hide: remove its CSS, minify, optionally disable, put our bit of
+	    // text back, and kill flags.
+	    element.classList.remove(info.css_class);
+	    element.classList.add("bpm-minified");
+	    if(is_nsfw_disabled) {
+		element.classList.add("bpm-nsfw");
+	    }
+	    if(state.indexOf("T") > -1) {
+	        element.textContent = element.getAttribute("href");
+	    }
+	    strip_flags(element);
+	}
     }
 }
 
