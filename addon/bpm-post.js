@@ -148,7 +148,7 @@ function process_element(store, element, convert_unknown) {
     // attribute: the former is mangled by the browser, which we don't want.
     var href = element.getAttribute("href");
 
-    if(href && href[0] === "/") {
+    if(href && href[0] === "/" || href[0] === "#") {
         // Don't normalize case for emote lookup- they are case sensitive
         var parts = href.split("-");
         var name = parts[0];
